@@ -126,3 +126,10 @@
 
 ## 3.4 算数超滤
 ### 3.4.1 自然数集上的滤子与超滤
+1. 定义
+    - 滤子: 设 $N$ 的子集族 $F\subset \mathcal{P}(N)$ 满足下列条件, 则 $F$ 称作 $N$ 上的滤子.
+        - $\varnothing \notin F, N\in F$
+        - 对交封闭: $a,b\in F\to a\cap b\in F$
+        - 大集性质: $((a\subset b\subset N) \wedge a\in F)\to b\in F$
+    - 若 $N$ 上的滤子 $F$ 有 $\forall a\subset N(a\in F\vee(N-a)\in F)$ (极大性), 则 $F$ 为 $N$ 上的超滤
+    - 若超滤 $F$ 有 $N$ 的任一有限子集 $\notin F$, 则称 $F$ 为 $N$ 上的自由超滤. 
