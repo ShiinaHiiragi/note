@@ -7,6 +7,11 @@
 
 !!! warning "注意"
     这个项目目前仍未完成, 可能存在若干疏漏和错误.
+    
+    现在进度: 公理集合论
+    <div class="progress-container">
+        <div class="progress-percentage" style="width: 29%;">29%</div>
+    </div>
 
 ## 参考文献
 **[1]** 汪芳庭.数学基础[M].高等教育出版社:北京,2018:1-271.  
