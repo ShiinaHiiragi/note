@@ -1,4 +1,8 @@
 site_name: 数理逻辑笔记
+site_author: 一之江
+site_url: https://shiinahiiragi.github.io/Note_of_Math/
+repo_url: https://github.com/ShiinaHiiragi/Note_of_Math/
+repo_name: ShiinaHiiragi/Note_of_Math
 theme:
   name: material
   icon:
