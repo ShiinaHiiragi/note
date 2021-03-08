@@ -1,0 +1,54 @@
+# 2 关系与映射
+
+## 2.1 关系
+### 2.1.1 Descartes 积
+- 定义: $a\times b=\{(x,y)|x\in a \vee y\in b\}$, 这个定义的合法性由内涵公理, 有序对的定义和引理 $(x\in a \wedge y\in b)\to (x,y)\in \mathcal{p}(\mathcal{p}(a\cup b))$ 保证.
+
+### 2.1.2 关系
+1. 定义: 若 $r\subset a\times b$, 则 $r$ 为 a 到 b 上的一个关系, 写作 $r(x,y)$ 或 $xry$
+2. 相关概念
+    - $Dom(r)=\{x\in a|\exists y\in b((x,y)\in r)\}$  
+      $Ran(r)=\{y\in b|\exists x\in a((x,y)\in r)\}$
+    - $r\subset a\times b,c\in a$, $r$ 在 $c$ 上的限制 $r|c=\{(x,y)\in r|x\in c\}$.
+        - $Dom(r|c)=Dom(r)\cap c$
+        - 记 $Ran(r|c)=r[c]$, 称之为 $c$ 在 $r$ 下的象.  
+          若 $c\subset b$, 则 $r^{-1}[c]$ 为 $c$ 在 $r$ 下的原象.
+    - $r^{-1}=\{(y,x)|(x,y)\in r\}$, 于是 $Dom(r^{-1})=Ran(r)$, $Ran(r^{-1})=Dom(r)$
+    - $r\subset a\times b,s\subset b\times c$, 则 $s\circ r=\{(x,z)|\exists y((x,y)\in r\wedge(y,z\in s))\}$, 且有 $(s\circ r)^{-1}=r^{-1}\circ s^{-1}$
+3. 二元关系:  $R\subset a\times a$, 则称 $R$ 是 $a$ 上的一个二元关系
+    - 自反性: $\forall x\in a(xRx)$  
+      反自反性: $\forall x\in a((x,x)\notin R)$
+    - 对称性: $\forall x,y\in a(xRy\to yRx)$  
+      反对称性: $\forall x,y\in a((xRy\wedge yRx)\to x=y)$
+    - 可递性: $\forall x,y,z\in a((xRy\wedge yRz)\to xRz)$
+4. 等价关系: 设 $R\subset a^2$, 若 $R$ 同时有自反性, 对称性, 可递性, 则称 $R$ 为 $a$ 上的等价关系. 如果只有一个等价关系, 则 $xRy$ 可以记作 $x\sim y$.
+    1. 等价类: 任取 $x\in a$, 记 $[x]=\{t\in a|t\sim x\}$, 则将 $[x]$ 称作 $x$ 的等价类.
+        - $x\in [x]$
+        - $x\sim y\to [x]=[y]$
+        - 不同的等价类没有公共元素: $[x]\neq [y]\to [x]\cap [y]=\varnothing$
+    2. 剖分/分类: 集合 $a$ 的子集族 $P\subset \mathcal{P}(a)$ 若满足 $\cup P=a$ 且 $\varnothing \notin P\vee(\forall b,c\in P(b\neq c\to b\cap c=\varnothing))$, 则 $P$ 称为集合 $a$ 的剖分/分类.
+    3. 商集: 设 $R$ 是集合 $a$ 上面的一个等价关系, 关于 $R$, 所有的等价类的集合记作 $a/R=\{[x]|x\in a\}$, 称作 $a$ 关于 $R$ 的商集.
+        - $a/R$ 唯一对应了 $a$ 的一个剖分.
+        - 设 $P$ 是 $a$ 的一个剖分, 用 $P$ 可以唯一定义 $a$ 上的等价关系 $R=\{(x,y)\in a^2|\exists b\in P(x\in b\wedge y\in b)\}$, 且有 $a/R=P$
+    4. 总而言之, 集合上所有等价关系与所有剖分之间存在一一对应.
+
+## 2.2 映射
+1. 相关定义
+    - 映射: $f\subset a\times b$, $\forall x\in a\exists !y\in b((x,y)\in f)$, 则 $f$ 称为 $a$ 到 $b$ 的映射. $(x,y)\in f$ 记作 $y=f(x)$
+    - 复合映射: $g\circ f(x)=g(f(x)), x\in a$
+    - 逆映射: $f^{-1}={(y,x)|(x,y)\in f}$
+2. 性质
+    - 单值性: $(x,y_1)\in f \wedge (x,y_2)\in f\to y_1=y_2$
+    - $f\subset a\times b$, 则 $Dom(f)=a, Ran(f)\subset b$
+    - $c\subset a$, 则 $f[c]=\{f(x)|x\in c\}$  
+      $c\subset b$, 则 $f^{-1}[c]=\{x\in a|f(x)\in b\}$
+3. 映射的种类
+    - 满射, 单射, 双射
+        1. 若 $f[a]=b$, 则 $f$ 为满射
+        2. 若 $\forall x_1,x_2\in a(x_1\neq x_2\to f(x_1)\neq f(x_2))$, 则 $f$ 为单射
+        3. 若 $f$ 同时为满射与单射, 则 $f$ 为双射. 此时 $\forall x\in a\exists !y\in b((x,y)\in f)$, $\forall y\in b\exists !x\in a((x,y)\in f)$
+    - 单射与单射复合为单射, 双射与双射复合为双射
+    - 函数 $f$ 有反函数当且仅当 $f$ 为单射, 双射的反函数仍为双射
+4. 其他定义
+    - $g=f|c$, 则 $\forall x\in c(f(x)=g(x))$, 称 $f$ 为 $g$ 的扩张.
+    - 定义 $^{a}b=\{f|f:a\to b\}$, 该定义的合法性由 $^{a}b\subset \mathcal{P}(a\times b)$ 保证. 当 $b\subset c$ 时, $^{a}b\subset ^{a}c$

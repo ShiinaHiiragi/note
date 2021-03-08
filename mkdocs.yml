@@ -1,0 +1,47 @@
+site_name: 数理逻辑笔记
+theme:
+  name: material
+  icon:
+    logo: octicons/note-24
+  favicon: extra/favicon.png
+  features:
+    - navigation.expand
+    - navigation.tabs
+  palette:
+    accent: pink
+  language: 'zh'
+
+markdown_extensions:
+  - admonition
+  - pymdownx.arithmatex:
+      generic: true
+
+extra:
+  social:
+    - icon: fontawesome/brands/github
+      link: https://github.com/ShiinaHiiragi
+    - icon: fontawesome/brands/twitter
+      link: https://twitter.com/ShiinaHiiragi
+  search:
+    language: 'jp'
+
+extra_javascript:
+  - extra/config.js
+  - https://polyfill.io/v3/polyfill.min.js?features=es6
+  - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
+
+extra_css:
+  - extra/config.css
+
+nav:
+  - 介绍: index.md
+  - 数学基础:
+      - 一、一阶逻辑:
+          - 1 命题演算: foundation/logic/proposition.md
+          - 2 谓词演算: foundation/logic/predicate.md
+      - 二、公理集合论:
+          - 1 ZFC 集合论: foundation/set/zfc.md
+          - 2 关系与映射: foundation/set/relation.md
+          - 3 实数理论: foundation/set/real.md
+          - 4 序数: foundation/set/ordinal.md
+          - 5 势与基数: foundation/set/cardinal.md
