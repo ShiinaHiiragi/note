@@ -131,5 +131,5 @@
         - $\varnothing \notin F, N\in F$
         - 对交封闭: $a,b\in F\to a\cap b\in F$
         - 大集性质: $((a\subset b\subset N) \wedge a\in F)\to b\in F$
-    - 若 $N$ 上的滤子 $F$ 有 $\forall a\subset N(a\in F\vee(N-a)\in F)$ (极大性), 则 $F$ 为 $N$ 上的超滤
-    - 若超滤 $F$ 有 $N$ 的任一有限子集 $\notin F$, 则称 $F$ 为 $N$ 上的自由超滤. 
+    - 超滤: 若 $N$ 上的滤子 $F$ 有极大性, 即 $\forall a\subset N(a\in F\vee(N-a)\in F)$, 则 $F$ 为 $N$ 上的超滤
+    - 自由超滤: 若超滤 $F$ 有 $N$ 的任一有限子集 $\notin F$, 则称 $F$ 为 $N$ 上的自由超滤. 

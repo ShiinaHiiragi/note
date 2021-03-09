@@ -40,9 +40,9 @@ extra_css:
 nav:
   - 介绍: index.md
   - 数学基础:
-      - 一、一阶逻辑:
-          - 1 命题演算: foundation/logic/proposition.md
-          - 2 谓词演算: foundation/logic/predicate.md
+      # - 一、一阶逻辑:
+      #     - 1 命题演算: foundation/logic/proposition.md
+      #     - 2 谓词演算: foundation/logic/predicate.md
       - 二、公理集合论:
           - 1 ZFC 集合论: foundation/set/zfc.md
           - 2 关系与映射: foundation/set/relation.md
