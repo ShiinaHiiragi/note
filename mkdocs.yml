@@ -38,7 +38,9 @@ extra_css:
   - extra/config.css
 
 nav:
-  - 介绍: index.md
+  - 通用:
+      - 介绍: index.md
+      - 许可证: license.md
   - 数学基础:
       # - 一、一阶逻辑:
       #     - 1 命题演算: foundation/logic/proposition.md
@@ -49,3 +51,7 @@ nav:
           - 3 实数理论: foundation/set/real.md
           - 4 序数: foundation/set/ordinal.md
           - 5 势与基数: foundation/set/cardinal.md
+      # - 三、证明论:
+      # - 四、递归论:
+      # - 五、模型论:
+      # - 六、非经典逻辑:
