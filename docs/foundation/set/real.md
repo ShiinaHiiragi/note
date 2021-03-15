@@ -154,6 +154,5 @@
     - 运算 $f$ 称作超滤空间上的超滤变换, $f:\beta N\to \beta N$ 事实上是用同一个符号表示的函数 $f:N\to N$ 的扩张
 2. 超滤变换的性质
     - 主超滤的像 $f(F)$ 仍是主超滤: 设 $f\in ^NN,n\in N$, 则 $f(\overline{n}) =\overline{f(n)}$
-    - 非主超滤的像 $f(F)$ 不一定仍是非主超滤, 有可能退变为主超滤
-        - 设 $F\in \beta N$, 且有 $\forall n\in N(f(n)=m\in N)$, 则 $f(F)=\overline{m}$
-        - 设 $F\in \beta N$, 且 $f\in ^NN,\forall n\in b\in F(f(n)=m)$, 则有 $f(F)=\overline{m}$
+    - 非主超滤的像 $f(F)$ 不一定仍是非主超滤, 有可能退变为主超滤: 设 $F\in \beta N$, 且 $f\in ^NN,\forall n\in b\in F(f(n)=m)$, 则有 $f(F)=\overline{m}$, 取 $b=N$, 则 $f$ 为常值函数
+3. 设 $f,g\in ^NN,F\in \beta N$, 若 $\{n|f(n)=g(n)\}\in F$, 则称 $f$ 和 $g$ 关于 $F$ 几乎相等, 记作 $f=_Fg$
