@@ -127,13 +127,14 @@
 ## 3.4 算数超滤
 ### 3.4.1 自然数集上的滤子
 1. 定义
-    - 滤子: 设 $N$ 的子集族 $F\subset \mathcal{P}(N)$ 满足下列条件, 则 $F$ 称作 $N$ 上的滤子.
+    1. 滤子: 设 $N$ 的子集族 $F\subset \mathcal{P}(N)$ 满足下列条件, 则 $F$ 称作 $N$ 上的滤子.
         - $\varnothing \notin F, N\in F$
         - 对交封闭: $a,b\in F\to a\cap b\in F$
         - 大集性质: $((a\subset b\subset N) \wedge a\in F)\to b\in F$
-    - 超滤: 若 $N$ 上的滤子 $F$ 有极大性, 即 $\forall a\subset N(a\in F\vee(N-a)\in F)$, 则 $F$ 为 $N$ 上的超滤. $N$ 上全体超滤组成的集合为 $\beta N$ 或 $\beta \omega$.
-    - 算术超滤: 设 $F\in \beta N$, 若 $f(F)=g(F)\to f=_Fg$, 则称 $F$ 为算术超滤.
-    - 自由超滤: 若超滤 $F$ 有 $N$ 的任一有限子集 $\notin F$, 则称 $F$ 为 $N$ 上的自由超滤.
+    2. 极大滤子: 若 $F$ 有 $\forall G\supset F\to G=F$, 则称 $F$ 为极大滤子.
+    3. 超滤: 若 $N$ 上的滤子 $F$ 有极大性, 即 $\forall a\subset N(a\in F\vee(N-a)\in F)$, 则 $F$ 为 $N$ 上的超滤. $N$ 上全体超滤组成的集合为 $\beta N$ 或 $\beta \omega$.
+    4. 算术超滤: 设 $F\in \beta N$, 若 $f(F)=g(F)\to f=_Fg$, 则称 $F$ 为算术超滤.
+    5. 自由超滤: 若超滤 $F$ 有 $N$ 的任一有限子集 $\notin F$, 则称 $F$ 为 $N$ 上的自由超滤.
 2. 滤子的例子
     - $\{N\}$ 是一个滤子, 但不是超滤. 称作 $N$ 上的平凡滤子.
     - $F_{\sigma}=\{a\subset N||N-a|<+\infty \}$ 是一个滤子, 但不是超滤. $F_{\sigma}$ 称作余有限滤子或 Fréchet 滤子.
@@ -143,7 +144,7 @@
         - 所有主超滤都是非自由的超滤, 即自由超滤一定是非主超滤.
         - $N$ 上非自由超滤一定是某个主超滤.
     - 设 $F$ 是 $N$ 上的超滤, 且 $a_1\cup a_2=a\in F$, 则有 $a_1\in F\vee a_2\in F$. 注意到令 $a_1=a,a_2=N-a$, 则该定理是超滤的定义
-    - 设 $F$ 为超滤 $\leftrightarrow F$ 是极大滤子. 极大滤子 $F$: $\forall G\supset F\to G=F$
+    - 设 $F$ 为超滤 $\leftrightarrow F$ 是极大滤子.
     - 设 $F$ 是超滤, 则有 $F$ 是自由超滤 $\leftrightarrow F\supset F_{\sigma}$
     - $N$ 的子集族 $F$ 若具有以下性质则是 $N$ 上的超滤:
         - $\varnothing \in F$
@@ -156,10 +157,46 @@
     - 运算 $f$ 称作超滤空间上的超滤变换, $f:\beta N\to \beta N$ 事实上是用同一个符号表示的函数 $f:N\to N$ 的扩张
 2. 设 $f,g\in ^NN,F\in \beta N$, 若 $\{n|f(n)=g(n)\}\in F$, 则称 $f$ 和 $g$ 关于 $F$ 几乎相等, 记作 $f=_Fg$
 3. 超滤变换的性质
-    - 主超滤的像 $f(F)$ 仍是主超滤: 设 $f\in ^NN,n\in N$, 则 $f(\overline{n}) =\overline{f(n)}$
-    - 算术超滤的像 $f(F)$ 仍是算术超滤: 设 $f\in ^NN,m\in \beta N$, 则 $g(f(F))=h(f(F))\to g=_{f(F)}h$
-    - 非主超滤的像 $f(F)$ 不一定仍是非主超滤, 有可能退变为主超滤: 设 $F\in \beta N$, 且 $f\in ^NN,\forall n\in b\in F(f(n)=m)$, 则有 $f(F)=\overline{m}$, 取 $b=N$, 则 $f$ 为常值函数
-    - 设 $f,g\in ^NN,F\in \beta N$, 则有 $f=_Fg\to f(F)=g(F)$, 反之则不一定成立.
+    1. 主超滤的像 $f(F)$ 仍是主超滤: 设 $f\in ^NN,n\in N$, 则 $f(\overline{n}) =\overline{f(n)}$
+    2. 算术超滤的像 $f(F)$ 仍是算术超滤: 设 $f\in ^NN,m\in \beta N$, 则 $g(f(F))=h(f(F))\to g=_{f(F)}h$
+    3. 非主超滤的像 $f(F)$ 不一定仍是非主超滤, 有可能退变为主超滤: 设 $F\in \beta N$, 且 $f\in ^NN,\forall n\in b\in F(f(n)=m)$, 则有 $f(F)=\overline{m}$, 取 $b=N$, 则 $f$ 为常值函数
+    4. 设 $f,g\in ^NN,F\in \beta N$, 则有 $f=_Fg\to f(F)=g(F)$, 反之则不一定成立.
 
-### 3.4.3 算术模型
-1. 
+### 3.4.3 非主算术超滤模型
+1. 对于某个取定的非主算术超滤做所有可能的变换, 得到 $^*N=\{f(F)|f\in ^NN\}$, 它包含了所有的主超滤, 由常值函数对 $F$ 变换而来.
+2. $^*N$ 的运算可以得到结构 $\left< ^*N,\overline{0},+,\cdot ,f,g,h,...\right>$, 它的语言是 $\mathcal{L}=\{0,+,\cdot ,f,g,h,...\}$. $\mathcal{L}$ 中包含所有一元自然数函数符.
+    - 定义加法: $f(F)+g(F)=(f+g)(F))$, 乘法: $f(F)\cdot g(F)=(f\cdot g)(F))$. 其中, $(f+g)(n)=f(n)+g(n),(f\cdot g)(n)=f(n)\cdot g(n)$.
+    - 每个 $h\in ^NN$ 对应 $*N$ 上的一个一元运算: $h(f(F))=(h\circ f)(F)$.
+    - 定义序 $<$ 为 $f(F)<g(F)\leftrightarrow \{n|f(n)<g(n)\}\in F$, 称作 $f$ 关于 $F$ 几乎小于 $g$, 记作 $f<_Fg$.
+        - $k<m\to \{n|k(n)<m(n)\}=N\in F\to k(F)<m(F)$.
+3. $^*N$ 的基本性质
+    1. 加法
+        - 加法交换律: $\forall f(F),g(F)\in ^*N(f(F)+g(F)=g(F)+f(F))$
+        - 加法结合律: $\forall f(F),g(F),h(F)\in ^*N((f(F)+g(F))+h(F)=f(F)+(g(F)+h(F)))$
+    2. 乘法
+        - 乘法交换律: $\forall f(F),g(F)\in ^*N(f(F)\cdot g(F)=g(F)\cdot f(F))$
+        - 乘法结合律: $\forall f(F),g(F),h(F)\in ^*N((f(F)\cdot g(F))\cdot h(F)=f(F)\cdot (g(F)\cdot h(F)))$
+        - 乘法对加法的分配律: $\forall f(F),g(F),h(F)\in ^*N(f(F)\cdot (g(F)+h(F))=f(F)\cdot g(F)+f(F)\cdot h(F))$
+    3. 本原元
+        - 零元: $\forall f(F)\in ^*N(f(F)+0(F)=f(F))$
+        - 单位元: $\forall f(F)\in ^*N(f(F)\cdot 1(F)=f(F))$
+        - $\overline{0}\neq \overline{1}$
+    4. 序
+        - 反自反性: $f(F)\nless f(F)$
+        - 可递性: $(f(F)<g(F)\wedge g(F)<h(F))\to f(F)<h(F)$
+        - 三歧性: $f(F)<g(F)\vee f(F)=g(F)\vee g(F)<f(F)$
+        - 加法保序性: $f(F)<g(F)\to f(F)+h(F)<g(F)+h(F)$
+        - 乘法保序性: $(f(F)<g(F)\wedge h(F)\neq \overline{0})\to f(F)h(F)<g(F)h(F)$
+4. $N$ 嵌入 $^*N$
+    - 令 $\overline{N}=\{\overline{n}|n\in N\}\subset ^*N$, 它是主超滤集合, 且构成 $^*N$ 对运算的封闭子集.
+        - 考虑映射 $\varphi (n):N\to \overline{N}, \varphi (n)=\overline{n}$. 则 $\varphi$ 为保序保运算的双射.
+        - 称 $N$ 与 $\overline{N}$ 同构, $\varphi$ 把 $N$ 同构嵌入 $^*N$, 将 $n$ 和 $\overline{n}$ 视作同一符号.
+    - 令 $N_{\infty}=^*N-\overline{N}$, 它是非主算术超滤的集合.
+        - $\tau \in N_{\infty} \to \forall m\in N(\tau >\overline{m})$. 即 $N_{\infty}$ 的成员都是「无穷大数」.
+        - 可以将 $^*N$ 的元素排成一列:
+
+        $$
+        0,1,2,...,n,...,\tau ,\tau +1,...
+        $$
+
+### 3.4.4 自然数数列的延申
