@@ -132,7 +132,8 @@
         - 对交封闭: $a,b\in F\to a\cap b\in F$
         - 大集性质: $((a\subset b\subset N) \wedge a\in F)\to b\in F$
     - 超滤: 若 $N$ 上的滤子 $F$ 有极大性, 即 $\forall a\subset N(a\in F\vee(N-a)\in F)$, 则 $F$ 为 $N$ 上的超滤. $N$ 上全体超滤组成的集合为 $\beta N$ 或 $\beta \omega$.
-    - 自由超滤: 若超滤 $F$ 有 $N$ 的任一有限子集 $\notin F$, 则称 $F$ 为 $N$ 上的自由超滤. 
+    - 算术超滤: 设 $F\in \beta N$, 若 $f(F)=g(F)\to f=_Fg$, 则称 $F$ 为算术超滤.
+    - 自由超滤: 若超滤 $F$ 有 $N$ 的任一有限子集 $\notin F$, 则称 $F$ 为 $N$ 上的自由超滤.
 2. 滤子的例子
     - $\{N\}$ 是一个滤子, 但不是超滤. 称作 $N$ 上的平凡滤子.
     - $F_{\sigma}=\{a\subset N||N-a|<+\infty \}$ 是一个滤子, 但不是超滤. $F_{\sigma}$ 称作余有限滤子或 Fréchet 滤子.
@@ -148,11 +149,17 @@
         - $\varnothing \in F$
         - 对交封闭: $a,b\in F\to a\cap b\in F$
         - 极大性: $\forall a\subset N(a\in F\vee (N-a)\in F)$
+    - 主超滤都是算术超滤, 自由超滤中有算术超滤也有非算术超滤(非主算术超滤).
 
 ### 3.4.2 超滤变换
 1. 设 $F\in \beta N,f\in ^NN$, 则定义 $G=f[F]=\{a\subset N|f^{-1}[a]\in F\}$ 也为 $N$ 上的超滤.
     - 运算 $f$ 称作超滤空间上的超滤变换, $f:\beta N\to \beta N$ 事实上是用同一个符号表示的函数 $f:N\to N$ 的扩张
-2. 超滤变换的性质
+2. 设 $f,g\in ^NN,F\in \beta N$, 若 $\{n|f(n)=g(n)\}\in F$, 则称 $f$ 和 $g$ 关于 $F$ 几乎相等, 记作 $f=_Fg$
+3. 超滤变换的性质
     - 主超滤的像 $f(F)$ 仍是主超滤: 设 $f\in ^NN,n\in N$, 则 $f(\overline{n}) =\overline{f(n)}$
+    - 算术超滤的像 $f(F)$ 仍是算术超滤: 设 $f\in ^NN,m\in \beta N$, 则 $g(f(F))=h(f(F))\to g=_{f(F)}h$
     - 非主超滤的像 $f(F)$ 不一定仍是非主超滤, 有可能退变为主超滤: 设 $F\in \beta N$, 且 $f\in ^NN,\forall n\in b\in F(f(n)=m)$, 则有 $f(F)=\overline{m}$, 取 $b=N$, 则 $f$ 为常值函数
-3. 设 $f,g\in ^NN,F\in \beta N$, 若 $\{n|f(n)=g(n)\}\in F$, 则称 $f$ 和 $g$ 关于 $F$ 几乎相等, 记作 $f=_Fg$
+    - 设 $f,g\in ^NN,F\in \beta N$, 则有 $f=_Fg\to f(F)=g(F)$, 反之则不一定成立.
+
+### 3.4.3 算术模型
+1. 
