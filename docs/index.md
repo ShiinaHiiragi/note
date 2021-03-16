@@ -1,4 +1,4 @@
-# 数理逻辑笔记
+# 数理逻辑
 
 ## 简介
 这是一个记录数理逻辑相关的数学基础笔记本, 主要以记录结论而不是推导过程为主. 内容包括基本的一阶逻辑演算, 公理集合论, 证明论, 递归论, 模型论以及部分非经典逻辑. 编排会严格按照学科分类记录, 而不以推导顺序作为先后依据.
@@ -10,7 +10,7 @@
     
     现在进度: 公理集合论
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 29%;">29%</div>
+        <div class="progress-percentage" style="width: 35%;">35%</div>
     </div>
 
 ## 参考文献

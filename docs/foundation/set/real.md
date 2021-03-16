@@ -121,7 +121,7 @@
         - $[(p,1)]\cdot [(q,1)]=[(pq,1)]$
         - $p<q\leftrightarrow [(p,1)]<[(q,1)]$
     - 定义 $f:Z\to \overline{Z}$ 有 $f(p)=[(p,1)]$, 则 $f$ 是一个封闭的保序双射. 此时称 $Q$ 与 $\overline{Q}$ 同构, 并称 $f$ 把 $Q$ 同构嵌入 $Q$.
-4. 将结果写成分数形式: $[(p,q)]=\frac{[(p,1)]}{[(q,1)]}$, 于是有 $Q=\{\frac{[(p,1)]}{[(q,1)]}|p,q\in Z\wedge q\neq 0\}$. 把所有形如 $[(p,1)]$ 的元素写成 $p$, 称之为新整数. 于是 $Z\subset Q=\{\frac{p}{q}|p,q\in Z\wedge q\neq 0\}$, 将 $\mathbb{Q}$ 称为有理数集.
+4. 将结果写成分数形式: $[(p,q)]=\dfrac{[(p,1)]}{[(q,1)]}$, 于是有 $Q=\{\dfrac{[(p,1)]}{[(q,1)]}|p,q\in Z\wedge q\neq 0\}$. 把所有形如 $[(p,1)]$ 的元素写成 $p$, 称之为新整数. 于是 $Z\subset Q=\{\dfrac{p}{q}|p,q\in Z\wedge q\neq 0\}$, 将 $\mathbb{Q}$ 称为有理数集.
 5. 与 $Z$ 相比, $Q$ 是其扩张, 更具有对称性. 有理数集形成了新的结构 $\left< Q,+,\cdot ,<,0,1\right>$.
 
 ## 3.4 算数超滤
