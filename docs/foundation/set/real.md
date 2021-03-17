@@ -97,7 +97,7 @@
 
 ## 3.3 有理数的构造
 1. 定义二元关系 $R\subset (Z\times (Z-\{0\}))^2$ 有 $R=\{((a,b),(c,d))\in (Z\times (Z-\{0\}))^2|ad=bc\}$ 是一个等价关系. 记 $Q=(Z\times (Z-\{0\}))/R=\{[(a,b)]|a,b\in Z \wedge b\neq 0\}$
-2. 定义仿照整数的构造过程, 保证定义的合理性.
+2. 定义仿照整数的构造过程, 保证定义的合理性, 下列性质被称作序域性质.
     1. $Q$ 上的加法: 规定 $[(a,b)]+[(c,d)]=[(ad+bc,bd)]$
         - 交换律: $\forall r,s\in Q(r+s=s+r)$
         - 结合律: $\forall r,s,t\in Q((r+s)+t=r+(s+t))$
@@ -166,7 +166,7 @@
 1. 对于某个取定的非主算术超滤做所有可能的变换, 得到 $^*N=\{f(F)|f\in ^NN\}$, 它包含了所有的主超滤, 由常值函数对 $F$ 变换而来.
 2. $^*N$ 的运算可以得到结构 $\left< ^*N,\overline{0},+,\cdot ,f,g,h,...\right>$, 它的语言是 $\mathcal{L}=\{0,+,\cdot ,f,g,h,...\}$. $\mathcal{L}$ 中包含所有一元自然数函数符.
     - 定义加法: $f(F)+g(F)=(f+g)(F))$, 乘法: $f(F)\cdot g(F)=(f\cdot g)(F))$. 其中, $(f+g)(n)=f(n)+g(n),(f\cdot g)(n)=f(n)\cdot g(n)$.
-    - 每个 $h\in ^NN$ 对应 $*N$ 上的一个一元运算: $h(f(F))=(h\circ f)(F)$.
+    - 每个 $h\in ^NN$ 对应 $*N$ 上的一个一元运算: $h(f(F))=(h\circ f)(F) h\in ^{^*N}{^*N}$.
     - 定义序 $<$ 为 $f(F)<g(F)\leftrightarrow \{n|f(n)<g(n)\}\in F$, 称作 $f$ 关于 $F$ 几乎小于 $g$, 记作 $f<_Fg$.
         - $k<m\to \{n|k(n)<m(n)\}=N\in F\to k(F)<m(F)$.
 3. $^*N$ 的基本性质
@@ -199,4 +199,27 @@
         0,1,2,...,n,...,\tau ,\tau +1,...
         $$
 
-### 3.4.4 自然数数列的延申
+### 3.4.4 自然数数列的延伸
+1. 对 $\forall h:N\to N$, 可以扩充为 $h:^*N\to ^*N$, 于是得到以下序列, 称为自然数列的延伸:
+
+$$
+h(0),h(1),h(2),...,h(n),...,h(\tau ),h(\tau +1),...
+$$
+
+2. 延伸的性质
+    - 序保持: $\forall n\in N(h(n)<g(n))\to \forall \tau \in N_{\infty}(h(\tau )<g(\tau ))$.
+    - 单调性保持: $\forall i,j\in N(i<j\to h(i)<h(j))\to \forall x,y\in ^*N(x<y\to h(x)<h(y))$.
+    - 「分数」的单调性保持: 若 $\forall i,j\in N(i<j\to h(i)l(j)<h(j)l(i))$, 则 $\forall x,y\in ^*N(x<y\to h(x)l(y)<h(y)l(x))$.
+
+## 3.5 实数理论
+### 3.5.1 Archimedes 序域
+1. 仿照先前的过程可以得到 $^*Z$ 和 $^*Q$, 两者的形象如下
+
+$$
+\displaylines{^*Z:...,-\tau ,...,-2,-1,0,1,2,...,n,...,\tau ,\tau +1,...\\
+^*Q=\{\dfrac{q}{p}|p\neq 0,p,q\in ^*Z\}}
+$$
+
+2. 定义 $^*Q$ 的 Archimedes 子集: $Q_<=\{x\in ^*Q|\exists k\in N(|x|<k)\}$, 这一性质意味着量的有限可测量性. 作为序域, $^*Q$ 是一种非 Archimedes 序域.
+
+### 3.5.2 实数的构造
