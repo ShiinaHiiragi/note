@@ -220,6 +220,6 @@ $$
 ^*Q=\{\dfrac{q}{p}|p\neq 0,p,q\in ^*Z\}}
 $$
 
-2. 定义 $^*Q$ 的 Archimedes 子集: $Q_<=\{x\in ^*Q|\exists k\in N(|x|<k)\}$, 这一性质意味着量的有限可测量性. 作为序域, $^*Q$ 是一种非 Archimedes 序域.
+2. 定义 $^*Q$ 的 Archimedes 子集: $Q_<=\{x\in ^*Q|\exists k\in N(|x|\leqslant k)\}$, 这一性质意味着量的有限可测量性. 作为序域, $^*Q$ 是一种非 Archimedes 序域.
 
 ### 3.5.2 实数的构造
