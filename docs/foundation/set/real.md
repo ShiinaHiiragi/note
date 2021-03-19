@@ -202,9 +202,9 @@
 ### 3.4.4 自然数数列的延伸
 1. 对 $\forall h:N\to N$, 可以扩充为 $h:^*N\to ^*N$, 于是得到以下序列, 称为自然数列的延伸:
 
-$$
-h(0),h(1),h(2),...,h(n),...,h(\tau ),h(\tau +1),...
-$$
+    $$
+    h(0),h(1),h(2),...,h(n),...,h(\tau ),h(\tau +1),...
+    $$
 
 2. 延伸的性质
     - 序保持: $\forall n\in N(h(n)<g(n))\to \forall \tau \in N_{\infty}(h(\tau )<g(\tau ))$.
@@ -215,11 +215,20 @@ $$
 ### 3.5.1 Archimedes 序域
 1. 仿照先前的过程可以得到 $^*Z$ 和 $^*Q$, 两者的形象如下
 
-$$
-\displaylines{^*Z:...,-\tau ,...,-2,-1,0,1,2,...,n,...,\tau ,\tau +1,...\\
-^*Q=\{\dfrac{q}{p}|p\neq 0,p,q\in ^*Z\}}
-$$
+    $$
+    \displaylines{^*Z:...,-\tau ,...,-2,-1,0,1,2,...,n,...,\tau ,\tau +1,...\\
+    ^*Q=\{\dfrac{q}{p}|p\neq 0,p,q\in ^*Z\}}
+    $$
 
-2. 定义 $^*Q$ 的 Archimedes 子集: $Q_<=\{x\in ^*Q|\exists k\in N(|x|\leqslant k)\}$, 这一性质意味着量的有限可测量性. 作为序域, $^*Q$ 是一种非 Archimedes 序域.
+2. 定义 $^*Q$ 的 Archimedes 子集:
+    - $Q_<=\{x\in ^*Q|\exists k\in N(|x|\leqslant k)\}$, 这一性质意味着量的有限可测量性. 作为序域, $^*Q$ 是一种非 Archimedes 序域. 若 $x,y\in Q_<$, 则 $x+y\in Q_<,x\cdot y\in Q_<$
+    - $I=\{\alpha \in ^*Q|\forall k\in N(|x|\leqslant k)\}$, 称作无穷小
+        - $I\subset Q_<$
+        - $\alpha ,\beta \in I\to \alpha +\beta \in I$
+        - $\alpha \in I\wedge x\in Q_<\to x\cdot \alpha \in I$
 
 ### 3.5.2 实数的构造
+1. 在 $Q_<$ 中定义等价关系 $x\sim y\leftrightarrow x-y\in I$.
+    - 记 $x\in Q_<$ 所在的等价类为 $[x]=\{y\in Q_<|y\sim x\}$, 等价类构成的集合为 $Q_</\sim =\{[x]|x\in Q_<\}$
+    - 在 $Q_</\sim$ 中定义封闭的运算 $[x]+[y]=[x+y],[x]\cdot [y]=[x\cdot y]$.
+2. 运算性质

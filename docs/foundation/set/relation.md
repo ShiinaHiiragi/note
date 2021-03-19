@@ -36,12 +36,12 @@
 1. 相关定义
     - 映射: $f\subset a\times b$, $\forall x\in a\exists !y\in b((x,y)\in f)$, 则 $f$ 称为 $a$ 到 $b$ 的映射. $(x,y)\in f$ 记作 $y=f(x)$
     - 复合映射: $g\circ f(x)=g(f(x)), x\in a$
-    - 逆映射: $f^{-1}={(y,x)|(x,y)\in f}$
+    - 逆映射: $f^{-1}=\{(y,x)|(x,y)\in f\}$
 2. 性质
     - 单值性: $(x,y_1)\in f \wedge (x,y_2)\in f\to y_1=y_2$
     - $f\subset a\times b$, 则 $Dom(f)=a, Ran(f)\subset b$
     - $c\subset a$, 则 $f[c]=\{f(x)|x\in c\}$  
-      $c\subset b$, 则 $f^{-1}[c]=\{x\in a|f(x)\in b\}$
+      $c\subset b$, 则 $f^{-1}[c]=\{x\in a|f(x)\in c\}$
 3. 映射的种类
     - 满射, 单射, 双射
         1. 若 $f[a]=b$, 则 $f$ 为满射
