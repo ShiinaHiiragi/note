@@ -53,5 +53,6 @@ nav:
           - 5 势与基数: foundation/set/cardinal.md
       # - 三、证明论:
       # - 四、递归论:
-      # - 五、模型论:
+      - 五、模型论:
+          - 1 结构与模型: foundation/model/model.md
       # - 六、非经典逻辑:

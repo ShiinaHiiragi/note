@@ -45,7 +45,7 @@
     \displaylines{0=\varnothing ,\\
     1=0'=0\cup\{0\}=\{0\},\\
     2=1'=1\cup\{1\}=\{0,1\},\\
-    ...}
+    \cdots }
     $$
 
 ### 3.1.2 归纳定义
@@ -78,7 +78,7 @@
         - 加法保序性: $\forall a,b,c\in Z(a<b\to a+c<b+c)$
         - 乘法保序性: $\forall a,b,c\in Z(c>\overline{0}\to (a<b\to a\cdot c<b\cdot c))$
 3. 嵌入
-    - 考察 $\overline{N}=\{[(0,0)], [(1,0)], ..., [(n,0)], ...\}$, 记 $\overline{n}=[(n,0)]$, 则 $\overline{N}=\{\overline{0}, \overline{1}, \overline{2}, ...\}$ 具有性质:
+    - 考察 $\overline{N}=\{[(0,0)], [(1,0)], \cdots , [(n,0)], \cdots \}$, 记 $\overline{n}=[(n,0)]$, 则 $\overline{N}=\{\overline{0}, \overline{1}, \overline{2}, \cdots \}$ 具有性质:
         1. $\overline{m}+\overline{n}=\overline{m+n}$
         2. $\overline{m}\cdot \overline{n}=\overline{mn}$
         3. $m<n\leftrightarrow \overline{m}<\overline{n}$
@@ -90,7 +90,7 @@
 4. 任取 $[(m,n)]\in Z$, 若 $m\leqslant n$, 设 $m=n+k$, 则 $[(m,n)]=[(k,0)]=\overline{k}$; 若 $m<n$, 设 $n=m+l$, 则 $[(m,n)]=[(0,l)]=-\overline{l}$. 于是
 
     $$
-    Z=\{..., -\overline{n}, ..., -\overline{2}, -\overline{1}, \overline{0}, \overline{1}, \overline{2}, ..., \overline{n}, ...\}
+    Z=\{\cdots , -\overline{n}, \cdots , -\overline{2}, -\overline{1}, \overline{0}, \overline{1}, \overline{2}, \cdots , \overline{n}, \cdots \}
     $$
 
 5. 将上述 $\overline{n}$ 转写为 $n$, 将 $\mathbb{Z}$ 称作整数集. 与 $N$ 相比, $N$ 的结构更加对称, 这个结构记作 $\left< Z,+,\cdot ,<,0,1\right>$
@@ -164,7 +164,7 @@
 
 ### 3.4.3 非主算术超滤模型
 1. 对于某个取定的非主算术超滤做所有可能的变换, 得到 $^*N=\{f(F)|f\in ^NN\}$, 它包含了所有的主超滤, 由常值函数对 $F$ 变换而来.
-2. $^*N$ 的运算可以得到结构 $\left< ^*N,\overline{0},+,\cdot ,f,g,h,...\right>$, 它的语言是 $\mathcal{L}=\{0,+,\cdot ,f,g,h,...\}$. $\mathcal{L}$ 中包含所有一元自然数函数符.
+2. $^*N$ 的运算可以得到结构 $\left< ^*N,\overline{0},+,\cdot ,f,g,h,\cdots \right>$, 它的语言是 $\mathcal{L}=\{0,+,\cdot ,f,g,h,\cdots \}$. $\mathcal{L}$ 中包含所有一元自然数函数符.
     - 定义加法: $f(F)+g(F)=(f+g)(F))$, 乘法: $f(F)\cdot g(F)=(f\cdot g)(F))$. 其中, $(f+g)(n)=f(n)+g(n),(f\cdot g)(n)=f(n)\cdot g(n)$.
     - 每个 $h\in ^NN$ 对应 $*N$ 上的一个一元运算: $h(f(F))=(h\circ f)(F) h\in ^{^*N}{^*N}$.
     - 定义序 $<$ 为 $f(F)<g(F)\leftrightarrow \{n|f(n)<g(n)\}\in F$, 称作 $f$ 关于 $F$ 几乎小于 $g$, 记作 $f<_Fg$.
@@ -196,14 +196,14 @@
         - 可以将 $^*N$ 的元素排成一列:
 
         $$
-        0,1,2,...,n,...,\tau ,\tau +1,...
+        0,1,2,\cdots ,n,\cdots ,\tau ,\tau +1,\cdots 
         $$
 
 ### 3.4.4 自然数数列的延伸
 1. 对 $\forall h:N\to N$, 可以扩充为 $h:^*N\to ^*N$, 于是得到以下序列, 称为自然数列的延伸:
 
     $$
-    h(0),h(1),h(2),...,h(n),...,h(\tau ),h(\tau +1),...
+    h(0),h(1),h(2),\cdots ,h(n),\cdots ,h(\tau ),h(\tau +1),\cdots 
     $$
 
 2. 延伸的性质
@@ -216,7 +216,7 @@
 1. 仿照先前的过程可以得到 $^*Z$ 和 $^*Q$, 两者的形象如下
 
     $$
-    \displaylines{^*Z:...,-\tau ,...,-2,-1,0,1,2,...,n,...,\tau ,\tau +1,...\\
+    \displaylines{^*Z:\cdots ,-\tau ,\cdots ,-2,-1,0,1,2,\cdots ,n,\cdots ,\tau ,\tau +1,\cdots \\
     ^*Q=\{\dfrac{q}{p}|p\neq 0,p,q\in ^*Z\}}
     $$
 
@@ -229,6 +229,34 @@
 
 ### 3.5.2 实数的构造
 1. 在 $Q_<$ 中定义等价关系 $x\sim y\leftrightarrow x-y\in I$.
-    - 记 $x\in Q_<$ 所在的等价类为 $[x]=\{y\in Q_<|y\sim x\}$, 等价类构成的集合为 $Q_</\sim =\{[x]|x\in Q_<\}$
-    - 在 $Q_</\sim$ 中定义封闭的运算 $[x]+[y]=[x+y],[x]\cdot [y]=[x\cdot y]$.
+    - 记 $x\in Q_<$ 所在的等价类为 $[x]=\{y\in Q_<|y\sim x\}$, 等价类构成的集合为 $Q_</\sim =\{[x]|x\in Q_<\}$, 记作 $R$.
 2. 运算性质
+    1. $Q_</\sim$ 上的加法: $[x]+[y]=[x+y]$
+        - 交换律: $\forall [x],[y]\in Q_</\sim ([x]+[y]=[y]+[x])$
+        - 结合律: $\forall [x],[y],[z]\in Q_</\sim (([x]+[y])+[z]=[x]+([y]+[z]))$
+        - 零元: $\forall [x]\in Q_</\sim ([x]+[0] =[x])$
+        - 负元: $\forall [x]\in Q_</\sim \exists [-x]\in Q_</\sim ([x]+[-x]=[0]])$.
+    2. $Q_</\sim$ 上的乘法: $[x]\cdot [y]=[x\cdot y]$
+        - 交换律: $\forall [x],[y]\in Q_</\sim ([x]\cdot [y]=[y]\cdot [x])$
+        - 结合律: $\forall [x],[y],[z]\in Q_</\sim (([x]\cdot [y])\cdot [z]=[x]\cdot ([y]\cdot [z]))$
+        - 对加法的分配律: $\forall [x],[y],[z]\in Q_</\sim ([x]\cdot ([y]+[z])=[x]\cdot [y]+[x]\cdot [z])$
+        - 单位元: $\forall [x]\in Q_</\sim ([x]\cdot [1]=[x])$
+        - 逆元: $[x]\neq 0\to (\dfrac{1}{x}\in Q_< \wedge [x]\cdot \left[ \dfrac{1}{x}\right]=[1])$
+    3. $Q_</\sim$ 上的序: 规定 $[x]<[y]\leftrightarrow x<y\wedge x\nsim y$
+        - 反自反性: $\forall [x]\in Q_</\sim ([x]\nless [x])$
+        - 可递性: $\forall [x],[y],[z]\in Q_</\sim (([x]<[y]\wedge [y]<[z])\to [x]<[z])$
+        - 三歧性: $\forall [x],[y]\in Q_</\sim ([x]<[y]\vee [x]=[y]\vee [y]<[x])$
+        - 加法保序性: $\forall [x],[y],[z]\in Q_</\sim ([x]<[y]\to [x]+[z]<[y]+[z])$
+        - 乘法保序性: $\forall [x],[y],[z]\in Q_</\sim ([z]>[0]\to ([x]<[y]\to [x]\cdot [z]<[y]\cdot [z]))$
+3. $\left< Q_{<}/\sim ,+,\cdot ,<,[0],[1],\right>$ 拥有上述性质, 是一个序域.
+    - $Q,Q_<$ 有 Archimedes 性质, 而 $^*Q$ 没有. 但 $Q_<$ 不是域, 而将 $Q_<$ 剖分成的 $R$ 是一个序域.
+    - 定义 $\overline{Q}=\{[r]|r\in Q\}$, 它关于加法, 乘法成了 $R$ 的封闭子集. 再令 $H(r)=[r],H:Q\to \overline{Q}$ 即为所需要的嵌入映射(保运算性, 保序性, 双射). 于是 $Q$ 与 $\overline{Q}$ 同构, $H$ 把 $Q$ 同构嵌入 $R$. $\overline{Q}$ 成为 $Q$, $Q\subset R$.
+    - 令实数集 $R=\left\{ \left. \left[ \dfrac{q}{p}\right] \right| p\neq 0, p,q\in ^*Z, \exists k\in N\left( \left| \dfrac{q}{p}\right| \leqslant k\right) \right\}$.
+        - 新的实数零为无穷小集: $0=[0]=\{x\in Q_<|x\sim 0\}=I$.
+        - Archimedes 性质: $\forall a\in R\exists k\in N(|a|\leqslant k)$.
+4. $R$ 的完备性
+    - $Q$ 在 $R$ 中稠密: $\forall a,b\in R(a<b\to \exists r\in Q(a<r<b))$
+    - 实数的完备性: 单调递增且有上界的实数列必有最小上界. 具有这种性质的 $R$ 称为 完备序域, $Q$ 不具备这种完备性.
+
+        !!! note "证明完备性的引理"
+            在 $R$ 中, 严格单调递增且有上界的有理数列必有最小上界

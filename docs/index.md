@@ -10,7 +10,7 @@
     
     现在进度: 公理集合论
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 35%;">35%</div>
+        <div class="progress-percentage" style="width: 43%;">43%</div>
     </div>
 
 ## 参考文献
