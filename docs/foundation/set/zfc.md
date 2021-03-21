@@ -38,7 +38,11 @@
     - $\forall a\forall b\exists y\forall x(x\in y \leftrightarrow (x=a \vee x=b))$
     - $\exists y(y=\{a,b\})$
 2. 利用无序对公理构造有序对
-    - 定义 $(a,b)=\{\{a\},\{a,b\}\},(a, b, c)=((a, b), c), (a, b, c, d)=((a,b,c),d),\cdots $
+
+    $$
+    \displaylines{(a,b)=\{\{a\},\{a,b\}\},\\(a,b,c)=((a,b), c),\\(a,b,c,d)=((a,b,c),d),\\\cdots}
+    $$
+    
     - 对于有序对 $(a,b),(c,d)$, 有 $(a,b)=(c,d)\to (a=c\wedge b=d)$
 
 ### 1.2.4 并集公理

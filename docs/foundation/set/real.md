@@ -199,6 +199,11 @@
         0,1,2,\cdots ,n,\cdots ,\tau ,\tau +1,\cdots 
         $$
 
+        !!! note "转换原理"
+            现取语言 $\mathcal{L}=\{0,+,\cdot ,f,g,h,\cdots \}$, 使 $^*N=\{f(F)|f\in ^NN\}$ 成为语言 $\mathcal{L}$ 的结构. 令 $\mathcal{L}\cup \{F\}=\{F,0,+,\cdot ,f,g,h,\cdots \}$, $F$ 为算术超滤. 则有
+
+            <p align="center">$\varphi$ 在 $^*N$ 中为真 $\leftrightarrow \{n\in N|\varphi (n)\in F\}$<p>
+
 ### 3.4.4 自然数数列的延伸
 1. 对 $\forall h:N\to N$, 可以扩充为 $h:^*N\to ^*N$, 于是得到以下序列, 称为自然数列的延伸:
 
@@ -256,7 +261,7 @@
         - Archimedes 性质: $\forall a\in R\exists k\in N(|a|\leqslant k)$.
 4. $R$ 的完备性
     - $Q$ 在 $R$ 中稠密: $\forall a,b\in R(a<b\to \exists r\in Q(a<r<b))$
-    - 实数的完备性: 单调递增且有上界的实数列必有最小上界. 具有这种性质的 $R$ 称为 完备序域, $Q$ 不具备这种完备性.
+    - 实数的完备性: 单调递增且有上界的实数列必有最小上界. 具有这种性质的 $R$ 称为完备序域, $Q$ 不具备这种完备性.
 
         !!! note "证明完备性的引理"
             在 $R$ 中, 严格单调递增且有上界的有理数列必有最小上界

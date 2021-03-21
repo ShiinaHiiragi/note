@@ -9,7 +9,7 @@
 1. 定义: 若 $r\subset a\times b$, 则 $r$ 为 a 到 b 上的一个关系, 写作 $r(x,y)$ 或 $xry$. 若 $r\subset \underbrace{a\times a\times \cdots\times a}_n$, 则 $r$ 称作 $a$ 的 $n$ 元关系. 且有
 
     $$
-    \displaylines{(x_1,x_2,\cdots ,x_n)\in R\leftrightarrow R(x_1,x_2,\cdots ,x_n)\\(x_1,x_2,\cdots ,x_n)\notin R\leftrightarrow \neg R(x_1,x_2,\cdots ,x_n)}
+    \displaylines{(x_1,x_2,\cdots ,x_n)\in r\leftrightarrow r(x_1,x_2,\cdots ,x_n)\\(x_1,x_2,\cdots ,x_n)\notin r\leftrightarrow \neg r(x_1,x_2,\cdots ,x_n)}
     $$
 
 2. 相关概念
