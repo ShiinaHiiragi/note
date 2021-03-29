@@ -72,3 +72,4 @@
 1. 单值化原则: 任何集合到集合间的关系都可以被「切削」称函数, 即$\forall r\subset a\times b, Dom(r)=a$, 则 $r$ 可被单值化为 $f:a\to b\wedge f\subset r$
 2. 选代表原则: 任何分类都存在代表集.
 3. 滤子扩张原则: 任何滤子都可以扩张成一个超滤, 集合论研究表明滤子扩张原则比选择公理更可靠.
+4. Zermelo 定理: 任意两集合 $a,b$ 皆可比较: $\forall a\forall b(a\prec b\wedge a\approx b\wedge b\prec a)$.
