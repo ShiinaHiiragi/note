@@ -1,0 +1,2934 @@
+# Full Stack Syntax
+
+[TOC]
+
+## 1 FRONT-END
+
+### 1.1 HTML & CSS
+
+#### 1.1.1 HTML
+
+##### （一）HTML 规则
+
+1. 一个普通的 HTML 页面如下所示，Emmet 缩写 `!` 即可生成。
+
+    ```HTML
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document Name</title>
+    </head>
+    <body>
+      <p> Text </p>
+    </body>
+    </html>
+    ```
+
+3. HTML 中的预留字符必须被替换为字符实体，一些在键盘上找不到的字符也可以使用字符实体来替换。
+
+    | 符号       | 实体名称 | 描述                       |
+    | ---------- | -------- | -------------------------- |
+    | 小于号     | `&lt;`   | 小于号                     |
+    | 大于号     | `&gt;`   | 大于号                     |
+    | 不换行空格 | `&nbsp;` | 相当于按下空格键，可以累加 |
+    | 半角空格   | `&ensp;` | 中文宽度的一半             |
+    | 全角空格   | `&emsp;` | 与中文等宽                 |
+
+4. HTML DOM：文档对象模型
+
+    - 节点：HTML 中所有内容都是节点（包括属性，内容，注释）。一般来说，`document` 的子节点是 `html`，`html` 的子节点是 `head` 和 `body`
+    - `document`：每个载入浏览器的 HTML 文档都会成为 Document 对象。Document 对象是 Window 对象的一部分，可通过 `window.document` 属性对其进行访问。
+
+5. 语义元素
+
+    - 很多网站利用类似 `<div id="nav">`，`<div class="header">`，或 `<div id="footer">` 来定义网站的不同部分，但是 `<div>` 本身没有语义
+
+    - HTML 5 定义了 `<header>`，`<nav>`，`<section>`，`<article>`，`<aside>`，`<figcaption>`，`<figure>`，`<footer>` 来明确网站不同部分的具体意义。
+
+        > 除了 `<figcaption>`，其余均为块级元素。
+
+5. 引入样式表和脚本
+
+    - 内部样式表：使用标签 `<style> </style>`，然后直接写属性和值
+
+    - 外部样式表：使用标签 `<link>`：在 `<head>` 中引入：
+
+        ```html
+        <head>
+        	<link rel="stylesheet" type="text/css" href="style.css">
+        </head>
+        ```
+
+    - 引入脚本：使用标签 `<script> </script>`
+
+        ```HTML
+        <head>
+        	<script> console.log(window.document.chileNodes); </script>
+          <script src="script.js"></script>
+        </head>
+        ```
+
+##### （二）Emmet 缩写
+
+1. 属性与内容规定
+
+    - `#` 规定 id，`.` 规定 class，`[attr=cont]` 规定特定的属性， `{cont}` 规定内容
+
+    - 例如，输入 `div.ui.grid#top[title=std]{Text}`，得到如下结果
+
+        ```HTML
+        <div class="ui grid" id="top" title="std">Text</div>
+        ```
+
+2. 元素关系
+
+    - `sup>sub` 表示 `sub` 是 `sup` 的子元素；`sup+sub` 表示 `sup` 和 `sub` 是同级元；`sub^sup` 表示 `sup` 是 `sub` 的上级元素
+
+    - 例如，输入 `ul.menu>li*4[a=#]{Text}+div.nil`，得到如下结果
+
+        ```HTML
+        <ul class="menu">
+          <li a="#">Text</li>
+          <li a="#">Text</li>
+          <li a="#">Text</li>
+          <li a="#">Text</li>
+          <div class="nil"></div>
+        </ul>
+        ```
+
+#### 1.1.2 CSS
+
+##### （一）CSS 规则
+
+1. 盒子模型：CSS 盒模型本质上是一个盒子，封装周围的 HTML 元素。可以在浏览器控制台的 Style 标签页的最下方看到这个模型。
+
+    - Margin（外边距）：边框外的区域，外边距是透明的
+
+    - Border（边框）：围绕在内边距和内容外的边框
+
+    - Padding（内边距）：清除内容周围的区域，内边距是透明的
+
+    - Content（内容）：盒子的内容，显示文本和图像
+
+        > Outline 是在 Border 外围，可以规定其属性。Outline 不占据盒子模型的空间。
+
+2. 单位：下表列出了部分长度单位，其中，只有 `px` 是绝对单位。一般而言，用 `em` 和 `rem` 单元可用于创建良好的可扩展布局
+
+    | 单位   | 描述                     |
+    | ------ | ------------------------ |
+    | `px`   | 像素                     |
+    | `em`   | 相对于元素的字体大小     |
+    | `rem`  | 相对于根元素的字体大小   |
+    | `vw`   | 相对于视口宽度的 1%      |
+    | `vh`   | 相对于视口高度的 1%      |
+    | `vmin` | 相对于视口较小尺寸的 1％ |
+    | `vmax` | 相对于视口较大尺寸的 1％ |
+    | `%`    | 相对于父元素             |
+
+3. 私有前缀：加在某些属性前，暗示该 CSS 属性或规则尚未成为 W3C 标准的一部分
+    - `-webkit`：Chrome、Safari
+    - `-moz`：Moziila 的 Firefox
+    - `-ms`： Microsoft 的 Internet Explorer
+    - `-o`：Opera
+4. LESS / SCSS / SASS：都是兼容 CSS 的预处理器
+
+##### （二）选择器
+
+- 部分选择器的参考手册
+
+    | 选择器              | 示例            | 例子描述                                                  |
+    | ------------------- | --------------- | --------------------------------------------------------- |
+    | .`class`            | `.intro`        | 选择 `class="intro"` 的所有元素。                         |
+    | .`class1.class2`    | `.name1.name2`  | 选择 `class` 属性中同时有 `name1` 和 `name2` 的所有元素。 |
+    | `.class1 .class2`   | `.name1 .name2` | 选择作为类名 `name1` 元素后代的所有类名 `name2` 元素。    |
+    | `#id`               | `#firstname`    | 选择 `id="firstname"` 的元素。                            |
+    | `*`                 | `*`             | 选择所有元素。                                            |
+    | `element`           | `p`             | 选择所有 `<p>` 元素。                                     |
+    | `element.class`     | `p.intro`       | 选择 `class="intro"` 的所有 `<p>`  元素。                 |
+    | `element,element`   | `div, p`        | 选择所有 `<div>` 元素和所有 `<p>` 元素。                  |
+    | `element element`   | `div p`         | 选择 `<div>` 元素内的所有 `<p>` 元素。                    |
+    | `element>element`   | `div > p`       | 选择父元素是 `<div>` 的所有 `<p>` 元素。                  |
+    | `element+element`   | `div + p`       | 选择紧跟 `<div>` 元素的首个 `<p>` 元素。                  |
+    | `element1~element2` | `p ~ ul`        | 选择前面有 `<p>` 元素的每个 `<ul>` 元素。                 |
+    | `[attribute]`       | `[target]`      | 选择带有 `target` 属性的所有元素。                        |
+    | `:link`    | `a:link`    | 选择所有未访问链接     |
+    | `:visited` | `a:visited` | 选择所有访问过的链接   |
+    | `:active`  | `a:active`  | 选择正在活动链接       |
+    | `:hover`   | `a:hover`   | 把鼠标放在链接上的状态 |
+
+##### （三）文档流布局
+
+1. 元素分类与文档流（Normal Flow）
+
+    - HTML 的标签分为块级元素和内联元素。可以通过样式表的 `display` 属性修改 `block` 和 `inline` 来改变元素类别
+        - 块级元素（如 `<div>`）：显示时通常以新行开始
+        - 内联元素（如 `<span>`）：显示时通常不以新行开始
+
+    - 文档流是文档中可显示对象在排列时所占用的位置
+
+2. 脱离文档流：`float`，`absolute` 与 `fixed` 会脱离文档流
+
+    - `position` 属性
+
+        - `static`：HTML 元素的默认值，即没有定位，遵循正常的文档流对象
+
+        - `relative`：相对定位元素的定位是相对其正常位置。移动相对定位元素，其原本所占的空间不会改变。
+
+        - `absolute`：绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于 `<html>`。注意：绝对定位元素会被从正常流中删除，并且能够交叠元素
+
+        - `fixed`：元素的位置相对于浏览器窗口是固定位置。注意：Fixed 定位使元素的位置与文档流无关，因此不占据空间
+
+            > 当元素的定位与文档流无关时，可以规定 `z-index` 属性
+        
+    - `float` 属性：使元素向左或向右移动，其周围的元素也会重新排列。
+    
+        - 一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
+        - 设置为 `none` 时即为不浮动，元素不会脱离文档流。
+    
+3. 文字流（Text Flow）：文字流与文档流有区别，设置 `float` 属性不会使文字脱离文字流，但是 `absolute` 定位会使文字也脱离文字流。
+
+##### （四）弹性布局
+
+1. 通过 `display: flex | inline-flex;` 指定为弹性布局容器。设为 Flex 布局以后，子元素的`float`、`clear` 和 `vertical-align` 属性将失效。容器中有一条主轴和与之垂直的交叉轴
+2. 容器属性
+    - `flex-direction: row | row-reverse | column | column-reverse;`：主轴的方向
+    - `flex-wrap: nowrap | wrap | wrap-reverse;`：主轴是否换行
+    - `flex-flow: <flex-direction> || <flex-wrap>;` 方向和换行的总和
+    - `justify-content: flex-start | flex-end | center | space-between | space-around;`：在主轴上的对齐方式
+    - `align-items: flex-start | flex-end | center | baseline | stretch;`：在交叉轴的对齐方式
+    - `align-content: flex-start | flex-end | center | space-between | space-around | stretch;`：定义多根轴线的对齐方式。如果项目只有一根轴线，该属性不起作用
+3. 项目属性
+    - `order: <integer>;`：定义项目的排列顺序
+    - `flex-grow: <number>;`：定义项目的放大比例，默认为 `0`，即如果存在剩余空间，也不放大
+    - `flex-shrink: <number>;`：定义项目的缩小比例，默认为 `1`，即如果空间不足，该项目将缩小
+    - `flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`：其中，`auto` 为 `1 1 auto`，`none` 为 `0 0 auto`。
+    - `align-self: auto | flex-start | flex-end | center | baseline | stretch;`：允许单个项目有与其他项目不一样的对齐方式。默认值为 `auto`，表示继承父元素的 `align-items` 属性
+
+### 1.2 JavaScript
+
+#### 1.2.1 ECMAScript
+
+##### （一）变量与类型系统
+
+1. 数据类型
+
+    - 基本数据类型：`number, bigint, string, boolean, null, undefined, symbol`
+
+    - 引用数据类型：`object`
+
+        > 使用 `typeof x` 或 `typeof(x)` 可以输出字符串的类型
+        >
+        > - `typeof null` 的结果是 `object` 是 `typeof` 的行为上的错误。
+        > - `typeof alert` 的结果是 `function` 是来自于 JavaScript 语言早期的问题。在 JavaScript 中没有 `function` 类型，函数隶属于 `object` 类型。
+
+2. 类型转换规则
+
+    - 其他类型转换为 Number 类型：
+
+        | 类型        | 值                                                           |
+        | ----------- | ------------------------------------------------------------ |
+        | `true`      | `1`                                                          |
+        | `false`     | `0`                                                          |
+        | `null`      | `0`                                                          |
+        | `undefined` | `NaN`                                                        |
+        | string      | 首先去除首尾空格，考察剩余部分。如果是空串转化成 `0`， 否则转化成对应数字或者 `NaN` |
+
+    - 其他类型转化为布尔值：`""`，`null`，`undefined`，`0`， `NaN` 转化为 `false`；其他值转化为 `true`（包括所有对象）
+
+3. 隐式类型转换
+
+    - 运算表达式，字符串会被转化为数字参与运算；但是对于加法，JavaScript 优先转化数字为字符串做拼接运算
+
+    - 对于比较运算，如果是相同类型，则直接比较（比如字符串按照字典序比较）；如果是不同类型，转化为数字后比较
+
+        > 对于两个对象的相等比较，只有为相同引用时相等；如果只有一边为对象，该对象会被转换为原始值后再比较
+        >
+        > `===` 和 `!==` 是类型安全的严格相等运算符
+        >
+        > 使用相等 `==` 比较时， `null` 和 `undefined` 只和自己与对方相等；使用严格相等时，两者不等；使用大于等其他运算符时，JavaScript 转化会将之为数字再比较
+
+    - `+` 和 `!!` 可以将变量转化为数字类型和布尔类型
+
+    - `&&` ， `||` 和 `??` 事实上不会做类型转换，`&&` 返回第一个转换成布尔值后为 `false` 的原始表达式；`||` 返回第一个转换成布尔值后为 `true` 的原始表达式；`??` 返回第一个不为 `null` 或 `undefined` 的表达式。对于上述运算符，如果都不存在这样的表达式，则返回最后一个原始表达式的值
+
+        > 依照上述规则，`console.log(console.log(1) && console.log(2));` 会先输出 `1`，然后输出 `undefined`
+        >
+        > 出于安全原因，JavaScript 禁止将 `??` 运算符与 `&&` 和 `||` 运算符一起使用，除非使用括号明确指定了优先级。
+
+4. 对象类型转换
+
+    - 调用 `obj[Symbol.toPrimitive](hint)`：带有 Symbol 键 `Symbol.toPrimitive` 的方法（如果这个方法存在）
+
+        ```javascript
+        let alice = {
+          name: "Alice",
+          age: 14,
+          // CANNOT be (hint) => { ... }
+          [Symbol.toPrimitive]: function(hint) {
+            console.log(hint);
+            return hint == "string" ? this.name : this.age;
+          }
+        };
+        
+        console.log(String(alice)); // "string"  -> "Alice"
+        console.log(+alice);        // "number"  -> 14
+        console.log(alice + 1);     // "default" -> 15
+        ```
+
+    - 否则，如果 `hint` 是 `"string"`：先尝试 `obj.toString()` ，再尝试 `obj.valueOf()`；如果 `hint` 是 `"number"` 或 `"default"` ：先尝试 `obj.valueOf()` ，再尝试 `obj.toString()`。
+
+    - 默认情况下，普通对象具有 `toString` 和 `valueOf` 方法：`toString` 方法返回一个字符串 `"[object Object]"`，`valueOf` 方法返回对象自身
+
+        ```javascript
+        let alice = {
+          name: "Alice",
+          age: 14,
+          [Symbol.toPrimitive]() { return this.name; }
+        };
+        
+        console.log(alice.toString());           // "[object Object]"
+        console.log(alice.valueOf() === alice);  // true
+        ```
+
+        > 在没有 `Symbol.toPrimitive` 的情况下，按照 `hint` 的种类按顺序考察 `toString` 和 `valueOf`，如果两者的返回值都不是原始值则会报错
+        >
+        > - 如果定义了新的 `toString` 和 `valueOf`，那么默认的两个方法会被覆盖（因为在 Object 原型中）
+        >
+        > - 定义的两个方法必须返回一个原始值，如果返回了一个对象则会被忽略
+        >
+        >     ```javascript
+        >     const obj = {
+        >       toString: () => ({ }),
+        >       valueOf: () => 0
+        >     };
+        >     console.log(String(obj)); // 0
+        >     obj.valueOf = () => ({});
+        >     console.log(String(obj)); // ERROR
+        >     ```
+
+5. 变量作用域
+
+    - `let` 作用域为语句所在的代码块内，不允许在块内重复声明，不存在变量提升；
+
+        - 可以看出，`let` 的行为与 C 中的基本一致，但是 `let` 有暂存死区的概念
+
+            ```javascript
+            let temp = 0;
+            console.log(temp);    // 2
+            if (true)
+            {
+              // temporary dead zone here
+              console.log(temp);  // Reference Error
+              let temp = 1;
+              console.log(temp);  // 1
+            }
+            console.log(temp);    // 2
+            ```
+
+        - 这个概念的出现与作用域链有关，如果在当前作用域找不到变量（`var`， `let` 或 `const`），就会到上级作用域找同名变量；但是使用 `let` 时，由于作用域内存在该变量但是还没有被定义，所以就会出现一段死区
+
+    - `var` 作用域为语句所在的函数内，允许在块内重复声明，存在变量提升
+
+        - 在函数内的变量只能在函数内使用，在函数外定义的变量（比如在 `if` 语句内）可以全局使用
+        - 按照 `var temp; temp = 0;` 方式定义的变量， `var temp;` 会被提升到顶端；按照 `var temp = 0;` 方式定义的变量，顶端会有一个  `var temp;` ，直到 `temp` 被赋值为 `0` 之前，`temp` 的值一直是 `undefined`
+
+        > 在非严格模式下，未经过声明而直接赋值的变量被视作是顶级对象的一个属性；严格模式下，此种做法会报错
+        >
+        > 在浏览器下，利用 `var` 声明的变量成为 `window` 的一个属性
+
+##### （二）控制语句
+
+1. 在循环语句前定义标签，可以使用 `break <tag>` 跳出特定的循环
+
+    ```javascript
+    const targetSum = 13;
+    let partFirst = [1, 3, 5, 7, 9], partSecond = [2, 4, 6, 8, 10];
+    outerLoop: for (let index = 0; index < partFirst.length; index += 1)
+      for (let subIndex = 0; subIndex < partSecond.length; subIndex += 1)
+        if (targetSum === partFirst[index] + partSecond[subIndex]) {
+          console.log(index, subIndex);
+          break outerLoop;
+        }
+    ```
+
+2. `switch` 语句至少有一个 `case`， `default` 可选；
+
+    - `case` 充当 `switch` 入口的功能，`break` 会跳出 `switch`，否则会继续执行
+
+    - `switch` 和 `case` 可以是任何表达式，采用严格相等的比较方式
+
+##### （三）函数
+
+1. 定义：形参列表表明这个函数最多可以接受多少个参数，实际调用传入的参数个数也可以不同。多余的实参会被忽略，不足的实参视作 `undefined`
+
+    - 参数列表用 `=` 规定实参为 `undefined` 时的默认值，用 `...args` 收集多余的参数
+
+        > 在非箭头函数中， `argument` 数组收集了所有的参数
+
+    - 函数表达式 `const f = function() { };` 与函数声明等效，但是函数表达式不会变量提升
+
+2. 闭包：在 JavaScript 中，每个运行的函数，代码块 `{...}` 以及整个脚本，都有一个被称为词法环境的内部隐藏的关联对象。词法环境对象由「环境记录」和「对外部词法环境的引用」两部分组成
+
+    - 当脚本开始运行，词法环境预先填充了所有声明的变量。一个变量是环境记录这个特殊的内部对象的一个属性，在 `let` 声明前，该变量处于「未初始化」状态
+    - 当代码要访问一个变量时，首先会搜索内部词法环境，然后搜索外部环境，然后搜索更外部的环境，以此类推，直到全局词法环境
+    - 所有的函数都有 `[[Environment]]` 隐藏属性，该属性保存了对创建该函数的词法环境的引用。注意：词法环境仅在可达时才会被保留在内存中
+
+3. 函数对象
+
+    - 属性：`name` 和 `length`（参数个数，不包括 `...rest`）
+    - 可以利用 `new Function` 创建函数，但是此时创建的新函数的 `[[Environment]]` 指向全局环境
+
+##### （四）对象
+
+1. 对象的属性值为字符串或 Symbol，可以是任何保留字；其他类型会转化为字符串
+
+    - 用 `name` 简写 `name: name`，用 `[]` 包围变量
+
+        ```javascript
+        const name = "Alice";
+        const id = Symbol("id");
+        const alice = {
+          [id]: 1,
+          name,
+          age: 14
+        };
+        ```
+
+    - 用 `in` 测试属性是否存在，用 `delete` 删除一个键值对
+
+        ```javascript
+        const alice = {
+          name: "Alice",
+          age: undefined
+        };
+        console.log("age" in alice)    // true
+        console.log("salary" in alice) // false
+        ```
+
+    - 在对象内部，具有整数属性的键会升序排列，其他键会按照添加顺序排列
+
+2. `new`：当构造函数被使用 `new` 执行时，执行以下步骤
+
+    - 一个新的空对象被创建并分配给 `this`，执行函数体
+
+    - 返回 `this` 的值（如果显示地写了 `return` 并返回了一个对象，那么返回这个对象，否则都返回 `this`）
+
+        ```javascript
+        function Person(name, age) {
+           if (!new.target) {
+            return new Person(name, age);
+          }
+          this.name = name;
+          this.age = age;
+        }
+        
+        const alice = new Person("Alice", 14);
+        ```
+
+        > `new.target` 可以检测该函数是否是被通过 `new` 调用的。如果构造函数没有参数，可以省略 `new` 后的括号
+
+3. `this`：箭头函数里没有 `this`，如果访问 `this`，则会从外部获取
+
+    - 在对象中定义的方法中，`this` 指向这个对象（即 `obj.met()` 的 `obj`）
+
+    - 在全局函数中，`this` 指向全局对象 `window`（`use strict` 模式下为 `undefined`）
+
+    - 在函数外，`this` 指向全局对象
+
+    - 在构造函数中，`this` 指向新建对象
+
+        > 将一个方法以函数的方式调用出来，会导致 `this` 指向改变：
+        >
+        > ```javascript
+        > let alice = {
+        >  name: "Alice",
+        >  age: 14,
+        >  printThis: function() { console.log(this); }
+        > };
+        > 
+        > const globalFunction = alice.printThis;
+        > const bindFunction = globalFunction.bind(alice);
+        > alice.printThis();          // alice
+        > globalFunction();           // globalThis
+        > globalFunction.call(alice); // alice
+        > bindFunction();             // alice
+        > ```
+        >
+        > 注意，如果 `printThis` 是箭头函数，那么 `alice.printThis()` 也输出 `globalThis`
+
+4. 可选链：用 `?.`，`?.[]`，`?.()` 调用可能不存在的键值对或者函数。
+
+    - `obj?.prop`：如果 `obj` 存在则返回 `obj.prop`，否则返回 `undefined`
+
+    - `obj.method?.()`：如果 `obj.method` 存在则调用 `obj.method()`，否则返回 `undefined`
+
+        ```javascript
+        const user = null;
+        let counter = 0;
+        
+        user?.func(counter++);
+        console.log(counter)   // 0
+        ```
+
+    - 可以利用 `?.` 安全地读取或者删除，但不能写入，即不能用在赋值语句的左侧
+
+5. 包装类：使原始类型可以调用 `String`、`Number`、`Boolean` 和 `Symbol` 的函数。在调用 `str.toUpperCase()` 时，JavaScript 引擎实现了以下步骤
+
+    - 创建一个包含字符串字面值的特殊对象，并且具有有用的方法如 `toUpperCase()`
+    - 该方法运行并返回一个新的字符串，随后特殊对象被销毁，留下原始值 `str`
+
+6. 全局对象：包含应该在任何位置都可见的变量，比如内建方法或环境特定（例：`window.innerHeight`）
+
+    - 全局对象称作 `globalThis`，浏览器中称作 `window`，Node.js 中称作 `global`
+
+7. 解构赋值：`property: variable`，用 `=` 设置默认值，`...rest` 表示剩余值赋给 `rest`。解构赋值的位置可以被写到函数形参列表
+
+    ```javascript
+    let defaultTitle = () => "null";
+    let options = {
+      title: "Menu",
+      width: 100,
+      height: 200
+    };
+    
+    let {width: w = 100, height: h, title = defaultTitle()} = options;
+    console.log(title, w, h);
+    ```
+
+    > 注意：问题在于 JavaScript 把主代码流（即不在其他表达式中）的 `{...}` 当做一个代码块，所以需要用括号将已赋值的变量括起来
+    >
+    > ```javascript
+    > let title, width, height;
+    > ({title, width, height} = {title: "Menu", width: 200, height: 100});
+    > ```
+
+8. 对象的属性和标志
+
+    - 对象的属性除了 `value` 外，还有三个
+
+        - `writable`：值是否可以被修改；`enumerable`：是否在循环中列出；`configurable`：是否可以被删除和修改。一旦被设置为不可配置，就不能被取消
+        - 可以用 `Object.getOwnPropertyDescriptor` 获取标志状态，用 `Object.defineProperty` 修改标志
+
+    - 访问器属性：`get` 与 `set` 分别用于访问某一属性，即用属性的方式调用某一函数
+
+        ```javascript
+        let alice = {
+          name: "Alice",
+          surname: "Margatroid",
+          age: 14,
+          get fullName() {
+            return `${this.name} ${this.surname}`
+          },
+          set fullName(param) {
+            [this.name, this.surname] = param.split(" ");
+          }
+        };
+        
+        alice.fullName="Alice Ignace"
+        ```
+
+9. Prototype：原型，相当于超类。原型引用不能成闭环，且只能为对象或者 `null`
+
+    - `__proto__` 是 `[[Prototype]]` 的 `getter` 和 `setter`，现代规范建议使用函数 `Object.getPrototypeOf` 和 `Object.setPrototypeOf` 来取代 `__proto__`
+
+    - 构造函数 `Func` 的 `prototype` 属性是一个用 `new` 创建新对象时赋值给 `[[Prototype]]` 的变量，默认为 `{ constructor: Func }`
+
+    - `Array.prototype`，`Number.prototype`，`Funtion.prototype` 的原型都是 `Object.protptype`，而 `Object.prototype` 的原型为 `null`，即为顶端
+
+        > 利用 `Array.prototype.func = function() { ... }` 的方法，可以向这个类添加方法，一般用于 Polyfilling
+        >
+        > `Object`，`Function` 和 `Function.prototype` 的代码不是 JavaScript 实现的（Native Code），所以「Object 是一个 Function 的实例，而 Object 作为 Function 实例同时也是一个 Object 实例」这种从属关系是 `instanceof` 运算的结果，不代表实际构建中逻辑关系的绝对次序
+        >
+        > <img src="E:\Project\Note\assets\proto.jpg" style="zoom: 33%;" />
+
+10. `class` 关键字：`class` 得到一个函数，其中声明的函数在 `prototype` 中
+
+    - `class` 定义的类型与构造函数有一定区别：
+        - 通过 `class` 创建的函数具有特殊的内部属性标记 `[[IsClassConstructor]]: true`
+        - 类定义将 `"prototype"` 中的所有方法的 `enumerable` 标志设置为 `false`，所以类方法不可枚举
+        - 类构造中的所有代码都将自动进入严格模式
+
+##### （五）异步
+
+1. 单线程异步模型
+
+    - 同步、异步；阻塞、非阻塞
+        - 阻塞与非阻塞一般都是同步的。阻塞同步在调用函数后等待返回值，非阻塞同步在调用函数后立即返回，然后用其他方法检测是否有返回值（比如轮询）
+        - 异步在调用函数后立即返回，但是返回值交由回调函数执行。主进程**不再理会**函数的返回值情况，这是与同步的根本区别
+    - JavaScript 的单线程指 JavaScript 引擎线程，除此之外还有四个线程：事件触发线程，定时器触发线程，异步 HTTP 请求线程，GUI 渲染线程
+    - 事件循环与消息队列
+        - 消息队列：异步函数在线程池中执行完毕后，将消息压入队列
+        - 事件循环：执行栈不会空时，引擎线程正在工作，事件循环被暂停
+            - 当执行栈为空时，JavaScript 引擎线程空闲。事件触发线程会从消息队列中取出一个任务（异步函数的回调函数）放入执行栈中执行
+            - 执行完毕后执行栈再次为空。事件触发线程会重复上一步操作，继续从消息队列中取出一个任务。如果消息队列中没有消息，则等待直到队列中有消息
+
+2. Promise: `new Promise(executor)`
+
+    - `executor` 是一个函数，接受两个函数参数，第一个是成功运行的回调，第二个是出错时的回调；·这两个函数最多接受一个参数；当 `new Promise` 被创建，`executor` 会自动运行
+
+    - 由 `new Promise` 构造器返回的 `Promise` 对象具有以下内部属性：
+
+        - `state`：最初是 `"pending"`，然后在 `resolve` 被调用时变为 `"fulfilled"`，或者在 `reject` 被调用时变为 `"rejected"`
+        - `result`：最初是 `undefined`，然后在 `resolve(value)` 被调用时变为 `value`，或者在 `reject(error)` 被调用时变为 `error`
+        - 一旦调用 `resolve` 或 `reject`，这个 `promise` 被称为 `settled`。而且会忽略后面的 `resolve` 或 `reject`
+
+    - 可以将函数 Promise 化，在 Node.js 中，有一个内建的 promisify 函数 `util.promisify`
+
+        ```javascript
+        const promisify = (asyncFunction) => function (...args) {
+          return new Promise((resolve, reject) => {
+            args.push((err, ...res) => err ? reject(err) : resolve(...res));
+            asyncFunction.call(this, ...args);
+          });
+        };
+        
+        // in Node.js
+        const fs = require("fs");
+        promisify(fs.readFile)("fileName").then(console.log, console.log)
+        ```
+
+3. Promise 的消费者
+
+    - `then/catch`：接受 `resolve` 函数的参数，相当于 `Promise` 的订阅列表。此外，`then` 中函数的第二个参数或者 `catch` 中函数的参数接收 `reject` 函数的参数
+
+        ```javascript
+        let promise = new Promise((resolve) => {
+          setTimeout(resolve, 1000, Math.random());
+        })
+        
+        promise.then(console.log);
+        promise.then((param) => console.log(param * 2));
+        ```
+
+        > 注意，如果 Promise 中的函数已经执行完毕，再有新的 `promise.then` 订阅，由于已经执行完并得到结果，所以会立即执行订阅的内容
+
+4. Promise 链
+
+    - 在 `then/catch` 中的返回值会成为下一个 `then` 的结果，这说明这个句柄是忽略异步函数的执行结果的，如果有错误，可以用 `throw` 控制
+
+    - 在  `then/catch`  中返回 Promise 可以进一步控制异步函数执行，而且控制错误处理。返回一个带 `then` 的 `Promise` 会将返回值作为下一个 `then` 的参数
+
+    - 抛出错误或者调用 `reject` 后，会向下找第一个 `catch`，然后继续执行下面的链。写在 `then` 的第二个函数相当于紧接在这个 `then` 后面的 `catch` 函数
+
+    - `finally`：无论执行是否成功都会执行。 `finally` 不接受参数，只会把 `Promise` 的参数传给后面的调用链
+
+        ```javascript
+        // try -1 ~ 2 for initNum
+        const initNum = 0;
+        const errorString = (err) => {
+          if (err instanceof Error) return `${err}`;
+          else return `Error: ${err}`;
+        }
+        
+        new Promise((resolve, reject) => {
+          if (initNum > 0) resolve(initNum * 2);
+          else setTimeout(reject, 1000, initNum < 0);
+        }).then((num) => {
+          console.log(`[1] ${num}`);
+          return new Promise((resolve, reject) => {
+            setTimeout(() => {
+              if (num === 2) reject(true);
+              else resolve(num * 2);
+            }, 1000);
+          })
+        }).finally(() => {
+          console.log(`[2] Finally`)
+        }).catch((err) => {
+          console.log(`[3] ${errorString(err)}`)
+          if (err) throw Error(-1);
+          else return Promise.resolve().then(() => 0);
+        }).then((num) => {
+          console.log(`[4] ${num}`);
+          return new Promise((resolve) => {
+            if (num) resolve(num * 2);
+          })
+        }, (err) => {
+          console.log(`[5] ${err}`);
+          return err;
+        }).then((info) => {
+          console.log(`[6] from error = ${info instanceof Error}`)
+        });
+        ```
+
+5. Promise 函数
+
+    - `Promise.all([...promises...])`：接受一个 `promise` 数组作为参数，返回一个新的 `promise`
+        - 如果其中一个 `promise` 被 `reject`，`Promise.all` 就会立即被 `reject`
+        - `Promise.all` 可以接受 `promise` 的可迭代对象，如果这些对象中的任何一个不是 `promise`，那么它将被按原样传递给结果数组
+    - `Promise.allSettled(iterable)`：等待所有 `promise` 达到 `settled` 状态，返回每个 `promise` 的状态和参数值
+    - `Promise.race(iterable)`：与 `Promise.all` 类似，但只等待第一个 `settled` 的 `promise` 并获取其结果（或 `error`）
+    - `Promise.resolve(value)`：用结果 `value` 创建一个 `resolved` 的 `promise`。相当于 `new Promise(resolve => resolve(value))`
+
+##### （六）类型实例
+
+1. 数字类型：
+
+    - 调用 number 的方法需要带括号或者多加一个点
+
+        ```javascript
+        console.log(123456..toString(36)) // 2n9c
+        ```
+
+    - `NaN` 不与任何值相等，包括它自己。需要用 `isNaN` 或者 `Object.is(left, right)` 判定；后者除了可以判定 `NaN` 与 `NaN` 相同，以及 `0` 和 `-0` 不同外，与 `===` 没有其他区别
+
+2. 字符串类型：字符串的内部格式始终是 UTF-16，不依赖于页面编码
+
+    - 转义字符：
+
+        | 字符                                    | 描述                                                         |
+        | :-------------------------------------- | :----------------------------------------------------------- |
+        | `\b`, `\f`, `\v`                        | 退格，换页，垂直标签 —— 为了兼容性，现在已经不使用了。       |
+        | `\xXX`                                  | 具有给定十六进制 Unicode `XX` 的 Unicode 字符，例如 `'\x7A'` 和 `'z'` 相同。 |
+        | `\uXXXX`                                | 以 UTF-16 编码的十六进制代码 `XXXX` 的 unicode 字符，例如 `\u00A9` 是版权符号 `©` 的 unicode。它必须正好是 4 个十六进制数字。 |
+        | `\u{X…XXXXXX}`（1 到 6 个十六进制字符） | 具有给定 UTF-32 编码的 unicode 符号。一些罕见的字符用两个 unicode 符号编码，占用 4 个字节。这样我们就可以插入长代码了。 |
+
+    - 代理对：所有常用的字符都是一个 2 字节的代码，稀有的符号被称为「代理对」的一对 2 字节的符号编码。如果一个字符的代码在 `0xd800 ~ 0xdbff` 的范围内，那么它是代理对的第一部分；第二部分必须在 `0xdc00 ~ 0xdfff` 的范围中，这些范围是按照标准专门为代理对保留的
+
+3. 符号类型：使用带有可选描述 `name` 的 `Symbol()` 调用创建的对象
+
+    - 对 Symbol 的描述相同也不是同一个对象
+
+        ```javascript
+        const idFirst = Symbol("id");
+        const idSecond = Symbol("id");
+        
+        console.log(idFirst == idSecond);  // false
+        ```
+
+        > 对象中的 Symbol 属性不参与 `for` 循环和 `Object.keys` 的结果；但是 `Object.assign` 会复制 Symbol 属性（且是同一个引用），`Object.getOwnPropertySymbols` 可以获取所有 Symbol
+        >
+        > Symbol 不支持字符串的隐式类型转换
+
+    - **全局 Symbol 注册表**：保证访问相同描述的 Symbol 时，返回相同的引用。注册表内的 Symbol 称为全局 Symbol
+
+        - 使用 `Symbol.for(key)` 在注册表中读取（不存在则创建）Symbol
+
+        - 使用 `Symbol.keyFor(sym)` 通过全局 Symbol 返回一个名字；对于局部 Symbol，`keyFor` 返回 `undefined`
+
+            ```javascript
+            const globalSymbol = Symbol.for("name");
+            const localSymbol = Symbol("name");
+            
+            console.log(Symbol.keyFor(globalSymbol)); // name
+            console.log(Symbol.keyFor(localSymbol));  // undefined
+            console.log(localSymbol.description);     // name
+            ```
+
+    - **系统 Symbol**：可以使用它们来改变一些内置行为
+
+4. 数组类型：数组是一种特殊的对象，将数字用作键
+
+    - JavaScript 引擎针对数组做了许多优化，例如尝试把元素存储在连续的内存区域。
+
+        - 但如果像使用常规对象一样使用数组（添加一个非数字的属性，制造空洞或倒序填充数组），那么对应的优化就会被关闭
+
+            ```javascript
+            let arr = [];
+            arr[1048576] = 0;
+            arr.name = "Alice";
+            ```
+
+        - 此外，`for ... of` 针对作为数组的对象遍历做了优化，而用遍历普通对象的 `for ... in` 遍历数组，则速度较慢，而且会遍历数组的所有属性（比如 `length`）
+
+    - `length` 是属性，手动增加 `length` 值不会发生任何事，减少 `length` 相当于截断数组，特别地，将 `length` 设为 `0` 相当于清空数组
+
+    - 数组没有 `Symbol.toPrimitive`，也没有 `valueOf`，`toString` 转换为逗号分隔的元素列表
+
+        ```javascript
+        alert( [] + 1 );        // "1"
+        console.log([1,2] + 1); // "1,21"
+        ```
+
+5. 可迭代对象：可以被定制为可在 `for..of` 循环中使用的对象
+
+    - 为对象添加一个名为 `Symbol.iterator` 的方法，当 `for..of` 循环启动时，它会调用这个方法，返回一个迭代器对象
+
+    - 迭代器对象有 `next` 方法，当 `for..of` 循环希望取得下一个数值，它就调用这个对象的 `next()` 方法。方法返回的结果的格式必须是 `{ done: Boolean, value: any }`，当 `done=true` 时，表示迭代结束，否则 `value` 是下一个值
+
+        ```javascript
+        function Range(from, to) {
+          this.from = from;
+          this.to = to;
+          this[Symbol.iterator] = function() {
+            return {
+              current: this.from,
+              last: this.to,
+              next() {
+                if (this.current < this.last) {
+                  return { done: false, value: this.current++ };
+                } else {
+                  return { done: true };
+                }
+              }
+            };
+          }
+        }
+        
+        for (let index of new Range(0, 5)) {
+          // index is in [0, 5)
+          console.log(index);
+        }
+        ```
+
+    - 利用 `Array.from` 可将可迭代对象或类数组（有索引和 `length` 属性的对象）转化为数组：
+
+        ```javascript
+        const arrayLike = {
+          0: "First",
+          1: "Second",
+          2: "Third",
+          length: 3
+        }
+        const arrIter = Array.from(new Range(0, 5), item => item * item);
+        const arrLike = Array.from(arrayLike);
+        
+        console.log(arrIter);  // [0, 1, 4, 9, 16]
+        console.log(arrLike);  // ['First', 'Second', 'Third']
+        ```
+
+    - 任何可迭代对象可以被解构赋值。多余的值为 undefined，默认使用 `=`
+
+        ```javascript
+        let bit = { };
+        [bit.a, bit.b, bit.c, bit.d, bit.e] = new Range(0, 5);
+        const [a, b, ...r] = new Range(0, 5);
+        
+        console.log(bit);      // { a: 0, b: 1, c: 2, d: 3, e: 4 }
+        console.log(a, b, r);  // 0 1 [ 2, 3, 4 ]
+        ```
+
+6. 映射对象区别于对象，`Map` 对象的「键」可以是任何值；方括号访问的是 `Map` 对象的平凡属性
+
+    - 弱映射的「键」必须是对象，如果在 `WeakMap` 中使用一个对象作为键，并且没有其他对这个对象的引用，那么该对象将会被从内存（和 `Map`）中自动清除。同理，弱集合类似于弱映射
+
+##### （七）正则表达式
+
+1. 定义
+
+    - `new RegExp("pattern", "flags")`
+    - `regexp = /pattern/g`，修饰符有五个：
+        - `i`：搜索时不区分大小写
+        - `g`：搜索时查找所有的匹配项，而不只是第一个
+        - `m`：多行模式，仅对 `^` 和 `$` 有效
+        - `u`：开启完整的 Unicode 支持（修正对于代理对的处理）并支持 `\p{...}`
+        - `y`：粘滞模式
+
+2. 与正则表达式有关的方法
+
+    - `str.search`：查找模式并返回匹配项在字符串中的位置，没有找到返回 `-1`
+
+    - `str.match`：查找模式并返回找到的结果，`g` 修饰符下返回结果数组，没有找到则返回 `null`
+
+    - `reg.test(str)`：检查是否有指定的模式，返回布尔值
+
+    - `str.replace(reg, dst)`：替换 `str` 中所有符合 `reg` 模式为 `dst`
+
+        - 当 `dst` 为字符串时，替换成目标串，可以使用以下特殊字符
+
+            | 变量名          | 代表值                                    |
+            | --------------- | ----------------------------------------- |
+            | `$$`            | `$`                                       |
+            | `$&`            | 匹配的子串                                |
+            | <code>$`</code> | 匹配的子串左边的内容                      |
+            | `$'`            | 匹配的子串右边的内容                      |
+            | `$n`            | 第 `n` 个括号匹配的字符串（`n` 小于 100） |
+            | `$<Name>`       | 命名组                                    |
+
+        - 当 `dst` 为函数时，传入 `dst` 的参数列表如下，替换为该函数的返回值：
+
+            | 变量名              | 代表值                               |
+            | ------------------- | ------------------------------------ |
+            | `match`             | 匹配的子串                           |
+            | `p1,p2, ...`        | 第 `n` 个括号匹配的字符串            |
+            | `offset`            | 匹配到的子字符串在原字符串中的偏移量 |
+            | `string`            | 被匹配的原字符串                     |
+            | `NamedCaptureGroup` | 命名捕获组匹配的对象                 |
+
+3. 元字符
+
+    - 集合和范围 `[...]`，排除，字符类及其反向类
+
+        - `\d`：从 `0` 到 `9` 的字符，相当于 `[0-9]`
+
+        - `\s`：包括空格，制表符 `\t`，换行符 `\n` 和其他少数稀有字符，例如 `\v`，`\f` 和 `\r`，相当于 `[\t\n\v\f\r ]`
+
+        - `\w`：拉丁字母，数字或下划线 `_`，相当于 `[a-zA-Z0-9_]`
+
+        - `\D`，`\S` 和 `\W`：是 `\d`，`\s` 和 `\w` 的补集。例如，`\D` 相当于 `[^0-9]`
+
+            > 在方括号内不需要转义，但也可以转义
+
+        - 词边界 `\b`：有三种不同的位置可作为词边界。例如 `/\bJava\b/` 匹配 `"Hello, Java!"`，但不匹配 `"Hello, JavaScript!"`
+
+            - 在字符串开头，如果第一个字符是单词字符 `\w`
+            - 在字符串中的两个字符之间，其中一个是单词字符 `\w`，另一个不是
+            - 在字符串末尾，如果最后一个字符是单词字符 `\w`
+
+    - 转义字符：`\[`，`\\`，`\^`，`\$`，`\.`，`\|`，`\?`，`\*`，`\+`，`\(`和`\)`
+
+        - 在 `/.../` 内部（但不在 `new RegExp` 内部），还需要转义 `/`
+        - 传递一个字符串给 `new RegExp` 时，需要双倍反斜杠 `\\`
+
+    - 量词
+
+        - 重复，比如 `\d{4}` 为四位数，`\d{2,}` 为两位以上的数字
+        - 贪婪匹配：`+`：至少一个，相当于 `{1,}`，`*`：任意个，相当于 `{0,}`，`?`：最多一个，相当于 `{0,1}`
+        - 懒惰匹配：`+?`，`*?`，`??`：尽可能少地匹配字符
+
+    - 捕获组 `(...)`：在 `match` 下使用不带全局修饰符的正则表达式
+
+        - 括号可以嵌套，结果按照开符号顺序给出
+
+            ```javascript
+            let str = '<span class="my">';
+            // ['<span class="my">', 'span class="my"', 'span', 'class="my"']
+            console.log(str.match(/<(([a-z]+)\s*([^>]*))>/));
+            ```
+
+        - 命名组：以 `(?<name>...)` 的形式对组命名
+
+            ```javascript
+            let dateRegexp = /(?<year>[0-9]{4})-(?<month>[0-9]{2})-(?<day>[0-9]{2})/;
+            // { year: '2019', month: '04', day: '30' }
+            console.log("2019-04-30".match(dateRegexp).groups);
+            ```
+
+        - 作为整体，比如将 `(...)?` 作为可选组，此时如果不想让结果出现在结果中，可以以 `(?:...)` 的形式排除这一组
+
+        - 在 `matchAll` 下使用带全局修饰符的正则表达式，返回捕获组得到的可迭代对象，每当对它进行迭代时才会执行搜索
+
+    - 通配符`.`：与「除换行符之外的任何字符」匹配
+
+        > 如果想要匹配任何字符，可以用其他方法
+        >
+        > - `[\s\S]` 或 `[^]` 等模式可以匹配任何字符，其中
+        > - `/./s` 在部分浏览器可以支持匹配任何字符
+
+    - 锚点符 `^` 和 `$` ：匹配文本开头和末尾。在多行模式下，它们不仅仅匹配文本的开始与结束，还匹配每一行的开始与结束
+
+    - Unicode 属性 `\p{...}` ：寻找具有描述性质的符号，例如用 `\p{sc=Han}` 寻找汉字，用 `\p{Sm}` 寻找数学符号
+
+#### 1.2.2 TypeScript
+
+##### （一）类型
+
+1. 变量声明
+
+    - 声明变量的类型，但没有初始值，变量值会设置为 `undefined`
+    - 声明变量并初始值，但不设置类型，该变量可以是任意类型（如果可以推断，则推断为某种类型，否则为 `any`）
+
+    ```typescript
+    var one:string = "String";  // string, "String"
+    var two:string;             // string, undefined
+    var three = "String";       // string, "String"
+    var four;                   // any, undefined
+    ```
+
+2. 变量类型
+
+    | 数据类型    | 描述                                                         |
+    | ----------- | ------------------------------------------------------------ |
+    | `any`       | 任意类型                                                     |
+    | `number`    | 双精度 64 位浮点数                                           |
+    | `string`    | 字符串                                                       |
+    | `boolean`   | 布尔值                                                       |
+    | 数组        | 一系列同类型的数据                                           |
+    | 元素        | 已知元素数量和类型的数组，各元素的类型不必相同，对应位置的类型需要相同。 |
+    | `enum`      | 数值集合                                                     |
+    | `void`      | 用于标识方法返回值的类型，表示该方法没有返回值               |
+    | `null`      | 对象值缺失                                                   |
+    | `undefined` | 初始化变量为一个未定义的值                                   |
+    | `never`     | 其它类型的子类型，代表从不会出现的值                         |
+
+    ```typescript
+    let binaryLiteral: number = 0b1010;
+    let octalLiteral: number = 0o744;
+    let decLiteral: number = 6;
+    let hexLiteral: number = 0xf00d;
+    let name: string = "Alice";
+    let flag: boolean = true;
+    
+    enum Color {Red, Green, Blue};
+    let arr: number[] = [1, 2];
+    let arr: Array<number> = [1, 2];
+    let tup: [string, number] = ["Alice", 14];
+    let col: Color = Color.Blue;
+    function greet(): void { console.log("Hello World."); }
+    ```
+
+##### （二）TypeScript 类
+
+1. 类可以包含以下几个模块（类的数据成员）：
+
+    - 字段：类里面声明的变量，字段表示对象的有关数据。
+    - 构造函数：类实例化时调用，可以为类的对象分配内存。
+    - 方法：为对象要执行的操作
+
+    ```typescript
+    class Person {
+      name: string;
+      age: number;
+      constructor(name: string, age: number) {
+        this.name = name;
+        this.age = age;
+      }
+      changeName(newName: string): string {
+        let previousName = this.name;
+        this.name = newName;
+        return previousName;
+      }
+    }
+    
+    let alice: Person = new Person("Alice", 14);
+    alice.changeName("Elise");
+    console.log(alice.name);
+    ```
+
+2. 类继承使用关键字 `extends`，子类除了不能继承父类的私有成员和构造函数，其他的都可以继承
+
+    ```typescript
+    class Student extends Person {
+      score: number;
+      updateScore(newScore: number): number {
+        let previousScore = this.score;
+        this.score = newScore;
+        return previousScore;
+      }
+    }
+    
+    let alice: Student = new Student("Alice", 14);
+    alice.changeName("Elise");
+    alice.updateScore(96);
+    console.log(alice.score);
+    ```
+
+#### 1.2.3 jQuery
+
+##### （一）jQuery 规则
+
+1. 入口函数：为了防止文档在完全加载之前运行 jQuery 代码，即在 DOM 加载完成后才可以对 DOM 进行操作
+
+    ```javascript
+    $(document).ready(function(){
+      // jQuery code here
+    });
+    // or more simple
+    $(function(){
+      // jQuery code here
+    });
+    ```
+
+2. jQuery 链允许在在相同的元素上用一条语句中运行多个 jQuery 方法，例如 `$("#para").fadeOut().fadeIn();` 将会按顺序执行淡入和淡出
+
+##### （二）选择器
+
+- jQuery 使用的语法是 XPath 与 CSS 选择器语法的组合，`$` 是 jQuery 的 `querySelector` 函数
+
+    | 语法实例                   | 描述                                                         |
+    | -------------------------- | ------------------------------------------------------------ |
+    | `$("*")`                   | 选取所有元素                                                 |
+    | `$(this)`                  | 选取当前 HTML 元素                                           |
+    | `$("p.intro")`             | 选取 `class` 为 `intro` 的 `<p>` 元素                        |
+    | `$("p:first")`             | 选取第一个 `<p>` 元素                                        |
+    | `$("ul li:first")`         | 选取第一个 `<ul>` 元素的第一个  `<li>` 元素                  |
+    | `$("ul li:first-child")`   | 选取每个 `<ul>` 元素的第一个  `<li>` 元素                    |
+    | `$("[href]")`              | 选取带有 `href` 属性的元素                                   |
+    | `$("a[target='_blank']")`  | 选取所有 `target` 属性值等于  `"_blank"` 的 `<a>` 元素       |
+    | `$("a[target!='_blank']")` | 选取所有 `target` 属性值不等于  `"_blank"` 的 <a> 元素       |
+    | `$(":button")`             | 选取所有 `type="button"` 的  `<input>` 元素 和 `<button>` 元素 |
+
+### 1.3 Front-end Framework
+
+#### 1.3.1 Webpack
+
+#### 1.3.2 React.js
+
+React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox](https://codesandbox.io/) 等网站进行 Snippet 测试。
+
+##### （一）构建与理念
+
+1. 使用 `create-react-app` 可以直接构建单页应用的脚手架，默认目录如下：
+
+    ```shell
+    app
+    ├── README.md
+    ├── node_modules
+    ├── package.json
+    ├── .gitignore
+    ├── public
+    │   ├── favicon.ico
+    │   ├── index.html
+    │   └── manifest.json
+    └── src
+        ├── App.css
+        ├── App.js
+        ├── App.test.js
+        ├── index.css
+        ├── index.js
+        ├── logo.svg
+        └── serviceWorker.js
+    ```
+
+3. React 理念：组合优于继承。这是因为前端的逻辑性和复用性较弱，只需组合就可以满足日常的业务需求。
+
+##### （二）props 与 state
+
+1. `props` 在组件定义中充当常量的作用，组件无论是使用函数声明还是通过 class 声明，都决不能修改自身的 `props`。对于布尔值，只要写下值就是 `true`
+
+    ```jsx
+    import React from 'react'
+    import ReactDOM from 'react-dom';
+    
+    function Welcome(props) {
+      return <h1>Hello{props.append ? `, ${props.name}!` : "!"}</h1>;
+    };
+    
+    ReactDOM.render(
+    	<Welcome append name="Alice"/>,
+      document.getElementById('root')
+    );
+    ```
+
+    函数也可以写成类的形式
+
+    ```jsx
+    class Welcome extends React.Component {
+      render() {
+        return <h1>Hello{this.props.append ? `, ${this.props.name}!` : "!"}</h1>;
+      }
+    }
+    ```
+
+2. `state` 和 `props` 不同，它的内容可以被改变。并且，除了拥有并设置了它的组件，其他组件都无法访问 `state` 。下面的例子中构建了一个简单的时钟，使用了 `state` 定时变化的特性。从下例可以看出 `state` 相关的一些要点
+
+    ```jsx
+    class Clock extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {date: new Date()};
+      }
+    
+      componentDidMount() {
+        this.timerID = setInterval(
+          () => this.tick(),
+          1000
+        );
+      }
+    
+      componentWillUnmount() {
+        clearInterval(this.timerID);
+      }
+    
+      tick() {
+        this.setState({
+          date: new Date()
+        });
+      }
+    
+      render() {
+        return (
+          <div>
+            <h1>Hello, world!</h1>
+            <h2>It is {this.state.date.toLocaleTimeString()}.</h2>
+          </div>
+        );
+      }
+    }
+    
+    ReactDOM.render(
+      <Clock />,
+      document.getElementById('root')
+    );
+    ```
+
+    - `constructor()` 函数的 `props` 必须继承 `React.Component` 类的初始化方法，但是 `state` 可以自由定义。类中除了 `props` 和 `state` 之外，还可以自定义其他的成员（比如 例子中的 `timerID`）
+
+    - `componentDidMount()` 和 `componentWillUnmount()` 分别在组件建立和销毁时自动调用，两个函数不接受参数。
+
+    - 通过 `setState()` 改变 `state`，React 重新调用 `render()` 方法来确定页面上的显示内容
+
+        - `state` 的更新可能是异步的，如果更新依赖上一次的 `state` 值，应该使用以下的匿名函数作为参数
+
+            ```jsx
+            this.setState((state, props) => ({
+              counter: state.counter + props.increment
+            }));
+            ```
+
+        - `state` 的更新会被合并
+        
+    - 将如果子元素的 `state` 是由父元素的 `state` 通过 `props` 传递而来，要将子元素的状态变化传递上去，需要使用到变量提升的技术（此时 `props` 提供的函数相当于一个父元素提供用于改变状态的接口）
+
+3. 为了能在函数中使用 React，引入 Hook 的机制
+
+    - `useState` 允许在函数中使用状态，函数元件不再是无状态原件。`useState(default)` 创建了一个状态 `count` 和用于设置状态值的接口 `setCount`，并设置了状态的初始值。
+
+        ```jsx
+        import React from 'react';
+        
+        function Example() {
+          const [count, setCount] = React.useState(0);
+        
+          return (
+            <div>
+              <p>You clicked {count} times</p>
+              <button onClick={() => setCount(count + 1)}>
+                Click me
+              </button>
+            </div>
+          );
+        }
+        ```
+
+    - `React.useEffect()` 相当于 `componentDidUpdate`，通过 `return` 设置清楚副作用的函数。如果想执行只运行一次的 effect（仅在组件挂载和卸载时执行），可以传递一个空数组作为第二个参数。
+
+        ```jsx
+        useEffect(() => {
+          const subscription = props.source.subscribe();
+          return () => {
+            subscription.unsubscribe();
+          };
+        },[props.source]);
+        ```
+
+4. 设计时，通过检查以下问题来确定目标参数不是 `state`：
+
+    - 该数据是否是由父组件通过 `props` 传递而来的
+    - 该数据是否随时间的推移而保持不变
+    - 能否根据其他 `state` 或 `props` 计算出该数据的值
+
+##### （三）条件渲染与列表
+
+1. 利用与运算符可以很方便地进行条件渲染，这是因为在 JavaScript 中，`true && expression` 总是会返回 `expression`, 而 `false && expression` 总是会返回 `false`
+
+    ```jsx
+    function Mailbox(props) {
+      const unreadMessages = props.unreadMessages;
+      return (
+        <div>
+          <h1>Hello!</h1>
+          {unreadMessages.length > 0 &&
+           <h2> You have {unreadMessages.length} unread messages. </h2>}
+        </div>
+      );
+    }
+    
+    const messages = ['React', 'Re: React', 'Re:Re: React'];
+    ReactDOM.render(
+      <Mailbox unreadMessages={messages} />,
+      document.getElementById('root')
+    );
+    ```
+
+2. 批量渲染类似的元素可以采用数组的形式，如下例所示。注意，创建一个元素时，建议包括一个特殊的 `key` 属性
+
+    ```jsx
+    function Bat(props) {
+      return(
+      <ul>
+        {Array(props.size)
+           .fill(props.size)
+           .map((_, i) =>
+                <li key={i}>{i}</li>
+            )}
+      </ul>);
+    };
+    
+    ReactDOM.render(
+    	<Bat size={16}/>,
+      document.getElementById('root')
+    );
+    ```
+
+##### （四）React 事件处理
+
+1. 事件绑定：设置 `onClick` 等事件时，需要显式地绑定 `this` 才能在回调函数中使用相同的 `this`
+
+    ```jsx
+    class Toggle extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {isToggleOn: true};
+    
+        // This binding is necessary to make `this` work in the callback
+        this.handleClick = this.handleClick.bind(this);
+      }
+    
+      handleClick() {
+        this.setState(state => ({
+          isToggleOn: !state.isToggleOn
+        }));
+      }
+    
+      render() {
+        return (
+          // `this` can be used here instead of binding
+          <button onClick={this.handleClick}>
+            {this.state.isToggleOn ? 'ON' : 'OFF'}
+          </button>
+        );
+      }
+    }
+    
+    ReactDOM.render(
+      <Toggle />,
+      document.getElementById('root')
+    );
+    ```
+
+2. 使 React 的 `state` 成为唯一数据源，渲染表单的 React 组件还控制着用户输入过程中表单发生的操作，被 React 以这种方式控制取值的表单输入元素就叫做受控组件。下例中，`onChange={this.handleChange}` 让 `textarea` 的内容可以实时变化，`this.state.value` 存储了文本框的值。
+
+    ```jsx
+    class EssayForm extends React.Component {
+      constructor(props) {
+        super(props);
+        this.state = {
+          value: 'Please write an essay about your favorite DOM element.'
+        };
+    
+        this.handleChange = this.handleChange.bind(this);
+        this.handleSubmit = this.handleSubmit.bind(this);
+      }
+    
+      handleChange(event) {
+        this.setState({value: event.target.value});
+      }
+    
+      handleSubmit(event) {
+        alert('An essay was submitted: ' + this.state.value);
+        event.preventDefault();
+      }
+    
+      render() {
+        return (
+          <form onSubmit={this.handleSubmit}>
+            <label>
+              Essay:
+              <textarea value={this.state.value} onChange={this.handleChange} />
+            </label>
+            <input type="submit" value="Submit" />
+          </form>
+        );
+      }
+    }
+    ```
+
+##### （五）路由
+
+React 中没有自带的路由模块，需要使用 `react-router` 等模块配置路由。
+
+### 1.4 UI Framework
+
+#### 1.4.1 Bootstrap
+
+Bootstrap 适合开发简单的静态网站。
+
+##### （一）安装
+
+1. 下载 Bootstrap 和  jQuery 文件，得到如下结构的文件夹。然后引入到 HTML 中，其中，`min` 表示发行版，源码经过压缩
+
+    ```
+    src
+     ├───Bootstrap 
+     │   ├───css   
+     │   ├───fonts 
+     │   └───js    
+     └───jQuery
+    ```
+
+2. HTML 部分，注意：jQuery 的引入必须要比 Bootstrap 的 JavaScript 引入早
+
+    - `width=device-width` 表示宽度是设备屏幕的宽度
+
+    - `initial-scale=1` 表示初始的缩放比例
+
+    - `shrink-to-fit=no` 自动适应手机屏幕的宽度
+
+    ```HTML
+    <link rel="stylesheet" href="src/Bootstrap/css/bootstrap.min.css">
+    <script src="src/jQuery/jquery-3.6.0.min.js"></script>
+    <script src="src/Bootstrap/js/bootstrap.min.js"></script>
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
+    ```
+
+##### （二）网格系统
+
+1. Bootstrap 4 需要一个容器元素来包裹网站的内容
+
+    - `.container` 类用于固定宽度并支持响应式布局的容器
+
+        ```HTML
+        <body>
+          <div class="container">
+            <p>Text</p> 
+          </div>
+        </body>
+        ```
+
+    - `.container-fluid` 类用于 100% 宽度，占据全部视口的容器
+
+2. Bootstrap 4 网格系统有 5 个类
+
+    | 类名      | 描述                                      |
+    | --------- | ----------------------------------------- |
+    | `.col`    | 针对所有设备                              |
+    | `.col-sm` | 平板；屏幕宽度等于或大于 576px            |
+    | `.col-md` | 桌面显示器；屏幕宽度等于或大于 768px      |
+    | `.col-lg` | 大桌面显示器；屏幕宽度等于或大于 992px    |
+    | `.col-xl` | 超大桌面显示器；屏幕宽度等于或大于 1200px |
+
+3. 网格系统规则
+
+    - 网格每一行需要放在设置了 `.container` 或 `.container-fluid` 类的容器中
+
+    - 使用行来创建水平的列组，只有列可以是行的直接子节点
+
+    - 内容需要放置在列中，没有指定宽度的网格列将自动设置为等宽与等高列
+
+        ```HTML
+        <div class="container">
+          <h1> Column </h1>
+          <div class="row">
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+            <div class="col">.col</div>
+          </div>
+        </div>
+        ```
+
+4. 偏移列：用 `.offset` 把一个列的左外边距增加若干列
+
+#### 1.4.2 Material UI
+
+##### （一）安装
+
+1. 安装的核心库不包括图标
+
+    ```shell
+    npm install @material-ui/core
+    npm install @material-ui/icons
+
+2. 如果需要实验性功能或者 `<Alert>`（Material Design 已不再涉及）的内容，需要额外安装 `lab`。如果需要时间选择器，还需要安装 `pickers`，如果 `pickers` 版本不超过 4，那么需要安装不超过版本 1的 `@date-io`
+
+    ```shell
+    npm install @material-ui/lab
+    npm install @material-ui/pickers
+    npm install @date-io/date-fns@1.x date-fns
+    ```
+
+##### （二）布局
+
+（待补充）
+
+##### （三）样式表
+
+（待补充）
+
+## 2 SERVER
+
+### 2.1 Node
+
+#### 2.1.1 Node.js
+
+##### （一）包管理器
+
+1. 安装，卸载和更新：`npm install|uninstall|update <Module Name>`
+
+    - `-g`：是否全局安装
+
+    - `--save` 和 `--save-dev`：安装到本地生产依赖或开发依赖
+
+    - 版本指定：在模块名后面通过 `@` 指定版本号
+
+        ```shell
+        npm install <Module Name>@latest
+        npm install <Module Name>@0.1.1
+        npm install <Module Name>@">=0.1.0 <0.2.0"
+        ```
+
+2. 项目初始化与运行
+
+    - `npm init`：初始化项目，生成一个 `package.json`
+
+    - `npm start` 、`npm test` 或 `npm run <Script Name>`：执行 `package.json` 中的定义的命令行，除了前两个，其他的必须加上 `run` 。这里面的命令行可以使用 `node_modules` 中的 `bin` 命令，而直接使用命令行不可以
+
+        > 如果不加任何参数，直接运行 `npm run`，会列出`package.json`里面所有可以执行的脚本命令
+
+    - 用 `npm list --depth=0` 查看模块列表，指定深度可以减少输出内容
+
+3. `npx`：`npm` 包执行器：运行的时候，在 `node_modules/.bin` 路径和环境变量 `$PATH` 里面，检查命令是否存在。例如，在 `mocha` 没有全局安装时，用 `npx mocha --version` 运行可执行文件
+
+4. `nvm`：`npm` 的版本控制工具
+
+    - `nvm list [available]`：查看本地安装的所有版本。有可选参数 `available`，显示所有可下载的版本。
+    - `nvm install|use|uninstall <version>`：安装，使用或卸载特定版本
+
+5. `nrm`：`npm` 的镜像管理工具
+
+    - `nrm ls`：查看所有可选的源
+    - `nrm add <name> <url>`：增加一条定制的源
+    - `nrm del|use <name>` ：删除或使用指定的源
+    - `nrm test <name>`：测试相应源的响应速度
+
+##### （二）模块
+
+后端 Node.js 使用的是 CommonJS 的模块规范，导出使用 `modules.exports` 或 `exports`，导入使用 `require`。而前端浏览器 JavaScript 或者前端框架使用 ES 6 模块规范。导出使用 `export` 或 `export default`，导入使用 `import`。
+
+1. 引入模块的方法：以 Electron 内置的模块为例，有三种引入对象或类的方法。
+
+    ```javascript
+    const electron = require("electron");
+    const app = electron.app;
+    const BrowserWindow = electron.BrowserWindow;
+    
+    const app = require("electron").app;
+    const BrowserWindow = require("electron").BrowserWindow;
+    
+    const {app, BrowserWindow} = require("electron");
+    ```
+
+2. 利用 `module.exports` 定义接口，如下例。也可以使用 `exports` 定义接口，可以定义多次。如果使用 `exports`，则不能使用 `module.exports`
+
+    ```javascript
+    // cite.js
+    Cite = {
+      quickPower: function (base, index, prime) {
+        let res = 1;
+        while (index)
+        {
+          if (index & 1) res = res * base % prime;
+          index >>= 1;
+          base = base * base % prime;
+        }
+        return res;
+      },
+      Person: function(name, age) {
+        this.name = name;
+        this.age = age;
+        this.greet = function () {
+          console.log(`${this.name}, ${age}`);
+        }
+      }
+    }
+    module.exports = Cite;
+    
+    // main.js
+    const Cite = require("./cite");
+    const Person = Cite.Person;
+    const quickPower = Cite.quickPower;
+    // another way to get function
+    // const { Person, quickPower } = require("./cite");
+    
+    alice = new Person("Alice", 14);
+    alice.greet();
+    console.log(quickPower(2, 10, 101));
+    ```
+
+##### （三）Web 模块
+
+1. Node.js 提供了 `http` 模块，`http` 模块主要用于搭建 HTTP 服务端和客户端
+
+2. 服务端
+
+    - `createServer` 返回新的 `http.Server` 实例，`listen` 监听特定的端口
+
+    - `requestListener` 负责发回服务端的内容
+
+    ```jsx
+    // server.js
+    var http = require('http');
+    var fs = require('fs');
+    var url = require('url');
+    
+    http.createServer(function (request, response) {
+      var pathname = url.parse(request.url).pathname;
+      console.log("Request for " + pathname + " received.");
+    
+      fs.readFile(pathname.substr(1), function (err, data) {
+        if (err) {
+          console.log(err);
+          response.writeHead(404, { 'Content-Type': 'text/html' });
+        } else {
+          response.writeHead(200, { 'Content-Type': 'text/html' });
+          response.write(data.toString());
+        }
+        response.end();
+      });
+    }).listen(8080);
+    
+    console.log('Server running at http://127.0.0.1:8080/');
+    
+    // index.html
+    <!DOCTYPE html>
+    <html lang="en">
+    <head>
+      <meta charset="UTF-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1.0">
+      <title>Document Name</title>
+    </head>
+    <body>
+      <p> Text </p>
+    </body>
+    </html>
+    ```
+
+3. 客户端：客户端引入 `http` 模块，向服务端发送请求并处理响应的回调函数
+
+    ```javascript
+    var http = require('http');
+    
+    var options = { host: 'localhost', port: '8080', path: '/index.html' };
+    var callback = function (response) {
+      var body = '';
+      response.on('data', function (data) { body += data; });
+      response.on('end', function () { console.log(body); });
+    }
+    var req = http.request(options, callback);
+    req.end();
+    ```
+
+#### 2.1.2 Express.js
+
+##### （一）基本结构
+
+1. 以下是一个简单的实例
+
+    ```javascript
+    const express = require("express")
+    const app = express()
+    const port = 3000
+    
+    app.get('/', (req, res) => {
+      res.send("Hello World!")
+    })
+    
+    app.listen(port, () => {
+      console.log(`Example app listening at http://localhost:${port}`)
+    })
+    ```
+
+2. 利用 `express.static` 中间件来设置静态文件路径，例如 `app.use('/public', express.static('public'));`，则 `/public` 的文件可以被访问
+
+##### （二）项目生成
+
+- 通过应用生成器工具 `express-generator` 可以快速创建一个应用的骨架。
+
+### 2.2 Application
+
+#### 2.2.1 Electron
+
+##### （一）进程
+
+1. 一个 Electron 的启动脚本写成如下形式
+
+    ```javascript
+    // Modules to control application life and create native browser window
+    const {app, BrowserWindow} = require('electron')
+    const path = require('path')
+    
+    function createWindow () {
+      // Create the browser window.
+      const mainWindow = new BrowserWindow({
+        width: 1600,
+        height: 900,
+        webPreferences: {
+          preload: path.join(__dirname, 'preload.js')
+        }
+      })
+    
+      // and load the index.html of the app.
+      mainWindow.loadFile('index.html')
+    
+      // Open the DevTools.
+      // mainWindow.webContents.openDevTools()
+    }
+    
+    // This method will be called when Electron has finished
+    // initialization and is ready to create browser windows.
+    // Some APIs can only be used after this event occurs.
+    app.whenReady().then(() => {
+      createWindow()
+      app.on('activate', function () {
+        // On macOS it's common to re-create a window in the app when the
+        // dock icon is clicked and there are no other windows open.
+        if (BrowserWindow.getAllWindows().length === 0)
+          createWindow()
+      })
+    })
+    
+    // Quit when all windows are closed, except on macOS. There, it's common
+    // for applications and their menu bar to stay active until the user quits
+    // explicitly with Cmd + Q.
+    app.on('window-all-closed', function () {
+      if (process.platform !== 'darwin') app.quit()
+    })
+    ```
+
+2. 主进程和渲染进程
+
+    - 一个 Electron 应用只有一个主进程，但可以有多个渲染进程。一个 `BrowserWindow` 实例就代表一个渲染进程
+    - 主进程负责管理所有的窗口及其对应的渲染进程，开启 `nodeIntegration` 配置后，渲染进程也有能力访问 `Node.js` 的 API
+    - 主进程和渲染进程之间的通讯使用 `ipcRenderer`  模块，或者使用 `remote` 模块
+
+##### （二）嵌入前端框架
+
+以 React 为例，将 React 嵌入 Electron
+
+1. 首先利用 `create-react-app` 构建一个应用，执行以下命令，直到能在 `http://localhost:3000` 看到 React 的图标旋转的初始网页。然后安装 `electron` 到 `app` 文件夹中。
+
+    ```shell
+    create-react-app app
+    cd app
+    npm start
+    npm install electron --save-dev
+    ```
+
+2. 配置 `package.json`，增加如下两项。其中， `main.js` 是 Node.js 的入口文件。
+
+    ```json
+    {
+      "main": "main.js",
+      "homepage": "./",
+    }
+    ```
+
+3. 修改 `main.js` 的内容，主要是加载的页面有变化。注意，当 React 页面构建完毕后，再经过 Electron 打包后的路径并不一致，应该写成如下形式：
+
+    ```javascript
+    if (app.isPackaged) {
+      mainWindow.webContents.openDevTools();
+      win.loadURL("http://localhost:3000/");
+    }
+    else mainWindow.loadURL(path.join(__dirname, './build/index.html'));
+    ```
+
+4. 在开启 `nodeIntegration` 后，可以在前端使用 Node.js 的接口，但是无法通过require调用本地包，而是应该使用 `window.require`。这样在网页上无法访问，只能在 Electron 上调试。如果 Electron 上也无法运行，检查包是否安装出错。
+
+    ```jsx
+    import React from 'react';
+    
+    var os = window.require('os')
+    console.log(os.cpus())
+    
+    class App extends React.Component {
+      render() {
+        return <div></div>
+      }
+    }
+    export default App;
+    ```
+
+##### （三）调试与发布
+
+1. Electron 的桌面应用在打包后的文件存储位置各不相同。通过调用属性 `app.isPackaged` 可以判断当前环境下是否是发布版本。另外，通过调用 `electron . argv` 可以在主进程的 `process.argv` 中看到预定义变量
+
+    - 在前端环境下（例如 HTML 引用的图片，样式表或 JavaScript 脚本），都是以该文件为当前目录的引用，在发布版下，这些文件在 exe 目录的 `./resources/app` 下
+
+    - 在后端环境下，后端引用的任何资源（例如 `fs` 模块读取文件），都是以工程目录为当前目录。在调试版和发布版两个版本下位置一致。
+
+2. `electron-packager . ProjectName` 可用于打包，调用的命令行参数如下
+    - `.`：`package.json` 的位置
+    - `ProjectName`：生成的打包应用的名字
+    - `--electron-version=11.2.0`：指定 Electron 版本号，需要显式指定
+    - `--platform=win32`：指定打包的目标平台，取值可以为 `darwin`, `linux`, `mas`, `win32`
+    - `--out=file`：打包后的文件存放位置，默认放在开发的根目录下，可选
+    - `--icon='src/icon.ico'`：指定 `exe` 文件图标，只接受 `ico` 格式，可选
+    - `--ignore=file`：打包时忽略的文件名，可以指定多个忽略参数，参数是可选的，必须是正则表达式的形式
+    - `--overwrite`：新的打包会覆写原来的打包内容，可选
+    - `--no-prune`：默认形况下会不打包开发依赖并对生产依赖进行剪枝，这个选项会不剪枝，可选
+
+#### 2.2.2 NW.js
+
+### 2.3 C++
+
+#### 2.3.1 STL
+
+##### （一）\<iostream\>
+
+1. `std::cout.setf(\_Fmtflags)/std::cout.unsetf(\_Fmtflags)`
+
+    - 用 `<ios>` 中的成员函数 `std::cout.setf(std::ios::fixed);` 和 `std::cout.unsetf(std::ios::fixed);` 可以启用或关闭 `std::fixed` 的效果
+
+    - 如果想要同时关闭多个操作符，可以用管道符，例如 `std::cout.unsetf(std::ios::fixed | std::ios::scientific);`
+
+    - 也可以直接在 `std::ostream` 流中使用 `std::fixed`。注意，`std::fixed` 和 `std::ios::fixed` 不能混用，两者不是同一类型
+
+        ```C++
+        #include <iostream>
+        
+        int main()
+        {
+          std::cout.setf(std::ios::fixed);
+          std::cout << 2.4 << "\n";          // -> 2.400000
+          std::cout.unsetf(std::ios::fixed);
+          std::cout << 2.4 << "\n";          // -> 2.4
+          std::cout << std::fixed << 2.4;    // -> 2.400000
+          return 0;
+        }
+        ```
+
+2. `std::oct/std::dec/std::hex`
+
+    - `std::oct/std::dec/std::hex` 分别按照八进制/十进制/十六进制的方式输出数字
+
+    - 对于十六进制，使用 `std::uppercase/std::lowercase` 使字母强制大/小写
+
+        ```C++
+        #include <iostream>
+        
+        int main()
+        {
+          std::cout << std::hex << 15 << "\n"; // -> f
+          std::cout << std::uppercase << 15;   // -> F
+          return 0;
+        }
+        ```
+
+3. `std::showbase/std::showpos/std::showpoint`
+
+    - C++ 显示数据会以最简方式表示
+
+    - 用 `std::showbase` 可以强制显示数制，用 `std::showpos` 强制显示正号，用 `std::showpoint` 强制显示小数点
+
+        ```C++
+        #include <iostream>
+        
+        int main()
+        {
+          std::cout << std::hex << std::showbase << 16 << "\n";
+            // -> 0x10
+          std::cout.unsetf(std::ios::showbase | std::ios::hex);
+          std::cout << std::showpos << 16 << "\n";
+             // -> +16
+          std::cout.unsetf(std::ios::showpos);
+          std::cout << (double)2 << " " << std::showpoint << (double)2;
+            // -> 2 2.00000
+          return 0;
+        }
+        ```
+
+4. `std::fixed/std::scientific`
+
+    - `std::fixed` 可以得到小数点位数固定的数字,`std::scientific` 用科学计数法表示数字
+
+    - 以上两个操作符默认均为六位，可以通过 `<iomanip>` 中的 `std::setprecision(int)` 改变
+
+        ```C++
+        #include <iostream>
+        
+        int main()
+        {
+          std::cout << std::fixed << 2.4 << "\n";  // -> 2.400000
+          std::cout.unsetf(std::ios::fixed);
+          std::cout << std::scientific << 2.4;     // -> 2.400000e+00
+          return 0;
+        }
+        ```
+
+5. `std::left/std::right/std::internal`
+
+    - 可以将输出的数字居左/居右/居中，与 `<iomanip>` 中的 `std::setw(int)` 配合使用，具体例子见[这里](#setw)
+
+6. `std::cin` 相关
+
+    - `std::cin` 的成员函数 `std::cin.eof()` 可以读取文件标准流，返回是否读取到结尾
+    - 操作符 `std::skipws` 可以使 `std::cin` 忽略前导空白符，默认已经开启
+    - 函数 `std::ios::sync_with_stdio(false);` 取消与 `stdio` 的同步，可以给 `std::cin` 提速
+
+##### （二）\<iomanip\>
+
+1. `std::setiosflags(\_Fmtflags)/std::resetiosflags(\_Fmtflags)`
+
+    - 在 `std::ostrem` 中用 `<iomanip>` 的控制符 `std::setiosflags(std::ios::fixed);` 和 `std::resetiosflags(std::ios::fixed);` 也可以启用或关闭 `<ios>` 中的控制符 `std::fixed` 的效果
+
+        ```C++
+        #include <iostream>
+        #include <iomanip>
+        
+        int main()
+        {
+          std::cout << std::setiosflags(std::ios::fixed) << 2.4 << "\n";
+            // -> 2.400000
+          std::cout << std::resetiosflags(std::ios::fixed) << 2.4;
+            // -> 2.4
+          return 0;
+        }
+        ```
+
+2. `std::setbase(int)`
+
+    - 参数可以是 8，10，16；效果与 `<ios>` 中的 `std::oct`/`std::dec`/`std::hex` 一致
+
+        ```C++
+        #include <iostream>
+        #include <iomanip>
+        
+        int main()
+        {
+          std::cout << std::setbase(16) << 16;    // -> 10
+          return 0;
+        }
+        ```
+
+3. `std::setprecision(int)`
+
+    - 最终结果会四舍五入
+
+    - 直接使用时，指定有效数字最大位数
+
+    - 与 `std::fixed` 合用时，强制指定小数点位数
+
+    - 与 `std::scientific` 合用时，强制指定小数点位数，用科学计数法表示
+
+        ```C++
+        #include <iostream>
+        #include <iomanip>
+        
+        int main()
+        {
+          std::cout << std::setprecision(3) << 2.718281828 << "\n";
+            // -> 2.72
+          std::cout << std::fixed << std::setprecision(2) << 2.0 << "\n";
+            // -> 2.00
+          std::cout << std::scientific << std::setprecision(2) << 2.0;
+            // -> 2.00e+00
+          return 0;
+        }
+        ```
+
+4. `std::setw(int)/std::setfill(char)`
+
+    - 用 `std::setw(int)` 指定输出宽度，用 `std::setfill(char)` 指定填充内容
+
+    - 可以配合 `std::left/std::right/std::internal` 左/右/居中对齐
+
+    - 当输出长度大于指定宽度时，`std::setw(int)` 不起作用
+
+    - 两个符号都只能作用于紧随其后的内容
+
+        ```C++
+        #include <iostream>
+        #include <iomanip>
+        
+        int main()
+        {
+          std::cout << std::setfill('0') << std::setw(3) << 16;
+          std::cout << std::left << std::setfill('_') << std::setw(4) << 16;
+          std::cout << 16;       // -> 01616__16
+          return 0;
+        }
+        ```
+
+##### （三）\<string\>
+
+1. `std::string substr(int, int)`
+
+    - `str.substr(int start, int length)` 返回一个从 `str[start]` 开始，向后 `length` 个字符的新子串对象
+
+    - 当 `length` 超过字符串尾时，只会输出到 `str[str.size() - 1]` 的位置
+
+        ```C++
+        #include <iostream>
+        #include <string>
+        
+        int main()
+        {
+          std::string str = "This_is_a_string.";
+          std::cout << str.substr(5, 10) << "\n";    // -> is_a_strin
+          std::cout << str.substr(5, 15);            // -> is_a_string.
+          return 0;
+        }
+        ```
+
+2. `replace(int, int, A(, B(, C)))/insert(int, A(, B(, C)))`
+
+    - `str.replace(int start, int length, A(, B(, C)))` 可以替换从 `str[start]` 开始，向后 `length` 个字符的字串，返回自身引用
+
+    - `str.insert(int start, A(, B(, C)))` 可以在 `str[start]` 处插入字串，返回自身引用
+
+    - 后面的参数分别对应不同的替换方式，具体见下例
+
+        ```C++
+        #include <iostream>
+        #include <string>
+        
+        int main()
+        {
+          std::string str[6];
+          for (int i = 0; i < 6; i += 1)
+            str[i] = "This_is_a_string.";
+          std::cout << str[0].replace(2, 5, "+++++") << "\n";
+            // -> Th+++++_a_string.
+          std::cout << str[1].replace(2, 5, 4, '+') << "\n";
+            // -> Th++++_a_string.
+          std::cout << str[2].replace(2, 5, "12345", 3, 2) << "\n";
+            // -> Th45_a_string.
+          std::cout << str[3].insert(2, "+++++") << "\n";
+            // -> Th+++++is_is_a_string.
+          std::cout << str[4].insert(2, 4, '+') << "\n";
+            // -> Th++++is_is_a_string.
+          std::cout << str[5].insert(2, "12345", 3, 2);
+            // -> Th45is_is_a_string.
+          return 0;
+        }
+        ```
+
+3. `erase(int(, int))`
+
+    - `str.erase(int start, int length)` 删除从 `str[start]` 开始，向后 `length` 个字符的字串，返回自身引用
+
+    - `str.erase(int start)` 删除从 `str[start]` 开始直到末尾的所有字符
+
+        ```C++
+        #include <iostream>
+        #include <string>
+        
+        int main()
+        {
+          std::string str_a = "This_is_a_string.", str_b = str_a;
+          std::cout << str_a.erase(5) << "\n";
+            // -> This_
+          std::cout << str_b.erase(5, 5);
+            // -> This_string.
+          return 0;
+        }
+        ```
+
+4. 查找子串
+
+    - 查找函数
+        - `find/rfind`：从前往后/从后往前查找子串或字符出现的位置
+        - `find_first_of/find_last_of`：从前往后/从后往前查找字串首次出现的位置
+        - `find_first_not_of/find_last_not_of`：从前往后/从后往前查找首次出现未包含字符的位置
+    - 如果查找不到，则返回 `string::npos`，这是 `string` 类中定义的静态变量
+
+##### （四）容器
+
+1. 共有成员：部分容器没有下表所示的一些函数
+
+    - 类型成员
+
+        | 成员                                         | 功能         |
+        | :------------------------------------------- | :----------- |
+        | `ContainerType\<T\>::size_type`              | 长度类型     |
+        | `ContainerType\<T\>::value_type`             | 数据类型     |
+        | `ContainerType\<T\>::reference`              | 引用类型     |
+        | `ContainerType\<T\>::const_reference`        | 常引用类型   |
+        | `ContainerType\<T\>::iterator`               | 迭代器       |
+        | `ContainerType\<T\>::const_iterator`         | 常迭代器     |
+        | `ContainerType\<T\>::reverse_iterator`       | 反向迭代器   |
+        | `ContainerType\<T\>::const_reverse_iterator` | 反向常迭代器 |
+
+    - 基本函数
+
+        | 成员                               | 功能                                         |
+        | :--------------------------------- | :------------------------------------------- |
+        | `ContainerType\<T\> c`             | 生成一个空容器                               |
+        | `ContainerType\<T\> c1(n)`         | 生成容量为 n，值为默认的容器                 |
+        | `ContainerType\<T\> c1(n, t)`      | 生成容量为 n，值均为t的容器                  |
+        | `ContainerType\<T\> c(begin, end)` | 复制 [begin, end) 区间内的元素，作为容器初值 |
+        | `ContainerType\<T\> c1(c2)`        | 生成一个按值复制的容器                       |
+        | `ContainerType\<T\> c1 = c2`       | 生成一个按值复制的容器                       |
+        | `~ContainerType\<T\>()`            | 析构函数                                     |
+        | `c1 = c2`                          | 将 c2 的元素复制给 c1                        |
+
+    - 比较运算符
+
+        | 成员       | 功能                    |
+        | :--------- | :---------------------- |
+        | `c1 == c2` | 判断是否 c1 等于 c2     |
+        | `c1 != c2` | 判断是否 c1 不等于 c2   |
+        | `c1 < c2`  | 判断是否 c1 小于 c2     |
+        | `c1 > c2`  | 判断是否 c1 大于 c2     |
+        | `c1 <= c2` | 判断是否 c1 小于等于 c2 |
+        | `c1 >= c2` | 判断是否 c1 大于等于 c2 |
+
+    - 迭代器与引用
+
+        | 成员         | 功能                                         |
+        | :----------- | :------------------------------------------- |
+        | `c.begin()`  | 返回一个迭代器，指向第一个元素               |
+        | `c.end()`    | 返回一个迭代器，指向最后一个元素的下一位置   |
+        | `c.cbegin()` | 返回一个常迭代器，指向第一个元素             |
+        | `c.cend()`   | 返回一个常迭代器，指向最后一个元素的下一位置 |
+        | `c.rbegin()` | 返回一个迭代器，指向倒数第一个元素           |
+        | `c.rend()`   | 返回一个迭代器，指向第一个元素的前一位置     |
+        | `c.front()`  | 返回首元素的引用                             |
+        | `c.back()`   | 返回尾元素的引用                             |
+
+    - 插入与删除
+
+        | 成员                      | 功能                                                         |
+        | :------------------------ | :----------------------------------------------------------- |
+        | `c.clear()`               | 移除所有元素，令容器为空                                     |
+        | `c.insert(t)`             | 将 t 一个副本插入 c 中，用于无序或自动排序的容器             |
+        | `c.insert(it, t)`         | 将 t 一个副本插入到 it 处，返回值和 it 的意义并不相同        |
+        | `c.insert(it, n, t)`      | 将 t 一个 n 个副本插入到 it 处                               |
+        | `c.insert(it, begin,end)` | 将 [begin, end) 区间内元素的副本插入it处                     |
+        | `c.erase(it)`             | 移除 it 指向的元素                                           |
+        | `c.erase(begin,end)`      | 移除 [begin, end) 区间内的所有元素，某些容器会返回没有被移除的第一个元素 |
+        | `c.push_front(t)`         | 在容器头部增加一个元素                                       |
+        | `c.pop_front()`           | 删除容器第一个元素                                           |
+        | `c.push_back(t)`          | 在容器最后增加一个元素，此时会调用 T 的复制构造函数          |
+        | `c.pop_back()`            | 删除容器最后一个元素                                         |
+
+    - 其他函数
+
+        | 成员                     | 功能                                        |
+        | :----------------------- | :------------------------------------------ |
+        | `c.empty()`              | 判断容器是否为空                            |
+        | `c.size()`               | 返回容器中的元素数量                        |
+        | `c.max_size()`           | 返回容器最大的可以存储的元素                |
+        | `c.capacity()`           | 返回容器当前能够容纳的元素数量              |
+        | `at()/operator\[\]\(i\)` | 随机访问下标为i的位置,前者会检查是否越界    |
+        | `c1.swap(c2)`            | 交换 c1 和 c2 的值，也可以用 `swap(c1, c2)` |
+        | `c.get_allocator()`      | 返回容器的内存模型                          |
+
+2. `<utility>`
+
+    - 用 `std::pair<T, V>(T, V)` 初始化一个数对
+
+    - `struct pair` 可以直接使用 `first/second` 访问成员变量
+
+        ```c++
+        #include <iostream>
+        #include <utility>
+        
+        int main()
+        {
+          std::pair<int, int> point(2, 4);
+          std::cout << point.first << " " << point.second;
+            // -> 2 4
+          return 0;
+        }
+        ```
+
+3. `<array>`
+
+    - 用 `std::array<T, size_t>` 初始化一个STL数组，这个数组的大小是固定的，大小必须要是一个常量
+
+    - `fill(T)` 可以整体变化数组内所有数据
+
+    - `data()` 或 `operator&` 都可以取到头指针
+
+        ```c++
+        #include <iostream>
+        #include <array>
+        
+        int main()
+        {
+          std::array<int, 5> arr = {1, 2, 3, 4, 5};
+          arr.fill(0);
+          for (int i = 0; i < 5; i += 1)
+            std::cout << arr[i] << " ";
+            // -> 0 0 0 0 0
+          std::cout << "\n" << arr.data() << " " << &arr;
+            // -> 0x61fdf0 0x61fdf0
+          return 0;
+        }
+        ```
+
+4. `<set>`
+
+    - 可以用大括号的形式初始化集合，也可以用 `insert(T)` 函数添加元素
+
+    - `std::set_intersection()/std::set_union()/std::set_difference()/std::set_symmetric_difference()` 可以分别求集合的交、并、差、对称差
+
+    - `<set>` 相对于 `<unordered_set>` ，内部的元素按升序排列
+
+        ```C++
+        #include <iostream>
+        #include <string>
+        #include <set>
+        #include <iterator>
+        #include <algorithm>
+        
+        int main()
+        {
+          std::set<int> a = {1, 2, 3, 4, 5};
+          std::set<int> b = {2, 3, 4, 5, 6};
+          a.insert(0);
+          std::set<int> c;
+          std::set_intersection(a.begin(), a.end(), b.begin(),                        b.end(), std::inserter(c, c.begin()));
+          for (std::set<int>::iterator it = c.begin(); it != c.end(); it++)
+            std::cout << *it << " ";  // -> 2 3 4 5
+          return 0;
+        }
+        ```
+
+5. `<map>`
+
+    - 用 `std::map<T, V>` 初始化一个散列表，`std::map<T, V>::value_type` 就是 `std::pair<T, V>`
+
+    - 用 `insert(std::pair<T, V>)` 或 `operator[](T, V)` 插入新的键值对；当插入的新键与 map 中有重复时，前者会添加失败，后者会覆盖对应的值
+
+    - 用 `count(T)` 或 `find(T)` 寻找对应的值，前者返回个数（0 或 1），后者返回对应的迭代器，如果找不到，则返回 `end()`
+
+    - 除了普通的 `erase`，`std::map` 还支持通过 key 值删除元素
+
+        ```C++
+        #include <iostream>
+        #include <string>
+        #include <map>
+        
+        int main()
+        {
+          std::map<int, std::string> mapping;
+          mapping.insert(std::pair<int, std::string>(1, "one"));
+          mapping[2] = "two";
+          std::cout << mapping.count(0) << "\n";  // -> 0
+          std::map<int, std::string>::iterator iter = mapping.find(2);
+          std::cout << iter->second;  // -> two
+          mapping.erase(1);
+          return 0;
+        }
+        ```
+
+    - 与 `<map>` 不同，`<unordered_map>` 不会按照升序排列键的值
+
+    - C++11 之后，可以用大括号的方式初始化散列表的值
+
+        ```C++
+        #include <iostream>
+        #include <string>
+        #include <unordered_map>
+        
+        int main()
+        {
+          std::unordered_map<int, std::string> mapping =
+            {{2, "two"}, {3, "three"}, {1, "one"}, {4, "four"}};
+          std::cout << mapping.begin()->second;  // -> four
+          return 0;
+        }
+        ```
+
+##### （五）C 标准库
+
+- `<cstdlib>`
+
+    - `size_t`：扩展为 `unsigned __int64`，也就是 `unsigned long long int`
+
+    - 随机数：与 `<ctime>` 一同使用
+
+        ```C++
+        #include <iostream>
+        #include <cstdlib>
+        #include <ctime>
+        
+        int main()
+        {
+          std::srand((unsigned int)time(nullptr));
+          std::cout << rand() % 100;
+          return 0;
+        }
+        ```
+
+#### 2.3.2 Feature of C++
+
+##### （一）指针、引用与常量
+
+1. 二维指针
+
+    - `int (*p)[4]` → p指向一个含有四格的二维数组的一列，指针指向层次为 `int(*)[4]` → `int*` → `int`
+
+    - `int *p[4]` → p指向一个含有四个 `int*` 的数组，指针指向层次为 `int**` → `int*` → `int`
+
+    - `int **p` → p指向一个 `int*` 的元素，指针指向层次为 `int**` → `int*` → `int`
+
+        > `int(*)[4]` 与 `int**` 本质上是两种指针，没有自动类型转换；所以可以看出，指针数组和二级指针更加接近；
+
+2. 利用 `new` 生成二维数组
+
+    - 用行指针：必须指定一行的大小
+
+        ```C++
+        int main()
+        {
+          int n;
+          std::cin >> n;
+          int (*arr)[16] = new int[n][16];
+          delete[] arr;
+          return 0;
+        }
+        ```
+
+    - 用指针数组：可以任意指定二维的大小，但是较为麻烦
+
+        ```C++
+        int main()
+        {
+          int x, y;
+          std::cin >> x >> y;
+          int** p = new int*[x];
+          for (int i = 0; i < x; i += 1)
+            p[i] = new int[y]; 
+          for (int i = 0; i < x; i += 1)
+            delete[] p[i];
+          delete[] p;
+          return 0;
+        }
+        ```
+
+3. 内建字符串与字符数组
+
+    ```C++
+    char str_a[] = {'s', 't', 'r', 'i', 'n', 'g', '\0'};
+    char str_b[] = "string";
+    const char* str_c = "string";
+    str_c = "new";
+    ```
+
+4. 右值引用
+
+    - 左值和右值
+
+        - 左值：可以取地址并且有名字的东西
+        - 右值：不能取地址的没有名字的东西
+
+    - 右值的分类
+
+        - 纯右值：不和对象关联的原始字面量、运算表达式产生的临时变量、非引用返回的临时变量、lambda表达式等
+        - 将亡值：将要移动的对象、`std::move` 函数的返回值、`T&&` 函数/转换为 `T&&` 类型转换函数的返回值
+
+    - 引用的类型
+
+        - 左值引用：非常值引用只能是左值，否则可以是右值
+
+        - 右值引用：被引用的值只能是右值
+
+        - 引用折叠：如果在泛型编程中有 `template <class T>` 且 `T function(T&& param) {}` 函数，T的推断类型有可能也是引用；这里的 `&&` 是一个未定义的引用类型，称为universal references，它是左值引用还是右值引用取决于它的初始化；此时会引入引用折叠的规则（`const T&&` 不算在内）
+
+            - 两个右值引用的折叠仍然为右值引用
+            - 其他所有情况均为左值引用（例：`T` 为 `string&`，则 `T&&` 为左值引用）
+
+            ```C++
+            class NewClass
+            {
+            public:
+              NewClass() : a(0) {}
+            private:
+              int a;
+            };
+            NewClass get_temp_new_class() { return NewClass(); }
+            
+            int main()
+            {
+              int num = 16;
+              int& a = num;
+              // int& a = 16;
+              // error: cannot bind non-const lvalue reference
+              // of type 'int&' to an rvalue of type 'int'
+              const int& b = num;
+              const int& c = 16;
+              // int&& d = num;
+              // error: cannot bind rvalue reference of
+              // type 'int&&' to lvalue of type 'int'
+              int&& d = 16;
+              const int&& e = 16;
+              NewClass&& f = get_temp_new_class();
+              // NewClass& f = get_temp_new_class();
+              // error: cannot bind non-const lvalue reference
+              // of type 'NewClass&' to an rvalue of type 'NewClass'
+              return 0;
+            }
+            ```
+
+            |    引用类型    | 非常量左值 | 常量左值 | 非常量左值 | 常量右值 |
+            | :------------: | :--------: | :------: | :--------: | :------: |
+            | 非常量左值引用 |     〇     |    ×     |     ×      |    ×     |
+            |  常量左值引用  |     〇     |    〇    |     〇     |    〇    |
+            | 非常量右值引用 |     ×      |    ×     |     〇     |    ×     |
+            |  常量右值引用  |     ×      |    ×     |     〇     |    〇    |
+
+    - 移动复制构造函数可以减少深拷贝开销，增加速度，具体见下例
+
+        - `String("Hello")` 是根据 `const char* = "Hello"` 生成的对象，如果使用普通的复制构造函数，则会根据 `String("Hello")` 再申请空间，生成新的字符串，并将原来的字符串析构
+
+        - 如果有移动复制构造函数，由于 `String("Hello")` 是右值，则会优先调用移动复制构造函数，将 `String("Hello")` 指针指向内容交给 `vec_str[i]`，减小开销
+
+        - 如果是 `String temp = String("Hello")`，依然可以用 `vec_str.push_back(std::move(temp))` 调用移动复制构造函数
+
+        - 如果移动复制构造函数没有定义，`std::move()` 不会发生错误，而会失效，此时会调用复制构造函数
+
+            ```C++
+            #include <iostream>
+            #include <cstring>
+            #include <vector>
+            
+            class String
+            {
+            public:
+              String(const char* cstr = nullptr)
+              {
+                if (cstr)
+                {
+                  m_data = new char[strlen(cstr)+1];
+                  strcpy(m_data, cstr);
+                }
+                else
+                {
+                  m_data = new char[1];
+                  *m_data = '\0';
+                }
+              }
+              String(const String& str)
+              {
+                CCtor += 1;
+                m_data = new char[strlen(str.m_data) + 1];
+                strcpy(m_data, str.m_data);
+              }
+              String(String&& str) noexcept : m_data(str.m_data)
+              {
+                MCtor += 1;
+                str.m_data = nullptr;
+              }
+              String& operator=(const String& str)
+              {
+                if (this == &str)
+                  return *this;
+                delete[] m_data;
+                m_data = new char[strlen(str.m_data) + 1];
+                strcpy(m_data, str.m_data);
+                return *this;
+              }
+              String& operator=(String&& str) noexcept
+              {
+                MAsgn += 1;
+                if (this == &str)
+                  return *this;
+                delete[] m_data; 
+                m_data = str.m_data;
+                str.m_data = nullptr;
+                return *this;
+              }
+              static size_t CCtor;
+              static size_t MCtor;
+              static size_t CAsgn;
+              static size_t MAsgn;
+              ~String() { delete[] m_data; }
+              char* get_c_str() const { return m_data; }
+              char& operator[](const int& n) { return m_data[n]; }
+              friend int main();
+            private:
+              char* m_data;
+            };
+            
+            size_t String::CCtor = 0;
+            size_t String::MCtor = 0;
+            size_t String::CAsgn = 0;
+            size_t String::MAsgn = 0;
+            
+            int main()
+            {
+              std::vector<String> vec_str;
+              vec_str.reserve(100);
+              for(int i = 0; i < 100; i += 1)
+                vec_str.push_back(String("Hello"));
+              std::cout << String::CCtor << std::endl    // -> 0
+                << String::MCtor << std::endl    // -> 1000
+                << String::CAsgn << std::endl    // -> 0
+                << String::MAsgn << std::endl;   // -> 0
+            }
+            ```
+
+    - 移动赋值函数同理，用 `std::string` 类作为例子，语句 `std::string str_4(std::move(str_1));` 和 `str_6 = std::move(str_2);`,`str_1` 和 `str_2` 的值有变化，但直到作用域末尾才会被析构
+
+        ```C++
+        #include <string>
+        int main()
+        {
+          std::string str_1("Hello");
+          std::string str_2("World");
+          std::string str_3(str_1);
+          std::string str_4(std::move(str_1));
+          std::string str_5, str_6;
+          str_5 = str_2;
+          str_6 = std::move(str_2);
+        }
+        ```
+
+    - 完美转发
+
+        - 函数在转发的时候，右值变成了左值，这是不完美转发
+
+        - `std::forward<T>(T t)` 可以将右值转发给下一个函数，若和泛型编程的类型推断一同使用则可以同时转发左值和右值
+
+            ```C++
+            #include <iostream>
+            #include <vector>
+            
+            void RunCode(int &&m)  { std::cout << "rvalue ref" << std::endl; }
+            void RunCode(int &m)  { std::cout << "lvalue ref" << std::endl; }
+            void RunCode(const int &&m)
+            {
+              std::cout << "const rvalue ref" << std::endl;
+            }
+            void RunCode(const int &m)
+            {
+              std::cout << "const lvalue ref" << std::endl;
+            }
+            template<typename T>
+            void perfectForward(T&& t) { RunCode(std::forward<T>(t)); }
+            template<typename T>void notPerfectForward(T&& t) { RunCode(t); }
+            
+            int main()
+            {
+              int a = 0;
+              int b = 0;
+              const int c = 0;
+              const int d = 0;
+              notPerfectForward(a);             // lvalue ref
+              notPerfectForward(std::move(b));  // lvalue ref
+              notPerfectForward(c);             // const lvalue ref
+              notPerfectForward(std::move(d));  // const lvalue ref
+              perfectForward(a);                // lvalue ref
+              perfectForward(std::move(b));     // rvalue ref
+              perfectForward(c);                // const lvalue ref
+              perfectForward(std::move(d));     // const rvalue ref
+            }
+            ```
+
+5. `const` 与指针
+
+    - 指向 `const int` 的指针：
+        - `const int*` → 指针指向可变，指针所指内容不可变
+        - `int const*` → 指针指向可变，指针所指内容不可变
+    - 指向 `int` 的 `const` 指针：
+        - `int* const` → 指针指向不可变，指针所指内容可变
+    - 两者结合（指向 `const int` 的 `const` 指针）：
+        - `const int* const` → 指针指向不可变，指针所指内容不可变
+
+6. `const` 与函数
+
+    ```C++
+    const std::string& Vector::function(const std::string&) const;
+    ```
+
+    考虑上例：
+
+    - 左边的 `const`：返回值不能被修改；&指返回成员本身，可以做左值（不可以是临时变量，因为会被析构）
+    - 中间的 `const`：实参在函数体内不能被修改；&指传入变量本身
+    - 右边的 `const`：对象（`*this`）在函数运行过程中不会被修改
+
+##### （二）类与继承
+
+1. 基本函数
+
+    - 下例是一个默认构造函数：
+
+        ```C++
+        Person(int a = 0, std::string n = "") : age(a), name(n) {}
+        ```
+
+    - 子类构造函数会先调用父类的对应默认构造函数（没有则合成一个），然后调用自己的默认构造
+
+    - 现有默认构造，构造，复制构造，赋值函数：
+
+        ```C++
+        Vector();
+        Vector(const string&);
+        Vector(const Vector&);
+        Vector& operator=(const Vector&);
+        ```
+
+        调用过程分别为
+
+        ```C++
+        Vector<int> v          // 1
+        Vector<int> v("123")   // 2
+        Vector<int> c = v      // 3
+        Vector<int> c(v)       // 3
+        v = c                  // 4
+        Vector<int> v = "123"  // 2 3
+        v = "123"              // 2 4
+        ```
+
+2. 虚函数
+    1. 有一个纯虚函数的类为抽象类，虚基类指的是抽象基类
+    2. 子类父类函数名和参数相同，且有 `virtual` → 覆盖 → 可以用动态绑定
+        - 其余三种情况：参数不同/参数相同但没有 `virtual` → 隐藏 → 父类函数只能显式调用
+    3. 只有父类指针指子类，且调用的函数有覆盖、能用才会有多态；其余情况一律变成静态绑定，没有显式说明只在类型所指定的位置找函数
+    4. 有同名同参 `const` 函数的时候，非 `const` 成员优先调用非 `const` 函数，然后才会调用 `const` 函数
+
+##### （三）变量类型
+
+1. 按作用域区分
+    - 局部变量：定义在函数内，默认为 `auto` 类型
+    - 全局变量：定义在函数外，默认为 `extern` 类型
+2. 按关键字区分
+    - auto：`auto` 局部变量只能在函数中生效
+    - register：建议 OS 把变量放入寄存器
+    - extern：`extern` 函数与 `extern` 变量可以在所有文件使用函数或变量
+    - static：`static` 函数与 `static` 全局变量只能在当前文件使用函数或变量，`static` 局部变量只能在函数中生效，只被初始化一次
+
+##### （四）lambda 表达式
+
+1. lambda 表达式的作用是提供一个没有名字的一次性函数，是纯右值
+
+    ```C++
+    [capture-list](params) -> ret { body }
+    ```
+
+2. lambda表达式的格式如上；其中，`params` 是参数列表，`ret` 是返回值类型，`body` 是函数体
+
+    ```C++
+    #include <iostream>
+    #include <vector>
+    #include <algorithm>
+    
+    int main()
+    {
+      std::vector<int> data;
+      for (int i = 0; i < 10; i += 1)
+        data.push_back(i);
+      std::sort(data.begin(), data.end(),
+                [](const int& left, const int& right)
+                -> bool { return left > right; });
+      for (int i = 0; i < data.size(); i += 1)
+        std::cout << data[i] << " ";    // -> 9 8 7 6 5 4 3 2 1 0
+      return 0;
+    }
+    ```
+
+3. `capture-list` 是捕捉列表，它使这个匿名函数可以访问外部（父作用域）变量，捕捉方式有按值和按引用两种
+
+    - `[a, &b]` 表示按值捕捉 `a`，按引用捕捉 `b`
+
+    - `[&, a]` 表示按引用捕捉所有父作用域变量，除了 `a` 按值捕捉
+
+    - `[=，&b]` 表示按值捕捉所有父作用域变量，除了 `b` 按引用捕捉
+
+        ```C++
+        #include <iostream>
+        
+        int main()
+        {
+          int num = 0;
+          auto func_ptr = ([num]() -> void { std::cout << num << std::endl;});
+          func_ptr();
+          return 0;
+        }
+        ```
+
+##### （五）大括号初始化
+
+- 在C++11后，内置类型和 STL 的容器都可以采用大括号进行初始化，各种容器保持一致性
+
+    ```C++
+    #include <iostream>
+    #include <set>
+    #include <map>
+    #include <list>
+    #include <array>
+    #include <string>
+    #include <vector>
+    #include <utility>
+    
+    int main()
+    {
+      int num = {0};
+      int nums[] = {0, 1, 1};
+      std::set<int> s = {0, 1, 2, 3, 4, 5};
+      std::map<int, int> mapping = {{0, 0}, {1, -1}};
+      std::list<int> l = {0, 1, 2, 3, 4, 5};
+      std::array<int, 5> arr = {0, 1, 2, 3, 4};
+      std::string str = {"01234"};
+      std::string str_b = {'0', '1', '2', '3'};
+      std::vector<int> vec = {0, 1, 2, 3, 4, 5};
+      std::pair<int, int> p = {0, 1};
+      return 0;
+    }
+    ```
+
+##### （六）g++ 指令
+
+1. 预处理与汇编
+    - 用 `g++ -E h.cpp -o e.i` 生成预处理文件（删除注释，扩展宏，复制头文件），省略 `-o e.i` 时，会生成默认文件 `h.i`
+    - 用 `g++ -S h.cpp -o e.s` 生成汇编指令，省略 `-o e.s` 时，会生成默认文件 `h.s`
+2. 编译与链接
+    - 用 `g++ -c h.cpp -o e.o` 生成未链接的机器码，省略 `-o e.o` 时，会生成默认文件 `h.o`
+    - 用 `g++ h.cpp -o e` 生成最终经过链接的机器码，省略 `-o e` 时，会生成默认文件，windows下为 `a.exe`，Linux下为 `a.out`
+    - 需要调试时，用 `-g` 命令生成项目 `g++ -g h.cpp -o e`，然后用指令 `gdb ./e` 进入调试模式
+
+## 3 ALGORITHM
+
+## 4 OTHER
+
+### 4.1 Web Protocol
+
+#### 4.1.1 JSON & XML
+
+#### 4.1.2 Protocol
+
+##### （一）TCP/IP 协议
+
+1. TCP/IP 是供已连接因特网的计算机进行通信的通信协议，包含一系列用于处理数据通信的协议
+2. IP 地址
+    - TCP/IP 使用 4 组数字来为计算机编址，每个计算机必须有一个唯一的 4 组数字的地址
+    - 每组数字必须在 0 到 255 之间，并由点号隔开，比如：192.168.1.60
+    - 用于 TCP/IP 地址的名字被称为域名，例如 google.com 就是一个域名
+3. 协议族：TCP/IP 是基于 TCP 和 IP 这两个最初的协议之上的不同的通信协议的集合，下面列出部分
+    - 传输控制协议（TCP）：TCP 用于从应用程序到网络的数据传输控制，TCP 负责在数据传送之前将它们分割为 IP 包，然后在它们到达的时候将它们重组
+    - 网际协议（IP）：IP 负责在因特网上发送和接收数据包
+    - 超文本传输协议（HTTP）：HTTP 用于从 web 客户端向 web 服务器发送请求，并从 web 服务器向 web 客户端返回内容（网页）
+    - 安全的超文本传输协议（HTTPS）：HTTPS 负责在 web 服务器和 web 浏览器之间的安全通信
+    - 安全套接字层（SSL）：SSL 协议用于为安全数据传输加密数据
+    - 文件传输协议（FTP）：FTP 负责计算机之间的文件传输
+    - 简易邮件传输协议（SMTP），因特网消息访问协议（IMAP），邮局协议（POP）：电子邮件的协议
+
+##### （二）HTTP 协议
+
+1. HTTP是基于客户端 / 服务端的架构模型，通过一个可靠的链接来交换信息，是一个无状态的请求 / 响应协议
+
+    - 无连接：无连接即限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接
+    - 无状态：指协议对于事务处理没有记忆能力
+    - 媒体独立：只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过 HTTP 发送
+    - HTTP 使用统一资源标识符（URI）来传输数据和建立连接。
+
+2. 消息结构
+
+    - 客户端请求报文：客户端发送一个HTTP请求到服务器的请求消息包括以下格式
+
+        - 请求行：请求方法、空格、URL、空格、协议版本、CRLF
+        - 请求头（多行）：「头部字段名: 值 CRLF」
+        - 空行：CRLF
+        - 请求体：请求数据
+
+        实例：
+
+        ```http
+        GET /hello.txt HTTP/1.1
+        User-Agent: curl/7.16.3 libcurl/7.16.3 OpenSSL/0.9.7l zlib/1.2.3
+        Host: www.example.com
+        Accept-Language: en, mi
+        ```
+
+    - 服务器响应报文
+
+        - 响应行：报文协议与版本、空格、状态码、空格、状态描述、CRLF
+        - 响应头
+        - 空行：CRLF
+        - 响应体：响应正文
+
+        实例：
+
+        ```http
+        HTTP/1.1 200 OK
+        Date: Mon, 27 Jul 2009 12:28:53 GMT
+        Server: Apache
+        Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT
+        ETag: "34aa387-d-1568eb00"
+        Accept-Ranges: bytes
+        Content-Length: 51
+        Vary: Accept-Encoding
+        Content-Type: text/plain
+        ```
+
+3. 请求行与响应行
+
+    - 请求头处的请求方法：以 `GET` 与 `POST` 最常用
+        - `GET`：向特定的资源发出请求，其行为一般是幂等的（即没有副作用）
+        - `POST`：向指定资源提交数据进行处理请求（例如提交表单或者上传文件），数据被包含在请求体中。`POST` 请求可能会导致新的资源的创建或已有资源的修改（即不幂等）
+
+    - 响应行的状态码：以下是几个常见的状态码
+
+        | 状态码 | 状态码名称            | 中文描述                                                     |
+        | ------ | --------------------- | ------------------------------------------------------------ |
+        | 200    | OK                    | 请求成功。一般用于 GET 与 POST 请求                          |
+        | 301    | Moved Permanently     | 永久移动。请求的资源已被永久的移动到新 URL，返回信息会包括新的 URL，浏览器会自动定向到新 URL |
+        | 403    | Forbidden             | 服务器理解请求客户端的请求，但是拒绝执行此请求               |
+        | 404    | Not Found             | 服务器无法根据客户端的请求找到资源                           |
+        | 500    | Internal Server Error | 服务器内部错误，无法完成请求                                 |
+
+##### （三）AJAX
+
+1. AJAX 指异步 JavaScript 和 XML，它不是新的编程语言，而是一种使用现有标准的新方法。
+
+    -  `XMLHttpRequest` 对象：通过 `XMLHttpRequest` 可以在不刷新页面的情况下请求特定 URL，获取数据
+    
+    - `readyState` 是 `XMLHttpRequest` 对象的属性，取值在 0 ~ 4 之间。当`readyState` 发生变化，则会调用 `XMLHttpRequest` 对象绑定的 `onreadystatechange` 对应的函数
+    
+      | `readyState` | 描述                     |
+      | ------------ | ------------------------ |
+      | `0`          | 请求未初始化             |
+      | `1`          | 服务器连接已建立         |
+      | `2`          | 请求已接收               |
+      | `3`          | 请求处理中               |
+      | `4`          | 请求已完成，且响应已就绪 |
+    
+    ```javascript
+    var xhr= new XMLHttpRequest(),
+        method = "GET",
+        url = "https://developer.mozilla.org/";
+    
+    xhr.open(method, url, true);
+    xhr.onreadystatechange = function () {
+      if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200)
+        console.log(xhr.responseText)
+    }
+    xhr.send();
+    ```
+
+2. jQuery 提供了 AJAX 方法
+    - `$(selector).load(URL, data, callback);` ：从服务器加载数据，并把返回的数据放入被选元素中。其中，可选的 `data` 参数规定与请求一同发送的查询字符串键 / 值对集合
+    - `$.get(URL, callback);` ：通过 HTTP GET 请求从服务器上请求数据
+    - `$.post(URL, data, callback);`：通过 HTTP POST 请求向服务器提交数据。其中，可选的 `data` 参数规定连同请求发送的数据
+
+#### 4.1.3 Encryption
+
+（待补充）
+
+### 4.2 Tool
+
+#### 4.2.1 Linux
+
+##### （一）根目录文件结构
+
+1. 系统启动的必须文件
+
+    - `/boot`：存放的启动 Linux 时使用的内核文件（包括连接文件以及镜像文件）
+
+    - `/etc`：存放所有系统管理所需要的配置文件和子目录
+
+    - `/lib`：存放系统最基本的动态连接共享库
+
+    - `/sys`： 该目录下安装了 2.6 内核中新出现的一个文件系统 `sysfs` 。`sysfs` 文件系统集成了下面3种文件系统的信息：针对进程信息的 `proc` 文件系统、针对设备的 `devfs` 文件系统以及针对伪终端的 `devpts` 文件系统
+
+2. 指令集合
+
+    - `/bin`：存放着最常用的程序和指令
+
+    - `/sbin`：只有系统管理员能使用的程序和指令
+
+3. 外部文件管理
+
+    - `/dev` ：存放 Linux 的外部设备
+    - `/media`：其他设备，例如光驱
+    - `/mnt`：用于临时挂载其他文件系统
+
+4. 临时文件
+
+    - `/run`：临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。
+    - `/lost+found`：系统非法关机后，这里就存放一些文件。一般情况下为空
+    - `/tmp`：用于存放临时文件的。
+
+5. 账户：
+
+    - `/root`：系统管理员的用户主目录
+    - `/home`：用户的主目录，以用户的账号命名
+    - `/usr`：用户的应用程序和文件放在这个目录下
+        - `/usr/bin`：系统用户使用的应用程序与指令
+        - `/usr/sbin`：超级用户使用的比较高级的管理程序和系统守护程序
+        - `/usr/src`：内核源代码默认的放置目录
+
+6. 运行过程中使用
+
+    - `/var`：存放经常修改的数据，例如程序运行的日志文件
+    - `/proc`：是虚拟文件系统，存储的是当前内核运行状态的一系列特殊文件。这个目录是一个虚拟的目录，它是系统内存的映射，可以通过直接访问这个目录来获取系统信息。
+
+7. 扩展
+
+    - `/opt`：默认为空，给主机额外安装软件所摆放的目录
+    - `/srv`：存放一些服务启动之后需要提取的数据
+
+##### （二）文件属性与管理
+
+1. 文件指令
+
+    | 指令    | 描述             |
+    | ------- | ---------------- |
+    | `ls`    | 列出目录及文件名 |
+    | `cd`    | 切换目录         |
+    | `pwd`   | 显示当前目录     |
+    | `mkdir` | 创建新目录       |
+    | `rmdir` | 删除一个空目录   |
+    | `cp`    | 复制文件或目录   |
+    | `rm`    | 删除文件或目录   |
+    | `mv`    | 移动文件或目录   |
+    | `cat`   | 显示文件内容     |
+
+2. 文件属性：用 `ll` 或 `ls -l` 显示文件的属性
+
+    ```shell
+    > ls -l
+      total 64
+      dr-xr-xr-x   2 root root 4096 Dec 14  2012 bin
+      dr-xr-xr-x   4 root root 4096 Apr 19  2012 boot
+    ```
+
+    - 第一个字母表示文件类型。`d` 为目录，`-` 为文件，`l` 为链接文件，`b` 为装置文件里面的可随机存取装置，`c` 为装置文件里面的一次性读取装置
+    - 后面九个字母表示属主权限，属组权限和其他用户的读写执行权限，若为 `-`，则表示没有权限
+
+#### 4.2.2 VS Code
+
+##### （一）预定义变量
+
+- Code 中预定义的变量
+
+    | 变量                         | 描述                          |
+    | ---------------------------- | ----------------------------- |
+    | `${workspaceFolder}`         | 表示当前 workspace 文件夹路径 |
+    | `${workspaceRootFolderName}` | 表示workspace的文件夹名       |
+    | `${file}`                    | 文件自身的绝对路径            |
+    | `${relativeFile}`            | 文件在 workspace 中的路径     |
+    | `${fileBasenameNoExtension}` | 当前文件的文件名，不带后缀    |
+    | `${fileBasename}`            | 当前文件的文件名              |
+    | `${fileDirname}`             | 文件所在的文件夹路径          |
+    | `${fileExtname}`             | 当前文件的后缀                |
+    | `${lineNumber}`              | 当前文件光标所在的行号        |
+    | `${env:PATH}`                | 系统中的环境变量              |
+
+##### （二）C++ 环境配置文件
+
+1. `launch.json` 中 `configurations` 的散列配置
+
+    | 项目             | 描述                                                         |
+    | ---------------- | ------------------------------------------------------------ |
+    | `name`           | 名字，显示在 Debug 侧边栏上方的内容                          |
+    | `program`        | 运行的程序名                                                 |
+    | `args`           | 运行的程序的命令行参数                                       |
+    | `miDebuggerPath` | 调试程序的位置，例如 `gdb` 的路径                            |
+    | `preLaunchTask`  | 运行前需要运行的指令名，在当前目录下的 `task.json` 任务中按 label 寻找 |
+
+2. `task.json` 预定义任务中  `task` 的散列配置
+
+    | 项目             | 描述                                   |
+    | ---------------- | -------------------------------------- |
+    | `type`           | 该任务以进程还是命令行的方式运行       |
+    | `label`          | 任务名字                               |
+    | `command`        | 执行的任务内容，可以是外部程序或命令行 |
+    | `args`           | 运行的程序的命令行参数                 |
+    | `problemMatcher` | 错误捕获设置                           |
+
+#### 4.2.3 Git
+
+##### （一）Git 配置
+
+1. 设置邮箱和用户名
+
+    ```shell
+    git config --global user.name "UserName"
+    git config --global user.email EMailAddress@outlook.com
+    ```
+
+2. 设置代理和取消代理
+
+    ```shell
+    git config http.proxy http://127.0.0.1:7890
+    git config --unset http.proxy
+    ```
+
+##### （二）分支控制
+
+1. merge：`current branch` 指正在 checkout 的分支。`merge X into current branch` 即将选中分支移入当前分支
+2. rebase：`rebase current branch into branch X`，即将当前分支的开始分支点设在 X 分支上 ，在某种程度上可以使修改更加清晰
+
+#### 4.2.4 Chrome Console
+
+#### 4.2.5 Vim
+
+<p align="right"> Ichinoe Mizue </p>
