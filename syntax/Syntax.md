@@ -133,7 +133,18 @@
     - `-moz`：Moziila 的 Firefox
     - `-ms`： Microsoft 的 Internet Explorer
     - `-o`：Opera
-4. LESS / SCSS / SASS：兼容 CSS 的预处理器
+    
+4. 使用 `@media` 查询，可以针对不同的媒体类型定义不同的样式；例如 `@media` 可以针对不同的屏幕尺寸设置不同的样式，如下所示，若文档宽度小于 300 像素则修改背景颜色
+
+    ```css
+    @media screen and (max-width: 300px) {
+      body {
+        background-color: lightblue;
+      }
+    }
+    ```
+
+5. LESS / SCSS / SASS：兼容 CSS 的预处理器
 
 ##### （二）选择器
 
@@ -955,6 +966,8 @@
 
     - Unicode 属性 `\p{...}` ：寻找具有描述性质的符号，例如用 `\p{sc=Han}` 寻找汉字，用 `\p{Sm}` 寻找数学符号
 
+##### （八）其他
+
 #### 1.2.2 TypeScript
 
 ##### （一）类型
@@ -1303,7 +1316,7 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
 
 ##### （四）React Hook
 
-1. `useState` 允许在函数中使用状态，函数元件不再是无状态原件。`useState(default)` 创建了一个状态 `count` 和用于设置状态值的接口 `setCount`，并设置了状态的初始值。
+1. `useState` 允许在函数中使用状态。`useState(default)` 创建了一个状态 `count` 和用于设置状态值的接口 `setCount`，并设置了状态的初始值。
 
     ```jsx
     import React from 'react';
@@ -1322,7 +1335,10 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
     }
     ```
 
-2. `React.useEffect()` 相当于 `componentDidUpdate`，通过 `return` 设置清楚副作用的函数。如果想执行只运行一次的 effect（仅在组件挂载和卸载时执行），可以传递一个空数组作为第二个参数。
+    - 建议将状态设置为 `const`，每次仅通过 `setState` 改变状态，而不通过赋值状态
+    - 对于对象（Object 和 Array 等），`React` 通过 `===` 比对状态是否改变，所以设置改变必须要改变状态的引用
+
+2. `React.useEffect()` 相当于 `componentDidUpdate`，通过 `return` 设置清除副作用的函数。
 
     ```jsx
     useEffect(() => {
@@ -1330,7 +1346,69 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
       return () => {
         subscription.unsubscribe();
       };
-    },[props.source]);
+    }, [props.source]);
+    ```
+
+    - `useEffect` 的第二个参数是一个数组，当且仅当数组内的值发生改变后会执行第一个函数。如果想执行只运行一次的 effect（仅在组件挂载和卸载时执行），可以传递一个空数组作为第二个参数（不推荐）
+
+        > 如果要使用此优化方式，需要确保数组中包含了所有外部作用域中会随时间变化并且在 `effect` 中使用的变量，否则代码会引用到先前渲染中的旧变量（因为当 `effect` 执行时会创建一个闭包）
+
+3. `useContext`：在组件外用 `React.createContext` 创建一个 Context，并传入默认值。在组件内用 `ThemeContext.Provider` 的 `value` 提供 Context 内容，如果为空则使用默认值；使用 `useContext` 获得 Context 的具体值
+
+    ```jsx
+    const themes = {
+      light: {
+        foreground: "#000000",
+        background: "#eeeeee"
+      },
+      dark: {
+        foreground: "#ffffff",
+        background: "#222222"
+      }
+    };
+    
+    const ThemeContext = React.createContext(themes.light);
+    
+    function App() {
+      return (
+        <ThemeContext.Provider value={themes.dark}>
+          <Toolbar />
+        </ThemeContext.Provider>
+      );
+    }
+    
+    function Toolbar(props) {
+      return (
+        <div>
+          <ThemedButton />
+        </div>
+      );
+    }
+    
+    function ThemedButton() {
+      const theme = useContext(ThemeContext);
+      return (
+        <button style={{ background: theme.background, color: theme.foreground }}>
+          I am styled by theme context!
+        </button>
+      );
+    }
+    ```
+
+4. `useCallback`：把内联回调函数及依赖项数组作为参数传入 `useCallback`，返回该回调函数的 `memoized` 版本，该回调函数仅在某个依赖项改变时才会更新
+
+    ```jsx
+    const memoizedCallback = useCallback(() => {
+      doSomething(a, b);
+    }, [a, b]);
+    ```
+
+5. `useMemo`：把创建函数和依赖项数组作为参数传入 `useMemo`，它仅会在某个依赖项改变时才重新计算 memoized 值。这种优化有助于避免在每次渲染时都进行高开销的计算
+
+    ```jsx
+    const memoizedValue = useMemo(() => {
+      computeExpensiveValue(a, b);
+    }, [a, b]);
     ```
 
 ### 1.4 UI Framework
@@ -1423,6 +1501,7 @@ Bootstrap 适合短时间开发简单的静态网站。
     ```shell
     npm install @material-ui/core
     npm install @material-ui/icons
+    ```
 
 2. 如果需要实验性功能或者 `<Alert>`（Material Design 已不再涉及）的内容，需要额外安装 `lab`。如果需要时间选择器，还需要安装 `pickers`，如果 `pickers` 版本不超过 4，那么需要安装不超过版本 1的 `@date-io`
 
@@ -1434,11 +1513,253 @@ Bootstrap 适合短时间开发简单的静态网站。
 
 ##### （二）布局
 
-（待补充）
+1. Box：相当于一个容器
+    - Box 组件能够封装组件，它创建了一个新的 DOM 元素，默认情况下为 `<div>`，并可以通过组件的属性进行更改
+2. Container：通过容器组件，页面的内容会呈现水平居中
+    - 过 `maxWidth` 属性的值来设置一个 fluid 容器的最大宽度
+    - 通过设置 `fixed` 属性，您可以设计固定的大小而不是尝试完全流体布局的视口。 `max-width` 和当前断点的 `min-width` 则相同
+3. Grid：Material Design 响应式布局的栅格可适应屏幕大小和方向，确保布局在不同尺寸之间的一致性
+    - 两个网格项之间的间距遵循这样的线性函数： `output(spacing) = spacing * 8px`
+    - 流式网格可以通过列来缩放和调整内容的大小。 而其布局则可以通过使用断点来决定布局是否需要进行较大的调整
+    - 网格列表在一个系统的网格中展示了一系列的图像
 
 ##### （三）样式表
 
-（待补充）
+1. 从 `@material-ui/core/styles` 导出的内容带有默认样式，如果想要原有的不带主题的模块，从 `@material-ui/styles` 导出即可
+
+2. 样式的基本用法
+
+    - Hook API：利用 Hook 生成器 `makeStyles` 生成样式函数 Hook，在组件中利用此函数得到类名的对象（默认情况下，`@material-ui/core/styles` 生成的类名是不是固定值），其中键名与 `makeStyles` 规定的一致，值为字符串，可以利用 `clsx` 函数组合类名
+
+        ```jsx
+        import React from 'react';
+        import { makeStyles } from '@material-ui/core/styles';
+        import Button from '@material-ui/core/Button';
+        
+        const useStyles = makeStyles({
+          root: {
+            background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            border: 0,
+            borderRadius: 3,
+            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+            color: 'white',
+            height: 48,
+            padding: '0 30px',
+          },
+        });
+        
+        export default function Hook() {
+          const classes = useStyles();
+          // example of classes: { root: "makeStyles-root-1" }
+          return <Button className={classes.root}>Hook</Button>;
+        }
+        ```
+
+    - Styled components API：改变默认组件的样式，返回一个新的组件
+
+        ```jsx
+        import React from 'react';
+        import { styled } from '@material-ui/core/styles';
+        import Button from '@material-ui/core/Button';
+        
+        const MyButton = styled(Button)({
+          background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+          border: 0,
+          borderRadius: 3,
+          boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+          color: 'white',
+          height: 48,
+          padding: '0 30px',
+        });
+        
+        export default function StyledComponents() {
+          return <MyButton>Styled Components</MyButton>;
+        }
+        ```
+
+    - Higher-order component API：`withStyles(styles)` 得到的 `useStyles` 传入组件作为参数，返回一个传入 `classes` 作为 `props` 的组件
+
+        ```jsx
+        import React from 'react';
+        import PropTypes from 'prop-types';
+        import { withStyles } from '@material-ui/core/styles';
+        import Button from '@material-ui/core/Button';
+        
+        const styles = {
+          root: {
+            background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            border: 0,
+            borderRadius: 3,
+            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+            color: 'white',
+            height: 48,
+            padding: '0 30px',
+          },
+        };
+        
+        function HigherOrderComponent(props) {
+          const { classes } = props;
+          return <Button className={classes.root}>Higher-order component</Button>;
+        }
+        
+        HigherOrderComponent.propTypes = {
+          classes: PropTypes.object.isRequired,
+        };
+        
+        export default withStyles(styles)(HigherOrderComponent);
+        ```
+
+3. `makeStyles` 的 「CSS in JavaScript」
+
+    - 在当前的组件内一个目标元素里嵌套样式选择器，嵌套均以 `& ` 开头，其余内容与 CSS 保持一致
+
+        ```jsx
+        const useStyles = makeStyles({
+          root: {
+            color: 'red',
+            '& p': {
+              color: 'green',
+              '& span': {
+                color: 'blue'
+              }
+            }
+          },
+        });
+        ```
+
+    - `makeStyles` 插值可用于在调用 `useStyles` 时才决定部分属性的样式
+
+        ```jsx
+        const useStyles = makeStyles({
+          // style rule
+          foo: props => ({
+            backgroundColor: props.backgroundColor,
+          }),
+          bar: {
+            // CSS property
+            color: props => props.color,
+          },
+        });
+        
+        function MyComponent() {
+          const props = { backgroundColor: 'black', color: 'white' };
+          const classes = useStyles(props);
+        
+          return <div className={`${classes.foo} ${classes.bar}`} />
+        }
+        ```
+
+4. 主题
+
+    - 若想将主题传递到 React 组件树，添加 `ThemeProvider` 包装到应用程序的顶层，然后在样式函数中访问主题对象
+
+        ```jsx
+        import React from 'react';
+        import { ThemeProvider, makeStyles } from '@material-ui/core/styles';
+        
+        const useStyles = makeStyles((theme) => ({
+          root: {
+            background: theme.background,
+            borderRadius: 0
+          },
+        }));
+        
+        function DeepChild() {
+          const classes = useStyles();
+        
+          return (
+            <button type="button" className={classes.root}>
+              Theming
+            </button>
+          );
+        }
+        
+        const themeInstance = {
+          background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+        };
+        
+        export default function Theming() {
+          return (
+            <ThemeProvider theme={themeInstance}>
+              <DeepChild />
+            </ThemeProvider>
+          );
+        }
+        ```
+
+    - `useTheme` Hook 可以在组件内访问主题对象
+
+        ```jsx
+        import { useTheme } from '@material-ui/core/styles';
+        
+        function DeepChild() {
+          const theme = useTheme();
+          return <span>{`spacing ${theme.spacing}`}</span>;
+        }
+        ```
+
+    - 断点：利用 `useMediaQuery` Hook 基于 JavaScript 中的断点值来更改 React 渲染树；或者利用 `theme.breakpoints` 的函数在 CSS 内实现响应式布局
+
+        ```jsx
+        const styles = theme => ({
+          root: {
+            padding: theme.spacing(1),
+            [theme.breakpoints.down('sm')]: {
+              backgroundColor: theme.palette.secondary.main,
+            },
+            [theme.breakpoints.up('md')]: {
+              backgroundColor: theme.palette.primary.main,
+            },
+            [theme.breakpoints.only('lg')]: {
+              backgroundColor: green[500],
+            },
+          },
+        });
+        ```
+
+5. 覆盖默认样式
+
+    - 使用一个高阶组件 `withStyles()`将自定义样式注入 DOM 之中，并通过它的 `classes` 属性将类名传递给 `ClassNames` 组件
+
+    - 当 `className` 属性不足够时，需要访问更深层的元素，这时则可使用`classes` 对象属性，这样就能够自定义该组件中所有由 Material UI 注入的 CSS
+
+        ```jsx
+        import React from 'react';
+        import { makeStyles } from '@material-ui/core/styles';
+        import Button from '@material-ui/core/Button';
+        
+        const useStyles = makeStyles({
+          root: {
+            background: 'linear-gradient(45deg, #FE6B8B 30%, #FF8E53 90%)',
+            borderRadius: 3,
+            border: 0,
+            color: 'white',
+            height: 48,
+            padding: '0 30px',
+            boxShadow: '0 3px 5px 2px rgba(255, 105, 135, .3)',
+          },
+          label: {
+            textTransform: 'capitalize',
+          },
+        });
+        
+        export default function ClassesNesting() {
+          const classes = useStyles();
+        
+          return (
+            <Button
+              classes={{
+                // class name, e.g. `classes-nesting-root-x`
+                root: classes.root,
+                // class name, e.g. `classes-nesting-label-x`
+                label: classes.label
+              }}
+            >
+              classes nesting
+            </Button>
+          );
+        }
+        ```
 
 ## 2 SERVER
 
@@ -1606,9 +1927,9 @@ Bootstrap 适合短时间开发简单的静态网站。
 
 #### 2.1.2 Express.js
 
-##### （一）基本结构
+##### （一）结构与路由
 
-1. 以下是一个简单的实例
+1. 以下是一个 Express 应用的基本结构
 
     ```javascript
     const express = require("express")
@@ -1624,141 +1945,53 @@ Bootstrap 适合短时间开发简单的静态网站。
     })
     ```
 
-2. 利用 `express.static` 中间件来设置静态文件路径，例如 `app.use('/public', express.static('public'));`，则 `/public` 的文件可以被访问
-
-##### （二）项目生成
-
-- 通过应用生成器工具 `express-generator` 可以快速创建一个应用的骨架。
-
-### 2.2 Application
-
-#### 2.2.1 Electron
-
-##### （一）进程
-
-1. 一个 Electron 的启动脚本写成如下形式
+2. 路由：利用 `app.use('/first', firstRouter);` 将某一级为 `first` 的请求导出到 `firstRouter`
 
     ```javascript
-    // Modules to control application life and create native browser window
-    const {app, BrowserWindow} = require('electron')
-    const path = require('path')
+    // firstRouter
+    var router = express.Router();
     
-    function createWindow () {
-      // Create the browser window.
-      const mainWindow = new BrowserWindow({
-        width: 1600,
-        height: 900,
-        webPreferences: {
-          preload: path.join(__dirname, 'preload.js')
-        }
-      })
-    
-      // and load the index.html of the app.
-      mainWindow.loadFile('index.html')
-    
-      // Open the DevTools.
-      // mainWindow.webContents.openDevTools()
-    }
-    
-    // This method will be called when Electron has finished
-    // initialization and is ready to create browser windows.
-    // Some APIs can only be used after this event occurs.
-    app.whenReady().then(() => {
-      createWindow()
-      app.on('activate', function () {
-        // On macOS it's common to re-create a window in the app when the
-        // dock icon is clicked and there are no other windows open.
-        if (BrowserWindow.getAllWindows().length === 0)
-          createWindow()
-      })
+    router.get('/second', (req, res) => {
+      console.log(req.query);
+      // do_something();
     })
     
-    // Quit when all windows are closed, except on macOS. There, it's common
-    // for applications and their menu bar to stay active until the user quits
-    // explicitly with Cmd + Q.
-    app.on('window-all-closed', function () {
-      if (process.platform !== 'darwin') app.quit()
+    router.post('/another', (req, res) => {
+      console.log(req.body);
+      // do_anotherthing();
     })
+    
+    module.exports = router;
     ```
 
-2. 主进程和渲染进程
+3. 回复请求：
+    - `res.send(body)`：相当于 `res.status(200).send(body)`
+    - `res.sendFile(filePath)`：发送文件（图片，HTML 等）
+    - `res.render`：渲染模板引擎并发送结果 HTML
 
-    - 一个 Electron 应用只有一个主进程，但可以有多个渲染进程。一个 `BrowserWindow` 实例就代表一个渲染进程
-    - 主进程负责管理所有的窗口及其对应的渲染进程，开启 `nodeIntegration` 配置后，渲染进程也有能力访问 `Node.js` 的 API
-    - 主进程和渲染进程之间的通讯使用 `ipcRenderer`  模块，或者使用 `remote` 模块
+##### （二）中间件
 
-##### （二）嵌入前端框架
+1. 静态文件：利用 `express.static` 中间件来设置，例如 `app.use('/public', express.static('public'));`，则 `/public` 的文件可以被访问
 
-以 React 为例，将 React 嵌入 Electron
-
-1. 首先利用 `create-react-app` 构建一个应用，执行以下命令，直到能在 `http://localhost:3000` 看到 React 的图标旋转的初始网页。然后安装 `electron` 到 `app` 文件夹中。
-
-    ```shell
-    create-react-app app
-    cd app
-    npm start
-    npm install electron --save-dev
-    ```
-
-2. 配置 `package.json`，增加如下两项。其中， `main.js` 是 Node.js 的入口文件。
-
-    ```json
-    {
-      "main": "main.js",
-      "homepage": "./",
-    }
-    ```
-
-3. 修改 `main.js` 的内容，主要是加载的页面有变化。注意，当 React 页面构建完毕后，再经过 Electron 打包后的路径并不一致，应该写成如下形式：
+2. CORS 配置：允许的跨域请求内容
 
     ```javascript
-    if (app.isPackaged) {
-      mainWindow.webContents.openDevTools();
-      win.loadURL("http://localhost:3000/");
-    }
-    else mainWindow.loadURL(path.join(__dirname, './build/index.html'));
+    app.use(cors({
+      origin: ['http://localhost:3000'],
+      methods: ["GET", "POST"],
+      alloweHeaders: ['Conten-Type', 'Authorization', 'Accept', 'Origin'],
+      exposeHeaders: ['WWW-Authenticate', 'Server-Authorization'],
+      credentials: true,
+    }));
     ```
 
-4. 在开启 `nodeIntegration` 后，可以在前端使用 Node.js 的接口，但是无法通过require调用本地包，而是应该使用 `window.require`。这样在网页上无法访问，只能在 Electron 上调试。如果 Electron 上也无法运行，检查包是否安装出错。
+3. `Cookie` 解析：`app.use(cookieParser())`
 
-    ```jsx
-    import React from 'react';
-    
-    var os = window.require('os')
-    console.log(os.cpus())
-    
-    class App extends React.Component {
-      render() {
-        return <div></div>
-      }
-    }
-    export default App;
-    ```
+4. 限制请求体大小：`app.use(express.json({ limit: "1mb" }))`
 
-##### （三）调试与发布
+### 2.2 C++
 
-1. Electron 的桌面应用在打包后的文件存储位置各不相同。通过调用属性 `app.isPackaged` 可以判断当前环境下是否是发布版本。另外，通过调用 `electron . argv` 可以在主进程的 `process.argv` 中看到预定义变量
-
-    - 在前端环境下（例如 HTML 引用的图片，样式表或 JavaScript 脚本），都是以该文件为当前目录的引用，在发布版下，这些文件在 exe 目录的 `./resources/app` 下
-
-    - 在后端环境下，后端引用的任何资源（例如 `fs` 模块读取文件），都是以工程目录为当前目录。在调试版和发布版两个版本下位置一致。
-
-2. `electron-packager . ProjectName` 可用于打包，调用的命令行参数如下
-    - `.`：`package.json` 的位置
-    - `ProjectName`：生成的打包应用的名字
-    - `--electron-version=11.2.0`：指定 Electron 版本号，需要显式指定
-    - `--platform=win32`：指定打包的目标平台，取值可以为 `darwin`, `linux`, `mas`, `win32`
-    - `--out=file`：打包后的文件存放位置，默认放在开发的根目录下，可选
-    - `--icon='src/icon.ico'`：指定 `exe` 文件图标，只接受 `ico` 格式，可选
-    - `--ignore=file`：打包时忽略的文件名，可以指定多个忽略参数，参数是可选的，必须是正则表达式的形式
-    - `--overwrite`：新的打包会覆写原来的打包内容，可选
-    - `--no-prune`：默认形况下会不打包开发依赖并对生产依赖进行剪枝，这个选项会不剪枝，可选
-
-#### 2.2.2 NW.js
-
-### 2.3 C++
-
-#### 2.3.1 STL
+#### 2.2.1 STL
 
 ##### （一）\<iostream\>
 
@@ -2240,7 +2473,7 @@ Bootstrap 适合短时间开发简单的静态网站。
         }
         ```
 
-#### 2.3.2 Feature of C++
+#### 2.2.2 Feature of C++
 
 ##### （一）指针、引用与常量
 
@@ -2667,9 +2900,9 @@ Bootstrap 适合短时间开发简单的静态网站。
     - 用 `g++ h.cpp -o e` 生成最终经过链接的机器码，省略 `-o e` 时，会生成默认文件，windows下为 `a.exe`，Linux下为 `a.out`
     - 需要调试时，用 `-g` 命令生成项目 `g++ -g h.cpp -o e`，然后用指令 `gdb ./e` 进入调试模式
 
-### 2.4 Ruby
+### 2.3 Ruby
 
-#### 2.4.1 对象与数据
+#### 2.3.1 对象与数据
 
 ##### （一）面向对象
 
@@ -2918,7 +3151,7 @@ Bootstrap 适合短时间开发简单的静态网站。
     | `def`      | `in`     | `self`   | `__FILE__` |
     | `defined`? | `module` | `super`  | `__LINE_`  |
 
-#### 2.4.2 语句与类
+#### 2.3.2 语句与类
 
 ##### （一）控制语句
 
@@ -3047,7 +3280,7 @@ Bootstrap 适合短时间开发简单的静态网站。
     - 类方法中画下划线的两个同时可以定义单例类
     - Numeric 类与 Symbol 类本身不看做对象引用，没有单例方法
 
-#### 2.4.3 环境指令
+#### 2.3.3 环境指令
 
 1. Ruby 指令：`ruby [option] [--] file [arguments]`
 
@@ -3141,6 +3374,132 @@ Bootstrap 适合短时间开发简单的静态网站。
     ```
 
 
+### 2.4 Application
+
+#### 2.4.1 Electron
+
+##### （一）进程
+
+1. 一个 Electron 的启动脚本写成如下形式
+
+    ```javascript
+    // Modules to control application life and create native browser window
+    const {app, BrowserWindow} = require('electron')
+    const path = require('path')
+    
+    function createWindow () {
+      // Create the browser window.
+      const mainWindow = new BrowserWindow({
+        width: 1600,
+        height: 900,
+        webPreferences: {
+          preload: path.join(__dirname, 'preload.js')
+        }
+      })
+    
+      // and load the index.html of the app.
+      mainWindow.loadFile('index.html')
+    
+      // Open the DevTools.
+      // mainWindow.webContents.openDevTools()
+    }
+    
+    // This method will be called when Electron has finished
+    // initialization and is ready to create browser windows.
+    // Some APIs can only be used after this event occurs.
+    app.whenReady().then(() => {
+      createWindow()
+      app.on('activate', function () {
+        // On macOS it's common to re-create a window in the app when the
+        // dock icon is clicked and there are no other windows open.
+        if (BrowserWindow.getAllWindows().length === 0)
+          createWindow()
+      })
+    })
+    
+    // Quit when all windows are closed, except on macOS. There, it's common
+    // for applications and their menu bar to stay active until the user quits
+    // explicitly with Cmd + Q.
+    app.on('window-all-closed', function () {
+      if (process.platform !== 'darwin') app.quit()
+    })
+    ```
+
+2. 主进程和渲染进程
+
+    - 一个 Electron 应用只有一个主进程，但可以有多个渲染进程。一个 `BrowserWindow` 实例就代表一个渲染进程
+    - 主进程负责管理所有的窗口及其对应的渲染进程，开启 `nodeIntegration` 配置后，渲染进程也有能力访问 `Node.js` 的 API
+    - 主进程和渲染进程之间的通讯使用 `ipcRenderer`  模块，或者使用 `remote` 模块
+
+##### （二）嵌入前端框架
+
+以 React 为例，将 React 嵌入 Electron
+
+1. 首先利用 `create-react-app` 构建一个应用，执行以下命令，直到能在 `http://localhost:3000` 看到 React 的图标旋转的初始网页。然后安装 `electron` 到 `app` 文件夹中。
+
+    ```shell
+    create-react-app app
+    cd app
+    npm start
+    npm install electron --save-dev
+    ```
+
+2. 配置 `package.json`，增加如下两项。其中， `main.js` 是 Node.js 的入口文件。
+
+    ```json
+    {
+      "main": "main.js",
+      "homepage": "./",
+    }
+    ```
+
+3. 修改 `main.js` 的内容，主要是加载的页面有变化。注意，当 React 页面构建完毕后，再经过 Electron 打包后的路径并不一致，应该写成如下形式：
+
+    ```javascript
+    if (app.isPackaged) {
+      mainWindow.webContents.openDevTools();
+      win.loadURL("http://localhost:3000/");
+    }
+    else mainWindow.loadURL(path.join(__dirname, './build/index.html'));
+    ```
+
+4. 在开启 `nodeIntegration` 后，可以在前端使用 Node.js 的接口，但是无法通过require调用本地包，而是应该使用 `window.require`。这样在网页上无法访问，只能在 Electron 上调试。如果 Electron 上也无法运行，检查包是否安装出错。
+
+    ```jsx
+    import React from 'react';
+    
+    var os = window.require('os')
+    console.log(os.cpus())
+    
+    class App extends React.Component {
+      render() {
+        return <div></div>
+      }
+    }
+    export default App;
+    ```
+
+##### （三）调试与发布
+
+1. Electron 的桌面应用在打包后的文件存储位置各不相同。通过调用属性 `app.isPackaged` 可以判断当前环境下是否是发布版本。另外，通过调用 `electron . argv` 可以在主进程的 `process.argv` 中看到预定义变量
+
+    - 在前端环境下（例如 HTML 引用的图片，样式表或 JavaScript 脚本），都是以该文件为当前目录的引用，在发布版下，这些文件在 exe 目录的 `./resources/app` 下
+
+    - 在后端环境下，后端引用的任何资源（例如 `fs` 模块读取文件），都是以工程目录为当前目录。在调试版和发布版两个版本下位置一致。
+
+2. `electron-packager . ProjectName` 可用于打包，调用的命令行参数如下
+    - `.`：`package.json` 的位置
+    - `ProjectName`：生成的打包应用的名字
+    - `--electron-version=11.2.0`：指定 Electron 版本号，需要显式指定
+    - `--platform=win32`：指定打包的目标平台，取值可以为 `darwin`, `linux`, `mas`, `win32`
+    - `--out=file`：打包后的文件存放位置，默认放在开发的根目录下，可选
+    - `--icon='src/icon.ico'`：指定 `exe` 文件图标，只接受 `ico` 格式，可选
+    - `--ignore=file`：打包时忽略的文件名，可以指定多个忽略参数，参数是可选的，必须是正则表达式的形式
+    - `--overwrite`：新的打包会覆写原来的打包内容，可选
+    - `--no-prune`：默认形况下会不打包开发依赖并对生产依赖进行剪枝，这个选项会不剪枝，可选
+
+#### 2.4.2 NW.js
+
 ## 3 ALGORITHM
 
 ## 4 OTHER
@@ -3148,6 +3507,44 @@ Bootstrap 适合短时间开发简单的静态网站。
 ### 4.1 Web Protocol
 
 #### 4.1.1 JSON & XML
+
+##### （一）JSON
+
+1. JSON 是 JavaScript 的对象格式，是存储和交换文本信息的语法，书写规则较 JavaScript 更加严格
+    - JSON 文件的文件类型是 `.json`，MIME 类型是 `application/json`
+2. JSON 的值类型：数字、字符串、布尔值、数组、对象和 `null`
+    - 对象：以 `"key": value` 的形式书写，必须要使用双引号，最后一个键值对不加逗号
+
+##### （二）XML
+
+1. XML 基本结构
+
+    ```xml
+    <?xml version="1.0" encoding="UTF-8"?>
+    <note>
+      <to> Tove </to>
+      <from> Jani </from>
+      <heading> Reminder </heading>
+      <body> Don't forget me this weekend! </body>
+    </note>
+    ```
+
+    - 第一行是 XML 声明（可选，放在第一行），定义 XML 的版本和所使用的编码
+    - XML 文档必须包含根元素，该元素是所有其他元素的父元素。XML 文档中的元素形成了一棵文档树，这棵树从根部开始，并扩展到树的最底端
+
+2. XML 元素语法
+
+    - XML 标签对大小写敏感，XML 命名规则如下
+        - 名称可以包含字母、数字以及其他的字符
+        - 名称不能以数字或者标点符号开始；不能以字母 XML（任何大小写形式）开始；不能包含空格
+    - 所有的 XML 元素都必须有一个关闭标签，且必须正确嵌套
+    - XML 属性值必须加引号
+
+3. 与 HTML 的相同点和不同点
+
+    - XML 的五个实体符号以及注释形式与 HTML 定义的一致
+
+    - 与 HTML 不同的是，XML 的连续空格会被保留，以 LF 存储换行
 
 #### 4.1.2 Protocol
 
@@ -3225,15 +3622,21 @@ Bootstrap 适合短时间开发简单的静态网站。
 
         | 状态码 | 状态码名称            | 中文描述                                                     |
         | ------ | --------------------- | ------------------------------------------------------------ |
+        | 100    | Continue              | 继续。客户端应继续其请求                                     |
         | 200    | OK                    | 请求成功。一般用于 GET 与 POST 请求                          |
-        | 301    | Moved Permanently     | 永久移动。请求的资源已被永久的移动到新 URL，返回信息会包括新的 URL，浏览器会自动定向到新 URL |
+        | 204    | No Content            | 无内容。服务器成功处理，但未返回内容                         |
+        | 304    | Not Modified          | 未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源 |
+        | 400    | Bad Request           | 客户端请求的语法错误，服务器无法理解                         |
+        | 401    | Unauthorized          | 请求要求用户的身份认证                                       |
         | 403    | Forbidden             | 服务器理解请求客户端的请求，但是拒绝执行此请求               |
         | 404    | Not Found             | 服务器无法根据客户端的请求找到资源                           |
+        | 406    | Not Acceptable        | 服务器无法根据客户端请求的内容特性完成请求                   |
         | 500    | Internal Server Error | 服务器内部错误，无法完成请求                                 |
+        | 502    | Bad Gateway           | 作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应 |
 
 ##### （三）AJAX
 
-1. AJAX 指异步 JavaScript 和 XML，它不是新的编程语言，而是一种使用现有标准的新方法。
+1. AJAX 指异步 JavaScript 和 XML，它不是新的编程语言，而是一种使用现有标准的新方法
 
     -  `XMLHttpRequest` 对象：通过 `XMLHttpRequest` 可以在不刷新页面的情况下请求特定 URL，获取数据
     
@@ -3266,8 +3669,6 @@ Bootstrap 适合短时间开发简单的静态网站。
     - `$.post(URL, data, callback);`：通过 HTTP POST 请求向服务器提交数据。其中，可选的 `data` 参数规定连同请求发送的数据
 
 #### 4.1.3 Encryption
-
-（待补充）
 
 ### 4.2 Tool
 
