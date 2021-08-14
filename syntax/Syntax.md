@@ -4,7 +4,7 @@
 
 ## 1 FRONT-END
 
-### 1.1 HTML & CSS
+### 1.1 Markup & Stylesheet
 
 #### 1.1.1 HTML
 
@@ -133,7 +133,7 @@
     - `-moz`：Moziila 的 Firefox
     - `-ms`： Microsoft 的 Internet Explorer
     - `-o`：Opera
-4. LESS / SCSS / SASS：都是兼容 CSS 的预处理器
+4. LESS / SCSS / SASS：兼容 CSS 的预处理器
 
 ##### （二）选择器
 
@@ -811,18 +811,41 @@
     - `new RegExp("pattern", "flags")`
     - `regexp = /pattern/g`，修饰符有五个：
         - `i`：搜索时不区分大小写
+        
         - `g`：搜索时查找所有的匹配项，而不只是第一个
+        
         - `m`：多行模式，仅对 `^` 和 `$` 有效
+        
         - `u`：开启完整的 Unicode 支持（修正对于代理对的处理）并支持 `\p{...}`
-        - `y`：粘滞模式
+        
+        - `y`：粘滞模式，从位置 `regexp.lastIndex` 开始搜索指定模式
+        
+            ```javascript
+            let str = 'let varName = "value"';
+            let regexp = /\w+/y;
+            regexp.lastIndex = 3;
+            console.log(regexp.exec(str)?.[0]);  // undefined
+            regexp.lastIndex = 4;
+            console.log(regexp.exec(str)?.[0]);  // varName
+            ```
 
 2. 与正则表达式有关的方法
 
+    - `str.match(regexp)` ：在字符串 `str` 中找到匹配 `regexp` 的字符
+
+        - 如果 `regexp` 不带有 `g` 标记，则它以数组的形式返回第一个匹配项，其中包含分组和属性 `index`（匹配项的位置）、`input`（输入字符串）
+        - 如果 `regexp` 带有 `g` 标记，则它将所有匹配项的数组作为字符串返回，而不包含分组和其他详细信息
+        - 如果没有匹配项，则无论是否带有标记 `g` ，都将返回 `null`
+
+    - `str.matchAll(regexp)` ： `str.match` 的变体
+
+        - 它返回包含匹配项的可迭代对象，而不是数组。可以用 `Array.from` 从中得到一个常规数组
+        - 每个匹配项均以包含分组的数组形式返回（返回格式与不带 `g` 标记的 `str.match` 相同）
+        - 如果有结果，则返回的不是 `null`，而是一个空的可迭代对象
+
+    - `str.split(regexp|substr, limit)`：使用正则表达式或子串作为分隔符来分割字符串
+
     - `str.search`：查找模式并返回匹配项在字符串中的位置，没有找到返回 `-1`
-
-    - `str.match`：查找模式并返回找到的结果，`g` 修饰符下返回结果数组，没有找到则返回 `null`
-
-    - `reg.test(str)`：检查是否有指定的模式，返回布尔值
 
     - `str.replace(reg, dst)`：替换 `str` 中所有符合 `reg` 模式为 `dst`
 
@@ -846,6 +869,13 @@
             | `offset`            | 匹配到的子字符串在原字符串中的偏移量 |
             | `string`            | 被匹配的原字符串                     |
             | `NamedCaptureGroup` | 命名捕获组匹配的对象                 |
+        
+    - `regexp.exec(str)` ：返回字符串 `str` 中的 `regexp` 匹配项
+
+        - 如果没有 `g`，那么 `regexp.exec(str)` 返回的第一个匹配与 `str.match(regexp)` 完全相同。这没什么新的变化
+        - 但是，如果有标记 `g`，则调用 `regexp.exec(str)` 会返回第一个匹配项，并将紧随其后的位置保存在属性 `regexp.lastIndex` 中。 -下一次同样的调用会从位置 `regexp.lastIndex` 开始搜索，返回下一个匹配项，并将其后的位置保存在 `regexp.lastIndex` 中。如果没有匹配项，则 `regexp.exec` 返回 `null`，并将 `regexp.lastIndex` 重置为 `0`
+
+    - `regexp.test(str)`：检查是否有指定的模式，返回布尔值
 
 3. 元字符
 
@@ -878,7 +908,7 @@
         - 贪婪匹配：`+`：至少一个，相当于 `{1,}`，`*`：任意个，相当于 `{0,}`，`?`：最多一个，相当于 `{0,1}`
         - 懒惰匹配：`+?`，`*?`，`??`：尽可能少地匹配字符
 
-    - 捕获组 `(...)`：在 `match` 下使用不带全局修饰符的正则表达式
+    - 捕获组 `(...)`：在 `match` 下使用不带全局修饰符的正则表达式，在 `matchAll` 下使用带全局修饰符的正则表达式，返回捕获组得到的可迭代对象，每当对它进行迭代时才会执行搜索
 
         - 括号可以嵌套，结果按照开符号顺序给出
 
@@ -896,9 +926,14 @@
             console.log("2019-04-30".match(dateRegexp).groups);
             ```
 
-        - 作为整体，比如将 `(...)?` 作为可选组，此时如果不想让结果出现在结果中，可以以 `(?:...)` 的形式排除这一组
+        - 反向引用：在模式本身中使用捕获组的内容，保证找到的内容与第一次的相同，下面的例子中，只会寻找一对单引号或双引号围起来的内容。如果是命名组，也可以用 `\k<name>`：
 
-        - 在 `matchAll` 下使用带全局修饰符的正则表达式，返回捕获组得到的可迭代对象，每当对它进行迭代时才会执行搜索
+            ```javascript
+            let str = `He said: "She's the one!".`;
+            console.log(str.match(/(['"])(.*?)\1/g))  // [`"She's the one!"`]
+            ```
+
+        - 作为整体，比如将 `(...)?` 作为可选组，或者 `before(XXX|YYY)after` 作为选择，此时如果不想让结果出现在结果中，可以以 `(?:...)` 的形式排除这一组
 
     - 通配符`.`：与「除换行符之外的任何字符」匹配
 
@@ -909,6 +944,15 @@
 
     - 锚点符 `^` 和 `$` ：匹配文本开头和末尾。在多行模式下，它们不仅仅匹配文本的开始与结束，还匹配每一行的开始与结束
 
+    - 前瞻断言与后瞻断言
+
+        | 模式      | 类型         | 匹配                      |
+        | :-------- | :----------- | :------------------------ |
+        | `x(?=y)`  | 前瞻肯定断言 | `x` ，仅当后面跟着 `y`    |
+        | `x(?!y)`  | 前瞻否定断言 | `x` ，仅当后面不跟 `y`    |
+        | `(?<=y)x` | 后瞻肯定断言 | `x` ，仅当跟在 `y` 后面   |
+        | `(?<!y)x` | 后瞻否定断言 | `x` ，仅当不跟在 `y` 后面 |
+
     - Unicode 属性 `\p{...}` ：寻找具有描述性质的符号，例如用 `\p{sc=Han}` 寻找汉字，用 `\p{Sm}` 寻找数学符号
 
 #### 1.2.2 TypeScript
@@ -918,14 +962,15 @@
 1. 变量声明
 
     - 声明变量的类型，但没有初始值，变量值会设置为 `undefined`
+
     - 声明变量并初始值，但不设置类型，该变量可以是任意类型（如果可以推断，则推断为某种类型，否则为 `any`）
 
-    ```typescript
-    var one:string = "String";  // string, "String"
-    var two:string;             // string, undefined
-    var three = "String";       // string, "String"
-    var four;                   // any, undefined
-    ```
+        ```typescript
+        var one:string = "String";  // string, "String"
+        var two:string;             // string, undefined
+        var three = "String";       // string, "String"
+        var four;                   // any, undefined
+        ```
 
 2. 变量类型
 
@@ -1072,11 +1117,26 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
         └── serviceWorker.js
     ```
 
-3. React 理念：组合优于继承。这是因为前端的逻辑性和复用性较弱，只需组合就可以满足日常的业务需求。
+2. React 理念：组合优于继承
+
+    - 因为前端的逻辑性和复用性较弱，只需组合就可以满足日常的业务需求
+
+    - 继承：所有标签内的内容在 `props.children` 中
+
+        ```jsx
+        function Root(props) {
+          const { children } = props;
+          return (
+            <main style={{ display: "flex" }}>
+              {children}
+            </main>
+          );
+        }
+        ```
 
 ##### （二）props 与 state
 
-1. `props` 在组件定义中充当常量的作用，组件无论是使用函数声明还是通过 class 声明，都决不能修改自身的 `props`。对于布尔值，只要写下值就是 `true`
+1. `props` 在组件定义中充当常量的作用，组件无论是使用函数声明还是通过 `class` 声明，都决不能修改自身的 `props`。对于布尔值，只要写下值就是 `true`
 
     ```jsx
     import React from 'react'
@@ -1162,45 +1222,13 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
         
     - 将如果子元素的 `state` 是由父元素的 `state` 通过 `props` 传递而来，要将子元素的状态变化传递上去，需要使用到变量提升的技术（此时 `props` 提供的函数相当于一个父元素提供用于改变状态的接口）
 
-3. 为了能在函数中使用 React，引入 Hook 的机制
-
-    - `useState` 允许在函数中使用状态，函数元件不再是无状态原件。`useState(default)` 创建了一个状态 `count` 和用于设置状态值的接口 `setCount`，并设置了状态的初始值。
-
-        ```jsx
-        import React from 'react';
-        
-        function Example() {
-          const [count, setCount] = React.useState(0);
-        
-          return (
-            <div>
-              <p>You clicked {count} times</p>
-              <button onClick={() => setCount(count + 1)}>
-                Click me
-              </button>
-            </div>
-          );
-        }
-        ```
-
-    - `React.useEffect()` 相当于 `componentDidUpdate`，通过 `return` 设置清楚副作用的函数。如果想执行只运行一次的 effect（仅在组件挂载和卸载时执行），可以传递一个空数组作为第二个参数。
-
-        ```jsx
-        useEffect(() => {
-          const subscription = props.source.subscribe();
-          return () => {
-            subscription.unsubscribe();
-          };
-        },[props.source]);
-        ```
-
 4. 设计时，通过检查以下问题来确定目标参数不是 `state`：
 
     - 该数据是否是由父组件通过 `props` 传递而来的
     - 该数据是否随时间的推移而保持不变
     - 能否根据其他 `state` 或 `props` 计算出该数据的值
 
-##### （三）条件渲染与列表
+##### （三）组件控制
 
 1. 利用与运算符可以很方便地进行条件渲染，这是因为在 JavaScript 中，`true && expression` 总是会返回 `expression`, 而 `false && expression` 总是会返回 `false`
 
@@ -1242,89 +1270,74 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
       document.getElementById('root')
     );
     ```
-
-##### （四）React 事件处理
-
-1. 事件绑定：设置 `onClick` 等事件时，需要显式地绑定 `this` 才能在回调函数中使用相同的 `this`
-
-    ```jsx
-    class Toggle extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = {isToggleOn: true};
     
-        // This binding is necessary to make `this` work in the callback
-        this.handleClick = this.handleClick.bind(this);
-      }
+    > JavaScript 的基本类型中，React 会渲染 `number`，`string`（以及其对应的类），而忽略 `boolean`，`null`，`undefined`，`symbol`；在对象中，React 会渲染 Array，但遇到一般对象会报错
     
-      handleClick() {
-        this.setState(state => ({
-          isToggleOn: !state.isToggleOn
-        }));
-      }
-    
-      render() {
-        return (
-          // `this` can be used here instead of binding
-          <button onClick={this.handleClick}>
-            {this.state.isToggleOn ? 'ON' : 'OFF'}
-          </button>
-        );
-      }
-    }
-    
-    ReactDOM.render(
-      <Toggle />,
-      document.getElementById('root')
-    );
-    ```
-
-2. 使 React 的 `state` 成为唯一数据源，渲染表单的 React 组件还控制着用户输入过程中表单发生的操作，被 React 以这种方式控制取值的表单输入元素就叫做受控组件。下例中，`onChange={this.handleChange}` 让 `textarea` 的内容可以实时变化，`this.state.value` 存储了文本框的值。
+3. 使 React 的 `state` 成为唯一数据源，渲染表单的 React 组件还控制着用户输入过程中表单发生的操作，被 React 以这种方式控制取值的表单输入元素就叫做受控组件。下例中，`onChange={handleChange}` 让 `textarea` 的内容可以实时变化，`value` 存储了文本框的值
 
     ```jsx
-    class EssayForm extends React.Component {
-      constructor(props) {
-        super(props);
-        this.state = {
-          value: 'Please write an essay about your favorite DOM element.'
-        };
+    function EssayForm() {
+      const [value, setValue] = React.useState(
+        "Please write an essay about your favorite DOM element."
+      );
+      const handleChange = (event) => {
+        setValue(event.target.value);
+      };
     
-        this.handleChange = this.handleChange.bind(this);
-        this.handleSubmit = this.handleSubmit.bind(this);
-      }
-    
-      handleChange(event) {
-        this.setState({value: event.target.value});
-      }
-    
-      handleSubmit(event) {
-        alert('An essay was submitted: ' + this.state.value);
+      const handleSubmit = (event) => {
         event.preventDefault();
-      }
+        console.log(value);
+      };
     
-      render() {
-        return (
-          <form onSubmit={this.handleSubmit}>
-            <label>
-              Essay:
-              <textarea value={this.state.value} onChange={this.handleChange} />
-            </label>
-            <input type="submit" value="Submit" />
-          </form>
-        );
-      }
+      return (
+        <form onSubmit={handleSubmit}>
+          <label>
+            Essay:
+            <textarea value={value} onChange={handleChange} />
+          </label>
+          <input type="submit" value="Submit" />
+        </form>
+      );
     }
     ```
 
-##### （五）路由
+##### （四）React Hook
 
-React 中没有自带的路由模块，需要使用 `react-router` 等模块配置路由。
+1. `useState` 允许在函数中使用状态，函数元件不再是无状态原件。`useState(default)` 创建了一个状态 `count` 和用于设置状态值的接口 `setCount`，并设置了状态的初始值。
+
+    ```jsx
+    import React from 'react';
+    
+    function Example() {
+      const [count, setCount] = React.useState(0);
+    
+      return (
+        <div>
+          <p>You clicked {count} times</p>
+          <button onClick={() => setCount(count + 1)}>
+            Click me
+          </button>
+        </div>
+      );
+    }
+    ```
+
+2. `React.useEffect()` 相当于 `componentDidUpdate`，通过 `return` 设置清楚副作用的函数。如果想执行只运行一次的 effect（仅在组件挂载和卸载时执行），可以传递一个空数组作为第二个参数。
+
+    ```jsx
+    useEffect(() => {
+      const subscription = props.source.subscribe();
+      return () => {
+        subscription.unsubscribe();
+      };
+    },[props.source]);
+    ```
 
 ### 1.4 UI Framework
 
 #### 1.4.1 Bootstrap
 
-Bootstrap 适合开发简单的静态网站。
+Bootstrap 适合短时间开发简单的静态网站。
 
 ##### （一）安装
 
@@ -2653,6 +2666,480 @@ Bootstrap 适合开发简单的静态网站。
     - 用 `g++ -c h.cpp -o e.o` 生成未链接的机器码，省略 `-o e.o` 时，会生成默认文件 `h.o`
     - 用 `g++ h.cpp -o e` 生成最终经过链接的机器码，省略 `-o e` 时，会生成默认文件，windows下为 `a.exe`，Linux下为 `a.out`
     - 需要调试时，用 `-g` 命令生成项目 `g++ -g h.cpp -o e`，然后用指令 `gdb ./e` 进入调试模式
+
+### 2.4 Ruby
+
+#### 2.4.1 对象与数据
+
+##### （一）面向对象
+
+1. 面向对象程式设计的基本特征
+    - 封装：把对象的属和行为结合成一个独立的单位，并尽可能隐蔽内部细节
+    - 多态：一个方法名属于多个对象，不同对象的处理结果不一样
+    - 继承：是可以定义一个子类来继承父类的方法
+2. 动态语言的设计理念
+    - 鸭子类型：关注的不是对象的类型本身，而是其使用方法
+    - 猴子补丁：可以重新打开类，重定义方法或添加新方法
+3. 返回值：任何表达方式都有返回值，表达式和语句没有区别
+    - 计算式的结果，赋值语句的值都是返回值
+    - 控制结构的最后一句的值是整个语句的返回值
+4. 代码规范
+    - 标点与排版
+        - 换行可以作为语句的结束标志，使用 Unix 风格换行符（`\n`）
+            - 可以使用 `;` ，一般用于大量重复简单语句，`end` 前可以省略 `;`
+            - 空类/空方法使用显式单行定义
+        - 缩进与空白：两个空格（软 Tab）
+            - 标点符号后一个空格，二元运算符左右各一个空格
+            - `.` / `::` / `**` 运算符左右无空格
+    - 标识符命名规范：大小写敏感，不缩写，尽量不用非 ASCII 字符
+        - 变量/方法：小写单词，下划线连接；方法的 `?` / `!` 结尾一般返回布尔值/修改自身
+        - 常量（及类与模块）：大写字母开头单词，无下划线连接
+    - 类、方法与常量的文档标记法
+        - 实例方法：`ClassName#MethodName`
+        - 其他：`ClassName/ModuleName::MethodName`、`SuperClass::Class`、`ModuleName::ConstantName`
+
+##### （二）数据类型
+
+1. 编码：支持 Unicode
+
+    - 脚本编码：决定字面量字符串对象编码的信息，与脚本的字符编码一致
+    - 内部编码：从外部获取的数据在程序中如何处理的信息
+    - 外部编码：外部输出时与编码相关的信息
+
+2. 万物皆对象
+
+    - 对象：表现数据的基本单位，所有的对象都有标识（Object ID）和字面值
+        - 字面值：数字、文本字符、正则表达式
+        - 变量/常量（类/模块）通过储存对象的指向从而「引用」对象的字面值
+        - 没有变量引用的对象会被 GC 回收
+    - Numeric 类与 Symbol 类本身不可改变
+        - 这两种类没有显式声明的 `new` 方法
+        - 方法输出结果事实上是引用的改变
+
+3. 实例的隐式创建
+
+    - 数字：数字不可简写，但可以加入下划线或其他识别符号
+
+        > 两个特殊值：Float 类中的 `Inifity` 和 `NaN`
+
+        | **字面量**  | 作用（括号内为10 进制的值）                  |
+        | ----------- | -------------------------------------------- |
+        | `123`       | 表示 10 进制整数                             |
+        | `0123`      | 表示 8 进制整数（83）                        |
+        | `0o123`     | 表示 8 进制整数（83）                        |
+        | `0d123`     | 表示 10 进制整数（123）                      |
+        | `0x123`     | 表示 16 进制整数（291）                      |
+        | `0b1111011` | 表示 2 进制整数（123）                       |
+        | `123.45`    | 浮点小数                                     |
+        | `1.23E+04`  | 浮点小数的指数表示法（$1.23\times 10^4$）    |
+        | `1.23E-04`  | 浮点小数的指数表示法（$1.23\times 10^{-4}$​） |
+        | `123r`      | 有理数的（`123/1`）                          |
+        | `123.45r`   | 有理数的 `123.45`（`12345/100 = 2469/20`）   |
+        | `123i`      | 虚数的 `123i`                                |
+        | `123.45i`   | 虚数的 `123.45i`                             |
+
+    - 用 `""`、`''`、`//`表示文本或文本模式
+
+        - `''` 只识别转义字符 `\'`、`\\`，`""`识别所有转移字符以及行继续符
+
+        - 转义字符
+
+            | 转义字符    | 意义                                             |
+            | ----------- | ------------------------------------------------ |
+            | `\x`        | 等价于 `x` 本身，`x` 是除下述字符外的所有字符    |
+            | `\a`        | `BEL` 字符，等价于 `\C-g` 或 `\007`              |
+            | `\b`        | 退格符，等价于 `\C-h` 或 `\010`                  |
+            | `\e`        | `ESC` 字符，等价于 `\033`                        |
+            | `\f`        | 换页符，等价于 `\C-l` 或 `\014`                  |
+            | `\n`        | 换行符，等价于 `\C-j` 或 `\012`                  |
+            | `\r`        | 回车符，等价于 `\C-m` 或 `\015`                  |
+            | `\s`        | 空格符                                           |
+            | `\t`        | 水平制表符，等价于 `\C-i` 或 `\011`              |
+            | `\v`        | 垂直制表符，等价于 `\C-k` 或 `\013`              |
+            | `\unnnn`    | Unicode 码点，不省略的十六进制数（0 ~ 0x10FFFF） |
+            | `\u{}`      | Unicode 码点，可省略的十六进制四位数，可输入多个 |
+            | `\xnn`      | 一个字节，可省略的省略的十六进制二位数           |
+            | `\nnn`      | 可省略的八进制进制三位数（000 ~ 377）            |
+            | `\C-xor\cx` | 即 Ctrl+X 组合键对应的字符                       |
+            | `\M-x`      | 即 Alt+X 组合键对应的字符                        |
+            | `\M-\C-x`   | 替换成 Ctrl+Alt+X 组合键对应的字符               |
+            | `\eol`      | 行终止符                                         |
+            | `#{}`       | 内插表达式                                       |
+
+    - 用分界符 `+()` / `[]` / `{}` / `<>` / `||` / `!!` / `@@` / `%%` / `$$` / `--` / `__` 等创建文本
+
+        - `%Q`：双引号字符串，`%q`：单引号字符串
+        - `%w`：字符串数组，`%i`：符号数组
+        - `%x`：Shell 命令，相当于反引号
+        - `%r`：正则表达式
+
+    - Here Document：
+
+        ```ruby
+        << HERE
+         ~
+        HERE
+        ```
+
+        - 开始符号
+            - `<<`：分辨空格
+            - `<<-`：不分辨结束标志符的前导空白
+            - `<<~`：不分辨一切空白（便于缩进）
+        - `HERE` 可是任意标识符：
+            - 前一个标识符使用 `'Here'` 可以不使用转义字符，且可以缩进
+            - 前一个标识符使用 `"Here"` 与 `Here` 一致，但标识符可使用空格
+        - 可以用多个 Here Document 并与普通字符串混用
+
+    - Shell 命令：反引号 <code>``</code> 中的命令
+
+        - 传递给  <code>Kernel::`</code> ，返回结果字符串
+
+        - `?n`：表示单字面量 `"n"`，`n` 可以为转义字符
+
+    - 表达式表示对象
+
+        - `[y_1, y_2]` 表示数组 `{x_1: y_1}` / `{x_2 => y_2}` 表示散列。其中，`x_1` 为省略 `:` 的符号；`x_2` 与 `y` 可为数字，表达式，字符串，范围，符号
+        - `x..y` / `x...y` 表示一个 Range 类实例
+        - `:sym` / `:"sym"` / `:'sym'` 表示一个 Symbol 类实例
+
+4. 变量的种类
+
+    | 名称     | 命名规则            | 作用域     |
+    | -------- | ------------------- | ---------- |
+    | 局部变量 | 下划线/小写字母开头 | 当前文件   |
+    | 全局变量 | 以$开头             | 整个程序   |
+    | 实例变量 | 以@开头             | 同一个类   |
+    | 类变量   | 以@@开头            | 同一个实例 |
+
+    - 除类变量（默认抛出 `NameError` ），其他已存在但未被赋值的变量默认为 `nil`
+
+    - 块的变量访问
+
+        - 块外部的局部变量可以在内部使用并赋值
+        - 块内可以绑定外部方法的参数并实现闭包，方法只能绑定 `self`
+        - 块中定义的局部变量不可以在外部访问，如有同名则视为两个变量
+
+    - 伪变量
+
+        | `变量名`           | 内容                                |
+        | ------------------ | ----------------------------------- |
+        | `self`             | 默认的接收者                        |
+        | `nil、true、false` | 单例类对象，ID分别为 `8`、`20`、`0` |
+        | `__FILE__`         | 执行中的 Ruby 脚本的文件名          |
+        | `__LINE__`         | 执行中的 Ruby 脚本的行编号          |
+        | `__ENCODING__`     | 脚本的编码                          |
+
+    - 预定义变量
+
+        | `变量名`           | 内容                                                         |
+        | ------------------ | ------------------------------------------------------------ |
+        | `$_`               | `gets` 方法最后读取的字符串                                  |
+        | `$&`               | 最后一次模式匹配后得到的字符串                               |
+        | `$~`               | 最后一次模式匹配相关的信息                                   |
+        | ``$```             | 最后一次模式匹配中匹配部分之前的字符串                       |
+        | `$'`               | 最后一次模式匹配中匹配部分之后的字符串                       |
+        | `$+`               | 最后一次模式匹配中最后一个 `()` 对应的字符串                 |
+        | `$1、$2……`         | 最后一次模式匹配中 `()` 匹配的字符串（第 `n` 个 `()` 对应 `$n`） |
+        | `$?`               | 最后执行完毕的子进程的状态                                   |
+        | `$!`               | 最后发生的异常的相关信息                                     |
+        | `$@`               | 最后发生的异常的相关位置信息                                 |
+        | `$SAFE`            | 安全级别（默认为 `0`）                                       |
+        | `$/`               | 输入数据的分隔符（默认为 `"\n"`）                            |
+        | `$\`               | 输出数据的分隔符（默认为 `nil`）                             |
+        | `$,`               | `Array#join` 的默认分割字符串（默认为 `nil`）                |
+        | `$;`               | `String#split` 的默认分割字符串（默认为 `nil`）              |
+        | `$.`               | 最后读取的文件的行号                                         |
+        | `$<`               | `ARGF` 的别名                                                |
+        | `$>`               | `print`、`puts`、`p` 等的默认输出位置（默认为 `STDOUT`）     |
+        | `$0`               | `$PROGRAM_NAME` 的别名                                       |
+        | `$*`               | `ARGV` 的别名                                                |
+        | `$$`               | 当前执行中的 Ruby 的进程 ID                                  |
+        | `$:`               | `$LOAD_PATH` 的别名                                          |
+        | `$"`               | `$LOADED_FEATURES` 的别名                                    |
+        | `$DEBUG`           | 指定 Debug 模式的标识（默认为 `nil`）                        |
+        | `$FILENAME`        | `ARGF` 当前在读取的文件名                                    |
+        | `$LOAD_PATH`       | 执行 `require` 读取文件时搜索的目录名数组                    |
+        | `$stdin`           | 标准输入（默认为 `STDIN`）                                   |
+        | `$stdout`          | 标准输出（默认为 `STDOUT`）                                  |
+        | `$stderr`          | 标准错误输出（默认为 `STDERR`）                              |
+        | `$VERBOSE`         | 指定冗长模式的标识（默认为 `nil`）                           |
+        | `$PROGRAM_NAME`    | 当前执行中的 `Ruby` 脚本的别名                               |
+        | `$LOADED_FEATURES` | `require` 读取的类库名一览表                                 |
+
+    - 环境变量
+
+        | `变量名`                 | 内容                                                         |
+        | ------------------------ | ------------------------------------------------------------ |
+        | `RUBYLIB`                | 追加到预定义变量 `$LOAD_PATH` 中的目录名（各目录间用 `:` 分隔） |
+        | `RUBYOPT`                | 启动 Ruby 时的默认选项（`RUBYOPT="-U-v"` 等）                |
+        | `RUBYPATH`               | `-S` 选项指定的、解析器启动时脚本的搜索路径                  |
+        | `PATH`                   | 外部命令的搜索路径                                           |
+        | `HOME`                   | `DIR.chdir` 方法的默认移动位置                               |
+        | `LOGDIR`                 | `HOME` 没有时的 `DIR.chdir` 方法的默认移动位置               |
+        | `LC_ALL、LC_CTYPE、LANG` | 决定默认编码的本地信息（平台依赖）                           |
+        | `RUBYSHELL、COMSPEC`     | 执行外部命令时，Shell 需要使用的解析器路径（平台依赖）       |
+
+5. 常量：多次引用固定不变的值
+
+    - 以大写字母开头，再赋值会发出警告（程序不会中止）
+
+    - 一般在类内或模块内定义，用 `::` 运算符引用
+
+    - 预定义常量
+
+        | `常量名`            | 内容                                   |
+        | ------------------- | -------------------------------------- |
+        | `ARGF`              | 参数，或者从标准输入得到的虚拟文件对象 |
+        | `ARGV`              | 命令行参数数组                         |
+        | `DATA`              | 访问 `__END__` 以后数据的文件对象      |
+        | `ENV`               | 环境变量                               |
+        | `RUBY_COPYRIGHT`    | 版权信息                               |
+        | `RUBY_DESCRIPTION`  | `ruby -v` 显示的版本信息               |
+        | `RUBY_ENGINE`       | Ruby 的处理引擎                        |
+        | `RUBY_PATCHLEVEL`   | Ruby 的补丁级别                        |
+        | `RUBY_PLATFORM`     | 运行环境的信息（OS、CPU）              |
+        | `RUBY_RELEASE_DATE` | Ruby 的发布日期                        |
+        | `RUBY_VERSION`      | Ruby 的版本                            |
+        | `STDERR`            | 标准错误输出                           |
+        | `STDIN`             | 标准输入                               |
+        | `STDOUT`            | 标准输出                               |
+
+6. 保留字：不可用于局部变量/常量，但可以用于其他变量/方法名
+
+    | `BEGIN`    | `do`     | `next`   | `then`     |
+    | ---------- | -------- | -------- | ---------- |
+    | `END`      | `else`   | `nil`    | `TRUE`     |
+    | `alias`    | `elsif`  | `not`    | `undef`    |
+    | `and`      | `end`    | `or`     | `unless`   |
+    | `begin`    | `ensure` | `redo`   | `until`    |
+    | `break`    | `FALSE`  | `rescue` | `when`     |
+    | `case`     | `for`    | `retry`  | `while`    |
+    | `class`    | `if`     | `return` | `while`    |
+    | `def`      | `in`     | `self`   | `__FILE__` |
+    | `defined`? | `module` | `super`  | `__LINE_`  |
+
+#### 2.4.2 语句与类
+
+##### （一）控制语句
+
+1. 注释
+    - `\#`：单行注释（到物理行行尾）
+    - `= begin ~ = end`：多行注释
+    - 特殊注释
+        - shebang 注释（#! E:/ruby -w`）：置于首行，用于指定文件
+        - 魔法注释（`# encoding: UTF-8`）：置于次行（除非无 shebang）可指定编码
+        - 某些特定格式的注释可以生成 API 文档的 HTML 界面
+2. 条件语句（`then` 皆可缺省，`case` 与 `when` 缩进深度相同）
+    - `if ~ then ~ elsif ~ then ~ else ~ end`
+    - `unless ~ then ~ else ~ end`
+    - `case ~ when ~ then ~ when ~ then ~ else ~ end`
+3. 循环语句（`do` 皆可缺省）
+    - `for n in X do ~ end`
+    - `while ~ do ~ end`
+    - `until ~ do ~ end`
+4. 异常处理语句
+    - `begin ~ rescue (=> var) ~ (else ~)(ensure ~) end`
+        - `rescue`：在 `begin` 部分出现异常时的执行部分。当方法中无 `rescue` 时会逆向查找异常处理，跳出方法被上一层rescue捕捉
+        - `else`：在 `begin` 部分未出现异常时的执行部分
+        - `ensure`：后处理，无论处理是否正常进行都会执行的语句
+        - `retry`：重新进行 `begin` 以下的处理
+    - 当在方法/类内或异常处理范围是整个程序时，可省略 `begin` 和 `end`
+5. 控制语句
+    - `break` 语句
+        - 循环中跳出当前循环
+        - 块中返回调用块的地方，计算结果会被忽略。使用 `break n` 语句，可以指定 `break` 时的块返回值
+    - `next` 语句
+        - 循环中跳过当前循环开始下一次循环
+        - 块中使用 `next`，会中断当前处理（数据清零返回 `nil`）。使用 `next` n，可以指定 `next` 时的块返回值
+    - `redo` 语句
+        - 循环中再执行一次相同的循环
+        - 块中使用 `redo`，可能会重复同一个参数陷入死循环
+6. 方法用语句
+    - 调用：除使用 `{}` 形式的块时，可以省略括号
+        - 参数传递顺序：普通参数 → 带默认值参数从前到后 → `*args`
+        - 用数列与散列传递参数：元素个数须与参数个数一致
+            - 用 `*arr` 将数组的各元素传递给方法
+                可以使用散列（键为符号）作为关键字传递参数（可以省略 `{}`）
+    - `def` 语句：`def method(a_1, a_2, …, a_n) ~ end`：定义/重定义
+        - `undef` 语句（`undef :method` / `undef method`）：子类中删除超类方法
+    - `return` 语句：可省略（没有返回值时默认为 `nil`）
+        - 可用于立即跳出方法
+        - `return` 可返回多个值，用逗号连接
+    - `yield(i_1, …, i_n; j_1, …, j_n)`：相当于以参数 `i_n` 调用块函数
+        - 块变量数量不一致时，多余的无法传递，少的值为 `nil`
+        - 在块变量后面可以声明块局部变量（也可以在块中声明）
+        - 块变量也可用 `*args` 传递多余的参数
+7. 类与模块用语句
+    - 创建类：`class ~ def initialize ~ end ~ end`；创建模块：`module ~ do_something end`
+    - 创建类方法
+        - `Sin = Class.new; class << Sin def ~ do_something end end`
+        - `class ~ class << self def ~ do_something end end end`
+        - `class ~.~ def ~ do_something end end`
+    - 方法权限语句：单个设定/统一设定
+        - `public`（默认）：以实例方法的形式向外部公开该方法，一般可以缺省
+        - `private`：在指定接收者的情况下不能调用该方法
+            - 只能在类或子类的实例方法中使用缺省 `self` 的方式调用该方法
+            - `initialize` 方法会被默认定义为 `private`
+            - Object 的顶层私有方法接收者是 `main` 对象（是 Object 类的实例）
+        - `protected`：在同一个类中时可将该方法作为实例方法调用
+    - 类的继承
+        - `class subclass < superclass ~ end`
+        - `super(i_1, i_2, …, i_n)`：沿用超类的方法
+8. 操作符
+    - 修饰符：`if` / `unless` / `while` / `until` / `rescue` 后置
+        - 修饰里修饰符最近的一条语句
+        - 可以用 `()/begin ~ end` 合并多条语句为一条
+        - 使用 `begin ~ end` 的循环时，循环体内的语句至少被执行一次
+    - 行继续符：置于物理行行尾的反斜杠，用于连接逻辑行
+        - 不是转义字符
+        - 在 `""` 字符串中，`""`、`''`间连接、链式方法中可用
+9. 继承属性
+    - `BEGIN{}与END{}`：在其余所有代码之前/后执行
+    - `__END__`：单独一行表示程序结束，数据区开始
+    - `proc.(x_1, x_2, ...)`：相当于 `proc.call()`，这个操作符不可重定义
+
+##### （二）方法与类
+
+1. 方法分类
+    - 实例方法：以特定对象种类为接收者的方法
+    - 类方法：以类为接收者的方法，可以用 `::` 运算符代替点运算符。类方法包括 Class 类的实例方法，也包括类对象的单例方法
+    - 函数方法：可以省略接收者的方法
+2. 类与模块
+    - 所有类都是 Class 类的对象
+        - BasicObject > Object > Module > Class
+        - 模块是 Module 类的实例，自定义类是 Class 类的实例
+        - 自定义类也是 Object 类的子类，自定义类的实例是 Class 类的实例的实例
+    - 模块不能拥有实例，不能被继承
+    - 模块提供的命名空间：不同模块的同名常量、方法被认为是不同的对象
+        - 未使用 `include` 时，使用 `Module.Method` / `Module::Constant/Method` 来调用
+        - 调用模块方法时，依次在本方法，模块，超类的顺序寻找第一个该方法调用
+3. 运算符：大多都是实例方法的语法糖
+    - 不能重定义的运算符：`?:` 及以下运算符
+        - 赋值运算符`=`：
+            - 「`VarName = Object`」：将对象赋值给变量
+                - 允许并行赋值、连环赋值：`*` 操作符表示将数组拆分为多个元素；左值用圆括号可以当作并行赋值
+                - 对象部分为变量时，会传递变量所指对象的标识
+            - 二元运算符 `op` 都可以简写（伪操作符）
+                - `var op= val` 等价于 `var = var op val`
+                - 读写器也可以用简写方式读写
+        - `.`/`::` 运算符形式（一般括号可以缺省）：方法可以用 `.` / `::` 来调用，而常量只能用 `::` 来调用
+        - 范围对象：`..`，`...`：当两个参数为条件式或循环时会创建 flip-flop 布尔表达式
+        - 内建语言：`not`，`and`，`or`，`&&`，`||`
+            - 具有短路特性
+            - 在运算逻辑上用英文形式，在布尔计算上利用
+    - 其他运算符
+        - `defined?obj`：返回是否被定义
+        - `!=` / `!~`：会被自动定义为 `==` / `=~` 的反义
+4. 方法声明时的参数规则
+    - 省略参数：`(x_1, x_2 = y_2, x_3 = y_3, ...)`
+        - 指定默认参数的情况，所有带默认值的参数必须连续出现
+        - `method(*args)`：将参数封装为数组
+    - 关键字参数：`(x_1, x_2: y_2, x_3: y_3, ...)`
+        - 不同参数的位置可以改变，可以和普通参数同时使用
+        - 定义不指定默认值的时候，`y_n` 可以留空
+        - 可以用 `**var` 来保存未定义的参数，以散列的形式保存
+    - 块作为参数的传递
+        - 当块作为 Proc 对象被传递时，作为普通参数
+        - `&block` 将显式传入的块封装为 Proc 对象，置于所有参数最后面
+        - `&block` 将符号转化为块：`&method <=> Proc.new{|arg| arg.method}`
+5. 单例方法
+    - 类方法是 Class 类某个实例的单例方法。单例类是其他类某个实例的单例方法，不能生成新的实例
+    - 类方法中画下划线的两个同时可以定义单例类
+    - Numeric 类与 Symbol 类本身不看做对象引用，没有单例方法
+
+#### 2.4.3 环境指令
+
+1. Ruby 指令：`ruby [option] [--] file [arguments]`
+
+    - 命令行选项 `[options]`
+
+        | `选项`                          | 意义                                                         |
+        | ------------------------------- | ------------------------------------------------------------ |
+        | `-0octal`                       | 用 8 进制指定 `IO.gets` 等识别的换行符                       |
+        | `-a`                            | 指定为自动分割模式（与 `-n` 或者 `-p` 选项一起使用时则将 `$F` 设为 `$_.split($;)`） |
+        | `-c`                            | 只检查脚本的语法                                             |
+        | `-Cdirectory`                   | 在脚本执行前，先移动到 `directory` 目录下                    |
+        | `-d、--debug`                   | 使用 Debug 模式（将 `$DEBUG` 设为 `true`）                   |
+        | `-e 'command'`                  | 通过 `command` 指定一行代码的程序。本选项可指定多个          |
+        | `-Eex[:in]、--encoding=ex[:in]` | 指定默认的外部编码（`ex`）以及默认内部编码（`in`）           |
+        | `-Fpattern`                     | 指定 `String#split` 方法使用的默认分隔符（`$;`）             |
+        | `-i[extension]`                 | 以替换形式编辑 `ARGV` 文件（指定 `extension` 时则会生成备份文件） |
+        | `-Idirectory`                   | 指定追加到 `$LOAD_PATH` 的目录。本选项可指定多个             |
+        | `-l`                            | 删除 `-n` 或者 `-p` 选项中的 `$_` 的换行符                   |
+        | `-n`                            | 是脚本整体被 `'while  gets(); ... end'` 包围（将 `gets()`的结果设定到 `$_` 中） |
+        | `-p`                            | 在 `-n` 选项的基础上，在每个循环结束时输出 `$_`              |
+        | `-rlibrary`                     | 在执行脚本前通过 `require` 引用 `library`                    |
+        | `-s`                            | 要使脚本解析标志（`flag`）的功能有效（`'ruby -s script -abc'`，则 `$abc` 为 `true`） |
+        | `-S`                            | 从环境变量 `PATH` 开始搜索可执行的脚本                       |
+        | `-Tlevel`                       | 指定不纯度检查模式                                           |
+        | `-U`                            | 将内部编码的默认值（`Encoding.default_internal`）设为 UTF-8  |
+        | `-v、--verbose`                 | 显示版本号，冗长模式设定为有效（`$VERBOSE` 设定为 `true`）   |
+        | `-w`                            | 冗长模式设定为有效                                           |
+        | `-Wlevel`                       | 指定冗长模式的级别[0=不输出警告，1=只输出重要警告，2=输出全部警告（默认值）] |
+        | `-xdirectory`                   | 忽略执行脚本中 `#!ruby` 之前的内容                           |
+        | `--copyright`                   | 显示版权信息                                                 |
+        | `--enable-feature[,...]`        | 使 `feature` 有效                                            |
+        | `--disable=feature[,...]`       | 使 `feature` 无效                                            |
+        | `--external-encoding=encoding`  | 指定默认的外部编码                                           |
+        | `--internal-encoding=encoding`  | 指定默认的内部编码                                           |
+        | `--version`                     | 显示版本信息                                                 |
+        | `--help`                        | 显示帮助信息                                                 |
+
+        > `--enable`、`--disable` 选项可指定的功能名
+        >
+        > | `功能名`  | `意义`                                 |
+        > | --------- | -------------------------------------- |
+        > | `gems`    | RubyGems 是否有效（默认有效）          |
+        > | `rubyopt` | 是否引用环境变量 `RUBYOPT`（默认引用） |
+        > | `all`     | 上述功能是否全部有效                   |
+
+    - 当 `file` 以连字符开头时，需要输入 `--`
+
+    - `< in/> out`：定向输入/输出流
+
+    - `h.rb`：首行存在 shebang 注释时可用
+
+2. RubyGems 指令：`gem [option]`
+
+    | `选项`           | 意义                                                    |
+    | ---------------- | ------------------------------------------------------- |
+    | `build`          | 根据 `gemspec` 创建 `gem`                               |
+    | `cert`           | 管理、签署 `RubyGems` 的许可证时使用                    |
+    | `check`          | 检查 `gem`                                              |
+    | `cleanup`        | 整理已安装的旧版本的 `gem`                              |
+    | `contents`       | 显示已安装 `gem` 的内容                                 |
+    | `dependency`     | 显示已安装 `gem` 的依赖关系                             |
+    | `environment`    | 显示 RubyGems、Ruby 等相关的环境信息                    |
+    | `fetch`          | 把 gem 文件下载到本地目录，但不安装                     |
+    | `generate_index` | 创建 `gem` 服务器所需的索引文件                         |
+    | `help`           | 显示 `gem` 命令的帮助说明                               |
+    | `install`        | 安装 `gem`                                              |
+    | `list`           | 显示 `gem` 的一览表                                     |
+    | `lock`           | 锁定 `gem` 版本，并输出锁定后的 `gem` 列表              |
+    | `mirror`         | 创建 `gem` 仓库的镜像                                   |
+    | `outdated`       | 显示所有需要更新的 `gem` 列表                           |
+    | `pristine`       | 从 `gem` 缓存中获取已安装的 `gem`，并将其恢复为初始状态 |
+    | `query`          | 搜索本地或者远程仓库的 `gem` 信息                       |
+    | `rdoc`           | 生成已安装的 `gem` 的 RDoc 文件                         |
+    | `search`         | 显示名字包含指定字符串的 `gem`                          |
+    | `server`         | 启动 HTTP 服务器，用于管理 `gem` 的文档及仓库           |
+    | `sources`        | 管理搜索 `gem` 时所需的 RubyGems 的源以及缓存           |
+    | `specification`  | 以 `yaml` 形式显示 `gem` 的详细信息                     |
+    | `stale`          | 按最后访问的时间顺序显示 `gem` 的一览表                 |
+    | `uninstall`      | 从本地卸载 `gem`                                        |
+    | `unpack`         | 在本地目录解压已安装的 `gem`                            |
+    | `update`         | 更新指定的 `gem`（或者全部 `gem`）                      |
+    | `which`          | 显示读取 `gem` 时引用的类库                             |
+
+3. irb 指令：进入 `irb(main):001:0>`
+
+4. 错误信息显示格式
+
+    ```shell
+    FileName: Line:in `Method': ErrorMessage (ExceptionClassName)
+              from FileName: Line:in Method
+    ```
+
 
 ## 3 ALGORITHM
 
