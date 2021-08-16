@@ -15,15 +15,15 @@
     ```HTML
     <!DOCTYPE html>
     <html lang="en">
-    <head>
-      <meta charset="UTF-8">
-      <meta http-equiv="X-UA-Compatible" content="IE=edge">
-      <meta name="viewport" content="width=device-width, initial-scale=1.0">
-      <title>Document Name</title>
-    </head>
-    <body>
-      <p> Text </p>
-    </body>
+      <head>
+        <meta charset="UTF-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>Document Name</title>
+      </head>
+      <body>
+        <p> Text </p>
+      </body>
     </html>
     ```
 
@@ -222,7 +222,7 @@
 
 #### 1.2.1 ECMAScript
 
-##### （一）变量与类型系统
+##### （一）变量与类型
 
 1. 数据类型
 
@@ -368,8 +368,38 @@
 2. `switch` 语句至少有一个 `case`， `default` 可选；
 
     - `case` 充当 `switch` 入口的功能，`break` 会跳出 `switch`，否则会继续执行
-
     - `switch` 和 `case` 可以是任何表达式，采用严格相等的比较方式
+    
+3. 异常处理：用 `try ~ catch ~ finally` 语句捕捉运行时错误（Runtime Error）
+
+    - `catch (err)` 只接受 `try` 语句内抛出的错误，如果在 `catch` 内抛出错误，只能在外层的 `catch` 接收。注意：不需要 `err` 时，`(err)` 可以省略
+
+        ```javascript
+        try {
+          try {
+            func();
+          } catch (err) {
+            if (err instanceof ReferenceError) {
+              console.log(err.message);
+              throw new SyntaxError("Rethrow");
+            }
+          }
+        } catch (err) {
+          console.log(err.name, err.message);
+        }
+        
+        // func is not defined
+        // SyntaxError Rethrow
+        ```
+
+        > Node.JS 的 `process.on("uncaughtException")`与浏览器环境下的 `window.onerror` 属性在未捕获的异常来到全局环境下会被上述内容捕捉，即「全局 `catch`」
+
+    - `throw <errObj>` 可以将任何数据作为错误对象，但最好使用具有 `name` 和 `message` 属性的对象（例如内建 Error 对象）
+
+    - `finally`：无论出现什么情况都要完成完成某个任务
+
+        - `finally` 子句适用于 `try..catch` 的任何出口，包括显式的 `return`。例如，在 `try` 中有一个 `return`。在这种情况下，`finally` 会在控制转向外部代码前被执行
+        - 没有 `catch` 子句的 `try..finally` 结构保证 `try` 执行错误的前提下不处理错误，但是会执行完 `finally` 内的语句（需要在外层接收错误）
 
 ##### （三）函数
 
@@ -391,6 +421,7 @@
 
     - 属性：`name` 和 `length`（参数个数，不包括 `...rest`）
     - 可以利用 `new Function` 创建函数，但是此时创建的新函数的 `[[Environment]]` 指向全局环境
+    
 
 ##### （四）对象
 
@@ -455,9 +486,9 @@
         >
         > ```javascript
         > let alice = {
-        >  name: "Alice",
-        >  age: 14,
-        >  printThis: function() { console.log(this); }
+        >     name: "Alice",
+        >     age: 14,
+        >     printThis: function() { console.log(this); }
         > };
         > 
         > const globalFunction = alice.printThis;
@@ -469,8 +500,10 @@
         > ```
         >
         > 注意，如果 `printThis` 是箭头函数，那么 `alice.printThis()` 也输出 `globalThis`
+        >
+        > 这是因为，点运算符会得到被称为 Reference Type 的一个三元组，`alice.printThis` 得到 `(alice, "printThis", false)`，其中第三个值表明是否在 `use strict` 模式下。此时赋值会将这些信息丢失，只留下 `printThis` 本身，只有 `obj.method()` 或方括号 `obj['method']()` 能保留这个信息
 
-4. 可选链：用 `?.`，`?.[]`，`?.()` 调用可能不存在的键值对或者函数。
+4. 可选链：用 `?.`，`?.[]`，`?.()` 调用可能不存在的键值对或者函数
 
     - `obj?.prop`：如果 `obj` 存在则返回 `obj.prop`，否则返回 `undefined`
 
@@ -553,14 +586,11 @@
         >
         > `Object`，`Function` 和 `Function.prototype` 的代码不是 JavaScript 实现的（Native Code），所以「Object 是一个 Function 的实例，而 Object 作为 Function 实例同时也是一个 Object 实例」这种从属关系是 `instanceof` 运算的结果，不代表实际构建中逻辑关系的绝对次序
         >
-        > <img src="E:\Project\Note\assets\proto.jpg" style="zoom: 33%;" />
-
-10. `class` 关键字：`class` 得到一个函数，其中声明的函数在 `prototype` 中
-
-    - `class` 定义的类型与构造函数有一定区别：
-        - 通过 `class` 创建的函数具有特殊的内部属性标记 `[[IsClassConstructor]]: true`
-        - 类定义将 `"prototype"` 中的所有方法的 `enumerable` 标志设置为 `false`，所以类方法不可枚举
-        - 类构造中的所有代码都将自动进入严格模式
+        > <img src="assets/proto.jpg" style="zoom: 32%;" />
+    
+    - `obj instanceof Class` 的计算过程
+        - 如果 Class 有静态方法 `Symbol.hasInstance`，那就直接调用这个方法
+        - 大多数 Class 没有 `Symbol.hasInstance`，此时 `obj instanceof Class` 将检查 `Class.prototype` 是否等于 `obj` 的原型链中的原型之一
 
 ##### （五）异步
 
@@ -684,6 +714,8 @@
         ```
 
     - `NaN` 不与任何值相等，包括它自己。需要用 `isNaN` 或者 `Object.is(left, right)` 判定；后者除了可以判定 `NaN` 与 `NaN` 相同，以及 `0` 和 `-0` 不同外，与 `===` 没有其他区别
+
+    - 创建 `bigint` 的方式有两种：在一个整数字面量后面加 `n` 或者调用 `BigInt` 函数，其行为类似于 Ruby 中的 Integer
 
 2. 字符串类型：字符串的内部格式始终是 UTF-16，不依赖于页面编码
 
@@ -811,9 +843,47 @@
         console.log(a, b, r);  // 0 1 [ 2, 3, 4 ]
         ```
 
-6. 映射对象区别于对象，`Map` 对象的「键」可以是任何值；方括号访问的是 `Map` 对象的平凡属性
+6. Error 对象：
+
+    - Error 对象包括名称、描述和调用栈三个属性
+    
+        ```javascript
+        try {
+          func();
+        } catch (err) {
+          console.log(err.name);     // ReferenceError
+          console.log(err.message);  // func is not defined
+          console.log(err.stack);
+          // ReferenceError: func is not defined
+          //   at Module._compile (internal/modules/cjs/loader.js:1063:30)
+          //   ...
+        }
+        ```
+    
+    - Error 对象的名称与构造器的名称相同，描述来自初始化时的参数
+    
+        ```javascript
+        const err = new SyntaxError("This is Message");
+        // SyntaxError This is Message
+        console.log(err.name, err.message);
+        ```
+    
+7. 映射对象区别于对象，`Map` 对象的「键」可以是任何值；方括号访问的是 `Map` 对象的平凡属性
 
     - 弱映射的「键」必须是对象，如果在 `WeakMap` 中使用一个对象作为键，并且没有其他对这个对象的引用，那么该对象将会被从内存（和 `Map`）中自动清除。同理，弱集合类似于弱映射
+
+8. `ArrayBuffer`：对固定长度的连续内存空间的引用。`new ArrayBuffer(n)` 会分配一个 `n` 字节的连续内存空间，并用 0 进行预填充
+
+    - `TypedArray`：视图对象的总称，用它解释存储在 `ArrayBuffer` 中的字节
+        - `Uint8Array` ：将 `ArrayBuffer` 中的每个字节视为 0 到 255 之间的单个数字，称为「8 位无符号整数」
+        - `Uint16Array`：将每 2 个字节视为一个 0 到 65535 之间的整数，称为「16 位无符号整数」
+        - `Uint32Array`：将每 4 个字节视为一个 0 到 4294967295 之间的整数，称为「32 位无符号整数」
+        - `Float64Array`：将每 8 个字节视为一个 `5.0x10-324` 到 `1.8x10308` 之间的浮点数
+    - `DataView` 是在 `ArrayBuffer` 上的一种特殊的灵活「未类型化」视图。它允许以任何格式访问任何偏移量的数据
+        - 对于类型化的数组，构造器决定了其格式。整个数组应该是统一的。第 `i` 个数字是 `arr[i]`
+        - 通过 `DataView`，可以使用 `.getUint8(i)` 或 `.getUint16(i)` 之类的方法访问数据。此时格式在调用方法时选择，而不是在构造时
+    - `Blob` 由一个可选的字符串 `type`（通常是 MIME 类型）和 `blobParts`（一系列其他 `Blob` 对象，字符串和 `BufferSource`）组成
+        - `File` 对象继承自 `Blob`，并扩展了与文件系统相关的功能
 
 ##### （七）正则表达式
 
@@ -966,7 +1036,317 @@
 
     - Unicode 属性 `\p{...}` ：寻找具有描述性质的符号，例如用 `\p{sc=Han}` 寻找汉字，用 `\p{Sm}` 寻找数学符号
 
-##### （八）其他
+##### （八）类与继承
+
+1. `class` 关键字：`class` 得到一个构造函数，所以可以作为返回值
+
+    - 声明的函数在 `prototype` 中，`new` 调用定义的 `constructor` 函数
+
+        - 声明的函数可以是 `getter` / `setter`
+
+        - 使用中括号 `[...]` 可以动态计算方法名称（不可以用该类的 `this`）
+
+            ```javascript
+            const typeFormatted = (type) =>
+              type.slice(0, 1).toUpperCase() + type.slice(1).toLowerCase();
+            
+            function detailPerson(type) {
+              return class Person {
+                constructor(name, age, typeValue) {
+                  this.name = name;
+                  this.age = age;
+                  this[type] = typeValue;
+                }
+            
+                show() {
+                  console.log(this);
+                }
+                showAge() {
+                  console.log(this.age);
+                }
+                ["show" + typeFormatted(type)]() {
+                  console.log(this[type]);
+                }
+              }
+            }
+            
+            const Student = detailPerson("score");
+            const alice = new Student("Alice", 14, 96);
+            alice.showScore();
+            ```
+
+    - 类字段定义的值不在 `prototype` 中，而在每个新建的函数中都有一份该字段的内容。下例中，每一个 Button 对象的 `click` 都和这个对象绑定（必须要用箭头函数，否则仍是 `undefined`），相当于 `constructor` 内的 `innerClick` 函数
+
+        ```javascript
+        class Button {
+          constructor(value) {
+            this.value = value;
+            this.innerClick = function() {
+              console.log(this.value);
+            }.bind(this);
+          }
+          click = () => {
+            console.log(this.value);
+          }
+        }
+        
+        let button = new Button("Hello.");
+        setTimeout(button.click, 1000);
+        ```
+
+    - `class` 定义的类型与构造函数有一定区别：
+
+        - 通过 `class` 创建的函数具有特殊的内部属性标记 `[[IsClassConstructor]]: true`
+        - 类定义将 `"prototype"` 中的所有方法的 `enumerable` 标志设置为 `false`，所以类方法不可枚举
+        - 类构造中的所有代码都将自动进入严格模式
+
+2. 类的继承
+
+    - 使用 `extends` 与 `super` 关键字构造子类，下例中 Student 类的 `prototype` 的 `[[prototype]]` 属性是 `Person.prototype`
+
+        ```javascript
+        class Person {
+          constructor(name, age) {
+            this.name = name;
+            this.age = age;
+          }
+        
+          show() {
+            console.log(this);
+          }
+          showAge() {
+            console.log(this.age);
+          }
+        }
+        
+        class Student extends Person {
+          constructor(name, age, score) {
+            super(name, age);
+            this.score = score;
+          }
+        
+          showScore() {
+            console.log(this.score);
+          }
+        }
+        ```
+
+        > 这个过程用 `prototype` 的写法类似如下过程，在 Student 的构造函数中，不使用 `new` 调用 `Person` 且传入 `Student` 新建的对象作为 Person 的 `this`，这个过程模仿了 `super`
+        >
+        > ```javascript
+        > function Person(name, age) {
+        >   this.name = name;
+        >   this.age = age;
+        > }
+        > 
+        > Person.prototype = {
+        >   show: function () {
+        >     console.log(this);
+        >   },
+        >   showAge: function () {
+        >     console.log(this.age);
+        >   }
+        > }
+        > 
+        > function Student(name, age, score) {
+        >   Person.call(this, name, age);
+        >   this.score = score;
+        > }
+        > 
+        > Student.__proto__ = Person;
+        > Student.prototype = {
+        >   showScore: function () {
+        >     console.log(this.score);
+        >   },
+        >   __proto__: Person.prototype
+        > }
+        > 
+        > const alice = new Student("Alice", 14, 96);
+        > alice.showAge();  // 14
+        > console.log(
+        >   alice.__proto__.__proto__.__proto__ === Object.prototype
+        > );                // true
+        > ```
+        >
+        > `Student extends Person` 创建了两个 `[[Prototype]]` 引用：
+        >
+        > 1. `Student` 函数原型继承自 `Person` 函数
+        > 2. `Student.prototype` 原型继承自 `Person.prototype`
+
+        - `extends` 关键字后可以指定任意表达式，例如一个返回 `class` 的 `function`
+        - `super` 关键字：执行 `super.method(...)` 来调用一个父类方法，执行 `super(...)` 来调用一个父类 `constructor`（只能在 `constructor` 中）
+            - 箭头函数没有 `super`，如果在方法内的普通函数使用 `super` 会报错
+
+    - 重写 `constructor`：子类的 `constructor` 必须调用 `super(...)`，并且一定要在使用 `this` 之前调用。如果不指定 `constructor`，将自动生成一个如下类
+
+        ```javascript
+        class Student extends Person {
+          constructor(...args) {
+            super(...args);
+          }
+        }
+        ```
+
+        > 在 JavaScript 中，子类的构造器具有特殊的内部属性 `[[ConstructorKind]]:"derived"`，当通过 `new` 执行一个常规函数时，它将创建一个空对象，并将这个空对象赋值给 `this`；但是当继承的 `constructor` 执行时，它不会执行此操作。它期望父类的 `constructor` 来完成这项工作
+
+    - 重写类字段：对于类字段，父类构造器总是使用父类的字段，这是因为类字段的初始化方式不同
+
+        - 对于父类（未继承任何类），在构造函数调用前初始化
+        - 对于子类，在 `super()` 后立刻初始化
+
+        ```javascript
+        class Person {
+          name = "PersonName";
+          constructor() {
+            console.log(this.name);
+            this.show();
+          }
+          show() {
+            console.log("from Person");
+          }
+        }
+        
+        class Student extends Person { 
+          name = "StudentName";
+          show() {
+            console.log("from Student");
+          }
+        }
+        
+        new Person();   // PersonName from Person
+        new Student();  // PersonName from Student
+        ```
+
+3. 类的静态属性和静态方法
+
+    - 类中以 `static` 开头的函数将方法赋予给类函数本身，以 `static` 开头的变量将将值赋予给类函数
+
+    - 静态属性和方法是可被继承的，子类的构造函数 `[[prototype]]` 指向父类的构造函数
+
+        > 内建类相互间不继承静态方法。例如 `Date.prototype.__proto__` 是 `Object.prototype`，但是 `Date.__proto__` 不指向 `Object`
+        >
+        > <img src="assets/native.svg" style="zoom:92%;" />
+
+4. 受保护的属性与私有属性
+
+    - 一般约定以 `__varname` 的形式定义受保护的属性，然后利用 `setter` / `getter` 读写这个属性
+
+    - 私有属性和方法应该以 `#` 开头，它们只在类的内部可被访问，而无法从外部或从继承的类中访问它
+
+        ```javascript
+        class CoffeeMachine {
+          #waterAmount = 0;
+          get waterAmount() {
+            return this.#waterAmount;
+          }
+          set waterAmount(value) {
+            if (value < 0) throw new Error("Negative water");
+            this.#waterAmount = value;
+          }
+        }
+        
+        let machine = new CoffeeMachine();
+        machine.waterAmount = 100;
+        console.log(machine.#waterAmount);  // Error
+        ```
+
+        - 私有字段与公共字段不会发生冲突
+        - 私有字段不能通过 `this[name]` 访问
+
+5. Mix-in 模式：一个包含可被其他类使用而无需继承的方法的类，即提供了实现特定行为的方法，但是不单独使用它，而是使用它来将这些行为添加到其他类中的一种模式
+
+##### （九）模块
+
+1. 核心功能
+    - 如果同一个模块被导入到多个其他位置，那么它的代码仅会在第一次导入时执行，然后将导出的内容提供给所有的导入
+    - 模块始终默认使用 `use strict`
+    - 每个模块都有自己的顶级作用域，且在一个模块中，顶级 `this` 是 `undefined`
+2. 构建工具：在实际开发中，浏览器模块很少被以原始形式进行使用。通常会使用一些特殊工具（例如 Webpack），将它们打包在一起，然后部署到生产环境的服务器
+    - 构建工具的功能
+        - 从一个打算放在 HTML 中的 `<script type="module">` 主模块开始
+        - 分析依赖：它的导入，以及它的导入的导入等
+        - 使用所有模块构建一个文件（或者多个文件），并用打包函数替代原生的 `import` 调用，以使其正常工作。还支持像 HTML/CSS 模块等特殊的模块类型
+    - 构建工具的优化
+        - 删除无法访问的代码，未使用的导出以及特定于开发的语句（例如 `console` 或 `debugger`）
+        - 使用 Babel 等工具将前沿的现代 JavaScript 语法转换为具有类似功能的旧语法
+        - 压缩生成的文件（删除空格，用短的名字替换变量等）
+    - 最终打包好的脚本中不包含任何 `import` / `export`，也不需要 `type="module"`，二十可以将其放入常规的 `<script src="bundle.js" />`
+
+3. 导入与导出
+
+    - 导出：在声明之前放置 `export` 来标记任意声明为导出，或者将 `export` 分开放置
+
+        ```javascript
+        // api.js
+        export let seasons = ["Spring", "Summer", "Fall", "Winter"];
+        export const STANDARD_YEAR = 2015;
+        
+        export class Person {
+          constructor(name, age) {
+            this.name = name;
+            this.age = age;
+          }
+        }
+        
+        function sum(left, right) {
+          return left + right;
+        }
+        function mul(left, right) {
+          return left * right;
+        }
+        export { sum, mul as multiple };
+        ```
+
+    - 导入：利用 `import * as` 将所有内容导入为一个对象
+
+        ```javascript
+        // main.js
+        import { sum, multiple as mul } from "./api";
+        import * as api from "./api";
+        
+        console.log(mul(2, 2)); // 4
+        ```
+
+    - `export default` 导出默认的变量，需要以 `import obj from "..."` 的形式导入。注意：导入不需要加大括号，导入的名字就是导入模块的别名
+
+        ```javascript
+        export default ["Spring", "Summer", "Fall", "Winter"];
+        export default class {
+          constructor() {
+            // do_something();
+          }
+        }
+        export default function(user) { // 没有函数名
+          // do_something();
+        }
+        ```
+
+        > 在某些情况下，`default` 关键词被用于引用默认的导出
+        >
+        > ```javascript
+        > // api.js
+        > function showThis() {
+        >   console.log(this);
+        > }
+        > 
+        > export { showThis as default };
+        > 
+        > // main.js
+        > import { default as showThis } from "./api";
+        > import * as api from "./api";
+        > 
+        > showThis();
+        > api.default();
+        > ```
+
+    - 重新导出语法 `export ... from ...` 允许导入内容，并立即将其导出，适用于包开发。例如，下面是重新导出命名导出和默认导出
+
+        ```javascript
+        export * from "./api";
+        export { default } from "./api";
+        ```
+
+4. 动态导入：`import(module)` 表达式（不是函数）加载模块并返回一个 `promise`，该 `promise` 的 `resolve` 为一个包含其所有导出的模块对象，可以在代码中的任意位置调用这个表达式
 
 #### 1.2.2 TypeScript
 
@@ -1809,9 +2189,9 @@ Bootstrap 适合短时间开发简单的静态网站。
 
 ##### （二）模块
 
-后端 Node.js 使用的是 CommonJS 的模块规范，导出使用 `modules.exports` 或 `exports`，导入使用 `require`。而前端浏览器 JavaScript 或者前端框架使用 ES 6 模块规范。导出使用 `export` 或 `export default`，导入使用 `import`。
+后端 Node.js 使用的是 Common JS 的模块规范，导出使用 `modules.exports` 或 `exports`，导入使用 `require`。而前端浏览器 JavaScript 或者前端框架使用 ES 6 模块规范。导出使用 `export` 或 `export default`，导入使用 `import`
 
-1. 引入模块的方法：以 Electron 内置的模块为例，有三种引入对象或类的方法。
+1. 引入模块的方法：以 Electron 内置的模块为例，有三种引入对象或类的方法
 
     ```javascript
     const electron = require("electron");
@@ -2077,7 +2457,7 @@ Bootstrap 适合短时间开发简单的静态网站。
 
 5. `std::left/std::right/std::internal`
 
-    - 可以将输出的数字居左/居右/居中，与 `<iomanip>` 中的 `std::setw(int)` 配合使用，具体例子见[这里](#setw)
+    - 可以将输出的数字居左/居右/居中，与 `<iomanip>` 中的 `std::setw(int)` 配合使用
 
 6. `std::cin` 相关
 
@@ -2902,7 +3282,7 @@ Bootstrap 适合短时间开发简单的静态网站。
 
 ### 2.3 Ruby
 
-#### 2.3.1 对象与数据
+#### 2.3.1 Object and Data
 
 ##### （一）面向对象
 
@@ -3151,7 +3531,7 @@ Bootstrap 适合短时间开发简单的静态网站。
     | `def`      | `in`     | `self`   | `__FILE__` |
     | `defined`? | `module` | `super`  | `__LINE_`  |
 
-#### 2.3.2 语句与类
+#### 2.3.2 Syntax and Class
 
 ##### （一）控制语句
 
@@ -3280,7 +3660,7 @@ Bootstrap 适合短时间开发简单的静态网站。
     - 类方法中画下划线的两个同时可以定义单例类
     - Numeric 类与 Symbol 类本身不看做对象引用，没有单例方法
 
-#### 2.3.3 环境指令
+#### 2.3.3 Environment Command
 
 1. Ruby 指令：`ruby [option] [--] file [arguments]`
 
@@ -3429,7 +3809,7 @@ Bootstrap 适合短时间开发简单的静态网站。
 
     - 一个 Electron 应用只有一个主进程，但可以有多个渲染进程。一个 `BrowserWindow` 实例就代表一个渲染进程
     - 主进程负责管理所有的窗口及其对应的渲染进程，开启 `nodeIntegration` 配置后，渲染进程也有能力访问 `Node.js` 的 API
-    - 主进程和渲染进程之间的通讯使用 `ipcRenderer`  模块，或者使用 `remote` 模块
+    - 主进程和渲染进程之间的通讯使用 `ipcRenderer`  模块，或者使用 `remote` 模块（不推荐）
 
 ##### （二）嵌入前端框架
 
@@ -3512,8 +3892,7 @@ Bootstrap 适合短时间开发简单的静态网站。
 
 1. JSON 是 JavaScript 的对象格式，是存储和交换文本信息的语法，书写规则较 JavaScript 更加严格
     - JSON 文件的文件类型是 `.json`，MIME 类型是 `application/json`
-2. JSON 的值类型：数字、字符串、布尔值、数组、对象和 `null`
-    - 对象：以 `"key": value` 的形式书写，必须要使用双引号，最后一个键值对不加逗号
+2. JSON 的值类型：数字、字符串、布尔值、数组、对象和 `null`。其中，对象以 `"key": value` 的形式书写，必须要使用双引号，最后一个键值对不加逗号
 
 ##### （二）XML
 
@@ -3818,5 +4197,7 @@ Bootstrap 适合短时间开发简单的静态网站。
 #### 4.2.4 Chrome Console
 
 #### 4.2.5 Vim
+
+### 4.3 Hardware
 
 <p align="right"> Ichinoe Mizue </p>
