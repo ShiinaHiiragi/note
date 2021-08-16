@@ -11,7 +11,7 @@
     2. 反链: 设 $a$ 是偏序集, $b\subset a$, 若 $b$ 中任意两个元素都不相容, 则称 $b$ 为 $a$ 中反链.
 2. 全序集: $a$ 上的二元严格偏序关系 $r$ 若有 $\forall x,y\in a(xry\vee x=y\vee yrx)$, 则 $r$ 是 $a$ 上的全序. 带有全序 $r$ 的集合称作 $r-$ 全序集 (链), 全序集连同其上的全序 $r$ 形成全序结构 $\left< a,r\right>$
 
-    !!! note
+    !!! note "其他定义方式"
         也可以用非严格的偏序关系定义全序集, 即 $\forall x,y\in a(xry\vee yrx)$, 则$a$ 上的偏序关系 $r$ 是 $a$ 上的全序.
 
     1. 保序映射: 设 $a,b$ 是全序集, 且有 $f:a\to b$ 使得 $\forall x,y\in a(x<y\to f(x)<f(y))$, 则 $f$ 为 $a$ 到 $b$ 的保序映射
@@ -28,5 +28,7 @@
     - 良基性: $\forall b\subset a(b\neq \varnothing \to \exists y\in b\forall x\in b\neg (xry))$
 
 2. 按定义, 良序就是具有良基性的全序, 所以良序集的任一非空子集都有最小元
+    1. 若 $\left< a,r\right>$ 是良序结构且 $b\subset a$, 则子结构 $\left< b,r \cap b^2\right>$ 也是良序结构.
+    2. 一般来说, 良序 $r$ 的逆关系 $r^{-1}$ 不是同一集合上的良序; 当 $a$ 为有限集合时, $a$ 上良序 $r$ 的逆序仍为良序
 
 ## 4.2 序数

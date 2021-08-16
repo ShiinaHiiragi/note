@@ -66,7 +66,7 @@
 
         ```HTML
         <head>
-        	<script> console.log(window.document.chileNodes); </script>
+          <script> console.log(window.document.chileNodes); </script>
           <script src="script.js"></script>
         </head>
         ```
