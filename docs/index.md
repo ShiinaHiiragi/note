@@ -12,7 +12,7 @@
     
     现在进度: 公理集合论 - 良序结构与超限归纳法
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 60%;">60%</div>
+        <div class="progress-percentage" style="width: 61%;">61%</div>
     </div>
 
 ## 参考文献

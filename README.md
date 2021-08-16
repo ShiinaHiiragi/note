@@ -1,3 +1,6 @@
-# Note of Math
+# Note
 
-https://shiinahiiragi.github.io/note/
+### [Math](https://shiinahiiragi.github.io/note/)
+
+### [Syntax](https://github.com/ShiinaHiiragi/note/blob/master/syntax/Syntax.md)
+
