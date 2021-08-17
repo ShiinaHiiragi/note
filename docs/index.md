@@ -10,9 +10,9 @@
 !!! warning "注意"
     这个项目目前仍未完成, 可能存在若干疏漏和错误.
     
-    现在进度: 公理集合论 - 良序结构与超限归纳法
+    现在进度: 公理集合论 - 序数理论
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 61%;">61%</div>
+        <div class="progress-percentage" style="width: 67%;">67%</div>
     </div>
 
 ## 参考文献

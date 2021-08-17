@@ -48,8 +48,8 @@
 ### 1.2.4 并集公理
 1. 内容: 设 $a$ 已知, 则 $\exists y\forall x(x\in y)\leftrightarrow \exists t\in a(x\in t)$
 2. 并集和交集
-    - 并集用并集公理定义: 记 $\{x|\exists t\in a(x\in t)\}$ 为 $\cup a$, 则 $\cup \{s,t\}$ 记为 $s\cup t$; $\{u|u=a\vee u=b\vee u=c\}$ 记为 $\{a, b, c\}$
-    - 交集用内涵公理定义: $\cap a=\{x\in \cap a|\forall t\in a(x\in t)\}$, 且记 $\cap \{s,t\}$ 为 $s\cap t$.
+    - 并集用并集公理定义: 记 $\{x|\exists t\in a(x\in t)\}=\cup a$, 记 $\cup \{s,t\}=s\cup t$; 记 $\{u|u=a\vee u=b\vee u=c\}=\{a, b, c\}$, 记 $\cup\{a_i|i\in I\}=\bigcup_{i\in I}a_i$
+    - 交集用内涵公理定义: $\cap a=\{x\in \cap a|\forall t\in a(x\in t)\}$, 记 $\cap \{s,t\}=s\cap t$, 记 $\cap\{a_i|i\in I\}=\bigcap_{i\in I}a_i$.
 
 ### 1.2.5 幂集公理
 - 设 $a$ 已知, 则 $\exists y\forall x(x\in y \leftrightarrow x\subset a)$, 记为 $\exists y(y=\mathcal{P}(a))$
