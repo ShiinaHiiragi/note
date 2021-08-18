@@ -1,7 +1,7 @@
 # 1 ZFC 集合论
 
 ## 1.1 ZFC 语言
-1. ZFC 是一种特殊带等词的谓词演算
+1. $\mathrm{ZFC}$ 是一种特殊带等词的谓词演算
     1. 字母表: $\{= ,\in\}$, 两个都是二元谓词
     2. 等词公理只使用以下形式:
         - $x=x$
@@ -30,7 +30,7 @@
     1. 存在集合 $y$, $y$ 是由集合 $s$ 中 具有性质 $p(x)$ 的所有 $x$ 组成的
     2. 这是一个公理模式, 每一个 $p(x)$ 都对应了一个公理. 定义项 $p(x)$ 不可以出现 $y$ 自身
     3. 对于每一个给定的 $s$ 和 $p(x)$, $y$ 唯一. 即 $\exists !y\forall x(x\in y \leftrightarrow x\in s\wedge p(x))$
-3. 取 ZF0 中断言的集合 $s$, 令 $p(x)$ 为 $(x\neq x)$. 则 $\exists y=\{x\in s|x\neq x\}$ 没有元素, 记为 $\varnothing$
+3. 取 $\mathrm{ZF0}$ 中断言的集合 $s$, 令 $p(x)$ 为 $(x\neq x)$. 则 $\exists y=\{x\in s|x\neq x\}$ 没有元素, 记为 $\varnothing$
 
 ### 1.2.3 无序对公理
 1. 等价形式
@@ -65,7 +65,8 @@
 
 ### 1.2.7 替换公理
 1. 内容: 设集合 $a$ 和公式 $\varphi (x,y)$ 满足单值性条件 $\forall x\in a\exists !y\varphi (x,y)$, 则 $\{y| \exists x\in a\varphi (x,y)\}$ 也是集合
-    - 某已知的集合 $a$ 的每个成员通过使 $\varphi (x,y)$ 成立的方式找到唯一的集合 $y$ 作为 $x$ 的替换, 这些替换构成一个集合
+    1. 某已知的集合 $a$ 的每个成员通过使 $\varphi (x,y)$ 成立的方式找到唯一的集合 $y$ 作为 $x$ 的替换, 这些替换构成一个集合
+    2. 将上述一元集运算记为 $y=\varphi(x)$, $\varphi$ 不是一个函数, 因为此运算没有定义域, 而是所有的集合. 当将变元限定在集合 $a$ 中, 则运算 $\varphi$ 在 $a$ 上确立一个函数 $\varphi \upharpoonright a:a\to \varphi[a]$, 按习惯称作 $\varphi$ 在 $a$ 上的限制
 2. 序型定理: 每个良序集都有与之同构的唯一序数. $a$ 是良序集 $\to \exists !\alpha (a\cong \alpha)$. 称 $\alpha$ 为该良序集的序型, 有相同序型的良序集有相同的序结构
 
 ## 1.3 选择公理

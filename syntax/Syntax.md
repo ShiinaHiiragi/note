@@ -10,7 +10,7 @@
 
 ##### （一）HTML 规则
 
-1. 一个普通的 HTML 页面如下所示，Emmet 缩写 `!` 即可生成。
+1. 一个普通的 HTML 页面如下所示，Emmet 缩写 `!` 即可生成
 
     ```HTML
     <!DOCTYPE html>
@@ -27,7 +27,7 @@
     </html>
     ```
 
-3. HTML 中的预留字符必须被替换为字符实体，一些在键盘上找不到的字符也可以使用字符实体来替换。
+3. HTML 中的预留字符必须被替换为字符实体，一些在键盘上找不到的字符也可以使用字符实体来替换
 
     | 符号       | 实体名称 | 描述                       |
     | ---------- | -------- | -------------------------- |
@@ -40,15 +40,15 @@
 4. HTML DOM：文档对象模型
 
     - 节点：HTML 中所有内容都是节点（包括属性，内容，注释）。一般来说，`document` 的子节点是 `html`，`html` 的子节点是 `head` 和 `body`
-    - `document`：每个载入浏览器的 HTML 文档都会成为 Document 对象。Document 对象是 Window 对象的一部分，可通过 `window.document` 属性对其进行访问。
+    - `document`：每个载入浏览器的 HTML 文档都会成为 Document 对象。Document 对象是 Window 对象的一部分，可通过 `window.document` 属性对其进行访问
 
 5. 语义元素
 
     - 很多网站利用类似 `<div id="nav">`，`<div class="header">`，或 `<div id="footer">` 来定义网站的不同部分，但是 `<div>` 本身没有语义
 
-    - HTML 5 定义了 `<header>`，`<nav>`，`<section>`，`<article>`，`<aside>`，`<figcaption>`，`<figure>`，`<footer>` 来明确网站不同部分的具体意义。
+    - HTML 5 定义了 `<header>`，`<nav>`，`<section>`，`<article>`，`<aside>`，`<figcaption>`，`<figure>`，`<footer>` 来明确网站不同部分的具体意义
 
-        > 除了 `<figcaption>`，其余均为块级元素。
+        > 除了 `<figcaption>`，其余均为块级元素
 
 5. 引入样式表和脚本
 
@@ -103,7 +103,7 @@
 
 ##### （一）CSS 规则
 
-1. 盒子模型：CSS 盒模型本质上是一个盒子，封装周围的 HTML 元素。可以在浏览器控制台的 Style 标签页的最下方看到这个模型。
+1. 盒子模型：CSS 盒模型本质上是一个盒子，封装周围的 HTML 元素。可以在浏览器控制台的 Style 标签页的最下方看到这个模型
 
     - Margin（外边距）：边框外的区域，外边距是透明的
 
@@ -113,7 +113,7 @@
 
     - Content（内容）：盒子的内容，显示文本和图像
 
-        > Outline 是在 Border 外围，可以规定其属性。Outline 不占据盒子模型的空间。
+        > Outline 是在 Border 外围，可以规定其属性。Outline 不占据盒子模型的空间
 
 2. 单位：下表列出了部分长度单位，其中，只有 `px` 是绝对单位。一般而言，用 `em` 和 `rem` 单元可用于创建良好的可扩展布局
 
@@ -186,7 +186,7 @@
 
         - `static`：HTML 元素的默认值，即没有定位，遵循正常的文档流对象
 
-        - `relative`：相对定位元素的定位是相对其正常位置。移动相对定位元素，其原本所占的空间不会改变。
+        - `relative`：相对定位元素的定位是相对其正常位置。移动相对定位元素，其原本所占的空间不会改变
 
         - `absolute`：绝对定位的元素的位置相对于最近的已定位父元素，如果元素没有已定位的父元素，那么它的位置相对于 `<html>`。注意：绝对定位元素会被从正常流中删除，并且能够交叠元素
 
@@ -194,12 +194,12 @@
 
             > 当元素的定位与文档流无关时，可以规定 `z-index` 属性
         
-    - `float` 属性：使元素向左或向右移动，其周围的元素也会重新排列。
+    - `float` 属性：使元素向左或向右移动，其周围的元素也会重新排列
     
-        - 一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止。
-        - 设置为 `none` 时即为不浮动，元素不会脱离文档流。
+        - 一个浮动元素会尽量向左或向右移动，直到它的外边缘碰到包含框或另一个浮动框的边框为止
+        - 设置为 `none` 时即为不浮动，元素不会脱离文档流
     
-3. 文字流（Text Flow）：文字流与文档流有区别，设置 `float` 属性不会使文字脱离文字流，但是 `absolute` 定位会使文字也脱离文字流。
+3. 文字流（Text Flow）：文字流与文档流有区别，设置 `float` 属性不会使文字脱离文字流，但是 `absolute` 定位会使文字也脱离文字流
 
 ##### （四）弹性布局
 
@@ -215,7 +215,7 @@
     - `order: <integer>;`：定义项目的排列顺序
     - `flex-grow: <number>;`：定义项目的放大比例，默认为 `0`，即如果存在剩余空间，也不放大
     - `flex-shrink: <number>;`：定义项目的缩小比例，默认为 `1`，即如果空间不足，该项目将缩小
-    - `flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`：其中，`auto` 为 `1 1 auto`，`none` 为 `0 0 auto`。
+    - `flex: none | [ <'flex-grow'> <'flex-shrink'>? || <'flex-basis'> ]`：其中，`auto` 为 `1 1 auto`，`none` 为 `0 0 auto`
     - `align-self: auto | flex-start | flex-end | center | baseline | stretch;`：允许单个项目有与其他项目不一样的对齐方式。默认值为 `auto`，表示继承父元素的 `align-items` 属性
 
 ### 1.2 JavaScript
@@ -232,8 +232,8 @@
 
         > 使用 `typeof x` 或 `typeof(x)` 可以输出字符串的类型
         >
-        > - `typeof null` 的结果是 `object` 是 `typeof` 的行为上的错误。
-        > - `typeof alert` 的结果是 `function` 是来自于 JavaScript 语言早期的问题。在 JavaScript 中没有 `function` 类型，函数隶属于 `object` 类型。
+        > - `typeof null` 的结果是 `object` 是 `typeof` 的行为上的错误
+        > - `typeof alert` 的结果是 `function` 是来自于 JavaScript 语言早期的问题。在 JavaScript 中没有 `function` 类型，函数隶属于 `object` 类型
 
 2. 类型转换规则
 
@@ -267,7 +267,7 @@
 
         > 依照上述规则，`console.log(console.log(1) && console.log(2));` 会先输出 `1`，然后输出 `undefined`
         >
-        > 出于安全原因，JavaScript 禁止将 `??` 运算符与 `&&` 和 `||` 运算符一起使用，除非使用括号明确指定了优先级。
+        > 出于安全原因，JavaScript 禁止将 `??` 运算符与 `&&` 和 `||` 运算符一起使用，除非使用括号明确指定了优先级
 
 4. 对象类型转换
 
@@ -289,7 +289,7 @@
         console.log(alice + 1);     // "default" -> 15
         ```
 
-    - 否则，如果 `hint` 是 `"string"`：先尝试 `obj.toString()` ，再尝试 `obj.valueOf()`；如果 `hint` 是 `"number"` 或 `"default"` ：先尝试 `obj.valueOf()` ，再尝试 `obj.toString()`。
+    - 否则，如果 `hint` 是 `"string"`：先尝试 `obj.toString()` ，再尝试 `obj.valueOf()`；如果 `hint` 是 `"number"` 或 `"default"` ：先尝试 `obj.valueOf()` ，再尝试 `obj.toString()`
 
     - 默认情况下，普通对象具有 `toString` 和 `valueOf` 方法：`toString` 方法返回一个字符串 `"[object Object]"`，`valueOf` 方法返回对象自身
 
@@ -764,7 +764,7 @@
 
 4. 数组类型：数组是一种特殊的对象，将数字用作键
 
-    - JavaScript 引擎针对数组做了许多优化，例如尝试把元素存储在连续的内存区域。
+    - JavaScript 引擎针对数组做了许多优化，例如尝试把元素存储在连续的内存区域
 
         - 但如果像使用常规对象一样使用数组（添加一个非数字的属性，制造空洞或倒序填充数组），那么对应的优化就会被关闭
 
@@ -1401,8 +1401,8 @@
 
 1. 类可以包含以下几个模块（类的数据成员）：
 
-    - 字段：类里面声明的变量，字段表示对象的有关数据。
-    - 构造函数：类实例化时调用，可以为类的对象分配内存。
+    - 字段：类里面声明的变量，字段表示对象的有关数据
+    - 构造函数：类实例化时调用，可以为类的对象分配内存
     - 方法：为对象要执行的操作
 
     ```typescript
@@ -1484,7 +1484,7 @@
 
 #### 1.3.2 React.js
 
-React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox](https://codesandbox.io/) 等网站进行 Snippet 测试。
+React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox](https://codesandbox.io/) 等网站进行 Snippet 测试
 
 ##### （一）构建与理念
 
@@ -1599,7 +1599,7 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
 
     - `constructor()` 函数的 `props` 必须继承 `React.Component` 类的初始化方法，但是 `state` 可以自由定义。类中除了 `props` 和 `state` 之外，还可以自定义其他的成员（比如 例子中的 `timerID`）
 
-    - `componentDidMount()` 和 `componentWillUnmount()` 分别在组件建立和销毁时自动调用，两个函数不接受参数。
+    - `componentDidMount()` 和 `componentWillUnmount()` 分别在组件建立和销毁时自动调用，两个函数不接受参数
 
     - 通过 `setState()` 改变 `state`，React 重新调用 `render()` 方法来确定页面上的显示内容
 
@@ -1696,7 +1696,7 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
 
 ##### （四）React Hook
 
-1. `useState` 允许在函数中使用状态。`useState(default)` 创建了一个状态 `count` 和用于设置状态值的接口 `setCount`，并设置了状态的初始值。
+1. `useState` 允许在函数中使用状态。`useState(default)` 创建了一个状态 `count` 和用于设置状态值的接口 `setCount`，并设置了状态的初始值
 
     ```jsx
     import React from 'react';
@@ -1718,7 +1718,7 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
     - 建议将状态设置为 `const`，每次仅通过 `setState` 改变状态，而不通过赋值状态
     - 对于对象（Object 和 Array 等），`React` 通过 `===` 比对状态是否改变，所以设置改变必须要改变状态的引用
 
-2. `React.useEffect()` 相当于 `componentDidUpdate`，通过 `return` 设置清除副作用的函数。
+2. `React.useEffect()` 相当于 `componentDidUpdate`，通过 `return` 设置清除副作用的函数
 
     ```jsx
     useEffect(() => {
@@ -1795,7 +1795,7 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
 
 #### 1.4.1 Bootstrap
 
-Bootstrap 适合短时间开发简单的静态网站。
+Bootstrap 适合短时间开发简单的静态网站
 
 ##### （一）安装
 
@@ -2177,7 +2177,7 @@ Bootstrap 适合短时间开发简单的静态网站。
 
 4. `nvm`：`npm` 的版本控制工具
 
-    - `nvm list [available]`：查看本地安装的所有版本。有可选参数 `available`，显示所有可下载的版本。
+    - `nvm list [available]`：查看本地安装的所有版本。有可选参数 `available`，显示所有可下载的版本
     - `nvm install|use|uninstall <version>`：安装，使用或卸载特定版本
 
 5. `nrm`：`npm` 的镜像管理工具
@@ -3815,7 +3815,7 @@ Bootstrap 适合短时间开发简单的静态网站。
 
 以 React 为例，将 React 嵌入 Electron
 
-1. 首先利用 `create-react-app` 构建一个应用，执行以下命令，直到能在 `http://localhost:3000` 看到 React 的图标旋转的初始网页。然后安装 `electron` 到 `app` 文件夹中。
+1. 首先利用 `create-react-app` 构建一个应用，执行以下命令，直到能在 `http://localhost:3000` 看到 React 的图标旋转的初始网页。然后安装 `electron` 到 `app` 文件夹中
 
     ```shell
     create-react-app app
@@ -3824,7 +3824,7 @@ Bootstrap 适合短时间开发简单的静态网站。
     npm install electron --save-dev
     ```
 
-2. 配置 `package.json`，增加如下两项。其中， `main.js` 是 Node.js 的入口文件。
+2. 配置 `package.json`，增加如下两项。其中， `main.js` 是 Node.js 的入口文件
 
     ```json
     {
@@ -3843,7 +3843,7 @@ Bootstrap 适合短时间开发简单的静态网站。
     else mainWindow.loadURL(path.join(__dirname, './build/index.html'));
     ```
 
-4. 在开启 `nodeIntegration` 后，可以在前端使用 Node.js 的接口，但是无法通过require调用本地包，而是应该使用 `window.require`。这样在网页上无法访问，只能在 Electron 上调试。如果 Electron 上也无法运行，检查包是否安装出错。
+4. 在开启 `nodeIntegration` 后，可以在前端使用 Node.js 的接口，但是无法通过require调用本地包，而是应该使用 `window.require`。这样在网页上无法访问，只能在 Electron 上调试。如果 Electron 上也无法运行，检查包是否安装出错
 
     ```jsx
     import React from 'react';
@@ -3865,7 +3865,7 @@ Bootstrap 适合短时间开发简单的静态网站。
 
     - 在前端环境下（例如 HTML 引用的图片，样式表或 JavaScript 脚本），都是以该文件为当前目录的引用，在发布版下，这些文件在 exe 目录的 `./resources/app` 下
 
-    - 在后端环境下，后端引用的任何资源（例如 `fs` 模块读取文件），都是以工程目录为当前目录。在调试版和发布版两个版本下位置一致。
+    - 在后端环境下，后端引用的任何资源（例如 `fs` 模块读取文件），都是以工程目录为当前目录。在调试版和发布版两个版本下位置一致
 
 2. `electron-packager . ProjectName` 可用于打包，调用的命令行参数如下
     - `.`：`package.json` 的位置
@@ -3950,7 +3950,7 @@ Bootstrap 适合短时间开发简单的静态网站。
     - 无连接：无连接即限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接
     - 无状态：指协议对于事务处理没有记忆能力
     - 媒体独立：只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过 HTTP 发送
-    - HTTP 使用统一资源标识符（URI）来传输数据和建立连接。
+    - HTTP 使用统一资源标识符（URI）来传输数据和建立连接
 
 2. 消息结构
 
@@ -4079,9 +4079,9 @@ Bootstrap 适合短时间开发简单的静态网站。
 
 4. 临时文件
 
-    - `/run`：临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除。
+    - `/run`：临时文件系统，存储系统启动以来的信息。当系统重启时，这个目录下的文件应该被删掉或清除
     - `/lost+found`：系统非法关机后，这里就存放一些文件。一般情况下为空
-    - `/tmp`：用于存放临时文件的。
+    - `/tmp`：用于存放临时文件的
 
 5. 账户：
 
@@ -4095,7 +4095,7 @@ Bootstrap 适合短时间开发简单的静态网站。
 6. 运行过程中使用
 
     - `/var`：存放经常修改的数据，例如程序运行的日志文件
-    - `/proc`：是虚拟文件系统，存储的是当前内核运行状态的一系列特殊文件。这个目录是一个虚拟的目录，它是系统内存的映射，可以通过直接访问这个目录来获取系统信息。
+    - `/proc`：是虚拟文件系统，存储的是当前内核运行状态的一系列特殊文件。这个目录是一个虚拟的目录，它是系统内存的映射，可以通过直接访问这个目录来获取系统信息
 
 7. 扩展
 
@@ -4210,7 +4210,7 @@ Bootstrap 适合短时间开发简单的静态网站。
 
     - 指令集架构（指令集、指令集体系）是计算机体系结构中与程序设计有关的部分，包含了**基本数据类型，指令集，寄存器，寻址模式，存储体系，中断，异常处理以及外部 I/O**。指令集架构包含一系列的操作码（机器语言），以及由特定处理器执行的基本命令
 
-    - 微架构（微体系结构、微处理器体系结构）是在计算机工程中，将一种给定的指令集架构在处理器中执行的方法。一种给定指令集可以在不同的微架构中执行。实施中可能因应不同的设计目的和技术提升而有所不同。
+    - 微架构（微体系结构、微处理器体系结构）是在计算机工程中，将一种给定的指令集架构在处理器中执行的方法。一种给定指令集可以在不同的微架构中执行。实施中可能因应不同的设计目的和技术提升而有所不同
 
         > 微架构的的组件被表示成借由数个逻辑门所建构而成的工具，每个逻辑门都被表示成借由晶体管建构成的零件。拥有不同微架构的机器可能拥有相同的指令集架构，因此可以运行相同的程序。由于半导体科技的进步，新型的处理器可以以较快的速度运行相同的指令集架构
 

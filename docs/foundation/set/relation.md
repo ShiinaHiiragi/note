@@ -3,7 +3,7 @@
 ## 2.1 关系
 ### 2.1.1 Descartes 积
 - 定义: $a\times b=\{(x,y)|x\in a \vee y\in b\}$, 这个定义的合法性由内涵公理, 有序对的定义和引理 $(x\in a \wedge y\in b)\to (x,y)\in \mathcal{p}(\mathcal{p}(a\cup b))$ 保证
-- 拓展到 $n$ 个集合的 Descartes 积: $A_1\times A_2\times \cdots \times A_n=\{(x_1,x_2,\cdots ,x_n)|x_1\in A_1,x_2\in A_2,\cdots ,x_n\in A_n\}$ 
+- 拓展到 $n$ 个集合的 $\mathrm{Descartes}$ 积: $A_1\times A_2\times \cdots \times A_n=\{(x_1,x_2,\cdots ,x_n)|x_1\in A_1,x_2\in A_2,\cdots ,x_n\in A_n\}$ 
 
 ### 2.1.2 关系
 1. 定义: 若 $r\subset a\times b$, 则 $r$ 为 a 到 b 上的一个关系, 写作 $r(x,y)$ 或 $xry$. 若 $r\subset \underbrace{a\times a\times \cdots\times a}_n$, 则 $r$ 称作 $a$ 的 $n$ 元关系. 且有
@@ -13,13 +13,13 @@
     $$
 
 2. 相关概念
-    - $Dom(r)=\{x\in a|\exists y\in b((x,y)\in r)\}$  
-      $Ran(r)=\{y\in b|\exists x\in a((x,y)\in r)\}$
+    - $\mathrm{Dom}(r)=\{x\in a|\exists y\in b((x,y)\in r)\}$  
+      $\mathrm{Ran}(r)=\{y\in b|\exists x\in a((x,y)\in r)\}$
     - $r\subset a\times b,c\in a$, $r$ 在 $c$ 上的限制 $r|c=\{(x,y)\in r|x\in c\}$
-        - $Dom(r|c)=Dom(r)\cap c$
-        - 记 $Ran(r|c)=r[c]$, 称之为 $c$ 在 $r$ 下的象.  
+        - $\mathrm{Dom}(r|c)=\mathrm{Dom}(r)\cap c$
+        - 记 $\mathrm{Ran}(r|c)=r[c]$, 称之为 $c$ 在 $r$ 下的象.  
           若 $c\subset b$, 则 $r^{-1}[c]$ 为 $c$ 在 $r$ 下的原象
-    - $r^{-1}=\{(y,x)|(x,y)\in r\}$, 于是 $Dom(r^{-1})=Ran(r)$, $Ran(r^{-1})=Dom(r)$
+    - $r^{-1}=\{(y,x)|(x,y)\in r\}$, 于是 $\mathrm{Dom}(r^{-1})=\mathrm{Ran}(r)$, $\mathrm{Ran}(r^{-1})=\mathrm{Dom}(r)$
     - $r\subset a\times b,s\subset b\times c$, 则 $s\circ r=\{(x,z)|\exists y((x,y)\in r\wedge(y,z\in s))\}$, 且有 $(s\circ r)^{-1}=r^{-1}\circ s^{-1}$
 3. 二元关系:  $R\subset a\times a$, 则称 $R$ 是 $a$ 上的一个二元关系
     - 自反性: $\forall x\in a(xRx)$  
@@ -54,7 +54,7 @@
     - 逆映射: $f^{-1}=\{(y,x)|(x,y)\in f\}$
 2. 性质
     - 单值性: $(x,y_1)\in f \wedge (x,y_2)\in f\to y_1=y_2$
-    - $f\subset a\times b$, 则 $Dom(f)=a, Ran(f)\subset b$
+    - $f\subset a\times b$, 则 $\mathrm{Dom}(f)=a, \mathrm{Ran}(f)\subset b$
     - $c\subset a$, 则 $f[c]=\{f(x)|x\in c\}$  
       $c\subset b$, 则 $f^{-1}[c]=\{x\in a|f(x)\in c\}$
 3. 映射的种类

@@ -73,6 +73,8 @@
     2. $\alpha$ 是极限序数当且仅当 $\beta \in \alpha \to \beta '\in \alpha ,\alpha \neq 0$. 因此极限序数一定是归纳集
     3. $\alpha$ 是极限序数当且仅当 $\alpha =\cup \alpha ,\alpha \neq 0$. 与之相对地, 后继序数 $\beta'$ 的最小上界 $\cup \beta '=\beta$
 
+### 4.2.3 Hartogs 数
+
 ## 4.3 超限归纳法
 ### 4.3.1 良序集的超限归纳法
 1. 设 $a$ 是良序集, $p(x)$ 是集合 $x$ 的某个性质. 若 $\forall x\in a((\forall y<xp(y))\to p(x))$, 则 $\forall x\in ap(x)$
@@ -106,8 +108,11 @@
         序数由小到大的排列如下
 
         $$
-        \displaylines{0,1,2,\cdots,\omega,\omega+1,\omega+2,\cdots,\omega \cdot 2,\omega \cdot 2+1\\ \omega \cdot 3,\cdots,\omega ^2,\cdots,\omega^3,\cdots,\omega^\omega,\cdots,\omega^{\omega^\omega},\cdots}
+        \displaylines{0,1,2,\cdots,\omega,\omega+1,\omega+2,\cdots,\omega \cdot 2,\omega \cdot 2+1\\
+        \omega \cdot 3,\cdots,\omega ^2,\cdots,\omega^3,\cdots,\omega^\omega,\cdots,\omega^{\omega^\omega},\cdots}
         $$
 
-3. $\mathrm{On}$ 上的递归定义
-    
+3. $\mathrm{On}$ 上的递归定义: 序数的加法, 乘法以及指数运算是 $\mathrm{On}$ 上递归定义的特例
+    1. 序数函数: 如果公式 $\psi(x,y)$ 有 $\forall \alpha \in\mathrm{On}\exists!y\psi(\alpha,y)$, 则此时 $\psi$ 确定了 $a$ 上的一个函数, 称为 $\psi$ 在 $a$ 上的限制, 记作 $\psi \upharpoonright a:a\to \psi[a]$
+    2. 设 $f,g$ 是分别定义在序数 $\delta,\gamma$ 上的函数, $\delta \leqslant \gamma$ 且 $\varphi$ 是个集运算. 若 $\forall \alpha<\delta(f(\alpha)=\varphi(f\upharpoonright \alpha)\wedge g(\alpha)=\varphi(g\upharpoonright \alpha))$, 则 $g\upharpoonright \delta=f$
+    3. 对于任给的集运算 $\varphi$, 唯一存在序数 $\delta$ 上的函数 $\psi_\delta$ 使得 $\forall \alpha <\delta(\psi_\delta(\alpha)=\varphi(\psi_\delta \upharpoonright \alpha))$; 唯一存在序数函数 $\psi$ 使得 $\psi(\alpha)=\varphi(\psi \upharpoonright \alpha)$

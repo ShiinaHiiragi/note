@@ -11,15 +11,15 @@
     5. $\forall x,y\in \omega (x\neq y\to x'\neq y')$
 
 ### 3.1.2 自然数集的构建
-1. 由以上性质可知集合 $\omega$ 具有以下性质, 这说明 $\omega$ 具有自然数 Peano 公理所规定的全部性质
+1. 由以上性质可知集合 $\omega$ 具有以下性质, 这说明 $\omega$ 具有自然数 $\mathrm{Peano}$ 公理所规定的全部性质
     1. $\varnothing \in \omega$
     2. $x\in \omega \to x'\in \omega$
     3. $x'\neq \varnothing$
     4. $\forall x,y\in \omega (x\neq y\to x'\neq y')$
     5. 设 $a\subset \omega$, 有 $(\varnothing \in a\wedge (x\in a\to x'\in a))\to a=\omega$
 
-    !!! note "Peano 公理体系"
-        在 Peano 公理体系中可以推出下列定理, 下节构造整数集合时需要用到这些性质:
+    !!! note "$\mathrm{Peano}$ 公理体系"
+        在 $\mathrm{Peano}$ 公理体系中可以推出下列定理, 下节构造整数集合时需要用到这些性质:
 
         1. 加法
             - 加法交换律: $\forall a,b\in N(a+b=b+a)$
