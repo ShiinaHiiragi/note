@@ -4,7 +4,7 @@
     - 有限序列记作 $\left< a_i|i\in n\right>$.
     - 无限序列记作 $\left< a_i|i\in \omega \right>$ 或 $\left< a_i\right>^{\infty}_{i=1}$
 
-## 4.1 良序结构与超限归纳法
+## 4.1 良序结构
 ### 4.1.1 全序集与偏序集
 1. 偏序集中, 元素的公共向下延伸是可能的间接序结构
     1. 相容: 设 $a$ 是偏序集, $x,y\in a$. 若 $\exists z\in a(z\leqslant x\wedge z\leqslant y)$, 则称 $x$ 与 $y$ 在 $a$ 中相容, 否则称不相容.
@@ -40,8 +40,42 @@
 
         **命题**: 设 $A=\{a_i|i\in I\}, B=\{b_i|i\in I\}$, 其中指标集 $I$ 时良序集且 $b_i=a_i-\bigcup_{j<i}a_j$, 那么 $B$ 是 $A$ 的不交族
 
-### 4.1.3 超限归纳法
-1. 超限归纳法: 设 $a$ 是良序集, $p(x)$ 是集合 $x$ 的某个性质. 若 $\forall x\in a((\forall y<xp(y))\to p(x))$, 则 $\forall x\in ap(x)$
+## 4.2 序数
+### 4.2.1 序数
+1. $\mathrm{von\ Neumann}$ 序数: $\in -$ 良序的可递集称作序数, 即具有以下性质的集合 $\alpha$
+    - $\in -$ 反自反性: $\forall x\in \alpha (x\notin x)$
+    - $\in -$ 可递性: $\forall x,y,z\in \alpha(x\in y\wedge y\in z\to x\in z)$
+    - $\in -$ 三分律: $\forall x,y\in a(x\in y\vee x=y\vee y\in x)$
+    - $\in -$ 良基性: $\alpha$ 的任意`非空子集有 $\in -$ 极小元
+    - $\alpha$ 是可递集, 即 $y\in x\wedge x\in \alpha \to y\in \alpha$
+
+    !!! note "序数与自然数"
+        1. $0=\varnothing$ 是最简单的序数. 因为每个自然数都是可递集, 且都是 $\in -$ 良序集, 所以每个自然数都是序数
+        2. 自然数集 $\omega$ 也是序数, 这是一个超穷序数
+
+2. 用 $\alpha ,\beta ,\gamma$ 等表示序数, 所有的序数集合记为 $\mathrm{On}$, 则有以下序数的性质: 
+    1. $\alpha \neq 0\to 0\in \alpha$
+    2. $x\in \alpha \to x\in \mathrm{On}$
+    3. $x\in \alpha \to \alpha _x=x$
+    4. $\alpha \cong \beta \to \alpha =\beta$
+    5. $\alpha \in \beta \vee \alpha =\beta \vee \beta \in \alpha$
+3. 若集合 $a\subset \mathrm{On}$, 则 $a$ 是 $\in -$ 良序集; 此时 $\cup a$ 也是序数且是 $a$ 的最小上界.
+
+    !!! note "$\mathrm{Burali-Forti}$ 悖论"
+        假设 $\mathrm{On}$ 是集合, 且 $\forall \alpha \in \mathrm{On}$ 皆是序数, 所以 $\mathrm{On}$ 是 $\in -$ 良序集. 由上述性质可知 $\mathrm{On}$ 是可递集, 所以 $\mathrm{On}$ 是序数, 这与序数的 $\in -$ 反自反性矛盾. 所以 $\mathrm{On}$ 不是一种公理集合论意义下的集合, 只是「一些数字放在一起」而已.
+
+### 4.2.2 后继序数与极限序数
+1. 后继序数: 序数 $\alpha$ 的后继 $\alpha '$ 也是序数, 称为 $\alpha$ 的后继序数.
+    1. $0$ 和 $\omega$ 不是后继序数, 因为不存在 $\alpha$ 使得 $\alpha'=0$ 或 $\alpha '=\omega$
+    2. 由 $0$ 为起点构造 $0',0'',0''',\cdots$ 是全体自然数; 由 $\omega$ 为起点构造 $\omega',\omega'',\omega'''\cdots$ 则是一系列超限序数
+2. 极限序数: 既不是空集 ($0$) 也不是后继序数的序数.
+    1. $\omega$ 是最小的极限序数, 比 $\omega$ 小的序数都是自然数
+    2. $\alpha$ 是极限序数当且仅当 $\beta \in \alpha \to \beta '\in \alpha ,\alpha \neq 0$. 因此极限序数一定是归纳集
+    3. $\alpha$ 是极限序数当且仅当 $\alpha =\cup \alpha ,\alpha \neq 0$. 与之相对地, 后继序数 $\beta'$ 的最小上界 $\cup \beta '=\beta$
+
+## 4.3 超限归纳法
+### 4.3.1 良序集的超限归纳法
+1. 设 $a$ 是良序集, $p(x)$ 是集合 $x$ 的某个性质. 若 $\forall x\in a((\forall y<xp(y))\to p(x))$, 则 $\forall x\in ap(x)$
     1. 通常的数学归纳法是此归纳法的特殊情形 $a=N$; 一般情况下, $a$ 可以是某个良序集的任一子集.
     2. 用超限归纳法证明命题 $\forall x\in ap(x)$: 先对 $a$ 的最小元 $x_0$ 直接验证 $p(x_0)$ 成立, 然后任取 $x\in a$, 归纳假设 $\forall y<xp(y)$, 再证明 $p(x)$ 成立.
 2. 良序集基本定理: 对任意良序集 $a$ 与 $b$, 有 $a\cong b\vee \exists y\in b(a\cong b_y)\vee \exists x\in a(b\cong a_x)$
@@ -51,5 +85,4 @@
         - 设 $a,b$ 为良序集, 以下三种情况至多出现一种: ① $a\cong b$; ② $a\cong b_y, y\in b$; ③ $b\cong a_x, x\in a$.
     2. 推论: 若 $a,b$ 是良序集, 则有 $a\preccurlyeq b\wedge b\preccurlyeq a$.
 
-## 4.2 序数
-### 4.2.1 序数
+### 4.3.2 序数的超限归纳法
