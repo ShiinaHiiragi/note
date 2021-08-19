@@ -49,3 +49,6 @@
     3. 若 $\forall a_i(i\in N)\preccurlyeq \omega$, 则对于任意有限数 $n$, $\bigcup\limits_{i=0}^n a_i \preccurlyeq \omega\wedge \bigcup\limits_{i=0}^\infty a_i \preccurlyeq \omega$; 且有 $a_1\times a_2\times \cdots \times a_n\preccurlyeq \omega$
 
 ## 5.2 基数
+### 5.2.1 基数的概念与算术
+
+### 5.2.1 正则基数与奇异基数
