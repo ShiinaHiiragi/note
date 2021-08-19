@@ -109,7 +109,7 @@
             - $\alpha ^0=1,\alpha^{\beta +1}=\alpha ^\beta \cdot \alpha$
             - 当 $\beta$ 为极限序数时, $\alpha ^\beta =\cup \{\alpha ^\gamma |\gamma <\beta \}$
         
-        序数由小到大的排列如下
+        序数由小到大的排列如下. 请注意, 这个排序的所有省略号都有无穷项, 所以序数的「序」存在, 但是这些序数并没有排成一列. 良序原理编保证任何集合都是良序集, 但不代表这些集合就是可数集:
 
         $$
         \displaylines{0,1,2,\cdots,\omega,\omega+1,\omega+2,\cdots,\omega \cdot 2,\omega \cdot 2+1\\

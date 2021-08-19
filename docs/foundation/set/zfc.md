@@ -76,14 +76,28 @@
 2. 承认正则公理后, 序数的定义可以被简化为「序数是满足 $\in -$ 三分律的可递集」
 
 ## 1.3 选择公理
-### 1.3.1 选择公理的形式
-1. 设 $a$ 是由非空集合组成的集族, 则存在以 $a$ 为定义域的函数 $f$ 满足 $\forall x\in a(f(x)\in x)$. 公理断言存在的函数 $f$ 称作集族 $a$ 的选择函数, $f$ 从 $a$ 的每一个集合中选出一个代表 $f(x)$
+1. $\mathrm{AC}$: 设 $a$ 是由非空集合组成的集族, 则存在以 $a$ 为定义域的函数 $f$ 满足 $\forall x\in a(f(x)\in x)$
+    - 公理断言存在的函数 $f$ 称作集族 $a$ 的选择函数, $f$ 从 $a$ 的每一个集合中选出一个代表 $f(x)$, 集族 $a$ 可以是无限集合, 选择带有随意性
 
-### 1.3.2 良序原理
-- 单值化原则: 任何集合到集合间的关系都可以被「切削」称函数, 即$\forall r\subset a\times b, \mathrm{Dom}(r)=a$, 则 $r$ 可被单值化为 $f:a\to b\wedge f\subset r$
-- 选代表原则: 任何分类都存在代表集
-- 滤子扩张原则: 任何滤子都可以扩张成一个超滤, 集合论研究表明滤子扩张原则比选择公理更可靠
-- $\mathrm{Zermelo}$ 定理: 任意两集合 $a,b$ 皆可比较: $\forall a\forall b(a\prec b\wedge a\approx b\wedge b\prec a)$
+    !!! note "选择公理的特殊性"
+        1. 对于有穷个元素的集族 $a$ 或者选择函数不具有随意性的情况, 不需要选择公理, 选择函数是自然存在的
+        2. $\mathrm{Godel}$ 证明了 $\mathrm{ZFC}$ 相对于 $\mathrm{ZF}$ 的无矛盾性, 这说明使用选择公理时相对安全的
+        3. 选择公理没有给出具体构造方法而断言集族上选择函数的存在, 具有非构造性的特点, 这与直觉主义的原则「存在等于可构造」有一定冲突
+
+2. 选择公理的等价形式
+    - $\mathrm{AC1}$ 选代表原则: 任何分类都存在代表集
+    - $\mathrm{AC2}$ 单值化原则: 任何集合到集合间的关系都可以被「切削」成函数, 即$\forall r\subset a\times b, \mathrm{Dom}(r)=a$, 则 $r$ 可被单值化为 $f:a\to b\wedge f\subset r$
+    - $\mathrm{AC3}$ 单射原则: 任意函数包含有同一值域的单射
+    - $\mathrm{AC4}$ 乘积定理: $\forall i\in I(a_i\neq \varnothing)\to \prod_{i\in I}a_i\neq \varnothing$, 其中 $\prod_{i\in I}a_i=\{f|f:I\to \bigcup_{i\in I}a_i,f(i)\in a_i\}$
+    - $\mathrm{WO}$ 良序原理: 任何集合上皆存在良序
+    - $\mathrm{Zermelo}$ 定理: 任意两集合 $a,b$ 皆可比较: $\forall a\forall b(a\prec b\wedge a\approx b\wedge b\prec a)$
+    - $\mathrm{Zorn}$ 引理: 若非空非空偏序集 $a$ 的每个全序子集在 $a$ 中有上界, 则 $a$ 必有极大元
+    - $\mathrm{Tukey}$ 引理: 设 $a$ 为非空集合, 若 $x\in a\leftrightarrow \forall s\subset x\exists n\in \omega(s\approx n\to s\in a)$, 则 $a$ 在「$\subset$」意义下有极大元
+    - $\mathrm{Hausdorff}$ 极大原理: 偏序链的任一全序子集皆可扩张为极大链
+
+3. 滤子扩张原则: 任何滤子都可以扩张成一个超滤
+    1. 设集合 $a$ 的子集族 $G$ 具有有限交性质: $\forall a_1, \cdots,a_n\in G(a_1\cap \cdots \cap a_n\neq \varnothing)$, 则存在 $a$ 上的滤子 $F\supset G$
+    2. 设 $a$ 的子集族具有有限交性质, 则存在 $a$ 上的超滤 $F\supset G$
 
 ## 1.4 集宇宙
 1. 良基集

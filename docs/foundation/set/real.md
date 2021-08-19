@@ -140,17 +140,17 @@
     - $F_{\sigma}=\{a\subset N||N-a|<+\infty \}$ 是一个滤子, 但不是超滤. $F_{\sigma}$ 称作余有限滤子或 Fréchet 滤子
     - 对 $\forall i\in N$, $F_i=\overline{n} =\{a\subset N|i\in a\}$ 是超滤, 但不是自由超滤. 称 $F_i$ 为主超滤
 3. 滤子与超滤的性质
-    - 超滤要么是自由超滤, 要么是主超滤
+    1. 超滤要么是自由超滤, 要么是主超滤
         - 所有主超滤都是非自由的超滤, 即自由超滤一定是非主超滤
         - $N$ 上非自由超滤一定是某个主超滤
-    - 设 $F$ 是 $N$ 上的超滤, 且 $a_1\cup a_2=a\in F$, 则有 $a_1\in F\vee a_2\in F$. 注意到令 $a_1=a,a_2=N-a$, 则该定理是超滤的定义
-    - 设 $F$ 为超滤 $\leftrightarrow F$ 是极大滤子
-    - 设 $F$ 是超滤, 则有 $F$ 是自由超滤 $\leftrightarrow F\supset F_{\sigma}$
-    - $N$ 的子集族 $F$ 若具有以下性质则是 $N$ 上的超滤:
+    2. 设 $F$ 是 $N$ 上的超滤, 且 $a_1\cup a_2=a\in F$, 则有 $a_1\in F\vee a_2\in F$. 注意到令 $a_1=a,a_2=N-a$, 则该定理是超滤的定义
+    3. 设 $F$ 为超滤 $\leftrightarrow F$ 是极大滤子
+    4. 设 $F$ 是超滤, 则有 $F$ 是自由超滤 $\leftrightarrow F\supset F_{\sigma}$
+    5. $N$ 的子集族 $F$ 若具有以下性质则是 $N$ 上的超滤:
         - $\varnothing \in F$
         - 对交封闭: $a,b\in F\to a\cap b\in F$
         - 极大性: $\forall a\subset N(a\in F\vee (N-a)\in F)$
-    - 主超滤都是算术超滤, 自由超滤中有算术超滤也有非算术超滤(非主算术超滤)
+    6. 主超滤都是算术超滤, 自由超滤中有算术超滤也有非算术超滤(非主算术超滤)
 
 ### 3.4.2 超滤变换
 1. 设 $F\in \beta N,f\in ^NN$, 则定义 $G=f[F]=\{a\subset N|f^{-1}[a]\in F\}$ 也为 $N$ 上的超滤
