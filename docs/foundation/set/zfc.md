@@ -69,12 +69,42 @@
     2. 将上述一元集运算记为 $y=\varphi(x)$, $\varphi$ 不是一个函数, 因为此运算没有定义域, 而是所有的集合. 当将变元限定在集合 $a$ 中, 则运算 $\varphi$ 在 $a$ 上确立一个函数 $\varphi \upharpoonright a:a\to \varphi[a]$, 按习惯称作 $\varphi$ 在 $a$ 上的限制
 2. 序型定理: 每个良序集都有与之同构的唯一序数. $a$ 是良序集 $\to \exists !\alpha (a\cong \alpha)$. 称 $\alpha$ 为该良序集的序型, 有相同序型的良序集有相同的序结构
 
-## 1.3 选择公理
-### 1.3.1 选择公理的一般形式
-- 设 $a$ 是由非空集合组成的集族, 则存在以 $a$ 为定义域的函数 $f$ 满足 $\forall x\in a(f(x)\in x)$. 公理断言存在的函数 $f$ 称作集族 $a$ 的选择函数, $f$ 从 $a$ 的每一个集合中选出一个代表 $f(x)$
+### 1.2.8 正则公理
+1. 内容: 每个非空集合有 $\in -$ 极小元, 即 $\forall a\neq \varnothing \exists x\in a(x\cap a=\varnothing)$
+    - 假设存在一条 $\in -$ 降链 $\cdots \in x_{n+1}\in x_{n}\in \cdots \in x_2\in x_1\in x_0$, 例如集合 $a=\{a\}$, 则 $a=\{a\}=\{\{a\}\}=\cdots$, 集合的原始组成 ($\in-$ 降链上的最小元) 不存在
+    - 正则公理使得 $\forall x(x\notin x)$
+2. 承认正则公理后, 序数的定义可以被简化为「序数是满足 $\in -$ 三分律的可递集」
 
-### 1.3.2 选择公理的等价形式
-1. 单值化原则: 任何集合到集合间的关系都可以被「切削」称函数, 即$\forall r\subset a\times b, Dom(r)=a$, 则 $r$ 可被单值化为 $f:a\to b\wedge f\subset r$
-2. 选代表原则: 任何分类都存在代表集
-3. 滤子扩张原则: 任何滤子都可以扩张成一个超滤, 集合论研究表明滤子扩张原则比选择公理更可靠
-4. Zermelo 定理: 任意两集合 $a,b$ 皆可比较: $\forall a\forall b(a\prec b\wedge a\approx b\wedge b\prec a)$
+## 1.3 选择公理
+### 1.3.1 选择公理的形式
+1. 设 $a$ 是由非空集合组成的集族, 则存在以 $a$ 为定义域的函数 $f$ 满足 $\forall x\in a(f(x)\in x)$. 公理断言存在的函数 $f$ 称作集族 $a$ 的选择函数, $f$ 从 $a$ 的每一个集合中选出一个代表 $f(x)$
+
+### 1.3.2 良序原理
+- 单值化原则: 任何集合到集合间的关系都可以被「切削」称函数, 即$\forall r\subset a\times b, \mathrm{Dom}(r)=a$, 则 $r$ 可被单值化为 $f:a\to b\wedge f\subset r$
+- 选代表原则: 任何分类都存在代表集
+- 滤子扩张原则: 任何滤子都可以扩张成一个超滤, 集合论研究表明滤子扩张原则比选择公理更可靠
+- $\mathrm{Zermelo}$ 定理: 任意两集合 $a,b$ 皆可比较: $\forall a\forall b(a\prec b\wedge a\approx b\wedge b\prec a)$
+
+## 1.4 集宇宙
+1. 良基集
+    1. 序数函数 $v_\alpha:v_0=0, v_{\alpha+1}=\mathcal{P}(v_\alpha),v_\gamma=\bigcup_{\beta<\gamma}v_{\beta}$, 其中 $\gamma$ 为极限序数, $v$ 的下标是序数及加法运算
+    2. 将每个 $v_\alpha$ 的元素称作良基集, 所有良基集构成的类记作 $\mathrm{V}=\bigcup_{\alpha \in \mathrm{On}}v_\alpha$
+        - 每个 $v_\alpha$ 都是可递集
+        - 严格递增性: $\gamma<\alpha \to(v_\gamma \subset v_\alpha \wedge v_\gamma \neq v_\alpha)$
+
+    !!! note "$\mathrm{V}$ 的前几个层次"
+        $$
+        \displaylines{v_0=0\\
+        v_1=\mathcal{P}(v_0)=\{0\}\\
+        v_2=\mathcal{P}(v_1)=\{0,1\}\\
+        v_3=\mathcal{P}(v_2)=\{0,1,\{1\},2\}\\
+        \cdots\\
+        v_\omega=\bigcup_{n\in\omega}v_n\\
+        \cdots}
+        $$
+
+2. 定义良基集 $x$ 的秩 $\mathrm{rank}(x)$ 为使 $x\in v_{\beta+1}$ 的最小序数 $\beta$
+    1. 一个良基集若在 $\mathrm{V}$ 的某一层出现, 则在其后的所有层出现; 对于给定的良基集 $x$, 使得 $x\in v_\alpha$ 的最小层数一定是后继序数, 而不可能是 $0$ 或极限序数
+    2. $v_\alpha=\{x\in \mathrm{V}|\mathrm{rank}(x)<\alpha\}$
+    3. $x\subset \mathrm{V} \to x\in \mathrm{V}$
+3. 所有集合都是良基集, 即 $\mathrm{V}$ 就是集合论的论域

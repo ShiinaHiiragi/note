@@ -3,7 +3,8 @@
 }
 
 * {
-  box-sizing: border-box
+  box-sizing: border-box;
+  user-select: none;
 }
 
 .progress-container {

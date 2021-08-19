@@ -74,6 +74,10 @@
     3. $\alpha$ 是极限序数当且仅当 $\alpha =\cup \alpha ,\alpha \neq 0$. 与之相对地, 后继序数 $\beta'$ 的最小上界 $\cup \beta '=\beta$
 
 ### 4.2.3 Hartogs 数
+1. 集合 $a$ 的 $\mathrm{Hartogs}$ 数是一个序数 $\alpha$, 它具有以下性质
+    - $\alpha$ 到 $a$ 不存在单射
+    - 若 $\beta<\alpha$, 则 $\beta \preccurlyeq \alpha$
+2. 每个集合 $a$ 都有 $\mathrm{Hartogs}$ 数, 即都有到该集合不存在单射的最小的序数. 集合 $a$ 的 $\mathrm{Hartogs}$ 数就是序数 $a^+=\{\beta|\beta \preccurlyeq \alpha\}$
 
 ## 4.3 超限归纳法
 ### 4.3.1 良序集的超限归纳法
