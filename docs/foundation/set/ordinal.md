@@ -1,9 +1,5 @@
 # 4 序数
 
-- 序列: 设 $f:n\to a$ 为 $a$ 的有限序列, $f:\omega \to a$ 为 $a$的无限序列
-    - 有限序列记作 $\left< a_i|i\in n\right>$
-    - 无限序列记作 $\left< a_i|i\in \omega \right>$ 或 $\left< a_i\right>^{\infty}_{i=1}$
-
 ## 4.1 良序结构
 ### 4.1.1 全序集与偏序集
 1. 偏序集中, 元素的公共向下延伸是可能的间接序结构

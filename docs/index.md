@@ -9,9 +9,9 @@
 
 !!! warning "注意"
     这个项目目前仍未完成, 可能存在若干疏漏和错误.  
-    现在进度: 公理集合论 - 正则公理
+    现在进度: 数理逻辑 - 命题联结词
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 75%;">75%</div>
+        <div class="progress-percentage" style="width: 9%;">9%</div>
     </div>
 
 ## 参考文献

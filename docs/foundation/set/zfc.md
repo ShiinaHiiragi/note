@@ -61,6 +61,9 @@
         2. $t\in x' \to t\in x\vee t=x$
     2. 归纳集: 对于集合 $a$, 若 $\varnothing \in a \wedge (x\in a \to x'\in a)$, 则 $a$ 为归纳集
     3. 可递集: $y\in t\in x \to y\in x$. 也就是 $\forall t \in x(t\subset x)$, $\forall t\in x(t\in \mathcal{P}(x))$, $x\subset \mathcal{p}(x)$, $\cup x\subset x$
+    4. 序列: 设 $f:n\to a$ 为 $a$ 的有限序列, $f:\omega \to a$ 为 $a$的无限序列
+        - 有限序列记作 $\left< a_i|i\in n\right>$
+        - 无限序列记作 $\left< a_i|i\in \omega \right>$ 或 $\left< a_i\right>^{\infty}_{i=1}$
 2. 无限公理断言了归纳集的存在: $\exists s(\varnothing \in s \wedge \forall x(x\in s \to x'\in s))$. 
 
 ### 1.2.7 替换公理
