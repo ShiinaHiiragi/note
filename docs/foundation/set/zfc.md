@@ -94,6 +94,7 @@
     - $\mathrm{Zorn}$ 引理: 若非空非空偏序集 $a$ 的每个全序子集在 $a$ 中有上界, 则 $a$ 必有极大元
     - $\mathrm{Tukey}$ 引理: 设 $a$ 为非空集合, 若 $x\in a\leftrightarrow \forall s\subset x\exists n\in \omega(s\approx n\to s\in a)$, 则 $a$ 在「$\subset$」意义下有极大元
     - $\mathrm{Hausdorff}$ 极大原理: 偏序链的任一全序子集皆可扩张为极大链
+    - 任意集合都有基数
 
 3. 滤子扩张原则: 任何滤子都可以扩张成一个超滤
     1. 设集合 $a$ 的子集族 $G$ 具有有限交性质: $\forall a_1, \cdots,a_n\in G(a_1\cap \cdots \cap a_n\neq \varnothing)$, 则存在 $a$ 上的滤子 $F\supset G$
