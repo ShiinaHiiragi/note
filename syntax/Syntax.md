@@ -58,7 +58,7 @@
 
         ```html
         <head>
-        	<link rel="stylesheet" type="text/css" href="style.css">
+          <link rel="stylesheet" type="text/css" href="style.css">
         </head>
         ```
 
@@ -152,8 +152,8 @@
 
     | 选择器              | 示例            | 例子描述                                                  |
     | ------------------- | --------------- | --------------------------------------------------------- |
-    | .`class`            | `.intro`        | 选择 `class="intro"` 的所有元素。                         |
-    | .`class1.class2`    | `.name1.name2`  | 选择 `class` 属性中同时有 `name1` 和 `name2` 的所有元素。 |
+    | `.class`            | `.intro`        | 选择 `class="intro"` 的所有元素。                         |
+    | `.class1.class2`    | `.name1.name2`  | 选择 `class` 属性中同时有 `name1` 和 `name2` 的所有元素。 |
     | `.class1 .class2`   | `.name1 .name2` | 选择作为类名 `name1` 元素后代的所有类名 `name2` 元素。    |
     | `#id`               | `#firstname`    | 选择 `id="firstname"` 的元素。                            |
     | `*`                 | `*`             | 选择所有元素。                                            |
@@ -1540,7 +1540,7 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
     };
     
     ReactDOM.render(
-    	<Welcome append name="Alice"/>,
+      <Welcome append name="Alice"/>,
       document.getElementById('root')
     );
     ```
@@ -1659,7 +1659,7 @@ React 和 Material UI 的初始化较为缓慢，建议直接使用 [CodeSandbox
     };
     
     ReactDOM.render(
-    	<Bat size={16}/>,
+      <Bat size={16}/>,
       document.getElementById('root')
     );
     ```

@@ -225,8 +225,8 @@
     ^*Q=\{\dfrac{q}{p}|p\neq 0,p,q\in ^*Z\}}
     $$
 
-2. 定义 $^*Q$ 的 Archimedes 子集:
-    - $Q_<=\{x\in ^*Q|\exists k\in N(|x|\leqslant k)\}$, 这一性质意味着量的有限可测量性. 作为序域, $^*Q$ 是一种非 Archimedes 序域. 若 $x,y\in Q_<$, 则 $x+y\in Q_<,x\cdot y\in Q_<$
+2. 定义 $^*Q$ 的 $\mathrm{Archimedes}$ 子集:
+    - $Q_<=\{x\in ^*Q|\exists k\in N(|x|\leqslant k)\}$, 这一性质意味着量的有限可测量性. 作为序域, $^*Q$ 是一种非 $\mathrm{Archimedes}$ 序域. 若 $x,y\in Q_<$, 则 $x+y\in Q_<,x\cdot y\in Q_<$
     - $I=\{\alpha \in ^*Q|\forall k\in N(|x|\leqslant k)\}$, 称作无穷小
         - $I\subset Q_<$
         - $\alpha ,\beta \in I\to \alpha +\beta \in I$
@@ -254,11 +254,11 @@
         - 加法保序性: $\forall [x],[y],[z]\in Q_</\sim ([x]<[y]\to [x]+[z]<[y]+[z])$
         - 乘法保序性: $\forall [x],[y],[z]\in Q_</\sim ([z]>[0]\to ([x]<[y]\to [x]\cdot [z]<[y]\cdot [z]))$
 3. $\left< Q_{<}/\sim ,+,\cdot ,<,[0],[1],\right>$ 拥有上述性质, 是一个序域
-    - $Q,Q_<$ 有 Archimedes 性质, 而 $^*Q$ 没有. 但 $Q_<$ 不是域, 而将 $Q_<$ 剖分成的 $R$ 是一个序域
+    - $Q,Q_<$ 有 $\mathrm{Archimedes}$ 性质, 而 $^*Q$ 没有. 但 $Q_<$ 不是域, 而将 $Q_<$ 剖分成的 $R$ 是一个序域
     - 定义 $\overline{Q}=\{[r]|r\in Q\}$, 它关于加法, 乘法成了 $R$ 的封闭子集. 再令 $H(r)=[r],H:Q\to \overline{Q}$ 即为所需要的嵌入映射(保运算性, 保序性, 双射). 于是 $Q$ 与 $\overline{Q}$ 同构, $H$ 把 $Q$ 同构嵌入 $R$. $\overline{Q}$ 成为 $Q$, $Q\subset R$
     - 令实数集 $R=\left\{ \left. \left[ \dfrac{q}{p}\right] \right| p\neq 0, p,q\in ^*Z, \exists k\in N\left( \left| \dfrac{q}{p}\right| \leqslant k\right) \right\}$
         - 新的实数零为无穷小集: $0=[0]=\{x\in Q_<|x\sim 0\}=I$
-        - Archimedes 性质: $\forall a\in R\exists k\in N(|a|\leqslant k)$
+        - $\mathrm{Archimedes}$ 性质: $\forall a\in R\exists k\in N(|a|\leqslant k)$
 4. $R$ 的完备性
     - $Q$ 在 $R$ 中稠密: $\forall a,b\in R(a<b\to \exists r\in Q(a<r<b))$
     - 实数的完备性: 单调递增且有上界的实数列必有最小上界. 具有这种性质的 $R$ 称为完备序域, $Q$ 不具备这种完备性
