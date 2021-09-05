@@ -165,10 +165,10 @@
     | `element+element`   | `div + p`       | 选择紧跟 `<div>` 元素的首个 `<p>` 元素。                  |
     | `element1~element2` | `p ~ ul`        | 选择前面有 `<p>` 元素的每个 `<ul>` 元素。                 |
     | `[attribute]`       | `[target]`      | 选择带有 `target` 属性的所有元素。                        |
-    | `:link`    | `a:link`    | 选择所有未访问链接     |
-    | `:visited` | `a:visited` | 选择所有访问过的链接   |
-    | `:active`  | `a:active`  | 选择正在活动链接       |
-    | `:hover`   | `a:hover`   | 把鼠标放在链接上的状态 |
+    | `:link`             | `a:link`        | 选择所有未访问链接                                        |
+    | `:visited`          | `a:visited`     | 选择所有访问过的链接                                      |
+    | `:active`           | `a:active`      | 选择正在活动链接                                          |
+    | `:hover`            | `a:hover`       | 把鼠标放在链接上的状态                                    |
 
 ##### （三）文档流布局
 
@@ -239,12 +239,12 @@
 
     - 其他类型转换为 Number 类型：
 
-        | 类型        | 值                                                           |
-        | ----------- | ------------------------------------------------------------ |
-        | `true`      | `1`                                                          |
-        | `false`     | `0`                                                          |
-        | `null`      | `0`                                                          |
-        | `undefined` | `NaN`                                                        |
+        | 类型        | 值                                                                                  |
+        | ----------- | ----------------------------------------------------------------------------------- |
+        | `true`      | `1`                                                                                 |
+        | `false`     | `0`                                                                                 |
+        | `null`      | `0`                                                                                 |
+        | `undefined` | `NaN`                                                                               |
         | string      | 首先去除首尾空格，考察剩余部分。如果是空串转化成 `0`， 否则转化成对应数字或者 `NaN` |
 
     - 其他类型转化为布尔值：`""`，`null`，`undefined`，`0`， `NaN` 转化为 `false`；其他值转化为 `true`（包括所有对象）
@@ -721,12 +721,12 @@
 
     - 转义字符：
 
-        | 字符                                    | 描述                                                         |
-        | :-------------------------------------- | :----------------------------------------------------------- |
-        | `\b`, `\f`, `\v`                        | 退格，换页，垂直标签 —— 为了兼容性，现在已经不使用了。       |
-        | `\xXX`                                  | 具有给定十六进制 Unicode `XX` 的 Unicode 字符，例如 `'\x7A'` 和 `'z'` 相同。 |
+        | 字符                                    | 描述                                                                                                                          |
+        | :-------------------------------------- | :---------------------------------------------------------------------------------------------------------------------------- |
+        | `\b`, `\f`, `\v`                        | 退格，换页，垂直标签 —— 为了兼容性，现在已经不使用了。                                                                        |
+        | `\xXX`                                  | 具有给定十六进制 Unicode `XX` 的 Unicode 字符，例如 `'\x7A'` 和 `'z'` 相同。                                                  |
         | `\uXXXX`                                | 以 UTF-16 编码的十六进制代码 `XXXX` 的 unicode 字符，例如 `\u00A9` 是版权符号 `©` 的 unicode。它必须正好是 4 个十六进制数字。 |
-        | `\u{X…XXXXXX}`（1 到 6 个十六进制字符） | 具有给定 UTF-32 编码的 unicode 符号。一些罕见的字符用两个 unicode 符号编码，占用 4 个字节。这样我们就可以插入长代码了。 |
+        | `\u{X…XXXXXX}`（1 到 6 个十六进制字符） | 具有给定 UTF-32 编码的 unicode 符号。一些罕见的字符用两个 unicode 符号编码，占用 4 个字节。这样我们就可以插入长代码了。       |
 
     - 代理对：所有常用的字符都是一个 2 字节的代码，稀有的符号被称为「代理对」的一对 2 字节的符号编码。如果一个字符的代码在 `0xd800 ~ 0xdbff` 的范围内，那么它是代理对的第一部分；第二部分必须在 `0xdc00 ~ 0xdfff` 的范围中，这些范围是按照标准专门为代理对保留的
 
@@ -1367,19 +1367,19 @@
 
 2. 变量类型
 
-    | 数据类型    | 描述                                                         |
-    | ----------- | ------------------------------------------------------------ |
-    | `any`       | 任意类型                                                     |
-    | `number`    | 双精度 64 位浮点数                                           |
-    | `string`    | 字符串                                                       |
-    | `boolean`   | 布尔值                                                       |
-    | 数组        | 一系列同类型的数据                                           |
+    | 数据类型    | 描述                                                                     |
+    | ----------- | ------------------------------------------------------------------------ |
+    | `any`       | 任意类型                                                                 |
+    | `number`    | 双精度 64 位浮点数                                                       |
+    | `string`    | 字符串                                                                   |
+    | `boolean`   | 布尔值                                                                   |
+    | 数组        | 一系列同类型的数据                                                       |
     | 元素        | 已知元素数量和类型的数组，各元素的类型不必相同，对应位置的类型需要相同。 |
-    | `enum`      | 数值集合                                                     |
-    | `void`      | 用于标识方法返回值的类型，表示该方法没有返回值               |
-    | `null`      | 对象值缺失                                                   |
-    | `undefined` | 初始化变量为一个未定义的值                                   |
-    | `never`     | 其它类型的子类型，代表从不会出现的值                         |
+    | `enum`      | 数值集合                                                                 |
+    | `void`      | 用于标识方法返回值的类型，表示该方法没有返回值                           |
+    | `null`      | 对象值缺失                                                               |
+    | `undefined` | 初始化变量为一个未定义的值                                               |
+    | `never`     | 其它类型的子类型，代表从不会出现的值                                     |
 
     ```typescript
     let binaryLiteral: number = 0b1010;
@@ -1465,17 +1465,17 @@
 
 - jQuery 使用的语法是 XPath 与 CSS 选择器语法的组合，`$` 是 jQuery 的 `querySelector` 函数
 
-    | 语法实例                   | 描述                                                         |
-    | -------------------------- | ------------------------------------------------------------ |
-    | `$("*")`                   | 选取所有元素                                                 |
-    | `$(this)`                  | 选取当前 HTML 元素                                           |
-    | `$("p.intro")`             | 选取 `class` 为 `intro` 的 `<p>` 元素                        |
-    | `$("p:first")`             | 选取第一个 `<p>` 元素                                        |
-    | `$("ul li:first")`         | 选取第一个 `<ul>` 元素的第一个  `<li>` 元素                  |
-    | `$("ul li:first-child")`   | 选取每个 `<ul>` 元素的第一个  `<li>` 元素                    |
-    | `$("[href]")`              | 选取带有 `href` 属性的元素                                   |
-    | `$("a[target='_blank']")`  | 选取所有 `target` 属性值等于  `"_blank"` 的 `<a>` 元素       |
-    | `$("a[target!='_blank']")` | 选取所有 `target` 属性值不等于  `"_blank"` 的 <a> 元素       |
+    | 语法实例                   | 描述                                                           |
+    | -------------------------- | -------------------------------------------------------------- |
+    | `$("*")`                   | 选取所有元素                                                   |
+    | `$(this)`                  | 选取当前 HTML 元素                                             |
+    | `$("p.intro")`             | 选取 `class` 为 `intro` 的 `<p>` 元素                          |
+    | `$("p:first")`             | 选取第一个 `<p>` 元素                                          |
+    | `$("ul li:first")`         | 选取第一个 `<ul>` 元素的第一个  `<li>` 元素                    |
+    | `$("ul li:first-child")`   | 选取每个 `<ul>` 元素的第一个  `<li>` 元素                      |
+    | `$("[href]")`              | 选取带有 `href` 属性的元素                                     |
+    | `$("a[target='_blank']")`  | 选取所有 `target` 属性值等于  `"_blank"` 的 `<a>` 元素         |
+    | `$("a[target!='_blank']")` | 选取所有 `target` 属性值不等于  `"_blank"` 的 <a> 元素         |
     | `$(":button")`             | 选取所有 `type="button"` 的  `<input>` 元素 和 `<button>` 元素 |
 
 ### 1.3 Front-end Framework
@@ -2688,19 +2688,19 @@ Bootstrap 适合短时间开发简单的静态网站
 
     - 插入与删除
 
-        | 成员                      | 功能                                                         |
-        | :------------------------ | :----------------------------------------------------------- |
-        | `c.clear()`               | 移除所有元素，令容器为空                                     |
-        | `c.insert(t)`             | 将 t 一个副本插入 c 中，用于无序或自动排序的容器             |
-        | `c.insert(it, t)`         | 将 t 一个副本插入到 it 处，返回值和 it 的意义并不相同        |
-        | `c.insert(it, n, t)`      | 将 t 一个 n 个副本插入到 it 处                               |
-        | `c.insert(it, begin,end)` | 将 [begin, end) 区间内元素的副本插入it处                     |
-        | `c.erase(it)`             | 移除 it 指向的元素                                           |
+        | 成员                      | 功能                                                                     |
+        | :------------------------ | :----------------------------------------------------------------------- |
+        | `c.clear()`               | 移除所有元素，令容器为空                                                 |
+        | `c.insert(t)`             | 将 t 一个副本插入 c 中，用于无序或自动排序的容器                         |
+        | `c.insert(it, t)`         | 将 t 一个副本插入到 it 处，返回值和 it 的意义并不相同                    |
+        | `c.insert(it, n, t)`      | 将 t 一个 n 个副本插入到 it 处                                           |
+        | `c.insert(it, begin,end)` | 将 [begin, end) 区间内元素的副本插入it处                                 |
+        | `c.erase(it)`             | 移除 it 指向的元素                                                       |
         | `c.erase(begin,end)`      | 移除 [begin, end) 区间内的所有元素，某些容器会返回没有被移除的第一个元素 |
-        | `c.push_front(t)`         | 在容器头部增加一个元素                                       |
-        | `c.pop_front()`           | 删除容器第一个元素                                           |
-        | `c.push_back(t)`          | 在容器最后增加一个元素，此时会调用 T 的复制构造函数          |
-        | `c.pop_back()`            | 删除容器最后一个元素                                         |
+        | `c.push_front(t)`         | 在容器头部增加一个元素                                                   |
+        | `c.pop_front()`           | 删除容器第一个元素                                                       |
+        | `c.push_back(t)`          | 在容器最后增加一个元素，此时会调用 T 的复制构造函数                      |
+        | `c.pop_back()`            | 删除容器最后一个元素                                                     |
 
     - 其他函数
 
@@ -3335,21 +3335,21 @@ Bootstrap 适合短时间开发简单的静态网站
 
         > 两个特殊值：Float 类中的 `Inifity` 和 `NaN`
 
-        | **字面量**  | 作用（括号内为10 进制的值）                  |
-        | ----------- | -------------------------------------------- |
-        | `123`       | 表示 10 进制整数                             |
-        | `0123`      | 表示 8 进制整数（83）                        |
-        | `0o123`     | 表示 8 进制整数（83）                        |
-        | `0d123`     | 表示 10 进制整数（123）                      |
-        | `0x123`     | 表示 16 进制整数（291）                      |
-        | `0b1111011` | 表示 2 进制整数（123）                       |
-        | `123.45`    | 浮点小数                                     |
-        | `1.23E+04`  | 浮点小数的指数表示法（$1.23\times 10^4$）    |
+        | **字面量**  | 作用（括号内为10 进制的值）                   |
+        | ----------- | --------------------------------------------- |
+        | `123`       | 表示 10 进制整数                              |
+        | `0123`      | 表示 8 进制整数（83）                         |
+        | `0o123`     | 表示 8 进制整数（83）                         |
+        | `0d123`     | 表示 10 进制整数（123）                       |
+        | `0x123`     | 表示 16 进制整数（291）                       |
+        | `0b1111011` | 表示 2 进制整数（123）                        |
+        | `123.45`    | 浮点小数                                      |
+        | `1.23E+04`  | 浮点小数的指数表示法（$1.23\times 10^4$）     |
         | `1.23E-04`  | 浮点小数的指数表示法（$1.23\times 10^{-4}$​） |
-        | `123r`      | 有理数的（`123/1`）                          |
-        | `123.45r`   | 有理数的 `123.45`（`12345/100 = 2469/20`）   |
-        | `123i`      | 虚数的 `123i`                                |
-        | `123.45i`   | 虚数的 `123.45i`                             |
+        | `123r`      | 有理数的（`123/1`）                           |
+        | `123.45r`   | 有理数的 `123.45`（`12345/100 = 2469/20`）    |
+        | `123i`      | 虚数的 `123i`                                 |
+        | `123.45i`   | 虚数的 `123.45i`                              |
 
     - 用 `""`、`''`、`//`表示文本或文本模式
 
@@ -3444,53 +3444,53 @@ Bootstrap 适合短时间开发简单的静态网站
 
     - 预定义变量
 
-        | `变量名`           | 内容                                                         |
-        | ------------------ | ------------------------------------------------------------ |
-        | `$_`               | `gets` 方法最后读取的字符串                                  |
-        | `$&`               | 最后一次模式匹配后得到的字符串                               |
-        | `$~`               | 最后一次模式匹配相关的信息                                   |
-        | ``$```             | 最后一次模式匹配中匹配部分之前的字符串                       |
-        | `$'`               | 最后一次模式匹配中匹配部分之后的字符串                       |
-        | `$+`               | 最后一次模式匹配中最后一个 `()` 对应的字符串                 |
+        | `变量名`           | 内容                                                             |
+        | ------------------ | ---------------------------------------------------------------- |
+        | `$_`               | `gets` 方法最后读取的字符串                                      |
+        | `$&`               | 最后一次模式匹配后得到的字符串                                   |
+        | `$~`               | 最后一次模式匹配相关的信息                                       |
+        | ``$```             | 最后一次模式匹配中匹配部分之前的字符串                           |
+        | `$'`               | 最后一次模式匹配中匹配部分之后的字符串                           |
+        | `$+`               | 最后一次模式匹配中最后一个 `()` 对应的字符串                     |
         | `$1、$2……`         | 最后一次模式匹配中 `()` 匹配的字符串（第 `n` 个 `()` 对应 `$n`） |
-        | `$?`               | 最后执行完毕的子进程的状态                                   |
-        | `$!`               | 最后发生的异常的相关信息                                     |
-        | `$@`               | 最后发生的异常的相关位置信息                                 |
-        | `$SAFE`            | 安全级别（默认为 `0`）                                       |
-        | `$/`               | 输入数据的分隔符（默认为 `"\n"`）                            |
-        | `$\`               | 输出数据的分隔符（默认为 `nil`）                             |
-        | `$,`               | `Array#join` 的默认分割字符串（默认为 `nil`）                |
-        | `$;`               | `String#split` 的默认分割字符串（默认为 `nil`）              |
-        | `$.`               | 最后读取的文件的行号                                         |
-        | `$<`               | `ARGF` 的别名                                                |
-        | `$>`               | `print`、`puts`、`p` 等的默认输出位置（默认为 `STDOUT`）     |
-        | `$0`               | `$PROGRAM_NAME` 的别名                                       |
-        | `$*`               | `ARGV` 的别名                                                |
-        | `$$`               | 当前执行中的 Ruby 的进程 ID                                  |
-        | `$:`               | `$LOAD_PATH` 的别名                                          |
-        | `$"`               | `$LOADED_FEATURES` 的别名                                    |
-        | `$DEBUG`           | 指定 Debug 模式的标识（默认为 `nil`）                        |
-        | `$FILENAME`        | `ARGF` 当前在读取的文件名                                    |
-        | `$LOAD_PATH`       | 执行 `require` 读取文件时搜索的目录名数组                    |
-        | `$stdin`           | 标准输入（默认为 `STDIN`）                                   |
-        | `$stdout`          | 标准输出（默认为 `STDOUT`）                                  |
-        | `$stderr`          | 标准错误输出（默认为 `STDERR`）                              |
-        | `$VERBOSE`         | 指定冗长模式的标识（默认为 `nil`）                           |
-        | `$PROGRAM_NAME`    | 当前执行中的 `Ruby` 脚本的别名                               |
-        | `$LOADED_FEATURES` | `require` 读取的类库名一览表                                 |
+        | `$?`               | 最后执行完毕的子进程的状态                                       |
+        | `$!`               | 最后发生的异常的相关信息                                         |
+        | `$@`               | 最后发生的异常的相关位置信息                                     |
+        | `$SAFE`            | 安全级别（默认为 `0`）                                           |
+        | `$/`               | 输入数据的分隔符（默认为 `"\n"`）                                |
+        | `$\`               | 输出数据的分隔符（默认为 `nil`）                                 |
+        | `$,`               | `Array#join` 的默认分割字符串（默认为 `nil`）                    |
+        | `$;`               | `String#split` 的默认分割字符串（默认为 `nil`）                  |
+        | `$.`               | 最后读取的文件的行号                                             |
+        | `$<`               | `ARGF` 的别名                                                    |
+        | `$>`               | `print`、`puts`、`p` 等的默认输出位置（默认为 `STDOUT`）         |
+        | `$0`               | `$PROGRAM_NAME` 的别名                                           |
+        | `$*`               | `ARGV` 的别名                                                    |
+        | `$$`               | 当前执行中的 Ruby 的进程 ID                                      |
+        | `$:`               | `$LOAD_PATH` 的别名                                              |
+        | `$"`               | `$LOADED_FEATURES` 的别名                                        |
+        | `$DEBUG`           | 指定 Debug 模式的标识（默认为 `nil`）                            |
+        | `$FILENAME`        | `ARGF` 当前在读取的文件名                                        |
+        | `$LOAD_PATH`       | 执行 `require` 读取文件时搜索的目录名数组                        |
+        | `$stdin`           | 标准输入（默认为 `STDIN`）                                       |
+        | `$stdout`          | 标准输出（默认为 `STDOUT`）                                      |
+        | `$stderr`          | 标准错误输出（默认为 `STDERR`）                                  |
+        | `$VERBOSE`         | 指定冗长模式的标识（默认为 `nil`）                               |
+        | `$PROGRAM_NAME`    | 当前执行中的 `Ruby` 脚本的别名                                   |
+        | `$LOADED_FEATURES` | `require` 读取的类库名一览表                                     |
 
     - 环境变量
 
-        | `变量名`                 | 内容                                                         |
-        | ------------------------ | ------------------------------------------------------------ |
+        | `变量名`                 | 内容                                                            |
+        | ------------------------ | --------------------------------------------------------------- |
         | `RUBYLIB`                | 追加到预定义变量 `$LOAD_PATH` 中的目录名（各目录间用 `:` 分隔） |
-        | `RUBYOPT`                | 启动 Ruby 时的默认选项（`RUBYOPT="-U-v"` 等）                |
-        | `RUBYPATH`               | `-S` 选项指定的、解析器启动时脚本的搜索路径                  |
-        | `PATH`                   | 外部命令的搜索路径                                           |
-        | `HOME`                   | `DIR.chdir` 方法的默认移动位置                               |
-        | `LOGDIR`                 | `HOME` 没有时的 `DIR.chdir` 方法的默认移动位置               |
-        | `LC_ALL、LC_CTYPE、LANG` | 决定默认编码的本地信息（平台依赖）                           |
-        | `RUBYSHELL、COMSPEC`     | 执行外部命令时，Shell 需要使用的解析器路径（平台依赖）       |
+        | `RUBYOPT`                | 启动 Ruby 时的默认选项（`RUBYOPT="-U-v"` 等）                   |
+        | `RUBYPATH`               | `-S` 选项指定的、解析器启动时脚本的搜索路径                     |
+        | `PATH`                   | 外部命令的搜索路径                                              |
+        | `HOME`                   | `DIR.chdir` 方法的默认移动位置                                  |
+        | `LOGDIR`                 | `HOME` 没有时的 `DIR.chdir` 方法的默认移动位置                  |
+        | `LC_ALL、LC_CTYPE、LANG` | 决定默认编码的本地信息（平台依赖）                              |
+        | `RUBYSHELL、COMSPEC`     | 执行外部命令时，Shell 需要使用的解析器路径（平台依赖）          |
 
 5. 常量：多次引用固定不变的值
 
@@ -3666,37 +3666,37 @@ Bootstrap 适合短时间开发简单的静态网站
 
     - 命令行选项 `[options]`
 
-        | `选项`                          | 意义                                                         |
-        | ------------------------------- | ------------------------------------------------------------ |
-        | `-0octal`                       | 用 8 进制指定 `IO.gets` 等识别的换行符                       |
-        | `-a`                            | 指定为自动分割模式（与 `-n` 或者 `-p` 选项一起使用时则将 `$F` 设为 `$_.split($;)`） |
-        | `-c`                            | 只检查脚本的语法                                             |
-        | `-Cdirectory`                   | 在脚本执行前，先移动到 `directory` 目录下                    |
-        | `-d、--debug`                   | 使用 Debug 模式（将 `$DEBUG` 设为 `true`）                   |
-        | `-e 'command'`                  | 通过 `command` 指定一行代码的程序。本选项可指定多个          |
-        | `-Eex[:in]、--encoding=ex[:in]` | 指定默认的外部编码（`ex`）以及默认内部编码（`in`）           |
-        | `-Fpattern`                     | 指定 `String#split` 方法使用的默认分隔符（`$;`）             |
-        | `-i[extension]`                 | 以替换形式编辑 `ARGV` 文件（指定 `extension` 时则会生成备份文件） |
-        | `-Idirectory`                   | 指定追加到 `$LOAD_PATH` 的目录。本选项可指定多个             |
-        | `-l`                            | 删除 `-n` 或者 `-p` 选项中的 `$_` 的换行符                   |
-        | `-n`                            | 是脚本整体被 `'while  gets(); ... end'` 包围（将 `gets()`的结果设定到 `$_` 中） |
-        | `-p`                            | 在 `-n` 选项的基础上，在每个循环结束时输出 `$_`              |
-        | `-rlibrary`                     | 在执行脚本前通过 `require` 引用 `library`                    |
+        | `选项`                          | 意义                                                                                 |
+        | ------------------------------- | ------------------------------------------------------------------------------------ |
+        | `-0octal`                       | 用 8 进制指定 `IO.gets` 等识别的换行符                                               |
+        | `-a`                            | 指定为自动分割模式（与 `-n` 或者 `-p` 选项一起使用时则将 `$F` 设为 `$_.split($;)`）  |
+        | `-c`                            | 只检查脚本的语法                                                                     |
+        | `-Cdirectory`                   | 在脚本执行前，先移动到 `directory` 目录下                                            |
+        | `-d、--debug`                   | 使用 Debug 模式（将 `$DEBUG` 设为 `true`）                                           |
+        | `-e 'command'`                  | 通过 `command` 指定一行代码的程序。本选项可指定多个                                  |
+        | `-Eex[:in]、--encoding=ex[:in]` | 指定默认的外部编码（`ex`）以及默认内部编码（`in`）                                   |
+        | `-Fpattern`                     | 指定 `String#split` 方法使用的默认分隔符（`$;`）                                     |
+        | `-i[extension]`                 | 以替换形式编辑 `ARGV` 文件（指定 `extension` 时则会生成备份文件）                    |
+        | `-Idirectory`                   | 指定追加到 `$LOAD_PATH` 的目录。本选项可指定多个                                     |
+        | `-l`                            | 删除 `-n` 或者 `-p` 选项中的 `$_` 的换行符                                           |
+        | `-n`                            | 是脚本整体被 `'while  gets(); ... end'` 包围（将 `gets()`的结果设定到 `$_` 中）      |
+        | `-p`                            | 在 `-n` 选项的基础上，在每个循环结束时输出 `$_`                                      |
+        | `-rlibrary`                     | 在执行脚本前通过 `require` 引用 `library`                                            |
         | `-s`                            | 要使脚本解析标志（`flag`）的功能有效（`'ruby -s script -abc'`，则 `$abc` 为 `true`） |
-        | `-S`                            | 从环境变量 `PATH` 开始搜索可执行的脚本                       |
-        | `-Tlevel`                       | 指定不纯度检查模式                                           |
-        | `-U`                            | 将内部编码的默认值（`Encoding.default_internal`）设为 UTF-8  |
-        | `-v、--verbose`                 | 显示版本号，冗长模式设定为有效（`$VERBOSE` 设定为 `true`）   |
-        | `-w`                            | 冗长模式设定为有效                                           |
-        | `-Wlevel`                       | 指定冗长模式的级别[0=不输出警告，1=只输出重要警告，2=输出全部警告（默认值）] |
-        | `-xdirectory`                   | 忽略执行脚本中 `#!ruby` 之前的内容                           |
-        | `--copyright`                   | 显示版权信息                                                 |
-        | `--enable-feature[,...]`        | 使 `feature` 有效                                            |
-        | `--disable=feature[,...]`       | 使 `feature` 无效                                            |
-        | `--external-encoding=encoding`  | 指定默认的外部编码                                           |
-        | `--internal-encoding=encoding`  | 指定默认的内部编码                                           |
-        | `--version`                     | 显示版本信息                                                 |
-        | `--help`                        | 显示帮助信息                                                 |
+        | `-S`                            | 从环境变量 `PATH` 开始搜索可执行的脚本                                               |
+        | `-Tlevel`                       | 指定不纯度检查模式                                                                   |
+        | `-U`                            | 将内部编码的默认值（`Encoding.default_internal`）设为 UTF-8                          |
+        | `-v、--verbose`                 | 显示版本号，冗长模式设定为有效（`$VERBOSE` 设定为 `true`）                           |
+        | `-w`                            | 冗长模式设定为有效                                                                   |
+        | `-Wlevel`                       | 指定冗长模式的级别[0=不输出警告，1=只输出重要警告，2=输出全部警告（默认值）]         |
+        | `-xdirectory`                   | 忽略执行脚本中 `#!ruby` 之前的内容                                                   |
+        | `--copyright`                   | 显示版权信息                                                                         |
+        | `--enable-feature[,...]`        | 使 `feature` 有效                                                                    |
+        | `--disable=feature[,...]`       | 使 `feature` 无效                                                                    |
+        | `--external-encoding=encoding`  | 指定默认的外部编码                                                                   |
+        | `--internal-encoding=encoding`  | 指定默认的内部编码                                                                   |
+        | `--version`                     | 显示版本信息                                                                         |
+        | `--help`                        | 显示帮助信息                                                                         |
 
         > `--enable`、`--disable` 选项可指定的功能名
         >
@@ -3999,18 +3999,18 @@ Bootstrap 适合短时间开发简单的静态网站
 
     - 响应行的状态码：以下是几个常见的状态码
 
-        | 状态码 | 状态码名称            | 中文描述                                                     |
-        | ------ | --------------------- | ------------------------------------------------------------ |
-        | 100    | Continue              | 继续。客户端应继续其请求                                     |
-        | 200    | OK                    | 请求成功。一般用于 GET 与 POST 请求                          |
-        | 204    | No Content            | 无内容。服务器成功处理，但未返回内容                         |
-        | 304    | Not Modified          | 未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源 |
-        | 400    | Bad Request           | 客户端请求的语法错误，服务器无法理解                         |
-        | 401    | Unauthorized          | 请求要求用户的身份认证                                       |
-        | 403    | Forbidden             | 服务器理解请求客户端的请求，但是拒绝执行此请求               |
-        | 404    | Not Found             | 服务器无法根据客户端的请求找到资源                           |
-        | 406    | Not Acceptable        | 服务器无法根据客户端请求的内容特性完成请求                   |
-        | 500    | Internal Server Error | 服务器内部错误，无法完成请求                                 |
+        | 状态码 | 状态码名称            | 中文描述                                                                       |
+        | ------ | --------------------- | ------------------------------------------------------------------------------ |
+        | 100    | Continue              | 继续。客户端应继续其请求                                                       |
+        | 200    | OK                    | 请求成功。一般用于 GET 与 POST 请求                                            |
+        | 204    | No Content            | 无内容。服务器成功处理，但未返回内容                                           |
+        | 304    | Not Modified          | 未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源             |
+        | 400    | Bad Request           | 客户端请求的语法错误，服务器无法理解                                           |
+        | 401    | Unauthorized          | 请求要求用户的身份认证                                                         |
+        | 403    | Forbidden             | 服务器理解请求客户端的请求，但是拒绝执行此请求                                 |
+        | 404    | Not Found             | 服务器无法根据客户端的请求找到资源                                             |
+        | 406    | Not Acceptable        | 服务器无法根据客户端请求的内容特性完成请求                                     |
+        | 500    | Internal Server Error | 服务器内部错误，无法完成请求                                                   |
         | 502    | Bad Gateway           | 作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应 |
 
 ##### （三）AJAX
@@ -4107,7 +4107,7 @@ Bootstrap 适合短时间开发简单的静态网站
     | 指令    | 描述             |
     | ------- | ---------------- |
     | `ls`    | 列出目录及文件名 |
-    | `cd`    | 切换目录       |
+    | `cd`    | 切换目录         |
     | `pwd`   | 显示当前目录     |
     | `mkdir` | 创建新目录       |
     | `rmdir` | 删除一个空目录   |
@@ -4177,16 +4177,16 @@ Bootstrap 适合短时间开发简单的静态网站
 
     - 特殊变量
 
-        | 参数处理 | 说明                                                         |
-        | :------- | :----------------------------------------------------------- |
-        | `$#`     | 传递到脚本或函数的参数个数                                   |
-        | `$*`     | 以一个单字符串显示所有向脚本传递的参数                       |
-        | `$$`     | 脚本运行的当前进程 ID 号                                     |
-        | `$!`     | 后台运行的最后一个进程的 ID 号                               |
-        | `$@`     | 与 `$*` 相同，但是使用时加引号，并在引号中返回每个参数       |
-        | `$-`     | 显示Shell使用的当前选项，与 `set` 命令功能相同               |
+        | 参数处理 | 说明                                                           |
+        | :------- | :------------------------------------------------------------- |
+        | `$#`     | 传递到脚本或函数的参数个数                                     |
+        | `$*`     | 以一个单字符串显示所有向脚本传递的参数                         |
+        | `$$`     | 脚本运行的当前进程 ID 号                                       |
+        | `$!`     | 后台运行的最后一个进程的 ID 号                                 |
+        | `$@`     | 与 `$*` 相同，但是使用时加引号，并在引号中返回每个参数         |
+        | `$-`     | 显示Shell使用的当前选项，与 `set` 命令功能相同                 |
         | `$?`     | 显示最后命令的退出状态，`0` 表示没有错误，其他任何值表明有错误 |
-        | `!!`     | 上次执行的语句                                               |
+        | `!!`     | 上次执行的语句                                                 |
 
 2. 函数定义：
 
@@ -4244,16 +4244,258 @@ Bootstrap 适合短时间开发简单的静态网站
     | `${lineNumber}`              | 当前文件光标所在的行号        |
     | `${env:PATH}`                | 系统中的环境变量              |
 
-##### （二）C++ 环境配置文件
+##### （二）快捷键
+
+1. 定义如下的快捷键 `json` 文件
+
+    ```json
+    [
+      {
+        "key": "ctrl+alt+i",
+        "command": "editor.action.indentUsingSpaces"
+      },
+      {
+        "key": "alt+oem_3",
+        "command": "workbench.action.toggleMaximizedPanel"
+      },
+      {
+        "key": "ctrl+alt+i",
+        "command": "-extension.incrementSelection",
+        "when": "editorTextFocus"
+      },
+      {
+        "key": "alt+enter",
+        "command": "editor.action.replaceAll",
+        "when": "editorFocus && findWidgetVisible"
+      },
+      {
+        "key": "ctrl+alt+enter",
+        "command": "-editor.action.replaceAll",
+        "when": "editorFocus && findWidgetVisible"
+      },
+      {
+        "key": "alt+b",
+        "command": "openInExternalApp.openMultiple"
+      },
+      {
+        "key": "ctrl+shift+q",
+        "command": "workbench.actions.view.problems",
+        "when": "workbench.panel.markers.view.active"
+      },
+      {
+        "key": "ctrl+shift+m",
+        "command": "-workbench.actions.view.problems",
+        "when": "workbench.panel.markers.view.active"
+      },
+      {
+        "key": "ctrl+shift+m",
+        "command": "workbench.action.quickOpenNavigatePreviousInViewPicker",
+        "when": "inQuickOpen && inViewsPicker"
+      },
+      {
+        "key": "ctrl+shift+q",
+        "command": "-workbench.action.quickOpenNavigatePreviousInViewPicker",
+        "when": "inQuickOpen && inViewsPicker"
+      },
+      {
+        "key": "ctrl+alt+k",
+        "command": "-code-runner.runCustomCommand"
+      },
+      {
+        "key": "ctrl+alt+k",
+        "command": "workbench.action.keepEditor"
+      },
+      {
+        "key": "ctrl+k enter",
+        "command": "-workbench.action.keepEditor"
+      },
+      {
+        "key": "ctrl+alt+v",
+        "command": "toggleVim"
+      },
+      {
+        "key": "ctrl+down",
+        "command": "workbench.action.terminal.scrollDown",
+        "when": "terminalFocus && terminalProcessSupported"
+      },
+      {
+        "key": "ctrl+alt+pagedown",
+        "command": "-workbench.action.terminal.scrollDown",
+        "when": "terminalFocus && terminalProcessSupported"
+      },
+      {
+        "key": "ctrl+up",
+        "command": "workbench.action.terminal.scrollUp",
+        "when": "terminalFocus && terminalProcessSupported"
+      },
+      {
+        "key": "ctrl+alt+pageup",
+        "command": "-workbench.action.terminal.scrollUp",
+        "when": "terminalFocus && terminalProcessSupported"
+      },
+      {
+        "key": "ctrl+pageup",
+        "command": "workbench.action.terminal.scrollUpPage",
+        "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+      },
+      {
+        "key": "shift+pageup",
+        "command": "-workbench.action.terminal.scrollUpPage",
+        "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+      },
+      {
+        "key": "ctrl+pagedown",
+        "command": "workbench.action.terminal.scrollDownPage",
+        "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+      },
+      {
+        "key": "shift+pagedown",
+        "command": "-workbench.action.terminal.scrollDownPage",
+        "when": "terminalFocus && terminalProcessSupported && !terminalAltBufferActive"
+      },
+      {
+        "key": "ctrl+alt+q",
+        "command": "workbench.action.terminal.kill"
+      },
+      {
+        "key": "ctrl+alt+w",
+        "command": "workbench.action.closeWindow"
+      },
+      {
+        "key": "ctrl+shift+w",
+        "command": "-workbench.action.closeWindow"
+      },
+      {
+        "key": "alt+pageup",
+        "command": "workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+      },
+      {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.terminal.focusPrevious",
+        "when": "terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+      },
+      {
+        "key": "alt+pageup",
+        "command": "workbench.action.previousEditor",
+        "when": "!terminalFocus"
+      },
+      {
+        "key": "ctrl+pageup",
+        "command": "-workbench.action.previousEditor"
+      },
+      {
+        "key": "alt+pagedown",
+        "command": "workbench.action.nextEditor",
+        "when": "!terminalFocus"
+      },
+      {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.nextEditor"
+      },
+      {
+        "key": "alt+pagedown",
+        "command": "workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+      },
+      {
+        "key": "ctrl+pagedown",
+        "command": "-workbench.action.terminal.focusNext",
+        "when": "terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+      }
+    ]
+    ```
+
+2. 通用键位
+
+    - 程序
+        - 下一个 / 上一个焦点：<kbd>Tab</kbd> 或 <kbd>Shift</kbd> + <kbd>Tab</kbd> 
+        - 新建窗口：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd>
+        - 关闭窗口：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>W</kbd>
+
+    - 文件操作
+        - （没有选中时）复制 / 剪切光标所在行：<kbd>Ctrl</kbd> + <kbd>C</kbd> 或 <kbd>Ctrl</kbd> + <kbd>X</kbd>
+        - 向上 / 向下移动行：<kbd>Alt</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Alt</kbd> + <kbd>ArrowDown</kbd>
+        - 向上 / 向下复制行：<kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Alt</kbd> + <kbd>Shift</kbd> + <kbd>ArrowDown</kbd>
+        - 在下方 / 上方添加新的一行：<kbd>Ctrl</kbd> + <kbd>Enter</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
+        - 选择整行：<kbd>Ctrl</kbd> + <kbd>L</kbd>
+        - 添加注释 / 取消注释：<kbd>Ctrl</kbd> + <kbd>/</kbd>
+
+    - 查找与替换
+
+        - 查找或替换：<kbd>Ctrl</kbd> + <kbd>F</kbd> 或 <kbd>Ctrl</kbd> + <kbd>H</kbd>
+        - 上一个 / 下一个： <kbd>Enter</kbd> 或 <kbd>Shift</kbd> + <kbd>Enter</kbd>
+        - 全部替换：<kbd>Alt</kbd> + <kbd>Enter</kbd>
+
+    - 多光标
+
+        - 向上 / 向下新增光标：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>ArrowDown</kbd>
+        - 光标选择内容的所有出现位置：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>
+        - 光标所在字符串的所有出现位置：<kbd>Ctrl</kbd> + <kbd>F2</kbd>
+
+3. 焦点移动
+
+    - 侧边活动栏
+        - 文件视图：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd>（焦点转到侧边栏文件部分）
+    - 全局搜索：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> 
+        - 全局替换：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>
+    - 版本控制：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd>
+        - 运行调试：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>
+    - 插件管理：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> 
+        - 错误报告：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Q</kbd>
+
+    - 主面板
+
+        - 编辑器与终端的转换：
+            - 焦点转到第 `n` 个编辑器：<kbd>Ctrl</kbd> + <kbd>Num<n></kbd>
+            - 焦点转到终端 / 隐去终端：<kbd>Ctrl</kbd> + <kbd>`</kbd>
+        - 标签页转换
+            - 上一个 / 下一个标签页：<kbd>Alt</kbd> + <kbd>PageUp</kbd> 或 <kbd>Alt</kbd> + <kbd>PageDown</kbd>
+            - 上一个 / 下一个标签页选择： <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Tab</kbd>
+
+    - 页面滚动
+        - 向上 / 向下滚动：<kbd>Ctrl</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>ArrowDown</kbd>
+        - 向上 / 向下滚动一页：<kbd>Ctrl</kbd> + <kbd>PageUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>PageDown</kbd>
+        - 滚动到页面首 / 尾：<kbd>Ctrl</kbd> + <kbd>Home</kbd> 或 <kbd>Ctrl</kbd> + <kbd>End</kbd>
+    - 光标移动
+        - 移到上一个 / 下一个单词：<kbd>Ctrl</kbd> + <kbd>ArrowLeft</kbd> 或 <kbd>Ctrl</kbd> + <kbd>ArrowRight</kbd>
+        - 移到行首 / 行尾：<kbd>Home</kbd> 或 <kbd>End</kbd>
+        - 向上 / 向下移动一页：<kbd>PageUp</kbd> 或 <kbd>PageDown</kbd>
+
+4. 命令窗口
+
+    - 命令窗口
+
+        - 打开命令面板：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
+        - 打开开发工具：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>
+        - 打开文件：<kbd>Ctrl</kbd> + <kbd>P</kbd> ，加 `:` 去往行号，加 `@` 去往符号
+        - 打开设置：<kbd>Ctrl</kbd> + <kbd>,</kbd>
+    - 终端操作
+
+        - 新建终端：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>
+        - 终端最大化 / 最小化：<kbd>Alt</kbd> + <kbd>`</kbd> 
+        - 关闭终端示例 ：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Q</kbd>
+    - 配置功能（可能需要依赖插件）
+        - 配置换行：<kbd>Alt</kbd> + <kbd>Z</kbd>
+        - 重命名符号：<kbd>F2</kbd>
+        - 格式化：<kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>F</kbd>
+        - 查看定义 / 查看参照：<kbd>F12</kbd> 或 <kbd>Shift</kbd> + <kbd>F12</kbd>
+    - 快捷功能
+        - 用外部应用打开文件： <kbd>Alt</kbd> + <kbd>B</kbd>
+        - 配置缩进：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>I</kbd>
+        - 固定标签页：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>K</kbd>
+        - Vim 模式：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd>
+
+##### （三）C++ 环境配置文件
 
 1. `launch.json` 中 `configurations` 的散列配置
 
-    | 项目             | 描述                                                         |
-    | ---------------- | ------------------------------------------------------------ |
-    | `name`           | 名字，显示在 Debug 侧边栏上方的内容                          |
-    | `program`        | 运行的程序名                                                 |
-    | `args`           | 运行的程序的命令行参数                                       |
-    | `miDebuggerPath` | 调试程序的位置，例如 `gdb` 的路径                            |
+    | 项目             | 描述                                                                   |
+    | ---------------- | ---------------------------------------------------------------------- |
+    | `name`           | 名字，显示在 Debug 侧边栏上方的内容                                    |
+    | `program`        | 运行的程序名                                                           |
+    | `args`           | 运行的程序的命令行参数                                                 |
+    | `miDebuggerPath` | 调试程序的位置，例如 `gdb` 的路径                                      |
     | `preLaunchTask`  | 运行前需要运行的指令名，在当前目录下的 `task.json` 任务中按 label 寻找 |
 
 2. `task.json` 预定义任务中  `task` 的散列配置
@@ -4295,7 +4537,7 @@ Bootstrap 适合短时间开发简单的静态网站
 
 1. 正常模式：其他任何模式按下 `<Esc>` 退回到正常模式
 2. 在正常模式下，按下其他按键来到其他模式：
-    - `i` 或 `a`：插入模式，该模式下可以正常输入；`i` 在光标前插入，`a` 在光标后插入
+    - `i` 或 `a`：插入模式，该模式下可以正常输入；
     - `:` 命令模式：VSCodeVim 不支持 Vim 脚本
     - `R`：替换模式：输入内容将会替换下标的位置
     - `v`：可视化模式，`V` 进入可视化的行模式，而 `<C-v>` 进入块模式
@@ -4310,6 +4552,8 @@ Bootstrap 适合短时间开发简单的静态网站
 
 2. 文件修改
 
+    - `:e!`：放弃所有修改
+
     - `:w [file]` ：保存改变，当有 `file` 参数时，将文件保存到 `file`
 
     -  `:saveas <file>` ：另存到指定文件 `file`
@@ -4320,8 +4564,8 @@ Bootstrap 适合短时间开发简单的静态网站
 
 3. 分屏：
 
-    - `:split` 或 `:vsplit` ：创建水平或垂直分屏
-    - `<C-w><h|j|k|l>`：切换分屏
+    - `:sp[lit]` 或 `:vsp[lit]` ：创建水平或垂直分屏
+    - `<C-w><h|j|k|l|w|c>`：切换分屏，其中 `k`，`j`，`h`，`l` 进行方向移动，`w` 切换到下一个，`c` 关闭当前分屏
 
 4. 帮助文档：`:help [cmd]`
 
@@ -4330,7 +4574,7 @@ Bootstrap 适合短时间开发简单的静态网站
 1. 光标移动
 
     - 方向：通过 `k`，`j`，`h`，`l` 分别进行「上移一行」「下移一行」「左移一格」「右移一格」
-    - 词语单位：`w`（下一词），`b`（到词初），`e`（到词尾）
+    - 词语单位：`w`（下一词初），`b`（上一词初），`e`（下一词尾），`ge`（上一词尾）
     - 行单位：`0`（行初），`^`（第一个非空字符）， `$`（行尾），`g_` 最后一个非空字符
     - 屏幕单位： `H` （屏幕内首行）， `M` （屏幕内中间）， `L` （屏幕内尾行）
     - 文件单位：`gg`（文件初）， `G`（文件尾）
@@ -4344,8 +4588,8 @@ Bootstrap 适合短时间开发简单的静态网站
 
 3. 查找
 
-    - `f<c>` 或 `F<c>`：向后或向前查找光标所在行的第一个字符
-    - `t<c>` 或 `T<c>`：向后或向前查找光标所在行的第一个字符，光标落在该字符前
+    - `f<c>` 或 `F<c>`：向后或向前查找光标所在行字符，通过 `;` 或 `,` 向后或向前移动选择目标
+    - `t<c>` 或 `T<c>`：向后或向前查找光标所在行字符，光标落在该字符前，通过 `;` 或 `,` 向后或向前移动选择目标
     - `/pattern`：查找正则表达式 `pattern` 对应的字符串，按下 `Enter` 后通过 `n` 或 `N` 向后或向前移动选择目标
 
 4. 屏幕移动：`<C-u>`（上翻一页），`<C-d>`（下翻一页）
@@ -4361,7 +4605,9 @@ Bootstrap 适合短时间开发简单的静态网站
 
 1. 插入
 
-    - 在正常模式下按 `i` 进入插入模式
+    - 在正常模式下按 `i` 或 `a` 进入插入模式
+        - `i` 在光标前插入，`a` 在光标后插入
+        - `I` 在光标所在行首插入、`A` 在光标所在行尾插入
     - 在正常模式下按 `o` 或 `O` 在当前光标的下一行或上一行添加一行，并进入插入模式
 
 2. 删除：`d` 与替换：`c`： 都会删除选中字符，其中 `d` 会复制删除的内容；删除完后 `d` 进入正常模式，`c` 进入插入模式
@@ -4382,7 +4628,8 @@ Bootstrap 适合短时间开发简单的静态网站
 
     - 正常模式下有一些特殊的删除或替换指令
 
-        - `x`：删除光标所在字符，相当于 `dl`
+        - `x` 或 `X`：删除光标所在字符，相当于 `dl` 或 `dh`
+        - `D`：删除到行尾，相当于 `d$`
         - `s`：删除光标所在字符，并进入插入模式，相当于 `xi` 即 `dli`
         - `r<c>`：替换光标所在字符为 `c`，返回正常模式；`R` 则直接进入替换模式
         - `dd` 与 `cc`：删除或替换光标所在行
@@ -4398,10 +4645,12 @@ Bootstrap 适合短时间开发简单的静态网站
 ##### （五）其他指令
 
 1. 撤销与重做：正常模式下按 `u` 撤销，按 `<C-r>` 重做，按 `.` 重复上一次指令
-2. 量词：指令前的数字 `n` ，相当于重复指令 `n` 次
-3. 切换大小写：`~`（相互转换），`gU`（转大写），`gu`（转小写）
 
-#### 4.2.5 Chrome Console
+    > 进入插入模式并输入一些内容后，算一次动作，此时撤销会删除插入模式下的所有改变
+
+2. 量词：指令前的数字 `n` ，相当于重复指令 `n` 次
+
+3. 切换大小写：`~`（相互转换），`gU`（转大写），`gu`（转小写）
 
 ### 4.3 Hardware
 
