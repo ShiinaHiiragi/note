@@ -1475,7 +1475,7 @@
     | `$("ul li:first-child")`   | 选取每个 `<ul>` 元素的第一个  `<li>` 元素                      |
     | `$("[href]")`              | 选取带有 `href` 属性的元素                                     |
     | `$("a[target='_blank']")`  | 选取所有 `target` 属性值等于  `"_blank"` 的 `<a>` 元素         |
-    | `$("a[target!='_blank']")` | 选取所有 `target` 属性值不等于  `"_blank"` 的 `<a>` 元素         |
+    | `$("a[target!='_blank']")` | 选取所有 `target` 属性值不等于  `"_blank"` 的 `<a>` 元素       |
     | `$(":button")`             | 选取所有 `type="button"` 的  `<input>` 元素 和 `<button>` 元素 |
 
 ### 1.3 Front-end Framework
@@ -4544,7 +4544,7 @@ Bootstrap 适合短时间开发简单的静态网站
           name = username
           email = EmailAddress@outlook.com
         [http]
-        	sslVerify = false
+          sslVerify = false
           proxy = 127.0.0.1:7890
         ```
 
