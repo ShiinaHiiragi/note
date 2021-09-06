@@ -1475,7 +1475,7 @@
     | `$("ul li:first-child")`   | 选取每个 `<ul>` 元素的第一个  `<li>` 元素                      |
     | `$("[href]")`              | 选取带有 `href` 属性的元素                                     |
     | `$("a[target='_blank']")`  | 选取所有 `target` 属性值等于  `"_blank"` 的 `<a>` 元素         |
-    | `$("a[target!='_blank']")` | 选取所有 `target` 属性值不等于  `"_blank"` 的 <a> 元素         |
+    | `$("a[target!='_blank']")` | 选取所有 `target` 属性值不等于  `"_blank"` 的 `<a>` 元素         |
     | `$(":button")`             | 选取所有 `type="button"` 的  `<input>` 元素 和 `<button>` 元素 |
 
 ### 1.3 Front-end Framework
@@ -4402,6 +4402,10 @@ Bootstrap 适合短时间开发简单的静态网站
         "key": "ctrl+pagedown",
         "command": "-workbench.action.terminal.focusNext",
         "when": "terminalFocus && terminalProcessSupported && !terminalEditorFocus"
+      },
+      {
+        "key": "ctrl+shift+oem_2",
+        "command": "git-graph.view"
       }
     ]
     ```
@@ -4437,13 +4441,14 @@ Bootstrap 适合短时间开发简单的静态网站
 
     - 侧边活动栏
         - 文件视图：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>E</kbd>（焦点转到侧边栏文件部分）
-    - 全局搜索：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> 
+        - 全局搜索：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> 
         - 全局替换：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>
-    - 版本控制：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd>
+        - 版本控制：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>G</kbd>
         - 运行调试：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>D</kbd>
-    - 插件管理：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> 
+        - 插件管理：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> 
         - 错误报告：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Q</kbd>
-
+        - 版本图像：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>/</kbd>
+        
     - 主面板
 
         - 编辑器与终端的转换：
@@ -4510,26 +4515,163 @@ Bootstrap 适合短时间开发简单的静态网站
 
 #### 4.2.3 Git
 
-##### （一）Git 配置
+##### （一）Git 模型
 
-1. 设置邮箱和用户名
+1. 工作区域：工作区，暂存区（`.git/index`），本地仓库，远程仓库
 
-    ```shell
-    git config --global user.name "UserName"
-    git config --global user.email EMailAddress@outlook.com
-    ```
+    - 工作区可以添加，修改或删除文件
+    - 执行 `git add` 的命令后，工作区的文件就会被移入暂存区
+    - 通过 `git commit` 提交暂存区的内容，会进入本地仓库
+    - 通过 `git push` 命令同步代码从本地仓库到远程仓库
 
-2. 设置代理和取消代理
+2. Git 配置：`git config --list [--global]`，没有 `--global` 时只对当前仓库生效
 
-    ```shell
-    git config http.proxy http://127.0.0.1:7890
-    git config --unset http.proxy
-    ```
+    - `git config -e`：编辑 Git 配置文件，没有 `--global` 参数时打开 `.git/config`，否则打开 `~/.gitconfig`
 
-##### （二）分支控制
+    - 设置邮箱和用户名、代理（假设端口为 `7890`）和取消代理
 
-1. merge：`current branch` 指正在 checkout 的分支。`merge X into current branch` 即将选中分支移入当前分支
-2. rebase：`rebase current branch into branch X`，即将当前分支的开始分支点设在 X 分支上 ，在某种程度上可以使修改更加清晰
+        ```shell
+        git config --global user.name "username"
+        git config --global user.email "EmailAddress@outlook.com"
+        git config --global http.proxy http://127.0.0.1:7890
+        git config --global --unset http.proxy
+        ```
+
+        在配置文件中会得到如下形式的键值对
+
+        ```ini
+        [user]
+          name = username
+          email = EmailAddress@outlook.com
+        [http]
+        	sslVerify = false
+          proxy = 127.0.0.1:7890
+        ```
+
+3. 相关文件
+
+    - `.gitignore`：指定不追踪改变的文件，每一行写一个路径
+
+    - `.gitattributes`：设置文件属性，每一行写一个模式和若干属性，属性有几种声明方式
+
+        ```ini
+        pattern attr1 attr2 ...
+        ```
+
+        - 设为 `true` 或 `false`：`attr` 或 `-attr`
+        - 设为 `val`：`attr=val`
+        - 不声明：不写出或写成 `!attr`
+
+##### （二）Git 基本操作
+
+1. 初始化仓库
+    - `git init [file]`：使用当前目录或指定文件初始化为仓库
+    - `git clone <repo> <directory>`：克隆仓库到指定的目录
+2. 提交与修改
+    - `git add [file [file ...[file]]]`：添加某个文件到暂存区，利用 `git add . ` 添加当前更改的所有文件到暂存区
+    - `git commit [-m "commit message"]`：提交暂存的更改，可以记录备注
+        - `git commit -am`：等同于 `git add . && git commit -m`
+        - `git commit --amend`：对最近一次的提交的信息进行修改，此操作会修改 commit 的 hash 值
+    - `git restore --staged <file>`：将文件从暂存区中移出
+3. 查看信息
+    - `git status`：显示当前的仓库状态（文件增加，修改，删除）
+    - `git log`：显示 commit 历史日志，使用 `git log --all --graph --decorate` 以查看可视化历史记录
+    - `git diff <filename>`：显示与上一次提交之间的差异
+
+##### （三）Git 分支合并
+
+1. `git branch`
+
+    - `git branch <branch-name> `：新建本地分支，但不切换
+    - `git branch`：列出本地分支
+    - `git branch -r`：查看远程分支列表
+    - `git branch -a`：查看本地和远程分支列表
+    - `git branch -d <branch-nane>`：删除本地分支，使用 `-D` 强制删除
+    - `git branch -m <old-branch-name> <new-branch-name>`：重新命名分支
+
+2. `git checkout`：「当前分支」一般指代正在 checkout 的分支，这个指令既可以操作文件，也可以操作分支
+
+    - `git checkout [file]`：放弃对文件的修改，当 `file` 参数为 `.` 时，放弃所有文件的修改
+    - `git checkout [-b] <branch_name>`：切换到分支，如果有 `-b` 参数，则在分支名不存在时新建该分支并转入
+
+3. 分支合并
+
+    - `git rebase <branch_name>`：将「当前分支」从 `<branch_name>` 开始分离的节点重新定位到  `<branch_name>` 现在所在位置
+
+    - `git merge <branch_name>`：将 `<branch_name>` 合并到「当前分支」，当前分支增加一次 commit 记录，信息为 `Merge branch <branch_name> into branch`
+
+        > 在 VS Code Git Graph 中，`git merge X` 相当于 「merge X into current branch」，此时「当前分支」不动；`git rebase X` 相当于「rebase current branch into branch X」，此时「X 分支」不动
+
+##### （四）Git 远程操作
+
+1. `git fetch` 操作：拉取远程更改，不自动进行合并
+
+    - `git fetch --all`：获取远程仓库所有分支的更新
+    - `git fetch <hostname> [branch_name]`：获取远程仓库的更新，可以指定只拉取特定分支
+
+2. `git pull [--rebase] <hostname> <remote_branch_name>[:<local_branch_name>]`
+
+    - 从远程仓库拉取代码并合并到本地指定分支
+    - 如果远程分支是与当前分支合并，则可以省略冒号
+    - 没有 `--rebase` 参数时采用 merge 合并
+
+3. `git push [-u] <hostname> <local_branch_name>[:<remote_branch_name>]`
+
+    - 从将本地的分支版本上传到远程并合并
+
+    - 如果本地分支名与远程分支名相同，则可以省略冒号
+
+    - 添加 `-u` 参数后，在上传同时将该分支的 `upstream` 设置为该远程仓库
+
+        > `upstream` 即上传代码的远程仓库，对于那个远程仓库而言，本地仓库是 `downstream`。当 `git push`，`git pull` 或 `git merge` 没有参数时，Git 将根据 `pull.default` 和 `push.defualt` 决定行为，通过设置 `upstream` 远程仓库，可以缺省命令参数
+        >
+        > 可以通过指令 `git branch --set-upstream-to=origin/<remote_branch_name> <local_branch_name>` 设置远程仓库，此时在配置文件将有记录：
+        >
+        > ```ini
+        > [branch "<local_branch_name>"]
+        >   remote = origin
+        >   merge = refs/heads/<remote_branch_name>
+        > ```
+
+4. `git remote`：用于远程操作，例如可使用 GitHub 连接
+
+    - `git remote [-v]`：查看远程仓库，添加 `-v` 参数可以看到 `url`
+    - `git remote add <remote_hostname> <url>`：添加远程仓库
+    - `git remote <show|rm> <remote>`：显示远程仓库信息或删除
+    - `git remote rename <old_name> <new_name>`：重命名远程仓库名
+
+##### （五）GitHub
+
+1. 为了使本地 Git 能与 GitHub 交互，可以使用 HTTPS 或 SSH 两种方式建立连接
+
+    - 要使用 HTTPS，需要保证 Git 已经安装了 GCM Core，然后使用 `https://github.com/<username>/<repository>.git` 作为 `url`，在使用 `push` 等指令时需要输入账号密码
+    - 要使用 SSH，需要在本地生成一份密钥并上传到 GitHub
+        - 利用 `ssh-keygen -t rsa -C "email@site.com"` 生成 RSA 密钥对
+        - 将公钥上传到 GitHub 的 Setting 处，在本地命令行通过 `ssh -T git@github.com` 将 GitHub 加入到已知域名
+
+2. 初始化仓库：新建仓库，在本地与 GitHub 同步
+
+    - 本地新建仓库，使用以下命令，将分支名更改为 `main`，上传到 `origin/main`
+
+        ```shell
+        echo "# <repo>" >> README.md
+        git init
+        git add README.md
+        git commit -m "first commit"
+        git branch -M main
+        git remote add origin https://github.com/username/<repo>.git
+        git push -u origin main
+        ```
+
+    - 本地已有仓库，则只需要添加远程仓库
+
+        ```shell
+        git remote add origin https://github.com/username/<repo>.git
+        git branch -M main
+        git push -u origin main
+        ```
+
+        > 在使用 SSH 时，远程仓库 `url` 为 `git@github.com:username/<repo>.git`
 
 #### 4.2.4 Vim
 
@@ -4538,7 +4680,7 @@ Bootstrap 适合短时间开发简单的静态网站
 1. 正常模式：其他任何模式按下 `<Esc>` 退回到正常模式
 2. 在正常模式下，按下其他按键来到其他模式：
     - `i` 或 `a`：插入模式，该模式下可以正常输入；
-    - `:` 命令模式：VSCodeVim 不支持 Vim 脚本
+    - `:` 命令模式：VS Code Vim 不支持 Vim 脚本
     - `R`：替换模式：输入内容将会替换下标的位置
     - `v`：可视化模式，`V` 进入可视化的行模式，而 `<C-v>` 进入块模式
 
