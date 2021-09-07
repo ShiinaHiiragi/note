@@ -1352,7 +1352,7 @@
 
 ##### （一）类型
 
-1. 变量声明
+1. 变量声明：数字、字母、下划线和美元符号，不能以数字开头
 
     - 声明变量的类型，但没有初始值，变量值会设置为 `undefined`
 
@@ -1367,43 +1367,63 @@
 
 2. 变量类型
 
-    | 数据类型    | 描述                                                                     |
-    | ----------- | ------------------------------------------------------------------------ |
-    | `any`       | 任意类型                                                                 |
-    | `number`    | 双精度 64 位浮点数                                                       |
-    | `string`    | 字符串                                                                   |
-    | `boolean`   | 布尔值                                                                   |
-    | 数组        | 一系列同类型的数据                                                       |
-    | 元素        | 已知元素数量和类型的数组，各元素的类型不必相同，对应位置的类型需要相同。 |
-    | `enum`      | 数值集合                                                                 |
-    | `void`      | 用于标识方法返回值的类型，表示该方法没有返回值                           |
-    | `null`      | 对象值缺失                                                               |
-    | `undefined` | 初始化变量为一个未定义的值                                               |
-    | `never`     | 其它类型的子类型，代表从不会出现的值                                     |
+    - JavaScript 原生类型，其中，`undefined` 与 `null` 是其他类型的子类型
+
+        | 数据类型    | 描述                       |
+        | ----------- | -------------------------- |
+        | `number`    | 双精度 64 位浮点数         |
+        | `string`    | 字符串                     |
+        | `boolean`   | 布尔值                     |
+        | `undefined` | 初始化变量为一个未定义的值 |
+        | `null`      | 对象值缺失                 |
+        | `Array`     | 一系列同类型的数据         |
+
+        ```typescript
+        let arr: number[] = [1, 2];
+        let arr: Array<number> = [1, 2];
+        ```
+
+    - TypeScript 新增类型
+
+        | 数据类型 | 描述                                                         |
+        | -------- | ------------------------------------------------------------ |
+        | `enum`   | 数值集合                                                     |
+        | `any`    | 任意类型                                                     |
+        | `void`   | 用于标识方法返回值的类型，表示该方法没有返回值               |
+        | `never`  | 其它类型的子类型，代表从不会出现的值                         |
+        | `Tuple`  | 已知元素数量和类型的数组各元素的类型不必相同，对应位置的类型需要相同 |
+
+        ```typescript
+        enum Color { Red, Green, Blue };
+        let blue: Color = Color.Blue;
+        let input: any = null;
+        let tup: [string, number] = ["Alice", 14];
+        function echo(str: string): void { console.log(str); }
+        ```
+
+3. 联合类型：利用管道符将变量设置多种类型
 
     ```typescript
-    let binaryLiteral: number = 0b1010;
-    let octalLiteral: number = 0o744;
-    let decLiteral: number = 6;
-    let hexLiteral: number = 0xf00d;
-    let name: string = "Alice";
-    let flag: boolean = true;
-    
-    enum Color {Red, Green, Blue};
-    let arr: number[] = [1, 2];
-    let arr: Array<number> = [1, 2];
-    let tup: [string, number] = ["Alice", 14];
-    let col: Color = Color.Blue;
-    function greet(): void { console.log("Hello World."); }
+    let times: number|boolean = 1;
+    console.log(times = false);
+    console.log(times = 0);
     ```
 
-##### （二）TypeScript 类
+##### （二）函数与类
 
-1. 类可以包含以下几个模块（类的数据成员）：
+1. 函数（包括箭头函数）在参数列表内和其后用 `:` 示意值类型，用 `?` 表示可选参数
 
-    - 字段：类里面声明的变量，字段表示对象的有关数据
-    - 构造函数：类实例化时调用，可以为类的对象分配内存
-    - 方法：为对象要执行的操作
+    ```typescript
+    function catName(firstName: string, lastName?: string): string {
+      return firstName + " " + (lastName ?? "");
+    }
+    console.log(catName("Alice", "Ignace"));
+    ```
+
+    - 可以用 `=` 设置默认参数，用 `...` 接受剩余参数
+    - 由于 TypeScript 有类型系统，所以函数可以重载，即参数列表类型的同名函数
+
+2. 类的数据成员：字段（类里面声明的变量，字段表示对象的有关数据），构造函数（类实例化时调用，可以为类的对象分配内存），方法（为对象要执行的操作）
 
     ```typescript
     class Person {
@@ -1425,22 +1445,70 @@
     console.log(alice.name);
     ```
 
-2. 类继承使用关键字 `extends`，子类除了不能继承父类的私有成员和构造函数，其他的都可以继承
+    - 类继承使用关键字 `extends`，子类除了不能继承父类的私有成员和构造函数，其他的都可以继承
+
+        ```typescript
+        class Student extends Person {
+          score: number;
+          updateScore(newScore: number): number {
+            let previousScore = this.score;
+            this.score = newScore;
+            return previousScore;
+          }
+        }
+        
+        let alice: Student = new Student("Alice", 14);
+        alice.changeName("Elise");
+        alice.updateScore(96);
+        console.log(alice.score);
+        ```
+
+##### （三）接口
+
+1. 接口：只存在于 TypeScript，用于编译的语法
 
     ```typescript
-    class Student extends Person {
-      score: number;
-      updateScore(newScore: number): number {
-        let previousScore = this.score;
-        this.score = newScore;
-        return previousScore;
+    interface RunOptions { 
+      program: string; 
+      commandLine: string[]|string|(()=>string); 
+    }
+    options = {
+      program: "main",
+      commandline: ["Hello", "World"]
+    };
+    ```
+
+    - 接口可以用于定义数组
+
+        ```typescript
+        interface names {
+          [index: number]: string
+        }
+        interface ages {
+          [index: string]: number
+        }
+        
+        let nameList: names = ["Alice", "Lia"]
+        let ageList: ages;
+        ageList["Alice"] = 14
+        ```
+
+    - 接口也可以通过 `extends` 继承
+
+2. 模块：通过 `export interface` 导出接口，利用声明文件 `d.ts`，就可以对引入的依赖函数进行语法检查
+
+    ```typescript
+    // lib.d.ts
+    declare module Lib {
+      export class Calc {
+        sum(left: number, right: number): number;
       }
     }
     
-    let alice: Student = new Student("Alice", 14);
-    alice.changeName("Elise");
-    alice.updateScore(96);
-    console.log(alice.score);
+    // main.ts
+    /// <reference path = "lib.d.ts" />
+    var obj = new Lib.Calc();
+    console.log(obj.sum(1, 2));
     ```
 
 #### 1.2.3 jQuery
