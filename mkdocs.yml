@@ -41,8 +41,9 @@ nav:
   - 通用:
       - 介绍: index.md
       - 许可证: license.md
-#   - 逻辑哲学:
-    #   - 一、形式逻辑
+  - 逻辑哲学:
+      - 一、形式逻辑:
+        - 1 逻辑学与概念: philosophy/formal/concept.md
     #   - 二、逻辑与哲学
     #   - 三、数学哲学
   - 数学基础:

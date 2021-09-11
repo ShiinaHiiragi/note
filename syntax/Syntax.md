@@ -4909,6 +4909,6 @@ Bootstrap 适合短时间开发简单的静态网站
 
 2. x86-64：基于 x86 架构的 64 位拓展，向后兼容于 16 位及 32 位的 x86 架构。最早由 AMD 设计，初称为「AMD64」
 
-    > 该架构后被 Intel 采用，现称为「Intel 64」（曾称为「Clackamas Technology」「IA-32e」「EM64T」）；苹果公司和 RPM 包管理员称为「x86-64」「x86_64」；甲骨文公司及Microsoft称之为「x64」；Linux 发行版则称为「amd64」「x86_64」
+    > 该架构后被 Intel 采用，现称为「Intel 64」（曾称为「Clackamas Technology」「IA-32e」「EM64T」）；苹果公司和 RPM 包管理员称为「x86-64」「x86_64」；甲骨文公司及 Microsoft 称之为「x64」；Linux 发行版则称为「amd64」「x86_64」
 
 <p align="right"> Ichinoe Mizue </p>
