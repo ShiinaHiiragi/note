@@ -3,6 +3,7 @@ site_author: 一之江
 site_url: https://shiinahiiragi.github.io/note/
 repo_url: https://github.com/ShiinaHiiragi/note/
 repo_name: ShiinaHiiragi/note
+dev_addr: 127.0.0.1:80
 theme:
   name: material
   icon:

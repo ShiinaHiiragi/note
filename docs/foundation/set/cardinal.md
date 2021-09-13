@@ -165,5 +165,12 @@
         2. 存在集对之族 $\{A_\alpha^0,A_\alpha^1|\alpha <2^\omega\}$, 其中 $A_\alpha^0,A_\alpha^1$ 都是 $\omega$ 的无限子集, $A_\alpha^0\cap A_\alpha^1=\varnothing$, 且满足 $\forall \alpha_1,\cdots,\alpha_n<2^\omega(|\omega-(s_{\alpha_1}\cup \cdots \cup s_{\alpha_n})|=\omega)$
 
 <style>
-    th { display: none; }
+    div[class$="typeset__scrollwrap"] {
+        display: flex;
+        flex-direction: row;
+        justify-content: center;
+    }
+    th {
+        display: none;
+    }
 </style>
