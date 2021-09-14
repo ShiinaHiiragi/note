@@ -110,16 +110,16 @@
         - 每个 $v_\alpha$ 都是可递集
         - 严格递增性: $\gamma<\alpha \to(v_\gamma \subset v_\alpha \wedge v_\gamma \neq v_\alpha)$
 
-    !!! note "$\mathrm{V}$ 的前几个层次"
-        $$
-        \displaylines{v_0=0\\
-        v_1=\mathcal{P}(v_0)=\{0\}\\
-        v_2=\mathcal{P}(v_1)=\{0,1\}\\
-        v_3=\mathcal{P}(v_2)=\{0,1,\{1\},2\}\\
-        \cdots\\
-        v_\omega=\bigcup_{n\in\omega}v_n\\
-        \cdots}
-        $$
+        !!! note "$\mathrm{V}$ 的前几个层次"
+            $$
+            \displaylines{v_0=0\\
+            v_1=\mathcal{P}(v_0)=\{0\}\\
+            v_2=\mathcal{P}(v_1)=\{0,1\}\\
+            v_3=\mathcal{P}(v_2)=\{0,1,\{1\},2\}\\
+            \cdots\\
+            v_\omega=\bigcup_{n\in\omega}v_n\\
+            \cdots}
+            $$
 
 2. 定义良基集 $x$ 的秩 $\mathrm{rank}(x)$ 为使 $x\in v_{\beta+1}$ 的最小序数 $\beta$
     1. 一个良基集若在 $\mathrm{V}$ 的某一层出现, 则在其后的所有层出现; 对于给定的良基集 $x$, 使得 $x\in v_\alpha$ 的最小层数一定是后继序数, 而不可能是 $0$ 或极限序数
