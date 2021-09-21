@@ -781,7 +781,7 @@
     - 数组没有 `Symbol.toPrimitive`，也没有 `valueOf`，`toString` 转换为逗号分隔的元素列表
 
         ```javascript
-        alert( [] + 1 );        // "1"
+        console.log([] + 1);        // "1"
         console.log([1,2] + 1); // "1,21"
         ```
 
@@ -2847,7 +2847,7 @@ Bootstrap 适合短时间开发简单的静态网站
           std::set<int> b = {2, 3, 4, 5, 6};
           a.insert(0);
           std::set<int> c;
-          std::set_intersection(a.begin(), a.end(), b.begin(),                        b.end(), std::inserter(c, c.begin()));
+          std::set_intersection(a.begin(), a.end(), b.begin(), b.end(), std::inserter(c, c.begin()));
           for (std::set<int>::iterator it = c.begin(); it != c.end(); it++)
             std::cout << *it << " ";  // -> 2 3 4 5
           return 0;
