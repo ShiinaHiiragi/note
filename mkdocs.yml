@@ -1,4 +1,4 @@
-site_name: 数理逻辑
+site_name: 逻辑与形而上学
 site_author: 一之江
 site_url: https://shiinahiiragi.github.io/note/
 repo_url: https://github.com/ShiinaHiiragi/note/
@@ -42,7 +42,7 @@ nav:
   - 通用:
       - 介绍: index.md
       - 许可证: license.md
-  - 逻辑形而上学:
+  - 形而上学:
       - 一、形式逻辑:
         - 1 概念: philosophy/formal/concept.md
         - 2 命题与演绎: philosophy/formal/deduction.md
