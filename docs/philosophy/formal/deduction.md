@@ -142,7 +142,7 @@
         - $\overline{p\wedge q}=\overline{p}\vee \overline{q}, \overline{p\vee q}=\overline{p}\wedge \overline{q}, \overline{p\dot{\vee} q}=(p\wedge q)\vee (\overline{p}\wedge \overline{q})$
         - $\overline{p\to q}=p\wedge \overline{q}, \overline{p\leftarrow q}=\overline{p}\wedge q, \overline{p\leftrightarrow q}=(p\wedge \overline{q})\vee (\overline{p}\wedge q)$
 5. 真值表: 显示复合命题的真假是如何由其肢命题的真假所决定的表格
-    1. 复合命题的真值表
+    1. 复合命题的真值表 (记 $+$ 为真, $-$ 为假):
 
         |  $p$  |  $q$  | $p\wedge q$ |    $p\vee q$    |   $p\dot{\vee} q$    |
         | :---: | :---: | :---------: | :-------------: | :------------------: |
@@ -160,7 +160,15 @@
 
     2. 重言式 (不管其肢命题的真假情况如何, 整个复合命题总是真的) 可以用归谬赋值法判定
 
-### 2.2.2 二难推理
+### 2.2.2 假言选言推理
+1. 假言选言推理 (二难推理): 由两个假言前提和一个具有二肢的选言前提联合作为前提而构成的推理
+    - 简单式和复杂式: 结论是简单的直言命题或复合的选言命题
+    - 构成式和破坏式: 论的得出是运用了充分条件假言推理的肯定式或否定式
+2. 假言选言推理的分类
+    1. 简单构成式: 前提中肯定两个假言命题的不同前件, 结论肯定两个假言命题的相同后件. 即由 $p\to q, r\to q, p\vee r$ 推出 $q$
+    2. 简单破坏式: 前提中否定两个假言命题的不同后件, 结论否定两个假言命题的相同前件. 即由 $p\to q, p\to r, \overline{q}\vee \overline{r}$ 推出 $\overline{p}$
+    3. 复杂构成式: 前提中肯定两个不同假言命题的两个不同的前件, 结论肯定两个不同的后件. 即由 $p\to r, q\to s, p\vee q$ 推出 $r\vee s$
+    4. 复杂破坏式: 前提中否定两个不同假言命题的两个不同的后件, 结论则否定两个不同的前件. 即由 $p\to q, r\to s, \overline{r}\vee \overline{s}$ 推出 $\overline{p}\vee \overline{r}$
 
 ## 2.3 模态命题
 
