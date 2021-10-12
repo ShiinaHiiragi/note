@@ -2,8 +2,8 @@
 
 ## 2.1 关系
 ### 2.1.1 Descartes 积
-- 定义: $a\times b=\{(x,y)|x\in a \vee y\in b\}$, 这个定义的合法性由内涵公理, 有序对的定义和引理 $(x\in a \wedge y\in b)\to (x,y)\in \mathcal{p}(\mathcal{p}(a\cup b))$ 保证
-- 拓展到 $n$ 个集合的 $\mathrm{Descartes}$ 积: $A_1\times A_2\times \cdots \times A_n=\{(x_1,x_2,\cdots ,x_n)|x_1\in A_1,x_2\in A_2,\cdots ,x_n\in A_n\}$ 
+1. 定义: $a\times b=\{(x,y)|x\in a \vee y\in b\}$, 这个定义的合法性由内涵公理, 有序对的定义和引理 $(x\in a \wedge y\in b)\to (x,y)\in \mathcal{p}(\mathcal{p}(a\cup b))$ 保证
+2. 拓展到 $n$ 个集合的 $\mathrm{Descartes}$ 积: $A_1\times A_2\times \cdots \times A_n=\{(x_1,x_2,\cdots ,x_n)|x_1\in A_1,x_2\in A_2,\cdots ,x_n\in A_n\}$ 
 
 ### 2.1.2 关系
 1. 定义: 若 $r\subset a\times b$, 则 $r$ 为 a 到 b 上的一个关系, 写作 $r(x,y)$ 或 $xry$. 若 $r\subset \underbrace{a\times a\times \cdots\times a}_n$, 则 $r$ 称作 $a$ 的 $n$ 元关系. 且有
@@ -22,11 +22,11 @@
     - $r^{-1}=\{(y,x)|(x,y)\in r\}$, 于是 $\mathrm{Dom}(r^{-1})=\mathrm{Ran}(r)$, $\mathrm{Ran}(r^{-1})=\mathrm{Dom}(r)$
     - $r\subset a\times b,s\subset b\times c$, 则 $s\circ r=\{(x,z)|\exists y((x,y)\in r\wedge(y,z\in s))\}$, 且有 $(s\circ r)^{-1}=r^{-1}\circ s^{-1}$
 3. 二元关系:  $R\subset a\times a$, 则称 $R$ 是 $a$ 上的一个二元关系
-    - 自反性: $\forall x\in a(xRx)$  
+    1. 自反性: $\forall x\in a(xRx)$  
       反自反性: $\forall x\in a((x,x)\notin R)$
-    - 对称性: $\forall x,y\in a(xRy\to yRx)$  
+    2. 对称性: $\forall x,y\in a(xRy\to yRx)$  
       反对称性: $\forall x,y\in a((xRy\wedge yRx)\to x=y)$
-    - 可递性: $\forall x,y,z\in a((xRy\wedge yRz)\to xRz)$
+    3. 可递性: $\forall x,y,z\in a((xRy\wedge yRz)\to xRz)$
 4. 等价关系: 设 $R\subset a^2$, 若 $R$ 同时有自反性, 对称性, 可递性, 则称 $R$ 为 $a$ 上的等价关系. 如果只有一个等价关系, 则 $xRy$ 可以记作 $x\sim y$
     1. 等价类: 任取 $x\in a$, 记 $[x]=\{t\in a|t\sim x\}$, 则将 $[x]$ 称作 $x$ 的等价类
         - $x\in [x]$
@@ -49,21 +49,21 @@
 
 ## 2.2 映射
 1. 相关定义
-    - 映射: $f\subset a\times b$, $\forall x\in a\exists !y\in b((x,y)\in f)$, 则 $f$ 称为 $a$ 到 $b$ 的映射. $(x,y)\in f$ 记作 $y=f(x)$. $f:A^n\to A$ 称作 $A$ 上的 $n$ 元运算
-    - 复合映射: $g\circ f(x)=g(f(x)), x\in a$
-    - 逆映射: $f^{-1}=\{(y,x)|(x,y)\in f\}$
+    1. 映射: $f\subset a\times b$, $\forall x\in a\exists !y\in b((x,y)\in f)$, 则 $f$ 称为 $a$ 到 $b$ 的映射. $(x,y)\in f$ 记作 $y=f(x)$. $f:A^n\to A$ 称作 $A$ 上的 $n$ 元运算
+    2. 复合映射: $g\circ f(x)=g(f(x)), x\in a$
+    3. 逆映射: $f^{-1}=\{(y,x)|(x,y)\in f\}$
 2. 性质
-    - 单值性: $(x,y_1)\in f \wedge (x,y_2)\in f\to y_1=y_2$
-    - $f\subset a\times b$, 则 $\mathrm{Dom}(f)=a, \mathrm{Ran}(f)\subset b$
-    - $c\subset a$, 则 $f[c]=\{f(x)|x\in c\}$  
+    1. 单值性: $(x,y_1)\in f \wedge (x,y_2)\in f\to y_1=y_2$
+    2. $f\subset a\times b$, 则 $\mathrm{Dom}(f)=a, \mathrm{Ran}(f)\subset b$
+    3. $c\subset a$, 则 $f[c]=\{f(x)|x\in c\}$  
       $c\subset b$, 则 $f^{-1}[c]=\{x\in a|f(x)\in c\}$
 3. 映射的种类
-    - 满射, 单射, 双射
+    1. 满射, 单射, 双射
         1. 若 $f[a]=b$, 则 $f$ 为满射
         2. 若 $\forall x_1,x_2\in a(x_1\neq x_2\to f(x_1)\neq f(x_2))$, 则 $f$ 为单射
         3. 若 $f$ 同时为满射与单射, 则 $f$ 为双射. 此时 $\forall x\in a\exists !y\in b((x,y)\in f)$, $\forall y\in b\exists !x\in a((x,y)\in f)$
-    - 单射与单射复合为单射, 双射与双射复合为双射
-    - 函数 $f$ 有反函数当且仅当 $f$ 为单射, 双射的反函数仍为双射
+    2. 单射与单射复合为单射, 双射与双射复合为双射
+    3. 函数 $f$ 有反函数当且仅当 $f$ 为单射, 双射的反函数仍为双射
 4. 其他定义
     - $g=f|c$, 则 $\forall x\in c(f(x)=g(x))$, 称 $f$ 为 $g$ 的扩张
     - 定义 $^{a}b=\{f|f:a\to b\}$, 该定义的合法性由 $^{a}b\subset \mathcal{P}(a\times b)$ 保证. 当 $b\subset c$ 时, $^{a}b\subset ^{a}c$

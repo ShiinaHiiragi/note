@@ -260,8 +260,8 @@
         - 新的实数零为无穷小集: $0=[0]=\{x\in Q_<|x\sim 0\}=I$
         - $\mathrm{Archimedes}$ 性质: $\forall a\in R\exists k\in N(|a|\leqslant k)$
 4. $R$ 的完备性
-    - $Q$ 在 $R$ 中稠密: $\forall a,b\in R(a<b\to \exists r\in Q(a<r<b))$
-    - 实数的完备性: 单调递增且有上界的实数列必有最小上界. 具有这种性质的 $R$ 称为完备序域, $Q$ 不具备这种完备性
+    1. $Q$ 在 $R$ 中稠密: $\forall a,b\in R(a<b\to \exists r\in Q(a<r<b))$
+    2. 实数的完备性: 单调递增且有上界的实数列必有最小上界. 具有这种性质的 $R$ 称为完备序域, $Q$ 不具备这种完备性
 
         !!! note "证明完备性的引理"
             在 $R$ 中, 严格单调递增且有上界的有理数列必有最小上界

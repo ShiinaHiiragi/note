@@ -8,9 +8,9 @@
 第二个模块记录数理逻辑, 主要内容内容包括基本的一阶逻辑演算, 公理集合论, 证明论, 递归论, 模型论以及部分非经典逻辑的入门部分. 编排注重严格地按照学科分类记录, 而不以推导的逻辑顺序作为先后依据. 关于建立的过程, 假设朴素的一阶逻辑语法已经被建立好, 然后严格地建立 $\mathrm{ZFC}$ 公理系统, 最后利用集合论严格地建立了带有任意符号表的一阶逻辑的语法和语义.
 
 !!! warning "此项目仍未完成, 可能存在若干疏漏和错误"
-    <label> 现在进度: 形式逻辑 - 模态命题 </label>
+    <label> 现在进度: 形式逻辑 - 归纳推理 </label>
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 63%;"> 63% </div>
+        <div class="progress-percentage" style="width: 70%;"> 70% </div>
     </div>
 
 ## 参考文献
