@@ -46,6 +46,7 @@ nav:
       - 一、形式逻辑:
         - 1 概念: philosophy/formal/concept.md
         - 2 命题与演绎: philosophy/formal/deduction.md
+        - 3 归纳和类比: philosophy/formal/induction.md
     #   - 二、逻辑与哲学
     #   - 三、数学哲学
   - 数学基础:
