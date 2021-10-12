@@ -171,6 +171,55 @@
     4. 复杂破坏式: 前提中否定两个不同假言命题的两个不同的后件, 结论则否定两个不同的前件. 即由 $p\to q, r\to s, \overline{r}\vee \overline{s}$ 推出 $\overline{p}\vee \overline{r}$
 
 ## 2.3 模态命题
+### 2.3.1 模态命题
+1. 定义: 反映事物必然性或可能性的命题
+    1. 用模态命题可以反映事物本身存在的某种必然性或可能性
+    2. 表示对事物情况断定的不确定的性质
+2. 分类: 模态命题可分为可能命题和必然命题, 两个命题都既有肯定的, 也有否定的
+    1. 可能肯定命题: $\mathrm{S}$ 是 $\mathrm{P}$ 是可能的, 记作「可能 $p$」, 写作 $\diamond p$
+    2. 可能否定命题: $\mathrm{S}$ 不是 $\mathrm{P}$ 是可能的, 记作「可能 $\overline{p}$」, 写作 $\diamond \overline{p}$
+    3. 必然肯定命题: $\mathrm{S}$ 是 $\mathrm{P}$ 是必然的, 记作「必然 $p$」, 写作 $\square p$
+    4. 必然否定命题: $\mathrm{S}$ 不是 $\mathrm{P}$ 是必然的, 记作「必然 $\overline{p}$」, 写作 $\square \overline{p}$
+
+    ![](../assets/modal.png)
+
+3. 模态推理: 根据模态命题的性质及其相互间的逻辑关系进行推演
+    1. 根据矛盾关系的直接推理: $\square p\leftrightarrow \overline{\diamond \overline{p}}, \overline{\square p}\leftrightarrow \diamond \overline{p}, \square \overline{p}\leftrightarrow \overline{\diamond p}, \overline{\square \overline{p}}\leftrightarrow \diamond p$
+    2. 根据反对关系的直接推理: $\square p\to \overline{\square \overline{p}}, \square \overline{p} \to \overline{\square p}$
+    3. 根据下反对关系的直接推理: $\overline{\diamond p} \to \diamond \overline{p}, \overline{\diamond \overline{p}} \to \diamond p$
+    4. 根据差等关系的直接推理: $\square p\to \diamond p, \overline{\diamond p} \to \overline{\square p}, \square \overline{p} \to \diamond \overline{p}, \overline{\diamond \overline{p}} \to \overline{\square \overline{p}}$
+4. 模态三段论
+    1. 必然模态三段论: 所有的 $\mathrm{M}$ 必然是 $\mathrm{P}$ , 所有的 $\mathrm{S}$ 必然是 $\mathrm{M}$ , 所以所有的 $\mathrm{S}$ 必然是 $\mathrm{P}$
+    2. 必然和可能两种模态命题结合: 凡 $\mathrm{P}$ 必然是 $\mathrm{M}$ , 凡 $\mathrm{S}$ 可能不是 $\mathrm{M}$ , 所以凡 $\mathrm{S}$ 可能不是 $\mathrm{P}$
+    3. 必然命题和直言命题结合: 凡 $\mathrm{M}$ 必然不是 $\mathrm{P}$ , 凡 $\mathrm{S}$ 是 $\mathrm{M}$ , 所以凡 $\mathrm{S}$ 必然不是 $\mathrm{P}$
+    4. 可能命题与直言命题结合: 凡 $\mathrm{M}$ 可能是 $\mathrm{P}$ , 凡 $\mathrm{S}$ 是 $\mathrm{M}$ , 所以凡 $\mathrm{S}$ 可能是 $\mathrm{P}$
+    5. 可能模态三段论: 凡 $\mathrm{M}$ 可能是 $\mathrm{P}$ , 凡 $\mathrm{S}$ 可能是 $\mathrm{M}$ , 所以凡 $\mathrm{S}$ 可能是 $\mathrm{P}$
+
+### 2.3.2 规范命题
+1. 含有「必须 ($O$)」「禁止 ($F$)」「允许 ($P$)」等规范模态词的模态命题, 分为六种命题:
+    1. 必须肯定命题: 记作必须 $p$, 写作 $O_p$
+    2. 必须否定命题: 记作必须非 $p$, 写作 $O_\overline{p}$
+    3. 禁止肯定命题: 记作禁止 $p$, 写作 $F_p$ , 可以与必须否定命题等价替换
+    4. 禁止否定命题: 记作禁止非 $p$, 写作 $F_\overline{p}$ , 可以与必须肯定命题等价替换
+    5. 允许肯定命题: 记作允许 $p$, 写作 $P_p$
+    6. 允许否定命题: 记作允许非 $p$, 写作 $P_\overline{p}$
+2. 规范命题之间的关系
+    1. 反对关系: 一个正确, 另一个就不正确; 一个不正确, 另一个正确与否不定
+    2. 下反对关系: 一个错误, 另一个就正确; 一个正确, 另一个正确与否不定
+    3. 差等关系: 「必须」命题正确, 则「允许」命题必正确; 「必须」命题不正确, 则「允许」命题正确与否不定; 「允许」命题正确, 「必须」命题正确与否不定; 「允许」命题错误, 则「必须」命题必不正确
+    4. 矛盾关系: 一个正确, 另一个不正确; 反之亦然
+
+        ![](../assets/normative.png)
+
+3. 规范推理: 以规范命题为其前提和结论的演绎推理, 其前提至少有一个是规范命题
+    1. 根据规范命题矛盾关系的直接推理: $O_p\leftrightarrow \overline{P_\overline{p}}, \overline{O_p}\leftrightarrow P_\overline{p}, O_\overline{p}\leftrightarrow \overline{P_p}, \overline{O_\overline{p}}\leftrightarrow P_p$
+    2. 根据规范命题反对关系的直接推理: $O_p\to \overline{O_\overline{p}}, O_\overline{p} \to \overline{O_p}$
+    3. 根据规范命题下反对关系的直接推理: $\overline{P_p} \to P_\overline{p}, \overline{P_\overline{p}}\to P_p$
+    4. 根据规范命题差等关系的直接推理: $O_p\to P_p, \overline{P_p}\to \overline{O_p}, O_\overline{p} \to P_\overline{p}, \overline{P_\overline{p}}\to \overline{O_\overline{p}}$
+4. 规范三段论: 直言三段论中引入规范模态词的一种三段论推理. 一般来说, 其大前提是规范命题, 小前提是直言命题, 结论是规范命题
+    1. 必须规范三段论: 凡 $\mathrm{M}$ 必须 $\mathrm{P}$ , 凡 $\mathrm{S}$ 是 $\mathrm{M}$ , 所以，凡 $\mathrm{S}$ 必须 $\mathrm{P}$ 
+    2. 禁止规范三段论: 凡 $\mathrm{M}$ 禁止 $\mathrm{P}$ , 凡 $\mathrm{S}$ 是 $\mathrm{M}$ , 所以，凡 $\mathrm{S}$ 禁止 $\mathrm{P}$ 
+    3. 允许规范三段论: 凡 $\mathrm{M}$ 允许 $\mathrm{P}$ , 凡 $\mathrm{S}$ 是 $\mathrm{M}$ , 所以，凡 $\mathrm{S}$ 允许 $\mathrm{P}$ 
 
 <style>
     img[src$="relation.png"] {
@@ -180,6 +229,10 @@
     img[src$="lattice.png"] {
         width: 400px;
         margin-left: calc((100% - 400px) / 2);
+    }
+    img[src$="modal.png"], img[src$="normative.png"] {
+        width: 200px;
+        margin-left: calc((100% - 200px) / 2);
     }
     div[class$="typeset__scrollwrap"] {
         display: flex;
