@@ -48,11 +48,15 @@ nav:
         - 2 命题与演绎: philosophy/formal/deduction.md
         - 3 归纳和类比: philosophy/formal/induction.md
         - 4 非形式逻辑: philosophy/formal/proof.md
-    #   - 二、逻辑哲学
-    #   - 三、数学哲学
+    #   - 二、逻辑语
+    #   - 三、逻辑哲学
+      - 四、数学哲学:
+        - 1 基本问题: philosophy/math/concept.md
+        # - 2 历史观点: philosophy/math/history.md
+        # - 3 当代观点: philosophy/math/comtemporary.md
   - 数学基础:
-      - 一、一阶逻辑:
-          - 1 命题逻辑: foundation/logic/proposition.md
+    #   - 一、一阶逻辑:
+        #   - 1 命题逻辑: foundation/logic/proposition.md
         #   - 2 谓词逻辑: foundat4ion/logic/predicate.md
       - 二、公理集合论:
           - 1 ZFC 集合论: foundation/set/zfc.md
