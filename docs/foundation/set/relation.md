@@ -13,14 +13,14 @@
     $$
 
 2. 相关概念
-    - $\mathrm{Dom}(r)=\{x\in a|\exists y\in b((x,y)\in r)\}$  
+    1. $\mathrm{Dom}(r)=\{x\in a|\exists y\in b((x,y)\in r)\}$  
       $\mathrm{Ran}(r)=\{y\in b|\exists x\in a((x,y)\in r)\}$
-    - $r\subset a\times b,c\in a$, $r$ 在 $c$ 上的限制 $r|c=\{(x,y)\in r|x\in c\}$
+    2. $r\subset a\times b,c\in a$, $r$ 在 $c$ 上的限制 $r|c=\{(x,y)\in r|x\in c\}$
         - $\mathrm{Dom}(r|c)=\mathrm{Dom}(r)\cap c$
         - 记 $\mathrm{Ran}(r|c)=r[c]$, 称之为 $c$ 在 $r$ 下的象.  
           若 $c\subset b$, 则 $r^{-1}[c]$ 为 $c$ 在 $r$ 下的原象
-    - $r^{-1}=\{(y,x)|(x,y)\in r\}$, 于是 $\mathrm{Dom}(r^{-1})=\mathrm{Ran}(r)$, $\mathrm{Ran}(r^{-1})=\mathrm{Dom}(r)$
-    - $r\subset a\times b,s\subset b\times c$, 则 $s\circ r=\{(x,z)|\exists y((x,y)\in r\wedge(y,z\in s))\}$, 且有 $(s\circ r)^{-1}=r^{-1}\circ s^{-1}$
+    3. $r^{-1}=\{(y,x)|(x,y)\in r\}$, 于是 $\mathrm{Dom}(r^{-1})=\mathrm{Ran}(r)$, $\mathrm{Ran}(r^{-1})=\mathrm{Dom}(r)$
+    4. $r\subset a\times b,s\subset b\times c$, 则 $s\circ r=\{(x,z)|\exists y((x,y)\in r\wedge(y,z\in s))\}$, 且有 $(s\circ r)^{-1}=r^{-1}\circ s^{-1}$
 3. 二元关系:  $R\subset a\times a$, 则称 $R$ 是 $a$ 上的一个二元关系
     1. 自反性: $\forall x\in a(xRx)$  
       反自反性: $\forall x\in a((x,x)\notin R)$
@@ -65,5 +65,5 @@
     2. 单射与单射复合为单射, 双射与双射复合为双射
     3. 函数 $f$ 有反函数当且仅当 $f$ 为单射, 双射的反函数仍为双射
 4. 其他定义
-    - $g=f|c$, 则 $\forall x\in c(f(x)=g(x))$, 称 $f$ 为 $g$ 的扩张
-    - 定义 $^{a}b=\{f|f:a\to b\}$, 该定义的合法性由 $^{a}b\subset \mathcal{P}(a\times b)$ 保证. 当 $b\subset c$ 时, $^{a}b\subset ^{a}c$
+    1. $g=f|c$, 则 $\forall x\in c(f(x)=g(x))$, 称 $f$ 为 $g$ 的扩张
+    2. 定义 $^{a}b=\{f|f:a\to b\}$, 该定义的合法性由 $^{a}b\subset \mathcal{P}(a\times b)$ 保证. 当 $b\subset c$ 时, $^{a}b\subset ^{a}c$

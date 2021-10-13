@@ -51,8 +51,8 @@ nav:
     #   - 二、逻辑语
     #   - 三、逻辑哲学
       - 四、数学哲学:
-        - 1 基本问题: philosophy/math/concept.md
-        # - 2 历史观点: philosophy/math/history.md
+        - 1 基本问题与历史观点: philosophy/math/concept.md
+        # - 2 三大主义: philosophy/math/doctrine.md
         # - 3 当代观点: philosophy/math/comtemporary.md
   - 数学基础:
     #   - 一、一阶逻辑:

@@ -8,9 +8,9 @@
 第二个模块记录数理逻辑, 主要内容内容包括基本的一阶逻辑与公理集合论, 以及零碎的经典四论的初始部分. 公理集合论的构建依赖于含有可数符号的一阶逻辑, 后者的元语言理论基础是朴素集合论. 朴素集合论中的集合规模不超过可数集, 因此其理论构建可以认为是诉诸直觉 (或原始递归算数). 根据严格定义的公理集合论, 可以构建带有任意数目符号的一阶逻辑系统.
 
 !!! warning "此项目仍未完成, 可能存在若干疏漏和错误"
-    <label> 现在进度: 数学哲学 - 自然主义 </label>
+    <label> 现在进度: 数学哲学 - 柏拉图理性主义 </label>
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 7%;"> 7% </div>
+        <div class="progress-percentage" style="width: 18%;"> 18% </div>
     </div>
 
 ## 参考文献

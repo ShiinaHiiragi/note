@@ -116,11 +116,11 @@
         - 加法保序性: $\forall r,s,t\in Q(r<s\to r+t<s+t)$
         - 乘法保序性: $\forall r,s,t\in Q(t>\overline{0}\to (r<s\to r\cdot t<s\cdot t))$
 3. 嵌入
-    - 考察 $\overline{Z}=\{[(p,1)]|p\in Z\}$, 记 $\overline{n}=[(n,1)]$, 则 $-\overline{n}=[(-n,1)]$. $\overline{Z}$ 构成 $Q$ 的封闭子集
-        - $[(p,1)]+[(q,1)]=[(p+q,1)]$
-        - $[(p,1)]\cdot [(q,1)]=[(pq,1)]$
-        - $p<q\leftrightarrow [(p,1)]<[(q,1)]$
-    - 定义 $f:Z\to \overline{Z}$ 有 $f(p)=[(p,1)]$, 则 $f$ 是一个封闭的保序双射. 此时称 $Q$ 与 $\overline{Q}$ 同构, 并称 $f$ 把 $Q$ 同构嵌入 $Q$
+    1. 考察 $\overline{Z}=\{[(p,1)]|p\in Z\}$, 记 $\overline{n}=[(n,1)]$, 则 $-\overline{n}=[(-n,1)]$. $\overline{Z}$ 构成 $Q$ 的封闭子集
+        1. $[(p,1)]+[(q,1)]=[(p+q,1)]$
+        2. $[(p,1)]\cdot [(q,1)]=[(pq,1)]$
+        3. $p<q\leftrightarrow [(p,1)]<[(q,1)]$
+    2. 定义 $f:Z\to \overline{Z}$ 有 $f(p)=[(p,1)]$, 则 $f$ 是一个封闭的保序双射. 此时称 $Q$ 与 $\overline{Q}$ 同构, 并称 $f$ 把 $Q$ 同构嵌入 $Q$
 4. 将结果写成分数形式: $[(p,q)]=\dfrac{[(p,1)]}{[(q,1)]}$, 于是有 $Q=\{\dfrac{[(p,1)]}{[(q,1)]}|p,q\in Z\wedge q\neq 0\}$. 把所有形如 $[(p,1)]$ 的元素写成 $p$, 称之为新整数. 于是 $Z\subset Q=\{\dfrac{p}{q}|p,q\in Z\wedge q\neq 0\}$, 将 $\mathbb{Q}$ 称为有理数集
 5. 与 $Z$ 相比, $Q$ 是其扩张, 更具有对称性. 有理数集形成了新的结构 $\left< Q,+,\cdot ,<,0,1\right>$
 
@@ -136,20 +136,20 @@
     4. 算术超滤: 设 $F\in \beta N$, 若 $f(F)=g(F)\to f=_Fg$, 则称 $F$ 为算术超滤
     5. 自由超滤: 若超滤 $F$ 有 $N$ 的任一有限子集 $\notin F$, 则称 $F$ 为 $N$ 上的自由超滤
 2. 滤子的例子
-    - $\{N\}$ 是一个滤子, 但不是超滤. 称作 $N$ 上的平凡滤子
-    - $F_{\sigma}=\{a\subset N||N-a|<+\infty \}$ 是一个滤子, 但不是超滤. $F_{\sigma}$ 称作余有限滤子或 Fréchet 滤子
-    - 对 $\forall i\in N$, $F_i=\overline{n} =\{a\subset N|i\in a\}$ 是超滤, 但不是自由超滤. 称 $F_i$ 为主超滤
+    1. $\{N\}$ 是一个滤子, 但不是超滤. 称作 $N$ 上的平凡滤子
+    2. $F_{\sigma}=\{a\subset N||N-a|<+\infty \}$ 是一个滤子, 但不是超滤. $F_{\sigma}$ 称作余有限滤子或 Fréchet 滤子
+    3. 对 $\forall i\in N$, $F_i=\overline{n} =\{a\subset N|i\in a\}$ 是超滤, 但不是自由超滤. 称 $F_i$ 为主超滤
 3. 滤子与超滤的性质
     1. 超滤要么是自由超滤, 要么是主超滤
-        - 所有主超滤都是非自由的超滤, 即自由超滤一定是非主超滤
-        - $N$ 上非自由超滤一定是某个主超滤
+        1. 所有主超滤都是非自由的超滤, 即自由超滤一定是非主超滤
+        2. $N$ 上非自由超滤一定是某个主超滤
     2. 设 $F$ 是 $N$ 上的超滤, 且 $a_1\cup a_2=a\in F$, 则有 $a_1\in F\vee a_2\in F$. 注意到令 $a_1=a,a_2=N-a$, 则该定理是超滤的定义
     3. 设 $F$ 为超滤 $\leftrightarrow F$ 是极大滤子
     4. 设 $F$ 是超滤, 则有 $F$ 是自由超滤 $\leftrightarrow F\supset F_{\sigma}$
     5. $N$ 的子集族 $F$ 若具有以下性质则是 $N$ 上的超滤:
-        - $\varnothing \in F$
-        - 对交封闭: $a,b\in F\to a\cap b\in F$
-        - 极大性: $\forall a\subset N(a\in F\vee (N-a)\in F)$
+        1. $\varnothing \in F$
+        2. 对交封闭: $a,b\in F\to a\cap b\in F$
+        3. 极大性: $\forall a\subset N(a\in F\vee (N-a)\in F)$
     6. 主超滤都是算术超滤, 自由超滤中有算术超滤也有非算术超滤(非主算术超滤)
 
 ### 3.4.2 超滤变换
@@ -165,9 +165,9 @@
 ### 3.4.3 非主算术超滤模型
 1. 对于某个取定的非主算术超滤做所有可能的变换, 得到 $^*N=\{f(F)|f\in ^NN\}$, 它包含了所有的主超滤, 由常值函数对 $F$ 变换而来
 2. $^*N$ 的运算可以得到结构 $\left< ^*N,\overline{0},+,\cdot ,f,g,h,\cdots \right>$, 它的语言是 $\mathcal{L}=\{0,+,\cdot ,f,g,h,\cdots \}$. $\mathcal{L}$ 中包含所有一元自然数函数符
-    - 定义加法: $f(F)+g(F)=(f+g)(F))$, 乘法: $f(F)\cdot g(F)=(f\cdot g)(F))$. 其中, $(f+g)(n)=f(n)+g(n),(f\cdot g)(n)=f(n)\cdot g(n)$
-    - 每个 $h\in ^NN$ 对应 $*N$ 上的一个一元运算: $h(f(F))=(h\circ f)(F) h\in ^{^*N}{^*N}$
-    - 定义序 $<$ 为 $f(F)<g(F)\leftrightarrow \{n|f(n)<g(n)\}\in F$, 称作 $f$ 关于 $F$ 几乎小于 $g$, 记作 $f<_Fg$
+    1. 定义加法: $f(F)+g(F)=(f+g)(F))$, 乘法: $f(F)\cdot g(F)=(f\cdot g)(F))$. 其中, $(f+g)(n)=f(n)+g(n),(f\cdot g)(n)=f(n)\cdot g(n)$
+    2. 每个 $h\in ^NN$ 对应 $*N$ 上的一个一元运算: $h(f(F))=(h\circ f)(F) h\in ^{^*N}{^*N}$
+    3. 定义序 $<$ 为 $f(F)<g(F)\leftrightarrow \{n|f(n)<g(n)\}\in F$, 称作 $f$ 关于 $F$ 几乎小于 $g$, 记作 $f<_Fg$
         - $k<m\to \{n|k(n)<m(n)\}=N\in F\to k(F)<m(F)$
 3. $^*N$ 的基本性质
     1. 加法
@@ -188,12 +188,12 @@
         - 加法保序性: $f(F)<g(F)\to f(F)+h(F)<g(F)+h(F)$
         - 乘法保序性: $(f(F)<g(F)\wedge h(F)\neq \overline{0})\to f(F)h(F)<g(F)h(F)$
 4. $N$ 嵌入 $^*N$
-    - 令 $\overline{N}=\{\overline{n}|n\in N\}\subset ^*N$, 它是主超滤集合, 且构成 $^*N$ 对运算的封闭子集
-        - 考虑映射 $\varphi (n):N\to \overline{N}, \varphi (n)=\overline{n}$. 则 $\varphi$ 为保序保运算的双射
-        - 称 $N$ 与 $\overline{N}$ 同构, $\varphi$ 把 $N$ 同构嵌入 $^*N$, 将 $n$ 和 $\overline{n}$ 视作同一符号
-    - 令 $N_{\infty}=^*N-\overline{N}$, 它是非主算术超滤的集合
-        - $\tau \in N_{\infty} \to \forall m\in N(\tau >\overline{m})$. 即 $N_{\infty}$ 的成员都是「无穷大数」
-        - 可以将 $^*N$ 的元素排成一列:
+    1. 令 $\overline{N}=\{\overline{n}|n\in N\}\subset ^*N$, 它是主超滤集合, 且构成 $^*N$ 对运算的封闭子集
+        1. 考虑映射 $\varphi (n):N\to \overline{N}, \varphi (n)=\overline{n}$. 则 $\varphi$ 为保序保运算的双射
+        2. 称 $N$ 与 $\overline{N}$ 同构, $\varphi$ 把 $N$ 同构嵌入 $^*N$, 将 $n$ 和 $\overline{n}$ 视作同一符号
+    2. 令 $N_{\infty}=^*N-\overline{N}$, 它是非主算术超滤的集合
+        1. $\tau \in N_{\infty} \to \forall m\in N(\tau >\overline{m})$. 即 $N_{\infty}$ 的成员都是「无穷大数」
+        2. 可以将 $^*N$ 的元素排成一列:
 
         $$
         0,1,2,\cdots ,n,\cdots ,\tau ,\tau +1,\cdots 
@@ -212,9 +212,9 @@
     $$
 
 2. 延伸的性质
-    - 序保持: $\forall n\in N(h(n)<g(n))\to \forall \tau \in N_{\infty}(h(\tau )<g(\tau ))$
-    - 单调性保持: $\forall i,j\in N(i<j\to h(i)<h(j))\to \forall x,y\in ^*N(x<y\to h(x)<h(y))$
-    - 「分数」的单调性保持: 若 $\forall i,j\in N(i<j\to h(i)l(j)<h(j)l(i))$, 则 $\forall x,y\in ^*N(x<y\to h(x)l(y)<h(y)l(x))$
+    1. 序保持: $\forall n\in N(h(n)<g(n))\to \forall \tau \in N_{\infty}(h(\tau )<g(\tau ))$
+    2. 单调性保持: $\forall i,j\in N(i<j\to h(i)<h(j))\to \forall x,y\in ^*N(x<y\to h(x)<h(y))$
+    3. 「分数」的单调性保持: 若 $\forall i,j\in N(i<j\to h(i)l(j)<h(j)l(i))$, 则 $\forall x,y\in ^*N(x<y\to h(x)l(y)<h(y)l(x))$
 
 ## 3.5 实数理论
 ### 3.5.1 Archimedes 序域
@@ -226,11 +226,11 @@
     $$
 
 2. 定义 $^*Q$ 的 $\mathrm{Archimedes}$ 子集:
-    - $Q_<=\{x\in ^*Q|\exists k\in N(|x|\leqslant k)\}$, 这一性质意味着量的有限可测量性. 作为序域, $^*Q$ 是一种非 $\mathrm{Archimedes}$ 序域. 若 $x,y\in Q_<$, 则 $x+y\in Q_<,x\cdot y\in Q_<$
-    - $I=\{\alpha \in ^*Q|\forall k\in N(|x|\leqslant k)\}$, 称作无穷小
-        - $I\subset Q_<$
-        - $\alpha ,\beta \in I\to \alpha +\beta \in I$
-        - $\alpha \in I\wedge x\in Q_<\to x\cdot \alpha \in I$
+    1. $Q_<=\{x\in ^*Q|\exists k\in N(|x|\leqslant k)\}$, 这一性质意味着量的有限可测量性. 作为序域, $^*Q$ 是一种非 $\mathrm{Archimedes}$ 序域. 若 $x,y\in Q_<$, 则 $x+y\in Q_<,x\cdot y\in Q_<$
+    2. $I=\{\alpha \in ^*Q|\forall k\in N(|x|\leqslant k)\}$, 称作无穷小
+        1. $I\subset Q_<$
+        2. $\alpha ,\beta \in I\to \alpha +\beta \in I$
+        3. $\alpha \in I\wedge x\in Q_<\to x\cdot \alpha \in I$
 
 ### 3.5.2 实数的构造
 1. 在 $Q_<$ 中定义等价关系 $x\sim y\leftrightarrow x-y\in I$
@@ -254,11 +254,11 @@
         - 加法保序性: $\forall [x],[y],[z]\in Q_</\sim ([x]<[y]\to [x]+[z]<[y]+[z])$
         - 乘法保序性: $\forall [x],[y],[z]\in Q_</\sim ([z]>[0]\to ([x]<[y]\to [x]\cdot [z]<[y]\cdot [z]))$
 3. $\left< Q_{<}/\sim ,+,\cdot ,<,[0],[1],\right>$ 拥有上述性质, 是一个序域
-    - $Q,Q_<$ 有 $\mathrm{Archimedes}$ 性质, 而 $^*Q$ 没有. 但 $Q_<$ 不是域, 而将 $Q_<$ 剖分成的 $R$ 是一个序域
-    - 定义 $\overline{Q}=\{[r]|r\in Q\}$, 它关于加法, 乘法成了 $R$ 的封闭子集. 再令 $H(r)=[r],H:Q\to \overline{Q}$ 即为所需要的嵌入映射(保运算性, 保序性, 双射). 于是 $Q$ 与 $\overline{Q}$ 同构, $H$ 把 $Q$ 同构嵌入 $R$. $\overline{Q}$ 成为 $Q$, $Q\subset R$
-    - 令实数集 $R=\left\{ \left. \left[ \dfrac{q}{p}\right] \right| p\neq 0, p,q\in ^*Z, \exists k\in N\left( \left| \dfrac{q}{p}\right| \leqslant k\right) \right\}$
-        - 新的实数零为无穷小集: $0=[0]=\{x\in Q_<|x\sim 0\}=I$
-        - $\mathrm{Archimedes}$ 性质: $\forall a\in R\exists k\in N(|a|\leqslant k)$
+    1. $Q,Q_<$ 有 $\mathrm{Archimedes}$ 性质, 而 $^*Q$ 没有. 但 $Q_<$ 不是域, 而将 $Q_<$ 剖分成的 $R$ 是一个序域
+    2. 定义 $\overline{Q}=\{[r]|r\in Q\}$, 它关于加法, 乘法成了 $R$ 的封闭子集. 再令 $H(r)=[r],H:Q\to \overline{Q}$ 即为所需要的嵌入映射(保运算性, 保序性, 双射). 于是 $Q$ 与 $\overline{Q}$ 同构, $H$ 把 $Q$ 同构嵌入 $R$. $\overline{Q}$ 成为 $Q$, $Q\subset R$
+    3. 令实数集 $R=\left\{ \left. \left[ \dfrac{q}{p}\right] \right| p\neq 0, p,q\in ^*Z, \exists k\in N\left( \left| \dfrac{q}{p}\right| \leqslant k\right) \right\}$
+        1. 新的实数零为无穷小集: $0=[0]=\{x\in Q_<|x\sim 0\}=I$
+        2. $\mathrm{Archimedes}$ 性质: $\forall a\in R\exists k\in N(|a|\leqslant k)$
 4. $R$ 的完备性
     1. $Q$ 在 $R$ 中稠密: $\forall a,b\in R(a<b\to \exists r\in Q(a<r<b))$
     2. 实数的完备性: 单调递增且有上界的实数列必有最小上界. 具有这种性质的 $R$ 称为完备序域, $Q$ 不具备这种完备性
