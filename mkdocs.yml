@@ -45,18 +45,19 @@ nav:
       - 许可证: license.md
   - 形而上学:
       - 一、形式逻辑:
-        - 1 概念: philosophy/formal/concept.md
-        - 2 命题与演绎: philosophy/formal/deduction.md
-        - 3 归纳和类比: philosophy/formal/induction.md
-        - 4 非形式逻辑: philosophy/formal/proof.md
+        - 1 概念: meta/formal/concept.md
+        - 2 命题与演绎: meta/formal/deduction.md
+        - 3 归纳和类比: meta/formal/induction.md
+        - 4 非形式逻辑: meta/formal/proof.md
       - 三、数学哲学:
-        - 1 基本问题与历史观点: philosophy/math/concept.md
+        - 1 基本问题与历史观点: meta/math/concept.md
+        - 2 三大主义与当代观点: meta/math/doctrine.md
   - 数理逻辑:
       - 二、公理集合论:
-          - 1 ZFC 集合论: foundation/set/zfc.md
-          - 2 关系与映射: foundation/set/relation.md
-          - 3 实数理论: foundation/set/real.md
-          - 4 序数: foundation/set/ordinal.md
-          - 5 势与基数: foundation/set/cardinal.md
+          - 1 ZFC 集合论: logic/set/zfc.md
+          - 2 关系与映射: logic/set/relation.md
+          - 3 实数理论: logic/set/real.md
+          - 4 序数: logic/set/ordinal.md
+          - 5 势与基数: logic/set/cardinal.md
       - 三、模型论:
-          - 1 结构与模型: foundation/model/model.md
+          - 1 结构与模型: logic/model/model.md
