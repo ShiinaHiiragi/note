@@ -22,22 +22,22 @@
         在 $\mathrm{Peano}$ 公理体系中可以推出下列定理, 下节构造整数集合时需要用到这些性质:
 
         1. 加法
-            - 加法交换律: $\forall a,b\in N(a+b=b+a)$
-            - 加法结合律: $\forall a,b,c\in N((a+b)+c=a+(b+c))$
+            1. 加法交换律: $\forall a,b\in N(a+b=b+a)$
+            2. 加法结合律: $\forall a,b,c\in N((a+b)+c=a+(b+c))$
         2. 乘法
-            - 乘法交换律: $\forall a,b\in N(a\cdot b=b\cdot a)$
-            - 乘法结合律: $\forall a,b,c\in N((a\cdot b)\cdot c=a\cdot (b\cdot c))$
-            - 乘法对加法的分配律: $\forall a,b,c\in N(a\cdot (b+c)=a\cdot b+a\cdot c)$
+            1. 乘法交换律: $\forall a,b\in N(a\cdot b=b\cdot a)$
+            2. 乘法结合律: $\forall a,b,c\in N((a\cdot b)\cdot c=a\cdot (b\cdot c))$
+            3. 乘法对加法的分配律: $\forall a,b,c\in N(a\cdot (b+c)=a\cdot b+a\cdot c)$
         3. 本原元
-            - 零元: $\forall a\in N(a+0=a)$
-            - 单位元: $\forall a\in N(a\cdot 1=a)$
-            - $0\neq 1$
+            1. 零元: $\forall a\in N(a+0=a)$
+            2. 单位元: $\forall a\in N(a\cdot 1=a)$
+            3. $0\neq 1$
         4. 序
-            - 反自反性: $n\nless n$
-            - 可递性: $(m<n\wedge n<k)\to m<k$
-            - 三歧性: $m<n\vee m=n\vee n<m$
-            - 加法保序性: $m<n\to m+k<n+k$
-            - 乘法保序性: $(m<n\wedge k\neq 0)\to mk<nk$
+            1. 反自反性: $n\nless n$
+            2. 可递性: $(m<n\wedge n<k)\to m<k$
+            3. 三歧性: $m<n\vee m=n\vee n<m$
+            4. 加法保序性: $m<n\to m+k<n+k$
+            5. 乘法保序性: $(m<n\wedge k\neq 0)\to mk<nk$
 
 2. 令 $\omega$ 为自然数集 $\mathbb{N}$, 且有
 
@@ -62,31 +62,31 @@
 1. 构造 $N^2$ 上的二元关系 $R=\{((m,n),(p,q))|m,n,p,q\in N \wedge m+q=n+p\}$, 则 $R$ 是等价关系. 其商集用 $Z$ 表示: $Z=N^2/\sim =\{[(m,n)]|m,n\in N\}$
 2. 在 $Z$ 上定义的等价类运算需要与所选取的代表无关
     1. $Z$ 上的加法: 规定 $[(m,n)]+[(p,q)]=[(m+p,n+q)]$
-        - 交换律: $\forall a,b\in Z(a+b=b+a)$
-        - 结合律: $\forall a,b,c\in Z((a+b)+c=a+(b+c))$
-        - 零元: 令 $\overline{0}=[(0,0)]$, 则有 $\forall a\in Z(a+\overline{0} =a)$
-        - 负元: $\forall a\in Z\exists !b\in Z(a+b=\overline{0})$. 也就是说, $Z$ 中每一个元素都有自己唯一的负元, $-[(m,n)]=[(n,m)]$. 从而定义减法: $b-a=b+(-a)$
+        1. 交换律: $\forall a,b\in Z(a+b=b+a)$
+        2. 结合律: $\forall a,b,c\in Z((a+b)+c=a+(b+c))$
+        3. 零元: 令 $\overline{0}=[(0,0)]$, 则有 $\forall a\in Z(a+\overline{0} =a)$
+        4. 负元: $\forall a\in Z\exists !b\in Z(a+b=\overline{0})$. 也就是说, $Z$ 中每一个元素都有自己唯一的负元, $-[(m,n)]=[(n,m)]$. 从而定义减法: $b-a=b+(-a)$
     2. $Z$ 上的乘法: 规定 $[(m,n)]\cdot [(p,q)]=[(mp+nq,mq+np)]$
-        - 交换律: $\forall a,b\in Z(a\cdot b=b\cdot a)$
-        - 结合律: $\forall a,b,c\in Z((a\cdot b)\cdot c=a\cdot (b\cdot c))$
-        - 对加法的分配律: $\forall a,b,c\in Z(a\cdot (b+c)=a\cdot b+a\cdot c)$
-        - 单位元: 令 $\overline{1}=[(1,0)]$, 则 $\forall a\in Z(a\cdot \overline{1}=a)$
+        1. 交换律: $\forall a,b\in Z(a\cdot b=b\cdot a)$
+        2. 结合律: $\forall a,b,c\in Z((a\cdot b)\cdot c=a\cdot (b\cdot c))$
+        3. 对加法的分配律: $\forall a,b,c\in Z(a\cdot (b+c)=a\cdot b+a\cdot c)$
+        4. 单位元: 令 $\overline{1}=[(1,0)]$, 则 $\forall a\in Z(a\cdot \overline{1}=a)$
     3. $Z$ 上的序: 规定 $[(m,n)]<[(p,q)]\leftrightarrow m+q<n+p$
-        - 反自反性: $\forall a\in Z(a\nless a)$
-        - 可递性: $\forall a,b,c\in Z((a<b\wedge b<c)\to a<c)$
-        - 三歧性: $\forall a,b\in Z(a<b\vee a=b\vee b<a)$
-        - 加法保序性: $\forall a,b,c\in Z(a<b\to a+c<b+c)$
-        - 乘法保序性: $\forall a,b,c\in Z(c>\overline{0}\to (a<b\to a\cdot c<b\cdot c))$
+        1. 反自反性: $\forall a\in Z(a\nless a)$
+        2. 可递性: $\forall a,b,c\in Z((a<b\wedge b<c)\to a<c)$
+        3. 三歧性: $\forall a,b\in Z(a<b\vee a=b\vee b<a)$
+        4. 加法保序性: $\forall a,b,c\in Z(a<b\to a+c<b+c)$
+        5. 乘法保序性: $\forall a,b,c\in Z(c>\overline{0}\to (a<b\to a\cdot c<b\cdot c))$
 3. 嵌入
-    - 考察 $\overline{N}=\{[(0,0)], [(1,0)], \cdots , [(n,0)], \cdots \}$, 记 $\overline{n}=[(n,0)]$, 则 $\overline{N}=\{\overline{0}, \overline{1}, \overline{2}, \cdots \}$ 具有性质:
+    1. 考察 $\overline{N}=\{[(0,0)], [(1,0)], \cdots , [(n,0)], \cdots \}$, 记 $\overline{n}=[(n,0)]$, 则 $\overline{N}=\{\overline{0}, \overline{1}, \overline{2}, \cdots \}$ 具有性质:
         1. $\overline{m}+\overline{n}=\overline{m+n}$
         2. $\overline{m}\cdot \overline{n}=\overline{mn}$
         3. $m<n\leftrightarrow \overline{m}<\overline{n}$
-    - 由于 $\overline{N}$ 构成 $Z$ 的一个封闭子集, 令 $f(n)=\overline{n}\in \overline{N} \subset Z$, 则 $f:N\to \overline{N}$ 具有性质:
+    2. 由于 $\overline{N}$ 构成 $Z$ 的一个封闭子集, 令 $f(n)=\overline{n}\in \overline{N} \subset Z$, 则 $f:N\to \overline{N}$ 具有性质:
         1. $f(m+n)=f(m)+g(n)$
         2. $f(mn)=f(m)\cdot f(n)$
         3. $m<n\to f(m)<f(n)$
-    - 以上性质说明 $f$ 是从 $N$ 到 $\overline{N}$ 的保序双射. 此时称 $N$ 与 $\overline{N}$ 同构, 并称 $f$ 把 $N$ 同构嵌入 $Z$
+    3. 以上性质说明 $f$ 是从 $N$ 到 $\overline{N}$ 的保序双射. 此时称 $N$ 与 $\overline{N}$ 同构, 并称 $f$ 把 $N$ 同构嵌入 $Z$
 4. 任取 $[(m,n)]\in Z$, 若 $m\leqslant n$, 设 $m=n+k$, 则 $[(m,n)]=[(k,0)]=\overline{k}$; 若 $m<n$, 设 $n=m+l$, 则 $[(m,n)]=[(0,l)]=-\overline{l}$. 于是
 
     $$
@@ -99,22 +99,22 @@
 1. 定义二元关系 $R\subset (Z\times (Z-\{0\}))^2$ 有 $R=\{((a,b),(c,d))\in (Z\times (Z-\{0\}))^2|ad=bc\}$ 是一个等价关系. 记 $Q=(Z\times (Z-\{0\}))/R=\{[(a,b)]|a,b\in Z \wedge b\neq 0\}$
 2. 定义仿照整数的构造过程, 保证定义的合理性, 下列性质被称作序域性质
     1. $Q$ 上的加法: 规定 $[(a,b)]+[(c,d)]=[(ad+bc,bd)]$
-        - 交换律: $\forall r,s\in Q(r+s=s+r)$
-        - 结合律: $\forall r,s,t\in Q((r+s)+t=r+(s+t))$
-        - 零元: 令 $\overline{0}=[(0,a)], a\neq 0$, 则有 $\forall r\in Q(r+\overline{0} =r)$
-        - 负元: $\forall r\in Q\exists !s\in Q(r+s=\overline{0})$. 也就是说, $Q$ 中每一个元素 $r$ 都有自己唯一的负元 $-r$
+        1. 交换律: $\forall r,s\in Q(r+s=s+r)$
+        2. 结合律: $\forall r,s,t\in Q((r+s)+t=r+(s+t))$
+        3. 零元: 令 $\overline{0}=[(0,a)], a\neq 0$, 则有 $\forall r\in Q(r+\overline{0} =r)$
+        4. 负元: $\forall r\in Q\exists !s\in Q(r+s=\overline{0})$. 也就是说, $Q$ 中每一个元素 $r$ 都有自己唯一的负元 $-r$
     2. $Z$ 上的乘法: 规定 $[(a,b)]\cdot [(c,d)]=[(ac,bd)]$
-        - 交换律: $\forall r,s\in Q(r\cdot s=s\cdot r)$
-        - 结合律: $\forall r,s,t\in Q((r\cdot s)\cdot t=r\cdot (s\cdot t))$
-        - 对加法的分配律: $\forall r,s,t\in Q(r\cdot (s+t)=r\cdot s+r\cdot t)$
-        - 单位元: 令 $\overline{1}=[(a,a)], a\neq 0$, 则 $\forall r\in Q(r\cdot \overline{1}=r)$
-        - 逆元: $\forall r=[(a,b)]\in Q, r\neq \overline{0}$, 则 $\exists !s\in Q(r\cdot s=\overline{1})$. 记 $s=r^{-1}=[(b,a)]$. 由此定义除法 $r\div s=r\cdot s^{-1}$
+        1. 交换律: $\forall r,s\in Q(r\cdot s=s\cdot r)$
+        2. 结合律: $\forall r,s,t\in Q((r\cdot s)\cdot t=r\cdot (s\cdot t))$
+        3. 对加法的分配律: $\forall r,s,t\in Q(r\cdot (s+t)=r\cdot s+r\cdot t)$
+        4. 单位元: 令 $\overline{1}=[(a,a)], a\neq 0$, 则 $\forall r\in Q(r\cdot \overline{1}=r)$
+        5. 逆元: $\forall r=[(a,b)]\in Q, r\neq \overline{0}$, 则 $\exists !s\in Q(r\cdot s=\overline{1})$. 记 $s=r^{-1}=[(b,a)]$. 由此定义除法 $r\div s=r\cdot s^{-1}$
     3. $Z$ 上的序: 设 $r=[(a,b)],s=[(c,d)]\wedge (b,d>0)$ (若 $b<0$, 则写 $[(a,b)]=[(-a,-b)]$). 规定 $r<s\leftrightarrow ad<bc$
-        - 反自反性: $\forall r\in Q(r\nless r)$
-        - 可递性: $\forall r,s,t\in Q((r<s\wedge s<t)\to r<t)$
-        - 三歧性: $\forall r,s\in Q(r<s\vee r=s\vee s<r)$
-        - 加法保序性: $\forall r,s,t\in Q(r<s\to r+t<s+t)$
-        - 乘法保序性: $\forall r,s,t\in Q(t>\overline{0}\to (r<s\to r\cdot t<s\cdot t))$
+        1. 反自反性: $\forall r\in Q(r\nless r)$
+        2. 可递性: $\forall r,s,t\in Q((r<s\wedge s<t)\to r<t)$
+        3. 三歧性: $\forall r,s\in Q(r<s\vee r=s\vee s<r)$
+        4. 加法保序性: $\forall r,s,t\in Q(r<s\to r+t<s+t)$
+        5. 乘法保序性: $\forall r,s,t\in Q(t>\overline{0}\to (r<s\to r\cdot t<s\cdot t))$
 3. 嵌入
     1. 考察 $\overline{Z}=\{[(p,1)]|p\in Z\}$, 记 $\overline{n}=[(n,1)]$, 则 $-\overline{n}=[(-n,1)]$. $\overline{Z}$ 构成 $Q$ 的封闭子集
         1. $[(p,1)]+[(q,1)]=[(p+q,1)]$
@@ -128,9 +128,9 @@
 ### 3.4.1 自然数集上的滤子
 1. 定义
     1. 滤子: 设 $N$ 的子集族 $F\subset \mathcal{P}(N)$ 满足下列条件, 则 $F$ 称作 $N$ 上的滤子
-        - $\varnothing \notin F, N\in F$
-        - 对交封闭: $a,b\in F\to a\cap b\in F$
-        - 大集性质: $((a\subset b\subset N) \wedge a\in F)\to b\in F$
+        1. $\varnothing \notin F, N\in F$
+        2. 对交封闭: $a,b\in F\to a\cap b\in F$
+        3. 大集性质: $((a\subset b\subset N) \wedge a\in F)\to b\in F$
     2. 极大滤子: 若 $F$ 有 $\forall G\supset F\to G=F$, 则称 $F$ 为极大滤子
     3. 超滤: 若 $N$ 上的滤子 $F$ 有极大性, 即 $\forall a\subset N(a\in F\vee(N-a)\in F)$, 则 $F$ 为 $N$ 上的超滤. $N$ 上全体超滤组成的集合为 $\beta N$ 或 $\beta \omega$
     4. 算术超滤: 设 $F\in \beta N$, 若 $f(F)=g(F)\to f=_Fg$, 则称 $F$ 为算术超滤
@@ -171,22 +171,22 @@
         - $k<m\to \{n|k(n)<m(n)\}=N\in F\to k(F)<m(F)$
 3. $^*N$ 的基本性质
     1. 加法
-        - 加法交换律: $\forall f(F),g(F)\in ^*N(f(F)+g(F)=g(F)+f(F))$
-        - 加法结合律: $\forall f(F),g(F),h(F)\in ^*N((f(F)+g(F))+h(F)=f(F)+(g(F)+h(F)))$
+        1. 加法交换律: $\forall f(F),g(F)\in ^*N(f(F)+g(F)=g(F)+f(F))$
+        2. 加法结合律: $\forall f(F),g(F),h(F)\in ^*N((f(F)+g(F))+h(F)=f(F)+(g(F)+h(F)))$
     2. 乘法
-        - 乘法交换律: $\forall f(F),g(F)\in ^*N(f(F)\cdot g(F)=g(F)\cdot f(F))$
-        - 乘法结合律: $\forall f(F),g(F),h(F)\in ^*N((f(F)\cdot g(F))\cdot h(F)=f(F)\cdot (g(F)\cdot h(F)))$
-        - 乘法对加法的分配律: $\forall f(F),g(F),h(F)\in ^*N(f(F)\cdot (g(F)+h(F))=f(F)\cdot g(F)+f(F)\cdot h(F))$
+        1. 乘法交换律: $\forall f(F),g(F)\in ^*N(f(F)\cdot g(F)=g(F)\cdot f(F))$
+        2. 乘法结合律: $\forall f(F),g(F),h(F)\in ^*N((f(F)\cdot g(F))\cdot h(F)=f(F)\cdot (g(F)\cdot h(F)))$
+        3. 乘法对加法的分配律: $\forall f(F),g(F),h(F)\in ^*N(f(F)\cdot (g(F)+h(F))=f(F)\cdot g(F)+f(F)\cdot h(F))$
     3. 本原元
-        - 零元: $\forall f(F)\in ^*N(f(F)+0(F)=f(F))$
-        - 单位元: $\forall f(F)\in ^*N(f(F)\cdot 1(F)=f(F))$
-        - $\overline{0}\neq \overline{1}$
+        1. 零元: $\forall f(F)\in ^*N(f(F)+0(F)=f(F))$
+        2. 单位元: $\forall f(F)\in ^*N(f(F)\cdot 1(F)=f(F))$
+        3. $\overline{0}\neq \overline{1}$
     4. 序
-        - 反自反性: $f(F)\nless f(F)$
-        - 可递性: $(f(F)<g(F)\wedge g(F)<h(F))\to f(F)<h(F)$
-        - 三歧性: $f(F)<g(F)\vee f(F)=g(F)\vee g(F)<f(F)$
-        - 加法保序性: $f(F)<g(F)\to f(F)+h(F)<g(F)+h(F)$
-        - 乘法保序性: $(f(F)<g(F)\wedge h(F)\neq \overline{0})\to f(F)h(F)<g(F)h(F)$
+        1. 反自反性: $f(F)\nless f(F)$
+        2. 可递性: $(f(F)<g(F)\wedge g(F)<h(F))\to f(F)<h(F)$
+        3. 三歧性: $f(F)<g(F)\vee f(F)=g(F)\vee g(F)<f(F)$
+        4. 加法保序性: $f(F)<g(F)\to f(F)+h(F)<g(F)+h(F)$
+        5. 乘法保序性: $(f(F)<g(F)\wedge h(F)\neq \overline{0})\to f(F)h(F)<g(F)h(F)$
 4. $N$ 嵌入 $^*N$
     1. 令 $\overline{N}=\{\overline{n}|n\in N\}\subset ^*N$, 它是主超滤集合, 且构成 $^*N$ 对运算的封闭子集
         1. 考虑映射 $\varphi (n):N\to \overline{N}, \varphi (n)=\overline{n}$. 则 $\varphi$ 为保序保运算的双射
@@ -237,22 +237,22 @@
     - 记 $x\in Q_<$ 所在的等价类为 $[x]=\{y\in Q_<|y\sim x\}$, 等价类构成的集合为 $Q_</\sim =\{[x]|x\in Q_<\}$, 记作 $R$
 2. 运算性质
     1. $Q_</\sim$ 上的加法: $[x]+[y]=[x+y]$
-        - 交换律: $\forall [x],[y]\in Q_</\sim ([x]+[y]=[y]+[x])$
-        - 结合律: $\forall [x],[y],[z]\in Q_</\sim (([x]+[y])+[z]=[x]+([y]+[z]))$
-        - 零元: $\forall [x]\in Q_</\sim ([x]+[0] =[x])$
-        - 负元: $\forall [x]\in Q_</\sim \exists [-x]\in Q_</\sim ([x]+[-x]=[0]])$
+        1. 交换律: $\forall [x],[y]\in Q_</\sim ([x]+[y]=[y]+[x])$
+        2. 结合律: $\forall [x],[y],[z]\in Q_</\sim (([x]+[y])+[z]=[x]+([y]+[z]))$
+        3. 零元: $\forall [x]\in Q_</\sim ([x]+[0] =[x])$
+        4. 负元: $\forall [x]\in Q_</\sim \exists [-x]\in Q_</\sim ([x]+[-x]=[0]])$
     2. $Q_</\sim$ 上的乘法: $[x]\cdot [y]=[x\cdot y]$
-        - 交换律: $\forall [x],[y]\in Q_</\sim ([x]\cdot [y]=[y]\cdot [x])$
-        - 结合律: $\forall [x],[y],[z]\in Q_</\sim (([x]\cdot [y])\cdot [z]=[x]\cdot ([y]\cdot [z]))$
-        - 对加法的分配律: $\forall [x],[y],[z]\in Q_</\sim ([x]\cdot ([y]+[z])=[x]\cdot [y]+[x]\cdot [z])$
-        - 单位元: $\forall [x]\in Q_</\sim ([x]\cdot [1]=[x])$
-        - 逆元: $[x]\neq 0\to (\dfrac{1}{x}\in Q_< \wedge [x]\cdot \left[ \dfrac{1}{x}\right]=[1])$
+        1. 交换律: $\forall [x],[y]\in Q_</\sim ([x]\cdot [y]=[y]\cdot [x])$
+        2. 结合律: $\forall [x],[y],[z]\in Q_</\sim (([x]\cdot [y])\cdot [z]=[x]\cdot ([y]\cdot [z]))$
+        3. 对加法的分配律: $\forall [x],[y],[z]\in Q_</\sim ([x]\cdot ([y]+[z])=[x]\cdot [y]+[x]\cdot [z])$
+        4. 单位元: $\forall [x]\in Q_</\sim ([x]\cdot [1]=[x])$
+        5. 逆元: $[x]\neq 0\to (\dfrac{1}{x}\in Q_< \wedge [x]\cdot \left[ \dfrac{1}{x}\right]=[1])$
     3. $Q_</\sim$ 上的序: 规定 $[x]<[y]\leftrightarrow x<y\wedge x\nsim y$
-        - 反自反性: $\forall [x]\in Q_</\sim ([x]\nless [x])$
-        - 可递性: $\forall [x],[y],[z]\in Q_</\sim (([x]<[y]\wedge [y]<[z])\to [x]<[z])$
-        - 三歧性: $\forall [x],[y]\in Q_</\sim ([x]<[y]\vee [x]=[y]\vee [y]<[x])$
-        - 加法保序性: $\forall [x],[y],[z]\in Q_</\sim ([x]<[y]\to [x]+[z]<[y]+[z])$
-        - 乘法保序性: $\forall [x],[y],[z]\in Q_</\sim ([z]>[0]\to ([x]<[y]\to [x]\cdot [z]<[y]\cdot [z]))$
+        1. 反自反性: $\forall [x]\in Q_</\sim ([x]\nless [x])$
+        2. 可递性: $\forall [x],[y],[z]\in Q_</\sim (([x]<[y]\wedge [y]<[z])\to [x]<[z])$
+        3. 三歧性: $\forall [x],[y]\in Q_</\sim ([x]<[y]\vee [x]=[y]\vee [y]<[x])$
+        4. 加法保序性: $\forall [x],[y],[z]\in Q_</\sim ([x]<[y]\to [x]+[z]<[y]+[z])$
+        5. 乘法保序性: $\forall [x],[y],[z]\in Q_</\sim ([z]>[0]\to ([x]<[y]\to [x]\cdot [z]<[y]\cdot [z]))$
 3. $\left< Q_{<}/\sim ,+,\cdot ,<,[0],[1],\right>$ 拥有上述性质, 是一个序域
     1. $Q,Q_<$ 有 $\mathrm{Archimedes}$ 性质, 而 $^*Q$ 没有. 但 $Q_<$ 不是域, 而将 $Q_<$ 剖分成的 $R$ 是一个序域
     2. 定义 $\overline{Q}=\{[r]|r\in Q\}$, 它关于加法, 乘法成了 $R$ 的封闭子集. 再令 $H(r)=[r],H:Q\to \overline{Q}$ 即为所需要的嵌入映射(保运算性, 保序性, 双射). 于是 $Q$ 与 $\overline{Q}$ 同构, $H$ 把 $Q$ 同构嵌入 $R$. $\overline{Q}$ 成为 $Q$, $Q\subset R$

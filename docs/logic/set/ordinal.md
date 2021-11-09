@@ -11,19 +11,19 @@
         也可以用非严格的偏序关系定义全序集, 即 $\forall x,y\in a(xry\vee yrx)$, 则$a$ 上的偏序关系 $r$ 是 $a$ 上的全序
 
     1. 保序映射: 设 $a,b$ 是全序集, 且有 $f:a\to b$ 使得 $\forall x,y\in a(x<y\to f(x)<f(y))$, 则 $f$ 为 $a$ 到 $b$ 的保序映射
-        - 设 $a$ 为全序集, $b$ 为偏序集, $f:a\to b$ 有 $\forall x,y\in a(x<y\to f(x)<f(y))$, 则 $f[a]$ 是 $b$ 中的全序子集
-        - 设 $f$ 为全序集 $a$ 到 全序集 $b$ 的保序映射, 则 $f$ 为单射且反向蕴含 $\forall x,y\to a(x<y\leftrightarrow f(x)<f(y))$ 也成立. 此时称 $a$ 与 $b$ 同构: $\left< a,<\right> \cong \left< b,< \right>$
+        1. 设 $a$ 为全序集, $b$ 为偏序集, $f:a\to b$ 有 $\forall x,y\in a(x<y\to f(x)<f(y))$, 则 $f[a]$ 是 $b$ 中的全序子集
+        2. 设 $f$ 为全序集 $a$ 到 全序集 $b$ 的保序映射, 则 $f$ 为单射且反向蕴含 $\forall x,y\to a(x<y\leftrightarrow f(x)<f(y))$ 也成立. 此时称 $a$ 与 $b$ 同构: $\left< a,<\right> \cong \left< b,< \right>$
     2. 初始段: 设 $a$ 为全序集, $b\subset a$, 若 $b$ 有 $\forall x\in b\forall y\in a(y<x\to y\in b)$, 则称 $b$ 为 a 的初始段
-        - 若 $b\neq a$, 则称 $b$ 为 $a$ 的真初始段
-        - 设 $a$ 为全序集, 若 $x\in a$, 记 $a_x=\{ t\in a|t<x\}$, 则 $a_x$ 为 $a$ 的一个 (以 $x$ 为端点的) 初始段. 对于全序集而言, 不是所有的初始段都能用 $a_x$ 的形式表示
+        1. 若 $b\neq a$, 则称 $b$ 为 $a$ 的真初始段
+        2. 设 $a$ 为全序集, 若 $x\in a$, 记 $a_x=\{ t\in a|t<x\}$, 则 $a_x$ 为 $a$ 的一个 (以 $x$ 为端点的) 初始段. 对于全序集而言, 不是所有的初始段都能用 $a_x$ 的形式表示
     3. 序性质: 全序集在同构之下能保持的性质. 全序间的同构具有自反性, 对称性, 可递性
 
 ### 4.1.2 良序
 1. 概念: 集合 $a$ 上二元关系若存在以下性质, 则称作 $a$ 上的良序. 带有良序 $r$ 的集合称作 $r-$ 良序集, 良序集 $a$ 连同其上的良序 $r$ 形成良序结构 $\left< a,r \right>$
-    - 反自反性: $\forall x\in a\neg (xrx)$
-    - 可递性: $\forall x,y,z\in a(xry\wedge yrz\to xrz)$
-    - 三分律: $\forall x,y\in a(xry\vee x=y\vee yrx)$
-    - 良基性: $\forall b\subset a(b\neq \varnothing \to \exists y\in b\forall x\in b\neg (xry))$
+    1. 反自反性: $\forall x\in a\neg (xrx)$
+    2. 可递性: $\forall x,y,z\in a(xry\wedge yrz\to xrz)$
+    3. 三分律: $\forall x,y\in a(xry\vee x=y\vee yrx)$
+    4. 良基性: $\forall b\subset a(b\neq \varnothing \to \exists y\in b\forall x\in b\neg (xry))$
 
 2. 按定义, 良序就是具有良基性的全序, 所以良序集的任一非空子集都有最小元
     1. 若 $\left< a,r\right>$ 是良序结构且 $b\subset a$, 则子结构 $\left< b,r \cap b^2\right>$ 也是良序结构
@@ -39,11 +39,11 @@
 ## 4.2 序数
 ### 4.2.1 序数
 1. $\mathrm{von\ Neumann}$ 序数: $\in -$ 良序的可递集称作序数, 即具有以下性质的集合 $\alpha$
-    - $\in -$ 反自反性: $\forall x\in \alpha (x\notin x)$
-    - $\in -$ 可递性: $\forall x,y,z\in \alpha(x\in y\wedge y\in z\to x\in z)$
-    - $\in -$ 三分律: $\forall x,y\in a(x\in y\vee x=y\vee y\in x)$
-    - $\in -$ 良基性: $\alpha$ 的任意`非空子集有 $\in -$ 极小元
-    - $\alpha$ 是可递集, 即 $y\in x\wedge x\in \alpha \to y\in \alpha$
+    1. $\in -$ 反自反性: $\forall x\in \alpha (x\notin x)$
+    2. $\in -$ 可递性: $\forall x,y,z\in \alpha(x\in y\wedge y\in z\to x\in z)$
+    3. $\in -$ 三分律: $\forall x,y\in a(x\in y\vee x=y\vee y\in x)$
+    4. $\in -$ 良基性: $\alpha$ 的任意`非空子集有 $\in -$ 极小元
+    5. $\alpha$ 是可递集, 即 $y\in x\wedge x\in \alpha \to y\in \alpha$
 
     !!! note "序数与自然数"
         1. $0=\varnothing$ 是最简单的序数. 因为每个自然数都是可递集, 且都是 $\in -$ 良序集, 所以每个自然数都是序数
@@ -71,8 +71,8 @@
 
 ### 4.2.3 Hartogs 数
 1. 集合 $a$ 的 $\mathrm{Hartogs}$ 数是一个序数 $\alpha$, 它具有以下性质
-    - $\alpha$ 到 $a$ 不存在单射
-    - 若 $\beta<\alpha$, 则 $\beta \preccurlyeq \alpha$
+    1. $\alpha$ 到 $a$ 不存在单射
+    2. 若 $\beta<\alpha$, 则 $\beta \preccurlyeq \alpha$
 2. 每个集合 $a$ 都有 $\mathrm{Hartogs}$ 数, 即都有到该集合不存在单射的最小的序数. 集合 $a$ 的 $\mathrm{Hartogs}$ 数就是序数 $a^+=\{\beta|\beta \preccurlyeq \alpha\}$
 
 ## 4.3 超限归纳法
@@ -82,9 +82,9 @@
     2. 用超限归纳法证明命题 $\forall x\in ap(x)$: 先对 $a$ 的最小元 $x_0$ 直接验证 $p(x_0)$ 成立, 然后任取 $x\in a$, 归纳假设 $\forall y<xp(y)$, 再证明 $p(x)$ 成立
 2. 良序集基本定理: 对任意良序集 $a$ 与 $b$, 有 $a\cong b\vee \exists y\in b(a\cong b_y)\vee \exists x\in a(b\cong a_x)$
     1. 良序集基本定理的引理
-        - 设 $a$ 是良序集, 若映射 $f:a\to a$是保序的, 即 $x_1<x_2\to f(x_1)<f(x_2)$, 则对任意 $x\in a$ 有 $x\leqslant f(x)$
-        - 良序集与它的任一真初始段不同构
-        - 设 $a,b$ 为良序集, 以下三种情况至多出现一种: ① $a\cong b$; ② $a\cong b_y, y\in b$; ③ $b\cong a_x, x\in a$
+        1. 设 $a$ 是良序集, 若映射 $f:a\to a$是保序的, 即 $x_1<x_2\to f(x_1)<f(x_2)$, 则对任意 $x\in a$ 有 $x\leqslant f(x)$
+        2. 良序集与它的任一真初始段不同构
+        3. 设 $a,b$ 为良序集, 以下三种情况至多出现一种: ① $a\cong b$; ② $a\cong b_y, y\in b$; ③ $b\cong a_x, x\in a$
     2. 推论: 若 $a,b$ 是良序集, 则有 $a\preccurlyeq b\wedge b\preccurlyeq a$
 
 ### 4.3.2 序数的超限归纳法
@@ -96,14 +96,14 @@
 
     !!! note "序数运算的递归定义"
         1. 序数加法的递归定义:
-            - $\alpha +0=\alpha,\alpha +\beta'=(\alpha +\beta')$
-            - 当 $\beta$ 为极限序数时, $\alpha +\beta =\cup \{\alpha +\gamma |\gamma <\beta\}$
+            1. $\alpha +0=\alpha,\alpha +\beta'=(\alpha +\beta')$
+            2. 当 $\beta$ 为极限序数时, $\alpha +\beta =\cup \{\alpha +\gamma |\gamma <\beta\}$
         2. 序数乘法的递归定义:
-            - $\alpha \cdot 0=\alpha,\alpha \cdot \beta'=\alpha \cdot \beta +\alpha$
-            - 当 $\beta$ 为极限序数时, $\alpha \cdot \beta =\cup \{\alpha \cdot \gamma |\gamma <\beta\}$
+            1. $\alpha \cdot 0=\alpha,\alpha \cdot \beta'=\alpha \cdot \beta +\alpha$
+            2. 当 $\beta$ 为极限序数时, $\alpha \cdot \beta =\cup \{\alpha \cdot \gamma |\gamma <\beta\}$
         3. 序数乘法的递归定义:
-            - $\alpha ^0=1,\alpha^{\beta +1}=\alpha ^\beta \cdot \alpha$
-            - 当 $\beta$ 为极限序数时, $\alpha ^\beta =\cup \{\alpha ^\gamma |\gamma <\beta \}$
+            1. $\alpha ^0=1,\alpha^{\beta +1}=\alpha ^\beta \cdot \alpha$
+            2. 当 $\beta$ 为极限序数时, $\alpha ^\beta =\cup \{\alpha ^\gamma |\gamma <\beta \}$
         
         序数由小到大的排列如下. 请注意, 这个排序的所有省略号都有无穷项, 所以序数的「序」存在, 但是这些序数并没有排成一列. 良序原理编保证任何集合都是良序集, 但不代表这些集合就是可数集:
 

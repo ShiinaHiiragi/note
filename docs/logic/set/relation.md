@@ -16,8 +16,8 @@
     1. $\mathrm{Dom}(r)=\{x\in a|\exists y\in b((x,y)\in r)\}$  
       $\mathrm{Ran}(r)=\{y\in b|\exists x\in a((x,y)\in r)\}$
     2. $r\subset a\times b,c\in a$, $r$ 在 $c$ 上的限制 $r|c=\{(x,y)\in r|x\in c\}$
-        - $\mathrm{Dom}(r|c)=\mathrm{Dom}(r)\cap c$
-        - 记 $\mathrm{Ran}(r|c)=r[c]$, 称之为 $c$ 在 $r$ 下的象.  
+        1. $\mathrm{Dom}(r|c)=\mathrm{Dom}(r)\cap c$
+        2. 记 $\mathrm{Ran}(r|c)=r[c]$, 称之为 $c$ 在 $r$ 下的象.  
           若 $c\subset b$, 则 $r^{-1}[c]$ 为 $c$ 在 $r$ 下的原象
     3. $r^{-1}=\{(y,x)|(x,y)\in r\}$, 于是 $\mathrm{Dom}(r^{-1})=\mathrm{Ran}(r)$, $\mathrm{Ran}(r^{-1})=\mathrm{Dom}(r)$
     4. $r\subset a\times b,s\subset b\times c$, 则 $s\circ r=\{(x,z)|\exists y((x,y)\in r\wedge(y,z\in s))\}$, 且有 $(s\circ r)^{-1}=r^{-1}\circ s^{-1}$
@@ -29,23 +29,23 @@
     3. 可递性: $\forall x,y,z\in a((xRy\wedge yRz)\to xRz)$
 4. 等价关系: 设 $R\subset a^2$, 若 $R$ 同时有自反性, 对称性, 可递性, 则称 $R$ 为 $a$ 上的等价关系. 如果只有一个等价关系, 则 $xRy$ 可以记作 $x\sim y$
     1. 等价类: 任取 $x\in a$, 记 $[x]=\{t\in a|t\sim x\}$, 则将 $[x]$ 称作 $x$ 的等价类
-        - $x\in [x]$
-        - $x\sim y\to [x]=[y]$
-        - 不同的等价类没有公共元素: $[x]\neq [y]\to [x]\cap [y]=\varnothing$
+        1. $x\in [x]$
+        2. $x\sim y\to [x]=[y]$
+        3. 不同的等价类没有公共元素: $[x]\neq [y]\to [x]\cap [y]=\varnothing$
     2. 剖分/分类: 集合 $a$ 的子集族 $P\subset \mathcal{P}(a)$ 若满足 $\cup P=a$ 且 $\varnothing \notin P\vee(\forall b,c\in P(b\neq c\to b\cap c=\varnothing))$, 则 $P$ 称为集合 $a$ 的剖分/分类
     3. 商集: 设 $R$ 是集合 $a$ 上面的一个等价关系, 关于 $R$, 所有的等价类的集合记作 $a/R=\{[x]|x\in a\}$, 称作 $a$ 关于 $R$ 的商集
-        - $a/R$ 唯一对应了 $a$ 的一个剖分
-        - 设 $P$ 是 $a$ 的一个剖分, 用 $P$ 可以唯一定义 $a$ 上的等价关系 $R=\{(x,y)\in a^2|\exists b\in P(x\in b\wedge y\in b)\}$, 且有 $a/R=P$
+        1. $a/R$ 唯一对应了 $a$ 的一个剖分
+        2. 设 $P$ 是 $a$ 的一个剖分, 用 $P$ 可以唯一定义 $a$ 上的等价关系 $R=\{(x,y)\in a^2|\exists b\in P(x\in b\wedge y\in b)\}$, 且有 $a/R=P$
     4. 总而言之, 集合上所有等价关系与所有剖分之间存在一一对应
 5. 偏序
     1. 偏序关系: 若集合 $a$ 上的二元关系 $r\subset a^2$ 具有自反性, 反对称性和可递性, 则称 $r$ 为 $a$ 上的偏序关系, 并称 $a$ 为 $r-$偏序集
         - 一般记 $xry$ 为 $x\leqslant y$, 偏序集 $a$ 连同其上的偏序 $r$ 形成偏序结构 $\left< a,r\right>$, 也记作 $\left< a,\leqslant \right>$
     2. 若集合 $a$ 上的二元关系 $s\subset a^2$ 具有反自反性和可递性, 则称 $s$ 为 $a$ 上的严格偏序关系, 其结构记作 $\left< a,<\right>$. 且有 $x<y\leftrightarrow x\leqslant y\wedge x\neq y$
     3. 设 $a$ 为偏序集, $x\in a$, 那么最小元和最大元分别一定是极小元和极大元, 其中
-        - 若 $\forall y\in a(y\nless x)$, 则称 $x$ 为 $a$ 的极小元
-        - 若 $\forall y\in a(x\leqslant y)$, 则称 $x$ 为 $a$ 的最小元
-        - 若 $\forall y\in a(x\nless y)$, 则称 $x$ 为 $a$ 的极大元
-        - 若 $\forall y\in a(y\leqslant x)$, 则称 $x$ 为 $a$ 的最大元
+        1. 若 $\forall y\in a(y\nless x)$, 则称 $x$ 为 $a$ 的极小元
+        2. 若 $\forall y\in a(x\leqslant y)$, 则称 $x$ 为 $a$ 的最小元
+        3. 若 $\forall y\in a(x\nless y)$, 则称 $x$ 为 $a$ 的极大元
+        4. 若 $\forall y\in a(y\leqslant x)$, 则称 $x$ 为 $a$ 的最大元
 
 ## 2.2 映射
 1. 相关定义

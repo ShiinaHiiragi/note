@@ -100,9 +100,9 @@
     !!! note "序数与基数的加乘运算"
         在集合 $k\times \{0\} \cup \lambda \times \{1\}$ 中定义序 $<$, 则这个集合构成良序集
 
-        - 若 $x\in \alpha,y\in \beta$, 则 $(x,0)<(y,1)$
-        - 若 $x\in y\in \alpha$, 则 $(x,0)<(y,0)$
-        - 若 $x\in y\in \beta$, 则 $(x,1)<(y,1)$
+        1. 若 $x\in \alpha,y\in \beta$, 则 $(x,0)<(y,1)$
+        2. 若 $x\in y\in \alpha$, 则 $(x,0)<(y,0)$
+        3. 若 $x\in y\in \beta$, 则 $(x,1)<(y,1)$
 
         将其序型用 $\alpha \oplus \beta$ 表示, 则有以下各式成立, 其中 $\gamma$ 为极限序数. 于是有 $\alpha \oplus \beta=\alpha+\beta$
 
@@ -114,8 +114,8 @@
 
         在集合 $\beta \times \alpha$ 定义序 $<$, 则这个集合构成良序集
 
-        - 若 $x\in x_1\in \beta$, 则 $(x,y)<(x_1,y_1)$
-        - 若 $y\in y_1\in \alpha$, 则 $(x,y)<(x,y_1)$
+        1. 若 $x\in x_1\in \beta$, 则 $(x,y)<(x_1,y_1)$
+        2. 若 $y\in y_1\in \alpha$, 则 $(x,y)<(x,y_1)$
 
         将其序型用 $\alpha \otimes \beta$ 表示, 则有以下各式成立, 其中 $\gamma$ 为极限序数. 于是有 $\alpha \otimes \beta=\alpha \cdot \beta$
 
@@ -143,8 +143,8 @@
         1. $\mathrm{cf}(\mathrm{cf}(\alpha))=\mathrm{cf}(\alpha)$
         2. $\mathrm{cf}(\alpha)$ 是基数
 2. 若 $\kappa \geqslant \omega$, 则 $\mathrm{cf}(2^\kappa)>\kappa$
-    - $\mathrm{Konig}$ 引理: 设 $\kappa \geqslant \omega$ 且 $\mathrm{cf}(\kappa)\leqslant \lambda$, 则 $\kappa^\lambda>\kappa$ 
-    - 推论: $2^\omega \neq \omega_\omega$
+    1. $\mathrm{Konig}$ 引理: 设 $\kappa \geqslant \omega$ 且 $\mathrm{cf}(\kappa)\leqslant \lambda$, 则 $\kappa^\lambda>\kappa$ 
+    2. 推论: $2^\omega \neq \omega_\omega$
 3. $\mathrm{GCH}$: 设 $\kappa \geqslant 2,\lambda \geqslant 1$ 且 $\mathrm{max}\{\kappa,\lambda\}\geqslant \omega$, 则有下表成立
 
     |||||

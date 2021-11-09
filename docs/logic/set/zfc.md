@@ -62,8 +62,8 @@
     2. 归纳集: 对于集合 $a$, 若 $\varnothing \in a \wedge (x\in a \to x'\in a)$, 则 $a$ 为归纳集
     3. 可递集: $y\in t\in x \to y\in x$. 也就是 $\forall t \in x(t\subset x)$, $\forall t\in x(t\in \mathcal{P}(x))$, $x\subset \mathcal{p}(x)$, $\cup x\subset x$
     4. 序列: 设 $f:n\to a$ 为 $a$ 的有限序列, $f:\omega \to a$ 为 $a$的无限序列
-        - 有限序列记作 $\left< a_i|i\in n\right>$
-        - 无限序列记作 $\left< a_i|i\in \omega \right>$ 或 $\left< a_i\right>^{\infty}_{i=1}$
+        1. 有限序列记作 $\left< a_i|i\in n\right>$
+        2. 无限序列记作 $\left< a_i|i\in \omega \right>$ 或 $\left< a_i\right>^{\infty}_{i=1}$
 2. 无限公理断言了归纳集的存在: $\exists s(\varnothing \in s \wedge \forall x(x\in s \to x'\in s))$. 
 
 ### 1.2.7 替换公理
@@ -107,8 +107,8 @@
 1. 良基集
     1. 序数函数 $v_\alpha:v_0=0, v_{\alpha+1}=\mathcal{P}(v_\alpha),v_\gamma=\bigcup_{\beta<\gamma}v_{\beta}$, 其中 $\gamma$ 为极限序数, $v$ 的下标是序数及加法运算
     2. 将每个 $v_\alpha$ 的元素称作良基集, 所有良基集构成的类记作 $\mathrm{V}=\bigcup_{\alpha \in \mathrm{On}}v_\alpha$
-        - 每个 $v_\alpha$ 都是可递集
-        - 严格递增性: $\gamma<\alpha \to(v_\gamma \subset v_\alpha \wedge v_\gamma \neq v_\alpha)$
+        1. 每个 $v_\alpha$ 都是可递集
+        2. 严格递增性: $\gamma<\alpha \to(v_\gamma \subset v_\alpha \wedge v_\gamma \neq v_\alpha)$
 
         !!! note "$\mathrm{V}$ 的前几个层次"
             $$

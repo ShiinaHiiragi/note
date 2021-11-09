@@ -10,8 +10,8 @@
 ## 2.1 简单命题
 ### 2.1.1 直言命题
 1. 概念: 断定事物具有某种性质的命题, 具有主项 $\mathrm{S}$, 谓项 $\mathrm{P}$, 联项和量项
-    - 根据联项 (是或不是) 的不同, 可以分为肯定命题或否定命题, 根据量项 (所有或有的) 的不同, 可以分为全程命题 (包括单称命题) 或特称命题
-    - 周延性: 在一个命题中, 其主项或谓项的全部外延被做了断定, 那么这个命题的主项或谓项就是周延的
+    1. 根据联项 (是或不是) 的不同, 可以分为肯定命题或否定命题, 根据量项 (所有或有的) 的不同, 可以分为全程命题 (包括单称命题) 或特称命题
+    2. 周延性: 在一个命题中, 其主项或谓项的全部外延被做了断定, 那么这个命题的主项或谓项就是周延的
 2. 四种命题形式: 全称肯定命题 ($\mathrm{SAP}$, 左上), 全称否定命题 ($\mathrm{SEP}$, 右上), 特称肯定命题 ($\mathrm{SIP}$ 左下) 以及 特称否定命题 ($\mathrm{SOP}$, 右下)
     1. 利用 Venn 图, 可以表示概念外延间各种不同关系的图解. 其中, 利用阴影部分表示不存在, 用 「$+$」 表示存在
     2. 就主项而言, 全称命题是周延的; 就谓项而言, 否定命题是周延的 
@@ -136,11 +136,11 @@
             2. 由 $p\leftrightarrow q$ 和 $\overline{p}$ 可推出 $\overline{q}$; 和 $\overline{q}$ 可推出 $\overline{p}$
 4. 负命题: 对原命题断定情况的否定而作出的命题, 记作 $\overline{p}$ 或 $\neg p$, 读作 「非 $p$」
     1. 对于直言命题
-        - $\mathrm{\overline{SAP}}\leftrightarrow \mathrm{SOP}, \mathrm{\overline{SEP}}\leftrightarrow \mathrm{SIP}, \mathrm{\overline{SIP}}\leftrightarrow \mathrm{SEP}, \mathrm{\overline{SOP}}\leftrightarrow \mathrm{SAP}$
-        - $\overline{\overline{p}}=p$
+        1. $\mathrm{\overline{SAP}}\leftrightarrow \mathrm{SOP}, \mathrm{\overline{SEP}}\leftrightarrow \mathrm{SIP}, \mathrm{\overline{SIP}}\leftrightarrow \mathrm{SEP}, \mathrm{\overline{SOP}}\leftrightarrow \mathrm{SAP}$
+        2. $\overline{\overline{p}}=p$
     2. 对于复合命题
-        - $\overline{p\wedge q}=\overline{p}\vee \overline{q}, \overline{p\vee q}=\overline{p}\wedge \overline{q}, \overline{p\dot{\vee} q}=(p\wedge q)\vee (\overline{p}\wedge \overline{q})$
-        - $\overline{p\to q}=p\wedge \overline{q}, \overline{p\leftarrow q}=\overline{p}\wedge q, \overline{p\leftrightarrow q}=(p\wedge \overline{q})\vee (\overline{p}\wedge q)$
+        1. $\overline{p\wedge q}=\overline{p}\vee \overline{q}, \overline{p\vee q}=\overline{p}\wedge \overline{q}, \overline{p\dot{\vee} q}=(p\wedge q)\vee (\overline{p}\wedge \overline{q})$
+        2. $\overline{p\to q}=p\wedge \overline{q}, \overline{p\leftarrow q}=\overline{p}\wedge q, \overline{p\leftrightarrow q}=(p\wedge \overline{q})\vee (\overline{p}\wedge q)$
 5. 真值表: 显示复合命题的真假是如何由其肢命题的真假所决定的表格
     1. 复合命题的真值表 (记 $+$ 为真, $-$ 为假):
 
@@ -162,8 +162,8 @@
 
 ### 2.2.2 假言选言推理
 1. 假言选言推理 (二难推理): 由两个假言前提和一个具有二肢的选言前提联合作为前提而构成的推理
-    - 简单式和复杂式: 结论是简单的直言命题或复合的选言命题
-    - 构成式和破坏式: 论的得出是运用了充分条件假言推理的肯定式或否定式
+    1. 简单式和复杂式: 结论是简单的直言命题或复合的选言命题
+    2. 构成式和破坏式: 论的得出是运用了充分条件假言推理的肯定式或否定式
 2. 假言选言推理的分类
     1. 简单构成式: 前提中肯定两个假言命题的不同前件, 结论肯定两个假言命题的相同后件. 即由 $p\to q, r\to q, p\vee r$ 推出 $q$
     2. 简单破坏式: 前提中否定两个假言命题的不同后件, 结论否定两个假言命题的相同前件. 即由 $p\to q, p\to r, \overline{q}\vee \overline{r}$ 推出 $\overline{p}$
