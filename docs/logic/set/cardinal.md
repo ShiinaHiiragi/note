@@ -86,7 +86,7 @@
         $$
 
         !!! note "$\mathrm{Cantor}$ 悖论"
-            假如 $\mathrm{Cn}$ 为集合, 那么 $\cup \mathrm{Cn}$ 也是基数, 而且比所有基数都大, 但是最大的基数时不存在的. 因此, $\mathrm{Cn}$ 不是集合, 否则利用替换公理, $\mathrm{On}$ 也可以是集合
+            假如 $\mathrm{Cn}$ 为集合, 那么 $\cup \mathrm{Cn}$ 也是基数, 而且比所有基数都大, 但是最大的基数不存在. 因此, $\mathrm{Cn}$ 不是集合, 否则利用替换公理, $\mathrm{On}$ 也可以是集合
 
 4. $\mathrm{Cn}$ 上的超限归纳法: 若 $\forall \kappa(\forall \lambda <\kappa p(\lambda)\to p(\kappa))$, 则 $\forall \kappa p(\kappa)$
 

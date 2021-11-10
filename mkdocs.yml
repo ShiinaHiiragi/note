@@ -41,7 +41,7 @@ extra_css:
 nav:
   - 通用:
     - 介绍: index.md
-    - 索引: intro/dir.md
+    # - 索引: intro/dir.md
     - 许可证: intro/license.md
   - 形而上学:
     - 一、形式逻辑:
