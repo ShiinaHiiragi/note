@@ -3905,10 +3905,12 @@ Bootstrap 适合短时间开发简单的静态网站
 
     ```javascript
     if (app.isPackaged) {
-      mainWindow.webContents.openDevTools();
-      win.loadURL("http://localhost:3000/");
+      mainWindow.loadURL(path.join(__dirname, './build/index.html'));
     }
-    else mainWindow.loadURL(path.join(__dirname, './build/index.html'));
+    else {
+      mainWindow.webContents.openDevTools();
+      mainWindow.loadURL('http://localhost:3000/');
+    }
     ```
 
 4. 在开启 `nodeIntegration` 后，可以在前端使用 Node.js 的接口，但是无法通过require调用本地包，而是应该使用 `window.require`。这样在网页上无法访问，只能在 Electron 上调试。如果 Electron 上也无法运行，检查包是否安装出错

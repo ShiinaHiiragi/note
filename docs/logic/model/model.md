@@ -46,4 +46,4 @@
     3. 对 $\mathcal{L}$ 的任一 $n$ 元函数符 $f$ 及任意 $x_1,x_2,\cdots ,x_n\in A$, 都有 $F(f_A(x_1,x_2,\cdots ,x_n))=f_B(F(x_1),F(x_2),\cdots ,F(x_n))$
 2. 同构的结构除了形式上不同, 本质上并无不同, 可以将同构的结构视为同一
     1. 若 $F$ 是 $A$ 到 $B$ 的同构, 则逆映射 $F^{-1}$ 是 $B$ 到 $A$ 的同构; 同构的复合也是同构
-    2. 完备序域在同构意义下唯一, 即任何完备序域 $\left< \overline{R},<,+,\cdot ,\overline{0},\overline{1}\right>$ 都有 $R\cong \overline{R}$.
+    2. 完备序域在同构意义下唯一, 即任何完备序域 $\left< \overline{R},<,+,\cdot ,\overline{0},\overline{1}\right>$ 都有 $R\cong \overline{R}$
