@@ -6,9 +6,9 @@
 全文以 `mkdocs-material` 作为框架, 使用中文作为描述语言. 为了输入方便, 中文部分使用英文标点符号分隔句子, 每个标点符号后面会有一个空格.
 
 !!! warning "此项目仍未完成, 可能存在若干疏漏和错误"
-    <label> 现在进度: 数学哲学 - 逻辑实证主义 </label>
+    <label> 现在进度: 数学哲学 - 演绎主义 </label>
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 44%;"> 44% </div>
+        <div class="progress-percentage" style="width: 51%;"> 51% </div>
     </div>
 
 ## 参考文献
