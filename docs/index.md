@@ -8,7 +8,7 @@
 !!! warning "此项目仍未完成, 可能存在若干疏漏和错误"
     <label> 现在进度: 数学哲学 - 演绎主义 </label>
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 51%;"> 51% </div>
+        <div class="progress-percentage" style="width: 60%;"> 60% </div>
     </div>
 
 ## 参考文献
