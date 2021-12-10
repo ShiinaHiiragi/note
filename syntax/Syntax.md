@@ -4476,6 +4476,56 @@ Bootstrap 适合短时间开发简单的静态网站
       {
         "key": "ctrl+shift+oem_2",
         "command": "git-graph.view"
+      },
+      {
+        "key": "shift+space",
+        "command": "editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+      },
+      {
+        "key": "ctrl+space",
+        "command": "-editor.action.triggerSuggest",
+        "when": "editorHasCompletionItemProvider && textInputFocus && !editorReadonly"
+      },
+      {
+        "key": "ctrl+pagedown",
+        "command": "scrollPageDown",
+        "when": "textInputFocus"
+      },
+      {
+        "key": "alt+pagedown",
+        "command": "-scrollPageDown",
+        "when": "textInputFocus"
+      },
+      {
+        "key": "ctrl+pageup",
+        "command": "scrollPageUp",
+        "when": "textInputFocus"
+      },
+      {
+        "key": "alt+pageup",
+        "command": "-scrollPageUp",
+        "when": "textInputFocus"
+      },
+      {
+        "key": "alt+home",
+        "command": "cursorTop",
+        "when": "textInputFocus"
+      },
+      {
+        "key": "ctrl+home",
+        "command": "-cursorTop",
+        "when": "textInputFocus"
+      },
+      {
+        "key": "alt+end",
+        "command": "cursorBottom",
+        "when": "textInputFocus"
+      },
+      {
+        "key": "ctrl+end",
+        "command": "-cursorBottom",
+        "when": "textInputFocus"
       }
     ]
     ```
@@ -4486,7 +4536,6 @@ Bootstrap 适合短时间开发简单的静态网站
         - 下一个 / 上一个焦点：<kbd>Tab</kbd> 或 <kbd>Shift</kbd> + <kbd>Tab</kbd> 
         - 新建窗口：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd>
         - 关闭窗口：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>W</kbd>
-
     - 文件操作
         - （没有选中时）复制 / 剪切光标所在行：<kbd>Ctrl</kbd> + <kbd>C</kbd> 或 <kbd>Ctrl</kbd> + <kbd>X</kbd>
         - 向上 / 向下移动行：<kbd>Alt</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Alt</kbd> + <kbd>ArrowDown</kbd>
@@ -4494,18 +4543,17 @@ Bootstrap 适合短时间开发简单的静态网站
         - 在下方 / 上方添加新的一行：<kbd>Ctrl</kbd> + <kbd>Enter</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
         - 选择整行：<kbd>Ctrl</kbd> + <kbd>L</kbd>
         - 添加注释 / 取消注释：<kbd>Ctrl</kbd> + <kbd>/</kbd>
-
     - 查找与替换
-
         - 查找或替换：<kbd>Ctrl</kbd> + <kbd>F</kbd> 或 <kbd>Ctrl</kbd> + <kbd>H</kbd>
         - 上一个 / 下一个： <kbd>Enter</kbd> 或 <kbd>Shift</kbd> + <kbd>Enter</kbd>
         - 全部替换：<kbd>Alt</kbd> + <kbd>Enter</kbd>
-
     - 多光标
-
         - 向上 / 向下新增光标：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>ArrowDown</kbd>
         - 光标选择内容的所有出现位置：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>
         - 光标所在字符串的所有出现位置：<kbd>Ctrl</kbd> + <kbd>F2</kbd>
+    - 缩进
+        - 增加缩进 / 减少缩进：<kbd>Ctrl</kbd> + <kbd>]</kbd> 或 <kbd>Ctrl</kbd> + <kbd>[</kbd>
+        - 配置缩进：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>I</kbd>
 
 3. 焦点移动
 
@@ -4518,35 +4566,30 @@ Bootstrap 适合短时间开发简单的静态网站
         - 插件管理：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>X</kbd> 
         - 错误报告：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Q</kbd>
         - 版本图像：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>/</kbd>
-        
     - 主面板
-
         - 编辑器与终端的转换：
             - 焦点转到第 `n` 个编辑器：<kbd>Ctrl</kbd> + <kbd>Num<n></kbd>
             - 焦点转到终端 / 隐去终端：<kbd>Ctrl</kbd> + <kbd>`</kbd>
         - 标签页转换
             - 上一个 / 下一个标签页：<kbd>Alt</kbd> + <kbd>PageUp</kbd> 或 <kbd>Alt</kbd> + <kbd>PageDown</kbd>
             - 上一个 / 下一个标签页选择： <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Tab</kbd>
-
     - 页面滚动
         - 向上 / 向下滚动：<kbd>Ctrl</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>ArrowDown</kbd>
         - 向上 / 向下滚动一页：<kbd>Ctrl</kbd> + <kbd>PageUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>PageDown</kbd>
-        - 滚动到页面首 / 尾：<kbd>Ctrl</kbd> + <kbd>Home</kbd> 或 <kbd>Ctrl</kbd> + <kbd>End</kbd>
     - 光标移动
         - 移到上一个 / 下一个单词：<kbd>Ctrl</kbd> + <kbd>ArrowLeft</kbd> 或 <kbd>Ctrl</kbd> + <kbd>ArrowRight</kbd>
         - 移到行首 / 行尾：<kbd>Home</kbd> 或 <kbd>End</kbd>
         - 向上 / 向下移动一页：<kbd>PageUp</kbd> 或 <kbd>PageDown</kbd>
+        - 滚动到页面首 / 尾：<kbd>Alt</kbd> + <kbd>Home</kbd> 或 <kbd>Alt</kbd> + <kbd>End</kbd>
 
 4. 命令窗口
 
     - 命令窗口
-
         - 打开命令面板：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
         - 打开开发工具：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>
         - 打开文件：<kbd>Ctrl</kbd> + <kbd>P</kbd> ，加 `:` 去往行号，加 `@` 去往符号
         - 打开设置：<kbd>Ctrl</kbd> + <kbd>,</kbd>
     - 终端操作
-
         - 新建终端：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>
         - 终端最大化 / 最小化：<kbd>Alt</kbd> + <kbd>`</kbd> 
         - 关闭终端示例 ：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Q</kbd>
@@ -4557,9 +4600,9 @@ Bootstrap 适合短时间开发简单的静态网站
         - 查看定义 / 查看参照：<kbd>F12</kbd> 或 <kbd>Shift</kbd> + <kbd>F12</kbd>
     - 快捷功能
         - 用外部应用打开文件： <kbd>Alt</kbd> + <kbd>B</kbd>
-        - 配置缩进：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>I</kbd>
         - 固定标签页：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>K</kbd>
         - Vim 模式：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd>
+        - 提供建议：<kbd>Shift</kbd> + <kbd>Space</kbd>
 
 ##### （三）C++ 环境配置文件
 
