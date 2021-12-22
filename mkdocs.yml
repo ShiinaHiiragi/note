@@ -43,13 +43,14 @@ nav:
     - 介绍: index.md
     # - 索引: intro/dir.md
     - 许可证: intro/license.md
-  - 形而上学:
+  - 认知基础:
     - 一、形式逻辑:
       - 1 概念: meta/formal/concept.md
       - 2 命题与演绎: meta/formal/deduction.md
       - 3 归纳和类比: meta/formal/induction.md
       - 4 非形式逻辑: meta/formal/proof.md
-    - 四、数学哲学:
+  - 形而上学:
+    - 三、数学哲学:
       - 1 基本问题与历史观点: meta/math/concept.md
       - 2 三大主义: meta/math/doctrine.md
       - 3 当代观点: meta/math/contemp.md
