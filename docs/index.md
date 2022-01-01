@@ -12,16 +12,17 @@
     </div>
 
 ## 参考文献
-[1] 华东师范大学哲学系逻辑学教研室.形式逻辑[M]. 华东师大出版社:上海, 2016:1-193.  
-[2] Robin Turner,Nick Nicholas.Lojban For Beginners[EB/OL].  
-[3] 蔡曙山,邹崇理.自然语言形式理论研究[M]. 人民出版社:北京, 2010:1-604.  
-[4] 陈波.逻辑哲学[M]. 北京大学出版社:北京, 2006:1-364.  
-[5] 陈嘉映.语言哲学[M]. 北京大学出版社:北京, 2006:1-368.  
-[6] [美]Stewart Shapiro.数学哲学：对数学的思考[M]. 郝兆宽,杨睿之,译. 复旦大学出版社:上海, 2009:1-281.  
-[7] 汪芳庭.数学基础[M]. 高等教育出版社:北京, 2018:1-271.  
-[8] 汪芳庭.数理逻辑[M]. 中国科学技术大学出版社:合肥, 2010:1-188.  
-[9] 郝兆宽,杨睿之,杨跃.数理逻辑：证明及其限度[M]. 复旦大学出版社:上海, 2020:1-243.  
-[10] 熊金城.点集拓扑讲义[M]. 高等教育出版社:北京, 2020:1-162.  
+[1] 蔡曙山.认知科学导论[M]. 人民出版社:北京, 2021:1-697.  
+[2] 华东师范大学哲学系逻辑学教研室.形式逻辑[M]. 华东师大出版社:上海, 2016:1-193.  
+[3] Robin Turner,Nick Nicholas.Lojban For Beginners[EB/OL].  
+[4] 蔡曙山,邹崇理.自然语言形式理论研究[M]. 人民出版社:北京, 2010:1-604.  
+[5] 陈波.逻辑哲学[M]. 北京大学出版社:北京, 2006:1-364.  
+[6] 黄敏.分析哲学导论[M]. 中山大学出版社:广州, 2009:1-362.  
+[7] [美]Stewart Shapiro.数学哲学：对数学的思考[M]. 郝兆宽,杨睿之,译. 复旦大学出版社:上海, 2009:1-281.  
+[8] 汪芳庭.数学基础[M]. 高等教育出版社:北京, 2018:1-271.  
+[9] 汪芳庭.数理逻辑[M]. 中国科学技术大学出版社:合肥, 2010:1-188.  
+[10] 郝兆宽,杨睿之,杨跃.数理逻辑：证明及其限度[M]. 复旦大学出版社:上海, 2020:1-243.  
 [11] 徐利治.现代数学手册·近代数学卷[M]. 华中科技大学出版社:武汉, 2001:1-52.  
-[12] Rob Nederpelt,Herman Geuvers.Type Theory and Formal Proof: an Introduction[M]. Cambridge University Press:Cambridge, 2014:1-390.  
-[13] The Univalent Foundations Program.Homotopy Type Theory[EB/OL].  
+[12] 熊金城.点集拓扑讲义[M]. 高等教育出版社:北京, 2020:1-162.  
+[13] Rob Nederpelt,Herman Geuvers.Type Theory and Formal Proof: an Introduction[M]. Cambridge University Press:Cambridge, 2014:1-390.  
+[14] The Univalent Foundations Program.Homotopy Type Theory[EB/OL].  

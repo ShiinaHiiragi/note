@@ -44,7 +44,7 @@ nav:
     # - 索引: intro/dir.md
     - 许可证: intro/license.md
   - 认知基础:
-    - 一、形式逻辑:
+    - 二、形式逻辑:
       - 1 概念: meta/formal/concept.md
       - 2 命题与演绎: meta/formal/deduction.md
       - 3 归纳和类比: meta/formal/induction.md
