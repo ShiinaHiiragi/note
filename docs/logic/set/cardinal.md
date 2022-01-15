@@ -28,7 +28,7 @@
         !!! note "$\mathrm{Cantor}$ 定理的推论"
             1. $Q\approx Z\approx N^{n}\approx N$, $n$ 为任意有限整数
             2. $C\approx R^{n}\approx R\approx ^NN\approx \mathcal{P}(N)$, $n$ 为任意有限整数
-    
+
 4. 连续统: 由于实数和直线上的点一一对应, 通常将 $R^n$ 称作 $n$ 维连续统. 
     1. $\mathrm{Luroth}$ 定理: 一维连续统 $R$ 和二维连续统 $R^2$ 之间不存在连续双射
     2. $\mathrm{CH}$ 连续统假设: $2^{\omega_0}=\omega_1$, 即不存在集合 $A$ 使得 $N\prec A\prec R$. 在 $\mathrm{ZFC}$ 公理系统下, 连续统假设是不可判定的
@@ -67,7 +67,7 @@
 
         !!! note "对 $\omega$ 的构造"
             利用以上定理, 可以让每个序数联系一个超限基数 $\omega_\alpha$, 其中, $\gamma$ 是极限序数
-            
+
             $$
             \displaylines{\aleph_0=\omega\\
             \aleph_{\alpha+1}=\aleph_\alpha^+\\
