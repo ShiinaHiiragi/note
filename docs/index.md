@@ -6,9 +6,9 @@
 因能力有限, 本站以 `mkdocs-material` 作为框架, 使用中文作为描述语言, 所有源文件在 GitHub 可见. 为了输入方便, 中文部分使用英文标点符号分隔句子, 每个半角标点符号后面会附加一个半角空格.
 
 !!! warning "此项目仍未完成, 可能存在若干疏漏和错误"
-    <label> 现在进度: 非形式逻辑 - 论证 </label>
+    <label> 现在进度: 非形式逻辑 - 重言式 </label>
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 7%;"> 7% </div>
+        <div class="progress-percentage" style="width: 28%;"> 28% </div>
     </div>
 
 ## 参考文献
