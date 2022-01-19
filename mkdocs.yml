@@ -45,10 +45,10 @@ nav:
     - 许可证: intro/license.md
   - 认识基础:
     - 二、形式逻辑:
-      - 1 概念: meta/formal/concept.md
-      - 2 命题与演绎: meta/formal/deduction.md
-      - 3 归纳和类比: meta/formal/induction.md
-      - 4 非形式逻辑: meta/formal/proof.md
+      - 1 概念: cogn/formal/concept.md
+      - 2 命题与演绎: cogn/formal/deduction.md
+      - 3 归纳和类比: cogn/formal/induction.md
+      - 4 非形式逻辑: cogn/formal/proof.md
   - 形而上学:
     - 三、数学哲学:
       - 1 基本问题与历史观点: meta/math/concept.md
