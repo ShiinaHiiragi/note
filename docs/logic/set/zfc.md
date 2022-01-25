@@ -60,6 +60,17 @@
     5. $\mathrm{De\ Morgan}$ 律: $a-(b\cup c)=(a-b)\cap(b-c)$, $a-(b\cap c)=(a-b)\cup(b-c)$
 4. 补集: 设全集 (基础集) 为 $u$, 则对于任一集合 $a\subset u$, 称 $\overline a = a'=u-a$
 
+    !!! note "有标集族"
+        对于集族 $A=\{a_i|i\in I\}$, 定义有标集族 $\{a_i\}_{i\in I}=\{(i, a_i)|i\in I\}\subset I\times A$, 其中 $I\neq \varnothing$. 定义并集为 $\bigcup_{i\in I}a_i=\{x\in A|\exists i\in I(x\in a_i)\}$, 交集为 $\bigcap_{i\in I}a_i=\{x\in A|\forall i\in I(x\in a_i)\}$
+
+        1. 设 $\{a_i\}_{i\in I}$ 和 $\{b_j\}_{j\in J}$ 为两非空集族, 若 $\{a_i|i\in I\}=\{b_j|j\in J\}$, 则有 $\bigcup_{i\in I}a_i=\bigcup_{j\in J}b_j, \bigcap_{i\in I}a_i=\bigcap_{j\in J}b_j$. 特别地, $\bigcup_{i\in I}a_i=\cup A, \bigcap_{i\in I}a_i=\cap A$
+        2. 设 $\{a_i\}_{i\in I}$ 是一个非空的有标集族, $a$ 是一个集合
+            1. $\forall i_0\in I(\bigcap_{i\in I}a_i\subset a_{i_0}\subset \bigcup_{i\in I}a_i)$
+            2. 分配律: $a\cap\left(\bigcup_{i\in I}a_i\right) = \bigcup_{i\in I}(a\cap a_i), a\cup\left(\bigcap_{i\in I}a_i\right) = \bigcap_{i\in I}(a\cup a_i)$
+            3. $\mathrm{De\ Morgan}$ 律:$a-\left(\bigcup_{i\in I}a_i\right)=\bigcap_{i\in I}(a- a_i), a-\left(\bigcap_{i\in I}a_i\right)=\bigcup_{i\in I}(a- a_i)$
+        3. 设 $r\subset x\times y$, 则对于集合 $x$ 的任何一个非空子集族 $\{a_i\}_{i\in I}$ 有 $r\left(\bigcup_{i\in I} a_i\right)=\bigcup_{i\in I}r(a_i), r\left(\bigcap_{i\in I} a_i\right)\subset \bigcap_{i\in I}r(a_i)$
+        4. 设 $f: x\to y$, 则对于集合 $y$ 的任何一个非空子集族 $\{b_j\}_{j\in J}$ 有 $f^{-1}\left(\bigcup_{j\in J}b_j\right)=\bigcup_{j\in J}f^{-1}(b_j), f^{-1}\left(\bigcap_{j\in J}b_j\right)=\bigcap_{j\in J}f^{-1}(b_j)$
+
 ### 1.2.5 幂集公理
 - 设 $a$ 已知, 则 $\exists y\forall x(x\in y \leftrightarrow x\subset a)$, 记为 $\exists y(y=\mathcal{P}(a))$
 
@@ -93,7 +104,7 @@
 
     !!! note "选择公理的特殊性"
         1. 对于有穷个元素的集族 $a$ 或者选择函数不具有随意性的情况, 不需要选择公理, 选择函数是自然存在的
-        2. $\mathrm{Godel}$ 证明了 $\mathrm{ZFC}$ 相对于 $\mathrm{ZF}$ 的无矛盾性, 这说明使用选择公理时相对安全的
+        2. $\mathrm{Godel}$ 证明了 $\mathrm{ZFC}$ 相对于 $\mathrm{ZF}$ 的无矛盾性, 这说明使用选择公理是相对安全的
         3. 选择公理没有给出具体构造方法而断言集族上选择函数的存在, 具有非构造性的特点, 这与直觉主义的原则「存在等于可构造」有一定冲突
 
 2. 选择公理的等价形式

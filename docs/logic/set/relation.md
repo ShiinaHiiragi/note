@@ -28,7 +28,7 @@
       反对称性: $\forall x,y\in a((xRy\wedge yRx)\to x=y)$
     3. 可递性: $\forall x,y,z\in a((xRy\wedge yRz)\to xRz)$
 4. 等价关系: 设 $R\subset a^2$, 若 $R$ 同时有自反性, 对称性, 可递性, 则称 $R$ 为 $a$ 上的等价关系. 如果只有一个等价关系, 则 $xRy$ 可以记作 $x\sim y$
-    1. 等价类: 任取 $x\in a$, 记 $[x]=\{t\in a|t\sim x\}$, 则将 $[x]$ 称作 $x$ 的等价类
+    1. 等价类: 任取 $x\in a$, 记 $[x]_R=\{t\in a|t\sim x\}$, 则将 $[x]_R$ 或 $[x]$ 称作 $x$ 的等价类
         1. $x\in [x]$
         2. $x\sim y\to [x]=[y]$
         3. 不同的等价类没有公共元素: $[x]\neq [y]\to [x]\cap [y]=\varnothing$
@@ -68,3 +68,15 @@
     1. $g=f|c$, 即 $\forall x\in c(f(x)=g(x))$, 称 $f$ 为 $g$ 的扩张, $g$ 为 $f$ 的限制
     2. 定义 $^{a}b=\{f|f:a\to b\}$, 该定义的合法性由 $^{a}b\subset \mathcal{P}(a\times b)$ 保证. 当 $b\subset c$ 时, $^{a}b\subset ^{a}c$
     3. 单位映射: 集合 $a$ 中的恒同关系, 即定义 $i_a: a\to a, \forall x\in a((x, x)\in i_a)$, 当 $f: a\to b$ 为双射时, $f^{-1}\circ f=i_a, f\circ f^{-1}=i_b$
+
+## 2.3 集族的 Descartes 积
+1. 投射与自然投射
+    1. 投射: 设 $x_1, x_2, \cdots, x_n$ 是 $n(n\geqslant 1)$ 个集合, 从 $x=x_1\times x_2\times \cdots, x_n$ 到其第 $i(1\leqslant i\leqslant n)$ 个坐标集 $x_i$ 的投射 $p_i: x\to x_i$ 定义为 $\forall x=(a_1, a_2, \cdots, a_n) \in x: p_i(x)=a_i$, 即 $p_i=\{((a_1, a_2, \cdots, a_n), a_i)|(a_1, a_2, \cdots, a_n)\in x\}\subset x\times x_i$
+    2. 自然投射: 设 $R$ 是集合 $x$ 中的一个等价关系, 从集合 $x$ 到其商集 $x/R$ 的自然投射 $p:x\to x/R$ 定义为 $\forall x\in x: p(x)=[x]$, 即 $p=\{(x, [x])|x\in x\}\subset x\times x/R$
+2. 设集族 $\{x_i\}_{i\in I}$ 的 $\mathrm{Descartes}$ 积为 $\prod_{i\in I}x_i=\{x: I\to \bigcup_{i\in I}x_i|\forall i\in I(x(i)\in x_i)\}$
+    1. 对于每一个 $i\in I$, 集合 $x_i$ 为 $\mathrm{Descartes}$ 积 $\prod_{i\in I}x_i$ 的第 $i$ 个坐标集
+    2. 对于 $i\in I$, 定义 $p_i: \prod_{i\in I}x_i \to x_i$, 使得对于任意 $x\in \prod_{i\in I}x_i$ 有 $p_i(x)=x(i)$, 称为 $\mathrm{Descartes}$ 积的第 $i$ 个投射
+3. 设给定了集族 $\{x_i\}_{i\in I}$, 则 $\mathrm{Descartes}$ 积 $\prod_{i\in I}x_i \neq \varnothing \leftrightarrow \forall i\in I(x_i\neq \varnothing)$
+4. 给定两个集族 $\{x_i\}_{i\in I}, \{y_i\}_{i\in I}$, 且 $\forall i\in I(y_i\subset x_i)$. 若对于任意 $i\in I$, 都有 $y_i\neq \varnothing$, 则对于任意 $k\in I$ 有 $p_k\left(\prod_{i\in I}x_i\right)=y_k$
+    1. 设集族 $\{x_i\}_{i\in I}$ 对每一个 $i\in I$ 有 $x_i\neq \varnothing$, 则对于任意 $k\in I$, $\mathrm{Descartes}$ 积 $\prod_{i\in I}x_i$ 的第 $k$ 个投影 $p_k$ 都是满射
+    2. 设集族 $\{x_i\}_{i\in I}$ 对每一个 $i\in I$ 有 $x_i\neq \varnothing$, 又设 $\varnothing \neq I_1 \subset I$, 集族 $\{x_i\}_{i\in I}$满足条件: 对于每一个 $i\in I_1$ 有 $\varnothing \neq a_i\subset x_i$, 则对于每一个 $k\in I$ 有 $p_k\left(\bigcap_{i\in I_1}p^{-1}_i(a_i)\right)=\left\{\begin{aligned}&x_k, k\in I-I_1 \\&a_k, i\in I_1\end{aligned}\right.$, 其中 $p_k$ 是 $\mathrm{Descartes}$ 积 $\prod_{i\in I}x_i$ 的第 $k$ 个投射
