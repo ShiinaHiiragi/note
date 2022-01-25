@@ -8,9 +8,10 @@
         2. $(x=y)\to (p(x)\to p(y))$, 其中 $y$ 不在 $x$ 中自由出现
 2. 为了方便讨论, 采用以下缩写记号. 必要时总可以展开回原来的语言
     1. $\forall x(x\in a\to x\in b)$: $a\subset b$
-    2. $\forall x(x\in a\to p(x))$: $\forall x\in ap(x)$
-    3. $\exists x(x\in a \wedge p(x))$: $\exists x\in ap(x)$
-    4. $\exists x(p(x)\wedge \forall y(p(y)\to y=x))$: $\exists !xp(x)$
+    2. $\forall x(x\in a\to x\in b) \wedge \exists x(\neg x\in a \wedge x\in b)$: $a\varsubsetneqq b$
+    3. $\forall x(x\in a\to p(x))$: $\forall x\in ap(x)$
+    4. $\exists x(x\in a \wedge p(x))$: $\exists x\in ap(x)$
+    5. $\exists x(p(x)\wedge \forall y(p(y)\to y=x))$: $\exists !xp(x)$
 
 ## 1.2 ZF 公理
 - 集存在定理: $\vdash \exists x(x=x)$, 在有的地方被作为第零条公理而存在
@@ -47,9 +48,17 @@
 
 ### 1.2.4 并集公理
 1. 内容: 设 $a$ 已知, 则 $\exists y\forall x(x\in y)\leftrightarrow \exists t\in a(x\in t)$
-2. 并集和交集
+2. 并集和交集的定义
     1. 并集用并集公理定义: 记 $\{x|\exists t\in a(x\in t)\}=\cup a$, 记 $\cup \{s,t\}=s\cup t$; 记 $\{u|u=a\vee u=b\vee u=c\}=\{a, b, c\}$, 记 $\cup\{a_i|i\in I\}=\bigcup_{i\in I}a_i$
     2. 交集用内涵公理定义: $\cap a=\{x\in \cap a|\forall t\in a(x\in t)\}$, 记 $\cap \{s,t\}=s\cap t$, 记 $\cap\{a_i|i\in I\}=\bigcap_{i\in I}a_i$
+    3. 差集用子集通过内涵公理定义: $a-b=a\backslash b=\{x\in a|x\notin b\}$, 当 $b$ 是 $a$ 的子集时, 称 $a-b$ 为 $b$ 在 $a$ 中的余集
+3. 并集和交集的运算
+    1. 幂等律: $a\cup a=a$, $a\cap a=a$
+    2. 交换律: $a\cup b=b\cup a$, $a\cap b=b\cap a$
+    3. 结合律: $(a\cup b)\cup c=a\cup (b\cup c)$, $(a\cap b)\cap c=a\cap (b\cap c)$
+    4. 分配律: $(a\cap b)\cup c=(a\cup c) \cap (b\cup c)$, $(a\cup b)\cap c=(a\cap c) \cup (b\cap c)$
+    5. $\mathrm{De\ Morgan}$ 律: $a-(b\cup c)=(a-b)\cap(b-c)$, $a-(b\cap c)=(a-b)\cup(b-c)$
+4. 补集: 设全集 (基础集) 为 $u$, 则对于任一集合 $a\subset u$, 称 $\overline a = a'=u-a$
 
 ### 1.2.5 幂集公理
 - 设 $a$ 已知, 则 $\exists y\forall x(x\in y \leftrightarrow x\subset a)$, 记为 $\exists y(y=\mathcal{P}(a))$

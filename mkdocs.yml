@@ -63,6 +63,6 @@ nav:
       - 5 势与基数: logic/set/cardinal.md
     - 三、模型论:
       - 1 结构与模型: logic/model/model.md
-  - 数学基础:
-    - 一、点集拓扑:
+  - 数学结构:
+    - 二、点集拓扑:
       - 1 拓扑空间与连通性: math/top/space.md
