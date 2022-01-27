@@ -65,4 +65,4 @@ nav:
       - 1 结构与模型: logic/model/model.md
   - 数学结构:
     - 二、点集拓扑:
-      - 1 拓扑空间与连通性: math/top/space.md
+      - 1 拓扑空间: math/top/space.md
