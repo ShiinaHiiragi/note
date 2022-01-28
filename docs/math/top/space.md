@@ -52,12 +52,31 @@
 3. 补空间: 对于基础集 $X$, 记子集 $A\subset X$ 的补集 $A'=X-A$
     1. 设 $X$ 为一个集合, 令 $\mathscr T=\{U\subset X|U'$ 是 $X$ 中的一个有限子集 $\}\cup \{\varnothing\}$, 则称 $\mathscr T$ 是 $X$ 的有限补拓扑, 称 $(X, \mathscr T)$ 为有限补空间
     2. 设 $X$ 为一个集合, 令 $\mathscr T=\{U\subset X|U'$ 是 $X$ 中的一个可数子集 $\}\cup \{\varnothing\}$, 则称 $\mathscr T$ 是 $X$ 的可数补拓扑, 称 $(X, \mathscr T)$ 为可数补空间
-4. 连续映射
+4. 邻域: 设 $(X, \mathscr T)$ 是一个拓扑空间, $x\in X$. 如果 $U$ 是 $X$ 的一个子集, 且存在一个开集 $V\in \mathscr T$ 使得 $x\in V\subset U$，则称 $U$ 是点 $x$ 的一个邻域. 
+    1. 如果 $U$ 是包含点 $x$ 的一个开集, 那么 $U$ 必定是 $x$ 的一个邻域, 称 $U$ 是点 $x$ 的一个开邻域. 称点 $x$ 所有邻域构成的 $X$ 的子集族为点 $x$ 的邻域系
+    2. 拓扑空间 $X$ 的一个子集 $U$ 是开集 $\leftrightarrow \forall x\in U: U$ 是 $x$ 的一个邻域
+    3. 设 $X$ 是一个拓扑空间, 记 $\mathscr U_x$ 为点 $x\in X$ 的邻域系
+        1. $\forall x\in X: \mathscr U_x \neq \varnothing$, 且若 $U\in \mathscr U_x$, 则 $x\in U$
+        2. 若 $U, V\in \mathscr U_x$, 则 $U\cap V\in \mathscr U_x$
+        3. 若 $U\in \mathscr U_x \wedge U\subset V$, 则 $V\in \mathscr U_x$
+        4. 若 $U\in \mathscr U_x$, 则 $\exists V\in \mathscr U_x(V\subset U \wedge \forall y\in V: V\in \mathscr U_y)$
+    4. 邻域定义拓扑空间: 设 $X$ 是一个集合, 且 $\forall x\in X$ 指定了 $X$ 的一个子集族 $\mathscr U_x$, 且它们满足上述定理的四条性质, 则 $X$ 有唯一一个拓扑 $\mathscr T$ 使得对于每一点 $x\in X$, 子集族 $\mathscr U_x$ 恰是点 $x$ 在拓扑空间 $(X, \mathscr T)$ 中的邻域系
+
+5. 连续映射
     1. 设 $X, Y$ 是两个拓扑空间, $f: X\to Y$. 如果 $Y$ 中的每一个开集 $U$ 的原像 $f^{-1}(U)$ 是 $X$ 中的一个开集, 则称 $f$ 是从 $X$ 到 $Y$ 的一个连续映射, 或称映射 $f$ 连续
-    2. 设 $X,Y,Z$ 都是拓扑空间
+    2. 设 $X, Y, Z$ 都是拓扑空间
         1. 恒同映射 $i_X: X\to X$ 是一个连续映射
         2. 如果 $f: X\to Y$ 和 $g: Y\to Z$ 都是连续映射, 则 $g\circ f: X\to Z$ 也是连续映射
-5. 同胚: 设 $X, Y$ 是两个拓扑空间, 如果 $f: X\to Y$ 是一个双射, 并且 $f$ 和 $f^{-1}: Y\to X$ 都是连续的, 则称 $f$ 是一个同胚映射, 同时也称 $f^{-1}$ 为同胚 $f$ 的同胚逆
+
+    !!! note "邻域定义连续性"
+        设 $X, Y$ 是两个拓扑空间, $f: X\to Y, x\in X$. 如果 $f(x)\in Y$ 的每一个邻域的原像 $f^{-1}(U)$ 是 $x\in X$ 的一个邻域, 则称邻域 $f$ 是一个在点 $x$ 处连续的映射
+
+        1. 设 $X, Y, Z$ 都是拓扑空间
+            1. 恒同映射 $i_X: X\to X$ 是一个连续映射
+            2. 如果 $f: X\to Y$ 和 $g: Y\to Z$ 都是连续映射, 则 $g\circ f: X\to Z$ 也是连续映射
+        2. 设 $X, Y$ 是两个拓扑空间, $f: X\to Y$, 则映射 $f$ 连续当且仅当 $\forall x\in X$, 映射 $f$ 在点 $x$ 处连续
+
+6. 同胚: 设 $X, Y$ 是两个拓扑空间, 如果 $f: X\to Y$ 是一个双射, 并且 $f$ 和 $f^{-1}: Y\to X$ 都是连续的, 则称 $f$ 是一个同胚映射, 同时也称 $f^{-1}$ 为同胚 $f$ 的同胚逆
     1. 设 $X, Y, Z$ 都是拓扑空间
         1. 恒同映射 $i_X: X\to X$ 是一个同胚
         2. 如果 $f: X\to Y$ 是一个同胚, 则 $f^{-1}: Y\to X$ 也是一个同胚
@@ -66,5 +85,59 @@
     3. 拓扑不变性质: 拓扑空间的某种性质 $P$, 若为某一个拓扑空间所具有, 也必为与其同胚的任何一个拓扑空间所具有, 则称此性质是一个拓扑不变性质
 
 ## 1.2 基本概念
+### 1.2.1 导集与闭集
+1. 凝聚点: 设 $X$ 是一个拓扑空间, $A\subset X$
+    1. 凝聚点: 如果点 $x\in X$ 的每一个邻域 $U$ 中都有 $A$ 中异于 $x$ 的点, 则 $U\cap(A-|x|)\neq \varnothing$, 则称点 $x$ 是集合 $A$ 的一个凝聚点或极限点
+    2. 孤立点: 若存在 $x$ 的一个邻域 $U$ 使得 $U\cap(A-|x|)= \varnothing$, 则称 $x$ 为 $A$ 的一个孤立点
+2. 导集: 设 $X$ 是一个拓扑空间, $A\subset X$
+    1. 定义: 集合 $A$ 中所有凝聚点构成的集合, 记作 $d(A)$
+    2. 设 $X$ 是一个拓扑空间, $A\subset X$
+        1. $d(\varnothing) = \varnothing$A
+        2. $A\subset B\to d(A)\subset d(B)$
+        3. $d(A\cup B) = d(A) \cup d(B)$
+        4. $d(d(A)) \subset A\cup d(A)$
+3. 闭集: 设 $X$ 是一个拓扑空间, $A\subset X$, 若 $d(A) \subset A$, 则称 $A$ 是拓扑空间 $X$ 的一个闭集
+    1. 设 $X$ 是一个拓扑空间, $A\subset X$, 则 $A$ 为闭集 $\leftrightarrow A'$ 为开集
+    2. 设 $X$ 是一个拓扑空间, 记 $\mathscr F$ 为所有闭集构成的族
+        1. $X, \varnothing \in \mathscr F$
+        2. 若 $A, B\in \mathscr F$, 则 $A\cup B\in \mathscr F$
+        3. 如果 $\varnothing \neq \mathscr F_1\subset \mathscr F$, 则 $\bigcap_{A\in \mathscr F_1}A\in \mathscr F$
+
+    !!! note "$\mathrm{Cantor}$ 集"
+        在实数空间 $R$ 中, 定义 $f_1, f_2: R\to R$ 使得对于任意 $t\in R$ 有 $f_1(t)=\dfrac{t}{3}, f_2(t)=\dfrac{t+2}{3}$, 则可以验证 $f_1, f_2$ 均为同胚, 即任意开集 $U\subset R$, 其 $f_1-$像与 $f_2-$像都是开集
+
+        定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1(A_{n-1})\cup f_2(A_{n-1})(n>1), A=\bigcup_{n\in Z_+}A_n$, 称集合 $C=[0, 1]-A$ 为 $\mathrm{Cantor}$ 集或标准 $\mathrm{Cantor}$ 三分集, 可以验证 $C$ 是一个闭集
+
+4. 闭包: 设 $X$ 是一个拓扑空间, $A\subset X$, 称集合 $A\cup d(A)$ 为集合 $A$ 的闭包, 记作 $\overline A$ 或 $A^-$
+    1. $x\in \overline A$ 当且仅当对于 $x$ 的任何一个邻域 $U$ 有 $U\cap A\neq \varnothing$
+    2. 拓扑空间 $X$ 的子集 $A$ 是闭集当且仅当 $A=\overline A$, 且任意子集 $A$ 的闭包 $\overline A$ 都是闭集
+    3. 设 $X$ 是一个拓扑空间, 则对于任意 $A, B\subset X$ 有
+        1. $\overline \varnothing = \varnothing$
+        2. $A\subset \overline A$
+        3. $\overline{A\cup B} = \overline A \cup \overline B$
+        4. $\overline{\overline A} = \overline A$
+    4. 设 $X$ 是一个拓扑空间, $\mathscr F$ 是由空间 $X$ 中所有闭集构成的族, 则对于 $X$ 的每个子集 $A$, 有 $\overline A = \bigcap_{B\in \mathscr F, A\subset B}B$
+5. 闭包运算: 设 $X$ 是一个集合, 映射 $c^*: \mathcal P(X)\to \mathcal P(X)$ 若对于任意 $A, B\in \mathcal P(X)$, 满足以下 $\mathrm{Kuratowski}$ 公理, 则称为集合 $X$ 上的一个闭包运算
+    1. $c^*(\varnothing) = \varnothing$
+    2. $A\subset c^*(A)$
+    3. $c^*(A\cup B) = c^*(A) \cup c^*(B)$
+    4. $c^*(c^*(A)) = c^*(A)$
+6. 闭包定义拓扑空间: 设 $X$ 是一个集合 $c^*(X): \mathcal P(X)\to \mathcal P(X)$ 的一个闭包运算, 则存在 $X$ 的唯一一个拓扑 $\mathscr T$, 使得在拓扑空间 $(X, \mathscr T)$ 中对于每一个 $A\subset X$ 有 $c^*(A)=\overline A$
+7. 度量空间中导集和闭包的定义
+    1. 距离: 设 $(X, \rho)$ 是一个度量空间, $X$ 中的点 $x$ 到 $X$ 的非空子集 $A$ 的距离 $\rho(x, A)=\inf\{\rho(x, y)|y\in A\}$
+    2. 设 $A$ 是度量空间 $(X, \rho)$ 中的一个非空子集
+        1. $x\in d(A) \leftrightarrow \rho(x, A-\{x\}) = 0$
+        2. $x\in \overline A \leftrightarrow \rho(x, A) = 0$
+    3. 设 $X, Y$ 是两个拓扑空间, $f: X\to Y$, 则以下条件等价
+        1. $f$ 是一个连续映射
+        2. $Y$ 中任何一个闭集 $B$ 的原像 $f^{-1}(B)$ 是一个闭集
+        3. $\forall A\subset X: f(\overline A)=\overline{f(A)}$
+        4. $\forall B\subset X: f^{-1}(\overline B)\supset \overline{f^{-1}(B)}$
+
+### 1.2.2 内部与边界
+
+### 1.2.3 基与子基
+
+### 1.2.4 拓扑空间中的序列
 
 ## 1.3 构造空间
