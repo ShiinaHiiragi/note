@@ -1,7 +1,6 @@
 # 1 拓扑空间
 
-## 1.1 度量空间与拓扑空间
-### 1.1.1 度量空间
+## 1.1 度量空间
 1. 度量: 设 $X$ 是一个集合, $\rho: X\times X\to R$. 若对于 $\forall x, y, z\in X$ 有以下性质成立, 则称 $\rho$ 是集合 $X$ 的一个度量
     1. 正定性: $\rho(x, y)\geqslant 0 \wedge \rho(x, y)=0 \leftrightarrow x=y$
     2. 对称性: $\rho(x, y) = \rho(y, x)$
@@ -35,7 +34,8 @@
         1. $f$ 在点 $x_0$ 处连续 $\leftrightarrow f(x_0)$ 的每一个邻域的原像是 $x_0$ 的一个邻域
         2. $f$ 是连续的 $\leftrightarrow Y$ 中的每一个开集的原像是 $X$ 中的一个开集
 
-### 1.1.2 拓扑空间
+## 1.2 拓扑空间
+### 1.2.1 拓扑空间
 1. 拓扑: 设 $X$ 是一个集合, $\mathscr T\subset \mathcal P(X)$, 如果 $\mathscr T$ 满足以下条件, 则称 $\mathscr T$ 是 $X$ 的一个拓扑
     1. $X, \varnothing\in \mathscr T$
     2. 若 $A, B\in \mathscr T$, 则 $A\cap B\in \mathscr T$
@@ -84,8 +84,7 @@
     2. 设 $X, Y$ 是两个拓扑空间, 如果存在一个同胚 $f: X\to Y$, 则称拓扑空间 $X$ 与拓扑空间 $Y$ 是同胚的, 或称 $X$ 同胚于 $Y$. 在任意给定的一个由拓扑空间组成的族中, 两个拓扑空间是否同胚这一关系是一个等价关系
     3. 拓扑不变性质: 拓扑空间的某种性质 $P$, 若为某一个拓扑空间所具有, 也必为与其同胚的任何一个拓扑空间所具有, 则称此性质是一个拓扑不变性质
 
-## 1.2 基本概念
-### 1.2.1 导集与闭集
+### 1.2.2 导集与闭集
 1. 凝聚点: 设 $X$ 是一个拓扑空间, $A\subset X$
     1. 凝聚点: 如果点 $x\in X$ 的每一个邻域 $U$ 中都有 $A$ 中异于 $x$ 的点, 则 $U\cap(A-|x|)\neq \varnothing$, 则称点 $x$ 是集合 $A$ 的一个凝聚点或极限点
     2. 孤立点: 若存在 $x$ 的一个邻域 $U$ 使得 $U\cap(A-|x|)= \varnothing$, 则称 $x$ 为 $A$ 的一个孤立点
@@ -134,10 +133,36 @@
         3. $\forall A\subset X: f(\overline A)=\overline{f(A)}$
         4. $\forall B\subset X: f^{-1}(\overline B)\supset \overline{f^{-1}(B)}$
 
-### 1.2.2 内部与边界
+### 1.2.3 内部与边界
+1. 内部: 设 $X$ 是一个拓扑空间, $A\subset X$, 如果 $A$ 是点 $x\in X$ 的一个邻域, 则称点 $x$ 是集合 $A$ 的一个内点, 集合 $A$ 的所有内点构成的集合称为集合 $A$ 的内部, 记作 $A^o$
+    1. 设 $X$ 是一个拓扑空间, $A\subset X$, 则 $A^o = A{}'^-{}'$, 因此 $A^-=A{}'^o{}'$
+    2. 拓扑空间 $X$ 的子集 $A$ 是开集 $\leftrightarrow A = A^o$
+    3. 设 $X$ 是一个拓扑空间, 则对于任意 $A, B\subset X$ 有
+        1. $X^o=X$
+        2. $A\supset A^o$
+        3. $(A\cap B)^o = A^o\cap B^o$
+        4. $A^{oo}=A^o$
+    4. 拓扑空间的任何一个子集 $A$ 的内部 $A^o$ 都是开集
+    5. 设 $X$ 是一个拓扑空间, $\mathscr T$ 是 $X$ 的拓扑, 则对于 $X$ 的每一个子集 $A$ 有 $A^o=\bigcup_{B\in\mathscr T, B\subset A} B$
+2. 边界点: 设 $X$ 是一个拓扑空间, $A\subset X$, 点 $x\in X$. 若在 $x$ 的任意一个邻域 $U$ 中有 $U\cap A\neq \varnothing \wedge U\cap A'\neq \varnothing$, 则称 $x$ 是集合 $A$ 的一个边界点
+    1. 边界: 集合 $A$ 的全体边界点构成的集合, 记作 $\partial(A)$
+    2. 设 $X$ 是一个拓扑空间, $A\subset X$
+        1. $A^-=A^o\cup \partial(A), A^o=A^--\partial(A)$
+        2. $\partial(A)=A^-\cap A{}'^-=(A^o\cup A{}'^o)'=\partial(A')$
 
-### 1.2.3 基与子基
+### 1.2.4 基与子基
+1. 基: 设 $(X, \mathscr T)$ 是一个拓扑空间, $\mathscr B$ 是 $\mathscr T$ 的一个子族. 若 $\forall U\in \mathscr T\ \exists \mathscr B_1\subset \mathscr B: U=\bigcup_{B\in \mathscr B_1}B$, 则称 $\mathscr B$ 是拓扑 $\mathscr T$ 的一个基
+    1. 一个度量空间的所有球形邻域构成集族是这个度量空间作为拓扑空间时的一个基
+    2. 设 $\mathscr B$ 是拓扑空间 $(X, \mathscr T)$ 的一个开集族, 则 $\mathscr B$ 是拓扑空间 $X$ 的一个基当且仅当对于每一个 $x\in X$ 和 $x$ 的每一个邻域 $U_x$, 存在 $V_x\in \mathscr B$ 使得 $x\in V_x\subset U_x$
+    3. 设 $X$ 是一个集合, $\mathscr B\subset \mathcal P(X)$, 若 $\bigcup_{B\in \mathscr B}B=X$, 且若 $B_1, B_2\in \mathscr B$, 则对于任何 $x\in B_1\cap B_2$, 存在 $B\in \mathscr B$ 使得 $x\in B\subset B_1\cap B_2$, 则 $X$ 的子集族 $\mathscr T=\left\{U\subset X|\exists \mathscr B_U\subset \mathscr B: U=\bigcup_{B\in \mathscr B_U} B\right\}$ 是集合 $X$ 的唯一以 $\mathscr B$ 为基的拓扑, 反之也成立
+2. 子基: 设 $(X, \mathscr T)$ 是一个拓扑空间, $\mathscr S$ 是 $\mathscr T$ 的一个子族, 如果 $\mathscr S$ 的所有非空有限子族之交构成的集族 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n|S_i\in \mathscr S, i=1,2,\cdots,n;n\in Z_+\}$ 是拓扑 $\mathscr T$ 的一个基, 则称集族 $\mathscr S$ 是拓扑 $\mathscr T$ 的一个子基
+    1. 设 $X$ 是一个集合, $\mathscr S\subset \mathscr T(X)$, 若 $X=\bigcup_{S\in \mathscr S}S$, 则 $X$ 有唯一一个拓扑 $\mathscr T$ 以 $\mathscr S$ 为子基, 且若令 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n|S_i\in \mathscr S, i=1,2,\cdots,n;n\in Z_+\}$, 则 $\mathscr T=\left\{\bigcup_{B\in \mathscr B_1}B|\mathscr B_1\subset \mathscr B\right\}$
+    2. 设 $X, Y$ 是两个拓扑空间, $f: X\to Y$, 则以下条件等价
+        1. $f$ 连续
+        2. 拓扑空间 $Y$ 有一个基 $\mathscr B$, 使得对于任何一个 $B\in \mathscr B$, 原像 $f^{-1}(B)$ 是 $X$ 中的一个开集
+        3. $Y$ 有一个子基 $\mathscr S$, 使得对于任何一个 $S\in \mathscr S$, 原像 $f^{-1}(S)$ 是 $X$ 中的一个开集
+3. 邻域基: 设 $X$ 是一个拓扑空间, $x\in X$. 记 $\mathscr U_x$ 为 $x$ 的邻域系, 若 $\mathscr U_x$ 的子族 $\mathscr V_x$ 满足对于任何 $U\in \mathscr U_x$, 存在 $V\in \mathscr V_x$ 使得 $V\subset U$, 则称 $\mathscr V_x$ 是点 $x$ 的邻域系的一个子集, 或简称为点 $x$ 的一个邻域基
 
-### 1.2.4 拓扑空间中的序列
+### 1.2.5 拓扑空间中的序列
 
 ## 1.3 构造空间
