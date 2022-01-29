@@ -37,6 +37,16 @@
     3. 设 $X$ 和 $Y$ 是两个度量空间, $f: X\to Y, x_0\in X$
         1. $f$ 在点 $x_0$ 处连续 $\leftrightarrow f(x_0)$ 的每一个邻域的原像是 $x_0$ 的一个邻域
         2. $f$ 是连续的 $\leftrightarrow Y$ 中的每一个开集的原像是 $X$ 中的一个开集
+7. 导集和闭包
+    1. 距离: 设 $(X, \rho)$ 是一个度量空间, $X$ 中的点 $x$ 到 $X$ 的非空子集 $A$ 的距离 $\rho(x, A)=\inf\{\rho(x, y)|y\in A\}$
+    2. 设 $A$ 是度量空间 $(X, \rho)$ 中的一个非空子集
+        1. $x\in d(A) \leftrightarrow \rho(x, A-\{x\}) = 0$
+        2. $x\in \overline A \leftrightarrow \rho(x, A) = 0$
+    3. 设 $X, Y$ 是两个拓扑空间, $f: X\to Y$, 则以下条件等价
+        1. $f$ 是一个连续映射
+        2. $Y$ 中任何一个闭集 $B$ 的原像 $f^{-1}(B)$ 是一个闭集
+        3. $\forall A\subset X: f(\overline A)=\overline{f(A)}$
+        4. $\forall B\subset X: f^{-1}(\overline B)\supset \overline{f^{-1}(B)}$
 
 ### 1.1.2 完备度量空间
 
@@ -90,14 +100,14 @@
     2. 设 $X, Y$ 是两个拓扑空间, 如果存在一个同胚 $f: X\to Y$, 则称拓扑空间 $X$ 与拓扑空间 $Y$ 是同胚的, 或称 $X$ 同胚于 $Y$. 在任意给定的一个由拓扑空间组成的族中, 两个拓扑空间是否同胚这一关系是一个等价关系
     3. 拓扑不变性质: 拓扑空间的某种性质 $P$, 若为某一个拓扑空间所具有, 也必为与其同胚的任何一个拓扑空间所具有, 则称此性质是一个拓扑不变性质
 
-### 1.2.2 导集与闭集
-1. 凝聚点: 设 $X$ 是一个拓扑空间, $A\subset X$
-    1. 凝聚点: 如果点 $x\in X$ 的每一个邻域 $U$ 中都有 $A$ 中异于 $x$ 的点, 则 $U\cap(A-|x|)\neq \varnothing$, 则称点 $x$ 是集合 $A$ 的一个凝聚点或极限点
-    2. 孤立点: 若存在 $x$ 的一个邻域 $U$ 使得 $U\cap(A-|x|)= \varnothing$, 则称 $x$ 为 $A$ 的一个孤立点
+### 1.2.2 闭集与边界
+1. 凝聚点与孤立点: 设 $X$ 是一个拓扑空间, $A\subset X$
+    1. 凝聚点: 如果点 $x\in X$ 的每一个邻域 $U$ 中都有 $U\cap(A-|x|)\neq \varnothing$, 则称点 $x$ 是集合 $A$ 的一个凝聚点或极限点
+    2. 孤立点: 若 $x\in A$ 且存在 $x$ 的一个邻域 $U$ 使得 $U\cap(A-|x|)= \varnothing$, 则称 $x$ 为 $A$ 的一个孤立点
 2. 导集: 设 $X$ 是一个拓扑空间, $A\subset X$
-    1. 定义: 集合 $A$ 中所有凝聚点构成的集合, 记作 $d(A)$
+    1. 定义: 集合 $A$ 的所有凝聚点构成的集合, 记作 $d(A)$
     2. 设 $X$ 是一个拓扑空间, $A\subset X$
-        1. $d(\varnothing) = \varnothing$A
+        1. $d(\varnothing) = \varnothing$
         2. $A\subset B\to d(A)\subset d(B)$
         3. $d(A\cup B) = d(A) \cup d(B)$
         4. $d(d(A)) \subset A\cup d(A)$
@@ -108,10 +118,10 @@
         2. 若 $A, B\in \mathscr F$, 则 $A\cup B\in \mathscr F$
         3. 如果 $\varnothing \neq \mathscr F_1\subset \mathscr F$, 则 $\bigcap_{A\in \mathscr F_1}A\in \mathscr F$
 
-    !!! note "$\mathrm{Cantor}$ 集"
-        在实数空间 $R$ 中, 定义 $f_1, f_2: R\to R$ 使得对于任意 $t\in R$ 有 $f_1(t)=\dfrac{t}{3}, f_2(t)=\dfrac{t+2}{3}$, 则可以验证 $f_1, f_2$ 均为同胚, 即任意开集 $U\subset R$, 其 $f_1-$像与 $f_2-$像都是开集
+        !!! note "$\mathrm{Cantor}$ 集"
+            在实数空间 $R$ 中, 定义 $f_1, f_2: R\to R$ 使得对于任意 $t\in R$ 有 $f_1(t)=\dfrac{t}{3}, f_2(t)=\dfrac{t+2}{3}$, 则可以验证 $f_1, f_2$ 均为同胚, 即任意开集 $U\subset R$, 其 $f_1-$像与 $f_2-$像都是开集
 
-        定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1(A_{n-1})\cup f_2(A_{n-1})(n>1), A=\bigcup_{n\in Z_+}A_n$, 称集合 $C=[0, 1]-A$ 为 $\mathrm{Cantor}$ 集或标准 $\mathrm{Cantor}$ 三分集, 可以验证 $C$ 是一个闭集
+            定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1(A_{n-1})\cup f_2(A_{n-1})(n>1), A=\bigcup_{n\in Z_+}A_n$, 称集合 $C=[0, 1]-A$ 为 $\mathrm{Cantor}$ 集或标准 $\mathrm{Cantor}$ 三分集, 可以验证 $C$ 是一个闭集
 
 4. 闭包: 设 $X$ 是一个拓扑空间, $A\subset X$, 称集合 $A\cup d(A)$ 为集合 $A$ 的闭包, 记作 $\overline A$ 或 $A^-$
     1. $x\in \overline A$ 当且仅当对于 $x$ 的任何一个邻域 $U$ 有 $U\cap A\neq \varnothing$
@@ -122,25 +132,17 @@
         3. $\overline{A\cup B} = \overline A \cup \overline B$
         4. $\overline{\overline A} = \overline A$
     4. 设 $X$ 是一个拓扑空间, $\mathscr F$ 是由空间 $X$ 中所有闭集构成的族, 则对于 $X$ 的每个子集 $A$, 有 $\overline A = \bigcap_{B\in \mathscr F, A\subset B}B$
-5. 闭包运算: 设 $X$ 是一个集合, 映射 $c^*: \mathcal P(X)\to \mathcal P(X)$ 若对于任意 $A, B\in \mathcal P(X)$, 满足以下 $\mathrm{Kuratowski}$ 公理, 则称为集合 $X$ 上的一个闭包运算
-    1. $c^*(\varnothing) = \varnothing$
-    2. $A\subset c^*(A)$
-    3. $c^*(A\cup B) = c^*(A) \cup c^*(B)$
-    4. $c^*(c^*(A)) = c^*(A)$
-6. 闭包定义拓扑空间: 设 $X$ 是一个集合 $c^*(X): \mathcal P(X)\to \mathcal P(X)$ 的一个闭包运算, 则存在 $X$ 的唯一一个拓扑 $\mathscr T$, 使得在拓扑空间 $(X, \mathscr T)$ 中对于每一个 $A\subset X$ 有 $c^*(A)=\overline A$
-7. 度量空间中导集和闭包的定义
-    1. 距离: 设 $(X, \rho)$ 是一个度量空间, $X$ 中的点 $x$ 到 $X$ 的非空子集 $A$ 的距离 $\rho(x, A)=\inf\{\rho(x, y)|y\in A\}$
-    2. 设 $A$ 是度量空间 $(X, \rho)$ 中的一个非空子集
-        1. $x\in d(A) \leftrightarrow \rho(x, A-\{x\}) = 0$
-        2. $x\in \overline A \leftrightarrow \rho(x, A) = 0$
-    3. 设 $X, Y$ 是两个拓扑空间, $f: X\to Y$, 则以下条件等价
-        1. $f$ 是一个连续映射
-        2. $Y$ 中任何一个闭集 $B$ 的原像 $f^{-1}(B)$ 是一个闭集
-        3. $\forall A\subset X: f(\overline A)=\overline{f(A)}$
-        4. $\forall B\subset X: f^{-1}(\overline B)\supset \overline{f^{-1}(B)}$
+    5. 闭包定义拓扑空间: 设 $X$ 是一个集合 $c^*(X): \mathcal P(X)\to \mathcal P(X)$ 的一个闭包运算, 则存在 $X$ 的唯一一个拓扑 $\mathscr T$, 使得在拓扑空间 $(X, \mathscr T)$ 中对于每一个 $A\subset X$ 有 $c^*(A)=\overline A$
+   
+    !!! note "闭包运算"
+        设 $X$ 是一个集合, 映射 $c^*: \mathcal P(X)\to \mathcal P(X)$ 若对于任意 $A, B\in \mathcal P(X)$, 满足以下 $\mathrm{Kuratowski}$ 公理, 则称为集合 $X$ 上的一个闭包运算
 
-### 1.2.3 内部与边界
-1. 内部: 设 $X$ 是一个拓扑空间, $A\subset X$, 如果 $A$ 是点 $x\in X$ 的一个邻域, 则称点 $x$ 是集合 $A$ 的一个内点, 集合 $A$ 的所有内点构成的集合称为集合 $A$ 的内部, 记作 $A^o$
+        1. $c^*(\varnothing) = \varnothing$
+        2. $A\subset c^*(A)$
+        3. $c^*(A\cup B) = c^*(A) \cup c^*(B)$
+        4. $c^*(c^*(A)) = c^*(A)$
+
+5. 内部: 设 $X$ 是一个拓扑空间, $A\subset X$, 如果 $A$ 是点 $x\in X$ 的一个邻域, 则称点 $x$ 是集合 $A$ 的一个内点, 集合 $A$ 的所有内点构成的集合称为集合 $A$ 的内部, 记作 $A^o$
     1. 设 $X$ 是一个拓扑空间, $A\subset X$, 则 $A^o = A{}'^-{}'$, 因此 $A^-=A{}'^o{}'$
     2. 拓扑空间 $X$ 的子集 $A$ 是开集 $\leftrightarrow A = A^o$
     3. 设 $X$ 是一个拓扑空间, 则对于任意 $A, B\subset X$ 有
@@ -150,13 +152,14 @@
         4. $A^{oo}=A^o$
     4. 拓扑空间的任何一个子集 $A$ 的内部 $A^o$ 都是开集
     5. 设 $X$ 是一个拓扑空间, $\mathscr T$ 是 $X$ 的拓扑, 则对于 $X$ 的每一个子集 $A$ 有 $A^o=\bigcup_{B\in\mathscr T, B\subset A} B$
-2. 边界点: 设 $X$ 是一个拓扑空间, $A\subset X$, 点 $x\in X$. 若在 $x$ 的任意一个邻域 $U$ 中有 $U\cap A\neq \varnothing \wedge U\cap A'\neq \varnothing$, 则称 $x$ 是集合 $A$ 的一个边界点
+
+6. 边界点: 设 $X$ 是一个拓扑空间, $A\subset X$, 点 $x\in X$. 若在 $x$ 的任意一个邻域 $U$ 中有 $U\cap A\neq \varnothing \wedge U\cap A'\neq \varnothing$, 则称 $x$ 是集合 $A$ 的一个边界点
     1. 边界: 集合 $A$ 的全体边界点构成的集合, 记作 $\partial(A)$
     2. 设 $X$ 是一个拓扑空间, $A\subset X$
         1. $A^-=A^o\cup \partial(A), A^o=A^--\partial(A)$
         2. $\partial(A)=A^-\cap A{}'^-=(A^o\cup A{}'^o)'=\partial(A')$
 
-### 1.2.4 基与子基
+### 1.2.3 基与子基
 1. 基: 设 $(X, \mathscr T)$ 是一个拓扑空间, $\mathscr B$ 是 $\mathscr T$ 的一个子族. 若 $\forall U\in \mathscr T\ \exists \mathscr B_1\subset \mathscr B: U=\bigcup_{B\in \mathscr B_1}B$, 则称 $\mathscr B$ 是拓扑 $\mathscr T$ 的一个基
     1. 一个度量空间的所有球形邻域构成集族是这个度量空间作为拓扑空间时的一个基
     2. 设 $\mathscr B$ 是拓扑空间 $(X, \mathscr T)$ 的一个开集族, 则 $\mathscr B$ 是拓扑空间 $X$ 的一个基当且仅当对于每一个 $x\in X$ 和 $x$ 的每一个邻域 $U_x$, 存在 $V_x\in \mathscr B$ 使得 $x\in V_x\subset U_x$
@@ -177,11 +180,11 @@
         1. 若 $\mathscr B$ 是 $X$ 的一个基, 则 $\mathscr B_x=\{B\in \mathscr B|x\in B\}$ 是点 $x$ 的一个邻域基
         2. 若 $\mathscr S$ 是 $X$ 的一个子基, 则 $\mathscr S_x=\{S\in \mathscr S|x\in S\}$ 是点 $x$ 的一个邻域子基
 
-### 1.2.5 拓扑空间中的序列
+### 1.2.4 拓扑空间中的序列
 1. 序列: 设 $X$ 是一个拓扑空间, 每一个映射 $S: Z_+\to X$ 称作 $X$ 中的一个序列, 将序列 $S$ 记作 $\{x_i\}_{i\in Z_+}$ 或 $\{x_1, x_2, \cdots\}$, 其中 $x_i=S(i), i\in Z_+$
     1. $\{x_i\}_{i\in Z_+}$ 可简记为 $\{x_i\}$
     2. 集合 $\{x_i|i\in Z_+\}$ 可为有限集, 当其为单点集时, 称序列 $\{x_i\}_{i\in Z_+}$ 为一个常值序列
-2. 极限点: 设 $\{x_i\}_{i\in Z_+}$ 是拓扑空间中的一个序列, $x\in X$. 若对于 $x$ 的任意邻域 $u$, 存在 $M\in Z$ 使得当 $i>M$ 时有 $x_i\in U$, 则称点 $x$ 是序列 $\{x_i\}_{i\in Z_+}$ 的一个极限点, 也称序列 $\{x_i\}_{i\in Z_+}$ 收敛于 $x$, 记作 $\lim_{i\to \infty}x_i=x$ 或 $x_i\to x(i\to \infty)$
+2. 极限点: 设 $\{x_i\}_{i\in Z_+}$ 是拓扑空间中的一个序列, $x\in X$. 若对于 $x$ 的任意邻域 $U$, 存在 $M\in Z$ 使得当 $i>M$ 时有 $x_i\in U$, 则称点 $x$ 是序列 $\{x_i\}_{i\in Z_+}$ 的一个极限点, 也称序列 $\{x_i\}_{i\in Z_+}$ 收敛于 $x$, 记作 $\lim_{i\to \infty}x_i=x$ 或 $x_i\to x(i\to \infty)$
     1. 如果序列至少有一个极限, 则称这个序列是一个收敛序列
     2. 设 $X$ 是一个拓扑空间, $S, S_1:Z_+ \to X$ 是 $X$ 中的两个序列, 如果存在一个映射 $N: Z_+\to Z_+$ 有 $\forall n_1, n_2\in Z_+: n_1<n_2 \to N(n_1)<N(n_2)$, 使得 $S_1=S\circ N$, 则称序列 $S_1$ 是序列 $S$ 的一个子序列
 3. 序列的性质
