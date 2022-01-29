@@ -89,23 +89,23 @@
 
 ### 4.3.2 序数的超限归纳法
 1. $\mathrm{On}$ 上的超限归纳法：若有 $\forall \alpha (\forall \beta <\alpha p(\beta)\to p(\alpha))$，则有 $\forall \alpha p(\alpha)$
-2. 序数有三种 ($0$，后继序数，极限序数)，所以利用归纳法证明过程通常分三步进行:
+2. 序数有三种 ($0$，后继序数，极限序数)，所以利用归纳法证明过程通常分三步进行：
     1. 证明 $p(0)$ 成立
     2. 对于后继序数 $\alpha =\beta'$，假设 $p(\beta)$ 成立，证明 $p(\beta')$ 也成立
     3. 当 $\alpha$ 是极限序数时，假设 $\forall \beta <\alpha p(\beta)$ 成立，证明 $p(\alpha)$ 也成立
 
     !!! note "序数运算的递归定义"
-        1. 序数加法的递归定义:
+        1. 序数加法的递归定义：
             1. $\alpha +0=\alpha,\alpha +\beta'=(\alpha +\beta')$
             2. 当 $\beta$ 为极限序数时，$\alpha +\beta =\cup \{\alpha +\gamma |\gamma <\beta\}$
-        2. 序数乘法的递归定义:
+        2. 序数乘法的递归定义：
             1. $\alpha \cdot 0=\alpha,\alpha \cdot \beta'=\alpha \cdot \beta +\alpha$
             2. 当 $\beta$ 为极限序数时，$\alpha \cdot \beta =\cup \{\alpha \cdot \gamma |\gamma <\beta\}$
-        3. 序数乘法的递归定义:
+        3. 序数乘法的递归定义：
             1. $\alpha ^0=1,\alpha^{\beta +1}=\alpha ^\beta \cdot \alpha$
             2. 当 $\beta$ 为极限序数时，$\alpha ^\beta =\cup \{\alpha ^\gamma |\gamma <\beta \}$
         
-        序数由小到大的排列如下．请注意，这个排序的所有省略号都有无穷项，所以序数的「序」存在，但是这些序数并没有排成一列．良序原理编保证任何集合都是良序集，但不代表这些集合就是可数集:
+        序数由小到大的排列如下．请注意，这个排序的所有省略号都有无穷项，所以序数的「序」存在，但是这些序数并没有排成一列．良序原理编保证任何集合都是良序集，但不代表这些集合就是可数集：
 
         $$
         \displaylines{0,1,2,\cdots,\omega,\omega+1,\omega+2,\cdots,\omega \cdot 2,\omega \cdot 2+1\\

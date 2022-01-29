@@ -19,7 +19,7 @@
     5. 设 $a\subset \omega$，有 $(\varnothing \in a\wedge (x\in a\to x'\in a))\to a=\omega$
 
     !!! note "$\mathrm{Peano}$ 公理体系"
-        在 $\mathrm{Peano}$ 公理体系中可以推出下列定理，下节构造整数集合时需要用到这些性质:
+        在 $\mathrm{Peano}$ 公理体系中可以推出下列定理，下节构造整数集合时需要用到这些性质：
 
         1. 加法
             1. 加法交换律：$\forall a,b\in N(a+b=b+a)$
@@ -78,11 +78,11 @@
         4. 加法保序性：$\forall a,b,c\in Z(a<b\to a+c<b+c)$
         5. 乘法保序性：$\forall a,b,c\in Z(c>\overline{0}\to (a<b\to a\cdot c<b\cdot c))$
 3. 嵌入
-    1. 考察 $\overline{N}=\{[(0,0)], [(1,0)], \cdots , [(n,0)], \cdots \}$，记 $\overline{n}=[(n,0)]$，则 $\overline{N}=\{\overline{0}, \overline{1}, \overline{2}, \cdots \}$ 具有性质:
+    1. 考察 $\overline{N}=\{[(0,0)], [(1,0)], \cdots , [(n,0)], \cdots \}$，记 $\overline{n}=[(n,0)]$，则 $\overline{N}=\{\overline{0}, \overline{1}, \overline{2}, \cdots \}$ 具有性质：
         1. $\overline{m}+\overline{n}=\overline{m+n}$
         2. $\overline{m}\cdot \overline{n}=\overline{mn}$
         3. $m<n\leftrightarrow \overline{m}<\overline{n}$
-    2. 由于 $\overline{N}$ 构成 $Z$ 的一个封闭子集，令 $f(n)=\overline{n}\in \overline{N} \subset Z$，则 $f:N\to \overline{N}$ 具有性质:
+    2. 由于 $\overline{N}$ 构成 $Z$ 的一个封闭子集，令 $f(n)=\overline{n}\in \overline{N} \subset Z$，则 $f:N\to \overline{N}$ 具有性质：
         1. $f(m+n)=f(m)+g(n)$
         2. $f(mn)=f(m)\cdot f(n)$
         3. $m<n\to f(m)<f(n)$
@@ -146,7 +146,7 @@
     2. 设 $F$ 是 $N$ 上的超滤，且 $a_1\cup a_2=a\in F$，则有 $a_1\in F\vee a_2\in F$．注意到令 $a_1=a,a_2=N-a$，则该定理是超滤的定义
     3. 设 $F$ 为超滤 $\leftrightarrow F$ 是极大滤子
     4. 设 $F$ 是超滤，则有 $F$ 是自由超滤 $\leftrightarrow F\supset F_{\sigma}$
-    5. $N$ 的子集族 $F$ 若具有以下性质则是 $N$ 上的超滤:
+    5. $N$ 的子集族 $F$ 若具有以下性质则是 $N$ 上的超滤：
         1. $\varnothing \in F$
         2. 对交封闭：$a,b\in F\to a\cap b\in F$
         3. 极大性：$\forall a\subset N(a\in F\vee (N-a)\in F)$
@@ -193,7 +193,7 @@
         2. 称 $N$ 与 $\overline{N}$ 同构，$\varphi$ 把 $N$ 同构嵌入 $^*N$，将 $n$ 和 $\overline{n}$ 视作同一符号
     2. 令 $N_{\infty}=^*N-\overline{N}$，它是非主算术超滤的集合
         1. $\tau \in N_{\infty} \to \forall m\in N(\tau >\overline{m})$．即 $N_{\infty}$ 的成员都是「无穷大数」
-        2. 可以将 $^*N$ 的元素排成一列:
+        2. 可以将 $^*N$ 的元素排成一列：
 
         $$
         0,1,2,\cdots ,n,\cdots ,\tau ,\tau +1,\cdots 
@@ -205,7 +205,7 @@
             <p align="center">$\varphi$ 在 $^*N$ 中为真 $\leftrightarrow \{n\in N|\varphi (n)\in F\}$<p>
 
 ### 3.4.4 自然数数列的延伸
-1. 对 $\forall h:N\to N$，可以扩充为 $h:^*N\to ^*N$，于是得到以下序列，称为自然数列的延伸:
+1. 对 $\forall h:N\to N$，可以扩充为 $h:^*N\to ^*N$，于是得到以下序列，称为自然数列的延伸：
 
     $$
     h(0),h(1),h(2),\cdots ,h(n),\cdots ,h(\tau ),h(\tau +1),\cdots 
@@ -225,7 +225,7 @@
     ^*Q=\{\dfrac{q}{p}|p\neq 0,p,q\in ^*Z\}}
     $$
 
-2. 定义 $^*Q$ 的 $\mathrm{Archimedes}$ 子集:
+2. 定义 $^*Q$ 的 $\mathrm{Archimedes}$ 子集：
     1. $Q_<=\{x\in ^*Q|\exists k\in N(|x|\leqslant k)\}$，这一性质意味着量的有限可测量性．作为序域，$^*Q$ 是一种非 $\mathrm{Archimedes}$ 序域．若 $x,y\in Q_<$，则 $x+y\in Q_<,x\cdot y\in Q_<$
     2. $I=\{\alpha \in ^*Q|\forall k\in N(|x|\leqslant k)\}$，称作无穷小
         1. $I\subset Q_<$

@@ -163,7 +163,7 @@
         1. $\overline{p\wedge q}=\overline{p}\vee \overline{q}, \overline{p\vee q}=\overline{p}\wedge \overline{q}, \overline{p\dot{\vee} q}=(p\wedge q)\vee (\overline{p}\wedge \overline{q})$
         2. $\overline{p\to q}=p\wedge \overline{q}, \overline{p\leftarrow q}=\overline{p}\wedge q, \overline{p\leftrightarrow q}=(p\wedge \overline{q})\vee (\overline{p}\wedge q)$
 5. 真值表：显示复合命题的真假是如何由其肢命题的真假所决定的表格
-    1. 复合命题的真值表 (记 $+$ 为真，$-$ 为假):
+    1. 复合命题的真值表 (记 $+$ 为真，$-$ 为假)：
 
         |  $p$  |  $q$  | $p\wedge q$ |    $p\vee q$    |   $p\dot{\vee} q$    |
         | :---: | :---: | :---------: | :-------------: | :------------------: |
@@ -225,7 +225,7 @@
     5. 可能模态三段论：凡 $\mathrm{M}$ 可能是 $\mathrm{P}$ ，凡 $\mathrm{S}$ 可能是 $\mathrm{M}$ ，所以凡 $\mathrm{S}$ 可能是 $\mathrm{P}$
 
 ### 2.3.2 规范命题
-1. 含有「必须 ($O$)」「禁止 ($F$)」「允许 ($P$)」等规范模态词的模态命题，分为六种命题:
+1. 含有「必须 ($O$)」「禁止 ($F$)」「允许 ($P$)」等规范模态词的模态命题，分为六种命题：
     1. 必须肯定命题：记作必须 $p$，写作 $O_p$
     2. 必须否定命题：记作必须非 $p$，写作 $O_\overline{p}$
     3. 禁止肯定命题：记作禁止 $p$，写作 $F_p$ ，可以与必须否定命题等价替换

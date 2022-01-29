@@ -15,11 +15,11 @@
 
 2. 模型：若 $\mathcal{L}-$ 理论 $T$ 的所有语句都在 $\mathcal{L}-$ 结构 $M$ 中为真，则 $M$ 是 $T$ 的一个模型  
     模型原理：一个理论是无矛盾的，当且仅当它有模型
-    1. 群语言 $\mathcal{L}=\{*,e\}$，$*$ 为二元运算符，$e$ 为常元．群理论的公理:
+    1. 群语言 $\mathcal{L}=\{*,e\}$，$*$ 为二元运算符，$e$ 为常元．群理论的公理：
         1. 结合律：$\forall x\forall y\forall z((x*y)*z=(x*(y*z)))$
         2. 常元性质：$\forall x(x*e=x\wedge e*x=x)$
         3. 逆元存在：$\forall x\exists y(x*y=e\wedge y*x=e)$
-    2. 环语言：$\mathcal{L}=\{+,\cdot ,0\}$．环理论的公理:
+    2. 环语言：$\mathcal{L}=\{+,\cdot ,0\}$．环理论的公理：
         1. $+$ 结合律：$\forall x\forall y\forall z((x+y)+z=x+(y+z))$
         2. $+$ 交换律：$\forall x\forall y(x+y=y+x)$
         3. $\cdot$ 结合律：$\forall x\forall y\forall z((x\cdot y)\cdot z=(x\cdot (y\cdot z)))$

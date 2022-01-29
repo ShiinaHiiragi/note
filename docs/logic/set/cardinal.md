@@ -49,7 +49,7 @@
 
 ### 5.1.3 可数集
 1. 定义：与 $\omega$ 等势的集合，可数集都是无限集
-2. 可数集的性质:
+2. 可数集的性质：
     1. 若 $a$ 为任意集合且 $a\preccurlyeq \omega$，则 $a$ 为有限集或可数集
     2. 若 $a$ 为任意无限集，则 $\omega \preccurlyeq a$．也就是说，可数集是最小的无限集
     3. 若 $\forall a_i(i\in N)\preccurlyeq \omega$，则对于任意有限数 $n$，$\bigcup\limits_{i=0}^n a_i \preccurlyeq \omega\wedge \bigcup\limits_{i=0}^\infty a_i \preccurlyeq \omega$；且有 $a_1\times a_2\times \cdots \times a_n\preccurlyeq \omega$
