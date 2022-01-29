@@ -21,7 +21,7 @@
     1. $\forall x(x\in a\leftrightarrow x\in b)\to a=b$
     2. $(a\subset b \wedge b\subset a)\to a=b$
     3. $\forall x\forall y(\forall z(z\in x\leftrightarrow x\in s \wedge p(x)))$, $p(x)$ 为公式
-2. 这条公理将 $=$ 和 $\in$ 的关系做了明确规定. 由等词公理可知 $a=b\to \forall x(x\in a\leftrightarrow x\in b)$ , 于是有 $\forall x(x\in a\leftrightarrow x\in b)\leftrightarrow a=b$
+2. 这条公理将 $=$ 和 $\in$ 的关系做了明确规定. 由等词公理可知 $a=b\to \forall x(x\in a\leftrightarrow x\in b)$, 于是有 $\forall x(x\in a\leftrightarrow x\in b)\leftrightarrow a=b$
 
 ### 1.2.2 内涵公理
 1. 等价形式
