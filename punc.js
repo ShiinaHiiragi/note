@@ -4,8 +4,8 @@ const fs = require('fs');
 const config = {
   path: path.join(__dirname, "docs"),
   list: {
-    // ". ": "．",
-    ". ": "。",
+    ". ": "．",
+    // ". ": "。",
     ".\r\n": "\r\n",
     // ".\r\n": "。\r\n",
     ": ": "：",
@@ -68,4 +68,4 @@ const readFile = (fpath) => {
   }
 }
 
-readFile(path.join(__dirname, "docs/cogn/formal"))
+readFile(path.join(__dirname, "docs/logic"))
