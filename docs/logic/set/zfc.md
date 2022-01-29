@@ -58,7 +58,7 @@
     3. 结合律：$(a\cup b)\cup c=a\cup (b\cup c)$，$(a\cap b)\cap c=a\cap (b\cap c)$
     4. 分配律：$(a\cap b)\cup c=(a\cup c) \cap (b\cup c)$，$(a\cup b)\cap c=(a\cap c) \cup (b\cap c)$
     5. $\mathrm{De\ Morgan}$ 律：$a-(b\cup c)=(a-b)\cap(b-c)$，$a-(b\cap c)=(a-b)\cup(b-c)$
-4. 补集：设全集 (基础集) 为 $u$，则对于任一集合 $a\subset u$，称 $\overline a = a'=u-a$
+4. 补集：设全集（基础集）为 $u$，则对于任一集合 $a\subset u$，称 $\overline a = a'=u-a$
 
     !!! note "有标集族"
         对于集族 $A=\{a_i|i\in I\}$，定义有标集族 $\{a_i\}_{i\in I}=\{(i, a_i)|i\in I\}\subset I\times A$，其中 $I\neq \varnothing$．定义并集为 $\bigcup_{i\in I}a_i=\{x\in A|\exists i\in I(x\in a_i)\}$，交集为 $\bigcap_{i\in I}a_i=\{x\in A|\forall i\in I(x\in a_i)\}$
@@ -94,7 +94,7 @@
 
 ### 1.2.8 正则公理
 1. 内容：每个非空集合有 $\in -$ 极小元，即 $\forall a\neq \varnothing \exists x\in a(x\cap a=\varnothing)$
-    1. 假设存在一条 $\in -$ 降链 $\cdots \in x_{n+1}\in x_{n}\in \cdots \in x_2\in x_1\in x_0$，例如集合 $a=\{a\}$，则 $a=\{a\}=\{\{a\}\}=\cdots$，集合的原始组成 ($\in-$ 降链上的最小元) 不存在
+    1. 假设存在一条 $\in -$ 降链 $\cdots \in x_{n+1}\in x_{n}\in \cdots \in x_2\in x_1\in x_0$，例如集合 $a=\{a\}$，则 $a=\{a\}=\{\{a\}\}=\cdots$，集合的原始组成（$\in-$ 降链上的最小元）不存在
     2. 正则公理使得 $\forall x(x\notin x)$
 2. 承认正则公理后，序数的定义可以被简化为「序数是满足 $\in -$ 三分律的可递集」
 

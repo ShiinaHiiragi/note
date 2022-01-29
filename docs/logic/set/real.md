@@ -4,7 +4,7 @@
 ### 3.1.1 最小归纳集
 1. 由无限公理可知归纳集 $s$ 存在，所以 $s$ 取定．对于所有的归纳集族 $a$，定义归纳集 $\omega = \{x\in s|\forall t\in a(x\in t)\}$
 2. 关于归纳集 $\omega$ 的性质
-    1. $\omega$ 是最小归纳集，$\omega$ 是实无限 (无限集)
+    1. $\omega$ 是最小归纳集，$\omega$ 是实无限（无限集）
     2. 若 $x$ 为可递集，则 $x'$ 为可递集
     3. $\omega$ 的元素均为可递集
     4. $\forall x\in \omega (x\notin x)$
@@ -109,7 +109,7 @@
         3. 对加法的分配律：$\forall r,s,t\in Q(r\cdot (s+t)=r\cdot s+r\cdot t)$
         4. 单位元：令 $\overline{1}=[(a,a)], a\neq 0$，则 $\forall r\in Q(r\cdot \overline{1}=r)$
         5. 逆元：$\forall r=[(a,b)]\in Q, r\neq \overline{0}$，则 $\exists !s\in Q(r\cdot s=\overline{1})$．记 $s=r^{-1}=[(b,a)]$．由此定义除法 $r\div s=r\cdot s^{-1}$
-    3. $Z$ 上的序：设 $r=[(a,b)],s=[(c,d)]\wedge (b,d>0)$ (若 $b<0$，则写 $[(a,b)]=[(-a,-b)]$)．规定 $r<s\leftrightarrow ad<bc$
+    3. $Z$ 上的序：设 $r=[(a,b)],s=[(c,d)]\wedge (b,d>0)$（若 $b<0$，则写 $[(a,b)]=[(-a,-b)]$）．规定 $r<s\leftrightarrow ad<bc$
         1. 反自反性：$\forall r\in Q(r\nless r)$
         2. 可递性：$\forall r,s,t\in Q((r<s\wedge s<t)\to r<t)$
         3. 三歧性：$\forall r,s\in Q(r<s\vee r=s\vee s<r)$
@@ -150,7 +150,7 @@
         1. $\varnothing \in F$
         2. 对交封闭：$a,b\in F\to a\cap b\in F$
         3. 极大性：$\forall a\subset N(a\in F\vee (N-a)\in F)$
-    6. 主超滤都是算术超滤，自由超滤中有算术超滤也有非算术超滤(非主算术超滤)
+    6. 主超滤都是算术超滤，自由超滤中有算术超滤也有非算术超滤(非主算术超滤）
 
 ### 3.4.2 超滤变换
 1. 设 $F\in \beta N,f\in ^NN$，则定义 $G=f[F]=\{a\subset N|f^{-1}[a]\in F\}$ 也为 $N$ 上的超滤
@@ -255,7 +255,7 @@
         5. 乘法保序性：$\forall [x],[y],[z]\in Q_</\sim ([z]>[0]\to ([x]<[y]\to [x]\cdot [z]<[y]\cdot [z]))$
 3. $\left< Q_{<}/\sim ,+,\cdot ,<,[0],[1],\right>$ 拥有上述性质，是一个序域
     1. $Q,Q_<$ 有 $\mathrm{Archimedes}$ 性质，而 $^*Q$ 没有．但 $Q_<$ 不是域，而将 $Q_<$ 剖分成的 $R$ 是一个序域
-    2. 定义 $\overline{Q}=\{[r]|r\in Q\}$，它关于加法，乘法成了 $R$ 的封闭子集．再令 $H(r)=[r],H:Q\to \overline{Q}$ 即为所需要的嵌入映射(保运算性，保序性，双射)．于是 $Q$ 与 $\overline{Q}$ 同构，$H$ 把 $Q$ 同构嵌入 $R$．$\overline{Q}$ 成为 $Q$，$Q\subset R$
+    2. 定义 $\overline{Q}=\{[r]|r\in Q\}$，它关于加法，乘法成了 $R$ 的封闭子集．再令 $H(r)=[r],H:Q\to \overline{Q}$ 即为所需要的嵌入映射(保运算性，保序性，双射）．于是 $Q$ 与 $\overline{Q}$ 同构，$H$ 把 $Q$ 同构嵌入 $R$．$\overline{Q}$ 成为 $Q$，$Q\subset R$
     3. 令实数集 $R=\left\{ \left. \left[ \dfrac{q}{p}\right] \right| p\neq 0, p,q\in ^*Z, \exists k\in N\left( \left| \dfrac{q}{p}\right| \leqslant k\right) \right\}$
         1. 新的实数零为无穷小集：$0=[0]=\{x\in Q_<|x\sim 0\}=I$
         2. $\mathrm{Archimedes}$ 性质：$\forall a\in R\exists k\in N(|a|\leqslant k)$

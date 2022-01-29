@@ -13,10 +13,14 @@ const config = {
     // "; ": "；",
     // ", ": "，",
     " (": "（",
+    "：(": "：（",
     ") ": "）",
     "g)": "g)",
     ")：": "）：",
     ")，": "），",
+    ")。": "）。",
+    ")．": "）．",
+    ")」": "）」",
     ")\r\n": "）\r\n",
   }
 };
@@ -75,4 +79,4 @@ const readFile = (fpath) => {
   }
 }
 
-readFile(path.join(__dirname, "docs/cogn"))
+readFile(path.join(__dirname, "docs/logic"))

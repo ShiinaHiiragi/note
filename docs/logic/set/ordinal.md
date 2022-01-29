@@ -5,7 +5,7 @@
 1. 偏序集中，元素的公共向下延伸是可能的间接序结构
     1. 相容：设 $a$ 是偏序集，$x,y\in a$．若 $\exists z\in a(z\leqslant x\wedge z\leqslant y)$，则称 $x$ 与 $y$ 在 $a$ 中相容，否则称不相容
     2. 反链：设 $a$ 是偏序集，$b\subset a$，若 $b$ 中任意两个元素都不相容，则称 $b$ 为 $a$ 中反链
-2. 全序集：$a$ 上的二元严格偏序关系 $r$ 若有 $\forall x,y\in a(xry\vee x=y\vee yrx)$，则 $r$ 是 $a$ 上的全序．带有全序 $r$ 的集合称作 $r-$ 全序集 (链)，全序集连同其上的全序 $r$ 形成全序结构 $\left< a,r\right>$
+2. 全序集：$a$ 上的二元严格偏序关系 $r$ 若有 $\forall x,y\in a(xry\vee x=y\vee yrx)$，则 $r$ 是 $a$ 上的全序．带有全序 $r$ 的集合称作 $r-$ 全序集（链），全序集连同其上的全序 $r$ 形成全序结构 $\left< a,r\right>$
 
     !!! note "其他定义方式"
         也可以用非严格的偏序关系定义全序集，即 $\forall x,y\in a(xry\vee yrx)$，则$a$ 上的偏序关系 $r$ 是 $a$ 上的全序
@@ -15,7 +15,7 @@
         2. 设 $f$ 为全序集 $a$ 到 全序集 $b$ 的保序映射，则 $f$ 为单射且反向蕴含 $\forall x,y\to a(x<y\leftrightarrow f(x)<f(y))$ 也成立．此时称 $a$ 与 $b$ 同构：$\left< a,<\right> \cong \left< b,< \right>$
     2. 初始段：设 $a$ 为全序集，$b\subset a$，若 $b$ 有 $\forall x\in b\forall y\in a(y<x\to y\in b)$，则称 $b$ 为 a 的初始段
         1. 若 $b\neq a$，则称 $b$ 为 $a$ 的真初始段
-        2. 设 $a$ 为全序集，若 $x\in a$，记 $a_x=\{ t\in a|t<x\}$，则 $a_x$ 为 $a$ 的一个 (以 $x$ 为端点的) 初始段．对于全序集而言，不是所有的初始段都能用 $a_x$ 的形式表示
+        2. 设 $a$ 为全序集，若 $x\in a$，记 $a_x=\{ t\in a|t<x\}$，则 $a_x$ 为 $a$ 的一个（以 $x$ 为端点的）初始段．对于全序集而言，不是所有的初始段都能用 $a_x$ 的形式表示
     3. 序性质：全序集在同构之下能保持的性质．全序间的同构具有自反性，对称性，可递性
 
 ### 4.1.2 良序
@@ -64,7 +64,7 @@
 1. 后继序数：序数 $\alpha$ 的后继 $\alpha '$ 也是序数，称为 $\alpha$ 的后继序数
     1. $0$ 和 $\omega$ 不是后继序数，因为不存在 $\alpha$ 使得 $\alpha'=0$ 或 $\alpha '=\omega$
     2. 由 $0$ 为起点构造 $0',0'',0''',\cdots$ 是全体自然数；由 $\omega$ 为起点构造 $\omega',\omega'',\omega'''\cdots$ 则是一系列超限序数
-2. 极限序数：既不是空集 ($0$) 也不是后继序数的序数
+2. 极限序数：既不是空集（$0$）也不是后继序数的序数
     1. $\omega$ 是最小的极限序数，比 $\omega$ 小的序数都是自然数
     2. $\alpha$ 是极限序数当且仅当 $\beta \in \alpha \to \beta '\in \alpha ,\alpha \neq 0$．因此极限序数一定是归纳集
     3. $\alpha$ 是极限序数当且仅当 $\alpha =\cup \alpha ,\alpha \neq 0$．与之相对地，后继序数 $\beta'$ 的最小上界 $\cup \beta '=\beta$
@@ -89,7 +89,7 @@
 
 ### 4.3.2 序数的超限归纳法
 1. $\mathrm{On}$ 上的超限归纳法：若有 $\forall \alpha (\forall \beta <\alpha p(\beta)\to p(\alpha))$，则有 $\forall \alpha p(\alpha)$
-2. 序数有三种 ($0$，后继序数，极限序数)，所以利用归纳法证明过程通常分三步进行：
+2. 序数有三种（$0$，后继序数，极限序数），所以利用归纳法证明过程通常分三步进行：
     1. 证明 $p(0)$ 成立
     2. 对于后继序数 $\alpha =\beta'$，假设 $p(\beta)$ 成立，证明 $p(\beta')$ 也成立
     3. 当 $\alpha$ 是极限序数时，假设 $\forall \beta <\alpha p(\beta)$ 成立，证明 $p(\alpha)$ 也成立
