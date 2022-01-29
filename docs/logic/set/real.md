@@ -222,7 +222,7 @@
 
     $$
     \displaylines{^*Z:\cdots ,-\tau ,\cdots ,-2,-1,0,1,2,\cdots ,n,\cdots ,\tau ,\tau +1,\cdots \\
-    ^*Q=\{\dfrac{q}{p}|p\neq 0,p,q\in ^*Z\}}
+    ^*Q=\left\{\dfrac{q}{p}|p\neq 0,p,q\in ^*Z\right\}}
     $$
 
 2. 定义 $^*Q$ 的 $\mathrm{Archimedes}$ 子集：
