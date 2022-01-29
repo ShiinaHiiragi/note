@@ -4,10 +4,10 @@ const fs = require('fs');
 const config = {
   path: path.join(__dirname, "docs"),
   list: {
-    ". ": "。",
     // ". ": "．",
-    // ". \n": "",
-    ". \n": "。",
+    ". ": "。",
+    // ".\n": "",
+    ".\n": "。",
     ": ": "：",
     "; ": "；",
     ", ": "，"
