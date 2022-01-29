@@ -18,11 +18,26 @@
     2. 求异法：如果在某现象出现的场合里有某个条件，在某现象不出现的另一场合里没有这个条件，那么这个条件是此现象产生的原因
     3. 求同求异并用法：如果在正事例组 (由被研究现象出现的若干场合组成的组) 的各场合中只有一个共同的情况且在负事例组 (由被研究现象不出现的若干场合组成的组合) 的各场合中都不存在，那么这个情况就是被研究现象的原因
 
-        ![](../assets/diff.png)
+        <figure markdown>
+            ![](../assets/diff.png)
+            <style>
+            img[src$="diff.png"] {
+                width: 320px;
+            }
+            </style>
+        </figure>
+        
 
     4. 共变法：如果一个现象发生变化，另一个现象就随之发生变化，那么前一现象就是后一现象的原因或部分原因
-    
-        ![](../assets/relate.png)
+
+        <figure markdown>
+            ![](../assets/relate.png)
+            <style>
+            img[src$="relate.png"] {
+                width: 210px;
+            }
+            </style>
+        </figure>
 
     5. 剩余法：如果某一复合现象是由另一复合原因所引起的，那么把其中确认有因果联系的部分减去，剩下的部分也必然有因果联系
 
@@ -51,14 +66,3 @@
     3. 假说的作用
         1. 发现科学规律、创立科学理论的重要思维方法
         2. 用于现代科学决策的制订过程，科学决策离不开科学预测，后者是一个提出假说和验证假说的过程
-
-<style>
-    img[src$="diff.png"] {
-        width: 320px;
-        margin-left: calc((100% - 320px) / 2);
-    }
-    img[src$="relate.png"] {
-        width: 200px;
-        margin-left: calc((100% - 200px) / 2);
-    }
-</style>

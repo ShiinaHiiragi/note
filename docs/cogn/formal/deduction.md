@@ -14,9 +14,16 @@
     2. 周延性：在一个命题中，其主项或谓项的全部外延被做了断定，那么这个命题的主项或谓项就是周延的
 2. 四种命题形式：全称肯定命题 ($\mathrm{SAP}$，左上)，全称否定命题 ($\mathrm{SEP}$，右上)，特称肯定命题 ($\mathrm{SIP}$ 左下) 以及 特称否定命题 ($\mathrm{SOP}$，右下)
     1. 利用韦恩图，可以表示概念外延间各种不同关系的图解。其中，利用阴影部分表示不存在，用 「$+$」 表示存在
-    2. 就主项而言，全称命题是周延的；就谓项而言，否定命题是周延的 
+    2. 就主项而言，全称命题是周延的；就谓项而言，否定命题是周延的
 
-    ![](../assets/prop_class.png)
+    <figure markdown>
+        ![](../assets/prop_class.png)
+        <style>
+        img[src$="prop_class.png"] {
+            width: 600px;
+        }
+        </style>
+    </figure>
 
 3. 从下表主谓项之间的关系与不同命题形式之间的真假关系， 可以看出以下命题形式之间的关系，如图称为「逻辑方阵」
 
@@ -33,7 +40,14 @@
     3. 差等关系：指全称肯定命题与特称肯定命题或全称否定命题与特称否定命题
     4. 下反对关系：指特称肯定命题与特称否定命题
 
-    ![](../assets/relation.png)
+    <figure markdown>
+        ![](../assets/relation.png)
+        <style>
+        img[src$="relation.png"] {
+            width: 200px;
+        }
+        </style>
+    </figure>
 
 4. 直言命题的推理
     1. 命题变形法：两种方法可以结合使用
@@ -67,7 +81,14 @@
         1. 格：中项在前提中位置的不同而形成的三段论的各种形式
         2. 式：由于 $\mathrm{A, E, I, O}$ 四种命题在前提和结论中组合的不同形式形成的三段论的各种形式
 
-        ![](./../assets/lattice.png)
+        <figure markdown>
+            ![](./../assets/lattice.png)
+            <style>
+            img[src$="lattice.png"] {
+                width: 480px;
+            }
+            </style>
+        </figure>
         
         !!! note "各个格的规则"
             1. 第一格的大前提必须全称，小前提必须肯定：$\mathrm{AAA,(AAI),AII,EAE,(EAO),EIO}$
@@ -182,7 +203,14 @@
     3. 必然肯定命题：$\mathrm{S}$ 是 $\mathrm{P}$ 是必然的，记作「必然 $p$」，写作 $\square p$
     4. 必然否定命题：$\mathrm{S}$ 不是 $\mathrm{P}$ 是必然的，记作「必然 $\overline{p}$」，写作 $\square \overline{p}$
 
-    ![](../assets/modal.png)
+    <figure markdown>
+        ![](../assets/modal.png)
+        <style>
+        img[src$="modal.png"] {
+            width: 200px;
+        }
+        </style>
+    </figure>
 
 3. 模态推理：根据模态命题的性质及其相互间的逻辑关系进行推演
     1. 根据矛盾关系的直接推理：$\square p\leftrightarrow \overline{\diamond \overline{p}}, \overline{\square p}\leftrightarrow \diamond \overline{p}, \square \overline{p}\leftrightarrow \overline{\diamond p}, \overline{\square \overline{p}}\leftrightarrow \diamond p$
@@ -210,7 +238,14 @@
     3. 差等关系：「必须」命题正确，则「允许」命题必正确；「必须」命题不正确，则「允许」命题正确与否不定；「允许」命题正确，「必须」命题正确与否不定；「允许」命题错误，则「必须」命题必不正确
     4. 矛盾关系：一个正确，另一个不正确；反之亦然
 
-        ![](../assets/normative.png)
+        <figure markdown>
+            ![](../assets/normative.png)
+            <style>
+            img[src$="normative.png"] {
+                width: 200px;
+            }
+            </style>
+        </figure>
 
 3. 规范推理：以规范命题为其前提和结论的演绎推理，其前提至少有一个是规范命题
     1. 根据规范命题矛盾关系的直接推理：$O_p\leftrightarrow \overline{P_\overline{p}}, \overline{O_p}\leftrightarrow P_\overline{p}, O_\overline{p}\leftrightarrow \overline{P_p}, \overline{O_\overline{p}}\leftrightarrow P_p$
@@ -223,21 +258,9 @@
     3. 允许规范三段论：凡 $\mathrm{M}$ 允许 $\mathrm{P}$ ，凡 $\mathrm{S}$ 是 $\mathrm{M}$ ，所以，凡 $\mathrm{S}$ 允许 $\mathrm{P}$ 
 
 <style>
-    img[src$="relation.png"] {
-        width: 200px;
-        margin-left: calc((100% - 200px) / 2);
-    }
-    img[src$="lattice.png"] {
-        width: 400px;
-        margin-left: calc((100% - 400px) / 2);
-    }
-    img[src$="modal.png"], img[src$="normative.png"] {
-        width: 200px;
-        margin-left: calc((100% - 200px) / 2);
-    }
-    div[class$="typeset__scrollwrap"] {
-        display: flex;
-        flex-direction: row;
-        justify-content: center;
-    }
+div[class$="typeset__scrollwrap"] {
+    display: flex;
+    flex-direction: row;
+    justify-content: center;
+}
 </style>

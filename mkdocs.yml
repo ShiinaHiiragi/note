@@ -16,7 +16,7 @@ theme:
     - navigation.tracking
     - search.highlight
     - search.share
-    # - toc.integrate
+    - toc.integrate
   palette:
     - scheme: default
       primary: indigo
