@@ -162,6 +162,14 @@
         2. 拓扑空间 $Y$ 有一个基 $\mathscr B$, 使得对于任何一个 $B\in \mathscr B$, 原像 $f^{-1}(B)$ 是 $X$ 中的一个开集
         3. $Y$ 有一个子基 $\mathscr S$, 使得对于任何一个 $S\in \mathscr S$, 原像 $f^{-1}(S)$ 是 $X$ 中的一个开集
 3. 邻域基: 设 $X$ 是一个拓扑空间, $x\in X$. 记 $\mathscr U_x$ 为 $x$ 的邻域系, 若 $\mathscr U_x$ 的子族 $\mathscr V_x$ 满足对于任何 $U\in \mathscr U_x$, 存在 $V\in \mathscr V_x$ 使得 $V\subset U$, 则称 $\mathscr V_x$ 是点 $x$ 的邻域系的一个子集, 或简称为点 $x$ 的一个邻域基
+    1. 若 $\mathscr U_x$ 的子族 $\mathscr W_x$ 有 $\mathscr W_x$ 的每一个非空有限子族之交的全体构成的集族 $\{W_1 \cap W_2 \cap \cdots \cap W_n|W_i\in \mathscr W_x, i=1, 2, \cdots, n; n\in Z_+\}$ 是 $\mathscr U_x$ 的一个邻域基, 则称 $\mathscr W_x$ 是点 $x$ 的邻域系的一个子基, 或称为点 $x$ 的一个邻域子基
+    2. 设 $X, Y$ 是两个拓扑空间, $f: X\to Y, x\in X$, 则以下条件等价
+        1. $f$ 在点 $x$ 处连续
+        2. $f(x)$ 有一个邻域基 $\mathscr V_{f(x)}$ 使得对于任何 $V\in \mathscr V_{f(x)}$, 原像 $f^{-1}(V)$ 是 $x$ 的一个邻域
+        3. $f(x)$ 有一个邻域子基 $\mathscr W_{f(x)}$ 使得对于任何 $W\in \mathscr W_{f(x)}$, 原像 $f^{-1}(W)$ 是 $x$ 的一个邻域
+    3. 设 $X$ 是一个拓扑空间, $x\in X$
+        1. 若 $\mathscr B$ 是 $X$ 的一个基, 则 $\mathscr B_x=\{B\in \mathscr B|x\in B\}$ 是点 $x$ 的一个邻域基
+        2. 若 $\mathscr S$ 是 $X$ 的一个子基, 则 $\mathscr S_x=\{S\in \mathscr S|x\in S\}$ 是点 $x$ 的一个邻域子基
 
 ### 1.2.5 拓扑空间中的序列
 
