@@ -4,10 +4,11 @@ const fs = require('fs');
 const config = {
   path: path.join(__dirname, "docs"),
   list: {
-    ", ": "，",
-    ". ": "．",
+    ". ": "。",
+    // ". ": "．",
     ": ": "：",
     "; ": "；",
+    ", ": "，"
   }
 };
 
@@ -65,4 +66,4 @@ const readFile = (fpath) => {
   }
 }
 
-readFile("./README.md")
+readFile(path.join(__dirname, "docs/intro/dir.md"))
