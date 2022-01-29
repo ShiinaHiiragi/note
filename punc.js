@@ -6,8 +6,8 @@ const config = {
   list: {
     // ". ": "．",
     ". ": "。",
-    // ".\n": "",
-    ".\n": "。",
+    ".\r\n": "\r\n",
+    // ".\r\n": "。\r\n",
     ": ": "：",
     "; ": "；",
     ", ": "，"
@@ -68,4 +68,4 @@ const readFile = (fpath) => {
   }
 }
 
-readFile(path.join(__dirname, "docs/intro/dir.md"))
+readFile(path.join(__dirname, "docs/cogn/formal"))
