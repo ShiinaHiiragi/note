@@ -46,6 +46,27 @@
         4. $\forall B\subset X: f^{-1}(\overline B)\supset \overline{f^{-1}(B)}$
 
 ### 1.1.2 完备度量空间
+1. $\mathrm{Cauchy}$ 序列：设 $(X, \rho)$ 是一个度量空间，$X$ 中的一个序列 $\{x_i\}_{i\in Z_+}$．如果对于任意给定的实数 $\varepsilon >0$，存在整数 $N>0$，使得当 $i, j>N$ 时，有 $\rho(x_i, x_j)<\varepsilon$，则称序列 $\{x_i\}_{i\in Z_+}$ 是一个 $\mathrm{Cauchy}$ 序列
+2. 完备度量空间：$X$ 中的每一个 $\mathrm{Cauchy}$ 序列都收敛的度量空间 $(X, \rho)$．度量空间的每一个收敛序列都是 $\mathrm{Cauchy}$ 序列，反之不一定成立
+    1. 完备度量空间中的每一个闭的度量子空间都是完备度量空间
+    2. $n$ 维欧氏空间（包括实数空间）$R$ 和 $\mathrm{Hilbert}$ 空间 $H$ 都是完备度量空间
+        1. 设 $(X, \rho)$ 是一个度量空间，$Y\subset X$．如果 $Y$ 中的每一个 $\mathrm{Cauchy}$ 序列都在 $X$ 中收敛，则 $Y$ 的闭包 $\overline Y$ 中的每一个 $\mathrm{Cauchy}$ 序列也都在 $X$ 中收敛
+        2. 设 $(X, \rho)$ 是一个度量空间，$Y$ 是 $X$ 的一个稠密子集．如果 $Y$ 中的每一个 $\mathrm{Cauchy}$ 序列都在 $X$ 中收敛，则 $X$ 是一个完备度量空间
+3. 保距映射：设 $(X, \rho)$ 和 $(Y, d)$ 都是度量空间，$f: X\to Y$．如果对于任意 $x, y\in X$ 有 $d(f(x), f(y)) =\rho(x, y)$，则称映射 $f$ 是一个保距映射，如果存在一个从 $X$ 到 $Y$ 的满的保距映射，则称度量空间 $(X, \rho)$ 与 $(Y, d)$ 同距
+    1. 保距映射是一个单射，两个保距映射的复合也是保距映射；满的保距映射一定是一个同胚，其逆映射也是保距映射
+    2. 同距作为关系是一个等价关系；同距的度量空间是同胚的
+4. 完备化：设 $X$ 是一个度量空间，$X^*$ 是一个完备度量空间．如果 $X$ 与 $X^*$ 的一个稠密的度量子空间同距，则称完备度量空间 $X^*$ 是 $X$ 的一个完备化
+    1. 每一个度量空间都有完备化
+    2. 每一个度量空间的任意两个完备化同距
+5. 完全有界：设 $(X, \rho)$ 是一个度量空间，$\varepsilon>0$ 是一个实数．$X$ 的有限子集 $A$ 称为一个 $\varepsilon-$网，如果对于任何 $x\in X$ 有 $\rho(x, A)<\varepsilon$．如果对于任何实数 $\varepsilon>0$，$X$ 有一个 $\varepsilon-$网，则称度量空间是完全有界的
+    1. 设 $(X, \rho)$ 是一个度量空间，则 $(X, \rho)$ 是紧的当且仅当 $(X, \rho)$ 是一个完全有界的完备度量空间
+    2. 设 $(X, \rho)$ 是一个完备度量空间，如果由 $X$ 的子集构成的一个序列 $\{E_1, E_2, \cdots\}$ 满足条件 $E_1\supset E_2\supset \cdots \wedge \lim_{i\to \infty} \mathrm{diam}(E_i)=0$，其中 $\mathrm{diam}(E_i)$ 表示 $E_i$ 的直径，则 $\bigcap_{i\in Z_+}E^-_i$ 是一个单点集
+    3. $\mathrm{Baire}$ 定理：设 $X$ 是一个完备的度量空间，如果 $G_1, G_2, \cdots$ 是 $X$ 中的可数个稠密的开集，则交集 $\bigcap_{i\in Z_+} G_i$ 是 $X$ 中的一个稠密子集
+
+        !!! note "$\mathrm{Baire}$ 定理的其他表述形式"
+            设 $X$ 是一个拓扑空间，若 $A^{-o}=\varnothing$，则称 $A$ 为 $X$ 的一个无处稠密子集．如果 $X$ 的子集 $F$ 可以表示为 $X$ 中可数个无处稠密的子集之并，则称 $F$ 为第一范畴集，如果 $X$ 的子集不是第一范畴集，则称之为第二范畴集
+
+            据此 $\mathrm{Baire}$ 定理可以重述为「完备度量空间中的任何一个非空开集都是第二范畴集」
 
 ## 1.2 拓扑空间
 ### 1.2.1 拓扑空间
@@ -236,10 +257,14 @@
     3. 设 $X_1, X_2, \cdots, X_n$ 是 $n\geqslant 2$ 个拓扑空间，则积空间 $X_1\times X_2\times \cdots \times X_n$ 同胚于积空间 $(X_1\times X_2\times \cdots \times X_{n-1})\times X_n$
 
 ### 1.4.2 一般积空间
-1. 点式收敛拓扑：如果一个集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 中所有的 $X_\gamma$，则称 $\{X_\gamma\}^{\gamma \in \Gamma}$ 是一个拓扑空间族或一族拓扑空间
+1. 点式收敛拓扑：如果一个集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 中所有的 $X_\gamma$，则称 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族或一族拓扑空间
     1. 设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族，容易验证 $\mathrm{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的子集族 $\mathscr S=\{p^{-1}_\gamma(U_\gamma)|U_\gamma$ 是 $ $X_\gamma$ 的一个开集 $,\gamma\in \Gamma\}$ 是它的某一个拓扑 $\mathscr T$ 的一个子基, 其中 $p_\gamma$ 是 $\mathrm{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\gamma \in \Gamma$ 个投射
     2. 拓扑 $\mathscr T$ 称为 $\mathrm{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑，拓扑空间 $(\prod_{\gamma \in \Gamma} X_\gamma, \mathscr T)$ 称为拓扑空间族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 的积空间，拓扑空间 $X_\gamma$ 称为积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\gamma$ 个坐标空间
-2. 点式收敛拓扑的性质
+2. 点式收敛拓扑的性质：设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一族拓扑空间
+    1. 对于每一个 $\alpha \in \Gamma$，积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 是一个连续开映射
+    2. 设 $Y$ 是一个拓扑空间，则映射 $f: Y\to \prod_{\gamma \in \Gamma} X_\gamma$ 是一个连续映射当且仅当对于每一个 $\alpha \in \Gamma$，映射 $p_\alpha\circ f: Y\to X_\alpha$ 是连续的，其中 $p_\alpha$ 是积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投影
+    3. 令 $\mathscr T$ 为 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑．如果 $\widetilde{\mathscr T}$ 是笛卡尔积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的一个拓扑使得对于任何 $\alpha \in \Gamma$，$\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 都是连续的，则 $\mathscr T\subset \widetilde{\mathscr T}$
+    4. 积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 中的序列 $\{x^{(i)}\}_{i\in Z_+}$ 收敛于点 $x\in \prod_{\gamma \in \Gamma} X_\gamma$ 的充要条件是对于每一个 $\alpha \in \Gamma$，拓扑空间 $X_\alpha$ 中的序列 $\{p_\alpha(x^{(i)})\}_{i\in Z_+}$ 收敛于 $p_\alpha(x)\in X_\alpha$
 
 ### 1.4.3 映射空间
 
