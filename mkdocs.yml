@@ -87,3 +87,4 @@ nav:
   - 数学结构:
     - 二、点集拓扑:
       - 1 拓扑空间: math/top/space.md
+      - 2 构造空间: math/top/construct.md
