@@ -1,6 +1,3 @@
-!!! danger "尚未完成"
-    此页面现在使用英文标点
-
 # 1 拓扑空间
 
 ## 1.1 度量空间
@@ -239,6 +236,10 @@
     3. 设 $X_1, X_2, \cdots, X_n$ 是 $n\geqslant 2$ 个拓扑空间, 则积空间 $X_1\times X_2\times \cdots \times X_n$ 同胚于积空间 $(X_1\times X_2\times \cdots \times X_{n-1})\times X_n$
 
 ### 1.4.2 一般积空间
+1. 点式收敛拓扑: 如果一个集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 中所有的 $X_\gamma$, 则称 $\{X_\gamma\}^{\gamma \in \Gamma}$ 是一个拓扑空间族或一族拓扑空间
+    1. 设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族, 容易验证 $\mathrm{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的子集族 $\mathscr S=\{p^{-1}_\gamma(U_\gamma)|U_\gamma$ 是 $ $X_\gamma$ 的一个开集 $,\gamma\in \Gamma\}$ 是它的某一个拓扑 $\mathscr T$ 的一个子基, 其中 $p_\gamma$ 是 $\mathrm{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\gamma \in \Gamma$ 个投射
+    2. 拓扑 $\mathscr T$ 称为 $\mathrm{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑, 拓扑空间 $(\prod_{\gamma \in \Gamma} X_\gamma, \mathscr T)$ 称为拓扑空间族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 的积空间, 拓扑空间 $X_\gamma$ 称为积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\gamma$ 个坐标空间
+2. 点式收敛拓扑的性质
 
 ### 1.4.3 映射空间
 
