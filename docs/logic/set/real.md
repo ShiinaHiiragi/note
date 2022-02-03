@@ -153,33 +153,33 @@
     6. 主超滤都是算术超滤，自由超滤中有算术超滤也有非算术超滤(非主算术超滤）
 
 ### 3.4.2 超滤变换
-1. 设 $F\in \beta N,f\in ^NN$，则定义 $G=f[F]=\{a\subset N|f^{-1}[a]\in F\}$ 也为 $N$ 上的超滤
+1. 设 $F\in \beta N,f\in {}^NN$，则定义 $G=f[F]=\{a\subset N|f^{-1}[a]\in F\}$ 也为 $N$ 上的超滤
     - 运算 $f$ 称作超滤空间上的超滤变换，$f:\beta N\to \beta N$ 事实上是用同一个符号表示的函数 $f:N\to N$ 的扩张
-2. 设 $f,g\in ^NN,F\in \beta N$，若 $\{n|f(n)=g(n)\}\in F$，则称 $f$ 和 $g$ 关于 $F$ 几乎相等，记作 $f=_Fg$
+2. 设 $f,g\in {}^NN,F\in \beta N$，若 $\{n|f(n)=g(n)\}\in F$，则称 $f$ 和 $g$ 关于 $F$ 几乎相等，记作 $f=_Fg$
 3. 超滤变换的性质
-    1. 主超滤的像 $f(F)$ 仍是主超滤：设 $f\in ^NN,n\in N$，则 $f(\overline{n}) =\overline{f(n)}$
-    2. 算术超滤的像 $f(F)$ 仍是算术超滤：设 $f\in ^NN,m\in \beta N$，则 $g(f(F))=h(f(F))\to g=_{f(F)}h$
-    3. 非主超滤的像 $f(F)$ 不一定仍是非主超滤，有可能退变为主超滤：设 $F\in \beta N$，且 $f\in ^NN,\forall n\in b\in F(f(n)=m)$，则有 $f(F)=\overline{m}$，取 $b=N$，则 $f$ 为常值函数
-    4. 设 $f,g\in ^NN,F\in \beta N$，则有 $f=_Fg\to f(F)=g(F)$，反之则不一定成立
+    1. 主超滤的像 $f(F)$ 仍是主超滤：设 $f\in {}^NN,n\in N$，则 $f(\overline{n}) =\overline{f(n)}$
+    2. 算术超滤的像 $f(F)$ 仍是算术超滤：设 $f\in {}^NN,m\in \beta N$，则 $g(f(F))=h(f(F))\to g=_{f(F)}h$
+    3. 非主超滤的像 $f(F)$ 不一定仍是非主超滤，有可能退变为主超滤：设 $F\in \beta N$，且 $f\in {}^NN,\forall n\in b\in F(f(n)=m)$，则有 $f(F)=\overline{m}$，取 $b=N$，则 $f$ 为常值函数
+    4. 设 $f,g\in {}^NN,F\in \beta N$，则有 $f=_Fg\to f(F)=g(F)$，反之则不一定成立
 
 ### 3.4.3 非主算术超滤模型
-1. 对于某个取定的非主算术超滤做所有可能的变换，得到 $^*N=\{f(F)|f\in ^NN\}$，它包含了所有的主超滤，由常值函数对 $F$ 变换而来
-2. $^*N$ 的运算可以得到结构 $\left< ^*N,\overline{0},+,\cdot ,f,g,h,\cdots \right>$，它的语言是 $\mathcal{L}=\{0,+,\cdot ,f,g,h,\cdots \}$．$\mathcal{L}$ 中包含所有一元自然数函数符
+1. 对于某个取定的非主算术超滤做所有可能的变换，得到 ${}^*N=\{f(F)|f\in {}^NN\}$，它包含了所有的主超滤，由常值函数对 $F$ 变换而来
+2. ${}^*N$ 的运算可以得到结构 $\left< {}^*N,\overline{0},+,\cdot ,f,g,h,\cdots \right>$，它的语言是 $\mathcal{L}=\{0,+,\cdot ,f,g,h,\cdots \}$．$\mathcal{L}$ 中包含所有一元自然数函数符
     1. 定义加法：$f(F)+g(F)=(f+g)(F))$，乘法：$f(F)\cdot g(F)=(f\cdot g)(F))$．其中，$(f+g)(n)=f(n)+g(n),(f\cdot g)(n)=f(n)\cdot g(n)$
-    2. 每个 $h\in ^NN$ 对应 $*N$ 上的一个一元运算：$h(f(F))=(h\circ f)(F) h\in ^{^*N}{^*N}$
+    2. 每个 $h\in {}^NN$ 对应 $*N$ 上的一个一元运算：$h(f(F))=(h\circ f)(F) h\in ^{{}^*N}{{}^*N}$
     3. 定义序 $<$ 为 $f(F)<g(F)\leftrightarrow \{n|f(n)<g(n)\}\in F$，称作 $f$ 关于 $F$ 几乎小于 $g$，记作 $f<_Fg$
         - $k<m\to \{n|k(n)<m(n)\}=N\in F\to k(F)<m(F)$
-3. $^*N$ 的基本性质
+3. ${}^*N$ 的基本性质
     1. 加法
-        1. 加法交换律：$\forall f(F),g(F)\in ^*N(f(F)+g(F)=g(F)+f(F))$
-        2. 加法结合律：$\forall f(F),g(F),h(F)\in ^*N((f(F)+g(F))+h(F)=f(F)+(g(F)+h(F)))$
+        1. 加法交换律：$\forall f(F),g(F)\in {}^*N(f(F)+g(F)=g(F)+f(F))$
+        2. 加法结合律：$\forall f(F),g(F),h(F)\in {}^*N((f(F)+g(F))+h(F)=f(F)+(g(F)+h(F)))$
     2. 乘法
-        1. 乘法交换律：$\forall f(F),g(F)\in ^*N(f(F)\cdot g(F)=g(F)\cdot f(F))$
-        2. 乘法结合律：$\forall f(F),g(F),h(F)\in ^*N((f(F)\cdot g(F))\cdot h(F)=f(F)\cdot (g(F)\cdot h(F)))$
-        3. 乘法对加法的分配律：$\forall f(F),g(F),h(F)\in ^*N(f(F)\cdot (g(F)+h(F))=f(F)\cdot g(F)+f(F)\cdot h(F))$
+        1. 乘法交换律：$\forall f(F),g(F)\in {}^*N(f(F)\cdot g(F)=g(F)\cdot f(F))$
+        2. 乘法结合律：$\forall f(F),g(F),h(F)\in {}^*N((f(F)\cdot g(F))\cdot h(F)=f(F)\cdot (g(F)\cdot h(F)))$
+        3. 乘法对加法的分配律：$\forall f(F),g(F),h(F)\in {}^*N(f(F)\cdot (g(F)+h(F))=f(F)\cdot g(F)+f(F)\cdot h(F))$
     3. 本原元
-        1. 零元：$\forall f(F)\in ^*N(f(F)+0(F)=f(F))$
-        2. 单位元：$\forall f(F)\in ^*N(f(F)\cdot 1(F)=f(F))$
+        1. 零元：$\forall f(F)\in {}^*N(f(F)+0(F)=f(F))$
+        2. 单位元：$\forall f(F)\in {}^*N(f(F)\cdot 1(F)=f(F))$
         3. $\overline{0}\neq \overline{1}$
     4. 序
         1. 反自反性：$f(F)\nless f(F)$
@@ -187,25 +187,25 @@
         3. 三歧性：$f(F)<g(F)\vee f(F)=g(F)\vee g(F)<f(F)$
         4. 加法保序性：$f(F)<g(F)\to f(F)+h(F)<g(F)+h(F)$
         5. 乘法保序性：$(f(F)<g(F)\wedge h(F)\neq \overline{0})\to f(F)h(F)<g(F)h(F)$
-4. $N$ 嵌入 $^*N$
-    1. 令 $\overline{N}=\{\overline{n}|n\in N\}\subset ^*N$，它是主超滤集合，且构成 $^*N$ 对运算的封闭子集
+4. $N$ 嵌入 ${}^*N$
+    1. 令 $\overline{N}=\{\overline{n}|n\in N\}\subset {}^*N$，它是主超滤集合，且构成 ${}^*N$ 对运算的封闭子集
         1. 考虑映射 $\varphi (n):N\to \overline{N}, \varphi (n)=\overline{n}$．则 $\varphi$ 为保序保运算的双射
-        2. 称 $N$ 与 $\overline{N}$ 同构，$\varphi$ 把 $N$ 同构嵌入 $^*N$，将 $n$ 和 $\overline{n}$ 视作同一符号
-    2. 令 $N_{\infty}=^*N-\overline{N}$，它是非主算术超滤的集合
+        2. 称 $N$ 与 $\overline{N}$ 同构，$\varphi$ 把 $N$ 同构嵌入 ${}^*N$，将 $n$ 和 $\overline{n}$ 视作同一符号
+    2. 令 $N_{\infty}={}^*N-\overline{N}$，它是非主算术超滤的集合
         1. $\tau \in N_{\infty} \to \forall m\in N(\tau >\overline{m})$．即 $N_{\infty}$ 的成员都是「无穷大数」
-        2. 可以将 $^*N$ 的元素排成一列：
+        2. 可以将 ${}^*N$ 的元素排成一列：
 
         $$
         0,1,2,\cdots ,n,\cdots ,\tau ,\tau +1,\cdots 
         $$
 
         !!! note "转换原理"
-            现取语言 $\mathcal{L}=\{0,+,\cdot ,f,g,h,\cdots \}$，使 $^*N=\{f(F)|f\in ^NN\}$ 成为语言 $\mathcal{L}$ 的结构．令 $\mathcal{L}\cup \{F\}=\{F,0,+,\cdot ,f,g,h,\cdots \}$，$F$ 为算术超滤．则有
+            现取语言 $\mathcal{L}=\{0,+,\cdot ,f,g,h,\cdots \}$，使 ${}^*N=\{f(F)|f\in {}^NN\}$ 成为语言 $\mathcal{L}$ 的结构．令 $\mathcal{L}\cup \{F\}=\{F,0,+,\cdot ,f,g,h,\cdots \}$，$F$ 为算术超滤．则有
 
-            <p align="center">$\varphi$ 在 $^*N$ 中为真 $\leftrightarrow \{n\in N|\varphi (n)\in F\}$<p>
+            <p align="center">$\varphi$ 在 ${}^*N$ 中为真 $\leftrightarrow \{n\in N|\varphi (n)\in F\}$<p>
 
 ### 3.4.4 自然数数列的延伸
-1. 对 $\forall h:N\to N$，可以扩充为 $h:^*N\to ^*N$，于是得到以下序列，称为自然数列的延伸：
+1. 对 $\forall h:N\to N$，可以扩充为 $h:{}^*N\to {}^*N$，于是得到以下序列，称为自然数列的延伸：
 
     $$
     h(0),h(1),h(2),\cdots ,h(n),\cdots ,h(\tau ),h(\tau +1),\cdots 
@@ -213,8 +213,8 @@
 
 2. 延伸的性质
     1. 序保持：$\forall n\in N(h(n)<g(n))\to \forall \tau \in N_{\infty}(h(\tau )<g(\tau ))$
-    2. 单调性保持：$\forall i,j\in N(i<j\to h(i)<h(j))\to \forall x,y\in ^*N(x<y\to h(x)<h(y))$
-    3. 「分数」的单调性保持：若 $\forall i,j\in N(i<j\to h(i)l(j)<h(j)l(i))$，则 $\forall x,y\in ^*N(x<y\to h(x)l(y)<h(y)l(x))$
+    2. 单调性保持：$\forall i,j\in N(i<j\to h(i)<h(j))\to \forall x,y\in {}^*N(x<y\to h(x)<h(y))$
+    3. 「分数」的单调性保持：若 $\forall i,j\in N(i<j\to h(i)l(j)<h(j)l(i))$，则 $\forall x,y\in {}^*N(x<y\to h(x)l(y)<h(y)l(x))$
 
 ## 3.5 实数理论
 ### 3.5.1 Archimedes 序域

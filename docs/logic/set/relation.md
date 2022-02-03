@@ -66,7 +66,7 @@
     3. 函数 $f$ 有反函数当且仅当 $f$ 为单射，双射的反函数仍为双射
 4. 其他定义
     1. $g=f|c$，即 $\forall x\in c(f(x)=g(x))$，称 $f$ 为 $g$ 的扩张，$g$ 为 $f$ 的限制
-    2. 定义 $^{a}b=\{f|f:a\to b\}$，该定义的合法性由 $^{a}b\subset \mathcal{P}(a\times b)$ 保证．当 $b\subset c$ 时，$^{a}b\subset ^{a}c$
+    2. 定义 ${}^{a}b=\{f|f:a\to b\}$，该定义的合法性由 ${}^{a}b\subset \mathcal{P}(a\times b)$ 保证．当 $b\subset c$ 时，${}^{a}b\subset {}^{a}c$
     3. 单位映射：集合 $a$ 中的恒同关系，即定义 $i_a: a\to a, \forall x\in a((x, x)\in i_a)$，当 $f: a\to b$ 为双射时，$f^{-1}\circ f=i_a, f\circ f^{-1}=i_b$
 
 ## 2.3 集族的 Descartes 积
