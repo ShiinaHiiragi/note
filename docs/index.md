@@ -6,9 +6,9 @@
 全站以 `mkdocs-material` 作为框架，使用中文作为描述语言，所有源文件在 GitHub 可见。为了输入方便，正在编写中的页面若带有大量公式，则其中文部分暂时使用英文标点符号分隔，每个半角标点符号后面会附加一个半角空格；已经编写完成的中文部分将统一替换为中文标点。
 
 !!! info "此项目仍未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：点集拓扑 - 商空间 </label>
+    <label> 现在进度：点集拓扑 · 连通性 </label>
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 47%;"> 47% </div>
+        <div class="progress-percentage" style="width: 48%;"> 48% </div>
     </div>
 
 ## 参考文献
