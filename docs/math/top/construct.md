@@ -37,6 +37,7 @@
     1. 设 $X=X_1\times X_2\times \cdots \times X_n$ 是 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 的积空间，又设 $Y$ 也是一个拓扑空间，则映射 $f: Y\to X$ 连续当且仅当对于每一个 $i=1, 2, \cdots, n$，复合映射 $p_i\circ f: Y\to X_i$ 连续，其中 $p_i: X\to X_i$ 是积空间 $X$ 对于第 $i$ 个坐标空间 $X_i$ 的投射
     2. 积拓扑是使从积空间到每一个坐标空间的投射都连续的最小拓扑，即设 $X=X_1\times X_2\times \cdots \times X_n$ 是 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 的积空间，$\mathscr T$ 是 $X$ 的积拓扑．又设 $\widetilde{\mathscr T}$ 是 $X$ 的某一个拓扑满足条件：对于 $X$ 的拓扑 $\widetilde{\mathscr T}$ 而言，从 $X$ 到它的第 $i$ 个坐标空间 $X_i$ 的投射 $p_i: X\to X_i$ 是连续映射，$i=1, 2, \cdots, n$，则 $\widetilde{\mathscr T}\subset \mathscr T$
     3. 设 $X_1, X_2, \cdots, X_n$ 是 $n\geqslant 2$ 个拓扑空间，则积空间 $X_1\times X_2\times \cdots \times X_n$ 同胚于积空间 $(X_1\times X_2\times \cdots \times X_{n-1})\times X_n$
+4. 有限可积性质：若如果任意 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 都具有性质 $P$，则积空间 $X_1\times X_2\times \cdots \times X_n$ 也具有性质 $P$，则称性质 $P$ 为有限可积性质
 
 ### 2.2.2 一般积空间
 1. 点式收敛拓扑：如果一个集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 中所有的 $X_\gamma$，则称 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族或一族拓扑空间
@@ -47,6 +48,9 @@
     2. 设 $Y$ 是一个拓扑空间，则映射 $f: Y\to \prod_{\gamma \in \Gamma} X_\gamma$ 是一个连续映射当且仅当对于每一个 $\alpha \in \Gamma$，映射 $p_\alpha\circ f: Y\to X_\alpha$ 是连续的，其中 $p_\alpha$ 是积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投影
     3. 令 $\mathscr T$ 为 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑．如果 $\widetilde{\mathscr T}$ 是笛卡尔积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的一个拓扑使得对于任何 $\alpha \in \Gamma$，$\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 都是连续的，则 $\mathscr T\subset \widetilde{\mathscr T}$
     4. 积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 中的序列 $\{x^{(i)}\}_{i\in Z_+}$ 收敛于点 $x\in \prod_{\gamma \in \Gamma} X_\gamma$ 的充要条件是对于每一个 $\alpha \in \Gamma$，拓扑空间 $X_\alpha$ 中的序列 $\{p_\alpha(x^{(i)})\}_{i\in Z_+}$ 收敛于 $p_\alpha(x)\in X_\alpha$
+3. 可积性质：每一个坐标空间具有性质 $P \to$ 积空间具有性质 $P$
+    1. 凡不是有限可积的性质一定不是可积的性质
+    2. 并非每一个有限可积的性质都是可积的性质
 
 ### 2.2.3 映射空间
 1. 赋值映射：对于任意 $x\in X$，令 $e_x: {}^XY\to Y$ 为 $Y$ 的第 $x$ 个投射，则对于任何 $f\in {}^XY$， $e_x(f)=f(x)$ 恰是映射 $f$ 在点 $x$ 处的像．将投射 $e_x$ 称为 ${}^XY$ 在点 $x\in X$ 处的赋值映射 
@@ -91,3 +95,4 @@
     2. 圆柱面：在单位正方形 $I^2=[0, 1]^2$ 中给定一个等价关系 $\sim=\{(x, y)\in(I\times I)^2|x=y\vee \{x_1, y_1\}=\{0, 1\}, x_2=y_2, x=(x_1, x_2), y=(y_1, y_2)\}$ 得到的商空间 $I^2/\sim$
     3. $\mathrm{Mobius}$ 带：将单位正方形 $I^2=[0, 1]^2$ 的一对竖直的对边上的每一对点 $(0, y)$ 和 $(1, 1-y)$ 粘合得到的商空间，它与 $\mathrm{Mobius}$ 带同胚，且不同胚与圆柱面
     4. $\mathrm{Klein}$ 瓶：在单位正方形 $I^2=[0, 1]^2$ 中将它的一堆水平的对边上具有相同的第一个坐标的点 $(x, 0)$ 和 $(x, 1)$ 粘合，同时将其一对竖边上的每一对点 $(0, y)$ 和 $(1, 1-y)$ 粘合，得到的商空间与 $\mathrm{Klein}$ 瓶同胚，这个商空间不可能画在 $R^3$ 中
+5. 可商性质：拓扑空间的某种性质，如果为一个拓扑空间所具有也必然为它的任何一个商空间所具有，则称这个性质是一个可商性质．拓扑不变性质必然是可商性质

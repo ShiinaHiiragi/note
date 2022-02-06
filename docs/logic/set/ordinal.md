@@ -42,7 +42,7 @@
     1. $\in -$ 反自反性：$\forall x\in \alpha (x\notin x)$
     2. $\in -$ 可递性：$\forall x,y,z\in \alpha(x\in y\wedge y\in z\to x\in z)$
     3. $\in -$ 三分律：$\forall x,y\in a(x\in y\vee x=y\vee y\in x)$
-    4. $\in -$ 良基性：$\alpha$ 的任意`非空子集有 $\in -$ 极小元
+    4. $\in -$ 良基性：$\alpha$ 的任意非空子集有 $\in -$ 极小元
     5. $\alpha$ 是可递集，即 $y\in x\wedge x\in \alpha \to y\in \alpha$
 
     !!! note "序数与自然数"
