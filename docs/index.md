@@ -45,24 +45,26 @@
 <script>
 const entryList = [
     // PART I
-    "蔡曙山.认知科学导论[M]. 人民出版社:北京, 2021:1-697.",
+    // "蔡曙山.认知科学导论[M]. 人民出版社:北京, 2021:1-697.",
     "华东师范大学哲学系逻辑学教研室.形式逻辑[M]. 华东师大出版社:上海, 2016:1-193.",
     "[英]Julian Baggini, [美]Peter S. Fosl.简单的哲学[M]. 陶涛,译. 中国人民大学出版社:北京, 2016:1-266.",
-    "Robin Turner,Nick Nicholas.Lojban For Beginners[EB/OL].",
+    // "Robin Turner,Nick Nicholas.Lojban For Beginners[EB/OL].",
     // PART II
-    "蔡曙山,邹崇理.自然语言形式理论研究[M]. 人民出版社:北京, 2010:1-604.",
-    "陈波.逻辑哲学[M]. 北京大学出版社:北京, 2006:1-364.",
-    "黄敏.分析哲学导论[M]. 中山大学出版社:广州, 2009:1-362.",
+    // "蔡曙山,邹崇理.自然语言形式理论研究[M]. 人民出版社:北京, 2010:1-604.",
+    // "陈波.逻辑哲学[M]. 北京大学出版社:北京, 2006:1-364.",
+    // "黄敏.分析哲学导论[M]. 中山大学出版社:广州, 2009:1-362.",
     "[美]Stewart Shapiro.数学哲学：对数学的思考[M]. 郝兆宽,杨睿之,译. 复旦大学出版社:上海, 2009:1-281.",
     // PART III
-    "汪芳庭.数学基础[M]. 高等教育出版社:北京, 2018:1-271.",
-    "汪芳庭.数理逻辑[M]. 中国科学技术大学出版社:合肥, 2010:1-188.",
-    "郝兆宽,杨睿之,杨跃.数理逻辑：证明及其限度[M]. 复旦大学出版社:上海, 2020:1-243.",
-    "[美]Michael Sipser.计算理论导引[M]. 唐常杰,陈鹏,向勇,刘齐宏,译. 机械工业出版社:北京, 2006:155-220",
-    "Graham Priest.An Introduction to Non-Classical Logic: from if to is[M]. Cambridge University Press:Cambridge, 2008:1-583.",
+    // "马明辉.结构证明论[M]. 科学出版社:北京, 2019:1-252.",
+    // "郝兆宽,杨睿之,杨跃.数理逻辑：证明及其限度[M]. 复旦大学出版社:上海, 2014:173-230.",
+    // "郝兆宽,杨跃.集合论：对无穷概念的探索[M]. 复旦大学出版社:上海, 2014:1-237.",
+    // "姚宁远.初等模型论[M]. 复旦大学出版社:上海, 2018:1-232.",
+    // "郝兆宽,杨睿之,杨跃.递归论：算法与随机性基础[M]. 复旦大学出版社:上海, 2018:1-243.",
+    // "John Stillwell.Reverse Mathematics: Proofs from the Inside out[M]. Princeton University Press:Oxford, 2018:1-167",
     // PART IV
-    "John Stillwell.Reverse Mathematics: Proofs from the Inside out[M]. Princeton University Press:Oxford, 2018:1-167",
-    "熊金城.点集拓扑讲义[M]. 高等教育出版社:北京, 2020:1-162."
+    "熊金城.点集拓扑讲义[M]. 高等教育出版社:北京, 2020:1-162.",
+    // "李文威.代数学方法：基本架构[M]. 高等教育出版社:北京, 2019:27-422.",
+    // "Rob Nederpelt,Herman Geuvers.Type Theory and Formal Proof: an Introduction[M]. Cambridge UniversitPress:Cambridge, 2014:1-390.",
 ];
 
 entryList.forEach((item, index) => {
