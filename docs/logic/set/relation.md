@@ -27,7 +27,7 @@
     2. 对称性：$\forall x,y\in a(xRy\to yRx)$  
       反对称性：$\forall x,y\in a((xRy\wedge yRx)\to x=y)$
     3. 可递性：$\forall x,y,z\in a((xRy\wedge yRz)\to xRz)$
-4. 等价关系：设 $R\subset a^2$，若 $R$ 同时有自反性，对称性，可递性，则称 $R$ 为 $a$ 上的等价关系．如果只有一个等价关系，则 $xRy$ 可以记作 $x\sim y$
+4. 等价关系：设 $R\subset a^2$，若 $R$ 同时有自反性，对称性，可递性，则称 $R$ 为 $a$ 上的等价关系．若只有一个等价关系，则 $xRy$ 可以记作 $x\sim y$
     1. 等价类：任取 $x\in a$，记 $[x]_R=\{t\in a|t\sim x\}$，则将 $[x]_R$ 或 $[x]$ 称作 $x$ 的等价类
         1. $x\in [x]$
         2. $x\sim y\to [x]=[y]$

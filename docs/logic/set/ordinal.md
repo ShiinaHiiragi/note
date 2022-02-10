@@ -113,6 +113,6 @@
         $$
 
 3. $\mathrm{On}$ 上的递归定义：序数的加法，乘法以及指数运算是 $\mathrm{On}$ 上递归定义的特例
-    1. 序数函数：如果公式 $\psi(x,y)$ 有 $\forall \alpha \in\mathrm{On}\exists!y\psi(\alpha,y)$，则此时 $\psi$ 确定了 $a$ 上的一个函数，称为 $\psi$ 在 $a$ 上的限制，记作 $\psi \upharpoonright a:a\to \psi[a]$
+    1. 序数函数：若公式 $\psi(x,y)$ 有 $\forall \alpha \in\mathrm{On}\exists!y\psi(\alpha,y)$，则此时 $\psi$ 确定了 $a$ 上的一个函数，称为 $\psi$ 在 $a$ 上的限制，记作 $\psi \upharpoonright a:a\to \psi[a]$
     2. 设 $f,g$ 是分别定义在序数 $\delta,\gamma$ 上的函数，$\delta \leqslant \gamma$ 且 $\varphi$ 是个集运算．若 $\forall \alpha<\delta(f(\alpha)=\varphi(f\upharpoonright \alpha)\wedge g(\alpha)=\varphi(g\upharpoonright \alpha))$，则 $g\upharpoonright \delta=f$
     3. 对于任给的集运算 $\varphi$，唯一存在序数 $\delta$ 上的函数 $\psi_\delta$ 使得 $\forall \alpha <\delta(\psi_\delta(\alpha)=\varphi(\psi_\delta \upharpoonright \alpha))$；唯一存在序数函数 $\psi$ 使得 $\psi(\alpha)=\varphi(\psi \upharpoonright \alpha)$
