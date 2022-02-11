@@ -51,7 +51,16 @@
     2. 设 $Y$ 是一个拓扑空间，则映射 $f: Y\to \prod_{\gamma \in \Gamma} X_\gamma$ 是一个连续映射当且仅当对于每一个 $\alpha \in \Gamma$，映射 $p_\alpha\circ f: Y\to X_\alpha$ 是连续的，其中 $p_\alpha$ 是积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投影
     3. 令 $\mathscr T$ 为 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑．若 $\widetilde{\mathscr T}$ 是笛卡尔积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的一个拓扑使得对于任何 $\alpha \in \Gamma$，$\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 都是连续的，则 $\mathscr T\subset \widetilde{\mathscr T}$
     4. 积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 中的序列 $\{x^{(i)}\}_{i\in Z_+}$ 收敛于点 $x\in \prod_{\gamma \in \Gamma} X_\gamma$ 的充要条件是对于每一个 $\alpha \in \Gamma$，拓扑空间 $X_\alpha$ 中的序列 $\{p_\alpha(x^{(i)})\}_{i\in Z_+}$ 收敛于 $p_\alpha(x)\in X_\alpha$
-3. 可积性质：每一个坐标空间具有性质 $P \to$ 积空间具有性质 $P$
+3. 拓扑空间在方体的嵌入
+    1. 方体：设 $\Gamma$ 是一个集合，则从 ${}^\Gamma [0, 1]$ 连通它的点式收敛拓扑称为一个方体
+    2. 映射族：设 $X$ 是一个拓扑空间，$F$ 是一族映射，其中的每一个元素是从拓扑空间 $X$ 到某一个拓扑空间的一个映射．如果对于任何 $x, y\in X, x\neq y$ 存在 $f\in F$ 使得 $f(x)\neq f(y)$，则称映射族 $F$ 是一个区别点的映射族，如果对于任何 $x\in X$ 和 $X$ 中的任何一个不包含点 $x$ 的闭集 $B$，存在 $f\in F$ 使得 $f(x)\notin \overline{f(B)}$，则称映射族 $F$ 是一个区别点和闭集的映射族
+    3. 嵌入引理：设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族，$Y$ 是一个拓扑空间，$f: Y\to \prod_{\gamma \in \Gamma}X_\gamma$ 是一个映射，令 $F=\{p\circ_\alpha f: Y\to X_\alpha|\alpha \in \Gamma\}$，其中 $p_\alpha$ 是 $\prod_{\gamma \in Gamma} X_\gamma$ 的第 $\alpha$ 个投射
+        1. $f$ 是一个连续映射当且仅当 $F$ 是一个由连续映射构成的族
+        2. $f$ 是一个单射当且仅当映射组 $F$ 能区别点
+        3. 若 $F$ 是一个能区别点和闭集的映射族 $F$ 能区别点
+    4. 嵌入定理：设 $X$ 是一个拓扑空间，则 $X$ 是一个 $\text{Tychonoff}$ 空间当且仅当 $X$ 能嵌入某一个方体
+    5. 设 $X$ 是一个拓扑空间，则 $X$ 是一个 $\text{Tychonoff}$ 空间当且仅当 $X$ 能嵌入某一个紧的 $\text T_2$ 空间
+4. 可积性质：每一个坐标空间具有性质 $P \to$ 积空间具有性质 $P$
     1. 凡不是有限可积的性质一定不是可积的性质
     2. 并非每一个有限可积的性质都是可积的性质
 
