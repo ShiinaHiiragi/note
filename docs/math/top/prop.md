@@ -178,6 +178,10 @@
     4. 可积性
         1. $\text{Alexander}$ 子基定理：设 $X$ 是一个拓扑空间，$\mathscr S$ 是它的一个子集．若由 $\mathscr S$ 中的元素构成的 $X$ 的每一个覆盖有一个有限子覆盖，则拓扑空间 $X$ 是一个紧空间
         2. $\text{Tychonoff}$ 乘积定理：任何一族紧空间的积空间都是紧空间
+
+        !!! note "命题逻辑的紧致性定理"
+            设 $\mathrm{Prop}$ 为命题变元集合，$\mathscr L$ 为命题公式集．令 $\mathrm{Prop}$ 为指标集，对集合 $2=\{0, 1\}$ 赋予离散拓扑，所有真值指派的集合 ${}^V2$ 是一个积空间，其子基元素是集合 $\mathscr S_{p, i}=\{\tau: \tau(p)=i\}, p\in \mathrm{Prop}, i\in 2$．由 $\text{Tychonoff}$ 乘积定理，${}^V2$ 是紧致的．对任意 $\varphi \in \mathscr L$，令 $D_\varphi$ 是使 $\varphi$ 成立的真值指派，则 $\{D_\varphi\}_{\varphi \in \Gamma}$ 是一个闭集族．$\Gamma$ 的任意有限子集是可满足的当且仅当对于任意 $\Gamma_0\subset \Gamma$，$\bigcup_{\varphi\in \Gamma} D_\varphi$ 非空，这等价于 $\Gamma$ 可满足
+
 5. 加细：设集族 $\mathscr {A, B}$ 都是集合 $X$ 的覆盖，如果 $\mathscr A$ 中的每一个元素都包含于 $\mathscr B$ 的某一个元素之中，则称 $\mathscr A$ 是 $\mathscr B$ 的一个加细
 
 ### 3.4.2 紧空间的实例
