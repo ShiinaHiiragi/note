@@ -10,8 +10,8 @@
     1. 对于任意两点 $x, y\in X$，称 $\rho(x, y)$ 为点 $x$ 到点 $y$ 的一个距离
     2. 度量空间的实例
         1. 实数空间：对于实数集合 $R$，定义 $\rho: R\times R\to R$ 有 $\forall x, y\in R: \rho(x, y)=|x-y|$，这个度量称之为 $R$ 的通常度量
-        2. $n$ 维 $\mathrm{Euclid}$ 空间：对于 $R^n$．定义 $\rho: R^n\times R^n \to R$ 有 $\forall x, y\in R: \rho(x, y)=\sqrt{\sum_{i=1}^n(x_i-y_i)^2}$，这个度量称为 $R^n$ 的通常度量
-        3. $\mathrm{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)|\sum_{i=1}^\infty x_i^2<\infty, x_i\in R, i\in Z_+\right\}$，定义 $\rho: H\times H\to R$ 有 $\forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)=\sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}$．容易验证这是良定义，这个度量称之为 $H$ 的通常度量
+        2. $n$ 维 $\text{Euclid}$ 空间：对于 $R^n$．定义 $\rho: R^n\times R^n \to R$ 有 $\forall x, y\in R: \rho(x, y)=\sqrt{\sum_{i=1}^n(x_i-y_i)^2}$，这个度量称为 $R^n$ 的通常度量
+        3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)|\sum_{i=1}^\infty x_i^2<\infty, x_i\in R, i\in Z_+\right\}$，定义 $\rho: H\times H\to R$ 有 $\forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)=\sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}$．容易验证这是良定义，这个度量称之为 $H$ 的通常度量
         4. 离散度量：设 $(X, \rho)$ 是一个度量空间，若 $\forall x\in X\ \exists \delta_x>0: \rho(x, y)>\delta_x$ 对于任何 $y\in X, y\neq x$ 成立，则称 $(X, \rho)$ 是离散的，或称 $\rho$ 是 $X$ 的一个离散度量
 3. 球形邻域：设 $(X, \rho)$ 是一个度量空间，$x\in X$，对于任意给定的实数 $\varepsilon >0$，集合 $B(x, \varepsilon) = B_\varepsilon(x) = \{y\in X|\rho(x, y)<\varepsilon\}$ 为一个以 $x$ 为中心，以 $\varepsilon$ 为半径的球形领域，或称为 $x$ 的一个 $\varepsilon-$邻域
     1. 每一点 $x\in X$ 至少有一个球形领域，并且点 $x$ 属于它的每一个球形邻域
@@ -46,12 +46,12 @@
         4. $\forall B\subset X: f^{-1}(\overline B)\supset \overline{f^{-1}(B)}$
 
 ### 1.1.2 完备度量空间
-1. $\mathrm{Cauchy}$ 序列：设 $(X, \rho)$ 是一个度量空间，$X$ 中的一个序列 $\{x_i\}_{i\in Z_+}$．若对于任意给定的实数 $\varepsilon >0$，存在整数 $N>0$，使得当 $i, j>N$ 时，有 $\rho(x_i, x_j)<\varepsilon$，则称序列 $\{x_i\}_{i\in Z_+}$ 是一个 $\mathrm{Cauchy}$ 序列
-2. 完备度量空间：$X$ 中的每一个 $\mathrm{Cauchy}$ 序列都收敛的度量空间 $(X, \rho)$．度量空间的每一个收敛序列都是 $\mathrm{Cauchy}$ 序列，反之不一定成立
+1. $\text{Cauchy}$ 序列：设 $(X, \rho)$ 是一个度量空间，$X$ 中的一个序列 $\{x_i\}_{i\in Z_+}$．若对于任意给定的实数 $\varepsilon >0$，存在整数 $N>0$，使得当 $i, j>N$ 时，有 $\rho(x_i, x_j)<\varepsilon$，则称序列 $\{x_i\}_{i\in Z_+}$ 是一个 $\text{Cauchy}$ 序列
+2. 完备度量空间：$X$ 中的每一个 $\text{Cauchy}$ 序列都收敛的度量空间 $(X, \rho)$．度量空间的每一个收敛序列都是 $\text{Cauchy}$ 序列，反之不一定成立
     1. 完备度量空间中的每一个闭的度量子空间都是完备度量空间
-    2. $n$ 维欧氏空间（包括实数空间）$R$ 和 $\mathrm{Hilbert}$ 空间 $H$ 都是完备度量空间
-        1. 设 $(X, \rho)$ 是一个度量空间，$Y\subset X$．若 $Y$ 中的每一个 $\mathrm{Cauchy}$ 序列都在 $X$ 中收敛，则 $Y$ 的闭包 $\overline Y$ 中的每一个 $\mathrm{Cauchy}$ 序列也都在 $X$ 中收敛
-        2. 设 $(X, \rho)$ 是一个度量空间，$Y$ 是 $X$ 的一个稠密子集．若 $Y$ 中的每一个 $\mathrm{Cauchy}$ 序列都在 $X$ 中收敛，则 $X$ 是一个完备度量空间
+    2. $n$ 维欧氏空间（包括实数空间）$R$ 和 $\text{Hilbert}$ 空间 $H$ 都是完备度量空间
+        1. 设 $(X, \rho)$ 是一个度量空间，$Y\subset X$．若 $Y$ 中的每一个 $\text{Cauchy}$ 序列都在 $X$ 中收敛，则 $Y$ 的闭包 $\overline Y$ 中的每一个 $\text{Cauchy}$ 序列也都在 $X$ 中收敛
+        2. 设 $(X, \rho)$ 是一个度量空间，$Y$ 是 $X$ 的一个稠密子集．若 $Y$ 中的每一个 $\text{Cauchy}$ 序列都在 $X$ 中收敛，则 $X$ 是一个完备度量空间
 3. 保距映射：设 $(X, \rho)$ 和 $(Y, d)$ 都是度量空间，$f: X\to Y$．若对于任意 $x, y\in X$ 有 $d(f(x), f(y)) =\rho(x, y)$，则称映射 $f$ 是一个保距映射，若存在一个从 $X$ 到 $Y$ 的满的保距映射，则称度量空间 $(X, \rho)$ 与 $(Y, d)$ 同距
     1. 保距映射是一个单射，两个保距映射的复合也是保距映射；满的保距映射一定是一个同胚，其逆映射也是保距映射
     2. 同距作为关系是一个等价关系；同距的度量空间是同胚的
@@ -61,12 +61,12 @@
 5. 完全有界：设 $(X, \rho)$ 是一个度量空间，$\varepsilon>0$ 是一个实数．$X$ 的有限子集 $A$ 称为一个 $\varepsilon-$网，若对于任何 $x\in X$ 有 $\rho(x, A)<\varepsilon$．若对于任何实数 $\varepsilon>0$，$X$ 有一个 $\varepsilon-$网，则称度量空间是完全有界的
     1. 设 $(X, \rho)$ 是一个度量空间，则 $(X, \rho)$ 是紧的当且仅当 $(X, \rho)$ 是一个完全有界的完备度量空间
     2. 设 $(X, \rho)$ 是一个完备度量空间，若由 $X$ 的子集构成的一个序列 $\{E_1, E_2, \cdots\}$ 满足条件 $E_1\supset E_2\supset \cdots \wedge \lim_{i\to \infty} \mathrm{diam}(E_i)=0$，其中 $\mathrm{diam}(E_i)$ 表示 $E_i$ 的直径，则 $\bigcap_{i\in Z_+}E^-_i$ 是一个单点集
-    3. $\mathrm{Baire}$ 定理：设 $X$ 是一个完备的度量空间，若 $G_1, G_2, \cdots$ 是 $X$ 中的可数个稠密的开集，则交集 $\bigcap_{i\in Z_+} G_i$ 是 $X$ 中的一个稠密子集
+    3. $\text{Baire}$ 定理：设 $X$ 是一个完备的度量空间，若 $G_1, G_2, \cdots$ 是 $X$ 中的可数个稠密的开集，则交集 $\bigcap_{i\in Z_+} G_i$ 是 $X$ 中的一个稠密子集
 
-        !!! note "$\mathrm{Baire}$ 定理的其他表述形式"
+        !!! note "$\text{Baire}$ 定理的其他表述形式"
             设 $X$ 是一个拓扑空间，若 $A^{-o}=\varnothing$，则称 $A$ 为 $X$ 的一个无处稠密子集．若 $X$ 的子集 $F$ 可以表示为 $X$ 中可数个无处稠密的子集之并，则称 $F$ 为第一范畴集，若 $X$ 的子集不是第一范畴集，则称之为第二范畴集
 
-            据此 $\mathrm{Baire}$ 定理可以重述为「完备度量空间中的任何一个非空开集都是第二范畴集」
+            据此 $\text{Baire}$ 定理可以重述为「完备度量空间中的任何一个非空开集都是第二范畴集」
 
 ## 1.2 拓扑空间
 ### 1.2.1 拓扑空间
@@ -77,12 +77,7 @@
 2. 拓扑空间：若 $\mathscr T$ 是集合 $X$ 的一个拓扑，则称偶对 $(X, \mathscr T)$ 是一个拓扑空间，集合 $X$ 是一个相对于拓扑 $\mathscr T$ 而言的拓扑空间
     1. 当 $\mathscr T$ 已约定时，称集合 $X$ 是一个拓扑空间，$\mathscr T$ 的每一个元素都叫做拓扑空间 $(X, \mathscr T)$ 的一个开集
     2. 设 $X, \rho$ 是一个度量空间，令 $\mathscr T_\rho$ 为由 $X$ 中所有开集构成的集族，则 $(X, \mathscr T_\rho)$ 是 $X$ 的一个拓扑，称 $\mathscr T_\rho$ 为 $X$ 由度量 $\rho$ 诱导的拓扑
-
-        !!! note "可度量化空间"
-            设 $(X, \mathscr T)$ 是一个拓扑空间，若存在 $X$ 的一个度量 $\rho$ 使得拓扑 $\mathscr T$ 即是由度量 $\rho$ 诱导的拓扑 $\mathscr T_\rho$，则称 $(X, \mathscr T)$ 是一个可度量化空间
-
     3. 设 $X$ 为一个集合，容易验证 $\varnothing$ 与 $\mathcal P(X)$ 都是 $X$ 的拓扑，分别称之为平庸拓扑和离散拓扑．称 $(X, \varnothing)$ 为一个平庸空间，$(X, \mathcal P(X))$ 为一个离散空间
-
 3. 补空间：对于基础集 $X$，记子集 $A\subset X$ 的补集 $A'=X-A$
     1. 设 $X$ 为一个集合，令 $\mathscr T=\{U\subset X|U'$ 是 $X$ 中的一个有限子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的有限补拓扑，称 $(X, \mathscr T)$ 为有限补空间
     2. 设 $X$ 为一个集合，令 $\mathscr T=\{U\subset X|U'$ 是 $X$ 中的一个可数子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的可数补拓扑，称 $(X, \mathscr T)$ 为可数补空间
@@ -136,10 +131,10 @@
         2. 若 $A, B\in \mathscr F$，则 $A\cup B\in \mathscr F$
         3. 若 $\varnothing \neq \mathscr F_1\subset \mathscr F$，则 $\bigcap_{A\in \mathscr F_1}A\in \mathscr F$
 
-        !!! note "$\mathrm{Cantor}$ 集"
+        !!! note "$\text{Cantor}$ 集"
             在实数空间 $R$ 中，定义 $f_1, f_2: R\to R$ 使得对于任意 $t\in R$ 有 $f_1(t)=\dfrac{t}{3}, f_2(t)=\dfrac{t+2}{3}$，则可以验证 $f_1, f_2$ 均为同胚，即任意开集 $U\subset R$，其 $f_1-$像与 $f_2-$像都是开集
 
-            定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1(A_{n-1})\cup f_2(A_{n-1})(n>1), A=\bigcup_{n\in Z_+}A_n$，称集合 $C=[0, 1]-A$ 为 $\mathrm{Cantor}$ 集或标准 $\mathrm{Cantor}$ 三分集，可以验证 $C$ 是一个闭集
+            定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1(A_{n-1})\cup f_2(A_{n-1})(n>1), A=\bigcup_{n\in Z_+}A_n$，称集合 $C=[0, 1]-A$ 为 $\text{Cantor}$ 集或标准 $\text{Cantor}$ 三分集，可以验证 $C$ 是一个闭集
 
 4. 闭包：设 $X$ 是一个拓扑空间，$A\subset X$，称集合 $A\cup d(A)$ 为集合 $A$ 的闭包，记作 $\overline A$ 或 $A^-$
     1. $x\in \overline A$ 当且仅当对于 $x$ 的任何一个邻域 $U$ 有 $U\cap A\neq \varnothing$
@@ -153,7 +148,7 @@
     5. 闭包定义拓扑空间：设 $X$ 是一个集合 $c^*(X): \mathcal P(X)\to \mathcal P(X)$ 的一个闭包运算，则存在 $X$ 的唯一一个拓扑 $\mathscr T$，使得在拓扑空间 $(X, \mathscr T)$ 中对于每一个 $A\subset X$ 有 $c^*(A)=\overline A$
    
     !!! note "闭包运算"
-        设 $X$ 是一个集合，映射 $c^*: \mathcal P(X)\to \mathcal P(X)$ 若对于任意 $A, B\in \mathcal P(X)$，满足以下 $\mathrm{Kuratowski}$ 公理，则称为集合 $X$ 上的一个闭包运算
+        设 $X$ 是一个集合，映射 $c^*: \mathcal P(X)\to \mathcal P(X)$ 若对于任意 $A, B\in \mathcal P(X)$，满足以下 $\text{Kuratowski}$ 公理，则称为集合 $X$ 上的一个闭包运算
 
         1. $c^*(\varnothing) = \varnothing$
         2. $A\subset c^*(A)$

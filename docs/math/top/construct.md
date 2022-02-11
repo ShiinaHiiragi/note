@@ -35,7 +35,7 @@
 2. 设 $(X_1, \mathscr T_1), (X_2, \mathscr T_2), \cdots, (X_n, \mathscr T_n)$ 是 $n\geqslant 1$ 个拓扑空间，则 $X=X_1\times X_2\times \cdots \times X_n$ 的以子集族 $\mathscr B=\{U_1\times U_2\times \cdots \times U_n|U_i\in \mathscr  T_i\}$ 为它的一个基的唯一拓扑 $\mathscr T$ 称为拓扑 $\mathscr T_1, \mathscr T_2, \cdots, \mathscr T_n$ 的积拓扑，拓扑空间 $(X, \mathscr T)$ 称为拓扑空间 $(X_1, \mathscr T_1), (X_2, \mathscr T_2), \cdots, (X_n, \mathscr T_n)$ 的拓扑空间
     1. 设 $X=X_1\times X_2\times \cdots\times X_n$ 是 $n\geqslant 1$ 个度量空间 $X_1, X_2, \cdots, X_n$ 的度量积空间，它们诱导的拓扑空间分别是 $(X, \mathscr T)$ 和 $(X_1, \mathscr T_1), (X_2, \mathscr T_2), \cdots, (X_n, \mathscr T_n)$，则 $(X, \mathscr T)$ 是 $(X_1, \mathscr T_1), (X_2, \mathscr T_2), \cdots, (X_n, \mathscr T_n)$ 的拓扑积空间
     2. 设 $X=X_1\times X_2\times \cdots\times X_n$ 是 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 的积空间，对于每一个 $i=1, 2, \cdots, n$ 拓扑空间 $X_i$ 有一个基 $\mathscr B_i$，则 $X$ 的子集族 $\widetilde B=\{B_1\times B_2\times \cdots \times B_n|B_i\in \mathscr B_i, i=1, 2, \cdots, n\}$ 是拓扑空间 $X$ 的一个基
-    3. 设 $X=X_1\times X_2\times \cdots \times X_n$ 是 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 的积空间．令 $\mathscr T$ 为 $X$ 的拓扑，$\mathscr T_i$ 为 $X_i$ 的拓扑，$i=1, 2, \cdots, n$，则 $X$ 以它的子集族 $\mathscr S=\{p_i^{-1}(U_i)|U_i\in \mathscr T_i, i=1, 2, \cdots, n\}$ 为它的一个子基．其中对于每一个 $i$，映射 $p_i: X\to X_i$ 是 $\mathrm{Descartes}$ 积 $X$ 到它的第 $i$ 个坐标集 $X_i$ 的投射
+    3. 设 $X=X_1\times X_2\times \cdots \times X_n$ 是 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 的积空间．令 $\mathscr T$ 为 $X$ 的拓扑，$\mathscr T_i$ 为 $X_i$ 的拓扑，$i=1, 2, \cdots, n$，则 $X$ 以它的子集族 $\mathscr S=\{p_i^{-1}(U_i)|U_i\in \mathscr T_i, i=1, 2, \cdots, n\}$ 为它的一个子基．其中对于每一个 $i$，映射 $p_i: X\to X_i$ 是 $\text{Descartes}$ 积 $X$ 到它的第 $i$ 个坐标集 $X_i$ 的投射
 3. 开映射与闭映射：设 $X, Y$ 是两个拓扑空间，映射 $f: X\to Y$ 称为一个开映射（闭映射），若 $X$ 中的任何一个开集（闭集）$U$，像集 $f(U)$ 是 $Y$ 中的一个开集（闭集）
     1. 设 $X=X_1\times X_2\times \cdots \times X_n$ 是 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 的积空间，又设 $Y$ 也是一个拓扑空间，则映射 $f: Y\to X$ 连续当且仅当对于每一个 $i=1, 2, \cdots, n$，复合映射 $p_i\circ f: Y\to X_i$ 连续，其中 $p_i: X\to X_i$ 是积空间 $X$ 对于第 $i$ 个坐标空间 $X_i$ 的投射
     2. 积拓扑是使从积空间到每一个坐标空间的投射都连续的最小拓扑，即设 $X=X_1\times X_2\times \cdots \times X_n$ 是 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 的积空间，$\mathscr T$ 是 $X$ 的积拓扑．又设 $\widetilde{\mathscr T}$ 是 $X$ 的某一个拓扑满足条件：对于 $X$ 的拓扑 $\widetilde{\mathscr T}$ 而言，从 $X$ 到它的第 $i$ 个坐标空间 $X_i$ 的投射 $p_i: X\to X_i$ 是连续映射，$i=1, 2, \cdots, n$，则 $\widetilde{\mathscr T}\subset \mathscr T$
@@ -44,8 +44,8 @@
 
 ### 2.2.2 一般积空间
 1. 点式收敛拓扑：若一个集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 中所有的 $X_\gamma$，则称 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族或一族拓扑空间
-    1. 设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族，容易验证 $\mathrm{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的子集族 $\mathscr S=\{p^{-1}_\gamma(U_\gamma)|U_\gamma$ 是 $ $X_\gamma$ 的一个开集 $,\gamma\in \Gamma\}$ 是它的某一个拓扑 $\mathscr T$ 的一个子基, 其中 $p_\gamma$ 是 $\mathrm{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\gamma \in \Gamma$ 个投射
-    2. 拓扑 $\mathscr T$ 称为 $\mathrm{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑（点式收敛拓扑），拓扑空间 $(\prod_{\gamma \in \Gamma} X_\gamma, \mathscr T)$ 称为拓扑空间族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 的积空间，拓扑空间 $X_\gamma$ 称为积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\gamma$ 个坐标空间
+    1. 设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族，容易验证 $\text{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的子集族 $\mathscr S=\{p^{-1}_\gamma(U_\gamma)|U_\gamma$ 是 $ $X_\gamma$ 的一个开集 $,\gamma\in \Gamma\}$ 是它的某一个拓扑 $\mathscr T$ 的一个子基, 其中 $p_\gamma$ 是 $\text{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\gamma \in \Gamma$ 个投射
+    2. 拓扑 $\mathscr T$ 称为 $\text{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑（点式收敛拓扑），拓扑空间 $(\prod_{\gamma \in \Gamma} X_\gamma, \mathscr T)$ 称为拓扑空间族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 的积空间，拓扑空间 $X_\gamma$ 称为积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\gamma$ 个坐标空间
 2. 点式收敛拓扑的性质：设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一族拓扑空间
     1. 对于每一个 $\alpha \in \Gamma$，积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 是一个连续开映射
     2. 设 $Y$ 是一个拓扑空间，则映射 $f: Y\to \prod_{\gamma \in \Gamma} X_\gamma$ 是一个连续映射当且仅当对于每一个 $\alpha \in \Gamma$，映射 $p_\alpha\circ f: Y\to X_\alpha$ 是连续的，其中 $p_\alpha$ 是积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投影
@@ -60,9 +60,9 @@
 2. 映射空间与连续映射空间
     1. 将 ${}^XY=\prod_{x\in X}Y$ 的积拓扑 $\mathscr T$ 称为 ${}^XY$ 的点式收敛拓扑，将拓扑空间 $({}^XY, \mathscr T)$ 称为从集合 $X$ 到集合 $Y$ 的映射空间（点式收敛拓扑）．映射空间是一类特别的积空间，因此关于积空间的一般结论全部适用
     2. 连续映射空间：设 $X$ 和 $Y$ 是两个拓扑空间，记 $\mathscr C(X, Y)$ 为从 $X$ 到 $Y$ 的所有连续映射构成的集合，因此 $\mathscr C(X, Y)\subset {}^XY$．$\mathscr C(X, Y)$ 作为映射空间 ${}^XY$的子空间称为从拓扑空间 $X$ 到 $Y$ 的连续映射空间（点式收敛拓扑），并且此时 $\mathscr C(X, Y)$ 的拓扑也称作点式收敛拓扑
-    3. 设 $X$ 是一个 $\mathrm{Tychonoff}$ 空间，则从 $X$ 到实数空间 $R$ 的所有连续映射构成的集合 $\mathscr C(X, R)$ 是映射空间 ${}^XR$ （点式收敛拓扑）中的一个稠密子集
+    3. 设 $X$ 是一个 $\text{Tychonoff}$ 空间，则从 $X$ 到实数空间 $R$ 的所有连续映射构成的集合 $\mathscr C(X, R)$ 是映射空间 ${}^XR$ （点式收敛拓扑）中的一个稠密子集
 3. 一致收敛度量与一致收敛拓扑
-    1. 一致收敛度量：设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间．记 ${}^XY$ 为从 $X$ 到 $Y$ 的所有映射的集合，定义 $\widetilde{\rho}: {}^XY\times {}^XY \to R$ 使得对于任何 $f, g\in {}^XY$ 有 $\widetilde{\rho}(f, g) = \left\{\begin{aligned}&1,\ \exists x\in X: \rho(f(x), g(x))\geqslant 1 \\& \sup\{\rho(f(x), g(x)) | x\in X\},\ \mathrm{otherwise}\end{aligned}\right.$，则容易验证 $\widetilde{\rho}$ 是 ${}^XY$ 的一个度量，称之为 ${}^XY$ 的一致收敛度量；度量空间 $({}^XY, \widetilde{\rho})$ 称为映射空间（一致收敛度量）
+    1. 一致收敛度量：设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间．记 ${}^XY$ 为从 $X$ 到 $Y$ 的所有映射的集合，定义 $\widetilde{\rho}: {}^XY\times {}^XY \to R$ 使得对于任何 $f, g\in {}^XY$ 有 $\widetilde{\rho}(f, g) = \left\{\begin{aligned}&1,\ \exists x\in X: \rho(f(x), g(x))\geqslant 1 \\& \sup\{\rho(f(x), g(x)) | x\in X\},\ \text{otherwise}\end{aligned}\right.$，则容易验证 $\widetilde{\rho}$ 是 ${}^XY$ 的一个度量，称之为 ${}^XY$ 的一致收敛度量；度量空间 $({}^XY, \widetilde{\rho})$ 称为映射空间（一致收敛度量）
     2. 一致收敛拓扑：由一致收敛度量 $\widetilde{\rho}$ 诱导的 ${}^XY$ 的拓扑 $\mathscr T_{\widetilde{\rho}}$ 称为 ${}^XY$ 的一致收敛度量，拓扑空间 $({}^XY, \mathscr T_{\widetilde{\rho}})$ 称为连续映射空间（一致收敛拓扑），此时其拓扑也称为一致收敛拓扑
 4. 一致收敛：设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间，对于映射集合 ${}^XY$ 中的一个序列 $\{f_i\}_{i\in Z_+}$，若对于任意给定的实数 $\varepsilon>0$，存在整数 $N>0$ 使得当 $i>N$ 时，$\rho(f_i(x), f(x))<\varepsilon$ 对于任何 $x\in X$ 成立，则称此序列一致收敛于映射 $f\in {}^XY$
     1. 设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间，在度量空间 ${}^XY$（一致收敛度量）中的一个序列 $\{f_i\}_{i\in Z_+}$ 收敛于 $f\in {}^XY$ 当且仅当序列 $\{f_i\}_{i\in Z_+}$ 一致收敛于 $f\in {}^XY$
@@ -96,6 +96,6 @@
 4. 商空间例举
     1. 圆周：在单位闭区间 $I=[0, 1]$ 中黏合两个端点得到的商空间：给定等价条件 $\sim=\{(x, y)\in I\times I|x=y\vee \{x, y\}=\{0, 1\}\}$ 得到的商空间 $[0, 1]/\sim$，它与单位圆周 $S^1$ 同胚
     2. 圆柱面：在单位正方形 $I^2=[0, 1]^2$ 中给定一个等价关系 $\sim=\{(x, y)\in(I\times I)^2|x=y\vee \{x_1, y_1\}=\{0, 1\}, x_2=y_2, x=(x_1, x_2), y=(y_1, y_2)\}$ 得到的商空间 $I^2/\sim$
-    3. $\mathrm{Mobius}$ 带：将单位正方形 $I^2=[0, 1]^2$ 的一对竖直的对边上的每一对点 $(0, y)$ 和 $(1, 1-y)$ 粘合得到的商空间，它与 $\mathrm{Mobius}$ 带同胚，且不同胚与圆柱面
-    4. $\mathrm{Klein}$ 瓶：在单位正方形 $I^2=[0, 1]^2$ 中将它的一堆水平的对边上具有相同的第一个坐标的点 $(x, 0)$ 和 $(x, 1)$ 粘合，同时将其一对竖边上的每一对点 $(0, y)$ 和 $(1, 1-y)$ 粘合，得到的商空间与 $\mathrm{Klein}$ 瓶同胚，这个商空间不可能画在 $R^3$ 中
+    3. $\text{Mobius}$ 带：将单位正方形 $I^2=[0, 1]^2$ 的一对竖直的对边上的每一对点 $(0, y)$ 和 $(1, 1-y)$ 粘合得到的商空间，它与 $\text{Mobius}$ 带同胚，且不同胚与圆柱面
+    4. $\text{Klein}$ 瓶：在单位正方形 $I^2=[0, 1]^2$ 中将它的一堆水平的对边上具有相同的第一个坐标的点 $(x, 0)$ 和 $(x, 1)$ 粘合，同时将其一对竖边上的每一对点 $(0, y)$ 和 $(1, 1-y)$ 粘合，得到的商空间与 $\text{Klein}$ 瓶同胚，这个商空间不可能画在 $R^3$ 中
 5. 可商性质：拓扑空间的某种性质，若为一个拓扑空间所具有也必然为它的任何一个商空间所具有，则称这个性质是一个可商性质．拓扑不变性质必然是可商性质

@@ -9,10 +9,10 @@
 
 ## 2.1 简单命题
 ### 2.1.1 直言命题
-1. 概念：断定事物具有某种性质的命题，具有主项 $\mathrm{S}$，谓项 $\mathrm{P}$，联项和量项
+1. 概念：断定事物具有某种性质的命题，具有主项 $S$，谓项 $P$，联项和量项
     1. 根据联项（是或不是）的不同，可以分为肯定命题或否定命题，根据量项（所有或有的）的不同，可以分为全程命题（包括单称命题）或特称命题
     2. 周延性：在一个命题中，其主项或谓项的全部外延被做了断定，那么这个命题的主项或谓项就是周延的
-2. 四种命题形式：全称肯定命题（$\mathrm{SAP}$，左上），全称否定命题（$\mathrm{SEP}$，右上），特称肯定命题（$\mathrm{SIP}$ 左下）以及 特称否定命题（$\mathrm{SOP}$，右下）
+2. 四种命题形式：全称肯定命题（$\text{SAP}$，左上），全称否定命题（$\text{SEP}$，右上），特称肯定命题（$\text{SIP}$ 左下）以及 特称否定命题（$\text{SOP}$，右下）
     1. 利用韦恩图，可以表示概念外延间各种不同关系的图解。其中，利用阴影部分表示不存在，用 「$+$」 表示存在
     2. 就主项而言，全称命题是周延的；就谓项而言，否定命题是周延的
 
@@ -27,7 +27,7 @@
 
 3. 从下表主谓项之间的关系与不同命题形式之间的真假关系， 可以看出以下命题形式之间的关系，如图称为「逻辑方阵」
 
-    | 主谓项关系 | $\mathrm{SAP}$ | $\mathrm{SEP}$ | $\mathrm{SIP}$ | $\mathrm{SOP}$ |
+    | 主谓项关系 | $\text{SAP}$ | $\text{SEP}$ | $\text{SIP}$ | $\text{SOP}$ |
     | :--------: | :------------: | :------------: | :------------: | :------------: |
     |  全同关系  |       真       |       假       |       真       |       假       |
     |  真包含于  |       真       |       假       |       真       |       假       |
@@ -56,10 +56,10 @@
 
         |     原命题     |         换质命题          |    换位命题    |
         | :------------: | :-----------------------: | :------------: |
-        | $\mathrm{SAP}$ | $\mathrm{SE\overline{P}}$ | $\mathrm{PIS}$ |
-        | $\mathrm{SEP}$ | $\mathrm{SA\overline{P}}$ | $\mathrm{PES}$ |
-        | $\mathrm{SIP}$ | $\mathrm{SO\overline{P}}$ | $\mathrm{PIS}$ |
-        | $\mathrm{SOP}$ | $\mathrm{SI\overline{P}}$ |    不能换位    |
+        | $\text{SAP}$ | $\mathrm{SE\overline{P}}$ | $\text{PIS}$ |
+        | $\text{SEP}$ | $\mathrm{SA\overline{P}}$ | $\text{PES}$ |
+        | $\text{SIP}$ | $\mathrm{SO\overline{P}}$ | $\text{PIS}$ |
+        | $\text{SOP}$ | $\mathrm{SI\overline{P}}$ |    不能换位    |
 
     2. 依据逻辑方阵可以推断出一些命题的的真假情况，在同一素材下有以下性质成立
         1. 反对关系：若一个真，则另一个为假，反之不成立
@@ -68,9 +68,9 @@
 
 5. 直言三段论：两个包含共同项的直言命题作为前提推出一个直言命题为结论
     1. 三段论的结构
-        1. 小项 $\mathrm{S}$：在结论中作为主项的概念
-        2. 大项 $\mathrm{P}$：在结论中作为谓项的概念
-        3. 中项 $\mathrm{M}$：在前体中出现而在结论中没有出现的概念
+        1. 小项 $S$：在结论中作为主项的概念
+        2. 大项 $P$：在结论中作为谓项的概念
+        3. 中项 $M$：在前体中出现而在结论中没有出现的概念
     2. 三段论的公理与规则：一类对象的全体具有或不具有某个性质，那么这类对象的一部分也具有或不具有同样的性质
         1. 在一个三段论内，有且仅有三个不同的概念：集合概念和普遍概念不是相同的概念
         2. 中项在前提中必须周延至少一次：若中项中前提一次也没有被断定过其全部外延，则大小项都只与中项的一部分外延发生联系
@@ -79,7 +79,7 @@
         5. 两个特称结论不能推出结论，前提之一是特称的，则结论是特称的
     3. 三段论的格与式
         1. 格：中项在前提中位置的不同而形成的三段论的各种形式
-        2. 式：由于 $\mathrm{A, E, I, O}$ 四种命题在前提和结论中组合的不同形式形成的三段论的各种形式
+        2. 式：由于 $A, E, I, O$ 四种命题在前提和结论中组合的不同形式形成的三段论的各种形式
 
         <figure markdown>
             ![](./../assets/lattice.png)
@@ -91,10 +91,10 @@
         </figure>
         
         !!! note "各个格的规则"
-            1. 第一格的大前提必须全称，小前提必须肯定：$\mathrm{AAA,(AAI),AII,EAE,(EAO),EIO}$
-            2. 第二格两个前提中必须有一个否定命题，大前提必须为全称命题：$\mathrm{AEE,(AEO),AOO,EAE,(EAO),EIO}$
-            3. 第三格小前提必须为肯定命题，且结论必须为特称命题：$\mathrm{AAI,AII,EAO,EIO,IAI,OAO}$
-            4. 第四格的前提如果有一个是否定命题，则大前提必须是全称命题；否则小前提必须是全称命题：$\mathrm{AAI,AEE,IAI,EAO,EIO,(AEO)}$
+            1. 第一格的大前提必须全称，小前提必须肯定：$\text{AAA,(AAI),AII,EAE,(EAO),EIO}$
+            2. 第二格两个前提中必须有一个否定命题，大前提必须为全称命题：$\text{AEE,(AEO),AOO,EAE,(EAO),EIO}$
+            3. 第三格小前提必须为肯定命题，且结论必须为特称命题：$\text{AAI,AII,EAO,EIO,IAI,OAO}$
+            4. 第四格的前提如果有一个是否定命题，则大前提必须是全称命题；否则小前提必须是全称命题：$\text{AAI,AEE,IAI,EAO,EIO,(AEO)}$
 
             带括号的称为弱式，即本应得出全称结论但得出了特称结论的式子
 
@@ -198,10 +198,10 @@
     2. 表示对事物情况断定的不确定的性质
     3. 模态的种类：时间模态（在某些时候为真)、逻辑模态（命题必然为真)、认知模态（人们都认为为真）和意向模态（让人们相信其为真）
 2. 分类：模态命题可分为可能命题和必然命题，两个命题都既有肯定的，也有否定的
-    1. 可能肯定命题：$\mathrm{S}$ 是 $\mathrm{P}$ 是可能的，记作「可能 $p$」，写作 $\diamond p$
-    2. 可能否定命题：$\mathrm{S}$ 不是 $\mathrm{P}$ 是可能的，记作「可能 $\overline{p}$」，写作 $\diamond \overline{p}$
-    3. 必然肯定命题：$\mathrm{S}$ 是 $\mathrm{P}$ 是必然的，记作「必然 $p$」，写作 $\square p$
-    4. 必然否定命题：$\mathrm{S}$ 不是 $\mathrm{P}$ 是必然的，记作「必然 $\overline{p}$」，写作 $\square \overline{p}$
+    1. 可能肯定命题：$S$ 是 $P$ 是可能的，记作「可能 $p$」，写作 $\diamond p$
+    2. 可能否定命题：$S$ 不是 $P$ 是可能的，记作「可能 $\overline{p}$」，写作 $\diamond \overline{p}$
+    3. 必然肯定命题：$S$ 是 $P$ 是必然的，记作「必然 $p$」，写作 $\square p$
+    4. 必然否定命题：$S$ 不是 $P$ 是必然的，记作「必然 $\overline{p}$」，写作 $\square \overline{p}$
 
     <figure markdown>
         ![](../assets/modal.png)
@@ -218,11 +218,11 @@
     3. 根据下反对关系的直接推理：$\overline{\diamond p} \to \diamond \overline{p}, \overline{\diamond \overline{p}} \to \diamond p$
     4. 根据差等关系的直接推理：$\square p\to \diamond p, \overline{\diamond p} \to \overline{\square p}, \square \overline{p} \to \diamond \overline{p}, \overline{\diamond \overline{p}} \to \overline{\square \overline{p}}$
 4. 模态三段论
-    1. 必然模态三段论：所有的 $\mathrm{M}$ 必然是 $\mathrm{P}$ ，所有的 $\mathrm{S}$ 必然是 $\mathrm{M}$ ，所以所有的 $\mathrm{S}$ 必然是 $\mathrm{P}$
-    2. 必然和可能两种模态命题结合：凡 $\mathrm{P}$ 必然是 $\mathrm{M}$ ，凡 $\mathrm{S}$ 可能不是 $\mathrm{M}$ ，所以凡 $\mathrm{S}$ 可能不是 $\mathrm{P}$
-    3. 必然命题和直言命题结合：凡 $\mathrm{M}$ 必然不是 $\mathrm{P}$ ，凡 $\mathrm{S}$ 是 $\mathrm{M}$ ，所以凡 $\mathrm{S}$ 必然不是 $\mathrm{P}$
-    4. 可能命题与直言命题结合：凡 $\mathrm{M}$ 可能是 $\mathrm{P}$ ，凡 $\mathrm{S}$ 是 $\mathrm{M}$ ，所以凡 $\mathrm{S}$ 可能是 $\mathrm{P}$
-    5. 可能模态三段论：凡 $\mathrm{M}$ 可能是 $\mathrm{P}$ ，凡 $\mathrm{S}$ 可能是 $\mathrm{M}$ ，所以凡 $\mathrm{S}$ 可能是 $\mathrm{P}$
+    1. 必然模态三段论：所有的 $M$ 必然是 $P$ ，所有的 $S$ 必然是 $M$ ，所以所有的 $S$ 必然是 $P$
+    2. 必然和可能两种模态命题结合：凡 $P$ 必然是 $M$ ，凡 $S$ 可能不是 $M$ ，所以凡 $S$ 可能不是 $P$
+    3. 必然命题和直言命题结合：凡 $M$ 必然不是 $P$ ，凡 $S$ 是 $M$ ，所以凡 $S$ 必然不是 $P$
+    4. 可能命题与直言命题结合：凡 $M$ 可能是 $P$ ，凡 $S$ 是 $M$ ，所以凡 $S$ 可能是 $P$
+    5. 可能模态三段论：凡 $M$ 可能是 $P$ ，凡 $S$ 可能是 $M$ ，所以凡 $S$ 可能是 $P$
 
 ### 2.3.2 规范命题
 1. 含有「必须（$O$）」「禁止（$F$）」「允许（$P$）」等规范模态词的模态命题，分为六种命题：
@@ -253,9 +253,9 @@
     3. 根据规范命题下反对关系的直接推理：$\overline{P_p} \to P_\overline{p}, \overline{P_\overline{p}}\to P_p$
     4. 根据规范命题差等关系的直接推理：$O_p\to P_p, \overline{P_p}\to \overline{O_p}, O_\overline{p} \to P_\overline{p}, \overline{P_\overline{p}}\to \overline{O_\overline{p}}$
 4. 规范三段论：直言三段论中引入规范模态词的一种三段论推理。一般来说，其大前提是规范命题，小前提是直言命题，结论是规范命题
-    1. 必须规范三段论：凡 $\mathrm{M}$ 必须 $\mathrm{P}$ ，凡 $\mathrm{S}$ 是 $\mathrm{M}$ ，所以，凡 $\mathrm{S}$ 必须 $\mathrm{P}$ 
-    2. 禁止规范三段论：凡 $\mathrm{M}$ 禁止 $\mathrm{P}$ ，凡 $\mathrm{S}$ 是 $\mathrm{M}$ ，所以，凡 $\mathrm{S}$ 禁止 $\mathrm{P}$ 
-    3. 允许规范三段论：凡 $\mathrm{M}$ 允许 $\mathrm{P}$ ，凡 $\mathrm{S}$ 是 $\mathrm{M}$ ，所以，凡 $\mathrm{S}$ 允许 $\mathrm{P}$ 
+    1. 必须规范三段论：凡 $M$ 必须 $P$ ，凡 $S$ 是 $M$ ，所以，凡 $S$ 必须 $P$ 
+    2. 禁止规范三段论：凡 $M$ 禁止 $P$ ，凡 $S$ 是 $M$ ，所以，凡 $S$ 禁止 $P$ 
+    3. 允许规范三段论：凡 $M$ 允许 $P$ ，凡 $S$ 是 $M$ ，所以，凡 $S$ 允许 $P$ 
 
 <style>
 div[class$="typeset__scrollwrap"] {
