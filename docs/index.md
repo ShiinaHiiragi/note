@@ -63,7 +63,7 @@ const entryList = [
     // "John Stillwell.Reverse Mathematics: Proofs from the Inside out[M]. Princeton University Press:Oxford, 2018:1-167",
     // PART IV
     "熊金城.点集拓扑讲义[M]. 高等教育出版社:北京, 2020:1-162.",
-    // "李文威.代数学方法：基本架构[M]. 高等教育出版社:北京, 2019:27-422.",
+    // "李文威.代数学方法：基本架构[M]. 高等教育出版社:北京, 2019:11-423.",
     // "Rob Nederpelt,Herman Geuvers.Type Theory and Formal Proof: an Introduction[M]. Cambridge UniversitPress:Cambridge, 2014:1-390.",
 ];
 

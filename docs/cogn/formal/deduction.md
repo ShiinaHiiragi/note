@@ -44,7 +44,7 @@
         ![](../assets/relation.png)
         <style>
         img[src$="relation.png"] {
-            width: 200px;
+            width: 240px;
         }
         </style>
     </figure>
@@ -198,8 +198,8 @@
     2. 表示对事物情况断定的不确定的性质
     3. 模态的种类：时间模态（在某些时候为真)、逻辑模态（命题必然为真)、认知模态（人们都认为为真）和意向模态（让人们相信其为真）
 2. 分类：模态命题可分为可能命题和必然命题，两个命题都既有肯定的，也有否定的
-    1. 可能肯定命题：$S$ 是 $P$ 是可能的，记作「可能 $p$」，写作 $\diamond p$
-    2. 可能否定命题：$S$ 不是 $P$ 是可能的，记作「可能 $\overline{p}$」，写作 $\diamond \overline{p}$
+    1. 可能肯定命题：$S$ 是 $P$ 是可能的，记作「可能 $p$」，写作 $\lozenge p$
+    2. 可能否定命题：$S$ 不是 $P$ 是可能的，记作「可能 $\overline{p}$」，写作 $\lozenge \overline{p}$
     3. 必然肯定命题：$S$ 是 $P$ 是必然的，记作「必然 $p$」，写作 $\square p$
     4. 必然否定命题：$S$ 不是 $P$ 是必然的，记作「必然 $\overline{p}$」，写作 $\square \overline{p}$
 
@@ -207,16 +207,16 @@
         ![](../assets/modal.png)
         <style>
         img[src$="modal.png"] {
-            width: 200px;
+            width: 240px;
         }
         </style>
     </figure>
 
 3. 模态推理：根据模态命题的性质及其相互间的逻辑关系进行推演
-    1. 根据矛盾关系的直接推理：$\square p\leftrightarrow \overline{\diamond \overline{p}}, \overline{\square p}\leftrightarrow \diamond \overline{p}, \square \overline{p}\leftrightarrow \overline{\diamond p}, \overline{\square \overline{p}}\leftrightarrow \diamond p$
+    1. 根据矛盾关系的直接推理：$\square p\leftrightarrow \overline{\lozenge \overline{p}}, \overline{\square p}\leftrightarrow \lozenge \overline{p}, \square \overline{p}\leftrightarrow \overline{\lozenge p}, \overline{\square \overline{p}}\leftrightarrow \lozenge p$
     2. 根据反对关系的直接推理：$\square p\to \overline{\square \overline{p}}, \square \overline{p} \to \overline{\square p}$
-    3. 根据下反对关系的直接推理：$\overline{\diamond p} \to \diamond \overline{p}, \overline{\diamond \overline{p}} \to \diamond p$
-    4. 根据差等关系的直接推理：$\square p\to \diamond p, \overline{\diamond p} \to \overline{\square p}, \square \overline{p} \to \diamond \overline{p}, \overline{\diamond \overline{p}} \to \overline{\square \overline{p}}$
+    3. 根据下反对关系的直接推理：$\overline{\lozenge p} \to \lozenge \overline{p}, \overline{\lozenge \overline{p}} \to \lozenge p$
+    4. 根据差等关系的直接推理：$\square p\to \lozenge p, \overline{\lozenge p} \to \overline{\square p}, \square \overline{p} \to \lozenge \overline{p}, \overline{\lozenge \overline{p}} \to \overline{\square \overline{p}}$
 4. 模态三段论
     1. 必然模态三段论：所有的 $M$ 必然是 $P$ ，所有的 $S$ 必然是 $M$ ，所以所有的 $S$ 必然是 $P$
     2. 必然和可能两种模态命题结合：凡 $P$ 必然是 $M$ ，凡 $S$ 可能不是 $M$ ，所以凡 $S$ 可能不是 $P$
@@ -242,7 +242,7 @@
             ![](../assets/normative.png)
             <style>
             img[src$="normative.png"] {
-                width: 200px;
+                width: 240px;
             }
             </style>
         </figure>
