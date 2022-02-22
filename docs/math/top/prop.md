@@ -27,13 +27,13 @@
         1. 介值定理：设 $f: [a, b]\to R$ 是从 连续映射，则对于 $f(a)$ 与 $f(b)$ 之间的任何一个实数 $r$，存在 $z\in [a, b]$ 使得 $f(z)=r$
         2. 不动点定理：设 $f: [0, 1]\to [0, 1]$ 是一个连续映射，则存在 $z\in [0, 1]$ 使得 $f(z)=z$
     3. 对径映射：设 $x=(x_1, x_2)\in S^1, S^1=\{(x, y\in R)^2|x^2+y^2=1\}$，点 $-x=(-x_1, -x_2)\in S^1$ 称为点 $x$ 的对径点．映射 $r: S^1\to S^1$ 使得 $\forall x\in S^1: r(x)=-x$ 称为对径映射
-        - $\text{Borsuk-Ulam}$ 定理：设 $f: S^1\to R$ 是一个连续映射，则在 $S^1$ 中存在一对对径点 $x$ 和 $-x$ 使得 $f(x)=f(-x)$
+        - $\mathrm{Borsuk-Ulam}$ 定理：设 $f: S^1\to R$ 是一个连续映射，则在 $S^1$ 中存在一对对径点 $x$ 和 $-x$ 使得 $f(x)=f(-x)$
 6. $R^n$ 中的连通性
     1. $n>1$ 维 $\text{Euclid}$  空间 $R^n$ 的子集 $R^n-\{O\}$ 是一个连通子集，其中 $O=(0, 0, \cdots, 0)\in R^n$
     2. $\text{Euclid}$ 平面 $R^2$ 与实数空间 $R$ 不同胚；进一步地，若 $n\neq l$，则 $R^n$ 与 $R^l$ 不同胚
-    3. 高维形式的不动点定理与 $\text{Borsuk-Ulam}$ 定理
+    3. 高维形式的不动点定理与 $\mathrm{Borsuk-Ulam}$ 定理
         1. 不动点定理：设 $f: E^n\to E^n$ 是一个连续映射，其中 $E^n$ 是 $n$ 维闭球体，则 $\exists z\in E^n: f(z)=z$
-        2. $\text{Borsuk-Ulam}$ 定理：设 $f: S^n\to R^l$ 是一个连续映射，其中 $n\geqslant l$，则 $\exists x\in S^n: f(x)=f(-x)$
+        2. $\mathrm{Borsuk-Ulam}$ 定理：设 $f: S^n\to R^l$ 是一个连续映射，其中 $n\geqslant l$，则 $\exists x\in S^n: f(x)=f(-x)$
 7. 连通分支
     1. 设 $X$ 是一个拓扑空间，$x, y\in X$．若 $X$ 中有一个连通子集同时包含 $x$ 和 $y$，则称点 $x$ 和 $y$ 是连通的．易证明连通作为关系是一个等价关系
     2. 连通分支：设 $X$ 是一个拓扑空间，对于 $X$ 中的点的连通关系而言，每一个等价类称为拓扑空间 $X$ 的一个连通分支；若 $Y\subset X$，则 $Y$ 作为 $X$ 的子空间的每一个连通分支称为 $X$ 的子集 $Y$ 的一个连通分支
@@ -180,7 +180,7 @@
         2. $\text{Tychonoff}$ 乘积定理：任何一族紧空间的积空间都是紧空间
 
         !!! note "命题逻辑的紧致性定理"
-            设 $\mathrm{Prop}$ 为命题变元集合，$\mathscr L$ 为命题公式集．令 $\mathrm{Prop}$ 为指标集，对集合 $2=\{0, 1\}$ 赋予离散拓扑，所有真值指派的集合 ${}^V2$ 是一个积空间，其子基元素是集合 $\mathscr S_{p, i}=\{\tau: \tau(p)=i\}, p\in \mathrm{Prop}, i\in 2$．由 $\text{Tychonoff}$ 乘积定理，${}^V2$ 是紧致的．对任意 $\varphi \in \mathscr L$，令 $D_\varphi$ 是使 $\varphi$ 成立的真值指派，则 $\{D_\varphi\}_{\varphi \in \Gamma}$ 是一个闭集族．$\Gamma$ 的任意有限子集是可满足的当且仅当对于任意 $\Gamma_0\subset \Gamma$，$\bigcup_{\varphi\in \Gamma} D_\varphi$ 非空，这等价于 $\Gamma$ 可满足
+            设 $\mathrm{Prop}$ 为命题变元集合，$\mathscr L$ 为命题公式集．令 $\mathrm{Prop}$ 为指标集，对集合 $2=\{0, 1\}$ 赋予离散拓扑，所有真值指派的集合 $2^V$ 是一个积空间，其子基元素是集合 $\mathscr S_{p, i}=\{\tau: \tau(p)=i\}, p\in \mathrm{Prop}, i\in 2$．由 $\text{Tychonoff}$ 乘积定理，$2^V$ 是紧致的．对任意 $\varphi \in \mathscr L$，令 $D_\varphi$ 是使 $\varphi$ 成立的真值指派，则 $\{D_\varphi\}_{\varphi \in \Gamma}$ 是一个闭集族．$\Gamma$ 的任意有限子集是可满足的当且仅当对于任意 $\Gamma_0\subset \Gamma$，$\bigcup_{\varphi\in \Gamma} D_\varphi$ 非空，这等价于 $\Gamma$ 可满足
 
 5. 加细：设集族 $\mathscr {A, B}$ 都是集合 $X$ 的覆盖，如果 $\mathscr A$ 中的每一个元素都包含于 $\mathscr B$ 的某一个元素之中，则称 $\mathscr A$ 是 $\mathscr B$ 的一个加细
 
