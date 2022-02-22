@@ -49,7 +49,7 @@
 1. $\text{Cauchy}$ 序列：设 $(X, \rho)$ 是一个度量空间，$X$ 中的一个序列 $\{x_i\}_{i\in Z_+}$．若对于任意给定的实数 $\varepsilon >0$，存在整数 $N>0$，使得当 $i, j>N$ 时，有 $\rho(x_i, x_j)<\varepsilon$，则称序列 $\{x_i\}_{i\in Z_+}$ 是一个 $\text{Cauchy}$ 序列
 2. 完备度量空间：$X$ 中的每一个 $\text{Cauchy}$ 序列都收敛的度量空间 $(X, \rho)$．度量空间的每一个收敛序列都是 $\text{Cauchy}$ 序列，反之不一定成立
     1. 完备度量空间中的每一个闭的度量子空间都是完备度量空间
-    2. $n$ 维欧氏空间（包括实数空间）$R$ 和 $\text{Hilbert}$ 空间 $H$ 都是完备度量空间
+    2. $n$ 维 $\text{Euclid}$ 空间（包括实数空间）$R$ 和 $\text{Hilbert}$ 空间 $H$ 都是完备度量空间
         1. 设 $(X, \rho)$ 是一个度量空间，$Y\subset X$．若 $Y$ 中的每一个 $\text{Cauchy}$ 序列都在 $X$ 中收敛，则 $Y$ 的闭包 $\overline Y$ 中的每一个 $\text{Cauchy}$ 序列也都在 $X$ 中收敛
         2. 设 $(X, \rho)$ 是一个度量空间，$Y$ 是 $X$ 的一个稠密子集．若 $Y$ 中的每一个 $\text{Cauchy}$ 序列都在 $X$ 中收敛，则 $X$ 是一个完备度量空间
 3. 保距映射：设 $(X, \rho)$ 和 $(Y, d)$ 都是度量空间，$f: X\to Y$．若对于任意 $x, y\in X$ 有 $d(f(x), f(y)) =\rho(x, y)$，则称映射 $f$ 是一个保距映射，若存在一个从 $X$ 到 $Y$ 的满的保距映射，则称度量空间 $(X, \rho)$ 与 $(Y, d)$ 同距
@@ -146,7 +146,7 @@
         4. $\overline{\overline A} = \overline A$
     4. 设 $X$ 是一个拓扑空间，$\mathscr F$ 是由空间 $X$ 中所有闭集构成的族，则对于 $X$ 的每个子集 $A$，有 $\overline A = \bigcap_{B\in \mathscr F, A\subset B}B$
     5. 闭包定义拓扑空间：设 $X$ 是一个集合 $c^*(X): \mathcal P(X)\to \mathcal P(X)$ 的一个闭包运算，则存在 $X$ 的唯一一个拓扑 $\mathscr T$，使得在拓扑空间 $(X, \mathscr T)$ 中对于每一个 $A\subset X$ 有 $c^*(A)=\overline A$
-   
+
     !!! note "闭包运算"
         设 $X$ 是一个集合，映射 $c^*: \mathcal P(X)\to \mathcal P(X)$ 若对于任意 $A, B\in \mathcal P(X)$，满足以下 $\text{Kuratowski}$ 公理，则称为集合 $X$ 上的一个闭包运算
 

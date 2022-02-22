@@ -53,7 +53,7 @@
 
     !!! note "运算符的定义"
         递归定义可以证明运算符递归定义的合理性
-        
+
         1. 取 $a=\omega, x_0=m\in \omega, h(n)=n'$，则 $\exists !f:\omega \to a(f(0)=x_0\wedge f(n')=f(n)')$．$f$ 仅与 $m$ 有关，对 $\forall m\exists !f_m$，令 $f_m(n)=m+n$．则有 $f_m(0)=m\wedge f_m(n')=f_m(n)'$，这样可以定义加法
         2. 取 $a=\omega, x_0=0, h(n)=n+m$，同理可以定义乘法
         3. 取 $a=\omega, x_0=1, h(n)=nm$，同理可以定义乘方

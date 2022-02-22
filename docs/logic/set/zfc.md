@@ -46,7 +46,7 @@
     $$
     \displaylines{(a,b)=\{\{a\},\{a,b\}\},\\(a,b,c)=((a,b), c),\\(a,b,c,d)=((a,b,c),d),\\\cdots}
     $$
-    
+
     -  对于有序对 $(a,b),(c,d)$，有 $(a,b)=(c,d)\to (a=c\wedge b=d)$
 
 ### 1.2.4 并集公理

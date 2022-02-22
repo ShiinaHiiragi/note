@@ -89,7 +89,7 @@
             }
             </style>
         </figure>
-        
+
         !!! note "各个格的规则"
             1. 第一格的大前提必须全称，小前提必须肯定：$\text{AAA,(AAI),AII,EAE,(EAO),EIO}$
             2. 第二格两个前提中必须有一个否定命题，大前提必须为全称命题：$\text{AEE,(AEO),AOO,EAE,(EAO),EIO}$
