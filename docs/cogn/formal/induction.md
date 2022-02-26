@@ -20,23 +20,14 @@
 
         <figure markdown>
             ![](../assets/diff.png)
-            <style>
-            img[src$="diff.png"] {
-                width: 320px;
-            }
-            </style>
+            <style> img[src$="diff.png"] { width: 320px; } </style>
         </figure>
-
 
     4. 共变法：如果一个现象发生变化，另一个现象就随之发生变化，那么前一现象就是后一现象的原因或部分原因
 
         <figure markdown>
             ![](../assets/relate.png)
-            <style>
-            img[src$="relate.png"] {
-                width: 210px;
-            }
-            </style>
+            <style> img[src$="relate.png"] { width: 200px; } </style>
         </figure>
 
     5. 剩余法：如果某一复合现象是由另一复合原因所引起的，那么把其中确认有因果联系的部分减去，剩下的部分也必然有因果联系

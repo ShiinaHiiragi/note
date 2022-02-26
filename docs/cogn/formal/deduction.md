@@ -18,11 +18,7 @@
 
     <figure markdown>
         ![](../assets/prop_class.png)
-        <style>
-        img[src$="prop_class.png"] {
-            width: 600px;
-        }
-        </style>
+        <style> img[src$="prop_class.png"] { width: 600px; } </style>
     </figure>
 
 3. 从下表主谓项之间的关系与不同命题形式之间的真假关系， 可以看出以下命题形式之间的关系，称之为逻辑方阵
@@ -46,11 +42,7 @@
 
     <figure markdown>
         ![](../assets/relation.png)
-        <style>
-        img[src$="relation.png"] {
-            width: 240px;
-        }
-        </style>
+        <style> img[src$="relation.png"] { width: 240px; } </style>
     </figure>
 
 4. 直言命题的推理
@@ -91,11 +83,7 @@
 
         <figure markdown>
             ![](./../assets/lattice.png)
-            <style>
-            img[src$="lattice.png"] {
-                width: 480px;
-            }
-            </style>
+            <style> img[src$="lattice.png"] { width: 480px; } </style>
         </figure>
 
         !!! note "各个格的规则"
@@ -221,11 +209,7 @@
 
     <figure markdown>
         ![](../assets/modal.png)
-        <style>
-        img[src$="modal.png"] {
-            width: 240px;
-        }
-        </style>
+        <style> img[src$="modal.png"] { width: 240px; } </style>
     </figure>
 
 3. 模态推理：根据模态命题的性质及其相互间的逻辑关系进行推演
@@ -256,11 +240,7 @@
 
         <figure markdown>
             ![](../assets/normative.png)
-            <style>
-            img[src$="normative.png"] {
-                width: 240px;
-            }
-            </style>
+            <style> img[src$="normative.png"] { width: 240px; } </style>
         </figure>
 
 3. 规范推理：以规范命题为其前提和结论的演绎推理，其前提至少有一个是规范命题
