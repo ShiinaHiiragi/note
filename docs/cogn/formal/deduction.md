@@ -82,7 +82,7 @@
         2. 式：由于 $A, E, I, O$ 四种命题在前提和结论中组合的不同形式形成的三段论的各种形式
 
         <figure markdown>
-            ![](./../assets/lattice.png)
+            ![](../assets/lattice.png)
             <style> img[src$="lattice.png"] { width: 480px; } </style>
         </figure>
 
