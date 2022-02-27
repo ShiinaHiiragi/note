@@ -62,7 +62,6 @@ extra_css:
 nav:
   - 通用:
     - 介绍: index.md
-    # - 索引: intro/dir.md
     - 许可证: intro/license.md
   - 认识基础:
     - 一、认知科学:
