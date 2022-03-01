@@ -37,8 +37,8 @@
         \end{aligned}\right.
         $$
 
-        1. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$，设赋值 $\theta, \theta'$ 有 $\forall i \leqslant n: \theta(p_i) = \theta'(p_i)$，则 $\widehat \theta(\alpha) = \hat {\theta'}(\alpha)$
-        2. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$ 和公式 $\beta_1, \beta_2, \cdots, \beta_n$，令 $\alpha' = \alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$．对任意赋值 $\theta$，定义赋值 $\theta': \text{Prop} \to 2$ 为 $\theta'(q) = \left\{\begin{aligned} & \widehat \theta(\beta_i), &\exists i\leqslant n: q = p_i \\& \theta(q), &\text{otherwise} \end{aligned}\right.$，则 $\theta' \vDash \alpha \leftrightarrow \theta \vDash \alpha'$
+        1. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$，设赋值 $\theta, \theta'$ 有任意 $1\leqslant i \leqslant n: \theta(p_i) = \theta'(p_i)$，则 $\widehat \theta(\alpha) = \hat {\theta'}(\alpha)$
+        2. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$ 和公式 $\beta_1, \beta_2, \cdots, \beta_n$，令 $\alpha' = \alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$．对任意赋值 $\theta$，定义赋值 $\theta': \text{Prop} \to 2$ 为 $\theta'(q) = \left\{\begin{aligned} & \widehat \theta(\beta_i), &\text{exists}\ 1\leqslant i\leqslant n: q = p_i \\& \theta(q), &\text{otherwise} \end{aligned}\right.$，则 $\theta' \vDash \alpha \leftrightarrow \theta \vDash \alpha'$
 
     2. 对任意公式 $\alpha$ 与赋值 $\theta$，若 $\theta(\alpha) = 1$，则称 $\theta$ 满足公式 $\alpha$，记作 $\theta \vDash \alpha$
         1. 对于公式 $\alpha$，若存在赋值 $\theta$ 使得 $\theta \vDash \alpha$，则称公式 $\alpha$ 可满足，否则称 $\alpha$ 为矛盾式．易知公式 $\alpha$ 是重言式当且仅当 $\neg \alpha$ 是矛盾式；公式 $\alpha$ 是矛盾式当且仅当 $\neg \alpha$ 是重言式
@@ -53,7 +53,7 @@
         - 任意 $n-$元真值函数 $f: 2^n \to 2$ 在 $\mathscr L$ 中可定义
 
 4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统 $\text{HK}$
-    1. 公理与推理规则：一个推理规则的形式是 $\dfrac{\alpha_1\ \alpha_2\ \cdots\ \alpha_n}{\alpha_0}(R)$，其中 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 称为 $R$ 的前提，$\alpha_0$ 称为 $R$ 的结论
+    1. 公理与推理规则：一个推理规则的形式是 $\begin{prooftree} \AxiomC{\(\alpha_1\)} \AxiomC{\(\alpha_2\)} \AxiomC{\(\cdots\)} \AxiomC{\(\alpha_n\)} \QuaternaryInfC{\(\alpha_0\)} \end{prooftree}$，其中 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 称为 $R$ 的前提，$\alpha_0$ 称为 $R$ 的结论
         1. 公理：若将 $p_0, p_1, p_2$ 替换为模式字母 $\alpha, \beta, \gamma$，可去掉代入规则 $\text{sub}$，得到的系统与 $\text{HK}$ 等价
             - $\text{A}_1: p_0 \to (p_1 \to p_0)$
             - $\text{A}_2: (p_0 \to (p_1 \to p_2)) \to ((p_0 \to p_1) \to (p_0 \to p_2))$
@@ -66,6 +66,14 @@
             - $\text{A}_9: \bot \to p_0$
             - $\text{A}_{10}: p_0 \vee \neg p_0$
         2. 推理规则
+            - 肯定前件规则：$\begin{prooftree} \AxiomC{\(\alpha \to \beta\)} \AxiomC{\(\alpha\)} \RightLabel{(mp)} \BinaryInfC{\(\beta\)} \end{prooftree}$
+            - 带入规则：$\begin{prooftree} \AxiomC{\(\alpha\)} \UnaryInfC{\(\sigma(\alpha)\)} \RightLabel{(sub)} \end{prooftree}$，其中 $\sigma$ 是任意带入
+    2. 令 $X \neq \varnothing$ 且 $S\subseteq X\times X$，对任意 $x\in X$，令 $S(x) = \{y\in X|xSy\}$．对任意子集 $Y\subseteq X$，令 $S[Y] = \bigcup \{S(y) |y\in Y\}$，对任意自然数 $n\leqslant 0$ 与 $x\in X$，定义 $S^0[x]=\{x\}, S^{n+1}[x] = S[S^n[x]]$
+        1. 如果 $X$ 是有穷集且满足以下条件，则称 $(X, S)$ 为有穷树结构，$X$ 中的元组称为节点
+            - 存在 $r\in X$ 满足条件：对任意 $x\in X$ 都存在自然数 $n\geqslant 0$ 使得 $rS^nx$，称 $r$ 为 $(X, S)$ 的根节点
+            - 对任意 $x, y, z\in X$，如果 $xSz$ 且 $ySz$，那么 $x=y$
+            - 不存在 $x_0, x_1, \cdots, x_k \in X$ 和自然数 $m, n$ 使得 $x_0S^mx_k$ 且 $x_kS^nx_0$
+        2. 在有穷树结构 $(X, S)$ 中，如果 $xSy$，则称 $y$ 是 $x$ 的子节点
 
 ### 1.1.2 直觉主义命题逻辑 Hilbert 系统
 
