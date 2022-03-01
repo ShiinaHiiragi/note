@@ -1,7 +1,7 @@
 # 2 构造空间
 
 ## 2.1 子空间
-1. 度量子空间：设 $(X, \rho)$ 是一个度量空间，$Y\subset X$，因此 $Y\times Y\subset X\times X$．显然 $\rho|_{Y\times Y}: Y\times Y\to R$ 是 $Y$ 的一个度量，称之为由 $X$ 的度量诱导的，$(Y, \rho)$ 为 $(X, \rho)$ 的一个度量子空间
+1. 度量子空间：设 $(X, \rho)$ 是一个度量空间，$Y\subseteq X$，因此 $Y\times Y\subseteq X\times X$．显然 $\rho|_{Y\times Y}: Y\times Y\to R$ 是 $Y$ 的一个度量，称之为由 $X$ 的度量诱导的，$(Y, \rho)$ 为 $(X, \rho)$ 的一个度量子空间
     1. 子空间的例子
         1. 实数空间 $R$ 的区间 $(a, b), [a, b]$ 等
         2. $n+1$ 维 $\text{Euclid}$ 空间 $R^{n+1}$ 中的 $n$ 维单位球面 $S^n=\left\{x=(x_1, x_2, \cdots, x_{n+1})\in R^{n+1}|\sum_{i=1}^{n+1}x_i^2=1\right\}$ 以及 $n$ 维单位开球体 $D^n=\left\{x=(x_1, x_2, \cdots, x_n)\in R^n|\sum_{i=1}^n x_i^2<1\right\}$、$n$ 维单位闭球体 $E^n=\left\{x=(x_1, x_2, \cdots, x_n)\in R^n|\sum_{i=1}^n x_i^2\leqslant 1\right\}$
@@ -16,7 +16,7 @@
         1. 记 $\mathscr T$ 与 $\widetilde{\mathscr T}$ 为 $X$ 与 $Y$ 的拓扑，则 $\widetilde{\mathscr T} =\mathscr T|_Y$
         2. 记 $\mathscr F$ 与 $\widetilde{\mathscr F}$ 为 $X$ 与 $Y$ 的全体闭集构成的族，则 $\widetilde{\mathscr F} =\mathscr F|_Y$
         3. 记 $\mathscr U_y$ 与 $\widetilde{\mathscr U}_y$ 为点 $y$ 在 $X$ 与 $Y$ 中的邻域系，则 $\widetilde{\mathscr U}_y =\mathscr U_y|_Y$
-    2. 设 $Y$ 是拓扑空间 $X$ 的一个子空间，$A\subset Y$
+    2. 设 $Y$ 是拓扑空间 $X$ 的一个子空间，$A\subseteq Y$
         1. $A$ 在 $Y$ 中的导集是 $A$ 在 $X$ 中的导集与 $Y$ 的交
         2. $A$ 在 $Y$ 中的闭包是 $A$ 在 $X$ 中的闭包与 $Y$ 的交
     3. 设 $Y$ 是拓扑空间 $X$ 的一个子空间，$y\in Y$
@@ -38,7 +38,7 @@
     3. 设 $X=X_1\times X_2\times \cdots \times X_n$ 是 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 的积空间．令 $\mathscr T$ 为 $X$ 的拓扑，$\mathscr T_i$ 为 $X_i$ 的拓扑，$i=1, 2, \cdots, n$，则 $X$ 以它的子集族 $\mathscr S=\{p_i^{-1}(U_i)|U_i\in \mathscr T_i, i=1, 2, \cdots, n\}$ 为它的一个子基．其中对于每一个 $i$，映射 $p_i: X\to X_i$ 是 $\text{Descartes}$ 积 $X$ 到它的第 $i$ 个坐标集 $X_i$ 的投射
 3. 开映射与闭映射：设 $X, Y$ 是两个拓扑空间，映射 $f: X\to Y$ 称为一个开映射（闭映射），若 $X$ 中的任何一个开集（闭集）$U$，像集 $f(U)$ 是 $Y$ 中的一个开集（闭集）
     1. 设 $X=X_1\times X_2\times \cdots \times X_n$ 是 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 的积空间，又设 $Y$ 也是一个拓扑空间，则映射 $f: Y\to X$ 连续当且仅当对于每一个 $i=1, 2, \cdots, n$，复合映射 $p_i\circ f: Y\to X_i$ 连续，其中 $p_i: X\to X_i$ 是积空间 $X$ 对于第 $i$ 个坐标空间 $X_i$ 的投射
-    2. 积拓扑是使从积空间到每一个坐标空间的投射都连续的最小拓扑，即设 $X=X_1\times X_2\times \cdots \times X_n$ 是 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 的积空间，$\mathscr T$ 是 $X$ 的积拓扑．又设 $\widetilde{\mathscr T}$ 是 $X$ 的某一个拓扑满足条件：对于 $X$ 的拓扑 $\widetilde{\mathscr T}$ 而言，从 $X$ 到它的第 $i$ 个坐标空间 $X_i$ 的投射 $p_i: X\to X_i$ 是连续映射，$i=1, 2, \cdots, n$，则 $\widetilde{\mathscr T}\subset \mathscr T$
+    2. 积拓扑是使从积空间到每一个坐标空间的投射都连续的最小拓扑，即设 $X=X_1\times X_2\times \cdots \times X_n$ 是 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 的积空间，$\mathscr T$ 是 $X$ 的积拓扑．又设 $\widetilde{\mathscr T}$ 是 $X$ 的某一个拓扑满足条件：对于 $X$ 的拓扑 $\widetilde{\mathscr T}$ 而言，从 $X$ 到它的第 $i$ 个坐标空间 $X_i$ 的投射 $p_i: X\to X_i$ 是连续映射，$i=1, 2, \cdots, n$，则 $\widetilde{\mathscr T}\subseteq \mathscr T$
     3. 设 $X_1, X_2, \cdots, X_n$ 是 $n\geqslant 2$ 个拓扑空间，则积空间 $X_1\times X_2\times \cdots \times X_n$ 同胚于积空间 $(X_1\times X_2\times \cdots \times X_{n-1})\times X_n$
 4. 有限可积性质：若若任意 $n\geqslant 1$ 个拓扑空间 $X_1, X_2, \cdots, X_n$ 都具有性质 $P$，则积空间 $X_1\times X_2\times \cdots \times X_n$ 也具有性质 $P$，则称性质 $P$ 为有限可积性质
 
@@ -49,7 +49,7 @@
 2. 点式收敛拓扑的性质：设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一族拓扑空间
     1. 对于每一个 $\alpha \in \Gamma$，积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 是一个连续开映射
     2. 设 $Y$ 是一个拓扑空间，则映射 $f: Y\to \prod_{\gamma \in \Gamma} X_\gamma$ 是一个连续映射当且仅当对于每一个 $\alpha \in \Gamma$，映射 $p_\alpha\circ f: Y\to X_\alpha$ 是连续的，其中 $p_\alpha$ 是积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投影
-    3. 令 $\mathscr T$ 为 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑．若 $\widetilde{\mathscr T}$ 是 $\text{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的一个拓扑使得对于任何 $\alpha \in \Gamma$，$\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 都是连续的，则 $\mathscr T\subset \widetilde{\mathscr T}$
+    3. 令 $\mathscr T$ 为 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑．若 $\widetilde{\mathscr T}$ 是 $\text{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的一个拓扑使得对于任何 $\alpha \in \Gamma$，$\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 都是连续的，则 $\mathscr T\subseteq \widetilde{\mathscr T}$
     4. 积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 中的序列 $\{x^{(i)}\}_{i\in Z_+}$ 收敛于点 $x\in \prod_{\gamma \in \Gamma} X_\gamma$ 的充要条件是对于每一个 $\alpha \in \Gamma$，拓扑空间 $X_\alpha$ 中的序列 $\{p_\alpha(x^{(i)})\}_{i\in Z_+}$ 收敛于 $p_\alpha(x)\in X_\alpha$
 3. 拓扑空间在方体的嵌入
     1. 方体：设 $\Gamma$ 是一个集合，则从 $[0, 1]^\Gamma$ 连通它的点式收敛拓扑称为一个方体
@@ -68,7 +68,7 @@
 1. 赋值映射：对于任意 $x\in X$，令 $e_x: Y^X\to Y$ 为 $Y$ 的第 $x$ 个投射，则对于任何 $f\in Y^X$， $e_x(f)=f(x)$ 恰是映射 $f$ 在点 $x$ 处的像．将投射 $e_x$ 称为 $Y^X$ 在点 $x\in X$ 处的赋值映射 
 2. 映射空间与连续映射空间
     1. 将 $Y^X=\prod_{x\in X}Y$ 的积拓扑 $\mathscr T$ 称为 $Y^X$ 的点式收敛拓扑，将拓扑空间 $(Y^X, \mathscr T)$ 称为从集合 $X$ 到集合 $Y$ 的映射空间（点式收敛拓扑）．映射空间是一类特别的积空间，因此关于积空间的一般结论全部适用
-    2. 连续映射空间：设 $X$ 和 $Y$ 是两个拓扑空间，记 $\mathscr C(X, Y)$ 为从 $X$ 到 $Y$ 的所有连续映射构成的集合，因此 $\mathscr C(X, Y)\subset Y^X$．$\mathscr C(X, Y)$ 作为映射空间 $Y^X$的子空间称为从拓扑空间 $X$ 到 $Y$ 的连续映射空间（点式收敛拓扑），并且此时 $\mathscr C(X, Y)$ 的拓扑也称作点式收敛拓扑
+    2. 连续映射空间：设 $X$ 和 $Y$ 是两个拓扑空间，记 $\mathscr C(X, Y)$ 为从 $X$ 到 $Y$ 的所有连续映射构成的集合，因此 $\mathscr C(X, Y)\subseteq Y^X$．$\mathscr C(X, Y)$ 作为映射空间 $Y^X$的子空间称为从拓扑空间 $X$ 到 $Y$ 的连续映射空间（点式收敛拓扑），并且此时 $\mathscr C(X, Y)$ 的拓扑也称作点式收敛拓扑
     3. 设 $X$ 是一个 $\text{Tychonoff}$ 空间，则从 $X$ 到实数空间 $R$ 的所有连续映射构成的集合 $\mathscr C(X, R)$ 是映射空间 $R^X$ （点式收敛拓扑）中的一个稠密子集
 3. 一致收敛度量与一致收敛拓扑
     1. 一致收敛度量：设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间．记 $Y^X$ 为从 $X$ 到 $Y$ 的所有映射的集合，定义 $\widetilde{\rho}: Y^X\times Y^X \to R$ 使得对于任何 $f, g\in Y^X$ 有 $\widetilde{\rho}(f, g) = \left\{\begin{aligned}&1,\ \exists x\in X: \rho(f(x), g(x))\geqslant 1 \\& \sup\{\rho(f(x), g(x)) | x\in X\},\ \text{otherwise}\end{aligned}\right.$，则容易验证 $\widetilde{\rho}$ 是 $Y^X$ 的一个度量，称之为 $Y^X$ 的一致收敛度量；度量空间 $(Y^X, \widetilde{\rho})$ 称为映射空间（一致收敛度量）
@@ -77,8 +77,8 @@
     1. 设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间，在度量空间 $Y^X$（一致收敛度量）中的一个序列 $\{f_i\}_{i\in Z_+}$ 收敛于 $f\in Y^X$ 当且仅当序列 $\{f_i\}_{i\in Z_+}$ 一致收敛于 $f\in Y^X$
     2. 设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间．若度量空间 $(Y, \rho)$ 是一个完备的度量空间，则映射空间 $Y^X$（一致收敛度量）也是一个完备度量空间
     3. 设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间．则从 $X$ 到实数空间 $R$ 的所有连续映射构成的集合 $\mathscr C(X, R)$ 是樱花色空间 $Y^X$（一致收敛拓扑）中的一个闭集．因此当 $(Y, \rho)$ 是一个完备度量空间时，度量空间 $\mathscr C(X, Y)$（一致收敛度量）也是一个完备的度量空间
-5. 紧$-$开拓扑：设 $X, Y$ 是两个集合，对于任意 $E\subset X$ 和 $B\subset Y$，记 $W(E, B)=\{f\in Y^X|f(E)\subset B\}$
-    1. $\mathscr E-$开拓扑： 设 $X$ 是一个集合，$Y$ 是一个拓扑空间，$\mathscr E$ 是 $X$ 的一个子集族，则全体从 $X$ 到 $Y$ 的映射构成的族 $Y^X$ 的子集族 $\mathscr{S_E}=\{W(E, U)\subset Y^X|E\in \mathscr E, U$ 是 $Y$ 的一个开集 $\}$ 的并是 $Y^X$．因此 $Y^X$ 有唯一的拓扑 $\mathscr{T_E}$ 以 $\mathscr{S_E}$ 为它的一个子基．$Y^X$ 的拓扑 $\mathscr{T_E}$ 称为 $Y^X$ 的 $\mathscr E-$开拓扑；拓扑空间 $(Y^X, \mathscr{T_E})$ 称为映射空间（$\mathscr E-$开拓扑）
+5. 紧$-$开拓扑：设 $X, Y$ 是两个集合，对于任意 $E\subseteq X$ 和 $B\subseteq Y$，记 $W(E, B)=\{f\in Y^X|f(E)\subseteq B\}$
+    1. $\mathscr E-$开拓扑： 设 $X$ 是一个集合，$Y$ 是一个拓扑空间，$\mathscr E$ 是 $X$ 的一个子集族，则全体从 $X$ 到 $Y$ 的映射构成的族 $Y^X$ 的子集族 $\mathscr{S_E}=\{W(E, U)\subseteq Y^X|E\in \mathscr E, U$ 是 $Y$ 的一个开集 $\}$ 的并是 $Y^X$．因此 $Y^X$ 有唯一的拓扑 $\mathscr{T_E}$ 以 $\mathscr{S_E}$ 为它的一个子基．$Y^X$ 的拓扑 $\mathscr{T_E}$ 称为 $Y^X$ 的 $\mathscr E-$开拓扑；拓扑空间 $(Y^X, \mathscr{T_E})$ 称为映射空间（$\mathscr E-$开拓扑）
 
         !!! note "点$-$开拓扑"
             若记 $\mathscr P$ 为 $X$ 中所有单点子集勾构成的族，那么 $Y^X$ 的点式收敛拓扑恰好是 $\mathscr{T_P}$．因此点式收敛拓扑也被称作点$-$开拓扑
@@ -87,17 +87,17 @@
     3. 连续映射空间紧$-$开拓扑：从 $X$ 到 $Y$ 的全体连续映射构成的集合 $\mathscr C(X, Y)$ 作为映射空间 $Y^X$（紧$-$开拓扑）的子空间称为连续映射空间（紧$-$开拓扑），且 $Y^X$ 的紧$-$开拓扑在 $\mathscr C(X, Y)$ 在 $\mathscr C(X, Y)$ 上的限制也叫做 $\mathscr C(X, Y)$ 的紧$-$开拓扑
 
 6. 紧$-$开拓扑的性质
-    1. 设 $X, Y$ 都是两个拓扑空间，记 $\mathscr{T_P, T_C}$ 分别是从 $X$ 到 $Y$ 的全体映射构成的集合 $Y^X$ 的点式收敛拓扑和紧$-$开拓扑，则 $\mathscr{T_P\subset T_C}$．因此对于每一个 $x\in X$，复制映射 $e_x: Y^X\to Y$ 对于 $Y^X$ 的紧$-$开拓扑而言是一个连续映射
-    2. 设 $X$ 是一个拓扑空间，$Y\subset X$．若 $\mathscr S$ 是 $X$ 的一个子基，且对于任何一个 $y\in Y$ 和 $\mathscr S$ 中任何一个包含 $y$ 中的元素 $s$，存在 $\mathscr S$ 中的一个包含 $y$ 的元素 $T$ 使得 $T$ 在拓扑空间 $X$ 中的闭包 $\overline T\subset S$，则 $Y$ 作为 $X$ 的子空间是一个正则空间
+    1. 设 $X, Y$ 都是两个拓扑空间，记 $\mathscr{T_P, T_C}$ 分别是从 $X$ 到 $Y$ 的全体映射构成的集合 $Y^X$ 的点式收敛拓扑和紧$-$开拓扑，则 $\mathscr{T_P\subseteq T_C}$．因此对于每一个 $x\in X$，复制映射 $e_x: Y^X\to Y$ 对于 $Y^X$ 的紧$-$开拓扑而言是一个连续映射
+    2. 设 $X$ 是一个拓扑空间，$Y\subseteq X$．若 $\mathscr S$ 是 $X$ 的一个子基，且对于任何一个 $y\in Y$ 和 $\mathscr S$ 中任何一个包含 $y$ 中的元素 $s$，存在 $\mathscr S$ 中的一个包含 $y$ 的元素 $T$ 使得 $T$ 在拓扑空间 $X$ 中的闭包 $\overline T\subseteq S$，则 $Y$ 作为 $X$ 的子空间是一个正则空间
     3. 设 $X, Y$ 都是拓扑空间，若 $Y$ 是一个正则空间，则连续映射空间 $\mathscr C(X, Y)$（紧$-$开拓扑）也是一个正则空间
     4. 设 $X$ 是一个紧空间，$(Y,\rho)$ 是一个度量空间，则连续映射空间 $\mathscr C(X, Y)$ 的一致收敛拓扑和紧$-$开拓扑相同
 
 ## 2.3 商空间
-1. 商拓扑：设 $(X, \mathscr T)$ 是一个拓扑空间，$Y$ 是一个集合，$f: X\to Y$ 是一个满射．容易验证 $Y$ 的子集族 $\mathscr T_1=\{U\subset Y|f^{-1}(U)\in \mathscr T\}$ 是 $Y$ 的一个拓扑．称 $\mathscr T_1$ 为 $Y$ 的相对于满射 $f$ 而言的商拓扑
-    1. $Y$ 的一个拓扑 $\widetilde{\mathscr T}$ 是 $Y$ 的商拓扑当且仅当在拓扑空间 $(Y, \widetilde{\mathscr T})$ 中 $F\subset Y$ 是一个闭集 $\leftrightarrow f^{-1}(F)$ 是 $X$ 中的一个闭集
+1. 商拓扑：设 $(X, \mathscr T)$ 是一个拓扑空间，$Y$ 是一个集合，$f: X\to Y$ 是一个满射．容易验证 $Y$ 的子集族 $\mathscr T_1=\{U\subseteq Y|f^{-1}(U)\in \mathscr T\}$ 是 $Y$ 的一个拓扑．称 $\mathscr T_1$ 为 $Y$ 的相对于满射 $f$ 而言的商拓扑
+    1. $Y$ 的一个拓扑 $\widetilde{\mathscr T}$ 是 $Y$ 的商拓扑当且仅当在拓扑空间 $(Y, \widetilde{\mathscr T})$ 中 $F\subseteq Y$ 是一个闭集 $\leftrightarrow f^{-1}(F)$ 是 $X$ 中的一个闭集
     2. 设 $(X, \mathscr T)$ 是一个拓扑空间，$Y$ 是一个集合，$f: X\to Y$ 是一个满射，则商拓扑是使映射 $f$ 连续的最大拓扑
         1. 若 $\mathscr T_1$ 是 $Y$ 的商拓扑，则 $f:X\to Y$ 是一个连续拓扑
-        2. 若 $\widetilde{\mathscr T_1}$ 是 $Y$ 的一个拓扑，使得对于这个拓扑 $\widetilde{\mathscr T_1}$ 而言映射 $f$ 是连续的，则 $\widetilde{\mathscr T_1}\subset \mathscr T_1$
+        2. 若 $\widetilde{\mathscr T_1}$ 是 $Y$ 的一个拓扑，使得对于这个拓扑 $\widetilde{\mathscr T_1}$ 而言映射 $f$ 是连续的，则 $\widetilde{\mathscr T_1}\subseteq \mathscr T_1$
 2. 商映射：设 $X, Y$ 是两个拓扑空间，若映射 $f: X\to Y$ 是一个满射且 $Y$ 的拓扑是对于映射 $f$ 而言的商拓扑，则称 $f$ 为一个商映射
     1. 设 $X, Y, Z$ 都是拓扑空间，且 $f: X\to Y$ 是一个商映射，则映射 $g: Y\to Z$ 连续当且仅当映射 $g\circ f: X\to Z$ 连续
     2. 设 $X, Y$ 是两个拓扑空间，若映射 $f: X\to Y$ 是一个连续的满射，且是一个开映射（闭映射），则 $Y$ 的拓扑是相对于满射 $f$ 而言的商拓扑

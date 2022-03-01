@@ -11,9 +11,9 @@
         4. $X$ 中存在一个即开又闭的非空真子集
     2. 实数空间 $R$ 是一个连通空间，有理数集 $Q$ 作为 $R$ 的子空间是一个不连通空间
 3. 设 $Y$ 是拓扑空间 $X$ 的一个子集，若 $Y$ 作为 $X$ 的子空间是一个连通空间，则称 $Y$ 是 $X$ 的一个连通子集；否则称 $Y$ 是 $X$ 的一个不连通子集
-    1. 设 $Y$ 是拓扑空间 $X$ 的一个子集，$A, B\subset Y$，则 $A, B$ 是子空间 $Y$ 中的隔离子集仅当它们是拓扑空间 $X$ 中的隔离子集
-    2. 设 $Y$ 是拓扑空间 $X$ 中的一个连通子集，若 $X$ 中有隔离子集 $A, B$ 使得 $Y\subset A\cap B$，则 $Y\subset A\vee Y\subset B$
-    3. 设 $Y$ 是拓扑空间 $X$ 的一个连通子集，$Z\subset X$ 满足条件 $Y\subset Z\subset \overline Y$，则 $Z$ 也是 $X$ 的一个连通子集
+    1. 设 $Y$ 是拓扑空间 $X$ 的一个子集，$A, B\subseteq Y$，则 $A, B$ 是子空间 $Y$ 中的隔离子集仅当它们是拓扑空间 $X$ 中的隔离子集
+    2. 设 $Y$ 是拓扑空间 $X$ 中的一个连通子集，若 $X$ 中有隔离子集 $A, B$ 使得 $Y\subseteq A\cap B$，则 $Y\subseteq A\vee Y\subseteq B$
+    3. 设 $Y$ 是拓扑空间 $X$ 的一个连通子集，$Z\subseteq X$ 满足条件 $Y\subseteq Z\subseteq \overline Y$，则 $Z$ 也是 $X$ 的一个连通子集
     4. 设 $\{Y_\gamma\}_{\gamma \in \Gamma}$ 是拓扑空间 $X$ 的连通子集构成的一个子集族，若 $\bigcap_{\gamma\in \Gamma}Y_\gamma \neq\varnothing$，则 $\bigcup_{\gamma\in \Gamma}Y_\gamma \neq\varnothing$ 是 $X$ 的一个连通子集
     5. 设 $Y$ 是拓扑空间 $X$ 的一个子集，若对于任意 $x, y\in Y$，存在 $X$ 中的一个连通子集 $Y_{xy}$ 使得 $x, y\in Y_{xy}$，则 $Y$ 是 $X$ 中的一个连通子集
 4. 连通性的性质
@@ -36,9 +36,9 @@
         2. $\text{Borsuk}-\text{Ulam}$ 定理：设 $f: S^n\to R^l$ 是一个连续映射，其中 $n\geqslant l$，则 $\exists x\in S^n: f(x)=f(-x)$
 7. 连通分支
     1. 设 $X$ 是一个拓扑空间，$x, y\in X$．若 $X$ 中有一个连通子集同时包含 $x$ 和 $y$，则称点 $x$ 和 $y$ 是连通的．易证明连通作为关系是一个等价关系
-    2. 连通分支：设 $X$ 是一个拓扑空间，对于 $X$ 中的点的连通关系而言，每一个等价类称为拓扑空间 $X$ 的一个连通分支；若 $Y\subset X$，则 $Y$ 作为 $X$ 的子空间的每一个连通分支称为 $X$ 的子集 $Y$ 的一个连通分支
+    2. 连通分支：设 $X$ 是一个拓扑空间，对于 $X$ 中的点的连通关系而言，每一个等价类称为拓扑空间 $X$ 的一个连通分支；若 $Y\subseteq X$，则 $Y$ 作为 $X$ 的子空间的每一个连通分支称为 $X$ 的子集 $Y$ 的一个连通分支
     3. 设 $X$ 是一个拓扑空间，$C$ 是拓扑空间 $X$ 的一个连通分支
-        1. 若 $Y$ 是 $X$ 的一个连通子集，且 $Y\cap C\neq \varnothing$，则 $Y\subset C$
+        1. 若 $Y$ 是 $X$ 的一个连通子集，且 $Y\cap C\neq \varnothing$，则 $Y\subseteq C$
         2. $C$ 是一个连通子集
         3. $C$ 是一个闭集
 
@@ -82,12 +82,12 @@
     5. 设 $\{X_\gamma\}_{\gamma\in\Gamma}$ 是一个拓扑空间族，并且对于任何 $\gamma \in \Gamma，X_\gamma \neq \varnothing$，则积空间 $\prod_{\gamma \in \Gamma}X_\gamma$ 满足第二可数性公理的一个充要条件是指标集 $\Gamma$ 有一个可数子集使得当 $\alpha \in \Gamma_1$ 时 $X_\alpha$ 满足第二可数性公理，当 $\alpha\in \Gamma-\Gamma_1$ 时 $X_\alpha$ 是平庸空间
 4. $\text A_1$ 空间中的序列性质
     1. 设 $X$ 是一个拓扑空间，若在点 $x\in X$ 处有一个可数邻域基，则在点 $x$ 处有一个可数邻域基 $\{U_i\}_{i\in Z_+}$ 使得 $\forall i\in Z_+: U_i\supset U_{i+1}$
-    2. 设 $X$ 是一个 $\text A_1$ 空间，$A\subset X$，则 $x\in X$ 是集合 $A$ 的一个凝聚点当且仅当在集合 $A-\{x\}$ 中有一个序列收敛于 $x$
+    2. 设 $X$ 是一个 $\text A_1$ 空间，$A\subseteq X$，则 $x\in X$ 是集合 $A$ 的一个凝聚点当且仅当在集合 $A-\{x\}$ 中有一个序列收敛于 $x$
     3. 设 $X, Y$ 是两个拓扑空间，其中 $X$ 满足第一可数性公理，$x\in X$．则映射 $f: X\to Y$ 在点 $x\in X$ 处连续当且仅当若 $X$ 中的序列 $\{x_i\}$ 收敛于 $x$，则 $Y$ 中的序列 $\{f(x_i)\}$ 收敛于 $f(x)$
     4. 设 $X, Y$ 是两个拓扑空间，其中 $X$ 满足第一可数性公理．则映射 $f: X\to Y$ 是一个连续映射当且仅当若 $X$ 中的序列 $\{x_i\}$ 收敛于 $x\in X$，则 $Y$ 中的序列 $\{f(x_i)\}$ 收敛于 $f(x)$
 
 ### 3.2.2 可分空间
-1. 稠密子集：设 $X$ 是一个拓扑空间，$D\subset X$．若 $\overline D=X$，则称 $D$ 是 $X$ 的一个稠密子集
+1. 稠密子集：设 $X$ 是一个拓扑空间，$D\subseteq X$．若 $\overline D=X$，则称 $D$ 是 $X$ 的一个稠密子集
     - 设 $X$ 是一个拓扑空间，$D$ 是 $X$ 的一个稠密子集．又设 $f, g: X\to R$ 都是连续映射，若 $f|_D=g|_D$，则 $f=g$
 2. 可分空间：设 $X$ 是一个拓扑空间，若 $X$ 中有一个可数稠密子集，则称 $X$ 是一个可分空间
     1. 每一个 $\text A_2$ 空间都是可分空间；$\text A_2$ 空间的每一个子空间都是可分空间
@@ -103,19 +103,19 @@
     2. $\text{Lindelof}$ 定理：任何一个 $\text A_2$ 空间及其任何子空间都是 $\text{Lindelof}$ 空间，其逆命题不成立
     3. 每一个 $\text{Lindelof}$ 的度量空间都满足第二可数性公理
     4. $\text{Lindelof}$ 的每一个闭子空间都是 $\text{Lindelof}$ 空间
-    5. 设拓扑空间 $X$ 的任何一个子空间都是 $\text{Lindelof}$ 空间，若 $A\subset X$ 是一个不可数集，则  $A\cap d(A)\neq \varnothing$
+    5. 设拓扑空间 $X$ 的任何一个子空间都是 $\text{Lindelof}$ 空间，若 $A\subseteq X$ 是一个不可数集，则  $A\cap d(A)\neq \varnothing$
 
 ## 3.3 分离性
 ### 3.3.1 分离性公理
-1. 开（闭）邻域：设 $X$ 是一个拓扑空间，$A, U\subset X$．若 $A\subset U^\circ$，则称集合 $U$ 是集合 $A$ 的一个邻域．若 $U$ 是 $A$ 的一个邻域，且还是一个开集（闭集），则称 $U$ 是 $A$ 的一个开（闭）邻域
-2. 正则空间：设 $X$ 是一个拓扑空间， 若 $x\in X$ 和 $A\subset X$ 是一个闭集使得 $x\notin A$，则存在 $x$ 的一个开邻域 $V$ 使得 $U\cap V=\varnothing$，则称拓扑空间 $X$ 是一个正则空间
-    1. 设 $X$ 是一个拓扑空间，则 $X$ 是一个正则空间当且仅当对于任何点 $x\in X$ 和 $x$ 的任何一个开邻域 $U$，存在 $x$ 的一个开邻域 $V$ 使得 $\overline V\subset U$
+1. 开（闭）邻域：设 $X$ 是一个拓扑空间，$A, U\subseteq X$．若 $A\subseteq U^\circ$，则称集合 $U$ 是集合 $A$ 的一个邻域．若 $U$ 是 $A$ 的一个邻域，且还是一个开集（闭集），则称 $U$ 是 $A$ 的一个开（闭）邻域
+2. 正则空间：设 $X$ 是一个拓扑空间， 若 $x\in X$ 和 $A\subseteq X$ 是一个闭集使得 $x\notin A$，则存在 $x$ 的一个开邻域 $V$ 使得 $U\cap V=\varnothing$，则称拓扑空间 $X$ 是一个正则空间
+    1. 设 $X$ 是一个拓扑空间，则 $X$ 是一个正则空间当且仅当对于任何点 $x\in X$ 和 $x$ 的任何一个开邻域 $U$，存在 $x$ 的一个开邻域 $V$ 使得 $\overline V\subseteq U$
     2. 完全正则空间：设 $X$ 是一个拓扑空间，若对于任意 $x\in X$ 和 $X$ 中任何一个不包含点 $x$ 的闭集 $B$，存在一个连续映射 $f: X\to [0, 1]$ 使得 $f(x)=0$ 以及对于任何 $y\in B$ 有 $f(y)=1$，则称拓扑空间 $X$ 是一个完全正则空间
         1. 每一个完全正则空间都是正则空间
         2. 每一个正则且正规的空间都是完全正则空间
         3. $\text{Tychonoff}$ 定理：每一个正则的 $\text{Lindelof}$ 空间都是正规空间
-3. 正规空间：设 $X$ 是一个拓扑空间，若 $A, B\subset X$ 都是闭集，$A\cap B\varnothing$，则存在 $A$ 的一个开邻域 $U$ 和 $B$ 的一个开邻域使得 $U\cap V=\varnothing$，则称拓扑空间 $X$ 是一个正规空间．拓扑空间的正规性和正则性没有必然关系
-    1. 设 $X$ 是一个拓扑空间，则 $X$ 是一个正规空间当且仅当对于任何一个闭集 $A\subset X$ 和 $A$ 的任何一个开邻域 $U$，存在 $A$ 的一个开邻域 $V$ 使得 $\overline V\subset U$
+3. 正规空间：设 $X$ 是一个拓扑空间，若 $A, B\subseteq X$ 都是闭集，$A\cap B\varnothing$，则存在 $A$ 的一个开邻域 $U$ 和 $B$ 的一个开邻域使得 $U\cap V=\varnothing$，则称拓扑空间 $X$ 是一个正规空间．拓扑空间的正规性和正则性没有必然关系
+    1. 设 $X$ 是一个拓扑空间，则 $X$ 是一个正规空间当且仅当对于任何一个闭集 $A\subseteq X$ 和 $A$ 的任何一个开邻域 $U$，存在 $A$ 的一个开邻域 $V$ 使得 $\overline V\subseteq U$
     2. $\text{Urysohn}$ 引理：设 $X$ 是一个拓扑空间，$[a, b]$ 是一个闭区间，则 $X$ 是一个正规空间当且仅当对于 $X$ 中的任意两个无交的闭集 $A$ 和 $B$，存在一个连续映射 $f: X\to [a, b]$ 使得当 $x\in A$ 时 $f(x)=a$ 和当 $x\in B$ 时 $f(x)=b$
     3. 设 $X$ 是一个正规空间， $A$ 是 $X$ 中的一个闭子集， $\lambda$ 是一个正实数，则对于任何一个连续映射 $g: A\to [-\lambda, \lambda]$，存在一个连续映射 $g^*: X\to \left[-\dfrac 13\lambda, \dfrac 13\lambda \right]$ 使得对于任何 $a\in A$ 有 $|g(a)-g^*(a)|\leqslant \dfrac 23\lambda$
     4. $\text{Tietze}$ 扩张定理：设 $X$ 是一个拓扑空间，$[a, b]$ 是一个闭区间，则 $X$ 是一个正规空间当且仅当对于 $X$ 中的任何一个闭集 $A$ 和任何一个连续映射 $f: A\to [a, b]$ 有一个连续映射 $g: X\to [a, b]$ 是 $f$ 的扩张
@@ -157,7 +157,7 @@
 ## 3.4 紧致性
 ### 3.4.1 紧空间
 1. 紧空间：设 $X$ 是一个拓扑空间，若 $X$ 的每一个开覆盖有一个有限子覆盖，则称拓扑空间 $X$ 是一个紧空间
-    1. 紧子集：设 $X$ 是一个拓扑空间，$Y\subset X$．若 $Y$ 作为 $X$ 的子空间是一个紧空间，则称 $Y$ 是拓扑空间 $X$ 的一个紧子集
+    1. 紧子集：设 $X$ 是一个拓扑空间，$Y\subseteq X$．若 $Y$ 作为 $X$ 的子空间是一个紧空间，则称 $Y$ 是拓扑空间 $X$ 的一个紧子集
     2. 每一个紧空间都是 $\text{Lindelof}$ 空间，反之不然；实数空间 $R$ 不是一个紧空间
     3. 设 $X$ 是一个拓扑空间， $Y$ 是 $X$ 中的一个子集．则 $Y$ 是 $X$ 的一个紧子集当且仅当每一个由 $X$ 中的开集构成的 $Y$ 的覆盖都有有限子覆盖
 2. 具有有限交性质的集族：设 $\mathscr A$ 是一个集族，若 $\mathscr A_1$ 是 $\mathscr A$ 的一个有限子族，则 $\bigcap_{A\in \mathscr A_1} \neq\varnothing$，则称 $\mathscr A$ 是一个具有有限交性质的集族
@@ -169,7 +169,7 @@
         2. 在一个紧 $\text T_2$ 空间中，一个集合是闭集的充要条件是它是一个紧子集
         3. 每一个紧 $\text T_2$ 空间都是正则空间及 $\text T_4$ 空间
     2. 设 $X$ 是一个 $\text T_2$ 空间，若 $A, B$ 是 $X$ 的两个无交的紧子集，则它们分别由开邻域 $U$ 和 $V$ 使得 $U\cap V=\varnothing$
-    3. 设 $X$ 是一个正则空间，若 $A$ 是 $X$ 中的一个紧子集，$U$ 是 $A$ 的一个开邻域，则存在 $A$ 的一个开邻域 $V$ 使得 $\overline V\subset U$
+    3. 设 $X$ 是一个正则空间，若 $A$ 是 $X$ 中的一个紧子集，$U$ 是 $A$ 的一个开邻域，则存在 $A$ 的一个开邻域 $V$ 使得 $\overline V\subseteq U$
     4. 从紧空间到 $\text T_2$ 空间的任何一个连续映射都是闭映射
 4. 紧致性的拓扑性质
     1. 拓扑不变性：设 $X, Y$ 是两个拓扑空间， $f: X\to Y$ 是一个连续映射．若 $A$ 是 $X$ 的一个紧子集，则 $f(A)$ 也是 $Y$ 的一个紧子集
@@ -180,7 +180,7 @@
         2. $\text{Tychonoff}$ 乘积定理：任何一族紧空间的积空间都是紧空间
 
         !!! note "命题逻辑的紧致性定理"
-            设 $\mathrm{Prop}$ 为命题变元集合，$\mathscr L$ 为命题公式集．令 $\mathrm{Prop}$ 为指标集，对集合 $2=\{0, 1\}$ 赋予离散拓扑，所有真值指派的集合 $2^V$ 是一个积空间，其子基元素是集合 $\mathscr S_{p, i}=\{\tau: \tau(p)=i\}, p\in \mathrm{Prop}, i\in 2$．由 $\text{Tychonoff}$ 乘积定理，$2^V$ 是紧致的．对任意 $\varphi \in \mathscr L$，令 $D_\varphi$ 是使 $\varphi$ 成立的真值指派，则 $\{D_\varphi\}_{\varphi \in \Gamma}$ 是一个闭集族．$\Gamma$ 的任意有限子集是可满足的当且仅当对于任意 $\Gamma_0\subset \Gamma$，$\bigcup_{\varphi\in \Gamma} D_\varphi$ 非空，这等价于 $\Gamma$ 可满足
+            设 $\mathrm{Prop}$ 为命题变元集合，$\mathscr L$ 为命题公式集．令 $\mathrm{Prop}$ 为指标集，对集合 $2=\{0, 1\}$ 赋予离散拓扑，所有真值指派的集合 $2^V$ 是一个积空间，其子基元素是集合 $\mathscr S_{p, i}=\{\tau: \tau(p)=i\}, p\in \mathrm{Prop}, i\in 2$．由 $\text{Tychonoff}$ 乘积定理，$2^V$ 是紧致的．对任意 $\varphi \in \mathscr L$，令 $D_\varphi$ 是使 $\varphi$ 成立的真值指派，则 $\{D_\varphi\}_{\varphi \in \Gamma}$ 是一个闭集族．$\Gamma$ 的任意有限子集是可满足的当且仅当对于任意 $\Gamma_0\subseteq \Gamma$，$\bigcup_{\varphi\in \Gamma} D_\varphi$ 非空，这等价于 $\Gamma$ 可满足
 
 5. 加细：设集族 $\mathscr {A, B}$ 都是集合 $X$ 的覆盖，如果 $\mathscr A$ 中的每一个元素都包含于 $\mathscr B$ 的某一个元素之中，则称 $\mathscr A$ 是 $\mathscr B$ 的一个加细
 
@@ -198,7 +198,7 @@
     2. 每一个满足第一可数性公理的可数紧空间都是序列紧空间
 
     !!! note "三种紧空间的关系"
-        设 $X$ 是一个满足第二可数性公理的 $\text T_1$ 空间，$A\subset X$．则下列条件等价
+        设 $X$ 是一个满足第二可数性公理的 $\text T_1$ 空间，$A\subseteq X$．则下列条件等价
 
         1. $A$ 的每一个开覆盖都有有限子覆盖
         2. $A$ 的每一个可数开覆盖都有有限子覆盖
@@ -218,14 +218,14 @@
     4. 每一个满足第二可数性公理的局部紧 $\text T_2$ 空间都是仿紧空间
 
 ### 3.4.3 紧致性与度量空间
-1. 有界度量空间：设 $(X, \rho)$ 是一个度量空间，$A\subset X$．若存在实数 $M>0$ 使得 $\rho(x, y)<M$ 对于所有 $x, y\in A$ 成立，则称 $A$ 是 $X$ 的一个有界子集；若 $X$ 是一个有界子集，则称度量空间 $(X, \rho)$ 是一个有界度量空间
+1. 有界度量空间：设 $(X, \rho)$ 是一个度量空间，$A\subseteq X$．若存在实数 $M>0$ 使得 $\rho(x, y)<M$ 对于所有 $x, y\in A$ 成立，则称 $A$ 是 $X$ 的一个有界子集；若 $X$ 是一个有界子集，则称度量空间 $(X, \rho)$ 是一个有界度量空间
     1. 紧度量空间是有界的
     2. 单位闭区间 $[0, 1]$ 是一个紧空间
     3. 设 $A$ 是 $n$ 维 $\text{Euclid}$ 空间 $R^n$ 的一个子集，则 $A$ 是一个紧子集当且仅当 $A$ 是一个有界闭集
     4. 设 $X$ 是一个非空紧空间，$f: X\to R$ 是一个连续映射，则存在 $x_0, x_1\in X$ 使得对于任何 $x\in X$ 有 $f(x_0)\leqslant f(x)\leqslant f(x_1)$  
     5. 设 $m, n\in Z$，则 $n$ 维单位球面 $S^n$ 与 $m$ 维 $\text{Euclid}$ 空间 $R^m$ 不同胚
 2. 直径：设 $A$ 是度量空间 $(X, \rho)$ 中的一个非空子集，记谓词 $L(A)$ 表示「$A$ 是有界的」，定义集合 $A$ 的直径 $\mathrm{diam}(A)=\left\{\begin{aligned} &\sup\{\rho(x, y)|x, y\in A\}, &L(A) \\& \infty, &\text{otherwise} \end{aligned}\right.$
-3. $\text{Lebesgue}$ 数：设 $(X, \rho)$ 是一个度量空间，$\mathscr A$ 是 $X$ 的一个开覆盖．若 $\forall A\subset X\ \exists \lambda>0: \mathrm{diam}(A)<\lambda \to A$ 包含于开覆盖 $\mathscr A$ 的某一个元素之中，则称 $\lambda$ 为开覆盖 $\mathscr A$ 的一个 $\text{Lebesgue}$ 数
+3. $\text{Lebesgue}$ 数：设 $(X, \rho)$ 是一个度量空间，$\mathscr A$ 是 $X$ 的一个开覆盖．若 $\forall A\subseteq X\ \exists \lambda>0: \mathrm{diam}(A)<\lambda \to A$ 包含于开覆盖 $\mathscr A$ 的某一个元素之中，则称 $\lambda$ 为开覆盖 $\mathscr A$ 的一个 $\text{Lebesgue}$ 数
     1. $\text{Lebesgue}$ 数定理：序列紧的度量空间的每一个开覆盖有一个 $\text{Lebesgue}$ 数
     2. 每一个序列紧的度量空间都是紧空间
 4. 设 $X$ 是一个度量空间，则下列条件等价
