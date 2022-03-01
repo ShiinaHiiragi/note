@@ -79,6 +79,8 @@ nav:
       - 2 三大主义: meta/math/doctrine.md
       - 3 当代观点: meta/math/contemp.md
   - 数理逻辑:
+    - 一、证明论:
+      - 1 命题逻辑: logic/proof/prop.md
     - 二、公理集合论:
       - 1 ZFC 集合论: logic/set/zfc.md
       - 2 关系与映射: logic/set/relation.md

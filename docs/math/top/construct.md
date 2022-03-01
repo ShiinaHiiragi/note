@@ -71,7 +71,7 @@
     2. 连续映射空间：设 $X$ 和 $Y$ 是两个拓扑空间，记 $\mathscr C(X, Y)$ 为从 $X$ 到 $Y$ 的所有连续映射构成的集合，因此 $\mathscr C(X, Y)\subseteq Y^X$．$\mathscr C(X, Y)$ 作为映射空间 $Y^X$的子空间称为从拓扑空间 $X$ 到 $Y$ 的连续映射空间（点式收敛拓扑），并且此时 $\mathscr C(X, Y)$ 的拓扑也称作点式收敛拓扑
     3. 设 $X$ 是一个 $\text{Tychonoff}$ 空间，则从 $X$ 到实数空间 $R$ 的所有连续映射构成的集合 $\mathscr C(X, R)$ 是映射空间 $R^X$ （点式收敛拓扑）中的一个稠密子集
 3. 一致收敛度量与一致收敛拓扑
-    1. 一致收敛度量：设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间．记 $Y^X$ 为从 $X$ 到 $Y$ 的所有映射的集合，定义 $\widetilde{\rho}: Y^X\times Y^X \to R$ 使得对于任何 $f, g\in Y^X$ 有 $\widetilde{\rho}(f, g) = \left\{\begin{aligned}&1,\ \exists x\in X: \rho(f(x), g(x))\geqslant 1 \\& \sup\{\rho(f(x), g(x)) | x\in X\},\ \text{otherwise}\end{aligned}\right.$，则容易验证 $\widetilde{\rho}$ 是 $Y^X$ 的一个度量，称之为 $Y^X$ 的一致收敛度量；度量空间 $(Y^X, \widetilde{\rho})$ 称为映射空间（一致收敛度量）
+    1. 一致收敛度量：设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间．记 $Y^X$ 为从 $X$ 到 $Y$ 的所有映射的集合，定义 $\widetilde{\rho}: Y^X\times Y^X \to R$ 使得对于任何 $f, g\in Y^X$ 有 $\widetilde{\rho}(f, g) = \left\{\begin{aligned}&1, &\ \exists x\in X: \rho(f(x), g(x))\geqslant 1 \\& \sup\{\rho(f(x), g(x)) | x\in X\}, &\ \text{otherwise}\end{aligned}\right.$，则容易验证 $\widetilde{\rho}$ 是 $Y^X$ 的一个度量，称之为 $Y^X$ 的一致收敛度量；度量空间 $(Y^X, \widetilde{\rho})$ 称为映射空间（一致收敛度量）
     2. 一致收敛拓扑：由一致收敛度量 $\widetilde{\rho}$ 诱导的 $Y^X$ 的拓扑 $\mathscr T_{\widetilde{\rho}}$ 称为 $Y^X$ 的一致收敛度量，拓扑空间 $(Y^X, \mathscr T_{\widetilde{\rho}})$ 称为连续映射空间（一致收敛拓扑），此时其拓扑也称为一致收敛拓扑
 4. 一致收敛：设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间，对于映射集合 $Y^X$ 中的一个序列 $\{f_i\}_{i\in Z_+}$，若对于任意给定的实数 $\varepsilon>0$，存在整数 $N>0$ 使得当 $i>N$ 时，$\rho(f_i(x), f(x))<\varepsilon$ 对于任何 $x\in X$ 成立，则称此序列一致收敛于映射 $f\in Y^X$
     1. 设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间，在度量空间 $Y^X$（一致收敛度量）中的一个序列 $\{f_i\}_{i\in Z_+}$ 收敛于 $f\in Y^X$ 当且仅当序列 $\{f_i\}_{i\in Z_+}$ 一致收敛于 $f\in Y^X$
