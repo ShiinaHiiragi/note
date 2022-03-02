@@ -67,7 +67,7 @@
             - $\text{A}_{10}: p_0 \vee \neg p_0$
         2. 推理规则
             - 肯定前件规则：$\begin{prooftree} \AxiomC{\(\alpha \to \beta\)} \AxiomC{\(\alpha\)} \RightLabel{(mp)} \BinaryInfC{\(\beta\)} \end{prooftree}$
-            - 带入规则：$\begin{prooftree} \AxiomC{\(\alpha\)} \UnaryInfC{\(\sigma(\alpha)\)} \RightLabel{(sub)} \end{prooftree}$，其中 $\sigma$ 是任意带入
+            - 代入规则：$\begin{prooftree} \AxiomC{\(\alpha\)} \UnaryInfC{\(\sigma(\alpha)\)} \RightLabel{(sub)} \end{prooftree}$，其中 $\sigma$ 是任意代入
     2. 令 $X \neq \varnothing$ 且 $S\subseteq X\times X$，对任意 $x\in X$，令 $S(x) = \{y\in X|xSy\}$．对任意子集 $Y\subseteq X$，令 $S[Y] = \bigcup \{S(y) |y\in Y\}$，对任意自然数 $n\leqslant 0$ 与 $x\in X$，定义 $S^0[x]=\{x\}, S^{n+1}[x] = S[S^n[x]]$
         1. 如果 $X$ 是有穷集且满足以下条件，则称 $(X, S)$ 为有穷树结构，$X$ 中的元组称为节点
             - 存在 $r\in X$ 满足条件：对任意 $x\in X$ 都存在自然数 $n\geqslant 0$ 使得 $rS^nx$，称 $r$ 为 $(X, S)$ 的根节点
@@ -81,7 +81,20 @@
         1. 用 $\mathcal {D, E}$ 等表示推导，用 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\alpha\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\alpha$ 为根节点的推导
         2. 在 $\textbf{HK}$ 中，如果存在公式集 $\Gamma$ 到公式 $\alpha$ 的推导，则称 $\alpha$ 是 $\Gamma$ 的演绎后承，记作 $\Gamma \vdash_\textbf{HK} \alpha$，不引起歧义时，下标 $\textbf{HK}$ 可删除
         3. 如果存在从 $\Gamma$ 到 $\alpha$ 的推导，则称公式 $\alpha$ 在 $\textbf{HK}$ 中可证；如果 $\varnothing \vdash_\textbf{HK} \alpha$，称公式在 $\textbf{HK}$ 中可证，或称 $\alpha$ 是 $\textbf{HK}$ 的定理，记作 $\vdash_\textbf{HK} \alpha$
-    4. $\text{Hilbert}$ 系统元定理
+    4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统元定理
+        1. $\alpha, \Gamma \vdash_\textbf{HK} \alpha$，$\bot, \Gamma \vdash_\textbf{HK} \alpha$
+        2. 对任意公式集 $\Gamma$ 和公式 $\alpha$，$\Gamma \vdash_\textbf{HK} \alpha$ 当且仅当存在有穷子集 $\Delta \subseteq \Gamma$ 使得 $\Delta \vdash_\textbf{HK} \alpha$
+        3. 如果 $\Gamma \vdash_\textbf{HK} \alpha$ 且 $\Gamma \vdash_\textbf{HK} \beta$，那么 $\Gamma \vdash_\textbf{HK} \alpha \wedge \beta$
+        4. 如果 $\alpha, \beta, \Gamma \vdash_\textbf{HK} \gamma$，那么 $\alpha \wedge \beta, \Gamma \vdash_\textbf{HK} \gamma$
+        5. 如果 $\Gamma \vdash_\textbf{HK} \alpha$ 或 $\Gamma \vdash_\textbf{HK} \beta$，那么 $\Gamma \vdash_\textbf{HK} \alpha \vee \beta$
+        6. 如果 $\alpha, \Gamma \vdash_\textbf{HK} \gamma$ 且 $\beta, \Gamma \vdash_\textbf{HK} \gamma$，那么 $\alpha \vee \beta, \Gamma \vdash_\textbf{HK} \gamma$
+        7. 如果 $\Gamma \vdash_\textbf{HK} \alpha$ 且 $\beta, \Delta \vdash_\textbf{HK} \gamma$，那么 $\alpha \to \beta, \Gamma, \Delta \vdash_\textbf{HK} \gamma$
+        8. 如果 $\Gamma \vdash_\textbf{HK} \alpha$ 且 $\Gamma \vdash_\textbf{HK} \alpha \to \beta$，那么 $\Gamma \vdash_\textbf{HK} \beta$
+        9. 弱化规则：如果 $\Gamma \vdash_\textbf{HK} \alpha$ 且 $\Gamma \subseteq \Delta$，那么 $\Delta \vdash_\textbf{HK} \alpha$
+        10. 切割规则：如果 $\Gamma \vdash_\textbf{HK} \alpha$ 且 $\alpha, \Gamma \subseteq \beta$，那么 $\Gamma, \Delta \vdash_\textbf{HK} \beta$
+        11. 演绎定理：对任意公式集 $\Gamma \cup \{\alpha, \beta\}$，$\alpha, \Gamma \vdash_\textbf{HK} \beta$ 当且仅当 $\Gamma \vdash_\textbf{HK} \alpha \to \beta$
+        12. 对任意公式集 $\Gamma \cup \{\alpha, \beta\}$，如果 $\alpha, \Gamma \vdash_\textbf{HK} \beta$ 并且 $\neg \alpha, \Gamma \vdash_\textbf{HK} \beta$，那么 $\Gamma \vdash_\textbf{HK} \beta$
+5.  经典命题逻辑的后承演算 $\mathfrak{C}_\textbf{HK}$ 由后承公理模式和后承规则组成
 
 ### 1.1.2 直觉主义命题逻辑 Hilbert 系统
 
