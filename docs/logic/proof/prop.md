@@ -46,15 +46,15 @@
     3. 对任意公式集 $\Gamma$ 与赋值 $\theta$，若对任意 $\alpha$ 都有 $\theta \vDash \alpha$，则称 $\theta$ 满足 $\Gamma$，记作 $\theta \vDash \Gamma$
         1. 对于公式集 $\Gamma$，如果存在赋值 $\theta$ 使得 $\theta \vDash \Gamma$，则称 $\Gamma$ 可满足
         2. 对任意公式集 $\Gamma \cup \{\alpha\}$，如果对于任意赋值 $\theta$ 使得 $\theta \vDash \Gamma$ 都有 $\theta \vDash \alpha$，则称 $\alpha$ 是 $\gamma$ 的语义后承，记作 $\Gamma \vDash \alpha$
-    4. 将经典命题逻辑 $\text{CL}$ 定义为所有重言式的集合，即 $\text{CL} = \{\alpha \in \mathscr L | \vDash \alpha\}$
-        1. 对任意公式 $\alpha$ 和代入 $\sigma$，若 $\alpha \in \text{CL}$，则 $\sigma(\alpha) \in \text{CL}$
-        2. 对任意公式 $\alpha, \beta$，若 $\alpha, \alpha \to \beta \in \text{CL}$，则 $\beta \in \text{CL}$
+    4. 将经典命题逻辑 $\textbf{CL}$ 定义为所有重言式的集合，即 $\textbf{CL} = \{\alpha \in \mathscr L | \vDash \alpha\}$
+        1. 对任意公式 $\alpha$ 和代入 $\sigma$，若 $\alpha \in \textbf{CL}$，则 $\sigma(\alpha) \in \textbf{CL}$
+        2. 对任意公式 $\alpha, \beta$，若 $\alpha, \alpha \to \beta \in \textbf{CL}$，则 $\beta \in \textbf{CL}$
     5. 真值函数：令 $\alpha$ 是公式且 $var(\alpha) = \{p_1, p_2, \cdots, p_n\}$，如果对于 $n-$元函数 $f: 2^n \to 2$ 与 $\varepsilon = (\alpha_1, \alpha_2, \cdots, \alpha_n) \in 2^n$ 都有 $f(\theta(p_1), \theta(p_2), \cdots, \theta(p_n)) = \widehat \theta(\alpha)$，其中 $\theta$ 是任意赋值使得对每个 $1\leqslant i\leqslant n$ 都有 $\theta(p_i) = a_i$，则称 $\alpha$ 定义 $n-$元真值函数 $f$
         - 任意 $n-$元真值函数 $f: 2^n \to 2$ 在 $\mathscr L$ 中可定义
 
-4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统 $\text{HK}$
+4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统 $\textbf{HK}$
     1. 公理与推理规则：一个推理规则的形式是 $\begin{prooftree} \AxiomC{\(\alpha_1\)} \AxiomC{\(\alpha_2\)} \AxiomC{\(\cdots\)} \AxiomC{\(\alpha_n\)} \QuaternaryInfC{\(\alpha_0\)} \end{prooftree}$，其中 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 称为 $R$ 的前提，$\alpha_0$ 称为 $R$ 的结论
-        1. 公理：若将 $p_0, p_1, p_2$ 替换为模式字母 $\alpha, \beta, \gamma$，可去掉代入规则 $\text{sub}$，得到的系统与 $\text{HK}$ 等价
+        1. 公理：若将 $p_0, p_1, p_2$ 替换为模式字母 $\alpha, \beta, \gamma$，可去掉代入规则 $\text{sub}$，得到的系统与 $\textbf{HK}$ 等价
             - $\text{A}_1: p_0 \to (p_1 \to p_0)$
             - $\text{A}_2: (p_0 \to (p_1 \to p_2)) \to ((p_0 \to p_1) \to (p_0 \to p_2))$
             - $\text{A}_3: (p_0 \wedge p_1) \to p_0$
@@ -74,6 +74,14 @@
             - 对任意 $x, y, z\in X$，如果 $xSz$ 且 $ySz$，那么 $x=y$
             - 不存在 $x_0, x_1, \cdots, x_k \in X$ 和自然数 $m, n$ 使得 $x_0S^mx_k$ 且 $x_kS^nx_0$
         2. 在有穷树结构 $(X, S)$ 中，如果 $xSy$，则称 $y$ 是 $x$ 的子节点
+        3. 在有穷树结构 $(X, S)$ 中，一条链 $c$ 是一个序列 $\left<x_0, x_1, \cdots, x_k\right>$ 使得对所有 $i\neq j < k$ 都有 $x_i\neq x_j$ 且 $x_iSx_{i+1}$
+            - 如果一条链 $c = \left<x_0, x_1, \cdots, x_k\right>$ 不存在 $y=X-c$ 使得 $x_kSy$，则称 $c$ 为极大链．极大链的第一个元素称为根节点；最后一个元素称为叶节点
+            - 链的长度定义为 $|c|=k$，单个节点链的长度为 $0$．从而有穷树结构 $(X, S)$ 的高度定义为 $\max\{\left|c\right|: c$ 是 $(X, R)$ 的极大链$\}$
+    3. 在 $\textbf{HK}$ 中，从公式集 $\Gamma$ 到公式 $\alpha$ 的一个推导是由公式组成的以 $\alpha$ 为根节点的有穷树结构 $\mathcal D$，其中每个节点满足三个条件之一：① $\gamma$ 是公理或 $\gamma \in \Gamma$；② $\gamma$ 是从子节点 $\beta$ 和 $\beta \to \gamma$ 运用规则 $\text{mp}$ 得到的；③ $\gamma$ 是从子节点 $\beta$ 利用规则 $\text{sub}$ 得到的，其中 $\beta$ 是公理
+        1. 用 $\mathcal {D, E}$ 等表示推导，用 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\alpha\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\alpha$ 为根节点的推导
+        2. 在 $\textbf{HK}$ 中，如果存在公式集 $\Gamma$ 到公式 $\alpha$ 的推导，则称 $\alpha$ 是 $\Gamma$ 的演绎后承，记作 $\Gamma \vdash_\textbf{HK} \alpha$，不引起歧义时，下标 $\textbf{HK}$ 可删除
+        3. 如果存在从 $\Gamma$ 到 $\alpha$ 的推导，则称公式 $\alpha$ 在 $\textbf{HK}$ 中可证；如果 $\varnothing \vdash_\textbf{HK} \alpha$，称公式在 $\textbf{HK}$ 中可证，或称 $\alpha$ 是 $\textbf{HK}$ 的定理，记作 $\vdash_\textbf{HK} \alpha$
+    4. $\text{Hilbert}$ 系统元定理
 
 ### 1.1.2 直觉主义命题逻辑 Hilbert 系统
 

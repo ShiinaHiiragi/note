@@ -29,7 +29,7 @@
         设 $x$ 是度量空间 $X$ 的一个点，则 $X$ 的子集 $U$ 是 $x$ 的一个邻域的充要条件是 $x$ 有某一个球形邻域包含于 $U$
 
 6. 连续映射
-    1. 连续：设 $X$ 和 $Y$ 是两个度量空间，$f: X\to Y, x_0\in X$．若对于 $f(x_0)$ 的任何一个球形邻域 $B(f(x_0), \varepsilon)$ 存在 $x_0$ 的某一个球形邻域 $B(x_0, \delta)$ 使得 $f(B(x_0, \delta))\subseteq B(f(x_0), \varepsilon)$，则称映射在点 $x_0$ 处是连续的
+    1. 连续：设 $X$ 和 $Y$ 是两个度量空间，$f: X\to Y, x_0\in X$．若对于 $f(x_0)$ 的任何一个球形邻域 $B(f(x_0), \varepsilon)$ 存在 $x_0$ 的某一个球形邻域 $B(x_0, \delta)$ 使得 $f[B(x_0, \delta)]\subseteq B(f(x_0), \varepsilon)$，则称映射在点 $x_0$ 处是连续的
     2. 连续映射：若映射 $f$ 在 $X$ 的每一个点 $x\in X$ 处连续，则称 $f$ 是一个连续映射
     3. 设 $X$ 和 $Y$ 是两个度量空间，$f: X\to Y, x_0\in X$
         1. $f$ 在点 $x_0$ 处连续 $\leftrightarrow f(x_0)$ 的每一个邻域的原像是 $x_0$ 的一个邻域
@@ -41,9 +41,9 @@
         2. $x\in \overline A \leftrightarrow \rho(x, A) = 0$
     3. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则以下条件等价
         1. $f$ 是一个连续映射
-        2. $Y$ 中任何一个闭集 $B$ 的原像 $f^{-1}(B)$ 是一个闭集
-        3. $\forall A\subseteq X: f(\overline A)=\overline{f(A)}$
-        4. $\forall B\subseteq X: f^{-1}(\overline B)\supset \overline{f^{-1}(B)}$
+        2. $Y$ 中任何一个闭集 $B$ 的原像 $f^{-1}[B]$ 是一个闭集
+        3. $\forall A\subseteq X: f[\overline A]=\overline{f[A]}$
+        4. $\forall B\subseteq X: f^{-1}[\overline B]\supset \overline{f^{-1}[B]}$
 
 ### 1.1.2 完备度量空间
 1. $\text{Cauchy}$ 序列：设 $(X, \rho)$ 是一个度量空间，$X$ 中的一个序列 $\{x_i\}_{i\in Z_+}$．若对于任意给定的实数 $\varepsilon >0$，存在整数 $N>0$，使得当 $i, j>N$ 时，有 $\rho(x_i, x_j)<\varepsilon$，则称序列 $\{x_i\}_{i\in Z_+}$ 是一个 $\text{Cauchy}$ 序列
@@ -92,13 +92,13 @@
     4. 邻域定义拓扑空间：设 $X$ 是一个集合，且 $\forall x\in X$ 指定了 $X$ 的一个子集族 $\mathscr U_x$，且它们满足上述定理的四条性质，则 $X$ 有唯一一个拓扑 $\mathscr T$ 使得对于每一点 $x\in X$，子集族 $\mathscr U_x$ 恰是点 $x$ 在拓扑空间 $(X, \mathscr T)$ 中的邻域系
 
 5. 连续映射
-    1. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$．若 $Y$ 中的每一个开集 $U$ 的原像 $f^{-1}(U)$ 是 $X$ 中的一个开集，则称 $f$ 是从 $X$ 到 $Y$ 的一个连续映射，或称映射 $f$ 连续
+    1. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$．若 $Y$ 中的每一个开集 $U$ 的原像 $f^{-1}[U]$ 是 $X$ 中的一个开集，则称 $f$ 是从 $X$ 到 $Y$ 的一个连续映射，或称映射 $f$ 连续
     2. 设 $X, Y, Z$ 都是拓扑空间
         1. 恒同映射 $i_X: X\to X$ 是一个连续映射
         2. 若 $f: X\to Y$ 和 $g: Y\to Z$ 都是连续映射，则 $g\circ f: X\to Z$ 也是连续映射
 
     !!! note "邻域定义连续性"
-        设 $X, Y$ 是两个拓扑空间，$f: X\to Y, x\in X$．若 $f(x)\in Y$ 的每一个邻域的原像 $f^{-1}(U)$ 是 $x\in X$ 的一个邻域，则称邻域 $f$ 是一个在点 $x$ 处连续的映射
+        设 $X, Y$ 是两个拓扑空间，$f: X\to Y, x\in X$．若 $f(x)\in Y$ 的每一个邻域的原像 $f^{-1}[U]$ 是 $x\in X$ 的一个邻域，则称邻域 $f$ 是一个在点 $x$ 处连续的映射
 
         1. 设 $X, Y, Z$ 都是拓扑空间
             1. 恒同映射 $i_X: X\to X$ 是一个连续映射
@@ -134,7 +134,7 @@
         !!! note "$\text{Cantor}$ 集"
             在实数空间 $R$ 中，定义 $f_1, f_2: R\to R$ 使得对于任意 $t\in R$ 有 $f_1(t)=\dfrac{t}{3}, f_2(t)=\dfrac{t+2}{3}$，则可以验证 $f_1, f_2$ 均为同胚，即任意开集 $U\subseteq R$，其 $f_1-$像与 $f_2-$像都是开集
 
-            定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1(A_{n-1})\cup f_2(A_{n-1})(n>1), A=\bigcup_{n\in Z_+}A_n$，称集合 $C=[0, 1]-A$ 为 $\text{Cantor}$ 集或标准 $\text{Cantor}$ 三分集，可以验证 $C$ 是一个闭集
+            定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1[A_{n-1}]\cup f_2[A_{n-1}](n>1), A=\bigcup_{n\in Z_+}A_n$，称集合 $C=[0, 1]-A$ 为 $\text{Cantor}$ 集或标准 $\text{Cantor}$ 三分集，可以验证 $C$ 是一个闭集
 
 4. 闭包：设 $X$ 是一个拓扑空间，$A\subseteq X$，称集合 $A\cup d(A)$ 为集合 $A$ 的闭包，记作 $\overline A$ 或 $A^-$
     1. $x\in \overline A$ 当且仅当对于 $x$ 的任何一个邻域 $U$ 有 $U\cap A\neq \varnothing$
@@ -181,14 +181,14 @@
     1. 设 $X$ 是一个集合，$\mathscr S\subseteq \mathscr T(X)$，若 $X=\bigcup_{S\in \mathscr S}S$，则 $X$ 有唯一一个拓扑 $\mathscr T$ 以 $\mathscr S$ 为子基，且若令 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n|S_i\in \mathscr S, i=1,2,\cdots,n;n\in Z_+\}$，则 $\mathscr T=\left\{\bigcup_{B\in \mathscr B_1}B|\mathscr B_1\subseteq \mathscr B\right\}$
     2. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则以下条件等价
         1. $f$ 连续
-        2. 拓扑空间 $Y$ 有一个基 $\mathscr B$，使得对于任何一个 $B\in \mathscr B$，原像 $f^{-1}(B)$ 是 $X$ 中的一个开集
-        3. $Y$ 有一个子基 $\mathscr S$，使得对于任何一个 $S\in \mathscr S$，原像 $f^{-1}(S)$ 是 $X$ 中的一个开集
+        2. 拓扑空间 $Y$ 有一个基 $\mathscr B$，使得对于任何一个 $B\in \mathscr B$，原像 $f^{-1}[B]$ 是 $X$ 中的一个开集
+        3. $Y$ 有一个子基 $\mathscr S$，使得对于任何一个 $S\in \mathscr S$，原像 $f^{-1}[S]$ 是 $X$ 中的一个开集
 3. 邻域基：设 $X$ 是一个拓扑空间，$x\in X$．记 $\mathscr U_x$ 为 $x$ 的邻域系，若 $\mathscr U_x$ 的子族 $\mathscr V_x$ 满足对于任何 $U\in \mathscr U_x$，存在 $V\in \mathscr V_x$ 使得 $V\subseteq U$，则称 $\mathscr V_x$ 是点 $x$ 的邻域系的一个子集，或简称为点 $x$ 的一个邻域基
     1. 若 $\mathscr U_x$ 的子族 $\mathscr W_x$ 有 $\mathscr W_x$ 的每一个非空有限子族之交的全体构成的集族 $\{W_1 \cap W_2 \cap \cdots \cap W_n|W_i\in \mathscr W_x, i=1, 2, \cdots, n; n\in Z_+\}$ 是 $\mathscr U_x$ 的一个邻域基，则称 $\mathscr W_x$ 是点 $x$ 的邻域系的一个子基，或称为点 $x$ 的一个邻域子基
     2. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y, x\in X$，则以下条件等价
         1. $f$ 在点 $x$ 处连续
-        2. $f(x)$ 有一个邻域基 $\mathscr V_{f(x)}$ 使得对于任何 $V\in \mathscr V_{f(x)}$，原像 $f^{-1}(V)$ 是 $x$ 的一个邻域
-        3. $f(x)$ 有一个邻域子基 $\mathscr W_{f(x)}$ 使得对于任何 $W\in \mathscr W_{f(x)}$，原像 $f^{-1}(W)$ 是 $x$ 的一个邻域
+        2. $f(x)$ 有一个邻域基 $\mathscr V_{f(x)}$ 使得对于任何 $V\in \mathscr V_{f(x)}$，原像 $f^{-1}[V]$ 是 $x$ 的一个邻域
+        3. $f(x)$ 有一个邻域子基 $\mathscr W_{f(x)}$ 使得对于任何 $W\in \mathscr W_{f(x)}$，原像 $f^{-1}[W]$ 是 $x$ 的一个邻域
     3. 设 $X$ 是一个拓扑空间，$x\in X$
         1. 若 $\mathscr B$ 是 $X$ 的一个基，则 $\mathscr B_x=\{B\in \mathscr B|x\in B\}$ 是点 $x$ 的一个邻域基
         2. 若 $\mathscr S$ 是 $X$ 的一个子基，则 $\mathscr S_x=\{S\in \mathscr S|x\in S\}$ 是点 $x$ 的一个邻域子基
