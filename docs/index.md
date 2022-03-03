@@ -6,7 +6,7 @@
 全站以 `mkdocs-material` 作为框架，使用中文作为描述语言，所有源文件在 GitHub 可见。标点符号的使用基本符合普遍规则，绝大部分不符合规范的排版均为有意编排。
 
 !!! info "此项目仍未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：证明论 · 经典命题逻辑 $\text{Hilbert}$ 系统 </label>
+    <label> 现在进度：证明论 · 经典一阶逻辑 $\text{Hilbert}$ 系统 </label>
     <div class="progress-container">
         <div class="progress-percentage" style="width: 32%;"> 32% </div>
     </div>
