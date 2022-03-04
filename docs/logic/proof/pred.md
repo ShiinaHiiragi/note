@@ -35,7 +35,7 @@
         2. 对于 $\mathbf Q\in \{\forall, \exists\}$ 和有穷长的边缘序列 $\overline x = x_1, x_2, \cdots, x_n$，公式 $\mathbf Qx_1 \mathbf Qx_2 \cdots \mathbf Qx_n \alpha$ 记作 $\mathbf Q \overline x \alpha$
     4. 项与公式的性质
         1. 项 $t$ 的复杂度定义为
-        
+
             $$
             \begin{aligned}
             & d(x) = 0 = d(c) \\
@@ -103,8 +103,8 @@
 
     5. 替换与变换：对于任意项序列 $\overline t = t_1, t_2, \cdots, t_n$ 和任意变元序列 $\overline x = x_1, x_2, \cdots, x_n$，用 $\overline t / \overline x$ 表示分别用 $t_i$ 替换 $x_i$，其中 $1 \leqslant i \leqslant n$
         1. 对于公式 $\alpha$，如果公式 $\alpha^\flat$ 是使用不在 $\alpha$ 中出现的新变元 $y_1, y_2, \cdots, y_n$ 分别同时替换 $\alpha$ 中约束变元 $x_1, x_2, \cdots, x_n$ 的所有约束出现得到的公式，则称 $\alpha^\flat$ 是 $\alpha$ 的字母变换
-        2. 对任意项 $s\in \mathcal T(S)$，归纳定义 $$s(\overline t/\overline y)$ 为
-        
+        2. 对任意项 $s\in \mathcal T(S)$，归纳定义 $s(\overline t/\overline y)$ 为
+
             $$
             \begin{aligned}
             & x(\overline t/\overline y) = \left\{\begin{aligned} & x, & x\notin \overline y \\ & t_i, & \exists i\leqslant n: x = y_i \end{aligned}\right. \\

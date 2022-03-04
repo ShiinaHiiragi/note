@@ -23,7 +23,7 @@
 1. 语言与认知
     1. 语言是人类认知与高阶认知的基础
     2. 人类以语言为基础，以思维和文化为特征的高阶认知能力是由神经和心理的初阶认知能力进化而来的
-    
+
         <figure markdown>
             ![](../assets/cogn.png)
             <style> img[src$="cogn.png"] { width: 500px; } </style>

@@ -21,7 +21,7 @@
     3. 公式的性质
         1. $\mathrm{var}(\alpha)$ 表示公式 $\alpha$ 中出现的所有命题变元的集合；$\alpha(p_1, p_2, \cdots, p_n)$ 表示公式 $\alpha$ 使得 $\mathrm{var}(\alpha) \subseteq \{p_1, \cdots, p_n\}$．若 $\mathrm{var}(\alpha) = \varnothing$，则称 $\alpha$ 为无变元公式
         2. $d(\alpha)$ 表示公式 $\alpha$ 的复杂度，定义为
-            
+
             $$
             \begin{aligned}
             & d(p) = 0 = d(\bot), &p\in \mathrm{Prop} \\
@@ -192,7 +192,7 @@
         $$
 
         其中 $\text{LEM}$ 称为排中律规则；$\text{Wk}$ 称为弱化规则；$\text{Cut}$ 称为切割规则
-    
+
     3. 在 $\mathfrak C_\mathbf{HK}$ 中，一个推导是由后承组成的有穷树结构
         1. 每个节点要么是后承公理，要么是使用后承规则从子节点得到的
         2. 如果存在以后承 $\Gamma \vdash \beta$ 为根节点的推导，则称该后承在 $\mathfrak C_\mathbf{HK}$ 中可证，记作 $\Gamma \vdash_\mathbf{HK} \beta$
