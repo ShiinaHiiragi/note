@@ -20,21 +20,47 @@
     2. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串的性质，设 ① 对 $\alpha \in \mathrm{At}$ 都有 $\mathcal R(\alpha)$；② 对任意 $\alpha, \beta \in \mathscr L$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$，那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathscr L$ 都成立
     3. 公式的性质
         1. $\mathrm{var}(\alpha)$ 表示公式 $\alpha$ 中出现的所有命题变元的集合；$\alpha(p_1, p_2, \cdots, p_n)$ 表示公式 $\alpha$ 使得 $\mathrm{var}(\alpha) \subseteq \{p_1, \cdots, p_n\}$．若 $\mathrm{var}(\alpha) = \varnothing$，则称 $\alpha$ 为无变元公式
-        2. $d(\alpha)$ 表示公式 $\alpha$ 的复杂度，定义为 $\left\{\begin{aligned} &d(p) = 0 = d(\bot), &p\in \mathrm{Prop} \\& d(\alpha \circ \beta) = \max\{d(\alpha), d(\beta)\} + 1, & \circ \in \{\wedge, \vee, \to\} \end{aligned}\right.$
-        3. $\mathrm{SF}(\alpha)$ 表示公式 $\alpha$ 的子公式集合，定义为 $\left\{\begin{aligned} &\mathrm{SF}(\alpha) = \{\alpha\}, &\alpha \in \mathrm{At} \\& \mathrm{SF}(\alpha \circ \beta) = \mathrm{SF}(\alpha) \cup \mathrm{SF}(\beta) \cup \{\alpha \circ \beta\}, &\circ \in \{\wedge, \vee, \to\}\end{aligned}\right.$
-        4. 一个代入是一个函数 $\sigma: \mathrm{Prop} \to \mathscr L$，对任意代入 $\sigma$，函数 $\widehat \sigma: \mathscr L \to \mathscr L$ 定义为 $\left\{\begin{aligned} & \widehat \sigma(\bot) = \bot \\ & \widehat \sigma(p) = \sigma(p), & p\in \mathrm{Prop} \\& \widehat \sigma(\alpha \circ \beta) = \widehat \sigma(\alpha) \circ \widehat \sigma(\beta), & \circ \in \{\wedge, \vee, \to\} \end{aligned}\right.$．对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$，用 $\alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$ 分别表示用 $\beta_1, \beta_2, \cdots, \beta_n$ 代入变元 $p_1, p_2, \cdots, p_n$ 得到的结果
+        2. $d(\alpha)$ 表示公式 $\alpha$ 的复杂度，定义为
+            
+            $$
+            \begin{aligned}
+            & d(p) = 0 = d(\bot), &p\in \mathrm{Prop} \\
+            & d(\alpha \circ \beta) = \max\{d(\alpha), d(\beta)\} + 1, & \circ \in \{\wedge, \vee, \to\}
+            \end{aligned}
+            $$
+
+        4. $\mathrm{SF}(\alpha)$ 表示公式 $\alpha$ 的子公式集合，定义为
+
+            $$
+            \begin{aligned}
+            & \mathrm{SF}(\alpha) = \{\alpha\}, &\alpha \in \mathrm{At} \\
+            & \mathrm{SF}(\alpha \circ \beta) = \mathrm{SF}(\alpha) \cup \mathrm{SF}(\beta) \cup \{\alpha \circ \beta\}, &\circ \in \{\wedge, \vee, \to\}
+            \end{aligned}
+            $$
+
+        6. 一个代入是一个函数 $\sigma: \mathrm{Prop} \to \mathscr L$，对任意代入 $\sigma$，函数 $\widehat \sigma: \mathscr L \to \mathscr L$ 定义为
+
+            $$
+            \begin{aligned}
+            & \widehat \sigma(\bot) = \bot \\
+            & \widehat \sigma(p) = \sigma(p), & p\in \mathrm{Prop} \\
+            & \widehat \sigma(\alpha \circ \beta) = \widehat \sigma(\alpha) \circ \widehat \sigma(\beta), & \circ \in \{\wedge, \vee, \to\}
+            \end{aligned}
+            $$
+
+            对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$，用 $\alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$ 分别表示用 $\beta_1, \beta_2, \cdots, \beta_n$ 代入变元 $p_1, p_2, \cdots, p_n$ 得到的结果
 
 3. 真值函数语义学：用 $1$ 表示「真」；用 $0$ 表示「假」，集合 $2 = \{0, 1\}$ 称为真值集
     1. 赋值：一个赋值是一个函数 $\theta: \mathrm{Prop} \to 2$，对任意赋值 $\theta$，归纳定义函数 $\widehat \theta: \mathscr L \to 2$ 有
-    
+
         $$
-        \left\{\begin{aligned}
+        \begin{aligned}
             &   \widehat \theta(\bot) = 0
             \\& \widehat \theta(p) = 1 \leftrightarrow \theta(p) = 1
             \\& \widehat \theta(\alpha \wedge \beta) = 1 \leftrightarrow \widehat \theta(\alpha) = 1 \wedge \widehat \theta(\beta) = 1
             \\& \widehat \theta(\alpha \vee \beta) = 1 \leftrightarrow \widehat \theta(\alpha) = 1 \vee \widehat \theta(\beta) = 1
             \\& \widehat \theta(\alpha \to \beta) = 1 \leftrightarrow \widehat \theta(\alpha) = 0 \vee \widehat \theta(\beta) = 1
-        \end{aligned}\right.
+        \end{aligned}
         $$
 
         1. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$，设赋值 $\theta, \theta'$ 有任意 $1\leqslant i \leqslant n: \theta(p_i) = \theta'(p_i)$，则 $\widehat \theta(\alpha) = \hat {\theta'}(\alpha)$
@@ -192,7 +218,7 @@
     1. $\mathbf{CL} \subseteq \mathrm{Thm}(\mathbf{HK})$
     2. 完全性的等价形式：如果 $\Gamma$ 是 $\mathbf{HK}-$一致的，则 $\Gamma$ 是可满足的
     3. 紧致性：一个公式集 $\Gamma$ 可满足当且仅当 $\Gamma$ 的每个有穷子集可满足
-9. 其他性质
+9.  其他性质
     1. $\text{Post}$ 完全性：$\mathbf{HK}$ 是 $\text{Post}$ 完全的，即如果 $\not \vdash_\mathbf{HK} \alpha$，那么在系统 $\mathbf{HK}$ 上增加 $\alpha$ 作为公理所得到的系统是不一致的
     2. 可判定性：$\mathbf{CL}$ 是可判定的，即存在一种能行的方法使得对任何公式 $\alpha$ 可在有穷步骤之内确定 $\alpha$ 是否属于 $\mathbf{CL}$，因此 $\mathrm{Thm}(\mathbf{HK})$ 是可判定的
     3. 析取性质：$\mathbf{HK}$ 不具有析取性质，即存在公式 $\alpha \vee \beta$，有 $\vdash_\mathbf{HK} \alpha \vee \beta$ 且 $\not \vdash_\mathbf{HK} \alpha$ 且 $\not \vdash_\mathbf{HK} \beta$
