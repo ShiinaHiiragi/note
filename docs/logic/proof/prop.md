@@ -3,7 +3,7 @@
 ## 1.1 Hilbert 系统
 ### 1.1.1 经典命题逻辑 Hilbert 系统
 1. 经典命题逻辑形式语言的初始符号
-    1. 可数命题变元集：$\mathrm{Prop} = \{p_i|i<\omega\}$，用 $p, q, r$ 等表示 $\mathrm{Prop}$ 中的任意命题变元
+    1. 可数命题变元集：$\mathbf{Prop} = \{p_i|i<\omega\}$，用 $p, q, r$ 等表示 $\mathbf{Prop}$ 中的任意命题变元
     2. 联结词：零元联结词 $\bot$（恒假）；二元联结词 $\wedge$（合取）、$\vee$（析取）与 $\to$（蕴含）
     3. 括号：$)$ 与 $($
 2. $\text{Backus-Naur}$ 形式句法：用 $\alpha, \beta, \gamma$ 表示公式模式（可带下标），则公式集
@@ -16,15 +16,15 @@
         1. 定义缩写 $\neg \alpha := \alpha \to \bot$（否定）；$\top := \bot \to \bot$（恒真）；$\alpha \leftrightarrow \beta := (\alpha \to \beta) \wedge (\beta \to \alpha)$（等值）
         2. 引入省略括号的规则：① 公式最外层括号可省略；② 联结词 $\wedge$ 与 $\vee$ 优先于 $\to$
 
-    1. 原子公式：命题变元或 $\bot$，所有原子公式的集合记为 $\mathrm{At} = \mathrm{Prop} \cup \{\bot\}$
-    2. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串的性质，设 ① 对 $\alpha \in \mathrm{At}$ 都有 $\mathcal R(\alpha)$；② 对任意 $\alpha, \beta \in \mathscr L$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$，那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathscr L$ 都成立
+    1. 原子公式：命题变元或 $\bot$，所有原子公式的集合记为 $\mathbf{At} = \mathbf{Prop} \cup \{\bot\}$
+    2. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串的性质，设 ① 对 $\alpha \in \mathbf{At}$ 都有 $\mathcal R(\alpha)$；② 对任意 $\alpha, \beta \in \mathscr L$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$，那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathscr L$ 都成立
     3. 公式的性质
         1. $\mathrm{var}(\alpha)$ 表示公式 $\alpha$ 中出现的所有命题变元的集合；$\alpha(p_1, p_2, \cdots, p_n)$ 表示公式 $\alpha$ 使得 $\mathrm{var}(\alpha) \subseteq \{p_1, \cdots, p_n\}$．若 $\mathrm{var}(\alpha) = \varnothing$，则称 $\alpha$ 为无变元公式
         2. $d(\alpha)$ 表示公式 $\alpha$ 的复杂度，定义为
 
             $$
             \begin{aligned}
-            & d(p) = 0 = d(\bot), &p\in \mathrm{Prop} \\
+            & d(p) = 0 = d(\bot), &p\in \mathbf{Prop} \\
             & d(\alpha \circ \beta) = \max\{d(\alpha), d(\beta)\} + 1, & \circ \in \{\wedge, \vee, \to\}
             \end{aligned}
             $$
@@ -33,17 +33,17 @@
 
             $$
             \begin{aligned}
-            & \mathrm{SF}(\alpha) = \{\alpha\}, &\alpha \in \mathrm{At} \\
+            & \mathrm{SF}(\alpha) = \{\alpha\}, &\alpha \in \mathbf{At} \\
             & \mathrm{SF}(\alpha \circ \beta) = \mathrm{SF}(\alpha) \cup \mathrm{SF}(\beta) \cup \{\alpha \circ \beta\}, &\circ \in \{\wedge, \vee, \to\}
             \end{aligned}
             $$
 
-        6. 一个代入是一个函数 $\sigma: \mathrm{Prop} \to \mathscr L$，对任意代入 $\sigma$，函数 $\widehat \sigma: \mathscr L \to \mathscr L$ 定义为
+        6. 一个代入是一个函数 $\sigma: \mathbf{Prop} \to \mathscr L$，对任意代入 $\sigma$，函数 $\widehat \sigma: \mathscr L \to \mathscr L$ 定义为
 
             $$
             \begin{aligned}
             & \widehat \sigma(\bot) = \bot \\
-            & \widehat \sigma(p) = \sigma(p), & p\in \mathrm{Prop} \\
+            & \widehat \sigma(p) = \sigma(p), & p\in \mathbf{Prop} \\
             & \widehat \sigma(\alpha \circ \beta) = \widehat \sigma(\alpha) \circ \widehat \sigma(\beta), & \circ \in \{\wedge, \vee, \to\}
             \end{aligned}
             $$
@@ -51,7 +51,7 @@
             对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$，用 $\alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$ 分别表示用 $\beta_1, \beta_2, \cdots, \beta_n$ 代入变元 $p_1, p_2, \cdots, p_n$ 得到的结果
 
 3. 真值函数语义学：用 $1$ 表示「真」；用 $0$ 表示「假」，集合 $2 = \{0, 1\}$ 称为真值集
-    1. 赋值：一个赋值是一个函数 $\theta: \mathrm{Prop} \to 2$，对任意赋值 $\theta$，归纳定义函数 $\widehat \theta: \mathscr L \to 2$ 有
+    1. 赋值：一个赋值是一个函数 $\theta: \mathbf{Prop} \to 2$，对任意赋值 $\theta$，归纳定义函数 $\widehat \theta: \mathscr L \to 2$ 有
 
         $$
         \begin{aligned}
@@ -64,7 +64,7 @@
         $$
 
         1. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$，设赋值 $\theta, \theta'$ 有任意 $1\leqslant i \leqslant n: \theta(p_i) = \theta'(p_i)$，则 $\widehat \theta(\alpha) = \hat {\theta'}(\alpha)$
-        2. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$ 和公式 $\beta_1, \beta_2, \cdots, \beta_n$，令 $\alpha' = \alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$．对任意赋值 $\theta$，定义赋值 $\theta': \mathrm{Prop} \to 2$ 为 $\theta'(q) = \left\{\begin{aligned} & \widehat \theta(\beta_i), &\text{exists}\ 1\leqslant i\leqslant n: q = p_i \\& \theta(q), &\text{otherwise} \end{aligned}\right.$，则 $\theta' \vDash \alpha \leftrightarrow \theta \vDash \alpha'$
+        2. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$ 和公式 $\beta_1, \beta_2, \cdots, \beta_n$，令 $\alpha' = \alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$．对任意赋值 $\theta$，定义赋值 $\theta': \mathbf{Prop} \to 2$ 为 $\theta'(q) = \left\{\begin{aligned} & \widehat \theta(\beta_i), &\textsf{存在 }\ 1\leqslant i\leqslant n: q = p_i \\& \theta(q), &\textsf{否则} \end{aligned}\right.$，则 $\theta' \vDash \alpha \leftrightarrow \theta \vDash \alpha'$
 
     2. 对任意公式 $\alpha$ 与赋值 $\theta$，若 $\theta(\alpha) = 1$，则称 $\theta$ 满足公式 $\alpha$，记作 $\theta \vDash \alpha$
         1. 对于公式 $\alpha$，若存在赋值 $\theta$ 使得 $\theta \vDash \alpha$，则称公式 $\alpha$ 可满足，否则称 $\alpha$ 为矛盾式．易知公式 $\alpha$ 是重言式当且仅当 $\neg \alpha$ 是矛盾式；公式 $\alpha$ 是矛盾式当且仅当 $\neg \alpha$ 是重言式

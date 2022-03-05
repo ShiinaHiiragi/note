@@ -180,7 +180,7 @@
         2. $\text{Tychonoff}$ 乘积定理：任何一族紧空间的积空间都是紧空间
 
         !!! note "命题逻辑的紧致性定理"
-            设 $\mathrm{Prop}$ 为命题变元集合，$\mathscr L$ 为命题公式集．令 $\mathrm{Prop}$ 为指标集，对集合 $2=\{0, 1\}$ 赋予离散拓扑，所有真值指派的集合 $2^V$ 是一个积空间，其子基元素是集合 $\mathscr S_{p, i}=\{\tau: \tau(p)=i\}, p\in \mathrm{Prop}, i\in 2$．由 $\text{Tychonoff}$ 乘积定理，$2^V$ 是紧致的．对任意 $\varphi \in \mathscr L$，令 $D_\varphi$ 是使 $\varphi$ 成立的真值指派，则 $\{D_\varphi\}_{\varphi \in \Gamma}$ 是一个闭集族．$\Gamma$ 的任意有限子集是可满足的当且仅当对于任意 $\Gamma_0\subseteq \Gamma$，$\bigcup_{\varphi\in \Gamma} D_\varphi$ 非空，这等价于 $\Gamma$ 可满足
+            设 $\mathbf{Prop}$ 为命题变元集合，$\mathscr L$ 为命题公式集．令 $\mathbf{Prop}$ 为指标集，对集合 $2=\{0, 1\}$ 赋予离散拓扑，所有真值指派的集合 $2^V$ 是一个积空间，其子基元素是集合 $\mathscr S_{p, i}=\{\tau: \tau(p)=i\}, p\in \mathbf{Prop}, i\in 2$．由 $\text{Tychonoff}$ 乘积定理，$2^V$ 是紧致的．对任意 $\varphi \in \mathscr L$，令 $D_\varphi$ 是使 $\varphi$ 成立的真值指派，则 $\{D_\varphi\}_{\varphi \in \Gamma}$ 是一个闭集族．$\Gamma$ 的任意有限子集是可满足的当且仅当对于任意 $\Gamma_0\subseteq \Gamma$，$\bigcup_{\varphi\in \Gamma} D_\varphi$ 非空，这等价于 $\Gamma$ 可满足
 
 5. 加细：设集族 $\mathscr {A, B}$ 都是集合 $X$ 的覆盖，如果 $\mathscr A$ 中的每一个元素都包含于 $\mathscr B$ 的某一个元素之中，则称 $\mathscr A$ 是 $\mathscr B$ 的一个加细
 
@@ -224,7 +224,7 @@
     3. 设 $A$ 是 $n$ 维 $\text{Euclid}$ 空间 $R^n$ 的一个子集，则 $A$ 是一个紧子集当且仅当 $A$ 是一个有界闭集
     4. 设 $X$ 是一个非空紧空间，$f: X\to R$ 是一个连续映射，则存在 $x_0, x_1\in X$ 使得对于任何 $x\in X$ 有 $f(x_0)\leqslant f(x)\leqslant f(x_1)$  
     5. 设 $m, n\in Z$，则 $n$ 维单位球面 $S^n$ 与 $m$ 维 $\text{Euclid}$ 空间 $R^m$ 不同胚
-2. 直径：设 $A$ 是度量空间 $(X, \rho)$ 中的一个非空子集，定义集合 $A$ 的直径 $\mathrm{diam}(A)=\left\{\begin{aligned} &\sup\{\rho(x, y)|x, y\in A\}, &A\textsf{ 是有界的} \\& \infty, &\text{otherwise} \end{aligned}\right.$
+2. 直径：设 $A$ 是度量空间 $(X, \rho)$ 中的一个非空子集，定义集合 $A$ 的直径 $\mathrm{diam}(A)=\left\{\begin{aligned} &\sup\{\rho(x, y)|x, y\in A\}, &A\textsf{ 是有界的} \\& \infty, &\textsf{否则} \end{aligned}\right.$
 3. $\text{Lebesgue}$ 数：设 $(X, \rho)$ 是一个度量空间，$\mathscr A$ 是 $X$ 的一个开覆盖．若 $\forall A\subseteq X\ \exists \lambda>0: \mathrm{diam}(A)<\lambda \to A$ 包含于开覆盖 $\mathscr A$ 的某一个元素之中，则称 $\lambda$ 为开覆盖 $\mathscr A$ 的一个 $\text{Lebesgue}$ 数
     1. $\text{Lebesgue}$ 数定理：序列紧的度量空间的每一个开覆盖有一个 $\text{Lebesgue}$ 数
     2. 每一个序列紧的度量空间都是紧空间

@@ -81,7 +81,7 @@ nav:
   - 数理逻辑:
     - 一、证明论:
       - 1 命题逻辑: logic/proof/prop.md
-      - 2 谓词逻辑: logic/proof/pred.md
+      - 2 一阶逻辑: logic/proof/pred.md
     - 二、公理集合论:
       - 1 ZFC 集合论: logic/set/zfc.md
       - 2 关系与映射: logic/set/relation.md
