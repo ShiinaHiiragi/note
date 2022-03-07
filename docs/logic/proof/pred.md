@@ -164,10 +164,26 @@
         1. 如果公式 $\alpha$ 有对于结构 $\mathfrak A$ 中的任意指派 $\sigma$ 都有 $(\mathfrak A, \sigma) \vDash \alpha$，则称$\alpha$ 在 $\mathfrak A$ 上有效，记作 $\mathfrak A \vDash \alpha$
         2. 如果公式 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称公式 $\alpha$ 有效，记作 $\vDash_1 \alpha$，设一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) | \vDash_1 \alpha\}$
 
+            !!! note "有效式"
+                以下公式都是有效的
+
+                1. $\forall x(\alpha \wedge \beta) \leftrightarrow \forall x\alpha \wedge \forall x\beta$
+                2. $\exists x(\alpha \vee \beta) \leftrightarrow \exists x\alpha \vee \exists x\beta$
+                3. $\forall x(\alpha \vee \beta) \leftrightarrow \alpha \vee \forall x\beta, x\notin \mathrm{FV}(\alpha)$
+                4. $\exists x(\alpha \wedge \beta) \leftrightarrow \alpha \wedge \exists x\beta, x\notin \mathrm{FV}(\alpha)$
+                5. $\forall x(\alpha \to \beta) \to (\alpha \to \forall x\beta), x\notin \mathrm{FV}(\alpha)$
+                6. $\forall x\alpha \to \alpha(t/x)$
+
     5. 对任意公式集 $\Phi$，若对所有 $\alpha \in \Phi$ 都有 $\mathfrak M \vDash \alpha$，则记作 $\mathfrak M \vDash \Phi$
         1. 设 $\alpha$ 是一个公式，$\Phi$ 是一个公式集，如果对任意模型 $\mathfrak M$ 都有 $\mathfrak M \vDash \Phi$ 蕴涵 $\mathfrak M \vDash \alpha$，则称 $\alpha$ 是 $\Phi$ 的语义后承，记作 $\Phi \vDash \alpha$
         2. 对于公式集 $\alpha$，如果存在模型 $\mathfrak M$ 使得 $\mathfrak M \vDash \Phi$，则称 $\Phi$ 可满足；对于公式 $\alpha$，如果 $\{\alpha\}$ 可满足，则称 $\alpha$ 可满足
         3. 对任意公式集 $\Phi \cup \{\alpha\}$，$\Phi \vDash \alpha$ 当且仅当 $\Phi \cup \{\neg \alpha\}$ 不可满足
+        4. 令 $\mathfrak M_1 = (\mathfrak A_1, \sigma)$ 与 $\mathfrak M_2 = (\mathfrak A_2, \sigma)$ 分别是 $S_1-$结构和 $S_2-$结构上的模型，其中 $\mathfrak A_1$ 与 $\mathfrak A_2$ 有相同的论域 $A$，令 $S = S_1 \cap S_2$
+            - 对任意项 $s\in \mathcal T(S)$，$s^{\mathfrak M_1} = s^{\mathfrak M_2}$
+            - 对任意公式 $\alpha \in \mathcal F(S)$，$\mathfrak M_1 \vDash \alpha$ 当且仅当 $\mathfrak M_2 \vDash \alpha$
+        5. 对任意模型 $\mathfrak M = (\mathfrak A, \sigma)$，设 $\mathfrak M' = (\mathfrak A, \sigma[\overline t^{\mathfrak M}]/\overline x)$
+            - 对任意项 $s$ 都有 $s(\overline t/\overline x)^{\mathfrak M} = s^{\mathfrak M'}$
+            - 对任意公式 $\alpha$，$\mathfrak M \vDash \alpha(\overline t/\overline x)$ 当且仅当 $\mathfrak M' \vDash \alpha$
 
 4. 公理系统 $\mathbf H_1$
     1. 公理模式与推理规则
@@ -218,7 +234,7 @@
 
         4. 以下公式是 $\mathbf H_1$ 的定理
             - $\alpha(t/x) \to \exists x\alpha$
-            - $\forall x(\alpha \to \beta) \to )(\alpha \to \forall x\beta), x\notin \mathrm{FV}(\alpha)$
+            - $\forall x(\alpha \to \beta) \to (\alpha \to \forall x\beta), x\notin \mathrm{FV}(\alpha)$
             - $\forall x\forall y\alpha \to \forall y\forall x\alpha$
             - $\forall x(\alpha \wedge \beta) \leftrightarrow \forall x\alpha \wedge \forall x\beta$
             - $\exists x(\alpha \vee \beta) \leftrightarrow \exists x\alpha \vee \exists x\beta$
@@ -271,7 +287,43 @@
         }
         $$
 
-5. 一致性：如果公式集 $\Phi$ 有 $\Phi \not \vdash_{\mathbf H_1}$，则称公式集 $\Phi$ 是 $\mathbf H_1-$一致的，否则称 $\Phi$ 是 $\mathbf H_1-$不一致的
+5. 一致性：如果公式集 $\Phi$ 有 $\Phi \not \vdash_{\mathbf H_1} \bot$，则称公式集 $\Phi$ 是 $\mathbf H_1-$一致的，否则称 $\Phi$ 是 $\mathbf H_1-$不一致的
+    1. 对任意公式集 $\Phi \cup \{\alpha\}$ 有
+        1. $\Phi \not \vdash_{\mathbf H_1} \neg \alpha$ 当且仅当 $\Phi \cup \{\alpha\}$ 是 $\mathbf H_1-$一致的
+        2. $\Phi \not \vdash_{\mathbf H_1} \alpha$ 当且仅当 $\Phi \cup \{\neg \alpha\}$ 是 $\mathbf H_1-$一致的
+    2. 一个公式集 $\Phi$ 是 $\mathbf H_1$ 一致的当且仅当 $\Phi$ 的每个有穷子集是 $\mathbf H_1$ 一致的
+6. 可靠性：如果 $\Phi \vdash_{\mathbf H_1} \alpha$，那么 $\Phi \vDash \alpha$
+    1. 对任意公式 $\alpha, \beta$
+        1. 如果 $\vDash_1 \alpha$ 且 $\vDash_1 \alpha \to \beta$，则 $\vDash \beta$
+        2. 如果 $\vDash_1 \alpha$，则 $\vDash_1 \forall x\alpha$
+    2. 如果 $\Phi$ 是可满足的，那么 $\Phi$ 是 $\mathbf H_1-$一致的
+    3. $\mathrm{Thm}(\mathbf H_1) \subseteq \mathbf{FOL}$
+7. 完全性：如果 $\Phi \vDash \alpha$，那么 $\Phi \vdash_{\mathbf H_1} \alpha$
+    1. 在朴素集合论下，$S$ 是可数的，因此 $\mathcal T(S)$ 与 $\mathcal F(S)$ 均可数，设 $\Phi$ 是 $\mathbf H_1-$一致的公式集，构造句法模型 $\mathfrak M^\Phi = (\mathfrak A^\Phi, \sigma^\Phi)$
+        1. 模型 $\mathfrak M^\Phi = (\mathfrak A^\Phi, \sigma^\Phi)$ 的论域是项集 $\mathcal T(S)$，对任意变元 $x\in \mathbf{Var}, \sigma^\Phi(x) = x$
+            - 对任意关系符号 $R\in \mathbf R, (t_1, t_2, \cdots, t_{\Omega(R)}) \in R^{\mathfrak A^\Phi}$ 当且仅当 $\Phi \vdash_{\mathbf H_1} Rt_1 t_2 \cdots t_{\Omega(R)}$
+            - 对任意函数符号 $f\in \mathbf F, f^{\mathfrak A^\Phi}(t_1, t_2, \cdots, t_{\Omega(f)}) = ft_1 t_2 \cdots t_{\Omega(f)}$
+            - 对任意常元符号 $c\in \mathbf C, c^{\mathfrak A^\Phi} = c$
+        2. 在 $\mathfrak M^\Phi$ 中以下成立
+            - 对任意项 $t\in \mathcal T(S), t^{\mathfrak M^\Phi} = t$
+            - 对任意原子公式 $\alpha$，$\mathfrak M^\Phi \vDash \alpha$ 当且仅当 $\Phi \vdash_{\mathbf H_1} \alpha$
+            - 对任意公式 $\alpha$，$\mathfrak M^\Phi \vDash \exists \overline x\alpha$ 当且仅当存在项序列 $\overline t$ 使得 $\mathfrak M^\Phi \vDash \alpha(\overline t/\overline x)$
+            - 对任意公式 $\alpha$，$\mathfrak M^\Phi \vDash \forall \overline x\alpha$ 当且仅当对所有项序列 $\overline t$ 都有 $\mathfrak M^\Phi \vDash \alpha(\overline t/\overline x)$
+    2. 如果公式集 $\Phi$ 对任意公式 $\alpha$ 都有 $\Phi \vdash_{\mathbf H_1} \alpha$ 或 $\Phi \not \vdash_{\mathbf H_1} \neg \alpha$，则称公式集 $\Phi$ 是完备的；如果公式集 $\Phi$ 对每个公式 $\exists x\alpha \in \mathcal F(S)$ 都有 $t\in \mathcal T(S)$ 使得 $\Phi \vdash_{\mathbf H_1} \exists x\alpha \to \alpha(t/x)$，则称 $\Phi$ 是证据集
+        1. 设 $\Phi$ 是 $\mathbf H_1-$一致的完备证据集，对任意公式集 $\Phi \cup \{\alpha, \beta\}$，在 $\mathbf H_1$ 中成立
+            - $\Phi \vdash \neg$ 当且仅当 $\Phi \not \vdash \alpha$
+            - $\Phi \vdash \alpha \wedge \beta$ 当且仅当 $\Phi \vdash \alpha$ 且 $\Phi \vdash \beta$
+            - $\Phi \vdash \alpha \vee \beta$ 当且仅当 $\Phi \vdash \alpha$ 或 $\Phi \vdash \beta$
+            - $\Phi \vdash \alpha \to \beta$ 当且仅当 $\Phi \not \vdash \alpha$ 或 $\Phi \vdash \beta$
+            - $\Phi \vdash \exists x\alpha$ 当且仅当存在 $t\in \mathcal T(S)$ 使得 $\Phi \vdash \alpha(t/x)$
+            - $\Phi \vdash \forall x\alpha$ 当且仅当对所有 $t\in \mathcal T(S)$ 都有 $\Phi \vdash \alpha(t/x)$
+        2. 设 $\Phi$ 是 $\mathbf H_1-$一致的完备证据集，对任意公式 $\alpha$，$\Phi \vdash_{\mathbf H_1} \alpha$ 当且仅当 $\mathfrak M^\Phi \vDash \alpha$
+        3. 任何 $\mathbf H_1-$ 一致的完备证据集 $\Phi$ 都是可满足的，即 $\mathfrak M^\Phi \vDash \Phi$
+        4. 设 $\Phi$ 是 $\mathbf H_1-$一致的公式集且 $\mathrm{FV}(\Phi)$ 是有穷的，那么存在 $\mathbf H_1-$一致的证据集 $\Psi$ 使得 $\Phi \subseteq \Psi$
+        5. 设 $\Psi$ 是 $\mathbf H_1-$一致的公式集，那么存在 $\mathbf H_1-$一致的完备集 $\Theta$ 使得 $\Psi \subseteq \Theta$
+        6. 如果 $\Phi$ 是 $\mathbf H_1-$一致公式集并且 $\mathrm{FV}(\Phi)$ 是有穷的，那么 $\Phi$ 是可满足的
+    3. 如果 $\Phi$ 是 $\mathbf H_1-$一致的，那么 $\Phi$ 是可满足的
+    4. $\mathbf{FOL} \subseteq \mathrm{Thm}(\mathbf H_1)$
 
 ## 2.2 经典一阶逻辑矢列演算
 
