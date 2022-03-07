@@ -74,6 +74,8 @@ nav:
   - 形而上学:
     - 一、语言逻辑:
       - 4 形式语用学: meta/lang/pragma.md
+    - 二、分析哲学:
+      - 1 演绎与证成: meta/logic/syntax.md
     - 三、数学哲学:
       - 1 基本问题与历史观点: meta/math/concept.md
       - 2 三大主义: meta/math/doctrine.md
