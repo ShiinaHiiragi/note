@@ -93,7 +93,7 @@
             - $\text{A}_{10}: p_0 \vee \neg p_0$
         2. 推理规则
             - 肯定前件规则：$\begin{prooftree} \AxiomC{\(\alpha \to \beta\)} \AxiomC{\(\alpha\)} \RightLabel{(mp)} \BinaryInfC{\(\beta\)} \end{prooftree}$
-            - 代入规则：$\begin{prooftree} \AxiomC{\(\alpha\)} \UnaryInfC{\(\sigma(\alpha)\)} \RightLabel{(sub)} \end{prooftree}$，其中 $\sigma$ 是任意代入
+            - 代入规则：$\begin{prooftree} \AxiomC{\(\alpha\)} \RightLabel{(sub)} \UnaryInfC{\(\sigma(\alpha)\)} \end{prooftree}$，其中 $\sigma$ 是任意代入
     2. 令 $X \neq \varnothing$ 且 $S\subseteq X\times X$，对任意 $x\in X$，令 $S(x) = \{y\in X|xSy\}$．对任意子集 $Y\subseteq X$，令 $S[Y] = \bigcup \{S(y) |y\in Y\}$，对任意自然数 $n\leqslant 0$ 与 $x\in X$，定义 $S^0[x]=\{x\}, S^{n+1}[x] = S[S^n[x]]$
         1. 如果 $X$ 是有穷集且满足以下条件，则称 $(X, S)$ 为有穷树结构，$X$ 中的元组称为节点
             - 存在 $r\in X$ 满足条件：对任意 $x\in X$ 都存在自然数 $n\geqslant 0$ 使得 $rS^nx$，称 $r$ 为 $(X, S)$ 的根节点

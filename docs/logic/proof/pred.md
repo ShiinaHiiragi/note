@@ -162,13 +162,116 @@
         $$
 
         1. 如果公式 $\alpha$ 有对于结构 $\mathfrak A$ 中的任意指派 $\sigma$ 都有 $(\mathfrak A, \sigma) \vDash \alpha$，则称$\alpha$ 在 $\mathfrak A$ 上有效，记作 $\mathfrak A \vDash \alpha$
-        2. 如果公式 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称公式 $\alpha$ 有效，记作 $\vDash_1 \alpha$
+        2. 如果公式 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称公式 $\alpha$ 有效，记作 $\vDash_1 \alpha$，设一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) | \vDash_1 \alpha\}$
 
     5. 对任意公式集 $\Phi$，若对所有 $\alpha \in \Phi$ 都有 $\mathfrak M \vDash \alpha$，则记作 $\mathfrak M \vDash \Phi$
-        1. 设 $\alpha$ 是一个公式，$\Phi$ 是一个公式集，如果对任意模型 $\mathfrak M$ 都有 $\mathfrak M \vDash \Phi$ 蕴涵 $\mathfrak M \alpha$，则称 $\alpha$ 是 $\Phi$ 的语义后承，记作 $\Phi \vDash \alpha$
+        1. 设 $\alpha$ 是一个公式，$\Phi$ 是一个公式集，如果对任意模型 $\mathfrak M$ 都有 $\mathfrak M \vDash \Phi$ 蕴涵 $\mathfrak M \vDash \alpha$，则称 $\alpha$ 是 $\Phi$ 的语义后承，记作 $\Phi \vDash \alpha$
         2. 对于公式集 $\alpha$，如果存在模型 $\mathfrak M$ 使得 $\mathfrak M \vDash \Phi$，则称 $\Phi$ 可满足；对于公式 $\alpha$，如果 $\{\alpha\}$ 可满足，则称 $\alpha$ 可满足
         3. 对任意公式集 $\Phi \cup \{\alpha\}$，$\Phi \vDash \alpha$ 当且仅当 $\Phi \cup \{\neg \alpha\}$ 不可满足
-    6. 一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) | \vDash_1 \alpha\}$
+
+4. 公理系统 $\mathbf H_1$
+    1. 公理模式与推理规则
+        1. 公理模式
+            - $\text{A}_1:$ 任意经典命题逻辑重言式一阶代入特例
+            - $\text{A}_2: \forall x\alpha \leftrightarrow \neg \exists x \neg \alpha$
+            - $\text{A}_3: \forall x(\alpha \to \beta) \to (\forall x\alpha \to \forall x \beta)$
+            - $\text{A}_4: \alpha \to \forall x\alpha, x\notin \mathrm{FV}(\alpha)$
+            - $\text{A}_5: \forall x\alpha \to \alpha(t/x)$
+        2. 推理规则
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\alpha$}
+            \AxiomC{$\alpha \to \beta$}
+            \RightLabel{(mp)}
+            \BinaryInfC{$\beta$}
+            \end{prooftree},
+            \begin{prooftree}
+            \AxiomC{$\alpha$}
+            \RightLabel{(gen)}
+            \UnaryInfC{$\forall x\alpha$}
+            \end{prooftree}
+            $$
+
+    2. 在 $\mathbf{H}_1$ 中的一个推导是由公式组成的有穷树结构 $\mathcal D$，其中每个节点 $\gamma$ 要么是公理，要么是从子节点公式运用推理规则 $\text{mp}$ 或 $\text{gen}$ 得到的
+        1. 用 $\mathcal D, \mathcal E$ 表示推导，记号 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\varphi\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\varphi$ 为根节点的推导
+        2. 如果存在以公式 $\alpha$ 为根节点的推导，则称 $\alpha$ 在 $\mathbf H_1$ 可证，或称 $\alpha$ 是 $\mathbf H_1$ 的定理，记作 $\vdash_{\mathbf H_1} \alpha$，用 $\mathrm{Thm}(\mathbf H_1)$ 表示 $\mathbf H_1$ 所有定理的集合，在不引发歧义的情况下可以删除下标 $\mathbf H_1$
+        3. 如果对于公式 $\alpha_0, \alpha_1, \cdots, \alpha_n$ 有 $\vdash_{\mathbf H_1} \alpha_i\ (1 \leqslant i \leqslant n)$ 蕴含 $\vdash_{\mathbf H_1}$，则称以 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为前提且以 $\alpha_0$ 为结论的推理规则 $\text{R}$ 在 $\mathbf H_1$ 中可允许
+        4. 如果存在公式集 $\Phi$ 的有穷子集 $\Phi_0$ 使得对公式 $\alpha$ 有 $\vdash_{\mathbf H_1} \bigwedge \Phi_0 \to \alpha$，则称 $\alpha$ 是 $\Phi$ 的演绎后承，记作 $\Phi \vdash_{\mathbf H_1} \alpha$
+    3. 元定理
+        1. 演绎定理：$\alpha, \Phi \vdash_{\mathbf H_1} \beta$ 当且仅当 $\Phi \vdash_{\mathbf H_1} \alpha \to \beta$
+        2. 对任意公式 $\mathbf Qx\alpha$，如果 $y\notin \mathrm{FV}(\mathbf Qx\alpha)$，那么 $\vdash_{\mathbf H_1} \mathbf Qx\alpha \leftrightarrow \mathbf Qy\alpha(y/x)$
+        3. 以下单调性规则在 $\mathbf H_1$ 中可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\alpha \to \beta$}
+            \RightLabel{$(\forall M)$}
+            \UnaryInfC{$\forall x\alpha \to \forall x\beta$}
+            \end{prooftree},
+            \begin{prooftree}
+            \AxiomC{$\alpha \to \beta$}
+            \RightLabel{$(\forall M)$}
+            \UnaryInfC{$\exists x\alpha \to \exists x\beta$}
+            \end{prooftree}
+            $$
+
+        4. 以下公式是 $\mathbf H_1$ 的定理
+            - $\alpha(t/x) \to \exists x\alpha$
+            - $\forall x(\alpha \to \beta) \to )(\alpha \to \forall x\beta), x\notin \mathrm{FV}(\alpha)$
+            - $\forall x\forall y\alpha \to \forall y\forall x\alpha$
+            - $\forall x(\alpha \wedge \beta) \leftrightarrow \forall x\alpha \wedge \forall x\beta$
+            - $\exists x(\alpha \vee \beta) \leftrightarrow \exists x\alpha \vee \exists x\beta$
+            - $\forall x(\alpha \vee \beta) \leftrightarrow \alpha \vee \forall x\beta, x\notin \mathrm{FV}(\alpha)$
+            - $\exists x(\alpha \wedge \beta) \leftrightarrow \alpha \wedge \exists x\beta, x\notin \mathrm{FV}(\alpha)$
+
+        5. 在 $\mathbf H_1$ 中以下演绎后承成立
+            - $\alpha, \Phi \vdash_{\mathbf H_1} \alpha$
+            - $\bot, \Phi \vdash_{\mathbf H_1} \alpha$
+            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 且 $\Phi \subseteq \Psi$，则 $\Psi \vdash_{\mathbf H_1} \alpha$
+            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 且 $\alpha, \Psi \vdash_{\mathbf H_1} \beta$，则 $\Phi, \Psi \vdash_{\mathbf H_1} \beta$
+            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 且 $\Phi \vdash_{\mathbf H_1} \beta$，则 $\Phi \vdash_{\mathbf H_1} \alpha \wedge \beta$
+            - 如果 $\alpha, \beta, \Phi \vdash_{\mathbf H_1} \gamma$，则 $\alpha, \wedge \beta, \Phi \vdash_{\mathbf H_1} \gamma$
+            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 或 $\Phi \vdash_{\mathbf H_1} \beta$，则 $\Phi \vdash_{\mathbf H_1} \alpha \vee \beta$
+            - 如果 $\alpha, \Phi \vdash_{\mathbf H_1} \gamma$ 且 $\beta, \Phi \vdash_{\mathbf H_1} \gamma$，则 $\alpha \vee \beta, \Phi \vdash_{\mathbf H_1} \gamma$
+            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 且 $\beta, \Psi \vdash_{\mathbf H_1} \gamma$，则 $\alpha \to \beta, \Phi, \Psi \vdash_{\mathbf H_1} \gamma$
+            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 且 $\Phi \vdash_{\mathbf H_1} \alpha \to \beta$，则 $\Phi \vdash_{\mathbf H_1} \beta$
+            - 如果 $\alpha, \Psi \vdash_{\mathbf H_1} \gamma$ 且 $\neg \alpha, \Phi \vdash_{\mathbf H_1} \gamma$，则 $\Phi \vdash \gamma$
+            - 如果 $\alpha(t/x), \Phi \vdash_{\mathbf H_1} \beta$，则 $\forall x\alpha, \Phi \vdash_{\mathbf H_1} \beta$
+            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha(y/x)$ 且 $y\notin \mathrm{FV}(\Phi, \forall x\alpha)$，则 $\Phi \vdash_{\mathbf H_1} \forall x\alpha$
+            - 如果 $\alpha(y/x), \Phi \vdash_{\mathbf H_1} \beta$ 且 $y\notin \mathrm{FV}(\exists x\alpha, \Phi, \beta)$，则 $\exists x\alpha, \Phi \vdash_{\mathbf H_1} \beta$
+            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha(t/x)$，则 $\Phi \vdash_{\mathbf H_1} \exists x\alpha$
+
+    4. 一阶逻辑的后承演算 $\mathfrak C_{\mathbf H_1}$ 是在经典命题逻辑的后承演算 $\mathfrak C_{\mathbf{HK}}$ 增加量词规则得到的
+
+        $$
+        \displaylines{
+            \begin{prooftree}
+            \AxiomC{$\alpha(t/x), \Phi \vdash \beta$}
+            \RightLabel{$\forall \vdash$}
+            \UnaryInfC{$(\forall x\alpha, \Phi \vdash \beta)$}
+            \end{prooftree},
+            \begin{prooftree}
+            \AxiomC{$\Phi \vdash \alpha(y/x)$}
+            \RightLabel{$(\vdash \forall)$}
+            \UnaryInfC{$\Phi \vdash \forall x\alpha$}
+            \end{prooftree}
+            (y \notin \mathrm{FV}(\Phi, \forall x\alpha)) \\
+            \begin{prooftree}
+            \AxiomC{$\alpha(y/x), \Phi \vdash \beta$}
+            \RightLabel{$(\exists \vdash)$}
+            \UnaryInfC{$\exists x\alpha$}
+            \end{prooftree},
+            \begin{prooftree}
+            \AxiomC{$\Phi \vdash \alpha(t/x)$}
+            \RightLabel{$(\vdash \exists)$}
+            \UnaryInfC{$\Phi \vdash \exists x\alpha$}
+            \end{prooftree}
+            (y \notin \mathrm{FV}(\Phi, \exists x\alpha, \beta))
+        }
+        $$
+
+5. 一致性：如果公式集 $\Phi$ 有 $\Phi \not \vdash_{\mathbf H_1}$，则称公式集 $\Phi$ 是 $\mathbf H_1-$一致的，否则称 $\Phi$ 是 $\mathbf H_1-$不一致的
 
 ## 2.2 经典一阶逻辑矢列演算
 
