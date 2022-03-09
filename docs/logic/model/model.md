@@ -3,8 +3,7 @@
 ## 1.1 语言与结构
 ### 1.1.1 基本概念
 1. 可定义集
-2. 子语言：设 $S$ 是一个语言，如果 $S_0 \subseteq S$，则称 $S_0$ 是 $S$ 的子语言．对任意的结构 $\mathfrak A$，忽略 $S - S_0$ 中的符号在 $\mathfrak A$ 的解释，即令 $\mathfrak A \upharpoonright S_0 = \left\{A, \{Z^\mathfrak A\}_{Z\in S_0}\right\}$，则 $\mathfrak A \upharpoonright S_0$ 是一个 $S_0-$结构．称 $\mathfrak A \upharpoonright S_0$ 是 $\mathfrak A$ 在 $S_0$ 上的约化，$S_0$ 是 $\mathfrak A \upharpoonright S_0$ 在 $S$ 上的扩张
-3. 设 $I$ 是一个集合，$\left\{ \mathfrak A_i = \left\{A_i, \{Z^{\mathfrak A_i}\}_{Z\in S}\right\}\right\}$ 是一族 $S-$结构，如果
+2. 设 $I$ 是一个集合，$\left\{ \mathfrak A_i = \left\{A_i, \{Z^{\mathfrak A_i}\}_{Z\in S}\right\}\right\}$ 是一族 $S-$结构，如果
     1. $\bigcap_{i\in I}A_i \neq \varnothing$
     2. 对每个常元符号 $c\in \mathbf C$，对任意 $i, j\in I$ 有 $C^{\mathfrak A_i} = c^{\mathfrak A_j}$
     3. 对每个 $n$ 元函数符号 $f\in \mathbf F$，如果 $(a_1, a_2, \cdots, a_n) \in \bigcap_{i\in I}A_i^n$，对任意的 $i, j\in I$ 有 $f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_j}(a_1, a_2, \cdots, a_n)$

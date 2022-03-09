@@ -41,8 +41,8 @@
 
     3. 特殊记法
         1. 定义缩写 $\neg \alpha := \alpha \to \bot$，$\alpha \leftrightarrow \beta := (\alpha \to \beta) \wedge (\beta \to \alpha)$
-        2. 对于 $\mathbf Q\in \{\forall, \exists\}$ 和有穷长的变元序列 $\overline x = \left(x_1, x_2, \cdots, x_n\right)$，公式 $\mathbf Qx_1 \mathbf Qx_2 \cdots \mathbf Qx_n \alpha$ 记作 $\mathbf Q \overline x \alpha$
-        3. 设 $t$ 为项，$\overline x$ 为有穷长的变元序列 $\left(x_1, x_2, \cdots, x_n\right)$．记 $t = t(\overline x)$ 为含有变元 $x_1, x_2, \cdots, x_n$ 的项
+        2. 对于 $\mathbf Q\in \{\forall, \exists\}$ 和有穷长的变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，公式 $\mathbf Qx_1 \mathbf Qx_2 \cdots \mathbf Qx_n \alpha$ 记作 $\mathbf Q \overline x \alpha$
+        3. 设 $t$ 为项，$\overline x$ 为有穷长的变元序列 $\left<x_1, x_2, \cdots, x_n\right>$．记 $t = t(\overline x)$ 为含有变元 $x_1, x_2, \cdots, x_n$ 的项
     4. 项与公式的性质
         1. 项 $t$ 的复杂度定义为
 
@@ -111,7 +111,7 @@
 
             - 对形如 $\mathbf Q x\beta$ 的公式，称 $\beta$ 为量词 $\mathbf Qx$ 的辖域．如果变元 $x$ 在公式 $\alpha$ 中的一次出现不在任何量词 $\mathbf Qx$ 的辖域内，则称此次出现为自由出现；否则称之为约束出现，此时变元 $x$ 在 $\alpha$ 中被左侧最近的量词 $\mathbf Qx$ 约束
 
-    5. 替换与变换：对于任意项序列 $\overline t = \left(t_1, t_2, \cdots, t_n\right)$ 和任意变元序列 $\overline x = \left(x_1, x_2, \cdots, x_n\right)$，用 $\overline t / \overline x$ 表示分别用 $t_i$ 替换 $x_i$，其中 $1 \leqslant i \leqslant n$
+    5. 替换与变换：对于任意项序列 $\overline t = \left<t_1, t_2, \cdots, t_n\right>$ 和任意变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，用 $\overline t / \overline x$ 表示分别用 $t_i$ 替换 $x_i$，其中 $1 \leqslant i \leqslant n$
         1. 对于公式 $\alpha$，如果公式 $\alpha^\flat$ 是使用不在 $\alpha$ 中出现的新变元 $y_1, y_2, \cdots, y_n$ 分别同时替换 $\alpha$ 中约束变元 $x_1, x_2, \cdots, x_n$ 的所有约束出现得到的公式，则称 $\alpha^\flat$ 是 $\alpha$ 的字母变换
         2. 对任意项 $s\in \mathcal T(S)$，归纳定义 $s(\overline t/\overline y)$ 为
 
@@ -138,14 +138,20 @@
             其中 $\overline{x_i}$ 是 $\overline x$ 中满足条件 $x_i\in \mathrm{FV}(\exists x\alpha)$ 且 $x_i \neq t_i$ 的所有变元的序列．如果 $x\in \mathrm{var}(t_{i_1}) \cup \mathrm{var}(t_{i_2}) \cup \cdots \cup \mathrm{var}(t_{i_n})$，则 $u = x$，否则 $u$ 为第一个不在 $\alpha, t_{i_1}, t_{i_2}, \cdots, t_{i_n}$ 中出现的变元，变元 $u$ 的引入保证 $\overline{t_i}$ 中出现的变元不被任何量词约束
 
 3. 模型论语义学
-    1. 结构：一个 $S-$结构是 $\mathfrak A = (A, I)$，也记作 $\left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}$，其中 $A$ 是非空集合，称为 $\mathfrak A$ 的论域，$I$ 是定义在 $S$ 上的映射；在不引发歧义的情况下，也可称 $A$ 为一个 $S-$结构．记 $A$ 的基数 $|A|$ 为 $\mathfrak A$ 的基数，用 $|\mathfrak A|$ 来表示
+    1. 结构：一个 $S-$结构是 $\mathfrak A = (A, I)$，也记作 $(A, R^\mathfrak A, f^\mathfrak A, c^\mathfrak A)$ 或 $\left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}$，其中 $A$ 是非空集合，称为 $\mathfrak A$ 的论域，$I$ 是定义在 $S$ 上的映射；在不引发歧义的情况下，也可称 $A$ 为一个 $S-$结构．记 $A$ 的基数 $|A|$ 为 $\mathfrak A$ 的基数，用 $|\mathfrak A|$ 来表示
         1. 对每个关系符号 $R\in \mathbf R, I(R) \subseteq A^{\Omega(R)}$，常用 $R^\mathfrak A$ 或 $R^A$ 代替 $I(R)$
         2. 对每个函数符号 $f\in \mathbf F, I(f): A^{\Omega(f)} \to A$ 是 $A$ 上的 $\Omega(f)$ 元函数，常用 $f^\mathfrak A$ 或 $f^A$ 代替 $I(f)$
         3. 对每个常元符号 $c\in \mathbf C, I(c) \in A$，常用 $c^\mathfrak A$ 或 $c^A$ 代替 $I(c)$
-    2. 指派：一个结构 $\mathfrak A = (A, I)$ 中的 $\mathfrak A-$指派是一个函数 $\sigma: \mathbf{Var} \to A$；也用 $\left(\sigma(x_i)\right)_{i\in \lambda}$ 表示 $\sigma$，其中 $\lambda$ 是 $\mathbf{Var}$ 的指标集
+
+        !!! note "子语言"
+            子语言：设 $S$ 是一个语言，如果 $S_0 \subseteq S$，则称 $S_0$ 是 $S$ 的子语言．对任意的结构 $\mathfrak A$，忽略 $S - S_0$ 中的符号在 $\mathfrak A$ 的解释，即令 $\mathfrak A \upharpoonright S_0 = \left\{A, \{Z^\mathfrak A\}_{Z\in S_0}\right\}$，则 $\mathfrak A \upharpoonright S_0$ 是一个 $S_0-$结构．称 $\mathfrak A \upharpoonright S_0$ 是 $\mathfrak A$ 在 $S_0$ 上的约化，$S_0$ 是 $\mathfrak A \upharpoonright S_0$ 在 $S$ 上的扩张
+
+    2. 指派：一个结构 $\mathfrak A = (A, I)$ 中的 $\mathfrak A-$指派是一个函数 $\sigma: \mathbf{Var} \to A$；也用 $\left<\sigma(x_i)\right>_{i\in \lambda}$ 表示 $\sigma$，其中 $\lambda$ 是 $\mathbf{Var}$ 的指标集
     3. 模型：一个（证明论下的）模型是有序对 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是结构，$\sigma$ 是 $\mathfrak A$ 中的指派
-        1. 对模型 $\mathfrak M = (\mathfrak A, \sigma)$ 和任意变元 $x$，定义指派 $\sigma[\alpha /x]: \mathbf{Var} \to A$ 为 $\sigma[\alpha /x](y) = \left\{\begin{aligned} & a, & y = x \\ & \sigma(y), & y\neq x \end{aligned}\right.$，指派 $\sigma[\alpha /x]$ 与 $\sigma$ 至多在 $x$ 处的值不同．令 $\overline a = \left(a_1, a_2, \cdots, a_n\right), \overline x = \left(x_1, x_2, \cdots, x_n\right)$，记 $\sigma[\overline a / \overline x] = \sigma[a_1/x_1][a_2/x_2] \cdots [a_n/x_n]$
-        2. 项解释：对任意结构 $\mathfrak A$ 和模型 $\mathfrak M = (\mathfrak A, \sigma)$，$\overline b = \left(b_i\right)_{i\in \lambda}$ 是一个 $\mathfrak A-$指派，项 $t$ 在 $\mathfrak M$ 中的解释 $t^\mathfrak M$ 归纳定义为
+        1. 对模型 $\mathfrak M = (\mathfrak A, \sigma)$ 和任意变元 $x$，定义指派 $\sigma[a/x]: \mathbf{Var} \to A$ 为 $\sigma[a/x](y) = \left\{\begin{aligned} & a, & y = x \\ & \sigma(y), & y\neq x \end{aligned}\right.$，指派 $\sigma[\alpha /x]$ 与 $\sigma$ 至多在 $x$ 处的值不同
+            - 设指派 $\overline b = \left<b_i\right>_{i\in \lambda}$，此时将替换记作 $\overline b[a/x]$
+            - 令 $\overline a = \left<a_1, a_2, \cdots, a_n\right>, \overline x = \left<x_1, x_2, \cdots, x_n\right>$，记 $\sigma[\overline a / \overline x] = \sigma[a_1/x_1][a_2/x_2] \cdots [a_n/x_n]$
+        2. 项解释：对任意结构 $\mathfrak A$ 和模型 $\mathfrak M = (\mathfrak A, \sigma)$，$\overline b = \left<b_i\right>_{i\in \lambda}$ 是一个 $\mathfrak A-$指派，项 $t$ 在 $\mathfrak M$ 中的解释 $t^\mathfrak M$ 归纳定义为
 
             $$
             \begin{aligned}
@@ -155,11 +161,11 @@
             \end{aligned}
             $$
 
-            其中 $\overline t^\mathfrak M = \left(t_1^\mathfrak M, t_2^\mathfrak M, \cdots, t_{\Omega(f)}^\mathfrak M\right), \overline t^\mathfrak A[\overline b] = \left(t_1^\mathfrak A[\overline b], t_2^\mathfrak A[\overline b], \cdots, t_{\Omega(f)}^\mathfrak A[\overline b]\right)$
+            其中 $\overline t^\mathfrak M = \left<t_1^\mathfrak M, t_2^\mathfrak M, \cdots, t_{\Omega(f)}^\mathfrak M\right>, \overline t^\mathfrak A[\overline b] = \left<t_1^\mathfrak A[\overline b], t_2^\mathfrak A[\overline b], \cdots, t_{\Omega(f)}^\mathfrak A[\overline b]\right>$
 
             !!! note "项解释与函数"
-                设 $\mathfrak A$ 是一个 $S-$结构，$t = t(\overline x)$ 是一个 $S-$项，其中 $\overline x = \left(x_1, x_2, \cdots, x_m\right)$．在 $\mathfrak A$ 中将 $t$ 解释解释为一个函数 $t: A^m \to A$，对于任意一点 $\overline a = \left(a_1, a_2, \cdots, a_m\right) \in A^m$，将 $t^\mathfrak A$ 递归定义为
-                
+                设 $\mathfrak A$ 是一个 $S-$结构，$t = t(\overline x)$ 是一个 $S-$项，其中 $\overline x = \left<x_1, x_2, \cdots, x_m\right>$．在 $\mathfrak A$ 中将 $t$ 解释解释为一个函数 $t: A^m \to A$，对于任意一点 $\overline a = \left<a_1, a_2, \cdots, a_m\right> \in A^m$，将 $t^\mathfrak A$ 递归定义为
+
                 1. 如果 $t$ 是常元符号 $c$，则 $t^\mathfrak A(\overline a) = c^\mathfrak A$ 是一个常函数
                 2. 如果 $t$ 是变元符号 $x_i$，则 $t^\mathfrak A = a_i$ 是一个坐标函数
                 3. 如果 $t$ 是 $ft_1 t_2 \cdots t_{\Omega(f)}$，其中 $t_1, t_2, \cdots, t_{\Omega(f)}$ 是项且 $f$ 是函数符号，则 $t^\mathfrak A = f^\mathfrak A(t^\mathfrak A_1(\overline a), t^\mathfrak A_2(\overline a), \cdots, t^\mathfrak A_{\Omega(f)}(\overline a))$
