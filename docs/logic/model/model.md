@@ -9,7 +9,7 @@
     3. 对每个 $n$ 元函数符号 $f\in \mathbf F$，如果 $(a_1, a_2, \cdots, a_n) \in \bigcap_{i\in I}A_i^n$，对任意的 $i, j\in I$ 有 $f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_j}(a_1, a_2, \cdots, a_n)$
 
     则定义 $\{\mathfrak A_i|i\in I\}$ 的交为一个以 $\bigcap_{i\in I}A_i$ 为论域的 $S-$结构，记作 $\bigcap_{i\in I}\mathfrak A_i$
-    
+
     1. 对每个常元符号，$c\in \mathbf C$，$c^{\bigcap_{i\in I}\mathfrak A_i} = C^{\mathfrak A_i}$
     2. 对每个 $n$ 元函数符号 $f\in \mathbf F$，$f^{\bigcap_{i\in I}\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n)$
     3. 对每个 $n$ 元关系符号 $R\in \mathbf R$，$R^{\bigcap_{i\in I}\mathfrak A_i} = \bigcap_{i\in I}R^{\mathfrak A_i}$
@@ -28,6 +28,10 @@
 3. 自同构：设 $\mathfrak A$ 是一个 $S-$结构，如果 $\sigma$ 是 $\mathfrak A$ 到 $\mathfrak A$ 的同构，则称 $\sigma$ 是 $\mathfrak A$ 的自同构
     1. 自同构群：令 $\mathrm{Aut}(\mathfrak A) = \{\sigma|\sigma: \mathfrak A \to \mathfrak A$ 为同构$\}$，则 $\mathrm{Aut}(\mathfrak A)$ 在映射复合下 $(\mathrm{Aut}(\mathfrak A), \circ)$ 构成一个群，称之为 $\mathfrak A$ 的自同构群
     2. 设 $\mathfrak A$ 是一个论域为 $A$ 的 $S-$结构且 $N \subseteq A$，则 $\mathrm{Aut}(\mathfrak A_N) = \{\sigma \in \mathrm{Aut}(\mathfrak A) | \sigma(b) = b, \forall b\in N\}$ 是所有保持 $N$ 中各点不变的 $\mathfrak A$ 的自同构，它是 $\mathrm{Aut}(\mathfrak A)$ 的一个子群，也记作 $\mathrm{Aut}(\mathfrak A/N)$
+4. 项解释与满足
+    1. 设 $\mathscr L(S)$ 是一个语言，$\mathfrak A, \mathfrak B$ 是两个 $S-$结构，若 $h: \mathfrak A \to \mathfrak B$ 是一个同态且 $t$ 是一个项，则对任意 $\mathfrak A-$指派 $\overline b$ 都有 $h(t^\mathfrak A[\overline b]) = t^\mathfrak B[h(\overline b)]$
+    2. 设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的结构，则 $h: \mathfrak A \to \mathfrak B$ 是一个嵌入当且仅当对任意无量词公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 以及对任意 $a_1, a_2, \cdots, a_n \in A$ 有 $\mathfrak A \vDash \alpha(a_1, a_2, \cdots, a_n) \Leftrightarrow \mathfrak B \vDash \alpha(h(a_1), h(a_2), \cdots, h(a_n))$
+    3. 设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的结构，则若 $h: \mathfrak A \to \mathfrak B$ 有对任意公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 以及对任意 $a_1, a_2, \cdots, a_n \in A$ 有 $\mathfrak A \vDash \alpha(a_1, a_2, \cdots, a_n) \Leftrightarrow \mathfrak B \vDash \alpha(h(a_1), h(a_2), \cdots, h(a_n))$，则称 $h$ 是一个初等嵌入
 
 ### 1.1.3 初等子结构
 1. 子结构：设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}, \mathfrak B = \left\{B, \{Z^\mathfrak B\}_{Z\in S}\right\}$ 是两个 $S-$结构，如果 $A\subseteq B$ 且包含映射 $i: M\to N$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入，则称 $\mathfrak A$ 是 $\mathfrak B$ 的 $S-$子结构；$\mathfrak B$ 是 $\mathfrak A$ 的膨胀，记作 $\mathfrak A \subseteq \mathfrak B$ 或 $\mathfrak B \supseteq \mathfrak A$
@@ -40,7 +44,11 @@
     2. 对于 $S-$结构 $\mathfrak A = (A, I)$，若 $\mathbf C = \mathbf F = \varnothing$，则 $A$ 中的每个非空子集 $N$ 都可被自然地解释为 $\mathfrak A$ 的子结构 $\left\{N, \{Z^\mathfrak A \upharpoonright N\}_{Z\in S}\right\}$
     3. 设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}, \mathfrak B = \left\{B, \{Z^\mathfrak B\}_{Z\in S}\right\}$ 是两个 $S-$结构，如果 $h$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入，则 $h[A]$ 是 $\mathfrak B$ 的子结构
 
-2. 初等子结构
+2. 生成子结构：设 $\mathfrak A$ 为论域为 $A$ 的 $S-$结构，对任意 $N \subseteq A$ 存在一个论域包含 $N$ 的 $\mathfrak A$ 的子结构 $\mathfrak N$，使得对于任意论域包含 $N$ 的 $\mathfrak A$ 的子结构 $\mathfrak B$ 都有 $\mathfrak N \subseteq \mathfrak B$，称 $\mathfrak N$ 是由 $N$ 生成的子结构，记作 $\left<N\right>^\mathfrak A$
+    1. 若存在 $N_0 \subseteq A$ 为有限集使得 $\mathfrak N = \left<N\right>^\mathfrak A$，则称 $\mathfrak N$ 是有限生成的
+    2. 设 $\mathscr L(S)$ 是一个语言，$\mathfrak A$ 为一个论域为 $A$ 的 $S-$结构且 $N\subseteq A$，则 $\left<N\right>^\mathfrak A$ 的论域是 $\overline S = \{t^\mathfrak A[b_1, b_2, \cdots, b_m] | b_1, b_2, \cdots, b_n \in S\}$
+    3. 设 $\mathscr L(S)$ 是一个语言，$\mathfrak A$ 为一个论域为 $A$ 的 $S-$结构且 $N\subseteq A$，则 $\left<N\right>^\mathfrak A \leqslant \max\{|N|, |S|, \aleph_0\}$
+3. 初等子结构：设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的结构，若存在 $h: \mathfrak A \to \mathfrak B$ 是一个初等嵌入且 $A \subseteq B$，则称 $A$ 是 $B$ 的初等子结构
 
 ## 1.2 理论与模型
 

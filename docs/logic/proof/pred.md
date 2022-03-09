@@ -11,8 +11,9 @@
         2. 函数符号集 $\mathbf F = \{f_i|i\in \lambda\}$，用 $f, g, h$ 表示任意函数符号
         3. 常元符号集 $\mathbf C = \{c_i|i\in \lambda\}$，用 $a, b, c$ 表示任意常元符号
 
-    !!! note "一阶语言的基数"
-        变元集 $\mathbf{Var}$ 与一阶语言 $S$ 的基数 $\lambda$ 在本节中均为 $\omega$，在模型论中是一个无穷基数
+    !!! note "形式主义进路"
+        1. 证明论下的命题逻辑与一阶逻辑是从朴素集合论中建立的理论，因此变元集 $\mathbf{Var}$ 与一阶语言 $\mathscr L(S)$ 的基数 $\lambda$ 在本节中均至多为 $\omega$
+        2. 在模型论中一阶语言是通过证明论中一阶语言理论建立的公理集合论重新构造的形式语言系统，是一个被拓展为可以包含不可数个非逻辑符号的集合．因此 $\lambda$ 是一个无穷基数；变元序列写作 $\left<x_{m_1}, x_{m_2}, \cdots, x_{m_n}\right>, m_k\in \lambda, 1 \leqslant k \leqslant n$
 
 2. 一阶逻辑项与公式的句法
     1. 一阶语言 $\mathscr L(S)$ 的类型是从 $\mathbf R \cup \mathbf F$ 的正整数集合的函数 $\Omega: S \to Z_+$
@@ -34,16 +35,16 @@
 
         其中 $R\in \mathbf R$，$t_1, t_2, \cdots, t_{\Omega(R)}$ 是项，$x$ 是变元
 
-        1. 语句：不含自由变元的公式
-        2. 原子公式：形如 $Rt_1 t_2 \cdots t_{\Omega(R)}$ 或 $\bot$ 的公式
-        3. 全称公式：形如 $\forall x\alpha$ 的公式
-        4. 存在公式：形如 $\exists x\alpha$ 的公式
-
-    3. 特殊记法
+    3. 公式的类型：一个公式至多含有有穷个变元符号，记作 $\alpha(x_1, x_2, \cdots, x_n)$，且有 $\mathrm{FV}(\alpha) \subset \{x_1, x_2, \cdots, x_n\}$，每个 $x_k(1 \leqslant k \leqslant n)$ 均在 $\alpha$ 中自由出现
+        1. 原子公式：形如 $Rt_1 t_2 \cdots t_{\Omega(R)}$ 或 $\bot$ 的公式
+        2. 语句：如果公式中的变元均为约束变元，则称该公式为 $S-$语句
+        3. 无量词公式：含有的符号均为自由变元的公式 
+    4. 特殊记法
         1. 定义缩写 $\neg \alpha := \alpha \to \bot$，$\alpha \leftrightarrow \beta := (\alpha \to \beta) \wedge (\beta \to \alpha)$
         2. 对于 $\mathbf Q\in \{\forall, \exists\}$ 和有穷长的变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，公式 $\mathbf Qx_1 \mathbf Qx_2 \cdots \mathbf Qx_n \alpha$ 记作 $\mathbf Q \overline x \alpha$
         3. 设 $t$ 为项，$\overline x$ 为有穷长的变元序列 $\left<x_1, x_2, \cdots, x_n\right>$．记 $t = t(\overline x)$ 为含有变元 $x_1, x_2, \cdots, x_n$ 的项
-    4. 项与公式的性质
+    5. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串的性质，设 ① 对任意原子公式 $\alpha$ 都有 $\mathcal R(\alpha)$；② 对任意 $\alpha, \beta \in \mathcal F(S)$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$；③ 对任意 $\alpha \in \mathcal F(S)$ 和变元符号 $x$，若 $\mathcal R(\alpha)$，则 $\mathcal R(\exists x\alpha)$；那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathcal F(S)$ 都成立
+    6. 项与公式的性质
         1. 项 $t$ 的复杂度定义为
 
             $$
@@ -111,7 +112,7 @@
 
             - 对形如 $\mathbf Q x\beta$ 的公式，称 $\beta$ 为量词 $\mathbf Qx$ 的辖域．如果变元 $x$ 在公式 $\alpha$ 中的一次出现不在任何量词 $\mathbf Qx$ 的辖域内，则称此次出现为自由出现；否则称之为约束出现，此时变元 $x$ 在 $\alpha$ 中被左侧最近的量词 $\mathbf Qx$ 约束
 
-    5. 替换与变换：对于任意项序列 $\overline t = \left<t_1, t_2, \cdots, t_n\right>$ 和任意变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，用 $\overline t / \overline x$ 表示分别用 $t_i$ 替换 $x_i$，其中 $1 \leqslant i \leqslant n$
+    7. 替换与变换：对于任意项序列 $\overline t = \left<t_1, t_2, \cdots, t_n\right>$ 和任意变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，用 $\overline t / \overline x$ 表示分别用 $t_i$ 替换 $x_i$，其中 $1 \leqslant i \leqslant n$
         1. 对于公式 $\alpha$，如果公式 $\alpha^\flat$ 是使用不在 $\alpha$ 中出现的新变元 $y_1, y_2, \cdots, y_n$ 分别同时替换 $\alpha$ 中约束变元 $x_1, x_2, \cdots, x_n$ 的所有约束出现得到的公式，则称 $\alpha^\flat$ 是 $\alpha$ 的字母变换
         2. 对任意项 $s\in \mathcal T(S)$，归纳定义 $s(\overline t/\overline y)$ 为
 
@@ -144,7 +145,7 @@
         3. 对每个常元符号 $c\in \mathbf C, I(c) \in A$，常用 $c^\mathfrak A$ 或 $c^A$ 代替 $I(c)$
 
         !!! note "子语言"
-            子语言：设 $S$ 是一个语言，如果 $S_0 \subseteq S$，则称 $S_0$ 是 $S$ 的子语言．对任意的结构 $\mathfrak A$，忽略 $S - S_0$ 中的符号在 $\mathfrak A$ 的解释，即令 $\mathfrak A \upharpoonright S_0 = \left\{A, \{Z^\mathfrak A\}_{Z\in S_0}\right\}$，则 $\mathfrak A \upharpoonright S_0$ 是一个 $S_0-$结构．称 $\mathfrak A \upharpoonright S_0$ 是 $\mathfrak A$ 在 $S_0$ 上的约化，$S_0$ 是 $\mathfrak A \upharpoonright S_0$ 在 $S$ 上的扩张
+            子语言：设 $\mathscr L(S)$ 是一个语言，如果 $S_0 \subseteq S$，则称 $\mathscr L(S_0)$ 是 $\mathscr L(S)$ 的子语言．对任意的结构 $\mathfrak A$，忽略 $S - S_0$ 中的符号在 $\mathfrak A$ 的解释，即令 $\mathfrak A \upharpoonright S_0 = \left\{A, \{Z^\mathfrak A\}_{Z\in S_0}\right\}$，则 $\mathfrak A \upharpoonright S_0$ 是一个 $S_0-$结构．称 $\mathfrak A \upharpoonright S_0$ 是 $\mathfrak A$ 在 $S_0$ 上的约化，$S_0$ 是 $\mathfrak A \upharpoonright S_0$ 在 $S$ 上的扩张
 
     2. 指派：一个结构 $\mathfrak A = (A, I)$ 中的 $\mathfrak A-$指派是一个函数 $\sigma: \mathbf{Var} \to A$；也用 $\left<\sigma(x_i)\right>_{i\in \lambda}$ 表示 $\sigma$，其中 $\lambda$ 是 $\mathbf{Var}$ 的指标集
     3. 模型：一个（证明论下的）模型是有序对 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是结构，$\sigma$ 是 $\mathfrak A$ 中的指派
@@ -164,7 +165,7 @@
             其中 $\overline t^\mathfrak M = \left<t_1^\mathfrak M, t_2^\mathfrak M, \cdots, t_{\Omega(f)}^\mathfrak M\right>, \overline t^\mathfrak A[\overline b] = \left<t_1^\mathfrak A[\overline b], t_2^\mathfrak A[\overline b], \cdots, t_{\Omega(f)}^\mathfrak A[\overline b]\right>$
 
             !!! note "项解释与函数"
-                设 $\mathfrak A$ 是一个 $S-$结构，$t = t(\overline x)$ 是一个 $S-$项，其中 $\overline x = \left<x_1, x_2, \cdots, x_m\right>$．在 $\mathfrak A$ 中将 $t$ 解释解释为一个函数 $t: A^m \to A$，对于任意一点 $\overline a = \left<a_1, a_2, \cdots, a_m\right> \in A^m$，将 $t^\mathfrak A$ 递归定义为
+                设 $\mathfrak A$ 是一个 $S-$结构，$t = t(\overline x)$ 是一个项，其中 $\overline x = \left<x_1, x_2, \cdots, x_m\right>$．在 $\mathfrak A$ 中将 $t$ 解释解释为一个函数 $t: A^m \to A$，对于任意一点 $\overline a = \left<a_1, a_2, \cdots, a_m\right> \in A^m$，将 $t^\mathfrak A$ 递归定义为
 
                 1. 如果 $t$ 是常元符号 $c$，则 $t^\mathfrak A(\overline a) = c^\mathfrak A$ 是一个常函数
                 2. 如果 $t$ 是变元符号 $x_i$，则 $t^\mathfrak A = a_i$ 是一个坐标函数
@@ -183,6 +184,8 @@
         & \mathfrak M \vDash \forall x\alpha \textsf{ 当且仅当任意 } a \in A \textsf{ 都有 } (\mathfrak A, \sigma[a/x]) \vDash \alpha
         \end{aligned}
         $$
+
+        设指派 $\overline b = \left<b_i\right>_{i\in \lambda}$，此时将满足关系记作 $\mathfrak A \vDash \alpha[\overline b]$，称 $\mathfrak A$ 满足 $\alpha[\overline b]$、$\alpha[\overline b]$ 在 $\mathfrak A$ 中为真或 $\overline b$ 在 $\mathfrak A$ 中实现了 $\alpha$
 
         1. 如果公式 $\alpha$ 有对于结构 $\mathfrak A$ 中的任意指派 $\sigma$ 都有 $(\mathfrak A, \sigma) \vDash \alpha$，则称$\alpha$ 在 $\mathfrak A$ 上有效，记作 $\mathfrak A \vDash \alpha$
         2. 如果公式 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称公式 $\alpha$ 有效，记作 $\vDash_1 \alpha$，设一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) | \vDash_1 \alpha\}$
@@ -322,7 +325,7 @@
     2. 如果 $\Phi$ 是可满足的，那么 $\Phi$ 是 $\mathbf H_1-$一致的
     3. $\mathrm{Thm}(\mathbf H_1) \subseteq \mathbf{FOL}$
 7. 完全性：如果 $\Phi \vDash \alpha$，那么 $\Phi \vdash_{\mathbf H_1} \alpha$
-    1. 在朴素集合论下，$S$ 是可数的，因此 $\mathcal T(S)$ 与 $\mathcal F(S)$ 均可数，设 $\Phi$ 是 $\mathbf H_1-$一致的公式集，构造句法模型 $\mathfrak M^\Phi = (\mathfrak A^\Phi, \sigma^\Phi)$
+    1. $S$ 是可数的，因此 $\mathcal T(S)$ 与 $\mathcal F(S)$ 均可数，设 $\Phi$ 是 $\mathbf H_1-$一致的公式集，构造句法模型 $\mathfrak M^\Phi = (\mathfrak A^\Phi, \sigma^\Phi)$
         1. 模型 $\mathfrak M^\Phi = (\mathfrak A^\Phi, \sigma^\Phi)$ 的论域是项集 $\mathcal T(S)$，对任意变元 $x\in \mathbf{Var}, \sigma^\Phi(x) = x$
             - 对任意关系符号 $R\in \mathbf R, (t_1, t_2, \cdots, t_{\Omega(R)}) \in R^{\mathfrak A^\Phi}$ 当且仅当 $\Phi \vdash_{\mathbf H_1} Rt_1 t_2 \cdots t_{\Omega(R)}$
             - 对任意函数符号 $f\in \mathbf F, f^{\mathfrak A^\Phi}(t_1, t_2, \cdots, t_{\Omega(f)}) = ft_1 t_2 \cdots t_{\Omega(f)}$
