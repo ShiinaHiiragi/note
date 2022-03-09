@@ -84,7 +84,9 @@ nav:
     - 一、证明论:
       - 1 命题逻辑: logic/proof/prop.md
       - 2 一阶逻辑: logic/proof/pred.md
-    - 二、公理集合论:
+    - 二、模型论:
+      - 1 结构与模型: logic/model/model.md
+    - 四、公理集合论:
       - 1 ZFC 集合论: logic/set/zfc.md
       - 2 关系与映射: logic/set/relation.md
       - 3 实数理论: logic/set/real.md
