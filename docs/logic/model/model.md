@@ -15,7 +15,7 @@
     2. 对每个 $n$ 元函数符号 $f\in \mathbf F$，$f^{\bigcap_{i\in I}\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n)$
     3. 对每个 $n$ 元关系符号 $R\in \mathbf R$，$R^{\bigcap_{i\in I}\mathfrak A_i} = \bigcap_{i\in I}R^{\mathfrak A_i}$
 
-### 1.1.1 同态与同构
+### 1.1.2 同态与同构
 1. 同态：设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}, \mathfrak B = \left\{B, \{Z^\mathfrak A\}_{Z\in S}\right\}$ 是两个 $S-$结构，如果一个映射 $h: A\to B$ 满足
     1. 对每个常元符号 $c\in \mathbf C$，$h(c^\mathfrak A) = c^\mathfrak B$
     2. 对每个 $n$ 元函数符号 $f\in \mathbf F$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $h(f^\mathfrak A(a_1, a_2, \cdots, a_n)) = f^\mathfrak B(h(a_1), h(a_2), \cdots, h(a_n))$
@@ -30,7 +30,7 @@
     1. 自同构群：令 $\mathrm{Aut}(\mathfrak A) = \{\sigma|\sigma: \mathfrak A \to \mathfrak A$ 为同构$\}$，则 $\mathrm{Aut}(\mathfrak A)$ 在映射复合下 $(\mathrm{Aut}(\mathfrak A), \circ)$ 构成一个群，称之为 $\mathfrak A$ 的自同构群
     2. 设 $\mathfrak A$ 是一个论域为 $A$ 的 $S-$结构且 $N \subseteq A$，则 $\mathrm{Aut}(\mathfrak A_N) = \{\sigma \in \mathrm{Aut}(\mathfrak A) | \sigma(b) = b, \forall b\in N\}$ 是所有保持 $N$ 中各点不变的 $\mathfrak A$ 的自同构，它是 $\mathrm{Aut}(\mathfrak A)$ 的一个子群，也记作 $\mathrm{Aut}(\mathfrak A/N)$
 
-### 1.1.2 初等子结构
+### 1.1.3 初等子结构
 1. 子结构：设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}, \mathfrak B = \left\{B, \{Z^\mathfrak B\}_{Z\in S}\right\}$ 是两个 $S-$结构，如果 $A\subseteq B$ 且包含映射 $i: M\to N$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入，则称 $\mathfrak A$ 是 $\mathfrak B$ 的 $S-$子结构；$\mathfrak B$ 是 $\mathfrak A$ 的膨胀，记作 $\mathfrak A \subseteq \mathfrak B$ 或 $\mathfrak B \supseteq \mathfrak A$
     1. 设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}$ 是一个 $S-$结构且 $N\subset A$，若 $M$ 有
         1. 对每个 $c\in \mathbf C$，有 $c^\mathfrak A \in N$
