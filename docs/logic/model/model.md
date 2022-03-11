@@ -60,5 +60,49 @@
 4. 初等子结构：设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的结构，若存在 $h: \mathfrak A \to \mathfrak B$ 是一个初等嵌入且 $A \subseteq B$，则称 $A$ 是 $B$ 的初等子结构
 
 ## 1.2 理论与模型
+### 1.2.1 理论与公理
+1. 模型：设 $\mathfrak M$ 是一个 $S-$结构，$\Sigma$ 是一个 $S-$语句集，$\sigma$ 是一个 $S-$语句．若 $\mathfrak M \vDash \Sigma$，则称 $\mathfrak M$ 是 $\Sigma$ 的（模型论）模型
+    1. 蕴涵：如果 $\Sigma$ 的模型均是 $\{\sigma\}$ 的模型，则 $\Sigma$ 蕴含 $\sigma$，记作 $\Sigma \vDash \sigma$
+    2. 模型原理：如果 $\Sigma$ 有一个模型，则 $\Sigma$ 是一致的；如果 $\{\sigma\}$ 一致，则称 $\sigma$ 一致
+2. 理论：设 $\mathfrak M$ 是一个 $S-$结构，$\Sigma$ 是一个 $S-$语句集．如果对任意被 $\Sigma$ 蕴含的语句 $\alpha$ 都有 $\alpha \in \Sigma$，则称 $\Sigma$ 是一个 $S-$理论
+    1. 若 $\Sigma$ 是一个语句集，则 $\Sigma' = \{\sigma | \Sigma \vDash \sigma\}$ 是一个 $S-$理论
+    2. 公理：设 $T$ 是一个 $S-$理论，如果 $\Sigma \subseteq T$ 且对每个 $\alpha \in T$ 都有 $\Sigma \vDash \alpha$，则称 $\Sigma$ 是 $T$ 的公理
+    3. 完备理论：如果对每个 $S-$语句 $\alpha$ 都有 $\alpha \in \Sigma$ 或 $\neg \alpha \in \Sigma$，则称 $\Sigma$ 是完备的 $S-$理论
+3. 初等等价：设 $\mathfrak M$ 与 $\mathfrak N$ 是两个 $S-$结构，如果 $\mathrm{Th}(\mathfrak M) = \mathrm{Th}(\mathfrak N)$，则称 $\mathfrak M$ 与 $\mathfrak N$ 初等等价，记作 $\mathfrak M \equiv \mathfrak N$
+    1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathrm{Th}(\mathcal K) = \{\alpha | \alpha$ 是 $S-$语句且对任意 $\mathfrak M \in \mathcal K$ 都有 $\mathfrak M \vDash \alpha\}$．若 $\mathcal K = \{\mathcal M\}$，则将 $\mathrm{Th}(\mathcal K)$ 记作 $\mathrm{Th}(\mathfrak M)$，并称 $\mathrm{Th}(\mathfrak M)$ 为 $\mathfrak M$ 的理论，易知 $\mathrm{Th}(\mathfrak M)$ 是完备的 $S-$理论
+    2. 一个 $S-$理论 $T$ 是完备的当且仅当 $T$ 的模型相互初等等价
+4. 初等类：如果 $T$ 是 $S-$理论且 $\mathcal K = \{\mathfrak M | \mathfrak M$ 是 $S-$结构且 $\mathfrak M \vDash T\}$，则称 $\mathcal K$ 是一个初等类，记作 $\mathcal K = \mathrm{Mod}(T)$
+    1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathcal K$ 是初等类当且仅当 $\mathcal K = \{\mathfrak M | \mathfrak M \vDash \mathrm{Th}(\mathcal K)\}$
+    2. 如果结构 $\mathfrak M$ 与 $\mathfrak N$ 初等等价且 $|\mathfrak M| < \aleph_0$，则 $\mathfrak M \cong \mathfrak N$
+
+### 1.2.2 常见模型
+1. 群：令 $G = \{\cdot, e\}$，则 $\mathscr L(G)$ 是群的语言，其中 $\cdot \in \mathbf F, e \in \mathbf C, \Omega(\cdot) = 2$．设 $t_1, t_2$ 是 $G-$项，将 $\cdot(t_1, t_2)$ 记作 $t_1 \cdot t_2$
+    1. 如果结构 $\mathfrak M = (M, \cdot^\mathfrak M, e^\mathfrak M)$ 是下面三个语句的集合 $Ax_G$ 的模型，则称 $\mathfrak M$ 是一个群，称 $Ax_G$ 为群的公理
+        1. $\sigma_1: \forall x((e \cdot x = x) \wedge (x \cdot e = x))$
+        2. $\sigma_2: \forall x \forall y \forall z(x \cdot (y \cdot z) = (x \cdot y) \cdot z)$
+        3. $\sigma_3: \forall x \exists y((x \cdot y = e) \wedge (y \cdot x = e))$
+    2. 令 $\sigma_4: \forall x \forall y(x \cdot y = y \cdot x)$，如果 $\mathfrak M$ 是 $Ax_{AG} = Ax_G \cup \{\sigma_4\}$ 的模型，则称 $\mathfrak M$ 是 $\text{Abel}$ 群
+    3. 设 $\mathfrak M = (M, \cdot^\mathfrak M, e^\mathfrak M)$ 是一个群，如果对任意的 $a\in M$ 都存在一个正整数 $n$，使得 $a^n = e^\mathfrak M$，则称 $\mathfrak M$ 是一个挠群．设 $\mathcal K_{TG} = \{\mathfrak M | \mathfrak M$ 是一个 $G-$结构且是一个挠群$\}$，则 $\mathcal K_{TG}$ 不是一个初等类
+2. 环：令 $R = \{\cdot, +, o, e\}$，则 $\mathscr L(R)$ 是环的语言，其中 $\cdot, + \in \mathbf F, o, e \in \mathbf C$ 且 $\Omega(\cdot) = \Omega(+) = 2$，将 $\cdot(t_1, t_2)$ 与 $+(t_1, t_2)$ 记作 $t_1 \cdot t_2$ 与 $t_1 + t_2$
+    1. 如果结构 $\mathfrak M = (M, \cdot^\mathfrak M, +^\mathfrak M, o^\mathfrak M, e^\mathfrak M)$ 有
+        1. $\mathfrak M \upharpoonright \mathcal L(G) \vDash \{\sigma_1, \sigma_2\}$
+        2. $\mathfrak M \upharpoonright \{+, o\}$ 是一个 $\text{Abel}$ 群
+        3. $\mathfrak M \vDash \forall x \forall y \forall z((x \cdot (y + z) = (x \cdot y) + (x \cdot z)) \wedge ((y + z) \cdot x = (y \cdot x) + (z \cdot x)))$
+
+        则称 $\mathfrak M$ 是一个环，将 $\cdot^\mathfrak M$ 与 $+^\mathfrak M$ 分别称为 $\mathfrak M$ 的乘法与加法，将 $o^\mathfrak M$ 与 $e^\mathfrak M$ 分别称为 $\mathfrak M$ 的零元与幺元
+
+    2. 如果 $\mathfrak M$ 是一个环且 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \sigma_4$，则称 $\mathfrak M$ 是一个交换环
+
+3. 域：如果交换环 $\mathfrak M$ 有 $\mathfrak M \vDash \forall x(\neg (x = o) \to \exists y(x \cdot y = e))$，则称 $\mathfrak M$ 是一个域
+    1. 对每个非零的 $a\in M$ 都存在唯一的 $b\in M$ 使得 $a \cdot^\mathfrak M b = e^\mathfrak M$，称 $b$ 为 $a$ 的（乘法逆），记作 $a^{-1}$
+    2. 如果域 $\mathfrak M$ 的论域 $M$ 是有限集合，则称 $\mathfrak M$ 是有限域
+    3. 设 $\mathcal K_{FF} = \{\mathfrak M | \mathfrak M$ 是一个 $R-$结构，且是一个有限域$\}$ 不是一个初等类；令 $\overline{\mathcal K_{FF}} = \{\mathfrak M | \mathfrak M$ 是一个 $R-$结构且 $\mathfrak M \vDash \mathrm{Th}(\mathcal K_{FF})\}$ 是一个初等类，称之为伪有限域
+4. 向量空间：设 $F = \{+, \times, 0, 1\}, VF = \{+, 0\} \cup F$，其中 $+ \in \mathbf F, F \subseteq \mathbf F, 0 \in \mathbf C$ 且 $\Omega(+) = 2, \Omega[F] = \{1\}$．结构 $\mathfrak M = (M, +^\mathfrak M, \times^\mathfrak M, 0^\mathfrak M, 1^\mathfrak M)$ 是一个域，如果结构 $\mathfrak V = (V, +^\mathfrak V, 0^\mathfrak V, \{\sigma^\mathfrak V | \sigma \in F\})$ 有
+    1. $(V, +, 0)$ 是一个 $\text{Abel}$ 群
+    2. 每个 $\sigma \in F$ 都解释为群结构 $(V, +, 0)$ 到 $(V, +, 0)$ 的同态 $\sigma^\mathfrak V: V\to V$
+    3. 对任意的 $x\in V$ 有 $0^\mathfrak{MV}(x) = 0, 1^\mathfrak{MV}(x) = x$
+    4. 对任意的 $\sigma, \gamma \in M$ 及任意的 $x\in V$，有 $\sigma^\mathfrak V(x) +^\mathfrak V \gamma^\mathfrak V(x) = (\sigma +^\mathfrak M \gamma)^\mathfrak V(x)$ 且 $\sigma^\mathfrak V(\gamma^\mathfrak V(x)) = (\sigma \times^\mathfrak M \gamma)^\mathfrak V(x)$
+
+    则称 $V$ 是 $M$ 上的向量空间，通常将 $\sigma^\mathfrak V$ 简记为 $\sigma x$
 
 ## 1.3 形式算术
