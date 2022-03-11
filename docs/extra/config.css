@@ -2,6 +2,10 @@
   background-color: rgb(204, 226, 255);
 }
 
+.MathJax {
+  font-size: 1.08em !important;
+}
+
 * {
   box-sizing: border-box;
   user-select: none;
