@@ -1,24 +1,17 @@
 # 1 结构与模型
 
 ## 1.1 语言与结构
-### 1.1.1 基本概念
-1. 可定义集
-2. 设 $I$ 是一个集合，$\left\{ \mathfrak A_i = \left\{A_i, \{Z^{\mathfrak A_i}\}_{Z\in S}\right\}\right\}$ 是一族 $S-$结构，如果
-    1. $\bigcap_{i\in I}A_i \neq \varnothing$
-    2. 对每个常元符号 $c\in \mathbf C$，对任意 $i, j\in I$ 有 $C^{\mathfrak A_i} = c^{\mathfrak A_j}$
-    3. 对每个 $n$ 元函数符号 $f\in \mathbf F$，如果 $(a_1, a_2, \cdots, a_n) \in \bigcap_{i\in I}A_i^n$，对任意的 $i, j\in I$ 有 $f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_j}(a_1, a_2, \cdots, a_n)$
-
-    则定义 $\{\mathfrak A_i|i\in I\}$ 的交为一个以 $\bigcap_{i\in I}A_i$ 为论域的 $S-$结构，记作 $\bigcap_{i\in I}\mathfrak A_i$
-
-    1. 对每个常元符号，$c\in \mathbf C$，$c^{\bigcap_{i\in I}\mathfrak A_i} = C^{\mathfrak A_i}$
-    2. 对每个 $n$ 元函数符号 $f\in \mathbf F$，$f^{\bigcap_{i\in I}\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n)$
-    3. 对每个 $n$ 元关系符号 $R\in \mathbf R$，$R^{\bigcap_{i\in I}\mathfrak A_i} = \bigcap_{i\in I}R^{\mathfrak A_i}$
+### 1.1.1 可定义性
+1. 定义：设 $\mathfrak A$ 是论域为 $A$ 的 $S-$结构，称 $X\subseteq A^n$ 在结构 $\mathfrak A$ 中可定义当且仅当存在一个公式 $\alpha(x_1, x_2, \cdots, x_n, y_1, y_2, \cdots, y_m)$ 与 $\overline b\in A^m$ 使得 $X = \{\overline a \in A^n | \mathfrak A \vDash \alpha(\overline a, \overline b)\}$，此时称 $\alpha(\overline a, \overline b)$ 定义了 $X$
+    1. 设 $C \subseteq A$，如果存在一个公式 $\beta(\overline x, z_1, z_2, \cdots, z_l)$ 与 $\overline b \in A^l$ 使得 $\beta(\overline x, \overline b)$ 定义了 $X$，则称 $X$ 在结构 $\mathfrak A$ 中是 $C-$可定义的，或定义在 $C$ 上
+    2. 若集合 $\{(\overline a, \overline b) | f(\overline a) = \overline b\}$ 是 $C-$可定义的，则称函数 $f: A^n \to A^m$ 是 $C-$可定义的
+2. 可定义集合
 
 ### 1.1.2 同态与同构
 1. 同态：设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}, \mathfrak B = \left\{B, \{Z^\mathfrak A\}_{Z\in S}\right\}$ 是两个 $S-$结构，如果一个映射 $h: A\to B$ 满足
-    1. 对每个常元符号 $c\in \mathbf C$，$h(c^\mathfrak A) = c^\mathfrak B$
+    1. 对每个 $n$ 元关系符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 蕴涵 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$
     2. 对每个 $n$ 元函数符号 $f\in \mathbf F$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $h(f^\mathfrak A(a_1, a_2, \cdots, a_n)) = f^\mathfrak B(h(a_1), h(a_2), \cdots, h(a_n))$
-    3. 对每个 $n$ 元关系符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 蕴涵 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$
+    3. 对每个常元符号 $c\in \mathbf C$，$h(c^\mathfrak A) = c^\mathfrak B$
 
     则称 $h$ 是（$\mathfrak A$ 到 $\mathfrak B$）的同态，记作 $h: \mathfrak A \to \mathfrak B$
 
@@ -28,7 +21,7 @@
 3. 自同构：设 $\mathfrak A$ 是一个 $S-$结构，如果 $\sigma$ 是 $\mathfrak A$ 到 $\mathfrak A$ 的同构，则称 $\sigma$ 是 $\mathfrak A$ 的自同构
     1. 自同构群：令 $\mathrm{Aut}(\mathfrak A) = \{\sigma|\sigma: \mathfrak A \to \mathfrak A$ 为同构$\}$，则 $\mathrm{Aut}(\mathfrak A)$ 在映射复合下 $(\mathrm{Aut}(\mathfrak A), \circ)$ 构成一个群，称之为 $\mathfrak A$ 的自同构群
     2. 设 $\mathfrak A$ 是一个论域为 $A$ 的 $S-$结构且 $N \subseteq A$，则 $\mathrm{Aut}(\mathfrak A_N) = \{\sigma \in \mathrm{Aut}(\mathfrak A) | \sigma(b) = b, \forall b\in N\}$ 是所有保持 $N$ 中各点不变的 $\mathfrak A$ 的自同构，它是 $\mathrm{Aut}(\mathfrak A)$ 的一个子群，也记作 $\mathrm{Aut}(\mathfrak A/N)$
-4. 项解释与满足
+4. 项解释与语义后承
     1. 设 $\mathscr L(S)$ 是一个语言，$\mathfrak A, \mathfrak B$ 是两个 $S-$结构，若 $h: \mathfrak A \to \mathfrak B$ 是一个同态且 $t$ 是一个项，则对任意 $\mathfrak A-$指派 $\overline b$ 都有 $h(t^\mathfrak A[\overline b]) = t^\mathfrak B[h(\overline b)]$
     2. 设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的结构，则 $h: \mathfrak A \to \mathfrak B$ 是一个嵌入当且仅当对任意无量词公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 以及对任意 $a_1, a_2, \cdots, a_n \in A$ 有 $\mathfrak A \vDash \alpha(a_1, a_2, \cdots, a_n) \Leftrightarrow \mathfrak B \vDash \alpha(h(a_1), h(a_2), \cdots, h(a_n))$
     3. 设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的结构，则若 $h: \mathfrak A \to \mathfrak B$ 有对任意公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 以及对任意 $a_1, a_2, \cdots, a_n \in A$ 有 $\mathfrak A \vDash \alpha(a_1, a_2, \cdots, a_n) \Leftrightarrow \mathfrak B \vDash \alpha(h(a_1), h(a_2), \cdots, h(a_n))$，则称 $h$ 是一个初等嵌入
@@ -36,8 +29,8 @@
 ### 1.1.3 初等子结构
 1. 子结构：设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}, \mathfrak B = \left\{B, \{Z^\mathfrak B\}_{Z\in S}\right\}$ 是两个 $S-$结构，如果 $A\subseteq B$ 且包含映射 $i: M\to N$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入，则称 $\mathfrak A$ 是 $\mathfrak B$ 的 $S-$子结构；$\mathfrak B$ 是 $\mathfrak A$ 的膨胀，记作 $\mathfrak A \subseteq \mathfrak B$ 或 $\mathfrak B \supseteq \mathfrak A$
     1. 设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}$ 是一个 $S-$结构且 $N\subset A$，若 $M$ 有
-        1. 对每个 $c\in \mathbf C$，有 $c^\mathfrak A \in N$
-        2. 对每个 $n$ 元函数符号 $f\in \mathbf F$，有 $f^\mathfrak A[A^N] \subseteq N$
+        1. 对每个 $n$ 元函数符号 $f\in \mathbf F$，有 $f^\mathfrak A[A^N] \subseteq N$
+        2. 对每个 $c\in \mathbf C$，有 $c^\mathfrak A \in N$
 
         则称 $\left\{N, \{Z^\mathfrak A \upharpoonright N\}_{Z\in S}\right\}$ 是 $\mathfrak A$ 的子结构，其中 $Z^\mathfrak A \upharpoonright N$ 是 $Z^\mathfrak A$ 在 $N$ 上的限制，也称 $N$ 为 $\mathfrak A$ 的子结构
 
