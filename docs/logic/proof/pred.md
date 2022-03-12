@@ -141,7 +141,9 @@
 
             其中 $\overline{x_i}$ 是 $\overline x$ 中满足条件 $x_i\in \mathrm{FV}(\exists x\alpha)$ 且 $x_i \neq t_i$ 的所有变元的序列．如果 $x\in \mathrm{var}(t_{i_1}) \cup \mathrm{var}(t_{i_2}) \cup \cdots \cup \mathrm{var}(t_{i_n})$，则 $u = x$，否则 $u$ 为第一个不在 $\alpha, t_{i_1}, t_{i_2}, \cdots, t_{i_n}$ 中出现的变元，变元 $u$ 的引入保证 $\overline{t_i}$ 中出现的变元不被任何量词约束
 
-        4. 用 $\alpha(c_1, c_2, \cdots, c_n)$ 表示公式 $\alpha(c_1/x_1)(c_2/x_2)\cdots(c_n/x_n)$
+        4. 通常用 $\alpha(c_1, c_2, \cdots, c_n)$ 表示公式 $\alpha(c_1/x_1)(c_2/x_2)\cdots(c_n/x_n)$
+            - $\alpha(c_1, c_2, \cdots, c_n)$ 是一个 $S-$语句
+            - 设模型 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是一个 $S-$结构，则 $\mathfrak A \vDash \alpha(c_1, c_2, \cdots, c_n)$ 当且仅当 $\mathfrak M \vDash \alpha(c_1, c_2, \cdots, c_n)$
 
 4. 模型论语义学
     1. 结构：一个 $S-$结构是 $\mathfrak A = (A, I)$，也记作 $(A, R^\mathfrak A, f^\mathfrak A, c^\mathfrak A)$ 或 $\left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}$，其中 $A$ 是非空集合，称为 $\mathfrak A$ 的论域，$I$ 是定义在 $S$ 上的映射；在不引发歧义的情况下，也可称 $A$ 为一个 $S-$结构．记 $A$ 的基数 $|A|$ 为 $\mathfrak A$ 的基数，用 $|\mathfrak A|$ 来表示
