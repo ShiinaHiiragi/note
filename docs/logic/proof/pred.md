@@ -35,7 +35,7 @@
 
         其中 $R\in \mathbf R$，$t_1, t_2, \cdots, t_{\Omega(R)}$ 是项，$x$ 是变元
 
-    3. 公式的类型：一个公式至多含有有穷个变元符号，记作 $\alpha(x_1, x_2, \cdots, x_n)$，且有 $\mathrm{FV}(\alpha) \subset \{x_1, x_2, \cdots, x_n\}$，每个 $x_k(1 \leqslant k \leqslant n)$ 均在 $\alpha$ 中自由出现
+    3. 公式的类型：一个公式至多含有有穷个变元符号，记作 $\alpha(x_1, x_2, \cdots, x_n)$，且有 $\mathrm{FV}(\alpha) \subseteq \{x_1, x_2, \cdots, x_n\}$，每个 $x_k(1 \leqslant k \leqslant n)$ 均在 $\alpha$ 中自由出现
         1. 原子公式：形如 $Rt_1 t_2 \cdots t_{\Omega(R)}$ 或 $\bot$ 的公式
         2. 语句：如果公式中的变元均为约束变元，则称该公式为 $S-$语句
         3. 无量词公式：含有的符号均为自由变元的公式
@@ -45,8 +45,9 @@
         1. 定义缩写 $\neg \alpha := \alpha \to \bot$，$\alpha \leftrightarrow \beta := (\alpha \to \beta) \wedge (\beta \to \alpha)$
         2. 对于 $\mathbf Q\in \{\forall, \exists\}$ 和有穷长的变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，公式 $\mathbf Qx_1 \mathbf Qx_2 \cdots \mathbf Qx_n \alpha$ 记作 $\mathbf Q \overline x \alpha$
         3. 设 $t$ 为项，$\overline x$ 为有穷长的变元序列 $\left<x_1, x_2, \cdots, x_n\right>$．记 $t = t(\overline x)$ 为含有变元 $x_1, x_2, \cdots, x_n$ 的项
-    5. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串的性质，设 ① 对任意原子公式 $\alpha$ 都有 $\mathcal R(\alpha)$；② 对任意 $\alpha, \beta \in \mathcal F(S)$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$；③ 对任意 $\alpha \in \mathcal F(S)$ 和变元符号 $x$，若 $\mathcal R(\alpha)$，则 $\mathcal R(\exists x\alpha)$；那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathcal F(S)$ 都成立
-    6. 项与公式的性质
+
+3. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串的性质，设 ① 对任意原子公式 $\alpha$ 都有 $\mathcal R(\alpha)$；② 对任意 $\alpha, \beta \in \mathcal F(S)$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$；③ 对任意 $\alpha \in \mathcal F(S)$ 和变元符号 $x$，若 $\mathcal R(\alpha)$，则 $\mathcal R(\exists x\alpha)$；那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathcal F(S)$ 都成立
+    1. 项与公式的性质
         1. 项 $t$ 的复杂度定义为
 
             $$
@@ -98,7 +99,7 @@
                 \end{aligned}
                 $$
 
-                对任意公式集 $\Phi$，令 $\mathrm{FV}(\Phi) = \bigcup_{\alpha \in \Phi} \mathrm{FV}(\alpha)$
+                对任意公式集 $\Sigma$，令 $\mathrm{FV}(\Sigma) = \bigcup_{\alpha \in \Sigma} \mathrm{FV}(\alpha)$
 
             - 公式 $\alpha$ 中约束变元的集合 $\mathrm{BV}(\alpha)$ 定义为
 
@@ -110,11 +111,11 @@
                 \end{aligned}
                 $$
 
-                对任意公式集 $\Phi$，令 $\mathrm{BV}(\Phi) = \bigcup_{\alpha \in \Phi} \mathrm{BV}(\alpha)$
+                对任意公式集 $\Sigma$，令 $\mathrm{BV}(\Sigma) = \bigcup_{\alpha \in \Sigma} \mathrm{BV}(\alpha)$
 
             - 对形如 $\mathbf Q x\beta$ 的公式，称 $\beta$ 为量词 $\mathbf Qx$ 的辖域．如果变元 $x$ 在公式 $\alpha$ 中的一次出现不在任何量词 $\mathbf Qx$ 的辖域内，则称此次出现为自由出现；否则称之为约束出现，此时变元 $x$ 在 $\alpha$ 中被左侧最近的量词 $\mathbf Qx$ 约束
 
-    7. 替换与变换：对于任意项序列 $\overline t = \left<t_1, t_2, \cdots, t_n\right>$ 和任意变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，用 $\overline t / \overline x$ 表示分别用 $t_i$ 替换 $x_i$，其中 $1 \leqslant i \leqslant n$
+    2. 替换与变换：对于任意项序列 $\overline t = \left<t_1, t_2, \cdots, t_n\right>$ 和任意变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，用 $\overline t / \overline x$ 表示分别用 $t_i$ 替换 $x_i$，其中 $1 \leqslant i \leqslant n$
         1. 对于公式 $\alpha$，如果公式 $\alpha^\flat$ 是使用不在 $\alpha$ 中出现的新变元 $y_1, y_2, \cdots, y_n$ 分别同时替换 $\alpha$ 中约束变元 $x_1, x_2, \cdots, x_n$ 的所有约束出现得到的公式，则称 $\alpha^\flat$ 是 $\alpha$ 的字母变换
         2. 对任意项 $s\in \mathcal T(S)$，归纳定义 $s(\overline t/\overline y)$ 为
 
@@ -140,7 +141,9 @@
 
             其中 $\overline{x_i}$ 是 $\overline x$ 中满足条件 $x_i\in \mathrm{FV}(\exists x\alpha)$ 且 $x_i \neq t_i$ 的所有变元的序列．如果 $x\in \mathrm{var}(t_{i_1}) \cup \mathrm{var}(t_{i_2}) \cup \cdots \cup \mathrm{var}(t_{i_n})$，则 $u = x$，否则 $u$ 为第一个不在 $\alpha, t_{i_1}, t_{i_2}, \cdots, t_{i_n}$ 中出现的变元，变元 $u$ 的引入保证 $\overline{t_i}$ 中出现的变元不被任何量词约束
 
-3. 模型论语义学
+        4. 用 $\alpha(c_1, c_2, \cdots, c_n)$ 表示公式 $\alpha(c_1/x_1)(c_2/x_2)\cdots(c_n/x_n)$
+
+4. 模型论语义学
     1. 结构：一个 $S-$结构是 $\mathfrak A = (A, I)$，也记作 $(A, R^\mathfrak A, f^\mathfrak A, c^\mathfrak A)$ 或 $\left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}$，其中 $A$ 是非空集合，称为 $\mathfrak A$ 的论域，$I$ 是定义在 $S$ 上的映射；在不引发歧义的情况下，也可称 $A$ 为一个 $S-$结构．记 $A$ 的基数 $|A|$ 为 $\mathfrak A$ 的基数，用 $|\mathfrak A|$ 来表示
         1. 对每个关系符号 $R\in \mathbf R, I(R) \subseteq A^{\Omega(R)}$，常用 $R^\mathfrak A$ 或 $R^A$ 代替 $I(R)$
         2. 对每个函数符号 $f\in \mathbf F, I(f): A^{\Omega(f)} \to A$ 是 $A$ 上的 $\Omega(f)$ 元函数，常用 $f^\mathfrak A$ 或 $f^A$ 代替 $I(f)$
@@ -161,12 +164,12 @@
                 - 对每个 $n$ 元函数符号 $f\in \mathbf F$，$f^{\bigcap_{i\in I}\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n)$
                 - 对每个常元符号，$c\in \mathbf C$，$c^{\bigcap_{i\in I}\mathfrak A_i} = C^{\mathfrak A_i}$
 
-    2. 指派：一个结构 $\mathfrak A = (A, I)$ 中的 $\mathfrak A-$指派是一个函数 $\sigma: \mathbf{Var} \to A$；也用 $\left<\sigma(x_i)\right>_{i\in \lambda}$ 表示 $\sigma$，其中 $\lambda$ 是 $\mathbf{Var}$ 的指标集
-    3. 模型：一个（证明论下的）模型是有序对 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是结构，$\sigma$ 是 $\mathfrak A$ 中的指派
-        1. 对模型 $\mathfrak M = (\mathfrak A, \sigma)$ 和任意变元 $x$，定义指派 $\sigma[a/x]: \mathbf{Var} \to A$ 为 $\sigma[a/x](y) = \left\{\begin{aligned} & a, & y = x \\ & \sigma(y), & y\neq x \end{aligned}\right.$，指派 $\sigma[\alpha /x]$ 与 $\sigma$ 至多在 $x$ 处的值不同
+    2. 模型：一个（证明论下的）模型是有序对 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是结构，$\sigma$ 是 $\mathfrak A$ 中的指派
+        1. 指派：一个结构 $\mathfrak A = (A, I)$ 中的 $\mathfrak A-$指派是一个函数 $\sigma: \mathbf{Var} \to A$；也用 $\left<\sigma(x_i)\right>_{i\in \lambda}$ 表示 $\sigma$，其中 $\lambda$ 是 $\mathbf{Var}$ 的指标集
+        2. 对模型 $\mathfrak M = (\mathfrak A, \sigma)$ 和任意变元 $x$，定义指派 $\sigma[a/x]: \mathbf{Var} \to A$ 为 $\sigma[a/x](y) = \left\{\begin{aligned} & a, & y = x \\ & \sigma(y), & y\neq x \end{aligned}\right.$，指派 $\sigma[\alpha /x]$ 与 $\sigma$ 至多在 $x$ 处的值不同
             - 设指派 $\overline b = \left<b_i\right>_{i\in \lambda}$，此时将替换记作 $\overline b[a/x]$
             - 令 $\overline a = \left<a_1, a_2, \cdots, a_n\right>, \overline x = \left<x_1, x_2, \cdots, x_n\right>$，记 $\sigma[\overline a / \overline x] = \sigma[a_1/x_1][a_2/x_2] \cdots [a_n/x_n]$
-        2. 项解释：对任意结构 $\mathfrak A$ 和模型 $\mathfrak M = (\mathfrak A, \sigma)$，$\overline b = \left<b_i\right>_{i\in \lambda}$ 是一个 $\mathfrak A-$指派，项 $t$ 在 $\mathfrak M$ 中的解释 $t^\mathfrak M$ 归纳定义为
+        3. 项解释：对任意结构 $\mathfrak A$ 和模型 $\mathfrak M = (\mathfrak A, \sigma)$，$\overline b = \left<b_i\right>_{i\in \lambda}$ 是一个 $\mathfrak A-$指派，项 $t$ 在 $\mathfrak M$ 中的解释 $t^\mathfrak M$ 归纳定义为
 
             $$
             \begin{aligned}
@@ -185,7 +188,7 @@
                 2. 如果 $t$ 是变元符号 $x_i$，则 $t^\mathfrak A = a_i$ 是一个坐标函数
                 3. 如果 $t$ 是 $ft_1 t_2 \cdots t_{\Omega(f)}$，其中 $t_1, t_2, \cdots, t_{\Omega(f)}$ 是项且 $f$ 是函数符号，则 $t^\mathfrak A = f^\mathfrak A(t^\mathfrak A_1(\overline a), t^\mathfrak A_2(\overline a), \cdots, t^\mathfrak A_{\Omega(f)}(\overline a))$
 
-    4. 模型 $\mathfrak M$ 与公式 $\alpha$ 的满足关系 $\mathfrak M \vDash \alpha$ 定义为
+    3. 语义后承：模型 $\mathfrak M$ 与公式 $\alpha$ 的满足关系 $\mathfrak M \vDash \alpha$ 定义为
 
         $$
         \begin{aligned}
@@ -214,10 +217,10 @@
                 5. $\forall x(\alpha \to \beta) \to (\alpha \to \forall x\beta), x\notin \mathrm{FV}(\alpha)$
                 6. $\forall x\alpha \to \alpha(t/x)$
 
-    5. 对任意公式集 $\Phi$，若对所有 $\alpha \in \Phi$ 都有 $\mathfrak M \vDash \alpha$，则记作 $\mathfrak M \vDash \Phi$
-        1. 设 $\alpha$ 是一个公式，$\Phi$ 是一个公式集，如果对任意模型 $\mathfrak M$ 都有 $\mathfrak M \vDash \Phi$ 蕴涵 $\mathfrak M \vDash \alpha$，则称 $\alpha$ 是 $\Phi$ 的语义后承，记作 $\Phi \vDash \alpha$
-        2. 对于公式集 $\alpha$，如果存在模型 $\mathfrak M$ 使得 $\mathfrak M \vDash \Phi$，则称 $\Phi$ 可满足；对于公式 $\alpha$，如果 $\{\alpha\}$ 可满足，则称 $\alpha$ 可满足
-        3. 对任意公式集 $\Phi \cup \{\alpha\}$，$\Phi \vDash \alpha$ 当且仅当 $\Phi \cup \{\neg \alpha\}$ 不可满足
+    4. 对任意公式集 $\Sigma$，若对所有 $\alpha \in \Sigma$ 都有 $\mathfrak M \vDash \alpha$，则记作 $\mathfrak M \vDash \Sigma$
+        1. 设 $\alpha$ 是一个公式，$\Sigma$ 是一个公式集，如果对任意模型 $\mathfrak M$ 都有 $\mathfrak M \vDash \Sigma$ 蕴涵 $\mathfrak M \vDash \alpha$，则称 $\alpha$ 是 $\Sigma$ 的语义后承，记作 $\Sigma \vDash \alpha$
+        2. 对于公式集 $\alpha$，如果存在模型 $\mathfrak M$ 使得 $\mathfrak M \vDash \Sigma$，则称 $\Sigma$ 可满足；对于公式 $\alpha$，如果 $\{\alpha\}$ 可满足，则称 $\alpha$ 可满足
+        3. 对任意公式集 $\Sigma \cup \{\alpha\}$，$\Sigma \vDash \alpha$ 当且仅当 $\Sigma \cup \{\neg \alpha\}$ 不可满足
         4. 令 $\mathfrak M_1 = (\mathfrak A_1, \sigma)$ 与 $\mathfrak M_2 = (\mathfrak A_2, \sigma)$ 分别是 $S_1-$结构和 $S_2-$结构上的模型，其中 $\mathfrak A_1$ 与 $\mathfrak A_2$ 有相同的论域 $A$，令 $S = S_1 \cap S_2$
             - 对任意项 $s\in \mathcal T(S)$，$s^{\mathfrak M_1} = s^{\mathfrak M_2}$
             - 对任意公式 $\alpha \in \mathcal F(S)$，$\mathfrak M_1 \vDash \alpha$ 当且仅当 $\mathfrak M_2 \vDash \alpha$
@@ -225,7 +228,7 @@
             - 对任意项 $s$ 都有 $s(\overline t/\overline x)^{\mathfrak M} = s^{\mathfrak M'}$
             - 对任意公式 $\alpha$，$\mathfrak M \vDash \alpha(\overline t/\overline x)$ 当且仅当 $\mathfrak M' \vDash \alpha$
 
-4. 公理系统 $\mathbf H_1$
+5. 公理系统 $\mathbf H_1$
     1. 公理模式与推理规则
         1. 公理模式
             - $\text{A}_1:$ 任意经典命题逻辑重言式一阶代入特例
@@ -253,9 +256,9 @@
         1. 用 $\mathcal D, \mathcal E$ 表示推导，记号 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\varphi\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\varphi$ 为根节点的推导
         2. 如果存在以公式 $\alpha$ 为根节点的推导，则称 $\alpha$ 在 $\mathbf H_1$ 可证，或称 $\alpha$ 是 $\mathbf H_1$ 的定理，记作 $\vdash_{\mathbf H_1} \alpha$，用 $\mathrm{Thm}(\mathbf H_1)$ 表示 $\mathbf H_1$ 所有定理的集合，在不引发歧义的情况下可以删除下标 $\mathbf H_1$
         3. 如果对于公式 $\alpha_0, \alpha_1, \cdots, \alpha_n$ 有 $\vdash_{\mathbf H_1} \alpha_i\ (1 \leqslant i \leqslant n)$ 蕴含 $\vdash_{\mathbf H_1}$，则称以 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为前提且以 $\alpha_0$ 为结论的推理规则 $\text{R}$ 在 $\mathbf H_1$ 中可允许
-        4. 如果存在公式集 $\Phi$ 的有穷子集 $\Phi_0$ 使得对公式 $\alpha$ 有 $\vdash_{\mathbf H_1} \bigwedge \Phi_0 \to \alpha$，则称 $\alpha$ 是 $\Phi$ 的演绎后承，记作 $\Phi \vdash_{\mathbf H_1} \alpha$
+        4. 如果存在公式集 $\Sigma$ 的有穷子集 $\Sigma_0$ 使得对公式 $\alpha$ 有 $\vdash_{\mathbf H_1} \bigwedge \Sigma_0 \to \alpha$，则称 $\alpha$ 是 $\Sigma$ 的句法后承，记作 $\Sigma \vdash_{\mathbf H_1} \alpha$
     3. 元定理
-        1. 演绎定理：$\alpha, \Phi \vdash_{\mathbf H_1} \beta$ 当且仅当 $\Phi \vdash_{\mathbf H_1} \alpha \to \beta$
+        1. 演绎定理：$\alpha, \Sigma \vdash_{\mathbf H_1} \beta$ 当且仅当 $\Sigma \vdash_{\mathbf H_1} \alpha \to \beta$
         2. 对任意公式 $\mathbf Qx\alpha$，如果 $y\notin \mathrm{FV}(\mathbf Qx\alpha)$，那么 $\vdash_{\mathbf H_1} \mathbf Qx\alpha \leftrightarrow \mathbf Qy\alpha(y/x)$
         3. 以下单调性规则在 $\mathbf H_1$ 中可允许
 
@@ -281,88 +284,88 @@
             - $\forall x(\alpha \vee \beta) \leftrightarrow \alpha \vee \forall x\beta, x\notin \mathrm{FV}(\alpha)$
             - $\exists x(\alpha \wedge \beta) \leftrightarrow \alpha \wedge \exists x\beta, x\notin \mathrm{FV}(\alpha)$
 
-        5. 在 $\mathbf H_1$ 中以下演绎后承成立
-            - $\alpha, \Phi \vdash_{\mathbf H_1} \alpha$
-            - $\bot, \Phi \vdash_{\mathbf H_1} \alpha$
-            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 且 $\Phi \subseteq \Psi$，则 $\Psi \vdash_{\mathbf H_1} \alpha$
-            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 且 $\alpha, \Psi \vdash_{\mathbf H_1} \beta$，则 $\Phi, \Psi \vdash_{\mathbf H_1} \beta$
-            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 且 $\Phi \vdash_{\mathbf H_1} \beta$，则 $\Phi \vdash_{\mathbf H_1} \alpha \wedge \beta$
-            - 如果 $\alpha, \beta, \Phi \vdash_{\mathbf H_1} \gamma$，则 $\alpha, \wedge \beta, \Phi \vdash_{\mathbf H_1} \gamma$
-            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 或 $\Phi \vdash_{\mathbf H_1} \beta$，则 $\Phi \vdash_{\mathbf H_1} \alpha \vee \beta$
-            - 如果 $\alpha, \Phi \vdash_{\mathbf H_1} \gamma$ 且 $\beta, \Phi \vdash_{\mathbf H_1} \gamma$，则 $\alpha \vee \beta, \Phi \vdash_{\mathbf H_1} \gamma$
-            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 且 $\beta, \Psi \vdash_{\mathbf H_1} \gamma$，则 $\alpha \to \beta, \Phi, \Psi \vdash_{\mathbf H_1} \gamma$
-            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha$ 且 $\Phi \vdash_{\mathbf H_1} \alpha \to \beta$，则 $\Phi \vdash_{\mathbf H_1} \beta$
-            - 如果 $\alpha, \Psi \vdash_{\mathbf H_1} \gamma$ 且 $\neg \alpha, \Phi \vdash_{\mathbf H_1} \gamma$，则 $\Phi \vdash \gamma$
-            - 如果 $\alpha(t/x), \Phi \vdash_{\mathbf H_1} \beta$，则 $\forall x\alpha, \Phi \vdash_{\mathbf H_1} \beta$
-            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha(y/x)$ 且 $y\notin \mathrm{FV}(\Phi, \forall x\alpha)$，则 $\Phi \vdash_{\mathbf H_1} \forall x\alpha$
-            - 如果 $\alpha(y/x), \Phi \vdash_{\mathbf H_1} \beta$ 且 $y\notin \mathrm{FV}(\exists x\alpha, \Phi, \beta)$，则 $\exists x\alpha, \Phi \vdash_{\mathbf H_1} \beta$
-            - 如果 $\Phi \vdash_{\mathbf H_1} \alpha(t/x)$，则 $\Phi \vdash_{\mathbf H_1} \exists x\alpha$
+        5. 在 $\mathbf H_1$ 中以下句法后承成立
+            - $\alpha, \Sigma \vdash_{\mathbf H_1} \alpha$
+            - $\bot, \Sigma \vdash_{\mathbf H_1} \alpha$
+            - 如果 $\Sigma \vdash_{\mathbf H_1} \alpha$ 且 $\Sigma \subseteq \Psi$，则 $\Psi \vdash_{\mathbf H_1} \alpha$
+            - 如果 $\Sigma \vdash_{\mathbf H_1} \alpha$ 且 $\alpha, \Psi \vdash_{\mathbf H_1} \beta$，则 $\Sigma, \Psi \vdash_{\mathbf H_1} \beta$
+            - 如果 $\Sigma \vdash_{\mathbf H_1} \alpha$ 且 $\Sigma \vdash_{\mathbf H_1} \beta$，则 $\Sigma \vdash_{\mathbf H_1} \alpha \wedge \beta$
+            - 如果 $\alpha, \beta, \Sigma \vdash_{\mathbf H_1} \gamma$，则 $\alpha, \wedge \beta, \Sigma \vdash_{\mathbf H_1} \gamma$
+            - 如果 $\Sigma \vdash_{\mathbf H_1} \alpha$ 或 $\Sigma \vdash_{\mathbf H_1} \beta$，则 $\Sigma \vdash_{\mathbf H_1} \alpha \vee \beta$
+            - 如果 $\alpha, \Sigma \vdash_{\mathbf H_1} \gamma$ 且 $\beta, \Sigma \vdash_{\mathbf H_1} \gamma$，则 $\alpha \vee \beta, \Sigma \vdash_{\mathbf H_1} \gamma$
+            - 如果 $\Sigma \vdash_{\mathbf H_1} \alpha$ 且 $\beta, \Psi \vdash_{\mathbf H_1} \gamma$，则 $\alpha \to \beta, \Sigma, \Psi \vdash_{\mathbf H_1} \gamma$
+            - 如果 $\Sigma \vdash_{\mathbf H_1} \alpha$ 且 $\Sigma \vdash_{\mathbf H_1} \alpha \to \beta$，则 $\Sigma \vdash_{\mathbf H_1} \beta$
+            - 如果 $\alpha, \Psi \vdash_{\mathbf H_1} \gamma$ 且 $\neg \alpha, \Sigma \vdash_{\mathbf H_1} \gamma$，则 $\Sigma \vdash \gamma$
+            - 如果 $\alpha(t/x), \Sigma \vdash_{\mathbf H_1} \beta$，则 $\forall x\alpha, \Sigma \vdash_{\mathbf H_1} \beta$
+            - 如果 $\Sigma \vdash_{\mathbf H_1} \alpha(y/x)$ 且 $y\notin \mathrm{FV}(\Sigma, \forall x\alpha)$，则 $\Sigma \vdash_{\mathbf H_1} \forall x\alpha$
+            - 如果 $\alpha(y/x), \Sigma \vdash_{\mathbf H_1} \beta$ 且 $y\notin \mathrm{FV}(\exists x\alpha, \Sigma, \beta)$，则 $\exists x\alpha, \Sigma \vdash_{\mathbf H_1} \beta$
+            - 如果 $\Sigma \vdash_{\mathbf H_1} \alpha(t/x)$，则 $\Sigma \vdash_{\mathbf H_1} \exists x\alpha$
 
     4. 一阶逻辑的后承演算 $\mathfrak C_{\mathbf H_1}$ 是在经典命题逻辑的后承演算 $\mathfrak C_{\mathbf{HK}}$ 增加量词规则得到的
 
         $$
         \displaylines{
             \begin{prooftree}
-            \AxiomC{$\alpha(t/x), \Phi \vdash \beta$}
+            \AxiomC{$\alpha(t/x), \Sigma \vdash \beta$}
             \RightLabel{$\forall \vdash$}
-            \UnaryInfC{$(\forall x\alpha, \Phi \vdash \beta)$}
+            \UnaryInfC{$(\forall x\alpha, \Sigma \vdash \beta)$}
             \end{prooftree},
             \begin{prooftree}
-            \AxiomC{$\Phi \vdash \alpha(y/x)$}
+            \AxiomC{$\Sigma \vdash \alpha(y/x)$}
             \RightLabel{$(\vdash \forall)$}
-            \UnaryInfC{$\Phi \vdash \forall x\alpha$}
+            \UnaryInfC{$\Sigma \vdash \forall x\alpha$}
             \end{prooftree}
-            (y \notin \mathrm{FV}(\Phi, \forall x\alpha)) \\
+            (y \notin \mathrm{FV}(\Sigma, \forall x\alpha)) \\
             \begin{prooftree}
-            \AxiomC{$\alpha(y/x), \Phi \vdash \beta$}
+            \AxiomC{$\alpha(y/x), \Sigma \vdash \beta$}
             \RightLabel{$(\exists \vdash)$}
             \UnaryInfC{$\exists x\alpha$}
             \end{prooftree},
             \begin{prooftree}
-            \AxiomC{$\Phi \vdash \alpha(t/x)$}
+            \AxiomC{$\Sigma \vdash \alpha(t/x)$}
             \RightLabel{$(\vdash \exists)$}
-            \UnaryInfC{$\Phi \vdash \exists x\alpha$}
+            \UnaryInfC{$\Sigma \vdash \exists x\alpha$}
             \end{prooftree}
-            (y \notin \mathrm{FV}(\Phi, \exists x\alpha, \beta))
+            (y \notin \mathrm{FV}(\Sigma, \exists x\alpha, \beta))
         }
         $$
 
-5. 一致性：如果公式集 $\Phi$ 有 $\Phi \not \vdash_{\mathbf H_1} \bot$，则称公式集 $\Phi$ 是 $\mathbf H_1-$一致的，否则称 $\Phi$ 是 $\mathbf H_1-$不一致的
-    1. 对任意公式集 $\Phi \cup \{\alpha\}$ 有
-        1. $\Phi \not \vdash_{\mathbf H_1} \neg \alpha$ 当且仅当 $\Phi \cup \{\alpha\}$ 是 $\mathbf H_1-$一致的
-        2. $\Phi \not \vdash_{\mathbf H_1} \alpha$ 当且仅当 $\Phi \cup \{\neg \alpha\}$ 是 $\mathbf H_1-$一致的
-    2. 一个公式集 $\Phi$ 是 $\mathbf H_1$ 一致的当且仅当 $\Phi$ 的每个有穷子集是 $\mathbf H_1$ 一致的
-6. 可靠性：如果 $\Phi \vdash_{\mathbf H_1} \alpha$，那么 $\Phi \vDash \alpha$
+6. 一致性：如果公式集 $\Sigma$ 有 $\Sigma \not \vdash_{\mathbf H_1} \bot$，则称公式集 $\Sigma$ 是 $\mathbf H_1-$一致的，否则称 $\Sigma$ 是 $\mathbf H_1-$不一致的
+    1. 对任意公式集 $\Sigma \cup \{\alpha\}$ 有
+        1. $\Sigma \not \vdash_{\mathbf H_1} \neg \alpha$ 当且仅当 $\Sigma \cup \{\alpha\}$ 是 $\mathbf H_1-$一致的
+        2. $\Sigma \not \vdash_{\mathbf H_1} \alpha$ 当且仅当 $\Sigma \cup \{\neg \alpha\}$ 是 $\mathbf H_1-$一致的
+    2. 一个公式集 $\Sigma$ 是 $\mathbf H_1$ 一致的当且仅当 $\Sigma$ 的每个有穷子集是 $\mathbf H_1$ 一致的
+7. 可靠性：如果 $\Sigma \vdash_{\mathbf H_1} \alpha$，那么 $\Sigma \vDash \alpha$
     1. 对任意公式 $\alpha, \beta$
         1. 如果 $\vDash_1 \alpha$ 且 $\vDash_1 \alpha \to \beta$，则 $\vDash \beta$
         2. 如果 $\vDash_1 \alpha$，则 $\vDash_1 \forall x\alpha$
-    2. 如果 $\Phi$ 是可满足的，那么 $\Phi$ 是 $\mathbf H_1-$一致的
+    2. 如果 $\Sigma$ 是可满足的，那么 $\Sigma$ 是 $\mathbf H_1-$一致的
     3. $\mathrm{Thm}(\mathbf H_1) \subseteq \mathbf{FOL}$
-7. 完全性：如果 $\Phi \vDash \alpha$，那么 $\Phi \vdash_{\mathbf H_1} \alpha$
-    1. $S$ 是可数的，因此 $\mathcal T(S)$ 与 $\mathcal F(S)$ 均可数，设 $\Phi$ 是 $\mathbf H_1-$一致的公式集，构造句法模型 $\mathfrak M^\Phi = (\mathfrak A^\Phi, \sigma^\Phi)$
-        1. 模型 $\mathfrak M^\Phi = (\mathfrak A^\Phi, \sigma^\Phi)$ 的论域是项集 $\mathcal T(S)$，对任意变元 $x\in \mathbf{Var}, \sigma^\Phi(x) = x$
-            - 对任意关系符号 $R\in \mathbf R, (t_1, t_2, \cdots, t_{\Omega(R)}) \in R^{\mathfrak A^\Phi}$ 当且仅当 $\Phi \vdash_{\mathbf H_1} Rt_1 t_2 \cdots t_{\Omega(R)}$
-            - 对任意函数符号 $f\in \mathbf F, f^{\mathfrak A^\Phi}(t_1, t_2, \cdots, t_{\Omega(f)}) = ft_1 t_2 \cdots t_{\Omega(f)}$
-            - 对任意常元符号 $c\in \mathbf C, c^{\mathfrak A^\Phi} = c$
-        2. 在 $\mathfrak M^\Phi$ 中以下成立
-            - 对任意项 $t\in \mathcal T(S), t^{\mathfrak M^\Phi} = t$
-            - 对任意原子公式 $\alpha$，$\mathfrak M^\Phi \vDash \alpha$ 当且仅当 $\Phi \vdash_{\mathbf H_1} \alpha$
-            - 对任意公式 $\alpha$，$\mathfrak M^\Phi \vDash \exists \overline x\alpha$ 当且仅当存在项序列 $\overline t$ 使得 $\mathfrak M^\Phi \vDash \alpha(\overline t/\overline x)$
-            - 对任意公式 $\alpha$，$\mathfrak M^\Phi \vDash \forall \overline x\alpha$ 当且仅当对所有项序列 $\overline t$ 都有 $\mathfrak M^\Phi \vDash \alpha(\overline t/\overline x)$
-    2. 如果公式集 $\Phi$ 对任意公式 $\alpha$ 都有 $\Phi \vdash_{\mathbf H_1} \alpha$ 或 $\Phi \not \vdash_{\mathbf H_1} \neg \alpha$，则称公式集 $\Phi$ 是完备的；如果公式集 $\Phi$ 对每个公式 $\exists x\alpha \in \mathcal F(S)$ 都有 $t\in \mathcal T(S)$ 使得 $\Phi \vdash_{\mathbf H_1} \exists x\alpha \to \alpha(t/x)$，则称 $\Phi$ 是证据集
-        1. 设 $\Phi$ 是 $\mathbf H_1-$一致的完备证据集，对任意公式集 $\Phi \cup \{\alpha, \beta\}$，在 $\mathbf H_1$ 中成立
-            - $\Phi \vdash \neg$ 当且仅当 $\Phi \not \vdash \alpha$
-            - $\Phi \vdash \alpha \wedge \beta$ 当且仅当 $\Phi \vdash \alpha$ 且 $\Phi \vdash \beta$
-            - $\Phi \vdash \alpha \vee \beta$ 当且仅当 $\Phi \vdash \alpha$ 或 $\Phi \vdash \beta$
-            - $\Phi \vdash \alpha \to \beta$ 当且仅当 $\Phi \not \vdash \alpha$ 或 $\Phi \vdash \beta$
-            - $\Phi \vdash \exists x\alpha$ 当且仅当存在 $t\in \mathcal T(S)$ 使得 $\Phi \vdash \alpha(t/x)$
-            - $\Phi \vdash \forall x\alpha$ 当且仅当对所有 $t\in \mathcal T(S)$ 都有 $\Phi \vdash \alpha(t/x)$
-        2. 设 $\Phi$ 是 $\mathbf H_1-$一致的完备证据集，对任意公式 $\alpha$，$\Phi \vdash_{\mathbf H_1} \alpha$ 当且仅当 $\mathfrak M^\Phi \vDash \alpha$
-        3. 任何 $\mathbf H_1-$ 一致的完备证据集 $\Phi$ 都是可满足的，即 $\mathfrak M^\Phi \vDash \Phi$
-        4. 设 $\Phi$ 是 $\mathbf H_1-$一致的公式集且 $\mathrm{FV}(\Phi)$ 是有穷的，那么存在 $\mathbf H_1-$一致的证据集 $\Psi$ 使得 $\Phi \subseteq \Psi$
+8. 完全性：如果 $\Sigma \vDash \alpha$，那么 $\Sigma \vdash_{\mathbf H_1} \alpha$
+    1. $S$ 是可数的，因此 $\mathcal T(S)$ 与 $\mathcal F(S)$ 均可数，设 $\Sigma$ 是 $\mathbf H_1-$一致的公式集，构造句法模型 $\mathfrak M^\Sigma = (\mathfrak A^\Sigma, \sigma^\Sigma)$
+        1. 模型 $\mathfrak M^\Sigma = (\mathfrak A^\Sigma, \sigma^\Sigma)$ 的论域是项集 $\mathcal T(S)$，对任意变元 $x\in \mathbf{Var}, \sigma^\Sigma(x) = x$
+            - 对任意关系符号 $R\in \mathbf R, (t_1, t_2, \cdots, t_{\Omega(R)}) \in R^{\mathfrak A^\Sigma}$ 当且仅当 $\Sigma \vdash_{\mathbf H_1} Rt_1 t_2 \cdots t_{\Omega(R)}$
+            - 对任意函数符号 $f\in \mathbf F, f^{\mathfrak A^\Sigma}(t_1, t_2, \cdots, t_{\Omega(f)}) = ft_1 t_2 \cdots t_{\Omega(f)}$
+            - 对任意常元符号 $c\in \mathbf C, c^{\mathfrak A^\Sigma} = c$
+        2. 在 $\mathfrak M^\Sigma$ 中以下成立
+            - 对任意项 $t\in \mathcal T(S), t^{\mathfrak M^\Sigma} = t$
+            - 对任意原子公式 $\alpha$，$\mathfrak M^\Sigma \vDash \alpha$ 当且仅当 $\Sigma \vdash_{\mathbf H_1} \alpha$
+            - 对任意公式 $\alpha$，$\mathfrak M^\Sigma \vDash \exists \overline x\alpha$ 当且仅当存在项序列 $\overline t$ 使得 $\mathfrak M^\Sigma \vDash \alpha(\overline t/\overline x)$
+            - 对任意公式 $\alpha$，$\mathfrak M^\Sigma \vDash \forall \overline x\alpha$ 当且仅当对所有项序列 $\overline t$ 都有 $\mathfrak M^\Sigma \vDash \alpha(\overline t/\overline x)$
+    2. 如果公式集 $\Sigma$ 对任意公式 $\alpha$ 都有 $\Sigma \vdash_{\mathbf H_1} \alpha$ 或 $\Sigma \not \vdash_{\mathbf H_1} \neg \alpha$，则称公式集 $\Sigma$ 是完备的；如果公式集 $\Sigma$ 对每个公式 $\exists x\alpha \in \mathcal F(S)$ 都有 $t\in \mathcal T(S)$ 使得 $\Sigma \vdash_{\mathbf H_1} \exists x\alpha \to \alpha(t/x)$，则称 $\Sigma$ 是证据集
+        1. 设 $\Sigma$ 是 $\mathbf H_1-$一致的完备证据集，对任意公式集 $\Sigma \cup \{\alpha, \beta\}$，在 $\mathbf H_1$ 中成立
+            - $\Sigma \vdash \neg$ 当且仅当 $\Sigma \not \vdash \alpha$
+            - $\Sigma \vdash \alpha \wedge \beta$ 当且仅当 $\Sigma \vdash \alpha$ 且 $\Sigma \vdash \beta$
+            - $\Sigma \vdash \alpha \vee \beta$ 当且仅当 $\Sigma \vdash \alpha$ 或 $\Sigma \vdash \beta$
+            - $\Sigma \vdash \alpha \to \beta$ 当且仅当 $\Sigma \not \vdash \alpha$ 或 $\Sigma \vdash \beta$
+            - $\Sigma \vdash \exists x\alpha$ 当且仅当存在 $t\in \mathcal T(S)$ 使得 $\Sigma \vdash \alpha(t/x)$
+            - $\Sigma \vdash \forall x\alpha$ 当且仅当对所有 $t\in \mathcal T(S)$ 都有 $\Sigma \vdash \alpha(t/x)$
+        2. 设 $\Sigma$ 是 $\mathbf H_1-$一致的完备证据集，对任意公式 $\alpha$，$\Sigma \vdash_{\mathbf H_1} \alpha$ 当且仅当 $\mathfrak M^\Sigma \vDash \alpha$
+        3. 任何 $\mathbf H_1-$ 一致的完备证据集 $\Sigma$ 都是可满足的，即 $\mathfrak M^\Sigma \vDash \Sigma$
+        4. 设 $\Sigma$ 是 $\mathbf H_1-$一致的公式集且 $\mathrm{FV}(\Sigma)$ 是有穷的，那么存在 $\mathbf H_1-$一致的证据集 $\Psi$ 使得 $\Sigma \subseteq \Psi$
         5. 设 $\Psi$ 是 $\mathbf H_1-$一致的公式集，那么存在 $\mathbf H_1-$一致的完备集 $\Theta$ 使得 $\Psi \subseteq \Theta$
-        6. 如果 $\Phi$ 是 $\mathbf H_1-$一致公式集并且 $\mathrm{FV}(\Phi)$ 是有穷的，那么 $\Phi$ 是可满足的
-    3. 如果 $\Phi$ 是 $\mathbf H_1-$一致的，那么 $\Phi$ 是可满足的
+        6. 如果 $\Sigma$ 是 $\mathbf H_1-$一致公式集并且 $\mathrm{FV}(\Sigma)$ 是有穷的，那么 $\Sigma$ 是可满足的
+    3. 如果 $\Sigma$ 是 $\mathbf H_1-$一致的，那么 $\Sigma$ 是可满足的
     4. $\mathbf{FOL} \subseteq \mathrm{Thm}(\mathbf H_1)$
 
 ## 2.2 经典一阶逻辑矢列演算

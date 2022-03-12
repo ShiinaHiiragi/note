@@ -16,7 +16,7 @@
         $$
 
 2. 可定义集：设 $\mathfrak A$ 是一个论域为 $A$ 的 $S-$结构，$C \subseteq A, X \subseteq A^n$，用 $\mathrm{Def}_C(X) = \{Y \subseteq X | Y$ 是 $C-$可定义的$\}$ 表示 $X$ 的 $C-$可定义的子集全体；$\mathrm{Def}(A) = \bigcup_{n\in N_+} \mathrm{Def}_A(A^n)$ 表示全体 $A-$可定义集
-3. 闭包：设 $\mathfrak A$ 是论域为 $A$ 的 $S-$结构，$C \subseteq A$ 是一个子集，则 $C$ 在 $A$ 中的可定义闭包为 $\mathrm{dcl}_A(C) = \{b\in A | \{b\}$ 是 $C-$可定义集 $\}$；$C$ 在 $A$ 中的代数闭包为 $\mathrm{acl}_A(C) = \{b\in A |$ 存在一个有限的 $C-$可定义集使得 $b\in C\}$
+3. 闭包：设 $\mathfrak A$ 是论域为 $A$ 的 $S-$结构，$C \subseteq A$ 是一个子集，则 $C$ 在 $A$ 中的可定义闭包为 $\mathrm{dcl}_A(C) = \{b\in A | \{b\}$ 是 $C-$可定义集$\}$；$C$ 在 $A$ 中的代数闭包为 $\mathrm{acl}_A(C) = \{b\in A |$ 存在一个有限的 $C-$可定义集使得 $b\in C\}$
     1. 设 $b\in A$，则 $b\in \mathrm{dcl}_A(C)$ 当且仅当有可定义函数 $f(x_1, x_2, \cdots, x_n)$ 及 $a_1, a_2, \cdots, a_n \in A$ 使得 $b = f(a_1, a_2, \cdots, a_n)$
     2. $\mathrm{dcl}_A(C) \subseteq \mathrm{acl}_A(C)$
     3. $\mathrm{acl}_A(\mathrm{acl}_A(C)) = \mathrm{acl}_A(C), \mathrm{dcl}_A(\mathrm{dcl}_A(C)) = \mathrm{dcl}_A(C)$
