@@ -31,10 +31,11 @@
     则称 $h$ 是（$\mathfrak A$ 到 $\mathfrak B$）的同态，记作 $h: \mathfrak A \to \mathfrak B$
 
 2. 嵌入与同构：设 $\mathfrak A, \mathfrak B$ 是论域分别为 $A, B$ 的两个 $S-$结构，$h: A \to B$ 是一个映射．将 $\mathfrak B$ 扩张为论域为 $A$ 的 $\mathfrak B'$ 使得对于新常元 $a \in A$，有 $a^{\mathfrak B'} = h(a)$，记 $\mathfrak B' = (\mathfrak B, h(a))_{a\in A}$
-    1. 嵌入：如果同构 $h: \mathfrak A \to \mathfrak B$ 是单射且对每个 $n$ 元关系符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 当且仅当 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$，则称 $h$ 是（$\mathfrak A$ 到 $\mathfrak B$）的嵌入．易知 $h$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入当且仅当 $(\mathfrak B, h(a))_{a\in A} \vDash \mathrm{Diag}(\mathfrak M)$
-        1. 部分嵌入：设 $M \subseteq A, N \subseteq B$，$\eta: M \to N$ 是一个单射．如果对于任意的 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，无量词公式 $\alpha(\overline x)$ 以及任意的 $\overline a\in M^n$，都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个部分嵌入
-        2. 部分初等嵌入：设 $M \subseteq A, N \subseteq B$，$\eta: M \to N$ 是一个单射．如果对于任意的公式 $\alpha(\overline x)$ 以及任意的 $\overline a\in M^n$，都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个部分初等嵌入，显然部分初等嵌入一定是部分嵌入
-        3. 初等嵌入：设 $N \subseteq B$，$\eta: A \to N$ 是一个单射．如果对于任意的公式 $\alpha(\overline x)$ 以及任意的 $\overline a\in A^n$，都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个初等嵌入
+    1. 嵌入：如果同构 $h: \mathfrak A \to \mathfrak B$ 是单射且对每个 $n$ 元关系符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 当且仅当 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$，则称 $h$ 是（$\mathfrak A$ 到 $\mathfrak B$）的嵌入
+        1. $h$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入当且仅当 $(\mathfrak B, h(a))_{a\in A} \vDash \mathrm{Diag}(\mathfrak A)$，当且仅当 $(\mathfrak B, h(a))_{a\in A} \vDash \mathrm{Diag_{el}}(\mathfrak A)$
+        2. 部分嵌入：设 $M \subseteq A, N \subseteq B$，$\eta: M \to N$ 是一个单射．如果对于任意的 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，无量词公式 $\alpha(\overline x)$ 以及任意的 $\overline a\in M^n$，都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个部分嵌入
+        3. 部分初等嵌入：设 $M \subseteq A, N \subseteq B$，$\eta: M \to N$ 是一个单射．如果对于任意的公式 $\alpha(\overline x)$ 以及任意的 $\overline a\in M^n$，都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个部分初等嵌入，显然部分初等嵌入一定是部分嵌入
+        4. 初等嵌入：设 $N \subseteq B$，$\eta: A \to N$ 是一个单射．如果对于任意的公式 $\alpha(\overline x)$ 以及任意的 $\overline a\in A^n$，都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个初等嵌入
     2. 同构：如果嵌入 $h: \mathfrak A \to \mathfrak B$ 是满射，则称 $h$ 是（$\mathfrak A$ 到 $\mathfrak B$）的同构
         1. 如果存在 $\mathfrak A$ 到 $\mathfrak B$ 的同构，则称 $\mathfrak A$ 与 $\mathfrak B$ 同构，记作 $\mathfrak A \cong \mathfrak B$
         2. 部分同构：设 $M \subseteq A, N \subseteq B$，$\eta: M \to N$ 是一个双射，如果 $\eta$ 是一个部分嵌入，则称 $\eta$ 是部分同构；若 $A = M$，则称 $\eta$ 是同构
@@ -47,9 +48,9 @@
     3. 设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的结构，$h: \mathfrak A \to B$ 是一个嵌入．如果 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 是一个存在公式，则对任意 $\alpha_1, \alpha_2, \cdots, \alpha_n \in A$ 有 $\mathfrak A \vDash \alpha(a_1, a_2, \cdots, a_n) \Rightarrow \mathfrak B \vDash \alpha(h(a_1), h(a_2), \cdots, h(a_n))$
 
 ### 1.1.3 初等子结构
-1. 图：设 $\mathfrak A$ 是一个论域为 $A$ 的 $S-$结构
+1. 图：设 $\mathfrak A$ 是一个论域为 $A$ 的 $S-$结构，则必然有 $\mathrm{Diag}(\mathfrak A) \subseteq \mathrm{Diag_{el}}(\mathfrak A)$
     1. $\mathfrak A$ 的原子图 $\mathrm{Diag}(\mathfrak A)$ 定义为 $S-$语句集 $\{\alpha(a_1, a_2, \cdots, a_n) | \alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 是一个无量词的 $S-$公式，$a_1, a_2, \cdots, a_n \in A$ 且 $\mathfrak A \vDash \alpha(a_1, a_2, \cdots, a_n)\}$
-    2. 初等图
+    2. $\mathfrak A$ 的初等图 $\mathrm{Diag_{el}}(\mathfrak A)$ 定义为 $S-$语句集 $\{\alpha(a_1, a_2, \cdots, a_n) | \alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 是一个 $S-$公式，$a_1, a_2, \cdots, a_n \in A$ 且 $\mathfrak A \vDash \alpha(a_1, a_2, \cdots, a_n)\}$
 2. 子结构：设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}, \mathfrak B = \left\{B, \{Z^\mathfrak B\}_{Z\in S}\right\}$ 是两个 $S-$结构，如果 $A\subseteq B$ 且包含映射 $i: A\to B$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入，则称 $\mathfrak A$ 是 $\mathfrak B$ 的 $S-$子结构；$\mathfrak B$ 是 $\mathfrak A$ 的膨胀，记作 $\mathfrak A \subseteq \mathfrak B$ 或 $\mathfrak B \supseteq \mathfrak A$
     1. 设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}$ 是一个 $S-$结构且 $N\subset A$，若 $A$ 有
         1. 对每个 $n$ 元函数符号 $f\in \mathbf F$，有 $f^\mathfrak A[A^N] \subseteq N$
@@ -58,14 +59,25 @@
         则称 $\left\{N, \{Z^\mathfrak A \upharpoonright N\}_{Z\in S}\right\}$ 是 $\mathfrak A$ 的子结构，其中 $Z^\mathfrak A \upharpoonright N$ 是 $Z^\mathfrak A$ 在 $N$ 上的限制，也称 $N$ 为 $\mathfrak A$ 的子结构
 
     2. 对于 $S-$结构 $\mathfrak A = (A, I)$，若 $\mathbf C = \mathbf F = \varnothing$，则 $A$ 中的每个非空子集 $N$ 都可被自然地解释为 $\mathfrak A$ 的子结构 $\left\{N, \{Z^\mathfrak A \upharpoonright N\}_{Z\in S}\right\}$
-    3. 设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}, \mathfrak B = \left\{B, \{Z^\mathfrak B\}_{Z\in S}\right\}$ 是两个 $S-$结构，如果 $h$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入，则 $h[A]$ 是 $\mathfrak B$ 的子结构
-    4. 设 $\mathfrak M, \mathfrak N$ 分别是论域为 $A, B$ 的两个 $S-$结构且 $A \subseteq B$，则 $\mathfrak A \subseteq go B$ 当且仅当论域为 $A$ 的 $\mathfrak B' \vDash \mathrm{Diag}(\mathfrak M)$
+    3. 如果 $h$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入，则 $h[A]$ 是 $\mathfrak B$ 的子结构
+    4. 设 $A \subseteq B$，则 $\mathfrak A \subseteq \mathfrak B$ 当且仅当论域为 $A$ 的 $\mathfrak B' \vDash \mathrm{Diag}(\mathfrak A)$
 
 3. 生成子结构：设 $\mathfrak A$ 为论域为 $A$ 的 $S-$结构，对任意 $N \subseteq A$ 存在一个论域包含 $N$ 的 $\mathfrak A$ 的子结构 $\mathfrak N$，使得对于任意论域包含 $N$ 的 $\mathfrak A$ 的子结构 $\mathfrak B$ 都有 $\mathfrak N \subseteq \mathfrak B$，称 $\mathfrak N$ 是由 $N$ 生成的子结构，记作 $\left<N\right>^\mathfrak A$
     1. 若存在 $N_0 \subseteq A$ 为有限集使得 $\mathfrak N = \left<N\right>^\mathfrak A$，则称 $\mathfrak N$ 是有限生成的
-    2. 设 $\mathscr L(S)$ 是一个语言，$\mathfrak A$ 为一个论域为 $A$ 的 $S-$结构且 $N\subseteq A$，则 $\left<N\right>^\mathfrak A$ 的论域是 $\overline S = \{t^\mathfrak A[b_1, b_2, \cdots, b_m] | b_1, b_2, \cdots, b_n \in S\}$
-    3. 设 $\mathscr L(S)$ 是一个语言，$\mathfrak A$ 为一个论域为 $A$ 的 $S-$结构且 $N\subseteq A$，则 $\left<N\right>^\mathfrak A \leqslant \max\{|N|, |S|, \aleph_0\}$
+    2. 设 $N\subseteq A$，则 $\left<N\right>^\mathfrak A$ 的论域是 $\overline S = \{t^\mathfrak A[b_1, b_2, \cdots, b_m] | b_1, b_2, \cdots, b_n \in S\}$
+    3. 设 $N\subseteq A$，则 $\left<N\right>^\mathfrak A \leqslant \max\{|N|, |S|, \aleph_0\}$
 4. 初等子结构：设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的结构，若存在 $h: \mathfrak A \to \mathfrak B$ 是一个初等嵌入且 $A \subseteq B$，则称 $A$ 是 $B$ 的初等子结构，记作 $A \prec B$；同时称 $\mathfrak B$ 是 $\mathfrak A$ 的初等膨胀，记作 $\mathfrak B \succ \mathfrak A$
+    1. 如果 $N \subseteq A$，$N$ 是 $\mathfrak A$ 的子结构，且子结构 $\mathfrak N = \left\{N, \{Z^\mathfrak A \upharpoonright N\}_{Z \in S}\right\}$ 还是 $\mathfrak A$ 的初等子结构，则称集合 $N$ 是 $\mathfrak A$ 的初等子结构
+    2. 如果 $H: \mathfrak A \to \mathfrak B$ 是初等嵌入，则存在 $\mathfrak A$ 的初等膨胀 $\overline{\mathfrak A}$ 使得 $H$ 可以被扩张为 $\overline{\mathfrak A}$ 到 $\mathfrak B$ 的同构
+    3. $\text{Tarski}-\text{Vaught}$ 测试：设 $\mathfrak A$ 是 $\mathfrak B$ 的子结构，则 $A \prec B$ 当且仅当对每个公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n}, y)$ 及 $a_1, a_2, \cdots, a_n \in A$ 都有 $\mathfrak B \vDash \exists y \alpha(a_1, a_2, \cdots, a_n, y) \to \mathfrak A \vDash \exists y \alpha(a_1, a_2, \cdots, a_n, y)$
+    4. $\text{Tarski}$ 准则：设 $M \subseteq A$ 非空，则 $M$ 是 $\mathfrak A$ 的初等子结构当且仅当若 $X \subseteq A$ 是非空的 $M-$可定义子集，则 $X \cap M = \varnothing$
+5. 定向集：设 $(I, <)$ 是一个偏序集，如果对任意的 $i, j \in I$ 都存在 $k \in I$ 使得 $i \leqslant k$ 且 $j \leqslant k$，则称 $(I, <)$ 是一个定向集
+    1. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i | i \in I\}$ 是一族 $S-$结构
+        1. 如果对任意的 $i, j \in I$ 都有 $i < j \Rightarrow \mathfrak A_i \subseteq \mathfrak A_j$，则称 $\{\mathfrak A_i | i \in I\}$ 是一条链
+        2. 如果对任意的 $i, j \in I$ 都有 $i < j \Rightarrow \mathfrak A_i \prec \mathfrak A_j$，则称 $\{\mathfrak A_i | i \in I\}$ 是一条初等链
+    2. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i | i \in I\}$ 是一族 $S-$结构，其中 $\mathfrak A_i$ 的论域是 $A_i$．令 $\mathfrak A = \bigcup_{i \in I} \mathfrak A_i$，则其论域为 $A = \bigcup_{i \in I}A_i$，常元符号 $c$ 解释为 $c^{\mathfrak A_{i_0}}$，其中 $i_0 \in I$；函数符号 $f$ 解释为 $\bigcup_{i \in I}f^{\mathfrak A_i}$；关系符号 $R$ 解释为 $\bigcup_{i \in I}R^{\mathfrak A_i}$
+        1. 若 $\{\mathfrak A_i | i \in I\}$ 是一条链，则 $\mathfrak M$ 是一个 $S-$结构，且对每个 $i \in I$ 都有 $\mathfrak A_i \subseteq \mathfrak A$
+        2. 若 $\{\mathfrak A_i | i \in I\}$ 是一条初等链，则对每个 $i \in I$ 都有 $\mathfrak A_i \prec \mathfrak A$
 
 ## 1.2 理论与模型
 ### 1.2.1 理论与公理
