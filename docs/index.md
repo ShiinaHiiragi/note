@@ -40,6 +40,24 @@
 .value {
     flex-grow: 1;
 }
+
+.progress-container {
+    margin-top: -8px;
+    height: 16px;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 0.1rem;
+}
+
+.progress-percentage {
+    text-align: right;
+    font-size: 12px;
+    padding-right: 8px;
+    line-height: 16px;
+    background-color: rgb(0, 184, 212);
+    border-radius: 0.1rem;
+    color: white;
+}
 </style>
 
 <script>
