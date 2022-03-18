@@ -8,7 +8,7 @@
 !!! info "此项目仍未完成，可能存在若干疏漏和错误"
     <label> 现在进度：分析哲学 · 演绎与证成 </label>
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 32%;"> 32% </div>
+        <div class="progress-percentage" style="width: 25%;"> 24.50% </div>
     </div>
 
 ## 参考文献
