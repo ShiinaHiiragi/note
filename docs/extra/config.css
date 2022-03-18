@@ -1,13 +1,19 @@
-* {
-  box-sizing: border-box;
+:root {
+  --md-text-font: "Noto Sans SC";
   user-select: none;
+  box-sizing: border-box;
 }
 
 ::selection {
   background-color: rgb(204, 226, 255);
 }
 
-h1, h2, h3 {
+@font-face {
+  font-family: "Noto Sans SC";
+  src: "NotoSansSC-Regular.otf";
+}
+
+h1, h2, h3, h4, h5, h6 {
   color: black !important;
   font-weight: 300 !important;
 }
