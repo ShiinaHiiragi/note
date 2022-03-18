@@ -27,7 +27,7 @@
 
         其中 $x\in \mathbf{Var}, c\in C$ 且 $f\in \mathbf F$
 
-        一阶语言 $\mathscr L(S)$ 的公式集 $\mathcal F(S)$ 归纳定义如下
+        一阶语言 $\mathscr L(S)$ 的（合式）公式集 $\mathcal F(S)$ 归纳定义如下
 
         $$
         \mathcal F(S) \ni \alpha := Rt_1t_2\cdots t_{\Omega(f)} | \bot | (\alpha_1 \wedge \alpha_2) | (\alpha_1 \vee \alpha_2) | (\alpha_1 \to \alpha_2) | \forall x\alpha | \exists x\alpha
