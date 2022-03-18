@@ -13,6 +13,10 @@
   src: "NotoSansSC-Regular.otf";
 }
 
+.md-ellipsis {
+  font-weight: 400;
+}
+
 h1, h2, h3, h4, h5, h6 {
   color: black !important;
   font-weight: 300 !important;
@@ -22,6 +26,7 @@ h1, h2, h3, h4, h5, h6 {
   font-size: 1.08em !important;
 }
 
-.md-ellipsis {
-  font-weight: 400;
+mjx-utext[variant="sans-serif"] {
+  font-family: "Noto Sans SC";
+  font-size: 0.8rem !important;
 }
