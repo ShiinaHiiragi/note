@@ -94,7 +94,7 @@ nav:
       - 5 势与基数: logic/set/cardinal.md
   - 数学结构:
     - 二、初等数论:
-      - 1 整除理论: math/num/div.md
+      - 1 整除与不定方程: math/num/div.md
     - 三、点集拓扑:
       - 1 拓扑空间: math/top/space.md
       - 2 构造空间: math/top/construct.md

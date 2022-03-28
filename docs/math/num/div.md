@@ -1,6 +1,6 @@
-# 1 整除理论
+# 1 整除与不定方程
 
-## 1.1 整除与因数
+## 1.1 整除理论
 ### 1.1.1 算术基本定理
 1. 整除：设 $a, b \in Z$ 且 $b \neq 0$．如果存在整数 $c$ 使得 $a = bc$ 成立，则称 $b$ 整除 $a$，记作 $b \mid a$；如果不存在这样的整数 $c$，则称 $b$ 不整除 $a$，记作 $b \nmid a$
     1. $a \mid b \to \pm a \mid \pm b$
@@ -38,15 +38,31 @@
 
         $$
         \begin{aligned}
-        & a = bq_1 + r, 0 < r_1 < b \\
-        & b = r_1q_2 + r_2, 0 < r_2 < r_1 \\
+        & a = bq_1 + r & (0 < r_1 < b) \\
+        & b = r_1q_2 + r_2 & (0 < r_2 < r_1) \\
         & \cdots \\
-        & r_{n-2} = r_{n-1}q_n + r_n, 0 < r_n < r_{n-1} \\
-        & r_{n-1} = r_nq_{n+1} + r_{n+1}, r_{n+1} = 0
+        & r_{n-2} = r_{n-1}q_n + r_n & (0 < r_n < r_{n-1}) \\
+        & r_{n-1} = r_nq_{n+1} + r_{n+1} & (r_{n+1} = 0)
         \end{aligned}
         $$
 
-        则 $(a, b) = r_n$
+        则 $(a, b) = r_n$，这一组带余除法称为辗转相除法
+
+        !!! note "辗转相除法"
+            1. 带余除法：若 $a, b \in Z$ 且 $b > 0$，则存在两个整数 $q, r$ 使得 $a = qb + r \ (0 \leqslant r < b)$ 成立，且 $q, r$ 唯一
+            2. 记
+
+                $$
+                \begin{aligned}
+                & P_0 = 1, P_1 = 1, P_k = q_kP_{k-1} + P_{k-2} \ (k \geqslant 2) \\
+                & Q_0 = 0, Q_1 = 1, Q_k = q_kQ_{k-1} + Q_{k-2} \ (k \geqslant 2)
+                \end{aligned}
+                $$
+
+                则有 $aQ_k - bP_k = (-1)^{k-1}r_k \ (k = 1, 2, \cdots, n)$
+
+                - 若 $a, b$ 是任意两个非零整数，则存在整数 $x, y$ 可使 $ax + by = (a, b)$ 成立
+                - 若 $a, b$ 是非零整数，则 $(a, b) = 1 \leftrightarrow \exists x, y\in Z: ax + by = 1$
 
     3. 设 $a, b$ 是任意两个不全为零的整数
         1. 若 $m$ 是任意一个正整数，则 $(am, bm) = (a, b)m$
@@ -61,6 +77,22 @@
     2. 对任意正整数 $a, b$ 有 $[a, b] \cdot (a, b) = ab$
         1. 两个整数的任何公倍数可以被它们的最小公倍数整除
         2. 设 $m, a, b$ 是正整数，则 $[ma, mb] = m[a, b]$
-    3. 若 $a_1, a_2, \cdots, a_n$ 是 $n \ (n \geqslant 2)$ 个正整数，记 $[a_1, a_2] = m_2, [m_2, a_2] = m_3, \cdots, [m_{n_2}, a_{n-1}] = m_{n-1}, [m_{n-1}, a_n] = m_n$，则 $[a_1, a_2, \cdots, a_n] = m_n$
+    3. 若 $a_1, a_2, \cdots, a_n$ 是 $n \ (n \geqslant 2)$ 个正整数，记 $[a_1, a_2] = m_2, [m_2, a_2] = m_3, \cdots, [m_{n-2}, a_{n-1}] = m_{n-1}, [m_{n-1}, a_n] = m_n$，则 $[a_1, a_2, \cdots, a_n] = m_n$
 
 ## 1.2 取整函数
+1. 取整函数与分数部分函数：设 $x, y \in R$，整数函数（也称 $\text{Gaussian}$ 函数）$[x]$ 是不超过 $x$ 的最大整数，称它为 $x$ 的整数部分；分数部分函数定义为 $\{x\} = x - [x]$
+    1. $x \leqslant y \to [x] \leqslant [y]$
+    2. 若 $m\in Z$，则 $[m + x] = m + [x]$
+    3. 若 $0 \leqslant x < 1$，则 $[x] = 0$
+    4. $[x] \leqslant x < [x] + 1, x - 1 < [x] \leqslant x, 0 \leqslant \{x\} < 1$
+    5. $[x] + [y] \leqslant [x + y], \{x + y\} \leqslant \{x\} + \{y\}$
+    6. $[x + y] = \left\{\begin{aligned} & [x] + [y], & \{x\} + \{y\} < 1 \\ & [x] + [y] + 1, & \{x\} + \{y\} \geqslant 1 \end{aligned}\right.$
+    7. $[-x] = \left\{\begin{aligned} & -[x], & x\in Z \\ & -[x] - 1, & x \notin Z \end{aligned}\right.$
+    8. $\{x\} = \left\{\begin{aligned} & 0, & x\in Z \\ & 1 - \{x\}, & x\ \notin Z \end{aligned}\right.$
+2. 设 $a, b \in Z_+$，则在 $1, 2, \cdots, a$ 中能被 $b$ 整除的恰有 $\left[\dfrac{a}{b}\right]$ 个
+3. 在 $n!$ 的质因数分解中，质数 $p$ 的指数是 $\left[\dfrac{n}{p}\right] + \left[\dfrac{n}{p^2}\right] + \left[\dfrac{n}{p^3}\right] + \cdots = \sum_{r = 1}^{\infty} \left[\dfrac{n}{p_r}\right]$，进一步地，有 $n! = \prod_{p \leqslant n} p^{\sum_{r=1}^{\infty}\left[\frac{n}{p^r}\right]}$
+
+## 1.3 不定方程
+### 1.3.1 一次方程
+
+### 1.3.2 特殊不定方程
