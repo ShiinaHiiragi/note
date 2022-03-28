@@ -204,7 +204,7 @@
     1. $\mathrm{Thm}(\mathbf{HK}) \subseteq \mathbf{CL}$
     2. 可靠性的等价形式：如果 $\Gamma$ 是可满足的，则 $\Gamma$ 是 $\mathbf{HK}-$一致的
 7. 一致性：$\mathbf{HK}$ 是一致的
-    1. 如果公式集 $\Gamma$ 有 $\Gamma \not \vdash_\mathbf{HK} \bot$，则称 $\Gamma$ 是 $\mathbf{HK}-$一致的，否则 $\Gamma$ 是 $\mathbf{HK}-$不一致的
+    1. 如果公式集 $\Gamma$ 有 $\Gamma \nvdash_\mathbf{HK} \bot$，则称 $\Gamma$ 是 $\mathbf{HK}-$一致的，否则 $\Gamma$ 是 $\mathbf{HK}-$不一致的
     2. 如果公式集 $\Gamma$ 是 $\mathbf{HK}-$一致的，且对任何 $\mathbf{HK}-$一致的公式集 $\Delta$，如果 $\Gamma \subseteq \Delta$，那么 $\Gamma = \Delta$，则称 $\Gamma$ 是极大 $\mathbf{HK}-$一致的
     3. 对任何极大 $\mathbf{HK}-$一致公式集 $\Gamma$
         1. 如果 $\Gamma \vdash_\mathbf{HK} \alpha$，则 $\alpha \in \Gamma$
@@ -219,9 +219,9 @@
     2. 完全性的等价形式：如果 $\Gamma$ 是 $\mathbf{HK}-$一致的，则 $\Gamma$ 是可满足的
     3. 紧致性：一个公式集 $\Gamma$ 可满足当且仅当 $\Gamma$ 的每个有穷子集可满足
 9.  其他性质
-    1. $\text{Post}$ 完全性：$\mathbf{HK}$ 是 $\text{Post}$ 完全的，即如果 $\not \vdash_\mathbf{HK} \alpha$，那么在系统 $\mathbf{HK}$ 上增加 $\alpha$ 作为公理所得到的系统是不一致的
+    1. $\text{Post}$ 完全性：$\mathbf{HK}$ 是 $\text{Post}$ 完全的，即如果 $\nvdash_\mathbf{HK} \alpha$，那么在系统 $\mathbf{HK}$ 上增加 $\alpha$ 作为公理所得到的系统是不一致的
     2. 可判定性：$\mathbf{CL}$ 是可判定的，即存在一种能行的方法使得对任何公式 $\alpha$ 可在有穷步骤之内确定 $\alpha$ 是否属于 $\mathbf{CL}$，因此 $\mathrm{Thm}(\mathbf{HK})$ 是可判定的
-    3. 析取性质：$\mathbf{HK}$ 不具有析取性质，即存在公式 $\alpha \vee \beta$，有 $\vdash_\mathbf{HK} \alpha \vee \beta$ 且 $\not \vdash_\mathbf{HK} \alpha$ 且 $\not \vdash_\mathbf{HK} \beta$
+    3. 析取性质：$\mathbf{HK}$ 不具有析取性质，即存在公式 $\alpha \vee \beta$，有 $\vdash_\mathbf{HK} \alpha \vee \beta$ 且 $\nvdash_\mathbf{HK} \alpha$ 且 $\nvdash_\mathbf{HK} \beta$
     4. 插值性质：$\mathbf{HK}$ 具有插值性质，即对任何公式 $\alpha \to \beta$，如果 $\vdash_\mathbf{HK} \alpha \to \beta$，那么存在公式 $\gamma$ 使得 ① $\vdash_\mathbf{HK} \alpha \to \chi$；② $\vdash_\mathbf{HK} \chi \to \beta$；③ （变元条件）$\mathrm{var}(\chi) \subseteq \mathrm{var}(\alpha) \subseteq \mathrm{var}(\beta)$；公式$\chi$ 称为 $\alpha$ 与 $\beta$ 的插值
 
         !!! note "证明插值性质的引理"

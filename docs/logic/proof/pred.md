@@ -195,10 +195,10 @@
         $$
         \begin{aligned}
         & \mathfrak M \vDash R\overline t\textsf{ 当且仅当 } \overline t^\mathfrak M \in R^\mathfrak M \\
-        & \mathfrak M \not \vDash \bot \\
+        & \mathfrak M \nvDash \bot \\
         & \mathfrak M \vDash \alpha \wedge \beta \textsf{ 当且仅当 } \mathfrak M \vDash \alpha \textsf{ 且 } \mathfrak M \vDash \beta \\
         & \mathfrak M \vDash \alpha \vee \beta \textsf{ 当且仅当 } \mathfrak M \vDash \alpha \textsf{ 或 } \mathfrak M \vDash \beta \\
-        & \mathfrak M \vDash \alpha \to \beta \textsf{ 当且仅当 } \mathfrak M \not \vDash \alpha \textsf{ 或 } \mathfrak M \vDash \beta \\
+        & \mathfrak M \vDash \alpha \to \beta \textsf{ 当且仅当 } \mathfrak M \nvDash \alpha \textsf{ 或 } \mathfrak M \vDash \beta \\
         & \mathfrak M \vDash \exists x\alpha \textsf{ 当且仅当存在 } a \in A \textsf{ 使得 } (\mathfrak A, \sigma[a/x]) \vDash \alpha \\
         & \mathfrak M \vDash \forall x\alpha \textsf{ 当且仅当任意 } a \in A \textsf{ 都有 } (\mathfrak A, \sigma[a/x]) \vDash \alpha
         \end{aligned}
@@ -332,10 +332,10 @@
         }
         $$
 
-6. 一致性：如果公式集 $\Sigma$ 有 $\Sigma \not \vdash_{\mathbf H_1} \bot$，则称公式集 $\Sigma$ 是 $\mathbf H_1-$一致的，否则称 $\Sigma$ 是 $\mathbf H_1-$不一致的
+6. 一致性：如果公式集 $\Sigma$ 有 $\Sigma \nvdash_{\mathbf H_1} \bot$，则称公式集 $\Sigma$ 是 $\mathbf H_1-$一致的，否则称 $\Sigma$ 是 $\mathbf H_1-$不一致的
     1. 对任意公式集 $\Sigma \cup \{\alpha\}$ 有
-        1. $\Sigma \not \vdash_{\mathbf H_1} \neg \alpha$ 当且仅当 $\Sigma \cup \{\alpha\}$ 是 $\mathbf H_1-$一致的
-        2. $\Sigma \not \vdash_{\mathbf H_1} \alpha$ 当且仅当 $\Sigma \cup \{\neg \alpha\}$ 是 $\mathbf H_1-$一致的
+        1. $\Sigma \nvdash_{\mathbf H_1} \neg \alpha$ 当且仅当 $\Sigma \cup \{\alpha\}$ 是 $\mathbf H_1-$一致的
+        2. $\Sigma \nvdash_{\mathbf H_1} \alpha$ 当且仅当 $\Sigma \cup \{\neg \alpha\}$ 是 $\mathbf H_1-$一致的
     2. 一个公式集 $\Sigma$ 是 $\mathbf H_1$ 一致的当且仅当 $\Sigma$ 的每个有穷子集是 $\mathbf H_1$ 一致的
 7. 可靠性：如果 $\Sigma \vdash_{\mathbf H_1} \alpha$，那么 $\Sigma \vDash \alpha$
     1. 对任意公式 $\alpha, \beta$
@@ -354,12 +354,12 @@
             - 对任意原子公式 $\alpha$，$\mathfrak M^\Sigma \vDash \alpha$ 当且仅当 $\Sigma \vdash_{\mathbf H_1} \alpha$
             - 对任意公式 $\alpha$，$\mathfrak M^\Sigma \vDash \exists \overline x\alpha$ 当且仅当存在项序列 $\overline t$ 使得 $\mathfrak M^\Sigma \vDash \alpha(\overline t/\overline x)$
             - 对任意公式 $\alpha$，$\mathfrak M^\Sigma \vDash \forall \overline x\alpha$ 当且仅当对所有项序列 $\overline t$ 都有 $\mathfrak M^\Sigma \vDash \alpha(\overline t/\overline x)$
-    2. 如果公式集 $\Sigma$ 对任意公式 $\alpha$ 都有 $\Sigma \vdash_{\mathbf H_1} \alpha$ 或 $\Sigma \not \vdash_{\mathbf H_1} \neg \alpha$，则称公式集 $\Sigma$ 是完备的；如果公式集 $\Sigma$ 对每个公式 $\exists x\alpha \in \mathcal F(S)$ 都有 $t\in \mathcal T(S)$ 使得 $\Sigma \vdash_{\mathbf H_1} \exists x\alpha \to \alpha(t/x)$，则称 $\Sigma$ 是证据集
+    2. 如果公式集 $\Sigma$ 对任意公式 $\alpha$ 都有 $\Sigma \vdash_{\mathbf H_1} \alpha$ 或 $\Sigma \nvdash_{\mathbf H_1} \neg \alpha$，则称公式集 $\Sigma$ 是完备的；如果公式集 $\Sigma$ 对每个公式 $\exists x\alpha \in \mathcal F(S)$ 都有 $t\in \mathcal T(S)$ 使得 $\Sigma \vdash_{\mathbf H_1} \exists x\alpha \to \alpha(t/x)$，则称 $\Sigma$ 是证据集
         1. 设 $\Sigma$ 是 $\mathbf H_1-$一致的完备证据集，对任意公式集 $\Sigma \cup \{\alpha, \beta\}$，在 $\mathbf H_1$ 中成立
-            - $\Sigma \vdash \neg$ 当且仅当 $\Sigma \not \vdash \alpha$
+            - $\Sigma \vdash \neg$ 当且仅当 $\Sigma \nvdash \alpha$
             - $\Sigma \vdash \alpha \wedge \beta$ 当且仅当 $\Sigma \vdash \alpha$ 且 $\Sigma \vdash \beta$
             - $\Sigma \vdash \alpha \vee \beta$ 当且仅当 $\Sigma \vdash \alpha$ 或 $\Sigma \vdash \beta$
-            - $\Sigma \vdash \alpha \to \beta$ 当且仅当 $\Sigma \not \vdash \alpha$ 或 $\Sigma \vdash \beta$
+            - $\Sigma \vdash \alpha \to \beta$ 当且仅当 $\Sigma \nvdash \alpha$ 或 $\Sigma \vdash \beta$
             - $\Sigma \vdash \exists x\alpha$ 当且仅当存在 $t\in \mathcal T(S)$ 使得 $\Sigma \vdash \alpha(t/x)$
             - $\Sigma \vdash \forall x\alpha$ 当且仅当对所有 $t\in \mathcal T(S)$ 都有 $\Sigma \vdash \alpha(t/x)$
         2. 设 $\Sigma$ 是 $\mathbf H_1-$一致的完备证据集，对任意公式 $\alpha$，$\Sigma \vdash_{\mathbf H_1} \alpha$ 当且仅当 $\mathfrak M^\Sigma \vDash \alpha$
