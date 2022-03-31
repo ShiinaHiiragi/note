@@ -11,7 +11,7 @@
     2. 度量空间的实例
         1. 实数空间：对于实数集合 $R$，定义 $\rho: R\times R\to R$ 有 $\forall x, y\in R: \rho(x, y)=|x-y|$，这个度量称之为 $R$ 的通常度量
         2. $n$ 维 $\text{Euclid}$ 空间：对于 $R^n$．定义 $\rho: R^n\times R^n \to R$ 有 $\forall x, y\in R: \rho(x, y)=\sqrt{\sum_{i=1}^n(x_i-y_i)^2}$，这个度量称为 $R^n$ 的通常度量
-        3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)|\sum_{i=1}^\infty x_i^2<\infty, x_i\in R, i\in Z_+\right\}$，定义 $\rho: H\times H\to R$ 有 $\forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)=\sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}$．容易验证这是良定义，这个度量称之为 $H$ 的通常度量
+        3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)|\sum_{i=1}^\infty x_i^2<\infty, x_i\in R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有 $\forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)=\sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}$．容易验证这是良定义，这个度量称之为 $H$ 的通常度量
         4. 离散度量：设 $(X, \rho)$ 是一个度量空间，若 $\forall x\in X\ \exists \delta_x>0: \rho(x, y)>\delta_x$ 对于任何 $y\in X, y\neq x$ 成立，则称 $(X, \rho)$ 是离散的，或称 $\rho$ 是 $X$ 的一个离散度量
 3. 球形邻域：设 $(X, \rho)$ 是一个度量空间，$x\in X$，对于任意给定的实数 $\varepsilon >0$，集合 $B(x, \varepsilon) = B_\varepsilon(x) = \{y\in X|\rho(x, y)<\varepsilon\}$ 为一个以 $x$ 为中心，以 $\varepsilon$ 为半径的球形领域，或称为 $x$ 的一个 $\varepsilon-$邻域
     1. 每一点 $x\in X$ 至少有一个球形领域，并且点 $x$ 属于它的每一个球形邻域
@@ -46,7 +46,7 @@
         4. $\forall B\subseteq X: f^{-1}[\overline B]\supset \overline{f^{-1}[B]}$
 
 ### 1.1.2 完备度量空间
-1. $\text{Cauchy}$ 序列：设 $(X, \rho)$ 是一个度量空间，$X$ 中的一个序列 $\{x_i\}_{i\in Z_+}$．若对于任意给定的实数 $\varepsilon >0$，存在整数 $N>0$，使得当 $i, j>N$ 时，有 $\rho(x_i, x_j)<\varepsilon$，则称序列 $\{x_i\}_{i\in Z_+}$ 是一个 $\text{Cauchy}$ 序列
+1. $\text{Cauchy}$ 序列：设 $(X, \rho)$ 是一个度量空间，$X$ 中的一个序列 $\{x_i\}_{i\in \mathbf Z_+}$．若对于任意给定的实数 $\varepsilon >0$，存在整数 $N>0$，使得当 $i, j>N$ 时，有 $\rho(x_i, x_j)<\varepsilon$，则称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 是一个 $\text{Cauchy}$ 序列
 2. 完备度量空间：$X$ 中的每一个 $\text{Cauchy}$ 序列都收敛的度量空间 $(X, \rho)$．度量空间的每一个收敛序列都是 $\text{Cauchy}$ 序列，反之不一定成立
     1. 完备度量空间中的每一个闭的度量子空间都是完备度量空间
     2. $n$ 维 $\text{Euclid}$ 空间（包括实数空间）$R$ 和 $\text{Hilbert}$ 空间 $H$ 都是完备度量空间
@@ -60,8 +60,8 @@
     2. 每一个度量空间的任意两个完备化同距
 5. 完全有界：设 $(X, \rho)$ 是一个度量空间，$\varepsilon>0$ 是一个实数．$X$ 的有限子集 $A$ 称为一个 $\varepsilon-$网，若对于任何 $x\in X$ 有 $\rho(x, A)<\varepsilon$．若对于任何实数 $\varepsilon>0$，$X$ 有一个 $\varepsilon-$网，则称度量空间是完全有界的
     1. 设 $(X, \rho)$ 是一个度量空间，则 $(X, \rho)$ 是紧的当且仅当 $(X, \rho)$ 是一个完全有界的完备度量空间
-    2. 设 $(X, \rho)$ 是一个完备度量空间，若由 $X$ 的子集构成的一个序列 $\{E_1, E_2, \cdots\}$ 满足条件 $E_1\supset E_2\supset \cdots \wedge \lim_{i\to \infty} \mathrm{diam}(E_i)=0$，其中 $\mathrm{diam}(E_i)$ 表示 $E_i$ 的直径，则 $\bigcap_{i\in Z_+}E^-_i$ 是一个单点集
-    3. $\text{Baire}$ 定理：设 $X$ 是一个完备的度量空间，若 $G_1, G_2, \cdots$ 是 $X$ 中的可数个稠密的开集，则交集 $\bigcap_{i\in Z_+} G_i$ 是 $X$ 中的一个稠密子集
+    2. 设 $(X, \rho)$ 是一个完备度量空间，若由 $X$ 的子集构成的一个序列 $\{E_1, E_2, \cdots\}$ 满足条件 $E_1\supset E_2\supset \cdots \wedge \lim_{i\to \infty} \mathrm{diam}(E_i)=0$，其中 $\mathrm{diam}(E_i)$ 表示 $E_i$ 的直径，则 $\bigcap_{i\in \mathbf Z_+}E^-_i$ 是一个单点集
+    3. $\text{Baire}$ 定理：设 $X$ 是一个完备的度量空间，若 $G_1, G_2, \cdots$ 是 $X$ 中的可数个稠密的开集，则交集 $\bigcap_{i\in \mathbf Z_+} G_i$ 是 $X$ 中的一个稠密子集
 
         !!! note "$\text{Baire}$ 定理的其他表述形式"
             设 $X$ 是一个拓扑空间，若 $A^{-o}=\varnothing$，则称 $A$ 为 $X$ 的一个无处稠密子集．若 $X$ 的子集 $F$ 可以表示为 $X$ 中可数个无处稠密的子集之并，则称 $F$ 为第一范畴集，若 $X$ 的子集不是第一范畴集，则称之为第二范畴集
@@ -134,7 +134,7 @@
         !!! note "$\text{Cantor}$ 集"
             在实数空间 $R$ 中，定义 $f_1, f_2: R\to R$ 使得对于任意 $t\in R$ 有 $f_1(t)=\dfrac{t}{3}, f_2(t)=\dfrac{t+2}{3}$，则可以验证 $f_1, f_2$ 均为同胚，即任意开集 $U\subseteq R$，其 $f_1-$像与 $f_2-$像都是开集
 
-            定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1[A_{n-1}]\cup f_2[A_{n-1}](n>1), A=\bigcup_{n\in Z_+}A_n$，称集合 $C=[0, 1]-A$ 为 $\text{Cantor}$ 集或标准 $\text{Cantor}$ 三分集，可以验证 $C$ 是一个闭集
+            定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1[A_{n-1}]\cup f_2[A_{n-1}](n>1), A=\bigcup_{n\in \mathbf Z_+}A_n$，称集合 $C=[0, 1]-A$ 为 $\text{Cantor}$ 集或标准 $\text{Cantor}$ 三分集，可以验证 $C$ 是一个闭集
 
 4. 闭包：设 $X$ 是一个拓扑空间，$A\subseteq X$，称集合 $A\cup d(A)$ 为集合 $A$ 的闭包，记作 $\overline A$ 或 $A^-$
     1. $x\in \overline A$ 当且仅当对于 $x$ 的任何一个邻域 $U$ 有 $U\cap A\neq \varnothing$
@@ -177,14 +177,14 @@
     1. 一个度量空间的所有球形邻域构成集族是这个度量空间作为拓扑空间时的一个基
     2. 设 $\mathscr B$ 是拓扑空间 $(X, \mathscr T)$ 的一个开集族，则 $\mathscr B$ 是拓扑空间 $X$ 的一个基当且仅当对于每一个 $x\in X$ 和 $x$ 的每一个邻域 $U_x$，存在 $V_x\in \mathscr B$ 使得 $x\in V_x\subseteq U_x$
     3. 设 $X$ 是一个集合，$\mathscr B\subseteq \mathcal P(X)$，若 $\bigcup_{B\in \mathscr B}B=X$，且若 $B_1, B_2\in \mathscr B$，则对于任何 $x\in B_1\cap B_2$，存在 $B\in \mathscr B$ 使得 $x\in B\subseteq B_1\cap B_2$，则 $X$ 的子集族 $\mathscr T=\left\{U\subseteq X|\exists \mathscr B_U\subseteq \mathscr B: U=\bigcup_{B\in \mathscr B_U} B\right\}$ 是集合 $X$ 的唯一以 $\mathscr B$ 为基的拓扑，反之也成立
-2. 子基：设 $(X, \mathscr T)$ 是一个拓扑空间，$\mathscr S$ 是 $\mathscr T$ 的一个子族，若 $\mathscr S$ 的所有非空有限子族之交构成的集族 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n|S_i\in \mathscr S, i=1,2,\cdots,n;n\in Z_+\}$ 是拓扑 $\mathscr T$ 的一个基，则称集族 $\mathscr S$ 是拓扑 $\mathscr T$ 的一个子基
-    1. 设 $X$ 是一个集合，$\mathscr S\subseteq \mathscr T(X)$，若 $X=\bigcup_{S\in \mathscr S}S$，则 $X$ 有唯一一个拓扑 $\mathscr T$ 以 $\mathscr S$ 为子基，且若令 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n|S_i\in \mathscr S, i=1,2,\cdots,n;n\in Z_+\}$，则 $\mathscr T=\left\{\bigcup_{B\in \mathscr B_1}B|\mathscr B_1\subseteq \mathscr B\right\}$
+2. 子基：设 $(X, \mathscr T)$ 是一个拓扑空间，$\mathscr S$ 是 $\mathscr T$ 的一个子族，若 $\mathscr S$ 的所有非空有限子族之交构成的集族 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n|S_i\in \mathscr S, i=1,2,\cdots,n;n\in \mathbf Z_+\}$ 是拓扑 $\mathscr T$ 的一个基，则称集族 $\mathscr S$ 是拓扑 $\mathscr T$ 的一个子基
+    1. 设 $X$ 是一个集合，$\mathscr S\subseteq \mathscr T(X)$，若 $X=\bigcup_{S\in \mathscr S}S$，则 $X$ 有唯一一个拓扑 $\mathscr T$ 以 $\mathscr S$ 为子基，且若令 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n|S_i\in \mathscr S, i=1,2,\cdots,n;n\in \mathbf Z_+\}$，则 $\mathscr T=\left\{\bigcup_{B\in \mathscr B_1}B|\mathscr B_1\subseteq \mathscr B\right\}$
     2. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则以下条件等价
         1. $f$ 连续
         2. 拓扑空间 $Y$ 有一个基 $\mathscr B$，使得对于任何一个 $B\in \mathscr B$，原像 $f^{-1}[B]$ 是 $X$ 中的一个开集
         3. $Y$ 有一个子基 $\mathscr S$，使得对于任何一个 $S\in \mathscr S$，原像 $f^{-1}[S]$ 是 $X$ 中的一个开集
 3. 邻域基：设 $X$ 是一个拓扑空间，$x\in X$．记 $\mathscr U_x$ 为 $x$ 的邻域系，若 $\mathscr U_x$ 的子族 $\mathscr V_x$ 满足对于任何 $U\in \mathscr U_x$，存在 $V\in \mathscr V_x$ 使得 $V\subseteq U$，则称 $\mathscr V_x$ 是点 $x$ 的邻域系的一个子集，或简称为点 $x$ 的一个邻域基
-    1. 若 $\mathscr U_x$ 的子族 $\mathscr W_x$ 有 $\mathscr W_x$ 的每一个非空有限子族之交的全体构成的集族 $\{W_1 \cap W_2 \cap \cdots \cap W_n|W_i\in \mathscr W_x, i=1, 2, \cdots, n; n\in Z_+\}$ 是 $\mathscr U_x$ 的一个邻域基，则称 $\mathscr W_x$ 是点 $x$ 的邻域系的一个子基，或称为点 $x$ 的一个邻域子基
+    1. 若 $\mathscr U_x$ 的子族 $\mathscr W_x$ 有 $\mathscr W_x$ 的每一个非空有限子族之交的全体构成的集族 $\{W_1 \cap W_2 \cap \cdots \cap W_n|W_i\in \mathscr W_x, i=1, 2, \cdots, n; n\in \mathbf Z_+\}$ 是 $\mathscr U_x$ 的一个邻域基，则称 $\mathscr W_x$ 是点 $x$ 的邻域系的一个子基，或称为点 $x$ 的一个邻域子基
     2. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y, x\in X$，则以下条件等价
         1. $f$ 在点 $x$ 处连续
         2. $f(x)$ 有一个邻域基 $\mathscr V_{f(x)}$ 使得对于任何 $V\in \mathscr V_{f(x)}$，原像 $f^{-1}[V]$ 是 $x$ 的一个邻域
@@ -194,21 +194,21 @@
         2. 若 $\mathscr S$ 是 $X$ 的一个子基，则 $\mathscr S_x=\{S\in \mathscr S|x\in S\}$ 是点 $x$ 的一个邻域子基
 
 ### 1.2.4 拓扑空间中的序列
-1. 序列：设 $X$ 是一个拓扑空间，每一个映射 $S: Z_+\to X$ 称作 $X$ 中的一个序列，将序列 $S$ 记作 $\{x_i\}_{i\in Z_+}$ 或 $\{x_1, x_2, \cdots\}$，其中 $x_i=S(i), i\in Z_+$
-    1. $\{x_i\}_{i\in Z_+}$ 可简记为 $\{x_i\}$
-    2. 集合 $\{x_i|i\in Z_+\}$ 可为有限集，当其为单点集时，称序列 $\{x_i\}_{i\in Z_+}$ 为一个常值序列
-2. 极限点：设 $\{x_i\}_{i\in Z_+}$ 是拓扑空间中的一个序列，$x\in X$．若对于 $x$ 的任意邻域 $U$，存在 $M\in Z$ 使得当 $i>M$ 时有 $x_i\in U$，则称点 $x$ 是序列 $\{x_i\}_{i\in Z_+}$ 的一个极限点，也称序列 $\{x_i\}_{i\in Z_+}$ 收敛于 $x$，记作 $\lim_{i\to \infty}x_i=x$ 或 $x_i\to x(i\to \infty)$
+1. 序列：设 $X$ 是一个拓扑空间，每一个映射 $S: Z_+\to X$ 称作 $X$ 中的一个序列，将序列 $S$ 记作 $\{x_i\}_{i\in \mathbf Z_+}$ 或 $\{x_1, x_2, \cdots\}$，其中 $x_i=S(i), i\in \mathbf Z_+$
+    1. $\{x_i\}_{i\in \mathbf Z_+}$ 可简记为 $\{x_i\}$
+    2. 集合 $\{x_i|i\in \mathbf Z_+\}$ 可为有限集，当其为单点集时，称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 为一个常值序列
+2. 极限点：设 $\{x_i\}_{i\in \mathbf Z_+}$ 是拓扑空间中的一个序列，$x\in X$．若对于 $x$ 的任意邻域 $U$，存在 $M\in Z$ 使得当 $i>M$ 时有 $x_i\in U$，则称点 $x$ 是序列 $\{x_i\}_{i\in \mathbf Z_+}$ 的一个极限点，也称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x$，记作 $\lim_{i\to \infty}x_i=x$ 或 $x_i\to x(i\to \infty)$
     1. 若序列至少有一个极限，则称这个序列是一个收敛序列
-    2. 设 $X$ 是一个拓扑空间，$S, S_1:Z_+ \to X$ 是 $X$ 中的两个序列，若存在一个映射 $N: Z_+\to Z_+$ 有 $\forall n_1, n_2\in Z_+: n_1<n_2 \to N(n_1)<N(n_2)$，使得 $S_1=S\circ N$，则称序列 $S_1$ 是序列 $S$ 的一个子序列
+    2. 设 $X$ 是一个拓扑空间，$S, S_1:Z_+ \to X$ 是 $X$ 中的两个序列，若存在一个映射 $N: Z_+\to Z_+$ 有 $\forall n_1, n_2\in \mathbf Z_+: n_1<n_2 \to N(n_1)<N(n_2)$，使得 $S_1=S\circ N$，则称序列 $S_1$ 是序列 $S$ 的一个子序列
 3. 序列的性质
-    1. 设 $\{x_i\}_{i\in Z_+}$ 是拓扑空间 $X$ 中的一个序列
-        1. 若 $\{x_i\}_{i\in Z_+}$ 是一个常值序列，则 $\lim_{i\to \infty} x_i=x$
-        2. 若序列 $\{x_i\}_{i\in Z_+}$ 收敛于 $x\in X$，则序列 $\{x_i\}_{i\in Z_+}$ 的每一个子序列也收敛于 $x$
-    2. 设 $X$ 是一个拓扑空间，$A\subseteq X, x\in X$．若 $\forall i\in Z_+: x_i\in A_\{x\}$，且 $\lim_{i\to \infty}x_i=x$，则 $x$ 是集合 $A$ 的一个凝聚点．反之不成立
+    1. 设 $\{x_i\}_{i\in \mathbf Z_+}$ 是拓扑空间 $X$ 中的一个序列
+        1. 若 $\{x_i\}_{i\in \mathbf Z_+}$ 是一个常值序列，则 $\lim_{i\to \infty} x_i=x$
+        2. 若序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x\in X$，则序列 $\{x_i\}_{i\in \mathbf Z_+}$ 的每一个子序列也收敛于 $x$
+    2. 设 $X$ 是一个拓扑空间，$A\subseteq X, x\in X$．若 $\forall i\in \mathbf Z_+: x_i\in A_\{x\}$，且 $\lim_{i\to \infty}x_i=x$，则 $x$ 是集合 $A$ 的一个凝聚点．反之不成立
     3. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则以下命题成立，反之不成立
-        1. 若 $f$ 在点 $x_0\in X$ 处连续，则 $X$ 中的一个序列 $\{x_i\}_{i\in Z_+}$ 收敛于 $x_0 \to Y$ 中序列 $\{f(x_i)\}_{i\in Z_+}$ 收敛于 $f(x_0)$
-        2. 若 $f$ 连续，则 $X$ 中的一个序列 $\{x_i\}_{i\in Z_+}$ 收敛于 $x\in X \to Y$ 中的序列 $\{f(x_i)\}_{i\in Z_+}$ 收敛于 $f(x)$
-4. 度量描述序列收敛：设 $(X, \rho)$ 是一个度量空间，$\{x_i\}_{i\in Z_+}$ 是 $X$ 中的一个序列，$x\in X$，则以下条件等价
+        1. 若 $f$ 在点 $x_0\in X$ 处连续，则 $X$ 中的一个序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x_0 \to Y$ 中序列 $\{f(x_i)\}_{i\in \mathbf Z_+}$ 收敛于 $f(x_0)$
+        2. 若 $f$ 连续，则 $X$ 中的一个序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x\in X \to Y$ 中的序列 $\{f(x_i)\}_{i\in \mathbf Z_+}$ 收敛于 $f(x)$
+4. 度量描述序列收敛：设 $(X, \rho)$ 是一个度量空间，$\{x_i\}_{i\in \mathbf Z_+}$ 是 $X$ 中的一个序列，$x\in X$，则以下条件等价
     1. $\lim_{i\to \infty} x_i=x$
-    2. $\forall \varepsilon>0\ \exists N\in Z_+\ \forall i>N: \rho(x_i, x)<\varepsilon$
+    2. $\forall \varepsilon>0\ \exists N\in \mathbf Z_+\ \forall i>N: \rho(x_i, x)<\varepsilon$
     3. $\lim_{i\to \infty} \rho(x_i, x)=0$

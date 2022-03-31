@@ -19,7 +19,7 @@
 3. 算术基本定理：任何大于 $1$ 的整数 $a$ 可以唯一地表示成 $a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}$，其中 $p_1, p_2, \cdots, p_n$ 是质数且 $p_1 < p_2 < \cdots < p_n$，$\alpha_1, \alpha_2, \cdots, \alpha_n$ 是正整数
     1. 已知 $a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}$ 是 $a$ 的标准分解式，则 $a$ 的不同的正因数个数为 $(1 + \alpha_1) (1 + \alpha_2) \cdots (1 + \alpha_n)$
     2. 设 $a$ 是一个大于 $1$ 的整数且 $a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}$，$\alpha_i \ (i = 1, 2, \cdots, n)$ 是正整数，则 $\alpha$ 的正因数可以表示成 $d = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant \beta_i \geqslant 0, i = 1, 2, \cdots, n)$ 的形式
-    3. 设 $a, b \in Z_+$ 且 $\alpha = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}, b = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant 0, \beta \geqslant 0; i = 1, 2, \cdots, n)$，则 $(a, b) = p_1^{\gamma_1} p_2^{\gamma_2} \cdots p_n^{\gamma_n}$ 且 $[a, b] = p_1^{\delta_1} p_2^{\delta_2} \cdots p_n^{\delta_n}$，其中 $\gamma_i = \min\{\alpha_i, \beta_i\}, \delta_i = \max\{\alpha_i, \beta_i\} \ (i = 1, 2, \cdots, n)$
+    3. 设 $a, b \in \mathbf Z_+$ 且 $\alpha = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}, b = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant 0, \beta \geqslant 0; i = 1, 2, \cdots, n)$，则 $(a, b) = p_1^{\gamma_1} p_2^{\gamma_2} \cdots p_n^{\gamma_n}$ 且 $[a, b] = p_1^{\delta_1} p_2^{\delta_2} \cdots p_n^{\delta_n}$，其中 $\gamma_i = \min\{\alpha_i, \beta_i\}, \delta_i = \max\{\alpha_i, \beta_i\} \ (i = 1, 2, \cdots, n)$
 
 ### 1.1.2 因数与倍数
 1. 因数与倍数：设 $a, b\in Z$ 且 $b \mid a$，则称 $b$ 是 $a$ 的因数，此时称 $a$ 是 $b$ 的倍数
@@ -89,7 +89,7 @@
     6. $[x + y] = \left\{\begin{aligned} & [x] + [y], & \{x\} + \{y\} < 1 \\ & [x] + [y] + 1, & \{x\} + \{y\} \geqslant 1 \end{aligned}\right.$
     7. $[-x] = \left\{\begin{aligned} & -[x], & x\in Z \\ & -[x] - 1, & x \notin Z \end{aligned}\right.$
     8. $\{x\} = \left\{\begin{aligned} & 0, & x\in Z \\ & 1 - \{x\}, & x\ \notin Z \end{aligned}\right.$
-2. 设 $a, b \in Z_+$，则在 $1, 2, \cdots, a$ 中能被 $b$ 整除的恰有 $\left[\dfrac{a}{b}\right]$ 个
+2. 设 $a, b \in \mathbf Z_+$，则在 $1, 2, \cdots, a$ 中能被 $b$ 整除的恰有 $\left[\dfrac{a}{b}\right]$ 个
 3. 在 $n!$ 的质因数分解中，质数 $p$ 的指数是 $\left[\dfrac{n}{p}\right] + \left[\dfrac{n}{p^2}\right] + \left[\dfrac{n}{p^3}\right] + \cdots = \sum_{r = 1}^{\infty} \left[\dfrac{n}{p_r}\right]$，进一步地，有 $n! = \prod_{p \leqslant n} p^{\sum_{r=1}^{\infty}\left[\frac{n}{p^r}\right]}$
 
 ## 1.3 不定方程
