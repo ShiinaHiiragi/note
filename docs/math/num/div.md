@@ -93,6 +93,31 @@
 3. 在 $n!$ 的质因数分解中，质数 $p$ 的指数是 $\left[\dfrac{n}{p}\right] + \left[\dfrac{n}{p^2}\right] + \left[\dfrac{n}{p^3}\right] + \cdots = \sum_{r = 1}^{\infty} \left[\dfrac{n}{p_r}\right]$，进一步地，有 $n! = \prod_{p \leqslant n} p^{\sum_{r=1}^{\infty}\left[\frac{n}{p^r}\right]}$
 
 ## 1.3 不定方程
-### 1.3.1 一次方程
 
-### 1.3.2 特殊不定方程
+1. 不定方程：方程的个数少于未知数的个数且未知数又必须为整数的方程（组）
+2. 二元一次不定方程：设 $a, b, c \in Z$ 且 $a, b \neq 0$，任何二元一次方程可以写成 $ax + by = c$，其中 $x, y \in Z$
+    1. 设 $a, b \in Z - \{0\}, c \in Z$，方程 $ax + by = c$ 有整数解当且仅当 $(a, b) | c$
+    2. 若 $(a, b) = 1$，如果 $(x_0, y_0)$ 是方程 $ax + by = c$ 的一组解，则它所有整数解都可以写成
+
+        $$
+        \left\{\begin{aligned}
+        & x = x_0 + bt \\
+        & y = y_0 - at
+        \end{aligned}\right.
+        $$
+
+        其中 $t$ 为任意整数
+
+    3. 设 $(a, b) = d, a = a_1d, b = b_1d$，如果 $(x_0, y_0)$ 是方程 $ax + by = c$ 的一组解，则它所有的整数解都可以写作
+
+        $$
+        \left\{\begin{aligned}
+        & x = x_0 + b_1t \\
+        & y = y_0 - a_1t
+        \end{aligned}\right.
+        $$
+
+        其中 $t$ 为任意整数
+
+3. 多元一次不定方程：设 $n$ 是大于 $2$ 的正整数，$a_1, a_2, \cdots, a_n$ 是非零整数，$c$ 是整数．则任何 $n$ 元一次方程都可以写作 $a_1x_1 + a_2x_2 + \cdots + a_nx_n = c$ 的形式，其中 $x_1, x_2, \cdots, x_n$ 是未知数
+    - 已知 $a_1, a_2, \cdots, a_n$ 是非零整数，$c$ 是整数，若 $d = (a_1, a_2, \cdots, a_n)$，则方程 $a_1x_1 + a_2x_2 + \cdots + a_nx_n$ 有整数解当且仅当 $d | c$

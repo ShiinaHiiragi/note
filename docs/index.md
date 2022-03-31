@@ -6,9 +6,9 @@
 全站以 `mkdocs-material` 作为框架，使用中文作为描述语言，所有源文件在 GitHub 可见。标点符号的使用基本符合普遍规则，绝大部分不符合规范的排版均为有意编排。
 
 !!! info "此项目仍未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：分析哲学 · 演绎与证成 </label>
+    <label> 现在进度：初等数论 · 不定方程 </label>
     <div class="progress-container">
-        <div class="progress-percentage" style="width: 25%;"> 24.50% </div>
+        <div class="progress-percentage" style="width: 23%;"> 23.37% </div>
     </div>
 
 ## 参考文献
@@ -68,6 +68,7 @@ const entryList = [
     "[英]Julian Baggini, [美]Peter S. Fosl.简单的哲学[M]. 陶涛,译. 中国人民大学出版社:北京, 2016:1-266.",
     // "Robin Turner,Nick Nicholas.Lojban For Beginners[EB/OL].",
     // PART II
+    // "赵毅衡.符号学：原理与推演[M]. 南京大学出版社:南京, 2016:1-370.",
     "蔡曙山,邹崇理.自然语言形式理论研究[M]. 人民出版社:北京, 2010:1-604.",
     "陈波.逻辑哲学[M]. 北京大学出版社:北京, 2006:1-364.",
     // "黄敏.分析哲学导论[M]. 中山大学出版社:广州, 2009:1-362.",
