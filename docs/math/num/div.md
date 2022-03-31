@@ -5,7 +5,7 @@
 1. 整除：设 $a, b \in Z$ 且 $b \neq 0$．如果存在整数 $c$ 使得 $a = bc$ 成立，则称 $b$ 整除 $a$，记作 $b \mid a$；如果不存在这样的整数 $c$，则称 $b$ 不整除 $a$，记作 $b \nmid a$
     1. $a \mid b \to \pm a \mid \pm b$
     2. $a \mid b \wedge b \mid c \to a \mid c$
-    3. $b \mid a_i \ (i = 1, 2, \cdots, k) \to b | a_1x_1 + a_2x_2 + \cdots + a_kx_k$，其中 $x_i \in Z$
+    3. $b \mid a_i \ (i = 1, 2, \cdots, k) \to b \mid a_1x_1 + a_2x_2 + \cdots + a_kx_k$，其中 $x_i \in Z$
     4. $b \mid a \to bc \mid ac$
     5. $b \mid a, a \neq 0 \to |b| \leqslant |a|$
     6. $b \mid a \wedge |a| < |b| \to a = 0$
@@ -21,7 +21,7 @@
     2. 设 $a$ 是一个大于 $1$ 的整数且 $a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}$，$\alpha_i \ (i = 1, 2, \cdots, n)$ 是正整数，则 $\alpha$ 的正因数可以表示成 $d = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant \beta_i \geqslant 0, i = 1, 2, \cdots, n)$ 的形式
     3. 设 $a, b \in Z_+$ 且 $\alpha = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}, b = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant 0, \beta \geqslant 0; i = 1, 2, \cdots, n)$，则 $(a, b) = p_1^{\gamma_1} p_2^{\gamma_2} \cdots p_n^{\gamma_n}$ 且 $[a, b] = p_1^{\delta_1} p_2^{\delta_2} \cdots p_n^{\delta_n}$，其中 $\gamma_i = \min\{\alpha_i, \beta_i\}, \delta_i = \max\{\alpha_i, \beta_i\} \ (i = 1, 2, \cdots, n)$
 
-### 1.1.2 公因数与公倍数
+### 1.1.2 因数与倍数
 1. 因数与倍数：设 $a, b\in Z$ 且 $b \mid a$，则称 $b$ 是 $a$ 的因数，此时称 $a$ 是 $b$ 的倍数
 
     !!! note "平凡因数"
@@ -32,7 +32,7 @@
         1. $(a_1, a_2, \cdots, a_k) = (|a_1|, |a_2|, \cdots, |a_k|)$
         2. $(a, 1) = 1, (a, 0) = |a|, (a, a) = |a|$
         3. $(a, b) = (b, a)$
-        4. 若 $p$ 是质数，$a$ 是整数，则 $(p, a) = 1$ 或 $p | a$
+        4. 若 $p$ 是质数，$a$ 是整数，则 $(p, a) = 1$ 或 $p \mid a$
         5. 若 $a = pb + r$，则 $(a, b) = (b, r)$
     2. 若 $a, b \ (b > 0)$ 是任意两个整数，且有
 
@@ -96,7 +96,7 @@
 
 1. 不定方程：方程的个数少于未知数的个数且未知数又必须为整数的方程（组）
 2. 二元一次不定方程：设 $a, b, c \in Z$ 且 $a, b \neq 0$，任何二元一次方程可以写成 $ax + by = c$，其中 $x, y \in Z$
-    1. 设 $a, b \in Z - \{0\}, c \in Z$，方程 $ax + by = c$ 有整数解当且仅当 $(a, b) | c$
+    1. 设 $a, b \in Z - \{0\}, c \in Z$，方程 $ax + by = c$ 有整数解当且仅当 $(a, b) \mid c$
     2. 若 $(a, b) = 1$，如果 $(x_0, y_0)$ 是方程 $ax + by = c$ 的一组解，则它所有整数解都可以写成
 
         $$
@@ -120,4 +120,36 @@
         其中 $t$ 为任意整数
 
 3. 多元一次不定方程：设 $n$ 是大于 $2$ 的正整数，$a_1, a_2, \cdots, a_n$ 是非零整数，$c$ 是整数．则任何 $n$ 元一次方程都可以写作 $a_1x_1 + a_2x_2 + \cdots + a_nx_n = c$ 的形式，其中 $x_1, x_2, \cdots, x_n$ 是未知数
-    - 已知 $a_1, a_2, \cdots, a_n$ 是非零整数，$c$ 是整数，若 $d = (a_1, a_2, \cdots, a_n)$，则方程 $a_1x_1 + a_2x_2 + \cdots + a_nx_n$ 有整数解当且仅当 $d | c$
+    - 已知 $a_1, a_2, \cdots, a_n$ 是非零整数，$c$ 是整数，若 $d = (a_1, a_2, \cdots, a_n)$，则方程 $a_1x_1 + a_2x_2 + \cdots + a_nx_n$ 有整数解当且仅当 $d \mid c$
+4. 二次方程 $x^2 + y^2 = z^2$ 的整数解
+    1. 满足 $xyz = 0$ 的解称为显然解，例如 $(x, y, z) = (0, 0, 0)$；满足 $x > 0, y > 0, z > 0$ 且 $(x, y, z) = 1$ 的解称为本原解
+    2. 若 $(x, y, z)$ 是方程 $x^2 + y^2 = z^2$ 的本原解
+        1. $x$ 与 $y$ 具有不同的奇偶性
+        2. $x$ 与 $y$ 中有且仅有一个数能被 $3$ 整除
+        3. $x$ 与 $y$ 中有且仅有一个数能被 $4$ 整除
+        4. $x$ 与 $y$ 中有且仅有一个数能被 $5$ 整除
+    3. 不定方程 $xy = z^2$ 满足条件 $x > 0, y > 0, z > 0$ 且 $(x, y) = 1$ 的一切正整数解可以写作
+
+        $$
+        \left\{\begin{aligned}
+        & x = a^2 \\
+        & y = b^2 \\
+        & z = ab
+        \end{aligned}\right.
+        $$
+
+        其中，$a > 0, b > 0$ 且 $(a, b) = 1$
+
+    4. 不定方程 $x^2 + y^2 = z^2$ 适合 $x > 0, y > 0, z > 0, (x, y) = 1$ 且 $2 \mid x$ 的一切正整数解可以写作
+
+        $$
+        \left\{\begin{aligned}
+        & x = 2ab \\
+        & y = a^2 - b^2 \\
+        & z = a^2 + b^2
+        \end{aligned}\right.
+        $$
+
+        其中 $a, b$ 一奇一偶，$a > b > 0$ 且 $(a, b) = 1$
+
+    5. 单位圆周上坐标是有理数的点（有理点）可以写作 $\left(\pm \dfrac{2ab}{a^2 + b^2}, \pm \dfrac{a^2 - b^2}{a^2 + b^2}\right)$ 或 $\left(\pm \dfrac{a^2 - b^2}{a^2 + b^2}, \pm \dfrac{2ab}{a^2 + b^2}\right)$，其中 $a, b$ 是不全为零的整数
