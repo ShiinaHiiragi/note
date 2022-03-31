@@ -95,6 +95,7 @@ nav:
   - 数学结构:
     - 二、初等数论:
       - 1 整除与不定方程: math/num/div.md
+      - 2 同余理论: math/num/cong.md
     - 三、点集拓扑:
       - 1 拓扑空间: math/top/space.md
       - 2 构造空间: math/top/construct.md
