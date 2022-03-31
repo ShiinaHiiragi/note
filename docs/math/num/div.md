@@ -2,10 +2,10 @@
 
 ## 1.1 整除理论
 ### 1.1.1 算术基本定理
-1. 整除：设 $a, b \in Z$ 且 $b \neq 0$．如果存在整数 $c$ 使得 $a = bc$ 成立，则称 $b$ 整除 $a$，记作 $b \mid a$；如果不存在这样的整数 $c$，则称 $b$ 不整除 $a$，记作 $b \nmid a$
+1. 整除：设 $a, b \in \mathbf Z$ 且 $b \neq 0$．如果存在整数 $c$ 使得 $a = bc$ 成立，则称 $b$ 整除 $a$，记作 $b \mid a$；如果不存在这样的整数 $c$，则称 $b$ 不整除 $a$，记作 $b \nmid a$
     1. $a \mid b \to \pm a \mid \pm b$
     2. $a \mid b \wedge b \mid c \to a \mid c$
-    3. $b \mid a_i \ (i = 1, 2, \cdots, k) \to b \mid a_1x_1 + a_2x_2 + \cdots + a_kx_k$，其中 $x_i \in Z$
+    3. $b \mid a_i \ (i = 1, 2, \cdots, k) \to b \mid a_1x_1 + a_2x_2 + \cdots + a_kx_k$，其中 $x_i \in \mathbf Z$
     4. $b \mid a \to bc \mid ac$
     5. $b \mid a, a \neq 0 \to |b| \leqslant |a|$
     6. $b \mid a \wedge |a| < |b| \to a = 0$
@@ -22,10 +22,10 @@
     3. 设 $a, b \in \mathbf Z_+$ 且 $\alpha = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}, b = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant 0, \beta \geqslant 0; i = 1, 2, \cdots, n)$，则 $(a, b) = p_1^{\gamma_1} p_2^{\gamma_2} \cdots p_n^{\gamma_n}$ 且 $[a, b] = p_1^{\delta_1} p_2^{\delta_2} \cdots p_n^{\delta_n}$，其中 $\gamma_i = \min\{\alpha_i, \beta_i\}, \delta_i = \max\{\alpha_i, \beta_i\} \ (i = 1, 2, \cdots, n)$
 
 ### 1.1.2 因数与倍数
-1. 因数与倍数：设 $a, b\in Z$ 且 $b \mid a$，则称 $b$ 是 $a$ 的因数，此时称 $a$ 是 $b$ 的倍数
+1. 因数与倍数：设 $a, b\in \mathbf Z$ 且 $b \mid a$，则称 $b$ 是 $a$ 的因数，此时称 $a$ 是 $b$ 的倍数
 
     !!! note "平凡因数"
-        对每个 $a \in Z - \{0\}$ 都有因数 $1, -1, a, -a$，称其为平凡因数。否则称之为非平凡因数
+        对每个 $a \in \mathbf Z - \{0\}$ 都有因数 $1, -1, a, -a$，称其为平凡因数。否则称之为非平凡因数
 
 2. 最大公因数：整数 $a_1, a_2, \cdots, a_k \ (k \geqslant 2)$，若整数 $d$ 是它们之中每一个数的因数，那么 $d$ 就称为 $a_1, a_2, \cdots, a_k$ 的一个公因数，整数 $a_1, a_2, \cdots, a_k$ 的公因数中最大的一个称为最大公因数，记作 $(a_1, a_2, \cdots, a_k)$
     1. 若 $(a_1, a_2, \cdots, a_k) = 1$，则称 $a_1, a_2, \cdots, a_k$ 互质，若 $a_1, a_2, \cdots, a_k$ 中每两个整数互质，则称它们两两互质；特别地，若整数 $a, b$ 有 $(a, b) = 1$，则称 $\dfrac ab$ 为既约分数
@@ -49,7 +49,7 @@
         则 $(a, b) = r_n$，这一组带余除法称为辗转相除法
 
         !!! note "辗转相除法"
-            1. 带余除法：若 $a, b \in Z$ 且 $b > 0$，则存在两个整数 $q, r$ 使得 $a = qb + r \ (0 \leqslant r < b)$ 成立，且 $q, r$ 唯一
+            1. 带余除法：若 $a, b \in \mathbf Z$ 且 $b > 0$，则存在两个整数 $q, r$ 使得 $a = qb + r \ (0 \leqslant r < b)$ 成立，且 $q, r$ 唯一
             2. 记
 
                 $$
@@ -62,7 +62,7 @@
                 则有 $aQ_k - bP_k = (-1)^{k-1}r_k \ (k = 1, 2, \cdots, n)$
 
                 - 若 $a, b$ 是任意两个非零整数，则存在整数 $x, y$ 可使 $ax + by = (a, b)$ 成立
-                - 若 $a, b$ 是非零整数，则 $(a, b) = 1 \leftrightarrow \exists x, y\in Z: ax + by = 1$
+                - 若 $a, b$ 是非零整数，则 $(a, b) = 1 \leftrightarrow \exists x, y\in \mathbf Z: ax + by = 1$
 
     3. 设 $a, b$ 是任意两个不全为零的整数
         1. 若 $m$ 是任意一个正整数，则 $(am, bm) = (a, b)m$
@@ -80,23 +80,23 @@
     3. 若 $a_1, a_2, \cdots, a_n$ 是 $n \ (n \geqslant 2)$ 个正整数，记 $[a_1, a_2] = m_2, [m_2, a_2] = m_3, \cdots, [m_{n-2}, a_{n-1}] = m_{n-1}, [m_{n-1}, a_n] = m_n$，则 $[a_1, a_2, \cdots, a_n] = m_n$
 
 ## 1.2 取整函数
-1. 取整函数与分数部分函数：设 $x, y \in R$，整数函数（也称 $\text{Gaussian}$ 函数）$[x]$ 是不超过 $x$ 的最大整数，称它为 $x$ 的整数部分；分数部分函数定义为 $\{x\} = x - [x]$
+1. 取整函数与分数部分函数：设 $x, y \in \mathbf R$，整数函数（也称 $\text{Gaussian}$ 函数）$[x]$ 是不超过 $x$ 的最大整数，称它为 $x$ 的整数部分；分数部分函数定义为 $\{x\} = x - [x]$
     1. $x \leqslant y \to [x] \leqslant [y]$
-    2. 若 $m\in Z$，则 $[m + x] = m + [x]$
+    2. 若 $m\in \mathbf Z$，则 $[m + x] = m + [x]$
     3. 若 $0 \leqslant x < 1$，则 $[x] = 0$
     4. $[x] \leqslant x < [x] + 1, x - 1 < [x] \leqslant x, 0 \leqslant \{x\} < 1$
     5. $[x] + [y] \leqslant [x + y], \{x + y\} \leqslant \{x\} + \{y\}$
     6. $[x + y] = \left\{\begin{aligned} & [x] + [y], & \{x\} + \{y\} < 1 \\ & [x] + [y] + 1, & \{x\} + \{y\} \geqslant 1 \end{aligned}\right.$
-    7. $[-x] = \left\{\begin{aligned} & -[x], & x\in Z \\ & -[x] - 1, & x \notin Z \end{aligned}\right.$
-    8. $\{x\} = \left\{\begin{aligned} & 0, & x\in Z \\ & 1 - \{x\}, & x\ \notin Z \end{aligned}\right.$
+    7. $[-x] = \left\{\begin{aligned} & -[x], & x\in \mathbf Z \\ & -[x] - 1, & x \notin Z \end{aligned}\right.$
+    8. $\{x\} = \left\{\begin{aligned} & 0, & x\in \mathbf Z \\ & 1 - \{x\}, & x\ \notin Z \end{aligned}\right.$
 2. 设 $a, b \in \mathbf Z_+$，则在 $1, 2, \cdots, a$ 中能被 $b$ 整除的恰有 $\left[\dfrac{a}{b}\right]$ 个
 3. 在 $n!$ 的质因数分解中，质数 $p$ 的指数是 $\left[\dfrac{n}{p}\right] + \left[\dfrac{n}{p^2}\right] + \left[\dfrac{n}{p^3}\right] + \cdots = \sum_{r = 1}^{\infty} \left[\dfrac{n}{p_r}\right]$，进一步地，有 $n! = \prod_{p \leqslant n} p^{\sum_{r=1}^{\infty}\left[\frac{n}{p^r}\right]}$
 
 ## 1.3 不定方程
 
 1. 不定方程：方程的个数少于未知数的个数且未知数又必须为整数的方程（组）
-2. 二元一次不定方程：设 $a, b, c \in Z$ 且 $a, b \neq 0$，任何二元一次方程可以写成 $ax + by = c$，其中 $x, y \in Z$
-    1. 设 $a, b \in Z - \{0\}, c \in Z$，方程 $ax + by = c$ 有整数解当且仅当 $(a, b) \mid c$
+2. 二元一次不定方程：设 $a, b, c \in \mathbf Z$ 且 $a, b \neq 0$，任何二元一次方程可以写成 $ax + by = c$，其中 $x, y \in \mathbf Z$
+    1. 设 $a, b \in \mathbf Z - \{0\}, c \in \mathbf Z$，方程 $ax + by = c$ 有整数解当且仅当 $(a, b) \mid c$
     2. 若 $(a, b) = 1$，如果 $(x_0, y_0)$ 是方程 $ax + by = c$ 的一组解，则它所有整数解都可以写成
 
         $$

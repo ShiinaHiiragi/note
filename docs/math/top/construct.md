@@ -4,7 +4,7 @@
 1. 度量子空间：设 $(X, \rho)$ 是一个度量空间，$Y\subseteq X$，因此 $Y\times Y\subseteq X\times X$．显然 $\rho|_{Y\times Y}: Y\times Y\to R$ 是 $Y$ 的一个度量，称之为由 $X$ 的度量诱导的，$(Y, \rho)$ 为 $(X, \rho)$ 的一个度量子空间
     1. 子空间的例子
         1. 实数空间 $R$ 的区间 $(a, b), [a, b]$ 等
-        2. $n+1$ 维 $\text{Euclid}$ 空间 $R^{n+1}$ 中的 $n$ 维单位球面 $S^n=\left\{x=(x_1, x_2, \cdots, x_{n+1})\in R^{n+1}|\sum_{i=1}^{n+1}x_i^2=1\right\}$ 以及 $n$ 维单位开球体 $D^n=\left\{x=(x_1, x_2, \cdots, x_n)\in R^n|\sum_{i=1}^n x_i^2<1\right\}$、$n$ 维单位闭球体 $E^n=\left\{x=(x_1, x_2, \cdots, x_n)\in R^n|\sum_{i=1}^n x_i^2\leqslant 1\right\}$
+        2. $n+1$ 维 $\text{Euclid}$ 空间 $R^{n+1}$ 中的 $n$ 维单位球面 $S^n=\left\{x=(x_1, x_2, \cdots, x_{n+1})\in \mathbf R^{n+1}|\sum_{i=1}^{n+1}x_i^2=1\right\}$ 以及 $n$ 维单位开球体 $D^n=\left\{x=(x_1, x_2, \cdots, x_n)\in \mathbf R^n|\sum_{i=1}^n x_i^2<1\right\}$、$n$ 维单位闭球体 $E^n=\left\{x=(x_1, x_2, \cdots, x_n)\in \mathbf R^n|\sum_{i=1}^n x_i^2\leqslant 1\right\}$
         3. $n+1$ 维 $\text{Euclid}$ 空间 $R^{n+1}$ 中的 $n$ 维开、闭方体 $(0, 1)^n, [0, 1]^n$
     2. 设 $Y$ 是度量空间 $X$ 的一个度量子空间，则 $Y$ 的子集 $U$ 是 $Y$ 中的一个开集当且仅当存在一个 $X$ 中的开集 $V$ 使得 $U=V\cap Y$
 2. 拓扑子空间：设 $Y$ 是拓扑空间 $(X, \mathscr T)$ 的一个子集，则 $\mathscr T|_Y$ 在 $Y$ 上的限制 $\mathscr T|_Y=\{T\cap Y|T\in \mathscr T\}$ 称为（相对于 $X$ 的拓扑而言的）相对拓扑；拓扑空间 $(Y, \mathscr T|_Y)$ 称为拓扑空间的拓扑子空间

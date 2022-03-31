@@ -9,9 +9,9 @@
 2. 度量空间：若 $\rho$ 是集合 $X$ 的一个度量，则偶对 $(X, \rho)$ 是一个度量空间，即 $X$ 是一个对于度量 $\rho$ 而言的度量空间
     1. 对于任意两点 $x, y\in X$，称 $\rho(x, y)$ 为点 $x$ 到点 $y$ 的一个距离
     2. 度量空间的实例
-        1. 实数空间：对于实数集合 $R$，定义 $\rho: R\times R\to R$ 有 $\forall x, y\in R: \rho(x, y)=|x-y|$，这个度量称之为 $R$ 的通常度量
-        2. $n$ 维 $\text{Euclid}$ 空间：对于 $R^n$．定义 $\rho: R^n\times R^n \to R$ 有 $\forall x, y\in R: \rho(x, y)=\sqrt{\sum_{i=1}^n(x_i-y_i)^2}$，这个度量称为 $R^n$ 的通常度量
-        3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)|\sum_{i=1}^\infty x_i^2<\infty, x_i\in R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有 $\forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)=\sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}$．容易验证这是良定义，这个度量称之为 $H$ 的通常度量
+        1. 实数空间：对于实数集合 $R$，定义 $\rho: R\times R\to R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)=|x-y|$，这个度量称之为 $R$ 的通常度量
+        2. $n$ 维 $\text{Euclid}$ 空间：对于 $R^n$．定义 $\rho: R^n\times R^n \to R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)=\sqrt{\sum_{i=1}^n(x_i-y_i)^2}$，这个度量称为 $R^n$ 的通常度量
+        3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)|\sum_{i=1}^\infty x_i^2<\infty, x_i\in \mathbf R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有 $\forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)=\sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}$．容易验证这是良定义，这个度量称之为 $H$ 的通常度量
         4. 离散度量：设 $(X, \rho)$ 是一个度量空间，若 $\forall x\in X\ \exists \delta_x>0: \rho(x, y)>\delta_x$ 对于任何 $y\in X, y\neq x$ 成立，则称 $(X, \rho)$ 是离散的，或称 $\rho$ 是 $X$ 的一个离散度量
 3. 球形邻域：设 $(X, \rho)$ 是一个度量空间，$x\in X$，对于任意给定的实数 $\varepsilon >0$，集合 $B(x, \varepsilon) = B_\varepsilon(x) = \{y\in X|\rho(x, y)<\varepsilon\}$ 为一个以 $x$ 为中心，以 $\varepsilon$ 为半径的球形领域，或称为 $x$ 的一个 $\varepsilon-$邻域
     1. 每一点 $x\in X$ 至少有一个球形领域，并且点 $x$ 属于它的每一个球形邻域
@@ -132,7 +132,7 @@
         3. 若 $\varnothing \neq \mathscr F_1\subseteq \mathscr F$，则 $\bigcap_{A\in \mathscr F_1}A\in \mathscr F$
 
         !!! note "$\text{Cantor}$ 集"
-            在实数空间 $R$ 中，定义 $f_1, f_2: R\to R$ 使得对于任意 $t\in R$ 有 $f_1(t)=\dfrac{t}{3}, f_2(t)=\dfrac{t+2}{3}$，则可以验证 $f_1, f_2$ 均为同胚，即任意开集 $U\subseteq R$，其 $f_1-$像与 $f_2-$像都是开集
+            在实数空间 $R$ 中，定义 $f_1, f_2: R\to R$ 使得对于任意 $t\in \mathbf R$ 有 $f_1(t)=\dfrac{t}{3}, f_2(t)=\dfrac{t+2}{3}$，则可以验证 $f_1, f_2$ 均为同胚，即任意开集 $U\subseteq R$，其 $f_1-$像与 $f_2-$像都是开集
 
             定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1[A_{n-1}]\cup f_2[A_{n-1}](n>1), A=\bigcup_{n\in \mathbf Z_+}A_n$，称集合 $C=[0, 1]-A$ 为 $\text{Cantor}$ 集或标准 $\text{Cantor}$ 三分集，可以验证 $C$ 是一个闭集
 
@@ -197,7 +197,7 @@
 1. 序列：设 $X$ 是一个拓扑空间，每一个映射 $S: Z_+\to X$ 称作 $X$ 中的一个序列，将序列 $S$ 记作 $\{x_i\}_{i\in \mathbf Z_+}$ 或 $\{x_1, x_2, \cdots\}$，其中 $x_i=S(i), i\in \mathbf Z_+$
     1. $\{x_i\}_{i\in \mathbf Z_+}$ 可简记为 $\{x_i\}$
     2. 集合 $\{x_i|i\in \mathbf Z_+\}$ 可为有限集，当其为单点集时，称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 为一个常值序列
-2. 极限点：设 $\{x_i\}_{i\in \mathbf Z_+}$ 是拓扑空间中的一个序列，$x\in X$．若对于 $x$ 的任意邻域 $U$，存在 $M\in Z$ 使得当 $i>M$ 时有 $x_i\in U$，则称点 $x$ 是序列 $\{x_i\}_{i\in \mathbf Z_+}$ 的一个极限点，也称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x$，记作 $\lim_{i\to \infty}x_i=x$ 或 $x_i\to x(i\to \infty)$
+2. 极限点：设 $\{x_i\}_{i\in \mathbf Z_+}$ 是拓扑空间中的一个序列，$x\in X$．若对于 $x$ 的任意邻域 $U$，存在 $M\in \mathbf Z$ 使得当 $i>M$ 时有 $x_i\in U$，则称点 $x$ 是序列 $\{x_i\}_{i\in \mathbf Z_+}$ 的一个极限点，也称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x$，记作 $\lim_{i\to \infty}x_i=x$ 或 $x_i\to x(i\to \infty)$
     1. 若序列至少有一个极限，则称这个序列是一个收敛序列
     2. 设 $X$ 是一个拓扑空间，$S, S_1:Z_+ \to X$ 是 $X$ 中的两个序列，若存在一个映射 $N: Z_+\to Z_+$ 有 $\forall n_1, n_2\in \mathbf Z_+: n_1<n_2 \to N(n_1)<N(n_2)$，使得 $S_1=S\circ N$，则称序列 $S_1$ 是序列 $S$ 的一个子序列
 3. 序列的性质

@@ -26,10 +26,10 @@
     2. 设 $X$ 是一个连通空间，$f: X\to R$ 是一个连续映射，则 $f[X]$ 是 $R$ 中的一个区间
         1. 介值定理：设 $f: [a, b]\to R$ 是从 连续映射，则对于 $f(a)$ 与 $f(b)$ 之间的任何一个实数 $r$，存在 $z\in [a, b]$ 使得 $f(z)=r$
         2. 不动点定理：设 $f: [0, 1]\to [0, 1]$ 是一个连续映射，则存在 $z\in [0, 1]$ 使得 $f(z)=z$
-    3. 对径映射：设 $x=(x_1, x_2)\in S^1, S^1=\{(x, y\in R)^2|x^2+y^2=1\}$，点 $-x=(-x_1, -x_2)\in S^1$ 称为点 $x$ 的对径点．映射 $r: S^1\to S^1$ 使得 $\forall x\in S^1: r(x)=-x$ 称为对径映射
+    3. 对径映射：设 $x=(x_1, x_2)\in S^1, S^1=\{(x, y\in \mathbf R)^2|x^2+y^2=1\}$，点 $-x=(-x_1, -x_2)\in S^1$ 称为点 $x$ 的对径点．映射 $r: S^1\to S^1$ 使得 $\forall x\in S^1: r(x)=-x$ 称为对径映射
         - $\text{Borsuk}-\text{Ulam}$ 定理：设 $f: S^1\to R$ 是一个连续映射，则在 $S^1$ 中存在一对对径点 $x$ 和 $-x$ 使得 $f(x)=f(-x)$
 6. $R^n$ 中的连通性
-    1. $n>1$ 维 $\text{Euclid}$  空间 $R^n$ 的子集 $R^n-\{O\}$ 是一个连通子集，其中 $O=(0, 0, \cdots, 0)\in R^n$
+    1. $n>1$ 维 $\text{Euclid}$  空间 $R^n$ 的子集 $R^n-\{O\}$ 是一个连通子集，其中 $O=(0, 0, \cdots, 0)\in \mathbf R^n$
     2. $\text{Euclid}$ 平面 $R^2$ 与实数空间 $R$ 不同胚；进一步地，若 $n\neq l$，则 $R^n$ 与 $R^l$ 不同胚
     3. 高维形式的不动点定理与 $\text{Borsuk}-\text{Ulam}$ 定理
         1. 不动点定理：设 $f: E^n\to E^n$ 是一个连续映射，其中 $E^n$ 是 $n$ 维闭球体，则 $\exists z\in E^n: f(z)=z$
@@ -223,7 +223,7 @@
     2. 单位闭区间 $[0, 1]$ 是一个紧空间
     3. 设 $A$ 是 $n$ 维 $\text{Euclid}$ 空间 $R^n$ 的一个子集，则 $A$ 是一个紧子集当且仅当 $A$ 是一个有界闭集
     4. 设 $X$ 是一个非空紧空间，$f: X\to R$ 是一个连续映射，则存在 $x_0, x_1\in X$ 使得对于任何 $x\in X$ 有 $f(x_0)\leqslant f(x)\leqslant f(x_1)$  
-    5. 设 $m, n\in Z$，则 $n$ 维单位球面 $S^n$ 与 $m$ 维 $\text{Euclid}$ 空间 $R^m$ 不同胚
+    5. 设 $m, n\in \mathbf Z$，则 $n$ 维单位球面 $S^n$ 与 $m$ 维 $\text{Euclid}$ 空间 $R^m$ 不同胚
 2. 直径：设 $A$ 是度量空间 $(X, \rho)$ 中的一个非空子集，定义集合 $A$ 的直径 $\mathrm{diam}(A)=\left\{\begin{aligned} &\sup\{\rho(x, y)|x, y\in A\}, &A\textsf{ 是有界的} \\& \infty, &\textsf{否则} \end{aligned}\right.$
 3. $\text{Lebesgue}$ 数：设 $(X, \rho)$ 是一个度量空间，$\mathscr A$ 是 $X$ 的一个开覆盖．若 $\forall A\subseteq X\ \exists \lambda>0: \mathrm{diam}(A)<\lambda \to A$ 包含于开覆盖 $\mathscr A$ 的某一个元素之中，则称 $\lambda$ 为开覆盖 $\mathscr A$ 的一个 $\text{Lebesgue}$ 数
     1. $\text{Lebesgue}$ 数定理：序列紧的度量空间的每一个开覆盖有一个 $\text{Lebesgue}$ 数
