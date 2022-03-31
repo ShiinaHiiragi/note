@@ -73,6 +73,24 @@
 
     2. 设 $p$ 是质数，当 $m_1 = p^\alpha m_1', m_2 = p^\beta m_2'$ 且 $\alpha \geqslant \beta, p \nmid m_1'm_2'$ 时，若同余式 $\left\{\begin{aligned}& x \equiv a_1 (\bmod m_1) \\& x \equiv a_2 (\bmod m_2)\end{aligned}\right.$ 有解，则它与 $\left\{\begin{aligned}& x \equiv a_1 (\bmod m_1) \\& x \equiv a_2 (\bmod m_2')\end{aligned}\right.$ 同解
 
-### 2.2.2 高次同余式
+### 2.2.2 二次同余式
+
+### 2.2.3 高次同余式
+1. 解数与解法：
+    1. 若 $m_1, m_2, \cdots, m_k$ 是 $k$ 个两两互质的正整数，$m = m_1 m_2 \cdots m_k$，则同余式 $f(x) \equiv 0 (\bmod m)$ 与同余式组 $f(x) \equiv 0 (\bmod m_i) \ (i = 1, 2, \cdots, k)$ 等价，并且若用 $T_i$ 表示 $f(x) \equiv 0 (\bmod m_i) \ (i = 1, 2, \cdots, k)$ 对模 $m_i$ 的解数，$T$ 表示 $f(x) \equiv 0 (\bmod m)$ 对模 $m$ 的解数，则 $T = T_1 T_2 \cdots T_k$
+    2. 设 $p$ 是质数，$\alpha \geqslant 2$ 是整数，$f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ 是整系数多项式，设 $x_1$ 是同余方程 $f(x) \equiv 0 (\bmod p^{\alpha-1})$ 的一个解，以 $f'(x)$ 表示 $f(x)$ 的导函数
+        3. 若 $f'(x_1) \not \equiv 0 (\bmod p)$，则存在整数 $t$ 使得 $x = x_1 + p^{\alpha-1}t$ 是同余方程 $f(x) \equiv 0 (\bmod p^\alpha)$ 的解
+        4. 若 $f'(x_1) \equiv 0 (\bmod p)$ 且 $f(x_1) \equiv 0 (\bmod p^\alpha)$，则对于 $t = 0, 1, 2, \cdots, p - 1$ 有 $x = x_1 + p^{n-1}t$ 中的 $x$ 都是方程 $f(x) \equiv 0 (\bmod p^n)$ 的解
+2. 质数模的高次同余方程：$f(x) \equiv 0 (\bmod p)$，其中 $p \nmid a_n$ 且 $p$ 为质数
+    1. $f(x) \equiv 0 (\bmod p)$ 与一个次数不超过 $p - 1$ 的质数模同余式等价
+    2. 设 $k \leqslant n$，若同余方程 $f(x) \equiv 0 (\bmod p)$ 有 $k$ 个不同的解 $x_1, x_2, \cdots, x_k$，则对于任何整数 $x$ 有 $f(x) \equiv (x - x_1) (x - x_2) \cdots (x - x_k) f_k(x) (\bmod p)$，其中 $f_k(x)$ 是一个次数为 $n - k$ 的整系数多项式
+        1. 若 $p$ 是质数，则对于任何整数 $x$ 有 $x^{p-1} - 1 \equiv (x - 1)(x - 2) \cdots [x - (p - 1)] (\bmod p)$
+        2. $\text{Wilson}$ 定理：设 $p$ 是质数，则 $(p - 1)! \equiv -1 (\bmod p)$
+    3. $\text{Lagrange}$ 定理：同余方程 $f(x) \equiv 0 (\bmod p)$，其中 $p$ 是质数，$a_n \not \equiv 0 (\bmod p)$ 的解数不超过它的次数
+        1. $n$ 次同余方程的解数 $k \leqslant \min(n, p)$
+        2. 若 $f(x)$ 是 $n$ 次多项式，$f(x) \equiv 0 (\bmod p)$ 的解数大于 $n$，则必有 $p \mid a_i, i = 1, 2, \cdots, n$
+    4. 同余方程 $f(x) \equiv 0 (\bmod p)$ 或者有 $p$ 个解，或者存在次数不超过 $p - 1$ 的整系数多项式 $r(x)$ 使得 同余方程 $f(x) \equiv 0 (\bmod p)$ 与 $r(x) \equiv 0 (\bmod p)$ 等价
+    5. 设 $n \leqslant p$，则同余方程 $f(x) \equiv 0 (\bmod p)$ 有 $n$ 个解的充要条件是存在整系数多项式 $q(x)$ 与 $r(x)$，且 $r(x)$ 的次数小于 $n$ 使得 $x^p - x = f(x)q(x) + p\cdot r(x)$
+    6. 设 $p$ 是质数且 $n \mid (p - 1), p \nmid a$，则 $x^n \equiv a (\bmod p)$ 有解的充要条件是 $a^{\frac{p-1}{n}} \equiv 1 (\bmod p)$．若有解，则解数为 $n$
 
 ## 2.3 原根与指标
