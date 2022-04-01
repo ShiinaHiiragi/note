@@ -187,4 +187,4 @@
     1. 若 $(n, c) = d, (a, m) = 1$
         1. 同余式 $x^n \equiv a (\bmod m)$ 有解当且仅当 $d \mid \mathrm{ind} a$，且在有解的情况下解数为 $d$
         2. 在模 $m$ 的一个简化剩余系中，$n$ 次剩余的个数为 $\dfrac cd$
-    2. $a$ 是模 $m$ 的 $n$ 次剩余当且仅当 $a^{\dfrac cd} \equiv 1 (\bmod m), d = (n, c)$
+    2. $a$ 是模 $m$ 的 $n$ 次剩余当且仅当 $a^{\frac cd} \equiv 1 (\bmod m), d = (n, c)$
