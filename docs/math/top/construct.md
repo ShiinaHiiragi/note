@@ -50,7 +50,7 @@
     1. 对于每一个 $\alpha \in \Gamma$，积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 是一个连续开映射
     2. 设 $Y$ 是一个拓扑空间，则映射 $f: Y\to \prod_{\gamma \in \Gamma} X_\gamma$ 是一个连续映射当且仅当对于每一个 $\alpha \in \Gamma$，映射 $p_\alpha\circ f: Y\to X_\alpha$ 是连续的，其中 $p_\alpha$ 是积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投影
     3. 令 $\mathscr T$ 为 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑．若 $\widetilde{\mathscr T}$ 是 $\text{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的一个拓扑使得对于任何 $\alpha \in \Gamma$，$\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 都是连续的，则 $\mathscr T\subseteq \widetilde{\mathscr T}$
-    4. 积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 中的序列 $\{x^{(i)}\}_{i\in \mathbf Z_+}$ 收敛于点 $x\in \prod_{\gamma \in \Gamma} X_\gamma$ 的充要条件是对于每一个 $\alpha \in \Gamma$，拓扑空间 $X_\alpha$ 中的序列 $\{p_\alpha(x^{(i)})\}_{i\in \mathbf Z_+}$ 收敛于 $p_\alpha(x)\in X_\alpha$
+    4. 积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 中的序列 $\{x^{(i)}\}_{i\in \mathbf Z_+}$ 收敛于点 $x\in \prod_{\gamma \in \Gamma} X_\gamma$ 当且仅当对于每一个 $\alpha \in \Gamma$，拓扑空间 $X_\alpha$ 中的序列 $\{p_\alpha(x^{(i)})\}_{i\in \mathbf Z_+}$ 收敛于 $p_\alpha(x)\in X_\alpha$
 3. 拓扑空间在方体的嵌入
     1. 方体：设 $\Gamma$ 是一个集合，则从 $[0, 1]^\Gamma$ 连通它的点式收敛拓扑称为一个方体
     2. 映射族：设 $X$ 是一个拓扑空间，$F$ 是一族映射，其中的每一个元素是从拓扑空间 $X$ 到某一个拓扑空间的一个映射．如果对于任何 $x, y\in X, x\neq y$ 存在 $f\in F$ 使得 $f(x)\neq f(y)$，则称映射族 $F$ 是一个区别点的映射族，如果对于任何 $x\in X$ 和 $X$ 中的任何一个不包含点 $x$ 的闭集 $B$，存在 $f\in F$ 使得 $f(x)\notin \overline{f[B]}$，则称映射族 $F$ 是一个区别点和闭集的映射族
