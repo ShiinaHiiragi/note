@@ -3,13 +3,13 @@
 ## 2.1 经典一阶逻辑 Hilbert 系统
 1. 一阶语言 $\mathscr L(S)$ 即一阶逻辑的形式语言，由逻辑符号和非逻辑符号组成
     1. 逻辑符号
-        1. 变元集 $\mathbf{Var} = \{x_i |i\in \lambda\}$，用 $x, y, z$ 表示任意变元
+        1. 变元集 $\mathbf{Var} = \{x_i \mid i\in \lambda\}$，用 $x, y, z$ 表示任意变元
         2. 联结词 $\bot, \wedge, \vee, \to$ 与量词 $\forall, \exists$
         3. 括号 $)$ 与 $($
     2. 非逻辑符号：令 $S = \mathbf R \cup \mathbf F\cup \mathbf C$，则一个一阶语言由非逻辑符号集合 $S$ 决定
-        1. 关系符号集 $\mathbf R = \{R_i|i\in \lambda\}$，用 $P, Q, R$ 表示任意关系符号
-        2. 函数符号集 $\mathbf F = \{f_i|i\in \lambda\}$，用 $f, g, h$ 表示任意函数符号
-        3. 常元符号集 $\mathbf C = \{c_i|i\in \lambda\}$，用 $a, b, c$ 表示任意常元符号
+        1. 关系符号集 $\mathbf R = \{R_i\mid i\in \lambda\}$，用 $P, Q, R$ 表示任意关系符号
+        2. 函数符号集 $\mathbf F = \{f_i\mid i\in \lambda\}$，用 $f, g, h$ 表示任意函数符号
+        3. 常元符号集 $\mathbf C = \{c_i\mid i\in \lambda\}$，用 $a, b, c$ 表示任意常元符号
 
     !!! note "形式主义进路"
         1. 证明论下的命题逻辑与一阶逻辑是从朴素集合论中建立的理论，因此变元集 $\mathbf{Var}$ 与一阶语言 $\mathscr L(S)$ 的基数 $\lambda$ 在本节中均至多为 $\omega$
@@ -22,7 +22,7 @@
     2. 一阶语言 $\mathscr L(S)$ 的项集 $\mathcal T(S)$ 归纳定义如下
 
         $$
-        \mathcal T(S) \ni t:= x | c | ft_1t_2\cdots t_{\Omega(f)}
+        \mathcal T(S) \ni t:= x \mid c \mid ft_1t_2\cdots t_{\Omega(f)}
         $$
 
         其中 $x\in \mathbf{Var}, c\in C$ 且 $f\in \mathbf F$
@@ -30,7 +30,7 @@
         一阶语言 $\mathscr L(S)$ 的（合式）公式集 $\mathcal F(S)$ 归纳定义如下
 
         $$
-        \mathcal F(S) \ni \alpha := Rt_1t_2\cdots t_{\Omega(f)} | \bot | (\alpha_1 \wedge \alpha_2) | (\alpha_1 \vee \alpha_2) | (\alpha_1 \to \alpha_2) | \forall x\alpha | \exists x\alpha
+        \mathcal F(S) \ni \alpha := Rt_1t_2\cdots t_{\Omega(f)} \mid \bot \mid (\alpha_1 \wedge \alpha_2) \mid (\alpha_1 \vee \alpha_2) \mid (\alpha_1 \to \alpha_2) \mid \forall x\alpha \mid \exists x\alpha
         $$
 
         其中 $R\in \mathbf R$，$t_1, t_2, \cdots, t_{\Omega(R)}$ 是项，$x$ 是变元
@@ -160,7 +160,7 @@
                 - 对每个 $n$ 元函数符号 $f\in \mathbf F$，如果 $(a_1, a_2, \cdots, a_n) \in \bigcap_{i\in I}A_i^n$，对任意的 $i, j\in I$ 有 $f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_j}(a_1, a_2, \cdots, a_n)$
                 - 对每个常元符号 $c\in \mathbf C$，对任意 $i, j\in I$ 有 $C^{\mathfrak A_i} = c^{\mathfrak A_j}$
 
-                则定义 $\{\mathfrak A_i|i\in I\}$ 的交为一个以 $\bigcap_{i\in I}A_i$ 为论域的 $S-$结构，记作 $\bigcap_{i\in I}\mathfrak A_i$
+                则定义 $\{\mathfrak A_i\mid i\in I\}$ 的交为一个以 $\bigcap_{i\in I}A_i$ 为论域的 $S-$结构，记作 $\bigcap_{i\in I}\mathfrak A_i$
 
                 - 对每个 $n$ 元关系符号 $R\in \mathbf R$，$R^{\bigcap_{i\in I}\mathfrak A_i} = \bigcap_{i\in I}R^{\mathfrak A_i}$
                 - 对每个 $n$ 元函数符号 $f\in \mathbf F$，$f^{\bigcap_{i\in I}\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n)$
@@ -207,7 +207,7 @@
         设指派 $\overline a = \left<a_i\right>_{i\in \lambda}$，此时将满足关系记作 $\mathfrak A \vDash \alpha[\overline a]$，称 $\mathfrak A$ 满足 $\alpha[\overline a]$、$\alpha[\overline a]$ 在 $\mathfrak A$ 中为真或 $\overline a$ 在 $\mathfrak A$ 中实现了 $\alpha$．考虑到公式 $\alpha(x_1, x_2, \cdots, x_n)$ 在指派下的真值仅与该指派在其自由变元上的值有关，设 $\overline b = (b_1, b_2, \cdots, b_n) \in A^n$，则满足关系也可记作 $\mathfrak A \vDash \alpha(\overline b)$
 
         1. 如果公式（包括语句）$\alpha$ 有对于结构 $\mathfrak A$ 中的任意指派 $\sigma$ 都有 $(\mathfrak A, \sigma) \vDash \alpha$，则称 $\alpha$ 在 $\mathfrak A$ 上有效，记作 $\mathfrak A \vDash \alpha$
-        2. 如果公式 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称公式 $\alpha$ 有效，记作 $\vDash_1 \alpha$，设一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) | \vDash_1 \alpha\}$
+        2. 如果公式 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称公式 $\alpha$ 有效，记作 $\vDash_1 \alpha$，设一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) \mid \vDash_1 \alpha\}$
 
             !!! note "有效式"
                 以下公式都是有效的

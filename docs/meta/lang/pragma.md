@@ -308,7 +308,7 @@
 
 ### 4.3.3 形式焦点理论
 1. 句法：规定语言 $\mathscr L$ 的类型、字母表和表达式构成规则
-    1. 类型：$\tau ::= e | t | \left< \tau_1, \tau_2 \right>$
+    1. 类型：$\tau ::= e \mid t \mid \left< \tau_1, \tau_2 \right>$
     2. 字母表
         1. 类型为 $e$ 的常元：$\text{j, b, s, m}, \cdots$
         2. 类型为 $\left< e, t \right>$ 的常元：$\text{cat, bold, beautiful, walk}, \cdots$

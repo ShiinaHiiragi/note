@@ -3,13 +3,13 @@
 ## 1.1 Hilbert 系统
 ### 1.1.1 经典命题逻辑 Hilbert 系统
 1. 经典命题逻辑形式语言的初始符号
-    1. 可数命题变元集：$\mathbf{Prop} = \{p_i|i<\omega\}$，用 $p, q, r$ 等表示 $\mathbf{Prop}$ 中的任意命题变元
+    1. 可数命题变元集：$\mathbf{Prop} = \{p_i\mid i<\omega\}$，用 $p, q, r$ 等表示 $\mathbf{Prop}$ 中的任意命题变元
     2. 联结词：零元联结词 $\bot$（恒假）；二元联结词 $\wedge$（合取）、$\vee$（析取）与 $\to$（蕴含）
     3. 括号：$)$ 与 $($
 2. $\text{Backus-Naur}$ 形式句法：用 $\alpha, \beta, \gamma$ 表示公式模式（可带下标），则公式集
 
     $$
-    \mathscr L\ni \alpha ::= p|\bot|(\alpha_1 \wedge \alpha_2)|(\alpha_1 \vee \alpha_2)|(\alpha_1 \to \alpha_2)
+    \mathscr L\ni \alpha ::= p\mid \bot\mid (\alpha_1 \wedge \alpha_2)\mid (\alpha_1 \vee \alpha_2)\mid (\alpha_1 \to \alpha_2)
     $$
 
     !!! note "缩写与简写"
@@ -72,7 +72,7 @@
     3. 对任意公式集 $\Gamma$ 与赋值 $\theta$，若对任意 $\alpha$ 都有 $\theta \vDash \alpha$，则称 $\theta$ 满足 $\Gamma$，记作 $\theta \vDash \Gamma$
         1. 对于公式集 $\Gamma$，如果存在赋值 $\theta$ 使得 $\theta \vDash \Gamma$，则称 $\Gamma$ 可满足
         2. 对任意公式集 $\Gamma \cup \{\alpha\}$，如果对于任意赋值 $\theta$ 使得 $\theta \vDash \Gamma$ 都有 $\theta \vDash \alpha$，则称 $\alpha$ 是 $\gamma$ 的语义后承，记作 $\Gamma \vDash \alpha$
-    4. 将经典命题逻辑 $\mathbf{CL}$ 定义为所有重言式的集合，即 $\mathbf{CL} = \{\alpha \in \mathscr L | \vDash \alpha\}$
+    4. 将经典命题逻辑 $\mathbf{CL}$ 定义为所有重言式的集合，即 $\mathbf{CL} = \{\alpha \in \mathscr L \mid \vDash \alpha\}$
         1. 对任意公式 $\alpha$ 和代入 $\sigma$，若 $\alpha \in \mathbf{CL}$，则 $\sigma(\alpha) \in \mathbf{CL}$
         2. 对任意公式 $\alpha, \beta$，若 $\alpha, \alpha \to \beta \in \mathbf{CL}$，则 $\beta \in \mathbf{CL}$
     5. 真值函数：令 $\alpha$ 是公式且 $\mathrm{var}(\alpha) = \{p_1, p_2, \cdots, p_n\}$，如果对于 $n-$元函数 $f: 2^n \to 2$ 与 $\varepsilon = (\alpha_1, \alpha_2, \cdots, \alpha_n) \in 2^n$ 都有 $f(\theta(p_1), \theta(p_2), \cdots, \theta(p_n)) = \widehat \theta(\alpha)$，其中 $\theta$ 是任意赋值使得对每个 $1\leqslant i\leqslant n$ 都有 $\theta(p_i) = a_i$，则称 $\alpha$ 定义 $n-$元真值函数 $f$
@@ -94,7 +94,7 @@
         2. 推理规则
             - 肯定前件规则：$\begin{prooftree} \AxiomC{\(\alpha \to \beta\)} \AxiomC{\(\alpha\)} \RightLabel{(mp)} \BinaryInfC{\(\beta\)} \end{prooftree}$
             - 代入规则：$\begin{prooftree} \AxiomC{\(\alpha\)} \RightLabel{(sub)} \UnaryInfC{\(\sigma(\alpha)\)} \end{prooftree}$，其中 $\sigma$ 是任意代入
-    2. 令 $X \neq \varnothing$ 且 $S\subseteq X\times X$，对任意 $x\in X$，令 $S(x) = \{y\in X|xSy\}$．对任意子集 $Y\subseteq X$，令 $S[Y] = \bigcup \{S(y) |y\in Y\}$，对任意自然数 $n\leqslant 0$ 与 $x\in X$，定义 $S^0[x]=\{x\}, S^{n+1}[x] = S[S^n[x]]$
+    2. 令 $X \neq \varnothing$ 且 $S\subseteq X\times X$，对任意 $x\in X$，令 $S(x) = \{y\in X\mid xSy\}$．对任意子集 $Y\subseteq X$，令 $S[Y] = \bigcup \{S(y) \mid y\in Y\}$，对任意自然数 $n\leqslant 0$ 与 $x\in X$，定义 $S^0[x]=\{x\}, S^{n+1}[x] = S[S^n[x]]$
         1. 如果 $X$ 是有穷集且满足以下条件，则称 $(X, S)$ 为有穷树结构，$X$ 中的元组称为节点
             - 存在 $r\in X$ 满足条件：对任意 $x\in X$ 都存在自然数 $n\geqslant 0$ 使得 $rS^nx$，称 $r$ 为 $(X, S)$ 的根节点
             - 对任意 $x, y, z\in X$，如果 $xSz$ 且 $ySz$，那么 $x=y$
