@@ -11,9 +11,9 @@
     2. 度量空间的实例
         1. 实数空间：对于实数集合 $R$，定义 $\rho: R\times R\to R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)=|x-y|$，这个度量称之为 $R$ 的通常度量
         2. $n$ 维 $\text{Euclid}$ 空间：对于 $R^n$．定义 $\rho: R^n\times R^n \to R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)=\sqrt{\sum_{i=1}^n(x_i-y_i)^2}$，这个度量称为 $R^n$ 的通常度量
-        3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)|\sum_{i=1}^\infty x_i^2<\infty, x_i\in \mathbf R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有 $\forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)=\sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}$．容易验证这是良定义，这个度量称之为 $H$ 的通常度量
+        3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)\mid \sum_{i=1}^\infty x_i^2<\infty, x_i\in \mathbf R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有 $\forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)=\sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}$．容易验证这是良定义，这个度量称之为 $H$ 的通常度量
         4. 离散度量：设 $(X, \rho)$ 是一个度量空间，若 $\forall x\in X\ \exists \delta_x>0: \rho(x, y)>\delta_x$ 对于任何 $y\in X, y\neq x$ 成立，则称 $(X, \rho)$ 是离散的，或称 $\rho$ 是 $X$ 的一个离散度量
-3. 球形邻域：设 $(X, \rho)$ 是一个度量空间，$x\in X$，对于任意给定的实数 $\varepsilon >0$，集合 $B(x, \varepsilon) = B_\varepsilon(x) = \{y\in X|\rho(x, y)<\varepsilon\}$ 为一个以 $x$ 为中心，以 $\varepsilon$ 为半径的球形领域，或称为 $x$ 的一个 $\varepsilon-$邻域
+3. 球形邻域：设 $(X, \rho)$ 是一个度量空间，$x\in X$，对于任意给定的实数 $\varepsilon >0$，集合 $B(x, \varepsilon) = B_\varepsilon(x) = \{y\in X\mid \rho(x, y)<\varepsilon\}$ 为一个以 $x$ 为中心，以 $\varepsilon$ 为半径的球形领域，或称为 $x$ 的一个 $\varepsilon-$邻域
     1. 每一点 $x\in X$ 至少有一个球形领域，并且点 $x$ 属于它的每一个球形邻域
     2. 对于点 $x\in X$ 的任意两个球形邻域，存在 $x$ 的一个球形邻域同时包含于两者
     3. 若 $y\in X$ 属于 $x\in X$ 的某一个球形邻域，则 $y$ 有一个球形邻域包含于 $x$ 的那个球形邻域
@@ -35,7 +35,7 @@
         1. $f$ 在点 $x_0$ 处连续 $\leftrightarrow f(x_0)$ 的每一个邻域的原像是 $x_0$ 的一个邻域
         2. $f$ 是连续的 $\leftrightarrow Y$ 中的每一个开集的原像是 $X$ 中的一个开集
 7. 导集和闭包
-    1. 距离：设 $(X, \rho)$ 是一个度量空间，$X$ 中的点 $x$ 到 $X$ 的非空子集 $A$ 的距离 $\rho(x, A)=\inf\{\rho(x, y)|y\in A\}$
+    1. 距离：设 $(X, \rho)$ 是一个度量空间，$X$ 中的点 $x$ 到 $X$ 的非空子集 $A$ 的距离 $\rho(x, A)=\inf\{\rho(x, y)\mid y\in A\}$
     2. 设 $A$ 是度量空间 $(X, \rho)$ 中的一个非空子集
         1. $x\in d(A) \leftrightarrow \rho(x, A-\{x\}) = 0$
         2. $x\in \overline A \leftrightarrow \rho(x, A) = 0$
@@ -79,8 +79,8 @@
     2. 设 $X, \rho$ 是一个度量空间，令 $\mathscr T_\rho$ 为由 $X$ 中所有开集构成的集族，则 $(X, \mathscr T_\rho)$ 是 $X$ 的一个拓扑，称 $\mathscr T_\rho$ 为 $X$ 由度量 $\rho$ 诱导的拓扑
     3. 设 $X$ 为一个集合，容易验证 $\varnothing$ 与 $\mathcal P(X)$ 都是 $X$ 的拓扑，分别称之为平庸拓扑和离散拓扑．称 $(X, \varnothing)$ 为一个平庸空间，$(X, \mathcal P(X))$ 为一个离散空间
 3. 补空间：对于基础集 $X$，记子集 $A\subseteq X$ 的补集 $A'=X-A$
-    1. 设 $X$ 为一个集合，令 $\mathscr T=\{U\subseteq X|U'$ 是 $X$ 中的一个有限子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的有限补拓扑，称 $(X, \mathscr T)$ 为有限补空间
-    2. 设 $X$ 为一个集合，令 $\mathscr T=\{U\subseteq X|U'$ 是 $X$ 中的一个可数子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的可数补拓扑，称 $(X, \mathscr T)$ 为可数补空间
+    1. 设 $X$ 为一个集合，令 $\mathscr T=\{U\subseteq X\mid U'$ 是 $X$ 中的一个有限子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的有限补拓扑，称 $(X, \mathscr T)$ 为有限补空间
+    2. 设 $X$ 为一个集合，令 $\mathscr T=\{U\subseteq X\mid U'$ 是 $X$ 中的一个可数子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的可数补拓扑，称 $(X, \mathscr T)$ 为可数补空间
 4. 邻域：设 $(X, \mathscr T)$ 是一个拓扑空间，$x\in X$．若 $U$ 是 $X$ 的一个子集，且存在一个开集 $V\in \mathscr T$ 使得 $x\in V\subseteq U$，则称 $U$ 是点 $x$ 的一个邻域．
     1. 若 $U$ 是包含点 $x$ 的一个开集，那么 $U$ 必定是 $x$ 的一个邻域，称 $U$ 是点 $x$ 的一个开邻域．称点 $x$ 所有邻域构成的 $X$ 的子集族为点 $x$ 的邻域系
     2. 拓扑空间 $X$ 的一个子集 $U$ 是开集 $\leftrightarrow \forall x\in U: U$ 是 $x$ 的一个邻域
@@ -176,27 +176,27 @@
 1. 基：设 $(X, \mathscr T)$ 是一个拓扑空间，$\mathscr B$ 是 $\mathscr T$ 的一个子族．若 $\forall U\in \mathscr T\ \exists \mathscr B_1\subseteq \mathscr B: U=\bigcup_{B\in \mathscr B_1}B$，则称 $\mathscr B$ 是拓扑 $\mathscr T$ 的一个基
     1. 一个度量空间的所有球形邻域构成集族是这个度量空间作为拓扑空间时的一个基
     2. 设 $\mathscr B$ 是拓扑空间 $(X, \mathscr T)$ 的一个开集族，则 $\mathscr B$ 是拓扑空间 $X$ 的一个基当且仅当对于每一个 $x\in X$ 和 $x$ 的每一个邻域 $U_x$，存在 $V_x\in \mathscr B$ 使得 $x\in V_x\subseteq U_x$
-    3. 设 $X$ 是一个集合，$\mathscr B\subseteq \mathcal P(X)$，若 $\bigcup_{B\in \mathscr B}B=X$，且若 $B_1, B_2\in \mathscr B$，则对于任何 $x\in B_1\cap B_2$，存在 $B\in \mathscr B$ 使得 $x\in B\subseteq B_1\cap B_2$，则 $X$ 的子集族 $\mathscr T=\left\{U\subseteq X|\exists \mathscr B_U\subseteq \mathscr B: U=\bigcup_{B\in \mathscr B_U} B\right\}$ 是集合 $X$ 的唯一以 $\mathscr B$ 为基的拓扑，反之也成立
-2. 子基：设 $(X, \mathscr T)$ 是一个拓扑空间，$\mathscr S$ 是 $\mathscr T$ 的一个子族，若 $\mathscr S$ 的所有非空有限子族之交构成的集族 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n|S_i\in \mathscr S, i=1,2,\cdots,n;n\in \mathbf Z_+\}$ 是拓扑 $\mathscr T$ 的一个基，则称集族 $\mathscr S$ 是拓扑 $\mathscr T$ 的一个子基
-    1. 设 $X$ 是一个集合，$\mathscr S\subseteq \mathscr T(X)$，若 $X=\bigcup_{S\in \mathscr S}S$，则 $X$ 有唯一一个拓扑 $\mathscr T$ 以 $\mathscr S$ 为子基，且若令 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n|S_i\in \mathscr S, i=1,2,\cdots,n;n\in \mathbf Z_+\}$，则 $\mathscr T=\left\{\bigcup_{B\in \mathscr B_1}B|\mathscr B_1\subseteq \mathscr B\right\}$
+    3. 设 $X$ 是一个集合，$\mathscr B\subseteq \mathcal P(X)$，若 $\bigcup_{B\in \mathscr B}B=X$，且若 $B_1, B_2\in \mathscr B$，则对于任何 $x\in B_1\cap B_2$，存在 $B\in \mathscr B$ 使得 $x\in B\subseteq B_1\cap B_2$，则 $X$ 的子集族 $\mathscr T=\left\{U\subseteq X\mid \exists \mathscr B_U\subseteq \mathscr B: U=\bigcup_{B\in \mathscr B_U} B\right\}$ 是集合 $X$ 的唯一以 $\mathscr B$ 为基的拓扑，反之也成立
+2. 子基：设 $(X, \mathscr T)$ 是一个拓扑空间，$\mathscr S$ 是 $\mathscr T$ 的一个子族，若 $\mathscr S$ 的所有非空有限子族之交构成的集族 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n\mid S_i\in \mathscr S, i=1,2,\cdots,n;n\in \mathbf Z_+\}$ 是拓扑 $\mathscr T$ 的一个基，则称集族 $\mathscr S$ 是拓扑 $\mathscr T$ 的一个子基
+    1. 设 $X$ 是一个集合，$\mathscr S\subseteq \mathscr T(X)$，若 $X=\bigcup_{S\in \mathscr S}S$，则 $X$ 有唯一一个拓扑 $\mathscr T$ 以 $\mathscr S$ 为子基，且若令 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n\mid S_i\in \mathscr S, i=1,2,\cdots,n;n\in \mathbf Z_+\}$，则 $\mathscr T=\left\{\bigcup_{B\in \mathscr B_1}B\mid \mathscr B_1\subseteq \mathscr B\right\}$
     2. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则以下条件等价
         1. $f$ 连续
         2. 拓扑空间 $Y$ 有一个基 $\mathscr B$，使得对于任何一个 $B\in \mathscr B$，原像 $f^{-1}[B]$ 是 $X$ 中的一个开集
         3. $Y$ 有一个子基 $\mathscr S$，使得对于任何一个 $S\in \mathscr S$，原像 $f^{-1}[S]$ 是 $X$ 中的一个开集
 3. 邻域基：设 $X$ 是一个拓扑空间，$x\in X$．记 $\mathscr U_x$ 为 $x$ 的邻域系，若 $\mathscr U_x$ 的子族 $\mathscr V_x$ 满足对于任何 $U\in \mathscr U_x$，存在 $V\in \mathscr V_x$ 使得 $V\subseteq U$，则称 $\mathscr V_x$ 是点 $x$ 的邻域系的一个子集，或简称为点 $x$ 的一个邻域基
-    1. 若 $\mathscr U_x$ 的子族 $\mathscr W_x$ 有 $\mathscr W_x$ 的每一个非空有限子族之交的全体构成的集族 $\{W_1 \cap W_2 \cap \cdots \cap W_n|W_i\in \mathscr W_x, i=1, 2, \cdots, n; n\in \mathbf Z_+\}$ 是 $\mathscr U_x$ 的一个邻域基，则称 $\mathscr W_x$ 是点 $x$ 的邻域系的一个子基，或称为点 $x$ 的一个邻域子基
+    1. 若 $\mathscr U_x$ 的子族 $\mathscr W_x$ 有 $\mathscr W_x$ 的每一个非空有限子族之交的全体构成的集族 $\{W_1 \cap W_2 \cap \cdots \cap W_n\mid W_i\in \mathscr W_x, i=1, 2, \cdots, n; n\in \mathbf Z_+\}$ 是 $\mathscr U_x$ 的一个邻域基，则称 $\mathscr W_x$ 是点 $x$ 的邻域系的一个子基，或称为点 $x$ 的一个邻域子基
     2. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y, x\in X$，则以下条件等价
         1. $f$ 在点 $x$ 处连续
         2. $f(x)$ 有一个邻域基 $\mathscr V_{f(x)}$ 使得对于任何 $V\in \mathscr V_{f(x)}$，原像 $f^{-1}[V]$ 是 $x$ 的一个邻域
         3. $f(x)$ 有一个邻域子基 $\mathscr W_{f(x)}$ 使得对于任何 $W\in \mathscr W_{f(x)}$，原像 $f^{-1}[W]$ 是 $x$ 的一个邻域
     3. 设 $X$ 是一个拓扑空间，$x\in X$
-        1. 若 $\mathscr B$ 是 $X$ 的一个基，则 $\mathscr B_x=\{B\in \mathscr B|x\in B\}$ 是点 $x$ 的一个邻域基
-        2. 若 $\mathscr S$ 是 $X$ 的一个子基，则 $\mathscr S_x=\{S\in \mathscr S|x\in S\}$ 是点 $x$ 的一个邻域子基
+        1. 若 $\mathscr B$ 是 $X$ 的一个基，则 $\mathscr B_x=\{B\in \mathscr B\mid x\in B\}$ 是点 $x$ 的一个邻域基
+        2. 若 $\mathscr S$ 是 $X$ 的一个子基，则 $\mathscr S_x=\{S\in \mathscr S\mid x\in S\}$ 是点 $x$ 的一个邻域子基
 
 ### 1.2.4 拓扑空间中的序列
 1. 序列：设 $X$ 是一个拓扑空间，每一个映射 $S: Z_+\to X$ 称作 $X$ 中的一个序列，将序列 $S$ 记作 $\{x_i\}_{i\in \mathbf Z_+}$ 或 $\{x_1, x_2, \cdots\}$，其中 $x_i=S(i), i\in \mathbf Z_+$
     1. $\{x_i\}_{i\in \mathbf Z_+}$ 可简记为 $\{x_i\}$
-    2. 集合 $\{x_i|i\in \mathbf Z_+\}$ 可为有限集，当其为单点集时，称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 为一个常值序列
+    2. 集合 $\{x_i\mid i\in \mathbf Z_+\}$ 可为有限集，当其为单点集时，称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 为一个常值序列
 2. 极限点：设 $\{x_i\}_{i\in \mathbf Z_+}$ 是拓扑空间中的一个序列，$x\in X$．若对于 $x$ 的任意邻域 $U$，存在 $M\in \mathbf Z$ 使得当 $i>M$ 时有 $x_i\in U$，则称点 $x$ 是序列 $\{x_i\}_{i\in \mathbf Z_+}$ 的一个极限点，也称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x$，记作 $\lim_{i\to \infty}x_i=x$ 或 $x_i\to x(i\to \infty)$
     1. 若序列至少有一个极限，则称这个序列是一个收敛序列
     2. 设 $X$ 是一个拓扑空间，$S, S_1:Z_+ \to X$ 是 $X$ 中的两个序列，若存在一个映射 $N: Z_+\to Z_+$ 有 $\forall n_1, n_2\in \mathbf Z_+: n_1<n_2 \to N(n_1)<N(n_2)$，使得 $S_1=S\circ N$，则称序列 $S_1$ 是序列 $S$ 的一个子序列
