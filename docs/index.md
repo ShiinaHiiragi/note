@@ -63,7 +63,6 @@
 <script>
 const refList = [
     {
-        ref: "蔡曙山.认知科学导论[M]. 人民出版社:北京, 2021:1-697.",
         author: ["蔡曙山"],
         title: "认知科学导论",
         type: "M",
@@ -74,7 +73,6 @@ const refList = [
         plot: 180
     },
     {
-        ref: "华东师范大学哲学系逻辑学教研室.形式逻辑[M]. 华东师大出版社:上海, 2016:1-193.",
         author: ["华东师范大学哲学系逻辑学教研室"],
         title: "形式逻辑",
         type: "M",
@@ -85,7 +83,6 @@ const refList = [
         plot: 193
     },
     {
-        ref: "[英]Julian Baggini, [美]Peter S. Fosl.简单的哲学[M]. 陶涛,译. 中国人民大学出版社:北京, 2016:1-266.",
         author: ["[英]Julian Baggini", "[美]Peter S. Fosl"],
         title: "简单的哲学",
         type: "M",
@@ -97,7 +94,6 @@ const refList = [
         plot: 266
     },
     {
-        ref: "Robin Turner,Nick Nicholas.Lojban For Beginners[EB/OL].",
         author: ["Robin Turner", "Nick Nicholas"],
         title: "Lojban For Beginners",
         type: "EB/OL",
@@ -105,7 +101,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "赵毅衡.符号学：原理与推演[M]. 南京大学出版社:南京, 2016:1-370.",
         author: ["赵毅衡"],
         title: "符号学：原理与推演",
         type: "M",
@@ -116,7 +111,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "蔡曙山,邹崇理.自然语言形式理论研究[M]. 人民出版社:北京, 2010:1-604.",
         author: ["蔡曙山", "邹崇理"],
         title: "自然语言形式理论研究",
         type: "M",
@@ -127,7 +121,6 @@ const refList = [
         plot: 294
     },
     {
-        ref: "陈波.逻辑哲学[M]. 北京大学出版社:北京, 2006:1-364.",
         author: ["陈波"],
         title: "逻辑哲学",
         type: "M",
@@ -138,7 +131,6 @@ const refList = [
         plot: 29
     },
     {
-        ref: "黄敏.分析哲学导论[M]. 中山大学出版社:广州, 2009:1-362.",
         author: ["黄敏"],
         title: "分析哲学导论",
         type: "M",
@@ -149,7 +141,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "[美]Stewart Shapiro.数学哲学：对数学的思考[M]. 郝兆宽,杨睿之,译. 复旦大学出版社:上海, 2009:1-281.",
         author: ["[美]Stewart Shapiro"],
         title: "数学哲学：对数学的思考",
         type: "M",
@@ -161,7 +152,6 @@ const refList = [
         plot: 281
     },
     {
-        ref: "马明辉.结构证明论[M]. 科学出版社:北京, 2019:1-252.",
         author: ["马明辉"],
         title: "结构证明论",
         type: "M",
@@ -172,7 +162,6 @@ const refList = [
         plot: 28
     },
     {
-        ref: "郝兆宽,杨睿之,杨跃.数理逻辑：证明及其限度[M]. 复旦大学出版社:上海, 2014:175-236.",
         author: ["郝兆宽", "杨睿之", "杨跃"],
         title: "数理逻辑：证明及其限度",
         type: "M",
@@ -183,7 +172,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "姚宁远.初等模型论[M]. 复旦大学出版社:上海, 2018:1-229.",
         author: ["姚宁远"],
         title: "初等模型论",
         type: "M",
@@ -194,7 +182,6 @@ const refList = [
         plot: 30
     },
     {
-        ref: "郝兆宽,杨睿之,杨跃.递归论：算法与随机性基础[M]. 复旦大学出版社:上海, 2018:1-191.",
         author: ["郝兆宽", "杨睿之", "杨跃"],
         title: "递归论：算法与随机性基础",
         type: "M",
@@ -205,7 +192,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "[美]Michael Sipser.计算理论导引[M]. 唐常杰,陈鹏,向勇,刘齐宏,译. 机械工业出版社:上海, 2020:174-246",
         author: ["[美]Michael Sipser"],
         title: "计算理论导引",
         type: "M",
@@ -217,7 +203,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "John Stillwell.Reverse Mathematics: Proofs from the Inside out[M]. Princeton University Press:Oxford, 2018:1-167",
         author: ["John Stillwell"],
         title: "Reverse Mathematics: Proofs from the Inside out",
         type: "M",
@@ -228,7 +213,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "郝兆宽,杨跃.集合论：对无穷概念的探索[M]. 复旦大学出版社:上海, 2014:1-237.",
         author: ["郝兆宽", "杨跃"],
         title: "集合论：对无穷概念的探索",
         type: "M",
@@ -239,7 +223,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "贺伟.范畴论[M]. 科学出版社:北京, 2006:1-104.",
         author: ["贺伟"],
         title: "范畴论",
         type: "M",
@@ -250,7 +233,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "胡典顺,徐汉文.初等数论[M]. 科学出版社:北京, 2017:1-151.",
         author: ["胡典顺", "徐汉文"],
         title: "初等数论",
         type: "M",
@@ -261,7 +243,6 @@ const refList = [
         plot: 151
     },
     {
-        ref: "熊金城.点集拓扑讲义[M]. 高等教育出版社:北京, 2020:1-162.",
         author: ["熊金城"],
         title: "点集拓扑讲义",
         type: "M",
@@ -272,7 +253,6 @@ const refList = [
         plot: 162
     },
     {
-        ref: "[美]Walter Rudin.数学分析原理[M]. 赵慈庚,蒋铎,译. 机械工业出版社:上海, 2006:1-304.",
         author: ["[美]Walter Rudin"],
         title: "数学分析原理",
         type: "M",
@@ -284,7 +264,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "李文威.代数学方法：基本架构[M]. 高等教育出版社:北京, 2019:11-423.",
         author: ["李文威"],
         title: "代数学方法：基本架构",
         type: "M",
@@ -295,7 +274,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "陈有祺.形式语言与自动机[M]. 机械工业出版社:上海, 2008:1-227.",
         author: ["陈有祺"],
         title: "形式语言与自动机",
         type: "M",
@@ -306,7 +284,6 @@ const refList = [
         plot: 0
     },
     {
-        ref: "Rob Nederpelt,Herman Geuvers.Type Theory and Formal Proof: an Introduction[M]. Cambridge UniversitPress:Cambridge, 2014:1-390.",
         author: ["Rob Nederpelt", "Herman Geuvers"],
         title: "Type Theory and Formal Proof: an Introduction",
         type: "M",
