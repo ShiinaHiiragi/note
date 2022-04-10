@@ -223,16 +223,6 @@ const refList = [
         plot: 0
     },
     {
-        author: ["贺伟"],
-        title: "范畴论",
-        type: "M",
-        press: "科学出版社",
-        locate: "北京",
-        year: 2006,
-        page: [1, 104],
-        plot: 0
-    },
-    {
         author: ["胡典顺", "徐汉文"],
         title: "初等数论",
         type: "M",
@@ -241,16 +231,6 @@ const refList = [
         year: 2017,
         page: [1, 151],
         plot: 151
-    },
-    {
-        author: ["熊金城"],
-        title: "点集拓扑讲义",
-        type: "M",
-        press: "高等教育出版社",
-        locate: "北京",
-        year: 2020,
-        page: [1, 162],
-        plot: 162
     },
     {
         author: ["[美]Walter Rudin"],
@@ -264,6 +244,16 @@ const refList = [
         plot: 0
     },
     {
+        author: ["熊金城"],
+        title: "点集拓扑讲义",
+        type: "M",
+        press: "高等教育出版社",
+        locate: "北京",
+        year: 2020,
+        page: [1, 162],
+        plot: 162
+    },
+    {
         author: ["李文威"],
         title: "代数学方法：基本架构",
         type: "M",
@@ -271,6 +261,16 @@ const refList = [
         locate: "北京",
         year: 2019,
         page: [11, 423],
+        plot: 0
+    },
+    {
+        author: ["贺伟"],
+        title: "范畴论",
+        type: "M",
+        press: "科学出版社",
+        locate: "北京",
+        year: 2006,
+        page: [1, 104],
         plot: 0
     },
     {
