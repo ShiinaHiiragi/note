@@ -35,6 +35,7 @@ theme:
 markdown_extensions:
   - meta
   - admonition
+  - pymdownx.details
   - toc:
       permalink: true
   - pymdownx.arithmatex:

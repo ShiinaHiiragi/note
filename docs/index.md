@@ -15,6 +15,12 @@
 
 <div class="ref"> </div>
 
+??? info "正在进行的书目"
+    <div class="ongoing"> </div>
+
+??? info "尚未记录的书目"
+    <div class="uncomp"> </div>
+
 <style>
 .ref {
     display: flex;
@@ -317,8 +323,9 @@ const progressBar = document.querySelector(".progress-percentage");
 progressBar.innerText = progress.toFixed(2) + "%";
 progressBar.style.width = progress.toFixed(0) + "%";
 
+const renderRef = (query, filterCond) => {
 refList
-    .filter((item) => item.plot)
+    .filter(filterCond)
     .map((item => {
         const catRef = (item) => {
             const { author, title, type, trans, press, locate, year, page } = item;
@@ -342,6 +349,11 @@ refList
         newIndex.innerText = index + 1;
         newEntry.append(newIndex);
         newEntry.append(newValue);
-        document.querySelector(".ref").append(newEntry);
+        document.querySelector(query).append(newEntry);
     });
+};
+
+renderRef(".ref", (item) => item.plot);
+renderRef(".ongoing", (item) => item.plot && item.plot < item.total);
+renderRef(".uncomp", (item) => !item.plot);
 </script>
