@@ -128,7 +128,7 @@ const refList = [
         locate: "北京",
         year: 2006,
         page: [1, 364],
-        plot: 40
+        plot: 51
     },
     {
         author: ["黄敏"],
@@ -231,6 +231,16 @@ const refList = [
         year: 2017,
         page: [1, 151],
         plot: 151
+    },
+    {
+        author: ["フィッシュ"],
+        title: "巨大数論",
+        type: "M",
+        press: "株式会社インプレス R&D",
+        locate: "東京",
+        year: 2018,
+        page: [1, 258],
+        plot: 0
     },
     {
         author: ["[美]Walter Rudin"],
