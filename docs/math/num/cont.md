@@ -45,7 +45,7 @@
     2. 设 $\beta$ 是二次不可约整系数方程 $Ax^2 + Bx + C = 0$ 的实根，则 $\beta$ 的简单连分数是循环连分数
 
 ## 3.2 Pell 方程
-1. $\text{Pell}$ 方程：形如 $x^2 - dy^2 = 1$ 的方程，其中 $d$ 是一个固定的正整数且不失完全平方数
+1. $\text{Pell}$ 方程：形如 $x^2 - dy^2 = 1$ 的方程，其中 $d$ 是一个固定的正整数且不是完全平方数
     1. 有两个整数 $P_n, Q_n$ 存在使得 $\beta_n = \dfrac{\sqrt d + P_n}{Q_n} \ (P_n^2 \equiv d (\bmod Q_n))$；若 $d$ 是一个非平方的正整数，则二次方程 $x^2 - dy^2 = (-1)^n Q_n$ 有正整数解 $x, y$ 且 $(x, y) = 1$
         1. 令 $r + s\sqrt n = t + u\sqrt n$，其中 $r, s, t, u \in \mathbf Q, n \in \mathbf Z_+$ 且 $n$ 不为完全平方数，那么 $r = t$ 且 $s = u$
         2. 若 $\alpha_1 = \dfrac{a_1 + b_1\sqrt d}{c_1}, \alpha_2 = \dfrac{a_2 + b_2\sqrt d}{c_2}$ 是有理数或二次无理数，则 $(\alpha_1\alpha_2)' = \alpha_1'\alpha_2'$
