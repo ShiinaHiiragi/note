@@ -76,7 +76,7 @@ const refList = [
         locate: "北京",
         year: 2021,
         page: [1, 697],
-        plot: 0 + 180
+        plot: 44 + 180
     },
     {
         author: ["华东师范大学哲学系逻辑学教研室"],
