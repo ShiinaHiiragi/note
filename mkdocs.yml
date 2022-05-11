@@ -67,6 +67,7 @@ nav:
   - 认识基础:
     - 一、认知科学:
       - 1 神经认知: cogn/cogn/nerve.md
+      - 2 心理认知: cogn/cogn/psyc.md
       - 3 语言认知: cogn/cogn/lang.md
     - 二、形式逻辑:
       - 1 概念: cogn/formal/concept.md
