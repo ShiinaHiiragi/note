@@ -6,7 +6,7 @@
 全站以 `mkdocs-material` 作为框架，使用中文作为描述语言，所有源文件在 GitHub 可见。标点符号的使用基本符合普遍规则，绝大部分不符合规范的排版均为有意编排。
 
 !!! info "此项目仍未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：分析哲学 · 演绎与证成 </label>
+    <label> 现在进度：认知科学 · 思维认知 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
