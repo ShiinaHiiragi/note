@@ -76,7 +76,7 @@ const refList = [
         locate: "北京",
         year: 2021,
         page: [1, 697],
-        plot: 343
+        plot: 405
     },
     {
         author: ["华东师范大学哲学系逻辑学教研室"],
@@ -85,8 +85,7 @@ const refList = [
         press: "华东师大出版社",
         locate: "上海",
         year: 2016,
-        page: [1, 193],
-        plot: 193
+        page: [1, 193]
     },
     {
         author: ["[英]Julian Baggini", "[美]Peter S. Fosl"],
@@ -96,8 +95,7 @@ const refList = [
         press: "中国人民大学出版社",
         locate: "北京",
         year: 2016,
-        page: [1, 266],
-        plot: 266
+        page: [1, 266]
     },
     {
         author: ["Robin Turner", "Nick Nicholas"],
@@ -154,8 +152,7 @@ const refList = [
         press: "复旦大学出版社",
         locate: "上海",
         year: 2009,
-        page: [1, 281],
-        plot: 281
+        page: [1, 281]
     },
     {
         author: ["马明辉"],
@@ -235,8 +232,7 @@ const refList = [
         press: "科学出版社",
         locate: "北京",
         year: 2017,
-        page: [1, 151],
-        plot: 151
+        page: [1, 151]
     },
     {
         author: ["フィッシュ"],
@@ -266,8 +262,7 @@ const refList = [
         press: "高等教育出版社",
         locate: "北京",
         year: 2020,
-        page: [1, 162],
-        plot: 162
+        page: [1, 162]
     },
     {
         author: ["李文威"],
@@ -313,6 +308,7 @@ const refList = [
 
 const [plot, total] = refList.reduce(([plot, total], item) => {
     item.total = item.page[1] - item.page[0] + 1;
+    item.plot = item.plot ?? item.total;
     item.percent = (100 * item.plot / item.total).toFixed(2) + "%";
     plot += item.plot;
     total += item.total;
