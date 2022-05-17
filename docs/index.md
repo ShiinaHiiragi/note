@@ -6,7 +6,7 @@
 全站以 `mkdocs-material` 作为框架，使用中文作为描述语言，所有源文件在 GitHub 可见。标点符号的使用基本符合普遍规则，绝大部分不符合规范的排版均为有意编排。
 
 !!! info "此项目仍未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：认知科学 · 文化认知 · 科学与技术 </label>
+    <label> 现在进度：分析哲学 · 归纳逻辑 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
@@ -75,8 +75,7 @@ const refList = [
         press: "人民出版社",
         locate: "北京",
         year: 2021,
-        page: [1, 697],
-        plot: 541
+        page: [1, 697]
     },
     {
         author: ["华东师范大学哲学系逻辑学教研室"],
@@ -132,7 +131,7 @@ const refList = [
         locate: "北京",
         year: 2006,
         page: [1, 364],
-        plot: 71 + 0
+        plot: 70 + (345 - 345)
     },
     {
         author: ["黄敏"],
