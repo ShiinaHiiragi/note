@@ -81,6 +81,7 @@ nav:
       - 4 形式语用学: meta/lang/pragma.md
     - 三、分析哲学:
       - 1 演绎与证成: meta/logic/syntax.md
+      - 2 真理与悖论: meta/logic/truth.md
     - 四、数学哲学:
       - 1 基本问题与历史观点: meta/math/concept.md
       - 2 三大主义: meta/math/doctrine.md
