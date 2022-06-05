@@ -159,7 +159,7 @@
             - 长时记忆的以往或因自然的衰退，或因干扰（前摄抑制或倒摄抑制）造成
         
         !!! note "三级记忆模型"
-            $\text{Atkinson & Shiffrin}$ 提出的三种记忆的关系如下：
+            $\text{Atkinson}$ 与 $\text{Shiffrin}$ 提出的三种记忆的关系如下：
 
             <figure markdown>
                 ![](../assets/memory.png)
