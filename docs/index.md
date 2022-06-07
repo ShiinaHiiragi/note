@@ -6,7 +6,7 @@
 全站以 `mkdocs-material` 作为框架，使用中文作为描述语言，尽可能保证符号的使用具有一致性，所有源文件在 GitHub 可见。标点符号的使用基本符合普遍规则，绝大部分不规范的排版均为有意编排。
 
 !!! info "此项目仍未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：分析哲学 · 真理与悖论 </label>
+    <label> 现在进度：分析哲学 · 意义理论 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
@@ -131,7 +131,7 @@ const refList = [
         locate: "北京",
         year: 2006,
         page: [1, 364],
-        plot: 76 + (364 - 345)
+        plot: 137 + (364 - 345)
     },
     {
         author: ["黄敏"],
