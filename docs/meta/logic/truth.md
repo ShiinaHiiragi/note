@@ -87,7 +87,7 @@
 
 ### 2.2.2 句法悖论
 1. 句法悖论例举
-    1. $\text{Burali}-\text{Forti}$ 悖论：假设 $\mathbf{On}$ 是集合，且 $\forall \alpha \in \mathbf{On}$ 皆是序数，所以 $\mathbf{On}$ 是良序集．由上述性质可知 $\mathbf{On}$ 是可递集，所以 $\mathbf{On}$ 是序数，这与序数的反自反性矛盾
+    1. $\text{Burali}-\text{Forti}$ 悖论：假设 $\mathbf{On}$ 是集合，且 $\forall \alpha \in \mathbf{On}$ 皆是序数，所以 $\mathbf{On}$ 是良序集．因此 $\mathbf{On}$ 是可递集，$\mathbf{On}$ 是序数，这与序数的反自反性矛盾
     2. $\text{Cantor}$ 悖论：假如 $\mathbf{Cn}$ 为集合，那么 $\cup \mathbf{Cn}$ 也是基数，而且比所有基数都大，但是最大的基数不存在．因此，$\mathbf{Cn}$ 不是集合，否则利用替换公理，$\mathbf{On}$ 也可以是集合
     3. $\text{Russell}$ 悖论：定义集合 $S = \{x \mid x \notin x\}$，则可得出结论 $S \in S \leftrightarrow S \notin S$
 2. 句法悖论的解决方案
@@ -165,4 +165,4 @@
     1. 对角线定理：设 $S$ 是任一集合，$R$ 是至少在 $S$ 上有定义的任意关系，则 $S$ 中不存在这样的元素，它与且仅与所有那些与其自身没有 $R$ 关系的元素具有 $R$ 关系
         1. 用集合论语言表述为 $\neg \exists y\ (y \in S \wedge \forall x\ (x \in S \to (Ryx \leftrightarrow \neg Rxx)))$
         2. 将集合论语言 $y \in S$ 还原为一阶语言 $S(y)$，该定理转写为 $\neg \exists y\ (S(y) \wedge \forall x\ (S(x) \to (Ryx \leftrightarrow \neg Rxx)))$
-        3. 句法悖论例如 $\text{Russell}$ 悖论、语义悖论例如理发师悖论、$\text{Richard}$ 悖论、$\text{Grelling}$ 悖论实际上都建立在对象间方法上，统称为对角线悖论
+    2. 对角线悖论：句法悖论例如 $\text{Russell}$ 悖论、语义悖论例如理发师悖论、$\text{Richard}$ 悖论、$\text{Grelling}$ 悖论实际上都建立在对象间方法上
