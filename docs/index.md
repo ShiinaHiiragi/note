@@ -244,6 +244,26 @@ const refList = [
         plot: 0
     },
     {
+        author: ["周焕山"],
+        title: "初等代数研究",
+        type: "M",
+        press: "高等教育出版社",
+        locate: "北京",
+        year: 2014,
+        page: [56, 347],
+        plot: 0
+    },
+    {
+        author: ["项武义", "王申怀", "潘养廉"],
+        title: "古典几何学",
+        type: "M",
+        press: "高等教育出版社",
+        locate: "北京",
+        year: 2014,
+        page: [1, 68],
+        plot: 0
+    },
+    {
         author: ["[美]Walter Rudin"],
         title: "数学分析原理",
         type: "M",
