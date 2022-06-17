@@ -225,6 +225,16 @@ const refList = [
         plot: 0
     },
     {
+        author: ["周焕山"],
+        title: "初等代数研究",
+        type: "M",
+        press: "高等教育出版社",
+        locate: "北京",
+        year: 2014,
+        page: [56, 377],
+        plot: 128 - 56
+    },
+    {
         author: ["胡典顺", "徐汉文"],
         title: "初等数论",
         type: "M",
@@ -244,14 +254,13 @@ const refList = [
         plot: 0
     },
     {
-        author: ["周焕山"],
-        title: "初等代数研究",
+        author: ["熊金城"],
+        title: "点集拓扑讲义",
         type: "M",
         press: "高等教育出版社",
         locate: "北京",
-        year: 2014,
-        page: [56, 377],
-        plot: 119 - 56
+        year: 2020,
+        page: [1, 162]
     },
     {
         author: ["[美]Walter Rudin"],
@@ -263,15 +272,6 @@ const refList = [
         year: 2006,
         page: [1, 304],
         plot: 0
-    },
-    {
-        author: ["熊金城"],
-        title: "点集拓扑讲义",
-        type: "M",
-        press: "高等教育出版社",
-        locate: "北京",
-        year: 2020,
-        page: [1, 162]
     },
     {
         author: ["李文威"],

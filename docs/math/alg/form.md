@@ -29,6 +29,21 @@
 
 ### 1.1.2 分式
 1. 分式：两个多项式的比 $\dfrac{f(x)}{g(x)}$ （其中 $g(x)$ 不恒为零）称作有理分式
+    1. 分式的恒等：如果两个分式 $\dfrac{f_1(x)}{g_1(x)}$ 与 $\dfrac{f_2(x)}{g_2(x)}$ 对于 $x$ 在其公共定义域上的任意取值都有相等的值，那么 $\dfrac{f_1(x)}{g_1(x)} \equiv \dfrac{f_2(x)}{g_2(x)}$
+        1. $\dfrac{f_1(x)}{g_1(x)} \equiv \dfrac{f_2(x)}{g_2(x)}$ 当且仅当 $f_1(x)g_2(x) = f_2(x)g_1(x)$
+        2. 若 $\dfrac{f_1(x)}{g_1(x)} \equiv \dfrac{f_2(x)}{g_2(x)}$ 且 $g_1(x) = g_2(x)$，则 $f_1(x) = f_2(x)$
+    2. 既约分式：如果分式 $\dfrac{f(x)}{g(x)}$ 的分子和分母除常数因子外没有其他公因式，则称该分式为既约分式或不可约分式，称 $f(x)$ 与 $g(x)$ 互质
+    3. 分式的基本性质
+        1. 如果 $\dfrac{f(x)}{g(x)}$ 是一个分式，$h(x)$ 是一个非零多项式，则 $\dfrac{f(x)}{g(x)} \equiv \dfrac{f(x) \cdot h(x)}{g(x) \cdot h(x)}$
+        2. 任何有理分式 $\dfrac{f(x)}{g(x)}$ 都有一个既约分式与之恒等，除去数值因子外，这个既约分式是唯一的
+2. 代数延拓原理：如果分式 $\dfrac{f(x)}{g(x)}$ 在 $x = x_0$ 处失去意义，即 $g(x_0) = 0$，而其既约分式 $\dfrac{f_0(x)}{g_0(x)}$ 在 $x = x_0$ 处有意义，则约定 $\dfrac{f(x_0)}{g(x_0)} = \dfrac{f_0(x_0)}{g_0(x_0)}$
+3. 部分分式
+    1. 真分式：如果一个分式的分子多项式次数小于分母多项式的次数，则称之为真分式，否则称之为假分式
+        1. 两个真分式的和、差仍是真分式或零
+        2. 设 $p_1(x)$ 与 $p_2(x)$ 是多项式，$\dfrac{f_1(x)}{g_1(x)}$ 与 $\dfrac{f_2(x)}{g_2(x)}$ 是真分式，若有 $p_1(x) + \dfrac{f_1(x)}{g_1(x)} \equiv= p_2(x) + \dfrac{f_2(x)}{g_2(x)}$，则必有 $p_1(x) \equiv p_2(x)$ 且 $\dfrac{f_1(x)}{g_1(x)} \equiv \dfrac{f_2(x)}{g_2(x)}$
+    2. 部分分式：在实数集内，形如 $\dfrac{a}{(x - r)^k}$ 或 $\dfrac{bx + c}{(x^2 + px + q)^l}$（其中 $k, l \in Z_+, a, b, c \in \mathbf R, p^2 - 4q < 0$）的分式称作基本真分式或最简部分分式．将一个真分式化为基本真分式之和称作将分式展开为部分分式
+        1. 设 $\dfrac{f(x)}{g_1(x)g_2(x) \cdots g_n(x)}$ 是真分式，$g_1(x), g_2(x), \cdots g_n(x)$ 都是不可约多项式且两两互质，则可求得唯一一组真分式 $\dfrac{f_1(x)}{g_1(x)}, \dfrac{f_2(x)}{g_2(x)}, \cdots, \dfrac{f_n(x)}{g_n(x)}$ 使得 $\dfrac{f(x)}{g_1(x)g_2(x) \cdots g_n(x)} = \dfrac{f_1(x)}{g_1(x)} + \dfrac{f_2(x)}{g_2(x)} + \cdots + \dfrac{f_n(x)}{g_n(x)}$
+        2. 设 $\dfrac{f(x)}{g^n(x)}$ 是真分式，$f(x)$ 的次数不小于 $g(x)$ 的次数，则可求得唯一一组真分式 $\dfrac{f_1(x)}{g(x)}, \dfrac{f_2(x)}{g^2(x)}, \cdots, \dfrac{f_n(x)}{g^n(x)}$ 使得 $\dfrac{f(x)}{g^n(x)} = \dfrac{f_1(x)}{g(x)} + \dfrac{f_2(x)}{g^2(x)} + \cdots + \dfrac{f_n(x)}{g^n(x)}$，其中 $f_1(x), f_2(x), \cdots, f_n(x)$ 的次数都小于 $g(x)$ 的次数
 
 ### 1.1.3 根式
 
