@@ -1,6 +1,60 @@
 # 2 初等数论
 
 ## 2.1 数制与数系
+### 2.1 进位计数制
+1. $r$ 进制：采用进位计数的数字系统中，如果只使用 $r$ 个符号表示数值，则称其为 $r$ 进制；$r$ 被称为该数制的基数
+    1. 每一种数制都有固定的符号集，常用的进位数值如下所示：
+
+        <div style="text-align: center;">
+
+        |   进位制   |   二进制   |          八进制          |          十进制          |                 十六进制                  |
+        | :--------: | :--------: | :----------------------: | :----------------------: | :---------------------------------------: |
+        | 基数（权） |    $2$     |           $8$            |           $10$           |                   $16$                    |
+        |   符号集   | $\{0, 1\}$ | $\{0, 1, 2, \cdots, 7\}$ | $\{0, 1, 2, \cdots, 9\}$ | $\{0, 1, 2, \cdots, 9, A, B, \cdots, F\}$ |
+        |  字母标识  | $\text{B}$ |        $\text{O}$        |        $\text{D}$        |                $\text{H}$                 |
+
+        </div>
+
+    2. 每一种数制都使用位置表示法，即处于不同位置的数符所代表的指不同，与其所在位置的权值有关
+
+2. 十进制数的转换
+    1. $r$ 进制转换为十进制：将 $r$ 进制每一位乘以其权后相加
+
+        $$
+        (n)_r = n_k \times r^k + n_{k-1} \times r^{k-1} + \cdots + n_1 \times r_1 + n_0 \times r_0 + n_{-1} \times r^{-1} + \cdots + n_{-l} \times r^{-l}
+        $$
+
+    2. 十进制转换为 $r$ 进制：整数部分除 $r$ 取余，小数部分乘 $r$ 取整，然后合并两个部分
+
+### 2.2 复数域
+1. 复数：在集合 $\mathbf C = \mathbf R \times \mathbf R$ 内定义加法和乘法运算
+
+    $$
+    \begin{aligned}
+    & (a, b) + (c, d) = (a + c, b + d) \\
+    & (a, b) \cdot (c, d) = (ac - bd, ad + bc)
+    \end{aligned}
+    $$
+
+    称集合 $\mathbf C$ 为复数集，其中 $(a, b)$ 称作复数
+
+    1. $a$ 为复数 $(a, b)$ 的实部，记作 $\text{Re}(a, b)$；$b$ 为复数 $(a, b)$ 的虚部，记作 $\text{Im}(a, b)$
+    2. 设 $i = (0, 1)$，记 $(a, b) = a + bi \ (a, b \in \mathbf R)$，称之为复数 $(a, b)$ 的代数形式
+
+2. 复数关于其加法和乘法构成复数域 $(\mathbf C, +, \cdot)$，但不是一个有序域
+    1. 二次多项式 $x^2 + 1 \in \mathbf R[x]$ 无实根，构造 $\mathbf R$ 的二次扩域 $\mathbf R[x] / (x^2 + 1)$，记 $i$ 等于陪集 $x + (x^2 + 1)$
+    2. $\mathbf R[x] / (x^2 + 1) = \mathbf R \oplus \mathbf Ri$ 作为 $\mathbf R-$代数的结构完全由关系式 $i^2 + 1 = 0$ 确定，因此 $\mathbf R[x] / (x^2 + 1) \simeq \mathbf C$
+3. 共轭复数：若 $a, b \in \mathbf R, w \in \mathbf C, z = a + bi$，则称 $\overline z = a - bi$ 为 $z$ 的共轭复数
+    1. $\overline{z + w} = \overline z + \overline w$
+    2. $\overline{zw} = \overline z \cdot \overline w$
+    3. $z + \overline z = 2 \text{Re}(z), z - \overline z = 2i \text{Im}(z)$
+    4. $z\overline z \in \mathbf R$ 且 $z \overline z \geqslant 0$
+4. 模：设 $z, w \in \mathbf C$，其模 $|z| = \sqrt{z\overline z}$
+    1. $|z| >= 0$，等号成立当且仅当 $z = 0$
+    2. $|\overline z| = |z|$
+    3. $|zw| = |z| \cdot |w|$
+    4. $|\text{Re}(z)| \leqslant |z|$
+    5. $|z + w| \leqslant |z| + |w|$
 
 ## 2.2 整除理论
 ### 2.2.1 算术基本定理

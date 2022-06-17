@@ -10,5 +10,8 @@ window.MathJax = {
   options: {
     ignoreHtmlClass: ".*|",
     processHtmlClass: "arithmatex"
+  },
+  chtml: {
+    scale: 0.94
   }
 };
