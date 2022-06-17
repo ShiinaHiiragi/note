@@ -250,8 +250,8 @@ const refList = [
         press: "高等教育出版社",
         locate: "北京",
         year: 2014,
-        page: [56, 347],
-        plot: 0
+        page: [56, 377],
+        plot: 119 - 56
     },
     {
         author: ["[美]Walter Rudin"],
