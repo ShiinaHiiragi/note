@@ -1,7 +1,9 @@
-# 1 初等数论
+# 2 初等数论
 
-## 1.1 整除理论
-### 1.1.1 算术基本定理
+## 2.1 数制与数系
+
+## 2.2 整除理论
+### 2.2.1 算术基本定理
 1. 整除：设 $a, b \in \mathbf Z$ 且 $b \neq 0$．如果存在整数 $c$ 使得 $a = bc$ 成立，则称 $b$ 整除 $a$，记作 $b \mid a$；如果不存在这样的整数 $c$，则称 $b$ 不整除 $a$，记作 $b \nmid a$
     1. $a \mid b \to \pm a \mid \pm b$
     2. $a \mid b \wedge b \mid c \to a \mid c$
@@ -21,7 +23,7 @@
     2. 设 $a$ 是一个大于 $1$ 的整数且 $a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}$，$\alpha_i \ (i = 1, 2, \cdots, n)$ 是正整数，则 $\alpha$ 的正因数可以表示成 $d = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant \beta_i \geqslant 0, i = 1, 2, \cdots, n)$ 的形式
     3. 设 $a, b \in \mathbf Z_+$ 且 $\alpha = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}, b = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant 0, \beta \geqslant 0; i = 1, 2, \cdots, n)$，则 $(a, b) = p_1^{\gamma_1} p_2^{\gamma_2} \cdots p_n^{\gamma_n}$ 且 $[a, b] = p_1^{\delta_1} p_2^{\delta_2} \cdots p_n^{\delta_n}$，其中 $\gamma_i = \min\{\alpha_i, \beta_i\}, \delta_i = \max\{\alpha_i, \beta_i\} \ (i = 1, 2, \cdots, n)$
 
-### 1.1.2 因数与倍数
+### 2.2.2 因数与倍数
 1. 因数与倍数：设 $a, b\in \mathbf Z$ 且 $b \mid a$，则称 $b$ 是 $a$ 的因数，此时称 $a$ 是 $b$ 的倍数
 
     !!! note "平凡因数"
@@ -79,7 +81,7 @@
         2. 设 $m, a, b$ 是正整数，则 $[ma, mb] = m[a, b]$
     3. 若 $a_1, a_2, \cdots, a_n$ 是 $n \ (n \geqslant 2)$ 个正整数，记 $[a_1, a_2] = m_2, [m_2, a_2] = m_3, \cdots, [m_{n-2}, a_{n-1}] = m_{n-1}, [m_{n-1}, a_n] = m_n$，则 $[a_1, a_2, \cdots, a_n] = m_n$
 
-## 1.2 不定方程
+## 2.3 不定方程
 
 1. 不定方程：方程的个数少于未知数的个数且未知数又必须为整数的方程（组）
 2. 二元一次不定方程：设 $a, b, c \in \mathbf Z$ 且 $a, b \neq 0$，任何二元一次方程可以写成 $ax + by = c$，其中 $x, y \in \mathbf Z$
@@ -141,8 +143,8 @@
 
     5. 单位圆周上坐标是有理数的点（有理点）可以写作 $\left(\pm \dfrac{2ab}{a^2 + b^2}, \pm \dfrac{a^2 - b^2}{a^2 + b^2}\right)$ 或 $\left(\pm \dfrac{a^2 - b^2}{a^2 + b^2}, \pm \dfrac{2ab}{a^2 + b^2}\right)$，其中 $a, b$ 是不全为零的整数
 
-## 1.3 同余理论
-### 1.3.1 同余的概念
+## 2.4 同余理论
+### 2.4.1 同余的概念
 1. 同余：给定正整数 $m$，如果整数 $a, b$ 有 $m \mid (a - b)$，则称 $a$ 与 $b$ 对于模 $m$ 同余，记作 $a \equiv b (\bmod m)$；否则称 $a$ 与 $b$ 对于模 $m$ 不同余，记作 $a \not\equiv b (\bmod n)$
     1. 以下三种叙述等价
         1. $a \equiv b (\bmod m)$
@@ -169,7 +171,7 @@
         1. 若 $a \equiv b (\bmod m)$，则 $(a, m) = (b, m)$
         2. 若 $a \equiv b (\bmod m_i) \ (1 \leqslant i \leqslant k)$，则 $a \equiv b (\bmod [m_1, m_2, \cdots, m_k])$
 
-### 1.3.2 剩余类
+### 2.4.2 剩余类
 1. 剩余类：给定正整数 $m$，对于每个整数 $i \ (0 \leqslant i \leqslant m - 1)$，称集合 $R_i(m) = \{n \mid n \equiv i (\bmod m), n \in \mathbf Z\}$ 是模 $m$ 的一个剩余类
 2. 简化剩余类：设 $R$ 是模 $m$ 的一个剩余类，若任意 $a \in R$ 都有 $(a, m) = 1$ 成立，则称 $R$ 是模 $m$ 的一个简化剩余类
     1. 对于正整数 $k$，令函数 $\varphi(k)$ 的值等于模 $k$ 的所有简化剩余类的个数，称 $\varphi(k)$ 为 $\text{Euler}$ 函数
@@ -184,16 +186,16 @@
     3. 设 $m_1, m_2 \in \mathbf N, (m_1, m_2) = 1$，又设 $X = \{x_1, x_2, \cdots, x_{\varphi(m_1)}\}, Y = \{y_1, y_2, \cdots, y_{\varphi(m_2)}\}$ 分别是模 $m_1$ 与模 $m_2$ 的简化剩余系，则 $A = \{m_1y + m_2x \mid x \in X, y \in Y\}$ 是模 $m_1m_2$ 的简化剩余系
     4. 若 $r$ 通过模 $c$ 的最小非负完全剩余系，则 $g'$ 通过模 $m$ 的一个简化剩余系
 
-### 1.3.3 Fermat 定理
+### 2.4.3 Fermat 定理
 1. $\text{Euler}$ 定理：设 $m \in \mathbf Z_+$ 且 $(a, m) = 1$，则 $a^{\varphi(m)} \equiv 1 (\bmod m)$
 2. $\text{Fermat}$ 定理：设 $p$ 是质数，则对于任意整数 $a$ 有 $a^p \equiv a (\bmod p)$
 
-## 1.4 同余方程
+## 2.5 同余方程
 - 同余方程：设 $f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ 是整系数多项式，称 $f(x) \equiv 0 (\bmod m)$ 是关于未知数 $x$ 的模 $m$ 同余方程，
     1. 若 $a_n \not \equiv 0 (\bmod m)$，则称 $f(x) \equiv 0 (\bmod m)$ 为 $n$ 次同余方程
     2. 若 $a$ 是使 $f(a) \equiv 0 (\bmod m)$ 成立的一个整数，则 $x \equiv a (\bmod m)$ 称为 $f(x) \equiv 0 (\bmod m)$ 的一个解
 
-### 1.4.1 一次同余式
+### 2.5.1 一次同余式
 1. 一次同余方程的一般形式：$ax \equiv b (\bmod m)$
     1. 同余方程 $ax \equiv b (\bmod m)$ 等价于不定方程 $ax + my = b$
     2. 设 $a, b$ 是整数，$a \not \equiv 0 (\bmod m)$，则同余方程 $ax \equiv b (\bmod m)$ 有解当且仅当 $(a, m) \mid b$．若有解，则恰有 $d = (a, m)$ 个解
@@ -214,7 +216,7 @@
 
     2. 设 $p$ 是质数，当 $m_1 = p^\alpha m_1', m_2 = p^\beta m_2'$ 且 $\alpha \geqslant \beta, p \nmid m_1'm_2'$ 时，若同余式 $\left\{\begin{aligned}& x \equiv a_1 (\bmod m_1) \\& x \equiv a_2 (\bmod m_2)\end{aligned}\right.$ 有解，则它与 $\left\{\begin{aligned}& x \equiv a_1 (\bmod m_1) \\& x \equiv a_2 (\bmod m_2')\end{aligned}\right.$ 同解
 
-### 1.4.2 二次同余式
+### 2.5.2 二次同余式
 1. 二次剩余：给定整数 $p$，对于任意的整数 $n$ 有 $(n, p) = 1$．若当成 $x^2 \equiv n (\bmod p)$ 有解，则称 $n$ 是模 $p$ 的二次剩余，记作 $n \in \mathrm{QR}(p)$，否则称 $n$ 是模 $p$ 的二次非剩余，记作 $n \in \mathrm{QNR}(p)$． 当 $p = 2$ 时，方程 $x^2 \equiv n (\bmod p)$ 总有解且解数为 $1$
 2. $\text{Euler}$ 判别法：设 $p$ 为奇质数且 $(n, p) = 1$．$n$ 是模 $p$ 的二次剩余当且仅当 $n^{\frac{p-1}{2}} \equiv 1 (\bmod p)$
     1. 若 $n$ 是模 $p$ 的二次剩余，则方程 $x^2 \equiv n (\bmod p)$ 有两个解
@@ -269,7 +271,7 @@
         2. 当 $\alpha = 2$ 时，解的个数时 $2^{k+1}$
         3. 当 $\alpha \geqslant 3$ 时，解的个数时 $2^{k+2}$
 
-### 1.4.3 高次同余式
+### 2.5.3 高次同余式
 1. 解数与解法：
     1. 若 $m_1, m_2, \cdots, m_k$ 是 $k$ 个两两互质的正整数，$m = m_1 m_2 \cdots m_k$，则同余式 $f(x) \equiv 0 (\bmod m)$ 与同余式组 $f(x) \equiv 0 (\bmod m_i) \ (i = 1, 2, \cdots, k)$ 等价，并且若用 $T_i$ 表示 $f(x) \equiv 0 (\bmod m_i) \ (i = 1, 2, \cdots, k)$ 对模 $m_i$ 的解数，$T$ 表示 $f(x) \equiv 0 (\bmod m)$ 对模 $m$ 的解数，则 $T = T_1 T_2 \cdots T_k$
     2. 设 $p$ 是质数，$\alpha \geqslant 2$ 是整数，$f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ 是整系数多项式，设 $x_1$ 是同余方程 $f(x) \equiv 0 (\bmod p^{\alpha-1})$ 的一个解，以 $f'(x)$ 表示 $f(x)$ 的导函数
@@ -287,8 +289,8 @@
     5. 设 $n \leqslant p$，则同余方程 $f(x) \equiv 0 (\bmod p)$ 有 $n$ 个解当且仅当存在整系数多项式 $q(x)$ 与 $r(x)$，且 $r(x)$ 的次数小于 $n$ 使得 $x^p - x = f(x)q(x) + p\cdot r(x)$
     6. 设 $p$ 是质数且 $n \mid (p - 1), p \nmid a$，则 $x^n \equiv a (\bmod p)$ 有解当且仅当 $a^{\frac{p-1}{n}} \equiv 1 (\bmod p)$．若有解，则解数为 $n$
 
-## 1.5 原根与指标
-### 1.5.1 指数与原根
+## 2.6 原根与指标
+### 2.6.1 指数与原根
 1. 设 $m > 1, (a, m) = 1$，则使 $a^r \equiv 1 (\bmod m)$ 成立的最小正整数 $r$ 称为 $a$ 对模 $m$ 的指数或 $a$ 对模 $m$ 的阶，记为 $\delta_m(a)$，简记作 $\delta(a)$
     1. $\delta_m(a) \leqslant \varphi(m)$
     2. 若 $a \equiv b (\bmod m), (a, m) = 1$，则 $\delta_m(a) = \delta_m(b)$
@@ -312,7 +314,7 @@
         4. 设 $p$ 是奇质数且 $m = 2, 4, p^\alpha, 2p^\alpha$，则模 $m$ 有原根
     3. 设 $m > 1, (g, m) = 1$ 且 $\varphi(m)$ 的所有不同质因数是 $p_1, p_2, \cdots, p_k$．则 $g$ 是模 $m$ 的原根当且仅当 $g^{\frac{\varphi(m)}{p_i}} \not \equiv 1 (\bmod m) \ (1 \leqslant i \leqslant k)$
 
-### 1.5.2 指标与剩余
+### 2.6.2 指标与剩余
 1. 指标：设 $a \in \mathbf Z$，若对模 $m$ 的一个原根 $g$ 有一整数 $r$ 存在使得 $a \equiv g^r (\bmod m) \ (r \geqslant 0)$ 成立，则 $r$ 称作以 $g$ 为底的 $a$ 对模 $m$ 的一个指标，记作 $r = \mathrm{ind}_g a$，简记作 $\mathrm{ind} a$
     1. 指标的性质
         1. $\mathrm{ind}_g g = 1$
@@ -329,7 +331,7 @@
         2. 在模 $m$ 的一个简化剩余系中，$n$ 次剩余的个数为 $\dfrac cd$
     2. $a$ 是模 $m$ 的 $n$ 次剩余当且仅当 $a^{\frac cd} \equiv 1 (\bmod m), d = (n, c)$
 
-## 1.6 连分数
+## 2.7 连分数
 1. 有限连分数：设 $a_1, a_2, \cdots, a_n$ 是一个是数列，$a_i > 0, i \geqslant 2$．对给定的 $n \geqslant 1$，将形如
 
     $$

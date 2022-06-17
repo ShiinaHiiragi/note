@@ -102,8 +102,9 @@ nav:
       - 5 势与基数: logic/set/cardinal.md
   - 数学结构:
     - 一、初等代数:
-      - 1 初等数论: math/alg/num.md
-    - 三、点集拓扑:
+      - 1 解析式: math/alg/form.md
+      - 2 初等数论: math/alg/num.md
+    - 二、点集拓扑:
       - 1 拓扑空间: math/top/space.md
       - 2 构造空间: math/top/construct.md
       - 3 拓扑不变性质: math/top/prop.md
