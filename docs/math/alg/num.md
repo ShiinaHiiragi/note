@@ -386,7 +386,7 @@
     2. $a$ 是模 $m$ 的 $n$ 次剩余当且仅当 $a^{\frac cd} \equiv 1 (\bmod m), d = (n, c)$
 
 ## 3.7 连分数
-1. 有限连分数：设 $a_1, a_2, \cdots, a_n$ 是一个是数列，$a_i > 0, i \geqslant 2$．对给定的 $n \geqslant 1$，将形如
+1. 有限连分数：设 $a_1, a_2, \cdots, a_n$ 是一个实数列，$a_i > 0, i \geqslant 2$．对给定的 $n \geqslant 1$，将形如
 
     $$
     a_1 + \cfrac{1}{

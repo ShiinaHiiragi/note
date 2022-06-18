@@ -263,6 +263,16 @@ const refList = [
         page: [1, 162]
     },
     {
+        author: ["赵一鸣", "阚海斌", "吴永辉"],
+        title: "离散数学",
+        type: "M",
+        press: "人民邮电出版社",
+        locate: "北京",
+        year: 2011,
+        page: [57, 141],
+        plot: 0
+    },
+    {
         author: ["[美]Walter Rudin"],
         title: "数学分析原理",
         type: "M",
