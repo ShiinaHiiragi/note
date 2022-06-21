@@ -156,5 +156,29 @@
     5. 单位圆周上坐标是有理数的点（有理点）可以写作 $\left(\pm \dfrac{2ab}{a^2 + b^2}, \pm \dfrac{a^2 - b^2}{a^2 + b^2}\right)$ 或 $\left(\pm \dfrac{a^2 - b^2}{a^2 + b^2}, \pm \dfrac{2ab}{a^2 + b^2}\right)$，其中 $a, b$ 是不全为零的整数
 
 ### 2.1.3 初等超越方程
+1. 指数方程：在指数里含有未知数的方程
+    1. 最简指数方程：形如 $a^x = c \ (a > 0, a \neq 1)$ 的方程
+        1. 当 $c > 0$ 时，方程 $a^x = c$ 有唯一解 $x = \log_a c$
+        2. 当 $c \leqslant 0$ 时，方程无解
+    2. 指数方程的初等解法
+        1. 方程 $a^{f(x)} = c \ (a > 0, a \neq 1, c > 0)$ 与方程 $f(x) = \log_a c$ 根据定义同解
+        2. 方程 $a^{f(x)} = a^{g(x)} \ (a > 0, a \neq 1)$ 与方程 $f(x) = g(x)$ 同解
+        3. 方程 $a^{f(x)} = b^{f(x)} \ (a, b > 0, a, b \neq 1, a \neq b)$ 与方程 $f(x) = 0$ 同解
+        4. 方程 $a^{f(x)} = b^{g(x)} \ (a, b > 0, a, b \neq 1)$ 与方程 $f(x) \log_c a = g(x) \cdot \log_c b \ (c > 0, c \neq 1)$ 同解
+        5. 方程 $f\left(a^{g(x)}\right) = 0 \ (a > 0, a \neq 1)$ 与方程组 $\left\{\begin{aligned} & t = a^{g(x)} \\ & f(t) = 0 \end{aligned}\right.$ 同解
+2. 对数方程：在对数符号后含有未知数的方程．特别地，形如 $\log_a x = b \ (a > 0, a \neq 1)$ 的方程称为最简对数方程，它总有唯一解 $x = a^b$
+3. 三角方程：含有未知数的三角函数的方程称作三角方程
+    1. 最简三角方程：形如 $\sin x = a, \cos x = a, \tan x = a, \cot x = a$ 的方程
+        1. $\sin x = a \ (|a| \leqslant 1)$ 的解集为 $x = (-1)^k \arcsin a + k\pi, k \in \mathbf Z$
+        2. $\cos x = a \ (|a| \leqslant 1)$ 的解集为 $x = \pm \arccos a + 2k\pi, k \in \mathbf Z$
+        3. $\tan x = a$ 的解集是 $x = \arctan a + k\pi, k \in \mathbf Z$
+        4. $\cot x = a$ 的解集是 $x = \mathrm{arccot}\ a + k\pi, k \in \mathbf Z$
+    2. 辅助角：对于形如 $a\sin x + b\cos x = c$（$a, b, c$ 为非零实数）的三角方程，令 $\varphi = \arctan \dfrac ba$，则方程变形为 $\sin(x + \varphi) = \dfrac{c}{\sqrt{a^2 + b^2}}$
+4. 反三角方程：仅在反三角函数后含有未知数的方程
 
 ## 2.2 不等式
+### 2.3.1 不等式的性质
+
+### 2.3.2 常用不等式
+
+### 2.3.3 解不等式
