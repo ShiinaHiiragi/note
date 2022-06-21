@@ -103,6 +103,7 @@ nav:
   - 数学结构:
     - 一、初等代数:
       - 1 解析式与初等函数: math/alg/form.md
+      - 2 方程与不等式: math/alg/eq.md
       - 3 初等数论: math/alg/num.md
     - 二、点集拓扑:
       - 1 拓扑空间: math/top/space.md
