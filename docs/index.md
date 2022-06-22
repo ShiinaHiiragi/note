@@ -264,6 +264,16 @@ const refList = [
         plot: 0
     },
     {
+        author: ["Sheldon Axler"],
+        title: "Linear Algebra Done Right",
+        type: "M",
+        press: "Springer",
+        locate: "Cham",
+        year: 2015,
+        page: [1, 202],
+        plot: 0
+    },
+    {
         author: ["熊金城"],
         title: "点集拓扑讲义",
         type: "M",
@@ -317,7 +327,7 @@ const refList = [
         author: ["Rob Nederpelt", "Herman Geuvers"],
         title: "Type Theory and Formal Proof: an Introduction",
         type: "M",
-        press: "Cambridge UniversitPress",
+        press: "Cambridge University Press",
         locate: "Cambridge",
         year: 2014,
         page: [1, 390],
