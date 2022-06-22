@@ -15,7 +15,7 @@
         \end{aligned}
         $$
 
-2. 可定义集：设 $\mathfrak A$ 是一个论域为 $A$ 的 $S-$结构，$C \subseteq A, X \subseteq A^n$，用 $\mathrm{Def}_C(X) = \{Y \subseteq X \mid Y$ 是 $C-$可定义的$\}$ 表示 $X$ 的 $C-$可定义的子集全体；$\mathrm{Def}(A) = \bigcup_{n\in \mathbf Z_+} \mathrm{Def}_A(A^n)$ 表示全体 $A-$可定义集
+2. 可定义集：设 $\mathfrak A$ 是一个论域为 $A$ 的 $S-$结构，$C \subseteq A, X \subseteq A^n$，用 $\mathrm{Def}_C(X) = \{Y \subseteq X \mid Y$ 是 $C-$可定义的$\}$ 表示 $X$ 的 $C-$可定义的子集全体；$\mathrm{Def}(A) = {\displaystyle \bigcup_{n\in \mathbf Z_+} \mathrm{Def}_A(A^n)}$ 表示全体 $A-$可定义集
 3. 闭包：设 $\mathfrak A$ 是论域为 $A$ 的 $S-$结构，$C \subseteq A$ 是一个子集，则 $C$ 在 $A$ 中的可定义闭包为 $\mathrm{dcl}_A(C) = \{b\in A \mid \{b\}$ 是 $C-$可定义集$\}$；$C$ 在 $A$ 中的代数闭包为 $\mathrm{acl}_A(C) = \{b\in A \mid$ 存在一个有限的 $C-$可定义集使得 $b\in C\}$
     1. 设 $b\in A$，则 $b\in \mathrm{dcl}_A(C)$ 当且仅当有可定义函数 $f(x_1, x_2, \cdots, x_n)$ 及 $a_1, a_2, \cdots, a_n \in A$ 使得 $b = f(a_1, a_2, \cdots, a_n)$
     2. $\mathrm{dcl}_A(C) \subseteq \mathrm{acl}_A(C)$
@@ -75,7 +75,7 @@
     1. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i \mid i \in I\}$ 是一族 $S-$结构
         1. 如果对任意的 $i, j \in I$ 都有 $i < j \Rightarrow \mathfrak A_i \subseteq \mathfrak A_j$，则称 $\{\mathfrak A_i \mid i \in I\}$ 是一条链
         2. 如果对任意的 $i, j \in I$ 都有 $i < j \Rightarrow \mathfrak A_i \prec \mathfrak A_j$，则称 $\{\mathfrak A_i \mid i \in I\}$ 是一条初等链
-    2. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i \mid i \in I\}$ 是一族 $S-$结构，其中 $\mathfrak A_i$ 的论域是 $A_i$．令 $\mathfrak A = \bigcup_{i \in I} \mathfrak A_i$，则其论域为 $A = \bigcup_{i \in I}A_i$，常元符号 $c$ 解释为 $c^{\mathfrak A_{i_0}}$，其中 $i_0 \in I$；函数符号 $f$ 解释为 $\bigcup_{i \in I}f^{\mathfrak A_i}$；关系符号 $R$ 解释为 $\bigcup_{i \in I}R^{\mathfrak A_i}$
+    2. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i \mid i \in I\}$ 是一族 $S-$结构，其中 $\mathfrak A_i$ 的论域是 $A_i$．令 $\mathfrak A = {\displaystyle \bigcup_{i \in I} \mathfrak A_i}$，则其论域为 $A = {\displaystyle \bigcup_{i \in I}A_i}$，常元符号 $c$ 解释为 $c^{\mathfrak A_{i_0}}$，其中 $i_0 \in I$；函数符号 $f$ 解释为 ${\displaystyle \bigcup_{i \in I}f^{\mathfrak A_i}}$；关系符号 $R$ 解释为 ${\displaystyle \bigcup_{i \in I}R^{\mathfrak A_i}}$
         1. 若 $\{\mathfrak A_i \mid i \in I\}$ 是一条链，则 $\mathfrak M$ 是一个 $S-$结构，且对每个 $i \in I$ 都有 $\mathfrak A_i \subseteq \mathfrak A$
         2. 若 $\{\mathfrak A_i \mid i \in I\}$ 是一条初等链，则对每个 $i \in I$ 都有 $\mathfrak A_i \prec \mathfrak A$
 

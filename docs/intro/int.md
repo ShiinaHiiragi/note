@@ -4,7 +4,7 @@
 1. 投射与自然投射
     1. 投射：设 $x_1, x_2, \cdots, x_n$ 是 $n(n\geqslant 1)$ 个集合，从 $x=x_1\times x_2\times \cdots, x_n$ 到其第 $i(1\leqslant i\leqslant n)$ 个坐标集 $x_i$ 的投射 $p_i: x\to x_i$ 定义为 $\forall x=(a_1, a_2, \cdots, a_n) \in x: p_i(x)=a_i$，即 $p_i=\{((a_1, a_2, \cdots, a_n), a_i)|(a_1, a_2, \cdots, a_n)\in x\}\subset x\times x_i$
     2. 自然投射：设 $R$ 是集合 $x$ 中的一个等价关系，从集合 $x$ 到其商集 $x/R$ 的自然投射 $p:x\to x/R$ 定义为 $\forall x\in x: p(x)=[x]$，即 $p=\{(x, [x])|x\in x\}\subset x\times x/R$
-2. 设集族 $\{x_i\}_{i\in I}$ 的 $\mathrm{Descartes}$ 积为 ${\displaystyle \prod_{i\in I}x_i}=\{x: I\to \bigcup_{i\in I}x_i|\forall i\in I(x(i)\in x_i)\}$
+2. 设集族 $\{x_i\}_{i\in I}$ 的 $\mathrm{Descartes}$ 积为 ${\displaystyle \prod_{i\in I}x_i} = \left\{ \left. x: I\to {\displaystyle \bigcup_{i\in I}x_i} \right| \forall i\in I(x(i)\in x_i)\right\}$
     1. 对于每一个 $i\in I$，集合 $x_i$ 为 $\mathrm{Descartes}$ 积 ${\displaystyle \prod_{i\in I}x_i}$ 的第 $i$ 个坐标集
     2. 对于 $i\in I$，定义 $p_i: {\displaystyle \prod_{i\in I}x_i} \to x_i$，使得对于任意 $x\in {\displaystyle \prod_{i\in I}x_i}$ 有 $p_i(x)=x(i)$，称为 $\mathrm{Descartes}$ 积的第 $i$ 个投射
 3. 设给定了集族 $\{x_i\}_{i\in I}$，则 $\mathrm{Descartes}$ 积 ${\displaystyle \prod_{i\in I}x_i} \neq \varnothing \leftrightarrow \forall i\in I(x_i\neq \varnothing)$

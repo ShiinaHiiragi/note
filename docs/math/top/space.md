@@ -73,7 +73,7 @@
 1. 拓扑：设 $X$ 是一个集合，$\mathscr T\subseteq \mathcal P(X)$，若 $\mathscr T$ 满足以下条件，则称 $\mathscr T$ 是 $X$ 的一个拓扑
     1. $X, \varnothing\in \mathscr T$
     2. 若 $A, B\in \mathscr T$，则 $A\cap B\in \mathscr T$
-    3. 若 $\mathscr T_1\subseteq \mathscr T$，则 $\bigcup_{A\in \mathscr T_1}A\in \mathscr T$
+    3. 若 $\mathscr T_1\subseteq \mathscr T$，则 ${\displaystyle \bigcup_{A\in \mathscr T_1}A} \in \mathscr T$
 2. 拓扑空间：若 $\mathscr T$ 是集合 $X$ 的一个拓扑，则称偶对 $(X, \mathscr T)$ 是一个拓扑空间，集合 $X$ 是一个相对于拓扑 $\mathscr T$ 而言的拓扑空间
     1. 当 $\mathscr T$ 已约定时，称集合 $X$ 是一个拓扑空间，$\mathscr T$ 的每一个元素都叫做拓扑空间 $(X, \mathscr T)$ 的一个开集
     2. 设 $X, \rho$ 是一个度量空间，令 $\mathscr T_\rho$ 为由 $X$ 中所有开集构成的集族，则 $(X, \mathscr T_\rho)$ 是 $X$ 的一个拓扑，称 $\mathscr T_\rho$ 为 $X$ 由度量 $\rho$ 诱导的拓扑
@@ -134,7 +134,7 @@
         !!! note "$\text{Cantor}$ 集"
             在实数空间 $R$ 中，定义 $f_1, f_2: R\to R$ 使得对于任意 $t\in \mathbf R$ 有 $f_1(t)=\dfrac{t}{3}, f_2(t)=\dfrac{t+2}{3}$，则可以验证 $f_1, f_2$ 均为同胚，即任意开集 $U\subseteq R$，其 $f_1-$像与 $f_2-$像都是开集
 
-            定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1[A_{n-1}]\cup f_2[A_{n-1}](n>1), A=\bigcup_{n\in \mathbf Z_+}A_n$，称集合 $C=[0, 1]-A$ 为 $\text{Cantor}$ 集或标准 $\text{Cantor}$ 三分集，可以验证 $C$ 是一个闭集
+            定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1[A_{n-1}]\cup f_2[A_{n-1}](n>1), A={\displaystyle \bigcup_{n\in \mathbf Z_+}A_n}$，称集合 $C=[0, 1]-A$ 为 $\text{Cantor}$ 集或标准 $\text{Cantor}$ 三分集，可以验证 $C$ 是一个闭集
 
 4. 闭包：设 $X$ 是一个拓扑空间，$A\subseteq X$，称集合 $A\cup d(A)$ 为集合 $A$ 的闭包，记作 $\overline A$ 或 $A^-$
     1. $x\in \overline A$ 当且仅当对于 $x$ 的任何一个邻域 $U$ 有 $U\cap A\neq \varnothing$
@@ -164,7 +164,7 @@
         3. $(A\cap B)^o = A^o\cap B^o$
         4. $A^{oo}=A^o$
     4. 拓扑空间的任何一个子集 $A$ 的内部 $A^o$ 都是开集
-    5. 设 $X$ 是一个拓扑空间，$\mathscr T$ 是 $X$ 的拓扑，则对于 $X$ 的每一个子集 $A$ 有 $A^o=\bigcup_{B\in\mathscr T, B\subseteq A} B$
+    5. 设 $X$ 是一个拓扑空间，$\mathscr T$ 是 $X$ 的拓扑，则对于 $X$ 的每一个子集 $A$ 有 $A^o={\displaystyle \bigcup_{B\in\mathscr T, B\subseteq A} B}$
 
 6. 边界点：设 $X$ 是一个拓扑空间，$A\subseteq X$，点 $x\in X$．若在 $x$ 的任意一个邻域 $U$ 中有 $U\cap A\neq \varnothing \wedge U\cap A'\neq \varnothing$，则称 $x$ 是集合 $A$ 的一个边界点
     1. 边界：集合 $A$ 的全体边界点构成的集合，记作 $\partial(A)$
@@ -173,12 +173,12 @@
         2. $\partial(A)=A^-\cap A{}'^-=(A^o\cup A{}'^o)'=\partial(A')$
 
 ### 1.2.3 基与子基
-1. 基：设 $(X, \mathscr T)$ 是一个拓扑空间，$\mathscr B$ 是 $\mathscr T$ 的一个子族．若 $\forall U\in \mathscr T\ \exists \mathscr B_1\subseteq \mathscr B: U=\bigcup_{B\in \mathscr B_1}B$，则称 $\mathscr B$ 是拓扑 $\mathscr T$ 的一个基
+1. 基：设 $(X, \mathscr T)$ 是一个拓扑空间，$\mathscr B$ 是 $\mathscr T$ 的一个子族．若 $\forall U\in \mathscr T\ \exists \mathscr B_1\subseteq \mathscr B: U={\displaystyle \bigcup_{B\in \mathscr B_1}B}$，则称 $\mathscr B$ 是拓扑 $\mathscr T$ 的一个基
     1. 一个度量空间的所有球形邻域构成集族是这个度量空间作为拓扑空间时的一个基
     2. 设 $\mathscr B$ 是拓扑空间 $(X, \mathscr T)$ 的一个开集族，则 $\mathscr B$ 是拓扑空间 $X$ 的一个基当且仅当对于每一个 $x\in X$ 和 $x$ 的每一个邻域 $U_x$，存在 $V_x\in \mathscr B$ 使得 $x\in V_x\subseteq U_x$
-    3. 设 $X$ 是一个集合，$\mathscr B\subseteq \mathcal P(X)$，若 $\bigcup_{B\in \mathscr B}B=X$，且若 $B_1, B_2\in \mathscr B$，则对于任何 $x\in B_1\cap B_2$，存在 $B\in \mathscr B$ 使得 $x\in B\subseteq B_1\cap B_2$，则 $X$ 的子集族 $\mathscr T=\left\{U\subseteq X\mid \exists \mathscr B_U\subseteq \mathscr B: U=\bigcup_{B\in \mathscr B_U} B\right\}$ 是集合 $X$ 的唯一以 $\mathscr B$ 为基的拓扑，反之也成立
+    3. 设 $X$ 是一个集合，$\mathscr B\subseteq \mathcal P(X)$，若 ${\displaystyle \bigcup_{B\in \mathscr B}B}=X$，且若 $B_1, B_2\in \mathscr B$，则对于任何 $x\in B_1\cap B_2$，存在 $B\in \mathscr B$ 使得 $x\in B\subseteq B_1\cap B_2$，则 $X$ 的子集族 $\mathscr T=\left\{U\subseteq X \left|\exists \mathscr B_U\subseteq \mathscr B: U={\displaystyle \bigcup_{B\in \mathscr B_U} B}\right.\right\}$ 是集合 $X$ 的唯一以 $\mathscr B$ 为基的拓扑，反之也成立
 2. 子基：设 $(X, \mathscr T)$ 是一个拓扑空间，$\mathscr S$ 是 $\mathscr T$ 的一个子族，若 $\mathscr S$ 的所有非空有限子族之交构成的集族 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n\mid S_i\in \mathscr S, i=1,2,\cdots,n;n\in \mathbf Z_+\}$ 是拓扑 $\mathscr T$ 的一个基，则称集族 $\mathscr S$ 是拓扑 $\mathscr T$ 的一个子基
-    1. 设 $X$ 是一个集合，$\mathscr S\subseteq \mathscr T(X)$，若 $X=\bigcup_{S\in \mathscr S}S$，则 $X$ 有唯一一个拓扑 $\mathscr T$ 以 $\mathscr S$ 为子基，且若令 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n\mid S_i\in \mathscr S, i=1,2,\cdots,n;n\in \mathbf Z_+\}$，则 $\mathscr T=\left\{\bigcup_{B\in \mathscr B_1}B\mid \mathscr B_1\subseteq \mathscr B\right\}$
+    1. 设 $X$ 是一个集合，$\mathscr S\subseteq \mathscr T(X)$，若 $X={\displaystyle \bigcup_{S\in \mathscr S}S}$，则 $X$ 有唯一一个拓扑 $\mathscr T$ 以 $\mathscr S$ 为子基，且若令 $\mathscr B=\{S_1\cap S_2\cap \cdots \cap S_n\mid S_i\in \mathscr S, i=1,2,\cdots,n;n\in \mathbf Z_+\}$，则 $\mathscr T=\left\{\left. {\displaystyle \bigcup_{B\in \mathscr B_1}B}\right| \mathscr B_1\subseteq \mathscr B\right\}$
     2. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则以下条件等价
         1. $f$ 连续
         2. 拓扑空间 $Y$ 有一个基 $\mathscr B$，使得对于任何一个 $B\in \mathscr B$，原像 $f^{-1}[B]$ 是 $X$ 中的一个开集

@@ -14,7 +14,7 @@
     1. 设 $Y$ 是拓扑空间 $X$ 的一个子集，$A, B\subseteq Y$，则 $A, B$ 是子空间 $Y$ 中的隔离子集仅当它们是拓扑空间 $X$ 中的隔离子集
     2. 设 $Y$ 是拓扑空间 $X$ 中的一个连通子集，若 $X$ 中有隔离子集 $A, B$ 使得 $Y\subseteq A\cap B$，则 $Y\subseteq A\vee Y\subseteq B$
     3. 设 $Y$ 是拓扑空间 $X$ 的一个连通子集，$Z\subseteq X$ 满足条件 $Y\subseteq Z\subseteq \overline Y$，则 $Z$ 也是 $X$ 的一个连通子集
-    4. 设 $\{Y_\gamma\}_{\gamma \in \Gamma}$ 是拓扑空间 $X$ 的连通子集构成的一个子集族，若 ${\displaystyle \bigcap_{\gamma\in \Gamma}Y_\gamma} \neq\varnothing$，则 $\bigcup_{\gamma\in \Gamma}Y_\gamma \neq\varnothing$ 是 $X$ 的一个连通子集
+    4. 设 $\{Y_\gamma\}_{\gamma \in \Gamma}$ 是拓扑空间 $X$ 的连通子集构成的一个子集族，若 ${\displaystyle \bigcap_{\gamma\in \Gamma}Y_\gamma} \neq\varnothing$，则 ${\displaystyle \bigcup_{\gamma\in \Gamma}Y_\gamma} \neq\varnothing$ 是 $X$ 的一个连通子集
     5. 设 $Y$ 是拓扑空间 $X$ 的一个子集，若对于任意 $x, y\in Y$，存在 $X$ 中的一个连通子集 $Y_{xy}$ 使得 $x, y\in Y_{xy}$，则 $Y$ 是 $X$ 中的一个连通子集
 4. 连通性的性质
     1. 拓扑不变性：设 $f: X\to Y$ 是从连通空间 $X$ 到拓扑空间 $Y$ 的一个连续映射，则 $f[X]$ 是 $Y$ 的一个连通子集
@@ -94,7 +94,7 @@
     2. 每一个可分的度量空间都满足第二可数性公理；可分度量空间的每一个子空间都是可分空间
 
 ### 3.2.3 Lindelof 空间
-1. 覆盖：设 $\mathscr A$ 是一个集族，$B$ 是一个集合，若 $\bigcup_{A\in \mathscr A}A\supset B$，则称集族 $\mathscr A$ 是集合 $B$ 的一个覆盖，且当 $\mathscr A$ 是可数族或有限族时，分别称集族 $\mathscr A$ 是集合 $B$ 的一个可数覆盖或有限覆盖
+1. 覆盖：设 $\mathscr A$ 是一个集族，$B$ 是一个集合，若 ${\displaystyle \bigcup_{A\in \mathscr A}A} \supset B$，则称集族 $\mathscr A$ 是集合 $B$ 的一个覆盖，且当 $\mathscr A$ 是可数族或有限族时，分别称集族 $\mathscr A$ 是集合 $B$ 的一个可数覆盖或有限覆盖
     1. 子覆盖：设集族 $\mathscr A$ 是集合 $B$ 的一个 $\mathscr A$ 的一个子族 $\mathscr A_1$ 也是集合 $B$ 的覆盖，则称集族 $\mathscr A_1$ 是覆盖 $\mathscr A$ 关于集合 $B$ 的一个子覆盖
     2. 开（闭）覆盖：设 $X$ 是一个拓扑空间，若由 $X$ 中开（闭）子集构成的集族 $\mathscr A$ 是 $X$ 的子集 $B$ 的一个覆盖，则称集族 $\mathscr A$ 是集合 $B$ 的一个开（闭）覆盖
     3. 局部有限覆盖：设 $X$ 是一个拓扑空间，$\mathscr A$ 是 $X$ 的子集 $A$ 的一个覆盖．如果对于每一个 $x\in A$，点 $x$ 有一个邻域 $U$ 仅与 $\mathscr A$ 中有限个元素有非空的交，则称 $\mathscr A$ 是集合 $A$ 的一个局部有限覆盖
@@ -180,7 +180,7 @@
         2. $\text{Tychonoff}$ 乘积定理：任何一族紧空间的积空间都是紧空间
 
         !!! note "命题逻辑的紧致性定理"
-            设 $\mathbf{Prop}$ 为命题变元集合，$\mathscr L$ 为命题公式集．令 $\mathbf{Prop}$ 为指标集，对集合 $2=\{0, 1\}$ 赋予离散拓扑，所有真值指派的集合 $2^V$ 是一个积空间，其子基元素是集合 $\mathscr S_{p, i}=\{\tau: \tau(p)=i\}, p\in \mathbf{Prop}, i\in 2$．由 $\text{Tychonoff}$ 乘积定理，$2^V$ 是紧致的．对任意 $\varphi \in \mathscr L$，令 $D_\varphi$ 是使 $\varphi$ 成立的真值指派，则 $\{D_\varphi\}_{\varphi \in \Gamma}$ 是一个闭集族．$\Gamma$ 的任意有限子集是可满足的当且仅当对于任意 $\Gamma_0\subseteq \Gamma$，$\bigcup_{\varphi\in \Gamma} D_\varphi$ 非空，这等价于 $\Gamma$ 可满足
+            设 $\mathbf{Prop}$ 为命题变元集合，$\mathscr L$ 为命题公式集．令 $\mathbf{Prop}$ 为指标集，对集合 $2=\{0, 1\}$ 赋予离散拓扑，所有真值指派的集合 $2^V$ 是一个积空间，其子基元素是集合 $\mathscr S_{p, i}=\{\tau: \tau(p)=i\}, p\in \mathbf{Prop}, i\in 2$．由 $\text{Tychonoff}$ 乘积定理，$2^V$ 是紧致的．对任意 $\varphi \in \mathscr L$，令 $D_\varphi$ 是使 $\varphi$ 成立的真值指派，则 $\{D_\varphi\}_{\varphi \in \Gamma}$ 是一个闭集族．$\Gamma$ 的任意有限子集是可满足的当且仅当对于任意 $\Gamma_0\subseteq \Gamma$，${\displaystyle \bigcup_{\varphi\in \Gamma} D_\varphi}$ 非空，这等价于 $\Gamma$ 可满足
 
 5. 加细：设集族 $\mathscr {A, B}$ 都是集合 $X$ 的覆盖，如果 $\mathscr A$ 中的每一个元素都包含于 $\mathscr B$ 的某一个元素之中，则称 $\mathscr A$ 是 $\mathscr B$ 的一个加细
 

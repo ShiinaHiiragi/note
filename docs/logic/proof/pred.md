@@ -99,7 +99,7 @@
                 \end{aligned}
                 $$
 
-                对任意公式集 $\Sigma$，令 $\mathrm{FV}(\Sigma) = \bigcup_{\alpha \in \Sigma} \mathrm{FV}(\alpha)$
+                对任意公式集 $\Sigma$，令 $\mathrm{FV}(\Sigma) = {\displaystyle \bigcup_{\alpha \in \Sigma} \mathrm{FV}(\alpha)}$
 
             - 公式 $\alpha$ 中约束变元的集合 $\mathrm{BV}(\alpha)$ 定义为
 
@@ -111,7 +111,7 @@
                 \end{aligned}
                 $$
 
-                对任意公式集 $\Sigma$，令 $\mathrm{BV}(\Sigma) = \bigcup_{\alpha \in \Sigma} \mathrm{BV}(\alpha)$
+                对任意公式集 $\Sigma$，令 $\mathrm{BV}(\Sigma) = {\displaystyle \bigcup_{\alpha \in \Sigma} \mathrm{BV}(\alpha)}$
 
             - 对形如 $\mathbf Q x\beta$ 的公式，称 $\beta$ 为量词 $\mathbf Qx$ 的辖域．如果变元 $x$ 在公式 $\alpha$ 中的一次出现不在任何量词 $\mathbf Qx$ 的辖域内，则称此次出现为自由出现；否则称之为约束出现，此时变元 $x$ 在 $\alpha$ 中被左侧最近的量词 $\mathbf Qx$ 约束
 
