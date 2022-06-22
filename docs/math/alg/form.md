@@ -160,9 +160,9 @@
 1. 常值函数：形如 $y = c$ 的函数，其中 $c$ 为常数
 2. 幂函数：形如 $y = x^\alpha$ 的函数，其中 $\alpha$ 是给定的实数
 3. 指数函数与对数函数
-    1. 定义级数 $E(z) = \sum_{n=0}^\infty \dfrac{z^n}{n!}$，函数 $L(E(x)) = x \ (x \in R)$
+    1. 定义级数 $E(z) = {\displaystyle \sum_{n=0}^\infty \dfrac{z^n}{n!}}$，函数 $L(E(x)) = x \ (x \in R)$
         1. 级数 $E(z)$ 对于一切复数收敛且 $E(z + w) = E(z) E(w) \ (z, w \in \mathbf C)$
-        2. 对于一切实数 $x$，$E(x) = e^x$，其中 $e = \sum_{n=0}^\infty \dfrac{1}{n!}$
+        2. 对于一切实数 $x$，$E(x) = e^x$，其中 $e = {\displaystyle \sum_{n=0}^\infty \dfrac{1}{n!}}$
         3. $L(y) = {\displaystyle \int_1^y \dfrac{\mathrm dx}{x}}$，记作 $\ln x$
     2. 指数函数与对数函数的定义：
         1. 对于 $a > 0, a \neq 1, x \in \mathbf R$，记 $y = a^x = E(xL(a)) = e^{x \ln a}$
@@ -230,7 +230,7 @@
         7. $[-x] = \left\{\begin{aligned} & -[x], & x\in \mathbf Z \\ & -[x] - 1, & x \notin \mathbf Z \end{aligned}\right.$
         8. $\{x\} = \left\{\begin{aligned} & 0, & x\in \mathbf Z \\ & 1 - \{x\}, & x\ \notin \mathbf Z \end{aligned}\right.$
     2. 设 $a, b \in \mathbf Z_+$，则在 $1, 2, \cdots, a$ 中能被 $b$ 整除的恰有 $\left[\dfrac{a}{b}\right]$ 个
-    3. 在 $n!$ 的质因数分解中，质数 $p$ 的指数是 $\left[\dfrac{n}{p}\right] + \left[\dfrac{n}{p^2}\right] + \left[\dfrac{n}{p^3}\right] + \cdots = \sum_{r = 1}^{\infty} \left[\dfrac{n}{p_r}\right]$，进一步地，有 $n! = \prod_{p \leqslant n} p^{\sum_{r=1}^{\infty}\left[\frac{n}{p^r}\right]}$
+    3. 在 $n!$ 的质因数分解中，质数 $p$ 的指数是 $\left[\dfrac{n}{p}\right] + \left[\dfrac{n}{p^2}\right] + \left[\dfrac{n}{p^3}\right] + \cdots = {\displaystyle \sum_{r = 1}^{\infty} \left[\dfrac{n}{p_r}\right]}$，进一步地，有 $n! = \prod_{p \leqslant n} p^{\sum_{r=1}^{\infty}\left[\frac{n}{p^r}\right]}$
 2. $\Gamma$ 函数：当 $x > 0$ 时，定义 $\Gamma(x) = {\displaystyle \int_{0}^{\infty} t^{x-1} e^{-t} \mathrm dt}$
     1. $\Gamma$ 函数的性质
         1. $x > 0$ 时，$\Gamma(x + 1) = x\Gamma(x)$

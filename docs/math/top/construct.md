@@ -4,7 +4,10 @@
 1. 度量子空间：设 $(X, \rho)$ 是一个度量空间，$Y\subseteq X$，因此 $Y\times Y\subseteq X\times X$．显然 $\rho|_{Y\times Y}: Y\times Y\to R$ 是 $Y$ 的一个度量，称之为由 $X$ 的度量诱导的，$(Y, \rho)$ 为 $(X, \rho)$ 的一个度量子空间
     1. 子空间的例子
         1. 实数空间 $R$ 的区间 $(a, b), [a, b]$ 等
-        2. $n+1$ 维 $\text{Euclid}$ 空间 $R^{n+1}$ 中的 $n$ 维单位球面 $S^n=\left\{x=(x_1, x_2, \cdots, x_{n+1})\in \mathbf R^{n+1}\mid \sum_{i=1}^{n+1}x_i^2=1\right\}$ 以及 $n$ 维单位开球体 $D^n=\left\{x=(x_1, x_2, \cdots, x_n)\in \mathbf R^n\mid \sum_{i=1}^n x_i^2<1\right\}$、$n$ 维单位闭球体 $E^n=\left\{x=(x_1, x_2, \cdots, x_n)\in \mathbf R^n\mid \sum_{i=1}^n x_i^2\leqslant 1\right\}$
+        2. $n+1$ 维 $\text{Euclid}$ 空间 $R^{n+1}$ 中
+            - $n$ 维单位球面 $S^n=\left\{x=(x_1, x_2, \cdots, x_{n+1})\in \mathbf R^{n+1}\mid {\displaystyle \sum_{i=1}^{n+1}x_i^2}=1\right\}$
+            - $n$ 维单位开球体 $D^n=\left\{x=(x_1, x_2, \cdots, x_n)\in \mathbf R^n\mid {\displaystyle \sum_{i=1}^n x_i^2}<1\right\}$
+            - $n$ 维单位闭球体 $E^n=\left\{x=(x_1, x_2, \cdots, x_n)\in \mathbf R^n\mid {\displaystyle \sum_{i=1}^n x_i^2}\leqslant 1\right\}$
         3. $n+1$ 维 $\text{Euclid}$ 空间 $R^{n+1}$ 中的 $n$ 维开、闭方体 $(0, 1)^n, [0, 1]^n$
     2. 设 $Y$ 是度量空间 $X$ 的一个度量子空间，则 $Y$ 的子集 $U$ 是 $Y$ 中的一个开集当且仅当存在一个 $X$ 中的开集 $V$ 使得 $U=V\cap Y$
 2. 拓扑子空间：设 $Y$ 是拓扑空间 $(X, \mathscr T)$ 的一个子集，则 $\mathscr T|_Y$ 在 $Y$ 上的限制 $\mathscr T|_Y=\{T\cap Y\mid T\in \mathscr T\}$ 称为（相对于 $X$ 的拓扑而言的）相对拓扑；拓扑空间 $(Y, \mathscr T|_Y)$ 称为拓扑空间的拓扑子空间
@@ -29,7 +32,7 @@
 
 ## 2.2 积空间
 ### 2.2.1 有限积空间
-1. 度量积空间：设 $(X_1, \rho), (X_2, \rho_2), \cdots, (X_n, \rho_n)$ 是 $n\geqslant 1$ 个度量空间，令 $X=X_1 \times X_2 \times \cdots X_n$．定义 $\rho: X \times X\to R$ 使得 $\forall x=(x_1, x_2, \cdots, x_n), y=(y_1, y_2, \cdots, y_n)\in X: \rho(x, y)=\sqrt{\sum_{i=1}^n \rho_i(x_i, y_i)^2}$
+1. 度量积空间：设 $(X_1, \rho), (X_2, \rho_2), \cdots, (X_n, \rho_n)$ 是 $n\geqslant 1$ 个度量空间，令 $X=X_1 \times X_2 \times \cdots X_n$．定义 $\rho: X \times X\to R$ 使得 $\forall x=(x_1, x_2, \cdots, x_n), y=(y_1, y_2, \cdots, y_n)\in X: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^n \rho_i(x_i, y_i)^2}}$
     1. 设 $(X_1, \rho_1), (X_2, \rho_2), \cdots, (X_n, \rho_n)$ 是 $n\geqslant 1$ 个度量空间，$(X, \rho)$ 是它们的积空间．又设 $\mathscr T_i$ 和 $\mathscr T$ 分别是由度量 $\rho_i$ 和 $\rho$ 诱导出来的 $X_i\ (i=1, 2, \cdots, n)$ 和 $X$ 的拓扑，则 $X$ 的子集族 $\mathscr B=\{U_1 \times U_2\times \cdots \times U_n\mid U_i\in \mathscr  T_i, i=1, 2, \cdots, n\}$ 是 $X$ 的拓扑 $\mathscr T$ 的一个基
     2. 设 $(X_1, \mathscr T_1), (X_2, \mathscr T_2), \cdots, (X_n, \mathscr T_n)$ 是 $n\geqslant 1$ 个拓扑空间，则 $X= X_1\times X_2\times \cdots \times X_n$ 的以 $X$ 子集族 $\mathscr B=\{U_1\times U_2\times \cdots \times U_n\mid U_i\in \mathscr  T_i\}$ 为它的一个基
 2. 设 $(X_1, \mathscr T_1), (X_2, \mathscr T_2), \cdots, (X_n, \mathscr T_n)$ 是 $n\geqslant 1$ 个拓扑空间，则 $X=X_1\times X_2\times \cdots \times X_n$ 的以子集族 $\mathscr B=\{U_1\times U_2\times \cdots \times U_n\mid U_i\in \mathscr  T_i\}$ 为它的一个基的唯一拓扑 $\mathscr T$ 称为拓扑 $\mathscr T_1, \mathscr T_2, \cdots, \mathscr T_n$ 的积拓扑，拓扑空间 $(X, \mathscr T)$ 称为拓扑空间 $(X_1, \mathscr T_1), (X_2, \mathscr T_2), \cdots, (X_n, \mathscr T_n)$ 的拓扑空间

@@ -10,8 +10,8 @@
     1. 对于任意两点 $x, y\in X$，称 $\rho(x, y)$ 为点 $x$ 到点 $y$ 的一个距离
     2. 度量空间的实例
         1. 实数空间：对于实数集合 $R$，定义 $\rho: R\times R\to R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)=|x-y|$，这个度量称之为 $R$ 的通常度量
-        2. $n$ 维 $\text{Euclid}$ 空间：对于 $R^n$．定义 $\rho: R^n\times R^n \to R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)=\sqrt{\sum_{i=1}^n(x_i-y_i)^2}$，这个度量称为 $R^n$ 的通常度量
-        3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)\mid \sum_{i=1}^\infty x_i^2<\infty, x_i\in \mathbf R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有 $\forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)=\sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}$．容易验证这是良定义，这个度量称之为 $H$ 的通常度量
+        2. $n$ 维 $\text{Euclid}$ 空间：对于 $R^n$．定义 $\rho: R^n\times R^n \to R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^n(x_i-y_i)^2}}$，这个度量称为 $R^n$ 的通常度量
+        3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)\mid {\displaystyle \sum_{i=1}^\infty x_i^2}<\infty, x_i\in \mathbf R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有 $\forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}}$．容易验证这是良定义，这个度量称之为 $H$ 的通常度量
         4. 离散度量：设 $(X, \rho)$ 是一个度量空间，若 $\forall x\in X\ \exists \delta_x>0: \rho(x, y)>\delta_x$ 对于任何 $y\in X, y\neq x$ 成立，则称 $(X, \rho)$ 是离散的，或称 $\rho$ 是 $X$ 的一个离散度量
 3. 球形邻域：设 $(X, \rho)$ 是一个度量空间，$x\in X$，对于任意给定的实数 $\varepsilon >0$，集合 $B(x, \varepsilon) = B_\varepsilon(x) = \{y\in X\mid \rho(x, y)<\varepsilon\}$ 为一个以 $x$ 为中心，以 $\varepsilon$ 为半径的球形领域，或称为 $x$ 的一个 $\varepsilon-$邻域
     1. 每一点 $x\in X$ 至少有一个球形领域，并且点 $x$ 属于它的每一个球形邻域
