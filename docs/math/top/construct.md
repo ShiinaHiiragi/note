@@ -47,17 +47,17 @@
 
 ### 2.2.2 一般积空间
 1. 点式收敛拓扑：若一个集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 中所有的 $X_\gamma$，则称 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族或一族拓扑空间
-    1. 设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族，容易验证 $\text{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的子集族 $\mathscr S=\{p^{-1}_\gamma[U_\gamma]\mid U_\gamma$ 是 $X_\gamma$ 的一个开集 $,\gamma\in \Gamma\}$ 是它的某一个拓扑 $\mathscr T$ 的一个子基, 其中 $p_\gamma$ 是 $\text{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\gamma \in \Gamma$ 个投射
-    2. 拓扑 $\mathscr T$ 称为 $\text{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑（点式收敛拓扑），拓扑空间 $(\prod_{\gamma \in \Gamma} X_\gamma, \mathscr T)$ 称为拓扑空间族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 的积空间，拓扑空间 $X_\gamma$ 称为积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\gamma$ 个坐标空间
+    1. 设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族，容易验证 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 的子集族 $\mathscr S=\{p^{-1}_\gamma[U_\gamma]\mid U_\gamma$ 是 $X_\gamma$ 的一个开集 $,\gamma\in \Gamma\}$ 是它的某一个拓扑 $\mathscr T$ 的一个子基, 其中 $p_\gamma$ 是 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 的第 $\gamma \in \Gamma$ 个投射
+    2. 拓扑 $\mathscr T$ 称为 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 的积拓扑（点式收敛拓扑），拓扑空间 $\left({\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}, \mathscr T\right)$ 称为拓扑空间族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 的积空间，拓扑空间 $X_\gamma$ 称为积空间 ${\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 的第 $\gamma$ 个坐标空间
 2. 点式收敛拓扑的性质：设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一族拓扑空间
-    1. 对于每一个 $\alpha \in \Gamma$，积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 是一个连续开映射
-    2. 设 $Y$ 是一个拓扑空间，则映射 $f: Y\to \prod_{\gamma \in \Gamma} X_\gamma$ 是一个连续映射当且仅当对于每一个 $\alpha \in \Gamma$，映射 $p_\alpha\circ f: Y\to X_\alpha$ 是连续的，其中 $p_\alpha$ 是积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投影
-    3. 令 $\mathscr T$ 为 $\prod_{\gamma \in \Gamma} X_\gamma$ 的积拓扑．若 $\widetilde{\mathscr T}$ 是 $\text{Descartes}$ 积 $\prod_{\gamma \in \Gamma} X_\gamma$ 的一个拓扑使得对于任何 $\alpha \in \Gamma$，$\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射 $p_\alpha: \prod_{\gamma \in \Gamma} X_\gamma \to X_\alpha$ 都是连续的，则 $\mathscr T\subseteq \widetilde{\mathscr T}$
-    4. 积空间 $\prod_{\gamma \in \Gamma} X_\gamma$ 中的序列 $\{x^{(i)}\}_{i\in \mathbf Z_+}$ 收敛于点 $x\in \prod_{\gamma \in \Gamma} X_\gamma$ 当且仅当对于每一个 $\alpha \in \Gamma$，拓扑空间 $X_\alpha$ 中的序列 $\{p_\alpha(x^{(i)})\}_{i\in \mathbf Z_+}$ 收敛于 $p_\alpha(x)\in X_\alpha$
+    1. 对于每一个 $\alpha \in \Gamma$，积空间 ${\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 的第 $\alpha$ 个投射 $p_\alpha: {\displaystyle \prod_{\gamma \in \Gamma} X_\gamma} \to X_\alpha$ 是一个连续开映射
+    2. 设 $Y$ 是一个拓扑空间，则映射 $f: Y\to {\displaystyle \prod_{\gamma \in \Gamma}} X_\gamma$ 是一个连续映射当且仅当对于每一个 $\alpha \in \Gamma$，映射 $p_\alpha\circ f: Y\to X_\alpha$ 是连续的，其中 $p_\alpha$ 是积空间 ${\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 的第 $\alpha$ 个投影
+    3. 令 $\mathscr T$ 为 ${\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 的积拓扑．若 $\widetilde{\mathscr T}$ 是 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 的一个拓扑使得对于任何 $\alpha \in \Gamma$，${\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 的第 $\alpha$ 个投射 $p_\alpha: {\displaystyle \prod_{\gamma \in \Gamma} X_\gamma} \to X_\alpha$ 都是连续的，则 $\mathscr T\subseteq \widetilde{\mathscr T}$
+    4. 积空间 ${\displaystyle \prod_{\gamma \in \Gamma}} X_\gamma$ 中的序列 $\{x^{(i)}\}_{i\in \mathbf Z_+}$ 收敛于点 $x\in {\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 当且仅当对于每一个 $\alpha \in \Gamma$，拓扑空间 $X_\alpha$ 中的序列 $\{p_\alpha(x^{(i)})\}_{i\in \mathbf Z_+}$ 收敛于 $p_\alpha(x)\in X_\alpha$
 3. 拓扑空间在方体的嵌入
     1. 方体：设 $\Gamma$ 是一个集合，则从 $[0, 1]^\Gamma$ 连通它的点式收敛拓扑称为一个方体
     2. 映射族：设 $X$ 是一个拓扑空间，$F$ 是一族映射，其中的每一个元素是从拓扑空间 $X$ 到某一个拓扑空间的一个映射．如果对于任何 $x, y\in X, x\neq y$ 存在 $f\in F$ 使得 $f(x)\neq f(y)$，则称映射族 $F$ 是一个区别点的映射族，如果对于任何 $x\in X$ 和 $X$ 中的任何一个不包含点 $x$ 的闭集 $B$，存在 $f\in F$ 使得 $f(x)\notin \overline{f[B]}$，则称映射族 $F$ 是一个区别点和闭集的映射族
-    3. 嵌入引理：设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族，$Y$ 是一个拓扑空间，$f: Y\to \prod_{\gamma \in \Gamma}X_\gamma$ 是一个映射，令 $F=\{p\circ_\alpha f: Y\to X_\alpha\mid \alpha \in \Gamma\}$，其中 $p_\alpha$ 是 $\prod_{\gamma \in \Gamma} X_\gamma$ 的第 $\alpha$ 个投射
+    3. 嵌入引理：设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族，$Y$ 是一个拓扑空间，$f: Y\to {\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 是一个映射，令 $F=\{p\circ_\alpha f: Y\to X_\alpha\mid \alpha \in \Gamma\}$，其中 $p_\alpha$ 是 ${\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 的第 $\alpha$ 个投射
         1. $f$ 是一个连续映射当且仅当 $F$ 是一个由连续映射构成的族
         2. $f$ 是一个单射当且仅当映射组 $F$ 能区别点
         3. 若 $F$ 是一个能区别点和闭集的映射族 $F$ 能区别点
@@ -70,7 +70,7 @@
 ### 2.2.3 映射空间
 1. 赋值映射：对于任意 $x\in X$，令 $e_x: Y^X\to Y$ 为 $Y$ 的第 $x$ 个投射，则对于任何 $f\in Y^X$， $e_x(f)=f(x)$ 恰是映射 $f$ 在点 $x$ 处的像．将投射 $e_x$ 称为 $Y^X$ 在点 $x\in X$ 处的赋值映射 
 2. 映射空间与连续映射空间
-    1. 将 $Y^X=\prod_{x\in X}Y$ 的积拓扑 $\mathscr T$ 称为 $Y^X$ 的点式收敛拓扑，将拓扑空间 $(Y^X, \mathscr T)$ 称为从集合 $X$ 到集合 $Y$ 的映射空间（点式收敛拓扑）．映射空间是一类特别的积空间，因此关于积空间的一般结论全部适用
+    1. 将 $Y^X={\displaystyle \prod_{x\in X}Y}$ 的积拓扑 $\mathscr T$ 称为 $Y^X$ 的点式收敛拓扑，将拓扑空间 $(Y^X, \mathscr T)$ 称为从集合 $X$ 到集合 $Y$ 的映射空间（点式收敛拓扑）．映射空间是一类特别的积空间，因此关于积空间的一般结论全部适用
     2. 连续映射空间：设 $X$ 和 $Y$ 是两个拓扑空间，记 $\mathscr C(X, Y)$ 为从 $X$ 到 $Y$ 的所有连续映射构成的集合，因此 $\mathscr C(X, Y)\subseteq Y^X$．$\mathscr C(X, Y)$ 作为映射空间 $Y^X$的子空间称为从拓扑空间 $X$ 到 $Y$ 的连续映射空间（点式收敛拓扑），并且此时 $\mathscr C(X, Y)$ 的拓扑也称作点式收敛拓扑
     3. 设 $X$ 是一个 $\text{Tychonoff}$ 空间，则从 $X$ 到实数空间 $R$ 的所有连续映射构成的集合 $\mathscr C(X, R)$ 是映射空间 $R^X$ （点式收敛拓扑）中的一个稠密子集
 3. 一致收敛度量与一致收敛拓扑

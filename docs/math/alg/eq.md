@@ -32,7 +32,7 @@
         2. 如果整系数一元 $n$ 此方程有整数根，那么它一定是常数项的约数
     6. 如果虚数 $a + bi$ 是实系数一元 $n$ 次方程 $f(x) = 0$ 的根，则 $a - bi$ 也是这个方程的根，且它们重数相等 
     7. 如果 $a + \sqrt{b}$（$a, b \in \mathbf Q$，$\sqrt{b}$ 是无理数）是有理系数一元 $n$ 次方程 $f(x) = 0$ 的根，则 $a - \sqrt{b}$ 也是方程 $f(x) = 0$ 的根
-    8. $\text{Viete}$ 定理：对于一元 $n$ 次方程 $a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 = 0$，设 $x_1, x_2, \cdots, x_n$ 为它在复数集中的 $n$ 个根，则有 ${\displaystyle \sum_{i=1}^n x_i} = -\dfrac{a_{n-1}}{a_n}, \prod_{i=1}^n x_i = (-1)^n \dfrac{a_0}{a_n}$
+    8. $\text{Viete}$ 定理：对于一元 $n$ 次方程 $a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 = 0$，设 $x_1, x_2, \cdots, x_n$ 为它在复数集中的 $n$ 个根，则有 ${\displaystyle \sum_{i=1}^n x_i} = -\dfrac{a_{n-1}}{a_n}, {\displaystyle \prod_{i=1}^n x_i} = (-1)^n \dfrac{a_0}{a_n}$
 3. 方程的变换：对于一般形式的一元 $n$ 次方程 $f(x) = a_n x^n + a_{n-1} x^{n-1} + \cdots + a_1 x + a_0 = 0$，其中 $a_n \neq 0, n \in \mathbf Z_+$
     1. 差根变换：方程 $f(y +h)$ 各根分别等于方程 $f(x) = 0$ 的各根减去 $h$
     2. 倍根变换：方程 $f\left(\dfrac{y}{k}\right) = 0$ 的各根分别等于方程 $f(x) = 0$ 的各根的 $k$ 倍

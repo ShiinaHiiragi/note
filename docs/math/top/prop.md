@@ -79,7 +79,7 @@
     2. 拓扑不变性：设 $X, Y$ 是两个拓扑空间，$f: X\to Y$ 是一个满的连续开映射．若 $X$ 满足第二可数性公理（第一可数性公理），则 $Y$ 也满足第二可数性公理（第一可数性公理）
     3. 可遗传性：满足第二可数性公理（第一可数性公理）的空间的任何一个子空间是满足第二可数性公理（第一可数性公理）的空间
     4. 有限可积性：设 $X_1, X_2, \cdots, X_n$ 是 $n$ 个满足第二可数性公理（第一可数性公理）的空间，则积空间 $X_1 \times X_2 \times \cdots \times X_n$ 满足第二可数性公理（第一可数性公理）
-    5. 设 $\{X_\gamma\}_{\gamma\in\Gamma}$ 是一个拓扑空间族，并且对于任何 $\gamma \in \Gamma，X_\gamma \neq \varnothing$，则积空间 $\prod_{\gamma \in \Gamma}X_\gamma$ 满足第二可数性公理的一个充要条件是指标集 $\Gamma$ 有一个可数子集使得当 $\alpha \in \Gamma_1$ 时 $X_\alpha$ 满足第二可数性公理，当 $\alpha\in \Gamma-\Gamma_1$ 时 $X_\alpha$ 是平庸空间
+    5. 设 $\{X_\gamma\}_{\gamma\in\Gamma}$ 是一个拓扑空间族，并且对于任何 $\gamma \in \Gamma，X_\gamma \neq \varnothing$，则积空间 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 满足第二可数性公理的一个充要条件是指标集 $\Gamma$ 有一个可数子集使得当 $\alpha \in \Gamma_1$ 时 $X_\alpha$ 满足第二可数性公理，当 $\alpha\in \Gamma-\Gamma_1$ 时 $X_\alpha$ 是平庸空间
 4. $\text A_1$ 空间中的序列性质
     1. 设 $X$ 是一个拓扑空间，若在点 $x\in X$ 处有一个可数邻域基，则在点 $x$ 处有一个可数邻域基 $\{U_i\}_{i\in \mathbf Z_+}$ 使得 $\forall i\in \mathbf Z_+: U_i\supset U_{i+1}$
     2. 设 $X$ 是一个 $\text A_1$ 空间，$A\subseteq X$，则 $x\in X$ 是集合 $A$ 的一个凝聚点当且仅当在集合 $A-\{x\}$ 中有一个序列收敛于 $x$
@@ -152,7 +152,7 @@
         2. $X$ 同胚于 $\text{Hilbert}$ 空间 $H$ 的某一个子空间
         3. $X$ 是一个可分的可度量化空间
     3. 一点紧化：每一个拓扑空间 $(X, \mathscr T)$ 必定是某一个紧空间 $(X^*, \mathscr T^*)$ 的开子空间，则称之为拓扑空间 $(X, \mathscr T)$ 的一点紧化
-3. 设 $\{X_i\}_{i\in \mathbf Z_+}$ 是可度量化空间的一个可数族，则积空间 $\prod_{i\in \mathbf Z_+}X_i$ 是一个可度量化空间
+3. 设 $\{X_i\}_{i\in \mathbf Z_+}$ 是可度量化空间的一个可数族，则积空间 ${\displaystyle \prod_{i\in \mathbf Z_+}X_i}$ 是一个可度量化空间
 
 ## 3.4 紧致性
 ### 3.4.1 紧空间

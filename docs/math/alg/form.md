@@ -230,7 +230,7 @@
         7. $[-x] = \left\{\begin{aligned} & -[x], & x\in \mathbf Z \\ & -[x] - 1, & x \notin \mathbf Z \end{aligned}\right.$
         8. $\{x\} = \left\{\begin{aligned} & 0, & x\in \mathbf Z \\ & 1 - \{x\}, & x\ \notin \mathbf Z \end{aligned}\right.$
     2. 设 $a, b \in \mathbf Z_+$，则在 $1, 2, \cdots, a$ 中能被 $b$ 整除的恰有 $\left[\dfrac{a}{b}\right]$ 个
-    3. 在 $n!$ 的质因数分解中，质数 $p$ 的指数是 $\left[\dfrac{n}{p}\right] + \left[\dfrac{n}{p^2}\right] + \left[\dfrac{n}{p^3}\right] + \cdots = {\displaystyle \sum_{r = 1}^{\infty} \left[\dfrac{n}{p_r}\right]}$，进一步地，有 $n! = \prod_{p \leqslant n} p^{\sum_{r=1}^{\infty}\left[\frac{n}{p^r}\right]}$
+    3. 在 $n!$ 的质因数分解中，质数 $p$ 的指数是 $\left[\dfrac{n}{p}\right] + \left[\dfrac{n}{p^2}\right] + \left[\dfrac{n}{p^3}\right] + \cdots = {\displaystyle \sum_{r = 1}^{\infty} \left[\dfrac{n}{p_r}\right]}$，进一步地，有 $n! = {\displaystyle \prod_{p \leqslant n} p^{\sum_{r=1}^{\infty}\left[\frac{n}{p^r}\right]}}$
 2. $\Gamma$ 函数：当 $x > 0$ 时，定义 $\Gamma(x) = {\displaystyle \int_{0}^{\infty} t^{x-1} e^{-t} \mathrm dt}$
     1. $\Gamma$ 函数的性质
         1. $x > 0$ 时，$\Gamma(x + 1) = x\Gamma(x)$

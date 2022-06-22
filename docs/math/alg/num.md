@@ -192,7 +192,7 @@
         2. 将 $n_0$ 写成 $q^2q_1 q_2 \cdots q_k$ 的形式，其中 $q \in \mathbf Z$，$q_1, q_2, \cdots, q_k$ 是互不相同的质数
         3. 若某个 $q_i = 2, i = 1, 2, \cdots, k$，用 $\left(\dfrac 2p\right) = (-1)^{\frac{p^2-1}{8}}$ 计算
         4. 若 $q_i \neq 2, i = 1, 2, \cdots, k$，则用二次互反律将 $\left(\dfrac{q_i}{p}\right)$ 转化为计算 $\left(\dfrac{p}{q_i}\right)$
-        5. 重复以上步骤，直至求出每个 $\left(\dfrac{q_i}{p}\right)$，计算 $\left(\dfrac np\right) = \prod_{i=1}^k \left(\dfrac{q_i}{p}\right)$
+        5. 重复以上步骤，直至求出每个 $\left(\dfrac{q_i}{p}\right)$，计算 $\left(\dfrac np\right) = {\displaystyle \prod_{i=1}^k \left(\dfrac{q_i}{p}\right)}$
 
 4. $\text{Jacobi}$ 符号：给定正奇数 $m > 1, m = p_1 p_2 \cdots p_k$，其中 $p_i \ (1 \leqslant i \leqslant k)$ 是奇质数．对于任意的正整数 $a$，定义 $\left(\dfrac am\right) = \left(\dfrac{a}{p_1}\right) \left(\dfrac{a}{p_2}\right) \cdots \left(\dfrac{a}{p_k}\right)$，其中右端的 $\left(\dfrac{a}{p_i}\right) \ (1 \leqslant i \leqslant k)$ 是 $\text{Legendre}$ 符号，称 $\left(\dfrac am\right)$ 为 $\text{Jacobi}$ 符号
     1. 当 $m$ 是奇质数时，$\text{Jacobi}$ 符号就是 $\text{Legendre}$ 符号
