@@ -177,6 +177,29 @@
 
 ## 3.2 不等式
 ### 3.3.1 不等式的性质
+1. 不等式：形如 $f(x_1, x_2, \cdots, x_n) > g(x_1, x_2, \cdots, x_n)$ 或 $g(x_1, x_2, \cdots, x_n) < f(x_1, x_2, \cdots, x_n)$ 的式子，称作关于变元 $x_1, x_2, \cdots, x_n$ 的不等式
+    1. $f(x_1, x_2, \cdots, x_n)$ 与 $g(x_1, x_2, \cdots, x_n)$ 的定义域的交集 $M$ 称作不等式的定义域
+        1. 绝对不等式：$M$ 中的一切值组都使不等式成立
+        2. 矛盾不等式：$M$ 中的一切值组都不能使不等式成立
+        3. 条件不等式：$M$ 中的某些值组能使不等式成立，而另一些值组不能使其成立
+    2. 不等式的分类：代数不等式与初等超越不等式
+2. 不等式的性质
+    1. 实数域上的运算比较性质
+        1. $a > b \leftrightarrow a - b > 0$
+        2. $a < b \leftrightarrow a - b < 0$
+        3. $a = b \leftrightarrow a - b = 0$
+    2. 不等式的基本性质
+        1. 对逆性：$a > b \leftrightarrow b < a$
+        2. 传递性：$a > b \wedge b > c \to a > c$
+        3. 加法保序性：$a < b \to a + c < b + c$
+        4. 乘法保序性：若 $a > b, c > 0$，则 $ac > bc$；若 $a > b, c < 0$，则 $ac < bc$
+    3. 其他性质
+        1. 相加法则：若 $a > b, c > d$，则 $a + c > b + d$
+        2. 相减法则：若 $a \geqslant b, c < d$，则 $a - c > b - d$
+        3. 相乘法则：若 $a > b > 0, c > d > 0$，则 $ac > bd$
+        4. 相除法则：若 $a \geqslant b > 0, 0 < c < d$，则 $\dfrac ac > \dfrac bd$
+        5. 乘方法则：若 $a > b > 0$，整数 $n > 1$，则 $a^n > b^n$
+        6. 开方法则：若 $a > b > 0$，整数 $n > 1$，则 $\sqrt[n]{a} > \sqrt[n]{b}$
 
 ### 3.3.2 常用不等式
 

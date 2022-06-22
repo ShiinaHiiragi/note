@@ -46,7 +46,7 @@
     3. 本原元的性质：$0 \neq 1$
 3. 自然数集上的序
     1. 反自反性：$\forall n \in \mathbf N: n \nless n$
-    2. 可递性：$\forall m, n \in \mathbf N: (m < n \wedge n < k) \to m < k$
+    2. 传递性：$\forall m, n \in \mathbf N: (m < n \wedge n < k) \to m < k$
     3. 三歧性：$\forall m, n \in \mathbf N: m < n \vee m = n \vee n < m$
     4. 加法保序性：$\forall m, n, k \in \mathbf N: m < n \to m + k < n + k$
     5. 乘法保序性：$\forall m, n, k \in \mathbf N: (m < n \wedge k \neq 0)\to mk < nk$
@@ -65,7 +65,7 @@
         4. 单位元：$\forall a \in \mathbf Z: a \cdot \overline{1} = a$
 2. 整数环上的序 
     1. 反自反性：$\forall a \in \mathbf Z: a \nless a$
-    2. 可递性：$\forall a, b, c \in \mathbf Z: (a < b \wedge b < c) \to a < c$
+    2. 传递性：$\forall a, b, c \in \mathbf Z: (a < b \wedge b < c) \to a < c$
     3. 三歧性：$\forall a, b \in \mathbf Z: a < b \vee a = b \vee b < a$
     4. 加法保序性：$\forall a, b, c \in \mathbf Z: a < b \to a + c < b + c$
     5. 乘法保序性：$\forall a, b, c \in \mathbf Z: c > \overline{0} \to (a < b \to a \cdot c < b \cdot c)$
@@ -85,7 +85,7 @@
         5. 逆元：$\forall r \in \mathbf Q \ \exists !s \in \mathbf Q: r \cdot s = \overline{1}$．即 $\mathbf Q$ 中每一个元素 $r$ 都有唯一的逆元 $r^{-1}$，由此定义除法 $s \div r = s \cdot r^{-1}$
 2. 有理数域上的序
     1. 反自反性：$\forall r \in \mathbf Q: r \nless r$
-    2. 可递性：$\forall r, s, t \in \mathbf Q: (r < s \wedge s < t)\to r < t$
+    2. 传递性：$\forall r, s, t \in \mathbf Q: (r < s \wedge s < t)\to r < t$
     3. 三歧性：$\forall r, s \in \mathbf Q: r < s \vee r = s \vee s < r$
     4. 加法保序性：$\forall r, s, t \in \mathbf Q:r < s \to r + t < s + t$
     5. 乘法保序性：$\forall r, s, t \in \mathbf Q:t > \overline{0} \to (r < s \to r \cdot t < s \cdot t)$
@@ -144,7 +144,7 @@
         5. 逆元：$\forall x \in \mathbf R \ \exists! y\in \mathbf R: x \cdot y = 1$
     3. $\mathbf R$ 上的序
         1. 反自反性：$\forall x\in \mathbf R: x\nless x$
-        2. 可递性：$\forall x, y, z\in \mathbf R: (x < y\wedge y < z)\to x < z$
+        2. 传递性：$\forall x, y, z\in \mathbf R: (x < y\wedge y < z)\to x < z$
         3. 三歧性：$\forall x, y\in \mathbf R: x < y\vee x = y\vee y < x$
         4. 加法保序性：$\forall x, y, z\in \mathbf R: x < y\to x + z < y + z$
         5. 乘法保序性：$\forall x, y, z\in \mathbf R: z>0\to (x < y\to x\cdot z < y\cdot z)$
