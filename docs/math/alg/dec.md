@@ -148,7 +148,7 @@
         3. 三歧性：$\forall x, y\in \mathbf R: x < y\vee x = y\vee y < x$
         4. 加法保序性：$\forall x, y, z\in \mathbf R: x < y\to x + z < y + z$
         5. 乘法保序性：$\forall x, y, z\in \mathbf R: z>0\to (x < y\to x\cdot z < y\cdot z)$
-3. $\mathbf R$ 具有 $\text{Archimedes}$ 性质：$\forall x \in \mathbf R \ \exists k \in \mathbf N: |r| \leqslant k$
+3. $\mathbf R$ 具有 $\text{Archimedes}$ 性质：$\forall x \in \mathbf R \ \exists k \in \mathbf N: |x| \leqslant k$
 4. 算术根：设实数 $\alpha \geqslant 0$，整数 $n > 1$，则称适合 $x^n = \alpha$ 的非负实数 $x$ 为 $\alpha$ 的 $n$ 次算术根，记作 $\sqrt[n]{\alpha}$
 5. 绝对值：设 $x \in R$，定义绝对值
 
