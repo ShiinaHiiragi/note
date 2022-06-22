@@ -22,3 +22,19 @@
     8. $\{x\} = \left\{\begin{aligned} & 0, & x\in \mathbf Z \\ & 1 - \{x\}, & x\ \notin Z \end{aligned}\right.$
 2. 设 $a, b \in \mathbf Z_+$，则在 $1, 2, \cdots, a$ 中能被 $b$ 整除的恰有 $\left[\dfrac{a}{b}\right]$ 个
 3. 在 $n!$ 的质因数分解中，质数 $p$ 的指数是 $\left[\dfrac{n}{p}\right] + \left[\dfrac{n}{p^2}\right] + \left[\dfrac{n}{p^3}\right] + \cdots = \sum_{r = 1}^{\infty} \left[\dfrac{n}{p_r}\right]$，进一步地，有 $n! = \prod_{p \leqslant n} p^{\sum_{r=1}^{\infty}\left[\frac{n}{p^r}\right]}$
+
+## 复数的定义
+
+- 复数：在集合 $\mathbf C = \mathbf R \times \mathbf R$ 内定义加法和乘法运算
+
+    $$
+    \begin{aligned}
+    & (a, b) + (c, d) = (a + c, b + d) \\
+    & (a, b) \cdot (c, d) = (ac - bd, ad + bc)
+    \end{aligned}
+    $$
+
+    称集合 $\mathbf C$ 为复数集，其中 $(a, b)$ 称作复数
+
+    1. $a$ 为复数 $(a, b)$ 的实部，记作 $\text{Re}(a, b)$；$b$ 为复数 $(a, b)$ 的虚部，记作 $\text{Im}(a, b)$
+    2. 设 $i = (0, 1)$，记 $(a, b) = a + bi \ (a, b \in \mathbf R)$，称之为复数 $(a, b)$ 的代数形式

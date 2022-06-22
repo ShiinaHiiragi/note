@@ -1,4 +1,4 @@
-# 1 解析式与初等函数
+# 2 解析式与初等函数
 
 1. 代数解析式：一阶算术项集的元素
     1. 代数式：只含有四则运算和开方运算的解析式
@@ -11,8 +11,8 @@
     2. 初等超越函数：不是初等代数函数的初等函数
 4. 代数函数：凡能作为代数方程的解的函数．假设 $P(x, y) = P_x(x) y^n + P_{n-1}y^{n-1} + \cdots + P_1(x) y + P_0$ 是两个变量 $x, y$ 的非零多项式，如果以 $y$ 为未知量，则代数方程 $P(x, y) = 0$ 的各个根就是以 $x$ 为自变量的代数函数
 
-## 1.1 代数式
-### 1.1.1 多项式
+## 2.1 代数式
+### 2.1.1 多项式
 1. 一元多项式：设数域 $F$ 上的多项式 $f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots a_1x + a_0$
     1. $a_n \neq 0$ 时，称 $n$ 为多项式的次数，$a_nx^n$ 为 多项式的首项，$a_n \neq 0$ 为首项系数
     2. 若 $\forall x \in F: f(x) \equiv 0$，则 $a_i = 0 \ (i = 0, 1, \cdots, n)$
@@ -33,7 +33,7 @@
         5. 变元相同的一个对称式与一个交代式的积、商（需要保证能整除）是交代式
 3. 多项式的因式分解：给定的数域上，讲一个多项式表示成若干个不可约多项式乘积的形式
 
-### 1.1.2 分式
+### 2.1.2 分式
 1. 分式：两个多项式的比 $\dfrac{f(x)}{g(x)}$ （其中 $g(x)$ 不恒为零）称作有理分式
     1. 分式的恒等：如果两个分式 $\dfrac{f_1(x)}{g_1(x)}$ 与 $\dfrac{f_2(x)}{g_2(x)}$ 对于 $x$ 在其公共定义域上的任意取值都有相等的值，那么 $\dfrac{f_1(x)}{g_1(x)} \equiv \dfrac{f_2(x)}{g_2(x)}$
         1. $\dfrac{f_1(x)}{g_1(x)} \equiv \dfrac{f_2(x)}{g_2(x)}$ 当且仅当 $f_1(x)g_2(x) = f_2(x)g_1(x)$
@@ -51,7 +51,7 @@
         1. 设 $\dfrac{f(x)}{g_1(x)g_2(x) \cdots g_n(x)}$ 是真分式，$g_1(x), g_2(x), \cdots g_n(x)$ 都是不可约多项式且两两互质，则可求得唯一一组真分式 $\dfrac{f_1(x)}{g_1(x)}, \dfrac{f_2(x)}{g_2(x)}, \cdots, \dfrac{f_n(x)}{g_n(x)}$ 使得 $\dfrac{f(x)}{g_1(x)g_2(x) \cdots g_n(x)} = \dfrac{f_1(x)}{g_1(x)} + \dfrac{f_2(x)}{g_2(x)} + \cdots + \dfrac{f_n(x)}{g_n(x)}$
         2. 设 $\dfrac{f(x)}{g^n(x)}$ 是真分式，$f(x)$ 的次数不小于 $g(x)$ 的次数，则可求得唯一一组真分式 $\dfrac{f_1(x)}{g(x)}, \dfrac{f_2(x)}{g^2(x)}, \cdots, \dfrac{f_n(x)}{g^n(x)}$ 使得 $\dfrac{f(x)}{g^n(x)} = \dfrac{f_1(x)}{g(x)} + \dfrac{f_2(x)}{g^2(x)} + \cdots + \dfrac{f_n(x)}{g^n(x)}$，其中 $f_1(x), f_2(x), \cdots, f_n(x)$ 的次数都小于 $g(x)$ 的次数
 
-### 1.1.3 根式
+### 2.1.3 根式
 1. 根式：含有开方运算地代数式
     1. 方根：如果 $x^n = a$，则称 $x$ 为 $a$ 的 $n$ 次方根
     2. 算术根：非负数 $a$ 的非负 $n$ 次方根，记作 $\sqrt[n]a \ (a \geqslant 0, n \in \mathbf Z_+, n > 1)$，它是唯一存在的
@@ -70,8 +70,8 @@
     2. 对于根式 $P = \sqrt[n]{x} - \sqrt[n]{y}$，其共轭根式为 $Q = \sqrt[n]{x^{n-1}} + \sqrt[n]{x^{n-2}y} + \cdots + \sqrt[n]{xy^{n-2}} + \sqrt[n]{y^{n-1}}$
     3. 对于根式 $P = \sqrt[n]{x} + \sqrt[n]{y}$，其共轭根式为 $Q = \left\{\begin{aligned} & \sqrt[n]{x^{n-1}} - \sqrt[n]{x^{n-2}y} + \cdots - \sqrt[n]{xy^{n-2}} + \sqrt[n]{y^{n-1}} \\ & \sqrt[n]{x^{n-1}} - \sqrt[n]{x^{n-2}y} + \cdots + \sqrt[n]{xy^{n-2}} - \sqrt[n]{y^{n-1}} \end{aligned}\right.$
 
-## 1.2 超越式
-### 1.2.1 指数式与对数式
+## 2.2 超越式
+### 2.2.1 指数式与对数式
 1. 指数式
     1. 有理指数幂：设 $a > 0, m, n \in \mathbf Z_+, n > 1$，规定 $a^{\frac{m}{n}} = \sqrt[n]{a^m}$ 且 $a^{-\frac{m}{n}} = \dfrac{1}{\sqrt[n]{a^m}}$
         1. 当底数 $a = 0$ 时，$0^{\frac{m}{n}} = 0 \ (m, n \in \mathbf Z_+)$，$0^0$ 无意义
@@ -94,7 +94,7 @@
         6. 换底公式：$\log_a N = \dfrac{\log_b M}{\log_b N}$
     3. 常用对数：记 $\lg N = \log_{10} N$
 
-### 1.2.2 三角式与反三角式
+### 2.2.2 三角式与反三角式
 1. 三角式的恒等变形
     1. 同角三角函数基本关系
         1. $\sin^2 \alpha + \cos^2 \alpha = 1, 1 + \tan^2 \alpha = \sec^2 \alpha, 1 + \cot^2 \alpha = \csc^2 \alpha$
@@ -136,8 +136,8 @@
         5. $\arccos x = \left\{\begin{aligned} & \arcsin \sqrt{1 - x^2}, & 0 \leqslant x < 1 \\ & \pi - \arcsin \sqrt{1 - x^2}, & -1 \leqslant x < 0 \end{aligned}\right.$
         6. $\arctan x = \left\{\begin{aligned} & \arccos \dfrac{1}{\sqrt{1 + x^2}}, & x \geqslant 0 \\ & -\arccos \dfrac{1}{\sqrt{1 + x^2}}, & x < 0 \end{aligned}\right.$
 
-## 1.3 初等函数
-### 1.3.1 函数的性质
+## 2.3 初等函数
+### 2.3.1 函数的性质
 1. 有界性：如果存在 $M > 0$，对于函数 $f(x)$ 的定义域（或其子集）内的一切值，都有 $|f(x)| \leqslant M$ 成立，那么函数 $f(x)$ 称作在定义域（或其子集）上的有界函数．如果不存在满足此条件的正数 $M$，则称这个函数是无界的
 2. 单调性：对于给定区间 $E$ 上的函数 $f(x)$，对于任意 $x_1, x_2 \in E$
     1. 若有 $x_1 < x_2 \to f(x_1) < f(x_2)$，则称 $f(x)$ 在 $E$ 上是单调递增的
@@ -156,7 +156,7 @@
     1. 若恒有 $f\left(\dfrac{x_1 + x_2}{2}\right) < \dfrac{f(x_1) + f(x_2)}{2}$，则称函数 $f(x)$ 在区间 $I$ 上为凹函数
     2. 若恒有 $f\left(\dfrac{x_1 + x_2}{2}\right) > \dfrac{f(x_1) + f(x_2)}{2}$，则称函数 $f(x)$ 在区间 $I$ 上为凸函数
 
-### 1.3.2 基本初等函数
+### 2.3.2 基本初等函数
 1. 常值函数：形如 $y = c$ 的函数，其中 $c$ 为常数
 2. 幂函数：形如 $y = x^\alpha$ 的函数，其中 $\alpha$ 是给定的实数
 3. 指数函数与对数函数
