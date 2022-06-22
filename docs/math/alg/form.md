@@ -217,3 +217,26 @@
         | $y = \mathrm{arccot}\ x$ | $\mathbf R$ |                   $(0, \pi)$                   | 非奇非偶 | 减函数 |
 
         </div>
+
+### 2.3.3 特殊函数例举
+1. 取整函数与分数部分函数：设 $x, y \in \mathbf R$，整数函数（也称 $\text{Gaussian}$ 函数）$[x]$ 是不超过 $x$ 的最大整数，称它为 $x$ 的整数部分；分数部分函数定义为 $\{x\} = x - [x]$
+    1. 取整函数与分数部分函数的性质
+        1. $x \leqslant y \to [x] \leqslant [y]$
+        2. 若 $m\in \mathbf Z$，则 $[m + x] = m + [x]$
+        3. 若 $0 \leqslant x < 1$，则 $[x] = 0$
+        4. $[x] \leqslant x < [x] + 1, x - 1 < [x] \leqslant x, 0 \leqslant \{x\} < 1$
+        5. $[x] + [y] \leqslant [x + y], \{x + y\} \leqslant \{x\} + \{y\}$
+        6. $[x + y] = \left\{\begin{aligned} & [x] + [y], & \{x\} + \{y\} < 1 \\ & [x] + [y] + 1, & \{x\} + \{y\} \geqslant 1 \end{aligned}\right.$
+        7. $[-x] = \left\{\begin{aligned} & -[x], & x\in \mathbf Z \\ & -[x] - 1, & x \notin \mathbf Z \end{aligned}\right.$
+        8. $\{x\} = \left\{\begin{aligned} & 0, & x\in \mathbf Z \\ & 1 - \{x\}, & x\ \notin \mathbf Z \end{aligned}\right.$
+    2. 设 $a, b \in \mathbf Z_+$，则在 $1, 2, \cdots, a$ 中能被 $b$ 整除的恰有 $\left[\dfrac{a}{b}\right]$ 个
+    3. 在 $n!$ 的质因数分解中，质数 $p$ 的指数是 $\left[\dfrac{n}{p}\right] + \left[\dfrac{n}{p^2}\right] + \left[\dfrac{n}{p^3}\right] + \cdots = \sum_{r = 1}^{\infty} \left[\dfrac{n}{p_r}\right]$，进一步地，有 $n! = \prod_{p \leqslant n} p^{\sum_{r=1}^{\infty}\left[\frac{n}{p^r}\right]}$
+2. $\Gamma$ 函数：当 $x > 0$ 时，定义 $\Gamma(x) = {\displaystyle \int_{0}^{\infty} t^{x-1} e^{-t} \mathrm dt}$
+    1. $\Gamma$ 函数的性质
+        1. $x > 0$ 时，$\Gamma(x + 1) = x\Gamma(x)$
+        2. $\Gamma(n + 1) = n!, n = 1, 2, 3, \cdots$
+        3. $\ln \Gamma$ 在 $(0, +\infty)$ 上是凸函数
+        4. $\Gamma(x) = \dfrac{2^{x-1}}{\sqrt{\pi}} \Gamma\left(\dfrac x2\right) \Gamma\left(\dfrac{x+1}{2}\right)$
+    2. 若 $(0, +\infty)$ 上的正值函数 $f(x)$ 有 ① $f(x + 1) = xf(x)$；② $f(1) = 1$；③ $\ln f$ 为凸函数，则 $f(x) = \Gamma(x)$
+    3. $B$ 函数：设 $x, y > 0$，定义 $B(x, y) = {\displaystyle \int_0^1 t^{x-1} (1-t)^{y-1} \mathrm dt} = \dfrac{\Gamma(x) \Gamma(y)}{\Gamma(x + y)}$
+    4. $\text{Stirling}$ 公式：${\displaystyle \lim_{x \to +\infty} \dfrac{\Gamma(x + 1)}{\left(\dfrac xe\right)^x \sqrt{2\pi x}}}$

@@ -60,7 +60,7 @@
     2. 每一个度量空间的任意两个完备化同距
 5. 完全有界：设 $(X, \rho)$ 是一个度量空间，$\varepsilon>0$ 是一个实数．$X$ 的有限子集 $A$ 称为一个 $\varepsilon-$网，若对于任何 $x\in X$ 有 $\rho(x, A)<\varepsilon$．若对于任何实数 $\varepsilon>0$，$X$ 有一个 $\varepsilon-$网，则称度量空间是完全有界的
     1. 设 $(X, \rho)$ 是一个度量空间，则 $(X, \rho)$ 是紧的当且仅当 $(X, \rho)$ 是一个完全有界的完备度量空间
-    2. 设 $(X, \rho)$ 是一个完备度量空间，若由 $X$ 的子集构成的一个序列 $\{E_1, E_2, \cdots\}$ 满足条件 $E_1\supset E_2\supset \cdots \wedge \lim_{i\to \infty} \mathrm{diam}(E_i)=0$，其中 $\mathrm{diam}(E_i)$ 表示 $E_i$ 的直径，则 $\bigcap_{i\in \mathbf Z_+}E^-_i$ 是一个单点集
+    2. 设 $(X, \rho)$ 是一个完备度量空间，若由 $X$ 的子集构成的一个序列 $\{E_1, E_2, \cdots\}$ 满足条件 $E_1\supset E_2\supset \cdots \wedge {\displaystyle \lim_{i\to \infty} \mathrm{diam}(E_i)} = 0$，其中 $\mathrm{diam}(E_i)$ 表示 $E_i$ 的直径，则 $\bigcap_{i\in \mathbf Z_+}E^-_i$ 是一个单点集
     3. $\text{Baire}$ 定理：设 $X$ 是一个完备的度量空间，若 $G_1, G_2, \cdots$ 是 $X$ 中的可数个稠密的开集，则交集 $\bigcap_{i\in \mathbf Z_+} G_i$ 是 $X$ 中的一个稠密子集
 
         !!! note "$\text{Baire}$ 定理的其他表述形式"
@@ -197,18 +197,18 @@
 1. 序列：设 $X$ 是一个拓扑空间，每一个映射 $S: Z_+\to X$ 称作 $X$ 中的一个序列，将序列 $S$ 记作 $\{x_i\}_{i\in \mathbf Z_+}$ 或 $\{x_1, x_2, \cdots\}$，其中 $x_i=S(i), i\in \mathbf Z_+$
     1. $\{x_i\}_{i\in \mathbf Z_+}$ 可简记为 $\{x_i\}$
     2. 集合 $\{x_i\mid i\in \mathbf Z_+\}$ 可为有限集，当其为单点集时，称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 为一个常值序列
-2. 极限点：设 $\{x_i\}_{i\in \mathbf Z_+}$ 是拓扑空间中的一个序列，$x\in X$．若对于 $x$ 的任意邻域 $U$，存在 $M\in \mathbf Z$ 使得当 $i>M$ 时有 $x_i\in U$，则称点 $x$ 是序列 $\{x_i\}_{i\in \mathbf Z_+}$ 的一个极限点，也称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x$，记作 $\lim_{i\to \infty}x_i=x$ 或 $x_i\to x(i\to \infty)$
+2. 极限点：设 $\{x_i\}_{i\in \mathbf Z_+}$ 是拓扑空间中的一个序列，$x\in X$．若对于 $x$ 的任意邻域 $U$，存在 $M\in \mathbf Z$ 使得当 $i>M$ 时有 $x_i\in U$，则称点 $x$ 是序列 $\{x_i\}_{i\in \mathbf Z_+}$ 的一个极限点，也称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x$，记作 ${\displaystyle \lim_{i\to \infty}x_i} = x$ 或 $x_i\to x(i\to \infty)$
     1. 若序列至少有一个极限，则称这个序列是一个收敛序列
     2. 设 $X$ 是一个拓扑空间，$S, S_1:Z_+ \to X$ 是 $X$ 中的两个序列，若存在一个映射 $N: Z_+\to Z_+$ 有 $\forall n_1, n_2\in \mathbf Z_+: n_1<n_2 \to N(n_1)<N(n_2)$，使得 $S_1=S\circ N$，则称序列 $S_1$ 是序列 $S$ 的一个子序列
 3. 序列的性质
     1. 设 $\{x_i\}_{i\in \mathbf Z_+}$ 是拓扑空间 $X$ 中的一个序列
-        1. 若 $\{x_i\}_{i\in \mathbf Z_+}$ 是一个常值序列，则 $\lim_{i\to \infty} x_i=x$
+        1. 若 $\{x_i\}_{i\in \mathbf Z_+}$ 是一个常值序列，则 ${\displaystyle \lim_{i\to \infty} x_i} = x$
         2. 若序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x\in X$，则序列 $\{x_i\}_{i\in \mathbf Z_+}$ 的每一个子序列也收敛于 $x$
-    2. 设 $X$ 是一个拓扑空间，$A\subseteq X, x\in X$．若 $\forall i\in \mathbf Z_+: x_i\in A_\{x\}$，且 $\lim_{i\to \infty}x_i=x$，则 $x$ 是集合 $A$ 的一个凝聚点．反之不成立
+    2. 设 $X$ 是一个拓扑空间，$A\subseteq X, x\in X$．若 $\forall i\in \mathbf Z_+: x_i\in A_\{x\}$，且 ${\displaystyle \lim_{i\to \infty}x_i} = x$，则 $x$ 是集合 $A$ 的一个凝聚点．反之不成立
     3. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则以下命题成立，反之不成立
         1. 若 $f$ 在点 $x_0\in X$ 处连续，则 $X$ 中的一个序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x_0 \to Y$ 中序列 $\{f(x_i)\}_{i\in \mathbf Z_+}$ 收敛于 $f(x_0)$
         2. 若 $f$ 连续，则 $X$ 中的一个序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x\in X \to Y$ 中的序列 $\{f(x_i)\}_{i\in \mathbf Z_+}$ 收敛于 $f(x)$
 4. 度量描述序列收敛：设 $(X, \rho)$ 是一个度量空间，$\{x_i\}_{i\in \mathbf Z_+}$ 是 $X$ 中的一个序列，$x\in X$，则以下条件等价
-    1. $\lim_{i\to \infty} x_i=x$
+    1. ${\displaystyle \lim_{i\to \infty} x_i} = x$
     2. $\forall \varepsilon>0\ \exists N\in \mathbf Z_+\ \forall i>N: \rho(x_i, x)<\varepsilon$
-    3. $\lim_{i\to \infty} \rho(x_i, x)=0$
+    3. ${\displaystyle \lim_{i\to \infty} \rho(x_i, x)} = 0$
