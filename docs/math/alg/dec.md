@@ -6,11 +6,11 @@
 
         <div style="text-align: center;">
 
-        |   进位制   |   二进制   |          八进制          |          十进制          |                      十六进制                      |
-        | :--------: | :--------: | :----------------------: | :----------------------: | :------------------------------------------------: |
-        | 基数（权） |    $2$     |           $8$            |           $10$           |                        $16$                        |
-        |   符号集   | $\{0, 1\}$ | $\{0, 1, 2, \cdots, 7\}$ | $\{0, 1, 2, \cdots, 9\}$ | $\{0, 1, 2, \cdots, 9, \mathrm{A, B, \cdots, F}\}$ |
-        |  字母标识  | $\text{B}$ |        $\text{O}$        |        $\text{D}$        |                     $\text{H}$                     |
+        |  进位制  |   二进制   |          八进制          |          十进制          |                      十六进制                      |
+        | :------: | :--------: | :----------------------: | :----------------------: | :------------------------------------------------: |
+        |   基数   |    $2$     |           $8$            |           $10$           |                        $16$                        |
+        |  符号集  | $\{0, 1\}$ | $\{0, 1, 2, \cdots, 7\}$ | $\{0, 1, 2, \cdots, 9\}$ | $\{0, 1, 2, \cdots, 9, \mathrm{A, B, \cdots, F}\}$ |
+        | 字母标识 | $\text{B}$ |        $\text{O}$        |        $\text{D}$        |                     $\text{H}$                     |
 
         </div>
 
@@ -89,27 +89,20 @@
     3. 三歧性：$\forall r, s \in \mathbf Q: r < s \vee r = s \vee s < r$
     4. 加法保序性：$\forall r, s, t \in \mathbf Q:r < s \to r + t < s + t$
     5. 乘法保序性：$\forall r, s, t \in \mathbf Q:t > \overline{0} \to (r < s \to r \cdot t < s \cdot t)$
+3. $\mathbf Q$ 具有 $\text{Archimedes}$ 性质：$\forall r \in \mathbf Q \ \exists k \in \mathbf N: |r| \leqslant k$
+4. 分数：设 $m, n \in \mathbf Z$，则记分数 $r = m \div n = \dfrac{m}{n} \in \mathbf Q$，读作 $n$ 分之 $m$．其中 $n$ 称作分母，$m$ 称作分子
+    1. 分数的分类
+        1. 真分数：$m < n$ 的分数
+        2. 假分数：$m > n$ 的分数
+        3. 带分数：任何大于的假分数都可以整数与真分数合成的数，设 $m = qn + r \ (0 \leqslant r < n)$，则 $\dfrac mn = q\dfrac{r}{n}$
+    2. 既约分数：$(m, n) = 1$ 的分数
+        1. 约分：将任一分数化作既约分数的过程
+        2. 通分：把异分母分数化作与原来分数相等的同分母分数
+    3. 百分数：分母 $n = 100$ 的特殊分数，此时有 $m\% = \dfrac{m}{100} \times 100\%$
+    4. 比例：形如 $r = m : n$ 的式子，其中 $m$ 称作前项，$n$ 称作后项，$r$ 称作比值
 
 ### 1.2.4 实数序域
-1. $\mathbf R$ 构成一个序域
-    1. $\mathbf R$ 上的加法
-        1. 交换律：$\forall x, y \in \mathbf R: x + y = y + x$
-        2. 结合律：$\forall x, y, z \in \mathbf R: (x + y) + z = x + (y + z)$
-        3. 零元：$\forall x \in \mathbf R: x + 0  = x$
-        4. 负元：$\forall x \in \mathbf R \ \exists! y\in \mathbf R: x + y = 0$
-    2. $\mathbf R$ 上的乘法
-        1. 交换律：$\forall x, y \in \mathbf R: x \cdot y = y \cdot x$
-        2. 结合律：$\forall x, y, z \in \mathbf R: (x \cdot y) \cdot z = x \cdot (y \cdot z)$
-        3. 对加法的分配律：$\forall x, y, z \in \mathbf R: x \cdot (y + z) = x \cdot y + x \cdot z$
-        4. 单位元：$\forall x \in \mathbf R: x \cdot 1 = x$
-        5. 逆元：$\forall x \in \mathbf R \ \exists! y\in \mathbf R: x \cdot y = 1$
-2. $\mathbf R$ 上的序
-    1. 反自反性：$\forall x\in \mathbf R: x\nless x$
-    2. 可递性：$\forall x, y, z\in \mathbf R: (x < y\wedge y < z)\to x < z$
-    3. 三歧性：$\forall x, y\in \mathbf R: x < y\vee x = y\vee y < x$
-    4. 加法保序性：$\forall x, y, z\in \mathbf R: x < y\to x + z < y + z$
-    5. 乘法保序性：$\forall x, y, z\in \mathbf R: z>0\to (x < y\to x\cdot z < y\cdot z)$
-3. 实数的概念与分类
+1. 实数的概念与分类
     1. 实数的概念：十进制小数 $\alpha = p_0.p_1 p_2 \cdots p_n \cdots$ 称作实数，其中 $p_0 \in \mathbf Z$，$p_i \ (i = 1, 2, \cdots, n \cdots)$ 是十进制数码
 
         !!! note "十进制小数与实数的关系"
@@ -137,7 +130,26 @@
         \end{aligned}\right.
         $$
 
-4. 根数：设实数 $\alpha \geqslant 0$，整数 $n > 1$，则称适合 $x^n = \alpha$ 的非负实数 $x$ 为 $\alpha$ 的 $n$ 次算术根，记作 $\sqrt[n]{\alpha}$
+2. $\mathbf R$ 构成一个序域
+    1. $\mathbf R$ 上的加法
+        1. 交换律：$\forall x, y \in \mathbf R: x + y = y + x$
+        2. 结合律：$\forall x, y, z \in \mathbf R: (x + y) + z = x + (y + z)$
+        3. 零元：$\forall x \in \mathbf R: x + 0  = x$
+        4. 负元：$\forall x \in \mathbf R \ \exists! y\in \mathbf R: x + y = 0$
+    2. $\mathbf R$ 上的乘法
+        1. 交换律：$\forall x, y \in \mathbf R: x \cdot y = y \cdot x$
+        2. 结合律：$\forall x, y, z \in \mathbf R: (x \cdot y) \cdot z = x \cdot (y \cdot z)$
+        3. 对加法的分配律：$\forall x, y, z \in \mathbf R: x \cdot (y + z) = x \cdot y + x \cdot z$
+        4. 单位元：$\forall x \in \mathbf R: x \cdot 1 = x$
+        5. 逆元：$\forall x \in \mathbf R \ \exists! y\in \mathbf R: x \cdot y = 1$
+    3. $\mathbf R$ 上的序
+        1. 反自反性：$\forall x\in \mathbf R: x\nless x$
+        2. 可递性：$\forall x, y, z\in \mathbf R: (x < y\wedge y < z)\to x < z$
+        3. 三歧性：$\forall x, y\in \mathbf R: x < y\vee x = y\vee y < x$
+        4. 加法保序性：$\forall x, y, z\in \mathbf R: x < y\to x + z < y + z$
+        5. 乘法保序性：$\forall x, y, z\in \mathbf R: z>0\to (x < y\to x\cdot z < y\cdot z)$
+3. $\mathbf R$ 具有 $\text{Archimedes}$ 性质：$\forall x \in \mathbf R \ \exists k \in \mathbf N: |r| \leqslant k$
+4. 算术根：设实数 $\alpha \geqslant 0$，整数 $n > 1$，则称适合 $x^n = \alpha$ 的非负实数 $x$ 为 $\alpha$ 的 $n$ 次算术根，记作 $\sqrt[n]{\alpha}$
 5. 绝对值：设 $x \in R$，定义绝对值
 
     $$

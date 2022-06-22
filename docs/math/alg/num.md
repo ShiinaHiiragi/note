@@ -3,12 +3,21 @@
 ## 4.1 整除理论
 ### 4.1.1 算术基本定理
 1. 整除：设 $a, b \in \mathbf Z$ 且 $b \neq 0$．如果存在整数 $c$ 使得 $a = bc$ 成立，则称 $b$ 整除 $a$，记作 $b \mid a$；如果不存在这样的整数 $c$，则称 $b$ 不整除 $a$，记作 $b \nmid a$
-    1. $a \mid b \to \pm a \mid \pm b$
-    2. $a \mid b \wedge b \mid c \to a \mid c$
-    3. $b \mid a_i \ (i = 1, 2, \cdots, k) \to b \mid a_1x_1 + a_2x_2 + \cdots + a_kx_k$，其中 $x_i \in \mathbf Z$
-    4. $b \mid a \to bc \mid ac$
-    5. $b \mid a, a \neq 0 \to |b| \leqslant |a|$
-    6. $b \mid a \wedge |a| < |b| \to a = 0$
+    1. 奇数与偶数：设 $a \in \mathbf Z$，若 $2 \nmid a$，则称 $a$ 为奇数，否则称为偶数
+    2. 整除的性质
+        1. $a \mid b \to \pm a \mid \pm b$
+        2. $a \mid b \wedge b \mid c \to a \mid c$
+        3. $b \mid a_i \ (i = 1, 2, \cdots, k) \to b \mid a_1x_1 + a_2x_2 + \cdots + a_kx_k$，其中 $x_i \in \mathbf Z$
+        4. $b \mid a \to bc \mid ac$
+        5. $b \mid a, a \neq 0 \to |b| \leqslant |a|$
+        6. $b \mid a \wedge |a| < |b| \to a = 0$
+    3. 整除的特征：对于任何整数 $a$，设其各位之和为 $s$
+        1. $2 \mid a$ 当且仅当 $a$ 的个位上是 $0, 2, 4, 6, 8$
+        2. $3 \mid a$ 当且仅当 $3 \mid s$
+        3. $4 \mid a$ 当且仅当 $a$ 的末两位能被 $4$ 整除
+        4. $5 \mid a$ 当且仅当 $a$ 的个位上是 $0, 5$
+        5. $8 \mid a$ 当且仅当 $a$ 的末三位能被 $8$ 整除
+        6. $9 \mid a$ 当且仅当 $9 \mid s$
 2. 质数与合数：若整数 $a \neq 0, \pm 1$ 且只有因数 $\pm 1, \pm a$，则称 $a$ 是质数，否则称 $a$ 是合数
     1. 全体正整数可以分为三类：$1$、质数、合数
     2. 任何大于 $1$ 的整数 $a$ 都至少有一个质因数
@@ -16,7 +25,7 @@
         2. 任何大于 $1$ 的合数 $a$ 必有一个不超过 $\sqrt a$ 的质因数
     3. 质数的个数是无穷的
     4. 设 $a_1, a_2, \cdots, a_n$ 是 $n$ 个整数，$p$ 是质数．若 $p \mid a_1 a_2 \cdots a_n$，则 $\exists a_i: p \mid a_i \ (1 \leqslant i \leqslant n)$
-3. 算术基本定理：任何大于 $1$ 的整数 $a$ 可以唯一地表示成 $a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}$，其中 $p_1, p_2, \cdots, p_n$ 是质数且 $p_1 < p_2 < \cdots < p_n$，$\alpha_1, \alpha_2, \cdots, \alpha_n$ 是正整数
+3. 算术基本定理：任何大于 $1$ 的整数 $a$ 可以唯一地表示成 $a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}$，其中因数 $p_1, p_2, \cdots, p_n$ 是质数且 $p_1 < p_2 < \cdots < p_n$，$\alpha_1, \alpha_2, \cdots, \alpha_n$ 是正整数
     1. 已知 $a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}$ 是 $a$ 的标准分解式，则 $a$ 的不同的正因数个数为 $(1 + \alpha_1) (1 + \alpha_2) \cdots (1 + \alpha_n)$
     2. 设 $a$ 是一个大于 $1$ 的整数且 $a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}$，$\alpha_i \ (i = 1, 2, \cdots, n)$ 是正整数，则 $\alpha$ 的正因数可以表示成 $d = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant \beta_i \geqslant 0, i = 1, 2, \cdots, n)$ 的形式
     3. 设 $a, b \in \mathbf Z_+$ 且 $\alpha = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}, b = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant 0, \beta \geqslant 0; i = 1, 2, \cdots, n)$，则 $(a, b) = p_1^{\gamma_1} p_2^{\gamma_2} \cdots p_n^{\gamma_n}$ 且 $[a, b] = p_1^{\delta_1} p_2^{\delta_2} \cdots p_n^{\delta_n}$，其中 $\gamma_i = \min\{\alpha_i, \beta_i\}, \delta_i = \max\{\alpha_i, \beta_i\} \ (i = 1, 2, \cdots, n)$
