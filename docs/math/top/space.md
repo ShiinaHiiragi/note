@@ -60,8 +60,8 @@
     2. 每一个度量空间的任意两个完备化同距
 5. 完全有界：设 $(X, \rho)$ 是一个度量空间，$\varepsilon>0$ 是一个实数．$X$ 的有限子集 $A$ 称为一个 $\varepsilon-$网，若对于任何 $x\in X$ 有 $\rho(x, A)<\varepsilon$．若对于任何实数 $\varepsilon>0$，$X$ 有一个 $\varepsilon-$网，则称度量空间是完全有界的
     1. 设 $(X, \rho)$ 是一个度量空间，则 $(X, \rho)$ 是紧的当且仅当 $(X, \rho)$ 是一个完全有界的完备度量空间
-    2. 设 $(X, \rho)$ 是一个完备度量空间，若由 $X$ 的子集构成的一个序列 $\{E_1, E_2, \cdots\}$ 满足条件 $E_1\supset E_2\supset \cdots \wedge {\displaystyle \lim_{i\to \infty} \mathrm{diam}(E_i)} = 0$，其中 $\mathrm{diam}(E_i)$ 表示 $E_i$ 的直径，则 $\bigcap_{i\in \mathbf Z_+}E^-_i$ 是一个单点集
-    3. $\text{Baire}$ 定理：设 $X$ 是一个完备的度量空间，若 $G_1, G_2, \cdots$ 是 $X$ 中的可数个稠密的开集，则交集 $\bigcap_{i\in \mathbf Z_+} G_i$ 是 $X$ 中的一个稠密子集
+    2. 设 $(X, \rho)$ 是一个完备度量空间，若由 $X$ 的子集构成的一个序列 $\{E_1, E_2, \cdots\}$ 满足条件 $E_1\supset E_2\supset \cdots \wedge {\displaystyle \lim_{i\to \infty} \mathrm{diam}(E_i)} = 0$，其中 $\mathrm{diam}(E_i)$ 表示 $E_i$ 的直径，则 ${\displaystyle \bigcap_{i\in \mathbf Z_+}E^-_i}$ 是一个单点集
+    3. $\text{Baire}$ 定理：设 $X$ 是一个完备的度量空间，若 $G_1, G_2, \cdots$ 是 $X$ 中的可数个稠密的开集，则交集 ${\displaystyle \bigcap_{i\in \mathbf Z_+} G_i}$ 是 $X$ 中的一个稠密子集
 
         !!! note "$\text{Baire}$ 定理的其他表述形式"
             设 $X$ 是一个拓扑空间，若 $A^{-o}=\varnothing$，则称 $A$ 为 $X$ 的一个无处稠密子集．若 $X$ 的子集 $F$ 可以表示为 $X$ 中可数个无处稠密的子集之并，则称 $F$ 为第一范畴集，若 $X$ 的子集不是第一范畴集，则称之为第二范畴集
@@ -129,7 +129,7 @@
     2. 设 $X$ 是一个拓扑空间，记 $\mathscr F$ 为所有闭集构成的族
         1. $X, \varnothing \in \mathscr F$
         2. 若 $A, B\in \mathscr F$，则 $A\cup B\in \mathscr F$
-        3. 若 $\varnothing \neq \mathscr F_1\subseteq \mathscr F$，则 $\bigcap_{A\in \mathscr F_1}A\in \mathscr F$
+        3. 若 $\varnothing \neq \mathscr F_1\subseteq \mathscr F$，则 ${\displaystyle \bigcap_{A\in \mathscr F_1}A} \in \mathscr F$
 
         !!! note "$\text{Cantor}$ 集"
             在实数空间 $R$ 中，定义 $f_1, f_2: R\to R$ 使得对于任意 $t\in \mathbf R$ 有 $f_1(t)=\dfrac{t}{3}, f_2(t)=\dfrac{t+2}{3}$，则可以验证 $f_1, f_2$ 均为同胚，即任意开集 $U\subseteq R$，其 $f_1-$像与 $f_2-$像都是开集
@@ -144,7 +144,7 @@
         2. $A\subseteq \overline A$
         3. $\overline{A\cup B} = \overline A \cup \overline B$
         4. $\overline{\overline A} = \overline A$
-    4. 设 $X$ 是一个拓扑空间，$\mathscr F$ 是由空间 $X$ 中所有闭集构成的族，则对于 $X$ 的每个子集 $A$，有 $\overline A = \bigcap_{B\in \mathscr F, A\subseteq B}B$
+    4. 设 $X$ 是一个拓扑空间，$\mathscr F$ 是由空间 $X$ 中所有闭集构成的族，则对于 $X$ 的每个子集 $A$，有 ${\displaystyle \overline A = \bigcap_{B\in \mathscr F, A\subseteq B}B}$
     5. 闭包定义拓扑空间：设 $X$ 是一个集合 $c^*(X): \mathcal P(X)\to \mathcal P(X)$ 的一个闭包运算，则存在 $X$ 的唯一一个拓扑 $\mathscr T$，使得在拓扑空间 $(X, \mathscr T)$ 中对于每一个 $A\subseteq X$ 有 $c^*(A)=\overline A$
 
     !!! note "闭包运算"

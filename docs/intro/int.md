@@ -10,7 +10,7 @@
 3. 设给定了集族 $\{x_i\}_{i\in I}$，则 $\mathrm{Descartes}$ 积 ${\displaystyle \prod_{i\in I}x_i} \neq \varnothing \leftrightarrow \forall i\in I(x_i\neq \varnothing)$
 4. 给定两个集族 $\{x_i\}_{i\in I}, \{y_i\}_{i\in I}$，且 $\forall i\in I(y_i\subset x_i)$．若对于任意 $i\in I$，都有 $y_i\neq \varnothing$，则对于任意 $k\in I$ 有 $p_k\left({\displaystyle \prod_{i\in I}x_i}\right)=y_k$
     1. 设集族 $\{x_i\}_{i\in I}$ 对每一个 $i\in I$ 有 $x_i\neq \varnothing$，则对于任意 $k\in I$，$\mathrm{Descartes}$ 积 ${\displaystyle \prod_{i\in I}x_i}$ 的第 $k$ 个投影 $p_k$ 都是满射
-    2. 设集族 $\{x_i\}_{i\in I}$ 对每一个 $i\in I$ 有 $x_i\neq \varnothing$，又设 $\varnothing \neq I_1 \subset I$，集族 $\{x_i\}_{i\in I}$满足条件：对于每一个 $i\in I_1$ 有 $\varnothing \neq a_i\subset x_i$，则对于每一个 $k\in I$ 有 $p_k\left(\bigcap_{i\in I_1}p^{-1}_i(a_i)\right)=\left\{\begin{aligned}&x_k, k\in I-I_1 \\&a_k, i\in I_1\end{aligned}\right.$，其中 $p_k$ 是 $\mathrm{Descartes}$ 积 ${\displaystyle \prod_{i\in I}x_i}$ 的第 $k$ 个投射
+    2. 设集族 $\{x_i\}_{i\in I}$ 对每一个 $i\in I$ 有 $x_i\neq \varnothing$，又设 $\varnothing \neq I_1 \subset I$，集族 $\{x_i\}_{i\in I}$满足条件：对于每一个 $i\in I_1$ 有 $\varnothing \neq a_i\subset x_i$，则对于每一个 $k\in I$ 有 $p_k\left({\displaystyle \bigcap_{i\in I_1}p^{-1}_i(a_i)}\right)=\left\{\begin{aligned}&x_k, k\in I-I_1 \\&a_k, i\in I_1\end{aligned}\right.$，其中 $p_k$ 是 $\mathrm{Descartes}$ 积 ${\displaystyle \prod_{i\in I}x_i}$ 的第 $k$ 个投射
 
 ## 复数的定义
 - 复数：在集合 $\mathbf C = \mathbf R \times \mathbf R$ 内定义加法和乘法运算

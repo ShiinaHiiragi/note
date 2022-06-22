@@ -156,13 +156,13 @@
 
             2. 设 $I$ 是一个集合，$\left\{ \mathfrak A_i = \left\{A_i, \{Z^{\mathfrak A_i}\}_{Z\in S}\right\}\right\}$ 是一族 $S-$结构，如果
 
-                - $\bigcap_{i\in I}A_i \neq \varnothing$
-                - 对每个 $n$ 元函数符号 $f\in \mathbf F$，如果 $(a_1, a_2, \cdots, a_n) \in \bigcap_{i\in I}A_i^n$，对任意的 $i, j\in I$ 有 $f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_j}(a_1, a_2, \cdots, a_n)$
+                - ${\displaystyle \bigcap_{i\in I}A_i} \neq \varnothing$
+                - 对每个 $n$ 元函数符号 $f\in \mathbf F$，如果 $(a_1, a_2, \cdots, a_n) \in {\displaystyle \bigcap_{i\in I}A_i^n}$，对任意的 $i, j\in I$ 有 $f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_j}(a_1, a_2, \cdots, a_n)$
                 - 对每个常元符号 $c\in \mathbf C$，对任意 $i, j\in I$ 有 $C^{\mathfrak A_i} = c^{\mathfrak A_j}$
 
-                则定义 $\{\mathfrak A_i\mid i\in I\}$ 的交为一个以 $\bigcap_{i\in I}A_i$ 为论域的 $S-$结构，记作 $\bigcap_{i\in I}\mathfrak A_i$
+                则定义 $\{\mathfrak A_i\mid i\in I\}$ 的交为一个以 ${\displaystyle \bigcap_{i\in I}A_i}$ 为论域的 $S-$结构，记作 ${\displaystyle \bigcap_{i\in I}\mathfrak A_i}$
 
-                - 对每个 $n$ 元关系符号 $R\in \mathbf R$，$R^{\bigcap_{i\in I}\mathfrak A_i} = \bigcap_{i\in I}R^{\mathfrak A_i}$
+                - 对每个 $n$ 元关系符号 $R\in \mathbf R$，$R^{\bigcap_{i\in I}\mathfrak A_i} = {\displaystyle \bigcap_{i\in I}R^{\mathfrak A_i}}$
                 - 对每个 $n$ 元函数符号 $f\in \mathbf F$，$f^{\bigcap_{i\in I}\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n)$
                 - 对每个常元符号，$c\in \mathbf C$，$c^{\bigcap_{i\in I}\mathfrak A_i} = C^{\mathfrak A_i}$
 

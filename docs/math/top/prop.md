@@ -14,7 +14,7 @@
     1. 设 $Y$ 是拓扑空间 $X$ 的一个子集，$A, B\subseteq Y$，则 $A, B$ 是子空间 $Y$ 中的隔离子集仅当它们是拓扑空间 $X$ 中的隔离子集
     2. 设 $Y$ 是拓扑空间 $X$ 中的一个连通子集，若 $X$ 中有隔离子集 $A, B$ 使得 $Y\subseteq A\cap B$，则 $Y\subseteq A\vee Y\subseteq B$
     3. 设 $Y$ 是拓扑空间 $X$ 的一个连通子集，$Z\subseteq X$ 满足条件 $Y\subseteq Z\subseteq \overline Y$，则 $Z$ 也是 $X$ 的一个连通子集
-    4. 设 $\{Y_\gamma\}_{\gamma \in \Gamma}$ 是拓扑空间 $X$ 的连通子集构成的一个子集族，若 $\bigcap_{\gamma\in \Gamma}Y_\gamma \neq\varnothing$，则 $\bigcup_{\gamma\in \Gamma}Y_\gamma \neq\varnothing$ 是 $X$ 的一个连通子集
+    4. 设 $\{Y_\gamma\}_{\gamma \in \Gamma}$ 是拓扑空间 $X$ 的连通子集构成的一个子集族，若 ${\displaystyle \bigcap_{\gamma\in \Gamma}Y_\gamma} \neq\varnothing$，则 $\bigcup_{\gamma\in \Gamma}Y_\gamma \neq\varnothing$ 是 $X$ 的一个连通子集
     5. 设 $Y$ 是拓扑空间 $X$ 的一个子集，若对于任意 $x, y\in Y$，存在 $X$ 中的一个连通子集 $Y_{xy}$ 使得 $x, y\in Y_{xy}$，则 $Y$ 是 $X$ 中的一个连通子集
 4. 连通性的性质
     1. 拓扑不变性：设 $f: X\to Y$ 是从连通空间 $X$ 到拓扑空间 $Y$ 的一个连续映射，则 $f[X]$ 是 $Y$ 的一个连通子集
@@ -160,7 +160,7 @@
     1. 紧子集：设 $X$ 是一个拓扑空间，$Y\subseteq X$．若 $Y$ 作为 $X$ 的子空间是一个紧空间，则称 $Y$ 是拓扑空间 $X$ 的一个紧子集
     2. 每一个紧空间都是 $\text{Lindelof}$ 空间，反之不然；实数空间 $R$ 不是一个紧空间
     3. 设 $X$ 是一个拓扑空间， $Y$ 是 $X$ 中的一个子集．则 $Y$ 是 $X$ 的一个紧子集当且仅当每一个由 $X$ 中的开集构成的 $Y$ 的覆盖都有有限子覆盖
-2. 具有有限交性质的集族：设 $\mathscr A$ 是一个集族，若 $\mathscr A_1$ 是 $\mathscr A$ 的一个有限子族，则 $\bigcap_{A\in \mathscr A_1} \neq\varnothing$，则称 $\mathscr A$ 是一个具有有限交性质的集族
+2. 具有有限交性质的集族：设 $\mathscr A$ 是一个集族，若 $\mathscr A_1$ 是 $\mathscr A$ 的一个有限子族，则 ${\displaystyle \bigcap_{A\in \mathscr A_1} A} \neq\varnothing$，则称 $\mathscr A$ 是一个具有有限交性质的集族
     1. 设 $X$ 是一个拓扑空间，则 $X$ 是一个紧空间当且仅当 $X$ 中的每一个具有有限交性质的闭集族都有非空的交
     2. 设 $\mathscr B$ 是拓扑空间 $X$ 的一个基，并且 $X$ 的由 $\mathscr B$ 中的元素构成的每一个覆盖有一个有限子覆盖，则 $X$ 是一个紧空间
 3. 紧致性与 $\text T_2$ 空间
@@ -191,7 +191,7 @@
 2. 列紧空间：设 $X$ 是一个拓扑空间，若 $X$ 的每一个无限子集都有凝聚点，则称拓扑空间 $X$ 是一个列紧空间
     1. 每一个可数紧空间都是列紧空间
     2. 下降序列：设 $\{A_i\}_{i\in \mathbf Z_+}$ 是一个由集合构成的序列，如果它满足条件 $A_i\supset A_{i+1}$ 对于每一个 $i\in \mathbf Z_+$ 成立，则称序列 $\{A_i\}_{i\in \mathbf Z_+}$ 是一个下降序列；在某一个拓扑空间中的一个由非空闭集构成的下降序列也称作一个非空闭集下降序列
-    3. 设 $X$ 是一个拓扑空间，则拓扑空间 $X$ 是一个可数的紧空间当且仅当 $X$ 中任何一个非空闭集下降序列 $\{A_i\}_{i\in \mathbf Z_+}$ 有 $\bigcap_{i\in \mathbf Z_+}A_+\neq \varnothing$
+    3. 设 $X$ 是一个拓扑空间，则拓扑空间 $X$ 是一个可数的紧空间当且仅当 $X$ 中任何一个非空闭集下降序列 $\{A_i\}_{i\in \mathbf Z_+}$ 有 ${\displaystyle \bigcap_{i\in \mathbf Z_+}A_+}\neq \varnothing$
     4. 每一个列紧的 $\text T_1$ 空间都是可数紧空间
 3. 序列紧空间：设 $X$ 是一个拓扑空间，如果 $X$ 中的每一个序列都有一个收敛的子序列，则称拓扑空间 $X$ 是一个序列紧空间
     1. 每一个序列紧空间都是可数紧空间
