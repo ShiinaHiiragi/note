@@ -192,7 +192,7 @@
         1. 对逆性：$a > b \leftrightarrow b < a$
         2. 传递性：$a > b \wedge b > c \to a > c$
         3. 加法保序性：$a < b \to a + c < b + c$
-        4. 乘法保序性：若 $a > b, c > 0$，则 $ac > bc$；若 $a > b, c < 0$，则 $ac < bc$
+        4. 乘法单调性：若 $a > b, c > 0$，则 $ac > bc$；若 $a > b, c < 0$，则 $ac < bc$
     3. 其他性质
         1. 相加法则：若 $a > b, c > d$，则 $a + c > b + d$
         2. 相减法则：若 $a \geqslant b, c < d$，则 $a - c > b - d$
@@ -202,5 +202,46 @@
         6. 开方法则：若 $a > b > 0$，整数 $n > 1$，则 $\sqrt[n]{a} > \sqrt[n]{b}$
 
 ### 3.3.2 常用不等式
+1. $\text{Cauchy}$ 不等式：设 $a_i, b_i \in \mathbf R \ (i = 1, 2, \cdots, n)$，则有
+
+    $$
+    \left(\sum_{i=1}^n a_i b_i\right)^2 \leqslant \left(\sum_{i=1}^n a_i\right)^2 \left(\sum_{i=1}^n b_i\right)^2
+    $$
+
+    等号成立当且仅当 $b_i = ka_i \ (i = 1, 2, \cdots, n)$
+
+2. 均值不等式：设 $a_i > 0 \ (1, 2, \cdots, n)$，则有
+
+    $$
+    \dfrac{n}{\dfrac{1}{a_1} + \dfrac{1}{a_2} + \cdots + \dfrac{1}{a_n}} \leqslant \sqrt[n]{a_1 a_2 \cdots a_n} \leqslant \dfrac{a_1 + a_2 + \cdots + a_n}{n} \leqslant \sqrt[2]{\dfrac{a_1^2 + a_2^2 + \cdots + a_n^2}{n}}
+    $$
+
+    等号成立当且仅当 $a_1 = a_2 = \cdots = a_n$，四个均值分别称作调和均值、几何均值、算术均值与平方均值
+
+3. 三角不等式：对于任意实数 $a_i, b_i \ (i = 1, 2, \cdots, n)$ 有
+
+    $$
+    \sqrt{\left(\sum_{i=1}^n (a_i + b_i)^2\right)} \leqslant \sqrt{\left(\sum_{i=1}^n a_i^2\right)} + \sqrt{\left(\sum_{i=1}^n b_i^2\right)}
+    $$
+
+    !!! note "绝对值不等式"
+        三角不等式可以可以证明绝对值不等式：设 $a, b \in R, a_i \in R \ (i = 1, 2, \cdots, n)$
+
+        1. $\left||a| - |b|\right| \leqslant |a \pm b| \leqslant |a| + |b|$
+        2. $|a_1 + a_2 + \cdots + a_n| \leqslant |a_1| + |a_2| + \cdots + |a_n|$
+
+4. $\text{Jensen}$ 不等式：如果 $y = f(x)$ 在某区间 $D$ 上是凹函数，则对于该区间上的任意 $x_1, x_2, \cdots, x_n$ 都有
+
+    $$
+    f\left(\dfrac{x_1, x_2, \cdots, x_n}{n}\right) \leqslant \dfrac{f(x_1) + f(x_2) + \cdots + f(x_n)}{n}
+    $$
+
+    如果 $y = f(x)$ 在某区间 $D$ 上是凸函数，则对于该区间上的任意 $x_1, x_2, \cdots, x_n$ 都有
+
+    $$
+    f\left(\dfrac{x_1, x_2, \cdots, x_n}{n}\right) \geqslant \dfrac{f(x_1) + f(x_2) + \cdots + f(x_n)}{n}
+    $$
+
+    等号成立当且仅当 $x_1 = x_2 = \cdots = x_n$
 
 ### 3.3.3 解不等式
