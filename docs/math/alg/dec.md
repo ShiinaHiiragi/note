@@ -32,7 +32,7 @@
     2. 若 $n \in \mathbf N$，则 $n$ 有且仅有一个后继 $n' \in \mathbf N$
     3. 对任一 $n \in \mathbf N$，都有 $n' \neq 0$
     4. 对任意 $n, m \in \mathbf N$，若 $x \neq y$，则 $x' \neq y'$
-    5. （归纳公理）设 $M \subset \mathbf N$，若 $0 \in M$，每当 $n \in M$ 也有 $n' \in M$，则 $M = \mathbf N$
+    5. （归纳公理）设 $M \subseteq \mathbf N$，若 $0 \in M$，每当 $n \in M$ 也有 $n' \in M$，则 $M = \mathbf N$
 2. 自然数集 $\mathbf N$ 上的运算
     1. $\mathbf N$ 上的加法
         1. 加法交换律：$\forall a, b \in \mathbf N: a + b=b + a$
@@ -53,44 +53,12 @@
 
 ### 1.2.2 整数环
 1. $\mathbf Z$ 构成交换环
-    1. $\mathbf Z$ 上的加法
-        1. 交换律：$\forall a, b \in \mathbf Z: a + b = b + a$
-        2. 结合律：$\forall a, b, c \in \mathbf Z:(a + b) + c = a + (b + c)$
-        3. 零元：$\forall a \in \mathbf Z: a + \overline{0} = a$
-        4. 负元：$\forall a \in \mathbf Z \ \exists !b\in \mathbf Z: a + b = \overline{0}$．即 $\mathbf Z$ 中每一个元素 $a$ 都有自己唯一的负元 $-a$，从而定义减法 $b - a = b + (-a)$
-    2. $\mathbf Z$ 上的乘法
-        1. 交换律：$\forall a, b \in \mathbf Z: a \cdot b = b \cdot a$
-        2. 结合律：$\forall a, b, c \in \mathbf Z: (a \cdot b) \cdot c = a \cdot (b \cdot c)$
-        3. 乘法对加法的分配律：$\forall a, b, c \in \mathbf Z: a \cdot (b + c) = a \cdot b + a \cdot c$
-        4. 单位元：$\forall a \in \mathbf Z: a \cdot \overline{1} = a$
-2. 整数环上的序 
-    1. 反自反性：$\forall a \in \mathbf Z: a \nless a$
-    2. 传递性：$\forall a, b, c \in \mathbf Z: (a < b \wedge b < c) \to a < c$
-    3. 三歧性：$\forall a, b \in \mathbf Z: a < b \vee a = b \vee b < a$
-    4. 加法保序性：$\forall a, b, c \in \mathbf Z: a < b \to a + c < b + c$
-    5. 乘法保序性：$\forall a, b, c \in \mathbf Z: c > \overline{0} \to (a < b \to a \cdot c < b \cdot c)$
+2. 负元：$\forall a \in \mathbf Z \ \exists !b\in \mathbf Z: a + b = \overline{0}$．即 $\mathbf Z$ 中每一个元素 $a$ 都有自己唯一的负元 $-a$，从而定义减法 $b - a = b + (-a)$
 
 ### 1.2.3 有理数域
-1. $\mathbf Q$ 构成一个数域
-    1. $\mathbf Q$ 上的加法
-        1. 交换律：$\forall r, s \in \mathbf Q:r + s = s + r$
-        2. 结合律：$\forall r, s, t \in \mathbf Q:(r + s) + t = r + (s + t)$
-        3. 零元：$\forall r \in \mathbf Q : r + \overline{0} = r$
-        4. 负元：$\forall r \in \mathbf Q \ \exists !s \in \mathbf Q: r + s = \overline{0}$．即 $\mathbf Q$ 中每一个元素 $r$ 都有唯一的负元 $-r$
-    2. $\mathbf Q$ 上的乘法
-        1. 交换律：$\forall r, s \in \mathbf Q: r \cdot s = s \cdot r$
-        2. 结合律：$\forall r, s, t \in \mathbf Q: (r \cdot s) \cdot t = r \cdot (s \cdot t)$
-        3. 乘法对加法的分配律：$\forall r, s, t \in \mathbf Q: r \cdot (s + t) = r \cdot s + r \cdot t$
-        4. 单位元：$\forall r \in \mathbf Q: r \cdot \overline{1} = r$
-        5. 逆元：$\forall r \in \mathbf Q \ \exists !s \in \mathbf Q: r \cdot s = \overline{1}$．即 $\mathbf Q$ 中每一个元素 $r$ 都有唯一的逆元 $r^{-1}$，由此定义除法 $s \div r = s \cdot r^{-1}$
-2. 有理数域上的序
-    1. 反自反性：$\forall r \in \mathbf Q: r \nless r$
-    2. 传递性：$\forall r, s, t \in \mathbf Q: (r < s \wedge s < t)\to r < t$
-    3. 三歧性：$\forall r, s \in \mathbf Q: r < s \vee r = s \vee s < r$
-    4. 加法保序性：$\forall r, s, t \in \mathbf Q:r < s \to r + t < s + t$
-    5. 乘法保序性：$\forall r, s, t \in \mathbf Q:t > \overline{0} \to (r < s \to r \cdot t < s \cdot t)$
-3. $\mathbf Q$ 具有 $\text{Archimedes}$ 性质：$\forall r \in \mathbf Q \ \exists k \in \mathbf N: |r| \leqslant k$
-4. 分数：设 $m, n \in \mathbf Z$，则记分数 $r = m \div n = \dfrac{m}{n} \in \mathbf Q$，读作 $n$ 分之 $m$．其中 $n$ 称作分母，$m$ 称作分子
+1. $\mathbf Q$ 构成一个数域且具有 $\text{Archimedes}$ 性质：$\forall r \in \mathbf Q \ \exists k \in \mathbf N: |r| \leqslant k$
+2. 逆元：$\forall r \in \mathbf Q \ \exists !s \in \mathbf Q: r \cdot s = \overline{1}$．即 $\mathbf Q$ 中每一个元素 $r$ 都有唯一的逆元 $r^{-1}$，由此定义除法 $s \div r = s \cdot r^{-1}$
+3. 分数：设 $m, n \in \mathbf Z$，则记分数 $r = m \div n = \dfrac{m}{n} \in \mathbf Q$，读作 $n$ 分之 $m$．其中 $n$ 称作分母，$m$ 称作分子
     1. 分数的分类
         1. 真分数：$m < n$ 的分数
         2. 假分数：$m > n$ 的分数
@@ -130,7 +98,7 @@
         \end{aligned}\right.
         $$
 
-2. $\mathbf R$ 构成一个序域
+2. $\mathbf R$ 构成一个序域且具有 $\text{Archimedes}$ 性质：$\forall x \in \mathbf R \ \exists k \in \mathbf N: |x| \leqslant k$
     1. $\mathbf R$ 上的加法
         1. 交换律：$\forall x, y \in \mathbf R: x + y = y + x$
         2. 结合律：$\forall x, y, z \in \mathbf R: (x + y) + z = x + (y + z)$
@@ -148,9 +116,8 @@
         3. 三歧性：$\forall x, y\in \mathbf R: x < y\vee x = y\vee y < x$
         4. 加法保序性：$\forall x, y, z\in \mathbf R: x < y\to x + z < y + z$
         5. 乘法保序性：$\forall x, y, z\in \mathbf R: z>0\to (x < y\to x\cdot z < y\cdot z)$
-3. $\mathbf R$ 具有 $\text{Archimedes}$ 性质：$\forall x \in \mathbf R \ \exists k \in \mathbf N: |x| \leqslant k$
-4. 算术根：设实数 $\alpha \geqslant 0$，整数 $n > 1$，则称适合 $x^n = \alpha$ 的非负实数 $x$ 为 $\alpha$ 的 $n$ 次算术根，记作 $\sqrt[n]{\alpha}$
-5. 绝对值：设 $x \in R$，定义绝对值
+3. 算术根：设实数 $\alpha \geqslant 0$，整数 $n > 1$，则称适合 $x^n = \alpha$ 的非负实数 $x$ 为 $\alpha$ 的 $n$ 次算术根，记作 $\sqrt[n]{\alpha}$
+4. 绝对值：设 $x \in R$，定义绝对值
 
     $$
     |x| = \left\{\begin{aligned}
