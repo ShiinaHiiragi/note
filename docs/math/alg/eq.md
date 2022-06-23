@@ -245,3 +245,70 @@
     等号成立当且仅当 $x_1 = x_2 = \cdots = x_n$
 
 ### 3.3.3 解不等式
+1. 不等式的解集：如果不等式两边的解析式含有变元，则其定义域 $M$ 内使不等式成立的变元的取值称作不等式的解
+    1. 解集：不等式的解全体组成的集合，记作 $S$，显然 $S \subseteq M$
+    2. 不等式组：由含有相同变元的集合不等式联立成一组，其各不等式解集的交集称作该不等式组的解集
+2. 同解不等式：如果两个不等式解集相等，则称这两个不等式是同解不等式
+    1. 不等式恒等变形定理：若对不等式 $f(x) > g(x)$ 的两边分别做恒等变形 $f(x) \equiv f_0(x), g(x) \equiv g_0(x)$，若 $f_0(x) > g_0(x)$ 与原不等式具有相同的定义域，则它们同解
+    2. 对逆定理：不等式 $f(x) > g(x)$ 与 $g(x) < f(x)$ 同解
+    3. 不等式同解定理
+        1. 如果对于 $f(x) > g(x)$ 的定义域 $M$ 中的一切值，$h(x)$ 都有意义，则 $f(x) > g(x)$ 与 $f(x) + h(x) > g(x) + h(x)$ 同解
+        2. 如果对于 $f(x) > g(x)$ 的定义域 $M$ 中的一切值总有 $h(x) > 0$，则 $f(x) > g(x)$ 与 $f(x)h(x) > g(x)h(x)$ 同解；反之如果总有 $h(x) < 0$，则 $f(x) > g(x)$ 与 $f(x)h(x) < g(x)h(x)$ 同解
+        3. 不等式 $\dfrac{f(x)}{g(x)} > 0$ 与不等式 $f(x)g(x) > 0$ 同解；不等式 $\dfrac{f(x)}{g(x)} < 0$ 与不等式 $f(x)g(x) < 0$ 同解
+        4. 设不等式 $f(x) > g(x)$ 在其定义域的某个子集上恒有 $f(x) > g(x) > 0$，则在此子集上 $f(x) > g(x)$ 与 $f^n(x) > g^n(x)$ 同解，其中 $n \in \mathbf Z_+$
+        5. 设不等式 $f(x) > g(x)$ 在其定义域的某个子集上恒有 $f(x) > g(x) > 0$，则在此子集上 $f(x) > g(x)$ 与 $\sqrt[n]{f(x)} > \sqrt[n]{g(x)}$ 同解，其中 $n \in \mathbf Z_+$ 且 $n > 1$
+    4. 不等式 $f(x)g(x) > 0$ 的解集是不等式组 $\left\{\begin{aligned} & f(x) > 0 \\ & g(x) > 0 \end{aligned}\right.$ 与 $\left\{\begin{aligned} & f(x) < 0 \\ & g(x) < 0 \end{aligned}\right.$ 的解集的并集；不等式 $f(x)g(x) < 0$ 的解集是不等式组 $\left\{\begin{aligned} & f(x) > 0 \\ & g(x) < 0 \end{aligned}\right.$ 与 $\left\{\begin{aligned} & f(x) < 0 \\ & g(x) > 0 \end{aligned}\right.$ 的解集的并集
+3. 一元不等式
+    1. 任何一元一次不等式都可经过恒等变形整理为 $ax > b$ 的形式
+        1. $a = 0$ 时，解集为 $\left\{\begin{aligned} & \varnothing, & b \geqslant 0 \\ & \mathbf R, & b < 0 \end{aligned}\right.$
+        2. $a \neq 0$ 时，解集为 $\left\{\begin{aligned} & \left(\dfrac ba, +\infty\right), & a > 0 \\ & \left(-\infty, \dfrac ba\right), & a < 0 \end{aligned}\right.$
+    2. 任何一元二次不等式都可经过恒等变形整理为 $ax^2 + bx + c > 0 \ (a \neq 0)$ 的形式，从而归结为两种情形，记 $\Delta = p^2 - 4q$
+
+        <div style="text-align: center;">
+
+        |                           项目                            |                            $x^2 + px + q > 0$                            | $x^2 + px + q < 0$ |
+        | :-------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------: |
+        |                       $\Delta < 0$                        |                               $\mathbf R$                                |        无解        |
+        |                       $\Delta = 0$                        | $\left(-\infty, -\dfrac p2\right) \cup \left(-\dfrac p2, +\infty\right)$ |        无解        |
+        | $\Delta > 0$ <br/> 设 $x^2 + px + q = (x - x_1)(x - x_2)$ |                   $(-\infty, x_1) \cup (x_2, +\infty)$                   |    $(x_1, x_2)$    |
+
+        </div>
+
+    3. 一元高次不等式的标准形式：$f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots a_1x + a_0 > 0 \ (a_n \neq 0)$
+        1. 将 $f(x)$ 写成 $f(x) = a_n f_1(x)f_2(x)$，其中 $f_1(x), f_2(x)$ 分别是 $f(x)$ 中所有首项系数为 $1$ 的一次因式与二次既约因式的乘积
+        2. 当 $a_n > 0$ 时，$f(x) > 0$ 与 $f_1(x) > 0$ 同解；当 $a_n < 0$ 时，$f(x) > 0$ 与 $f_1(x) < 0$ 同解
+
+4. 绝对值不等式：绝对值符号内含有变元的不等式称作绝对值不等式
+    1. 不等式 $|f(x)| < g(x)$ 与不等式组 $-g(x) < f(x) < g(x)$ 同解
+    2. 不等式 $|f(x)| > g(x)$ 的解集等于不等式 $f(x) < -g(x)$ 与不等式 $f(x) > g(x)$ 的并集
+5. 初等超越不等式
+    1. 最简指数不等式：形如 $a^{f(x)} > b$ 或 $a^{f(x)} < b$ 的不等式，其中 $a > 0, a \neq 1$
+        1. 若 $b \leqslant 0$，则不等式 $a^{f(x)} > b$ 为绝对不等式，$a^{f(x)} < b$ 无解
+        2. 若 $b > 0$，有
+
+            $$
+            \begin{aligned}
+            & a^{f(x)} > b \leftrightarrow f(x) > \log_a b, & a > 1 \\
+            & a^{f(x)} < b \leftrightarrow f(x) < \log_a b, & a > 1 \\
+            & a^{f(x)} > b \leftrightarrow f(x) < \log_a b, & 0 < a < 1 \\
+            & a^{f(x)} < b \leftrightarrow f(x) > \log_a b, & 0 < a < 1
+            \end{aligned}
+            $$
+    
+    2. 最简对数不等式：形如 $\log_a x > b$ 或 $\log_a x < b$ 的不等式，其中 $a > 0, a \neq 1$
+        1. 若 $a > 1$，则 $\log_a x > b \leftrightarrow x > a^b, \log_a x < b \leftrightarrow x < a^b$
+        2. 若 $0 < a < 1$，则 $\log_a x > b \leftrightarrow x < a^b, \log_a x < b \leftrightarrow x > a^b$
+    3. 最简三角不等式：形如
+
+        $$
+        \begin{aligned}
+        & \sin x > a \\
+        & \sin x < a \\
+        & \cos x > a \\
+        & \cos x < a \\
+        & \tan x > a \\
+        & \tan x < a
+        \end{aligned}
+        $$
+
+        的不等式，其中 $a \in \mathbf R$
