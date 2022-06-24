@@ -1,7 +1,6 @@
-# 1 集合与公理
+# 1 数学基础
 
 ## 1.1 ZFC 公理
-### 1.1.1 ZFC 语言
 1. 集合论语言 $\mathscr L(S)$，其中 $S = \{=, \in\}$ 且 $\Omega(=) = \Omega(\in) = 2$．定义如下缩写记号：
     1. $\neg x \in A$：$x \notin A$
     2. $\forall x \ (x \in A \to \varphi(x))$：$\forall x \in A \ \varphi(x)$
