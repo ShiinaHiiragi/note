@@ -97,8 +97,8 @@
         \forall x \ (\varnothing \notin X \wedge \forall x \in X \ \forall y \in X \ (x \cap y = \varnothing) \to \exists S \forall x \in X \ \exists !y \ (S \cap x = \{y\}))
         $$
 
-3. 集合的运算性质
-    1. 子集的性质：对于任意集合 $X, Y, Z$
+3. 集合的运算性质：对于任意集合 $X, Y, Z$
+    1. 子集的性质
         1. $\varnothing \subseteq X$
         2. $X \subseteq X$
         3. $X \subseteq Y$ 且 $Y \subseteq X$，则 $X = Y$
@@ -115,36 +115,36 @@
     5. $\text{De Morgan}$ 律
         1. $X - (Y \cup Z) = (X - Y) \cap (X - Z)$
         2. $X - (Y \cap Z) = (X - Y) \cup (X - Z)$
-4. 有标集族：设 $\Gamma$ 是一个集合，$\mathscr A$ 是一个集族，每一个满射 $\varphi: \Gamma \to \mathscr A$ 称为一个以 $\Gamma$ 为指标集的集族，记 $A_\gamma = \varphi(\gamma)$，则 $\varphi = \left\{(\gamma, A_\gamma) \mid \gamma \in \Gamma\right\} \subseteq \Gamma \times \mathscr A$ 常记作 $\left\{A_\gamma\right\}_{\gamma \in \Gamma}$
+4. 指标系统：设 $\Gamma$ 是一个集合，$\mathscr X$ 是一个集族，则每一个满射 $\varphi: \Gamma \to \mathscr X$ 称为一个以 $\Gamma$ 为指标集的指标系统．记 $X_\gamma = \varphi(\gamma)$，则 $\varphi = \left\{(\gamma, X_\gamma) \mid \gamma \in \Gamma\right\} \subseteq \Gamma \times \mathscr X$ 常记作 $\mathscr X = \{X_\gamma \mid \gamma \in \Gamma\}$ 或 $\left\{X_\gamma\right\}_{\gamma \in \Gamma}$
     1. 定义并集与交集：
 
         $$
         \begin{aligned}
-        & \bigcup_{\gamma \in \Gamma} A_\gamma = \{x \in \mathscr A \mid \exists \gamma \in \Gamma \ (x \in A_\gamma)\} \\
-        & \bigcap_{\gamma \in \Gamma} A_\gamma = \{x \in \mathscr A \mid \forall \gamma \in \Gamma \ (x \in A_\gamma)\}
+        & \bigcup_{\gamma \in \Gamma} X_\gamma = \{x \in \mathscr X \mid \exists \gamma \in \Gamma \ (x \in X_\gamma)\} \\
+        & \bigcap_{\gamma \in \Gamma} X_\gamma = \{x \in \mathscr X \mid \forall \gamma \in \Gamma \ (x \in X_\gamma)\}
         \end{aligned}
         $$
 
-    2. 设 $\{A_\gamma\}_{\gamma \in \Gamma}$ 和 $\{B_\delta\}_{\delta \in \Delta}$ 为两非空集族，若 $\{A_\gamma \mid \gamma \in \Gamma\} = \{B_\delta \mid \delta \in \Delta\}$，则有 ${\displaystyle \bigcup_{\gamma \in \Gamma}A_\gamma=\bigcup_{\delta \in \Delta} B_\delta, \bigcap_{\gamma \in \Gamma} A_\gamma = \bigcap_{\delta \in \Delta} B_\delta}$．特别地，${\displaystyle \bigcup_{\gamma \in \Gamma} A_\gamma = \bigcup A, \bigcap_{\gamma \in \Gamma}A_\gamma = \bigcap A}$
-    3. 设 $\{A_\gamma\}_{\gamma \in \Gamma}$ 是一个非空的有标集族，$A$ 是一个集合
-        1. ${\displaystyle \forall \gamma_0 \in \Gamma \ \left(\bigcap_{\gamma \in \Gamma} A_\gamma \subseteq A_{\gamma_0} \subseteq \bigcup_{\gamma \in \Gamma} A_\gamma\right)}$
-        2. 分配律：${\displaystyle A \cap\left(\bigcup_{\gamma \in \Gamma} A_\gamma \right) = \bigcup_{\gamma \in \Gamma} (A \cap A_\gamma), A \cup \left(\bigcap_{\gamma \in \Gamma} A_\gamma \right) = \bigcap_{\gamma \in \Gamma}(A \cup A_\gamma)}$
-        3. $\mathrm{De\ Morgan}$ 律：${\displaystyle A - \left(\bigcup_{\gamma \in \Gamma} A_\gamma \right) = \bigcap_{\gamma \in \Gamma} (A - A_\gamma), A - \left(\bigcap_{\gamma \in \Gamma} A_\gamma\right) = \bigcup_{\gamma \in \Gamma} (A - A_\gamma)}$
-    4. 设 $R \subseteq X \times Y$，则对于集合 $X$ 的任何一个非空子集族 $\{A_\gamma\}_{\gamma \in \Gamma}$ 有
+    2. 设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 和 $\{Y_\delta\}_{\delta \in \Delta}$ 为两非空集族，若 $\{X_\gamma \mid \gamma \in \Gamma\} = \{Y_\delta \mid \delta \in \Delta\}$，则有 ${\displaystyle \bigcup_{\gamma \in \Gamma}X_\gamma=\bigcup_{\delta \in \Delta} Y_\delta, \bigcap_{\gamma \in \Gamma} X_\gamma = \bigcap_{\delta \in \Delta} Y_\delta}$．特别地，${\displaystyle \bigcup_{\gamma \in \Gamma} X_\gamma = \bigcup X, \bigcap_{\gamma \in \Gamma}X_\gamma = \bigcap X}$
+    3. 设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个非空的有标集族，$Y$ 是一个集合
+        1. ${\displaystyle \forall \gamma_0 \in \Gamma \ \left(\bigcap_{\gamma \in \Gamma} X_\gamma \subseteq X_{\gamma_0} \subseteq \bigcup_{\gamma \in \Gamma} X_\gamma\right)}$
+        2. 分配律：${\displaystyle Y \cap\left(\bigcup_{\gamma \in \Gamma} X_\gamma \right) = \bigcup_{\gamma \in \Gamma} (Y \cap X_\gamma), Y \cup \left(\bigcap_{\gamma \in \Gamma} X_\gamma \right) = \bigcap_{\gamma \in \Gamma}(Y \cup X_\gamma)}$
+        3. $\mathrm{De\ Morgan}$ 律：${\displaystyle Y - \left(\bigcup_{\gamma \in \Gamma} X_\gamma \right) = \bigcap_{\gamma \in \Gamma} (Y - X_\gamma), Y - \left(\bigcap_{\gamma \in \Gamma} X_\gamma\right) = \bigcup_{\gamma \in \Gamma} (Y - X_\gamma)}$
+    4. 设 $R \subseteq X \times Y$，则对于集合 $X$ 的任何一个非空子集族 $\{Z_\gamma\}_{\gamma \in \Gamma}$ 有
 
         $$
         \begin{aligned}
-        & R\left(\bigcup_{\gamma \in \Gamma} A_\gamma\right) = \bigcup_{\gamma \in \Gamma} R(A_\gamma) \\
-        & R\left(\bigcap_{\gamma \in \Gamma} A_\gamma\right)\subseteq \bigcap_{\gamma \in \Gamma} R(A_\gamma)
+        & R\left[\bigcup_{\gamma \in \Gamma} Z_\gamma\right] = \bigcup_{\gamma \in \Gamma} R(Z_\gamma) \\
+        & R\left[\bigcap_{\gamma \in \Gamma} Z_\gamma\right]\subseteq \bigcap_{\gamma \in \Gamma} R(Z_\gamma)
         \end{aligned}
         $$
 
-    5. 设 $f: X \to Y$，则对于集合 $Y$ 的任何一个非空子集族 $\{B_\delta\}_{\delta \in \Delta}$ 有 
+    5. 设映射 $f: X \to Y$，则对于集合 $Y$ 的任何一个非空子集族 $\{Z_\gamma\}_{\gamma \in \Gamma}$ 有 
 
         $$
         \begin{aligned}
-        & f^{-1}\left(\bigcup_{\delta \in \Delta}B_\delta\right)=\bigcup_{\delta \in \Delta}f^{-1}(B_\delta) \\
-        & f^{-1}\left(\bigcap_{\delta \in \Delta}B_\delta\right)=\bigcap_{\delta \in \Delta}f^{-1}(B_\delta)
+        & f^{-1}\left[\bigcup_{\gamma \in \Gamma}Z_\gamma\right]=\bigcup_{\gamma \in \Gamma}f^{-1}(Z_\gamma) \\
+        & f^{-1}\left[\bigcap_{\gamma \in \Gamma}Z_\gamma\right]=\bigcap_{\gamma \in \Gamma}f^{-1}(Z_\gamma)
         \end{aligned}
         $$
 
@@ -168,7 +168,7 @@
 
         特别地，定义 $X^n = \underbrace{X \times X \times \cdots \times X}_{n}$
 
-3. 集族的 $\text{Descartes}$ 积
+3. 指标系统的 $\text{Descartes}$ 积
     1. 投射与自然投射
         1. 投射：设 $X_1, X_2, \cdots, X_n$ 是 $n \ (n\geqslant 1)$ 个集合，从 $X=X_1\times X_2\times \cdots, X_n$ 到其第 $i \ (1 \leqslant i \leqslant n)$ 个坐标集 $X_i$ 的投射 $p_i: X \to X_i$ 定义为 $\forall X = (a_1, a_2, \cdots, a_n) \in X \ (p_i(X) = a_i)$，即
 
@@ -202,7 +202,26 @@
     3. 逆：二元关系 $R$ 的逆定义为 $R^{-1} := \left\{(x, y) \mid R(y, x)\right\}$
     4. 复合：二元关系 $R, S$ 的复合定义为 $S \circ R = \left\{(x, z) \mid \exists y \ (R(x, y) \wedge S(y, z))\right\}$
     5. $n$ 元关系：对于任一集合 $R$，如果存在 $X_1, X_2, \cdots, X_n$ 使得 $R \subseteq X_1 \times X_2 \times \cdots \times X_n$，则称 $R$ 为 $n$ 元关系，用 $R(X_1, X_2, \cdots, X_n)$ 表示 $(X_1, X_2, \cdots, X_n) \in R$．特别地，如果 $R \subseteq X^n$，则称 $R$ 是 $X$ 上的 $n$ 元关系
+5. 等价关系
 
 ### 1.2.2 映射
+1. 二元关系 $f$ 若有 $(x, y) \in f \wedge (x, z) \in f \to y = x$，则称 $f$ 是一个映射，其中 $y$ 称作 $f$ 在 $x$ 处的值，记作 $f(x) = y$ 或 $f: x \mapsto y$．如果 $\mathrm{dom}(f) = X, \mathrm{ran}(f) \subseteq Y$，则称 $f$ 是 $X$ 到 $Y$ 的映射，记作 $f: X \to Y$
+    1. 函数：对于映射 $f: X \to Y$，当 $X, Y$ 均为数集时，称 $f$ 为函数
+    2. 映射的等同：令 $f, g$ 为映射，$f = g$ 当且仅当 $\mathrm{dom}(f) = \mathrm{dom}(g)$ 且对于所有 $x \in \mathrm{dom}(f)$ 都有 $f(x) = g(x)$
+    3. 等同映射：对任意集合 $X$ 定义 $\mathrm{id}_X: X \to X$ 为 $\mathrm{id}_X(x) = x$
+2. 映射的种类：设 $f: X \to Y$ 是一个映射
+    1. 单射：对于所有的 $x_1, x_2 \in X$，若 $x_1 \neq x_2$，则 $f(x_1) \neq f(x_2)$
+    2. 满射：$\mathrm{ran}(f) = Y$ 的映射
+    3. 双射：既是单射又是满射的映射
+3. 逆映射与复合映射
+    1. 一个映射是可逆的当且仅当它是单射，如果 $f$ 是可逆的，则 $f^{-1}$ 也是可逆的且 $(f^{-1})^{-1} = f$
+    2. 令 $f, g$ 为映射，则复合 $h = g \circ f$ 也是映射，且 $h$ 的定义域为 $\mathrm{dom}(h) = \mathrm{dom}(f) \cap f^{-1}[\mathrm{dom}(g)]$．且对于所有 $x \in \mathrm{dom}(h)$ 均有 $h(x) = g(f(x))$
+4. 限制与扩张：对任意映射 $f$ 与集合 $A$，$g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 是一个映射，称作 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张
+5. 相容性：对于函数 $f, g$，如果对所有的 $x \in \mathrm{dom}(f) \cap \mathrm{dom}(g)$ 都有 $f(x) = g(x)$，则称函数 $f, g$ 是相容的
+    1. 如果函数的集合 $\mathscr F$ 中任意两个函数都是相容的，则称 $\mathscr F$ 为相容的系统
+    2. 函数 $f, g$ 相容当且仅当 $f \cap g$ 是函数，当且仅当 $f \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right) = g \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right)$
+6. 令 $X, Y$ 是集合，$X$ 到 $Y$ 的所有函数组成的集合定义为 $Y^X = \left\{f \mid f: X \to Y\right\}$
+    1. 对任意集合 $X, Y$，$X^Y$ 都是集合
+    2. 对任意集合 $X$，有 $\varnothing^{X} = \varnothing$；对任意集合 $Y$，有 $Y^{\varnothing} = \left\{\varnothing_{Y}\right\}$
 
 ## 1.3 实数理论
