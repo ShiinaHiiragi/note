@@ -96,6 +96,7 @@ nav:
       - 1 结构与模型: logic/model/model.md
     - 四、公理集合论:
       - 1 数学基础: logic/set/zfc.md
+      - 2 序数与基数: logic/set/ordinal.md
   - 数学结构:
     - 一、初等代数:
       - 1 数制与数系: math/alg/dec.md

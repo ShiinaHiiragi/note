@@ -51,14 +51,11 @@
     4. 加法保序性：$\forall m, n, k \in \mathbf N: m < n \to m + k < n + k$
     5. 乘法保序性：$\forall m, n, k \in \mathbf N: (m < n \wedge k \neq 0)\to mk < nk$
 
-### 1.2.2 整数环
-1. $\mathbf Z$ 构成交换环
-2. 负元：$\forall a \in \mathbf Z \ \exists !b\in \mathbf Z: a + b = \overline{0}$．即 $\mathbf Z$ 中每一个元素 $a$ 都有自己唯一的负元 $-a$，从而定义减法 $b - a = b + (-a)$
-
-### 1.2.3 有理数域
-1. $\mathbf Q$ 构成一个数域且具有 $\text{Archimedes}$ 性质：$\forall r \in \mathbf Q \ \exists k \in \mathbf N: |r| \leqslant k$
-2. 逆元：$\forall r \in \mathbf Q \ \exists !s \in \mathbf Q: r \cdot s = \overline{1}$．即 $\mathbf Q$ 中每一个元素 $r$ 都有唯一的逆元 $r^{-1}$，由此定义除法 $s \div r = s \cdot r^{-1}$
-3. 分数：设 $m, n \in \mathbf Z$，则记分数 $r = m \div n = \dfrac{m}{n} \in \mathbf Q$，读作 $n$ 分之 $m$．其中 $n$ 称作分母，$m$ 称作分子
+### 1.2.2 整数环与有理数域
+1. $\mathbf Z$ 构成交换环；$\mathbf Q$ 构成一个数域且具有 $\text{Archimedes}$ 性质：$\forall r \in \mathbf Q \ \exists k \in \mathbf N: |r| \leqslant k$
+2. 负元：$\forall a \in \mathbf Z \ \exists !b\in \mathbf Z: a + b = \overline{0}$．即 $\mathbf Z$ 中每一个元素 $a$ 都有自己唯一的负元 $-a$，由此定义减法 $b - a = b + (-a)$ 
+3. 逆元：$\forall r \in \mathbf Q \ \exists !s \in \mathbf Q: r \cdot s = \overline{1}$．即 $\mathbf Q$ 中每一个元素 $r$ 都有唯一的逆元 $r^{-1}$，由此定义除法 $s \div r = s \cdot r^{-1}$
+4. 分数：设 $m, n \in \mathbf Z$，则记分数 $r = m \div n = \dfrac{m}{n} \in \mathbf Q$，读作 $n$ 分之 $m$．其中 $n$ 称作分母，$m$ 称作分子
     1. 分数的分类
         1. 真分数：$m < n$ 的分数
         2. 假分数：$m > n$ 的分数
@@ -69,7 +66,7 @@
     3. 百分数：分母 $n = 100$ 的特殊分数，此时有 $m\% = \dfrac{m}{100} \times 100\%$
     4. 比例：形如 $r = m : n$ 的式子，其中 $m$ 称作前项，$n$ 称作后项，$r$ 称作比值
 
-### 1.2.4 实数序域
+### 1.2.3 实数序域
 1. 实数的概念与分类
     1. 实数的概念：十进制小数 $\alpha = p_0.p_1 p_2 \cdots p_n \cdots$ 称作实数，其中 $p_0 \in \mathbf Z$，$p_i \ (i = 1, 2, \cdots, n \cdots)$ 是十进制数码
 
@@ -128,7 +125,7 @@
 
     该定义也适用于整数环与有理数域
 
-### 1.2.5 复数域
+### 1.2.4 复数域
 1. 复数关于其加法和乘法构成复数域 $(\mathbf C, +, \cdot)$，但不是一个有序域
     1. 二次多项式 $x^2 + 1 \in \mathbf R[x]$ 无实根，构造 $\mathbf R$ 的二次扩域 $\mathbf R[x] / (x^2 + 1)$，记 $i = x + (x^2 + 1)$ 为一个陪集
     2. $\mathbf R[x] / (x^2 + 1) = \mathbf R \oplus \mathbf Ri$ 作为 $\mathbf R-$代数的结构完全由关系式 $i^2 + 1 = 0$ 确定，因此 $\mathbf R[x] / (x^2 + 1) \simeq \mathbf C$

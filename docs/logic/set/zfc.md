@@ -292,3 +292,8 @@
     2. 对任意集合 $X$，有 $\varnothing^{X} = \varnothing$；对任意集合 $Y$，有 $Y^{\varnothing} = \left\{\varnothing_{Y}\right\}$
 
 ## 1.3 实数理论
+### 1.3.1 自然数
+
+### 1.3.2 整数与有理数
+
+### 1.3.3 实数与复数
