@@ -29,10 +29,10 @@
 ### 1.2.1 自然数集
 1. $\text{Peano}$ 公理：满足下列五条公理的集合 $\mathbf N$ 称作自然数集．其中，$0$ 与「后继」作为抽象的初始概念没有定义
     1. $0 \in \mathbf N$
-    2. 若 $n \in \mathbf N$，则 $n$ 有且仅有一个后继 $n' \in \mathbf N$
-    3. 对任一 $n \in \mathbf N$，都有 $n' \neq 0$
-    4. 对任意 $n, m \in \mathbf N$，若 $x \neq y$，则 $x' \neq y'$
-    5. （归纳公理）设 $M \subseteq \mathbf N$，若 $0 \in M$，每当 $n \in M$ 也有 $n' \in M$，则 $M = \mathbf N$
+    2. 若 $n \in \mathbf N$，则 $n$ 有且仅有一个后继 $S(n) \in \mathbf N$
+    3. 对任一 $n \in \mathbf N$，都有 $S(n) \neq 0$
+    4. 对任意 $n, m \in \mathbf N$，若 $x \neq y$，则 $S(x) \neq S(y)$
+    5. （归纳公理）设 $M \subseteq \mathbf N$，若 $0 \in M$，每当 $n \in M$ 也有 $S(n) \in M$，则 $M = \mathbf N$
 2. 自然数集 $\mathbf N$ 上的运算
     1. $\mathbf N$ 上的加法
         1. 加法交换律：$\forall a, b \in \mathbf N: a + b=b + a$
