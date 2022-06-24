@@ -97,6 +97,9 @@
         \forall x \ (\varnothing \notin X \wedge \forall x \in X \ \forall y \in X \ (x \cap y = \varnothing) \to \exists S \forall x \in X \ \exists !y \ (S \cap x = \{y\}))
         $$
 
+        !!! note "选择公理的第二形式"
+            对任意不含空集的非空集族 $\mathscr F$ 上都存在选择函数 $f: \mathscr F \to \bigcup \mathscr F$ 使得对任意 $F \in \mathscr F$ 有 $f(F) \in F$
+
 3. 集合的运算性质：对于任意集合 $X, Y, Z$
     1. 子集的性质
         1. $\varnothing \subseteq X$
@@ -125,12 +128,19 @@
         \end{aligned}
         $$
 
-    2. 设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 和 $\{Y_\delta\}_{\delta \in \Delta}$ 为两非空集族，若 $\{X_\gamma \mid \gamma \in \Gamma\} = \{Y_\delta \mid \delta \in \Delta\}$，则有 ${\displaystyle \bigcup_{\gamma \in \Gamma}X_\gamma=\bigcup_{\delta \in \Delta} Y_\delta, \bigcap_{\gamma \in \Gamma} X_\gamma = \bigcap_{\delta \in \Delta} Y_\delta}$．特别地，${\displaystyle \bigcup_{\gamma \in \Gamma} X_\gamma = \bigcup X, \bigcap_{\gamma \in \Gamma}X_\gamma = \bigcap X}$
-    3. 设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个非空的有标集族，$Y$ 是一个集合
+    2. 对任意集合的指标系统 $\{X_\gamma\}_{\gamma \in \Gamma}$ 与 $\{Y_\delta\}_{\delta \in \Delta}$
+        1. ${\displaystyle \bigcup_{\gamma \in \Gamma} X_\gamma = \bigcup X, \bigcap_{\gamma \in \Gamma}X_\gamma = \bigcap X}$
+        2. 若 $\{X_\gamma \mid \gamma \in \Gamma\} = \{Y_\delta \mid \delta \in \Delta\}$，则有 ${\displaystyle \bigcup_{\gamma \in \Gamma}X_\gamma=\bigcup_{\delta \in \Delta} Y_\delta, \bigcap_{\gamma \in \Gamma} X_\gamma = \bigcap_{\delta \in \Delta} Y_\delta}$
+    3. 对任意集合的指标系统 $\{X_\gamma\}_{\gamma \in \Gamma}$ 与 $\{Y_\gamma\}_{\gamma \in \Gamma}$
+        1. ${\displaystyle \bigcap_{\gamma \in \Gamma} (X_\gamma \cap Y_\gamma) = \bigcap_{\gamma \in \Gamma} X_\gamma \cap \bigcap_{\gamma \in \Gamma} Y_\gamma}, {\displaystyle \bigcup_{\gamma \in \Gamma} (X_\gamma \cup Y_\gamma) = \bigcup_{\gamma \in \Gamma} X_\gamma \cup \bigcup_{\gamma \in \Gamma} Y_\gamma}$
+        2. ${\displaystyle \bigcap_{\gamma \in \Gamma} X_\gamma \cup \bigcap_{\gamma \in \Gamma} Y_\gamma \subseteq \bigcap_{\gamma \in \Gamma} (X_\gamma \cup Y_\gamma)}, {\displaystyle \bigcup_{\gamma \in \Gamma} X_\gamma \cap \bigcup_{\gamma \in \Gamma} Y_\gamma \supseteq \bigcup_{\gamma \in \Gamma} (X_\gamma \cap Y_\gamma)}$
+        3. ${\displaystyle \bigcap_{\gamma \in \Gamma} X_\gamma \cup \bigcap_{\delta \in \Gamma} Y_\delta = \bigcap_{\gamma, \delta \in \Gamma} (X_\gamma \cup Y_\delta)}, {\displaystyle \bigcup_{\gamma \in \Gamma} X_\gamma \cap \bigcup_{\delta \in \Gamma} Y_\delta = \bigcup_{\gamma, \delta \in \Gamma} (X_\gamma \cap Y_\delta)}$
+        4. ${\displaystyle \left(\bigcap_{\gamma \in \Gamma} X_\gamma\right) \times \left(\bigcap_{\delta \in \Gamma} Y_\delta\right) = \bigcap_{\gamma, \delta \in \Gamma} (X_\gamma \times Y_\delta)}, {\displaystyle \left(\bigcup_{\gamma \in \Gamma} X_\gamma\right) \times \left(\bigcup_{\delta \in \Gamma} Y_\delta\right) = \bigcup_{\gamma, \delta \in \Gamma} (X_\gamma \times Y_\delta)}$
+    4. 对任意集合的指标系统 $\{X_\gamma\}_{\gamma \in \Gamma}$ 与集合 $A$
         1. ${\displaystyle \forall \gamma_0 \in \Gamma \ \left(\bigcap_{\gamma \in \Gamma} X_\gamma \subseteq X_{\gamma_0} \subseteq \bigcup_{\gamma \in \Gamma} X_\gamma\right)}$
-        2. 分配律：${\displaystyle Y \cap\left(\bigcup_{\gamma \in \Gamma} X_\gamma \right) = \bigcup_{\gamma \in \Gamma} (Y \cap X_\gamma), Y \cup \left(\bigcap_{\gamma \in \Gamma} X_\gamma \right) = \bigcap_{\gamma \in \Gamma}(Y \cup X_\gamma)}$
-        3. $\mathrm{De\ Morgan}$ 律：${\displaystyle Y - \left(\bigcup_{\gamma \in \Gamma} X_\gamma \right) = \bigcap_{\gamma \in \Gamma} (Y - X_\gamma), Y - \left(\bigcap_{\gamma \in \Gamma} X_\gamma\right) = \bigcup_{\gamma \in \Gamma} (Y - X_\gamma)}$
-    4. 设 $R \subseteq X \times Y$，则对于集合 $X$ 的任何一个非空子集族 $\{Z_\gamma\}_{\gamma \in \Gamma}$ 有
+        2. 分配律：${\displaystyle A \cap\left(\bigcup_{\gamma \in \Gamma} X_\gamma \right) = \bigcup_{\gamma \in \Gamma} (A \cap X_\gamma), A \cup \left(\bigcap_{\gamma \in \Gamma} X_\gamma \right) = \bigcap_{\gamma \in \Gamma}(A \cup X_\gamma)}$
+        3. $\mathrm{De\ Morgan}$ 律：${\displaystyle A - \left(\bigcup_{\gamma \in \Gamma} X_\gamma \right) = \bigcap_{\gamma \in \Gamma} (A - X_\gamma), A - \left(\bigcap_{\gamma \in \Gamma} X_\gamma\right) = \bigcup_{\gamma \in \Gamma} (A - X_\gamma)}$
+    5. 设 $R \subseteq X \times Y$，则对于集合 $X$ 的任何一个非空子集族 $\{Z_\gamma\}_{\gamma \in \Gamma}$ 有
 
         $$
         \begin{aligned}
@@ -139,7 +149,7 @@
         \end{aligned}
         $$
 
-    5. 设映射 $f: X \to Y$，则对于集合 $Y$ 的任何一个非空子集族 $\{Z_\gamma\}_{\gamma \in \Gamma}$ 有 
+        设映射 $f: X \to Y$，则对于集合 $Y$ 的任何一个非空子集族 $\{Z_\gamma\}_{\gamma \in \Gamma}$ 有 
 
         $$
         \begin{aligned}
@@ -148,9 +158,18 @@
         \end{aligned}
         $$
 
+    6. 设 $S$ 为非空集合的非空族，$\left\{X_\gamma\right\}_{\gamma \in \bigcup S}$ 为以 $\bigcup S$ 为指标集的指标系统，则有
+
+        $$
+        \begin{aligned}
+        & {\displaystyle \bigcup_{\gamma \in \bigcup S} X_\gamma = \bigcup_{C \in S} \left(\bigcup_{\gamma \in C} X_\gamma\right)} \\
+        & {\displaystyle \bigcap_{\gamma \in \bigcup S} X_\gamma = \bigcap_{C \in S} \left(\bigcap_{\gamma \in C} X_\gamma\right)}
+        \end{aligned}
+        $$
+
 5. 类与真类：令 $\varphi(u)$ 为一个性质，$\{u \mid \varphi(u)\}$ 不一定是集合，这样的对象被称为类，不是集合的类被称为真类
     1. 每个集合都是类，例如 $\left\{x \mid x \neq x\right\}$
-    2. 用 $\mathbf V = \left\{x \mid x = x\right\}$ 表示「所有集合」的类，$x \in V$ 不是集合论语言的公式，而只是公式 $x = x$ 的一种记法
+    2. 用 $\mathbf V = \left\{x \mid x = x\right\}$ 表示「所有集合」的类，$x \in \mathbf V$ 不是集合论语言的公式，而只是公式 $x = x$ 的一种记法
 
 ## 1.2 关系与映射
 ### 1.2.1 关系
@@ -159,7 +178,10 @@
     2. 任何两个有序对 $(a_1, b_1), (a_2, b_2)$ 有 $(a_1, b_1) = (a_2, b_2)$ 当且仅当 $a_1 = a_2 \wedge b_1 = b_2$
     3. 假设 $(x_1, x_2, \cdots, x_{n-1})$ 已有定义，则 $n$ 元序组定义为 $(x_1, x_2, \cdots, x_n) := \left((x_1, x_2, \cdots, x_{n-1}), x_n\right)$
 2. $\text{Descartes}$ 积：设 $X, Y$ 为集合，则 $X$ 与 $Y$ 的 $\text{Descartes}$ 积定义为 $X \times Y := \left\{(x, y) \mid x \in X \wedge y \in Y\right\}$．特别地，若 $X = Y$，则将 $X \times X$ 记作 $X^2$
-    1. 对于任意集合 $X, Y$，$X \times Y$ 是集合
+    1. 对于任意集合 $X, Y, Z$
+        1. $(X \cup Y) \times Z = (X \times Z) \cup (Y \times Z)$
+        2. $(X \cap Y) \times Z = (X \times Z) \cap (Y \times Z)$
+        3. $(X - Y) \times Z = (X \times Z) - (Y \times Z)$
     2. $n$ 个集合 $X_1, X_2, \cdots, X_n$ 的 $\text{Descartres}$ 积定义为
 
         $$
@@ -198,11 +220,56 @@
 
 4. 关系：对于集合 $R$，如果存在 $X, Y$ 使得 $R \subseteq X \times Y$，则称 $R$ 为二元关系，用 $R(x, y)$ 或 $xRy$ 表示 $(x, y) \in R$
     1. 定义域与值域：定义域定义为 $\mathrm{dom}(R) := \left\{x \mid \exists y \ R(x, y)\right\}$，值域定义为 $\mathrm{ran}(R) := \left\{y \mid \exists x in X \ R(x, y)\right\}$
-    2. 像与逆像：集合 $X$ 在关系 $R$ 下的像定义为 $R[X] := \left\{y \in \mathrm{ran}(R) \mid \exists x \in X \ (R(x, y))\right\}$，集合 $Y$ 在关系 $R$ 下的逆像定义为 $R^{-1}[Y] := \left\{x \in \mathrm{dom}(R) \mid \exists y \in Y \ (R(x, y))\right\}$
-    3. 逆：二元关系 $R$ 的逆定义为 $R^{-1} := \left\{(x, y) \mid R(y, x)\right\}$
-    4. 复合：二元关系 $R, S$ 的复合定义为 $S \circ R = \left\{(x, z) \mid \exists y \ (R(x, y) \wedge S(y, z))\right\}$
-    5. $n$ 元关系：对于任一集合 $R$，如果存在 $X_1, X_2, \cdots, X_n$ 使得 $R \subseteq X_1 \times X_2 \times \cdots \times X_n$，则称 $R$ 为 $n$ 元关系，用 $R(X_1, X_2, \cdots, X_n)$ 表示 $(X_1, X_2, \cdots, X_n) \in R$．特别地，如果 $R \subseteq X^n$，则称 $R$ 是 $X$ 上的 $n$ 元关系
-5. 等价关系
+    2. 像与逆像：集合 $X$ 在关系 $R$ 下的像定义为 $R[X] := \left\{y \in \mathrm{ran}(R) \mid \exists x \in X \ (R(x, y))\right\}$；集合 $Y$ 在关系 $R$ 下的逆像定义为 $R^{-1}[Y] := \left\{x \in \mathrm{dom}(R) \mid \exists y \in Y \ (R(x, y))\right\}$
+        1. $R[X \cup Y] = R[X] \cup R[Y]$
+        2. $R[X \cap Y] \subseteq R[X] \cap R[Y]$
+        3. $R[X - Y] \supseteq R[X] - R[Y]$
+        4. 对于任意函数 $f$ 有 $f[X \cap Y] \subseteq f[X] \cap f[Y], f^{-1}[X \cap Y] = f^{-1}[X] \cap f^{-1}[Y]$
+    3. 逆关系与复合关系：二元关系 $R$ 的逆定义为 $R^{-1} := \left\{(x, y) \mid R(y, x)\right\}$；复合定义为 $S \circ R = \left\{(x, z) \mid \exists y \ (R(x, y) \wedge S(y, z))\right\}$
+        1. $(R^{-1})^{-1} = R, (S \circ R)^{-1} = R^{-1} \circ S^{-1}$
+        2. $X \circ (Y \circ Z) = (X \circ Y) \circ Z$
+        3. $(X \cup Y) \circ Z = (X \circ Z) \cup (Y \circ Z), Z \circ (X \cup Y) = (Z \circ X) \cup (Z \circ Y)$
+        4. $(X \cap Y) \circ Z \subseteq (X \circ Z) \cap (Y \circ Z), Z \circ (X \cap Y) \subseteq (=- (Z \circ X) \cap (Z \circ Y)$
+        5. $\mathrm{dom}(R^{-1}) = \mathrm{ran}(R), \mathrm{ran}(R^{-1}) = \mathrm{dom}(R)$
+        6. $\mathrm{dom}(S \circ R) \subseteq \mathrm{dom}(R), \mathrm{ran}(S \circ R) \subseteq \mathrm{ran}(S)$
+    4. $n$ 元关系：对于任一集合 $R$，如果存在 $X_1, X_2, \cdots, X_n$ 使得 $R \subseteq X_1 \times X_2 \times \cdots \times X_n$，则称 $R$ 为 $n$ 元关系，用 $R(X_1, X_2, \cdots, X_n)$ 表示 $(X_1, X_2, \cdots, X_n) \in R$．特别地，如果 $R \subseteq X^n$，则称 $R$ 是 $X$ 上的 $n$ 元关系
+5. 二元关系：令 $R \subseteq X^2$
+    1. 自反性：$R$ 是自反的当且仅当对于任意 $x \in X$ 有 $(x, x) \in R$；$R$ 是反自反的当且仅当对于任意 $x \in X$ 有 $R(x, x) \notin R$
+    2. 对称性：$R$ 是对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \to (y, x) \in R$；$R$ 是反对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \wedge (y, x) \in R \to x = y$
+    3. 传递性：$R$ 是传递的当且仅当对于任意 $x, y, z \in X$ 有 $(x, y) \in R \wedge (y, z) \in R \to (x, z) \in R$
+6. 等价关系：$R$ 是等价的当且仅当 $R$ 是自反、对称且是传递的，用 $\sim$ 表示
+    1. 等价类：设 $\sim$ 是集合 $X$ 上的等价关系，对任意 $x \in X$，定义 $x$ 关于 $\sim$ 的等价类为 $[x]_{\sim} := \left\{t \in X \mid t \sim x\right\}$
+        1. 对任意 $x, y \in X$，有 $[x]_{\sim} = [y]_{\sim}$ 或 $[x]_{\sim} \cap [y]_{\sim} = \varnothing$ 成立
+        2. 商集：设 $\sim$ 是集合 $X$ 上的等价关系，则 $X / \sim = \left\{[x]_{\sim} \mid x \in X\right\}$ 称为 $X$ 的商集．易知 $X / \sim$ 是 $X$ 的一个划分
+    2. 划分：令 $X$ 为一个集合，$S \subseteq \mathcal P(X)$，如果 $S$ 有 ① 对所有 $a, b \in S$，有 $a \neq b \to a \cap b = \varnothing$；② $\bigcup S = X$，则称 $S$ 是 $X$ 的划分
+
+        !!! note "等价关系与划分的对应"
+            令 $S$ 为 $X$ 的划分，定义 $X$ 上的二元关系 $~_S = \left\{(x, y) \in X^2 \mid \exists c \in S \ (s \in c \wedge y \in c)\right\}$
+
+            1. $\sim_S$ 是等价关系，且 $X / \sim_S = S$
+            2. 如果 $\sim$ 是 $X$ 上的等价关系且 $S = X / \sim$，则 $\sim_S = \sim$
+
+            总而言之，集合 $X$ 上的所有等价关系与划分形成一一对应
+
+7. 序：令 $\prec, \leqslant$ 为 $X$ 上的二元关系
+    1. 拟序：如果 $\prec$ 具有自反性与传递性，则称 $\prec$ 是 $X$ 上的拟序
+    2. 偏序：如果拟序关系 $\leqslant$ 具有反对称性，则称 $\leqslant$ 是 $X$ 上的偏序或序，用 $(X, \leqslant)$ 表示
+        1. 用 $x \geqslant y$ 表示 $x \leqslant^{-1} y$；用 $x < y$ 表示 $x \leqslant y \wedge x \neq y$，用 $x > y$ 表示 $x \geqslant y \wedge x \neq y$
+        2. 极大元与极小元：如果 $a \in X$ 且 $\forall x \in X \ (\neg (a > x))$，则称 $a$ 为 $X$ 的极小元；反之如果 $a \in X$ 且 $\forall x \in X \ (\neg (a < x))$，则称 $a$ 为 $X$ 的极大元
+        3. 最小元与最大元：如果 $a \in X$ 且 $\forall x \in X \ (a \leqslant x)$，则称 $a$ 为 $X$ 的最小元；反之如果 $a \in X$ 且 $\forall x \in X \ (a \geqslant x)$，则称 $a$ 为 $X$ 的最大元
+        4. 上界与下界：设 $X_0 \subseteq X$，若存在 $a \in X$ 使得对于任意 $x \in X_0$ 都有 $a \geqslant x$，则称 $a$ 为 $X_0$ 在 $X$ 中的上界；若存在 $a \in X$ 使得对于任意 $x \in X_0$ 都有 $a \leqslant x$，则称 $a$ 为 $X_0$ 在 $X$ 中的下界
+        5. 上确界与下确界：设 $X_0 \subseteq X$，若 $X_0$ 在 $X$ 中所有上界的集合有最小元 $a_0$，则称 $a_0$ 是 $X_0$ 的上确界，记作 $\sup(X_0)$；若 $X_0$ 在 $X$ 中所有下界的集合有最大元 $a_0$，则称 $a_0$ 是 $X_0$ 的下确界，记作 $\inf(X_0)$
+
+        !!! note "逆关系的序"
+            如果 $R$ 是 $X$ 上的序，则 $R^{-1}$ 也是 $X$ 上的序，令 $X_0 \subseteq X$
+
+            1. $x$ 是 $X_0$ 在序 $R$ 下的极小元当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的极大元
+            2. $x$ 是 $X_0$ 在序 $R$ 下的最小元当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的最大元
+            3. $x$ 是 $X_0$ 在序 $R$ 下的上确界当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的下确界
+
+    3. 全序：如果偏序关系 $\leqslant$ 还具有连接性，即对所有 $x, y \in X$ 有 $x \leqslant y$ 或 $y \leqslant x$，则称 $\leqslant$ 是 $X$ 上的全序或线序
+        1. 全序集的任意两个元素是可比较的
+        2. 全序集中极小元与最小元、极大元与最大元是同一的
 
 ### 1.2.2 映射
 1. 二元关系 $f$ 若有 $(x, y) \in f \wedge (x, z) \in f \to y = x$，则称 $f$ 是一个映射，其中 $y$ 称作 $f$ 在 $x$ 处的值，记作 $f(x) = y$ 或 $f: x \mapsto y$．如果 $\mathrm{dom}(f) = X, \mathrm{ran}(f) \subseteq Y$，则称 $f$ 是 $X$ 到 $Y$ 的映射，记作 $f: X \to Y$
