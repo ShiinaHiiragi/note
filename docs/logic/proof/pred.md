@@ -40,7 +40,7 @@
         2. 语句：如果公式中的变元均为约束变元，则称该公式为 $S-$语句
         3. 无量词公式：含有的符号均为自由变元的公式
         4. 存在公式：递归定义存在公式为 ① 无量词公式 $\alpha$；② 形如 $\exists x\beta$ 的公式，其中 $\beta$ 是存在公式
-        5. 全程公式：递归定义全程公式为 ① 无量词公式 $\alpha$；② 形如 $\exists x\beta$ 的公式，其中 $\beta$ 是全称公式
+        5. 全称公式：递归定义全称公式为 ① 无量词公式 $\alpha$；② 形如 $\exists x\beta$ 的公式，其中 $\beta$ 是全称公式
     4. 特殊记法
         1. 定义缩写 $\neg \alpha := \alpha \to \bot$，$\alpha \leftrightarrow \beta := (\alpha \to \beta) \wedge (\beta \to \alpha)$
         2. 对于 $\mathbf Q\in \{\forall, \exists\}$ 和有穷长的变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，公式 $\mathbf Qx_1 \mathbf Qx_2 \cdots \mathbf Qx_n \alpha$ 记作 $\mathbf Q \overline x \alpha$

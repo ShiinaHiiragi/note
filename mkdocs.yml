@@ -94,7 +94,8 @@ nav:
       - 2 一阶逻辑: logic/proof/pred.md
     - 二、模型论:
       - 1 结构与模型: logic/model/model.md
-    # - 四、公理集合论:
+    - 四、公理集合论:
+      - 1 集合与公理: logic/set/zfc.md
   - 数学结构:
     - 一、初等代数:
       - 1 数制与数系: math/alg/dec.md
