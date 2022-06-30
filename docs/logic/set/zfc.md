@@ -344,5 +344,71 @@
         通常将 $p(m, n)$ 写作 $m^n$
 
 ### 1.3.2 整数与有理数
+1. 整数集合：定义关系 $\sim$ 是 $\mathbf N \times \mathbf N$ 上的等价关系：$(m_1, n_1) \sim (m_2, n_2)$ 当且仅当 $m_1 +_{\mathbf N} n_2 = m_2 +_{\mathbf N} n_1$，令 $\mathbf Z = \mathbf N \times \mathbf N / \sim$
+    1. 特别地，$0_{\mathbf Z} = [(0, 0)]$
+    2. 定义整数集合上的序与运算
+        1. 序：$[(m_1, n_1)] \leqslant_{\mathbf Z} [(m_2, n_2)] \leftrightarrow m_1 +_{\mathbf N} n_2 \leqslant_{\mathbf N} m_2 +_{\mathbf N} n_1$
+        2. 加法：$[(m_1, n_1)] +_{\mathbf Z} [(m_2, n_2)] = [(m_1 +_{\mathbf N} m_2), n_1 +_{\mathbf N} n_2]$
+        3. 乘法：$[(m_1, n_1)] \cdot_{\mathbf Z} [(m_2, n_2)] = [(m_1 \cdot_{\mathbf N} m_2 +_{\mathbf N} n_1 \cdot_{\mathbf N} n_2, m_1 \cdot_{\mathbf N} n_2 +_{\mathbf N} n_1 \cdot_{\mathbf N} m_2)]$
+    3. 零元：对任意整数 $a$，存在唯一的整数 $a'$ 使得 $a +_{\mathbf N} a' = 0_{\mathbf Z}$
+        1. 相反数与减法：将整数 $a'$ 记作 $-a$，定义 $a - b := a + (-b)$
+        2. 绝对值：设 $a \in \mathbf Z$，定义绝对值
+
+            $$
+            |a| := \left\{\begin{aligned}
+            & a, & a \geqslant_{\mathbf Z} 0_{\mathbf Z} \\
+            & -a, & a <_{\mathbf Z} 0_{\mathbf Z}
+            \end{aligned}\right.
+            $$
+
+            于是对于任意整数，$|a| \geqslant_{\mathbf Z} 0_{\mathbf Z}$
+
+    4. 将 $\mathbf Z$ 看作 $\mathbf N$ 的扩张，称 $\mathbf N$ 嵌入 $\mathbf Z$ 中：存在函数 $f: \mathbf N \to \mathbf Z$ 为 $f(n) = [(n, 0)]$ 使得
+        1. $f$ 是单射且 $f(0) = 0_{\mathbf Z}$
+        2. 对任意 $m, n \in \mathbf N$ 有 $m \leqslant_{\mathbf N} n$ 当且仅当 $f(m) \leqslant_{\mathbf Z} f(n)$
+        3. 对任意 $m, n \in \mathbf N$ 有 $f(m +_{\mathbf N} n) = f(m) +_{\mathbf Z} f(n)$ 且 $f(m \cdot_{\mathbf N} n) = f(m) \cdot_{\mathbf Z} f(n)$
+
+2. 有理数集合：令 $\mathbf Z_+ = \{a \in \mathbf Z \mid a >_{\mathbf Z} 0_{\mathbf Z}\}$，如果 $\sim$ 是集合 $\mathbf Z \times \mathbf Z_+$ 上的等价关系：$(a_1, b_1) \sim (a_2, b_2)$ 当且仅当 $a_1 \cdot_{\mathbf Z} b_2 = a_2 \cdot_{\mathbf Z} b_1$，则定义有理数集合 $\mathbf Q = \mathbf Z \times \mathbf Z_+ / \sim$
+    1. 特别地，$0_{\mathbf Q} = [(0_{\mathbf Z}, a)], 1_{\mathbf Q} = [(a, a)]$
+    2. 定义有理数集合上的序与运算
+        1. 序：$[(a_1, b_1)] \leqslant_{\mathbf Q} [(a_2, b_2)] \leftrightarrow a_1 \cdot_{\mathbf Z} b_2 \leqslant_{\mathbf Z} a_2 \cdot_{\mathbf Z} b_1$
+        2. 加法：$[(a_1, b_1)] +_{\mathbf Q} [(a_2, b_2)] = [(a_1 \cdot_{\mathbf Z} b_2 +_{\mathbf Z} a_2 \cdot_{\mathbf Z} b_1, b_1 \cdot_{\mathbf Z} b_2]$
+        3. 乘法：$[(a_1, b_1)] \cdot_{\mathbf Q} [(a_2, b_2)] = [(a_1 \cdot_{\mathbf Z} a_2, b_1 \cdot_{\mathbf Z} b_2)]$
+    3. 零元：对任意有理数 $p$，存在唯一的有理数 $p'$ 使得 $p +_{\mathbf Q} p' = 0_{\mathbf Q}$，记唯一的 $p'$ 为 $-p$
+    4. 单位元：对任意有理数 $p \neq 0_{\mathbf Q}$，存在唯一的有理数 $p'$ 使得 $p \cdot_{\mathbf Q} p' = 1_{\mathbf Q}$，记唯一的 $p'$ 为 $\dfrac 1p$，称之为 $p$ 的倒数
+    5. 将 $\mathbf Q$ 看作 $\mathbf Z$ 的扩张，称 $\mathbf Z$ 嵌入 $\mathbf Q$ 中：存在函数 $f: \mathbf Z \to \mathbf Q$ 为 $f(a) = [(a, 1)]$ 使得
+        1. $f$ 是单射且 $f(0_{\mathbf Z}) = 0_{\mathbf Q}$
+        2. 对任意 $a, b \in \mathbf Z$ 有 $a \leqslant_{\mathbf Z} b$ 当且仅当 $f(a) \leqslant_{\mathbf Q} f(b)$
+        3. 对任意 $a, b \in \mathbf Z$ 有 $f(a +_{\mathbf Z} b) = f(a) +_{\mathbf Q} f(b)$ 且 $f(a \cdot_{\mathbf Z} b) = f(a) \cdot_{\mathbf Q} f(b)$
+3. 稠密性：如果全序集 $(X, <)$ 至少有两个元素，且对任意 $a, b \in X$，如果 $a < b$，则存在 $x \in X$ 有 $a < x < b$
+    1. 有理数集合 $(\mathbf Q, <)$ 是稠密的
+    2. 令 $(P, <_P)$ 为可数的无端点稠密线序，则 $(P, <_p)$ 与 $(\mathbf Q, <)$ 同构
 
 ### 1.3.3 实数与复数
+1. 实数集合：如果集合 $A \subseteq$ 有
+    1. $A \neq \varnothing$ 且 $A \neq \mathbf Q$
+    2. $A$ 是向下封闭的，即如果 $p \in A$ 且 $q < p$，则 $q \in A$
+    3. $A$ 没有最大元，即如果 $p \in A$，则存在 $q \in A, p < q$\
+
+    则称 $A$ 是 $\text{Dedekind}$ 分割，全体分割的集合记为 $\mathbf R$，其中的元素被称为实数
+
+    1. 最小上界性质：全序集 $(X, \leqslant)$ 如果有对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界，则称 $X$ 有最小上界性质
+        1. 有理数集合 $(\mathbf Q, \leqslant_{\mathbf Q})$ 没有最小上界性质
+        2. 实数集合 $(\mathbf R, \leqslant_{\mathbf R})$ 有最小上界性质
+    2. 实数集合的序与运算
+        1. 实数集合上的序定义为 $x_1 \leqslant_{\mathbf R} x_2$ 当且仅当 $x_1 \subseteq x_2$
+        2. 实数集合上的加法定义为 $x +_{\mathbf R} y := \left\{p +_{\mathbf Q} q \mid p \in x, q \in y\right\}$
+        3. 实数集合上的乘法定义
+            - 如果 $x = 0_{\mathbf R}$ 或 $y = 0_{\mathbf R}$，则 $x \cdot_{\mathbf R} y = 0_{\mathbf R}$
+            - 如果 $x >_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R}$，则 $x \cdot_{\mathbf R} y = \left\{r \mid r \leqslant p \cdot_{\mathbf R} q, p \in x, q \in y, p, q >_{\mathbf Q} 0_{\mathbf Q}\right\}$
+            - 其他情况由 $x >_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R}$ 定义：$x \cdot_{\mathbf R} y = \left\{\begin{aligned} & (-x) \cdot_{\mathbf R} (-y), & x <_{\mathbf R} 0_{\mathbf R}, y <_{\mathbf R} 0_{\mathbf R} \\ & -((-x) \cdot_{\mathbf R} y), & x <_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R} \\ & -(x \cdot_{\mathbf R} (-y)), & x >_{\mathbf R} 0_{\mathbf R}, y <_{\mathbf R} 0_{\mathbf R} \end{aligned}\right.$
+    3. 零元：对任意实数 $x$，存在唯一的实数 $x'$ 使得 $x +_{\mathbf R} x' = 0_{\mathbf x}$，记唯一的 $x'$ 为 $-x$
+    4. 单位元：对任意实数 $x \neq 0_{\mathbf R}$，存在唯一的实数 $x'$ 使得 $x \cdot_{\mathbf R} x' = 1_{\mathbf R}$，记唯一的 $x'$ 为 $\dfrac 1x$
+    5. 将 $\mathbf R$ 看作 $\mathbf Q$ 的扩张，称 $\mathbf Q$ 嵌入 $\mathbf R$ 中：存在函数 $f: \mathbf Q \to \mathbf R$ 为 $f(p) = p_{\mathbf R} = \left\{q \in \mathbf Q \mid q <_{\mathbf Q} p\right\}$ 使得
+        1. $f$ 是单射且 $f(0_{\mathbf Q}) = 0_{\mathbf R}$
+        2. 对任意 $p, q \in \mathbf Q$ 有 $p \leqslant_{\mathbf Q} q$ 当且仅当 $f(p) \leqslant_{\mathbf R} f(q)$
+        3. 对任意 $p, q \in \mathbf Q$ 有 $f(p +_{\mathbf Q} q) = f(p) +_{\mathbf R} f(q)$ 且 $f(p \cdot_{\mathbf Q} q) = f(p) \cdot_{\mathbf R} f(q)$
+
+2. 完备全序集：具有最小上界性质的稠密线序集合
+    1. 实数集合 $(\mathbf R, <_{\mathbf R})$ 是完备全序集
+    2. 任何包含可数稠密子集的无端点完备全序集都与 $(\mathbf R, <_{\mathbf R})$ 同构
