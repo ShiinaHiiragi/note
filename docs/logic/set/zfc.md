@@ -293,7 +293,7 @@
     2. 对任意集合 $X$，有 $\varnothing^{X} = \varnothing$；对任意集合 $Y$，有 $Y^{\varnothing} = \left\{\varnothing_{Y}\right\}$
 
 ## 1.3 实数理论
-### 1.3.1 自然数
+### 1.3.1 自然数集
 1. $\text{Peano}$ 公理：满足下列五条公理的集合 $\mathbf N$ 称作自然数集．其中，$0$ 与「后继」作为抽象的初始概念没有定义
     1. $0 \in \mathbf N$
     2. 若 $n \in \mathbf N$，则 $n$ 有且仅有一个后继 $S(n) \in \mathbf N$
@@ -366,101 +366,139 @@
         4. 加法保序性：$\forall m, n, k \in \mathbf N \ (m < n \to m + k < n + k)$
         5. 乘法保序性：$\forall m, n, k \in \mathbf N \ ((m < n \wedge k \neq 0)\to mk < nk)$
 
-### 1.3.2 整数与有理数
-1. 整数集合：定义关系 $\sim$ 是 $\mathbf N \times \mathbf N$ 上的等价关系：$(m_1, n_1) \sim (m_2, n_2)$ 当且仅当 $m_1 +_{\mathbf N} n_2 = m_2 +_{\mathbf N} n_1$，令 $\mathbf Z := \mathbf N \times \mathbf N / \sim$
-    1. 特别地，$0_{\mathbf Z} = [(0, 0)]$
-    2. 定义整数集合上的序与运算
-        1. 序：$[(m_1, n_1)] \leqslant_{\mathbf Z} [(m_2, n_2)] \leftrightarrow m_1 +_{\mathbf N} n_2 \leqslant_{\mathbf N} m_2 +_{\mathbf N} n_1$
-        2. 加法：$[(m_1, n_1)] +_{\mathbf Z} [(m_2, n_2)] := [(m_1 +_{\mathbf N} m_2), n_1 +_{\mathbf N} n_2]$
-        3. 乘法：$[(m_1, n_1)] \cdot_{\mathbf Z} [(m_2, n_2)] := [(m_1 \cdot_{\mathbf N} m_2 +_{\mathbf N} n_1 \cdot_{\mathbf N} n_2, m_1 \cdot_{\mathbf N} n_2 +_{\mathbf N} n_1 \cdot_{\mathbf N} m_2)]$
-    3. 零元：对任意整数 $a$，存在唯一的整数 $a'$ 使得 $a +_{\mathbf N} a' = 0_{\mathbf Z}$
-        1. 相反数与减法：将整数 $a'$ 记作 $-a$，定义 $a - b := a + (-b)$
-        2. 绝对值：设 $a \in \mathbf Z$，定义绝对值
+### 1.3.2 整数集
+1. 整数集合：定义关系 $\sim$ 是 $\mathbf N \times \mathbf N$ 上的等价关系：$(m_1, n_1) \sim (m_2, n_2)$ 当且仅当 $m_1 +_{\mathbf N} n_2 = m_2 +_{\mathbf N} n_1$，令 $\mathbf Z := \mathbf N \times \mathbf N / \sim$．特别地，$0_{\mathbf Z} = [(0, 0)]$
+2. 定义整数集合上的序与运算
+    1. 序：$[(m_1, n_1)] \leqslant_{\mathbf Z} [(m_2, n_2)] \leftrightarrow m_1 +_{\mathbf N} n_2 \leqslant_{\mathbf N} m_2 +_{\mathbf N} n_1$
+    2. 加法：$[(m_1, n_1)] +_{\mathbf Z} [(m_2, n_2)] := [(m_1 +_{\mathbf N} m_2), n_1 +_{\mathbf N} n_2]$
+    3. 乘法：$[(m_1, n_1)] \cdot_{\mathbf Z} [(m_2, n_2)] := [(m_1 \cdot_{\mathbf N} m_2 +_{\mathbf N} n_1 \cdot_{\mathbf N} n_2, m_1 \cdot_{\mathbf N} n_2 +_{\mathbf N} n_1 \cdot_{\mathbf N} m_2)]$
+3. 零元：对任意整数 $a$，存在唯一的整数 $a'$ 使得 $a +_{\mathbf N} a' = 0_{\mathbf Z}$
+    1. 相反数与减法：将整数 $a'$ 记作 $-a$，定义 $a -_{\mathbf Z} b := a +_{\mathbf Z} (-b)$
+    2. 绝对值：设 $a \in \mathbf Z$，定义绝对值
 
-            $$
-            |a| := \left\{\begin{aligned}
-            & a, & a \geqslant_{\mathbf Z} 0_{\mathbf Z} \\
-            & -a, & a <_{\mathbf Z} 0_{\mathbf Z}
-            \end{aligned}\right.
-            $$
+        $$
+        |a| := \left\{\begin{aligned}
+        & a, & a \geqslant_{\mathbf Z} 0_{\mathbf Z} \\
+        & -a, & a <_{\mathbf Z} 0_{\mathbf Z}
+        \end{aligned}\right.
+        $$
 
-            于是对于任意整数，$|a| \geqslant_{\mathbf Z} 0_{\mathbf Z}$
+        于是对于任意整数，$|a| \geqslant_{\mathbf Z} 0_{\mathbf Z}$
 
-    4. 将 $\mathbf Z$ 看作 $\mathbf N$ 的扩张，称 $\mathbf N$ 嵌入 $\mathbf Z$ 中：存在函数 $f: \mathbf N \to \mathbf Z$ 为 $f(n) = [(n, 0)]$ 使得
-        1. $f$ 是单射且 $f(0) = 0_{\mathbf Z}$
-        2. 对任意 $m, n \in \mathbf N$ 有 $m \leqslant_{\mathbf N} n$ 当且仅当 $f(m) \leqslant_{\mathbf Z} f(n)$
-        3. 对任意 $m, n \in \mathbf N$ 有 $f(m +_{\mathbf N} n) = f(m) +_{\mathbf Z} f(n)$ 且 $f(m \cdot_{\mathbf N} n) = f(m) \cdot_{\mathbf Z} f(n)$
+4. 将 $\mathbf Z$ 看作 $\mathbf N$ 的扩张，称 $\mathbf N$ 嵌入 $\mathbf Z$ 中：存在函数 $f: \mathbf N \to \mathbf Z$ 为 $f(n) = [(n, 0)]$ 使得
+    1. $f$ 是单射且 $f(0) = 0_{\mathbf Z}$
+    2. 对任意 $m, n \in \mathbf N$ 有 $m \leqslant_{\mathbf N} n$ 当且仅当 $f(m) \leqslant_{\mathbf Z} f(n)$
+    3. 对任意 $m, n \in \mathbf N$ 有 $f(m +_{\mathbf N} n) = f(m) +_{\mathbf Z} f(n)$ 且 $f(m \cdot_{\mathbf N} n) = f(m) \cdot_{\mathbf Z} f(n)$
 
-2. 有理数集合：令 $\mathbf Z_+ = \{a \in \mathbf Z \mid a >_{\mathbf Z} 0_{\mathbf Z}\}$，如果 $\sim$ 是集合 $\mathbf Z \times \mathbf Z_+$ 上的等价关系：$(a_1, b_1) \sim (a_2, b_2)$ 当且仅当 $a_1 \cdot_{\mathbf Z} b_2 = a_2 \cdot_{\mathbf Z} b_1$，则定义有理数集合 $\mathbf Q := \mathbf Z \times \mathbf Z_+ / \sim$
-    1. 特别地，$0_{\mathbf Q} = [(0_{\mathbf Z}, a)], 1_{\mathbf Q} = [(a, a)]$
-    2. 定义有理数集合上的序与运算
-        1. 序：$[(a_1, b_1)] \leqslant_{\mathbf Q} [(a_2, b_2)] \leftrightarrow a_1 \cdot_{\mathbf Z} b_2 \leqslant_{\mathbf Z} a_2 \cdot_{\mathbf Z} b_1$
-        2. 加法：$[(a_1, b_1)] +_{\mathbf Q} [(a_2, b_2)] := [(a_1 \cdot_{\mathbf Z} b_2 +_{\mathbf Z} a_2 \cdot_{\mathbf Z} b_1, b_1 \cdot_{\mathbf Z} b_2]$
-        3. 乘法：$[(a_1, b_1)] \cdot_{\mathbf Q} [(a_2, b_2)] := [(a_1 \cdot_{\mathbf Z} a_2, b_1 \cdot_{\mathbf Z} b_2)]$
-    3. 本原元
-        1. 零元：对任意有理数 $p$，存在唯一的有理数 $p'$ 使得 $p +_{\mathbf Q} p' = 0_{\mathbf Q}$，记唯一的 $p'$ 为 $-p$
-        2. 单位元：对任意有理数 $p \neq 0_{\mathbf Q}$，存在唯一的有理数 $p'$ 使得 $p \cdot_{\mathbf Q} p' = 1_{\mathbf Q}$，记唯一的 $p'$ 为 $\dfrac 1p$，称之为 $p$ 的倒数
-    4. 将 $\mathbf Q$ 看作 $\mathbf Z$ 的扩张，称 $\mathbf Z$ 嵌入 $\mathbf Q$ 中：存在函数 $f: \mathbf Z \to \mathbf Q$ 为 $f(a) = [(a, 1)]$ 使得
-        1. $f$ 是单射且 $f(0_{\mathbf Z}) = 0_{\mathbf Q}$
-        2. 对任意 $a, b \in \mathbf Z$ 有 $a \leqslant_{\mathbf Z} b$ 当且仅当 $f(a) \leqslant_{\mathbf Q} f(b)$
-        3. 对任意 $a, b \in \mathbf Z$ 有 $f(a +_{\mathbf Z} b) = f(a) +_{\mathbf Q} f(b)$ 且 $f(a \cdot_{\mathbf Z} b) = f(a) \cdot_{\mathbf Q} f(b)$
-    5. $\text{Archimedes}$ 性质：$\forall r \in \mathbf Q \ \exists k \in \mathbf N \ (|r| \leqslant_{\mathbf Q} k_{\mathbf Q})$
-3. 稠密性：如果全序集 $(X, <)$ 至少有两个元素，且对任意 $a, b \in X$，如果 $a < b$，则存在 $x \in X$ 有 $a < x < b$
+### 1.3.3 有理数集
+1. 有理数集合：令 $\mathbf Z_+ = \{a \in \mathbf Z \mid a >_{\mathbf Z} 0_{\mathbf Z}\}$，如果 $\sim$ 是集合 $\mathbf Z \times \mathbf Z_+$ 上的等价关系：$(a_1, b_1) \sim (a_2, b_2)$ 当且仅当 $a_1 \cdot_{\mathbf Z} b_2 = a_2 \cdot_{\mathbf Z} b_1$，则定义有理数集合 $\mathbf Q := \mathbf Z \times \mathbf Z_+ / \sim$．特别地，$0_{\mathbf Q} = [(0_{\mathbf Z}, a)], 1_{\mathbf Q} = [(a, a)]$
+2. 定义有理数集合上的序与运算
+    1. 序：$[(a_1, b_1)] \leqslant_{\mathbf Q} [(a_2, b_2)] \leftrightarrow a_1 \cdot_{\mathbf Z} b_2 \leqslant_{\mathbf Z} a_2 \cdot_{\mathbf Z} b_1$
+    2. 加法：$[(a_1, b_1)] +_{\mathbf Q} [(a_2, b_2)] := [(a_1 \cdot_{\mathbf Z} b_2 +_{\mathbf Z} a_2 \cdot_{\mathbf Z} b_1, b_1 \cdot_{\mathbf Z} b_2]$
+    3. 乘法：$[(a_1, b_1)] \cdot_{\mathbf Q} [(a_2, b_2)] := [(a_1 \cdot_{\mathbf Z} a_2, b_1 \cdot_{\mathbf Z} b_2)]$
+3. 本原元
+    1. 零元：对任意有理数 $p$，存在唯一的有理数 $p'$ 使得 $p +_{\mathbf Q} p' = 0_{\mathbf Q}$，记唯一的 $p'$ 为 $-p$
+    2. 单位元：对任意有理数 $p \neq 0_{\mathbf Q}$，存在唯一的有理数 $p'$ 使得 $p \cdot_{\mathbf Q} p' = 1_{\mathbf Q}$
+        1. 倒数：记唯一的 $p'$ 为 $p^{-1}$ 或 $\dfrac 1p$，称之为 $p$ 的倒数
+        2. 除法：定义 $p \div_{\mathbf Q} q := p \cdot_{\mathbf Q} q^{-1}$
+4. 将 $\mathbf Q$ 看作 $\mathbf Z$ 的扩张，称 $\mathbf Z$ 嵌入 $\mathbf Q$ 中：存在函数 $f: \mathbf Z \to \mathbf Q$ 为 $f(a) = [(a, 1)]$ 使得
+    1. $f$ 是单射且 $f(0_{\mathbf Z}) = 0_{\mathbf Q}$
+    2. 对任意 $a, b \in \mathbf Z$ 有 $a \leqslant_{\mathbf Z} b$ 当且仅当 $f(a) \leqslant_{\mathbf Q} f(b)$
+    3. 对任意 $a, b \in \mathbf Z$ 有 $f(a +_{\mathbf Z} b) = f(a) +_{\mathbf Q} f(b)$ 且 $f(a \cdot_{\mathbf Z} b) = f(a) \cdot_{\mathbf Q} f(b)$
+5. $\text{Archimedes}$ 性质：$\forall r \in \mathbf Q \ \exists k \in \mathbf N \ (|r| \leqslant_{\mathbf Q} k_{\mathbf Q})$
+6. 稠密性：如果全序集 $(X, <)$ 至少有两个元素，且对任意 $a, b \in X$，如果 $a < b$，则存在 $x \in X$ 有 $a < x < b$
     1. 有理数集合 $(\mathbf Q, <)$ 是稠密的
     2. 令 $(P, <_P)$ 为可数的无端点稠密线序，则 $(P, <_p)$ 与 $(\mathbf Q, <)$ 同构
+7. 分数：设 $p = [(a, b)] \in \mathbf Q$，则定义分数 $p := \dfrac{a}{b}$，读作 $b$ 分之 $a$．其中 $b$ 称作分母，$a$ 称作分子
+    1. 分数的分类
+        1. 真分数：$a < b$ 的分数
+        2. 假分数：$a > b$ 的分数
+        3. 带分数：任何大于的假分数都可以整数与真分数合成的数，设 $a = i_{\mathbf Z} \cdot_{\mathbf Z} b +_{\mathbf Z} j \ (0 \leqslant_{\mathbf Z} j <_{\mathbf Z} b)$，则 $\dfrac ab = i\dfrac{j}{b}$
+    2. 既约分数：满足 $(a, b) = 1$ 的分数
+        1. 约分：将任一分数化作既约分数的过程
+        2. 通分：把异分母分数化作与原来分数相等的同分母分数
+    3. 百分数：分母 $b = 100_{\mathbf Z}$ 的特殊分数，此时有 $a\% = \dfrac{a}{100_{\mathbf Z}} \times 100_{\mathbf Z}\%$
+    4. 比例：形如 $p = a : b$ 的式子，其中 $a$ 称作前项，$b$ 称作后项，$p$ 称作比值
 
-### 1.3.3 实数与复数
+### 1.3.4 实数集
 1. 实数集合：如果集合 $A \subseteq$ 有
     1. $A \neq \varnothing$ 且 $A \neq \mathbf Q$
     2. $A$ 是向下封闭的，即如果 $p \in A$ 且 $q < p$，则 $q \in A$
     3. $A$ 没有最大元，即如果 $p \in A$，则存在 $q \in A, p < q$\
 
-    则称 $A$ 是 $\text{Dedekind}$ 分割，全体分割的集合记为 $\mathbf R$，其中的元素被称为实数
+    则称 $A$ 是 $\text{Dedekind}$ 分割，全体分割的集合记为 $\mathbf R$，其中的元素被称为实数．特别地，对于任意 $p \in \mathbf Q$，定义 $p_{\mathbf R} := \left\{q \in \mathbf Q \mid q <_{\mathbf Q} p\right\}$
 
-    1. 特别地，对于任意 $p \in \mathbf Q$，定义 $p_{\mathbf R} := \left\{q \in \mathbf Q \mid q <_{\mathbf Q} p\right\}$
-    2. 实数集合的序与运算
-        1. 实数集合上的序定义为 $x_1 \leqslant_{\mathbf R} x_2$ 当且仅当 $x_1 \subseteq x_2$
-        2. 实数集合上的加法定义为 $x +_{\mathbf R} y := \left\{p +_{\mathbf Q} q \mid p \in x, q \in y\right\}$
-        3. 实数集合上的乘法定义
-            - 如果 $x = 0_{\mathbf R}$ 或 $y = 0_{\mathbf R}$，则 $x \cdot_{\mathbf R} y = 0_{\mathbf R}$
-            - 如果 $x >_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R}$，则 $x \cdot_{\mathbf R} y := \left\{r \mid r \leqslant p \cdot_{\mathbf R} q, p \in x, q \in y, p, q >_{\mathbf Q} 0_{\mathbf Q}\right\}$
-            - 其他情况由 $x >_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R}$ 定义：$x \cdot_{\mathbf R} y := \left\{\begin{aligned} & (-x) \cdot_{\mathbf R} (-y), & x <_{\mathbf R} 0_{\mathbf R}, y <_{\mathbf R} 0_{\mathbf R} \\ & -((-x) \cdot_{\mathbf R} y), & x <_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R} \\ & -(x \cdot_{\mathbf R} (-y)), & x >_{\mathbf R} 0_{\mathbf R}, y <_{\mathbf R} 0_{\mathbf R} \end{aligned}\right.$
-    3. 本原元
-        1. 零元：对任意实数 $x$，存在唯一的实数 $x'$ 使得 $x +_{\mathbf R} x' = 0_{\mathbf x}$，记唯一的 $x'$ 为 $-x$
-        2. 单位元：对任意实数 $x \neq 0_{\mathbf R}$，存在唯一的实数 $x'$ 使得 $x \cdot_{\mathbf R} x' = 1_{\mathbf R}$，记唯一的 $x'$ 为 $\dfrac 1x$
-    4. 将 $\mathbf R$ 看作 $\mathbf Q$ 的扩张，称 $\mathbf Q$ 嵌入 $\mathbf R$ 中：存在函数 $f: \mathbf Q \to \mathbf R$ 为 $f(p) = p_{\mathbf R}$ 使得
-        1. $f$ 是单射且 $f(0_{\mathbf Q}) = 0_{\mathbf R}$
-        2. 对任意 $p, q \in \mathbf Q$ 有 $p \leqslant_{\mathbf Q} q$ 当且仅当 $f(p) \leqslant_{\mathbf R} f(q)$
-        3. 对任意 $p, q \in \mathbf Q$ 有 $f(p +_{\mathbf Q} q) = f(p) +_{\mathbf R} f(q)$ 且 $f(p \cdot_{\mathbf Q} q) = f(p) \cdot_{\mathbf R} f(q)$
-    5. 最小上界性质：全序集 $(X, \leqslant)$ 如果有对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界，则称 $X$ 有最小上界性质
-        1. 有理数集合 $(\mathbf Q, \leqslant_{\mathbf Q})$ 没有最小上界性质
-        2. 实数集合 $(\mathbf R, \leqslant_{\mathbf R})$ 有最小上界性质
+2. 实数集合的序与运算
+    1. 实数集合上的序定义为 $x_1 \leqslant_{\mathbf R} x_2$ 当且仅当 $x_1 \subseteq x_2$
+    2. 实数集合上的加法定义为 $x +_{\mathbf R} y := \left\{p +_{\mathbf Q} q \mid p \in x, q \in y\right\}$
+    3. 实数集合上的乘法定义
+        1. 如果 $x = 0_{\mathbf R}$ 或 $y = 0_{\mathbf R}$，则 $x \cdot_{\mathbf R} y = 0_{\mathbf R}$
+        2. 如果 $x >_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R}$，则 $x \cdot_{\mathbf R} y := \left\{r \mid r \leqslant p \cdot_{\mathbf R} q, p \in x, q \in y, p, q >_{\mathbf Q} 0_{\mathbf Q}\right\}$
+        3. 其他情况由 $x >_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R}$ 定义：$x \cdot_{\mathbf R} y := \left\{\begin{aligned} & (-x) \cdot_{\mathbf R} (-y), & x <_{\mathbf R} 0_{\mathbf R}, y <_{\mathbf R} 0_{\mathbf R} \\ & -((-x) \cdot_{\mathbf R} y), & x <_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R} \\ & -(x \cdot_{\mathbf R} (-y)), & x >_{\mathbf R} 0_{\mathbf R}, y <_{\mathbf R} 0_{\mathbf R} \end{aligned}\right.$
+3. 本原元
+    1. 零元：对任意实数 $x$，存在唯一的实数 $x'$ 使得 $x +_{\mathbf R} x' = 0_{\mathbf x}$，记唯一的 $x'$ 为 $-x$
+    2. 单位元：对任意实数 $x \neq 0_{\mathbf R}$，存在唯一的实数 $x'$ 使得 $x \cdot_{\mathbf R} x' = 1_{\mathbf R}$，记唯一的 $x'$ 为 $\dfrac 1x$
+4. 将 $\mathbf R$ 看作 $\mathbf Q$ 的扩张，称 $\mathbf Q$ 嵌入 $\mathbf R$ 中：存在函数 $f: \mathbf Q \to \mathbf R$ 为 $f(p) = p_{\mathbf R}$ 使得
+    1. $f$ 是单射且 $f(0_{\mathbf Q}) = 0_{\mathbf R}$
+    2. 对任意 $p, q \in \mathbf Q$ 有 $p \leqslant_{\mathbf Q} q$ 当且仅当 $f(p) \leqslant_{\mathbf R} f(q)$
+    3. 对任意 $p, q \in \mathbf Q$ 有 $f(p +_{\mathbf Q} q) = f(p) +_{\mathbf R} f(q)$ 且 $f(p \cdot_{\mathbf Q} q) = f(p) \cdot_{\mathbf R} f(q)$
+5. 实数的分类：
 
-2. 复数集合：定义集合 $\mathbf C := \mathbf R \times \mathbf R$，称集合 $\mathbf C$ 为复数集
-    1. 特别地，对于任意 $x \in \mathbf R$，定义 $x_{\mathbf C} := (x, 0_{\mathbf R})$
-    2. 复数集合的相关概念
-        1. 复数集合上没有定义序关系
-        2. 设 $z = (x, y) \in \mathbf C$，则称 $x$ 为 $z$ 的实部，记作 $\text{Re}(z)$；$y$ 为$z$ 的虚部，记作 $\text{Im}(z)$
-        3. 设 $i = (0_{\mathbf R}, 1_{\mathbf R}) \in \mathbf C$，记 $(x, y) = x_{\mathbf C} +_{\mathbf C} y_{\mathbf C} \cdot _{\mathbf C}i$，称之为复数 $(x, y)$ 的代数形式
-    3. 复数集合的运算
-        1. 复数集合上的加法定义为 $(x_1, y_1) +_{\mathbf C} (x_2, y_2) := (x_1 +_{\mathbf R} x_2, y_1 +_{\mathbf R} y_2)$
-        2. 复数集合上的乘法定义为 $(x_1, y_1) \cdot_{\mathbf C} (x_2, y_2) := (x_1 \cdot_{\mathbf R} x_2 -_{\mathbf R} y_1 \cdot_{\mathbf R} y_2, x_1 \cdot_{\mathbf R} y_2 +_{\mathbf R} y_1 \cdot_{\mathbf R} x_2)$
-    4. 本原元
-        1. 零元：对任意复数 $z$，存在唯一的复数 $z'$ 使得 $z +_{\mathbf C} z' = 0_{\mathbf C}$，记唯一的 $z'$ 为 $-z$
-        2. 单位元：对任意复数 $z \neq 0_{\mathbf C}$，存在唯一的复数 $z'$ 使得 $z \cdot_{\mathbf C} z' = 1_{\mathbf C}$，记唯一的 $z'$ 为 $\dfrac 1z$
-    5. 将 $\mathbf C$ 看作 $\mathbf R$ 的扩张，称 $\mathbf R$ 嵌入 $\mathbf C$ 中：存在函数 $f: \mathbf R \to \mathbf C$ 为 $f(x) = x_{\mathbf C}$ 使得
-        1. $f$ 是单射且 $f(0_{\mathbf R}) = 0_{\mathbf C}$
-        2. 对任意 $x, y \in \mathbf R$ 有 $x \leqslant_{\mathbf R} y$ 当且仅当 $f(x) \leqslant_{\mathbf C} f(y)$
-        3. 对任意 $x, y \in \mathbf R$ 有 $f(x +_{\mathbf R} y) = f(x) +_{\mathbf C} f(y)$ 且 $f(x \cdot_{\mathbf R} y) = f(x) \cdot_{\mathbf C} f(y)$
-    6. 共轭复数：若 $x, y \in \mathbf R, w \in \mathbf C, z = x_{\mathbf C} +_{\mathbf C} y_{\mathbf C} \cdot_{\mathbf C} i \in \mathbf C$，则定义 $\overline z := x_{\mathbf C} -_{\mathbf C} y_{\mathbf C} \cdot_{\mathbf C} i$ 为 $z$ 的共轭复数
-        1. $\overline{z +_{\mathbf C} w} = \overline z +_{\mathbf C} \overline w, \overline{z \cdot_{\mathbf C} w} = \overline z \cdot_{\mathbf C} \overline w$
-        2. 设 $z +_{\mathbf C} \overline z = (2_{\mathbf R} \cdot_{\mathbf R} \text{Re}(z))_{\mathbf C}, z -_{\mathbf C} \overline z = 2_{\mathbf C} \cdot_{\mathbf C} i \cdot_{\mathbf C} \text{Im}(z)_{\mathbf C}$
-        3. 对于任意 $z \in \mathbf C$，存在 $x \in \mathbf R$ 使得 $z \cdot_{\mathbf C} \overline z = x_{\mathbf C}$ 且 $x \geqslant_{\mathbf R} 0_{\mathbf R}$
-    7. 模：设 $z, w \in \mathbf C, x_{\mathbf C} = z \cdot_{\mathbf C} \overline z$，定义模 $|z| := \sqrt{x}$
-        1. $|\overline z| = |z|, |\text{Re}(z)| \leqslant_{\mathbf R} |z|$
-        2. $|z| \geqslant_{\mathbf R} 0_{\mathbf R}$，等号成立当且仅当 $z_{\mathbf C} = 0_{\mathbf C}$
-        3. $|z +_{\mathbf C} w| \leqslant_{\mathbf R} |z| +_{\mathbf R} |w|, |z \cdot_{\mathbf C} w| = |z| \cdot_{\mathbf R} |w|$
+    $$
+    \textsf{实数（无限小数）} \left\{\begin{aligned}
+    & \textsf{有理数（无限循环小数）} \left\{\begin{aligned}
+    & \textsf{正有理数} \\
+    & \textsf{零} \\
+    & \textsf{负有理数}
+    \end{aligned}\right. \\
+    & \textsf{无理数（无限不循环小数）} \left\{\begin{aligned}
+    & \textsf{正有理数} \\
+    & \textsf{负有理数}
+    \end{aligned}\right.
+    \end{aligned}\right.
+    $$
 
-3. 完备全序集：具有最小上界性质的稠密线序集合
+    1. 小数：设 $x = a_0.a_1 a_2 \cdots a_n \cdots \in \mathbf R$，其中 $a_0 \in \mathbf Z$，$a_i \ (i = 1, 2, \cdots, n \cdots)$ 是十进制数码
+
+        !!! note "十进制小数与实数的关系"
+            对于任意 $x \in \mathbf R$，取符合 $a_{\mathbf R} \leqslant_{\mathbf R} x$ 的最大整数 $a$，当 $a_0, a_1, \cdots, a_{k-1}$ 选定时，取符合 $(a_0)_{\mathbf R} + \left(\dfrac{a_1}{10_{\mathbf Z}}\right)_{\mathbf R} + \cdots + \left(\dfrac{a_k}{(10_{\mathbf Z})^k}\right)_{\mathbf R} \leqslant_{\mathbf R} x$ 的最大整数 $a_k$．令
+
+            $$
+            E = \left\{\left. (a_0)_{\mathbf R} + \left(\dfrac{a_1}{10_{\mathbf Z}}\right)_{\mathbf R} + \cdots + \left(\dfrac{a_k}{(10_{\mathbf Z})^k}\right)_{\mathbf R} \right| \ k = 0, 1, 2, \cdots \right\}
+            $$
+
+            于是 $x = \sup(E)$
+
+    2. 算术根：设实数 $x \geqslant_{\mathbf R} 0_{\mathbf R}$，自然数 $n > 1$，则称适合 $y^n = x$ 的非负实数 $y$ 为 $x$ 的 $n$ 次算术根，记作 $y = \sqrt[n]{x}$
+
+6. 最小上界性质：全序集 $(X, \leqslant)$ 如果有对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界，则称 $X$ 有最小上界性质
+    1. 有理数集合 $(\mathbf Q, \leqslant_{\mathbf Q})$ 没有最小上界性质
+    2. 实数集合 $(\mathbf R, \leqslant_{\mathbf R})$ 有最小上界性质
+
+### 1.3.5 复数集
+1. 复数集合：定义集合 $\mathbf C := \mathbf R \times \mathbf R$，称集合 $\mathbf C$ 为复数集．特别地，对于任意 $x \in \mathbf R$，定义 $x_{\mathbf C} := (x, 0_{\mathbf R})$
+2. 复数集合的相关概念
+    1. 复数集合上没有定义序关系
+    2. 设 $z = (x, y) \in \mathbf C$，则称 $x$ 为 $z$ 的实部，记作 $\text{Re}(z)$；$y$ 为$z$ 的虚部，记作 $\text{Im}(z)$
+    3. 设 $i = (0_{\mathbf R}, 1_{\mathbf R}) \in \mathbf C$，记 $(x, y) = x_{\mathbf C} +_{\mathbf C} y_{\mathbf C} \cdot _{\mathbf C}i$，称之为复数 $(x, y)$ 的代数形式
+3. 复数集合的运算
+    1. 复数集合上的加法定义为 $(x_1, y_1) +_{\mathbf C} (x_2, y_2) := (x_1 +_{\mathbf R} x_2, y_1 +_{\mathbf R} y_2)$
+    2. 复数集合上的乘法定义为 $(x_1, y_1) \cdot_{\mathbf C} (x_2, y_2) := (x_1 \cdot_{\mathbf R} x_2 -_{\mathbf R} y_1 \cdot_{\mathbf R} y_2, x_1 \cdot_{\mathbf R} y_2 +_{\mathbf R} y_1 \cdot_{\mathbf R} x_2)$
+4. 本原元
+    1. 零元：对任意复数 $z$，存在唯一的复数 $z'$ 使得 $z +_{\mathbf C} z' = 0_{\mathbf C}$，记唯一的 $z'$ 为 $-z$
+    2. 单位元：对任意复数 $z \neq 0_{\mathbf C}$，存在唯一的复数 $z'$ 使得 $z \cdot_{\mathbf C} z' = 1_{\mathbf C}$，记唯一的 $z'$ 为 $\dfrac 1z$
+5. 将 $\mathbf C$ 看作 $\mathbf R$ 的扩张，称 $\mathbf R$ 嵌入 $\mathbf C$ 中：存在函数 $f: \mathbf R \to \mathbf C$ 为 $f(x) = x_{\mathbf C}$ 使得
+    1. $f$ 是单射且 $f(0_{\mathbf R}) = 0_{\mathbf C}$
+    2. 对任意 $x, y \in \mathbf R$ 有 $x \leqslant_{\mathbf R} y$ 当且仅当 $f(x) \leqslant_{\mathbf C} f(y)$
+    3. 对任意 $x, y \in \mathbf R$ 有 $f(x +_{\mathbf R} y) = f(x) +_{\mathbf C} f(y)$ 且 $f(x \cdot_{\mathbf R} y) = f(x) \cdot_{\mathbf C} f(y)$
+6. 共轭复数：若 $x, y \in \mathbf R, w \in \mathbf C, z = x_{\mathbf C} +_{\mathbf C} y_{\mathbf C} \cdot_{\mathbf C} i \in \mathbf C$，则定义 $\overline z := x_{\mathbf C} -_{\mathbf C} y_{\mathbf C} \cdot_{\mathbf C} i$ 为 $z$ 的共轭复数
+    1. $\overline{z +_{\mathbf C} w} = \overline z +_{\mathbf C} \overline w, \overline{z \cdot_{\mathbf C} w} = \overline z \cdot_{\mathbf C} \overline w$
+    2. 设 $z +_{\mathbf C} \overline z = (2_{\mathbf R} \cdot_{\mathbf R} \text{Re}(z))_{\mathbf C}, z -_{\mathbf C} \overline z = 2_{\mathbf C} \cdot_{\mathbf C} i \cdot_{\mathbf C} \text{Im}(z)_{\mathbf C}$
+    3. 对于任意 $z \in \mathbf C$，存在 $x \in \mathbf R$ 使得 $z \cdot_{\mathbf C} \overline z = x_{\mathbf C}$ 且 $x \geqslant_{\mathbf R} 0_{\mathbf R}$
+7. 模：设 $z, w \in \mathbf C, x_{\mathbf C} = z \cdot_{\mathbf C} \overline z$，定义模 $|z| := \sqrt{x}$
+    1. $|\overline z| = |z|, |\text{Re}(z)| \leqslant_{\mathbf R} |z|$
+    2. $|z| \geqslant_{\mathbf R} 0_{\mathbf R}$，等号成立当且仅当 $z_{\mathbf C} = 0_{\mathbf C}$
+    3. $|z +_{\mathbf C} w| \leqslant_{\mathbf R} |z| +_{\mathbf R} |w|, |z \cdot_{\mathbf C} w| = |z| \cdot_{\mathbf R} |w|$
+8. 完备全序集：具有最小上界性质的稠密线序集合
     1. 实数集合 $(\mathbf R, <_{\mathbf R})$ 是完备全序集
     2. 任何包含可数稠密子集的无端点完备全序集都与 $(\mathbf R, <_{\mathbf R})$ 同构
