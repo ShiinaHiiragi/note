@@ -103,7 +103,10 @@ nav:
       - 2 解析式与初等函数: math/alg/form.md
       - 3 方程与不等式: math/alg/eq.md
       - 4 初等数论: math/alg/num.md
+      - 5 组合理论: math/alg/comb.md
     - 二、点集拓扑:
       - 1 拓扑空间: math/top/space.md
       - 2 构造空间: math/top/construct.md
       - 3 拓扑不变性质: math/top/prop.md
+    - 三、分析学原理:
+      - 1 序列与级数: math/anly/array.md

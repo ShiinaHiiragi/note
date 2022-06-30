@@ -323,6 +323,25 @@
         7. 如果 $x \in n$，则 $x \in \mathbf N$
     2. 对任意 $m, n \in \mathbf N$，定义 $m \leqslant n := m \underline\in n$ 且 $m < n := m \in n$
     3. $(N, \underline\in)$ 是一个全序集；$(\mathbf N \leqslant)$ 是一个良序集
+4. 递归定理：对任意集合 $A$，任意 $a \in A$ 以及任意函数 $h: A \times \mathbf N \to A$，存在唯一的函数 $f: \mathbf N \to A$ 满足 ① $f(0) = a$；② 对所有 $n \in N$，有 $f(n + 1) = g(f(n), n)$
+    1. 推广到带参数的递归定理：令 $a: P \to A, g: P \times A \times \mathbf N \to A$ 为函数，存在唯一的函数 $f: P \times \mathbf N \to A$ 有 ① $\forall p \in P \ (f(p, 0) = a(p))$；② $\forall n \in \mathbf N \ \forall p \in P \ (f(p, n + 1) = g(p, f(p, n), n))$
+    2. 定义加法：存在唯一的函数 $+: \mathbf N \times \mathbf N \to \mathbf N$ 满足
+        1. 对所有 $m \in \mathbf N$ 有 $+(m, 0) = m$
+        2. 对所有 $m, n \in \mathbf N$ 有 $+(m, S(n)) = S(+(m, n))$
+
+        通常将 $+(m, n)$ 写作 $m + n$
+
+    3. 定义乘法：存在唯一的函数 $\cdot: \mathbf N \times \mathbf N \to \mathbf N$ 满足
+        1. 对所有 $m \in \mathbf N$ 有 $\cdot(m, 0) = 0$
+        2. 对所有 $m, n \in \mathbf N$ 有 $\cdot(m, S(n)) = +(\cdot(m, n), m)$
+
+        通常将 $\cdot(m, n)$ 写作 $m \cdot n$ 或 $mn$
+
+    4. 定义乘方：存在唯一的函数 $p: \mathbf N \times \mathbf N \to \mathbf N$ 满足
+        1. 对所有 $m \in \mathbf N$ 有 $p(m, 0) = 1$
+        2. 对所有 $m, n \in \mathbf N$ 有 $p(m, S(n)) = \cdot(p(m, n), n)$
+
+        通常将 $p(m, n)$ 写作 $m^n$
 
 ### 1.3.2 整数与有理数
 
