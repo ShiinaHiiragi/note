@@ -74,6 +74,7 @@
 
         1. 后继：对任意集合 $x$，记 $x$ 的后继 $S(x) = x \cup \{x\}$
         2. 无穷公理保证了 $\left\{\varnothing, \left\{\varnothing\right\}, \left\{\varnothing, \left\{\varnothing\right\}\right\}, \cdots\right\} \subseteq X$ 是一个集合
+        3. 归纳集：如果集合 $X$ 有 $\varnothing \in X \wedge \forall x \ (x \in X \to S(x) \in X)$，则称 $X$ 为归纳集
 
     8. 正则公理（$\text{Fnd}$）：对任一集合 $x \neq \varnothing$，存在 $y \in x$ 使得 $y \cap x = \varnothing$
 
@@ -293,6 +294,35 @@
 
 ## 1.3 实数理论
 ### 1.3.1 自然数
+1. 定义自然数：
+
+    $$
+    \begin{aligned}
+    & 0 = \varnothing \\
+    & 1 = 0 \cup \{0\} = \{\varnothing\} \\
+    & 2 = 1 \cup \{1\} = \{\varnothing, \{\varnothing\}\} \\
+    & 3 = 2 \cup \{2\} = \{\varnothing, \{\varnothing\}, \{\varnothing, \{\varnothing\}\}\} \\
+    & \cdots
+    \end{aligned}
+    $$
+
+2. 定义全体自然数的集合 $\mathbf N := \{n \mid \forall X \ (X$ 是归纳集 $\to n \in X)\}$
+    1. 由分离公理与无穷公理可知，$\mathbf N$ 是一个集合且唯一
+    2. $\mathbf N$ 是归纳集并且是任何归纳集的子集
+    3. $\mathbf N$ 上的归纳原理：令 $\varphi(x)$ 为一性质
+        1. 第一归纳原理：$(\varphi(0) \wedge \forall n \in N \ (\varphi(n) \to \varphi(n + 1))) \to \forall n \in \mathbf N \ \varphi(n)$
+        2. 第二归纳原理：$\forall n \in N \ (\forall k < n \ \varphi(k) \to \varphi(n)) \to \forall n \in \mathbf N \ \varphi(n)$
+3. $\mathbf N$ 上的序：定义 $x \underline\in y := x \in y \vee x = y$
+    1. 对所有自然数 $m, n, k$ 有
+        1. $0 \underline\in n$ 且 $n \notin n$
+        2. $n \subset n + 1$ 且 $n \in n + 1$
+        3. $k \in n + 1$ 当且仅当 $k \underline\in n$
+        4. $m \in n$ 当且仅当 $m \subset n$
+        5. 如果 $m \in n$，则 $m + 1 \underline\in n$
+        6. 如果 $k \in m \wedge m \in n$ 则 $k \in n$
+        7. 如果 $x \in n$，则 $x \in \mathbf N$
+    2. 对任意 $m, n \in \mathbf N$，定义 $m \leqslant n := m \underline\in n$ 且 $m < n := m \in n$
+    3. $(N, \underline\in)$ 是一个全序集；$(\mathbf N \leqslant)$ 是一个良序集
 
 ### 1.3.2 整数与有理数
 
