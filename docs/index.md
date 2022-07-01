@@ -241,8 +241,8 @@ const refList = [
         press: "人民邮电出版社",
         locate: "北京",
         year: 2011,
-        page: [57, 85],
-        plot: 0
+        page: [1, 85],
+        plot: 64
     },
     {
         author: ["胡典顺", "徐汉文"],
