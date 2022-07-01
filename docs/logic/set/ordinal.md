@@ -25,9 +25,8 @@
         1. 可数集增加或减少有限个元素后，得到的集合仍是可数集
         2. 如果 $A_1, A_2, \cdots, A_n, \cdots$ 都是可数的，则 ${\displaystyle \bigcup_{k \leqslant n}} A_k$ 是可数的且 ${\displaystyle \bigcup_{n \in \mathbf N}} A_n$ 也是可数的
         3. 如果 $A_1, A_2, \cdots, A_n, \cdots$ 都是可数的，则 $A_1 \times A_2 \times \cdots \times A_n$ 是可数的，但 $A_1 \times A_2 \times \cdots \times A_n \times \cdots$ 是不可数的
-        4. 如果 $A$ 是可数的，则 $A^{< \mathbf N}$ 是可数的
-        5. 如果 $A$ 是可数的，则 $A$ 的所有有穷子集组成的集合是可数的
-        6. 如果 $A$ 是可数的，则 $A$ 上等价关系的等价类是至多可数的
+        4. 如果 $A$ 是可数的，则 $A^{< \mathbf N}$  与$A$ 的所有有穷子集组成的集合都是可数的
+        5. 如果 $A$ 是可数的，则 $A$ 上等价关系的等价类是至多可数的
     2. 可数集与不可数集合例举
         1. $\text{Cantor}$ 定理：$2^{\mathbf N}$ 是不可数的
         2. 自然数集合 $\mathbf N$ 、整数集合 $\mathbf Z$ 与有理数集合 $\mathbf Q$ 是可数的，实数集合 $\mathbf R$ 是不可数的

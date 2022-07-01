@@ -99,7 +99,7 @@
         $$
 
         !!! note "选择公理的第二形式"
-            对任意不含空集的非空集族 $\mathscr F$ 上都存在选择函数 $f: \mathscr F \to \bigcup \mathscr F$ 使得对任意 $F \in \mathscr F$ 有 $f(F) \in F$
+            对任意不含空集的非空集族 $\mathscr F$ 上都存在选择映射 $f: \mathscr F \to \bigcup \mathscr F$ 使得对任意 $F \in \mathscr F$ 有 $f(F) \in F$
 
 3. 集合的运算性质：对于任意集合 $X, Y, Z$
     1. 子集的性质
@@ -225,7 +225,7 @@
         1. $R[X \cup Y] = R[X] \cup R[Y]$
         2. $R[X \cap Y] \subseteq R[X] \cap R[Y]$
         3. $R[X - Y] \supseteq R[X] - R[Y]$
-        4. 对于任意函数 $f$ 有 $f[X \cap Y] \subseteq f[X] \cap f[Y], f^{-1}[X \cap Y] = f^{-1}[X] \cap f^{-1}[Y]$
+        4. 对于任意映射 $f$ 有 $f[X \cap Y] \subseteq f[X] \cap f[Y], f^{-1}[X \cap Y] = f^{-1}[X] \cap f^{-1}[Y]$
     3. 逆关系与复合关系：二元关系 $R$ 的逆定义为 $R^{-1} := \left\{(x, y) \mid R(y, x)\right\}$；复合定义为 $S \circ R = \left\{(x, z) \mid \exists y \ (R(x, y) \wedge S(y, z))\right\}$
         1. $(R^{-1})^{-1} = R, (S \circ R)^{-1} = R^{-1} \circ S^{-1}$
         2. $X \circ (Y \circ Z) = (X \circ Y) \circ Z$
@@ -285,10 +285,10 @@
     1. 一个映射是可逆的当且仅当它是单射，如果 $f$ 是可逆的，则 $f^{-1}$ 也是可逆的且 $(f^{-1})^{-1} = f$
     2. 令 $f, g$ 为映射，则复合 $h = g \circ f$ 也是映射，且 $h$ 的定义域为 $\mathrm{dom}(h) = \mathrm{dom}(f) \cap f^{-1}[\mathrm{dom}(g)]$．且对于所有 $x \in \mathrm{dom}(h)$ 均有 $h(x) = g(f(x))$
 4. 限制与扩张：对任意映射 $f$ 与集合 $A$，$g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 是一个映射，称作 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张
-5. 相容性：对于函数 $f, g$，如果对所有的 $x \in \mathrm{dom}(f) \cap \mathrm{dom}(g)$ 都有 $f(x) = g(x)$，则称函数 $f, g$ 是相容的
-    1. 如果函数的集合 $\mathscr F$ 中任意两个函数都是相容的，则称 $\mathscr F$ 为相容的系统
-    2. 函数 $f, g$ 相容当且仅当 $f \cap g$ 是函数，当且仅当 $f \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right) = g \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right)$
-6. 令 $X, Y$ 是集合，$X$ 到 $Y$ 的所有函数组成的集合定义为 $Y^X = \left\{f \mid f: X \to Y\right\}$
+5. 相容性：对于映射 $f, g$，如果对所有的 $x \in \mathrm{dom}(f) \cap \mathrm{dom}(g)$ 都有 $f(x) = g(x)$，则称映射 $f, g$ 是相容的
+    1. 如果映射的集合 $\mathscr F$ 中任意两个映射都是相容的，则称 $\mathscr F$ 为相容的系统
+    2. 映射 $f, g$ 相容当且仅当 $f \cap g$ 是映射，当且仅当 $f \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right) = g \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right)$
+6. 令 $X, Y$ 是集合，$X$ 到 $Y$ 的所有映射组成的集合定义为 $Y^X = \left\{f \mid f: X \to Y\right\}$
     1. 对任意集合 $X, Y$，$X^Y$ 都是集合
     2. 对任意集合 $X$，有 $\varnothing^{X} = \varnothing$；对任意集合 $Y$，有 $Y^{\varnothing} = \left\{\varnothing_{Y}\right\}$
 
@@ -329,8 +329,8 @@
         7. 如果 $x \in n$，则 $x \in \mathbf N$
     2. 对任意 $m, n \in \mathbf N$，定义 $m \leqslant n := m \underline\in n$ 且 $m < n := m \in n$
     3. $(N, \underline\in)$ 是一个全序集，$(\mathbf N \leqslant)$ 是一个良序集
-5. 递归定理：对任意集合 $A$，任意 $a \in A$ 以及任意函数 $h: A \times \mathbf N \to A$，存在唯一的函数 $f: \mathbf N \to A$ 满足 ① $f(0) = a$；② 对所有 $n \in N$，有 $f(n + 1) = g(f(n), n)$
-    1. 推广到带参数的递归定理：令 $a: P \to A, g: P \times A \times \mathbf N \to A$ 为函数，存在唯一的函数 $f: P \times \mathbf N \to A$ 有 ① $\forall p \in P \ (f(p, 0) = a(p))$；② $\forall n \in \mathbf N \ \forall p \in P \ (f(p, n + 1) = g(p, f(p, n), n))$
+5. 递归定理：对任意集合 $A$，任意 $a \in A$ 以及任意映射 $h: A \times \mathbf N \to A$，存在唯一的映射 $f: \mathbf N \to A$ 满足 ① $f(0) = a$；② 对所有 $n \in N$，有 $f(n + 1) = g(f(n), n)$
+    1. 推广到带参数的递归定理：令 $a: P \to A, g: P \times A \times \mathbf N \to A$ 为映射，则存在唯一的映射 $f: P \times \mathbf N \to A$ 有 ① $\forall p \in P \ (f(p, 0) = a(p))$；② $\forall n \in \mathbf N \ \forall p \in P \ (f(p, n + 1) = g(p, f(p, n), n))$
     2. 定义加法：存在唯一的函数 $+: \mathbf N \times \mathbf N \to \mathbf N$ 满足
         1. 对所有 $m \in \mathbf N$ 有 $+(m, 0) = m$
         2. 对所有 $m, n \in \mathbf N$ 有 $+(m, S(n)) = S(+(m, n))$
