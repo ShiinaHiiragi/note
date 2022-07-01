@@ -410,15 +410,11 @@
     1. 有理数集合 $(\mathbf Q, <)$ 是稠密的
     2. 令 $(P, <_P)$ 为可数的无端点稠密线序，则 $(P, <_p)$ 与 $(\mathbf Q, <)$ 同构
 7. 分数：设 $p = [(a, b)] \in \mathbf Q$，则定义分数 $p := \dfrac{a}{b}$，读作 $b$ 分之 $a$．其中 $b$ 称作分母，$a$ 称作分子
-    1. 分数的分类
-        1. 真分数：$a < b$ 的分数
-        2. 假分数：$a > b$ 的分数
-        3. 带分数：任何大于的假分数都可以整数与真分数合成的数，设 $a = i_{\mathbf Z} \cdot_{\mathbf Z} b +_{\mathbf Z} j \ (0 \leqslant_{\mathbf Z} j <_{\mathbf Z} b)$，则 $\dfrac ab = i\dfrac{j}{b}$
-    2. 既约分数：满足 $(a, b) = 1$ 的分数
+    1. 既约分数：满足 $(a, b) = 1$ 的分数
         1. 约分：将任一分数化作既约分数的过程
-        2. 通分：把异分母分数化作与原来分数相等的同分母分数
-    3. 百分数：分母 $b = 100_{\mathbf Z}$ 的特殊分数，此时有 $a\% = \dfrac{a}{100_{\mathbf Z}} \times 100_{\mathbf Z}\%$
-    4. 比例：形如 $p = a : b$ 的式子，其中 $a$ 称作前项，$b$ 称作后项，$p$ 称作比值
+        2. 通分：把异分母分数化作与原分数相等的同分母分数
+    2. 百分数：分母 $b = 100_{\mathbf Z}$ 的特殊分数，此时有 $a\% = \dfrac{a}{100_{\mathbf Z}} \times 100_{\mathbf Z}\%$
+    3. 比例：形如 $p = a : b$ 的式子，其中 $a$ 称作前项，$b$ 称作后项，$p$ 称作比值
 
 ### 1.3.4 实数集
 1. 实数集合：如果集合 $A \subseteq$ 有
@@ -458,18 +454,15 @@
     \end{aligned}\right.
     $$
 
-    1. 小数：设 $x = a_0.a_1 a_2 \cdots a_n \cdots \in \mathbf R$，其中 $a_0 \in \mathbf Z$，$a_i \ (i = 1, 2, \cdots, n \cdots)$ 是十进制数码
 
-        !!! note "十进制小数与实数的关系"
-            对于任意 $x \in \mathbf R$，取符合 $a_{\mathbf R} \leqslant_{\mathbf R} x$ 的最大整数 $a$，当 $a_0, a_1, \cdots, a_{k-1}$ 选定时，取符合 $(a_0)_{\mathbf R} + \left(\dfrac{a_1}{10_{\mathbf Z}}\right)_{\mathbf R} + \cdots + \left(\dfrac{a_k}{(10_{\mathbf Z})^k}\right)_{\mathbf R} \leqslant_{\mathbf R} x$ 的最大整数 $a_k$．令
+    !!! note "十进制小数与实数的关系"
+        设 $x = a_0.a_1 a_2 \cdots a_n \cdots \in \mathbf R$，其中 $a_0 \in \mathbf Z$，$a_i \ (i = 1, 2, \cdots, n \cdots)$ 是十进制数码．对于任意 $x \in \mathbf R$，取符合 $a_{\mathbf R} \leqslant_{\mathbf R} x$ 的最大整数 $a$，当 $a_0, a_1, \cdots, a_{k-1}$ 选定时，取符合 $(a_0)_{\mathbf R} + \left(\dfrac{a_1}{10_{\mathbf Z}}\right)_{\mathbf R} + \cdots + \left(\dfrac{a_k}{(10_{\mathbf Z})^k}\right)_{\mathbf R} \leqslant_{\mathbf R} x$ 的最大整数 $a_k$．令
 
-            $$
-            E = \left\{\left. (a_0)_{\mathbf R} + \left(\dfrac{a_1}{10_{\mathbf Z}}\right)_{\mathbf R} + \cdots + \left(\dfrac{a_k}{(10_{\mathbf Z})^k}\right)_{\mathbf R} \right| \ k = 0, 1, 2, \cdots \right\}
-            $$
+        $$
+        E = \left\{\left. (a_0)_{\mathbf R} + \left(\dfrac{a_1}{10_{\mathbf Z}}\right)_{\mathbf R} + \cdots + \left(\dfrac{a_k}{(10_{\mathbf Z})^k}\right)_{\mathbf R} \right| \ k = 0, 1, 2, \cdots \right\}
+        $$
 
-            于是 $x = \sup(E)$
-
-    2. 算术根：设实数 $x \geqslant_{\mathbf R} 0_{\mathbf R}$，自然数 $n > 1$，则称适合 $y^n = x$ 的非负实数 $y$ 为 $x$ 的 $n$ 次算术根，记作 $y = \sqrt[n]{x}$
+        于是 $x = \sup(E)$，这说明用小数表示实数是一种潜无穷表示法
 
 6. 最小上界性质：全序集 $(X, \leqslant)$ 如果有对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界，则称 $X$ 有最小上界性质
     1. 有理数集合 $(\mathbf Q, \leqslant_{\mathbf Q})$ 没有最小上界性质
