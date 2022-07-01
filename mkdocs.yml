@@ -64,7 +64,6 @@ nav:
   - 通用:
     - 介绍: index.md
     - 许可证: intro/license.md
-    - 中转站: intro/int.md
   - 认识基础:
     - 一、认知科学:
       - 1 神经认知: cogn/cogn/nerve.md

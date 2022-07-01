@@ -6,7 +6,7 @@
     3. 由 $A$ 的元素组成的所有有穷序列的集合：$A^{<\mathbf N} = {\displaystyle \bigcup_{n \in \mathbf N} A^n}$
 
 ## 1.1 数列
-1. 数列：以数集作为值域的序列称为数列，从 $1$ 开始计数，一般记为 $a_1, a_2, \cdots, a_n, \cdots$，简记作 $\{a_n\}$
+1. 数列：以数集作为值域的序列称为数列，通常以正整数集 $\mathbf Z_+$ 作为定义域．一般记为 $a_1, a_2, \cdots, a_n, \cdots$，简记作 $\{a_n\}$
     1. 按定义域分类
         1. 有穷数列：以自然数 $n$ 为定义域的数列
         2. 无穷数列：以自然数集 $\mathbf N$ 为定义域的数列
@@ -21,11 +21,43 @@
 2. 通项公式：如果数列 $\{a_n\}$ 的第 $n$ 项（即通项）与 $n$ 之间具有函数关系 $f(n)$，则称这个公式为该数列的通项公式
 3. 前 $n$ 项和：对于数列 $\{a_n\}$，称 ${\displaystyle \sum_{i=1}^n a_i}$ 为该数列的前 $n$ 项和，记作 $S_n$
     1. $\{S_n\}$ 也是一个数列，且有 $a_n = \left\{\begin{aligned} & S_1, & n = 1 \\ & S_n - S_{n-1}, & n = 2, 3, 4, \cdots \end{aligned}\right.$
-    2. 级数：记 ${\displaystyle \sum_{i=1}^\infty a_i = \lim_{n \to \infty} \sum_{i=1}^n a_i = \lim_{n \to \infty} S_n}$ 为无穷级数
+    2. 级数：记 ${\displaystyle \sum_{i=1}^\infty a_i = \lim_{n \to \infty} \sum_{i=1}^n a_i = \lim_{n \to \infty} S_n}$ ，称之为无穷级数
+4. 差分：对于数列 $\{a_k\}$，称 $\Delta a_k = a_{k+1} - a_k \ (k \in \mathbf Z_+)$ 为 $\{a_k\}$ 的一阶差分，数列 $\{\Delta a_k\}$ 称为 $\{a_k\}$ 的一阶差分数列
+    1. 高阶差分：设 $r \in \mathbf Z_+$，称 $\Delta^r a_k = \Delta(\Delta^{r-1}a_k) \ (k \in \mathbf Z_+)$ 为 $\{a_k\}$ 的 $r$ 阶差分，数列 $\{\Delta^r a_k\}$ 称为 $\{a_k\}$ 的 $r$ 阶差分数列
+    2. 差分的性质：对于数列 $\{a_k\}, \{b_k\}$
+        1. $\Delta(\lambda a_k + \mu b_k) = \lambda \Delta a_k + \mu \Delta b_k$，其中 $\lambda, \mu$ 为常数
+        2. 若 $\Delta a_k = \Delta b_k$，则 $a_k = b_k + c \ (k \in \mathbf Z_+)$，其中 $c$ 为常数
+        3. ${\displaystyle \sum_{k=1}^n a_k \Delta b_k + \sum_{k=1}^n} b_{k+1} \Delta a_k = a_{n+1} b_{n+1} - a_1 b_1$
 
 ### 1.1.1 等差数列
+1. 等差数列：如果数列满足 $a_n = a_{n-1} + d（n \geqslant 2）$，则称数列 $\{a_n\}$ 为等差数列，常数 $d$ 为等差数列的公差
+    1. 通项公式：$a_n = a_m + (n - m)d$
+    2. 前 $n$ 项和：$S_n = na_1 + \dfrac 12n(n - 1)d$
+    3. 等差中项：如果三个数 $x, A, y$ 成等差数列，则称 $A = \dfrac{x+y}{2}$ 为 $x, y$ 的等差中项
+2. 等差公式的性质：设 $\{a_n\}$ 为公差为 $d$ 的等差数列
+    1. 当 $d > 0$ 时，$\{a_n\}$ 为递增数列；当 $d < 0$ 时，$\{a_n\}$ 为递减数列；当 $d = 0$ 时，$\{a_n\}$ 为常数列
+    2. 设 $k \in \mathbf R$，则 $\{a_n + k\}$ 与 $\{ka_n\}$ 仍为等差数列，公差分别为 $d$ 与 $kd$
+    3. 设 $r, s, t \in \mathbf Z_+$，则 $r, s, t$ 成等差数列当且仅当 $a_r, a_s, a_t$ 成等差数列
+    4. 设 $k, l, m, p \in \mathbf Z_+$，则 $k + l = m + p \leftrightarrow a_k + a_l = a_m + a_p$
+    5. 设 $k \in \mathbf Z_+$，则 $S_k, (S_{2k} - S_k), (S_{3k} - S_{2k}), \cdots$ 成等差数列，且其公差为 $k^2d$
+3. 高阶等差数列：对于数列 $\{a_n\}$，若有正整数 $m$ 使得 $\{\Delta^m a_n\}$ 为非零常数列，则称 $\{a_m\}$ 为 $m$ 阶等差数列
+    1. 当 $m \geqslant 2$ 时，将 $m$ 阶等差数列称为高阶等差数列
+    2. 高阶等差数列的通项公式
+        1. 设 $\{a_n\}$ 为高阶等差公式，则 $a_n = {\displaystyle \sum_{k=0}^{n-1} C_{n-1}^k \Delta^k a_1} \ (n \geqslant 2)$
+        2. 若 $\{a_n\}$ 为 $r$ 阶等差数列，则当 $2 \leqslant r \leqslant n - 1$ 时，$a_n = {\displaystyle \sum_{k=0}^{r} C_{n-1}^k \Delta^k a_1}$
+        3. $\{a_n\}$ 是 $m$ 阶等差数列当且仅当 $a_n$ 是 $n$ 的 $m$ 次多项式
+    3. 前 $n$ 项和：设 $\{a_n\}$ 是 $m$ 阶等差数列，则 $S_n = {\displaystyle \sum_{k=0}^m C_n^{k+1} \Delta^k a_1}$ 是关于 $n$ 的 $m + 1$ 次多项式
 
 ### 1.1.2 等比数列
+1. 等比数列：如果数列满足 $\dfrac{a_n}{a_{n-1}} = q \ (n \geqslant 2, q \neq 0)$，则称数列 $\{a_n\}$ 为等比数列，常数 $q$ 为等比数列的公比
+    1. 通项公式：$a_n = a_1 q^{n-1}, n \in \mathbf Z_+$
+    2. 前 $n$ 项和：$S_n = \left\{\begin{aligned} & \dfrac{a_1(1 - q^n)}{1 - q}, & q \neq 1 \\ & na_1, & q = 1 \end{aligned}\right.$
+2. 公比 $q$ 的取值决定了等比数列 $\{a_n\}$ 的趋势
+    1. $q = 1$ 时，$\{a_n\}$ 为常数列
+    2. $q > 1$ 时，若 $a_1 > 0$，则 $\{a_n\}$ 为正项递增数列；若 $a_1 < 0$，则 $\{a_n\}$ 为负向递减数列
+    3. $0 < q < 1$ 时，若 $a_1 > 0$，则 $\{a_n\}$ 为正项递减数列；若 $a_1 < 0$，则 $\{a_n\}$ 为负向递增数列
+    4. $q < 0$ 时，$\{a_n\}$ 为摆动数列
+3. 无穷递缩等比数列：公比 $|q| < 1$ 的等比数列，其无穷级数 $S_n = \dfrac{a_1}{1 - q}$
 
 ### 1.1.3 线性递归数列
 
