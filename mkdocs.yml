@@ -108,4 +108,4 @@ nav:
       - 2 构造空间: math/top/construct.md
       - 3 拓扑不变性质: math/top/prop.md
     - 三、分析学原理:
-      - 1 序列与级数: math/anly/array.md
+      - 1 序列与级数: math/anly/seq.md
