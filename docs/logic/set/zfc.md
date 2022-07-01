@@ -434,11 +434,29 @@
 3. 本原元
     1. 零元：对任意实数 $x$，存在唯一的实数 $x'$ 使得 $x +_{\mathbf R} x' = 0_{\mathbf x}$，记唯一的 $x'$ 为 $-x$
     2. 单位元：对任意实数 $x \neq 0_{\mathbf R}$，存在唯一的实数 $x'$ 使得 $x \cdot_{\mathbf R} x' = 1_{\mathbf R}$，记唯一的 $x'$ 为 $\dfrac 1x$
-4. 将 $\mathbf R$ 看作 $\mathbf Q$ 的扩张，称 $\mathbf Q$ 嵌入 $\mathbf R$ 中：存在函数 $f: \mathbf Q \to \mathbf R$ 为 $f(p) = p_{\mathbf R}$ 使得
+5. 将 $\mathbf R$ 看作 $\mathbf Q$ 的扩张，称 $\mathbf Q$ 嵌入 $\mathbf R$ 中：存在函数 $f: \mathbf Q \to \mathbf R$ 为 $f(p) = p_{\mathbf R}$ 使得
     1. $f$ 是单射且 $f(0_{\mathbf Q}) = 0_{\mathbf R}$
     2. 对任意 $p, q \in \mathbf Q$ 有 $p \leqslant_{\mathbf Q} q$ 当且仅当 $f(p) \leqslant_{\mathbf R} f(q)$
     3. 对任意 $p, q \in \mathbf Q$ 有 $f(p +_{\mathbf Q} q) = f(p) +_{\mathbf R} f(q)$ 且 $f(p \cdot_{\mathbf Q} q) = f(p) \cdot_{\mathbf R} f(q)$
-5. 实数的分类：
+6. 实数集合子集的区间表示：
+
+    <div style="text-align: center;">
+
+    |                       集合                        |       区间表示       |     名称     |
+    | :-----------------------------------------------: | :------------------: | :----------: |
+    | $\left\{w \mid x \leqslant w \leqslant y\right\}$ |       $[x, y]$       |    闭区间    |
+    |         $\left\{w \mid x < w < y\right\}$         |       $(x, y)$       |    开区间    |
+    |     $\left\{w \mid x \leqslant w < y\right\}$     |       $[x, y)$       | 半开半闭区间 |
+    |     $\left\{w \mid x < w \leqslant y\right\}$     |       $(x, y]$       | 半开半闭区间 |
+    |       $\left\{w \mid w \geqslant x\right\}$       |    $[x, +\infty)$    | 半开半闭区间 |
+    |           $\left\{w \mid w > x\right\}$           |    $(x, +\infty)$    |    开区间    |
+    |       $\left\{w \mid w \leqslant x\right\}$       |    $(-\infty, x]$    | 半开半闭区间 |
+    |           $\left\{w \mid w < x\right\}$           |    $(-\infty, x)$    |    开区间    |
+    |                    $\mathbf R$                    | $(-\infty, +\infty)$ |    开区间    |
+
+    </div>
+
+7. 实数的分类：
 
     $$
     \textsf{实数（无限小数）} \left\{\begin{aligned}
@@ -464,7 +482,7 @@
 
         于是 $x = \sup(E)$，这说明用小数表示实数是一种潜无穷表示法
 
-6. 最小上界性质：全序集 $(X, \leqslant)$ 如果有对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界，则称 $X$ 有最小上界性质
+8. 最小上界性质：全序集 $(X, \leqslant)$ 如果有对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界，则称 $X$ 有最小上界性质
     1. 有理数集合 $(\mathbf Q, \leqslant_{\mathbf Q})$ 没有最小上界性质
     2. 实数集合 $(\mathbf R, \leqslant_{\mathbf R})$ 有最小上界性质
 
