@@ -235,14 +235,14 @@ const refList = [
         plot: 351 - 56
     },
     {
-        author: ["赵一鸣", "阚海斌", "吴永辉"],
-        title: "离散数学",
+        author: ["许胤龙", " 孙淑玲"],
+        title: "组合数学引论",
         type: "M",
-        press: "人民邮电出版社",
-        locate: "北京",
-        year: 2011,
-        page: [1, 85],
-        plot: 64
+        press: "中国科学技术大学出版社",
+        locate: "合肥",
+        year: 2010,
+        page: [6, 171],
+        plot: 25 - 6
     },
     {
         author: ["胡典顺", "徐汉文"],
@@ -291,16 +291,6 @@ const refList = [
         locate: "上海",
         year: 2006,
         page: [1, 304],
-        plot: 0
-    },
-    {
-        author: ["李文威"],
-        title: "代数学方法：基本架构",
-        type: "M",
-        press: "高等教育出版社",
-        locate: "北京",
-        year: 2019,
-        page: [11, 423],
         plot: 0
     },
     {
