@@ -59,7 +59,16 @@
     4. $q < 0$ 时，$\{a_n\}$ 为摆动数列
 3. 无穷递缩等比数列：公比 $|q| < 1$ 的等比数列，其无穷级数 $S_n = \dfrac{a_1}{1 - q}$
 
-### 1.1.3 线性递归数列
+### 1.1.3 线性递推数列
+1. 递推数列：如果数列 $\{a_n\}$ 满足递推关系 $a_{n+k} = f(a_{n+k-1}, a_{n+k-2}, \cdots, a_n)$，则称其为 $k$ 阶递推数列
+    1. 如果 $k$ 阶数列的递推公式是线性的，即 $a_{n+k} = p_1 a_{n+k-1} + p_2 a_{n+k-2} + \cdots + p_k a_n + b$，其中 $n \in \mathbf Z_+, p_1, p_2, \cdots, p_k$ 是常数且 $p_k \neq 0$，则称 $\{a_n\}$ 为 $k$ 阶线性递推数列
+    2. $k$ 阶线性递推数列的递推公式 $b = 0$，则称其为 $k$ 阶线性递归数列．等比数列即为一阶线性递归数列
+2. 一阶线性递推数列：设数列 $\{a_n\}$ 有 $\left\{\begin{aligned} & a_1 = a \\ & a_{n+1} = p a_n + q \end{aligned}\right.$，其中 $p, q, a$ 均为常数，$p \neq 0$ 且 $p \neq 1$，则 $a_n = p^{n-1}\left(a - \dfrac{q}{1 - p}\right) + \dfrac{q}{1 - p}$
+3. 二阶线性递归数列：设数列 $\{a_n\}$ 有 $\left\{\begin{aligned} & a_1 = a, a_2 = b \\ & a_{n + 1} = p a_n + q a_{n - 1} \end{aligned}\right.$，其中 $p, q \neq 0$ 且 $n \geqslant 2$
+    1. 若 $p + q = 1$，$a_n = a + (a - b) \cdot \dfrac{q + (-q)^n}{1 + q}$
+    2. 若 $p + q \neq 1$，称 $x^2 - px - q$ 为 $\{a_n\}$ 的特征方程，其根 $x_1, x_2$ 称为特征根
+        1. 若 $x_1 \neq x_2$，则 $a_n = \dfrac{ax_2 - b}{x_2 - x_1} x_1^{n-1} - \dfrac{ax_1 - b}{x_2 - x_1} x_2^{n-1}$
+        2. 若 $x_1 = x_2 = \dfrac p2$，则 $a_n = \left(\dfrac p2\right)^{n-2} \left[\left(pa - b\right) - n\left(\dfrac{pa}{2} - b\right)\right]$
 
 ## 1.2 函数序列
 
