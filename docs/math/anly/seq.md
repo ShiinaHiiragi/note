@@ -57,18 +57,29 @@
     2. $q > 1$ 时，若 $a_1 > 0$，则 $\{a_n\}$ 为正项递增数列；若 $a_1 < 0$，则 $\{a_n\}$ 为负向递减数列
     3. $0 < q < 1$ 时，若 $a_1 > 0$，则 $\{a_n\}$ 为正项递减数列；若 $a_1 < 0$，则 $\{a_n\}$ 为负向递增数列
     4. $q < 0$ 时，$\{a_n\}$ 为摆动数列
-3. 无穷递缩等比数列：公比 $|q| < 1$ 的等比数列，其无穷级数 $S_n = \dfrac{a_1}{1 - q}$
+3. 无穷递缩等比数列：公比 $|q| < 1$ 的等比数列，其无穷级数 ${\displaystyle \sum_{n=1}^\infty a_n = \dfrac{a_1}{1 - q}}$
 
 ### 1.1.3 线性递推数列
 1. 递推数列：如果数列 $\{a_n\}$ 满足递推关系 $a_{n+k} = f(a_{n+k-1}, a_{n+k-2}, \cdots, a_n)$，则称其为 $k$ 阶递推数列
-    1. 如果 $k$ 阶数列的递推公式是线性的，即 $a_{n+k} = p_1 a_{n+k-1} + p_2 a_{n+k-2} + \cdots + p_k a_n + b$，其中 $n \in \mathbf Z_+, p_1, p_2, \cdots, p_k$ 是常数且 $p_k \neq 0$，则称 $\{a_n\}$ 为 $k$ 阶线性递推数列
-    2. $k$ 阶线性递推数列的递推公式 $b = 0$，则称其为 $k$ 阶线性递归数列．等比数列即为一阶线性递归数列
-2. 一阶线性递推数列：设数列 $\{a_n\}$ 有 $\left\{\begin{aligned} & a_1 = a \\ & a_{n+1} = p a_n + q \end{aligned}\right.$，其中 $p, q, a$ 均为常数，$p \neq 0$ 且 $p \neq 1$，则 $a_n = p^{n-1}\left(a - \dfrac{q}{1 - p}\right) + \dfrac{q}{1 - p}$
-3. 二阶线性递归数列：设数列 $\{a_n\}$ 有 $\left\{\begin{aligned} & a_1 = a, a_2 = b \\ & a_{n + 1} = p a_n + q a_{n - 1} \end{aligned}\right.$，其中 $p, q \neq 0$ 且 $n \geqslant 2$
-    1. 若 $p + q = 1$，$a_n = a + (a - b) \cdot \dfrac{q + (-q)^n}{1 + q}$
-    2. 若 $p + q \neq 1$，称 $x^2 - px - q$ 为 $\{a_n\}$ 的特征方程，其根 $x_1, x_2$ 称为特征根
-        1. 若 $x_1 \neq x_2$，则 $a_n = \dfrac{ax_2 - b}{x_2 - x_1} x_1^{n-1} - \dfrac{ax_1 - b}{x_2 - x_1} x_2^{n-1}$
-        2. 若 $x_1 = x_2 = \dfrac p2$，则 $a_n = \left(\dfrac p2\right)^{n-2} \left[\left(pa - b\right) - n\left(\dfrac{pa}{2} - b\right)\right]$
+    1. 如果 $k$ 阶数列的递推公式是线性的，即 $a_{n+k} = p_1 a_{n+k-1} + p_2 a_{n+k-2} + \cdots + p_k a_n + f(n)$，其中 $n \in \mathbf Z_+, p_1, p_2, \cdots, p_k$ 是常数且 $p_k \neq 0$，则称 $\{a_n\}$ 为 $k$ 阶线性递推数列
+    2. $k$ 阶线性递推数列的递推公式 $f(n) = 0$，则称其为 $k$ 阶线性递归数列．
+2. $k$ 阶线性递归数列：设 $a_{n+k} = p_1 a_{n+k-1} + p_2 a_{n+k-2} + \cdots + p_k a_n$
+    1. 特征方程：$x^k - c_1 x^{n-1} - \cdots - a_k = 0$，其 $k$ 个根 $q_1, q_2, \cdots, q_n \in \mathbf C$ 称为递推关系的特征根
+    2. 通解：若特征方程有 $t$ 个互异的根，$q_1, q_2, \cdots, q_t$ 的重数分别为 $m_1, m_2, \cdots, m_t$ 且有 $k = {\displaystyle \sum_{i=1}^t} m_i$．则递推关系的同解为 $a_n = {\displaystyle \sum_{i=1}^t \left(\sum_{j=1}^{m_i} c_{ij} \cdot n^{j-1} q_i^n\right)}$，其中 $c_{ij} \ (1 \leqslant j \leqslant m_i, 1 \leqslant i \leqslant t)$ 为常数
+3. $k$ 阶线性递推数列：设 $a_{n+k} = p_1 a_{n+k-1} + p_2 a_{n+k-2} + \cdots + p_k a_n + f(n)$
+    1. 递推关系的通解为 $a_n = a_n' + a_n^*$，其中 $a_n'$ 是对应的 $k$ 阶线性递归关系 $a_{n+k} = p_1 a_{n+k-1} + p_2 a_{n+k-2} + \cdots + p_k a_n$ 的通解，$a_n^*$ 为 $k$ 阶线性递推关系的特解
+    2. 对于一般的 $f(n)$ 没有普遍解法
+        1. 当 $f(n)$ 是 $n$ 的 $t$ 次多项式时，对应的特解形式为 $a_n^* = {\displaystyle \sum_{i=0}^t p_i n^i}$，其中 $p_i \ (0 \leqslant i \leqslant t)$ 为常数
+        2. 当 $f(n) = \alpha^n$ 时，若 $\alpha$ 是对应递归关系的 $m$ 重特征根，则特解为 $a_n^* = p \cdot n^m \alpha^n$，否则 $a_n^* = p \cdot \alpha^n$，其中 $p$ 为常数
+
+    !!! note "低阶线性递推数列例举"
+
+        1. 一阶线性递推数列：设数列 $\{a_n\}$ 有 $\left\{\begin{aligned} & a_1 = a \\ & a_{n+1} = p a_n + q \end{aligned}\right.$，其中 $p, q, a$ 均为常数，$p \neq 0$ 且 $p \neq 1$．则 $a_n = p^{n-1}\left(a - \dfrac{q}{1 - p}\right) + \dfrac{q}{1 - p}$，当 $q = 0$ 时，$\{a_n\}$ 是一个等比数列
+        2. 二阶线性递归数列：设数列 $\{a_n\}$ 有 $\left\{\begin{aligned} & a_1 = a, a_2 = b \\ & a_{n + 1} = p a_n + q a_{n - 1} \end{aligned}\right.$，其中 $p, q \neq 0$ 且 $n \geqslant 2$
+            1. 若 $p + q = 1$，$a_n = a + (a - b) \cdot \dfrac{q + (-q)^n}{1 + q}$
+            2. 若 $p + q \neq 1$，则 $x^2 - px - q$ 为 $\{a_n\}$ 的特征方程，设 $x_1, x_2$ 为特征根
+                1. 若 $x_1 \neq x_2$，则 $a_n = \dfrac{ax_2 - b}{x_2 - x_1} x_1^{n-1} - \dfrac{ax_1 - b}{x_2 - x_1} x_2^{n-1}$
+                2. 若 $x_1 = x_2 = \dfrac p2$，则 $a_n = \left(\dfrac p2\right)^{n-2} \left[\left(pa - b\right) - n\left(\dfrac{pa}{2} - b\right)\right]$
 
 ## 1.2 函数序列
 

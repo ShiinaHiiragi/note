@@ -231,8 +231,7 @@ const refList = [
         press: "高等教育出版社",
         locate: "北京",
         year: 2014,
-        page: [56, 377],
-        plot: 351 - 56
+        page: [56, 377]
     },
     {
         author: ["许胤龙", " 孙淑玲"],
@@ -241,8 +240,7 @@ const refList = [
         press: "中国科学技术大学出版社",
         locate: "合肥",
         year: 2010,
-        page: [6, 171],
-        plot: 25 - 6
+        page: [6, 171]
     },
     {
         author: ["胡典顺", "徐汉文"],

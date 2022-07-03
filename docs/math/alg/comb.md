@@ -23,7 +23,7 @@
 3. 多重集的排列：设有限多重集 $S = \left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}$ 且 $p = p_1 + p_2 + \cdots + p_n$．从 $S$ 中有序选取 $r$ 个元素称为 $S$ 的一个 $r-$排列，当 $r = n$ 时，称之为 $S$ 的一个全排列
     1. 若 $r > p$，则 $r-$排列数 $N = 0$
     2. 若 $r = p$，则 $r-$排列数 $N = \dfrac{p!}{p_1! p_2! \cdots p_n!}$
-    3. 若 $r < n$ 且对一切 $i = 1, 2, \cdots, k$ 都有 $p_i \geqslant r$，则  $r-$排列数 $N = k^r$
+    3. 若 $r < n$ 且对一切 $i = 1, 2, \cdots, k$ 都有 $p_i \geqslant r$，则  $r-$排列数 $N = k^r$，记作 $R_k^r$
     4. 若 $r < n$ 且存在某个 $p_i < r$，则对 $r-$排列数 $N$ 没有一般的求解方法，需要使用生成函数
 
 ## 4.3 组合
@@ -47,7 +47,7 @@
         \end{aligned}\right.
         $$
 
-    2. 对任意正整数 $n$，对 $|x| < 1$ 有
+        对任意正整数 $n$，对 $|x| < 1$ 有
 
         $$
         \begin{aligned}
@@ -56,10 +56,19 @@
         \end{aligned}
         $$
 
+    2. 多项式定理：设 $n \in \mathbf Z_+$，则对一切 $a_1, a_2, \cdots, a_m$ 有
+
+        $$
+        (a_1 + a_2 + \cdots + a_m)^n = \sum_{n_1 + n_2 + \cdots + n_m = n} \dfrac{n!}{(n_1!)(n_2!)\cdots(n_m!)} a_1^{n_1} a_2^{n_2}\cdots a_m^{n_m}
+        $$
+
+        1. $r$ 元 $n$ 次齐次完全多项式的项数是 $H_n^r = C_{n+r-1}^n$
+        2. $r$ 元 $n$ 次非齐次完全多项式的项数是 $H_{r+1}^n = C_{n+r}^r$
+
 3. 多重集的组合：设有限多重集 $S = \left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}$ 且 $p = p_1 + p_2 + \cdots + p_n$．从 $S$ 含有 $r$ 个元素的子多重集称为 $S$ 的一个 $r-$组合
     1. 若 $r > p$，则 $r-$组合数 $N = 0$
     2. 若 $r = p$，则 $r-$组合数 $N = 1$
-    3. 若 $r < n$ 且对一切 $i = 1, 2, \cdots, k$ 都有 $p_i \geqslant r$，则  $r-$组合数 $N = C_{k+r-1}^r$
+    3. 若 $r < n$ 且对一切 $i = 1, 2, \cdots, k$ 都有 $p_i \geqslant r$，则  $r-$组合数 $N = C_{k+r-1}^r$，记作 $H_n^r$
     4. 若 $r < n$ 且存在某个 $p_i < r$，则对 $r-$组合数 $N$ 没有一般的求解方法，需要使用容斥原理
 
 ## 4.4 生成函数
