@@ -24,7 +24,7 @@
     1. 若 $r > p$，则 $r-$排列数 $N = 0$
     2. 若 $r = p$，则 $r-$排列数 $N = \dfrac{p!}{p_1! p_2! \cdots p_n!}$
     3. 若 $r < n$ 且对一切 $i = 1, 2, \cdots, k$ 都有 $p_i \geqslant r$，则  $r-$排列数 $N = k^r$
-    4. 若 $r < n$ 且存在某个 $p_i < r$，则对 $r-$排列数 $N$ 没有一般的求解方法
+    4. 若 $r < n$ 且存在某个 $p_i < r$，则对 $r-$排列数 $N$ 没有一般的求解方法，需要使用生成函数
 
 ## 4.3 组合
 1. 组合数：从 $n$ 个元素的集合 $S$ 中无序选取 $r$ 个元素组成 $S$ 的子集称为 $S$ 的一个 $r-$组合，不同的组合总数记为 $C_n^r$
@@ -63,3 +63,20 @@
     4. 若 $r < n$ 且存在某个 $p_i < r$，则对 $r-$组合数 $N$ 没有一般的求解方法，需要使用容斥原理
 
 ## 4.4 生成函数
+1. 幂级数型生成函数：设 $\{a_n\}$ 是一个数列，定义 $f(x) = {\displaystyle \sum_{n=0}^\infty a_n x^n}$ 为数列 $\{a_n\}$ 的生成函数
+    1. 设数列 $\{a_n\}, \{b_n\}, \{c_n\}$ 的生成函数分别是 $f(x), g(x), h(x)$，$r$ 为常数
+        1. 如果 $b_n = ra_n$，则 $g(x) = rf(x)$
+        2. 如果 $c_n = a_n + b_n$，则 $h(x) = f(x) + g(x)$
+        3. 如果 $c_n = {\displaystyle \sum_{i=0}^n a_i b_{n-i}}$，则 $h(x) = f(x) \cdot g(x)$
+        4. 如果 $b_n = \left\{\begin{aligned} & 0, & n > l \\ & a_{n-1}, & n \leqslant l \end{aligned}\right.$，则 $g(x) = x^l f(x)$
+        5. 如果 $b_n = a_{n+l}$，则 $g(x) = {\displaystyle \dfrac{f(x) - \displaystyle \sum_{n=0}^{l-1} a_n x^n}{x^l}}$
+        6. 如果 $b_n = {\displaystyle \sum_{i=0}^n a_i}$，则 $g(x) = \dfrac{f(x)}{1 - x}$
+        7. 如果 $b_n = {\displaystyle \sum_{n=0}^\infty a_n}$，且 $f(1) = {\displaystyle \sum_{n=0}^\infty a_n}$ 收敛，则 $g(x) = \dfrac{f(1) - xf(x)}{1 - x}$
+        8. 如果 $b_n = r^n a_n$，则 $g(x) = f(rx)$
+        9. 如果 $b_n = na_n$，则 $g(x) = xf'(x)$
+        10. 如果 $b_n = \dfrac{a_n}{n + 1}$，则 $g(x) = \dfrac 1x {\displaystyle \int_0^x f(x) \mathrm dx}$
+    2. 设多重集 $S = \left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}$ 的 $r-$组合数为 $a_r$，则 $\{a_r\}$ 的生成函数为 ${\displaystyle f(x) = \prod_{i=1}^n \left(\sum_{j=0}^{p_i} x^j\right)}$
+2. 指数型生成函数：设 $\{a_n\}$ 是一个数列，定义 $f(x) = {\displaystyle \sum_{n=0}^\infty \dfrac{a_n}{n!} x^n}$ 为数列 $\{a_n\}$ 的生成函数
+    1. $\{a_n\}$ 的指数型生成函数就是 $\left\{\dfrac{a_n}{n!}\right\}$ 的幂级数型生成函数
+    2. 设数列 $\{a_n\}, \{b_n\}$ 的生成函数分别是 $f(x), g(x)$，则 $f(x) \cdot g(x) = {\displaystyle \sum_{n=0}^\infty \left(\dfrac{x_n}{(n-1)!} \cdot \sum_{k=0}^n C_n^k a_k b_{n-k} \right)}$
+    3. 设多重集 $S = \left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}$ 的 $r-$排列数为 $a_r$，则 $\{a_r\}$ 的生成函数为 ${\displaystyle f(x) = \prod_{i=1}^n \left(\sum_{j=0}^{p_i} \dfrac{x^j}{j!}\right)}$
