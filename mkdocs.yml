@@ -93,6 +93,8 @@ nav:
       - 2 一阶逻辑: logic/proof/pred.md
     - 二、模型论:
       - 1 结构与模型: logic/model/model.md
+    - 三、递归论:
+      - 1 可计算理论: logic/rec/cal.md
     - 四、公理集合论:
       - 1 数学基础: logic/set/zfc.md
       - 2 序数与基数: logic/set/ordinal.md
@@ -108,3 +110,6 @@ nav:
       - 3 拓扑不变性质: math/top/prop.md
     - 三、分析学原理:
       - 1 序列与级数: math/anly/seq.md
+  - 计算理论:
+    - 二、形式语言:
+      - 5 短语结构文法: comp/syntax/psg.md
