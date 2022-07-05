@@ -122,6 +122,50 @@
 
         语言的正闭包定义为 $L^+ = L^* - \{\varepsilon\}$
 
+3. 形式文法：一个文法 $G$ 是一个四元组 $G = (V, T, P, S)$，其中
+    - $V$ 是变元的有限集
+    - $T$ 是终结符的有限集
+    - $P$ 是产生式的有限集，且每个产生式都是 $(V \cup T)^+ \to (V \cup T)^*$ 的形式，分别称为产生式的左部与右部
+    - $S \in V$ 称为文法 $G$ 的开始符号
+
+    如果有若干个左部相同而右部不同的产生式：
+
+    $$
+    \begin{aligned}
+    & \alpha \to \beta_1 \\
+    & \alpha \to \beta_2 \\
+    & \cdots \\
+    & \alpha \to \beta_n
+    \end{aligned}
+    $$
+
+    则可简写为 $\alpha \to \beta_1 \mid \beta_2 \mid \cdots \mid \beta_n$
+
+    1. 直接推导：对于给定文法 $G = (V, T, P, S)$，定义两个字符串之间的推导关系．若 $\alpha = \alpha_1\alpha_2\alpha_3, \gamma = \alpha_1\beta\alpha_3$，且 $\alpha_2 \to \beta$ 是 $P$ 中的一个产生式，则称由 $\alpha$ 直接推导出 $\gamma$，记作 $\alpha \underset{G}{\Rightarrow} \gamma$．在不引发歧义的条件下可以省略 $G$
+        1. 规约：如果 $\alpha \underset{G}{\Rightarrow} \gamma$，则反过来称 $\gamma$ 归约到 $\alpha$，记作 $\gamma \underset{G}{\Leftarrow} \alpha$
+        2. 推导：直接推导的扩充，即 $\alpha \overset{*}{\underset{G}{\Rightarrow}} \gamma$ 当且仅当存在 $\beta_1, \beta_2, \cdots, \beta_n$ 使得 $\alpha \underset{G}{\Rightarrow} \beta_1 \underset{G}{\Rightarrow} \beta_2 \underset{G}{\Rightarrow} \cdots \underset{G}{\Rightarrow} \beta_n \underset{G}{\Rightarrow} \gamma$
+    2. 文法 $G = (V, T, P, S)$ 所产生的语言记作 $L(G) = \left\{w \mid S \overset{*}{\Rightarrow} w \wedge w \in T^*\right\}$
+    3. 等价性：对于两个不同的文法 $G_1, G_2$，若 $L(G_1) = L(G_2)$，则称文法 $G_1$ 与 $G_2$ 等价
+
+4. 文法的分类
+    1. $\text{Chomsky}$ 分类法：对于文法 $G = (V, T, P, S)$，按以下标准分为四类
+        1. $0$ 型文法 / 短语结构文法（$\text{PSG}$）：没有其他限制的形式文法，其语言称作短语结构语言（$\text{PSL}$）
+        2. $1$ 型文法 / 上下文有关文法（$\text{CSG}$）：$P$ 中的每个产生式 $\alpha \to \beta$ 都有 $|\alpha| \leqslant |\beta|$ 的语言，其语言称作上下文有关语言（$\text{CSL}$）
+        3. $2$ 型文法 / 上下文无关文法（$\text{CFG}$）：$P$ 中的每个产生式都具有 $A \to (V \cup T)^*$ 的形式的语言，其语言称作上下文无关语言（$\text{CFL}$）
+        4. $3$ 型文法 / 正则文法（$\text{RG}$）：每个产生式都形如 $A \to a$ 或 $A \to aB$ 的语言，其中 $a \in T \cup \{\varepsilon\}, A, B \in V$，其语言称作正则语言（$\text{RL}$）
+    2. 谱系定理：在同一字母表（例如取字母表 $\Sigma = \{0, 1\}$）上，各语言类之间存在下列关系
+        1. 正则语言类真包含于上下文无关语言类中：$\text{RL} \subset \text{CFL}$
+        2. 确定的上下文无关语言包含正则语言，但包含于上下文语言之间：$\text{RL} \subset \text{DCFL} \subset \text{CFL}$
+        3. 不含 $\varepsilon$ 的上下文无关语言类真包含于上下文有关语言中：$\text{CFL} \subset \text{CSL} \cup \{\varepsilon\}$
+        4. 上下文有关语言类真包含于递归集中：$\text{CSL} \subset \text{RS}$
+        5. 递归集真包含与递归可枚举集中：$\text{RS} \subset \text{RES}$
+        6. 递归可枚举集之外，还存在非递归可枚举集即任何语言
+
+        <figure markdown>
+            ![](../assets/spec.png)
+            <style> img[src$="spec.png"] { width: 300px; } </style>
+        </figure>
+
 ### 3.2.3 其他句法结构
 1. 传统逻辑：即 $\text{Aristotle}$ 逻辑，其句法结构的基本内容只有假言推理与三段论
     1. 假言推理：反应因果关系的推理，其中因果关系分为客观因果、主观因果和虚拟因果
