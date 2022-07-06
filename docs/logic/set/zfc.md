@@ -222,40 +222,52 @@
 
             其中 $p_\alpha$ 是 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 的第 $\alpha$ 个投射
 
-4. 关系：对于集合 $R$，如果存在 $X, Y$ 使得 $R \subseteq X \times Y$，则称 $R$ 为二元关系，用 $R(x, y)$ 或 $xRy$ 表示 $(x, y) \in R$
-    1. 定义域与值域：定义域定义为 $\mathrm{dom}(R) := \left\{x \mid \exists y \ R(x, y)\right\}$，值域定义为 $\mathrm{ran}(R) := \left\{y \mid \exists x in X \ R(x, y)\right\}$
-    2. 像与逆像：集合 $X$ 在关系 $R$ 下的像定义为 $R[X] := \left\{y \in \mathrm{ran}(R) \mid \exists x \in X \ (R(x, y))\right\}$；集合 $Y$ 在关系 $R$ 下的逆像定义为 $R^{-1}[Y] := \left\{x \in \mathrm{dom}(R) \mid \exists y \in Y \ (R(x, y))\right\}$
+4. 关系：对于集合 $R$，如果存在 $X, Y$ 使得 $R \subseteq X \times Y$，则称 $R$ 为二元关系，用 $R(x, y)$ 或 $xRy$ 表示 $(x, y) \in R$．其中定义域定义为 $\mathrm{dom}(R) := \left\{x \mid \exists y \ R(x, y)\right\}$，值域定义为 $\mathrm{ran}(R) := \left\{y \mid \exists x in X \ R(x, y)\right\}$
+    1. 像与逆像：集合 $X$ 在关系 $R$ 下的像定义为 $R[X] := \left\{y \in \mathrm{ran}(R) \mid \exists x \in X \ (R(x, y))\right\}$；集合 $Y$ 在关系 $R$ 下的逆像定义为 $R^{-1}[Y] := \left\{x \in \mathrm{dom}(R) \mid \exists y \in Y \ (R(x, y))\right\}$
         1. $R[X \cup Y] = R[X] \cup R[Y]$
         2. $R[X \cap Y] \subseteq R[X] \cap R[Y]$
         3. $R[X - Y] \supseteq R[X] - R[Y]$
         4. 对于任意映射 $f$ 有 $f[X \cap Y] \subseteq f[X] \cap f[Y], f^{-1}[X \cap Y] = f^{-1}[X] \cap f^{-1}[Y]$
-    3. 逆关系与复合关系：二元关系 $R$ 的逆定义为 $R^{-1} := \left\{(x, y) \mid R(y, x)\right\}$；复合定义为 $S \circ R = \left\{(x, z) \mid \exists y \ (R(x, y) \wedge S(y, z))\right\}$
+    2. 逆关系与复合关系：二元关系 $R$ 的逆定义为 $R^{-1} := \left\{(x, y) \mid R(y, x)\right\}$；复合定义为 $S \circ R = \left\{(x, z) \mid \exists y \ (R(x, y) \wedge S(y, z))\right\}$
         1. $(R^{-1})^{-1} = R, (S \circ R)^{-1} = R^{-1} \circ S^{-1}$
         2. $X \circ (Y \circ Z) = (X \circ Y) \circ Z$
         3. $(X \cup Y) \circ Z = (X \circ Z) \cup (Y \circ Z), Z \circ (X \cup Y) = (Z \circ X) \cup (Z \circ Y)$
         4. $(X \cap Y) \circ Z \subseteq (X \circ Z) \cap (Y \circ Z), Z \circ (X \cap Y) \subseteq (=- (Z \circ X) \cap (Z \circ Y)$
         5. $\mathrm{dom}(R^{-1}) = \mathrm{ran}(R), \mathrm{ran}(R^{-1}) = \mathrm{dom}(R)$
         6. $\mathrm{dom}(S \circ R) \subseteq \mathrm{dom}(R), \mathrm{ran}(S \circ R) \subseteq \mathrm{ran}(S)$
-    4. $n$ 元关系：对于任一集合 $R$，如果存在 $X_1, X_2, \cdots, X_n$ 使得 $R \subseteq X_1 \times X_2 \times \cdots \times X_n$，则称 $R$ 为 $n$ 元关系，用 $R(X_1, X_2, \cdots, X_n)$ 表示 $(X_1, X_2, \cdots, X_n) \in R$．特别地，如果 $R \subseteq X^n$，则称 $R$ 是 $X$ 上的 $n$ 元关系
-5. 二元关系：令 $R \subseteq X^2$
-    1. 自反性：$R$ 是自反的当且仅当对于任意 $x \in X$ 有 $(x, x) \in R$；$R$ 是反自反的当且仅当对于任意 $x \in X$ 有 $R(x, x) \notin R$
-    2. 对称性：$R$ 是对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \to (y, x) \in R$；$R$ 是反对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \wedge (y, x) \in R \to x = y$
-    3. 传递性：$R$ 是传递的当且仅当对于任意 $x, y, z \in X$ 有 $(x, y) \in R \wedge (y, z) \in R \to (x, z) \in R$
-6. 等价关系：$R$ 是等价的当且仅当 $R$ 是自反、对称且是传递的，用 $\sim$ 表示
+    3. 幂：设 $R^0$ 为 $X$ 上的恒等关系，定义 $R^{n+1} = R^{n} \circ R$，设 $m, n \in \mathbf N$
+        1. $R^m \circ R^n = R^{m+n}$
+        2. $(R^{m})^{n} = R^{mn}$
+    4. 二元关系的性质：令 $R \subseteq X^2$
+        1. 自反性：$R$ 是自反的当且仅当对于任意 $x \in X$ 有 $(x, x) \in R$；$R$ 是反自反的当且仅当对于任意 $x \in X$ 有 $R(x, x) \notin R$
+        2. 对称性：$R$ 是对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \to (y, x) \in R$；$R$ 是反对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \wedge (y, x) \in R \to x = y$
+        3. 传递性：$R$ 是传递的当且仅当对于任意 $x, y, z \in X$ 有 $(x, y) \in R \wedge (y, z) \in R \to (x, z) \in R$
+    5. $n$ 元关系：对于任一集合 $R$，如果存在 $X_1, X_2, \cdots, X_n$ 使得 $R \subseteq X_1 \times X_2 \times \cdots \times X_n$，则称 $R$ 为 $n$ 元关系，用 $R(X_1, X_2, \cdots, X_n)$ 表示 $(X_1, X_2, \cdots, X_n) \in R$．特别地，如果 $R \subseteq X^n$，则称 $R$ 是 $X$ 上的 $n$ 元关系
+5. 等价关系：二元关系 $R$ 是等价的当且仅当 $R$ 是自反、对称且是传递的，用 $\sim$ 表示
     1. 等价类：设 $\sim$ 是集合 $X$ 上的等价关系，对任意 $x \in X$，定义 $x$ 关于 $\sim$ 的等价类为 $[x]_{\sim} := \left\{t \in X \mid t \sim x\right\}$
-        1. 对任意 $x, y \in X$，有 $[x]_{\sim} = [y]_{\sim}$ 或 $[x]_{\sim} \cap [y]_{\sim} = \varnothing$ 成立
-        2. 商集：设 $\sim$ 是集合 $X$ 上的等价关系，则 $X / \sim = \left\{[x]_{\sim} \mid x \in X\right\}$ 称为 $X$ 的商集．易知 $X / \sim$ 是 $X$ 的一个划分
+        1. 商集：设 $\sim$ 是集合 $X$ 上的等价关系，则 $X / \sim = \left\{[x]_{\sim} \mid x \in X\right\}$ 称为 $X$ 的商集．易知 $X / \sim$ 是 $X$ 的一个划分
+        2. 对任意 $x, y \in X$，有 $[x]_{\sim} = [y]_{\sim}$ 或 $[x]_{\sim} \cap [y]_{\sim} = \varnothing$ 成立
     2. 划分：令 $X$ 为一个集合，$S \subseteq \mathcal P(X)$，如果 $S$ 有 ① 对所有 $a, b \in S$，有 $a \neq b \to a \cap b = \varnothing$；② $\bigcup S = X$，则称 $S$ 是 $X$ 的划分
+        1. 令 $S$ 为 $X$ 的划分，定义 $X$ 上的二元关系 $\sim_S = \left\{(x, y) \in X^2 \mid \exists c \in S \ (s \in c \wedge y \in c)\right\}$，易知 $\sim_S$ 是等价关系
 
-        !!! note "等价关系与划分的对应"
-            令 $S$ 为 $X$ 的划分，定义 $X$ 上的二元关系 $~_S = \left\{(x, y) \in X^2 \mid \exists c \in S \ (s \in c \wedge y \in c)\right\}$
+            !!! note "等价关系与划分的对应"
+                1. 设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，则 $\sim_1 = \sim_2$ 当且仅当 $X / \sim_1 = X / \sim_2$
+                2. 设 $\sim$ 为 $X$ 上的等价关系，则 $\sim_{X / \sim} = \sim$ 且 $X / \sim_S = S$
 
-            1. $\sim_S$ 是等价关系，且 $X / \sim_S = S$
-            2. 如果 $\sim$ 是 $X$ 上的等价关系且 $S = X / \sim$，则 $\sim_S = \sim$
+                总而言之，集合 $X$ 上的所有等价关系与划分形成一一对应
 
-            总而言之，集合 $X$ 上的所有等价关系与划分形成一一对应
+        2. 划分的积：设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，对应的划分为 $S_1, S_2$．定义 $S_1 \cdot S_2 = X / (\sim_1 \cap \sim_2)$ 为划分的积，其中 $\sim_1 \cap \sim_2$ 为等价关系
+        3. 划分的和：设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，对应的划分为 $S_1, S_2$．定义 $S_1 + S_2 = X / \left(\overline{\sim_1 \cup \sim_2}\right)$ 为划分的和，其中 $\sim_1 \cup \sim_2$ 为自反对称关系
 
-7. 序：令 $\prec, \leqslant$ 为 $X$ 上的二元关系
+    3. 细分：设 $R_1, R_2 \subseteq X^2$ 为两个二元关系，如果 $R_1 \subseteq R_2$，则称 $R_1$ 细分 $R_2$
+        1. 对任意 $x, y \in X$，有 $x R_1 y \to x R_2 y$
+        2. 如果 $R_1, R_2$ 都是等价关系，则对任何 $x \in X$，$x$ 对 $R_1$ 的等价类包含在 $x$ 对 $R_2$ 的等价类中
+        3. 设 $S_1, S_2$ 是 $X$ 的两个划分，则
+            - $S_1 \cdot S_2$ 细分 $S_1$ 与 $S_2$，$S_1$ 与 $S_2$ 细分 $\overline{S_1 \cup S_2}$
+            - 设 $S$ 为 $X$ 的划分，若 $S$ 细分 $S_1$ 与 $S_2$，则 $S$ 细分 $S_1 \cdot S_2$
+            - 设 $S$ 为 $X$ 的划分，若 $S_1$ 与 $S_2$ 细分 $S$，则 $S_1 + S_2$ 细分 $S$
+
+6. 序：令 $\prec, \leqslant$ 为 $X$ 上的二元关系
     1. 拟序：如果 $\prec$ 具有自反性与传递性，则称 $\prec$ 是 $X$ 上的拟序
     2. 偏序：如果拟序关系 $\leqslant$ 具有反对称性，则称 $\leqslant$ 是 $X$ 上的偏序或序，用 $(X, \leqslant)$ 表示
         1. 用 $x \geqslant y$ 表示 $x \leqslant^{-1} y$；用 $x < y$ 表示 $x \leqslant y \wedge x \neq y$，用 $x > y$ 表示 $x \geqslant y \wedge x \neq y$
@@ -275,9 +287,7 @@
         1. 全序集的任意两个元素是可比较的
         2. 全序集中极小元与最小元、极大元与最大元是同一的
 
-8. 细分：设 $R_1, R_2 \subseteq X^2$ 为两个二元关系，如果 $R_1 \subseteq R_2$，则称 $R_1$ 细分 $R_2$
-    1. 对任意 $x, y \in X$，有 $x R_1 y \to x R_2 y$
-    2. 如果 $R_1, R_2$ 都是等价关系，则对任何 $x \in X$，$x$ 对 $R_1$ 的等价类包含在 $x$ 对 $R_2$ 的等价类中
+7. 关系的闭包
 
 ### 1.2.2 映射
 1. 二元关系 $f$ 若有 $(x, y) \in f \wedge (x, z) \in f \to y = x$，则称 $f$ 是一个映射，其中 $y$ 称作 $f$ 在 $x$ 处的值，记作 $f(x) = y$ 或 $f: x \mapsto y$．如果 $\mathrm{dom}(f) = X, \mathrm{ran}(f) \subseteq Y$，则称 $f$ 是 $X$ 到 $Y$ 的映射，记作 $f: X \to Y$
@@ -285,7 +295,7 @@
     2. 部分映射：在定义域的某些点上没有定义的映射
     3. 映射的等同：令 $f, g$ 为映射，$f = g$ 当且仅当 $\mathrm{dom}(f) = \mathrm{dom}(g)$ 且对于所有 $x \in \mathrm{dom}(f)$ 都有 $f(x) = g(x)$
 2. 映射例举
-    1. 等同映射：对任意集合 $X$ 定义 $\mathrm{id}_X: X \to X$ 为 $\mathrm{id}_X(x) := x$
+    1. 等同映射：对任意集合 $X$ 定义 $\mathrm{id}_X: X \to X$ 为 $\mathrm{id}_X(x) := x$，作为关系被称为 $X$ 上的恒等关系
     2. 特征映射：对任意集合 $X$ 定义特征映射（或示性映射）$f_X(x) := \left\{\begin{aligned} & 1, & x \in X \\ & 0, & x \notin X \end{aligned}\right.$
 3. 映射的种类：设 $f: X \to Y$ 是一个映射
     1. 单射：对于所有的 $x_1, x_2 \in X$，若 $x_1 \neq x_2$，则 $f(x_1) \neq f(x_2)$
