@@ -232,7 +232,7 @@
         1. $(R^{-1})^{-1} = R, (S \circ R)^{-1} = R^{-1} \circ S^{-1}$
         2. $X \circ (Y \circ Z) = (X \circ Y) \circ Z$
         3. $(X \cup Y) \circ Z = (X \circ Z) \cup (Y \circ Z), Z \circ (X \cup Y) = (Z \circ X) \cup (Z \circ Y)$
-        4. $(X \cap Y) \circ Z \subseteq (X \circ Z) \cap (Y \circ Z), Z \circ (X \cap Y) \subseteq (=- (Z \circ X) \cap (Z \circ Y)$
+        4. $(X \cap Y) \circ Z \subseteq (X \circ Z) \cap (Y \circ Z), Z \circ (X \cap Y) \subseteq (Z \circ X) \cap (Z \circ Y)$
         5. $\mathrm{dom}(R^{-1}) = \mathrm{ran}(R), \mathrm{ran}(R^{-1}) = \mathrm{dom}(R)$
         6. $\mathrm{dom}(S \circ R) \subseteq \mathrm{dom}(R), \mathrm{ran}(S \circ R) \subseteq \mathrm{ran}(S)$
     3. 幂：设 $R^0$ 为 $X$ 上的恒等关系，定义 $R^{n+1} = R^{n} \circ R$，设 $m, n \in \mathbf N$
@@ -257,13 +257,13 @@
                 总而言之，集合 $X$ 上的所有等价关系与划分形成一一对应
 
         2. 划分的积：设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，对应的划分为 $S_1, S_2$．定义 $S_1 \cdot S_2 = X / (\sim_1 \cap \sim_2)$ 为划分的积，其中 $\sim_1 \cap \sim_2$ 为等价关系
-        3. 划分的和：设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，对应的划分为 $S_1, S_2$．定义 $S_1 + S_2 = X / \left(\overline{\sim_1 \cup \sim_2}\right)$ 为划分的和，其中 $\sim_1 \cup \sim_2$ 为自反对称关系
+        3. 划分的和：设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，对应的划分为 $S_1, S_2$．定义 $S_1 + S_2 = X / \left(t(\sim_1 \cup \sim_2)\right)$ 为划分的和，其中 $\sim_1 \cup \sim_2$ 为自反对称关系
 
     3. 细分：设 $R_1, R_2 \subseteq X^2$ 为两个二元关系，如果 $R_1 \subseteq R_2$，则称 $R_1$ 细分 $R_2$
         1. 对任意 $x, y \in X$，有 $x R_1 y \to x R_2 y$
         2. 如果 $R_1, R_2$ 都是等价关系，则对任何 $x \in X$，$x$ 对 $R_1$ 的等价类包含在 $x$ 对 $R_2$ 的等价类中
         3. 设 $S_1, S_2$ 是 $X$ 的两个划分，则
-            - $S_1 \cdot S_2$ 细分 $S_1$ 与 $S_2$，$S_1$ 与 $S_2$ 细分 $\overline{S_1 \cup S_2}$
+            - $S_1 \cdot S_2$ 细分 $S_1$ 与 $S_2$，$S_1$ 与 $S_2$ 细分 $t(S_1 \cup S_2)$
             - 设 $S$ 为 $X$ 的划分，若 $S$ 细分 $S_1$ 与 $S_2$，则 $S$ 细分 $S_1 \cdot S_2$
             - 设 $S$ 为 $X$ 的划分，若 $S_1$ 与 $S_2$ 细分 $S$，则 $S_1 + S_2$ 细分 $S$
 
@@ -287,7 +287,33 @@
         1. 全序集的任意两个元素是可比较的
         2. 全序集中极小元与最小元、极大元与最大元是同一的
 
-7. 关系的闭包
+7. 关系的闭包：设 $R \subseteq X^2$ 的二元关系，定义 $R$ 的自反（对称、传递）闭包 $R'$，满足下列条件
+    1. $R'$ 是自反的（对称的、传递的）
+    2. $R \subseteq R'$
+    3. 对任一自反（对称、传递）关系 $R''$，若 $R \subseteq R''$，则 $R' \subseteq R''$
+
+    分别记三种 $R'$ 为 $r(R), s(R)$ 与 $t(R)$
+
+    1. 设 $R \subseteq X^2$ 为二元关系
+        1. $R$ 是自反的当且仅当 $r(R) = R$
+        2. $R$ 是对称的当且仅当 $s(R) = R$
+        3. $R$ 是传递的当且仅当 $t(R) = R$
+    2. 设 $R_1, R_2 \subseteq X^2$ 且 $R_1 \subseteq R_2$，则
+        1. $r(R_1) \subseteq r(R_2)$
+        2. $s(R_1) \subseteq s(R_2)$
+        3. $t(R_1) \subseteq t(R_2)$
+    3. 设 $R \subseteq X^2$ 为二元关系
+        1. $R$ 是自反的，则 $s(R)$ 与 $t(R)$ 都是自反的
+        2. $R$ 是对称的，则 $r(R)$ 与 $t(R)$ 都是对称的
+        3. $R$ 是传递的，则 $r(R)$ 是传递的
+    4. 设 $R \subseteq X^2$ 为二元关系
+        1. $r(s(R)) = s(r(R))$
+        2. $r(t(R)) = t(r(R))$
+        3. $s(t(R)) \subseteq t(s(R))$
+    5. 求闭包的一般表达式：设 $R \subseteq X^2$ 为二元关系
+        1. 设 $I_X$ 为集合 $X$ 上的恒等关系，则 $r(R) = R \cup I_X$
+        2. $s(R) = R \cup R^{-1}$
+        3. $t(R) = {\displaystyle \bigcup_{n \in \mathbf Z_+} R^n}$，进一步当 $|X| = n \in \mathbf Z_+$ 时，则 $t(R) = {\displaystyle \bigcup_{i=1}^n R^i}$
 
 ### 1.2.2 映射
 1. 二元关系 $f$ 若有 $(x, y) \in f \wedge (x, z) \in f \to y = x$，则称 $f$ 是一个映射，其中 $y$ 称作 $f$ 在 $x$ 处的值，记作 $f(x) = y$ 或 $f: x \mapsto y$．如果 $\mathrm{dom}(f) = X, \mathrm{ran}(f) \subseteq Y$，则称 $f$ 是 $X$ 到 $Y$ 的映射，记作 $f: X \to Y$
