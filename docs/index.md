@@ -234,15 +234,6 @@ const refList = [
         page: [56, 377]
     },
     {
-        author: ["许胤龙", " 孙淑玲"],
-        title: "组合数学引论",
-        type: "M",
-        press: "中国科学技术大学出版社",
-        locate: "合肥",
-        year: 2010,
-        page: [6, 171]
-    },
-    {
         author: ["胡典顺", "徐汉文"],
         title: "初等数论",
         type: "M",
@@ -302,6 +293,16 @@ const refList = [
         plot: 0
     },
     {
+        author: ["赵一鸣", "阚海斌", "吴永辉"],
+        title: "离散数学",
+        type: "M",
+        press: "人民邮电出版社",
+        locate: "北京",
+        year: 2011,
+        page: [2, 141],
+        plot: 87
+    },
+    {
         author: ["陈有祺"],
         title: "形式语言与自动机",
         type: "M",
@@ -309,7 +310,7 @@ const refList = [
         locate: "上海",
         year: 2008,
         page: [1, 227],
-        plot: 91
+        plot: 101
     },
     {
         author: ["Rob Nederpelt", "Herman Geuvers"],
