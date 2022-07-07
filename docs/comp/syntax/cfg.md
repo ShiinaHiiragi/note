@@ -1,9 +1,66 @@
 # 3 上下文无关文法
 
 ## 3.1 下推自动机
+1. 下推自动机（$\text{PDA}$）是一个七元组 $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$，其中
+    - $Q$ 是有穷状态机
+    - $\Sigma$ 是有穷的输入字母表
+    - $\Gamma$ 是有穷的栈符号表
+    - $\delta: Q \times (\Sigma \cup \{\varepsilon\}) \times \Gamma \to (Q \times \Gamma)^*$ 是转移函数
+    - $q_0 \in Q$ 是初始状态
+    - $Z_0$ 是栈底符号
+    - $F \subseteq Q$ 是终结状态集
+
+    <figure markdown>
+        ![](../assets/pda.png)
+        <style> img[src$="pda.png"] { width: 420px; } </style>
+        <p style="font-size: 80px;"> \$ </p>
+    </figure>
+
+    1. 转移函数的一般形式为 $\delta(q, a, Z) = \{(p_1, \gamma_1), (p_2, \gamma_2), \cdots, (p_m, \gamma_m)\}$，其中 $q \in Q, a \in \Sigma \cup \{\varepsilon\}, Z \in \Gamma, p_i \in Q$ 且有 $\gamma_i \in \Gamma^* \ (i = 1, 2, \cdots, m, m \geqslant 0)$，表示当下推自动机的当前状态为 $q$，读头读到输入符号为 $a$ 且栈顶符号为 $Z$ 时
+        1. 转移函数执行后状态变为 $p_i$
+        2. 栈顶符号由 $Z$ 变为 $\gamma_i$
+        3. 当 $a \in \Sigma$ 时，读头越过输入符号 $a$；当 $a = \varepsilon$ 时，读头保持不动
+    2. 瞬时描述（$\text{ID}$）：下推自动机的一个瞬时描述是一个三元组 $(q, w, r)$，其中 $q$ 为下推自动机的当前状态，$w$ 为尚未读入的输入符号串，$\gamma$ 为当前在栈中的符号串
+        1. 当下推自动机执行一次 $\delta$ 动作后，由一个瞬时描述 $\text{ID}_i$ 转换到下一个瞬时描述 $\text{ID}_{i+1}$，记作 $\text{ID}_i \vdash_M \text{ID}_{i+1}$，在不引发歧义的情况下，$M$ 可以省略
+        2. 用 $\vdash_M^*$ 表示任意多次转换，由归纳法定义
+            - 对任何瞬时描述 $I$，都有 $I \vdash_M^* I$
+            - 如果存在某个瞬时描述 $K$，使得 $I \vdash_M^* K$ 与 $K \vdash_M^* J$，则 $I \vdash_M^* J$
+
+            即存在瞬时描述序列 $K_1, K_2, \cdots, K_n$ 使得 $I = K_1, J = K_n$，且对于任意 $1 \leqslant i < n$ 都有 $K_i \vdash_M^* K_{i+1}$，则有 $I \vdash_M^* J$
+
+2. 下推自动机接受的语言
+    1. 接收方式
+        1. 设 $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$ 是一个下推自动机，集合
+
+            $$
+            L(M) = \left\{w \mid (q_0, w, Z_0) \vdash^* (p, \varepsilon, \gamma), w \in \Sigma^*, p \in F, \gamma \in \Gamma^*\right\}
+            $$
+
+            称为 $M$ 按终结状态方式接受的语言
+
+        2. 设 $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$ 是一个下推自动机，集合
+
+            $$
+            N(M) = \left\{w \mid (q_0, w, Z_0) \vdash^* (p, \varepsilon, \varepsilon), w \in \Sigma^*, p \in Q\right\}
+            $$
+
+            称为 $M$ 按空栈方式接受的语言
+
+    2. 等价性
+        1. 对于某个按终结状态方式接受语言的下推自动机 $M_1$，存在一个按空栈方式接受语言的下推自动机 $M_2$ 使得 $N(M_2) = L(M_1)$
+        2. 对于某个按空栈方式接受语言的下推自动机 $M_1$，存在一个按终结状态方式接受语言的下推自动机 $M_2$ 使得 $L(M_2) = N(M_1)$
+
+3. 确定的下推自动机：一个下推自动机 $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$ 若有
+    1. 对于每个 $q \in Q, a \in \Sigma \cup \{\varepsilon\}, A \in \Gamma$，$\delta(q, a, A)$ 至多包含一个元素
+    2. 对于每个 $a \in \Sigma$，若 $\delta(q, a, A)$ 非空，则 $\delta(q, \varepsilon, A)$ 为空\
+
+    则称 $M$ 为确定的下推自动机（$\text{DPDA}$），其接受的语言称为确定的上下文无关语言（$\text{DCFL}$）
 
 ## 3.2 上下文无关语言
-1. 语法分析树：上下文无关文法 $G = (V, T, P, S)$ 满足下列要求的一棵树称为关于 $G$ 的语法分析树
+1. 下推自动机与上下文无关文法的等价性
+    1. 设 $L$ 是一个上下文无关文法，则存在一个下推自动机 $M$ 使得 $N(M) = L$
+    2. 给定一个下推自动机 $N$，则 $N(M)$ 是上下文无关文法
+2. 语法分析树：上下文无关文法 $G = (V, T, P, S)$ 满足下列要求的一棵树称为关于 $G$ 的语法分析树
     1. 树的每个节点带有一个 $V \cup T \cup \{\varepsilon\}$ 的符号标记：根结点的标记是 $S$，树的非叶结点只能以 $V$ 中符号作为标记
     2. 如果结点 $n$ 带有标记 $A$，结点 $n_1, n_2, \cdots, n_k$ 是结点 $n$ 从左到右的子结点并分别带有标记 $X_1, X_2, \cdots, X_k$，则 $A \to X_1 X_2 \cdots X_k$ 必须是 $P$ 中的一个产生式
     3. 如果结点带有标记 $\varepsilon$，则该结点是其父结点唯一的叶结点
@@ -15,7 +72,7 @@
         1. 如果某些上下文无关语言，无论用什么上下文无关文法去产生，该文法都是有二义性的，则称这种语言为固有二义性的上下文无关语言
         2. 对于上下文无关文法 $G$，如果从开始符号 $S$ 推高过程的每一步都只能替换句型中最左边的变元，则称此推导过程为最左推导；如果从开始符号 $S$ 推高过程的每一步都只能替换句型中最右边的变元，则称此推导过程为最右推导
 
-2. 上下文无关文法的化简
+3. 上下文无关文法的化简
     1. 设 $G = (V, T, P, S)$ 是一个上下文无关文法
         1. 无用符号：定义两类符号 $X$ 为无用符号：
             - $X \in V \cup T$，但 $X$ 不出现在任何由 $S$ 推导出的字符串中
@@ -26,7 +83,7 @@
         1. 给出上下文无关文法 $G = (V, T, P, S)$，且 $L(G) \neq \varnothing$．则存在与 $G$ 等价的文法 $G' = (V', T, P', S)$ 使得对 $V'$ 中的每一个 $A$ 都有 $A \overset{*}{\Rightarrow} w \ (w \in T^*)$
         2. 给出上下文无关文法 $G = (V, T, P, S)$，存在一个与 $G$ 等价的文法 $G' = (V', T', P', S)$ 使得对 $V' \cup T'$ 中的每一个 $X$ 都有 $S \overset{*}{\Rightarrow} \alpha X \beta \ (\alpha, \beta \in (V' \cup T')^*)$
         3. 给出上下文无关文法 $G = (V, T, P, S)$，则对任何 $A \in V$，$A$ 是否可为空是可判定的
-3. 上下文无关语言的范式
+4. 上下文无关语言的范式
     1. $\text{Chomsky}$ 范式（$\text{CNF}$ 定理）：任何不含 $\varepsilon$ 的上下无关语言，都可由产生式仅为 $A \to BC$ 或 $A \to a$ 形式的文法产生，其中 $A, B, C \in V, a \in T$
     2. $\text{Greibach}$ 范式（$\text{GNF}$ 定理）：任何不含 $\varepsilon$ 的上下无关语言，都可由产生式仅为 $A \to a \alpha$ 形式的文法产生，其中 $a \in T, \alpha \in V^+ \cup \{\varepsilon\}$
         1. 设 $G = (V, T, P, S)$ 是一个上下文无关文法，从 $P$ 中删除形如 $A \to \alpha_1 B \alpha_2$（$A, B \in V, \alpha_1, \alpha_2 \in (V \cup T)^*$，且有 $B \to \beta_1 \mid \beta_2 \mid \cdots \mid \beta_r$）的产生式，增加一组 $A \to \alpha_1 \beta_1 \alpha_2 \mid \alpha_1 \beta_2 \alpha_2 \mid \cdots \mid \alpha_1 \beta_r \alpha_2$ 后，所得的文法 $G_1$ 与 $G_2$ 等价
@@ -52,4 +109,19 @@
 
             来替换，所得的文法 $G'$ 与 $G$ 等价
 
-## 3.3 确定上下文无关语言
+5. 泵引理：对每个上下文无关语言 $L$，都存在 $k \in \mathbf N$ 使得对每一个 $z \in L$，只要 $|Z| \geqslant k$，就可将 $z$ 划分为五个子串 $z = uvwxy$，其中 $|vx| \geqslant 1, |vwx| \leqslant k$，且对于任何 $i \geqslant 0$ 都有 $uv^i wx^i y \in L$
+    1. 泵引理的逆否形式：设 $L$ 是一个字符串的集合，假设对一切 $k \in \mathbf N$，存在 $z \in L$，只要 $|Z| \geqslant k$，将 $z$ 划分为五个子串 $z = uvwxy$，其中 $|vx| \geqslant 1, |vwx| \leqslant k$，并有某个 $i \geqslant 0$ 使得 $uv^i wx^i y \notin L$，则 $L$ 不是上下文无关语言
+    2. $\text{Ogden}$ 引理：对每个上下文无关语言 $L$，都存在 $k \in \mathbf N$，对每个 $z \in L$，在 $z$ 中标出不少于 $k$ 个的特殊位置，将 $z$ 写成 $z = uvwxy$ 且满足
+        1. $v$ 或 $x$ 中至少有一个符号处于特殊位置
+        2. $vwx$ 中至多有 $k$ 个符号处于特殊位置
+
+        则对于任何 $i \geqslant 0$，$uv^i wx^i y \in L$
+
+6. 封闭性：设 $L_1, L_2$ 是两个上下文无关语言
+    1. $L_1 L_2$ 与 $L_1^*$ 是上下文无关语言
+    2. $L_1 \cup L_2$ 是上下文无关语言
+    3. $L_1 \cap L_2$ 与 $\Sigma^* - L_1$ 不一定是上下文无关语言
+    4. 设 $R$ 是一个正则语言，则 $L \cap R$ 是上下文无关语言
+7. 可判定性：对于给定的上下文无关文法 $G = (V, T, P, S)$
+    1. $L(G)$ 是否为空集或是否为有穷集是可判定的
+    2. 成员资格问题：给定一个字符串 $x$，则 $x \in L(G)$ 是否成立是可判定的
