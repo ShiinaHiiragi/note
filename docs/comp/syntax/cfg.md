@@ -13,7 +13,6 @@
     <figure markdown>
         ![](../assets/pda.png)
         <style> img[src$="pda.png"] { width: 420px; } </style>
-        <p style="font-size: 80px;"> \$ </p>
     </figure>
 
     1. 转移函数的一般形式为 $\delta(q, a, Z) = \{(p_1, \gamma_1), (p_2, \gamma_2), \cdots, (p_m, \gamma_m)\}$，其中 $q \in Q, a \in \Sigma \cup \{\varepsilon\}, Z \in \Gamma, p_i \in Q$ 且有 $\gamma_i \in \Gamma^* \ (i = 1, 2, \cdots, m, m \geqslant 0)$，表示当下推自动机的当前状态为 $q$，读头读到输入符号为 $a$ 且栈顶符号为 $Z$ 时
