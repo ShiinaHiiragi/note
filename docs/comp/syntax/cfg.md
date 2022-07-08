@@ -124,3 +124,21 @@
 7. 可判定性：对于给定的上下文无关文法 $G = (V, T, P, S)$
     1. $L(G)$ 是否为空集或是否为有穷集是可判定的
     2. 成员资格问题：给定一个字符串 $x$，则 $x \in L(G)$ 是否成立是可判定的
+8. 不可判定性
+    1. 有效计算历史：给定 $\text{Turing}$ 机 $M$ 与输入串 $x$，定义 $M$ 在 $x$ 上的有效计算历史 $\text{VALCOMPH}(M, x)$ 是形如 $\sharp \alpha_0 \sharp \alpha_1^R \sharp \alpha_2 \sharp \alpha_3^R \sharp \cdots \sharp \alpha_N \sharp$ 的字符串，其中 $\alpha_i \ (i = 0, 1, \cdots, N)$ 是 $M$ 在 $x$ 上的瞬时描述，$\alpha_0$ 是初始瞬时描述，$\alpha_N$ 是 $M$ 在 $x$ 上到达接受状态或拒绝状态时的瞬时描述，对于任何 $0 \leqslant i < N$ 有 $\alpha_i \vdash_M \alpha_{i+1}$，$\sharp$ 是一个用于分隔的，区别于 $M$ 的带符号和状态符号的特殊符号
+        1. 给定 $\text{Turing}$ 机 $M$ 与输入串 $x$，其无效计算集合（即 $\text{VALCOMPH}(M, x)$ 关于 $(\Gamma \cup Q \cup \{\sharp\})^*$ 的补集）$\text{INVALCOMPS}(M, x)$ 是一个上下文无关语言
+        2. 对于任意给定的上下文无关文法 $G = (V, T, P, S)$，$L(G) = T^*$ 是否成立的问题是不可判定的
+        3. 设 $G_1, G_2$ 是任意两个 $\Sigma$ 上的上下文无关文法，$R$ 是任意一个正则语言，则下列命题是否成立是不可判定的
+            - $L(G_1) = L(G_2)$
+            - $L(G_2) \subseteq L(G_1)$
+            - $L(G_1) = R$
+            - $R \subseteq L(G_1)$
+            - $L(G_1) \cap L(G_2) = \varnothing$
+            - $\Sigma^* - L(G_1)$ 是一个上下文无关语言
+            - $L(G_1) \cap L(G_2)$ 是一个上下文无关语言
+        4. 给定 $\text{Turing}$ 机 $M$，其可接受计算集合 $\text{ACCOMPS}(M) = \{\text{VALCOMPH}(M, x) \mid x \in L(M) \}$ 是两个上下文无关语言的交集，其补集是一个上下文无关语言
+        5. 设 $\text{Turing}$ 机在每个输入串上至少能做两个动作，则 $L(M)$ 有穷当且仅当 $\text{ACCOMPS}(M)$ 是一个上下文无关语言
+    2. $\text{Post}$ 对应问题（$\text{PCP}$）：$\text{PCP}$ 的一个实例是包含在字母表 $\Sigma$ 上的两个字符串表 $A = w_1, w_2, \cdots, w_k$ 与 $B = x_1, x_2, \cdots, x_k$，其中 $w_i, x_i \in \Sigma^* \ (i = 1, 2, \cdots, k, k \geqslant 1)$．若存在一个整数序列 $i_1, i_2, \cdots, i_m \ (m \geqslant 1)$，使得 $w_{i_1} w_{i_2} \cdots w_{i_m} = x_{i_1} x_{i_2} \cdots x_{i_m}$，则称 $\text{PCP}$ 的这个实例有解，且 $i_1, i_2, \cdots, i_m$ 是一组解
+        1. $\text{PCP}$ 是不可判定的
+        2. 如果 $\text{PCP}$ 是可判定的，则 $\text{MPCP}$（$\text{PCP}$ 的修正型，即在 $\text{PCP}$ 问题中要求 $i_1 = 1$）是可判定的
+        3. 对任意给出的一个上下文无关文法 $G$，$G$ 是否具有二义性是不可判定的

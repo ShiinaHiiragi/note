@@ -64,7 +64,7 @@
         后面紧接 $M$ 的 $\delta$ 函数编码，$\delta(p, a) = (q, b, R)$ 的编码为 $0
         ^p 1 0^a 1 0^q 1 0^b 100$，$0^p, 0^a, 0^q, 0^b$ 分别表示 $p, a, q, b$ 的编码．每个函数项之间用 $1$ 隔开，最后用 $11$ 表示 $\text{Turing}$ 机编码结束
 
-    2. 通用 $\text{Turing}$ 机 $U$ 接受的集合为 $L(U) = \{M \# x \mid x \in L(M)\}$，其中 $M$ 是 $\text{Turing}$ 机编码，$x$ 是 $M$ 的输入串，$\#$ 作为特殊符号用于隔开 $M$ 与 $x$
+    2. 通用 $\text{Turing}$ 机 $U$ 接受的集合为 $L(U) = \{M \sharp x \mid x \in L(M)\}$，其中 $M$ 是 $\text{Turing}$ 机编码，$x$ 是 $M$ 的输入串，$\sharp$ 作为特殊符号用于隔开 $M$ 与 $x$
 
 4. $\text{Turing}$ 机与短语结构文法的等价性
     1. 设 $G$ 是一个短语结构文法，则存在一个 $\text{Turing}$ 机 $M$ 使得 $L(M) = L(G)$
