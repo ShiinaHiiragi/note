@@ -21,10 +21,14 @@
     1. $r$ 进制转换为十进制：将 $r$ 进制每一位乘以其权后相加
 
         $$
-        (n)_r = n_k \times r^k + n_{k-1} \times r^{k-1} + \cdots + n_1 \times r_1 + n_0 \times r_0 + n_{-1} \times r^{-1} + \cdots + n_{-l} \times r^{-l}
+        (n)_r = \pm \ n_k \times r^k + n_{k-1} \times r^{k-1} + \cdots + n_1 \times r_1 + n_0 \times r_0 + n_{-1} \times r^{-1} + \cdots + n_{-l} \times r^{-l}
         $$
 
     2. 十进制转换为 $r$ 进制：整数部分除 $r$ 取余，小数部分乘 $r$ 取整，然后合并两个部分
+
+3. 实数的十进制小数表示：对于任意 $x \in \mathbf R$，根据实数集的 $\text{Archimedes}$ 性质，取符合 $p \leqslant x$ 的最大整数 $p$，当 $p_0, p_1, \cdots, p_{k-1}$ 选定时，取符合 $p_0 + \dfrac{p_1}{10} + \cdots + \dfrac{n_k}{10^k} \leqslant x$ 的最大整数 $p_k$．令 $E = \left\{\left. p_0 + \dfrac{p_1}{10} + \cdots + \dfrac{n_k}{10^k} \right| k = 0, 1, 2, \cdots \right\}$，于是有 $x = \sup E$
+    1. 用十进制小数表示实数是一种潜无穷表示法
+    2. 一个可以表示为一个有限小数的实数有两个十进制表示，例如 $\{\varnothing\} = 1.\dot 0 = 0.\dot 9$．而一个自然数有唯一的十进制表示
 
 ## 3.2 整除理论
 ### 3.2.1 算术基本定理

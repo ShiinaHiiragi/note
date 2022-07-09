@@ -458,11 +458,12 @@
     1. $f$ 是单射且 $f(0_{\mathbf Z}) = 0_{\mathbf Q}$
     2. 对任意 $a, b \in \mathbf Z$ 有 $a \leqslant_{\mathbf Z} b$ 当且仅当 $f(a) \leqslant_{\mathbf Q} f(b)$
     3. 对任意 $a, b \in \mathbf Z$ 有 $f(a +_{\mathbf Z} b) = f(a) +_{\mathbf Q} f(b)$ 且 $f(a \cdot_{\mathbf Z} b) = f(a) \cdot_{\mathbf Q} f(b)$
-5. $\text{Archimedes}$ 性质：$\forall r \in \mathbf Q \ \exists k \in \mathbf N \ (|r| \leqslant_{\mathbf Q} k_{\mathbf Q})$
-6. 稠密性：如果全序集 $(X, <)$ 至少有两个元素，且对任意 $a, b \in X$，如果 $a < b$，则存在 $x \in X$ 有 $a < x < b$
-    1. 有理数集合 $(\mathbf Q, <)$ 是稠密的
-    2. 令 $(P, <_P)$ 为可数的无端点稠密线序，则 $(P, <_p)$ 与 $(\mathbf Q, <)$ 同构
-7. 分数：设 $p = [(a, b)] \in \mathbf Q$，则定义分数 $p := \dfrac{a}{b}$，读作 $b$ 分之 $a$．其中 $b$ 称作分母，$a$ 称作分子
+5. 有理数集的性质
+    1. $\text{Archimedes}$ 性质：$\forall r \in \mathbf Q \ \exists k \in \mathbf N \ (|r| \leqslant_{\mathbf Q} k_{\mathbf Q})$
+    2. 稠密性：如果全序集 $(X, <)$ 至少有两个元素，且对任意 $a, b \in X$，如果 $a < b$，则存在 $x \in X$ 有 $a < x < b$
+        1. 有理数集合 $(\mathbf Q, <)$ 是稠密的
+        2. 令 $(P, <_P)$ 为可数的无端点稠密线序，则 $(P, <_p)$ 与 $(\mathbf Q, <)$ 同构
+6. 分数：设 $p = [(a, b)] \in \mathbf Q$，则定义分数 $p := \dfrac{a}{b}$，读作 $b$ 分之 $a$．其中 $b$ 称作分母，$a$ 称作分子
     1. 既约分数：满足 $(a, b) = 1$ 的分数
         1. 约分：将任一分数化作既约分数的过程
         2. 通分：把异分母分数化作与原分数相等的同分母分数
@@ -525,19 +526,11 @@
     \end{aligned}\right.
     $$
 
-
-    !!! note "十进制小数与实数的关系"
-        设 $x = a_0.a_1 a_2 \cdots a_n \cdots \in \mathbf R$，其中 $a_0 \in \mathbf Z$，$a_i \ (i = 1, 2, \cdots, n \cdots)$ 是十进制数码．对于任意 $x \in \mathbf R$，取符合 $a_{\mathbf R} \leqslant_{\mathbf R} x$ 的最大整数 $a$，当 $a_0, a_1, \cdots, a_{k-1}$ 选定时，取符合 $(a_0)_{\mathbf R} + \left(\dfrac{a_1}{10_{\mathbf Z}}\right)_{\mathbf R} + \cdots + \left(\dfrac{a_k}{(10_{\mathbf Z})^k}\right)_{\mathbf R} \leqslant_{\mathbf R} x$ 的最大整数 $a_k$．令
-
-        $$
-        E = \left\{\left. (a_0)_{\mathbf R} + \left(\dfrac{a_1}{10_{\mathbf Z}}\right)_{\mathbf R} + \cdots + \left(\dfrac{a_k}{(10_{\mathbf Z})^k}\right)_{\mathbf R} \right| \ k = 0, 1, 2, \cdots \right\}
-        $$
-
-        于是 $x = \sup(E)$，这说明用小数表示实数是一种潜无穷表示法
-
-8. 最小上界性质：全序集 $(X, \leqslant)$ 如果有对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界，则称 $X$ 有最小上界性质
-    1. 有理数集合 $(\mathbf Q, \leqslant_{\mathbf Q})$ 没有最小上界性质
-    2. 实数集合 $(\mathbf R, \leqslant_{\mathbf R})$ 有最小上界性质
+8. 实数集的性质
+    1. $\text{Archimedes}$ 性质：$\forall x \in \mathbf R \ \exists r \in \mathbf Q \ (|x| \leqslant_{\mathbf R} r_{\mathbf R})$
+    2. 最小上界性质：全序集 $(X, \leqslant)$ 如果有对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界，则称 $X$ 有最小上界性质
+        1. 有理数集合 $(\mathbf Q, \leqslant_{\mathbf Q})$ 没有最小上界性质
+        2. 实数集合 $(\mathbf R, \leqslant_{\mathbf R})$ 有最小上界性质
 
 ### 1.3.5 复数集
 1. 复数集合：定义集合 $\mathbf C := \mathbf R \times \mathbf R$，称集合 $\mathbf C$ 为复数集．特别地，对于任意 $x \in \mathbf R$，定义 $x_{\mathbf C} := (x, 0_{\mathbf R})$

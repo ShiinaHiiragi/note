@@ -140,7 +140,7 @@ const refList = [
         press: "中山大学出版社",
         locate: "广州",
         year: 2009,
-        page: [1, 362],
+        page: [295, 362],
         plot: 0
     },
     {
@@ -170,7 +170,7 @@ const refList = [
         press: "复旦大学出版社",
         locate: "上海",
         year: 2014,
-        page: [175, 236],
+        page: [1, 236],
         plot: 0
     },
     {
@@ -191,7 +191,7 @@ const refList = [
         locate: "上海",
         year: 2018,
         page: [1, 191],
-        plot: 9
+        plot: 16
     },
     {
         author: ["[美]Michael Sipser"],
