@@ -13,6 +13,7 @@
     <figure markdown>
         ![](../assets/pda.png)
         <style> img[src$="pda.png"] { width: 420px; } </style>
+        <p style="font-size: 80px;"> \$ </p>
     </figure>
 
     1. 转移函数的一般形式为 $\delta(q, a, Z) = \{(p_1, \gamma_1), (p_2, \gamma_2), \cdots, (p_m, \gamma_m)\}$，其中 $q \in Q, a \in \Sigma \cup \{\varepsilon\}, Z \in \Gamma, p_i \in Q$ 且有 $\gamma_i \in \Gamma^* \ (i = 1, 2, \cdots, m, m \geqslant 0)$，表示当下推自动机的当前状态为 $q$，读头读到输入符号为 $a$ 且栈顶符号为 $Z$ 时
@@ -54,6 +55,11 @@
     2. 对于每个 $a \in \Sigma$，若 $\delta(q, a, A)$ 非空，则 $\delta(q, \varepsilon, A)$ 为空\
 
     则称 $M$ 为确定的下推自动机（$\text{DPDA}$），其接受的语言称为确定的上下文无关语言（$\text{DCFL}$）
+
+    1. 确定的下推自动机的标准形式
+        1. 每个确定的上下文无关语言都可由下述确定的下推自动机所接受：在 $M$ 中，一切 $\delta(q, a, X) = (p, \gamma)$ 都有 $|\gamma| \leqslant 2$
+        2. 每个确定的上下文无关语言 $L$ 都能被下述确定的下推自动机 $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$ 所接受：对每个 $\delta(q, a, X) = (p, \gamma)$，$\gamma$ 只能有三种形式：$\gamma = \varepsilon, \gamma = X$ 或 $\gamma = YX \ (X, Y \in \Gamma)$
+    2. 设 $M$ 是一个确定的下推自动机，则存在等价的确定的下推自动机 $M'$ 能扫描完整个输入串
 
 ## 3.2 上下文无关语言
 1. 下推自动机与上下文无关文法的等价性
@@ -116,14 +122,37 @@
 
         则对于任何 $i \geqslant 0$，$uv^i wx^i y \in L$
 
-6. 封闭性：设 $L_1, L_2$ 是两个上下文无关语言
-    1. $L_1 L_2$ 与 $L_1^*$ 是上下文无关语言
-    2. $L_1 \cup L_2$ 是上下文无关语言
-    3. $L_1 \cap L_2$ 与 $\Sigma^* - L_1$ 不一定是上下文无关语言
-    4. 设 $R$ 是一个正则语言，则 $L \cap R$ 是上下文无关语言
-7. 可判定性：对于给定的上下文无关文法 $G = (V, T, P, S)$
-    1. $L(G)$ 是否为空集或是否为有穷集是可判定的
-    2. 成员资格问题：给定一个字符串 $x$，则 $x \in L(G)$ 是否成立是可判定的
+6. 封闭性
+    1. 设 $L_1, L_2$ 是两个 $\Sigma$ 上的上下文无关语言
+        1. $L_1 \cup L_2$ 是上下文无关语言
+        2. $L_1 L_2$ 与 $L_1^*$ 是上下文无关语言
+        3. $L_1 \cap L_2$ 与 $\Sigma^* - L_1$ 不一定是上下文无关语言
+        4. 设 $R$ 是一个正则语言，则 $L \cap R$ 是上下文无关语言
+    2. 设 $L_1, L_2$ 是两个 $\Sigma$ 上确定的上下文无关语言
+        1. $L_1 \cup L_2$ 不一定是确定的上下文无关语言
+        2. $L_1 L_2$ 与 $L_1^*$ 不一定是确定的上下文无关语言
+        3. $\Sigma^* - L_1$ 是确定的上下文无关语言
+        4. 设 $R$ 是一个正则语言，则 $L \cap R$ 是确定的上下文无关语言
+        5. $\text{MIN}(L), \text{MAX}(L)$ 是确定的上下文无关语言，其中
+
+            $$
+            \begin{aligned}
+            & \text{MIN}(L) = \{x \mid x \in L, \textsf{ 但 } L \textsf{ 中没有任何 } w \textsf{ 是 } x \textsf{ 的真前缀}\} \\
+            & \text{MAX}(L) = \{x \mid x \in L, \textsf{ 但 } x \textsf{ 不是 } L \textsf{ 中任何字的真前缀}\}
+            \end{aligned}
+            $$
+
+
+
+7. 可判定性
+    1. 对于给定的上下文无关文法 $G$，下列命题是否成立是可判定的
+        1. $L(G)$ 为空集或有穷集
+        2. 成员资格问题：给定一个字符串 $x$，则 $x \in L(G)$
+    2. 给定 $\Sigma$ 上确定的上下文无关语言 $L$ 与正则语言 $R$，下列命题是否成立是可判定的
+        1. $L = R$
+        2. $R \subseteq L$
+        3. $\Sigma^* - L = \varnothing$
+        4. $L$ 是正则语言
 8. 不可判定性
     1. 有效计算历史：给定 $\text{Turing}$ 机 $M$ 与输入串 $x$，定义 $M$ 在 $x$ 上的有效计算历史 $\text{VALCOMPH}(M, x)$ 是形如 $\sharp \alpha_0 \sharp \alpha_1^R \sharp \alpha_2 \sharp \alpha_3^R \sharp \cdots \sharp \alpha_N \sharp$ 的字符串，其中 $\alpha_i \ (i = 0, 1, \cdots, N)$ 是 $M$ 在 $x$ 上的瞬时描述，$\alpha_0$ 是初始瞬时描述，$\alpha_N$ 是 $M$ 在 $x$ 上到达接受状态或拒绝状态时的瞬时描述，对于任何 $0 \leqslant i < N$ 有 $\alpha_i \vdash_M \alpha_{i+1}$，$\sharp$ 是一个用于分隔的，区别于 $M$ 的带符号和状态符号的特殊符号
         1. 给定 $\text{Turing}$ 机 $M$ 与输入串 $x$，其无效计算集合（即 $\text{VALCOMPH}(M, x)$ 关于 $(\Gamma \cup Q \cup \{\sharp\})^*$ 的补集）$\text{INVALCOMPS}(M, x)$ 是一个上下文无关语言
@@ -142,3 +171,12 @@
         1. $\text{PCP}$ 是不可判定的
         2. 如果 $\text{PCP}$ 是可判定的，则 $\text{MPCP}$（$\text{PCP}$ 的修正型，即在 $\text{PCP}$ 问题中要求 $i_1 = 1$）是可判定的
         3. 对任意给出的一个上下文无关文法 $G$，$G$ 是否具有二义性是不可判定的
+    3. 设 $L$ 是一个上下文无关语言，$L_1, L_2$ 是两个确定的上下文无关语言，则下列命题是否成立是不可判定的
+        1. $L$ 是确定的上下文无关语言
+        2. $L_1 \cap L_2 = \varnothing$
+        3. $L_1 \subseteq L_2$
+        4. $L_1 \cap L_2$ 是确定的上下文无关语言
+        5. $L_1 \cap L_2$ 是上下文无关语言
+        6. $L_1 \cup L_2$ 是确定的上下文无关语言
+
+## 3.3 LR 文法类
