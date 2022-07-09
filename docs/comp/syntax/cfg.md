@@ -13,7 +13,6 @@
     <figure markdown>
         ![](../assets/pda.png)
         <style> img[src$="pda.png"] { width: 420px; } </style>
-        <p style="font-size: 80px;"> \$ </p>
     </figure>
 
     1. 转移函数的一般形式为 $\delta(q, a, Z) = \{(p_1, \gamma_1), (p_2, \gamma_2), \cdots, (p_m, \gamma_m)\}$，其中 $q \in Q, a \in \Sigma \cup \{\varepsilon\}, Z \in \Gamma, p_i \in Q$ 且有 $\gamma_i \in \Gamma^* \ (i = 1, 2, \cdots, m, m \geqslant 0)$，表示当下推自动机的当前状态为 $q$，读头读到输入符号为 $a$ 且栈顶符号为 $Z$ 时
@@ -180,3 +179,75 @@
         6. $L_1 \cup L_2$ 是确定的上下文无关语言
 
 ## 3.3 LR 文法类
+### 3.3.1 LR(0) 文法
+1. 项目：$G = (V, T, P, S)$ 是一个上下文无关文法，若干 $A \to \alpha \beta \in P \ (\alpha, \beta \in (V \cup T)^*)$，则 $A \to \alpha.\beta$ 称作一个项目，当 $\beta = \varepsilon$ 时称之为完全项目，否则称之为非完全项目
+2. 给出上下文无关文法 $G = (V, T, P, S)$，$I$ 为 $G$ 中的一个项目集，则 $I$ 的闭包 $\overline I$ 定义为满足以下条件的最小集合：
+    1. $I \subseteq \overline I$
+    2. 若 $A \to \alpha.B \gamma \in \overline I$ 且 $B \to \beta \in P$，则 $B \to .\beta \in \overline I$
+3. 识别文法 $G$ 的可行前缀的有穷自动机的算法
+    1. 输入上下文无关文法 $G = (V, T, P, S)$，输出有穷自动机 $M = (Q, V \cup T, \delta, I_0, Q)$，其中 $Q$ 是项目集组成的集合
+    2. 基本步骤
+        1. 由 $G$ 构造等价的文法 $G' = (V \cup  \{S'\},  T, P \cup \{S' \to S\}, S')$
+        2. 求初始项目集 $I_0 = \overline{J_0}$，其中 $J_0 = \{S' \to .S\}$
+        3. 对于项目集 $I$，有 $\delta(I, x) = \overline J$，其中 $J = \{A \to \alpha x.\beta \mid A \to \alpha .x \beta \in I, x \in V \cup T\}$
+        4. 重复第三步，直到没有新的项目集出现
+    3. 由算法确定的有穷自动机 $M$ 具有如下性质：$\delta(I_0, \gamma)$ 的项目集中包含项目 $A \to \alpha .\beta$ 当且仅当 $A \to \alpha.\beta$ 对 $\gamma$ 是有效的
+4. $\text{LR}(0)$ 文法：给出上下文无关文法 $G$，如果满足
+    1. $G$ 的开始符号不出现在任何产生式的右部
+    2. 对于 $G$ 的每一个可行前缀，当 $A \to \alpha.$ 是一个对 $\gamma$ 有效的完全项目时，则既没有其他的完全项目，也没有圆点右边唯一个终结符的任何项目对 $\gamma$ 有效
+
+    则称 $G$ 为 $\text{LR}(0)$ 文法
+
+    1. 设 $G$ 是一个 $\text{LR}(0)$ 文法，则存在一个确定的下推自动机 $M$ 使得 $N(M) = L(G)$
+    2. 设 $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$ 是一个确定的下推自动机，由 $M$ 定义 $G_M = (V, \Sigma, P, S)$，其中
+
+        $$
+        V = \{S\} \cup \{[qXp] \mid q, p \in Q, x \in \Gamma\} \cup \{A_{qaY} \mid q \in Q, a \in \Sigma \cup \{\varepsilon\}, Y \in \Gamma\}
+        $$
+
+        $P$ 中的产生式为
+
+        1. 对一切 $p \in Q$ 有 $S \to [Q_0Z_0p]$
+        2. 如果 $\delta(q, a, Y) = (p, \varepsilon)$，则 $[qYp] \to A_{qaY}$
+        3. 如果 $\delta(q, a, Y) = (p, X_1 X_2 \cdots X_k) \ (k \geqslant 1)$，则对于每一状态序列 $p_1, p_2, \cdots, p_{k+1}$ 都有 $[qYP_{k+1}] = A_{qaY} [p_1X_1p_2] [p_2X_2p_3] \cdots [p_kX_kp_{k+1}]$
+        4. 对于一切 $q, a$ 与 $Y$，有 $A_{qaY} \to a$
+
+        此时 $L(G_M) = N(M)$
+
+    3. 设 $M$ 是一个确定的下推自动机
+        1. 若 $\gamma$ 是 $G_M$ 的一个可行前缀且 $\gamma \in V^*$，则 $(q_0, D(\gamma), Z_0) \ | \!\overset{N(\gamma)}{\unicode{x2014}\unicode{x2014}} \ (p, \varepsilon, \beta)$，且其动作序列为 $m(\gamma)$
+        2. 则 $G_M$ 是一个 $\text{LR}(0)$ 文法
+    4. $L$ 由一个 $\text{LR}(0)$ 文法产生当且仅当 $L$ 是一个具有前缀性质的确定的上下文无关语言
+
+### 3.3.2 LR(k) 文法
+1. 项目：$G = (V, T, P, S)$ 是一个上下文无关文法，$G$ 的一个 $\text{LR}(k)$ 项目是形如 $\left<A \to \alpha .\beta, \{a_1, a_2, \cdots, a_k\}\right>$ 的二元组，其中 $\alpha_i \in T \cup \{\$\} \ (i = 1, 2, \cdots, n)$ 称为前景符，当 $\beta = \varepsilon$ 时称之为完全项目，否则称之为非完全项目
+2. 给出 $\text{LR}(1)$ 项目 $\left<A \to \alpha .\beta, \{a\}\right>$，若有一个最右推导 $S \overset{*}{\Rightarrow} \delta Ay \overset{*}{\Rightarrow} \delta \alpha \beta y$，其中 $\delta \alpha = \gamma$ 且 $a$ 是 $y$ 的第一个符号或 $y = \varepsilon \wedge a = \$$，则称该 $\text{LR}(1)$ 项目对可行前缀 $\gamma$ 是有效的
+    1. 若对每个 $i \ (i = 1, 2, \cdots, n)$，$\left<A \to \alpha.\beta, \{a_i\}\right>$ 对 $\gamma$ 都是有效的，则称 $\left<A \to \alpha.\beta, \{a_1, a_2, \cdots, a_n\}\right>$ 对 $\gamma$ 都是有效的
+    2. 对于上下文无关文法 $G = (V, T, P, S)$，定义函数 $F: (V \cup T')^+ \to 2^{T'} \ (T' = T \cup \{\$\})$ 有 $F(\sigma) = \{a_1, a_2, \cdots, a_i\}$．其中 $\alpha_i \in T'$ 且有 $\sigma \overset{*}{\Rightarrow} a_i y$
+    3. 给出上下文无关文法 $G = (V, T, P, S)$，$I$ 为 $G$ 中的一个 $\text{LR}(1)$ 项目集，则 $I$ 的闭包 $\overline I$ 定义为满足以下条件的最小集合：
+        1. $I \subseteq \overline I$
+        2. 若 $\left<A \to \alpha.B \gamma, u\right> \in \overline I$ 且 $B \to \beta \in P$，则 $\left<B \to .\beta, \{F(\gamma a) \mid a \in u\}\right> \in \overline I$
+3. 识别文法 $G$ 的可行前缀的有穷自动机的算法
+    1. 输入上下文无关文法 $G = (V, T, P, S)$，输出有穷自动机 $M = (Q, V \cup T, \delta, I_0, Q)$，其中 $Q$ 是 $G$ 的 $\text{LR}(1)$ 项目集组成的集合
+    2. 基本步骤
+        1. 由 $G$ 构造等价的文法 $G' = (V \cup  \{S'\},  T, P \cup \{S' \to S\}, S')$
+        2. 求 $\text{LR}(1)$ 初始项目集 $I_0 = \overline{J_0}$，其中 $J_0 = \{\left<S' \to .S, \{\$\}\right>\}$
+        3. 对于 $\text{LR}(1)$ 项目集 $I$，有 $\delta(I, x) = \overline J$，其中 $J = \{\left<A \to \alpha x.\beta, u\right> \mid \left<A \to \alpha x.\beta, u\right> \in I, x \in V \cup T\}$
+        4. 重复第三步，直到没有新的 $\text{LR}(1)$ 项目集出现
+4. $\text{LR}(1)$ 文法：给出上下文无关文法 $G$，如果满足
+    1. $G$ 的开始符号不出现在任何产生式的右部
+    2. 对于 $G$ 的每一个可行前缀，对 $\gamma$ 有效的 $\text{LR}(1)$  项目集 $I$ 中若包含某个完全项目 $\left<A \to \alpha., \{a_1, a_2, \cdots, a_n\}\right>$ 满足
+        1. 在 $I$ 中没有任何 $a_i \ (1 \leqslant i \leqslant n)$ 会紧接着出现在某个项目的原点右边
+        2. 如果 $\left<B \to \beta., b_1, b_2, \cdots, b_k\right>$ 是 $I$ 中的另一个完全项目，那么 $\{a_1, a_2, \cdots, a_n\} \cap \{b_1, b_2, \cdots, b_k\} = \varnothing$
+
+    则称 $G$ 为 $\text{LR}(1)$ 文法
+
+    1. 设 $G$ 是一个 $\text{LR}(1)$ 文法，则存在一个确定的下推自动机 $M$ 使得 $N(M) = L(G)\{\$\}$
+    2. $L\{\$\}$ 别一个以空栈方式接受的确定的下推自动机 $M$ 接受当且仅当 $KL$ 是一个确定的上下文无关语言
+    3. 设 $G = (V, T \cup \{\$\}, P, S)$ 为 $\text{LR}(0)$ 文法，若 $G$ 有
+        1. 若 $A \to \alpha \in P$，则 $\alpha \in (V \cup T)^*$ 或 $\alpha \in (V \cup T)^* \{\$\}$
+        2. $L(G) \subseteq T^*\{\$\}$
+
+        则 $G' = (V, T, P', S)$ 为 $\text{LR}(1)$ 文法且 $L(G') \{\$\} = L(G)$，其中 $P' = \{A \to a \mid a \in (V \cup T)^*, A \to \alpha \in P \vee A \to \alpha\$ \in P\}$
+
+    4. 每个确定的上下文无关语言都可由一个 $\text{LR}(1)$ 产生

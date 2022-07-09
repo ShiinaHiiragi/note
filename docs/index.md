@@ -309,8 +309,7 @@ const refList = [
         press: "机械工业出版社",
         locate: "上海",
         year: 2008,
-        page: [1, 227],
-        plot: 212
+        page: [1, 227]
     },
     {
         author: ["Rob Nederpelt", "Herman Geuvers"],
