@@ -1,6 +1,6 @@
-# 3 上下文无关文法
+# 4 上下文无关文法
 
-## 3.1 下推自动机
+## 4.1 下推自动机
 1. 下推自动机（$\text{PDA}$）是一个七元组 $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$，其中
     - $Q$ 是有穷状态机
     - $\Sigma$ 是有穷的输入字母表
@@ -19,13 +19,13 @@
         1. 转移函数执行后状态变为 $p_i$
         2. 栈顶符号由 $Z$ 变为 $\gamma_i$
         3. 当 $a \in \Sigma$ 时，读头越过输入符号 $a$；当 $a = \varepsilon$ 时，读头保持不动
-    2. 瞬时描述（$\text{ID}$）：下推自动机的一个瞬时描述是一个三元组 $(q, w, r)$，其中 $q$ 为下推自动机的当前状态，$w$ 为尚未读入的输入符号串，$\gamma$ 为当前在栈中的符号串
-        1. 当下推自动机执行一次 $\delta$ 动作后，由一个瞬时描述 $\text{ID}_i$ 转换到下一个瞬时描述 $\text{ID}_{i+1}$，记作 $\text{ID}_i \vdash_M \text{ID}_{i+1}$，在不引发歧义的情况下，$M$ 可以省略
+    2. 格局（$\text{ID}$）：下推自动机的一个格局是一个三元组 $(q, w, r)$，其中 $q$ 为下推自动机的当前状态，$w$ 为尚未读入的输入符号串，$\gamma$ 为当前在栈中的符号串
+        1. 当下推自动机执行一次 $\delta$ 动作后，由一个格局 $\text{ID}_i$ 转换到下一个格局 $\text{ID}_{i+1}$，记作 $\text{ID}_i \vdash_M \text{ID}_{i+1}$，在不引发歧义的情况下，$M$ 可以省略
         2. 用 $\vdash_M^*$ 表示任意多次转换，由归纳法定义
-            - 对任何瞬时描述 $I$，都有 $I \vdash_M^* I$
-            - 如果存在某个瞬时描述 $K$，使得 $I \vdash_M^* K$ 与 $K \vdash_M^* J$，则 $I \vdash_M^* J$
+            - 对任何格局 $I$，都有 $I \vdash_M^* I$
+            - 如果存在某个格局 $K$，使得 $I \vdash_M^* K$ 与 $K \vdash_M^* J$，则 $I \vdash_M^* J$
 
-            即存在瞬时描述序列 $K_1, K_2, \cdots, K_n$ 使得 $I = K_1, J = K_n$，且对于任意 $1 \leqslant i < n$ 都有 $K_i \vdash_M^* K_{i+1}$，则有 $I \vdash_M^* J$
+            即存在格局序列 $K_1, K_2, \cdots, K_n$ 使得 $I = K_1, J = K_n$，且对于任意 $1 \leqslant i < n$ 都有 $K_i \vdash_M^* K_{i+1}$，则有 $I \vdash_M^* J$
 
 2. 下推自动机接受的语言
     1. 接收方式
@@ -60,7 +60,7 @@
         2. 每个确定的上下文无关语言 $L$ 都能被下述确定的下推自动机 $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$ 所接受：对每个 $\delta(q, a, X) = (p, \gamma)$，$\gamma$ 只能有三种形式：$\gamma = \varepsilon, \gamma = X$ 或 $\gamma = YX \ (X, Y \in \Gamma)$
     2. 设 $M$ 是一个确定的下推自动机，则存在等价的确定的下推自动机 $M'$ 能扫描完整个输入串
 
-## 3.2 上下文无关语言
+## 4.2 上下文无关语言
 1. 下推自动机与上下文无关文法的等价性
     1. 设 $L$ 是一个上下文无关文法，则存在一个下推自动机 $M$ 使得 $N(M) = L$
     2. 给定一个下推自动机 $N$，则 $N(M)$ 是上下文无关文法
@@ -153,7 +153,7 @@
         3. $\Sigma^* - L = \varnothing$
         4. $L$ 是正则语言
 8. 不可判定性
-    1. 有效计算历史：给定 $\text{Turing}$ 机 $M$ 与输入串 $x$，定义 $M$ 在 $x$ 上的有效计算历史 $\text{VALCOMPH}(M, x)$ 是形如 $\sharp \alpha_0 \sharp \alpha_1^R \sharp \alpha_2 \sharp \alpha_3^R \sharp \cdots \sharp \alpha_N \sharp$ 的字符串，其中 $\alpha_i \ (i = 0, 1, \cdots, N)$ 是 $M$ 在 $x$ 上的瞬时描述，$\alpha_0$ 是初始瞬时描述，$\alpha_N$ 是 $M$ 在 $x$ 上到达接受状态或拒绝状态时的瞬时描述，对于任何 $0 \leqslant i < N$ 有 $\alpha_i \vdash_M \alpha_{i+1}$，$\sharp$ 是一个用于分隔的，区别于 $M$ 的带符号和状态符号的特殊符号
+    1. 有效计算历史：给定 $\text{Turing}$ 机 $M$ 与输入串 $x$，定义 $M$ 在 $x$ 上的有效计算历史 $\text{VALCOMPH}(M, x)$ 是形如 $\sharp \alpha_0 \sharp \alpha_1^R \sharp \alpha_2 \sharp \alpha_3^R \sharp \cdots \sharp \alpha_N \sharp$ 的字符串，其中 $\alpha_i \ (i = 0, 1, \cdots, N)$ 是 $M$ 在 $x$ 上的格局，$\alpha_0$ 是初始格局，$\alpha_N$ 是 $M$ 在 $x$ 上到达接受状态或拒绝状态时的格局，对于任何 $0 \leqslant i < N$ 有 $\alpha_i \vdash_M \alpha_{i+1}$，$\sharp$ 是一个用于分隔的，区别于 $M$ 的带符号和状态符号的特殊符号
         1. 给定 $\text{Turing}$ 机 $M$ 与输入串 $x$，其无效计算集合（即 $\text{VALCOMPH}(M, x)$ 关于 $(\Gamma \cup Q \cup \{\sharp\})^*$ 的补集）$\text{INVALCOMPS}(M, x)$ 是一个上下文无关语言
         2. 对于任意给定的上下文无关文法 $G = (V, T, P, S)$，$L(G) = T^*$ 是否成立的问题是不可判定的
         3. 设 $G_1, G_2$ 是任意两个 $\Sigma$ 上的上下文无关文法，$R$ 是任意一个正则语言，则下列命题是否成立是不可判定的
@@ -178,8 +178,8 @@
         5. $L_1 \cap L_2$ 是上下文无关语言
         6. $L_1 \cup L_2$ 是确定的上下文无关语言
 
-## 3.3 LR 文法类
-### 3.3.1 LR(0) 文法
+## 4.3 LR 文法类
+### 4.3.1 LR(0) 文法
 1. 项目：$G = (V, T, P, S)$ 是一个上下文无关文法，若干 $A \to \alpha \beta \in P \ (\alpha, \beta \in (V \cup T)^*)$，则 $A \to \alpha.\beta$ 称作一个项目，当 $\beta = \varepsilon$ 时称之为完全项目，否则称之为非完全项目
 2. 给出上下文无关文法 $G = (V, T, P, S)$，$I$ 为 $G$ 中的一个项目集，则 $I$ 的闭包 $\overline I$ 定义为满足以下条件的最小集合：
     1. $I \subseteq \overline I$
@@ -219,7 +219,7 @@
         2. 则 $G_M$ 是一个 $\text{LR}(0)$ 文法
     4. $L$ 由一个 $\text{LR}(0)$ 文法产生当且仅当 $L$ 是一个具有前缀性质的确定的上下文无关语言
 
-### 3.3.2 LR(k) 文法
+### 4.3.2 LR(k) 文法
 1. 项目：$G = (V, T, P, S)$ 是一个上下文无关文法，$G$ 的一个 $\text{LR}(k)$ 项目是形如 $\left<A \to \alpha .\beta, \{a_1, a_2, \cdots, a_k\}\right>$ 的二元组，其中 $\alpha_i \in T \cup \{\$\} \ (i = 1, 2, \cdots, n)$ 称为前景符，当 $\beta = \varepsilon$ 时称之为完全项目，否则称之为非完全项目
 2. 给出 $\text{LR}(1)$ 项目 $\left<A \to \alpha .\beta, \{a\}\right>$，若有一个最右推导 $S \overset{*}{\Rightarrow} \delta Ay \overset{*}{\Rightarrow} \delta \alpha \beta y$，其中 $\delta \alpha = \gamma$ 且 $a$ 是 $y$ 的第一个符号或 $y = \varepsilon \wedge a = \$$，则称该 $\text{LR}(1)$ 项目对可行前缀 $\gamma$ 是有效的
     1. 若对每个 $i \ (i = 1, 2, \cdots, n)$，$\left<A \to \alpha.\beta, \{a_i\}\right>$ 对 $\gamma$ 都是有效的，则称 $\left<A \to \alpha.\beta, \{a_1, a_2, \cdots, a_n\}\right>$ 对 $\gamma$ 都是有效的

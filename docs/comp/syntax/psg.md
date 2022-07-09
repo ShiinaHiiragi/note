@@ -1,6 +1,6 @@
-# 4 短语结构文法
+# 5 短语结构文法
 
-## 4.1 Turing 机
+## 5.1 Turing 机
 1. 一个确定的单带 $\text{Turing}$ 机（$\text{TM}$）是一个八元组 $M = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$，其中
     - $Q$ 是有穷状态集
     - $\Sigma$ 是有穷输入字母表
@@ -16,7 +16,7 @@
         <style> img[src$="tm.png"] { width: 420px; } </style>
     </figure>
 
-    1. $\text{Turing}$ 机的瞬时描述（$\text{ID}$）是一个特殊的符号串 $\alpha_1 q \alpha_2$，其中 $q \in Q, \alpha_1, \alpha_2 \in \Gamma^*$
+    1. $\text{Turing}$ 机的格局（$\text{ID}$）是一个特殊的符号串 $\alpha_1 q \alpha_2$，其中 $q \in Q, \alpha_1, \alpha_2 \in \Gamma^*$
         1. $q$ 为 $\text{Turing}$ 机的当前状态
         2. $\alpha_1$ 为读写头左边的带上符号串
         3. $\alpha_2$ 为读写头右边的带上符号串，其第一个符号位读写头正在注视的符号
@@ -54,7 +54,8 @@
             - 设有某个枚举器 $M_1$，则存在 $\text{Turing}$ 机 $M_2$ 使得 $L(M_2) = G(M_1)$
             - 设有某个 $\text{Turing}$ 机 $M_1$，则存在枚举器 $M_2$ 使得 $G(M_2) = L(M_1)$
 
-3. 通用 $\text{Turing}$ 机
+## 5.2 短语结构文法
+1. 通用 $\text{Turing}$ 机
     1. $\text{Turing}$ 机的编码方案：设 $\text{Turing}$ 机有 $n$ 个状态，对应编码分别为 $0, 00, \cdots, 0^n$，有 $m$ 个带符号，其中前 $k$ 个为 $\Sigma$ 中的符号，对应的编码为 $0, 00, \cdots, 0^k, \cdots, 0^m$，在此基础上整个 $\text{Turing}$ 机由 $0^n 1 0^m 1 0^k 1 0^s 1 0^t 1 0^r 1 0^v 11$ 开头
         1. $n$ 表示状态总数，$m$ 表示带符号总数
         2. $k$ 表示输入字母总数
@@ -66,25 +67,6 @@
 
     2. 通用 $\text{Turing}$ 机 $U$ 接受的集合为 $L(U) = \{M \sharp x \mid x \in L(M)\}$，其中 $M$ 是 $\text{Turing}$ 机编码，$x$ 是 $M$ 的输入串，$\sharp$ 作为特殊符号用于隔开 $M$ 与 $x$
 
-4. $\text{Turing}$ 机与短语结构文法的等价性
+2. $\text{Turing}$ 机与短语结构文法的等价性
     1. 设 $G$ 是一个短语结构文法，则存在一个 $\text{Turing}$ 机 $M$ 使得 $L(M) = L(G)$
     2. 设 $M$ 是一个 $\text{Turing}$ 机，则存在一个短语结构文法 $G$ 使得 $L(G) = L(M)$
-
-## 4.2 不可判定性
-1. 递归集与递归可枚举集的 $\text{Turing}$ 机刻画
-    1. 递归可枚举集合：能被一个 $\text{Turing}$ 机接受的语言
-        
-        递归集：能被一个完全 $\text{Turing}$ 机（即对所有输入都能停机的 $\text{Turing}$ 机）接受的语言
-
-    2. 递归集与递归可枚举集的性质
-        1. 递归集类是递归可枚举集类的真子类
-        2. 递归集与递归可枚举集分别对其交与并封闭，递归集对其补集运算封闭
-        3. 如果语言 $L$ 与 $\overline L$ 都是递归可枚举集，则 $L$ 与 $\overline L$ 都是递归集
-
-2. 归约：给定两个集合 $A \subseteq \Sigma^*, B \subseteq \Delta^*$，则 $A$ 到 $B$ 的归约是一个可计算函数 $\sigma: \Sigma^* \to \Delta^*$ 使得对一切 $x \in \Sigma^*$ 都有 $x \in A \leftrightarrow \sigma(x) \in B$，此时称 $A$ 通过映射可归约到 $B$，记作 $A \leqslant_m B$，下标 $m$ 表示映射可能是多对一映射
-    1. 递归集与递归可枚举集的规约
-        1. 如果 $A \leqslant_m B$ 且 $B$ 是递归可枚举集，则 $A$ 也是递归可枚举集
-        2. 如果 $A \leqslant_m B$ 且 $B$ 是递归集，则 $A$ 也是递归集
-    2. 性质：在给定的字母表 $\Sigma$ 上，递归可枚举集合类的一个性质是一个映射 $P: \{R \mid R \textsf{ 是递归可枚举集合类的子类}\} \to 2$，其中 $2 = \{0, 1\}$ 中，$1$ 表示假，$0$ 表示真．特别地，若某个映射只取 $0$ 或 $1$，则称该映射为平凡性质，否则称为非平凡性质
-    3. 停机问题：任意给定的 $\text{Turing}$ 机在任意给定的输入串上是否停机（接受或拒绝）的问题是不可判定的
-    4. $\text{Rice}$ 定理：递归可枚举集合类的任何一个非平凡性质都是不可判定的

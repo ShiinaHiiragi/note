@@ -112,7 +112,8 @@ nav:
       - 1 序列与级数: math/anly/seq.md
   - 计算理论:
     - 二、形式语言:
-      - 1 正则文法: comp/syntax/rg.md
-      - 2 上下文有关文法: comp/syntax/csg.md
-      - 3 上下文无关文法: comp/syntax/cfg.md
-      - 4 短语结构文法: comp/syntax/psg.md
+      - 1 文法理论: comp/syntax/grammar.md
+      - 2 正则文法: comp/syntax/rg.md
+      - 3 上下文有关文法: comp/syntax/csg.md
+      - 4 上下文无关文法: comp/syntax/cfg.md
+      - 5 短语结构文法: comp/syntax/psg.md
