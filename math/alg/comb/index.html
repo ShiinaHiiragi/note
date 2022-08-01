@@ -1,0 +1,1961 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="一之江">
+      
+      
+        <link rel="canonical" href="https://shiinahiiragi.github.io/note/math/alg/comb/">
+      
+      <link rel="icon" href="../../../extra/favicon.png">
+      <meta name="generator" content="mkdocs-1.3.1, mkdocs-material-8.3.9">
+    
+    
+      
+        <title>4 组合理论 - 逻辑与形而上学</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.1d29e8d0.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.cbb835fc.min.css">
+        
+      
+      
+    
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../extra/config.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink">
+  
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&"object"==typeof palette.color)for(var key of Object.keys(palette.color))document.body.setAttribute("data-md-color-"+key,palette.color[key])</script>
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#4" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="逻辑与形而上学" class="md-header__button md-logo" aria-label="逻辑与形而上学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25V4.75zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25H1.75z"/><path fill-rule="evenodd" d="M5 8.75A.75.75 0 0 1 5.75 8h11.5a.75.75 0 0 1 0 1.5H5.75A.75.75 0 0 1 5 8.75zm0 4a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1-.75-.75z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3V6m0 5h18v2H3v-2m0 5h18v2H3v-2Z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            逻辑与形而上学
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              4 组合理论
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      <form class="md-header__option" data-md-component="palette">
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="pink"  aria-label="Switch to White Panel"  type="radio" name="__palette" id="__palette_1">
+          
+            <label class="md-header__button md-icon" title="Switch to White Panel" for="__palette_2" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3Z"/></svg>
+            </label>
+          
+        
+          
+          
+          <input class="md-option" data-md-color-media="" data-md-color-scheme="defualt" data-md-color-primary="white" data-md-color-accent="pink"  aria-label="Switch to Indigo Panel"  type="radio" name="__palette" id="__palette_2">
+          
+            <label class="md-header__button md-icon" title="Switch to Indigo Panel" for="__palette_1" hidden>
+              <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6zm0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4zM7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3z"/></svg>
+            </label>
+          
+        
+      </form>
+    
+    
+    
+      <label class="md-header__button md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+      </label>
+      <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.516 6.516 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5Z"/></svg>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7 0-.24-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91 1.61 0 2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08Z"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" aria-label="清空当前内容" tabindex="-1">
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12 19 6.41Z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ShiinaHiiragi/note/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ShiinaHiiragi/note
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-tabs__inner md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../.." class="md-tabs__link">
+        通用
+      </a>
+    </li>
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../cogn/cogn/nerve/" class="md-tabs__link">
+        认识基础
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../meta/lang/pragma/" class="md-tabs__link">
+        形而上学
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../logic/proof/prop/" class="md-tabs__link">
+        数理逻辑
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+    
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../form/" class="md-tabs__link md-tabs__link--active">
+        代数学
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../top/space/" class="md-tabs__link">
+        几何学
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../anly/seq/" class="md-tabs__link">
+        分析学
+      </a>
+    </li>
+  
+
+  
+
+      
+        
+  
+  
+
+
+  
+  
+  
+    
+
+  
+  
+  
+    <li class="md-tabs__item">
+      <a href="../../../comp/syntax/grammar/" class="md-tabs__link">
+        计算理论
+      </a>
+    </li>
+  
+
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="逻辑与形而上学" class="md-nav__button md-logo" aria-label="逻辑与形而上学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path fill-rule="evenodd" d="M0 4.75C0 3.784.784 3 1.75 3h20.5c.966 0 1.75.784 1.75 1.75v14.5A1.75 1.75 0 0 1 22.25 21H1.75A1.75 1.75 0 0 1 0 19.25V4.75zm1.75-.25a.25.25 0 0 0-.25.25v14.5c0 .138.112.25.25.25h20.5a.25.25 0 0 0 .25-.25V4.75a.25.25 0 0 0-.25-.25H1.75z"/><path fill-rule="evenodd" d="M5 8.75A.75.75 0 0 1 5.75 8h11.5a.75.75 0 0 1 0 1.5H5.75A.75.75 0 0 1 5 8.75zm0 4a.75.75 0 0 1 .75-.75h5.5a.75.75 0 0 1 0 1.5h-5.5a.75.75 0 0 1-.75-.75z"/></svg>
+
+    </a>
+    逻辑与形而上学
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ShiinaHiiragi/note/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81z"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ShiinaHiiragi/note
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_1" type="checkbox" id="__nav_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_1">
+          通用
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="通用" data-md-level="1">
+        <label class="md-nav__title" for="__nav_1">
+          <span class="md-nav__icon md-icon"></span>
+          通用
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        介绍
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intro/license/" class="md-nav__link">
+        许可证
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2" type="checkbox" id="__nav_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2">
+          认识基础
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="认识基础" data-md-level="1">
+        <label class="md-nav__title" for="__nav_2">
+          <span class="md-nav__icon md-icon"></span>
+          认识基础
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_1" type="checkbox" id="__nav_2_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_1">
+          一、认知科学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="一、认知科学" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_1">
+          <span class="md-nav__icon md-icon"></span>
+          一、认知科学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/cogn/nerve/" class="md-nav__link">
+        1 神经认知
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/cogn/psyc/" class="md-nav__link">
+        2 心理认知
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/cogn/lang/" class="md-nav__link">
+        3 语言认知
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/cogn/think/" class="md-nav__link">
+        4 思维认知
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/cogn/civil/" class="md-nav__link">
+        5 文化认知
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_2_2" type="checkbox" id="__nav_2_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_2_2">
+          二、形式逻辑
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="二、形式逻辑" data-md-level="2">
+        <label class="md-nav__title" for="__nav_2_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、形式逻辑
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/formal/concept/" class="md-nav__link">
+        1 概念
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/formal/deduction/" class="md-nav__link">
+        2 命题与演绎
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/formal/induction/" class="md-nav__link">
+        3 归纳和类比
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/formal/proof/" class="md-nav__link">
+        4 非形式逻辑
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3" type="checkbox" id="__nav_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3">
+          形而上学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="形而上学" data-md-level="1">
+        <label class="md-nav__title" for="__nav_3">
+          <span class="md-nav__icon md-icon"></span>
+          形而上学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_1" type="checkbox" id="__nav_3_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_1">
+          二、语言逻辑
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="二、语言逻辑" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_1">
+          <span class="md-nav__icon md-icon"></span>
+          二、语言逻辑
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/lang/pragma/" class="md-nav__link">
+        4 形式语用学
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_2" type="checkbox" id="__nav_3_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_2">
+          三、分析哲学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="三、分析哲学" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_2">
+          <span class="md-nav__icon md-icon"></span>
+          三、分析哲学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/logic/syntax/" class="md-nav__link">
+        1 演绎与证成
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/logic/truth/" class="md-nav__link">
+        2 真理与悖论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/logic/mean/" class="md-nav__link">
+        3 意义与指称
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_3_3" type="checkbox" id="__nav_3_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_3_3">
+          四、数学哲学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="四、数学哲学" data-md-level="2">
+        <label class="md-nav__title" for="__nav_3_3">
+          <span class="md-nav__icon md-icon"></span>
+          四、数学哲学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/math/concept/" class="md-nav__link">
+        1 基本问题与历史观点
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/math/doctrine/" class="md-nav__link">
+        2 三大主义
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/math/contemp/" class="md-nav__link">
+        3 当代观点
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4" type="checkbox" id="__nav_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4">
+          数理逻辑
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="数理逻辑" data-md-level="1">
+        <label class="md-nav__title" for="__nav_4">
+          <span class="md-nav__icon md-icon"></span>
+          数理逻辑
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_1" type="checkbox" id="__nav_4_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_1">
+          一、结构证明论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="一、结构证明论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_1">
+          <span class="md-nav__icon md-icon"></span>
+          一、结构证明论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/proof/prop/" class="md-nav__link">
+        1 命题逻辑
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/proof/pred/" class="md-nav__link">
+        2 一阶逻辑
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_2" type="checkbox" id="__nav_4_2" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_2">
+          二、模型论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="二、模型论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_2">
+          <span class="md-nav__icon md-icon"></span>
+          二、模型论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/model/model/" class="md-nav__link">
+        1 结构与模型
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_3" type="checkbox" id="__nav_4_3" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_3">
+          三、递归论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="三、递归论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_3">
+          <span class="md-nav__icon md-icon"></span>
+          三、递归论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/rec/cal/" class="md-nav__link">
+        1 可计算理论
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_4_4" type="checkbox" id="__nav_4_4" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_4_4">
+          四、公理集合论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="四、公理集合论" data-md-level="2">
+        <label class="md-nav__title" for="__nav_4_4">
+          <span class="md-nav__icon md-icon"></span>
+          四、公理集合论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/zfc/" class="md-nav__link">
+        1 数学基础
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/ordinal/" class="md-nav__link">
+        2 序数与基数
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5" type="checkbox" id="__nav_5" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5">
+          代数学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="代数学" data-md-level="1">
+        <label class="md-nav__title" for="__nav_5">
+          <span class="md-nav__icon md-icon"></span>
+          代数学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+    
+  
+  
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle" data-md-toggle="__nav_5_1" type="checkbox" id="__nav_5_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_5_1">
+          一、初等代数
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="一、初等代数" data-md-level="2">
+        <label class="md-nav__title" for="__nav_5_1">
+          <span class="md-nav__icon md-icon"></span>
+          一、初等代数
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../form/" class="md-nav__link">
+        1 解析式与初等函数
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../eq/" class="md-nav__link">
+        2 方程与不等式
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../num/" class="md-nav__link">
+        3 初等数论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+    
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" data-md-toggle="toc" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          4 组合理论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        4 组合理论
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#41" class="md-nav__link">
+    4.1 计数原理
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#42" class="md-nav__link">
+    4.2 排列
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#43" class="md-nav__link">
+    4.3 组合
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#44" class="md-nav__link">
+    4.4 生成函数
+  </a>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6" type="checkbox" id="__nav_6" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6">
+          几何学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="几何学" data-md-level="1">
+        <label class="md-nav__title" for="__nav_6">
+          <span class="md-nav__icon md-icon"></span>
+          几何学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_6_1" type="checkbox" id="__nav_6_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_6_1">
+          二、点集拓扑
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="二、点集拓扑" data-md-level="2">
+        <label class="md-nav__title" for="__nav_6_1">
+          <span class="md-nav__icon md-icon"></span>
+          二、点集拓扑
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../top/space/" class="md-nav__link">
+        1 拓扑空间
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../top/construct/" class="md-nav__link">
+        2 构造空间
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../top/prop/" class="md-nav__link">
+        3 拓扑不变性质
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7" type="checkbox" id="__nav_7" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7">
+          分析学
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="分析学" data-md-level="1">
+        <label class="md-nav__title" for="__nav_7">
+          <span class="md-nav__icon md-icon"></span>
+          分析学
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_7_1" type="checkbox" id="__nav_7_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_7_1">
+          一、分析学原理
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="一、分析学原理" data-md-level="2">
+        <label class="md-nav__title" for="__nav_7_1">
+          <span class="md-nav__icon md-icon"></span>
+          一、分析学原理
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../anly/seq/" class="md-nav__link">
+        1 序列与级数
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+      
+      
+      
+
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8" type="checkbox" id="__nav_8" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8">
+          计算理论
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="计算理论" data-md-level="1">
+        <label class="md-nav__title" for="__nav_8">
+          <span class="md-nav__icon md-icon"></span>
+          计算理论
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+      
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" data-md-toggle="__nav_8_1" type="checkbox" id="__nav_8_1" checked>
+      
+      
+      
+      
+        <label class="md-nav__link" for="__nav_8_1">
+          二、形式语言
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <nav class="md-nav" aria-label="二、形式语言" data-md-level="2">
+        <label class="md-nav__title" for="__nav_8_1">
+          <span class="md-nav__icon md-icon"></span>
+          二、形式语言
+        </label>
+        <ul class="md-nav__list" data-md-scrollfix>
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comp/syntax/grammar/" class="md-nav__link">
+        1 文法理论
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comp/syntax/rg/" class="md-nav__link">
+        2 正则文法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comp/syntax/csg/" class="md-nav__link">
+        3 上下文有关文法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comp/syntax/cfg/" class="md-nav__link">
+        4 上下文无关文法
+      </a>
+    </li>
+  
+
+            
+          
+            
+              
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../comp/syntax/psg/" class="md-nav__link">
+        5 短语结构文法
+      </a>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+            
+          
+        </ul>
+      </nav>
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          <div class="md-content" data-md-component="content">
+            <article class="md-content__inner md-typeset">
+              
+                
+  <a href="https://github.com/ShiinaHiiragi/note/edit/master/docs/math/alg/comb.md" title="编辑此页" class="md-content__button md-icon">
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20.71 7.04c.39-.39.39-1.04 0-1.41l-2.34-2.34c-.37-.39-1.02-.39-1.41 0l-1.84 1.83 3.75 3.75M3 17.25V21h3.75L17.81 9.93l-3.75-3.75L3 17.25Z"/></svg>
+  </a>
+
+
+
+<h1 id="4">4 组合理论<a class="headerlink" href="#4" title="Permanent link">&para;</a></h1>
+<h2 id="41">4.1 计数原理<a class="headerlink" href="#41" title="Permanent link">&para;</a></h2>
+<ol>
+<li>
+<p>加法原理与乘法原理</p>
+<ol>
+<li>加法原理：若有穷集合 <span class="arithmatex">\(S_1, S_2, \cdots, S_n\)</span> 有 <span class="arithmatex">\(S_i \cup S_j = \varnothing \ (1 \leqslant i, j \leqslant n, i \neq j)\)</span>，则 <span class="arithmatex">\(|S_1| + |S_2| + \cdots + |S_n| = |S_1 \cup S_2 \cup \cdots \cup S_n|\)</span></li>
+<li>
+<p>容斥原理：加法原理的推广，对于有穷集合 <span class="arithmatex">\(S_1, S_2, \cdots, S_n\)</span> 有</p>
+<div class="arithmatex">\[
+\left|\bigcup_{i=1}^n S_i\right| = \sum_{i=1}^n |S_i| - \sum_{1 \leqslant i &lt; j \leqslant n} |S_i \cap S_j| + \sum_{1 \leqslant i &lt; j &lt; k \leqslant n} |S_i \cap S_j \cap S_k| - \cdots + (-1)^{n-1}|S_1 \cap S_2 \cap \cdots \cap S_n|
+\]</div>
+</li>
+<li>
+<p>乘法原理：对于集合 <span class="arithmatex">\(S_1, S_2, \cdots, S_n\)</span>，有 <span class="arithmatex">\(|S_1| \times |S_2| \times \cdots \times |S_n| = |S_1 \times S_2 \times \cdots \times S_n|\)</span>，其中 <span class="arithmatex">\(S_i\)</span> 可以为无穷集</p>
+</li>
+</ol>
+</li>
+<li>
+<p>抽屉原理：如果 <span class="arithmatex">\(n\)</span> 是自然数，则不存在 <span class="arithmatex">\(n\)</span> 到其真子集 <span class="arithmatex">\(X \subset n\)</span> 上的双射</p>
+<ol>
+<li>设 <span class="arithmatex">\(a_1, a_2, \cdots, a_n \in \mathbf N\)</span> 且 <span class="arithmatex">\(\dfrac{a_1 + a_2 + \cdots + a_n}{n} &gt; r - 1\)</span>，则 <span class="arithmatex">\(a_n\)</span> 中至少有一个数不小于 <span class="arithmatex">\(r\)</span></li>
+<li>设 <span class="arithmatex">\(a_1, a_2, \cdots, a_n \in \mathbf N, q_1, q_2, \cdots, q_n \in \mathbf Z_+\)</span>，若 <span class="arithmatex">\({\displaystyle \sum_{i=1}^n a_i = \sum_{i=1}^n q_i - n + 1}\)</span>，则 <span class="arithmatex">\(a_1 &gt; q_1 \vee a_2 &gt; q_2 \vee \cdots \vee a_n &gt; q_n\)</span></li>
+</ol>
+</li>
+</ol>
+<h2 id="42">4.2 排列<a class="headerlink" href="#42" title="Permanent link">&para;</a></h2>
+<ol>
+<li>排列数：从 <span class="arithmatex">\(n\)</span> 个元素的集合 <span class="arithmatex">\(S\)</span> 中有序选取的 <span class="arithmatex">\(r\)</span> 个元素称为 <span class="arithmatex">\(S\)</span> 的一个 <span class="arithmatex">\(r-\)</span>排列，不同的排列总数记为 <span class="arithmatex">\(A_n^r\)</span>，当 <span class="arithmatex">\(r = n\)</span> 时，称之为 <span class="arithmatex">\(S\)</span> 的一个全排列<ol>
+<li><span class="arithmatex">\(A_n^r = \left\{\begin{aligned} &amp; \dfrac{n!}{(n - r)!}, &amp; r \leqslant n \\ &amp; 0, &amp; r &gt; n \end{aligned}\right.\)</span></li>
+<li><span class="arithmatex">\(A_n^r = (n - r + 1) A_n^{r-1} = \dfrac{n}{n - r} A_{n-1}^r = n A_{n-1}^{r-1}\)</span></li>
+</ol>
+</li>
+<li>环排列数：从 <span class="arithmatex">\(n\)</span> 个元素的集合 <span class="arithmatex">\(S\)</span> 上选取 <span class="arithmatex">\(r\)</span> 个元素排成一个环形，这样的排列称为 <span class="arithmatex">\(S\)</span> 的一个 <span class="arithmatex">\(r-\)</span>环排列，其环排列数为 <span class="arithmatex">\(\dfrac{C_n^r}{r}\)</span></li>
+<li>多重集的排列：设有限多重集 <span class="arithmatex">\(S = \left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}\)</span> 且 <span class="arithmatex">\(p = p_1 + p_2 + \cdots + p_n\)</span>．从 <span class="arithmatex">\(S\)</span> 中有序选取 <span class="arithmatex">\(r\)</span> 个元素称为 <span class="arithmatex">\(S\)</span> 的一个 <span class="arithmatex">\(r-\)</span>排列，当 <span class="arithmatex">\(r = n\)</span> 时，称之为 <span class="arithmatex">\(S\)</span> 的一个全排列<ol>
+<li>若 <span class="arithmatex">\(r &gt; p\)</span>，则 <span class="arithmatex">\(r-\)</span>排列数 <span class="arithmatex">\(N = 0\)</span></li>
+<li>若 <span class="arithmatex">\(r = p\)</span>，则 <span class="arithmatex">\(r-\)</span>排列数 <span class="arithmatex">\(N = \dfrac{p!}{p_1! p_2! \cdots p_n!}\)</span></li>
+<li>若 <span class="arithmatex">\(r &lt; n\)</span> 且对一切 <span class="arithmatex">\(i = 1, 2, \cdots, k\)</span> 都有 <span class="arithmatex">\(p_i \geqslant r\)</span>，则  <span class="arithmatex">\(r-\)</span>排列数 <span class="arithmatex">\(N = k^r\)</span>，记作 <span class="arithmatex">\(R_k^r\)</span></li>
+<li>若 <span class="arithmatex">\(r &lt; n\)</span> 且存在某个 <span class="arithmatex">\(p_i &lt; r\)</span>，则对 <span class="arithmatex">\(r-\)</span>排列数 <span class="arithmatex">\(N\)</span> 没有一般的求解方法，需要使用生成函数</li>
+</ol>
+</li>
+</ol>
+<h2 id="43">4.3 组合<a class="headerlink" href="#43" title="Permanent link">&para;</a></h2>
+<ol>
+<li>组合数：从 <span class="arithmatex">\(n\)</span> 个元素的集合 <span class="arithmatex">\(S\)</span> 中无序选取 <span class="arithmatex">\(r\)</span> 个元素组成 <span class="arithmatex">\(S\)</span> 的子集称为 <span class="arithmatex">\(S\)</span> 的一个 <span class="arithmatex">\(r-\)</span>组合，不同的组合总数记为 <span class="arithmatex">\(C_n^r\)</span><ol>
+<li><span class="arithmatex">\(C_n^r = \dfrac{A_n^r}{r!} = \left\{\begin{aligned} &amp; \dfrac{n!}{r!(n-r)!}, &amp; r \leqslant n \\ &amp; 0, &amp; r &gt; n \end{aligned}\right.\)</span></li>
+<li>组合数恒等式：对于 <span class="arithmatex">\(n\)</span> 个元素的集合 <span class="arithmatex">\(S\)</span> 的 <span class="arithmatex">\(r-\)</span>组合数，设 <span class="arithmatex">\(m, k \in \mathbf Z_+\)</span><ol>
+<li><span class="arithmatex">\(C_n^r = C_n^{n-r} = \dfrac{n}{r} C_{n-1}^{r-1}\)</span>，其中 <span class="arithmatex">\(r \leqslant n\)</span></li>
+<li><span class="arithmatex">\(C_n^r C_r^k = C_n^r C_{n-r}^{r-k}\)</span>，其中 <span class="arithmatex">\(r \geqslant k\)</span></li>
+<li><span class="arithmatex">\(\text{Pascal}\)</span> 公式：<span class="arithmatex">\(C_n^r = C_{n-1}^r + C_{n-1}^{k-1}\)</span>．由此可知 <span class="arithmatex">\({\displaystyle \sum_{k=0}^m C_{n+k}^k = C_{n+m+1}^m}\)</span></li>
+<li><span class="arithmatex">\(\text{Vandermonde}\)</span> 等式：<span class="arithmatex">\({\displaystyle \sum_{i=0}^r} C_m^i C_n^{r-i} = C_{m+n}^r\)</span>，其中 <span class="arithmatex">\(r \leqslant \min\{m, n\}\)</span></li>
+<li><span class="arithmatex">\({\displaystyle \sum_{i=0}^m} C_m^i C_n^i = C_{m+n}^m\)</span>，其中 <span class="arithmatex">\(m \leqslant n\)</span>，当 <span class="arithmatex">\(m = n\)</span> 时原式即为 <span class="arithmatex">\({\displaystyle \sum_{k=0}^n \left(C_n^k\right)^2 = C_{2n}^n}\)</span></li>
+<li><span class="arithmatex">\({\displaystyle \sum_{r=0}^n C_n^r = 2^n, \sum_{r=0}^n (-1)^r C_n^r = 0, \sum_{r=0}^n rC_n^r = n\cdot 2^{n-1}, \sum_{r=0}^n r^2C_n^r = n(n+1)\cdot 2^{n-2}}\)</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>二项式定理：设 <span class="arithmatex">\(n \in \mathbf Z_+\)</span>，则对一切 <span class="arithmatex">\(x, y\)</span> 有 <span class="arithmatex">\((x + y)^n = {\displaystyle \sum_{k=0}^n C_n^k x^k y^{n-k}}\)</span></p>
+<ol>
+<li>
+<p><span class="arithmatex">\(\text{Newton}\)</span> 二项式定理：设 <span class="arithmatex">\(\alpha \in \mathbf R\)</span>，则对于一切满足 <span class="arithmatex">\(\left|\dfrac xy\right| &lt; 1\)</span> 的 <span class="arithmatex">\(x, y\)</span> 有 <span class="arithmatex">\((x + y)^\alpha = {\displaystyle \sum_{k=0}^\infty \dbinom{\alpha}{k} x^k y^{\alpha-k}}\)</span>，其中定义</p>
+<div class="arithmatex">\[
+\dbinom{\alpha}{k} = \left\{\begin{aligned}
+&amp; 0, &amp; k &lt; 0 \\
+&amp; 1, &amp; k = 0 \\
+&amp; \dfrac{\alpha (\alpha-1) \cdots (\alpha-k+1)}{k!}, &amp; k &gt; 0
+\end{aligned}\right.
+\]</div>
+<p>对任意正整数 <span class="arithmatex">\(n\)</span>，对 <span class="arithmatex">\(|x| &lt; 1\)</span> 有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp; \dfrac{1}{(1+x)^n} = \sum_{k=0}^\infty (-1)^k C_{n+k-1}^k x^k \\
+&amp; \dfrac{1}{(1-x)^n} = \sum_{k=0}^\infty C_{n_k-1}^k x^k
+\end{aligned}
+\]</div>
+</li>
+<li>
+<p>多项式定理：设 <span class="arithmatex">\(n \in \mathbf Z_+\)</span>，则对一切 <span class="arithmatex">\(a_1, a_2, \cdots, a_m\)</span> 有</p>
+<div class="arithmatex">\[
+(a_1 + a_2 + \cdots + a_m)^n = \sum_{n_1 + n_2 + \cdots + n_m = n} \dfrac{n!}{(n_1!)(n_2!)\cdots(n_m!)} a_1^{n_1} a_2^{n_2}\cdots a_m^{n_m}
+\]</div>
+<ol>
+<li><span class="arithmatex">\(r\)</span> 元 <span class="arithmatex">\(n\)</span> 次齐次完全多项式的项数是 <span class="arithmatex">\(H_n^r = C_{n+r-1}^n\)</span></li>
+<li><span class="arithmatex">\(r\)</span> 元 <span class="arithmatex">\(n\)</span> 次非齐次完全多项式的项数是 <span class="arithmatex">\(H_{r+1}^n = C_{n+r}^r\)</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>多重集的组合：设有限多重集 <span class="arithmatex">\(S = \left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}\)</span> 且 <span class="arithmatex">\(p = p_1 + p_2 + \cdots + p_n\)</span>．从 <span class="arithmatex">\(S\)</span> 含有 <span class="arithmatex">\(r\)</span> 个元素的子多重集称为 <span class="arithmatex">\(S\)</span> 的一个 <span class="arithmatex">\(r-\)</span>组合</p>
+<ol>
+<li>若 <span class="arithmatex">\(r &gt; p\)</span>，则 <span class="arithmatex">\(r-\)</span>组合数 <span class="arithmatex">\(N = 0\)</span></li>
+<li>若 <span class="arithmatex">\(r = p\)</span>，则 <span class="arithmatex">\(r-\)</span>组合数 <span class="arithmatex">\(N = 1\)</span></li>
+<li>若 <span class="arithmatex">\(r &lt; n\)</span> 且对一切 <span class="arithmatex">\(i = 1, 2, \cdots, k\)</span> 都有 <span class="arithmatex">\(p_i \geqslant r\)</span>，则  <span class="arithmatex">\(r-\)</span>组合数 <span class="arithmatex">\(N = C_{k+r-1}^r\)</span>，记作 <span class="arithmatex">\(H_n^r\)</span></li>
+<li>若 <span class="arithmatex">\(r &lt; n\)</span> 且存在某个 <span class="arithmatex">\(p_i &lt; r\)</span>，则对 <span class="arithmatex">\(r-\)</span>组合数 <span class="arithmatex">\(N\)</span> 没有一般的求解方法，需要使用容斥原理</li>
+</ol>
+</li>
+</ol>
+<h2 id="44">4.4 生成函数<a class="headerlink" href="#44" title="Permanent link">&para;</a></h2>
+<ol>
+<li>幂级数型生成函数：设 <span class="arithmatex">\(\{a_n\}\)</span> 是一个数列，定义 <span class="arithmatex">\(f(x) = {\displaystyle \sum_{n=0}^\infty a_n x^n}\)</span> 为数列 <span class="arithmatex">\(\{a_n\}\)</span> 的生成函数<ol>
+<li>设数列 <span class="arithmatex">\(\{a_n\}, \{b_n\}, \{c_n\}\)</span> 的生成函数分别是 <span class="arithmatex">\(f(x), g(x), h(x)\)</span>，<span class="arithmatex">\(r\)</span> 为常数<ol>
+<li>如果 <span class="arithmatex">\(b_n = ra_n\)</span>，则 <span class="arithmatex">\(g(x) = rf(x)\)</span></li>
+<li>如果 <span class="arithmatex">\(c_n = a_n + b_n\)</span>，则 <span class="arithmatex">\(h(x) = f(x) + g(x)\)</span></li>
+<li>如果 <span class="arithmatex">\(c_n = {\displaystyle \sum_{i=0}^n a_i b_{n-i}}\)</span>，则 <span class="arithmatex">\(h(x) = f(x) \cdot g(x)\)</span></li>
+<li>如果 <span class="arithmatex">\(b_n = \left\{\begin{aligned} &amp; 0, &amp; n &gt; l \\ &amp; a_{n-1}, &amp; n \leqslant l \end{aligned}\right.\)</span>，则 <span class="arithmatex">\(g(x) = x^l f(x)\)</span></li>
+<li>如果 <span class="arithmatex">\(b_n = a_{n+l}\)</span>，则 <span class="arithmatex">\(g(x) = {\displaystyle \dfrac{f(x) - \displaystyle \sum_{n=0}^{l-1} a_n x^n}{x^l}}\)</span></li>
+<li>如果 <span class="arithmatex">\(b_n = {\displaystyle \sum_{i=0}^n a_i}\)</span>，则 <span class="arithmatex">\(g(x) = \dfrac{f(x)}{1 - x}\)</span></li>
+<li>如果 <span class="arithmatex">\(b_n = {\displaystyle \sum_{n=0}^\infty a_n}\)</span>，且 <span class="arithmatex">\(f(1) = {\displaystyle \sum_{n=0}^\infty a_n}\)</span> 收敛，则 <span class="arithmatex">\(g(x) = \dfrac{f(1) - xf(x)}{1 - x}\)</span></li>
+<li>如果 <span class="arithmatex">\(b_n = r^n a_n\)</span>，则 <span class="arithmatex">\(g(x) = f(rx)\)</span></li>
+<li>如果 <span class="arithmatex">\(b_n = na_n\)</span>，则 <span class="arithmatex">\(g(x) = xf'(x)\)</span></li>
+<li>如果 <span class="arithmatex">\(b_n = \dfrac{a_n}{n + 1}\)</span>，则 <span class="arithmatex">\(g(x) = \dfrac 1x {\displaystyle \int_0^x f(x) \mathrm dx}\)</span></li>
+</ol>
+</li>
+<li>设多重集 <span class="arithmatex">\(S = \left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}\)</span> 的 <span class="arithmatex">\(r-\)</span>组合数为 <span class="arithmatex">\(a_r\)</span>，则 <span class="arithmatex">\(\{a_r\}\)</span> 的生成函数为 <span class="arithmatex">\({\displaystyle f(x) = \prod_{i=1}^n \left(\sum_{j=0}^{p_i} x^j\right)}\)</span></li>
+</ol>
+</li>
+<li>指数型生成函数：设 <span class="arithmatex">\(\{a_n\}\)</span> 是一个数列，定义 <span class="arithmatex">\(f(x) = {\displaystyle \sum_{n=0}^\infty \dfrac{a_n}{n!} x^n}\)</span> 为数列 <span class="arithmatex">\(\{a_n\}\)</span> 的生成函数<ol>
+<li><span class="arithmatex">\(\{a_n\}\)</span> 的指数型生成函数就是 <span class="arithmatex">\(\left\{\dfrac{a_n}{n!}\right\}\)</span> 的幂级数型生成函数</li>
+<li>设数列 <span class="arithmatex">\(\{a_n\}, \{b_n\}\)</span> 的生成函数分别是 <span class="arithmatex">\(f(x), g(x)\)</span>，则 <span class="arithmatex">\(f(x) \cdot g(x) = {\displaystyle \sum_{n=0}^\infty \left(\dfrac{x_n}{(n-1)!} \cdot \sum_{k=0}^n C_n^k a_k b_{n-k} \right)}\)</span></li>
+<li>设多重集 <span class="arithmatex">\(S = \left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}\)</span> 的 <span class="arithmatex">\(r-\)</span>排列数为 <span class="arithmatex">\(a_r\)</span>，则 <span class="arithmatex">\(\{a_r\}\)</span> 的生成函数为 <span class="arithmatex">\({\displaystyle f(x) = \prod_{i=1}^n \left(\sum_{j=0}^{p_i} \dfrac{x^j}{j!}\right)}\)</span></li>
+</ol>
+</li>
+</ol>
+
+              
+            </article>
+            
+          </div>
+        </div>
+        
+          <a href="#" class="md-top md-icon" data-md-component="top" hidden>
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8v12Z"/></svg>
+            回到页面顶部
+          </a>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+    
+    <nav class="md-footer__inner md-grid" aria-label="页脚" >
+      
+        
+        <a href="../num/" class="md-footer__link md-footer__link--prev" aria-label="上一页: 3 初等数论" rel="prev">
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11h12Z"/></svg>
+          </div>
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                上一页
+              </span>
+              3 初等数论
+            </div>
+          </div>
+        </a>
+      
+      
+        
+        <a href="../../top/space/" class="md-footer__link md-footer__link--next" aria-label="下一页: 1 拓扑空间" rel="next">
+          <div class="md-footer__title">
+            <div class="md-ellipsis">
+              <span class="md-footer__direction">
+                下一页
+              </span>
+              1 拓扑空间
+            </div>
+          </div>
+          <div class="md-footer__button md-icon">
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M4 11v2h12l-5.5 5.5 1.42 1.42L19.84 12l-7.92-7.92L10.5 5.5 16 11H4Z"/></svg>
+          </div>
+        </a>
+      
+    </nav>
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+      
+      
+    
+    <a href="https://github.com/ShiinaHiiragi" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6zm-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3zm44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9zM244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8zM97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1zm-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7zm32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1zm-11.4-14.7c-1.6 1-1.6 3.6 0 5.9 1.6 2.3 4.3 3.3 5.6 2.3 1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2z"/></svg>
+    </a>
+  
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ShiinaHiiragi" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.1.1 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2022 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253z"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    <script id="__config" type="application/json">{"base": "../../..", "features": ["navigation.expand", "navigation.tabs", "navigation.top", "navigation.tracking", "search.highlight", "search.share", "toc.integrate"], "search": "../../../assets/javascripts/workers/search.b97dbffb.min.js", "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.config.lang": "ja", "search.config.pipeline": "trimmer, stemmer", "search.config.separator": "[\\s\\-\uff0c\u3002]+", "search.placeholder": "\u641c\u7d22", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version.title": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.6c7ad80a.min.js"></script>
+      
+        <script src="../../../extra/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>
