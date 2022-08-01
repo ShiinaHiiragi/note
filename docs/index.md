@@ -97,6 +97,16 @@ const refList = [
         page: [1, 266]
     },
     {
+        author: ["[英]Patrick J. Hurley"],
+        title: "简明逻辑学导论",
+        type: "M",
+        trans: ["陈波", "宋文淦", "熊力文", "谷振诣"],
+        press: "世界图书出版公司",
+        locate: "北京",
+        year: 2010,
+        page: [85, 140]
+    },
+    {
         author: ["Robin Turner", "Nick Nicholas"],
         title: "Lojban For Beginners",
         type: "EB/OL",
@@ -260,6 +270,23 @@ const refList = [
         locate: "Cham",
         year: 2015,
         page: [1, 202],
+        plot: 0
+    },
+    {
+        author: ["项武义"],
+        title: "基础几何学",
+        type: "EB/OL",
+        page: [1, 194],
+        plot: 0
+    },
+    {
+        author: ["项武义", "王申怀", "潘养廉"],
+        title: "古典几何学",
+        type: "M",
+        press: "高等教育出版社",
+        locate: "北京",
+        year: 2014,
+        page: [1, 180],
         plot: 0
     },
     {
