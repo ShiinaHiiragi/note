@@ -299,24 +299,13 @@ const refList = [
         page: [1, 162]
     },
     {
-        author: ["[美]Walter Rudin"],
-        title: "数学分析原理",
+        author: ["欧阳光中", "朱学炎", "金福临", "陈传璋"],
+        title: "数学分析",
         type: "M",
-        trans: ["赵慈庚", "蒋铎"],
-        press: "机械工业出版社",
-        locate: "上海",
-        year: 2006,
-        page: [1, 304],
-        plot: 0
-    },
-    {
-        author: ["贺伟"],
-        title: "范畴论",
-        type: "M",
-        press: "科学出版社",
+        press: "高等教育出版社",
         locate: "北京",
-        year: 2006,
-        page: [1, 104],
+        year: 2018,
+        page: [1, 526],
         plot: 0
     },
     {
