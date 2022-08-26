@@ -65,20 +65,18 @@ nav:
     - 介绍: index.md
     - 许可证: intro/license.md
   - 认识基础:
-    - 一、认知科学:
-      - 1 神经认知: cogn/cogn/nerve.md
-      - 2 心理认知: cogn/cogn/psyc.md
-      - 3 语言认知: cogn/cogn/lang.md
-      - 4 思维认知: cogn/cogn/think.md
-      - 5 文化认知: cogn/cogn/civil.md
-    - 二、形式逻辑:
+    - 一、形式逻辑:
       - 1 概念: cogn/formal/concept.md
       - 2 命题与演绎: cogn/formal/deduction.md
       - 3 归纳和类比: cogn/formal/induction.md
       - 4 非形式逻辑: cogn/formal/proof.md
   - 形而上学:
-    - 二、语言逻辑:
-      - 4 形式语用学: meta/lang/pragma.md
+    - 一、认知科学:
+      - 1 神经认知: meta/cogn/nerve.md
+      - 2 心理认知: meta/cogn/psyc.md
+      - 3 语言认知: meta/cogn/lang.md
+      - 4 思维认知: meta/cogn/think.md
+      - 5 文化认知: meta/cogn/civil.md
     - 三、分析哲学:
       - 1 演绎与证成: meta/logic/syntax.md
       - 2 真理与悖论: meta/logic/truth.md
@@ -115,3 +113,4 @@ nav:
   - 计算理论:
     - 二、形式语言:
       - 1 形式文法理论: comp/lang/grammar.md
+      - 4 形式语用学: comp/lang/pragma.md
