@@ -100,18 +100,18 @@ nav:
       - 2 序数与基数: logic/set/ordinal.md
   - 代数学:
     - 一、初等代数:
-      - 1 解析式与初等函数: math/alg/form.md
-      - 2 方程与不等式: math/alg/eq.md
-      - 3 初等数论: math/alg/num.md
-      - 4 组合理论: math/alg/comb.md
+      - 1 解析式与初等函数: alg/elem/form.md
+      - 2 方程与不等式: alg/elem/eq.md
+      - 3 初等数论: alg/elem/num.md
+      - 4 组合理论: alg/elem/comb.md
   - 几何学:
     - 二、点集拓扑:
-      - 1 拓扑空间: math/top/space.md
-      - 2 构造空间: math/top/construct.md
-      - 3 拓扑不变性质: math/top/prop.md
+      - 1 拓扑空间: top/point/space.md
+      - 2 构造空间: top/point/construct.md
+      - 3 拓扑不变性质: top/point/prop.md
   - 分析学:
     - 一、分析学原理:
-      - 1 序列与级数: math/anly/seq.md
+      - 1 序列与级数: anly/princ/seq.md
   - 计算理论:
     - 二、形式语言:
-      - 1 形式文法理论: comp/syntax/grammar.md
+      - 1 形式文法理论: comp/lang/grammar.md
