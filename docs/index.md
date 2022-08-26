@@ -69,15 +69,6 @@
 <script>
 const refList = [
     {
-        author: ["蔡曙山"],
-        title: "认知科学导论",
-        type: "M",
-        press: "人民出版社",
-        locate: "北京",
-        year: 2021,
-        page: [1, 697]
-    },
-    {
         author: ["华东师范大学哲学系逻辑学教研室"],
         title: "形式逻辑",
         type: "M",
@@ -114,6 +105,15 @@ const refList = [
         plot: 0
     },
     {
+        author: ["蔡曙山"],
+        title: "认知科学导论",
+        type: "M",
+        press: "人民出版社",
+        locate: "北京",
+        year: 2021,
+        page: [1, 697]
+    },
+    {
         author: ["赵毅衡"],
         title: "符号学：原理与推演",
         type: "M",
@@ -124,16 +124,6 @@ const refList = [
         plot: 0
     },
     {
-        author: ["蔡曙山", "邹崇理"],
-        title: "自然语言形式理论研究",
-        type: "M",
-        press: "人民出版社",
-        locate: "北京",
-        year: 2010,
-        page: [1, 604],
-        plot: 294
-    },
-    {
         author: ["陈波"],
         title: "逻辑哲学",
         type: "M",
@@ -141,17 +131,7 @@ const refList = [
         locate: "北京",
         year: 2006,
         page: [1, 364],
-        plot: 144 + (364 - 345)
-    },
-    {
-        author: ["黄敏"],
-        title: "分析哲学导论",
-        type: "M",
-        press: "中山大学出版社",
-        locate: "广州",
-        year: 2009,
-        page: [295, 362],
-        plot: 0
+        plot: 172 + (364 - 345)
     },
     {
         author: ["[美]Stewart Shapiro"],
@@ -263,13 +243,13 @@ const refList = [
         plot: 0
     },
     {
-        author: ["Sheldon Axler"],
-        title: "Linear Algebra Done Right",
+        author: ["张巍", "阚海斌", "倪卫明"],
+        title: "线性代数",
         type: "M",
-        press: "Springer",
-        locate: "Cham",
-        year: 2015,
-        page: [1, 202],
+        press: "科学出版社",
+        locate: "北京",
+        year: 2016,
+        page: [1, 169],
         plot: 0
     },
     {
@@ -326,6 +306,16 @@ const refList = [
         locate: "上海",
         year: 2008,
         page: [1, 227]
+    },
+    {
+        author: ["蔡曙山", "邹崇理"],
+        title: "自然语言形式理论研究",
+        type: "M",
+        press: "人民出版社",
+        locate: "北京",
+        year: 2010,
+        page: [1, 604],
+        plot: 294
     },
     {
         author: ["Rob Nederpelt", "Herman Geuvers"],
