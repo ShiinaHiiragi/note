@@ -62,6 +62,25 @@
 
 ## 3.2 摹状词
 ### 3.2.1 Russell 理论
+1. 否定性的理论：摹状词的出现是可以消去的
+    1. 一个包含摹状词的命题被改写为一个不含摹状词的命题
+    2. 摹状词是不完全的符号，没有独立的意义，其意义只有在命题的前后关系中才能加以确定
+    3. 限定摹状词不是指称表达式，而是逻辑上不同种类的一些成分的复合，它不指称任何实在的或想象中的事物或对象
+2. 摹状词的分类
+    1. 非限定摹状词：具有「一个某某」形式的短语
+    2. 限定摹状词：具有「那个如此这般的某某」形式的短语，通过对某一事物的某个特征描述唯一地指称这个事物
+3. 摹状词与专名
+    1. 不定摹状词：用 $\varphi x$ 代表不定摹状词「一个有性质 $\varphi$ 的对象」
+        1. 用 $\psi(\varphi x)$ 表示 $\varphi x$ 具有性质 $\psi$，并规定 $\varphi x$ 与 $\psi x$ 的联合断定不常假：$\psi (\varphi x) = \exists x \ (\varphi(x) \wedge \psi(x))$
+        2. 一个不定摹状词的对象存在定义为命题函项「$x$ 是一个有性质 $\varphi$ 的对象」有时真，即 $\exists x \ \varphi(x)$
+    2. 限定摹状词：用 $\iota$ 代表定冠词，用 $\iota x \varphi x$ 表示「那个唯一具有性质 $\varphi$ 的个体」
+        1. 包含限定摹状词的命题 $\psi(\iota x \varphi x)$ 定义为 $\exists c \ (\forall x \ ((\varphi(x) \leftrightarrow x = c) \wedge \psi(c)))$
+        2. 用 $\exists!$ 表示「恰好存在一个」，则有定义 $\exists! (\iota x \varphi x) = \exists c \ (\forall x \ (\varphi(x) \leftrightarrow x = c))$
+        3. 初现：如果摹状词以整个命题为辖域，则称其在命题中是初现，用 $[\iota x \varphi x](\neg \psi(\iota x \varphi x))$ 表示摹状词在其中有初现，定义为 $\exists c \ (\forall x \ ((\varphi(x) \leftrightarrow x = c) \wedge \neg \psi(c)))$
+        4. 次现：如果摹状词以命题中的一个支命题为辖域，则称其在命题中是次现，用 $\neg [\iota x \varphi x](\neg \psi(\iota x \varphi x))$ 表示摹状词在其中有次现，定义为 $\neg \exists c \ (\forall x \ ((\varphi(x) \leftrightarrow x = c) \wedge \neg \psi(c)))$
+4. 存在是命题函项的基本属性
+    1. 某个命题函项的可满足行或有时真，如果将只能应用于命题函项的谓词转移到满足一个命题函项的个体上，拿结果就是错误的
+    2. 将「存在」用于摹状词是有意义的，但将「存在」用于专名是无意义的
 
 ### 3.2.2 Strawson 理论
 
