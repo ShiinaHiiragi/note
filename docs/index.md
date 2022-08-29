@@ -6,7 +6,7 @@
 全站以 `mkdocs-material` 作为框架，使用中文作为描述语言，尽可能保证符号的使用与书写风格具有一致性，所有源文件在 GitHub 可见。标点符号的使用基本符合普遍规则，绝大部分不规范的排版均为有意编排。
 
 !!! info "此项目仍未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：分析哲学 · 意义理论 </label>
+    <label> 现在进度：分析哲学 · 摹状词理论 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
@@ -164,6 +164,16 @@ const refList = [
         plot: 0
     },
     {
+        author: ["张清宇"],
+        title: "逻辑哲学九章",
+        type: "M",
+        press: "江苏人民出版社",
+        locate: "南京",
+        year: 2004,
+        page: [234, 264],
+        plot: 0
+    },
+    {
         author: ["姚宁远"],
         title: "初等模型论",
         type: "M",
@@ -267,6 +277,16 @@ const refList = [
         locate: "北京",
         year: 2014,
         page: [1, 180],
+        plot: 0
+    },
+    {
+        author: ["吕林根", "徐子道"],
+        title: "解析几何",
+        type: "M",
+        press: "高等教育出版社",
+        locate: "北京",
+        year: 2006,
+        page: [1, 295],
         plot: 0
     },
     {
