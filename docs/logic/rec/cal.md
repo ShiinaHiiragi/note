@@ -36,10 +36,105 @@
 
     每个原始递归函数 $f$ 都有一个有穷的生成序列 $\left<f_1, f_2, \cdots, f_n\right>$，其中 $f_n = f$．对于任意 $1 \leqslant i \leqslant n$，$f_i$ 是初始函数或是前面的函数通过复合或原始递归得到的
 
-    1. 一个自然数上的关系 $R$ 是原始递归的当且仅当其特征函数是原始递归函数，如果 $R$ 是一元关系，则称 $R$ 是原始递归集
-    2. 在不严格的情形下，可以将一个谓词与之在自然数上的标准解释等同起来，因此有原始递归谓词的概念
+    1. 一个自然数上的关系 $R$ 是原始递归的当且仅当其特征函数是原始递归函数，如果 $R$ 是一元关系，则称 $R$ 是原始递归集．在不严格的情形下，可以将一个谓词与之在自然数上的标准解释等同起来，因此有原始递归谓词的概念
+        1. 若 $A, B \subseteq \mathbf N^k$ 都是原始递归集合，则 $\mathbf N^k - A, A \cup B, A \cap B$ 也是原始递归集合
+        2. 如果 $f_1, f_2$ 都是原始递归函数，且 $P$ 是原始递归谓词，则函数
 
-3. 原始递归函数的性质
+            $$
+            f(x) = \left\{\begin{aligned}
+            & f_1(x), & P(x) \\
+            & f_2(x), & \neg P(x)
+            \end{aligned}\right.
+            $$
+
+            也是原始递归的
+
+        3. 假设 $P_1, P_2, \cdots, P_n$ 是一元谓词且都是原始递归的，且对任意 $x$ 有且只有一个 $P_i$ 使得 $P_i(x)$ 成立．灵 $g_1(x), g_2(x), \cdots, g_n(x)$ 都是原始递归函数，定义函数
+
+            $$
+            f(x) = \left\{\begin{aligned}
+            & g_1(x), & P_1(x) \\
+            & g_2(x), & P_2(x) \\
+            & \cdots \\
+            & g_n(x), & P_n(x)
+            \end{aligned}\right.
+            $$
+
+    2. 除法的定义
+        1. 商函数：定义
+
+            $$
+            \mathrm{quo}(x, y) = \left\{\begin{aligned}
+            & q, x \neq 0 \wedge \exists r < x \ (y = xq + r) \\
+            & 0, x = 0
+            \end{aligned}\right.
+            $$
+
+            可知 $\mathrm{quo}(x, y)$ 是原始递归函数
+
+        2. 余数函数：定义
+
+            $$
+            \mathrm{rem}(x, y) = \left\{\begin{aligned}
+            & r, x \neq 0, \exists q \leqslant y \ (y = xq + r) \wedge r < x \\
+            & 0, x = 0
+            \end{aligned}\right.
+            $$
+
+            可知 $\mathrm{rem}(x, y)$ 是原始递归函数
+
+3. 有界极小算子：令 $P(\vec x, z)$ 为一个 $(k + 1)-$元的性质，定义
+
+    $$
+    \mu z \leqslant y \ P(\vec x, z) = \left\{\begin{aligned}
+    & \textsf{最小的满足 }P(\vec x, z) \textsf{ 且小于等于 } y \textsf{ 的 } z, & \textsf{如果它存在} \\
+    & y + 1, & \textsf{否则}
+    \end{aligned}\right.
+    $$
+
+    其中 $\mu$ 读作「最小的」
+
+    1. 如果 $f(\vec x, y)$ 是原始递归的，则有界和 ${\displaystyle \sum_{y \leqslant z} f(\vec x, y)}$ 与有界积 ${\displaystyle \prod_{y \leqslant z} f(\vec x, y)}$ 都是原始递归的
+    2. 如果 $P(\vec x, z)$ 是一个原始递归谓词
+        1. 谓词 $\exists z \leqslant y \ P(\vec x, z)$ 与 $\forall z \leqslant y \ P(\vec x, z)$ 都是原始递归的
+        2. 定义函数 $f(\vec x, y) = \mu z \leqslant y \ P(\vec x, z)$，则 $f(\vec x, y)$ 也是原始递归的
+
+4. $\text{G}\ddot{\mathrm o}\text{del}$ 编码：对于有穷序列 $\left<a_0, a_1, \cdots, a_n\right>$，定义 $\text{G}\ddot{\mathrm o}\text{del}$ 数 $\mathrm{enc}(a_0, a_1, \cdots, a_n) = p_0^{a_0+1} p_1^{a_1+1} \cdots p_n^{a_n+1}$，其中 $p(n) = p_n$ 表示第 $n$ 个质数，空序列的 $\text{G}\ddot{\mathrm o}\text{del}$ 数为 $1$
+    1. 长度函数：定义 $\mathrm{lh}: \mathbf N \to \mathbf N$ 为 $\mathrm{lh}(a) = \mu k \leqslant a \ (p_k \nmid a)$
+        1. $\mathrm{lh}(1) = 0$
+        2. 对任意的 $\text{G}\ddot{\mathrm o}\text{del}$ 数 $a = \mathrm{enc}(a_0, a_1, \cdots, a_n)$，都有 $\mathrm{lh}(a) = n + 1$
+    2. 分量函数：定义 $(a)_i = \mu k \leqslant a \ [p_i^{k+2} \nmid a]$，对任意的 $\text{G}\ddot{\mathrm o}\text{del}$ 数 $a = \mathrm{enc}(a_0, a_1, \cdots, a_n)$，都有 $(a)_i = a_i$
+    3. 串接函数：对 $a, b \in \mathbf N$ 定义 $a \widehat{\ \ \ } b = a \cdot {\displaystyle \prod_{i < \mathrm{lh}(b)} p_{\mathrm{lh}(a) + i}^{(b)_i + 1}}$
+    4. 以下函数和谓词是原始递归的
+        1. 全体有穷序列的 $\text{G}\ddot{\mathrm o}\text{del}$ 数构成的集合
+        2. 谓词「$x$ 整除 $y$」「$x$ 是质数」「$x$ 是合数」
+        3. 函数 $p(n), \mathrm{lh}(a), (a)_i, a \widehat{\ \ \ } b$，其中 $\mathrm{enc}(a_0, a_1, \cdots, a_n) \widehat{\ \ \ } \mathrm{enc}(b_0, b_1, \cdots, b_m) = \mathrm{enc}(a_0, a_1, \cdots, a_n, b_0, b_1, \cdots, b_m)$
+5. $\text{Ackman}$ 函数
+    1. 三元函数 $\Phi(n, x, y)$ 递归定义：
+
+        $$
+        \begin{aligned}
+        \Phi(0, 0, y) & = y, \\
+        \Phi(0, x + 1, y) & = \Phi(0, x, y) + 1 \\
+        \Phi(1, 0, y) & = 0 \\
+        \Phi(n + 2, 0, y) & = 1 \\
+        \Phi(n + 1, x + 1, y) & = \Phi(n, \Phi(n + 1, x, y), y)
+        \end{aligned}
+        $$
+
+    2. 二元函数版本 $A(x, y)$ 递归定义：
+
+        $$
+        \begin{aligned}
+        A(0, y) & = y + 1 \\
+        A(x + 1, 0) & = A(x, 1) \\
+        A(x + 1, y + 1) & = A(x, A(x + 1, y))
+        \end{aligned}
+        $$
+
+    3. $\text{Ackman}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 使得 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
+
+6. 递归函数
 
 ### 1.1.3 等价性
 
