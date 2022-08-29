@@ -36,6 +36,8 @@ markdown_extensions:
   - meta
   - admonition
   - pymdownx.details
+  - pymdownx.mark
+  - pymdownx.tilde
   - toc:
       permalink: true
   - pymdownx.arithmatex:
