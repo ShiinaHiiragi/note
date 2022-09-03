@@ -126,7 +126,13 @@
             - 谓词 $\exists z \leqslant y \ P(\vec x, z)$ 与 $\forall z \leqslant y \ P(\vec x, z)$ 都是原始递归的
             - 定义函数 $f(\vec x, y) = \mu z \leqslant y \ P(\vec x, z)$，则 $f(\vec x, y)$ 也是原始递归的
 
-    2. 正则 $\mu-$算子：令 $f: \mathbf N^{n+1} \to \mathbf N$ 唯一个全函数，如果 $n$ 元函数 $g(x_1, x_2, \cdots, x_n)$ 满足正则性条件：$\forall x_1 \forall x_2 \cdots \forall x_n$，且 $g(x_1, x_2, \cdots, x_n)$ 是使得 $f(x_1, x_2, \cdots, x_n, y) = 0$ 的最小的 $y$，则称 $g$ 是从 $f$ 通过正则极小化得到的，记作 $g(x_1, x_2, \cdots, x_n) = \mu y[f(x_1, x_2, \cdots, x_n, y) = 0]$
+    2. 正则 $\mu-$算子：令 $f: \mathbf N^{n+1} \to \mathbf N$ 为一个全函数，如果 $n$ 元函数 $g(x_1, x_2, \cdots, x_n)$ 满足正则性条件：
+
+        $$
+        \forall x_1 \forall x_2 \cdots \forall x_n \exists y \ f(x_1, x_2, \cdots, x_n, y) = 0
+        $$
+
+        且 $g(x_1, x_2, \cdots, x_n)$ 是使得 $f(x_1, x_2, \cdots, x_n, y) = 0$ 的最小的 $y$，则称 $g$ 是从 $f$ 通过正则极小化得到的，记作 $g(x_1, x_2, \cdots, x_n) = \mu y[f(x_1, x_2, \cdots, x_n, y) = 0]$
 
 4. $\text{G}\ddot{\mathrm o}\text{del}$ 编码：对于有穷序列 $\left<a_0, a_1, \cdots, a_n\right>$，定义 $\text{G}\ddot{\mathrm o}\text{del}$ 数 $\mathrm{enc}(a_0, a_1, \cdots, a_n) = p_0^{a_0+1} p_1^{a_1+1} \cdots p_n^{a_n+1}$，其中 $p(n) = p_n$ 表示第 $n$ 个质数，空序列的 $\text{G}\ddot{\mathrm o}\text{del}$ 数为 $1$
     1. 长度函数：定义 $\mathrm{lh}: \mathbf N \to \mathbf N$ 为 $\mathrm{lh}(a) = \mu k \leqslant a \ (p_k \nmid a)$
@@ -149,7 +155,7 @@
     2. $\mathcal P$ 对复合运算与原始递归运算封闭
     3. 取极小：假设 $g \in \mathcal P$ 是 $n + 1$ 元递归函数，则 $n$ 元函数 $f(x_1, x_2, \cdots, x_n) = \mu y[g(x_1, x_2, \cdots, x_n, y) = 0]$ 也属于 $\mathcal P$
 
-    由定义可知部分递归函数不一定是全函数
+    由于 $\mu$ 算子是一种无界搜索，因此部分递归函数不一定是全函数
 
     1. 部分递归函数是对原始递归函数的真扩张：$\text{Ackman}$ 函数是部分递归全函数
     2. 全体部分递归全函数的类恰好是递归函数的类
