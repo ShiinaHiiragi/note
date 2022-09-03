@@ -6,8 +6,9 @@
     1. $\text{Turing}$ 机的输入是 $n$ 个自然数，自然数 $m$ 用带上 $m + 1$ 个连续的 $1$ 表示，如果输入为 $n$ 元组 $m_1, m_2, \cdots, m_n$，则用空格 $0$ 隔开数字
     2. $\text{Turing}$ 机的输出是停机时纸带上所有 $1$ 的总数，$1$ 不一定是连续的
 2. $\text{Turing}$ 机计算函数：设 $f$ 为 $\mathbf N^n \to \mathbf N$ 的（部分）函数，$M$ 为 $\text{Turing}$ 机．则称 $\text{Turing}$ 机 $M$ 计算函数 $f$ 当且仅当对任意 $n$ 元组 $(x_1, x_2, \cdots, x_n)$，如果 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机且输出为 $f(x_1, x_2, \cdots, x_n)$；如果 $(x_1, x_2, \cdots, x_n) \notin \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时不会停机
-    1. 用 $f(x_1, x_2, \cdots, x_n) \downarrow$ 表示 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$；用 $M(x_1, x_2, \cdots, x_n)\downarrow$ 表示 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机
-    2. 如果一个自然数上的函数存在一个计算它的 $\text{Turing}$ 机，则称之为图灵可计算的；如果一个自然数上的关系集合特征函数是图灵可计算的，则称之为图灵可判定的
+    1. 用 $f(x_1, x_2, \cdots, x_n) \downarrow$ 表示 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$，此时称 $f$ 在 $(x_1, x_2, \cdots, x_n)$ 处收敛；用 $f(x_1, x_2, \cdots, x_n) \uparrow$ 表示 $(x_1, x_2, \cdots, x_n) \notin \mathrm{dom}(f)$，此时称 $f$ 在 $(x_1, x_2, \cdots, x_n)$ 处发散
+    2. 用 $M(x_1, x_2, \cdots, x_n)\downarrow$ 表示 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机
+    3. 如果一个自然数上的函数存在一个计算它的 $\text{Turing}$ 机，则称之为图灵可计算的；如果一个自然数上的关系集合特征函数是图灵可计算的，则称之为图灵可判定的
 3. 标准化：对任意 $\text{Turing}$ 机 $M$，都存在 $\text{Turing}$ 机 $M'$ 将其输出标准化，即
     1. 对任意函数 $f$，$f$ 是 $M'$ 可计算的，当且仅当 $f$ 是 $M$ 可计算的且对于任意输入 $\boldsymbol x$，$M$ 与 $M'$ 给出相同的输出
     2. 在 $M'$ 的终止格局中，纸带上所有的 $1$ 是连续的，
@@ -83,21 +84,49 @@
 
             可知 $\mathrm{rem}(x, y)$ 是原始递归函数
 
-3. 有界极小算子：令 $P(\vec x, z)$ 为一个 $(k + 1)-$元的性质，定义
+    3. $\text{Ackman}$ 函数
+        1. 三元函数 $\Phi(n, x, y)$ 递归定义：
 
-    $$
-    \mu z \leqslant y \ P(\vec x, z) = \left\{\begin{aligned}
-    & \textsf{最小的满足 }P(\vec x, z) \textsf{ 且小于等于 } y \textsf{ 的 } z, & \textsf{如果它存在} \\
-    & y + 1, & \textsf{否则}
-    \end{aligned}\right.
-    $$
+            $$
+            \begin{aligned}
+            \Phi(0, 0, y) & = y, \\
+            \Phi(0, x + 1, y) & = \Phi(0, x, y) + 1 \\
+            \Phi(1, 0, y) & = 0 \\
+            \Phi(n + 2, 0, y) & = 1 \\
+            \Phi(n + 1, x + 1, y) & = \Phi(n, \Phi(n + 1, x, y), y)
+            \end{aligned}
+            $$
 
-    其中 $\mu$ 读作「最小的」
+        2. 二元函数版本 $A(x, y)$ 递归定义：
 
-    1. 如果 $f(\vec x, y)$ 是原始递归的，则有界和 ${\displaystyle \sum_{y \leqslant z} f(\vec x, y)}$ 与有界积 ${\displaystyle \prod_{y \leqslant z} f(\vec x, y)}$ 都是原始递归的
-    2. 如果 $P(\vec x, z)$ 是一个原始递归谓词
-        1. 谓词 $\exists z \leqslant y \ P(\vec x, z)$ 与 $\forall z \leqslant y \ P(\vec x, z)$ 都是原始递归的
-        2. 定义函数 $f(\vec x, y) = \mu z \leqslant y \ P(\vec x, z)$，则 $f(\vec x, y)$ 也是原始递归的
+            $$
+            \begin{aligned}
+            A(0, y) & = y + 1 \\
+            A(x + 1, 0) & = A(x, 1) \\
+            A(x + 1, y + 1) & = A(x, A(x + 1, y))
+            \end{aligned}
+            $$
+
+        3. $\text{Ackman}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 使得 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
+
+3. 有界极小算子与正则 $\mu-$算子
+    1. 有界极小算子：令 $P(\vec x, z)$ 为一个 $(k + 1)-$元的性质，定义
+
+        $$
+        \mu z \leqslant y \ P(\vec x, z) = \left\{\begin{aligned}
+        & \textsf{最小的满足 }P(\vec x, z) \textsf{ 且小于等于 } y \textsf{ 的 } z, & \textsf{如果它存在} \\
+        & y + 1, & \textsf{否则}
+        \end{aligned}\right.
+        $$
+
+        其中 $\mu$ 读作「最小的」
+
+        1. 如果 $f(\vec x, y)$ 是原始递归的，则有界和 ${\displaystyle \sum_{y \leqslant z} f(\vec x, y)}$ 与有界积 ${\displaystyle \prod_{y \leqslant z} f(\vec x, y)}$ 都是原始递归的
+        2. 如果 $P(\vec x, z)$ 是一个原始递归谓词
+            - 谓词 $\exists z \leqslant y \ P(\vec x, z)$ 与 $\forall z \leqslant y \ P(\vec x, z)$ 都是原始递归的
+            - 定义函数 $f(\vec x, y) = \mu z \leqslant y \ P(\vec x, z)$，则 $f(\vec x, y)$ 也是原始递归的
+
+    2. 正则 $\mu-$算子：令 $f: \mathbf N^{n+1} \to \mathbf N$ 唯一个全函数，如果 $n$ 元函数 $g(x_1, x_2, \cdots, x_n)$ 满足正则性条件：$\forall x_1 \forall x_2 \cdots \forall x_n$，且 $g(x_1, x_2, \cdots, x_n)$ 是使得 $f(x_1, x_2, \cdots, x_n, y) = 0$ 的最小的 $y$，则称 $g$ 是从 $f$ 通过正则极小化得到的，记作 $g(x_1, x_2, \cdots, x_n) = \mu y[f(x_1, x_2, \cdots, x_n, y) = 0]$
 
 4. $\text{G}\ddot{\mathrm o}\text{del}$ 编码：对于有穷序列 $\left<a_0, a_1, \cdots, a_n\right>$，定义 $\text{G}\ddot{\mathrm o}\text{del}$ 数 $\mathrm{enc}(a_0, a_1, \cdots, a_n) = p_0^{a_0+1} p_1^{a_1+1} \cdots p_n^{a_n+1}$，其中 $p(n) = p_n$ 表示第 $n$ 个质数，空序列的 $\text{G}\ddot{\mathrm o}\text{del}$ 数为 $1$
     1. 长度函数：定义 $\mathrm{lh}: \mathbf N \to \mathbf N$ 为 $\mathrm{lh}(a) = \mu k \leqslant a \ (p_k \nmid a)$
@@ -109,32 +138,21 @@
         1. 全体有穷序列的 $\text{G}\ddot{\mathrm o}\text{del}$ 数构成的集合
         2. 谓词「$x$ 整除 $y$」「$x$ 是质数」「$x$ 是合数」
         3. 函数 $p(n), \mathrm{lh}(a), (a)_i, a \widehat{\ \ \ } b$，其中 $\mathrm{enc}(a_0, a_1, \cdots, a_n) \widehat{\ \ \ } \mathrm{enc}(b_0, b_1, \cdots, b_m) = \mathrm{enc}(a_0, a_1, \cdots, a_n, b_0, b_1, \cdots, b_m)$
-5. $\text{Ackman}$ 函数
-    1. 三元函数 $\Phi(n, x, y)$ 递归定义：
 
-        $$
-        \begin{aligned}
-        \Phi(0, 0, y) & = y, \\
-        \Phi(0, x + 1, y) & = \Phi(0, x, y) + 1 \\
-        \Phi(1, 0, y) & = 0 \\
-        \Phi(n + 2, 0, y) & = 1 \\
-        \Phi(n + 1, x + 1, y) & = \Phi(n, \Phi(n + 1, x, y), y)
-        \end{aligned}
-        $$
+5. 递归函数：全体递归函数的集合为最小的包含所有初始函数且对复合、原始递归与正则极小化封闭的函数集合
+    1. 谓词 $R$ 是递归的当且仅当其特征函数是递归函数，如果 $R$ 是一元谓词，则称 $R$ 是递归集
+    2. 假定 $A, B \subseteq \mathbf N^k$ 都是递归的
+        1. $\mathbf N^k - A, A \cap B, A \cup B$ 都是递归的
+        2. 递归谓词对有界量词封闭
+6. 部分递归函数：全体部分递归函数集合 $\mathcal P$ 定义为
+    1. 初始函数都属于 $\mathcal P$
+    2. $\mathcal P$ 对复合运算与原始递归运算封闭
+    3. 取极小：假设 $g \in \mathcal P$ 是 $n + 1$ 元递归函数，则 $n$ 元函数 $f(x_1, x_2, \cdots, x_n) = \mu y[g(x_1, x_2, \cdots, x_n, y) = 0]$ 也属于 $\mathcal P$
 
-    2. 二元函数版本 $A(x, y)$ 递归定义：
+    由定义可知部分递归函数不一定是全函数
 
-        $$
-        \begin{aligned}
-        A(0, y) & = y + 1 \\
-        A(x + 1, 0) & = A(x, 1) \\
-        A(x + 1, y + 1) & = A(x, A(x + 1, y))
-        \end{aligned}
-        $$
-
-    3. $\text{Ackman}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 使得 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
-
-6. 递归函数
+    1. 部分递归函数是对原始递归函数的真扩张：$\text{Ackman}$ 函数是部分递归全函数
+    2. 全体部分递归全函数的累恰好是递归函数的类
 
 ### 1.1.3 等价性
 
