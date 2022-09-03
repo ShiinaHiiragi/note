@@ -164,6 +164,9 @@
         2. 任何一台标准的 $\text{Turing}$ 机 $M_1$ 都可以被一台纸带是单向无穷的 $\text{Turing}$ 机 $M_2$ 所模拟
         3. $\text{Turing}$ 可计算函数对复合运算、原始递归与极小算子封闭
     2. 任何 $\text{Turing}$ 可计算函数都是部分递归的
+        1. $\text{Turing}$ 机的编码和解码是能行的：用 $M_e$ 表示 $\text{G}\ddot{\mathrm o}\text{del}$ 为 $e$ 的 $\text{Turing}$ 机，用 $\Phi_e^{(n)}$ 表示由 $M_e$ 计算的 $n$ 元部分函数，将 $\Phi_e^{(1)}$ 简写为 $\Phi_e$．称 $e$ 为 $\text{Turing}$ 机或 $\text{Turing}$ 可计算函数的指标，用 $M_{e_1} = M_{e_2}$ 表示 $M_{e_1}$ 与 $M_{e_2}$ 计算的是同一个部分函数
+        2. 关于 $\text{Turing}$ 机的谓词是原始递归的：「$e$ 是一个 $\text{Turing}$ 机程序的编码」「$\text{Turing}$ 机 $e$ 中包含四元组 $s$」「状态 $q$ 是 $\text{Turing}$ 机 $e$ 的停机状态」与「$c$ 是一个格局的编码」
+        3. 定义 $\text{Kleene}$ 谓词 $T(e, x, z)$ 为 $z$ 是程序 $e$ 对输入 $x$ 的计算过程的编码，则 $T$ 是原始递归的
 2. $\text{Church}-\text{Turing}$ 论题：直观可计算函数类就是部分递归函数构成的类，也就是 $\text{Turing}$ 可计算函数类
 
 ## 1.2 递归定理
