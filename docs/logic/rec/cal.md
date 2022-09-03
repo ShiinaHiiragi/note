@@ -110,21 +110,21 @@
         3. $\text{Ackman}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 使得 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
 
 3. 有界极小算子与正则 $\mu-$算子
-    1. 有界极小算子：令 $P(\vec x, z)$ 为一个 $(k + 1)-$元的性质，定义
+    1. 有界极小算子：令 $P(\boldsymbol x, z)$ 为一个 $(k + 1)-$元的性质，定义
 
         $$
-        \mu z \leqslant y \ P(\vec x, z) = \left\{\begin{aligned}
-        & \textsf{最小的满足 }P(\vec x, z) \textsf{ 且小于等于 } y \textsf{ 的 } z, & \textsf{如果它存在} \\
+        \mu z \leqslant y \ P(\boldsymbol x, z) = \left\{\begin{aligned}
+        & \textsf{最小的满足 }P(\boldsymbol x, z) \textsf{ 且小于等于 } y \textsf{ 的 } z, & \textsf{如果它存在} \\
         & y + 1, & \textsf{否则}
         \end{aligned}\right.
         $$
 
         其中 $\mu$ 读作「最小的」
 
-        1. 如果 $f(\vec x, y)$ 是原始递归的，则有界和 ${\displaystyle \sum_{y \leqslant z} f(\vec x, y)}$ 与有界积 ${\displaystyle \prod_{y \leqslant z} f(\vec x, y)}$ 都是原始递归的
-        2. 如果 $P(\vec x, z)$ 是一个原始递归谓词
-            - 谓词 $\exists z \leqslant y \ P(\vec x, z)$ 与 $\forall z \leqslant y \ P(\vec x, z)$ 都是原始递归的
-            - 定义函数 $f(\vec x, y) = \mu z \leqslant y \ P(\vec x, z)$，则 $f(\vec x, y)$ 也是原始递归的
+        1. 如果 $f(\boldsymbol x, y)$ 是原始递归的，则有界和 ${\displaystyle \sum_{y \leqslant z} f(\boldsymbol x, y)}$ 与有界积 ${\displaystyle \prod_{y \leqslant z} f(\boldsymbol x, y)}$ 都是原始递归的
+        2. 如果 $P(\boldsymbol x, z)$ 是一个原始递归谓词
+            - 谓词 $\exists z \leqslant y \ P(\boldsymbol x, z)$ 与 $\forall z \leqslant y \ P(\boldsymbol x, z)$ 都是原始递归的
+            - 定义函数 $f(\boldsymbol x, y) = \mu z \leqslant y \ P(\boldsymbol x, z)$，则 $f(\boldsymbol x, y)$ 也是原始递归的
 
     2. 正则 $\mu-$算子：令 $f: \mathbf N^{n+1} \to \mathbf N$ 为一个全函数，如果 $n$ 元函数 $g(x_1, x_2, \cdots, x_n)$ 满足正则性条件：
 
@@ -159,7 +159,7 @@
 
     1. 部分递归函数是对原始递归函数的真扩张：$\text{Ackman}$ 函数是部分递归全函数
     2. 全体部分递归全函数的类恰好是递归函数的类
-        1. $\text{Kleene}$ 正规型定理：存在原始递归函数 $U: \mathbf N \to N$ 和原始递归谓词 $T(e, x, z)$ 使得对任意部分递归函数 $f: \mathbf N \to \mathbf N$ 都存在一个自然数 $e$ 满足 $f(x) = U(\mu z \ T(e, x, z))$
+        1. $\text{Kleene}$ 正规型定理：存在原始递归函数 $U: \mathbf N \to \mathbf N$ 和原始递归谓词 $T(e, x, z)$ 使得对任意部分递归函数 $f: \mathbf N \to \mathbf N$ 都存在一个自然数 $e$ 满足 $f(x) = U(\mu z \ T(e, x, z))$
         2. 通用函数定理：存在一个通用的部分递归函数，即存在一个二元的部分递归函数 $\Phi: \mathbf N^2 \to \mathbf N$ 满足对任何一元递归函数 $f: N \to N$ 都存在一个自然数 $e$，使得对所有 $x$ 都有 $f(x) = T(e, x)$．对于递归函数，这样的通用函数不存在
     3. 部分递归函数实质地扩张了递归函数类：存在一个部分递归函数 $f(x)$，使得对任何递归函数 $g(x)$，都存在自然数 $n \in \mathrm{dom}(f)$ 使得 $f(n) \neq g(n)$
 
@@ -176,6 +176,12 @@
 2. $\text{Church}-\text{Turing}$ 论题：直观可计算函数类就是部分递归函数构成的类，也就是 $\text{Turing}$ 可计算函数类
 
 ## 1.2 递归定理
+1. 参数定理（$\text{Kleene} \ s-m-n$ 定理的一般形式）：令 $m, n \in \mathbf N^+$，则存在原始递归的单射 $s_n^m: \mathbf N^{m+1} \to \mathbf N$，使得对任意 $x \in \mathbf N, \boldsymbol y \in \mathbf N^m$ 都有 $\Phi_{s_n^m(x, \boldsymbol y)}^{(n)} (\boldsymbol z) = \Phi_x^{(m+n)} (\boldsymbol y, \boldsymbol z)$
+    1. $s-m-n$ 定理：令 $\Phi: \mathbf N^2 \to \mathbf N$ 为一个二元部分递归函数，则存在一个原始递归函数 $g: \mathbf N \to N$ 使得对所有的 $e, x$ 有 $\Phi_{g(e)}(x) = \Phi(e, x)$
+    2. 填充引理：每一部分递归函数 $\Phi_e$ 都有无穷多个指标，即 $I = \{i: \Phi_i = \Phi_e\}$ 是无穷的，且可以能行地找出一个无穷子集 $A_e \subseteq I$
+2. 递归定理：令 $f$ 为一个递归函数，则存在一个自然数 $n$ 使得 $\Phi_{f(n)} = \Phi_n$
+    1. 假定 $f$ 是一个递归函数，则存在任意大的自然数 $n$ 使得 $\Phi_{f(n)} = \Phi_n$
+    2. 带参数的递归定理：如果 $f(x, y)$ 是一个递归函数，则存在一个单射递归函数 $n(y)$ 使得 $\Phi_{n(y)} = \Phi_{f(n(y), y)}$
 
 ## 1.3 不可判定性
 1. 递归集与递归可枚举集的 $\text{Turing}$ 机刻画
