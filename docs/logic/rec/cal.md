@@ -8,7 +8,7 @@
 2. $\text{Turing}$ 机计算函数：设 $f$ 为 $\mathbf N^n \to \mathbf N$ 的（部分）函数，$M$ 为 $\text{Turing}$ 机．则称 $\text{Turing}$ 机 $M$ 计算函数 $f$ 当且仅当对任意 $n$ 元组 $(x_1, x_2, \cdots, x_n)$，如果 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机且输出为 $f(x_1, x_2, \cdots, x_n)$；如果 $(x_1, x_2, \cdots, x_n) \notin \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时不会停机
     1. 用 $f(x_1, x_2, \cdots, x_n) \downarrow$ 表示 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$，此时称 $f$ 在 $(x_1, x_2, \cdots, x_n)$ 处收敛；用 $f(x_1, x_2, \cdots, x_n) \uparrow$ 表示 $(x_1, x_2, \cdots, x_n) \notin \mathrm{dom}(f)$，此时称 $f$ 在 $(x_1, x_2, \cdots, x_n)$ 处发散
     2. 用 $M(x_1, x_2, \cdots, x_n)\downarrow$ 表示 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机
-    3. 如果一个自然数上的函数存在一个计算它的 $\text{Turing}$ 机，则称之为图灵可计算的；如果一个自然数上的关系集合特征函数是图灵可计算的，则称之为图灵可判定的
+    3. 如果一个自然数上的函数存在一个计算它的 $\text{Turing}$ 机，则称之为 $\text{Turing}$ 可计算的；如果一个自然数上的关系集合特征函数是 $\text{Turing}$ 可计算的，则称之为 $\text{Turing}$ 可判定的
 3. 标准化：对任意 $\text{Turing}$ 机 $M$，都存在 $\text{Turing}$ 机 $M'$ 将其输出标准化，即
     1. 对任意函数 $f$，$f$ 是 $M'$ 可计算的，当且仅当 $f$ 是 $M$ 可计算的且对于任意输入 $\boldsymbol x$，$M$ 与 $M'$ 给出相同的输出
     2. 在 $M'$ 的终止格局中，纸带上所有的 $1$ 是连续的，
@@ -152,9 +152,19 @@
     由定义可知部分递归函数不一定是全函数
 
     1. 部分递归函数是对原始递归函数的真扩张：$\text{Ackman}$ 函数是部分递归全函数
-    2. 全体部分递归全函数的累恰好是递归函数的类
+    2. 全体部分递归全函数的类恰好是递归函数的类
+        1. $\text{Kleene}$ 正规型定理：存在原始递归函数 $U: \mathbf N \to N$ 和原始递归谓词 $T(e, x, z)$ 使得对任意部分递归函数 $f: \mathbf N \to \mathbf N$ 都存在一个自然数 $e$ 满足 $f(x) = U(\mu z \ T(e, x, z))$
+        2. 通用函数定理：存在一个通用的部分递归函数，即存在一个二元的部分递归函数 $\Phi: \mathbf N^2 \to \mathbf N$ 满足对任何一元递归函数 $f: N \to N$ 都存在一个自然数 $e$，使得对所有 $x$ 都有 $f(x) = T(e, x)$．对于递归函数，这样的通用函数不存在
+    3. 部分递归函数实质地扩张了递归函数类：存在一个部分递归函数 $f(x)$，使得对任何递归函数 $g(x)$，都存在自然数 $n \in \mathrm{dom}(f)$ 使得 $f(n) \neq g(n)$
 
 ### 1.1.3 等价性
+1. 一个函数是 $\text{Turing}$ 可计算的当且仅当它是部分递归的
+    1. 任何部分递归函数都是 $\text{Turing}$ 可计算的
+        1. 每个初始函数都是 $\text{Turing}$ 可计算的
+        2. 任何一台标准的 $\text{Turing}$ 机 $M_1$ 都可以被一台纸带是单向无穷的 $\text{Turing}$ 机 $M_2$ 所模拟
+        3. $\text{Turing}$ 可计算函数对复合运算、原始递归与极小算子封闭
+    2. 任何 $\text{Turing}$ 可计算函数都是部分递归的
+2. $\text{Church}-\text{Turing}$ 论题：直观可计算函数类就是部分递归函数构成的类，也就是 $\text{Turing}$ 可计算函数类
 
 ## 1.2 递归定理
 
