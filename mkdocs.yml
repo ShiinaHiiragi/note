@@ -95,6 +95,7 @@ nav:
       - 1 结构与模型: logic/mdl/mdl.md
     - 三、递归论:
       - 1 可计算理论: logic/rec/calc.md
+      - 2 计算复杂性理论: logic/rec/cplx.md
     - 四、公理集合论:
       - 1 数学基础: logic/set/zfc.md
       - 2 序数与基数: logic/set/ordinal.md
