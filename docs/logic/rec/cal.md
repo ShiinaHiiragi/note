@@ -147,6 +147,8 @@
 
 5. 递归函数：全体递归函数的集合为最小的包含所有初始函数且对复合、原始递归与正则极小化封闭的函数集合
     1. 谓词 $R$ 是递归的当且仅当其特征函数是递归函数，如果 $R$ 是一元谓词，则称 $R$ 是递归集
+        1. 如果集合 $A$ 与其补集 $\mathbf N - A$ 都是递归可枚举的，则集合 $A$ 与 $\mathbf N - A$ 都是递归的
+        2. 能被一个完全 $\text{Turing}$ 机（即对所有输入都能停机的 $\text{Turing}$ 机）接受的语言
     2. 假定 $A, B \subseteq \mathbf N^k$ 都是递归的
         1. $\mathbf N^k - A, A \cap B, A \cup B$ 都是递归的
         2. 递归谓词对有界量词封闭
@@ -170,34 +172,59 @@
         2. 任何一台标准的 $\text{Turing}$ 机 $M_1$ 都可以被一台纸带是单向无穷的 $\text{Turing}$ 机 $M_2$ 所模拟
         3. $\text{Turing}$ 可计算函数对复合运算、原始递归与极小算子封闭
     2. 任何 $\text{Turing}$ 可计算函数都是部分递归的
-        1. $\text{Turing}$ 机的编码和解码是能行的：用 $M_e$ 表示 $\text{G}\ddot{\mathrm o}\text{del}$ 为 $e$ 的 $\text{Turing}$ 机，用 $\Phi_e^{(n)}$ 表示由 $M_e$ 计算的 $n$ 元部分函数，将 $\Phi_e^{(1)}$ 简写为 $\Phi_e$．称 $e$ 为 $\text{Turing}$ 机或 $\text{Turing}$ 可计算函数的指标，用 $M_{e_1} = M_{e_2}$ 表示 $M_{e_1}$ 与 $M_{e_2}$ 计算的是同一个部分函数
-        2. 关于 $\text{Turing}$ 机的谓词是原始递归的：「$e$ 是一个 $\text{Turing}$ 机程序的编码」「$\text{Turing}$ 机 $e$ 中包含四元组 $s$」「状态 $q$ 是 $\text{Turing}$ 机 $e$ 的停机状态」与「$c$ 是一个格局的编码」
-        3. 定义 $\text{Kleene}$ 谓词 $T(e, x, z)$ 为 $z$ 是程序 $e$ 对输入 $x$ 的计算过程的编码，则 $T$ 是原始递归的
+        1. $\text{Turing}$ 机的编码和解码是能行的：用 $M_e$ 表示 $\text{G}\ddot{\mathrm o}\text{del}$ 数为 $e$ 的 $\text{Turing}$ 机，称 $e$ 为 $\text{Turing}$ 机或 $\text{Turing}$ 可计算函数的指标
+
+            !!! note "$\text{Turing}$ 机与递归函数" 
+                - 用 $\Phi_e^{(n)}$ 表示由 $M_e$ 计算的 $n$ 元部分函数，将 $\Phi_e^{(1)}$ 简写为 $\Phi_e$．用 $M_{e_1} = M_{e_2}$ 表示 $M_{e_1}$ 与 $M_{e_2}$ 计算的是同一个部分函数
+                - 用 $\Phi_{e, s}(x) \downarrow = y$ 表示存在 $y$，$M_e$ 对于输入 $x$ 在 $s$ 步之内停机，且输入为 $y$（$x, y, e < s$）；如果不存在这样的 $y$，则记为 $\Phi_{e, s}(x) \uparrow$
+                - 若 $W_e$ 是部分递归函数 $\Phi_e$ 的定义域，则用 $W_e$ 表示 $\Phi_e$ 所确定的递归可枚举集；令 $W_{e, s} = \mathrm{dom}(\Phi_{e, s})$，$W_{e, s}$ 是有穷的且 $W_e = {\displaystyle \bigcup_{s \in \mathbf N} W_{e, s}}$
+
+        1. 关于 $\text{Turing}$ 机的谓词是原始递归的：「$e$ 是一个 $\text{Turing}$ 机程序的编码」「$\text{Turing}$ 机 $e$ 中包含四元组 $s$」「状态 $q$ 是 $\text{Turing}$ 机 $e$ 的停机状态」与「$c$ 是一个格局的编码」
+        2. 定义 $\text{Kleene}$ 谓词 $T(e, x, z)$ 为 $z$ 是程序 $e$ 对输入 $x$ 的计算过程的编码，则 $T$ 是原始递归的
 2. $\text{Church}-\text{Turing}$ 论题：直观可计算函数类就是部分递归函数构成的类，也就是 $\text{Turing}$ 可计算函数类
 
 ## 1.2 递归定理
 1. 参数定理（$\text{Kleene} \ s-m-n$ 定理的一般形式）：令 $m, n \in \mathbf N^+$，则存在原始递归的单射 $s_n^m: \mathbf N^{m+1} \to \mathbf N$，使得对任意 $x \in \mathbf N, \boldsymbol y \in \mathbf N^m$ 都有 $\Phi_{s_n^m(x, \boldsymbol y)}^{(n)} (\boldsymbol z) = \Phi_x^{(m+n)} (\boldsymbol y, \boldsymbol z)$
     1. $s-m-n$ 定理：令 $\Phi: \mathbf N^2 \to \mathbf N$ 为一个二元部分递归函数，则存在一个原始递归函数 $g: \mathbf N \to N$ 使得对所有的 $e, x$ 有 $\Phi_{g(e)}(x) = \Phi(e, x)$
-    2. 填充引理：每一部分递归函数 $\Phi_e$ 都有无穷多个指标，即 $I = \{i: \Phi_i = \Phi_e\}$ 是无穷的，且可以能行地找出一个无穷子集 $A_e \subseteq I$
+    2. 填充引理：每一部分递归函数 $\Phi_e$ 都有无穷多个指标，即 $I = \{i \mid \Phi_i = \Phi_e\}$ 是无穷的，且可以能行地找出一个无穷子集 $A_e \subseteq I$
 2. 递归定理：令 $f$ 为一个递归函数，则存在一个自然数 $n$ 使得 $\Phi_{f(n)} = \Phi_n$
     1. 假定 $f$ 是一个递归函数，则存在任意大的自然数 $n$ 使得 $\Phi_{f(n)} = \Phi_n$
     2. 带参数的递归定理：如果 $f(x, y)$ 是一个递归函数，则存在一个单射递归函数 $n(y)$ 使得 $\Phi_{n(y)} = \Phi_{f(n(y), y)}$
 
 ## 1.3 不可判定性
-1. 递归集与递归可枚举集的 $\text{Turing}$ 机刻画
-    1. 递归可枚举集合：能被一个 $\text{Turing}$ 机接受的语言
-        
-        递归集：能被一个完全 $\text{Turing}$ 机（即对所有输入都能停机的 $\text{Turing}$ 机）接受的语言
-
-    2. 递归集与递归可枚举集的性质
-        1. 递归集类是递归可枚举集类的真子类
-        2. 递归集与递归可枚举集分别对其交与并封闭，递归集对其补集运算封闭
-        3. 如果语言 $L$ 与 $\overline L$ 都是递归可枚举集，则 $L$ 与 $\overline L$ 都是递归集
-
-2. 归约：给定两个集合 $A \subseteq \Sigma^*, B \subseteq \Delta^*$，则 $A$ 到 $B$ 的归约是一个可计算函数 $\sigma: \Sigma^* \to \Delta^*$ 使得对一切 $x \in \Sigma^*$ 都有 $x \in A \leftrightarrow \sigma(x) \in B$，此时称 $A$ 通过映射可归约到 $B$，记作 $A \leqslant_m B$，下标 $m$ 表示映射可能是多对一映射
-    1. 递归集与递归可枚举集的规约
-        1. 如果 $A \leqslant_m B$ 且 $B$ 是递归可枚举集，则 $A$ 也是递归可枚举集
-        2. 如果 $A \leqslant_m B$ 且 $B$ 是递归集，则 $A$ 也是递归集
-    2. 性质：在给定的字母表 $\Sigma$ 上，递归可枚举集合类的一个性质是一个映射 $P: \{R \mid R \textsf{ 是递归可枚举集合类的子类}\} \to 2$，其中 $2 = \{0, 1\}$ 中，$1$ 表示假，$0$ 表示真．特别地，若某个映射只取 $0$ 或 $1$，则称该映射为平凡性质，否则称为非平凡性质
-    3. 停机问题：任意给定的 $\text{Turing}$ 机在任意给定的输入串上是否停机（接受或拒绝）的问题是不可判定的
-    4. $\text{Rice}$ 定理：递归可枚举集合类的任何一个非平凡性质都是不可判定的
+1. 递归可枚举集（$\mathrm{r.e}$）
+    1. 定义
+        1. 如果集合 $A$ 为空集或是某个递归全函数 $f: \mathbf N \to \mathbf N$ 的值域，则称 $A$ 为递归可枚举的
+        2. 能被一个 $\text{Turing}$ 机接受的语言
+    2. 令 $A \subseteq \mathbf N$，则 $A$ 是递归可枚举的当且仅当下列各命题：
+        1. $A = \varnothing$ 或 $A$ 是某个原始递归函数的值域
+        2. $A$ 是某个部分递归函数的值域
+        3. $A$ 的部分特征函数是部分递归的，其中定义 $A$ 的部分特征函数 $\chi_{A_p}(x) := \left\{\begin{aligned} & 1, & x \in A \\ & \textsf{无定义}, & x \notin A \end{aligned}\right.$
+        4. $A$ 是某个部分递归函数的定义域
+        5. 存在一个二元递归谓词 $R(x, y)$ 使得 $A$ 具有形式 $A = \{x \mid \exists y \ R(x, y)\}$
+    3. 假定 $A, B \subseteq \mathbf N^k$ 都是递归可枚举的
+        1. $A \cup B, A \cap B$ 都是递归可枚举的
+        2. 集合 $C = \{\boldsymbol x \in \mathbf N^{k-1} \mid \exists y \ ((\boldsymbol x, y) \in A)\}$ 也是递归可枚举的，即递归可枚举关系对存在量词封闭
+2. $\Sigma_1-$集：如果集合 $A$ 是一个递归关系的投影，则称 $A$ 是 $\Sigma_1-$形式的
+    1. 一个集合 $A$ 是递归可枚举集当且仅当 $A$ 是 $\Sigma_1-$集
+        1. 如果 $R \subseteq \mathbf N^{n+1}$ 是 $n + 1$ 元递归关系，且 $A = \{x \mid \exists y_1 \exists y_2 \cdots \exists y_n \ R(x, y_1, y_2, \cdots, y_n)\}$，则 $A$ 是 $\Sigma_1$ 的
+        2. 单值化：如果 $R \subseteq \mathbf N^2$ 是递归可枚举的关系，则存在一个部分递归函数 $\Phi$ 满足 $\Phi(x) \downarrow \wedge R(x,\Phi(x))$，当且仅当 $\exists y \ R(x, y)$
+        3. 部分函数 $\psi$ 是部分递归的当且仅当其图像 $G = \{(x, y) \mid y = \psi(x)\}$ 是递归可枚举的
+        4. 递归可枚举集能行地、一致地对交和并封闭，即存在递归函数 $f, g$ 使得 $W_{f(x, y)} = W_x \cap W_y$，且 $W_{g(x, y)} = W_x \cup W_y$
+    2. 如果集合 $A$ 及其补集 $\mathbf N - A$ 都是 $\Sigma_1$ 的，则 $A$ 是 $\Delta_1$ 的，此时 $A$ 为递归集
+3. 可判定性：如果一个问题的集合是递归的，则称该问题是可判定的或可解的，否则称其为不可判定的或不可解的
+    1. 停机问题：任意给定的 $\text{Turing}$ 机在任意给定的输入串上是否停机（接受或拒绝）的问题是不可判定的
+        1. 集合 $K = \{e \mid \Phi_e(e)$ 有定义$\}$ 是递归可枚举的，但不是递归的
+        2. 集合 $K_0 = \{\mathrm{enc}(x, y) \mid \Phi_x(y) \downarrow\}$ 不是递归的
+    2. 递归集类是递归可枚举集类的真子类，递归可枚举集不对补集运算封闭
+4. 规约：
+    1. 多一规约与一一规约：设 $A, B$ 为两个集合
+        1. 如果存在一个递归全函数 $g: \mathbf N \to \mathbf N$ 满足对任意 $x$ 都有 $x \in A$ 当且仅当 $g(x) \in B$，则称集合 $A$ 可以多一规约或 $m-$规约到集合 $B$，记作 $A \leqslant_m B$
+        2. 如果 $A \leqslant_m B$ 且 $g$ 为单射，则称集合 $A$ 可以一一规约或 $1-$规约到集合 $B$，记作 $A \leqslant_1 B$
+    2. 递归集与递归可枚举集的规约：设 $A \leqslant_m B$
+        1. 若 $B$ 是递归可枚举集，则 $A$ 也是递归可枚举集
+        2. 若 $B$ 是递归集，则 $A$ 也是递归集
+    3. 指标集：令 $A \subseteq \mathbf N$，如果对任意 $x, y$ 有 $(x \in A \wedge \Phi_x = \Phi_y) \rightarrow y \in A$，则称 $A$ 是指标集
+        1. $\text{Rice}$ 定理：如果 $A$ 是非平凡的指标集，即 $A \neq \varnothing, \mathbf N$，则或者 $K \leqslant_1 A$，或者 $K \leqslant_1 \mathbf N - A$．因此一个指标集是递归的当且仅当其是平凡的
+        2. $\text{Rice} - \text{Shapiro}$ 定理：令 $\mathcal A$ 是 $\mathbf N$ 到 $\mathbf N$ 的部分递归函数的集合且有 $A = \{e \mid \phi_e \in \mathcal A\}$ 是递归可枚举的，则部分递归函数 $\psi: \mathbf N \to \mathbf N \in \mathcal A$ 当且仅当存在 $\psi$ 的有穷限制属于 $\mathcal A$
+5. $\text{Hilbert}$ 第十问题：对任意 $\text{Diophantus}$ 方程，即只有有穷个未知数的整系数方程 $P(x_1, x_2, \cdots, x_n) = 0$，是否有整数解是不可判定的

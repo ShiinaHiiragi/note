@@ -363,7 +363,7 @@
             - $\Sigma \vdash \exists x\alpha$ 当且仅当存在 $t\in \mathcal T(S)$ 使得 $\Sigma \vdash \alpha(t/x)$
             - $\Sigma \vdash \forall x\alpha$ 当且仅当对所有 $t\in \mathcal T(S)$ 都有 $\Sigma \vdash \alpha(t/x)$
         2. 设 $\Sigma$ 是 $\mathbf H_1-$一致的完备证据集，对任意公式 $\alpha$，$\Sigma \vdash_{\mathbf H_1} \alpha$ 当且仅当 $\mathfrak M^\Sigma \vDash \alpha$
-        3. 任何 $\mathbf H_1-$ 一致的完备证据集 $\Sigma$ 都是可满足的，即 $\mathfrak M^\Sigma \vDash \Sigma$
+        3. 任何 $\mathbf H_1-$一致的完备证据集 $\Sigma$ 都是可满足的，即 $\mathfrak M^\Sigma \vDash \Sigma$
         4. 设 $\Sigma$ 是 $\mathbf H_1-$一致的公式集且 $\mathrm{FV}(\Sigma)$ 是有穷的，那么存在 $\mathbf H_1-$一致的证据集 $\Psi$ 使得 $\Sigma \subseteq \Psi$
         5. 设 $\Psi$ 是 $\mathbf H_1-$一致的公式集，那么存在 $\mathbf H_1-$一致的完备集 $\Theta$ 使得 $\Psi \subseteq \Theta$
         6. 如果 $\Sigma$ 是 $\mathbf H_1-$一致公式集并且 $\mathrm{FV}(\Sigma)$ 是有穷的，那么 $\Sigma$ 是可满足的
