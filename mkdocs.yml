@@ -68,33 +68,33 @@ nav:
     - 许可证: intro/license.md
   - 认识基础:
     - 一、形式逻辑:
-      - 1 概念: cogn/formal/concept.md
-      - 2 命题与演绎: cogn/formal/deduction.md
-      - 3 归纳和类比: cogn/formal/induction.md
-      - 4 非形式逻辑: cogn/formal/proof.md
+      - 1 概念: cogn/form/cep.md
+      - 2 命题与演绎: cogn/form/ded.md
+      - 3 归纳和类比: cogn/form/ind.md
+      - 4 非形式逻辑: cogn/form/prf.md
   - 形而上学:
     - 一、认知科学:
       - 1 神经认知: meta/cogn/nerve.md
       - 2 心理认知: meta/cogn/psyc.md
       - 3 语言认知: meta/cogn/lang.md
       - 4 思维认知: meta/cogn/think.md
-      - 5 文化认知: meta/cogn/civil.md
+      - 5 文化认知: meta/cogn/civ.md
     - 三、分析哲学:
       - 1 演绎与证成: meta/logic/syntax.md
       - 2 真理与悖论: meta/logic/truth.md
       - 3 意义与指称: meta/logic/mean.md
     - 四、数学哲学:
-      - 1 基本问题与历史观点: meta/math/concept.md
-      - 2 三大主义: meta/math/doctrine.md
-      - 3 当代观点: meta/math/contemp.md
+      - 1 基本问题与历史观点: meta/math/cep.md
+      - 2 三大主义: meta/math/doctr.md
+      - 3 当代观点: meta/math/cont.md
   - 数理逻辑:
     - 一、结构证明论:
-      - 1 命题逻辑: logic/proof/prop.md
-      - 2 一阶逻辑: logic/proof/pred.md
+      - 1 命题逻辑: logic/prf/prop.md
+      - 2 一阶逻辑: logic/prf/pred.md
     - 二、模型论:
-      - 1 结构与模型: logic/model/model.md
+      - 1 结构与模型: logic/mdl/mdl.md
     - 三、递归论:
-      - 1 可计算理论: logic/rec/cal.md
+      - 1 可计算理论: logic/rec/calc.md
     - 四、公理集合论:
       - 1 数学基础: logic/set/zfc.md
       - 2 序数与基数: logic/set/ordinal.md
@@ -107,12 +107,12 @@ nav:
   - 几何学:
     - 二、点集拓扑:
       - 1 拓扑空间: top/point/space.md
-      - 2 构造空间: top/point/construct.md
+      - 2 构造空间: top/point/constr.md
       - 3 拓扑不变性质: top/point/prop.md
   - 分析学:
     - 一、分析学原理:
       - 1 序列与级数: anly/princ/seq.md
   - 计算理论:
     - 二、形式语言:
-      - 1 形式文法理论: comp/lang/grammar.md
+      - 1 形式文法理论: comp/lang/gr.md
       - 4 形式语用学: comp/lang/pragma.md
