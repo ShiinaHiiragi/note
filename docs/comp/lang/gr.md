@@ -542,6 +542,7 @@
         1. 设 $\text{ID}_i = X_1 X_2 \cdots X_{i-1} q X_i X_{i+1} \cdots X_n$，若有 $\delta(q, X_i) = (p, Y, R)$，则 $\text{ID}_{i} \vdash \text{ID}_{i+1}$，其中 $\text{ID}_{i+1} = X_1 X_2 \cdots X_{i-2} p X_{i-1} Y X_{i+1} \cdots X_n$，向右移动也可类似定义
         2. 用 $\text{ID}_i \vdash^* \text{ID}_{j}$ 表示任意多次转换
     3. $\text{Turing}$ 机接受的语言：$L(M) = \{x \mid sx\sqcup^\infty \vdash^* \alpha_1 t \alpha_2, x \in \Sigma^*, t \in F, \alpha_1, \alpha_2 \in \Gamma^*\}$
+    4. 判定机：对所有输入停机的 $\text{Turing}$ 机
 
 2. $\text{Turing}$ 机的变形
     1. 双向无限带：将带的单向无限延伸到双向无限延申．若 $L$ 被一个具有双向无限带的 $\text{Turing}$ 机接受，则 $L$ 也能被一个具有单项无限带的 $\text{Turing}$ 机接受

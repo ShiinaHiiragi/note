@@ -194,6 +194,16 @@ const refList = [
         plot: 92
     },
     {
+        author: ["[美]Thomas H. Cormen", "[美]Charles E. Leiserson", "[美]Ronald L. Rivest", "[美]Clifford Stein"],
+        title: "算法导论",
+        type: "M",
+        trans: ["殷建平", "徐云", "王刚", "刘晓光", "苏明", "邹恒明", "王宏志"],
+        press: "机械工业出版社",
+        locate: "上海",
+        year: 2013,
+        page: [25, 36]
+    },
+    {
         author: ["[美]Michael Sipser"],
         title: "计算理论导引",
         type: "M",
