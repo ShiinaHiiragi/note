@@ -85,15 +85,43 @@
 
         $\mathrm{NSPACE}(f(n)) := \{L \mid L$ 是被 $O(f(n))$ 空间的非确定型 $\text{Turing}$ 机判定的语言$\}$
 
-    2. $\text{Savitch}$ 定理：对于任何函数 $f: \mathbf N \to \mathbf R_+$ 都有 $\mathrm{NPSACE}(f(n)) \subseteq \mathrm{SPACE}(f^2(n))$，其中 $f(n) \geqslant n$
+    2. $\mathrm{EXPSPACE} := {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{SPACE}(2^{n^k})}$
+    3. $\text{Savitch}$ 定理：对于任何函数 $f: \mathbf N \to \mathbf R_+$ 都有 $\mathrm{NPSACE}(f(n)) \subseteq \mathrm{SPACE}(f^2(n))$，其中 $f(n) \geqslant n$
 
 3. $\mathrm{PSPACE}$ 类：在确定型 $\text{Turing}$ 机上且在多项式时间内可判定的语言类，即 $\mathrm{PSPACE} = {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{SPACE}(n^k)}$
     1. 定义 $\mathrm{NPSPACE}$ 类为在非确定型 $\text{Turing}$ 机上且在多项式时间内可判定的语言类
-    2. $\mathrm{P} \subseteq \mathrm{NP} \subseteq \mathrm{PSPACE} = \mathrm{NPSPACE} \subseteq \mathrm{EXPTIME}$，且 $\mathrm{P} \neq \mathrm{EXPTIME}$
-    3. $\mathrm{PSPACE}$ 完全性：若语言 $L$ 满足
+    2. $\mathrm{PSPACE}$ 完全性：若语言 $L$ 满足
         1. $L \in \mathrm{PSPACE}$
         2. $L$ 是 $\mathrm{PSPACE}$ 难的，即任意 $K \in \mathrm{PSPACE}$ 都有 $K \leqslant_P L$
 
         则称 $L$ 是 $\mathrm{PSPACE}$ 完全的
 
+4. $\mathrm{L}$ 类与 $\mathrm{NL}$ 类
+    1. $\mathrm{L}$ 是确定型 $\text{Turing}$ 机在对数空间内可判定的语言类，即 $\mathrm{L} := \mathrm{SPACE}(\log_2 n)$
+
+        $\mathrm{NL}$ 是非确定型 $\text{Turing}$ 在对数空间内可判定的语言类，即 $\mathrm{NL} := \mathrm{NSPACE}(\log_2 n)$
+
+    2. 格局：若 $M$ 是一个有单独的只读输入纸带的 $\text{Turing}$ 机，$w$ 为输入，则 $M$ 在 $w$ 上的格局包括状态、工作带和两个读写头的位置，输入 $w$ 不作为 $M$ 在 $w$ 上格局的一部分
+    3. 对数空间可归约：若语言 $A$ 通过对数空间可计算函数 $f$ 映射可归约到语言 $B$，则称 $A$ 对数空间可归约到 $B$，记为 $A \leqslant_L B$
+        1. 对数空间转换器：有一条只读输入带、一条只写输出带和一条读写工作带的 $\text{Turing}$ 机．输出带的头部不能向左移动，工作带可以包含 $O(\log_2 n)$ 个符号
+        2. 对数空间可计算函数：对数空间转换器 $M$ 计算一个函数 $f: \Sigma^* \to \Sigma^*$，其中 $f(w)$ 是将 $w$ 放在 $M$ 的输入带上启动 $M$ 运行到 $M$ 停机时输出带上存放的字符串，称 $f$ 为对数空间可计算函数
+    4. $\mathrm{NL}$ 完全性：若语言 $L$ 满足
+        1. $L \in \mathrm{NL}$
+        2. 任意 $K \in \mathrm{NL}$ 都有 $K \leqslant_L L$
+
+        则称 $L$ 是 $\mathrm{NL}$ 完全的
+
+        1. 若 $A \leqslant_L B$ 且 $B \in \mathrm L$，则 $A \in \mathrm L$
+        2. 若有一个 $\mathrm{NL}$ 完全的语言属于 $\mathrm L$，则 $\mathrm L = \mathrm{NL}$
+
 ## 2.3 难解性
+1. 复杂性类间的关系：$\mathrm{L} \subseteq \mathrm{NL} = \mathrm{coNL} \subseteq \mathrm{P} \subseteq \mathrm{NP} \subseteq \mathrm{PSPACE} = \mathrm{NPSPACE} \subseteq \mathrm{EXPTIME}$
+    1. $\mathrm{P} \subset \mathrm{EXPTIME}$
+    2. $\mathrm{NL} \subset \mathrm{PSPACE}$
+    3. $\mathrm{PSPACE} \subset \mathrm{EXPSPACE}$
+2. 层次定理
+    1. 空间层次定理：对于任何空间可构造函数 $f: \mathbf N \to \mathbf N$，存在语言 $L$ 在空间 $O(f(n))$ 内可判定但不能在空间 $\omicron(f(n))$ 内判定
+        1. 空间可构造：对于函数 $f: \mathbf N \to \mathbf N$，其中 $f(n)$ 至少为 $O(\log_2 n)$，如果函数 $f$ 将 $1^n$ 映射为 $f(n)$ 的二进制表示，且该函数在空间 $O(f(n))$ 内是可计算的，则称该函数为空间可构造的
+        2. 对于任意两个函数 $f_1, f_2: \mathbf N \to \mathbf N$ 有 $\mathrm{SPACE}(f_1(n)) \subset \mathrm{SPACE}(f_2(n))$，其中 $f_1(n) = \omicron(f_2(n))$，$f_2$ 是空间可构造的
+        3. 对于任意两个实数 $0 \leqslant \varepsilon_1 < \varepsilon_2$ 有 $\mathrm{SPACE}(n^{\varepsilon_1}) \subset \mathrm{SPACE}(n^{\varepsilon_2})$
+    2. 时间层次定理
