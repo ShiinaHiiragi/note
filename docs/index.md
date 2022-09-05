@@ -6,7 +6,7 @@
 全站以 `mkdocs-material` 作为框架，使用中文作为描述语言，尽可能保证符号的使用与书写风格具有一致性，所有源文件在 GitHub 可见。标点符号的使用基本符合普遍规则，绝大部分不规范的排版均为有意编排。
 
 !!! info "此项目仍未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：分析哲学 · 摹状词理论 </label>
+    <label> 现在进度：分析哲学 · 专名与通名 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
