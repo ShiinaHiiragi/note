@@ -55,7 +55,7 @@
     则可简写为 $\alpha \to \beta_1 \mid \beta_2 \mid \cdots \mid \beta_n$
 
     1. 直接推导：对于给定文法 $G = (V, T, P, S)$，定义两个字符串之间的推导关系．若 $\alpha = \alpha_1\alpha_2\alpha_3, \gamma = \alpha_1\beta\alpha_3$，且 $\alpha_2 \to \beta$ 是 $P$ 中的一个产生式，则称由 $\alpha$ 直接推导出 $\gamma$，记作 $\alpha \underset{G}{\Rightarrow} \gamma$．在不引发歧义的条件下可以省略 $G$
-        1. 规约：如果 $\alpha \underset{G}{\Rightarrow} \gamma$，则反过来称 $\gamma$ 归约到 $\alpha$，记作 $\gamma \underset{G}{\Leftarrow} \alpha$
+        1. 归约：如果 $\alpha \underset{G}{\Rightarrow} \gamma$，则反过来称 $\gamma$ 归约到 $\alpha$，记作 $\gamma \underset{G}{\Leftarrow} \alpha$
         2. 推导：直接推导的扩充，即 $\alpha \overset{*}{\underset{G}{\Rightarrow}} \gamma$ 当且仅当存在 $\beta_1, \beta_2, \cdots, \beta_n$ 使得 $\alpha \underset{G}{\Rightarrow} \beta_1 \underset{G}{\Rightarrow} \beta_2 \underset{G}{\Rightarrow} \cdots \underset{G}{\Rightarrow} \beta_n \underset{G}{\Rightarrow} \gamma$
     2. 文法 $G = (V, T, P, S)$ 所产生的语言记作 $L(G) = \{w \mid S \overset{*}{\Rightarrow} w \wedge w \in T^*\}$
     3. 等价性：对于两个不同的文法 $G_1, G_2$，若 $L(G_1) = L(G_2)$，则称文法 $G_1$ 与 $G_2$ 等价

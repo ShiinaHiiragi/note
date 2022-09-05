@@ -211,8 +211,7 @@ const refList = [
         press: "机械工业出版社",
         locate: "上海",
         year: 2020,
-        page: [174, 246],
-        plot: 208 - 174
+        page: [174, 246]
     },
     {
         author: ["John Stillwell"],

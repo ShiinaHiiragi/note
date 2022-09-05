@@ -68,7 +68,7 @@
         2. $\mathrm{SAT} \in \mathrm P$ 当且仅当 $\mathrm P = \mathrm{NP}$
     2. 多项式时间可归约性
         1. 多项式时间可计算函数：设 $f: \Sigma^* \to \Sigma^*$ 是一个函数，若存在多项式时间 $\text{Turing}$ 机 $M$ 使得在任何输入 $w$ 上，$M$ 停机时 $f(w)$ 恰好在纸带上，则称函数 $f$ 为多项式时间可计算函数
-        2. 多项式时间映射可归约：设 $A, B$ 为两个语言，若存在多项式时间可计算函数 $f: \Sigma^* \to \Sigma^*$，对于每一个 $w$ 有 $w \in A \leftrightarrow f(w) \in B$，则称函数 $f$ 为 $A$ 到 $B$ 的多项式时间规约，$A$ 多项式时间可归约到 $B$，记作 $A \leqslant_P B$
+        2. 多项式时间映射可归约：设 $A, B$ 为两个语言，若存在多项式时间可计算函数 $f: \Sigma^* \to \Sigma^*$，对于每一个 $w$ 有 $w \in A \leftrightarrow f(w) \in B$，则称函数 $f$ 为 $A$ 到 $B$ 的多项式时间归约，$A$ 多项式时间可归约到 $B$，记作 $A \leqslant_P B$
         3. 可归约性的性质：设 $A \leqslant_P B$
             - 若 $B \in \mathrm P$，则 $A \in \mathrm P$
             - 若 $B \in \mathrm{NP}$，则 $A \in \mathrm{NP}$
@@ -114,14 +114,30 @@
         1. 若 $A \leqslant_L B$ 且 $B \in \mathrm L$，则 $A \in \mathrm L$
         2. 若有一个 $\mathrm{NL}$ 完全的语言属于 $\mathrm L$，则 $\mathrm L = \mathrm{NL}$
 
+5. 指数空间完全性：若语言 $L$ 满足
+    1. $L \in \mathrm{EXPSPACE}$
+    2. $L$ 是 $\mathrm{EXPSPACE}$ 难的，即任意 $K \in \mathrm{EXPSPACE}$ 都有 $K \leqslant_P L$
+
+    则称 $L$ 是 $\mathrm{EXPSPACE}$ 完全的
+
 ## 2.3 难解性
 1. 复杂性类间的关系：$\mathrm{L} \subseteq \mathrm{NL} = \mathrm{coNL} \subseteq \mathrm{P} \subseteq \mathrm{NP} \subseteq \mathrm{PSPACE} = \mathrm{NPSPACE} \subseteq \mathrm{EXPTIME}$
     1. $\mathrm{P} \subset \mathrm{EXPTIME}$
     2. $\mathrm{NL} \subset \mathrm{PSPACE}$
     3. $\mathrm{PSPACE} \subset \mathrm{EXPSPACE}$
 2. 层次定理
-    1. 空间层次定理：对于任何空间可构造函数 $f: \mathbf N \to \mathbf N$，存在语言 $L$ 在空间 $O(f(n))$ 内可判定但不能在空间 $\omicron(f(n))$ 内判定
+    1. 空间层次定理：对于任何空间可构造函数 $f: \mathbf N \to \mathbf N$，存在语言 $L$ 在空间 $O(f(n))$ 内可判定，不能在空间 $\omicron(f(n))$ 内判定
         1. 空间可构造：对于函数 $f: \mathbf N \to \mathbf N$，其中 $f(n)$ 至少为 $O(\log_2 n)$，如果函数 $f$ 将 $1^n$ 映射为 $f(n)$ 的二进制表示，且该函数在空间 $O(f(n))$ 内是可计算的，则称该函数为空间可构造的
-        2. 对于任意两个函数 $f_1, f_2: \mathbf N \to \mathbf N$ 有 $\mathrm{SPACE}(f_1(n)) \subset \mathrm{SPACE}(f_2(n))$，其中 $f_1(n) = \omicron(f_2(n))$，$f_2$ 是空间可构造的
+        2. 对于任意两个函数 $f_1, f_2: \mathbf N \to \mathbf N$ 有 $\mathrm{SPACE}(f_1(n)) \subset \mathrm{SPACE}(f_2(n))$，其中 $f_1(n) = \omicron(f_2(n))$ 且 $f_2$ 是空间可构造的
         3. 对于任意两个实数 $0 \leqslant \varepsilon_1 < \varepsilon_2$ 有 $\mathrm{SPACE}(n^{\varepsilon_1}) \subset \mathrm{SPACE}(n^{\varepsilon_2})$
-    2. 时间层次定理
+    2. 时间层次定理：对于任何时间可构造函数 $t: \mathbf N \to \mathbf N$，存在语言 $L$ 在时间 $O(t(n))$ 内可判定，不能在时间 $\omicron\left(\dfrac{t(n)}{\log_2 t(n)}\right)$ 内判定
+        1. 时间可构造：对于函数 $t: \mathbf N \to \mathbf N$，其中 $t(n)$ 至少为 $O(n \log_2 n)$，如果函数 $t$ 将 $1^n$ 映射为 $t(n)$ 的二进制表示，且该函数在时间 $O(t(n))$ 内是可计算的，则称该函数为空间可构造的
+        2. 对于任意两个函数 $t_1, t_2: \mathbf N \to \mathbf N$ 有 $\mathrm{TIME}(t_1(n)) \subset \mathrm{TIME}(t_2(n))$，其中 $t_1(n) = \omicron\left(\dfrac{t_2(n)}{\log_2 t_2(n)}\right)$ 且 $t_2$ 是时间可构造的
+        3. 对于任意两个实数 $1 \leqslant \varepsilon_1 < \varepsilon_2$ 有 $\mathrm{TIME}(n^{\varepsilon_1}) \subset \mathrm{TIME}(n^{\varepsilon_2})$
+3. 相对化
+    1. 谕示：针对一个语言的谕示是一个能判断任何串 $w$ 是否在该语言中的设备
+        1. 谕示 $\text{Turing}$ 机 $M^A$：在通常的 $\text{Turing}$ 机上增加查询 $A$ 的谕示的能力．每当 $M^A$ 在被称为谕示带的特殊纸带上写下一个字符串时，它就能在一步内得知该字符串是否属于 $A$
+        2. 令 $\mathrm{P}^A$ 是采用谕示 $A$ 的确定型多项式时间谕示 $\text{Turing}$ 机可判定的语言类；$\mathrm{NP}^A$ 是采用谕示 $A$ 的非确定型多项式时间谕示 $\text{Turing}$ 机可判定的语言类
+    2. 对角化方法的局限性
+        1. 存在谕示 $A$ 使得 $\mathrm{P}^A \neq \mathrm{NP}^A$
+        2. 存在谕示 $B$ 使得 $\mathrm{P}^B = \mathrm{NP}^B$

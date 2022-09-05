@@ -75,8 +75,7 @@
     4. 将经典命题逻辑 $\mathbf{CL}$ 定义为所有重言式的集合，即 $\mathbf{CL} = \{\alpha \in \mathscr L \mid \vDash \alpha\}$
         1. 对任意公式 $\alpha$ 和代入 $\sigma$，若 $\alpha \in \mathbf{CL}$，则 $\sigma(\alpha) \in \mathbf{CL}$
         2. 对任意公式 $\alpha, \beta$，若 $\alpha, \alpha \to \beta \in \mathbf{CL}$，则 $\beta \in \mathbf{CL}$
-    5. 真值函数：令 $\alpha$ 是公式且 $\mathrm{var}(\alpha) = \{p_1, p_2, \cdots, p_n\}$，如果对于 $n-$元函数 $f: 2^n \to 2$ 与 $\varepsilon = (\alpha_1, \alpha_2, \cdots, \alpha_n) \in 2^n$ 都有 $f(\theta(p_1), \theta(p_2), \cdots, \theta(p_n)) = \widehat \theta(\alpha)$，其中 $\theta$ 是任意赋值使得对每个 $1\leqslant i\leqslant n$ 都有 $\theta(p_i) = a_i$，则称 $\alpha$ 定义 $n-$元真值函数 $f$
-        - 任意 $n-$元真值函数 $f: 2^n \to 2$ 在 $\mathscr L$ 中可定义
+    5. 真值函数：令 $\alpha$ 是公式且 $\mathrm{var}(\alpha) = \{p_1, p_2, \cdots, p_n\}$，如果对于 $n$ 元函数 $f: 2^n \to 2$ 与 $\varepsilon = (\alpha_1, \alpha_2, \cdots, \alpha_n) \in 2^n$ 都有 $f(\theta(p_1), \theta(p_2), \cdots, \theta(p_n)) = \widehat \theta(\alpha)$，其中 $\theta$ 是任意赋值使得对每个 $1\leqslant i\leqslant n$ 都有 $\theta(p_i) = a_i$，则称 $\alpha$ 定义 $n$ 元真值函数 $f$．任意 $n$ 元真值函数 $f: 2^n \to 2$ 在 $\mathscr L$ 中可定义
 
 4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统 $\mathbf{HK}$
     1. 公理与推理规则：一个推理规则的形式是 $\begin{prooftree} \AxiomC{\(\alpha_1\)} \AxiomC{\(\alpha_2\)} \AxiomC{\(\cdots\)} \AxiomC{\(\alpha_n\)} \QuaternaryInfC{\(\alpha_0\)} \end{prooftree}$，其中 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 称为 $R$ 的前提，$\alpha_0$ 称为 $R$ 的结论

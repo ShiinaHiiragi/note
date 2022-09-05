@@ -110,7 +110,7 @@
         3. $\text{Ackman}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 使得 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
 
 3. 有界极小算子与正则 $\mu-$算子
-    1. 有界极小算子：令 $P(\boldsymbol x, z)$ 为一个 $(k + 1)-$元的性质，定义
+    1. 有界极小算子：令 $P(\boldsymbol x, z)$ 为一个 $(k + 1)$ 元的性质，定义
 
         $$
         \mu z \leqslant y \ P(\boldsymbol x, z) = \left\{\begin{aligned}
@@ -217,11 +217,11 @@
         1. 集合 $K = \{e \mid \Phi_e(e)$ 有定义$\}$ 是递归可枚举的，但不是递归的
         2. 集合 $K_0 = \{\mathrm{enc}(x, y) \mid \Phi_x(y) \downarrow\}$ 不是递归的
     2. 递归集类是递归可枚举集类的真子类，递归可枚举集不对补集运算封闭
-4. 规约：
-    1. 多一规约与一一规约：设 $A, B$ 为两个集合
-        1. 如果存在一个递归全函数 $g: \mathbf N \to \mathbf N$ 满足对任意 $x$ 都有 $x \in A$ 当且仅当 $g(x) \in B$，则称集合 $A$ 可以多一规约或 $m-$规约到集合 $B$，记作 $A \leqslant_m B$
-        2. 如果 $A \leqslant_m B$ 且 $g$ 为单射，则称集合 $A$ 可以一一规约或 $1-$规约到集合 $B$，记作 $A \leqslant_1 B$
-    2. 递归集与递归可枚举集的规约：设 $A \leqslant_m B$
+4. 归约：
+    1. 多一归约与一一归约：设 $A, B$ 为两个集合
+        1. 如果存在一个递归全函数 $g: \mathbf N \to \mathbf N$ 满足对任意 $x$ 都有 $x \in A$ 当且仅当 $g(x) \in B$，则称集合 $A$ 可以多一归约或 $m-$归约到集合 $B$，记作 $A \leqslant_m B$
+        2. 如果 $A \leqslant_m B$ 且 $g$ 为单射，则称集合 $A$ 可以一一归约或 $1-$归约到集合 $B$，记作 $A \leqslant_1 B$
+    2. 递归集与递归可枚举集的归约：设 $A \leqslant_m B$
         1. 若 $B$ 是递归可枚举集，则 $A$ 也是递归可枚举集
         2. 若 $B$ 是递归集，则 $A$ 也是递归集
     3. 指标集：令 $A \subseteq \mathbf N$，如果对任意 $x, y$ 有 $(x \in A \wedge \Phi_x = \Phi_y) \rightarrow y \in A$，则称 $A$ 是指标集
