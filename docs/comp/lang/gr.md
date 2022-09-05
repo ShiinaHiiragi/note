@@ -249,7 +249,7 @@
 
 ## 1.3 上下文有关文法
 ### 1.3.1 线性有界自动机
-1. 线性有界自动机（$\text{LBA}$）是一种特殊的非确定图灵机，由一个九元组表示：$M = (Q, \Sigma, \Gamma, \delta, \not \!c, \$, s, t, r)$
+1. 线性有界自动机（$\text{LBA}$）是一种特殊的非确定 $\text{Turing}$ 机，由一个九元组表示：$M = (Q, \Sigma, \Gamma, \delta, \not \!c, \$, s, t, r)$
     1. $\not \!c, \$$ 分别为左、右端标记，表示 $\text{Turing}$ 机读写头的移动范围
     2. 线性有界自动机接受的语言记作 $L(M) = \{w \mid w \in \Sigma^*, s \not \!c w \$ \vdash_M^* \alpha t \beta, \alpha, \beta \in \Gamma^*\}$
 2. 线性有界自动机与上下文有关文法的关系

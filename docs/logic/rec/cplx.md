@@ -4,8 +4,8 @@
 ### 2.1.1 复杂性模型
 1. 时间复杂度
     1. 令 $M$ 是一个确定型判定机，$M$ 的时间复杂度或运行时间是一个函数 $f: \mathbf N \to \mathbf N$，其中 $f(n)$ 是 $M$ 在所有长度为 $n$ 的输入上运行时所经过的最大步数．此时称 $M$ 在时间 $f(n)$ 内运行，$M$ 是 $f(n)$ 时间 $\text{Turing}$ 机
-    2. 令 $N$ 是一个非确定型判定及，$N$ 的时间复杂度或运行时间是一个函数 $f: \mathbf N \to \mathbf N$，其中 $f(n)$ 是在任何长度为 $n$ 的输入上所有计算分支中的最大步数
-2. 渐进分析：设 $g: N \to \mathbf R^+$ 是一个函数
+    2. 令 $N$ 是一个非确定型判定机，$N$ 的时间复杂度或运行时间是一个函数 $f: \mathbf N \to \mathbf N$，其中 $f(n)$ 是在任何长度为 $n$ 的输入上所有计算分支中的最大步数
+2. 渐进分析：设 $g: \mathbf N \to \mathbf R_+$ 是一个函数
     1. 渐进上界与渐进下界
         1. 渐进紧确界：令 $\Theta(g(n)) = \{f(n) \mid \exists c_1, c_2, n_0 \in \mathbf Z_+ \ \forall n \geqslant n_0 \ (0 \leqslant c_1g(n) \leqslant f(n) \leqslant c_2g(n))\}$，若 $f(n) \in \Theta(g(n))$，则称 $g(n)$ 是 $f(n)$ 的一个渐进紧确界
         2. 渐进上界：令 $O(g(n)) = \{f(n) \mid \exists c, n_0 \in \mathbf Z_+ \ \forall n \geqslant n_0 \ (0 \leqslant f(n) \leqslant cg(n))\}$，若 $f(n) \in O(g(n))$，则称 $g(n)$ 是 $f(n)$ 的一个渐进上界
@@ -17,7 +17,7 @@
             非渐进紧确下界：令 $\omega(g(n)) = \{f(n) \mid \exists c, n_0 \in \mathbf Z_+ \ \forall n \geqslant n_0 \ (0 \leqslant cg(n) < f(n))\}$，若 $f(n) \in \omega(g(n))$，则称 $g(n)$ 是 $f(n)$ 的一个非渐进紧确下界，此时 ${\displaystyle \lim_{n \to \infty} \dfrac{f(n)}{g(n)} = +\infty}$
 
     2. 渐进比较的性质
-        1. 对任意两个函数 $f, g: N \to \mathbf R^+$，有 $f(n) \in \Theta(g(n))$ 当且仅当 $f(n) \in O(g(n))$ 且 $f(n) \in \Omega(g(n))$
+        1. 对任意两个函数 $f, g: N \to \mathbf R_+$，有 $f(n) \in \Theta(g(n))$ 当且仅当 $f(n) \in O(g(n))$ 且 $f(n) \in \Omega(g(n))$
         2. 传递性
             - $f(n) \in \Theta(g(n)) \wedge g(n) \in \Theta(h(n)) \to f(n) \in \Theta(h(n))$
             - $f(n) \in O(g(n)) \wedge g(n) \in O(h(n)) \to f(n) \in O(h(n))$
@@ -38,9 +38,16 @@
         指数界：形如 $2^{n^\delta}$ 的界，其中 $\delta > 0$
 
 ### 2.1.2 时间复杂性类
-1. 时间复杂性类：令 $t: \mathbf N \to R^+$ 是一个函数，定义 $\mathrm{TIME}(t(n))$ 为由 $O(t(n))$ 时间的 $\text{Turing}$ 机判定的所有语言集合
-    1. 设 $t(n) \geqslant n$ 是一个函数，则每一个 $t(n)$ 时间的多带 $\text{Turing}$ 机都和某一个 $O(t^2(n))$ 时间的单带 $\text{Turing}$ 机等价
-    2. 设 $t(n) \geqslant n$ 是一个函数，则每一个 $t(n)$ 时间的非确定型单带 $\text{Turing}$ 机都与某个 $2^{O(t(n))}$ 时间的确定型单带 $\text{Turing}$ 机等价
+1. 时间复杂性类：令 $t: \mathbf N \to R_+$ 是一个函数
+    1. $\mathrm{TIME}(t(n)) := \{L \mid L$ 是一个被 $O(t(n))$ 时间的确定型 $\text{Turing}$ 机判定的语言$\}$
+
+        $\mathrm{NTIME}(t(n)) := \{L \mid L$ 是一个被 $O(t(n))$ 时间的非确定型 $\text{Turing}$ 机判定的语言$\}$
+
+    2. $\mathrm{EXPTIME} := {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{TIME}(2^{n^k})}$
+    3. 设 $t(n) \geqslant n$ 是一个函数，则每一个 $t(n)$ 时间的多带 $\text{Turing}$ 机都和某一个 $O(t^2(n))$ 时间的单带 $\text{Turing}$ 机等价
+
+        设 $t(n) \geqslant n$ 是一个函数，则每一个 $t(n)$ 时间的非确定型单带 $\text{Turing}$ 机都与某个 $2^{O(t(n))}$ 时间的确定型单带 $\text{Turing}$ 机等价
+
 2. $\mathrm P$ 类：确定型单带 $\text{Turing}$ 机在多项式时间内可判定的语言类，即 $\mathrm P := {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{TIME}(n^k)}$
     1. 对于所有与确定型单带 $\text{Turing}$ 机多项式等价的计算模型而言，$\mathrm P$ 是不变的
     2. $\mathrm{CFL} \subset \mathrm P$
@@ -48,13 +55,16 @@
     1. 验证机：语言 $L$ 的验证机是一个算法 $V$，这里 $L = \{w \mid$ 对某个字符串 $c,V$ 接受 $\left<w, c\right>\}$，其中 $c$ 称为 $A$ 的成员资格证书或证明
         1. 多项式时间验证机：算法 $V$ 在 $w$ 的长度的多项式时间内运行
         2. 若语言 $L$ 有一个多项式时间验证机，则称语言 $L$ 为多项式可验证的
-    2. 语言 $L \in \mathrm{NP}$ 当且仅当 $L$ 能被某个非确定型多项式时间 $\text{Turing}$ 机判定
-        1. $\mathrm{NTIME} := \{L \mid L$ 是一个被 $O(t(n))$ 时间的非确定型 $\text{Turing}$ 机判定的语言$\}$
-        2. $\mathrm{NP} := {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{NTIME}(n^k)}, \mathrm{coNP} := \overline{\mathrm{NP}}$
-    3. 已知最好的判定语言是 $\mathrm{NP}$ 的确定型方法使用指数时间，即 $\mathrm{NP} \subseteq \mathrm{EXPTIME} := {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{TIME}(2^{n^k})}$
-4. $\mathrm{NP}$ 完全性：如果语言 $L \in \mathrm{NP}$ 且任意 $K \in \mathrm{NP}$ 都有 $K \leqslant_P L$，则称 $L$ 为 $\mathrm{NP}$ 完全的
+    2. 语言 $L \in \mathrm{NP}$ 当且仅当 $L$ 能被某个非确定型多项式时间 $\text{Turing}$ 机判定，则有 $\mathrm{NP} := {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{NTIME}(n^k)}, \mathrm{coNP} := \overline{\mathrm{NP}}$
+    3. 已知最好的判定语言是 $\mathrm{NP}$ 的确定型方法使用指数时间，即 $\mathrm{NP} \subseteq \mathrm{EXPTIME}$
+4. $\mathrm{NP}$ 完全性：如果语言 $L$ 满足
+    1. $L \in \mathrm{NP}$
+    2. $L$ 是 $\text{NP}$ 难的，即任意 $K \in \mathrm{NP}$ 都有 $K \leqslant_P L$
+
+    则称 $L$ 为 $\mathrm{NP}$ 完全的
+
     1. 可满足性问题：判定一个 $\text{Boole}$ 公式是否可满足，即定义 $\mathrm{SAT} := \{\left<\varphi\right> \mid \varphi$ 是可满足的 $\text{Boole}$ 公式$\}$
-        1. $\mathrm{SAT}$ 是 $\mathrm{NP}$ 完全的
+        1. $\text{Cook}$ 定理：$\mathrm{SAT}$ 是 $\mathrm{NP}$ 完全的
         2. $\mathrm{SAT} \in \mathrm P$ 当且仅当 $\mathrm P = \mathrm{NP}$
     2. 多项式时间可归约性
         1. 多项式时间可计算函数：设 $f: \Sigma^* \to \Sigma^*$ 是一个函数，若存在多项式时间 $\text{Turing}$ 机 $M$ 使得在任何输入 $w$ 上，$M$ 停机时 $f(w)$ 恰好在纸带上，则称函数 $f$ 为多项式时间可计算函数
@@ -67,5 +77,23 @@
     3. $\mathrm{NP}$ 完全问题：若 $L$ 是 $\mathrm{NP}$ 完全的且 $L \in \mathrm P$，则 $\mathrm P = \mathrm{NP}$
 
 ## 2.2 空间复杂性
+1. 空间复杂度
+    1. 令 $M$ 是一个确定型判定机，$M$ 的空间复杂度是一个函数 $f: \mathbf N \to \mathbf N$，其中 $f(n)$ 是 $M$ 在任何长为 $n$ 的输入上扫描纸带方格的最大数，若 $M$ 的空间复杂度为 $f(n)$，则称 $M$ 在空间 $f(n)$ 内运行
+    2. 令 $N$ 是一个非确定型判定机，$N$ 的空间复杂度是一个函数 $f: \mathbf N \to \mathbf N$，其中 $f(n)$ 是 $N$ 对任何长为 $n$ 的输入，再认和计算分支上所扫描的纸带方格的最大数
+2. 空间复杂性类：令 $f: \mathbf N \to \mathbf R_+$ 是一个函数
+    1. $\mathrm{SPACE}(f(n)) := \{L \mid L$ 是被 $O(f(n))$ 空间的确定型 $\text{Turing}$ 机判定的语言$\}$
+
+        $\mathrm{NSPACE}(f(n)) := \{L \mid L$ 是被 $O(f(n))$ 空间的非确定型 $\text{Turing}$ 机判定的语言$\}$
+
+    2. $\text{Savitch}$ 定理：对于任何函数 $f: \mathbf N \to \mathbf R_+$ 都有 $\mathrm{NPSACE}(f(n)) \subseteq \mathrm{SPACE}(f^2(n))$，其中 $f(n) \geqslant n$
+
+3. $\mathrm{PSPACE}$ 类：在确定型 $\text{Turing}$ 机上且在多项式时间内可判定的语言类，即 $\mathrm{PSPACE} = {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{SPACE}(n^k)}$
+    1. 定义 $\mathrm{NPSPACE}$ 类为在非确定型 $\text{Turing}$ 机上且在多项式时间内可判定的语言类
+    2. $\mathrm{P} \subseteq \mathrm{NP} \subseteq \mathrm{PSPACE} = \mathrm{NPSPACE} \subseteq \mathrm{EXPTIME}$，且 $\mathrm{P} \neq \mathrm{EXPTIME}$
+    3. $\mathrm{PSPACE}$ 完全性：若语言 $L$ 满足
+        1. $L \in \mathrm{PSPACE}$
+        2. $L$ 是 $\mathrm{PSPACE}$ 难的，即任意 $K \in \mathrm{PSPACE}$ 都有 $K \leqslant_P L$
+
+        则称 $L$ 是 $\mathrm{PSPACE}$ 完全的
 
 ## 2.3 难解性
