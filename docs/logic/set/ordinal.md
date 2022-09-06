@@ -9,7 +9,7 @@
     1. 定义 $|X| < |Y| := |X| \leqslant |Y| \wedge |X| \neq |Y|$
     2. 关系 $\approx$ 是一个等价关系；关系 $\preccurlyeq$ 是一个偏序关系
     3. 势的比较
-        1. 如果 $X \subseteq Y$，则 $|X| \leqslant |Y|$
+        1. 如果 $X \subseteq Y$，则 $|X| \leqslant |Y|$ 且 $\exists Z \subseteq Y \ (|X| = |Z|)$
         2. $\text{Zermelo}$ 定理：$|X| < |Y| \vee |X| = |Y| \vee |Y| < |X|$
         3. $\text{Cantor} - \text{Bernstein}$ 定理：如果 $|X| \leqslant |Y| \wedge |Y| \leqslant |X|$，则 $|X| = |Y|$
 2. 有穷集与无穷集：对于任意集合 $X$，如果存在 $n \in \mathbf N$，使得 $|X| = |n|$，则称 $X$ 是有穷的，否则称 $X$ 是无穷的
