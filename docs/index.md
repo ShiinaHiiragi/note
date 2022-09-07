@@ -21,51 +21,6 @@
 ??? info "尚未记录的书目"
     <div class="uncomp"> </div>
 
-<style>
-.ref {
-    display: flex;
-    flex-direction: column;
-}
-
-.entry {
-    display: flex;
-    flex-direction: row;
-}
-
-.index {
-    min-width: 2.4em;
-    font-weight: 600;
-}
-.index:before {
-    content: "[";
-}
-.index:after {
-    content: "]";
-}
-
-.value {
-    flex-grow: 1;
-}
-
-.progress-container {
-    margin-top: -8px;
-    height: 16px;
-    width: 100%;
-    background-color: #ddd;
-    border-radius: 0.1rem;
-}
-
-.progress-percentage {
-    text-align: right;
-    font-size: 12px;
-    padding-right: 8px;
-    line-height: 16px;
-    background-color: rgb(0, 184, 212);
-    border-radius: 0.1rem;
-    color: white;
-}
-</style>
-
 <script>
 const refList = [
     {
@@ -131,7 +86,7 @@ const refList = [
         locate: "北京",
         year: 2006,
         page: [1, 364],
-        plot: 182 + (364 - 345)
+        plot: 196 + 20
     },
     {
         author: ["[美]Stewart Shapiro"],
@@ -405,3 +360,48 @@ renderRef(".ref", (item) => item.plot);
 renderRef(".ongoing", (item) => item.plot && item.plot < item.total);
 renderRef(".uncomp", (item) => !item.plot);
 </script>
+
+<style>
+.ref {
+    display: flex;
+    flex-direction: column;
+}
+
+.entry {
+    display: flex;
+    flex-direction: row;
+}
+
+.index {
+    min-width: 2.4em;
+    font-weight: 600;
+}
+.index:before {
+    content: "[";
+}
+.index:after {
+    content: "]";
+}
+
+.value {
+    flex-grow: 1;
+}
+
+.progress-container {
+    margin-top: -8px;
+    height: 16px;
+    width: 100%;
+    background-color: #ddd;
+    border-radius: 0.1rem;
+}
+
+.progress-percentage {
+    text-align: right;
+    font-size: 12px;
+    padding-right: 8px;
+    line-height: 16px;
+    background-color: rgb(0, 184, 212);
+    border-radius: 0.1rem;
+    color: white;
+}
+</style>
