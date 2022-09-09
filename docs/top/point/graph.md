@@ -23,11 +23,11 @@
 2. 顶点度数：设 $G = (V, E)$ 是一个图，顶点 $v$ 所关联的边数称为顶点 $v$ 的读书，记为 $d(v)$
     1. 度数为 $1$ 的顶点称为悬挂点；度数为奇（偶）数的顶点称为奇（偶）顶点
     2. 握手定理：设图 $G$ 有顶点 $v_1, v_2, \cdots, v_n$ 有 $e$ 条边，则 ${\displaystyle \sum_{i=1}^n d(v_i) = 2e}$
-    3. 度数列：设图 $G = (V， E), V = \{v_1, v_2, \cdots, v_n\}$，称 $(d(v_1), d(v_2), \cdots, d(v_n))$ 为 $G$ 的度数列
-        1. 可图化：给出非负整数列 $d = (d(v_1), d(v_2), \cdots, d(v_n))$，若存在以 $V = \{v_1, v_2, \cdots, v_n\}$ 为顶点集的图，以 $d$ 为度数列，则称 $d$ 是可图化的；如果 $d$ 是可图化的且图为简单图，则称 $d$ 是可简单图化的
-        2. $d = (d_1, d_2, \cdots, d_n) \ (d_i \geqslant 0, i = 1, 2, \cdots, n)$ 是可图化的当且仅当 ${\displaystyle \sum_{i=1}^n d_i}$ 为偶数
-        3. 设非负整数列 $d = (d_1, d_2, \cdots, d_n), (n-1) \geqslant d_1 \geqslant d_2 \geqslant \cdots \geqslant d_n \geqslant 0$，则 $d$ 可简单图化当且仅当对于每个满足 $1\leqslant r \leqslant n -1$ 的整数 $r$ 都有 ${\displaystyle \sum_{i=1}^r d_i \leqslant r(r-1) + \sum_{i=r+1}^n \min\{r, d_i\}}$ 且 ${\displaystyle \sum_{i=1}^n d_i}$ 为偶数
-        4. 设非负整数列 $d = (d_1, d_2, \cdots, d_n)$，${\displaystyle \sum_{i=1}^n d_i}$ 为偶数且 $(n-1) \geqslant d_1 \geqslant d_2 \geqslant \cdots \geqslant d_n \geqslant 0$，则 $d$ 可简单图化当且仅当 $d' = (d_2 - 1, d_3 - 1, \cdots, d_{d_1} + 1, d_{d_1 + 2}, \cdots, d_n)$ 是可简单图化的
+    3. 度数列：设图 $G = (V， E), V = \{v_1, v_2, \cdots, v_n\}$，称 $\left<d(v_1), d(v_2), \cdots, d(v_n)\right>$ 为 $G$ 的度数列
+        1. 可图化：给出非负整数列 $d = \left<d(v_1), d(v_2), \cdots, d(v_n)\right>$，若存在以 $V = \{v_1, v_2, \cdots, v_n\}$ 为顶点集的图，以 $d$ 为度数列，则称 $d$ 是可图化的；如果 $d$ 是可图化的且图为简单图，则称 $d$ 是可简单图化的
+        2. $d = \left<d_1, d_2, \cdots, d_n\right> \ (d_i \geqslant 0, i = 1, 2, \cdots, n)$ 是可图化的当且仅当 ${\displaystyle \sum_{i=1}^n d_i}$ 为偶数
+        3. 设非负整数列 $d = \left<d_1, d_2, \cdots, d_n\right>, (n-1) \geqslant d_1 \geqslant d_2 \geqslant \cdots \geqslant d_n \geqslant 0$，则 $d$ 可简单图化当且仅当对于每个满足 $1\leqslant r \leqslant n -1$ 的整数 $r$ 都有 ${\displaystyle \sum_{i=1}^r d_i \leqslant r(r-1) + \sum_{i=r+1}^n \min\{r, d_i\}}$ 且 ${\displaystyle \sum_{i=1}^n d_i}$ 为偶数
+        4. 设非负整数列 $d = \left<d_1, d_2, \cdots, d_n\right>$，${\displaystyle \sum_{i=1}^n d_i}$ 为偶数且 $(n-1) \geqslant d_1 \geqslant d_2 \geqslant \cdots \geqslant d_n \geqslant 0$，则 $d$ 可简单图化当且仅当 $d' = \left<d_2 - 1, d_3 - 1, \cdots, d_{d_1} + 1, d_{d_1 + 2}, \cdots, d_n\right>$ 是可简单图化的
     4. 入度与出度：设 $G$ 是一个有向图，以顶点 $v$ 为起点的弧数称为 $v$ 的出度，记作 $d^+(v)$；以顶点 $v$ 为终点的弧数称为 $v$ 的入度，记作 $d^-(v)$
         - 在有向图中，所有顶点的入度之和等于所有顶点的出度之和
 3. 图同构
@@ -36,6 +36,11 @@
         2. 设 $G_1$ 与 $G_2$ 是两个简单图，则 $G_1$ 与 $G_2$ 同构等价于如下命题：存在一个从 $G_1$ 的顶点集到 $G_2$ 的顶点集上的双射函数 $f$，$G_1$ 的顶点 $v$ 与 $w$ 相邻接当且仅当 $G_2$ 中的顶点 $f(v)$ 与 $f(u)$ 相邻接
     2. 有向图的同构：设 $G_1 = (V_1, E_1), G_2 = (V_2, E_2)$ 是两个有向图，如果存在两个双射 $f: V_1 \to V_2, g: E_1 \to E_2$ 使得对任何 $u, v \in V, (u, v) \in E$ 有 $g((u, v)) = (f(u), f(v))$，则称 $G_1$ 与 $G_2$ 是同构的，记作 $G_1 \cong G_2$，称 $f, g$ 为 $G_1$ 到 $G_2$ 的同构函数
 4. 子图与补图
+    1. 子图：设图 $G = (V, E)$，若在图 $G' = (V', E')$ 有 $V' \subseteq V, E' \subseteq E$ 且 $E'$ 中边所关联的顶点在 $V'$ 中，则称 $G'$ 为 $G$ 的子图
+        1. 生成子图：若 $V' = V, E' \subseteq E$，则子图 $G' = (V', E')$ 称为图 $G$ 的一个生成子图
+        2. 导出子图：若 $V' \subseteq V$，以 $V'$ 为顶点集，端点均在 $V"$ 中的所有边的全体为边集，构成的子图称为由 $V'$ 导出的 $G$ 的子图，又称为 $G$ 的导出子图，记为 $G(V')$
+        3. 边导出子图：若 $E' \subseteq E$，以 $E'$ 为边集，$E'$ 中边的端点全体为顶点集，构成的子图称为由 $E'$ 导出的 $G$ 的子图，又称为 $G$ 的边导出子图，记为 $G(E')$
+    2. 补图：设图 $G = (V, E)$ 是 $n$ 个顶点的任意简单图，从完全图 $K_n$ 中删去 $G$ 的所有边，但保留顶点 $V$ 所得到的图成为 $G$ 的补图，记为 $\overline G$
 5. 路与回路
 
 ### 4.1.2 平面图
