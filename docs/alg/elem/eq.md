@@ -294,7 +294,7 @@
             & a^{f(x)} < b \leftrightarrow f(x) > \log_a b, & 0 < a < 1
             \end{aligned}
             $$
-    
+
     2. 最简对数不等式：形如 $\log_a x > b$ 或 $\log_a x < b$ 的不等式，其中 $a > 0, a \neq 1$
         1. 若 $a > 1$，则 $\log_a x > b \leftrightarrow x > a^b, \log_a x < b \leftrightarrow x < a^b$
         2. 若 $0 < a < 1$，则 $\log_a x > b \leftrightarrow x < a^b, \log_a x < b \leftrightarrow x > a^b$
