@@ -231,7 +231,7 @@ const refList = [
         title: "基础几何学",
         type: "EB/OL",
         page: [1, 194],
-        plot: 0
+        plot: 1
     },
     {
         author: ["项武义", "王申怀", "潘养廉"],
