@@ -263,6 +263,15 @@ const refList = [
         page: [1, 162]
     },
     {
+        author: ["赵一鸣", "阚海斌", "吴永辉"],
+        title: "离散数学",
+        type: "M",
+        press: "人民邮电出版社",
+        locate: "北京",
+        year: 2011,
+        page: [2, 141]
+    },
+    {
         author: ["欧阳光中", "朱学炎", "金福临", "陈传璋"],
         title: "数学分析",
         type: "M",
@@ -271,16 +280,6 @@ const refList = [
         year: 2018,
         page: [1, 526],
         plot: 0
-    },
-    {
-        author: ["赵一鸣", "阚海斌", "吴永辉"],
-        title: "离散数学",
-        type: "M",
-        press: "人民邮电出版社",
-        locate: "北京",
-        year: 2011,
-        page: [2, 141],
-        plot: 129
     },
     {
         author: ["陈有祺"],
