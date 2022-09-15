@@ -126,7 +126,7 @@ const refList = [
         locate: "南京",
         year: 2004,
         page: [234, 264],
-        plot: 0
+        plot: 1
     },
     {
         author: ["姚宁远"],
@@ -230,8 +230,8 @@ const refList = [
         author: ["项武义"],
         title: "基础几何学",
         type: "EB/OL",
-        page: [1, 194],
-        plot: 1
+        page: [1, 208],
+        plot: 7 + 0
     },
     {
         author: ["项武义", "王申怀", "潘养廉"],
