@@ -4317,7 +4317,6 @@ Bootstrap 适合短时间开发简单的静态网站
 ##### （二）快捷键
 
 1. 定义如下的快捷键的 `json` 文件
-
 2. 通用键位
 
     - 程序
@@ -4326,22 +4325,22 @@ Bootstrap 适合短时间开发简单的静态网站
         - 关闭窗口：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>W</kbd>
     - 文件操作
         - （没有选中时）复制 / 剪切光标所在行：<kbd>Ctrl</kbd> + <kbd>C</kbd> 或 <kbd>Ctrl</kbd> + <kbd>X</kbd>
-        - 向上 / 向下移动行：<kbd>Alt</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Alt</kbd> + <kbd>ArrowDown</kbd>
-        - 在下方 / 上方添加新的一行：<kbd>Ctrl</kbd> + <kbd>Enter</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
         - 选择整行：<kbd>Ctrl</kbd> + <kbd>L</kbd>
+        - 在下方 / 上方添加新的一行：<kbd>Ctrl</kbd> + <kbd>Enter</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Enter</kbd>
+        - 在下方 / 上方复制新的一行：<kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>ArrowDown</kbd>
+        - 向上 / 向下移动行：<kbd>Alt</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Alt</kbd> + <kbd>ArrowDown</kbd>
         - 添加注释 / 取消注释：<kbd>Ctrl</kbd> + <kbd>/</kbd>
     - 查找与替换
         - 查找或替换：<kbd>Ctrl</kbd> + <kbd>F</kbd> 或 <kbd>Ctrl</kbd> + <kbd>H</kbd>
         - 上一个 / 下一个： <kbd>Enter</kbd> 或 <kbd>Shift</kbd> + <kbd>Enter</kbd>
         - 全部替换：<kbd>Alt</kbd> + <kbd>Enter</kbd>
     - 多光标
-        - 向上 / 向下新增光标：<kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>ArrowDown</kbd>，Windows 下使用 <kbd>Ctrl</kbd> 代替 <kbd>Shift</kbd>
+        - 向上 / 向下新增光标：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>ArrowDown</kbd>
         - 光标选择内容的所有出现位置：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>
         - 光标所在字符串的所有出现位置：<kbd>Ctrl</kbd> + <kbd>F2</kbd>
     - 缩进
         - 增加缩进 / 减少缩进：<kbd>Ctrl</kbd> + <kbd>]</kbd> 或 <kbd>Ctrl</kbd> + <kbd>[</kbd>
         - 配置缩进：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>I</kbd>
-
 3. 焦点移动
 
     - 侧边活动栏
@@ -4360,18 +4359,16 @@ Bootstrap 适合短时间开发简单的静态网站
             - 焦点转到第 `n` 个编辑器：<kbd>Ctrl</kbd> + <kbd>Num<n></kbd>
             - 焦点转到终端 / 隐去终端：<kbd>Ctrl</kbd> + <kbd>`</kbd>
         - 标签页转换
-            - 上一个 / 下一个标签页：<kbd>Alt</kbd> + <kbd>PageUp</kbd> 或 <kbd>Alt</kbd> + <kbd>PageDown</kbd>
-            - 上一个 / 下一个标签页选择： <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Tab</kbd>
-    - 页面滚动
+            - （终端与编辑器）上一个 / 下一个标签页：<kbd>Alt</kbd> + <kbd>PageUp</kbd> 或 <kbd>Alt</kbd> + <kbd>PageDown</kbd>
+            - （仅编辑器）上一个 / 下一个标签页选择： <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Tab</kbd>
+    - 页面滚动（终端和编辑器均可）
         - 向上 / 向下滚动：<kbd>Ctrl</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>ArrowDown</kbd>
         - 向上 / 向下滚动一页：<kbd>Ctrl</kbd> + <kbd>PageUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>PageDown</kbd>
-        - （终端）滚动到页面首 / 尾：<kbd>Ctrl</kbd> + <kbd>Home</kbd> 或 <kbd>Ctrl</kbd> + <kbd>End</kbd>
-    - 光标移动
+        - 滚动到页面首 / 尾：<kbd>Ctrl</kbd> + <kbd>Home</kbd> 或 <kbd>Ctrl</kbd> + <kbd>End</kbd>
+    - 光标移动（终端和编辑器均可）
         - 移到上一个 / 下一个单词：<kbd>Ctrl</kbd> + <kbd>ArrowLeft</kbd> 或 <kbd>Ctrl</kbd> + <kbd>ArrowRight</kbd>
         - 移到行首 / 行尾：<kbd>Home</kbd> 或 <kbd>End</kbd>
-        - 向上 / 向下移动一页：<kbd>PageUp</kbd> 或 <kbd>PageDown</kbd>
-        - （编辑器）滚动到页面首 / 尾：<kbd>Ctrl</kbd> + <kbd>Home</kbd> 或 <kbd>Ctrl</kbd> + <kbd>End</kbd>
-
+        - （仅编辑器）向上 / 向下移动一页：<kbd>PageUp</kbd> 或 <kbd>PageDown</kbd>
 4. 命令窗口
 
     - 命令窗口
@@ -4381,7 +4378,7 @@ Bootstrap 适合短时间开发简单的静态网站
         - 打开设置：<kbd>Ctrl</kbd> + <kbd>,</kbd>
     - 终端操作
         - 新建终端：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>
-        - 终端最大化 / 最小化：<kbd>Alt</kbd> + <kbd>`</kbd> 
+        - 终端最大化 / 最小化：<kbd>Tab</kbd> + <kbd>`</kbd> 
         - 关闭终端示例 ：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Q</kbd>
     - 配置功能（可能需要依赖插件）
         - 配置换行：<kbd>Alt</kbd> + <kbd>Z</kbd>
