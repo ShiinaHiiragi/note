@@ -4379,7 +4379,7 @@ Bootstrap 适合短时间开发简单的静态网站
     - 终端操作
         - 新建终端：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>
         - 终端最大化 / 最小化：<kbd>Tab</kbd> + <kbd>`</kbd> 
-        - 关闭终端示例 ：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Q</kbd>
+        - 关闭终端实例 ：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Q</kbd>
     - 配置功能（可能需要依赖插件）
         - 配置换行：<kbd>Alt</kbd> + <kbd>Z</kbd>
         - 重命名符号：<kbd>F2</kbd>
