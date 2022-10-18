@@ -107,8 +107,6 @@ nav:
       - 3 初等数论: alg/elem/num.md
       - 4 组合理论: alg/elem/comb.md
   - 几何学:
-    - 一、基础几何:
-      - 1 初等几何: top/geom/prim.md
     - 二、点集拓扑:
       - 1 拓扑空间: top/point/space.md
       - 2 构造空间: top/point/constr.md

@@ -10,7 +10,7 @@
     2. 用 $M(x_1, x_2, \cdots, x_n)\downarrow$ 表示 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机
     3. 如果一个自然数上的函数存在一个计算它的 $\text{Turing}$ 机，则称之为 $\text{Turing}$ 可计算的；如果一个自然数上的关系集合特征函数是 $\text{Turing}$ 可计算的，则称之为 $\text{Turing}$ 可判定的
 3. 标准化：对任意 $\text{Turing}$ 机 $M$，都存在 $\text{Turing}$ 机 $M'$ 将其输出标准化，即
-    1. 对任意函数 $f$，$f$ 是 $M'$ 可计算的，当且仅当 $f$ 是 $M$ 可计算的且对于任意输入 $\boldsymbol x$，$M$ 与 $M'$ 给出相同的输出
+    1. 对任意函数 $f$，$f$ 是 $M'$ 可计算的，当且仅当 $f$ 是 $M$ 可计算的且对于任意输入 $\overline x$，$M$ 与 $M'$ 给出相同的输出
     2. 在 $M'$ 的终止格局中，纸带上所有的 $1$ 是连续的，
 
 ### 1.1.2 递归函数
@@ -110,21 +110,21 @@
         3. $\text{Ackman}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 使得 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
 
 3. 有界极小算子与正则 $\mu-$算子
-    1. 有界极小算子：令 $P(\boldsymbol x, z)$ 为一个 $(k + 1)$ 元的性质，定义
+    1. 有界极小算子：令 $P(\overline x, z)$ 为一个 $(k + 1)$ 元的性质，定义
 
         $$
-        \mu z \leqslant y \ P(\boldsymbol x, z) = \left\{\begin{aligned}
-        & \textsf{最小的满足 }P(\boldsymbol x, z) \textsf{ 且小于等于 } y \textsf{ 的 } z, & \textsf{如果它存在} \\
+        \mu z \leqslant y \ P(\overline x, z) = \left\{\begin{aligned}
+        & \textsf{最小的满足 }P(\overline x, z) \textsf{ 且小于等于 } y \textsf{ 的 } z, & \textsf{如果它存在} \\
         & y + 1, & \textsf{否则}
         \end{aligned}\right.
         $$
 
         其中 $\mu$ 读作「最小的」
 
-        1. 如果 $f(\boldsymbol x, y)$ 是原始递归的，则有界和 ${\displaystyle \sum_{y \leqslant z} f(\boldsymbol x, y)}$ 与有界积 ${\displaystyle \prod_{y \leqslant z} f(\boldsymbol x, y)}$ 都是原始递归的
-        2. 如果 $P(\boldsymbol x, z)$ 是一个原始递归谓词
-            - 谓词 $\exists z \leqslant y \ P(\boldsymbol x, z)$ 与 $\forall z \leqslant y \ P(\boldsymbol x, z)$ 都是原始递归的
-            - 定义函数 $f(\boldsymbol x, y) = \mu z \leqslant y \ P(\boldsymbol x, z)$，则 $f(\boldsymbol x, y)$ 也是原始递归的
+        1. 如果 $f(\overline x, y)$ 是原始递归的，则有界和 ${\displaystyle \sum_{y \leqslant z} f(\overline x, y)}$ 与有界积 ${\displaystyle \prod_{y \leqslant z} f(\overline x, y)}$ 都是原始递归的
+        2. 如果 $P(\overline x, z)$ 是一个原始递归谓词
+            - 谓词 $\exists z \leqslant y \ P(\overline x, z)$ 与 $\forall z \leqslant y \ P(\overline x, z)$ 都是原始递归的
+            - 定义函数 $f(\overline x, y) = \mu z \leqslant y \ P(\overline x, z)$，则 $f(\overline x, y)$ 也是原始递归的
 
     2. 正则 $\mu-$算子：令 $f: \mathbf N^{n+1} \to \mathbf N$ 为一个全函数，如果 $n$ 元函数 $g(x_1, x_2, \cdots, x_n)$ 满足正则性条件：
 
@@ -184,7 +184,7 @@
 2. $\text{Church}-\text{Turing}$ 论题：直观可计算函数类就是部分递归函数构成的类，也就是 $\text{Turing}$ 可计算函数类
 
 ## 1.2 递归定理
-1. 参数定理（$\text{Kleene} \ s-m-n$ 定理的一般形式）：令 $m, n \in \mathbf N^+$，则存在原始递归的单射 $s_n^m: \mathbf N^{m+1} \to \mathbf N$，使得对任意 $x \in \mathbf N, \boldsymbol y \in \mathbf N^m$ 都有 $\Phi_{s_n^m(x, \boldsymbol y)}^{(n)} (\boldsymbol z) = \Phi_x^{(m+n)} (\boldsymbol y, \boldsymbol z)$
+1. 参数定理（$\text{Kleene} \ s-m-n$ 定理的一般形式）：令 $m, n \in \mathbf N^+$，则存在原始递归的单射 $s_n^m: \mathbf N^{m+1} \to \mathbf N$，使得对任意 $x \in \mathbf N, \overline y \in \mathbf N^m$ 都有 $\Phi_{s_n^m(x, \overline y)}^{(n)} (\overline z) = \Phi_x^{(m+n)} (\overline y, \overline z)$
     1. $s-m-n$ 定理：令 $\Phi: \mathbf N^2 \to \mathbf N$ 为一个二元部分递归函数，则存在一个原始递归函数 $g: \mathbf N \to N$ 使得对所有的 $e, x$ 有 $\Phi_{g(e)}(x) = \Phi(e, x)$
     2. 填充引理：每一部分递归函数 $\Phi_e$ 都有无穷多个指标，即 $I = \{i \mid \Phi_i = \Phi_e\}$ 是无穷的，且可以能行地找出一个无穷子集 $A_e \subseteq I$
 2. 递归定理：令 $f$ 为一个递归函数，则存在一个自然数 $n$ 使得 $\Phi_{f(n)} = \Phi_n$
@@ -204,7 +204,7 @@
         5. 存在一个二元递归谓词 $R(x, y)$ 使得 $A$ 具有形式 $A = \{x \mid \exists y \ R(x, y)\}$
     3. 假定 $A, B \subseteq \mathbf N^k$ 都是递归可枚举的
         1. $A \cup B, A \cap B$ 都是递归可枚举的
-        2. 集合 $C = \{\boldsymbol x \in \mathbf N^{k-1} \mid \exists y \ ((\boldsymbol x, y) \in A)\}$ 也是递归可枚举的，即递归可枚举关系对存在量词封闭
+        2. 集合 $C = \{\overline x \in \mathbf N^{k-1} \mid \exists y \ ((\overline x, y) \in A)\}$ 也是递归可枚举的，即递归可枚举关系对存在量词封闭
 2. $\Sigma_1-$集：如果集合 $A$ 是一个递归关系的投影，则称 $A$ 是 $\Sigma_1-$形式的
     1. 一个集合 $A$ 是递归可枚举集当且仅当 $A$ 是 $\Sigma_1-$集
         1. 如果 $R \subseteq \mathbf N^{n+1}$ 是 $n + 1$ 元递归关系，且 $A = \{x \mid \exists y_1 \exists y_2 \cdots \exists y_n \ R(x, y_1, y_2, \cdots, y_n)\}$，则 $A$ 是 $\Sigma_1$ 的
