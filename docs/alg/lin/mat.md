@@ -69,10 +69,10 @@
 
     $$
     \boldsymbol A = \begin{bmatrix}
-    a_{11} & a_{12} & \cdots & a_{1m} \\
-    a_{21} & a_{22} & \cdots & a_{2m} \\
+    a_{11} & a_{21} & \cdots & a_{m1} \\
+    a_{12} & a_{22} & \cdots & a_{m2} \\
     \vdots & \vdots & \ddots & \vdots \\
-    a_{n1} & a_{n2} & \cdots & a_{nm} \\
+    a_{1n} & a_{2n} & \cdots & a_{mn} \\
     \end{bmatrix}
     $$
 
@@ -110,7 +110,138 @@
         5. 设 $\boldsymbol A$ 是 $n$ 阶方阵，$k \in \mathbf N$，则 $k$ 个 $\boldsymbol A$ 的乘积称为方阵 $\boldsymbol A$ 的 $k$ 次幂，记作 $\boldsymbol A^k$，并规定 $\boldsymbol A^0 = \boldsymbol I$
             - $\boldsymbol A^k \boldsymbol A^l = \boldsymbol A^{k+l}, (\boldsymbol A^k)^l = \boldsymbol A^{kl} \ (k, l \in \mathbf N)$
             - 当 $\boldsymbol{AB} = \boldsymbol{BA}$ 时，有 $(\boldsymbol{AB})^k = \boldsymbol A^k \boldsymbol B^k$
-5. 分块矩阵
+5. 分块矩阵：设 $\boldsymbol A$ 是一个 $m \times n$ 的矩阵，将矩阵分块得到
+
+    $$
+    \boldsymbol A = \begin{bmatrix}
+    \boldsymbol A_{11} & \boldsymbol A_{12} & \cdots & \boldsymbol A_{1q} \\
+    \boldsymbol A_{21} & \boldsymbol A_{22} & \cdots & \boldsymbol A_{2q} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \boldsymbol A_{p1} & \boldsymbol A_{p2} & \cdots & \boldsymbol A_{pq} \\
+    \end{bmatrix}
+    $$
+
+    其中 $\boldsymbol A_{ij} \ (1 \leqslant i \leqslant p, 1 \leqslant j \leqslant q)$ 为 $m_i \times n_j$ 子矩阵，同一行的子矩阵行数相同，同一列的子矩阵列数相同，且 ${\displaystyle \sum_{i=1}^p m_i = m, \sum_{i=1}^q n_i = n}$
+
+    1. 设 $\boldsymbol A$ 为 $m \times n$ 的矩阵，如果按行分块将矩阵的每一行作为一个子矩阵得到
+
+        $$
+        \boldsymbol A = \begin{bmatrix}
+        \mathrm{row}(\boldsymbol A, 1) \\
+        \mathrm{row}(\boldsymbol A, 2) \\
+        \vdots \\
+        \mathrm{row}(\boldsymbol A, n) \\
+        \end{bmatrix}
+        $$
+
+        如果按列分块将矩阵的每一列作为一个子矩阵得到
+
+        $$
+        \boldsymbol A = \begin{bmatrix} \mathrm{col}(\boldsymbol A, 1) & \mathrm{col}(\boldsymbol A, 2) & \cdots & \mathrm{col}(\boldsymbol A, n) \\ \end{bmatrix}
+        $$
+
+    2. 分块矩阵的基本运算
+        1. 转置：设分块矩阵
+
+            $$
+            \boldsymbol A = \begin{bmatrix}
+            \boldsymbol A_{11} & \boldsymbol A_{12} & \cdots & \boldsymbol A_{1q} \\
+            \boldsymbol A_{21} & \boldsymbol A_{22} & \cdots & \boldsymbol A_{2q} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \boldsymbol A_{p1} & \boldsymbol A_{p2} & \cdots & \boldsymbol A_{pq} \\
+            \end{bmatrix}
+            $$
+
+            则其转置矩阵为
+
+            $$
+            \boldsymbol A^{\mathrm T} = \begin{bmatrix}
+            \boldsymbol A_{11}^{\mathrm T} & \boldsymbol A_{21}^{\mathrm T} & \cdots & \boldsymbol A_{p1}^{\mathrm T} \\
+            \boldsymbol A_{12}^{\mathrm T} & \boldsymbol A_{22}^{\mathrm T} & \cdots & \boldsymbol A_{p2}^{\mathrm T} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \boldsymbol A_{1q}^{\mathrm T} & \boldsymbol A_{2q}^{\mathrm T} & \cdots & \boldsymbol A_{pq}^{\mathrm T} \\
+            \end{bmatrix}
+            $$
+
+        2. 加法：设 $\boldsymbol A$ 与 $\boldsymbol B$ 均为 $m \times n$ 矩阵：
+
+            $$
+            \boldsymbol A = \begin{bmatrix}
+            \boldsymbol A_{11} & \boldsymbol A_{12} & \cdots & \boldsymbol A_{1q} \\
+            \boldsymbol A_{21} & \boldsymbol A_{22} & \cdots & \boldsymbol A_{2q} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \boldsymbol A_{p1} & \boldsymbol A_{p2} & \cdots & \boldsymbol A_{pq} \\
+            \end{bmatrix}, \ 
+            \boldsymbol B = \begin{bmatrix}
+            \boldsymbol B_{11} & \boldsymbol B_{12} & \cdots & \boldsymbol B_{1q} \\
+            \boldsymbol B_{21} & \boldsymbol B_{22} & \cdots & \boldsymbol B_{2q} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \boldsymbol B_{p1} & \boldsymbol B_{p2} & \cdots & \boldsymbol B_{pq} \\
+            \end{bmatrix}
+            $$
+
+            其中 $\boldsymbol A_{ij}, \boldsymbol B_{ij} \ (1 \leqslant i \leqslant p, 1 \leqslant j \leqslant q)$ 均为 $m_i \times n_j$ 矩阵，则
+
+            $$
+            \boldsymbol A + \boldsymbol B = \begin{bmatrix}
+            \boldsymbol A_{11} + \boldsymbol B_{11} & \boldsymbol A_{12} + \boldsymbol B_{12} & \cdots & \boldsymbol A_{1q} + \boldsymbol B_{1q} \\
+            \boldsymbol A_{21} + \boldsymbol B_{21} & \boldsymbol A_{22} + \boldsymbol B_{22} & \cdots & \boldsymbol A_{2q} + \boldsymbol B_{2q} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \boldsymbol A_{p1} + \boldsymbol B_{p1} & \boldsymbol A_{p2} + \boldsymbol B_{p2} & \cdots & \boldsymbol A_{pq} + \boldsymbol B_{pq} \\
+            \end{bmatrix}
+            $$
+
+        3. 数乘：设 $k \in \mathbf R$，$\boldsymbol A$ 是一个 $m \times n$ 的矩阵：
+
+            $$
+            \boldsymbol A = \begin{bmatrix}
+            \boldsymbol A_{11} & \boldsymbol A_{12} & \cdots & \boldsymbol A_{1q} \\
+            \boldsymbol A_{21} & \boldsymbol A_{22} & \cdots & \boldsymbol A_{2q} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \boldsymbol A_{p1} & \boldsymbol A_{p2} & \cdots & \boldsymbol A_{pq} \\
+            \end{bmatrix}
+            $$
+
+            则
+
+            $$
+            k \boldsymbol A = \begin{bmatrix}
+            k \boldsymbol A_{11} & k \boldsymbol A_{12} & \cdots & k \boldsymbol A_{1q} \\
+            k \boldsymbol A_{21} & k \boldsymbol A_{22} & \cdots & k \boldsymbol A_{2q} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            k \boldsymbol A_{p1} & k \boldsymbol A_{p2} & \cdots & k \boldsymbol A_{pq} \\
+            \end{bmatrix}
+            $$
+
+        4. 乘法：设 $\boldsymbol A$ 为 $m \times s$ 的矩阵，$\boldsymbol B$ 为 $s \times n$ 的矩阵，且有
+
+            $$
+            \boldsymbol A = \begin{bmatrix}
+            \boldsymbol A_{11} & \boldsymbol A_{12} & \cdots & \boldsymbol A_{1t} \\
+            \boldsymbol A_{21} & \boldsymbol A_{22} & \cdots & \boldsymbol A_{2t} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \boldsymbol A_{p1} & \boldsymbol A_{p2} & \cdots & \boldsymbol A_{pt} \\
+            \end{bmatrix}, \ 
+            \boldsymbol B = \begin{bmatrix}
+            \boldsymbol B_{11} & \boldsymbol B_{12} & \cdots & \boldsymbol B_{1q} \\
+            \boldsymbol B_{21} & \boldsymbol B_{22} & \cdots & \boldsymbol B_{2q} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \boldsymbol B_{t1} & \boldsymbol B_{t2} & \cdots & \boldsymbol B_{tq} \\
+            \end{bmatrix}
+            $$
+
+            其中 $\boldsymbol A_{ik}$ 是 $m_i \times s_k$ 子矩阵，$\boldsymbol B_{kj}$ 是 $s_k \times n_j$ 子矩阵，其中 $1 \leqslant i \leqslant p, 1 \leqslant k \leqslant t, 1 \leqslant j \leqslant q$．则
+
+            $$
+            \boldsymbol{AB} = \begin{bmatrix}
+            \boldsymbol C_{11} & \boldsymbol C_{12} & \cdots & \boldsymbol C_{1q} \\
+            \boldsymbol C_{21} & \boldsymbol C_{22} & \cdots & \boldsymbol C_{2q} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \boldsymbol C_{p1} & \boldsymbol C_{p2} & \cdots & \boldsymbol C_{pq} \\
+            \end{bmatrix}
+            $$
+
+            其中 $\boldsymbol C_{ij} = {\displaystyle \sum_{k=1}^t \boldsymbol A_{ik} \boldsymbol B_{kj}}$
 
 ### 1.1.2 初等变换
 
