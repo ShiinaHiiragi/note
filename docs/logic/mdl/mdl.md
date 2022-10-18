@@ -95,7 +95,7 @@
     1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathcal K$ 是初等类当且仅当 $\mathcal K = \{\mathfrak M \mid \mathfrak M \vDash \mathrm{Th}(\mathcal K)\}$
     2. 如果结构 $\mathfrak M$ 与 $\mathfrak N$ 初等等价且 $\mid \mathfrak M\mid < \aleph_0$，则 $\mathfrak M \cong \mathfrak N$
 
-### 1.2.2 常见模型
+### 1.2.2 模型实例
 1. 群：令 $G = \{\cdot, e\}$，则 $\mathscr L(G)$ 是群的语言，其中 $\cdot \in \mathbf F, e \in \mathbf C, \Omega(\cdot) = 2$．设 $t_1, t_2$ 是 $G-$项，将 $\cdot(t_1, t_2)$ 记作 $t_1 \cdot t_2$
     1. 如果结构 $\mathfrak M = (M, \cdot^\mathfrak M, e^\mathfrak M)$ 是下面三个语句的集合 $Ax_G$ 的模型，则称 $\mathfrak M$ 是一个群，称 $Ax_G$ 为群的公理
         1. $\sigma_1: \forall x((e \cdot x = x) \wedge (x \cdot e = x))$
@@ -117,12 +117,12 @@
     1. 对每个非零的 $a\in M$ 都存在唯一的 $b\in M$ 使得 $a \cdot^\mathfrak M b = e^\mathfrak M$，称 $b$ 为 $a$ 的（乘法逆），记作 $a^{-1}$
     2. 如果域 $\mathfrak M$ 的论域 $M$ 是有限集合，则称 $\mathfrak M$ 是有限域
     3. 设 $\mathcal K_{FF} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构，且是一个有限域$\}$ 不是一个初等类；令 $\overline{\mathcal K_{FF}} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构且 $\mathfrak M \vDash \mathrm{Th}(\mathcal K_{FF})\}$ 是一个初等类，称之为伪有限域
-4. 向量空间：设 $F = \{+, \times, 0, 1\}, VF = \{+, 0\} \cup F$，其中 $+ \in \mathbf F, F \subseteq \mathbf F, 0 \in \mathbf C$ 且 $\Omega(+) = 2, \Omega[F] = \{1\}$．结构 $\mathfrak M = (M, +^\mathfrak M, \times^\mathfrak M, 0^\mathfrak M, 1^\mathfrak M)$ 是一个域，如果结构 $\mathfrak V = (V, +^\mathfrak V, 0^\mathfrak V, \{\sigma^\mathfrak V \mid \sigma \in F\})$ 有
+4. 线性空间：设 $F = \{+, \times, 0, 1\}, VF = \{+, 0\} \cup F$，其中 $+ \in \mathbf F, F \subseteq \mathbf F, 0 \in \mathbf C$ 且 $\Omega(+) = 2, \Omega[F] = \{1\}$．结构 $\mathfrak M = (M, +^\mathfrak M, \times^\mathfrak M, 0^\mathfrak M, 1^\mathfrak M)$ 是一个域，如果结构 $\mathfrak V = (V, +^\mathfrak V, 0^\mathfrak V, \{\sigma^\mathfrak V \mid \sigma \in F\})$ 有
     1. $(V, +, 0)$ 是一个 $\text{Abel}$ 群
     2. 每个 $\sigma \in F$ 都解释为群结构 $(V, +, 0)$ 到 $(V, +, 0)$ 的同态 $\sigma^\mathfrak V: V\to V$
     3. 对任意的 $x\in V$ 有 $0^\mathfrak{MV}(x) = 0, 1^\mathfrak{MV}(x) = x$
     4. 对任意的 $\sigma, \gamma \in M$ 及任意的 $x\in V$，有 $\sigma^\mathfrak V(x) +^\mathfrak V \gamma^\mathfrak V(x) = (\sigma +^\mathfrak M \gamma)^\mathfrak V(x)$ 且 $\sigma^\mathfrak V(\gamma^\mathfrak V(x)) = (\sigma \times^\mathfrak M \gamma)^\mathfrak V(x)$
 
-    则称 $V$ 是 $M$ 上的向量空间，通常将 $\sigma^\mathfrak V$ 简记为 $\sigma x$
+    则称 $V$ 是 $M$ 上的线性空间，通常将 $\sigma^\mathfrak V$ 简记为 $\sigma x$
 
 ## 1.3 形式算术
