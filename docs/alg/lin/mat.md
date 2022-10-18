@@ -244,6 +244,147 @@
             其中 $\boldsymbol C_{ij} = {\displaystyle \sum_{k=1}^t \boldsymbol A_{ik} \boldsymbol B_{kj}}$
 
 ### 1.1.2 初等变换
+1. 矩阵 $\boldsymbol A$ 的初等行（列）变换
+    1. 将 $\boldsymbol A$ 的第 $i$ 行（列）与第 $j$ 行（列）对换
+
+        $$
+        \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{i1} & a_{i2} & \cdots & a_{in} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{j1} & a_{j2} & \cdots & a_{jn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{m1} & a_{m2} & \cdots & a_{mn} \\
+        \end{bmatrix}
+        \xrightarrow{R_{ij}}
+        \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{j1} & a_{j2} & \cdots & a_{jn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{i1} & a_{i2} & \cdots & a_{in} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{m1} & a_{m2} & \cdots & a_{mn} \\
+        \end{bmatrix}
+        $$
+
+    2. 将 $\boldsymbol A$ 的第 $i$ 行（列）乘以非零实数 $k$
+
+        $$
+        \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{i1} & a_{i2} & \cdots & a_{in} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{m1} & a_{m2} & \cdots & a_{mn} \\
+        \end{bmatrix}
+        \xrightarrow{kR_i}
+        \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        k a_{i1} & k a_{i2} & \cdots & k a_{in} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{m1} & a_{m2} & \cdots & a_{mn} \\
+        \end{bmatrix}
+        $$
+
+    3. 将 $\boldsymbol A$ 第 $i$ 行（列）的 $k$ 倍加到第 $j$ 行（列）上
+
+        $$
+        \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{i1} & a_{i2} & \cdots & a_{in} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{j1} & a_{j2} & \cdots & a_{jn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{m1} & a_{m2} & \cdots & a_{mn} \\
+        \end{bmatrix}
+        \xrightarrow{R_j + kR_i}
+        \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{i1} & a_{i2} & \cdots & a_{in} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{j1} + k a_{i1} & a_{j2} + k a_{i2} & \cdots & a_{jn} + k a_{in} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{m1} & a_{m2} & \cdots & a_{mn} \\
+        \end{bmatrix}
+        $$
+
+    对应的初等列变换分别记作 $C_{ij}, kC_i, C_j + kC_i$．如果对矩阵 $\boldsymbol A$ 进行一次初等行（列）变换，为使其变回原来的矩阵，只需再进行一次相应的逆变换，逆变换也是初等变换
+
+2. 初等矩阵：由单位矩阵 $I_n$ 经过一次初等变换得到的矩阵 $\boldsymbol E$．$\boldsymbol E \boldsymbol A$ 相当于对矩阵 $\boldsymbol A_{m \times n}$ 做一次初等行变换，$\boldsymbol A \boldsymbol E$ 相当于对矩阵 $\boldsymbol A_{m \times n}$ 做一次初等列变换
+    1. 第一类初等矩阵 $\boldsymbol E_{ij}$ 表示将单位阵 $\boldsymbol I_n$ 的第 $i$ 行（列）与第 $j$ 行（列）对换得到的矩阵
+
+        $$
+        \boldsymbol E_{ij} = \begin{bmatrix}
+        1 &  &  &  &  &  &  \\
+         & \ddots &  &  &  &  &  \\
+         &  & 0 & \cdots & 1 &  &  \\
+         &  & \vdots &  & \vdots &  &  \\
+         &  & 1 & \cdots & 0 &  &  \\
+         &  &  &  &  & \ddots &  \\
+         &  &  &  &  &  & 1 \\
+        \end{bmatrix}
+        $$
+
+    2. 第二类初等矩阵 $\boldsymbol E_i(k)$ 表示单位阵 $\boldsymbol I_n$ 第 $i$ 行（列）乘以非零实数 $k$
+
+        $$
+        \boldsymbol E_i(k) = \begin{bmatrix}
+        1 &  &  &  &  \\
+         & \ddots &  &  &  \\
+         &  & k &  &  \\
+         &  &  & \ddots &  \\
+         &  &  &  & 1 \\
+        \end{bmatrix}
+        $$
+
+    3. 第三类初等矩阵 $\boldsymbol E_{ij}(k)$ 表示单位阵 $\boldsymbol I_n$ 第 $i$ 行（列）的 $k$ 倍加到第 $j$ 行（列）上
+
+        $$
+        \boldsymbol E_{ij} = \begin{bmatrix}
+        1 &  &  &  &  &  &  \\
+         & \ddots &  &  &  &  &  \\
+         &  & 1 & \cdots & 0 &  &  \\
+         &  & \vdots &  & \vdots &  &  \\
+         &  & k & \cdots & 1 &  &  \\
+         &  &  &  &  & \ddots &  \\
+         &  &  &  &  &  & 1 \\
+        \end{bmatrix}
+        $$
+
+3. 秩：任一非零矩阵经过有限次初等变换可化为标准型 $\begin{bmatrix} \boldsymbol I_r & \boldsymbol O \\ \boldsymbol O & \boldsymbol O \\ \end{bmatrix}$．对于给定的矩阵，其标准型中 $r$ 的值唯一，称为矩阵 $\boldsymbol A$ 的秩，记作 $\mathrm{rank}(A)$ 或 $r(A)$．特别地，记 $\mathrm{rank}(\boldsymbol O) = 0$
+    1. 标准型：若 $m \times n$ 矩阵 $\boldsymbol A$ 可被分块为
+
+        $$
+        \boldsymbol A = \begin{bmatrix}
+        \boldsymbol I_r & \boldsymbol O_{r \times (n - r)} \\
+        \boldsymbol O_{(m - r) \times r} & \boldsymbol O_{(m - r) \times (n - r)} \\
+        \end{bmatrix}
+        $$
+
+        则称该矩阵为 $m \times n$ 矩阵的标准型
+
+    2. 设 $\boldsymbol A_{m \times n}$ 是一个矩阵，则 $\mathrm{rank}(\boldsymbol A) = \mathrm{rank}(\boldsymbol A^{\mathrm T}) \leqslant \min \{m, n\}$
+        1. 当 $\mathrm{rank}(\boldsymbol A) = m < n$ 时，$\boldsymbol A$ 的标准型为 $\begin{bmatrix} \boldsymbol I_m & \boldsymbol O \\ \end{bmatrix}$
+        2. 当 $\mathrm{rank}(\boldsymbol A) = n < m$ 时，$\boldsymbol A$ 的标准型为 $\begin{bmatrix} \boldsymbol I_n & \boldsymbol O \\ \end{bmatrix}^{\mathrm T}$
+        3. 当 $\mathrm{rank}(\boldsymbol A) = m = n$ 时，$\boldsymbol A$ 的标准型为 $\boldsymbol I_n$
+
+        因此矩阵经过初等变换后秩不变
+
+    3. 设 $\boldsymbol A$ 与 $\boldsymbol B$ 为两个 $m \times n$ 的矩阵，则以下命题等价
+        1. $\mathrm{rank}(\boldsymbol A) = \mathrm{rank}(\boldsymbol B)$
+        2. 矩阵 $\boldsymbol A$ 与 $\boldsymbol B$ 具有相同的标准型
+        3. 矩阵 $\boldsymbol A$ 经过有限次初等变换可化为 $\boldsymbol B$
+
+4. 阶梯型矩阵：若矩阵的每个非零行上方没有零行，且各个非零行自左向右的第一个非零元素 $a_{1j_1}, a_{2j_2}, \cdots, a_{rj_r}$ 所在列的编号满足 $j_1 < j_2 < \cdots < j_r$，则称该矩阵为阶梯型矩阵
+    1. 主元列：阶梯型矩阵中各非零行自左向右第一个非零元素 $a_{1j_1}, a_{2j_2}, \cdots, a_{rj_r}$ 所在的列 $j_1, j_2, \cdots, j_r$
+    2. 最简阶梯形矩阵：各非零行自左向右第一个非零元素均为 $1$，其所在列其余元素均为 $1$ 的阶梯型矩阵
+        1. 任一非零矩阵只经初等行变换可化为最简阶梯型矩阵
+        2. 非零矩阵的秩等于其最简阶梯形中主元列的个数
 
 ### 1.1.3 逆矩阵
 
