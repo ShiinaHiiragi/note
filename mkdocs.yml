@@ -106,6 +106,8 @@ nav:
       - 2 方程与不等式: alg/elem/eq.md
       - 3 初等数论: alg/elem/num.md
       - 4 组合理论: alg/elem/comb.md
+    - 二、线性代数:
+      - 1 向量与矩阵: alg/line/mat.md
   - 几何学:
     - 二、点集拓扑:
       - 1 拓扑空间: top/point/space.md
