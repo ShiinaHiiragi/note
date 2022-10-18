@@ -91,7 +91,25 @@
         2. 分配律：$(k + l)\boldsymbol A = k\boldsymbol A + l\boldsymbol A, k(\boldsymbol A + \boldsymbol B) = k\boldsymbol A + k\boldsymbol B$
         3. $(k\boldsymbol A)^{\mathrm T} = k\boldsymbol A^{\mathrm T}$
 3. 向量内积：设 $\boldsymbol \alpha = (a_1, a_2, \cdots, a_n)$ 与 $\boldsymbol \beta = (b_1, b_2, \cdots, b_n)$ 为两个向量．其对应元素乘积之和 ${\displaystyle \sum_{i=1}^n} a_i b_i$ 称为 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的内积，记作 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>$
-4. 矩阵乘法：设 $\boldsymbol A = [a_{ik}]_{m \times l}, \boldsymbol B = [b_{kj}]_{l \times n}, \boldsymbol C = [c_{ij}]_{m \times n}$ 为三个矩阵．若有 $c_{ij} = {\displaystyle \sum_{k=1}^l a_{ik} k_{kj}}$ 对于 $1 \leqslant i \leqslant m, 1 \leqslant j \leqslant n$ 成立，则称矩阵 $\boldsymbol C$ 为 $\boldsymbol A$ 与 $\boldsymbol B$ 的乘积，记作 $\boldsymbol C = \boldsymbol A \boldsymbol B$
+4. 矩阵乘法：设 $\boldsymbol A = [a_{ik}]_{m \times l}, \boldsymbol B = [b_{kj}]_{l \times n}, \boldsymbol C = [c_{ij}]_{m \times n}$ 为三个矩阵．若有 $c_{ij} = {\displaystyle \sum_{k=1}^l a_{ik} k_{kj}}$ 对于 $1 \leqslant i \leqslant m, 1 \leqslant j \leqslant n$ 成立，则称矩阵 $\boldsymbol C$ 为 $\boldsymbol A$ 与 $\boldsymbol B$ 的乘积，记作 $\boldsymbol C = \boldsymbol{AB}$
+    1. 等价定义
+        1. $\mathrm{entry}(\boldsymbol{AB}, i, j) = \left<\mathrm{row}(\boldsymbol A, i), \mathrm{col}(\boldsymbol B, j)\right> = \mathrm{row}(\boldsymbol A, i) \mathrm{col}(\boldsymbol B, j)$
+        2. $\mathrm{row}(\boldsymbol{AB}, i) = \mathrm{row}(\boldsymbol A, i) \boldsymbol B = {\displaystyle \sum_{k=1}^l a_{ik} \mathrm{row}(\boldsymbol B, k)}$
+        3. $\mathrm{col}(\boldsymbol{AB}, j) = \boldsymbol A \mathrm{col}(\boldsymbol B, j) = {\displaystyle \sum_{k=1}^l b_{kj} \mathrm{col}(\boldsymbol A, k)}$
+        4. $\boldsymbol{AB} = {\displaystyle \sum_{k=1}^l \mathrm{col}(\boldsymbol A, k) \mathrm{row}(\boldsymbol B, k)}$
+    2. 矩阵乘法的性质
+        1. 结合律：$(\boldsymbol{AB}) \boldsymbol C = \boldsymbol A (\boldsymbol{BC})$
+        2. 分配律：$\boldsymbol C (\boldsymbol A + \boldsymbol B) = \boldsymbol{CA} + \boldsymbol{CB}, (\boldsymbol A + \boldsymbol B) \boldsymbol C = \boldsymbol{AC} + \boldsymbol B + \boldsymbol C$
+        3. $k(\boldsymbol{AB}) = (k\boldsymbol A) \boldsymbol B = \boldsymbol A(k\boldsymbol B)$
+        4. $(\boldsymbol{AB})^{\mathrm T} = \boldsymbol B^{\mathrm T} \boldsymbol A^{\mathrm T}$
+    3. 特殊矩阵的性质
+        1. 设 $\boldsymbol A_{m \times n}, \boldsymbol B_{n \times m}$ 为两个矩阵，则 $\mathrm{tr}(\boldsymbol{AB}) = \mathrm{tr}(\boldsymbol{BA})$
+        2. 设 $\boldsymbol A_{m \times n}$ 为一个矩阵，$\boldsymbol I_m, \boldsymbol I_n$ 分别为 $m$ 阶与 $n$ 阶单位阵，则 $\boldsymbol I_m \boldsymbol A = \boldsymbol{AI}_n = \boldsymbol A$
+        3. 设 $\boldsymbol A = \mathrm{diag}(a_1, a_2, \cdots, a_n), \boldsymbol B = \mathrm{diag}(b_1, b_2, \cdots, b_n)$，则 $\boldsymbol{AB} = \boldsymbol{BA} = \mathrm{diag}(a_1 b_1, a_2 b_2, \cdots, a_n, b_n)$
+        4. 若 $\boldsymbol A$ 与 $\boldsymbol B$ 均为 $n$ 阶上（下）三角阵，则 $\boldsymbol{AB}$ 为上（下）三角阵
+        5. 设 $\boldsymbol A$ 是 $n$ 阶方阵，$k \in \mathbf N$，则 $k$ 个 $\boldsymbol A$ 的乘积称为方阵 $\boldsymbol A$ 的 $k$ 次幂，记作 $\boldsymbol A^k$，并规定 $\boldsymbol A^0 = \boldsymbol I$
+            - $\boldsymbol A^k \boldsymbol A^l = \boldsymbol A^{k+l}, (\boldsymbol A^k)^l = \boldsymbol A^{kl} \ (k, l \in \mathbf N)$
+            - 当 $\boldsymbol{AB} = \boldsymbol{BA}$ 时，有 $(\boldsymbol{AB})^k = \boldsymbol A^k \boldsymbol B^k$
 5. 分块矩阵
 
 ### 1.1.2 初等变换
