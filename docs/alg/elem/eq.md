@@ -93,7 +93,21 @@
 8. 二项方程：形如 $x^n - a = 0$ 的方程
 9.  三项方程：形如 $ax^{2n} + bx^{n} + c = 0 \ (a, b \neq 0)$ 的方程．零 $y = x^n$，原方程转化为解一个二次方程与两个二项方程
 
-### 2.1.2 不定方程
+### 2.1.2 线性方程
+1. 线性方程组的一般形式
+
+    $$
+    \left\{\begin{aligned}
+    & a_{11} x_1 + a_{12} x_2 + \cdots + a_{1n} x_n = b_1 \\
+    & a_{21} x_1 + a_{22} x_2 + \cdots + a_{2n} x_n = b_2 \\
+    & \cdots \\
+    & a_{m1} x_1 + a_{m2} x_2 + \cdots + a_{mn} x_n = b_m \\
+    \end{aligned}\right.
+    $$
+
+    设 $\boldsymbol A = [a_{ij}]_{m \times n}, \boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol b = \begin{bmatrix} b_1 & b_2 & \cdots & b_m \\ \end{bmatrix}^{\mathrm T}$，则线性方程组可写成 $\boldsymbol{Ax} = \boldsymbol b$
+
+### 2.1.3 不定方程
 1. 不定方程：方程的个数少于未知数的个数且未知数又必须为整数的方程（组）
 2. 二元一次不定方程：设 $a, b, c \in \mathbf Z$ 且 $a, b \neq 0$，任何二元一次方程可以写成 $ax + by = c$，其中 $x, y \in \mathbf Z$
     1. 设 $a, b \in \mathbf Z - \{0\}, c \in \mathbf Z$，方程 $ax + by = c$ 有整数解当且仅当 $(a, b) \mid c$
@@ -154,7 +168,7 @@
 
     5. 单位圆周上坐标是有理数的点（有理点）可以写作 $\left(\pm \dfrac{2ab}{a^2 + b^2}, \pm \dfrac{a^2 - b^2}{a^2 + b^2}\right)$ 或 $\left(\pm \dfrac{a^2 - b^2}{a^2 + b^2}, \pm \dfrac{2ab}{a^2 + b^2}\right)$，其中 $a, b$ 是不全为零的整数
 
-### 2.1.3 初等超越方程
+### 2.1.4 初等超越方程
 1. 指数方程：在指数里含有未知数的方程
     1. 最简指数方程：形如 $a^x = c \ (a > 0, a \neq 1)$ 的方程
         1. 当 $c > 0$ 时，方程 $a^x = c$ 有唯一解 $x = \log_a c$

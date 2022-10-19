@@ -230,17 +230,7 @@ const refList = [
         author: ["项武义"],
         title: "基础几何学",
         type: "EB/OL",
-        page: [1, 208],
-        plot: 0
-    },
-    {
-        author: ["项武义", "王申怀", "潘养廉"],
-        title: "古典几何学",
-        type: "M",
-        press: "高等教育出版社",
-        locate: "北京",
-        year: 2014,
-        page: [1, 180],
+        page: [1, 76],
         plot: 0
     },
     {
