@@ -167,15 +167,11 @@
 ### 1.3.2 基本初等函数
 1. 常值函数：形如 $y = c$ 的函数，其中 $c$ 为常数
 2. 幂函数：形如 $y = x^\alpha$ 的函数，其中 $\alpha$ 是给定的实数
-3. 指数函数与对数函数
-    1. 定义级数 $E(z) = {\displaystyle \sum_{n=0}^\infty \dfrac{z^n}{n!}}$，函数 $L(E(x)) = x \ (x \in R)$
-        1. 级数 $E(z)$ 对于一切复数收敛且 $E(z + w) = E(z) E(w) \ (z, w \in \mathbf C)$
-        2. 对于一切实数 $x$，$E(x) = e^x$，其中 $e = {\displaystyle \sum_{n=0}^\infty \dfrac{1}{n!}}$
-        3. $L(y) = {\displaystyle \int_1^y \dfrac{\mathrm dx}{x}}$，记作 $\ln x$
-    2. 指数函数与对数函数的定义：
-        1. 对于 $a > 0, a \neq 1, x \in \mathbf R$，记 $y = a^x = E(xL(a)) = e^{x \ln a}$
+3. 指数函数与对数函数：设 $\ln x = \log_e x$，其中 $e = {\displaystyle \lim_{n \to \infty} \left(1 + \dfrac 1n\right)^n}$
+    1. 指数函数与对数函数的定义：
+        1. 对于 $a > 0, a \neq 1, x \in \mathbf R$，记 $y = a^x = e^{x \ln a}$
         2. 对于 $a > 0, a \neq 1, x > 0$，记 $y = \log_a x = \dfrac{L(x)}{L(a)} = \dfrac{\ln x}{\ln a}$
-    3. 指数函数与对数函数的性质
+    2. 指数函数与对数函数的性质
 
         <div style="text-align: center;">
 
@@ -193,10 +189,12 @@
 
         $$
         \begin{aligned}
-        & C(x) = \dfrac 12[E(ix) + E(-ix)] \\
-        & S(x) = \dfrac{1}{2i}[E(ix) - E(-ix)]
+        & C(x) = \dfrac{e^{ix} + e^{-ix}}{2} \\
+        & S(x) = \dfrac{e^{ix} - e^{-ix}}{2i}
         \end{aligned}
         $$
+
+        其中 $e^x = {\displaystyle \sum_{n=0}^\infty \dfrac{x^n}{n!}}$．定义 $\pi$ 为满足 $\sin \pi = 0$ 且 $3 < \pi < 4$ 的实数
 
     2. 正弦函数与余弦函数的性质
 

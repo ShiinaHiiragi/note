@@ -107,7 +107,15 @@
 
     设 $\boldsymbol A = [a_{ij}]_{m \times n}, \boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol b = \begin{bmatrix} b_1 & b_2 & \cdots & b_m \\ \end{bmatrix}^{\mathrm T}$，则线性方程组可写成 $\boldsymbol{Ax} = \boldsymbol b$
 
-2. 齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol 0$，其中 $\boldsymbol A = [a_{ij}]_{m \times n}, \boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$，$\boldsymbol 0$ 为 $m$ 元零向量
+2. 齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol 0$，其中 $\boldsymbol A = [a_{ij}]_{m \times n}, \boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$，$\boldsymbol 0$ 为 $m$ 元零向量，其解称为该方程的通解
+    1. 齐次线性方程组只有零解当且仅当 $\mathrm{rank}(\boldsymbol A) = n$
+    2. 齐次线性方程组有非零解当且仅当 $\mathrm{rank}(\boldsymbol A) < n$
+3. 非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol b$，其中 $\boldsymbol A = [a_{ij}]_{m \times n}, \boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol b = \begin{bmatrix} b_1 & b_2 & \cdots & b_m \\ \end{bmatrix}^{\mathrm T} \neq \boldsymbol 0$
+    1. 增广矩阵：讲向量 $\boldsymbol b$ 添加在系数矩阵 $\boldsymbol A$ 的右边得到的 $\begin{bmatrix} \boldsymbol A & \boldsymbol b \\ \end{bmatrix}$
+    2. 线性方程组有解的充要条件是系数矩阵的秩等于增广矩阵的秩
+        1. 当 $\mathrm{rank}(\begin{bmatrix} \boldsymbol A & \boldsymbol b \\ \end{bmatrix}) > \mathrm{rank}(\boldsymbol A)$ 时，线性方程组无解
+        2. 当 $\mathrm{rank}(\begin{bmatrix} \boldsymbol A & \boldsymbol b \\ \end{bmatrix}) = \mathrm{rank}(\boldsymbol A) = r = n$ 时，线性方程组有唯一解
+        3. 当 $\mathrm{rank}(\begin{bmatrix} \boldsymbol A & \boldsymbol b \\ \end{bmatrix}) = \mathrm{rank}(\boldsymbol A) = r < n$ 时，线性方程组有无穷多解
 
 ### 2.1.3 不定方程
 1. 不定方程：方程的个数少于未知数的个数且未知数又必须为整数的方程（组）
