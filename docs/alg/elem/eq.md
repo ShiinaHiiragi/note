@@ -107,6 +107,8 @@
 
     设 $\boldsymbol A = [a_{ij}]_{m \times n}, \boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol b = \begin{bmatrix} b_1 & b_2 & \cdots & b_m \\ \end{bmatrix}^{\mathrm T}$，则线性方程组可写成 $\boldsymbol{Ax} = \boldsymbol b$
 
+2. 齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol 0$，其中 $\boldsymbol A = [a_{ij}]_{m \times n}, \boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$，$\boldsymbol 0$ 为 $m$ 元零向量
+
 ### 2.1.3 不定方程
 1. 不定方程：方程的个数少于未知数的个数且未知数又必须为整数的方程（组）
 2. 二元一次不定方程：设 $a, b, c \in \mathbf Z$ 且 $a, b \neq 0$，任何二元一次方程可以写成 $ax + by = c$，其中 $x, y \in \mathbf Z$

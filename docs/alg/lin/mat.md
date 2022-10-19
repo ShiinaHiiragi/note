@@ -1,23 +1,29 @@
-# 1 向量与矩阵
+# 1 矩阵与行列式
 
 ## 1.1 矩阵
-1. $n$ 元向量：由 $n$ 个数构成的序组 $\boldsymbol \alpha = (a_1, a_2, \cdots, a_n)$ 称为 $n$ 元向量或 $n$ 维向量，其中 $a_i$ 称为该 $n$ 元向量的第 $i$ 个元素
-    1. 零向量：若向量的所有元素均为 $0$，则该向量称为零向量，记作 $\boldsymbol 0$
-    2. 设两个 $n$ 元向量 $\boldsymbol \alpha, \boldsymbol \beta$，若其所有对应元素相等时，称向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 相等，记作 $\boldsymbol \alpha = \boldsymbol \beta$
-    3. $n$ 元向量可写作一行或一列，通常指 $n$ 元列向量
-        1. 称 $\boldsymbol \alpha = \begin{bmatrix} a_1 & a_2 & \cdots & a_n \\ \end{bmatrix}$ 为 $n$ 元行向量，相当于一个 $1 \times n$ 矩阵
-        2. 称
+1. 向量： $n$ 元向量可写作一行或一列，并将其视作特殊的矩阵，通常指 $n$ 元列向量
+    1. 称
 
-            $$
-            \boldsymbol \beta = \boldsymbol \alpha^{\mathrm T} = \begin{bmatrix}
-            a_1 \\
-            a_2 \\
-            \vdots \\
-            a_n \\
-            \end{bmatrix}
-            $$
+        $$
+        \boldsymbol \alpha = \begin{bmatrix}
+        a_1 & a_2 & \cdots & a_n \\
+        \end{bmatrix}
+        $$
 
-            为 $n$ 元列向量，相当于一个 $n \times 1$ 矩阵
+        为 $n$ 元行向量，相当于一个 $1 \times n$ 矩阵
+
+    2. 称
+
+        $$
+        \boldsymbol \beta = \boldsymbol \alpha^{\mathrm T} = \begin{bmatrix}
+        a_1 \\
+        a_2 \\
+        \vdots \\
+        a_n \\
+        \end{bmatrix}
+        $$
+
+        为 $n$ 元列向量，相当于一个 $n \times 1$ 矩阵
 
 2. 矩阵：由若干个数排成的 $m$ 行 $n$ 列矩形阵列
 
@@ -90,8 +96,7 @@
         1. 结合律：$k(l\boldsymbol A) = (kl)\boldsymbol A$
         2. 分配律：$(k + l)\boldsymbol A = k\boldsymbol A + l\boldsymbol A, k(\boldsymbol A + \boldsymbol B) = k\boldsymbol A + k\boldsymbol B$
         3. $(k\boldsymbol A)^{\mathrm T} = k\boldsymbol A^{\mathrm T}$
-3. 向量内积：设 $\boldsymbol \alpha = (a_1, a_2, \cdots, a_n)$ 与 $\boldsymbol \beta = (b_1, b_2, \cdots, b_n)$ 为两个向量．其对应元素乘积之和 ${\displaystyle \sum_{i=1}^n} a_i b_i$ 称为 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的内积，记作 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>$
-4. 矩阵乘法：设 $\boldsymbol A = [a_{ik}]_{m \times l}, \boldsymbol B = [b_{kj}]_{l \times n}, \boldsymbol C = [c_{ij}]_{m \times n}$ 为三个矩阵．若有 $c_{ij} = {\displaystyle \sum_{k=1}^l a_{ik} k_{kj}}$ 对于 $1 \leqslant i \leqslant m, 1 \leqslant j \leqslant n$ 成立，则称矩阵 $\boldsymbol C$ 为 $\boldsymbol A$ 与 $\boldsymbol B$ 的乘积，记作 $\boldsymbol C = \boldsymbol{AB}$
+3. 矩阵乘法：设 $\boldsymbol A = [a_{ik}]_{m \times l}, \boldsymbol B = [b_{kj}]_{l \times n}, \boldsymbol C = [c_{ij}]_{m \times n}$ 为三个矩阵．若有 $c_{ij} = {\displaystyle \sum_{k=1}^l a_{ik} k_{kj}}$ 对于 $1 \leqslant i \leqslant m, 1 \leqslant j \leqslant n$ 成立，则称矩阵 $\boldsymbol C$ 为 $\boldsymbol A$ 与 $\boldsymbol B$ 的乘积，记作 $\boldsymbol C = \boldsymbol{AB}$
     1. 等价定义
         1. $\mathrm{entry}(\boldsymbol{AB}, i, j) = \left<\mathrm{row}(\boldsymbol A, i), \mathrm{col}(\boldsymbol B, j)\right> = \mathrm{row}(\boldsymbol A, i) \mathrm{col}(\boldsymbol B, j)$
         2. $\mathrm{row}(\boldsymbol{AB}, i) = \mathrm{row}(\boldsymbol A, i) \boldsymbol B = {\displaystyle \sum_{k=1}^l a_{ik} \mathrm{row}(\boldsymbol B, k)}$
@@ -110,7 +115,7 @@
         5. 设 $\boldsymbol A$ 是 $n$ 阶方阵，$k \in \mathbf N$，则 $k$ 个 $\boldsymbol A$ 的乘积称为方阵 $\boldsymbol A$ 的 $k$ 次幂，记作 $\boldsymbol A^k$，并规定 $\boldsymbol A^0 = \boldsymbol I$
             - $\boldsymbol A^k \boldsymbol A^l = \boldsymbol A^{k+l}, (\boldsymbol A^k)^l = \boldsymbol A^{kl} \ (k, l \in \mathbf N)$
             - 当 $\boldsymbol{AB} = \boldsymbol{BA}$ 时，有 $(\boldsymbol{AB})^k = \boldsymbol A^k \boldsymbol B^k$
-5. 分块矩阵：设 $\boldsymbol A$ 是一个 $m \times n$ 的矩阵，将矩阵分块得到
+4. 分块矩阵：设 $\boldsymbol A$ 是一个 $m \times n$ 的矩阵，将矩阵分块得到
 
     $$
     \boldsymbol A = \begin{bmatrix}
