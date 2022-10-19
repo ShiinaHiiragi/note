@@ -126,7 +126,7 @@ const refList = [
         locate: "南京",
         year: 2004,
         page: [234, 264],
-        plot: 1
+        plot: 0
     },
     {
         author: ["姚宁远"],
@@ -224,7 +224,7 @@ const refList = [
         locate: "北京",
         year: 2016,
         page: [1, 169],
-        plot: 0
+        plot: 32
     },
     {
         author: ["项武义"],
