@@ -331,10 +331,10 @@ refList
     .map((item => {
         const catRef = (item) => {
             const { author, title, type, trans, press, locate, year, page } = item;
-            return `${author.join(",")}.` +
+            return `${author.join(", ")}. ` +
                 `${title}[${type}]. ` + (type === "M"
                     ? (trans ? `${trans.join(",")},译. ` : ``) +
-                        `${press}:${locate}, ${year}:${page[0]}-${[page[1]]}.`
+                        `${press}:${locate}, ${year}: ${page[0]}-${[page[1]]}.`
                     : ``
                 )
         };
