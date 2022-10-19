@@ -247,4 +247,4 @@
         4. $\Gamma(x) = \dfrac{2^{x-1}}{\sqrt{\pi}} \Gamma\left(\dfrac x2\right) \Gamma\left(\dfrac{x+1}{2}\right)$
     2. 若 $(0, +\infty)$ 上的正值函数 $f(x)$ 有 ① $f(x + 1) = xf(x)$；② $f(1) = 1$；③ $\ln f$ 为凸函数，则 $f(x) = \Gamma(x)$
     3. $B$ 函数：设 $x, y > 0$，定义 $B(x, y) = {\displaystyle \int_0^1 t^{x-1} (1-t)^{y-1} \mathrm dt} = \dfrac{\Gamma(x) \Gamma(y)}{\Gamma(x + y)}$
-    4. $\text{Stirling}$ 公式：${\displaystyle \lim_{x \to +\infty} \dfrac{\Gamma(x + 1)}{\left(\dfrac xe\right)^x \sqrt{2\pi x}}}$
+    4. $\text{Stirling}$ 公式：${\displaystyle \lim_{x \to +\infty} \dfrac{\Gamma(x + 1)}{\left(\dfrac xe\right)^x \sqrt{2\pi x}}} = 1$

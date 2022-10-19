@@ -227,13 +227,6 @@ const refList = [
         plot: 32
     },
     {
-        author: ["项武义"],
-        title: "基础几何学",
-        type: "EB/OL",
-        page: [1, 76],
-        plot: 0
-    },
-    {
         author: ["吕林根", "徐子道"],
         title: "解析几何",
         type: "M",
