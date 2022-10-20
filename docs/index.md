@@ -1,24 +1,36 @@
 # 逻辑与形而上学
 
 ## 简介
-这是一个记录『逻辑与形而上学』相关知识的笔记，内容是逻辑学、数学、哲学与语言学的综合，相比较深度的探索而言更注重广度的收集。由于主要记录的是结论而不是推导或论证过程；是已被广为承认观点的收集而不是个人研究的阐述，因此更适用于「索引」而非「学习」或「研究」。
 
-本项目已开源，所有源文件在 GitHub 可见，点击右上角即可跳转到仓库。
+<div class="entry start">
+    <img src="assets/cube-outline.svg" style="width: 1.2rem" />
+    <div class="icon"> 逻辑与形而上学 </div>
+    <div class="value">
+        包含逻辑学、数学、哲学、计算机科学与语言学等学科的各种基础结论
+    </div>
+</div>
+
+<div class="entry start">
+    <img src="assets/image-filter-none.svg" style="width: 1.2rem" />
+    <div class="icon"> 如何使用本项目 </div>
+    <div class="value">
+        根据需求进行「索引」，而非「学习」或「研究」
+    </div>
+</div>
+
+<div class="entry start">
+    <img src="assets/github.svg" style="width: 1.2rem" />
+    <div class="icon"> 本项目已开源 </div>
+    <div class="value">
+        所有源文件在 <a href="https://github.com/ShiinaHiiragi/note/" target="_blank"> GitHub </a> 可见，采用 MIT 协议
+    </div>
+</div>
 
 !!! info "此项目尚未完成，可能存在若干疏漏和错误"
     <label> 现在进度：分析哲学 · 专名与通名 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
-
-<div class="grid cards" markdown>
-
-- :fontawesome-brands-html5: __HTML__ for content and structure
-- :fontawesome-brands-js: __JavaScript__ for interactivity
-- :fontawesome-brands-css3: __CSS__ for text running out of boxes
-- :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
-
-</div>
 
 ## 参考文献
 
@@ -362,6 +374,23 @@ renderRef(".uncomp", (item) => !item.plot);
 .entry {
     display: flex;
     flex-direction: row;
+}
+
+.start {
+    align-items: start;
+}
+
+.icon {
+    min-width: 9.0em;
+    font-weight: 600;
+}
+
+.icon:before {
+    content: "  ";
+}
+
+.icon:after {
+    content: "：";
 }
 
 .value {
