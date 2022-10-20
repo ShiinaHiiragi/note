@@ -1,0 +1,33 @@
+:root {
+  --md-text-font: "Noto Sans SC";
+  user-select: none;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: rgb(204, 226, 255);
+}
+
+@font-face {
+  font-family: "Noto Sans SC";
+  src: "NotoSansSC-Regular.otf";
+}
+
+@font-face {
+  font-family: "Noto Serif SC";
+  src: "NotoSerifSC-Regular.otf";
+}
+
+.md-ellipsis {
+  font-weight: 400;
+}
+
+h1, h2, h3, h4, h5, h6 {
+  color: black !important;
+  font-weight: 300 !important;
+}
+
+mjx-utext[variant="sans-serif"] {
+  font-family: "Noto Sans SC" !important;
+  font-size: 0.8rem !important;
+}

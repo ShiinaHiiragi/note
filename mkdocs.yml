@@ -8,7 +8,7 @@ theme:
   name: material
   icon:
     logo: octicons/note-24
-  favicon: extra/favicon.png
+  favicon: assets/favicon.png
   features:
     - navigation.expand
     - navigation.tabs
@@ -36,7 +36,15 @@ markdown_extensions:
   - meta
   - admonition
   - pymdownx.details
+  - pymdownx.superfences
+  - pymdownx.highlight:
+      anchor_linenums: true
+  - pymdownx.inlinehilite
+  - pymdownx.snippets
+  - pymdownx.tabbed:
+      alternate_style: true
   - pymdownx.critic
+  - pymdownx.caret
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.arithmatex:
@@ -54,12 +62,12 @@ extra:
       - jp
 
 extra_javascript:
-  - extra/config.js
+  - assets/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 extra_css:
-  - extra/config.css
+  - assets/config.css
 
 nav:
   - 通用:
