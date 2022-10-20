@@ -474,7 +474,7 @@
 1. 实数集合：如果集合 $A \subseteq$ 有
     1. $A \neq \varnothing$ 且 $A \neq \mathbf Q$
     2. $A$ 是向下封闭的，即如果 $p \in A$ 且 $q < p$，则 $q \in A$
-    3. $A$ 没有最大元，即如果 $p \in A$，则存在 $q \in A, p < q$\
+    3. $A$ 没有最大元，即如果 $p \in A$，则存在 $q \in A, p < q$
 
     则称 $A$ 是 $\text{Dedekind}$ 分割，全体分割的集合记为 $\mathbf R$，其中的元素被称为实数．特别地，对于任意 $p \in \mathbf Q$，定义 $p_{\mathbf R} = \left\{q \in \mathbf Q \mid q <_{\mathbf Q} p\right\}$
 
