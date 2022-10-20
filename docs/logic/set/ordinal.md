@@ -6,7 +6,7 @@
 ## 2.2 势与基数
 ### 2.2.1 势
 1. 如果存在一个以集合 $X$ 为定义域，以集合 $Y$ 为值域的双射，则称集合 $X$ 与 $Y$ 等势，记作 $|X| = |Y|$ 或 $X \approx Y$；如果存在集合 $X$ 到 $Y$ 的单射，则称 $X$ 的势小于等于 $Y$ 的势，记作 $|X| \leqslant |Y|$ 或 $X \preccurlyeq Y$
-    1. 定义 $|X| < |Y| := |X| \leqslant |Y| \wedge |X| \neq |Y|$
+    1. 定义 $|X| < |Y| = |X| \leqslant |Y| \wedge |X| \neq |Y|$
     2. 关系 $\approx$ 是一个等价关系；关系 $\preccurlyeq$ 是一个偏序关系
     3. 势的比较
         1. 如果 $X \subseteq Y$，则 $|X| \leqslant |Y|$ 且 $\exists Z \subseteq Y \ (|X| = |Z|)$

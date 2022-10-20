@@ -14,7 +14,7 @@
         $$
 
         1. 本体论承诺：所谈论的世界不是虚无的，它至少存在一个事物
-        2. 定义空集 $\varnothing := \left\{x \in X \mid x\neq x \right\}$，由于至少存在一个集合，因此 $\varnothing$ 是集合且唯一
+        2. 定义空集 $\varnothing = \left\{x \in X \mid x\neq x \right\}$，由于至少存在一个集合，因此 $\varnothing$ 是集合且唯一
 
     2. 外延公理（$\text{Ext}$）：两个有相同元素的集合相等，这表明集合是由其元素决定的
 
@@ -177,11 +177,11 @@
 
 ## 1.2 关系与映射
 ### 1.2.1 关系
-1. 有序对：设 $a, b$ 为集合，则 $a, b$ 组成的有序对定义为 $(a, b) := \left\{\{a\}, \{a, b\}\right\}$
+1. 有序对：设 $a, b$ 为集合，则 $a, b$ 组成的有序对定义为 $(a, b) = \left\{\{a\}, \{a, b\}\right\}$
     1. 由对集公理可知，对于任意集合 $a, b$，$(a, b)$ 是集合
     2. 任何两个有序对 $(a_1, b_1), (a_2, b_2)$ 有 $(a_1, b_1) = (a_2, b_2)$ 当且仅当 $a_1 = a_2 \wedge b_1 = b_2$
-    3. 假设 $(x_1, x_2, \cdots, x_{n-1})$ 已有定义，则 $n$ 元序组定义为 $(x_1, x_2, \cdots, x_n) := \left((x_1, x_2, \cdots, x_{n-1}), x_n\right)$
-2. $\text{Descartes}$ 积：设 $X, Y$ 为集合，则 $X$ 与 $Y$ 的 $\text{Descartes}$ 积定义为 $X \times Y := \left\{(x, y) \mid x \in X \wedge y \in Y\right\}$．特别地，若 $X = Y$，则将 $X \times X$ 记作 $X^2$
+    3. 假设 $(x_1, x_2, \cdots, x_{n-1})$ 已有定义，则 $n$ 元序组定义为 $(x_1, x_2, \cdots, x_n) = \left((x_1, x_2, \cdots, x_{n-1}), x_n\right)$
+2. $\text{Descartes}$ 积：设 $X, Y$ 为集合，则 $X$ 与 $Y$ 的 $\text{Descartes}$ 积定义为 $X \times Y = \left\{(x, y) \mid x \in X \wedge y \in Y\right\}$．特别地，若 $X = Y$，则将 $X \times X$ 记作 $X^2$
     1. 对于任意集合 $X, Y, Z$
         1. $(X \cup Y) \times Z = (X \times Z) \cup (Y \times Z)$
         2. $(X \cap Y) \times Z = (X \times Z) \cap (Y \times Z)$
@@ -222,13 +222,13 @@
 
             其中 $p_\alpha$ 是 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 的第 $\alpha$ 个投射
 
-4. 关系：对于集合 $R$，如果存在 $X, Y$ 使得 $R \subseteq X \times Y$，则称 $R$ 为二元关系，用 $R(x, y)$ 或 $xRy$ 表示 $(x, y) \in R$．其中定义域（或称作投影）定义为 $\mathrm{dom}(R) := \left\{x \mid \exists y \ R(x, y)\right\}$，值域定义为 $\mathrm{ran}(R) := \left\{y \mid \exists x \in X \ R(x, y)\right\}$
-    1. 像与逆像：集合 $X$ 在关系 $R$ 下的像定义为 $R[X] := \left\{y \in \mathrm{ran}(R) \mid \exists x \in X \ (R(x, y))\right\}$；集合 $Y$ 在关系 $R$ 下的逆像定义为 $R^{-1}[Y] := \left\{x \in \mathrm{dom}(R) \mid \exists y \in Y \ (R(x, y))\right\}$
+4. 关系：对于集合 $R$，如果存在 $X, Y$ 使得 $R \subseteq X \times Y$，则称 $R$ 为二元关系，用 $R(x, y)$ 或 $xRy$ 表示 $(x, y) \in R$．其中定义域（或称作投影）定义为 $\mathrm{dom}(R) = \left\{x \mid \exists y \ R(x, y)\right\}$，值域定义为 $\mathrm{ran}(R) = \left\{y \mid \exists x \in X \ R(x, y)\right\}$
+    1. 像与逆像：集合 $X$ 在关系 $R$ 下的像定义为 $R[X] = \left\{y \in \mathrm{ran}(R) \mid \exists x \in X \ (R(x, y))\right\}$；集合 $Y$ 在关系 $R$ 下的逆像定义为 $R^{-1}[Y] = \left\{x \in \mathrm{dom}(R) \mid \exists y \in Y \ (R(x, y))\right\}$
         1. $R[X \cup Y] = R[X] \cup R[Y]$
         2. $R[X \cap Y] \subseteq R[X] \cap R[Y]$
         3. $R[X - Y] \supseteq R[X] - R[Y]$
         4. 对于任意映射 $f$ 有 $f[X \cap Y] \subseteq f[X] \cap f[Y], f^{-1}[X \cap Y] = f^{-1}[X] \cap f^{-1}[Y]$
-    2. 逆关系与复合关系：二元关系 $R$ 的逆定义为 $R^{-1} := \left\{(x, y) \mid R(y, x)\right\}$；复合定义为 $S \circ R = \left\{(x, z) \mid \exists y \ (R(x, y) \wedge S(y, z))\right\}$
+    2. 逆关系与复合关系：二元关系 $R$ 的逆定义为 $R^{-1} = \left\{(x, y) \mid R(y, x)\right\}$；复合定义为 $S \circ R = \left\{(x, z) \mid \exists y \ (R(x, y) \wedge S(y, z))\right\}$
         1. $(R^{-1})^{-1} = R, (S \circ R)^{-1} = R^{-1} \circ S^{-1}$
         2. $X \circ (Y \circ Z) = (X \circ Y) \circ Z$
         3. $(X \cup Y) \circ Z = (X \circ Z) \cup (Y \circ Z), Z \circ (X \cup Y) = (Z \circ X) \cup (Z \circ Y)$
@@ -244,7 +244,7 @@
         3. 传递性：$R$ 是传递的当且仅当对于任意 $x, y, z \in X$ 有 $(x, y) \in R \wedge (y, z) \in R \to (x, z) \in R$
     5. $n$ 元关系：对于任一集合 $R$，如果存在 $X_1, X_2, \cdots, X_n$ 使得 $R \subseteq X_1 \times X_2 \times \cdots \times X_n$，则称 $R$ 为 $n$ 元关系，用 $R(X_1, X_2, \cdots, X_n)$ 表示 $(X_1, X_2, \cdots, X_n) \in R$．特别地，如果 $R \subseteq X^n$，则称 $R$ 是 $X$ 上的 $n$ 元关系
 5. 等价关系：二元关系 $R$ 是等价的当且仅当 $R$ 是自反、对称且是传递的，用 $\sim$ 表示
-    1. 等价类：设 $\sim$ 是集合 $X$ 上的等价关系，对任意 $x \in X$，定义 $x$ 关于 $\sim$ 的等价类为 $[x]_{\sim} := \left\{t \in X \mid t \sim x\right\}$
+    1. 等价类：设 $\sim$ 是集合 $X$ 上的等价关系，对任意 $x \in X$，定义 $x$ 关于 $\sim$ 的等价类为 $[x]_{\sim} = \left\{t \in X \mid t \sim x\right\}$
         1. 商集：设 $\sim$ 是集合 $X$ 上的等价关系，则 $X / \sim = \left\{[x]_{\sim} \mid x \in X\right\}$ 称为 $X$ 的商集．易知 $X / \sim$ 是 $X$ 的一个划分
         2. 对任意 $x, y \in X$，有 $[x]_{\sim} = [y]_{\sim}$ 或 $[x]_{\sim} \cap [y]_{\sim} = \varnothing$ 成立
     2. 划分：令 $X$ 为一个集合，$S \subseteq \mathcal P(X)$，如果 $S$ 有 ① 对所有 $a, b \in S$，有 $a \neq b \to a \cap b = \varnothing$；② $\bigcup S = X$，则称 $S$ 是 $X$ 的划分
@@ -327,8 +327,8 @@
         2. 满射：$\mathrm{ran}(f) = Y$ 的映射
         3. 双射：既是单射又是满射的映射
     4. 映射例举
-        1. 恒等映射：对任意集合 $X$，定义 $\mathrm{id}_X: X \to X$ 为 $\mathrm{id}_X(x) := x$，作为关系被称为 $X$ 上的恒等关系
-        2. 特征映射：对任意集合 $X$，定义特征映射（或示性映射）$f_X(x) := \left\{\begin{aligned} & 1, & x \in X \\ & 0, & x \notin X \end{aligned}\right.$
+        1. 恒等映射：对任意集合 $X$，定义 $\mathrm{id}_X: X \to X$ 为 $\mathrm{id}_X(x) = x$，作为关系被称为 $X$ 上的恒等关系
+        2. 特征映射：对任意集合 $X$，定义特征映射（或示性映射）$f_X(x) = \left\{\begin{aligned} & 1, & x \in X \\ & 0, & x \notin X \end{aligned}\right.$
         3. 部分映射：在定义域的某些点上没有定义的映射，与之相对的是全映射
 2. 逆映射与复合映射
     1. 一个映射是可逆的当且仅当它是单射，如果 $f$ 是可逆的，则 $f^{-1}$ 也是可逆的且 $(f^{-1})^{-1} = f$
@@ -361,13 +361,13 @@
     \end{aligned}
     $$
 
-3. 定义全体自然数的集合 $\mathbf N := \{n \mid \forall X \ (X$ 是归纳集 $\to n \in X)\}$
+3. 定义全体自然数的集合 $\mathbf N = \{n \mid \forall X \ (X$ 是归纳集 $\to n \in X)\}$
     1. 由分离公理与无穷公理可知，$\mathbf N$ 是一个集合且唯一
     2. $\mathbf N$ 是归纳集并且是任何归纳集的子集
     3. $\mathbf N$ 上的归纳原理：令 $\varphi(x)$ 为一性质
         1. 第一归纳原理：$(\varphi(0) \wedge \forall n \in N \ (\varphi(n) \to \varphi(n + 1))) \to \forall n \in \mathbf N \ \varphi(n)$
         2. 第二归纳原理：$\forall n \in N \ (\forall k < n \ \varphi(k) \to \varphi(n)) \to \forall n \in \mathbf N \ \varphi(n)$
-4. $\mathbf N$ 上的序：定义 $x \underline\in y := x \in y \vee x = y$
+4. $\mathbf N$ 上的序：定义 $x \underline\in y = x \in y \vee x = y$
     1. 对所有自然数 $m, n, k$ 有
         1. $0 \underline\in n$ 且 $n \notin n$
         2. $n \subset n + 1$ 且 $n \in n + 1$
@@ -376,7 +376,7 @@
         5. 如果 $m \in n$，则 $m + 1 \underline\in n$
         6. 如果 $k \in m \wedge m \in n$ 则 $k \in n$
         7. 如果 $x \in n$，则 $x \in \mathbf N$
-    2. 对任意 $m, n \in \mathbf N$，定义 $m \leqslant n := m \underline\in n$ 且 $m < n := m \in n$
+    2. 对任意 $m, n \in \mathbf N$，定义 $m \leqslant n = m \underline\in n$ 且 $m < n = m \in n$
     3. $(N, \underline\in)$ 是一个全序集，$(\mathbf N \leqslant)$ 是一个良序集
 5. 递归定理：对任意集合 $A$，任意 $a \in A$ 以及任意映射 $h: A \times \mathbf N \to A$，存在唯一的映射 $f: \mathbf N \to A$ 满足 ① $f(0) = a$；② 对所有 $n \in N$，有 $f(n + 1) = g(f(n), n)$
     1. 推广到带参数的递归定理：令 $a: P \to A, g: P \times A \times \mathbf N \to A$ 为映射，则存在唯一的映射 $f: P \times \mathbf N \to A$ 有 ① $\forall p \in P \ (f(p, 0) = a(p))$；② $\forall n \in \mathbf N \ \forall p \in P \ (f(p, n + 1) = g(p, f(p, n), n))$
@@ -420,17 +420,17 @@
         5. 乘法保序性：$\forall m, n, k \in \mathbf N \ ((m < n \wedge k \neq 0)\to mk < nk)$
 
 ### 1.3.2 整数集
-1. 整数集合：定义关系 $\sim$ 是 $\mathbf N \times \mathbf N$ 上的等价关系：$(m_1, n_1) \sim (m_2, n_2)$ 当且仅当 $m_1 +_{\mathbf N} n_2 = m_2 +_{\mathbf N} n_1$，令 $\mathbf Z := \mathbf N \times \mathbf N / \sim$．特别地，$0_{\mathbf Z} = [(0, 0)]$
+1. 整数集合：定义关系 $\sim$ 是 $\mathbf N \times \mathbf N$ 上的等价关系：$(m_1, n_1) \sim (m_2, n_2)$ 当且仅当 $m_1 +_{\mathbf N} n_2 = m_2 +_{\mathbf N} n_1$，令 $\mathbf Z = \mathbf N \times \mathbf N / \sim$．特别地，$0_{\mathbf Z} = [(0, 0)]$
 2. 定义整数集合上的序与运算
     1. 序：$[(m_1, n_1)] \leqslant_{\mathbf Z} [(m_2, n_2)] \leftrightarrow m_1 +_{\mathbf N} n_2 \leqslant_{\mathbf N} m_2 +_{\mathbf N} n_1$
-    2. 加法：$[(m_1, n_1)] +_{\mathbf Z} [(m_2, n_2)] := [(m_1 +_{\mathbf N} m_2), n_1 +_{\mathbf N} n_2]$
-    3. 乘法：$[(m_1, n_1)] \cdot_{\mathbf Z} [(m_2, n_2)] := [(m_1 \cdot_{\mathbf N} m_2 +_{\mathbf N} n_1 \cdot_{\mathbf N} n_2, m_1 \cdot_{\mathbf N} n_2 +_{\mathbf N} n_1 \cdot_{\mathbf N} m_2)]$
+    2. 加法：$[(m_1, n_1)] +_{\mathbf Z} [(m_2, n_2)] = [(m_1 +_{\mathbf N} m_2), n_1 +_{\mathbf N} n_2]$
+    3. 乘法：$[(m_1, n_1)] \cdot_{\mathbf Z} [(m_2, n_2)] = [(m_1 \cdot_{\mathbf N} m_2 +_{\mathbf N} n_1 \cdot_{\mathbf N} n_2, m_1 \cdot_{\mathbf N} n_2 +_{\mathbf N} n_1 \cdot_{\mathbf N} m_2)]$
 3. 零元：对任意整数 $a$，存在唯一的整数 $a'$ 使得 $a +_{\mathbf N} a' = 0_{\mathbf Z}$
-    1. 相反数与减法：将整数 $a'$ 记作 $-a$，定义 $a -_{\mathbf Z} b := a +_{\mathbf Z} (-b)$
+    1. 相反数与减法：将整数 $a'$ 记作 $-a$，定义 $a -_{\mathbf Z} b = a +_{\mathbf Z} (-b)$
     2. 绝对值：设 $a \in \mathbf Z$，定义绝对值
 
         $$
-        |a| := \left\{\begin{aligned}
+        |a| = \left\{\begin{aligned}
         & a, & a \geqslant_{\mathbf Z} 0_{\mathbf Z} \\
         & -a, & a <_{\mathbf Z} 0_{\mathbf Z}
         \end{aligned}\right.
@@ -444,16 +444,16 @@
     3. 对任意 $m, n \in \mathbf N$ 有 $f(m +_{\mathbf N} n) = f(m) +_{\mathbf Z} f(n)$ 且 $f(m \cdot_{\mathbf N} n) = f(m) \cdot_{\mathbf Z} f(n)$
 
 ### 1.3.3 有理数集
-1. 有理数集合：令 $\mathbf Z_+ = \{a \in \mathbf Z \mid a >_{\mathbf Z} 0_{\mathbf Z}\}$，如果 $\sim$ 是集合 $\mathbf Z \times \mathbf Z_+$ 上的等价关系：$(a_1, b_1) \sim (a_2, b_2)$ 当且仅当 $a_1 \cdot_{\mathbf Z} b_2 = a_2 \cdot_{\mathbf Z} b_1$，则定义有理数集合 $\mathbf Q := \mathbf Z \times \mathbf Z_+ / \sim$．特别地，$0_{\mathbf Q} = [(0_{\mathbf Z}, a)], 1_{\mathbf Q} = [(a, a)]$
+1. 有理数集合：令 $\mathbf Z_+ = \{a \in \mathbf Z \mid a >_{\mathbf Z} 0_{\mathbf Z}\}$，如果 $\sim$ 是集合 $\mathbf Z \times \mathbf Z_+$ 上的等价关系：$(a_1, b_1) \sim (a_2, b_2)$ 当且仅当 $a_1 \cdot_{\mathbf Z} b_2 = a_2 \cdot_{\mathbf Z} b_1$，则定义有理数集合 $\mathbf Q = \mathbf Z \times \mathbf Z_+ / \sim$．特别地，$0_{\mathbf Q} = [(0_{\mathbf Z}, a)], 1_{\mathbf Q} = [(a, a)]$
 2. 定义有理数集合上的序与运算
     1. 序：$[(a_1, b_1)] \leqslant_{\mathbf Q} [(a_2, b_2)] \leftrightarrow a_1 \cdot_{\mathbf Z} b_2 \leqslant_{\mathbf Z} a_2 \cdot_{\mathbf Z} b_1$
-    2. 加法：$[(a_1, b_1)] +_{\mathbf Q} [(a_2, b_2)] := [(a_1 \cdot_{\mathbf Z} b_2 +_{\mathbf Z} a_2 \cdot_{\mathbf Z} b_1, b_1 \cdot_{\mathbf Z} b_2]$
-    3. 乘法：$[(a_1, b_1)] \cdot_{\mathbf Q} [(a_2, b_2)] := [(a_1 \cdot_{\mathbf Z} a_2, b_1 \cdot_{\mathbf Z} b_2)]$
+    2. 加法：$[(a_1, b_1)] +_{\mathbf Q} [(a_2, b_2)] = [(a_1 \cdot_{\mathbf Z} b_2 +_{\mathbf Z} a_2 \cdot_{\mathbf Z} b_1, b_1 \cdot_{\mathbf Z} b_2]$
+    3. 乘法：$[(a_1, b_1)] \cdot_{\mathbf Q} [(a_2, b_2)] = [(a_1 \cdot_{\mathbf Z} a_2, b_1 \cdot_{\mathbf Z} b_2)]$
 3. 本原元
     1. 零元：对任意有理数 $p$，存在唯一的有理数 $p'$ 使得 $p +_{\mathbf Q} p' = 0_{\mathbf Q}$，记唯一的 $p'$ 为 $-p$
     2. 单位元：对任意有理数 $p \neq 0_{\mathbf Q}$，存在唯一的有理数 $p'$ 使得 $p \cdot_{\mathbf Q} p' = 1_{\mathbf Q}$
         1. 倒数：记唯一的 $p'$ 为 $p^{-1}$ 或 $\dfrac 1p$，称之为 $p$ 的倒数
-        2. 除法：定义 $p \div_{\mathbf Q} q := p \cdot_{\mathbf Q} q^{-1}$
+        2. 除法：定义 $p \div_{\mathbf Q} q = p \cdot_{\mathbf Q} q^{-1}$
 4. 将 $\mathbf Q$ 看作 $\mathbf Z$ 的扩张，称 $\mathbf Z$ 嵌入 $\mathbf Q$ 中：存在函数 $f: \mathbf Z \to \mathbf Q$ 为 $f(a) = [(a, 1)]$ 使得
     1. $f$ 是单射且 $f(0_{\mathbf Z}) = 0_{\mathbf Q}$
     2. 对任意 $a, b \in \mathbf Z$ 有 $a \leqslant_{\mathbf Z} b$ 当且仅当 $f(a) \leqslant_{\mathbf Q} f(b)$
@@ -463,7 +463,7 @@
     2. 稠密性：如果全序集 $(X, <)$ 至少有两个元素，且对任意 $a, b \in X$，如果 $a < b$，则存在 $x \in X$ 有 $a < x < b$
         1. 有理数集合 $(\mathbf Q, <)$ 是稠密的
         2. 令 $(P, <_P)$ 为可数的无端点稠密线序，则 $(P, <_p)$ 与 $(\mathbf Q, <)$ 同构
-6. 分数：设 $p = [(a, b)] \in \mathbf Q$，则定义分数 $p := \dfrac{a}{b}$，读作 $b$ 分之 $a$．其中 $b$ 称作分母，$a$ 称作分子
+6. 分数：设 $p = [(a, b)] \in \mathbf Q$，则定义分数 $p = \dfrac{a}{b}$，读作 $b$ 分之 $a$．其中 $b$ 称作分母，$a$ 称作分子
     1. 既约分数：满足 $(a, b) = 1$ 的分数
         1. 约分：将任一分数化作既约分数的过程
         2. 通分：把异分母分数化作与原分数相等的同分母分数
@@ -476,15 +476,15 @@
     2. $A$ 是向下封闭的，即如果 $p \in A$ 且 $q < p$，则 $q \in A$
     3. $A$ 没有最大元，即如果 $p \in A$，则存在 $q \in A, p < q$\
 
-    则称 $A$ 是 $\text{Dedekind}$ 分割，全体分割的集合记为 $\mathbf R$，其中的元素被称为实数．特别地，对于任意 $p \in \mathbf Q$，定义 $p_{\mathbf R} := \left\{q \in \mathbf Q \mid q <_{\mathbf Q} p\right\}$
+    则称 $A$ 是 $\text{Dedekind}$ 分割，全体分割的集合记为 $\mathbf R$，其中的元素被称为实数．特别地，对于任意 $p \in \mathbf Q$，定义 $p_{\mathbf R} = \left\{q \in \mathbf Q \mid q <_{\mathbf Q} p\right\}$
 
 2. 实数集合的序与运算
     1. 实数集合上的序定义为 $x_1 \leqslant_{\mathbf R} x_2$ 当且仅当 $x_1 \subseteq x_2$
-    2. 实数集合上的加法定义为 $x +_{\mathbf R} y := \left\{p +_{\mathbf Q} q \mid p \in x, q \in y\right\}$
+    2. 实数集合上的加法定义为 $x +_{\mathbf R} y = \left\{p +_{\mathbf Q} q \mid p \in x, q \in y\right\}$
     3. 实数集合上的乘法定义
         1. 如果 $x = 0_{\mathbf R}$ 或 $y = 0_{\mathbf R}$，则 $x \cdot_{\mathbf R} y = 0_{\mathbf R}$
-        2. 如果 $x >_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R}$，则 $x \cdot_{\mathbf R} y := \left\{r \mid r \leqslant p \cdot_{\mathbf R} q, p \in x, q \in y, p, q >_{\mathbf Q} 0_{\mathbf Q}\right\}$
-        3. 其他情况由 $x >_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R}$ 定义：$x \cdot_{\mathbf R} y := \left\{\begin{aligned} & (-x) \cdot_{\mathbf R} (-y), & x <_{\mathbf R} 0_{\mathbf R}, y <_{\mathbf R} 0_{\mathbf R} \\ & -((-x) \cdot_{\mathbf R} y), & x <_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R} \\ & -(x \cdot_{\mathbf R} (-y)), & x >_{\mathbf R} 0_{\mathbf R}, y <_{\mathbf R} 0_{\mathbf R} \end{aligned}\right.$
+        2. 如果 $x >_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R}$，则 $x \cdot_{\mathbf R} y = \left\{r \mid r \leqslant p \cdot_{\mathbf R} q, p \in x, q \in y, p, q >_{\mathbf Q} 0_{\mathbf Q}\right\}$
+        3. 其他情况由 $x >_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R}$ 定义：$x \cdot_{\mathbf R} y = \left\{\begin{aligned} & (-x) \cdot_{\mathbf R} (-y), & x <_{\mathbf R} 0_{\mathbf R}, y <_{\mathbf R} 0_{\mathbf R} \\ & -((-x) \cdot_{\mathbf R} y), & x <_{\mathbf R} 0_{\mathbf R}, y >_{\mathbf R} 0_{\mathbf R} \\ & -(x \cdot_{\mathbf R} (-y)), & x >_{\mathbf R} 0_{\mathbf R}, y <_{\mathbf R} 0_{\mathbf R} \end{aligned}\right.$
 3. 本原元
     1. 零元：对任意实数 $x$，存在唯一的实数 $x'$ 使得 $x +_{\mathbf R} x' = 0_{\mathbf x}$，记唯一的 $x'$ 为 $-x$
     2. 单位元：对任意实数 $x \neq 0_{\mathbf R}$，存在唯一的实数 $x'$ 使得 $x \cdot_{\mathbf R} x' = 1_{\mathbf R}$，记唯一的 $x'$ 为 $\dfrac 1x$
@@ -533,14 +533,14 @@
         2. 实数集合 $(\mathbf R, \leqslant_{\mathbf R})$ 有最小上界性质
 
 ### 1.3.5 复数集
-1. 复数集合：定义集合 $\mathbf C := \mathbf R \times \mathbf R$，称集合 $\mathbf C$ 为复数集．特别地，对于任意 $x \in \mathbf R$，定义 $x_{\mathbf C} := (x, 0_{\mathbf R})$
+1. 复数集合：定义集合 $\mathbf C = \mathbf R \times \mathbf R$，称集合 $\mathbf C$ 为复数集．特别地，对于任意 $x \in \mathbf R$，定义 $x_{\mathbf C} = (x, 0_{\mathbf R})$
 2. 复数集合的相关概念
     1. 复数集合上没有定义序关系
     2. 设 $z = (x, y) \in \mathbf C$，则称 $x$ 为 $z$ 的实部，记作 $\text{Re}(z)$；$y$ 为$z$ 的虚部，记作 $\text{Im}(z)$
     3. 设 $i = (0_{\mathbf R}, 1_{\mathbf R}) \in \mathbf C$，记 $(x, y) = x_{\mathbf C} +_{\mathbf C} y_{\mathbf C} \cdot _{\mathbf C}i$，称之为复数 $(x, y)$ 的代数形式
 3. 复数集合的运算
-    1. 复数集合上的加法定义为 $(x_1, y_1) +_{\mathbf C} (x_2, y_2) := (x_1 +_{\mathbf R} x_2, y_1 +_{\mathbf R} y_2)$
-    2. 复数集合上的乘法定义为 $(x_1, y_1) \cdot_{\mathbf C} (x_2, y_2) := (x_1 \cdot_{\mathbf R} x_2 -_{\mathbf R} y_1 \cdot_{\mathbf R} y_2, x_1 \cdot_{\mathbf R} y_2 +_{\mathbf R} y_1 \cdot_{\mathbf R} x_2)$
+    1. 复数集合上的加法定义为 $(x_1, y_1) +_{\mathbf C} (x_2, y_2) = (x_1 +_{\mathbf R} x_2, y_1 +_{\mathbf R} y_2)$
+    2. 复数集合上的乘法定义为 $(x_1, y_1) \cdot_{\mathbf C} (x_2, y_2) = (x_1 \cdot_{\mathbf R} x_2 -_{\mathbf R} y_1 \cdot_{\mathbf R} y_2, x_1 \cdot_{\mathbf R} y_2 +_{\mathbf R} y_1 \cdot_{\mathbf R} x_2)$
 4. 本原元
     1. 零元：对任意复数 $z$，存在唯一的复数 $z'$ 使得 $z +_{\mathbf C} z' = 0_{\mathbf C}$，记唯一的 $z'$ 为 $-z$
     2. 单位元：对任意复数 $z \neq 0_{\mathbf C}$，存在唯一的复数 $z'$ 使得 $z \cdot_{\mathbf C} z' = 1_{\mathbf C}$，记唯一的 $z'$ 为 $\dfrac 1z$
@@ -548,11 +548,11 @@
     1. $f$ 是单射且 $f(0_{\mathbf R}) = 0_{\mathbf C}$
     2. 对任意 $x, y \in \mathbf R$ 有 $x \leqslant_{\mathbf R} y$ 当且仅当 $f(x) \leqslant_{\mathbf C} f(y)$
     3. 对任意 $x, y \in \mathbf R$ 有 $f(x +_{\mathbf R} y) = f(x) +_{\mathbf C} f(y)$ 且 $f(x \cdot_{\mathbf R} y) = f(x) \cdot_{\mathbf C} f(y)$
-6. 共轭复数：若 $x, y \in \mathbf R, w \in \mathbf C, z = x_{\mathbf C} +_{\mathbf C} y_{\mathbf C} \cdot_{\mathbf C} i \in \mathbf C$，则定义 $\overline z := x_{\mathbf C} -_{\mathbf C} y_{\mathbf C} \cdot_{\mathbf C} i$ 为 $z$ 的共轭复数
+6. 共轭复数：若 $x, y \in \mathbf R, w \in \mathbf C, z = x_{\mathbf C} +_{\mathbf C} y_{\mathbf C} \cdot_{\mathbf C} i \in \mathbf C$，则定义 $\overline z = x_{\mathbf C} -_{\mathbf C} y_{\mathbf C} \cdot_{\mathbf C} i$ 为 $z$ 的共轭复数
     1. $\overline{z +_{\mathbf C} w} = \overline z +_{\mathbf C} \overline w, \overline{z \cdot_{\mathbf C} w} = \overline z \cdot_{\mathbf C} \overline w$
     2. 设 $z +_{\mathbf C} \overline z = (2_{\mathbf R} \cdot_{\mathbf R} \text{Re}(z))_{\mathbf C}, z -_{\mathbf C} \overline z = 2_{\mathbf C} \cdot_{\mathbf C} i \cdot_{\mathbf C} \text{Im}(z)_{\mathbf C}$
     3. 对于任意 $z \in \mathbf C$，存在 $x \in \mathbf R$ 使得 $z \cdot_{\mathbf C} \overline z = x_{\mathbf C}$ 且 $x \geqslant_{\mathbf R} 0_{\mathbf R}$
-7. 模：设 $z, w \in \mathbf C, x_{\mathbf C} = z \cdot_{\mathbf C} \overline z$，定义模 $|z| := \sqrt{x}$
+7. 模：设 $z, w \in \mathbf C, x_{\mathbf C} = z \cdot_{\mathbf C} \overline z$，定义模 $|z| = \sqrt{x}$
     1. $|\overline z| = |z|, |\text{Re}(z)| \leqslant_{\mathbf R} |z|$
     2. $|z| \geqslant_{\mathbf R} 0_{\mathbf R}$，等号成立当且仅当 $z_{\mathbf C} = 0_{\mathbf C}$
     3. $|z +_{\mathbf C} w| \leqslant_{\mathbf R} |z| +_{\mathbf R} |w|, |z \cdot_{\mathbf C} w| = |z| \cdot_{\mathbf R} |w|$

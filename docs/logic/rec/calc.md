@@ -199,7 +199,7 @@
     2. 令 $A \subseteq \mathbf N$，则 $A$ 是递归可枚举的当且仅当以下各命题：
         1. $A = \varnothing$ 或 $A$ 是某个原始递归函数的值域
         2. $A$ 是某个部分递归函数的值域
-        3. $A$ 的部分特征函数是部分递归的，其中定义 $A$ 的部分特征函数 $\chi_{A_p}(x) := \left\{\begin{aligned} & 1, & x \in A \\ & \textsf{无定义}, & x \notin A \end{aligned}\right.$
+        3. $A$ 的部分特征函数是部分递归的，其中定义 $A$ 的部分特征函数 $\chi_{A_p}(x) = \left\{\begin{aligned} & 1, & x \in A \\ & \textsf{无定义}, & x \notin A \end{aligned}\right.$
         4. $A$ 是某个部分递归函数的定义域
         5. 存在一个二元递归谓词 $R(x, y)$ 使得 $A$ 具有形式 $A = \{x \mid \exists y \ R(x, y)\}$
     3. 假定 $A, B \subseteq \mathbf N^k$ 都是递归可枚举的

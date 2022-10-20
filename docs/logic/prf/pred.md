@@ -30,7 +30,7 @@
         一阶语言 $\mathscr L(S)$ 的（合式）公式集 $\mathcal F(S)$ 归纳定义如下
 
         $$
-        \mathcal F(S) \ni \alpha := Rt_1t_2\cdots t_{\Omega(f)} \mid \bot \mid (\alpha_1 \wedge \alpha_2) \mid (\alpha_1 \vee \alpha_2) \mid (\alpha_1 \to \alpha_2) \mid \forall x\alpha \mid \exists x\alpha
+        \mathcal F(S) \ni \alpha := Rt_1t_2\cdots t_{\Omega(R)} \mid \bot \mid (\alpha_1 \wedge \alpha_2) \mid (\alpha_1 \vee \alpha_2) \mid (\alpha_1 \to \alpha_2) \mid \forall x\alpha \mid \exists x\alpha
         $$
 
         其中 $R\in \mathbf R$，$t_1, t_2, \cdots, t_{\Omega(R)}$ 是项，$x$ 是变元
@@ -42,7 +42,7 @@
         4. 存在公式：递归定义存在公式为 ① 无量词公式 $\alpha$；② 形如 $\exists x\beta$ 的公式，其中 $\beta$ 是存在公式
         5. 全称公式：递归定义全称公式为 ① 无量词公式 $\alpha$；② 形如 $\exists x\beta$ 的公式，其中 $\beta$ 是全称公式
     4. 特殊记法
-        1. 定义缩写 $\neg \alpha := \alpha \to \bot$，$\alpha \leftrightarrow \beta := (\alpha \to \beta) \wedge (\beta \to \alpha)$
+        1. 定义缩写 $\neg \alpha = \alpha \to \bot$，$\alpha \leftrightarrow \beta = (\alpha \to \beta) \wedge (\beta \to \alpha)$
         2. 对于 $\mathbf Q\in \{\forall, \exists\}$ 和有穷长的变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，公式 $\mathbf Qx_1 \mathbf Qx_2 \cdots \mathbf Qx_n \alpha$ 记作 $\mathbf Q \overline x \alpha$
         3. 设 $t$ 为项，$\overline x$ 为有穷长的变元序列 $\left<x_1, x_2, \cdots, x_n\right>$．记 $t = t(\overline x)$ 为含有变元 $x_1, x_2, \cdots, x_n$ 的项
 

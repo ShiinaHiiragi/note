@@ -13,7 +13,7 @@
     $$
 
     !!! note "缩写与简写"
-        1. 定义缩写 $\neg \alpha := \alpha \to \bot$（否定）；$\top := \bot \to \bot$（恒真）；$\alpha \leftrightarrow \beta := (\alpha \to \beta) \wedge (\beta \to \alpha)$（等值）
+        1. 定义缩写 $\neg \alpha = \alpha \to \bot$（否定）；$\top = \bot \to \bot$（恒真）；$\alpha \leftrightarrow \beta = (\alpha \to \beta) \wedge (\beta \to \alpha)$（等值）
         2. 引入省略括号的规则：① 公式最外层括号可省略；② 联结词 $\wedge$ 与 $\vee$ 优先于 $\to$
 
     1. 原子公式：命题变元或 $\bot$，所有原子公式的集合记为 $\mathbf{At} = \mathbf{Prop} \cup \{\bot\}$

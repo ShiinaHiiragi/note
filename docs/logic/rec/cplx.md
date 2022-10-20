@@ -39,23 +39,23 @@
 
 ### 2.1.2 时间复杂性类
 1. 时间复杂性类：令 $t: \mathbf N \to R_+$ 是一个函数
-    1. $\mathrm{TIME}(t(n)) := \{L \mid L$ 是一个被 $O(t(n))$ 时间的确定型 $\text{Turing}$ 机判定的语言$\}$
+    1. $\mathrm{TIME}(t(n)) = \{L \mid L$ 是一个被 $O(t(n))$ 时间的确定型 $\text{Turing}$ 机判定的语言$\}$
 
-        $\mathrm{NTIME}(t(n)) := \{L \mid L$ 是一个被 $O(t(n))$ 时间的非确定型 $\text{Turing}$ 机判定的语言$\}$
+        $\mathrm{NTIME}(t(n)) = \{L \mid L$ 是一个被 $O(t(n))$ 时间的非确定型 $\text{Turing}$ 机判定的语言$\}$
 
-    2. $\mathrm{EXPTIME} := {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{TIME}(2^{n^k})}$
+    2. $\mathrm{EXPTIME} = {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{TIME}(2^{n^k})}$
     3. 设 $t(n) \geqslant n$ 是一个函数，则每一个 $t(n)$ 时间的多带 $\text{Turing}$ 机都和某一个 $O(t^2(n))$ 时间的单带 $\text{Turing}$ 机等价
 
         设 $t(n) \geqslant n$ 是一个函数，则每一个 $t(n)$ 时间的非确定型单带 $\text{Turing}$ 机都与某个 $2^{O(t(n))}$ 时间的确定型单带 $\text{Turing}$ 机等价
 
-2. $\mathrm P$ 类：确定型单带 $\text{Turing}$ 机在多项式时间内可判定的语言类，即 $\mathrm P := {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{TIME}(n^k)}$
+2. $\mathrm P$ 类：确定型单带 $\text{Turing}$ 机在多项式时间内可判定的语言类，即 $\mathrm P = {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{TIME}(n^k)}$
     1. 对于所有与确定型单带 $\text{Turing}$ 机多项式等价的计算模型而言，$\mathrm P$ 是不变的
     2. $\mathrm{CFL} \subset \mathrm P$
 3. $\mathrm{NP}$ 类：具有多项式时间验证机的语言类
     1. 验证机：语言 $L$ 的验证机是一个算法 $V$，这里 $L = \{w \mid$ 对某个字符串 $c,V$ 接受 $\left<w, c\right>\}$，其中 $c$ 称为 $A$ 的成员资格证书或证明
         1. 多项式时间验证机：算法 $V$ 在 $w$ 的长度的多项式时间内运行
         2. 若语言 $L$ 有一个多项式时间验证机，则称语言 $L$ 为多项式可验证的
-    2. 语言 $L \in \mathrm{NP}$ 当且仅当 $L$ 能被某个非确定型多项式时间 $\text{Turing}$ 机判定，则有 $\mathrm{NP} := {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{NTIME}(n^k)}, \mathrm{coNP} := \overline{\mathrm{NP}}$
+    2. 语言 $L \in \mathrm{NP}$ 当且仅当 $L$ 能被某个非确定型多项式时间 $\text{Turing}$ 机判定，则有 $\mathrm{NP} = {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{NTIME}(n^k)}, \mathrm{coNP} = \overline{\mathrm{NP}}$
     3. 已知最好的判定语言是 $\mathrm{NP}$ 的确定型方法使用指数时间，即 $\mathrm{NP} \subseteq \mathrm{EXPTIME}$
 4. $\mathrm{NP}$ 完全性：如果语言 $L$ 满足
     1. $L \in \mathrm{NP}$
@@ -63,7 +63,7 @@
 
     则称 $L$ 为 $\mathrm{NP}$ 完全的
 
-    1. 可满足性问题：判定一个 $\text{Boole}$ 公式是否可满足，即定义 $\mathrm{SAT} := \{\left<\varphi\right> \mid \varphi$ 是可满足的 $\text{Boole}$ 公式$\}$
+    1. 可满足性问题：判定一个 $\text{Boole}$ 公式是否可满足，即定义 $\mathrm{SAT} = \{\left<\varphi\right> \mid \varphi$ 是可满足的 $\text{Boole}$ 公式$\}$
         1. $\text{Cook}$ 定理：$\mathrm{SAT}$ 是 $\mathrm{NP}$ 完全的
         2. $\mathrm{SAT} \in \mathrm P$ 当且仅当 $\mathrm P = \mathrm{NP}$
     2. 多项式时间可归约性
@@ -81,11 +81,11 @@
     1. 令 $M$ 是一个确定型判定机，$M$ 的空间复杂度是一个函数 $f: \mathbf N \to \mathbf N$，其中 $f(n)$ 是 $M$ 在任何长为 $n$ 的输入上扫描纸带方格的最大数，若 $M$ 的空间复杂度为 $f(n)$，则称 $M$ 在空间 $f(n)$ 内运行
     2. 令 $N$ 是一个非确定型判定机，$N$ 的空间复杂度是一个函数 $f: \mathbf N \to \mathbf N$，其中 $f(n)$ 是 $N$ 对任何长为 $n$ 的输入，再认和计算分支上所扫描的纸带方格的最大数
 2. 空间复杂性类：令 $f: \mathbf N \to \mathbf R_+$ 是一个函数
-    1. $\mathrm{SPACE}(f(n)) := \{L \mid L$ 是被 $O(f(n))$ 空间的确定型 $\text{Turing}$ 机判定的语言$\}$
+    1. $\mathrm{SPACE}(f(n)) = \{L \mid L$ 是被 $O(f(n))$ 空间的确定型 $\text{Turing}$ 机判定的语言$\}$
 
-        $\mathrm{NSPACE}(f(n)) := \{L \mid L$ 是被 $O(f(n))$ 空间的非确定型 $\text{Turing}$ 机判定的语言$\}$
+        $\mathrm{NSPACE}(f(n)) = \{L \mid L$ 是被 $O(f(n))$ 空间的非确定型 $\text{Turing}$ 机判定的语言$\}$
 
-    2. $\mathrm{EXPSPACE} := {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{SPACE}(2^{n^k})}$
+    2. $\mathrm{EXPSPACE} = {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{SPACE}(2^{n^k})}$
     3. $\text{Savitch}$ 定理：对于任何函数 $f: \mathbf N \to \mathbf R_+$ 都有 $\mathrm{NPSACE}(f(n)) \subseteq \mathrm{SPACE}(f^2(n))$，其中 $f(n) \geqslant n$
 
 3. $\mathrm{PSPACE}$ 类：在确定型 $\text{Turing}$ 机上且在多项式时间内可判定的语言类，即 $\mathrm{PSPACE} = {\displaystyle \bigcup_{k \in \mathbf N} \mathrm{SPACE}(n^k)}$
@@ -97,9 +97,9 @@
         则称 $L$ 是 $\mathrm{PSPACE}$ 完全的
 
 4. $\mathrm{L}$ 类与 $\mathrm{NL}$ 类
-    1. $\mathrm{L}$ 是确定型 $\text{Turing}$ 机在对数空间内可判定的语言类，即 $\mathrm{L} := \mathrm{SPACE}(\log_2 n)$
+    1. $\mathrm{L}$ 是确定型 $\text{Turing}$ 机在对数空间内可判定的语言类，即 $\mathrm{L} = \mathrm{SPACE}(\log_2 n)$
 
-        $\mathrm{NL}$ 是非确定型 $\text{Turing}$ 在对数空间内可判定的语言类，即 $\mathrm{NL} := \mathrm{NSPACE}(\log_2 n)$
+        $\mathrm{NL}$ 是非确定型 $\text{Turing}$ 在对数空间内可判定的语言类，即 $\mathrm{NL} = \mathrm{NSPACE}(\log_2 n)$
 
     2. 格局：若 $M$ 是一个有单独的只读输入纸带的 $\text{Turing}$ 机，$w$ 为输入，则 $M$ 在 $w$ 上的格局包括状态、工作带和两个读写头的位置，输入 $w$ 不作为 $M$ 在 $w$ 上格局的一部分
     3. 对数空间可归约：若语言 $A$ 通过对数空间可计算函数 $f$ 映射可归约到语言 $B$，则称 $A$ 对数空间可归约到 $B$，记为 $A \leqslant_L B$
