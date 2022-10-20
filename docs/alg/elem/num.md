@@ -334,7 +334,7 @@
     3. 当 $k \geqslant 3$ 时，$q_k \geqslant q_{k-1} + 1$，因为对任何 $k$ 都有 $q_k \geqslant k-1$
     4. 设 $\left<a_1, a_2, \cdots, a_n, \cdots\right>$ 时简单连分数，$\dfrac{p_k}{q_k} \ (k \geqslant 1)$ 是它的渐近分数
         1. $\dfrac{p_{2(k-2)}}{q_{2(k-1)}} > \dfrac{p_{2k}}{q_{2k}}, \dfrac{p_{2k-1}}{q_{2k-1}} > \dfrac{p_{2k-3}}{q_{2k-3}}, \dfrac{p_{2k}}{q_{2k}} > \dfrac{p_{2k-1}}{q_{2k-1}}$
-        2. $\forall k \in \mathbf Z_+ : (p_k, q_k) = 1$
+        2. $\forall k \in \mathbf Z_+: (p_k, q_k) = 1$
 3. 实数与连分数
     1. 任何简单连分数都表示一个实数
         1. 任何有限简单连分数都表示一个有理数；任何有理数都可以表示为有限简单连分数

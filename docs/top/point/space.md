@@ -17,7 +17,7 @@
     1. 每一点 $x\in X$ 至少有一个球形领域，并且点 $x$ 属于它的每一个球形邻域
     2. 对于点 $x\in X$ 的任意两个球形邻域，存在 $x$ 的一个球形邻域同时包含于两者
     3. 若 $y\in X$ 属于 $x\in X$ 的某一个球形邻域，则 $y$ 有一个球形邻域包含于 $x$ 的那个球形邻域
-4. 开集：设 $A$ 是度量空间 $X$ 的一个子集，若 $\forall a\in A\ \exists \varepsilon >0: B(a, \varepsilon)\subseteq A$，则称 $A$ 是度量空间 $X$ 中的一个开集
+4. 开集：设 $A$ 是度量空间 $X$ 的一个子集，若 $\forall a\in A\ \exists \varepsilon > 0: B(a, \varepsilon)\subseteq A$，则称 $A$ 是度量空间 $X$ 中的一个开集
     1. 实数空间中的所有开区间都是开集，但是所有的闭区间与半开半闭区间都不是开集
     2. 度量空间 $X$ 中的开集具有以下性质
         1. 集合 $X$ 与 $\varnothing$ 都是开集
@@ -88,7 +88,7 @@
         1. $\forall x\in X: \mathscr U_x \neq \varnothing$，且若 $U\in \mathscr U_x$，则 $x\in U$
         2. 若 $U, V\in \mathscr U_x$，则 $U\cap V\in \mathscr U_x$
         3. 若 $U\in \mathscr U_x \wedge U\subseteq V$，则 $V\in \mathscr U_x$
-        4. 若 $U\in \mathscr U_x$，则 $\exists V\in \mathscr U_x(V\subseteq U \wedge \forall y\in V: V\in \mathscr U_y)$
+        4. 若 $U\in \mathscr U_x$，则 $\exists V\in \mathscr U_x \ (V\subseteq U \wedge \forall y\in V: V\in \mathscr U_y)$
     4. 邻域定义拓扑空间：设 $X$ 是一个集合，且 $\forall x\in X$ 指定了 $X$ 的一个子集族 $\mathscr U_x$，且它们满足上述定理的四条性质，则 $X$ 有唯一一个拓扑 $\mathscr T$ 使得对于每一点 $x\in X$，子集族 $\mathscr U_x$ 恰是点 $x$ 在拓扑空间 $(X, \mathscr T)$ 中的邻域系
 
 5. 连续映射
@@ -103,7 +103,7 @@
         1. 设 $X, Y, Z$ 都是拓扑空间
             1. 恒同映射 $i_X: X\to X$ 是一个连续映射
             2. 若 $f: X\to Y$ 和 $g: Y\to Z$ 都是连续映射，则 $g\circ f: X\to Z$ 也是连续映射
-        2. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则映射 $f$ 连续当且仅当 $\forall x\in X$，映射 $f$ 在点 $x$ 处连续
+        2. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则映射 $f$ 连续当且仅当对任意 $x\in X$ 均有映射 $f$ 在点 $x$ 处连续
 
 6. 同胚：设 $X, Y$ 是两个拓扑空间，若 $f: X\to Y$ 是一个双射，并且 $f$ 和 $f^{-1}: Y\to X$ 都是连续的，则称 $f$ 是一个同胚映射，同时也称 $f^{-1}$ 为同胚 $f$ 的同胚逆
     1. 设 $X, Y, Z$ 都是拓扑空间

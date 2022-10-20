@@ -163,6 +163,6 @@
 
 2. $\text{Thomson}$ 证明句法悖论与语义悖论具有统一结构
     1. 对角线定理：设 $S$ 是任一集合，$R$ 是至少在 $S$ 上有定义的任意关系，则 $S$ 中不存在这样的元素，它与且仅与所有那些与其自身没有 $R$ 关系的元素具有 $R$ 关系
-        1. 用集合论语言表述为 $\neg \exists y\ (y \in S \wedge \forall x\ (x \in S \to (Ryx \leftrightarrow \neg Rxx)))$
-        2. 将集合论语言 $y \in S$ 还原为一阶语言 $S(y)$，该定理转写为 $\neg \exists y\ (S(y) \wedge \forall x\ (S(x) \to (Ryx \leftrightarrow \neg Rxx)))$
+        1. 用集合论语言表述为 $\neg \exists y\ (y \in S \wedge \forall x \ (x \in S \to (Ryx \leftrightarrow \neg Rxx)))$
+        2. 将集合论语言 $y \in S$ 还原为一阶语言 $S(y)$，该定理转写为 $\neg \exists y\ (S(y) \wedge \forall x \ (S(x) \to (Ryx \leftrightarrow \neg Rxx)))$
     2. 对角线悖论：句法悖论例如 $\text{Russell}$ 悖论、语义悖论例如理发师悖论、$\text{Richard}$ 悖论、$\text{Grelling}$ 悖论实际上都建立在对象间方法上
