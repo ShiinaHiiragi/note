@@ -256,7 +256,7 @@
     $$
 
     !!! note "绝对值不等式"
-        三角不等式可以可以证明绝对值不等式：设 $a, b \in R, a_i \in R \ (i = 1, 2, \cdots, n)$
+        三角不等式可以用于证明绝对值不等式：设 $a, b \in R, a_i \in R \ (i = 1, 2, \cdots, n)$
 
         1. $\left||a| - |b|\right| \leqslant |a \pm b| \leqslant |a| + |b|$
         2. $|a_1 + a_2 + \cdots + a_n| \leqslant |a_1| + |a_2| + \cdots + |a_n|$

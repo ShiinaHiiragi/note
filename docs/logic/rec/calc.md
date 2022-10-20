@@ -196,7 +196,7 @@
     1. 定义
         1. 如果集合 $A$ 为空集或是某个递归全函数 $f: \mathbf N \to \mathbf N$ 的值域，则称 $A$ 为递归可枚举的
         2. 能被一个 $\text{Turing}$ 机接受的语言
-    2. 令 $A \subseteq \mathbf N$，则 $A$ 是递归可枚举的当且仅当以下各命题：
+    2. 令 $A \subseteq \mathbf N$，则 $A$ 是递归可枚举的当且仅当以下各命题成立
         1. $A = \varnothing$ 或 $A$ 是某个原始递归函数的值域
         2. $A$ 是某个部分递归函数的值域
         3. $A$ 的部分特征函数是部分递归的，其中定义 $A$ 的部分特征函数 $\chi_{A_p}(x) = \left\{\begin{aligned} & 1, & x \in A \\ & \textsf{无定义}, & x \notin A \end{aligned}\right.$
@@ -217,7 +217,7 @@
         1. 集合 $K = \{e \mid \Phi_e(e)$ 有定义$\}$ 是递归可枚举的，但不是递归的
         2. 集合 $K_0 = \{\mathrm{enc}(x, y) \mid \Phi_x(y) \downarrow\}$ 不是递归的
     2. 递归集类是递归可枚举集类的真子类，递归可枚举集不对补集运算封闭
-4. 归约：
+4. 归约
     1. 多一归约与一一归约：设 $A, B$ 为两个集合
         1. 如果存在一个递归全函数 $g: \mathbf N \to \mathbf N$ 满足对任意 $x$ 都有 $x \in A$ 当且仅当 $g(x) \in B$，则称集合 $A$ 可以多一归约或 $m-$归约到集合 $B$，记作 $A \leqslant_m B$
         2. 如果 $A \leqslant_m B$ 且 $g$ 为单射，则称集合 $A$ 可以一一归约或 $1-$归约到集合 $B$，记作 $A \leqslant_1 B$

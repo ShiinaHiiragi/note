@@ -2,7 +2,7 @@
 
 ## 3.1 进位计数制
 1. $r$ 进制：采用进位计数的数字系统中，如果只使用 $r$ 个符号表示数值，则称其为 $r$ 进制，$r$ 称为该数制的基数
-    1. 每一种数制都有固定的符号集，常用的进位数值如下所示：
+    1. 每一种数制都有固定的符号集，常用的进位数值如下所示
 
         <div style="text-align: center;">
 
@@ -247,7 +247,7 @@
         3. 当 $\alpha \geqslant 3$ 时，解的个数时 $2^{k+2}$
 
 ### 3.4.3 高次同余式
-1. 解数与解法：
+1. 解数与解法
     1. 若 $m_1, m_2, \cdots, m_k$ 是 $k$ 个两两互质的正整数，$m = m_1 m_2 \cdots m_k$，则同余式 $f(x) \equiv 0 (\bmod m)$ 与同余式组 $f(x) \equiv 0 (\bmod m_i) \ (i = 1, 2, \cdots, k)$ 等价，并且若用 $T_i$ 表示 $f(x) \equiv 0 (\bmod m_i) \ (i = 1, 2, \cdots, k)$ 对模 $m_i$ 的解数，$T$ 表示 $f(x) \equiv 0 (\bmod m)$ 对模 $m$ 的解数，则 $T = T_1 T_2 \cdots T_k$
     2. 设 $p$ 是质数，$\alpha \geqslant 2$ 是整数，$f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ 是整系数多项式，设 $x_1$ 是同余方程 $f(x) \equiv 0 (\bmod p^{\alpha-1})$ 的一个解，以 $f'(x)$ 表示 $f(x)$ 的导函数
         3. 若 $f'(x_1) \not \equiv 0 (\bmod p)$，则存在整数 $t$ 使得 $x = x_1 + p^{\alpha-1}t$ 是同余方程 $f(x) \equiv 0 (\bmod p^\alpha)$ 的解

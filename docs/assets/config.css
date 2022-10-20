@@ -35,6 +35,16 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.1rem;
 }
 
+/* {++ Added Markup in Critic ++} */
+ins.critic {
+  text-decoration: none;
+}
+
+/* {-- Deleted Markup in Critic --} */
+del.critic {
+  text-decoration: none;
+}
+
 /* Text in MathJax */
 mjx-utext[variant="sans-serif"] {
   font-family: "Noto Sans SC" !important;

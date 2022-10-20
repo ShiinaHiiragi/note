@@ -173,7 +173,7 @@
 
         具有右不变、细分 $A$ 以及具有有穷指数三个性质的关系称为关于 $A$ 的 $\text{Myhill} - \text{Nerode}$ 关系，因此 $R_M$ 是关于 $L(M)$ 的 $\text{Myhill} - \text{Nerode}$ 关系
 
-    2. 设 $R$ 是 $\Sigma^*$ 上关于 $A$ 的 $\text{Myhill} - \text{Nerode}$ 关系，定义有穷自动机 $M_R = (Q, \Sigma, \delta, q_0, F)$ 如下：
+    2. 设 $R$ 是 $\Sigma^*$ 上关于 $A$ 的 $\text{Myhill} - \text{Nerode}$ 关系，定义有穷自动机 $M_R = (Q, \Sigma, \delta, q_0, F)$ 如下
 
         $$
         \begin{aligned}
@@ -346,7 +346,7 @@
 
 3. 上下文无关文法的化简
     1. 设 $G = (V, T, P, S)$ 是一个上下文无关文法
-        1. 无用符号：定义两类符号 $X$ 为无用符号：
+        1. 无用符号：定义两类符号 $X$ 为无用符号
             - $X \in V \cup T$，但 $X$ 不出现在任何由 $S$ 推导出的字符串中
             - $X \in V$，但 $X$ 不能推导出任何终结符串
         2. 可为空：对于 $A \in V$，若有 $A \overset{*}{\Rightarrow} \varepsilon$，则称 $A$ 是可为空的
@@ -446,7 +446,7 @@
 
 ### 1.4.3 LR(0) 文法
 1. 项目：$G = (V, T, P, S)$ 是一个上下文无关文法，若干 $A \to \alpha \beta \in P \ (\alpha, \beta \in (V \cup T)^*)$，则 $A \to \alpha.\beta$ 称作一个项目，当 $\beta = \varepsilon$ 时称之为完全项目，否则称之为非完全项目
-2. 给出上下文无关文法 $G = (V, T, P, S)$，$I$ 为 $G$ 中的一个项目集，则 $I$ 的闭包 $\overline I$ 定义为满足以下条件的最小集合：
+2. 给出上下文无关文法 $G = (V, T, P, S)$，$I$ 为 $G$ 中的一个项目集，则 $I$ 的闭包 $\overline I$ 定义为满足以下条件的最小集合
     1. $I \subseteq \overline I$
     2. 若 $A \to \alpha.B \gamma \in \overline I$ 且 $B \to \beta \in P$，则 $B \to .\beta \in \overline I$
 3. 识别文法 $G$ 的可行前缀的有穷自动机的算法
@@ -489,7 +489,7 @@
 2. 给出 $\text{LR}(1)$ 项目 $\left<A \to \alpha .\beta, \{a\}\right>$，若有一个最右推导 $S \overset{*}{\Rightarrow} \delta Ay \overset{*}{\Rightarrow} \delta \alpha \beta y$，其中 $\delta \alpha = \gamma$ 且 $a$ 是 $y$ 的第一个符号或 $y = \varepsilon \wedge a = \$$，则称该 $\text{LR}(1)$ 项目对可行前缀 $\gamma$ 是有效的
     1. 若对每个 $i \ (i = 1, 2, \cdots, n)$，$\left<A \to \alpha.\beta, \{a_i\}\right>$ 对 $\gamma$ 都是有效的，则称 $\left<A \to \alpha.\beta, \{a_1, a_2, \cdots, a_n\}\right>$ 对 $\gamma$ 都是有效的
     2. 对于上下文无关文法 $G = (V, T, P, S)$，定义函数 $F: (V \cup T')^+ \to 2^{T'} \ (T' = T \cup \{\$\})$ 有 $F(\sigma) = \{a_1, a_2, \cdots, a_i\}$．其中 $\alpha_i \in T'$ 且有 $\sigma \overset{*}{\Rightarrow} a_i y$
-    3. 给出上下文无关文法 $G = (V, T, P, S)$，$I$ 为 $G$ 中的一个 $\text{LR}(1)$ 项目集，则 $I$ 的闭包 $\overline I$ 定义为满足以下条件的最小集合：
+    3. 给出上下文无关文法 $G = (V, T, P, S)$，$I$ 为 $G$ 中的一个 $\text{LR}(1)$ 项目集，则 $I$ 的闭包 $\overline I$ 定义为满足以下条件的最小集合
         1. $I \subseteq \overline I$
         2. 若 $\left<A \to \alpha.B \gamma, u\right> \in \overline I$ 且 $B \to \beta \in P$，则 $\left<B \to .\beta, \{F(\gamma a) \mid a \in u\}\right> \in \overline I$
 3. 识别文法 $G$ 的可行前缀的有穷自动机的算法
@@ -546,7 +546,7 @@
 
 2. $\text{Turing}$ 机的变形
     1. 双向无限带：将带的单向无限延伸到双向无限延申．若 $L$ 被一个具有双向无限带的 $\text{Turing}$ 机接受，则 $L$ 也能被一个具有单项无限带的 $\text{Turing}$ 机接受
-    2. 多带：多带 $\text{Turing}$ 机用一个控制器控制 $k$ 条带．开始时，多带 $\text{Turing}$ 机将输入串放在第一条带上，其他带均为空白且各带的读写头都指向带的左端单元，一次动作包括一下内容：
+    2. 多带：多带 $\text{Turing}$ 机用一个控制器控制 $k$ 条带．开始时，多带 $\text{Turing}$ 机将输入串放在第一条带上，其他带均为空白且各带的读写头都指向带的左端单元，一次动作包括以下内容
         1. 改变状态
         2. 在各读写头指向的单元上，可分别写上不同的符号
         3. 各读写头可以独立地左右移动或静止不动

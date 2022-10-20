@@ -159,7 +159,7 @@
         1. $\overline{p\wedge q}=\overline{p}\vee \overline{q}, \overline{p\vee q}=\overline{p}\wedge \overline{q}, \overline{p\dot{\vee} q}=(p\wedge q)\vee (\overline{p}\wedge \overline{q})$
         2. $\overline{p\to q}=p\wedge \overline{q}, \overline{p\leftarrow q}=\overline{p}\wedge q, \overline{p\leftrightarrow q}=(p\wedge \overline{q})\vee (\overline{p}\wedge q)$
 5. 真值表：显示复合命题的真假是如何由其肢命题的真假所决定的表格
-    1. 复合命题的真值表（记 $+$ 为真，$-$ 为假）：
+    1. 复合命题的真值表（记 $+$ 为真，$-$ 为假）
 
         <div style="text-align: center;">
 

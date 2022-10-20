@@ -492,7 +492,7 @@
     1. $f$ 是单射且 $f(0_{\mathbf Q}) = 0_{\mathbf R}$
     2. 对任意 $p, q \in \mathbf Q$ 有 $p \leqslant_{\mathbf Q} q$ 当且仅当 $f(p) \leqslant_{\mathbf R} f(q)$
     3. 对任意 $p, q \in \mathbf Q$ 有 $f(p +_{\mathbf Q} q) = f(p) +_{\mathbf R} f(q)$ 且 $f(p \cdot_{\mathbf Q} q) = f(p) \cdot_{\mathbf R} f(q)$
-6. 实数集合子集的区间表示：
+6. 实数集合子集的区间表示
 
     <div style="text-align: center;">
 
@@ -510,7 +510,7 @@
 
     </div>
 
-7. 实数的分类：
+7. 实数的分类
 
     $$
     \textsf{实数（无限小数）} \left\{\begin{aligned}

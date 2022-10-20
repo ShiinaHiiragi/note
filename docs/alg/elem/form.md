@@ -168,7 +168,7 @@
 1. 常值函数：形如 $y = c$ 的函数，其中 $c$ 为常数
 2. 幂函数：形如 $y = x^\alpha$ 的函数，其中 $\alpha$ 是给定的实数
 3. 指数函数与对数函数：设 $\ln x = \log_e x$，其中 $e = {\displaystyle \lim_{n \to \infty} \left(1 + \dfrac 1n\right)^n}$
-    1. 指数函数与对数函数的定义：
+    1. 指数函数与对数函数的定义
         1. 对于 $a > 0, a \neq 1, x \in \mathbf R$，记 $y = a^x = e^{x \ln a}$
         2. 对于 $a > 0, a \neq 1, x > 0$，记 $y = \log_a x = \dfrac{L(x)}{L(a)} = \dfrac{\ln x}{\ln a}$
     2. 指数函数与对数函数的性质
