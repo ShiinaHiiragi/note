@@ -30,12 +30,13 @@ theme:
       toggle:
         icon: material/toggle-switch-off-outline
         name: Switch to Indigo Panel
-  language: 'zh'
+  language: zh
 
 markdown_extensions:
   - meta
   - admonition
   - pymdownx.details
+  - pymdownx.critic
   - pymdownx.mark
   - pymdownx.tilde
   - pymdownx.arithmatex:
