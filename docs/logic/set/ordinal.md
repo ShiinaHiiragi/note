@@ -13,7 +13,7 @@
         2. $\text{Zermelo}$ 定理：$|X| < |Y| \vee |X| = |Y| \vee |Y| < |X|$
         3. $\text{Cantor} - \text{Bernstein}$ 定理：如果 $|X| \leqslant |Y| \wedge |Y| \leqslant |X|$，则 $|X| = |Y|$
 2. 有穷集与无穷集：对于任意集合 $X$，如果存在 $n \in \mathbf N$，使得 $|X| = |n|$，则称 $X$ 是有穷的，否则称 $X$ 是无穷的
-    1. 集合 $X$ 是有穷的等价于下列三个命题：
+    1. 集合 $X$ 是有穷的等价于以下三个命题：
         1. 存在 $X$ 上的全序 $\leqslant$ 满足 $X$ 的每一非空子集在 $\leqslant$ 下有最大元和最小元
         2. $X$ 的每一非空子集族都有 $\subseteq$ 关系下的极大元
         3. $X$ 是 $\text{Dedekind}$ 有穷的，即不存在由 $X$ 到其真子集的双射

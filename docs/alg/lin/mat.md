@@ -384,8 +384,15 @@
         1. $\mathrm{rank}(\boldsymbol A) = \mathrm{rank}(\boldsymbol B)$
         2. 矩阵 $\boldsymbol A$ 与 $\boldsymbol B$ 具有相同的标准型
         3. 矩阵 $\boldsymbol A$ 经过有限次初等变换可化为 $\boldsymbol B$
-
-    4. 含秩的不等式：
+    4. 设 $\boldsymbol A$ 为 $n$ 阶方阵，则以下命题等价
+        1. $\mathrm{rank}(\boldsymbol A) = n$
+        2. 存在 $n$ 阶方阵 $\boldsymbol B$ 使得 $\boldsymbol{AB} = \boldsymbol I$
+        3. 存在 $n$ 阶方阵 $\boldsymbol C$ 使得 $\boldsymbol{CA} = \boldsymbol I$
+        4. $\boldsymbol A$ 的列向量组线性无关
+        5. $\boldsymbol A$ 的行向量组线性无关
+        6. $\boldsymbol{Ax} = \boldsymbol 0$ 只有零解
+        7. $\boldsymbol A$ 可经过初等变换化为标准型 $\boldsymbol I$
+    5. 含秩的不等式
         1. 设 $\boldsymbol A_{m \times l}, \boldsymbol B_{l \times n}$ 为两个矩阵，则 $\mathrm{rank}(\boldsymbol{AB}) \leqslant \min\{\mathrm{rank}(\boldsymbol A), \mathrm{rank}(\boldsymbol B)\}$
         2. 设 $\boldsymbol A_{m \times l}, \boldsymbol B_{l \times n}$ 为两个矩阵，则 $\mathrm{rank}(\boldsymbol A) + \mathrm{rank}(\boldsymbol B) \leqslant \mathrm{rank}(\boldsymbol{AB}) + n$
         3. 设 $\boldsymbol A_{m \times n}, \boldsymbol B_{m \times n}$ 为两个矩阵，则 $\mathrm{rank}(\boldsymbol A + \boldsymbol B) \leqslant \mathrm{rank}(\boldsymbol A) + \mathrm{rank}(\boldsymbol B)$
@@ -398,5 +405,7 @@
         2. 非零矩阵的秩等于其最简阶梯形中主元列的个数
 
 ### 1.1.3 逆矩阵
+1. 可逆矩阵：设 $\boldsymbol A$ 是 $n$ 阶方阵，如果存在 $n$ 阶方阵 $\boldsymbol B$ 使 $\boldsymbol{AB} = \boldsymbol{BA} = \boldsymbol I$，则称 $\boldsymbol A$ 是可逆矩阵或非奇异矩阵，称 $\boldsymbol B$ 是 $\boldsymbol A$ 的逆矩阵，记作 $\boldsymbol A^{-1}$
+2. 
 
 ## 1.3 行列式

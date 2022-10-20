@@ -326,7 +326,7 @@
 
 2. 连分数：设 $a_1, a_2, \cdots, a_n, \cdots$ 是一个无限实数列，$a_i > 0, i \geqslant 2$．记 $\dfrac{p_k}{q_k} = \left<a_1, a_2, \cdots, a_n\right>$，若 $\dfrac{p_k}{q_k}$ 有意义，且 ${\displaystyle \lim_{n \to \infty} \dfrac{p_k}{q_k}} = A \neq \infty$，则称 $\left<a_1, a_2, \cdots, a_n, \cdots\right>$ 是无限连分数，并称 $\left<a_1, a_2, \cdots, a_n, \cdots\right>$ 等于 $A$．也称它是 $A$ 的连分数，或称它表示 $A$，记作 $A = \left<a_1, a_2, \cdots, a_n, \cdots\right> = a_1 + \dfrac{1}{a_2+} \dfrac{1}{a_3+} \cdots \dfrac{1}{a_n+} \cdots$
     1. 称 $\dfrac{p_k}{q_k}$ 为连分数 $\left<a_1, a_2, \cdots, a_n, \cdots\right>$ 的第 $k$ 个渐近分数
-    2. 下列关系成立
+    2. 以下关系成立
         1. $p_1 = a_1, p_2 = a_1a_2 + 1, p_k = a_kp_{k-1} + p_{k-2} \ (k \geqslant 3)$
         2. $q_1 = 1, q_2 = a_2, q_k = a_kq_{k-1} + q_{k-2} \ (k \geqslant 3)$
         3. $p_kq_{k-1} - p_{k-2}q_k = (-1)^k \ (k \geqslant 2)$
