@@ -5,11 +5,20 @@
 
 本项目已开源，所有源文件在 GitHub 可见，点击右上角即可跳转到仓库。
 
-!!! info "此项目仍未完成，可能存在若干疏漏和错误"
+!!! info "此项目尚未完成，可能存在若干疏漏和错误"
     <label> 现在进度：分析哲学 · 专名与通名 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
+
+<div class="grid cards" markdown>
+
+- :fontawesome-brands-html5: __HTML__ for content and structure
+- :fontawesome-brands-js: __JavaScript__ for interactivity
+- :fontawesome-brands-css3: __CSS__ for text running out of boxes
+- :fontawesome-brands-internet-explorer: __Internet Explorer__ ... huh?
+
+</div>
 
 ## 参考文献
 
@@ -355,19 +364,21 @@ renderRef(".uncomp", (item) => !item.plot);
     flex-direction: row;
 }
 
+.value {
+    flex-grow: 1;
+}
+
 .index {
     min-width: 2.4em;
     font-weight: 600;
 }
+
 .index:before {
     content: "[";
 }
+
 .index:after {
     content: "]";
-}
-
-.value {
-    flex-grow: 1;
 }
 
 .progress-container {
