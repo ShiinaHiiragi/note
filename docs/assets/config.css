@@ -29,6 +29,12 @@ h1, h2, h3, h4, h5, h6 {
   font-weight: 300 !important;
 }
 
+/* Admonitions */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.1rem;
+}
+
 /* Text in MathJax */
 mjx-utext[variant="sans-serif"] {
   font-family: "Noto Sans SC" !important;
