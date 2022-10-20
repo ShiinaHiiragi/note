@@ -404,8 +404,38 @@
         1. 任一非零矩阵只经初等行变换可化为最简阶梯型矩阵
         2. 非零矩阵的秩等于其最简阶梯形中主元列的个数
 
-### 1.1.3 逆矩阵
+### 1.1.3 矩阵实例
 1. 可逆矩阵：设 $\boldsymbol A$ 是 $n$ 阶方阵，如果存在 $n$ 阶方阵 $\boldsymbol B$ 使 $\boldsymbol{AB} = \boldsymbol{BA} = \boldsymbol I$，则称 $\boldsymbol A$ 是可逆矩阵或非奇异矩阵，称 $\boldsymbol B$ 是 $\boldsymbol A$ 的逆矩阵，记作 $\boldsymbol A^{-1}$
-2. 
+    1. 设 $\boldsymbol A, \boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_k$ 均为 $n$ 阶可逆矩阵，则有
+        1. $(\boldsymbol A^{-1})^{-1} = \boldsymbol A$
+        2. $(k \boldsymbol A)^{-1} = \dfrac 1k \boldsymbol A^{-1}$
+        3. $(\boldsymbol A^{\mathrm T})^{-1} = (\boldsymbol A^{-1})^{\mathrm T}$
+        4. $(\boldsymbol A_1 \boldsymbol A_2 \cdots \boldsymbol A_k)^{-1} = \boldsymbol A_1^{-1} \boldsymbol A_2^{-1} \cdots \boldsymbol A_k^{-1}$
+    2. 可逆矩阵的性质
+        1. 若对角阵可逆，则其逆矩阵仍为对角阵
+        2. 若对称阵可逆，则其逆矩阵仍为对称阵
+        3. 若初等阵可逆，则其逆矩阵仍为初等阵
+    3. 方阵 $\boldsymbol A$ 可你当且仅当以下条件之一成立
+        1. 方阵 $\boldsymbol A$ 的标准型为单位阵
+        2. 方阵 $\boldsymbol A$ 可表示为若干初等阵的乘积
+        3. 方阵 $\boldsymbol A$ 仅经初等行变化可化为单位阵
+        4. 方阵 $\boldsymbol A$ 仅经初等列变换可化为单位阵
+    4. 初等变换与逆矩阵：任一秩为 $r$ 的非零矩阵 $\boldsymbol A_{m \times n}$ 比存在 $m$ 阶可逆矩阵 $\boldsymbol P$ 及 $n$ 阶可逆矩阵 $\boldsymbol Q$ 使得
+
+        $$
+        \boldsymbol{PAQ} = \begin{bmatrix}
+        \boldsymbol I_r & \boldsymbol O \\
+        \boldsymbol O & \boldsymbol O \\
+        \end{bmatrix}
+        \to
+        \boldsymbol A = \boldsymbol P^{-1}
+        \begin{bmatrix}
+        \boldsymbol I_r & \boldsymbol O \\
+        \boldsymbol O & \boldsymbol O \\
+        \end{bmatrix}
+        \boldsymbol Q^{-1}
+        $$
+
+2. 正交阵
 
 ## 1.3 行列式
