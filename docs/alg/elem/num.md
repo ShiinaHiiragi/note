@@ -216,7 +216,7 @@
     3. 二次互反律：设 $p, q$ 是两个不相同的两个奇质数，则 $\left(\dfrac qp\right) = (-1)^{\frac{p-1}{2} \cdot \frac{q-1}{2}} \left(\dfrac pq\right)$
         1. 设 $p$ 为奇质数，当 $p \equiv 1 (\bmod 8)$ 或 $p \equiv 7 (\bmod 8)$ 时，$\left(\dfrac 2p\right) = 1$；当 $p \equiv 3 (\bmod 8)$ 或 $p \equiv 5 (\bmod 8)$ 时，$\left(\dfrac 2p\right) = -1$
         2. 对于证书 $k \ \left(1 \leqslant k \leqslant \dfrac{p-1}{2}\right)$，以 $r_k$ 表示 $nk$ 对模 $p$ 的最小非负剩余．设 $r_1, r_2, \cdots, r_k$ 中大于 $\dfrac p2$ 的有 $m$ 个，则 $\left(\dfrac np\right) = (-1)^m$
-        3. 设 $p$ 为及素数，则 ① $\left(\dfrac 2p\right) = (-1)^{\frac{p^2-1}{8}}$；② 若 $n$ 时奇数，$(n, p) = 1$，则 $\left(\dfrac np\right) = (-1)^{\sum_{i=1}^{\frac{p-1}{2}} \left[\frac{ni}{p}\right]}$
+        3. 设 $p$ 为奇质数，则 ① $\left(\dfrac 2p\right) = (-1)^{\frac{p^2-1}{8}}$；② 若 $n$ 时奇数，$(n, p) = 1$，则 $\left(\dfrac np\right) = (-1)^{\sum_{i=1}^{\frac{p-1}{2}} \left[\frac{ni}{p}\right]}$
     4. 对于质数模的二次同余方程的可能性，设 $p$ 为质数，计算 $\text{Legendre}$ 符号如下
         1. 求出 $n_0 \equiv n (\bmod p) \ (1 \leqslant n_0 \leqslant p)$
         2. 将 $n_0$ 写成 $q^2q_1 q_2 \cdots q_k$ 的形式，其中 $q \in \mathbf Z$，$q_1, q_2, \cdots, q_k$ 是互不相同的质数
