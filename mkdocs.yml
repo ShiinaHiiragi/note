@@ -1,11 +1,29 @@
 site_name: 逻辑与形而上学
 site_author: 一之江
 site_url: https://shiinahiiragi.github.io/note/
-repo_url: https://github.com/ShiinaHiiragi/note/
 repo_name: ShiinaHiiragi/note
+repo_url: https://github.com/ShiinaHiiragi/note/
 dev_addr: 127.0.0.1:3000
+
 theme:
   name: material
+  palette:
+    - scheme: default
+      primary: teal
+      accent: blue
+      font:
+        text: Noto Sans SC
+      toggle:
+        icon: material/toggle-switch
+        name: Switch to White Panel
+    - scheme: defualt
+      primary: white
+      accent: pink
+      font:
+        text: Noto Serif SC
+      toggle:
+        icon: material/toggle-switch-off-outline
+        name: Switch to Teal Panel
   icon:
     logo: octicons/note-24
   favicon: assets/favicon.png
@@ -17,19 +35,6 @@ theme:
     - search.highlight
     - search.share
     - toc.integrate
-  palette:
-    - scheme: default
-      primary: teal
-      accent: blue
-      toggle:
-        icon: material/toggle-switch
-        name: Switch to White Panel
-    - scheme: defualt
-      primary: white
-      accent: pink
-      toggle:
-        icon: material/toggle-switch-off-outline
-        name: Switch to Indigo Panel
   language: zh
 
 markdown_extensions:
