@@ -415,11 +415,12 @@
         1. 若对角阵可逆，则其逆矩阵仍为对角阵
         2. 若对称阵可逆，则其逆矩阵仍为对称阵
         3. 若初等阵可逆，则其逆矩阵仍为初等阵
-    3. 方阵 $\boldsymbol A$ 可你当且仅当以下条件之一成立
-        1. 方阵 $\boldsymbol A$ 的标准型为单位阵
-        2. 方阵 $\boldsymbol A$ 可表示为若干初等阵的乘积
-        3. 方阵 $\boldsymbol A$ 仅经初等行变化可化为单位阵
-        4. 方阵 $\boldsymbol A$ 仅经初等列变换可化为单位阵
+    3. 方阵 $\boldsymbol A$ 可逆当且仅当以下条件之一成立
+        1. $\boldsymbol A$ 的标准型为单位阵
+        2. $\boldsymbol A$ 可表示为若干初等阵的乘积
+        3. $\boldsymbol A$ 仅经初等行变化可化为单位阵
+        4. $\boldsymbol A$ 仅经初等列变换可化为单位阵
+        5. $\mathrm{det}(\boldsymbol A) \neq 0$
     4. 初等变换与逆矩阵：任一秩为 $r$ 的非零矩阵 $\boldsymbol A_{m \times n}$ 比存在 $m$ 阶可逆矩阵 $\boldsymbol P$ 及 $n$ 阶可逆矩阵 $\boldsymbol Q$ 使得
 
         $$
@@ -445,7 +446,174 @@
         5. 将 $\boldsymbol A$ 按行分块 $\boldsymbol A = \begin{bmatrix} \boldsymbol \beta_1 & \boldsymbol \beta_2 & \cdots & \boldsymbol \beta_n \\ \end{bmatrix}^{\mathrm T}$ 有 $\boldsymbol \beta_i \boldsymbol \beta_j^{\mathrm T} = \delta_{ij} \ (1 \leqslant i, j \leqslant n)$
     2. 正交阵对积与逆运算（即转置）封闭
 
-## 1.3 行列式
-### 1.3.1 定义与性质
+## 1.2 行列式
+1. $n$ 阶行列式：设 $n$ 阶方阵
 
-### 1.3.2 行列式的展开
+    $$
+    \boldsymbol A = \begin{bmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn} \\
+    \end{bmatrix}
+    $$
+
+    则方阵 $\boldsymbol A$ 的行列式可递归定义为
+
+    $$
+    \begin{vmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn} \\
+    \end{vmatrix}
+    = \left\{\begin{aligned}
+    & \sum_{i=1}^n a_{1i} \cdot A_{1i} & n > 1 \\
+    & a_{nn}, & n = 1
+    \end{aligned}\right.
+    $$
+
+    记作 $\mathrm{det}(\boldsymbol A)$ 或 $|\boldsymbol A|$，其中 $1 \leqslant k \leqslant n$，$A_{pq}$ 为 $a_{pq}$ 的代数余子式
+
+    1. 代数余子式：将 $n$ 阶方阵 $\boldsymbol A = [a_{ij}]_{n \times n}$ 的第 $i$ 行第 $j$ 列划去后，所得的 $n - 1$ 阶矩阵的行列式记作 $M_{ij}$，则称 $(-1)^{i + j} M_{ij}$ 为元素 $a_{ij}$ 的代数余子式，记作 $A_{ij}$
+    2. 伴随矩阵：设 $A_ij$ 是矩阵 $\boldsymbol A = [a_{ij}]_{n \times n}$ 中元素 $a_{ij}$ 的代数余子式，则称矩阵
+
+        $$
+        \begin{bmatrix}
+        A_{11} & A_{12} & \cdots & A_{1n} \\
+        A_{21} & A_{22} & \cdots & A_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        A_{n1} & A_{n2} & \cdots & A_{nn} \\
+        \end{bmatrix}
+        $$
+
+        为矩阵 $\boldsymbol A$ 的伴随矩阵，记作 $\boldsymbol A^*$
+
+        1. 设方阵 $\boldsymbol A$ 的伴随矩阵为 $\boldsymbol A^*$，则 $\boldsymbol A \boldsymbol A^* = \boldsymbol A^* \boldsymbol A = \mathrm{det}(\boldsymbol A) \boldsymbol I$
+        2. 设方阵 $\boldsymbol A$ 可逆，则 $\boldsymbol A^{-1} = \dfrac{\boldsymbol A^*}{\mathrm{det}(\boldsymbol A)}$，其中 $\boldsymbol A^*$ 是 $\boldsymbol A$ 的伴随矩阵
+
+    3. $\text{Vandermonde}$ 行列式
+
+        $$
+        \mathrm{det}(\boldsymbol A_n) = \begin{vmatrix}
+        1 & 1 & \cdots & 1 \\
+        a_1 & a_2 & \cdots & a_n \\
+        a_1^2 & a_2^2 & \cdots & a_n^2 \\
+        \vdots & \vdots & \ddots & \vdots \\
+        a_1^{n-1} & a_2^{n-1} & \cdots & a_n^{n-1} \\
+        \end{vmatrix}
+        = \prod_{1 \leqslant i < j \leqslant n} (a_j - a_i)
+        $$
+
+2. 行列式的初等变换
+    1. 设 $n$ 阶方阵 $\boldsymbol A, \boldsymbol B, \boldsymbol C$ 仅有第 $t$ 行不同：
+
+        $$
+        \begin{aligned}
+        \boldsymbol A & = \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        b_{t1} + c_{t1} & b_{t2} + c_{t2} & \cdots & b_{tn} + c_{tn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} \\
+        \end{bmatrix}, \\
+        \boldsymbol B & = \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        b_{t1} & b_{t2} & \cdots & b_{tn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} \\
+        \end{bmatrix}, \ 
+        \boldsymbol C = \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        c_{t1} & c_{t2} & \cdots & c_{tn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} \\
+        \end{bmatrix} \\
+        \end{aligned}
+        $$
+
+        则 $\mathrm{det}(\boldsymbol A) = \mathrm{det}(\boldsymbol B) + \mathrm{det}(\boldsymbol C)$
+
+    2. 设 $\boldsymbol A$ 为 $n$ 阶方阵，将 $\boldsymbol A$ 的第 $s$ 行与第 $t$ 行互换得到 $\boldsymbol B$：
+
+        $$
+        \boldsymbol A = \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{t1} & a_{t2} & \cdots & a_{tn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{s1} & a_{s2} & \cdots & a_{sn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} \\
+        \end{bmatrix}, \ 
+        \boldsymbol B = \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{s1} & a_{s2} & \cdots & a_{sn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{t1} & a_{t2} & \cdots & a_{tn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} \\
+        \end{bmatrix}
+        $$
+
+        则 $\mathrm{det}(\boldsymbol B) = -\mathrm{det}(\boldsymbol A)$
+
+    3. 设 $\boldsymbol A$ 为 $n$ 阶方阵，将 $\boldsymbol A$ 的第 $t$ 行每一个元素乘以实数 $k$ 得到 $\boldsymbol B$：
+
+        $$
+        \boldsymbol A = \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{t1} & a_{t2} & \cdots & a_{tn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} \\
+        \end{bmatrix}, \ 
+        \boldsymbol B = \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        ka_{t1} & ka_{t2} & \cdots & ka_{tn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} \\
+        \end{bmatrix}
+        $$
+
+        则 $\mathrm{det}(\boldsymbol B) = k \cdot \mathrm{det}(\boldsymbol A)$
+
+        1. 设 $\boldsymbol A$ 是 $n$ 阶方阵，则 $\mathrm{det}(k \boldsymbol A) = k^n \mathrm{det}(\boldsymbol A)$
+        2. 若方阵某一行（列）的元素全为 $0$，则其行列式为 $0$
+        3. 若方阵中有两行（列）对应元素相等或成比例，则其行列式为 $0$
+
+    4. 设 $\boldsymbol A$ 为 $n$ 阶方阵，将 $\boldsymbol A$ 的第 $s$ 行每一个元素乘以实数 $k$ 后加到第 $t$ 行得到 $\boldsymbol B$：
+
+        $$
+        \boldsymbol A = \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{t1} & a_{t2} & \cdots & a_{tn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{s1} & a_{s2} & \cdots & a_{sn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} \\
+        \end{bmatrix}, \ 
+        \boldsymbol B = \begin{bmatrix}
+        a_{11} & a_{12} & \cdots & a_{1n} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{t1} + ka_{s1} & a_{t2} + ka_{s2} & \cdots & a_{tn} + ka_{sn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{s1} & a_{s2} & \cdots & a_{sn} \\
+        \vdots & \vdots &  & \vdots \\
+        a_{n1} & a_{n2} & \cdots & a_{nn} \\
+        \end{bmatrix}
+        $$
+
+        则 $\mathrm{det}(\boldsymbol B) = \mathrm{det}(\boldsymbol A)$
+
+3. 行列式的性质
+    1. $\mathrm{det}(\boldsymbol I) = 1$
+    2. 初等矩阵的行列式分别为 $\mathrm{det}(\boldsymbol E_{ij}) = -1, \mathrm{det}(\boldsymbol E_i(k)) = k \neq 0, \mathrm{det}(\boldsymbol E_{ij}(k)) = 1$
+    3. 设 $\boldsymbol A$ 是 $n$ 阶方阵，则 $\mathrm{det}(\boldsymbol A^{\mathrm T}) = \mathrm{det}(\boldsymbol A), \mathrm{det}(\boldsymbol A^{-1}) = \dfrac{1}{\mathrm{det}(\boldsymbol A)}$
+    4. 设 $\boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_n$ 均为 $n$ 阶方阵，则 $\mathrm{\det}(\boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_k) = \mathrm{det}(\boldsymbol A_1) \mathrm{det}(\boldsymbol A_2) \cdots \mathrm{det}(\boldsymbol A_k)$
+4. $\text{Cramer}$ 法则
