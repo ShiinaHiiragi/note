@@ -69,7 +69,7 @@
 4. 初等子结构：设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的结构，若存在 $h: \mathfrak A \to \mathfrak B$ 是一个初等嵌入且 $A \subseteq B$，则称 $A$ 是 $B$ 的初等子结构，记作 $A \prec B$；同时称 $\mathfrak B$ 是 $\mathfrak A$ 的初等膨胀，记作 $\mathfrak B \succ \mathfrak A$
     1. 如果 $N \subseteq A$，$N$ 是 $\mathfrak A$ 的子结构，且子结构 $\mathfrak N = \left\{N, \{Z^\mathfrak A \upharpoonright N\}_{Z \in S}\right\}$ 还是 $\mathfrak A$ 的初等子结构，则称集合 $N$ 是 $\mathfrak A$ 的初等子结构
     2. 如果 $H: \mathfrak A \to \mathfrak B$ 是初等嵌入，则存在 $\mathfrak A$ 的初等膨胀 $\overline{\mathfrak A}$ 使得 $H$ 可以被扩张为 $\overline{\mathfrak A}$ 到 $\mathfrak B$ 的同构
-    3. $\text{Tarski}-\text{Vaught}$ 测试：设 $\mathfrak A$ 是 $\mathfrak B$ 的子结构，则 $A \prec B$ 当且仅当对每个公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n}, y)$ 及 $a_1, a_2, \cdots, a_n \in A$ 都有 $\mathfrak B \vDash \exists y \alpha(a_1, a_2, \cdots, a_n, y) \to \mathfrak A \vDash \exists y \alpha(a_1, a_2, \cdots, a_n, y)$
+    3. $\text{Tarski}-\text{Vaught}$ 测试：设 $\mathfrak A$ 是 $\mathfrak B$ 的子结构，则 $A \prec B$ 当且仅当对每个公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n}, y)$ 及 $a_1, a_2, \cdots, a_n \in A$ 都有 $\mathfrak B \vDash \exists y \ \alpha(a_1, a_2, \cdots, a_n, y) \to \mathfrak A \vDash \exists y \ \alpha(a_1, a_2, \cdots, a_n, y)$
     4. $\text{Tarski}$ 准则：设 $M \subseteq A$ 非空，则 $M$ 是 $\mathfrak A$ 的初等子结构当且仅当若 $X \subseteq A$ 是非空的 $M-$可定义子集，则 $X \cap M = \varnothing$
 5. 定向集：设 $(I, <)$ 是一个偏序集，如果对任意的 $i, j \in I$ 都存在 $k \in I$ 使得 $i \leqslant k$ 且 $j \leqslant k$，则称 $(I, <)$ 是一个定向集
     1. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i \mid i \in I\}$ 是一族 $S-$结构
@@ -98,22 +98,22 @@
 ### 1.2.2 模型实例
 1. 群：令 $G = \{\cdot, e\}$，则 $\mathscr L(G)$ 是群的语言，其中 $\cdot \in \mathbf F, e \in \mathbf C, \Omega(\cdot) = 2$．设 $t_1, t_2$ 是 $G-$项，将 $\cdot(t_1, t_2)$ 记作 $t_1 \cdot t_2$
     1. 如果结构 $\mathfrak M = (M, \cdot^\mathfrak M, e^\mathfrak M)$ 是下面三个语句的集合 $Ax_G$ 的模型，则称 $\mathfrak M$ 是一个群，称 $Ax_G$ 为群的公理
-        1. $\sigma_1: \forall x((e \cdot x = x) \wedge (x \cdot e = x))$
-        2. $\sigma_2: \forall x \forall y \forall z(x \cdot (y \cdot z) = (x \cdot y) \cdot z)$
-        3. $\sigma_3: \forall x \exists y((x \cdot y = e) \wedge (y \cdot x = e))$
-    2. 令 $\sigma_4: \forall x \forall y(x \cdot y = y \cdot x)$，如果 $\mathfrak M$ 是 $Ax_{AG} = Ax_G \cup \{\sigma_4\}$ 的模型，则称 $\mathfrak M$ 是 $\text{Abel}$ 群
+        1. $\sigma_1: \forall x \ ((e \cdot x = x) \wedge (x \cdot e = x))$
+        2. $\sigma_2: \forall x \forall y \forall z \ (x \cdot (y \cdot z) = (x \cdot y) \cdot z)$
+        3. $\sigma_3: \forall x \exists y \ ((x \cdot y = e) \wedge (y \cdot x = e))$
+    2. 令 $\sigma_4: \forall x \forall y \ (x \cdot y = y \cdot x)$，如果 $\mathfrak M$ 是 $Ax_{AG} = Ax_G \cup \{\sigma_4\}$ 的模型，则称 $\mathfrak M$ 是 $\text{Abel}$ 群
     3. 设 $\mathfrak M = (M, \cdot^\mathfrak M, e^\mathfrak M)$ 是一个群，如果对任意的 $a\in M$ 都存在一个正整数 $n$，使得 $a^n = e^\mathfrak M$，则称 $\mathfrak M$ 是一个挠群．设 $\mathcal K_{TG} = \{\mathfrak M \mid \mathfrak M$ 是一个 $G-$结构且是一个挠群$\}$，则 $\mathcal K_{TG}$ 不是一个初等类
 2. 环：令 $R = \{\cdot, +, o, e\}$，则 $\mathscr L(R)$ 是环的语言，其中 $\cdot, + \in \mathbf F, o, e \in \mathbf C$ 且 $\Omega(\cdot) = \Omega(+) = 2$，将 $\cdot(t_1, t_2)$ 与 $+(t_1, t_2)$ 记作 $t_1 \cdot t_2$ 与 $t_1 + t_2$
     1. 如果结构 $\mathfrak M = (M, \cdot^\mathfrak M, +^\mathfrak M, o^\mathfrak M, e^\mathfrak M)$ 有
         1. $\mathfrak M \upharpoonright \mathcal L(G) \vDash \{\sigma_1, \sigma_2\}$
         2. $\mathfrak M \upharpoonright \{+, o\}$ 是一个 $\text{Abel}$ 群
-        3. $\mathfrak M \vDash \forall x \forall y \forall z((x \cdot (y + z) = (x \cdot y) + (x \cdot z)) \wedge ((y + z) \cdot x = (y \cdot x) + (z \cdot x)))$
+        3. $\mathfrak M \vDash \forall x \forall y \forall z \ ((x \cdot (y + z) = (x \cdot y) + (x \cdot z)) \wedge ((y + z) \cdot x = (y \cdot x) + (z \cdot x)))$
 
         则称 $\mathfrak M$ 是一个环，将 $\cdot^\mathfrak M$ 与 $+^\mathfrak M$ 分别称为 $\mathfrak M$ 的乘法与加法，将 $o^\mathfrak M$ 与 $e^\mathfrak M$ 分别称为 $\mathfrak M$ 的零元与幺元
 
     2. 如果 $\mathfrak M$ 是一个环且 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \sigma_4$，则称 $\mathfrak M$ 是一个交换环
 
-3. 域：如果交换环 $\mathfrak M$ 有 $\mathfrak M \vDash \forall x(\neg (x = o) \to \exists y(x \cdot y = e))$，则称 $\mathfrak M$ 是一个域
+3. 域：如果交换环 $\mathfrak M$ 有 $\mathfrak M \vDash \forall x \ (\neg (x = o) \to \exists y \ (x \cdot y = e))$，则称 $\mathfrak M$ 是一个域
     1. 对每个非零的 $a\in M$ 都存在唯一的 $b\in M$ 使得 $a \cdot^\mathfrak M b = e^\mathfrak M$，称 $b$ 为 $a$ 的（乘法逆），记作 $a^{-1}$
     2. 如果域 $\mathfrak M$ 的论域 $M$ 是有限集合，则称 $\mathfrak M$ 是有限域
     3. 设 $\mathcal K_{FF} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构，且是一个有限域$\}$ 不是一个初等类；令 $\overline{\mathcal K_{FF}} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构且 $\mathfrak M \vDash \mathrm{Th}(\mathcal K_{FF})\}$ 是一个初等类，称之为伪有限域

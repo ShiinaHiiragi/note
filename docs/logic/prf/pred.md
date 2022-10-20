@@ -212,11 +212,11 @@
             !!! note "有效式"
                 以下公式都是有效的
 
-                1. $\forall x(\alpha \wedge \beta) \leftrightarrow \forall x\alpha \wedge \forall x\beta$
-                2. $\exists x(\alpha \vee \beta) \leftrightarrow \exists x\alpha \vee \exists x\beta$
-                3. $\forall x(\alpha \vee \beta) \leftrightarrow \alpha \vee \forall x\beta, x\notin \mathrm{FV}(\alpha)$
-                4. $\exists x(\alpha \wedge \beta) \leftrightarrow \alpha \wedge \exists x\beta, x\notin \mathrm{FV}(\alpha)$
-                5. $\forall x(\alpha \to \beta) \to (\alpha \to \forall x\beta), x\notin \mathrm{FV}(\alpha)$
+                1. $\forall x \ (\alpha \wedge \beta) \leftrightarrow \forall x\alpha \wedge \forall x\beta$
+                2. $\exists x \ (\alpha \vee \beta) \leftrightarrow \exists x\alpha \vee \exists x\beta$
+                3. $\forall x \ (\alpha \vee \beta) \leftrightarrow \alpha \vee \forall x\beta, x\notin \mathrm{FV}(\alpha)$
+                4. $\exists x \ (\alpha \wedge \beta) \leftrightarrow \alpha \wedge \exists x\beta, x\notin \mathrm{FV}(\alpha)$
+                5. $\forall x \ (\alpha \to \beta) \to (\alpha \to \forall x\beta), x\notin \mathrm{FV}(\alpha)$
                 6. $\forall x\alpha \to \alpha(t/x)$
 
     4. 对任意公式集 $\Sigma$，若对所有 $\alpha \in \Sigma$ 都有 $\mathfrak M \vDash \alpha$，则记作 $\mathfrak M \vDash \Sigma$
@@ -235,7 +235,7 @@
         1. 公理模式
             - $\text{A}_1:$ 任意经典命题逻辑重言式一阶代入特例
             - $\text{A}_2: \forall x\alpha \leftrightarrow \neg \exists x \neg \alpha$
-            - $\text{A}_3: \forall x(\alpha \to \beta) \to (\forall x\alpha \to \forall x \beta)$
+            - $\text{A}_3: \forall x \ (\alpha \to \beta) \to (\forall x\alpha \to \forall x \beta)$
             - $\text{A}_4: \alpha \to \forall x\alpha, x\notin \mathrm{FV}(\alpha)$
             - $\text{A}_5: \forall x\alpha \to \alpha(t/x)$
         2. 推理规则
@@ -279,12 +279,12 @@
 
         4. 以下公式是 $\mathbf H_1$ 的定理
             - $\alpha(t/x) \to \exists x\alpha$
-            - $\forall x(\alpha \to \beta) \to (\alpha \to \forall x\beta), x\notin \mathrm{FV}(\alpha)$
+            - $\forall x \ (\alpha \to \beta) \to (\alpha \to \forall x\beta), x\notin \mathrm{FV}(\alpha)$
             - $\forall x\forall y\alpha \to \forall y\forall x\alpha$
-            - $\forall x(\alpha \wedge \beta) \leftrightarrow \forall x\alpha \wedge \forall x\beta$
-            - $\exists x(\alpha \vee \beta) \leftrightarrow \exists x\alpha \vee \exists x\beta$
-            - $\forall x(\alpha \vee \beta) \leftrightarrow \alpha \vee \forall x\beta, x\notin \mathrm{FV}(\alpha)$
-            - $\exists x(\alpha \wedge \beta) \leftrightarrow \alpha \wedge \exists x\beta, x\notin \mathrm{FV}(\alpha)$
+            - $\forall x \ (\alpha \wedge \beta) \leftrightarrow \forall x\alpha \wedge \forall x\beta$
+            - $\exists x \ (\alpha \vee \beta) \leftrightarrow \exists x\alpha \vee \exists x\beta$
+            - $\forall x \ (\alpha \vee \beta) \leftrightarrow \alpha \vee \forall x\beta, x\notin \mathrm{FV}(\alpha)$
+            - $\exists x \ (\alpha \wedge \beta) \leftrightarrow \alpha \wedge \exists x\beta, x\notin \mathrm{FV}(\alpha)$
 
         5. 在 $\mathbf H_1$ 中以下句法后承成立
             - $\alpha, \Sigma \vdash_{\mathbf H_1} \alpha$
