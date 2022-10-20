@@ -248,6 +248,8 @@
 
             其中 $\boldsymbol C_{ij} = {\displaystyle \sum_{k=1}^t \boldsymbol A_{ik} \boldsymbol B_{kj}}$
 
+5. 子矩阵：设 $\boldsymbol A$ 为 $m \times n$ 矩阵，任取 $\boldsymbol A$ 的 $k$ 行 $l$ 列，位于这些行与列交叉处的元素按原来顺序构成的 $k \times l$ 矩阵称为 $\boldsymbol A$ 的一个子矩阵．特别地，当 $k = l$ 时，该子矩阵称为 $\boldsymbol A$ 的一个 $k$ 阶子矩阵
+
 ### 1.1.2 初等变换
 1. 矩阵 $\boldsymbol A$ 的初等行（列）变换
     1. 将 $\boldsymbol A$ 的第 $i$ 行（列）与第 $j$ 行（列）对换
@@ -397,6 +399,7 @@
         2. 设 $\boldsymbol A_{m \times l}, \boldsymbol B_{l \times n}$ 为两个矩阵，则 $\mathrm{rank}(\boldsymbol A) + \mathrm{rank}(\boldsymbol B) \leqslant \mathrm{rank}(\boldsymbol{AB}) + n$
         3. 设 $\boldsymbol A_{m \times n}, \boldsymbol B_{m \times n}$ 为两个矩阵，则 $\mathrm{rank}(\boldsymbol A + \boldsymbol B) \leqslant \mathrm{rank}(\boldsymbol A) + \mathrm{rank}(\boldsymbol B)$
         4. 设 $\boldsymbol \alpha$ 为 $n$ 元非零向量，则 $\mathrm{rank}(\boldsymbol \alpha^{\mathrm T} \boldsymbol \alpha) = 1$
+    6. 设 $\boldsymbol A$ 为 $m \times n$ 矩阵，则 $\mathrm{det}(\boldsymbol A) = r$ 当且仅当矩阵 $\boldsymbol A$ 有一个 $r$ 阶子矩阵的行列式不为零，而 $\boldsymbol A$ 的所有 $r + 1$ 阶子矩阵（若存在）的行列式均为零
 
 4. 阶梯型矩阵：若矩阵的每个非零行上方没有零行，且各个非零行自左向右的第一个非零元素 $a_{1j_1}, a_{2j_2}, \cdots, a_{rj_r}$ 所在列的编号满足 $j_1 < j_2 < \cdots < j_r$，则称该矩阵为阶梯型矩阵
     1. 主元列：阶梯型矩阵中各非零行自左向右第一个非零元素 $a_{1j_1}, a_{2j_2}, \cdots, a_{rj_r}$ 所在的列 $j_1, j_2, \cdots, j_r$
@@ -421,7 +424,7 @@
         3. $\boldsymbol A$ 仅经初等行变化可化为单位阵
         4. $\boldsymbol A$ 仅经初等列变换可化为单位阵
         5. $\mathrm{det}(\boldsymbol A) \neq 0$
-    4. 初等变换与逆矩阵：任一秩为 $r$ 的非零矩阵 $\boldsymbol A_{m \times n}$ 比存在 $m$ 阶可逆矩阵 $\boldsymbol P$ 及 $n$ 阶可逆矩阵 $\boldsymbol Q$ 使得
+    4. 初等变换与逆矩阵：任一秩为 $r$ 的非零矩阵 $\boldsymbol A_{m \times n}$ 必存在 $m$ 阶可逆矩阵 $\boldsymbol P$ 及 $n$ 阶可逆矩阵 $\boldsymbol Q$ 使得
 
         $$
         \boldsymbol{PAQ} = \begin{bmatrix}
@@ -475,7 +478,7 @@
 
     记作 $\mathrm{det}(\boldsymbol A)$ 或 $|\boldsymbol A|$，其中 $1 \leqslant k \leqslant n$，$A_{pq}$ 为 $a_{pq}$ 的代数余子式
 
-    1. 代数余子式：将 $n$ 阶方阵 $\boldsymbol A = [a_{ij}]_{n \times n}$ 的第 $i$ 行第 $j$ 列划去后，所得的 $n - 1$ 阶矩阵的行列式记作 $M_{ij}$，则称 $(-1)^{i + j} M_{ij}$ 为元素 $a_{ij}$ 的代数余子式，记作 $A_{ij}$
+    1. 代数余子式：将 $n$ 阶方阵 $\boldsymbol A = [a_{ij}]_{n \times n}$ 的第 $i$ 行第 $j$ 列划去后，所得的 $n - 1$ 阶子矩阵的行列式记作 $M_{ij}$，则称 $(-1)^{i + j} M_{ij}$ 为元素 $a_{ij}$ 的代数余子式，记作 $A_{ij}$
     2. 伴随矩阵：设 $A_ij$ 是矩阵 $\boldsymbol A = [a_{ij}]_{n \times n}$ 中元素 $a_{ij}$ 的代数余子式，则称矩阵
 
         $$
@@ -615,5 +618,4 @@
     1. $\mathrm{det}(\boldsymbol I) = 1$
     2. 初等矩阵的行列式分别为 $\mathrm{det}(\boldsymbol E_{ij}) = -1, \mathrm{det}(\boldsymbol E_i(k)) = k \neq 0, \mathrm{det}(\boldsymbol E_{ij}(k)) = 1$
     3. 设 $\boldsymbol A$ 是 $n$ 阶方阵，则 $\mathrm{det}(\boldsymbol A^{\mathrm T}) = \mathrm{det}(\boldsymbol A), \mathrm{det}(\boldsymbol A^{-1}) = \dfrac{1}{\mathrm{det}(\boldsymbol A)}$
-    4. 设 $\boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_n$ 均为 $n$ 阶方阵，则 $\mathrm{\det}(\boldsymbol A_1 \boldsymbol A_2 \cdots \boldsymbol A_k) = \mathrm{det}(\boldsymbol A_1) \mathrm{det}(\boldsymbol A_2) \cdots \mathrm{det}(\boldsymbol A_k)$
-4. $\text{Cramer}$ 法则
+    4. 设 $\boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_n$ 均为 $n$ 阶方阵，则 $\mathrm{\det}(\boldsymbol A_1 \boldsymbol A_2 \cdots \boldsymbol A_k) = \mathrm{det}(\boldsymbol A_1) \cdot \mathrm{det}(\boldsymbol A_2) \cdots \mathrm{det}(\boldsymbol A_k)$

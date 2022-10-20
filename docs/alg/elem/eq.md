@@ -116,6 +116,13 @@
         1. 当 $\mathrm{rank}(\begin{bmatrix} \boldsymbol A & \boldsymbol b \\ \end{bmatrix}) > \mathrm{rank}(\boldsymbol A)$ 时，线性方程组无解
         2. 当 $\mathrm{rank}(\begin{bmatrix} \boldsymbol A & \boldsymbol b \\ \end{bmatrix}) = \mathrm{rank}(\boldsymbol A) = r = n$ 时，线性方程组有唯一解
         3. 当 $\mathrm{rank}(\begin{bmatrix} \boldsymbol A & \boldsymbol b \\ \end{bmatrix}) = \mathrm{rank}(\boldsymbol A) = r < n$ 时，线性方程组有无穷多解
+4. $\text{Cramer}$ 法则：设 $n$ 阶方阵 $\boldsymbol A$ 可逆，$\boldsymbol b$ 是 $n$ 元列向量，则线性方程组 $\boldsymbol{Ax} = \boldsymbol b$ 的唯一解是
+
+    $$
+    x_1 = \dfrac{\mathrm{det}(\boldsymbol A_1)}{\mathrm{det}(\boldsymbol A)}, x_2 = \dfrac{\mathrm{det}(\boldsymbol A_2)}{\mathrm{det}(\boldsymbol A)}, \cdots, x_n = \dfrac{\mathrm{det}(\boldsymbol A_n)}{\mathrm{det}(\boldsymbol A)}
+    $$
+
+    其中 $\boldsymbol A_j \ (1 \leqslant j \leqslant n)$ 是将 $\boldsymbol A$ 中第 $j$ 列的元素 $a_{1j}, a_{2j}, \cdots, a_{nj}$ 分别换成向量 $\boldsymbol b$ 中的元素 $b_1, b_2, \cdots, b_n$ 所得的矩阵
 
 ### 2.1.3 不定方程
 1. 不定方程：方程的个数少于未知数的个数且未知数又必须为整数的方程（组）
