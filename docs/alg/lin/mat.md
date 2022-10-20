@@ -385,6 +385,12 @@
         2. 矩阵 $\boldsymbol A$ 与 $\boldsymbol B$ 具有相同的标准型
         3. 矩阵 $\boldsymbol A$ 经过有限次初等变换可化为 $\boldsymbol B$
 
+    4. 含秩的不等式：
+        1. 设 $\boldsymbol A_{m \times l}, \boldsymbol B_{l \times n}$ 为两个矩阵，则 $\mathrm{rank}(\boldsymbol{AB}) \leqslant \min\{\mathrm{rank}(\boldsymbol A), \mathrm{rank}(\boldsymbol B)\}$
+        2. 设 $\boldsymbol A_{m \times l}, \boldsymbol B_{l \times n}$ 为两个矩阵，则 $\mathrm{rank}(\boldsymbol A) + \mathrm{rank}(\boldsymbol B) \leqslant \mathrm{rank}(\boldsymbol{AB}) + n$
+        3. 设 $\boldsymbol A_{m \times n}, \boldsymbol B_{m \times n}$ 为两个矩阵，则 $\mathrm{rank}(\boldsymbol A + \boldsymbol B) \leqslant \mathrm{rank}(\boldsymbol A) + \mathrm{rank}(\boldsymbol B)$
+        4. 设 $\boldsymbol \alpha$ 为 $n$ 元非零向量，则 $\mathrm{rank}(\boldsymbol \alpha^{\mathrm T} \boldsymbol \alpha) = 1$
+
 4. 阶梯型矩阵：若矩阵的每个非零行上方没有零行，且各个非零行自左向右的第一个非零元素 $a_{1j_1}, a_{2j_2}, \cdots, a_{rj_r}$ 所在列的编号满足 $j_1 < j_2 < \cdots < j_r$，则称该矩阵为阶梯型矩阵
     1. 主元列：阶梯型矩阵中各非零行自左向右第一个非零元素 $a_{1j_1}, a_{2j_2}, \cdots, a_{rj_r}$ 所在的列 $j_1, j_2, \cdots, j_r$
     2. 最简阶梯形矩阵：各非零行自左向右第一个非零元素均为 $1$，其所在列其余元素均为 $1$ 的阶梯型矩阵
