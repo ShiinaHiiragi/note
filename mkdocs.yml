@@ -18,24 +18,26 @@ theme:
         name: Switch to White Panel
     - scheme: defualt
       primary: white
-      accent: pink
+      accent: indigo
       font:
         text: Noto Serif SC
       toggle:
         icon: material/toggle-switch-off-outline
-        name: Switch to Teal Panel
+        name: Switch to Colored Panel
+
+  language: zh
+  favicon: assets/favicon.png
   icon:
     logo: octicons/note-24
-  favicon: assets/favicon.png
   features:
-    - navigation.expand
-    - navigation.tabs
-    - navigation.top
     - navigation.tracking
+    - navigation.tabs
+    - navigation.expand
+    - navigation.top
+    - toc.follow
+    - toc.integrate
     - search.highlight
     - search.share
-    - toc.integrate
-  language: zh
 
 markdown_extensions:
   - meta
@@ -56,23 +58,26 @@ markdown_extensions:
       generic: true
 
 extra:
+  search:
+    lang:
+      - en
+      - jp
   social:
     - icon: fontawesome/brands/github
       link: https://github.com/ShiinaHiiragi
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/ShiinaHiiragi
-  search:
-    lang:
-      - en
-      - jp
+  generator: true
+copyright: Copyright &copy; 2020 ~ 2022 Ichinoe Mizue
 
+extra_css:
+  - assets/config.css
 extra_javascript:
   - assets/config.js
   - https://polyfill.io/v3/polyfill.min.js?features=es6
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
-extra_css:
-  - assets/config.css
+
 
 nav:
   - 通用:

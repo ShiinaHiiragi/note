@@ -18,15 +18,18 @@
   src: "NotoSerifSC-Regular.otf";
 }
 
+/* General Title */
 .md-ellipsis {
   font-weight: 400;
 }
 
+/* Titles in each Passages */
 h1, h2, h3, h4, h5, h6 {
   color: black !important;
   font-weight: 300 !important;
 }
 
+/* Text in MathJax */
 mjx-utext[variant="sans-serif"] {
   font-family: "Noto Sans SC" !important;
   font-size: 0.8rem !important;
