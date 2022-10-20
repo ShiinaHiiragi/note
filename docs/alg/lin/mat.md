@@ -436,6 +436,16 @@
         \boldsymbol Q^{-1}
         $$
 
-2. 正交阵
+2. 正交阵：若方阵 $\boldsymbol A$ 可逆且满足 $\boldsymbol A^{-1} = \boldsymbol A^{\mathrm T}$，则称 $\boldsymbol A$ 为正交阵
+    1. 设矩阵 $\boldsymbol A$ 为 $n$ 阶方阵，$\delta_{ij} = \left\{\begin{aligned} & 1, & i = j \\ & 0, & i \neq j \end{aligned}\right.$，则以下命题等价
+        1. $\boldsymbol A$ 为正交阵
+        2. $\boldsymbol A^{\mathrm T} \boldsymbol A = \boldsymbol I$
+        3. $\boldsymbol A \boldsymbol A^{\mathrm T} = \boldsymbol I$
+        4. 将 $\boldsymbol A$ 按列分块 $\boldsymbol A = \begin{bmatrix} \boldsymbol \alpha_1 & \boldsymbol \alpha_2 & \cdots & \boldsymbol \alpha_n \\ \end{bmatrix}$ 有 $\boldsymbol \alpha_i^{\mathrm T} \boldsymbol \alpha_j = \delta_{ij} \ (1 \leqslant i, j \leqslant n)$
+        5. 将 $\boldsymbol A$ 按行分块 $\boldsymbol A = \begin{bmatrix} \boldsymbol \beta_1 & \boldsymbol \beta_2 & \cdots & \boldsymbol \beta_n \\ \end{bmatrix}^{\mathrm T}$ 有 $\boldsymbol \beta_i \boldsymbol \beta_j^{\mathrm T} = \delta_{ij} \ (1 \leqslant i, j \leqslant n)$
+    2. 正交阵对积与逆运算（即转置）封闭
 
 ## 1.3 行列式
+### 1.3.1 定义与性质
+
+### 1.3.2 行列式的展开
