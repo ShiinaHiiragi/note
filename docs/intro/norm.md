@@ -83,7 +83,7 @@
     - 在行内代码或行内公式中，代码或公式内部的标点符号与中文无关，但是公式边界的标点符号与外部中文有关。公式块后不附加标点符号，而是默认其结尾存在一个逗号或句号
 
         !!! note ""
-            代码示例：
+            正确示例：
             :   - 使用 `let i = 0;` 声明一个变量
                 - 设 $A$ 是一个集合，定义 $A$ 的示性函数为
 
@@ -96,17 +96,15 @@
 
                     则 $A = \varnothing \leftrightarrow f_A(x) \equiv 0$
 
-            公式示例：
-            :   - 设 $a = 3, b = 4, c = 5$，则 $a^2 + b^2 = c^2$
+                - 设 $a = 3, b = 4, c = 5$，则 $a^2 + b^2 = c^2$
 
 ### 遣词
-- 尽量减少口语化的语词，使用规范的书面语
-
-和 与
-
-如果 若
-
-以下 下列
+1. 尽量减少口语化的语词，使用规范的书面语
+2. 以下几组用语可以混用，因为它们可能有不同的使用场景
+    - 「和」与「与」
+    - 「若」与「如果」
+3. 以下几组语词的使用有一定偏好
+    - 「以下」：代替「下列」，但不能代替「下述」
 
 ## 结构
 - 全文使用 Markdown 语法，包含部分 Python Markdown 扩展，缩进为 $4$ 个空格。
@@ -133,10 +131,75 @@
 
     - 如果想要显式地表明列表之间的内容关联性不强，可以将该列表转写为无序列表
 
-3. 块引用：提示、引用、注意事项等一律使用 Python Markdown Admonitions 完成
+### 公式
+1. 全文使用 $\text{MathJax}$ 作为公式输入，尽可能保证公式的写法与常用符号具有一致性
+    - 绝大部分公式的标准写法在「集合论」中被定义
+    - 公式的写法应该跨区域保持一致。例如全文仅使用 $A - B$ 表示集合 $A$ 与 $B$ 的差，则全文不应使用 $A \backslash B$ 表示集合的差运算
+    - 公式的意义必须具有唯一性。例如「集合论」中定义集合 $A$ 的补集为 $\overline A$ 或 $A'$，而在「点集拓扑」中定义 $\overline A$ 为集合 $A$ 的闭包，因此该部分使用 $A'$ 表示集合 $A$ 的补集，并直接或间接指出每一处 $\overline A$ 的具体含义
+    - 常用符号应尽可能保持一致。例如通常使用 $G$ 表示群，用 $F$ 表示域
+2. 必须使用特定形式公式表示的内容
+    - 嵌入到中文的数字必须以公式形式表示
+    - 人名等不具有数学意义的专有名词使用 `\text` 行内公式表示，例如 $\text{Gauss}$ 
+    - 长度不小于两个字符的函数名等具有数学意义的词语使用 `\mathrm` 行内公式表示，例如 $\mathrm{rank}(\boldsymbol A)$
+    - 以下运算符在行内公式中必须使用 `\displaystyle` 表示
+
+    !!! note ""
+        === "正确示例"
+            - ${\displaystyle \lim_{n \to \infty} \left(1 + \dfrac{1}{n}\right)^n} = e$
+            - ${\displaystyle \int_1^e \dfrac{1}{x} \mathrm dx} = 1$
+            - $S_n = {\displaystyle \sum_{i = 1}^n a_i}$
+            - $T_n = {\displaystyle \prod_{i = 1}^n a_i}$
+            - $M_n = {\displaystyle \bigcup_{i = 1}^\infty A_i}$
+            - $N_n = {\displaystyle \bigcap_{i = 1}^\infty A_i}$
+        === "LaTeX"
+            ```latex
+            - ${\displaystyle \lim_{n \to \infty} \left(1 + \dfrac{1}{n}\right)^n} = e$
+            - ${\displaystyle \int_1^e \dfrac{1}{x} \mathrm dx} = 1$
+            - $S_n = {\displaystyle \sum_{i = 1}^n a_i}$
+            - $T_n = {\displaystyle \prod_{i = 1}^n a_i}$
+            - $M_n = {\displaystyle \bigcup_{i = 1}^\infty A_i}$
+            - $N_n = {\displaystyle \bigcap_{i = 1}^\infty A_i}$
+            ```
+
+3. 其他具有特殊规范的公式
+    - 分数：绝大多数情况下使用 `\dfrac`，仅在上标或下标的位置将分数写作 `\frac`
+    - 集合：在任何地方都可使用 `\mid` 作为分隔符，在「数理逻辑」模块外，也可以使用 `:` 代替 `\mid`
+    - 存在公式或全称公式
+        - 若不含量词的公式部分没有括号但只有一个字母，则不需要增加空格；如果超过一个字母，则需要增加空格
+        - 若不含量词的公式部分含有括号，则括号前一定需要增加空格
+        - 若含量词的公式部分含有多个量词且量词后均只有一个变元，则量词之间不需要增加空格；如果存在一个量词后含有一个复杂的项，则量词间需要增加空格
+        - 在「数理逻辑」模块外，如果公式只有一个括号，则左括号可以替换为一个冒号，右括号可以被省略
+
+        !!! note ""
+            === "正确示例"
+                $$
+                \begin{aligned}
+                & \forall x \alpha \\
+                & \forall x \ \varphi(x) \\
+                & \forall x \forall y \exists z \ (x = y \wedge y = z) \\
+                & \forall x \in A \ \forall y \in B \ \exists z \in C \ (x = y \wedge y = z) \\
+                & \forall x \in \mathbf R: x^2 \geqslant 0
+                \end{aligned}
+                $$
+            === "LaTeX"
+                ```latex
+                $$
+                \begin{aligned}
+                & \forall x \alpha \\
+                & \forall x \ \varphi(x) \\
+                & \forall x \forall y \exists z \ (x = y \wedge y = z) \\
+                & \forall x \in A \ \forall y \in B \ \exists z \in C \ (x = y \wedge y = z) \\
+                & \forall x \in \mathbf R: x^2 \geqslant 0
+                \end{aligned}
+                $$
+                ```
+
+### 其他
+
+1. 块引用：提示、引用、注意事项等一律使用 Python Markdown Admonitions 完成
     - 除本规范外，所有块引用必须包含标题
     - 块引用的缩进深度根据引用内容的语义与上下文之间的关系决定
-4. 在多种类文本混排（中文与阿拉伯数字、使用拉丁字母的语言、行内代码、行内公式）的情况下，应在交界处添加一个空格
+2. 在多种类文本混排（中文与阿拉伯数字、使用拉丁字母的语言、行内代码、行内公式）的情况下，应在交界处添加一个空格
     - 如果在混排时遇到中文标点符号，只需确保中文标点符号前后一定不出现空格即可
     - 数字与单位之间也需要保留空格，但是度数、百分数除外
     - 如果公式以 $-$ 开头或结尾并期待此前或此后在语义上连接中文，则该公式对应位置不添加空格
@@ -153,53 +216,48 @@
             - 若 {--$a = pb + r$&ensp;，--}则 $(a, b) = (b, r)$
             - 若记 $\mathscr P$ 为 $X$ 中所有单点子集勾构成的族，那么 $Y^X$ 的点式收敛拓扑恰好是 $\mathscr{T_P}$．因此点式收敛拓扑也被称作{--点 $-$ 开拓扑--}
 
-### 公式
-1. 全文使用 $\text{MathJax}$ 作为公式输入，尽可能保证公式的写法与常用符号具有一致性
-    - 绝大部分公式的标准写法在「集合论」中被定义
-    - 公式的写法应该跨区域保持一致。例如全文仅使用 $A - B$ 表示集合 $A$ 与 $B$ 的差，则全文不应使用 $A \backslash B$ 表示集合的差运算
-    - 公式的意义必须具有唯一性。例如「集合论」中定义集合 $A$ 的补集为 $\overline A$ 或 $A'$，而在「点集拓扑」中定义 $\overline A$ 为集合 $A$ 的闭包，因此该部分使用 $A'$ 表示集合 $A$ 的补集，并直接或间接指出每一处 $\overline A$ 的具体含义
-    - 常用符号应尽可能保持一致。例如通常使用 $G$ 表示群，用 $F$ 表示域
-2. 必须使用特定形式公式表示的内容
-    - 嵌入到中文的数字必须以公式形式表示
-    - 人名等不具有数学意义的专有名词使用 `\text` 行内公式表示，例如 $\text{Gauss}$ 
-    - 长度不小于两个字符的函数名等具有数学意义的词语使用 `\mathrm` 行内公式表示，例如 $\mathrm{rank}(\boldsymbol A)$
-    - 以下运算符在行内公式中必须使用 `\displaystyle` 表示
+3. 图片：使用 `figure` 标签插入图片，`.` 为当前文件所在目录
 
+    !!! note ""
         === "正确示例"
-            - ${\displaystyle \lim_{n \to \infty} \left(1 + \dfrac{1}{n}\right)^n} = e, {\displaystyle \int_1^e \dfrac{1}{x} \mathrm dx} = 1$
-            - $S_n = {\displaystyle \sum_{i = 1}^n a_i}, T_n = {\displaystyle \prod_{i = 1}^n a_i}, M_n = {\displaystyle \bigcup_{i = 1}^\infty A_i}, N_n = {\displaystyle \bigcap_{i = 1}^\infty A_i}$
+            <figure markdown>
+                ![](../assets/favicon.png)
+                <style> img[src$="favicon.png"] { width: 48px; } </style>
+            </figure>
         === "LaTeX"
-            ```latex
-            - ${\displaystyle \lim_{n \to \infty} \left(1 + \dfrac{1}{n}\right)^n} = e, {\displaystyle \int_1^e \dfrac{1}{x} \mathrm dx} = 1$
-            - $S_n = {\displaystyle \sum_{i = 1}^n a_i}, T_n = {\displaystyle \prod_{i = 1}^n a_i}, M_n = {\displaystyle \bigcup_{i = 1}^\infty A_i}, N_n = {\displaystyle \bigcap_{i = 1}^\infty A_i}$
+            ```html
+            <figure markdown>
+                ![](../assets/favicon.png)
+                <style> img[src$="favicon.png"] { width: 48px; } </style>
+            </figure>
             ```
 
-3. 其他具有特殊规范的公式
-    - 存在公式或全称公式
-        - 若不含量词的公式部分没有括号但只有一个字母，则不需要增加空格；如果超过一个字母，则需要增加空格
-        - 若不含量词的公式部分含有括号，则括号前一定需要增加空格
-        - 若含量词的公式部分含有多个量词且量词后均只有一个变元，则量词之间不需要增加空格；如果存在一个量词后含有一个复杂的项，则量词间需要增加空格
-        - 在「数理逻辑」模块外，如果公式只有一个括号，则左括号可以替换为一个冒号，右括号可以被省略
+4. 表格：为使表格居中，必须设置表格的 `text-align` 属性
 
+    !!! note ""
         === "正确示例"
-            $$
-            \begin{aligned}
-            & \forall x \alpha \\
-            & \forall x \ \varphi(x) \\
-            & \forall x \forall y \forall z \ (x = y \wedge y = z) \\
-            & \forall x \in A \ \forall y \in B \ \forall z \in C \ (x = y \wedge y = z) \\
-            & \forall x \in \mathbf R: x^2 \geqslant 0 \\
-            \end{aligned}
-            $$
+            <div style="text-align: center;">
+
+            |  $x$  | $f(x) = x^2$ | $g(x) = x^3$ |
+            | :---: | :----------: | :----------: |
+            | $-2$  |     $4$      |     $-8$     |
+            | $-1$  |     $1$      |     $-1$     |
+            |  $0$  |     $0$      |     $0$      |
+            |  $1$  |     $1$      |     $1$      |
+            |  $2$  |     $4$      |     $8$      |
+
+            </div>
         === "LaTeX"
-            ```latex
-            $$
-            \begin{aligned}
-            & \forall x \alpha \\
-            & \forall x \ \varphi(x) \\
-            & \forall x \forall y \forall z \ (x = y \wedge y = z) \\
-            & \forall x \in A \ \forall y \in B \ \forall z \in C \ (x = y \wedge y = z) \\
-            & \forall x \in \mathbf R: x^2 \geqslant 0 \\
-            \end{aligned}
-            $$
+            ```html
+            <div style="text-align: center;">
+
+            |  $x$  | $f(x) = x^2$ | $g(x) = x^3$ |
+            | :---: | :----------: | :----------: |
+            | $-2$  |     $4$      |     $-8$     |
+            | $-1$  |     $1$      |     $-1$     |
+            |  $0$  |     $0$      |     $0$      |
+            |  $1$  |     $1$      |     $1$      |
+            |  $2$  |     $4$      |     $8$      |
+
+            </div>
             ```
