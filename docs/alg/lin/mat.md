@@ -615,5 +615,5 @@
     1. $\mathrm{det}(\boldsymbol I) = 1$
     2. 初等矩阵的行列式分别为 $\mathrm{det}(\boldsymbol E_{ij}) = -1, \mathrm{det}(\boldsymbol E_i(k)) = k \neq 0, \mathrm{det}(\boldsymbol E_{ij}(k)) = 1$
     3. 设 $\boldsymbol A$ 是 $n$ 阶方阵，则 $\mathrm{det}(\boldsymbol A^{\mathrm T}) = \mathrm{det}(\boldsymbol A), \mathrm{det}(\boldsymbol A^{-1}) = \dfrac{1}{\mathrm{det}(\boldsymbol A)}$
-    4. 设 $\boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_n$ 均为 $n$ 阶方阵，则 $\mathrm{\det}(\boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_k) = \mathrm{det}(\boldsymbol A_1) \mathrm{det}(\boldsymbol A_2) \cdots \mathrm{det}(\boldsymbol A_k)$
+    4. 设 $\boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_n$ 均为 $n$ 阶方阵，则 $\mathrm{\det}(\boldsymbol A_1 \boldsymbol A_2 \cdots \boldsymbol A_k) = \mathrm{det}(\boldsymbol A_1) \mathrm{det}(\boldsymbol A_2) \cdots \mathrm{det}(\boldsymbol A_k)$
 4. $\text{Cramer}$ 法则
