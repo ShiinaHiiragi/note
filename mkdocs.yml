@@ -15,7 +15,7 @@ theme:
         text: Noto Sans SC
       toggle:
         icon: material/toggle-switch
-        name: Switch to White Panel
+        name: 切换到白色主题
     - scheme: defualt
       primary: white
       accent: indigo
@@ -23,7 +23,7 @@ theme:
         text: Noto Serif SC
       toggle:
         icon: material/toggle-switch-off-outline
-        name: Switch to Colored Panel
+        name: 切换到原主题
 
   language: zh
   favicon: assets/favicon.png
