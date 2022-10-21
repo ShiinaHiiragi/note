@@ -4,29 +4,35 @@
 
 <div class="entry start">
     <img src="assets/cube-outline.svg" style="width: 1.2rem" />
-    <div class="icon"> 逻辑与形而上学 </div>
-    <div class="value">
-        包含逻辑学、数学、哲学、计算机科学与语言学等学科的各种基础结论
+    <div class="sub-entry">
+        <div class="caption">逻辑与形而上学</div>
+        <div class="value">
+            包含逻辑学、数学、哲学、计算机科学与语言学等学科的各种基础结论
+        </div>
     </div>
 </div>
 
 <div class="entry start">
     <img src="assets/image-filter-none.svg" style="width: 1.2rem" />
-    <div class="icon"> 如何使用本项目 </div>
-    <div class="value">
-        根据需求进行「索引」，而非「学习」或「研究」
+    <div class="sub-entry">
+        <div class="caption">如何使用本项目</div>
+        <div class="value">
+            根据需求进行「索引」，而非「学习」或「研究」
+        </div>
     </div>
 </div>
 
 <div class="entry start">
     <img src="assets/github.svg" style="width: 1.2rem" />
-    <div class="icon"> 本项目已开源 </div>
-    <div class="value">
-        所有源文件在 <a href="https://github.com/ShiinaHiiragi/note/" target="_blank"> GitHub </a> 可见，采用 MIT 协议
+    <div class="sub-entry">
+        <div class="caption">本项目已开源</div>
+        <div class="value">
+            所有源文件在 <a href="https://github.com/ShiinaHiiragi/note/" target="_blank"> GitHub </a> 可见，采用 MIT 协议
+        </div>
     </div>
 </div>
 
-!!! info "此项目尚未完成，可能存在若干疏漏和错误"
+!!! abstract "此项目尚未完成，可能存在若干疏漏和错误"
     <label> 现在进度：分析哲学 · 专名与通名 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
@@ -36,10 +42,10 @@
 
 <div class="ref"> </div>
 
-??? info "正在记录的书目"
+??? abstract "正在记录的书目"
     <div class="ongoing"> </div>
 
-??? info "尚未记录的书目"
+??? abstract "尚未记录的书目"
     <div class="uncomp"> </div>
 
 <script>
@@ -376,21 +382,26 @@ renderRef(".uncomp", (item) => !item.plot);
     flex-direction: row;
 }
 
+.sub-entry {
+    display: flex;
+    flex-grow: 1;
+    flex-direction: row;
+    padding-left: 8px;
+}
+
+@media (max-width: 600px) {
+    .sub-entry {
+        flex-direction: column;
+    }
+}
+
 .start {
     align-items: start;
 }
 
-.icon {
-    min-width: 9.0em;
+.caption {
+    min-width: 7.5em;
     font-weight: 600;
-}
-
-.icon:before {
-    content: "  ";
-}
-
-.icon:after {
-    content: "：";
 }
 
 .value {
@@ -398,7 +409,7 @@ renderRef(".uncomp", (item) => !item.plot);
 }
 
 .index {
-    min-width: 2.4em;
+    min-width: 2.5em;
     font-weight: 600;
 }
 
@@ -423,7 +434,7 @@ renderRef(".uncomp", (item) => !item.plot);
     font-size: 12px;
     padding-right: 8px;
     line-height: 16px;
-    background-color: rgb(0, 184, 212);
+    background-color: rgb(32, 148, 243);
     border-radius: 0.1rem;
     color: white;
 }
