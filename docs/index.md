@@ -7,7 +7,7 @@
     <div class="sub-entry">
         <div class="caption">逻辑与形而上学</div>
         <div class="value">
-            包含逻辑学、数学、哲学、计算机科学与语言学等学科的基础知识
+            一本关于逻辑学、数学、哲学、计算机科学与语言学等学科基础的笔记
         </div>
     </div>
 </div>

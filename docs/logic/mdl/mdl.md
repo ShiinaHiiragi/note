@@ -123,6 +123,6 @@
     3. 每个 $\sigma \in F$ 都解释为群结构 $(V, +, 0)$ 到 $(V, +, 0)$ 的同态 $\sigma^\mathfrak V: V\to V$
     4. 对任意的 $\sigma, \gamma \in M$ 及任意的 $x \in V$，有 $\sigma^\mathfrak V(x) +^\mathfrak V \gamma^\mathfrak V(x) = (\sigma +^\mathfrak M \gamma)^\mathfrak V(x)$ 且 $\sigma^\mathfrak V(\gamma^\mathfrak V(x)) = (\sigma \times^\mathfrak M \gamma)^\mathfrak V(x)$
 
-    则称 $V$ 是 $M$ 上的线性空间，通常将 $\sigma^\mathfrak V$ 简记为 $\sigma x$
+    则称 $V$ 是 $M$ 上的线性空间，通常将 $\sigma^\mathfrak V$ 简记为 $\sigma x$，将 $V$ 中的元素称作向量
 
 ## 1.3 形式算术
