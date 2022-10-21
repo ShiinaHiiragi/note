@@ -1,5 +1,5 @@
 :root {
-  --md-text-font: "Noto Sans SC";
+  --md-text-font: "Noto Sans", "Noto Sans SC";
   user-select: none;
   box-sizing: border-box;
 }
@@ -10,12 +10,17 @@
 
 @font-face {
   font-family: "Noto Sans SC";
-  src: "NotoSansSC-Regular.otf";
+  src: url("NotoSansSC-Regular.otf");
 }
 
 @font-face {
   font-family: "Noto Serif SC";
-  src: "NotoSerifSC-Regular.otf";
+  src: url("NotoSerifSC-Regular.otf");
+}
+
+@font-face {
+  font-family: "Noto Sans";
+  src: url("NotoSans-Regular.ttf");
 }
 
 /* General Title */
@@ -47,6 +52,6 @@ del.critic {
 
 /* Text in MathJax */
 mjx-utext[variant="sans-serif"] {
-  font-family: "Noto Sans SC" !important;
+  font-family: "Noto Sans", "Noto Sans SC" !important;
   font-size: 0.8rem !important;
 }

@@ -70,8 +70,7 @@
     2. 正交补空间
 
 ### 2.1.3 内积空间
-1. 向量内积：设 $\boldsymbol \alpha = (a_1, a_2, \cdots, a_n)$ 与 $\boldsymbol \beta = (b_1, b_2, \cdots, b_n)$ 为两个向量．其对应元素乘积之和 ${\displaystyle \sum_{i=1}^n} a_i b_i$ 称为 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的内积，记作 $\boldsymbol \alpha \cdot \boldsymbol \beta$
-2. 内积空间：设 $V$ 是实数域 $\mathbf R$ 上一个线性空间，如果二元运算 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>$ 满足以下条件
+1. 内积空间：设 $V$ 是实数域 $\mathbf R$ 上一个线性空间，如果二元运算 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>$ 满足以下条件
     1. $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = \left<\boldsymbol \beta, \boldsymbol \alpha\right>$
     2. $\left<k \boldsymbol \alpha, \boldsymbol \beta\right> = k \left<\boldsymbol \alpha, \boldsymbol \beta\right>$
     3. $\left<\boldsymbol \alpha + \boldsymbol \beta, \boldsymbol \gamma\right> = \left<\boldsymbol \alpha, \boldsymbol \gamma\right> + \left<\boldsymbol \beta, \boldsymbol \gamma\right>$
@@ -82,8 +81,12 @@
     1. ${\displaystyle \left<\sum_{i=1}^n k_i \boldsymbol \alpha_i, \sum_{j=1}^m l_j \boldsymbol \beta_j\right> = \sum_{i=1}^n \sum_{j=1}^m k_i l_j \left<\boldsymbol \alpha_i, \boldsymbol \beta_j\right>}$
     2. $\text{Cauchy} - \text{Schwarz}$ 不等式：设 $\boldsymbol \alpha, \boldsymbol \beta$ 是内积空间 $V$ 上的向量，则恒有 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>^2 \leqslant \left<\boldsymbol \alpha, \boldsymbol \alpha\right> \left<\boldsymbol \beta, \boldsymbol \beta\right>$
 
-3. 设 $\boldsymbol \alpha$ 是内积空间 $V$ 的中的一个向量，则 $\sqrt{\left<\boldsymbol \alpha, \boldsymbol \alpha\right>}$ 称为向量 $\boldsymbol \alpha$ 的模或者范数，记为 $||\boldsymbol \alpha||$
+2. 设 $\boldsymbol \alpha$ 是内积空间 $V$ 的中的一个向量，则 $\sqrt{\left<\boldsymbol \alpha, \boldsymbol \alpha\right>}$ 称为向量 $\boldsymbol \alpha$ 的模或者范数，记为 $||\boldsymbol \alpha||$
     1. $||\boldsymbol \alpha|| = 0$ 当且仅当 $\boldsymbol \alpha = \boldsymbol 0$
     2. 单位向量：模为 $1$ 的向量，若 $\boldsymbol \alpha \neq 0$，则 $\dfrac{\boldsymbol \alpha}{||\boldsymbol \alpha||}$ 为单位向量，这被称为向量的单位化或标准化
+
+<!--
+定理 4.4.2 引入向量内积的定义：设 $\boldsymbol \alpha = (a_1, a_2, \cdots, a_n)$ 与 $\boldsymbol \beta = (b_1, b_2, \cdots, b_n)$ 为两个向量．其对应元素乘积之和 ${\displaystyle \sum_{i=1}^n} a_i b_i$ 称为 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的内积，记作 $\boldsymbol \alpha \cdot \boldsymbol \beta$
+-->
 
 ## 2.2 线性变换
