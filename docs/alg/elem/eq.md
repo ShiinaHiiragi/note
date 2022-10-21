@@ -236,7 +236,7 @@
 1. $\text{Cauchy}$ 不等式：设 $a_i, b_i \in \mathbf R \ (i = 1, 2, \cdots, n)$，则有
 
     $$
-    \left(\sum_{i=1}^n a_i b_i\right)^2 \leqslant \left(\sum_{i=1}^n a_i\right)^2 \left(\sum_{i=1}^n b_i\right)^2
+    \left(\sum_{i=1}^n a_i b_i\right)^2 \leqslant \left(\sum_{i=1}^n a_i^2\right) \left(\sum_{i=1}^n b_i^2\right)
     $$
 
     等号成立当且仅当 $b_i = ka_i \ (i = 1, 2, \cdots, n)$

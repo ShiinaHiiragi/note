@@ -76,7 +76,6 @@ extra:
     - icon: fontawesome/brands/twitter
       link: https://twitter.com/ShiinaHiiragi
   generator: true
-copyright: Copyright &copy; 2020 ~ 2022 Ichinoe Mizue
 
 extra_css:
   - assets/config.css
