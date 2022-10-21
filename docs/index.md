@@ -7,17 +7,27 @@
     <div class="sub-entry">
         <div class="caption">逻辑与形而上学</div>
         <div class="value">
-            包含逻辑学、数学、哲学、计算机科学与语言学等学科的各种基础结论
+            包含逻辑学、数学、哲学、计算机科学与语言学等学科的基础知识
         </div>
     </div>
 </div>
 
 <div class="entry start">
-    <img src="assets/image-filter-none.svg" style="width: 1.2rem" />
+    <img src="assets/book-search-outline.svg" style="width: 1.2rem" />
     <div class="sub-entry">
-        <div class="caption">如何使用本项目</div>
+        <div class="caption">如何使用</div>
         <div class="value">
-            根据需求进行「索引」，而非「学习」或「研究」
+            建议根据需求进行「索引」，而非「学习」或「研究」
+        </div>
+    </div>
+</div>
+
+<div class="entry start">
+    <img src="assets/monitor-cellphone.svg" style="width: 1.2rem" />
+    <div class="sub-entry">
+        <div class="caption">手机访问</div>
+        <div class="value">
+            纯文字排版已经过优化，推荐使用宽度高于 800 像素的屏幕查阅含公式的内容
         </div>
     </div>
 </div>
@@ -382,6 +392,11 @@ renderRef(".uncomp", (item) => !item.plot);
     flex-direction: row;
 }
 
+.start {
+    align-items: start;
+    padding-top: 4px;
+}
+
 .sub-entry {
     display: flex;
     flex-grow: 1;
@@ -393,10 +408,6 @@ renderRef(".uncomp", (item) => !item.plot);
     .sub-entry {
         flex-direction: column;
     }
-}
-
-.start {
-    align-items: start;
 }
 
 .caption {
