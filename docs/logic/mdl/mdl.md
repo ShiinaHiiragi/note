@@ -81,7 +81,7 @@
 
 ## 1.2 理论与模型
 ### 1.2.1 理论与公理
-1. 模型：设 $\mathfrak M$ 是一个 $S-$结构，$\Sigma$ 是一个 $S-$语句集，$\sigma$ 是一个 $S-$语句．若 $\mathfrak M \vDash \Sigma$，则称 $\mathfrak M$ 是 $\Sigma$ 的（模型论）模型
+1. 模型：设 $\mathfrak M$ 是一个 $S-$结构，$\Sigma$ 是一个 $S-$语句集，$\sigma$ 是一个 $S-$语句．若 $\mathfrak M \vDash \Sigma$，则称 $\mathfrak M$ 是语句集 $\Sigma$ 的模型
     1. 蕴涵：如果 $\Sigma$ 的模型均是 $\{\sigma\}$ 的模型，则 $\Sigma$ 蕴含 $\sigma$，记作 $\Sigma \vDash \sigma$
     2. 模型原理：如果 $\Sigma$ 有一个模型，则 $\Sigma$ 是一致的；如果 $\{\sigma\}$ 一致，则称 $\sigma$ 一致
 2. 理论：设 $\mathfrak M$ 是一个 $S-$结构，$\Sigma$ 是一个 $S-$语句集．如果对任意被 $\Sigma$ 蕴含的语句 $\alpha$ 都有 $\alpha \in \Sigma$，则称 $\Sigma$ 是一个 $S-$理论
@@ -121,8 +121,8 @@
     1. $(V, +, 0)$ 是一个 $\text{Abel}$ 群
     2. 对任意的 $x \in V$ 有 $0^\mathfrak{MV}(x) = 0^\mathfrak V, 1^\mathfrak{MV}(x) = x$
     3. 每个 $\sigma \in F$ 都解释为群结构 $(V, +, 0)$ 到 $(V, +, 0)$ 的同态 $\sigma^\mathfrak V: V\to V$
-    4. 对任意的 $\sigma, \gamma \in M$ 及任意的 $x \in V$，有 $\sigma^\mathfrak V(x) +^\mathfrak V \gamma^\mathfrak V(x) = (\sigma +^\mathfrak M \gamma)^\mathfrak V(x)$ 且 $\sigma^\mathfrak V(\gamma^\mathfrak V(x)) = (\sigma \times^\mathfrak M \gamma)^\mathfrak V(x)$
+    4. 对任意的 $\sigma, \gamma \in F$ 及任意的 $x \in V$，有 $\sigma^\mathfrak V(x) +^\mathfrak V \gamma^\mathfrak V(x) = (\sigma +^\mathfrak M \gamma)^\mathfrak V(x)$ 且 $\sigma^\mathfrak V(\gamma^\mathfrak V(x)) = (\sigma \times^\mathfrak M \gamma)^\mathfrak V(x)$
 
-    则称 $V$ 是 $M$ 上的线性空间，通常将 $\sigma^\mathfrak V$ 简记为 $\sigma x$，将 $V$ 中的元素称作向量
+    则称 $V$ 是 $F$ 上的线性空间，通常将数乘运算 $\sigma^\mathfrak V(x)$ 简记为 $\sigma x$，将 $V$ 中的元素称作向量
 
 ## 1.3 形式算术
