@@ -96,7 +96,7 @@
     1. $\mathscr E-$开拓扑： 设 $X$ 是一个集合，$Y$ 是一个拓扑空间，$\mathscr E$ 是 $X$ 的一个子集族，则全体从 $X$ 到 $Y$ 的映射构成的族 $Y^X$ 的子集族 $\mathscr{S_E}=\{W(E, U)\subseteq Y^X\mid E\in \mathscr E, U$ 是 $Y$ 的一个开集 $\}$ 的并是 $Y^X$．因此 $Y^X$ 有唯一的拓扑 $\mathscr{T_E}$ 以 $\mathscr{S_E}$ 为它的一个子基．$Y^X$ 的拓扑 $\mathscr{T_E}$ 称为 $Y^X$ 的 $\mathscr E-$开拓扑；拓扑空间 $(Y^X, \mathscr{T_E})$ 称为映射空间（$\mathscr E-$开拓扑）
 
         !!! note "点$-$开拓扑"
-            若记 $\mathscr P$ 为 $X$ 中所有单点子集勾构成的族，那么 $Y^X$ 的点式收敛拓扑恰好是 $\mathscr{T_P}$．因此点式收敛拓扑也被称作点$-$开拓扑
+            若记 $\mathscr P$ 为 $X$ 中所有单点子集构成的族，那么 $Y^X$ 的点式收敛拓扑恰好是 $\mathscr{T_P}$．因此点式收敛拓扑也被称作点$-$开拓扑
 
     2. 映射空间紧$-$开拓扑：设 $X, Y$ 是两个拓扑空间，$\mathscr C$ 是 $X$ 的全体紧子集构成的集族，则从 $X$ 到 $Y$ 的全体映射构成的集合 $Y^X$ 的 $\mathscr C-$开拓扑 $\mathscr{T_C}$ 称为 $Y^X$ 的紧$-$开拓扑，拓扑空间 $(Y^X, \mathscr{T_C})$ 称为映射空间（紧$-$开拓扑）
     3. 连续映射空间紧$-$开拓扑：从 $X$ 到 $Y$ 的全体连续映射构成的集合 $\mathscr C(X, Y)$ 作为映射空间 $Y^X$（紧$-$开拓扑）的子空间称为连续映射空间（紧$-$开拓扑），且 $Y^X$ 的紧$-$开拓扑在 $\mathscr C(X, Y)$ 在 $\mathscr C(X, Y)$ 上的限制也叫做 $\mathscr C(X, Y)$ 的紧$-$开拓扑
