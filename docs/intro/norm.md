@@ -99,7 +99,16 @@
                 - 设 $a = 3, b = 4, c = 5$，则 $a^2 + b^2 = c^2$
 
 ### 遣词
-1. 尽量减少口语化的语词，使用规范的书面语
+1. 尽量减少口语化的语词或翻译腔，使用规范的书面语
+    - 改写所有条件后置句，使之更符合中文的表达习惯
+
+        !!! note ""
+            原文：
+            :   称 $f(x)$ 在给定区间 $E$ 上单调递增，如果 $x_1 < x_2 \to f(x_1) < f(x_2)$ 对任意 $x_1, x_2 \in E$ 成立
+
+            修正：
+            :   设 $f(x)$ 是一个函数，给定区间 $E$．若 $x_1 < x_2 \to f(x_1) < f(x_2)$ 对任意 $x_1, x_2 \in E$ 成立，则称 $f(x)$ 在 $E$ 上单调递增
+
 2. 以下几组用语可以混用，因为它们可能有不同的使用场景
     - 「和」与「与」
     - 「若」与「如果」
@@ -107,7 +116,9 @@
     - 「以下」：代替「下列」，但不能代替「下述」
 
 ## 结构
-- 全文使用 Markdown 语法，包含部分 Python Markdown 扩展，缩进为 $4$ 个空格。
+- 全文使用 Markdown 语法，包含部分 Python Markdown 扩展
+    - 除了「通用」模块以外，不宜展示需要与用户进行交互的内容（例如标签、按钮等元素）
+    - 缩进为 $4$ 个空格，每种块级元素前后均有空行
 
 ### 列表
 全文的体例为笔记，因此绝大部分内容并不会被编写为段落，而是会被编排在若干个有序列表中
@@ -143,23 +154,23 @@
     - 长度不小于两个字符的函数名等具有数学意义的词语使用 `\mathrm` 行内公式表示，例如 $\mathrm{rank}(\boldsymbol A)$
     - 以下运算符在行内公式中必须使用 `\displaystyle` 表示
 
-    !!! note ""
-        === "正确示例"
-            - ${\displaystyle \lim_{n \to \infty} \left(1 + \dfrac{1}{n}\right)^n} = e$
-            - ${\displaystyle \int_1^e \dfrac{1}{x} \mathrm dx} = 1$
-            - $S_n = {\displaystyle \sum_{i = 1}^n a_i}$
-            - $T_n = {\displaystyle \prod_{i = 1}^n a_i}$
-            - $M_n = {\displaystyle \bigcup_{i = 1}^\infty A_i}$
-            - $N_n = {\displaystyle \bigcap_{i = 1}^\infty A_i}$
-        === "LaTeX"
-            ```latex
-            - ${\displaystyle \lim_{n \to \infty} \left(1 + \dfrac{1}{n}\right)^n} = e$
-            - ${\displaystyle \int_1^e \dfrac{1}{x} \mathrm dx} = 1$
-            - $S_n = {\displaystyle \sum_{i = 1}^n a_i}$
-            - $T_n = {\displaystyle \prod_{i = 1}^n a_i}$
-            - $M_n = {\displaystyle \bigcup_{i = 1}^\infty A_i}$
-            - $N_n = {\displaystyle \bigcap_{i = 1}^\infty A_i}$
-            ```
+        !!! note ""
+            === "正确示例"
+                - ${\displaystyle \lim_{n \to \infty} \left(1 + \dfrac{1}{n}\right)^n} = e$
+                - ${\displaystyle \int_1^e \dfrac{1}{x} \mathrm dx} = 1$
+                - $S_n = {\displaystyle \sum_{i = 1}^n a_i}$
+                - $T_n = {\displaystyle \prod_{i = 1}^n a_i}$
+                - $M_n = {\displaystyle \bigcup_{i = 1}^\infty A_i}$
+                - $N_n = {\displaystyle \bigcap_{i = 1}^\infty A_i}$
+            === "LaTeX"
+                ```latex
+                - ${\displaystyle \lim_{n \to \infty} \left(1 + \dfrac{1}{n}\right)^n} = e$
+                - ${\displaystyle \int_1^e \dfrac{1}{x} \mathrm dx} = 1$
+                - $S_n = {\displaystyle \sum_{i = 1}^n a_i}$
+                - $T_n = {\displaystyle \prod_{i = 1}^n a_i}$
+                - $M_n = {\displaystyle \bigcup_{i = 1}^\infty A_i}$
+                - $N_n = {\displaystyle \bigcap_{i = 1}^\infty A_i}$
+                ```
 
 3. 其他具有特殊规范的公式
     - 分数：绝大多数情况下使用 `\dfrac`，仅在上标或下标的位置将分数写作 `\frac`
