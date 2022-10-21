@@ -179,9 +179,31 @@
     - 只有递归定义使用 `:=` 符号，普通定义只使用 `=` 符号
 
 4. 部分公式在定义所在的小节使用完整写法，在其他单元可采用简写
-    - 集合：在任何地方都可使用 `\mid` 作为分隔符，在「数理逻辑」模块外，也可以使用 `:` 代替 `\mid`
+    - 集合：在任何地方都可使用 `\mid` 作为分隔符，在「数理逻辑」模块外，也可以使用 `:` 代替 `\mid`，若括号内容较高，则使用 `\left|` 或 `\right|` 代替 `\mid`
+
+        !!! note ""
+            === "示例"
+                $$
+                \begin{aligned}
+                & \left\{x \in \mathbf R\mid x^2 > 1\right\} \\
+                & \left\{\left. \sum_{i=0}^{n-1} a_i x^i \right| a_i \in \mathbf R\right\} \\
+                & \left\{(x, y) \in \mathbf R^2 : x \in [0, 1] \wedge y \in [0, 1]\right\}
+                \end{aligned}
+                $$
+            === "LaTeX"
+                ```latex
+                $$
+                \begin{aligned}
+                & \left\{x \in \mathbf R\mid x^2 > 1\right\} \\
+                & \left\{\left. \sum_{i=0}^{n-1} a_i x^i \right| a_i \in \mathbf R\right\} \\
+                & \left\{(x, y) \in \mathbf R^2 : x \in [0, 1] \wedge y \in [0, 1]\right\}
+                \end{aligned}
+                $$
+                ```
+
     - 存在公式或全称公式：用括号包围不含量词的公式部分，在「数理逻辑」模块外，如果该公式部分只有一个括号，则左括号可以替换为一个冒号，右括号可以被省略
     - 结构与模型：函数符、关系符、常元与变元通过映射或论域指明其所属模型，在「数学基础」小节外，可以省略这一标注
+
 5. 其他具有特殊规范的公式
     - 分数：绝大多数情况下使用 `\dfrac`，仅在上标或下标的位置将分数写作 `\frac`
     - 存在公式或全称公式
