@@ -135,8 +135,6 @@ nav:
       - 1 矩阵与行列式: alg/lin/mat.md
       - 2 线性空间: alg/lin/lin.md
   - 几何学:
-    - 一、解析几何:
-      - 1 向量与坐标系: top/anly/coord.md
     - 二、点集拓扑:
       - 1 拓扑空间: top/point/space.md
       - 2 构造空间: top/point/constr.md

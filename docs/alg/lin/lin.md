@@ -1,5 +1,9 @@
 # 2 线性空间
 
+- $n$ 元向量：$n$ 元有序组 $\boldsymbol \alpha = (a_1, a_2, \cdots, a_n) \in \mathbf R^n$ 称为 $n$ 元向量或 $n$ 维向量，其中 $a_i$ 称为该 $n$ 元向量的第 $i$ 个元素
+    1. 零向量：若向量的所有元素均为 $0$，则该向量称为零向量，记作 $\boldsymbol 0$
+    2. 设两个 $n$ 元向量 $\boldsymbol \alpha, \boldsymbol \beta$，若其所有对应元素相等时，称向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 相等，记作 $\boldsymbol \alpha = \boldsymbol \beta$
+
 ## 2.1 线性空间
 ### 2.1.1 线性相关性
 1. 线性相关：设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s \ (s \geqslant 1)$ 为一组 $n$ 元向量，若存在不全为零的系数 $k_1, k_2, \cdots, k_s$ 使得 $k_1 \boldsymbol \alpha_1 + k_2 \boldsymbol \alpha_2 + \cdots + k_s \boldsymbol \alpha_s = \boldsymbol 0$，则称向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s$ 线性相关，否则称向量组线性无关
@@ -34,6 +38,8 @@
         2. 线性方程组 $\boldsymbol A^{\mathrm T} \boldsymbol A \boldsymbol x = \boldsymbol A^{\mathrm T} \boldsymbol b$ 一定有解
 
 3. 设 $\boldsymbol x_0$ 是非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol b$ 的某个特解，$\boldsymbol y$ 是相应齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol 0$ 的通解，则非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol b$ 的通解为 $\boldsymbol x = \boldsymbol x_0 + \boldsymbol y$
+    1. 非齐次线性方程组的解集 $\{\boldsymbol x \in \mathbf R^n \mid \boldsymbol{Ax} = \boldsymbol b, \boldsymbol b \neq \boldsymbol 0\}$ 不构成子空间
+    2. 线性方程组 $\boldsymbol{Ax} = \boldsymbol b$ 有解的充要条件是 $\boldsymbol b \in \mathbf C(\boldsymbol A)$
 
 ### 2.1.2 线性空间
 1. 基与维数：设 $V$ 是线性空间，如果在 $V$ 中存在 $n$ 个线性无关的向量 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 使得 $V$ 中任一向量 $\alpha$ 均可由 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 线性表出，则称向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 为线性空间 $V$ 的一组基，$n$ 称为线性空间 $V$ 的维数，记作 $\operatorname{dim} V = n$，$V$ 称为 $n$ 维线性空间
@@ -48,10 +54,29 @@
 
         则 $W$ 是 $V$ 的一个子空间
 
-    2. 设 $V$ 是实数域 $\mathbf R$ 上的线性空间，$\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n$ 是 $V$ 中的一组向量，这组向量所有可能的线性组合所组成的集合 $\left\{{\displaystyle \left. \sum_{i=1}^n \lambda_i \boldsymbol \alpha_i \right| \lambda_i \in \mathbf R}\right\}$ 是 $V$ 的一个线性子空间，称为由 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n$ 张成的子空间，记作 $\mathrm{span}(\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n)$
-        - 向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_l$ 张成的子空间的维数等于向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_l$ 的秩
+    2. 设 $V$ 是实数域 $\mathbf R$ 上的线性空间，$\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n$ 是 $V$ 中的一组向量，这组向量所有可能的线性组合所组成的集合 $\left\{{\displaystyle \left. \sum_{i=1}^n \lambda_i \boldsymbol \alpha_i \right| \lambda_i \in \mathbf R}\right\}$ 是 $V$ 的一个线性子空间，称为由 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n$ 张成的子空间，记作 $\mathrm{span}(\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n)$，其维数等于向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n$ 的秩
     3. 基扩充定理：任何一个子空间的基偶可以扩充成为整个线性空间的基
+    4. 子空间的交与和：设 $W_1$ 与 $W_2$ 是线性空间 $V$ 的两个子空间，其交定义为 $W_1 \cap W_2 = \{\boldsymbol \alpha \mid \boldsymbol \alpha \in W_1 \wedge \boldsymbol \alpha \in W_2\}$，其和定义为 $W_1 + W_2 = \{\boldsymbol \alpha + \boldsymbol \beta \mid \boldsymbol \alpha \in W_1 \wedge \boldsymbol \beta \in W_2\}$
+        1. 封闭性：$W_1 \cap W_2$ 与 $W_1 + W_2$ 均为 $V$ 的子空间
+        2. 交换律：$W_1 \cap W_2 = W_2 \cap W_1, W_1 + W_2 = W_2 + W_1$
+        3. 结合律：$(W_1 \cap W_2) \cap W_3 = W_1 \cap (W_2 \cap W_3), (W_1 + W_2) + W_3 = W_1 + (W_2 + W_3)$
+        4. 维数公式：$\operatorname{dim} W_1 + \operatorname{W_2} = \operatorname{\dim} (W_1 + W_2) + \operatorname{dim} (W_1 \cap W_2)$
 
-3. 零空间与列空间
+3. 零空间与列空间：齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol 0$ 的解集称为该齐次线性方程组的解空间，或称为矩阵 $A$ 的零空间，记作 $\mathbf N(\boldsymbol A)$；矩阵 $\boldsymbol A$ 的列向量张成的子空间称为矩阵 $\boldsymbol A$ 的列空间，记作 $\mathbf C(\boldsymbol A)$
+    1. 齐次线性方程组的基础解系张成的空间 $\{\boldsymbol x \in \mathbf R^n \mid \boldsymbol{Ax} = \boldsymbol 0\}$ 是矩阵 $\boldsymbol A$ 的零空间，其构成线性空间 $\mathbf R^n$ 的一个子空间
+    2. 设矩阵 $\boldsymbol A_{m \times n}$ 的秩为 $r$，则矩阵 $\boldsymbol A$ 的列空间的维数 $\operatorname{dim} \mathbf C(\boldsymbol A) = r$；零空间的维数 $\operatorname{dim} \mathbf N(\boldsymbol A) = n - r$
+4. 补空间：设 $W_1$ 与 $W_2$ 是线性空间 $V$ 的两个子空间，如果 $W_1 \cap W_2 = \{\boldsymbol 0\}, W_1 + W_2 = V$，则称 $W_2$ 是 $W_1$ 关于线性空间 $V$ 的补空间
+    1. 补空间存在性定理：设 $W_1$ 是 $n$ 维线性空间 $V$ 的子空间，则存在 $W_1$ 关于线性空间 $V$ 的补空间
+    2. 正交补空间
+
+### 2.1.3 内积空间
+1. 向量内积：设 $\boldsymbol \alpha = (a_1, a_2, \cdots, a_n)$ 与 $\boldsymbol \beta = (b_1, b_2, \cdots, b_n)$ 为两个向量．其对应元素乘积之和 ${\displaystyle \sum_{i=1}^n} a_i b_i$ 称为 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的内积，记作 $\boldsymbol \alpha \cdot \boldsymbol \beta$
+2. 内积空间：设 $V$ 是实数域 $\mathbf R$ 上一个线性空间，如果二元运算 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>$ 满足以下条件
+    1. $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = \left<\boldsymbol \beta, \boldsymbol \alpha\right>$
+    2. $\left<k \boldsymbol \alpha, \boldsymbol \beta\right> = k \left<\boldsymbol \alpha, \boldsymbol \beta\right>$
+    3. $\left<\boldsymbol \alpha + \boldsymbol \beta, \boldsymbol \gamma\right> = \left<\boldsymbol \alpha, \boldsymbol \gamma\right> + \left<\boldsymbol \beta, \boldsymbol \gamma\right>$
+    4. $\left<\boldsymbol \alpha, \boldsymbol \alpha\right> \geqslant 0$ 且 $\left<\boldsymbol \alpha, \boldsymbol \alpha\right> = 0$ 当且仅当 $\boldsymbol \alpha = \boldsymbol 0$
+
+    其中 $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma \in V, k \in \mathbf R$，则称二元运算 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>$ 为 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的内积，引入内积后的线性空间称为内积空间
 
 ## 2.2 线性变换
