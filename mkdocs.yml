@@ -130,10 +130,10 @@ nav:
       - 2 方程与不等式: alg/elem/eq.md
       - 3 初等数论: alg/elem/num.md
       - 4 组合理论: alg/elem/comb.md
-    - 二、线性代数:
-      - 1 矩阵与行列式: alg/lin/mat.md
-      - 2 线性空间: alg/lin/lin.md
+      - 5 矩阵论: alg/elem/mat.md
   - 几何学:
+    - 一、解析几何:
+      - 1 线性空间: top/anly/lin.md
     - 二、点集拓扑:
       - 1 拓扑空间: top/point/space.md
       - 2 构造空间: top/point/constr.md

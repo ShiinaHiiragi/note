@@ -1,6 +1,6 @@
-# 1 矩阵与行列式
+# 5 矩阵论
 
-## 1.1 矩阵
+## 5.1 矩阵
 1. 向量： $n$ 元向量可写作一行或一列，并将其视作特殊的矩阵，通常指 $n$ 元列向量
     1. 称
 
@@ -59,7 +59,7 @@
 
     3. 单位阵：若纯量阵的对角线元素均为 $1$，则称该方阵为单位阵 $\boldsymbol I$ 或 $\boldsymbol I_n$，其中 $n$ 表示阶数
 
-### 1.1.1 基本运算
+### 5.1.1 基本运算
 1. 设 $m \times n$ 矩阵
 
     $$
@@ -250,7 +250,7 @@
 
 5. 子矩阵：设 $\boldsymbol A$ 为 $m \times n$ 矩阵，任取 $\boldsymbol A$ 的 $k$ 行 $l$ 列，位于这些行与列交叉处的元素按原来顺序构成的 $k \times l$ 矩阵称为 $\boldsymbol A$ 的一个子矩阵．特别地，当 $k = l$ 时，该子矩阵称为 $\boldsymbol A$ 的一个 $k$ 阶子矩阵
 
-### 1.1.2 初等变换
+### 5.1.2 初等变换
 1. 矩阵 $\boldsymbol A$ 的初等行（列）变换
     1. 将 $\boldsymbol A$ 的第 $i$ 行（列）与第 $j$ 行（列）对换
 
@@ -407,7 +407,7 @@
         1. 任一非零矩阵只经初等行变换可化为最简阶梯型矩阵
         2. 非零矩阵的秩等于其最简阶梯形中主元列的个数
 
-### 1.1.3 矩阵实例
+### 5.1.3 矩阵实例
 1. 可逆矩阵：设 $\boldsymbol A$ 是 $n$ 阶方阵，如果存在 $n$ 阶方阵 $\boldsymbol B$ 使 $\boldsymbol{AB} = \boldsymbol{BA} = \boldsymbol I$，则称 $\boldsymbol A$ 是可逆矩阵或非奇异矩阵，称 $\boldsymbol B$ 是 $\boldsymbol A$ 的逆矩阵，记作 $\boldsymbol A^{-1}$
     1. 设 $\boldsymbol A, \boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_k$ 均为 $n$ 阶可逆矩阵，则有
         1. $(\boldsymbol A^{-1})^{-1} = \boldsymbol A$
@@ -449,7 +449,7 @@
         5. 将 $\boldsymbol A$ 按行分块 $\boldsymbol A = \begin{bmatrix} \boldsymbol \beta_1 & \boldsymbol \beta_2 & \cdots & \boldsymbol \beta_n \\ \end{bmatrix}^{\mathrm T}$ 有 $\boldsymbol \beta_i \boldsymbol \beta_j^{\mathrm T} = \delta_{ij} \ (1 \leqslant i, j \leqslant n)$
     2. 正交阵对积与逆运算（即转置）封闭
 
-## 1.2 行列式
+## 5.2 行列式
 1. $n$ 阶行列式：设 $n$ 阶方阵
 
     $$
