@@ -1,38 +1,7 @@
 # 1 线性空间
 
-- $n$ 元向量：$n$ 元有序组 $\boldsymbol \alpha = (a_1, a_2, \cdots, a_n) \in \mathbf R^n$ 称为 $n$ 元向量或 $n$ 维向量，其中 $a_i$ 称为该 $n$ 元向量的第 $i$ 个元素
-    1. 零向量：若向量的所有元素均为 $0$，则该向量称为零向量，记作 $\boldsymbol 0$
-    2. 设两个 $n$ 元向量 $\boldsymbol \alpha, \boldsymbol \beta$，若其所有对应元素相等时，称向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 相等，记作 $\boldsymbol \alpha = \boldsymbol \beta$
-
-- 向量： $n$ 元向量可写作一行或一列，并将其视作特殊的矩阵，通常指 $n$ 元列向量
-    1. 称
-
-        $$
-        \boldsymbol \alpha = \begin{bmatrix}
-        a_1 & a_2 & \cdots & a_n \\
-        \end{bmatrix}
-        $$
-
-        为 $n$ 元行向量，相当于一个 $1 \times n$ 矩阵
-
-    2. 称
-
-        $$
-        \boldsymbol \beta = \boldsymbol \alpha^{\mathrm T} = \begin{bmatrix}
-        a_1 \\
-        a_2 \\
-        \vdots \\
-        a_n \\
-        \end{bmatrix}
-        $$
-
-        为 $n$ 元列向量，相当于一个 $n \times 1$ 矩阵
-
-        !!! note "向量与点"
-            行向量与列向量均表示向量的坐标，暗示此时基已取定．通常情况下，在 $\text{Euclid}$ 空间 $R^n$ 中默认取定标准正交基 $\begin{bmatrix} \boldsymbol \varepsilon_1 & \boldsymbol \varepsilon_2 & \cdots & \boldsymbol \varepsilon_n \\ \end{bmatrix} = \boldsymbol I_n$，则以点 $O(0, 0, \cdots, 0)$ 为起点，以点 $A(x_1, x_2, \cdots, x_n)$ 为终点的向量 $\overrightarrow{OA} = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$
-
 ## 1.1 线性空间
-### 1.1.1 线性相关性
+### 1.1.1 线性相关
 1. 线性相关：设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s \ (s \geqslant 1)$ 为一组 $n$ 元向量，若存在不全为零的系数 $k_1, k_2, \cdots, k_s$ 使得 $k_1 \boldsymbol \alpha_1 + k_2 \boldsymbol \alpha_2 + \cdots + k_s \boldsymbol \alpha_s = \boldsymbol 0$，则称向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s$ 线性相关，否则称向量组线性无关
     1. 线性组合：设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m, \boldsymbol \beta$ 为一组 $n$ 元向量．若存在一组实数 $k_1, k_2, \cdots, k_m$ 使得 $\boldsymbol \beta = k_1 \boldsymbol \alpha_1 + k_2 \boldsymbol \alpha_2 + \cdots + k_m \boldsymbol \alpha_m$，则称向量 $\beta$ 是 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m$ 的线性组合，或称 $\beta$ 可由 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m$ 线性表出，$k_1, k_2, \cdots, k_m$ 称为线性组合系数或线性表出系数
     2. 线性相关的性质
@@ -70,10 +39,6 @@
 
 ### 1.1.2 线性空间
 1. 基与维数：设 $V$ 是线性空间，如果在 $V$ 中存在 $n$ 个线性无关的向量 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 使得 $V$ 中任一向量 $\alpha$ 均可由 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 线性表出，则称向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 为线性空间 $V$ 的一组基，$n$ 称为线性空间 $V$ 的维数，记作 $\operatorname{dim} V = n$，$V$ 称为 $n$ 维线性空间
-    1. 坐标：设向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 是 $n$ 维线性空间的一组基，$\boldsymbol \alpha$ 是 $V$ 中的任一向量，若 $\boldsymbol \alpha = x_1 \boldsymbol \varepsilon_1 + x_2 \boldsymbol \varepsilon_2 + \cdots + x_n \boldsymbol \varepsilon_n$，则称 $x_1, x_2, \cdots, x_n$ 为向量 $\boldsymbol \alpha$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的坐标．任意向量在给定基下的坐标唯一
-    2. 坐标变换公式：设 $V$ 是 $n$ 维线性空间，$\boldsymbol M$ 是由基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 到基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 的过渡矩阵，$V$ 中的向量 $\alpha$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 和基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 下的坐标分别为 $\boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$ 与 $\boldsymbol x' = \begin{bmatrix} x_1' & x_2' & \cdots & x_n' \\ \end{bmatrix}$，则 $\boldsymbol x = \boldsymbol M \boldsymbol x'$
-        1. 过渡矩阵：设 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 与 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 是 $n$ 维线性空间 $V$ 的两组基，若 $\begin{bmatrix} \boldsymbol \eta_1 & \boldsymbol \eta_2 & \cdots & \boldsymbol \eta_n \\ \end{bmatrix} = \begin{bmatrix} \boldsymbol \varepsilon_1 & \boldsymbol \varepsilon_2 & \cdots & \boldsymbol \varepsilon_n \\ \end{bmatrix} \boldsymbol M$，则称 $n$ 阶方阵 $\boldsymbol M$ 为从基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 到基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 的过渡矩阵
-        2. 过渡矩阵是可逆的
 2. 子空间：设 $V$ 是 $F$ 上的线性空间，$W$ 是 $V$ 的一个非空子集．如果 $W$ 是 $V$ 的子结构，则称 $W$ 为 $V$ 的一个线性子空间
     1. 设 $V$ 是 $F$ 上的线性空间，$W$ 是 $V$ 的一个非空子集，若满足条件
         1. 如果 $\boldsymbol \alpha, \boldsymbol \beta \in W$，则 $\boldsymbol \alpha + \boldsymbol \beta \in W$
@@ -112,8 +77,56 @@
     1. $||\boldsymbol \alpha|| = 0$ 当且仅当 $\boldsymbol \alpha = \boldsymbol 0$
     2. 单位向量：模为 $1$ 的向量，若 $\boldsymbol \alpha \neq 0$，则 $\dfrac{\boldsymbol \alpha}{||\boldsymbol \alpha||}$ 为单位向量，这被称为向量的单位化或标准化
 
-<!--
-定理 4.4.2 引入向量内积的定义：设 $\boldsymbol \alpha = (a_1, a_2, \cdots, a_n)$ 与 $\boldsymbol \beta = (b_1, b_2, \cdots, b_n)$ 为两个向量．其对应元素乘积之和 ${\displaystyle \sum_{i=1}^n} a_i b_i$ 称为 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的内积，记作 $\boldsymbol \alpha \cdot \boldsymbol \beta$
--->
-
 ## 1.2 线性变换
+
+## 1.3 向量代数
+### 1.3.1 向量与坐标系
+1. 坐标：设向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 是 $n$ 维线性空间的一组基，$\boldsymbol \alpha$ 是 $V$ 中的任一向量，若 $\boldsymbol \alpha = x_1 \boldsymbol \varepsilon_1 + x_2 \boldsymbol \varepsilon_2 + \cdots + x_n \boldsymbol \varepsilon_n$，则称 $x_1, x_2, \cdots, x_n$ 为向量 $\boldsymbol \alpha$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的坐标
+    1. 任意向量在给定基下的坐标唯一：通常将向量写作行向量或列向量的形式，并看作是特殊的矩阵．设向量 $\boldsymbol \alpha$ 有
+
+        $$
+        \boldsymbol \alpha = x_1 \boldsymbol \varepsilon_1 + x_2 \boldsymbol \varepsilon_2 + \cdots + x_n \boldsymbol \varepsilon_n
+        $$
+
+        1. 称
+
+            $$
+            \boldsymbol \alpha = \begin{bmatrix}
+            x_1 & x_2 & \cdots & x_n \\
+            \end{bmatrix}
+            $$
+
+            为 $n$ 元行向量，相当于一个 $1 \times n$ 矩阵
+
+        2. 称
+
+            $$
+            \boldsymbol \beta = \boldsymbol \alpha^{\mathrm T} = \begin{bmatrix}
+            x_1 \\
+            x_2 \\
+            \vdots \\
+            x_n \\
+            \end{bmatrix}
+            $$
+
+            为 $n$ 元列向量，相当于一个 $n \times 1$ 矩阵
+
+        通常情况下向量均为列向量
+
+        1. 若向量的所有元素均为 $0$，则该向量称为零向量，记作 $\boldsymbol 0$
+        2. 设两个 $n$ 元向量 $\boldsymbol \alpha, \boldsymbol \beta$，若其所有对应元素相等时，称向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 相等，记作 $\boldsymbol \alpha = \boldsymbol \beta$
+
+    2. 坐标变换公式：设 $V$ 是 $n$ 维线性空间，$\boldsymbol M$ 是由基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 到基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 的过渡矩阵，$V$ 中的向量 $\alpha$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 和基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 下的坐标分别为 $\boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$ 与 $\boldsymbol x' = \begin{bmatrix} x_1' & x_2' & \cdots & x_n' \\ \end{bmatrix}$，则 $\boldsymbol x = \boldsymbol M \boldsymbol x'$
+        1. 过渡矩阵：设 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 与 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 是 $n$ 维线性空间 $V$ 的两组基，若
+
+            $$
+            \begin{bmatrix} \boldsymbol \eta_1 & \boldsymbol \eta_2 & \cdots & \boldsymbol \eta_n \\ \end{bmatrix} = \begin{bmatrix} \boldsymbol \varepsilon_1 & \boldsymbol \varepsilon_2 & \cdots & \boldsymbol \varepsilon_n \\ \end{bmatrix} \boldsymbol M
+            $$
+
+            则称 $n$ 阶方阵 $\boldsymbol M$ 为从基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 到基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 的过渡矩阵
+
+        2. 过渡矩阵是可逆的
+
+2. 点：$n$ 维 $\text{Euclid}$ 空间 $\mathbf R^n$ 中，常用 $n$ 元有序组 $(x_1, x_2, \cdots, x_n) \in \mathbf R^n$ 表示一个点 $P$，记作 $P(x_1, x_2, \cdots, x_n)$
+    1. 几何学中通常用点标记位置，其中位置是空间的基本概念，空间是所有可能位置的总体
+    2. 点

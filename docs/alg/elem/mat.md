@@ -1,7 +1,7 @@
 # 5 矩阵论
 
 ## 5.1 矩阵
-- 矩阵：由若干个数排成的 $m$ 行 $n$ 列矩形阵列
+1. 矩阵：由若干个数排成的 $m$ 行 $n$ 列矩形阵列
 
     $$
     \boldsymbol A = \begin{bmatrix}
@@ -34,6 +34,8 @@
         4. 三角阵：设 $n$ 阶方阵 $\boldsymbol A = [a_{ij}]_{n \times n}$，当 $1 \leqslant j < i \leqslant n$ 时，$a_{ij} = 0$，称 $\boldsymbol A$ 为上三角阵；当 $1 \leqslant i < j \leqslant n$ 时，$a_{ij} = 0$，称 $\boldsymbol A$ 为下三角阵．如果上（下）三角阵的对角线元素均为 $0$，则称之为严格上（下）三角阵
 
     3. 单位阵：若纯量阵的对角线元素均为 $1$，则称该方阵为单位阵 $\boldsymbol I$ 或 $\boldsymbol I_n$，其中 $n$ 表示阶数
+
+2. 子矩阵：设 $\boldsymbol A$ 为 $m \times n$ 矩阵，任取 $\boldsymbol A$ 的 $k$ 行 $l$ 列，位于这些行与列交叉处的元素按原来顺序构成的 $k \times l$ 矩阵称为 $\boldsymbol A$ 的一个子矩阵．特别地，当 $k = l$ 时，该子矩阵称为 $\boldsymbol A$ 的一个 $k$ 阶子矩阵
 
 ### 5.1.1 基本运算
 1. 设 $m \times n$ 矩阵
@@ -223,8 +225,6 @@
             $$
 
             其中 $\boldsymbol C_{ij} = {\displaystyle \sum_{k=1}^t \boldsymbol A_{ik} \boldsymbol B_{kj}}$
-
-5. 子矩阵：设 $\boldsymbol A$ 为 $m \times n$ 矩阵，任取 $\boldsymbol A$ 的 $k$ 行 $l$ 列，位于这些行与列交叉处的元素按原来顺序构成的 $k \times l$ 矩阵称为 $\boldsymbol A$ 的一个子矩阵．特别地，当 $k = l$ 时，该子矩阵称为 $\boldsymbol A$ 的一个 $k$ 阶子矩阵
 
 ### 5.1.2 初等变换
 1. 矩阵 $\boldsymbol A$ 的初等行（列）变换
