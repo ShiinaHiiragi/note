@@ -62,7 +62,7 @@
 ### 1.1.3 线性递推数列
 1. 递推数列：如果数列 $\{a_n\}$ 满足递推关系 $a_{n+k} = f(a_{n+k-1}, a_{n+k-2}, \cdots, a_n)$，则称其为 $k$ 阶递推数列
     1. 如果 $k$ 阶数列的递推公式是线性的，即 $a_{n+k} = p_1 a_{n+k-1} + p_2 a_{n+k-2} + \cdots + p_k a_n + f(n)$，其中 $n \in \mathbf Z_+, p_1, p_2, \cdots, p_k$ 是常数且 $p_k \neq 0$，则称 $\{a_n\}$ 为 $k$ 阶线性递推数列
-    2. $k$ 阶线性递推数列的递推公式 $f(n) = 0$，则称其为 $k$ 阶线性递归数列．
+    2. $k$ 阶线性递推数列的递推公式 $f(n) = 0$，则称其为 $k$ 阶线性递归数列
 2. $k$ 阶线性递归数列：设 $a_{n+k} = p_1 a_{n+k-1} + p_2 a_{n+k-2} + \cdots + p_k a_n$
     1. 特征方程：$x^k - c_1 x^{n-1} - \cdots - a_k = 0$，其 $k$ 个根 $q_1, q_2, \cdots, q_n \in \mathbf C$ 称为递推关系的特征根
     2. 通解：若特征方程有 $t$ 个互异的根，$q_1, q_2, \cdots, q_t$ 的重数分别为 $m_1, m_2, \cdots, m_t$ 且有 $k = {\displaystyle \sum_{i=1}^t} m_i$．则递推关系的同解为 $a_n = {\displaystyle \sum_{i=1}^t \left(\sum_{j=1}^{m_i} c_{ij} \cdot n^{j-1} q_i^n\right)}$，其中 $c_{ij} \ (1 \leqslant j \leqslant m_i, 1 \leqslant i \leqslant t)$ 为常数

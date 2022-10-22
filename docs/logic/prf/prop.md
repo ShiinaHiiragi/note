@@ -9,7 +9,7 @@
 2. $\text{Backus-Naur}$ 形式句法：用 $\alpha, \beta, \gamma$ 表示公式模式（可带下标），则公式集
 
     $$
-    \mathscr L\ni \alpha ::= p\mid \bot\mid (\alpha_1 \wedge \alpha_2)\mid (\alpha_1 \vee \alpha_2)\mid (\alpha_1 \to \alpha_2)
+    \mathscr L\ni \alpha := p\mid \bot\mid (\alpha_1 \wedge \alpha_2)\mid (\alpha_1 \vee \alpha_2)\mid (\alpha_1 \to \alpha_2)
     $$
 
     !!! note "缩写与简写"

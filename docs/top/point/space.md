@@ -81,7 +81,7 @@
 3. 补空间：对于基础集 $X$，记子集 $A\subseteq X$ 的补集 $A'=X-A$
     1. 设 $X$ 为一个集合，令 $\mathscr T=\{U\subseteq X\mid U'$ 是 $X$ 中的一个有限子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的有限补拓扑，称 $(X, \mathscr T)$ 为有限补空间
     2. 设 $X$ 为一个集合，令 $\mathscr T=\{U\subseteq X\mid U'$ 是 $X$ 中的一个可数子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的可数补拓扑，称 $(X, \mathscr T)$ 为可数补空间
-4. 邻域：设 $(X, \mathscr T)$ 是一个拓扑空间，$x\in X$．若 $U$ 是 $X$ 的一个子集，且存在一个开集 $V\in \mathscr T$ 使得 $x\in V\subseteq U$，则称 $U$ 是点 $x$ 的一个邻域．
+4. 邻域：设 $(X, \mathscr T)$ 是一个拓扑空间，$x\in X$．若 $U$ 是 $X$ 的一个子集，且存在一个开集 $V\in \mathscr T$ 使得 $x\in V\subseteq U$，则称 $U$ 是点 $x$ 的一个邻域
     1. 若 $U$ 是包含点 $x$ 的一个开集，那么 $U$ 必定是 $x$ 的一个邻域，称 $U$ 是点 $x$ 的一个开邻域．称点 $x$ 所有邻域构成的 $X$ 的子集族为点 $x$ 的邻域系
     2. 拓扑空间 $X$ 的一个子集 $U$ 是开集 $\leftrightarrow \forall x\in U: U$ 是 $x$ 的一个邻域
     3. 设 $X$ 是一个拓扑空间，记 $\mathscr U_x$ 为点 $x\in X$ 的邻域系

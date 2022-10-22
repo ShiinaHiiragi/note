@@ -10,17 +10,17 @@
 
 @font-face {
   font-family: "Noto Sans SC";
-  src: url("NotoSansSC-Regular.otf");
+  src: "NotoSansSC-Regular.otf";
 }
 
 @font-face {
   font-family: "Noto Serif SC";
-  src: url("NotoSerifSC-Regular.otf");
+  src: "NotoSerifSC-Regular.otf";
 }
 
 @font-face {
   font-family: "Noto Sans";
-  src: url("NotoSans-Regular.ttf");
+  src: "NotoSans-Regular.ttf";
 }
 
 /* General Title */
