@@ -2,7 +2,7 @@
 
 ## 1.1 线性空间
 
-- 设 $\mathrm{VF}-$结构 $\mathfrak V = (V, +^\mathfrak V, 0^\mathfrak V, \{\sigma^\mathfrak V \mid \sigma \in F\})$ 为一个线性空间
+- 设 $\mathrm{VF}-$结构 $\mathfrak V = (V, +^\mathfrak V, 0^\mathfrak V, \{\sigma^\mathfrak V \mid \sigma \in F\})$ 为一个线性空间，也称 $V$ 是一个线性空间
     1. 向量：通常将 $V$ 中的元素称为向量，将常元 $0^\mathfrak V$ 称为零向量，记作 $\boldsymbol 0$
     2. 二元函数符 $+^\mathfrak V$ 定义了向量的加法
     3. 一元函数符集合 $\{\sigma^\mathfrak V \mid \sigma \in F\}$ 定义了向量的数乘，通常将 $\sigma^\mathfrak V(\boldsymbol \alpha)$ 简记为 $\sigma \boldsymbol \alpha$，其中 $\boldsymbol \alpha \in V$
@@ -133,6 +133,52 @@
 
         2. 过渡矩阵是可逆的
 
-3. 仿射空间
+3. 线性空间的同构
+    1. $\mathbf R^n$ 是 $\mathbf R$ 上的线性空间：设 $(x_1, x_2, \cdots, x_n), (y_1, y_2, \cdots, y_n) \in \mathbf R^n$，定义 $\mathbf R^n$ 上的加法运算与 $\mathbf R$ 上的数乘运算
+
+        $$
+        \begin{aligned}
+        (x_1, x_2, \cdots, x_n) + (y_1, y_2, \cdots, y_n) &= (x_1 + y_1, x_2 + y_2, \cdots, x_n + y_n) \\
+        k(x_1, x_2, \cdots, x_n) &= (kx_1, kx_2, \cdots, kx_n)
+        \end{aligned}
+        $$
+
+        并定义 $\boldsymbol 0 = (0, 0, \cdots, 0)$，则 $\mathbf R^n$ 构成一个线性空间
+
+    2. 任意 $n$ 维线性空间 $V$ 同构于线性空间 $\mathbf R^n$：线性空间 $R^n$ 中的 $n$ 个向量
+
+        $$
+        \begin{aligned}
+        \boldsymbol \varepsilon_1 & = (1, 0, \cdots, 0) \\
+        \boldsymbol \varepsilon_2 & = (0, 1, \cdots, 0) \\
+        \cdots \\
+        \boldsymbol \varepsilon_n & = (0, 0, \cdots, 1)
+        \end{aligned}
+        $$
+
+        称为空间 $\mathbf R^n$ 的标准基．设线性空间 $V$ 中向量 $\boldsymbol \alpha$ 在基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 下的坐标为 $x_1, x_2, \cdots, x_n$，即 $\boldsymbol \alpha = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$．构造同构映射 $\varphi: V \to \mathbf R^n$ 为 $\varphi(\boldsymbol \alpha) = (x_1, x_2, \cdots, x_n)$ 将线性空间 $V$ 中的一组基变为空间 $\mathbf R^n$ 中的给定基
+
+4. 仿射空间：设 $\mathscr A$ 是一个集合，对于 $\mathscr A$ 给出线性空间 $V$ 与映射 $v: \mathscr A \times \mathscr A \to V$，使得
+    1. 对任意 $A \in \mathscr A$ 与向量 $\boldsymbol \alpha \in V$，存在唯一的点 $B \in \mathscr A$ 使得 $v(A, B) = \boldsymbol \alpha$
+    2. 对任意三点 $A, B, C \in \mathscr A$ 有 $v(A, B) + v(B, C) = v(A, C)$
+
+    则称 $\mathscr A$ 为与线性空间 $V$ 相联系的仿射空间，并记 $v(A, B) = \overrightarrow{AB} \ (A, B \in \mathscr A)$
+
+    1. 维度：$\mathscr A$ 的维度为与之相联系的线性空间 $V$ 的维度，记作 $\operatorname{dim} {\mathscr A} = \operatorname{dim} V$
+    2. 任何线性空间都是一个仿射空间：设 $V$ 是一个线性空间，定义 $\overrightarrow{\boldsymbol \alpha \boldsymbol \beta} = \boldsymbol \beta - \boldsymbol \alpha$，则 $V$ 是一个仿射空间
+    3. 仿射几何公理的完备性：任何维数相同的仿射空间都是同构的
+        1. 任何仿射空间 $\mathscr A$ 同构于相联系的被看作为仿射空间的线性空间 $V$：任选 $O \in \mathscr A$，对于任意 $A \in \mathscr A$，构造径向量 $\psi_O(A) = \overrightarrow{OA}$
+        2. 任何一个被看作仿射空间的 $n$ 维线性空间同构于仿射空间 $\mathbf R^n$
+
+        !!! note "仿射空间的同构"
+            设 $\mathscr A, \mathscr B$ 是两个仿射空间，且相联系的线性空间 $V, W$ 存在同构映射 $\varphi: V \to W$．若存在一个双射 $\psi: \mathscr A \to \mathscr B$ 使得对于任意 $A, B \in \mathscr A$，均有 $\overrightarrow{\psi(A) \psi(B)} = \varphi(\overrightarrow{AB})$，则称 $\mathscr A$ 与 $\mathscr B$ 同构
+
+    4. 仿射坐标系：设 $\mathscr A$ 为仿射空间，$V$ 为与之联系的线性空间，称 $\mathscr A$ 中一点 $O$ 与基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 组成的集合称为 $\mathscr A$ 中的仿射坐标系，记作 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$．每个仿射坐标系 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
+
+        !!! note "仿射空间 $\mathbf R^n$"
+            集合 $\mathbf R^n$ 是一个与线性空间 $\mathbf R^n$ 相联系的仿射空间．设 $A = (a_1, a_2, \cdots, a_n), B = (b_1, b_2, \cdots, b_n)$，定义 $\overrightarrow{AB} = (b_1 - a_1, b_2 - a_2, \cdots, b_n - a_n)$．
+
+            1. 当 $O = (0, 0, \cdots, 0)$ 时，仿射空间 $\mathbf R^n$ 中一点 $A = (a_1, a_2, \cdots, a_n)$ 的坐标同构 $\psi(A) = (a_1, a_2, \cdots, a_n)$
+            2. 仿射空间 $\mathbf R^n$ 相联系的向量空间 $\mathbf R^n$ 中向量 $\boldsymbol \alpha = (x_1, x_2, \cdots, x_n)$，则其坐标为 $\begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}$．通常将 $\alpha$ 与其坐标等同
 
 ### 1.3.2 向量代数
