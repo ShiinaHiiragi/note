@@ -1,31 +1,7 @@
 # 5 矩阵论
 
 ## 5.1 矩阵
-1. 向量： $n$ 元向量可写作一行或一列，并将其视作特殊的矩阵，通常指 $n$ 元列向量
-    1. 称
-
-        $$
-        \boldsymbol \alpha = \begin{bmatrix}
-        a_1 & a_2 & \cdots & a_n \\
-        \end{bmatrix}
-        $$
-
-        为 $n$ 元行向量，相当于一个 $1 \times n$ 矩阵
-
-    2. 称
-
-        $$
-        \boldsymbol \beta = \boldsymbol \alpha^{\mathrm T} = \begin{bmatrix}
-        a_1 \\
-        a_2 \\
-        \vdots \\
-        a_n \\
-        \end{bmatrix}
-        $$
-
-        为 $n$ 元列向量，相当于一个 $n \times 1$ 矩阵
-
-2. 矩阵：由若干个数排成的 $m$ 行 $n$ 列矩形阵列
+- 矩阵：由若干个数排成的 $m$ 行 $n$ 列矩形阵列
 
     $$
     \boldsymbol A = \begin{bmatrix}

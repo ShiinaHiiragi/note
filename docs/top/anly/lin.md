@@ -4,6 +4,33 @@
     1. 零向量：若向量的所有元素均为 $0$，则该向量称为零向量，记作 $\boldsymbol 0$
     2. 设两个 $n$ 元向量 $\boldsymbol \alpha, \boldsymbol \beta$，若其所有对应元素相等时，称向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 相等，记作 $\boldsymbol \alpha = \boldsymbol \beta$
 
+- 向量： $n$ 元向量可写作一行或一列，并将其视作特殊的矩阵，通常指 $n$ 元列向量
+    1. 称
+
+        $$
+        \boldsymbol \alpha = \begin{bmatrix}
+        a_1 & a_2 & \cdots & a_n \\
+        \end{bmatrix}
+        $$
+
+        为 $n$ 元行向量，相当于一个 $1 \times n$ 矩阵
+
+    2. 称
+
+        $$
+        \boldsymbol \beta = \boldsymbol \alpha^{\mathrm T} = \begin{bmatrix}
+        a_1 \\
+        a_2 \\
+        \vdots \\
+        a_n \\
+        \end{bmatrix}
+        $$
+
+        为 $n$ 元列向量，相当于一个 $n \times 1$ 矩阵
+
+        !!! note "向量与点"
+            行向量与列向量均表示向量的坐标，暗示此时基已取定．通常情况下，在 $\text{Euclid}$ 空间 $R^n$ 中默认取定标准正交基 $\begin{bmatrix} \boldsymbol \varepsilon_1 & \boldsymbol \varepsilon_2 & \cdots & \boldsymbol \varepsilon_n \\ \end{bmatrix} = \boldsymbol I_n$，则以点 $O(0, 0, \cdots, 0)$ 为起点，以点 $A(x_1, x_2, \cdots, x_n)$ 为终点的向量 $\overrightarrow{OA} = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$
+
 ## 1.1 线性空间
 ### 1.1.1 线性相关性
 1. 线性相关：设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s \ (s \geqslant 1)$ 为一组 $n$ 元向量，若存在不全为零的系数 $k_1, k_2, \cdots, k_s$ 使得 $k_1 \boldsymbol \alpha_1 + k_2 \boldsymbol \alpha_2 + \cdots + k_s \boldsymbol \alpha_s = \boldsymbol 0$，则称向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s$ 线性相关，否则称向量组线性无关

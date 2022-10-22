@@ -244,16 +244,6 @@ const refList = [
         page: [1, 151]
     },
     {
-        author: ["フィッシュ"],
-        title: "巨大数論",
-        type: "M",
-        press: "株式会社インプレス R&D",
-        locate: "東京",
-        year: 2018,
-        page: [1, 258],
-        plot: 0
-    },
-    {
         author: ["张巍", "阚海斌", "倪卫明"],
         title: "线性代数",
         type: "M",
@@ -264,24 +254,33 @@ const refList = [
         plot: 100
     },
     {
-        author: ["吕林根", "徐子道"],
-        title: "解析几何",
+        author: ["フィッシュ"],
+        title: "巨大数論",
         type: "M",
-        press: "高等教育出版社",
-        locate: "北京",
-        year: 2006,
-        page: [1, 295],
+        press: "株式会社インプレス R&D",
+        locate: "東京",
+        year: 2018,
+        page: [1, 258],
         plot: 0
     },
     {
-        author: ["[苏]М. М. По́стников"],
-        title: "几何讲义：解析几何",
+        author: ["丘维声"],
+        title: "解析几何",
         type: "M",
-        trans: ["周友成"],
+        press: "北京大学出版社",
+        locate: "北京",
+        year: 2015,
+        page: [1, 313],
+        plot: 0
+    },
+    {
+        author: ["彭家贵", "陈卿"],
+        title: "微分几何",
+        type: "M",
         press: "高等教育出版社",
         locate: "北京",
-        year: 1992,
-        page: [1, 230],
+        year: 2002,
+        page: [1, 152],
         plot: 0
     },
     {
