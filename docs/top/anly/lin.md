@@ -64,7 +64,9 @@
     2. 设矩阵 $\boldsymbol A_{m \times n}$ 的秩为 $r$，则矩阵 $\boldsymbol A$ 的列空间的维数 $\operatorname{dim} \mathbf C(\boldsymbol A) = r$；零空间的维数 $\operatorname{dim} \mathbf N(\boldsymbol A) = n - r$
 3. 补空间：设 $W_1$ 与 $W_2$ 是线性空间 $V$ 的两个子空间，如果 $W_1 \cap W_2 = \{\boldsymbol 0\}, W_1 + W_2 = V$，则称 $W_2$ 是 $W_1$ 关于线性空间 $V$ 的补空间
     1. 补空间存在性定理：设 $W_1$ 是 $n$ 维线性空间 $V$ 的子空间，则存在 $W_1$ 关于线性空间 $V$ 的补空间
-    2. 正交补空间
+    2. 正交补空间：设 $W_1, W_2$ 是内积空间 $V$ 的两个子空间，如果 $W_1 \bot W_2$ 且 $W_1 + W_2 = V$，则称 $W_2$ 是 $W_1$ 的正交补空间，记作 $W_2 = W_1^\bot$
+        1. $W_2 = W_1^\bot \to W_1 = W_2^\bot$
+        2. $\mathbf C(\boldsymbol A)^\bot = \mathbf N(\mathbf A^{\mathrm T})$
 
 ### 1.1.3 内积空间
 1. 内积空间：设 $V$ 是实数域 $\mathbf R$ 上一个线性空间，如果二元运算 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>$ 满足以下条件
@@ -81,18 +83,34 @@
 2. 设 $\boldsymbol \alpha$ 是内积空间 $V$ 的中的一个向量，则 $\sqrt{\left<\boldsymbol \alpha, \boldsymbol \alpha\right>}$ 称为向量 $\boldsymbol \alpha$ 的模或者范数，记为 $|\boldsymbol \alpha|$
     1. $|\boldsymbol \alpha| = 0$ 当且仅当 $\boldsymbol \alpha = \boldsymbol 0$
     2. 单位向量：模为 $1$ 的向量，若 $\boldsymbol \alpha \neq 0$，则 $\dfrac{\boldsymbol \alpha}{|\boldsymbol \alpha|}$ 为单位向量，这被称为向量的单位化或标准化
-3. 正交：设 $V$ 是一个内积空间，$\boldsymbol \alpha, \boldsymbol \beta \in V$．若 $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = 0$，则称 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 正交，记为 $\boldsymbol \alpha \bot \boldsymbol \beta$
-    1. 在 $n$ 维内积空间 $V$ 中，两两正交的一组非零向量称为正交向量组，两两正交的一组单位向量称为标准正交向量组；由 $n$ 个两两正交的非零向量构成的一组基称为正交基，由单位向量构成的正交基称为标准正交基
+3. 正交：设 $V$ 是一个内积空间且 $\boldsymbol \alpha \in V$
+    1. 正交的概念
+        1. 设 $\boldsymbol \beta \in V$，若 $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = 0$，则称 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 正交，记为 $\boldsymbol \alpha \bot \boldsymbol \beta$
+        2. 设 $W$ 是 $V$ 的子空间，若对于任意 $\boldsymbol \beta \in W$ 都有 $\boldsymbol \alpha \bot \boldsymbol \beta$，则称向量 $\boldsymbol \alpha$ 与子空间 $W$ 正交，记作 $\boldsymbol \alpha \bot W$
+        3. 设 $W_1, W_2$ 是 $V$ 的子空间，若对于任意 $\boldsymbol \beta \in W_1, \boldsymbol \gamma \in W_2$ 都有 $\boldsymbol \beta \bot \boldsymbol \gamma$，则称 $W_1$ 与 $W_2$ 正交，记作 $W_1 \bot W_2$
+    2. 在 $n$ 维内积空间 $V$ 中，两两正交的一组非零向量称为正交向量组，两两正交的一组单位向量称为标准正交向量组；由 $n$ 个两两正交的非零向量构成的一组基称为正交基，由单位向量构成的正交基称为标准正交基
         1. 设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_l \ (l \leqslant n)$ 是 $n$ 维内积空间 $V$ 中的一个正交向量组，则 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_l$ 线性无关
         2. 设 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 是 $n$ 维内积空间 $V$ 的一个标准正交基，$\boldsymbol \alpha, \boldsymbol \beta \in V$ 且 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 在该标准正交基下的坐标向量分别为 $\boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$ 与 $\boldsymbol y = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$，则 $\alpha$ 与 $\beta$ 的内积 $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = \boldsymbol x^{\mathrm T} \boldsymbol y$
-    2. 给定向量 $\beta$ 与 $\mathbf R^n$ 中子空间 $W$，存在唯一向量 $\widehat{\boldsymbol \beta} \in W$ 使得 $\boldsymbol \beta - \widehat{\boldsymbol \beta}$ 与 $W$ 中所有向量正交，称 $\widehat{\boldsymbol \beta}$ 为 $\boldsymbol \beta$ 在子空间 $W$ 中的正交投影
+    3. 给定向量 $\beta$ 与 $\mathbf R^n$ 中子空间 $W$，存在唯一向量 $\widehat{\boldsymbol \beta} \in W$ 使得 $\boldsymbol \beta - \widehat{\boldsymbol \beta}$ 与 $W$ 正交，称 $\widehat{\boldsymbol \beta}$ 为 $\boldsymbol \beta$ 在子空间 $W$ 中的正交投影
 
         !!! note "最小二乘解"
             设 $\boldsymbol A = \begin{bmatrix} \boldsymbol \alpha_1 & \boldsymbol \alpha_2 & \cdots & \boldsymbol \alpha_l \\ \end{bmatrix}$，其中向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_l$ 线性无关，$\boldsymbol \alpha_i \in \mathbf R^n \ (1 \leqslant i \leqslant l)$．现有向量 $\boldsymbol \beta \in \mathbf R^n$，则 $\beta$ 在子空间 $\mathbf C(\boldsymbol A)$ 中的正交投影为 $\boldsymbol{Ax} = \boldsymbol A (\boldsymbol A^{\mathrm T} \boldsymbol A)^{-1} \boldsymbol A^{\mathrm T} \boldsymbol \beta$
 
-    3. $\text{Schmidt}$ 正交化
+    4. $\text{Schmidt}$ 正交化：将 $n$ 维向量空间 $V$ 的任意一组基 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n$ 化为标准正交基 $\boldsymbol \gamma_1, \boldsymbol \gamma_2, \cdots, \boldsymbol \gamma_n$，其中
+
+        $$
+        \boldsymbol \gamma_i = \left\{\begin{aligned}
+        & \dfrac{\boldsymbol \alpha_i - \boldsymbol \gamma_1 \boldsymbol \gamma_1^{\mathrm T} \boldsymbol \alpha_i - \boldsymbol \gamma_2 \boldsymbol \gamma_2^{\mathrm T} \boldsymbol \alpha_i - \cdots - \boldsymbol \gamma_{i-1} \boldsymbol \gamma_{i-1}^{\mathrm T} \boldsymbol \alpha_i}{\left|\boldsymbol \alpha_i - \boldsymbol \gamma_1 \boldsymbol \gamma_1^{\mathrm T} \boldsymbol \alpha_i - \boldsymbol \gamma_2 \boldsymbol \gamma_2^{\mathrm T} \boldsymbol \alpha_i - \cdots - \boldsymbol \gamma_{i-1} \boldsymbol \gamma_{i-1}^{\mathrm T} \boldsymbol \alpha_i\right|}, & i > 1 \\
+        & \dfrac{\boldsymbol \alpha_1}{|\boldsymbol \alpha_1|}, & 1 = 1
+        \end{aligned}\right.
+        $$
 
 ## 1.2 线性变换
+1. 线性映射：若映射 $T: V \to W$ 是从线性空间 $V$ 到线性空间 $W$ 的同态，则称 $T$ 为线性映射；若映射 $T: V \to V$ 是线性空间 $V$ 上的自同态，则称 $T$ 为线性变换．记
+
+### 1.2.1 正交变换
+
+### 1.2.2 仿射变换
 
 ## 1.3 仿射几何
 ### 1.3.1 仿射空间
@@ -177,11 +195,12 @@
     1. 维度：$\mathscr A$ 的维度为与之相联系的线性空间 $V$ 的维度，记作 $\operatorname{dim} {\mathscr A} = \operatorname{dim} V$
     2. 任何线性空间都是一个仿射空间：设 $V$ 是一个线性空间，定义 $\overrightarrow{\boldsymbol \alpha \boldsymbol \beta} = \boldsymbol \beta - \boldsymbol \alpha$，则 $V$ 是一个仿射空间
     3. 仿射几何公理的完备性：任何维数相同的仿射空间都是同构的
-        1. 任何仿射空间 $\mathscr A$ 同构于相联系的被看作为仿射空间的线性空间 $V$：任选 $O \in \mathscr A$，对于任意 $A \in \mathscr A$，构造径向量 $\psi_O(A) = \overrightarrow{OA}$
-        2. 任何一个被看作仿射空间的 $n$ 维线性空间同构于仿射空间 $\mathbf R^n$
 
         !!! note "仿射空间的同构"
             设 $\mathscr A, \mathscr B$ 是两个仿射空间，且相联系的线性空间 $V, W$ 存在同构映射 $\varphi: V \to W$．若存在一个双射 $\psi: \mathscr A \to \mathscr B$ 使得对于任意 $A, B \in \mathscr A$，均有 $\overrightarrow{\psi(A) \psi(B)} = \varphi(\overrightarrow{AB})$，则称 $\mathscr A$ 与 $\mathscr B$ 同构
+
+        1. 任何仿射空间 $\mathscr A$ 同构于相联系的被看作为仿射空间的线性空间 $V$：任选 $O \in \mathscr A$，对于任意 $A \in \mathscr A$，构造径向量 $\psi_O(A) = \overrightarrow{OA}$
+        2. 任何一个被看作仿射空间的 $n$ 维线性空间同构于仿射空间 $\mathbf R^n$
 
     4. 仿射坐标系：设 $\mathscr A$ 为仿射空间，$V$ 为与之联系的线性空间，称 $\mathscr A$ 中一点 $O$ 与基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 组成的集合称为 $\mathscr A$ 中的仿射坐标系，记作 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$
         1. 每个仿射坐标系 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构

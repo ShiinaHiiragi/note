@@ -41,9 +41,9 @@
 
         $$
         \dbinom{\alpha}{k} = \left\{\begin{aligned}
-        & 0, & k < 0 \\
+        & \dfrac{\alpha (\alpha-1) \cdots (\alpha-k+1)}{k!}, & k > 0 \\
         & 1, & k = 0 \\
-        & \dfrac{\alpha (\alpha-1) \cdots (\alpha-k+1)}{k!}, & k > 0
+        & 0, & k < 0
         \end{aligned}\right.
         $$
 
