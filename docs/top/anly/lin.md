@@ -78,9 +78,19 @@
     1. ${\displaystyle \left<\sum_{i=1}^n k_i \boldsymbol \alpha_i, \sum_{j=1}^m l_j \boldsymbol \beta_j\right> = \sum_{i=1}^n \sum_{j=1}^m k_i l_j \left<\boldsymbol \alpha_i, \boldsymbol \beta_j\right>}$
     2. $\text{Cauchy} - \text{Schwarz}$ 不等式：设 $\boldsymbol \alpha, \boldsymbol \beta$ 是内积空间 $V$ 上的向量，则恒有 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>^2 \leqslant \left<\boldsymbol \alpha, \boldsymbol \alpha\right> \left<\boldsymbol \beta, \boldsymbol \beta\right>$
 
-2. 设 $\boldsymbol \alpha$ 是内积空间 $V$ 的中的一个向量，则 $\sqrt{\left<\boldsymbol \alpha, \boldsymbol \alpha\right>}$ 称为向量 $\boldsymbol \alpha$ 的模或者范数，记为 $||\boldsymbol \alpha||$
-    1. $||\boldsymbol \alpha|| = 0$ 当且仅当 $\boldsymbol \alpha = \boldsymbol 0$
-    2. 单位向量：模为 $1$ 的向量，若 $\boldsymbol \alpha \neq 0$，则 $\dfrac{\boldsymbol \alpha}{||\boldsymbol \alpha||}$ 为单位向量，这被称为向量的单位化或标准化
+2. 设 $\boldsymbol \alpha$ 是内积空间 $V$ 的中的一个向量，则 $\sqrt{\left<\boldsymbol \alpha, \boldsymbol \alpha\right>}$ 称为向量 $\boldsymbol \alpha$ 的模或者范数，记为 $|\boldsymbol \alpha|$
+    1. $|\boldsymbol \alpha| = 0$ 当且仅当 $\boldsymbol \alpha = \boldsymbol 0$
+    2. 单位向量：模为 $1$ 的向量，若 $\boldsymbol \alpha \neq 0$，则 $\dfrac{\boldsymbol \alpha}{|\boldsymbol \alpha|}$ 为单位向量，这被称为向量的单位化或标准化
+3. 正交：设 $V$ 是一个内积空间，$\boldsymbol \alpha, \boldsymbol \beta \in V$．若 $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = 0$，则称 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 正交，记为 $\boldsymbol \alpha \bot \boldsymbol \beta$
+    1. 在 $n$ 维内积空间 $V$ 中，两两正交的一组非零向量称为正交向量组，两两正交的一组单位向量称为标准正交向量组；由 $n$ 个两两正交的非零向量构成的一组基称为正交基，由单位向量构成的正交基称为标准正交基
+        1. 设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_l \ (l \leqslant n)$ 是 $n$ 维内积空间 $V$ 中的一个正交向量组，则 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_l$ 线性无关
+        2. 设 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 是 $n$ 维内积空间 $V$ 的一个标准正交基，$\boldsymbol \alpha, \boldsymbol \beta \in V$ 且 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 在该标准正交基下的坐标向量分别为 $\boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$ 与 $\boldsymbol y = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$，则 $\alpha$ 与 $\beta$ 的内积 $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = \boldsymbol x^{\mathrm T} \boldsymbol y$
+    2. 给定向量 $\beta$ 与 $\mathbf R^n$ 中子空间 $W$，存在唯一向量 $\widehat{\boldsymbol \beta} \in W$ 使得 $\boldsymbol \beta - \widehat{\boldsymbol \beta}$ 与 $W$ 中所有向量正交，称 $\widehat{\boldsymbol \beta}$ 为 $\boldsymbol \beta$ 在子空间 $W$ 中的正交投影
+
+        !!! note "最小二乘解"
+            设 $\boldsymbol A = \begin{bmatrix} \boldsymbol \alpha_1 & \boldsymbol \alpha_2 & \cdots & \boldsymbol \alpha_l \\ \end{bmatrix}$，其中向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_l$ 线性无关，$\boldsymbol \alpha_i \in \mathbf R^n \ (1 \leqslant i \leqslant l)$．现有向量 $\boldsymbol \beta \in \mathbf R^n$，则 $\beta$ 在子空间 $\mathbf C(\boldsymbol A)$ 中的正交投影为 $\boldsymbol{Ax} = \boldsymbol A (\boldsymbol A^{\mathrm T} \boldsymbol A)^{-1} \boldsymbol A^{\mathrm T} \boldsymbol \beta$
+
+    3. $\text{Schmidt}$ 正交化
 
 ## 1.2 线性变换
 
@@ -178,3 +188,10 @@
         2. 当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
 
 ### 1.3.2 向量代数
+1. $\text{Euclid}$ 空间 $\mathbf R^n$ 是一个与线性空间 $\mathbf R^n$ 相联系的仿射空间．设 $A = (a_1, a_2, \cdots, a_n), B = (b_1, b_2, \cdots, b_n)$，定义 $\overrightarrow{AB} = (b_1 - a_1, b_2 - a_2, \cdots, b_n - a_n)$．取 $O = (0, 0, \cdots, 0)$，基为标准基
+    1. 仿射空间 $\mathbf R^n$ 中一点 $A = (a_1, a_2, \cdots, a_n)$ 的坐标同构为 $A(a_1, a_2, \cdots, a_n)$
+    2. 仿射空间 $\mathbf R^n$ 相联系的线性空间 $\mathbf R^n$ 中向量 $\boldsymbol \alpha = (x_1, x_2, \cdots, x_n)$ 的坐标为 $\begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$
+
+    通常将向量 $\alpha$ 与其坐标等同
+
+2. 向量的内积

@@ -264,6 +264,16 @@ const refList = [
         plot: 0
     },
     {
+        author: ["[苏]М. М. По́стников"],
+        title: "几何讲义：解析几何",
+        type: "M",
+        trans: ["周友成"],
+        press: "高等教育出版社",
+        locate: "北京",
+        year: 1992,
+        page: [1, 44]
+    },
+    {
         author: ["丘维声"],
         title: "解析几何",
         type: "M",

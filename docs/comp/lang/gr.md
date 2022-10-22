@@ -90,30 +90,30 @@
 
     通常用矩阵或转移图表示
 
-    1. 对于有穷自动机 $M = (Q, \Sigma, \delta, q_0, F)$，其扩充转移函数 $\hat \delta: Q \times \Sigma^* \to Q$ 定义为
+    1. 对于有穷自动机 $M = (Q, \Sigma, \delta, q_0, F)$，其扩充转移函数 $\widehat \delta: Q \times \Sigma^* \to Q$ 定义为
 
         $$
         \begin{aligned}
-        & \hat \delta(q, \varepsilon) = q \\
-        & \hat \delta(q, wa) = \delta(\hat \delta(q, w), a)
+        & \widehat \delta(q, \varepsilon) = q \\
+        & \widehat \delta(q, wa) = \delta(\widehat \delta(q, w), a)
         \end{aligned}
         $$
 
-        在不引发歧义的情况下，可以用 $\delta$ 表示 $\hat \delta$
+        在不引发歧义的情况下，可以用 $\delta$ 表示 $\widehat \delta$
 
     2. 给定有穷自动机 $M = (Q, \Sigma, \delta, q_0, F)$，若 $\delta(q_0, x) \in F \ (x \in \Sigma^*)$，则称字符串 $x$ 被 $M$ 接受．被 $M$ 而接受的全部字符串构成的集合称为被有穷自动机 $M$ 接受的语言，记作 $L(M)$
 
 2. 一个非确定的有穷自动机（$\text{NFA}$）是一个五元组 $M = (Q, \Sigma, \delta, q_0, F)$，除转移函数 $\delta: Q \times \Sigma \to \mathcal P(Q)$ 外，其他定义与有穷自动机相同
-    1. 对于非确定的有穷自动机 $M = (Q, \Sigma, \delta, q_0, F)$，其扩充转移函数 $\hat \delta: Q \times \Sigma^* \to \mathcal P(Q)$ 定义为
+    1. 对于非确定的有穷自动机 $M = (Q, \Sigma, \delta, q_0, F)$，其扩充转移函数 $\widehat \delta: Q \times \Sigma^* \to \mathcal P(Q)$ 定义为
 
         $$
         \begin{aligned}
-        & \hat \delta(q, \varepsilon) = \{q\} \\
-        & \hat \delta(q, wa) = \{p \mid p \in \delta(r, a), r \in \hat \delta(q, w)\}
+        & \widehat \delta(q, \varepsilon) = \{q\} \\
+        & \widehat \delta(q, wa) = \{p \mid p \in \delta(r, a), r \in \widehat \delta(q, w)\}
         \end{aligned}
         $$
 
-        在此基础上继续扩充为 $\hat \delta: \mathcal P(Q) \times \Sigma^* \to \mathcal P(Q)$，定义 $\hat \delta(\{p_1, p_2, \cdots, p_n\}, w) = {\displaystyle \bigcup_{i=1}^n \hat \delta(p_i, w)}$，其中 $p_i \in Q \ (i = 1, 2, \cdots, k, k \geqslant 1), w \in \Sigma^*$
+        在此基础上继续扩充为 $\widehat \delta: \mathcal P(Q) \times \Sigma^* \to \mathcal P(Q)$，定义 $\widehat \delta(\{p_1, p_2, \cdots, p_n\}, w) = {\displaystyle \bigcup_{i=1}^n \widehat \delta(p_i, w)}$，其中 $p_i \in Q \ (i = 1, 2, \cdots, k, k \geqslant 1), w \in \Sigma^*$
 
     2. 给定非确定的有穷自动机 $M = (Q, \Sigma, \delta, q_0, F)$，若 $\delta(q_0, x) \cap F \neq \varnothing$，则称字符串 $x$ 被 $M$ 接受．被 $M$ 而接受的全部字符串构成的集合称为被有穷自动机 $M$ 接受的语言，记作 $L(M)$
 
@@ -128,8 +128,8 @@
 
         $$
         \begin{aligned}
-        & \hat \delta(q, \varepsilon) = \overline q \\
-        & \hat \delta(q, wa) = \overline{\bigcup_{r \in \hat \delta(q, w)} \delta(r, a)}
+        & \widehat \delta(q, \varepsilon) = \overline q \\
+        & \widehat \delta(q, wa) = \overline{\bigcup_{r \in \widehat \delta(q, w)} \delta(r, a)}
         \end{aligned}
         $$
 
