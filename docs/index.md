@@ -273,13 +273,13 @@ const refList = [
         page: [1, 44]
     },
     {
-        author: ["丘维声"],
+        author: ["吕林根", "徐子道"],
         title: "解析几何",
         type: "M",
-        press: "北京大学出版社",
+        press: "高等教育出版社",
         locate: "北京",
-        year: 2015,
-        page: [1, 313],
+        year: 2006,
+        page: [1, 295],
         plot: 0
     },
     {
