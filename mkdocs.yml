@@ -141,7 +141,7 @@ nav:
   - 分析学:
     - 一、分析学原理:
       - 1 序列与级数: anly/princ/seq.md
-  - 计算理论:
+  - 语言学:
     - 一、形式语言:
       - 1 形式文法理论: comp/lang/gr.md
       - 4 形式语用学: comp/lang/pragma.md
