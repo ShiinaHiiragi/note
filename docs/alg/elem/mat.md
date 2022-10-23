@@ -426,6 +426,89 @@
         4. 将 $\boldsymbol A$ 按列分块 $\boldsymbol A = \begin{bmatrix} \boldsymbol \alpha_1 & \boldsymbol \alpha_2 & \cdots & \boldsymbol \alpha_n \\ \end{bmatrix}$ 有 $\boldsymbol \alpha_i^{\mathrm T} \boldsymbol \alpha_j = \delta_{ij} \ (1 \leqslant i, j \leqslant n)$
         5. 将 $\boldsymbol A$ 按行分块 $\boldsymbol A = \begin{bmatrix} \boldsymbol \beta_1 & \boldsymbol \beta_2 & \cdots & \boldsymbol \beta_n \\ \end{bmatrix}^{\mathrm T}$ 有 $\boldsymbol \beta_i \boldsymbol \beta_j^{\mathrm T} = \delta_{ij} \ (1 \leqslant i, j \leqslant n)$
     2. 正交阵对积与逆运算（即转置）封闭
+3. 正定矩阵与半正定矩阵：设 $\boldsymbol A$ 为 $n$ 阶实对称矩阵，若对于任意 $n$ 元非零向量 $\boldsymbol x$ 均有 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax} > 0$，则称实对称矩阵 $\boldsymbol A$ 为正定矩阵，称相应的二次型 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$ 为正定二次型；若对于任意 $n$ 元非零向量 $\boldsymbol x$ 均有 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax} \geqslant 0$，则称实对称矩阵 $\boldsymbol A$ 为半正定矩阵，称相应的二次型 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$ 为半正定二次型
+    1. 正定矩阵的判定
+        1. 实对称矩阵正定当且仅当其所有特征值为正；实对称矩阵半正定当且仅当其所有特征值非负
+        2. 实对称矩阵正定当且仅当其所有顺序主子式均为正；实对称矩阵所有顺序主子式非负是该矩阵半正定的必要非充分条件
+    2. 正定矩阵的性质
+        1. 正定矩阵行列式为正，半正定矩阵行列式非负
+        2. 正定矩阵主对角线上的元素为正
+        3. 正定矩阵可逆，且其逆矩阵也是正定矩阵
+
+    !!! note "负定矩阵与半负定矩阵"
+        设 $\boldsymbol A$ 为 $n$ 阶实对称矩阵，若对于任意 $n$ 元非零向量 $\boldsymbol x$ 均有 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax} < 0$，则称实对称矩阵 $\boldsymbol A$ 为负定矩阵，称相应的二次型 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$ 为负定二次型；若对于任意 $n$ 元非零向量 $\boldsymbol x$ 均有 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax} \leqslant 0$，则称实对称矩阵 $\boldsymbol A$ 为半负定矩阵，称相应的二次型 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$ 为半负定二次型
+
+        1. 实对称矩阵 $\boldsymbol A$ 负定当且仅当 $-\boldsymbol A$ 正定；实对称矩阵 $\boldsymbol A$ 半负定当且仅当 $-\boldsymbol A$ 半正定
+        2. 实对称矩阵负定当且仅当其所有特征值为负；实对称矩阵半负定当且仅当其所有特征值非正
+        3. 实对称矩阵负定当且仅当其顺序主子式的值负、正相间
+
+### 5.1.5 矩阵分解
+1. $\text{LU}$ 分解：设矩阵 $\boldsymbol A_{m \times n}$ 可以只经初等行变换化为阶梯型（不包括行对换），则矩阵 $\boldsymbol A$ 可分解为 $\boldsymbol A = \boldsymbol{LU}$，其中 $\boldsymbol L$ 是主对角线元素全是 $1$ 的 $m$ 阶下三角矩阵，$\boldsymbol U$ 是一个 $m \times n$ 阶梯型矩阵
+2. $\text{QR}$ 分解：记
+
+    $$
+    \begin{aligned}
+    \boldsymbol A & = \begin{bmatrix} \boldsymbol \alpha_1 & \boldsymbol \alpha_2 & \cdots & \boldsymbol \alpha_n \\ \end{bmatrix} \\
+    \boldsymbol Q & = \begin{bmatrix} \boldsymbol \gamma_1 & \boldsymbol \gamma_2 & \cdots & \boldsymbol \gamma_n \\ \end{bmatrix} \\
+    \boldsymbol R & = \begin{bmatrix}
+    \boldsymbol \gamma_1^{\mathrm T} \boldsymbol \alpha_1 & \boldsymbol \gamma_1^{\mathrm T} \boldsymbol \alpha_2 & \cdots & \boldsymbol \gamma_1^{\mathrm T} \boldsymbol \alpha_n \\
+    \boldsymbol 0 & \boldsymbol \gamma_2^{\mathrm T} \boldsymbol \alpha_2 & \cdots & \boldsymbol \gamma_2^{\mathrm T} \boldsymbol \alpha_n \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \boldsymbol 0 & \boldsymbol 0 & \cdots & \boldsymbol \gamma_n^{\mathrm T} \boldsymbol \alpha_n \\
+    \end{bmatrix}
+    \end{aligned}
+    $$
+
+    其中 $\boldsymbol \gamma_1, \boldsymbol \gamma_2, \cdots, \boldsymbol \gamma_n$ 是通过 $\text{Schmidt}$ 正交化 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n$ 得到的标准正交基，$\boldsymbol A$ 是列满秩矩阵，则有 $\boldsymbol A = \boldsymbol{QR}$．特别地，当 $\boldsymbol A$ 可逆时，其可分解为正交阵与上三角阵之积
+
+3. $\text{Cholesky}$ 分解：设 $\boldsymbol A$ 为正定矩阵，则存在对角线元素均为正的上三角矩阵 $\boldsymbol R$ 使得 $\boldsymbol A = \boldsymbol R^{\mathrm T} \boldsymbol R$
+
+    !!! note "$\text{Cholesky}$ 分解的过程"
+        1. 由于 $\boldsymbol A$ 为 $n$ 阶正定矩阵，因此存在正交阵 $\boldsymbol P$ 使得 $\boldsymbol A = \boldsymbol{P \Lambda P}^{\mathrm T}$，其中对角阵 $\boldsymbol \Lambda = \mathrm{diag}(\lambda_1, \lambda_2, \cdots, \lambda_n)$ 的对角线元素均为正
+        2. 记 $\boldsymbol \Lambda^{\frac{1}{2}} = \mathrm{diag}\left(\sqrt{\lambda_1}, \sqrt{\lambda_2}, \cdots, \sqrt{\lambda_n}\right)$，令 $\boldsymbol B = \boldsymbol P \boldsymbol \Lambda^{\frac{1}{2}} \boldsymbol P^T$ 为一个可逆的正定矩阵，$\boldsymbol B = \boldsymbol{QR}$．从而
+
+            $$
+            \begin{aligned}
+            \boldsymbol A & = \boldsymbol B^{\mathrm T} \boldsymbol B\\
+            & = \boldsymbol R^{\mathrm T} \boldsymbol Q^{\mathrm T} \boldsymbol Q \boldsymbol R \\
+            & = \boldsymbol R^{\mathrm T} \boldsymbol R
+            \end{aligned}
+            $$
+
+4. 谱分解：设 $\boldsymbol A$ 为 $n$ 阶实对称矩阵，存在正交阵 $\boldsymbol P$ 使得 $\boldsymbol A = \boldsymbol{P \Lambda P}^{\mathrm T}$．其中 $\boldsymbol \Lambda = \mathrm{diag}(\lambda_1, \lambda_2, \cdots, \lambda_n)$ 且有 $\boldsymbol P = \begin{bmatrix} \boldsymbol p_1 & \boldsymbol p_2 & \cdots & \boldsymbol p_n \\ \end{bmatrix}$．$\lambda_i$ 是 $\boldsymbol A$ 的特征值，正交阵 $\boldsymbol P$ 的第 $i$ 列向量 $\boldsymbol p_i$ 是 $\lambda_i$ 对应的单位特征向量，展开可得
+
+    $$
+    \begin{aligned}
+    \boldsymbol A & = \begin{bmatrix} \boldsymbol p_1 & \boldsymbol p_2 & \cdots & \boldsymbol p_n \\ \end{bmatrix}
+    \begin{bmatrix}
+    \lambda_{1} &  &  &  \\
+     & \lambda_{2} &  &  \\
+     &  & \ddots &  \\
+     &  &  & \lambda_{n} \\
+    \end{bmatrix}
+    \begin{bmatrix}
+    \boldsymbol p_1^{\mathrm T} \\
+    \boldsymbol p_2^{\mathrm T} \\
+    \vdots \\
+    \boldsymbol p_n^{\mathrm T} \\
+    \end{bmatrix} \\
+    & = \lambda_1 \boldsymbol p_1 \boldsymbol p_1^{\mathrm T} + \lambda_2 \boldsymbol p_2 \boldsymbol p_2^{\mathrm T} + \cdots + \lambda_n \boldsymbol p_n \boldsymbol p_n^{\mathrm T}
+    \end{aligned}
+    $$
+
+    从而将 $\boldsymbol A$ 分解为 $n$ 个秩为 $1$ 矩阵的线性组合
+
+5. 奇异值分解：设矩阵 $\boldsymbol A_{m \times n}$ 的秩为 $r$，则存在 $m$ 阶正交矩阵 $\boldsymbol U$ 与 $n$ 阶正交矩阵 $\boldsymbol V$ 使得 $\boldsymbol A = \boldsymbol{U \Sigma V}^{\mathrm T}$，其中 $\Sigma$ 为 $m \times n$ 分块对角矩阵
+
+    $$
+    \boldsymbol \Sigma = \begin{bmatrix}
+    \boldsymbol D & \boldsymbol 0 \\
+    \boldsymbol 0 & \boldsymbol 0 \\
+    \end{bmatrix}
+    $$
+
+    1. 伪逆：将 $\boldsymbol U, \boldsymbol V$ 分块：$\boldsymbol U = \begin{bmatrix} \boldsymbol U_{r} & \boldsymbol U_{m-r} \\ \end{bmatrix}, \boldsymbol V = \begin{bmatrix} \boldsymbol V_{r} & \boldsymbol V_{m-r} \\ \end{bmatrix}$，从而 $\boldsymbol A = \boldsymbol U_r \boldsymbol D \boldsymbol V_r^{\mathrm T}$．定义 $\boldsymbol A$ 的伪逆或 $\text{Moore} - \text{Penrose}$ 逆为 $\boldsymbol A^+ = \boldsymbol V_r \boldsymbol D^{-1} \boldsymbol U_r^{\mathrm T}$
+    2. 令 $\widehat{\boldsymbol x} = \boldsymbol A^+ \boldsymbol b$，从而 $\boldsymbol A \widehat{\boldsymbol x} = \boldsymbol U_r \boldsymbol U_r^{\mathrm T} \boldsymbol b$ 是 $\boldsymbol b$ 在 $\mathbf C(\boldsymbol A)$ 上的正交投影，$\widehat{\boldsymbol x}$ 是 $\boldsymbol{Ax} = \boldsymbol b$ 的最小二乘解．当 $\boldsymbol A$ 的列向量线性相关时，方程最小二乘解不唯一，此时 $\widehat{\boldsymbol x}$ 为所有最小二乘解中模长最小的向量
 
 ## 5.2 行列式
 1. $n$ 阶行列式：设 $n$ 阶方阵
@@ -597,17 +680,35 @@
     2. 初等矩阵的行列式分别为 $\mathrm{det}(\boldsymbol E_{ij}) = -1, \mathrm{det}(\boldsymbol E_i(k)) = k \neq 0, \mathrm{det}(\boldsymbol E_{ij}(k)) = 1$
     3. 设 $\boldsymbol A$ 是 $n$ 阶方阵，则 $\mathrm{det}(\boldsymbol A^{\mathrm T}) = \mathrm{det}(\boldsymbol A), \mathrm{det}(\boldsymbol A^{-1}) = \dfrac{1}{\mathrm{det}(\boldsymbol A)}$
     4. 设 $\boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_n$ 均为 $n$ 阶方阵，则 $\mathrm{\det}(\boldsymbol A_1 \boldsymbol A_2 \cdots \boldsymbol A_k) = \mathrm{det}(\boldsymbol A_1) \cdot \mathrm{det}(\boldsymbol A_2) \cdots \mathrm{det}(\boldsymbol A_k)$
+4. 顺序主子式：在 $n$ 阶矩阵 $\boldsymbol A = [a_{ij}]$ 中，取前 $k$ 行以及前 $k$ 列得到 $\boldsymbol A$ 的 $k$ 阶子矩阵的行列式 $(k \leqslant n)$ 称为 $\boldsymbol A$ 的 $k$ 阶顺序主子式，记作 $\Delta_k$
+
+    $$
+    \begin{aligned}
+    \Delta_1 & = a_{ii} \\
+    \Delta_2 & = \begin{vmatrix} a_{11} & a_{12} \\ a_{21} & a_{22} \\ \end{vmatrix} \\
+    \cdots & \\
+    \Delta_n & = \begin{vmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn} \\
+    \end{vmatrix} = \mathrm{det}(\boldsymbol A)& 
+    \end{aligned}
+    $$
 
 ## 5.3 特征值与二次型
 ### 5.3.1 特征值与特征向量
 1. 特征值与特征向量：设 $\boldsymbol A$ 是 $n$ 阶方阵，$\boldsymbol x$ 是 $n$ 元非零向量，若有 $\boldsymbol{Ax} = \lambda \boldsymbol x$，则称实数 $\lambda$ 为方阵 $\boldsymbol A$ 的特征值，向量 $\boldsymbol x$ 称为方阵 $\boldsymbol A$ 属于特征值 $\lambda$ 的特征向量
     1. 一个特征向量只能属于一个特征值
     2. 方阵 $\boldsymbol A$ 属于 $\lambda$ 的全部特征向量与零向量组成的子空间称为方阵 $\boldsymbol A$ 的特征子空间
+    3. 特征向量的线性无关性：若 $\lambda_1, \lambda_2, \cdots, \lambda_k$ 是矩阵 $\boldsymbol A$ 的不同特征值，$\boldsymbol x_{i1}, \boldsymbol x_{i2}, \cdots, \boldsymbol x_{ir} \ (1 \leqslant i \leqslant k)$ 是属于特征值 $\lambda_i$ 的线性无关的特征向量，则向量组 $\boldsymbol x_{11}, \boldsymbol x_{12}, \cdots, \boldsymbol x_{1r}, \boldsymbol x_{21}, \boldsymbol x_{22}, \cdots, \boldsymbol x_{2r}, \cdots, \boldsymbol x_{k1}, \boldsymbol x_{k2}, \cdots, \boldsymbol x_{kr}$ 线性无关
 2. 特征多项式：设 $n$ 阶方阵 $\boldsymbol A$ 的特征值为 $\lambda$，称 $\mathrm{det}(\lambda \boldsymbol I - \boldsymbol A)$ 为 $\boldsymbol A$ 的特诊多项式．方程 $\mathrm{det}(\lambda \boldsymbol I - \boldsymbol A) = 0$ 的根即为 $\boldsymbol A$ 的特征值，称其根为特征根（包括重根）
     1. 方阵 $\boldsymbol A$ 的全体特征根之和等于其迹 $\mathrm{tr}(\boldsymbol A)$，全体特征根的乘积等于其行列式 $\mathrm{det}(\boldsymbol A)$
     2. 相似矩阵有相同的特征多项式
     3. 设 $\lambda_0$ 是方阵 $\boldsymbol A$ 的一个特征值，$V_0$ 是属于 $\lambda_0$ 的特征子空间．称 $\lambda_0$ 作为方阵 $\boldsymbol A$ 的特征多项式根的重数为 $\lambda_0$ 的代数重数，特征子空间 $V_0$ 的维数为 $\lambda_0$ 的几何重数，则每个特征值的代数重数不小于其几何重数
-3. 特征向量的线性无关性：若 $\lambda_1, \lambda_2, \cdots, \lambda_k$ 是矩阵 $\boldsymbol A$ 的不同特征值，$\boldsymbol x_{i1}, \boldsymbol x_{i2}, \cdots, \boldsymbol x_{ir} \ (1 \leqslant i \leqslant k)$ 是属于特征值 $\lambda_i$ 的线性无关的特征向量，则向量组 $\boldsymbol x_{11}, \boldsymbol x_{12}, \cdots, \boldsymbol x_{1r}, \boldsymbol x_{21}, \boldsymbol x_{22}, \cdots, \boldsymbol x_{2r}, \cdots, \boldsymbol x_{k1}, \boldsymbol x_{k2}, \cdots, \boldsymbol x_{kr}$ 线性无关
+3. 奇异值：设 $\boldsymbol A_{m \times n}$ 的秩为 $r$，称 $\boldsymbol A^{\mathrm T} \boldsymbol A$ （或 $\boldsymbol{AA}^{\mathrm T}$）的非零特征值 $\lambda_1, \lambda_2, \cdots, \lambda_r$ 的算术平方根为 $\boldsymbol A$ 的奇异值
+    1. $\boldsymbol A$ 的奇异值 $\sigma_1, \sigma_2, \cdots, \sigma_r$ 分别等于特征向量 $\boldsymbol{Av}_1, \boldsymbol{Av}_2, \cdots, \boldsymbol{Av}_r$ 的模长
+    2. 秩为 $r$ 的实对称矩阵 $\boldsymbol A$ 的 $r$ 个非零奇异值等于其非零特征值的绝对值
 
 ### 5.3.2 矩阵的对角化
 1. 可对角化：若矩阵 $\boldsymbol A$ 与对角阵 $\boldsymbol \Lambda$ 相似，则称矩阵 $\boldsymbol A$ 可对角化

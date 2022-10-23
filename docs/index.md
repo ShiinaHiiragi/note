@@ -250,8 +250,7 @@ const refList = [
         press: "科学出版社",
         locate: "北京",
         year: 2016,
-        page: [1, 186],
-        plot: 127
+        page: [1, 186]
     },
     {
         author: ["フィッシュ"],
