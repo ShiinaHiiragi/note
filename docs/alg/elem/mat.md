@@ -598,7 +598,7 @@
     3. 设 $\boldsymbol A$ 是 $n$ 阶方阵，则 $\mathrm{det}(\boldsymbol A^{\mathrm T}) = \mathrm{det}(\boldsymbol A), \mathrm{det}(\boldsymbol A^{-1}) = \dfrac{1}{\mathrm{det}(\boldsymbol A)}$
     4. 设 $\boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_n$ 均为 $n$ 阶方阵，则 $\mathrm{\det}(\boldsymbol A_1 \boldsymbol A_2 \cdots \boldsymbol A_k) = \mathrm{det}(\boldsymbol A_1) \cdot \mathrm{det}(\boldsymbol A_2) \cdots \mathrm{det}(\boldsymbol A_k)$
 
-## 5.3 特征值
+## 5.3 特征值与二次型
 ### 5.3.1 特征值与特征向量
 1. 特征值与特征向量：设 $\boldsymbol A$ 是 $n$ 阶方阵，$\boldsymbol x$ 是 $n$ 元非零向量，若有 $\boldsymbol{Ax} = \lambda \boldsymbol x$，则称实数 $\lambda$ 为方阵 $\boldsymbol A$ 的特征值，向量 $\boldsymbol x$ 称为方阵 $\boldsymbol A$ 属于特征值 $\lambda$ 的特征向量
     1. 一个特征向量只能属于一个特征值
@@ -625,4 +625,50 @@
             3. 将 $\boldsymbol x_{i1}, \boldsymbol x_{i2}, \cdots, \boldsymbol x_{ir_i}$．这是矩阵 $\boldsymbol A$ 的特征值 $\lambda_i$ 作 $\text{Schmidt}$ 正交化，得到一组相互正交的单位向量组 $\boldsymbol \varepsilon_{i1}, \boldsymbol \varepsilon_{i2}, \cdots, \boldsymbol \varepsilon_{ir_i}$，这是矩阵 $\boldsymbol A$ 的特征值 $\lambda_i$ 对应特征子空间的标准正交基
             4. $\boldsymbol P = \begin{bmatrix} \boldsymbol \varepsilon_{11} & \boldsymbol \varepsilon_{12} & \cdots & \boldsymbol \varepsilon_{1r_1} & \varepsilon_{21} & \boldsymbol \varepsilon_{22} & \cdots & \boldsymbol \varepsilon_{2r_2} & \cdots & \varepsilon_{s1} & \boldsymbol \varepsilon_{s2} & \cdots & \boldsymbol \varepsilon_{sr_s} \\ \end{bmatrix}$ 即为所求的正交阵
 
-## 5.4 二次型
+### 5.3.3 二次型
+1. 设 $\boldsymbol A$ 是 $n$ 阶实对称矩阵，$\boldsymbol x$ 是 $n$ 元列向量，则称 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$ 为二次型．此时
+
+    $$
+    A = \begin{bmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn} \\
+    \end{bmatrix}, \ \boldsymbol x = \begin{bmatrix}
+    x_1 \\ x_2 \\ \vdots \\ x_n
+    \end{bmatrix}
+    $$
+
+    从而
+
+    $$
+    \begin{aligned}
+    \boldsymbol x^{\mathrm T} \boldsymbol{Ax} & = \sum_{i=1}^n \sum_{j=1}^n a_{ij} x_i x_j \\
+    & = \sum_{i=1^n} a_{ii}x_i^2 + \sum_{i \neq j} a_{ij} x_i x_j \\
+    & = \sum_{i=1^n} a_{ii}x_i^2 + 2\sum_{i < j} a_{ij} x_i x_j
+    \end{aligned}
+    $$
+
+    1. 标准型：若二次型只含有变量的平方项，即有
+
+        $$
+        \begin{aligned}
+        f(y_1, y_2, \cdots, y_n) & = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix} \begin{bmatrix}
+        b_{11} &  &  &  \\
+         & b_{22} &  &  \\
+         &  & \ddots &  \\
+         &  &  & b_{nn} \\
+        \end{bmatrix} \begin{bmatrix}
+        y_1 \\ y_2 \\ \vdots \\ y_n \\
+        \end{bmatrix} \\
+        & = b_1 y_1^2 + b_2 y_2^2 + \cdots + b_n y_n^2
+        \end{aligned}
+        $$
+
+        则称这种形式为二次型的标准形
+
+    2. 对于二次型 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$，存在正交阵 $\boldsymbol P$ 使得经过正交变换 $\boldsymbol y = \boldsymbol P^{\mathrm T} \boldsymbol x$ 的二次型 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$ 可化为标准形 $\lambda_1 y_1^2 + \lambda_2 y_2^2 + \cdots + \lambda_n y_n^2$，其中 $\lambda_1, \lambda_2, \cdots, \lambda_n$ 是实对称矩阵 $\boldsymbol A$ 的全部特征值
+
+2. $\text{Rayleigh}$ 商：设 $\boldsymbol A$ 为 $n$ 阶实对称矩阵，$\boldsymbol x$ 为 $n$ 元非零列向量，称 $\dfrac{\boldsymbol x^{\mathrm T} \boldsymbol{Ax}}{\boldsymbol x^{\mathrm T} \boldsymbol x}$ 为 $\boldsymbol A$ 的 $\text{Rayleigh}$ 商
+    1. 实对称矩阵 $\boldsymbol A$ 的 $\text{Rayleigh}$ 商的最大值为 $\boldsymbol A$ 的最大特征值
+    2. 实对称矩阵 $\boldsymbol A$ 的 $\text{Rayleigh}$ 商的最小值为 $\boldsymbol A$ 的最小特征值
