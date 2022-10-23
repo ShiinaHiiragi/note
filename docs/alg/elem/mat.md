@@ -597,3 +597,32 @@
     2. 初等矩阵的行列式分别为 $\mathrm{det}(\boldsymbol E_{ij}) = -1, \mathrm{det}(\boldsymbol E_i(k)) = k \neq 0, \mathrm{det}(\boldsymbol E_{ij}(k)) = 1$
     3. 设 $\boldsymbol A$ 是 $n$ 阶方阵，则 $\mathrm{det}(\boldsymbol A^{\mathrm T}) = \mathrm{det}(\boldsymbol A), \mathrm{det}(\boldsymbol A^{-1}) = \dfrac{1}{\mathrm{det}(\boldsymbol A)}$
     4. 设 $\boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_n$ 均为 $n$ 阶方阵，则 $\mathrm{\det}(\boldsymbol A_1 \boldsymbol A_2 \cdots \boldsymbol A_k) = \mathrm{det}(\boldsymbol A_1) \cdot \mathrm{det}(\boldsymbol A_2) \cdots \mathrm{det}(\boldsymbol A_k)$
+
+## 5.3 特征值
+### 5.3.1 特征值与特征向量
+1. 特征值与特征向量：设 $\boldsymbol A$ 是 $n$ 阶方阵，$\boldsymbol x$ 是 $n$ 元非零向量，若有 $\boldsymbol{Ax} = \lambda \boldsymbol x$，则称实数 $\lambda$ 为方阵 $\boldsymbol A$ 的特征值，向量 $\boldsymbol x$ 称为方阵 $\boldsymbol A$ 属于特征值 $\lambda$ 的特征向量
+    1. 一个特征向量只能属于一个特征值
+    2. 方阵 $\boldsymbol A$ 属于 $\lambda$ 的全部特征向量与零向量组成的子空间称为方阵 $\boldsymbol A$ 的特征子空间
+2. 特征多项式：设 $n$ 阶方阵 $\boldsymbol A$ 的特征值为 $\lambda$，称 $\mathrm{det}(\lambda \boldsymbol I - \boldsymbol A)$ 为 $\boldsymbol A$ 的特诊多项式．方程 $\mathrm{det}(\lambda \boldsymbol I - \boldsymbol A) = 0$ 的根即为 $\boldsymbol A$ 的特征值，称其根为特征根（包括重根）
+    1. 方阵 $\boldsymbol A$ 的全体特征根之和等于其迹 $\mathrm{tr}(\boldsymbol A)$，全体特征根的乘积等于其行列式 $\mathrm{det}(\boldsymbol A)$
+    2. 相似矩阵有相同的特征多项式
+    3. 设 $\lambda_0$ 是方阵 $\boldsymbol A$ 的一个特征值，$V_0$ 是属于 $\lambda_0$ 的特征子空间．称 $\lambda_0$ 作为方阵 $\boldsymbol A$ 的特征多项式根的重数为 $\lambda_0$ 的代数重数，特征子空间 $V_0$ 的维数为 $\lambda_0$ 的几何重数，则每个特征值的代数重数不小于其几何重数
+3. 特征向量的线性无关性：若 $\lambda_1, \lambda_2, \cdots, \lambda_k$ 是矩阵 $\boldsymbol A$ 的不同特征值，$\boldsymbol x_{i1}, \boldsymbol x_{i2}, \cdots, \boldsymbol x_{ir} \ (1 \leqslant i \leqslant k)$ 是属于特征值 $\lambda_i$ 的线性无关的特征向量，则向量组 $\boldsymbol x_{11}, \boldsymbol x_{12}, \cdots, \boldsymbol x_{1r}, \boldsymbol x_{21}, \boldsymbol x_{22}, \cdots, \boldsymbol x_{2r}, \cdots, \boldsymbol x_{k1}, \boldsymbol x_{k2}, \cdots, \boldsymbol x_{kr}$ 线性无关
+
+### 5.3.2 矩阵的对角化
+1. 可对角化：若矩阵 $\boldsymbol A$ 与对角阵 $\boldsymbol \Lambda$ 相似，则称矩阵 $\boldsymbol A$ 可对角化
+    1. $n$ 阶矩阵 $\boldsymbol A$ 可对角化当且仅当 $\boldsymbol A$ 有 $n$ 个线性无关的特征向量
+    2. $n$ 阶矩阵 $\boldsymbol A$ 可对角化当且仅当 $\boldsymbol A$ 的任一特征值的几何重数与代数重数相等
+    3. 具有 $n$ 个不同特征值的 $n$ 阶方阵一定可以对角化
+2. 实对称矩阵：矩阵元素都是实数的对称矩阵
+    1. 实对称矩阵的所有特征值是实数，所有特征向量是实向量
+    2. 实对称矩阵的属于不同特征值的特征向量正交
+    3. 设 $\boldsymbol A$ 是 $n$ 阶实对称矩阵，则存在 $n$ 阶正交阵 $\boldsymbol P$ 使得 $\boldsymbol P^{\mathrm T} \boldsymbol{AP}$ 为对角阵，这个过程称为正交对角化
+
+        !!! note "正交对角化的步骤"
+            1. 求出实对称矩阵 $\boldsymbol A$ 的所有不同特征值 $\lambda_1, \lambda_2, \cdots, \lambda_s \ (\lambda_i \neq \lambda_j)$
+            2. 对每个 $\lambda_i \ (1 \leqslant i \leqslant s)$，解方程组 $(\lambda_i \boldsymbol I - \boldsymbol A) = \boldsymbol 0$，找出一个基础解系 $\boldsymbol x_{i1}, \boldsymbol x_{i2}, \cdots, \boldsymbol x_{ir_i}$．这是矩阵 $\boldsymbol A$ 的特征值 $\lambda_i$ 对应特征子空间的基
+            3. 将 $\boldsymbol x_{i1}, \boldsymbol x_{i2}, \cdots, \boldsymbol x_{ir_i}$．这是矩阵 $\boldsymbol A$ 的特征值 $\lambda_i$ 作 $\text{Schmidt}$ 正交化，得到一组相互正交的单位向量组 $\boldsymbol \varepsilon_{i1}, \boldsymbol \varepsilon_{i2}, \cdots, \boldsymbol \varepsilon_{ir_i}$，这是矩阵 $\boldsymbol A$ 的特征值 $\lambda_i$ 对应特征子空间的标准正交基
+            4. $\boldsymbol P = \begin{bmatrix} \boldsymbol \varepsilon_{11} & \boldsymbol \varepsilon_{12} & \cdots & \boldsymbol \varepsilon_{1r_1} & \varepsilon_{21} & \boldsymbol \varepsilon_{22} & \cdots & \boldsymbol \varepsilon_{2r_2} & \cdots & \varepsilon_{s1} & \boldsymbol \varepsilon_{s2} & \cdots & \boldsymbol \varepsilon_{sr_s} \\ \end{bmatrix}$ 即为所求的正交阵
+
+## 5.4 二次型
