@@ -1,6 +1,7 @@
 # 5 矩阵论
 
 ## 5.1 矩阵
+### 5.1.1 矩阵的概念
 1. 矩阵：由若干个数排成的 $m$ 行 $n$ 列矩形阵列
 
     $$
@@ -36,8 +37,9 @@
     3. 单位阵：若纯量阵的对角线元素均为 $1$，则称该方阵为单位阵 $\boldsymbol I$ 或 $\boldsymbol I_n$，其中 $n$ 表示阶数
 
 2. 子矩阵：设 $\boldsymbol A$ 为 $m \times n$ 矩阵，任取 $\boldsymbol A$ 的 $k$ 行 $l$ 列，位于这些行与列交叉处的元素按原来顺序构成的 $k \times l$ 矩阵称为 $\boldsymbol A$ 的一个子矩阵．特别地，当 $k = l$ 时，该子矩阵称为 $\boldsymbol A$ 的一个 $k$ 阶子矩阵
+3. 相似矩阵：对于 $n$ 阶矩阵 $\boldsymbol A$ 和 $\boldsymbol B$，若存在一个 $n$ 阶可逆矩阵 $\boldsymbol P$ 使得 $\boldsymbol P^{-1} \boldsymbol{AP} = \boldsymbol B$，则称矩阵 $\boldsymbol A$ 与 $\boldsymbol B$ 相似，记作 $\boldsymbol A \sim \boldsymbol B$
 
-### 5.1.1 基本运算
+### 5.1.2 基本运算
 1. 设 $m \times n$ 矩阵
 
     $$
@@ -226,7 +228,7 @@
 
             其中 $\boldsymbol C_{ij} = {\displaystyle \sum_{k=1}^t \boldsymbol A_{ik} \boldsymbol B_{kj}}$
 
-### 5.1.2 初等变换
+### 5.1.3 初等变换
 1. 矩阵 $\boldsymbol A$ 的初等行（列）变换
     1. 将 $\boldsymbol A$ 的第 $i$ 行（列）与第 $j$ 行（列）对换
 
@@ -383,7 +385,7 @@
         1. 任一非零矩阵只经初等行变换可化为最简阶梯型矩阵
         2. 非零矩阵的秩等于其最简阶梯形中主元列的个数
 
-### 5.1.3 矩阵实例
+### 5.1.4 矩阵实例
 1. 可逆矩阵：设 $\boldsymbol A$ 是 $n$ 阶方阵，如果存在 $n$ 阶方阵 $\boldsymbol B$ 使 $\boldsymbol{AB} = \boldsymbol{BA} = \boldsymbol I$，则称 $\boldsymbol A$ 是可逆矩阵或非奇异矩阵，称 $\boldsymbol B$ 是 $\boldsymbol A$ 的逆矩阵，记作 $\boldsymbol A^{-1}$
     1. 设 $\boldsymbol A, \boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_k$ 均为 $n$ 阶可逆矩阵，则有
         1. $(\boldsymbol A^{-1})^{-1} = \boldsymbol A$

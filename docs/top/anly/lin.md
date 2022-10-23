@@ -94,7 +94,7 @@
     3. 给定向量 $\beta$ 与 $\mathbf R^n$ 中子空间 $W$，存在唯一向量 $\widehat{\boldsymbol \beta} \in W$ 使得 $\boldsymbol \beta - \widehat{\boldsymbol \beta}$ 与 $W$ 正交，称 $\widehat{\boldsymbol \beta}$ 为 $\boldsymbol \beta$ 在子空间 $W$ 中的正交投影
 
         !!! note "最小二乘解"
-            设 $\boldsymbol A = \begin{bmatrix} \boldsymbol \alpha_1 & \boldsymbol \alpha_2 & \cdots & \boldsymbol \alpha_l \\ \end{bmatrix}$，其中向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_l$ 线性无关，$\boldsymbol \alpha_i \in \mathbf R^n \ (1 \leqslant i \leqslant l)$．现有向量 $\boldsymbol \beta \in \mathbf R^n$，则 $\beta$ 在子空间 $\mathbf C(\boldsymbol A)$ 中的正交投影为 $\boldsymbol{Ax} = \boldsymbol A (\boldsymbol A^{\mathrm T} \boldsymbol A)^{-1} \boldsymbol A^{\mathrm T} \boldsymbol \beta$
+            设 $\boldsymbol A = \begin{bmatrix} \boldsymbol \alpha_1 & \boldsymbol \alpha_2 & \cdots & \boldsymbol \alpha_l \\ \end{bmatrix}$，其中向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_l$ 线性无关，$\boldsymbol \alpha_i \in \mathbf R^n \ (i = 1, 2, \cdots, l)$．现有向量 $\boldsymbol \beta \in \mathbf R^n$，则 $\beta$ 在子空间 $\mathbf C(\boldsymbol A)$ 中的正交投影为 $\boldsymbol{Ax} = \boldsymbol A (\boldsymbol A^{\mathrm T} \boldsymbol A)^{-1} \boldsymbol A^{\mathrm T} \boldsymbol \beta$
 
     4. $\text{Schmidt}$ 正交化：将 $n$ 维向量空间 $V$ 的任意一组基 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n$ 化为标准正交基 $\boldsymbol \gamma_1, \boldsymbol \gamma_2, \cdots, \boldsymbol \gamma_n$，其中
 
@@ -106,12 +106,34 @@
         $$
 
 ## 1.2 线性变换
-1. 线性映射：若映射 $T: V \to W$ 是从线性空间 $V$ 到线性空间 $W$ 的同态，则称 $T$ 为线性映射；若映射 $T: V \to V$ 是线性空间 $V$ 上的自同态，则称 $T$ 为线性变换
-2. 线性变换的表示矩阵
+1. 线性映射：若映射 $T: V \to W$ 是从线性空间 $V$ 到线性空间 $W$ 的同态，则称 $T$ 为线性映射；若映射 $T: V \to V$ 是线性空间 $V$ 上的自同态，则称 $T$ 为线性变换．通常记 $T(\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n) = \begin{bmatrix} T(\boldsymbol \alpha_1) & T(\boldsymbol \alpha_2) & \cdots & T(\boldsymbol \alpha_n) \\ \end{bmatrix}$
+    1. 设 $T$ 是线性空间 $V$ 中的线性变换，则 $T(\boldsymbol 0) = \boldsymbol 0$
+    2. 设 $T$ 是线性空间 $V$ 中的线性变换，$\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m$ 是 $V$ 中的 $m$ 个向量，$\boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_m \\ \end{bmatrix}^{\mathrm T}$，则 $T(\begin{bmatrix} \boldsymbol \alpha_1 & \boldsymbol \alpha_2 & \cdots & \boldsymbol \alpha_m \\ \end{bmatrix}^{\mathrm T}) = T(\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m) \boldsymbol x$
+    3. 设 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 是 $n$ 维线性空间 $V$ 的一组基，对于 $V$ 中任意 $n$ 个向量 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n$，存在唯一的线性变换 $T$ 使得 $T(\boldsymbol \varepsilon_i) = \boldsymbol \alpha_i \ (i = 1, 2, \cdots, n)$
+2. 线性变换的表示矩阵：设 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 是线性空间 $V$ 的一组基，$T$ 是线性空间 $V$ 的一个线性变换，基的像表示为
 
-### 1.2.1 正交变换
+    $$
+    \begin{aligned}
+    T(\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n) & = [T(\boldsymbol \varepsilon_1), T(\boldsymbol \varepsilon_2), \cdots, T(\boldsymbol \varepsilon_n)] \\
+    & = \begin{bmatrix} \boldsymbol \varepsilon_1 & \boldsymbol \varepsilon_2 & \cdots & \boldsymbol \varepsilon_n \\ \end{bmatrix} \boldsymbol A
+    \end{aligned}
+    $$
 
-### 1.2.2 仿射变换
+    其中矩阵
+
+    $$
+    \boldsymbol A = \begin{bmatrix}
+    a_{11} & a_{12} & \cdots & a_{1n} \\
+    a_{21} & a_{22} & \cdots & a_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    a_{n1} & a_{n2} & \cdots & a_{nn} \\
+    \end{bmatrix}
+    $$
+
+    称为线性变换 $T$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的表示矩阵．在给定基下，线性变换与其表示矩阵一一对应
+
+    1. 设线性变换 $T$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的表示矩阵为 $\boldsymbol A$，向量 $\boldsymbol \xi$ 在基 $\begin{bmatrix} \boldsymbol \varepsilon_1 & \boldsymbol \varepsilon_2 & \cdots & \boldsymbol \varepsilon_n \\ \end{bmatrix}$ 下的坐标为 $\boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$，则 $T(\boldsymbol \xi)$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的坐标为 $\boldsymbol{Ax}$
+    2. 设线性变换 $T$ 在线性空间的两组基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 与 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 下的表示矩阵分别是 $\boldsymbol A$ 与 $\boldsymbol B$，从基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 到基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 的过渡矩阵为 $\boldsymbol M$，则 $\boldsymbol B = \boldsymbol M^{-1} \boldsymbol A \boldsymbol M$
 
 ## 1.3 仿射几何
 ### 1.3.1 仿射空间
@@ -208,7 +230,7 @@
         2. 当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
 
 ### 1.3.2 向量代数
-1. $\text{Euclid}$ 空间 $\mathbf R^n$ 是一个与线性空间 $\mathbf R^n$ 相联系的仿射空间．设 $A = (a_1, a_2, \cdots, a_n), B = (b_1, b_2, \cdots, b_n)$，定义 $\overrightarrow{AB} = (b_1 - a_1, b_2 - a_2, \cdots, b_n - a_n)$．取 $O = (0, 0, \cdots, 0)$，基为标准基
+1. $\text{Euclid}$ 空间 $\mathbf R^n$ 是一个与内积空间 $\mathbf R^n$ 相联系的仿射空间．设 $A = (a_1, a_2, \cdots, a_n), B = (b_1, b_2, \cdots, b_n)$，定义 $\overrightarrow{AB} = (b_1 - a_1, b_2 - a_2, \cdots, b_n - a_n)$．取 $O = (0, 0, \cdots, 0)$，基为标准基
     1. 仿射空间 $\mathbf R^n$ 中一点 $A = (a_1, a_2, \cdots, a_n)$ 的坐标同构为 $A(a_1, a_2, \cdots, a_n)$
     2. 仿射空间 $\mathbf R^n$ 相联系的线性空间 $\mathbf R^n$ 中向量 $\boldsymbol \alpha = (x_1, x_2, \cdots, x_n)$ 的坐标为 $\begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$
 
