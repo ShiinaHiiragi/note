@@ -283,13 +283,13 @@ const refList = [
         plot: 0
     },
     {
-        author: ["彭家贵", "陈卿"],
-        title: "微分几何",
+        author: ["郑崇友", "王汇淳", "侯忠义", "王智秋"],
+        title: "几何学引论",
         type: "M",
         press: "高等教育出版社",
         locate: "北京",
-        year: 2002,
-        page: [1, 152],
+        year: 2005,
+        page: [167, 347],
         plot: 0
     },
     {
