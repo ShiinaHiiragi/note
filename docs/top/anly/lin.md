@@ -10,6 +10,11 @@
 ### 1.1.1 线性相关
 1. 线性相关：设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s \ (s \geqslant 1)$ 为一组 $n$ 元向量，若存在不全为零的系数 $k_1, k_2, \cdots, k_s$ 使得 $k_1 \boldsymbol \alpha_1 + k_2 \boldsymbol \alpha_2 + \cdots + k_s \boldsymbol \alpha_s = \boldsymbol 0$，则称向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s$ 线性相关，否则称向量组线性无关
     1. 线性组合：设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m, \boldsymbol \beta$ 为一组 $n$ 元向量．若存在一组实数 $k_1, k_2, \cdots, k_m$ 使得 $\boldsymbol \beta = k_1 \boldsymbol \alpha_1 + k_2 \boldsymbol \alpha_2 + \cdots + k_m \boldsymbol \alpha_m$，则称向量 $\beta$ 是 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m$ 的线性组合，或称 $\beta$ 可由 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m$ 线性表出，$k_1, k_2, \cdots, k_m$ 称为线性组合系数或线性表出系数
+
+        !!! note "向量的共线与共面"
+            1. 设向量 $\boldsymbol e \neq 0$，若向量 $\boldsymbol r$ 是 $\boldsymbol e$ 的线性组合，则称向量 $\boldsymbol r$ 与向量 $\boldsymbol e$ 共线
+            2. 设向量 $\boldsymbol e_1, \boldsymbol e_2$ 不共线，若向量 $\boldsymbol r$ 是 $\boldsymbol e_1, \boldsymbol e_2$ 的线性组合，则称向量 $\boldsymbol r$ 与向量 $\boldsymbol e_1, \boldsymbol e_2$ 共面
+
     2. 线性相关的性质
         1. 若一个向量组线性无关，则其任何一个部分向量组线性无关
         2. 向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s (s \geqslant 2)$ 线性相关当且仅当该向量组中至少有一个向量可由其余向量线性表出
@@ -35,13 +40,13 @@
 
     1. 设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_t$ 均为齐次线性方程组的解，则 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_t$ 的线性组合也是 $\boldsymbol{Ax} = \boldsymbol 0$ 的解
     2. 设 $\mathrm{rank}(\boldsymbol A_{m \times n}) = r$，若 $\boldsymbol{Ax} = \boldsymbol 0$ 有非零解，则该齐次线性方程组有基础解系，且基础解系含有 $n - r$ 个解
-    3. 设 $\boldsymbol A$ 为 $m \times n$ 矩阵，$\boldsymbol b$ 为 $m$ 元列向量
+    3. 设 $\boldsymbol A$ 为 $m \times n$ 矩阵，$\boldsymbol \beta$ 为 $m$ 元列向量
         1. $\mathrm{rank}(\boldsymbol A \boldsymbol A^{\mathrm T}) = \mathrm{rank}(\boldsymbol A^{\mathrm T} \boldsymbol A) = \mathrm{rank}(\boldsymbol A) = \mathrm{rank}(\boldsymbol A^{\mathrm T})$
-        2. 线性方程组 $\boldsymbol A^{\mathrm T} \boldsymbol A \boldsymbol x = \boldsymbol A^{\mathrm T} \boldsymbol b$ 一定有解
+        2. 线性方程组 $\boldsymbol A^{\mathrm T} \boldsymbol A \boldsymbol x = \boldsymbol A^{\mathrm T} \boldsymbol \beta$ 一定有解
 
-3. 设 $\boldsymbol x_0$ 是非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol b$ 的某个特解，$\boldsymbol y$ 是相应齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol 0$ 的通解，则非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol b$ 的通解为 $\boldsymbol x = \boldsymbol x_0 + \boldsymbol y$
-    1. 非齐次线性方程组的解集 $\{\boldsymbol x \mid \boldsymbol{Ax} = \boldsymbol b, \boldsymbol b \neq \boldsymbol 0\}$ 不构成子空间
-    2. 线性方程组 $\boldsymbol{Ax} = \boldsymbol b$ 有解的充要条件是 $\boldsymbol b \in \mathbf C(\boldsymbol A)$
+3. 设 $\boldsymbol x_0$ 是非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol \beta$ 的某个特解，$\boldsymbol y$ 是相应齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol 0$ 的通解，则非齐次线性方程组 $\boldsymbol{Ax} = \boldsymbol \beta$ 的通解为 $\boldsymbol x = \boldsymbol x_0 + \boldsymbol y$
+    1. 非齐次线性方程组的解集 $\{\boldsymbol x \mid \boldsymbol{Ax} = \boldsymbol \beta, \boldsymbol \beta \neq \boldsymbol 0\}$ 不构成子空间
+    2. 线性方程组 $\boldsymbol{Ax} = \boldsymbol \beta$ 有解的充要条件是 $\boldsymbol \beta \in \mathbf C(\boldsymbol A)$
 
 ### 1.1.2 构造空间
 1. 子空间：设 $V$ 是 $F$ 上的线性空间，$W$ 是 $V$ 的一个非空子集．如果 $W$ 是 $V$ 的子结构，则称 $W$ 为 $V$ 的一个线性子空间
@@ -138,8 +143,8 @@
     1. 设线性变换 $T$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的表示矩阵为 $\boldsymbol A$，向量 $\boldsymbol \xi$ 在基 $\begin{bmatrix} \boldsymbol \varepsilon_1 & \boldsymbol \varepsilon_2 & \cdots & \boldsymbol \varepsilon_n \\ \end{bmatrix}$ 下的坐标为 $\boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$，则 $T(\boldsymbol \xi)$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的坐标为 $\boldsymbol{Ax}$
     2. 设线性变换 $T$ 在线性空间的两组基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 与 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 下的表示矩阵分别是 $\boldsymbol A$ 与 $\boldsymbol B$，从基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 到基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 的过渡矩阵为 $\boldsymbol M$，则 $\boldsymbol B = \boldsymbol M^{-1} \boldsymbol A \boldsymbol M$
 
-## 1.2 标架
-### 1.2.1 标架与坐标
+## 1.2 坐标系
+### 1.2.1 基与坐标
 1. 基与维数：设 $V$ 是线性空间，如果在 $V$ 中存在 $n$ 个线性无关的向量 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 使得 $V$ 中任一向量 $\alpha$ 均可由 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 线性表出，则称向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 为线性空间 $V$ 的一组基，$n$ 称为线性空间 $V$ 的维数，记作 $\operatorname{dim} V = n$，并称 $V$ 是 $n$ 维线性空间
 2. 坐标：设向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 是 $n$ 维线性空间 $V$ 的一组基，$\boldsymbol \alpha$ 是 $V$ 中的任一向量，若 $\boldsymbol \alpha = x_1 \boldsymbol \varepsilon_1 + x_2 \boldsymbol \varepsilon_2 + \cdots + x_n \boldsymbol \varepsilon_n$，则称 $x_1, x_2, \cdots, x_n$ 为向量 $\boldsymbol \alpha$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的坐标
     1. 任意向量在给定基下的坐标唯一：通常将向量写作行向量或列向量的形式，并看作是特殊的矩阵．设向量 $\boldsymbol \alpha$ 有
@@ -187,7 +192,7 @@
 
         2. 过渡矩阵是可逆的
 
-### 1.2.2 仿射标架
+### 1.2.2 仿射坐标系
 1. 线性空间的同构
     1. $\mathbf R^n$ 是 $\mathbf R$ 上的线性空间：设 $(x_1, x_2, \cdots, x_n), (y_1, y_2, \cdots, y_n) \in \mathbf R^n$，定义 $\mathbf R^n$ 上的加法运算与 $\mathbf R$ 上的数乘运算
 
@@ -225,23 +230,33 @@
 3. 仿射几何公理的完备性：任何维数相同的仿射空间都是同构的
     1. $\text{Euclid}$ 空间 $\mathbf R^n$ 是一个与内积空间 $\mathbf R^n$ 相联系的仿射空间．设 $A = (a_1, a_2, \cdots, a_n), B = (b_1, b_2, \cdots, b_n)$，定义 $\overrightarrow{AB} = (b_1 - a_1, b_2 - a_2, \cdots, b_n - a_n)$，其中点 $A$ 称为向量 $\overrightarrow{AB}$ 的始点，点 $B$ 称为向量 $\overrightarrow{AB}$ 的终点
     2. 仿射空间的同构：设 $\mathscr A, \mathscr B$ 是两个仿射空间，且相联系的线性空间 $V, W$ 存在同构映射 $\varphi: V \to W$．若存在一个双射 $\psi: \mathscr A \to \mathscr B$ 使得对于任意 $A, B \in \mathscr A$，均有 $\overrightarrow{\psi(A) \psi(B)} = \varphi(\overrightarrow{AB})$，则称 $\mathscr A$ 与 $\mathscr B$ 同构
-        1. 设 $\mathscr A$ 为任意仿射空间，任选 $O \in \mathscr A$．对于任意 $A \in \mathscr A$，构造径向量 $\psi_O(A) = \overrightarrow{OA}$，则 $\mathscr A$ 同构于相联系的被看作为仿射空间的线性空间 $V$
+        1. 设 $\mathscr A$ 为任意仿射空间，任选 $O \in \mathscr A$．对于任意 $A \in \mathscr A$，构造径向量（或称向径） $\psi_O(A) = \overrightarrow{OA}$，则 $\mathscr A$ 同构于相联系的被看作为仿射空间的线性空间 $V$
         2. 任何一个被看作仿射空间的 $n$ 维线性空间同构于仿射空间 $\mathbf R^n$
-    3. 仿射标架：设 $\mathscr A$ 为仿射空间，$V$ 为与之联系的线性空间，称 $\mathscr A$ 中一点 $O$ 与基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 组成的集合称为 $\mathscr A$ 中的仿射标架，或称仿射坐标系，记作 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$
+    3. 仿射标架：设 $\mathscr A$ 为仿射空间，$V$ 为与之联系的线性空间，称 $\mathscr A$ 中一点 $O$ 与基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 组成的集合称为 $\mathscr A$ 中的仿射标架，记作 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$
         1. 每个仿射标架 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
         2. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架；若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架
+        3. 当标架取定后，仿射空间与与之联系的线性空间与 $\mathbf R^n$ 具有一一对应的关系，称之为坐标系．由仿射标架、$\text{Descartes}$ 标架与 $\text{Descartes}$ 直角标架确定的坐标系分别称作仿射坐标系、$\text{Descartes}$ 坐标系与 $\text{Descartes}$ 直角坐标系．默认坐标系均为 $\text{Descartes}$ 直角坐标系
 
-### 1.2.3 其他标架
+### 1.2.3 其他坐标系
 
 ## 1.3 向量
-1. 向量的加法与减法
-    1. 反向量：向量 $\overrightarrow{AB}$ 与向量 $\overrightarrow{BA}$ 互为反向量，即 $\overrightarrow{AB} + \overrightarrow{BA} = \boldsymbol 0$
-    2. 向量的减法：若向量 $\boldsymbol a, \boldsymbol b, \boldsymbol c$ 有 $\boldsymbol a = \boldsymbol b + \boldsymbol c$，则称 $\boldsymbol c$ 为向量 $\boldsymbol a$ 与 $\boldsymbol b$ 的差，记作 $\boldsymbol c = \boldsymbol a - \boldsymbol b = \boldsymbol a + (-\boldsymbol b)$
-    3. 向量的共线与共面
-        1. 设向量 $\boldsymbol e \neq 0$，若向量 $\boldsymbol r$ 是 $\boldsymbol e$ 的线性组合，则称向量 $\boldsymbol r$ 与向量 $\boldsymbol e$ 共线
-        2. 设向量 $\boldsymbol e_1, \boldsymbol e_2$ 不共线，若向量 $\boldsymbol r$ 是 $\boldsymbol e_1, e_2$ 的线性组合，则称向量 $\boldsymbol r$ 与向量 $\boldsymbol e_1, \boldsymbol e_2$ 共面
-2. 
-
 ### 1.3.1 向量代数
+1. 向量的坐标运算：设 $\boldsymbol \alpha = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol \beta = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$
+
+    $$
+    \begin{aligned}
+    \boldsymbol \alpha + \boldsymbol \beta & = \begin{bmatrix}
+    x_1 + y_1 & x_2 + y_2 & \cdots & x_n + y_n \\
+    \end{bmatrix}^{\mathrm T} \\
+    k \boldsymbol \alpha & = \begin{bmatrix} kx_1 & kx_2 & \cdots & kx_n \\ \end{bmatrix}^{\mathrm T}
+    \end{aligned}
+    $$
+
+    1. 向量的减法
+        1. 反向量：向量 $\overrightarrow{AB}$ 与向量 $\overrightarrow{BA}$ 互为反向量，即 $\overrightarrow{AB} + \overrightarrow{BA} = \boldsymbol 0$
+        2. 向量的减法：若向量 $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma$ 有 $\boldsymbol \alpha = \boldsymbol \beta + \boldsymbol \gamma$，则称 $\boldsymbol \gamma$ 为向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的差，记作 $\boldsymbol \gamma = \boldsymbol \alpha - \boldsymbol \beta = \boldsymbol \alpha + (-\boldsymbol \beta)$
+    2. 向量的定比分点：设向量 $\overrightarrow{P_1 P_2}$ 的始点为 $P_1(x_1, x_2, \cdots, x_n)$，终点为 $P_2(y_1, y_2, \cdots, y_n)$，则分向量 $\overrightarrow{P_1 P_2}$ 成定比 $\lambda \ (\lambda \neq -1)$ 的分点 $P$ 的坐标为 $P \left(\dfrac{x_1 + \lambda y_1}{1 + \lambda}, \dfrac{x_2 + \lambda y_2}{1 + \lambda}, \cdots, \dfrac{x_n + \lambda y_n}{1 + \lambda}\right)$
+
+2. 向量在轴上的射影
 
 ### 1.3.2 向量分析
