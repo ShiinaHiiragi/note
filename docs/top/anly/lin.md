@@ -232,13 +232,89 @@
     2. 仿射空间的同构：设 $\mathscr A, \mathscr B$ 是两个仿射空间，且相联系的线性空间 $V, W$ 存在同构映射 $\varphi: V \to W$．若存在一个双射 $\psi: \mathscr A \to \mathscr B$ 使得对于任意 $A, B \in \mathscr A$，均有 $\overrightarrow{\psi(A) \psi(B)} = \varphi(\overrightarrow{AB})$，则称 $\mathscr A$ 与 $\mathscr B$ 同构
         1. 设 $\mathscr A$ 为任意仿射空间，任选 $O \in \mathscr A$．对于任意 $A \in \mathscr A$，构造径向量（或称向径） $\psi_O(A) = \overrightarrow{OA}$，则 $\mathscr A$ 同构于相联系的被看作为仿射空间的线性空间 $V$
         2. 任何一个被看作仿射空间的 $n$ 维线性空间同构于仿射空间 $\mathbf R^n$
-    3. 仿射标架：设 $\mathscr A$ 为仿射空间，$V$ 为与之联系的线性空间，称 $\mathscr A$ 中一点 $O$ 与基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 组成的集合称为 $\mathscr A$ 中的仿射标架，记作 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$
+    3. 仿射标架：设 $\mathscr A$ 为仿射空间，$V$ 为与之联系的线性空间，称 $\mathscr A$ 中一点 $O$ 与基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 组成的集合称为 $\mathscr A$ 中的仿射标架，记作 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$，称点 $O$ 为原点，称基所在的直线为坐标轴
         1. 每个仿射标架 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
         2. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架；若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架
         3. 当标架取定后，仿射空间与与之联系的线性空间与 $\mathbf R^n$ 具有一一对应的关系，称之为坐标系．由仿射标架、$\text{Descartes}$ 标架与 $\text{Descartes}$ 直角标架确定的坐标系分别称作仿射坐标系、$\text{Descartes}$ 坐标系与 $\text{Descartes}$ 直角坐标系．默认坐标系均为 $\text{Descartes}$ 直角坐标系
     4. 仿射空间的度量：设 $A, B$ 为仿射空间 $\mathscr A$ 中的两个点，则 $\rho(A, B) = |\overrightarrow{AB}|$
 
 ### 1.2.3 其他坐标系
+1. 极坐标系：$2$ 维仿射空间中的一个顶点 $O$ 与基 $\boldsymbol e$ 组成了一个极坐标系，称 $O$ 为极点，$\boldsymbol e$ 所在的直线为极轴．任意有序数对 $(\rho, \theta)$（其中 $\rho \geqslant 0, -\pi < \varphi \leqslant \pi$）唯一对应了平面中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$，$\theta$ 为 $\overrightarrow{OP}$ 相对于 $\boldsymbol e$ 的方向角，并称 $\overrightarrow{OP}$ 为极径，称 $(\rho, \theta)$ 为点 $P$ 的极坐标，记作 $P(\rho, \theta)$
+    1. 极坐标化为平面直角坐标
+
+        $$
+        \left\{\begin{aligned}
+        & x = \rho \cos \theta \\
+        & y = \rho \sin \theta
+        \end{aligned}\right.
+        \ \left(\begin{array}{l}
+        \rho \geqslant 0 \\
+        -\pi < \varphi \leqslant \pi
+        \end{array}\right)
+        $$
+
+    2. 平面直角坐标化为极坐标
+
+        $$
+        \left\{\begin{aligned}
+        & \rho^2 = x^2 + y^2 \\
+        & \tan \theta = \dfrac{y}{x}
+        \end{aligned}\right.
+        $$
+
+2. 球坐标系：$3$ 维仿射空间中的一个顶点 $O$ 与不共线的基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个球坐标系，称 $O$ 为原点．设 $\overrightarrow{OP}$ 在 $\mathrm{span}(\boldsymbol e_1, \boldsymbol e_2)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, \theta)$（其中 $\rho \geqslant 0, -\pi<\varphi \leqslant \pi, -\dfrac{\pi}{2} \leqslant \theta \leqslant \dfrac{\pi}{2}$）唯一对应了空间中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$．则 $\varphi$ 表示 $\overrightarrow{OM}$ 相对于 $\boldsymbol e_1$ 的方向角，$\theta$ 是 $\overrightarrow{OP}$ 与 $\overrightarrow{OM}$ 的夹角．称 $(\rho, \varphi, \theta)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, \theta)$
+    1. 球坐标化为空间直角坐标
+
+        $$
+        \left\{\begin{array}{l}
+        x=\rho \cos \theta \cos \varphi \\
+        y=\rho \cos \theta \sin \varphi \\
+        z=\rho \sin \theta
+        \end{array}\right.
+        \ \left(\begin{array}{l}
+        \rho \geqslant 0 \\
+        -\pi<\varphi \leqslant \pi \\
+        -\dfrac{\pi}{2} \leqslant \theta \leqslant \dfrac{\pi}{2}
+        \end{array}\right)
+        $$
+
+    2. 空间直角坐标化为球坐标
+
+        $$
+        \left\{\begin{array}{l}
+        \rho=\sqrt{x^2+y^2+z^2} \\
+        \cos \varphi=\dfrac{x}{\sqrt{x^2+y^2}} \\
+        \sin \varphi=\dfrac{y}{\sqrt{x^2+y^2}} \\
+        \theta=\arcsin \dfrac{z}{\sqrt{x^2+y^2+z^2}}
+        \end{array}\right.
+        $$
+
+3. 柱坐标系：$3$ 维仿射空间中的一个顶点 $O$ 与正交的两个基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个柱坐标系，也称作半极坐标．点 $O$ 与基 $e_1$ 组成一个平面上的极坐标系．设 $\overrightarrow{OP}$ 在 $\mathbf N(\boldsymbol e_1)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, u)$（其中 $\rho \geqslant 0, -\pi< \varphi \leqslant \pi, u \in \mathbf R$）唯一对应了空间中的点 $P$，其中 $(\rho, \varphi)$ 是 $\overrightarrow{OM}$ 在点 $O$ 与基 $e_1$ 形成的极坐标系下的坐标，$|u| = |\overrightarrow{MP}|$．称 $(\rho, \varphi, u)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, u)$
+    1. 柱坐标化为空间直角坐标
+
+        $$
+        \left\{\begin{array}{l}
+        x=\rho \cos \varphi \\
+        y=\rho \sin \varphi \\
+        z=u
+        \end{array}\right.
+        \ \left(\begin{array}{l}
+        \rho \geqslant 0 \\
+        -\pi< \varphi \leqslant \pi \\
+        u \in \mathbf R
+        \end{array}\right)
+        $$
+
+    2. 空间直角坐标化为柱坐标
+
+        $$
+        \left\{\begin{array}{l}
+        \rho=\sqrt{x^2+y^2} \\
+        \cos \varphi=\dfrac{x}{\sqrt{x^2+y^2}} \\
+        \sin \varphi=\dfrac{y}{\sqrt{x^2+y^2}} \\
+        u=z
+        \end{array}\right.
+        $$
 
 ## 1.3 向量的计算
 ### 1.3.1 向量代数
