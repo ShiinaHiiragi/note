@@ -240,7 +240,7 @@
 
 ### 1.2.3 其他坐标系
 
-## 1.3 向量
+## 1.3 向量的计算
 ### 1.3.1 向量代数
 1. 向量的坐标运算：设 $\boldsymbol \alpha = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol \beta = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$，则有
 

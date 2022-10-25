@@ -273,6 +273,16 @@ const refList = [
         page: [1, 44]
     },
     {
+        author: ["项武义", "王申怀", "潘养廉"],
+        title: "古典几何学",
+        type: "M",
+        press: "高等教育出版社",
+        locate: "北京",
+        year: 2014,
+        page: [41, 54],
+        plot: 0
+    },
+    {
         author: ["吕林根", "徐子道"],
         title: "解析几何",
         type: "M",
