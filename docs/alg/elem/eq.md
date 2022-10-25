@@ -233,7 +233,7 @@
         6. 开方法则：若 $a > b > 0$，整数 $n > 1$，则 $\sqrt[n]{a} > \sqrt[n]{b}$
 
 ### 2.3.2 不等式实例
-1. $\text{Cauchy}$ 不等式：设 $a_i, b_i \in \mathbf R \ (i = 1, 2, \cdots, n)$，则有
+1. $\text{Cauchy} - \text{Schwarz}$ 不等式：设 $a_i, b_i \in \mathbf R \ (i = 1, 2, \cdots, n)$，则有
 
     $$
     \left(\sum_{i=1}^n a_i b_i\right)^2 \leqslant \left(\sum_{i=1}^n a_i^2\right) \left(\sum_{i=1}^n b_i^2\right)

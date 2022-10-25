@@ -78,7 +78,10 @@
     其中 $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma \in V, k \in \mathbf R$，则称二元运算 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>$ 为 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的内积，引入内积后的线性空间称为内积空间
 
     1. ${\displaystyle \left<\sum_{i=1}^n k_i \boldsymbol \alpha_i, \sum_{j=1}^m l_j \boldsymbol \beta_j\right> = \sum_{i=1}^n \sum_{j=1}^m k_i l_j \left<\boldsymbol \alpha_i, \boldsymbol \beta_j\right>}$
-    2. $\text{Cauchy} - \text{Schwarz}$ 不等式：设 $\boldsymbol \alpha, \boldsymbol \beta$ 是内积空间 $V$ 上的向量，则恒有 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>^2 \leqslant \left<\boldsymbol \alpha, \boldsymbol \alpha\right> \left<\boldsymbol \beta, \boldsymbol \beta\right>$
+    2. $\text{Cauchy} - \text{Schwarz}$ 不等式的向量形式：设 $\boldsymbol \alpha, \boldsymbol \beta$ 是内积空间 $V$ 上的向量，则恒有 $\left<\boldsymbol \alpha, \boldsymbol \beta\right>^2 \leqslant \left<\boldsymbol \alpha, \boldsymbol \alpha\right> \left<\boldsymbol \beta, \boldsymbol \beta\right>$
+
+        !!! note "三角不等式"
+            $\text{Cauchy} - \text{Schwarz}$ 不等式导出三角不等式：$|\boldsymbol \alpha + \boldsymbol \beta| \leqslant |\boldsymbol \alpha| + |\boldsymbol \beta|$．将其推广可得 $|\boldsymbol \alpha_1 + \boldsymbol \alpha_2 + \cdots + \boldsymbol \alpha_n| \leqslant |\boldsymbol \alpha_1| + |\boldsymbol \alpha_2| + \cdots + |\boldsymbol \alpha_n|$
 
 2. 设 $\boldsymbol \alpha$ 是内积空间 $V$ 的中的一个向量，则 $\sqrt{\left<\boldsymbol \alpha, \boldsymbol \alpha\right>}$ 称为向量 $\boldsymbol \alpha$ 的模或者范数，记为 $|\boldsymbol \alpha|$
     1. $|\boldsymbol \alpha| = 0$ 当且仅当 $\boldsymbol \alpha = \boldsymbol 0$
@@ -135,7 +138,7 @@
     1. 设线性变换 $T$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的表示矩阵为 $\boldsymbol A$，向量 $\boldsymbol \xi$ 在基 $\begin{bmatrix} \boldsymbol \varepsilon_1 & \boldsymbol \varepsilon_2 & \cdots & \boldsymbol \varepsilon_n \\ \end{bmatrix}$ 下的坐标为 $\boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$，则 $T(\boldsymbol \xi)$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的坐标为 $\boldsymbol{Ax}$
     2. 设线性变换 $T$ 在线性空间的两组基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 与 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 下的表示矩阵分别是 $\boldsymbol A$ 与 $\boldsymbol B$，从基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 到基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 的过渡矩阵为 $\boldsymbol M$，则 $\boldsymbol B = \boldsymbol M^{-1} \boldsymbol A \boldsymbol M$
 
-## 1.2 坐标系
+## 1.2 标架
 ### 1.2.1 标架与坐标
 1. 基与维数：设 $V$ 是线性空间，如果在 $V$ 中存在 $n$ 个线性无关的向量 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 使得 $V$ 中任一向量 $\alpha$ 均可由 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 线性表出，则称向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 为线性空间 $V$ 的一组基，$n$ 称为线性空间 $V$ 的维数，记作 $\operatorname{dim} V = n$，并称 $V$ 是 $n$ 维线性空间
 2. 坐标：设向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 是 $n$ 维线性空间 $V$ 的一组基，$\boldsymbol \alpha$ 是 $V$ 中的任一向量，若 $\boldsymbol \alpha = x_1 \boldsymbol \varepsilon_1 + x_2 \boldsymbol \varepsilon_2 + \cdots + x_n \boldsymbol \varepsilon_n$，则称 $x_1, x_2, \cdots, x_n$ 为向量 $\boldsymbol \alpha$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的坐标
@@ -184,7 +187,7 @@
 
         2. 过渡矩阵是可逆的
 
-### 1.2.2 仿射坐标系
+### 1.2.2 仿射标架
 1. 线性空间的同构
     1. $\mathbf R^n$ 是 $\mathbf R$ 上的线性空间：设 $(x_1, x_2, \cdots, x_n), (y_1, y_2, \cdots, y_n) \in \mathbf R^n$，定义 $\mathbf R^n$ 上的加法运算与 $\mathbf R$ 上的数乘运算
 
@@ -218,26 +221,26 @@
 
     1. 维度：$\mathscr A$ 的维度为与之相联系的线性空间 $V$ 的维度，记作 $\operatorname{dim} {\mathscr A} = \operatorname{dim} V$
     2. 任何线性空间都是一个仿射空间：设 $V$ 是一个线性空间，定义 $\overrightarrow{\boldsymbol \alpha \boldsymbol \beta} = \boldsymbol \beta - \boldsymbol \alpha$，则 $V$ 是一个仿射空间
-    3. 仿射几何公理的完备性：任何维数相同的仿射空间都是同构的
 
-        !!! note "仿射空间的同构"
-            设 $\mathscr A, \mathscr B$ 是两个仿射空间，且相联系的线性空间 $V, W$ 存在同构映射 $\varphi: V \to W$．若存在一个双射 $\psi: \mathscr A \to \mathscr B$ 使得对于任意 $A, B \in \mathscr A$，均有 $\overrightarrow{\psi(A) \psi(B)} = \varphi(\overrightarrow{AB})$，则称 $\mathscr A$ 与 $\mathscr B$ 同构
-
+3. 仿射几何公理的完备性：任何维数相同的仿射空间都是同构的
+    1. $\text{Euclid}$ 空间 $\mathbf R^n$ 是一个与内积空间 $\mathbf R^n$ 相联系的仿射空间．设 $A = (a_1, a_2, \cdots, a_n), B = (b_1, b_2, \cdots, b_n)$，定义 $\overrightarrow{AB} = (b_1 - a_1, b_2 - a_2, \cdots, b_n - a_n)$，其中点 $A$ 称为向量 $\overrightarrow{AB}$ 的始点，点 $B$ 称为向量 $\overrightarrow{AB}$ 的终点
+    2. 仿射空间的同构：设 $\mathscr A, \mathscr B$ 是两个仿射空间，且相联系的线性空间 $V, W$ 存在同构映射 $\varphi: V \to W$．若存在一个双射 $\psi: \mathscr A \to \mathscr B$ 使得对于任意 $A, B \in \mathscr A$，均有 $\overrightarrow{\psi(A) \psi(B)} = \varphi(\overrightarrow{AB})$，则称 $\mathscr A$ 与 $\mathscr B$ 同构
         1. 设 $\mathscr A$ 为任意仿射空间，任选 $O \in \mathscr A$．对于任意 $A \in \mathscr A$，构造径向量 $\psi_O(A) = \overrightarrow{OA}$，则 $\mathscr A$ 同构于相联系的被看作为仿射空间的线性空间 $V$
         2. 任何一个被看作仿射空间的 $n$ 维线性空间同构于仿射空间 $\mathbf R^n$
+    3. 仿射标架：设 $\mathscr A$ 为仿射空间，$V$ 为与之联系的线性空间，称 $\mathscr A$ 中一点 $O$ 与基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 组成的集合称为 $\mathscr A$ 中的仿射标架，或称仿射坐标系，记作 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$
+        1. 每个仿射标架 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
+        2. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架；若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架
 
-    4. 仿射坐标系：设 $\mathscr A$ 为仿射空间，$V$ 为与之联系的线性空间，称 $\mathscr A$ 中一点 $O$ 与基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 组成的集合称为 $\mathscr A$ 中的仿射坐标系，记作 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$
-        1. 每个仿射坐标系 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构
-        2. 当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
-
-### 1.2.3 其他坐标系
+### 1.2.3 其他标架
 
 ## 1.3 向量
-- $\text{Euclid}$ 空间 $\mathbf R^n$ 是一个与内积空间 $\mathbf R^n$ 相联系的仿射空间．设 $A = (a_1, a_2, \cdots, a_n), B = (b_1, b_2, \cdots, b_n)$，定义 $\overrightarrow{AB} = (b_1 - a_1, b_2 - a_2, \cdots, b_n - a_n)$．取 $O = (0, 0, \cdots, 0)$，基为标准基
-    1. 仿射空间 $\mathbf R^n$ 中一点 $A = (a_1, a_2, \cdots, a_n)$ 的坐标同构为 $A(a_1, a_2, \cdots, a_n)$
-    2. 仿射空间 $\mathbf R^n$ 相联系的线性空间 $\mathbf R^n$ 中向量 $\boldsymbol \alpha = (x_1, x_2, \cdots, x_n)$ 的坐标为 $\begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$
-
-    通常将向量 $\alpha$ 与其坐标等同
+1. 向量的加法与减法
+    1. 反向量：向量 $\overrightarrow{AB}$ 与向量 $\overrightarrow{BA}$ 互为反向量，即 $\overrightarrow{AB} + \overrightarrow{BA} = \boldsymbol 0$
+    2. 向量的减法：若向量 $\boldsymbol a, \boldsymbol b, \boldsymbol c$ 有 $\boldsymbol a = \boldsymbol b + \boldsymbol c$，则称 $\boldsymbol c$ 为向量 $\boldsymbol a$ 与 $\boldsymbol b$ 的差，记作 $\boldsymbol c = \boldsymbol a - \boldsymbol b = \boldsymbol a + (-\boldsymbol b)$
+    3. 向量的共线与共面
+        1. 设向量 $\boldsymbol e \neq 0$，若向量 $\boldsymbol r$ 是 $\boldsymbol e$ 的线性组合，则称向量 $\boldsymbol r$ 与向量 $\boldsymbol e$ 共线
+        2. 设向量 $\boldsymbol e_1, \boldsymbol e_2$ 不共线，若向量 $\boldsymbol r$ 是 $\boldsymbol e_1, e_2$ 的线性组合，则称向量 $\boldsymbol r$ 与向量 $\boldsymbol e_1, \boldsymbol e_2$ 共面
+2. 
 
 ### 1.3.1 向量代数
 
