@@ -236,12 +236,13 @@
         1. 每个仿射标架 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
         2. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架；若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架
         3. 当标架取定后，仿射空间与与之联系的线性空间与 $\mathbf R^n$ 具有一一对应的关系，称之为坐标系．由仿射标架、$\text{Descartes}$ 标架与 $\text{Descartes}$ 直角标架确定的坐标系分别称作仿射坐标系、$\text{Descartes}$ 坐标系与 $\text{Descartes}$ 直角坐标系．默认坐标系均为 $\text{Descartes}$ 直角坐标系
+    4. 仿射空间的度量：设 $A, B$ 为仿射空间 $\mathscr A$ 中的两个点，则 $\rho(A, B) = |\overrightarrow{AB}|$
 
 ### 1.2.3 其他坐标系
 
 ## 1.3 向量
 ### 1.3.1 向量代数
-1. 向量的坐标运算：设 $\boldsymbol \alpha = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol \beta = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$
+1. 向量的坐标运算：设 $\boldsymbol \alpha = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol \beta = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$，则有
 
     $$
     \begin{aligned}
@@ -257,6 +258,27 @@
         2. 向量的减法：若向量 $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma$ 有 $\boldsymbol \alpha = \boldsymbol \beta + \boldsymbol \gamma$，则称 $\boldsymbol \gamma$ 为向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的差，记作 $\boldsymbol \gamma = \boldsymbol \alpha - \boldsymbol \beta = \boldsymbol \alpha + (-\boldsymbol \beta)$
     2. 向量的定比分点：设向量 $\overrightarrow{P_1 P_2}$ 的始点为 $P_1(x_1, x_2, \cdots, x_n)$，终点为 $P_2(y_1, y_2, \cdots, y_n)$，则分向量 $\overrightarrow{P_1 P_2}$ 成定比 $\lambda \ (\lambda \neq -1)$ 的分点 $P$ 的坐标为 $P \left(\dfrac{x_1 + \lambda y_1}{1 + \lambda}, \dfrac{x_2 + \lambda y_2}{1 + \lambda}, \cdots, \dfrac{x_n + \lambda y_n}{1 + \lambda}\right)$
 
-2. 向量在轴上的射影
+2. 向量的内积：设 $\boldsymbol \alpha = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol \beta = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$，定义内积 $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = x_1 y_1 + x_2 y_2 + \cdots + x_n y_n$
+    1. 定义向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的夹角：$\theta = \arccos \dfrac{\left<\boldsymbol \alpha, \boldsymbol \beta\right>}{|\boldsymbol \alpha| |\boldsymbol \beta|}$．特别地，定义非零向量的方向角为向量与基所成的角
+    2. 仿射坐标系下的内积：设 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 是一个仿射标架，则
+
+        $$
+        \begin{aligned}
+        \left<\boldsymbol \alpha, \boldsymbol \beta\right>
+        & = \boldsymbol x^{\mathrm T} \boldsymbol E \boldsymbol y \\
+        & = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}
+        \begin{bmatrix}
+        e_{11} & e_{12} & \cdots & e_{1n} \\
+        e_{21} & e_{22} & \cdots & e_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        e_{m1} & e_{m2} & \cdots & e_{mn} \\
+        \end{bmatrix}
+        \begin{bmatrix} y_1 \\ y_2 \\ \vdots \\ y_n \\ \end{bmatrix}
+        \end{aligned}
+        $$
+
+        其中 $e_{ij} = \left<\boldsymbol \varepsilon_i, \boldsymbol \varepsilon_j\right>$．当且仅当矩阵为对称的正定矩阵时，$\boldsymbol x^{\mathrm T} \boldsymbol E \boldsymbol y$ 定义了一个内积
+
+3. $\text{Grassmann}$ 代数
 
 ### 1.3.2 向量分析
