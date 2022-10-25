@@ -259,7 +259,7 @@
     2. 向量的定比分点：设向量 $\overrightarrow{P_1 P_2}$ 的始点为 $P_1(x_1, x_2, \cdots, x_n)$，终点为 $P_2(y_1, y_2, \cdots, y_n)$，则分向量 $\overrightarrow{P_1 P_2}$ 成定比 $\lambda \ (\lambda \neq -1)$ 的分点 $P$ 的坐标为 $P \left(\dfrac{x_1 + \lambda y_1}{1 + \lambda}, \dfrac{x_2 + \lambda y_2}{1 + \lambda}, \cdots, \dfrac{x_n + \lambda y_n}{1 + \lambda}\right)$
 
 2. 向量的内积：设 $\boldsymbol \alpha = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol \beta = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$，定义内积 $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = x_1 y_1 + x_2 y_2 + \cdots + x_n y_n$
-    1. 定义向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的夹角：$\theta = \arccos \dfrac{\left<\boldsymbol \alpha, \boldsymbol \beta\right>}{|\boldsymbol \alpha| |\boldsymbol \beta|}$．特别地，定义非零向量的方向角为向量与基所成的角
+    1. 定义向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的夹角：$\theta = \arccos \dfrac{\left<\boldsymbol \alpha, \boldsymbol \beta\right>}{|\boldsymbol \alpha| |\boldsymbol \beta|}$，并记 $\cos \theta$ 为 $\cos \left<\boldsymbol \alpha, \boldsymbol \beta\right>$，记 $\sin \theta$ 为 $\sin \left<\boldsymbol \alpha, \boldsymbol \beta\right>$．特别地，称非零向量与基所成的夹角为该向量的方向角
     2. 仿射坐标系下的内积：设 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 是一个仿射标架，则
 
         $$
@@ -279,6 +279,61 @@
 
         其中 $e_{ij} = \left<\boldsymbol \varepsilon_i, \boldsymbol \varepsilon_j\right>$．当且仅当矩阵为对称的正定矩阵时，$\boldsymbol x^{\mathrm T} \boldsymbol E \boldsymbol y$ 定义了一个内积
 
-3. $\text{Grassmann}$ 代数
+3. $\text{Grassmann}$ 代数：设 $V$ 是一个 $n$ 维向量空间，则 $V$ 中任意 $m$ 个有序向量 $\boldsymbol \alpha_1, \cdots, \boldsymbol \alpha_m$ 的外积记为 $\boldsymbol \alpha_1 \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m$，称为一个 $m$ 重可分解向量．所有 $m$ 重可分解向量形式上作线性扩张所得的空间记为 $\wedge^m(V)$，其中的元素称为 $m$ 重向量．在 $\wedge^m(V)$ 中规定外积运算 $\wedge$ 满足下列运算法则
+    1. 反对称性：$\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_i \wedge \cdots \wedge \boldsymbol \alpha_m=(-1)^{i-1} \boldsymbol \alpha_i \wedge \boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_{i-1} \wedge \boldsymbol \alpha_{i+1} \wedge \cdots \wedge \boldsymbol \alpha_m$
+    2. 线性分配律：设 $\lambda, \mu \in \mathbf R$
+
+        $$
+        \begin{aligned}
+        & \left(\lambda \boldsymbol \alpha_1+\mu \boldsymbol \beta\right) \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m \\
+        = & \lambda\left(\boldsymbol \alpha_1 \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m\right)+\mu\left(\boldsymbol \beta \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m\right)
+        \end{aligned}
+        $$
+
+    $\wedge^m(V)$ 是一个 $C_n^m$ 维向量空间．特别地，当 $m > n$ 时, $\wedge^m(V)$ 只含有 $m$ 重零向量
+    
+    1. 约定 $\wedge^0(V)$ 表示实数系，任何实数 $\lambda$ 与一个 $m$ 重向量 $\boldsymbol{p}$ 的外积规定为 $\lambda \boldsymbol{p}$，$\wedge^1(V)$ 就是 $V$ 本身
+    2. 记 $G(V)=\wedge^0(V) \oplus \wedge^1(V) \oplus \cdots \oplus \wedge^n(V)$，$G(V)$ 是一个 $2^n$ 维的向量空间，外积运算 $\wedge$ 自然延拓成 $G(V)$ 中的外积运算
+
+        $$
+        \left(\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_p\right) \wedge\left(\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_q\right)= \begin{cases}\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_p \wedge \boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_q, & p+q \leqslant n, \\ 0, & p+q>n .\end{cases}
+        $$
+
+        并要求满足结合律及线性分配律．$G(V)$ 连同外积运算 $\wedge$ 称为 $V$ 上的 $\text{Grassmann}$ 代数
+
+    3. 对两个 $m$ 重可分解向量 $\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m$ 和 $\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m$，规定内积为
+
+        $$
+        \left\langle\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m, \boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m\right\rangle=
+        \begin{vmatrix}
+        \boldsymbol \alpha_1 \boldsymbol \beta_1 & \boldsymbol \alpha_1 \boldsymbol \beta_2 & \cdots & \boldsymbol \alpha_1 \boldsymbol \beta_m \\
+        \boldsymbol \alpha_2 \boldsymbol \beta_1 & \boldsymbol \alpha_2 \boldsymbol \beta_2 & \cdots & \boldsymbol \alpha_2 \boldsymbol \beta_m \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \boldsymbol \alpha_m \boldsymbol \beta_1 & \boldsymbol \alpha_m \boldsymbol \beta_2 & \cdots & \boldsymbol \alpha_m \boldsymbol \beta_m \\
+        \end{vmatrix}
+        $$
+
+        然后用线性分配律延拓为 $\wedge^m(V)$ 中的内积．特别地，称 $\left|\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m\right|=\sqrt{\left\langle\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m, \boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m\right\rangle}$ 为 $\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m$ 的长度
+
+    4. 定义由两个 $m$ 重可分解向量 $\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m$ 和 $\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m$ 所确定的 $m$ 维平面之间的夹角为
+
+        $$
+        \theta=\arccos \dfrac{\left\langle\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m, \boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m\right\rangle}{\left|\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m\right|\left|\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m\right|}
+        $$
+
+    !!! note "空间向量的外积与混合积"
+        设 $\boldsymbol \alpha, \boldsymbol \beta$ 是 $3$ 维线性空间的两个向量
+
+        1. 外积：记 $\boldsymbol \alpha \wedge \boldsymbol \beta$ 为 $\boldsymbol \alpha \times \boldsymbol \beta$，且有 $|\boldsymbol \alpha \times \boldsymbol \beta|=|\boldsymbol \alpha||\boldsymbol \beta| \sin \langle\boldsymbol \alpha, \boldsymbol \beta\rangle$，其方向与 $\boldsymbol \alpha$ 和 $\boldsymbol \beta$ 正交
+            1. $\boldsymbol \alpha \times \boldsymbol \beta=-\boldsymbol \beta \times \boldsymbol \alpha$
+            2. $(\lambda \boldsymbol \alpha+\mu \boldsymbol \beta) \times \boldsymbol \gamma=\lambda(\boldsymbol \alpha \times \boldsymbol \gamma)+\mu(\boldsymbol \beta \times \boldsymbol \gamma) \ (\lambda, \mu \in \mathbf R)$
+            3. $(\boldsymbol \alpha \times \boldsymbol \beta) \times \boldsymbol \gamma-\boldsymbol \alpha \times(\boldsymbol \beta \times \boldsymbol \gamma)=(\boldsymbol \alpha \cdot \boldsymbol \beta) \boldsymbol \gamma-(\boldsymbol \beta \cdot \boldsymbol \gamma) \boldsymbol \alpha$
+
+        2. 双重外积：设 $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma$ 为三个向量，定义其双重外积为 $\boldsymbol \alpha \times \boldsymbol \beta \times \boldsymbol \gamma = \boldsymbol \alpha \times \boldsymbol \beta \times \boldsymbol \gamma = (\boldsymbol \alpha \boldsymbol \gamma) \boldsymbol \beta - (\boldsymbol \beta \boldsymbol \gamma) \boldsymbol \alpha$
+            1. $\text{Lagrange}$ 恒等式：$(\boldsymbol \alpha \times \boldsymbol \beta) \cdot\left(\boldsymbol \alpha^{\prime} \times \boldsymbol \beta^{\prime}\right)=\begin{vmatrix} \boldsymbol \alpha \cdot \boldsymbol \alpha^{\prime} & \boldsymbol \alpha \cdot \boldsymbol \beta^{\prime} \\ \boldsymbol \beta \cdot \boldsymbol \alpha^{\prime} & \boldsymbol \beta \cdot \boldsymbol \beta^{\prime} \end{vmatrix}$
+            2. $\text{Jacobi}$ 恒等式：$(\boldsymbol \alpha \times \boldsymbol \beta) \times \boldsymbol \gamma + (\boldsymbol \beta \times \boldsymbol \gamma) \times \boldsymbol \alpha + (\boldsymbol \gamma \times \boldsymbol \alpha) \times \boldsymbol \beta = 0$
+        3. 混合积：设 $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma$ 为三个向量，定义其混合积 $V(\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma)=(\boldsymbol \alpha \times \boldsymbol \beta) \cdot \boldsymbol \gamma$
+            1. $V(\boldsymbol{a}, \boldsymbol{b}, \boldsymbol{c})=V(\boldsymbol{b}, \boldsymbol{c}, \boldsymbol{a})=V(\boldsymbol{c}, \boldsymbol{a}, \boldsymbol{b})=-V(\boldsymbol{b}, \boldsymbol{a}, \boldsymbol{c})=-V(\boldsymbol{c}, \boldsymbol{b}, \boldsymbol{a})=-V(\boldsymbol{a}, \boldsymbol{c}, \boldsymbol{b})$
+            2. $V\left(\lambda \boldsymbol{a}_1+\mu \boldsymbol{a}_2, \boldsymbol{b}, \boldsymbol{c}\right)=\lambda V\left(\boldsymbol{a}_1, \boldsymbol{b}, \boldsymbol{c}\right)+\mu V\left(\boldsymbol{a}_2, \boldsymbol{b}, \boldsymbol{c}\right)$
 
 ### 1.3.2 向量分析

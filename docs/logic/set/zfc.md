@@ -399,8 +399,9 @@
         通常将 $p(m, n)$ 写作 $m^n$
 
     !!! note "常用运算符号"
-        1. 定义阶乘 $n! = \left\{\begin{aligned} & 1, & n > 1 \\ & n \cdot (n - 1)!, & n = 0 \end{aligned}\right.$
-        2. 记累加符号为 ${\displaystyle \sum_{i = k}^n f(i) = f(k) + f(k + 1) + \cdots + f(n)}$，累乘符号为 ${\displaystyle \prod_{i = k}^n f(i) = f(k) f(k + 1) \cdots f(n)}$
+        1. 对于二元运算符 $*$，默认其运算具有左结合性：$a * b * c = (a * b) * c$
+        2. 定义阶乘 $n! = \left\{\begin{aligned} & 1, & n > 1 \\ & n \cdot (n - 1)!, & n = 0 \end{aligned}\right.$
+        3. 记累加符号为 ${\displaystyle \sum_{i = k}^n f(i) = f(k) + f(k + 1) + \cdots + f(n)}$，累乘符号为 ${\displaystyle \prod_{i = k}^n f(i) = f(k) f(k + 1) \cdots f(n)}$
 
 6. 自然数集 $\mathbf N$ 的性质
     1. $\mathbf N$ 上的加法
