@@ -399,9 +399,20 @@
         通常将 $p(m, n)$ 写作 $m^n$
 
     !!! note "常用运算符号"
-        1. 对于二元运算符 $*$，默认其运算具有左结合性：$a * b * c = (a * b) * c$
-        2. 定义阶乘 $n! = \left\{\begin{aligned} & 1, & n > 1 \\ & n \cdot (n - 1)!, & n = 0 \end{aligned}\right.$
-        3. 记累加符号为 ${\displaystyle \sum_{i = k}^n f(i) = f(k) + f(k + 1) + \cdots + f(n)}$，累乘符号为 ${\displaystyle \prod_{i = k}^n f(i) = f(k) f(k + 1) \cdots f(n)}$
+        1. 定义阶乘 $n! = \left\{\begin{aligned} & 1, & n > 1 \\ & n \cdot (n - 1)!, & n = 0 \end{aligned}\right.$
+        2. 定义累加符号为 ${\displaystyle \sum_{i = k}^n f(i) = f(k) + f(k + 1) + \cdots + f(n)}$，具有如下性质
+            - ${\displaystyle \sum_{k=0}^n a_k =\sum_{j=0}^n a_j}$
+            - ${\displaystyle \sum_{k=0}^n a_k =\sum_{j=N}^{n+N} a_{j-N}}$
+            - ${\displaystyle \sum_{k=0}^n a_k+\sum_{k=0}^n b_k=\sum_{k=0}^n\left(a_k+b_k\right)}$
+            - ${\displaystyle \left(\sum_{j=1}^m a_j\right)\left(\sum_{k=1}^n b_k\right)=\sum_{j=1}^m \sum_{k=1}^n a_j b_k}$
+            - ${\displaystyle \sum_{j=1}^m \sum_{k=1}^n a_{j k}=\sum_{k=1}^n \sum_{j=1}^m a_{j k}}$
+        3. 定义累乘符号为 ${\displaystyle \prod_{i = k}^n f(i) = f(k) f(k + 1) \cdots f(n)}$
+            - ${\displaystyle \prod_{k=0}^n a_k=\prod_{j=0}^n a_j}$
+            - ${\displaystyle \prod_{k=0}^n a_k=\prod_{j=N}^{n+N} a_{j-N}}$
+            - ${\displaystyle \prod_{k=0}^n a_k \prod_{k=0}^n b_k=\prod_{k=0}^n a_k b_k}$
+            - ${\displaystyle \prod_{j=1}^m \prod_{k=1}^n a_{j k}=\prod_{k=1}^n \prod_{j=1}^m a_{j k}}$
+
+        对于二元运算符 $*$，默认其运算具有左结合性：$a * b * c = (a * b) * c$
 
 6. 自然数集 $\mathbf N$ 的性质
     1. $\mathbf N$ 上的加法

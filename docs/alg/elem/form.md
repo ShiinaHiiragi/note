@@ -143,6 +143,17 @@
         4. $\arcsin x = \left\{\begin{aligned} & \arccos \sqrt{1 - x^2}, & 0 \leqslant x < 1 \\ & \arccos \sqrt{1 - x^2}, & -1 \leqslant x < 0 \end{aligned}\right.$
         5. $\arccos x = \left\{\begin{aligned} & \arcsin \sqrt{1 - x^2}, & 0 \leqslant x < 1 \\ & \pi - \arcsin \sqrt{1 - x^2}, & -1 \leqslant x < 0 \end{aligned}\right.$
         6. $\arctan x = \left\{\begin{aligned} & \arccos \dfrac{1}{\sqrt{1 + x^2}}, & x \geqslant 0 \\ & -\arccos \dfrac{1}{\sqrt{1 + x^2}}, & x < 0 \end{aligned}\right.$
+3. $\text{Euler}$ 公式：$e^{\pm \mathrm{i} x}=\cos x \pm \mathrm{i} \sin x \ (x \in \mathbf C)$
+
+    !!! note "倍角的 $\text{de Moivre}$ 公式"
+        $\text{de Moivre}$ 公式是 $\text{Euler}$ 公式的推论：${\displaystyle \cos n x+\mathrm{i} \sin n x=\sum_{k=0}^n \mathrm{i}^k\dbinom{n}{k} \cos ^{n-k} x \sin ^k x}$，分离复数的实部和虚部得到三角函数的倍角公式
+
+        $$
+        \begin{aligned}
+        &\cos n x=\cos ^n x-\dbinom{n}{2} \cos ^{n-2} x \sin ^2 x+\dbinom{n}{4} \cos ^{n-4} x \sin ^4 x-\cdots \\
+        &\sin n x=\dbinom{n}{1} \cos ^{n-1} x \sin x-\dbinom{n}{3} \cos ^{n-3} x \sin ^3 x+\dbinom{n}{5} \cos ^{n-5} x \sin ^5 x-\cdots
+        \end{aligned}
+        $$
 
 ## 1.3 初等函数
 ### 1.3.1 函数的性质
@@ -246,3 +257,15 @@
     2. 若 $(0, +\infty)$ 上的正值函数 $f(x)$ 有 ① $f(x + 1) = xf(x)$；② $f(1) = 1$；③ $\ln f$ 为凸函数，则 $f(x) = \Gamma(x)$
     3. $B$ 函数：设 $x, y > 0$，定义 $B(x, y) = {\displaystyle \int_0^1 t^{x-1} (1-t)^{y-1} \mathrm dt} = \dfrac{\Gamma(x) \Gamma(y)}{\Gamma(x + y)}$
     4. $\text{Stirling}$ 公式：${\displaystyle \lim_{x \to +\infty} \dfrac{\Gamma(x + 1)}{\left(\dfrac xe\right)^x \sqrt{2\pi x}}} = 1$
+3. 双曲函数
+    1. 双曲正弦：$\sinh x=\dfrac{\mathrm{e}^x-\mathrm{e}^{-x}}{2}$
+    2. 双曲余弦：$\cosh x=\dfrac{e^x+e^{-x}}{2}$
+    3. 双曲正切：$\tanh x=\dfrac{\sinh x}{\cosh x}=\dfrac{\mathrm{e}^x-\mathrm{e}^{-x}}{\mathrm{e}^x+\mathrm{e}^{-x}}$
+    4. 双曲余切：$\operatorname{coth} x=\dfrac{\cosh x}{\sinh x}=\dfrac{\mathrm{e}^x+\mathrm{e}^{-x}}{\mathrm{e}^x-\mathrm{e}^{-x}}$
+    5. 双曲正割：$\operatorname{sech} x=\dfrac{1}{\cosh x}=\dfrac{2}{\mathrm{e}^x+\mathrm{e}^{-x}}$
+    6. 双曲余割：$\operatorname{csch} x=\dfrac{1}{\sinh x}=\dfrac{2}{\mathrm{e}^x-\mathrm{e}^{-x}}$
+4. 反双曲函数
+    1. 反双曲正弦：$\operatorname{arcsinh} x=\ln \left(x+\sqrt{x^2+1}\right)$
+    2. 反双曲余弦：$\operatorname{arccosh} x=\pm \ln \left(x+\sqrt{x^2-1}\right) \ (x \geqslant 1)$
+    3. 反双曲正切：$\operatorname{arctanh} x=\dfrac{1}{2} \ln \dfrac{1+x}{1-x} \ (|x|<1)$
+    4. 反双曲余切：$\operatorname{arccoth} x=\dfrac{1}{2} \ln \dfrac{x+1}{x-1} \ (|x|>1)$
