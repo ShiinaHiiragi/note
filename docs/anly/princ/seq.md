@@ -24,7 +24,7 @@
     2. 级数：记 ${\displaystyle \sum_{i=1}^\infty a_i = \lim_{n \to \infty} \sum_{i=1}^n a_i = \lim_{n \to \infty} S_n}$ ，称之为无穷级数
 
     !!! note "$\text{Bernoulli}$ 数"
-        设 $S_n^p:=1^p+2^p+\cdots+n^p$，则有
+        设 $S_n^p=1^p+2^p+\cdots+n^p$，则有
 
         $$
         S_n^p=\dfrac{1}{p+1} n^{p+1}+\dfrac{1}{2} n^p+\dfrac{B_2}{2}\dbinom{p}{1} n^{p-1}+\dfrac{B_3}{3}\dbinom{p}{2}n^{p-2}+\cdots+\dfrac{B_p}{p}\dbinom{p}{p-1}n
@@ -44,6 +44,14 @@
         1. $(1+B)^{p+1}-B_{p+1}=0$
         2. $\dfrac{S_n^p}{p !}=\dfrac{B_0(n+1)^{p+1}}{0 !(p+1) !}+\dfrac{B_1(n+1)^p}{1 ! p !}+\dfrac{B_2(n+1)^{p-1}}{2 !(p-1) !}+\cdots+\dfrac{B_p(n+1)}{p ! 1 !}$
         3. ${\displaystyle \dfrac{x}{\mathrm{e}^x-1}=\dfrac{B_0}{0 !}+\dfrac{B_1}{1 !} x+\dfrac{B_2}{2 !} x^2+\cdots=\sum_{k=0}^{\infty} \dfrac{B_k}{k !} x^k}$
+
+        导出常用的前 $n$ 项和
+
+        1. $1+2+3+\cdots+n=\dfrac{1}{2} n(n+1)$
+        2. $1^2+2^2+3^2+\cdots+n^2=\dfrac{1}{6} n(n+1)(2 n+1)$
+        3. $1^3+2^3+3^3+\cdots+n^3=\dfrac{1}{4} n^2(n+1)^2$
+        4. $1^4+2^4+3^4+\cdots+n^4=\dfrac{1}{30} n(n+1)(2 n+1)\left(3 n^2+3 n-1\right)$
+        5. $1^5+2^5+3^5+\cdots+n^5=\dfrac{1}{12} n^2(n+1)^2\left(2 n^2+2 n-1\right)$
 
 4. 差分：对于数列 $\{a_k\}$，称 $\Delta a_k = a_{k+1} - a_k \ (k \in \mathbf Z_+)$ 为 $\{a_k\}$ 的一阶差分，数列 $\{\Delta a_k\}$ 称为 $\{a_k\}$ 的一阶差分数列
     1. 高阶差分：设 $r \in \mathbf Z_+$，称 $\Delta^r a_k = \Delta(\Delta^{r-1}a_k) \ (k \in \mathbf Z_+)$ 为 $\{a_k\}$ 的 $r$ 阶差分，数列 $\{\Delta^r a_k\}$ 称为 $\{a_k\}$ 的 $r$ 阶差分数列

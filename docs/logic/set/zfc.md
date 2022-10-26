@@ -482,6 +482,23 @@
     2. 百分数：分母 $b = 100^{\mathbf Z}$ 的特殊分数，此时有 $a\% = \dfrac{a}{100^{\mathbf Z}} \times 100^{\mathbf Z}\%$
     3. 比例：形如 $p = a : b$ 的式子，其中 $a$ 称作前项，$b$ 称作后项，$p$ 称作比值
 
+        !!! note "比例的性质"
+            1. 设 $a : b = c : d$，则有
+                - 交叉积：$ad = bc$
+                - 更比定理：$a : c = b : d$
+                - 反比定理：$d : c = b : a$
+                - 合比定理：$(a+b) : a = (c+d) : c$
+                - 分比定理：$(a-b) : a = (c-d) : c$
+                - 合分比定理：$(a+b) : (a-b) = (c+d) : (c-d)$
+            2. 比例链：若几个比相等 $a_1 : b_2 = a_2 : b_2 = \cdots = a_n : b_n$，则可简写为比例链 $a_1 : a_2 : \cdots : a_n = b_1 : b_2 : \cdots : b_n$
+            3. 等比公式：若 $a_1 : a_2 : \cdots : a_n = b_1 : b_2 : \cdots : b_n$，则
+
+                $$
+                \dfrac{a_1}{b_1}=\dfrac{a_1+a_2+\cdots+a_n}{b_1+b_2+\cdots+b_n}=\dfrac{\lambda_1 a_1+\lambda_2 a_2+\cdots+\lambda_n a_n}{\lambda_1 b_1+\lambda_2 b_2+\cdots+\lambda_n b_n}=\dfrac{\sqrt{a_1^2+a_2^2+\cdots+a_n^2}}{\sqrt{b_1^2+b_2^2+\cdots+b_n^2}}
+                $$
+
+                其中 $\lambda_i$ 是一组任意不全为零的常数，$b_i$ 都不等于零 $(i = 1,2, \cdots, n)$.
+
 ### 1.3.4 实数集
 1. 实数集合：如果集合 $A \subseteq$ 有
     1. $A \neq \varnothing$ 且 $A \neq \mathbf Q$
