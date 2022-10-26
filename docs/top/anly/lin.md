@@ -239,23 +239,34 @@
     4. 仿射空间的度量：设 $\rho$ 是仿射空间 $\mathscr A$ 的一个度量，$A, B$ 为仿射空间中的两个点，则 $\rho(A, B) = |\overrightarrow{AB}|$
 
 4. $\text{Descartes}$ 直角坐标系的实例
-    1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四部分
+    1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
 
         <div style="text-align: center;">
 
-        |   象限   |    坐标取值    |
-        | :------: | :------------: |
-        | 第一象限 | $x > 0, y > 0$ |
-        | 第二象限 | $x < 0, y > 0$ |
-        | 第三象限 | $x < 0, y < 0$ |
-        | 第四象限 | $x > 0, y < 0$ |
+        |   象限   |            点集            |
+        | :------: | :------------------------: |
+        | 第一象限 | $\{(x, y) \mid x>0, y>0\}$ |
+        | 第二象限 | $\{(x, y) \mid x<0, y>0\}$ |
+        | 第三象限 | $\{(x, y) \mid x<0, y<0\}$ |
+        | 第四象限 | $\{(x, y) \mid x>0, y<0\}$ |
 
         </div>
 
-    2. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系
+    2. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1, \boldsymbol e_2$ 与 $\boldsymbol e_3$ 对应的三个坐标轴为 $x$ 轴，$y$ 轴与 $z$ 轴，记坐标系为 $Oxyz$．三个坐标轴将平面分成八个卦限
+
+        <div style="text-align: center;">
+
+        |   卦限   |                点集                |   卦限   |                 点集                 |
+        | :------: | :--------------------------------: | :------: | :----------------------------------: |
+        | 第一卦限 | $\{(x, y, z) \mid x>0, y>0, z>0\}$ | 第五卦限 | $\{(x, y, z) \mid x>0, y>0, z < 0\}$ |
+        | 第二卦限 | $\{(x, y, z) \mid x<0, y>0, z>0\}$ | 第六卦限 | $\{(x, y, z) \mid x<0, y>0, z < 0\}$ |
+        | 第三卦限 | $\{(x, y, z) \mid x<0, y<0, z>0\}$ | 第七卦限 | $\{(x, y, z) \mid x<0, y<0, z < 0\}$ |
+        | 第四卦限 | $\{(x, y, z) \mid x>0, y<0, z>0\}$ | 第八卦限 | $\{(x, y, z) \mid x>0, y<0, z < 0\}$ |
+
+        </div>
 
 ### 1.2.3 其他坐标系
-1. 极坐标系：$2$ 维仿射空间中的一个顶点 $O$ 与基 $\boldsymbol e$ 组成了一个极坐标系，称 $O$ 为极点，$\boldsymbol e$ 所在的直线为极轴．任意有序数对 $(\rho, \theta)$（其中 $\rho \geqslant 0, -\pi < \varphi \leqslant \pi$）唯一对应了平面中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$，$\theta$ 为 $\overrightarrow{OP}$ 与 $\boldsymbol e$ 的夹角，并称 $\overrightarrow{OP}$ 为极径，称 $(\rho, \theta)$ 为点 $P$ 的极坐标，记作 $P(\rho, \theta)$
+1. 极坐标系：$2$ 维仿射空间中的一个顶点 $O$ 与基 $\boldsymbol e$ 组成了一个极坐标系，称 $O$ 为极点，$\boldsymbol e$ 所在的直线为极轴．任意有序数对 $(\rho, \theta)$（其中 $\rho \geqslant 0, -\pi < \varphi \leqslant \pi$）唯一对应了平面中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$，$\theta$ 为 $\overrightarrow{OP}$ 与 $\boldsymbol e$ 的夹角．并称 $\rho$ 为极径，称 $\theta$ 为极角，称 $(\rho, \theta)$ 为点 $P$ 的极坐标，记作 $P(\rho, \theta)$
     1. 极坐标化为平面直角坐标
 
         $$
@@ -356,8 +367,9 @@
         !!! note "角度的分类"
             设 $\theta \in \mathbf R$ 为一个角度
 
-            1. 若 $\theta \in \left(0, \dfrac{\pi}{2}\right)$，则称 $\theta$ 为锐角；若 $\theta \in \left(\dfrac{\pi}{2}, \pi\right)$，则称 $\theta$ 为钝角
-            2. 若 $\theta = \dfrac{\pi}{2}$，则称 $\theta$ 为直角；若 $\theta = \pi$，则称 $\theta$ 为平角；若 $\theta = 2\pi$，则称 $\theta$ 为周角
+            1. 若 $\theta \in \left(0, +\infty\right)$，则称 $\theta$ 为正角；若 $\theta \in \left(-\infty, 0\right)$，则称 $\theta$ 为负角
+            2. 若 $\theta \in \left(0, \dfrac{\pi}{2}\right)$，则称 $\theta$ 为锐角；若 $\theta \in \left(\dfrac{\pi}{2}, \pi\right)$，则称 $\theta$ 为钝角
+            3. 若 $\theta = 0$，则称 $\theta$ 为零角；若 $\theta = \dfrac{\pi}{2}$，则称 $\theta$ 为直角；若 $\theta = \pi$，则称 $\theta$ 为平角；若 $\theta = 2\pi$，则称 $\theta$ 为周角
 
     2. 仿射坐标系下的内积：设 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 是一个仿射标架，则
 

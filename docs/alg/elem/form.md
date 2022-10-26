@@ -130,17 +130,17 @@
         4. $\cos \alpha \cdot \cos \beta = \dfrac{1}{2}[\cos(\alpha + \beta) + \cos (\alpha - \beta)], \sin \alpha \cdot \sin \beta = -\dfrac{1}{2}[\cos(\alpha + \beta) - \cos (\alpha - \beta)]$
 2. 反三角式的恒等变形
     1. 三角运算
-        1. $\sin(\arccos x) = \sqrt{1 - x^2}, \sin(\arctan x) = \dfrac{x}{\sqrt{1 + x^2}}, \sin(\mathrm{arccot}\ x) = \dfrac{1}{\sqrt{1 + x^2}}$
-        2. $\cos(\arcsin x) = \sqrt{1 - x^2}, \cos(\arctan x) = \dfrac{1}{\sqrt{1 + x^2}}, \cos(\mathrm{arccot}\ x) = \dfrac{x}{\sqrt{1 + x^2}}$
-        3. $\tan(\arcsin x) = \dfrac{x}{\sqrt{1 - x^2}}, \tan(\arccos x) = \dfrac{\sqrt{1 - x^2}}{x}, \tan(\mathrm{arccot}\ x) = \dfrac{1}{x}$
+        1. $\sin(\arccos x) = \sqrt{1 - x^2}, \sin(\arctan x) = \dfrac{x}{\sqrt{1 + x^2}}, \sin(\operatorname{arccot} x) = \dfrac{1}{\sqrt{1 + x^2}}$
+        2. $\cos(\arcsin x) = \sqrt{1 - x^2}, \cos(\arctan x) = \dfrac{1}{\sqrt{1 + x^2}}, \cos(\operatorname{arccot} x) = \dfrac{x}{\sqrt{1 + x^2}}$
+        3. $\tan(\arcsin x) = \dfrac{x}{\sqrt{1 - x^2}}, \tan(\arccos x) = \dfrac{\sqrt{1 - x^2}}{x}, \tan(\operatorname{arccot} x) = \dfrac{1}{x}$
         4. $\cot(\arcsin x) = \dfrac{\sqrt{1 - x^2}}{x}, \cot(\arccos x) = \dfrac{x}{\sqrt{1 - x^2}}, \cot(\arctan x) = \dfrac{1}{x}$
     2. 反三角式的关系
         1. $\arcsin(-x) = -\arcsin x, \arccos(-x) = \pi - \arccos x$
-        2. $\arctan(-x) = -\arctan x, \mathrm{arccot}(-x) = \pi - \mathrm{arccot}\ x$
-        3. $\arcsin x + \arccos x = \dfrac{\pi}{2}, \arctan x + \mathrm{arccot}\ x = \dfrac{\pi}{2}$
+        2. $\arctan(-x) = -\arctan x, \operatorname{arccot}(-x) = \pi - \operatorname{arccot} x$
+        3. $\arcsin x + \arccos x = \dfrac{\pi}{2}, \arctan x + \operatorname{arccot} x = \dfrac{\pi}{2}$
     3. 互表关系
         1. $\arcsin x = \arctan \dfrac{x}{\sqrt{1 - x^2}} \ (-1 < x < 1)$
-        2. $\arccos x = \mathrm{arccot}\ \dfrac{x}{\sqrt{1 - x^2}} \ (-1 < x < 1)$
+        2. $\arccos x = \operatorname{arccot} \dfrac{x}{\sqrt{1 - x^2}} \ (-1 < x < 1)$
         3. $\arctan x = \arcsin \dfrac{x}{\sqrt{1 + x^2}}$
         4. $\arcsin x = \left\{\begin{aligned} & \arccos \sqrt{1 - x^2}, & 0 \leqslant x < 1 \\ & \arccos \sqrt{1 - x^2}, & -1 \leqslant x < 0 \end{aligned}\right.$
         5. $\arccos x = \left\{\begin{aligned} & \arcsin \sqrt{1 - x^2}, & 0 \leqslant x < 1 \\ & \pi - \arcsin \sqrt{1 - x^2}, & -1 \leqslant x < 0 \end{aligned}\right.$
@@ -228,12 +228,13 @@
 
         <div style="text-align: center;">
 
-        |           函数           |   定义域    |                      值域                      |  奇偶性  | 单调性 |
-        | :----------------------: | :---------: | :--------------------------------------------: | :------: | :----: |
-        |     $y = \arcsin x$      |  $[-1, 1]$  | $\left[-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right]$ |  奇函数  | 增函数 |
-        |     $y = \arccos x$      |  $[-1, 1]$  |                   $[0, \pi]$                   | 非奇非偶 | 减函数 |
-        |     $y = \arctan x$      | $\mathbf R$ | $\left(-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right)$ |  奇函数  | 增函数 |
-        | $y = \mathrm{arccot}\ x$ | $\mathbf R$ |                   $(0, \pi)$                   | 非奇非偶 | 减函数 |
+        |  项目  |                   反正弦函数                   |   反余弦函数    |                   反正切函数                   |          反余弦函数          |
+        | :----: | :--------------------------------------------: | :-------------: | :--------------------------------------------: | :--------------------------: |
+        | 函数式 |                $y = \arcsin x$                 | $y = \arccos x$ |                $y = \arctan x$                 | $y = \operatorname{arccot} x$ |
+        | 定义域 |                   $[-1, 1]$                    |    $[-1, 1]$    |                  $\mathbf R$                   |         $\mathbf R$          |
+        |  值域  | $\left[-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right]$ |   $[0, \pi]$    | $\left(-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right)$ |          $(0, \pi)$          |
+        | 奇偶性 |                     奇函数                     |    非奇非偶     |                     奇函数                     |           非奇非偶           |
+        | 单调性 |                     增函数                     |     减函数      |                     增函数                     |            减函数            |
 
         </div>
 

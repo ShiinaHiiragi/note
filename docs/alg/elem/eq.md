@@ -202,7 +202,7 @@
         1. $\sin x = a \ (|a| \leqslant 1)$ 的解集为 $x = (-1)^k \arcsin a + k\pi, k \in \mathbf Z$
         2. $\cos x = a \ (|a| \leqslant 1)$ 的解集为 $x = \pm \arccos a + 2k\pi, k \in \mathbf Z$
         3. $\tan x = a$ 的解集是 $x = \arctan a + k\pi, k \in \mathbf Z$
-        4. $\cot x = a$ 的解集是 $x = \mathrm{arccot}\ a + k\pi, k \in \mathbf Z$
+        4. $\cot x = a$ 的解集是 $x = \operatorname{arccot} a + k\pi, k \in \mathbf Z$
     2. 辅助角：对于形如 $a\sin x + b\cos x = c$（$a, b, c$ 为非零实数）的三角方程，令 $\varphi = \arctan \dfrac ba$，则方程变形为 $\sin(x + \varphi) = \dfrac{c}{\sqrt{a^2 + b^2}}$
 4. 反三角方程：仅在反三角函数后含有未知数的方程
 
@@ -264,16 +264,18 @@
 4. $\text{Jensen}$ 不等式：如果 $y = f(x)$ 在某区间 $D$ 上是凹函数，则对于该区间上的任意 $x_1, x_2, \cdots, x_n$ 都有
 
     $$
-    f\left(\dfrac{x_1, x_2, \cdots, x_n}{n}\right) \leqslant \dfrac{f(x_1) + f(x_2) + \cdots + f(x_n)}{n}
+    f\left(\dfrac{x_1 + x_2 + \cdots + x_n}{n}\right) \leqslant \dfrac{f(x_1) + f(x_2) + \cdots + f(x_n)}{n}
     $$
 
     如果 $y = f(x)$ 在某区间 $D$ 上是凸函数，则对于该区间上的任意 $x_1, x_2, \cdots, x_n$ 都有
 
     $$
-    f\left(\dfrac{x_1, x_2, \cdots, x_n}{n}\right) \geqslant \dfrac{f(x_1) + f(x_2) + \cdots + f(x_n)}{n}
+    f\left(\dfrac{x_1 + x_2 + \cdots + x_n}{n}\right) \geqslant \dfrac{f(x_1) + f(x_2) + \cdots + f(x_n)}{n}
     $$
 
     等号成立当且仅当 $x_1 = x_2 = \cdots = x_n$
+
+5. $\text{Bernoulli}$ 不等式：对任意整数 $n \geqslant 1$ 与任意实数 $x \geqslant -1$ 有 $(1+x)^n \geqslant 1+n x$．若 $n \geqslant 0$ 且是偶数，则不等式对任意 $x \in \mathbf R$ 成立
 
 ### 2.3.3 解不等式
 1. 不等式的解集：如果不等式两边的解析式含有变元，则其定义域 $M$ 内使不等式成立的变元的取值称作不等式的解
