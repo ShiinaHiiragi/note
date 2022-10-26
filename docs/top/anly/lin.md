@@ -236,7 +236,23 @@
         1. 每个仿射标架 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
         2. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架；若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架
         3. 当标架取定后，仿射空间与与之联系的线性空间与 $\mathbf R^n$ 具有一一对应的关系，称之为坐标系．由仿射标架、$\text{Descartes}$ 标架与 $\text{Descartes}$ 直角标架确定的坐标系分别称作仿射坐标系、$\text{Descartes}$ 坐标系与 $\text{Descartes}$ 直角坐标系．默认坐标系均为 $\text{Descartes}$ 直角坐标系
-    4. 仿射空间的度量：设 $A, B$ 为仿射空间 $\mathscr A$ 中的两个点，则 $\rho(A, B) = |\overrightarrow{AB}|$
+    4. 仿射空间的度量：设 $\rho$ 是仿射空间 $\mathscr A$ 的一个度量，$A, B$ 为仿射空间中的两个点，则 $\rho(A, B) = |\overrightarrow{AB}|$
+
+4. $\text{Descartes}$ 直角坐标系的实例
+    1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四部分
+
+        <div style="text-align: center;">
+
+        |   象限   |    坐标取值    |
+        | :------: | :------------: |
+        | 第一象限 | $x > 0, y > 0$ |
+        | 第二象限 | $x < 0, y > 0$ |
+        | 第三象限 | $x < 0, y < 0$ |
+        | 第四象限 | $x > 0, y < 0$ |
+
+        </div>
+
+    2. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系
 
 ### 1.2.3 其他坐标系
 1. 极坐标系：$2$ 维仿射空间中的一个顶点 $O$ 与基 $\boldsymbol e$ 组成了一个极坐标系，称 $O$ 为极点，$\boldsymbol e$ 所在的直线为极轴．任意有序数对 $(\rho, \theta)$（其中 $\rho \geqslant 0, -\pi < \varphi \leqslant \pi$）唯一对应了平面中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$，$\theta$ 为 $\overrightarrow{OP}$ 与 $\boldsymbol e$ 的夹角，并称 $\overrightarrow{OP}$ 为极径，称 $(\rho, \theta)$ 为点 $P$ 的极坐标，记作 $P(\rho, \theta)$
@@ -336,6 +352,13 @@
 
 2. 向量的内积：设 $\boldsymbol \alpha = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol \beta = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$，定义内积 $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = x_1 y_1 + x_2 y_2 + \cdots + x_n y_n$
     1. 定义向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的夹角：$\theta = \arccos \dfrac{\left<\boldsymbol \alpha, \boldsymbol \beta\right>}{|\boldsymbol \alpha| |\boldsymbol \beta|}$，并记 $\cos \theta$ 为 $\cos \left<\boldsymbol \alpha, \boldsymbol \beta\right>$，记 $\sin \theta$ 为 $\sin \left<\boldsymbol \alpha, \boldsymbol \beta\right>$．特别地，称非零向量与基所成的夹角为该向量的方向角
+
+        !!! note "角度的分类"
+            设 $\theta \in \mathbf R$ 为一个角度
+
+            1. 若 $\theta \in \left(0, \dfrac{\pi}{2}\right)$，则称 $\theta$ 为锐角；若 $\theta \in \left(\dfrac{\pi}{2}, \pi\right)$，则称 $\theta$ 为钝角
+            2. 若 $\theta = \dfrac{\pi}{2}$，则称 $\theta$ 为直角；若 $\theta = \pi$，则称 $\theta$ 为平角；若 $\theta = 2\pi$，则称 $\theta$ 为周角
+
     2. 仿射坐标系下的内积：设 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 是一个仿射标架，则
 
         $$

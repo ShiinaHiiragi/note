@@ -1,8 +1,7 @@
 # 2 曲线方程与曲线论
 
 ## 2.1 平面曲线方程
-1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$
-2. 平面曲线方程：设 $2$ 维仿射空间取定了 $\text{Descartes}$ 直角坐标系．若方程 $F(x, y) = 0$ 与曲线 $L$ 有关系：点 $P(x, y)$ 在曲线 $L$ 上当且仅当 $(x, y)$ 满足该方程，则称该方程为 $L$ 的曲线方程
+1. 平面曲线方程：设 $2$ 维仿射空间取定了 $\text{Descartes}$ 直角坐标系．若方程 $F(x, y) = 0$ 与曲线 $L$ 有关系：点 $P(x, y)$ 在曲线 $L$ 上当且仅当 $(x, y)$ 满足该方程，则称该方程为 $L$ 的曲线方程
     1. 向量式参数方程：若取 $t \in [a, b]$ 的一切可能取的值，由 $\boldsymbol r(t) = x(t) \boldsymbol e_1 + y(t) \boldsymbol e_2 \ (a \leqslant t \leqslant b)$ 表示的径向量 $\boldsymbol r(t)$ 的终点总在一条曲线上；反之在这条曲线上的任意点总对应着以它为终点的径向量，且该径向量可由 $t$ 的某一值 $t_0\ \left(a \leqslant t_0 \leqslant b\right)$ 完全决定，则称 $\boldsymbol r(t) = x(t) \boldsymbol e_1 + y(t)$ 为曲线的向量式参数方程
     2. 坐标式参数方程：若 $\boldsymbol r(t) = x(t) \boldsymbol e_1 + y(t) \boldsymbol e_2$ 为曲线的向量式参数方程，则称
 
