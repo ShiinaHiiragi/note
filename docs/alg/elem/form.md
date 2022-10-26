@@ -106,9 +106,7 @@
 
 ### 1.2.2 三角式与反三角式
 1. 三角式的恒等变形
-    1. 同角三角函数基本关系
-        1. $\sin^2 \alpha + \cos^2 \alpha = 1, 1 + \tan^2 \alpha = \sec^2 \alpha, 1 + \cot^2 \alpha = \csc^2 \alpha$
-        2. $\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}, \cot \alpha = \dfrac{\cos \alpha}{\sin \alpha}$
+    1. 同角三角式基本关系：$\sin^2 \alpha + \cos^2 \alpha = 1, 1 + \tan^2 \alpha = \sec^2 \alpha, 1 + \cot^2 \alpha = \csc^2 \alpha$
     2. 诱导公式：设 $k \in \mathbf Z$
         1. $\sin(2k \pi + \alpha) = \sin \alpha, \cos(2k \pi + \alpha) = \cos \alpha, \tan(2k \pi + \alpha) = \tan \alpha, \cot(2k \pi + \alpha) = \cot \alpha$
         2. $\sin(k \pi + \alpha) = -\sin \alpha, \cos(k \pi + \alpha) = -\cos \alpha, \tan(k \pi + \alpha) = \tan \alpha, \cot(k \pi + \alpha) = \cot \alpha$
@@ -148,7 +146,7 @@
 3. $\text{Euler}$ 公式：$e^{\pm \mathrm{i} x}=\cos x \pm \mathrm{i} \sin x \ (x \in \mathbf C)$
 
     !!! note "倍角的 $\text{de Moivre}$ 公式"
-        $\text{de Moivre}$ 公式是 $\text{Euler}$ 公式的推论：${\displaystyle \cos n x+\mathrm{i} \sin n x=\sum_{k=0}^n \mathrm{i}^k\dbinom{n}{k} \cos ^{n-k} x \sin ^k x}$，分离复数的实部和虚部得到三角函数的倍角公式
+        $\text{de Moivre}$ 公式是 $\text{Euler}$ 公式的推论：${\displaystyle \cos n x+\mathrm{i} \sin n x=\sum_{k=0}^n \mathrm{i}^k\dbinom{n}{k} \cos ^{n-k} x \sin ^k x}$，分离复数的实部和虚部得到三角函数的倍角公式：
 
         $$
         \begin{aligned}
@@ -198,48 +196,94 @@
         </div>
 
 4. 三角函数与反三角函数
-    1. 正弦函数与余弦函数的定义
+    1. 三角函数的定义
+        1. 正弦函数与余弦函数
 
-        $$
-        \begin{aligned}
-        & C(x) = \dfrac{e^{ix} + e^{-ix}}{2} \\
-        & S(x) = \dfrac{e^{ix} - e^{-ix}}{2i}
-        \end{aligned}
-        $$
+            $$
+            \begin{aligned}
+            & C(x) = \dfrac{e^{ix} + e^{-ix}}{2} \\
+            & S(x) = \dfrac{e^{ix} - e^{-ix}}{2i}
+            \end{aligned}
+            $$
 
-        其中 $e^x = {\displaystyle \sum_{n=0}^\infty \dfrac{x^n}{n!}}$．定义 $\pi$ 为满足 $\sin \pi = 0$ 且 $3 < \pi < 4$ 的实数
+            其中 $e^x = {\displaystyle \sum_{n=0}^\infty \dfrac{x^n}{n!}}$．定义 $\pi$ 为方程 $\sin \pi = 0$ 在区间 $(3, 4)$ 上的根
 
-    2. 正弦函数与余弦函数的性质
+        2. 定义正切函数 $\tan \alpha = \dfrac{\sin \alpha}{\cos \alpha}$，余切函数 $\cot \alpha = \dfrac{\cos \alpha}{\sin \alpha}$
+        3. 定义正割函数 $\sec \alpha = \dfrac{1}{\cos \alpha}$，余割函数 $\csc \alpha = \dfrac{1}{\sin \alpha}$
+
+    2. 三角函数的性质
 
         <div style="text-align: center;">
 
-        |    项目    |                                    正弦函数                                    |                      预先函数                      |
-        | :--------: | :----------------------------------------------------------------------------: | :------------------------------------------------: |
-        |   函数式   |                                  $y = \sin x$                                  |                    $y = \cos x$                    |
-        |   定义域   |                                  $\mathbf R$                                   |                    $\mathbf R$                     |
-        |    值域    |                                   $[-1, 1]$                                    |                     $[-1, 1]$                      |
-        | 最小正周期 |                                     $2\pi$                                     |                       $2\pi$                       |
-        |  递增区间  | $\left[-\dfrac{\pi}{2} + 2k\pi, \dfrac{\pi}{2} + 2k\pi\right], k\in \mathbf Z$ | $\left[-\pi + 2k\pi, 2k\pi\right], k\in \mathbf Z$ |
-        |  递减区间  | $\left[\dfrac{\pi}{2} + 2k\pi, \dfrac{3\pi}{2} + 2k\pi\right], k\in \mathbf Z$ | $\left[2k\pi, \pi + 2k\pi\right], k\in \mathbf Z$  |
+        |    项目    |                                    正弦函数                                    |                      余弦函数                      |                                              正切函数                                               |                                 余切函数                                  |
+        | :--------: | :----------------------------------------------------------------------------: | :------------------------------------------------: | :-------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------: |
+        |   函数式   |                                  $y = \sin x$                                  |                    $y = \cos x$                    |                                            $y = \tan x$                                             |                               $y = \cot x$                                |
+        |   定义域   |                                  $\mathbf R$                                   |                    $\mathbf R$                     |                                             $\mathbf R$                                             |                                $\mathbf R$                                |
+        |    值域    |                                   $[-1, 1]$                                    |                     $[-1, 1]$                      | ${\displaystyle \bigcup_{n \in \mathbf Z} \left(n \pi-\dfrac{\pi}{2}, n \pi+\dfrac{\pi}{2}\right)}$ | ${\displaystyle \bigcup_{n \in \mathbf Z} \left(n \pi, n \pi+\pi\right)}$ |
+        | 最小正周期 |                                     $2\pi$                                     |                       $2\pi$                       |                                                $\pi$                                                |                                   $\pi$                                   |
+        |   奇偶性   |                                     奇函数                                     |                       偶函数                       |                                               奇函数                                                |                                  奇函数                                   |
+        |  递增区间  | $\left[-\dfrac{\pi}{2} + 2k\pi, \dfrac{\pi}{2} + 2k\pi\right], k\in \mathbf Z$ | $\left[-\pi + 2k\pi, 2k\pi\right], k\in \mathbf Z$ |                      $\left(n \pi-\dfrac{\pi}{2}, n \pi+\dfrac{\pi}{2}\right)$                      |                                    无                                     |
+        |  递减区间  | $\left[\dfrac{\pi}{2} + 2k\pi, \dfrac{3\pi}{2} + 2k\pi\right], k\in \mathbf Z$ | $\left[2k\pi, \pi + 2k\pi\right], k\in \mathbf Z$  |                                                 无                                                  |                      $\left(n \pi, n \pi+\pi\right)$                      |
 
         </div>
 
-    3. 反三角函数：三角函数在对应区间上的反函数
+    3. 反三角函数：对应三角函数在对应区间上的反函数
 
         <div style="text-align: center;">
 
-        |  项目  |                   反正弦函数                   |   反余弦函数    |                   反正切函数                   |          反余弦函数          |
-        | :----: | :--------------------------------------------: | :-------------: | :--------------------------------------------: | :--------------------------: |
+        |  项目  |                   反正弦函数                   |   反余弦函数    |                   反正切函数                   |          反余弦函数           |
+        | :----: | :--------------------------------------------: | :-------------: | :--------------------------------------------: | :---------------------------: |
         | 函数式 |                $y = \arcsin x$                 | $y = \arccos x$ |                $y = \arctan x$                 | $y = \operatorname{arccot} x$ |
-        | 定义域 |                   $[-1, 1]$                    |    $[-1, 1]$    |                  $\mathbf R$                   |         $\mathbf R$          |
-        |  值域  | $\left[-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right]$ |   $[0, \pi]$    | $\left(-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right)$ |          $(0, \pi)$          |
-        | 奇偶性 |                     奇函数                     |    非奇非偶     |                     奇函数                     |           非奇非偶           |
-        | 单调性 |                     增函数                     |     减函数      |                     增函数                     |            减函数            |
+        | 定义域 |                   $[-1, 1]$                    |    $[-1, 1]$    |                  $\mathbf R$                   |          $\mathbf R$          |
+        |  值域  | $\left[-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right]$ |   $[0, \pi]$    | $\left(-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right)$ |          $(0, \pi)$           |
+        | 奇偶性 |                     奇函数                     |    非奇非偶     |                     奇函数                     |           非奇非偶            |
+        | 单调性 |                     增函数                     |     减函数      |                     增函数                     |            减函数             |
 
         </div>
 
 ### 1.3.3 函数实例
-1. 取整函数与分数部分函数：设 $x, y \in \mathbf R$，整数函数（也称 $\text{Gaussian}$ 函数）$[x]$ 是不超过 $x$ 的最大整数，称它为 $x$ 的整数部分；分数部分函数定义为 $\{x\} = x - [x]$
+1. 双曲函数
+    1. 双曲函数的定义
+        1. 双曲正弦：$\sinh x=\dfrac{\mathrm{e}^x-\mathrm{e}^{-x}}{2}$
+        2. 双曲余弦：$\cosh x=\dfrac{e^x+e^{-x}}{2}$
+        3. 双曲正切：$\tanh x=\dfrac{\sinh x}{\cosh x}=\dfrac{\mathrm{e}^x-\mathrm{e}^{-x}}{\mathrm{e}^x+\mathrm{e}^{-x}}$
+        4. 双曲余切：$\operatorname{coth} x=\dfrac{\cosh x}{\sinh x}=\dfrac{\mathrm{e}^x+\mathrm{e}^{-x}}{\mathrm{e}^x-\mathrm{e}^{-x}}$
+        5. 双曲正割：$\operatorname{sech} x=\dfrac{1}{\cosh x}=\dfrac{2}{\mathrm{e}^x+\mathrm{e}^{-x}}$
+        6. 双曲余割：$\operatorname{csch} x=\dfrac{1}{\sinh x}=\dfrac{2}{\mathrm{e}^x-\mathrm{e}^{-x}}$
+    2. 双曲函数的性质
+
+        <div style="text-align: center;">
+
+        |  项目  |         双曲正弦          |         双曲余弦          |         双曲正切          |            双曲余切             |
+        | :----: | :-----------------------: | :-----------------------: | :-----------------------: | :-----------------------------: |
+        | 函数式 | $y=\operatorname{sinh} x$ | $y=\operatorname{cosh} x$ | $y=\operatorname{tanh} x$ |    $y=\operatorname{coth} x$    |
+        | 定义域 |        $\mathbf R$        |        $\mathbf R$        |        $\mathbf R$        |           $\mathbf R$           |
+        |  值域  |        $\mathbf R$        |       $[1,+\infty)$       |         $(-1, 1)$         | $(-\infty, 1) \cup(1, +\infty)$ |
+        | 奇偶性 |          奇函数           |          偶函数           |          偶函数           |             奇函数              |
+
+        </div>
+
+2. 反双曲函数
+    1. 反双曲函数的定义：对应双曲函数的反函数
+        1. 反双曲正弦：$\operatorname{arcsinh} x=\ln \left(x+\sqrt{x^2+1}\right)$
+        2. 反双曲余弦：$\operatorname{arccosh} x=\ln \left(x\pm \sqrt{x^2-1}\right)$
+        3. 反双曲正切：$\operatorname{arctanh} x=\dfrac{1}{2} \ln \dfrac{1+x}{1-x}$
+        4. 反双曲余切：$\operatorname{arccoth} x=\dfrac{1}{2} \ln \dfrac{x+1}{x-1}$
+        5. 反双曲正割：$\operatorname{arcsech} x=\ln \left(\dfrac{1}{x}+\dfrac{\sqrt{1-x^2}}{x}\right)$
+        6. 反双曲余割：$\operatorname{arccsch} x=\ln \left(\dfrac{1}{x}+\dfrac{\sqrt{1+x^2}}{|x|}\right)$
+    2. 反双曲函数的性质
+
+        <div style="text-align: center;">
+
+        |  项目  |          反双曲正弦          |          反双曲余弦          |          反双曲正切          |           反双曲余切           |
+        | :----: | :--------------------------: | :--------------------------: | :--------------------------: | :----------------------------: |
+        | 函数式 | $y=\operatorname{arcsinh} x$ | $y=\operatorname{arccosh} x$ | $y=\operatorname{arctanh} x$ |  $y=\operatorname{arccoth} x$  |
+        | 定义域 |         $\mathbf R$          |        $[1,+\infty)$         |           $(-1,1)$           | $(-\infty,-1) \cup(1,+\infty)$ |
+        |  值域  |         $\mathbf R$          |        $[0,+\infty)$         |         $\mathbf R$          | $(-\infty, 0) \cup(0,+\infty)$ |
+
+        </div>
+
+3. 取整函数与分数部分函数：设 $x, y \in \mathbf R$，整数函数（也称 $\text{Gaussian}$ 函数）$[x]$ 是不超过 $x$ 的最大整数，称它为 $x$ 的整数部分；分数部分函数定义为 $\{x\} = x - [x]$
     1. 取整函数与分数部分函数的性质
         1. $x \leqslant y \to [x] \leqslant [y]$
         2. 若 $m\in \mathbf Z$，则 $[m + x] = m + [x]$
@@ -251,24 +295,3 @@
         8. $\{x\} = \left\{\begin{aligned} & 0, & x\in \mathbf Z \\ & 1 - \{x\}, & x\ \notin \mathbf Z \end{aligned}\right.$
     2. 设 $a, b \in \mathbf Z_+$，则在 $1, 2, \cdots, a$ 中能被 $b$ 整除的恰有 $\left[\dfrac{a}{b}\right]$ 个
     3. 在 $n!$ 的质因数分解中，质数 $p$ 的指数是 $\left[\dfrac{n}{p}\right] + \left[\dfrac{n}{p^2}\right] + \left[\dfrac{n}{p^3}\right] + \cdots = {\displaystyle \sum_{r = 1}^{\infty} \left[\dfrac{n}{p_r}\right]}$，进一步地，有 $n! = {\displaystyle \prod_{p \leqslant n} p^{\sum_{r=1}^{\infty}\left[\frac{n}{p^r}\right]}}$
-2. $\Gamma$ 函数：当 $x > 0$ 时，定义 $\Gamma(x) = {\displaystyle \int_{0}^{\infty} t^{x-1} e^{-t} \mathrm dt}$
-    1. $\Gamma$ 函数的性质
-        1. $x > 0$ 时，$\Gamma(x + 1) = x\Gamma(x)$
-        2. $\Gamma(n + 1) = n!, n = 1, 2, 3, \cdots$
-        3. $\ln \Gamma$ 在 $(0, +\infty)$ 上是凸函数
-        4. $\Gamma(x) = \dfrac{2^{x-1}}{\sqrt{\pi}} \Gamma\left(\dfrac x2\right) \Gamma\left(\dfrac{x+1}{2}\right)$
-    2. 若 $(0, +\infty)$ 上的正值函数 $f(x)$ 有 ① $f(x + 1) = xf(x)$；② $f(1) = 1$；③ $\ln f$ 为凸函数，则 $f(x) = \Gamma(x)$
-    3. $B$ 函数：设 $x, y > 0$，定义 $B(x, y) = {\displaystyle \int_0^1 t^{x-1} (1-t)^{y-1} \mathrm dt} = \dfrac{\Gamma(x) \Gamma(y)}{\Gamma(x + y)}$
-    4. $\text{Stirling}$ 公式：${\displaystyle \lim_{x \to +\infty} \dfrac{\Gamma(x + 1)}{\left(\dfrac xe\right)^x \sqrt{2\pi x}}} = 1$
-3. 双曲函数
-    1. 双曲正弦：$\sinh x=\dfrac{\mathrm{e}^x-\mathrm{e}^{-x}}{2}$
-    2. 双曲余弦：$\cosh x=\dfrac{e^x+e^{-x}}{2}$
-    3. 双曲正切：$\tanh x=\dfrac{\sinh x}{\cosh x}=\dfrac{\mathrm{e}^x-\mathrm{e}^{-x}}{\mathrm{e}^x+\mathrm{e}^{-x}}$
-    4. 双曲余切：$\operatorname{coth} x=\dfrac{\cosh x}{\sinh x}=\dfrac{\mathrm{e}^x+\mathrm{e}^{-x}}{\mathrm{e}^x-\mathrm{e}^{-x}}$
-    5. 双曲正割：$\operatorname{sech} x=\dfrac{1}{\cosh x}=\dfrac{2}{\mathrm{e}^x+\mathrm{e}^{-x}}$
-    6. 双曲余割：$\operatorname{csch} x=\dfrac{1}{\sinh x}=\dfrac{2}{\mathrm{e}^x-\mathrm{e}^{-x}}$
-4. 反双曲函数
-    1. 反双曲正弦：$\operatorname{arcsinh} x=\ln \left(x+\sqrt{x^2+1}\right)$
-    2. 反双曲余弦：$\operatorname{arccosh} x=\pm \ln \left(x+\sqrt{x^2-1}\right) \ (x \geqslant 1)$
-    3. 反双曲正切：$\operatorname{arctanh} x=\dfrac{1}{2} \ln \dfrac{1+x}{1-x} \ (|x|<1)$
-    4. 反双曲余切：$\operatorname{arccoth} x=\dfrac{1}{2} \ln \dfrac{x+1}{x-1} \ (|x|>1)$
