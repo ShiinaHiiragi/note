@@ -1,7 +1,7 @@
 # 3 曲线方程与曲线论
 
 ## 3.1 平面曲线方程
-1. 平面曲线方程：设 $2$ 维仿射空间取定了 $\text{Descartes}$ 直角坐标系．若方程 $F(x, y) = 0$ 与曲线 $L$ 有关系：点 $P(x, y)$ 在曲线 $L$ 上当且仅当 $(x, y)$ 满足该方程，则称该方程为 $L$ 的曲线方程
+1. 平面曲线方程：在平面直角坐标系中，若方程 $F(x, y) = 0$ 与曲线 $L$ 有关系：点 $P(x, y)$ 在曲线 $L$ 上当且仅当 $(x, y)$ 满足该方程，则称该方程为 $L$ 的曲线方程
     1. 向量式参数方程：若取 $t \in [a, b]$ 的一切可能取的值，由 $\boldsymbol r(t) = x(t) \boldsymbol e_1 + y(t) \boldsymbol e_2 \ (a \leqslant t \leqslant b)$ 表示的径向量 $\boldsymbol r(t)$ 的终点总在一条曲线上；反之在这条曲线上的任意点总对应着以它为终点的径向量，且该径向量可由 $t$ 的某一值 $t_0\ \left(a \leqslant t_0 \leqslant b\right)$ 完全决定，则称 $\boldsymbol r(t) = x(t) \boldsymbol e_1 + y(t)$ 为曲线的向量式参数方程
     2. 坐标式参数方程：若 $\boldsymbol r(t) = x(t) \boldsymbol e_1 + y(t) \boldsymbol e_2$ 为曲线的向量式参数方程，则称
 
@@ -18,23 +18,24 @@
     3. 普通方程：如果从曲线的坐标式参数方程中消去参数 $t$，则能得出曲线的普通方程 $F(x, y) = 0$
 
 ### 3.1.1 直线
-1. 直线的一般方程：$L: Ax + By + C = 0 \ (A^2 + B^2 = 0)$
-    1. 直线与向量：设 $L$ 上相异两点为 $P(x_1, y_1), Q(x_2, y_2)$，则 $\overrightarrow{PQ} = (x_2 - x_1, y_2 - y_1)$ 称为直线 $L$ 的方向向量；与 $\overrightarrow{PQ}$ 垂直的向量称为直线 $L$ 的法向量
+1. 直线的一般方程：$Ax + By + C = 0 \ (A^2 + B^2 = 0)$
+    1. 直线与向量：设 $L$ 上相异两点为 $P(x_1, y_1), Q(x_2, y_2)$，则 $\overrightarrow{PQ} = (x_2 - x_1, y_2 - y_1)$ 称为直线 $L$ 的方向向量；任意与 $\overrightarrow{PQ}$ 垂直的向量称为直线 $L$ 的法向量
     2. 斜率与倾角：当 $B \neq 0$ 时，称 $k = -\dfrac{A}{B}$ 为直线的斜率，称 $\arctan k$ 为直线的倾角 $\theta$，后者是 $L$ 上方向向量与基 $\boldsymbol e_1$ 的夹角，且其取值范围为 $[0, \pi)$；当 $B = 0$ 时，称直线 $L$ 的斜率不存在
-    3. 直线的法距：直线 $L$ 上点 $Q$ 的径向量 $\overrightarrow{OQ}$ 的最小模长 $\dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$
+    3. 直线的截距与法距：称直线与坐标轴的交点对应的实数为直线的截距；称直线上点 $Q$ 的径向量 $\overrightarrow{OQ}$ 的最小模长 $\dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$ 为直线的法距
 
     !!! note "一般方程的变形"
-        1. 若 $A \neq 0$
-            1. 若 $B=0$，则方程变为 $x+\dfrac{C}{A}=0$，表示过 $x$ 轴上的点 $\left(-\dfrac{C}{A}, 0\right)$ 且正交于 $x$ 轴的直线
-            2. 若 $B \neq 0$, 则方程化为斜截式 $y=-\dfrac{A}{B} x-\dfrac{C}{B}$
-        2. 若 $A \neq 0, B \neq 0, C \neq 0$, 则方程化为截距式 $\dfrac{x}{-\dfrac{C}{A}}+\dfrac{y}{-\dfrac{C}{B}}=1$
+        1. 点斜式：通过点 $P_0\left(x_0, y_0\right)$，斜率 $k=\tan \theta$ 的直线方程为 $y-y_0=k\left(x-x_0\right)$
+        2. 斜截式：斜率 $k=\tan \theta$，在 $y$ 轴上的截距为 $c$ 的直线方程为 $y=kx+c$
+        3. 截距式：在 $x$ 轴与 $y$ 轴上的截距分别为 $a, b$ 的直线方程为 $\dfrac{x}{a}+\dfrac{y}{b}=1$
+        4. 两点式：通过点 $P_1\left(x_1, y_1\right), P_2\left(x_2, y_2\right)$ 的直线方程为 $\dfrac{y-y_1}{y_2-y_1}=\dfrac{x-x_1}{x_2-x_1}$
+        5. 法线式：法距为 $p$，与该直线垂直的直线倾斜角 $\theta$, 则直线 $L$ 的方程为 $x \cos \theta+y \sin \theta-p=0$
 
 2. 直线方程的其他表示
     1. 极坐标方程：设 $P(\rho_0, \theta_0)$ 是直线 $L$ 上任一点的极坐标
-        1. 过原点的直线：$L: \theta = \theta_0$
-        2. 不过原点的直线：$p > 0$ 为直线 $L$ 的法距，则 $L: \rho=\dfrac{p}{\cos (\alpha-\theta)}$，其中 $\alpha$ 是与 $L$ 垂直直线的倾斜角
-    2. 参数式方程：设 $P(x_0, y_0)$ 是倾角为 $\varphi$ 的直线 $L$ 上任一点，则直线 $L$ 的参数方程为 $L: \left\{\begin{array}{l} x=x_0+t \cos \varphi \\ y=y_0+t \sin \varphi \end{array}\right. \ (t \in \mathbf R)$
-3. 直线与点的关系：设 $L: Ax + By + C = 0 \ (A^2 + B^2 = 0)$，点 $P$ 的坐标为 $(x_1, y_1)$，点 $Q(x_2, y_2)$ 在直线 $L$ 上．则点到直线的距离 $d$ 定义为 $\min |\overrightarrow{PQ}| = \dfrac{\left|A x_1+B y_1+C\right|}{\sqrt{A^2+B^2}}$
+        1. 过原点的直线：$\theta = \theta_0$
+        2. 不过原点的直线：$p > 0$ 为直线 $L$ 的法距，则 $\rho=\dfrac{p}{\cos (\alpha-\theta)}$，其中 $\alpha$ 是与 $L$ 垂直直线的倾斜角
+    2. 参数式方程：设 $P(x_0, y_0)$ 是倾角为 $\varphi$ 的直线 $L$ 上任一点，则直线 $L$ 的参数方程为 $\left\{\begin{array}{l} x=x_0+t \cos \varphi \\ y=y_0+t \sin \varphi \end{array}\right. \ (t \in \mathbf R)$
+3. 直线与点的关系：设 $Ax + By + C = 0 \ (A^2 + B^2 = 0)$，点 $P$ 的坐标为 $(x_1, y_1)$，点 $Q(x_2, y_2)$ 在直线 $L$ 上．则点到直线的距离 $d$ 定义为 $\min |\overrightarrow{PQ}| = \dfrac{\left|A x_1+B y_1+C\right|}{\sqrt{A^2+B^2}}$
 4. 直线间关系：设 $L_1: A_1 x + B_1 y + C_1 = 0$ 与 $L_2: A_2 x + B_2 y + C_2 = 0$ 是两条直线
     1. 两直线重合当且仅当 $A_1 B_2 - A_2 B_1 = 0$ 且 $A_1 C_2 \neq A_2 C_1$
     2. 定义两直线垂直为两直线的方向向量正交，此时 $A_1 A_2 + B_1 B_2 = 0$
