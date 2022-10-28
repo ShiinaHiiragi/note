@@ -19,7 +19,7 @@
     3. 普通方程：如果从曲面的坐标式参数方程中消去参数 $u, v$，则能得出曲面的普通方程 $F(x, y, z) = 0$
 
 ### 4.1.1 平面
-1. 平面的一般方程：$Ax + By + Cz + D = 0$．空间中任一平面的方程都可表示成一个关于变量 $x, y, z$ 的一次方程；每一个关于变量 $x, y, z$ 的一次方程都表示一个平面
+1. 平面的一般方程：$Ax + By + Cz + D = 0 \ (A^2 + B^2 + C^2 \neq 0)$．空间中任一平面的方程都可表示成一个关于变量 $x, y, z$ 的一次方程；每一个关于变量 $x, y, z$ 的一次方程都表示一个平面
     1. 平面的点位式方程：在空间给定了一点 $M$ 与不共线的向量 $\boldsymbol{a}, \boldsymbol{b}$，则通过点 $M$ 且与向量 $\boldsymbol{a}, \boldsymbol{b}$ 平行的平面 $\pi$ 惟一确定，称向量 $\boldsymbol{a}, \boldsymbol{b}$ 为平面 $\pi$ 的方向向量
         1. 向量式参数方程：$\boldsymbol r = \boldsymbol r_0 + u\boldsymbol a + v\boldsymbol b$，其中 $\boldsymbol r_0 = \overrightarrow{OM}$．消去参数得到 $V(\boldsymbol r - \boldsymbol r_0, \boldsymbol a, \boldsymbol b) = 0$
         2. 坐标式参数方程：
@@ -75,11 +75,14 @@
 
     3. 平面的法式方程：如果在空间中给定一点 $M$ 与一个非零向量 $\boldsymbol n = \begin{bmatrix} A & B & C \\ \end{bmatrix}^{\mathrm T}$，则通过点 $M$ 且与向量 $\boldsymbol n$ 垂直的平面唯一确定，称 $\boldsymbol n$ 为平面的法向量
         1. 点法式方程：$\boldsymbol{n} \cdot\left(\boldsymbol{r}-\boldsymbol{r}_0\right)=0$，其中 $\boldsymbol r_0 = \overrightarrow{OM}$，或写成 $A\left(x-x_0\right)+B\left(y-y_0\right)+C\left(z-z_0\right)=0$
-        2. 向量式法式方程：设 $P$ 为 $\pi$ 上使 $|\overrightarrow{OP}|$ 最小的点，令 $p=|\overrightarrow{OP}|$（称为法距），则有 $\left<\dfrac{\boldsymbol n}{|\boldsymbol n|}, \boldsymbol r\right> = p$
+        2. 向量式法式方程：设 $p$ 为原点 $O$ 到平面 $\pi$ 的距离，则有 $\left<\dfrac{\boldsymbol n}{|\boldsymbol n|}, \boldsymbol r\right> = p$，称 $p$ 为平面 $\pi$ 的法距
         3. 坐标式法式方程：设平面 $\pi$ 的法距为 $p$，则有 $x \cos \alpha+y \cos \beta+z \cos \gamma-p=0$
 
         !!! note "平面的法式化"
-            平面的法式方程是具有下列两个特征的一种一般方程：① 一次项的系数是单位法向量的坐标，其平方和为 $1$；② 因为 $p$ 是原点 $O$ 到平面 $\pi$ 的距离，所以常数项 $-p \leqslant 0$
+            平面的法式方程是具有下列两个特征的一种一般方程
+            
+            1. 一次项的系数是单位法向量的坐标，其平方和为 $1$
+            2. 因为 $p$ 是原点 $O$ 到平面 $\pi$ 的距离，所以常数项 $-p \leqslant 0$
 
             对于平面的一般方程 $Ax + By + Cz + D = 0$，可化为法式方程
 
@@ -89,7 +92,15 @@
 
             并称取定符号后的 $\lambda=\dfrac{1}{\pm \sqrt{A^2+B^2+C^2}}$ 为法式化因子
 
-2. 平面与点的关系
+2. 平面与点的关系：设 $Ax + By + Cz + D = 0 \ (A^2 + B^2 + C^2 \neq 0)$，点 $P$ 的坐标为 $(x_1, y_1, z_1)$，点 $Q(x_2, y_2, z_2)$ 在平面 $\pi$ 上．则点到平面的距离 $d$ 定义为 $\min |\overrightarrow{PQ}| = \dfrac{\left|A x_1+B y_1+C z_1 + D\right|}{\sqrt{A^2+B^2+C^2}}$
+3. 平面间关系：设 $\pi_1: A_1 x + B_1 y + C_1z + D_1 = 0$ 与 $\pi_2: A_2 x + B_2 y + C_2z + D_2 = 0$ 是两个平面
+    1. 两平面重合当且仅当 $\dfrac{A_1}{A_2}=\dfrac{B_1}{B_2}=\dfrac{C_1}{C_2}=\dfrac{D_1}{D_2}$
+    2. 两平面不重合时，定义两平面的夹角 $\theta = \arccos \left|\dfrac{A_1 A_2 + B_1 B_2 + C_1 C_2}{\sqrt{A_1^2 + B_1^2 + C_1^2} \sqrt{A_2^2 + B_2^2 + C_2^2}}\right| \ (0 \leqslant \theta \leqslant \dfrac{\pi}{2})$
+        1. 定义两平面垂直为两平面的方向向量正交，此时 $A_1 A_2 + B_1 B_2 + C_1 C_2 = 0$
+        2. 定义两平面平行为两平面的方向向量共线且两平面不重合，此时 $\dfrac{A_1}{A_2}=\dfrac{B_1}{B_2}=\dfrac{C_1}{C_2}\neq\dfrac{D_1}{D_2}$
+
+            !!! note "两平面间的距离"
+                设 $\pi_1: A x + B y + Cz + D_1 = 0$ 与 $\pi_2: Ax + By + Cz + D_2 = 0$ 是两个平行平面，则两平面距离为 $d = \dfrac{|D_1 - D_2|}{\sqrt{A^2+B^2+C^2}}$
 
 ### 4.1.2 二次曲面
 

@@ -18,10 +18,10 @@
     3. 普通方程：如果从曲线的坐标式参数方程中消去参数 $t$，则能得出曲线的普通方程 $F(x, y) = 0$
 
 ### 3.1.1 直线
-1. 直线的一般方程：$Ax + By + C = 0 \ (A^2 + B^2 = 0)$
-    1. 直线与向量：设 $L$ 上相异两点为 $P(x_1, y_1), Q(x_2, y_2)$，则 $\overrightarrow{PQ} = (x_2 - x_1, y_2 - y_1)$ 称为直线 $L$ 的方向向量；任意与 $\overrightarrow{PQ}$ 垂直的向量称为直线 $L$ 的法向量
+1. 直线的一般方程：$Ax + By + C = 0 \ (A^2 + B^2 \neq 0)$
+    1. 直线与向量：设 $L$ 上相异两点为 $P(x_1, y_1), Q(x_2, y_2)$，则 $\overrightarrow{PQ} = (x_2 - x_1, y_2 - y_1)$ 称为直线 $L$ 的方向向量；任意与 $\overrightarrow{PQ}$ 垂直的向量称为直线 $L$ 的法向量，并称以 $L$ 的法向量为方向向量的直线为 $L$ 的法线
     2. 斜率与倾角：当 $B \neq 0$ 时，称 $k = -\dfrac{A}{B}$ 为直线的斜率，称 $\arctan k$ 为直线的倾角 $\theta$，后者是 $L$ 上方向向量与基 $\boldsymbol e_1$ 的夹角，且其取值范围为 $[0, \pi)$；当 $B = 0$ 时，称直线 $L$ 的斜率不存在
-    3. 直线的截距与法距：称直线与坐标轴的交点对应的实数为直线的截距；称直线上点 $Q$ 的径向量 $\overrightarrow{OQ}$ 的最小模长 $\dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$ 为直线的法距
+    3. 直线的截距与法距：称直线与坐标轴的交点对应的实数为直线的截距；称原点 $O$ 到直线的距离 $\dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$ 为直线的法距
 
     !!! note "一般方程的变形"
         1. 点斜式：通过点 $P_0\left(x_0, y_0\right)$，斜率 $k=\tan \theta$ 的直线方程为 $y-y_0=k\left(x-x_0\right)$
@@ -35,11 +35,15 @@
         1. 过原点的直线：$\theta = \theta_0$
         2. 不过原点的直线：$p > 0$ 为直线 $L$ 的法距，则 $\rho=\dfrac{p}{\cos (\alpha-\theta)}$，其中 $\alpha$ 是与 $L$ 垂直直线的倾斜角
     2. 参数式方程：设 $P(x_0, y_0)$ 是倾角为 $\varphi$ 的直线 $L$ 上任一点，则直线 $L$ 的参数方程为 $\left\{\begin{array}{l} x=x_0+t \cos \varphi \\ y=y_0+t \sin \varphi \end{array}\right. \ (t \in \mathbf R)$
-3. 直线与点的关系：设 $Ax + By + C = 0 \ (A^2 + B^2 = 0)$，点 $P$ 的坐标为 $(x_1, y_1)$，点 $Q(x_2, y_2)$ 在直线 $L$ 上．则点到直线的距离 $d$ 定义为 $\min |\overrightarrow{PQ}| = \dfrac{\left|A x_1+B y_1+C\right|}{\sqrt{A^2+B^2}}$
+3. 直线与点的关系：设 $Ax + By + C = 0 \ (A^2 + B^2 \neq 0)$，点 $P$ 的坐标为 $(x_1, y_1)$，点 $Q(x_2, y_2)$ 在直线 $L$ 上．则点到直线的距离 $d$ 定义为 $\min |\overrightarrow{PQ}| = \dfrac{\left|A x_1+B y_1+C\right|}{\sqrt{A^2+B^2}}$
 4. 直线间关系：设 $L_1: A_1 x + B_1 y + C_1 = 0$ 与 $L_2: A_2 x + B_2 y + C_2 = 0$ 是两条直线
-    1. 两直线重合当且仅当 $A_1 B_2 - A_2 B_1 = 0$ 且 $A_1 C_2 \neq A_2 C_1$
-    2. 定义两直线垂直为两直线的方向向量正交，此时 $A_1 A_2 + B_1 B_2 = 0$
-    3. 定义两直线平行为两直线的方向向量共线且两直线不重合，此时 $A_1 B_2 - A_2 B_1 = 0$ 且 $A_1 C_2 = A_2 C_1$，此时两直线间的距离为 $\dfrac{|C_1 - C_2|}{\sqrt{A^2+B^2}}$
+    1. 两直线重合当且仅当 $\dfrac{A_1}{A_2}=\dfrac{B_1}{B_2}=\dfrac{C_1}{C_2}$
+    2. 两直线不重合时，定义两直线的夹角 $\theta = \arccos \left|\dfrac{A_1 A_2 + B_1 B_2}{\sqrt{A_1^2 + B_1^2} \sqrt{A_2^2 + B_2^2}}\right| \ (0 \leqslant \theta \leqslant \dfrac{\pi}{2})$
+        1. 定义两直线垂直为两直线的方向向量正交，此时 $A_1 A_2 + B_1 B_2 = 0$
+        2. 定义两直线平行为两直线的方向向量共线且两直线不重合，此时 $\dfrac{A_1}{A_2}=\dfrac{B_1}{B_2}\neq\dfrac{C_1}{C_2}$
+
+            !!! note "两平面间的距离"
+                设 $L_1: A x + B y + C_1 = 0$ 与 $L_2: Ax + By + C_2 = 0$ 是两条平行直线，则两直线距离为 $d = \dfrac{|C_1 - C_2|}{\sqrt{A^2+B^2}}$
 
 ### 3.1.2 二次曲线
 
