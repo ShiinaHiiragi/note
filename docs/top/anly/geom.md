@@ -1,55 +1,13 @@
 # 2 变换与坐标
 
-## 1.2 坐标系
-### 1.2.1 基与坐标
-1. 基与维数：设 $V$ 是线性空间，如果在 $V$ 中存在 $n$ 个线性无关的向量 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 使得 $V$ 中任一向量 $\alpha$ 均可由 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 线性表出，则称向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 为线性空间 $V$ 的一组基，$n$ 称为线性空间 $V$ 的维数，记作 $\operatorname{dim} V = n$，并称 $V$ 是 $n$ 维线性空间
-2. 坐标：设向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 是 $n$ 维线性空间 $V$ 的一组基，$\boldsymbol \alpha$ 是 $V$ 中的任一向量，若 $\boldsymbol \alpha = x_1 \boldsymbol \varepsilon_1 + x_2 \boldsymbol \varepsilon_2 + \cdots + x_n \boldsymbol \varepsilon_n$，则称 $x_1, x_2, \cdots, x_n$ 为向量 $\boldsymbol \alpha$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的坐标
-    1. 任意向量在给定基下的坐标唯一：通常将向量写作行向量或列向量的形式，并看作是特殊的矩阵．设向量 $\boldsymbol \alpha$ 有
+## 2.1 变换群
 
-        $$
-        \boldsymbol \alpha = x_1 \boldsymbol \varepsilon_1 + x_2 \boldsymbol \varepsilon_2 + \cdots + x_n \boldsymbol \varepsilon_n
-        $$
+## 2.2 仿射几何
+### 2.2.1 仿射几何公理体系
 
-        1. 称
+### 2.2.2 仿射变换
 
-            $$
-            \boldsymbol \alpha = \begin{bmatrix}
-            x_1 & x_2 & \cdots & x_n \\
-            \end{bmatrix}
-            $$
-
-            为 $n$ 元行向量，相当于一个 $1 \times n$ 矩阵
-
-        2. 称
-
-            $$
-            \boldsymbol \beta = \boldsymbol \alpha^{\mathrm T} = \begin{bmatrix}
-            x_1 \\
-            x_2 \\
-            \vdots \\
-            x_n \\
-            \end{bmatrix}
-            $$
-
-            为 $n$ 元列向量，相当于一个 $n \times 1$ 矩阵
-
-        通常情况下向量均为列向量
-
-        1. 零向量的所有坐标分量均为 $0$ 且与基的选取无关
-        2. 设两个 $n$ 元向量 $\boldsymbol \alpha, \boldsymbol \beta$，若其所有对应坐标分量相等时，称向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 相等，记作 $\boldsymbol \alpha = \boldsymbol \beta$
-
-    2. 坐标变换公式：设 $V$ 是 $n$ 维线性空间，$\boldsymbol M$ 是由基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 到基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 的过渡矩阵，$V$ 中的向量 $\alpha$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 和基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 下的坐标分别为 $\boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$ 与 $\boldsymbol x' = \begin{bmatrix} x_1' & x_2' & \cdots & x_n' \\ \end{bmatrix}$，则 $\boldsymbol x = \boldsymbol M \boldsymbol x'$
-        1. 过渡矩阵：设 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 与 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 是 $n$ 维线性空间 $V$ 的两组基，若
-
-            $$
-            \begin{bmatrix} \boldsymbol \eta_1 & \boldsymbol \eta_2 & \cdots & \boldsymbol \eta_n \\ \end{bmatrix} = \begin{bmatrix} \boldsymbol \varepsilon_1 & \boldsymbol \varepsilon_2 & \cdots & \boldsymbol \varepsilon_n \\ \end{bmatrix} \boldsymbol M
-            $$
-
-            则称 $n$ 阶方阵 $\boldsymbol M$ 为从基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 到基 $\boldsymbol \eta_1, \boldsymbol \eta_2, \cdots, \boldsymbol \eta_n$ 的过渡矩阵
-
-        2. 过渡矩阵是可逆的
-
-### 1.2.2 仿射坐标系
+### 2.2.3 仿射空间
 1. 线性空间的同构
     1. $\mathbf R^n$ 是 $\mathbf R$ 上的线性空间：设 $(x_1, x_2, \cdots, x_n), (y_1, y_2, \cdots, y_n) \in \mathbf R^n$，定义 $\mathbf R^n$ 上的加法运算与 $\mathbf R$ 上的数乘运算
 
@@ -91,11 +49,21 @@
         2. 任何一个被看作仿射空间的 $n$ 维线性空间同构于仿射空间 $\mathbf R^n$
     3. 仿射标架：设 $\mathscr A$ 为仿射空间，$V$ 为与之联系的线性空间，称 $\mathscr A$ 中一点 $O$ 与基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 组成的集合称为 $\mathscr A$ 中的仿射标架，记作 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$，称点 $O$ 为原点，称基所在的直线为坐标轴
         1. 每个仿射标架 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
-        2. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架；若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架
-        3. 当标架取定后，仿射空间与与之联系的线性空间与 $\mathbf R^n$ 具有一一对应的关系，称之为坐标系．由仿射标架、$\text{Descartes}$ 标架与 $\text{Descartes}$ 直角标架确定的坐标系分别称作仿射坐标系、$\text{Descartes}$ 坐标系与 $\text{Descartes}$ 直角坐标系．默认坐标系均为 $\text{Descartes}$ 直角坐标系
-    4. 仿射空间的度量：设 $\rho$ 是仿射空间 $\mathscr A$ 的一个度量，$A, B$ 为仿射空间中的两个点，则 $\rho(A, B) = |\overrightarrow{AB}|$
+        2. 当标架取定后，仿射空间与与之联系的线性空间与 $\mathbf R^n$ 具有一一对应的关系，称之为坐标系．由仿射标架确定的坐标系称作仿射坐标系
 
-4. $\text{Descartes}$ 直角坐标系的实例
+### 2.3.4 仿射几何
+
+## 2.3 Euclid 几何
+### 2.3.1 Euclid 几何公理体系
+
+### 2.3.2 正交变换
+
+### 2.3.3 Euclid 空间
+1. $\text{Euclid}$ 空间：设 $\mathscr A$ 是一个 $n$ 维仿射空间，$A, B$ 为仿射空间中的两个点，若与 $\mathscr A$ 相联系的线性空间是一个内积空间，则可定义仿射空间的度量 $\rho$ 为 $\rho(A, B) = |\overrightarrow{AB}|$．此时称 $\mathscr A$ 为一个 $\text{Euclid}$ 空间，记作 $E^n$
+2. $\text{Descartes}$ 标架
+    1. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架．由 $\text{Descartes}$ 标架确定的坐标系称作 $\text{Descartes}$ 坐标系
+    2. 若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架．由 $\text{Descartes}$ 直角标架确定的坐标系称作 $\text{Descartes}$ 直角坐标系
+3. $\text{Descartes}$ 直角坐标系的实例
     1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
 
         <div style="text-align: center;">
@@ -122,81 +90,92 @@
 
         </div>
 
+4. $\text{Euclid}$ 空间下的其他坐标系
+    1. 极坐标系：$2$ 维仿射空间中的一个顶点 $O$ 与基 $\boldsymbol e$ 组成了一个极坐标系，称 $O$ 为极点，$\boldsymbol e$ 所在的直线为极轴．任意有序数对 $(\rho, \theta)$（其中 $\rho \geqslant 0, -\pi < \varphi \leqslant \pi$）唯一对应了平面中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$，$\theta$ 为 $\overrightarrow{OP}$ 与 $\boldsymbol e$ 的夹角．并称 $\rho$ 为极径，称 $\theta$ 为极角，称 $(\rho, \theta)$ 为点 $P$ 的极坐标，记作 $P(\rho, \theta)$
+        1. 极坐标化为平面直角坐标
 
-### 1.2.3 其他坐标系
-1. 极坐标系：$2$ 维仿射空间中的一个顶点 $O$ 与基 $\boldsymbol e$ 组成了一个极坐标系，称 $O$ 为极点，$\boldsymbol e$ 所在的直线为极轴．任意有序数对 $(\rho, \theta)$（其中 $\rho \geqslant 0, -\pi < \varphi \leqslant \pi$）唯一对应了平面中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$，$\theta$ 为 $\overrightarrow{OP}$ 与 $\boldsymbol e$ 的夹角．并称 $\rho$ 为极径，称 $\theta$ 为极角，称 $(\rho, \theta)$ 为点 $P$ 的极坐标，记作 $P(\rho, \theta)$
-    1. 极坐标化为平面直角坐标
+            $$
+            \left\{\begin{aligned}
+            & x = \rho \cos \theta \\
+            & y = \rho \sin \theta
+            \end{aligned}\right.
+            \ \left(\begin{array}{l}
+            \rho \geqslant 0 \\
+            -\pi < \varphi \leqslant \pi
+            \end{array}\right)
+            $$
 
-        $$
-        \left\{\begin{aligned}
-        & x = \rho \cos \theta \\
-        & y = \rho \sin \theta
-        \end{aligned}\right.
-        \ \left(\begin{array}{l}
-        \rho \geqslant 0 \\
-        -\pi < \varphi \leqslant \pi
-        \end{array}\right)
-        $$
+        2. 平面直角坐标化为极坐标
 
-    2. 平面直角坐标化为极坐标
+            $$
+            \left\{\begin{aligned}
+            & \rho^2 = x^2 + y^2 \\
+            & \tan \theta = \dfrac{y}{x}
+            \end{aligned}\right.
+            $$
 
-        $$
-        \left\{\begin{aligned}
-        & \rho^2 = x^2 + y^2 \\
-        & \tan \theta = \dfrac{y}{x}
-        \end{aligned}\right.
-        $$
+    2. 球坐标系：$3$ 维仿射空间中的一个顶点 $O$ 与不共线的基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个球坐标系，称 $O$ 为原点．设 $\overrightarrow{OP}$ 在 $\mathrm{span}(\boldsymbol e_1, \boldsymbol e_2)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, \theta)$（其中 $\rho \geqslant 0, -\pi<\varphi \leqslant \pi, -\dfrac{\pi}{2} \leqslant \theta \leqslant \dfrac{\pi}{2}$）唯一对应了空间中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$．则 $\varphi$ 表示 $\overrightarrow{OM}$ 与 $\boldsymbol e_1$ 的夹角，$\theta$ 是 $\overrightarrow{OP}$ 与 $\overrightarrow{OM}$ 的夹角．称 $(\rho, \varphi, \theta)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, \theta)$
+        1. 球坐标化为空间直角坐标
 
-2. 球坐标系：$3$ 维仿射空间中的一个顶点 $O$ 与不共线的基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个球坐标系，称 $O$ 为原点．设 $\overrightarrow{OP}$ 在 $\mathrm{span}(\boldsymbol e_1, \boldsymbol e_2)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, \theta)$（其中 $\rho \geqslant 0, -\pi<\varphi \leqslant \pi, -\dfrac{\pi}{2} \leqslant \theta \leqslant \dfrac{\pi}{2}$）唯一对应了空间中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$．则 $\varphi$ 表示 $\overrightarrow{OM}$ 与 $\boldsymbol e_1$ 的夹角，$\theta$ 是 $\overrightarrow{OP}$ 与 $\overrightarrow{OM}$ 的夹角．称 $(\rho, \varphi, \theta)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, \theta)$
-    1. 球坐标化为空间直角坐标
+            $$
+            \left\{\begin{array}{l}
+            x=\rho \cos \theta \cos \varphi \\
+            y=\rho \cos \theta \sin \varphi \\
+            z=\rho \sin \theta
+            \end{array}\right.
+            \ \left(\begin{array}{l}
+            \rho \geqslant 0 \\
+            -\pi<\varphi \leqslant \pi \\
+            -\dfrac{\pi}{2} \leqslant \theta \leqslant \dfrac{\pi}{2}
+            \end{array}\right)
+            $$
 
-        $$
-        \left\{\begin{array}{l}
-        x=\rho \cos \theta \cos \varphi \\
-        y=\rho \cos \theta \sin \varphi \\
-        z=\rho \sin \theta
-        \end{array}\right.
-        \ \left(\begin{array}{l}
-        \rho \geqslant 0 \\
-        -\pi<\varphi \leqslant \pi \\
-        -\dfrac{\pi}{2} \leqslant \theta \leqslant \dfrac{\pi}{2}
-        \end{array}\right)
-        $$
+        2. 空间直角坐标化为球坐标
 
-    2. 空间直角坐标化为球坐标
+            $$
+            \left\{\begin{array}{l}
+            \rho=\sqrt{x^2+y^2+z^2} \\
+            \cos \varphi=\dfrac{x}{\sqrt{x^2+y^2}} \\
+            \sin \varphi=\dfrac{y}{\sqrt{x^2+y^2}} \\
+            \theta=\arcsin \dfrac{z}{\sqrt{x^2+y^2+z^2}}
+            \end{array}\right.
+            $$
 
-        $$
-        \left\{\begin{array}{l}
-        \rho=\sqrt{x^2+y^2+z^2} \\
-        \cos \varphi=\dfrac{x}{\sqrt{x^2+y^2}} \\
-        \sin \varphi=\dfrac{y}{\sqrt{x^2+y^2}} \\
-        \theta=\arcsin \dfrac{z}{\sqrt{x^2+y^2+z^2}}
-        \end{array}\right.
-        $$
+    3. 柱坐标系：$3$ 维仿射空间中的一个顶点 $O$ 与正交的两个基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个柱坐标系，也称作半极坐标．点 $O$ 与基 $e_1$ 组成一个平面上的极坐标系．设 $\overrightarrow{OP}$ 在 $\mathbf N(\boldsymbol e_1)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, u)$（其中 $\rho \geqslant 0, -\pi< \varphi \leqslant \pi, u \in \mathbf R$）唯一对应了空间中的点 $P$，其中 $(\rho, \varphi)$ 是 $\overrightarrow{OM}$ 在点 $O$ 与基 $e_1$ 形成的极坐标系下的坐标，$|u| = |\overrightarrow{MP}|$．称 $(\rho, \varphi, u)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, u)$
+        1. 柱坐标化为空间直角坐标
 
-3. 柱坐标系：$3$ 维仿射空间中的一个顶点 $O$ 与正交的两个基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个柱坐标系，也称作半极坐标．点 $O$ 与基 $e_1$ 组成一个平面上的极坐标系．设 $\overrightarrow{OP}$ 在 $\mathbf N(\boldsymbol e_1)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, u)$（其中 $\rho \geqslant 0, -\pi< \varphi \leqslant \pi, u \in \mathbf R$）唯一对应了空间中的点 $P$，其中 $(\rho, \varphi)$ 是 $\overrightarrow{OM}$ 在点 $O$ 与基 $e_1$ 形成的极坐标系下的坐标，$|u| = |\overrightarrow{MP}|$．称 $(\rho, \varphi, u)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, u)$
-    1. 柱坐标化为空间直角坐标
+            $$
+            \left\{\begin{array}{l}
+            x=\rho \cos \varphi \\
+            y=\rho \sin \varphi \\
+            z=u
+            \end{array}\right.
+            \ \left(\begin{array}{l}
+            \rho \geqslant 0 \\
+            -\pi< \varphi \leqslant \pi \\
+            u \in \mathbf R
+            \end{array}\right)
+            $$
 
-        $$
-        \left\{\begin{array}{l}
-        x=\rho \cos \varphi \\
-        y=\rho \sin \varphi \\
-        z=u
-        \end{array}\right.
-        \ \left(\begin{array}{l}
-        \rho \geqslant 0 \\
-        -\pi< \varphi \leqslant \pi \\
-        u \in \mathbf R
-        \end{array}\right)
-        $$
+        2. 空间直角坐标化为柱坐标
 
-    2. 空间直角坐标化为柱坐标
+            $$
+            \left\{\begin{array}{l}
+            \rho=\sqrt{x^2+y^2} \\
+            \cos \varphi=\dfrac{x}{\sqrt{x^2+y^2}} \\
+            \sin \varphi=\dfrac{y}{\sqrt{x^2+y^2}} \\
+            u=z
+            \end{array}\right.
+            $$
 
-        $$
-        \left\{\begin{array}{l}
-        \rho=\sqrt{x^2+y^2} \\
-        \cos \varphi=\dfrac{x}{\sqrt{x^2+y^2}} \\
-        \sin \varphi=\dfrac{y}{\sqrt{x^2+y^2}} \\
-        u=z
-        \end{array}\right.
-        $$
+
+### 2.3.4 Hilbert 几何
+
+## 2.4 射影几何
+### 2.4.1 射影几何公理体系
+
+### 2.4.2 射影变换
+
+### 2.4.3 射影空间
+
+### 2.4.4 射影几何
