@@ -132,9 +132,10 @@ nav:
       - 5 矩阵论: alg/elem/mat.md
   - 几何学:
     - 一、解析几何:
-      - 1 线性空间: top/anly/lin.md
-      - 2 曲线方程与曲线论: top/anly/curv.md
-      - 3 曲面方程与曲面论: top/anly/surf.md
+      - 1 线性空间与向量: top/anly/lin.md
+      - 2 变换与坐标: top/anly/geom.md
+      - 3 曲线方程与曲线论: top/anly/curv.md
+      - 4 曲面方程与曲面论: top/anly/surf.md
     - 二、点集拓扑:
       - 1 拓扑空间: top/point/space.md
       - 2 构造空间: top/point/constr.md

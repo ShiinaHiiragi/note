@@ -745,8 +745,8 @@
     $$
     \begin{aligned}
     \boldsymbol x^{\mathrm T} \boldsymbol{Ax} & = \sum_{i=1}^n \sum_{j=1}^n a_{ij} x_i x_j \\
-    & = \sum_{i=1^n} a_{ii}x_i^2 + \sum_{i \neq j} a_{ij} x_i x_j \\
-    & = \sum_{i=1^n} a_{ii}x_i^2 + 2\sum_{i < j} a_{ij} x_i x_j
+    & = \sum_{i=1}^n a_{ii}x_i^2 + \sum_{i \neq j} a_{ij} x_i x_j \\
+    & = \sum_{i=1}^n a_{ii}x_i^2 + 2\sum_{i < j} a_{ij} x_i x_j
     \end{aligned}
     $$
 
