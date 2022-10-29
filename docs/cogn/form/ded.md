@@ -83,7 +83,7 @@
 
         <figure markdown>
             ![](../assets/lattice.png)
-            <style> img[src$="lattice.png"] { width: 480px; } </style>
+            <style> img[src$="lattice.png"] { width: 500px; } </style>
         </figure>
 
         !!! note "各个格的规则"
