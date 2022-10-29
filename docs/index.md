@@ -279,7 +279,25 @@ const refList = [
         press: "高等教育出版社",
         locate: "北京",
         year: 2014,
-        page: [41, 54],
+        page: [41, 54]
+    },
+    {
+        author: ["徐利治"],
+        title: "现代数学手册·经典数学卷",
+        type: "M",
+        press: "华中科技大学出版社",
+        locate: "武汉",
+        year: 2000,
+        page: [905, 1040]
+    },
+    {
+        author: ["数理化自学丛书编委会"],
+        title: "平面解析几何",
+        type: "M",
+        press: "上海科学技术出版社",
+        locate: "上海",
+        year: 1965,
+        page: [1, 407],
         plot: 0
     },
     {
