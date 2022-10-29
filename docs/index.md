@@ -43,7 +43,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：分析哲学 · 专名与通名 </label>
+    <label> 现在进度：分析哲学 · 主词与谓词 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>

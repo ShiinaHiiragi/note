@@ -107,6 +107,7 @@ nav:
       - 1 演绎与证成: meta/logic/syntax.md
       - 2 真理与悖论: meta/logic/truth.md
       - 3 意义与指称: meta/logic/mean.md
+      - 4 量化与本体论: meta/logic/onto.md
     - 四、数学哲学:
       - 1 基本问题与历史观点: meta/math/cep.md
       - 2 三大主义: meta/math/doctr.md
