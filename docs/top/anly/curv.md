@@ -35,15 +35,26 @@
         1. 过原点的直线：$\theta = \theta_0$
         2. 不过原点的直线：$p > 0$ 为直线 $l$ 的法距，则 $\rho=\dfrac{p}{\cos (\alpha-\theta)}$，其中 $\alpha$ 是与 $l$ 垂直直线的倾斜角
     2. 参数式方程：设 $P(x_0, y_0)$ 是倾角为 $\varphi$ 的直线 $l$ 上任一点，则直线 $l$ 的参数方程为 $\left\{\begin{array}{l} x=x_0+t \cos \varphi \\ y=y_0+t \sin \varphi \end{array}\right. \ (t \in \mathbf R)$
-3. 平面直线与点的关系：设 $Ax + By + C = 0 \ (A^2 + B^2 \neq 0)$，点 $P$ 的坐标为 $(x_1, y_1)$，点 $Q(x_2, y_2)$ 在直线 $l$ 上．则点到直线的距离 $d$ 定义为 $\min |\overrightarrow{PQ}| = \dfrac{\left|A x_1+B y_1+C\right|}{\sqrt{A^2+B^2}}$
-4. 平面直线间关系：设 $l_1: A_1 x + B_1 y + C_1 = 0$ 与 $l_2: A_2 x + B_2 y + C_2 = 0$ 是两条直线
+3. 平面直线与点的关系：设 $l: Ax + By + C = 0 \ (A^2 + B^2 \neq 0)$ 为一条直线，点 $P$ 的坐标为 $(x_1, y_1)$，点 $Q(x_2, y_2)$ 在直线 $l$ 上．则点到直线的距离 $d$ 定义为 $\min |\overrightarrow{PQ}| = \dfrac{\left|A x_1+B y_1+C\right|}{\sqrt{A^2+B^2}}$
+4. 平面直线间关系：设两直线 $l_1, l_2$ 方程为
+
+    $$
+    \begin{aligned}
+    &l_1: A_1 x + B_1 y + C_1 = 0 \\
+    &l_2: A_2 x + B_2 y + C_2 = 0
+    \end{aligned}
+    $$
+
+    定义两直线的夹角 $\theta = \arccos \left|\dfrac{A_1 A_2 + B_1 B_2}{\sqrt{A_1^2 + B_1^2} \sqrt{A_2^2 + B_2^2}}\right| \ (0 \leqslant \theta \leqslant \dfrac{\pi}{2})$
+
     1. 两直线重合当且仅当 $\dfrac{A_1}{A_2}=\dfrac{B_1}{B_2}=\dfrac{C_1}{C_2}$
-    2. 两直线不重合时，定义两直线的夹角 $\theta = \arccos \left|\dfrac{A_1 A_2 + B_1 B_2}{\sqrt{A_1^2 + B_1^2} \sqrt{A_2^2 + B_2^2}}\right| \ (0 \leqslant \theta \leqslant \dfrac{\pi}{2})$
-        1. 定义两直线垂直为两直线的方向向量正交，此时 $A_1 A_2 + B_1 B_2 = 0$
-        2. 定义两直线平行为两直线的方向向量共线且两直线不重合，此时 $\dfrac{A_1}{A_2}=\dfrac{B_1}{B_2}\neq\dfrac{C_1}{C_2}$
+    2. 两直线不重合时
+        1. 定义两直线平行为方向向量共线且直线不重合，此时 $\dfrac{A_1}{A_2}=\dfrac{B_1}{B_2}\neq\dfrac{C_1}{C_2}$
 
             !!! note "两平面间的距离"
                 设 $l_1: A x + B y + C_1 = 0$ 与 $l_2: Ax + By + C_2 = 0$ 是两条平行直线，则两直线距离为 $d = \dfrac{|C_1 - C_2|}{\sqrt{A^2+B^2}}$
+
+        2. 定义两直线相交为方向向量不共线，此时 $\dfrac{A_1}{A_2}\neq\dfrac{B_1}{B_2}$；特别地，定义两直线垂直为方向向量正交，此时 $A_1 A_2 + B_1 B_2 = 0$
 
 ### 3.1.2 平面曲线
 
@@ -104,9 +115,9 @@
 
                 $$
                 \begin{gathered}
-                \cos \alpha=\pm\frac{l}{\sqrt{l^2+m^2+n^2}}\\
-                \cos \beta=\pm\frac{m}{\sqrt{l^2+m^2+n^2}} \\
-                \cos \gamma=\pm\frac{n}{\sqrt{l^2+m^2+n^2}}
+                \cos \alpha=\pm\dfrac{l}{\sqrt{l^2+m^2+n^2}}\\
+                \cos \beta=\pm\dfrac{m}{\sqrt{l^2+m^2+n^2}} \\
+                \cos \gamma=\pm\dfrac{n}{\sqrt{l^2+m^2+n^2}}
                 \end{gathered}
                 $$
 
@@ -133,8 +144,88 @@
         \end{aligned}\right.
         $$
 
-2. 空间直线与点的关系
-3. 空间直线间关系
+2. 空间直线与点的关系：设 $l: \dfrac{x-x_0}{X}=\dfrac{y-y_0}{Y}=\dfrac{z-z_0}{Z}$ 为一条直线，点 $P$ 的坐标为 $(x_1, y_1, z_1)$，点 $Q(x_2, y_2, z_2)$ 在直线 $l$ 上．则点到直线的距离 $d$ 定义为
+
+    $$
+    \min |\overrightarrow{PQ}| = \dfrac{\sqrt{\left|\begin{array}{cc}
+    y_1-y_0 & z_1-z_0 \\
+    Y & Z
+    \end{array}\right|^2+\left|\begin{array}{cc}
+    z_1-z_0 & x_1-x_0 \\
+    Z & X
+    \end{array}\right|^2+\left|\begin{array}{cc}
+    x_1-x_0 & y_1-y_0 \\
+    X & Y
+    \end{array}\right|^2}}{\sqrt{X^2+Y^2+Z^2}}
+    $$
+
+3. 空间直线间关系：设两直线 $l_1, l_2$ 方程为
+
+    $$
+    \begin{aligned}
+    &l_1: \dfrac{x-x_1}{X_1}=\dfrac{y-y_1}{Y_1}=\dfrac{z-z_1}{Z_1} \\
+    &l_2: \dfrac{x-x_2}{X_2}=\dfrac{y-y_2}{Y_2}=\dfrac{z-z_2}{Z_2}
+    \end{aligned}
+    $$
+
+    定义两直线的夹角 $\theta = \arccos \left|\dfrac{X_1 X_2+Y_1 Y_2+Z_1 Z_2}{\sqrt{X_1^2+Y_1^2+Z_1^2} \cdot \sqrt{X_2^2+Y_2^2+Z_2^2}}\right| \ (0 \leqslant \theta \leqslant \dfrac{\pi}{2})$
+
+    1. 两直线异面当且仅当
+
+        $$
+        \Delta=\left|\begin{array}{ccc}
+        x_2-x_1 & y_2-y_1 & z_2-z_1 \\
+        X_1 & Y_1 & Z_1 \\
+        X_2 & Y_2 & Z_2
+        \end{array}\right| \neq 0
+        $$
+
+    2. 两直线共面时
+        1. 两直线重合当且仅当
+
+            $$
+            X_1: Y_1: Z_1=X_2: Y_2: Z_2=\left(x_2-x_1\right):\left(y_2-y_1\right):\left(z_2-z_1\right)
+            $$
+
+        2. 定义两直线平行为方向向量共线且直线不重合，此时
+
+            $$
+            X_1: Y_1: Z_1=X_2: Y_2: Z_2\neq\left(x_2-x_1\right):\left(y_2-y_1\right):\left(z_2-z_1\right)
+            $$
+
+        3. 定义两直线相交为方向向量不共线，此时 $\Delta=0$ 且 $X_1: Y_1: Z_1\neq X_2: Y_2: Z_2$；特别地，定义两直线垂直为方向向量正交，此时 $X_1 X_2+Y_1 Y_2+Z_1 Z_2=0$
+
+    !!! note "空间直线间的距离"
+        设两直线 $l_1, l_2$ 方程为
+
+        $$
+        \begin{aligned}
+        &l_1: \dfrac{x-x_1}{X_1}=\dfrac{y-y_1}{Y_1}=\dfrac{z-z_1}{Z_1} \\
+        &l_2: \dfrac{x-x_2}{X_2}=\dfrac{y-y_2}{Y_2}=\dfrac{z-z_2}{Z_2}
+        \end{aligned}
+        $$
+
+        定义空间两直线上的点之间的最短距离为两直线之间的距离
+
+        1. 当直线共面时，两相交直线或两重合直线间的距离为 $0$；两平行直线间的距离等于其中一直线上的任意点到另一直线的距离
+        2. 当直线异面时，两直线间距离等于其公垂线之长：
+
+            $$
+            d=\left|\frac{\left|\begin{array}{ccc}
+            x_2-x_1 & y_2-y_1 & z_2-z_1 \\
+            X_1 & Y_1 & Z_1 \\
+            X_2 & Y_2 & Z_2
+            \end{array}\right|}{\sqrt{\left|\begin{array}{c}
+            Y_1 & Z_1 \\
+            Y_2 & Z_2
+            \end{array}\right|^2+\left|\begin{array}{c}
+            Z_1 & X_1 \\
+            Z_2 & X_2
+            \end{array}\right|^2+\left|\begin{array}{c}
+            X_1 & Y_1 \\
+            X_2 & Y_2
+            \end{array}\right|} \mid}\right|
+            $$
 
 ### 3.2.2 空间曲线
 

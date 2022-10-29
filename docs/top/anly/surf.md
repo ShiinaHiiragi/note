@@ -80,7 +80,7 @@
 
         !!! note "平面的法式化"
             平面的法式方程是具有下列两个特征的一种一般方程
-            
+
             1. 一次项的系数是单位法向量的坐标，其平方和为 $1$
             2. 因为 $p$ 是原点 $O$ 到平面 $\pi$ 的距离，所以常数项 $-p \leqslant 0$
 
@@ -92,16 +92,29 @@
 
             并称取定符号后的 $\lambda=\dfrac{1}{\pm \sqrt{A^2+B^2+C^2}}$ 为法式化因子
 
-2. 空间平面与点的关系：设 $Ax + By + Cz + D = 0 \ (A^2 + B^2 + C^2 \neq 0)$，点 $P$ 的坐标为 $(x_1, y_1, z_1)$，点 $Q(x_2, y_2, z_2)$ 在平面 $\pi$ 上．则点到平面的距离 $d$ 定义为 $\min |\overrightarrow{PQ}| = \dfrac{\left|A x_1+B y_1+C z_1 + D\right|}{\sqrt{A^2+B^2+C^2}}$
-3. 空间平面与空间直线的关系
-4. 空间平面间关系：设 $\pi_1: A_1 x + B_1 y + C_1z + D_1 = 0$ 与 $\pi_2: A_2 x + B_2 y + C_2z + D_2 = 0$ 是两个平面
+2. 空间平面与点的关系：设 $\pi: Ax + By + Cz + D = 0 \ (A^2 + B^2 + C^2 \neq 0)$ 为一个平面，点 $P$ 的坐标为 $(x_1, y_1, z_1)$，点 $Q(x_2, y_2, z_2)$ 在平面 $\pi$ 上．则点到平面的距离 $d$ 定义为 $\min |\overrightarrow{PQ}| = \dfrac{\left|A x_1+B y_1+C z_1 + D\right|}{\sqrt{A^2+B^2+C^2}}$
+3. 空间平面与空间直线的关系：设直线 $l$ 方程为 $\dfrac{x-x_0}{X}=\dfrac{y-y_0}{Y}=\dfrac{z-z_0}{Z}$，平面 $\pi$ 方程为 $Ax+By+Cz+D=0$．设 $l$ 与 $\pi$ 的夹角为 $\theta \ (0 \leqslant \theta \leqslant \dfrac{\pi}{2})$，则 $\theta = \arcsin \dfrac{|A X+B Y+C Z|}{\sqrt{A^2+B^2+C^2} \cdot \sqrt{X^2+Y^2+Z^2}}$
+    1. 直线在平面上当且仅当 $AX+BY+CZ=0$ 且 $A x_0+B y_0+C z_0+D=0$；直线与平面平行当且仅当 $AX+BY+CZ=0$ 且 $A x_0+B y_0+C z_0+D\neq 0$
+    2. 直线与平面相交当且仅当 $AX+BY+CZ\neq 0$；直线与平面垂直当且仅当 $\dfrac{A}{X}=\dfrac{B}{Y}=\dfrac{C}{Z}$
+4. 空间平面间关系：设 $\pi_1, \pi_2$ 是两个平面
+
+    $$
+    \begin{aligned}
+    & \pi_1: A_1 x + B_1 y + C_1z + D_1 = 0 \\
+    & \pi_2: A_2 x + B_2 y + C_2z + D_2 = 0
+    \end{aligned}
+    $$
+
+    定义两平面的夹角 $\theta = \arccos \left|\dfrac{A_1 A_2 + B_1 B_2 + C_1 C_2}{\sqrt{A_1^2 + B_1^2 + C_1^2} \sqrt{A_2^2 + B_2^2 + C_2^2}}\right| \ (0 \leqslant \theta \leqslant \dfrac{\pi}{2})$
+
     1. 两平面重合当且仅当 $\dfrac{A_1}{A_2}=\dfrac{B_1}{B_2}=\dfrac{C_1}{C_2}=\dfrac{D_1}{D_2}$
-    2. 两平面不重合时，定义两平面的夹角 $\theta = \arccos \left|\dfrac{A_1 A_2 + B_1 B_2 + C_1 C_2}{\sqrt{A_1^2 + B_1^2 + C_1^2} \sqrt{A_2^2 + B_2^2 + C_2^2}}\right| \ (0 \leqslant \theta \leqslant \dfrac{\pi}{2})$
-        1. 定义两平面垂直为两平面的方向向量正交，此时 $A_1 A_2 + B_1 B_2 + C_1 C_2 = 0$
-        2. 定义两平面平行为两平面的方向向量共线且两平面不重合，此时 $\dfrac{A_1}{A_2}=\dfrac{B_1}{B_2}=\dfrac{C_1}{C_2}\neq\dfrac{D_1}{D_2}$
+    2. 两平面不重合时
+        1. 定义两平面平行为方向向量共线且两平面不重合，此时 $\dfrac{A_1}{A_2}=\dfrac{B_1}{B_2}=\dfrac{C_1}{C_2}\neq\dfrac{D_1}{D_2}$
 
             !!! note "两平面间的距离"
                 设 $\pi_1: A x + B y + Cz + D_1 = 0$ 与 $\pi_2: Ax + By + Cz + D_2 = 0$ 是两个平行平面，则两平面距离为 $d = \dfrac{|D_1 - D_2|}{\sqrt{A^2+B^2+C^2}}$
+
+        2. 定义两平面相交为方向向量不共线，此时 $A_1:B_1:C_1\neq A_2:B_2:C_2$；特别地，定义两平面垂直为方向向量正交，此时 $A_1 A_2 + B_1 B_2 + C_1 C_2 = 0$
 
 ### 4.1.2 空间曲面
 
