@@ -302,7 +302,7 @@ const refList = [
         page: [1, 152],
         plot: 0
     },
-        {
+    {
         author: ["梅向明", "刘增贤", "王汇淳", "王智秋"],
         title: "高等几何",
         type: "M",
