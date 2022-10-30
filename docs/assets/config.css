@@ -44,6 +44,10 @@ div.text-table {
   text-align: center;
 }
 
+div.text-table table {
+  display: table;
+}
+
 div.text-table th {
   vertical-align: middle !important;
 }
