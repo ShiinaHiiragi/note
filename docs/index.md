@@ -297,8 +297,18 @@ const refList = [
         press: "上海科学技术出版社",
         locate: "上海",
         year: 1965,
-        page: [1, 407],
-        plot: 258
+        page: [1, 407]
+    },
+    {
+        author: ["[德]Eberhard Zeidler"],
+        title: "数学指南：实用数学手册",
+        type: "M",
+        trans: ["李文林"],
+        press: "科学出版社",
+        locate: "北京",
+        year: 2012,
+        page: [787, 798],
+        plot: 787 - 787
     },
     {
         author: ["吕林根", "徐子道"],
