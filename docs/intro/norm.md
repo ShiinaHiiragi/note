@@ -277,7 +277,7 @@
 
     !!! note ""
         === "正确示例"
-            <div style="text-align: center;">
+            <div class="text-table">
 
             |  $x$  | $f(x) = x^2$ | $g(x) = x^3$ |
             | :---: | :----------: | :----------: |
@@ -290,7 +290,7 @@
             </div>
         === "LaTeX"
             ```html
-            <div style="text-align: center;">
+            <div class="text-table">
 
             |  $x$  | $f(x) = x^2$ | $g(x) = x^3$ |
             | :---: | :----------: | :----------: |

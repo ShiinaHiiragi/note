@@ -70,7 +70,7 @@
     2. $\text{Descartes}$ 直角坐标系的实例
         1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
 
-            <div style="text-align: center;">
+            <div class="text-table">
 
             |   象限   |            点集            |
             | :------: | :------------------------: |
@@ -83,7 +83,7 @@
 
         2. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1, \boldsymbol e_2$ 与 $\boldsymbol e_3$ 对应的三个坐标轴为 $x$ 轴，$y$ 轴与 $z$ 轴，记坐标系为 $Oxyz$．三个坐标轴将平面分成八个卦限
 
-            <div style="text-align: center;">
+            <div class="text-table">
 
             |   卦限   |                点集                |   卦限   |                 点集                 |
             | :------: | :--------------------------------: | :------: | :----------------------------------: |

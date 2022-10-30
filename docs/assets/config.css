@@ -40,6 +40,18 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.1rem;
 }
 
+div.text-table {
+  text-align: center;
+}
+
+div.text-table th {
+  vertical-align: middle !important;
+}
+
+div.text-table td {
+  vertical-align: middle !important;
+}
+
 /* {++ Added Markup in Critic ++} */
 ins.critic {
   text-decoration: none;

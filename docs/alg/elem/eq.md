@@ -297,7 +297,7 @@
         2. $a \neq 0$ 时，解集为 $\left\{\begin{aligned} & \left(\dfrac ba, +\infty\right), & a > 0 \\ & \left(-\infty, \dfrac ba\right), & a < 0 \end{aligned}\right.$
     2. 任何一元二次不等式都可经过恒等变形整理为 $ax^2 + bx + c > 0 \ (a \neq 0)$ 的形式，从而归结为两种情形，记 $\Delta = p^2 - 4q$
 
-        <div style="text-align: center;">
+        <div class="text-table">
 
         |                           项目                            |                            $x^2 + px + q > 0$                            | $x^2 + px + q < 0$ |
         | :-------------------------------------------------------: | :----------------------------------------------------------------------: | :----------------: |

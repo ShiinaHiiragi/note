@@ -523,7 +523,7 @@
     3. 对任意 $p, q \in \mathbf Q$ 有 $f(p +^{\mathbf Q} q) = f(p) +^{\mathbf R} f(q)$ 且 $f(p \cdot^{\mathbf Q} q) = f(p) \cdot^{\mathbf R} f(q)$
 6. 实数集合子集的区间表示
 
-    <div style="text-align: center;">
+    <div class="text-table">
 
     |                       集合                        |       区间表示       |     名称     |
     | :-----------------------------------------------: | :------------------: | :----------: |
