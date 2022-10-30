@@ -46,7 +46,7 @@
 1. 平面直线的一般方程：$Ax + By + C = 0 \ (A^2 + B^2 \neq 0)$
     1. 直线与向量：设 $l$ 上任意相异两点为 $P(x_1, y_1), Q(x_2, y_2)$，则 $\overrightarrow{PQ} = (x_2 - x_1, y_2 - y_1)$ 称为直线 $l$ 的方向向量；任意与 $\overrightarrow{PQ}$ 垂直的向量称为直线 $l$ 的法向量
     2. 斜率与倾角：当 $B \neq 0$ 时，称 $k = -\dfrac{A}{B}$ 为直线的斜率，称 $\arctan k$ 为直线的倾角 $\theta$，后者是 $l$ 上方向向量与基 $\boldsymbol e_1$ 的夹角，且其取值范围为 $\left[\left. 0, \dfrac{\pi}{2}\right)\right. \cup \left( \dfrac{\pi}{2}, \pi\right)$；当 $B = 0$ 时，称直线 $l$ 的斜率不存在，倾角为 $\dfrac{\pi}{2}$
-    3. 法线与法距：称过点 $O$ 且与直线 $l$ 垂直于点 $N$ 的直线为 $l$ 的法线．定义法线的辐角为 $$；定义法距为 $|\overrightarrow{ON}| = \dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$
+    3. 法线与法距：称过点 $O$ 且与直线 $l$ 垂直于点 $N$ 的直线为 $l$ 的法线．定义法线的辐角为 $x$ 轴对应的基 $\boldsymbol e_1$ 逆时针旋转到法向量 $\overrightarrow{ON}$ 经过的角度，定义法距为 $|\overrightarrow{ON}| = \dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$
     4. 直线的截距：称直线与坐标轴的交点（如果存在）对应的实数为直线的截距
 
     !!! note "一般方程的变形"
@@ -54,13 +54,13 @@
         2. 斜截式：斜率 $k=\tan \theta$，在 $y$ 轴上的截距为 $c$ 的直线方程为 $y=kx+c$
         3. 截距式：在 $x$ 轴与 $y$ 轴上的截距分别为 $a, b$ 的直线方程为 $\dfrac{x}{a}+\dfrac{y}{b}=1$
         4. 两点式：通过点 $P_1\left(x_1, y_1\right), P_2\left(x_2, y_2\right)$ 的直线方程为 $\dfrac{y-y_1}{y_2-y_1}=\dfrac{x-x_1}{x_2-x_1}$
-        5. 法线式：法距为 $p$，与该直线垂直的直线倾斜角 $\theta$, 则直线 $l$ 的方程为 $x \cos \theta+y \sin \theta=p$
+        5. 法线式：法距为 $p$，法线辐角为 $\alpha$ 的直线 $l$ 方程为 $x \cos \alpha+y \sin \alpha=p$
 
 2. 平面直线方程的其他表示
     1. 极坐标方程：设 $P(\rho_0, \theta_0)$ 是直线 $l$ 上任一点的极坐标
         1. 过原点的直线：$\theta = \theta_0$
-        2. 不过原点的直线：$p > 0$ 为直线 $l$ 的法距，则 $\rho=\dfrac{p}{\cos (\alpha-\theta)}$，其中 $\alpha$ 是与 $l$ 垂直直线的倾斜角
-    2. 参数式方程：设 $P(x_0, y_0)$ 是倾角为 $\varphi$ 的直线 $l$ 上任一点，则直线 $l$ 的参数方程为 $\left\{\begin{array}{l} x=x_0+t \cos \varphi \\ y=y_0+t \sin \varphi \end{array}\right. \ (t \in \mathbf R)$
+        2. 不过原点的直线：设法距为 $p$，法线辐角为 $\alpha$，则直线方程为 $\rho=\dfrac{p}{\cos (\alpha-\theta)}$
+    2. 参数式方程：设 $P(x_0, y_0)$ 是倾角为 $\theta$ 的直线 $l$ 上任一点，则直线 $l$ 的参数方程为 $\left\{\begin{array}{l} x=x_0+t \cos \theta \\ y=y_0+t \sin \theta \end{array}\right. \ (t \in \mathbf R)$
 3. 平面直线与点的关系：设 $l: Ax + By + C = 0 \ (A^2 + B^2 \neq 0)$ 为一条直线，点 $P$ 的坐标为 $(x_1, y_1)$，点 $Q(x_2, y_2)$ 在直线 $l$ 上．则点到直线的距离 $d$ 定义为 $\min |\overrightarrow{PQ}| = \dfrac{\left|A x_1+B y_1+C\right|}{\sqrt{A^2+B^2}}$
 4. 平面直线间关系：设两直线 $l_1, l_2$ 方程为
 
@@ -80,6 +80,15 @@
             设 $l_1: A x + B y + C_1 = 0$ 与 $l_2: Ax + By + C_2 = 0$ 是两条平行直线，则两直线距离为 $d = \dfrac{|C_1 - C_2|}{\sqrt{A^2+B^2}}$
 
     3. 定义两直线相交为方向向量不共线，此时 $\dfrac{A_1}{A_2}\neq\dfrac{B_1}{B_2}$；特别地，定义两直线垂直为方向向量正交，此时 $A_1 A_2 + B_1 B_2 = 0$
+
+5. 直线系：具有某种共同特征的直线的集合，表示这个直线系的方程称作直线系方程
+    1. 有共同斜率 $k_0$ 的直线系方程：$y = k_0x + b$（其中 $b$ 为参数）
+    2. 在 $y$ 轴上共截距 $b_0$ 的直线系方程：$y = kx + b_0$（其中 $k$ 为参数）
+    3. 与直线 $A_0 x+B_0 y+C_0=0$ 平行的直线系方程：$A_0 x+B_0 y+C=0$（其中 $C$ 为参数）
+    4. 与直线 $A_0 x+B_0 y+C_0=0$ 垂直的直线系方程： $B_0 x-A_0 y+C=0$（其中 $C$ 为参数）
+    5. 过已知点 $P\left(x_0, y_0\right)$ 的直线系方程：$\left(y-y_0\right)=k\left(x-x_0\right)$（其中 $k$ 为参数且不含直线 $x=x_0$）
+    6. 过两直线 $A_1 x+B_1 y+C_1=0$ 及 $A_2 x+B_2 y+C_2=0$ 交点的直线系方程：$\lambda\left(A_1 x+B_1 y+C_1\right)+\mu\left(A_2 x+B_2 y+C_2\right)=0$（其中 $\lambda, \mu$ 是不全为零的参数）
+    7. 在两轴上截距之和为定值 $p_0$ 的直线系方程: $\dfrac{x}{a}+\dfrac{y}{p_0-a}=1$（其中 $a$ 为参数）
 
 ### 3.1.2 空间直线
 1. 空间直线的一般方程：设有两个平面 $\pi_1$ 和 $\pi_2$ 的方程为
