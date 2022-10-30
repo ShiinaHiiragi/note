@@ -51,12 +51,10 @@
         1. 每个仿射标架 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
         2. 当标架取定后，仿射空间与与之联系的线性空间与 $\mathbf R^n$ 具有一一对应的关系，称之为坐标系．由仿射标架确定的坐标系称作仿射坐标系
 
-    !!! note "空间的基本结构"
-        对于空间中给定的相异两点 $A, B$
-
-        1. 线段：由唯一连结于 $A, B$ 之间的最短通路称之为连结 $A, B$ 的线段，记作 $\overline{AB}$
-        2. 射线：由 $A$ 到 $B$ 的最短通路可以向前延伸，称之为由 $A$ 射向 $B$ 的射线
-        3. 直线：连结 $A, B$ 的线段向两端延伸，则称之为由 $A, B$ 唯一确定的直线，记作 $AB$
+4. 直线：设 $\mathscr A$ 是一个仿射空间，由点 $M \in \mathscr A$ 与一个非零向量 $\boldsymbol \alpha$ 给出的直线定义为使得 $\overrightarrow{PM}$ 与 $\boldsymbol \alpha$ 共线的点 $P \in \mathscr A$ 的集合．称 $\boldsymbol \alpha$ 为直线的方向向量，任意与直线的方向向量垂直的向量称为直线 $l$ 的法向量
+    1. 任何与 $\boldsymbol \alpha$ 共线的向量称其与直线平行，则所有平行于一条直线的向量形成一个 $1$ 维线性空间
+    2. 通过仿射空间中的任意两个不同的点 $M_1, M_2$ 有且仅有一条直线，记作 $M_1M_2$
+    3. 称集合 $\{M \mid \overrightarrow{M_1M} = t\overrightarrow{M_1M_2}, t \in [0, 1]\}$ 为以 $M_1, M_2$ 为端点的线段，记作 $\overline{M_1M_2}$
 
 ### 2.3.4 仿射几何
 

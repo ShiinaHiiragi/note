@@ -1,7 +1,7 @@
 # 3 曲线方程与曲线论
 
 ## 3.1 曲线方程
-1. 平面曲线方程：在平面直角坐标系中，若方程 $F(x, y) = 0$ 与曲线 $L$ 有关系：点 $P(x, y)$ 在曲线 $L$ 上当且仅当 $(x, y)$ 满足该方程，则称该方程为 $L$ 的曲线方程
+1. 平面曲线的一般方程：在平面直角坐标系中，若方程 $F(x, y) = 0$ 与曲线 $L$ 有关系：点 $P(x, y)$ 在曲线 $L$ 上当且仅当 $(x, y)$ 满足该方程，则称该方程为 $L$ 的曲线方程
     1. 向量式参数方程：若取 $t \in [a, b]$ 的一切可能取的值，由 $\boldsymbol r(t) = x(t) \boldsymbol e_1 + y(t) \boldsymbol e_2 \ (a \leqslant t \leqslant b)$ 表示的径向量 $\boldsymbol r(t)$ 的终点总在一条曲线上；反之在这条曲线上的任意点总对应着以它为终点的径向量，且该径向量可由 $t$ 的某一值 $t_0\ \left(a \leqslant t_0 \leqslant b\right)$ 完全决定，则称 $\boldsymbol r(t) = x(t) \boldsymbol e_1 + y(t)$ 为曲线的向量式参数方程
     2. 坐标式参数方程：若 $\boldsymbol r(t) = x(t) \boldsymbol e_1 + y(t) \boldsymbol e_2$ 为曲线的向量式参数方程，则称
 
@@ -44,10 +44,9 @@
 
 ### 3.1.1 平面直线
 1. 平面直线的一般方程：$Ax + By + C = 0 \ (A^2 + B^2 \neq 0)$
-    1. 直线与向量：设 $l$ 上任意相异两点为 $P(x_1, y_1), Q(x_2, y_2)$，则 $\overrightarrow{PQ} = (x_2 - x_1, y_2 - y_1)$ 称为直线 $l$ 的方向向量；任意与 $\overrightarrow{PQ}$ 垂直的向量称为直线 $l$ 的法向量
-    2. 斜率与倾角：当 $B \neq 0$ 时，称 $k = -\dfrac{A}{B}$ 为直线的斜率，称 $\arctan k$ 为直线的倾角 $\theta$，后者是 $l$ 上方向向量与基 $\boldsymbol e_1$ 的夹角，且其取值范围为 $\left[\left. 0, \dfrac{\pi}{2}\right)\right. \cup \left( \dfrac{\pi}{2}, \pi\right)$；当 $B = 0$ 时，称直线 $l$ 的斜率不存在，倾角为 $\dfrac{\pi}{2}$
-    3. 法线与法距：称过点 $O$ 且与直线 $l$ 垂直于点 $N$ 的直线为 $l$ 的法线．定义法线的辐角为 $x$ 轴对应的基 $\boldsymbol e_1$ 逆时针旋转到法向量 $\overrightarrow{ON}$ 经过的角度，并定义法距为 $|\overrightarrow{ON}| = \dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$
-    4. 直线的截距：称直线与坐标轴的交点（如果存在）对应的实数为直线的截距
+    1. 斜率与倾角：当 $B \neq 0$ 时，称 $k = -\dfrac{A}{B}$ 为直线的斜率，称 $\arctan k$ 为直线的倾角 $\theta$，后者是 $l$ 上方向向量与基 $\boldsymbol e_1$ 的夹角，且其取值范围为 $\left[\left. 0, \dfrac{\pi}{2}\right)\right. \cup \left( \dfrac{\pi}{2}, \pi\right)$；当 $B = 0$ 时，称直线 $l$ 的斜率不存在，倾角为 $\dfrac{\pi}{2}$
+    2. 法线与法距：称过点 $O$ 且与直线 $l$ 垂直于点 $N$ 的直线为 $l$ 的法线．定义法线的辐角为 $x$ 轴对应的基 $\boldsymbol e_1$ 逆时针旋转到法向量 $\overrightarrow{ON}$ 经过的角度，并定义法距为 $|\overrightarrow{ON}| = \dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$
+    3. 直线的截距：称直线与坐标轴的交点（如果存在）对应的实数为直线的截距
 
     !!! note "一般方程的变形"
         1. 点斜式：通过点 $P_0\left(x_0, y_0\right)$，斜率 $k=\tan \theta$ 的直线方程为 $y-y_0=k\left(x-x_0\right)$
@@ -57,10 +56,11 @@
         5. 法线式：法距为 $p$，法线辐角为 $\alpha$ 的直线 $l$ 方程为 $x \cos \alpha+y \sin \alpha=p$
 
 2. 平面直线方程的其他表示
-    1. 极坐标方程：设 $P(\rho_0, \theta_0)$ 是直线 $l$ 上任一点的极坐标
+    1. 向量参数方程：设 $M(x_0, y_0)$ 是方向向量为 $\boldsymbol v$ 的直线 $l$ 上一点，则直线方程为 $\boldsymbol r = \boldsymbol r_0 + t\boldsymbol v$，其中 $\boldsymbol r_0 = \overrightarrow{OM}$
+    2. 极坐标方程：设 $M(\rho_0, \theta_0)$ 是直线 $l$ 上任一点的极坐标
         1. 过原点的直线：$\theta = \theta_0$
         2. 不过原点的直线：设法距为 $p$，法线辐角为 $\alpha$，则直线方程为 $\rho=\dfrac{p}{\cos (\alpha-\theta)}$
-    2. 参数式方程：设 $P(x_0, y_0)$ 是倾角为 $\theta$ 的直线 $l$ 上任一点，则直线 $l$ 的参数方程为 $\left\{\begin{array}{l} x=x_0+t \cos \theta \\ y=y_0+t \sin \theta \end{array}\right. \ (t \in \mathbf R)$
+    3. 参数式方程：设 $M(x_0, y_0)$ 是倾角为 $\theta$ 的直线 $l$ 上任一点，则直线 $l$ 的参数方程为 $\left\{\begin{array}{l} x=x_0+t \cos \theta \\ y=y_0+t \sin \theta \end{array}\right. \ (t \in \mathbf R)$
 3. 平面直线与点的关系：设 $l: Ax + By + C = 0 \ (A^2 + B^2 \neq 0)$ 为一条直线，点 $P$ 的坐标为 $(x_1, y_1)$，点 $Q(x_2, y_2)$ 在直线 $l$ 上．则点到直线的距离 $d$ 定义为 $\min |\overrightarrow{PQ}| = \dfrac{\left|A x_1+B y_1+C\right|}{\sqrt{A^2+B^2}}$
 4. 平面直线间关系：设两直线 $l_1, l_2$ 方程为
 
@@ -102,7 +102,7 @@
 
     且相交，则记其交线为直线 $l$，上述方程组称为直线的一般方程
 
-    1. 在空间给定了一点 $M(x_0, y_0, z_0)$ 与一个非零向量 $\boldsymbol v = \begin{bmatrix} X & Y & Z \\ \end{bmatrix}^{\mathrm T}$，则通过点 $M$ 且与向量 $\boldsymbol v$ 平行的直线 $l$ 惟一确定．向量 $\boldsymbol v$ 称作直线 $l$ 的方向向量
+    1. 在空间给定了一点 $M(x_0, y_0, z_0)$ 与一个非零方向向量 $\boldsymbol v = \begin{bmatrix} X & Y & Z \\ \end{bmatrix}^{\mathrm T}$，则通过点 $M$ 且与向量 $\boldsymbol v$ 平行的直线 $l$ 惟一确定
         1. 向量式参数方程：$\boldsymbol r = \boldsymbol r_0 + t\boldsymbol v$，其中 $\boldsymbol r_0 = \overrightarrow{OM}$
         2. 坐标式参数方程：
 
