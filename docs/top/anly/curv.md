@@ -46,7 +46,7 @@
 1. 平面直线的一般方程：$Ax + By + C = 0 \ (A^2 + B^2 \neq 0)$
     1. 直线与向量：设 $l$ 上任意相异两点为 $P(x_1, y_1), Q(x_2, y_2)$，则 $\overrightarrow{PQ} = (x_2 - x_1, y_2 - y_1)$ 称为直线 $l$ 的方向向量；任意与 $\overrightarrow{PQ}$ 垂直的向量称为直线 $l$ 的法向量
     2. 斜率与倾角：当 $B \neq 0$ 时，称 $k = -\dfrac{A}{B}$ 为直线的斜率，称 $\arctan k$ 为直线的倾角 $\theta$，后者是 $l$ 上方向向量与基 $\boldsymbol e_1$ 的夹角，且其取值范围为 $\left[\left. 0, \dfrac{\pi}{2}\right)\right. \cup \left( \dfrac{\pi}{2}, \pi\right)$；当 $B = 0$ 时，称直线 $l$ 的斜率不存在，倾角为 $\dfrac{\pi}{2}$
-    3. 法线与法距：称过点 $O$ 且与直线 $l$ 垂直于点 $N$ 的直线为 $l$ 的法线．定义法线的辐角为 $x$ 轴对应的基 $\boldsymbol e_1$ 逆时针旋转到法向量 $\overrightarrow{ON}$ 经过的角度，定义法距为 $|\overrightarrow{ON}| = \dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$
+    3. 法线与法距：称过点 $O$ 且与直线 $l$ 垂直于点 $N$ 的直线为 $l$ 的法线．定义法线的辐角为 $x$ 轴对应的基 $\boldsymbol e_1$ 逆时针旋转到法向量 $\overrightarrow{ON}$ 经过的角度，并定义法距为 $|\overrightarrow{ON}| = \dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$
     4. 直线的截距：称直线与坐标轴的交点（如果存在）对应的实数为直线的截距
 
     !!! note "一般方程的变形"
@@ -82,13 +82,13 @@
     3. 定义两直线相交为方向向量不共线，此时 $\dfrac{A_1}{A_2}\neq\dfrac{B_1}{B_2}$；特别地，定义两直线垂直为方向向量正交，此时 $A_1 A_2 + B_1 B_2 = 0$
 
 5. 直线系：具有某种共同特征的直线的集合，表示这个直线系的方程称作直线系方程
-    1. 有共同斜率 $k_0$ 的直线系方程：$y = k_0x + b$（其中 $b$ 为参数）
-    2. 在 $y$ 轴上共截距 $b_0$ 的直线系方程：$y = kx + b_0$（其中 $k$ 为参数）
-    3. 与直线 $A_0 x+B_0 y+C_0=0$ 平行的直线系方程：$A_0 x+B_0 y+C=0$（其中 $C$ 为参数）
-    4. 与直线 $A_0 x+B_0 y+C_0=0$ 垂直的直线系方程： $B_0 x-A_0 y+C=0$（其中 $C$ 为参数）
-    5. 过已知点 $P\left(x_0, y_0\right)$ 的直线系方程：$\left(y-y_0\right)=k\left(x-x_0\right)$（其中 $k$ 为参数且不含直线 $x=x_0$）
-    6. 过两直线 $A_1 x+B_1 y+C_1=0$ 及 $A_2 x+B_2 y+C_2=0$ 交点的直线系方程：$\lambda\left(A_1 x+B_1 y+C_1\right)+\mu\left(A_2 x+B_2 y+C_2\right)=0$（其中 $\lambda, \mu$ 是不全为零的参数）
-    7. 在两轴上截距之和为定值 $p_0$ 的直线系方程: $\dfrac{x}{a}+\dfrac{y}{p_0-a}=1$（其中 $a$ 为参数）
+    1. 有共同斜率 $k_0$ 的直线系方程：$y = k_0x + b$，其中 $b$ 为参数
+    2. 在 $y$ 轴上共截距 $b_0$ 的直线系方程：$y = kx + b_0$，其中 $k$ 为参数
+    3. 与直线 $A_0 x+B_0 y+C_0=0$ 平行的直线系方程：$A_0 x+B_0 y+C=0$，其中 $C$ 参数）
+    4. 与直线 $A_0 x+B_0 y+C_0=0$ 垂直的直线系方程： $B_0 x-A_0 y+C=0$，其中 $C$为参数）
+    5. 过已知点 $P\left(x_0, y_0\right)$ 的直线系方程：$\left(y-y_0\right)=k\left(x-x_0\right)$，其中 $k$ 为参数且不含直线 $x=x_0$
+    6. 过两直线 $A_1 x+B_1 y+C_1=0$ 及 $A_2 x+B_2 y+C_2=0$ 交点的直线系方程：$\lambda\left(A_1 x+B_1 y+C_1\right)+\mu\left(A_2 x+B_2 y+C_2\right)=0$，其中 $\lambda, \mu$ 是不全为零的参数
+    7. 在两轴上截距之和为定值 $p_0$ 的直线系方程: $\dfrac{x}{a}+\dfrac{y}{p_0-a}=1 \ (a \neq 0, p_0)$，其中 $a$ 为参数
 
 ### 3.1.2 空间直线
 1. 空间直线的一般方程：设有两个平面 $\pi_1$ 和 $\pi_2$ 的方程为
@@ -233,7 +233,44 @@
             \end{array}\right|} \mid}\right|
             $$
 
-### 3.1.3 圆与椭圆
+### 3.1.3 椭圆与圆
+1. 椭圆：设 $F_1, F_2$ 为两点，则到两点的距离为定长的点集称为椭圆．称点 $F_1, F_2$ 为顶点，$|\overrightarrow{F_1 F_2}|$ 为焦距，焦距的一半称为半焦距
+    1. 标准方程：设定长为 $a$，令 $b = \sqrt{a^2 - c^2} > 0$．取焦点 $F_1(c, 0), F_2(-c, 0)$，则椭圆的标准方程为 $\dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$；取焦点 $F_1(0, c), F_2(0, -c)$，则椭圆的标准方程为 $\dfrac{y^2}{a^2} + \dfrac{x^2}{b^2} = 1$
+    2. 一般方程：$A x^2+B y^2+C x y+D x+E y+F=0$
+        1. 定义椭圆的中心为使 $\overrightarrow{PF}_1 + \overrightarrow{PF}_2 = \boldsymbol 0$ 的点 $P$，此时坐标为 $\left(\dfrac{B E-2 C D}{4 A C-B^2}, \dfrac{B D-2 A E}{4 A C-B^2}\right)$
+        2. 长轴倾角 $\theta = \dfrac 12 \arctan \dfrac{B}{A - C}$，长短半轴分别为为
+
+            $$
+            \begin{aligned}
+            & a = \sqrt{\dfrac{2\left(A X_c{ }^2+C Y_c{ }^2+B X_c Y_c-1\right)}{A+C+\sqrt{(A-C)^2+B^2}}} \\
+            & b = \sqrt{\dfrac{2\left(A X_c^2+C Y_c^2+B X_c Y_c-1\right)}{A+C-\sqrt{(A-C)^2+B^2}}}
+            \end{aligned}
+            $$
+
+            其中 $(X_c, Y_c)$ 为椭圆中心坐标
+
+2. 椭圆的性质：设 $E: \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1 \ (a > b > 0)$ 为一个椭圆
+    1. 对称性
+        1. 椭圆 $E$ 关于 $x$ 轴与 $y$ 轴对称：$\dfrac{x_0^2}{a^2} + \dfrac{y_0^2}{b^2} = 1 \leftrightarrow \dfrac{(-x_0)^2}{a^2} + \dfrac{y_0^2}{b^2} = 1 \leftrightarrow \dfrac{x_0^2}{a^2} + \dfrac{(-y_0)^2}{b^2} = 1$
+        2. 椭圆 $E$ 关于中心 $O(0, 0)$ 中心对称：$\dfrac{x_0^2}{a^2} + \dfrac{y_0^2}{b^2} = 1 \leftrightarrow \dfrac{(-x_0)^2}{a^2} + \dfrac{(-y_0)^2}{b^2} = 1$
+    2. 截距：椭圆与坐标轴的交点对应的实数，称四个交点 $A_1(-a, 0), A_2(a, 0), B_1(b, 0), B_2(-b, 0)$ 为椭圆 $E$ 的顶点
+        1. 称线段 $\overline{A_1A_2}$ 为椭圆的长轴，其长度为 $2a$，并称 $a$ 为椭圆 $E$ 的半长轴长
+        2. 称线段 $\overline{B_1B_2}$ 为椭圆的短轴，其长度为 $2b$，并称 $b$ 为椭圆 $E$ 的半短轴长
+    3. 离心率：设半焦距 $c = \sqrt{a^2 - b^2}$，定义椭圆 $E$ 的离心率 $e = \dfrac ca \in (0, 1)$．取 $e = 0$，则椭圆退化为圆
+3. 圆：到顶点距离为定长的点集
+    1. 标准方程：圆心 $P(a, b)$，半径 $r$ 的圆方程为 $(x - a)^2 + (y - b)^2 = r^2$
+    2. 一般方程：$x^2 + y^2 + Dx + Ey + F = 0$，设 $\Delta = D^2 + E^2 - 4F$
+        1. 若 $\Delta > 0$，方程的轨迹是一个圆，且圆心坐标为 $\left(-\dfrac D2, - \dfrac E2\right)$，半径为 $\dfrac{\sqrt{D^2 + E^2 - 4F}}{2}$
+        2. 若 $\Delta = 0$，则方程退化为点 $\left(-\dfrac D2, - \dfrac E2\right)$，称之为点圆
+        3. 若 $\Delta < 0$，则方程没有实数解，此时称之为虚圆
+    3. 圆与点的关系：设 $M(x_0, y_0)$ 是一个点，$(x - a)^2 + (y - b)^2 = r^2$ 是一个圆
+        1. 点在圆外当且仅当 $(x_0 - a)^2 + (y_0 - b)^2 > r^2$
+        2. 点在圆上当且仅当 $(x_0 - a)^2 + (y_0 - b)^2 = r^2$
+        3. 点在圆内当且仅当 $(x_0 - a)^2 + (y_0 - b)^2 < r^2$
+    4. 圆系：特定条件的某些圆构成的集合，一个圆系所具有的共同形式的方程称为圆系方程
+        1. 圆心为 $P(a_0, b_0)$ 的同心圆系方程：$(x - a_0)^2 + (y - b_0)^2 = r^2$，其中 $r$ 为参数
+        2. 经过直线 $l: Ax + By + C = 0$ 与圆 $C: x^2 + y^2 + Dx + Ey + F = 0$ 的交点圆系方程：$x^2 + y^2 + Dx + Ey + F + \lambda(Ax + By + C) = 0$，其中 $\lambda$ 为参数
+        3. 经过圆 $C_1: x^2 + y^2 + D_1x + E_1y + F_1 = 0$ 与圆 $C_2: x^2 + y^2 + D_2x + E_2y + F_2 = 0$ 的两交点 $A, B$ 的共轴圆系：$\lambda(x^2 + y^2 + D_1x + E_1y + F_1) + \mu(C_2: x^2 + y^2 + D_2x + E_2y + F_2 = 0)$，其中 $\lambda, \mu$ 是不全为零的参数．由 $A, B$ 确定的直线称为两圆的根轴
 
 ### 3.1.4 双曲线
 

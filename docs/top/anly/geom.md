@@ -51,6 +51,13 @@
         1. 每个仿射标架 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
         2. 当标架取定后，仿射空间与与之联系的线性空间与 $\mathbf R^n$ 具有一一对应的关系，称之为坐标系．由仿射标架确定的坐标系称作仿射坐标系
 
+    !!! note "空间的基本结构"
+        对于空间中给定的相异两点 $A, B$
+
+        1. 线段：由唯一连结于 $A, B$ 之间的最短通路称之为连结 $A, B$ 的线段，记作 $\overline{AB}$
+        2. 射线：由 $A$ 到 $B$ 的最短通路可以向前延伸，称之为由 $A$ 射向 $B$ 的射线
+        3. 直线：连结 $A, B$ 的线段向两端延伸，则称之为由 $A, B$ 唯一确定的直线，记作 $AB$
+
 ### 2.3.4 仿射几何
 
 ## 2.3 Euclid 几何
@@ -60,37 +67,36 @@
 
 ### 2.3.3 Euclid 空间
 1. $\text{Euclid}$ 空间：设 $\mathscr A$ 是一个 $n$ 维仿射空间，$A, B$ 为仿射空间中的两个点，若与 $\mathscr A$ 相联系的线性空间是一个内积空间，则可定义仿射空间的度量 $\rho$ 为 $\rho(A, B) = |\overrightarrow{AB}|$．此时称 $\mathscr A$ 为一个 $\text{Euclid}$ 空间，记作 $E^n$
-2. $\text{Descartes}$ 标架
-    1. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架．由 $\text{Descartes}$ 标架确定的坐标系称作 $\text{Descartes}$ 坐标系
-    2. 若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架．由 $\text{Descartes}$ 直角标架确定的坐标系称作 $\text{Descartes}$ 直角坐标系
-3. $\text{Descartes}$ 直角坐标系的实例
-    1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
+2. $\text{Descartes}$ 标架与 $\text{Descartes}$ 坐标系
+    1. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架．由 $\text{Descartes}$ 标架确定的坐标系称作 $\text{Descartes}$ 坐标系．特别地，若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架．由 $\text{Descartes}$ 直角标架确定的坐标系称作 $\text{Descartes}$ 直角坐标系
+    2. $\text{Descartes}$ 直角坐标系的实例
+        1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
 
-        <div style="text-align: center;">
+            <div style="text-align: center;">
 
-        |   象限   |            点集            |
-        | :------: | :------------------------: |
-        | 第一象限 | $\{(x, y) \mid x>0, y>0\}$ |
-        | 第二象限 | $\{(x, y) \mid x<0, y>0\}$ |
-        | 第三象限 | $\{(x, y) \mid x<0, y<0\}$ |
-        | 第四象限 | $\{(x, y) \mid x>0, y<0\}$ |
+            |   象限   |            点集            |
+            | :------: | :------------------------: |
+            | 第一象限 | $\{(x, y) \mid x>0, y>0\}$ |
+            | 第二象限 | $\{(x, y) \mid x<0, y>0\}$ |
+            | 第三象限 | $\{(x, y) \mid x<0, y<0\}$ |
+            | 第四象限 | $\{(x, y) \mid x>0, y<0\}$ |
 
-        </div>
+            </div>
 
-    2. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1, \boldsymbol e_2$ 与 $\boldsymbol e_3$ 对应的三个坐标轴为 $x$ 轴，$y$ 轴与 $z$ 轴，记坐标系为 $Oxyz$．三个坐标轴将平面分成八个卦限
+        2. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1, \boldsymbol e_2$ 与 $\boldsymbol e_3$ 对应的三个坐标轴为 $x$ 轴，$y$ 轴与 $z$ 轴，记坐标系为 $Oxyz$．三个坐标轴将平面分成八个卦限
 
-        <div style="text-align: center;">
+            <div style="text-align: center;">
 
-        |   卦限   |                点集                |   卦限   |                 点集                 |
-        | :------: | :--------------------------------: | :------: | :----------------------------------: |
-        | 第一卦限 | $\{(x, y, z) \mid x>0, y>0, z>0\}$ | 第五卦限 | $\{(x, y, z) \mid x>0, y>0, z < 0\}$ |
-        | 第二卦限 | $\{(x, y, z) \mid x<0, y>0, z>0\}$ | 第六卦限 | $\{(x, y, z) \mid x<0, y>0, z < 0\}$ |
-        | 第三卦限 | $\{(x, y, z) \mid x<0, y<0, z>0\}$ | 第七卦限 | $\{(x, y, z) \mid x<0, y<0, z < 0\}$ |
-        | 第四卦限 | $\{(x, y, z) \mid x>0, y<0, z>0\}$ | 第八卦限 | $\{(x, y, z) \mid x>0, y<0, z < 0\}$ |
+            |   卦限   |                点集                |   卦限   |                 点集                 |
+            | :------: | :--------------------------------: | :------: | :----------------------------------: |
+            | 第一卦限 | $\{(x, y, z) \mid x>0, y>0, z>0\}$ | 第五卦限 | $\{(x, y, z) \mid x>0, y>0, z < 0\}$ |
+            | 第二卦限 | $\{(x, y, z) \mid x<0, y>0, z>0\}$ | 第六卦限 | $\{(x, y, z) \mid x<0, y>0, z < 0\}$ |
+            | 第三卦限 | $\{(x, y, z) \mid x<0, y<0, z>0\}$ | 第七卦限 | $\{(x, y, z) \mid x<0, y<0, z < 0\}$ |
+            | 第四卦限 | $\{(x, y, z) \mid x>0, y<0, z>0\}$ | 第八卦限 | $\{(x, y, z) \mid x>0, y<0, z < 0\}$ |
 
-        </div>
+            </div>
 
-4. $\text{Euclid}$ 空间下的其他坐标系
+3. $\text{Euclid}$ 空间下的其他坐标系
     1. 极坐标系：$E^2$ 中的一个顶点 $O$ 与基 $\boldsymbol e$ 组成了一个极坐标系，称 $O$ 为极点，$\boldsymbol e$ 所在的直线为极轴．任意有序数对 $(\rho, \theta)$（其中 $\rho \geqslant 0, -\pi < \varphi \leqslant \pi$）唯一对应了平面中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$，$\theta$ 为 $\overrightarrow{OP}$ 与 $\boldsymbol e$ 的夹角．并称 $\rho$ 为极径，称 $\theta$ 为极角，称 $(\rho, \theta)$ 为点 $P$ 的极坐标，记作 $P(\rho, \theta)$
         1. 极坐标化为平面直角坐标
 
