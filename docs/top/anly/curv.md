@@ -217,7 +217,7 @@
         2. 当直线异面时，两直线间距离等于其公垂线之长：
 
             $$
-            d=\left|\frac{\left|\begin{array}{ccc}
+            d=\left|\dfrac{\left|\begin{array}{ccc}
             x_2-x_1 & y_2-y_1 & z_2-z_1 \\
             X_1 & Y_1 & Z_1 \\
             X_2 & Y_2 & Z_2
@@ -235,6 +235,12 @@
 
 ### 3.1.3 椭圆与圆
 1. 椭圆：设 $F_1, F_2$ 为两点，则到两点的距离之和为定长的点集称为椭圆．称点 $F_1, F_2$ 为焦点，$|\overrightarrow{F_1 F_2}|$ 为焦距，焦距的一半称为半焦距
+
+    <figure markdown>
+        ![](../assets/ellipse.png)
+        <style> img[src$="ellipse.png"] { width: 320px; } </style>
+    </figure>
+
     1. 标准方程：设定长为 $a$，令 $b = \sqrt{a^2 - c^2} > 0$
 
         <div class="text-table">
@@ -270,6 +276,12 @@
         2. 称线段 $\overline{B_1B_2}$ 为椭圆的短轴，其长度为 $2b$，并称 $b$ 为椭圆 $E$ 的半短轴长
     3. 离心率：设半焦距 $c = \sqrt{a^2 - b^2}$，定义椭圆 $E$ 的离心率为椭圆上的点到焦点的距离与到准线的距离之比 $e = \dfrac ca \in (0, 1)$．取 $e = 0$，则椭圆退化为圆
 3. 圆：到顶点距离为定长的点集
+
+    <figure markdown>
+        ![](../assets/circle.png)
+        <style> img[src$="circle.png"] { width: 320px; } </style>
+    </figure>
+
     1. 标准方程：圆心为 $P(a, b)$，半径为 $r$ 的圆方程为 $(x - a)^2 + (y - b)^2 = r^2$
     2. 一般方程：$C: x^2 + y^2 + Dx + Ey + F = 0$，设 $\Delta = D^2 + E^2 - 4F$
         1. 若 $\Delta > 0$，方程的轨迹是一个圆，且圆心坐标为 $\left(-\dfrac D2, - \dfrac E2\right)$，半径为 $\dfrac{\sqrt{D^2 + E^2 - 4F}}{2}$
@@ -289,6 +301,12 @@
 
 ### 3.1.4 双曲线
 1. 双曲线：设 $F_1, F_2$ 为两点，则到两点的距离之差的绝对值为定长的点集称为双曲线．称点 $F_1, F_2$ 为焦点，$|\overrightarrow{F_1 F_2}|$ 为焦距，焦距的一半称为半焦距
+
+    <figure markdown>
+        ![](../assets/hyperbola.png)
+        <style> img[src$="hyperbola.png"] { width: 320px; } </style>
+    </figure>
+
     1. 标准方程
 
         <div class="text-table">
@@ -328,6 +346,11 @@
 ### 3.1.5 抛物线
 1. 抛物线：设 $F$ 是一个点，$l$ 为一条直线．则到点 $F$ 的距离等于到直线 $l$ 距离的点集称为抛物线．称点 $F$ 为焦点，直线 $l$ 为准线
 
+    <figure markdown>
+        ![](../assets/parabola.png)
+        <style> img[src$="parabola.png"] { width: 320px; } </style>
+    </figure>
+
     1. 标准方程
 
         <div class="text-table">
@@ -349,6 +372,81 @@
     3. 离心率：定义抛物线 $P_1, P_2$ 的离心率为抛物线上的点到焦点的距离与到准线的距离之比 $e = 1$
 
 ### 3.1.6 其他平面曲线
+1. 包络线：对于一个虑依赖于一个实参数 $c$ 的曲线族 $F(x, y, c) = 0$，其包络线是从方程 $F_x(x, y, c) = 0, F(x, y, c) = 0$ 中消去 $c$ 得到的
+2. 渐屈线与渐伸线：如果 $E$ 是 $C$ 的渐屈线，则 $C$ 为 $E$ 的渐伸线
+    1. 渐屈线：称曲线 $C$ 的所有曲率中心的几何轨迹为 $C$ 的渐屈线 $E$．如果曲线 $C$ 形如 $y=f(x)$，则可得出参数形式的渐屈线为
+
+        $$
+        x=t-\dfrac{f^{\prime}(t)\left(1+f^{\prime}(t)^2\right)}{f^{\prime \prime}(t)}, \quad y=f(t)+\dfrac{1+f^{\prime}(t)^2}{f^{\prime \prime}(t)}
+        $$
+
+    2. 渐伸线：已知曲线 $E$，则由包围或展开具定长的（切）弦得到的曲线 $C$ 称为渐伸线
+    3. 星形线：椭圆 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1 \ (a > b > 0)$ 的渐屈线 $\left(\dfrac{a x}{c^2}\right)^2+\left(\dfrac{b y}{c^2}\right)^2=1$，其中 $c^2 = a^2 - b^2$
+
+3. 曳物线与悬链线：悬链线是曳物线的渐屈线
+    1. 曳物线：$x=\pm\left(a \operatorname{arcosh} \dfrac{a}{y}-\sqrt{a^2-y^2}\right)$．绕 $x$ 轴旋转曳物线得到一个曲常负曲率的曲面，称其为伪球面
+    2. 悬链线：$y=a \cosh \dfrac{x}{a}$．绕 $x$ 轴旋转悬链线得到一个其平均曲率为零的曲面，称其为悬链面
+4. 螺线
+    1. $\text{Archimedes}$ 螺线：$r = a\theta, a > 0, \theta > 0$
+    2. 对数螺线：$r=ae^{b\theta}, a, b > 0$
+    3. 双曲螺线：$r = \dfrac{a}{\theta}, a > 0, \theta > 0$
+5. 蚌线：若曲线的极坐标方程形如 $r = f(\theta)$，则 $C$ 的蚌线是方程 $r = f(\theta) + b$ 的曲线
+    1. $\text{Nicomedes}$ 蚌线：$r = \dfrac{a}{\cos \theta} \pm b, \theta \in \left(-\dfrac{\pi}{2}, \dfrac{\pi}{2}\right)$，即直线的蚌线
+    2. $\text{Pascal}$ 蜗线：$r = a\cos \theta + b, \theta \in (-\pi, \pi]$，即圆的蚌线．若令 $a = b$，则得到心形线 $r = a(1 + \cos \theta), \theta \in (-\pi, \pi]$
+6. 旋轮线
+    1. 直线的旋轮线
+
+        $$
+        \left\{\begin{aligned}
+        & x=a(\theta-\mu \sin \theta) \\
+        & y=a(\theta-\mu \cos \theta)
+        \end{aligned}\right.
+        $$
+
+        其中 $a$ 为半径，$\theta$ 是旋轮的相对角．当 $\mu = 1$ 时，称其为旋轮线，当 $0 < \mu < 1$ 时，称其为短辐旋轮线，当 $\mu > 1$ 时，称其为长辐旋轮线，后两种情形也称作摆线
+
+    2. 圆的外摆线
+
+        $$
+        \left\{\begin{aligned}
+        &x=(A+a) \cos \theta-\mu a \cos \dfrac{A+a}{a} \theta \\
+        &y=(A+a) \sin \theta-\mu a \sin \dfrac{A+a}{a} \theta
+        \end{aligned}\right.
+        $$
+
+        其中半径为 $a$ 的圆在半径为 $A$ 的圆上旋转，点 $P$ 的极坐标为 $(r, \theta)$．当 $\mu = 1$ 时，称其为外摆线，当 $0 < \mu < 1$ 时，称其为短程外摆线，当 $\mu > 1$ 时，称其为长程外摆线
+
+    3. 圆的内摆线
+
+        $$
+        \left\{\begin{aligned}
+        & x=(A-a) \cos \theta-\mu a \cos \dfrac{A-a}{a} \theta \\
+        & y=(A-a) \sin \theta-\mu a \sin \dfrac{A-a}{a} \theta
+        \end{aligned}\right.
+        $$
+
+        其中半径为 $a$ 的圆在半径为 $A$ 的圆内旋转，点 $P$ 的极坐标为 $(r, \theta)$．当 $\mu = 1$ 时，称其为内摆线，当 $0 < \mu < 1$ 时，称其为短程内摆线，当 $\mu > 1$ 时，称其为长程内摆线
+
+    4. $\text{Hipparchus}$ 周转圆
+
+        $$
+        \left\{\begin{aligned}
+        & x=A \cos \omega t+a \cos \omega^{\prime} t \\
+        & y=A \sin \omega t+a \sin \omega^{\prime} t
+        \end{aligned}\right.
+        $$
+
+7. $\text{Cassini}$ 卵形线：所有到两点 $F_1(a, 0)$ 与 $F_2(-a, 0)$ 的距离乘积等于 $c^2$ 的点集，称 $F_1, F_2$ 为卵形线的焦点
+    1. 方程：在平面直角坐标系下的方程为 $\left(x^2+y^2\right)^2-2 a^2\left(x^2-y^2\right)=c^4-a^4$，在极坐标下的方程为 $r^4-2 a^2 r^2 \cos 2 \theta=c^4-a^4$
+    2. $\text{Bernoulli}$ 双纽线：所有到两点 $F_1(a, 0)$ 与 $F_2(-a, 0)$ 的距离乘积等于 $a^2$ 的点集，其方程为 $\left(x^2+y^2\right)^2-2 a^2\left(x^2-y^2\right)=0$．双纽线是 $\text{Cassini}$ 卵形线的特殊情况
+8.  $\text{Lissajou}$ 图形
+
+    $$
+    \left\{\begin{aligned}
+    & x=a \sin \omega t \\
+    & y=b \sin \left(\omega^{\prime} t+\alpha\right)
+    \end{aligned}\right.
+    $$
 
 ## 3.2 二次曲线一般理论
 - 圆锥曲线的统一极坐标方程：设焦点为 $F$，准线为 $l$ 的圆锥曲线离心率为 $e$，焦点到准线的距离为 $p$，则圆锥曲线的极坐标方程为 $\rho = \dfrac{ep}{1-e\cos \theta}$
