@@ -307,8 +307,7 @@ const refList = [
         press: "科学出版社",
         locate: "北京",
         year: 2012,
-        page: [787, 798],
-        plot: 787 - 787
+        page: [787, 798]
     },
     {
         author: ["吕林根", "徐子道"],

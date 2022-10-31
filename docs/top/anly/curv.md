@@ -304,7 +304,7 @@
 
     <figure markdown>
         ![](../assets/hyperbola.png)
-        <style> img[src$="hyperbola.png"] { width: 320px; } </style>
+        <style> img[src$="hyperbola.png"] { width: 300px; } </style>
     </figure>
 
     1. 标准方程

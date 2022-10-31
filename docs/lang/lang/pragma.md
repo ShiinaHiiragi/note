@@ -23,10 +23,24 @@
             - （$\mathrm{\Gamma.2}$）参与者自己后来确实这样去做
         3. 违反规则造成的不切当情况
 
-            <figure markdown>
-                ![](../assets/ast.png)
-                <style> img[src$="ast.png"] { width: 600px; } </style>
-            </figure>
+            $$
+            \textsf{不切当} \left\{\begin{aligned}
+            & \text{A/B} \textsf{ 无效（想要做的行为落空）} \left\{\begin{aligned}
+            & \text{A} \textsf{ 误求（行为未被接受）} \left\{\begin{aligned}
+            & \text{A.1} \textsf{ 无用} \\
+            & \text{A.2} \textsf{ 误用}
+            \end{aligned}\right. \\
+            & \text{B} \textsf{ 误施（行为有缺陷）} \left\{\begin{aligned}
+            & \text{B.1} \textsf{ 缺陷} \\
+            & \text{B.2} \textsf{ 障碍}
+            \end{aligned}\right.
+            \end{aligned}\right. \\
+            & \Gamma \textsf{ 滥用（声称要做的事情虚伪）} \left\{\begin{aligned}
+            & \Gamma.1 \textsf{ 不诚实} \\
+            & \Gamma.2 \textsf{ 背诺}
+            \end{aligned}\right.
+            \end{aligned}\right.
+            $$
 
     4. 找不到行为式话语的句法标准或语词标准，这促使 $\text{Austin}$ 考虑言语行为更一般的意义
         1. 单数第一人称现在时直陈语气的主动语态可以用于描述习惯性行为、「历史上的此刻」或者同时有行为式和对行为式的描述的作用

@@ -45,10 +45,24 @@
     4. 可继承性：人类的符号语言可以为他人继承并代代相传
 3. 语言的分类：信号语言与符号语言
 
-    <figure markdown>
-        ![](../assets/lang.png)
-        <style> img[src$="lang.png"] { width: 640px; } </style>
-    </figure>
+    $$
+    \textsf{语言} \left\{\begin{aligned}
+    & \textsf{信号语言} \left\{\begin{aligned}
+    & \textsf{肢体语言} \\
+    & \textsf{声音语言}
+    \end{aligned}\right. \\
+    & \textsf{符号语言} \left\{\begin{aligned}
+    & \textsf{自然语言} \left\{\begin{aligned}
+    & \textsf{声音（英语等）} \\
+    & \textsf{象形（汉语等）}
+    \end{aligned}\right. \\
+    & \textsf{人工语言} \left\{\begin{aligned}
+    & \textsf{非形式语言（世界语等）} \\
+    & \textsf{形式语言（一阶语言等）}
+    \end{aligned}\right.
+    \end{aligned}\right.
+    \end{aligned}\right.
+    $$
 
 4. 语言与言语
     1. 语言：书面语言，即用文字来记录和表达的语言
