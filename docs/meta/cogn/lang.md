@@ -24,10 +24,19 @@
     1. 语言是人类认知与高阶认知的基础
     2. 人类以语言为基础，以思维和文化为特征的高阶认知能力是由神经和心理的初阶认知能力进化而来的
 
-        <figure markdown>
-            ![](../assets/cogn.png)
-            <style> img[src$="cogn.png"] { width: 500px; } </style>
-        </figure>
+        $$
+        \textsf{人类认知} \left\{\begin{aligned}
+        & \textsf{文化认知} \\
+        & \textsf{思维认知}
+        \xleftarrow{\qquad} \textsf{逻辑学}
+        \xleftarrow{\qquad} \textsf{理性认知（推理、判断、概念）} \\
+        & \textsf{语言认知} \\
+        & \textsf{心理认知}
+        \xleftarrow{\qquad} \textsf{心理学}
+        \xleftarrow{\qquad} \textsf{理性认知（表象、知觉、感觉）} \\
+        & \textsf{神经认知}
+        \end{aligned}\right.
+        $$
 
         !!! note "$\text{Sapir}-\text{Whorf}$ 假说"
             1. 强式（语言决定论）：语言结构决定人的思维方式，并影响非语言的认知行为；不同语言的民族，其思维方式也不同
