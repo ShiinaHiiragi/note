@@ -44,6 +44,12 @@
 
 ### 3.1.1 平面直线
 1. 平面直线的一般方程：$Ax + By + C = 0 \ (A^2 + B^2 \neq 0)$
+
+    <figure markdown>
+        ![](../assets/line.png)
+        <style> img[src$="line.png"] { width: 280px; } </style>
+    </figure>
+
     1. 斜率与倾角：当 $B \neq 0$ 时，称 $k = -\dfrac{A}{B}$ 为直线的斜率，称 $\arctan k$ 为直线的倾角 $\theta$，后者是 $l$ 上方向向量与基 $\boldsymbol e_1$ 的夹角，且其取值范围为 $\left[\left. 0, \dfrac{\pi}{2}\right)\right. \cup \left( \dfrac{\pi}{2}, \pi\right)$；当 $B = 0$ 时，称直线 $l$ 的斜率不存在，倾角为 $\dfrac{\pi}{2}$
     2. 法线与法距：称过点 $O$ 且与直线 $l$ 垂直于点 $N$ 的直线为 $l$ 的法线．定义法线的辐角为 $x$ 轴对应的基 $\boldsymbol e_1$ 逆时针旋转到法向量 $\overrightarrow{ON}$ 经过的角度，并定义法距为 $|\overrightarrow{ON}| = \dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$
     3. 直线的截距：称直线与坐标轴的交点（如果存在）对应的实数为直线的截距
@@ -253,7 +259,7 @@
         </div>
 
     2. 一般方程：$E: A x^2+B xy+C y^2+D x+E y+F=0$
-        1. 定义椭圆的中心为使 $\overrightarrow{PF}_1 + \overrightarrow{PF}_2 = \boldsymbol 0$ 的点 $P$，此时坐标为 $\left(\dfrac{B E-2 C D}{4 A C-B^2}, \dfrac{B D-2 A E}{4 A C-B^2}\right)$
+        1. 定义椭圆的中心为使 $\overrightarrow{MF}_1 + \overrightarrow{MF}_2 = \boldsymbol 0$ 的点 $M$，此时坐标为 $\left(\dfrac{B E-2 C D}{4 A C-B^2}, \dfrac{B D-2 A E}{4 A C-B^2}\right)$
         2. 长轴倾角 $\theta = \dfrac 12 \arctan \dfrac{B}{A - C}$，长短半轴分别为为
 
             $$
@@ -282,20 +288,20 @@
         <style> img[src$="circle.png"] { width: 320px; } </style>
     </figure>
 
-    1. 标准方程：圆心为 $P(a, b)$，半径为 $r$ 的圆方程为 $(x - a)^2 + (y - b)^2 = r^2$
+    1. 标准方程：圆心坐标为 $(a, b)$，半径为 $r$ 的圆方程为 $(x - a)^2 + (y - b)^2 = r^2$
     2. 一般方程：$C: x^2 + y^2 + Dx + Ey + F = 0$，设 $\Delta = D^2 + E^2 - 4F$
         1. 若 $\Delta > 0$，方程的轨迹是一个圆，且圆心坐标为 $\left(-\dfrac D2, - \dfrac E2\right)$，半径为 $\dfrac{\sqrt{D^2 + E^2 - 4F}}{2}$
         2. 若 $\Delta = 0$，则方程退化为点 $\left(-\dfrac D2, - \dfrac E2\right)$，称之为点圆
         3. 若 $\Delta < 0$，则方程没有实数解，此时称之为虚圆
-    3. 极坐标方程：圆心为 $P(\rho_0, \theta_0)$，半径为 $r$ 的圆的极坐标方程为 $\rho^2 - 2\rho_0\rho \cos(\theta - \theta_0) + \rho_0^2 = r^2$
-    4. 参数方程：圆心为 $P(a, b)$，半径为 $r$ 的圆的参数方程为 $C: \left\{\begin{aligned} & x = a + r\cos \theta \\ & y = b + r\sin\theta \end{aligned}\right.$
+    3. 极坐标方程：圆心坐标为 $(\rho_0, \theta_0)$，半径为 $r$ 的圆的极坐标方程为 $\rho^2 - 2\rho_0\rho \cos(\theta - \theta_0) + \rho_0^2 = r^2$
+    4. 参数方程：圆心坐标为 $(a, b)$，半径为 $r$ 的圆的参数方程为 $C: \left\{\begin{aligned} & x = a + r\cos \theta \\ & y = b + r\sin\theta \end{aligned}\right.$
 4. 圆的性质：设 $C: (x - a)^2 + (y - b)^2 = r^2$ 是一个圆
     1. 圆与点的关系：设 $M(x_0, y_0)$ 是一个点，$(x - a)^2 + (y - b)^2 = r^2$ 是一个圆
         1. 点在圆外当且仅当 $(x_0 - a)^2 + (y_0 - b)^2 > r^2$
         2. 点在圆上当且仅当 $(x_0 - a)^2 + (y_0 - b)^2 = r^2$
         3. 点在圆内当且仅当 $(x_0 - a)^2 + (y_0 - b)^2 < r^2$
     2. 圆系：特定条件的某些圆构成的集合，一个圆系所具有的共同形式的方程称为圆系方程
-        1. 圆心为 $P(a_0, b_0)$ 的同心圆系方程：$(x - a_0)^2 + (y - b_0)^2 = r^2$，其中 $r$ 为参数
+        1. 圆心坐标为 $(a_0, b_0)$ 的同心圆系方程：$(x - a_0)^2 + (y - b_0)^2 = r^2$，其中 $r$ 为参数
         2. 经过直线 $l: Ax + By + C = 0$ 与圆 $C: x^2 + y^2 + Dx + Ey + F = 0$ 的交点圆系方程：$x^2 + y^2 + Dx + Ey + F + \lambda(Ax + By + C) = 0$，其中 $\lambda$ 为参数
         3. 经过圆 $C_1: x^2 + y^2 + D_1x + E_1y + F_1 = 0$ 与圆 $C_2: x^2 + y^2 + D_2x + E_2y + F_2 = 0$ 的两交点 $A, B$ 的共轴圆系：$\lambda(x^2 + y^2 + D_1x + E_1y + F_1) + \mu(C_2: x^2 + y^2 + D_2x + E_2y + F_2 = 0)$，其中 $\lambda, \mu$ 是不全为零的参数．由 $A, B$ 确定的直线称为两圆的根轴
 
@@ -319,7 +325,7 @@
         </div>
 
     2. 一般方程：$H: A x^2+B xy+C y^2+D x+E y+F=0$
-        1. 定义双曲线的中心为使 $\overrightarrow{PF}_1 + \overrightarrow{PF}_2 = \boldsymbol 0$ 的点 $P$，此时坐标为 $\left(\dfrac{B E-2 C D}{4 A C-B^2}, \dfrac{B D-2 A E}{4 A C-B^2}\right)$
+        1. 定义双曲线的中心为使 $\overrightarrow{MF}_1 + \overrightarrow{MF}_2 = \boldsymbol 0$ 的点 $M$，此时坐标为 $\left(\dfrac{B E-2 C D}{4 A C-B^2}, \dfrac{B D-2 A E}{4 A C-B^2}\right)$
         2. 实轴倾角 $\theta = \dfrac 12 \arctan \dfrac{B}{A - C}$，长短半轴分别为为
 
             $$
