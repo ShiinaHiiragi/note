@@ -85,6 +85,7 @@
         !!! note ""
             *正确示例*：
             :   - 使用 `let i = 0;` 声明一个变量
+                - 参数方程：椭圆 $E: \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$ 的参数方程为 $\left\{\begin{aligned} & x = a\cos \varphi \\ & y = b\sin \varphi \end{aligned}\right.$
                 - 设 $A$ 是一个集合，定义 $A$ 的示性函数为
 
                     $$
@@ -112,6 +113,7 @@
 2. 以下几组用语可以混用，因为它们可能有不同的使用场景
     - 「和」与「与」
     - 「若」与「如果」
+    - 「称为」与「称作」
 3. 以下几组语词的使用有一定偏好
     - 「以下」：代替「下列」，但不能代替「下述」
 
@@ -260,7 +262,7 @@
 3. 图片：使用 `figure` 标签插入图片，`.` 为当前文件所在目录
 
     !!! note ""
-        === "*正确示例*"
+        === "正确示例"
             <figure markdown>
                 ![](../assets/favicon.png)
                 <style> img[src$="favicon.png"] { width: 48px; } </style>
