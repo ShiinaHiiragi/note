@@ -71,3 +71,8 @@ mjx-utext[variant="sans-serif"] {
   font-family: "Noto Sans", "Noto Sans SC" !important;
   font-size: 0.8rem !important;
 }
+
+div.admonition.note mjx-utext[variant="sans-serif"] {
+  font-family: "Noto Sans", "Noto Sans SC" !important;
+  font-size: 0.64rem !important;
+}
