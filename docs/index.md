@@ -43,7 +43,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：分析哲学 · 主词与谓词 </label>
+    <label> 现在进度：解析几何 · 二次曲面 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
@@ -122,8 +122,7 @@ const refList = [
         press: "北京大学出版社",
         locate: "北京",
         year: 2006,
-        page: [1, 364],
-        plot: 324 + 20
+        page: [1, 364]
     },
     {
         author: ["[美]Stewart Shapiro"],

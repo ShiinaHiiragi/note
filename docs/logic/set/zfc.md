@@ -399,7 +399,7 @@
         通常将 $p(m, n)$ 写作 $m^n$
 
     !!! note "常用运算符号"
-        1. 定义阶乘 $n! = \left\{\begin{aligned} & 1, & n > 1 \\ & n \cdot (n - 1)!, & n = 0 \end{aligned}\right.$
+        1. 定义阶乘 $n! = \left\{\begin{aligned} & 1, & n = 0 \\ & n \cdot (n - 1)!, & n > 1 \end{aligned}\right.$
         2. 定义累加符号为 ${\displaystyle \sum_{i = k}^n f(i) = f(k) + f(k + 1) + \cdots + f(n)}$，具有如下性质
             - ${\displaystyle \sum_{k=0}^n a_k =\sum_{j=0}^n a_j}$
             - ${\displaystyle \sum_{k=0}^n a_k =\sum_{j=N}^{n+N} a_{j-N}}$
