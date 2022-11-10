@@ -96,6 +96,8 @@ nav:
       - 2 命题与演绎: cogn/form/ded.md
       - 3 归纳和类比: cogn/form/ind.md
       - 4 非形式逻辑: cogn/form/prf.md
+    - 二、逻辑语:
+      - 1 体系与音位: cogn/loj/phone.md
   - 形而上学:
     - 一、认知科学:
       - 1 神经认知: meta/cogn/nerve.md
