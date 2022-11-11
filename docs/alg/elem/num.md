@@ -322,7 +322,7 @@
     }
     $$
 
-    的表达式称为 $n$ 阶有限连分数，如果 $a_1, a_2, \cdots, a_n$ 都是整数，则称连分数是 $n$ 阶有限简单连分数，简记为 $\left<a_1, a_2, \cdots, a_n\right> = a_1 + \dfrac{1}{a_2+} \dfrac{1}{a_3+} \cdots \dfrac{1}{a_n}$
+    的表达式称为 $n$ 阶有限连分数．如果 $a_1, a_2, \cdots, a_n$ 都是整数，则称连分数是 $n$ 阶有限简单连分数，简记为 $\left<a_1, a_2, \cdots, a_n\right> = a_1 + \dfrac{1}{a_2+} \dfrac{1}{a_3+} \cdots \dfrac{1}{a_n}$
 
 2. 连分数：设 $a_1, a_2, \cdots, a_n, \cdots$ 是一个无限实数列，$a_i > 0, i \geqslant 2$．记 $\dfrac{p_k}{q_k} = \left<a_1, a_2, \cdots, a_n\right>$，若 $\dfrac{p_k}{q_k}$ 有意义，且 ${\displaystyle \lim_{n \to \infty} \dfrac{p_k}{q_k}} = A \neq \infty$，则称 $\left<a_1, a_2, \cdots, a_n, \cdots\right>$ 是无限连分数，并称 $\left<a_1, a_2, \cdots, a_n, \cdots\right>$ 等于 $A$．也称它是 $A$ 的连分数，或称它表示 $A$，记作 $A = \left<a_1, a_2, \cdots, a_n, \cdots\right> = a_1 + \dfrac{1}{a_2+} \dfrac{1}{a_3+} \cdots \dfrac{1}{a_n+} \cdots$
     1. 称 $\dfrac{p_k}{q_k}$ 为连分数 $\left<a_1, a_2, \cdots, a_n, \cdots\right>$ 的第 $k$ 个渐近分数
