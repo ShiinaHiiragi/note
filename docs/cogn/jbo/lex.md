@@ -87,10 +87,3 @@
 
 [^1]: klama：$x_1$ 来到 $x_2$，从 $x_3$ 经由 $x_4$，乘坐 $x_5$
 [^2]: ninmu：$x_1$ 是一个女性人类
-
-<style>
-em {
-    font-style: normal;
-    font-size: 0.8rem;
-}
-</style>
