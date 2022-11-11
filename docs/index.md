@@ -94,7 +94,7 @@ const refList = [
         title: "Lojban For Beginners",
         type: "EB/OL",
         page: [1, 185],
-        plot: 10
+        plot: 21
     },
     {
         author: ["蔡曙山"],

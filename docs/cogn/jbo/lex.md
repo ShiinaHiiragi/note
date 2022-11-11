@@ -16,11 +16,6 @@
 - 「do」：「你」，即听者
 - 「zo'e」：未指定值，表示该项在谓句中不重要
 
-    !!! note ""
-        - klama[^1]
-
-            走（相当于「zo'e klama zo'e zo'e zo'e zo'e」）。
-
 ### 2.1.3 物主
 
 ### 2.1.4 换位
@@ -59,7 +54,7 @@
 1. 根词的长度必为五个字符，且形如「CVCCV」或「CVVCV」的实词，其中「C」表示辅音，「V」表示元音
 
     !!! note ""
-        - la djulias. klama la .uacintyn. la losandjeles. la cikagos. la .amtrak.
+        - la djulias. klama[^1] la .uacintyn. la losandjeles. la cikagos. la .amtrak.
 
             $\text{Julia}$ 乘坐 $\text{Amtrak}$ 从洛杉矶经由芝加哥来到华盛顿。
 
@@ -92,3 +87,10 @@
 
 [^1]: klama：$x_1$ 来到 $x_2$，从 $x_3$ 经由 $x_4$，乘坐 $x_5$
 [^2]: ninmu：$x_1$ 是一个女性人类
+
+<style>
+em {
+    font-style: normal;
+    font-size: 0.8rem;
+}
+</style>
