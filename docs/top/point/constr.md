@@ -56,7 +56,7 @@
     4. 积空间 ${\displaystyle \prod_{\gamma \in \Gamma}} X_\gamma$ 中的序列 $\{x^{(i)}\}_{i\in \mathbf Z_+}$ 收敛于点 $x\in {\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 当且仅当对于每一个 $\alpha \in \Gamma$，拓扑空间 $X_\alpha$ 中的序列 $\{p_\alpha(x^{(i)})\}_{i\in \mathbf Z_+}$ 收敛于 $p_\alpha(x)\in X_\alpha$
 3. 拓扑空间在方体的嵌入
     1. 方体：设 $\Gamma$ 是一个集合，则从 $[0, 1]^\Gamma$ 连通它的点式收敛拓扑称为一个方体
-    2. 映射族：设 $X$ 是一个拓扑空间，$F$ 是一族映射，其中的每一个元素是从拓扑空间 $X$ 到某一个拓扑空间的一个映射．如果对于任何 $x, y\in X, x\neq y$ 存在 $f\in F$ 使得 $f(x)\neq f(y)$，则称映射族 $F$ 是一个区别点的映射族，如果对于任何 $x\in X$ 和 $X$ 中的任何一个不包含点 $x$ 的闭集 $B$，存在 $f\in F$ 使得 $f(x)\notin \overline{f[B]}$，则称映射族 $F$ 是一个区别点和闭集的映射族
+    2. 映射族：设 $X$ 是一个拓扑空间，$F$ 是一族映射，其中的每一个元素是从拓扑空间 $X$ 到某一个拓扑空间的一个映射．如果对于任何 $x, y\in X, x\neq y$ 存在 $f\in F$ 使得 $f(x)\neq f(y)$，则称映射族 $F$ 是一个区别点的映射族．如果对于任何 $x\in X$ 和 $X$ 中的任何一个不包含点 $x$ 的闭集 $B$，存在 $f\in F$ 使得 $f(x)\notin \overline{f[B]}$，则称映射族 $F$ 是一个区别点和闭集的映射族
     3. 嵌入引理：设 $\{X_\gamma\}_{\gamma \in \Gamma}$ 是一个拓扑空间族，$Y$ 是一个拓扑空间，$f: Y\to {\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 是一个映射，令 $F=\{p\circ_\alpha f: Y\to X_\alpha\mid \alpha \in \Gamma\}$，其中 $p_\alpha$ 是 ${\displaystyle \prod_{\gamma \in \Gamma} X_\gamma}$ 的第 $\alpha$ 个投射
         1. $f$ 是一个连续映射当且仅当 $F$ 是一个由连续映射构成的族
         2. $f$ 是一个单射当且仅当映射组 $F$ 能区别点

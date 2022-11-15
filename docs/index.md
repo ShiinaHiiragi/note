@@ -23,6 +23,16 @@
 </div>
 
 <div class="entry start">
+    <img src="assets/pencil.svg" style="width: 1.2rem" />
+    <div class="sub-entry">
+        <div class="caption">前置知识</div>
+        <div class="value">
+            中国义务教育水平的语言与数学能力，后者包括基本算术、初等代数与直观几何
+        </div>
+    </div>
+</div>
+
+<div class="entry start">
     <img src="assets/monitor-cellphone.svg" style="width: 1.2rem" />
     <div class="sub-entry">
         <div class="caption">手机访问</div>
@@ -94,7 +104,7 @@ const refList = [
         title: "Lojban For Beginners",
         type: "EB/OL",
         page: [1, 185],
-        plot: 0
+        plot: 25
     },
     {
         author: ["蔡曙山"],

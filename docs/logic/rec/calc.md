@@ -5,7 +5,7 @@
 1. 递归论 $\text{Turing}$ 机模型：设双向无限带 $\text{Turing}$ 机为 $M = (Q, \Sigma, \Gamma, \delta, B, q_s, q_t, q_r)$．其中字母表 $\Sigma = \{0, 1\}$，$q_h = \{q_t, q_r\}$，表示停机状态．从而一台 $\text{Turing}$ 完全由其指令集 $\delta$ 决定而与其物理装置无关
     1. $\text{Turing}$ 机的输入是 $n$ 个自然数，自然数 $m$ 用带上 $m + 1$ 个连续的 $1$ 表示，如果输入为 $n$ 元组 $m_1, m_2, \cdots, m_n$，则用空格 $0$ 隔开数字
     2. $\text{Turing}$ 机的输出是停机时纸带上所有 $1$ 的总数，$1$ 不一定是连续的
-2. $\text{Turing}$ 机计算函数：设 $f$ 为 $\mathbf N^n \to \mathbf N$ 的（部分）函数，$M$ 为 $\text{Turing}$ 机．则称 $\text{Turing}$ 机 $M$ 计算函数 $f$ 当且仅当对任意 $n$ 元组 $(x_1, x_2, \cdots, x_n)$，如果 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机且输出为 $f(x_1, x_2, \cdots, x_n)$；如果 $(x_1, x_2, \cdots, x_n) \notin \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时不会停机
+2. $\text{Turing}$ 机计算函数：设 $f$ 为 $\mathbf N^n \to \mathbf N$ 的（部分）函数，$M$ 为 $\text{Turing}$ 机．则称 $\text{Turing}$ 机 $M$ 计算函数 $f$ 当且仅当对任意 $n$ 元组 $(x_1, x_2, \cdots, x_n)$．如果 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机且输出为 $f(x_1, x_2, \cdots, x_n)$；如果 $(x_1, x_2, \cdots, x_n) \notin \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时不会停机
     1. 用 $f(x_1, x_2, \cdots, x_n) \downarrow$ 表示 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$，此时称 $f$ 在 $(x_1, x_2, \cdots, x_n)$ 处收敛；用 $f(x_1, x_2, \cdots, x_n) \uparrow$ 表示 $(x_1, x_2, \cdots, x_n) \notin \mathrm{dom}(f)$，此时称 $f$ 在 $(x_1, x_2, \cdots, x_n)$ 处发散
     2. 用 $M(x_1, x_2, \cdots, x_n)\downarrow$ 表示 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机
     3. 如果一个自然数上的函数存在一个计算它的 $\text{Turing}$ 机，则称之为 $\text{Turing}$ 可计算的；如果一个自然数上的关系集合特征函数是 $\text{Turing}$ 可计算的，则称之为 $\text{Turing}$ 可判定的
