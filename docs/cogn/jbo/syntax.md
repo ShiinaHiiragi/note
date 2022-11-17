@@ -27,18 +27,18 @@
     2. 位序标记：用「fa」「fe」「fi」「fo」「fu」分别指定前五个位
 
         !!! note ""
-            - fe le cukta[^1] cu dunda[^2] fi la klaudias.
+            - fe le cukta cu dunda[^1] fi la klaudias.
 
                 那本书被交给了 $\text{Claudia}$。
 
 3. 命令句：使用了代词「ko」的句子，表示要求听者做某事。在命令的句首使用了态度指示词「.e'o」的句子，表示礼貌的请求
 
     !!! note ""
-        - nelci[^3] ko
+        - nelci[^2] ko
 
             试着留下一个好印象吧（做点什么，这样某人才会喜欢你）。
 
-        - ko ko kurji[^4]
+        - ko ko kurji[^3]
 
             照顾好你自己。 
 
@@ -87,7 +87,7 @@
 
             - do mo la klaudias.
 
-                fengu[^5]
+                fengu[^4]
 
                 你和 $\text{Claudia}$ 怎么了？
 
@@ -95,7 +95,7 @@
 
             - la meilis. mo
 
-                jungo[^6]
+                jungo[^5]
 
                 梅丽是谁？
 
@@ -109,9 +109,8 @@
 
 ## 3.2 根词与篇章法
 
-[^1]: cukta：$x_1$ 是一本关于 $x_2$ 的书，由作者 $x_3$ 写给 $x_4$，保存在介质 $x_5$ 中
-[^2]: dunda：$x_1$ 将 $x_2$ 给了 $x_3$
-[^3]: nelci：$x_1$ 喜欢/热衷于 $x_2$
-[^4]: kurji：$x_1$ 照顾 $x_2$
-[^5]: fengu：$x_1$ 对 $x_2$ 愤怒，因为 $x_3$
-[^6]: jungo：$x_1$ 在 $x_2$ 方面反映了中国国籍/文化/语言
+[^1]: dunda：$x_1$ 将 $x_2$ 给了 $x_3$
+[^2]: nelci：$x_1$ 喜欢/热衷于 $x_2$
+[^3]: kurji：$x_1$ 照顾 $x_2$
+[^4]: fengu：$x_1$ 对 $x_2$ 愤怒，因为 $x_3$
+[^5]: jungo：$x_1$ 在 $x_2$ 方面反映了中国国籍/文化/语言

@@ -17,7 +17,37 @@
 2. 「GOhA」：可以替代谓语的结构词，分为几组
     - 「go'i」：表示上一谓句的意义
 
-### 2.1.3 物主
+### 2.1.3 属格
+1. 「GOI」：表示所属、来源等的结构词
+    - 「pe」：最松散的属格，表示「与……有关」
+    - 「po」：正常属格，表示「特定于……」
+    - 「po'e」：表示不可剥夺的财产，表示「属于……」
+2. 表示属格的方法
+    1. 在项后面接续「pe」与表示物主的项
+
+        !!! note ""
+            - le nenri[^1] pe le karce[^2]
+
+                车的内部
+
+            - le cukta[^3] po mi 
+
+                我的书
+
+            - le rirni[^4] po'e la klaudias.
+
+                $\text{Claudia}$ 的父母
+
+    2. 当物主是代词或专名表示的项时，可以将「pe」与物主放在冠词与根词项之间。「pe」可以被省略
+
+        !!! note ""
+            - le pe la klaudias. rirni
+
+                $\text{Claudia}$ 的父母
+
+            - le do cukta
+
+                你的书
 
 ### 2.1.4 换位
 
@@ -58,14 +88,14 @@
     1. 根词的长度必为五个字符，且形如「CVCCV」或「CVVCV」的谓词，其中「C」表示辅音，「V」表示元音
 
         !!! note ""
-            - la djulias. klama[^1] la .uacintyn. la losandjeles. la cikagos. la .amtrak.
+            - la djulias. klama[^5] la .uacintyn. la losandjeles. la cikagos. la .amtrak.
 
                 $\text{Julia}$ 乘坐 $\text{Amtrak}$ 从洛杉矶经由芝加哥来到华盛顿。
 
     2. 使用可删除标记「cu」可以用于分隔两个相邻谓语，使其不成为一个词组
 
         !!! note ""
-            - le ninmu[^2] cu klama
+            - le ninmu[^6] cu klama
 
                 那个女人走了。
 
@@ -88,5 +118,9 @@
             3. 法语中「Pierre」转写为逻辑语中的「pi,ER.」或「pi.ER.」
             4. 英语中「Green」对应逻辑语中「crino」，可写为「crinos.」或「crin.」
 
-[^1]: klama：$x_1$ 来到 $x_2$，从 $x_3$ 经由 $x_4$，乘坐 $x_5$
-[^2]: ninmu：$x_1$ 是一个女性人类
+[^1]: nenri：$x_1$ 在 $x_2$ 内部
+[^2]: karce：$x_1$ 是机动车，用于运载 $x_2$，由 $x_3$ 驱动
+[^3]: cukta：$x_1$ 是一本关于 $x_2$ 的书，由作者 $x_3$ 写给 $x_4$，保存在介质 $x_5$ 中
+[^4]: rirni：$x_1$ 是 $x_2$ 的父母或 $x_1$ 像父母一样对待/抚养/指导/保护 $x_2$
+[^5]: klama：$x_1$ 来到 $x_2$，从 $x_3$ 经由 $x_4$，乘坐 $x_5$
+[^6]: ninmu：$x_1$ 是一个女性人类
