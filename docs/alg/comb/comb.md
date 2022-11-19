@@ -1,6 +1,6 @@
-# 4 组合理论
+# 3 计数理论
 
-## 4.1 计数原理
+## 3.1 计数原理
 1. 加法原理与乘法原理
     1. 加法原理：若有穷集合 $S_1, S_2, \cdots, S_n$ 有 $S_i \cup S_j = \varnothing \ (1 \leqslant i, j \leqslant n, i \neq j)$，则 $|S_1| + |S_2| + \cdots + |S_n| = |S_1 \cup S_2 \cup \cdots \cup S_n|$
     2. 容斥原理：加法原理的推广，对于有穷集合 $S_1, S_2, \cdots, S_n$ 有
@@ -15,7 +15,7 @@
     1. 设 $a_1, a_2, \cdots, a_n \in \mathbf N$ 且 $\dfrac{a_1 + a_2 + \cdots + a_n}{n} > r - 1$，则 $a_n$ 中至少有一个数不小于 $r$
     2. 设 $a_1, a_2, \cdots, a_n \in \mathbf N, q_1, q_2, \cdots, q_n \in \mathbf Z_+$，若 ${\displaystyle \sum_{i=1}^n a_i = \sum_{i=1}^n q_i - n + 1}$，则 $a_1 > q_1 \vee a_2 > q_2 \vee \cdots \vee a_n > q_n$
 
-## 4.2 排列
+## 3.2 排列
 1. 排列数：从 $n$ 个元素的集合 $S$ 中有序选取的 $r$ 个元素称为 $S$ 的一个 $r-$排列，不同的排列总数记为 $A_n^r$，当 $r = n$ 时，称之为 $S$ 的一个全排列
     1. $A_n^r = \left\{\begin{aligned} & \dfrac{n!}{(n - r)!}, & r \leqslant n \\ & 0, & r > n \end{aligned}\right.$
     2. $A_n^r = (n - r + 1) A_n^{r-1} = \dfrac{n}{n - r} A_{n-1}^r = n A_{n-1}^{r-1}$
@@ -26,7 +26,7 @@
     3. 若 $r < n$ 且对一切 $i = 1, 2, \cdots, k$ 都有 $p_i \geqslant r$，则  $r-$排列数 $N = k^r$，记作 $R_k^r$
     4. 若 $r < n$ 且存在某个 $p_i < r$，则对 $r-$排列数 $N$ 没有一般的求解方法，需要使用生成函数
 
-## 4.3 组合
+## 3.3 组合
 1. 组合数：从 $n$ 个元素的集合 $S$ 中无序选取 $r$ 个元素组成 $S$ 的子集称为 $S$ 的一个 $r-$组合，不同的组合总数记为 $C_n^r$
     1. $C_n^r = \dfrac{A_n^r}{r!} = \left\{\begin{aligned} & \dfrac{n!}{r!(n-r)!}, & r \leqslant n \\ & 0, & r > n \end{aligned}\right.$
     2. 组合数恒等式：对于 $n$ 个元素的集合 $S$ 的 $r-$组合数，设 $m, k \in \mathbf Z_+$
@@ -71,7 +71,7 @@
     3. 若 $r < n$ 且对一切 $i = 1, 2, \cdots, k$ 都有 $p_i \geqslant r$，则  $r-$组合数 $N = C_{k+r-1}^r$，记作 $H_n^r$
     4. 若 $r < n$ 且存在某个 $p_i < r$，则对 $r-$组合数 $N$ 没有一般的求解方法，需要使用容斥原理
 
-## 4.4 生成函数
+## 3.4 生成函数
 1. 幂级数型生成函数：设 $\{a_n\}$ 是一个数列，定义 $f(x) = {\displaystyle \sum_{n=0}^\infty a_n x^n}$ 为数列 $\{a_n\}$ 的生成函数
     1. 设数列 $\{a_n\}, \{b_n\}, \{c_n\}$ 的生成函数分别是 $f(x), g(x), h(x)$，$r$ 为常数
         1. 如果 $b_n = ra_n$，则 $g(x) = rf(x)$

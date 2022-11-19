@@ -1,7 +1,7 @@
-# 5 矩阵论
+# 3 矩阵论
 
-## 5.1 矩阵
-### 5.1.1 矩阵的概念
+## 3.1 矩阵
+### 3.1.1 矩阵的概念
 1. 矩阵：由若干个数排成的 $m$ 行 $n$ 列矩形阵列
 
     $$
@@ -39,7 +39,7 @@
 2. 子矩阵：设 $\boldsymbol A$ 为 $m \times n$ 矩阵，任取 $\boldsymbol A$ 的 $k$ 行 $l$ 列，位于这些行与列交叉处的元素按原来顺序构成的 $k \times l$ 矩阵称为 $\boldsymbol A$ 的一个子矩阵．特别地，当 $k = l$ 时，该子矩阵称为 $\boldsymbol A$ 的一个 $k$ 阶子矩阵
 3. 相似矩阵：对于 $n$ 阶矩阵 $\boldsymbol A$ 和 $\boldsymbol B$，若存在一个 $n$ 阶可逆矩阵 $\boldsymbol P$ 使得 $\boldsymbol P^{-1} \boldsymbol{AP} = \boldsymbol B$，则称矩阵 $\boldsymbol A$ 与 $\boldsymbol B$ 相似，记作 $\boldsymbol A \sim \boldsymbol B$
 
-### 5.1.2 基本运算
+### 3.1.2 基本运算
 1. 设 $m \times n$ 矩阵
 
     $$
@@ -228,7 +228,7 @@
 
             其中 $\boldsymbol C_{ij} = {\displaystyle \sum_{k=1}^t \boldsymbol A_{ik} \boldsymbol B_{kj}}$
 
-### 5.1.3 初等变换
+### 3.1.3 初等变换
 1. 矩阵 $\boldsymbol A$ 的初等行（列）变换
     1. 将 $\boldsymbol A$ 的第 $i$ 行（列）与第 $j$ 行（列）对换
 
@@ -385,7 +385,7 @@
         1. 任一非零矩阵只经初等行变换可化为最简阶梯型矩阵
         2. 非零矩阵的秩等于其最简阶梯形中主元列的个数
 
-### 5.1.4 矩阵实例
+### 3.1.4 矩阵实例
 1. 可逆矩阵：设 $\boldsymbol A$ 是 $n$ 阶方阵，如果存在 $n$ 阶方阵 $\boldsymbol B$ 使 $\boldsymbol{AB} = \boldsymbol{BA} = \boldsymbol I$，则称 $\boldsymbol A$ 是可逆矩阵或非奇异矩阵，称 $\boldsymbol B$ 是 $\boldsymbol A$ 的逆矩阵，记作 $\boldsymbol A^{-1}$
     1. 设 $\boldsymbol A, \boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_k$ 均为 $n$ 阶可逆矩阵，则有
         1. $(\boldsymbol A^{-1})^{-1} = \boldsymbol A$
@@ -442,7 +442,7 @@
         2. 实对称矩阵负定当且仅当其所有特征值为负；实对称矩阵半负定当且仅当其所有特征值非正
         3. 实对称矩阵负定当且仅当其顺序主子式的值负、正相间
 
-### 5.1.5 矩阵分解
+### 3.1.5 矩阵分解
 1. $\text{LU}$ 分解：设矩阵 $\boldsymbol A_{m \times n}$ 可以只经初等行变换化为阶梯型（不包括行对换），则矩阵 $\boldsymbol A$ 可分解为 $\boldsymbol A = \boldsymbol{LU}$，其中 $\boldsymbol L$ 是主对角线元素全是 $1$ 的 $m$ 阶下三角矩阵，$\boldsymbol U$ 是一个 $m \times n$ 阶梯型矩阵
 2. $\text{QR}$ 分解：记
 
@@ -510,7 +510,7 @@
     1. 伪逆：将 $\boldsymbol U, \boldsymbol V$ 分块：$\boldsymbol U = \begin{bmatrix} \boldsymbol U_{r} & \boldsymbol U_{m-r} \\ \end{bmatrix}, \boldsymbol V = \begin{bmatrix} \boldsymbol V_{r} & \boldsymbol V_{m-r} \\ \end{bmatrix}$，从而 $\boldsymbol A = \boldsymbol U_r \boldsymbol D \boldsymbol V_r^{\mathrm T}$．定义 $\boldsymbol A$ 的伪逆或 $\text{Moore} - \text{Penrose}$ 逆为 $\boldsymbol A^+ = \boldsymbol V_r \boldsymbol D^{-1} \boldsymbol U_r^{\mathrm T}$
     2. 令 $\widehat{\boldsymbol x} = \boldsymbol A^+ \boldsymbol b$，从而 $\boldsymbol A \widehat{\boldsymbol x} = \boldsymbol U_r \boldsymbol U_r^{\mathrm T} \boldsymbol b$ 是 $\boldsymbol b$ 在 $\mathbf C(\boldsymbol A)$ 上的正交投影，$\widehat{\boldsymbol x}$ 是 $\boldsymbol{Ax} = \boldsymbol b$ 的最小二乘解．当 $\boldsymbol A$ 的列向量线性相关时，方程最小二乘解不唯一，此时 $\widehat{\boldsymbol x}$ 为所有最小二乘解中模长最小的向量
 
-## 5.2 行列式
+## 3.2 行列式
 1. $n$ 阶行列式：设 $n$ 阶方阵
 
     $$
@@ -696,8 +696,8 @@
     \end{aligned}
     $$
 
-## 5.3 特征值与二次型
-### 5.3.1 特征值与特征向量
+## 3.3 特征值与二次型
+### 3.3.1 特征值与特征向量
 1. 特征值与特征向量：设 $\boldsymbol A$ 是 $n$ 阶方阵，$\boldsymbol x$ 是 $n$ 元非零向量，若有 $\boldsymbol{Ax} = \lambda \boldsymbol x$，则称实数 $\lambda$ 为方阵 $\boldsymbol A$ 的特征值，向量 $\boldsymbol x$ 称为方阵 $\boldsymbol A$ 属于特征值 $\lambda$ 的特征向量
     1. 一个特征向量只能属于一个特征值
     2. 方阵 $\boldsymbol A$ 属于 $\lambda$ 的全部特征向量与零向量组成的子空间称为方阵 $\boldsymbol A$ 的特征子空间
@@ -710,7 +710,7 @@
     1. $\boldsymbol A$ 的奇异值 $\sigma_1, \sigma_2, \cdots, \sigma_r$ 分别等于特征向量 $\boldsymbol{Av}_1, \boldsymbol{Av}_2, \cdots, \boldsymbol{Av}_r$ 的模长
     2. 秩为 $r$ 的实对称矩阵 $\boldsymbol A$ 的 $r$ 个非零奇异值等于其非零特征值的绝对值
 
-### 5.3.2 矩阵的对角化
+### 3.3.2 矩阵的对角化
 1. 可对角化：若矩阵 $\boldsymbol A$ 与对角阵 $\boldsymbol \Lambda$ 相似，则称矩阵 $\boldsymbol A$ 可对角化
     1. $n$ 阶矩阵 $\boldsymbol A$ 可对角化当且仅当 $\boldsymbol A$ 有 $n$ 个线性无关的特征向量
     2. $n$ 阶矩阵 $\boldsymbol A$ 可对角化当且仅当 $\boldsymbol A$ 的任一特征值的几何重数与代数重数相等
@@ -726,7 +726,7 @@
             3. 将 $\boldsymbol x_{i1}, \boldsymbol x_{i2}, \cdots, \boldsymbol x_{ir_i}$．这是矩阵 $\boldsymbol A$ 的特征值 $\lambda_i$ 作 $\text{Schmidt}$ 正交化，得到一组相互正交的单位向量组 $\boldsymbol \varepsilon_{i1}, \boldsymbol \varepsilon_{i2}, \cdots, \boldsymbol \varepsilon_{ir_i}$，这是矩阵 $\boldsymbol A$ 的特征值 $\lambda_i$ 对应特征子空间的标准正交基
             4. $\boldsymbol P = \begin{bmatrix} \boldsymbol \varepsilon_{11} & \boldsymbol \varepsilon_{12} & \cdots & \boldsymbol \varepsilon_{1r_1} & \varepsilon_{21} & \boldsymbol \varepsilon_{22} & \cdots & \boldsymbol \varepsilon_{2r_2} & \cdots & \varepsilon_{s1} & \boldsymbol \varepsilon_{s2} & \cdots & \boldsymbol \varepsilon_{sr_s} \\ \end{bmatrix}$ 即为所求的正交阵
 
-### 5.3.3 二次型
+### 3.3.3 二次型
 1. 设 $\boldsymbol A$ 是 $n$ 阶实对称矩阵，$\boldsymbol x$ 是 $n$ 元列向量，则称 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$ 为二次型．此时
 
     $$
