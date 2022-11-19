@@ -133,9 +133,11 @@ nav:
     - 一、初等代数:
       - 1 解析式与初等函数: alg/elem/form.md
       - 2 方程与不等式: alg/elem/eq.md
-      - 3 初等数论: alg/elem/num.md
-      - 4 组合理论: alg/elem/comb.md
-      - 5 矩阵论: alg/elem/mat.md
+      - 3 矩阵论: alg/elem/mat.md
+    - 二、组合数学:
+      - 1 初等数论: alg/comb/num.md
+      - 3 计数理论: alg/comb/comb.md
+      - 4 图论: top/point/graph.md
   - 几何学:
     - 一、解析几何:
       - 1 线性空间与向量: top/anly/lin.md
@@ -146,7 +148,6 @@ nav:
       - 1 拓扑空间: top/point/space.md
       - 2 构造空间: top/point/constr.md
       - 3 拓扑不变性质: top/point/prop.md
-      - 4 图论: top/point/graph.md
   - 分析学:
     - 一、分析学原理:
       - 1 序列与级数: anly/princ/seq.md
