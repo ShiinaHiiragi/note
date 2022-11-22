@@ -27,15 +27,22 @@
     4. 若 $r < n$ 且存在某个 $p_i < r$，则对 $r-$排列数 $N$ 没有一般的求解方法，需要使用生成函数
 
 ## 3.3 组合
-1. 组合数：从 $n$ 个元素的集合 $S$ 中无序选取 $r$ 个元素组成 $S$ 的子集称为 $S$ 的一个 $r-$组合，不同的组合总数记为 $C_n^r$
-    1. $C_n^r = \dfrac{A_n^r}{r!} = \left\{\begin{aligned} & \dfrac{n!}{r!(n-r)!}, & r \leqslant n \\ & 0, & r > n \end{aligned}\right.$
-    2. 组合数恒等式：对于 $n$ 个元素的集合 $S$ 的 $r-$组合数，设 $m, k \in \mathbf Z_+$
-        1. $C_n^r = C_n^{n-r} = \dfrac{n}{r} C_{n-1}^{r-1}$，其中 $r \leqslant n$
-        2. $C_n^r C_r^k = C_n^r C_{n-r}^{r-k}$，其中 $r \geqslant k$
-        3. $\text{Pascal}$ 公式：$C_n^r = C_{n-1}^r + C_{n-1}^{k-1}$．由此可知 ${\displaystyle \sum_{k=0}^m C_{n+k}^k = C_{n+m+1}^m}$
-        4. $\text{Vandermonde}$ 等式：${\displaystyle \sum_{i=0}^r} C_m^i C_n^{r-i} = C_{m+n}^r$，其中 $r \leqslant \min\{m, n\}$
-        5. ${\displaystyle \sum_{i=0}^m} C_m^i C_n^i = C_{m+n}^m$，其中 $m \leqslant n$，当 $m = n$ 时原式即为 ${\displaystyle \sum_{k=0}^n \left(C_n^k\right)^2 = C_{2n}^n}$
-        6. ${\displaystyle \sum_{r=0}^n C_n^r = 2^n, \sum_{r=0}^n (-1)^r C_n^r = 0, \sum_{r=0}^n rC_n^r = n\cdot 2^{n-1}, \sum_{r=0}^n r^2C_n^r = n(n+1)\cdot 2^{n-2}}$
+1. 组合数：从 $n$ 个元素的集合 $S$ 中无序选取 $r$ 个元素组成 $S$ 的子集称为 $S$ 的一个 $r-$组合，不同的组合总数记为 $C_n^r$．根据定义有
+
+    $$
+    C_n^r = \dfrac{A_n^r}{r!} = \left\{\begin{aligned} & \dfrac{n!}{r!(n-r)!}, & r \leqslant n \\ & 0, & r > n \end{aligned}\right.
+    $$
+
+    对于 $n$ 个元素的集合 $S$ 的 $r-$组合数，设 $m, k \in \mathbf Z_+$，有以下组合恒等式成立：
+
+    1. $C_n^r = C_n^{n-r} = \dfrac{n}{r} C_{n-1}^{r-1}$，其中 $r \leqslant n$
+    2. $\text{Pascal}$ 公式：$C_n^r = C_{n-1}^r + C_{n-1}^{r-1}$，从而 ${\displaystyle \sum_{k=0}^m C_{n+k}^k = C_{n+m+1}^m}$
+    3. $\text{Vandermonde}$ 等式：${\displaystyle \sum_{i=0}^r} C_m^i C_n^{r-i} = C_{m+n}^r$，其中 $r \leqslant \min\{m, n\}$
+        1. ${\displaystyle \sum_{i=0}^m} C_m^i C_n^i = C_{m+n}^m$，其中 $m \leqslant n$
+        2. ${\displaystyle \sum_{k=0}^n \left(C_n^k\right)^2 = C_{2n}^n}$
+    4. ${\displaystyle \sum_{r=0}^n C_n^r = 2^n, \sum_{r=0}^n (-1)^r C_n^r = 0}$
+    5. ${\displaystyle \sum_{r=0}^n rC_n^r = n\cdot 2^{n-1}, \sum_{r=0}^n r^2C_n^r = n\cdot 2^{n-1} + n(n+1)\cdot 2^{n-2}}$
+
 2. 二项式定理：设 $n \in \mathbf Z_+$，则对一切 $x, y$ 有 $(x + y)^n = {\displaystyle \sum_{k=0}^n C_n^k x^k y^{n-k}}$
     1. $\text{Newton}$ 二项式定理：设 $\alpha \in \mathbf R$，则对于一切满足 $\left|\dfrac xy\right| < 1$ 的 $x, y$ 有 $(x + y)^\alpha = {\displaystyle \sum_{k=0}^\infty \dbinom{\alpha}{k} x^k y^{\alpha-k}}$，其中定义
 
@@ -51,8 +58,8 @@
 
         $$
         \begin{aligned}
-        & \dfrac{1}{(1+x)^n} = \sum_{k=0}^\infty (-1)^k C_{n+k-1}^k x^k \\
-        & \dfrac{1}{(1-x)^n} = \sum_{k=0}^\infty C_{n_k-1}^k x^k
+        & \dfrac{1}{(1+x)^n} = \sum_{k=0}^\infty (-1)^k \dbinom{n+k-1}{k} x^k \\
+        & \dfrac{1}{(1-x)^n} = \sum_{k=0}^\infty \dbinom{n+k-1}{k} x^k
         \end{aligned}
         $$
 
