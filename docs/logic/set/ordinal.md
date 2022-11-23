@@ -187,3 +187,41 @@
                 2. 对任意无穷基数 $\kappa$，存在 $\alpha$ 使得 $\kappa=\aleph_{\alpha}$
 
 2. 基数的算术
+    1. 基数的加法：定义 $\kappa \oplus \lambda=|A \cup B|$，其中 $\kappa=|A|, \lambda=|B|$ 且 $A \cap B=\varnothing$
+        1. 对加法的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，而且 $A \cap B=A^{\prime} \cap B^{\prime}=\varnothing$，则 $|A \cup B|=\left|A^{\prime} \cup B^{\prime}\right|$
+        2. 基数加法的性质
+            - 交换律：$\kappa \oplus \lambda=\lambda \oplus \kappa$
+            - 结合律：$\kappa \oplus(\lambda \oplus \mu)=(\kappa \oplus \lambda) \oplus \mu$
+            - $\kappa \leqslant \kappa \oplus \lambda$
+            - 若 $\kappa_{1} \leqslant \kappa_{2}$ 且 $\lambda_{1} \leqslant \lambda_{2}$，则 $\kappa_{1} \oplus \lambda_{1} \leqslant \kappa_{2} \oplus \lambda_{2}$
+    2. 基数的乘法：定义 $\kappa \otimes \lambda=|A \times B|$，其中 $|A|=\kappa, |B|=\lambda$
+        1. 对乘法的定义不依赖于 $A, B$ 的选择：如果 $A, B, A^{\prime}, B^{\prime}$ 满足 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，则 $|A \times B|=$ $\left|A^{\prime} \times B^{\prime}\right|$
+        2. 基数乘法的性质
+            - 交换律：$\kappa \otimes \lambda=\lambda \otimes \kappa$
+            - 结合律：$\kappa \otimes(\lambda \otimes \mu)=(\kappa \otimes \lambda) \otimes \mu$
+            - 分配律：$\kappa \otimes(\lambda \oplus \mu)=\kappa \otimes \lambda \oplus \kappa \otimes \mu$
+            - 如果 $\lambda>0$，则 $\kappa \leqslant \kappa \otimes \lambda$
+            - 如果 $\kappa_{1} \leqslant \kappa_{2}$ 且 $\lambda_{1} \leqslant \lambda_{2}$，则 $\kappa_{1} \otimes \lambda_{1} \leqslant \kappa_{2} \otimes \lambda_{2}$
+            - $\kappa \oplus \kappa=2 \otimes \kappa$．如果 $\kappa \geqslant 2$，则 $\kappa \oplus \kappa \leqslant \kappa \otimes \kappa$
+        3. 对任意无穷基数 $\kappa, \lambda$ 均有
+
+            $$
+            \begin{aligned}
+            & \kappa \otimes \kappa=\kappa \\
+            & \kappa \oplus \lambda=\kappa \otimes \lambda=\max (\kappa, \lambda)
+            \end{aligned}
+            $$
+
+    3. 基数的幂：定义 $\kappa^{\lambda}=\left|A^{B}\right|$，其中 $|A|=\kappa$ 且 $|B|=\lambda$
+        1. 对幂的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，则 $\left|A^{B}\right|=\left|A^{\prime B^{\prime}}\right|$
+        2. 基数幂的性质
+            - 如果 $\lambda>0$，则 $\kappa \leqslant \kappa^{\lambda}$
+            - 如果 $\kappa>1$，则 $\lambda \leqslant \kappa^{\lambda}$
+            - 如果 $\kappa_{1} \leqslant \kappa_{2}$ 且 $\lambda_{1} \leqslant \lambda_{2}$，则 $\kappa_{1}^{\lambda_{1}} \leqslant \kappa_{2}^{\lambda_{2}}$
+            - $\kappa \otimes \kappa=\kappa^{2}$
+        3. 假设 $\kappa, \lambda$ 是无穷基数，则
+            - $\kappa^{\lambda \oplus \mu}=\kappa^{\lambda} \otimes \kappa^{\mu}$
+            - $\left(\kappa^{\lambda}\right)^{\mu}=\kappa^{\lambda \otimes \mu}$
+            - $(\kappa \otimes \lambda)^{\mu}=\kappa^{\mu} \otimes \lambda^{\mu}$
+            - $2^{\kappa}>\kappa$
+            - 如果 $\kappa \leqslant \lambda$，则 $\kappa^{\lambda}=2^{\lambda}$
