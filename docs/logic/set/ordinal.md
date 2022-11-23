@@ -1,7 +1,96 @@
 # 2 序数与基数
 
 ## 2.1 序数理论
-- 良序集：集合 $A$ 上的全序 $\leqslant$ 若有 $A$ 的每一非空子集都有最小元，则称之为良序，称 $(A, \leqslant)$ 为良序集
+### 2.1.1 良序集
+1. 前段：令 $(L, <)$ 为全序，$S$ 是 $L$ 的子集．如果对每一 $a \in S$，所有 $L$ 中小于 $a$ 的元素也都属于 $S$，则称 $S$ 是 $L$ 的前段，不等于 $L$ 的前段称为真前段
+    1. 如果 $(W, <)$ 是良序且 $S$ 是 $W$ 的真前段，则存在 $a \in W$ 满足 $S=\{x \in W \mid x<a\}$．此时称 $W[a]=\{x \in W \mid x<a\}$ 为由 $a$ 给定的 $W$ 的真前段．特别地，如果 $a$ 是 $W$ 的最小元，则 $W[a]=\varnothing$
+    2. 如果 $(W, <)$ 是良序，$f: W \rightarrow W$ 是递增映射，则对所有的 $x \in W$ 都有 $f(x) \geqslant x$
+2. 良序集：集合 $W$ 上的全序 $\leqslant$ 若有良基性，即 $W$ 的每一非空子集都有最小元，则称 $\leqslant$ 为 $W$ 上的良序，记作 $(W, \leqslant)$
+    1. 良序集的同构性
+        1. 没有良序集同构于自已的真前段
+        2. 任意良序集都只有一个自同构，即等同映射
+        3. 如果 $W_{1}$ 和 $W_{2}$ 是同构的良序集，则其间的同构唯一
+    2. 良序集的和与积
+        1. 令 $\left(W_{1},<_{1}\right)$ 与 $\left(W_{2},<_{2}\right)$ 为良序集且 $W_{1} \cap W_{2}=\varnothing$，则如下定义的 $W=W_{1} \cup W_{2}$ 上的关系 $<$ 是良序
+
+            $$
+            \begin{array}{ll}
+            u<v \quad \textsf { 当且仅当 } & u, v \in W_{1} \wedge u<_{1} v \\
+            & \textsf {或 } u, v \in W_{2} \wedge u<_{2} v \\
+            & \textsf {或 } u \in W_{1}, v \in W_{2} \text { 。 }
+            \end{array}
+            $$
+
+            称良序集 $(W,<)$ 是 $\left(W_{1},<_{1}\right)$ 与 $\left(W_{2},<_{2}\right)$ 的和，记做 $\left(W_{1},<_{1}\right)+\left(W_{2},<_{2}\right)$ 或 $\left(W_{1} \cup W_{2},<_{1}+<_{2}\right)$
+
+        2. 令 $\left(W_{1},<_{1}\right)$ 和 $\left(W_{2},<_{2}\right)$ 为良序集, 则如下定义的 $W=W_{1} \times W_{2}$ 上的关系 $<$ 是良序
+
+            $$
+            \left(u_{1}, u_{2}\right)<\left(v_{1}, v_{2}\right)
+            \leftrightarrow
+            u_{2}<_{2} v_{2}
+            \vee (u_{2}=v_{2} \wedge u_{1}<_{1} v_{1})
+            $$
+
+            称良序集 $(W,<)$ 是 $\left(W_{1},<_{1}\right)$ 与 $\left(W_{2},<_{2}\right)$ 的积，记做 $\left(W_{1},<_{1}\right) \times\left(W_{2},<_{2}\right)$ 或 $\left(W_{1} \times W_{2},<_{1} \times<_{2}\right)$
+
+3. 良序集基本定理：如果 $\left(W_{1},<_{1}\right)$ 和 $\left(W_{2},<_{2}\right)$ 为良序集，则以下条件恰有一个成立
+    1. $W_{1}$ 与 $W_{2}$ 同构
+    2. $W_{1}$ 与 $W_{2}$ 的前段同构
+    3. $W_{2}$ 与 $W_{1}$ 的前段同构
+
+### 2.1.2 序数
+1. 序数：满足以下条件的集合 $\alpha$ 称为序数
+    1. $\alpha$ 是传递的，即 $\alpha$ 的元素都是其子集
+    2. $\in$ 是 $\alpha$ 上的良序
+
+    定义 $\alpha < \beta$ 当且仅当 $\alpha \in \beta$
+
+    1. 如果 $\alpha$ 是序数，则 $\alpha$ 的后继 $\alpha^{+} = \alpha \cup \{\alpha\}$ 也是序数
+        1. 自然数恰好就是有穷序数
+        2. 如果序数 $\alpha$ 有 $\exists \beta \ (\alpha = \beta^{+})$，则称 $\alpha$ 为后继序数，否则称 $\alpha$ 为极限序数．特别地，$\mathbf N$ 是首个极限序数，作为序数的 $\mathbf N$ 通常记作 $\omega$
+    2. 序数的性质
+        1. 如果 $\alpha$ 是序数，则 $\alpha$ 的所有元素是序数，所以 $\alpha=\{\beta \mid \beta<$ $\alpha \wedge \beta$ 是序数$\}$
+        2. 如果 $\alpha$ 是序数且 $B \subseteq \alpha$ 是传递集，则 $B$ 是序数且 $B \in \alpha$．特别地，对任意序数 $\alpha, \beta$，如果 $\beta \subseteq \alpha$，则 $\beta \in \alpha$
+        3. 对任意序数的集合 $X$，$\bigcup X$ 是序数且 $\bigcup X=\sup (X)$；若 $X \neq \varnothing$，则 $\bigcap X$ 是序数且 $\bigcap X=\inf (X)$
+        4. 序数间的 $<$ 关系具有良序性质，因此任意非空的序数集合都在 $<$ 下是良序集
+    3. 序型：假设 $(X, R)$ 是良序集，定义其序型为与其同构的唯一序数，记作 $\operatorname{type}(X, R)$ 或 $\operatorname{type}(X)$
+
+        !!! note "序数类"
+            全体序数构成一个真类，记作 $\mathbf{On}$，「$\alpha$ 是序数」可简写作 $\alpha \in \mathbf{On}$
+
+2. 超穷归纳与递归
+    1. 第一形式超穷归纳原理：令 $\varphi(x)$ 为一个谓词．假设对所有的序数 $\alpha$，都有
+
+        $$
+        (\forall \beta < \alpha \ (\varphi(\beta))) \to \varphi(\alpha)
+        $$
+
+        则 $\varphi(\alpha)$ 对所有的序数 $\alpha$ 都成立
+
+    2. 第二形式超穷归纳原理：令 $\varphi(x)$ 为一个谓词，假设
+        1. $\varphi(0)$ 成立
+        2. 对所有后继序数 $\alpha$，$\varphi(\alpha) \to \varphi(\alpha^{+})$
+        3. 对所有极限序数 $\alpha \neq 0$, 如果对所有 $\beta<\alpha$，$\varphi(\beta)$ 都成立，则 $\varphi(\alpha)$ 成立
+
+        则对所有的 $\alpha$ 都有 $\varphi(\alpha)$
+
+    3. 超穷递归定理：假设 $\mathbf{G}: \mathbf{V} \rightarrow \mathbf{V}$ 为映射，则存在唯一的映射 $\mathbf{F}: \mathbf{O n} \rightarrow \mathbf{V}$ 满足对任意序数 $\alpha$ 都有 $\mathbf{F}(\alpha)=\mathbf{G}(\mathbf{F}\upharpoonright \alpha)$
+        1. 令 $\mathbf{G}: \mathbf{V} \rightarrow \mathbf{V}$ 为映射, 则存在运算 $\mathbf F: \mathbf V \times \mathbf{On} \rightarrow \mathbf V$ 满足对所有的集合 $z$ 和序数 $\alpha$ 都有 $\mathbf{F}(z, \alpha)=\mathbf{G}\left(\mathbf{F}_{z} \upharpoonright \alpha\right)$
+        2. 令 $\mathbf G_{1}, \mathbf G_{2}, \mathbf G_{3}$ 为 $\mathbf V$ 上的映射，则存在 $\mathbf{On}$ 上的映射 $\mathbf F$ 满足
+
+            $$
+            \begin{aligned}
+            \mathbf{F}(0) &=\mathbf{G}_{1}(\varnothing) \\
+            \mathbf{F}(\alpha+1) &=\mathbf{G}_{2}(\mathbf{F}(\alpha)) \\
+            \mathbf{F}(\alpha) &=\mathbf{G}_{3}(\mathbf{F} \upharpoonright \alpha)
+            \textsf { 对所有的极限 } \alpha
+            \end{aligned}
+            $$
+
+3. $\text{Hartogs}$ 数：对任意集合 $X$，存在一个序数 $H(X)$，其不与 $X$ 的任何子集等势，并且是具有如此性质的最小序数．称 $H(X)$ 为 $X$ 的 $\text{Hartogs}$ 数
+
+### 2.1.3 选择公理
 
 ## 2.2 势与基数
 ### 2.2.1 势
