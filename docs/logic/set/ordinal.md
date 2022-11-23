@@ -62,31 +62,31 @@
 2. 序数的算术
     1. 序数的加法：对所有序数 $\beta$
         1. 定义 $\beta+0=\beta, \beta+1=\beta^{+}$
-        2. 对任意序数 $\alpha$ 都有 $\beta+(\alpha+1)=(\beta+\alpha)+1$
-        3. 对任意极限序数 $\alpha$ 都有 $\beta+\alpha=\sup \{\beta+\gamma \mid \gamma<\alpha\}$
+        2. 对任意序数 $\alpha$，都有 $\beta+(\alpha+1)=(\beta+\alpha)+1$
+        3. 对任意极限序数 $\alpha$，都有 $\beta+\alpha=\sup \{\beta+\gamma \mid \gamma<\alpha\}$
 
-        对任意序数 $\alpha, \beta$ 都有 $\alpha+\beta=\alpha \cup\{\alpha+\delta \mid \delta<\beta\}$
+        对任意序数 $\alpha, \beta$，都有 $\alpha+\beta=\alpha \cup\{\alpha+\delta \mid \delta<\beta\}$
 
         1. 令 $\left(W_{1},<_{1}\right),\left(W_{2},<_{2}\right)$ 为良序集，分别与 $\alpha_{1}, \alpha_{2}$ 同构．令 $(W,<)=\left(W_{1} \cup W_{2},<_{1}+<_{2}\right)$ 是 $W_1$ 与 $W_2$ 的和，则 $(W,<)$ 与 $\alpha_{1}+\alpha_{2}$ 同构
             - 如果 $\alpha_{1}, \alpha_{2}$ 和 $\beta$ 是序数，则 $\beta+\alpha_{1}<\beta+\alpha_{2}$ 当且仅当 $\alpha_{1}<\alpha_{2}$
-            - 对所有的序数 $\alpha_{1}, \alpha_{2}$ 和 $\beta$ 都有 $\beta+\alpha_{1}=\beta+\alpha_{2}$ 当且仅当 $\alpha_{1}=\alpha_{2}$
-            - 对所有的序数 $\alpha, \beta, \gamma$ 都有 $(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)$
+            - 对所有的序数 $\alpha_{1}, \alpha_{2}$ 和 $\beta$，都有 $\beta+\alpha_{1}=\beta+\alpha_{2}$ 当且仅当 $\alpha_{1}=\alpha_{2}$
+            - 对所有的序数 $\alpha, \beta, \gamma$，都有 $(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)$
         2. 对任意序数 $\alpha, \beta$，如果 $\alpha<\beta$，则存在唯一的序数 $\gamma$ 使得 $\alpha+\gamma=\beta$
 
     2. 序数的乘法：对所有序数 $\beta$
         1. 定义 $\beta \cdot 0=0$
-        2. 对任意序数 $\alpha$ 都有 $\beta \cdot(\alpha+1)=\beta \cdot \alpha+\beta$
-        3. 对任意极限序数 $\alpha$ 都有 $\beta \cdot \alpha=\sup \{\beta \cdot \gamma \mid \gamma<\alpha\}$
+        2. 对任意序数 $\alpha$，都有 $\beta \cdot(\alpha+1)=\beta \cdot \alpha+\beta$
+        3. 对任意极限序数 $\alpha$，都有 $\beta \cdot \alpha=\sup \{\beta \cdot \gamma \mid \gamma<\alpha\}$
 
-        对任意序数 $\alpha, \beta$ 都有 $\alpha \cdot \beta=\{\alpha \cdot \xi+\eta \mid \xi<\beta \wedge \eta<\alpha\}$
+        对任意序数 $\alpha, \beta$，都有 $\alpha \cdot \beta=\{\alpha \cdot \xi+\eta \mid \xi<\beta \wedge \eta<\alpha\}$
 
         1. 对任意序数 $\alpha, \beta$，序数 $\alpha \cdot \beta$ 与集合 $\alpha \times \beta$ 同构
         2. 对任意序数 $\alpha, \beta, 1 \leqslant \alpha<\beta$，存在唯一的序数的有序对 $(\xi, \eta)$ 使得 $\eta<\alpha$ 且 $\beta=\alpha \cdot \xi+\eta$
 
     3. 序数的幂：对所有序数 $\beta$
         1. 定义 $\beta^{0}=1$
-        2. 对任意序数 $\alpha$ 都有 $\beta^{\alpha+1}=\beta^{\alpha} \cdot \beta$
-        3. 对任意极限序数 $\alpha$ 都有 $\beta^{\alpha}=\sup \left\{\beta^{\gamma} \mid \gamma<\alpha\right\}$
+        2. 对任意序数 $\alpha$，都有 $\beta^{\alpha+1}=\beta^{\alpha} \cdot \beta$
+        3. 对任意极限序数 $\alpha$，都有 $\beta^{\alpha}=\sup \left\{\beta^{\gamma} \mid \gamma<\alpha\right\}$
 
     4. $\text{Cantor}$ 正则形式：令 $\alpha, \beta$ 为序数且 $1<\alpha, 1 \leqslant \beta$．则 $\beta$ 可以唯一地表示为以下形式
 
@@ -110,10 +110,10 @@
         2. 对所有后继序数 $\alpha$，$\varphi(\alpha) \to \varphi(\alpha^{+})$
         3. 对所有极限序数 $\alpha \neq 0$, 如果对所有 $\beta<\alpha$，$\varphi(\beta)$ 都成立，则 $\varphi(\alpha)$ 成立
 
-        则对所有的 $\alpha$ 都有 $\varphi(\alpha)$
+        则对所有的 $\alpha$，都有 $\varphi(\alpha)$
 
-    3. 超穷递归定理：假设 $\mathbf{G}: \mathbf{V} \rightarrow \mathbf{V}$ 为映射，则存在唯一的映射 $\mathbf{F}: \mathbf{O n} \rightarrow \mathbf{V}$ 满足对任意序数 $\alpha$ 都有 $\mathbf{F}(\alpha)=\mathbf{G}(\mathbf{F}\upharpoonright \alpha)$
-        1. 令 $\mathbf{G}: \mathbf{V} \rightarrow \mathbf{V}$ 为映射, 则存在运算 $\mathbf F: \mathbf V \times \mathbf{On} \rightarrow \mathbf V$ 满足对所有的集合 $z$ 和序数 $\alpha$ 都有 $\mathbf{F}(z, \alpha)=\mathbf{G}\left(\mathbf{F}_{z} \upharpoonright \alpha\right)$
+    3. 超穷递归定理：假设 $\mathbf{G}: \mathbf{V} \rightarrow \mathbf{V}$ 为映射，则存在唯一的映射 $\mathbf{F}: \mathbf{O n} \rightarrow \mathbf{V}$ 满足对任意序数 $\alpha$，都有 $\mathbf{F}(\alpha)=\mathbf{G}(\mathbf{F}\upharpoonright \alpha)$
+        1. 令 $\mathbf{G}: \mathbf{V} \rightarrow \mathbf{V}$ 为映射, 则存在运算 $\mathbf F: \mathbf V \times \mathbf{On} \rightarrow \mathbf V$ 满足对所有的集合 $z$ 和序数 $\alpha$，都有 $\mathbf{F}(z, \alpha)=\mathbf{G}\left(\mathbf{F}_{z} \upharpoonright \alpha\right)$
         2. 令 $\mathbf G_{1}, \mathbf G_{2}, \mathbf G_{3}$ 为 $\mathbf V$ 上的映射，则存在 $\mathbf{On}$ 上的映射 $\mathbf F$ 满足
 
             $$
@@ -126,8 +126,6 @@
             $$
 
 4. $\text{Hartogs}$ 数：对任意集合 $X$，存在一个序数 $H(X)$，其不与 $X$ 的任何子集等势，并且是具有如此性质的最小序数．称 $H(X)$ 为 $X$ 的 $\text{Hartogs}$ 数
-
-### 2.1.3 选择公理
 
 ## 2.2 势与基数
 ### 2.2.1 势
