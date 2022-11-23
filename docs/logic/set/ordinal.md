@@ -47,8 +47,8 @@
     定义 $\alpha < \beta$ 当且仅当 $\alpha \in \beta$
 
     1. 如果 $\alpha$ 是序数，则 $\alpha$ 的后继 $\alpha^{+} = \alpha \cup \{\alpha\}$ 也是序数
-        1. 自然数恰好就是有穷序数
-        2. 如果序数 $\alpha$ 有 $\exists \beta \ (\alpha = \beta^{+})$，则称 $\alpha$ 为后继序数，否则称 $\alpha$ 为极限序数．特别地，$\mathbf N$ 是首个极限序数，作为序数的 $\mathbf N$ 通常记作 $\omega$
+        1. 如果不为 $0$ 的序数 $\alpha$ 有 $\exists \beta \ (\alpha = \beta^{+})$，则称 $\alpha$ 为后继序数，否则称 $\alpha$ 为极限序数．$\mathbf N$ 是首个极限序数，因此作为序数的 $\mathbf N$ 通常记作 $\omega$
+        2. 自然数恰好就是有穷序数，大于等于 $\omega$ 的序数称为无穷序数
     2. 序数的性质
         1. 如果 $\alpha$ 是序数，则 $\alpha$ 的所有元素是序数，所以 $\alpha=\{\beta \mid \beta<$ $\alpha \wedge \beta$ 是序数$\}$
         2. 如果 $\alpha$ 是序数且 $B \subseteq \alpha$ 是传递集，则 $B$ 是序数且 $B \in \alpha$．特别地，对任意序数 $\alpha, \beta$，如果 $\beta \subseteq \alpha$，则 $\beta \in \alpha$
@@ -67,11 +67,11 @@
 
         对任意序数 $\alpha, \beta$，都有 $\alpha+\beta=\alpha \cup\{\alpha+\delta \mid \delta<\beta\}$
 
-        1. 令 $\left(W_{1},<_{1}\right),\left(W_{2},<_{2}\right)$ 为良序集，分别与 $\alpha_{1}, \alpha_{2}$ 同构．令 $(W,<)=\left(W_{1} \cup W_{2},<_{1}+<_{2}\right)$ 是 $W_1$ 与 $W_2$ 的和，则 $(W,<)$ 与 $\alpha_{1}+\alpha_{2}$ 同构
+        4. 令 $\left(W_{1},<_{1}\right),\left(W_{2},<_{2}\right)$ 为良序集，分别与 $\alpha_{1}, \alpha_{2}$ 同构．令 $(W,<)=\left(W_{1} \cup W_{2},<_{1}+<_{2}\right)$ 是 $W_1$ 与 $W_2$ 的和，则 $(W,<)$ 与 $\alpha_{1}+\alpha_{2}$ 同构
             - 如果 $\alpha_{1}, \alpha_{2}$ 和 $\beta$ 是序数，则 $\beta+\alpha_{1}<\beta+\alpha_{2}$ 当且仅当 $\alpha_{1}<\alpha_{2}$
             - 对所有的序数 $\alpha_{1}, \alpha_{2}$ 和 $\beta$，都有 $\beta+\alpha_{1}=\beta+\alpha_{2}$ 当且仅当 $\alpha_{1}=\alpha_{2}$
             - 对所有的序数 $\alpha, \beta, \gamma$，都有 $(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)$
-        2. 对任意序数 $\alpha, \beta$，如果 $\alpha<\beta$，则存在唯一的序数 $\gamma$ 使得 $\alpha+\gamma=\beta$
+        5. 对任意序数 $\alpha, \beta$，如果 $\alpha<\beta$，则存在唯一的序数 $\gamma$ 使得 $\alpha+\gamma=\beta$
 
     2. 序数的乘法：对所有序数 $\beta$
         1. 定义 $\beta \cdot 0=0$
@@ -80,8 +80,8 @@
 
         对任意序数 $\alpha, \beta$，都有 $\alpha \cdot \beta=\{\alpha \cdot \xi+\eta \mid \xi<\beta \wedge \eta<\alpha\}$
 
-        1. 对任意序数 $\alpha, \beta$，序数 $\alpha \cdot \beta$ 与集合 $\alpha \times \beta$ 同构
-        2. 对任意序数 $\alpha, \beta, 1 \leqslant \alpha<\beta$，存在唯一的序数的有序对 $(\xi, \eta)$ 使得 $\eta<\alpha$ 且 $\beta=\alpha \cdot \xi+\eta$
+        4. 对任意序数 $\alpha, \beta$，序数 $\alpha \cdot \beta$ 与集合 $\alpha \times \beta$ 同构
+        5. 对任意序数 $\alpha, \beta, 1 \leqslant \alpha<\beta$，存在唯一的序数的有序对 $(\xi, \eta)$ 使得 $\eta<\alpha$ 且 $\beta=\alpha \cdot \xi+\eta$
 
     3. 序数的幂：对所有序数 $\beta$
         1. 定义 $\beta^{0}=1$
@@ -157,3 +157,33 @@
         3. 有限小数是可数的，无限小数是不可数的
 
 ### 2.2.2 基数
+1. 基数：集合 $A$ 的基数 $|A|$ 定义为与其等势的最小的序数
+    1. 对任意序数 $\alpha$, 以下条件等价
+        1. $\alpha$ 是基数
+        2. $|\alpha|=\alpha$
+        3. 对任意序数 $\beta$，如果 $\beta<\alpha$，则 $\beta<|\alpha|$
+        4. 对任意序数 $\beta$，如果 $\beta<\alpha$，则 $|\beta|<|\alpha|$
+        5. 对任意序数 $\beta$，如果 $\beta<\alpha$，则 $|\beta| \neq|\alpha|$
+
+        一个序数是某个集合的基数当且仅当不存在比它小的序数与其等势，称这样的序数为前段序数
+
+    2. $\text{Cantor}$ 定理：对任意集合 $X$ 都有 $|X|<|\mathcal{P}(X)|$
+        1. 对任何基数 $\lambda$，都存在一个大于它的最小基数，记作 $\lambda^{+}$
+        2. 如果 $K$ 是基数的集合，则 $\alpha=\bigcup K$ 是基数
+    3. 基数的分类
+        1. 如果 $\lambda=\kappa^{+}$，则称 $\lambda$ 为后继基数．如果 $\lambda \geqslant \omega$ 且不是后继基数，则称 $\lambda$ 为极限基数
+        2. 自然数恰好就是有穷基数，大于等于 $\omega$ 的基数称为无穷基数
+
+            !!! note "无穷基数的表示"
+                无穷基数一定是极限序数．通常用字符 $\aleph$ 或 $\omega$ 表示无穷基数，从第一个无穷基数开始分别记作 $\aleph_{0}, \aleph_{1}, \aleph_{2}, \cdots$ 或 $\omega_{0}, \omega_{1}, \omega_{2}, \cdots$．对任意序数 $\alpha$，递归定义 $\omega_{\alpha}$ 与 $\aleph_{\alpha}$ 如下：
+
+                1. $\omega_{0}=\aleph_{0}=\omega$
+                2. $\omega_{\alpha+1}=\aleph_{\alpha+1}=\aleph_{\alpha}^{+}$
+                3. 对极限序数 $\gamma$，有 $\omega_{\gamma}=\aleph_{\gamma}=\sup \left\{\aleph_{\alpha} \mid \alpha<\gamma\right\}$
+
+                $\aleph_{\alpha}$ 恰好表示「第 $\alpha$ 个无穷基数」，由以下定理保证：
+
+                1. 对任意 $\alpha$，$\aleph_{\alpha}$ 是无穷基数
+                2. 对任意无穷基数 $\kappa$，存在 $\alpha$ 使得 $\kappa=\aleph_{\alpha}$
+
+2. 基数的算术
