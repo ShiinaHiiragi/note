@@ -224,7 +224,21 @@
 
     由选择公理可以证明以上定义不依赖于 $X_{i}$ 的选择，$\otimes$ 的定义不要求 $X_{i}$ 是两两不交的
 
-4. 基数的幂：定义 $\kappa^{\lambda}=\left|A^{B}\right|$，其中 $|A|=\kappa$ 且 $|B|=\lambda$
+    1. 若 $\lambda$ 为无穷基数且 $\left\{\kappa_{\xi}\right\}_{\xi<\lambda}$ 是非零基数的序列，则 ${\displaystyle \bigoplus_{\xi<\lambda} \kappa_{\xi}= \lambda \otimes \sup _{\xi<\lambda} \kappa_{\xi}}$
+        1. ${\displaystyle \bigoplus_{\xi<\lambda} \kappa_{\xi}=\max \{\lambda, \sup _{\xi<\lambda} \kappa_{\xi}\}}$
+        2. 如果 $\left\langle\kappa_{\xi} \mid \xi<\operatorname{cf}(\kappa)\right\rangle$ 是一个序列且 $2 \leqslant \kappa_{\xi}<\kappa$，则 ${\displaystyle \bigoplus_{\xi<\operatorname{cf}(\kappa)} \kappa_{\xi}=\max \{\operatorname{cf}(\kappa), \sup _{\xi<\operatorname{cf}(\kappa)} \kappa_{\xi}\}=\kappa}$
+        3. ${\displaystyle \sup_{\xi<\lambda} \kappa_{\xi} \leqslant \bigoplus_{\xi<\lambda} \kappa_{\xi}}$ 对任意基数成立
+        4. 如果 ${\displaystyle \lambda \leqslant \sup _{\xi<\lambda} \kappa_{\xi}}$，则 ${\displaystyle \bigoplus_{\xi<\lambda} \kappa_{\xi}=\sup _{\xi<\lambda} \kappa_{\xi}}$
+    2. 假设 $\left\langle\kappa_{i}\right\rangle_{i \in I}$ 为基数序列且 $\lambda$ 为基数，则
+        1. 如果 $\left\{X_{j} \mid j \in J\right\}$ 是 $I$ 的划分，则
+            - 交换律和结合律：${\displaystyle \bigoplus_{i \in I} \kappa_{i}=\bigoplus_{j \in J} \bigoplus_{i \in X_{j}} \kappa_{i} \bigotimes_{i \in I} \kappa_{i}=\bigotimes_{j \in J} \bigotimes_{i \in X_{j}} \kappa_{i}}$
+            - 分配律：${\displaystyle \bigotimes_{j \in J} \bigoplus_{i \in X_{j}} \kappa_{i}=\bigoplus\left(\bigotimes_{j \in J} \kappa_{f(j)} \ \left|\ f \in \prod_{j \in J} X_{j} \right. \right)}$
+        2. ${\displaystyle \lambda \cdot \bigoplus_{i \in I} \kappa_{i}=\bigoplus_{i \in I} \lambda \cdot \kappa_{i}}$
+        3. ${\displaystyle \lambda^{\oplus_{i \in I} \kappa_{i}}=\bigotimes_{i \in I} \lambda^{\kappa_{i}}}$
+        4. ${\displaystyle \left(\bigotimes_{i \in I} \kappa_{i}\right)^{\lambda}=\bigotimes_{i \in I} \kappa_{i}^{\lambda}}$
+    3. 假设 $\lambda$ 为无穷基数，$\left\{\kappa_{\xi}\right\}_{\xi<\lambda}$ 是非零基数的序列且是非降的，则 ${\displaystyle \bigotimes_{\xi<\lambda} \kappa_{\xi}}=\left(\sup _{\xi<\lambda} \kappa_{\xi}\right)^{\lambda}$
+
+4. 基数的幂：定义 $\kappa^{\lambda}=\left|A^{B}\right|$，其中 $|A|=\kappa$ 且 $|B|=\lambda$．特别地，称函数 $2^{\aleph_{\alpha}}$ 为连续统函数，$2^{\aleph_{0}}$ 为连续统的基数
     1. 对幂的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，则 $\left|A^{B}\right|=\left|A^{\prime B^{\prime}}\right|$
     2. 基数幂的性质：设 $\kappa, \lambda$ 是基数
         - 如果 $\lambda>0$，则 $\kappa \leqslant \kappa^{\lambda}$
@@ -237,12 +251,20 @@
         - $(\kappa \otimes \lambda)^{\mu}=\kappa^{\mu} \otimes \lambda^{\mu}$
         - $2^{\kappa}>\kappa$
         - 如果 $\kappa \leqslant \lambda$，则 $\kappa^{\lambda}=2^{\lambda}$
-    4. 基数与序列：设 $\kappa, \lambda$ 是无穷基数
-        - $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
-        - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
-        - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
+    4. 设 $\alpha, \beta$ 是序数，$n \in \omega$，则以下命题成立
+        1. $\text{Hausdorff}$ 公式：$\aleph_{\alpha+1}^{\aleph_{\beta}}=\aleph_{\alpha+1} \otimes \aleph_{\alpha}^{\aleph_{\beta}}$
 
-5. 共尾：对任意序数 $\alpha$，若 $\operatorname{cf}(\alpha)$ 是满足性质「存在映射 $f: \beta \rightarrow \alpha$ 使得 $f[\beta]$ 在 $\alpha$ 中无界」的最小序数 $\beta$，则称映射 $f$ 为共尾映射，$\operatorname{cf}(\alpha)$ 为 $\alpha$ 的共尾．对任何序数 $\alpha$，若 $\operatorname{cf}(\alpha)=\alpha$，则称 $\alpha$ 是正则的，非正则的序数称为奇异的
+            广义 $\text{Hausdorff}$ 公式：$\aleph_{\alpha+n}^{\aleph_{\beta}}=\aleph_{\alpha}^{\aleph_{\beta}} \otimes \aleph_{\alpha+n}$
+
+        2. $\text{Tarski}$ 公式：如果 $|\gamma| \leqslant \aleph_{\beta}$，则 $\aleph_{\alpha+\gamma}^{\aleph_{\beta}}=\aleph_{\alpha+\gamma}^{|\gamma|} \otimes \aleph_{\alpha}^{\aleph_{\beta}}$
+        3. $\text{Bernstein}$ 公式：$\aleph_{n}^{\aleph_{\beta}}=2^{\aleph_{\beta}} \otimes \aleph_{n}$
+        4. 如果 $\alpha \leqslant \aleph_{\beta}$，则 $\aleph_{\alpha}^{\aleph_{\beta}}=2^{\aleph_{\beta}} \otimes \aleph_{\alpha}^{|\alpha|}$
+
+5. 基数与序列：设 $\kappa, \lambda$ 是无穷基数，则以下命题成立
+    - $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
+    - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
+    - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
+6. 共尾：对任意序数 $\alpha$，若 $\operatorname{cf}(\alpha)$ 是满足性质「存在映射 $f: \beta \rightarrow \alpha$ 使得 $f[\beta]$ 在 $\alpha$ 中无界」的最小序数 $\beta$，则称映射 $f$ 为共尾映射，$\operatorname{cf}(\alpha)$ 为 $\alpha$ 的共尾．对任何序数 $\alpha$，若 $\operatorname{cf}(\alpha)=\alpha$，则称 $\alpha$ 是正则的，非正则的序数称为奇异的
 
     !!! note "序数的无界性"
         设 $A$ 是序数 $\alpha$ 的子集，如果 $A$ 满足 $\forall \gamma<\alpha \ \exists \xi \in A \ (\gamma \leqslant \xi)$，则称 $A$ 在 $\alpha$ 中是无界的
@@ -260,11 +282,16 @@
         1. 任何奇异的基数都是极限基数
         2. 对任意无穷基数，总存在比它大的奇异基数
         3. 一个极限基数是正则基数的必要条件是 $\alpha=\aleph_{\alpha}$
-    4. $\text{Konig}$ 引理：对任何无穷基数 $\kappa$，都有 $\kappa^{\mathrm{cf}(\kappa)}>\kappa$
-        1. 对任意序数 $\alpha$ 都有 $\operatorname{cf}(2^{\aleph_{\alpha}})>\aleph_{\alpha}$
-        2. 对任意序数 $\alpha, \beta$ 都有 $\operatorname{cf}(\aleph_{\alpha}^{\aleph_{\beta}})>\aleph_{\beta}$
+    4. $\text{Konig}$ 定理：如果对任意 $i \in I$ 都有 $\kappa_{i}<\lambda_{i}$，则 ${\displaystyle \bigoplus_{i \in I} \kappa_{i}<\bigotimes_{i \in I} \lambda_{i}}$
+        1. $\text{Konig}$ 引理：对任何无穷基数 $\kappa$，都有 $\kappa^{\mathrm{cf}(\kappa)}>\kappa$
+        2. 对任意序数 $\alpha, \beta$ 都有 $\operatorname{cf}(2^{\aleph_{\alpha}})>\aleph_{\alpha}$ 且 $\operatorname{cf}(\aleph_{\alpha}^{\aleph_{\beta}})>\aleph_{\beta}$
+    5. 设 $\kappa$ 是无穷基数，则以下命题等价
+        1. $\kappa$ 是正则基数
+        2. 若 $A \subseteq \kappa$ 且 $|A|<\kappa$，则 $A$ 在 $\kappa$ 中有界，即存在 $\alpha<\kappa$, $A \subseteq \alpha$
+        3. 如果 $|I|<\kappa$，$\left\{\kappa_{i} \mid i \in I\right\}$ 为一集基数，且对任意 $i \in I$ 有 $\kappa_{i}<\kappa$，则 ${\displaystyle \bigoplus_{i \in I} \kappa_{i}<\kappa}$
+        4. 令 $\lambda<\kappa$，如果长度为 $\lambda$ 的序列 $\left\langle X_{\xi}\right\rangle_{\xi<\lambda}$ 满足对任意 $\xi<\lambda$，都有 $\left|X_{\xi}\right|<\kappa$，则 ${\displaystyle \left|\bigcup_{\xi<\lambda} X_{\xi}\right|<\kappa_{0}}$
 
-6. 不可达基数
+7. 不可达基数
     1. 弱不可达基数：正则的极限基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
     2. 强不可达基数：强极限的正则基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
         - 令 $\kappa, \lambda$ 为基数且 $\lambda<\kappa$．若对任意 $\mu<\kappa$ 都有 $\mu^{\lambda}<\kappa$，则称 $\kappa$ 是 $\lambda-$强的；若对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强的，则称 $\kappa$ 是是强极限的
