@@ -87,7 +87,7 @@
         2. 分配律：$\boldsymbol C (\boldsymbol A + \boldsymbol B) = \boldsymbol{CA} + \boldsymbol{CB}, (\boldsymbol A + \boldsymbol B) \boldsymbol C = \boldsymbol{AC} + \boldsymbol B + \boldsymbol C$
         3. $k(\boldsymbol{AB}) = (k\boldsymbol A) \boldsymbol B = \boldsymbol A(k\boldsymbol B)$
         4. $(\boldsymbol{AB})^{\mathrm T} = \boldsymbol B^{\mathrm T} \boldsymbol A^{\mathrm T}$
-    3. 特殊矩阵的性质
+    3. 特殊矩阵乘法的性质
         1. 设 $\boldsymbol A_{m \times n}, \boldsymbol B_{n \times m}$ 为两个矩阵，则 $\mathrm{tr}(\boldsymbol{AB}) = \mathrm{tr}(\boldsymbol{BA})$
         2. 设 $\boldsymbol A_{m \times n}$ 为一个矩阵，$\boldsymbol I_m, \boldsymbol I_n$ 分别为 $m$ 阶与 $n$ 阶单位阵，则 $\boldsymbol I_m \boldsymbol A = \boldsymbol{AI}_n = \boldsymbol A$
         3. 设 $\boldsymbol A = \mathrm{diag}(a_1, a_2, \cdots, a_n), \boldsymbol B = \mathrm{diag}(b_1, b_2, \cdots, b_n)$，则 $\boldsymbol{AB} = \boldsymbol{BA} = \mathrm{diag}(a_1 b_1, a_2 b_2, \cdots, a_n, b_n)$
