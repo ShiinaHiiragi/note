@@ -125,7 +125,8 @@
             \end{aligned}
             $$
 
-4. $\text{Hartogs}$ 数：对任意集合 $X$，存在一个序数 $H(X)$，其不与 $X$ 的任何子集等势，并且是具有如此性质的最小序数．称 $H(X)$ 为 $X$ 的 $\text{Hartogs}$ 数
+    !!! note "$\text{Hartogs}$ 数"
+        对任意集合 $X$，存在一个序数 $H(X)$，其不与 $X$ 的任何子集等势，并且是具有如此性质的最小序数．称 $H(X)$ 为 $X$ 的 $\text{Hartogs}$ 数
 
 ## 2.2 势与基数
 ### 2.2.1 势
@@ -186,7 +187,7 @@
                 1. 对任意 $\alpha$，$\aleph_{\alpha}$ 是无穷基数
                 2. 对任意无穷基数 $\kappa$，存在 $\alpha$ 使得 $\kappa=\aleph_{\alpha}$
 
-2. 基数的算术
+2. 基数的有穷算术
     1. 基数的加法：定义 $\kappa \oplus \lambda=|A \cup B|$，其中 $\kappa=|A|, \lambda=|B|$ 且 $A \cap B=\varnothing$
         1. 对加法的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，而且 $A \cap B=A^{\prime} \cap B^{\prime}=\varnothing$，则 $|A \cup B|=\left|A^{\prime} \cup B^{\prime}\right|$
         2. 基数加法的性质
@@ -229,3 +230,31 @@
         - $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
         - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
         - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
+
+3. 共尾：对任意序数 $\alpha$，若 $\operatorname{cf}(\alpha)$ 是满足性质「存在映射 $f: \beta \rightarrow \alpha$ 使得 $f[\beta]$ 在 $\alpha$ 中无界」的最小序数 $\beta$，则称映射 $f$ 为共尾映射，$\operatorname{cf}(\alpha)$ 为 $\alpha$ 的共尾．对任何序数 $\alpha$，若 $\operatorname{cf}(\alpha)=\alpha$，则称 $\alpha$ 是正则的，非正则的序数称为奇异的
+
+    !!! note "序数的无界性"
+        设 $A$ 是序数 $\alpha$ 的子集，如果 $A$ 满足 $\forall \gamma<\alpha \ \exists \xi \in A \ (\gamma \leqslant \xi)$，则称 $A$ 在 $\alpha$ 中是无界的
+
+    1. 共尾的性质
+        1. $A \subset \alpha$ 是无界的当且仅当 $\alpha=\bigcup\{\xi+1 \mid \xi \in A\}$，因此对任意序数，如果 $f: \operatorname{cf}(\alpha) \rightarrow \alpha$ 是共尾映射，则 $\bigcup_{\xi<\mathrm{cf}(\alpha)}[f(\xi)+1]=\alpha$
+        2. 对任意序数 $\alpha$ 都有 $\operatorname{cf}(\alpha) \leqslant \alpha$
+        3. 任意后继序数 $\alpha=\beta+1$ 的共尾是 $1$
+        4. 任意极限序数 $\alpha>0$ 都有 $\operatorname{cf}(\alpha) \geqslant \omega$
+    2. 对任意极限序数 $\alpha$ 都有 $\operatorname{cf}(\operatorname{cf}(\alpha))=\operatorname{cf}(\alpha)$
+        1. 任意序数的共尾都是正则的，又因为所有正则的序数都是基数，所以任意一个序数的共尾都是基数
+        2. 对任何极限序数 $\alpha$ 都存在一个严格递增的共尾映射 $f: \operatorname{cf}(\alpha) \rightarrow$ $\alpha_{\circ}$
+        3. 假设 $\gamma$ 是极限序数，$\left\langle\alpha_{\xi} \mid \xi<\gamma\right\rangle$ 是序数的严格递增序列且 $\alpha$ 是其极限，则 $\operatorname{cf}(\alpha)=\operatorname{cf}(\gamma)$
+    3. 对任意无穷基数 $\kappa$，$\kappa^{+}$ 是正则的
+        1. 任何奇异的基数都是极限基数
+        2. 对任意无穷基数，总存在比它大的奇异基数
+        3. 一个极限基数是正则基数的必要条件是 $\alpha=\aleph_{\alpha}$
+    4. $\text{Konig}$ 引理：对任何无穷基数 $\kappa$，都有 $\kappa^{\mathrm{cf}(\kappa)}>\kappa$
+        1. 对任意序数 $\alpha$ 都有 $\operatorname{cf}(2^{\aleph_{\alpha}})>\aleph_{\alpha}$
+        2. 对任意序数 $\alpha, \beta$ 都有 $\operatorname{cf}(\aleph_{\alpha}^{\aleph_{\beta}})>\aleph_{\beta}$
+
+4. 基数的无穷算术
+5. 不可达基数
+    1. 弱不可达基数：正则的极限基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
+    2. 强不可达基数：强极限的正则基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
+        - 令 $\kappa, \lambda$ 为基数且 $\lambda<\kappa$．若对任意 $\mu<\kappa$ 都有 $\mu^{\lambda}<\kappa$，则称 $\kappa$ 是 $\lambda-$强的；若对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强的，则称 $\kappa$ 是是强极限的
