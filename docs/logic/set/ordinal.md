@@ -290,8 +290,8 @@
         2. 若 $A \subseteq \kappa$ 且 $|A|<\kappa$，则 $A$ 在 $\kappa$ 中有界，即存在 $\alpha<\kappa$, $A \subseteq \alpha$
         3. 如果 $|I|<\kappa$，$\left\{\kappa_{i} \mid i \in I\right\}$ 为一集基数，且对任意 $i \in I$ 有 $\kappa_{i}<\kappa$，则 ${\displaystyle \bigoplus_{i \in I} \kappa_{i}<\kappa}$
         4. 令 $\lambda<\kappa$，如果长度为 $\lambda$ 的序列 $\left\langle X_{\xi}\right\rangle_{\xi<\lambda}$ 满足对任意 $\xi<\lambda$，都有 $\left|X_{\xi}\right|<\kappa$，则 ${\displaystyle \left|\bigcup_{\xi<\lambda} X_{\xi}\right|<\kappa_{0}}$
+    6. 不可达基数
+        1. 弱不可达基数：正则的极限基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
+        2. 强不可达基数：强极限的正则基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
 
-7. 不可达基数
-    1. 弱不可达基数：正则的极限基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
-    2. 强不可达基数：强极限的正则基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
-        - 令 $\kappa, \lambda$ 为基数且 $\lambda<\kappa$．若对任意 $\mu<\kappa$ 都有 $\mu^{\lambda}<\kappa$，则称 $\kappa$ 是 $\lambda-$强的；若对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强的，则称 $\kappa$ 是是强极限的
+7. 令 $\kappa, \lambda$ 为基数且 $\lambda<\kappa$．若对任意 $\mu<\kappa$ 都有 $\mu^{\lambda}<\kappa$，则称 $\kappa$ 是 $\lambda-$强的；若对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强的，则称 $\kappa$ 是是强极限的
