@@ -225,3 +225,7 @@
             - $(\kappa \otimes \lambda)^{\mu}=\kappa^{\mu} \otimes \lambda^{\mu}$
             - $2^{\kappa}>\kappa$
             - 如果 $\kappa \leqslant \lambda$，则 $\kappa^{\lambda}=2^{\lambda}$
+    4. 基数与序列：对任意无穷基数 $\kappa, \lambda$
+        - $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
+        - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
+        - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
