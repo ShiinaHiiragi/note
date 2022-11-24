@@ -6,7 +6,7 @@
     2. $\forall x \ (x \in A \to \varphi(x))$：$\forall x \in A \ \varphi(x)$；$\exists x \ (x \in A \wedge \varphi(x))$：$\exists x \in A \ \varphi(x)$
     3. 有界量词：$\forall x \ (x < A \to \varphi(x))$：$\forall x < A \ \varphi(x)$；$\exists x \ (x < A \wedge \varphi(x))$：$\exists x < A \ \varphi(x)$
     4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists !x \ \varphi(x)$
-2. $\text{ZFC}$ 公理
+2. $\mathbf{ZFC}$ 公理
     1. 存在公理（$\text{Exi}$）：存在一个集合
 
         $$
@@ -98,8 +98,15 @@
         \forall x \ (\varnothing \notin X \wedge \forall x \in X \ \forall y \in X \ (x \cap y = \varnothing) \to \exists S \forall x \in X \ \exists !y \ (S \cap x = \{y\}))
         $$
 
-        !!! note "选择公理的第二形式"
-            对任意不含空集的非空集族 $\mathscr F$ 上都存在选择映射 $f: \mathscr F \to \bigcup \mathscr F$ 使得对任意 $F \in \mathscr F$ 有 $f(F) \in F$
+        !!! note "选择公理的等价形式"
+            - 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$ 都有 ${\displaystyle \prod_{i \in I} X_{i} \neq \varnothing}$
+            - 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$，如果 $i \neq j \to X_{i} \cap X_{j}=\varnothing$，则存在集合 $S$，对每一 $i \in I$，都有 $\left|S \cap X_{i}\right|=1$
+            - 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$，存在函数 $f$ 满足对每一 $i \in I$，都有 $f\left(X_{i}\right) \in X_{i}$，称 $f$ 为选择函数
+            - 对任意不含空集的非空集族 $\mathscr F$ 上都存在选择映射 $f: \mathscr F \to \bigcup \mathscr F$ 使得对任意 $F \in \mathscr F$ 有 $f(F) \in F$
+            - 良序原理：每一集合上都存在一个良序
+            - $\text{Hausdorff}$ 极大链条件：任何偏序集都存在一个极大链
+            - $\text{Zorn}$ 引理：如果偏序集 $X$ 的每个链都有上界, 则 $X$ 有极大元
+            - $\text{Tychonoff}$ 定理：任何一族紧空间的积空间都是紧空间
 
 3. 集合的运算性质：对于任意集合 $X, Y, Z$
     1. 子集的性质
