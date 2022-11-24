@@ -187,7 +187,7 @@
                 1. 对任意 $\alpha$，$\aleph_{\alpha}$ 是无穷基数
                 2. 对任意无穷基数 $\kappa$，存在 $\alpha$ 使得 $\kappa=\aleph_{\alpha}$
 
-2. 基数的有穷算术
+2. 基数的和与积
     1. 基数的加法：定义 $\kappa \oplus \lambda=|A \cup B|$，其中 $\kappa=|A|, \lambda=|B|$ 且 $A \cap B=\varnothing$
         1. 对加法的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，而且 $A \cap B=A^{\prime} \cap B^{\prime}=\varnothing$，则 $|A \cup B|=\left|A^{\prime} \cup B^{\prime}\right|$
         2. 基数加法的性质
@@ -213,25 +213,36 @@
             \end{aligned}
             $$
 
-    3. 基数的幂：定义 $\kappa^{\lambda}=\left|A^{B}\right|$，其中 $|A|=\kappa$ 且 $|B|=\lambda$
-        1. 对幂的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，则 $\left|A^{B}\right|=\left|A^{\prime B^{\prime}}\right|$
-        2. 基数幂的性质
-            - 如果 $\lambda>0$，则 $\kappa \leqslant \kappa^{\lambda}$
-            - 如果 $\kappa>1$，则 $\lambda \leqslant \kappa^{\lambda}$
-            - 如果 $\kappa_{1} \leqslant \kappa_{2}$ 且 $\lambda_{1} \leqslant \lambda_{2}$，则 $\kappa_{1}^{\lambda_{1}} \leqslant \kappa_{2}^{\lambda_{2}}$
-            - $\kappa \otimes \kappa=\kappa^{2}$
-        3. 假设 $\kappa, \lambda$ 是无穷基数，则
-            - $\kappa^{\lambda \oplus \mu}=\kappa^{\lambda} \otimes \kappa^{\mu}$
-            - $\left(\kappa^{\lambda}\right)^{\mu}=\kappa^{\lambda \otimes \mu}$
-            - $(\kappa \otimes \lambda)^{\mu}=\kappa^{\mu} \otimes \lambda^{\mu}$
-            - $2^{\kappa}>\kappa$
-            - 如果 $\kappa \leqslant \lambda$，则 $\kappa^{\lambda}=2^{\lambda}$
-    4. 基数与序列：对任意无穷基数 $\kappa, \lambda$
+3. 基数的无穷和与无穷积：假设 $\left\{\kappa_{i} \mid i \in I\right\}$ 为一集基数，$\left\{X_{i} \mid i \in I\right\}$ 为两两不交的集合族且对任意 $i \in I$ 都有 $\left|X_{i}\right|=\kappa_{i}$，则
+
+    $$
+    \begin{aligned}
+    & \bigoplus_{i \in I} \kappa_{i}=\left|\bigcup_{i \in I} X_{i}\right| \\
+    & \bigotimes_{i \in I} \kappa_{i}=\left|\prod_{i \in I} X_{i}\right|
+    \end{aligned}
+    $$
+
+    由选择公理可以证明以上定义不依赖于 $X_{i}$ 的选择，$\otimes$ 的定义不要求 $X_{i}$ 是两两不交的
+
+4. 基数的幂：定义 $\kappa^{\lambda}=\left|A^{B}\right|$，其中 $|A|=\kappa$ 且 $|B|=\lambda$
+    1. 对幂的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，则 $\left|A^{B}\right|=\left|A^{\prime B^{\prime}}\right|$
+    2. 基数幂的性质：设 $\kappa, \lambda$ 是基数
+        - 如果 $\lambda>0$，则 $\kappa \leqslant \kappa^{\lambda}$
+        - 如果 $\kappa>1$，则 $\lambda \leqslant \kappa^{\lambda}$
+        - 如果 $\kappa_{1} \leqslant \kappa_{2}$ 且 $\lambda_{1} \leqslant \lambda_{2}$，则 $\kappa_{1}^{\lambda_{1}} \leqslant \kappa_{2}^{\lambda_{2}}$
+        - $\kappa \otimes \kappa=\kappa^{2}$
+    3. 无穷基数幂的性质：设 $\kappa, \lambda$ 是无穷基数
+        - $\kappa^{\lambda \oplus \mu}=\kappa^{\lambda} \otimes \kappa^{\mu}$
+        - $\left(\kappa^{\lambda}\right)^{\mu}=\kappa^{\lambda \otimes \mu}$
+        - $(\kappa \otimes \lambda)^{\mu}=\kappa^{\mu} \otimes \lambda^{\mu}$
+        - $2^{\kappa}>\kappa$
+        - 如果 $\kappa \leqslant \lambda$，则 $\kappa^{\lambda}=2^{\lambda}$
+    4. 基数与序列：设 $\kappa, \lambda$ 是无穷基数
         - $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
         - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
         - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
 
-3. 共尾：对任意序数 $\alpha$，若 $\operatorname{cf}(\alpha)$ 是满足性质「存在映射 $f: \beta \rightarrow \alpha$ 使得 $f[\beta]$ 在 $\alpha$ 中无界」的最小序数 $\beta$，则称映射 $f$ 为共尾映射，$\operatorname{cf}(\alpha)$ 为 $\alpha$ 的共尾．对任何序数 $\alpha$，若 $\operatorname{cf}(\alpha)=\alpha$，则称 $\alpha$ 是正则的，非正则的序数称为奇异的
+5. 共尾：对任意序数 $\alpha$，若 $\operatorname{cf}(\alpha)$ 是满足性质「存在映射 $f: \beta \rightarrow \alpha$ 使得 $f[\beta]$ 在 $\alpha$ 中无界」的最小序数 $\beta$，则称映射 $f$ 为共尾映射，$\operatorname{cf}(\alpha)$ 为 $\alpha$ 的共尾．对任何序数 $\alpha$，若 $\operatorname{cf}(\alpha)=\alpha$，则称 $\alpha$ 是正则的，非正则的序数称为奇异的
 
     !!! note "序数的无界性"
         设 $A$ 是序数 $\alpha$ 的子集，如果 $A$ 满足 $\forall \gamma<\alpha \ \exists \xi \in A \ (\gamma \leqslant \xi)$，则称 $A$ 在 $\alpha$ 中是无界的
@@ -253,8 +264,7 @@
         1. 对任意序数 $\alpha$ 都有 $\operatorname{cf}(2^{\aleph_{\alpha}})>\aleph_{\alpha}$
         2. 对任意序数 $\alpha, \beta$ 都有 $\operatorname{cf}(\aleph_{\alpha}^{\aleph_{\beta}})>\aleph_{\beta}$
 
-4. 基数的无穷算术
-5. 不可达基数
+6. 不可达基数
     1. 弱不可达基数：正则的极限基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
     2. 强不可达基数：强极限的正则基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
         - 令 $\kappa, \lambda$ 为基数且 $\lambda<\kappa$．若对任意 $\mu<\kappa$ 都有 $\mu^{\lambda}<\kappa$，则称 $\kappa$ 是 $\lambda-$强的；若对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强的，则称 $\kappa$ 是是强极限的
