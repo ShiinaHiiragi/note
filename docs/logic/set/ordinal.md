@@ -17,7 +17,7 @@
             \begin{array}{ll}
             u<v \quad \textsf { 当且仅当 } & u, v \in W_{1} \wedge u<_{1} v \\
             & \textsf {或 } u, v \in W_{2} \wedge u<_{2} v \\
-            & \textsf {或 } u \in W_{1}, v \in W_{2} \text { 。 }
+            & \textsf {或 } u \in W_{1}, v \in W_{2}
             \end{array}
             $$
 
@@ -260,6 +260,13 @@
         3. $\text{Bernstein}$ 公式：$\aleph_{n}^{\aleph_{\beta}}=2^{\aleph_{\beta}} \otimes \aleph_{n}$
         4. 如果 $\alpha \leqslant \aleph_{\beta}$，则 $\aleph_{\alpha}^{\aleph_{\beta}}=2^{\aleph_{\beta}} \otimes \aleph_{\alpha}^{|\alpha|}$
 
+    5. 幂函数在 $\kappa^{\lambda}$ 在 $\textbf{ZFC}$ 下的行为：令 $\lambda$ 为无穷基数，对任意无穷基数 $\kappa$，$\kappa^{\lambda}$ 可计算如下
+        1. 如果 $\kappa$ 不是 $\lambda-$强的，则存在 $\mu<\kappa$ 使得 $\kappa^{\lambda}=\mu^{\lambda}$
+        2. 如果 $\kappa \leqslant \lambda$，则 $\kappa^{\lambda}=2^{\lambda}$
+        3. 如果 $\kappa>\lambda$ 且 $\kappa$ 是 $\lambda$-强的，则
+            - 如果 $\operatorname{cf}(\kappa)>\lambda$，则 $\kappa^{\lambda}=\kappa$
+            - 如果 $\operatorname{cf}(\kappa) \leqslant \lambda$，则 $\kappa^{\lambda}=\kappa^{\mathrm{cff}(\kappa)}$
+
 5. 基数与序列：设 $\kappa, \lambda$ 是无穷基数，则以下命题成立
     - $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
     - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
@@ -294,4 +301,41 @@
         1. 弱不可达基数：正则的极限基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
         2. 强不可达基数：强极限的正则基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
 
-7. 令 $\kappa, \lambda$ 为基数且 $\lambda<\kappa$．若对任意 $\mu<\kappa$ 都有 $\mu^{\lambda}<\kappa$，则称 $\kappa$ 是 $\lambda-$强的；若对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强的，则称 $\kappa$ 是是强极限的
+            !!! note "强极限性"
+                令 $\kappa, \lambda$ 为基数且 $\lambda<\kappa$．若对任意 $\mu<\kappa$ 都有 $\mu^{\lambda}<\kappa$，则称 $\kappa$ 是 $\lambda-$强的；若对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强的，则称 $\kappa$ 是是强极限的
+
+7. 定义无穷基数上 $\text{Gimel}$ 函数为 $\gimel(\kappa)=\kappa^{\mathrm{cf}(\kappa)}$
+    1. 对任意无穷基数 $\kappa, \lambda$ 有
+
+        $$
+        \begin{aligned}
+        & \kappa^{\lambda}= \begin{cases} 2^{\lambda}, & \textsf{或 } \\ \kappa, & \textsf{或 } \\ \gimel(\mu), & \operatorname{cf}(\mu) \leqslant \lambda<\mu\end{cases} \\
+        & 2^{\kappa}= \begin{cases}J(\kappa), & \textsf{ 若 } \kappa \textsf{ 是后继基数 } \\ 2^{\mu_{0}} \otimes I(\kappa), & \textsf{ 若 } \kappa \textsf{ 是极限基数且 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\ I\left(2^{<\kappa}\right), & \textsf{ 若 } \kappa \textsf{ 是极限基数且连续统函数在 } \kappa \textsf{ 下不存在不动点 }\end{cases}
+        \end{aligned}
+        $$
+
+        1. 如果 $\kappa$ 是极限基数，则 $2^{\kappa}=\left(2^{<\kappa}\right)^{\mathrm{cf}(\kappa)}$
+        2. 如果 $\kappa$ 是强极限基数，则 $2^{\kappa}=\kappa^{\operatorname{cf}(\kappa)}$
+
+    2. 对任意基数 $\kappa$，如果存在 $\mu_{0}<\kappa$ 使得对任意 $\mu_{0} \leqslant \mu<\kappa$ 都有 $2^{\mu}=2^{\mu_{0}}$，则称 $2^{\mu_{0}}$ 为连续统函数在 $\kappa$ 下的不动点．如果这样的不动点存在，也称连续统函数在 $\kappa$ 下终究为常量
+    3. 令 $\kappa, \lambda$ 为无穷基数，同时假设 $\textbf{GCH}$ 成立，则
+
+        $$
+        \kappa^{\lambda}=\left\{\begin{array}{ll}
+        \lambda^{+}, & \kappa \leqslant \lambda ; \\
+        \kappa^{+}, & \operatorname{cf}(\kappa) \leqslant \lambda<\kappa ; \\
+        \kappa, & \lambda<\operatorname{cf}(\kappa) 。
+        \end{array}\right.
+        $$
+
+    4. 令 $\kappa, \lambda$ 为无穷基数，同时假设 $\textbf{SCH}$ 成立，则
+
+        $$
+        \kappa^{\lambda}= \begin{cases}2^{\lambda}, & \kappa \leqslant 2^{\lambda} ; \\ \kappa^{+}, & \kappa>2^{\lambda} \wedge \operatorname{cf}(\kappa) \leqslant \lambda ; \\ \kappa, & \kappa>2^{\lambda} \wedge \operatorname{cf}(\kappa)>\lambda_{0}\end{cases}
+        $$
+
+    5. 令 $\kappa$ 为奇异基数，同时假设 $\mathbf{SCH}$ 成立，则
+
+        $$
+        2^{\kappa}= \begin{cases}2^{\mu_{0}}, & \textsf{若 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\ \left(2^{<\kappa}\right)^{+}, & \textsf{若连续统函数在 } \kappa \textsf{ 下没有不动点 }\end{cases}
+        $$
