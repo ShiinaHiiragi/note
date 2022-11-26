@@ -70,10 +70,13 @@
 
 ## 1.2 拓扑空间
 ### 1.2.1 拓扑空间
-1. 拓扑：设 $X$ 是一个集合，$\mathscr T\subseteq \mathcal P(X)$，若 $\mathscr T$ 满足以下条件，则称 $\mathscr T$ 是 $X$ 的一个拓扑
+1. 拓扑：设 $X$ 是一个集合，$\mathscr T\subseteq \mathcal P(X)$，若 $\mathscr T$ 满足
     1. $X, \varnothing\in \mathscr T$
     2. 若 $A, B\in \mathscr T$，则 $A\cap B\in \mathscr T$
     3. 若 $\mathscr T_1\subseteq \mathscr T$，则 ${\displaystyle \bigcup_{A\in \mathscr T_1}A} \in \mathscr T$
+
+    则称 $\mathscr T$ 是 $X$ 的一个拓扑
+
 2. 拓扑空间：若 $\mathscr T$ 是集合 $X$ 的一个拓扑，则称偶对 $(X, \mathscr T)$ 是一个拓扑空间，集合 $X$ 是一个相对于拓扑 $\mathscr T$ 而言的拓扑空间
     1. 当 $\mathscr T$ 已约定时，称集合 $X$ 是一个拓扑空间，$\mathscr T$ 的每一个元素都叫做拓扑空间 $(X, \mathscr T)$ 的一个开集
     2. 设 $X, \rho$ 是一个度量空间，令 $\mathscr T_\rho$ 为由 $X$ 中所有开集构成的集族，则 $(X, \mathscr T_\rho)$ 是 $X$ 的一个拓扑，称 $\mathscr T_\rho$ 为 $X$ 由度量 $\rho$ 诱导的拓扑
@@ -100,10 +103,10 @@
     !!! note "邻域定义连续性"
         设 $X, Y$ 是两个拓扑空间，$f: X\to Y, x\in X$．若 $f(x)\in Y$ 的每一个邻域的原像 $f^{-1}[U]$ 是 $x\in X$ 的一个邻域，则称邻域 $f$ 是一个在点 $x$ 处连续的映射
 
-        1. 设 $X, Y, Z$ 都是拓扑空间
+        3. 设 $X, Y, Z$ 都是拓扑空间
             1. 恒同映射 $i_X: X\to X$ 是一个连续映射
             2. 若 $f: X\to Y$ 和 $g: Y\to Z$ 都是连续映射，则 $g\circ f: X\to Z$ 也是连续映射
-        2. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则映射 $f$ 连续当且仅当对任意 $x\in X$ 均有映射 $f$ 在点 $x$ 处连续
+        4. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则映射 $f$ 连续当且仅当对任意 $x\in X$ 均有映射 $f$ 在点 $x$ 处连续
 
 6. 同胚：设 $X, Y$ 是两个拓扑空间，若 $f: X\to Y$ 是一个双射，并且 $f$ 和 $f^{-1}: Y\to X$ 都是连续的，则称 $f$ 是一个同胚映射，同时也称 $f^{-1}$ 为同胚 $f$ 的同胚逆
     1. 设 $X, Y, Z$ 都是拓扑空间
@@ -210,3 +213,57 @@
     1. ${\displaystyle \lim_{i\to \infty} x_i} = x$
     2. $\forall \varepsilon>0\ \exists N\in \mathbf Z_+\ \forall i>N: \rho(x_i, x)<\varepsilon$
     3. ${\displaystyle \lim_{i\to \infty} \rho(x_i, x)} = 0$
+
+## 1.3 滤与理想
+1. 滤：设 $X$ 为非空集合，$X$ 的子集族 $F \subseteq \mathcal{P}(X)$ 如果满足
+    1. $X \in F$ 且 $\varnothing \notin F$
+    2. 若 $X, Y \in F$，则 $X \cap Y \in F$
+    3. 若 $X \in F$ 且 $X \subseteq Y \subseteq X$，则 $Y \in F$
+
+    则称 $F$ 为 $X$ 上的滤
+
+    1. 平凡滤：$F=\{X\}$ 是 $X$ 上的滤，也是 $X$ 上最小的滤且是 $X$ 上任何滤的子集，称之为平凡滤
+    2. 主滤：令 $A \subseteq X$ 非空，定义 $F=\{X \subseteq X \mid A \subseteq X\}$，则 $F$ 是 $X$ 上的滤，称之为由 $A$ 生成的 $X$ 上的主滤
+    3. 极大滤：对任意滤 $F$，如果不存在滤 $F^{\prime}$ 使得 $F \subset F^{\prime}$，则称 $F$ 为极大滤
+    4. 取无穷集 $X$，定义 $F=\{S \subseteq X \mid X-S \textsf{ 有穷}\}$，则 $F$ 是 $S$ 上的滤且不是主滤，称为 $\text{Fr}\acute{\mathrm e}\text{chet}$ 滤
+    5. 令 $\kappa$ 为无穷基数，则 $\{S \subseteq \kappa\mid |\kappa-S|<\kappa\}$ 是 $\kappa$ 上的滤
+
+2. 理想：设 $X$ 为非空集合，$X$ 的子集族 $I \subseteq \mathcal{P}(X)$ 如果满足
+    1. $\varnothing \in I$ 且 $X \notin I$
+    2. 若 $X, Y \in I$，则 $X \cup Y \in I$
+    3. 若 $X \in I$ 且 $Y \subseteq X$，则 $Y \in I$
+
+    则称 $I$ 为 $X$ 上的理想
+
+    1. 平凡理想：$I = \{\varnothing\}$ 是 $X$ 上的平凡理想
+    2. 主理想：对任意 $A \subseteq X$，定义 $I=\{S \mid S \subseteq A\}$，称为由 $A$ 生成的 $X$ 上的主理想
+    3. 对任意无穷集合 $X$，$X$ 的所有有穷集组成的集合族 $I$ 是 $X$ 上的理想，是 $\text{Fr}\acute{\mathrm e}\text{chet}$ 滤的对偶，称为 $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想
+    4. 如果 $\kappa$ 是无穷基数，$I=\{X \subseteq \kappa\mid |X| <\kappa\}$ 是 $\kappa$ 上的理想
+
+    !!! note "滤与理想的对偶性"
+        如果 $F$ 是 $X$ 上的滤，则 $I=\{X-S \mid S \in F\}$ 是 $X$ 上的理想；如果 $I$ 是 $X$ 上的理想，则 $F=\{X-S \mid S \in I\}$ 是 $S$ 上的滤
+
+3. 有穷交性质：对任意集合族 $G$，如果 $G$ 的任意有穷子集 $H$ 都满足 $\cap H \neq \varnothing$，则称 $G$ 具有有穷交性质
+    1. 任何滤都有有穷交性质
+    2. 任取集合 $X$，令 $G \subseteq \mathcal{P}(X)$ 为具有有穷交性质的非空集合族，则存在 $X$ 上的滤 $F$ 使得 $G \subseteq F$，称滤 $F$ 为 $G$ 生成的滤
+4. 超滤与素理想为对偶概念
+    1. 超滤：$X$ 上的滤 $U$ 如果满足对任意 $S \subseteq X$ 都有 $S \in U$ 或 $X-S \in U$，则称 $U$ 为超滤
+
+        素理想：$X$ 上的理想 $I$ 如果满足对任意 $S \subseteq X$ 都有 $S \in I$ 或 $X-S \in I$，则称 $I$ 为素理想
+
+        !!! note "主超滤"
+            设 $A \subseteq X$ 为非空子集，$F=\{S \subseteq X \mid A \subseteq S\}$ 是主滤，则以下命题等价
+
+            1. $A$ 是单点集
+            2. $F$ 是超滤
+            3. $F$ 是主超滤
+
+    2. 集合 $S$ 上的滤 $F$ 是超滤当且仅当 $F$ 是 $S$ 上的极大滤
+    3. 超滤存在定理：集合 $X$ 上的任何滤 $F_{0}$，都存在超滤 $G$ 使得 $F_{0} \subseteq G$．该命题无法在 $\mathbf{ZF}$ 内得证
+
+5. 对任意无穷基数 $\kappa$，$\kappa-$完全滤与 $\kappa-$完全理想是对偶概念
+    1. $\kappa-$完全滤：如果集合 $X$ 上的滤 $F$ 满足「若 $F^{\prime} \subseteq F$ 且 $\left|F^{\prime}\right|<\kappa$，则 $\bigcap F^{\prime} \in F$」，则称 $F$ 是 $\kappa$-完全的
+
+        $\kappa-$完全理想：如果集合 $X$ 上的理想 $I$ 满足「若 $I^{\prime} \subseteq I$ 且 $\left|I^{\prime}\right|<\kappa$，则 $\bigcup I^{\prime} \in I$」，则称 $I$ 是 $\kappa$-完全的
+
+    2. 任何滤与理想都是 $\aleph_{0}-$完全的，$\aleph_{1}-$完全的滤和理想在历史上称为 $\sigma-$完全的．可数完全的滤对有穷交封闭的，$\aleph_{1}-$完全的滤对可数交封闭

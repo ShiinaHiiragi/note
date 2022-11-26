@@ -1,7 +1,6 @@
 # 3 连续统假设
 
 ## 3.1 集宇宙
-
 1. 良基集合类 $\mathbf{WF} = {\displaystyle \bigcup_{\alpha \in \mathrm{On}} V_{\alpha}}$，其中 $V_{\alpha}$ 定义如下：
     1. $V_{0}=\varnothing$
     2. $V_{\alpha+1}=\mathcal{P}\left(V_{\alpha}\right)$
