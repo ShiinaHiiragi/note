@@ -84,7 +84,7 @@
 
             可知 $\mathrm{rem}(x, y)$ 是原始递归函数
 
-    3. $\text{Ackman}$ 函数
+    3. $\text{Ackermann}$ 函数
         1. 三元函数 $\Phi(n, x, y)$ 递归定义：
 
             $$
@@ -107,7 +107,7 @@
             \end{aligned}
             $$
 
-        3. $\text{Ackman}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 使得 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
+        3. $\text{Ackermann}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 使得 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
 
 3. 有界极小算子与正则 $\mu-$算子
     1. 有界极小算子：令 $P(\overline x, z)$ 为一个 $(k + 1)$ 元的性质，定义
@@ -159,7 +159,7 @@
 
     由于 $\mu$ 算子是一种无界搜索，因此部分递归函数不一定是全函数
 
-    1. 部分递归函数是对原始递归函数的真扩张：$\text{Ackman}$ 函数是部分递归全函数
+    1. 部分递归函数是对原始递归函数的真扩张：$\text{Ackermann}$ 函数是部分递归全函数
     2. 全体部分递归全函数的类恰好是递归函数的类
         1. $\text{Kleene}$ 正规型定理：存在原始递归函数 $U: \mathbf N \to \mathbf N$ 和原始递归谓词 $T(e, x, z)$ 使得对任意部分递归函数 $f: \mathbf N \to \mathbf N$ 都存在一个自然数 $e$ 满足 $f(x) = U(\mu z \ T(e, x, z))$
         2. 通用函数定理：存在一个通用的部分递归函数，即存在一个二元的部分递归函数 $\Phi: \mathbf N^2 \to \mathbf N$ 满足对任何一元递归函数 $f: N \to N$ 都存在一个自然数 $e$，使得对所有 $x$ 都有 $f(x) = T(e, x)$．对于递归函数，这样的通用函数不存在
