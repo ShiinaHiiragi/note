@@ -403,7 +403,7 @@
         1. 对所有 $m \in \mathbf N$ 有 $p(m, 0) = 1$
         2. 对所有 $m, n \in \mathbf N$ 有 $p(m, S(n)) = \cdot(p(m, n), n)$
 
-        通常将 $p(m, n)$ 写作 $m^n$
+        通常将 $p(m, n)$ 写作 $m^n$，幂运算具有右结合性
 
     !!! note "常用运算符号"
         1. 定义阶乘 $n! = \left\{\begin{aligned} & 1, & n = 0 \\ & n \cdot (n - 1)!, & n > 1 \end{aligned}\right.$
