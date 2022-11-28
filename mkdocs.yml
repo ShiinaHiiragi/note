@@ -137,6 +137,7 @@ nav:
       - 3 矩阵论: alg/elem/mat.md
     - 二、组合数学:
       - 1 初等数论: alg/comb/num.md
+      - 2 大数理论: alg/comb/gg.md
       - 3 计数理论: alg/comb/comb.md
       - 4 图论: top/point/graph.md
   - 几何学:
