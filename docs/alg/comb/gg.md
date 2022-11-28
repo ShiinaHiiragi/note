@@ -1,7 +1,53 @@
 # 2 大数理论
 
-## 2.1 递归函数
+## 2.1 大数基础
+1. 科学计数法：任何一个数 $x \in \mathbf R$ 可被唯一表示为 $x = a \times 10^{n}$ 的形式，其中实数 $a \in [1, 10)$，$n \in \mathbf Z$
+2. 自然数类：定义 $c(n)$ 如下
 
-## 2.2 序数
+    $$
+    c(n) = \left\{\begin{aligned}
+    & 6, & n = 0 \\
+    & 10^{c(n-1)}, & n > 0
+    \end{aligned}\right.
+    $$
 
-## 2.3 不可计算函数
+    则对于任意自然数，当 $n = 0$ 时，定义第 $0$ 类数为小于 $c(0)$ 的自然数；当 $n > 0$ 时，定义第 $n$ 类数为小于 $c(n)$ 且不小于 $c(n-1)$ 的自然数
+
+    !!! note "大数实例"
+        - 无量大：$10^{68}$，古印度计数单位中的最大数量
+        - 不可说不可说转：$10^{7 \times 2^{122}}$，出现在『华严经』中的最大数
+        - $\text{Eddington}$ 数：约 $1.57 \times 10^{79}$，可观测宇宙中的质子数
+        - $\text{Googol}$ 数：$10^{100}$，无特定含义
+        - $\text{Shannon}$ 数：$10^{120}$，国际象棋博弈树复杂度的保守下限
+        - $\text{Bentley}$ 数：${\displaystyle 1 + 10 + \sum_{i=1}^8 E 10\# i}$，来自 $\text{Bowers}$ 的短篇小说
+        - 第二 $\text{Skewes}$ 数：$e^{e^{e^{e^{7.705}}}}$，约为 $E 3\#4$，是满足 ${\displaystyle \pi(x) > \int_0^x \dfrac{\mathrm dt}{\ln t}}$ 的最小自然数 $x$ 的上界．其中 $\pi(x)$ 是质数计数函数，表示不大于实数 $x$ 的质数个数
+
+## 2.2 递归函数
+### 2.2.1 原始递归函数
+1. 超 $\text{E}$ 计数：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
+
+    $$
+    \begin{aligned}
+    E[b] x & = b^x \\
+    E[b] a_1 \# a_2 \# \cdots \# a_{n-1} \# 1& = E[b] a_1 \# a_2 \# \cdots \# a_{n-1}\\
+    E[b] a_1 \# a_2 \# \cdots \# a_n & = E[b] a_1 \# a_2 \# \cdots \# a_{n-2} (E[b] a_1 \# a_2 \# \cdots \# (a_n - 1)) 
+    \end{aligned}
+    $$
+
+    称 $b$ 为基数．基数为 $10$ 时通常可被省略，例如 $\text{Googolplex}$ 数可表示为 $E 100\#2$
+
+2. $\text{Donald}$ 箭头：设 $x, y \in \mathbf N$，定义 $x \uparrow^n y =  x \ \underbrace{\uparrow \uparrow \cdots \uparrow}_{n} \ y$ 如下
+
+    $$
+    \begin{aligned}
+    x \uparrow y & = x^y \\
+    x \uparrow^n 1 & = x \\
+    x \uparrow^n y & = x \uparrow^{n-1} (x \uparrow^n (y - 1))
+    \end{aligned}
+    $$
+
+### 2.2.2 多重递归函数
+
+## 2.3 序数与集合论
+
+## 2.4 不可计算函数
