@@ -128,6 +128,35 @@
     !!! note "$\text{Hartogs}$ 数"
         对任意集合 $X$，存在一个序数 $H(X)$，其不与 $X$ 的任何子集等势，并且是具有如此性质的最小序数．称 $H(X)$ 为 $X$ 的 $\text{Hartogs}$ 数
 
+4. $\text{Goodstein}$ 定理：对任意 $m$，存在 $n \geqslant 1$ 使得 $g_{n}(m)=0$
+    1. 对任意自然数 $n \geqslant 2$，定义 $S_{n}$ 如下
+
+        $$
+        \begin{array}{ll}
+        S_{n}(m)=m, & m < n, \\
+        S_{n}(m)=k \cdot(n+1)^{S_{n}(t)}+S_{n}(b), & m \geqslant n \wedge m=k \cdot n^{t}+b, k<n, b<n^{t}, t \geqslant 1
+        \end{array}
+        $$
+
+    2. 对任意自然数 $n \geqslant 2$，定义 $f_{n}$ 如下
+
+        $$
+        \begin{array}{ll}
+        f_{n}(k)=k, & k<n \\
+        f_{n}(m)=\omega^{f_{n}(t)} \cdot k+f_{n}(b), & m \geqslant n \wedge m=k \cdot n^{t}+b,k<n, b<n^{t}, t \geqslant 1
+        \end{array}
+        $$
+
+    3. 对任意自然数 $n \geqslant 1$ 定义 $g_{n}$ 如下
+
+        $$
+        \begin{aligned}
+        g_{1}(m) &=m \\
+        g_{n+1}(m) &= \begin{cases}S_{n+1}\left(g_{n}(m)\right)-1, & g_{n}(m)>0 \\
+        0, & \text{otherswise} \end{cases}
+        \end{aligned}
+        $$
+
 ## 2.2 势与基数
 ### 2.2.1 势
 1. 如果存在一个以集合 $X$ 为定义域，以集合 $Y$ 为值域的双射，则称集合 $X$ 与 $Y$ 等势，记作 $|X| = |Y|$ 或 $X \approx Y$；如果存在集合 $X$ 到 $Y$ 的单射，则称 $X$ 的势小于等于 $Y$ 的势，记作 $|X| \leqslant |Y|$ 或 $X \preccurlyeq Y$

@@ -14,7 +14,7 @@
     则对于任意自然数，当 $n = 0$ 时，定义第 $0$ 类数为小于 $c(0)$ 的自然数；当 $n > 0$ 时，定义第 $n$ 类数为小于 $c(n)$ 且不小于 $c(n-1)$ 的自然数
 
     !!! note "超类"
-        超类：设 $c(n)$ 为自然数类函数，定义 $h(n)$ 如下
+        设 $c(n)$ 为自然数类函数，定义 $h(n)$ 如下
 
         $$
         c(n) = \left\{\begin{aligned}
@@ -23,14 +23,13 @@
         \end{aligned}\right.
         $$
 
-3. 大数实例
+3. 经典大数实例
     - 无量大：$10^{68}$，古印度计数单位中的最大数量
     - 不可说不可说转：$10^{7 \times 2^{122}}$，出现在『华严经』中的最大数
-    - $\text{Eddington}$ 数：约 $1.57 \times 10^{79}$，可观测宇宙中的质子数
-    - $\text{Googol}$ 数：$10^{100}$，无特定含义
+    - $\text{Eddington}$ 数：约 $1.57 \times 10^{79}$，即可观测宇宙中的质子数
+    - $\text{Googol}$ 数：$10^{100}$，出自 $\text{Kasner}$ 的作品『数学与想象』
     - $\text{Shannon}$ 数：$10^{120}$，国际象棋博弈树复杂度的保守下限
-    - $\text{Bentley}$ 数：${\displaystyle 1 + 10 + \sum_{i=1}^8 E 10\# i}$，来自 $\text{Bowers}$ 的短篇小说
-    - 第二 $\text{Skewes}$ 数：$e^{e^{e^{e^{7.705}}}}$，约为 $E 3\#4$，是满足 ${\displaystyle \pi(x) > \int_0^x \dfrac{\mathrm dt}{\ln t}}$ 的最小自然数 $x$ 的一个上界．其中 $\pi(x)$ 是质数计数函数，表示不大于实数 $x$ 的质数个数
+    - 第二 $\text{Skewes}$ 数：$e \uparrow e \uparrow e \uparrow e \uparrow 7.705 \approx E 3\#4$，是满足 ${\displaystyle \pi(x) > \int_0^x \dfrac{\mathrm dt}{\ln t}}$ 的最小自然数 $x$ 的一个上界．其中 $\pi(x)$ 是质数计数函数，表示不大于实数 $x$ 的质数个数
 
 ## 2.2 递归函数
 ### 2.2.1 原始递归函数
@@ -56,7 +55,8 @@
     \end{aligned}
     $$
 
-    $\text{Knuth}$ 箭头使用右结合的方式计算
+    1. $\text{Knuth}$ 箭头使用右结合的方式计算
+    2. 定义 $\text{Tritri} = 3 \uparrow^4 2 = 3 \uparrow \uparrow \uparrow 3 = 3 \uparrow \uparrow 7625597484987$
 
 3. 超运算：定义超$-n$ 运算 $H_n(a, b)$ 如下
 
