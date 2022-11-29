@@ -199,7 +199,7 @@
         X_1 \times X_2 \times \cdots \times X_n = \left\{(x_1, x_2, \cdots, x_n) \mid x_1 \in X_1 \wedge x_2 \in X_2 \wedge \cdots \wedge x_n \in X_n\right\}
         $$
 
-        特别地，定义 $X^n$ 为 $n$ 个 $X$ 的 $\text{Descartes}$ 积
+        特别地，定义 $X^n = \small \underbrace{\normalsize X \times X \times \cdots \times X}_{\normalsize n} \normalsize$
 
 3. 指标系统的 $\text{Descartes}$ 积
     1. 投射与自然投射
@@ -417,7 +417,7 @@
                 \end{aligned}\right.
                 $$
 
-            2. 多阶乘：定义 $n$ 个 $!$ 叠加的阶乘 $n!^{(p)}$ 如下
+            2. 多阶乘：定义 $n!^{(p)} = n \small \underbrace{\normalsize !!\cdots!}_{\normalsize n} \normalsize$ 如下
 
                 $$
                 n!^{(p)} = \prod_{i=0}^{\left[\frac{n}{p}\right] - 1} (n - ip)

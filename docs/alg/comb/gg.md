@@ -33,7 +33,7 @@
 
 ## 2.2 递归函数
 ### 2.2.1 原始递归函数
-1. 超 $\text{E}$ 计数：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
+1. 超 $\text{E}$ 表示：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
 
     $$
     \begin{aligned}
@@ -45,7 +45,7 @@
 
     称 $b$ 为基数．基数为 $10$ 时通常可被省略，例如 $\text{Googolplex}$ 数可表示为 $E 100\#2$
 
-2. $\text{Knuth}$ 箭头：设 $x, y \in \mathbf N$，定义 $x \uparrow^n y$（即 $n$ 个 $\uparrow$ 叠加）如下
+2. $\text{Knuth}$ 箭头：设 $x, y \in \mathbf N$，定义 $x \uparrow^n y = x \ \small \underbrace{\normalsize \uparrow \uparrow \cdots \uparrow}_{\normalsize n} \normalsize \ y$如下
 
     $$
     \begin{aligned}
@@ -55,8 +55,19 @@
     \end{aligned}
     $$
 
-    1. $\text{Knuth}$ 箭头使用右结合的方式计算
-    2. 定义 $\text{Tritri} = 3 \uparrow^4 2 = 3 \uparrow \uparrow \uparrow 3 = 3 \uparrow \uparrow 7625597484987$
+    $\text{Knuth}$ 箭头使用右结合的方式计算
+
+    - 定义 $\text{Tritri}$ 数为 $3 \uparrow^4 2 = 3 \uparrow \uparrow \uparrow 3 = 3 \uparrow \uparrow 7625597484987$
+    - 定义 $g_k(n)$ 如下
+
+        $$
+        \begin{aligned}
+        g_0(n) & = n \\
+        g_k(n) & = 3 \uparrow^{g_{k-1}(n)} 3
+        \end{aligned}
+        $$
+
+        并定义 $\text{Graham}$ 数为 $g_{64}(4)$
 
 3. 超运算：定义超$-n$ 运算 $H_n(a, b)$ 如下
 
@@ -75,6 +86,29 @@
     3. 超$-n$ 运算：$H_n(a, b) = a \uparrow^{n-2} b \ (n > 1)$，其中 $n = 2, 3, 4$ 时分别称作乘法运算、幂运算、超幂运算
 
 ### 2.2.2 多重递归函数
+1. $\text{Moser}$ 数：定义 $m(k, n) \ (k \geqslant 3)$ 如下
+
+    $$
+    \begin{aligned}
+    m(3, n) & = n^n \\
+    m(k, n) & = \small \underbrace{\normalsize m(k-1, m(k-1, \cdots m(k-1, n) \cdots))}_{\normalsize n} \normalsize
+    \end{aligned}
+    $$
+
+    并定义 $\text{Moser} = m(m(5, 2), 2)$
+
+2. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
+
+    $$
+    \begin{aligned}
+    a \to b & = a \uparrow b \\
+    X \to 1 & = X \\
+    X \to 1 \to a & = X \\
+    X \to (a + 1) \to (b + 1) & = X \to (X \to a \to (b + 1)) \to b
+    \end{aligned}
+    $$
+
+    其中条件 $a \to b = a \uparrow b$ 与 $a \to b \to c = a\uparrow^c b$ 等价
 
 ## 2.3 序数与集合论
 

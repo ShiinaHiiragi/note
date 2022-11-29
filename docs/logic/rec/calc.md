@@ -183,6 +183,7 @@
 
         1. 关于 $\text{Turing}$ 机的谓词是原始递归的：「$e$ 是一个 $\text{Turing}$ 机程序的编码」「$\text{Turing}$ 机 $e$ 中包含四元组 $s$」「状态 $q$ 是 $\text{Turing}$ 机 $e$ 的停机状态」与「$c$ 是一个格局的编码」
         2. 定义 $\text{Kleene}$ 谓词 $T(e, x, z)$ 为 $z$ 是程序 $e$ 对输入 $x$ 的计算过程的编码，则 $T$ 是原始递归的
+
 2. $\text{Church}-\text{Turing}$ 论题：直观可计算函数类就是部分递归函数构成的类，也就是 $\text{Turing}$ 可计算函数类
 
 ## 1.2 递归定理
