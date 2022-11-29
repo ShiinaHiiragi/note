@@ -132,19 +132,19 @@
     1. 对任意自然数 $n \geqslant 2$，定义 $S_{n}$ 如下
 
         $$
-        \begin{array}{ll}
-        S_{n}(m)=m, & m < n, \\
-        S_{n}(m)=k \cdot(n+1)^{S_{n}(t)}+S_{n}(b), & m \geqslant n \wedge m=k \cdot n^{t}+b, k<n, b<n^{t}, t \geqslant 1
-        \end{array}
+        \begin{aligned}
+        & S_{n}(m)=m, & m < n, \\
+        & S_{n}(m)=k \cdot(n+1)^{S_{n}(t)}+S_{n}(b), & m \geqslant n \wedge m=k \cdot n^{t}+b, k<n, b<n^{t}, t \geqslant 1
+        \end{aligned}
         $$
 
     2. 对任意自然数 $n \geqslant 2$，定义 $f_{n}$ 如下
 
         $$
-        \begin{array}{ll}
-        f_{n}(k)=k, & k<n \\
-        f_{n}(m)=\omega^{f_{n}(t)} \cdot k+f_{n}(b), & m \geqslant n \wedge m=k \cdot n^{t}+b,k<n, b<n^{t}, t \geqslant 1
-        \end{array}
+        \begin{aligned}
+        & f_{n}(k)=k, & k<n \\
+        & f_{n}(m)=\omega^{f_{n}(t)} \cdot k+f_{n}(b), & m \geqslant n \wedge m=k \cdot n^{t}+b,k<n, b<n^{t}, t \geqslant 1
+        \end{aligned}
         $$
 
     3. 对任意自然数 $n \geqslant 1$ 定义 $g_{n}$ 如下
@@ -350,23 +350,30 @@
     3. 令 $\kappa, \lambda$ 为无穷基数，同时假设 $\textbf{GCH}$ 成立，则
 
         $$
-        \kappa^{\lambda}=\left\{\begin{array}{ll}
-        \lambda^{+}, & \kappa \leqslant \lambda ; \\
-        \kappa^{+}, & \operatorname{cf}(\kappa) \leqslant \lambda<\kappa ; \\
-        \kappa, & \lambda<\operatorname{cf}(\kappa) 。
-        \end{array}\right.
+        \kappa^{\lambda}=\left\{\begin{aligned}
+        & \lambda^{+}, & \kappa \leqslant \lambda ; \\
+        & \kappa^{+}, & \operatorname{cf}(\kappa) \leqslant \lambda<\kappa ; \\
+        & \kappa, & \lambda<\operatorname{cf}(\kappa)
+        \end{aligned}\right.
         $$
 
     4. 令 $\kappa, \lambda$ 为无穷基数，同时假设 $\textbf{SCH}$ 成立，则
 
         $$
-        \kappa^{\lambda}= \begin{cases}2^{\lambda}, & \kappa \leqslant 2^{\lambda} ; \\ \kappa^{+}, & \kappa>2^{\lambda} \wedge \operatorname{cf}(\kappa) \leqslant \lambda ; \\ \kappa, & \kappa>2^{\lambda} \wedge \operatorname{cf}(\kappa)>\lambda_{0}\end{cases}
+        \kappa^{\lambda}= \left\{\begin{aligned}
+        & 2^{\lambda}, & \kappa \leqslant 2^{\lambda} \\
+        & \kappa^{+}, & \kappa>2^{\lambda} \wedge \operatorname{cf}(\kappa) \leqslant \lambda \\
+        & \kappa, & \kappa>2^{\lambda} \wedge \operatorname{cf}(\kappa)>\lambda_{0}
+        \end{aligned}\right.
         $$
 
     5. 令 $\kappa$ 为奇异基数，同时假设 $\mathbf{SCH}$ 成立，则
 
         $$
-        2^{\kappa}= \begin{cases}2^{\mu_{0}}, & \textsf{若 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\ \left(2^{<\kappa}\right)^{+}, & \textsf{若连续统函数在 } \kappa \textsf{ 下没有不动点 }\end{cases}
+        2^{\kappa}= \left\{\begin{aligned}
+        & 2^{\mu_{0}}, & \textsf{若 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\
+        & \left(2^{<\kappa}\right)^{+}, & \textsf{若连续统函数在 } \kappa \textsf{ 下没有不动点 }
+        \end{aligned}\right.
         $$
 
 ### 2.2.3 无界闭集
