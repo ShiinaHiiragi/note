@@ -33,19 +33,7 @@
 
 ## 2.2 递归函数
 ### 2.2.1 原始递归函数
-1. 超 $\text{E}$ 表示：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
-
-    $$
-    \begin{aligned}
-    E[b] x & = b^x \\
-    E[b] a_1 \# a_2 \# \cdots \# a_{n-1} \# 1& = E[b] a_1 \# a_2 \# \cdots \# a_{n-1}\\
-    E[b] a_1 \# a_2 \# \cdots \# a_n & = E[b] a_1 \# a_2 \# \cdots \# a_{n-2} (E[b] a_1 \# a_2 \# \cdots \# (a_n - 1)) 
-    \end{aligned}
-    $$
-
-    称 $b$ 为基数．基数为 $10$ 时通常可被省略，例如 $\text{Googolplex}$ 数可表示为 $E 100\#2$
-
-2. $\text{Knuth}$ 箭头：设 $x, y \in \mathbf N$，定义 $x \uparrow^n y = x \ \small \underbrace{\normalsize \uparrow \uparrow \cdots \uparrow}_{\normalsize n} \normalsize \ y$如下
+1. $\text{Knuth}$ 箭头：设 $x, y \in \mathbf N$，定义 $x \uparrow^n y = x \ \small \underbrace{\normalsize \uparrow \uparrow \cdots \uparrow}_{\normalsize n} \normalsize \ y$如下
 
     $$
     \begin{aligned}
@@ -69,7 +57,7 @@
 
         并定义 $\text{Graham}$ 数为 $g_{64}(4)$
 
-3. 超运算：定义超$-n$ 运算 $H_n(a, b)$ 如下
+2. 超运算：定义超$-n$ 运算 $H_n(a, b)$ 如下
 
     $$
     H_n(a, b)= \begin{cases}
@@ -97,7 +85,35 @@
 
     并定义 $\text{Moser} = m(m(5, 2), 2)$
 
-2. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
+2. 超 $\text{E}$ 表示：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
+
+    $$
+    \begin{aligned}
+    E[b] x & = b^x \\
+    E[b] a_1 \# a_2 \# \cdots \# a_{n-1} \# 1& = E[b] a_1 \# a_2 \# \cdots \# a_{n-1}\\
+    E[b] a_1 \# a_2 \# \cdots \# a_n & = E[b] a_1 \# a_2 \# \cdots \# a_{n-2} (E[b] a_1 \# a_2 \# \cdots \# (a_n - 1)) 
+    \end{aligned}
+    $$
+
+    称 $b$ 为基数
+
+    1. 基数为 $10$ 时通常可被省略，例如 $\text{Googolplex}$ 数可表示为 $E 100\#2$
+    2. $a \uparrow ^c b = E[a] \small \underbrace{\normalsize 1 \# 1 \# \cdots \# 1}_{\normalsize c-1} \normalsize \# b$
+
+3. 多变量 $\text{Ackermann}$ 函数：定义 $n$ 元函数 $A(a_1, a_2, \cdots, a_n)$ 如下
+
+    $$
+    \begin{aligned}
+    A(Y, a) &=a+1 \\
+    A(X, b+1,0) &=A(X, b, 1) \\
+    A(X, b+1, a+1) &=A(X, b, A(X, b+1, a)) \\
+    A(X, b+1,0, Y, a) &=A(X, b, a, Y, a)
+    \end{aligned}
+    $$
+
+    其中 $a, b \in \mathbf N$，$X$ 为多于或等于 $0$ 个自然数的简记，$Y$ 为多于或等于 $0$ 个 $0$ 的简记
+
+4. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
 
     $$
     \begin{aligned}
@@ -108,8 +124,22 @@
     \end{aligned}
     $$
 
-    其中条件 $a \to b = a \uparrow b$ 与 $a \to b \to c = a\uparrow^c b$ 等价
+    1. $\text{Conway}$ 链式箭头不是二元运算符，既没有左结合性也没有右结合性
+    2. 当 $\text{Conway}$ 链长度为 $3$ 时，有 $a \to b \to c = a\uparrow^c b$
+    3. 扩张链式表示：递归定义如下
 
-## 2.3 序数与集合论
+        $$
+        \begin{aligned}
+        a \to_1 b & = a \uparrow b \\
+        a \to_c b & = \small \underbrace{\normalsize a \to_{c-1} a \to_{c-1} \cdots \to_{c-1} a}_{\normalsize b} \normalsize \ (c > 1) \\
+        X \to_c 1 & = X \\
+        X \to_c 1 \to_c a & = X \\
+        X \to_c (a + 1) \to_c (b + 1) & = X \to_c (X \to_c a \to_c (b + 1)) \to_c b
+        \end{aligned}
+        $$
+
+5. $\text{Fish}$ 数
+
+## 2.3 序数与集合
 
 ## 2.4 不可计算函数
