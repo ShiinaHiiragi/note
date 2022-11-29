@@ -199,7 +199,7 @@
         X_1 \times X_2 \times \cdots \times X_n = \left\{(x_1, x_2, \cdots, x_n) \mid x_1 \in X_1 \wedge x_2 \in X_2 \wedge \cdots \wedge x_n \in X_n\right\}
         $$
 
-        特别地，定义 $X^n = \underbrace{X \times X \times \cdots \times X}_{n}$
+        特别地，定义 $X^n$ 为 $n$ 个 $X$ 的 $\text{Descartes}$ 积
 
 3. 指标系统的 $\text{Descartes}$ 积
     1. 投射与自然投射
@@ -301,23 +301,23 @@
 
     分别记三种 $R'$ 为 $r(R), s(R)$ 与 $t(R)$
 
-    1. 设 $R \subseteq X^2$ 为二元关系
+    4. 设 $R \subseteq X^2$ 为二元关系
         1. $R$ 是自反的当且仅当 $r(R) = R$
         2. $R$ 是对称的当且仅当 $s(R) = R$
         3. $R$ 是传递的当且仅当 $t(R) = R$
-    2. 设 $R_1, R_2 \subseteq X^2$ 且 $R_1 \subseteq R_2$，则
+    5. 设 $R_1, R_2 \subseteq X^2$ 且 $R_1 \subseteq R_2$，则
         1. $r(R_1) \subseteq r(R_2)$
         2. $s(R_1) \subseteq s(R_2)$
         3. $t(R_1) \subseteq t(R_2)$
-    3. 设 $R \subseteq X^2$ 为二元关系
+    6. 设 $R \subseteq X^2$ 为二元关系
         1. $R$ 是自反的，则 $s(R)$ 与 $t(R)$ 都是自反的
         2. $R$ 是对称的，则 $r(R)$ 与 $t(R)$ 都是对称的
         3. $R$ 是传递的，则 $r(R)$ 是传递的
-    4. 设 $R \subseteq X^2$ 为二元关系
+    7. 设 $R \subseteq X^2$ 为二元关系
         1. $r(s(R)) = s(r(R))$
         2. $r(t(R)) = t(r(R))$
         3. $s(t(R)) \subseteq t(s(R))$
-    5. 求闭包的一般表达式：设 $R \subseteq X^2$ 为二元关系
+    8. 求闭包的一般表达式：设 $R \subseteq X^2$ 为二元关系
         1. 设 $I_X$ 为集合 $X$ 上的恒等关系，则 $r(R) = R \cup I_X$
         2. $s(R) = R \cup R^{-1}$
         3. $t(R) = {\displaystyle \bigcup_{n \in \mathbf Z_+} R^n}$，进一步当 $|X| = n \in \mathbf Z_+$ 时，则 $t(R) = {\displaystyle \bigcup_{i=1}^n R^i}$
