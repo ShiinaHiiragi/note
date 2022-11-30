@@ -318,8 +318,8 @@
         1. 任何奇异的基数都是极限基数
         2. 对任意无穷基数，总存在比它大的奇异基数
         3. 一个极限基数是正则基数的必要条件是 $\alpha=\aleph_{\alpha}$
-    4. $\text{Konig}$ 定理：如果对任意 $i \in I$ 都有 $\kappa_{i}<\lambda_{i}$，则 ${\displaystyle \bigoplus_{i \in I} \kappa_{i}<\bigotimes_{i \in I} \lambda_{i}}$
-        1. $\text{Konig}$ 引理：对任何无穷基数 $\kappa$，都有 $\kappa^{\mathrm{cf}(\kappa)}>\kappa$
+    4. $\text{K}\ddot{\mathrm o}\text{nig}$ 定理：如果对任意 $i \in I$ 都有 $\kappa_{i}<\lambda_{i}$，则 ${\displaystyle \bigoplus_{i \in I} \kappa_{i}<\bigotimes_{i \in I} \lambda_{i}}$
+        1. $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：对任何无穷基数 $\kappa$，都有 $\kappa^{\mathrm{cf}(\kappa)}>\kappa$
         2. 对任意序数 $\alpha, \beta$ 都有 $\operatorname{cf}(2^{\aleph_{\alpha}})>\aleph_{\alpha}$ 且 $\operatorname{cf}(\aleph_{\alpha}^{\aleph_{\beta}})>\aleph_{\beta}$
     5. 设 $\kappa$ 是无穷基数，则以下命题等价
         1. $\kappa$ 是正则基数

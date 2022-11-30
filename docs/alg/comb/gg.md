@@ -26,8 +26,9 @@
 3. 经典大数实例
     - 无量大：$10^{68}$，古印度计数单位中的最大数量
     - 不可说不可说转：$10^{7 \times 2^{122}}$，出现在『华严经』中的最大数
-    - $\text{Eddington}$ 数：约 $1.57 \times 10^{79}$，即可观测宇宙中的质子数
     - $\text{Googol}$ 数：$10^{100}$，出自 $\text{Kasner}$ 的作品『数学与想象』
+    - $\text{Eddington}$ 数：约 $1.57 \times 10^{79}$，即可观测宇宙中的质子数
+    - $\text{Poincar}\acute{\mathrm e}$ 回归时间：约 $10 \uparrow 10 \uparrow 10 \uparrow 10 \uparrow 2.08$，即可观测宇宙的始态复现时间
     - $\text{Shannon}$ 数：$10^{120}$，国际象棋博弈树复杂度的保守下限
     - 第二 $\text{Skewes}$ 数：$e \uparrow e \uparrow e \uparrow e \uparrow 7.705 \approx E 3\#4$，是满足 ${\displaystyle \pi(x) > \int_0^x \dfrac{\mathrm dt}{\ln t}}$ 的最小自然数 $x$ 的一个上界．其中 $\pi(x)$ 是质数计数函数，表示不大于实数 $x$ 的质数个数
 
