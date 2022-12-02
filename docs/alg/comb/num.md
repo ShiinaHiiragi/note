@@ -88,7 +88,7 @@
         则 $(a, b) = r_n$，这一组带余除法称为辗转相除法
 
         !!! note "辗转相除法"
-            1. 带余除法：若 $a, b \in \mathbf Z$ 且 $b > 0$，则存在两个整数 $q, r$ 使得 $a = qb + r \ (0 \leqslant r < b)$ 成立，且 $q, r$ 唯一
+            1. 带余除法：若 $a, b \in \mathbf Z$ 且 $b > 0$，则存在两个整数 $q, r$ 使得 $a = qb + r \ (0 \leqslant r < b)$ 成立，且 $q, r$ 唯一．称 $r$ 为 $a$ 除以 $b$ 的余数
             2. 记
 
                 $$
@@ -104,7 +104,7 @@
                 - 若 $a, b$ 是非零整数，则 $(a, b) = 1 \leftrightarrow \exists x, y\in \mathbf Z: ax + by = 1$
 
     3. 设 $a, b$ 是任意两个不全为零的整数
-        1. 若 $m$ 是任意一个正整数，则 $(am, bm) = (a, b)m$
+        1. 若 $m$ 是任意一个正整数，则 $(ma, mb) = m(a, b)$
         2. 若 $\delta$ 是 $a, b$ 的任意一个公因数，则 $\left(\dfrac{a}{\delta}, \dfrac{b}{\delta}\right) = \dfrac{(a, b)}{|\delta|}$
 
 3. 最小公倍数：整数 $a_1, a_2, \cdots, a_n$ 的公共倍数成为 $a_1, a_2, \cdots, a_n$ 的公倍数，$a_1, a_2, \cdots, a_n$ 的正公倍数的最小一个称为 $a_1, a_2, \cdots, a_n$ 的最小公倍数，记作 $[a_1, a_2, \cdots, a_n]$
