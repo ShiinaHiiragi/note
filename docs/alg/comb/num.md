@@ -138,10 +138,10 @@
     2. 同余的乘除运算
         1. 若 $a \equiv b \pmod{m}$ 且 $c$ 为整数，则 $ac \equiv bc \pmod{m}$
         2. 若 $a \equiv b \pmod{m}$ 且 $c$ 为正整数，则 $ac \equiv bc \pmod{mc}$ 
-        3. 若 $a \equiv b \pmod{m}, c \equiv d \pmod{m}$，则 $ac \equiv bc \pmod{m}$，特别地，若 $a \equiv b \pmod{m}$ 且 $n$ 为正整数，则 $a^n \equiv b^n \pmod{m}$
+        3. 若 $a \equiv b \pmod{m}, c \equiv d \pmod{m}$，则 $ac \equiv bd \pmod{m}$，特别地，若 $a \equiv b \pmod{m}$ 且 $n$ 为正整数，则 $a^n \equiv b^n \pmod{m}$
         4. 若 $a_i, b_i \ (0 \leqslant i \leqslant n)$ 与 $x, y$ 均为整数，且 $x \equiv y \pmod{m}, a_i \equiv b_i \pmod{m} \ (0 \leqslant i \leqslant n)$，则 ${\displaystyle \sum_{i = 0}^n a_ix^i \equiv \sum_{i = 0}^n b_iy^i \pmod{m}}$
         5. 若 $(c, m) = 1$，则 $a \equiv b \pmod{m} \leftrightarrow ac \equiv bc \pmod{m}$
-        6. 若 $a \equiv b \pmod{m} \ (1 \leqslant i \leqslant k)$，则 $a \equiv b \pmod{d}$
+        6. 若 $a \equiv b \pmod{m}$，且 $d$ 为 $m$ 的正因子，则 $a \equiv b \pmod{d}$
     3. 同余与公约数、公倍数的关系
         1. 若 $a \equiv b \pmod{m}$，则 $(a, m) = (b, m)$
         2. 若 $a \equiv b \pmod{m_i} \ (1 \leqslant i \leqslant k)$，则 $a \equiv b \pmod{[m_1, m_2, \cdots, m_k]}$
