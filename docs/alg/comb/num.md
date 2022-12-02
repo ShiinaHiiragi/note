@@ -290,19 +290,19 @@
     3. 设 $m > 1, (g, m) = 1$ 且 $\varphi(m)$ 的所有不同质因数是 $p_1, p_2, \cdots, p_k$．则 $g$ 是模 $m$ 的原根当且仅当 $g^{\frac{\varphi(m)}{p_i}} \not \equiv 1 \pmod{m} \ (1 \leqslant i \leqslant k)$
 
 ### 1.5.2 指标与剩余
-1. 指标：设 $a \in \mathbf Z$，若对模 $m$ 的一个原根 $g$ 有一整数 $r$ 存在使得 $a \equiv g^r \pmod{m} \ (r \geqslant 0)$ 成立，则 $r$ 称作以 $g$ 为底的 $a$ 对模 $m$ 的一个指标，记作 $r = \mathrm{ind}_g a$，简记作 $\mathrm{ind} a$
+1. 指标：设 $a \in \mathbf Z$，若对模 $m$ 的一个原根 $g$ 有一整数 $r$ 存在使得 $a \equiv g^r \pmod{m} \ (r \geqslant 0)$ 成立，则 $r$ 称作以 $g$ 为底的 $a$ 对模 $m$ 的一个指标，记作 $r = \operatorname{ind}_g a$，简记作 $\operatorname{ind} a$
     1. 指标的性质
-        1. $\mathrm{ind}_g g = 1$
-        2. $\mathrm{ind}_g 1 = 0$
-        3. $\mathrm{ind}_g (-1) = \dfrac{\varphi(m)}{2}$
+        1. $\operatorname{ind}_g g = 1$
+        2. $\operatorname{ind}_g 1 = 0$
+        3. $\operatorname{ind}_g (-1) = \dfrac{\varphi(m)}{2}$
     2. 若 $a$ 是一个与 $m$ 互质的整数，$g$ 是模 $m$ 的一个原根，则对模 $m$ 而言，$a$ 有一个以 $g$ 为底的指标 $r' \ (0 \leqslant r' < c)$ 且以 $g$ 为底的 $a$ 对模 $m$ 的一切指标是满足 $r \equiv r' \pmod{c} \ (r \geqslant 0)$ 的一切整数
     3. 设 $g$ 是模 $m$ 的一个原根，$r \in \mathbf N$，则以 $g$ 为底，对模 $m$ 有同一指标 $r$ 的一切整数是模 $m$ 的一个与模 $m$ 互质的同余类
 2. 指标法则：若 $a_1, a_2, \cdots, a_n$ 是与 $m$ 与之的 $n$ 个整数
-    1. 乘积法则：$\mathrm{ind} (a_1, a_2, \cdots, a_n) \equiv \mathrm{ind} a_1, \mathrm{ind} a_2, \cdots, \mathrm{ind} a_n \pmod{c}$
-    2. 幂法则：$\mathrm{ind}a^n \equiv n \mathrm{ind}a \pmod{c}$
+    1. 乘积法则：$\operatorname{ind} (a_1, a_2, \cdots, a_n) \equiv \operatorname{ind} a_1, \operatorname{ind} a_2, \cdots, \operatorname{ind} a_n \pmod{c}$
+    2. 幂法则：$\operatorname{ind}a^n \equiv n \operatorname{ind}a \pmod{c}$
 3. $n$ 次剩余：设 $m \in \mathbf Z$，若同余式 $x^n \equiv a \pmod{m}, (a, m) = 1$ 有解，则称 $a$ 是模 $m$ 的一个 $n$ 次剩余．若无解，则称 $a$ 是模 $m$ 的一个 $n$ 次非剩余
     1. 若 $(n, c) = d, (a, m) = 1$
-        1. 同余式 $x^n \equiv a \pmod{m}$ 有解当且仅当 $d \mid \mathrm{ind} a$，且在有解的情况下解数为 $d$
+        1. 同余式 $x^n \equiv a \pmod{m}$ 有解当且仅当 $d \mid \operatorname{ind} a$，且在有解的情况下解数为 $d$
         2. 在模 $m$ 的一个简化同余系中，$n$ 次剩余的个数为 $\dfrac cd$
     2. $a$ 是模 $m$ 的 $n$ 次剩余当且仅当 $a^{\frac cd} \equiv 1 \pmod{m}, d = (n, c)$
 
