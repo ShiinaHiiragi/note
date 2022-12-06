@@ -323,7 +323,7 @@
         3. $t(R) = {\displaystyle \bigcup_{n \in \mathbf Z_+} R^n}$，进一步当 $|X| = n \in \mathbf Z_+$ 时，则 $t(R) = {\displaystyle \bigcup_{i=1}^n R^i}$
 
 ### 1.2.2 映射
-1. 二元关系 $f$ 若有 $(x, y) \in f \wedge (x, z) \in f \to y = x$，则称 $f$ 是一个映射，其中 $y$ 称作 $f$ 在 $x$ 处的值，记作 $f(x) = y$ 或 $f: x \mapsto y$．如果 $\mathrm{dom}(f) = X, \mathrm{ran}(f) \subseteq Y$，则称 $f$ 是 $X$ 到 $Y$ 的映射，也称作算子，记作 $f: X \to Y$
+1. 二元关系 $f$ 若有 $(x, y) \in f \wedge (x, z) \in f \to y = x$，则称 $f$ 是一个映射，其中 $y$ 称作 $f$ 在 $x$ 处的值，记作 $f(x) = y$ 或 $f: x \mapsto y$．如果 $\mathrm{dom}(f) = X, \mathrm{ran}(f) \subseteq Y$，则称 $f$ 是 $X$ 到 $Y$ 的映射，也称作算子，记作 $f: X \to Y$ 或 $x \mapsto f(x)$
     1. 映射的等同：令 $f, g$ 为映射，$f = g$ 当且仅当 $\mathrm{dom}(f) = \mathrm{dom}(g)$ 且对于所有 $x \in \mathrm{dom}(f)$ 都有 $f(x) = g(x)$
     2. 特殊映射：设 $f: X \to Y$ 是一个映射
         1. 函数：当 $X, Y$ 均为数集时，称 $f$ 为函数
@@ -338,7 +338,7 @@
         2. 特征映射：对任意集合 $X$，定义特征映射（或示性映射）$f_X(x) = \left\{\begin{aligned} & 1, & x \in X \\ & 0, & x \notin X \end{aligned}\right.$
         3. 部分映射：在定义域的某些点上没有定义的映射，与之相对的是全映射
 2. 逆映射与复合映射
-    1. 一个映射是可逆的当且仅当它是单射，如果 $f$ 是可逆的，则 $f^{-1}$ 也是可逆的且 $(f^{-1})^{-1} = f$
+    1. 一个映射是可逆的当且仅当它是单射，如果 $f$ 是可逆的，则 $f^{-1}$ 也是可逆的且 $(f^{-1})^{-1} = f$．当 $f$ 为函数时，称 $f^{-1}$ 为 $f$ 的反函数
     2. 令 $f, g$ 为映射，则复合 $h = g \circ f$ 也是映射，且 $h$ 的定义域为 $\mathrm{dom}(h) = \mathrm{dom}(f) \cap f^{-1}[\mathrm{dom}(g)]$．且对于所有 $x \in \mathrm{dom}(h)$ 均有 $h(x) = g(f(x))$
 3. 限制与扩张：对任意映射 $f$ 与集合 $A$，$g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 是一个映射，称作 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张
 4. 相容性：对于映射 $f, g$，如果对所有的 $x \in \mathrm{dom}(f) \cap \mathrm{dom}(g)$ 都有 $f(x) = g(x)$，则称映射 $f, g$ 是相容的
