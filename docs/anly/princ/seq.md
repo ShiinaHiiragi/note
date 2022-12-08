@@ -137,10 +137,10 @@
         3. 若 $\left\{x_{n}\right\}$ 为有界数列，$\left\{y_{n}\right\}$ 为无穷小量，则它们的积 $\left\{x_{n} y_{n}\right\}$ 是无穷小量
         4. 若 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛且 ${\displaystyle \lim _{n \rightarrow \infty} y_{n} \neq 0}$，则 $\left\{\dfrac{x_{n}}{y_{n}}\right\}$ 也收敛，且 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{x_{n}}{y_{n}}=\dfrac{{\displaystyle \lim _{n \rightarrow \infty} x_{n}}}{{\displaystyle \lim _{n \rightarrow \infty} y_{n}}}}$
 2. 无穷大量：设 $\left\{x_{n}\right\}$ 是一个数列，如果对任意给定的 $G>0$，总存在正整数 $N$，当 $n>N$ 时有 $\left|x_{n}\right|>G$，则称 $\left\{x_{n}\right\}$ 是一个无穷大量．记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=\infty}$ 或 $x_{n} \rightarrow \infty \ (n \rightarrow \infty)$
-    1. 无穷大量和无穷小量的关系：若 $\left\{x_{n}\right\}$ 为无穷大量，则它的倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷小量；若 $\left\{x_{n}\right\}$ 为无穷小量且 $x_{n} \neq 0 \ (n=1,2,3, \cdots)$，则它的倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷大量
+    1. 无穷大量和无穷小量的关系：若 $\left\{x_{n}\right\}$ 为无穷大量，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷小量；若 $\left\{x_{n}\right\}$ 为无穷小量且 $x_{n} \neq 0 \ (n=1,2,3, \cdots)$，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷大量
     2. 正无穷大与负无穷大：对任意给定的 $G>0$，总存在 $N$，当 $n>N$ 时，若有 $x_{n}>$ $G$，则称 $\left\{x_{n}\right\}$ 是正无穷大量；若有 $-x_{n}>$ $G$，则称 $\left\{x_{n}\right\}$ 是负无穷大量
     3. 无穷大量的运算
-        1. 设 $\left\{x_{n}\right\}$ 与 $\left\{y_{n}\right\}$ 都是正（负）无穷大量, 那么它们的和 $\left\{x_{n}+y_{n}\right\}$ 也是正（负）无穷大量
+        1. 设 $\left\{x_{n}\right\}$ 与 $\left\{y_{n}\right\}$ 都是正（负）无穷大量，则其和 $\left\{x_{n}+y_{n}\right\}$ 也是正（负）无穷大量
         2. 设 $\left\{x_{n}\right\}$ 是无穷大量，而 $\left\{y_{n}\right\}$ 是有界数列，则其和 $\left\{x_{n}+y_{n}\right\}$ 是无穷大量
         3. 设 $\left\{x_{n}\right\}$ 是无穷大量，数列 $\left\{y_{n}\right\}$ 具有以下特性：存在某个 $N$，当 $n>N$ 时有 $\left|y_{n}\right| \geqslant \delta>0$，其中 $\delta$ 是一个确定的数，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
         4. 设 $\left\{x_{n}\right\}$ 是无穷大量，$\left\{y_{n}\right\}$ 收敛于 $a \neq 0$，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
