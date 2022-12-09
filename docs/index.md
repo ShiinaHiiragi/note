@@ -116,6 +116,26 @@ const refList = [
         page: [1, 697]
     },
     {
+        author: ["[英]Julian Baggini", "[美]Peter S. Fosl"],
+        title: "好用的哲学",
+        type: "M",
+        trans: ["陶涛"],
+        press: "中国人民大学出版社",
+        locate: "北京",
+        year: 2016,
+        page: [1, 273]
+    },
+    {
+        author: ["[美]Robert C. Solomon"],
+        title: "大问题：简明哲学导论",
+        type: "M",
+        trans: ["张卜天"],
+        press: "清华大学出版社",
+        locate: "北京",
+        year: 2018,
+        page: [413, 435]
+    },
+    {
         author: ["赵毅衡"],
         title: "符号学：原理与推演",
         type: "M",
