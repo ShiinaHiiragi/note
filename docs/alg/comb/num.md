@@ -166,7 +166,7 @@
 2. $\text{Fermat}$ 定理：设 $p$ 是质数，则对于任意整数 $a$ 有 $a^p \equiv a \pmod{p}$
 
 ## 1.4 同余方程
-- 同余方程：设 $f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ 是整系数多项式，称 $f(x) \equiv 0 \pmod{m}$ 是关于未知数 $x$ 的模 $m$ 同余方程，
+- 同余方程：设 $f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ 是整系数多项式，称 $f(x) \equiv 0 \pmod{m}$ 是关于未知数 $x$ 的模 $m$ 同余方程
     1. 若 $a_n \not \equiv 0 \pmod{m}$，则称 $f(x) \equiv 0 \pmod{m}$ 为 $n$ 次同余方程
     2. 若 $a$ 是使 $f(a) \equiv 0 \pmod{m}$ 成立的一个整数，则 $x \equiv a \pmod{m}$ 称为 $f(x) \equiv 0 \pmod{m}$ 的一个解
 
