@@ -73,27 +73,28 @@
         3. $(a, b) = (b, a)$
         4. 若 $p$ 是质数，$a$ 是整数，则 $(p, a) = 1$ 或 $p \mid a$
         5. 若 $a = pb + r$，则 $(a, b) = (b, r)$
-    2. 若 $a, b \ (b > 0)$ 是任意两个整数，且有
-
-        $$
-        \begin{aligned}
-        & a = bq_1 + r & (0 < r_1 < b) \\
-        & b = r_1q_2 + r_2 & (0 < r_2 < r_1) \\
-        & \cdots \\
-        & r_{n-2} = r_{n-1}q_n + r_n & (0 < r_n < r_{n-1}) \\
-        & r_{n-1} = r_nq_{n+1} + r_{n+1} & (r_{n+1} = 0)
-        \end{aligned}
-        $$
-
-        则 $(a, b) = r_n$，这一组带余除法称为辗转相除法
+    2. 带余除法：若 $a, b \in \mathbf Z$ 且 $b > 0$，则存在整数 $q, r$ 使得 $a = qb + r \ (0 \leqslant r < b)$ 且 $q, r$ 唯一．称 $r$ 为 $a$ 除以 $b$ 的余数
 
         !!! note "辗转相除法"
-            1. 带余除法：若 $a, b \in \mathbf Z$ 且 $b > 0$，则存在两个整数 $q, r$ 使得 $a = qb + r \ (0 \leqslant r < b)$ 成立，且 $q, r$ 唯一．称 $r$ 为 $a$ 除以 $b$ 的余数
-            2. 记
+            1. 若 $a, b \ (b > 0)$ 是任意两个整数，且有
 
                 $$
                 \begin{aligned}
-                & P_0 = 1, P_1 = 1, P_k = q_kP_{k-1} + P_{k-2} \ (k \geqslant 2) \\
+                & a = bq_1 + r & (0 < r_1 < b) \\
+                & b = r_1q_2 + r_2 & (0 < r_2 < r_1) \\
+                & \cdots \\
+                & r_{n-2} = r_{n-1}q_n + r_n & (0 < r_n < r_{n-1}) \\
+                & r_{n-1} = r_nq_{n+1} + r_{n+1} & (r_{n+1} = 0)
+                \end{aligned}
+                $$
+
+                则 $(a, b) = r_n$，这一组带余除法称为辗转相除法
+
+            2. $\text{B}\acute{\mathrm e}\text{zout}$ 定理：记
+
+                $$
+                \begin{aligned}
+                & P_0 = 1, P_1 = q_1, P_k = q_kP_{k-1} + P_{k-2} \ (k \geqslant 2) \\
                 & Q_0 = 0, Q_1 = 1, Q_k = q_kQ_{k-1} + Q_{k-2} \ (k \geqslant 2)
                 \end{aligned}
                 $$

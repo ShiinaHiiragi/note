@@ -591,7 +591,7 @@
 2. 复数集合的相关概念
     1. 复数集合上没有定义序关系
     2. 设 $z = (x, y) \in \mathbf C$，则称 $x$ 为 $z$ 的实部，记作 $\text{Re}(z)$；$y$ 为$z$ 的虚部，记作 $\text{Im}(z)$
-    3. 设 $i = (0^{\mathbf R}, 1^{\mathbf R}) \in \mathbf C$，记 $(x, y) = x^{\mathbf C} +^{\mathbf C} y^{\mathbf C} \cdot^{\mathbf C} i$，称之为复数 $(x, y)$ 的代数形式
+    3. 设 $\mathrm i = (0^{\mathbf R}, 1^{\mathbf R}) \in \mathbf C$，记 $(x, y) = x^{\mathbf C} +^{\mathbf C} y^{\mathbf C} \cdot^{\mathbf C} \mathrm i$，称之为复数 $(x, y)$ 的代数形式
 3. 复数集合的运算
     1. 复数集合上的加法定义为 $(x_1, y_1) +^{\mathbf C} (x_2, y_2) = (x_1 +^{\mathbf R} x_2, y_1 +^{\mathbf R} y_2)$
     2. 复数集合上的乘法定义为 $(x_1, y_1) \cdot^{\mathbf C} (x_2, y_2) = (x_1 \cdot^{\mathbf R} x_2 -^{\mathbf R} y_1 \cdot^{\mathbf R} y_2, x_1 \cdot^{\mathbf R} y_2 +^{\mathbf R} y_1 \cdot^{\mathbf R} x_2)$
@@ -602,9 +602,9 @@
     1. $f$ 是单射且 $f(0^{\mathbf R}) = 0^{\mathbf C}$
     2. 对任意 $x, y \in \mathbf R$ 有 $x \leqslant^{\mathbf R} y$ 当且仅当 $f(x) \leqslant^{\mathbf C} f(y)$
     3. 对任意 $x, y \in \mathbf R$ 有 $f(x +^{\mathbf R} y) = f(x) +^{\mathbf C} f(y)$ 且 $f(x \cdot^{\mathbf R} y) = f(x) \cdot^{\mathbf C} f(y)$
-6. 共轭复数：若 $x, y \in \mathbf R, w \in \mathbf C, z = x^{\mathbf C} +^{\mathbf C} y^{\mathbf C} \cdot^{\mathbf C} i \in \mathbf C$，则定义 $\overline z = x^{\mathbf C} -^{\mathbf C} y^{\mathbf C} \cdot^{\mathbf C} i$ 为 $z$ 的共轭复数
+6. 共轭复数：若 $x, y \in \mathbf R, w \in \mathbf C, z = x^{\mathbf C} +^{\mathbf C} y^{\mathbf C} \cdot^{\mathbf C} \mathrm i \in \mathbf C$，则定义 $\overline z = x^{\mathbf C} -^{\mathbf C} y^{\mathbf C} \cdot^{\mathbf C} \mathrm i$ 为 $z$ 的共轭复数
     1. $\overline{z +^{\mathbf C} w} = \overline z +^{\mathbf C} \overline w, \overline{z \cdot^{\mathbf C} w} = \overline z \cdot^{\mathbf C} \overline w$
-    2. 设 $z +^{\mathbf C} \overline z = (2^{\mathbf R} \cdot^{\mathbf R} \text{Re}(z))^{\mathbf C}, z -^{\mathbf C} \overline z = 2^{\mathbf C} \cdot^{\mathbf C} i \cdot^{\mathbf C} \text{Im}(z)^{\mathbf C}$
+    2. 设 $z +^{\mathbf C} \overline z = (2^{\mathbf R} \cdot^{\mathbf R} \text{Re}(z))^{\mathbf C}, z -^{\mathbf C} \overline z = 2^{\mathbf C} \cdot^{\mathbf C} \mathrm i \cdot^{\mathbf C} \text{Im}(z)^{\mathbf C}$
     3. 对于任意 $z \in \mathbf C$，存在 $x \in \mathbf R$ 使得 $z \cdot^{\mathbf C} \overline z = x^{\mathbf C}$ 且 $x \geqslant^{\mathbf R} 0^{\mathbf R}$
 7. 模：设 $z, w \in \mathbf C, x^{\mathbf C} = z \cdot^{\mathbf C} \overline z$，定义模 $|z| = \sqrt{x}$
     1. $|\overline z| = |z|, |\text{Re}(z)| \leqslant^{\mathbf R} |z|$
