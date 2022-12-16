@@ -216,7 +216,7 @@
     2. 设 $p$ 是奇质数，则有 $-1 \in \mathrm{QR}(p) \leftrightarrow p \equiv 1 \pmod{4}$ 且 $-1 \in \mathrm{QNR}(p) \leftrightarrow p \equiv 3 \pmod{4}$
     3. 二次互反律：设 $p, q$ 是两个不相同的两个奇质数，则 $\left(\dfrac qp\right) = (-1)^{\frac{p-1}{2} \cdot \frac{q-1}{2}} \left(\dfrac pq\right)$
         1. 设 $p$ 为奇质数，当 $p \equiv 1 \pmod{8}$ 或 $p \equiv 7 \pmod{8}$ 时，$\left(\dfrac 2p\right) = 1$；当 $p \equiv 3 \pmod{8}$ 或 $p \equiv 5 \pmod{8}$ 时，$\left(\dfrac 2p\right) = -1$
-        2. 对于整数 $k \ \left(1 \leqslant k \leqslant \dfrac{p-1}{2}\right)$，以 $r_k$ 表示 $nk$ 对模 $p$ 的最小非负剩余．设 $r_1, r_2, \cdots, r_k$ 中大于 $\dfrac p2$ 的有 $m$ 个，则 $\left(\dfrac np\right) = (-1)^m$
+        2. 对于整数 $k \ \left(1 \leqslant k \leqslant \dfrac{p-1}{2}\right)$，以 $r_k$ 表示 $nk$ 对模 $p$ 的最小非负同余．设 $r_1, r_2, \cdots, r_k$ 中大于 $\dfrac p2$ 的有 $m$ 个，则 $\left(\dfrac np\right) = (-1)^m$
         3. 设 $p$ 为奇质数，则 ① $\left(\dfrac 2p\right) = (-1)^{\frac{p^2-1}{8}}$；② 若 $n$ 时奇数，$(n, p) = 1$，则 $\left(\dfrac np\right) = (-1)^{\sum_{i=1}^{\frac{p-1}{2}} \left[\frac{ni}{p}\right]}$
     4. 对于质数模的二次同余方程的可能性，设 $p$ 为质数，计算 $\text{Legendre}$ 符号如下
         1. 求出 $n_0 \equiv n \pmod{p} \ (1 \leqslant n_0 \leqslant p)$
@@ -290,7 +290,7 @@
         4. 设 $p$ 是奇质数且 $m = 2, 4, p^\alpha, 2p^\alpha$，则模 $m$ 有原根
     3. 设 $m > 1, (g, m) = 1$ 且 $\varphi(m)$ 的所有不同质因数是 $p_1, p_2, \cdots, p_k$．则 $g$ 是模 $m$ 的原根当且仅当 $g^{\frac{\varphi(m)}{p_i}} \not \equiv 1 \pmod{m} \ (1 \leqslant i \leqslant k)$
 
-### 1.5.2 指标与剩余
+### 1.5.2 指标
 1. 指标：设 $a \in \mathbf Z$，若对模 $m$ 的一个原根 $g$ 有一整数 $r$ 存在使得 $a \equiv g^r \pmod{m} \ (r \geqslant 0)$ 成立，则 $r$ 称作以 $g$ 为底的 $a$ 对模 $m$ 的一个指标，记作 $r = \operatorname{ind}_g a$，简记作 $\operatorname{ind} a$
     1. 指标的性质
         1. $\operatorname{ind}_g g = 1$
@@ -301,11 +301,11 @@
 2. 指标法则：若 $a_1, a_2, \cdots, a_n$ 是与 $m$ 与之的 $n$ 个整数
     1. 乘积法则：$\operatorname{ind} (a_1, a_2, \cdots, a_n) \equiv \operatorname{ind} a_1, \operatorname{ind} a_2, \cdots, \operatorname{ind} a_n \pmod{c}$
     2. 幂法则：$\operatorname{ind}a^n \equiv n \operatorname{ind}a \pmod{c}$
-3. $n$ 次剩余：设 $m \in \mathbf Z$，若同余式 $x^n \equiv a \pmod{m}, (a, m) = 1$ 有解，则称 $a$ 是模 $m$ 的一个 $n$ 次剩余．若无解，则称 $a$ 是模 $m$ 的一个 $n$ 次非剩余
+3. $n$ 次同余：设 $m \in \mathbf Z$，若同余式 $x^n \equiv a \pmod{m}, (a, m) = 1$ 有解，则称 $a$ 是模 $m$ 的一个 $n$ 次同余．若无解，则称 $a$ 是模 $m$ 的一个 $n$ 次非同余
     1. 若 $(n, c) = d, (a, m) = 1$
         1. 同余式 $x^n \equiv a \pmod{m}$ 有解当且仅当 $d \mid \operatorname{ind} a$，且在有解的情况下解数为 $d$
-        2. 在模 $m$ 的一个简化同余系中，$n$ 次剩余的个数为 $\dfrac cd$
-    2. $a$ 是模 $m$ 的 $n$ 次剩余当且仅当 $a^{\frac cd} \equiv 1 \pmod{m}, d = (n, c)$
+        2. 在模 $m$ 的一个简化同余系中，$n$ 次同余的个数为 $\dfrac cd$
+    2. $a$ 是模 $m$ 的 $n$ 次同余当且仅当 $a^{\frac cd} \equiv 1 \pmod{m}, d = (n, c)$
 
 ## 1.6 连分数
 ### 1.6.1 连分数的概念
