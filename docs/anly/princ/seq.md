@@ -147,6 +147,32 @@
 3. 收敛准则：单调有界数列必有极限
 
 ### 1.3.2 函数极限
+1. 函数极限的定义
+    1. 函数在 $x_{0}$ 点的极限
+        1. 函数值趋于有穷的极限：设函数 $f(x)$ 在 $x_{0}$ 点的某个去心邻域有定义，$A$ 是一个定数．如果对任意给定的 $\varepsilon>0$，一定存在 $\delta>0$ 使得当 $0<$ $\left|x-x_{0}\right|<\delta$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的极限，记作 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}\right)$．此时也称函数 $f(x)$ 在 $x_{0}$ 点极限存在，其极限值是 $A$
+        2. 函数值趋于正无穷大的极限：若对于任何 $G>0$，存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)>G$，则称函数 $f(x)$ 在 $x_{0}$ 点趋于正无穷大（或发散到正无穷大），记为 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=+\infty}$ 或 $f(x) \rightarrow+\infty\left(x \rightarrow x_{0}\right)$
+        3. 函数值趋于负无穷大的极限：若对于任何 $G>0$，存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)<-G$，则称函数 $f(x)$ 在 $x_{0}$ 点趋于负无穷大（或发散到负无穷大），记为 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=-\infty}$ 或 $f(x) \rightarrow-\infty\left(x \rightarrow x_{0}\right)$
+        4. 函数值趋于无穷大的极限：若对于任何 $G>0$，存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时，有 $|f(x)|>G$，则称函数 $f(x)$ 在 $x_{0}$ 点趋于无穷大（或发散到无穷大），记为 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=\infty}$ 或 $f(x) \rightarrow \infty\left(x \rightarrow x_{0}\right)$
+    2. 函数在无穷远处的极限（以函数值趋于有穷的极限为例）
+        1. 函数在正无穷远处的极限：若对任意给定的 $\varepsilon>0$，存在 $X>0$，当 $x>X$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 为 $f(x)$ 在正无穷远处的极限，或称 $A$ 是当 $x \rightarrow+\infty$ 时 $f(x)$ 的极限，记为 ${\displaystyle \lim _{x \rightarrow+\infty} f(x)=A}$ 或 $f(+\infty)=A$ 或 $f(x) \rightarrow A \ (x \rightarrow+\infty)$
+        2. 函数在负无穷远处的极限：若对任意给定的 $\varepsilon>0$，存在 $X>0$，当 $x<-X$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 为 $f(x)$ 在负无穷远处的极限，或称 $A$ 是当 $x \rightarrow-\infty$ 时 $f(x)$ 的极限，记为 ${\displaystyle \lim _{x \rightarrow-\infty} f(x)=A}$ 或 $f(-\infty)=A$ 或 $f(x) \rightarrow A \ (x \rightarrow-\infty)$
+        3. 函数在无穷远处的极限：若对任意给定的 $\varepsilon>0$，存在 $X>0$，当 $|x|>X$ 时，有 $|f(x)-A|<\varepsilon$，则称 $A$ 是 $f(x)$ 在无穷远处的极限，或称 $A$ 为当 $x \rightarrow \infty$ 时 $f(x)$ 的极限，记为 ${\displaystyle \lim _{x \rightarrow \infty} f(x)=A}$ 或 $f(\infty)=A$ 或 $f(x) \rightarrow A \ (x \rightarrow \infty)$
+    3. 单侧极限（以函数值趋于有穷的极限为例）
+        1. 右极限：设函数 $f(x)$ 在 $x_{0}$ 点的右邻域 $\left(x_{0}, x_{0}+\eta\right)$ 有定义，$\eta$ 是一个确定的正数，$A$ 是一个定数．若对任意给定的 $\varepsilon>0$，总存在 $\delta>0$，当 $0<x-x_{0}<\delta$ 时有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的右极限，记为 ${\displaystyle \lim _{x \rightarrow x_{0}+0} f(x)=A}$ 或 $f\left(x_{0}+0\right)=A$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}+0\right)$
+        2. 左极限：设函数 $f(x)$ 在 $x_{0}$ 点的左邻域 $\left(x_{0}-\eta, x_{0}\right)$ 有定义，$\eta$ 是一个确定的正数，$A$ 是一个定数．若对任意给定的 $\varepsilon>0$，总存在 $\delta>0$，当 $0<x_{0}-x<\delta$ 时有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的左极限，记为 ${\displaystyle \lim _{x \rightarrow x_{0}-0} f(x)=A}$ 或 $f\left(x_{0}-0\right)=A$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}-0\right)$
+2. 函数极限的性质
+    1. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$ 且 $A>B$，则存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)>g(x)$
+    2. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$ 且存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x) \leqslant$ $g(x)$，则 $A \leqslant B$
+    3. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 而 $A>B$（或 $A<B$），则存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)>B$（或 $f(x)<B$）
+    4. 唯一性：若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} f(x)=B}$，则 $A=B$
+    5. 夹逼性：若存在 $\delta>0$，使当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x) \leqslant g(x) \leqslant h(x)$ 且 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=\lim _{x \rightarrow x_{0}} h(x)=A}$，则 ${\displaystyle \lim _{x \rightarrow x_{0}} g(x)=A}$
+    6. 局部有界性：若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$，则存在 $\delta>0$ 使得 $f(x)$ 在区间 $\left(x_{0}-\delta, x_{0}\right) \cup\left(x_{0}, x_{0}+\delta\right)$ 内有界\
+    7. $\text{Heine}$ 定理：${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 当且仅当对任何以 $x_{0}$ 为极限的数列 $\left\{x_{n}\right\}\left(x_{n} \neq x_{0}\right)$ 都有 $f\left(x_{n}\right) \rightarrow A \ (n \rightarrow \infty)$
+3. 函数极限的运算：设 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$
+    1. ${\displaystyle \lim _{x \rightarrow x_{0}}[f(x) \pm g(x)]=A \pm B, \lim _{x \rightarrow x_{0}} f(x) g(x)=AB}$
+    2. 若 $B\neq 0$，则 ${\displaystyle \lim _{x \rightarrow x_{0}} \dfrac{f(x)}{g(x)}=\dfrac{A}{B}}$
+    3. 若 $A=0$ 且 $g(x)$ 在某区间 $\left(x_{0}-\delta, x_{0}\right) \cup\left(x_{0}, x_{0}+\delta\right)$ 有界，则 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x) g(x)=0}$
+4. 两个重要极限：${\displaystyle \lim _{x \rightarrow 0} \frac{\sin x}{x}=1}$ 与 ${\displaystyle \lim _{x \rightarrow \infty}\left(1+\frac{1}{x}\right)^{x}=\mathrm{e}}$
 
 ### 1.3.3 无穷小量
 

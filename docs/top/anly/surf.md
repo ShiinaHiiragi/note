@@ -127,7 +127,7 @@
     1. 若两个平面交于一条直线 $l$，则通过 $l$ 所有平面的方程 $l\left(A_1 x+B_1 y+C_1 z+D_1\right)+m\left(A_2 x+B_2 y+C_2 z+D_2\right)=0$（其中 $l, m$ 为不全为零的任意实数）称为有轴平面系，称 $l$ 为平面系的轴
     2. 若两个平面平行，则称平行于 $\pi_i$ 所有平面的方程 $l\left(A_1 x+B_1 y+C_1 z+D_1\right)+m\left(A_2 x+B_2 y+C_2 z+D_2\right)=0$ 为平行平面系，且有 $-m: l \neq A_1: A_2=B_1: B_2=C_1: C_2$．特别地，由平面 $\pi: A x+B y+C z+D=0$ 决定的平行平面系的方程是 $A x+B y+C z+\lambda=0$，其中 $\lambda$ 是任意实数
 
-### 4.1.2 二次曲面
+### 4.1.2 空间曲面
 1. 柱面：空间中由平行于定方向且与一条定曲线相交的一族平行直线所生成的曲面．称定方向为柱面的方向，定曲线为柱面的准线，平行直线中的每一条直线称作柱面的母线
     1. 柱面的方程：设柱面的准线方程为 $\left\{\begin{array}{l}F_1(x, y, z)=0 \\F_2(x, y, z)=0\end{array}\right.$，母线的方向数为 $X, Y, Z$．如果 $M_0\left(x_0, y_0, z_0\right)$ 为准线上的任意点，则过点 $M_0$ 的母线方程为
 
@@ -164,7 +164,24 @@
         1. 在特殊的情况下，关于 $x, y, z$ 的齐次方程可能只表示一个原点，称其为具有实顶点的虚锥面
         2. 关于 $x-x_0, y-y_0, z-z_0$ 的齐次方程表示顶点在 $\left(x_0, y_0, z_0\right)$ 的锥面
 
-### 4.1.3 旋转曲面
+3. 旋转曲面：空间中一条曲线 $\Gamma$ 绕着定直线 $l$ 旋转一周所生成的曲面，也称作回转曲面．曲线 $\Gamma$ 称作旋转曲面的母线，定直线 $l$ 称作旋转曲面的旋转轴，简称为轴
+    1. 纬圆：在空间直角坐标系下，设旋转曲面的母线为 $\Gamma:\left\{\begin{array}{l}F_1(x, y, z)=0 \\F_2(x, y, z)=0 \end{array}\right.$，旋转轴为 $l: \dfrac{x-x_0}{X}=\dfrac{y-y_0}{Y}=\dfrac{z-z_0}{Z}$，其中 $P_0\left(x_0, y_0, z_0\right)$ 为轴 $l$ 上的一个定点．设 $M_1\left(x_1, y_1, z_1\right)$ 是母线 $\Gamma$ 上的任意点，称过 $M_1$ 且垂直于旋转轴 $l$ 的平面与以 $P_0\left(x_0, y_0, z_0\right)$ 为球心，$|\overrightarrow{P_0 M_1}|$ 为半径的球面的交线
+
+        $$
+        \left\{\begin{array}{l}
+        X\left(x-x_1\right)+Y\left(y-y_1\right)+Z\left(z-z_1\right)=0 \\
+        \left(x-x_0\right)^2+\left(y-y_0\right)^2+\left(z-z_0\right)^2=\left(x_1-x_0\right)^2+\left(y_1-y_0\right)^2+\left(z_1-z_0\right)^2
+        \end{array}\right.
+        $$
+
+        为过 $M_1$ 的纬圆
+
+    2. 椭球面与球面：将椭圆 $\Gamma:\left\{\begin{array}{l}\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}=1 \ (a>b) \\z=0\end{array}\right.$ 绕长轴旋转的曲面方程为 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{b^2}=1$，称作长形旋转椭球面；绕短轴旋转的曲面方程为 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{a^2}=1$，称作扁形旋转椭球面．将圆 $\Gamma:\left\{\begin{array}{l}x^2+y^2=a^2\\z=0\end{array}\right.$ 绕坐标轴旋转的曲面方程为 $x^2+y^2+z^2=a^2$，称作球面
+    3. 旋转双曲面：将双曲线 $\Gamma:\left\{\begin{array}{l}\dfrac{y^2}{b^2}-\dfrac{z^2}{c^2}=1 \\x=0\end{array}\right.$ 绕虚轴旋转的曲面方程为 $\dfrac{x^2}{b^2}+\dfrac{y^2}{b^2}-\dfrac{z^2}{c^2}=1$，称作单叶旋转双曲面；绕实轴旋转的曲面方程为 $\dfrac{y^2}{b^2}-\dfrac{x^2}{c^2}-\dfrac{z^2}{c^2}=1$，称作单叶旋转双曲面
+
+4. 椭球面：在直角坐标系下，由方程 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$ 所表示的曲面称作椭球面．称该方程为椭球面的标准方程，其中 $a, b, c$ 为任意正常数
+5. 双曲面
+6. 抛物面
 
 ## 4.2 二次曲面一般理论
 
