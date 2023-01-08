@@ -127,15 +127,44 @@
     1. 若两个平面交于一条直线 $l$，则通过 $l$ 所有平面的方程 $l\left(A_1 x+B_1 y+C_1 z+D_1\right)+m\left(A_2 x+B_2 y+C_2 z+D_2\right)=0$（其中 $l, m$ 为不全为零的任意实数）称为有轴平面系，称 $l$ 为平面系的轴
     2. 若两个平面平行，则称平行于 $\pi_i$ 所有平面的方程 $l\left(A_1 x+B_1 y+C_1 z+D_1\right)+m\left(A_2 x+B_2 y+C_2 z+D_2\right)=0$ 为平行平面系，且有 $-m: l \neq A_1: A_2=B_1: B_2=C_1: C_2$．特别地，由平面 $\pi: A x+B y+C z+D=0$ 决定的平行平面系的方程是 $A x+B y+C z+\lambda=0$，其中 $\lambda$ 是任意实数
 
-### 4.1.2 柱面
+### 4.1.2 二次曲面
+1. 柱面：空间中由平行于定方向且与一条定曲线相交的一族平行直线所生成的曲面．称定方向为柱面的方向，定曲线为柱面的准线，平行直线中的每一条直线称作柱面的母线
+    1. 柱面的方程：设柱面的准线方程为 $\left\{\begin{array}{l}F_1(x, y, z)=0 \\F_2(x, y, z)=0\end{array}\right.$，母线的方向数为 $X, Y, Z$．如果 $M_0\left(x_0, y_0, z_0\right)$ 为准线上的任意点，则过点 $M_0$ 的母线方程为
 
-### 4.1.3 锥面
+        $$
+        \dfrac{x-x_0}{X}=\dfrac{y-y_0}{Y}=\dfrac{z-z_0}{Z}
+        $$
 
-### 4.1.4 球面
+        且有 $F_1\left(x_0, y_0, z_0\right)=0, F_2\left(x_0, y_0, z_0\right)=0$
 
-### 4.1.5 抛物面
+    2. 柱面的判定：在空间仿射坐标系中，只含两个元（坐标）的三元方程所表示的曲面是一个柱面，其母线平行于所缺元（坐标）的同名坐标轴
+    3. 空间曲线的射影柱面：设空间曲线为 $L:\left\{\begin{array}{l}F(x, y, z)=0, \\G(x, y, z)=0 .\end{array}\right.$，依次消元得到
 
-### 4.1.6 双曲面
+        $$
+        \begin{aligned}
+        & F_1(x, y)=0 \\
+        & F_2(x, z)=0 \\
+        & F_3(y, z)=0
+        \end{aligned}
+        $$
+
+        称曲面 $F_1(x, y) = 0, F_2(x, z)=0, F_3(y, z)=0$ 为空间曲线 $L$ 对 $xOy, xOz, yOz$ 坐标面射影的射影柱面，曲线
+
+        $$
+        \left\{\begin{aligned} & F_1(x, y)=0 \\ & z=0 \end{aligned}\right. ,
+        \left\{\begin{aligned} & F_2(x, z)=0 \\ & y=0 \end{aligned}\right. \textsf{ 与 }
+        \left\{\begin{aligned} & F_3(y, z)=0 \\ & x=0 \end{aligned}\right.
+        $$
+
+        称作空间曲线 $L$ 在 $xOy, xOz, yOz$ 坐标面上的射影曲线
+
+2. 锥面：空间中通过一定点且与定曲线相交的一族直线所生成的曲面，称这些直线为锥面的母线，定点为锥面的顶点，定曲线为锥面的准线
+    1. 锥面的方程：设锥面的准线为 $\left\{\begin{array}{l}F_1(x, y, z)=0 \\F_2(x, y, z)=0\end{array}\right.$，顶点为 $A\left(x_0, y_0, z_0\right)$．若 $M_1\left(x_1, y_1, z_1\right)$ 为准线上的任意点，则锥面过点 $M_1$ 的母线为 $\dfrac{x-x_0}{x_1-x_0}=\dfrac{y-y_0}{y_1-y_0}=\dfrac{z-z_0}{z_1-z_0}$，且有 $F_1\left(x_1, y_1, z_1\right)=0, F_2\left(x_1, y_1, z_1\right)=0$
+    2. 锥面的判定：关于 $x, y, z$ 的齐次方程总表示顶点在坐标原点的锥面
+        1. 在特殊的情况下，关于 $x, y, z$ 的齐次方程可能只表示一个原点，称其为具有实顶点的虚锥面
+        2. 关于 $x-x_0, y-y_0, z-z_0$ 的齐次方程表示顶点在 $\left(x_0, y_0, z_0\right)$ 的锥面
+
+### 4.1.3 旋转曲面
 
 ## 4.2 二次曲面一般理论
 
