@@ -212,7 +212,7 @@
         2. 自然投射：设 $R$ 是集合 $X$ 中的一个等价关系，从集合 $X$ 到其商集 $X/R$ 的自然投射 $p:X\to X/R$ 定义为 $p=\{(X, [X]) \mid X\in X\}\subseteq X\times X/R$
 
     2. 设集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 的 $\text{Descartes}$ 积为 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma} = \left\{ \left. x: \Gamma\to {\displaystyle \bigcup_{\gamma \in \Gamma}X_\gamma} \ \right| \ \forall \gamma \in \Gamma \ (x(i)\in X_\gamma)\right\}$
-        1. 对于每一个 $\gamma \in \Gamma$，集合 $X_\gamma$ 为 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 的第 $i$ 个坐标集
+        1. 对于每一个 $\gamma \in \Gamma$，集合 $X_\gamma$ 为 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 的第 $\gamma$ 个坐标集
         2. 对于 $\gamma \in \Gamma$，定义 $p_\alpha: {\displaystyle \prod_{\gamma \in \Gamma}X_\gamma} \to X_\gamma$，使得对于任意 $x\in {\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 有 $p_\alpha(x)=x(\alpha)$，称为 $\text{Descartes}$ 积的第 $\alpha$ 个投射
     3. 设给定了集族 $\{X_\gamma\}_{\gamma \in \Gamma}$，则 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma} \neq \varnothing \leftrightarrow \forall \gamma \in \Gamma \ (X_\gamma\neq \varnothing)$
     4. 给定两个集族 $\{X_\gamma\}_{\gamma \in \Gamma}, \{Y_\gamma\}_{\gamma \in \Gamma}$，且 $\forall \gamma \in \Gamma \ (Y_\gamma \subseteq X_\gamma)$．若对于任意 $\gamma \in \Gamma$，都有 $Y_\gamma \neq \varnothing$，则对于任意 $\alpha \in \Gamma$ 有 $p_\alpha\left({\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}\right) = Y_\alpha$
@@ -291,8 +291,15 @@
             3. $x$ 是 $X_0$ 在序 $R$ 下的上确界当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的下确界
 
     3. 全序：如果偏序关系 $\leqslant$ 还具有连接性，即对所有 $x, y \in X$ 有 $x \leqslant y$ 或 $y \leqslant x$，则称 $\leqslant$ 是 $X$ 上的全序或线序
-        1. 全序集的任意两个元素是可比较的
-        2. 全序集中极小元与最小元、极大元与最大元是同一的
+        1. 全序集的性质
+            - 全序集的任意两个元素是可比较的
+            - 全序集中极小元与最小元、极大元与最大元是同一的
+        2. 完备全序集：具有最小上界性质的稠密线序集合
+            - 实数集合 $(\mathbf R, <^{\mathbf R})$ 是完备全序集
+            - 任何包含可数稠密子集的无端点完备全序集都与 $(\mathbf R, <^{\mathbf R})$ 同构
+        3. 最小上界性质：全序集 $(X, \leqslant)$ 如果有「对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界」，则称 $X$ 有最小上界性质
+            - 有理数集合 $(\mathbf Q, \leqslant^{\mathbf Q})$ 没有最小上界性质
+            - 实数集合 $(\mathbf R, \leqslant^{\mathbf R})$ 有最小上界性质
 
 7. 关系的闭包：设 $R \subseteq X^2$ 的二元关系，定义 $R$ 的自反（对称、传递）闭包 $R'$，满足以下条件
     1. $R'$ 是自反的（对称的、传递的）
@@ -348,7 +355,7 @@
     1. 对任意集合 $X, Y$，$X^Y$ 都是集合
     2. 对任意集合 $X$，有 $\varnothing^{X} = \varnothing$；对任意集合 $Y$，有 $Y^{\varnothing} = \left\{\varnothing_{Y}\right\}$
 
-## 1.3 实数理论
+## 1.3 数系
 ### 1.3.1 自然数集
 1. $\text{Peano}$ 公理：满足以下五条公理的集合 $\mathbf N$ 称作自然数集．其中，$0$ 与「后继」作为抽象的初始概念没有定义
     1. $0 \in \mathbf N$
@@ -574,17 +581,13 @@
     & \textsf{负有理数}
     \end{aligned}\right. \\
     & \textsf{无理数（无限不循环小数）} \left\{\begin{aligned}
-    & \textsf{正有理数} \\
-    & \textsf{负有理数}
+    & \textsf{正无理数} \\
+    & \textsf{负无理数}
     \end{aligned}\right.
     \end{aligned}\right.
     $$
 
-8. 实数集的性质
-    1. $\text{Archimedes}$ 性质：$\forall x \in \mathbf R \ \exists r \in \mathbf Q \ (|x| \leqslant^{\mathbf R} r^{\mathbf R})$
-    2. 最小上界性质：全序集 $(X, \leqslant)$ 如果有对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界，则称 $X$ 有最小上界性质
-        1. 有理数集合 $(\mathbf Q, \leqslant^{\mathbf Q})$ 没有最小上界性质
-        2. 实数集合 $(\mathbf R, \leqslant^{\mathbf R})$ 有最小上界性质
+8. $\text{Archimedes}$ 性质：$\forall x \in \mathbf R \ \exists r \in \mathbf Q \ (|x| \leqslant^{\mathbf R} r^{\mathbf R})$
 
 ### 1.3.5 复数集
 1. 复数集合：定义集合 $\mathbf C = \mathbf R \times \mathbf R$，称集合 $\mathbf C$ 为复数集．特别地，对于任意 $x \in \mathbf R$，定义 $x^{\mathbf C} = (x, 0^{\mathbf R})$
@@ -610,6 +613,3 @@
     1. $|\overline z| = |z|, |\text{Re}(z)| \leqslant^{\mathbf R} |z|$
     2. $|z| \geqslant^{\mathbf R} 0^{\mathbf R}$，等号成立当且仅当 $z^{\mathbf C} = 0^{\mathbf C}$
     3. $|z +^{\mathbf C} w| \leqslant^{\mathbf R} |z| +^{\mathbf R} |w|, |z \cdot^{\mathbf C} w| = |z| \cdot^{\mathbf R} |w|$
-8. 完备全序集：具有最小上界性质的稠密线序集合
-    1. 实数集合 $(\mathbf R, <^{\mathbf R})$ 是完备全序集
-    2. 任何包含可数稠密子集的无端点完备全序集都与 $(\mathbf R, <^{\mathbf R})$ 同构

@@ -121,9 +121,8 @@
 ## 1.3 极限论
 ### 1.3.1 数列极限
 1. 数列极限：设 $\left\{x_{n}\right\}$ 是一个数列，$a$ 是实数．若对任意给定的 $\varepsilon>0$，总存在一个正整数 $N$，当 $n>N$ 时都有 $\left|x_{n}-a\right|<\varepsilon$，则称 $a$ 是数列 $\left\{x_{n}\right\}$ 的极限，或称数列 $\left\{x_{n}\right\}$ 收敛于 $a$ 记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 或 $x_{n} \rightarrow a \ (n \rightarrow \infty)$．此时也称数列 $\left\{x_{n}\right\}$ 极限存在
-    1. 邻域定义的等价形式：对任意给定的邻域 $O(a, \varepsilon)$，一定存在正整数 $N$，当 $n>N$ 时，$x_{n} \in O(a, \varepsilon)$
-    2. 无穷小量：当 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=0}$ 时，称数列 $x_n$ 为无穷小量
-    3. 数列极限的性质
+    1. 无穷小量：当 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=0}$ 时，称数列 $x_n$ 为无穷小量
+    2. 数列极限的性质
         1. 保序性：若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a, \lim _{n \rightarrow \infty} y_{n}=b}$ 且 $a>b$，则总存在正整数 $N$，当 $n>N$ 时，不等式 $x_{n}>y_{n}$ 成立
             - 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a, \lim _{n \rightarrow \infty} y_{n}=b}$，且存在正整数 $N$ 使得当 $n>N$ 时，不等式 $x_{n}>y_{n}$ 都成立，则 $a \geqslant b$
             - 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 且 $a>b$（其中 $b$ 为常数），则存在正整数 $N$，当 $n>N$ 时有 $x_{n}>b$
@@ -131,7 +130,7 @@
         2. 唯一性：若数列 $\left\{x_{n}\right\}$ 收敛，则它的极限唯一
         3. 有界性：收敛数列有界
         4. 夹逼准则：若存在正整数 $N$，当 $n>N$ 时有 $x_{n} \leqslant y_{n} \leqslant z_{n}$ 且 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=\lim _{n \rightarrow \infty} z_{n}=a}$，则有 ${\displaystyle \lim _{n \rightarrow \infty} y_{n}=a}$
-    4. 数列极限的运算
+    3. 数列极限的运算
         1. 若数列 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛，则它们的和与差 $\left\{x_{n} \pm y_{n}\right\}$ 也收玫，且有 ${\displaystyle \lim _{n \rightarrow \infty}\left(x_{n} \pm y_{n}\right)=\lim _{n \rightarrow \infty} x_{n} \pm \lim _{n \rightarrow \infty} y_{n}}$
         2. 若 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛，则 $\left\{x_{n} y_{n}\right\}$ 也收敛，且 ${\displaystyle \lim _{n \rightarrow \infty} x_{n} y_{n}=\lim _{n \rightarrow \infty} x_{n} \cdot \lim _{n \rightarrow \infty} y_{n}}$
         3. 若 $\left\{x_{n}\right\}$ 为有界数列，$\left\{y_{n}\right\}$ 为无穷小量，则它们的积 $\left\{x_{n} y_{n}\right\}$ 是无穷小量
@@ -146,10 +145,10 @@
         4. 设 $\left\{x_{n}\right\}$ 是无穷大量，$\left\{y_{n}\right\}$ 收敛于 $a \neq 0$，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
 3. 收敛准则：单调有界数列必有极限
 
-### 1.3.2 函数极限
+### 1.3.2 一元函数极限
 1. 函数极限的定义
-    1. 函数在 $x_{0}$ 点的极限
-        1. 函数值趋于有穷的极限：设函数 $f(x)$ 在 $x_{0}$ 点的某个去心邻域有定义，$A$ 是一个定数．如果对任意给定的 $\varepsilon>0$，一定存在 $\delta>0$ 使得当 $0<$ $\left|x-x_{0}\right|<\delta$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的极限，记作 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}\right)$．此时也称函数 $f(x)$ 在 $x_{0}$ 点极限存在，其极限值是 $A$
+    1. 函数在 $x_{0}$ 点的极限：设函数 $f(x)$ 在 $x_{0}$ 点的某个去心球形邻域有定义
+        1. 函数值趋于有穷的极限：设 $A$ 是一个定数，若对于任意给定的 $\varepsilon>0$，一定存在 $\delta>0$ 使得当 $0<$ $\left|x-x_{0}\right|<\delta$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的极限，记作 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}\right)$．此时也称函数 $f(x)$ 在 $x_{0}$ 点极限存在，其极限值是 $A$
         2. 函数值趋于正无穷大的极限：若对于任何 $G>0$，存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)>G$，则称函数 $f(x)$ 在 $x_{0}$ 点趋于正无穷大（或发散到正无穷大），记为 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=+\infty}$ 或 $f(x) \rightarrow+\infty\left(x \rightarrow x_{0}\right)$
         3. 函数值趋于负无穷大的极限：若对于任何 $G>0$，存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)<-G$，则称函数 $f(x)$ 在 $x_{0}$ 点趋于负无穷大（或发散到负无穷大），记为 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=-\infty}$ 或 $f(x) \rightarrow-\infty\left(x \rightarrow x_{0}\right)$
         4. 函数值趋于无穷大的极限：若对于任何 $G>0$，存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时，有 $|f(x)|>G$，则称函数 $f(x)$ 在 $x_{0}$ 点趋于无穷大（或发散到无穷大），记为 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=\infty}$ 或 $f(x) \rightarrow \infty\left(x \rightarrow x_{0}\right)$
@@ -158,8 +157,8 @@
         2. 函数在负无穷远处的极限：若对任意给定的 $\varepsilon>0$，存在 $X>0$，当 $x<-X$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 为 $f(x)$ 在负无穷远处的极限，或称 $A$ 是当 $x \rightarrow-\infty$ 时 $f(x)$ 的极限，记为 ${\displaystyle \lim _{x \rightarrow-\infty} f(x)=A}$ 或 $f(-\infty)=A$ 或 $f(x) \rightarrow A \ (x \rightarrow-\infty)$
         3. 函数在无穷远处的极限：若对任意给定的 $\varepsilon>0$，存在 $X>0$，当 $|x|>X$ 时，有 $|f(x)-A|<\varepsilon$，则称 $A$ 是 $f(x)$ 在无穷远处的极限，或称 $A$ 为当 $x \rightarrow \infty$ 时 $f(x)$ 的极限，记为 ${\displaystyle \lim _{x \rightarrow \infty} f(x)=A}$ 或 $f(\infty)=A$ 或 $f(x) \rightarrow A \ (x \rightarrow \infty)$
     3. 单侧极限（以函数值趋于有穷的极限为例）
-        1. 右极限：设函数 $f(x)$ 在 $x_{0}$ 点的右邻域 $\left(x_{0}, x_{0}+\eta\right)$ 有定义，$\eta$ 是一个确定的正数，$A$ 是一个定数．若对任意给定的 $\varepsilon>0$，总存在 $\delta>0$，当 $0<x-x_{0}<\delta$ 时有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的右极限，记为 ${\displaystyle \lim _{x \rightarrow x_{0}+0} f(x)=A}$ 或 $f\left(x_{0}+0\right)=A$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}+0\right)$
-        2. 左极限：设函数 $f(x)$ 在 $x_{0}$ 点的左邻域 $\left(x_{0}-\eta, x_{0}\right)$ 有定义，$\eta$ 是一个确定的正数，$A$ 是一个定数．若对任意给定的 $\varepsilon>0$，总存在 $\delta>0$，当 $0<x_{0}-x<\delta$ 时有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的左极限，记为 ${\displaystyle \lim _{x \rightarrow x_{0}-0} f(x)=A}$ 或 $f\left(x_{0}-0\right)=A$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}-0\right)$
+        1. 右极限：设存在 $\eta > 0$ 使得函数 $f(x)$ 在 $\left(x_{0}, x_{0}+\eta\right)$ 有定义，$A$ 是一个定数．若对任意给定的 $\varepsilon>0$，总存在 $\delta>0$，当 $0<x-x_{0}<\delta$ 时有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的右极限，记为 ${\displaystyle \lim _{x \rightarrow x_{0}+0} f(x)=A}$ 或 $f\left(x_{0}+0\right)=A$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}+0\right)$
+        2. 左极限：设存在 $\eta > 0$ 使得函数 $f(x)$ 在 $\left(x_{0}-\eta, x_{0}\right)$ 有定义，$A$ 是一个定数．若对任意给定的 $\varepsilon>0$，总存在 $\delta>0$，当 $0<x_{0}-x<\delta$ 时有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的左极限，记为 ${\displaystyle \lim _{x \rightarrow x_{0}-0} f(x)=A}$ 或 $f\left(x_{0}-0\right)=A$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}-0\right)$
 2. 函数极限的性质
     1. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$ 且 $A>B$，则存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)>g(x)$
     2. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$ 且存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x) \leqslant$ $g(x)$，则 $A \leqslant B$
@@ -173,7 +172,8 @@
     2. 若 $B\neq 0$，则 ${\displaystyle \lim _{x \rightarrow x_{0}} \dfrac{f(x)}{g(x)}=\dfrac{A}{B}}$
     3. 若 $A=0$ 且 $g(x)$ 在某区间 $\left(x_{0}-\delta, x_{0}\right) \cup\left(x_{0}, x_{0}+\delta\right)$ 有界，则 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x) g(x)=0}$
 4. 两个重要极限：${\displaystyle \lim _{x \rightarrow 0} \frac{\sin x}{x}=1}$ 与 ${\displaystyle \lim _{x \rightarrow \infty}\left(1+\frac{1}{x}\right)^{x}=\mathrm{e}}$
+5. 无穷小量
 
-### 1.3.3 无穷小量
+### 1.3.2 多元函数极限
 
 ## 1.4 级数
