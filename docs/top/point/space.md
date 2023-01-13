@@ -28,7 +28,7 @@
     2. 去心邻域：若 $U$ 是点 $x$ 的一个邻域，则称 $U - x$ 为点 $x$ 的一个去心邻域
 6. 连续映射
     1. 连续：设 $X$ 和 $Y$ 是两个度量空间，$f: X\to Y, x_0\in X$．若对于 $f(x_0)$ 的任何一个球形邻域 $B(f(x_0), \varepsilon)$ 存在 $x_0$ 的某一个球形邻域 $B(x_0, \delta)$ 使得 $f[B(x_0, \delta)]\subseteq B(f(x_0), \varepsilon)$，则称映射在点 $x_0$ 处是连续的
-    2. 连续映射：若映射 $f$ 在 $X$ 的每一个点 $x\in X$ 处连续，则称 $f$ 是一个连续映射
+    2. 连续映射：若映射 $f$ 在 $X$ 的每一个点 $x\in X$ 处连续，则称 $f$ 是一个连续映射．若 $f$ 是一个函数，则称 $f$ 是一个连续函数
     3. 设 $X$ 和 $Y$ 是两个度量空间，$f: X\to Y, x_0\in X$
         1. $f$ 在点 $x_0$ 处连续 $\leftrightarrow f(x_0)$ 的每一个邻域的原像是 $x_0$ 的一个邻域
         2. $f$ 是连续的 $\leftrightarrow Y$ 中的每一个开集的原像是 $X$ 中的一个开集
@@ -92,7 +92,7 @@
         4. 若 $U\in \mathscr U_x$，则 $\exists V\in \mathscr U_x \ (V\subseteq U \wedge \forall y\in V: V\in \mathscr U_y)$
     4. 邻域定义拓扑空间：设 $X$ 是一个集合，且 $\forall x\in X$ 指定了 $X$ 的一个子集族 $\mathscr U_x$，且它们满足上述定理的四条性质，则 $X$ 有唯一一个拓扑 $\mathscr T$ 使得对于每一点 $x\in X$，子集族 $\mathscr U_x$ 恰是点 $x$ 在拓扑空间 $(X, \mathscr T)$ 中的邻域系
 
-5. 连续映射
+5. 拓扑空间与连续映射
     1. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$．若 $Y$ 中的每一个开集 $U$ 的原像 $f^{-1}[U]$ 是 $X$ 中的一个开集，则称 $f$ 是从 $X$ 到 $Y$ 的一个连续映射，或称映射 $f$ 连续
     2. 设 $X, Y, Z$ 都是拓扑空间
         1. 恒同映射 $i_X: X\to X$ 是一个连续映射

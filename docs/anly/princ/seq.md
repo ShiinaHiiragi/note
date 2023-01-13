@@ -1,5 +1,6 @@
 # 1 序列与极限
 
+## 1.1 序列
 1. 序列：以自然数 $n$ 或全体自然数的集合 $\mathbf N$ 为定义域的映射，如果其定义域是 $n \in \mathbf N$，则称为长度为 $n$ 的有穷序列．特别地，定义域为 $0$ 的序列称为空序列，定义域为 $\mathbf N$ 的序列称为无穷序列
     1. 有穷序列：$\left<a_i \mid i < n\right>$ 或 $\left<a_0, a_1, \cdots, a_{n-1}\right>$，其值域表示为 $\left\{a_i \mid i < n\right\}$ 或 $\left\{a_0, a_1, \cdots, a_{n-1}\right\}$．特别地，空序列表示为 $\left<\ \right>$，其值域为 $\varnothing$
     2. 无穷序列：$\left<a_i \mid i \in \mathbf N\right>$ 或 $\left<a_i\right>_{i = 0}^{\infty}$，其值域表示为 $\left\{a_i \mid i \in \mathbf N\right\}$ 或 $\left\{a_i\right\}_{i = 0}^{\infty}$
@@ -10,7 +11,7 @@
         1. 以 $[\kappa]^{\lambda}$ 表示集合 $\{X \subseteq \kappa\mid |X|=\lambda\}$ 的基数．当 $\kappa<\lambda$ 时，$[\kappa]^{\lambda}=0$
         2. 以 $[\kappa]^{<\lambda}$ 表示集合 $\{X \subseteq \kappa \mid |X|<\lambda\}$ 的基数
 
-## 1.1 数列
+## 1.2 数列
 1. 数列：以数集作为值域的序列称为数列，通常以正整数集 $\mathbf Z_+$ 作为定义域．一般记为 $a_1, a_2, \cdots, a_n, \cdots$，简记作 $\{a_n\}$
     1. 按定义域分类
         1. 有穷数列：以自然数 $n$ 为定义域的数列
@@ -37,19 +38,16 @@
         且
 
         $$
-        \left\{\begin{aligned}
-        & \dfrac{1}{p+1}+\dfrac{1}{2}+\dfrac{B_2}{2}\dbinom{p}{1}+\dfrac{B_3}{3}\dbinom{p}{2}+\cdots+\dfrac{B_p}{p}\dbinom{p}{p-1}=1 \\
-        & \sum_{k=0}^n\dbinom{p+1}{k} B_k=0
-        \end{aligned}\right.
+        \dfrac{1}{p+1}+\dfrac{1}{2}+\dfrac{B_2}{2}\dbinom{p}{1}+\dfrac{B_3}{3}\dbinom{p}{2}+\cdots+\dfrac{B_p}{p}\dbinom{p}{p-1}=1
         $$
 
-        从而以下结论成立
+        其中 ${\displaystyle \sum_{k=0}^n\dbinom{p+1}{k} B_k=0}$．从而以下结论成立
 
         1. $(1+B)^{p+1}-B_{p+1}=0$
         2. $\dfrac{S_n^p}{p !}=\dfrac{B_0(n+1)^{p+1}}{0 !(p+1) !}+\dfrac{B_1(n+1)^p}{1 ! p !}+\dfrac{B_2(n+1)^{p-1}}{2 !(p-1) !}+\cdots+\dfrac{B_p(n+1)}{p ! 1 !}$
         3. ${\displaystyle \dfrac{x}{\mathrm{e}^x-1}=\dfrac{B_0}{0 !}+\dfrac{B_1}{1 !} x+\dfrac{B_2}{2 !} x^2+\cdots=\sum_{k=0}^{\infty} \dfrac{B_k}{k !} x^k}$
 
-        导出常用的前 $n$ 项和
+        据此导出常用的前 $n$ 项和
 
         4. $1+2+3+\cdots+n=\dfrac{1}{2} n(n+1)$
         5. $1^2+2^2+3^2+\cdots+n^2=\dfrac{1}{6} n(n+1)(2 n+1)$
@@ -64,7 +62,7 @@
         2. 若 $\Delta a_k = \Delta b_k$，则 $a_k = b_k + c \ (k \in \mathbf Z_+)$，其中 $c$ 为常数
         3. ${\displaystyle \sum_{k=1}^n a_k \Delta b_k + \sum_{k=1}^n} b_{k+1} \Delta a_k = a_{n+1} b_{n+1} - a_1 b_1$
 
-### 1.1.1 等差数列
+### 1.2.1 等差数列
 1. 等差数列：如果数列满足 $a_n = a_{n-1} + d（n \geqslant 2）$，则称数列 $\{a_n\}$ 为等差数列，常数 $d$ 为等差数列的公差
     1. 通项公式：$a_n = a_m + (n - m)d$
     2. 前 $n$ 项和：$S_n = na_1 + \dfrac 12n(n - 1)d$
@@ -83,7 +81,7 @@
         3. $\{a_n\}$ 是 $m$ 阶等差数列当且仅当 $a_n$ 是 $n$ 的 $m$ 次多项式
     3. 前 $n$ 项和：设 $\{a_n\}$ 是 $m$ 阶等差数列，则 $S_n = {\displaystyle \sum_{k=0}^m C_n^{k+1} \Delta^k a_1}$ 是关于 $n$ 的 $m + 1$ 次多项式
 
-### 1.1.2 等比数列
+### 1.2.2 等比数列
 1. 等比数列：如果数列满足 $\dfrac{a_n}{a_{n-1}} = q \ (n \geqslant 2, q \neq 0)$，则称数列 $\{a_n\}$ 为等比数列，常数 $q$ 为等比数列的公比
     1. 通项公式：$a_n = a_1 q^{n-1}, n \in \mathbf Z_+$
     2. 前 $n$ 项和：$S_n = \left\{\begin{aligned} & \dfrac{a_1(1 - q^n)}{1 - q}, & q \neq 1 \\ & na_1, & q = 1 \end{aligned}\right.$
@@ -94,7 +92,7 @@
     4. $q < 0$ 时，$\{a_n\}$ 为摆动数列
 3. 无穷递缩等比数列：公比 $|q| < 1$ 的等比数列，其无穷级数 ${\displaystyle \sum_{n=1}^\infty a_n = \dfrac{a_1}{1 - q}}$
 
-### 1.1.3 线性递推数列
+### 1.2.3 线性递推数列
 1. 递推数列：如果数列 $\{a_n\}$ 满足递推关系 $a_{n+k} = f(a_{n+k-1}, a_{n+k-2}, \cdots, a_n)$，则称其为 $k$ 阶递推数列
     1. 如果 $k$ 阶数列的递推公式是线性的，即 $a_{n+k} = p_1 a_{n+k-1} + p_2 a_{n+k-2} + \cdots + p_k a_n + f(n)$，其中 $n \in \mathbf Z_+, p_1, p_2, \cdots, p_k$ 是常数且 $p_k \neq 0$，则称 $\{a_n\}$ 为 $k$ 阶线性递推数列
     2. $k$ 阶线性递推数列的递推公式 $f(n) = 0$，则称其为 $k$ 阶线性递归数列
@@ -116,10 +114,10 @@
                 1. 若 $x_1 \neq x_2$，则 $a_n = \dfrac{ax_2 - b}{x_2 - x_1} x_1^{n-1} - \dfrac{ax_1 - b}{x_2 - x_1} x_2^{n-1}$
                 2. 若 $x_1 = x_2 = \dfrac p2$，则 $a_n = \left(\dfrac p2\right)^{n-2} \left[\left(pa - b\right) - n\left(\dfrac{pa}{2} - b\right)\right]$
 
-## 1.2 函数序列
+## 1.3 函数序列
 
-## 1.3 极限论
-### 1.3.1 数列极限
+## 1.4 极限论
+### 1.4.1 数列极限
 1. 数列极限：设 $\left\{x_{n}\right\}$ 是一个数列，$a$ 是实数．若对任意给定的 $\varepsilon>0$，总存在一个正整数 $N$，当 $n>N$ 时都有 $\left|x_{n}-a\right|<\varepsilon$，则称 $a$ 是数列 $\left\{x_{n}\right\}$ 的极限，或称数列 $\left\{x_{n}\right\}$ 收敛于 $a$ 记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 或 $x_{n} \rightarrow a \ (n \rightarrow \infty)$．此时也称数列 $\left\{x_{n}\right\}$ 极限存在
     1. 无穷小量：当 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=0}$ 时，称数列 $x_n$ 为无穷小量
     2. 数列极限的性质
@@ -145,7 +143,7 @@
         4. 设 $\left\{x_{n}\right\}$ 是无穷大量，$\left\{y_{n}\right\}$ 收敛于 $a \neq 0$，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
 3. 收敛准则：单调有界数列必有极限
 
-### 1.3.2 一元函数极限
+### 1.4.2 一元函数极限
 1. 函数极限的定义
     1. 函数在 $x_{0}$ 点的极限：设函数 $f(x)$ 在 $x_{0}$ 点的某个去心球形邻域有定义
         1. 函数值趋于有穷的极限：设 $A$ 是一个定数，若对于任意给定的 $\varepsilon>0$，一定存在 $\delta>0$ 使得当 $0<$ $\left|x-x_{0}\right|<\delta$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的极限，记作 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}\right)$．此时也称函数 $f(x)$ 在 $x_{0}$ 点极限存在，其极限值是 $A$
@@ -174,6 +172,6 @@
 4. 两个重要极限：${\displaystyle \lim _{x \rightarrow 0} \frac{\sin x}{x}=1}$ 与 ${\displaystyle \lim _{x \rightarrow \infty}\left(1+\frac{1}{x}\right)^{x}=\mathrm{e}}$
 5. 无穷小量
 
-### 1.3.2 多元函数极限
+### 1.4.2 多元函数极限
 
-## 1.4 级数
+## 1.5 级数
