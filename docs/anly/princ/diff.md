@@ -19,6 +19,13 @@
     1. 第一类不连续点：$f\left(x_{0}+0\right), f\left(x_{0}-0\right)$ 存在但不相等
     2. 第二类不连续点：$f\left(x_{0}+0\right)$ 与 $f\left(x_{0}-0\right)$ 中至少有一个不存在
     3. 可移不连续点：${\displaystyle \lim _{x \rightarrow x_{0}} f(x)}$ 存在但不等于 $f\left(x_{0}\right)$ 或 $f(x)$ 在点 $x_{0}$ 没有定义
+4. 一致连续：设函数 $f(x)$ 在区间 $X$ 内满足对任意的 $\varepsilon>0$，可找到只与 $\varepsilon$ 有关而与 $X$ 内的点 $x$ 无关的 $\eta>0$，使得对 $X$ 内任意两点 $x_{1}$ 和 $x_{2}$，当 $\left|x_{1}-x_{2}\right|<\eta$ 时，总有 $\left|f\left(x_{1}\right)-f\left(x_{2}\right)\right|<\varepsilon$，则称 $f(x)$ 在 $X$ 内一致连续
+5. 闭区间上连续函数的性质：设 $f(x)$ 在 $[a, b]$ 上连续
+    1. 有界性：$f(x)$ 在 $[a, b]$ 上有界
+    2. 最值：在 $[a, b]$ 内至少有两点 $\xi_{1}$ 和 $\xi_{2}$，使得对 $[a, b]$ 内的一切 $x$，有 $f\left(\xi_{1}\right) \leqslant f(x) \leqslant f\left(\xi_{2}\right)$
+    3. 零点存在定理：若 $f(a)f(b) < 0$，则在 $[a, b]$ 内至少有一点 $\xi$，使 $f(\xi)=0$
+    4. 介值定理：设 $f(x)$ 在 $[a, b]$ 上的最小值为 $m$，最大值为 $M$．则对任何 $c \ (m<c<M)$，在 $[a, b]$ 内至少存在一个 $\xi$，使得 $f(\xi)=c$
+    5. $\text{Cantor}$ 定理：$f(x)$ 必在 $[a, b]$ 上一致连续
 
 ### 2.1.2 实数理论
 

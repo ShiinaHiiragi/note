@@ -119,8 +119,7 @@
 ## 1.4 极限论
 ### 1.4.1 数列极限
 1. 数列极限：设 $\left\{x_{n}\right\}$ 是一个数列，$a$ 是实数．若对任意给定的 $\varepsilon>0$，总存在一个正整数 $N$，当 $n>N$ 时都有 $\left|x_{n}-a\right|<\varepsilon$，则称 $a$ 是数列 $\left\{x_{n}\right\}$ 的极限，或称数列 $\left\{x_{n}\right\}$ 收敛于 $a$ 记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 或 $x_{n} \rightarrow a \ (n \rightarrow \infty)$．此时也称数列 $\left\{x_{n}\right\}$ 极限存在
-    1. 无穷小量：当 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=0}$ 时，称数列 $x_n$ 为无穷小量
-    2. 数列极限的性质
+    1. 数列极限的性质
         1. 保序性：若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a, \lim _{n \rightarrow \infty} y_{n}=b}$ 且 $a>b$，则总存在正整数 $N$，当 $n>N$ 时，不等式 $x_{n}>y_{n}$ 成立
             - 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a, \lim _{n \rightarrow \infty} y_{n}=b}$，且存在正整数 $N$ 使得当 $n>N$ 时，不等式 $x_{n}>y_{n}$ 都成立，则 $a \geqslant b$
             - 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 且 $a>b$（其中 $b$ 为常数），则存在正整数 $N$，当 $n>N$ 时有 $x_{n}>b$
@@ -128,12 +127,13 @@
         2. 唯一性：若数列 $\left\{x_{n}\right\}$ 收敛，则它的极限唯一
         3. 有界性：收敛数列有界
         4. 夹逼准则：若存在正整数 $N$，当 $n>N$ 时有 $x_{n} \leqslant y_{n} \leqslant z_{n}$ 且 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=\lim _{n \rightarrow \infty} z_{n}=a}$，则有 ${\displaystyle \lim _{n \rightarrow \infty} y_{n}=a}$
-    3. 数列极限的运算
+    2. 数列极限的运算
         1. 若数列 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛，则它们的和与差 $\left\{x_{n} \pm y_{n}\right\}$ 也收玫，且有 ${\displaystyle \lim _{n \rightarrow \infty}\left(x_{n} \pm y_{n}\right)=\lim _{n \rightarrow \infty} x_{n} \pm \lim _{n \rightarrow \infty} y_{n}}$
         2. 若 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛，则 $\left\{x_{n} y_{n}\right\}$ 也收敛，且 ${\displaystyle \lim _{n \rightarrow \infty} x_{n} y_{n}=\lim _{n \rightarrow \infty} x_{n} \cdot \lim _{n \rightarrow \infty} y_{n}}$
         3. 若 $\left\{x_{n}\right\}$ 为有界数列，$\left\{y_{n}\right\}$ 为无穷小量，则它们的积 $\left\{x_{n} y_{n}\right\}$ 是无穷小量
         4. 若 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛且 ${\displaystyle \lim _{n \rightarrow \infty} y_{n} \neq 0}$，则 $\left\{\dfrac{x_{n}}{y_{n}}\right\}$ 也收敛，且 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{x_{n}}{y_{n}}=\dfrac{{\displaystyle \lim _{n \rightarrow \infty} x_{n}}}{{\displaystyle \lim _{n \rightarrow \infty} y_{n}}}}$
-2. 无穷大量：设 $\left\{x_{n}\right\}$ 是一个数列，如果对任意给定的 $G>0$，总存在正整数 $N$，当 $n>N$ 时有 $\left|x_{n}\right|>G$，则称 $\left\{x_{n}\right\}$ 是一个无穷大量．记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=\infty}$ 或 $x_{n} \rightarrow \infty \ (n \rightarrow \infty)$
+2. 无穷小量：当 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=0}$ 时，称数列 $x_n$ 为无穷小量
+3. 无穷大量：设 $\left\{x_{n}\right\}$ 是一个数列，如果对任意给定的 $G>0$，总存在正整数 $N$，当 $n>N$ 时有 $\left|x_{n}\right|>G$，则称 $\left\{x_{n}\right\}$ 是一个无穷大量．记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=\infty}$ 或 $x_{n} \rightarrow \infty \ (n \rightarrow \infty)$
     1. 无穷大量和无穷小量的关系：若 $\left\{x_{n}\right\}$ 为无穷大量，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷小量；若 $\left\{x_{n}\right\}$ 为无穷小量且 $x_{n} \neq 0 \ (n=1,2,3, \cdots)$，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷大量
     2. 正无穷大与负无穷大：对任意给定的 $G>0$，总存在 $N$，当 $n>N$ 时，若有 $x_{n}>$ $G$，则称 $\left\{x_{n}\right\}$ 是正无穷大量；若有 $-x_{n}>$ $G$，则称 $\left\{x_{n}\right\}$ 是负无穷大量
     3. 无穷大量的运算
@@ -141,7 +141,7 @@
         2. 设 $\left\{x_{n}\right\}$ 是无穷大量，而 $\left\{y_{n}\right\}$ 是有界数列，则其和 $\left\{x_{n}+y_{n}\right\}$ 是无穷大量
         3. 设 $\left\{x_{n}\right\}$ 是无穷大量，数列 $\left\{y_{n}\right\}$ 具有以下特性：存在某个 $N$，当 $n>N$ 时有 $\left|y_{n}\right| \geqslant \delta>0$，其中 $\delta$ 是一个确定的数，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
         4. 设 $\left\{x_{n}\right\}$ 是无穷大量，$\left\{y_{n}\right\}$ 收敛于 $a \neq 0$，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
-3. 收敛准则：单调有界数列必有极限
+4. 收敛准则：单调有界数列必有极限
 
 ### 1.4.2 一元函数极限
 1. 函数极限的定义
@@ -170,7 +170,6 @@
     2. 若 $B\neq 0$，则 ${\displaystyle \lim _{x \rightarrow x_{0}} \dfrac{f(x)}{g(x)}=\dfrac{A}{B}}$
     3. 若 $A=0$ 且 $g(x)$ 在某区间 $\left(x_{0}-\delta, x_{0}\right) \cup\left(x_{0}, x_{0}+\delta\right)$ 有界，则 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x) g(x)=0}$
 4. 两个重要极限：${\displaystyle \lim _{x \rightarrow 0} \frac{\sin x}{x}=1}$ 与 ${\displaystyle \lim _{x \rightarrow \infty}\left(1+\frac{1}{x}\right)^{x}=\mathrm{e}}$
-5. 无穷小量
 
 ### 1.4.2 多元函数极限
 
