@@ -147,12 +147,8 @@
         2. 设 $\left\{x_{n}\right\}$ 是无穷大量，而 $\left\{y_{n}\right\}$ 是有界数列，则其和 $\left\{x_{n}+y_{n}\right\}$ 是无穷大量
         3. 设 $\left\{x_{n}\right\}$ 是无穷大量，数列 $\left\{y_{n}\right\}$ 具有以下特性：存在某个 $N$，当 $n>N$ 时有 $\left|y_{n}\right| \geqslant \delta>0$，其中 $\delta$ 是一个确定的数，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
         4. 设 $\left\{x_{n}\right\}$ 是无穷大量，$\left\{y_{n}\right\}$ 收敛于 $a \neq 0$，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
-4. 收敛准则
-    1. 单调有界数列必收敛
-    2. 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$，则 $\left\{x_{n}\right\}$ 的任何子列 $\left\{x_{n_{k}}\right\}$ 都收敛于 $a$
-    3. 若对任何 $\left\{x_{n}\right\}, x_{n} \rightarrow x_{0} \ (n \rightarrow \infty), x_{n} \neq x_{0}$ 都有 $\left\{f\left(x_{n}\right)\right\}$ 收敛，则 $f(x)$ 在 $x_{0}$ 的极限存在
 
-### 1.4.2 一元函数极限
+### 1.4.2 一元极限
 1. 函数极限的定义
     1. 函数在 $x_{0}$ 点的极限：设函数 $f(x)$ 在 $x_{0}$ 点的某个去心球形邻域有定义
         1. 函数值趋于有穷的极限：设 $A$ 是一个定数，若对于任意给定的 $\varepsilon>0$，一定存在 $\delta>0$ 使得当 $0<$ $\left|x-x_{0}\right|<\delta$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的极限，记作 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}\right)$．此时也称函数 $f(x)$ 在 $x_{0}$ 点极限存在，其极限值是 $A$
@@ -180,6 +176,6 @@
     3. 若 $A=0$ 且 $g(x)$ 在某区间 $\left(x_{0}-\delta, x_{0}\right) \cup\left(x_{0}, x_{0}+\delta\right)$ 有界，则 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x) g(x)=0}$
 4. 两个重要极限：${\displaystyle \lim _{x \rightarrow 0} \dfrac{\sin x}{x}=1}$ 与 ${\displaystyle \lim _{x \rightarrow \infty}\left(1+\dfrac{1}{x}\right)^{x}=\mathrm{e}}$
 
-### 1.4.2 多元函数极限
+### 1.4.2 多元极限
 
 ## 1.5 级数
