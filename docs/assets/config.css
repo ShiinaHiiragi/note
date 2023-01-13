@@ -67,6 +67,10 @@ del.critic {
 }
 
 /* Text in MathJax */
+div.arithmatex {
+  overflow: inherit !important;
+}
+
 mjx-utext[variant="sans-serif"] {
   font-family: "Noto Sans", "Noto Sans SC" !important;
   font-size: 0.8rem !important;

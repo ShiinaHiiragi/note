@@ -13,6 +13,40 @@
 
 ## 1.2 数列
 1. 数列：以数集作为值域的序列称为数列，通常以正整数集 $\mathbf Z_+$ 作为定义域．一般记为 $a_1, a_2, \cdots, a_n, \cdots$，简记作 $\{a_n\}$
+    1. 通项公式：如果数列 $\{a_n\}$ 的第 $n$ 项（即通项）与 $n$ 之间具有函数关系 $f(n)$，则称这个公式为该数列的通项公式
+    2. 子列：在数列 $\{a_n\}$ 中，保持原来次序自左往右任意选取无穷多个项的数列 $a_{n_{1}}, a_{n_{2}}, \cdots, a_{n_{k}}, \cdots$ 称为 $\left\{a_{n}\right\}$ 的一个子列，简记作 $\{a_{n_{k}}\}$
+    3. 前 $n$ 项和：对于数列 $\{a_n\}$，称 ${\displaystyle \sum_{i=1}^n a_i}$ 为该数列的前 $n$ 项和，记作 $S_n$
+        1. $\{S_n\}$ 也是一个数列，且有 $a_n = \left\{\begin{aligned} & S_1, & n = 1 \\ & S_n - S_{n-1}, & n = 2, 3, 4, \cdots \end{aligned}\right.$
+        2. 级数：记 ${\displaystyle \sum_{i=1}^\infty a_i = \lim_{n \to \infty} \sum_{i=1}^n a_i = \lim_{n \to \infty} S_n}$ ，称之为无穷级数
+
+        !!! note "$\text{Bernoulli}$ 数"
+            设 $S_n^p=1^p+2^p+\cdots+n^p$，则有
+
+            $$
+            S_n^p=\dfrac{1}{p+1} n^{p+1}+\dfrac{1}{2} n^p+\dfrac{B_2}{2}\dbinom{p}{1} n^{p-1}+\dfrac{B_3}{3}\dbinom{p}{2}n^{p-2}+\cdots+\dfrac{B_p}{p}\dbinom{p}{p-1}n
+            $$
+
+            且
+
+            $$
+            \dfrac{1}{p+1}+\dfrac{1}{2}+\dfrac{B_2}{2}\dbinom{p}{1}+\dfrac{B_3}{3}\dbinom{p}{2}+\cdots+\dfrac{B_p}{p}\dbinom{p}{p-1}=1
+            $$
+
+            其中 ${\displaystyle \sum_{k=0}^n\dbinom{p+1}{k} B_k=0}$．从而以下结论成立
+
+            1. $(1+B)^{p+1}-B_{p+1}=0$
+            2. $\dfrac{S_n^p}{p !}=\dfrac{B_0(n+1)^{p+1}}{0 !(p+1) !}+\dfrac{B_1(n+1)^p}{1 ! p !}+\dfrac{B_2(n+1)^{p-1}}{2 !(p-1) !}+\cdots+\dfrac{B_p(n+1)}{p ! 1 !}$
+            3. ${\displaystyle \dfrac{x}{\mathrm{e}^x-1}=\dfrac{B_0}{0 !}+\dfrac{B_1}{1 !} x+\dfrac{B_2}{2 !} x^2+\cdots=\sum_{k=0}^{\infty} \dfrac{B_k}{k !} x^k}$
+
+            据此导出常用的前 $n$ 项和
+
+            4. $1+2+3+\cdots+n=\dfrac{1}{2} n(n+1)$
+            5. $1^2+2^2+3^2+\cdots+n^2=\dfrac{1}{6} n(n+1)(2 n+1)$
+            6. $1^3+2^3+3^3+\cdots+n^3=\dfrac{1}{4} n^2(n+1)^2$
+            7. $1^4+2^4+3^4+\cdots+n^4=\dfrac{1}{30} n(n+1)(2 n+1)\left(3 n^2+3 n-1\right)$
+            8. $1^5+2^5+3^5+\cdots+n^5=\dfrac{1}{12} n^2(n+1)^2\left(2 n^2+2 n-1\right)$
+
+2. 数列的分类
     1. 按定义域分类
         1. 有穷数列：以自然数 $n$ 为定义域的数列
         2. 无穷数列：以自然数集 $\mathbf N$ 为定义域的数列
@@ -23,39 +57,7 @@
         1. 常数列：各项都相等的数列
         2. 单调数列：从第二项起每项都大于等于（小于等于）前一项的数列，则称数列为单调递增（递减）数列．特别地，若数列从第二项起每项都大于（小于）前一项，则称数列是严格单调递增（递减）的
         3. 摆动数列：有的项大于其前一项，有的项小于其前一项的数列
-2. 通项公式：如果数列 $\{a_n\}$ 的第 $n$ 项（即通项）与 $n$ 之间具有函数关系 $f(n)$，则称这个公式为该数列的通项公式
-3. 前 $n$ 项和：对于数列 $\{a_n\}$，称 ${\displaystyle \sum_{i=1}^n a_i}$ 为该数列的前 $n$ 项和，记作 $S_n$
-    1. $\{S_n\}$ 也是一个数列，且有 $a_n = \left\{\begin{aligned} & S_1, & n = 1 \\ & S_n - S_{n-1}, & n = 2, 3, 4, \cdots \end{aligned}\right.$
-    2. 级数：记 ${\displaystyle \sum_{i=1}^\infty a_i = \lim_{n \to \infty} \sum_{i=1}^n a_i = \lim_{n \to \infty} S_n}$ ，称之为无穷级数
-
-    !!! note "$\text{Bernoulli}$ 数"
-        设 $S_n^p=1^p+2^p+\cdots+n^p$，则有
-
-        $$
-        S_n^p=\dfrac{1}{p+1} n^{p+1}+\dfrac{1}{2} n^p+\dfrac{B_2}{2}\dbinom{p}{1} n^{p-1}+\dfrac{B_3}{3}\dbinom{p}{2}n^{p-2}+\cdots+\dfrac{B_p}{p}\dbinom{p}{p-1}n
-        $$
-
-        且
-
-        $$
-        \dfrac{1}{p+1}+\dfrac{1}{2}+\dfrac{B_2}{2}\dbinom{p}{1}+\dfrac{B_3}{3}\dbinom{p}{2}+\cdots+\dfrac{B_p}{p}\dbinom{p}{p-1}=1
-        $$
-
-        其中 ${\displaystyle \sum_{k=0}^n\dbinom{p+1}{k} B_k=0}$．从而以下结论成立
-
-        1. $(1+B)^{p+1}-B_{p+1}=0$
-        2. $\dfrac{S_n^p}{p !}=\dfrac{B_0(n+1)^{p+1}}{0 !(p+1) !}+\dfrac{B_1(n+1)^p}{1 ! p !}+\dfrac{B_2(n+1)^{p-1}}{2 !(p-1) !}+\cdots+\dfrac{B_p(n+1)}{p ! 1 !}$
-        3. ${\displaystyle \dfrac{x}{\mathrm{e}^x-1}=\dfrac{B_0}{0 !}+\dfrac{B_1}{1 !} x+\dfrac{B_2}{2 !} x^2+\cdots=\sum_{k=0}^{\infty} \dfrac{B_k}{k !} x^k}$
-
-        据此导出常用的前 $n$ 项和
-
-        4. $1+2+3+\cdots+n=\dfrac{1}{2} n(n+1)$
-        5. $1^2+2^2+3^2+\cdots+n^2=\dfrac{1}{6} n(n+1)(2 n+1)$
-        6. $1^3+2^3+3^3+\cdots+n^3=\dfrac{1}{4} n^2(n+1)^2$
-        7. $1^4+2^4+3^4+\cdots+n^4=\dfrac{1}{30} n(n+1)(2 n+1)\left(3 n^2+3 n-1\right)$
-        8. $1^5+2^5+3^5+\cdots+n^5=\dfrac{1}{12} n^2(n+1)^2\left(2 n^2+2 n-1\right)$
-
-4. 差分：对于数列 $\{a_k\}$，称 $\Delta a_k = a_{k+1} - a_k \ (k \in \mathbf Z_+)$ 为 $\{a_k\}$ 的一阶差分，数列 $\{\Delta a_k\}$ 称为 $\{a_k\}$ 的一阶差分数列
+3. 差分：对于数列 $\{a_k\}$，称 $\Delta a_k = a_{k+1} - a_k \ (k \in \mathbf Z_+)$ 为 $\{a_k\}$ 的一阶差分，数列 $\{\Delta a_k\}$ 称为 $\{a_k\}$ 的一阶差分数列
     1. 高阶差分：设 $r \in \mathbf Z_+$，称 $\Delta^r a_k = \Delta(\Delta^{r-1}a_k) \ (k \in \mathbf Z_+)$ 为 $\{a_k\}$ 的 $r$ 阶差分，数列 $\{\Delta^r a_k\}$ 称为 $\{a_k\}$ 的 $r$ 阶差分数列
     2. 差分的性质：对于数列 $\{a_k\}, \{b_k\}$
         1. $\Delta(\lambda a_k + \mu b_k) = \lambda \Delta a_k + \mu \Delta b_k$，其中 $\lambda, \mu$ 为常数
@@ -132,8 +134,12 @@
         2. 若 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛，则 $\left\{x_{n} y_{n}\right\}$ 也收敛，且 ${\displaystyle \lim _{n \rightarrow \infty} x_{n} y_{n}=\lim _{n \rightarrow \infty} x_{n} \cdot \lim _{n \rightarrow \infty} y_{n}}$
         3. 若 $\left\{x_{n}\right\}$ 为有界数列，$\left\{y_{n}\right\}$ 为无穷小量，则它们的积 $\left\{x_{n} y_{n}\right\}$ 是无穷小量
         4. 若 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛且 ${\displaystyle \lim _{n \rightarrow \infty} y_{n} \neq 0}$，则 $\left\{\dfrac{x_{n}}{y_{n}}\right\}$ 也收敛，且 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{x_{n}}{y_{n}}=\dfrac{{\displaystyle \lim _{n \rightarrow \infty} x_{n}}}{{\displaystyle \lim _{n \rightarrow \infty} y_{n}}}}$
-2. 无穷小量：当 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=0}$ 时，称数列 $x_n$ 为无穷小量
-3. 无穷大量：设 $\left\{x_{n}\right\}$ 是一个数列，如果对任意给定的 $G>0$，总存在正整数 $N$，当 $n>N$ 时有 $\left|x_{n}\right|>G$，则称 $\left\{x_{n}\right\}$ 是一个无穷大量．记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=\infty}$ 或 $x_{n} \rightarrow \infty \ (n \rightarrow \infty)$
+2. 无穷小量：当 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=0}$ 时，称数列 $x_n$ 为无穷小量．设 $y, z$ 是两个无穷小量
+    1. 若 $\dfrac{y}{z} \rightarrow 0$ 或 $\dfrac{z}{y} \rightarrow \infty$，则称 $y$ 关于 $z$ 是高阶无穷小量或 $z$ 关于 $y$ 是低阶无穷小量，记做 $y=o(z)$
+    2. 若 $\dfrac{y}{z} \rightarrow a \neq 0$，则称 $y$ 和 $z$ 是同阶无穷小量．一般地，若存在常数 $A>0, B>0$，变量 $y$ 和 $z$ 自某值以后有 ${\displaystyle A \leqslant\left|\dfrac{y}{z}\right| \leqslant B}$，则称 $y$ 和 $z$ 是同阶无穷小量，记为 $y=O(z)$ 或 $z=O(y)$
+    3. 当 $\dfrac{y}{z} \rightarrow 1$ 时，称 $y, z$ 是等价无穷小量，记为 $y \sim z$
+    4. 若以 $x$ 作为基本无穷小量，则当 $y$ 与 $x^{k}$（$k$ 为某一正数）为同阶无穷小量 时，称 $y$ 为 $k$ 阶无穷小量．特别地，当 $\dfrac{y}{x^{k}} \rightarrow a \neq 0$ 时，$y$ 为 $k$ 阶无穷小量，此时 $y$ 与 $a x^{k}$ 等价，称 $a x^{k}$ 为无穷小量 $y$ 的主要部分
+3. 无穷大量：设 $\left\{x_{n}\right\}$ 是一个数列，如果对任意给定的 $G>0$，总存在正整数 $N$，当 $n>N$ 时有 $\left|x_{n}\right|>G$，则称 $\left\{x_{n}\right\}$ 是一个无穷大量，记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=\infty}$ 或 $x_{n} \rightarrow \infty \ (n \rightarrow \infty)$．无穷大量也有类似无穷小量的阶
     1. 无穷大量和无穷小量的关系：若 $\left\{x_{n}\right\}$ 为无穷大量，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷小量；若 $\left\{x_{n}\right\}$ 为无穷小量且 $x_{n} \neq 0 \ (n=1,2,3, \cdots)$，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷大量
     2. 正无穷大与负无穷大：对任意给定的 $G>0$，总存在 $N$，当 $n>N$ 时，若有 $x_{n}>$ $G$，则称 $\left\{x_{n}\right\}$ 是正无穷大量；若有 $-x_{n}>$ $G$，则称 $\left\{x_{n}\right\}$ 是负无穷大量
     3. 无穷大量的运算
@@ -141,7 +147,10 @@
         2. 设 $\left\{x_{n}\right\}$ 是无穷大量，而 $\left\{y_{n}\right\}$ 是有界数列，则其和 $\left\{x_{n}+y_{n}\right\}$ 是无穷大量
         3. 设 $\left\{x_{n}\right\}$ 是无穷大量，数列 $\left\{y_{n}\right\}$ 具有以下特性：存在某个 $N$，当 $n>N$ 时有 $\left|y_{n}\right| \geqslant \delta>0$，其中 $\delta$ 是一个确定的数，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
         4. 设 $\left\{x_{n}\right\}$ 是无穷大量，$\left\{y_{n}\right\}$ 收敛于 $a \neq 0$，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
-4. 收敛准则：单调有界数列必有极限
+4. 收敛准则
+    1. 单调有界数列必收敛
+    2. 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$，则 $\left\{x_{n}\right\}$ 的任何子列 $\left\{x_{n_{k}}\right\}$ 都收敛于 $a$
+    3. 若对任何 $\left\{x_{n}\right\}, x_{n} \rightarrow x_{0} \ (n \rightarrow \infty), x_{n} \neq x_{0}$ 都有 $\left\{f\left(x_{n}\right)\right\}$ 收敛，则 $f(x)$ 在 $x_{0}$ 的极限存在
 
 ### 1.4.2 一元函数极限
 1. 函数极限的定义
@@ -163,13 +172,13 @@
     3. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 而 $A>B$（或 $A<B$），则存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)>B$（或 $f(x)<B$）
     4. 唯一性：若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} f(x)=B}$，则 $A=B$
     5. 夹逼性：若存在 $\delta>0$，使当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x) \leqslant g(x) \leqslant h(x)$ 且 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=\lim _{x \rightarrow x_{0}} h(x)=A}$，则 ${\displaystyle \lim _{x \rightarrow x_{0}} g(x)=A}$
-    6. 局部有界性：若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$，则存在 $\delta>0$ 使得 $f(x)$ 在区间 $\left(x_{0}-\delta, x_{0}\right) \cup\left(x_{0}, x_{0}+\delta\right)$ 内有界\
+    6. 局部有界性：若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$，则存在 $\delta>0$ 使得 $f(x)$ 在区间 $\left(x_{0}-\delta, x_{0}\right) \cup\left(x_{0}, x_{0}+\delta\right)$ 内有界
     7. $\text{Heine}$ 定理：${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 当且仅当对任何以 $x_{0}$ 为极限的数列 $\left\{x_{n}\right\}\left(x_{n} \neq x_{0}\right)$ 都有 $f\left(x_{n}\right) \rightarrow A \ (n \rightarrow \infty)$
 3. 函数极限的运算：设 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$
     1. ${\displaystyle \lim _{x \rightarrow x_{0}}[f(x) \pm g(x)]=A \pm B, \lim _{x \rightarrow x_{0}} f(x) g(x)=AB}$
     2. 若 $B\neq 0$，则 ${\displaystyle \lim _{x \rightarrow x_{0}} \dfrac{f(x)}{g(x)}=\dfrac{A}{B}}$
     3. 若 $A=0$ 且 $g(x)$ 在某区间 $\left(x_{0}-\delta, x_{0}\right) \cup\left(x_{0}, x_{0}+\delta\right)$ 有界，则 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x) g(x)=0}$
-4. 两个重要极限：${\displaystyle \lim _{x \rightarrow 0} \frac{\sin x}{x}=1}$ 与 ${\displaystyle \lim _{x \rightarrow \infty}\left(1+\frac{1}{x}\right)^{x}=\mathrm{e}}$
+4. 两个重要极限：${\displaystyle \lim _{x \rightarrow 0} \dfrac{\sin x}{x}=1}$ 与 ${\displaystyle \lim _{x \rightarrow \infty}\left(1+\dfrac{1}{x}\right)^{x}=\mathrm{e}}$
 
 ### 1.4.2 多元函数极限
 
