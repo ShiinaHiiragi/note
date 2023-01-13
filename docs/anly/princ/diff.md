@@ -47,5 +47,53 @@
     3. 若 $\left\{x_{n}\right\}$ 是一个无界数列，则存在子列 $x_{n_{k}} \rightarrow \infty(k \rightarrow \infty)$
 
 ## 2.2 一元微分法
+### 2.3.1 导数
+1. 导数的定义：设函数 $y=f(x)$ 在 $x_{0}$ 附近有定义，对应于自变量的任一改变量 $\Delta x \ (\Delta x>0$ 或 $\Delta x<0)$，函数的改变量为 $\Delta y=f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)$．若极限
+
+    $$
+    \lim _{\Delta x \rightarrow 0} \dfrac{\Delta y}{\Delta x}=\lim _{\Delta x \rightarrow 0} \dfrac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{\Delta x}
+    $$
+
+    存在，则称此极限值为函数 $f(x)$ 在点 $x_{0}$ 的导数（微商），记作 $f^{\prime}\left(x_{0}\right)$ 或 $y^{\prime}\left(x_{0}\right), \dfrac{\mathrm{d} y}{\mathrm{~d} x}\left(x_{0}\right), \dfrac{\mathrm{d} f}{\mathrm{~d} x}\left(x_{0}\right)$，此时称 $f(x)$ 在点 $x_{0}$ 的导数存在，或称 $f(x)$ 在点 $x_{0}$ 可导
+
+    1. 若 $f(x)$ 在点 $x$ 可导当且仅当
+
+        $$
+        \begin{aligned}
+        &\lim _{\Delta x \rightarrow+0} \dfrac{f(x+\Delta x)-f(x)}{\Delta x} \\
+        &\lim _{\Delta x \rightarrow-0} \dfrac{f(x+\Delta x)-f(x)}{\Delta x}
+        \end{aligned}
+        $$
+
+        同时存在而且相等，分别称之为 $f(x)$ 在点 $x$ 的右导数与左导数，记为 $f_{+}^{\prime}(x)$ 与 $f_{-}^{\prime}(x)$
+
+    2. 函数 $f(x)$ 在区间 $X$ 内的可导性
+        1. 若 $f(x)$ 在区间 $(a, b)$ 的每一点都可导，则称 $f(x)$ 在区间 $(a, b)$ 可导；若 $f(x)$ 在开区间 $(a, b)$ 可导，且 $f_{+}^{\prime}(a)$ 及 $f_{-}^{\prime}(b)$ 存在，则称 $f(x)$ 在闭区间 $[a, b]$ 可导
+        2. 若函数 $f(x)$ 在区间 $X$ 内可导，则 $f^{\prime}(x)$ 是 $X$ 上的函数，称之为导函数
+
+2. 求导法则
+    1. 导数的四则运算
+        1. $[u(x) \pm v(x)]^{\prime}=u^{\prime}(x) \pm v^{\prime}(x)$
+        2. $[c u(x)]^{\prime}=c u^{\prime}(x)$，其中 $c$ 为常数
+        3. $[u(x) v(x)]^{\prime}=u^{\prime}(x) v(x)+u(x) v^{\prime}(x)$
+        4. $\left[\dfrac{u(x)}{v(x)}\right]^{\prime}=\dfrac{u^{\prime}(x) v(x)-u(x) v^{\prime}(x)}{v^{2}(x)} \ (v(x) \neq 0)$
+    2. 反函数的导数：若 $y=f(x)$ 有 ① $f'(x_0) \neq 0$；② $f(x)$ 在点 $x_{0}$ 的某一邻域内连续且严格单调，则其反函数 $x=\varphi(y)$ 在点 $y_{0}$ 可导，这里 $y_{0}=f\left(x_{0}\right)$ 且 $\varphi^{\prime}\left(y_{0}\right)=\dfrac{1}{f^{\prime}\left(x_{0}\right)}$
+    3. 复合函数的导数：若 $y=f(u)$ 在点 $u$ 可导，$u=g(x)$ 在点 $x$ 可导，则复合函数 $y=f \circ g(x)$ 在点 $x$ 可导，且有
+
+        $$
+        \dfrac{\mathrm{d} y}{\mathrm{~d} x}=\dfrac{\mathrm{d} y}{\mathrm{~d} u} \cdot \dfrac{\mathrm{d} u}{\mathrm{~d} x}=f^{\prime}(g(x)) g^{\prime}(x)
+        $$
+
+3. 初等函数的导数
+    1. $(c)^{\prime}=0$（$c$ 为常数）
+    2. $\left(x^{\alpha}\right)^{\prime}=\alpha x^{\alpha-1}$
+    3. $\left(a^{x}\right)^{\prime}=a^{x} \ln a,\left(\mathrm{e}^{x}\right)^{\prime}=\mathrm{e}^{x}, \left(\log _{a} x\right)^{\prime}=\dfrac{1}{x \ln a},(\ln x)^{\prime}=\dfrac{1}{x}$
+    4. $(\sin x)^{\prime}=\cos x, (\cos x)^{\prime}=-\sin x, (\tan x)^{\prime}=\sec ^{2} x, (\cot x)^{\prime}=-\csc ^{2} x$
+    5. $(\arcsin x)^{\prime}=\dfrac{1}{\sqrt{1-x^{2}}}, (\arccos x)^{\prime}=-\dfrac{1}{\sqrt{1-x^{2}}}, (\arctan x)^{\prime}=\dfrac{1}{1+x^{2}}, (\operatorname{arccot} x)^{\prime}=-\dfrac{1}{1+x^{2}}$
+    6. $(\operatorname{sinh} x)^{\prime}=\operatorname{cosh} x, (\operatorname{cosh} x)^{\prime}=\operatorname{sinh} x ,(\operatorname{tanh} x)^{\prime}=\dfrac{1}{\operatorname{cosh}^{2} x} ,(\operatorname{coth} x)^{\prime}=-\dfrac{1}{\operatorname{sinh}^{2} x}$
+
+### 2.3.2 微分
+
+### 2.3.3 中值定理
 
 ## 2.3 多元微分法
