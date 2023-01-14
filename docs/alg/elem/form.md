@@ -158,9 +158,9 @@
 ## 1.3 初等函数
 ### 1.3.1 函数的性质
 1. 有界性：若函数 $f(x)$ 在某个区间 $X$ 内满足 $A \leqslant f(x) \leqslant B$，则称 $f(x)$ 在 $X$ 内有界．如果不存在满足此条件的 $A$ 或 $B$，则称该函数是无界的
-2. 单调性：对于给定区间 $E$ 上的函数 $f(x)$，对于任意 $x_1, x_2 \in E$
-    1. 若有 $x_1 < x_2 \to f(x_1) < f(x_2)$，则称 $f(x)$ 在 $E$ 上是单调递增的
-    2. 若有 $x_1 < x_2 \to f(x_1) > f(x_2)$，则称 $f(x)$ 在 $E$ 上是单调递减的
+2. 单调性：对于给定区间 $E$ 上的函数 $f(x)$，对于任意 $x_1, x_2 \in E$，若有 $x_1 < x_2 \to f(x_1) < f(x_2)$，则称 $f(x)$ 在 $E$ 上是单调递增的；若有 $x_1 < x_2 \to f(x_1) > f(x_2)$，则称 $f(x)$ 在 $E$ 上是单调递减的
+    1. 若 $f(x)$ 在 $[a, b]$ 连续，在 $(a, b)$ 可导，则 $f(x)$ 在 $[a, b]$ 单调递增当且仅当在 $(a, b)$ 内 $f^{\prime}(x) \geqslant 0$；$f(x)$ 在 $[a, b]$ 单调递减当且仅当在 $(a, b)$ 内 $f^{\prime}(x) \leqslant 0$
+    2. 若 $f(x)$ 在 $[a, b]$ 连续，在 $(a, b)$ 可导且 $f^{\prime}(x)$ 不变号，则若 $f^{\prime}(x)>0$, 则 $f(x)$ 在 $[a, b]$ 严格单调递增；若 $f^{\prime}(x)<0$, 则 $f(x)$ 在 $[a, b]$ 严格单调递减
 3. 奇偶性：设函数 $f(x)$ 的定义域为 $D$，对于任意 $x \in D$，都如果有 $f(-x) = -f(x)$，则称 $f(x)$ 为奇函数；如果对于任意 $x \in D$，都有 $f(-x) = f(x)$，则称 $f(x)$ 为偶函数
     1. 设 $g(x)$ 为奇函数，则当 $f(x)$ 为奇函数（或偶函数）时，$y = f[g(x)]$ 为奇函数（或偶函数）
     2. 设 $g(x)$ 为偶函数，则当 $f(x)$ 为奇函数或偶函数时，$y = f[g(x)]$ 为偶函数
@@ -171,9 +171,25 @@
         3. 函数 $f(ax + b) \ (a \neq 0, ax + b \in D)$ 是以 $\dfrac{T}{|a|}$ 为最小正周期的周期函数
     2. 设 $u = g(x)$ 是定义在集合 $D$ 上的周期函数，其最小正周期为 $T$．如果 $f(x)$ 是定义在集合 $E$ 上的函数，且当 $x \in D$，$g(x) \in E$，则复合函数 $f[g(x)]$ 是集合 $D$ 上以 $T$ 为周期的周期函数
     3. 设 $f_1(x)$ 和 $f_2(x)$ 都是定义在集合 $D$ 上的周期函数，它们的正周期分别为 $T_1, T_2$．如果 $\dfrac{T_2}{T_1} \in \mathbf Q$，则其和与积也是 $D$ 上的周期函数，$T_1, T_2$ 的公倍数是其和与积的一个周期
-5. 凹凸性：设函数 $f(x)$ 在区间 $D$ 上连续，对任意 $x_1, x_2 \in D$
-    1. 若恒有 $f\left(\dfrac{x_1 + x_2}{2}\right) < \dfrac{f(x_1) + f(x_2)}{2}$，则称函数 $f(x)$ 在区间 $D$ 上为凹函数
-    2. 若恒有 $f\left(\dfrac{x_1 + x_2}{2}\right) > \dfrac{f(x_1) + f(x_2)}{2}$，则称函数 $f(x)$ 在区间 $D$ 上为凸函数
+5. 凹凸性：设函数 $f(x)$ 在区间 $D$ 上连续，对任意 $x_1, x_2 \in D$，若恒有 $f\left(\dfrac{x_1 + x_2}{2}\right) < \dfrac{f(x_1) + f(x_2)}{2}$，则称函数 $f(x)$ 在区间 $D$ 上为凹函数；若恒有 $f\left(\dfrac{x_1 + x_2}{2}\right) > \dfrac{f(x_1) + f(x_2)}{2}$，则称函数 $f(x)$ 在区间 $D$ 上为凸函数
+    1. 拐点：若曲线上点 $\left(x_{0}, f\left(x_{0}\right)\right)$ 使得曲线在此点的一边为凸函数，在另一边为凹函数，则称此点为曲线的拐点，也称扭转点
+    2. 设 $f(x)$ 在 $(a, b)$ 内存在二阶导数 $f^{\prime \prime}(x)$，则
+        1. 若在 $(a, b)$ 内有 $f^{\prime \prime}(x)<0$，则 $f(x)$ 在 $(a, b)$ 为凸函数
+        2. 若在 $(a, b)$ 内有 $f^{\prime \prime}(x)>0$，则 $f(x)$ 在 $(a, b)$ 为凹函数
+6. 极值：设 $f(x)$ 在 $[a, b]$ 上连续．若对于一点 $x_{0}$，存在 $x_{0}$ 的某一邻域 $\left(x_{0}-\delta, x_{0}+\delta\right) \ (\delta>0)$，使对于此邻域中的任意点 $x$ 都有 $f(x) \leqslant f\left(x_{0}\right)$，则称 $f(x)$ 在 $x_{0}$ 有一极大值 $f\left(x_{0}\right)$，且 $x_{0}$ 为极大值点；如果在 $x_{0}$ 的某一邻域 $\left(x_{0}-\delta, x_{0}+\delta\right)$ 中总有 $f(x) \geqslant f\left(x_{0}\right)$，则称 $f(x)$ 在 $x_{0}$ 有一极小值 $f\left(x_{0}\right)$，且 $x_{0}$ 为极小值点．极大值与极 小值统称为极值，极大值点与极小值点统称为极值点
+    1. 极值的必要条件：若 $x_{0}$ 是 $f(x)$ 的极值点，那么 $x_{0}$ 是 $f^{\prime}(x)$ 的零点或 $f(x)$ 的不可导点
+    2. 极值的判别
+        1. 设 $f(x)$ 在 $\left(x_{0}-\delta, x_{0}\right)$ 和 $\left(x_{0}, x_{0}+\delta\right)$（其中 $\delta>0$）可导，则
+            - 若在 $\left(x_{0}-\delta, x_{0}\right)$ 内 $f^{\prime}(x)<0$，而在 $\left(x_{0}, x_{0}+\delta\right)$ 内 $f^{\prime}(x)>0$，则 $x_{0}$ 为极小值点
+            - 若在 $\left(x_{0}-\delta, x_{0}\right)$ 内 $f^{\prime}(x)>0$，而在 $\left(x_{0}, x_{0}+\delta\right)$ 内 $f^{\prime}(x)<0$，则 $x_{0}$ 为极大值点
+            - 若 $f^{\prime}(x)$ 在这两个区间内不变号，则 $x_{0}$ 不是极值点
+        2. 设 $f(x)$ 一阶、二阶可导，且 $f^{\prime}\left(x_{0}\right)=0$，则
+            - 若 $f^{\prime \prime}\left(x_{0}\right)<0$，则 $f\left(x_{0}\right)$ 是极大值
+            - 若 $f^{\prime \prime}\left(x_{0}\right)>0$，则 $f\left(x_{0}\right)$ 是极小值
+7. 渐近线：设 $f(x)$ 是一个函数
+    1. 水平渐近线：若 ${\displaystyle \lim _{x \rightarrow+\infty} f(x)=b}$ 或 ${\displaystyle \lim _{x \rightarrow-\infty} f(x)=b}$，则称 $y=b$ 是曲线 $y=f(x)$ 在 $x \rightarrow+\infty$ 或 $x \rightarrow-\infty$ 时的一条水平渐近线
+    2. 垂直渐近线：若 ${\displaystyle \lim _{x \rightarrow c} f(x)=\infty}$，则称 $x=c$ 是 $y=f(x)$ 的一条垂直渐近线
+    3. 斜渐近线：设 $\rho(M, P)=f(x)-(ax+b)$，当 $x \rightarrow \infty$ 时，$\rho(M, P) \rightarrow 0$ 当且仅当 $y=a x+b$ 是渐近线
 
 ### 1.3.2 基本初等函数
 1. 常值函数：形如 $y = c$ 的函数，其中 $c$ 为常数
@@ -218,8 +234,8 @@
         |    项目    |                                    正弦函数                                    |                      余弦函数                      |                                              正切函数                                               |                                 余切函数                                  |
         | :--------: | :----------------------------------------------------------------------------: | :------------------------------------------------: | :-------------------------------------------------------------------------------------------------: | :-----------------------------------------------------------------------: |
         |   函数式   |                                  $y = \sin x$                                  |                    $y = \cos x$                    |                                            $y = \tan x$                                             |                               $y = \cot x$                                |
-        |   定义域   |                                  $\mathbf R$                                   |                    $\mathbf R$                     |                                             $\mathbf R$                                             |                                $\mathbf R$                                |
-        |    值域    |                                   $[-1, 1]$                                    |                     $[-1, 1]$                      | ${\displaystyle \bigcup_{n \in \mathbf Z} \left(n \pi-\dfrac{\pi}{2}, n \pi+\dfrac{\pi}{2}\right)}$ | ${\displaystyle \bigcup_{n \in \mathbf Z} \left(n \pi, n \pi+\pi\right)}$ |
+        |   定义域   |                                  $\mathbf R$                                   |                    $\mathbf R$                     | ${\displaystyle \bigcup_{n \in \mathbf Z} \left(n \pi-\dfrac{\pi}{2}, n \pi+\dfrac{\pi}{2}\right)}$ | ${\displaystyle \bigcup_{n \in \mathbf Z} \left(n \pi, n \pi+\pi\right)}$ |
+        |    值域    |                                   $[-1, 1]$                                    |                     $[-1, 1]$                      |                                             $\mathbf R$                                             |                                $\mathbf R$                                |
         | 最小正周期 |                                     $2\pi$                                     |                       $2\pi$                       |                                                $\pi$                                                |                                   $\pi$                                   |
         |   奇偶性   |                                     奇函数                                     |                       偶函数                       |                                               奇函数                                                |                                  奇函数                                   |
         |  递增区间  | $\left[-\dfrac{\pi}{2} + 2k\pi, \dfrac{\pi}{2} + 2k\pi\right], k\in \mathbf Z$ | $\left[-\pi + 2k\pi, 2k\pi\right], k\in \mathbf Z$ |                      $\left(n \pi-\dfrac{\pi}{2}, n \pi+\dfrac{\pi}{2}\right)$                      |                                    无                                     |
