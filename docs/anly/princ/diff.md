@@ -91,9 +91,63 @@
     4. $(\sin x)^{\prime}=\cos x, (\cos x)^{\prime}=-\sin x, (\tan x)^{\prime}=\sec ^{2} x, (\cot x)^{\prime}=-\csc ^{2} x$
     5. $(\arcsin x)^{\prime}=\dfrac{1}{\sqrt{1-x^{2}}}, (\arccos x)^{\prime}=-\dfrac{1}{\sqrt{1-x^{2}}}, (\arctan x)^{\prime}=\dfrac{1}{1+x^{2}}, (\operatorname{arccot} x)^{\prime}=-\dfrac{1}{1+x^{2}}$
     6. $(\operatorname{sinh} x)^{\prime}=\operatorname{cosh} x, (\operatorname{cosh} x)^{\prime}=\operatorname{sinh} x ,(\operatorname{tanh} x)^{\prime}=\dfrac{1}{\operatorname{cosh}^{2} x} ,(\operatorname{coth} x)^{\prime}=-\dfrac{1}{\operatorname{sinh}^{2} x}$
+4. 高阶导数：递归定义 $n$ 阶导数 $y^{(n)} = f^{(n)}(x)$
+
+    $$
+    \begin{aligned}
+    & \dfrac{\mathrm{d} y}{\mathrm{d} x} = f^{(1)}(x) = f'(x) \\
+    & \dfrac{\mathrm{d}^2 y}{\mathrm{d} x^2} = f^{(2)}(x) = f''(x) \\
+    & \cdots \\
+    & \dfrac{\mathrm{d}^n y}{\mathrm{d} x^n} = f^{(n)}(x) = (f^{(n-1)}(x))'
+    \end{aligned}
+    $$
+
+    1. $[u(x) \pm v(x)]^{(n)}=u^{(n)}(x) \pm v^{(n)}(x)$
+    2. $\text{Leibniz}$ 公式：${\displaystyle [u(x) v(x)]^{(n)}=\sum_{k=0}^{n} \mathrm{C}_{n}^{k} u^{(n-k)} v^{(k)}}$
 
 ### 2.3.2 微分
+1. 可微性：若 $y=f(x)$ 是定义在某一区间上的函数，设 $\Delta y=f(x+\Delta x)-f(x)=A \Delta x+o(\Delta x) \ (\Delta x \rightarrow 0)$，其中 $A$ 是 $x$ 的函数, 而与 $\Delta x$ 无关，则称 $f(x)$ 在点 $x$ 是可微的，且称 $A \Delta x$ 为 $f(x)$ 在点 $x$ 的微分，记为 $\mathrm{d} y$ 或 $\mathrm{d} f(x)$．易知函数的可微性与可导性是等价的
+    1. 由于 $A \Delta x$ 是 $\Delta x$ 的线性函数，且当 $\Delta x$ 充分小时 $\Delta y \sim A \Delta x$，则称 $\mathrm{d} y$ 是 $\Delta y$ 的线性主部
+    2. 高阶微分：定义 $n$ 阶微分 $\mathrm{d}^n y = f^{(n)}(x) \mathrm{d} x^n$
+2. 微分的运算法则
+    1. $\mathrm{d}[f(x) \pm g(x)]=\mathrm{d} f(x) \pm \mathrm{d} g(x)$
+    2. $\mathrm{d}[f(x) \cdot g(x)]=g(x) \mathrm{d} f(x)+f(x) \mathrm{d} g(x)$
+    3. $\mathrm{d}\left[\dfrac{f(x)}{g(x)}\right]=\dfrac{g(x) \mathrm{d} f(x)-f(x) \mathrm{d} g(x)}{g^{2}(x)} \ (g(x) \neq 0)$
+    4. 复合函数的微分：设有复合函数 $y=f(u), u=g(x)$，则
 
-### 2.3.3 中值定理
+        $$
+        \begin{aligned}
+        \mathrm{d} y
+        & = f^{\prime}(u) \mathrm{d} u \\
+        & = f^{\prime}(g(x)) g^{\prime}(x) \mathrm{d} x
+        \end{aligned}
+        $$
+
+        这种性质称为一阶微分的形式不变性，而高阶微分通常不具有形式不变性
+
+### 2.3.3 微分学基本定理
+1. 中值定理
+    1. $\text{Fermat}$ 定理：若函数 $f(x)$ 有
+        1. 在 $x_{0}$ 点的某一邻域 $B\left(x_{0}, \delta\right)$ 内有定义且在此邻域内恒有 $f(x) \leqslant f\left(x_{0}\right)$ 或者 $f(x) \geqslant f\left(x_{0}\right)$
+        2. 在 $x_{0}$ 点可导
+
+        则有 $f^{\prime}\left(x_{0}\right)=0$
+
+    2. $\text{Lagrange}$ 中值定理：若函数 $f(x)$ 在 $[a, b]$ 连续且在 $(a, b)$ 可导，则在 $(a, b)$ 内至少存在一点 $\xi$，使 $f^{\prime}(\xi)=\dfrac{f(b)-f(a)}{b-a}$
+        1. 若 $f(x)$ 对 $(a, b)$ 内每一点 $x$ 都有 $f^{\prime}(x)=0$，则在区间 $(a, b)$ 内 $f(x)$ 为常数
+        2. 若两函数 $f(x)$ 及 $g(x)$ 在 $(a, b)$ 内满足 $f^{\prime}(x)=g^{\prime}(x)$，则在 $(a, b)$ 内 $f(x)=g(x)+C$（$C$ 为常数）
+        3. 若 $f(x)$ 在 $[a, b]$ 上存在有界导数，则 $f(x)$ 在 $[a, b]$ 满足 $\text{Lipschitz}$ 条件，即存在常数 $L$，对 $[a, b]$ 上任意两点 $x^{\prime}, x^{\prime \prime}$ 有 $\left|f\left(x^{\prime}\right)-f\left(x^{\prime \prime}\right)\right| \leqslant L\left|x^{\prime}-x^{\prime \prime}\right|$
+    3. $\text{Cauchy}$ 中值定理：若 $f(x)$ 与 $g(x)$ 在闭区间 $[a, b]$ 上连续，在开区间 $(a$, $b)$ 内可导，且 $g^{\prime}(x) \neq 0$．则在 $(a, b)$ 内至少存在一点 $\xi$，使 $\dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f^{\prime}(\xi)}{g^{\prime}(\xi)}$
+
+2. $\text{Taylor}$ 公式：若 $f(x)$ 在 $x=0$ 点的某个邻域内有直到 $n+1$ 阶连续导数，则在此邻域内有
+
+    $$
+    f(x)=f(0)+f^{\prime}(0) x+\dfrac{f^{\prime \prime}(0)}{2 !} x^{2}+\cdots+\dfrac{f^{(n)}(0)}{n !} x^{n}+R_{n}(x)
+    $$
+
+    是函数 $f(x)$ 在 $x=0$ 点附近关于 $x$ 的幂函数展开式，也称作 $\text{Taylor}$ 公式
+
+    1. $R_{n}(x)=\dfrac{f^{(n+1)}(\xi)}{(n+1) !} x^{n+1}$，$\xi \in (0, x)$．称 $R_n(x)$ 为 $\text{Lagrange}$ 余项
+    2. 当 $x \rightarrow 0$ 时，$R_{n}(x)$ 是关于 $x^{n}$ 的高阶无穷小，因此当 $|x|$ 充分小时，余项 $R_{n}(x)=o\left(x^{n}\right)$，称为 $\text{Peano}$ 余项
 
 ## 2.3 多元微分法
