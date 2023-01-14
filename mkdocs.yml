@@ -156,6 +156,7 @@ nav:
     - 一、分析学原理:
       - 1 序列与级数: anly/princ/seq.md
       - 2 微分法: anly/princ/diff.md
+      - 3 积分法: anly/princ/int.md
   - 语言学:
     - 一、形式语言:
       - 1 形式文法理论: lang/lang/gr.md
