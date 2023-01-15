@@ -147,6 +147,7 @@
         2. 设 $\left\{x_{n}\right\}$ 是无穷大量，而 $\left\{y_{n}\right\}$ 是有界数列，则其和 $\left\{x_{n}+y_{n}\right\}$ 是无穷大量
         3. 设 $\left\{x_{n}\right\}$ 是无穷大量，数列 $\left\{y_{n}\right\}$ 具有以下特性：存在某个 $N$，当 $n>N$ 时有 $\left|y_{n}\right| \geqslant \delta>0$，其中 $\delta$ 是一个确定的数，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
         4. 设 $\left\{x_{n}\right\}$ 是无穷大量，$\left\{y_{n}\right\}$ 收敛于 $a \neq 0$，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
+4. 上极限与下极限
 
 ### 1.4.2 一元极限
 1. 函数极限的定义
