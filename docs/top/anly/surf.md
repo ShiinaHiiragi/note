@@ -181,16 +181,58 @@
 
 4. 椭球面：在直角坐标系下，由方程 $\dfrac{x^2}{a^2}+\dfrac{y^2}{b^2}+\dfrac{z^2}{c^2}=1$ 所表示的曲面称作椭球面．称该方程为椭球面的标准方程，其中 $a, b, c$ 为任意正常数．特别地，任何两轴相等的椭球面是旋转椭球面，三轴相等的椭球面是球面，三轴不等的椭球面称作三轴椭球面
     1. 椭球面的概念
-        1. 顶点：椭球面与坐标轴的六个交点 $(\pm a, 0,0),(0, \pm b, 0),(0,0, \pm c)$
+        1. 顶点：椭球面与坐标轴的六个交点坐标为 $(\pm a, 0,0),(0, \pm b, 0),(0,0, \pm c)$
         2. 轴与半轴：称同一条对称轴上的两顶点间的线段以及其长度 $2 a, 2 b$ 与 $2 c$ 为椭球面的轴；称轴的一半为椭球面的半轴．当 $a>b>c$ 时，$2 a, 2 b$ 与 $2 c$ 分别称作椭球面的长轴、中轴与短轴；$a, b$ 与 $c$ 分别称作椭球面的长半轴、中半轴与短半轴
         3. 主截线：用坐标面 $z=0, y=0, x=0$ 分别来截割椭球面，则所得截口都是椭圆，称作椭球面的主截线或主椭圆
     2. 椭球面的性质
         1. 对称性：椭球面关于三坐标平面、三坐标轴与坐标原点都对称，称椭球面的对称平面、对称轴与对称中心为其主平面、主轴与中心
         2. 有界性：椭球面上的任何一点的坐标 $(x, y, z)$ 总有 $|x| \leqslant a,|y| \leqslant b,|z| \leqslant c$
-5. 双曲面
-    1. 单叶双曲面
-    2. 双叶双曲面
-6. 抛物面
+5. 双曲面：单叶双曲面与双叶双曲面的统称
+    1. 单叶双曲面：在直角坐标系下，由方程 $\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}-\dfrac{z^{2}}{c^{2}}=1$ 所表示的曲面称作单叶双曲面．方程称作单叶双曲面的标准方程，其中 $a, b, c$ 是任意的正常数．方程 $\dfrac{x^{2}}{a^{2}}-\dfrac{y^{2}}{b^{2}}+\dfrac{z^{2}}{c^{2}}=1$ 与 $-\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}+\dfrac{z^{2}}{c^{2}}=1$ 所表示的图形也都是单叶双曲面
+        1. 双曲面与 $z$ 轴不相交，与 $x$ 轴与 $y$ 轴的交点坐标为 $(\pm a, 0,0)$ 与 $(0, \pm b, 0)$，这四点称作单叶双曲面的顶点
+        2. 用三个坐标平面 $z=0, y=0, x=0$ 分别截割曲面，所得的截线 $\left\{\begin{array}{l}\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}=1 \\z=0 \end{array}\right.$ 为 $x O y$ 面上的椭圆；$\left\{\begin{array}{l}\dfrac{x^{2}}{a^{2}}-\dfrac{z^{2}}{c^{2}}=1 \\y=0 \end{array}\right.$ 与 $\left\{\begin{array}{l}\dfrac{y^{2}}{b^{2}}-\dfrac{z^{2}}{c^{2}}=1 \\x=0\end{array}\right.$ 分别为 $x O z$ 面与 $y O z$ 面上的双曲线，这两条双曲线有着共同的虚轴与虚轴长
+    2. 双叶双曲面：在直角坐标系下，由方程 $\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}-\dfrac{z^{2}}{c^{2}}=-1$ 所表示的图形称作双叶双曲面．方程称作双叶双曲面的标准方程，其中 $a, b, c$ 是任意的正常数
+        1. 曲面上的点恒有 $z^{2} \geqslant c^{2}$，因此曲面分成两叶 $z \geqslant c$ 与 $z \leqslant-c$
+        2. 坐标平面 $z=0$ 与曲面不相交，而与其他两个坐标平面 $y=0$ 与 $x=0$ 分别交曲面于两条双曲线 $\left\{\begin{array}{l}\dfrac{z^{2}}{c^{2}}-\dfrac{x^{2}}{a^{2}}=1 \\y=0\end{array}\right.$ 与 $\left\{\begin{array}{l}\dfrac{z^{2}}{c^{2}}-\dfrac{y^{2}}{b^{2}}=1 \\x=0\end{array}\right.$
+6. 抛物面：椭圆抛物面与双曲抛物面的统称，它们都没有对称中心，因此也称作无心二次曲面
+    1. 椭圆抛物面：在直角坐标系下，由方程 $\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}=2 z$ 所表示的曲面称作椭圆拋物面．方程称作椭圆拋物面的标准方程，其中 $a, b$ 是任意的正常数
+        1. 椭圆抛物面对称于 $x O z$ 与 $y O z$ 坐标面，也对称于 $z$ 轴．但其没有对称中心，与对称轴交于点 $O(0,0,0)$，称作椭圆抛物面的顶点
+        2. 用坐标面 $y=0$ 及 $x=0$ 截割曲面，分别得抛物线 $\left\{\begin{array}{l}x^{2}=2 a^{2} z \\y=0\end{array}\right.$ 与 $\left\{\begin{array}{l}y^{2}=2 b^{2} z \\x=0\end{array}\right.$，这两条拋物线称作椭圆拋物面的主拋物线，开口方向都与 $z$ 轴的正向一致
+        3. 如果 $a=b$，则方程变为 $x^{2}+y^{2}=2 a^{2} z$，此时曲面成为旋转抛物面
+    2. 双曲抛物面：在直角坐标系下，由方程 $\dfrac{x^{2}}{a^{2}}-\dfrac{y^{2}}{b^{2}}=2 z$ 所表示的曲面称作双曲拋物面，也称作马鞍面．方程称作双曲拋物面的标准方程，其中 $a, b$ 为任意的正常数
+        1. 双曲抛物面关于 $x O z$ 面，$y O z$ 面与 $z$ 轴对称，但是它没有对称中心
+        2. 用坐标平面 $z=0$ 截割双曲抛物面，得到 $\left\{\begin{array}{l}\dfrac{x^{2}}{a^{2}}-\dfrac{y^{2}}{b^{2}}=0 \\z=0 .\end{array}\right.$，这是一对相交于原点的直线；用坐标平面 $y=0$ 与 $x=0$ 截割双曲抛物面，分别得两抛物线 $\left\{\begin{array}{l}x^{2}=2 a^{2} z \\y=0\end{array}\right.$ 与 $\left\{\begin{array}{l}y^{2}=-2 b^{2} z \\x=0\end{array}\right.$，称作双曲抛物面的主拋物线，其所在的平面相互垂直，有相同的顶点与对称轴，但两抛物线的开口方向不同
+
+    !!! note "直纹曲面与直母线"
+        由一族直线所生成的曲面称作直纹曲面，例如柱面或锥面；生成曲面的那族直线称作这曲面的一族直母线
+
+        1. 单叶双曲面 $\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}-\dfrac{z^{2}}{c^{2}}=1$ 是直纹曲面
+
+            1. 直线 $\left\{\begin{array}{l}\dfrac{x}{a}+\dfrac{z}{c}=u\left(1+\dfrac{y}{b}\right) \\\dfrac{x}{a}-\dfrac{z}{c}=\dfrac{1}{u}\left(1-\dfrac{y}{b}\right)\end{array}\right.$ 与直线 $\left\{\begin{array}{l}\dfrac{x}{a}+\dfrac{z}{c}=0 \\1-\dfrac{y}{b}=0\end{array}\right.$ 和 $\left\{\begin{array}{l}\dfrac{x}{a}-\dfrac{z}{c}=0 \\1+\dfrac{y}{b}=0 \end{array}\right.$ 组成的直线族是单叶双曲面的一族直母线，称作 $u$ 族直母线，也写作
+
+                $$
+                \left\{\begin{array}{l}
+                w\left(\dfrac{x}{a}+\dfrac{z}{c}\right)=u\left(1+\dfrac{y}{b}\right) \\
+                u\left(\dfrac{x}{a}-\dfrac{z}{c}\right)=w\left(1-\dfrac{y}{b}\right)
+                \end{array}\right.
+                $$
+
+            2. 直线 $\left\{\begin{array}{l}\dfrac{x}{a}+\dfrac{z}{c}=v\left(1-\dfrac{y}{b}\right) \\\dfrac{x}{a}-\dfrac{z}{c}=\dfrac{1}{v}\left(1+\dfrac{y}{b}\right)\end{array}\right.$ 与直线 $\left\{\begin{array}{l}\dfrac{x}{a}+\dfrac{z}{c}=0 \\1+\dfrac{y}{b}=0\end{array}\right.$ 和 $\left\{\begin{array}{l}\dfrac{x}{a}-\dfrac{z}{c}=0 \\1-\dfrac{y}{b}=0\end{array}\right.$ 组成的直线族是单叶双曲面的一族直母线，称作 $v$ 族直母线，也写作
+
+                $$
+                \left\{\begin{array}{l}
+                t\left(\dfrac{x}{a}+\dfrac{z}{c}\right)=v\left(1-\dfrac{y}{b}\right) \\
+                v\left(\dfrac{x}{a}-\dfrac{z}{c}\right)=t\left(1+\dfrac{y}{b}\right)
+                \end{array}\right.
+                $$
+
+        2. 双曲抛物面 $\dfrac{x^{2}}{a^{2}}-\dfrac{y^{2}}{b^{2}}=2 z$ 是直纹曲面，其有两族直母线 $\left\{\begin{array}{l}\dfrac{x}{a}+\dfrac{y}{b}=2 u \\u\left(\dfrac{x}{a}-\dfrac{y}{b}\right)=z\end{array}\right.$ 与 $\left\{\begin{array}{l}w\left(\dfrac{x}{a}+\dfrac{y}{b}\right)=2 u \\u\left(\dfrac{x}{a}-\dfrac{y}{b}\right)=w z\end{array}\right.$
+
+        单叶双曲面与双曲抛物面的具有如下性质：
+
+        1. 对于单叶双曲面上的点，两族直母线中各有一条直母线通过该点；对于双曲抛物面上的点，两族直母线中各有一条直母线通过这一点
+        2. 单叶双曲面上异族的任意两直母线必共面，双曲抛物面上异族的任意两直母线必相交
+        3. 单叶双曲面或双曲抛物面上同族的任意两直母线总是异面直线，双曲抛物面同族的全体直母线平行于同一平面
 
 ## 4.2 二次曲面一般理论
 
