@@ -28,7 +28,8 @@
 ## 3.2 定积分
 1. 定积分：设函数 $f(x)$ 是定义在 $[a, b]$ 上，在 $(a, b)$ 中任意插入若干分点 $a=x_{0}<x_{1}<\cdots<x_{n-1}<x_{n}=b$ 划分区间 $[a, b]$，在每一个部分区间 $\left[x_{i-1}, x_{i}\right]$ 中任取一点 $\xi_{i}$，作和式 ${\displaystyle \sigma=\sum_{i=1}^{n} f\left(\xi_{i}\right) \Delta x_{i}}$，其中 $\Delta x_{i}=x_{i}-x_{i-1}$．设 ${\displaystyle \lambda=\max _{i=1,2, \cdots, n}\left\{\Delta x_{i}\right\}}$，当 $\lambda \rightarrow 0$ 时，若 ${\displaystyle I=\lim _{\lambda \rightarrow 0} \sum_{i=1}^{n} f\left(\xi_{i}\right) \Delta x_{i}}$，且此极限值不依赖于 $\xi_{i}$ 的选择，也不依赖于对 $[a, b]$ 的分法，则称此极限值为 $f(x)$ 在 $[a, b]$ 上的定积分，记为 ${\displaystyle I=\int_{a}^{b} f(x) \mathrm{d} x}$，数 $a$ 和 $b$ 分别称为积分下限和积分上限，和式 $\sigma$ 称为 $f(x)$ 的积分和，上述定义被称为 $\text{Riemann}$ 积分
     1. 若 $f(x)$ 在 $[a, b]$ 可积，则 $f(x)$ 在 $[a, b]$ 必定有界
-    2. 可积函数类
+    2. 设 $f(x)$ 在 $[a, b]$ 上可积，作函数 $F(x)={\displaystyle \int_{a}^{x} f(t)} \mathrm{d} t \ (a \leqslant x \leqslant b)$，则 $F(x)$ 是 $[a, b]$ 上的连续函数
+    3. 可积函数类
         1. $[a, b]$ 上的连续函数在 $[a, b]$ 上必可积
         2. 只有有限个第一类不连续点的函数是可积的，即分段连续函数是可积的
         3. 单调有界函数必定可积
@@ -53,15 +54,15 @@
     \quad (i=1,2, \cdots, n)
     $$
 
-    $\Delta x_{i}=x_{i}-x_{i-1}$，作和式 ${\displaystyle \bar{S}=\sum_{i=1}^{n} M_{i} \Delta x_{i}, \underline{S}=\sum_{i=1}^{n} m_{i} \Delta x_{i}}$ 分别称为对于这一分法的  $\text{Barboux}$ 上和与  $\text{Barboux}$ 下和
+    $\Delta x_{i}=x_{i}-x_{i-1}$，作和式 ${\displaystyle \overline{S}=\sum_{i=1}^{n} M_{i} \Delta x_{i}, \underline{S}=\sum_{i=1}^{n} m_{i} \Delta x_{i}}$ 分别称为对于这一分法的  $\text{Darboux}$ 上和与  $\text{Darboux}$ 下和
 
-    1. 如果在原有的分点中加入新的分点，对应的上和与下和分别记为 $\bar{S}^{\prime}$ 及 $\underline{S}^{\prime}$，则 $\bar{S}{ }^{\prime} \leqslant \bar{S}, \underline{S}^{\prime} \geqslant \underline{S}$
-    2. 分别用 $M$ 及 $m$ 记 $f(x)$ 在 $[a, b]$ 的上确界及下确界，则对于一切分法，上和的集合 $\{\bar{S}\}$ 有下界 $m(b-a)$，下和的集合 $\{\underline{S}\}$ 有上界 $M(b-a)$
-    3. 任一个下和 $\underline{S}$ 总不超过任一个上和 $\bar{S}$
-    4. $\text{Darboux}$ 定理：对任何在 $[a, b]$ 有界的函数 $f(x)$，必有 ${\displaystyle \lim _{\lambda \rightarrow 0} \bar{S}=L, \lim _{\lambda \rightarrow 0} \underline{S}=l}$，其中 $\lambda$ 规定为对任意的分法 $a=x_{0}<x_{1}<\cdots<x_{n-1}<x_{n}=b, {\displaystyle \lambda=\max _{i=1,2, \cdots, n}\left\{\Delta x_{i}\right\}}$
+    1. 如果在原有的分点中加入新的分点，对应的上和与下和分别记为 $\overline{S}^{\prime}$ 及 $\underline{S}^{\prime}$，则 $\overline{S}{ }^{\prime} \leqslant \overline{S}, \underline{S}^{\prime} \geqslant \underline{S}$
+    2. 分别用 $M$ 及 $m$ 记 $f(x)$ 在 $[a, b]$ 的上确界及下确界，则对于一切分法，上和的集合 $\{\overline{S}\}$ 有下界 $m(b-a)$，下和的集合 $\{\underline{S}\}$ 有上界 $M(b-a)$
+    3. 任一个下和 $\underline{S}$ 总不超过任一个上和 $\overline{S}$
+    4. $\text{Darboux}$ 定理：对任何在 $[a, b]$ 有界的函数 $f(x)$，必有 ${\displaystyle \lim _{\lambda \rightarrow 0} \overline{S}=L, \lim _{\lambda \rightarrow 0} \underline{S}=l}$，其中 $\lambda$ 规定为对任意的分法 $a=x_{0}<x_{1}<\cdots<x_{n-1}<x_{n}=b, {\displaystyle \lambda=\max _{i=1,2, \cdots, n}\left\{\Delta x_{i}\right\}}$
 
-3. 定积分存在的充要条件：有界函数 $f(x)$ 在区间 $[a, b]$ 上 $\text{Riemann}$ 可积的充要条件是函数 $f(x)$ 在 $[a, b]$ 上所有不连续点组成的点集是一个零测度集
-    1. 有界函数 $f(x)$ 在 $[a, b]$ 可积的充要条件是 ${\displaystyle \lim _{\lambda \rightarrow 0} \bar{S}=\lim _{\lambda \rightarrow 0} \underline{S}}$
+3. 有界函数 $f(x)$ 在区间 $[a, b]$ 上 $\text{Riemann}$ 可积的充要条件是函数 $f(x)$ 在 $[a, b]$ 上所有不连续点组成的点集是一个零测度集
+    1. 有界函数 $f(x)$ 在 $[a, b]$ 可积的充要条件是 ${\displaystyle \lim _{\lambda \rightarrow 0} \overline{S}=\lim _{\lambda \rightarrow 0} \underline{S}}$
     2. 有界函数 $f(x)$ 在 $[a, b]$ 上可积的充要条件是对任意给定的两个正数 $\varepsilon>0$ 及 $\sigma>0$，存在 $\delta>0$，当对 $[a, b]$ 的任一分法 $a=x_{0}<x_{1}<\cdots<x_{n-1}<x_{n}=b$ 满足 ${\displaystyle \lambda=\max _{i=1,2, \cdots, n}\left\{\Delta x_{i}\right\}<\delta}$ 时，对应于幅度 $\omega_{i^{\prime}} \geqslant \varepsilon$ 的那些部分区间 $\left[x_{i^{\prime}-1}, x_{i^{\prime}}\right]$ 的长度之和 ${\displaystyle \sum_{i^{\prime}} \Delta x_{i^{\prime}}<\sigma}$
 4. 定积分的性质
     1. 若 $f(x)$ 在 $[a, b]$ 上可积，$k$ 为一实数，则 $k f(x)$ 在 $[a, b]$ 上也可积，且有 ${\displaystyle \int_{a}^{b} k f(x) \mathrm{d} x=k \int_{a}^{b} f(x) \mathrm{d} x}$
@@ -71,7 +72,31 @@
     5. 若可积函数 $f(x) \geqslant 0$，则 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x \geqslant 0}$，其中 $a < b$
     6. 若 $f(x)$ 在 $[a, b]$ 上可积，则 ${\displaystyle \left|\int_{a}^{b} f(x) \mathrm{d} x\right| \leqslant \int_{a}^{b}|f(x)| \mathrm{d} x}$
 5. 中值定理
+    1. 积分第一中值定理：若 $f(x)$ 在 $[a, b]$ 上连续，$g(x)$ 在 $[a, b]$ 上不变号且在 $[a, b]$ 上可积，则在 $[a, b]$ 中存在一点 $\xi$，使
 
-## 3.3 反常积分
+        $$
+        \int_{a}^{b} f(x) g(x) \mathrm{d} x=f(\xi) \int_{a}^{b} g(x) \mathrm{d} x
+        $$
 
-## 3.4 重积分
+    2. 积分第二中值定理：设 $f(x)$ 在 $[a, b]$ 上可积，$g(x)$ 在 $[a, b]$ 上单调，则存在 $\xi \in[a, b]$，使得
+
+        $$
+        \int_a^b f(x) g(x) d x=g(a) \int_a^{\xi} f(x) d x+g(b) \int_{\xi}^b f(x) d x
+        $$
+
+6. 微积分基本定理：设 $f(x)$ 在 $[a, b]$ 上连续，$F^{\prime}(x)=$ $f(x)$，则 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=F(b)-F(a)=F(x)\bigg|_{a} ^{b}}$．该公式也被称为 $\text{Newton}-\text{Leibniz}$ 公式
+    1. 变限积分：若 $f(x)$ 在 $[a, b]$ 上连续，则函数 ${\displaystyle G(x)=\int_{a}^{t} f(t) \mathrm{d} t}$ 在 $[a, b]$ 上可导且 $G^{\prime}(x)=f(x)$
+    2. 定积分的还原：设 $f(x)$ 在 $[a, b]$ 上连续，作代换 $x=\varphi(t)$，其中 $\varphi(t)$ 在闭区间 $[\alpha, \beta]$ 上有连续导数 $\varphi^{\prime}(t)$．当 $\alpha \leqslant t \leqslant \beta$ 时，$a \leqslant \varphi(t) \leqslant b$ 且 $\varphi(\alpha)=a, \varphi(\beta)=b$，则 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=\int_{\alpha}^{\beta} f[\varphi(t)] \varphi^{\prime}(t) \mathrm{d} t}$
+    3. 定积分的分部积分公式：若 $u^{\prime}(x), v^{\prime}(x)$ 在 $[a, b]$ 上连续，则 ${\displaystyle \int_{a}^{b} u v^{\prime} \mathrm{d} x=(u v)\bigg|_{a} ^{b}-\int_{a}^{b} u^{\prime} v \mathrm{~d} x}$
+7. 定积分与曲线弧长：设曲线 $l$ 的参数方程为 $\left\{\begin{array}{l}x=x(t) \\y=y(t)\end{array}\right.$，设当 $t=\alpha, t=\beta$ 时（$\alpha<\beta$）对应的点为 $A, B$ 点．假设 $x(t), y(t)$ 在 $[\alpha, \beta]$ 上都有连续导数，则曲线 $l$ 上以 $A, B$ 为端点的一段弧长为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[x^{\prime}(t)\right]^{2}+\left[y^{\prime}(t)\right]^{2}} \mathrm{~d} t}$
+    1. 设 $f(x)$ 在 $[a, b]$ 上有连续导数，将 $x$ 作为参数，推导出的弧长公式为 ${\displaystyle \int_{a}^{b} \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{~d} x}$
+    2. 设曲线段的极坐标方程为 $r=r(\theta) \ (\alpha \leqslant \theta \leqslant \beta)$ 且 $r'(\theta)$ 在 $[\alpha, \beta]$ 上连续，则弧长公式为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[r^{\prime}(\theta)\right]^{2}+[r(\theta)]^{2}} \mathrm{~d} \theta}$
+8. 定积分与平面图形的面积：如果一块图形是由连续曲线 $y=f_{1}(x), y=f_{2}(x)$ 与 $x=a, x=b(a<b)$ 所围成，且在 $[a, b]$ 上有 $f_{1}(x) \leqslant f_{2}(x)$，则图形的面积为 ${\displaystyle \int_{a}^{b}\left[f_{2}(x)-f_{1}(x)\right] \mathrm{d} x}$
+    1. 若曲线方程为参数形式 $\left\{\begin{array}{l}x=x(t) \\y=y(t)\end{array}\right.$，其中 $\alpha \leqslant t \leqslant \beta$．设 $x(t)$ 随 $t$ 的增加而增加且 $x(\alpha)=a, x(\beta)=b$．$x(t), y(t)$ 及 $x^{\prime}(t)$ 在 $[\alpha, \beta]$ 连续，则由曲线 $x=x(t), y=y(t)$ 与 $x$ 轴及直线 $x=a, x=b$ 所围成的图形面积为 ${\displaystyle \int_{\alpha}^{\beta}|y(t)| x^{\prime}(t) \mathrm{d} t}$
+    2. 由射线 $\theta=\alpha, \theta=\beta \ (\alpha<\beta)$ 及两条连续曲线 $r=r_{1}(\theta), r=r_{2}(\theta)\left(r_{2} \ (\theta) \leqslant r_{1}(\theta)\right)$ 所围成的图形的面积为 ${\displaystyle \dfrac{1}{2} \int_{\alpha}^{\beta}\left[r_{1}^{2}(\theta)-r_{2}^{2}(\theta)\right] \mathrm{d} \theta}$
+
+## 3.3 重积分
+
+## 3.4 反常积分
+
+## 3.5 含参变量积分
