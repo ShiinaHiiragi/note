@@ -244,13 +244,10 @@
     2. 线性分配律：设 $\lambda, \mu \in \mathbf R$
 
         $$
-        \begin{aligned}
-        & \left(\lambda \boldsymbol \alpha_1+\mu \boldsymbol \beta\right) \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m \\
-        = & \lambda\left(\boldsymbol \alpha_1 \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m\right)+\mu\left(\boldsymbol \beta \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m\right)
-        \end{aligned}
+        \left(\lambda \boldsymbol \alpha_1+\mu \boldsymbol \beta\right) \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m = \lambda\left(\boldsymbol \alpha_1 \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m\right)+\mu\left(\boldsymbol \beta \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m\right)
         $$
 
-    $\wedge^m(V)$ 是一个 $C_n^m$ 维向量空间．特别地，当 $m > n$ 时, $\wedge^m(V)$ 只含有 $m$ 重零向量
+    则 $\wedge^m(V)$ 是一个 $C_n^m$ 维向量空间．特别地，当 $m > n$ 时, $\wedge^m(V)$ 只含有 $m$ 重零向量
 
     1. 约定 $\wedge^0(V)$ 表示实数系，任何实数 $\lambda$ 与一个 $m$ 重向量 $\boldsymbol{p}$ 的外积规定为 $\lambda \boldsymbol{p}$，$\wedge^1(V)$ 就是 $V$ 本身
     2. 记 $G(V)=\wedge^0(V) \oplus \wedge^1(V) \oplus \cdots \oplus \wedge^n(V)$，$G(V)$ 是一个 $2^n$ 维的向量空间，外积运算 $\wedge$ 自然延拓成 $G(V)$ 中的外积运算
