@@ -612,7 +612,7 @@
         2. 若 $a_{33}$ 与 $a_{22}$ 同号，设 $\dfrac{a_{33}}{a_{22}}=a^{2}$，则得到两平行共轭虚直线 $y^{2}=-a^{2}$
         3. 若 $a_{33}=0$，则得到两重合直线 $y^{2}=0$
 
-2. 二次曲线方程与不变量：由 $F(x, y)$ 的系数组成的一个非常数函数 $f$，若经过直角坐标变换
+2. 二次曲线方程与不变量：由 $F(x, y)$ 的系数组成的一个非常数函数 $f$，若经过仿射变换
 
     $$
     \left\{\begin{array}{l}
@@ -621,7 +621,7 @@
     \end{array}\right.
     $$
 
-    使 $F(x, y)$ 变为 $F^{\prime}\left(x^{\prime}, y^{\prime}\right)$ 时有 $f\left(a_{11}, a_{12}, \cdots, a_{33}\right)=f\left(a_{11}^{\prime}, a_{12}^{\prime}, \cdots, a_{33}^{\prime}\right)$，则这个函数 $f$ 称作二次曲线在直角坐标变换下的不变量；若函数 $f$ 的值只是经过转轴变换
+    使 $F(x, y)$ 变为 $F^{\prime}\left(x^{\prime}, y^{\prime}\right)$ 时有 $f\left(a_{11}, a_{12}, \cdots, a_{33}\right)=f\left(a_{11}^{\prime}, a_{12}^{\prime}, \cdots, a_{33}^{\prime}\right)$，则这个函数 $f$ 称作二次曲线在直角坐标变换下的不变量；若函数 $f$ 的值只是经过旋转变换
 
     $$
     \left\{\begin{array}{l}
