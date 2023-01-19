@@ -236,12 +236,104 @@
 
 ## 4.2 二次曲面一般理论
 ### 4.2.1 符号与记法
+在空间，由三元二次方程 $a_{11} x^{2}+a_{22} y^{2}+a_{33} z^{2}+2 a_{12} x y+2 a_{13} x z+2 a_{23} y z+2 a_{14} x+2 a_{24} y+2 a_{34} z+a_{44}=0$ 所表示的曲面称作二次曲面
 
-### 4.2.2 二次曲线的渐进方向
+1. 引进如下记号：
 
-### 4.2.3 二次曲线的径面
+    $$
+    \begin{aligned}
+    F(x, y, z) & \equiv  a_{11} x^{2}+a_{22} y^{2}+a_{33} z^{2}+2 a_{12} x y+2 a_{13} x z+2 a_{23} y z+2 a_{14} x+2 a_{24} y+2 a_{34} z+a_{44} \\
+    F_{1}(x, y, z) & \equiv a_{11} x+a_{12} y+a_{13} z+a_{14} \\
+    F_{2}(x, y, z) & \equiv a_{12} x+a_{22} y+a_{23} z+a_{24} \\
+    F_{3}(x, y, z) & \equiv a_{13} x+a_{23} y+a_{33} z+a_{34} \\
+    F_{4}(x, y, z) & \equiv a_{14} x+a_{24} y+a_{34} z+a_{44} \\
+    \Phi(x, y, z) & \equiv a_{11} x^{2}+a_{22} y^{2}+a_{33} z^{2}+2 a_{12} x y+2 a_{13} x z+2 a_{23} y z \\
+    \Phi_{1}(x, y, z) & \equiv a_{11} x+a_{12} y+a_{13} z \\
+    \Phi_{2}(x, y, z) & \equiv a_{12} x+a_{22} y+a_{23} z \\
+    \Phi_{3}(x, y, z) & \equiv a_{13} x+a_{23} y+x_{33} z \\
+    \Phi_{4}(x, y, z) & \equiv a_{14} x+a_{24} y+a_{34} z
+    \end{aligned}
+    $$
 
-### 4.2.4 二次曲线的分类
+    则二次曲面方程写作 $F(x, y, z) \equiv x F_{1}(x, y, z)+y F_{2}(x, y, z)+z F_{3}(x, y, z)+F_{4}(x, y, z) = 0$
+
+2. 将 $F(x, y, z)$ 的系数排成的矩阵
+
+    $$
+    \boldsymbol{A}=\left[\begin{array}{llll}
+    a_{11} & a_{12} & a_{13} & a_{14} \\
+    a_{12} & a_{22} & a_{23} & a_{24} \\
+    a_{13} & a_{23} & a_{33} & a_{34} \\
+    a_{14} & a_{24} & a_{34} & a_{44}
+    \end{array}\right]
+    $$
+
+    称作 $F(x, y, z)$ 的矩阵，用 $\Phi(x, y$, $z)$ 的系数所排成的矩阵
+
+    $$
+    \boldsymbol{A}^{*}=\left[\begin{array}{lll}
+    a_{11} & a_{12} & a_{13} \\
+    a_{12} & a_{22} & a_{23} \\
+    a_{13} & a_{23} & a_{33}
+    \end{array}\right]
+    $$
+
+    称作 $\Phi(x, y, z)$ 的矩阵，并定义如下符号：
+
+    $$
+    \begin{aligned}
+    & I_{1}=a_{11}+a_{22}+a_{33} \\
+    & I_{2}=\left|\begin{array}{ll}a_{11} & a_{12} \\a_{12} & a_{22}\end{array}\right|+\left|\begin{array}{ll}a_{11} & a_{13} \\a_{13} & a_{33}\end{array}\right|+\left|\begin{array}{ll}a_{22} & a_{23} \\a_{23} & a_{33}\end{array}\right| \\
+    & I_{3}=\left|\begin{array}{lll}a_{11} & a_{12} & a_{13} \\a_{12} & a_{22} & a_{23} \\a_{13} & a_{23} & a_{33}\end{array}\right| \\
+    & I_{4}=\left|\begin{array}{llll}a_{11} & a_{12} & a_{13} & a_{14} \\a_{12} & a_{22} & a_{23} & a_{24} \\a_{13} & a_{23} & a_{33} & a_{34} \\a_{14} & a_{24} & a_{34} & a_{44}\end{array}\right| \\
+    & K_{1}=\left|\begin{array}{ll}a_{11} & a_{14} \\a_{14} & a_{44}\end{array}\right|+\left|\begin{array}{ll}a_{22} & a_{24} \\a_{24} & a_{44}\end{array}\right|+\left|\begin{array}{ll}a_{33} & a_{34} \\a_{34} & a_{44}\end{array}\right| \\
+    & K_{2}=\left|\begin{array}{lll}a_{11} & a_{12} & a_{14} \\a_{12} & a_{22} & a_{24} \\a_{14} & a_{24} & a_{44}\end{array}\right|+\left|\begin{array}{lll}a_{11} & a_{13} & a_{14} \\a_{13} & a_{33} & a_{34} \\a_{14} & a_{34} & a_{44}\end{array}\right|+\left|\begin{array}{lll}a_{22} & a_{23} & a_{24} \\a_{23} & a_{33} & a_{34} \\a_{24} & a_{34} & a_{44}\end{array}\right|
+    \end{aligned}
+    $$
+
+### 4.2.2 二次曲面的渐进方向
+1. 二次曲面 $F(x, y, z) = 0$ 与直线 $\left\{\begin{array}{l} x=x_{0}+X t \\ y=y_{0}+Y t \\ z=z_{0}+Z t \end{array}\right.$ 联立得到方程
+
+    $$
+    \begin{aligned}
+    \Phi & (X, Y, Z) t^{2}+2\left[X F_{1}\left(x_{0}, y_{0}, z_{0}\right)+Y F_{2}\left(x_{0}, y_{0}, z_{0}\right)+Z F_{3}\left(x_{0}, y_{0}, z_{0}\right)\right] t+F\left(x_{0}, y_{0}, z_{0}\right)=0 .
+    \end{aligned}
+    $$
+
+    1. $\Phi(X, Y, Z) \neq 0$ 时，判别式 $\Delta={\left[X F_{1}\left(x_{0}, y_{0}, z_{0}\right)+Y F_{2}\left(x_{0}, y_{0}, z_{0}\right)+Z F_{3}\left(x_{0}, y_{0}, z_{0}\right)\right]^{2} }-\Phi(X, Y, Z) F\left(x_{0}, y_{0}, z_{0}\right)$
+        1. $\Delta>0$，此时方程有两个不同的实根，因此直线与二次曲面有两个不同的实交点
+        2. $\Delta=0$，方程有二重根，此时直线与二次曲面有两个相互重合的实交点
+        3. $\Delta<0$，方程有一对共轭的虚根，因此直线与二次曲面没有实交点，而有一对共轭的虚交点
+
+        此时将由这两点决定的线段称作二次曲面的弦
+
+    2. $\Phi(X, Y, Z)=0$ 时
+        1. $X F_{1}\left(x_{0}, y_{0}, z_{0}\right)+Y F_{2}\left(x_{0}, y_{0}, z_{0}\right)+Z F_{3}\left(x_{0}, y_{0}, z_{0}\right) \neq 0$，此时方程是关于 $t$ 的一次方程，直线与二次曲面有惟一交点
+        2. $X F_{1}\left(x_{0}, y_{0}, z_{0}\right)+Y F_{2}\left(x_{0}, y_{0}, z_{0}\right)+Z F_{3}\left(x_{0}, y_{0}, z_{0}\right)=0$，而 $F\left(x_{0}, y_{0}, z_{0}\right) \neq 0$，此时方程无解，两者无交点
+        3. $X F_{1}\left(x_{0}, y_{0}, z_{0}\right)+Y F_{2}\left(x_{0}, y_{0}, z_{0}\right)+Z F_{3}\left(x_{0}, y_{0}, z_{0}\right)=$ $F\left(x_{0}, y_{0}, z_{0}\right)=0$，此时方程为恒等式，直线上的任何点都在二次曲面上
+
+2. 渐近方向：满足条件 $\Phi(X, Y, Z)=0$ 的方向 $X: Y: Z$ 称作二次曲面的渐近方向，否则称作非渐近方向
+3. 中心：若点 $C$ 是二次曲面的通过它的所有弦的中点，则点 $C$ 称作二次曲面的中心
+    1. 点 $C\left(x_{0}, y_{0}, z_{0}\right)$ 是二次曲面的中心当且仅当
+
+        $$
+        \left\{\begin{array}{l}
+        F_{1}\left(x_{0}, y_{0}, z_{0}\right) \equiv a_{11} x_{0}+a_{12} y_{0}+a_{13} z_{0}+a_{14}=0 \\
+        F_{2}\left(x_{0}, y_{0}, z_{0}\right) \equiv a_{12} x_{0}+a_{22} y_{0}+a_{23} z_{0}+a_{24}=0 \\
+        F_{3}\left(x_{0}, y_{0}, z_{0}\right) \equiv a_{13} x_{0}+a_{23} y_{0}+a_{33} z_{0}+a_{34}=0
+        \end{array}\right.
+        $$
+
+    2. 二次曲面根据其中心可以分为如下种类
+        1. 中心二次曲面：有惟一中心的二次曲面，此时 $I_3 \neq 0$
+        2. 非中心二次曲面：无心曲面、线心曲面与面心曲面的统称，此时 $I_3 = 0$
+            - 无心二次曲面：没有中心的二次曲面
+            - 线心二次曲面：有无数中心且构成一条直线的二次曲面
+            - 面心二次曲面：有无数中心且构成一个平面的二次曲面
+
+### 4.2.3 二次曲面的径面
+
+### 4.2.4 二次曲面的分类
 
 ## 4.3 二次曲面射影理论
 
