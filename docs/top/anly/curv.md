@@ -384,7 +384,10 @@
     1. 渐屈线：称曲线 $C$ 的所有曲率中心的几何轨迹为 $C$ 的渐屈线 $E$．如果曲线 $C$ 形如 $y=f(x)$，则可得出参数形式的渐屈线为
 
         $$
-        x=t-\dfrac{f^{\prime}(t)\left(1+f^{\prime}(t)^2\right)}{f^{\prime \prime}(t)}, \quad y=f(t)+\dfrac{1+f^{\prime}(t)^2}{f^{\prime \prime}(t)}
+        \left\{\begin{aligned}
+        & x=t-\dfrac{f^{\prime}(t)\left(1+f^{\prime}(t)^2\right)}{f^{\prime \prime}(t)} \\
+        & y=f(t)+\dfrac{1+f^{\prime}(t)^2}{f^{\prime \prime}(t)}
+        \end{aligned}\right.
         $$
 
     2. 渐伸线：已知曲线 $E$，则由包围或展开具定长的（切）弦得到的曲线 $C$ 称为渐伸线
@@ -623,7 +626,7 @@
     \end{array}\right.
     $$
 
-    时有 $f\left(a_{11}, a_{12}, \cdots, a_{33}\right)=f\left(a_{11}^{\prime}, a_{12}^{\prime}, \cdots, a_{33}^{\prime}\right)$，则这个函数 $f$ 称作二次曲线在直角坐标变换下的不变量；若函数 $f$ 的值只是经过旋转变换
+    时有 $f\left(a_{11}, a_{12}, \cdots, a_{33}\right)=f\left(a_{11}^{\prime}, a_{12}^{\prime}, \cdots, a_{33}^{\prime}\right)$，则这个函数 $f$ 称作二次曲线在仿射变换下的不变量；若函数 $f$ 的值只是经过旋转变换
 
     $$
     \left\{\begin{array}{l}
@@ -632,7 +635,7 @@
     \end{array}\right.
     $$
 
-    不变，则这个函数称作二次曲线在直角坐标变换下的半不变量
+    不变，则这个函数称作二次曲线在仿射变换下的半不变量
 
     1. 二次曲线在直角坐标变换下有三个不变量 $I_{1}, I_{2}, I_{3}$ 与一个半不变量 $K_{1}$．特别地，线心曲线在直角坐标变换下 $K_{1}$ 是不变量
     2. 若给出了二次曲线，则可用其不变量判断已知曲线的种类
