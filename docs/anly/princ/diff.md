@@ -137,7 +137,7 @@
         1. 若 $f(x)$ 对 $(a, b)$ 内每一点 $x$ 都有 $f^{\prime}(x)=0$，则在区间 $(a, b)$ 内 $f(x)$ 为常数
         2. 若两函数 $f(x)$ 及 $g(x)$ 在 $(a, b)$ 内满足 $f^{\prime}(x)=g^{\prime}(x)$，则在 $(a, b)$ 内 $f(x)=g(x)+C$（$C$ 为常数）
         3. 若 $f(x)$ 在 $[a, b]$ 上存在有界导数，则 $f(x)$ 在 $[a, b]$ 满足 $\text{Lipschitz}$ 条件，即存在常数 $L$，对 $[a, b]$ 上任意两点 $x^{\prime}, x^{\prime \prime}$ 有 $\left|f\left(x^{\prime}\right)-f\left(x^{\prime \prime}\right)\right| \leqslant L\left|x^{\prime}-x^{\prime \prime}\right|$
-    3. $\text{Cauchy}$ 中值定理：若 $f(x)$ 与 $g(x)$ 在闭区间 $[a, b]$ 上连续，在开区间 $(a$, $b)$ 内可导，且 $g^{\prime}(x) \neq 0$．则在 $(a, b)$ 内至少存在一点 $\xi$，使 $\dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f^{\prime}(\xi)}{g^{\prime}(\xi)}$
+    3. $\text{Cauchy}$ 中值定理：若 $f(x)$ 与 $g(x)$ 在闭区间 $[a, b]$ 上连续，在开区间 $(a, b)$ 内可导，且 $g^{\prime}(x) \neq 0$．则在 $(a, b)$ 内至少存在一点 $\xi$，使 $\dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f^{\prime}(\xi)}{g^{\prime}(\xi)}$
 
 2. $\text{Taylor}$ 公式：若 $f(x)$ 在 $x=0$ 点的某个邻域内有直到 $n+1$ 阶连续导数，则在此邻域内有
 

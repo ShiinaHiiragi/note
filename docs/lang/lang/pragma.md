@@ -343,7 +343,7 @@
         4. 类型为 $\left< e, \left< e, \left< e, t \right> \right> \right>$ 的常元：$\text{introduce}, \cdots$
         5. 类型为 $\left< \left< e, t \right>, \left< \left< e, t \right>, t \right> \right>$ 的常元：$\text{a/some, every, two, no}, \cdots$
         6. 类型为 $\left< \left< \left< e, t \right>, t \right>, \left< e, t \right> \right>$ 的常元：$\text{LOVE, INVITE}, \cdots$
-        7. 变元：对每一类型 $\tau$ 和自然数 $n$, $v_{n, \tau}$ 是类型为 $\tau$ 的变元
+        7. 变元：对每一类型 $\tau$ 和自然数 $n$，$v_{n, \tau}$ 是类型为 $\tau$ 的变元
     3. 句法规则：对任意类型 $\tau, \sigma$
         1. 每一类型为 $\tau$ 的常元或变元都是类型为 $\tau$ 的表达式
         2. 如果 $\alpha, \beta$ 是类型为 $e$ 的表达式，则 $(\alpha=\beta)$ 是类型为 $t$ 的表达式
