@@ -345,8 +345,7 @@ const refList = [
         press: "高等教育出版社",
         locate: "北京",
         year: 2006,
-        page: [1, 295],
-        plot: 246
+        page: [1, 295]
     },
     {
         author: ["彭家贵", "陈卿"],
