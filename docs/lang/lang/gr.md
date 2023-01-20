@@ -62,10 +62,10 @@
 
 ### 1.1.2 谱系定理
 1. $\text{Chomsky}$ 分类法：对于文法 $G = (V, T, P, S)$，按以下标准分为四类
-    1. $0$ 型文法 / 短语结构文法（$\text{PSG}$）：没有其他限制的形式文法，其语言称作短语结构语言（$\text{PSL}$）
-    2. $1$ 型文法 / 上下文有关文法（$\text{CSG}$）：$P$ 中的每个产生式 $\alpha \to \beta$ 都有 $|\alpha| \leqslant |\beta|$ 的语言，其语言称作上下文有关语言（$\text{CSL}$）
-    3. $2$ 型文法 / 上下文无关文法（$\text{CFG}$）：$P$ 中的每个产生式都具有 $A \to (V \cup T)^*$ 的形式的语言，其语言称作上下文无关语言（$\text{CFL}$）
-    4. $3$ 型文法 / 正则文法（$\text{RG}$）：每个产生式都形如 $A \to a$ 或 $A \to aB$ 的语言，其中 $a \in T \cup \{\varepsilon\}, A, B \in V$，其语言称作正则语言（$\text{RL}$）
+    1. $0$ 型文法 / 短语结构文法（$\text{PSG}$）：无其他限制的形式文法，其语言称作短语结构语言（$\text{PSL}$）
+    2. $1$ 型文法 / 上下文有关文法（$\text{CSG}$）：$P$ 中的各产生式 $\alpha \to \beta$ 都有 $|\alpha| \leqslant |\beta|$ 的语言，其语言称作上下文有关语言（$\text{CSL}$）
+    3. $2$ 型文法 / 上下文无关文法（$\text{CFG}$）：$P$ 中的各产生式都具有 $A \to (V \cup T)^*$ 的形式的语言，其语言称作上下文无关语言（$\text{CFL}$）
+    4. $3$ 型文法 / 正则文法（$\text{RG}$）：各产生式都形如 $A \to a$ 或 $A \to aB$ 的语言，其中 $a \in T \cup \{\varepsilon\}, A, B \in V$，其语言称作正则语言（$\text{RL}$）
 2. 谱系定理：在同一字母表（例如取字母表 $\Sigma = \{0, 1\}$）上，各语言类之间存在以下关系
     1. 正则语言类真包含于上下文无关语言类中：$\text{RL} \subset \text{CFL}$
     2. 确定的上下文无关语言包含正则语言，但包含于上下文语言之间：$\text{RL} \subset \text{DCFL} \subset \text{CFL}$
@@ -319,7 +319,7 @@
 
 3. 确定的下推自动机：一个下推自动机 $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$ 若有
     1. 对于每个 $q \in Q, a \in \Sigma \cup \{\varepsilon\}, A \in \Gamma$，$\delta(q, a, A)$ 至多包含一个元素
-    2. 对于每个 $a \in \Sigma$，若 $\delta(q, a, A)$ 非空，则 $\delta(q, \varepsilon, A)$ 为空\
+    2. 对于每个 $a \in \Sigma$，若 $\delta(q, a, A)$ 非空，则 $\delta(q, \varepsilon, A)$ 为空
 
     则称 $M$ 为确定的下推自动机（$\text{DPDA}$），其接受的语言称为确定的上下文无关语言（$\text{DCFL}$）
 
