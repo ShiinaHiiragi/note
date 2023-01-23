@@ -64,18 +64,32 @@
         $$
 
         1. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$，设赋值 $\theta, \theta'$ 有任意 $1\leqslant i \leqslant n: \theta(p_i) = \theta'(p_i)$，则 $\widehat \theta(\alpha) = \widehat {\theta'}(\alpha)$
-        2. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$ 和公式 $\beta_1, \beta_2, \cdots, \beta_n$，令 $\alpha' = \alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$．对任意赋值 $\theta$，定义赋值 $\theta': \mathbf{Prop} \to 2$ 为 $\theta'(q) = \left\{\begin{aligned} & \widehat \theta(\beta_i), &\textsf{存在 }\ 1\leqslant i\leqslant n: q = p_i \\& \theta(q), &\textsf{否则} \end{aligned}\right.$，则 $\theta' \vDash \alpha \leftrightarrow \theta \vDash \alpha'$
+        2. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$ 和公式 $\beta_1, \beta_2, \cdots, \beta_n$，令 $\alpha' = \alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$．对任意赋值 $\theta$，定义赋值 $\theta': \mathbf{Prop} \to 2$ 为
+
+            $$
+            \theta'(q) = \left\{\begin{aligned}
+            & \widehat \theta(\beta_i), &\textsf{存在 }\ 1\leqslant i\leqslant n: q = p_i \\
+            & \theta(q), &\textsf{否则} \end{aligned}\right.
+            $$
+
+            则 $\theta' \vDash \alpha \leftrightarrow \theta \vDash \alpha'$
 
     2. 对任意公式 $\alpha$ 与赋值 $\theta$，若 $\theta(\alpha) = 1$，则称 $\theta$ 满足公式 $\alpha$，记作 $\theta \vDash \alpha$
-        1. 对于公式 $\alpha$，若存在赋值 $\theta$ 使得 $\theta \vDash \alpha$，则称公式 $\alpha$ 可满足，否则称 $\alpha$ 为矛盾式．易知公式 $\alpha$ 是重言式当且仅当 $\neg \alpha$ 是矛盾式；公式 $\alpha$ 是矛盾式当且仅当 $\neg \alpha$ 是重言式
-        2. 对于公式 $\alpha$，若对任何赋值 $\theta$ 均有 $\theta \vDash \alpha$，则称 $\alpha$ 是重言式，记作 $\vDash \alpha$
-    3. 对任意公式集 $\Gamma$ 与赋值 $\theta$，若对任意 $\alpha$ 都有 $\theta \vDash \alpha$，则称 $\theta$ 满足 $\Gamma$，记作 $\theta \vDash \Gamma$
+        1. 对于公式 $\alpha$，若存在赋值 $\theta$ 使得 $\theta \vDash \alpha$，则称公式 $\alpha$ 可满足，否则称 $\alpha$ 为矛盾式
+        2. 对于公式 $\alpha$，若对任何赋值 $\theta$ 均有 $\theta \vDash \alpha$，则称 $\alpha$ 是重言式，记作 $\vDash \alpha$ 或 $\varnothing \vDash \alpha$
+        3. 公式 $\alpha$ 是重言式当且仅当 $\neg \alpha$ 是矛盾式；公式 $\alpha$ 是矛盾式当且仅当 $\neg \alpha$ 是重言式
+    3. 对任意公式集 $\Gamma$ 与赋值 $\theta$，若对任意公式 $\alpha \in \Gamma$ 都有 $\theta \vDash \alpha$，则称 $\theta$ 满足 $\Gamma$，记作 $\theta \vDash \Gamma$
         1. 对于公式集 $\Gamma$，如果存在赋值 $\theta$ 使得 $\theta \vDash \Gamma$，则称 $\Gamma$ 可满足
-        2. 对任意公式集 $\Gamma \cup \{\alpha\}$，如果对于任意赋值 $\theta$ 使得 $\theta \vDash \Gamma$ 都有 $\theta \vDash \alpha$，则称 $\alpha$ 是 $\gamma$ 的语义后承，记作 $\Gamma \vDash \alpha$
+        2. 对任意公式集 $\Gamma \cup \{\alpha\}$，如果对于任意赋值 $\theta$ 使得 $\theta \vDash \Gamma$ 都有 $\theta \vDash \alpha$，则称 $\alpha$ 是 $\gamma$ 的语义后承，或称 $\Gamma$ 重言蕴含 $\alpha$，记作 $\Gamma \vDash \alpha$
+        3. 设 $\sigma$ 是一个公式，则通常将 $\{\sigma\} \vDash \alpha$ 简写作 $\sigma \vDash \alpha$．若 $\sigma \vDash \alpha$ 与 $\alpha \vDash \sigma$ 同时成立，则称 $\sigma$ 与 $\alpha$ 重言等价
     4. 将经典命题逻辑 $\mathbf{CL}$ 定义为所有重言式的集合，即 $\mathbf{CL} = \{\alpha \in \mathscr L \mid \vDash \alpha\}$
         1. 对任意公式 $\alpha$ 和代入 $\sigma$，若 $\alpha \in \mathbf{CL}$，则 $\sigma(\alpha) \in \mathbf{CL}$
         2. 对任意公式 $\alpha, \beta$，若 $\alpha, \alpha \to \beta \in \mathbf{CL}$，则 $\beta \in \mathbf{CL}$
-    5. 真值函数：令 $\alpha$ 是公式且 $\mathrm{var}(\alpha) = \{p_1, p_2, \cdots, p_n\}$，如果对于 $n$ 元函数 $f: 2^n \to 2$ 与 $\varepsilon = (\alpha_1, \alpha_2, \cdots, \alpha_n) \in 2^n$ 都有 $f(\theta(p_1), \theta(p_2), \cdots, \theta(p_n)) = \widehat \theta(\alpha)$，其中 $\theta$ 是任意赋值使得对每个 $1\leqslant i\leqslant n$ 都有 $\theta(p_i) = a_i$，则称 $\alpha$ 定义 $n$ 元真值函数 $f$．任意 $n$ 元真值函数 $f: 2^n \to 2$ 在 $\mathscr L$ 中可定义
+    5. 真值函数：令 $\alpha$ 是公式且 $\mathrm{var}(\alpha) = \{p_1, p_2, \cdots, p_n\}$，如果对于 $n$ 元函数 $f: 2^n \to 2$ 与 $\varepsilon = (\alpha_1, \alpha_2, \cdots, \alpha_n) \in 2^n$ 都有 $f(\theta(p_1), \theta(p_2), \cdots, \theta(p_n)) = \widehat \theta(\alpha)$，其中 $\theta$ 是任意赋值使得对每个 $1\leqslant i\leqslant n$ 都有 $\theta(p_i) = a_i$，则称 $\alpha$ 定义 $n$ 元真值函数 $f$，也记作 $B_{\alpha}^n$
+        1. 任意 $n$ 元真值函数 $f: 2^n \to 2$ 在 $\mathscr L$ 中可定义，即存在 $\alpha \in \mathscr L$ 使得 $f = B_\alpha^n$
+        2. 完全组：设 $G \subseteq \{\bot, \top, \neg, \wedge, \vee, \to, \leftrightarrow\}$，若任何一个真值函数都可以用只含 $G$ 联结词的公式表达，则称集合 $G$ 是命题联结词的完全组
+
+            !!! note "析取范式与合取范式"
 
 4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统 $\mathbf{HK}$
     1. 公理与推理规则：一个推理规则的形式是 $\begin{prooftree} \AxiomC{\(\alpha_1\)} \AxiomC{\(\alpha_2\)} \AxiomC{\(\cdots\)} \AxiomC{\(\alpha_n\)} \QuaternaryInfC{\(\alpha_0\)} \end{prooftree}$，其中 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 称为 $R$ 的前提，$\alpha_0$ 称为 $R$ 的结论
