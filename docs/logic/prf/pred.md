@@ -167,7 +167,7 @@
                 - 对每个常元符号，$c\in \mathbf C$，$c^{\bigcap_{i\in I}\mathfrak A_i} = C^{\mathfrak A_i}$
 
     2. 模型：一个模型是有序对 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是结构，$\sigma$ 是 $\mathfrak A$ 中的指派
-        1. 指派：一个结构 $\mathfrak A = (A, I)$ 中的 $\mathfrak A-$指派是一个函数 $\sigma: \mathbf{Var} \to A$；也用 $\left<\sigma(x_i)\right>_{i\in \lambda}$ 表示 $\sigma$，其中 $\lambda$ 是 $\mathbf{Var}$ 的指标集
+        1. 指派：结构 $\mathfrak A = (A, I)$ 中的 $\mathfrak A-$指派是一个函数 $\sigma: \mathbf{Var} \to A$；也用 $\left<\sigma(x_i)\right>_{i\in \lambda}$ 表示 $\sigma$，其中 $\lambda$ 是 $\mathbf{Var}$ 的指标集
         2. 对模型 $\mathfrak M = (\mathfrak A, \sigma)$ 和任意变元 $x$，定义指派 $\sigma[a/x]: \mathbf{Var} \to A$ 为 $\sigma[a/x](y) = \left\{\begin{aligned} & a, & y = x \\ & \sigma(y), & y\neq x \end{aligned}\right.$，指派 $\sigma[\alpha /x]$ 与 $\sigma$ 至多在 $x$ 处的值不同
             - 设指派 $\overline b = \left<b_i\right>_{i\in \lambda}$，此时将替换记作 $\overline b[a/x]$
             - 令 $\overline a = \left<a_1, a_2, \cdots, a_n\right>, \overline x = \left<x_1, x_2, \cdots, x_n\right>$，记 $\sigma[\overline a / \overline x] = \sigma[a_1/x_1][a_2/x_2] \cdots [a_n/x_n]$
@@ -244,12 +244,12 @@
             \begin{prooftree}
             \AxiomC{$\alpha$}
             \AxiomC{$\alpha \to \beta$}
-            \RightLabel{(mp)}
+            \RightLabel{ (mp)}
             \BinaryInfC{$\beta$}
             \end{prooftree},
             \begin{prooftree}
             \AxiomC{$\alpha$}
-            \RightLabel{(gen)}
+            \RightLabel{ (gen)}
             \UnaryInfC{$\forall x\alpha$}
             \end{prooftree}
             $$
@@ -267,12 +267,12 @@
             $$
             \begin{prooftree}
             \AxiomC{$\alpha \to \beta$}
-            \RightLabel{$(\forall M)$}
+            \RightLabel{ $(\forall M)$}
             \UnaryInfC{$\forall x\alpha \to \forall x\beta$}
             \end{prooftree},
             \begin{prooftree}
             \AxiomC{$\alpha \to \beta$}
-            \RightLabel{$(\forall M)$}
+            \RightLabel{ $(\forall M)$}
             \UnaryInfC{$\exists x\alpha \to \exists x\beta$}
             \end{prooftree}
             $$
@@ -303,47 +303,49 @@
             - 如果 $\alpha(y/x), \Sigma \vdash_{\mathbf H_1} \beta$ 且 $y\notin \mathrm{FV}(\exists x\alpha, \Sigma, \beta)$，则 $\exists x\alpha, \Sigma \vdash_{\mathbf H_1} \beta$
             - 如果 $\Sigma \vdash_{\mathbf H_1} \alpha(t/x)$，则 $\Sigma \vdash_{\mathbf H_1} \exists x\alpha$
 
-    4. 一阶逻辑的后承演算 $\mathfrak C_{\mathbf H_1}$ 是在经典命题逻辑的后承演算 $\mathfrak C_{\mathbf{HK}}$ 增加量词规则得到的
+    4. 前束范式定理：对于任何公式，都可以找到与之句法等价的前束公式，即具有 $\mathbf Q_1 x_1 \mathbf Q_2 x_2 \cdots \mathbf Q_n x_n \alpha$ 形式的公式，其中 $n$ 是自然数，$\mathbf Q_i$ 是量词且 $\alpha$ 不含量词
 
-        $$
-        \displaylines{
-            \begin{prooftree}
-            \AxiomC{$\alpha(t/x), \Sigma \vdash \beta$}
-            \RightLabel{$\forall \vdash$}
-            \UnaryInfC{$(\forall x\alpha, \Sigma \vdash \beta)$}
-            \end{prooftree},
-            \begin{prooftree}
-            \AxiomC{$\Sigma \vdash \alpha(y/x)$}
-            \RightLabel{$(\vdash \forall)$}
-            \UnaryInfC{$\Sigma \vdash \forall x\alpha$}
-            \end{prooftree}
-            (y \notin \mathrm{FV}(\Sigma, \forall x\alpha)) \\
-            \begin{prooftree}
-            \AxiomC{$\alpha(y/x), \Sigma \vdash \beta$}
-            \RightLabel{$(\exists \vdash)$}
-            \UnaryInfC{$\exists x\alpha$}
-            \end{prooftree},
-            \begin{prooftree}
-            \AxiomC{$\Sigma \vdash \alpha(t/x)$}
-            \RightLabel{$(\vdash \exists)$}
-            \UnaryInfC{$\Sigma \vdash \exists x\alpha$}
-            \end{prooftree}
-            (y \notin \mathrm{FV}(\Sigma, \exists x\alpha, \beta))
-        }
-        $$
+6. 一阶逻辑的后承演算 $\mathfrak C_{\mathbf H_1}$ 是在经典命题逻辑的后承演算 $\mathfrak C_{\mathbf{HK}}$ 增加量词规则得到的
 
-6. 一致性：如果公式集 $\Sigma$ 有 $\Sigma \nvdash_{\mathbf H_1} \bot$，则称公式集 $\Sigma$ 是 $\mathbf H_1-$一致的，否则称 $\Sigma$ 是 $\mathbf H_1-$不一致的
+    $$
+    \displaylines{
+        \begin{prooftree}
+        \AxiomC{$\alpha(t/x), \Sigma \vdash \beta$}
+        \RightLabel{ $(\forall \vdash)$}
+        \UnaryInfC{$(\forall x\alpha, \Sigma \vdash \beta)$}
+        \end{prooftree},
+        \begin{prooftree}
+        \AxiomC{$\Sigma \vdash \alpha(y/x)$}
+        \RightLabel{ $(\vdash \forall)$}
+        \UnaryInfC{$\Sigma \vdash \forall x\alpha$}
+        \end{prooftree}
+        (y \notin \mathrm{FV}(\Sigma, \forall x\alpha)) \\
+        \begin{prooftree}
+        \AxiomC{$\alpha(y/x), \Sigma \vdash \beta$}
+        \RightLabel{ $(\exists \vdash)$}
+        \UnaryInfC{$\exists x\alpha$}
+        \end{prooftree},
+        \begin{prooftree}
+        \AxiomC{$\Sigma \vdash \alpha(t/x)$}
+        \RightLabel{ $(\vdash \exists)$}
+        \UnaryInfC{$\Sigma \vdash \exists x\alpha$}
+        \end{prooftree}
+        (y \notin \mathrm{FV}(\Sigma, \exists x\alpha, \beta))
+    }
+    $$
+
+7. 一致性：如果公式集 $\Sigma$ 有 $\Sigma \nvdash_{\mathbf H_1} \bot$，则称公式集 $\Sigma$ 是 $\mathbf H_1-$一致的，否则称 $\Sigma$ 是 $\mathbf H_1-$不一致的
     1. 对任意公式集 $\Sigma \cup \{\alpha\}$ 有
         1. $\Sigma \nvdash_{\mathbf H_1} \neg \alpha$ 当且仅当 $\Sigma \cup \{\alpha\}$ 是 $\mathbf H_1-$一致的
         2. $\Sigma \nvdash_{\mathbf H_1} \alpha$ 当且仅当 $\Sigma \cup \{\neg \alpha\}$ 是 $\mathbf H_1-$一致的
     2. 一个公式集 $\Sigma$ 是 $\mathbf H_1$ 一致的当且仅当 $\Sigma$ 的每个有穷子集是 $\mathbf H_1$ 一致的
-7. 可靠性：如果 $\Sigma \vdash_{\mathbf H_1} \alpha$，那么 $\Sigma \vDash \alpha$
+8. 可靠性：如果 $\Sigma \vdash_{\mathbf H_1} \alpha$，那么 $\Sigma \vDash \alpha$
     1. 对任意公式 $\alpha, \beta$
         1. 如果 $\vDash_1 \alpha$ 且 $\vDash_1 \alpha \to \beta$，则 $\vDash \beta$
         2. 如果 $\vDash_1 \alpha$，则 $\vDash_1 \forall x\alpha$
     2. 如果 $\Sigma$ 是可满足的，那么 $\Sigma$ 是 $\mathbf H_1-$一致的
     3. $\mathrm{Thm}(\mathbf H_1) \subseteq \mathbf{FOL}$
-8. 完全性：如果 $\Sigma \vDash \alpha$，那么 $\Sigma \vdash_{\mathbf H_1} \alpha$
+9. 完全性：如果 $\Sigma \vDash \alpha$，那么 $\Sigma \vdash_{\mathbf H_1} \alpha$
     1. $S$ 是可数的，因此 $\mathcal T(S)$ 与 $\mathcal F(S)$ 均可数，设 $\Sigma$ 是 $\mathbf H_1-$一致的公式集，构造句法模型 $\mathfrak M^\Sigma = (\mathfrak A^\Sigma, \sigma^\Sigma)$
         1. 模型 $\mathfrak M^\Sigma = (\mathfrak A^\Sigma, \sigma^\Sigma)$ 的论域是项集 $\mathcal T(S)$，对任意变元 $x\in \mathbf{Var}, \sigma^\Sigma(x) = x$
             - 对任意关系符号 $R\in \mathbf R, (t_1, t_2, \cdots, t_{\Omega(R)}) \in R^{\mathfrak A^\Sigma}$ 当且仅当 $\Sigma \vdash_{\mathbf H_1} Rt_1 t_2 \cdots t_{\Omega(R)}$
