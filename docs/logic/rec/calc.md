@@ -50,7 +50,7 @@
 
             也是原始递归的
 
-        3. 假设 $P_1, P_2, \cdots, P_n$ 是一元谓词且都是原始递归的，且对任意 $x$ 有且只有一个 $P_i$ 使得 $P_i(x)$ 成立．灵 $g_1(x), g_2(x), \cdots, g_n(x)$ 都是原始递归函数，定义函数
+        3. 假设 $P_1, P_2, \cdots, P_n$ 是一元谓词且都是原始递归的，且对任意 $x$ 有且只有一个 $P_i$ 使得 $P_i(x)$ 成立．则 $g_1(x), g_2(x), \cdots, g_n(x)$ 都是原始递归函数，定义函数
 
             $$
             f(x) = \left\{\begin{aligned}
@@ -61,7 +61,20 @@
             \end{aligned}\right.
             $$
 
-    2. 除法的定义
+    2. 如果函数 $f$ 为从 $g$ 和 $h$ 经强递归得到的且 $g$ 和 $h$ 都是原始递归的，则 $f$ 也是原始递归的
+        1. 历史函数：对任何一个全函数 $f: \mathbf{N}^{k+1} \rightarrow \mathbf{N}$，令 $F(\overline{x}, n)=p_0^{f(\overline{x}, 0)+1} p_1^{f(\overline{x}, 1)+1} \ldots p_n^{f(\overline{x}, n)+1}$，则称 $F$ 为 $f$ 的历史函数，其中 $p_n$ 表示第 $n$ 个质数
+        2. 强递归：设 $f, g, h$ 是三个函数，若
+
+            $$
+            \begin{aligned}
+            f(\overline{x}, 0) & =g(\overline{x}) \\
+            f(\overline{x}, y+1) & =h(\overline{x}, y, F(\overline{x}, y))
+            \end{aligned}
+            $$
+
+            称函数 $f$ 为从 $g$ 和 $h$ 经强递归得到的
+
+    3. 除法的定义
         1. 商函数：定义
 
             $$
@@ -84,7 +97,7 @@
 
             可知 $\mathrm{rem}(x, y)$ 是原始递归函数
 
-    3. $\text{Ackermann}$ 函数
+    4. $\text{Ackermann}$ 函数
         1. 三元函数 $\Phi(n, x, y)$ 递归定义：
 
             $$
