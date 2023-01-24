@@ -1,17 +1,21 @@
 # 1 数学基础
 
 ## 1.1 ZFC 公理
-1. 集合论语言 $\mathscr L(S)$，其中 $S = \{=, \in\}$ 且 $\Omega(=) = \Omega(\in) = 2$．定义如下缩写记号：
-    1. $\neg x \in A$：$x \notin A$
-    2. $\forall x \ (x \in A \to \varphi(x))$：$\forall x \in A \ \varphi(x)$
+1. 集合论语言 $\mathscr L(S)$，其中 $S = \{=, \in\}$ 且 $\Omega(=) = \Omega(\in) = 2$
+    1. 等词公理
+        1. $x = x$
+        2. $x = y \rightarrow \left(\alpha \rightarrow \alpha^{\prime}\right)$，其中 $\alpha$ 为原子公式且 $\alpha^{\prime}$ 是将 $\alpha$ 中若干个 $x$ 的出现用 $y$ 替换所得
+    2. 定义如下缩写记号：
+        1. $\neg x \in A$：$x \notin A$
+        2. $\forall x \ (x \in A \to \varphi(x))$：$\forall x \in A \ \varphi(x)$
 
-        $\exists x \ (x \in A \wedge \varphi(x))$：$\exists x \in A \ \varphi(x)$
+            $\exists x \ (x \in A \wedge \varphi(x))$：$\exists x \in A \ \varphi(x)$
 
-    3. $\forall x \ (x < A \to \varphi(x))$：$\forall x < A \ \varphi(x)$
+        3. $\forall x \ (x < A \to \varphi(x))$：$\forall x < A \ \varphi(x)$
 
-        $\exists x \ (x < A \wedge \varphi(x))$ 简写为 $\exists x < A \ \varphi(x)$
+            $\exists x \ (x < A \wedge \varphi(x))$ 简写为 $\exists x < A \ \varphi(x)$
 
-    4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists !x \ \varphi(x)$
+        4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists !x \ \varphi(x)$
 
 2. $\mathbf{ZFC}$ 公理
     1. 存在公理（$\text{Exi}$）：存在一个集合
