@@ -80,7 +80,7 @@
         3. 公式 $\alpha$ 是重言式当且仅当 $\neg \alpha$ 是矛盾式；公式 $\alpha$ 是矛盾式当且仅当 $\neg \alpha$ 是重言式
     3. 对任意公式集 $\Gamma$ 与赋值 $\theta$，若对任意公式 $\alpha \in \Gamma$ 都有 $\theta \vDash \alpha$，则称 $\theta$ 满足 $\Gamma$，记作 $\theta \vDash \Gamma$
         1. 对于公式集 $\Gamma$，若存在赋值 $\theta$ 使得 $\theta \vDash \Gamma$，则称 $\Gamma$ 可满足
-        2. 对任意公式集 $\Gamma \cup \{\alpha\}$，若对于任意赋值 $\theta$ 使得 $\theta \vDash \Gamma$ 都有 $\theta \vDash \alpha$，则称 $\alpha$ 是 $\gamma$ 的语义后承，或称 $\Gamma$ 重言蕴含 $\alpha$，记作 $\Gamma \vDash \alpha$
+        2. 对任意公式集 $\Gamma \cup \{\alpha\}$，若对于任意赋值 $\theta$ 使得 $\theta \vDash \Gamma$ 蕴含 $\theta \vDash \alpha$，则称 $\alpha$ 是 $\gamma$ 的语义后承，或称 $\Gamma$ 重言蕴含 $\alpha$，记作 $\Gamma \vDash \alpha$
         3. 设 $\sigma$ 是一个公式，则通常将 $\{\sigma\} \vDash \alpha$ 简写作 $\sigma \vDash \alpha$．若 $\sigma \vDash \alpha$ 与 $\alpha \vDash \sigma$ 同时成立，则称 $\sigma$ 与 $\alpha$ 重言等价
     4. 将经典命题逻辑 $\mathbf{CL}$ 定义为所有重言式的集合，即 $\mathbf{CL} = \{\alpha \in \mathscr L \mid \vDash \alpha\}$
         1. 对任意公式 $\alpha$ 和代入 $\sigma$，若 $\alpha \in \mathbf{CL}$，则 $\sigma(\alpha) \in \mathbf{CL}$
