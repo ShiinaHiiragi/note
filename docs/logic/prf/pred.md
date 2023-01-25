@@ -6,10 +6,12 @@
         1. 变元集 $\mathbf{Var} = \{x_i \mid i\in \lambda\}$，用 $x, y, z$ 表示任意变元
         2. 联结词 $\bot, \wedge, \vee, \to$ 与量词 $\forall, \exists$
         3. 括号 $)$ 与 $($
-    2. 非逻辑符号：令 $S = \mathbf R \cup \mathbf F\cup \mathbf C$，则一个一阶语言由非逻辑符号集合 $S$ 决定
-        1. 关系符号集 $\mathbf R = \{R_i\mid i\in \lambda\}$，用 $P, Q, R$ 表示任意关系符号
-        2. 函数符号集 $\mathbf F = \{f_i\mid i\in \lambda\}$，用 $f, g, h$ 表示任意函数符号
-        3. 常元符号集 $\mathbf C = \{c_i\mid i\in \lambda\}$，用 $a, b, c$ 表示任意常元符号
+    2. 非逻辑符号：令 $S = \mathbf R \cup \mathbf F\cup \mathbf C$
+        - 关系符号集 $\mathbf R = \{R_i\mid i\in \lambda\}$，用 $P, Q, R$ 表示任意关系符号
+        - 函数符号集 $\mathbf F = \{f_i\mid i\in \lambda\}$，用 $f, g, h$ 表示任意函数符号
+        - 常元符号集 $\mathbf C = \{c_i\mid i\in \lambda\}$，用 $a, b, c$ 表示任意常元符号
+
+        一个一阶语言由非逻辑符号集合 $S$ 决定
 
     !!! note "形式主义进路"
         1. 证明论下的命题逻辑与一阶逻辑是从朴素集合论中建立的理论，因此变元集 $\mathbf{Var}$ 与一阶语言 $\mathscr L(S)$ 的基数 $\lambda$ 在本节中均至多为 $\omega$
@@ -25,7 +27,7 @@
         \mathcal T(S) \ni t:= x \mid c \mid ft_1t_2\cdots t_{\Omega(f)}
         $$
 
-        其中 $x\in \mathbf{Var}, c\in C$ 且 $f\in \mathbf F$
+        其中 $x\in \mathbf{Var}, c\in C$ 且 $f\in \mathbf F$．不含变项的项称作闭项
 
         一阶语言 $\mathscr L(S)$ 的（合式）公式集 $\mathcal F(S)$ 归纳定义如下
 
