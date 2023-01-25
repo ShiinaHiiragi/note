@@ -141,7 +141,7 @@
             - 谓词 $\exists z \leqslant y \ P(\overline x, z)$ 与 $\forall z \leqslant y \ P(\overline x, z)$ 都是原始递归的
             - 定义函数 $f(\overline x, y) = \mu z \leqslant y \ P(\overline x, z)$，则 $f(\overline x, y)$ 也是原始递归的
 
-    2. 正则 $\mu-$算子：令 $f: \mathbf N^{n+1} \to \mathbf N$ 为一个全函数，如果 $n$ 元函数 $g(x_1, x_2, \cdots, x_n)$ 满足正则性条件：
+    2. 正则 $\mu-$算子：令 $f: \mathbf N^{n+1} \to \mathbf N$ 为一个全函数，如果 $n$ 元函数 $g(x_1, x_2, \cdots, x_n)$ 满足正则性条件
 
         $$
         \forall x_1 \forall x_2 \cdots \forall x_n \exists y \ f(x_1, x_2, \cdots, x_n, y) = 0

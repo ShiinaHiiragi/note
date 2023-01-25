@@ -148,7 +148,7 @@
             \end{bmatrix}
             $$
 
-        2. 加法：设 $\boldsymbol A$ 与 $\boldsymbol B$ 均为 $m \times n$ 矩阵：
+        2. 加法：设 $\boldsymbol A$ 与 $\boldsymbol B$ 均为 $m \times n$ 矩阵
 
             $$
             \boldsymbol A = \begin{bmatrix}
@@ -176,7 +176,7 @@
             \end{bmatrix}
             $$
 
-        3. 数乘：设 $k \in \mathbf R$，$\boldsymbol A$ 是一个 $m \times n$ 的矩阵：
+        3. 数乘：设 $k \in \mathbf R$，$\boldsymbol A$ 是一个 $m \times n$ 的矩阵
 
             $$
             \boldsymbol A = \begin{bmatrix}
@@ -507,7 +507,7 @@
     \end{bmatrix}
     $$
 
-    1. 伪逆：将 $\boldsymbol U, \boldsymbol V$ 分块：$\boldsymbol U = \begin{bmatrix} \boldsymbol U_{r} & \boldsymbol U_{m-r} \\ \end{bmatrix}, \boldsymbol V = \begin{bmatrix} \boldsymbol V_{r} & \boldsymbol V_{m-r} \\ \end{bmatrix}$，从而 $\boldsymbol A = \boldsymbol U_r \boldsymbol D \boldsymbol V_r^{\mathrm T}$．定义 $\boldsymbol A$ 的伪逆或 $\text{Moore} - \text{Penrose}$ 逆为 $\boldsymbol A^+ = \boldsymbol V_r \boldsymbol D^{-1} \boldsymbol U_r^{\mathrm T}$
+    1. 伪逆：将 $\boldsymbol U, \boldsymbol V$ 分块有 $\boldsymbol U = \begin{bmatrix} \boldsymbol U_{r} & \boldsymbol U_{m-r} \\ \end{bmatrix}, \boldsymbol V = \begin{bmatrix} \boldsymbol V_{r} & \boldsymbol V_{m-r} \\ \end{bmatrix}$，从而 $\boldsymbol A = \boldsymbol U_r \boldsymbol D \boldsymbol V_r^{\mathrm T}$．定义 $\boldsymbol A$ 的伪逆或 $\text{Moore} - \text{Penrose}$ 逆为 $\boldsymbol A^+ = \boldsymbol V_r \boldsymbol D^{-1} \boldsymbol U_r^{\mathrm T}$
     2. 令 $\widehat{\boldsymbol x} = \boldsymbol A^+ \boldsymbol b$，从而 $\boldsymbol A \widehat{\boldsymbol x} = \boldsymbol U_r \boldsymbol U_r^{\mathrm T} \boldsymbol b$ 是 $\boldsymbol b$ 在 $\mathbf C(\boldsymbol A)$ 上的正交投影，$\widehat{\boldsymbol x}$ 是 $\boldsymbol{Ax} = \boldsymbol b$ 的最小二乘解．当 $\boldsymbol A$ 的列向量线性相关时，方程最小二乘解不唯一，此时 $\widehat{\boldsymbol x}$ 为所有最小二乘解中模长最小的向量
 
 ## 3.2 行列式

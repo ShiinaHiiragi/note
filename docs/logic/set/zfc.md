@@ -477,7 +477,7 @@
         5. 乘法保序性：$\forall m, n, k \in \mathbf N \ ((m < n \wedge k \neq 0)\to mk < nk)$
 
 ### 1.3.2 整数集
-1. 整数集合：定义关系 $\sim$ 是 $\mathbf N \times \mathbf N$ 上的等价关系：$(m_1, n_1) \sim (m_2, n_2)$ 当且仅当 $m_1 +^{\mathbf N} n_2 = m_2 +^{\mathbf N} n_1$，令 $\mathbf Z = \mathbf N \times \mathbf N / \sim$．特别地，$0^{\mathbf Z} = [(0, 0)]$
+1. 整数集合：定义关系 $\sim$ 是 $\mathbf N \times \mathbf N$ 上的等价关系 $(m_1, n_1) \sim (m_2, n_2)$ 当且仅当 $m_1 +^{\mathbf N} n_2 = m_2 +^{\mathbf N} n_1$，令 $\mathbf Z = \mathbf N \times \mathbf N / \sim$．特别地，$0^{\mathbf Z} = [(0, 0)]$
 2. 定义整数集合上的序与运算
     1. 序：$[(m_1, n_1)] \leqslant^{\mathbf Z} [(m_2, n_2)] \leftrightarrow m_1 +^{\mathbf N} n_2 \leqslant^{\mathbf N} m_2 +^{\mathbf N} n_1$
     2. 加法：$[(m_1, n_1)] +^{\mathbf Z} [(m_2, n_2)] = [(m_1 +^{\mathbf N} m_2), n_1 +^{\mathbf N} n_2]$
@@ -501,7 +501,7 @@
     3. 对任意 $m, n \in \mathbf N$ 有 $f(m +^{\mathbf N} n) = f(m) +^{\mathbf Z} f(n)$ 且 $f(m \cdot^{\mathbf N} n) = f(m) \cdot^{\mathbf Z} f(n)$
 
 ### 1.3.3 有理数集
-1. 有理数集合：令 $\mathbf Z_+ = \{a \in \mathbf Z \mid a >^{\mathbf Z} 0^{\mathbf Z}\}$，如果 $\sim$ 是集合 $\mathbf Z \times \mathbf Z_+$ 上的等价关系：$(a_1, b_1) \sim (a_2, b_2)$ 当且仅当 $a_1 \cdot^{\mathbf Z} b_2 = a_2 \cdot^{\mathbf Z} b_1$，则定义有理数集合 $\mathbf Q = \mathbf Z \times \mathbf Z_+ / \sim$．特别地，$0^{\mathbf Q} = [(0^{\mathbf Z}, a)], 1^{\mathbf Q} = [(a, a)]$
+1. 有理数集合：令 $\mathbf Z_+ = \{a \in \mathbf Z \mid a >^{\mathbf Z} 0^{\mathbf Z}\}$，如果 $\sim$ 是集合 $\mathbf Z \times \mathbf Z_+$ 上的等价关系 $(a_1, b_1) \sim (a_2, b_2)$ 当且仅当 $a_1 \cdot^{\mathbf Z} b_2 = a_2 \cdot^{\mathbf Z} b_1$，则定义有理数集合 $\mathbf Q = \mathbf Z \times \mathbf Z_+ / \sim$．特别地，$0^{\mathbf Q} = [(0^{\mathbf Z}, a)], 1^{\mathbf Q} = [(a, a)]$
 2. 定义有理数集合上的序与运算
     1. 序：$[(a_1, b_1)] \leqslant^{\mathbf Q} [(a_2, b_2)] \leftrightarrow a_1 \cdot^{\mathbf Z} b_2 \leqslant^{\mathbf Z} a_2 \cdot^{\mathbf Z} b_1$
     2. 加法：$[(a_1, b_1)] +^{\mathbf Q} [(a_2, b_2)] = [(a_1 \cdot^{\mathbf Z} b_2 +^{\mathbf Z} a_2 \cdot^{\mathbf Z} b_1, b_1 \cdot^{\mathbf Z} b_2]$
