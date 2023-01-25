@@ -196,13 +196,13 @@
 
         $$
         \begin{aligned}
-        & \mathfrak M \vDash R\overline t\textsf{ 当且仅当 } \overline t^\mathfrak M \in R^\mathfrak M \\
-        & \mathfrak M \nvDash \bot \\
-        & \mathfrak M \vDash \alpha \wedge \beta \textsf{ 当且仅当 } \mathfrak M \vDash \alpha \textsf{ 且 } \mathfrak M \vDash \beta \\
-        & \mathfrak M \vDash \alpha \vee \beta \textsf{ 当且仅当 } \mathfrak M \vDash \alpha \textsf{ 或 } \mathfrak M \vDash \beta \\
-        & \mathfrak M \vDash \alpha \to \beta \textsf{ 当且仅当 } \mathfrak M \nvDash \alpha \textsf{ 或 } \mathfrak M \vDash \beta \\
-        & \mathfrak M \vDash \exists x\alpha \textsf{ 当且仅当存在 } a \in A \textsf{ 使得 } (\mathfrak A, \sigma[a/x]) \vDash \alpha \\
-        & \mathfrak M \vDash \forall x\alpha \textsf{ 当且仅当任意 } a \in A \textsf{ 都有 } (\mathfrak A, \sigma[a/x]) \vDash \alpha
+        \mathfrak M \vDash R\overline t & \textsf{ 当且仅当 } \overline t^\mathfrak M \in R^\mathfrak M \\
+        \mathfrak M \nvDash \bot \\
+        \mathfrak M \vDash \alpha \wedge \beta  & \textsf{ 当且仅当 } \mathfrak M \vDash \alpha \textsf{ 且 } \mathfrak M \vDash \beta \\
+        \mathfrak M \vDash \alpha \vee \beta  & \textsf{ 当且仅当 } \mathfrak M \vDash \alpha \textsf{ 或 } \mathfrak M \vDash \beta \\
+        \mathfrak M \vDash \alpha \to \beta  & \textsf{ 当且仅当 } \mathfrak M \nvDash \alpha \textsf{ 或 } \mathfrak M \vDash \beta \\
+        \mathfrak M \vDash \exists x\alpha  & \textsf{ 当且仅当存在 } a \in A \textsf{ 使得 } (\mathfrak A, \sigma[a/x]) \vDash \alpha \\
+        \mathfrak M \vDash \forall x\alpha  & \textsf{ 当且仅当任意 } a \in A \textsf{ 都有 } (\mathfrak A, \sigma[a/x]) \vDash \alpha
         \end{aligned}
         $$
 
@@ -256,6 +256,8 @@
             \UnaryInfC{$\forall x\alpha$}
             \end{prooftree}
             $$
+
+            对于 $\mathrm{gen}$，需要保证 $x$ 不在 $\alpha$ 的推理中自然出现
 
     2. 在 $\mathbf{H}_1$ 中的一个推导是由公式组成的有穷树结构 $\mathcal D$，其中每个节点 $\gamma$ 要么是公理，要么是从子节点公式运用推理规则 $\text{mp}$ 或 $\text{gen}$ 得到的
         1. 用 $\mathcal D, \mathcal E$ 表示推导，记号 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\varphi\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\varphi$ 为根节点的推导

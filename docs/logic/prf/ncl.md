@@ -55,7 +55,7 @@
 
         2. 原子公式：称形如 $Rt_1t_2\cdots t_{\Omega(R)}$ 的公式为原子公式，全体原子公式记作 $\mathbf{At}(S)$
         3. 自由出现与约束出现：记公式 $\alpha$ 中自由变元的集合为 $\mathrm{FV}(\alpha)$，约束变元的集合为 $\mathrm{BV}(\alpha)$
-        4. 等词：定义 $t = u$ 为 $\forall X \ (X(t) = X(u))$
+        4. 等词：设 $t, u \in \mathcal T(S)$，定义 $t = u$ 为 $\forall X \ (X(t) = X(u))$
 
 3. 标准语义
     1. 结构：一个 $S-$结构是 $\mathfrak A = (A, I)$，其中 $A$ 是非空集合，称为 $\mathfrak A$ 的论域，$I$ 是定义在 $S$ 上的映射；在不引发歧义的情况下，也可称 $A$ 为一个 $S-$结构．记 $A$ 的基数 $|A|$ 为 $\mathfrak A$ 的基数，用 $|\mathfrak A|$ 来表示
@@ -73,6 +73,54 @@
             \varphi t_1t_2\cdots t_{\Omega(f)} &= \varphi^{\mathfrak A}(t_1^{\mathfrak M}, t_2^{\mathfrak M}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M})
             \end{aligned}
             $$
+
+        2. 模型 $\mathfrak M$ 与公式 $\alpha$ 的满足关系 $\mathfrak M \vDash \alpha$ 定义为
+
+            $$
+            \begin{aligned}
+            \mathfrak M \vDash Xt_1t_2\cdots t_{\Omega(X)} & \textsf{ 当且仅当 } (t_1^{\mathfrak M}, t_2^{\mathfrak M}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M}) \in \sigma(X) \\
+            \mathfrak M \vDash Rt_1t_2\cdots t_{\Omega(R)} & \textsf{ 当且仅当 } (t_1^{\mathfrak M}, t_2^{\mathfrak M}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M}) \in R^{\mathfrak A} \\
+            \mathfrak M \vDash \neg \alpha & \textsf{ 当且仅当 } \mathfrak M \nvDash \alpha \\
+            \mathfrak M \vDash \alpha \to \beta & \textsf{ 当且仅当 } \mathfrak M \nvDash \alpha \textsf{ 或 } \mathfrak M \vDash \beta \\
+            \mathfrak M \vDash \forall X^n\alpha & \textsf{ 当且仅当任意 } R \subseteq A^n \textsf{ 都有 } (\mathfrak A, \sigma[R/X^n]) \vDash \alpha \\
+            \mathfrak M \vDash \forall f^n\alpha & \textsf{ 当且仅当任意 } \varphi: A^n \to A \textsf{ 都有 } (\mathfrak A, \sigma[\varphi/f^n]) \vDash \alpha \\
+            \mathfrak M \vDash \forall x\alpha & \textsf{ 当且仅当任意 } c \in A \textsf{ 都有 } (\mathfrak A, \sigma[c/x]) \vDash \alpha
+            \end{aligned}
+            $$
+
+            其中 $\sigma[a/x](y) = \left\{\begin{aligned} & a, & y = x \\ & \sigma(y), & y\neq x \end{aligned}\right.$
+
+4. 公理系统 $\mathbf H_2$：二阶语言没有任何能行的演绎系统对标准语义完全，但一阶演绎系统关于二阶语言有自然扩充
+    1. 公理与公理模式：在 $\mathbf H_1$ 附加如下公理
+        1. $\text{A}_6: \forall X\alpha \to \alpha(T/X)$，即将 $n$ 元变关系符 $X$ 替换为 $T$，后者是对 $\alpha$ 中 $X$ 可带入的 $n$ 元变关系符或 $n$ 元关系符
+        2. $\text{A}_7: \forall f\alpha \to \alpha(p/f)$，即将 $n$ 元变函数符 $f$ 替换为 $p$，后者是对 $\alpha$ 中 $f$ 可带入的 $n$ 元变函数符或 $n$ 元函数符
+        3. 概括公理模式 $\text{A}_8: \exists X \forall x_{1}, x_{2}, \forall x_{2} \cdots \forall x_{n}\left(X\left(x_{1}, x_{2}, \cdots, x_{n}\right) = \alpha\left(x_{1}, \cdots, x_{n}\right)\right), X \notin \mathrm{FV}(\alpha)$
+        4. 选择公理 $\text{A}_9:$ 设 $X$ 为 $n+1$ 元的变关系符，$f$ 是 $n$ 元的变函数符，则有
+
+            $$
+            \forall X \ (\forall x_1 \forall x_2 \cdots \forall x_n \exists y \ X(x_1, x_2, \cdots, x_n, y) \to \exists f \forall x_1 \forall x_2 \cdots \forall x_n \ X(x_1, x_2, \cdots, x_n, f(x_1, x_2, \cdots, x_n)))
+            $$
+
+    2. 推理规则
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\alpha$}
+        \RightLabel{ (gen)}
+        \UnaryInfC{$\forall X\alpha$}
+        \end{prooftree},
+        \begin{prooftree}
+        \AxiomC{$\alpha$}
+        \RightLabel{ (gen)}
+        \UnaryInfC{$\forall f\alpha$}
+        \end{prooftree}
+        $$
+
+        需要保证 $X, f$ 不在 $\alpha$ 的推理中自然出现
+
+    3. 标准语义的性质
+        1. 在 $\mathbf H_2$ 中可靠性定理对二阶语言标准语义成立，但完全性、紧致性与 $\text{L}\ddot{\mathrm o}\text{wenheim} - \text{Skolem}$ 定理均对其不成立
+        2. 标准语义的不完全性定理：令 $\mathbf H$ 是 $\mathscr L_2(S)$ 的任一能行可靠的演绎系统，则存在重言式不是 $\mathbf H$ 中的定理
 
 ### 3.1.2 非标准语义
 
