@@ -62,7 +62,7 @@
             $$
 
     2. 如果函数 $f$ 为从 $g$ 和 $h$ 经强递归得到的且 $g$ 和 $h$ 都是原始递归的，则 $f$ 也是原始递归的
-        1. 历史函数：对任何一个全函数 $f: \mathbf{N}^{k+1} \rightarrow \mathbf{N}$，令 $F(\overline{x}, n)=p_0^{f(\overline{x}, 0)+1} p_1^{f(\overline{x}, 1)+1} \ldots p_n^{f(\overline{x}, n)+1}$，则称 $F$ 为 $f$ 的历史函数，其中 $p_n$ 表示第 $n$ 个质数
+        1. 历史函数：对任何一个全函数 $f: \mathbf{N}^{k+1} \rightarrow \mathbf{N}$，令 $F(\overline{x}, n)=p_0^{f(\overline{x}, 0)+1} p_1^{f(\overline{x}, 1)+1} \cdots p_n^{f(\overline{x}, n)+1}$，则称 $F$ 为 $f$ 的历史函数，其中 $p_n$ 表示第 $n$ 个质数
         2. 强递归：设 $f, g, h$ 是三个函数，若
 
             $$

@@ -90,8 +90,8 @@
         2. 完全组：设 $G \subseteq \{\bot, \top, \neg, \wedge, \vee, \to, \leftrightarrow\}$，若任何一个真值函数都可以用只含 $G$ 中联结词的公式表达，则称集合 $G$ 是命题联结词的完全组
 
             !!! note "合取范式与析取范式"
-                - 合取范式：若公式 $\alpha$ 形如 $\alpha=\gamma_1 \wedge \gamma_2 \wedge \ldots \wedge \gamma_k$，其中每个 $\gamma_i$ 都形如 $\gamma_i=\beta_{i 1} \vee \beta_{i 2} \vee \ldots \vee \beta_{i n}$，且 $\beta_{i j}$ 是一个命题符号或命题符号的否定，则称 $\alpha$ 是合取范式
-                - 析取范式：若公式 $\alpha$ 形如 $\alpha=\gamma_1 \vee \gamma_2 \vee \ldots \vee \gamma_k$，其中每个 $\gamma_i$ 都形如 $\gamma_i=\beta_{i 1} \wedge \beta_{i 2} \wedge \ldots \wedge \beta_{i n}$，且 $\beta_{i j}$ 是一个命题符号或命题符号的否定，则称 $\alpha$ 是析取范式
+                - 合取范式：若公式 $\alpha$ 形如 $\alpha=\gamma_1 \wedge \gamma_2 \wedge \cdots \wedge \gamma_k$，其中每个 $\gamma_i$ 都形如 $\gamma_i=\beta_{i 1} \vee \beta_{i 2} \vee \cdots \vee \beta_{i n}$，且 $\beta_{i j}$ 是一个命题符号或命题符号的否定，则称 $\alpha$ 是合取范式
+                - 析取范式：若公式 $\alpha$ 形如 $\alpha=\gamma_1 \vee \gamma_2 \vee \cdots \vee \gamma_k$，其中每个 $\gamma_i$ 都形如 $\gamma_i=\beta_{i 1} \wedge \beta_{i 2} \wedge \cdots \wedge \beta_{i n}$，且 $\beta_{i j}$ 是一个命题符号或命题符号的否定，则称 $\alpha$ 是析取范式
 
 4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统 $\mathbf{HK}$
     1. 公理与推理规则：一个推理规则的形式是 $\begin{prooftree} \AxiomC{\(\alpha_1\)} \AxiomC{\(\alpha_2\)} \AxiomC{\(\cdots\)} \AxiomC{\(\alpha_n\)} \QuaternaryInfC{\(\alpha_0\)} \end{prooftree}$，其中 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 称为 $R$ 的前提，$\alpha_0$ 称为 $R$ 的结论
