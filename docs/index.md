@@ -191,8 +191,7 @@ const refList = [
         press: "江苏人民出版社",
         locate: "南京",
         year: 2004,
-        page: [234, 264],
-        plot: 249 - 234
+        page: [234, 264]
     },
     {
         author: ["姚宁远"],

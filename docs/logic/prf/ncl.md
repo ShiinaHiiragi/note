@@ -58,19 +58,19 @@
         4. 等词：设 $t, u \in \mathcal T(S)$，定义 $t = u$ 为 $\forall X \ (X(t) = X(u))$
 
 3. 标准语义
-    1. 结构：一个 $S-$结构是 $\mathfrak A = (A, I)$，其中 $A$ 是非空集合，称为 $\mathfrak A$ 的论域，$I$ 是定义在 $S$ 上的映射；在不引发歧义的情况下，也可称 $A$ 为一个 $S-$结构．记 $A$ 的基数 $|A|$ 为 $\mathfrak A$ 的基数，用 $|\mathfrak A|$ 来表示
+    1. 结构：一个标准结构是 $\mathfrak A = (A, I)$，其中 $A$ 是非空集合，称为 $\mathfrak A$ 的论域，$I$ 是定义在 $S$ 上的映射；在不引发歧义的情况下，也可称 $A$ 为一个标准结构．记 $A$ 的基数 $|A|$ 为 $\mathfrak A$ 的基数，用 $|\mathfrak A|$ 来表示
         1. 对每个关系符号 $R\in \mathbf R, I(R) \subseteq A^{\Omega(R)}$，常用 $R^\mathfrak A$ 或 $R^A$ 代替 $I(R)$
         2. 对每个函数符号 $\varphi\in \mathbf F, I(\varphi): A^{\Omega(\varphi)} \to A$ 是 $A$ 上的 $\Omega(\varphi)$ 元函数，常用 $\varphi^\mathfrak A$ 或 $\varphi^A$ 代替 $I(\varphi)$
         3. 对每个常元符号 $c\in \mathbf C, I(c) \in A$，常用 $c^\mathfrak A$ 或 $c^A$ 代替 $I(c)$
-    2. 模型：一个模型是有序对 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是结构，$\sigma$ 是 $\mathfrak A$ 中的指派，使得对于每个 $n$ 元变关系符 $X^n \in \mathbf V_r$ 有 $\sigma(X) \subseteq A^n$；对于每个 $n$ 元变函数符 $f^n \in \mathbf V_f$ 有 $\sigma(f^n): A^n \to A$；对于每个变个体符 $x \in \mathbf V_l$ 有 $\sigma(x) \in A$
+    2. 模型：一个标准模型是有序对 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是标准结构，$\sigma$ 是 $\mathfrak A$ 中的指派，使得对于每个 $n$ 元变关系符 $X^n \in \mathbf V_r$ 有 $\sigma(X) \subseteq A^n$；对于每个 $n$ 元变函数符 $f^n \in \mathbf V_f$ 有 $\sigma(f^n): A^n \to A$；对于每个变个体符 $x \in \mathbf V_l$ 有 $\sigma(x) \in A$
         1. 项解释：对任意结构 $\mathfrak A$ 和模型 $\mathfrak M = (\mathfrak A, \sigma)$，项 $t$ 在 $\mathfrak M$ 中的解释 $t^\mathfrak M$ 归纳定义为
 
             $$
             \begin{aligned}
             x^{\mathfrak M} &= \sigma(x) \\
             c^{\mathfrak M} &= c^{\mathfrak A} \\
-            ft_1t_2\cdots t_{\Omega(f)} &= \sigma(f)(t_1^{\mathfrak M}, t_2^{\mathfrak M}, \cdots, t_{\Omega(f)}^{\mathfrak M}) \\
-            \varphi t_1t_2\cdots t_{\Omega(f)} &= \varphi^{\mathfrak A}(t_1^{\mathfrak M}, t_2^{\mathfrak M}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M})
+            (ft_1t_2\cdots t_{\Omega(f)})^{\mathfrak M} &= \sigma(f)(t_1^{\mathfrak M}, t_2^{\mathfrak M}, \cdots, t_{\Omega(f)}^{\mathfrak M}) \\
+            (\varphi t_1t_2\cdots t_{\Omega(f)})^{\mathfrak M} &= \varphi^{\mathfrak A}(t_1^{\mathfrak M}, t_2^{\mathfrak M}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M})
             \end{aligned}
             $$
 
@@ -124,7 +124,56 @@
 
 ### 3.1.2 非标准语义
 1. $\text{Henkin}$ 语义
+    1. 结构：一个 $\text{Henkin}$ 结构是 $\mathfrak A^{\mathrm H} = (A, R, F, I)$
+        1. $A$ 是个体域
+        2. $R$ 是由关系集 $\mathbf R$ 形成的映射，对任意 $n \in \mathbf N$ 都有 $\varnothing \neq R(n) \subseteq \mathcal P(A^n)$
+        3. $F$ 是由函数集 $\mathbf F$ 形成的映射，对任意 $n \in \mathbf N$ 都有 $\varnothing \neq F(n) \subseteq \left\{f \mid f: A^n \to A\right\}$
+        4. $I$ 是定义在 $S$ 上的映射
+    2. 模型：$\text{Henkin}$ 语义的描述基本与标准语义相同，而仅在二阶变项与二阶量词方面有区别．设 $\text{Hekin}$ 模型 $\mathfrak M^{\mathrm H} = (\mathfrak A^{\mathrm H}, \sigma)$
+        1. 对于指派 $\sigma$ 与 $n$ 元变关系符 $X^n \in \mathbf V_r$ 及 $n$ 元变函数符 $f^n \in \mathbf V_f$，有 $\sigma(X^n) \in R(n), \sigma(f^n) \in F(n)$
+        2. 模型 $\mathfrak M^{\mathrm H}$ 与公式 $\forall X^n\alpha, \forall f^n\alpha$ 的满足关系定义为
+
+            $$
+            \begin{aligned}
+            \mathfrak M^{\mathrm H} \vDash \forall X^n\alpha & \textsf{ 当且仅当任意 } R \in R(n) \textsf{ 都有 } (\mathfrak A^{\mathrm H}, \sigma[R/X^n]) \vDash \alpha \\
+            \mathfrak M^{\mathrm H} \vDash \forall f^n\alpha & \textsf{ 当且仅当任意 } \varphi \in F(n) \textsf{ 都有 } (\mathfrak A^{\mathrm H}, \sigma[\varphi/f^n]) \vDash \alpha
+            \end{aligned}
+            $$
+
 2. 一阶语义
+    1. 结构：一个一阶结构是 $\mathfrak A^{\mathrm 1} = (A, A_1, A_2, (I, P, D))$
+        1. $A$ 是非空集，对任意 $n \in \mathbf N$，非空集 $A_1(n), A_2(n)$ 是 $n$ 元变关系符与 $n$ 元变函数符的取值范围
+        2. 对任意 $n \in \mathbf N$ 有 $P(n) \subseteq A^n \times A_1(n), D(n): A^n \times A_2(n) \to A$
+    2. 模型：设一阶模型 $\mathfrak M^{\mathrm 1} = (\mathfrak A^{\mathrm 1}, \sigma)$
+        1. 对于指派 $\sigma$ 与 $n$ 元变关系符 $X^n \in \mathbf V_r$ 及 $n$ 元变函数符 $f^n \in \mathbf V_f$，有 $\sigma(X^n) \in A_1(n), \sigma(f^n) \in A_2(n)$
+        2. 项解释：对任意结构 $\mathfrak A^{\mathrm 1}$ 和模型 $\mathfrak M^{\mathrm 1} = (\mathfrak A^{\mathrm 1}, \sigma)$，项 $t$ 在 $\mathfrak M^{\mathrm 1}$ 中的解释 $t^{\mathfrak M^{\mathrm 1}}$ 归纳定义为
+
+            $$
+            \begin{aligned}
+            x^{\mathfrak M^{\mathrm 1}} &= \sigma(x) \\
+            c^{\mathfrak M^{\mathrm 1}} &= c^{\mathfrak A^{\mathrm 1}} \\
+            (ft_1t_2\cdots t_{\Omega(f)})^{\mathfrak M^{\mathrm 1}} &= D(n)(t_1^{\mathfrak M^{\mathrm 1}}, t_2^{\mathfrak M^{\mathrm 1}}, \cdots, t_{\Omega(f)}^{\mathfrak M^{\mathrm 1}}, \sigma(f)) \\
+            (\varphi t_1t_2\cdots t_{\Omega(f)})^{\mathfrak M^{\mathrm 1}} &= \varphi^{\mathfrak A^{\mathrm 1}}(t_1^{\mathfrak M^{\mathrm 1}}, t_2^{\mathfrak M^{\mathrm 1}}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M^{\mathrm 1}})
+            \end{aligned}
+            $$
+
+        3. 模型 $\mathfrak M^{\mathrm 1}$ 与部分公式的满足关系定义为
+
+            $$
+            \begin{aligned}
+            \mathfrak M^{\mathrm 1} \vDash Xt_1t_2\cdots t_{\Omega(X)} & \textsf{ 当且仅当 } (t_1^{\mathfrak M^{\mathrm 1}}, t_2^{\mathfrak M^{\mathrm 1}}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M^{\mathrm 1}}, \sigma(X)) \in P(n) \\
+            \mathfrak M^{\mathrm 1} \vDash Rt_1t_2\cdots t_{\Omega(R)} & \textsf{ 当且仅当 } (t_1^{\mathfrak M^{\mathrm 1}}, t_2^{\mathfrak M^{\mathrm 1}}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M^{\mathrm 1}}) \in R^{\mathfrak A^{\mathrm 1}} \\
+            \mathfrak M^{\mathrm 1} \vDash \forall X^n\alpha & \textsf{ 当且仅当任意 } R \in D_1(n) \textsf{ 都有 } (\mathfrak A^{\mathrm 1}, \sigma[R/X^n]) \vDash \alpha \\
+            \mathfrak M^{\mathrm 1} \vDash \forall f^n\alpha & \textsf{ 当且仅当任意 } \varphi \in D_2(n) \textsf{ 都有 } (\mathfrak A^{\mathrm 1}, \sigma[\varphi/f^n]) \vDash \alpha \\
+            \end{aligned}
+            $$
+
+3. 标准语义与非标准语义
+    1. $\text{Henkin}$ 语义与标准语义的关系：设 $\mathfrak A$ 是一个标准结构，$\mathfrak A^{\mathrm H}$ 是相应的 $\text{Hekin}$ 结构，则对各指派 $\sigma$ 与公式 $\alpha$ 有 $(\mathfrak A, \sigma) \vDash \alpha$ 当且仅当 $(\mathfrak A^{\mathrm H}, \sigma) \vDash \alpha$
+    2. $\text{Henkin}$ 语义与一阶语义的关系：设 $\mathfrak A^{\mathrm 1}$ 是 $\mathscr L_2(S)$ 上的一个一阶结构，则存在一个 $\text{Henkin}$ 结构 $\mathfrak A^{\mathrm H}$ 且对 $\mathfrak A^{\mathrm 1}$ 上的每一个指派 $\sigma^{\mathrm 1}$ 都有 $\mathfrak A^{\mathrm H}$ 上的一个指派 $\sigma^{\mathrm H}$ 使得对 $\mathscr L_2(S)$ 中的任一个公式 $\alpha$ 有 $(\mathfrak A^{\mathrm 1}, \sigma^{\mathrm 1}) \vDash \alpha$ 当且仅当 $(\mathfrak A^{\mathrm H}, \sigma^{\mathrm H}) \vDash \alpha$
+        1. 对 $\mathscr L_2(S)$ 的任意公式 $\alpha$ 或公式集 $\Gamma$，$\alpha$ 或 $\Gamma$ 是 $\text{Henkin}$ 有效的当且仅当 $\alpha$ 或 $\Gamma$ 是一阶有效的
+        2. 对 $\mathscr L_2(S)$ 的任意公式 $\alpha$ 或公式集 $\Gamma$，$\alpha$ 或 $\Gamma$ 是 $\text{Henkin}$ 可满足的当且仅当 $\alpha$ 或 $\Gamma$ 是一阶可满足的
+    3. 若 $\text{Henkin}$ 结构（或一阶结构）满足选择公理与概括公理模式，则称其为忠实于 $\mathbf H_2$ 的，此时 $\text{Henkin}$ 结构（或一阶结构）具有可靠性、完全性、紧致性并满足 $\text{L}\ddot{\mathrm o}\text{wenheim} - \text{Skolem}$ 定理
 
 ## 3.2 模态命题逻辑
 

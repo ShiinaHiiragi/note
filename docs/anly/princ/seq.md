@@ -116,10 +116,8 @@
                 1. 若 $x_1 \neq x_2$，则 $a_n = \dfrac{ax_2 - b}{x_2 - x_1} x_1^{n-1} - \dfrac{ax_1 - b}{x_2 - x_1} x_2^{n-1}$
                 2. 若 $x_1 = x_2 = \dfrac p2$，则 $a_n = \left(\dfrac p2\right)^{n-2} \left[\left(pa - b\right) - n\left(\dfrac{pa}{2} - b\right)\right]$
 
-## 1.3 函数序列
-
-## 1.4 极限论
-### 1.4.1 数列极限
+## 1.3 极限论
+### 1.3.1 数列极限
 1. 数列极限：设 $\left\{x_{n}\right\}$ 是一个数列，$a$ 是实数．若对任意给定的 $\varepsilon>0$，总存在一个正整数 $N$，当 $n>N$ 时都有 $\left|x_{n}-a\right|<\varepsilon$，则称 $a$ 是数列 $\left\{x_{n}\right\}$ 的极限，或称数列 $\left\{x_{n}\right\}$ 收敛于 $a$ 记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 或 $x_{n} \rightarrow a \ (n \rightarrow \infty)$．此时也称数列 $\left\{x_{n}\right\}$ 极限存在
     1. 数列极限的性质
         1. 保序性：若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a, \lim _{n \rightarrow \infty} y_{n}=b}$ 且 $a>b$，则总存在正整数 $N$，当 $n>N$ 时，不等式 $x_{n}>y_{n}$ 成立
@@ -149,7 +147,7 @@
         4. 设 $\left\{x_{n}\right\}$ 是无穷大量，$\left\{y_{n}\right\}$ 收敛于 $a \neq 0$，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
 4. 上极限与下极限
 
-### 1.4.2 一元极限
+### 1.3.2 一元极限
 1. 函数极限的定义
     1. 函数在 $x_{0}$ 点的极限：设函数 $f(x)$ 在 $x_{0}$ 点的某个去心球形邻域有定义
         1. 函数值趋于有穷的极限：设 $A$ 是一个定数，若对于任意给定的 $\varepsilon>0$，一定存在 $\delta>0$ 使得当 $0<$ $\left|x-x_{0}\right|<\delta$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的极限，记作 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}\right)$．此时也称函数 $f(x)$ 在 $x_{0}$ 点极限存在，其极限值是 $A$
@@ -187,6 +185,6 @@
 
     则 ${\displaystyle \lim _{x \rightarrow a+0} \dfrac{f(x)}{g(x)}=\lim _{x \rightarrow a+0} \dfrac{f^{\prime}(x)}{g^{\prime}(x)}=A}$．以上定理也适用 $x \rightarrow a-0$，$x \rightarrow a$ 与 $x \rightarrow \infty$ 的情形
 
-### 1.4.2 多元极限
+### 1.3.2 多元极限
 
-## 1.5 级数
+## 1.4 级数
