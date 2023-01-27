@@ -145,7 +145,26 @@
         2. 设 $\left\{x_{n}\right\}$ 是无穷大量，而 $\left\{y_{n}\right\}$ 是有界数列，则其和 $\left\{x_{n}+y_{n}\right\}$ 是无穷大量
         3. 设 $\left\{x_{n}\right\}$ 是无穷大量，数列 $\left\{y_{n}\right\}$ 具有以下特性：存在某个 $N$，当 $n>N$ 时有 $\left|y_{n}\right| \geqslant \delta>0$，其中 $\delta$ 是一个确定的数，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
         4. 设 $\left\{x_{n}\right\}$ 是无穷大量，$\left\{y_{n}\right\}$ 收敛于 $a \neq 0$，则其乘积 $\left\{x_{n} y_{n}\right\}$ 是无穷大量
-4. 上极限与下极限
+4. 上极限与下极限：设 $\{x_n\}$ 是一个数列，定义
+
+    $$
+    \begin{aligned}
+    H & =\varlimsup_{n \rightarrow \infty} x_{n}=\lim _{k \rightarrow \infty} \sup _{n>k}\left\{x_{n}\right\} \\
+    h & =\underset{n \rightarrow \infty}{\underline{\lim}} x_{n}=\lim _{k \rightarrow \infty} \inf _{n>k}\left\{x_{n}\right\}
+    \end{aligned}
+    $$
+
+    称 $H$ 为 $\{x_n\}$ 的上极限，$h$ 为 $\{x_n\}$ 的下极限．若数列 $\left\{x_{n}\right\}$ 无上界，则称 ${\displaystyle H=\varlimsup_{n \rightarrow \infty} x_{n}=+\infty}$；若数列 $\left\{x_{n}\right\}$ 无下界，则称 ${\displaystyle h=\underset{n \rightarrow \infty}{\underline{\lim}} x_{n}=-\infty}$
+
+    1. 设 ${\displaystyle H=\varlimsup_{n \rightarrow \infty} x_{n}}$，则在 $\left\{x_{n}\right\}$ 中必存在一个子列，其极限为 $H$ 且 $H$ 是 $\left\{x_{n}\right\}$ 中所有收敛子列的极限中的最大值
+        1. 当 $H$ 有限时，对于 $H$ 的任何 $\varepsilon$ 邻域 $(H-\varepsilon, H+\varepsilon)$，在数列 $\left\{x_{n}\right\}$ 中有无穷多个项大于 $N$
+        2. 当 $H=+\infty$ 时，对任何数 $N>0$，在 $\left\{x_{n}\right\}$ 中必有无穷多个项大于 $N$
+        3. 当 $H=-\infty$ 时，数列 $\left\{x_{n}\right\}$ 以 $-\infty$ 为极限
+    2. 设 ${\displaystyle h=\underset{n \rightarrow \infty}{\underline{\lim}} x_{n}}$，则在 $\left\{x_{n}\right\}$ 中必存在一个子列，其极限为 $h$ 且 $h$ 是 $\left\{x_{n}\right\}$ 中所有收敛子列的极限中的最小值
+        1. 当 $h$ 有限时，对 $h$ 的任何 $\varepsilon$ 邻域 $(h-\varepsilon, h+\varepsilon)$，在数列 $\left\{x_{n}\right\}$ 中有无穷多个项属于这个邻域，而最多只有有限多个小于 $h-\varepsilon$
+        2. 当 $h=-\infty$ 时，对任何数 $N>0$，在数列 $\left\{x_{n}\right\}$ 中有无穷多个项小于 $-N$
+        3. 当 $h=+\infty$ 时，数列 $\left\{x_{n}\right\}$ 的极限为 $+\infty$
+    3. ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=A}$（有限或无穷大）的充要条件为 ${\displaystyle \varlimsup_{n \rightarrow \infty} x_{n}=\underset{n \rightarrow \infty}{\underline{\lim}} x_{n}=A}$
 
 ### 1.3.2 一元极限
 1. 函数极限的定义
@@ -188,3 +207,6 @@
 ### 1.3.2 多元极限
 
 ## 1.4 级数
+### 1.4.1 数项级数
+
+### 1.4.2 函数项级数
