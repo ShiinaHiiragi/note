@@ -104,7 +104,9 @@
 1. 设函数 $f(x)$ 在 $[a, \infty), (-\infty, a]$ 或 $(-\infty,+\infty)$ 有定义，称 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x, \int_{-\infty}^{a} f(x) \mathrm{d} x}$ 或 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$ 为无穷限反常积分
     1. 设函数 $f(x)$ 在 $[a,+\infty)$ 有定义，且对任意的 $A \ (A>a)$ 在区间 $[a, A]$ 上可积．当极限 ${\displaystyle \lim _{A \rightarrow+\infty} \int_{a}^{A} f(x) \mathrm{d} x}$ 存在时，称极限值为 $f(x)$ 在区间 $[a,+\infty)$ 上（或是从 $a$ 到 $+\infty$）的反常积分的积分值，记作 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x=\lim _{A \rightarrow+\infty} \int_{a}^{A} f(x) \mathrm{d} x}$．类似地可定义反常积分 ${\displaystyle \int_{-\infty}^{b} f(x) \mathrm{d} x}$ 的收敛和发散
     2. 对反常积分 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$，当 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 和 ${\displaystyle \int_{-\infty}^{a} f(x) \mathrm{d} x}$ 都收敛时（$a$ 是一个任意固定的数），则称 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$ 收敛，且有 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x=\int_{-\infty}^{a} f(x) \mathrm{d} x+\int_{a}^{+\infty} f(x) \mathrm{d} x}$
-2. 无穷限反常积分的性质
+
+    无穷限反常积分具有如下性质：
+
     1. 设 $f(x)$ 在 $[a,+\infty)$ 可积，$k$ 是常数，则 $k f(x)$ 也可积且 ${\displaystyle \int_{a}^{+\infty} k f(x) \mathrm{d} x=k \int_{a}^{+\infty} f(x) \mathrm{d} x}$
     2. 设 $f(x), g(x)$ 在 $[a,+\infty)$ 可积，则 $f(x) \pm g(x)$ 也可积且 ${\displaystyle \int_{a}^{+\infty}(f(x) \pm g(x)) \mathrm{d} x=\int_{a}^{+\infty} f(x) \mathrm{d} x \pm \int_{a}^{+\infty} g(x) \mathrm{d} x}$
     3. 设 $u(x), v(x), u^{\prime}(x), v^{\prime}(x)$ 在 $[a,+\infty)$ 连续，又如果下面的等式中有两项存在，则第三项也存在且有
@@ -113,16 +115,15 @@
         \int_{a}^{+\infty} u \mathrm{~d} v=u v\bigg|_{a} ^{+\infty}-\int_{a}^{+\infty} v \mathrm{~d} u
         $$
 
-    4. 对无穷限积分也有换元法则
-3. 绝对收敛与条件收敛：设对任何 $A>a$，$f(x)$ 在 $[a, A]$ 可积且 ${\displaystyle \int_{a}^{+\infty}|f(x)| \mathrm{d} x}$ 收敛，则称 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 绝对收敛．收敛但不绝对收敛的反常积分称为条件收敛
-    1. 绝对收敛的反常积分必收敛，反之不然
-    2. $\text{Cauchy}$ 收敛原理：${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 收敛的充要条件是对任意给定的 $\varepsilon>0$，存在 $A>0$，当 $A^{\prime}, A^{\prime \prime}>A$ 时总有
+    4. $\text{Cauchy}$ 收敛原理：${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 收敛的充要条件是对任意给定的 $\varepsilon>0$，存在 $A>0$，当 $A^{\prime}, A^{\prime \prime}>A$ 时总有
 
         $$
         \left|\int_{A^{\prime}}^{A^{\prime \prime}} f(x) \mathrm{d} x\right|<\varepsilon
         $$
 
-4. 收敛性判别：设对于任意 $A>a$，都有 ${\displaystyle \int_{a}^{A} f(x) \mathrm{d} x}$ 存在
+    5. 绝对收敛与条件收敛：设对任何 $A>a$，$f(x)$ 在 $[a, A]$ 可积且 ${\displaystyle \int_{a}^{+\infty}|f(x)| \mathrm{d} x}$ 收敛，则称 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 绝对收敛．收敛但不绝对收敛的反常积分称为条件收敛．易知绝对收敛的反常积分必收敛，反之不然
+
+2. 收敛性判别：设对于任意 $A>a$，都有 ${\displaystyle \int_{a}^{A} f(x) \mathrm{d} x}$ 存在
     1. 比较判别法
         1. 如果 ${\displaystyle \lim _{x \rightarrow+\infty} \dfrac{|f(x)|}{\varphi(x)}=l, 0 \leqslant l<+\infty}$ 且 ${\displaystyle \int_{a}^{+\infty} \varphi(x) \mathrm{d} x}$ 收敛，则积分 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 绝对收敛
         2. 如果 ${\displaystyle \lim _{x \rightarrow+\infty} \dfrac{|f(x)|}{\varphi(x)}=l, 0<l \leqslant+\infty}$ 且 ${\displaystyle \int_{a}^{+\infty} \varphi(x) \mathrm{d} x}$ 发散，则积分 ${\displaystyle \int_{a}^{+\infty}|f(x)| \mathrm{d} x}$ 发散
@@ -131,7 +132,31 @@
         2. 如果 ${\displaystyle \lim _{x \rightarrow+\infty} x^{p}|f(x)|=l}$，而 $0<l \leqslant+\infty, p \leqslant 1$，则 ${\displaystyle \int_{a}^{+\infty}|f(x)| \mathrm{d} x}$ 发散
     3. $\text{Abel}$ 判别法：如果 $f(x)$ 在 $[a,+\infty)$ 上可积，$g(x)$ 单调有界，则积分 ${\displaystyle \int_{a}^{+\infty} f(x) g(x) \mathrm{d} x}$ 收敛
     4. $\text{Dirichlet}$ 判别法：如果对任何 $A>a$，都有 ${\displaystyle \left|\int_{a}^{A} f(x) \mathrm{d} x\right| \leqslant K}$，$g(x)$ 单调且当 $x\rightarrow+\infty$ 时趋向于零，则积分 ${\displaystyle \int_{a}^{+\infty} f(x) g(x) \mathrm{d} x}$ 收敛
+3. 主值：设 $f(x)$ 在 $(-\infty, +\infty)$ 内无界，如果 ${\displaystyle \lim _{A \rightarrow+\infty} \int_{-A}^{A} f(x) \mathrm{d} x}$ 存在，则称此极限是反常积分 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$ 的 $\text{Cauchy}$ 主值，记为 ${\displaystyle \text {P.V. } \int_{-\infty}^{+\infty} f(x) \mathrm{d} x=\lim _{A \rightarrow+\infty} \int_{-A}^{A} f(x) \mathrm{d} x}$
 
 ### 3.4.2 无界函数反常积分
+1. 设函数 $f(x)$ 在 $x=b$ 点的任一左邻域无界（称 $b$ 点为 $f(x)$ 的奇点），但对于任意充分小的正数 $\eta$，$f(x)$ 在 $[a, b-\eta]$ 上可积，则称积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 是无界函数 $f(x)$ 在 $[a, b]$ 上的反常积分
+    1. 令 ${\displaystyle \phi(\eta)=\int_{a}^{b-\eta} f(x) \mathrm{d} x}$，如果 ${\displaystyle \lim _{\eta \rightarrow 0} \phi(\eta)}$ 存在，则称此极限是反常积分的积分值，即 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=\lim _{\eta \rightarrow 0} \int_{a}^{b-\eta} f(x) \mathrm{d} x}$，并称无界函数 $f(x)$ 在 $[a, b]$ 上可积，又称反常积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 收敛．如果上述的极限不存在，则称积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 发散．如果 $x=a$ 是 $f(x)$ 的奇点，可以相仿地给出定义
+    2. 如果 $f(x)$ 在 $[a, b]$ 内部有一个奇点 $c \in (a, b)$，分别考察 ${\displaystyle \int_{a}^{c} f(x) \mathrm{d} x}$ 和 ${\displaystyle \int_{c}^{b} f(x) \mathrm{d} x}$，若后两者都收敛，则称 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 收敛, 且 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=\int_{a}^{c} f(x) \mathrm{d} x+\int_{c}^{b} f(x) \mathrm{d} x}$，即 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=\lim _{\eta \rightarrow+0} \int_{a}^{c-\eta} f(x) \mathrm{d} x+\lim _{\eta^{\prime} \rightarrow+0} \int_{c+\eta^{\prime}}^{b} f(x) \mathrm{d} x}$
+
+    无界函数反常积分具有如下性质：
+
+    1. $\text{Cauchy}$ 收敛原理：若 $f(x)$ 在 $x=a$ 有奇点，${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 收敛的充要条件是对任意给定的 $\varepsilon>0$，存在 $\delta>0$，当 $0<\eta, \eta^{\prime}<\delta$ 时总有 ${\displaystyle \left|\int_{a+\eta}^{a+\eta^{\prime}} f(x) \mathrm{d} x\right|<\varepsilon}$
+    2. 绝对收敛与条件收敛：设对任何 $\eta>0$，$f(x)$ 在 $[a, b-\eta]$ 上可积且 ${\displaystyle \int_{a}^{b}|f(x)| \mathrm{d} x}$ 收敛，则称 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 绝对收敛．收敛但不绝对收敛的反常积分称为条件收敛．易知绝对收敛的反常积分必收敛，反之不然
+    3. 设 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 中的 $f(x)$ 有奇点 $a$，作变换 $y=\dfrac{1}{x-a}$，则有
+
+        $$
+        {\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=\int_{\frac{1}{b-a}}^{+\infty} \dfrac{f\left(a+\dfrac{1}{y}\right)}{y^{2}} \mathrm{~d} y}
+        $$
+
+        是无穷限反常积分
+
+2. 收敛性判别
+    1. $\text{Cauchy}$ 判别法：设 ${\displaystyle \lim _{x \rightarrow a}(x-a)^{p}|f(x)|=k}$
+        1. 如果 $0 \leqslant k<\infty, p<1$，则 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 绝对收敛
+        2. 如果 $0<k \leqslant \infty, p \geqslant 1$，则 ${\displaystyle \int_{a}^{b}|f(x)| \mathrm{d} x}$ 发散
+    2. $\text{Abel}$ 判别法：设 $f(x)$ 在 $x=a$ 有奇点，${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 收敛，$g(x)$ 单调有界，则积分 ${\displaystyle \int_{a}^{b} f(x) g(x) \mathrm{d} x}$ 收敛
+    3. $\text{Dirichlet}$ 判别法：设 $f(x)$ 在 $x=a$ 有奇点，${\displaystyle \int_{a+\eta}^{b} f(x) \mathrm{d} x}$ 是 $\eta$ 的有界函数，$g(x)$ 单调且当 $x \rightarrow a$ 时趋于零，则积分 ${\displaystyle \int_{a}^{b} f(x) g(x) \mathrm{d} x}$ 收敛
+3. 主值：设 $f(x)$ 在 $[a, b]$ 内无界，$c$ 是唯一奇点且 $a<c<b$．如果 ${\displaystyle \lim _{\eta \rightarrow 0}\left[\int_{a}^{c-\eta} f(x) \mathrm{d} x+\int_{c+\eta}^{b} f(x) \mathrm{d} x\right]}$ 存在，则称此极限是反常积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 的 $\text{Cauchy}$ 主值，记为 ${\displaystyle \text {P.V. } \int_{a}^{b} f(x) \mathrm{d} x=\lim _{\eta \rightarrow 0}\left[\int_{a}^{c-\eta} f(x) \mathrm{d} x+\int_{c+\eta}^{b} f(x) \mathrm{d} x\right]}$
 
 ## 3.5 含参变量积分
