@@ -138,7 +138,7 @@
     3. 当 $\dfrac{y}{z} \rightarrow 1$ 时，称 $y, z$ 是等价无穷小量，记为 $y \sim z$
     4. 若以 $x$ 作为基本无穷小量，则当 $y$ 与 $x^{k}$（$k$ 为某一正数）为同阶无穷小量 时，称 $y$ 为 $k$ 阶无穷小量．特别地，当 $\dfrac{y}{x^{k}} \rightarrow a \neq 0$ 时，$y$ 为 $k$ 阶无穷小量，此时 $y$ 与 $a x^{k}$ 等价，称 $a x^{k}$ 为无穷小量 $y$ 的主要部分
 3. 无穷大量：设 $\left\{x_{n}\right\}$ 是一个数列，如果对任意给定的 $G>0$，总存在正整数 $N$，当 $n>N$ 时有 $\left|x_{n}\right|>G$，则称 $\left\{x_{n}\right\}$ 是一个无穷大量，记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=\infty}$ 或 $x_{n} \rightarrow \infty \ (n \rightarrow \infty)$．无穷大量也有类似无穷小量的阶
-    1. 无穷大量和无穷小量的关系：若 $\left\{x_{n}\right\}$ 为无穷大量，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷小量；若 $\left\{x_{n}\right\}$ 为无穷小量且 $x_{n} \neq 0 \ (n=1,2,3, \cdots)$，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷大量
+    1. 无穷大量和无穷小量的关系：若 $\left\{x_{n}\right\}$ 为无穷大量，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷小量；若 $\left\{x_{n}\right\}$ 为无穷小量且 $x_{n} \neq 0 \ (n=1,2, \cdots)$，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷大量
     2. 正无穷大与负无穷大：对任意给定的 $G>0$，总存在 $N$，当 $n>N$ 时，若有 $x_{n}>$ $G$，则称 $\left\{x_{n}\right\}$ 是正无穷大量；若有 $-x_{n}>$ $G$，则称 $\left\{x_{n}\right\}$ 是负无穷大量
     3. 无穷大量的运算
         1. 设 $\left\{x_{n}\right\}$ 与 $\left\{y_{n}\right\}$ 都是正（负）无穷大量，则其和 $\left\{x_{n}+y_{n}\right\}$ 也是正（负）无穷大量
@@ -228,7 +228,7 @@
     4. $\text{Cauchy}$ 积分判别法：对于正项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$，设 $\left\{u_{n}\right\}$ 为单调递减数列，作一个连续的单调递减的正值函数 $f(x) \ (x>0)$ 使得当 $x$ 等于正整数 $n$ 时，其函数值恰为 $u_{n}$．则级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 与数列 $\left\{A_{n}\right\}$，此时 ${\displaystyle A_{n}=\int_{1}^{n} f(x) \mathrm{d} x}$ 同为收敛或同为发散
 3. 特殊级数的判别
     1. $\text{Leibniz}$ 定理：形如 $u_{1}-u_{2}+u_{3}-u_{4}+\cdots+(-1)^{n+1} u_{n}+\cdots \ (u_{n}>0,n=1,2,\cdots)$ 的级数若有
-        1. 单调递减 $u_{n} \geqslant u_{n+1} \ (n=1,2,3, \cdots)$
+        1. 单调递减 $u_{n} \geqslant u_{n+1} \ (n=1,2, \cdots)$
         2. ${\displaystyle \lim _{n \rightarrow \infty} u_{n}=0}$
 
         则称其为 $\text{Leibniz}$ 型级数，此时有
@@ -238,7 +238,7 @@
 
     2. $\text{Abel}$ 判别法：若
         1. 级数 ${\displaystyle \sum_{n=1}^{\infty} b_{n}}$ 收敛
-        2. 数列 $\left\{a_{n}\right\}$ 单调有界，$\left|a_{n}\right| \leqslant K \ (n=1,2,3, \cdots)$
+        2. 数列 $\left\{a_{n}\right\}$ 单调有界，$\left|a_{n}\right| \leqslant K \ (n=1,2, \cdots)$
 
         则级数 ${\displaystyle \sum_{n=1}^{\infty} a_{n} b_{n}}$ 收敛
 
@@ -271,6 +271,10 @@
         2. 若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 条件收敛，则级数 ${\displaystyle \sum_{n=1}^{\infty} v_{n}}$ 和 ${\displaystyle \sum_{n=1}^{\infty} w_{n}}$ 都发散
 
     3. 绝对收敛级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 的更序级数（即将其项重新排列后所得到的级数）${\displaystyle \sum_{n=1}^{\infty} u_{n}^{\prime}}$ 仍绝对收敛且其和相同，${\displaystyle \sum_{n=1}^{\infty} u_{n}=\sum_{n=1}^{\infty} u_{n}^{\prime}}$
-    4. $\text{Cauchy}$ 定理：若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 和 ${\displaystyle \sum_{n=1}^{\infty} v_{n}}$ 均绝对收敛，其和分别为 $U$ 和 $V$．则其各项之积 $u_{i} v_{k} \ (i, k=1,2,3, \cdots)$ 按照任何方法排列所构成的级数也绝对收敛且其和为 $U V$
+    4. $\text{Cauchy}$ 定理：若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 和 ${\displaystyle \sum_{n=1}^{\infty} v_{n}}$ 均绝对收敛，其和分别为 $U$ 和 $V$．则其各项之积 $u_{i} v_{k} \ (i, k=1,2, \cdots)$ 按照任何方法排列所构成的级数也绝对收敛且其和为 $U V$
 
 ### 1.4.2 函数项级数
+1. 函数项级数：设 $u_{n}(x) \ (n=1,2, \cdots)$ 是定义在实数集 $X$ 上的函数，称 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)=u_{1}(x)+u_{2}(x)+\cdots+u_{n}(x)+\cdots}$ 是函数项级数，并称 ${\displaystyle S_{n}(x)=\sum_{k=1}^{n} u_{k}(x)}$ 是这一级数的 $n$ 次部分和
+    1. 如果对 $X$ 中的一点 $x_{0}$，数项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}\left(x_{0}\right)=u_{1}\left(x_{0}\right)+u_{2}\left(x_{0}\right)+\cdots+u_{n}\left(x_{0}\right)+\cdots}$ 收敛，则称函数项级数在 $x_{0}$ 点收敛，否则称其在 $x_{0}$ 点发散
+    2. 如果对 $X$ 中任何一点 $x$，级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 收敛，则称函数项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 在 $X$ 上收敛（即在每一点都收敛）．此时对每一点 $x \in X$，级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 有和，记为 $S(x)$，从而 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)=S(x)}$
+2. 一致收敛
