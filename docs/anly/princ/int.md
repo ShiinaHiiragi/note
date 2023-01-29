@@ -84,6 +84,8 @@
         \int_a^b f(x) g(x) d x=g(a) \int_a^{\xi} f(x) d x+g(b) \int_{\xi}^b f(x) d x
         $$
 
+        特别地，如果 $g(x)$ 单调递增且 $g(a) \geqslant 0$，则存在 $\xi$ 使得 ${\displaystyle \int_{a}^{b} f(x) g(x) \mathrm{d} x=g(b) \int_{\xi}^{b} f(x) \mathrm{d} x}$；如果 $g(x)$ 单调递减且 $g(b) \geqslant 0$，则存在 $\xi$ 使得 ${\displaystyle \int_{a}^{b} f(x) g(x) \mathrm{d} x=g(a) \int_{a}^{\xi} f(x) \mathrm{d} x}$
+
 6. 微积分基本定理：设 $f(x)$ 在 $[a, b]$ 上连续，$F^{\prime}(x)=$ $f(x)$，则 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=F(b)-F(a)=F(x)\bigg|_{a} ^{b}}$．该公式也被称为 $\text{Newton}-\text{Leibniz}$ 公式
     1. 变限积分：若 $f(x)$ 在 $[a, b]$ 上连续，则函数 ${\displaystyle G(x)=\int_{a}^{t} f(t) \mathrm{d} t}$ 在 $[a, b]$ 上可导且 $G^{\prime}(x)=f(x)$
     2. 定积分的还原：设 $f(x)$ 在 $[a, b]$ 上连续，作代换 $x=\varphi(t)$，其中 $\varphi(t)$ 在闭区间 $[\alpha, \beta]$ 上有连续导数 $\varphi^{\prime}(t)$．当 $\alpha \leqslant t \leqslant \beta$ 时，$a \leqslant \varphi(t) \leqslant b$ 且 $\varphi(\alpha)=a, \varphi(\beta)=b$，则 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=\int_{\alpha}^{\beta} f[\varphi(t)] \varphi^{\prime}(t) \mathrm{d} t}$
@@ -98,5 +100,38 @@
 ## 3.3 重积分
 
 ## 3.4 反常积分
+### 3.4.1 无穷限反常积分
+1. 设函数 $f(x)$ 在 $[a, \infty), (-\infty, a]$ 或 $(-\infty,+\infty)$ 有定义，称 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x, \int_{-\infty}^{a} f(x) \mathrm{d} x}$ 或 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$ 为无穷限反常积分
+    1. 设函数 $f(x)$ 在 $[a,+\infty)$ 有定义，且对任意的 $A \ (A>a)$ 在区间 $[a, A]$ 上可积．当极限 ${\displaystyle \lim _{A \rightarrow+\infty} \int_{a}^{A} f(x) \mathrm{d} x}$ 存在时，称极限值为 $f(x)$ 在区间 $[a,+\infty)$ 上（或是从 $a$ 到 $+\infty$）的反常积分的积分值，记作 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x=\lim _{A \rightarrow+\infty} \int_{a}^{A} f(x) \mathrm{d} x}$．类似地可定义反常积分 ${\displaystyle \int_{-\infty}^{b} f(x) \mathrm{d} x}$ 的收敛和发散
+    2. 对反常积分 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$，当 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 和 ${\displaystyle \int_{-\infty}^{a} f(x) \mathrm{d} x}$ 都收敛时（$a$ 是一个任意固定的数），则称 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$ 收敛，且有 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x=\int_{-\infty}^{a} f(x) \mathrm{d} x+\int_{a}^{+\infty} f(x) \mathrm{d} x}$
+2. 无穷限反常积分的性质
+    1. 设 $f(x)$ 在 $[a,+\infty)$ 可积，$k$ 是常数，则 $k f(x)$ 也可积且 ${\displaystyle \int_{a}^{+\infty} k f(x) \mathrm{d} x=k \int_{a}^{+\infty} f(x) \mathrm{d} x}$
+    2. 设 $f(x), g(x)$ 在 $[a,+\infty)$ 可积，则 $f(x) \pm g(x)$ 也可积且 ${\displaystyle \int_{a}^{+\infty}(f(x) \pm g(x)) \mathrm{d} x=\int_{a}^{+\infty} f(x) \mathrm{d} x \pm \int_{a}^{+\infty} g(x) \mathrm{d} x}$
+    3. 设 $u(x), v(x), u^{\prime}(x), v^{\prime}(x)$ 在 $[a,+\infty)$ 连续，又如果下面的等式中有两项存在，则第三项也存在且有
+
+        $$
+        \int_{a}^{+\infty} u \mathrm{~d} v=u v\bigg|_{a} ^{+\infty}-\int_{a}^{+\infty} v \mathrm{~d} u
+        $$
+
+    4. 对无穷限积分也有换元法则
+3. 绝对收敛与条件收敛：设对任何 $A>a$，$f(x)$ 在 $[a, A]$ 可积且 ${\displaystyle \int_{a}^{+\infty}|f(x)| \mathrm{d} x}$ 收敛，则称 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 绝对收敛．收敛但不绝对收敛的反常积分称为条件收敛
+    1. 绝对收敛的反常积分必收敛，反之不然
+    2. $\text{Cauchy}$ 收敛原理：${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 收敛的充要条件是对任意给定的 $\varepsilon>0$，存在 $A>0$，当 $A^{\prime}, A^{\prime \prime}>A$ 时总有
+
+        $$
+        \left|\int_{A^{\prime}}^{A^{\prime \prime}} f(x) \mathrm{d} x\right|<\varepsilon
+        $$
+
+4. 收敛性判别：设对于任意 $A>a$，都有 ${\displaystyle \int_{a}^{A} f(x) \mathrm{d} x}$ 存在
+    1. 比较判别法
+        1. 如果 ${\displaystyle \lim _{x \rightarrow+\infty} \dfrac{|f(x)|}{\varphi(x)}=l, 0 \leqslant l<+\infty}$ 且 ${\displaystyle \int_{a}^{+\infty} \varphi(x) \mathrm{d} x}$ 收敛，则积分 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 绝对收敛
+        2. 如果 ${\displaystyle \lim _{x \rightarrow+\infty} \dfrac{|f(x)|}{\varphi(x)}=l, 0<l \leqslant+\infty}$ 且 ${\displaystyle \int_{a}^{+\infty} \varphi(x) \mathrm{d} x}$ 发散，则积分 ${\displaystyle \int_{a}^{+\infty}|f(x)| \mathrm{d} x}$ 发散
+    2. $\text{Cauchy}$ 判别法
+        1. 如果 ${\displaystyle \lim _{x \rightarrow+\infty} \dfrac{|f(x)|}{\dfrac{1}{x^{p}}}=\lim _{x \rightarrow+\infty} x^{p}|f(x)|=l \ (0 \leqslant l<+\infty, p>1)}$，则积分 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 绝对收敛
+        2. 如果 ${\displaystyle \lim _{x \rightarrow+\infty} x^{p}|f(x)|=l}$，而 $0<l \leqslant+\infty, p \leqslant 1$，则 ${\displaystyle \int_{a}^{+\infty}|f(x)| \mathrm{d} x}$ 发散
+    3. $\text{Abel}$ 判别法：如果 $f(x)$ 在 $[a,+\infty)$ 上可积，$g(x)$ 单调有界，则积分 ${\displaystyle \int_{a}^{+\infty} f(x) g(x) \mathrm{d} x}$ 收敛
+    4. $\text{Dirichlet}$ 判别法：如果对任何 $A>a$，都有 ${\displaystyle \left|\int_{a}^{A} f(x) \mathrm{d} x\right| \leqslant K}$，$g(x)$ 单调且当 $x\rightarrow+\infty$ 时趋向于零，则积分 ${\displaystyle \int_{a}^{+\infty} f(x) g(x) \mathrm{d} x}$ 收敛
+
+### 3.4.2 无界函数反常积分
 
 ## 3.5 含参变量积分
