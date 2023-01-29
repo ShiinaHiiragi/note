@@ -277,4 +277,45 @@
 1. 函数项级数：设 $u_{n}(x) \ (n=1,2, \cdots)$ 是定义在实数集 $X$ 上的函数，称 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)=u_{1}(x)+u_{2}(x)+\cdots+u_{n}(x)+\cdots}$ 是函数项级数，并称 ${\displaystyle S_{n}(x)=\sum_{k=1}^{n} u_{k}(x)}$ 是这一级数的 $n$ 次部分和
     1. 如果对 $X$ 中的一点 $x_{0}$，数项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}\left(x_{0}\right)=u_{1}\left(x_{0}\right)+u_{2}\left(x_{0}\right)+\cdots+u_{n}\left(x_{0}\right)+\cdots}$ 收敛，则称函数项级数在 $x_{0}$ 点收敛，否则称其在 $x_{0}$ 点发散
     2. 如果对 $X$ 中任何一点 $x$，级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 收敛，则称函数项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 在 $X$ 上收敛（即在每一点都收敛）．此时对每一点 $x \in X$，级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 有和，记为 $S(x)$，从而 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)=S(x)}$
-2. 一致收敛
+2. 一致收敛：设有函数列 $\left\{S_{n}(x)\right\}$（或函数项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 的部分和序列），若对任给的 $\varepsilon>0$，存在只依赖于 $\varepsilon$ 的正整数 $N(\varepsilon)$ 使 $n>N(\varepsilon)$ 时，不等式 $\left|S_{n}(x)-S(x)\right|<\varepsilon$（对函数项级数, 此式也可写为 ${\displaystyle \left|r_{n}(x)\right|=\left|\sum_{k=n+1}^{\infty} u_{k}(x)\right|<\varepsilon}$）对 $X$ 上一切 $x$ 都成立, 则称 $\left\{S_{n}(x)\right\}$ 在 $X$ 上一致收敛于 $S(x)$．当 $S_{n}(x)$ 在 $(a, b)$ 内任一闭区间上一致收敛时，称 $S_{n}(x)$ 在区间 $(a, b)$ 内闭一致收敛
+    1. 一致收敛的充要条件
+        1. 设 $\left\|S_{n}-S\right\|={\displaystyle \sup _{x \in X}\left|S_{n}(x)-S(x)\right|}$，则 $S_{n}(x)$ 在 $X$ 上一致收敛于 $S(x)$ 当且仅当 ${\displaystyle \lim _{n \rightarrow \infty}\left\|S_{n}-S\right\|=0}$
+        2. $\text{Cauchy}$ 充要条件：函数列 $\left\{S_{n}(x)\right\}$ 在 $X$ 上一致收敛的充要条件为对任给的 $\varepsilon>0$，可得正整数 $N=N(\varepsilon)$ 使 $n>N$ 时，不等式 $\left|S_{n+p}(x)-S_{n}(x)\right|<\varepsilon$ 对任意的正整数 $p$ 和 $X$ 上任意的 $x$ 都成立
+    2. 一致收敛的性质
+        1. 若在 $[a, b]$ 上，函数列 $\left\{S_{n}(x)\right\}$ 的每一项 $S_{n}(x)$ 都连续且 $S_{n}(x)$ 一致收敛于 $S(x)$，则对 $[a, b]$ 上任一点 $x_{0}$ 有
+
+            $$
+            \lim _{x \rightarrow x_{0}} \lim _{n \rightarrow \infty} S_{n}(x)=S\left(x_{0}\right)=\lim _{n \rightarrow \infty} \lim _{x \rightarrow x_{0}} S_{n}(x)
+            $$
+
+        2. 设 $\left\{S_{n}(x)\right\}$ 在 $[a, b]$ 上一致收敛于 $S(x)$，每一 $S_{n}(x)$ 都在 $[a, b]$ 上连续，则
+
+            $$
+            \lim _{n \rightarrow \infty} \int_{a}^{b} S_{n}(x) \mathrm{d} x=\int_{a}^{b} S(x) \mathrm{d} x=\int_{a}^{b} \lim _{n \rightarrow \infty} S_{n}(x) \mathrm{d} x
+            $$
+
+        3. 若在 $[a, b]$ 上函数列 $\left\{S_{n}(x)\right\}$ 的每一项都有连续导数，$\left\{S_{n}(x)\right\}$ 收敛于 $S(x)$ 且 $\left\{S_{n}^{\prime}(x)\right\}$ 一致收敛于 $\sigma(x)$，则
+
+            $$
+            \dfrac{\mathrm{d}}{\mathrm{d} x} \lim _{n \rightarrow \infty} S_{n}(x)=\lim _{n \rightarrow \infty} \dfrac{\mathrm{d}}{\mathrm{d} x} S_{n}(x)
+            $$
+
+        把上述各性质的 $S_{n}(x)$ 都作为函数项级数的 $n$ 项部分和看待，则得到函数项级数相类似的定理
+
+        1. 和的连续性：若 $[a, b]$ 上级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 每项 $u_{n}(x)$ 都连续且 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 一致收敛于 $S(x)$，则 $S(x)$ 也在 $[a, b]$ 上连续
+        2. 逐项求积：设 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 在 $[a, b]$ 上一致收敛于 $S(x)$ 且每一 $u_{n}(x)$ 都在 $[a, b]$ 上连续，则
+
+            $$
+            \sum_{n=1}^{\infty} \int_{a}^{b} u_{n}(x) \mathrm{d} x=\int_{a}^{b} S(x) \mathrm{d} x=\int_{a}^{b} \sum_{n=1}^{\infty} u_{n}(x) \mathrm{d} x
+            $$
+
+        3. 逐项求导：若在 $[a, b]$ 上，${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 的每一项都具有连续导数 $u_{n}^{\prime}(x)$ 且 ${\displaystyle \sum_{n=1}^{\infty} u_{n}^{\prime}(x)}$ 一致收敛于 $\sigma(x)$，又 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 收敛于 $S(x)$，则 $S^{\prime}(x)=\sigma(x)$，即
+
+            $$
+            \dfrac{\mathrm{d}}{\mathrm{d} x} \sum_{n=1}^{\infty} u_{n}(x)=\sum_{n=1}^{\infty} \dfrac{\mathrm{d}}{\mathrm{d} x} u_{n}(x)
+            $$
+
+3. 一致收敛级数的判别法
+    1. $\text{Weierstrass}$ 判别法：若对充分大的 $n$，存在实数 $a_{n}$ 使得 $\left|u_{n}(x)\right| \leqslant a_{n}$ 对 $X$ 上任意的 $x$ 都成立，且数项级数 ${\displaystyle \sum_{n=1}^{\infty} a_{n}}$ 收敛，则 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 在 $X$ 上一致收敛
+    2. $\text{Abel}$ 判别法：若在 $X$ 上 ${\displaystyle \sum_{n=1}^{\infty} b_{n}(x)}$ 一致收敛，又对 $X$ 中每一固定的 $x$，数列 $a_{n}(x)$ 单调．对任意的 $n$ 和 $X$ 中每个 $x$，有 $\left|a_{n}(x)\right| \leqslant L$（不依赖于 $x$ 和 $n$ 的定数），则 ${\displaystyle \sum_{n=1}^{\infty} a_{n}(x) b_{n}(x)}$ 在 $X$ 上一致收敛
+    3. $\text{Dirichlet}$ 判别法：设 ${\displaystyle \sum_{n=1}^{\infty} b_{n}(x)}$ 的部分和 ${\displaystyle B_{n}(x)=\sum_{i=1}^{n} b_{i}(x)}$ 在 $X$ 上一致有界，又对 $X$ 内每一 $x$，数列 $a_{n}(x)$ 单调且函数列 $\left\{a_{n}(x)\right\}$ 在 $X$ 上一致收敛于零，则 ${\displaystyle \sum_{n=1}^{\infty} a_{n}(x) b_{n}(x)}$ 在 $X$ 上一致收敛
