@@ -128,7 +128,7 @@
         3. 有界性：收敛数列有界
         4. 夹逼准则：若存在正整数 $N$，当 $n>N$ 时有 $x_{n} \leqslant y_{n} \leqslant z_{n}$ 且 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=\lim _{n \rightarrow \infty} z_{n}=a}$，则有 ${\displaystyle \lim _{n \rightarrow \infty} y_{n}=a}$
     2. 数列极限的运算
-        1. 若数列 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛，则它们的和与差 $\left\{x_{n} \pm y_{n}\right\}$ 也收玫，且有 ${\displaystyle \lim _{n \rightarrow \infty}\left(x_{n} \pm y_{n}\right)=\lim _{n \rightarrow \infty} x_{n} \pm \lim _{n \rightarrow \infty} y_{n}}$
+        1. 若数列 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛，则它们的和与差 $\left\{x_{n} \pm y_{n}\right\}$ 也收敛，且有 ${\displaystyle \lim _{n \rightarrow \infty}\left(x_{n} \pm y_{n}\right)=\lim _{n \rightarrow \infty} x_{n} \pm \lim _{n \rightarrow \infty} y_{n}}$
         2. 若 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛，则 $\left\{x_{n} y_{n}\right\}$ 也收敛，且 ${\displaystyle \lim _{n \rightarrow \infty} x_{n} y_{n}=\lim _{n \rightarrow \infty} x_{n} \cdot \lim _{n \rightarrow \infty} y_{n}}$
         3. 若 $\left\{x_{n}\right\}$ 为有界数列，$\left\{y_{n}\right\}$ 为无穷小量，则它们的积 $\left\{x_{n} y_{n}\right\}$ 是无穷小量
         4. 若 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛且 ${\displaystyle \lim _{n \rightarrow \infty} y_{n} \neq 0}$，则 $\left\{\dfrac{x_{n}}{y_{n}}\right\}$ 也收敛，且 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{x_{n}}{y_{n}}=\dfrac{{\displaystyle \lim _{n \rightarrow \infty} x_{n}}}{{\displaystyle \lim _{n \rightarrow \infty} y_{n}}}}$
@@ -208,5 +208,69 @@
 
 ## 1.4 级数
 ### 1.4.1 数项级数
+1. 无穷级数：设数列 $\{u_n\}$ 的部分和数列 ${\displaystyle S_n = \sum_{i=1}^{n} u_{i}}$ 收敛于有限值 $S$，即 ${\displaystyle \lim _{n \rightarrow \infty} S_{n}=\lim _{n \rightarrow \infty} \sum_{k=1}^{n} u_{k}=S}$，则称级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 收敛，记作 ${\displaystyle \sum_{n=1}^{\infty} u_{n}=S}$ 并称 $S$ 为级数的和数．若 $S_{n}$ 发散，则称级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 发散．当级数收敛时，又称 $r_{n}=S-S_{n}$ 为级数的余和
+    1. 无穷级数的性质
+        1. 若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 收敛，$a$ 为任一常数，则 ${\displaystyle \sum_{n=1}^{\infty} a u_{n}}$ 亦收敛，且有 ${\displaystyle \sum_{n=1}^{\infty} a u_{n}=a \sum_{n=1}^{\infty} u_{n}}$
+        2. 若两个级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 和 ${\displaystyle \sum_{n=1}^{\infty} v_{n}}$ 都收敛，则 ${\displaystyle \sum_{n=1}^{\infty}\left(u_{n} \pm v_{n}\right)}$ 也收敛，且有 ${\displaystyle \sum_{n=1}^{\infty}\left(u_{n} \pm v_{n}\right)=\sum_{n=1}^{\infty} u_{n} \pm \sum_{n=1}^{\infty} v_{n}}$
+        3. 一个收敛级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$，对其项任意加括号后所成级数 $\left(u_{1}+u_{2}+\cdots+u_{i_{1}}\right)+\left(u_{i_{1}+1}+\cdots+u_{i_{2}}\right)+\cdots$ 仍收敛，且和不变
+        4. 收敛的必要条件：若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 收敛，则 $u_{n} \rightarrow 0 \ (n \rightarrow \infty)$
+    2. $\text{Cauchy}$ 收敛原理：级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 收敛的充要条件是对任意给定的正数 $\varepsilon$，总存在 $N$ 使得当 $n>N$ 时，对于任意的正整数 $p$，都有 $\left|u_{n+1}+u_{n+2}+\cdots+u_{n+p}\right|<\varepsilon$
+2. 正项级数：每一项都是非负的级数称为正项级数
+    1. 比较判别法：给定两正项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}, {\displaystyle \sum_{n=1}^{\infty} v_{n}}$，若有 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{u_{n}}{v_{n}}=l \ (0<l<+\infty)}$，那么这两个级数同时收敛或发散
+    2. $\text{Cauchy}$ 判别法：对于正项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$，设 ${\displaystyle r=\varlimsup_{n \rightarrow \infty} \sqrt[n]{u_{n}}}$
+        1. 当 $r<1$ 时此级数必为收敛
+        2. 当 $r>1$ 时此级数发散
+        3. 当 $r=1$ 时此级数的收敛性需进一步判定
+    3. $\text{d'Alembert}$ 判别法：对于正项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$
+        1. 当 ${\displaystyle \varlimsup_{n \rightarrow \infty} \dfrac{u_{n}}{u_{n-1}}=\overline{r}<1}$ 时，级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 收敛
+        2. 当 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{u_{n}}{u_{n-1}}=r>1}$ 时，级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 发散
+        3. 而当 $\overline{r}=1$ 或者 $r=1$ 时，级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 的敛散性需进一步判定
+    4. $\text{Cauchy}$ 积分判别法：对于正项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$，设 $\left\{u_{n}\right\}$ 为单调递减数列，作一个连续的单调递减的正值函数 $f(x) \ (x>0)$ 使得当 $x$ 等于正整数 $n$ 时，其函数值恰为 $u_{n}$．则级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 与数列 $\left\{A_{n}\right\}$，此时 ${\displaystyle A_{n}=\int_{1}^{n} f(x) \mathrm{d} x}$ 同为收敛或同为发散
+3. 特殊级数的判别
+    1. $\text{Leibniz}$ 定理：形如 $u_{1}-u_{2}+u_{3}-u_{4}+\cdots+(-1)^{n+1} u_{n}+\cdots \ (u_{n}>0,n=1,2,\cdots)$ 的级数若有
+        1. 单调递减 $u_{n} \geqslant u_{n+1} \ (n=1,2,3, \cdots)$
+        2. ${\displaystyle \lim _{n \rightarrow \infty} u_{n}=0}$
+
+        则称其为 $\text{Leibniz}$ 型级数，此时有
+
+        1. 级数 ${\displaystyle \sum_{n=1}^{\infty}(-1)^{n+1} u_{n}}$ 收敛
+        2. 其余和 $r_{n}$ 的符号与余和第一项的符号相同，且 $\left|r_{n}\right| \leqslant \left|u_{n+1}\right|$
+
+    2. $\text{Abel}$ 判别法：若
+        1. 级数 ${\displaystyle \sum_{n=1}^{\infty} b_{n}}$ 收敛
+        2. 数列 $\left\{a_{n}\right\}$ 单调有界，$\left|a_{n}\right| \leqslant K \ (n=1,2,3, \cdots)$
+
+        则级数 ${\displaystyle \sum_{n=1}^{\infty} a_{n} b_{n}}$ 收敛
+
+    3. $\text{Dirichlet}$ 判别法：若
+        1. 级数 ${\displaystyle \sum_{n=1}^{\infty} b_{n}}$ 的部分和 $B_{n}$ 有界且 $\left|B_{n}\right| \leqslant M \ (n=1,2, \cdots)$
+        2. 数列 $\left\{a_{n}\right\}$ 单调趋于零
+
+        则级数 ${\displaystyle \sum_{n=1}^{\infty} a_{n} b_{n}}$ 收敛
+
+4. 绝对收敛与条件收敛：对于级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$，如果其每一项加上绝对值以后所组成的正项级数 ${\displaystyle \sum_{n=1}^{\infty}\left|u_{n}\right|}$ 收敛，则称级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 绝对收敛．如果 ${\displaystyle \sum_{n=1}^{\infty}\left|u_{n}\right|}$ 发散但 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 收敛，则称级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 条件收敛
+    1. 绝对收敛级数必为收敛级数，反之不然
+    2. 对于级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$，定义
+
+        $$
+        \begin{aligned}
+        & v_{n}=\dfrac{\left|u_{n}\right|+u_{n}}{2}=\left\{\begin{array}{cc}
+        u_{n}, & u_{n}>0 \\
+        0, & u_{n} \leqslant 0
+        \end{array}\right. \\
+        & w_{n}=\dfrac{\left|u_{n}\right|-u_{n}}{2}=\left\{\begin{array}{cc}
+        -u_{n}, & u_{n}<0 \\
+        0, & u_{n} \geqslant 0
+        \end{array}\right.
+        \end{aligned}
+        $$
+
+        则有
+
+        1. 若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 绝对收敛，则级数 ${\displaystyle \sum_{n=1}^{\infty} v_{n}}$ 和 ${\displaystyle \sum_{n=1}^{\infty} w_{n}}$ 都收敛
+        2. 若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 条件收敛，则级数 ${\displaystyle \sum_{n=1}^{\infty} v_{n}}$ 和 ${\displaystyle \sum_{n=1}^{\infty} w_{n}}$ 都发散
+
+    3. 绝对收敛级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 的更序级数（即将其项重新排列后所得到的级数）${\displaystyle \sum_{n=1}^{\infty} u_{n}^{\prime}}$ 仍绝对收敛且其和相同，${\displaystyle \sum_{n=1}^{\infty} u_{n}=\sum_{n=1}^{\infty} u_{n}^{\prime}}$
+    4. $\text{Cauchy}$ 定理：若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 和 ${\displaystyle \sum_{n=1}^{\infty} v_{n}}$ 均绝对收敛，其和分别为 $U$ 和 $V$．则其各项之积 $u_{i} v_{k} \ (i, k=1,2,3, \cdots)$ 按照任何方法排列所构成的级数也绝对收敛且其和为 $U V$
 
 ### 1.4.2 函数项级数
