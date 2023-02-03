@@ -166,7 +166,7 @@
         3. 当 $h=+\infty$ 时，数列 $\left\{x_{n}\right\}$ 的极限为 $+\infty$
     3. ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=A}$（有限或无穷大）的充要条件为 ${\displaystyle \varlimsup_{n \rightarrow \infty} x_{n}=\underset{n \rightarrow \infty}{\underline{\lim}} x_{n}=A}$
 
-### 1.3.2 一元极限
+### 1.3.2 一元函数极限
 1. 函数极限的定义
     1. 函数在 $x_{0}$ 点的极限：设函数 $f(x)$ 在 $x_{0}$ 点的某个去心球形邻域有定义
         1. 函数值趋于有穷的极限：设 $A$ 是一个定数，若对于任意给定的 $\varepsilon>0$，一定存在 $\delta>0$ 使得当 $0<$ $\left|x-x_{0}\right|<\delta$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的极限，记作 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}\right)$．此时也称函数 $f(x)$ 在 $x_{0}$ 点极限存在，其极限值是 $A$
@@ -204,7 +204,9 @@
 
     则 ${\displaystyle \lim _{x \rightarrow a+0} \dfrac{f(x)}{g(x)}=\lim _{x \rightarrow a+0} \dfrac{f^{\prime}(x)}{g^{\prime}(x)}=A}$．以上定理也适用 $x \rightarrow a-0$，$x \rightarrow a$ 与 $x \rightarrow \infty$ 的情形
 
-### 1.3.2 多元极限
+### 1.3.2 二元函数极限
+1. 二重极限
+2. 二次极限
 
 ## 1.4 级数
 ### 1.4.1 数项级数

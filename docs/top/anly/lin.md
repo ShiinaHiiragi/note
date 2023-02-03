@@ -294,3 +294,25 @@
             2. $V\left(\lambda \boldsymbol \alpha_1+\mu \boldsymbol \alpha_2, \boldsymbol \beta, \boldsymbol \gamma\right)=\lambda V\left(\boldsymbol \alpha_1, \boldsymbol \beta, \boldsymbol \gamma\right)+\mu V\left(\boldsymbol \alpha_2, \boldsymbol \beta, \boldsymbol \gamma\right)$
 
 ### 1.2.2 向量分析
+1. 多元函数与向量值函数：设 $D \subseteq \mathbf R$
+    1. 多元函数：称映射
+
+        $$
+        \begin{aligned}
+        f: D^n & \to \mathbf R \\
+        (x_1, x_2, \cdots, x_n) & \mapsto u = f(x_1, x_2, \cdots, x_n)
+        \end{aligned}
+        $$
+
+        是定义在 $D^n$ 上的一个 $n$ 元函数，此时对于 $\boldsymbol x = (x_1, x_2, \cdots, x_n)$，可将 $f(\boldsymbol x)$ 写作 $f(x_1, x_2, \cdots, x_n)$
+
+    2. 向量值函数：称映射
+
+        $$
+        \begin{aligned}
+        \boldsymbol f: D^n & \to \mathbf R^m \\
+        \boldsymbol x = (x_1, x_2, \cdots, x_n) & \mapsto \boldsymbol y = (y_1, y_2, \cdots, y_m)
+        \end{aligned}
+        $$
+
+        为向量值函数，此时有 $\boldsymbol{y}=f(\boldsymbol{x})=\left(f_{1}(\boldsymbol{x}), f_{2}(\boldsymbol{x}), \cdots, f_{m}(\boldsymbol{x})\right)$，其中 $f_{1}. f_{2}, \cdots, f_{m}$ 均为 $n$ 元函数
