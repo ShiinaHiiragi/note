@@ -1,7 +1,7 @@
 # 2 微分法
 
 ## 2.1 连续统
-### 2.1.1 连续函数
+### 2.1.1 一元连续函数
 1. 连续函数的定义
     1. 函数 $f(x)$ 在单点连续
         1. 函数在 $x_0$ 连续：${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=f\left(x_{0}\right)}$，此时 $f(x)$ 在 $x_0$ 有定义
@@ -27,7 +27,7 @@
     4. 介值定理：设 $f(x)$ 在 $[a, b]$ 上的最小值为 $m$，最大值为 $M$．则对任何 $c \ (m<c<M)$，在 $[a, b]$ 内至少存在一个 $\xi$，使得 $f(\xi)=c$
     5. $\text{Cantor}$ 定理：$f(x)$ 在 $[a, b]$ 上一致连续
 
-### 2.1.2 实数理论
+### 2.1.2 一维连续统
 1. 实数系基本定理：以下六个定理相互等价
     1. 有界数集的确界定理：有上界的非空数集必有上确界，有下界的非空数集必有下确界
     2. 单调有界数列的极限存在定理：单调有界数列必收敛
@@ -45,6 +45,13 @@
     1. 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$，则 $\left\{x_{n}\right\}$ 的任何子列 $\left\{x_{n_{k}}\right\}$ 都收敛于 $a$．
     2. 若对任何 $\left\{x_{n}\right\}, x_{n} \rightarrow x_{0} \ (n \rightarrow \infty), x_{n} \neq x_{0}$ 都有 $\left\{f\left(x_{n}\right)\right\}$ 收敛，则 $f(x)$ 在 $x_{0}$ 的极限存在
     3. 若 $\left\{x_{n}\right\}$ 是一个无界数列，则存在子列 $x_{n_{k}} \rightarrow \infty(k \rightarrow \infty)$
+
+### 2.1.3 二维连续统
+1. 平面点集基本定理
+    1. 矩形套定理：设 $D_{n}=\left\{a_{n} \leqslant x \leqslant b_{n}, c_{n} \leqslant y \leqslant d_{n}\right\} \ (n=1,2, \cdots)$ 是矩形序列，若其中每一个矩形都含在前一个矩形中且 $b_{n}-a_{n} \rightarrow 0, d_{n}-c_{n} \rightarrow 0$，则存在唯一一点 $M_{0}\left(x_{0}, y_{0}\right)$ 使得 $a_{n} \leqslant x_{0} \leqslant b_{n}, c_{n} \leqslant y_{0} \leqslant d_{n} \ (n=1,2,3, \cdots)$
+    2. $\text{Weierstrass}$ 定理：如果序列 $\left\{M_{n}\left(x_{n}, y_{n}\right)\right\}$ 有界，即存在常数 $a, b, c, d$ 使得 $a \leqslant x_{n} \leqslant b, c \leqslant y_{n} \leqslant d, n=1,2,3, \cdots$，那么从其中必能选取收敛的子列，也称作致密性定理
+    3. $\text{Borel}$ 定理：若一开矩形集合 $\{\Delta\}=\{\alpha<x<\beta, \gamma<y<\delta\}$ 覆盖一有界闭区域，那么从 $\{\Delta\}$ 里必可选出有限个开矩形覆盖这个区域，也称作有限覆盖定理
+2. 收敛原理：平面点序列 $\left\{M_{n}\left(x_{n}, y_{n}\right)\right\}$ 有极限当且仅当对任意给定的 $\varepsilon>0$，存在正整数 $N$，当 $n, m>N$ 时有 $\left|M_{n} M_{m}\right|<\varepsilon$
 
 ## 2.2 一元微分法
 ### 2.3.1 导数
