@@ -315,7 +315,60 @@
             \dfrac{\mathrm{d}}{\mathrm{d} x} \sum_{n=1}^{\infty} u_{n}(x)=\sum_{n=1}^{\infty} \dfrac{\mathrm{d}}{\mathrm{d} x} u_{n}(x)
             $$
 
-3. 一致收敛级数的判别法
-    1. $\text{Weierstrass}$ 判别法：若对充分大的 $n$，存在实数 $a_{n}$ 使得 $\left|u_{n}(x)\right| \leqslant a_{n}$ 对 $X$ 上任意的 $x$ 都成立，且数项级数 ${\displaystyle \sum_{n=1}^{\infty} a_{n}}$ 收敛，则 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 在 $X$ 上一致收敛
-    2. $\text{Abel}$ 判别法：若在 $X$ 上 ${\displaystyle \sum_{n=1}^{\infty} b_{n}(x)}$ 一致收敛，又对 $X$ 中每一固定的 $x$，数列 $a_{n}(x)$ 单调．对任意的 $n$ 和 $X$ 中每个 $x$，有 $\left|a_{n}(x)\right| \leqslant L$（不依赖于 $x$ 和 $n$ 的定数），则 ${\displaystyle \sum_{n=1}^{\infty} a_{n}(x) b_{n}(x)}$ 在 $X$ 上一致收敛
-    3. $\text{Dirichlet}$ 判别法：设 ${\displaystyle \sum_{n=1}^{\infty} b_{n}(x)}$ 的部分和 ${\displaystyle B_{n}(x)=\sum_{i=1}^{n} b_{i}(x)}$ 在 $X$ 上一致有界，又对 $X$ 内每一 $x$，数列 $a_{n}(x)$ 单调且函数列 $\left\{a_{n}(x)\right\}$ 在 $X$ 上一致收敛于零，则 ${\displaystyle \sum_{n=1}^{\infty} a_{n}(x) b_{n}(x)}$ 在 $X$ 上一致收敛
+    3. 一致收敛级数的判别法
+        1. $\text{Weierstrass}$ 判别法：若对充分大的 $n$，存在实数 $a_{n}$ 使得 $\left|u_{n}(x)\right| \leqslant a_{n}$ 对 $X$ 上任意的 $x$ 都成立，且数项级数 ${\displaystyle \sum_{n=1}^{\infty} a_{n}}$ 收敛，则 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 在 $X$ 上一致收敛
+        2. $\text{Abel}$ 判别法：若在 $X$ 上 ${\displaystyle \sum_{n=1}^{\infty} b_{n}(x)}$ 一致收敛，又对 $X$ 中每一固定的 $x$，数列 $a_{n}(x)$ 单调．对任意的 $n$ 和 $X$ 中每个 $x$，有 $\left|a_{n}(x)\right| \leqslant L$（不依赖于 $x$ 和 $n$ 的定数），则 ${\displaystyle \sum_{n=1}^{\infty} a_{n}(x) b_{n}(x)}$ 在 $X$ 上一致收敛
+        3. $\text{Dirichlet}$ 判别法：设 ${\displaystyle \sum_{n=1}^{\infty} b_{n}(x)}$ 的部分和 ${\displaystyle B_{n}(x)=\sum_{i=1}^{n} b_{i}(x)}$ 在 $X$ 上一致有界，又对 $X$ 内每一 $x$，数列 $a_{n}(x)$ 单调且函数列 $\left\{a_{n}(x)\right\}$ 在 $X$ 上一致收敛于零，则 ${\displaystyle \sum_{n=1}^{\infty} a_{n}(x) b_{n}(x)}$ 在 $X$ 上一致收敛
+
+3. 幂级数：形如 ${\displaystyle \sum_{n=0}^{\infty} a_{n}\left(x-x_{0}\right)^{n}}=a_{0}+a_{1}\left(x-x_{0}\right)+a_{2}\left(x-x_{0}\right)^{2}+\cdots$ 的函数项级数
+    1. $\text{Cauchy} - \text{Hadamard}$ 定理：幂级数 ${\displaystyle \sum_{n=0}^{\infty} a_{n}\left(x-x_{0}\right)^{n}}$ 在 $\left|x-x_{0}\right|<R$ 内绝对收敛，在 $\left|x-x_{0}\right|>R$ 内发散，其中
+
+        $$
+        R= \left\{\begin{aligned}
+        & \dfrac{1}{{\displaystyle \lim _{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}}}, & {\displaystyle 0<\varlimsup_{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|<\infty}} \\
+        & \infty, & {\displaystyle \varlimsup_{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=0} \\
+        & 0, & {\displaystyle \varlimsup_{n \rightarrow \infty} \sqrt[n]{\left|a_{n}\right|}=\infty}
+        \end{aligned}\right.
+        $$
+
+        1. $\text{Abel}$ 第一定理：若 ${\displaystyle \sum_{n=0}^{\infty} a_{n}\left(x-x_{0}\right)^{n}}$ 在点 $x=\xi$ 收敛，则它必在 $\left|x-x_{0}\right|<\left|\xi-x_{0}\right|$ 内绝对收敛，又若 ${\displaystyle \sum_{n=0}^{\infty} a_{n}\left(x-x_{0}\right)^{n}}$ 在 $x=\xi$ 发散，则它必在 $\left|x-x_{0}\right|>$ $\left|\xi-x_{0}\right|$ 也发散
+        2. $\text{Abel}$ 第二定理：若 ${\displaystyle \sum_{n=0}^{\infty} a_{n}\left(x-x_{0}\right)^{n}}$ 的收敛半径为 $R$，则此级数在 $\left(x_{0}-R, x_{0}+R\right)$ 内的任一个闭区间 $[a, b]$ 上一致收敛，即在 $\left(x_{0}-R, x_{0}+R\right)$ 内闭一致收敛；又若级数在 $x_{0}+R$ 点收敛，则它必在 $\left[a, x_{0}+R\right]$ 一致收敛．同理，当级数在 $x_{0}-R$ 收敛时可得类似结论
+
+    2. 幂级数的性质
+        1. 设幂级数 ${\displaystyle \sum_{n=0}^{\infty} a_{n}\left(x-x_{0}\right)^{n}}$ 的收敛半径为 $R$，则其和函数 $S(x)$ 在 $\left(x_{0}-R\right.$, $x_{0}+R$ ) 内连续．又若幂级数在 $x_{0}-R$（或 $x_{0}+R$）收敛，则 $S(x)$ 在 $\left[x_{0}-R, x_{0}+R\right)$（或 $\left(x_{0}-R, x_{0}+R\right]$）连续
+        2. 设幂级数 ${\displaystyle \sum_{n=0}^{\infty} a_{n}\left(x-x_{0}\right)^{n}}$ 的收敛半径为 $R$，其和函数为 $S(x)$，则在 $\left(x_{0}-R, x_{0}+R\right)$ 内幂级数可以逐项积分和逐项微分．即对 $\left(x_{0}-R, x_{0}+R\right)$ 内任意一点 $x$ 有
+
+            $$
+            \sum_{n=0}^{\infty} \int_{x_{0}}^{x} a_{n}\left(x-x_{0}\right)^{n} \mathrm{~d} x=\sum_{n=0}^{\infty} \dfrac{a_{n}}{n+1}\left(x-x_{0}\right)^{n+1}=\int_{x_{0}}^{x} S(x) \mathrm{d} x
+            $$
+
+            以及
+
+            $$
+            \sum_{n=0}^{\infty} \dfrac{\mathrm{d}}{\mathrm{d} x}\left[a_{n}\left(x-x_{0}\right)^{n}\right]=\sum_{n=1}^{\infty} n a_{n}\left(x-x_{0}\right)^{n-1}=\dfrac{\mathrm{d}}{\mathrm{d} x} S(x)
+            $$
+
+    3. $\text{Taylor}$ 级数：设
+
+        $$
+        R_{n}(x)=f(x)-\left[f\left(x_{0}\right)+f^{\prime}\left(x_{0}\right)\left(x-x_{0}\right)+\cdots+\dfrac{f^{(n)}\left(x_{0}\right)}{n !}\left(x-x_{0}\right)^{n}\right]
+        $$
+
+        若在某个区间 $\left(x_{0}-R, x_{0}+R\right)$ 内 $R_{n}(x) \rightarrow 0 \ (n \rightarrow \infty)$，那么 
+
+        $$
+        f(x)=f\left(x_{0}\right)+f^{\prime}\left(x_{0}\right)\left(x-x_{0}\right)+\cdots+\dfrac{f^{(n)}\left(x_{0}\right)}{n !}\left(x-x_{0}\right)^{n}+\cdots
+        $$
+
+        是函数 $f(x)$ 的幂级数展开，称作 $f(x)$ 的 $\text{Taylor}$ 级数．当 $x = 0$ 时，称级数为 $\text{Maclaurin}$ 级数
+
+        !!! note "初等函数的展开式"
+            1. $\mathrm{e}^{x}=1+x+\dfrac{1}{2 !} x^{2}+\cdots+\dfrac{1}{n !} x^{n}+\cdots \ (-\infty<x<+\infty)$
+
+                $\ln (1+x)=x-\dfrac{x^{2}}{2}+\dfrac{x^{3}}{3}-\cdots+(-1)^{n}\dfrac{x^{n+1}}{n+1}+\cdots \ (-1<x \leqslant 1)$
+
+            2. $\sin x=x-\dfrac{x^{3}}{3 !}+\dfrac{x^{5}}{5 !}-\dfrac{x^{7}}{7 !}+\cdots+(-1)^{n} \dfrac{x^{2 n+1}}{(2 n+1) !}+\cdots \ (-\infty<x<+\infty)$
+
+                $\cos x=x-\dfrac{x^{2}}{2!}+\dfrac{x^{4}}{4 !}-\dfrac{x^{6}}{6 !}+\cdots+(-1)^{n} \dfrac{x^{2 n}}{(2 n) !}+\cdots \ (-\infty<x<+\infty)$
+
+4. $\text{Fourier}$ 级数
