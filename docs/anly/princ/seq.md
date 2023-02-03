@@ -372,13 +372,7 @@
                 $\cos x=x-\dfrac{x^{2}}{2!}+\dfrac{x^{4}}{4 !}-\dfrac{x^{6}}{6 !}+\cdots+(-1)^{n} \dfrac{x^{2 n}}{(2 n) !}+\cdots \ (-\infty<x<+\infty)$
 
 4. $\text{Fourier}$ 级数：设 $f(x)$ 是一个周期为 $T$ 的函数，称 $f(x)=A_{0}+{\displaystyle \sum_{n=1}^{\infty}\left(a_{n} \cos n \omega x+b_{n} \sin n \omega x\right)}$ 的级数是由函数 $f(x)$ 所确定的 $\text{Fourier}$ 级数
-    1. $\text{Fourier}$ 系数：设函数 $f(x)$ 已展开为区间 $[-\pi, \pi]$ 上的一致收敛的三角级数
-
-        $$
-        f(x)=\dfrac{a_{0}}{2}+\sum_{k=1}^{\infty}\left(a_{k} \cos k x+b_{k} \sin k x\right)
-        $$
-
-        则有 $\text{Euler} - \text{Fourier}$ 公式成立
+    1. $\text{Fourier}$ 系数：设函数 $f(x)$ 已展开为区间 $[-\pi, \pi]$ 上的一致收敛的三角级数 ${\displaystyle f(x)=\dfrac{a_{0}}{2}+\sum_{k=1}^{\infty}\left(a_{k} \cos k x+b_{k} \sin k x\right)}$，则有 $\text{Euler} - \text{Fourier}$ 公式成立
 
         $$
         \begin{aligned}
@@ -421,42 +415,15 @@
 
     4. $\text{Fourier}$ 级数的性质
         1. 一致收敛性
-            1. 设周期为 $2 \pi$ 的可积和绝对可积函数 $f(x)$ 在比 $[a, b]$ 更宽的区间 $[a-\delta, b+$ $\delta]$（其中 $\delta>0$）上有有界导数 $f^{\prime}(x)$，那么 $f(x)$ 的 $\text{Fourier}$ 级数在区间 $[a, b]$ 上一致收敛于 $f(x)$
-            2. 设周期为 $2 \pi$ 的可积和绝对可积函数 $f(x)$ 在比 $[a, b]$ 更宽的区间 $[a-\delta, b+ \delta]$（其中 $\delta>0$）上连续且为分段单调函数，那么 $f(x)$ 的 $\text{Fourier}$ 级数在区间 $[a, b]$ 上一致收敛于 $f(x)$
-        2. 逐项求积与逐项求导：设 $f(x)$ 是 $[-\pi, \pi]$ 上的分段连续函数，其 $\text{Fourier}$ 级数是
-
-            $$
-            f(x) \sim \dfrac{a_{0}}{2}+\sum_{n=1}^{\infty} a_{n} \cos n x+b_{n} \sin n x
-            $$
-
-            $c$ 和 $x$ 是 $[-\pi, \pi]$ 上任意两点，则
-
-            $$
-            \int_{c}^{x} f(t) \mathrm{d} t=\dfrac{a_{0}}{2}(x-c)+\sum_{n=1}^{\infty} \int_{c}^{x}\left(a_{n} \cos n t+b_{n} \sin n t\right) \mathrm{d} t
-            $$
-
-        3. 最佳平方平均逼近：设 $T_{n}(x)$ 是任意一个 $n$ 次三角多项式
-
-            $$
-            T_{n}(x)=\dfrac{A_{0}}{2}+\sum_{k=1}^{n} A_{k} \cos k x+B_{k} \sin k x
-            $$
-
-            其中 $A_{0}, A_{k}, B_{k}(k=1,2, \cdots)$ 都是常数．又设 $f(x)$ 是 $[-\pi, \pi]$ 上可积和平方可积函数，称
+            - 设周期为 $2 \pi$ 的可积和绝对可积函数 $f(x)$ 在比 $[a, b]$ 更宽的区间 $[a-\delta, b+$ $\delta]$（其中 $\delta>0$）上有有界导数 $f^{\prime}(x)$，那么 $f(x)$ 的 $\text{Fourier}$ 级数在区间 $[a, b]$ 上一致收敛于 $f(x)$
+            - 设周期为 $2 \pi$ 的可积和绝对可积函数 $f(x)$ 在比 $[a, b]$ 更宽的区间 $[a-\delta, b+ \delta]$（其中 $\delta>0$）上连续且为分段单调函数，那么 $f(x)$ 的 $\text{Fourier}$ 级数在区间 $[a, b]$ 上一致收敛于 $f(x)$
+        2. 逐项求积与逐项求导：设 $c$ 和 $x$ 是 $[-\pi, \pi]$ 上任意两点，$f(x)$ 是 $[-\pi, \pi]$ 上的分段连续函数，其 $\text{Fourier}$ 级数是 ${\displaystyle f(x) \sim \dfrac{a_{0}}{2}+\sum_{n=1}^{\infty} a_{n} \cos n x+b_{n} \sin n x}$，则有 ${\displaystyle \int_{c}^{x} f(t) \mathrm{d} t=\dfrac{a_{0}}{2}(x-c)+\sum_{n=1}^{\infty} \int_{c}^{x}\left(a_{n} \cos n t+b_{n} \sin n t\right) \mathrm{d} t}$
+        3. 最佳平方平均逼近：设 $f(x)$ 是 $[-\pi, \pi]$ 上可积和平方可积函数，又设 $T_{n}(x)$ 是任意一个 $n$ 次三角多项式 ${\displaystyle T_{n}(x)=\dfrac{A_{0}}{2}+\sum_{k=1}^{n} A_{k} \cos k x+B_{k} \sin k x}$，其中 $A_{0}, A_{k}, B_{k}\ (k=1,2, \cdots)$ 为常数，称
 
             $$
             \delta^{2}\left(f, T_{n}\right)=\dfrac{1}{2 \pi} \int_{-\pi}^{\pi}\left(f(x)-T_{n}(x)\right)^{2} \mathrm{~d} x
             $$
 
-            是用三角多项式 $T_{n}(x)$ 在平方平均意义下逼近 $f(x)$ 的偏差．设 $f(x)$ 的 $\text{Fourier}$ 级数是
+            是用三角多项式 $T_{n}(x)$ 在平方平均意义下逼近 $f(x)$ 的偏差．设 ${\displaystyle f(x) \sim \dfrac{a_{0}}{2}+\sum_{n=1}^{\infty} a_{n} \cos n x+b_{n} \sin n x}$，其 $n$ 次部分和 ${\displaystyle S_{n}(x)=\dfrac{a_{0}}{2}+\sum_{k=1}^{n} a_{k} \cos k x+b_{k} \sin k x}$ 是 $f(x)$ 的最佳平方平均逼近，亦即对任何 $n$ 次三角多项式 $T_{n}(x)$，都有 $\delta^{2}\left(f, S_{n}\right) \leqslant \delta^{2}\left(f, T_{n}\right)$
 
-            $$
-            f(x) \sim \dfrac{a_{0}}{2}+\sum_{n=1}^{\infty} a_{n} \cos n x+b_{n} \sin n x
-            $$
-
-            其 $n$ 次部分和
-
-            $$
-            S_{n}(x)=\dfrac{a_{0}}{2}+\sum_{k=1}^{n} a_{k} \cos k x+b_{k} \sin k x
-            $$
-
-            是 $f(x)$ 的最佳平方平均逼近，亦即对任何 $n$ 次三角多项式 $T_{n}(x)$，都有 $\delta^{2}\left(f, S_{n}\right) \leqslant \delta^{2}\left(f, T_{n}\right)$
+    5. $\text{Fourier}$ 变换
