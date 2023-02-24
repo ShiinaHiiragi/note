@@ -3821,10 +3821,269 @@ Bootstrap 适合短时间开发简单的静态网站
               from FileName: Line:in Method
     ```
 
+### 2.4 Python
 
-### 2.4 Application
+#### 2.4.1 基本数据类型
 
-#### 2.4.1 Electron
+1. 标准数据的分类
+    - 不可变数据：Number、`str`、`tuple`
+    - 可变数据：`list`、`dict`、`set`
+
+    其中后四种的初始化方法如下：
+
+    |   类    |    初始化为空     |        括号初始化         |            初始化函数             |                      推导式                      |
+    | :-----: | :---------------: | :-----------------------: | :-------------------------------: | :----------------------------------------------: |
+    | `list`  | `[]` 或 `list()`  |        `[0, 1, 2]`        |           `list(iter)`            |          `[expr for i in iter if cond]`          |
+    | `tuple` | `()` 或 `tuple()` |        `(0, 1, 2)`        |           `tuple(iter)`           |          `(expr for i in iter if cond)`          |
+    | `dict`  | `{}` 或 `dict()`  | `{ "zero": 0, "one": 1 }` | `dict(iter)` 或 `dict(key=value)` | `{ key_expr: value_expr for i in iter if cond }` |
+    |  `set`  |      `set()`      |        `{0, 1, 2}`        |            `set(iter)`            |          `{expr for i in iter if cond}`          |
+
+2. 内建操作符或函数
+    - `del`：删除对象引用
+    - `id(obj)`：返回对象 `id`
+    - `type(obj)`：返回对象类型
+    - `isinstance(obj, class)`：返回对象是否属于给定类，当 `obj` 为子类对象时也返回 `True`
+
+#### 2.4.2 运算符
+
+1. 运算符与对应魔术方法
+
+    | 运算符               | 类型       | 魔术方法                                                     |
+    | -------------------- | ---------- | ------------------------------------------------------------ |
+    | `+` / `-` / `*` / `/` | 算术运算符 | `__add__` / `__sub__` / `__mul__` / `__truediv__` |
+    | `@` / `//` / `**` / `%` | 算术运算符 | `__matmul__` / `__floordiv__` / `__pow__` / `__mod__`    |
+    | `<` / `<=` / `==` / `!=` / `>` / `>=` | 比较运算符 | `__lt__` / `__le__` / `__eq__` / `__ne__` / `__gt__` / `__ge__` |
+    | `+=` / `-=` / `*=` / `/=` | 赋值运算符 | `__iadd__` / `__isub__` / `__imul__` / `__itruediv__` |
+    | `@=` / `//=` / `**=` / `%=` | 赋值运算符 | `__imatmul__` / `__ifloordiv__` / `__ipow__` / `__imod__` |
+    | `<<` / `>>` / `&` / `^` / `|` / `~` | 位运算符 | `__lshift__` / `__rshift__` / `__and__` / `__xor__` / `__or__` / `__invert__` |
+
+2. 无魔术方法的运算符
+
+    | 运算符               | 描述                    |
+    | -------------------- | ----------------------- |
+    | `=` / `:=`           | 赋值运算符 / 海象运算符 |
+    | `and` / `or` / `not` | 逻辑运算符              |
+    | `in` / `not in`      | 成员运算符              |
+    | `is` / `is not`      | 身份运算符              |
+
+#### 2.4.3 函数与类
+
+##### （一）参数类型
+
+1. 必需参数：必须以正确的顺序传入函数，调用时的数量必须和声明时一样
+
+2. 关键字参数：使用关键字参数允许函数调用时参数的顺序与声明时不一致
+
+   ```python
+   def p(str):
+       print(str)
+   
+   p(str="Hello World!")
+   ```
+
+3. 默认参数：调用函数时，如果没有传递参数，则会使用默认参数
+
+   ```python
+   def p(str="Hello World!"):
+       print(str)
+   
+   p()
+   ```
+
+4. 不定长参数：使用 `*args` 捕获所有未命名的变量参数，生成一个元组；使用 `**kwargs` 捕获所有命名的变量参数，生成一个字典
+
+##### （二）迭代器与生成器
+
+1. 迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束
+	
+	```python
+	>>> list=[0, 1, 2, 3]
+	>>> it = iter(list)
+	>>> print (next(it))
+	0
+	>>> print (next(it))
+	1
+	```
+
+2. 把一个类作为一个迭代器使用需要在类中实现魔术方法 `__iter__()` 与 `__next__()`
+	
+	```python
+	import sys
+	
+	class ins():
+	    def __iter__(self):
+	        return ins_iterator()
+	
+	class ins_iterator():
+	    def __init__(self):
+	        self.counter = 0
+	
+	    def __next__(self):
+	        res = self.counter
+	        if res < 4:
+	            self.counter += 1
+	            return res
+	        else:
+	            raise StopIteration
+	
+	inst = ins()
+	it = iter(inst)
+	while True:
+	    try:
+	        print(next(it))
+	    except StopIteration:
+	        sys.exit()
+	```
+	
+3. 生成器：使用了 `yield` 关键字的函数
+	
+	```python
+	import sys
+	
+	def fibonacci(n):
+	    a, b, counter = 0, 1, 0
+	    while True:
+	        if (counter > n):
+	            return
+	        yield a
+	        a, b = b, a + b
+	        counter += 1
+	
+	f = fibonacci(10)
+	while True:
+	    try:
+	        print(next(f), end=" ")
+	    except StopIteration:
+	        print()
+	        sys.exit()
+	```
+
+##### （三）类与对象
+
+1. 类变量和实例变量
+   - 类变量属于类所有，可以使用类名或对象名引用
+     - 直接修改类变量，各实例未自行修改类变量时，引用到的值都会改变
+     - 如果在实例中对类变量赋值，会复制一份为实例变量，覆盖类变量
+   - 实例变量属于实例所有，只能使用对象名引用
+   
+2. 魔术方法
+   - 构造与初始化
+     - `__new__()`：构造方法，在 `__init__()`之前调用
+     - `__init__()`：构造器
+     - `__del__()`：析构器
+     
+   - 类表示：`__str__()` / `__repr__()`，转化为字符串 / 打印信息
+   
+   - 访问控制
+     - `__setattr__(self, key, value)`：定义当一个属性被设置时的行为
+     
+     - `__getattr__(self, key)`：定义当用户试图获取一个不存在的属性时的行为
+     
+     - `__delattr__(self, key)`：删除某个属性时调用
+     
+       > 注意：在 `__setattr__` 使用 `self.key = value` 会导致循环调用，应使用 `self.__dict__[key] = value`
+     
+   - 容器类
+     - `__setitem__(self, key, value)`：定义设置容器中指定元素的行为
+     - `__getitem__(self, key)`： 定义获取容器中指定元素的行为
+     - `__delitem__(self, key)`：定义删除容器中指定元素的行为
+     - `__contains__(self, item)`：定义当使用成员测试运算符（in 或 not in）时的行为
+     - `__len__(self)`：定义当被 len() 调用时的行为
+     - `__reversed__(self)`：定义当被 reversed() 调用时的行为
+     
+   - 可调用对象：`__call__()`，将对象作为函数调用
+
+#### 2.4.4 模块
+
+##### （一）模块导入
+
+1. 在解释器的当前目录或者 `sys.path` 中的某个目录里面创建一个模块 `lib.py`
+
+   ```python
+   def dist(x, y):
+       return abs(x - y)
+   
+   def reverse(x):
+       return -x
+   
+   if __name__ == "__main__":
+       print("!")
+   ```
+
+   在原文件导入：
+
+   ```python
+   import lib
+   from lib import reverse
+   
+   print(lib.dist(0, 2))
+   print(reverse(0))
+   ```
+
+   可以使用 `as` 定义别名：
+
+   ```python
+   import lib as l
+   from lib import reverse as r
+   
+   print(l.dist(0, 2))
+   print(r(0))
+   ```
+
+2. 假设有包结构：
+
+   ```shell
+   sound/
+         __init__.py
+         formats/
+                 __init__.py
+                 wavread.py
+                 wavwrite.py
+                 aiffread.py
+                 aiffwrite.py
+                 auread.py
+                 auwrite.py
+                 ...
+         effects/
+                 __init__.py
+                 echo.py
+                 surround.py
+                 reverse.py
+                 ...
+         filters/
+                 __init__.py
+                 equalizer.py
+                 vocoder.py
+                 karaoke.py
+                 ...
+   ```
+
+   则可以每次只导入一个包里面的特定模块：
+
+   ```python
+   import sound.effects.echo
+   sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)
+   ```
+
+   或直接导入子模块 `echo`：
+
+   ```python
+   from sound.effects import echo
+   echo.echofilter(input, output, delay=0.7, atten=4)
+   ```
+
+   或直接导入一个函数或者变量：
+
+   ```python
+   from sound.effects.echo import echofilter
+   echofilter(input, output, delay=0.7, atten=4)
+   ```
+
+##### （二）序列化
+
+### 2.5 Application
+
+#### 2.5.1 Electron
 
 ##### （一）进程
 
@@ -3948,7 +4207,7 @@ Bootstrap 适合短时间开发简单的静态网站
     - `--overwrite`：新的打包会覆写原来的打包内容，可选
     - `--no-prune`：默认形况下会不打包开发依赖并对生产依赖进行剪枝，这个选项会不剪枝，可选
 
-#### 2.4.2 Flutter
+#### 2.5.2 Flutter
 
 ## 3 ALGORITHM
 
