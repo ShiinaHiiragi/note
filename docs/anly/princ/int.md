@@ -168,4 +168,38 @@
 
 ### 3.3.2 含参变量的反常积分
 
+形如 ${\displaystyle \int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 的积分称为含参变量 $y$ 的反常积分
+
+1. 一致收敛积分
+    1. 一致收敛积分的定义
+        1. 无穷限积分的一致收敛：若对任意给定的 $\varepsilon>0$，存在 $A_{0}(\varepsilon)>a$（此 $A(\varepsilon)$ 仅与 $\varepsilon$ 有关），当 $A^{\prime}, A \geqslant A_{0}$ 时，对一切 $y \in[c, d]$ 有 ${\displaystyle \left|\int_{A}^{1} f(x, y) \mathrm{d} x\right|<\varepsilon}$ 或 ${\displaystyle \left|\int_{A}^{+\infty} f(x, y) \mathrm{d} x\right|<\varepsilon}$ 则称 ${\displaystyle \int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 关于 $y \in[c, d]$ 一致收敛
+        2. 无界函数积分的一致收敛：设 ${\displaystyle \int_{a}^{b} f(x, y) \mathrm{d} x}$ 对于 $[c, d]$ 上的每一个 $y$ 值有一个奇点 $x=b$，又设对每一个 $y$，这个有奇点的反常积分存在．如果对于任何 $\varepsilon>0$，存在与 $[c, d]$ 上的 $y$ 无关的 $\delta_{0}(\varepsilon)$，使当 $0<\eta, \eta^{\prime}<\delta_{0}(\varepsilon)$ 时 ${\displaystyle \left|\int_{b-\eta}^{b-\eta^{\prime}} f(x, y) \mathrm{d} x\right|<\varepsilon}$ 或 ${\displaystyle \left|\int_{b-\eta}^{b} f(x, y) \mathrm{d} x\right|<\varepsilon}$ 成立，就称 ${\displaystyle \int_{a}^{b} f(x, y) \mathrm{d} x}$ 关于 $y$ 在 $[c, d]$ 上一致收敛
+    2. 一致收敛积分的判别
+        1. $\text{Weierstrass}$ 判别法：设有函数 $F(x)$，使 $|f(x, y)| \leqslant F(x), a \leqslant x<+\infty, c \leqslant y \leqslant d$．如果积分 ${\displaystyle \int_{a}^{+\infty} F(x) \mathrm{d} x}$ 收敛，那么 ${\displaystyle \int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 关于 $y$ 在 $[c, d]$ 上一致收敛
+        2. $\text{Abel}$ 判别法：设 ${\displaystyle \int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 关于 $y \in[c, d]$ 为一致收敛，$g(x, y)$ 对 $x$ 单调（即对每个固定的 $y \in[c, d]$，$g(x, y)$ 作为 $x$ 的函数是单调的），并且关于 $y$ 为一致有界，即存在正数 $L$，对所讨论范围内的一切 $x, y$ 成立 $|g(x, y)|<L$．那么积分 ${\displaystyle \int_{a}^{+\infty} f(x, y) g(x, y) \mathrm{d} x}$ 关于 $y$ 在 $[c, d]$ 上一致收敛
+        3. $\text{Dirichlet}$ 判别法：设积分 ${\displaystyle \int_{a}^{A} f(x, y) \mathrm{d} x}$ 对于 $A \geqslant a$ 和 $y \in[c, d]$ 一致有界，即存在正数 $K$，使对上述的 $A, y$ 有 ${\displaystyle \left|\int_{a}^{A} f(x, y) \mathrm{d} x\right| \leqslant K}$．又 $g(x, y)$ 关于 $x$ 为单调，并且当 $x \rightarrow+\infty$ 时，$g(x, y)$ 关于 $[c, d]$ 上的 $y$ 一致趋于零，即对任意给定的正数 $\varepsilon$ 有 $A_{0}$，当 $x \geqslant A_{0}$ 时，对一切 $y \in[c, d]$ 有 $|g(x, y)|<\varepsilon$．那么积分 ${\displaystyle \int_{a}^{+\infty} f(x, y) g(x, y) \mathrm{d} x}$ 关于 $y$ 在 $[c, d]$ 上一致收敛
+
+        !!! note "符号函数"
+            定义符号函数 $\operatorname{sgn}(x)={\displaystyle \dfrac{2}{\pi} \int_{0}^{+\infty} \dfrac{\sin x t}{t} \mathrm{~d} t}=\left\{\begin{aligned} & 1, & x > 0 \\ & 0, & x = 0 \\ & -1, & x < 0 \end{aligned}\right.$
+
+    3. 一致收敛积分的性质
+        1. 连续性定理：设 $f(x, y)$ 在 $[a,+\infty) \times [c, d]$ 上连续, ${\displaystyle \int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 关于 $y$ 在 $[c, d]$ 上一致收敛, 那么 ${\displaystyle I(y)=\int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 是 $y$ 在 $[c, d]$ 上的连续函数
+        2. 积分顺序交换定理：设函数 $f(x, y)$ 在 $[a,+\infty) \times [c, d]$ 上连续，${\displaystyle \int_{u}^{+\infty} f(x, y) \mathrm{d} x}$ 关于 $y \in[c, d]$ 一致收敛，那么 ${\displaystyle I(y)=\int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 在 $[c, d]$ 上的积分可以在积分号下进行
+
+            $$
+            \int_{c}^{d} \mathrm{~d} y \int_{a}^{+\infty} f(x, y) \mathrm{d} x=\int_{a}^{+\infty} \mathrm{d} x \int_{c}^{d} f(x, y) \mathrm{d} y
+            $$
+
+        3. 积分号下求导的定理：设 $f(x, y), f_{y}(x, y)$ 在 $[a,+\infty) \times [c, d]$ 上连续，${\displaystyle \int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 存在，${\displaystyle \int_{a}^{+\infty} f_{y}(x, y) \mathrm{d} x}$ 关于 $y$ 在 $[c, d]$ 上一致收剑．那么 ${\displaystyle I(y)=\int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 的导数存在，且 ${\displaystyle \dfrac{\mathrm{d}}{\mathrm{d} y} \int_{a}^{+\infty} f(x, y) \mathrm{d} x=\int_{a}^{+\infty} \dfrac{\partial}{\partial y} f(x, y) \mathrm{d} x}$
+
+2. $\text{Euler}$ 积分
+    1. $\text{Beta}$ 函数（或称 $\mathrm{B}$ 函数、第一类 $\text{Euler}$ 积分）：${\displaystyle \mathrm{B}(p, q)=\int_{0}^{1} x^{p-1}(1-x)^{q-1} \mathrm{~d} x}$
+        1. 连续性：对任何 $p>0, q>0$，存在 $p_{0}, q_{0}$ 使 $p \geqslant p_{0}>0, q \geqslant q_{0}>0$．因为 $x^{p-1}(1-x)^{q-1} \leqslant x^{p_{0}-1}(1-x)^{q_{0}-1}$，而 ${\displaystyle \int_{0}^{1} x^{p_{0}-1}(1-x)^{q_{0}-1} \mathrm{~d} x}$ 收敛，所以 $\mathrm{B}(p, q)$ 在 $\left[p_{0}, +\infty) \times [q_{0},+\infty\right)$ 上一致收敛，从而 $\mathrm{B}(p, q)$ 在 $p>0, q>0$ 时连续
+        2. 第二表达式：$\mathrm{B}(p, q)={\displaystyle 2 \int_{0}^{\frac{\pi}{2}} \cos ^{2 p-1} \theta \sin ^{2 q-1} \theta \mathrm{d} \theta}$
+    2. $\text{Gamma}$ 函数（或称 $\Gamma$ 函数、第二类 $\text{Euler}$ 积分）：${\displaystyle \Gamma(s)=\int_{0}^{+\infty} x^{s-1} \mathrm{e}^{-x} \mathrm{~d} x}$
+        1. 连续性：${\displaystyle \Gamma(s)=\int_{0}^{+\infty} x^{s-1} \mathrm{e}^{-x} \mathrm{~d} x}$ 在任何 $\left[s_{0}, S_{0}\right] \ \left(0<s_{0}<S_{0}\right)$ 上一致收敛
+        2. 递推公式：$\Gamma(s+1)=s \Gamma(s) \ (s>0)$．设 $s=n+1$ 为正整数，则 ${\displaystyle \Gamma(n+1)=n ! \int_{0}^{+\infty} \mathrm{e}^{-x} \mathrm{~d} x=n !}$
+
+    两类 $\text{Euler}$ 积分的关系：$\mathrm{B}(p, q)=\dfrac{\Gamma(p) \Gamma(q)}{\Gamma(p+q)} \ (p>0, q>0)$
+
 ## 3.4 重积分
