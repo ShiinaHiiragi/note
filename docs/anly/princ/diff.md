@@ -19,27 +19,29 @@
     1. 第一类不连续点：$f\left(x_{0}+0\right), f\left(x_{0}-0\right)$ 存在但不相等
     2. 第二类不连续点：$f\left(x_{0}+0\right)$ 与 $f\left(x_{0}-0\right)$ 中至少有一个不存在
     3. 可移不连续点：${\displaystyle \lim _{x \rightarrow x_{0}} f(x)}$ 存在但不等于 $f\left(x_{0}\right)$ 或 $f(x)$ 在点 $x_{0}$ 没有定义
-4. 一致连续：设函数 $f(x)$ 在区间 $X$ 内满足对任意的 $\varepsilon>0$，可找到只与 $\varepsilon$ 有关而与 $X$ 内的点 $x$ 无关的 $\eta>0$，使得对 $X$ 内任意两点 $x_{1}$ 和 $x_{2}$，当 $\left|x_{1}-x_{2}\right|<\eta$ 时，总有 $\left|f\left(x_{1}\right)-f\left(x_{2}\right)\right|<\varepsilon$，则称 $f(x)$ 在 $X$ 内一致连续
-5. 闭区间上连续函数的性质：设 $f(x)$ 在 $[a, b]$ 上连续
+4. 闭区间上连续函数的性质：设 $f(x)$ 在 $[a, b]$ 上连续
     1. 有界性：$f(x)$ 在 $[a, b]$ 上有界
     2. 最值：在 $[a, b]$ 内至少有两点 $\xi_{1}$ 和 $\xi_{2}$，使得对 $[a, b]$ 内的一切 $x$，有 $f\left(\xi_{1}\right) \leqslant f(x) \leqslant f\left(\xi_{2}\right)$
     3. 零点存在定理：若 $f(a)f(b) < 0$，则在 $[a, b]$ 内至少有一点 $\xi$，使 $f(\xi)=0$
     4. 介值定理：设 $f(x)$ 在 $[a, b]$ 上的最小值为 $m$，最大值为 $M$．则对任何 $c \ (m<c<M)$，在 $[a, b]$ 内至少存在一个 $\xi$，使得 $f(\xi)=c$
     5. $\text{Cantor}$ 定理：$f(x)$ 在 $[a, b]$ 上一致连续
 
+        !!! note "一致连续"
+            设函数 $f(x)$ 在区间 $X$ 内满足对任意的 $\varepsilon>0$，可找到只与 $\varepsilon$ 有关而与 $X$ 内的点 $x$ 无关的 $\eta>0$，使得对 $X$ 内任意两点 $x_{1}$ 和 $x_{2}$，当 $\left|x_{1}-x_{2}\right|<\eta$ 时，总有 $\left|f\left(x_{1}\right)-f\left(x_{2}\right)\right|<\varepsilon$，则称 $f(x)$ 在 $X$ 内一致连续
+
 ### 2.1.2 一维连续统
 1. 实数系基本定理：以下六个定理相互等价
-    1. 有界数集的确界定理：有上界的非空数集必有上确界，有下界的非空数集必有下确界
-    2. 单调有界数列的极限存在定理：单调有界数列必收敛
-    3. 区间套定理：设一无穷闭区间序列 $\left\{\left[a_{n}, b_{n}\right]\right\}$ 适合下面两个条件
+    1. 确界存在定理：有上界的非空数集必有上确界，有下界的非空数集必有下确界
+    1. 收敛准则：单调有界数列必收敛
+    2. 区间套定理：设一无穷闭区间序列 $\left\{\left[a_{n}, b_{n}\right]\right\}$ 适合下面两个条件
         1. 对任一正整数 $n$ 有 $a_{n} \leqslant a_{n+1}<b_{n+1} \leqslant b_{n}$
         2. ${\displaystyle \lim _{n \rightarrow \infty}\left(b_{n}-a_{n}\right)=0}$
 
         则区间的两个端点所成两数列 $\left\{a_{n}\right\}$ 及 $\left\{b_{n}\right\}$ 收敛于同一极限 $\xi$，且 $\xi$ 是所有区间的唯一公共点
 
-    4. $\text{Weierstrass}$ 定理：任一有界数列必有收敛子列，也称作致密性定理
-    5. $\text{Cauchy}$ 收敛原理：数列 $\left\{x_{n}\right\}$ 有极限当且仅当对任意给定的 $\varepsilon>0$，存在 $N \in \mathbf N$，当 $m, n>N$ 时有 $\left|x_{n}-x_{m}\right|<\varepsilon$
-    6. $\text{Borel}$ 定理：若由无限多个开区间所组成的区间集 $E$ 能够覆盖一个闭区间 $[a, b]$，则存在 $E$ 中的有限个区间覆盖 $[a, b]$，也称作有限覆盖定理
+    3. $\text{Weierstrass}$ 定理：任一有界数列必有收敛子列，也称作致密性定理
+    4. $\text{Cauchy}$ 收敛原理：数列 $\left\{x_{n}\right\}$ 有极限当且仅当对任意给定的 $\varepsilon>0$，存在 $N \in \mathbf N$，当 $m, n>N$ 时有 $\left|x_{n}-x_{m}\right|<\varepsilon$
+    5. $\text{Borel}$ 定理：若由无限多个开区间所组成的区间集 $E$ 能够覆盖一个闭区间 $[a, b]$，则存在 $E$ 中的有限个区间覆盖 $[a, b]$，也称作有限覆盖定理
 
 2. 收敛准则
     1. 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$，则 $\left\{x_{n}\right\}$ 的任何子列 $\left\{x_{n_{k}}\right\}$ 都收敛于 $a$．
@@ -57,11 +59,10 @@
     4. 零点存在定理：设 $f(x, y)$ 在区域 $D$ 内连续且在 $D$ 内两点 $M_{1}\left(a_{1}, b_{1}\right), N_{1}\left(\alpha_{1}, \beta_{1}\right)$ 异号，即 $f\left(a_{1}, b_{1}\right) f\left(\alpha_{1}, \beta_{1}\right)<0$．则用完全位于 $D$ 内的任意的折线 $l$ 联结 $M_{1}$ 和 $N_{1}$ 时，在 $l$ 上必有一点 $\overline{M}(\overline{x}, \overline{y})$ 满足 $f(\overline{x}, \overline{y})=0$
 
 ### 2.1.4 二维连续统
-1. 平面点集基本定理
-    1. 矩形套定理：设 $D_{n}=\left\{a_{n} \leqslant x \leqslant b_{n}, c_{n} \leqslant y \leqslant d_{n}\right\} \ (n=1,2, \cdots)$ 是矩形序列，若其中每一个矩形都含在前一个矩形中且 $b_{n}-a_{n} \rightarrow 0, d_{n}-c_{n} \rightarrow 0$，则存在唯一一点 $M_{0}\left(x_{0}, y_{0}\right)$ 使得 $a_{n} \leqslant x_{0} \leqslant b_{n}, c_{n} \leqslant y_{0} \leqslant d_{n} \ (n=1,2,3, \cdots)$
-    2. $\text{Weierstrass}$ 定理：如果序列 $\left\{M_{n}\left(x_{n}, y_{n}\right)\right\}$ 有界，即存在常数 $a, b, c, d$ 使得 $a \leqslant x_{n} \leqslant b, c \leqslant y_{n} \leqslant d, n=1,2,3, \cdots$，那么从其中必能选取收敛的子列，也称作致密性定理
-    3. $\text{Borel}$ 定理：若一开矩形集合 $\{\Delta\}=\{\alpha<x<\beta, \gamma<y<\delta\}$ 覆盖一有界闭区域，那么从 $\{\Delta\}$ 里必可选出有限个开矩形覆盖这个区域，也称作有限覆盖定理
-2. 收敛原理：平面点序列 $\left\{M_{n}\left(x_{n}, y_{n}\right)\right\}$ 有极限当且仅当对任意给定的 $\varepsilon>0$，存在正整数 $N$，当 $n, m>N$ 时有 $\left|M_{n} M_{m}\right|<\varepsilon$
+1. 矩形套定理：设 $D_{n}=\left\{a_{n} \leqslant x \leqslant b_{n}, c_{n} \leqslant y \leqslant d_{n}\right\} \ (n=1,2, \cdots)$ 是矩形序列，若其中每一个矩形都含在前一个矩形中且 $b_{n}-a_{n} \rightarrow 0, d_{n}-c_{n} \rightarrow 0$，则存在唯一一点 $M_{0}\left(x_{0}, y_{0}\right)$ 使得 $a_{n} \leqslant x_{0} \leqslant b_{n}, c_{n} \leqslant y_{0} \leqslant d_{n} \ (n=1,2,3, \cdots)$
+2. $\text{Weierstrass}$ 定理：如果序列 $\left\{M_{n}\left(x_{n}, y_{n}\right)\right\}$ 有界，即存在常数 $a, b, c, d$ 使得 $a \leqslant x_{n} \leqslant b, c \leqslant y_{n} \leqslant d, n=1,2,3, \cdots$，那么从其中必能选取收敛的子列，也称作致密性定理
+3. $\text{Cauchy}$ 收敛原理：平面点序列 $\left\{M_{n}\left(x_{n}, y_{n}\right)\right\}$ 有极限当且仅当对任意给定的 $\varepsilon>0$，存在正整数 $N$，当 $n, m>N$ 时有 $\left|M_{n} M_{m}\right|<\varepsilon$
+4. $\text{Borel}$ 定理：若一开矩形集合 $\{\Delta\}=\{\alpha<x<\beta, \gamma<y<\delta\}$ 覆盖一有界闭区域，那么从 $\{\Delta\}$ 里必可选出有限个开矩形覆盖这个区域，也称作有限覆盖定理
 
 ## 2.2 一元微分法
 ### 2.3.1 导数
@@ -108,6 +109,7 @@
     4. $(\sin x)^{\prime}=\cos x, (\cos x)^{\prime}=-\sin x, (\tan x)^{\prime}=\sec ^{2} x, (\cot x)^{\prime}=-\csc ^{2} x$
     5. $(\arcsin x)^{\prime}=\dfrac{1}{\sqrt{1-x^{2}}}, (\arccos x)^{\prime}=-\dfrac{1}{\sqrt{1-x^{2}}}, (\arctan x)^{\prime}=\dfrac{1}{1+x^{2}}, (\operatorname{arccot} x)^{\prime}=-\dfrac{1}{1+x^{2}}$
     6. $(\operatorname{sinh} x)^{\prime}=\operatorname{cosh} x, (\operatorname{cosh} x)^{\prime}=\operatorname{sinh} x ,(\operatorname{tanh} x)^{\prime}=\dfrac{1}{\operatorname{cosh}^{2} x} ,(\operatorname{coth} x)^{\prime}=-\dfrac{1}{\operatorname{sinh}^{2} x}$
+    7. $(\operatorname{sinh}^{-1} x)^{\prime}=\dfrac{1}{\sqrt{1+x^2}}, (\operatorname{cosh}^{-1} x)^{\prime}=\dfrac{1}{\sqrt{x^2-1}},(\operatorname{tanh}^{-1} x)^{\prime}=\dfrac{1}{1-x^2} ,(\operatorname{coth}^{-1} x)^{\prime}=\dfrac{1}{1-x^2}$
 4. 高阶导数：递归定义 $n$ 阶导数 $y^{(n)} = f^{(n)}(x)$
 
     $$
@@ -137,6 +139,20 @@
         $$
 
         这种性质称为一阶微分的形式不变性，而高阶微分通常不具有形式不变性
+
+3. 曲线弧长的微分 $\mathrm{d} s$
+    1. 若曲线方程为 $y=f(x)(a \leqslant x \leqslant b)$ 且 $f^{\prime}(x)$ 在 $[a, b]$ 连续，则 $\mathrm{d} s=\pm \sqrt{1+f^{\prime 2}(x)} \mathrm{d} x$
+    2. 若曲线方程为 $\left\{\begin{array}{l}x=\varphi(t) \\y=\psi(t)\end{array} \ (\alpha \leqslant t \leqslant \beta),\right.$，且有 $\varphi^{\prime}(t), \psi^{\prime}(t)$ 在 $[\alpha, \beta]$ 连续且不全为 $0$，则
+
+        $$
+        \mathrm{d} s=\pm \sqrt{\mathrm{d} x^{2}+\mathrm{d} y^{2}}=\pm \sqrt{\varphi^{\prime 2}(t)+\psi^{\prime 2}(t)} \mathrm{d} t
+        $$
+
+    3. 若曲线极坐标方程为 $\rho=\rho(\theta) \ (\alpha \leqslant \theta \leqslant \beta)$ 且 $\rho^{\prime}(\theta)$ 在 $[\alpha, \beta]$ 连续，此时
+
+        $$
+        \mathrm{d} s =\pm \sqrt{\mathrm{d} x^{2}+\mathrm{d} y^{2}}=\pm \sqrt{\rho^{2}(\theta)+\rho^{\prime 2}(\theta)} \mathrm{d} \theta
+        $$
 
 ### 2.3.3 微分学基本定理
 1. 中值定理

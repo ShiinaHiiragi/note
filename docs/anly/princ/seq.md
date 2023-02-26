@@ -180,12 +180,30 @@
     3. 单侧极限（以函数值趋于有穷的极限为例）
         1. 右极限：设存在 $\eta > 0$ 使得函数 $f(x)$ 在 $\left(x_{0}, x_{0}+\eta\right)$ 有定义，$A$ 是一个定数．若对任意给定的 $\varepsilon>0$，总存在 $\delta>0$，当 $0<x-x_{0}<\delta$ 时有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的右极限，记为 ${\displaystyle \lim _{x \rightarrow x_{0}+0} f(x)=A}$ 或 $f\left(x_{0}+0\right)=A$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}+0\right)$
         2. 左极限：设存在 $\eta > 0$ 使得函数 $f(x)$ 在 $\left(x_{0}-\eta, x_{0}\right)$ 有定义，$A$ 是一个定数．若对任意给定的 $\varepsilon>0$，总存在 $\delta>0$，当 $0<x_{0}-x<\delta$ 时有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的左极限，记为 ${\displaystyle \lim _{x \rightarrow x_{0}-0} f(x)=A}$ 或 $f\left(x_{0}-0\right)=A$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}-0\right)$
+
+        !!! note "函数极限的定义"
+            对于四种函数值的极限情况和六种自变量的极限过程，分别有相应的表述方式
+
+            - $f(x) \rightarrow A: \forall \varepsilon>0, \cdots:|f(x)-A|<\varepsilon$（其中 $A$ 为有限数）
+            - $f(x) \rightarrow \infty: \forall G>0, \cdots:|f(x)|>G$
+            - $f(x) \rightarrow+\infty: \forall G>0, \cdots: f(x)>G$
+            - $f(x) \rightarrow-\infty: \forall G>0, \cdots: f(x)<-G$
+
+            以及
+
+            - $x \rightarrow x_0: \cdots, \exists \delta>0, \forall x\left(0<\left|x-x_0\right|<\delta\right): \cdots$
+            - $x \rightarrow x_0+: \cdots, \exists \delta>0, \forall x\left(0<x-x_0<\delta\right): \cdots$
+            - $x \rightarrow x_0-: \cdots, \exists \delta>0, \forall x\left(-\delta<x-x_0<0\right): \cdots$
+            - $x \rightarrow \infty: \cdots, \exists X>0, \forall x(|x|>X): \cdots$
+            - $x \rightarrow+\infty: \cdots, \exists X>0, \forall x(x>X): \cdots$
+            - $x \rightarrow-\infty: \cdots, \exists X>0, \forall x(x<-X): \cdots$
+
 2. 函数极限的性质
-    1. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$ 且 $A>B$，则存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)>g(x)$
-    2. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$ 且存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x) \leqslant$ $g(x)$，则 $A \leqslant B$
-    3. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 而 $A>B$（或 $A<B$），则存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)>B$（或 $f(x)<B$）
-    4. 唯一性：若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} f(x)=B}$，则 $A=B$
-    5. 夹逼性：若存在 $\delta>0$，使当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x) \leqslant g(x) \leqslant h(x)$ 且 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=\lim _{x \rightarrow x_{0}} h(x)=A}$，则 ${\displaystyle \lim _{x \rightarrow x_{0}} g(x)=A}$
+    1. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$ 且存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x) \leqslant$ $g(x)$，则 $A \leqslant B$
+    2. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 而 $A>B$（或 $A<B$），则存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)>B$（或 $f(x)<B$）
+    3. 唯一性：若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} f(x)=B}$，则 $A=B$
+    4. 夹逼性：若存在 $\delta>0$，使当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x) \leqslant g(x) \leqslant h(x)$ 且 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=\lim _{x \rightarrow x_{0}} h(x)=A}$，则 ${\displaystyle \lim _{x \rightarrow x_{0}} g(x)=A}$
+    5. 局部保序性：若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$ 且 $A>B$，则存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)>g(x)$
     6. 局部有界性：若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$，则存在 $\delta>0$ 使得 $f(x)$ 在区间 $\left(x_{0}-\delta, x_{0}\right) \cup\left(x_{0}, x_{0}+\delta\right)$ 内有界
     7. $\text{Heine}$ 定理：${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 当且仅当对任何以 $x_{0}$ 为极限的数列 $\left\{x_{n}\right\}\left(x_{n} \neq x_{0}\right)$ 都有 $f\left(x_{n}\right) \rightarrow A \ (n \rightarrow \infty)$
     8. 两个重要极限：${\displaystyle \lim _{x \rightarrow 0} \dfrac{\sin x}{x}=1}$ 与 ${\displaystyle \lim _{x \rightarrow \infty}\left(1+\dfrac{1}{x}\right)^{x}=\mathrm{e}}$
@@ -435,7 +453,17 @@
         1. $\text{Riemann}$ 引理：${\displaystyle \lim _{\omega \rightarrow \infty} \hat{f}(\omega)=0}$
         2. $\text{Fourier}$ 变换的性质
             1. $\hat{f}(\omega)$ 是 $\omega \in(-\infty,+\infty)$ 内的连续函数
-            2. $F\left(a_{1} f_{1}+a_{2} f_{2}\right)=a_{1} F\left(f_{1}\right)+a_{2} F\left(f_{2}\right)$，其中 $a_{1}, a_{2}$ 是两个任意给 定的常数
+            2. $F\left(a_{1} f_{1}+a_{2} f_{2}\right)=a_{1} F\left(f_{1}\right)+a_{2} F\left(f_{2}\right)$，其中 $a_{1}, a_{2}$ 是两个任意给定的常数
             3. 对任何函数 $f(x)$，设 $\tau_{s} f(x)=f(x-s)$（即 $f(x)$ 的平移），则 $F\left(\tau_{s} f\right)=\mathrm{e}^{-i s \omega} F(f)$
             4. 设 $f(x) \rightarrow 0 \ (x \rightarrow \pm \infty)$，则 $F\left(\dfrac{\mathrm{d}}{\mathrm{d} x} f\right)=\mathrm{i} \omega F(f)$ 或 $\hat{f}^{\prime}=\mathrm{i} \omega \hat{f}$
             5. $F(-\mathrm{i} x f(x))=\dfrac{\mathrm{d}}{\mathrm{d} \omega} F(f)$
+
+        !!! note "卷积"
+            设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上定义，且积分 ${\displaystyle (f * g)(x)=\int_{-\infty}^{+\infty} f(t) g(x-t) \mathrm{d} t}$ 存在，则称函数 $f * g$ 为 $f$ 和 $g$ 的卷积
+
+            1. 卷积的 $\text{Fourier}$ 变换：设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上绝对可积，则有 $F(f * g)=F(f) \cdot F(g)$
+            2. $\text{Parseval}$ 等式：设函数 $f$ 在 $(-\infty,+\infty)$ 上绝对可积，且 ${\displaystyle \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{~d} x}$ 收敛．记 $f$ 的 $\text{Fourier}$ 变换为 $\hat{f}$，则
+
+                $$
+                \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{~d} x=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty}|\hat{f}(\omega)|^2 \mathrm{~d} \omega
+                $$
