@@ -46,7 +46,17 @@
     2. 若对任何 $\left\{x_{n}\right\}, x_{n} \rightarrow x_{0} \ (n \rightarrow \infty), x_{n} \neq x_{0}$ 都有 $\left\{f\left(x_{n}\right)\right\}$ 收敛，则 $f(x)$ 在 $x_{0}$ 的极限存在
     3. 若 $\left\{x_{n}\right\}$ 是一个无界数列，则存在子列 $x_{n_{k}} \rightarrow \infty(k \rightarrow \infty)$
 
-### 2.1.3 二维连续统
+### 2.1.3 二元连续函数
+1. 二元连续函数的定义
+    1. 函数在单点连续：若 $f(M)$ 在 $M_{0}$ 有定义，${\displaystyle \lim _{M \rightarrow M_{0}} f(M)}$ 存在且 ${\displaystyle \lim _{M \rightarrow M_{0}} f(M)=f\left(M_{0}\right)}$ 时，则称 $f(M)$ 在点 $M_{0}$ 连续
+    2. 函数在区间内连续：设多元函数 $f(M)$ 在某个开区域 $D$ 内有定义，且对 $D$ 内任何一点 $M_{0}$（$M_{0}$ 必定是 $D$ 的一个内点），$f(M)$ 在 $M_{0}$ 连续，则称 $f(M)$ 在 $D$ 内连续
+2. 有界闭区域上连续函数的性质
+    1. 有界性定理：若 $f(x, y)$ 在有界闭区域 $\overline{D}$ 上连续，则它在 $\overline{D}$ 上有界，亦即存在正数 $M$ 使在 $\overline{D}$ 上恒有 $|f(x, y)| \leqslant M$
+    2. 一致连续性定理：若 $f(x, y)$ 在有界闭区域 $\overline{D}$ 上连续，则其在 $\overline{D}$ 上也一致连续．即对任给的 $\varepsilon>0$，存在 $\delta>0$，使 $\overline{D}$ 上任意两点 $M^{\prime}\left(x^{\prime}, y^{\prime}\right), M^{\prime \prime}\left(x^{\prime \prime}, y^{\prime \prime}\right)$，当 $\left|x^{\prime}-x^{\prime \prime}\right|<\delta,\left|y^{\prime}-y^{\prime \prime}\right|<\delta$ 时恒有 $\left|f\left(x^{\prime}, y^{\prime}\right)-f\left(x^{\prime \prime}, y^{\prime \prime}\right)\right|<\varepsilon$
+    3. 最大值最小值定理：若 $f(x, y)$ 在有界闭区域 $\overline{D}$ 上连续，则其在 $\overline{D}$ 上必有最大值和最小值．亦即在 $\overline{D}$ 上存在点 $M_{1}\left(x_{1}, y_{1}\right)$ 和 $M_{2}\left(x_{2}, y_{2}\right)$，使对 $\overline{D}$ 上任意的点 $(x, y)$ 恒有 $f\left(x_{1}, y_{1}\right) \leqslant f(x, y) \leqslant f\left(x_{2}, y_{2}\right)$
+    4. 零点存在定理：设 $f(x, y)$ 在区域 $D$ 内连续且在 $D$ 内两点 $M_{1}\left(a_{1}, b_{1}\right), N_{1}\left(\alpha_{1}, \beta_{1}\right)$ 异号，即 $f\left(a_{1}, b_{1}\right) f\left(\alpha_{1}, \beta_{1}\right)<0$．则用完全位于 $D$ 内的任意的折线 $l$ 联结 $M_{1}$ 和 $N_{1}$ 时，在 $l$ 上必有一点 $\overline{M}(\overline{x}, \overline{y})$ 满足 $f(\overline{x}, \overline{y})=0$
+
+### 2.1.4 二维连续统
 1. 平面点集基本定理
     1. 矩形套定理：设 $D_{n}=\left\{a_{n} \leqslant x \leqslant b_{n}, c_{n} \leqslant y \leqslant d_{n}\right\} \ (n=1,2, \cdots)$ 是矩形序列，若其中每一个矩形都含在前一个矩形中且 $b_{n}-a_{n} \rightarrow 0, d_{n}-c_{n} \rightarrow 0$，则存在唯一一点 $M_{0}\left(x_{0}, y_{0}\right)$ 使得 $a_{n} \leqslant x_{0} \leqslant b_{n}, c_{n} \leqslant y_{0} \leqslant d_{n} \ (n=1,2,3, \cdots)$
     2. $\text{Weierstrass}$ 定理：如果序列 $\left\{M_{n}\left(x_{n}, y_{n}\right)\right\}$ 有界，即存在常数 $a, b, c, d$ 使得 $a \leqslant x_{n} \leqslant b, c \leqslant y_{n} \leqslant d, n=1,2,3, \cdots$，那么从其中必能选取收敛的子列，也称作致密性定理
