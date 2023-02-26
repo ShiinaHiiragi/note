@@ -91,10 +91,8 @@
     2. 定积分的还原：设 $f(x)$ 在 $[a, b]$ 上连续，作代换 $x=\varphi(t)$，其中 $\varphi(t)$ 在闭区间 $[\alpha, \beta]$ 上有连续导数 $\varphi^{\prime}(t)$．当 $\alpha \leqslant t \leqslant \beta$ 时，$a \leqslant \varphi(t) \leqslant b$ 且 $\varphi(\alpha)=a, \varphi(\beta)=b$，则 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=\int_{\alpha}^{\beta} f[\varphi(t)] \varphi^{\prime}(t) \mathrm{d} t}$
     3. 定积分的分部积分公式：若 $u^{\prime}(x), v^{\prime}(x)$ 在 $[a, b]$ 上连续，则 ${\displaystyle \int_{a}^{b} u v^{\prime} \mathrm{d} x=(u v)\bigg|_{a} ^{b}-\int_{a}^{b} u^{\prime} v \mathrm{~d} x}$
 
-## 3.3 重积分
-
-## 3.4 反常积分
-### 3.4.1 无穷限反常积分
+## 3.3 反常积分
+### 3.3.1 无穷限反常积分
 1. 设函数 $f(x)$ 在 $[a, \infty), (-\infty, a]$ 或 $(-\infty,+\infty)$ 有定义，称 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x, \int_{-\infty}^{a} f(x) \mathrm{d} x}$ 或 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$ 为无穷限反常积分
     1. 设函数 $f(x)$ 在 $[a,+\infty)$ 有定义，且对任意的 $A \ (A>a)$ 在区间 $[a, A]$ 上可积．当极限 ${\displaystyle \lim _{A \rightarrow+\infty} \int_{a}^{A} f(x) \mathrm{d} x}$ 存在时，称极限值为 $f(x)$ 在区间 $[a,+\infty)$ 上（或是从 $a$ 到 $+\infty$）的反常积分的积分值，记作 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x=\lim _{A \rightarrow+\infty} \int_{a}^{A} f(x) \mathrm{d} x}$．类似地可定义反常积分 ${\displaystyle \int_{-\infty}^{b} f(x) \mathrm{d} x}$ 的收敛和发散
     2. 对反常积分 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$，当 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x}$ 和 ${\displaystyle \int_{-\infty}^{a} f(x) \mathrm{d} x}$ 都收敛时（$a$ 是一个任意固定的数），则称 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$ 收敛，且有 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x=\int_{-\infty}^{a} f(x) \mathrm{d} x+\int_{a}^{+\infty} f(x) \mathrm{d} x}$
@@ -128,7 +126,7 @@
     4. $\text{Dirichlet}$ 判别法：如果对任何 $A>a$，都有 ${\displaystyle \left|\int_{a}^{A} f(x) \mathrm{d} x\right| \leqslant K}$，$g(x)$ 单调且当 $x\rightarrow+\infty$ 时趋向于零，则积分 ${\displaystyle \int_{a}^{+\infty} f(x) g(x) \mathrm{d} x}$ 收敛
 3. 主值：设 $f(x)$ 在 $(-\infty, +\infty)$ 内无界，如果 ${\displaystyle \lim _{A \rightarrow+\infty} \int_{-A}^{A} f(x) \mathrm{d} x}$ 存在，则称此极限是反常积分 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$ 的 $\text{Cauchy}$ 主值，记为 ${\displaystyle \text {P.V. } \int_{-\infty}^{+\infty} f(x) \mathrm{d} x=\lim _{A \rightarrow+\infty} \int_{-A}^{A} f(x) \mathrm{d} x}$
 
-### 3.4.2 无界函数反常积分
+### 3.3.2 无界函数反常积分
 1. 设函数 $f(x)$ 在 $x=b$ 点的任一左邻域无界（称 $b$ 点为 $f(x)$ 的奇点），但对于任意充分小的正数 $\eta$，$f(x)$ 在 $[a, b-\eta]$ 上可积，则称积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 是无界函数 $f(x)$ 在 $[a, b]$ 上的反常积分
     1. 令 ${\displaystyle \phi(\eta)=\int_{a}^{b-\eta} f(x) \mathrm{d} x}$，如果 ${\displaystyle \lim _{\eta \rightarrow 0} \phi(\eta)}$ 存在，则称此极限是反常积分的积分值，即 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=\lim _{\eta \rightarrow 0} \int_{a}^{b-\eta} f(x) \mathrm{d} x}$，并称无界函数 $f(x)$ 在 $[a, b]$ 上可积，又称反常积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 收敛．如果上述的极限不存在，则称积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 发散．如果 $x=a$ 是 $f(x)$ 的奇点，可以相仿地给出定义
     2. 如果 $f(x)$ 在 $[a, b]$ 内部有一个奇点 $c \in (a, b)$，分别考察 ${\displaystyle \int_{a}^{c} f(x) \mathrm{d} x}$ 和 ${\displaystyle \int_{c}^{b} f(x) \mathrm{d} x}$，若后两者都收敛，则称 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 收敛, 且 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=\int_{a}^{c} f(x) \mathrm{d} x+\int_{c}^{b} f(x) \mathrm{d} x}$，即 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=\lim _{\eta \rightarrow+0} \int_{a}^{c-\eta} f(x) \mathrm{d} x+\lim _{\eta^{\prime} \rightarrow+0} \int_{c+\eta^{\prime}}^{b} f(x) \mathrm{d} x}$
@@ -153,7 +151,9 @@
     3. $\text{Dirichlet}$ 判别法：设 $f(x)$ 在 $x=a$ 有奇点，${\displaystyle \int_{a+\eta}^{b} f(x) \mathrm{d} x}$ 是 $\eta$ 的有界函数，$g(x)$ 单调且当 $x \rightarrow a$ 时趋于零，则积分 ${\displaystyle \int_{a}^{b} f(x) g(x) \mathrm{d} x}$ 收敛
 3. 主值：设 $f(x)$ 在 $[a, b]$ 内无界，$c$ 是唯一奇点且 $a<c<b$．如果 ${\displaystyle \lim _{\eta \rightarrow 0}\left[\int_{a}^{c-\eta} f(x) \mathrm{d} x+\int_{c+\eta}^{b} f(x) \mathrm{d} x\right]}$ 存在，则称此极限是反常积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 的 $\text{Cauchy}$ 主值，记为 ${\displaystyle \text {P.V. } \int_{a}^{b} f(x) \mathrm{d} x=\lim _{\eta \rightarrow 0}\left[\int_{a}^{c-\eta} f(x) \mathrm{d} x+\int_{c+\eta}^{b} f(x) \mathrm{d} x\right]}$
 
-## 3.5 含参变量积分
-### 3.5.1 含参变量的常义积分
+## 3.4 含参变量积分
+### 3.4.1 含参变量的常义积分
 
-### 3.5.2 含参变量的反常积分
+### 3.4.2 含参变量的反常积分
+
+## 3.5 重积分
