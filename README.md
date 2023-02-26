@@ -1,1 +1,1 @@
-### [Logic and Metaphysics](https://shiinahiiragi.github.io/note/)
+### [逻辑与形而上学](https://shiinahiiragi.github.io/note/)
