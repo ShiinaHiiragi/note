@@ -391,8 +391,17 @@ const refList = [
         press: "高等教育出版社",
         locate: "北京",
         year: 2018,
-        page: [1, 526],
-        plot: 246 + 107
+        page: [1, 430]
+    },
+    {
+        author: ["陈纪修", "於崇华", "金路"],
+        title: "数学分析",
+        type: "M",
+        press: "高等教育出版社",
+        locate: "北京",
+        year: 2019,
+        page: [424, 638],
+        plot: 425 - 424
     },
     {
         author: ["陈有祺"],
