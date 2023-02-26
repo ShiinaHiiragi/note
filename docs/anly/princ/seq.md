@@ -222,12 +222,19 @@
 
     则 ${\displaystyle \lim _{x \rightarrow a+0} \dfrac{f(x)}{g(x)}=\lim _{x \rightarrow a+0} \dfrac{f^{\prime}(x)}{g^{\prime}(x)}=A}$．以上定理也适用 $x \rightarrow a-0$，$x \rightarrow a$ 与 $x \rightarrow \infty$ 的情形
 
-### 1.3.2 二元函数极限
-1. 二重极限：设二元函数 $f(M)=f(x, y)$ 在点 $M_{0}\left(x_{0}, y_{0}\right)$ 附近有定义，如果对任意给定的 $\varepsilon>0$，总存在 $\delta>0$，当 $0<r\left(M,M_{0}\right)<\delta$ 时恒有 $|f(M)-A|<\varepsilon$，则称 $A$ 是二元函数 $f(M)$ 在 $M_{0}$ 点的极限，记为 ${\displaystyle \lim _{M \rightarrow M_{0}} f(M)=A}$ 或 ${\displaystyle f(M) \rightarrow A\left(M \rightarrow M_{0}\right)}$ 或 ${\displaystyle \lim _{\substack{x \rightarrow x_{0} \\ y \rightarrow y_{0}}} f(x, y)=A}$
-2. 二次极限：若对任一固定的 $y$，当 $x \rightarrow a$ 时，$f(x, y)$ 的极限存在，即 ${\displaystyle \lim _{x \rightarrow a} f(x, y)=\varphi(y)}$，且有 ${\displaystyle \lim _{y \rightarrow b} \varphi(y)=A}$．则称 $A$ 为 $f(x, y)$ 先对 $x$、后对 $y$ 的二次极限，记为 ${\displaystyle \lim _{y \rightarrow b} \lim _{x \rightarrow a} f(x, y)=A}$．同样可定义先对 $y$、后对 $x$ 的二次极限 ${\displaystyle \lim _{x \rightarrow a} \lim _{y \rightarrow b} f(x, y)}$
+### 1.3.2 多元函数极限
+1. $n$ 重极限：设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$\boldsymbol{x}_{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right) \in D$ 为一定点，$z=f(\boldsymbol{x})$ 是定义在 $D -\left\{\boldsymbol{x}_{0}\right\}$ 上的 $n$ 元函数，$A$ 是一个实数．如果对于任意给定的 $\varepsilon>0$，存在 $\delta>0$ 使得当 $\boldsymbol{x} \in O\left(\boldsymbol{x}_{0}, \delta\right) -\left\{\boldsymbol{x}_{0}\right\}$ 时，有 $|f(x)-A|<\varepsilon$，则称当 $\boldsymbol{x}$ 趋于 $x_{0}$ 时 $f$ 收敛，并称 $A$ 为 $f$ 当 $\boldsymbol{x}$ 趋于 $\boldsymbol{x}_{0}$ 时的 $n$ 重极限，记为 ${\displaystyle \lim _{x \rightarrow x_{0}} f(\boldsymbol{x})=A}$ 或 ${\displaystyle f(\boldsymbol{x}) \rightarrow A\left(\boldsymbol{x} \rightarrow \boldsymbol{x}_{0}\right)}$ 或
+
+    $$
+    \lim _{\substack{x_{1} \rightarrow x_{0}^{0} \\ x_{2} \rightarrow x_{2}^{0} \\ \cdots \\ x_{n} \rightarrow x_{n}^{0}}} f\left(x_{1}, x_{2}, \cdots, x_{n}\right)=A
+    $$
+
+2. 累次极限：若对任一固定的 $y$，当 $x \rightarrow a$ 时，$f(x, y)$ 的极限存在，即 ${\displaystyle \lim _{x \rightarrow a} f(x, y)=\varphi(y)}$，且有 ${\displaystyle \lim _{y \rightarrow b} \varphi(y)=A}$．则称 $A$ 为 $f(x, y)$ 先对 $x$ 后对 $y$ 的二次极限，记为 ${\displaystyle \lim _{y \rightarrow b} \lim _{x \rightarrow a} f(x, y)=A}$．同样可定义先对 $y$ 后对 $x$ 的二次极限 ${\displaystyle \lim _{x \rightarrow a} \lim _{y \rightarrow b} f(x, y)}$
 
     !!! note "二重极限与二次极限的关系"
         若 $f(x, y)$ 在点 $(a, b)$ 的二重极限为 ${\displaystyle \lim _{\substack{x \rightarrow a \\ y \rightarrow b}} f(x, y)=A}$（有限或无限），且对任一靠近 $b$（可以不等于 $b$）的 $y$，当 $x \rightarrow a$ 时 $f(x, y)$ 存在有限极限 ${\displaystyle \varphi(y)=\lim _{x \rightarrow a} f(x, y)}$，则二次极限 ${\displaystyle \lim _{y \rightarrow b} \lim _{x \rightarrow a} f(x, y)=\lim _{y \rightarrow b} \varphi(y)}$ 存在且等于二重极限 $A$
+
+3. 向量值函数的极限：设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$\boldsymbol{x}_{0} \in D$ 为一定点，$\boldsymbol f: D -\left\{\boldsymbol{x}_{0}\right\} \rightarrow \mathbf{R}^{m}$ 是向量值函数，$\boldsymbol{A}$ 是一个 $m$ 维向量．如果对于任意给定的 $\varepsilon>0$，存在 $\delta>0$，使得当 $x \in O\left(\boldsymbol{x}_{0}\right.,\delta) -\left\{\boldsymbol{x}_{0}\right\}$ 时有 $|\boldsymbol f(x)-A|<\varepsilon$ 成立，则称 $A$ 为当 $x$ 趋于 $x_{0}$ 时 $\boldsymbol f$ 的极限，并称当 $\boldsymbol{x}$ 趋于 $x_{0}$ 时 $\boldsymbol f$ 收敛，记为 ${\displaystyle \lim _{x \rightarrow x_{0}} \boldsymbol f(x)=A}$ 或 $\boldsymbol f(x) \rightarrow A \ \left(x \rightarrow x_{0}\right)$
 
 ## 1.4 级数
 ### 1.4.1 数项级数
