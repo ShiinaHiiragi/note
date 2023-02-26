@@ -152,20 +152,6 @@
 
         这种性质称为一阶微分的形式不变性，而高阶微分通常不具有形式不变性
 
-3. 曲线弧长的微分 $\mathrm{d} s$
-    1. 若曲线方程为 $y=f(x)(a \leqslant x \leqslant b)$ 且 $f^{\prime}(x)$ 在 $[a, b]$ 连续，则 $\mathrm{d} s=\pm \sqrt{1+f^{\prime 2}(x)} \mathrm{d} x$
-    2. 若曲线方程为 $\left\{\begin{array}{l}x=\varphi(t) \\y=\psi(t)\end{array} \ (\alpha \leqslant t \leqslant \beta),\right.$，且有 $\varphi^{\prime}(t), \psi^{\prime}(t)$ 在 $[\alpha, \beta]$ 连续且不全为 $0$，则
-
-        $$
-        \mathrm{d} s=\pm \sqrt{\mathrm{d} x^{2}+\mathrm{d} y^{2}}=\pm \sqrt{\varphi^{\prime 2}(t)+\psi^{\prime 2}(t)} \mathrm{d} t
-        $$
-
-    3. 若曲线极坐标方程为 $\rho=\rho(\theta) \ (\alpha \leqslant \theta \leqslant \beta)$ 且 $\rho^{\prime}(\theta)$ 在 $[\alpha, \beta]$ 连续，此时
-
-        $$
-        \mathrm{d} s =\pm \sqrt{\mathrm{d} x^{2}+\mathrm{d} y^{2}}=\pm \sqrt{\rho^{2}(\theta)+\rho^{\prime 2}(\theta)} \mathrm{d} \theta
-        $$
-
 ### 2.3.3 微分学基本定理
 1. 中值定理
     1. $\text{Fermat}$ 定理：若函数 $f(x)$ 有
@@ -193,5 +179,26 @@
 
 ## 2.3 多元微分法
 ### 2.3.1 偏导数
+1. 二元函数的偏导数
+    1. 偏导数：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．如果存在极限 ${\displaystyle \lim _{\Delta x \rightarrow 0} \frac{f\left(x_{0}+\Delta x, y_{0}\right)-f\left(x_{0}, y_{0}\right)}{\Delta x}}$，则称函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 可偏导，并称此极限为 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 的偏导数，记为 $\dfrac{\partial z}{\partial x}\left(x_{0}, y_{0}\right)$ 或 $f_{x}\left(x_{0}, y_{0}\right)$ 或 $\dfrac{\partial f}{\partial x}\left(x_{0}, y_{0}\right)$．若 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 和 $y$ 均可偏导，则简称 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 可偏导
+    2. 偏导函数：如果函数 $f$ 在 $D$ 中每一点都关于 $x$ 可偏导，则 $D$ 中每一点 $(x, y)$ 与其相应的 $f$ 关于 $x$ 的偏导数 $f_{x}(x, y)$ 构成了一种对应关系即二元函数关系，称为 $f$ 关于 $x$ 的偏导函数（也称为偏导数），记为 $\dfrac{\partial z}{\partial x}$ 或 $f_{x}(x, y)$ 或 $\dfrac{\partial f}{\partial x}$
+    3. 方向导数：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点，$\boldsymbol{v}=(\cos \alpha, \sin \alpha)$ 为一个方向．如果极限 ${\displaystyle \lim _{t \rightarrow 0+} \dfrac{f\left(x_{0}+t \cos \alpha, y_{0}+t \sin \alpha\right)-f\left(x_{0}, y_{0}\right)}{t}}$ 存在，则称此极限为函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 的沿方向 $\boldsymbol{v}$ 的方向导数，记为 $\dfrac{\partial f}{\partial \boldsymbol{v}}\left(x_{0}, y_{0}\right)$
+2. $n$ 元函数的偏导数：设 $\boldsymbol{x}^{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 为开集 $D \subset \mathbf{R}^{n}$ 中一定点，定义 $n$ 元函数
+
+    $$
+    u=f\left(x_{1}, x_{2}, \cdots, x_{n}\right),\left(x_{1}, x_{2}, \cdots, x_{n}\right) \in D
+    $$
+
+    在 $x^{0}$ 点关于 $x_{i}(i=1,2, \cdots, n)$ 的偏导数为
+
+    $$
+    \dfrac{\partial f}{\partial x_{i}}\left(\boldsymbol{x}^{0}\right)=\dfrac{\partial f}{\partial x_{i}}\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)=\lim _{\Delta x_{i} \rightarrow 0} \dfrac{f\left(x_{1}^{0}, \cdots, x_{i-1}^{0}, x_{i}^{0}+\Delta x_{i}, x_{i+1}^{0}, \cdots, x_{n}^{0}\right)-f\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)}{\Delta x_{i}}
+    $$
+
+    如果函数 $f$ 在开集（或区域）$D$ 上每一点关于每个 $x_{i}$ 都可偏导，则称 $f$ 在 $D$ 上可偏导
 
 ### 2.3.2 全微分
+
+### 2.3.3 微分学基本定理
+
+### 2.3.4 极值
