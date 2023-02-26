@@ -112,11 +112,11 @@
         1. 集合 $X$ 与 $\varnothing$ 都是开集
         2. 任意两个开集的交是一个开集
         3. 任意一个开集族的并是一个开集
-2. 凝聚点与孤立点：设 $X$ 是一个拓扑空间，$A\subseteq X$
-    1. 凝聚点：若点 $x\in X$ 的每一个邻域 $U$ 中都有 $U\cap(A-|x|)\neq \varnothing$，则称点 $x$ 是集合 $A$ 的一个凝聚点或极限点
+2. 聚点与孤立点：设 $X$ 是一个拓扑空间，$A\subseteq X$
+    1. 聚点：若点 $x\in X$ 的每一个邻域 $U$ 中都有 $U\cap(A-|x|)\neq \varnothing$，则称点 $x$ 是集合 $A$ 的一个聚点或极限点
     2. 孤立点：若 $x\in A$ 且存在 $x$ 的一个邻域 $U$ 使得 $U\cap(A-|x|)= \varnothing$，则称 $x$ 为 $A$ 的一个孤立点
 3. 导集：设 $X$ 是一个拓扑空间，$A\subseteq X$
-    1. 定义：集合 $A$ 的所有凝聚点构成的集合，记作 $d(A)$
+    1. 定义：集合 $A$ 的所有聚点构成的集合，记作 $d(A)$
     2. 设 $X$ 是一个拓扑空间，$A\subseteq X$
         1. $d(\varnothing) = \varnothing$
         2. $A\subseteq B\to d(A)\subseteq d(B)$
@@ -199,7 +199,7 @@
     1. 设 $\{x_i\}_{i\in \mathbf Z_+}$ 是拓扑空间 $X$ 中的一个序列
         1. 若 $\{x_i\}_{i\in \mathbf Z_+}$ 是一个常值序列，则 ${\displaystyle \lim_{i\to \infty} x_i} = x$
         2. 若序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x\in X$，则序列 $\{x_i\}_{i\in \mathbf Z_+}$ 的每一个子序列也收敛于 $x$
-    2. 设 $X$ 是一个拓扑空间，$A\subseteq X, x\in X$．若 $\forall i\in \mathbf Z_+: x_i\in A_\{x\}$，且 ${\displaystyle \lim_{i\to \infty}x_i} = x$，则 $x$ 是集合 $A$ 的一个凝聚点．反之不成立
+    2. 设 $X$ 是一个拓扑空间，$A\subseteq X, x\in X$．若 $\forall i\in \mathbf Z_+: x_i\in A_\{x\}$，且 ${\displaystyle \lim_{i\to \infty}x_i} = x$，则 $x$ 是集合 $A$ 的一个聚点．反之不成立
     3. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则以下命题成立，反之不成立
         1. 若 $f$ 在点 $x_0\in X$ 处连续，则 $X$ 中的一个序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x_0 \to Y$ 中序列 $\{f(x_i)\}_{i\in \mathbf Z_+}$ 收敛于 $f(x_0)$
         2. 若 $f$ 连续，则 $X$ 中的一个序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x\in X \to Y$ 中的序列 $\{f(x_i)\}_{i\in \mathbf Z_+}$ 收敛于 $f(x)$
