@@ -132,6 +132,10 @@
         2. 若 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛，则 $\left\{x_{n} y_{n}\right\}$ 也收敛，且 ${\displaystyle \lim _{n \rightarrow \infty} x_{n} y_{n}=\lim _{n \rightarrow \infty} x_{n} \cdot \lim _{n \rightarrow \infty} y_{n}}$
         3. 若 $\left\{x_{n}\right\}$ 为有界数列，$\left\{y_{n}\right\}$ 为无穷小量，则它们的积 $\left\{x_{n} y_{n}\right\}$ 是无穷小量
         4. 若 $\left\{x_{n}\right\},\left\{y_{n}\right\}$ 均收敛且 ${\displaystyle \lim _{n \rightarrow \infty} y_{n} \neq 0}$，则 $\left\{\dfrac{x_{n}}{y_{n}}\right\}$ 也收敛，且 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{x_{n}}{y_{n}}=\dfrac{{\displaystyle \lim _{n \rightarrow \infty} x_{n}}}{{\displaystyle \lim _{n \rightarrow \infty} y_{n}}}}$
+    3. 收敛准则
+        1. 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$，则 $\left\{x_{n}\right\}$ 的任何子列 $\left\{x_{n_{k}}\right\}$ 都收敛于 $a$
+        2. 若对任何 $\left\{x_{n}\right\}, x_{n} \rightarrow x_{0} \ (n \rightarrow \infty), x_{n} \neq x_{0}$ 都有 $\left\{f\left(x_{n}\right)\right\}$ 收敛，则 $f(x)$ 在 $x_{0}$ 的极限存在
+        3. 若 $\left\{x_{n}\right\}$ 是一个无界数列，则存在子列 $x_{n_{k}} \rightarrow \infty(k \rightarrow \infty)$
 2. 无穷小量：当 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=0}$ 时，称数列 $x_n$ 为无穷小量．设 $y, z$ 是两个无穷小量
     1. 若 $\dfrac{y}{z} \rightarrow 0$ 或 $\dfrac{z}{y} \rightarrow \infty$，则称 $y$ 关于 $z$ 是高阶无穷小量或 $z$ 关于 $y$ 是低阶无穷小量，记做 $y=o(z)$
     2. 若 $\dfrac{y}{z} \rightarrow a \neq 0$，则称 $y$ 和 $z$ 是同阶无穷小量．一般地，若存在常数 $A>0, B>0$，变量 $y$ 和 $z$ 自某值以后有 ${\displaystyle A \leqslant\left|\dfrac{y}{z}\right| \leqslant B}$，则称 $y$ 和 $z$ 是同阶无穷小量，记为 $y=O(z)$ 或 $z=O(y)$

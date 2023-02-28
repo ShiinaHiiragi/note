@@ -64,13 +64,7 @@
     4. $\text{Cauchy}$ 收敛原理：数列 $\left\{x_{n}\right\}$ 有极限当且仅当对任意给定的 $\varepsilon>0$，存在 $N \in \mathbf N$，当 $m, n>N$ 时有 $\left|x_{n}-x_{m}\right|<\varepsilon$
     5. $\text{Borel}$ 定理：若由无限多个开区间所组成的区间集 $E$ 能够覆盖一个闭区间 $[a, b]$，则存在 $E$ 中的有限个区间覆盖 $[a, b]$，也称作有限覆盖定理
 
-2. 收敛准则
-    1. 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$，则 $\left\{x_{n}\right\}$ 的任何子列 $\left\{x_{n_{k}}\right\}$ 都收敛于 $a$．
-    2. 若对任何 $\left\{x_{n}\right\}, x_{n} \rightarrow x_{0} \ (n \rightarrow \infty), x_{n} \neq x_{0}$ 都有 $\left\{f\left(x_{n}\right)\right\}$ 收敛，则 $f(x)$ 在 $x_{0}$ 的极限存在
-    3. 若 $\left\{x_{n}\right\}$ 是一个无界数列，则存在子列 $x_{n_{k}} \rightarrow \infty(k \rightarrow \infty)$
-
-### 2.1.4 Euclid 空间
-- $\text{Euclid}$ 空间基本定理：以下四个定理相互等价
+2. $\text{Euclid}$ 空间基本定理：以下四个定理相互等价
     1. $\text{Cantor}$ 闭区域套定理：设 $\left\{S_{k}\right\}$ 是 $\mathbf{R}^{n}$ 上的非空闭集序列，满足 $S_{1} \supset S_{2} \supset \cdots \supset S_{k} \supset S_{k+1} \supset \cdots$ 及 ${\displaystyle \lim _{k \rightarrow \infty} \operatorname{diam} S_{k}=0}$，则存在惟一点属于 ${\displaystyle \bigcap_{k=1}^{\infty} S_{k}}$．这里 $\operatorname{diam} S=\sup \{|x-y| \mid x, y \in S\}$
     2. $\text{Weierstrass}$ 定理：$\mathbf{R}^{n}$ 上的有界点列 $\left\{\boldsymbol{x}_{k}\right\}$ 中必有收敛子列
     3. $\text{Heine}-\text{Borel}$ 定理：$\mathbf{R}^{n}$ 上的点集 $S$ 是紧集的充分必要条件为其是有界闭集
