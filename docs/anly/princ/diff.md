@@ -420,8 +420,74 @@
         全微分的形式不变性在高阶微分时不成立
 
 ### 2.3.3 极值
-1. 无条件极值
-2. 条件极值
+1. 多元函数的极值：设 $D \in \mathbf{R}^{n}$ 为开区域，$f(\boldsymbol{x})$ 为定义在 $D$ 上的函数，$\boldsymbol{x}_{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right) \in D$．若存在 $\boldsymbol{x}_{0}$ 的邻域 $O\left(x_{0}, r\right)$ 使得 $f\left(\boldsymbol{x}_{0}\right) \geqslant f(\boldsymbol{x})$ 或 $f\left(\boldsymbol{x}_{0}\right) \leqslant f(\boldsymbol{x}) \ (\boldsymbol{x} \in O\left(\boldsymbol{x}_{0}, r\right))$，则称 $x_{0}$ 为 $f$ 的极大值点或极小值点；相应地，称 $f\left(x_{0}\right)$ 为相应的极大值或极小值
+    1. 极大值点与极小值点统称为极值点；极大值与极小值统称为极值
+    2. 极值点的必要条件：设 $x_{0}$ 为函数 $f$ 的极值点，且 $f$ 在 $\boldsymbol{x}_{0}$ 点可偏导，则 $f$ 在 $\boldsymbol{x}_{0}$ 点的各个一阶偏导数都为零，即
+
+        $$
+        f_{x_{1}}\left(\boldsymbol{x}_{0}\right)=f_{x_{2}}\left(\boldsymbol{x}_{0}\right)=\cdots=f_{x_{n}}\left(\boldsymbol{x}_{0}\right)=0
+        $$
+
+        使函数 $f$ 的各个一阶偏导数同时为零的点称为 $f$ 的驻点，驻点不一定是极值点
+
+2. 无条件极值：设 $n$ 元函数 $f(\boldsymbol{x})$ 在 $\boldsymbol{x}_{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 附近具有二阶连续偏导数，且 $\boldsymbol{x}_{0}$ 为 $f(\boldsymbol{x})$ 的驻点．那么当二次型 $g(\zeta)=\sum_{i, j=1}^{n} f_{x_{i} x_{j}}\left(x_{0}\right) \zeta_{i} \zeta_{j}$ 正定时，$f\left(\boldsymbol{x}_{0}\right)$ 为极小值；当 $g(\zeta)$ 负定时，$f\left(\boldsymbol{x}_{0}\right)$ 为极大值；当 $g(\zeta)$ 不定时，$f\left(x_{0}\right)$ 不是极值
+    1. 记 $a_{i j}=f_{x_{i} x_{j}}\left(\boldsymbol{x}_{0}\right)$，并记
+
+        $$
+        \boldsymbol{A}_{k}=\left[\begin{array}{cccc}
+        a_{11} & a_{12} & \cdots & a_{1 n} \\
+        a_{21} & a_{22} & \cdots & a_{2 n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        a_{k 1} & a_{k 2} & \cdots & a_{k k}
+        \end{array}\right]
+        $$
+
+        称为 $f$ 的 $k$ 阶 $\text{Hessian}$ 矩阵
+
+    2. 若 $\operatorname{det} \boldsymbol{A}_{k}>0$，则二次型 $g(\xi)$ 是正定的，此时 $f\left(\boldsymbol{x}_{0}\right)$ 为极小值；若 $(-1)^{k} \operatorname{det} \boldsymbol{A}_{k}>0$，则二次型 $g(\xi)$ 是负定的，此时 $f\left(\boldsymbol{x}_{0}\right)$ 为极大值（$k=1,2, \cdots, n$）
+
+3. 条件极值：求目标函数 $f(x_1, x_2, \cdots, x_n)$ 在约束条件
+
+    $$
+    \left\{\begin{aligned}
+    & g_1(x_1, x_2, \cdots, x_n) = 0 \\
+    & g_2(x_1, x_2, \cdots, x_n) = 0 \\
+    & \cdots \\
+    & g_m(x_1, x_2, \cdots, x_n) = 0
+    \end{aligned}\right.
+    $$
+
+    下的极值．构造 $\text{Lagrange}$ 函数
+
+    $$
+    L\left(x_{1}, x_{2}, \cdots, x_{n}, \lambda_{1}, \lambda_{2}, \cdots, \lambda_{m}\right)=f\left(x_{1}, x_{2}, \cdots, x_{n}\right)-\sum_{i=1}^{m} \lambda_{i} g_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right)
+    $$
+
+    则条件极值点在方程组
+
+    $$
+    \left\{\begin{aligned}
+    & \dfrac{\partial L}{\partial x_k} = \dfrac{\partial f}{\partial x_k} - \sum_{i=1}^m \lambda_i \dfrac{\partial g_i}{\partial x_k} = 0 \\
+    & g_l = 0
+    \end{aligned}\right. \quad (k = 1, 2, \cdots, n; l = 1, 2, \cdots, m)
+    $$
+
+    1. 若点 $\boldsymbol{x}_{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 为函数 $f(\boldsymbol{x})$ 满足约束条件的条件极值点，则必存在 $m$ 个常数 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{m}$，使得在 $x_{0}$ 点有
+
+        $$
+        \operatorname{\mathbf{grad}} f=\lambda_{1} \operatorname{\mathbf{grad}} g_{1}+\lambda_{2} \operatorname{\mathbf{grad}} g_{2}+\cdots+\lambda_{m} \operatorname{\mathbf{grad}} g_{m}
+        $$
+
+    2. 设点 $x_{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 及 $m$ 个常数 $\lambda_{1}, \lambda_{2}, \cdots, \lambda_{m}$ 满足方程组
+
+        $$
+        \left\{\begin{aligned}
+        & \dfrac{\partial L}{\partial x_k} = \dfrac{\partial f}{\partial x_k} - \sum_{i=1}^m \lambda_i \dfrac{\partial g_i}{\partial x_k} = 0 \\
+        & g_l = 0
+        \end{aligned}\right. \quad (k = 1, 2, \cdots, n; l = 1, 2, \cdots, m)
+        $$
+
+        则当方阵 $\left[\dfrac{\partial^{2} L}{\partial x_{k} \partial x_{1}}\left(x_{0}, \lambda_{1}, \lambda_{2}, \cdots, \lambda_{m}\right)\right]_{n \times n}$ 为正定（负定）矩阵时，$x_{0}$ 为满足约束条件的条件极小（大）值点，因此 $f\left(x_{0}\right)$ 为满足约束条件的条件极小（大）值
 
 ## 2.4 微分学基本定理
 1. 中值定理
