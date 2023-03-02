@@ -92,6 +92,8 @@
     2. 定积分的还原：设 $f(x)$ 在 $[a, b]$ 上连续，作代换 $x=\varphi(t)$，其中 $\varphi(t)$ 在闭区间 $[\alpha, \beta]$ 上有连续导数 $\varphi^{\prime}(t)$．当 $\alpha \leqslant t \leqslant \beta$ 时，$a \leqslant \varphi(t) \leqslant b$ 且 $\varphi(\alpha)=a, \varphi(\beta)=b$，则 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x=\int_{\alpha}^{\beta} f[\varphi(t)] \varphi^{\prime}(t) \mathrm{d} t}$
     3. 定积分的分部积分公式：若 $u^{\prime}(x), v^{\prime}(x)$ 在 $[a, b]$ 上连续，则 ${\displaystyle \int_{a}^{b} u v^{\prime} \mathrm{d} x=(u v)\bigg|_{a} ^{b}-\int_{a}^{b} u^{\prime} v \mathrm{~d} x}$
 
+### 3.1.3 重积分
+
 ## 3.2 反常积分
 ### 3.2.1 无穷限反常积分
 1. 设函数 $f(x)$ 在 $[a, \infty), (-\infty, a]$ 或 $(-\infty,+\infty)$ 有定义，称 ${\displaystyle \int_{a}^{+\infty} f(x) \mathrm{d} x, \int_{-\infty}^{a} f(x) \mathrm{d} x}$ 或 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{d} x}$ 为无穷限反常积分
@@ -152,6 +154,8 @@
     3. $\text{Dirichlet}$ 判别法：设 $f(x)$ 在 $x=a$ 有奇点，${\displaystyle \int_{a+\eta}^{b} f(x) \mathrm{d} x}$ 是 $\eta$ 的有界函数，$g(x)$ 单调且当 $x \rightarrow a$ 时趋于零，则积分 ${\displaystyle \int_{a}^{b} f(x) g(x) \mathrm{d} x}$ 收敛
 3. 主值：设 $f(x)$ 在 $[a, b]$ 内无界，$c$ 是唯一奇点且 $a<c<b$．如果 ${\displaystyle \lim _{\eta \rightarrow 0}\left[\int_{a}^{c-\eta} f(x) \mathrm{d} x+\int_{c+\eta}^{b} f(x) \mathrm{d} x\right]}$ 存在，则称此极限是反常积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 的 $\text{Cauchy}$ 主值，记为 ${\displaystyle \text {P.V. } \int_{a}^{b} f(x) \mathrm{d} x=\lim _{\eta \rightarrow 0}\left[\int_{a}^{c-\eta} f(x) \mathrm{d} x+\int_{c+\eta}^{b} f(x) \mathrm{d} x\right]}$
 
+### 3.2.3 反常重积分
+
 ## 3.3 含参变量积分
 ### 3.3.1 含参变量的常义积分
 - 设函数 $f(x, y)$ 在矩形 $[a, b] \times [c, d]$ 上连续，称积分 ${\displaystyle \int_{a}^{b} f(x, y) \mathrm{d} x}$ 为含参变量的积分，参变量是 $y$
@@ -201,5 +205,3 @@
         2. 递推公式：$\Gamma(s+1)=s \Gamma(s) \ (s>0)$．设 $s=n+1$ 为正整数，则 ${\displaystyle \Gamma(n+1)=n ! \int_{0}^{+\infty} \mathrm{e}^{-x} \mathrm{~d} x=n !}$
 
     两类 $\text{Euler}$ 积分的关系：$\mathrm{B}(p, q)=\dfrac{\Gamma(p) \Gamma(q)}{\Gamma(p+q)} \ (p>0, q>0)$
-
-## 3.4 重积分

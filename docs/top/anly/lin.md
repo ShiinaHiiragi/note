@@ -317,11 +317,13 @@
 
         为向量值函数，此时有 $\boldsymbol{y}=\boldsymbol f(\boldsymbol{x})=\left(f_{1}(\boldsymbol{x}), f_{2}(\boldsymbol{x}), \cdots, f_{m}(\boldsymbol{x})\right)$，其中 $f_{1}. f_{2}, \cdots, f_{m}$ 均为 $n$ 元函数
 
-2. 向量场论
-    1. 梯度：设 $D \subset \mathbf{R}^{3}$ 为开集，$\left(x_{0}, y_{0}, z_{0}\right) \in D$ 为一定点．如果函数 $w=f(x, y, z)$ 在 $\left(x_{0}, y_{0}, z_{0}\right)$ 点可偏导，则称向量 $\left(f_{x}\left(x_{0}, y_{0}, z_{0}\right), f_{y}\left(x_{0}, y_{0}, z_{0}\right), f_{z}\left(x_{0}, y_{0}, z_{0}\right)\right)$ 为 $f$ 在点 $\left(x_{0}, y_{0}, z_{0}\right)$ 的梯度, 记为 $\operatorname{\mathbf{grad}} f\left(x_{0}, y_{0}, z_{0}\right)$
-        1. 若 $f \equiv c$（$c$ 为常数），则 $\operatorname{\mathbf{grad}} f=\mathbf{0}$
-        2. 若 $\alpha, \beta$ 为常数，则 $\operatorname{\mathbf{grad}}(\alpha f+\beta g)=\alpha \operatorname{\mathbf{grad}} f+\beta \operatorname{\mathbf{grad}} g$
-        3. $\operatorname{\mathbf{grad}}(f \cdot g)=f \cdot \operatorname{\mathbf{grad}} g+g \cdot \operatorname{\mathbf{grad}} f$
-        4. $\operatorname{\mathbf{grad}}\left(\dfrac{f}{g}\right)=\dfrac{g \cdot \operatorname{\mathbf{grad}} f-f \cdot \operatorname{\mathbf{grad}} g}{g^{2}} \ (g \neq 0)$
-    2. 散度
-    3. 旋度
+2. 外微分
+
+### 1.2.3 向量场论
+1. 梯度：设 $D \subset \mathbf{R}^{3}$ 为开集，$\left(x_{0}, y_{0}, z_{0}\right) \in D$ 为一定点．如果函数 $w=f(x, y, z)$ 在 $\left(x_{0}, y_{0}, z_{0}\right)$ 点可偏导，则称向量 $\left(f_{x}\left(x_{0}, y_{0}, z_{0}\right), f_{y}\left(x_{0}, y_{0}, z_{0}\right), f_{z}\left(x_{0}, y_{0}, z_{0}\right)\right)$ 为 $f$ 在点 $\left(x_{0}, y_{0}, z_{0}\right)$ 的梯度, 记为 $\operatorname{\mathbf{grad}} f\left(x_{0}, y_{0}, z_{0}\right)$
+    1. 若 $f \equiv c$（$c$ 为常数），则 $\operatorname{\mathbf{grad}} f=\mathbf{0}$
+    2. 若 $\alpha, \beta$ 为常数，则 $\operatorname{\mathbf{grad}}(\alpha f+\beta g)=\alpha \operatorname{\mathbf{grad}} f+\beta \operatorname{\mathbf{grad}} g$
+    3. $\operatorname{\mathbf{grad}}(f \cdot g)=f \cdot \operatorname{\mathbf{grad}} g+g \cdot \operatorname{\mathbf{grad}} f$
+    4. $\operatorname{\mathbf{grad}}\left(\dfrac{f}{g}\right)=\dfrac{g \cdot \operatorname{\mathbf{grad}} f-f \cdot \operatorname{\mathbf{grad}} g}{g^{2}} \ (g \neq 0)$
+2. 散度
+3. 旋度
