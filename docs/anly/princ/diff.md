@@ -235,6 +235,152 @@
 
         其中 $\boldsymbol f^{\prime}(\boldsymbol u), \boldsymbol g^{\prime}(\boldsymbol x)$ 和 $(\boldsymbol f \circ \boldsymbol g)^{\prime}(\boldsymbol x)$ 是相应的导数，即 $\text{Jacobi}$ 矩阵
 
+4. 隐函数存在定理
+    1. 一元隐函数存在定理：若二元函数 $F(x, y)$ 满足条件
+        1. $F\left(x_{0}, y_{0}\right)=0$
+        2. 在闭矩形 $D=\left\{(x, y)|| x-x_{0}|\leqslant a| y-,y_{0} \mid \leqslant b\right\}$ 上，$F(x, y)$ 连续且具有连续偏导数
+        3. $F_{y}\left(x_{0}, y_{0}\right) \neq 0$
+
+        那么
+
+        1. 在点 $\left(x_{0}, y_{0}\right)$ 附近可以从函数方程 $F(x, y)=0$ 惟一确定隐函数 $y=f(x) \ (x \in O\left(x_{0}, \rho\right))$，它满足 $F(x, f(x))=0$ 以及 $y_{0}=f\left(x_{0}\right)$
+        2. 隐函数 $y=f(x)$ 在 $x \in O\left(x_{0}, \rho\right)$ 上连续
+        3. 急函数 $y=f(x)$ 在 $x \in O\left(x_{0}, \rho\right)$ 上具有连续的导数，且 $\dfrac{\mathrm{d} y}{\mathrm{~d} x}=-\dfrac{F_{x}(x, y)}{F_{y}(x, y)}$
+
+    2. 多元隐函数存在定理：若 $n+1$ 元函数 $F\left(x_{1}, x_{2}, \cdots, x_{n}, y\right)$ 满足条件
+        1. $F\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}, y^{0}\right)=0$
+        2. 在闭长方体 $D=\left\{(x, y)|| y-y^{0}|\leqslant b,| x_{i}-x_{i}^{0} \mid \leqslant a_{i}, i=1,2, \cdots, n\right\}$ 上，函数 $F$ 连续且具有连续偏导数 $F_{y}, F_{x_{i}}$
+        3. $F_{y}\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}, y^{0}\right) \neq 0$
+
+        那么
+
+        1. 在点 $\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}, y^{0}\right)$ 附近可以从函数方程 $F\left(x_{1}, x_{2}, \cdots, x_{n}, y\right)=0$ 惟一确定隐函数
+
+            $$
+            y=f\left(x_{1}, x_{2}, \cdots, x_{n}\right), \left(x_{1}, x_{2}, \cdots, x_{n}\right) \in O\left(\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right), \rho\right)
+            $$
+
+            满足 $F\left(x_{1}, x_{2}, \cdots, x_{n}, f\left(x_{1}, x_{2}, \cdots, x_{n}\right)\right)=0$ 以及 $y^{0}=f\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$
+
+        2. 隐函数 $y=f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 在 $O\left(\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right), \rho\right)$ 上连续
+        3. 隐函数 $y=f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 在 $O\left(\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right), \rho\right)$ 上具有连续的偏导数且
+
+            $$
+            \dfrac{\partial y}{\partial x_{i}}=-\dfrac{F_{x_{i}}\left(x_{1}, x_{2}, \cdots, x_{n}, y\right)}{F_{,}\left(x_{1}, x_{2}, \cdots, x_{n}, y\right)}, i=1,2, \cdots, n
+            $$
+
+    3. 多元向量值隐函数存在定理：设 $m$ 个 $n+m$ 元函数 $F_{i}\left(x_{1}, x_{2}, \cdots, x_{n}, y_{1}, y_{2}, \cdots, y_{m}\right)(i=1,2, \cdots, m)$ 满足以下条件
+        1. $F_{i}\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}, y_{1}^{0}, y_{2}^{0}, \cdots, y_{m}^{0}\right)=0 \ (i=1,2, \cdots, m)$
+        2. 在闭长方体
+
+            $$
+            D=\left\{\left(x_{1}, x_{2}, \cdots, x_{n}, y_{1}, y_{2}, \cdots, y_{m}\right) \mid \left|x_{i}-x_{i}^{0}\right| \leqslant a_{i},\left|y_{j}-y_{j}^{0}\right| \leqslant b_{j}, i=1,2, \cdots, n ; j=1, 2, \cdots, m\right\}
+            $$
+
+            上函数 $F_{i} \ (i=1,2, \cdots, m)$ 连续且具有连续偏导数
+
+        3. 在 $\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}, y_{1}^{0}, y_{2}^{0}, \cdots, y_{m}^{0}\right)$ 点处，$\text{Jacobi}$ 行列式 $\dfrac{\partial\left(F_{1}, F_{2}, \cdots, F_{m}\right)}{\partial\left(y_{1}, y_{2}, \cdots, y_{m}\right)} \neq 0$
+
+        那么
+
+        1. 在点 $\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}, y_{1}^{0}, y_{2}^{0}, \cdots, y_{m}^{0}\right)$ 的某个邻域上，可以从函数方程组
+
+            $$
+            \left\{\begin{array}{l}
+            F_{1}\left(x_{1}, x_{2}, \cdots, x_{n}, y_{1}, y_{2}, \cdots, y_{m}\right)=0 \\
+            F_{2}\left(x_{1}, x_{2}, \cdots, x_{n}, y_{1}, y_{2}, \cdots, y_{m}\right)=0 \\
+            \cdots \\
+            F_{m}\left(x_{1}, x_{2}, \cdots, x_{n}, y_{1}, y_{2}, \cdots, y_{m}\right)=0
+            \end{array}\right.
+            $$
+
+            惟一确定向量值隐函数
+
+            $$
+            \left[\begin{array}{c}
+            y_{1} \\
+            y_{2} \\
+            \vdots \\
+            y_{m}
+            \end{array}\right]=\left[\begin{array}{c}
+            f_{1}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \\
+            f_{2}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \\
+            \vdots \\
+            f_{m}\left(x_{1}, x_{2}, \cdots, x_{n}\right)
+            \end{array}\right], \left(x_{1}, x_{2}, \cdots, x_{n}\right) \in O\left(\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right), \rho\right)
+            $$
+
+            满足方程 $F_{i}\left(x_{1}, x_{2}, \cdots, x_{n}, f_{1}\left(x_{1}, x_{2}, \cdots, x_{n}\right), f_{2}\left(x_{1}, x_{2}, \cdots, x_{n}\right), \cdots, f_{m}\left(x_{1}, x_{2}, \cdots, x_{n}\right)\right)=0$ 以及 $y_{i}^{0}=f_{i}\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right) \ (i=1,2, \cdots, m)$
+
+        2. 这个向量值隐函数在 $O\left(\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right), \rho\right)$ 上连续
+        3. 这个向量值隐函数在 $O\left(\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right), \rho\right)$ 上具有连续的导数，且
+
+            $$
+            \left[\begin{array}{cccc}
+            \dfrac{\partial y_{1}}{\partial x_{1}} & \dfrac{\partial y_{1}}{\partial x_{2}} & \cdots & \dfrac{\partial y_{1}}{\partial x_{n}} \\
+            \dfrac{\partial y_{2}}{\partial x_{1}} & \dfrac{\partial y_{2}}{\partial x_{2}} & \cdots & \dfrac{\partial y_{2}}{\partial x_{n}} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \dfrac{\partial y_{m}}{\partial x_{1}} & \dfrac{\partial y_{m}}{\partial x_{2}} & \cdots & \dfrac{\partial y_{m}}{\partial x_{n}}
+            \end{array}\right]=-\left[\begin{array}{cccc}
+            \dfrac{\partial F_{1}}{\partial y_{1}} & \dfrac{\partial F_{1}}{\partial y_{2}} & \cdots & \dfrac{\partial F_{1}}{\partial y_{m}} \\
+            \dfrac{\partial F_{2}}{\partial y_{1}} & \dfrac{\partial F_{2}}{\partial y_{2}} & \cdots & \dfrac{\partial F_{2}}{\partial y_{m}} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \dfrac{\partial F_{m}}{\partial y_{1}} & \dfrac{\partial F_{m}}{\partial y_{2}} & \cdots & \dfrac{\partial F_{m}}{\partial y_{m}}
+            \end{array}\right]^{-1}\left[\begin{array}{cccc}
+            \dfrac{\partial F_{1}}{\partial x_{1}} & \dfrac{\partial F_{1}}{\partial x_{2}} & \cdots & \dfrac{\partial F_{1}}{\partial x_{n}} \\
+            \dfrac{\partial F_{2}}{\partial x_{1}} & \dfrac{\partial F_{2}}{\partial x_{2}} & \cdots & \dfrac{\partial F_{2}}{\partial x_{n}} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \dfrac{\partial F_{m}}{\partial x_{1}} & \dfrac{\partial F_{m}}{\partial x_{2}} & \cdots & \dfrac{\partial F_{m}}{\partial x_{n}}
+            \end{array}\right]
+            $$
+
+            在具体计算向量值隐函数的导数时，通常分别对 $F_{i}\left(x_{1}, x_{2}, \cdots, x_{n}, y_{1}, y_{2}, \cdots, y_{m}\right)=0 \ (i=1,2, \cdots, m)$ 求偏导，得到 ${\displaystyle \dfrac{\partial F_{i}}{\partial x_{j}}+\sum_{k=1}^{m} \dfrac{\partial F_{i}}{\partial y_{k}} \dfrac{\partial y_{k}}{\partial x_{j}}=0 \ (i=1,2, \cdots, m)}$，解方程得到
+
+            $$
+            \dfrac{\partial y_{k}}{\partial x_{j}}=-\dfrac{\dfrac{\partial\left(F_{1}, \cdots, F_{k-1}, F_{k}, F_{k+1}, \cdots, F_{m}\right)}{\partial\left(y_{1}, \cdots, y_{k-1}, x_{j}, y_{k+1}, \cdots, y_{m}\right)}}{\dfrac{\partial\left(F_{1}, F_{2}, \cdots, F_{m}\right)}{\partial\left(y_{1}, y_{2}, \cdots, y_{m}\right)}}, k=1,2, \cdots, m ; j=1,2, \cdots, n
+            $$
+
+        !!! note "$\text{Jacobi}$ 行列式"
+            对于一般的 $m$ 个 $n+m$ 元函数组成的方程组
+
+            $$
+            \left\{\begin{array}{l}
+            F_{1}\left(x_{1}, x_{2}, \cdots, x_{n}, y_{1}, y_{2}, \cdots, y_{m}\right)=0 \\
+            F_{2}\left(x_{1}, x_{2}, \cdots, x_{n}, y_{1}, y_{2}, \cdots, y_{m}\right)=0 \\
+            \cdots  \\
+            F_{m}\left(x_{1}, x_{2}, \cdots, x_{n}, y_{1}, y_{2}, \cdots, y_{m}\right)=0
+            \end{array}\right.
+            $$
+
+            称
+
+            $$
+            \dfrac{\partial\left(F_{1}, F_{2}, \cdots, F_{m}\right)}{\partial\left(y_{1}, y_{2}, \cdots, y_{m}\right)}=\left|\begin{array}{cccc}
+            \dfrac{\partial F_{1}}{\partial y_{1}} & \dfrac{\partial F_{1}}{\partial y_{2}} & \cdots & \dfrac{\partial F_{1}}{\partial y_{m}} \\
+            \dfrac{\partial F_{2}}{\partial y_{1}} & \dfrac{\partial F_{2}}{\partial y_{2}} & \cdots & \dfrac{\partial F_{2}}{\partial y_{m}} \\
+            \vdots & \vdots & & \vdots \\
+            \dfrac{\partial F_{m}}{\partial y_{1}} & \dfrac{\partial F_{m}}{\partial y_{2}} & \cdots & \dfrac{\partial F_{m}}{\partial y_{m}}
+            \end{array}\right|
+            $$
+
+            为函数 $F_{1}, F_{2}, \cdots, F_{m}$ 关于变量 $y_{1}, y_{2}, \cdots, y_{m}$ 的 $\text{Jacobi}$ 行列式
+
+5. 逆映射定理：设 $\boldsymbol{P}_{0}=\left(u_{0}, v_{0}\right) \in D, x_{0}=x\left(u_{0}, v_{0}\right), y_{0}=y\left(u_{0}, v_{0}\right), \boldsymbol{P}_{0}^{\prime}=\left(x_{0}, y_{0}\right)$，且 $\boldsymbol{f}$ 在 $D$ 上具有连续导数．如果在 $\boldsymbol{P}_{0}$ 点处 $\boldsymbol{f}$ 的 $\text{Jacobi}$ 行列式 $\dfrac{\partial(x, y)}{\partial(u, v)} \neq 0$，那么存在 $\boldsymbol{P}_{0}^{\prime}$ 的一个邻域 $O\left(\boldsymbol{P}_{0}^{\prime}, \rho\right)$，在这个邻域上存在 $\boldsymbol f$ 的具有连续导数的逆映射 $\boldsymbol g$
+
+    $$
+    \left\{\begin{array}{l}
+    u=u(x, y) \\
+    v=v(x, y)
+    \end{array}
+    \quad (x, y) \in O\left(\boldsymbol{P}_{0}^{\prime}, \rho\right)
+    \right.
+    $$
+
+    满足
+
+    1. $u_{0}=u\left(x_{0}, y_{0}\right), v_{0}=v\left(x_{0}, y_{0}\right)$
+    2. $\dfrac{\partial u}{\partial x}=\dfrac{\partial y}{\partial v} / \dfrac{\partial(x, y)}{\partial(u, v)}, \dfrac{\partial u}{\partial y}=-\dfrac{\partial x}{\partial v} / \dfrac{\partial(x, y)}{\partial(u, v)}, \dfrac{\partial v}{\partial x}=-\dfrac{\partial y}{\partial u} / \dfrac{\partial(x, y)}{\partial(u, v)}, \dfrac{\partial v}{\partial y}=\dfrac{\partial x}{\partial u} / \dfrac{\partial(x, y)}{\partial(u, v)}$
+
 ### 2.3.2 全微分
 1. 全微分：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．若存在只与点 $\left(x_{0}, y_{0}\right)$ 有关而与 $\Delta x, \Delta y$ 无关的常数 $A$ 和 $B$，使得 $\Delta z=A \Delta x+B \Delta y+o\left(\sqrt{\Delta x^{2}+\Delta y^{2}}\right)$，这里 $o\left(\sqrt{\Delta x^{2}+\Delta y^{2}}\right)$ 表示在 $\sqrt{\Delta x^{2}+\Delta y^{2}} \rightarrow 0$ 时比 $\sqrt{\Delta x^{2}+\Delta y^{2}}$ 高阶的无穷小量．则称函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处是可微的，并称其线性主要部分 $A \Delta x+B \Delta y$ 为 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处的全微分，记为 $\mathrm{d} z\left(x_{0}, y_{0}\right)$ 或 $\mathrm{d} f\left(x_{0}, y_{0}\right)$
     1. 全微分公式：$\mathrm{d} f\left(x_{0}, y_{0}\right)=\dfrac{\partial f}{\partial x}\left(x_{0}, y_{0}\right) \mathrm{d} x+\dfrac{\partial f}{\partial y}\left(x_{0}, y_{0}\right) \mathrm{d} y$
@@ -274,9 +420,10 @@
         全微分的形式不变性在高阶微分时不成立
 
 ### 2.3.3 极值
+1. 无条件极值
+2. 条件极值
 
 ## 2.4 微分学基本定理
-
 1. 中值定理
     1. $\text{Fermat}$ 定理：若函数 $f(x)$ 有
         1. 在 $x_{0}$ 点的某一邻域 $B\left(x_{0}, \delta\right)$ 内有定义且在此邻域内恒有 $f(x) \leqslant f\left(x_{0}\right)$ 或者 $f(x) \geqslant f\left(x_{0}\right)$
