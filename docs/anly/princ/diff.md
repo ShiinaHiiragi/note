@@ -173,10 +173,16 @@
 
 ## 2.3 多元微分法
 ### 2.3.1 偏导数
-1. 二元函数的偏导数
-    1. 偏导数：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．如果存在极限 ${\displaystyle \lim _{\Delta x \rightarrow 0} \frac{f\left(x_{0}+\Delta x, y_{0}\right)-f\left(x_{0}, y_{0}\right)}{\Delta x}}$，则称函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 可偏导，并称此极限为 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 的偏导数，记为 $\dfrac{\partial z}{\partial x}\left(x_{0}, y_{0}\right)$ 或 $f_{x}\left(x_{0}, y_{0}\right)$ 或 $\dfrac{\partial f}{\partial x}\left(x_{0}, y_{0}\right)$．若 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 和 $y$ 均可偏导，则简称 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 可偏导
-    2. 偏导函数：如果函数 $f$ 在 $D$ 中每一点都关于 $x$ 可偏导，则 $D$ 中每一点 $(x, y)$ 与其相应的 $f$ 关于 $x$ 的偏导数 $f_{x}(x, y)$ 构成了一种对应关系即二元函数关系，称为 $f$ 关于 $x$ 的偏导函数（也称为偏导数），记为 $\dfrac{\partial z}{\partial x}$ 或 $f_{x}(x, y)$ 或 $\dfrac{\partial f}{\partial x}$
-    3. 方向导数：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点，$\boldsymbol{v}=(\cos \alpha, \sin \alpha)$ 为一个方向．如果极限 ${\displaystyle \lim _{t \rightarrow 0+} \dfrac{f\left(x_{0}+t \cos \alpha, y_{0}+t \sin \alpha\right)-f\left(x_{0}, y_{0}\right)}{t}}$ 存在，则称此极限为函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 的沿方向 $\boldsymbol{v}$ 的方向导数，记为 $\dfrac{\partial f}{\partial \boldsymbol{v}}\left(x_{0}, y_{0}\right)$
+1. 二元函数的偏导数：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．如果存在极限 ${\displaystyle \lim _{\Delta x \rightarrow 0} \frac{f\left(x_{0}+\Delta x, y_{0}\right)-f\left(x_{0}, y_{0}\right)}{\Delta x}}$，则称函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 可偏导，并称此极限为 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 的偏导数，记为 $\dfrac{\partial z}{\partial x}\left(x_{0}, y_{0}\right)$ 或 $f_{x}\left(x_{0}, y_{0}\right)$ 或 $\dfrac{\partial f}{\partial x}\left(x_{0}, y_{0}\right)$．若 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 和 $y$ 均可偏导，则简称 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 可偏导
+    1. 偏导函数：如果函数 $f$ 在 $D$ 中每一点都关于 $x$ 可偏导，则 $D$ 中每一点 $(x, y)$ 与其相应的 $f$ 关于 $x$ 的偏导数 $f_{x}(x, y)$ 构成了一种对应关系即二元函数关系，称为 $f$ 关于 $x$ 的偏导函数（也称为偏导数），记为 $\dfrac{\partial z}{\partial x}$ 或 $f_{x}(x, y)$ 或 $\dfrac{\partial f}{\partial x}$
+    2. 方向导数：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点，$\boldsymbol{v}=(\cos \alpha, \sin \alpha)$ 为一个方向．如果极限 ${\displaystyle \lim _{t \rightarrow 0+} \dfrac{f\left(x_{0}+t \cos \alpha, y_{0}+t \sin \alpha\right)-f\left(x_{0}, y_{0}\right)}{t}}$ 存在，则称此极限为函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 的沿方向 $\boldsymbol{v}$ 的方向导数，记为 $\dfrac{\partial f}{\partial \boldsymbol{v}}\left(x_{0}, y_{0}\right)$
+    3. 高阶偏导数：设 $z=f(x, y)$ 在区域 $D \subset \mathbf{R}^{2}$ 上具有偏导函数 $\dfrac{\partial z}{\partial x}=f_{x}(x, y)$ 与 $\dfrac{\partial z}{\partial y}=f_{y}(x, y)$，那么在 $D$ 上，$f_{x}(x, y)$ 与 $f_{y}(x, y)$ 都是 $x, y$ 的二元函数．如果这两个偏导函数的偏导数也存在，则称它们是 $f(x, y)$ 的二阶偏导数，二阶及二阶以上的偏导数统称为高阶偏导数
+        1. 二阶偏导数：
+            - $\dfrac{\partial^{2} z}{\partial x^{2}}=\dfrac{\partial}{\partial x}\left(\dfrac{\partial z}{\partial x}\right)=\dfrac{\partial}{\partial x}\left(f_{x}(x, y)\right)=f_{x x}(x, y)$
+            - $\dfrac{\partial^{2} z}{\partial x \partial y}=\dfrac{\partial}{\partial x}\left(\dfrac{\partial z}{\partial y}\right)=\dfrac{\partial}{\partial x}\left(f_{y}(x, y)\right)=f_{y x}(x, y)$
+            - $\dfrac{\partial^{2} z}{\partial y \partial x}=\dfrac{\partial}{\partial y}\left(\dfrac{\partial z}{\partial x}\right)=\dfrac{\partial}{\partial y}\left(f_{x}(x, y)\right)=f_{x y}(x, y)$
+            - $\dfrac{\partial^{2} z}{\partial y^{2}}=\dfrac{\partial}{\partial y}\left(\dfrac{\partial z}{\partial y}\right)=\dfrac{\partial}{\partial y}\left(f_{y}(x, y)\right)=f_{y y}(x, y)$
+        2. 如果函数 $z=f(x, y)$ 的两个混合偏导数 $f_{x y}$ 和 $f_{y x}$ 在点 $\left(x_{0}, y_{0}\right)$ 连续，那么等式 $f_{x y}\left(x_{0}, y_{0}\right)=f_{y x}\left(x_{0}, y_{0}\right)$ 成立
 2. $n$ 元函数的偏导数：设 $\boldsymbol{x}^{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 为开集 $D \subset \mathbf{R}^{n}$ 中一定点，定义 $n$ 元函数
 
     $$
@@ -191,7 +197,48 @@
 
     如果函数 $f$ 在开集（或区域）$D$ 上每一点关于每个 $x_{i}$ 都可偏导，则称 $f$ 在 $D$ 上可偏导
 
+3. 向量值函数的导数：设 $D \subseteq \mathbf R^n, f: \mathbf R^n \to \mathbf R^m$，并设点 $\boldsymbol x^0 = (x^0_1, x^0_2, \cdots, x^0_n) \in D$．若 $\boldsymbol{f}$ 的每一个分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 都在 $\boldsymbol{x}^{0}$ 点可偏导，则称向量值函数 $f$ 在 $x^{0}$ 点可导，并称矩阵
+
+    $$
+    \left(\dfrac{\partial f_{i}}{\partial x_{j}}\left(\boldsymbol{x}^{0}\right)\right)_{m \times n}=\left[\begin{array}{cccc}
+    \dfrac{\partial f_{1}}{\partial x_{1}}\left(\boldsymbol{x}^{0}\right) & \dfrac{\partial f_{1}}{\partial x_{2}}\left(\boldsymbol{x}^{0}\right) & \cdots & \dfrac{\partial f_{1}}{\partial x_{n}}\left(\boldsymbol{x}^{0}\right) \\
+    \dfrac{\partial f_{2}}{\partial x_{1}}\left(\boldsymbol{x}^{0}\right) & \dfrac{\partial f_{2}}{\partial x_{2}}\left(\boldsymbol{x}^{0}\right) & \cdots & \dfrac{\partial f_{2}}{\partial x_{n}}\left(\boldsymbol{x}^{0}\right) \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \dfrac{\partial f_{m}}{\partial x_{1}}\left(\boldsymbol{x}^{0}\right) & \dfrac{\partial f_{m}}{\partial x_{2}}\left(\boldsymbol{x}^{0}\right) & \cdots & \dfrac{\partial f_{m}}{\partial x_{n}}\left(\boldsymbol{x}^{0}\right)
+    \end{array}\right]
+    $$
+
+    为向量值函数 $\boldsymbol f$ 在 $x^{0}$ 点的导数或 $\text{Jacobi}$ 矩阵，记为 $\boldsymbol f^{\prime}\left(x^{0}\right), \mathrm{D} \boldsymbol f\left(x^{0}\right)$ 或 $J_{\boldsymbol f}\left(x^{0}\right)$．如果向量值函数 $\boldsymbol{f}$ 在 $D$ 上每一点可导，则称 $\boldsymbol{f}$ 在 $D$ 上可导．此时对应关系 $x \in D \mapsto \boldsymbol f^{\prime}(x)=J_{\boldsymbol f}(x)$ 称为 $f$ 在 $D$ 上的导数, 记为 $\boldsymbol f^{\prime}\left(x\right), \mathrm{D} \boldsymbol f\left(x\right)$ 或 $J_{\boldsymbol f}\left(x\right)$
+
+    1. 若 $\boldsymbol{f}$ 的每一个分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 的偏导数都在 $\boldsymbol{x}^{0}$ 点连续，即 $f$ 的 $\text{Jacobi}$ 矩阵的每个元素都在 $x^{0}$ 点连续，则称向量值函数 $f$ 的导数在 $x^{0}$ 点连续．如果向量值函数 $\boldsymbol f$ 的导数在 $D$ 上每一点连续，则称 $\boldsymbol f$ 的导数在 $D$ 上连续
+    2. 若存在只与 $\boldsymbol{x}^{0}$ 有关，与 $\Delta \boldsymbol{x}$ 无关的 $m \times n$ 矩阵 $\boldsymbol{A}$ 使得在 $\boldsymbol{x}^{0}$ 点附近有 $\Delta y=f\left(x^{0}+\Delta x\right)-f\left(x^{0}\right)=A \Delta x+o(\Delta x)$ （其中 $\Delta x=\left(\Delta x_{1}, \Delta x_{2}, \cdots, \Delta x_{n}\right)$；$o(\Delta x)$ 是列向量，其模是 $\|\Delta x\|$ 的高阶无穷小量），则称向量值函数 $f$ 在 $x^{0}$ 点可微，并称 $\boldsymbol{A} \Delta x$ 为 $f$ 在 $\boldsymbol{x}^{0}$ 点的微分，记为 $\mathrm{d} \boldsymbol{y}$
+        1. 若将 $\Delta \boldsymbol{x}$ 记为 $\mathrm{d} \boldsymbol{x}=\left(\mathrm{d} x_{1}, \mathrm{~d} x_{2}, \cdots, \mathrm{d} x_{n}\right)$，那么有 $\mathrm{d} \boldsymbol{y}=\boldsymbol{A} \mathrm{d} \boldsymbol{x}$
+        2. 如果向量值函数 $\boldsymbol{f}$ 在 $D$ 上每一点可微，则称 $\boldsymbol{f}$ 在 $D$ 上可微
+    3. 向量值函数 $\boldsymbol{f}$ 在 $x^{0}$ 点可微的充分必要条件是它的坐标分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 都在 $x^{0}$ 点可微．此时成立微分公式 $\mathrm{d} \boldsymbol{y}=\boldsymbol{f}^{\prime}\left(\boldsymbol{x}^{0}\right) \mathrm{d} \boldsymbol{x}$
+
 ### 2.3.2 全微分
+1. 全微分：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．若存在只与点 $\left(x_{0}, y_{0}\right)$ 有关而与 $\Delta x, \Delta y$ 无关的常数 $A$ 和 $B$，使得 $\Delta z=A \Delta x+B \Delta y+o\left(\sqrt{\Delta x^{2}+\Delta y^{2}}\right)$，这里 $o\left(\sqrt{\Delta x^{2}+\Delta y^{2}}\right)$ 表示在 $\sqrt{\Delta x^{2}+\Delta y^{2}} \rightarrow 0$ 时比 $\sqrt{\Delta x^{2}+\Delta y^{2}}$ 高阶的无穷小量．则称函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处是可微的，并称其线性主要部分 $A \Delta x+B \Delta y$ 为 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处的全微分，记为 $\mathrm{d} z\left(x_{0}, y_{0}\right)$ 或 $\mathrm{d} f\left(x_{0}, y_{0}\right)$
+    1. 全微分公式：$\mathrm{d} f\left(x_{0}, y_{0}\right)=\dfrac{\partial f}{\partial x}\left(x_{0}, y_{0}\right) \mathrm{d} x+\dfrac{\partial f}{\partial y}\left(x_{0}, y_{0}\right) \mathrm{d} y$
+    2. 方向导数：设 $D \subset \mathbf{R}^{2}$ 为开集，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．如果函数 $z=f(x, y) \ ((x, y) \in D)$ 在 $\left(x_{0}, y_{0}\right)$ 可微，那么对于任一方向 $\boldsymbol{v}=(\cos \alpha, \sin \alpha)$，$f$ 在 $\left(x_{0}, y_{0}\right)$ 点沿方向 $\boldsymbol{v}$ 的方向导数存在，且
+
+        $$
+        \dfrac{\partial f}{\partial \boldsymbol v}\left(x_{0}, y_{0}\right)=\dfrac{\partial f}{\partial x}\left(x_{0}, y_{0}\right) \cos \alpha+\dfrac{\partial f}{\partial y}\left(x_{0}, y_{0}\right) \sin \alpha
+        $$
+
+    3. 可微性的性质
+        1. 可微必连续：如果函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处可微，则 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处连续
+        2. 设函数 $z=f(x, y)$ 在 $\left(x_{0}, y_{0}\right)$ 点的某个邻域上存在偏导数，并且偏导数在 $\left(x_{0}, y_{0}\right)$ 点连续，那么 $f$ 在 $\left(x_{0}, y_{0}\right)$ 点可微
+
+2. 高阶微分：在 $z$ 的 $k$ 阶微分 $\mathrm{d}^{k} z$ 的基础上定义它的 $k+1$ 阶微分为（如果存在）$\mathrm{d}^{k+1} z=\mathrm{d}\left(\mathrm{d}^{k} z\right) \ (k=1,2, \cdots)$
+    1. 对于二元函数，约定
+
+        $$
+        \left(\dfrac{\partial}{\partial x}\right)^{p}=\dfrac{\partial^{p}}{\partial x^{p}}, \left(\dfrac{\partial}{\partial x}\right)^{p}\left(\dfrac{\partial}{\partial y}\right)^{q}=\dfrac{\partial^{p+q}}{\partial x^{p} \partial y^{q}}, \left(\dfrac{\partial}{\partial y}\right)^{q}=\dfrac{\partial^{q}}{\partial y^{q}} \ (p, q=1,2, \cdots)
+        $$
+
+        则有 $\mathrm{d}^{k} z=\left(\mathrm{d} x \dfrac{\partial}{\partial x}+\mathrm{d} y \dfrac{\partial}{\partial y}\right)^{k} z \ (k=1,2, \cdots)$；对 $n$ 元函数 $u=f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 可同样定义各阶微分，并且有 $\mathrm{d}^{k} u=\left(\mathrm{d} x_{1} \dfrac{\partial}{\partial x_{1}}+\mathrm{d} x_{2} \dfrac{\partial}{\partial x_{2}}+\cdots+\mathrm{d} x_{n} \dfrac{\partial}{\partial x_{n}}\right)^{k} u \ (k=1,2, \cdots)$
+
+    2. 一阶微分形式不变性
 
 ### 2.3.3 微分学基本定理
 
