@@ -183,6 +183,15 @@
             - $\dfrac{\partial^{2} z}{\partial y \partial x}=\dfrac{\partial}{\partial y}\left(\dfrac{\partial z}{\partial x}\right)=\dfrac{\partial}{\partial y}\left(f_{x}(x, y)\right)=f_{x y}(x, y)$
             - $\dfrac{\partial^{2} z}{\partial y^{2}}=\dfrac{\partial}{\partial y}\left(\dfrac{\partial z}{\partial y}\right)=\dfrac{\partial}{\partial y}\left(f_{y}(x, y)\right)=f_{y y}(x, y)$
         2. 如果函数 $z=f(x, y)$ 的两个混合偏导数 $f_{x y}$ 和 $f_{y x}$ 在点 $\left(x_{0}, y_{0}\right)$ 连续，那么等式 $f_{x y}\left(x_{0}, y_{0}\right)=f_{y x}\left(x_{0}, y_{0}\right)$ 成立
+    4. 链式法则：设 $z=f(x, y) \ ((x, y) \in D_{f})$ 是区域 $D_{f} \subset \mathbf{R}^{2}$ 上的二元函数，而 $\boldsymbol{g}: D_{g} \rightarrow \mathbf{R}^{2}$ 是区域 $D_{g} \subset \mathbf{R}^{2}$ 上的二元二维向量值函数．如果 $g$ 的值域 $g\left(D_{g}\right) \subset D_{f}$，那么可以构造复合函数 $z=f \circ g=f[x(u, v), y(u, v)] \ ((u, v) \in D_{g})$．设 $g$ 在 $\left(u_{0}, v_{0}\right) \in D_{g}$ 点可导，即 $x=x(u, v), y=y(u, v)$ 在 $\left(u_{0}, v_{0}\right)$ 点可偏导．记 $x_{0}=x\left(u_{0}, v_{0}\right), y_{0}=y\left(u_{0}, v_{0}\right)$，如果 $f$ 在 $\left(x_{0}, y_{0}\right)$ 点可微，那么
+
+        $$
+        \begin{aligned}
+        \dfrac{\partial z}{\partial u}\left(u_{0}, v_{0}\right)&=\dfrac{\partial z}{\partial x}\left(x_{0}, y_{0}\right) \dfrac{\partial x}{\partial u}\left(u_{0}, v_{0}\right)+\dfrac{\partial z}{\partial y}\left(x_{0}, y_{0}\right) \dfrac{\partial y}{\partial u}\left(u_{0}, v_{0}\right) \\
+        \dfrac{\partial z}{\partial v}\left(u_{0}, v_{0}\right)&=\dfrac{\partial z}{\partial x}\left(x_{0}, y_{0}\right) \dfrac{\partial x}{\partial v}\left(u_{0}, v_{0}\right)+\dfrac{\partial z}{\partial y}\left(x_{0}, y_{0}\right) \dfrac{\partial y}{\partial v}\left(u_{0}, v_{0}\right)
+        \end{aligned}
+        $$
+
 2. $n$ 元函数的偏导数：设 $\boldsymbol{x}^{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 为开集 $D \subset \mathbf{R}^{n}$ 中一定点，定义 $n$ 元函数
 
     $$
@@ -195,7 +204,31 @@
     \dfrac{\partial f}{\partial x_{i}}\left(\boldsymbol{x}^{0}\right)=\dfrac{\partial f}{\partial x_{i}}\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)=\lim _{\Delta x_{i} \rightarrow 0} \dfrac{f\left(x_{1}^{0}, \cdots, x_{i-1}^{0}, x_{i}^{0}+\Delta x_{i}, x_{i+1}^{0}, \cdots, x_{n}^{0}\right)-f\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)}{\Delta x_{i}}
     $$
 
-    如果函数 $f$ 在开集（或区域）$D$ 上每一点关于每个 $x_{i}$ 都可偏导，则称 $f$ 在 $D$ 上可偏导
+    1. 如果函数 $f$ 在开集（或区域）$D$ 上每一点关于每个 $x_{i}$ 都可偏导，则称 $f$ 在 $D$ 上可偏导
+    2. 链式法则：设 $z=f\left(y_{1}, y_{2}, \cdots, y_{m}\right) \ (\left(y_{1}, y_{2}, \cdots, y_{m}\right) \in D_{f})$ 为区域 $D_{f} \subset \mathbf{R}^{m}$ 上的 $m$ 元函数．又设 $\boldsymbol g: D_{g} \rightarrow \mathbf{R}^{m}$，为区域 $D_{g} \subset \mathbf{R}^{n}$ 上的 $n$ 元 $m$ 维向量值函数．如果 $\boldsymbol{g}$ 的值域 $\boldsymbol g\left(D_{g}\right) \subset D_{f}$，那么可以构造复合函数
+
+        $$
+        z=f \circ \boldsymbol g=f\left[y_{1}\left(x_{1}, x_{2}, \cdots, x_{n}\right), y_{2}\left(x_{1}, x_{2}, \cdots, x_{n}\right), \cdots, y_{m}\left(x_{1}, x_{2}, \cdots, x_{n}\right)\right], \left(x_{1}, x_{2}, \cdots, x_{n}\right) \in D_{g}
+        $$
+
+        设 $\boldsymbol g$ 在 $\boldsymbol x^{0} \in D_{g}$ 点可导，即 $y_{1}, y_{2}, \cdots, y_{m}$ 在 $\boldsymbol x^{0}$ 点可偏导，且 $f$ 在 $\boldsymbol{y}^{0}=\boldsymbol{g}\left(\boldsymbol{x}^{0}\right)$ 点可微，则
+
+        $$
+        \dfrac{\partial z}{\partial x_{i}}\left(\boldsymbol{x}^{0}\right)=\dfrac{\partial z}{\partial y_{1}}\left(\boldsymbol{y}^{0}\right) \dfrac{\partial y_{1}}{\partial x_{i}}\left(\boldsymbol{x}^{0}\right)+\dfrac{\partial z}{\partial y_{2}}\left(\boldsymbol{y}^{0}\right) \dfrac{\partial y_{2}}{\partial x_{i}}\left(\boldsymbol{x}^{0}\right)+\cdots+\dfrac{\partial z}{\partial y_{m}}\left(\boldsymbol{y}^{0}\right) \dfrac{\partial y_{m}}{\partial x_{i}}\left(\boldsymbol{x}^{0}\right), i=1,2, \cdots, n
+        $$
+
+        上式可以用矩阵表示为
+
+        $$
+        \begin{bmatrix} \dfrac{\partial z}{\partial x_{1}} & \dfrac{\partial z}{\partial x_{2}} & \cdots & \dfrac{\partial z}{\partial x_{n}} \\ \end{bmatrix}_{\boldsymbol x=\boldsymbol x^{0}}=\begin{bmatrix} \dfrac{\partial z}{\partial y_{1}} & \dfrac{\partial z}{\partial y_{2}} & \cdots & \dfrac{\partial z}{\partial y_{m}} \\ \end{bmatrix}_{\boldsymbol y=\boldsymbol y^{0}}\left[\begin{array}{cccc}
+        \dfrac{\partial y_{1}}{\partial x_{1}} & \dfrac{\partial y_{1}}{\partial x_{2}} & \cdots & \dfrac{\partial y_{1}}{\partial x_{n}} \\
+        \dfrac{\partial y_{2}}{\partial x_{1}} & \dfrac{\partial y_{2}}{\partial x_{2}} & \cdots & \dfrac{\partial y_{2}}{\partial x_{n}} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \dfrac{\partial y_{m}}{\partial x_{1}} & \dfrac{\partial y_{m}}{\partial x_{2}} & \cdots & \dfrac{\partial y_{m}}{\partial x_{n}}
+        \end{array}\right]_{\boldsymbol x=\boldsymbol x^{0}}
+        $$
+
+        或用向量值函数的导数记号表为 $(f \circ \boldsymbol g)^{\prime}\left(\boldsymbol{x}_{0}\right)=f^{\prime}\left(\boldsymbol{y}_{0}\right) \boldsymbol{g}^{\prime}\left(\boldsymbol{x}_{0}\right)$
 
 3. 向量值函数的导数：设 $D \subseteq \mathbf R^n, f: \mathbf R^n \to \mathbf R^m$，并设点 $\boldsymbol x^0 = (x^0_1, x^0_2, \cdots, x^0_n) \in D$．若 $\boldsymbol{f}$ 的每一个分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 都在 $\boldsymbol{x}^{0}$ 点可偏导，则称向量值函数 $f$ 在 $x^{0}$ 点可导，并称矩阵
 
@@ -210,11 +243,19 @@
 
     为向量值函数 $\boldsymbol f$ 在 $x^{0}$ 点的导数或 $\text{Jacobi}$ 矩阵，记为 $\boldsymbol f^{\prime}\left(x^{0}\right), \mathrm{D} \boldsymbol f\left(x^{0}\right)$ 或 $J_{\boldsymbol f}\left(x^{0}\right)$．如果向量值函数 $\boldsymbol{f}$ 在 $D$ 上每一点可导，则称 $\boldsymbol{f}$ 在 $D$ 上可导．此时对应关系 $x \in D \mapsto \boldsymbol f^{\prime}(x)=J_{\boldsymbol f}(x)$ 称为 $f$ 在 $D$ 上的导数, 记为 $\boldsymbol f^{\prime}\left(x\right), \mathrm{D} \boldsymbol f\left(x\right)$ 或 $J_{\boldsymbol f}\left(x\right)$
 
-    1. 若 $\boldsymbol{f}$ 的每一个分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 的偏导数都在 $\boldsymbol{x}^{0}$ 点连续，即 $f$ 的 $\text{Jacobi}$ 矩阵的每个元素都在 $x^{0}$ 点连续，则称向量值函数 $f$ 的导数在 $x^{0}$ 点连续．如果向量值函数 $\boldsymbol f$ 的导数在 $D$ 上每一点连续，则称 $\boldsymbol f$ 的导数在 $D$ 上连续
-    2. 若存在只与 $\boldsymbol{x}^{0}$ 有关，与 $\Delta \boldsymbol{x}$ 无关的 $m \times n$ 矩阵 $\boldsymbol{A}$ 使得在 $\boldsymbol{x}^{0}$ 点附近有 $\Delta y=f\left(x^{0}+\Delta x\right)-f\left(x^{0}\right)=A \Delta x+o(\Delta x)$ （其中 $\Delta x=\left(\Delta x_{1}, \Delta x_{2}, \cdots, \Delta x_{n}\right)$；$o(\Delta x)$ 是列向量，其模是 $\|\Delta x\|$ 的高阶无穷小量），则称向量值函数 $f$ 在 $x^{0}$ 点可微，并称 $\boldsymbol{A} \Delta x$ 为 $f$ 在 $\boldsymbol{x}^{0}$ 点的微分，记为 $\mathrm{d} \boldsymbol{y}$
-        1. 若将 $\Delta \boldsymbol{x}$ 记为 $\mathrm{d} \boldsymbol{x}=\left(\mathrm{d} x_{1}, \mathrm{~d} x_{2}, \cdots, \mathrm{d} x_{n}\right)$，那么有 $\mathrm{d} \boldsymbol{y}=\boldsymbol{A} \mathrm{d} \boldsymbol{x}$
-        2. 如果向量值函数 $\boldsymbol{f}$ 在 $D$ 上每一点可微，则称 $\boldsymbol{f}$ 在 $D$ 上可微
-    3. 向量值函数 $\boldsymbol{f}$ 在 $x^{0}$ 点可微的充分必要条件是它的坐标分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 都在 $x^{0}$ 点可微．此时成立微分公式 $\mathrm{d} \boldsymbol{y}=\boldsymbol{f}^{\prime}\left(\boldsymbol{x}^{0}\right) \mathrm{d} \boldsymbol{x}$
+    1. 向量值函数 $\boldsymbol{f}$ 连续、可导和可微就是它的每一个坐标分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 连续、可导和可微
+        1. 若 $\boldsymbol{f}$ 的每一个分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 的偏导数都在 $\boldsymbol{x}^{0}$ 点连续，即 $f$ 的 $\text{Jacobi}$ 矩阵的每个元素都在 $x^{0}$ 点连续，则称向量值函数 $f$ 的导数在 $x^{0}$ 点连续．如果向量值函数 $\boldsymbol f$ 的导数在 $D$ 上每一点连续，则称 $\boldsymbol f$ 的导数在 $D$ 上连续
+        2. 若存在只与 $\boldsymbol{x}^{0}$ 有关，与 $\Delta \boldsymbol{x}$ 无关的矩阵 $\boldsymbol{A}$ 使得在 $\boldsymbol{x}^{0}$ 点附近有 $\Delta y=f\left(x^{0}+\Delta x\right)-f\left(x^{0}\right)=A \Delta x+o(\Delta x)$ （其中 $\Delta x=\left(\Delta x_{1}, \Delta x_{2}, \cdots, \Delta x_{n}\right)$，$o(\Delta x)$ 是列向量，其模是 $\|\Delta x\|$ 的高阶无穷小量），则称向量值函数 $f$ 在 $x^{0}$ 点可微，并称 $\boldsymbol{A} \Delta x$ 为 $f$ 在 $\boldsymbol{x}^{0}$ 点的微分，记为 $\mathrm{d} \boldsymbol{y}$
+            - 若将 $\Delta \boldsymbol{x}$ 记为 $\mathrm{d} \boldsymbol{x}=\left(\mathrm{d} x_{1}, \mathrm{~d} x_{2}, \cdots, \mathrm{d} x_{n}\right)$，那么有 $\mathrm{d} \boldsymbol{y}=\boldsymbol{A} \mathrm{d} \boldsymbol{x}$
+            - 如果向量值函数 $\boldsymbol{f}$ 在 $D$ 上每一点可微，则称 $\boldsymbol{f}$ 在 $D$ 上可微
+        3. 向量值函数 $\boldsymbol{f}$ 在 $x^{0}$ 点可微的充分必要条件是它的坐标分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 都在 $x^{0}$ 点可微．此时成立微分公式 $\mathrm{d} \boldsymbol{y}=\boldsymbol{f}^{\prime}\left(\boldsymbol{x}^{0}\right) \mathrm{d} \boldsymbol{x}$
+    2. 链式法则：设 $\boldsymbol f: D_{f}\left(\subset \mathbf{R}^{k}\right) \rightarrow \mathbf{R}^{m}$ 与 $\boldsymbol g: D_{g}\left(\subset \mathbf{R}^{n}\right) \rightarrow \mathbf{R}^{k}$ 分别是多元向量值函数，且分别在 $D_{f}$ 与 $D_{g}$ 上具有连续导数．如果 $\boldsymbol g$ 的值域 $\boldsymbol g\left(D_{g}\right) \subset D_{f}$，并记 $\boldsymbol{u}=\boldsymbol{g}(\boldsymbol{x})$，那么复合向量值函数 $\boldsymbol f \circ \boldsymbol g$ 在 $D_{g}$ 上也具有连续的导数，并且成立等式
+
+        $$
+        (\boldsymbol f \circ \boldsymbol g)^{\prime}(\boldsymbol x)=\boldsymbol f^{\prime}(\boldsymbol u) \cdot \boldsymbol g^{\prime}(\boldsymbol x)=\boldsymbol f^{\prime}[\boldsymbol g(x)] \cdot \boldsymbol g^{\prime}(\boldsymbol x)
+        $$
+
+        其中 $\boldsymbol f^{\prime}(\boldsymbol u), \boldsymbol g^{\prime}(\boldsymbol x)$ 和 $(\boldsymbol f \circ \boldsymbol g)^{\prime}(\boldsymbol x)$ 是相应的导数，即 $\text{Jacobi}$ 矩阵
 
 ### 2.3.2 全微分
 1. 全微分：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．若存在只与点 $\left(x_{0}, y_{0}\right)$ 有关而与 $\Delta x, \Delta y$ 无关的常数 $A$ 和 $B$，使得 $\Delta z=A \Delta x+B \Delta y+o\left(\sqrt{\Delta x^{2}+\Delta y^{2}}\right)$，这里 $o\left(\sqrt{\Delta x^{2}+\Delta y^{2}}\right)$ 表示在 $\sqrt{\Delta x^{2}+\Delta y^{2}} \rightarrow 0$ 时比 $\sqrt{\Delta x^{2}+\Delta y^{2}}$ 高阶的无穷小量．则称函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处是可微的，并称其线性主要部分 $A \Delta x+B \Delta y$ 为 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处的全微分，记为 $\mathrm{d} z\left(x_{0}, y_{0}\right)$ 或 $\mathrm{d} f\left(x_{0}, y_{0}\right)$
@@ -238,7 +279,11 @@
 
         则有 $\mathrm{d}^{k} z=\left(\mathrm{d} x \dfrac{\partial}{\partial x}+\mathrm{d} y \dfrac{\partial}{\partial y}\right)^{k} z \ (k=1,2, \cdots)$；对 $n$ 元函数 $u=f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 可同样定义各阶微分，并且有 $\mathrm{d}^{k} u=\left(\mathrm{d} x_{1} \dfrac{\partial}{\partial x_{1}}+\mathrm{d} x_{2} \dfrac{\partial}{\partial x_{2}}+\cdots+\mathrm{d} x_{n} \dfrac{\partial}{\partial x_{n}}\right)^{k} u \ (k=1,2, \cdots)$
 
-    2. 一阶微分形式不变性
+    2. 一阶微分形式不变性：对于多元函数 $z=f(\boldsymbol{y})$，其中 $\boldsymbol{y}=\left(y_{1}, y_{2}, \cdots, y_{m}\right)$
+        1. 当 $\boldsymbol{y}$ 为自变量时，一阶全微分形式为 $\mathrm{d} z=f^{\prime}(\boldsymbol{y}) \mathrm{d} y$
+        2. 当 $\boldsymbol{y}$ 为中间变量 $\boldsymbol{y}=\boldsymbol{g}(\boldsymbol{x}) \ \left(\boldsymbol{x}=\left(x_{1}, x_{2}, \cdots, x_{n}\right)\right)$ 时，$\mathrm{d} z=f^{\prime}(\boldsymbol{y}) \boldsymbol{g}^{\prime}(\boldsymbol{x}) \mathrm{d} \boldsymbol{x}=f^{\prime}(\boldsymbol{y}) \mathrm{d} \boldsymbol{y}$
+
+        全微分的形式不变性在高阶微分时是不成立的
 
 ### 2.3.3 微分学基本定理
 
