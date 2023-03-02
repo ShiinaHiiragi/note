@@ -53,7 +53,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：解析几何 · 二次曲面 </label>
+    <label> 现在进度：分析学原理 · 重积分 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
