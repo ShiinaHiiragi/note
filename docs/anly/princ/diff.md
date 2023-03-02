@@ -46,9 +46,12 @@
             !!! note "一致连续"
                 设 $K$ 是 $\mathbf{R}^{n}$ 中点集，$\boldsymbol f: K \rightarrow \mathbf{R}^{m}$ 为映射．如果对于任意给定的 $\varepsilon>0$，存在 $\delta>0$ 使得 $\left|f\left(x^{\prime}\right)-f\left(x^{\prime \prime}\right)\right|<\varepsilon$ 对于 $K$ 中所有满足 $\left|\boldsymbol{x}^{\prime}-\boldsymbol{x}^{\prime \prime}\right|<\delta$ 的 $\boldsymbol{x}^{\prime}, \boldsymbol{x}^{\prime \prime}$ 成立，则称 $\boldsymbol{f}$ 在 $K$ 上一致连续
 
-    2. 连通集上的连续映射：设 $S$ 为 $\mathbf R^n$ 上的点集，若 $S$ 中的任意两点 $\boldsymbol{x}, \boldsymbol{y}$ 之间都存在 $S$ 中以 $\boldsymbol{x}$ 为起点，$\boldsymbol{y}$ 为终点的道路，则称 $S$ 为（道路）连通的，或称 $S$ 为连通集
+    2. 连通集上的连续映射：连通的开集称为（开）区域，（开）区域的闭包称为闭区域
         1. 连续映射将连通集映射成连通集，将连通的紧集映射成闭区间
         2. 介值定理：设 $K$ 为 $\mathbf{R}^{n}$ 中连通的紧集，$f$ 是 $K$ 上的连续函数，则 $f$ 的值域是闭区间 $[m, M]$
+
+        !!! note "凸区域"
+            设 $D \subset \mathbf{R}^{n}$ 是区域，若对于任意两点 $x_{0}, x_{1} \in D$ 和一切 $\lambda \in[0,1]$ 恒有 $\boldsymbol{x}_{0}+\lambda\left(\boldsymbol{x}_{1}-\boldsymbol{x}_{0}\right) \in D$，则称 $D$ 为凸区域
 
 ### 2.1.3 连续统
 1. 实数系基本定理：以下六个定理相互等价
@@ -145,31 +148,6 @@
         $$
 
         这种性质称为一阶微分的形式不变性，而高阶微分通常不具有形式不变性
-
-### 2.3.3 微分学基本定理
-1. 中值定理
-    1. $\text{Fermat}$ 定理：若函数 $f(x)$ 有
-        1. 在 $x_{0}$ 点的某一邻域 $B\left(x_{0}, \delta\right)$ 内有定义且在此邻域内恒有 $f(x) \leqslant f\left(x_{0}\right)$ 或者 $f(x) \geqslant f\left(x_{0}\right)$
-        2. 在 $x_{0}$ 点可导
-
-        则有 $f^{\prime}\left(x_{0}\right)=0$
-
-    2. $\text{Lagrange}$ 中值定理：若函数 $f(x)$ 在 $[a, b]$ 连续且在 $(a, b)$ 可导，则在 $(a, b)$ 内至少存在一点 $\xi$，使 $f^{\prime}(\xi)=\dfrac{f(b)-f(a)}{b-a}$
-        1. 若 $f(x)$ 对 $(a, b)$ 内每一点 $x$ 都有 $f^{\prime}(x)=0$，则在区间 $(a, b)$ 内 $f(x)$ 为常数
-        2. 若两函数 $f(x)$ 及 $g(x)$ 在 $(a, b)$ 内满足 $f^{\prime}(x)=g^{\prime}(x)$，则在 $(a, b)$ 内 $f(x)=g(x)+C$（$C$ 为常数）
-        3. 若 $f(x)$ 在 $[a, b]$ 上存在有界导数，则 $f(x)$ 在 $[a, b]$ 满足 $\text{Lipschitz}$ 条件，即存在常数 $L$，对 $[a, b]$ 上任意两点 $x^{\prime}, x^{\prime \prime}$ 有 $\left|f\left(x^{\prime}\right)-f\left(x^{\prime \prime}\right)\right| \leqslant L\left|x^{\prime}-x^{\prime \prime}\right|$
-    3. $\text{Cauchy}$ 中值定理：若 $f(x)$ 与 $g(x)$ 在闭区间 $[a, b]$ 上连续，在开区间 $(a, b)$ 内可导，且 $g^{\prime}(x) \neq 0$．则在 $(a, b)$ 内至少存在一点 $\xi$，使 $\dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f^{\prime}(\xi)}{g^{\prime}(\xi)}$
-
-2. $\text{Taylor}$ 公式：若 $f(x)$ 在 $x=0$ 点的某个邻域内有直到 $n+1$ 阶连续导数，则在此邻域内有
-
-    $$
-    f(x)=f(0)+f^{\prime}(0) x+\dfrac{f^{\prime \prime}(0)}{2 !} x^{2}+\cdots+\dfrac{f^{(n)}(0)}{n !} x^{n}+R_{n}(x)
-    $$
-
-    是函数 $f(x)$ 在 $x=0$ 点附近关于 $x$ 的幂函数展开式，也称作 $\text{Taylor}$ 公式
-
-    1. $R_{n}(x)=\dfrac{f^{(n+1)}(\xi)}{(n+1) !} x^{n+1}$，$\xi \in (0, x)$．称 $R_n(x)$ 为 $\text{Lagrange}$ 余项
-    2. 当 $x \rightarrow 0$ 时，$R_{n}(x)$ 是关于 $x^{n}$ 的高阶无穷小，因此当 $|x|$ 充分小时，余项 $R_{n}(x)=o\left(x^{n}\right)$，称为 $\text{Peano}$ 余项
 
 ## 2.3 多元微分法
 ### 2.3.1 偏导数
@@ -277,14 +255,70 @@
         \left(\dfrac{\partial}{\partial x}\right)^{p}=\dfrac{\partial^{p}}{\partial x^{p}}, \left(\dfrac{\partial}{\partial x}\right)^{p}\left(\dfrac{\partial}{\partial y}\right)^{q}=\dfrac{\partial^{p+q}}{\partial x^{p} \partial y^{q}}, \left(\dfrac{\partial}{\partial y}\right)^{q}=\dfrac{\partial^{q}}{\partial y^{q}} \ (p, q=1,2, \cdots)
         $$
 
-        则有 $\mathrm{d}^{k} z=\left(\mathrm{d} x \dfrac{\partial}{\partial x}+\mathrm{d} y \dfrac{\partial}{\partial y}\right)^{k} z \ (k=1,2, \cdots)$；对 $n$ 元函数 $u=f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 可同样定义各阶微分，并且有 $\mathrm{d}^{k} u=\left(\mathrm{d} x_{1} \dfrac{\partial}{\partial x_{1}}+\mathrm{d} x_{2} \dfrac{\partial}{\partial x_{2}}+\cdots+\mathrm{d} x_{n} \dfrac{\partial}{\partial x_{n}}\right)^{k} u \ (k=1,2, \cdots)$
+        则有
 
-    2. 一阶微分形式不变性：对于多元函数 $z=f(\boldsymbol{y})$，其中 $\boldsymbol{y}=\left(y_{1}, y_{2}, \cdots, y_{m}\right)$
+        $$
+        \mathrm{d}^{k} z=\left(\mathrm{d} x \dfrac{\partial}{\partial x}+\mathrm{d} y \dfrac{\partial}{\partial y}\right)^{k} z \ (k=1,2, \cdots)
+        $$
+
+    2. 对 $n$ 元函数 $u=f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 可同样定义各阶微分，并且有
+
+        $$
+        \mathrm{d}^{k} u=\left(\mathrm{d} x_{1} \dfrac{\partial}{\partial x_{1}}+\mathrm{d} x_{2} \dfrac{\partial}{\partial x_{2}}+\cdots+\mathrm{d} x_{n} \dfrac{\partial}{\partial x_{n}}\right)^{k} u \ (k=1,2, \cdots)
+        $$
+
+    3. 一阶微分形式不变性：对于多元函数 $z=f(\boldsymbol{y})$，其中 $\boldsymbol{y}=\left(y_{1}, y_{2}, \cdots, y_{m}\right)$
         1. 当 $\boldsymbol{y}$ 为自变量时，一阶全微分形式为 $\mathrm{d} z=f^{\prime}(\boldsymbol{y}) \mathrm{d} y$
         2. 当 $\boldsymbol{y}$ 为中间变量 $\boldsymbol{y}=\boldsymbol{g}(\boldsymbol{x}) \ \left(\boldsymbol{x}=\left(x_{1}, x_{2}, \cdots, x_{n}\right)\right)$ 时，$\mathrm{d} z=f^{\prime}(\boldsymbol{y}) \boldsymbol{g}^{\prime}(\boldsymbol{x}) \mathrm{d} \boldsymbol{x}=f^{\prime}(\boldsymbol{y}) \mathrm{d} \boldsymbol{y}$
 
-        全微分的形式不变性在高阶微分时是不成立的
+        全微分的形式不变性在高阶微分时不成立
 
-### 2.3.3 微分学基本定理
+### 2.3.3 极值
 
-### 2.3.4 极值
+## 2.4 微分学基本定理
+
+1. 中值定理
+    1. $\text{Fermat}$ 定理：若函数 $f(x)$ 有
+        1. 在 $x_{0}$ 点的某一邻域 $B\left(x_{0}, \delta\right)$ 内有定义且在此邻域内恒有 $f(x) \leqslant f\left(x_{0}\right)$ 或者 $f(x) \geqslant f\left(x_{0}\right)$
+        2. 在 $x_{0}$ 点可导
+
+        则有 $f^{\prime}\left(x_{0}\right)=0$
+
+    2. $\text{Lagrange}$ 中值定理：若函数 $f(x)$ 在 $[a, b]$ 连续且在 $(a, b)$ 可导，则在 $(a, b)$ 内至少存在一点 $\xi$，使 $f^{\prime}(\xi)=\dfrac{f(b)-f(a)}{b-a}$
+        1. 若 $f(x)$ 对 $(a, b)$ 内每一点 $x$ 都有 $f^{\prime}(x)=0$，则在区间 $(a, b)$ 内 $f(x)$ 为常数
+        2. 若两函数 $f(x)$ 及 $g(x)$ 在 $(a, b)$ 内满足 $f^{\prime}(x)=g^{\prime}(x)$，则在 $(a, b)$ 内 $f(x)=g(x)+C$（$C$ 为常数）
+        3. 若 $f(x)$ 在 $[a, b]$ 上存在有界导数，则 $f(x)$ 在 $[a, b]$ 满足 $\text{Lipschitz}$ 条件，即存在常数 $L$，对 $[a, b]$ 上任意两点 $x^{\prime}, x^{\prime \prime}$ 有 $\left|f\left(x^{\prime}\right)-f\left(x^{\prime \prime}\right)\right| \leqslant L\left|x^{\prime}-x^{\prime \prime}\right|$
+    3. $\text{Cauchy}$ 中值定理：若 $f(x)$ 与 $g(x)$ 在闭区间 $[a, b]$ 上连续，在开区间 $(a, b)$ 内可导，且 $g^{\prime}(x) \neq 0$．则在 $(a, b)$ 内至少存在一点 $\xi$，使 $\dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f^{\prime}(\xi)}{g^{\prime}(\xi)}$
+    4. 多元函数中值定理：设 $n$ 元函数 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 在凸区域 $D \subset \mathbf{R}^{n}$ 上可微，则对于 $D$ 内任意两点 $\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 和 $\left(x_{1}^{0}+\Delta x_{1}, x_{2}^{0}+\Delta x_{2}, \cdots, x_{n}^{0}+\Delta x_{n}\right)$，至少存在一个 $\theta \ (0<\theta<1)$，使得
+
+        $$
+        \begin{aligned}
+        & f\left(x_{1}^{0}+\Delta x_{1}, x_{2}^{0}+\Delta x_{2}, \cdots, x_{n}^{0}+\Delta x_{n}\right)-f\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right) \\
+        = & \sum_{i=1}^{n} f_{x_{i}}\left(x_{1}^{0}+\theta \Delta x_{1}, x_{2}^{0}+\theta \Delta x_{2}, \cdots, x_{n}^{0}+\theta \Delta x_{n}\right) \Delta x_{i}
+        \end{aligned}
+        $$
+
+2. $\text{Taylor}$ 公式
+    1. 一元函数：若 $f(x)$ 在 $x=0$ 点的某个邻域内有直到 $n+1$ 阶连续导数，则在此邻域内有
+
+        $$
+        f(x)=f(0)+f^{\prime}(0) x+\dfrac{f^{\prime \prime}(0)}{2 !} x^{2}+\cdots+\dfrac{f^{(n)}(0)}{n !} x^{n}+R_{n}(x)
+        $$
+
+        是函数 $f(x)$ 在 $x=0$ 点附近关于 $x$ 的幂函数展开式，也称作 $\text{Taylor}$ 公式
+
+        1. $R_{n}(x)=\dfrac{f^{(n+1)}(\xi)}{(n+1) !} x^{n+1}$，$\xi \in (0, x)$．称 $R_n(x)$ 为 $\text{Lagrange}$ 余项
+        2. 当 $x \rightarrow 0$ 时，$R_{n}(x)$ 是关于 $x^{n}$ 的高阶无穷小，因此当 $|x|$ 充分小时，余项 $R_{n}(x)=o\left(x^{n}\right)$，称为 $\text{Peano}$ 余项
+
+    2. 多元函数：设 $n$ 元函数 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 在点 $\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 附近具有 $k+1$ 阶的连续偏导数，那么在这点附近成立如下的公式
+
+        $$
+        \begin{aligned}
+        & f\left(x_{1}^{0}+\Delta x_{1}, x_{2}^{0}+\Delta x_{2}, \cdots, x_{n}^{0}+\Delta x_{n}\right) \\
+        = & f\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)+\left(\sum_{i=1}^{n} \Delta x_{i} \dfrac{\partial}{\partial x_{i}}\right) f\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right) \\ 
+        & + \dfrac{1}{2 !}\left(\sum_{i=1}^{n} \Delta x_{i} \dfrac{\partial}{\partial x_{i}}\right)^{2} f\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)+\cdots \\ 
+        & + \dfrac{1}{k !}\left(\sum_{i=1}^{n} \Delta x_{i} \dfrac{\partial}{\partial x_{i}}\right)^{k} f\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)+R_{k}
+        \end{aligned}
+        $$
+
+        其中 $R_{k}=\dfrac{1}{(k+1) !}\left(\sum_{i=1}^{n} \Delta x_{i} \dfrac{\partial}{\partial x_{i}}\right)^{k+1} f\left(x_{1}^{0}+\theta \Delta x_{1}, x_{2}^{0}+\theta \Delta x_{2}, \cdots, x_{n}^{0}+\theta \Delta x_{n}\right) \ (0<\theta<1)$ 为 $\text{Lagrange}$ 余项
