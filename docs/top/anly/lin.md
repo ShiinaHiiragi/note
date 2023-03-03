@@ -211,7 +211,7 @@
     2. 向量的定比分点：设向量 $\overrightarrow{P_1 P_2}$ 的始点为 $P_1(x_1, x_2, \cdots, x_n)$，终点为 $P_2(y_1, y_2, \cdots, y_n)$，则分向量 $\overrightarrow{P_1 P_2}$ 成定比 $\lambda \ (\lambda \neq -1)$ 的分点 $P$ 的坐标为 $P \left(\dfrac{x_1 + \lambda y_1}{1 + \lambda}, \dfrac{x_2 + \lambda y_2}{1 + \lambda}, \cdots, \dfrac{x_n + \lambda y_n}{1 + \lambda}\right)$
 
 2. 向量的内积：设 $\boldsymbol \alpha = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol \beta = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$，则内积 $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = x_1 y_1 + x_2 y_2 + \cdots + x_n y_n$
-    1. 定义向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的夹角：$\theta = \arccos \dfrac{\left<\boldsymbol \alpha, \boldsymbol \beta\right>}{|\boldsymbol \alpha| |\boldsymbol \beta|}$，并记 $\cos \theta$ 为 $\cos \left<\boldsymbol \alpha, \boldsymbol \beta\right>$，记 $\sin \theta$ 为 $\sin \left<\boldsymbol \alpha, \boldsymbol \beta\right>$．特别地，称非零向量与基所成的夹角为该向量的方向角
+    1. 定义向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的夹角 $\theta = \arccos \dfrac{\left<\boldsymbol \alpha, \boldsymbol \beta\right>}{|\boldsymbol \alpha| |\boldsymbol \beta|}$，并记 $\cos \theta$ 为 $\cos \left<\boldsymbol \alpha, \boldsymbol \beta\right>$，记 $\sin \theta$ 为 $\sin \left<\boldsymbol \alpha, \boldsymbol \beta\right>$．特别地，称非零向量与基所成的夹角为该向量的方向角
 
         !!! note "角度的分类"
             设 $\theta \in \mathbf R$ 为一个角度
@@ -317,7 +317,8 @@
 
         为向量值函数，此时有 $\boldsymbol{y}=\boldsymbol f(\boldsymbol{x})=\left(f_{1}(\boldsymbol{x}), f_{2}(\boldsymbol{x}), \cdots, f_{m}(\boldsymbol{x})\right)$，其中 $f_{1}. f_{2}, \cdots, f_{m}$ 均为 $n$ 元函数
 
-2. 外微分
+2. 微分形式
+3. 外微分
 
 ### 1.2.3 向量场论
 1. 梯度：设 $D \subset \mathbf{R}^{3}$ 为开集，$\left(x_{0}, y_{0}, z_{0}\right) \in D$ 为一定点．如果函数 $w=f(x, y, z)$ 在 $\left(x_{0}, y_{0}, z_{0}\right)$ 点可偏导，则称向量 $\left(f_{x}\left(x_{0}, y_{0}, z_{0}\right), f_{y}\left(x_{0}, y_{0}, z_{0}\right), f_{z}\left(x_{0}, y_{0}, z_{0}\right)\right)$ 为 $f$ 在点 $\left(x_{0}, y_{0}, z_{0}\right)$ 的梯度, 记为 $\operatorname{\mathbf{grad}} f\left(x_{0}, y_{0}, z_{0}\right)$

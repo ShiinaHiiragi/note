@@ -260,6 +260,8 @@
 3. 主值：设 $f(x)$ 在 $[a, b]$ 内无界，$c$ 是唯一奇点且 $a<c<b$．如果 ${\displaystyle \lim _{\eta \rightarrow 0}\left[\int_{a}^{c-\eta} f(x) \mathrm{d} x+\int_{c+\eta}^{b} f(x) \mathrm{d} x\right]}$ 存在，则称此极限是反常积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 的 $\text{Cauchy}$ 主值，记为 ${\displaystyle \text {P.V. } \int_{a}^{b} f(x) \mathrm{d} x=\lim _{\eta \rightarrow 0}\left[\int_{a}^{c-\eta} f(x) \mathrm{d} x+\int_{c+\eta}^{b} f(x) \mathrm{d} x\right]}$
 
 ### 3.2.3 反常重积分
+1. 无界区域上的反常重积分
+2. 无界函数的反常积分
 
 ## 3.3 含参变量积分
 ### 3.3.1 含参变量的常义积分
