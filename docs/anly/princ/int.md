@@ -260,8 +260,64 @@
 3. 主值：设 $f(x)$ 在 $[a, b]$ 内无界，$c$ 是唯一奇点且 $a<c<b$．如果 ${\displaystyle \lim _{\eta \rightarrow 0}\left[\int_{a}^{c-\eta} f(x) \mathrm{d} x+\int_{c+\eta}^{b} f(x) \mathrm{d} x\right]}$ 存在，则称此极限是反常积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} x}$ 的 $\text{Cauchy}$ 主值，记为 ${\displaystyle \text {P.V. } \int_{a}^{b} f(x) \mathrm{d} x=\lim _{\eta \rightarrow 0}\left[\int_{a}^{c-\eta} f(x) \mathrm{d} x+\int_{c+\eta}^{b} f(x) \mathrm{d} x\right]}$
 
 ### 3.2.3 反常重积分
-1. 无界区域上的反常重积分
-2. 无界函数的反常积分
+1. 无界区域上的反常二重积分：设 $D$ 为平面 $\mathbf{R}^{2}$ 上的无界区域，其边界是由有限条光滑曲线组成的．假设 $D$ 上的函数 $f(x, y)$ 具有下述性质：它在 $D$ 中有界、在可求面积的子区域上可积，并假设所取的割线 $\Gamma$ 为一条面积为零的曲线，它将 $D$ 割出一个有界子区域，记为 $D_{\Gamma}$．若当 $d(\Gamma)$ 趋于无穷大，即 $D_{\Gamma}$ 趋于 $D$ 时，${\displaystyle \iint f(x, y) \mathrm{d} x \mathrm{~d} y}$ 的极限存在，就称 $f(x, y)$ 在 $D$ 上可积，并记 ${\displaystyle \iint_{D} f(x, y) \mathrm{d} x \mathrm{~d} y=\lim _{d(\Gamma) \rightarrow+\infty} \iint_{D_{\Gamma}} f(x, y) \mathrm{d} x \mathrm{~d} y}$ 为 $f(x, y)$ 在 $D$ 上的反常二重积分，此时也称 ${\displaystyle \iint_{D} f(x, y) \mathrm{d} x \mathrm{~d} y}$ 收敛．如果右端的极限不存在，就称这一积分发散
+    1. 设 $f(x, y)$ 为无界区域 $D$ 上的非负函数，如果 $\left\{\Gamma_{n}\right\}$ 是一列曲线，其割出的 $D$ 的有界子区域 $\left\{D_{n}\right\}$ 满足
+
+        $$
+        D_{1} \subset D_{2} \subset \cdots \subset D_{n} \subset \cdots, \lim _{n \rightarrow \infty} d\left(\Gamma_{n}\right)=+\infty
+        $$
+
+        则反常积分 ${\displaystyle \iint_{D} f(x, y) \mathrm{d} x \mathrm{~d} y}$ 在 $D$ 上收敛的充分必要条件是数列 ${\displaystyle \left\{\iint_{D_{n}} f(x, y) \mathrm{d} x \mathrm{~d} y\right\}}$ 收敛，且在收敛时有
+
+        $$
+        \iint_{D} f(x, y) \mathrm{d} x \mathrm{~d} y=\lim _{n \rightarrow \infty} \iint_{D_{n}} f(x, y) \mathrm{d} x \mathrm{~d} y
+        $$
+
+        1. 设 $D$ 为 $\mathbf{R}^{2}$ 上具有分段光滑边界的无界区域，则 $f(x, y)$ 在 $D$ 上可积的充分必要条件是 $|f(x, y)|$ 在 $D$ 上可积
+        2. 设 $f(x, y)$ 在 $D=[a,+\infty) \times[c,+\infty)$ 上连续，且 ${\displaystyle \int_{a}^{+\infty} \mathrm{d} x \int_{c}^{+\infty} f(x, y) \mathrm{d} y}$ 和 ${\displaystyle \int_{a}^{+\infty} \mathrm{d} x \int_{c}^{+\infty}|f(x, y)| \mathrm{d} y}$ 都存在，则 $f(x, y)$ 在 $D$ 上可积且
+
+            $$
+            \iint_{(a,+\infty \mid(\mid c,+\infty)} f(x, y) \mathrm{d} x \mathrm{~d} y=\int_{a}^{+\infty} \mathrm{d} x \int_{c}^{+\infty} f(x, y) \mathrm{d} y
+            $$
+
+        3. 设一一对应映射 $T: D \rightarrow T(D)$
+
+            $$
+            \left\{\begin{array}{l}
+            x=x(u, v) \\
+            y=y(u, v)
+            \end{array}\right.
+            $$
+
+            具有连续导数，且 $\text{Jacobi}$ 行列式 $\dfrac{\partial(x, y)}{\partial(u, v)}$ 在 $D$ 上不等于零，则变量代换公式
+
+            $$
+            \iint_{T(D)} f(x, y) \mathrm{d} x \mathrm{~d} y=\iint_{D} f(x(u, v), y(u, v))\left|\dfrac{\partial(x, y)}{\partial(u, v)}\right| \mathrm{d} u \mathrm{~d} v
+            $$
+
+            依然成立，并且等式某一边的积分收敛可以推出另一个积分收敛
+
+    2. 比较判别法：设 $D$ 为 $\mathbf{R}^{2}$ 上具有分段光滑边界的无界区域，在 $D$ 上有 $0 \leqslant f(x, y) \leqslant g(x, y)$．则
+        1. 当 ${\displaystyle \iint_{D} g(x, y) \mathrm{d} x \mathrm{~d} y}$ 收敛时，${\displaystyle \iint_{D} f(x, y) \mathrm{d} x \mathrm{~d} y}$ 也收敛
+        2. 当 ${\displaystyle \iint_{D} f(x, y) \mathrm{d} x \mathrm{~d} y}$ 发散时，${\displaystyle \iint_{D} g(x, y) \mathrm{d} x \mathrm{~d} y}$ 也发散
+    3. $\text{Cauchy}$ 判别法：设 $D$ 为用极坐标表示的区域
+
+        $$
+        D=\{(r, \theta) \mid a \leqslant r<+\infty, \alpha \leqslant \theta \leqslant \beta \ (\alpha, \beta \in[0,2 \pi])\} \ (a>0)
+        $$
+
+        其中 $r=\sqrt{x^{2}+y^{2}} \cdot f(x, y)$ 为定义在 $D$ 上的函数．则
+
+        1. 如果存在正常数 $M$，使得在 $D$ 上有 $|f(x, y)| \leqslant \dfrac{M}{r^{p}}$，则当 $p>2$ 时，${\displaystyle \iint_{D} f(x, y) \mathrm{d} x \mathrm{~d} y}$ 收敛
+        2. 如果存在正常数 $m$，使得在 $D$ 上有 $|f(x, y)| \geqslant \dfrac{m}{r^{p}}$，则当 $p \leqslant 2$ 时，${\displaystyle \iint_{j} f(x, y) \mathrm{d} x \mathrm{~d} y}$ 发散
+
+2. 无界函数的反常二重积分：设 $D$ 为 $\mathbf{R}^{2}$ 上的有界区域，点 $P_{0} \in D, f(x, y)$ 在 $D - \left\{P_{0}\right\}$ 上有定义，但在点 $P_{0}$ 的任何去心邻域内都无界，此时称 $P_{0}$ 为 $f$ 的奇点．设 $\gamma$ 为内部含有 $P_{0}$ 的、面积为零的闭曲线，记 $\sigma$ 为其所包围的区域．并设二重积分 ${\displaystyle \iint_{D-\sigma} f(x, y) \mathrm{d} x \mathrm{~d} y}$ 总是存在．设 $\rho(\gamma)=\sup \left\{\left|P-P_{0}\right| \mid P \in \gamma\right\}$．若 $\rho(\gamma)$ 趋于零时，${\displaystyle \iint_{D - \sigma} f(x, y) \mathrm{d} x \mathrm{~d} y}$ 的极限存在，则称 $f(x, y)$ 在 $D$ 上可积，并记
+
+    $$
+    \iint_{D} f(x, y) \mathrm{d} x \mathrm{~d} y=\lim _{\rho(y) \rightarrow 0} \iint_{D -\sigma} f(x, y) \mathrm{d} x \mathrm{~d} y,
+    $$
+
+    为无界函数 $f(x, y)$ 在 $D$ 上的反常二重积分，此时也称无界函数的反常二重积分 ${\displaystyle \iint_{D} f(x, y) \mathrm{d} x \mathrm{~d} y}$ 收敛．如果右端的极限不存在，则称这一反常二重积分发散
 
 ## 3.3 含参变量积分
 ### 3.3.1 含参变量的常义积分
