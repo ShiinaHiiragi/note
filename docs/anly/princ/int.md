@@ -93,6 +93,111 @@
     3. 定积分的分部积分公式：若 $u^{\prime}(x), v^{\prime}(x)$ 在 $[a, b]$ 上连续，则 ${\displaystyle \int_{a}^{b} u v^{\prime} \mathrm{d} x=(u v)\bigg|_{a} ^{b}-\int_{a}^{b} u^{\prime} v \mathrm{~d} x}$
 
 ### 3.1.3 重积分
+1. 二重积分：设 $D$ 为 $\mathbf{R}^{2}$ 上的零边界闭区域，函数 $z=f(x, y)$ 在 $D$ 上有界．将 $D$ 用曲线网分成 $n$ 个小区域 $\Delta D_{1}, \Delta D_{2}, \cdots, \Delta D_{n}$（它称为 $D$ 的一个划分），并记所有的小区域 $\Delta D_{i}$ 的最大直径为 $\lambda$，即
+
+    $$
+    \lambda=\max _{1 \leqslant i \leqslant n}\left\{\operatorname{diam} \Delta D_{i}\right\}
+    $$
+
+    在每个 $\Delta D_{i}$ 上任取一点 $\left(\xi_{i}, \eta_{i}\right)$，记 $\Delta \sigma_{i}$ 为 $\Delta D_{i}$ 的面积，若 $\lambda$ 趋于零时，和式 ${\displaystyle \sum_{i=1}^{n} f\left(\xi_{i}, \eta_{i}\right) \Delta \sigma_{i}}$ 的极限存在且与区域的分法和点 $\left(\xi_{i}, \eta_{i}\right)$ 的取法无关，则称 $f(x, y)$ 在 $D$ 上可积，并称此极限为 $f(x, y)$ 在 $D$ 上的二重积分，记为
+
+    $$
+    \iint_{D} f(x, y) \mathrm{d} \sigma =\lim _{\lambda \rightarrow 0} \sum_{i=1}^{n} f\left(\xi_{i}, \eta_{i}\right) \Delta \sigma_{i}
+    $$
+
+    $f(x, y)$ 称为被积函数，$D$ 称为积分区域，$x$ 和 $y$ 称为积分变量，$\mathrm{d} \sigma$ 称为面积元素，${\displaystyle \iint_{D} f(x, y) \mathrm{d} \sigma}$ 也称为积分值
+
+    1. 面积与划分
+        1. 划分：设 $D$ 为 $\mathbf{R}^{2}$ 上的有界子集，$U=[a, b] \times[c, d]$ 为包含 $D$ 的一个闭矩形．在 $[a, b]$ 中插入分点 $a=x_{0}<x_{1}<\cdots<x_{n}=b$ 在 $[c, d]$ 中插入分点 $c=y_{0}<y_{1}<\cdots<y_{m}=d$，过这些分点作平行于坐标轴的直线，将 $U$ 分成许多小矩形 $U_{i, j}=\left[x_{i-1}, x_{i}\right] \times\left[y_{j-1}, y_{j}\right] \ (i=1,2, \cdots, n ; j=1,2, \cdots, m)$，称为 $U$ 的一个划分
+        2. 若在原有划分的基础上，在 $[a, b]$ 和 $[c, d]$ 中再增加有限个分点（所得的新划分称为原来划分的加细），则 $m B$ 不增，$m A$ 不减；且任意一种划分所得到的 $m A$ 不大于任意一种划分所得到的 $m B$，这些 $m A$ 有一个上确界 $m D$，$m B$ 有一个下确界 $m D^{*}$，并且 $m D \leqslant m D^{*}$．若 $m D=m D^{*}$，则称这个值为 $D$ 的面积，记为 $m D$，此时称 $D$ 是可求面积的
+        3. 记与 $\partial(D)$ 的交集非空的那些小矩形的面积之和为 $m B_{\partial(D)}$，若所有 $m B_{\partial p}$ 的下确界 $m \partial(D^{*})=0$，则称 $\partial(D)$ 的面积为零．边界的面积为零的有界区域称为零边界区域
+        4. 有界点集 $D$ 是可求面积的充分必要条件是其边界 $\partial(D)$ 的面积为 $0$．因此零边界区域是可求面积的\
+
+    2. $\text{Darboux}$ 和：设 $M_{i}$ 和 $m_{i}$ 分别为 $f(x, y)$ 在 $\Delta D_{i}$ 上的上确界与下确界，定义 $\text{Darboux}$ 大和为 ${\displaystyle S=\sum_{i=1}^{n} M_{i} \Delta \sigma_{i}}$，$\text{Darboux}$ 小和为 ${\displaystyle s=\sum_{i=1}^{n} m_{i} \Delta \sigma_{i}}$
+        1. 若在已有的划分上添加有限条曲线作进一步划分，则 $\text{Darboux}$ 大和不增，$\text{Darboux}$ 小和不减
+        2. 任何一个 $\text{Darboux}$ 小和都不大于任何一个 $\text{Darboux}$ 大和．因此若记 $I^{*}=$ $\inf \{S\}, I_{*}=\sup \{s\}$（这里上、下确界是对所有划分来取的），则有 $s \leqslant I_{*} \leqslant I^{*} \leqslant S$
+        3. $f(x, y)$ 在 $D$ 上可积的充分必要条件是 ${\displaystyle \lim _{\lambda \rightarrow 0}(S-s)=0}$
+        4. 若 $f(x, y)$ 在零边界闭区琙 $D$ 上连续，那么它在 $D$ 上可积
+
+2. $n$ 重积分：设 $\Omega$ 为 $\mathbf{R}^{n}$ 上的零边界闭区域，函数 $u=f(\boldsymbol{x})$ 在 $\Omega$ 上有界．将 $\Omega$ 用曲面网分成 $n$ 个小区域 $\Delta \Omega_{1}, \Delta \Omega_{2}, \cdots, \Delta \Omega_{n}$（称为 $\Omega$ 的一个划分），记 $\Delta V_{i}$ 为 $\Delta \Omega_{i}$ 的体积，并记所有的小区域 $\Delta \Omega_{i}$ 的最大直径为 $\lambda$．在每个 $\Delta \Omega_{i}$ 上任取一点 $\boldsymbol{x}_{i}$，若 $\lambda$ 趋于零时，和式 ${\displaystyle \sum_{i=1}^{n} f\left(x_{i}\right) \Delta V_{i}}$ 的极限存在且与区域的分法和点 $x_{i}$ 的取法无关，则称 $f(x)$ 在 $\Omega$ 上可积，并称此极限为 $f(x)$ 在有界闭区域 $\Omega$ 上的 $n$ 重积分，记为
+
+    $$
+    \int_{\Omega} f \mathrm{~d} V=\lim _{\lambda \rightarrow 0} \sum_{i=1}^{n} f\left(x_{i}\right) \Delta V_{i}
+    $$
+
+    $f(x)$ 称为被积函数，$\Omega$ 称为积分区域，$x$ 称为积分变量，$\mathrm{d} V$ 称为体积元素，$\int_{\Omega} f \mathrm{~d} V$ 也称为积分值
+
+    1. 在 $\mathbf{R}^{2}$ 中，$f(x, y)$ 在 $D$ 上的二重积分记为 ${\displaystyle \iint_{D} f(x, y) \mathrm{d} x \mathrm{~d} y}$
+
+        在 $\mathbf{R}^{3}$ 中，$f(x, y, z)$ 在 $\Omega$ 上的三重积分记为 ${\displaystyle \iiint_{\Omega} f(x, y, z) \mathrm{d} x \mathrm{~d} y \mathrm{~d} z}$ 或 ${\displaystyle \iiint_{\Omega} f(x, y, z) \mathrm{d} V}$
+
+        而在 $\mathbf{R}^{n}$ 中，$f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 在 $\Omega$ 上的 $n$ 重积分记为 ${\displaystyle \iint \mathop{\cdots} \limits_{\Omega} \int f\left(x_{1}, x_{2}, \cdots, x_{n}\right) \mathrm{d} x_{1} \mathrm{~d} x_{2} \cdots \mathrm{d} x_{n}}$ 或 ${\displaystyle \int_{\Omega} f\left(x_{1}, x_{2}, \cdots, x_{n}\right) \mathrm{d} x_{1} \mathrm{~d} x_{2} \cdots \mathrm{d} x_{n}}$
+
+    2. 重积分的性质：假定考虑的区域是 $\mathbf{R}^{n} \ (n \geqslant 2)$ 中的零边界闭区域
+        1. 线性性：设 $f$ 和 $g$ 都在区域 $\Omega$ 上可积，$\alpha, \beta$ 为常数，则 $\alpha f+\beta g$ 在 $\Omega$ 上也可积，并且
+
+            $$
+            \int_{\Omega}(\alpha f+\beta g) \mathrm{d} V=\alpha \int_{\Omega} f \mathrm{~d} V+\beta \int_{\Omega} g \mathrm{~d} V
+            $$
+
+        2. 区域可加性：设区域 $\Omega$ 被分成两个内点不相交的区域 $\Omega_{1}$ 和 $\Omega_{2}$，如果 $f$ 在 $\Omega$ 上可积，则 $f$ 在 $\Omega_{1}$ 和 $\Omega_{2}$ 上都可积；反之，如果 $f$ 在 $\Omega_{1}$ 和 $\Omega_{2}$ 上可积，则 $f$ 也在 $\Omega$ 上可积．此时有 ${\displaystyle \int_{\Omega} f \mathrm{~d} V=\int_{\Omega_{1}} f \mathrm{~d} V+\int_{\Omega_{2}} f \mathrm{~d} V}$
+        3. 设被积函数 $f \equiv 1$．当 $n=2$ 时，$\Omega$ 的面积为 ${\displaystyle \iint_{\Omega} \mathrm{d} x \mathrm{~d} y}$；当 $n \geqslant 3$ 时，$\Omega$ 的体积为 ${\displaystyle \int_{\Omega} \mathrm{d} V}$
+        4. 保序型：设 $f$ 和 $g$ 都在区域 $\Omega$ 上可积，且满足 $f \leqslant g$，则有 ${\displaystyle \int_{\Omega} f \mathrm{~d} V \leqslant \int_{\Omega} g \mathrm{~d} V}$
+        5. 设 $f$ 在区域 $\Omega$ 上可积，$M$ 与 $m$ 分别为 $f$ 在 $\Omega$ 上的上确界和下确界，则有 ${\displaystyle m V \leqslant \int_{\Omega} f \mathrm{~d} V \leqslant M V}$，其中 $V$ 当 $n=2$ 时为 $\Omega$ 的面积，当 $n>2$ 时为 $\Omega$ 的体积
+        6. 绝对可积性：设 $f$ 在区域 $\Omega$ 上可积，则 $|f|$ 也在 $\Omega$ 上可积，且有 ${\displaystyle \left|\int_{\Omega} f \mathrm{~d} V\right| \leqslant \int_{\Omega}|f| \mathrm{d} V}$
+        7. 乘积可积性：设 $f$ 和 $g$ 都在区域 $\Omega$ 上可积，则 $f \cdot g$ 也在 $\Omega$ 上可积
+        8. 积分中值定理：设 $f$ 和 $g$ 都在区域 $\Omega$ 上可积，且 $g$ 在 $\Omega$ 上不变号．设 $M$ 与 $m$ 分别为 $f$ 在 $\Omega$ 上的上确界和下确界，则存在常数 $\mu \in[m, M]$，使得 ${\displaystyle \int_{\Omega} f \cdot g \mathrm{~d} V=\mu \int_{\Omega} g \mathrm{~d} V}$．特别地，如果 $f$ 在 $\Omega$ 上连续，则存在 $\xi \in \Omega$，使得 ${\displaystyle \int_{\Omega} f \cdot g \mathrm{~d} V=f(\xi) \int_{\Omega} g \mathrm{~d} V}$
+
+    3. 重积分的计算
+        1. 设 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 在 $n$ 维闭矩形 $\Omega=\left[a_{1}, b_{1}\right] \times\left[a_{2}, b_{2}\right] \times \cdots \times\left[a_{n}, b_{n}\right]$ 上可积．记 $\Omega_{*}=\left[a_{2}, b_{2}\right] \times \cdots \times\left[a_{n}, b_{n}\right]$．若积分 ${\displaystyle h\left(x_{1}\right)=\int_{\Omega_{2}} f\left(x_{1}, x_{2}, \cdots, x_{n}\right) \mathrm{d} x_{2} \cdots \mathrm{d} x_{n}}$ 对于每个 $x_{1} \in\left[a_{1}, b_{1}\right]$ 存在，则 $h\left(x_{1}\right)$ 在 $\left[a_{1}, b_{1}\right]$ 上可积，并有
+
+            $$
+            \int_{\Omega} f\left(x_{1}, x_{2}, \cdots, x_{n}\right) \mathrm{d} x_{1} \mathrm{~d} x_{2} \cdots \mathrm{d} x_{n}=\int_{a_{1}}^{h_{1}} h\left(x_{1}\right) \mathrm{d} x_{1}=\int_{a_{1}}^{b_{1}} \mathrm{~d} x_{1} \int_{\Omega_{0}} f\left(x_{1}, x_{2}, \cdots, x_{n}\right) \mathrm{d} x_{2} \cdots \mathrm{d} x_{n}
+            $$
+
+        2. 累次积分：设 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 在 $n$ 维闭矩形 $\Omega=\left[a_{1}, b_{1}\right] \times\left[a_{2}, b_{2}\right] \times \cdots \times\left[a_{n}, b_{n}\right]$ 上连续，则有
+
+            $$
+            \int_{\Omega} f\left(x_{1}, x_{2}, \cdots, x_{n}\right) \mathrm{d} x_{1} \mathrm{~d} x_{2} \cdots \mathrm{d} x_{n}=\int_{a_{1}}^{b_{1}} \mathrm{~d} x_{1} \int_{a_{2}}^{b_{2}} \mathrm{~d} x_{2} \cdots \int_{a_{n-1}}^{b_{n-1}} \mathrm{~d} x_{n-1} \int_{a_{n}}^{b_{n}} f\left(x_{1}, x_{2}, \cdots, x_{n}\right) \mathrm{d} x_{n}
+            $$
+
+    4. 重积分的变量代换：设 $\Omega$ 为 $U$ 中具有分片光滑边界的有界闭域，$U$ 为 $\mathbf{R}^{n} \ (n>2)$ 上的开集，映射
+
+        $$
+        T: y_{1}=y_{1}\left(x_{1}, x_{2}, \cdots, x_{n}\right), y_{2}=y_{2}\left(x_{1}, x_{2}, \cdots, x_{n}\right), \cdots, y_{n}=y_{n}\left(x_{1}, x_{2}, \cdots, x_{n}\right)
+        $$
+
+        将 $U$ 一一对应地映到 $V \subset \mathbf{R}^{n}$ 上，因此其有逆变换 $T^{-1}$．进一步假设 $y_1, y_2, \cdots, y_n$ 都具有连续偏导数，且这个映射的 $\text{Jacobi}$ 行列式不等于零．如果 $f\left(y_{1}, y_{2}, \cdots, y_{n}\right)$ 是 $T(\Omega)$ 上的连续函数，那么变量代换公式
+
+        $$
+        \int_{T(\Omega)} f\left(y_{1}, y_{2}, \cdots, y_{n}\right) \mathrm{d} y_{1} \mathrm{~d} y_{2} \cdots \mathrm{d} y_{n}=\int_{\Omega} f\left(y_{1}(\boldsymbol{x}), y_{2}(\boldsymbol{x}), \cdots, y_{n}(\boldsymbol{x})\right)\left|\frac{\partial\left(y_{1}, y_{2}, \cdots, y_{n}\right)}{\partial\left(x_{1}, x_{2}, \cdots, x_{n}\right)}\right| \mathrm{d} x_{1} \mathrm{~d} x_{2} \cdots \mathrm{d} x
+        $$
+
+        成立，其中 $\boldsymbol{x}=\left(x_{1}, x_{2}, \cdots, x_{n}\right)$
+
+        1. 对于柱面坐标变换
+
+            $$
+            \left\{\begin{array}{l}
+            x=r \cos \theta \\
+            y=r \sin \theta \\
+            z=z
+            \end{array}\right.
+            $$
+
+            变换的 $\text{Jacobi}$ 行列式为 $\dfrac{\partial(x, y, z)}{\partial(r, \theta, z)}=r$
+
+        2. 对于球面坐标变换
+
+            $$
+            \left\{\begin{array}{l}
+            x=r \sin \varphi \cos \theta \\
+            y=r \sin \varphi \sin \theta \\
+            z=r \cos \varphi
+            \end{array}\right.
+            $$
+
+            变换的 $\text{Jacobi}$ 行列式为 $\dfrac{\partial(x, y, z)}{\partial(r, \varphi, \theta)}=r^{2} \sin \varphi$
 
 ## 3.2 反常积分
 ### 3.2.1 无穷限反常积分
