@@ -671,10 +671,10 @@
         1. 设 $f(x)$ 在 $[a, b]$ 上有连续导数，将 $x$ 作为参数，推导出的弧长公式为 ${\displaystyle \int_{a}^{b} \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{d} x}$
         2. 设曲线段的极坐标方程为 $r=r(\theta) \ (\alpha \leqslant \theta \leqslant \beta)$ 且 $r'(\theta)$ 在 $[\alpha, \beta]$ 上连续，则弧长公式为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[r^{\prime}(\theta)\right]^{2}+[r(\theta)]^{2}} \mathrm{d} \theta}$
 
-2. 光滑曲线：若 $\boldsymbol{r}^{\prime}(t)=x^{\prime}(t) \boldsymbol{i}+y^{\prime}(t) \boldsymbol{j}+z^{\prime}(t) \boldsymbol{k}$ 在 $[a, b]$ 上连续，并且 $\boldsymbol{r}^{\prime}(t) \neq \mathbf{0} \ (t \in[a, b])$，则称曲线
+2. 光滑曲线：若 $\boldsymbol{r}^{\prime}(t)=x^{\prime}(t) \boldsymbol{e}_1+y^{\prime}(t) \boldsymbol{e}_2+z^{\prime}(t) \boldsymbol{e}_3$ 在 $[a, b]$ 上连续，并且 $\boldsymbol{r}^{\prime}(t) \neq \mathbf{0} \ (t \in[a, b])$，则称曲线
 
     $$
-    \Gamma: \boldsymbol{r}(t)=x(t) \boldsymbol{i}+y(t) j+z(t) \boldsymbol{k}, a \leqslant t \leqslant b
+    \Gamma: \boldsymbol{r}(t)=x(t) \boldsymbol{e}_1+y(t) \boldsymbol{e}_2+z(t) \boldsymbol{e}_3, a \leqslant t \leqslant b
     $$
 
     所确定的空间曲线为光滑曲线
@@ -701,7 +701,7 @@
         \int_{L} f(x, y, z) \mathrm{d} s=\int_{\alpha}^{\beta} f(x(t), y(t), z(t)) \sqrt{[x^{\prime}(t)]^2+[y^{\prime}(t)]^2+[z^{\prime}(t)]^2} \mathrm{d} t
         $$
 
-4. 第二类曲线积分：设 $L$ 为一条定向的光滑曲线，起点为 $A$，终点为 $B$．在 $L$ 上每一点取单位切向量 $\boldsymbol{\tau}=(\cos \alpha, \cos \beta, \cos \gamma)$，使它与 $L$ 的定向相一致．设 $\boldsymbol{f}(x, y, z)=P(x, y, z) \boldsymbol{i}+Q(x, y, z) \boldsymbol{j}+R(x, y, z) \boldsymbol{k}$ 是定义在 $L$ 上的向量值函数，则称
+4. 第二类曲线积分：设 $L$ 为一条定向的光滑曲线，起点为 $A$，终点为 $B$．在 $L$ 上每一点取单位切向量 $\boldsymbol{\tau}=(\cos \alpha, \cos \beta, \cos \gamma)$，使它与 $L$ 的定向相一致．设 $\boldsymbol{f}(x, y, z)=P(x, y, z) \boldsymbol{e}_1+Q(x, y, z) \boldsymbol{e}_2+R(x, y, z) \boldsymbol{e}_3$ 是定义在 $L$ 上的向量值函数，则称
 
     $$
     \int_{L} \boldsymbol f \cdot \boldsymbol \tau \mathrm{d} s=\int_{L}[P(x, y, z) \cos \alpha+Q(x, y, z) \cos \beta+R(x, y, z) \cos \gamma] \mathrm{d} s

@@ -522,7 +522,62 @@
         \iint_{\Sigma} f(x, y, z) \mathrm{d} S=\iint_{D} f(x, y, z(x, y)) \sqrt{1+z_{x}^{2}(x, y)+z_{y}^{2}(x, y)} \mathrm{d} x \mathrm{d} y
         $$
 
-4. 第二类曲面积分
+4. 第二类曲面积分：设 $\Sigma$ 为定向的光滑曲面，曲面上的每一点指定了单位法向量 $\boldsymbol{n}= (\cos \alpha, \cos \beta, \cos \gamma)$．如果 $\boldsymbol f(x, y, z)=P(x, y, z) \boldsymbol e_1+Q(x, y, z) \boldsymbol e_2+R(x, y, z) \boldsymbol e_3$ 是定义在 $\Sigma$ 上的向量值函数，则称
+
+    $$
+    \iint_{\Sigma} \boldsymbol f \cdot \boldsymbol n \mathrm{d} S=\iint_{\Sigma}[P(x, y, z) \cos \alpha+Q(x, y, z) \cos \beta+R(x, y, z) \cos \gamma] \mathrm{d} S
+    $$
+
+    为 $f$ 在 $\Sigma$ 上的第二类曲面积分．记 $2-$形式 $\omega=P(x, y, z) \mathrm{d} y \wedge \mathrm{d} z+Q(x, y, z) \mathrm{d} z \wedge \mathrm{d} x+R(x, y, z) \mathrm{d} x \wedge \mathrm{d} y$，则第二类曲面积分也可记为
+
+    $$
+    \int_{\Sigma} \omega=\iint_{\Sigma} P(x, y, z) \mathrm{d} y \wedge \mathrm{d} z+Q(x, y, z) \mathrm{d} z \wedge \mathrm{d} x+R(x, y, z) \mathrm{d} x \wedge \mathrm{d} y=\iint_{\Sigma} f \cdot \mathrm{d} \boldsymbol S
+    $$
+
+    1. 双侧曲面：设 $\Sigma$ 是一张光滑曲面，$P$ 为 $\Sigma$ 上任一点，$\Gamma_{P}$ 是过 $P$ 点且不越过曲面边界的任意一条闭曲线．取定 $\Sigma$ 在 $P$ 点的一个单位法向量，让它沿 $\Gamma_{p}$ 连续移动，使它与所过之点处的一个单位法向量连续地相合．如果当它再回到 $P$ 点时，法向量的指向仍与原选的方向相同，则称 $\Sigma$ 为双侧曲面
+    2. 第二类曲面积分的性质
+        1. 方向性：设向量值函数 $\boldsymbol f$ 在定向的光滑曲面 $\Sigma$ 上的第二类曲面积分存在．记 $-\Sigma$ 为与 $\Sigma$ 取相反侧的曲面，则 $\boldsymbol f$ 在 $-\Sigma$ 上的第二类曲面积分也存在，且有 ${\displaystyle \iint_{-\Sigma} \boldsymbol f \cdot \boldsymbol n \mathrm{d} S=-\iint_{\Sigma} \boldsymbol f \cdot \boldsymbol n \mathrm{d} S}$
+        2. 线性性：设 $\boldsymbol f$ 和 $\boldsymbol g$ 在定向的光滑曲面 $\Sigma$ 上的第二类曲面积分存在，则对任何常数 $\alpha, \beta, \alpha \boldsymbol{f}+\beta \boldsymbol{g}$ 在 $\Sigma$ 上的第二类曲面积分也存在，且有 ${\displaystyle \iint_{\Sigma}(\alpha f+\beta \boldsymbol{g}) \cdot \boldsymbol{n} \mathrm{d} S=\alpha \iint_{\Sigma} \boldsymbol{f} \cdot \boldsymbol{n} \mathrm{d} S+\beta \iint_{\Sigma} \boldsymbol{g} \cdot \boldsymbol{n} \mathrm{d} S}$
+        3. 曲面可加性：设定向的光滑曲面 $\Sigma$ 分成了两片 $\Sigma_{1}$ 和 $\Sigma_{2}$，它们与 $\Sigma$ 的取向相同（记为 $\Sigma=\Sigma_{1}+\Sigma_{2}$），如果向量值函数 $\boldsymbol f$ 在 $\Sigma$ 上的第二类曲面积分存在，则它在 $\Sigma_{1}$ 和 $\Sigma_{2}$ 上的第二类曲面积分也存在．反之，如果 $\boldsymbol f$ 在 $\Sigma_{1}$ 和 $\Sigma_{2}$ 上的第二类曲面积分存在，则它在 $\Sigma$ 上的第二类曲面积分也存在．且有 ${\displaystyle \iint_{\Sigma} \boldsymbol f \cdot \boldsymbol n \mathrm{d} S=\iint_{\Sigma_{1}} \boldsymbol f \cdot \boldsymbol n \mathrm{d} S+\iint_{\Sigma_{2}} \boldsymbol f \cdot \boldsymbol n \mathrm{d} S}$
+    3. 第二类曲面积分的计算
+        1. 设定向光滑曲面 $\Sigma$ 的参数方程为
+
+            $$
+            \left\{\begin{aligned}
+            & x=x(u, v) \\
+            & y=y(u, v) \\
+            & z=z(u, v)
+            \end{aligned}\right. \quad (u, v) \in D
+            $$
+
+            其中 $D$ 为 $u v$ 平面上有分段光滑边界的有界区域．$P(x, y, z), Q(x, y, z), R(x, y, z)$ 为 $\Sigma$ 上的连续函数，则令
+
+            $$
+            \begin{aligned}
+            & \iint_{\Sigma} P(x, y, z) \mathrm{d} y \mathrm{d} z+Q(x, y, z) \mathrm{d} z \mathrm{d} x+R(x, y, z) \mathrm{d} x \mathrm{d} y \\
+            = & \pm \iint_{D}\left[P'(u, v)) \dfrac{\partial(y, z)}{\partial(u, v)}+Q'(u, v)) \dfrac{\partial(z, x)}{\partial(u, v)}+R'(u, v) \dfrac{\partial(x, y)}{\partial(u, v)}\right] \mathrm{d} u \mathrm{d} v
+            \end{aligned}
+            $$
+
+            其中
+
+            $$
+            \begin{aligned}
+            & P'(u, v) = P(x(u, v), y(u, v), z(u, v)) \\
+            & Q'(u, v) = Q(x(u, v), y(u, v), z(u, v)) \\
+            & R'(u, v) = R(x(u, v), y(u, v), z(u, v))
+            \end{aligned}
+            $$
+
+            式中符号由曲面的侧，即方向余弦（或单位法向量）的计算公式中所取符号决定
+
+        2. 如果定向的光滑曲面 $\Sigma$ 的方程为 $z=z(x, y) \ ((x, y) \in D)$ 时，有
+
+            $$
+            \iint_{\Sigma} R(x, y, z) \mathrm{d} x \mathrm{d} y=\pm \iint_{D_{x y}} R(x, y, z(x, y)) \mathrm{d} x \mathrm{d} y
+            $$
+
+            等式右端是二重积分．当曲面的定向为上侧时，积分号前取「$+$」；当曲面的定向为下侧 时，积分号前取「$-$」
 
 ### 4.5.2 曲面与曲率
 
