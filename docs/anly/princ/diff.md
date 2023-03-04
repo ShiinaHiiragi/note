@@ -81,7 +81,7 @@
     \lim _{\Delta x \rightarrow 0} \dfrac{\Delta y}{\Delta x}=\lim _{\Delta x \rightarrow 0} \dfrac{f\left(x_{0}+\Delta x\right)-f\left(x_{0}\right)}{\Delta x}
     $$
 
-    存在，则称此极限值为函数 $f(x)$ 在点 $x_{0}$ 的导数（微商），记作 $f^{\prime}\left(x_{0}\right)$ 或 $y^{\prime}\left(x_{0}\right), \dfrac{\mathrm{d} y}{\mathrm{~d} x}\left(x_{0}\right), \dfrac{\mathrm{d} f}{\mathrm{~d} x}\left(x_{0}\right)$，此时称 $f(x)$ 在点 $x_{0}$ 的导数存在，或称 $f(x)$ 在点 $x_{0}$ 可导
+    存在，则称此极限值为函数 $f(x)$ 在点 $x_{0}$ 的导数（微商），记作 $f^{\prime}\left(x_{0}\right)$ 或 $y^{\prime}\left(x_{0}\right), \dfrac{\mathrm{d} y}{\mathrm{d} x}\left(x_{0}\right), \dfrac{\mathrm{d} f}{\mathrm{d} x}\left(x_{0}\right)$，此时称 $f(x)$ 在点 $x_{0}$ 的导数存在，或称 $f(x)$ 在点 $x_{0}$ 可导
 
     1. 若 $f(x)$ 在点 $x$ 可导当且仅当
 
@@ -108,7 +108,7 @@
     3. 复合函数的导数：若 $y=f(u)$ 在点 $u$ 可导，$u=g(x)$ 在点 $x$ 可导，则复合函数 $y=f \circ g(x)$ 在点 $x$ 可导，且有
 
         $$
-        \dfrac{\mathrm{d} y}{\mathrm{~d} x}=\dfrac{\mathrm{d} y}{\mathrm{~d} u} \cdot \dfrac{\mathrm{d} u}{\mathrm{~d} x}=f^{\prime}(g(x)) g^{\prime}(x)
+        \dfrac{\mathrm{d} y}{\mathrm{d} x}=\dfrac{\mathrm{d} y}{\mathrm{d} u} \cdot \dfrac{\mathrm{d} u}{\mathrm{d} x}=f^{\prime}(g(x)) g^{\prime}(x)
         $$
 
 3. 初等函数的导数
@@ -224,7 +224,7 @@
     1. 向量值函数 $\boldsymbol{f}$ 连续、可导和可微就是它的每一个坐标分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 连续、可导和可微
         1. 若 $\boldsymbol{f}$ 的每一个分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 的偏导数都在 $\boldsymbol{x}^{0}$ 点连续，即 $f$ 的 $\text{Jacobi}$ 矩阵的每个元素都在 $x^{0}$ 点连续，则称向量值函数 $f$ 的导数在 $x^{0}$ 点连续．如果向量值函数 $\boldsymbol f$ 的导数在 $D$ 上每一点连续，则称 $\boldsymbol f$ 的导数在 $D$ 上连续
         2. 若存在只与 $\boldsymbol{x}^{0}$ 有关，与 $\Delta \boldsymbol{x}$ 无关的矩阵 $\boldsymbol{A}$ 使得在 $\boldsymbol{x}^{0}$ 点附近有 $\Delta y=f\left(x^{0}+\Delta x\right)-f\left(x^{0}\right)=A \Delta x+o(\Delta x)$ （其中 $\Delta x=\left(\Delta x_{1}, \Delta x_{2}, \cdots, \Delta x_{n}\right)$，$o(\Delta x)$ 是列向量，其模是 $\|\Delta x\|$ 的高阶无穷小量），则称向量值函数 $f$ 在 $x^{0}$ 点可微，并称 $\boldsymbol{A} \Delta x$ 为 $f$ 在 $\boldsymbol{x}^{0}$ 点的微分，记为 $\mathrm{d} \boldsymbol{y}$
-            - 若将 $\Delta \boldsymbol{x}$ 记为 $\mathrm{d} \boldsymbol{x}=\left(\mathrm{d} x_{1}, \mathrm{~d} x_{2}, \cdots, \mathrm{d} x_{n}\right)$，那么有 $\mathrm{d} \boldsymbol{y}=\boldsymbol{A} \mathrm{d} \boldsymbol{x}$
+            - 若将 $\Delta \boldsymbol{x}$ 记为 $\mathrm{d} \boldsymbol{x}=\left(\mathrm{d} x_{1}, \mathrm{d} x_{2}, \cdots, \mathrm{d} x_{n}\right)$，那么有 $\mathrm{d} \boldsymbol{y}=\boldsymbol{A} \mathrm{d} \boldsymbol{x}$
             - 如果向量值函数 $\boldsymbol{f}$ 在 $D$ 上每一点可微，则称 $\boldsymbol{f}$ 在 $D$ 上可微
         3. 向量值函数 $\boldsymbol{f}$ 在 $x^{0}$ 点可微的充分必要条件是它的坐标分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 都在 $x^{0}$ 点可微．此时成立微分公式 $\mathrm{d} \boldsymbol{y}=\boldsymbol{f}^{\prime}\left(\boldsymbol{x}^{0}\right) \mathrm{d} \boldsymbol{x}$
     2. 链式法则：设 $\boldsymbol f: D_{f}\left(\subset \mathbf{R}^{k}\right) \rightarrow \mathbf{R}^{m}$ 与 $\boldsymbol g: D_{g}\left(\subset \mathbf{R}^{n}\right) \rightarrow \mathbf{R}^{k}$ 分别是多元向量值函数，且分别在 $D_{f}$ 与 $D_{g}$ 上具有连续导数．如果 $\boldsymbol g$ 的值域 $\boldsymbol g\left(D_{g}\right) \subset D_{f}$，并记 $\boldsymbol{u}=\boldsymbol{g}(\boldsymbol{x})$，那么复合向量值函数 $\boldsymbol f \circ \boldsymbol g$ 在 $D_{g}$ 上也具有连续的导数，并且成立等式
@@ -245,7 +245,7 @@
 
         1. 在点 $\left(x_{0}, y_{0}\right)$ 附近可以从函数方程 $F(x, y)=0$ 惟一确定隐函数 $y=f(x) \ (x \in O\left(x_{0}, \rho\right))$，它满足 $F(x, f(x))=0$ 以及 $y_{0}=f\left(x_{0}\right)$
         2. 隐函数 $y=f(x)$ 在 $x \in O\left(x_{0}, \rho\right)$ 上连续
-        3. 急函数 $y=f(x)$ 在 $x \in O\left(x_{0}, \rho\right)$ 上具有连续的导数，且 $\dfrac{\mathrm{d} y}{\mathrm{~d} x}=-\dfrac{F_{x}(x, y)}{F_{y}(x, y)}$
+        3. 急函数 $y=f(x)$ 在 $x \in O\left(x_{0}, \rho\right)$ 上具有连续的导数，且 $\dfrac{\mathrm{d} y}{\mathrm{d} x}=-\dfrac{F_{x}(x, y)}{F_{y}(x, y)}$
 
     2. 多元隐函数存在定理：若 $n+1$ 元函数 $F\left(x_{1}, x_{2}, \cdots, x_{n}, y\right)$ 满足条件
         1. $F\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}, y^{0}\right)=0$

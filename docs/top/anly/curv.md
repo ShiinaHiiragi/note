@@ -655,7 +655,7 @@
 
 ## 3.4 曲线的局部理论
 ### 3.4.1 平面曲线的微积分
-1. 曲线弧长的微分 $\mathrm{d} s$
+1. 平面曲线弧长的微分 $\mathrm{d} s$
     1. 若曲线方程为 $y=f(x)(a \leqslant x \leqslant b)$ 且 $f^{\prime}(x)$ 在 $[a, b]$ 连续，则 $\mathrm{d} s=\pm \sqrt{1+f^{\prime 2}(x)} \mathrm{d} x$
     2. 若曲线方程为 $\left\{\begin{array}{l}x=\varphi(t) \\y=\psi(t)\end{array} \ (\alpha \leqslant t \leqslant \beta),\right.$，且有 $\varphi^{\prime}(t), \psi^{\prime}(t)$ 在 $[\alpha, \beta]$ 连续且不全为 $0$，则
 
@@ -669,9 +669,9 @@
         \mathrm{d} s =\pm \sqrt{\mathrm{d} x^{2}+\mathrm{d} y^{2}}=\pm \sqrt{\rho^{2}(\theta)+\rho^{\prime 2}(\theta)} \mathrm{d} \theta
         $$
 
-2. 曲线弧长的积分：设曲线 $l$ 的参数方程为 $\left\{\begin{array}{l}x=x(t) \\y=y(t)\end{array}\right.$，设当 $t=\alpha, t=\beta$ 时（$\alpha<\beta$）对应的点为 $A, B$ 点．假设 $x(t), y(t)$ 在 $[\alpha, \beta]$ 上都有连续导数，则曲线 $l$ 上以 $A, B$ 为端点的一段弧长为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[x^{\prime}(t)\right]^{2}+\left[y^{\prime}(t)\right]^{2}} \mathrm{~d} t}$
-    1. 设 $f(x)$ 在 $[a, b]$ 上有连续导数，将 $x$ 作为参数，推导出的弧长公式为 ${\displaystyle \int_{a}^{b} \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{~d} x}$
-    2. 设曲线段的极坐标方程为 $r=r(\theta) \ (\alpha \leqslant \theta \leqslant \beta)$ 且 $r'(\theta)$ 在 $[\alpha, \beta]$ 上连续，则弧长公式为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[r^{\prime}(\theta)\right]^{2}+[r(\theta)]^{2}} \mathrm{~d} \theta}$
+2. 平面曲线弧长的积分：设曲线 $l$ 的参数方程为 $\left\{\begin{array}{l}x=x(t) \\y=y(t)\end{array}\right.$，设当 $t=\alpha, t=\beta$ 时（$\alpha<\beta$）对应的点为 $A, B$ 点．假设 $x(t), y(t)$ 在 $[\alpha, \beta]$ 上都有连续导数，则曲线 $l$ 上以 $A, B$ 为端点的一段弧长为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[x^{\prime}(t)\right]^{2}+\left[y^{\prime}(t)\right]^{2}} \mathrm{d} t}$
+    1. 设 $f(x)$ 在 $[a, b]$ 上有连续导数，将 $x$ 作为参数，推导出的弧长公式为 ${\displaystyle \int_{a}^{b} \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{d} x}$
+    2. 设曲线段的极坐标方程为 $r=r(\theta) \ (\alpha \leqslant \theta \leqslant \beta)$ 且 $r'(\theta)$ 在 $[\alpha, \beta]$ 上连续，则弧长公式为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[r^{\prime}(\theta)\right]^{2}+[r(\theta)]^{2}} \mathrm{d} \theta}$
 
 ### 3.4.2 空间曲线的微积分
 1. 光滑曲线：若 $\boldsymbol{r}^{\prime}(t)=x^{\prime}(t) \boldsymbol{i}+y^{\prime}(t) \boldsymbol{j}+z^{\prime}(t) \boldsymbol{k}$ 在 $[a, b]$ 上连续，并且 $\boldsymbol{r}^{\prime}(t) \neq \mathbf{0} \ (t \in[a, b])$，则称曲线
@@ -684,8 +684,25 @@
 
     1. 切向量：$\Gamma$ 在 $P_{0}$ 点的切线的一个方向向量为 $\boldsymbol{r}^{\prime}\left(t_{0}\right)=\left(x^{\prime}\left(t_{0}\right), y^{\prime}\left(t_{0}\right), z^{\prime}\left(t_{0}\right)\right)$
     2. 法平面：过 $P_{0}$ 点且与切线垂直的平面 $x^{\prime}\left(t_{0}\right)\left(x-x_{0}\right)+y^{\prime}\left(t_{0}\right)\left(y-y_{0}\right)+z^{\prime}\left(t_{0}\right)\left(z-z_{0}\right)=0$ 或 $\boldsymbol r^{\prime}\left(t_{0}\right) \cdot\left(\boldsymbol x-\boldsymbol x_{0}\right)=0$
+    3. 曲线的弧长：${\displaystyle s=\int_{a}^{b} \sqrt{[x^{\prime}(t)]^2+[y^{\prime}(t)]^2+[z^{\prime}(t)]^2} \mathrm{d} t}$
 
-2. 第一类曲线积分
+2. 第一类曲线积分：设 $L$ 是空间 $\mathbf{R}^{3}$ 上一条可求长的连续曲线，端点为 $A, B$，函数 $f(x, y, z)$ 在 $L$ 上有界．令 $A=P_{0}, B=P_{n}$，在 $L$ 上从 $A$ 到 $B$ 顺序地插入分点 $P_{1}, P_{2}, \cdots, P_{n-1}$，再分别在每个小弧段 $P_{i-1} P_{i}$ 上任取一点 $\left(\xi_{i}, \eta_{i}, \zeta_{i}\right)$，并记第 $i$ 个小弧段 $P_{i-1} P_{i}$ 的长度为 $\Delta s_{i}(i=1,2, \cdots, n)$．作和式 ${\displaystyle \sum_{i=1}^{n} f\left(\xi_{i}, \eta_{i}, \zeta_{i}\right) \Delta s_{i}}$，如果当所有小弧段的最大长度 $\lambda$ 趋于零时，这个和式的极限存在且与分点 $\left\{P_{i}\right\}$ 的取法及 $P_{i-1} P_{i}$ 上的点 $\left(\xi_{i}, \eta_{i}, \zeta_{i}\right)$ 的取法无关，则称这个极限值为 $f(x, y, z)$ 在曲线 $L$ 上的第一类曲线积分，记为 ${\displaystyle \int_{L} f(x, y, z) \mathrm{d} s}$ 或 ${\displaystyle \int_{L} f(P) \mathrm{d} s}$，即
+
+    $$
+    \int_{L} f(x, y, z) \mathrm{d} s=\lim _{\lambda \rightarrow 0} \sum_{i=1}^{n} f\left(\xi_{i}, \eta_{i}, \zeta_{i}\right) \Delta s_{i}
+    $$
+
+    其中称 $f(x, y, z)$ 为被积函数，$L$ 为积分路径．在平面情形下函数 $f(x, y)$ 在平面曲线 $L$ 上的第一类曲线积分记为 ${\displaystyle \int_{L} f(x, y) \mathrm{d} s}$
+
+    1. 第一类曲线积分的性质
+        1. 线性性：如果函数 $f, g$ 在 $L$ 上的第一类曲线积分存在，则对于任何常数 $\alpha, \beta, \alpha f+\beta g$ 在 $L$ 上的第一类曲线积分也存在，且有 ${\displaystyle \int_{L}(\alpha f+\beta g) \mathrm{d} s=\alpha \int_{L} f \mathrm{d} s+\beta \int_{L} g \mathrm{d} s}$
+        2. 路径可加性：设曲线 $L$ 分成了两段 $L_{1}, L_{2}$，如果函数 $f$ 在 $L$ 上的第一类曲线积分存在，则它在 $L_{1}$ 和 $L_{2}$ 上的第一类曲线积分也存在；反之如果函数 $f$ 在 $L_{1}$ 和 $L_{2}$ 上的第一类曲线积分存在，则它在 $L$ 上的第一类曲线积分也存在．并有 ${\displaystyle \int_{L} f \mathrm{d} s=\int_{L_{1}} f \mathrm{d} s+\int_{L_{2}} f \mathrm{d} s}$
+    2. 设 $L$ 为光滑曲线，函数 $f(x, y, z)$ 在 $L$ 上连续，则 $f(x, y, z)$ 在 $L$ 上的第一类曲线积分存在且
+
+        $$
+        \int_{L} f(x, y, z) \mathrm{d} s=\int_{\alpha}^{\beta} f(x(t), y(t), z(t)) \sqrt{[x^{\prime}(t)]^2+[y^{\prime}(t)]^2+[z^{\prime}(t)]^2} \mathrm{d} t
+        $$
+
 3. 第二类曲线积分
 
 ### 3.4.3 曲线论基本定理

@@ -318,7 +318,7 @@
         为向量值函数，此时有 $\boldsymbol{y}=\boldsymbol f(\boldsymbol{x})=\left(f_{1}(\boldsymbol{x}), f_{2}(\boldsymbol{x}), \cdots, f_{m}(\boldsymbol{x})\right)$，其中 $f_{1}. f_{2}, \cdots, f_{m}$ 均为 $n$ 元函数
 
 2. 微分形式与外微分
-    1. 微分形式：设 $U$ 为 $\mathbf{R}^{n}$ 上的区域，记 $\boldsymbol{x}=\left(x_{1}, x_{2}, \cdots, x_{n}\right)$，$C^{\prime}(U)$ 为 $U$ 上具有连续偏导数的函数全体．在 $\left\{\mathrm{d} x_{1}, \mathrm{~d} x_{2}, \cdots, \mathrm{d} x_{n}\right\}$ 中任意选取 $k$ 个组成有序元，记为 $\mathrm{d} x_{i_1} \wedge \mathrm{d} x_{i_2} \wedge \cdots \wedge \mathrm{d} x_{i_k}$，这里 $i_{1}, i_{2}, \cdots, i_{k}$ 是从集合 $\{1,2, \cdots, n\}$ 中选取的任意 $k$ 个整数．规定
+    1. 微分形式：设 $U$ 为 $\mathbf{R}^{n}$ 上的区域，记 $\boldsymbol{x}=\left(x_{1}, x_{2}, \cdots, x_{n}\right)$，$C^{\prime}(U)$ 为 $U$ 上具有连续偏导数的函数全体．在 $\left\{\mathrm{d} x_{1}, \mathrm{d} x_{2}, \cdots, \mathrm{d} x_{n}\right\}$ 中任意选取 $k$ 个组成有序元，记为 $\mathrm{d} x_{i_1} \wedge \mathrm{d} x_{i_2} \wedge \cdots \wedge \mathrm{d} x_{i_k}$，这里 $i_{1}, i_{2}, \cdots, i_{k}$ 是从集合 $\{1,2, \cdots, n\}$ 中选取的任意 $k$ 个整数．规定
 
         $$
         \mathrm{d} x_{i, 1} \wedge \cdots \wedge \mathrm{d} x_{i r} \wedge \mathrm{d} x_{i r+1} \cdots \wedge \mathrm{d} x_{i k}=-\mathrm{d} x_{i 1} \wedge \cdots \wedge \mathrm{d} x_{i r+1} \wedge \mathrm{d} x_{i r} \cdots \wedge \mathrm{d} x_{i k}, 1 \leqslant r \leqslant k-1
@@ -332,7 +332,7 @@
 
         称为 $k-$形式的标准形式
 
-        1. 当 $k>n$ 时，$\mathrm{d} x_{i 1}, \mathrm{~d} x_{i 2}, \cdots, \mathrm{d} x_{i k}$ 中必有两个相同，因此总有 $\mathrm{d} x_{i 1} \wedge \mathrm{d} x_{i 2} \wedge \cdots \wedge \mathrm{d} x_{i k}=0$，即 $\wedge^{k}(U)=\{0\}$；当 $k=0$ 时，$\wedge^0(U)$ 是 $U$ 上具有连续偏导数的函数全体
+        1. 当 $k>n$ 时，$\mathrm{d} x_{i 1}, \mathrm{d} x_{i 2}, \cdots, \mathrm{d} x_{i k}$ 中必有两个相同，因此总有 $\mathrm{d} x_{i 1} \wedge \mathrm{d} x_{i 2} \wedge \cdots \wedge \mathrm{d} x_{i k}=0$，即 $\wedge^{k}(U)=\{0\}$；当 $k=0$ 时，$\wedge^0(U)$ 是 $U$ 上具有连续偏导数的函数全体
         2. 设 $\mathbf{R}^{n}$ 中的坐标变换为 $T: y_{1}=y_{1}\left(x_{1}, x_{2}, \cdots, x_{n}\right), y_{2}=y_{2}\left(x_{1}, x_{2}, \cdots, x_{n}\right), \cdots, y_{n}=y_{n}\left(x_{1}, x_{2}, \cdots, x_{n}\right)$，则有
 
             $$

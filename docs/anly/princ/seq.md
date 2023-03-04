@@ -373,7 +373,7 @@
         2. 设幂级数 ${\displaystyle \sum_{n=0}^{\infty} a_{n}\left(x-x_{0}\right)^{n}}$ 的收敛半径为 $R$，其和函数为 $S(x)$，则在 $\left(x_{0}-R, x_{0}+R\right)$ 内幂级数可以逐项积分和逐项微分．即对 $\left(x_{0}-R, x_{0}+R\right)$ 内任意一点 $x$ 有
 
             $$
-            \sum_{n=0}^{\infty} \int_{x_{0}}^{x} a_{n}\left(x-x_{0}\right)^{n} \mathrm{~d} x=\sum_{n=0}^{\infty} \dfrac{a_{n}}{n+1}\left(x-x_{0}\right)^{n+1}=\int_{x_{0}}^{x} S(x) \mathrm{d} x
+            \sum_{n=0}^{\infty} \int_{x_{0}}^{x} a_{n}\left(x-x_{0}\right)^{n} \mathrm{d} x=\sum_{n=0}^{\infty} \dfrac{a_{n}}{n+1}\left(x-x_{0}\right)^{n+1}=\int_{x_{0}}^{x} S(x) \mathrm{d} x
             $$
 
             以及
@@ -410,8 +410,8 @@
 
         $$
         \begin{aligned}
-        & a_{k}=\dfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos k x \mathrm{~d} x \ (k=0,1,2, \cdots) \\
-        & b_{k}=\dfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin k x \mathrm{~d} x \ (k=1,2, \cdots)
+        & a_{k}=\dfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) \cos k x \mathrm{d} x \ (k=0,1,2, \cdots) \\
+        & b_{k}=\dfrac{1}{\pi} \int_{-\pi}^{\pi} f(x) \sin k x \mathrm{d} x \ (k=1,2, \cdots)
         \end{aligned}
         $$
 
@@ -445,7 +445,7 @@
         \end{aligned}
         $$
 
-        其中 ${\displaystyle c_{n}=\dfrac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \mathrm{e}^{-\mathrm{i} n \omega t} \mathrm{~d} t}, \omega=\dfrac{2 \pi}{T}, n=0, \pm 1, \pm 2, \cdots$
+        其中 ${\displaystyle c_{n}=\dfrac{2}{T} \int_{-\frac{T}{2}}^{\frac{T}{2}} f(t) \mathrm{e}^{-\mathrm{i} n \omega t} \mathrm{d} t}, \omega=\dfrac{2 \pi}{T}, n=0, \pm 1, \pm 2, \cdots$
 
     4. $\text{Fourier}$ 级数的性质
         1. 一致收敛性
@@ -455,12 +455,12 @@
         3. 最佳平方平均逼近：设 $f(x)$ 是 $[-\pi, \pi]$ 上可积和平方可积函数，又设 $T_{n}(x)$ 是任意一个 $n$ 次三角多项式 ${\displaystyle T_{n}(x)=\dfrac{A_{0}}{2}+\sum_{k=1}^{n} A_{k} \cos k x+B_{k} \sin k x}$，其中 $A_{0}, A_{k}, B_{k}\ (k=1,2, \cdots)$ 为常数，称
 
             $$
-            \delta^{2}\left(f, T_{n}\right)=\dfrac{1}{2 \pi} \int_{-\pi}^{\pi}\left(f(x)-T_{n}(x)\right)^{2} \mathrm{~d} x
+            \delta^{2}\left(f, T_{n}\right)=\dfrac{1}{2 \pi} \int_{-\pi}^{\pi}\left(f(x)-T_{n}(x)\right)^{2} \mathrm{d} x
             $$
 
             是用三角多项式 $T_{n}(x)$ 在平方平均意义下逼近 $f(x)$ 的偏差．设 ${\displaystyle f(x) \sim \dfrac{a_{0}}{2}+\sum_{n=1}^{\infty} a_{n} \cos n x+b_{n} \sin n x}$，其 $n$ 次部分和 ${\displaystyle S_{n}(x)=\dfrac{a_{0}}{2}+\sum_{k=1}^{n} a_{k} \cos k x+b_{k} \sin k x}$ 是 $f(x)$ 的最佳平方平均逼近，亦即对任何 $n$ 次三角多项式 $T_{n}(x)$，都有 $\delta^{2}\left(f, S_{n}\right) \leqslant \delta^{2}\left(f, T_{n}\right)$
 
-    5. $\text{Fourier}$ 变换：称 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{e}^{-\mathrm{i} \omega x} \mathrm{~d} x}$ 是 $f(x)$ 的 $\text{Fourier}$ 变换，记为 $\hat{f}(\omega)$ 或 $F(f)$，称 ${\displaystyle f(x)=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty} \hat{f}(\omega) \mathrm{e}^{\mathrm{i} \omega x} \mathrm{~d} \omega}$ 是 $\hat{f}(\omega)$ 的 $\text{Fourier}$ 逆变换，并称 ${\displaystyle f(x)=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty} f(x) \mathrm{e}^{-i \omega x} \mathrm{~d} x\right] \mathrm{e}^{\mathrm{i} \omega x} \mathrm{~d} x}$ 是 $f(x)$ 的 $\text{Fourier}$ 积分公式
+    5. $\text{Fourier}$ 变换：称 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{e}^{-\mathrm{i} \omega x} \mathrm{d} x}$ 是 $f(x)$ 的 $\text{Fourier}$ 变换，记为 $\hat{f}(\omega)$ 或 $F(f)$，称 ${\displaystyle f(x)=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty} \hat{f}(\omega) \mathrm{e}^{\mathrm{i} \omega x} \mathrm{d} \omega}$ 是 $\hat{f}(\omega)$ 的 $\text{Fourier}$ 逆变换，并称 ${\displaystyle f(x)=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty} f(x) \mathrm{e}^{-i \omega x} \mathrm{d} x\right] \mathrm{e}^{\mathrm{i} \omega x} \mathrm{d} x}$ 是 $f(x)$ 的 $\text{Fourier}$ 积分公式
         1. $\text{Riemann}$ 引理：${\displaystyle \lim _{\omega \rightarrow \infty} \hat{f}(\omega)=0}$
         2. $\text{Fourier}$ 变换的性质
             1. $\hat{f}(\omega)$ 是 $\omega \in(-\infty,+\infty)$ 内的连续函数
@@ -473,8 +473,8 @@
             设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上定义，且积分 ${\displaystyle (f * g)(x)=\int_{-\infty}^{+\infty} f(t) g(x-t) \mathrm{d} t}$ 存在，则称函数 $f * g$ 为 $f$ 和 $g$ 的卷积
 
             1. 卷积的 $\text{Fourier}$ 变换：设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上绝对可积，则有 $F(f * g)=F(f) \cdot F(g)$
-            2. $\text{Parseval}$ 等式：设函数 $f$ 在 $(-\infty,+\infty)$ 上绝对可积，且 ${\displaystyle \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{~d} x}$ 收敛．记 $f$ 的 $\text{Fourier}$ 变换为 $\hat{f}$，则
+            2. $\text{Parseval}$ 等式：设函数 $f$ 在 $(-\infty,+\infty)$ 上绝对可积，且 ${\displaystyle \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{d} x}$ 收敛．记 $f$ 的 $\text{Fourier}$ 变换为 $\hat{f}$，则
 
                 $$
-                \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{~d} x=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty}|\hat{f}(\omega)|^2 \mathrm{~d} \omega
+                \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{d} x=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty}|\hat{f}(\omega)|^2 \mathrm{d} \omega
                 $$

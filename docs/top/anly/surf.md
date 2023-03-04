@@ -480,7 +480,48 @@
 2. 光滑曲面：设曲面 $S: F(x, y, z) = 0 \ ((x, y, z) \in D)$ 具有连续变动的切平面，即切平面位置随切点在曲面上的位置变动而连续变动，则称曲面 $S$ 为光滑曲面．设 $P_0(x_0, y_0, z_0)$ 为 $S$ 上一点
     1. 切平面：$F_{x}\left(P_{0}\right)\left(x-x_{0}\right)+F_{y}\left(P_{0}\right)\left(y-y_{0}\right)+F_{z}\left(P_{0}\right)\left(z-z_{0}\right)=0$
     2. 法向量：$\boldsymbol{n}=\left(F_{x}\left(P_{0}\right), F_{y}\left(P_{0}\right), F_{z}\left(P_{0}\right)\right)$，因此曲面 $S$ 在 $P_{0}$ 点的法线方程为 $\dfrac{x-x_{0}}{F_{x}\left(P_{0}\right)}=\dfrac{y-y_{0}}{F_{x}\left(P_{0}\right)}=\dfrac{z-z_{0}}{F_{z}\left(P_{0}\right)}$
-3. 第一类曲面积分
+3. 第一类曲面积分：设曲面 $\Sigma$ 为有界光滑或分片光滑曲面，函数 $z=f(x, y, z)$ 在 $\Sigma$ 上有界．将曲面 $\Sigma$ 用一个光滑曲线网分成 $n$ 片小曲面 $\Delta \Sigma_{1}, \Delta \Sigma_{2}, \cdots, \Delta \Sigma_{n}$，并记 $\Delta \Sigma_{i}$ 的面积为 $\Delta S_{i}$．在每片 $\Delta \Sigma_{i}$ 上任取一点 $\left(\xi_{i}, \eta_{i}, \zeta_{i}\right)$，作和式 ${\displaystyle \sum_{i=1}^{n} f\left(\xi_{i}, \eta_{i}, \zeta_{i}\right) \Delta S_{i}}$．如果当所有小曲面 $\Delta \Sigma_{i}$ 的最大直径 $\lambda$ 趋于零时，这个和式的极限存在，且极限值与小曲面的分法和点 $\left(\xi_{i}, \eta_{i}, \zeta_{i}\right)$ 的取法无关，则称此极限值为 $f(x, y, z)$ 在曲面 $\Sigma$ 上的第一类曲面积分，记为 ${\displaystyle \iint_{\Sigma} f(x, y, z) \mathrm{d} S}$，即
+
+    $$
+    \iint_{\Sigma} f(x, y, z) \mathrm{d} S=\lim _{\lambda \rightarrow 0} \sum_{i=1}^{n} f\left(\xi_{i}, \eta_{i}, \zeta_{i}\right) \Delta S_{i}
+    $$
+
+    其中 $f(x, y, z)$ 称为被积函数，$\Sigma$ 称为积分曲面
+
+    1. 设 $\Sigma$ 的方程为
+
+        $$
+        \left\{\begin{aligned}
+        & x=x(u, v) \\
+        & y=y(u, v) \\
+        & z=z(u, v)
+        \end{aligned}\right. \quad (u, v) \in D
+        $$
+
+        此处 $D$ 为 $u v$ 平面上具有分段光滑边界的区域，进一步设这个映射是一一对应的，那么如果 $f(x, y, z)$ 在 $\Sigma$ 上连续，则它在 $\Sigma$ 上的第一类曲面积分存在，且有
+
+        $$
+        \iint_{\Sigma} f(x, y, z) \mathrm{d} S=\iint_{D} f(x(u, v), y(u, v), z(u, v)) \sqrt{E G-F^{2}} \mathrm{d} u \mathrm{d} v
+        $$
+
+        其中
+
+        $$
+        \begin{aligned}
+        & E=\boldsymbol{r}_{u} \cdot \boldsymbol{r}_{u}=x_{u}^{2}+y_{u}^{2}+z_{u}^{2} \\
+        & F=\boldsymbol{r}_{u} \cdot \boldsymbol{r}_{v}=x_{u} x_{v}+y_{u} y_{v}+z_{u} z_{v} \\
+        & G=\boldsymbol{r}_{v} \cdot \boldsymbol{r}_{v}=x_{v}^{2}+y_{v}^{2}+z_{v}^{2}
+        \end{aligned}
+        $$
+
+        称为曲面的 $\text{Gauss}$ 系数
+
+    2. 当 $\Sigma$ 的方程为 $z=z(x, y) \ ((x, y) \in D)$ 时，有
+
+        $$
+        \iint_{\Sigma} f(x, y, z) \mathrm{d} S=\iint_{D} f(x, y, z(x, y)) \sqrt{1+z_{x}^{2}(x, y)+z_{y}^{2}(x, y)} \mathrm{d} x \mathrm{d} y
+        $$
+
 4. 第二类曲面积分
 
 ### 4.5.2 曲面与曲率
