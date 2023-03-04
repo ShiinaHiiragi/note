@@ -498,7 +498,6 @@
     称作 $\Phi(x, y)$ 的矩阵，并定义如下符号：
 
     $$
-    \begin{gathered}
     I_{1}=a_{11}+a_{22}, \ I_{2}=\left|\begin{array}{ll}
     a_{11} & a_{12} \\
     a_{12} & a_{22}
@@ -506,15 +505,13 @@
     a_{11} & a_{12} & a_{13} \\
     a_{12} & a_{22} & a_{23} \\
     a_{13} & a_{23} & a_{33}
-    \end{array}\right|, \\
-    K_{1}=\left|\begin{array}{ll}
+    \end{array}\right|, K_{1}=\left|\begin{array}{ll}
     a_{11} & a_{13} \\
     a_{13} & a_{33}
     \end{array}\right|+\left|\begin{array}{cc}
     a_{22} & a_{23} \\
     a_{23} & a_{33}
     \end{array}\right|
-    \end{gathered}
     $$
 
 ### 3.2.2 二次曲线的渐近方向
@@ -654,27 +651,27 @@
 ## 3.3 二次曲线射影理论
 
 ## 3.4 曲线的局部理论
-### 3.4.1 平面曲线的微积分
-1. 平面曲线弧长的微分 $\mathrm{d} s$
-    1. 若曲线方程为 $y=f(x)(a \leqslant x \leqslant b)$ 且 $f^{\prime}(x)$ 在 $[a, b]$ 连续，则 $\mathrm{d} s=\pm \sqrt{1+f^{\prime 2}(x)} \mathrm{d} x$
-    2. 若曲线方程为 $\left\{\begin{array}{l}x=\varphi(t) \\y=\psi(t)\end{array} \ (\alpha \leqslant t \leqslant \beta),\right.$，且有 $\varphi^{\prime}(t), \psi^{\prime}(t)$ 在 $[\alpha, \beta]$ 连续且不全为 $0$，则
+### 3.4.1 曲线的微积分
+1. 平面曲线的微积分
+    1. 平面曲线弧长的微分 $\mathrm{d} s$
+        1. 若曲线方程为 $y=f(x)(a \leqslant x \leqslant b)$ 且 $f^{\prime}(x)$ 在 $[a, b]$ 连续，则 $\mathrm{d} s=\pm \sqrt{1+f^{\prime 2}(x)} \mathrm{d} x$
+        2. 若曲线方程为 $\left\{\begin{array}{l}x=\varphi(t) \\y=\psi(t)\end{array} \ (\alpha \leqslant t \leqslant \beta),\right.$，且有 $\varphi^{\prime}(t), \psi^{\prime}(t)$ 在 $[\alpha, \beta]$ 连续且不全为 $0$，则
 
-        $$
-        \mathrm{d} s=\pm \sqrt{\mathrm{d} x^{2}+\mathrm{d} y^{2}}=\pm \sqrt{\varphi^{\prime 2}(t)+\psi^{\prime 2}(t)} \mathrm{d} t
-        $$
+            $$
+            \mathrm{d} s=\pm \sqrt{\mathrm{d} x^{2}+\mathrm{d} y^{2}}=\pm \sqrt{\varphi^{\prime 2}(t)+\psi^{\prime 2}(t)} \mathrm{d} t
+            $$
 
-    3. 若曲线极坐标方程为 $\rho=\rho(\theta) \ (\alpha \leqslant \theta \leqslant \beta)$ 且 $\rho^{\prime}(\theta)$ 在 $[\alpha, \beta]$ 连续，此时
+        3. 若曲线极坐标方程为 $\rho=\rho(\theta) \ (\alpha \leqslant \theta \leqslant \beta)$ 且 $\rho^{\prime}(\theta)$ 在 $[\alpha, \beta]$ 连续，此时
 
-        $$
-        \mathrm{d} s =\pm \sqrt{\mathrm{d} x^{2}+\mathrm{d} y^{2}}=\pm \sqrt{\rho^{2}(\theta)+\rho^{\prime 2}(\theta)} \mathrm{d} \theta
-        $$
+            $$
+            \mathrm{d} s =\pm \sqrt{\mathrm{d} x^{2}+\mathrm{d} y^{2}}=\pm \sqrt{\rho^{2}(\theta)+\rho^{\prime 2}(\theta)} \mathrm{d} \theta
+            $$
 
-2. 平面曲线弧长的积分：设曲线 $l$ 的参数方程为 $\left\{\begin{array}{l}x=x(t) \\y=y(t)\end{array}\right.$，设当 $t=\alpha, t=\beta$ 时（$\alpha<\beta$）对应的点为 $A, B$ 点．假设 $x(t), y(t)$ 在 $[\alpha, \beta]$ 上都有连续导数，则曲线 $l$ 上以 $A, B$ 为端点的一段弧长为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[x^{\prime}(t)\right]^{2}+\left[y^{\prime}(t)\right]^{2}} \mathrm{d} t}$
-    1. 设 $f(x)$ 在 $[a, b]$ 上有连续导数，将 $x$ 作为参数，推导出的弧长公式为 ${\displaystyle \int_{a}^{b} \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{d} x}$
-    2. 设曲线段的极坐标方程为 $r=r(\theta) \ (\alpha \leqslant \theta \leqslant \beta)$ 且 $r'(\theta)$ 在 $[\alpha, \beta]$ 上连续，则弧长公式为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[r^{\prime}(\theta)\right]^{2}+[r(\theta)]^{2}} \mathrm{d} \theta}$
+    2. 平面曲线弧长的积分：设曲线 $l$ 的参数方程为 $\left\{\begin{array}{l}x=x(t) \\y=y(t)\end{array}\right.$，设当 $t=\alpha, t=\beta$ 时（$\alpha<\beta$）对应的点为 $A, B$ 点．假设 $x(t), y(t)$ 在 $[\alpha, \beta]$ 上都有连续导数，则曲线 $l$ 上以 $A, B$ 为端点的一段弧长为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[x^{\prime}(t)\right]^{2}+\left[y^{\prime}(t)\right]^{2}} \mathrm{d} t}$
+        1. 设 $f(x)$ 在 $[a, b]$ 上有连续导数，将 $x$ 作为参数，推导出的弧长公式为 ${\displaystyle \int_{a}^{b} \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{d} x}$
+        2. 设曲线段的极坐标方程为 $r=r(\theta) \ (\alpha \leqslant \theta \leqslant \beta)$ 且 $r'(\theta)$ 在 $[\alpha, \beta]$ 上连续，则弧长公式为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[r^{\prime}(\theta)\right]^{2}+[r(\theta)]^{2}} \mathrm{d} \theta}$
 
-### 3.4.2 空间曲线的微积分
-1. 光滑曲线：若 $\boldsymbol{r}^{\prime}(t)=x^{\prime}(t) \boldsymbol{i}+y^{\prime}(t) \boldsymbol{j}+z^{\prime}(t) \boldsymbol{k}$ 在 $[a, b]$ 上连续，并且 $\boldsymbol{r}^{\prime}(t) \neq \mathbf{0} \ (t \in[a, b])$，则称曲线
+2. 光滑曲线：若 $\boldsymbol{r}^{\prime}(t)=x^{\prime}(t) \boldsymbol{i}+y^{\prime}(t) \boldsymbol{j}+z^{\prime}(t) \boldsymbol{k}$ 在 $[a, b]$ 上连续，并且 $\boldsymbol{r}^{\prime}(t) \neq \mathbf{0} \ (t \in[a, b])$，则称曲线
 
     $$
     \Gamma: \boldsymbol{r}(t)=x(t) \boldsymbol{i}+y(t) j+z(t) \boldsymbol{k}, a \leqslant t \leqslant b
@@ -686,23 +683,78 @@
     2. 法平面：过 $P_{0}$ 点且与切线垂直的平面 $x^{\prime}\left(t_{0}\right)\left(x-x_{0}\right)+y^{\prime}\left(t_{0}\right)\left(y-y_{0}\right)+z^{\prime}\left(t_{0}\right)\left(z-z_{0}\right)=0$ 或 $\boldsymbol r^{\prime}\left(t_{0}\right) \cdot\left(\boldsymbol x-\boldsymbol x_{0}\right)=0$
     3. 曲线的弧长：${\displaystyle s=\int_{a}^{b} \sqrt{[x^{\prime}(t)]^2+[y^{\prime}(t)]^2+[z^{\prime}(t)]^2} \mathrm{d} t}$
 
-2. 第一类曲线积分：设 $L$ 是空间 $\mathbf{R}^{3}$ 上一条可求长的连续曲线，端点为 $A, B$，函数 $f(x, y, z)$ 在 $L$ 上有界．令 $A=P_{0}, B=P_{n}$，在 $L$ 上从 $A$ 到 $B$ 顺序地插入分点 $P_{1}, P_{2}, \cdots, P_{n-1}$，再分别在每个小弧段 $P_{i-1} P_{i}$ 上任取一点 $\left(\xi_{i}, \eta_{i}, \zeta_{i}\right)$，并记第 $i$ 个小弧段 $P_{i-1} P_{i}$ 的长度为 $\Delta s_{i}(i=1,2, \cdots, n)$．作和式 ${\displaystyle \sum_{i=1}^{n} f\left(\xi_{i}, \eta_{i}, \zeta_{i}\right) \Delta s_{i}}$，如果当所有小弧段的最大长度 $\lambda$ 趋于零时，这个和式的极限存在且与分点 $\left\{P_{i}\right\}$ 的取法及 $P_{i-1} P_{i}$ 上的点 $\left(\xi_{i}, \eta_{i}, \zeta_{i}\right)$ 的取法无关，则称这个极限值为 $f(x, y, z)$ 在曲线 $L$ 上的第一类曲线积分，记为 ${\displaystyle \int_{L} f(x, y, z) \mathrm{d} s}$ 或 ${\displaystyle \int_{L} f(P) \mathrm{d} s}$，即
+3. 第一类曲线积分：设 $L$ 是空间 $\mathbf{R}^{3}$ 上一条可求长的连续曲线，端点为 $A, B$，函数 $f(x, y, z)$ 在 $L$ 上有界．令 $A=P_{0}, B=P_{n}$，在 $L$ 上从 $A$ 到 $B$ 顺序地插入分点 $P_{1}, P_{2}, \cdots, P_{n-1}$，再分别在每个小弧段 $P_{i-1} P_{i}$ 上任取一点 $\left(\xi_{i}, \eta_{i}, \zeta_{i}\right)$，并记第 $i$ 个小弧段 $P_{i-1} P_{i}$ 的长度为 $\Delta s_{i}(i=1,2, \cdots, n)$．作和式 ${\displaystyle \sum_{i=1}^{n} f\left(\xi_{i}, \eta_{i}, \zeta_{i}\right) \Delta s_{i}}$，如果当所有小弧段的最大长度 $\lambda$ 趋于零时，这个和式的极限存在且与分点 $\left\{P_{i}\right\}$ 的取法及 $P_{i-1} P_{i}$ 上的点 $\left(\xi_{i}, \eta_{i}, \zeta_{i}\right)$ 的取法无关，则称这个极限值为 $f(x, y, z)$ 在曲线 $L$ 上的第一类曲线积分，记为 ${\displaystyle \int_{L} f(x, y, z) \mathrm{d} s}$ 或 ${\displaystyle \int_{L} f(P) \mathrm{d} s}$，即
 
     $$
     \int_{L} f(x, y, z) \mathrm{d} s=\lim _{\lambda \rightarrow 0} \sum_{i=1}^{n} f\left(\xi_{i}, \eta_{i}, \zeta_{i}\right) \Delta s_{i}
     $$
 
-    其中称 $f(x, y, z)$ 为被积函数，$L$ 为积分路径．在平面情形下函数 $f(x, y)$ 在平面曲线 $L$ 上的第一类曲线积分记为 ${\displaystyle \int_{L} f(x, y) \mathrm{d} s}$
+    其中称 $f(x, y, z)$ 为被积函数，$L$ 为积分路径
 
-    1. 第一类曲线积分的性质
+    1. 在平面情形下函数 $f(x, y)$ 在平面曲线 $L$ 上的第一类曲线积分记为 ${\displaystyle \int_{L} f(x, y) \mathrm{d} s}$
+    2. 第一类曲线积分的性质
         1. 线性性：如果函数 $f, g$ 在 $L$ 上的第一类曲线积分存在，则对于任何常数 $\alpha, \beta, \alpha f+\beta g$ 在 $L$ 上的第一类曲线积分也存在，且有 ${\displaystyle \int_{L}(\alpha f+\beta g) \mathrm{d} s=\alpha \int_{L} f \mathrm{d} s+\beta \int_{L} g \mathrm{d} s}$
         2. 路径可加性：设曲线 $L$ 分成了两段 $L_{1}, L_{2}$，如果函数 $f$ 在 $L$ 上的第一类曲线积分存在，则它在 $L_{1}$ 和 $L_{2}$ 上的第一类曲线积分也存在；反之如果函数 $f$ 在 $L_{1}$ 和 $L_{2}$ 上的第一类曲线积分存在，则它在 $L$ 上的第一类曲线积分也存在．并有 ${\displaystyle \int_{L} f \mathrm{d} s=\int_{L_{1}} f \mathrm{d} s+\int_{L_{2}} f \mathrm{d} s}$
-    2. 设 $L$ 为光滑曲线，函数 $f(x, y, z)$ 在 $L$ 上连续，则 $f(x, y, z)$ 在 $L$ 上的第一类曲线积分存在且
+    3. 第一类曲线积分的计算：设 $L$ 为光滑曲线，函数 $f(x, y, z)$ 在 $L$ 上连续，则 $f(x, y, z)$ 在 $L$ 上的第一类曲线积分存在且
 
         $$
         \int_{L} f(x, y, z) \mathrm{d} s=\int_{\alpha}^{\beta} f(x(t), y(t), z(t)) \sqrt{[x^{\prime}(t)]^2+[y^{\prime}(t)]^2+[z^{\prime}(t)]^2} \mathrm{d} t
         $$
 
-3. 第二类曲线积分
+4. 第二类曲线积分：设 $L$ 为一条定向的光滑曲线，起点为 $A$，终点为 $B$．在 $L$ 上每一点取单位切向量 $\boldsymbol{\tau}=(\cos \alpha, \cos \beta, \cos \gamma)$，使它与 $L$ 的定向相一致．设 $\boldsymbol{f}(x, y, z)=P(x, y, z) \boldsymbol{i}+Q(x, y, z) \boldsymbol{j}+R(x, y, z) \boldsymbol{k}$ 是定义在 $L$ 上的向量值函数，则称
 
-### 3.4.3 曲线论基本定理
+    $$
+    \int_{L} \boldsymbol f \cdot \boldsymbol \tau \mathrm{d} s=\int_{L}[P(x, y, z) \cos \alpha+Q(x, y, z) \cos \beta+R(x, y, z) \cos \gamma] \mathrm{d} s
+    $$
+
+    为 $\boldsymbol f$ 在 $L$ 上的第二类曲线积分．记 $1-$形式 $\omega=P(x, y, z) \mathrm{d} x+Q(x, y, z) \mathrm{d} y+R(x, y, z) \mathrm{d} z$，则第二类曲线积分也可记为
+
+    $$
+    \int_{L} \omega=\int_{L} P(x, y, z) \mathrm{d} x+Q(x, y, z) \mathrm{d} y+R(x, y, z) \mathrm{d} z=\int_{L} \boldsymbol f \cdot \mathrm{d} \boldsymbol s
+    $$
+
+    1. 如果 $L$ 为 $x y$ 平面上的定向光滑曲线段，则第二类曲线积分就简化为
+
+        $$
+        \begin{aligned}
+        \int_{L} P(x, y) \mathrm{d} x+Q(x, y) \mathrm{d} y & =\int_{L}[P(x, y) \cos \alpha+Q(x, y) \cos \beta] \mathrm{d} s \\
+        & =\int_{L}[P(x, y) \cos \alpha+Q(x, y) \sin \alpha] \mathrm{d} s
+        \end{aligned}
+        $$
+
+        其中 $\alpha$ 为 $L$ 的沿 $L$ 方向的切向量与 $x$ 轴正向的夹角
+
+    2. 第二类曲线积分的性质
+        1. 方向性：设向量值函数 $\boldsymbol f$ 在定向的分段光滑曲线 $L$ 上的第二类曲线积分存在．记 $-L$ 是定向曲线 $L$ 的反向曲线，则 $\boldsymbol f$ 在 $-L$ 上的第二类曲线积分也存在，且有 ${\displaystyle \int_{L} \boldsymbol f \cdot \boldsymbol \tau \mathrm{d} s=-\int_{-L} \boldsymbol f \cdot \boldsymbol \tau \mathrm{d} s}$
+        2. 线性性：设两个向量值函数 $\boldsymbol f, \boldsymbol g$ 在定向的分段光滑曲线 $L$ 上的第二类曲线积分存在，则对于任何常数 $\alpha, \beta, \alpha \boldsymbol f+\beta \boldsymbol g$ 在 $L$ 上的第二类曲线积分也存在，且有 ${\displaystyle \int_{L}(\alpha \boldsymbol f+\beta \boldsymbol g) \cdot \boldsymbol \tau \mathrm{d} s=\alpha \int_{L} \boldsymbol f \cdot \boldsymbol \tau \mathrm{d} s+\beta \int_{L} \boldsymbol g \cdot \boldsymbol \tau \mathrm{d} s}$
+        3. 路径可加性：设定向分段光滑曲线 $L$ 分成了两段 $L_{1}$ 和 $L_{2}$，它们与 $L$ 的取向相同（记为 $L=L_{1}+L_{2}$），如果向量值函数 $\boldsymbol{f}$ 在 $L$ 上的第二类曲线积分存在，则它在 $L_{1}$ 和 $L_{2}$ 上的第二类曲线积分也存在．反之如果 $\boldsymbol f$ 在 $L_{1}$ 和 $L_{2}$ 上的第二类曲线积分存在，则它在 $L$ 上的第二类曲线积分也存在，且有 ${\displaystyle \int_{L} \boldsymbol f \cdot \boldsymbol \tau \mathrm{d} s=\int_{L_{1}} \boldsymbol f \cdot \boldsymbol \tau \mathrm{d} s+\int_{L_{2}} \boldsymbol f \cdot \boldsymbol \tau \mathrm{d} s}$
+    3. 第二类曲线积分的计算
+        1. 设光滑曲线 $L$ 的方程为
+
+            $$
+            \left\{\begin{aligned}
+            & x=x(t) \\
+            & y=y(t) \\
+            & z=z(t)
+            \end{aligned}\right. \quad t: a \rightarrow b
+            $$
+
+            这里 $t: a \rightarrow b$ 表示参数 $t$ 从 $a$ 变化到 $b$，则有
+
+            $$
+            \int_{L} \omega=\int_{a}^{b}\left[P(x(t), y(t), z(t)) x^{\prime}(t)+Q(x(t), y(t), z(t)) y^{\prime}(t)+R(x(t), y(t), z(t)) z^{\prime}(t)\right] \mathrm{d} t
+            $$
+
+        2. 如果 $L$ 的方程是 $y=y(x), z=z(x) \ (x: a \rightarrow b)$，则
+
+            $$
+            \int_{L} \omega = \int_{a}^{b}\left[P(x, y(x), z(x))+Q(x, y(x), z(x)) y^{\prime}(x)+R(x, y(x), z(x)) z^{\prime}(x)\right] \mathrm{d} x
+            $$
+
+        3. 如果 $L$ 为 $x y$ 平面上光滑曲线，其方程为 $x=x(t), y=y(t) \ (t: a \rightarrow b)$，则
+
+            $$
+            \int_{L} P(x, y) \mathrm{d} x+Q(x, y) \mathrm{d} y=\int_{a}^{b}\left[P(x(t), y(t)) x^{\prime}(t)+Q(x(t), y(t)) y^{\prime}(t)\right] \mathrm{d} t
+            $$
+
+### 3.4.2 曲线论基本定理
