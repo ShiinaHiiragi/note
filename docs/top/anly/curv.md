@@ -757,4 +757,47 @@
             \int_{L} P(x, y) \mathrm{d} x+Q(x, y) \mathrm{d} y=\int_{a}^{b}\left[P(x(t), y(t)) x^{\prime}(t)+Q(x(t), y(t)) y^{\prime}(t)\right] \mathrm{d} t
             $$
 
+5. $\text{Green}$ 公式：设 $D$ 为平面上由光滑或分段光滑的简单闭曲线所围的单连通闭区域，如果函数 $P(x, y)$, $Q(x, y)$ 在 $D$ 上具有连续偏导数，那么
+
+    $$
+    \int_{\partial D} P \mathrm{d} x+Q \mathrm{d} y=\iint_{D}\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right) \mathrm{d} x \mathrm{d} y
+    $$
+
+    其中 $\partial D$ 取正向，即诱导定向
+
+    1. 简单闭曲线：设 $L$ 为平面上的一条曲线，其方程是 $\boldsymbol{r}(t)=x(t) \boldsymbol e_1+y(t) \boldsymbol e_2 \ (\alpha \leqslant t \leqslant \beta)$．如果 $\boldsymbol{r}(\alpha)=$ $\boldsymbol{r}(\beta)$，而且当 $t_{1}, t_{2} \in(\alpha, \beta), t_{1} \neq t_{2}$ 时总有 $\boldsymbol{r}\left(t_{1}\right) \neq \boldsymbol{r}\left(t_{2}\right)$，则称 $L$ 为简单闭曲线或 $\text{Jordan}$ 曲线
+        1. 连通区域：设 $D$ 为平面上的一个区域，如果 $D$ 内的任意一条封闭曲线都可以不经过 $D$ 外的点而连续地收缩成 $D$ 中一点，那么 $D$ 称为单连通区域，否则称为复连通区域
+        2. 诱导方向：对于平面区域 $D$，如果沿 $\partial D$ 的某个方向行走时，$D$ 总是在左边，则称这个方向为 $D$ 的诱导定向，带有这样定向的 $\partial D$ 称为 $D$ 的正向边界
+    2. $\text{Green}$ 公式说明了有界闭区域上的二重积分与沿区域边界的第二类曲线积分的关系
+        1. 记取诱导定向的 $\partial D$ 上的单位切向量为 $\boldsymbol{\tau}$，单位外法向量为 $\boldsymbol{n}$，那么
+
+            $$
+            \iint_{D}\left(\dfrac{\partial F}{\partial x}+\dfrac{\partial G}{\partial y}\right) \mathrm{d} x \mathrm{d} y =\int_{\partial D}[F \cos (\boldsymbol{n}, x)+G \cos (\boldsymbol{n}, y)] \mathrm{d} s
+            $$
+
+        2. $\text{Green}$ 公式是 $\text{Newton}-\text{Leibniz}$ 公式的推广：设 $f(x)$ 在 $[a, b]$ 上具有连续导数，取 $D=[a, b] \times[0,1]$，在 $\text{Green}$ 公式中取 $P=0, Q=f(x)$，则有
+
+            $$
+            \iint_{D} f^{\prime}(x) \mathrm{d} x \mathrm{d} y=\int_{\partial D} f(x) \mathrm{d} y
+            $$
+
+        3. 设 $D$ 为平面上的有界闭区域，其边界为分段光滑的简单闭曲线，则其面积为
+
+            $$
+            S=\int_{\partial D} x \mathrm{d} y=-\int_{\partial D} y \mathrm{d} x=\dfrac{1}{2} \int_{\partial D} x \mathrm{d} y-y \mathrm{d} x
+            $$
+
+    3. $\text{Green}$ 定理：设 $D$ 为平面上的单连通区域，$P(x, y), Q(x, y)$ 在 $D$ 上具有连续偏导数．则下面四个命题等价
+        1. 对于 $D$ 内的任意一条光滑（或分段光滑）闭曲线 $L$ 有 ${\displaystyle \int_{L} P \mathrm{d} x+Q \mathrm{d} y=0}$
+        2. 曲线积分 ${\displaystyle \int_{L} P \mathrm{d} x+Q \mathrm{d} y}$ 与路径无关，即对于 $D$ 内任意两点 $A, B$，积分值 ${\displaystyle \int_{L} P \mathrm{d} x+Q \mathrm{d} y}$ 只与 $A, B$ 两点有关，而与从 $A$ 到 $B$ 的路径 $L$ 无关
+        3. 存在 $D$ 上的可微函数 $U(x, y)$，使得 $\mathrm{d} U=P \mathrm{d} x+Q \mathrm{d} y$
+        4. 在 $D$ 内有 $\dfrac{\partial P}{\partial y}=\dfrac{\partial Q}{\partial x}$
+    4. 设 $D$ 为平面单连通区域，$P(x, y)$ 和 $Q(x, y)$ 为 $D$ 上的连续函数．那么曲线积分 $\int_{L} P \mathrm{d} x+Q \mathrm{d} y$ 与路径无关的充分必要条件是在 $D$ 上存在 $P \mathrm{d} x+Q \mathrm{d} y$ 的一个原函数 $U(x, y)$．这时，对于 $D$ 内任意两点 $A\left(x_{A}, y_{A}\right), B\left(x_{B}, y_{B}\right)$，计算公式
+
+        $$
+        \int_{\overset{\LARGE{\frown}}{AB}} P \mathrm{d} x+Q \mathrm{d} y=U\left(x_{B}, y_{B}\right)-U\left(x_{A}, y_{A}\right)
+        $$
+
+        成立，其中 $\overset{\LARGE{\frown}}{AB}$ 为任意从 $A$ 到 $B$ 的路径
+
 ### 3.4.2 曲线论基本定理

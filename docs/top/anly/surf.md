@@ -579,6 +579,36 @@
 
             等式右端是二重积分．当曲面的定向为上侧时，积分号前取「$+$」；当曲面的定向为下侧 时，积分号前取「$-$」
 
+5. $\text{Gauss}$ 公式：设 $\Omega$ 是 $\mathbf{R}^{3}$ 上由光滑（或分片光滑）的封闭曲面所围成的二维单连通闭区域，函数 $P(x, y, z), Q(x, y, z)$ 和 $R(x, y, z)$ 在 $\Omega$ 上具有连续偏导数，则有
+
+    $$
+    \iiint_{\Omega}\left(\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z}\right) \mathrm{d} x \mathrm{d} y \mathrm{d} z=\iint_{\partial \Omega} P \mathrm{d} y \mathrm{d} z+Q \mathrm{d} z \mathrm{d} x+R \mathrm{d} x \mathrm{d} y
+    $$
+
+    这里 $\partial \Omega$ 的定向为外侧，称为 $\Omega$ 的诱导定向
+
+    1. 连通区域：设 $\Omega$ 为空间上的一个区域，如果 $\Omega$ 内的任何一张封闭曲面所围的立体仍属于 $\Omega$，那么称 $\Omega$ 为二维单连通区域，否则称 $\Omega$ 为二维复连通区域
+    2. $\text{Gauss}$ 公式的可用沿区域 $\Omega$ 的边界的曲面积分来计算 $\Omega$ 的体积
+
+        $$
+        V=\iiint_{\Omega} \mathrm{d} x \mathrm{d} y \mathrm{d} z=\iint_{\partial \Omega} x \mathrm{d} y \mathrm{d} z=\iint_{\partial \Omega} y \mathrm{d} z \mathrm{d} x=\iint_{\nexists \Omega} z \mathrm{d} x \mathrm{d} y=\dfrac{1}{3} \iint_{\partial \Omega} x \mathrm{d} y \mathrm{d} z+y \mathrm{d} z \mathrm{d} x+z \mathrm{d} x \mathrm{d} y
+        $$
+
+6. $\text{Stokes}$ 公式：设 $\Sigma$ 为光滑曲面，其边界 $\partial \Sigma$ 为分段光滑闭曲线．若函数 $P(x, y, z), Q(x, y, z), R(x, y, z)$ 在 $\Sigma$ 及其边界 $\partial \Sigma$ 上具有连续偏导数，则
+
+    $$
+    \begin{aligned}
+    & \int_{\partial \Sigma} P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d} z \\
+    = & \iint_{\Sigma}\left(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z}\right) \mathrm{d} y \mathrm{d} z+\left(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x}\right) \mathrm{d} z \mathrm{d} x+\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right) \mathrm{d} x \mathrm{d} y \\
+    = & \iint_{\Sigma}\left[\left(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z}\right) \cos \alpha+\left(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x}\right) \cos \beta+\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right) \cos \gamma\right] \mathrm{d} S,
+    \end{aligned}
+    $$
+
+    其中 $\partial \Sigma$ 取诱导定向
+
+    !!! note "$\text{Stokes}$ 公式的推广"
+        高次的微分形式 $\mathrm{d} \omega$ 在给定区域上的积分等于低一次的微分形式 $\omega$ 在低一维的区域边界上的积分，写作 ${\displaystyle \int_{\partial M} \omega=\int_{M} \mathrm{d} \omega}$
+
 ### 4.5.2 曲面与曲率
 
 ### 4.5.3 曲面论基本定理

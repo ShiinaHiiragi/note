@@ -339,7 +339,26 @@
             \mathrm{d} y_{1} \wedge \mathrm{d} y_{2} \wedge \cdots \wedge \mathrm{d} y_{n}=\dfrac{\partial\left(y_{1}, y_{2}, \cdots, y_{n}\right)}{\partial\left(x_{1}, x_{2}, \cdots, x_{n}\right)} \mathrm{d} x_{1} \wedge \mathrm{d} x_{2} \wedge \cdots \wedge \mathrm{d} x_{n}
             $$
 
-    2. 外微分
+    2. 外微分：对 $\Lambda^{k}$ 中的任意一个 $k-$形式
+
+        $$
+        \omega=\sum_{1 \leqslant i_{1}<i_{2}<\cdots<i_{k} \leqslant n} g_{i_{1}, i_{2}, \cdots, i_{k}}(\boldsymbol{x}) \mathrm{d} x_{i_{1}} \wedge \mathrm{d} x_{i_{2}} \wedge \cdots \wedge \mathrm{d} x_{i_{k}}
+        $$
+
+        定义
+
+        $$
+        \begin{aligned}
+        \mathrm{d} \omega & =\sum_{1 \leqslant i_{1}<i_{2}<\cdots<i_{k} \leqslant n}\left(\mathrm{d} g_{i_{1}, i_{2}, \cdots, i_{k}}(\boldsymbol{x})\right) \wedge \mathrm{d} x_{i_{1}} \wedge \mathrm{d} x_{i_{2}} \wedge \cdots \wedge \mathrm{d} x_{i_{k}} \\
+        & =\sum_{1 \leqslant i_{1}<i_{2}<\cdots<i_{k} \leqslant n} \sum_{i=1}^{n} \dfrac{\partial g_{i_{1}, i_{2}, \cdots, i_{k}}}{\partial x_{i}} \mathrm{d} x_{i} \wedge \mathrm{d} x_{i_{1}} \wedge \mathrm{d} x_{i_{2}} \wedge \cdots \wedge \mathrm{d} x_{i_{k}} .
+        \end{aligned}
+        $$
+
+        同时，对空间 $\Lambda=\Lambda^{0}+\Lambda^{1}+\cdots+\Lambda^{n}$ 上的任意一个元素，定义 $\omega=\omega_{0}+\omega_{1}+\cdots+\omega_{n} \ (\omega_{i} \in \Lambda^{i})$．称这样的微分运算 $\mathrm{d}$ 为外微分
+
+        1. 微分运算 $\mathrm{d}: \Lambda \rightarrow \Lambda$ 是线性的：$\mathrm{d}(\alpha \omega+\beta \eta)=\alpha \mathrm{d} \omega+\beta \mathrm{d} \eta$，其中 $\omega, \eta \in \Lambda, \alpha, \beta$ 为常数
+        2. 设 $\omega$ 为 $k$-形式，$\eta$ 为 $l$-形式，则 $\mathrm{d}(\omega \wedge \eta)=\mathrm{d} \omega \wedge \eta+(-1)^{k} \omega \wedge \mathrm{d} \eta$
+        3. 对任意 $\omega \in \Lambda$，有 $\mathrm{d}^{2} \omega=0$
 
 ### 1.2.3 向量场论
 1. 梯度：设 $D \subset \mathbf{R}^{3}$ 为开集，$\left(x_{0}, y_{0}, z_{0}\right) \in D$ 为一定点．如果函数 $w=f(x, y, z)$ 在 $\left(x_{0}, y_{0}, z_{0}\right)$ 点可偏导，则称向量 $\left(f_{x}\left(x_{0}, y_{0}, z_{0}\right), f_{y}\left(x_{0}, y_{0}, z_{0}\right), f_{z}\left(x_{0}, y_{0}, z_{0}\right)\right)$ 为 $f$ 在点 $\left(x_{0}, y_{0}, z_{0}\right)$ 的梯度, 记为 $\operatorname{\mathbf{grad}} f\left(x_{0}, y_{0}, z_{0}\right)$
