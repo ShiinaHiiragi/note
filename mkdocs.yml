@@ -161,4 +161,5 @@ nav:
   - 语言学:
     - 一、形式语言:
       - 1 形式文法理论: lang/lang/gr.md
+      - 2 形式句法学: lang/lang/syntax.md
       - 4 形式语用学: lang/lang/pragma.md
