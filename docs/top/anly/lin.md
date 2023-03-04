@@ -350,21 +350,48 @@
         $$
         \begin{aligned}
         \mathrm{d} \omega & =\sum_{1 \leqslant i_{1}<i_{2}<\cdots<i_{k} \leqslant n}\left(\mathrm{d} g_{i_{1}, i_{2}, \cdots, i_{k}}(\boldsymbol{x})\right) \wedge \mathrm{d} x_{i_{1}} \wedge \mathrm{d} x_{i_{2}} \wedge \cdots \wedge \mathrm{d} x_{i_{k}} \\
-        & =\sum_{1 \leqslant i_{1}<i_{2}<\cdots<i_{k} \leqslant n} \sum_{i=1}^{n} \dfrac{\partial g_{i_{1}, i_{2}, \cdots, i_{k}}}{\partial x_{i}} \mathrm{d} x_{i} \wedge \mathrm{d} x_{i_{1}} \wedge \mathrm{d} x_{i_{2}} \wedge \cdots \wedge \mathrm{d} x_{i_{k}} .
+        & =\sum_{1 \leqslant i_{1}<i_{2}<\cdots<i_{k} \leqslant n} \sum_{i=1}^{n} \dfrac{\partial g_{i_{1}, i_{2}, \cdots, i_{k}}}{\partial x_{i}} \mathrm{d} x_{i} \wedge \mathrm{d} x_{i_{1}} \wedge \mathrm{d} x_{i_{2}} \wedge \cdots \wedge \mathrm{d} x_{i_{k}}
         \end{aligned}
         $$
 
         同时，对空间 $\Lambda=\Lambda^{0}+\Lambda^{1}+\cdots+\Lambda^{n}$ 上的任意一个元素，定义 $\omega=\omega_{0}+\omega_{1}+\cdots+\omega_{n} \ (\omega_{i} \in \Lambda^{i})$．称这样的微分运算 $\mathrm{d}$ 为外微分
 
-        1. 微分运算 $\mathrm{d}: \Lambda \rightarrow \Lambda$ 是线性的：$\mathrm{d}(\alpha \omega+\beta \eta)=\alpha \mathrm{d} \omega+\beta \mathrm{d} \eta$，其中 $\omega, \eta \in \Lambda, \alpha, \beta$ 为常数
-        2. 设 $\omega$ 为 $k$-形式，$\eta$ 为 $l$-形式，则 $\mathrm{d}(\omega \wedge \eta)=\mathrm{d} \omega \wedge \eta+(-1)^{k} \omega \wedge \mathrm{d} \eta$
+        1. 微分运算 $\mathrm{d}: \Lambda \rightarrow \Lambda$ 是线性的：$\mathrm{d}(\alpha \omega+\beta \eta)=\alpha \mathrm{d} \omega+\beta \mathrm{d} \eta$，其中 $\omega, \eta \in \Lambda$，$\alpha, \beta$ 为常数
+        2. 设 $\omega$ 为 $k-$形式，$\eta$ 为 $l-$形式，则 $\mathrm{d}(\omega \wedge \eta)=\mathrm{d} \omega \wedge \eta+(-1)^{k} \omega \wedge \mathrm{d} \eta$
         3. 对任意 $\omega \in \Lambda$，有 $\mathrm{d}^{2} \omega=0$
 
-### 1.2.3 向量场论
-1. 梯度：设 $D \subset \mathbf{R}^{3}$ 为开集，$\left(x_{0}, y_{0}, z_{0}\right) \in D$ 为一定点．如果函数 $w=f(x, y, z)$ 在 $\left(x_{0}, y_{0}, z_{0}\right)$ 点可偏导，则称向量 $\left(f_{x}\left(x_{0}, y_{0}, z_{0}\right), f_{y}\left(x_{0}, y_{0}, z_{0}\right), f_{z}\left(x_{0}, y_{0}, z_{0}\right)\right)$ 为 $f$ 在点 $\left(x_{0}, y_{0}, z_{0}\right)$ 的梯度, 记为 $\operatorname{\mathbf{grad}} f\left(x_{0}, y_{0}, z_{0}\right)$
-    1. 若 $f \equiv c$（$c$ 为常数），则 $\operatorname{\mathbf{grad}} f=\mathbf{0}$
-    2. 若 $\alpha, \beta$ 为常数，则 $\operatorname{\mathbf{grad}}(\alpha f+\beta g)=\alpha \operatorname{\mathbf{grad}} f+\beta \operatorname{\mathbf{grad}} g$
-    3. $\operatorname{\mathbf{grad}}(f \cdot g)=f \cdot \operatorname{\mathbf{grad}} g+g \cdot \operatorname{\mathbf{grad}} f$
-    4. $\operatorname{\mathbf{grad}}\left(\dfrac{f}{g}\right)=\dfrac{g \cdot \operatorname{\mathbf{grad}} f-f \cdot \operatorname{\mathbf{grad}} g}{g^{2}} \ (g \neq 0)$
-2. 散度
-3. 旋度
+3. 场：设 $\Omega \subset \mathbf{R}^{3}$ 是一个区域，若在时刻 $t$，$\Omega$ 中每一点 $(x, y, z)$ 都有确定的数值 $f(x, y, z, t)$（或确定的向量值 $\boldsymbol{f}(x, y, z, t)$）与它对应，就称 $f(x, y, z, t)$（或 $\boldsymbol{f}(x, y, z, t)$）为 $\Omega$ 上的数量场（或向量场）．显然 $\Omega$ 上任何一个三元函数 $f(x, y, z)$ 都可以看成是 $\Omega$ 上的一个数量场
+    1. 梯度场：设 $D \subset \mathbf{R}^{3}$ 为开集，$\left(x_{0}, y_{0}, z_{0}\right) \in D$ 为一定点．如果函数 $w=f(x, y, z)$ 在 $\left(x_{0}, y_{0}, z_{0}\right)$ 点可偏导，则称向量 $\left(f_{x}\left(x_{0}, y_{0}, z_{0}\right), f_{y}\left(x_{0}, y_{0}, z_{0}\right), f_{z}\left(x_{0}, y_{0}, z_{0}\right)\right)$ 为 $f$ 在点 $\left(x_{0}, y_{0}, z_{0}\right)$ 的梯度，记为 $\operatorname{\mathbf{grad}} f\left(x_{0}, y_{0}, z_{0}\right)$
+        1. 若 $f \equiv c$（$c$ 为常数），则 $\operatorname{\mathbf{grad}} f=\mathbf{0}$
+        2. 若 $\alpha, \beta$ 为常数，则 $\operatorname{\mathbf{grad}}(\alpha f+\beta g)=\alpha \operatorname{\mathbf{grad}} f+\beta \operatorname{\mathbf{grad}} g$
+        3. $\operatorname{\mathbf{grad}}(f \cdot g)=f \cdot \operatorname{\mathbf{grad}} g+g \cdot \operatorname{\mathbf{grad}} f$
+        4. $\operatorname{\mathbf{grad}}\left(\dfrac{f}{g}\right)=\dfrac{g \cdot \operatorname{\mathbf{grad}} f-f \cdot \operatorname{\mathbf{grad}} g}{g^{2}} \ (g \neq 0)$
+
+        称由数量场 $f$ 产生的向量场 $\operatorname{\mathbf{grad}} f$ 为梯度场
+
+    2. 散度场：设 $\boldsymbol{a}(x, y, z)=P(x, y, z) \boldsymbol{e}_1+Q(x, y, z) \boldsymbol{e}_2+R(x, y, z) \boldsymbol{e}_3 \ ((x, y, z) \in \Omega)$ 是一个向量场，$M$ 为场中任一点，称 $\dfrac{\partial P}{\partial x}(M)+\dfrac{\partial Q}{\partial y}(M)+\dfrac{\partial R}{\partial z}(M)$ 为向量场 $\boldsymbol{a}$ 在 $M$ 点的散度，记为 $\operatorname{div} \boldsymbol{a}(M)$
+        1. 通量：设 $P(x, y, z), Q(x, y, z), R(x, y, z)$ 在 $\Omega$ 上具有连续偏导数，$\Sigma$ 为向量场 $\boldsymbol a$ 中的定向曲面，称曲面积分 ${\displaystyle \Phi=\iint_{\Sigma} \boldsymbol a \cdot \mathrm{d} \boldsymbol S}$ 为向量场 $\boldsymbol a$ 沿指定侧通过曲面 $\Sigma$ 的通量
+        2. $\text{Gauss}$ 公式可转写为 ${\displaystyle \iiint_{\Omega} \operatorname{div} a \mathrm{d} V=\iint_{\partial \Omega} a \cdot \mathrm{d} S}$
+        3. $\boldsymbol a$ 的散度是通量关于体积的变化率，即 ${\displaystyle \operatorname{div} a(M)=\lim _{V \rightarrow M} \dfrac{{\displaystyle \iint_{\Sigma} a \cdot \mathrm{d} S}}{m V}}$
+
+        称由向量场 $\boldsymbol a$ 产生的数量场 $\operatorname{div} a$ 为散度场
+
+    3. 旋度场：设 $\boldsymbol{a}(x, y, z)=P(x, y, z) \boldsymbol{e}_1+Q(x, y, z) \boldsymbol{e}_2+R(x, y, z) \boldsymbol{e}_3 \ ((x, y, z) \in \Omega)$ 是一个向量场，$M$ 为场中任一点．称向量
+
+        $$
+        \left[\begin{array}{ccc}
+        \boldsymbol{e}_1 & \boldsymbol{e}_2 & \boldsymbol{e}_3 \\
+        \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
+        P & Q & R
+        \end{array}\right]_{M}=\left(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z}\right)_{M} \boldsymbol{e}_1+\left(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x}\right)_{M} \boldsymbol{e}_2+\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right)_{M} \boldsymbol{e}_3
+        $$
+
+        为向量场 $\boldsymbol{\boldsymbol a}$ 在 $M$ 点的旋度，记为 $\operatorname{\mathbf{rot}} \boldsymbol{\boldsymbol a}(M)$ 或 $\operatorname{\mathbf{curl}} \boldsymbol{\boldsymbol a}(M)$
+
+        1. 环量：设 $P(x, y, z), Q(x, y, z), R(x, y, z)$ 在 $\Omega$ 上具有连续偏导数，设 $\Gamma$ 为场中的定向曲线，称曲线积分 ${\displaystyle \int_{\Gamma} \boldsymbol a \cdot \mathrm{d} \boldsymbol s}$ 为向量场 $\boldsymbol a$ 沿定向曲线 $\Gamma$ 的环量
+        2. $\text{Stokes}$ 公式可转写为 ${\displaystyle \iint_{\Sigma} \operatorname{\mathbf{rot}} \boldsymbol a \cdot \mathrm{d} \boldsymbol S=\int_{\partial \Sigma} \boldsymbol a \cdot \mathrm{d} \boldsymbol s}$
+        3. 向量场 $\boldsymbol a$ 在 $M$ 点处的旋度就是这样一个向量：$\boldsymbol a$ 在 $M$ 点处沿旋度方向的环量面密度最大，且最大值就是 $|\operatorname{\mathbf{rot}} \boldsymbol a(M)|$
+
+        由向量场 $\boldsymbol a$ 产生的向量场 $\operatorname{\mathbf{rot}} \boldsymbol a$ 称为旋度场，如果在场中每一点都有 $\operatorname{\mathbf{rot}} \boldsymbol a=0$，则称 $\boldsymbol a$ 为无旋场
+
+4. $\text{Hamilton}$ 算子
