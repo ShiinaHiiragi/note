@@ -53,7 +53,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：分析学原理 · 重积分 </label>
+    <label> 现在进度：形式语言 · 形式句法学 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
@@ -400,8 +400,7 @@ const refList = [
         press: "高等教育出版社",
         locate: "北京",
         year: 2019,
-        page: [424, 638],
-        plot: 269 - 98
+        page: [424, 638]
     },
     {
         author: ["陈有祺"],
