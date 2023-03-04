@@ -369,12 +369,12 @@
 
         称由数量场 $f$ 产生的向量场 $\operatorname{\mathbf{grad}} f$ 为梯度场
 
-    2. 散度场：设 $\boldsymbol{a}(x, y, z)=P(x, y, z) \boldsymbol{e}_1+Q(x, y, z) \boldsymbol{e}_2+R(x, y, z) \boldsymbol{e}_3 \ ((x, y, z) \in \Omega)$ 是一个向量场，$M$ 为场中任一点，称 $\dfrac{\partial P}{\partial x}(M)+\dfrac{\partial Q}{\partial y}(M)+\dfrac{\partial R}{\partial z}(M)$ 为向量场 $\boldsymbol{a}$ 在 $M$ 点的散度，记为 $\operatorname{div} \boldsymbol{a}(M)$
+    2. 散度场：设 $\boldsymbol{a}(x, y, z)=P(x, y, z) \boldsymbol{e}_1+Q(x, y, z) \boldsymbol{e}_2+R(x, y, z) \boldsymbol{e}_3 \ ((x, y, z) \in \Omega)$ 是一个向量场，$M$ 为场中任一点，称 $\dfrac{\partial P}{\partial x}(M)+\dfrac{\partial Q}{\partial y}(M)+\dfrac{\partial R}{\partial z}(M)$ 为向量场 $\boldsymbol{a}$ 在 $M$ 点的散度，记为 $\operatorname{div}\boldsymbol{a}(M)$
         1. 通量：设 $P(x, y, z), Q(x, y, z), R(x, y, z)$ 在 $\Omega$ 上具有连续偏导数，$\Sigma$ 为向量场 $\boldsymbol a$ 中的定向曲面，称曲面积分 ${\displaystyle \Phi=\iint_{\Sigma} \boldsymbol a \cdot \mathrm{d} \boldsymbol S}$ 为向量场 $\boldsymbol a$ 沿指定侧通过曲面 $\Sigma$ 的通量
-        2. $\text{Gauss}$ 公式可转写为 ${\displaystyle \iiint_{\Omega} \operatorname{div} a \mathrm{d} V=\iint_{\partial \Omega} a \cdot \mathrm{d} S}$
-        3. $\boldsymbol a$ 的散度是通量关于体积的变化率，即 ${\displaystyle \operatorname{div} a(M)=\lim _{V \rightarrow M} \dfrac{{\displaystyle \iint_{\Sigma} a \cdot \mathrm{d} S}}{m V}}$
+        2. $\text{Gauss}$ 公式可转写为 ${\displaystyle \iiint_{\Omega} \operatorname{div}a \mathrm{d} V=\iint_{\partial \Omega} a \cdot \mathrm{d} S}$
+        3. $\boldsymbol a$ 的散度是通量关于体积的变化率，即 ${\displaystyle \operatorname{div}a(M)=\lim _{V \rightarrow M} \dfrac{{\displaystyle \iint_{\Sigma} a \cdot \mathrm{d} S}}{m V}}$
 
-        称由向量场 $\boldsymbol a$ 产生的数量场 $\operatorname{div} a$ 为散度场
+        称由向量场 $\boldsymbol a$ 产生的数量场 $\operatorname{div}a$ 为散度场
 
     3. 旋度场：设 $\boldsymbol{a}(x, y, z)=P(x, y, z) \boldsymbol{e}_1+Q(x, y, z) \boldsymbol{e}_2+R(x, y, z) \boldsymbol{e}_3 \ ((x, y, z) \in \Omega)$ 是一个向量场，$M$ 为场中任一点．称向量
 
@@ -394,4 +394,44 @@
 
         由向量场 $\boldsymbol a$ 产生的向量场 $\operatorname{\mathbf{rot}} \boldsymbol a$ 称为旋度场，如果在场中每一点都有 $\operatorname{\mathbf{rot}} \boldsymbol a=0$，则称 $\boldsymbol a$ 为无旋场
 
-4. $\text{Hamilton}$ 算子
+4. $\text{Hamilton}$ 算子：$\boldsymbol{\nabla}=\boldsymbol{e}_1 \dfrac{\partial}{\partial x}+\boldsymbol{e}_2 \dfrac{\partial}{\partial y}+\boldsymbol{e}_3 \dfrac{\partial}{\partial z}$
+    1. 若函数 $f(x, y, z)$ 和向量场 $\boldsymbol{a}(x, y, z)=P(x, y, z) \boldsymbol{e}_1+Q(x, y, z) \boldsymbol{e}_2+R(x, y, z) \boldsymbol{e}_3$ 在区域 $\Omega$ 上满足可偏导条件，则定义
+
+        $$
+        \begin{aligned}
+        \boldsymbol{\nabla} f&=\dfrac{\partial f}{\partial x} \boldsymbol{e}_1+\dfrac{\partial f}{\partial y} \boldsymbol{e}_2+\dfrac{\partial f}{\partial z} \boldsymbol{e}_3=\operatorname{grad} f ; \\
+        \boldsymbol{\nabla} \cdot \boldsymbol{a}&=\left(\boldsymbol{e}_1 \dfrac{\partial}{\partial x}+\boldsymbol{e}_2 \dfrac{\partial}{\partial y}+\boldsymbol{e}_3 \dfrac{\partial}{\partial z}\right) \cdot(P \boldsymbol{e}_1+Q \boldsymbol{e}_2+R \boldsymbol{e}_3)=\dfrac{\partial P}{\partial x}+\dfrac{\partial Q}{\partial y}+\dfrac{\partial R}{\partial z}=\operatorname{div}\boldsymbol{a} ; \\
+        \boldsymbol{\nabla} \times \boldsymbol{a}&=\left(\boldsymbol{e}_1 \dfrac{\partial}{\partial x}+\boldsymbol{e}_2 \dfrac{\partial}{\partial y}+\boldsymbol{e}_3 \dfrac{\partial}{\partial z}\right) \times(P \boldsymbol{e}_1+Q \boldsymbol{e}_2+R \boldsymbol{e}_3)=\left|\begin{array}{ccc}
+        \boldsymbol{e}_1 & \boldsymbol{e}_2 & \boldsymbol{e}_3 \\
+        \dfrac{\partial}{\partial x} & \dfrac{\partial}{\partial y} & \dfrac{\partial}{\partial z} \\
+        P & Q & R
+        \end{array}\right| \\
+        &=\left(\dfrac{\partial R}{\partial y}-\dfrac{\partial Q}{\partial z}\right) \boldsymbol{e}_1+\left(\dfrac{\partial P}{\partial z}-\dfrac{\partial R}{\partial x}\right) \boldsymbol{e}_2+\left(\dfrac{\partial Q}{\partial x}-\dfrac{\partial P}{\partial y}\right) \boldsymbol{e}_3=\operatorname{\mathbf{rot}} \boldsymbol{a} .
+        \end{aligned}
+        $$
+
+        并定义 $\text{Laplace}$ 算子 $\Delta=\nabla \cdot \nabla=\dfrac{\partial^{2}}{\partial x^{2}}+\dfrac{\partial^{2}}{\partial y^{2}}+\dfrac{\partial^{2}}{\partial z^{2}}$，满足 $\text{Laplace}$ 方程 $\Delta u=\dfrac{\partial^{2} u}{\partial x^{2}}+\dfrac{\partial^{2} u}{\partial y^{2}}+\dfrac{\partial^{2} u}{\partial z^{2}}=0$ 的函数称为调和函数
+
+    2. $\text{Green}$ 公式重述为 ${\displaystyle \iint_{\partial \Omega} \boldsymbol a \cdot \mathrm{d} \boldsymbol S=\iiint_{\Omega} \nabla \cdot \boldsymbol a \mathrm{d} V}$，$\text{Stokes}$ 公式重述为 ${\displaystyle \int_{\partial \Sigma} \boldsymbol{a} \cdot \mathrm{d} \boldsymbol s=\iint_{\Sigma}(\nabla \times \boldsymbol a) \cdot \mathrm{d} \boldsymbol S}$
+        1. $\text{Green}$ 第一公式：${\displaystyle \iiint_{\Omega}(\nabla f \cdot \nabla g+f \Delta g) \mathrm{d} V=\iint_{\partial \Omega} f \dfrac{\partial g}{\partial \boldsymbol{n}} \mathrm{d} S}$
+        2. $\text{Green}$ 第二公式：${\displaystyle \iiint_{\Omega}(f \Delta g-g \Delta f) \mathrm{d} V=\iint_{\partial \Omega}\left(f \dfrac{\partial g}{\partial \boldsymbol{n}}-g \dfrac{\partial f}{\partial \boldsymbol{n}}\right) \mathrm{d} S}$
+    3. 场论的基本关系式
+        1. $\boldsymbol{\nabla} \cdot(\lambda \boldsymbol{a}+\mu \boldsymbol{b})=\lambda(\boldsymbol{\nabla} \cdot \boldsymbol{a})+\mu(\boldsymbol{\nabla} \cdot \boldsymbol{b})$
+        2. $\boldsymbol{\nabla} \times(\lambda \boldsymbol{a}+\mu \boldsymbol{b})=\lambda(\boldsymbol{\nabla} \times \boldsymbol{a})+\mu(\boldsymbol{\nabla} \times \boldsymbol{b})$
+        3. $\boldsymbol{\nabla} \cdot(f \boldsymbol{a})=f(\boldsymbol{\nabla} \cdot \boldsymbol{a})+(\boldsymbol{\nabla} f) \cdot \boldsymbol a$
+        4. $\boldsymbol{\nabla} \times(f \boldsymbol{a})=f((\boldsymbol{\nabla} \times \boldsymbol{a})+(\boldsymbol{\nabla} f) \times \boldsymbol{a})$
+        5. $\boldsymbol{\nabla} \cdot(\boldsymbol{a} \times \boldsymbol{b})=\boldsymbol{b} \cdot(\boldsymbol{\nabla} \times \boldsymbol{a})-\boldsymbol{a} \cdot(\boldsymbol{\nabla} \times \boldsymbol{b})$
+        6. $\boldsymbol{\nabla} \times(\boldsymbol{\nabla} f)=(\boldsymbol{\nabla} \times \boldsymbol{\nabla}) f=\mathbf{0}$
+        7. $\boldsymbol{\nabla} \cdot(\boldsymbol{\nabla} \times \boldsymbol{a})=0$
+
+5. 保守场与势函数
+    1. 有势场：设 $\boldsymbol{a}(x, y, z)=P(x, y, z) \boldsymbol{e}_1+Q(x, y, z) \boldsymbol{e}_2+R(x, y, z) \boldsymbol{e}_3 \ ((x, y, z) \in \Omega)$ 为向量场，其中 $P, Q, R$ 在区域 $\Omega$ 上连续．若存在函数 $U(x, y, z)$ 满足 $\boldsymbol{a}=\operatorname{grad} U$，则称向量场 $\boldsymbol{a}$ 为有势场, 并称函数 $V=-U$ 为势函数
+    2. 保守场：如果对于 $\Omega$ 内任意两点 $A, B$，积分值 ${\displaystyle \int_{L} P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d} z}$ 只与 $A, B$ 两点有关，而与从 $A$ 到 $B$ 的路径（只考虑光滑或分段光滑曲线）$L$ 无关，就称曲线积分 ${\displaystyle \int_{L} P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d}}$ 与路径无关．如果在向量场 $\boldsymbol{a}$ 中曲线积分与路径无关，则称 $\boldsymbol{a}$ 为保守场
+    3. 设 $\Omega \in \mathbf{R}^{3}$ 为单连通区域，在 $\Omega$ 上定义向量场 $\boldsymbol{a}(x, y, z)=P(x, y, z) \boldsymbol{e}_1+Q(x, y, z) \boldsymbol{e}_2+R(x, y, z) \boldsymbol{e}_3 \ ((x, y, z) \in \Omega)$，$P(x, y, z), Q(x, y, z), R(x, y, z)$ 在 $\Omega$ 上具有连续偏导数，则 $\boldsymbol{a}$ 是保守场 $\leftrightarrow \boldsymbol{a}$ 是有势场 $\leftrightarrow \boldsymbol{a}$ 是无旋场
+    4. 设函数 $P(x, y, z), Q(x, y, z)$ 和 $R(x, y, z)$ 在单连通区域 $\Omega$ 上连续，若 $U(x, y, z)$ 是 $1-$形式 $P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d} z$ 的一个原函数（即在 $\Omega$ 上恒有 $\mathrm{d} U=P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d} z$），则对于 $\Omega$ 内任意两点 $A\left(x_{A}, y_{A}, z_{A}\right), B\left(x_{B}, y_{B}, z_{B}\right)$ 有
+
+        $$
+        \int_{\overset{\LARGE{\frown}}{AB}} P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d} z=U\left(x_{B}, y_{B}, z_{B}\right)-U\left(x_{A}, y_{A}, z_{A}\right)
+        $$
+
+        其中 $\overset{\LARGE{\frown}}{AB}$ 为从 $A$ 到 $B$ 的任意路径
