@@ -36,14 +36,14 @@
 
             - le rirni[^4] po'e la klaudias.
 
-                $\text{Claudia}$ 的父母
+                克劳迪娅的父母
 
     2. 当物主是代词或专名表示的项时，可以将「pe」与物主放在冠词与根词项之间。「pe」可以被省略
 
         !!! note ""
             - le pe la klaudias. rirni
 
-                $\text{Claudia}$ 的父母
+                克劳迪娅的父母
 
             - le do cukta
 
@@ -90,7 +90,7 @@
         !!! note ""
             - la djulias. klama[^5] la .uacintyn. la losandjeles. la cikagos. la .amtrak.
 
-                $\text{Julia}$ 乘坐 $\text{Amtrak}$ 从洛杉矶经由芝加哥来到华盛顿。
+                茱莉亚乘坐美国国铁从洛杉矶经由芝加哥来到华盛顿。
 
     2. 使用可删除标记「cu」可以用于分隔两个相邻谓语，使其不成为一个词组
 

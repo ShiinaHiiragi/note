@@ -418,8 +418,8 @@ const refList = [
         press: "人民出版社",
         locate: "北京",
         year: 2010,
-        page: [1, 604],
-        plot: 294
+        page: [1, 551],
+        plot: 166 + (551 - 397)
     }
 ];
 
