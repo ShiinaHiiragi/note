@@ -53,7 +53,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，可能存在若干疏漏和错误"
-    <label> 现在进度：形式语言 · 形式句法学 </label>
+    <label> 现在进度：模型论 · 紧致性定理 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
