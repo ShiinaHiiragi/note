@@ -159,7 +159,8 @@ nav:
       - 2 微分法: anly/princ/diff.md
       - 3 积分法: anly/princ/int.md
   - 语言学:
-    - 一、形式语言:
-      - 1 形式文法理论: lang/lang/gr.md
-      - 2 形式句法学: lang/lang/syntax.md
-      - 4 形式语用学: lang/lang/pragma.md
+    - 二、形式语言:
+      - 1 形式文法与自动机: lang/formal/gr.md
+    - 三、自然语言:
+      - 1 句法学: lang/nat/syntax.md
+      - 3 语用学: lang/nat/pragma.md
