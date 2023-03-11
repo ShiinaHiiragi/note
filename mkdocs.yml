@@ -9,7 +9,7 @@ theme:
   name: material
   palette:
     - scheme: default
-      primary: teal
+      primary: indigo
       accent: blue
       font:
         text: Noto Sans SC
