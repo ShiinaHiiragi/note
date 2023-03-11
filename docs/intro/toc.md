@@ -45,7 +45,7 @@
 ### 二、符号学
 
 !!! note "参考文献"
-    『符号学原理与推演』（赵毅衡）
+    『符号学：原理与推演』（赵毅衡）
 
 #### 1 符号原理
 1. 符号的解释：第八章
@@ -129,24 +129,23 @@
 
 !!! note "参考文献"
     1. 『递归论：算法与随机性基础』（郝兆宽、杨睿之、杨跃），下略
-    2. 『Reverse Mathematics: Proofs from the Inside out』（John Stillwell）
+    2. {++『Reverse Mathematics: Proofs from the Inside out』（John Stillwell）++}
 
 #### 3 不可解度论
 1. 图灵归约与图灵度：§3.1、§3.2
 2. 算术分层：§3.3
 3. 典型构造：第四章
 
-#### 4 逆数学
-
-1. Arithmetization of Computation
-2. Arithmetical Comprehension
-3. Recursive Comprehension
-
-#### 5 随机性理论
+#### 4 随机性理论
 1. Cantor 空间：§5.1
 2. 不可压缩性：§5.2
 3. 测试：§5.3
 4. 不可预测：§5.4
+
+#### 5 逆数学
+1. Arithmetization of Computation
+2. Arithmetical Comprehension
+3. Recursive Comprehension
 
 ### 四、公理集合论
 
@@ -351,19 +350,20 @@
 ### 一、类型论
 
 !!! note "参考文献"
-    {++『Type Theory and Formal Proof: an Introduction』（Rob Nederpelt、Herman Geuvers）++}
+    『Type Theory and Formal Proof: an Introduction』（Rob Nederpelt、Herman Geuvers）
 
-#### 1 λ 演算
+#### 1 无类型演算
 
-#### 2 形式证明
+#### 2 类型与项
+
+#### 3 构造演算
+
+#### 4 数学基础
 
 ### 二、形式语言
 
 !!! note "参考文献"
-    1. ~~『形式语言与自动机』（陈有祺）~~
-    2. {++『The Formal Semantics of Programming Languages: An Introduction』（Glynn Winskel）++}
-
-#### ~~1 形式文法与自动机~~
+    {++『The Formal Semantics of Programming Languages: An Introduction』（Glynn Winskel）++}
 
 #### 2 形式语义
 1. 指称语义
@@ -388,5 +388,3 @@
 4. 广义量词理论：第五章第五节
 5. 话语表现理论：第五章第六节
 6. 情境语义学：第五章第七节
-
-#### ~~3 语用学~~

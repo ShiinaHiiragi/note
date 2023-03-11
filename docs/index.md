@@ -234,16 +234,6 @@ const refList = [
         page: [174, 246]
     },
     {
-        author: ["John Stillwell"],
-        title: "Reverse Mathematics: Proofs from the Inside out",
-        type: "M",
-        press: "Princeton University Press",
-        locate: "Oxford",
-        year: 2018,
-        page: [1, 167],
-        plot: 0
-    },
-    {
         author: ["郝兆宽", "杨跃"],
         title: "集合论：对无穷概念的探索",
         type: "M",
@@ -401,6 +391,16 @@ const refList = [
         locate: "北京",
         year: 2019,
         page: [424, 638]
+    },
+    {
+        author: ["Rob Nederpelt", "Herman Geuvers"],
+        title: "Type Theory and Formal Proof: an Introduction",
+        type: "M",
+        press: "Cambridge UniversitPress",
+        locate: "Cambridge",
+        year: 2014,
+        page: [1, 390],
+        plot: 0
     },
     {
         author: ["陈有祺"],
