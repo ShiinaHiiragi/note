@@ -234,6 +234,16 @@ const refList = [
         page: [174, 246]
     },
     {
+        author: ["田中一之"],
+        title: "逆数学と 2 階算術",
+        type: "M",
+        press: "河合文化教育研究所",
+        locate: "名古屋",
+        year: 1997,
+        page: [1, 94],
+        plot: 0
+    },
+    {
         author: ["郝兆宽", "杨跃"],
         title: "集合论：对无穷概念的探索",
         type: "M",
