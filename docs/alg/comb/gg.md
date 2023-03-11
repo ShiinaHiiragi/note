@@ -203,7 +203,19 @@
 
         3. 设 $f(x) = 1$，定义 $\text{Fish 3}$ 函数 $F_3(x) = \left[ss(2)^{63}\right](f)$，$\text{Fish 3}$ 数为 $F_3 = F_3^{63}(3)$
 
-6. $\text{BEAF}$ 数阵记号
+6. $\text{BEAF}$ 数阵表示：设 $A = (a_1, a_2, \cdots, a_n)$ 为正整数组成的 $n$ 元有序组，则数阵符号是从这个 $n$ 元有序组到正整数的映射 $v(A) = \{x_1, x_2, \cdots, x_n\}$，并定义为
+    1. $\{a_0\} = a_0$
+    2. $\{a_1, a_2\} = a_1^{a_2}$
+    3. $\{a_1, a_2, \cdots, a_n, 1\} = \{a_1, a_2, \cdots, a_n\}$
+    4. 当第二个元素为 $1$ 时，有 $\{a_1, 1, a_3, \cdots, a_n\} = a_1$；当第三个元素为 $1$ 时，有
+
+        $$
+        \{a_1, a_2, 1, \cdots, 1, a_{x+3}, \cdots, a_n\} = \left\{a_1, a_1, \{a_1, a_2 - 1, 1, \cdots, 1, a_{x+3}, \cdots, a_n\}, a_{x+3} - 1, a_{x+4}, \cdots, a_n\right\}
+        $$
+
+    5. 当以上条件均不满足时，有 $\{a_1, a_2, \cdots, a_n\} = \left\{a_1, \{a_1, a_2 - 1, a_3, \cdots, a_n\}, a_3 - 1, a_4, \cdots, a_n\right\}$
+
+    特别地，对于三个正整数的数阵有 $\{a, b, c\}=a \rightarrow b \rightarrow c=a \uparrow^c b$
 
 ## 2.3 序数与集合
 
