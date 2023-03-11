@@ -360,7 +360,9 @@
     5. 限制与扩张：对任意映射 $f$ 与集合 $A$，称映射 $g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 为 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张
 2. 逆映射与复合映射
     1. 逆映射：一个映射是可逆的当且仅当它是单射，如果 $f$ 是可逆的，则 $f^{-1}$ 也是可逆的且 $(f^{-1})^{-1} = f$．当 $f$ 为函数时，称 $f^{-1}$ 为 $f$ 的反函数
-    2. 复合映射：令 $f, g$ 为映射，则复合 $h = g \circ f$ 也是映射，且 $h$ 的定义域为 $\mathrm{dom}(h) = \mathrm{dom}(f) \cap f^{-1}[\mathrm{dom}(g)]$．且对于所有 $x \in \mathrm{dom}(h)$ 均有 $h(x) = g(f(x))$
+    2. 复合映射：令 $f, g$ 为映射，则复合 $h = g \circ f$ 也是映射，且 $h$ 的定义域为 $\mathrm{dom}(h) = \mathrm{dom}(f) \cap f^{-1}[\mathrm{dom}(g)]$
+        1. 对于所有 $x \in \mathrm{dom}(h)$ 均有 $h(x) = g(f(x))$
+        2. 简记 $[f^n](x) = \small \underbrace{\normalsize f \circ f \circ \cdots \circ f}_{\normalsize n} \normalsize (x)$，并将其与 $f^n(x)$ 区分
 3. 相容性：对于映射 $f, g$，如果对所有的 $x \in \mathrm{dom}(f) \cap \mathrm{dom}(g)$ 都有 $f(x) = g(x)$，则称映射 $f, g$ 是相容的
     1. 如果映射的集合 $\mathscr F$ 中任意两个映射都是相容的，则称 $\mathscr F$ 为相容的系统
     2. 映射 $f, g$ 相容当且仅当 $f \cap g$ 是映射，当且仅当 $f \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right) = g \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right)$

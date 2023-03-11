@@ -142,6 +142,68 @@
         $$
 
 5. $\text{Fish}$ 数
+    1. $\text{Fish 1}$ 数
+        1. 定义从自然数和函数到自然数和函数的映射 $S: (m,f(x)) \to (g(m),g(x))$，其中 $g(x)$ 定义为
+
+            $$
+            \begin{eqnarray*}
+            B(0,n) & = & f(n) \\ 
+            B(m+1,0) & = & B(m, 1) \\ 
+            B(m+1,n+1) & = & B(m, B(m+1, n)) \\
+            g(x) & = & B(x,x) 
+            \end{eqnarray*}
+            $$
+
+        2. 定义从「数集、函数和映射 $S$」到「数集、函数和映射 $S'$」的映射 $SS:(m,f(x),S)\to (n,g(x),S')$ 如下：
+
+            $$
+            S S(m, f, S)=\left(\left[S^{f(m)}\right](m, f), \left[S^{f(m)}\right]\right)
+            $$
+
+        3. 设 $m_0 = 3, f_0(x) = x + 1, S_0 = S$，则记 $(F_1, F_1(x), S_{63}) = [SS^{63}](m_0, f_0, S_0)$，称 $F_1$ 为 $\text{Fish 1}$ 数，$F_1(x)$ 为 $\text{Fish 1}$ 函数
+
+    2. $\text{Fish 2}$ 数
+        1. 定义从自然数和函数到自然数和函数的映射 $S: (m,f(x)) \to (g(m),g(x))$，其中 $g(x)$ 定义为
+
+            $$
+            \begin{eqnarray*}
+            B(0,n) & = & f(n) \\ 
+            B(m+1,0) & = & B(m, 1) \\ 
+            B(m+1,n+1) & = & B(m, B(m+1, n)) \\
+            g(x) & = & B(x,x) 
+            \end{eqnarray*}
+            $$
+
+        2. 对于映射 $S$，定义新的映射 $S^*$ 为 $S^*(f)(x)=[S^x](f)(x)$，同样定义从「数集、函数和映射 $S$」到「数集、函数和映射 $S'$」的映射 $SS:(m,f(x),S)\to (n,g(x),S')$ 如下：
+
+            $$
+            S S(m, f, S)=\left(\left[S^{f(m)}\right](f)(m),\left[S^{f(m)}\right]^*(f), \left[S^{f(m)}\right]\right)
+            $$
+
+        3. 设 $m_0 = 3, f_0(x) = x + 1, S_0 = S$，则记 $(F_2, F_2(x), S_{63}) = [SS^{63}](m_0, f_0, S_0)$，称 $F_2$ 为 $\text{Fish 2}$ 数，$F_2(x)$ 为 $\text{Fish 2}$ 函数
+
+    3. $\text{Fish 3}$ 数
+        1. 设 $n \in \mathbf Z_+$，则定义从函数 $f(x)$ 到 $g(x)$ 的映射 $s(n)$ 为
+
+            $$
+            s(n)(f) = \left\{\begin{aligned}
+            & [f^x](x), & n = 1 \\
+            & \left[s(n-1)^x\right](f(x)), & n > 1
+            \end{aligned}\right.
+            $$
+
+        2. 定义从函数 $f(x)$ 到 $g(x)$ 的映射 $ss(n)$ 为
+
+            $$
+            ss(n)(f) = \left\{\begin{aligned}
+            & s(x)(f), & n=1 \\
+            & [ss(n-1)^{x}](f), & n>1
+            \end{aligned}\right.
+            $$
+
+        3. 设 $f(x) = 1$，定义 $\text{Fish 3}$ 函数 $F_3(x) = \left[ss(2)^{63}\right](f)$，$\text{Fish 3}$ 数为 $F_3 = F_3^{63}(3)$
+
+6. $\text{BEAF}$ 数阵记号
 
 ## 2.3 序数与集合
 
