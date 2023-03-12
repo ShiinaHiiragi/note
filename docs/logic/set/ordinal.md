@@ -132,10 +132,10 @@
     1. 对任意自然数 $n \geqslant 2$，定义 $S_{n}$ 如下
 
         $$
-        \begin{aligned}
-        & S_{n}(m)=m, & m < n, \\
-        & S_{n}(m)=k \cdot(n+1)^{S_{n}(t)}+S_{n}(b), & m \geqslant n \wedge m=k \cdot n^{t}+b, k<n, b<n^{t}, t \geqslant 1
-        \end{aligned}
+        S_{n}(m) = \left\{\begin{aligned}
+        & m, & m < n \\
+        & k \cdot(n+1)^{S_{n}(t)}+S_{n}(b), & m \geqslant n \wedge m=k \cdot n^{t}+b, k<n, b<n^{t}, t \geqslant 1
+        \end{aligned}\right.
         $$
 
     2. 对任意自然数 $n \geqslant 2$，定义 $f_{n}$ 如下
