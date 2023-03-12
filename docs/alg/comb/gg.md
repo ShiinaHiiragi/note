@@ -34,8 +34,13 @@
     - $\text{Shannon}$ 数：$10^{120}$，国际象棋博弈树复杂度的保守下限
     - 第二 $\text{Skewes}$ 数：$e \uparrow e \uparrow e \uparrow e \uparrow 7.705 \approx E 3\#4$，是满足 ${\displaystyle \pi(x) > \int_0^x \dfrac{\mathrm dt}{\ln t}}$ 的最小自然数 $x$ 的一个上界．其中 $\pi(x)$ 是质数计数函数，表示不大于实数 $x$ 的质数个数
 
-## 2.2 递归函数
-### 2.2.1 原始递归函数
+## 2.2 序数
+### 2.2.1 序数层级
+
+### 2.2.2 序数分析
+
+## 2.3 Peano 算术
+### 2.3.1 原始递归函数
 1. $\text{Knuth}$ 箭头：设 $x, y \in \mathbf N$，定义 $x \uparrow^n y = x \ \small \underbrace{\normalsize \uparrow \uparrow \cdots \uparrow}_{\normalsize n} \normalsize \ y$如下
 
     $$
@@ -76,7 +81,7 @@
     2. 超$-1$ 运算：$H_1(a, b) = a + b$，即加法运算
     3. 超$-n$ 运算：$H_n(a, b) = a \uparrow^{n-2} b \ (n > 1)$，其中 $n = 2, 3, 4$ 时分别称作乘法运算、幂运算、超幂运算
 
-### 2.2.2 多重递归函数
+### 2.3.2 多重递归函数
 1. $\text{Moser}$ 数：定义 $m(k, n) \ (k \geqslant 3)$ 如下
 
     $$
@@ -217,11 +222,6 @@
 
     特别地，对于三个正整数的数阵有 $\{a, b, c\}=a \rightarrow b \rightarrow c=a \uparrow^c b$
 
-## 2.3 序数
-### 2.3.1 序数层级
+## 2.4 二阶算术
 
-### 2.3.2 Peano 算术
-
-### 2.3.3 二阶算术
-
-## 2.4 不可计算函数
+## 2.5 不可计算函数
