@@ -1,20 +1,40 @@
 # 2 大数理论
 
 ## 2.1 大数基础
-1. 科学计数法：任何一个数 $x \in \mathbf R$ 可被唯一表示为 $x = a \times 10^{n}$ 的形式，其中实数 $a \in [1, 10)$，$n \in \mathbf Z$
-2. 自然数类：定义 $c(n)$ 如下
+1. 基础四则运算
+    1. 科学计数法：任何实数 $x \in \mathbf R$ 可被唯一表示为 $x = a \times 10^{n}$ 的形式，其中实数 $a \in [1, 10)$，$n \in \mathbf Z$
+    2. 阶乘 $n! = \left\{\begin{aligned} & 1, & n = 0 \\ & n \cdot (n - 1)!, & n > 1 \end{aligned}\right.$
 
-    $$
-    c(n) = \left\{\begin{aligned}
-    & 6, & n = 0 \\
-    & 10^{c(n-1)}, & n > 0
-    \end{aligned}\right.
-    $$
+        1. 迭代阶乘：定义 $n!^p = \small \underbrace{\normalsize (\cdots((n!)!)\cdots)!}_{\normalsize p} \normalsize$ 如下
 
-    则对于任意自然数，当 $n = 0$ 时，定义第 $0$ 类数为小于 $c(0)$ 的自然数；当 $n > 0$ 时，定义第 $n$ 类数为小于 $c(n)$ 且不小于 $c(n-1)$ 的自然数
+            $$
+            n!^p = \left\{\begin{aligned}
+            & n!, & n = 1 \\
+            & (n!^{n-1})!, & n > 1
+            \end{aligned}\right.
+            $$
 
-    !!! note "超类"
-        设 $c(n)$ 为自然数类函数，则定义 $h(n)$
+        2. 多重阶乘：定义 $n!^{(p)} = n \small \underbrace{\normalsize !!\cdots!}_{\normalsize p} \normalsize$ 如下
+
+            $$
+            n!^{(p)} = \prod_{i=0}^{\left[\frac{n}{p}\right] - 1} (n - ip)
+            $$
+
+            并定义 $0!^{(p)} = 1$．当 $p = 2$ 时，称 $n!!$ 为 $n$ 的双阶乘
+
+2. 自然数的分类
+    1. 数类：定义 $c(n)$ 如下
+
+        $$
+        c(n) = \left\{\begin{aligned}
+        & 6, & n = 0 \\
+        & 10^{c(n-1)}, & n > 0
+        \end{aligned}\right.
+        $$
+
+        则对于任意自然数，当 $n = 0$ 时，定义第 $0$ 类数为小于 $c(0)$ 的自然数；当 $n > 0$ 时，定义第 $n$ 类数为小于 $c(n)$ 且不小于 $c(n-1)$ 的自然数
+
+    2. 超类：设 $c(n)$ 为自然数类函数，则定义 $h(n)$ 如下
 
         $$
         h(n) = \left\{\begin{aligned}
@@ -23,19 +43,18 @@
         \end{aligned}\right.
         $$
 
-        为自然数超类函数
+        为自然数超类函数．则对于任意自然数，当 $n = 0$ 时，定义第 $0$ 类数为小于 $h(0)$ 的自然数；当 $n > 0$ 时，定义第 $n$ 类数为小于 $c(n)$ 且不小于 $h(n-1)$ 的自然数
 
-3. 经典大数实例
+3. 经典大数实例例举
     - 无量大：$10^{68}$，古印度计数单位中的最大数量
     - 不可说不可说转：$10^{7 \times 2^{122}}$，出现在『华严经』中的最大数
     - $\text{Googol}$ 数：$10^{100}$，出自 $\text{Kasner}$ 的作品『数学与想象』
+    - $\text{Shannon}$ 数：$10^{120}$，国际象棋博弈树复杂度的保守下限
     - $\text{Eddington}$ 数：约 $1.57 \times 10^{79}$，即可观测宇宙中的质子数
     - $\text{Poincar}\acute{\mathrm e}$ 回归时间：约 $10 \uparrow 10 \uparrow 10 \uparrow 10 \uparrow 2.08$，即可观测宇宙的始态复现时间
-    - $\text{Shannon}$ 数：$10^{120}$，国际象棋博弈树复杂度的保守下限
-    - 第二 $\text{Skewes}$ 数：$e \uparrow e \uparrow e \uparrow e \uparrow 7.705 \approx E 3\#4$，是满足 ${\displaystyle \pi(x) > \int_0^x \dfrac{\mathrm dt}{\ln t}}$ 的最小自然数 $x$ 的一个上界．其中 $\pi(x)$ 是质数计数函数，表示不大于实数 $x$ 的质数个数
 
 ## 2.2 序数
-### 2.2.1 基本列系
+### 2.2.1 基本列
 1. $\text{Wainer}$ 层级
 2. $\text{Veblen}$ 层级
 
