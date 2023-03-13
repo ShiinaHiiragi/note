@@ -131,7 +131,26 @@
         \end{aligned}
         $$
 
-3. 序数分析
+3. 序数分析：为形式系统指派序数，作为其证明强度的度量，称为证明论序数
+    1. 一阶算术系统的证明论序数
+
+        <div class="text-table">
+
+        |  算术系统  | $\mathbf Q$ |  $\mathbf{PA}$  |
+        | :--------: | :---------: | :-------------: |
+        | 证明论序数 |  $\omega$   | $\varepsilon_0$ |
+
+        </div>
+
+    2. 二阶算术系统的证明论序数
+
+        <div class="text-table">
+
+        |  算术系统  | $\mathbf{RCA}_0$  | $\mathbf{WKL}_0$  | $\mathbf{ACA}_0$ | $\mathbf{ATR}_0$ |  $\mathbf{\Pi_1^1-CA}_0$  |
+        | :--------: | :---------------: | :---------------: | :--------------: | :--------------: | :-----------------------: |
+        | 证明论序数 | $\omega^{\omega}$ | $\omega^{\omega}$ | $\varepsilon_0$  |    $\Gamma_0$    | $\psi_0(\Omega_{\omega})$ |
+
+        </div>
 
 ### 2.2.2 序数层级
 1. $\text{Hardy}$ 函数：对于序数 $\alpha$，定义 $H[\alpha]: \mathbf N \to \mathbf N$ 如下
