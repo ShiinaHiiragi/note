@@ -98,7 +98,7 @@
             可知 $\mathrm{rem}(x, y)$ 是原始递归函数
 
     4. $\text{Ackermann}$ 函数
-        1. 三元函数 $\Phi(n, x, y)$ 递归定义：
+        1. 三元 $\text{Ackermann}$ 函数 $\Phi(n, x, y)$ 递归定义：
 
             $$
             \begin{aligned}
@@ -110,19 +110,7 @@
             \end{aligned}
             $$
 
-        2. 二元函数版本 $A(x, y)$ 递归定义：
-
-            $$
-            \begin{aligned}
-            A(0, y) & = y + 1 \\
-            A(x + 1, 0) & = A(x, 1) \\
-            A(x + 1, y + 1) & = A(x, A(x + 1, y))
-            \end{aligned}
-            $$
-
-            此时 $\text{Ackermann}$ 函数的解析式为 $A(x, y) = 2 \uparrow^{x-2} (y + 3) - 3$
-
-        3. $\text{Ackermann}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 使得 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
+        2. $\text{Ackermann}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 使得 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
 
 3. 有界极小算子与正则 $\mu-$算子
     1. 有界极小算子：令 $P(\overline x, z)$ 为一个 $(k + 1)$ 元的性质，定义

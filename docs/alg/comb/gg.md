@@ -108,13 +108,23 @@
 
             并定义 $\text{Graham}$ 数为 $g_{64}(4)$
 
-    2. 连续化：设 $x \in \mathbf R$，定义 $a \uparrow x$ 如下
+    2. 连续化：设 $x \in \mathbf R$ 且 $n \geqslant 1$，定义超对数 $\small \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n} \normalsize\mathrm{log}_a(x)$ 如下
 
         $$
-        a \uparrow \uparrow x=\left\{\begin{aligned}
-        & \log _a(a \uparrow \uparrow(x+1)), & x \leq-1 \\
+        \small \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n} \normalsize\mathrm{log}_a(x)=\left\{\begin{aligned}
+        & \small \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n} \normalsize\mathrm{log}_a(a \uparrow \uparrow x)-1, & x \leqslant0 \\
+        & -1+x, & 0<x \leqslant1 \\
+        & \small \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n} \normalsize\mathrm{log}_a\left(\small \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n-1} \normalsize\mathrm{log}_a(x)\right)+1, & 1<x
+        \end{aligned}\right.
+        $$
+
+        则可定义 $a \uparrow^n x$ 如下
+
+        $$
+        a \uparrow^n x= \left\{\begin{aligned}
+        & \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n} \normalsize\mathrm{log} _a\left(a \uparrow^n(x+1)\right), & x \leq-1 \\
         & 1+x, & -1<x \leq 0 \\
-        & a \uparrow(a \uparrow \uparrow(x-1)), & 0<x
+        & a \uparrow^{n-1}\left(a \uparrow^n(x-1)\right), & 0<x
         \end{aligned}\right.
         $$
 
@@ -145,18 +155,32 @@
     1. 基数为 $10$ 时通常可被省略，例如 $\text{Googolplex}$ 数可表示为 $E 100\#2$
     2. $a \uparrow ^c b = E[a] \small \underbrace{\normalsize 1 \# 1 \# \cdots \# 1}_{\normalsize c-1} \normalsize \# b$
 
-3. 多变量 $\text{Ackermann}$ 函数：定义 $n$ 元函数 $A(a_1, a_2, \cdots, a_n)$ 如下
+3. $\text{Ackermann}$ 函数：
 
     $$
     \begin{aligned}
-    A(Y, a) &=a+1 \\
-    A(X, b+1,0) &=A(X, b, 1) \\
-    A(X, b+1, a+1) &=A(X, b, A(X, b+1, a)) \\
-    A(X, b+1,0, Y, a) &=A(X, b, a, Y, a)
+    A(0, y) & = y + 1 \\
+    A(x + 1, 0) & = A(x, 1) \\
+    A(x + 1, y + 1) & = A(x, A(x + 1, y))
     \end{aligned}
     $$
 
-    其中 $a, b \in \mathbf N$，$X$ 为多于或等于 $0$ 个自然数的简记，$Y$ 为多于或等于 $0$ 个 $0$ 的简记
+    此时 $\text{Ackermann}$ 函数的解析式为 $A(x, y) = 2 \uparrow^{x-2} (y + 3) - 3$
+
+    1. 多变量 $\text{Ackermann}$ 函数：定义 $n$ 元函数 $A(a_1, a_2, \cdots, a_n)$ 如下
+
+        $$
+        \begin{aligned}
+        A(Y, a) &=a+1 \\
+        A(X, b+1,0) &=A(X, b, 1) \\
+        A(X, b+1, a+1) &=A(X, b, A(X, b+1, a)) \\
+        A(X, b+1,0, Y, a) &=A(X, b, a, Y, a)
+        \end{aligned}
+        $$
+
+        其中 $a, b \in \mathbf N$，$X$ 为多于或等于 $0$ 个自然数的简记，$Y$ 为多于或等于 $0$ 个 $0$ 的简记
+
+    2. 多重序列 $\text{Ackermann}$ 函数
 
 4. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
 
