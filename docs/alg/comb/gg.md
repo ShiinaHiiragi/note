@@ -69,8 +69,8 @@
     - $\text{Eddington}$ 数：约 $1.57 \times 10^{79}$，即可观测宇宙中的质子数
     - $\text{Poincar}\acute{\mathrm e}$ 回归时间：约 $10 \uparrow 10 \uparrow 10 \uparrow 10 \uparrow 2.08$，即可观测宇宙的始态复现时间
 
-## 2.2 序数层级与分析
-### 2.2.1 基本列
+## 2.2 序数与增长率
+### 2.2.1 基本列与序数分析
 1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
     1. $\varphi_0(\beta) = \omega^{\beta}$
     2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\varphi_{\alpha}(\beta)$ 的第 $\beta$ 个不动点，即 $\varphi_{\alpha}(\gamma) = \gamma$ 的第 $\beta$ 个解
@@ -131,13 +131,38 @@
         \end{aligned}
         $$
 
+3. 序数分析
+
 ### 2.2.2 序数层级
-1. $\text{Hardy}$ 函数
+1. $\text{Hardy}$ 函数：对于序数 $\alpha$，定义 $H[\alpha]: \mathbf N \to \mathbf N$ 如下
+
+    $$
+    \begin{aligned}
+    H[0](n) & =n \\
+    H[\alpha+1](n) & =H[\alpha](n+1) \\
+    H[\alpha](n) & =H[\alpha[n]](n) \ (\alpha \textsf{ 为极限序数且 } \alpha[n] \textsf{ 为基本列})
+    \end{aligned}
+    $$
+
+    未取定基本列的 $\text{Hardy}$ 函数不是良定义的概念，此处基本列取 $\text{Wainer}$ 层级
+
+    1. $\text{Hardy}$ 函数的复合：若不存在 $\gamma$ 使得 $\alpha + \beta = \gamma + \beta$，则 $H[\alpha + \beta](n) = H[\alpha](H[\beta](n))$
+    2. $\text{Hardy}$ 函数的增长率：对于 $m > 1$ 时有 $H[\omega^m](n) > 2 \uparrow^{m-1} n$
+
 2. 快增长函数（$\text{FGH}$）
+
+    $$
+    \begin{aligned}
+    F[0](n) & =n+1 \\
+    F[\alpha+1](n) & =\left[F[\alpha]^n\right](n) \\
+    F[\alpha](n) & =F\left[\alpha[n]\right](n) \ (\alpha \textsf{ 为极限序数且 } \alpha[n] \textsf{ 为基本列})
+    \end{aligned}
+    $$
+
+    在 $\alpha < \varepsilon_0$ 时有 $F[\alpha](n)=H\left[\omega^\alpha\right](n)$，当 $\alpha = \varepsilon_0$ 时有 $F\left[\varepsilon_0\right](n) \approx H\left[\varepsilon_0\right](n+1)=H\left[\varepsilon_0+1\right](n)$ 近似成立
+
 3. 慢增长函数（$\text{SGH}$）
 4. 序数塌缩函数（$\text{OCF}$）
-
-### 2.2.3 序数分析
 
 ## 2.3 可计算函数
 ### 2.3.1 递归函数
@@ -198,7 +223,65 @@
 
         特别地，$\alpha \uparrow \beta$ 也可写作 $\alpha \widehat{\ \ \ } \beta$
 
-2. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
+2. 超 $\text{E}$ 表示：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
+
+    $$
+    \begin{aligned}
+    E[b] x & = b^x \\
+    E[b] a_1 \# a_2 \# \cdots \# a_{n-1} \# 1& = E[b] a_1 \# a_2 \# \cdots \# a_{n-1}\\
+    E[b] a_1 \# a_2 \# \cdots \# a_n & = E[b] a_1 \# a_2 \# \cdots \# a_{n-2} (E[b] a_1 \# a_2 \# \cdots \# (a_n - 1)) 
+    \end{aligned}
+    $$
+
+    1. $E[a] \small \underbrace{\normalsize 1 \# 1 \# \cdots \# 1}_{\normalsize c-1} \normalsize \# b = a \uparrow ^c b$
+    2. 称 $b$ 为基数，基数为 $10$ 时通常可被省略，例如 $\text{Googolplex}$ 数可表示为 $E 100\#2$
+
+3. $\text{Steinhaus}-\text{Moser}$ 多边形表示：定义 $m(k, n) \ (k \geqslant 3)$ 如下
+
+    $$
+    \begin{aligned}
+    m(3, n) & = n^n \\
+    m(k, n) & = \small \underbrace{\normalsize m(k-1, m(k-1, \cdots m(k-1, n) \cdots))}_{\normalsize n} \normalsize
+    \end{aligned}
+    $$
+
+    并定义 $\text{Moser}$ 数为 $m(m(5, 2), 2)$
+
+4. $\text{Ackermann}$ 函数：
+
+    $$
+    \begin{aligned}
+    A(0, y) & = y + 1 \\
+    A(x + 1, 0) & = A(x, 1) \\
+    A(x + 1, y + 1) & = A(x, A(x + 1, y))
+    \end{aligned}
+    $$
+
+    此时 $\text{Ackermann}$ 函数的解析式为 $A(x, y) = 2 \uparrow^{x-2} (y + 3) - 3$
+
+    1. 多变量 $\text{Ackermann}$ 函数：定义 $n$ 元函数 $A(a_1, a_2, \cdots, a_n)$ 如下
+
+        $$
+        \begin{aligned}
+        A(Y, a) &=a+1 \\
+        A(X, b+1,0) &=A(X, b, 1) \\
+        A(X, b+1, a+1) &=A(X, b, A(X, b+1, a)) \\
+        A(X, b+1,0, Y, a) &=A(X, b, a, Y, a)
+        \end{aligned}
+        $$
+
+        其中 $a, b \in \mathbf N$，$X$ 为多于或等于 $0$ 个自然数的简记，$Y$ 为多于或等于 $0$ 个 $0$ 的简记，其 $\text{Wainer}$ 层级的 $\text{FGH}$ 近似为
+
+        $$
+        \begin{aligned}
+        A\left(a_k, \ldots, a_2, a_1, a_0, n\right) & \approx F\left[\omega^k \times a_k+\ldots+\omega^2 \times a_2+\omega \times a_1+a_0\right](n) \\
+        A(\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize) & \approx F\left[\omega^\omega\right](n)
+        \end{aligned}
+        $$
+
+    2. 多重序列 $\text{Ackermann}$ 函数
+
+5. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
 
     $$
     \begin{aligned}
@@ -224,56 +307,22 @@
         \end{aligned}
         $$
 
-3. 超 $\text{E}$ 表示：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
-
-    $$
-    \begin{aligned}
-    E[b] x & = b^x \\
-    E[b] a_1 \# a_2 \# \cdots \# a_{n-1} \# 1& = E[b] a_1 \# a_2 \# \cdots \# a_{n-1}\\
-    E[b] a_1 \# a_2 \# \cdots \# a_n & = E[b] a_1 \# a_2 \# \cdots \# a_{n-2} (E[b] a_1 \# a_2 \# \cdots \# (a_n - 1)) 
-    \end{aligned}
-    $$
-
-    1. $E[a] \small \underbrace{\normalsize 1 \# 1 \# \cdots \# 1}_{\normalsize c-1} \normalsize \# b = a \uparrow ^c b$
-    2. 称 $b$ 为基数，基数为 $10$ 时通常可被省略，例如 $\text{Googolplex}$ 数可表示为 $E 100\#2$
-
-4. $\text{Steinhaus}-\text{Moser}$ 多边形表示：定义 $m(k, n) \ (k \geqslant 3)$ 如下
-
-    $$
-    \begin{aligned}
-    m(3, n) & = n^n \\
-    m(k, n) & = \small \underbrace{\normalsize m(k-1, m(k-1, \cdots m(k-1, n) \cdots))}_{\normalsize n} \normalsize
-    \end{aligned}
-    $$
-
-    并定义 $\text{Moser}$ 数为 $m(m(5, 2), 2)$
-
-5. $\text{Ackermann}$ 函数：
-
-    $$
-    \begin{aligned}
-    A(0, y) & = y + 1 \\
-    A(x + 1, 0) & = A(x, 1) \\
-    A(x + 1, y + 1) & = A(x, A(x + 1, y))
-    \end{aligned}
-    $$
-
-    此时 $\text{Ackermann}$ 函数的解析式为 $A(x, y) = 2 \uparrow^{x-2} (y + 3) - 3$
-
-    1. 多变量 $\text{Ackermann}$ 函数：定义 $n$ 元函数 $A(a_1, a_2, \cdots, a_n)$ 如下
+    3. $\text{Wainer}$ 层级的 $\text{FGH}$ 近似
 
         $$
         \begin{aligned}
-        A(Y, a) &=a+1 \\
-        A(X, b+1,0) &=A(X, b, 1) \\
-        A(X, b+1, a+1) &=A(X, b, A(X, b+1, a)) \\
-        A(X, b+1,0, Y, a) &=A(X, b, a, Y, a)
+        3 \rightarrow 3 \rightarrow n & \approx F[\omega](n) \\
+        3 \rightarrow 3 \rightarrow 3 \rightarrow n & \approx F[\omega \times 2](n) \\
+        3 \rightarrow 3 \rightarrow 3 \rightarrow 3 \rightarrow n & \approx F[\omega \times 3](n) \\
+        3 \rightarrow_2 n & \approx F\left[\omega^2\right](n) \\
+        3 \rightarrow_2 3 \rightarrow_2 n & \approx F\left[\omega^2+\omega\right](n) \\
+        3 \rightarrow_2 3 \rightarrow_2 3 \rightarrow_2 n & \approx F\left[\omega^2+\omega \times 2\right](n) \\
+        3 \rightarrow_2 3 \rightarrow_2 3 \rightarrow_2 3 \rightarrow_2 n & \approx F\left[\omega^2+\omega \times 3\right](n) \\
+        3 \rightarrow_3 n & \approx F\left[\omega^2 \times 2\right](n) \\
+        3 \rightarrow_4 n & \approx F\left[\omega^2 \times 3\right](n) \\
+        3 \rightarrow_n n & \approx F\left[\omega^3\right](n)
         \end{aligned}
         $$
-
-        其中 $a, b \in \mathbf N$，$X$ 为多于或等于 $0$ 个自然数的简记，$Y$ 为多于或等于 $0$ 个 $0$ 的简记
-
-    2. 多重序列 $\text{Ackermann}$ 函数
 
 6. $\text{Fish}$ 数
     1. $\text{Fish 1}$ 数
