@@ -372,13 +372,7 @@
 
 ## 1.3 数系
 ### 1.3.1 自然数集
-1. $\text{Peano}$ 公理：满足以下五条公理的集合 $\mathbf N$ 称作自然数集．其中，$0$ 与「后继」作为抽象的初始概念没有定义
-    1. $0 \in \mathbf N$
-    2. 若 $n \in \mathbf N$，则 $n$ 有且仅有一个后继 $S(n) \in \mathbf N$
-    3. 对任一 $n \in \mathbf N$，都有 $S(n) \neq 0$
-    4. 对任意 $n, m \in \mathbf N$，若 $x \neq y$，则 $S(x) \neq S(y)$
-    5. （归纳公理）设 $M \subseteq \mathbf N$，若 $0 \in M$，每当 $n \in M$ 也有 $S(n) \in M$，则 $M = \mathbf N$
-2. 定义自然数：
+1. 定义自然数：
 
     $$
     \begin{aligned}
@@ -390,13 +384,15 @@
     \end{aligned}
     $$
 
-3. 定义全体自然数的集合 $\mathbf N = \{n \mid \forall X \ (X$ 是归纳集 $\to n \in X)\}$
+    则可定义全体自然数的集合 $\mathbf N = \{n \mid \forall X \ (X$ 是归纳集 $\to n \in X)\}$
+
     1. 由分离公理与无穷公理可知，$\mathbf N$ 是一个集合且唯一
     2. $\mathbf N$ 是归纳集并且是任何归纳集的子集
     3. $\mathbf N$ 上的归纳原理：令 $\varphi(x)$ 为一性质
         1. 第一归纳原理：$(\varphi(0) \wedge \forall n \in N \ (\varphi(n) \to \varphi(n + 1))) \to \forall n \in \mathbf N \ \varphi(n)$
         2. 第二归纳原理：$\forall n \in N \ (\forall k < n \ \varphi(k) \to \varphi(n)) \to \forall n \in \mathbf N \ \varphi(n)$
-4. $\mathbf N$ 上的序：定义 $x \underline\in y = x \in y \vee x = y$
+
+2. $\mathbf N$ 上的序：定义 $x \underline\in y = x \in y \vee x = y$
     1. 对所有自然数 $m, n, k$ 有
         1. $0 \underline\in n$ 且 $n \notin n$
         2. $n \subset n + 1$ 且 $n \in n + 1$
@@ -407,7 +403,7 @@
         7. 如果 $x \in n$，则 $x \in \mathbf N$
     2. 对任意 $m, n \in \mathbf N$，定义 $m \leqslant n = m \underline\in n$ 且 $m < n = m \in n$
     3. $(N, \underline\in)$ 是一个全序集，$(\mathbf N \leqslant)$ 是一个良序集
-5. 递归定理：对任意集合 $A$，任意 $a \in A$ 以及任意映射 $h: A \times \mathbf N \to A$，存在唯一的映射 $f: \mathbf N \to A$ 满足 ① $f(0) = a$；② 对所有 $n \in N$，有 $f(n + 1) = g(f(n), n)$
+3. 递归定理：对任意集合 $A$，任意 $a \in A$ 以及任意映射 $h: A \times \mathbf N \to A$，存在唯一的映射 $f: \mathbf N \to A$ 满足 ① $f(0) = a$；② 对所有 $n \in N$，有 $f(n + 1) = g(f(n), n)$
     1. 推广到带参数的递归定理：令 $a: P \to A, g: P \times A \times \mathbf N \to A$ 为映射，则存在唯一的映射 $f: P \times \mathbf N \to A$ 有 ① $\forall p \in P \ (f(p, 0) = a(p))$；② $\forall n \in \mathbf N \ \forall p \in P \ (f(p, n + 1) = g(p, f(p, n), n))$
     2. 定义加法：存在唯一的函数 $+: \mathbf N \times \mathbf N \to \mathbf N$ 满足
         1. 对所有 $m \in \mathbf N$ 有 $+(m, 0) = m$
@@ -428,13 +424,13 @@
         通常将 $p(m, n)$ 写作 $m^n$，幂运算具有右结合性
 
     !!! note "常用运算符号"
-        1. 定义累加符号为 ${\displaystyle \sum_{i = k}^n f(i) = f(k) + f(k + 1) + \cdots + f(n)}$，具有如下性质
+        3. 定义累加符号为 ${\displaystyle \sum_{i = k}^n f(i) = f(k) + f(k + 1) + \cdots + f(n)}$，具有如下性质
             - ${\displaystyle \sum_{k=0}^n a_k =\sum_{j=0}^n a_j}$
             - ${\displaystyle \sum_{k=0}^n a_k =\sum_{j=N}^{n+N} a_{j-N}}$
             - ${\displaystyle \sum_{k=0}^n a_k+\sum_{k=0}^n b_k=\sum_{k=0}^n\left(a_k+b_k\right)}$
             - ${\displaystyle \left(\sum_{j=1}^m a_j\right)\left(\sum_{k=1}^n b_k\right)=\sum_{j=1}^m \sum_{k=1}^n a_j b_k}$
             - ${\displaystyle \sum_{j=1}^m \sum_{k=1}^n a_{j k}=\sum_{k=1}^n \sum_{j=1}^m a_{j k}}$
-        2. 定义累乘符号为 ${\displaystyle \prod_{i = k}^n f(i) = f(k) f(k + 1) \cdots f(n)}$
+        4. 定义累乘符号为 ${\displaystyle \prod_{i = k}^n f(i) = f(k) f(k + 1) \cdots f(n)}$
             - ${\displaystyle \prod_{k=0}^n a_k=\prod_{j=0}^n a_j}$
             - ${\displaystyle \prod_{k=0}^n a_k=\prod_{j=N}^{n+N} a_{j-N}}$
             - ${\displaystyle \prod_{k=0}^n a_k \prod_{k=0}^n b_k=\prod_{k=0}^n a_k b_k}$
@@ -442,7 +438,7 @@
 
         对于二元运算符 $*$，默认其运算具有左结合性：$a * b * c = (a * b) * c$
 
-6. 自然数集 $\mathbf N$ 的性质
+4. 自然数集 $\mathbf N$ 的性质
     1. $\mathbf N$ 上的加法
         1. 加法交换律：$\forall m, n \in \mathbf N \ (m + n = n + m)$
         2. 加法结合律：$\forall m, n, k \in \mathbf N \ ((m + n) + k = m + (n + k))$

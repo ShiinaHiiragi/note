@@ -100,7 +100,7 @@
         1. 设 $\varphi(1, 0, \gamma) = \Gamma_{\gamma}$，并称 $\Gamma_0$ 为 $\text{Feferman}-\text{Sch}\ddot{\mathrm u}\text{tte}$ 序数
             - $\Gamma_0$ 是满足 $\varphi_{\alpha}(0) = \alpha$ 的最小序数
             - $\Gamma_0 = \varphi_{\varphi_{\varphi_{._{._..}.}(0)}(0)}(0) = \varphi(\varphi(\varphi(...),0),0),0)$
-        2. 称 $\varphi(1, 0, 0, 0)$ 为 $\text{Ackermann}$ 序数，并定义小 $\text{Veblen}$ 序数为 $\lim(\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots)$
+        2. 称 $\varphi(1, 0, 0, 0)$ 为 $\text{Ackermann}$ 序数，并定义小 $\text{Veblen}$ 序数为 $\lim(\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots)$，记为 $\text{SVO}$
 
 2. 基本列：设 $\alpha_0 < \alpha_1 < \alpha_2 < \cdots$ 为严格递增的无穷序数序列，若存在极限序数 $\alpha$ 使得 $\alpha = \sup\{\alpha_0, \alpha_1, \alpha_2, \cdots\}$，则称 $\alpha_0, \alpha_1, \alpha_2, \cdots$ 为以 $\alpha$ 为极限的基本列，记作 $\alpha = \lim(\alpha_0, \alpha_1, \alpha_2, \cdots)$
     1. $\text{Wainer}$ 层级：对于极限序数 $\alpha \leqslant \varepsilon_0$，定义 $\alpha$ 的基本列 $\alpha[0], \alpha[1], \cdots$ 如下

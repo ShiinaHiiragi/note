@@ -175,16 +175,6 @@ const refList = [
         plot: 28
     },
     {
-        author: ["郝兆宽", "杨睿之", "杨跃"],
-        title: "数理逻辑：证明及其限度",
-        type: "M",
-        press: "复旦大学出版社",
-        locate: "上海",
-        year: 2014,
-        page: [1, 236],
-        plot: 151
-    },
-    {
         author: ["张清宇"],
         title: "逻辑哲学九章",
         type: "M",
@@ -232,6 +222,16 @@ const refList = [
         locate: "上海",
         year: 2020,
         page: [174, 246]
+    },
+    {
+        author: ["郝兆宽", "杨睿之", "杨跃"],
+        title: "数理逻辑：证明及其限度",
+        type: "M",
+        press: "复旦大学出版社",
+        locate: "上海",
+        year: 2014,
+        page: [1, 236],
+        plot: 151
     },
     {
         author: ["田中一之"],
