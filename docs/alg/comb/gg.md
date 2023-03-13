@@ -128,16 +128,31 @@
         \end{aligned}\right.
         $$
 
-2. $\text{Steinhaus}$ 多边形表示：定义 $m(k, n) \ (k \geqslant 3)$ 如下
+2. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
 
     $$
     \begin{aligned}
-    m(3, n) & = n^n \\
-    m(k, n) & = \small \underbrace{\normalsize m(k-1, m(k-1, \cdots m(k-1, n) \cdots))}_{\normalsize n} \normalsize
+    a \to b & = a \uparrow b \\
+    X \to 1 & = X \\
+    X \to 1 \to a & = X \\
+    X \to (a + 1) \to (b + 1) & = X \to (X \to a \to (b + 1)) \to b
     \end{aligned}
     $$
 
-    并定义 $\text{Moser}$ 数为 $m(m(5, 2), 2)$
+    当 $\text{Conway}$ 链长度为 $3$ 时，有 $a \to b \to c = a\uparrow^c b$
+
+    1. $\text{Conway}$ 链式箭头不是二元运算符，既没有左结合性也没有右结合性
+    2. 扩张链式表示：递归定义如下
+
+        $$
+        \begin{aligned}
+        a \to_1 b & = a \uparrow b \\
+        a \to_c b & = \small \underbrace{\normalsize a \to_{c-1} a \to_{c-1} \cdots \to_{c-1} a}_{\normalsize b} \normalsize \ (c > 1) \\
+        X \to_c 1 & = X \\
+        X \to_c 1 \to_c a & = X \\
+        X \to_c (a + 1) \to_c (b + 1) & = X \to_c (X \to_c a \to_c (b + 1)) \to_c b
+        \end{aligned}
+        $$
 
 3. 超 $\text{E}$ 表示：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
 
@@ -149,12 +164,21 @@
     \end{aligned}
     $$
 
-    称 $b$ 为基数
+    1. $E[a] \small \underbrace{\normalsize 1 \# 1 \# \cdots \# 1}_{\normalsize c-1} \normalsize \# b = a \uparrow ^c b$
+    2. 称 $b$ 为基数，基数为 $10$ 时通常可被省略，例如 $\text{Googolplex}$ 数可表示为 $E 100\#2$
 
-    1. 基数为 $10$ 时通常可被省略，例如 $\text{Googolplex}$ 数可表示为 $E 100\#2$
-    2. $a \uparrow ^c b = E[a] \small \underbrace{\normalsize 1 \# 1 \# \cdots \# 1}_{\normalsize c-1} \normalsize \# b$
+4. $\text{Steinhaus}-\text{Moser}$ 多边形表示：定义 $m(k, n) \ (k \geqslant 3)$ 如下
 
-4. $\text{Ackermann}$ 函数：
+    $$
+    \begin{aligned}
+    m(3, n) & = n^n \\
+    m(k, n) & = \small \underbrace{\normalsize m(k-1, m(k-1, \cdots m(k-1, n) \cdots))}_{\normalsize n} \normalsize
+    \end{aligned}
+    $$
+
+    并定义 $\text{Moser}$ 数为 $m(m(5, 2), 2)$
+
+5. $\text{Ackermann}$ 函数：
 
     $$
     \begin{aligned}
@@ -180,31 +204,6 @@
         其中 $a, b \in \mathbf N$，$X$ 为多于或等于 $0$ 个自然数的简记，$Y$ 为多于或等于 $0$ 个 $0$ 的简记
 
     2. 多重序列 $\text{Ackermann}$ 函数
-
-5. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
-
-    $$
-    \begin{aligned}
-    a \to b & = a \uparrow b \\
-    X \to 1 & = X \\
-    X \to 1 \to a & = X \\
-    X \to (a + 1) \to (b + 1) & = X \to (X \to a \to (b + 1)) \to b
-    \end{aligned}
-    $$
-
-    1. $\text{Conway}$ 链式箭头不是二元运算符，既没有左结合性也没有右结合性
-    2. 当 $\text{Conway}$ 链长度为 $3$ 时，有 $a \to b \to c = a\uparrow^c b$
-    3. 扩张链式表示：递归定义如下
-
-        $$
-        \begin{aligned}
-        a \to_1 b & = a \uparrow b \\
-        a \to_c b & = \small \underbrace{\normalsize a \to_{c-1} a \to_{c-1} \cdots \to_{c-1} a}_{\normalsize b} \normalsize \ (c > 1) \\
-        X \to_c 1 & = X \\
-        X \to_c 1 \to_c a & = X \\
-        X \to_c (a + 1) \to_c (b + 1) & = X \to_c (X \to_c a \to_c (b + 1)) \to_c b
-        \end{aligned}
-        $$
 
 6. $\text{Fish}$ 数
     1. $\text{Fish 1}$ 数
