@@ -39,7 +39,7 @@
     2. $W_{1}$ 与 $W_{2}$ 的前段同构
     3. $W_{2}$ 与 $W_{1}$ 的前段同构
 
-### 2.1.2 序数
+### 2.1.2 序数定义与计算
 1. 序数：满足以下条件的集合 $\alpha$ 称为序数
     1. $\alpha$ 是传递的，即 $\alpha$ 的元素都是其子集
     2. $\in$ 是 $\alpha$ 上的良序
@@ -159,6 +159,40 @@
         \end{aligned}
         $$
 
+### 2.1.3 序数函数
+1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
+    1. $\varphi_0(\beta) = \omega^{\beta}$
+    2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\varphi_{\alpha}(\beta)$ 的第 $\beta$ 个不动点，即 $\varphi_{\alpha}(\gamma) = \gamma$ 的第 $\beta$ 个解
+    3. 对于极限序数 $\alpha$，定义 $\varphi_{\alpha}(\beta)$ 为所有序数 $\gamma < \alpha$ 对应的 $\text{Veblen}$ 函数 $\varphi_{\gamma}$ 的第 $\beta$ 个公共不动点
+
+    上述不动点均从 $0$ 开始计数
+
+    1. 定义 $\varphi_{1}(\gamma) = \varepsilon_{\gamma}$，即满足 $\omega^\xi = \xi$ 的解
+
+        $$
+        \begin{aligned}
+        \varepsilon_0 & = \lim(\omega, \omega^{\omega}, \omega^{\omega^{\omega}}, \cdots) = \omega \uparrow \uparrow \omega \\
+        \varepsilon_{\alpha+1} & = \lim(\varepsilon_\alpha+1, \omega^{\varepsilon_\alpha+1}, \omega^{\omega^{\varepsilon_\alpha+1}}, \cdots) = \varepsilon_\alpha \uparrow \uparrow \omega \\
+        \varepsilon_{\alpha} & = \sup \left\{\varepsilon_\beta \mid \beta<\alpha\right\} \ (\alpha \textsf{ 为极限序数})
+        \end{aligned}
+        $$
+
+        并定义 $\varphi_2(\gamma) = \zeta_{\gamma}$，即满足 $\varepsilon_{\xi} = \xi$ 的解；定义 $\varphi_3(\gamma) = \eta_{\gamma}$，即满足 $\zeta_{\xi} = \xi$ 的解
+
+    2. 扩展 $\text{Veblen}$ 函数：将 $\varphi_{\alpha}(\gamma)$ 视作二元函数 $\varphi(\alpha, \gamma)$，令 $z$ 为多于或等于 $0$ 个 $0$ 的简记，$s$ 为多于或等于 $0$ 个序数变量 $\alpha_1, \alpha_2, \cdots, \alpha_n \ (\alpha_1 > 0)$ 的简记，则定义
+        1. $\varphi(\gamma)=\omega^\gamma$
+        2. $\varphi(z,s,\gamma)=\varphi(s,\gamma)$
+        3. 若 $\alpha_{n+1} > 0$，则 $\varphi(s, \alpha_{n+1}, z, \gamma)$ 表示「对所有序数 $\beta < \alpha_{n+1}$ 对应的函数 $\varphi(s, \beta, \xi, z)$」的第 $\gamma$ 个公共不动点，即 $\varphi(s, \beta, \xi, z) = \xi$ 的第 $\gamma$ 个解
+
+        称为扩展 $\text{Veblen}$ 函数
+
+        1. 设 $\varphi(1, 0, \gamma) = \Gamma_{\gamma}$，并称 $\Gamma_0$ 为 $\text{Feferman}-\text{Sch}\ddot{\mathrm u}\text{tte}$ 序数
+            - $\Gamma_0$ 是满足 $\varphi_{\alpha}(0) = \alpha$ 的最小序数
+            - $\Gamma_0 = \varphi_{\varphi_{\varphi_{._{._..}.}(0)}(0)}(0) = \varphi(\varphi(\varphi(...),0),0),0)$
+        2. 称 $\varphi(1, 0, 0, 0)$ 为 $\text{Ackermann}$ 序数，并定义小 $\text{Veblen}$ 序数为 $\lim(\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots)$，记为 $\text{SVO}$
+
+2. 序数塌缩函数 $\text{OCF}$
+
 ## 2.2 势与基数
 ### 2.2.1 势
 1. 如果存在一个以集合 $X$ 为定义域，以集合 $Y$ 为值域的双射，则称集合 $X$ 与 $Y$ 等势，记作 $|X| = |Y|$ 或 $X \approx Y$；如果存在集合 $X$ 到 $Y$ 的单射，则称 $X$ 的势小于等于 $Y$ 的势，记作 $|X| \leqslant |Y|$ 或 $X \preccurlyeq Y$
@@ -189,7 +223,7 @@
         3. 有限小数是可数的，无限小数是不可数的
 
 ### 2.2.2 基数
-1. 基数：集合 $A$ 的基数 $|A|$ 定义为与其等势的最小的序数
+1. 基数：集合 $A$ 的基数 $|A|$ 定义为与其等势的最小序数
     1. 对任意序数 $\alpha$, 以下条件等价
         1. $\alpha$ 是基数
         2. $|\alpha|=\alpha$

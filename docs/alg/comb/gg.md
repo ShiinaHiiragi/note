@@ -69,40 +69,9 @@
     - $\text{Eddington}$ 数：约 $1.57 \times 10^{79}$，即可观测宇宙中的质子数
     - $\text{Poincar}\acute{\mathrm e}$ 回归时间：约 $10 \uparrow 10 \uparrow 10 \uparrow 10 \uparrow 2.08$，即可观测宇宙的始态复现时间
 
-## 2.2 序数与增长率
-### 2.2.1 基本列与序数分析
-1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
-    1. $\varphi_0(\beta) = \omega^{\beta}$
-    2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\varphi_{\alpha}(\beta)$ 的第 $\beta$ 个不动点，即 $\varphi_{\alpha}(\gamma) = \gamma$ 的第 $\beta$ 个解
-    3. 对于极限序数 $\alpha$，定义 $\varphi_{\alpha}(\beta)$ 为所有序数 $\gamma < \alpha$ 对应的 $\text{Veblen}$ 函数 $\varphi_{\gamma}$ 的第 $\beta$ 个公共不动点
-
-    上述不动点均从 $0$ 开始计数
-
-    1. 定义 $\varphi_{1}(\gamma) = \varepsilon_{\gamma}$，即满足 $\omega^\xi = \xi$ 的解
-
-        $$
-        \begin{aligned}
-        \varepsilon_0 & = \lim(\omega, \omega^{\omega}, \omega^{\omega^{\omega}}, \cdots) \\
-        \varepsilon_{\alpha+1} & = \lim(\varepsilon_\alpha+1, \omega^{\varepsilon_\alpha+1}, \omega^{\omega^{\varepsilon_\alpha+1}}, \cdots) \\
-        \varepsilon_{\alpha} & = \sup \left\{\varepsilon_\beta \mid \beta<\alpha\right\} \ (\alpha \textsf{ 为极限序数})
-        \end{aligned}
-        $$
-
-        并定义 $\varphi_2(\gamma) = \zeta_{\gamma}$，即满足 $\varepsilon_{\xi} = \xi$ 的解；定义 $\varphi_3(\gamma) = \eta_{\gamma}$，即满足 $\zeta_{\xi} = \xi$ 的解
-
-    2. 扩展 $\text{Veblen}$ 函数：将 $\varphi_{\alpha}(\gamma)$ 视作二元函数 $\varphi(\alpha, \gamma)$，令 $z$ 为多于或等于 $0$ 个 $0$ 的简记，$s$ 为多于或等于 $0$ 个序数变量 $\alpha_1, \alpha_2, \cdots, \alpha_n \ (\alpha_1 > 0)$ 的简记，则定义
-        1. $\varphi(\gamma)=\omega^\gamma$
-        2. $\varphi(z,s,\gamma)=\varphi(s,\gamma)$
-        3. 若 $\alpha_{n+1} > 0$，则 $\varphi(s, \alpha_{n+1}, z, \gamma)$ 表示「对所有序数 $\beta < \alpha_{n+1}$ 对应的函数 $\varphi(s, \beta, \xi, z)$」的第 $\gamma$ 个公共不动点，即 $\varphi(s, \beta, \xi, z) = \xi$ 的第 $\gamma$ 个解
-
-        称为扩展 $\text{Veblen}$ 函数
-
-        1. 设 $\varphi(1, 0, \gamma) = \Gamma_{\gamma}$，并称 $\Gamma_0$ 为 $\text{Feferman}-\text{Sch}\ddot{\mathrm u}\text{tte}$ 序数
-            - $\Gamma_0$ 是满足 $\varphi_{\alpha}(0) = \alpha$ 的最小序数
-            - $\Gamma_0 = \varphi_{\varphi_{\varphi_{._{._..}.}(0)}(0)}(0) = \varphi(\varphi(\varphi(...),0),0),0)$
-        2. 称 $\varphi(1, 0, 0, 0)$ 为 $\text{Ackermann}$ 序数，并定义小 $\text{Veblen}$ 序数为 $\lim(\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots)$，记为 $\text{SVO}$
-
-2. 基本列：设 $\alpha_0 < \alpha_1 < \alpha_2 < \cdots$ 为严格递增的无穷序数序列，若存在极限序数 $\alpha$ 使得 $\alpha = \sup\{\alpha_0, \alpha_1, \alpha_2, \cdots\}$，则称 $\alpha_0, \alpha_1, \alpha_2, \cdots$ 为以 $\alpha$ 为极限的基本列，记作 $\alpha = \lim(\alpha_0, \alpha_1, \alpha_2, \cdots)$
+## 2.2 序数层级
+### 2.2.1 基本列
+1. 基本列：设 $\alpha_0 < \alpha_1 < \alpha_2 < \cdots$ 为严格递增的无穷序数序列，若存在极限序数 $\alpha$ 使得 $\alpha = \sup\{\alpha_0, \alpha_1, \alpha_2, \cdots\}$，则称 $\alpha_0, \alpha_1, \alpha_2, \cdots$ 为以 $\alpha$ 为极限的基本列，记作 $\alpha = \lim(\alpha_0, \alpha_1, \alpha_2, \cdots)$
     1. $\text{Wainer}$ 层级：对于极限序数 $\alpha \leqslant \varepsilon_0$，定义 $\alpha$ 的基本列 $\alpha[0], \alpha[1], \cdots$ 如下
 
         $$
@@ -131,7 +100,7 @@
         \end{aligned}
         $$
 
-3. 序数分析：为形式系统指派序数，作为其证明强度的度量，称为证明论序数
+2. 序数分析：为形式系统指派序数，作为其证明强度的度量，称为证明论序数
     1. 一阶算术系统的证明论序数
 
         <div class="text-table">
@@ -168,7 +137,7 @@
     1. $\text{Hardy}$ 函数的复合：若不存在 $\gamma$ 使得 $\alpha + \beta = \gamma + \beta$，则 $H[\alpha + \beta](n) = H[\alpha](H[\beta](n))$
     2. $\text{Hardy}$ 函数的增长率：对于 $m > 1$ 时有 $H[\omega^m](n) > 2 \uparrow^{m-1} n$
 
-2. 快增长函数（$\text{FGH}$）
+2. 急增长函数 $\text{FGH}$（也称作快速增长层级）：
 
     $$
     \begin{aligned}
@@ -181,7 +150,7 @@
     1. 当 $\alpha < \varepsilon_0$ 时有 $F[\alpha](n)=H\left[\omega^\alpha\right](n)$
     2. 当 $\alpha = \varepsilon_0$ 时有 $F\left[\varepsilon_0\right](n) \approx H\left[\varepsilon_0\right](n+1)=H\left[\varepsilon_0+1\right](n)$ 近似成立
 
-3. 慢增长函数（$\text{SGH}$）
+3. 缓增长函数 $\text{SGH}$（也称作缓慢增长层级）：
 
     $$
     \begin{aligned}
@@ -191,10 +160,8 @@
     \end{aligned}
     $$
 
-    1. 慢增长函数的速度慢于 $\text{Hardy}$ 函数，且有 $G[\varepsilon_0](n) = n \uparrow \uparrow n$
-    2. 慢增长函数追上快增长函数的时机取决于基本列的选择
-
-4. 序数塌缩函数（$\text{OCF}$）
+    1. 缓增长函数的速度慢于 $\text{Hardy}$ 函数，且有 $G[\varepsilon_0](n) = n \uparrow \uparrow n$
+    2. 缓增长函数追上急增长函数的时机取决于基本列的选择
 
 ## 2.3 可计算函数
 ### 2.3.1 递归函数
