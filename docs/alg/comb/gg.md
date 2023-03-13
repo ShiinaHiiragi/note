@@ -22,6 +22,22 @@
 
             并定义 $0!^{(p)} = 1$．当 $p = 2$ 时，称 $n!!$ 为 $n$ 的双阶乘
 
+    3. 超运算：定义超$-n$ 运算 $H_n(a, b)$ 如下
+
+        $$
+        H_n(a, b)= \left\{\begin{aligned}
+        & b+1, & n=0 \\
+        & a, & n=1, b=0 \\
+        & 0, & n=2, b=0 \\
+        & 1, & n \geqslant 3, b=0 \\
+        & H_{n-1}\left(a, H_n(a, b-1)\right), & \text{otherwise}
+        \end{aligned}\right.
+        $$
+
+        1. 超$-0$ 运算：$H_0(a, b) = b + 1$，即后继运算
+        2. 超$-1$ 运算：$H_1(a, b) = a + b$，即加法运算
+        3. 超$-n$ 运算：$H_n(a, b) = a \uparrow^{n-2} b \ (n > 1)$，其中 $n = 2, 3, 4$ 时分别称作乘法运算、幂运算、超幂运算
+
 2. 自然数的分类
     1. 数类：定义 $c(n)$ 如下
 
@@ -65,25 +81,9 @@
 
 ### 2.2.3 序数分析
 
-## 2.3 一阶算术
-### 2.3.1 原始递归函数
-1. 超运算：定义超$-n$ 运算 $H_n(a, b)$ 如下
-
-    $$
-    H_n(a, b)= \left\{\begin{aligned}
-    & b+1, & n=0 \\
-    & a, & n=1, b=0 \\
-    & 0, & n=2, b=0 \\
-    & 1, & n \geqslant 3, b=0 \\
-    & H_{n-1}\left(a, H_n(a, b-1)\right), & \text{otherwise}
-    \end{aligned}\right.
-    $$
-
-    1. 超$-0$ 运算：$H_0(a, b) = b + 1$，即后继运算
-    2. 超$-1$ 运算：$H_1(a, b) = a + b$，即加法运算
-    3. 超$-n$ 运算：$H_n(a, b) = a \uparrow^{n-2} b \ (n > 1)$，其中 $n = 2, 3, 4$ 时分别称作乘法运算、幂运算、超幂运算
-
-2. $\text{Knuth}$ 箭头：设 $x, y \in \mathbf N$，定义 $x \uparrow^n y = x \ \small \underbrace{\normalsize \uparrow \uparrow \cdots \uparrow}_{\normalsize n} \normalsize \ y$如下
+## 2.3 可计算函数
+### 2.3.1 递归函数
+1. $\text{Knuth}$ 箭头：设 $x, y \in \mathbf N$，定义 $x \uparrow^n y = x \ \small \underbrace{\normalsize \uparrow \uparrow \cdots \uparrow}_{\normalsize n} \normalsize \ y$如下
 
     $$
     \begin{aligned}
@@ -122,14 +122,13 @@
 
         $$
         a \uparrow^n x= \left\{\begin{aligned}
-        & \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n} \normalsize\mathrm{log} _a\left(a \uparrow^n(x+1)\right), & x \leq-1 \\
+        & \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n-2} \normalsize\mathrm{log} _a\left(a \uparrow^n(x+1)\right), & x \leq-1 \\
         & 1+x, & -1<x \leq 0 \\
         & a \uparrow^{n-1}\left(a \uparrow^n(x-1)\right), & 0<x
         \end{aligned}\right.
         $$
 
-### 2.3.2 多重递归函数
-1. $\text{Moser}$ 数：定义 $m(k, n) \ (k \geqslant 3)$ 如下
+2. $\text{Steinhaus}$ 多边形表示：定义 $m(k, n) \ (k \geqslant 3)$ 如下
 
     $$
     \begin{aligned}
@@ -138,9 +137,9 @@
     \end{aligned}
     $$
 
-    并定义 $\text{Moser} = m(m(5, 2), 2)$
+    并定义 $\text{Moser}$ 数为 $m(m(5, 2), 2)$
 
-2. 超 $\text{E}$ 表示：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
+3. 超 $\text{E}$ 表示：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
 
     $$
     \begin{aligned}
@@ -155,7 +154,7 @@
     1. 基数为 $10$ 时通常可被省略，例如 $\text{Googolplex}$ 数可表示为 $E 100\#2$
     2. $a \uparrow ^c b = E[a] \small \underbrace{\normalsize 1 \# 1 \# \cdots \# 1}_{\normalsize c-1} \normalsize \# b$
 
-3. $\text{Ackermann}$ 函数：
+4. $\text{Ackermann}$ 函数：
 
     $$
     \begin{aligned}
@@ -182,7 +181,7 @@
 
     2. 多重序列 $\text{Ackermann}$ 函数
 
-4. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
+5. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
 
     $$
     \begin{aligned}
@@ -207,7 +206,7 @@
         \end{aligned}
         $$
 
-5. $\text{Fish}$ 数
+6. $\text{Fish}$ 数
     1. $\text{Fish 1}$ 数
         1. 定义从自然数和函数到自然数和函数的映射 $S: (m,f(x)) \to (g(m),g(x))$，其中 $g(x)$ 定义为
 
@@ -269,7 +268,7 @@
 
         3. 设 $f(x) = 1$，定义 $\text{Fish 3}$ 函数 $F_3(x) = \left[ss(2)^{63}\right](f)$，$\text{Fish 3}$ 数为 $F_3 = F_3^{63}(3)$
 
-6. $\text{BEAF}$ 数阵表示：设 $A = (a_1, a_2, \cdots, a_n)$ 为正整数组成的 $n$ 元有序组，则数阵符号是从这个 $n$ 元有序组到正整数的映射 $v(A) = \{x_1, x_2, \cdots, x_n\}$，并定义为
+7. $\text{BEAF}$ 数阵表示：设 $A = (a_1, a_2, \cdots, a_n)$ 为正整数组成的 $n$ 元有序组，则数阵符号是从这个 $n$ 元有序组到正整数的映射 $v(A) = \{x_1, x_2, \cdots, x_n\}$，并定义为
     1. $\{a_0\} = a_0$
     2. $\{a_1, a_2\} = a_1^{a_2}$
     3. $\{a_1, a_2, \cdots, a_n, 1\} = \{a_1, a_2, \cdots, a_n\}$
@@ -283,6 +282,6 @@
 
     特别地，对于三个正整数的数阵有 $\{a, b, c\}=a \rightarrow b \rightarrow c=a \uparrow^c b$
 
-## 2.4 高阶算术
+### 2.3.2 高阶算术
 
-## 2.5 不可计算函数
+## 2.4 不可计算函数
