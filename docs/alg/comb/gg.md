@@ -159,9 +159,22 @@
     \end{aligned}
     $$
 
-    在 $\alpha < \varepsilon_0$ 时有 $F[\alpha](n)=H\left[\omega^\alpha\right](n)$，当 $\alpha = \varepsilon_0$ 时有 $F\left[\varepsilon_0\right](n) \approx H\left[\varepsilon_0\right](n+1)=H\left[\varepsilon_0+1\right](n)$ 近似成立
+    1. 当 $\alpha < \varepsilon_0$ 时有 $F[\alpha](n)=H\left[\omega^\alpha\right](n)$
+    2. 当 $\alpha = \varepsilon_0$ 时有 $F\left[\varepsilon_0\right](n) \approx H\left[\varepsilon_0\right](n+1)=H\left[\varepsilon_0+1\right](n)$ 近似成立
 
 3. 慢增长函数（$\text{SGH}$）
+
+    $$
+    \begin{aligned}
+    G[0](n) & =0 \\
+    G[\alpha+1](n) & =G[\alpha](n)+1 \\
+    G[\alpha](n) & =G\left[\alpha[n]\right](n) \ (\alpha \textsf{ 为极限序数且 } \alpha[n] \textsf{ 为基本列})
+    \end{aligned}
+    $$
+
+    1. 慢增长函数的速度慢于 $\text{Hardy}$ 函数，且有 $G[\varepsilon_0](n) = n \uparrow \uparrow n$
+    2. 慢增长函数追上快增长函数的时机取决于基本列的选择
+
 4. 序数塌缩函数（$\text{OCF}$）
 
 ## 2.3 可计算函数
@@ -270,14 +283,15 @@
         \end{aligned}
         $$
 
-        其中 $a, b \in \mathbf N$，$X$ 为多于或等于 $0$ 个自然数的简记，$Y$ 为多于或等于 $0$ 个 $0$ 的简记，其 $\text{Wainer}$ 层级的 $\text{FGH}$ 近似为
+        其中 $a, b \in \mathbf N$，$X$ 为多于或等于 $0$ 个自然数的简记，$Y$ 为多于或等于 $0$ 个 $0$ 的简记，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为
 
         $$
         \begin{aligned}
-        A\left(a_k, \ldots, a_2, a_1, a_0, n\right) & \approx F\left[\omega^k \times a_k+\ldots+\omega^2 \times a_2+\omega \times a_1+a_0\right](n) \\
-        A(\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize) & \approx F\left[\omega^\omega\right](n)
+        A\left(a_k, \ldots, a_2, a_1, a_0, n\right) & \approx F\left[\omega^k \times a_k+\ldots+\omega^2 \times a_2+\omega \times a_1+a_0\right](n)
         \end{aligned}
         $$
+
+        特别地，有 $A(\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize) \approx F\left[\omega^\omega\right](n)$ 成立
 
     2. 多重序列 $\text{Ackermann}$ 函数
 
@@ -295,7 +309,7 @@
     当 $\text{Conway}$ 链长度为 $3$ 时，有 $a \to b \to c = a\uparrow^c b$
 
     1. $\text{Conway}$ 链式箭头不是二元运算符，既没有左结合性也没有右结合性
-    2. 扩张链式表示：递归定义如下
+    2. 扩展链式表示：递归定义如下
 
         $$
         \begin{aligned}
@@ -307,7 +321,7 @@
         \end{aligned}
         $$
 
-    3. $\text{Wainer}$ 层级的 $\text{FGH}$ 近似
+    3. （扩展）$\text{Conway}$ 链的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似
 
         $$
         \begin{aligned}
@@ -325,7 +339,7 @@
         $$
 
 6. $\text{Fish}$ 数
-    1. $\text{Fish 1}$ 数
+    1. $\text{Fish 1}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_1 \approx F[\omega^2+1](63)$
         1. 定义从自然数和函数到自然数和函数的映射 $S: (m,f(x)) \to (g(m),g(x))$，其中 $g(x)$ 定义为
 
             $$
@@ -345,7 +359,7 @@
 
         3. 设 $m_0 = 3, f_0(x) = x + 1, S_0 = S$，则记 $(F_1, F_1(x), S_{63}) = [SS^{63}](m_0, f_0, S_0)$，称 $F_1$ 为 $\text{Fish 1}$ 数，$F_1(x)$ 为 $\text{Fish 1}$ 函数
 
-    2. $\text{Fish 2}$ 数
+    2. $\text{Fish 2}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_2 \approx F[\omega^3](63)$
         1. 定义从自然数和函数到自然数和函数的映射 $S: (m,f(x)) \to (g(m),g(x))$，其中 $g(x)$ 定义为
 
             $$
@@ -365,7 +379,7 @@
 
         3. 设 $m_0 = 3, f_0(x) = x + 1, S_0 = S$，则记 $(F_2, F_2(x), S_{63}) = [SS^{63}](m_0, f_0, S_0)$，称 $F_2$ 为 $\text{Fish 2}$ 数，$F_2(x)$ 为 $\text{Fish 2}$ 函数
 
-    3. $\text{Fish 3}$ 数
+    3. $\text{Fish 3}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_3 \approx F[\omega^{\omega+1} \times 63 + 1](63)$
         1. 设 $n \in \mathbf Z_+$，则定义从函数 $f(x)$ 到 $g(x)$ 的映射 $s(n)$ 为
 
             $$
@@ -386,19 +400,32 @@
 
         3. 设 $f(x) = 1$，定义 $\text{Fish 3}$ 函数 $F_3(x) = \left[ss(2)^{63}\right](f)$，$\text{Fish 3}$ 数为 $F_3 = F_3^{63}(3)$
 
-7. $\text{BEAF}$ 数阵表示：设 $A = (a_1, a_2, \cdots, a_n)$ 为正整数组成的 $n$ 元有序组，则数阵符号是从这个 $n$ 元有序组到正整数的映射 $v(A) = \{x_1, x_2, \cdots, x_n\}$，并定义为
-    1. $\{a_0\} = a_0$
-    2. $\{a_1, a_2\} = a_1^{a_2}$
-    3. $\{a_1, a_2, \cdots, a_n, 1\} = \{a_1, a_2, \cdots, a_n\}$
-    4. 当第二个元素为 $1$ 时，有 $\{a_1, 1, a_3, \cdots, a_n\} = a_1$；当第三个元素为 $1$ 时，有
+7. $\text{BEAF}$ 数阵
+    1. 线性数阵：设 $A = (a_1, a_2, \cdots, a_n)$ 为正整数组成的 $n$ 元有序组，则数阵符号是从这个 $n$ 元有序组到正整数的映射 $v(A) = \{x_1, x_2, \cdots, x_n\}$，并定义为
+        1. $\{a_0\} = a_0$
+        2. $\{a_1, a_2\} = a_1^{a_2}$
+        3. $\{a_1, a_2, \cdots, a_n, 1\} = \{a_1, a_2, \cdots, a_n\}$
+        4. 当第二个元素为 $1$ 时，有 $\{a_1, 1, a_3, \cdots, a_n\} = a_1$；当第三个元素为 $1$ 时，有
+
+            $$
+            \{a_1, a_2, 1, \cdots, 1, a_{x+3}, \cdots, a_n\} = \left\{a_1, a_1, \{a_1, a_2 - 1, 1, \cdots, 1, a_{x+3}, \cdots, a_n\}, a_{x+3} - 1, a_{x+4}, \cdots, a_n\right\}
+            $$
+
+        5. 当以上条件均不满足时，有 $\{a_1, a_2, \cdots, a_n\} = \left\{a_1, \{a_1, a_2 - 1, a_3, \cdots, a_n\}, a_3 - 1, a_4, \cdots, a_n\right\}$
+
+        对于三个正整数的数阵有 $\{a, b, c\}=a \rightarrow b \rightarrow c=a \uparrow^c b$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为
 
         $$
-        \{a_1, a_2, 1, \cdots, 1, a_{x+3}, \cdots, a_n\} = \left\{a_1, a_1, \{a_1, a_2 - 1, 1, \cdots, 1, a_{x+3}, \cdots, a_n\}, a_{x+3} - 1, a_{x+4}, \cdots, a_n\right\}
+        \begin{aligned}
+        & \left\{n+1, m+1, a_0+1, a_1+1, a_2+1, \ldots, a_k+1\right\} \\
+        \approx \ & \left[F\left[\omega^k \times a_k+\ldots+\omega^2 \times a_2+\omega \times a_1+a_0\right]^m\right](n) \\
+        = \ & H\left[\omega^{\omega^k \times a_k+\ldots+\omega^2 \times a_2+\omega \times a_1+a_0} \times m\right](n)
+        \end{aligned}
         $$
 
-    5. 当以上条件均不满足时，有 $\{a_1, a_2, \cdots, a_n\} = \left\{a_1, \{a_1, a_2 - 1, a_3, \cdots, a_n\}, a_3 - 1, a_4, \cdots, a_n\right\}$
+        特别地，有 $\{\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize\} \approx F\left[\omega^\omega\right](n)$ 成立
 
-    特别地，对于三个正整数的数阵有 $\{a, b, c\}=a \rightarrow b \rightarrow c=a \uparrow^c b$
+    2. 四元数阵
 
 ### 2.3.2 高阶算术
 
