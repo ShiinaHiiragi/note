@@ -73,7 +73,7 @@
 ### 2.2.1 基本列
 1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
     1. $\varphi_0(\beta) = \omega^{\beta}$
-    2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\varphi_{\alpha}(\gamma) = \gamma$ 的第 $\beta$ 个解，即 $\varphi_{\alpha}(\beta)$ 的第 $\beta$ 个不动点
+    2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\varphi_{\alpha}(\beta)$ 的第 $\beta$ 个不动点，即 $\varphi_{\alpha}(\gamma) = \gamma$ 的第 $\beta$ 个解
     3. 对于极限序数 $\alpha$，定义 $\varphi_{\alpha}(\beta)$ 为所有序数 $\gamma < \alpha$ 对应的 $\text{Veblen}$ 函数 $\varphi_{\gamma}$ 的第 $\beta$ 个公共不动点
 
     上述不动点均从 $0$ 开始计数
@@ -88,10 +88,21 @@
         \end{aligned}
         $$
 
-    2. 定义 $\varphi_2(\gamma) = \zeta_{\gamma}$，即满足 $\varepsilon_{\xi} = \xi$ 的解
+        并定义 $\varphi_2(\gamma) = \zeta_{\gamma}$，即满足 $\varepsilon_{\xi} = \xi$ 的解；定义 $\varphi_3(\gamma) = \eta_{\gamma}$，即满足 $\zeta_{\xi} = \xi$ 的解
 
-2. $\text{Veblen}$ 序数
-3. 基本列：设 $\alpha_0 < \alpha_1 < \alpha_2 < \cdots$ 为严格递增的无穷序数序列，若存在极限序数 $\alpha$ 使得 $\alpha = \sup\{\alpha_0, \alpha_1, \alpha_2, \cdots\}$，则称 $\alpha_0, \alpha_1, \alpha_2, \cdots$ 为以 $\alpha$ 为极限的基本列，记作 $\alpha = \lim(\alpha_0, \alpha_1, \alpha_2, \cdots)$
+    2. 扩展 $\text{Veblen}$ 函数：将 $\varphi_{\alpha}(\gamma)$ 视作二元函数 $\varphi(\alpha, \gamma)$，令 $z$ 为多于或等于 $0$ 个 $0$ 的简记，$s$ 为多于或等于 $0$ 个序数变量 $\alpha_1, \alpha_2, \cdots, \alpha_n \ (\alpha_1 > 0)$ 的简记，则定义
+        1. $\varphi(\gamma)=\omega^\gamma$
+        2. $\varphi(z,s,\gamma)=\varphi(s,\gamma)$
+        3. 若 $\alpha_{n+1} > 0$，则 $\varphi(s, \alpha_{n+1}, z, \gamma)$ 表示「对所有序数 $\beta < \alpha_{n+1}$ 对应的函数 $\varphi(s, \beta, \xi, z)$」的第 $\gamma$ 个公共不动点，即 $\varphi(s, \beta, \xi, z) = \xi$ 的第 $\gamma$ 个解
+
+        称为扩展 $\text{Veblen}$ 函数
+
+        1. 设 $\varphi(1, 0, \gamma) = \Gamma_{\gamma}$，并称 $\Gamma_0$ 为 $\text{Feferman}-\text{Sch}\ddot{\mathrm u}\text{tte}$ 序数
+            - $\Gamma_0$ 是满足 $\varphi_{\alpha}(0) = \alpha$ 的最小序数
+            - $\Gamma_0 = \varphi_{\varphi_{\varphi_{._{._..}.}(0)}(0)}(0) = \varphi(\varphi(\varphi(...),0),0),0)$
+        2. 称 $\varphi(1, 0, 0, 0)$ 为 $\text{Ackermann}$ 序数，并定义小 $\text{Veblen}$ 序数为 $\lim(\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots)$
+
+2. 基本列：设 $\alpha_0 < \alpha_1 < \alpha_2 < \cdots$ 为严格递增的无穷序数序列，若存在极限序数 $\alpha$ 使得 $\alpha = \sup\{\alpha_0, \alpha_1, \alpha_2, \cdots\}$，则称 $\alpha_0, \alpha_1, \alpha_2, \cdots$ 为以 $\alpha$ 为极限的基本列，记作 $\alpha = \lim(\alpha_0, \alpha_1, \alpha_2, \cdots)$
     1. $\text{Wainer}$ 层级：对于极限序数 $\alpha \leqslant \varepsilon_0$，定义 $\alpha$ 的基本列 $\alpha[0], \alpha[1], \cdots$ 如下
 
         $$
@@ -105,7 +116,20 @@
         \end{aligned}
         $$
 
-    2. $\text{Veblen}$ 层级
+    2. $\text{Veblen}$ 层级：对于极限序数 $\alpha < \Gamma_0$，定义 $\alpha$ 的基本列 $\alpha[0], \alpha[1], \cdots$ 如下
+
+        $$
+        \begin{aligned}
+        (\varphi_{\beta_1}(\gamma_1) + \varphi_{\beta_2}(\gamma_2) + \cdots + \varphi_{\beta_k}(\gamma_k))[n]& =\varphi_{\beta_1}(\gamma_1) + \cdots + \varphi_{\beta_{k-1}}(\gamma_{k-1}) + \varphi_{\beta_k}(\gamma_k) [n] \\
+        \varphi_0(\gamma) & = \omega^{\gamma} \\
+        \varphi_0(\gamma+1) [n] & = \omega^{\gamma} \cdot n \\
+        \varphi_{\beta+1}(0)[n]& =\varphi_{\beta}^n(0) \\
+        \varphi_{\beta+1}(\gamma+1)[n]& =\varphi_{\beta}^n(\varphi_{\beta+1}(\gamma)+1) \\
+        \varphi_{\beta}(\gamma) [n] & = \varphi_{\beta}(\gamma [n]) \ (\textsf{对于极限序数 } \gamma<\varphi_\beta(\gamma)) \\
+        \varphi_{\beta}(0) [n] & = \varphi_{\beta [n]}(0) \ (\textsf{对于极限序数 } \beta<\varphi_\beta(0)) \\
+        \varphi_{\beta}(\gamma+1) [n] & = \varphi_{\beta [n]}(\varphi_{\beta}(\gamma)+1) \ (\textsf{对于极限序数 } \beta)
+        \end{aligned}
+        $$
 
 ### 2.2.2 序数层级
 1. $\text{Hardy}$ 函数
