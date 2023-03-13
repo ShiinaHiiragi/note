@@ -70,7 +70,6 @@
     - $\text{Poincar}\acute{\mathrm e}$ 回归时间：约 $10 \uparrow 10 \uparrow 10 \uparrow 10 \uparrow 2.08$，即可观测宇宙的始态复现时间
 
 ## 2.2 序数层级
-### 2.2.1 基本列
 1. 基本列：设 $\alpha_0 < \alpha_1 < \alpha_2 < \cdots$ 为严格递增的无穷序数序列，若存在极限序数 $\alpha$ 使得 $\alpha = \sup\{\alpha_0, \alpha_1, \alpha_2, \cdots\}$，则称 $\alpha_0, \alpha_1, \alpha_2, \cdots$ 为以 $\alpha$ 为极限的基本列，记作 $\alpha = \lim(\alpha_0, \alpha_1, \alpha_2, \cdots)$
     1. $\text{Wainer}$ 层级：对于极限序数 $\alpha \leqslant \varepsilon_0$，定义 $\alpha$ 的基本列 $\alpha[0], \alpha[1], \cdots$ 如下
 
@@ -100,29 +99,7 @@
         \end{aligned}
         $$
 
-2. 序数分析：为形式系统指派序数，作为其证明强度的度量，称为证明论序数
-    1. 一阶算术系统的证明论序数
-
-        <div class="text-table">
-
-        |  算术系统  | $\mathbf Q$ |  $\mathbf{PA}$  |
-        | :--------: | :---------: | :-------------: |
-        | 证明论序数 |  $\omega$   | $\varepsilon_0$ |
-
-        </div>
-
-    2. 二阶算术系统的证明论序数
-
-        <div class="text-table">
-
-        |  算术系统  | $\mathbf{RCA}_0$  | $\mathbf{WKL}_0$  | $\mathbf{ACA}_0$ | $\mathbf{ATR}_0$ |  $\mathbf{\Pi_1^1-CA}_0$  |
-        | :--------: | :---------------: | :---------------: | :--------------: | :--------------: | :-----------------------: |
-        | 证明论序数 | $\omega^{\omega}$ | $\omega^{\omega}$ | $\varepsilon_0$  |    $\Gamma_0$    | $\psi_0(\Omega_{\omega})$ |
-
-        </div>
-
-### 2.2.2 序数层级
-1. $\text{Hardy}$ 函数：对于序数 $\alpha$，定义 $H[\alpha]: \mathbf N \to \mathbf N$ 如下
+2. $\text{Hardy}$ 函数：对于序数 $\alpha$，定义 $H[\alpha]: \mathbf N \to \mathbf N$ 如下
 
     $$
     \begin{aligned}
@@ -137,7 +114,7 @@
     1. $\text{Hardy}$ 函数的复合：若不存在 $\gamma$ 使得 $\alpha + \beta = \gamma + \beta$，则 $H[\alpha + \beta](n) = H[\alpha](H[\beta](n))$
     2. $\text{Hardy}$ 函数的增长率：对于 $m > 1$ 时有 $H[\omega^m](n) > 2 \uparrow^{m-1} n$
 
-2. 急增长函数 $\text{FGH}$（也称作快速增长层级）：
+3. 急增长函数 $\text{FGH}$（也称作快速增长层级）：
 
     $$
     \begin{aligned}
@@ -150,7 +127,7 @@
     1. 当 $\alpha < \varepsilon_0$ 时有 $F[\alpha](n)=H\left[\omega^\alpha\right](n)$
     2. 当 $\alpha = \varepsilon_0$ 时有 $F\left[\varepsilon_0\right](n) \approx H\left[\varepsilon_0\right](n+1)=H\left[\varepsilon_0+1\right](n)$ 近似成立
 
-3. 缓增长函数 $\text{SGH}$（也称作缓慢增长层级）：
+4. 缓增长函数 $\text{SGH}$（也称作缓慢增长层级）：
 
     $$
     \begin{aligned}
