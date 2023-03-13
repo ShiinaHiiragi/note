@@ -69,15 +69,49 @@
     - $\text{Eddington}$ 数：约 $1.57 \times 10^{79}$，即可观测宇宙中的质子数
     - $\text{Poincar}\acute{\mathrm e}$ 回归时间：约 $10 \uparrow 10 \uparrow 10 \uparrow 10 \uparrow 2.08$，即可观测宇宙的始态复现时间
 
-## 2.2 序数
+## 2.2 序数层级与分析
 ### 2.2.1 基本列
-1. $\text{Wainer}$ 层级
-2. $\text{Veblen}$ 层级
+1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
+    1. $\varphi_0(\beta) = \omega^{\beta}$
+    2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\varphi_{\alpha}(\gamma) = \gamma$ 的第 $\beta$ 个解，即 $\varphi_{\alpha}(\beta)$ 的第 $\beta$ 个不动点
+    3. 对于极限序数 $\alpha$，定义 $\varphi_{\alpha}(\beta)$ 为所有序数 $\gamma < \alpha$ 对应的 $\text{Veblen}$ 函数 $\varphi_{\gamma}$ 的第 $\beta$ 个公共不动点
+
+    上述不动点均从 $0$ 开始计数
+
+    1. 定义 $\varphi_{1}(\gamma) = \varepsilon_{\gamma}$，即满足 $\omega^\xi = \xi$ 的解
+
+        $$
+        \begin{aligned}
+        \varepsilon_0 & = \lim(\omega, \omega^{\omega}, \omega^{\omega^{\omega}}, \cdots) \\
+        \varepsilon_{\alpha+1} & = \lim(\varepsilon_\alpha+1, \omega^{\varepsilon_\alpha+1}, \omega^{\omega^{\varepsilon_\alpha+1}}, \cdots) \\
+        \varepsilon_{\alpha} & = \sup \left\{\varepsilon_\beta \mid \beta<\alpha\right\} \ (\alpha \textsf{ 为极限序数})
+        \end{aligned}
+        $$
+
+    2. 定义 $\varphi_2(\gamma) = \zeta_{\gamma}$，即满足 $\varepsilon_{\xi} = \xi$ 的解
+
+2. $\text{Veblen}$ 序数
+3. 基本列：设 $\alpha_0 < \alpha_1 < \alpha_2 < \cdots$ 为严格递增的无穷序数序列，若存在极限序数 $\alpha$ 使得 $\alpha = \sup\{\alpha_0, \alpha_1, \alpha_2, \cdots\}$，则称 $\alpha_0, \alpha_1, \alpha_2, \cdots$ 为以 $\alpha$ 为极限的基本列，记作 $\alpha = \lim(\alpha_0, \alpha_1, \alpha_2, \cdots)$
+    1. $\text{Wainer}$ 层级：对于极限序数 $\alpha \leqslant \varepsilon_0$，定义 $\alpha$ 的基本列 $\alpha[0], \alpha[1], \cdots$ 如下
+
+        $$
+        \begin{aligned}
+        \omega[n] & =n \\
+        \omega^{\alpha+1}[n] & =\omega^\alpha n \\
+        \omega^\alpha[n] & =\omega^{\alpha[n]} \ (\alpha \textsf { 为极限序数}) \\
+        \left(\omega^{\alpha_1}+\omega^{\alpha_2}+\cdots+\omega^{\alpha_k}\right)[n] & =\omega^{\alpha_1}+\omega^{\alpha_2}+\cdots+\omega^{\alpha_k}[n] \ \left(\alpha_1 \geqslant \alpha_2 \geqslant \cdots \geqslant \alpha_k\right) \\
+        \varepsilon_0[0] & =1 \\
+        \varepsilon_0[n+1] & =\omega^{\varepsilon_0[n]}
+        \end{aligned}
+        $$
+
+    2. $\text{Veblen}$ 层级
 
 ### 2.2.2 序数层级
-1. 快增长函数（$\text{FGH}$）
-2. 慢增长函数（$\text{SGH}$）
-3. 序数塌缩函数（$\text{OCF}$）
+1. $\text{Hardy}$ 函数
+2. 快增长函数（$\text{FGH}$）
+3. 慢增长函数（$\text{SGH}$）
+4. 序数塌缩函数（$\text{OCF}$）
 
 ### 2.2.3 序数分析
 
@@ -88,7 +122,7 @@
     $$
     \begin{aligned}
     x \uparrow y & = x^y \\
-    x \uparrow^n 1 & = x \\
+    x \uparrow^n 0 & = 1 \\
     x \uparrow^n y & = x \uparrow^{n-1} (x \uparrow^n (y - 1))
     \end{aligned}
     $$
@@ -127,6 +161,18 @@
         & a \uparrow^{n-1}\left(a \uparrow^n(x-1)\right), & 0<x
         \end{aligned}\right.
         $$
+
+    3. 推广到序数：设 $\alpha, \beta \in \mathbf{On}$，则定义
+
+        $$
+        \begin{aligned}
+        \alpha \uparrow \beta & = \alpha^\beta \\
+        \alpha \uparrow^n 0 & = 1 \\
+        \alpha \uparrow^n \beta & = \alpha \uparrow^{n-1} (\alpha \uparrow^n (\beta - 1))
+        \end{aligned}
+        $$
+
+        特别地，$\alpha \uparrow \beta$ 也可写作 $\alpha \widehat{\ \ \ } \beta$
 
 2. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
 
