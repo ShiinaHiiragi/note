@@ -152,8 +152,10 @@
         $$
         \begin{aligned}
         g_{1}(m) &=m \\
-        g_{n+1}(m) &= \begin{cases}S_{n+1}\left(g_{n}(m)\right)-1, & g_{n}(m)>0 \\
-        0, & \text{otherswise} \end{cases}
+        g_{n+1}(m) &= \left\{\begin{aligned}
+        & S_{n+1}\left(g_{n}(m)\right)-1, & g_{n}(m)>0 \\
+        & 0, & \text{otherswise}
+        \end{aligned}\right.
         \end{aligned}
         $$
 
@@ -338,8 +340,8 @@
 
         $$
         \begin{aligned}
-        & \kappa^{\lambda}= \begin{cases} 2^{\lambda}, & \textsf{或 } \\ \kappa, & \textsf{或 } \\ \gimel(\mu), & \operatorname{cf}(\mu) \leqslant \lambda<\mu\end{cases} \\
-        & 2^{\kappa}= \begin{cases}J(\kappa), & \textsf{ 若 } \kappa \textsf{ 是后继基数 } \\ 2^{\mu_{0}} \otimes I(\kappa), & \textsf{ 若 } \kappa \textsf{ 是极限基数且 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\ I\left(2^{<\kappa}\right), & \textsf{ 若 } \kappa \textsf{ 是极限基数且连续统函数在 } \kappa \textsf{ 下不存在不动点 }\end{cases}
+        & \kappa^{\lambda}= \left\{\begin{aligned} & 2^{\lambda}, & \textsf{或 } \\ & \kappa, & \textsf{或 } \\ & \gimel(\mu), & \operatorname{cf}(\mu) \leqslant \lambda<\mu \end{aligned}\right. \\
+        & 2^{\kappa}= \left\{\begin{aligned}& J(\kappa), & \textsf{ 若 } \kappa \textsf{ 是后继基数 } \\ & 2^{\mu_{0}} \otimes I(\kappa), & \textsf{ 若 } \kappa \textsf{ 是极限基数且 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\ & I\left(2^{<\kappa}\right), & \textsf{ 若 } \kappa \textsf{ 是极限基数且连续统函数在 } \kappa \textsf{ 下不存在不动点 }\end{aligned}\right.
         \end{aligned}
         $$
 

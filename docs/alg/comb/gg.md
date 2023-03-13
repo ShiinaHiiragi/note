@@ -67,7 +67,23 @@
 
 ## 2.3 一阶算术
 ### 2.3.1 原始递归函数
-1. $\text{Knuth}$ 箭头：设 $x, y \in \mathbf N$，定义 $x \uparrow^n y = x \ \small \underbrace{\normalsize \uparrow \uparrow \cdots \uparrow}_{\normalsize n} \normalsize \ y$如下
+1. 超运算：定义超$-n$ 运算 $H_n(a, b)$ 如下
+
+    $$
+    H_n(a, b)= \left\{\begin{aligned}
+    & b+1, & n=0 \\
+    & a, & n=1, b=0 \\
+    & 0, & n=2, b=0 \\
+    & 1, & n \geqslant 3, b=0 \\
+    & H_{n-1}\left(a, H_n(a, b-1)\right), & \text{otherwise}
+    \end{aligned}\right.
+    $$
+
+    1. 超$-0$ 运算：$H_0(a, b) = b + 1$，即后继运算
+    2. 超$-1$ 运算：$H_1(a, b) = a + b$，即加法运算
+    3. 超$-n$ 运算：$H_n(a, b) = a \uparrow^{n-2} b \ (n > 1)$，其中 $n = 2, 3, 4$ 时分别称作乘法运算、幂运算、超幂运算
+
+2. $\text{Knuth}$ 箭头：设 $x, y \in \mathbf N$，定义 $x \uparrow^n y = x \ \small \underbrace{\normalsize \uparrow \uparrow \cdots \uparrow}_{\normalsize n} \normalsize \ y$如下
 
     $$
     \begin{aligned}
@@ -79,33 +95,28 @@
 
     $\text{Knuth}$ 箭头使用右结合的方式计算
 
-    - 定义 $\text{Tritri}$ 数为 $3 \uparrow^4 2 = 3 \uparrow \uparrow \uparrow 3 = 3 \uparrow \uparrow 7625597484987$
-    - 定义 $g_k(n)$ 如下
+    1. 利用 $\text{Knuth}$ 箭头定义的大数
+        - 定义 $\text{Tritri}$ 数为 $3 \uparrow^4 2 = 3 \uparrow \uparrow \uparrow 3 = 3 \uparrow \uparrow 7625597484987$
+        - 定义 $g_k(n)$ 如下
+
+            $$
+            \begin{aligned}
+            g_0(n) & = n \\
+            g_k(n) & = 3 \uparrow^{g_{k-1}(n)} 3
+            \end{aligned}
+            $$
+
+            并定义 $\text{Graham}$ 数为 $g_{64}(4)$
+
+    2. 连续化：设 $x \in \mathbf R$，定义 $a \uparrow x$ 如下
 
         $$
-        \begin{aligned}
-        g_0(n) & = n \\
-        g_k(n) & = 3 \uparrow^{g_{k-1}(n)} 3
-        \end{aligned}
+        a \uparrow \uparrow x=\left\{\begin{aligned}
+        & \log _a(a \uparrow \uparrow(x+1)), & x \leq-1 \\
+        & 1+x, & -1<x \leq 0 \\
+        & a \uparrow(a \uparrow \uparrow(x-1)), & 0<x
+        \end{aligned}\right.
         $$
-
-        并定义 $\text{Graham}$ 数为 $g_{64}(4)$
-
-2. 超运算：定义超$-n$ 运算 $H_n(a, b)$ 如下
-
-    $$
-    H_n(a, b)= \begin{cases}
-    b+1, & n=0 \\
-    a, & n=1, b=0 \\
-    0, & n=2, b=0 \\
-    1, & n \geqslant 3, b=0 \\
-    H_{n-1}\left(a, H_n(a, b-1)\right), & \text{otherwise}
-    \end{cases}
-    $$
-
-    1. 超$-0$ 运算：$H_0(a, b) = b + 1$，即后继运算
-    2. 超$-1$ 运算：$H_1(a, b) = a + b$，即加法运算
-    3. 超$-n$ 运算：$H_n(a, b) = a \uparrow^{n-2} b \ (n > 1)$，其中 $n = 2, 3, 4$ 时分别称作乘法运算、幂运算、超幂运算
 
 ### 2.3.2 多重递归函数
 1. $\text{Moser}$ 数：定义 $m(k, n) \ (k \geqslant 3)$ 如下

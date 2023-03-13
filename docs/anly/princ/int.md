@@ -9,7 +9,7 @@
     2. 换元积分：设 $f(x)$ 连续，$x=\varphi(t)$ 与 $\varphi^{\prime}(t)$ 都连续，反函数 $t=\varphi^{-1}(x)$ 存在且连续，${\displaystyle \int f(\varphi(t)) \varphi^{\prime}(t) \mathrm{d} t=F(t)+C}$，则 ${\displaystyle \int f(x) \mathrm{d} x=F\left(\varphi^{-1}(x)\right)+C}$
     3. 分部积分公式：${\displaystyle \int u \mathrm{d} v=u v - \int v \mathrm{d} u}$
 2. 基本积分表
-    1. ${\displaystyle \int x^\alpha \mathrm{d} x= \begin{cases}\dfrac{1}{\alpha+1} x^{\alpha+1}+C, & \alpha \neq-1 \\ \ln |x|+C, & \alpha=-1 \end{cases}}$
+    1. ${\displaystyle \int x^\alpha \mathrm{d} x= \left\{\begin{aligned}&\dfrac{1}{\alpha+1} x^{\alpha+1}+C, & \alpha \neq-1 \\ &\ln |x|+C, & \alpha=-1 \end{aligned}\right.}$
     2. ${\displaystyle \int a^x \mathrm{d} x=\dfrac{a^x}{\ln a}+C}$．特别地，${\displaystyle \int \mathrm{e}^x \mathrm{d} x=\mathrm{e}^x+C}$
     3. ${\displaystyle \int \sin x \mathrm{d} x=-\cos x+C, \int \cos x \mathrm{d} x=\sin x+C}$
 
@@ -37,10 +37,10 @@
 
         !!! note "$\text{Riemann}$ 函数"
             $$
-            f(x)= \begin{cases}
-            \dfrac{1}{q}, & x=\dfrac{p}{q} \in \mathbf Q, q, p \textsf{ 为互质的整数且 } q > 0 \\ 
-            0, & x \in \mathbf R - \mathbf Q
-            \end{cases}
+            f(x)= \left\{\begin{aligned}
+            & \dfrac{1}{q}, & x=\dfrac{p}{q} \in \mathbf Q, q, p \textsf{ 为互质的整数且 } q > 0 \\ 
+            & 0, & x \in \mathbf R - \mathbf Q
+            \end{aligned}\right.
             $$
 
             上述 $f(x)$ 具有无穷多个不连续点，但在 $[0,1]$ 上可积

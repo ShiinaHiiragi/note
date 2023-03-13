@@ -253,7 +253,7 @@
     2. 记 $G(V)=\wedge^0(V) \oplus \wedge^1(V) \oplus \cdots \oplus \wedge^n(V)$，$G(V)$ 是一个 $2^n$ 维的向量空间，外积运算 $\wedge$ 自然延拓成 $G(V)$ 中的外积运算
 
         $$
-        \left(\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_p\right) \wedge\left(\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_q\right)= \begin{cases}\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_p \wedge \boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_q, & p+q \leqslant n, \\ 0, & p+q>n .\end{cases}
+        \left(\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_p\right) \wedge\left(\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_q\right)= \left\{\begin{aligned}&\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_p \wedge \boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_q, & p+q \leqslant n, \\ & 0, & p+q>n .\end{aligned}\right.
         $$
 
         并要求满足结合律及线性分配律．$G(V)$ 连同外积运算 $\wedge$ 称为 $V$ 上的 $\text{Grassmann}$ 代数
