@@ -131,7 +131,7 @@ nav:
       - 2 计算复杂性理论: logic/rec/cplx.md
     - 四、公理集合论:
       - 1 数学基础: logic/set/zfc.md
-      - 2 序数与基数: logic/set/ordinal.md
+      - 2 序数与基数: logic/set/ord.md
       - 3 连续统假设: logic/set/cont.md
   - 代数学:
     - 一、初等代数:
