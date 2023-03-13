@@ -288,7 +288,7 @@ const refList = [
         locate: "東京",
         year: 2018,
         page: [1, 258],
-        plot: 88
+        plot: 147
     },
     {
         author: ["[苏]М. М. По́стников"],
