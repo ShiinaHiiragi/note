@@ -204,7 +204,7 @@
 
         $$
         \begin{aligned}
-        C_0(\alpha, \beta) & =\beta \cup\left\{0, \omega_1, \omega_2, \ldots, \omega_\omega\right\} \\
+        C_0(\alpha, \beta) & =\beta \cup\left\{0, \omega_1, \omega_2, \cdots, \omega_\omega\right\} \\
         C_{n+1}(\alpha, \beta) & =\left\{\gamma+\delta, \theta_{\xi}(\eta) \mid \gamma, \delta, \xi, \eta \in C_n(\alpha, \beta) ; \xi<\alpha\right\} \\
         C(\alpha, \beta) & =\bigcup_{n<\omega} C_n(\alpha, \beta) \\
         \theta_\alpha(\beta) & =\min \left\{\gamma \mid \gamma \notin C(\alpha, \gamma) \wedge \forall \delta<\beta: \theta_\alpha(\delta)<\gamma\right\}

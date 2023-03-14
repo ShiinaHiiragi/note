@@ -250,7 +250,7 @@
 
         $$
         \begin{aligned}
-        A\left(a_k, \ldots, a_2, a_1, a_0, n\right) & \approx F\left[\omega^k \times a_k+\ldots+\omega^2 \times a_2+\omega \times a_1+a_0\right](n)
+        A\left(a_k, \cdots, a_2, a_1, a_0, n\right) & \approx F\left[\omega^k \times a_k+\cdots+\omega^2 \times a_2+\omega \times a_1+a_0\right](n)
         \end{aligned}
         $$
 
@@ -364,8 +364,45 @@
         3. 设 $f(x) = 1$，定义 $\text{Fish 3}$ 函数 $F_3(x) = \left[ss(2)^{63}\right](f)$，$\text{Fish 3}$ 数为 $F_3 = F_3^{63}(3)$
 
     4. $\text{Fish 5}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_5 \approx F[\varepsilon + 1](63)$
+        1. 定义如下集合：
 
-7. $\text{BEAF}$ 数阵
+            $$
+            M_n = \left\{\begin{aligned}
+            & \mathbf N, & n = 0 \\
+            & M_{n-1}^{M_{n-1}}, & n > 0
+            \end{aligned}\right.
+            $$
+
+            并将 $M_n$ 中的元素称为 $M_n$ 变换
+
+        2. 定义 $m(n) \in M_n \ (n \geqslant 1)$ 如下：
+
+            $$
+            \begin{aligned}
+            & \textsf{ 对 } f_n \in M_n, m(n+1)(f_n) = g_n \textsf{ 定义如下：} \\
+            & \quad \textsf{ 对 } f_{n-1} \in M_{n-1}, g_n(f_{n-1}) = g_{n-1} \textsf{ 定义如下：} \\
+            & \quad \quad \textsf{ 对 } f_{n-2} \in M_{n-2}, g_{n-1}(f_{n-2}) = g_{n-2} \textsf{ 定义如下：} \\
+            & \quad \quad \quad \ddots \\
+            & \quad \quad \quad \quad \textsf{ 对 } f_{0} \in M_{0}, g_{1}(f_{0}) = g_{0} \textsf{ 定义如下：} \\
+            & \quad \quad \quad \quad \quad g_0=\left(\cdots\left(\left(\left[f_n^{f_0}\right] f_{n-1}\right) f_{n-2}\right) \cdots f_1\right) f_0
+            \end{aligned}
+            $$
+
+        3. 定义 $\text{Fish 5}$ 函数 $F_5(x) = ((\cdots((m(x) m(x-1)) m(x-2)) \cdots m(2)) m(1))(x)$，$\text{Fish 5}$ 数为 $F_5 = F_5^{63}(3)$
+
+7. 原始数列系统：称由自然数构成的列表 $S = (S_0, S_1, \cdots, S_n)$ 为原始数列
+    1. 设 $f(n) = n^2 + 1$，定义 $S[n]$ 如下
+        1. $()[n] = n$
+        2. 当 $S_n = 0$ 时，$S[n]=\left(S_0, S_1, \cdots, S_{n-1}\right)[f(n)]$
+        3. 当 $S_n > 0$ 时，将数列分为好的部分 $g$ 与坏的部分 $b$，令 $r$ 为满足 $k < n$ 且 $S_k < S_n$ 的最大非负整数
+            - 若 $k$ 不存在，则 $g = (S_0, S_1, \cdots, S_{n-1}), b = ()$
+            - 若 $k$ 存在，则 $g = (S_0, S_1, \cdots, S_{k-1}), b = (S_{k}, S_{k+1}, \cdots, S_{n-1})$
+
+            令 $S[n] = (g \oplus \small \underbrace{\normalsize b \oplus b \oplus \cdots \oplus b}_{\normalsize f(n)+1} \normalsize)[f(n)]$，此处的「$\oplus$」为数列的拼接运算
+
+    2. $\text{Wainer}$ 层级下近似为 $(0, 1, 2, \cdots, n)[n] \approx H\left[\varepsilon_0\right](n) \approx F\left[\varepsilon_0\right](n)$
+
+8. $\text{BEAF}$ 数阵
     1. 线性数阵：设 $A = (a_1, a_2, \cdots, a_n)$ 为正整数组成的 $n$ 元有序组，则数阵符号是从这个 $n$ 元有序组到正整数的映射 $v(A) = \{x_1, x_2, \cdots, x_n\}$，并定义为
         1. $\{a_0\} = a_0$
         2. $\{a_1, a_2\} = a_1^{a_2}$
@@ -382,9 +419,9 @@
 
         $$
         \begin{aligned}
-        & \left\{n+1, m+1, a_0+1, a_1+1, a_2+1, \ldots, a_k+1\right\} \\
-        \approx \ & \left[F\left[\omega^k \times a_k+\ldots+\omega^2 \times a_2+\omega \times a_1+a_0\right]^m\right](n) \\
-        = \ & H\left[\omega^{\omega^k \times a_k+\ldots+\omega^2 \times a_2+\omega \times a_1+a_0} \times m\right](n)
+        & \left\{n+1, m+1, a_0+1, a_1+1, a_2+1, \cdots, a_k+1\right\} \\
+        \approx \ & \left[F\left[\omega^k \times a_k+\cdots+\omega^2 \times a_2+\omega \times a_1+a_0\right]^m\right](n) \\
+        = \ & H\left[\omega^{\omega^k \times a_k+\cdots+\omega^2 \times a_2+\omega \times a_1+a_0} \times m\right](n)
         \end{aligned}
         $$
 
