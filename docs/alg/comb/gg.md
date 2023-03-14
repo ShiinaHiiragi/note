@@ -530,11 +530,7 @@
 
         2. 定义 $\text{Gongulus} = \{10, 10 (100) 2\}$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\omega^{\omega^{100}}\right](10)$
 
-    3. 迭代幂次数阵：分隔符 $(a_0, a_1, \cdots, a_n)$ 表示 $X^{a_0 + a_1X + a_2X^2 + \cdots + a_nX^n}$ 的超立方体，因此
-
-        $$
-        (a_0, a_1, a_2, \cdots, a_n) = (p^{a_0 + a_1p + a_2p^2 + \cdots + a_np^n})
-        $$
+    3. 迭代幂次数阵
 
 ### 2.3.2 高阶算术
 
