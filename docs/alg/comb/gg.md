@@ -140,6 +140,67 @@
     1. 缓增长函数的速度慢于 $\text{Hardy}$ 函数，且有 $G[\varepsilon_0](n) = n \uparrow \uparrow n$
     2. 缓增长函数追上急增长函数的时机取决于基本列的选择
 
+5. 原始数列数：设「$\oplus$」为数列的拼接运算，例如 $(0, 1) \oplus (0) = (0, 1, 0)$
+    1. 原始数列的递归定义：设 $S = (S_0, S_1, \cdots, S_n) \ (S_i \in \mathbf N)$
+        1. 空数列 $()$ 是原始数列
+        2. 若 $S$ 是至多只含一个 $0$ 的原始数列，则 $w(S) = (0) \oplus S'$ 也是原始数列，其中
+
+            $$
+            S' = \left\{\begin{aligned}
+            & (), & S = () \\
+            & (S_0 + 1, S_1 + 1, \cdots, S_n + 1), & S = (S_0, S_1, \cdots, S_n) \neq ()
+            \end{aligned}\right.
+            $$
+
+        3. 若 $S_1, S_2, \cdots, S_n$ 为按字典序排列的 $n$ 个原始数列，则 $S_1 \oplus S_2 \oplus \cdots \oplus S_n$ 也为原始数列
+
+        除上述定义外不存在其他的原始数列
+
+        1. 一个原始数列与唯一序数对应：设序数 $\alpha, \beta$ 分别与基本列 $S, T$ 对应，记作 $\alpha \leftrightarrow S, \beta \leftrightarrow T$
+            - $0 \leftrightarrow ()$
+            - $\omega^{\alpha} \leftrightarrow (0) + S'$
+            - 若 $\alpha > \beta$，则 $S$ 字典序大于 $T$ 且 $\alpha + \beta \leftrightarrow S + T$
+
+            $$
+            \begin{aligned}
+            1 & \leftrightarrow(0) \\
+            2 & \leftrightarrow(0,0) \\
+            \omega & \leftrightarrow(0,1) \\
+            \omega+2 & \leftrightarrow(0,1,0,0) \\
+            \omega \cdot 2 & \leftrightarrow(0,1,0,1) \\
+            \omega^2 & \leftrightarrow(0,1,1) \\
+            \omega^2+\omega & \leftrightarrow(0,1,1,0,1) \\
+            \omega^3 & \leftrightarrow(0,1,1,1) \\
+            \omega^\omega & \leftrightarrow(0,1,2) \\
+            \omega^{\omega^\omega} & \leftrightarrow(0,1,2,3) \\
+            \omega^{\omega^{\left(\omega^\omega+1\right)}} & \leftrightarrow(0,1,2,3,4,2)
+            \end{aligned}
+            $$
+
+        2. 若非空原始数列 $S$ 的末尾不为 $0$，则称 $S$ 为极限原始数列
+
+    2. 原始数列系统：设 $S$ 为原始数列，$f(n) = n^2 + 1$．定义 $S[n]: \mathbf N \to \mathbf N$ 如下
+        1. $()[n] = n$
+        2. 当 $S_n = 0$ 时，$S[n]=\left(S_0, S_1, \cdots, S_{n-1}\right)[f(n)]$
+        3. 当 $S_n > 0$ 时，将数列分为好的部分 $g$ 与坏的部分 $b$，令 $r$ 为满足 $k < n$ 且 $S_k < S_n$ 的最大非负整数
+            - 若 $k$ 不存在，则 $g = (S_0, S_1, \cdots, S_{n-1}), b = ()$
+            - 若 $k$ 存在，则 $g = (S_0, S_1, \cdots, S_{k-1}), b = (S_{k}, S_{k+1}, \cdots, S_{n-1})$
+
+            令 $S[n] = (g \oplus \small \underbrace{\normalsize b \oplus b \oplus \cdots \oplus b}_{\normalsize f(n)+1} \normalsize)[f(n)]$
+
+        原始数列系统在 $\text{Wainer}$ 层级下近似为 $(0, 1, 2, \cdots, n)[n] \approx H\left[\varepsilon_0\right](n) \approx F\left[\varepsilon_0\right](n)$
+
+    3. 原始数列的基本列：给定原始数列 $S$ 与非负整数，定义基本列 $S[0], S[1], S[n],\cdots$ 如下
+        1. $\left(w\left(S_1\right)\oplus w\left(S_2\right)\oplus \cdots\oplus w\left(S_k\right)\right)[n]=w\left(S_1\right)\oplus w\left(S_2\right)\oplus \cdots\oplus w\left(S_{k-1}\right)\oplus w\left(S_k\right)[n]$
+        2. $w(S\oplus (0))[n]=\small \underbrace{\normalsize w(S)\oplus w(S)\oplus \cdots \oplus w(S)}_{\normalsize n} \normalsize$
+        3. $w(S)[n]=w(S[n])$，其中 $S$ 为极限原始数列
+
+        从而可定义原始数列基本列下的急增长函数 $F[S](n)$ 如下：
+
+        1. $F[()](n)=n+1$
+        2. $F[S+(0)]=\left[F[S]^n\right](n)$
+        3. $F[S](n)=F[S[n]](n)$，其中 $S$ 为极限原始数列
+
 ## 2.3 可计算函数
 ### 2.3.1 递归函数
 1. $\text{Knuth}$ 箭头：设 $x, y \in \mathbf N$，定义 $x \uparrow^n y = x \ \small \underbrace{\normalsize \uparrow \uparrow \cdots \uparrow}_{\normalsize n} \normalsize \ y$如下
@@ -390,19 +451,7 @@
 
         3. 定义 $\text{Fish 5}$ 函数 $F_5(x) = ((\cdots((m(x) m(x-1)) m(x-2)) \cdots m(2)) m(1))(x)$，$\text{Fish 5}$ 数为 $F_5 = F_5^{63}(3)$
 
-7. 原始数列系统：称由自然数构成的列表 $S = (S_0, S_1, \cdots, S_n)$ 为原始数列
-    1. 设 $f(n) = n^2 + 1$，定义 $S[n]$ 如下
-        1. $()[n] = n$
-        2. 当 $S_n = 0$ 时，$S[n]=\left(S_0, S_1, \cdots, S_{n-1}\right)[f(n)]$
-        3. 当 $S_n > 0$ 时，将数列分为好的部分 $g$ 与坏的部分 $b$，令 $r$ 为满足 $k < n$ 且 $S_k < S_n$ 的最大非负整数
-            - 若 $k$ 不存在，则 $g = (S_0, S_1, \cdots, S_{n-1}), b = ()$
-            - 若 $k$ 存在，则 $g = (S_0, S_1, \cdots, S_{k-1}), b = (S_{k}, S_{k+1}, \cdots, S_{n-1})$
-
-            令 $S[n] = (g \oplus \small \underbrace{\normalsize b \oplus b \oplus \cdots \oplus b}_{\normalsize f(n)+1} \normalsize)[f(n)]$，此处的「$\oplus$」为数列的拼接运算
-
-    2. $\text{Wainer}$ 层级下近似为 $(0, 1, 2, \cdots, n)[n] \approx H\left[\varepsilon_0\right](n) \approx F\left[\varepsilon_0\right](n)$
-
-8. $\text{BEAF}$ 数阵
+7. $\text{BEAF}$ 数阵
     1. 线性数阵：设 $A = (a_1, a_2, \cdots, a_n)$ 为正整数组成的 $n$ 元有序组，则数阵符号是从这个 $n$ 元有序组到正整数的映射 $v(A) = \{x_1, x_2, \cdots, x_n\}$，并定义为
         1. $\{a_0\} = a_0$
         2. $\{a_1, a_2\} = a_1^{a_2}$
