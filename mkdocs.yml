@@ -124,6 +124,7 @@ nav:
       - 1 命题逻辑: logic/prf/prop.md
       - 2 一阶逻辑: logic/prf/pred.md
       - 3 非经典逻辑: logic/prf/ncl.md
+      - 4 序数分析: logic/prf/ord.md
     - 二、模型论:
       - 1 结构与模型: logic/mdl/mdl.md
     - 三、递归论:

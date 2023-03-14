@@ -507,7 +507,7 @@
         并定义如下运算规则
 
         1. 指数规则：如果 $p = 1$，则 $v(A) = b$
-        2. 初始规则：如果没有驾驶员，则 $v（A）= b^p$
+        2. 初始规则：如果没有驾驶员，则 $v(A) = b^p$
         3. 灾难规则：如果不符合上述规则，则
             - 驾驶员的值减 $1$
             - 副驾驶的指变为「原数阵将指数减去 $1$ 后的值」
@@ -550,3 +550,18 @@
 ### 2.3.2 高阶算术
 
 ## 2.4 不可计算函数
+1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数
+    1. 设忙海狸 $\text{BB} = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$ 有 $n$ 个状态，且满足以下条件：
+        1. 字母表 $\Sigma = \{0, 1\}$
+        2. 起始格局下纸带上均为 $0$
+    2. 定义 $\Sigma(n)$ 为 $n$ 状态忙海狸停机时纸带上 $1$ 数量的最大值
+        1. $\sigma(0) = 0, \sigma(1) = 1, \sigma(2) = 4, \sigma(3) = 6, \sigma(4) = 13$
+        2. $\sigma(5) \geqslant 4098, \sigma(6) \geqslant 10 \uparrow \uparrow 15$
+        3. $\sigma(16) \geqslant \text{Graham}$ 数
+2. $\Xi$ 函数
+3. $\text{Fish}$ 数
+    1. $\text{Fish 4}$ 数
+    2. $\text{Fish 7}$ 数
+4. $\text{Rayo}$ 数
+5. $\text{FOOT}$ 数
+6. $\text{Bigeddon}$ 数
