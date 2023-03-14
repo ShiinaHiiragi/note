@@ -530,7 +530,22 @@
 
         2. 定义 $\text{Gongulus} = \{10, 10 (100) 2\}$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\omega^{\omega^{100}}\right](10)$
 
-    3. 迭代幂次数阵
+    3. 迭代幂次数阵：扩展 $(n)$ 分隔符为数阵
+        1. 每个数阵对应一个关于 $X$ 的函数 $f(X)$，令这个映射为 $\sigma$．设 $b_0, b_1, \cdots, b_n \in \mathbf N$，$(A), (B)$ 均为数阵且 $(B)$ 在 $(A)$ 中已经出现 $k - 1$ 次，则 $\sigma$ 定义如下
+
+            $$
+            \begin{aligned}
+            \sigma(b_0) & = X^{b_0} \\
+            \sigma(b_0, b_1, \cdots, b_n) & = \sigma((0) b_0, b_1, \cdots, b_n) \\
+            \sigma(A (B) b_0, b_1, \cdots, b_n) & = \sigma(A) \cdot X^{b_0 X^{k \sigma(B)} + b_1 X^{k \sigma(B) + 1} + \cdots + b_n X^{k \sigma(B) + n}}
+            \end{aligned}
+            $$
+
+            例如 $\sigma((1)(1)1)=X^{X^{2X}}, \sigma(((0, 1) 1) 1)=X \uparrow\uparrow 6$
+
+        2. 定义 $\text{dulatri} = \{3, 3(0, 2)2\} = X^{2X} \& 3$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\omega^{\omega^{\omega^2}}\right](3)$
+
+            定义 $\text{goppatoth} = 10 \uparrow \uparrow 100 \& 10$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\varepsilon_0\right](100)$
 
 ### 2.3.2 高阶算术
 
