@@ -234,7 +234,7 @@
         \small \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n} \normalsize\mathrm{log}_a(x)=\left\{\begin{aligned}
         & \small \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n} \normalsize\mathrm{log}_a(a \uparrow \uparrow x)-1, & x \leqslant0 \\
         & -1+x, & 0<x \leqslant1 \\
-        & \small \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n} \normalsize\mathrm{log}_a\left(\small \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n-1} \normalsize\mathrm{log}_a(x)\right)+1, & 1<x
+        & \small \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n} \normalsize\mathrm{log}_a(\small \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n-1} \normalsize\mathrm{log}_a(x))+1, & 1<x
         \end{aligned}\right.
         $$
 
@@ -242,8 +242,8 @@
 
         $$
         a \uparrow^n x= \left\{\begin{aligned}
-        & \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n-2} \normalsize\mathrm{log} _a\left(a \uparrow^n(x+1)\right), & x \leq-1 \\
-        & 1+x, & -1<x \leq 0 \\
+        & \underbrace{\normalsize \mathrm{ss\cdots s}}_{\normalsize n-2} \normalsize\mathrm{log} _a\left(a \uparrow^n(x+1)\right), & x \leqslant-1 \\
+        & 1+x, & -1<x \leqslant 0 \\
         & a \uparrow^{n-1}\left(a \uparrow^n(x-1)\right), & 0<x
         \end{aligned}\right.
         $$
@@ -317,7 +317,24 @@
 
         特别地，有 $A(\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize) \approx F\left[\omega^\omega\right](n)$ 成立
 
-    2. 多重序列 $\text{Ackermann}$ 函数
+    2. 二重序列 $\text{Ackermann}$ 函数：
+
+        $$
+        \begin{aligned}
+        A(Y_1, [X, 0], Y_2) & = A(Y_1, Y_2) \\
+        A(Y_1, [Z, X], Y_2) & = A(Y_1, [X], Y_2) \\
+        A([a]) & = a+1 \\
+        A(Y, [1, b+1]) & = A(Y, [1, b], [1]) \\
+        A(Y, [1, b+1], [a+1]) & = A( Y, [1, b], [A(Y, [1, b+1], [a])] ) \\
+        A(Y, [X, c+1, b+1], [a]) & = A(Y, [X, c+1, b], [X, c, a], [a]), X \neq Z \vee c \neq 0 \\
+        A(Y, [X, c+1, 0, Z, b+1], [a]) & = A(Y, [X, c+1, 0, Z, b], [X, c, a, Z, a], [a])
+        \end{aligned}
+        $$
+
+        其中 $X$ 表示 $0$ 个以上的自然数，$Y, Y_1, Y_2$ 表示 $0$ 个以上的整数序列，$Z$ 表示 $0$ 个以上的 $0$，$a, b, c$ 表示 $0$ 以上的正整数
+
+        1. 对于大整数 $N$，记 $\mathrm{index} [\cdots, b_3, b_2, b_1, b_0, a_0] = \cdots + N^3 \cdot b_3 + N^2 \cdot b_2 + N \cdot b_1 + b_0$，则 $A$ 中序列按 $\mathrm{index}$ 从大到小的顺序排列，且 $A$ 中不存在 $\mathrm{index}$ 相同的序列
+        2. 二重序列 $\text{Ackermann}$ 函数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $A([\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize], [n]) \approx F[\omega^{\omega^{\omega}}](n)$，$n$ 重序列 $\text{Ackermann}$ 函数可达到 $F[\varepsilon_0](n)$
 
 5. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
 
