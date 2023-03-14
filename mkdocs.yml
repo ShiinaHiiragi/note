@@ -120,7 +120,7 @@ nav:
       - 2 三大主义: meta/math/doctr.md
       - 3 当代观点: meta/math/cont.md
   - 数理逻辑:
-    - 一、结构证明论:
+    - 一、证明论:
       - 1 命题逻辑: logic/prf/prop.md
       - 2 一阶逻辑: logic/prf/pred.md
       - 3 非经典逻辑: logic/prf/ncl.md

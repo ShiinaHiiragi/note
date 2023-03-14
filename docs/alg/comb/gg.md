@@ -363,6 +363,8 @@
 
         3. 设 $f(x) = 1$，定义 $\text{Fish 3}$ 函数 $F_3(x) = \left[ss(2)^{63}\right](f)$，$\text{Fish 3}$ 数为 $F_3 = F_3^{63}(3)$
 
+    4. $\text{Fish 5}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_5 \approx F[\varepsilon + 1](63)$
+
 7. $\text{BEAF}$ 数阵
     1. 线性数阵：设 $A = (a_1, a_2, \cdots, a_n)$ 为正整数组成的 $n$ 元有序组，则数阵符号是从这个 $n$ 元有序组到正整数的映射 $v(A) = \{x_1, x_2, \cdots, x_n\}$，并定义为
         1. $\{a_0\} = a_0$
