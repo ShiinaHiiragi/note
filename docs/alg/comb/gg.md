@@ -550,7 +550,7 @@
 ### 2.3.2 高阶算术
 
 ## 2.4 不可计算函数
-1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数
+1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数，其 $\text{FGH}$ 近似为 $F\left[\omega_1^{\text{CK}}\right](n)$
     1. 设忙海狸 $\text{BB} = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$ 有 $n$ 个状态，且满足以下条件：
         1. 字母表 $\Sigma = \{0, 1\}$
         2. 起始格局下纸带上均为 $0$
@@ -558,10 +558,35 @@
         1. $\sigma(0) = 0, \sigma(1) = 1, \sigma(2) = 4, \sigma(3) = 6, \sigma(4) = 13$
         2. $\sigma(5) \geqslant 4098, \sigma(6) \geqslant 10 \uparrow \uparrow 15$
         3. $\sigma(16) \geqslant \text{Graham}$ 数
-2. $\Xi$ 函数
-3. $\text{Fish}$ 数
+2. $\Xi$ 函数：定义如下操作符
+
+    $$
+    \begin{aligned}
+    I(x) & = x \\
+    K(x, y) & = x \\
+    S(x, y, z) & = x(z, y(z))
+    \end{aligned}
+    $$
+
+    定义 $\Xi(n)$ 为 $n$ 个字符的可终止计算过程中出现的最大 $SKI$ 字符数
+
+    $$
+    \begin{aligned}
+    \Xi(1) &= 1 \\
+    \Xi(2) &= 2 \\
+    \Xi(3) &= 3 \\
+    \Xi(4) &= 4 \\
+    \Xi(5) &= 6 \\
+    \Xi(6) &= 17 \\ 
+    \Xi(7) &= 51 \\
+    \Xi(25) &> f_{\omega+1}(2) \\
+    \Xi(117) &> f_{\omega^{\omega^\omega}+1}(2) \\
+    \Xi(2120) &> f_{\varepsilon_0}(5) \\
+    \Xi(2171) &> f_{\varepsilon_0\omega+1}(3) = f_{\omega^{\varepsilon_0+1}+1}(3)
+    \end{aligned}
+    $$
+
+3. $\text{Rayo}$ 数：定义函数 $\mathrm{Rayo}(n)$ 为一阶集合论中大于用不超过 $n$ 个符号所能表示的任何有限数的最小正整数，并设 $\text{Rayo}$ 数为 $\mathrm{Rayo}(10^{100})$
+4. $\text{Fish}$ 数
     1. $\text{Fish 4}$ 数
     2. $\text{Fish 7}$ 数
-4. $\text{Rayo}$ 数
-5. $\text{FOOT}$ 数
-6. $\text{Bigeddon}$ 数
