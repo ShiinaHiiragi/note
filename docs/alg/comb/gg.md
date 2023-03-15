@@ -574,19 +574,19 @@
     3. 定义 $\text{Fish 6}$ 函数 $F_6(x) = m(x, 2) m(x, 1)(x)$，并定义 $\text{Fish 6}$ 数为 $F_6 = F_{6}^{63}(3)$
 
 2. 图论问题
-    1. 次立方图数
-    2. $\text{Buchholz}$ 九头蛇
-    3. $\text{TREE}$ 序列
+    1. $\text{Buchholz}$ 九头蛇
+    2. $\text{TREE}$ 序列
+    3. 次立方图数
 
 ## 2.4 不可计算函数
-1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数，其 $\text{FGH}$ 近似为 $F\left[\omega_1^{\text{CK}}\right](n)$
-    1. 设忙海狸 $\text{BB} = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$ 有 $n$ 个状态，且满足以下条件：
-        1. 字母表 $\Sigma = \{0, 1\}$
-        2. 起始格局下纸带上均为 $0$
-    2. 定义 $\Sigma(n)$ 为 $n$ 状态忙海狸停机时纸带上 $1$ 的最大数量
-        1. $\sigma(0) = 0, \sigma(1) = 1, \sigma(2) = 4, \sigma(3) = 6, \sigma(4) = 13$
-        2. $\sigma(5) \geqslant 4098, \sigma(6) \geqslant 10 \uparrow \uparrow 15$
-        3. $\sigma(16) \geqslant \text{Graham}$ 数
+1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数
+    1. 设（一阶）海狸机 $\text{BB} = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$ 有 $n$ 个状态，且满足以下条件：① 字母表 $\Sigma = \{0, 1\}$；② 起始格局下纸带上均为 $0$．定义 $\Sigma_1(n)$ 为 $n$ 状态海狸机停机时纸带上 $1$ 的最大数量
+        1. $\Sigma_1(0) = 0, \Sigma_1(1) = 1, \Sigma_1(2) = 4, \Sigma_1(3) = 6, \Sigma_1(4) = 13$
+        2. $\Sigma_1(5) \geqslant 4098, \Sigma_1(6) \geqslant 10 \uparrow \uparrow 15$
+    2. 设 $k$ 阶海狸机是带有一个对 $k-1$ 阶海狸机的神谕的 $n$ 状态 $\text{Turing}$ 机，定义 $\Sigma_k(n)$ 为 $n$ 状态 $k$ 阶海狸机停机时纸带上 $1$ 的最大数量
+
+    $\Sigma_k$ 的 $\text{FGH}$ 近似为 $F\left[\omega_k^{\text{CK}}\right](n)$
+
 2. $\Xi$ 函数：定义如下操作符
 
     $$
