@@ -67,12 +67,13 @@
     1. $\Gamma_0=\varphi(1,0,0)=\varphi \begin{pmatrix} 1 \\ 2 \\ \end{pmatrix}=\theta_{\Omega}(0)=\psi\left(\Omega^{\Omega}\right)$
     2. $\Gamma_0$ 是满足 $\varphi_{\alpha}(0) = \alpha$ 的最小序数，且有 $\Gamma_0 = \varphi_{\varphi_{\varphi_{._{._..}.}(0)}(0)}(0) = \varphi(\varphi(\varphi(...),0),0),0)$
 3. $\text{Ackermann}$ 序数：$\varphi(1, 0, 0, 0)$
-    - $\varphi(1,0,0,0)=\theta_{\Omega^3}(0)=\psi\left(\Omega^{\Omega^2}\right)=\vartheta\left(\Omega^3\right)$
+    1. $\varphi(1,0,0,0)=\theta_{\Omega^3}(0)=\psi\left(\Omega^{\Omega^2}\right)=\vartheta\left(\Omega^3\right)$
+    2. $\text{Ackermann}$ 序数是 $\varphi(\xi, 0, 0)$ 的最小不动点，即 $\varphi(\xi, 0, 0) = \xi$ 的最小解
 4. 小 $\text{Veblen}$ 序数 $\text{SVO} = \sup \left\{\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots\right\}=\varphi \begin{pmatrix} 1 \\ \omega \\ \end{pmatrix}$
     - $\text{SVO}=\theta_{\Omega^\omega}(0)=\psi\left(\Omega^{\Omega^\omega}\right)=\vartheta\left(\Omega^\omega\right)$
-5. 大 $\text{Veblen}$ 序数 $\text{LVO}$：$\varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix}$ 的不动点，即 $\varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix} = \xi$ 的解
-    1. $\text{LVO}= \sup \left\{0, \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix}, \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix} \\ \end{pmatrix}, \cdots\right\}= \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \vdots \\ \end{pmatrix} \\ \end{pmatrix} \\ \end{pmatrix}$
-    2. $\text{LVO}=\theta_{\Omega^{\Omega}}(0)=\psi\left(\Omega^{\Omega^{\Omega}}\right)=\vartheta\left(\Omega^{\Omega}\right)$
+5. 大 $\text{Veblen}$ 序数：$\text{LVO}= \sup \left\{0, \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix}, \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix} \\ \end{pmatrix}, \cdots\right\}= \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \vdots \\ \end{pmatrix} \\ \end{pmatrix} \\ \end{pmatrix}$
+    1. $\text{LVO}=\theta_{\Omega^{\Omega}}(0)=\psi\left(\Omega^{\Omega^{\Omega}}\right)=\vartheta\left(\Omega^{\Omega}\right)$
+    2. $\text{LVO}$：$\varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix}$ 的最小不动点，即 $\varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix} = \xi$ 的最小解
 6. $\text{Bachmann}-\text{Howard}$ 序数：$\psi\left(\varepsilon_{\Omega+1}\right)=\theta_{\varepsilon_{\Omega+1}}(0)=\vartheta\left(\varepsilon_{\Omega+1}\right)$
 
 ## 4.2 序数分析
