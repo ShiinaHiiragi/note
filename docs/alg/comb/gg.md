@@ -554,7 +554,7 @@
     1. 设忙海狸 $\text{BB} = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$ 有 $n$ 个状态，且满足以下条件：
         1. 字母表 $\Sigma = \{0, 1\}$
         2. 起始格局下纸带上均为 $0$
-    2. 定义 $\Sigma(n)$ 为 $n$ 状态忙海狸停机时纸带上 $1$ 数量的最大值
+    2. 定义 $\Sigma(n)$ 为 $n$ 状态忙海狸停机时纸带上 $1$ 的最大数量
         1. $\sigma(0) = 0, \sigma(1) = 1, \sigma(2) = 4, \sigma(3) = 6, \sigma(4) = 13$
         2. $\sigma(5) \geqslant 4098, \sigma(6) \geqslant 10 \uparrow \uparrow 15$
         3. $\sigma(16) \geqslant \text{Graham}$ 数
@@ -576,17 +576,37 @@
     \Xi(2) &= 2 \\
     \Xi(3) &= 3 \\
     \Xi(4) &= 4 \\
-    \Xi(5) &= 6 \\
-    \Xi(6) &= 17 \\ 
-    \Xi(7) &= 51 \\
     \Xi(25) &> f_{\omega+1}(2) \\
     \Xi(117) &> f_{\omega^{\omega^\omega}+1}(2) \\
-    \Xi(2120) &> f_{\varepsilon_0}(5) \\
     \Xi(2171) &> f_{\varepsilon_0\omega+1}(3) = f_{\omega^{\varepsilon_0+1}+1}(3)
     \end{aligned}
     $$
 
-3. $\text{Rayo}$ 数：定义函数 $\mathrm{Rayo}(n)$ 为一阶集合论中大于用不超过 $n$ 个符号所能表示的任何有限数的最小正整数，并设 $\text{Rayo}$ 数为 $\mathrm{Rayo}(10^{100})$
+3. $\text{Rayo}$ 数：定义 $\mathrm{Rayo}(n)$ 为一阶集合论中大于用不超过 $n$ 个符号所能表示的任何数的最小正整数，设 $\text{Rayo}$ 数为 $\mathrm{Rayo}(10^{100})$
 4. $\text{Fish}$ 数
-    1. $\text{Fish 4}$ 数
-    2. $\text{Fish 7}$ 数
+    1. $\text{Fish 4}$ 数的 $\text{FGH}$ 近似：$F_4 \approx F\left[\omega_{\left(\omega^{\omega+1}\right) 63}^{\mathrm{CK}}+1\right](63)$
+        1. 设 $f$ 为函数，定义 $s'(1)(f) = g$，其中函数 $g(n)$ 是拥有对 $f$ 的神谕的忙海狸函数，即拥有神谕的 $n$ 状态忙海狸停机时纸带上 $1$ 的最大数量
+        2. 仿照 $F_3$ 定义 $ss'(n)$ 如下
+
+            $$
+            \begin{array}{rll}
+            s^{\prime}(n) f=g, & g(x)=\left[s^{\prime}(n-1)^x\right] f(x) \ (n>1) \\
+            s s^{\prime}(1) f=g, & g(x)=s^{\prime}(x) f(x) \\
+            s s^{\prime}(n) f=g, & g(x)=\left[s s^{\prime}(n-1)^x\right] f(x) \ (n>1)
+            \end{array}
+            $$
+
+        3. 定义 $\text{Fish 4}$ 函数 $F_4(x) = [ss'(2)^{63}](f)$，其中 $f(x) = x + 1$，并定义 $\text{Fish 4}$ 数为 $F_4 = F_{4}^{63}(3)$
+
+    2. $\text{Fish 7}$ 数的 $\text{Rayo}$ 层级近似：$F_7 \approx R_{\zeta_0}^{63}(10^{100})$
+        1. 设 $f$ 为函数，$f(a) = b$ 表示序列的第 $a$ 个和第 $b$ 个对象满足关系 $f(a) = b$．定义映射 $\text{RR}(f) = g$，其中函数 $g(n)$ 是将神谕 $f$ 加入一阶集合论的 $\text{Rayo}$ 函数
+        2. 将 $\text{Fish 6}$ 数中的 $m(0, 2)$ 替换为 $\text{RR}$，定义 $\text{Fish 7}$ 函数 $F_7(x) = m(x,2)m(x,1)(x)$，并定义 $\text{Fish 7}$ 数为 $F_7 = F_{7}^{63}(10^{100})$
+        3. 利用映射 $\text{RR}$ 定义 $\text{Rayo}$ 层级：
+
+            $$
+            \begin{aligned}
+            R_0(n) & = n \\
+            R_{\alpha+1} (n) & = \text{RR}(R_\alpha) (n) \\
+            R_\alpha (n) & = R_{\alpha[n]} (n) \ (\alpha \textsf{ 为极限序数且 } \alpha[n] \textsf{ 为基本列})
+            \end{aligned}
+            $$

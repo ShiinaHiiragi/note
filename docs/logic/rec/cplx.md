@@ -135,9 +135,9 @@
         2. 对于任意两个函数 $t_1, t_2: \mathbf N \to \mathbf N$ 有 $\mathrm{TIME}(t_1(n)) \subset \mathrm{TIME}(t_2(n))$，其中 $t_1(n) = \omicron\left(\dfrac{t_2(n)}{\log_2 t_2(n)}\right)$ 且 $t_2$ 是时间可构造的
         3. 对于任意两个实数 $1 \leqslant \varepsilon_1 < \varepsilon_2$ 有 $\mathrm{TIME}(n^{\varepsilon_1}) \subset \mathrm{TIME}(n^{\varepsilon_2})$
 3. 相对化
-    1. 谕示：针对一个语言的谕示是一个能判断任何串 $w$ 是否在该语言中的设备
-        1. 谕示 $\text{Turing}$ 机 $M^A$：在通常的 $\text{Turing}$ 机上增加查询 $A$ 的谕示的能力．每当 $M^A$ 在被称为谕示带的特殊纸带上写下一个字符串时，它就能在一步内得知该字符串是否属于 $A$
-        2. 令 $\mathrm{P}^A$ 是采用谕示 $A$ 的确定型多项式时间谕示 $\text{Turing}$ 机可判定的语言类；$\mathrm{NP}^A$ 是采用谕示 $A$ 的非确定型多项式时间谕示 $\text{Turing}$ 机可判定的语言类
+    1. 神谕：针对一个语言的神谕是一个能判断任何串 $w$ 是否在该语言中的设备
+        1. 神谕 $\text{Turing}$ 机 $M^A$：在通常的 $\text{Turing}$ 机上增加查询 $A$ 的神谕的能力．每当 $M^A$ 在被称为神谕带的特殊纸带上写下一个字符串时，它就能在一步内得知该字符串是否属于 $A$
+        2. 令 $\mathrm{P}^A$ 是采用神谕 $A$ 的确定型多项式时间神谕 $\text{Turing}$ 机可判定的语言类；$\mathrm{NP}^A$ 是采用神谕 $A$ 的非确定型多项式时间神谕 $\text{Turing}$ 机可判定的语言类
     2. 对角化方法的局限性
-        1. 存在谕示 $A$ 使得 $\mathrm{P}^A \neq \mathrm{NP}^A$
-        2. 存在谕示 $B$ 使得 $\mathrm{P}^B = \mathrm{NP}^B$
+        1. 存在神谕 $A$ 使得 $\mathrm{P}^A \neq \mathrm{NP}^A$
+        2. 存在神谕 $B$ 使得 $\mathrm{P}^B = \mathrm{NP}^B$
