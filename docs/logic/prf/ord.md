@@ -1,6 +1,7 @@
 # 4 序数分析
 
 ## 4.1 序数表示
+### 4.1.1 序数函数
 1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
     1. $\varphi_0(\beta) = \omega^{\beta}$
     2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\varphi_{\alpha}(\beta)$ 的第 $\beta$ 个不动点，即 $\varphi_{\alpha}(\gamma) = \gamma$ 的第 $\beta$ 个解
@@ -79,10 +80,12 @@
 
     利用序数塌缩函数定义如下序数：
 
-    1. $\Gamma_0$：$\varphi(1,0,0)=\theta_{\Omega}(0)=\psi\left(\Omega^{\Omega}\right)$
+    1. $\text{Feferman}-\text{Sch}\ddot{\mathrm u}\text{tte}$ 序数：$\Gamma_0=\varphi(1,0,0)=\theta_{\Omega}(0)=\psi\left(\Omega^{\Omega}\right)$
     2. $\text{Ackermann}$ 序数：$\varphi(1,0,0,0)=\theta_{\Omega^3}(0)=\psi\left(\Omega^{\Omega^2}\right)=\vartheta\left(\Omega^3\right)$
     3. 小 $\text{Veblen}$ 序数：$\text{SVO}=\theta_{\Omega^\omega}(0)=\psi\left(\Omega^{\Omega^\omega}\right)=\vartheta\left(\Omega^\omega\right)$
     4. 大 $\text{Veblen}$ 序数：$\text{LVO}=\theta_{\Omega^{\Omega}}(0)=\psi\left(\Omega^{\Omega^{\Omega}}\right)=\vartheta\left(\Omega^{\Omega}\right)$
     5. $\text{Bachmann}-\text{Howard}$ 序数：$\psi\left(\varepsilon_{\Omega+1}\right)=\theta_{\varepsilon_{\Omega+1}}(0)=\vartheta\left(\varepsilon_{\Omega+1}\right)$
+
+### 4.1.2 可数序数
 
 ## 4.2 序数分析
