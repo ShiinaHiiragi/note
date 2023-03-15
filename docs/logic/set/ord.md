@@ -96,8 +96,8 @@
 
         其中 $k \in \omega$，$\delta_{i}$ 和 $\gamma_{i}$ 都是序数且 $\gamma_{0}>\cdots>\gamma_{k-1}$
 
-3. 超穷归纳与递归
-    1. 第一形式超穷归纳原理：令 $\varphi(x)$ 为一个谓词．假设对所有的序数 $\alpha$，都有
+3. 超限归纳与递归
+    1. 第一形式超限归纳原理：令 $\varphi(x)$ 为一个谓词．假设对所有的序数 $\alpha$，都有
 
         $$
         (\forall \beta < \alpha \ (\varphi(\beta))) \to \varphi(\alpha)
@@ -105,14 +105,14 @@
 
         则 $\varphi(\alpha)$ 对所有的序数 $\alpha$ 都成立
 
-    2. 第二形式超穷归纳原理：令 $\varphi(x)$ 为一个谓词，假设
+    2. 第二形式超限归纳原理：令 $\varphi(x)$ 为一个谓词，假设
         1. $\varphi(0)$ 成立
         2. 对所有后继序数 $\alpha$，$\varphi(\alpha) \to \varphi(\alpha^{+})$
         3. 对所有极限序数 $\alpha \neq 0$, 如果对所有 $\beta<\alpha$，$\varphi(\beta)$ 都成立，则 $\varphi(\alpha)$ 成立
 
         则对所有的 $\alpha$，都有 $\varphi(\alpha)$
 
-    3. 超穷递归定理：假设 $\mathbf{G}: \mathbf{V} \rightarrow \mathbf{V}$ 为映射，则存在唯一的映射 $\mathbf{F}: \mathbf{O n} \rightarrow \mathbf{V}$ 满足对任意序数 $\alpha$，都有 $\mathbf{F}(\alpha)=\mathbf{G}(\mathbf{F}\upharpoonright \alpha)$
+    3. 超限递归定理：假设 $\mathbf{G}: \mathbf{V} \rightarrow \mathbf{V}$ 为映射，则存在唯一的映射 $\mathbf{F}: \mathbf{O n} \rightarrow \mathbf{V}$ 满足对任意序数 $\alpha$，都有 $\mathbf{F}(\alpha)=\mathbf{G}(\mathbf{F}\upharpoonright \alpha)$
         1. 令 $\mathbf{G}: \mathbf{V} \rightarrow \mathbf{V}$ 为映射, 则存在运算 $\mathbf F: \mathbf V \times \mathbf{On} \rightarrow \mathbf V$ 满足对所有的集合 $z$ 和序数 $\alpha$，都有 $\mathbf{F}(z, \alpha)=\mathbf{G}\left(\mathbf{F}_{z} \upharpoonright \alpha\right)$
         2. 令 $\mathbf G_{1}, \mathbf G_{2}, \mathbf G_{3}$ 为 $\mathbf V$ 上的映射，则存在 $\mathbf{On}$ 上的映射 $\mathbf F$ 满足
 

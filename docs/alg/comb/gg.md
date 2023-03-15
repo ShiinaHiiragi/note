@@ -548,6 +548,35 @@
             定义 $\text{goppatoth} = 10 \uparrow \uparrow 100 \& 10$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\varepsilon_0\right](100)$
 
 ### 2.3.2 高阶算术
+1. $\text{Fish 6}$ 数的 $\text{FGH}$ 近似：$F_4 \approx F[\zeta_0 + 1](63)$
+    1. 定义集合 $M[m, n]$ 如下
+
+        $$
+        \begin{aligned}
+        M[0, 1] & = \mathbf N^{\mathbf N} \\
+        M[m, 1] & = M[m - 1, 1] \times M[m - 1, 2] \times M[m - 1, 3] \times \cdots \\
+        M[m, n] & = M[m, n - 1]^{M[m, n - 1]}
+        \end{aligned}
+        $$
+
+    2. $m(m, n) \in M[m, n]$ 定义如下
+
+        $$
+        \begin{aligned}
+        m(0,1)(x) & = x+1 \\
+        m(m, n+1)(f_n)(f_{n-1}) \cdots (f_1)(x) & = [f_n^x] (f_{n-1}) \cdots (f_1)(x) \ (m = 0, n > 0 \vee m > 0, n > 1) \\
+        m(m+1,1) & = {[m(m, 1), m(m, 2), m(m, 3), \cdots] } \\
+        m(m+1,2)\left[a_1, a_2, \cdots\right] & = \left[b_1, b_2, \cdots\right] \\
+        b_n (f_{n-1}) \cdots (f_1)(x) & = a_y (a_{y-1}) \cdots (a_n) (f_{n-1}) \cdots (f_1) (x) \ (y=\max (x, n))
+        \end{aligned}
+        $$
+
+    3. 定义 $\text{Fish 6}$ 函数 $F_6(x) = m(x, 2) m(x, 1)(x)$，并定义 $\text{Fish 6}$ 数为 $F_6 = F_{6}^{63}(3)$
+
+2. 图论问题
+    1. 次立方图数
+    2. $\text{Buchholz}$ 九头蛇
+    3. $\text{TREE}$ 序列
 
 ## 2.4 不可计算函数
 1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数，其 $\text{FGH}$ 近似为 $F\left[\omega_1^{\text{CK}}\right](n)$
