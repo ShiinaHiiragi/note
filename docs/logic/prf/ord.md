@@ -52,7 +52,7 @@
 3. $\text{Kleene } \mathcal{O}-$表示 
 
 ### 4.1.2 可数序数
-1. 可数序数
+1. 递归序数
     1. 定义 $\varphi_{1}(\gamma) = \varepsilon_{\gamma}$，即满足 $\omega^\xi = \xi$ 的解
 
         $$
