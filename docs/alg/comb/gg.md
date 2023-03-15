@@ -577,6 +577,14 @@
     1. $\text{Buchholz}$ 九头蛇
     2. $\text{TREE}$ 序列
     3. 次立方图数
+        1. 给定 $k \in \mathbf N$，对于图的一个序列 $G_1, G_2, \cdots$ 有
+            - 每个图 $G_i$ 都是次立方图，即每个顶点的度数至多为 $3$
+            - 每个图 $G_i$ 至多有 $i+k$ 个顶点
+            - 对于任意 $i<j$，$G_i$ 都不是 $G_j$ 的图子式
+
+            定义该序列的最大长度为 $\text{SCG}(k)$，其 $\text{FGH}$ 近似为 $F\left[\psi_0\left(\Omega_\omega\right)\right](k) \leqslant \operatorname{SCG}(k)<F\left[\psi_0\left(\varepsilon_{\Omega_\omega+1}\right)\right](k)$
+
+        2. 对于上述问题，若要求次立方图无环且无多重边，则定义满足该条件的序列最大长度为 $\text{SSCG}(k)$
 
 ## 2.4 不可计算函数
 1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数
