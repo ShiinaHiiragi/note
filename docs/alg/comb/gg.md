@@ -593,8 +593,6 @@
         4. $\text{SCG}(k)$ 的 $\text{FGH}$ 近似为 $F\left[\psi_0\left(\Omega_\omega\right)\right](k) \leqslant \operatorname{SCG}(k)<F\left[\psi_0\left(\varepsilon_{\Omega_\omega+1}\right)\right](k)$
         5. 若要求次立方图无环且无多重边，则定义满足该条件的序列最大长度为 $\text{SSCG}(k)$
 
-3. 贪心团序列
-
 ## 2.4 不可计算函数
 1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数
     1. 设（一阶）海狸机 $\text{BB} = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$ 有 $n$ 个状态，且满足以下条件：① 字母表 $\Sigma = \{0, 1\}$；② 起始格局下纸带上均为 $0$．定义 $\Sigma_1(n)$ 为 $n$ 状态海狸机停机时纸带上 $1$ 的最大数量
