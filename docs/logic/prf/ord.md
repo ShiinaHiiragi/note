@@ -49,7 +49,7 @@
         \end{aligned}
         $$
 
-3. $\text{Kleene } \mathcal{O}-$表示 
+3. $\text{Kleene } \mathcal{O}-$表示：
 
 ### 4.1.2 可数序数
 1. 递归序数
