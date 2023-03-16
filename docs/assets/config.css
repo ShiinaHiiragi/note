@@ -8,6 +8,7 @@
   background-color: rgb(204, 226, 255);
 }
 
+/* Define Fonts */
 @font-face {
   font-family: "Noto Sans SC";
   src: "NotoSansSC-Regular.otf";
@@ -40,12 +41,14 @@ h1, h2, h3, h4, h5, h6 {
   border-radius: 0.1rem;
 }
 
+/* Table */
 div.text-table {
   text-align: center;
 }
 
 div.text-table table {
   display: table;
+  overflow: inherit !important;
 }
 
 div.text-table th {

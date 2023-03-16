@@ -27,8 +27,22 @@
 3. 多元多项式：含两个以上变元的多项式
     1. 特殊多项式
         1. 齐次多项式：若标准形式多项式各项次数均为 $n$，则称之为 $n$ 次齐次多项式
-        2. 对称多项式：设 $f(x_1, x_2, \cdots , x_n)$ 是 $n$ 元多项式，如果对任意 $i, j \ (1 \leqslant i < j \leqslant n)$ 都有 $f(x_1, \cdots x_i, \cdots, x_j, \cdots, x_n) = f(x_1, \cdots, x_j, \cdots, x_i, \cdots, x_n)$，则称该多项式为对称多项式
-        3. 交代多项式：设 $f(x_1, x_2, \cdots , x_n)$ 是 $n$ 元多项式，如果对任意 $i, j \ (1 \leqslant i < j \leqslant n)$ 都有 $f(x_1, \cdots x_i, \cdots, x_j, \cdots, x_n) = -f(x_1, \cdots, x_j, \cdots, x_i, \cdots, x_n)$，则称该多项式为交代多项式
+        2. 对称多项式：设 $f(x_1, x_2, \cdots , x_n)$ 是 $n$ 元多项式，如果对任意 $i, j \ (1 \leqslant i < j \leqslant n)$ 都有
+
+            $$
+            f(x_1, \cdots x_i, \cdots, x_j, \cdots, x_n) = f(x_1, \cdots, x_j, \cdots, x_i, \cdots, x_n)
+            $$
+
+            则称该多项式为对称多项式
+
+        3. 交代多项式：设 $f(x_1, x_2, \cdots , x_n)$ 是 $n$ 元多项式，如果对任意 $i, j \ (1 \leqslant i < j \leqslant n)$ 都有
+
+            $$
+            f(x_1, \cdots x_i, \cdots, x_j, \cdots, x_n) = -f(x_1, \cdots, x_j, \cdots, x_i, \cdots, x_n)
+            $$
+
+            则称该多项式为交代多项式
+
         4. 轮换多项式：设 $f(x_1, x_2, \cdots , x_n)$ 是 $n$ 元多项式，如果将变数字母 $x_1, x_2, \cdots, x_n$ 按一定顺序轮换，多项式值不变，则称该多项式为轮换多项式
     2. 多项式的性质
         1. 对称式一定是轮换式，反之不一定成立
