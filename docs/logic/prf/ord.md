@@ -4,16 +4,16 @@
 ### 4.1.1 序数函数
 1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
     1. $\varphi_0(\beta) = \omega^{\beta}$
-    2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\varphi_{\alpha}(\beta)$ 的第 $\beta$ 个不动点，即 $\varphi_{\alpha}(\gamma) = \gamma$ 的第 $\beta$ 个解
-    3. 对于极限序数 $\alpha$，定义 $\varphi_{\alpha}(\beta)$ 为所有序数 $\gamma < \alpha$ 对应的 $\text{Veblen}$ 函数 $\varphi_{\gamma}$ 的第 $\beta$ 个公共不动点
+    2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\xi \mapsto \varphi_{\alpha}(\xi)$ 的第 $\beta$ 个不动点
+    3. 对于极限序数 $\alpha$，定义 $\varphi_{\alpha}(\beta)$ 为所有序数 $\gamma < \alpha$ 对应的 $\text{Veblen}$ 函数 $\xi \mapsto \varphi_{\gamma}(\xi)$ 的第 $\beta$ 个公共不动点
 
     所有 $\text{Veblen}$ 函数的不动点均从 $0$ 开始计数
 
-    1. 扩展 $\text{Veblen}$ 函数：将 $\varphi_{\alpha}(\gamma)$ 视作二元函数 $\varphi(\alpha, \gamma)$，令 $z$ 为多于或等于 $0$ 个 $0$ 的简记，$s$ 为多于或等于 $0$ 个序数变量 $\alpha_1, \alpha_2, \cdots, \alpha_n \ (\alpha_1 > 0)$ 的简记，则定义
+    4. 扩展 $\text{Veblen}$ 函数：将 $\varphi_{\alpha}(\gamma)$ 视作二元函数 $\varphi(\alpha, \gamma)$，令 $z$ 为多于或等于 $0$ 个 $0$ 的简记，$s$ 为多于或等于 $0$ 个序数变量 $\alpha_1, \alpha_2, \cdots, \alpha_n \ (\alpha_1 > 0)$ 的简记，则定义
         1. $\varphi(\gamma)=\omega^\gamma$
         2. $\varphi(z,s,\gamma)=\varphi(s,\gamma)$
-        3. 若 $\alpha_{n+1} > 0$，则 $\varphi(s, \alpha_{n+1}, z, \gamma)$ 表示「对所有序数 $\beta < \alpha_{n+1}$ 对应的函数 $\varphi(s, \beta, \xi, z)$」的第 $\gamma$ 个公共不动点，即 $\varphi(s, \beta, \xi, z) = \xi$ 的第 $\gamma$ 个解
-    2. 超限 $\text{Veblen}$ 函数：利用数阵 $\varphi \begin{pmatrix} \alpha_1 & \alpha_2 & \cdots & \alpha_n \\ \beta_1 & \beta_2 & \cdots & \beta_n \\ \end{pmatrix}$ 表示 $\text{Veblen}$ 函数，其中 $\beta_i$ 表示 $\alpha_i$ 在扩展 $\text{Veblen}$ 函数的位置
+        3. 若 $\alpha_{n+1} > 0$，则 $\varphi(s, \alpha_{n+1}, z, \gamma)$ 表示「对所有序数 $\beta < \alpha_{n+1}$ 对应的函数 $\xi \mapsto \varphi(s, \beta, \xi, z)$」的第 $\gamma$ 个公共不动点
+    5. 超限 $\text{Veblen}$ 函数：利用数阵 $\varphi \begin{pmatrix} \alpha_1 & \alpha_2 & \cdots & \alpha_n \\ \beta_1 & \beta_2 & \cdots & \beta_n \\ \end{pmatrix}$ 表示 $\text{Veblen}$ 函数，其中 $\beta_i$ 表示 $\alpha_i$ 在扩展 $\text{Veblen}$ 函数的位置
 
 2. 序数塌缩函数 $\text{OCF}$：设 $\Omega_{\alpha} = \aleph_{\alpha}, \Omega = \aleph_1$
     1. $\text{Feferman } \theta-$函数
@@ -49,7 +49,11 @@
         \end{aligned}
         $$
 
-3. $\text{Kleene } \mathcal{O}-$记号
+3. $\text{Kleene } \mathcal{O}-$记号：按照 $\text{Turing}$ 机编码的字典序枚举所有部分递归函数 $f_1, f_2, \cdots$，设 $K$ 表示所有记号，$<_{\mathcal O}$ 表示 $K$ 的良基严格偏序．定义 $\mathcal O: K \to \mathbf{On}$ 如下
+    1. $0 \in K$ 且 $\mathcal O(0) = 0$
+    2. 若 $n \in K$ 且 $\mathcal O(n) = \alpha$，则 $n <_{\mathcal O} 2^{n} \in K$ 且 $\mathcal O(2^{n}) = \alpha + 1$
+    3. 若对任何自然数 $n$ 都有 $f_i(n) \in K$ 且 $f_i(n) <_{\mathcal O} f_i(n + 1)$，则 $3 \cdot 5^i \in K, {\displaystyle \mathcal{O}(3 \cdot 5^i) = \sup_{k \in \omega} \mathcal{O}(f_i(k))}$，且对于所有 $k$ 都有 $f_i(k) <_\mathcal{O} 3 \cdot 5^i$
+    4. $a <_\mathcal{O} b$ 与 $b <_\mathcal{O} c$ 蕴含 $a <_\mathcal{O} c$
 
 ### 4.1.2 可数序数
 1. 递归序数
@@ -70,15 +74,17 @@
         2. $\Gamma_0$ 是满足 $\varphi_{\alpha}(0) = \alpha$ 的最小序数，且有 $\Gamma_0 = \varphi_{\varphi_{\varphi_{._{._..}.}(0)}(0)}(0) = \varphi(\varphi(\varphi(...),0),0),0)$
     3. $\text{Ackermann}$ 序数：$\varphi(1, 0, 0, 0)$
         1. $\varphi(1,0,0,0)=\theta_{\Omega^3}(0)=\psi\left(\Omega^{\Omega^2}\right)=\vartheta\left(\Omega^3\right)$
-        2. $\text{Ackermann}$ 序数是 $\varphi(\xi, 0, 0)$ 的最小不动点，即 $\varphi(\xi, 0, 0) = \xi$ 的最小解
+        2. $\text{Ackermann}$ 序数是 $\xi \mapsto \varphi(\xi, 0, 0)$ 的最小不动点
     4. 小 $\text{Veblen}$ 序数 $\text{SVO} = \sup \left\{\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots\right\}=\varphi \begin{pmatrix} 1 \\ \omega \\ \end{pmatrix}$
         - $\text{SVO}=\theta_{\Omega^\omega}(0)=\psi\left(\Omega^{\Omega^\omega}\right)=\vartheta\left(\Omega^\omega\right)$
-    5. 大 $\text{Veblen}$ 序数：$\text{LVO}= \sup \left\{0, \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix}, \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix} \\ \end{pmatrix}, \cdots\right\}= \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \vdots \\ \end{pmatrix} \\ \end{pmatrix} \\ \end{pmatrix}$
+    5. 大 $\text{Veblen}$ 序数：$\text{LVO}= \sup \left\{\varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix}, \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix} \\ \end{pmatrix}, \cdots\right\}= \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \vdots \\ \end{pmatrix} \\ \end{pmatrix} \\ \end{pmatrix}$
         1. $\text{LVO}=\theta_{\Omega^{\Omega}}(0)=\psi\left(\Omega^{\Omega^{\Omega}}\right)=\vartheta\left(\Omega^{\Omega}\right)$
-        2. $\text{LVO}$：$\varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix}$ 的最小不动点，即 $\varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix} = \xi$ 的最小解
+        2. $\text{LVO}$：$\xi \mapsto \varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix}$ 的最小不动点
 
 2. 大可数序数
     1. $\omega_1^\mathfrak{Ch}$
-    2. $\text{Church}-\text{Kleene}$ 序数
+    2. $\text{Church}-\text{Kleene}$ 序数：最小的非递归序数，记为 $\omega_1^{\mathrm{CK}}$
+        1. 递归序数：若序数 $\alpha$ 存在某个自然数集上的递归关系 $R$ 使得 $R$ 为与 $\alpha$ 同构的良序，则称 $\alpha$ 为递归序数或可计算序数．递归序数即所有 $\text{Kleene } \mathcal{O}-$记号可表示的序数
+        2. $\omega_1^{\mathrm{CK}}$ 无法用 $\text{OCF}$ 表示
 
 ## 4.2 序数分析
