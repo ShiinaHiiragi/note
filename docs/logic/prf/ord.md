@@ -82,9 +82,20 @@
         2. $\text{LVO}$：$\xi \mapsto \varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix}$ 的最小不动点
 
 2. 大可数序数
-    1. $\omega_1^\mathfrak{Ch}$
+    1. $\omega_1^\mathfrak{Ch}$：考察在可数无穷大上棋盘的有穷个棋子，设所有棋盘位置的集合为 $P$，定义函数 $V: P \to \omega_1$，对于黑白两方
+        1. 若白方在位置 $p$ 胜利，则 $V(p) = 0$
+        2. 若白方将从位置 $p$ 移动，且若所有合法移动有最小值 $\alpha$，则 $V(p) = \alpha + 1$
+        3. 若黑方将从位置 $p$ 移动，且若所有合法移动有最小值 $\alpha$，则 $V(p) = \alpha$
+
+        定义 $\omega_1^\mathfrak{Ch}$ 为白方可以胜利的位置对应值的上确界
+
+        1. 若棋盘上允许有无穷个棋子，则定义对应上确界为 $\omega_1^{\mathfrak{Ch}'}$
+        2. 若棋盘为三维且只允许有有穷个棋子，则定义对应上确界为 $\omega_1^{\mathfrak{Ch}_3}$，如果允许有无穷个棋子，则定义对应上确界为 $\omega_1^{\mathfrak{Ch}_3'}$
+
+        可以证明 $\omega_1^\mathfrak{Ch}, \omega_1^{\mathfrak{Ch}_3} \leqslant \omega_1^\text{CK}$ 且 $\omega_1^{\mathfrak{Ch}'} = \omega_1^{\mathfrak{Ch}_3'} = \omega_1$
+
     2. $\text{Church}-\text{Kleene}$ 序数：最小的非递归序数，记为 $\omega_1^{\mathrm{CK}}$
         1. 递归序数：若序数 $\alpha$ 存在某个自然数集上的递归关系 $R$ 使得 $R$ 为与 $\alpha$ 同构的良序，则称 $\alpha$ 为递归序数或可计算序数．递归序数即所有 $\text{Kleene } \mathcal{O}-$记号可表示的序数
-        2. $\omega_1^{\mathrm{CK}}$ 无法用 $\text{OCF}$ 表示
+        2. $\omega_1^{\mathrm{CK}}$ 无法用 $\text{OCF}$ 等序数记号表示
 
 ## 4.2 序数分析
