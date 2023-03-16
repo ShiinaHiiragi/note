@@ -90,7 +90,8 @@ nav:
   - 通用:
     - 介绍: index.md
     - 许可证: intro/license.md
-    - 排版规范: intro/norm.md
+    - 排版规范: intro/format.md
+    - 内容规范: intro/norm.md
   - 认识基础:
     - 一、形式逻辑:
       - 1 概念: cogn/form/cep.md
