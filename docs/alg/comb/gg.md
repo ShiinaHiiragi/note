@@ -460,7 +460,7 @@
             & \textsf{ 对 } f_n \in M_n, m(n+1)(f_n) = g_n \textsf{ 定义如下：} \\
             & \quad \textsf{ 对 } f_{n-1} \in M_{n-1}, g_n(f_{n-1}) = g_{n-1} \textsf{ 定义如下：} \\
             & \quad \quad \textsf{ 对 } f_{n-2} \in M_{n-2}, g_{n-1}(f_{n-2}) = g_{n-2} \textsf{ 定义如下：} \\
-            & \quad \quad \quad \ddots \\
+            & \quad \quad \quad \ldots \\
             & \quad \quad \quad \quad \textsf{ 对 } f_{0} \in M_{0}, g_{1}(f_{0}) = g_{0} \textsf{ 定义如下：} \\
             & \quad \quad \quad \quad \quad g_0=\left(\cdots\left(\left(\left[f_n^{f_0}\right] f_{n-1}\right) f_{n-2}\right) \cdots f_1\right) f_0
             \end{aligned}
@@ -574,17 +574,26 @@
     3. 定义 $\text{Fish 6}$ 函数 $F_6(x) = m(x, 2) m(x, 1)(x)$，并定义 $\text{Fish 6}$ 数为 $F_6 = F_{6}^{63}(3)$
 
 2. 图论问题
-    1. $\text{Buchholz}$ 九头蛇
-    2. $\text{TREE}$ 序列
-    3. 次立方图数
-        1. 给定 $k \in \mathbf N$，对于图的一个序列 $G_1, G_2, \cdots$ 有
-            - 每个图 $G_i$ 都是次立方图，即每个顶点的度数至多为 $3$
-            - 每个图 $G_i$ 至多有 $i+k$ 个顶点
-            - 对于任意 $i<j$，$G_i$ 都不是 $G_j$ 的图子式
+    1. $\text{TREE}$ 序列：给定 $k \in \mathbf N$，对于 $k-$可着色树的一个序列 $T_1, T_2, \cdots$ 有
+        1. 每个树 $T_i$ 至多有 $i$ 个顶点
+        2. 对于任意 $i<j$，$T_i$ 都不是 $T_j$ 的图子式
 
-            定义该序列的最大长度为 $\text{SCG}(k)$，其 $\text{FGH}$ 近似为 $F\left[\psi_0\left(\Omega_\omega\right)\right](k) \leqslant \operatorname{SCG}(k)<F\left[\psi_0\left(\varepsilon_{\Omega_\omega+1}\right)\right](k)$
+        定义该序列的最大长度为 $\text{TREE}[k]$
 
-        2. 对于上述问题，若要求次立方图无环且无多重边，则定义满足该条件的序列最大长度为 $\text{SSCG}(k)$
+        3. $\text{TREE}[1] = 1, \text{TREE}[2] = 3, \text{TREE}[3] > F[\textrm{SVO}](G)$，其中 $G$ 为 $\text{Graham}$ 数
+        4. 若树不着色，且树 $T_i$ 至多有 $i + k$ 个顶点，其余条件不变，则将该序列的最大长度记为 $\text{tree}(k)$
+
+    2. 次立方图数：给定 $k \in \mathbf N$，对于图的一个序列 $G_1, G_2, \cdots$ 有
+        1. 个图 $G_i$ 都是次立方图，即每个顶点的度数至多为 $3$
+        2. 个图 $G_i$ 至多有 $i+k$ 个顶点
+        3. 于任意 $i<j$，$G_i$ 都不是 $G_j$ 的图子式
+
+        定义该序列的最大长度为 $\text{SCG}(k)$
+
+        4. $\text{SCG}(k)$ 的 $\text{FGH}$ 近似为 $F\left[\psi_0\left(\Omega_\omega\right)\right](k) \leqslant \operatorname{SCG}(k)<F\left[\psi_0\left(\varepsilon_{\Omega_\omega+1}\right)\right](k)$
+        5. 若要求次立方图无环且无多重边，则定义满足该条件的序列最大长度为 $\text{SSCG}(k)$
+
+3. 贪心团序列
 
 ## 2.4 不可计算函数
 1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数
