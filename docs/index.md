@@ -347,16 +347,6 @@ const refList = [
         page: [1, 295]
     },
     {
-        author: ["彭家贵", "陈卿"],
-        title: "微分几何",
-        type: "M",
-        press: "高等教育出版社",
-        locate: "北京",
-        year: 2002,
-        page: [1, 152],
-        plot: 0
-    },
-    {
         author: ["梅向明", "刘增贤", "王汇淳", "王智秋"],
         title: "高等几何",
         type: "M",
