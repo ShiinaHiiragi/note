@@ -58,12 +58,13 @@
 
     <div class="text-table">
 
-    |                                   标题                                   |              作者              | 分类  |
-    | :----------------------------------------------------------------------: | :----------------------------: | :---: |
-    |          Ordinal Analysis with an Introduction to Proof Theory           |         Toshiyasu Arai         |  三   |
-    | The Higher Infinite: Large Cardinals in Set Theory from Their Beginnings |        Akihiro Kanamori        |  三   |
-    |                               代数拓扑讲义                               |             周建伟             |  五   |
-    |                              流形与几何初步                              |             梅加强             |  五   |
-    |                                 泛函分析                                 | 程其襄、张奠宙、胡善文、薛以峰 |  六   |
+    |                                   标题                                   |               作者                | 分类  |
+    | :----------------------------------------------------------------------: | :-------------------------------: | :---: |
+    |          Ordinal Analysis with an Introduction to Proof Theory           |          Toshiyasu Arai           |  三   |
+    | The Higher Infinite: Large Cardinals in Set Theory from Their Beginnings |         Akihiro Kanamori          |  三   |
+    |                               代数拓扑讲义                               |              周建伟               |  五   |
+    |                              流形与几何初步                              |              梅加强               |  五   |
+    |                                 泛函分析                                 |  程其襄、张奠宙、胡善文、薛以峰   |  六   |
+    |        Homotopy Type Theory: Univalent Foundations of Mathematics        | The Univalent Foundations Program |  八   |
 
     </div>
