@@ -70,7 +70,7 @@
     - $\text{Poincar}\acute{\mathrm e}$ 回归时间：约 $10 \uparrow 10 \uparrow 10 \uparrow 10 \uparrow 2.08$，即可观测宇宙的始态复现时间
 
 ## 2.2 序数层级
-1. 基本列：设 $\alpha_0 < \alpha_1 < \alpha_2 < \cdots$ 为严格递增的无穷序数序列，若存在极限序数 $\alpha$ 使得 $\alpha = \sup\{\alpha_0, \alpha_1, \alpha_2, \cdots\}$，则称 $\alpha_0, \alpha_1, \alpha_2, \cdots$ 为以 $\alpha$ 为极限的基本列，记作 $\alpha = \lim(\alpha_0, \alpha_1, \alpha_2, \cdots)$
+1. 基本列：设 $\alpha_0 < \alpha_1 < \alpha_2 < \cdots$ 为一系列严格递增的无穷序数，若存在极限序数 $\alpha$ 使得 $\alpha = \sup\{\alpha_0, \alpha_1, \alpha_2, \cdots\}$，则称 $\alpha_0, \alpha_1, \alpha_2, \cdots$ 为以 $\alpha$ 为极限的基本列，记作 $\alpha = \lim(\alpha_0, \alpha_1, \alpha_2, \cdots)$
     1. $\text{Wainer}$ 层级：对于极限序数 $\alpha \leqslant \varepsilon_0$，定义 $\alpha$ 的基本列 $\alpha[0], \alpha[1], \cdots$ 如下
 
         $$
@@ -140,15 +140,15 @@
     1. 缓增长函数的速度慢于 $\text{Hardy}$ 函数，且有 $G[\varepsilon_0](n) = n \uparrow \uparrow n$
     2. 缓增长函数追上急增长函数的时机取决于基本列的选择
 
-5. 原始数列数：设「$\oplus$」为数列的拼接运算，例如 $(0, 1) \oplus (0) = (0, 1, 0)$
-    1. 原始数列的递归定义：设 $S = (S_0, S_1, \cdots, S_n) \ (S_i \in \mathbf N)$
-        1. 空数列 $()$ 是原始数列
-        2. 若 $S$ 是至多只含一个 $0$ 的原始数列，则 $w(S) = (0) \oplus S'$ 也是原始数列，其中
+5. 原始数列数：设「$\oplus$」为数列的拼接运算，例如 $\left<0, 1\right> \oplus \left<0\right> = \left<0, 1, 0\right>$
+    1. 原始数列的递归定义：设 $S = \left<S_0, S_1, \cdots, S_n\right> \ (S_i \in \mathbf N)$
+        1. 空数列 $\left<\right>$ 是原始数列
+        2. 若 $S$ 是至多只含一个 $0$ 的原始数列，则 $w(S) = \left<0\right> \oplus S'$ 也是原始数列，其中
 
             $$
             S' = \left\{\begin{aligned}
-            & (), & S = () \\
-            & (S_0 + 1, S_1 + 1, \cdots, S_n + 1), & S = (S_0, S_1, \cdots, S_n) \neq ()
+            & \left<\right>, & S = \left<\right> \\
+            & \left<S_0 + 1, S_1 + 1, \cdots, S_n + 1\right>, & S = \left<S_0, S_1, \cdots, S_n\right> \neq \left<\right>
             \end{aligned}\right.
             $$
 
@@ -157,38 +157,38 @@
         除上述定义外不存在其他的原始数列
 
         1. 一个原始数列与唯一序数对应：设序数 $\alpha, \beta$ 分别与基本列 $S, T$ 对应，记作 $\alpha \leftrightarrow S, \beta \leftrightarrow T$
-            - $0 \leftrightarrow ()$
-            - $\omega^{\alpha} \leftrightarrow (0) + S'$
+            - $0 \leftrightarrow \left<\right>$
+            - $\omega^{\alpha} \leftrightarrow \left<0\right> + S'$
             - 若 $\alpha > \beta$，则 $S$ 字典序大于 $T$ 且 $\alpha + \beta \leftrightarrow S + T$
 
             $$
             \begin{aligned}
-            1 & \leftrightarrow(0) \\
-            2 & \leftrightarrow(0,0) \\
-            \omega & \leftrightarrow(0,1) \\
-            \omega+2 & \leftrightarrow(0,1,0,0) \\
-            \omega \cdot 2 & \leftrightarrow(0,1,0,1) \\
-            \omega^2 & \leftrightarrow(0,1,1) \\
-            \omega^2+\omega & \leftrightarrow(0,1,1,0,1) \\
-            \omega^3 & \leftrightarrow(0,1,1,1) \\
-            \omega^\omega & \leftrightarrow(0,1,2) \\
-            \omega^{\omega^\omega} & \leftrightarrow(0,1,2,3) \\
-            \omega^{\omega^{\left(\omega^\omega+1\right)}} & \leftrightarrow(0,1,2,3,4,2)
+            1 & \leftrightarrow\left<0\right> \\
+            2 & \leftrightarrow\left<0,0\right> \\
+            \omega & \leftrightarrow\left<0,1\right> \\
+            \omega+2 & \leftrightarrow\left<0,1,0,0\right> \\
+            \omega \cdot 2 & \leftrightarrow\left<0,1,0,1\right> \\
+            \omega^2 & \leftrightarrow\left<0,1,1\right> \\
+            \omega^2+\omega & \leftrightarrow\left<0,1,1,0,1\right> \\
+            \omega^3 & \leftrightarrow\left<0,1,1,1\right> \\
+            \omega^\omega & \leftrightarrow\left<0,1,2\right> \\
+            \omega^{\omega^\omega} & \leftrightarrow\left<0,1,2,3\right> \\
+            \omega^{\omega^{\left(\omega^\omega+1\right)}} & \leftrightarrow\left<0,1,2,3,4,2\right>
             \end{aligned}
             $$
 
         2. 若非空原始数列 $S$ 的末尾不为 $0$，则称 $S$ 为极限原始数列
 
     2. 原始数列系统：设 $S$ 为原始数列，$f(n) = n^2 + 1$．定义 $S[n]: \mathbf N \to \mathbf N$ 如下
-        1. $()[n] = n$
-        2. 当 $S_n = 0$ 时，$S[n]=\left(S_0, S_1, \cdots, S_{n-1}\right)[f(n)]$
+        1. $\left<\right>[n] = n$
+        2. 当 $S_n = 0$ 时，$S[n]=\left<S_0, S_1, \cdots, S_{n-1}\right>[f(n)]$
         3. 当 $S_n > 0$ 时，将数列分为好的部分 $g$ 与坏的部分 $b$，令 $r$ 为满足 $k < n$ 且 $S_k < S_n$ 的最大非负整数
-            - 若 $k$ 不存在，则 $g = (S_0, S_1, \cdots, S_{n-1}), b = ()$
-            - 若 $k$ 存在，则 $g = (S_0, S_1, \cdots, S_{k-1}), b = (S_{k}, S_{k+1}, \cdots, S_{n-1})$
+            - 若 $k$ 不存在，则 $g = \left<S_0, S_1, \cdots, S_{n-1}\right>, b = \left<\right>$
+            - 若 $k$ 存在，则 $g = \left<S_0, S_1, \cdots, S_{k-1}\right>, b = \left<S_{k}, S_{k+1}, \cdots, S_{n-1}\right>$
 
-            令 $S[n] = (g \oplus \small \underbrace{\normalsize b \oplus b \oplus \cdots \oplus b}_{\normalsize f(n)+1} \normalsize)[f(n)]$
+            令 $S[n] = \left<\right.g \oplus \small \underbrace{\normalsize b \oplus b \oplus \cdots \oplus b}_{\normalsize f(n)+1} \normalsize\left.\right>[f(n)]$
 
-        原始数列系统在 $\text{Wainer}$ 层级下近似为 $(0, 1, 2, \cdots, n)[n] \approx H\left[\varepsilon_0\right](n) \approx F\left[\varepsilon_0\right](n)$
+        原始数列系统在 $\text{Wainer}$ 层级下近似为 $\left<0, 1, 2, \cdots, n\right>[n] \approx H\left[\varepsilon_0\right](n) \approx F\left[\varepsilon_0\right](n)$
 
     3. 原始数列的基本列：给定原始数列 $S$ 与非负整数，定义基本列 $S[0], S[1], S[n],\cdots$ 如下
         1. $\left(w\left(S_1\right)\oplus w\left(S_2\right)\oplus \cdots\oplus w\left(S_k\right)\right)[n]=w\left(S_1\right)\oplus w\left(S_2\right)\oplus \cdots\oplus w\left(S_{k-1}\right)\oplus w\left(S_k\right)[n]$
