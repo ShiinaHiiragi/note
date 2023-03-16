@@ -1,6 +1,6 @@
 # 4 序数分析
 
-## 4.1 序数表示
+## 4.1 序数记号
 ### 4.1.1 序数函数
 1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
     1. $\varphi_0(\beta) = \omega^{\beta}$
@@ -49,7 +49,7 @@
         \end{aligned}
         $$
 
-3. $\text{Kleene } \mathcal{O}-$表示：
+3. $\text{Kleene } \mathcal{O}-$记号
 
 ### 4.1.2 可数序数
 1. 递归序数

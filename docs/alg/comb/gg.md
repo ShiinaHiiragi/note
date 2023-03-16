@@ -260,7 +260,7 @@
 
         特别地，$\alpha \uparrow \beta$ 也可写作 $\alpha \widehat{\ \ \ } \beta$
 
-2. 超 $\text{E}$ 表示：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
+2. 超 $\text{E}$ 记号：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
 
     $$
     \begin{aligned}
@@ -273,7 +273,7 @@
     1. $E[a] \small \underbrace{\normalsize 1 \# 1 \# \cdots \# 1}_{\normalsize c-1} \normalsize \# b = a \uparrow ^c b$
     2. 称 $b$ 为基数，基数为 $10$ 时通常可被省略，例如 $\text{Googolplex}$ 数可表示为 $E 100\#2$
 
-3. $\text{Steinhaus}-\text{Moser}$ 多边形表示：定义 $m(k, n) \ (k \geqslant 3)$ 如下
+3. $\text{Steinhaus}-\text{Moser}$ 多边形记号：定义 $m(k, n) \ (k \geqslant 3)$ 如下
 
     $$
     \begin{aligned}
@@ -350,7 +350,7 @@
     当 $\text{Conway}$ 链长度为 $3$ 时，有 $a \to b \to c = a\uparrow^c b$
 
     1. $\text{Conway}$ 链式箭头不是二元运算符，既没有左结合性也没有右结合性
-    2. 扩展链式表示：递归定义如下
+    2. 扩展链式记号：递归定义如下
 
         $$
         \begin{aligned}
