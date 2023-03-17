@@ -254,11 +254,12 @@
         \begin{aligned}
         \alpha \uparrow \beta & = \alpha^\beta \\
         \alpha \uparrow^n 0 & = 1 \\
-        \alpha \uparrow^n \beta & = \alpha \uparrow^{n-1} (\alpha \uparrow^n (\beta - 1))
+        \alpha \uparrow^n (\beta + 1) & = \alpha \uparrow^{n-1} (\alpha \uparrow^n \beta) \\
+        \alpha \uparrow^n \gamma & = \sup \left\{\alpha \uparrow^{n} \beta \mid \beta < \gamma \right\} \ (\gamma \textsf{ 为极限序数})
         \end{aligned}
         $$
 
-        特别地，$\alpha \uparrow \beta$ 也可写作 $\alpha \widehat{\ \ \ } \beta$
+        特别地，$\alpha \uparrow \beta$ 也可写作 $\alpha \widehat{\ \ \ } \beta$，$\alpha \uparrow \uparrow \beta$ 也可写作 $\alpha \widehat{\ \ \ } \widehat{\ \ \ } \beta$
 
 2. 超 $\text{E}$ 记号：设 $b, a_1, a_2, \cdots, a_n \in \mathbf N$，定义 $E[b] a_1 \# a_2 \# \cdots \# a_n$ 为
 
@@ -516,7 +517,7 @@
 
         用 $(n)$ 分隔符分隔 $n$ 维的数据，数阵中填充 $1$ 不会影响结果
 
-        1. 数阵运算符：定义 $a^n \& b = \{b, a(n)2\}$，例如
+        4. 数阵运算符：定义 $a^n \& b = \{b, a(n)2\}$，例如
 
             $$
             5^2 \& 5 = \{5,5(2) 2\}=\left\{\begin{array}{ccccc}
@@ -528,7 +529,7 @@
             \end{array}\right\}\approx F\left[\omega^{\omega^2}\right](5)
             $$
 
-        2. 定义 $\text{Gongulus} = \{10, 10 (100) 2\}$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\omega^{\omega^{100}}\right](10)$
+        5. 定义 $\text{Gongulus} = \{10, 10 (100) 2\}$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\omega^{\omega^{100}}\right](10)$
 
     3. 迭代幂次数阵：扩展 $(n)$ 分隔符为数阵
         1. 每个数阵对应一个关于 $X$ 的函数 $f(X)$，令这个映射为 $\sigma$．设 $b_0, b_1, \cdots, b_n \in \mathbf N$，$(A), (B)$ 均为数阵且 $(B)$ 在 $(A)$ 中已经出现 $k - 1$ 次，则 $\sigma$ 定义如下
