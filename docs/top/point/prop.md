@@ -141,7 +141,7 @@
     1. 拓扑不变性：$\text T_0, \text T_1, \text T_2, \text T_3,\text T_{3.5}$ 以及正则、正规和完全正则空间都具有拓扑不变性
     2. 可遗传性：$\text T_0, \text T_1, \text T_2, \text T_3,\text T_{3.5}$ 以及正则和完全正则空间都具有拓扑不变性
     3. 可积性：$\text T_0, \text T_1, \text T_2, \text T_3,\text T_{3.5}$ 以及正则和完全正则空间都具有可积性，$\text T_4$ 和正规空间不是有限可积的拓扑性质
-    4. 可商性：$\text T_0, \text T_1, \text T_2, \text T_3,\text T_{3.5}, \text T_4$ 以及正则、正规和完全正则空间都**不具有**可商性
+    4. 可商性：$\text T_0, \text T_1, \text T_2, \text T_3,\text T_{3.5}, \text T_4$ 以及正则、正规和完全正则空间都不具有可商性
 
 ### 3.3.2 可度量化空间
 1. 设 $(X, \mathscr T)$ 是一个拓扑空间，若存在 $X$ 的一个度量 $\rho$ 使得拓扑 $\mathscr T$ 即是由度量 $\rho$ 诱导的拓扑 $\mathscr T_\rho$，则称 $(X, \mathscr T)$ 是一个可度量化空间

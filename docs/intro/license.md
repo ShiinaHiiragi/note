@@ -1,6 +1,4 @@
-# License
-
-**MIT License**
+# MIT License
 
 Copyright (c) <span id="year"></span> Ichinoe
 
