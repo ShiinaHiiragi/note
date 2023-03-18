@@ -149,7 +149,7 @@ nav:
     - 一、解析几何:
       - 1 线性空间与向量: top/anly/lin.md
       - 2 变换与坐标: top/anly/geom.md
-      - 3 曲线方程与曲面方程: top/anly/eq.md
+      - 3 方程与图形: top/anly/eq.md
       - 4 曲线理论: top/anly/curv.md
       - 5 曲面理论: top/anly/surf.md
     - 二、点集拓扑:
