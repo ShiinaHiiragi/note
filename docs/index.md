@@ -62,11 +62,13 @@
 
 <div class="ref"> </div>
 
+<!--
 ??? abstract "正在记录的书目"
     <div class="ongoing"> </div>
 
 ??? abstract "尚未记录的书目"
     <div class="uncomp"> </div>
+-->
 
 <script>
 const refList = [
