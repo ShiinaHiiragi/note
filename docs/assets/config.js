@@ -1,29 +1,3 @@
-window.MathJax = {
-    tex: {
-        inlineMath: [
-            ["\\(", "\\)"]
-        ],
-        displayMath: [
-            ["\\[", "\\]"]
-        ],
-        packages: { '[+]': ['autoload'] },
-        processEscapes: true,
-        processEnvironments: true
-    },
-    loader: {
-        load: [
-            '[tex]/autoload'
-        ]
-    },
-    options: {
-        ignoreHtmlClass: ".*|",
-        processHtmlClass: "arithmatex"
-    },
-    chtml: {
-        scale: 0.94
-    }
-};
-
 Array.prototype.contain = function (value) {
     for (var i = 0; i < this.length; i += 1) {
         if (this[i] == value) {
@@ -33,7 +7,7 @@ Array.prototype.contain = function (value) {
     return false;
 };
 
-LocalStorageMananger = function(keyName, regulation) {
+let LocalStorageMananger = function (keyName, regulation) {
     this.keyName = keyName;
     this.regulation = regulation;
     if (!new.target) {
@@ -66,9 +40,41 @@ LocalStorageMananger = function(keyName, regulation) {
         localStorage.setItem(this.keyName, value);
     }
 
-    this.getValue = function() {
+    this.getValue = function () {
         return localStorage.getItem(this.keyName);
     }
+
+    this.removeValue = function() {
+        return localStorage.removeItem(this.keyName);
+    }
+}
+
+const changeMathJax = () => {
+    window.MathJax = {
+        tex: {
+            inlineMath: [
+                ["\\(", "\\)"]
+            ],
+            displayMath: [
+                ["\\[", "\\]"]
+            ],
+            packages: { '[+]': ['autoload'] },
+            processEscapes: true,
+            processEnvironments: true
+        },
+        loader: {
+            load: [
+                '[tex]/autoload'
+            ]
+        },
+        options: {
+            ignoreHtmlClass: ".*|",
+            processHtmlClass: "arithmatex"
+        },
+        chtml: {
+            scale: 0.94
+        }
+    };
 }
 
 const changeYear = () => {
@@ -96,18 +102,24 @@ const changeFont = (isSerif) => {
 }
 
 // cookie of local setting
-let binary = ["true", "false"];
-let localSerif = new window.LocalStorageMananger("isSerif", binary);
+let binaryBool = ["true", "false"];
+let localSerif = new LocalStorageMananger("isSerif", binaryBool);
 
 // execute in each page
+changeMathJax();
 changeYear();
+
+// execute when cookies is enabled
 if (__md_get("__consent")?.local) {
     localSerif.initValue("true");
-    cookies_callback?.({
+    window.cookies_callback?.({
         localSerif: localSerif
     })
 
+    console.log("123");
     if (localSerif.getValue() == "false") {
         changeFont(false);
     }
+} else {
+    localSerif.removeValue();
 }
