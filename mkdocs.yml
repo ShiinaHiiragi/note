@@ -78,12 +78,9 @@ extra:
       link: https://twitter.com/ShiinaHiiragi
   generator: true
   consent:
-    title: Cookie consent
+    title: Cookie 许可
     description:
-      We use cookies to recognize your repeated visits and preferences, as well
-      as to measure the effectiveness of our documentation and whether users
-      find what they're searching for. With your consent, you're helping us to
-      make our documentation better.
+      我们使用 Cookie 识别重复访问并记住用户偏好，其内容仅保留在本地。若点击「同意」按钮，则视为同意 Cookie 使用；点击底部「Cookie Setting」可随时设定。
 
 extra_css:
   - assets/config.css
@@ -94,7 +91,7 @@ extra_javascript:
   - https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js
 
 copyright:
-  Copyright &copy; <span class="year"></span> Ichinoe - <a href="#__consent"> Change cookie settings </a>
+  Copyright &copy; <span class="year"></span> Ichinoe – <a href="#__consent"> Cookie Setting </a>
 
 nav:
   - 通用:

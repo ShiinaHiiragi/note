@@ -1,16 +1,3 @@
-/**
- * using this config to switch to Noto Sans:
- *   --md-text-font: "Noto Sans", "Noto Sans SC";
- *   --normal-font-weight: 400;
- *   --bold-font-weight: 600;
- *   --title-font-weight: 300;
- *
- * using this config to switch to Noto Serif:
- *   --md-text-font: "Noto Serif SC";
- *   --normal-font-weight: 500;
- *   --bold-font-weight: 700;
- *   --title-font-weight: 500;
- */
 :root {
   --md-text-font: "Noto Serif SC";
   --normal-font-weight: 500;
