@@ -80,7 +80,7 @@ extra:
   consent:
     title: Cookie 许可
     description:
-      我们使用 Cookie 识别重复访问并记住用户偏好，其内容仅保留在本地。若点击「同意」按钮，则视为同意 Cookie 使用；点击底部「Cookie Setting」可随时设定。
+      我们使用 Cookie 识别重复访问并记住用户偏好，其内容仅保留在本地。若点击「同意」按钮，则视为同意 Cookie 使用；点击底部「Cookie Setting」可随时修改
     cookies:
       github: GitHub
       local: 本地设置
