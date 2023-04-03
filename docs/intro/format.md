@@ -3,6 +3,25 @@
 ## 凡例
 - 全站以 Material for MkDocs 作为基础框架，使用中文作为描述语言，尽可能保证文字排版、书写风格与符号使用具有一致性
 - 本站名称为「逻辑与形而上学」，标题下方横向排列的是全文的若干个模块，左部的纵向目录分隔了若干个单元，每个单元分设若干个小节。同一模块内的各单元、同一单元内的各小节在内容上具有较强的联系
+- 全站默认使用衬线体<span class="local-setting" style="display: none">，点击<a id="local-font" style="cursor: pointer;"></a></span>
+
+<script>
+let cookies_callback = (param) => {
+    let localSerif = param.localSerif;
+    document.querySelectorAll(".local-setting").forEach((item) => {
+        item.style.display = "inline";
+    })
+
+    document.querySelector("#local-font").innerText = localSerif.getValue() == "true"
+        ? "切换到无衬线体"
+        : "切换到衬线体";
+
+    document.querySelector("#local-font").onclick = () => {
+        localSerif.setValue(localSerif.getValue() == "true" ? "false" : "true");
+        location.reload();
+    }
+}
+</script>
 
 ## 正字
 ### 元规范
