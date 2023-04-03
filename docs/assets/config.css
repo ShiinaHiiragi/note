@@ -1,5 +1,9 @@
+/**
+ * Using this config to switch Noto Sans:
+ * --md-text-font: "Noto Sans", "Noto Sans SC";
+ * font-weight: 400;
+ */
 :root {
-  /* Change to ["Noto Sans", "Noto Sans SC"] if needed */
   --md-text-font: "Noto Serif SC";
   font-weight: 500;
   user-select: none;
@@ -7,7 +11,11 @@
 }
 
 ::selection {
-  background-color: rgb(204, 226, 255);
+  background-color: rgb(200, 225, 255);
+}
+
+strong {
+  font-weight: 700;
 }
 
 /* Define Fonts */
