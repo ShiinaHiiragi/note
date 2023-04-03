@@ -458,8 +458,8 @@ refList
 };
 
 renderRef(".ref", (item) => item.plot);
-renderRef(".ongoing", (item) => item.plot && item.plot < item.total);
-renderRef(".uncomp", (item) => !item.plot);
+// renderRef(".ongoing", (item) => item.plot && item.plot < item.total);
+// renderRef(".uncomp", (item) => !item.plot);
 </script>
 
 <style>
