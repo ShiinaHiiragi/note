@@ -84,6 +84,9 @@ extra:
     cookies:
       github: GitHub
       local: 本地设置
+    actions:
+      - accept
+      - reject
 
 extra_css:
   - assets/config.css
