@@ -1,5 +1,6 @@
 :root {
-  --md-text-font: "Noto Sans", "Noto Sans SC";
+  /* Change to ["Noto Sans", "Noto Sans SC"] if needed */
+  --md-text-font: "Noto Serif SC Medium";
   user-select: none;
   box-sizing: border-box;
 }
@@ -15,8 +16,8 @@
 }
 
 @font-face {
-  font-family: "Noto Serif SC";
-  src: "NotoSerifSC-Regular.otf";
+  font-family: "Noto Serif SC Medium";
+  src: "NotoSerifSC-Medium.otf";
 }
 
 @font-face {
@@ -75,11 +76,11 @@ div.arithmatex {
 }
 
 mjx-utext[variant="sans-serif"] {
-  font-family: "Noto Sans", "Noto Sans SC" !important;
+  font-family: "Noto Serif SC Medium" !important;
   font-size: 0.8rem !important;
 }
 
 div.admonition.note mjx-utext[variant="sans-serif"] {
-  font-family: "Noto Sans", "Noto Sans SC" !important;
+  font-family: "Noto Serif SC Medium" !important;
   font-size: 0.64rem !important;
 }
