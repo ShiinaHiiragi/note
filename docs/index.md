@@ -453,7 +453,7 @@ refList
         newIndex.innerText = index + 1;
         newEntry.append(newIndex);
         newEntry.append(newValue);
-        document.querySelector(query).append(newEntry);
+        document.querySelector(query)?.append(newEntry);
     });
 };
 
