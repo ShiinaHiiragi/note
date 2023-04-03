@@ -493,7 +493,7 @@ renderRef(".uncomp", (item) => !item.plot);
 
 .caption {
     min-width: 7.5em;
-    font-weight: 700;
+    font-weight: var(--bold-font-weight);
 }
 
 .value {
@@ -502,7 +502,7 @@ renderRef(".uncomp", (item) => !item.plot);
 
 .index {
     min-width: 2.5em;
-    font-weight: 600;
+    font-weight: var(--bold-font-weight);
 }
 
 .index:before {
