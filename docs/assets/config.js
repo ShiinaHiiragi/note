@@ -116,7 +116,6 @@ if (__md_get("__consent")?.local) {
         localSerif: localSerif
     })
 
-    console.log("123");
     if (localSerif.getValue() == "false") {
         changeFont(false);
     }
