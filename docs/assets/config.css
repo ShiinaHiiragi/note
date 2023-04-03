@@ -1,13 +1,22 @@
 /**
- * Using this config to switch Noto Sans:
- * --md-text-font: "Noto Sans", "Noto Sans SC";
- * --normal-font-weight: 400;
- * --bold-font-weight: 600;
+ * using this config to switch to Noto Sans:
+ *   --md-text-font: "Noto Sans", "Noto Sans SC";
+ *   --normal-font-weight: 400;
+ *   --bold-font-weight: 600;
+ *   --title-font-weight: 300;
+ *
+ * using this config to switch to Noto Serif:
+ *   --md-text-font: "Noto Serif SC";
+ *   --normal-font-weight: 500;
+ *   --bold-font-weight: 700;
+ *   --title-font-weight: 500;
  */
 :root {
   --md-text-font: "Noto Serif SC";
   --normal-font-weight: 500;
   --bold-font-weight: 700;
+  --title-font-weight: 500;
+
   font-weight: var(--normal-font-weight);
   user-select: none;
   box-sizing: border-box;
@@ -45,7 +54,7 @@ strong {
 /* Titles in each Passages */
 h1, h2, h3, h4, h5, h6 {
   color: black !important;
-  font-weight: var(--normal-font-weight) !important;
+  font-weight: var(--title-font-weight) !important;
 }
 
 /* Admonitions */
@@ -88,11 +97,11 @@ div.arithmatex {
 }
 
 mjx-utext[variant="sans-serif"] {
-  font-family: "Noto Serif SC" !important;
+  font-family: var(--md-text-font) !important;
   font-size: 0.8rem !important;
 }
 
 div.admonition.note mjx-utext[variant="sans-serif"] {
-  font-family: "Noto Serif SC" !important;
+  font-family: var(--md-text-font) !important;
   font-size: 0.64rem !important;
 }
