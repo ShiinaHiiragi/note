@@ -44,7 +44,7 @@ let LocalStorageMananger = function (keyName, regulation) {
         return localStorage.getItem(this.keyName);
     }
 
-    this.removeValue = function() {
+    this.removeValue = function () {
         return localStorage.removeItem(this.keyName);
     }
 }
@@ -108,6 +108,11 @@ let localSerif = new LocalStorageMananger("isSerif", binaryBool);
 // execute in each page
 changeMathJax();
 changeYear();
+
+// execute when mobile phone is detected
+if (/Android|iPhone/i.test(navigator.userAgent)) {
+    changeFont(true);
+}
 
 // execute when cookie is enabled
 if (__md_get("__consent")?.local) {
