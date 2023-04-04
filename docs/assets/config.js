@@ -109,10 +109,10 @@ let localSerif = new LocalStorageMananger("isSerif", binaryBool);
 changeMathJax();
 changeYear();
 
-// execute when cookies is enabled
+// execute when cookie is enabled
 if (__md_get("__consent")?.local) {
     localSerif.initValue("true");
-    window.cookies_callback?.({
+    window.cookie_callback?.({
         localSerif: localSerif
     })
 
