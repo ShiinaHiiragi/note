@@ -17,7 +17,7 @@
     <div class="sub-entry">
         <div class="caption">如何使用</div>
         <div class="value">
-            建议根据需求进行「索引」，而非「学习」或「研究」
+            根据需求进行索引，而非「学习」或「研究」
         </div>
     </div>
 </div>
@@ -27,7 +27,7 @@
     <div class="sub-entry">
         <div class="caption">前置知识</div>
         <div class="value">
-            中国义务教育水平的语言与数学能力，后者包括基本算术、初等代数与直观几何
+            中国义务教育毕业水平的语言与数学能力，后者包括基本算术、初等代数与直观几何
         </div>
     </div>
 </div>
@@ -52,7 +52,7 @@
     </div>
 </div>
 
-!!! abstract "此项目尚未完成，可能存在若干疏漏和错误"
+!!! abstract "此项目尚未完成，现处于第一阶段"
     <label> 现在进度：类型论 · 一般类型论 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
@@ -61,14 +61,6 @@
 ## 参考文献
 
 <div class="ref"> </div>
-
-<!--
-??? abstract "正在记录的书目"
-    <div class="ongoing"> </div>
-
-??? abstract "尚未记录的书目"
-    <div class="uncomp"> </div>
--->
 
 <script>
 const refList = [
@@ -458,8 +450,6 @@ refList
 };
 
 renderRef(".ref", (item) => item.plot);
-// renderRef(".ongoing", (item) => item.plot && item.plot < item.total);
-// renderRef(".uncomp", (item) => !item.plot);
 </script>
 
 <style>
@@ -492,7 +482,7 @@ renderRef(".ref", (item) => item.plot);
 }
 
 .caption {
-    min-width: 7.5em;
+    min-width: 8em;
     font-weight: var(--bold-font-weight);
 }
 

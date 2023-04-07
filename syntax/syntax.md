@@ -3844,6 +3844,16 @@ Bootstrap 适合短时间开发简单的静态网站
     - `type(obj)`：返回对象类型
     - `isinstance(obj, class)`：返回对象是否属于给定类，当 `obj` 为子类对象时也返回 `True`
 
+3. 编码：使用 `b'str'` 生成 `bytes` 对象
+
+    ```python
+    s = "中文"
+    b = s.encode()
+    
+    print(b)                  # b'\xe4\xb8\xad\xe6\x96\x87'
+    print(b.decode("utf-8"))  # 中文
+    ```
+
 #### 2.4.2 运算符
 
 1. 运算符与对应魔术方法
