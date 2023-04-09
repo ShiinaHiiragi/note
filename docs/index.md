@@ -47,7 +47,7 @@
     <div class="sub-entry">
         <div class="caption">本项目已开源</div>
         <div class="value">
-            所有源文件在 <a href="https://github.com/ShiinaHiiragi/note/" target="_blank"> GitHub </a> 可见，采用 MIT 协议
+            所有源文件在 <a href="https://github.com/ShiinaHiiragi/note/" target="_blank"> GitHub </a> 可见，采用 GPL-3.0 协议方式开源
         </div>
     </div>
 </div>
