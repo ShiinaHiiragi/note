@@ -30,7 +30,7 @@
 
 ### 2.3.2 仿射变换
 
-### 2.3.4 仿射空间
+### 2.3.3 仿射空间
 1. 线性空间的同构
     1. $\mathbf R^n$ 是 $\mathbf R$ 上的线性空间：设 $(x_1, x_2, \cdots, x_n), (y_1, y_2, \cdots, y_n) \in \mathbf R^n$，定义 $\mathbf R^n$ 上的加法运算与 $\mathbf R$ 上的数乘运算
 
