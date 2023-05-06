@@ -275,7 +275,7 @@
 1. 双曲函数
     1. 双曲函数的定义
         1. 双曲正弦：$\sinh x=\dfrac{\mathrm{e}^x-\mathrm{e}^{-x}}{2}$
-        2. 双曲余弦：$\cosh x=\dfrac{e^x+e^{-x}}{2}$
+        2. 双曲余弦：$\cosh x=\dfrac{\mathrm{e}^x+\mathrm{e}^{-x}}{2}$
         3. 双曲正切：$\tanh x=\dfrac{\sinh x}{\cosh x}=\dfrac{\mathrm{e}^x-\mathrm{e}^{-x}}{\mathrm{e}^x+\mathrm{e}^{-x}}$
         4. 双曲余切：$\operatorname{coth} x=\dfrac{\cosh x}{\sinh x}=\dfrac{\mathrm{e}^x+\mathrm{e}^{-x}}{\mathrm{e}^x-\mathrm{e}^{-x}}$
         5. 双曲正割：$\operatorname{sech} x=\dfrac{1}{\cosh x}=\dfrac{2}{\mathrm{e}^x+\mathrm{e}^{-x}}$
