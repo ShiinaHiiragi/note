@@ -433,17 +433,29 @@ refList
     .filter(filterCond)
     .map((item => {
         const catRef = (item) => {
-            const { author, title, type, trans, press, locate, year, page, journal, arXiv } = item;
-            return `${author.join(", ")}. ` +
-                `${title}[${type}]. ` + (type === "M"
-                    ? (trans ? `${trans.join(",")},译. ` : ``) +
+            const { author, title, type, page, year } = item;
+            const { trans, press, locate } = item;
+            const { journal, section, arXiv } = item;
+            result = `${author.join(", ")}. ` + `${title} [${type}]. `
+
+            switch (type) {
+                case "M":
+                    return result +
+                        (trans ? `${trans.join(",")},译. ` : ``) +
                         `${press}:${locate}, ${year}: ${page[0]}-${[page[1]]}.`
-                    : type === "J"
-                    ? (arXiv === undefined
-                        ? `${journal}, ${year}, ${locate}: ${page[0]}-${[page[1]]}.`
-                        : `arXiv preprint arXiv:${arXiv}, ${year}.`
-                    ) : ``
-                )
+                    break;
+                case "J":
+                    return result + (
+                        arXiv === undefined
+                        ? `${journal}, ${year}, ${section}: ${page[0]}-${[page[1]]}.`
+                        : `arXiv:${arXiv}, ${year}.`
+                    )
+                    break;
+                default:
+                    // [EB/OL]
+                    return result;
+                    break;
+            }
         };
         return catRef(item);
     }))
