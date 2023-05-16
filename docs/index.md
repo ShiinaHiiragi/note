@@ -265,6 +265,15 @@ const refList = [
         page: [1, 186]
     },
     {
+        author: ["Terence Parr", "Jeremy Howard"],
+        title: "The matrix calculus you need for deep learning",
+        type: "J",
+        arXiv: "1802.01528",
+        year: 2018,
+        page: [1, 33],
+        plot: 1
+    },
+    {
         author: ["フィッシュ"],
         title: "巨大数論",
         type: "M",
@@ -424,12 +433,16 @@ refList
     .filter(filterCond)
     .map((item => {
         const catRef = (item) => {
-            const { author, title, type, trans, press, locate, year, page } = item;
+            const { author, title, type, trans, press, locate, year, page, journal, arXiv } = item;
             return `${author.join(", ")}. ` +
                 `${title}[${type}]. ` + (type === "M"
                     ? (trans ? `${trans.join(",")},译. ` : ``) +
                         `${press}:${locate}, ${year}: ${page[0]}-${[page[1]]}.`
-                    : ``
+                    : type === "J"
+                    ? (arXiv === undefined
+                        ? `${journal}, ${year}, ${locate}: ${page[0]}-${[page[1]]}.`
+                        : `arXiv preprint arXiv:${arXiv}, ${year}.`
+                    ) : ``
                 )
         };
         return catRef(item);
