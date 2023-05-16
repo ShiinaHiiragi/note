@@ -516,8 +516,10 @@ renderRef(".ref", (item) => item.plot);
 }
 
 .index {
-    min-width: 2.5em;
+    min-width: 2.25em;
+    margin-right: 0.75em;
     font-weight: var(--bold-font-weight);
+    text-align: right;
 }
 
 .index:before {
