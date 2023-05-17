@@ -239,7 +239,7 @@
     1. $\text{Post}$ 完全性：$\mathbf{HK}$ 是 $\text{Post}$ 完全的，即若 $\nvdash_\mathbf{HK} \alpha$，那么在系统 $\mathbf{HK}$ 上增加 $\alpha$ 作为公理所得到的系统是不一致的
     2. 可判定性：$\mathbf{CL}$ 是可判定的，即存在一种能行的方法使得对任何公式 $\alpha$ 可在有穷步骤之内确定 $\alpha$ 是否属于 $\mathbf{CL}$，因此 $\mathrm{Thm}(\mathbf{HK})$ 是可判定的
     3. 析取性质：$\mathbf{HK}$ 不具有析取性质，即存在公式 $\alpha \vee \beta$，有 $\vdash_\mathbf{HK} \alpha \vee \beta$ 且 $\nvdash_\mathbf{HK} \alpha$ 且 $\nvdash_\mathbf{HK} \beta$
-    4. 插值性质：$\mathbf{HK}$ 具有插值性质，即对任何公式 $\alpha \to \beta$，若 $\vdash_\mathbf{HK} \alpha \to \beta$，那么存在公式 $\gamma$ 使得 ① $\vdash_\mathbf{HK} \alpha \to \chi$；② $\vdash_\mathbf{HK} \chi \to \beta$；③ （变元条件）$\mathrm{var}(\chi) \subseteq \mathrm{var}(\alpha) \subseteq \mathrm{var}(\beta)$；公式$\chi$ 称为 $\alpha$ 与 $\beta$ 的插值
+    4. 插值性质：$\mathbf{HK}$ 具有插值性质，即对任何公式 $\alpha \to \beta$，若 $\vdash_\mathbf{HK} \alpha \to \beta$，那么存在公式 $\gamma$ 使得 ① $\vdash_\mathbf{HK} \alpha \to \chi$；② $\vdash_\mathbf{HK} \chi \to \beta$；③ （变元条件）$\mathrm{var}(\chi) \subseteq \mathrm{var}(\alpha) \subseteq \mathrm{var}(\beta)$；公式 $\chi$ 称为 $\alpha$ 与 $\beta$ 的插值
 
         !!! note "证明插值性质的引理"
             若 $\mathrm{var}(\alpha) \cap \mathrm{var}(\beta) = \varnothing$，那么 $\vDash \alpha \to \beta$ 当且仅当 $\vDash \neg \alpha$ 或 $\vDash \beta$
