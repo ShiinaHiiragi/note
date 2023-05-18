@@ -2,7 +2,7 @@
 
 ## 1.1 序列
 1. 序列：以自然数 $n$ 或全体自然数的集合 $\mathbf N$ 为定义域的映射，如果其定义域是 $n \in \mathbf N$，则称为长度为 $n$ 的有穷序列．特别地，定义域为 $0$ 的序列称为空序列，定义域为 $\mathbf N$ 的序列称为无穷序列
-    1. 有穷序列：$\left<a_i \mid i < n\right>$ 或 $\left<a_0, a_1, \cdots, a_{n-1}\right>$，其值域表示为 $\left\{a_i \mid i < n\right\}$ 或 $\left\{a_0, a_1, \cdots, a_{n-1}\right\}$．特别地，空序列表示为 $\left<\ \right>$，其值域为 $\varnothing$
+    1. 有穷序列：$\left<a_i \mid i < n\right>$ 或 $\left<a_0, a_1, \cdots, a_{n-1}\right>$，其值域表示为 $\left\{a_i \mid i < n\right\}$ 或 $\left\{a_0, a_1, \cdots, a_{n-1}\right\}$．特别地，空序列的表示为 $\left<\ \right>$，其值域为 $\varnothing$
     2. 无穷序列：$\left<a_i \mid i \in \mathbf N\right>$ 或 $\left<a_i\right>_{i = 0}^{\infty}$，其值域表示为 $\left\{a_i \mid i \in \mathbf N\right\}$ 或 $\left\{a_i\right\}_{i = 0}^{\infty}$
     3. 由 $A$ 的元素组成的所有有穷序列的集合：$A^* = A^{<\mathbf N} = {\displaystyle \bigcup_{n \in \mathbf N} A^n}$
 2. 超穷序列：定义域为序数 $\alpha$ 的映射称为长度为 $\alpha$ 的序列．不严格地定义映射 $\mathbf{F}: \mathbf{On} \rightarrow \mathbf{V}$
@@ -16,7 +16,7 @@
     1. 通项公式：如果数列 $\{a_n\}$ 的第 $n$ 项（即通项）与 $n$ 之间具有函数关系 $f(n)$，则称这个公式为该数列的通项公式
     2. 子列：在数列 $\{a_n\}$ 中，保持原来次序自左往右任意选取无穷多个项的数列 $a_{n_{1}}, a_{n_{2}}, \cdots, a_{n_{k}}, \cdots$ 称为 $\left\{a_{n}\right\}$ 的一个子列，简记作 $\{a_{n_{k}}\}$
     3. 前 $n$ 项和：对于数列 $\{a_n\}$，称 ${\displaystyle \sum_{i=1}^n a_i}$ 为该数列的前 $n$ 项和，记作 $S_n$
-        1. $\{S_n\}$ 也是一个数列，且有 $a_n = \left\{\begin{aligned} & S_1, & n = 1 \\ & S_n - S_{n-1}, & n = 2, 3, 4, \cdots \end{aligned}\right.$
+        1. $\{S_n\}$ 也是一个数列，且有 $a_n = \left\{\begin{aligned} & S_1, & n = 1 \\ & S_n - S_{n-1}, & n > 1 \end{aligned}\right.$
         2. 级数：记 ${\displaystyle \sum_{i=1}^\infty a_i = \lim_{n \to \infty} \sum_{i=1}^n a_i = \lim_{n \to \infty} S_n}$ ，称之为无穷级数
 
         !!! note "$\text{Bernoulli}$ 数"
