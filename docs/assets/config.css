@@ -85,6 +85,7 @@ div.arithmatex {
 
 mjx-utext[variant="sans-serif"] {
   font-family: var(--md-text-font) !important;
+  font-weight: var(--normal-font-weight) !important;
   font-size: 0.8rem !important;
 }
 
