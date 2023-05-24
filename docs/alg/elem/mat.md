@@ -17,9 +17,8 @@
 
     1. 零矩阵：若矩阵的所有元素均为 $0$，则该矩阵称为零矩阵，记作 $\boldsymbol O$ 或 $\boldsymbol O_{m \times n}$
     2. 方阵：当 $m = n$，称 $\boldsymbol A_{m \times n}$ 为 $n$ 阶方阵，该方阵从左上角至右下角的元素 $a_{11}, a_{22}, \cdots, a_{nn}$ 称为（主）对角线元素
-        1. 迹：方阵 $\boldsymbol A$ 的对角线元素之和 ${\displaystyle \sum_{i=1}^n a_{ii}}$ 称为该方阵的迹，记作 $\mathrm{tr}(\boldsymbol A)$
-        2. 对称阵：若 $n$ 阶方阵 $\boldsymbol A$ 满足 $\boldsymbol A^{\mathrm T} = \boldsymbol A$，则称 $\boldsymbol A$ 为对称阵
-        3. 对角阵：若 $n$ 阶方阵 $\boldsymbol A$ 的非对角线元素均为零，即
+        1. 对称阵：若 $n$ 阶方阵 $\boldsymbol A$ 满足 $\boldsymbol A^{\mathrm T} = \boldsymbol A$，则称 $\boldsymbol A$ 为对称阵
+        2. 对角阵：若 $n$ 阶方阵 $\boldsymbol A$ 的非对角线元素均为零，即
 
             $$
             \boldsymbol A = \begin{bmatrix}
@@ -32,12 +31,21 @@
 
             则称该方阵为对角阵，记为 $\mathrm{diag}(a_1, a_2, \cdots, a_n)$．特别地，如果对角阵的对角线元素相等，则称该对角阵为纯量阵
 
-        4. 三角阵：设 $n$ 阶方阵 $\boldsymbol A = [a_{ij}]_{n \times n}$，当 $1 \leqslant j < i \leqslant n$ 时，$a_{ij} = 0$，称 $\boldsymbol A$ 为上三角阵；当 $1 \leqslant i < j \leqslant n$ 时，$a_{ij} = 0$，称 $\boldsymbol A$ 为下三角阵．如果上（下）三角阵的对角线元素均为 $0$，则称之为严格上（下）三角阵
+        3. 三角阵：设 $n$ 阶方阵 $\boldsymbol A = [a_{ij}]_{n \times n}$，当 $1 \leqslant j < i \leqslant n$ 时，$a_{ij} = 0$，称 $\boldsymbol A$ 为上三角阵；当 $1 \leqslant i < j \leqslant n$ 时，$a_{ij} = 0$，称 $\boldsymbol A$ 为下三角阵．如果上（下）三角阵的对角线元素均为 $0$，则称之为严格上（下）三角阵
 
     3. 单位阵：若纯量阵的对角线元素均为 $1$，则称该方阵为单位阵 $\boldsymbol I$ 或 $\boldsymbol I_n$，其中 $n$ 表示阶数
 
+        !!! note "$1 \times 1$ 矩阵"
+            通常将 $1 \times 1$ 矩阵视作标量，即对于任意 $x \in \boldsymbol R$，均有 $x = \begin{bmatrix} x \\ \end{bmatrix}$
+
 2. 子矩阵：设 $\boldsymbol A$ 为 $m \times n$ 矩阵，任取 $\boldsymbol A$ 的 $k$ 行 $l$ 列，位于这些行与列交叉处的元素按原来顺序构成的 $k \times l$ 矩阵称为 $\boldsymbol A$ 的一个子矩阵．特别地，当 $k = l$ 时，该子矩阵称为 $\boldsymbol A$ 的一个 $k$ 阶子矩阵
 3. 相似矩阵：对于 $n$ 阶矩阵 $\boldsymbol A$ 和 $\boldsymbol B$，若存在一个 $n$ 阶可逆矩阵 $\boldsymbol P$ 使得 $\boldsymbol P^{-1} \boldsymbol{AP} = \boldsymbol B$，则称矩阵 $\boldsymbol A$ 与 $\boldsymbol B$ 相似，记作 $\boldsymbol A \sim \boldsymbol B$
+4. 迹：方阵 $\boldsymbol A$ 的对角线元素之和 ${\displaystyle \sum_{i=1}^n a_{ii}}$ 称为该方阵的迹，记作 $\mathrm{tr}(\boldsymbol A)$
+    1. 标量的迹：设 $x \in \mathbf R$，则 $\operatorname{tr}(x) = \operatorname{tr}(\begin{bmatrix} x \\ \end{bmatrix}) = x$
+    2. 迹的运算性质
+        1. 转置：$\operatorname{tr}(\boldsymbol A) = \operatorname{tr}(\boldsymbol A^{\mathrm T})$
+        2. 线性运算：$\operatorname{tr}(c_1 \boldsymbol A +  c_2 \boldsymbol B) = c_1 \operatorname{tr}(\boldsymbol A) + c_2 \operatorname{tr}(\boldsymbol B)$
+        3. 矩阵乘法：$\operatorname{tr}(\boldsymbol A \boldsymbol B^{\mathrm T}) = \operatorname{tr}(\boldsymbol B^{\mathrm T} \boldsymbol A) = {\displaystyle \sum_{i=1}^{m} \sum_{j=1}^{n} a_{ij} b_{ij}}$，其中 $\boldsymbol A = \begin{bmatrix} a_{ij} \\ \end{bmatrix}_{m \times n}, \boldsymbol B = \begin{bmatrix} b_{ij} \\ \end{bmatrix}_{m \times n}$
 
 ### 3.1.2 基本运算
 1. 设 $m \times n$ 矩阵

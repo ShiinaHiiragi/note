@@ -315,7 +315,7 @@
         \end{aligned}
         $$
 
-        为向量值函数，此时有 $\boldsymbol{y}=\boldsymbol f(\boldsymbol{x})=\left(f_{1}(\boldsymbol{x}), f_{2}(\boldsymbol{x}), \cdots, f_{m}(\boldsymbol{x})\right)$，其中 $f_{1}. f_{2}, \cdots, f_{m}$ 均为 $n$ 元函数
+        为向量值函数，此时有 $\boldsymbol{y}=\boldsymbol f(\boldsymbol{x})=\left(f_{1}(\boldsymbol{x}), f_{2}(\boldsymbol{x}), \cdots, f_{m}(\boldsymbol{x})\right)$，其中 $f_{1}, f_{2}, \cdots, f_{m}$ 均为 $n$ 元函数
 
 2. 微分形式与外微分
     1. 微分形式：设 $U$ 为 $\mathbf{R}^{n}$ 上的区域，记 $\boldsymbol{x}=\left(x_{1}, x_{2}, \cdots, x_{n}\right)$，$C^{\prime}(U)$ 为 $U$ 上具有连续偏导数的函数全体．在 $\left\{\mathrm{d} x_{1}, \mathrm{d} x_{2}, \cdots, \mathrm{d} x_{n}\right\}$ 中任意选取 $k$ 个组成有序元，记为 $\mathrm{d} x_{i_1} \wedge \mathrm{d} x_{i_2} \wedge \cdots \wedge \mathrm{d} x_{i_k}$，这里 $i_{1}, i_{2}, \cdots, i_{k}$ 是从集合 $\{1,2, \cdots, n\}$ 中选取的任意 $k$ 个整数．规定
@@ -435,3 +435,142 @@
         $$
 
         其中 $\overset{\LARGE{\frown}}{AB}$ 为从 $A$ 到 $B$ 的任意路径
+
+### 1.2.3 矩阵分析
+1. 矩阵函数：设 $D \subseteq \mathbf R^{m \times n}$，称映射
+
+    $$
+    \begin{aligned}
+    \boldsymbol F: D & \to \mathbf R^{p \times q} \\
+    \boldsymbol X = \begin{bmatrix}
+    x_{11} & x_{12} & \cdots & x_{1n} \\
+    x_{21} & x_{22} & \cdots & x_{2n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    x_{m1} & x_{m2} & \cdots & x_{mn} \\
+    \end{bmatrix} & \mapsto \boldsymbol Y = \begin{bmatrix}
+    y_{11} & y_{12} & \cdots & y_{1q} \\
+    y_{21} & y_{22} & \cdots & y_{2q} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    y_{p1} & y_{p2} & \cdots & y_{pq} \\
+    \end{bmatrix}
+    \end{aligned}
+    $$
+
+    为矩阵函数，此时有
+
+    $$
+    \boldsymbol{Y}=\boldsymbol F(\boldsymbol{X})=\begin{bmatrix}
+    f_{11}(\boldsymbol X) & f_{12}(\boldsymbol X) & \cdots & f_{1q}(\boldsymbol X) \\
+    f_{21}(\boldsymbol X) & f_{22}(\boldsymbol X) & \cdots & f_{2q}(\boldsymbol X) \\
+    \vdots & \vdots & \ddots & \vdots \\
+    f_{p1}(\boldsymbol X) & f_{p2}(\boldsymbol X) & \cdots & f_{pq}(\boldsymbol X) \\
+    \end{bmatrix}
+    $$
+
+    其中 $f_{11}, f_{12}, \cdots, f_{pq}$ 均为 $m \times n$ 元函数．矩阵函数的退化情况如下表所示：
+
+    <div class="text-table">
+
+    |      项目      |    $p = q = 1$     |         $p > 1, q = 1$         |           $p, q > 1$           |
+    | :------------: | :----------------: | :----------------------------: | :----------------------------: |
+    |  $m = n = 1$   |       $f(x)$       |       $f(\boldsymbol x)$       |       $f(\boldsymbol X)$       |
+    | $m > 1, n = 1$ | $\boldsymbol f(x)$ | $\boldsymbol f(\boldsymbol x)$ | $\boldsymbol f(\boldsymbol X)$ |
+    |   $m, n > 1$   | $\boldsymbol F(x)$ | $\boldsymbol F(\boldsymbol x)$ | $\boldsymbol F(\boldsymbol X)$ |
+
+    </div>
+
+2. 矩阵的导函数：设 $\boldsymbol X = \begin{bmatrix} x_{ij} \\ \end{bmatrix}_{m \times n}$，则可定义
+
+    $$
+    \operatorname{vec}(\boldsymbol X) = \begin{bmatrix} x_{11} & x_{21} & \cdots & x_{m1} & x_{12} & x_{22} & \cdots & x_{m2} & \cdots & x_{1n} & x_{2n} & \cdots & x_{mn} \end{bmatrix}
+    $$
+
+    1. 向量变元的标量函数 $f(\boldsymbol x), \boldsymbol x = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}$
+        1. 行向量偏导形式：$\mathrm{D}_x f(\boldsymbol{x})=\dfrac{\partial f(\boldsymbol{x})}{\partial \boldsymbol{x}^{\mathrm T}}=\begin{bmatrix} \dfrac{\partial f}{\partial x_1} & \dfrac{\partial f}{\partial x_2} & \cdots & \dfrac{\partial f}{\partial x_n} \\ \end{bmatrix}$
+        2. 梯度向量形式（梯度向量形式）：$\nabla_{\boldsymbol{x}} f(\boldsymbol{x})=\dfrac{\partial f(\boldsymbol{x})}{\partial \boldsymbol{x}}=\begin{bmatrix} \dfrac{\partial f}{\partial x_1} & \dfrac{\partial f}{\partial x_2} & \cdots & \dfrac{\partial f}{\partial x_n} \\ \end{bmatrix}^{\mathrm T}$
+    2. 矩阵变元的标量函数 $f(\boldsymbol X), \boldsymbol X = \begin{bmatrix} x_{ij} \\ \end{bmatrix}_{m \times n}$
+        1. 行向量偏导形式：
+
+            $$
+            \begin{aligned}
+            \mathrm{D}_{\mathrm{vec} \boldsymbol{X}} f(\boldsymbol{X}) &= \dfrac{\partial f(\boldsymbol{X})}{\partial \mathrm{vec}^{\mathrm T}(\boldsymbol{X})} \\
+            &= \begin{bmatrix} \dfrac{\partial f}{\partial x_{11}} & \dfrac{\partial f}{\partial x_{21}} & \cdots & \dfrac{\partial f}{\partial x_{m1}} & \dfrac{\partial f}{\partial x_{12}} & \dfrac{\partial f}{\partial x_{22}} & \cdots & \dfrac{\partial f}{\partial x_{m2}} & \cdots & \dfrac{\partial f}{\partial x_{1n}} & \dfrac{\partial f}{\partial x_{2n}} & \cdots & \dfrac{\partial f}{\partial x_{mn}} \\ \end{bmatrix}
+            \end{aligned}
+            $$
+
+        2. 列向量偏导形式（梯度向量形式）
+
+            $$
+            \begin{aligned}
+            \mathrm{D}_{\mathrm{vec} \boldsymbol{X}} f(\boldsymbol{X}) &= \dfrac{\partial f(\boldsymbol{X})}{\partial \mathrm{vec}^{\mathrm T}(\boldsymbol{X})} \\
+            &= \begin{bmatrix} \dfrac{\partial f}{\partial x_{11}} & \dfrac{\partial f}{\partial x_{21}} & \cdots & \dfrac{\partial f}{\partial x_{m1}} & \dfrac{\partial f}{\partial x_{12}} & \dfrac{\partial f}{\partial x_{22}} & \cdots & \dfrac{\partial f}{\partial x_{m2}} & \cdots & \dfrac{\partial f}{\partial x_{1n}} & \dfrac{\partial f}{\partial x_{2n}} & \cdots & \dfrac{\partial f}{\partial x_{mn}} \\ \end{bmatrix}^{\mathrm T}
+            \end{aligned}
+            $$
+
+        3. $\text{Jacobi}$ 矩阵形式
+
+            $$
+            \mathrm{D}_{\boldsymbol{X}} f(\boldsymbol{X}) =\dfrac{\partial f(\boldsymbol{X})}{\partial \boldsymbol{X}_{m \times n}^{\mathrm T}}=\left[\begin{array}{cccc}
+            \dfrac{\partial f}{\partial x_{11}} & \dfrac{\partial f}{\partial x_{21}} & \cdots & \dfrac{\partial f}{\partial x_{m 1}} \\
+            \dfrac{\partial f}{\partial x_{12}} & \dfrac{\partial f}{\partial x_{22}} & \cdots & \dfrac{\partial f}{\partial x_{m 2}} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \dfrac{\partial f}{\partial x_{1 n}} & \dfrac{\partial f}{\partial x_{2 n}} & \cdots & \dfrac{\partial f}{\partial x_{m n}}
+            \end{array}\right]
+            $$
+
+        4. 梯度矩阵形式：
+
+            $$
+            \nabla_{\boldsymbol{X}} f(\boldsymbol{X}) =\dfrac{\partial f(\boldsymbol{X})}{\partial \boldsymbol{X}_{m \times n}} =\left[\begin{array}{cccc}
+            \dfrac{\partial f}{\partial x_{11}} & \dfrac{\partial f}{\partial x_{12}} & \cdots & \dfrac{\partial f}{\partial x_{1 n}} \\
+            \dfrac{\partial f}{\partial x_{21}} & \dfrac{\partial f}{\partial x_{22}} & \cdots & \dfrac{\partial f}{\partial x_{2 n}} \\
+            \vdots & \vdots & \ddots & \vdots \\
+            \dfrac{\partial f}{\partial x_{m 1}} & \dfrac{\partial f}{\partial x_{m 2}} & \cdots & \dfrac{\partial f}{\partial x_{m n}}
+            \end{array}\right]
+            $$
+
+    3. 矩阵变元的矩阵函数 $\boldsymbol F(\boldsymbol X), \boldsymbol X = \begin{bmatrix} x_{ij} \\ \end{bmatrix}_{m \times n}$
+        1. $\text{Jacobi}$ 矩阵形式
+
+            $$
+            \begin{align*} \text{D}_{\pmb{X}}\pmb{F}(\pmb{X}) &=\dfrac{\partial \text{vec}_{pq\times 1}(\pmb{F}_{}(\pmb{X}))}{\partial \text{vec}^{\mathrm T}_{mn\times 1}\pmb{X}} \\\\ &= \begin{bmatrix} \dfrac{\partial f_{11}}{\partial x_{11}}&\dfrac{\partial f_{11}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{11}}{\partial x_{m1}}&\dfrac{\partial f_{11}}{\partial x_{12}}&\dfrac{\partial f_{11}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{11}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{11}}{\partial x_{1n}}&\dfrac{\partial f_{11}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{11}}{\partial x_{mn}}\\  \dfrac{\partial f_{21}}{\partial x_{11}}&\dfrac{\partial f_{21}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{21}}{\partial x_{m1}}&\dfrac{\partial f_{21}}{\partial x_{12}}&\dfrac{\partial f_{21}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{21}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{21}}{\partial x_{1n}}&\dfrac{\partial f_{21}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{21}}{\partial x_{mn}}\\  \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\ \dfrac{\partial f_{p1}}{\partial x_{11}}&\dfrac{\partial f_{p1}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{m1}}&\dfrac{\partial f_{p1}}{\partial x_{12}}&\dfrac{\partial f_{p1}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{1n}}&\dfrac{\partial f_{p1}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{mn}}\\ \dfrac{\partial f_{12}}{\partial x_{11}}&\dfrac{\partial f_{12}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{12}}{\partial x_{m1}}&\dfrac{\partial f_{12}}{\partial x_{12}}&\dfrac{\partial f_{12}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{12}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{12}}{\partial x_{1n}}&\dfrac{\partial f_{12}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{12}}{\partial x_{mn}}\\ \dfrac{\partial f_{22}}{\partial x_{11}}&\dfrac{\partial f_{22}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{22}}{\partial x_{m1}}&\dfrac{\partial f_{22}}{\partial x_{12}}&\dfrac{\partial f_{22}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{22}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{22}}{\partial x_{1n}}&\dfrac{\partial f_{22}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{22}}{\partial x_{mn}}\\ \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\ \dfrac{\partial f_{p2}}{\partial x_{11}}&\dfrac{\partial f_{p2}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{m1}}&\dfrac{\partial f_{p2}}{\partial x_{12}}&\dfrac{\partial f_{p2}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{1n}}&\dfrac{\partial f_{p2}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{mn}}\\ \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\ \dfrac{\partial f_{1q}}{\partial x_{11}}&\dfrac{\partial f_{1q}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{m1}}&\dfrac{\partial f_{1q}}{\partial x_{12}}&\dfrac{\partial f_{1q}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{1n}}&\dfrac{\partial f_{1q}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{mn}}\\ \dfrac{\partial f_{2q}}{\partial x_{11}}&\dfrac{\partial f_{2q}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{2q}}{\partial x_{m1}}&\dfrac{\partial f_{2q}}{\partial x_{12}}&\dfrac{\partial f_{2q}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{2q}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{2q}}{\partial x_{1n}}&\dfrac{\partial f_{2q}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{2q}}{\partial x_{mn}}\\ \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\ \dfrac{\partial f_{pq}}{\partial x_{11}}&\dfrac{\partial f_{pq}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{m1}}&\dfrac{\partial f_{pq}}{\partial x_{12}}&\dfrac{\partial f_{pq}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{1n}}&\dfrac{\partial f_{pq}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{mn}}\\ \end{bmatrix} \end{align*}
+            $$
+
+        2. 梯度矩阵形式
+
+            $$
+            \begin{align*} \nabla_{\pmb{X}}\pmb{F}(\pmb{X}) &=\dfrac{\partial \text{vec}_{pq\times 1}^{\mathrm T}(\pmb{F}_{}(\pmb{X}))}{\partial \text{vec}_{mn\times 1}\pmb{X}} \\\\ &= \begin{bmatrix} \dfrac{\partial f_{11}}{\partial x_{11}}&\dfrac{\partial f_{21}}{\partial x_{11}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{11}}&\dfrac{\partial f_{12}}{\partial x_{11}}&\dfrac{\partial f_{22}}{\partial x_{11}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{11}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{11}}&\dfrac{\partial f_{2q}}{\partial x_{11}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{11}}\\  \dfrac{\partial f_{11}}{\partial x_{21}}&\dfrac{\partial f_{21}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{21}}&\dfrac{\partial f_{12}}{\partial x_{21}}&\dfrac{\partial f_{22}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{21}}&\dfrac{\partial f_{2q}}{\partial x_{21}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{21}}\\  \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\ \dfrac{\partial f_{11}}{\partial x_{m1}}&\dfrac{\partial f_{21}}{\partial x_{m1}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{m1}}&\dfrac{\partial f_{12}}{\partial x_{m1}}&\dfrac{\partial f_{22}}{\partial x_{m1}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{m1}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{m1}}&\dfrac{\partial f_{2q}}{\partial x_{m1}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{m1}}\\ \dfrac{\partial f_{11}}{\partial x_{12}}&\dfrac{\partial f_{21}}{\partial x_{12}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{12}}&\dfrac{\partial f_{12}}{\partial x_{12}}&\dfrac{\partial f_{22}}{\partial x_{12}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{12}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{12}}&\dfrac{\partial f_{2q}}{\partial x_{12}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{12}}\\ \dfrac{\partial f_{11}}{\partial x_{22}}&\dfrac{\partial f_{21}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{22}}&\dfrac{\partial f_{12}}{\partial x_{22}}&\dfrac{\partial f_{22}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{22}}&\dfrac{\partial f_{2q}}{\partial x_{22}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{22}}\\ \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\ \dfrac{\partial f_{11}}{\partial x_{m2}}&\dfrac{\partial f_{21}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{m2}}&\dfrac{\partial f_{12}}{\partial x_{m2}}&\dfrac{\partial f_{22}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{m2}}&\dfrac{\partial f_{2q}}{\partial x_{m2}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{m2}}\\ \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\ \dfrac{\partial f_{11}}{\partial x_{1n}}&\dfrac{\partial f_{21}}{\partial x_{1n}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{1n}}&\dfrac{\partial f_{12}}{\partial x_{1n}}&\dfrac{\partial f_{22}}{\partial x_{1n}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{1n}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{1n}}&\dfrac{\partial f_{2q}}{\partial x_{1n}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{1n}}\\ \dfrac{\partial f_{11}}{\partial x_{2n}}&\dfrac{\partial f_{21}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{2n}}&\dfrac{\partial f_{12}}{\partial x_{2n}}&\dfrac{\partial f_{22}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{2n}}&\dfrac{\partial f_{2q}}{\partial x_{2n}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{2n}}\\ \vdots&\vdots&\ddots&\vdots&\vdots&\vdots&\ddots&\vdots&\ddots&\vdots&\vdots&\ddots&\vdots\\ \dfrac{\partial f_{11}}{\partial x_{mn}}&\dfrac{\partial f_{21}}{\partial x_{mn}}&\cdots&\dfrac{\partial f_{p1}}{\partial x_{mn}}&\dfrac{\partial f_{12}}{\partial x_{mn}}&\dfrac{\partial f_{22}}{\partial x_{mn}}&\cdots&\dfrac{\partial f_{p2}}{\partial x_{mn}}&\cdots&\dfrac{\partial f_{1q}}{\partial x_{mn}}&\dfrac{\partial f_{2q}}{\partial x_{mn}}&\cdots&\dfrac{\partial f_{pq}}{\partial x_{mn}}\\ \end{bmatrix} \end{align*}
+            $$
+
+3. 矩阵微分：定义矩阵的微分为对矩阵各元素的全微分组成的矩阵（或退化后的向量与标量）．即设 $D \subseteq \mathbf R^{m \times n}, \boldsymbol F: D \to \mathbf R^{p \times q}$ 为矩阵函数且 $f_{ij}(\boldsymbol X)$ 可微，则可定义 $\boldsymbol F$ 的全微分为
+
+    $$
+    \mathrm{d} \boldsymbol{F}(\boldsymbol{X})=\left[\begin{array}{cccc}
+    \mathrm{d} f_{11}(\boldsymbol{X}) & \mathrm{d} f_{12}(\boldsymbol{X}) & \cdots & \mathrm{d} f_{1 q}(\boldsymbol{X}) \\
+    \mathrm{d} f_{21}(\boldsymbol{X}) & \mathrm{d} f_{22}(\boldsymbol{X}) & \cdots & \mathrm{d} f_{2 q}(\boldsymbol{X}) \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \mathrm{d} f_{p 1}(\boldsymbol{X}) & \mathrm{d} f_{p 2}(\boldsymbol{X}) & \cdots & \mathrm{d} f_{p q}(\boldsymbol{X})
+    \end{array}\right]
+    $$
+
+    并定义 $\boldsymbol X_{m \times n}$ 的全微分为
+
+    $$
+    \mathrm{d} \boldsymbol{X}=\left[\begin{array}{cccc}
+    \mathrm{d} x_{11} & \mathrm{d} x_{12} & \cdots & \mathrm{d} x_{1 n} \\
+    \mathrm{d} x_{21} & \mathrm{d} x_{22} & \cdots & \mathrm{d} x_{2 n} \\
+    \vdots & \vdots & \ddots & \vdots \\
+    \mathrm{d} x_{m 1} & \mathrm{d} x_{m 2} & \cdots & \mathrm{d} x_{m n}
+    \end{array}\right]
+    $$
+
+    1. 矩阵微分的运算
+        1. 常数矩阵的全微分：$\mathrm d \boldsymbol A_{m \times n} = \boldsymbol 0_{m \times n}$
+        2. 线性法则：$\mathrm{d}\left(c_1 \boldsymbol{F}(\boldsymbol{X})+c_2 \boldsymbol{G}(\boldsymbol{X})\right)=c_1 \mathrm{d} \boldsymbol{F}(\boldsymbol{X})+c_2 \mathrm{d} \boldsymbol{G}(\boldsymbol{X})$
+        3. 乘积法则：$\mathrm{d}(\boldsymbol{F}(\boldsymbol{X}) \boldsymbol{G}(\boldsymbol{X}))=\mathrm{d}(\boldsymbol{F}(\boldsymbol{X})) \boldsymbol{G}(\boldsymbol{X})+\boldsymbol{F}(\boldsymbol{X}) \mathrm{d}(\boldsymbol{G}(\boldsymbol{X}))$
+        4. 转置法则：$\mathrm{d} \boldsymbol{F}^{\mathrm T}(\boldsymbol{X})=\left(\mathrm{d} \boldsymbol{F}(\boldsymbol{X})\right)^{\mathrm T}$
+    2. 方阵微分的性质：设 $\boldsymbol X$ 是一个 $n \times n$ 方阵
+        1. 行列式：$\mathrm{d}\operatorname{det}(\boldsymbol{X})=\operatorname{det}(\boldsymbol{X}) \operatorname{tr}\left(\boldsymbol{X}^{-1} \mathrm{~d} \boldsymbol{X}\right)=\operatorname{tr}\left(\operatorname{det}(\boldsymbol{X}) \boldsymbol{X}^{-1} \mathrm{~d} \boldsymbol{X}\right)$
+        2. 逆矩阵：$\mathrm{d}\left(\boldsymbol{X}^{-1}\right)=-\boldsymbol{X}^{-1} \mathrm{~d}(\boldsymbol{X}) \boldsymbol{X}^{-1}$
+
+        上述 $\boldsymbol X$ 均可替换为对应的 $\boldsymbol F_{n \times n}(\boldsymbol X)$

@@ -270,8 +270,7 @@ const refList = [
         type: "J",
         page: [1, 33],
         year: 2018,
-        arXiv: "1802.01528",
-        plot: 1
+        arXiv: "1802.01528"
     },
     {
         author: ["フィッシュ"],
