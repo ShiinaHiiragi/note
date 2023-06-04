@@ -20,109 +20,113 @@
         2. 省略了所有项的谓句称为显式，表示无需任何其它细节的说明，通常用于说者向听者提示眼前有某种事物或即将发生某事
 
             !!! note ""
-                - klama
+                - citka
 
-                    走（相当于「zo'e klama zo'e zo'e zo'e zo'e」）。
+                    吃（相当于「zo'e citka zo'e」）。
 
     2. 位序标记：用「fa」「fe」「fi」「fo」「fu」分别指定前五个位
 
         !!! note ""
-            - fe le cukta cu dunda[^1] fi la klaudias.
+            - fe le plise cu citka fa mi
 
-                那本书被交给了克劳蒂亚。
+                那个苹果被我吃了。
 
     3. 换位：用「se」「te」「ve」「xe」换位以强调某一项
 
         !!! note ""
-            - do se viska[] mi
+            - le plise cu se citka mi
 
-                你被我看到了。
+                那个苹果被我吃了。
 
 3. 命令句：使用了代词「ko」的句子，表示要求听者做某事。在命令的句首使用了态度指示词「.e'o」的句子，表示礼貌的请求
 
     !!! note ""
-        - nelci[^2] ko
+        - ko citka le plise
 
-            试着留下一个好印象吧（做点什么，这样某人才会喜欢你）。
-
-        - ko ko kurji[^3]
-
-            照顾好你自己。 
+            你把这个苹果吃了吧。
 
 4. 疑问句
     1. 一般疑问句：在谓句的任何位置使用了态度指示词「xu」的句子，表示询问
-        1. 通过重复疑问句中的谓语，可以作为回复；若表示否定的回复，则在谓语前使用「NA」类的「na」
+        1. 通过重复疑问句中的谓语，可以作为回复；若表示否定的回复，则在谓语前用「na」
 
             !!! note ""
-                - xu do nelci la bil.
+                - xu do nelci[^1] lo plise
 
                     nelci
 
                     na nelci
 
-                    你喜欢比尔吗？
+                    你喜欢苹果吗？
 
                     喜欢。
 
                     不喜欢。
 
-        2. 通过使用代词「go'i」，可以作为回复；若表示否定的回复，则在「go'i」前使用「NA」类的「na」
+        2. 通过使用代词「go'i」，可以作为回复；若表示否定的回复，则在「go'i」前用「na」
 
             !!! note ""
-                - xu do nelci la bil.
+                - xu do nelci lo plise
 
                     go'i
 
                     na go'i
 
-                    你喜欢比尔吗？
+                    你喜欢苹果吗？
 
                     是的。
 
                     不是的。
 
-    2. 特殊疑问句：用代词「ma」代替项、用「mo」代替谓语或用「xo」代替数词的谓句，通常使用对应的项或谓语回答
+    2. 特殊疑问句：通常使用对应的项或谓语回答
 
-        !!! note ""
-            - do klama ma
+        - 用「ma」对项发起提问
 
-                la london.
+            !!! note ""
+                - do citka ma
 
-                你要去哪里？
+                    le plise
 
-                伦敦。
+                    你要吃什么？
 
-            - do mo la klaudias.
+                    这个苹果。
 
-                fengu[^4]
+        - 用「mo」对谓语发起提问
 
-                你和克劳蒂亚怎么了？
+            !!! note ""
+                - do mo la klaudias.
 
-                我生她的气。
+                    fengu[^2]
 
-            - la meilis. mo
+                    你和克劳蒂亚怎么了？
 
-                jungo[^5]
+                    我生她的气。
 
-                梅丽是谁？
+                - la meilis. mo
 
-                她是中国人。
+                    mensi
 
-            - xo le mensi cu nelci mi
+                    梅丽是谁？
 
-                re
+                    我的妹妹。
 
-                我有多少个妹妹喜欢我？
+        - 用「xo」对数词发起提问
 
-                两个。
+            !!! note ""
+                - xo le do mensi cu nelci do
+
+                    re
+
+                    你有多少个妹妹喜欢你？
+
+                    两个。
 
 ### 3.1.2 子句
 1. 谓词子句：使用结构词「nu」，通常情况下「le」和「nu」可以连写在一起
 
     !!! note ""
-        - mi djuno[^6] le nu do klama
+        - mi djuno[^3] le nu do citka
 
-            我不知道你来了（这件事）
+            我不知道你在吃东西（这件事）
 
 ### 3.1.3 从句
 
@@ -133,7 +137,7 @@
 1. 询问时间：用代词「ti」表示「现在」，直接使用数词回答是二十四小时制
 
     !!! note ""
-        - ma tcika[^7] ti
+        - ma tcika[^4] ti
 
             li pano pi'e mu
 
@@ -149,24 +153,30 @@
 
             十点半。
 
-    1. 使用表示小时的根词「cacra[^8]」以及表示早晚的根词「clira[^9]」、「lerci[^10]」组成的专名表示十二小时制
+    1. 使用表示小时的根词「cacra[^5]」以及表示早晚的根词「clira[^6]」、「lerci[^7]」组成的专名表示十二小时制
 
         !!! note ""
             - li mucac.lir. tcika ti
 
                 现在是凌晨五点。
 
-    2. 
+    2. 用「nu」可以描述事件发生的时间，用「SE」类词可以换位
 
-### 3.2.2 其他专题
+        !!! note ""
+            - la daucac. tcika lenu mi citka
 
-[^1]: dunda：$x_1$ 将 $x_2$ 给了 $x_3$
-[^2]: nelci：$x_1$ 喜欢/热衷于 $x_2$
-[^3]: kurji：$x_1$ 照顾 $x_2$
-[^4]: fengu：$x_1$ 对 $x_2$ 愤怒，因为 $x_3$
-[^5]: jungo：$x_1$ 在 $x_2$ 方面反映了中国国籍/文化/语言
-[^6]: djuno：$x_1$ 知道事实 $x_2$，关于主题 $x_3$，通过 $x_4$ 认识
-[^7]: tcika：$x_1$（时、分、秒）是 $x_2$ 的时间，日期是 $x_3$，位置是 $x_4$，按照历法 $x_5$
-[^8]: cacra：$x_1$ 的持续时间为 $x_2$ 小时（默认为 $1$ 小时），基于标准 $x_3$
-[^9]: clira：$x_1$（事件）较早，基于标准 $x_2$
-[^10]: lerci：$x_1$（事件）较晚，基于标准 $x_2$
+                十点钟就是我吃东西的时间
+
+            - lenu mi citka cu se tcika la daucac.
+
+                我吃东西的时间是十点钟
+
+### 3.2.2 句段
+
+[^1]: nelci：$x_1$ 喜欢/热衷于 $x_2$
+[^2]: fengu：$x_1$ 对 $x_2$ 愤怒，因为 $x_3$
+[^3]: djuno：$x_1$ 知道事实 $x_2$，关于主题 $x_3$，通过 $x_4$ 认识
+[^4]: tcika：$x_1$（时、分、秒）是 $x_2$ 的时间，日期是 $x_3$，位置是 $x_4$，按照历法 $x_5$
+[^5]: cacra：$x_1$ 的持续时间为 $x_2$ 小时（默认为 $1$ 小时），基于标准 $x_3$
+[^6]: clira：$x_1$（事件）较早，基于标准 $x_2$
+[^7]: lerci：$x_1$（事件）较晚，基于标准 $x_2$
