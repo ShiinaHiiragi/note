@@ -241,7 +241,7 @@
 - 根词是可充当谓语的词语，其长度必为五个字符且形如「CVCCV」或「CVVCV」，其中「C」表示辅音，「V」表示元音
 
     !!! note ""
-        - mi citka plise
+        - mi citka le plise
 
             我吃苹果。
 
