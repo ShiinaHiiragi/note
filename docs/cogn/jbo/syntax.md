@@ -133,11 +133,15 @@
     !!! note ""
         - ma tcika ti
 
+            caku ma tcika
+
             li pano pi'e mu
 
             li pano pi'e ni'u mu
 
             li panopimu
+
+            现在是几点？
 
             现在是几点？
 
@@ -147,14 +151,14 @@
 
             十点半。
 
-2. 日期：用「detri」描述日期时，「pi'e」分隔顺序依次为日、月、年
+1. 日期：用「detri」描述日期时，「pi'e」分隔顺序依次为日、月、年
 
     !!! note ""
         - li pano pi'e pare detri ti
 
             现在是十二月十日。
 
-3. 用「nu」描述事件发生的时间，用「SE」类词换位。也可直接使用「ti'u」或「di'e」指定动作发生的时间
+2. 用「nu」描述事件发生的时间，用「SE」类词换位。也可直接使用「ti'u」或「di'e」指定动作发生的时间
 
     !!! note ""
         - la daucac. tcika lenu mi citka
@@ -173,7 +177,7 @@
 
             我出生于八月十五日。
 
-4. 小时、星期与月份
+3. 小时、星期与月份
     1. 使用表示早晚的根词「clira[^5]」、「lerci[^6]」以及表示小时的根词「cacra[^7]」组成的专名表示十二小时制
 
         !!! note ""
