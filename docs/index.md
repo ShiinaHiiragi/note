@@ -5,7 +5,7 @@
 <div class="entry start">
     <img src="assets/cube-outline.svg" style="width: 1.2rem" />
     <div class="sub-entry">
-        <div class="caption">逻辑与形而上学</div>
+        <div class="caption">关于本站</div>
         <div class="value">
             一本关于逻辑学、数学、哲学、语言学与理论计算机科学等学科基础的笔记
         </div>
