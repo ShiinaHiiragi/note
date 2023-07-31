@@ -87,19 +87,19 @@
         - 用「mo」对谓语发起提问
 
             !!! note ""
-                - do mo la klaudias.
+                - do mo la .alis.
 
                     fengu[^2]
 
-                    你和克劳蒂亚怎么了？
+                    你和爱丽丝怎么了？
 
                     我生她的气。
 
-                - la meilis. mo
+                - la .alis. mo
 
                     mensi
 
-                    梅丽是谁？
+                    爱丽丝是谁？
 
                     我的妹妹。
 
