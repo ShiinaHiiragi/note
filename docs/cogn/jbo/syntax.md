@@ -87,13 +87,13 @@
         - 用「mo」对谓语发起提问
 
             !!! note ""
-                - do mo la .alis.
+                - do mo le plise
 
-                    fengu[^1]
+                    citka
 
-                    你和爱丽丝怎么了？
+                    你把那个苹果怎么了？
 
-                    我生她的气。
+                    我把它吃了。
 
                 - la .alis. mo
 
@@ -115,12 +115,16 @@
                     两个。
 
 ### 3.1.2 子句
-- 谓词子句：使用结构词「nu」，通常情况下「le」和「nu」可以连写在一起
+- 谓词子句：使用结构词「NU」类
 
     !!! note ""
-        - mi djuno[^2] le nu do citka
+        - le la .alis. se pensi[^1] cu du'u ri nelci lo plise kei lu mi citka le plise li'u
 
-            我不知道你在吃东西（这件事）
+            爱丽丝想着自己喜欢苹果，说「我吃那个苹果」。
+
+        - la .alis. cusku[^2] le sedu'u ri nelci lo plise
+
+            爱丽丝说她喜欢苹果。
 
 ### 3.1.3 从句
 
@@ -217,8 +221,8 @@
 
 ### 3.2.2 句段
 
-[^1]: fengu：$x_1$ 对 $x_2$ 愤怒，因为 $x_3$
-[^2]: djuno：$x_1$ 知道事实 $x_2$，关于主题 $x_3$，通过 $x_4$ 认识
+[^1]: pensi：$x_1$ 思考/反思 $x_2$
+[^2]: cusku：$x_1$ 表达/说 $x_2$，听众是 $x_3$，通过媒介 $x_4$
 [^3]: jbena：$x_1$ 为 $x_2$ 所生，日期是 $x_3$，地点是 $x_4$
 [^4]: clira：$x_1$（事件/状态）较早，基于标准 $x_2$
 [^5]: lerci：$x_1$（事件/状态）较晚，基于标准 $x_2$
