@@ -41,9 +41,9 @@
         - 「do」：「你」
         - 「do'o」：「你（们），以及其他一些人」
         - 「ko」：「你」，用于命令句中
-    3. 「KOhA4」类：由「goi」指派的代词，相当于变量
-        - 「ko'a/ko'e/ko'i/ko'o/ko'u」：第一到第五个代词
-        - 「fo'a/fo'e/fo'i/fo'o/fo'u」：第六到第十个代词
+    3. 「KOhA4」类
+        - 「ko'a/ko'e/ko'i/ko'o/ko'u/fo'a/fo'e/fo'i/fo'o/fo'u」：由「goi」指派的第一到第十个代词
+        - 「vo'a/vo'e/vo'i/vo'o/vo'u」：反身代词，所在谓句的第一到第五项
     4. 「KOhA5」类：对前文提到项（不包括「KOhA4」类的项）的指代，项的距离以词组的开始位置为度量标准
         - 「ri」：前文出现的最近项
         - 「ra」：前文出现的稍远项（非量化）
@@ -365,12 +365,9 @@
     - 「NAI」类：将「nai」附在结构词后表示否定
 
 ## 2.2 谓词
-### 2.2.1 根词
-- 根词是可充当谓语的词语，其长度必为五个字符且形如「CVCCV」或「CVVCV」，其中「C」表示辅音，「V」表示元音
-
-### 2.2.2 合成词
-
-### 2.2.3 借词
+1. 根词：可充当谓语的词语，其长度必为五个字符且形如「CVCCV」或「CVVCV」，其中「C」表示辅音，「V」表示元音
+2. 合成词：通常是（若干个）结构词词缀与根词词缀的连接
+3. 借词
 
 ## 2.3 专名
 - 专名是以辅音结尾的词语，而结构词与谓词均以元音结尾
@@ -382,6 +379,112 @@
             2. 英语中「Ahmet」转写为逻辑语中的「.axmet.」
             3. 法语中「Pierre」转写为逻辑语中的「pi,ER.」或「pi.ER.」
             4. 英语中「Green」对应逻辑语中「crino」，可写为「crinos.」或「crin.」
+
+## 2.4 词缀
+- 结构词词缀表
+
+    <div class="text-table">
+
+    | 结构词类 | 结构词 | CVC 词缀 | CCV 词缀 | CV(')V 词缀 |
+    | :------: | :----: | :------: | :------: | :---------: |
+    |   BIhI   |  bi'i  |   biz    |    —     |      —      |
+    |    BO    |   bo   |   bor    |    —     |      —      |
+    |    BU    |   bu   |   bus    |    —     |    bu'i     |
+    |   CAhA   |  ca'a  |   caz    |    —     |      —      |
+    |   CAhA   |  nu'o  |    —     |    —     |    nu'o     |
+    |   CAhA   |  pu'i  |   pus    |    —     |      —      |
+    |    CO    |   co   |   col    |    —     |      —      |
+    |  FAhA4   |  ze'o  |   zev    |    —     |    ze'o     |
+    |  FAhA4   |  zo'a  |   zon    |    —     |    zo'a     |
+    |  FAhA4   |  zo'i  |   zor    |    —     |    zo'i     |
+    |   GOhA   |  bu'a  |   bul    |    —     |      —      |
+    |   GOhA   |  co'e  |   com    |    —     |    co'e     |
+    |   GOhA   |   du   |   dub    |    —     |    du'o     |
+    |    JA    |   ja   |   jav    |    —     |      —      |
+    |    JA    |   je   |   jev    |   jve    |      —      |
+    |    JA    |   jo   |   jov    |    —     |      —      |
+    |    JA    |   ju   |   juv    |    —     |      —      |
+    |   JAI    |  jai   |   jax*   |    —     |      —      |
+    |   JOI    |   ce   |   cec    |    —     |      —      |
+    |   JOI    |  ce'o  |    —     |    —     |    ce'o     |
+    |   JOI    |  jo'e  |   jom    |    —     |      —      |
+    |   JOI    |  joi   |   jol    |    —     |     joi     |
+    |   JOI    |  jo'u  |    —     |    —     |    jo'u     |
+    |   JOI    |  ku'a  |   kuz    |    —     |      —      |
+    |   JOI    |  pi'u  |   piv    |    —     |      —      |
+    |    KE    |   ke   |   kem    |    —     |      —      |
+    |   KEhE   |  ke'e  |   kep    |    —     |    ke'e     |
+    |   KEI    |  kei   |   kez    |    —     |      —      |
+    |  KOhA1   |   da   |   dav    |   dza    |      —      |
+    |  KOhA3   |   do   |   don    |    —     |     doi     |
+    |  KOhA3   |   mi   |   mib    |    —     |      —      |
+    |  KOhA4   |  fo'a  |    —     |    —     |    fo'a     |
+    |  KOhA4   |  fo'e  |    —     |    —     |    fo'e     |
+    |  KOhA4   |  fo'i  |    —     |    —     |    fo'i     |
+    |  KOhA6   |   ta   |   taz    |    —     |      —      |
+    |  KOhA6   |   ti   |   tif    |    —     |      —      |
+    |  KOhA6   |   tu   |   tuf    |    —     |      —      |
+    |  KOhA7   |  zi'o  |   zil    |    —     |      —      |
+    |    LE    |  le'e  |   lem    |    —     |      —      |
+    |    LE    |  lo'e  |   lom    |    —     |      —      |
+    |   MOhI   |  mo'i  |   mov    |    —     |      —      |
+    |   MOI    |  mei   |   mem    |    —     |     mei     |
+    |   MOI    |  moi   |   mom    |    —     |     moi     |
+    |    NA    |   na   |   nar    |    —     |      —      |
+    |   NAhE   |  na'e  |   nal    |    —     |      —      |
+    |   NAhE   |  no'e  |   nor    |    —     |    no'e     |
+    |   NAhE   |  to'e  |   tol    |    —     |    to'e     |
+    |    NU    |  du'u  |   dum    |    —     |      —      |
+    |    NU    |  jei   |   jez    |    —     |      —      |
+    |    NU    |   ka   |   kam    |    —     |      —      |
+    |    NU    |  li'i  |   liz    |    —     |      —      |
+    |    NU    |   ni   |   nil    |    —     |      —      |
+    |    NU    |   nu   |   nun    |    —     |      —      |
+    |    NU    |  si'o  |   siz    |    —     |      —      |
+    |    NU    |  su'u  |   suv    |    —     |      —      |
+    |   NU1    |  mu'e  |   muf    |    —     |      —      |
+    |   NU1    |  pu'u  |   puv    |    —     |      —      |
+    |   NU1    |  za'i  |   zaz    |    —     |      —      |
+    |   NU1    |  zu'o  |   zum    |    —     |      —      |
+    |   PA1    |   bi   |   biv    |    —     |      —      |
+    |   PA1    |   ci   |   cib    |    —     |      —      |
+    |   PA1    |   mu   |   mum    |    —     |      —      |
+    |   PA1    |   no   |   non    |    —     |      —      |
+    |   PA1    |   pa   |   pav    |    —     |      —      |
+    |   PA1    |   re   |   rel    |    —     |      —      |
+    |   PA1    |   so   |   soz    |    —     |      —      |
+    |   PA1    |   vo   |   von    |    —     |      —      |
+    |   PA1    |   xa   |   xav    |    —     |      —      |
+    |   PA1    |   ze   |   zel    |    —     |      —      |
+    |   PA3    |  ce'i  |   cez    |    —     |      —      |
+    |   PA3    |   pi   |   piz    |    —     |      —      |
+    |   PA4    |  da'a  |   daz    |    —     |      —      |
+    |   PA4    |  mo'a  |   mob    |    —     |      —      |
+    |   PA4    |   ro   |   rol    |    —     |      —      |
+    |   PA4    |  so'a  |   soj    |    —     |      —      |
+    |   PA4    |  so'e  |   sop    |    —     |      —      |
+    |   PA4    |  so'i  |   sor    |    —     |    so'i     |
+    |   PA4    |  so'o  |   sos    |    —     |      —      |
+    |   PA4    |  so'u  |   sot    |    —     |      —      |
+    |   PA4    |  su'e  |   sup    |    —     |    su'e     |
+    |   PA4    |  su'o  |   suz    |    —     |    su'o     |
+    |   ROI    |  roi   |   rom    |    —     |     roi     |
+    |    SE    |   se   |   sel    |    —     |      —      |
+    |    SE    |   te   |   ter    |    —     |      —      |
+    |    SE    |   ve   |   vel    |    —     |      —      |
+    |    SE    |   xe   |   xel    |    —     |      —      |
+    |   UI3c   |  pe'a  |   pev    |    —     |      —      |
+    |    VA    |   va   |   vaz    |    —     |      —      |
+    |    VA    |   vi   |   viz    |    —     |      —      |
+    |    VA    |   vu   |   vuz    |    —     |      —      |
+    |   VEhA   |  ve'e  |    —     |    —     |    ve'e     |
+    |   ZAhO   |  co'a  |    —     |    —     |    co'a     |
+    |   ZAhO   |  co'u  |    —     |    —     |    co'u     |
+    |   ZAhO   |  za'o  |    —     |    —     |    za'o     |
+    |   ZEhA   |  ze'e  |    —     |    —     |    ze'e     |
+    |   ZEhA   |  ze'e  |    —     |    —     |    ze'e     |
+
+    </div>
 
 [^1]: citka：$x_1$ 吃/消化 $x_2$
 [^2]: plise：$x_1$ 是苹果，品种是 $x_2$
