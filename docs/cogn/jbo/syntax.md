@@ -38,84 +38,85 @@
 
                 那个苹果被我吃了。
 
-3. 命令句：使用了代词「ko」的句子，表示要求听者做某事。在命令的句首使用了态度指示词「.e'o」的句子，表示礼貌的请求
-4. 疑问句
-    1. 一般疑问句：在谓句的任何位置使用了态度指示词「xu」的句子，表示询问
-        1. 通过重复疑问句中的谓语，可以作为回复；若表示否定的回复，则在谓语前用「na」
+3. 特殊句式
+    1. 命令句：使用了代词「ko」的句子，表示要求听者做某事。在命令的句首使用了态度指示词「.e'o」的句子，表示礼貌的请求
+    2. 疑问句
+        1. 一般疑问句：在谓句的任何位置使用了态度指示词「xu」的句子，表示询问
+            - 通过重复疑问句中的谓语，可以作为回复；若表示否定的回复，则在谓语前用「na」
 
-            !!! note ""
-                - xu do nelci lo plise
+                !!! note ""
+                    - xu do nelci lo plise
 
-                    nelci
+                        nelci
 
-                    na nelci
+                        na nelci
 
-                    你喜欢苹果吗？
+                        你喜欢苹果吗？
 
-                    喜欢。
+                        喜欢。
 
-                    不喜欢。
+                        不喜欢。
 
-        2. 通过使用代词「go'i」，可以作为回复；若表示否定的回复，则在「go'i」前用「na」
+            - 通过使用代词「go'i」，可以作为回复；若表示否定的回复，则在「go'i」前用「na」
 
-            !!! note ""
-                - xu do nelci lo plise
+                !!! note ""
+                    - xu do nelci lo plise
 
-                    go'i
+                        go'i
 
-                    na go'i
+                        na go'i
 
-                    你喜欢苹果吗？
+                        你喜欢苹果吗？
 
-                    是的。
+                        是的。
 
-                    不是的。
+                        不是的。
 
-    2. 特殊疑问句：通常使用对应的项或谓语回答
+        2. 特殊疑问句：通常使用对应的项或谓语回答
 
-        - 用「ma」对项发起提问
+            - 用「ma」对项发起提问
 
-            !!! note ""
-                - do citka ma
+                !!! note ""
+                    - do citka ma
 
-                    le plise
+                        le plise
 
-                    你要吃什么？
+                        你要吃什么？
 
-                    这个苹果。
+                        这个苹果。
 
-        - 用「mo」对谓语发起提问
+            - 用「mo」对谓语发起提问
 
-            !!! note ""
-                - do mo le plise
+                !!! note ""
+                    - do mo le plise
 
-                    citka
+                        citka
 
-                    你把那个苹果怎么了？
+                        你把那个苹果怎么了？
 
-                    我把它吃了。
+                        我把它吃了。
 
-                - la .alis. mo
+                    - la .alis. mo
 
-                    mensi
+                        mensi
 
-                    爱丽丝是谁？
+                        爱丽丝是谁？
 
-                    我的妹妹。
+                        我的妹妹。
 
-        - 用「xo」对数词发起提问
+            - 用「xo」对数词发起提问
 
-            !!! note ""
-                - xo le do mensi cu nelci do
+                !!! note ""
+                    - xo le do mensi cu nelci do
 
-                    re
+                        re
 
-                    你有多少个妹妹喜欢你？
+                        你有多少个妹妹喜欢你？
 
-                    两个。
+                        两个。
 
 ### 3.1.2 子句
-- 谓词子句：使用结构词「NU」类
+- 谓词子句：使用结构词「NU」类。该类可以通过「SE」类换位形成复合结构词，例如「sedu'u」
 
     !!! note ""
         - le la .alis. se pensi[^1] cu du'u ri nelci lo plise kei lu mi citka le plise li'u
