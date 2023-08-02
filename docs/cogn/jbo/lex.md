@@ -14,12 +14,12 @@
     - 「la」：用于专名之前，表示被命名为对应专名的那个对象
     - 「lai」：相当于「lu'o la」的缩写，被命名为对应专名的集团
     - 「la'i」：被命名为对应专名的组
-2. 「LE」类：使谓句变成项的词语，其描述或指定适合谓句第一位的事物
-    - 「le」：用于根词之前，表示被描述为对应根词的对象（表示说者心中所想的对象并用其指称，尽管这种概括不一定准确）
-    - 「lei」：相当于「lu'o le」的缩写，被描述为对应根词的集团
-    - 「le'i」：被描述为对应根词的组
-    - 「le'e」：按刻板印象将其描述为对应根词的对象
-    - 「lo」：用于根词之前，表示某个真实存在的对象（表示适合该根词第一位的对象）
+2. 「LE」类：使谓语变成项的词语，其描述或指定适合谓语第一位的事物
+    - 「le」：用于谓语之前，表示被描述为对应谓语的对象（表示说者心中所想的对象并用其指称，尽管这种概括不一定准确）
+    - 「lei」：相当于「lu'o le」的缩写，被描述为对应谓语的集团
+    - 「le'i」：被描述为对应谓语的组
+    - 「le'e」：按刻板印象将其描述为对应谓语的对象
+    - 「lo」：用于谓语之前，表示某个真实存在的对象（表示适合该谓语第一位的对象）
     - 「loi」：相当于「lu'o lo」的缩写，真实存在的集团
     - 「lo'i」：真实存在的组
     - 「lo'e」：具有某种典型性的对象
@@ -256,32 +256,22 @@
     - 「ti'u」：「tcika[^6]」的第一位，表示发生的时刻
 
 ### 2.1.6 终止词
-用以标志一段语言结构的结束，避免出现句法二义性
-
-1. 可省略的终止词
+- 用以标志一段语言结构的结束，避免出现句法二义性
 
     <div class="text-table">
 
-    | 结构词类 | 结构词 |                终止词类                |
-    | :------: | :----: | :------------------------------------: |
-    |   BOI    |  boi   |                   PA                   |
-    |   DOhU   |  do'u  |                  COI                   |
-    |   LOhO   |  lo'o  |                   LI                   |
-    |   KEI    |  kei   |                   NU                   |
-    |    KU    |   ku   |                 LA/LE                  |
-    |   SEhU   |  se'u  |                  SOI                   |
-    |   VAU    |  vau   | 项的终止词，表示该谓句的所有项均已结束 |
-
-    </div>
-
-2. 不可省略的终止词
-
-    <div class="text-table">
-
-    | 结构词类 | 结构词 | 终止词类 |
-    | :------: | :----: | :------: |
-    |   LIhU   |  li'u  |    LU    |
-    |   LEhU   |  le'u  |   LOhU   |
+    | 结构词类 | 结构词 | 终止词类 | 结构词类 | 结构词 |     终止词类     |
+    | :------: | :----: | :------: | :------: | :----: | :--------------: |
+    |   BEhO   |  boi   |  BE/BEI  |   LOhO   |  lo'o  |        LI        |
+    |   BOI    |  boi   |  PA/BY   |   LUhU   |  lu'u  |   LAhE/NAhE+BO   |
+    |   DOhU   |  do'u  | COI/DOI  |   MEhU   |  me'u  |        ME        |
+    |   GEhU   |  ge'u  |   GOI    |   NUhU   |  nu'u  |       NUhI       |
+    |   KEI    |  kei   |    NU    |   SEhU   |  se'u  |     SEI/SOI      |
+    |   KEhE   |  ke'e  |    KE    |   TEhU   |  te'u  |       JOhI       |
+    |    KU    |   ku   |  LA/LE   |   TOI    |  toi   |        TO        |
+    |   KUhE   |  ku'e  |   PEhO   |   TUhU   |  tu'u  |       TUhE       |
+    |   KUhO   |  ku'o  |   NOI    |   VAU    |  vau   | 简单谓句与谓句尾 |
+    |   LIhU   |  li'u  |    LU    |   VEhO   |  ve'o  |       VEI        |
 
     </div>
 
@@ -366,6 +356,8 @@
     - 「ve」：将第一位与第四位换位
     - 「xe」：将第一位与第五位换位
 8. 只包含一个词语的结构词类
+    - 「BE」类：用于向冠词修饰的谓语添加其他项，不使用「FA」类时默认填充第二项，连续使用「be」是对新项的修饰
+    - 「BEI」类：用于向冠词修饰的谓语添加第二及以后的项，不使用「FA」类时默认填充第二项
     - 「CU」类：可删除标记，用于分隔两个相邻谓语，使其不成为一个词组
 
         !!! note ""
@@ -409,104 +401,56 @@
 
     <div class="text-table">
 
-    | 结构词类 | 结构词 | CVC 词缀 | CCV 词缀 | CV(')V 词缀 |
-    | :------: | :----: | :------: | :------: | :---------: |
-    |   BIhI   |  bi'i  |   biz    |    —     |      —      |
-    |    BO    |   bo   |   bor    |    —     |      —      |
-    |    BU    |   bu   |   bus    |    —     |    bu'i     |
-    |   CAhA   |  ca'a  |   caz    |    —     |      —      |
-    |   CAhA   |  nu'o  |    —     |    —     |    nu'o     |
-    |   CAhA   |  pu'i  |   pus    |    —     |      —      |
-    |    CO    |   co   |   col    |    —     |      —      |
-    |  FAhA4   |  ze'o  |   zev    |    —     |    ze'o     |
-    |  FAhA4   |  zo'a  |   zon    |    —     |    zo'a     |
-    |  FAhA4   |  zo'i  |   zor    |    —     |    zo'i     |
-    |   GOhA   |  bu'a  |   bul    |    —     |      —      |
-    |   GOhA   |  co'e  |   com    |    —     |    co'e     |
-    |   GOhA   |   du   |   dub    |    —     |    du'o     |
-    |    JA    |   ja   |   jav    |    —     |      —      |
-    |    JA    |   je   |   jev    |   jve    |      —      |
-    |    JA    |   jo   |   jov    |    —     |      —      |
-    |    JA    |   ju   |   juv    |    —     |      —      |
-    |   JAI    |  jai   |   jax*   |    —     |      —      |
-    |   JOI    |   ce   |   cec    |    —     |      —      |
-    |   JOI    |  ce'o  |    —     |    —     |    ce'o     |
-    |   JOI    |  jo'e  |   jom    |    —     |      —      |
-    |   JOI    |  joi   |   jol    |    —     |     joi     |
-    |   JOI    |  jo'u  |    —     |    —     |    jo'u     |
-    |   JOI    |  ku'a  |   kuz    |    —     |      —      |
-    |   JOI    |  pi'u  |   piv    |    —     |      —      |
-    |    KE    |   ke   |   kem    |    —     |      —      |
-    |   KEhE   |  ke'e  |   kep    |    —     |    ke'e     |
-    |   KEI    |  kei   |   kez    |    —     |      —      |
-    |  KOhA1   |   da   |   dav    |   dza    |      —      |
-    |  KOhA3   |   do   |   don    |    —     |     doi     |
-    |  KOhA3   |   mi   |   mib    |    —     |      —      |
-    |  KOhA4   |  fo'a  |    —     |    —     |    fo'a     |
-    |  KOhA4   |  fo'e  |    —     |    —     |    fo'e     |
-    |  KOhA4   |  fo'i  |    —     |    —     |    fo'i     |
-    |  KOhA6   |   ta   |   taz    |    —     |      —      |
-    |  KOhA6   |   ti   |   tif    |    —     |      —      |
-    |  KOhA6   |   tu   |   tuf    |    —     |      —      |
-    |  KOhA7   |  zi'o  |   zil    |    —     |      —      |
-    |    LE    |  le'e  |   lem    |    —     |      —      |
-    |    LE    |  lo'e  |   lom    |    —     |      —      |
-    |   MOhI   |  mo'i  |   mov    |    —     |      —      |
-    |   MOI    |  mei   |   mem    |    —     |     mei     |
-    |   MOI    |  moi   |   mom    |    —     |     moi     |
-    |    NA    |   na   |   nar    |    —     |      —      |
-    |   NAhE   |  na'e  |   nal    |    —     |      —      |
-    |   NAhE   |  no'e  |   nor    |    —     |    no'e     |
-    |   NAhE   |  to'e  |   tol    |    —     |    to'e     |
-    |    NU    |  du'u  |   dum    |    —     |      —      |
-    |    NU    |  jei   |   jez    |    —     |      —      |
-    |    NU    |   ka   |   kam    |    —     |      —      |
-    |    NU    |  li'i  |   liz    |    —     |      —      |
-    |    NU    |   ni   |   nil    |    —     |      —      |
-    |    NU    |   nu   |   nun    |    —     |      —      |
-    |    NU    |  si'o  |   siz    |    —     |      —      |
-    |    NU    |  su'u  |   suv    |    —     |      —      |
-    |   NU1    |  mu'e  |   muf    |    —     |      —      |
-    |   NU1    |  pu'u  |   puv    |    —     |      —      |
-    |   NU1    |  za'i  |   zaz    |    —     |      —      |
-    |   NU1    |  zu'o  |   zum    |    —     |      —      |
-    |   PA1    |   bi   |   biv    |    —     |      —      |
-    |   PA1    |   ci   |   cib    |    —     |      —      |
-    |   PA1    |   mu   |   mum    |    —     |      —      |
-    |   PA1    |   no   |   non    |    —     |      —      |
-    |   PA1    |   pa   |   pav    |    —     |      —      |
-    |   PA1    |   re   |   rel    |    —     |      —      |
-    |   PA1    |   so   |   soz    |    —     |      —      |
-    |   PA1    |   vo   |   von    |    —     |      —      |
-    |   PA1    |   xa   |   xav    |    —     |      —      |
-    |   PA1    |   ze   |   zel    |    —     |      —      |
-    |   PA3    |  ce'i  |   cez    |    —     |      —      |
-    |   PA3    |   pi   |   piz    |    —     |      —      |
-    |   PA4    |  da'a  |   daz    |    —     |      —      |
-    |   PA4    |  mo'a  |   mob    |    —     |      —      |
-    |   PA4    |   ro   |   rol    |    —     |      —      |
-    |   PA4    |  so'a  |   soj    |    —     |      —      |
-    |   PA4    |  so'e  |   sop    |    —     |      —      |
-    |   PA4    |  so'i  |   sor    |    —     |    so'i     |
-    |   PA4    |  so'o  |   sos    |    —     |      —      |
-    |   PA4    |  so'u  |   sot    |    —     |      —      |
-    |   PA4    |  su'e  |   sup    |    —     |    su'e     |
-    |   PA4    |  su'o  |   suz    |    —     |    su'o     |
-    |   ROI    |  roi   |   rom    |    —     |     roi     |
-    |    SE    |   se   |   sel    |    —     |      —      |
-    |    SE    |   te   |   ter    |    —     |      —      |
-    |    SE    |   ve   |   vel    |    —     |      —      |
-    |    SE    |   xe   |   xel    |    —     |      —      |
-    |   UI3c   |  pe'a  |   pev    |    —     |      —      |
-    |    VA    |   va   |   vaz    |    —     |      —      |
-    |    VA    |   vi   |   viz    |    —     |      —      |
-    |    VA    |   vu   |   vuz    |    —     |      —      |
-    |   VEhA   |  ve'e  |    —     |    —     |    ve'e     |
-    |   ZAhO   |  co'a  |    —     |    —     |    co'a     |
-    |   ZAhO   |  co'u  |    —     |    —     |    co'u     |
-    |   ZAhO   |  za'o  |    —     |    —     |    za'o     |
-    |   ZEhA   |  ze'e  |    —     |    —     |    ze'e     |
-    |   ZEhA   |  ze'e  |    —     |    —     |    ze'e     |
+    | 结构词 | CVC 词缀 | CCV 词缀 | CV(')V 词缀 | 结构词 | CVC 词缀 | CCV 词缀 | CV(')V 词缀 |
+    | :----: | :------: | :------: | :---------: | :----: | :------: | :------: | :---------: |
+    |  bi'i  |   biz    |    —     |      —      |  jei   |   jez    |    —     |      —      |
+    |   bo   |   bor    |    —     |      —      |   ka   |   kam    |    —     |      —      |
+    |   bu   |   bus    |    —     |    bu'i     |  li'i  |   liz    |    —     |      —      |
+    |  ca'a  |   caz    |    —     |      —      |   ni   |   nil    |    —     |      —      |
+    |  nu'o  |    —     |    —     |    nu'o     |   nu   |   nun    |    —     |      —      |
+    |  pu'i  |   pus    |    —     |      —      |  si'o  |   siz    |    —     |      —      |
+    |   co   |   col    |    —     |      —      |  su'u  |   suv    |    —     |      —      |
+    |  ze'o  |   zev    |    —     |    ze'o     |  mu'e  |   muf    |    —     |      —      |
+    |  zo'a  |   zon    |    —     |    zo'a     |  pu'u  |   puv    |    —     |      —      |
+    |  zo'i  |   zor    |    —     |    zo'i     |  za'i  |   zaz    |    —     |      —      |
+    |  bu'a  |   bul    |    —     |      —      |  zu'o  |   zum    |    —     |      —      |
+    |  co'e  |   com    |    —     |    co'e     |   bi   |   biv    |    —     |      —      |
+    |   du   |   dub    |    —     |    du'o     |   ci   |   cib    |    —     |      —      |
+    |   ja   |   jav    |    —     |      —      |   mu   |   mum    |    —     |      —      |
+    |   je   |   jev    |   jve    |      —      |   no   |   non    |    —     |      —      |
+    |   jo   |   jov    |    —     |      —      |   pa   |   pav    |    —     |      —      |
+    |   ju   |   juv    |    —     |      —      |   re   |   rel    |    —     |      —      |
+    |  jai   |   jax*   |    —     |      —      |   so   |   soz    |    —     |      —      |
+    |   ce   |   cec    |    —     |      —      |   vo   |   von    |    —     |      —      |
+    |  ce'o  |    —     |    —     |    ce'o     |   xa   |   xav    |    —     |      —      |
+    |  jo'e  |   jom    |    —     |      —      |   ze   |   zel    |    —     |      —      |
+    |  joi   |   jol    |    —     |     joi     |  ce'i  |   cez    |    —     |      —      |
+    |  jo'u  |    —     |    —     |    jo'u     |   pi   |   piz    |    —     |      —      |
+    |  ku'a  |   kuz    |    —     |      —      |  da'a  |   daz    |    —     |      —      |
+    |  pi'u  |   piv    |    —     |      —      |  mo'a  |   mob    |    —     |      —      |
+    |   ke   |   kem    |    —     |      —      |   ro   |   rol    |    —     |      —      |
+    |  ke'e  |   kep    |    —     |    ke'e     |  so'a  |   soj    |    —     |      —      |
+    |  kei   |   kez    |    —     |      —      |  so'e  |   sop    |    —     |      —      |
+    |   da   |   dav    |   dza    |      —      |  so'i  |   sor    |    —     |    so'i     |
+    |   do   |   don    |    —     |     doi     |  so'o  |   sos    |    —     |      —      |
+    |   mi   |   mib    |    —     |      —      |  so'u  |   sot    |    —     |      —      |
+    |  fo'a  |    —     |    —     |    fo'a     |  su'e  |   sup    |    —     |    su'e     |
+    |  fo'e  |    —     |    —     |    fo'e     |  su'o  |   suz    |    —     |    su'o     |
+    |  fo'i  |    —     |    —     |    fo'i     |  roi   |   rom    |    —     |     roi     |
+    |   ta   |   taz    |    —     |      —      |   se   |   sel    |    —     |      —      |
+    |   ti   |   tif    |    —     |      —      |   te   |   ter    |    —     |      —      |
+    |   tu   |   tuf    |    —     |      —      |   ve   |   vel    |    —     |      —      |
+    |  zi'o  |   zil    |    —     |      —      |   xe   |   xel    |    —     |      —      |
+    |  le'e  |   lem    |    —     |      —      |  pe'a  |   pev    |    —     |      —      |
+    |  lo'e  |   lom    |    —     |      —      |   va   |   vaz    |    —     |      —      |
+    |  mo'i  |   mov    |    —     |      —      |   vi   |   viz    |    —     |      —      |
+    |  mei   |   mem    |    —     |     mei     |   vu   |   vuz    |    —     |      —      |
+    |  moi   |   mom    |    —     |     moi     |  ve'e  |    —     |    —     |    ve'e     |
+    |   na   |   nar    |    —     |      —      |  co'a  |    —     |    —     |    co'a     |
+    |  na'e  |   nal    |    —     |      —      |  co'u  |    —     |    —     |    co'u     |
+    |  no'e  |   nor    |    —     |    no'e     |  za'o  |    —     |    —     |    za'o     |
+    |  to'e  |   tol    |    —     |    to'e     |  ze'e  |    —     |    —     |    ze'e     |
+    |  du'u  |   dum    |    —     |      —      |  ze'e  |    —     |    —     |    ze'e     |
 
     </div>
 

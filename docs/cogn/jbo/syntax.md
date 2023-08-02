@@ -125,7 +125,7 @@
     !!! note ""
         - le la .alis. se pensi[^1] cu du'u ri nelci lo plise kei lu mi citka le plise li'u
 
-            爱丽丝想着自己喜欢苹果，说「我吃那个苹果」。
+            爱丽丝想着自己喜欢苹果，说「我吃那个苹果」（la .alis. 是属格用法）。
 
         - la .alis. cusku[^2] le sedu'u ri nelci lo plise
 
