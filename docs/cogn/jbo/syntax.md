@@ -120,7 +120,7 @@
                         两个。
 
 ### 3.1.2 子句与从句
-1. 谓词子句：「NU」类引导的谓句，用以充当一项。该类可以通过「SE」类换位形成复合结构词，例如「sedu'u」
+1. 谓词子句：「NU」类引导的谓句，用以充当一项
 
     !!! note ""
         - le la .alis. se pensi[^1] cu du'u ri nelci lo plise kei lu mi citka le plise li'u
