@@ -168,9 +168,9 @@
 3. 复合句式：使用「GIhA」类谓句后置逻辑连词表示多谓词的谓句
 
     !!! note ""
-        - la .alis. nelci lo plise gi'e nelci lo sakta
+        - la .alis. nelci lo plise gi'e ku'i na'e citka
 
-            爱丽丝喜欢苹果，还喜欢糖。
+            爱丽丝喜欢苹果，但没有吃（苹果）。
 
 ## 3.2 根词与篇章法
 ### 3.2.1 句段

@@ -145,6 +145,8 @@
 
     </div>
 
+    - 采用「与」接续「ku'i」表示各层次的转折
+
     !!! note ""
         - mi .e la .alis. citka le plise
 
