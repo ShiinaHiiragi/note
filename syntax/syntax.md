@@ -4587,7 +4587,6 @@ Bootstrap 适合短时间开发简单的静态网站
 
 1. 定义如下的快捷键的 `json` 文件
 2. 通用键位
-
     - 程序
         - 下一个 / 上一个焦点：<kbd>Tab</kbd> 或 <kbd>Shift</kbd> + <kbd>Tab</kbd> 
         - 新建窗口：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>N</kbd>
@@ -4602,7 +4601,7 @@ Bootstrap 适合短时间开发简单的静态网站
     - 查找与替换
         - 查找或替换：<kbd>Ctrl</kbd> + <kbd>F</kbd> 或 <kbd>Ctrl</kbd> + <kbd>H</kbd>
         - 上一个 / 下一个： <kbd>Enter</kbd> 或 <kbd>Shift</kbd> + <kbd>Enter</kbd>
-        - 全部替换：<kbd>Alt</kbd> + <kbd>Enter</kbd>
+        - 全部替换：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>Enter</kbd>
     - 多光标
         - 向上 / 向下新增光标：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>ArrowDown</kbd>
         - 光标选择内容的所有出现位置：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>L</kbd>
@@ -4611,8 +4610,7 @@ Bootstrap 适合短时间开发简单的静态网站
         - 增加缩进 / 减少缩进：<kbd>Ctrl</kbd> + <kbd>]</kbd> 或 <kbd>Ctrl</kbd> + <kbd>[</kbd>
         - 配置缩进：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>I</kbd>
 3. 焦点移动
-
-    - 侧边活动栏
+    - 侧边活动栏：通过 <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>K</kbd> 关闭
         - 文件视图：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>T</kbd>（焦点转到侧边栏文件部分）
         - 全局搜索：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>F</kbd> 
         - 全局替换：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>H</kbd>
@@ -4639,7 +4637,6 @@ Bootstrap 适合短时间开发简单的静态网站
         - 移到行首 / 行尾：<kbd>Home</kbd> 或 <kbd>End</kbd>
         - （仅编辑器）向上 / 向下移动一页：<kbd>PageUp</kbd> 或 <kbd>PageDown</kbd>
 4. 命令窗口
-
     - 命令窗口
         - 打开命令面板：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
         - 打开开发工具：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>
@@ -4647,7 +4644,7 @@ Bootstrap 适合短时间开发简单的静态网站
         - 打开设置：<kbd>Ctrl</kbd> + <kbd>,</kbd>
     - 终端操作
         - 新建终端：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>
-        - 终端最大化 / 最小化：<kbd>Tab</kbd> + <kbd>`</kbd> 
+        - 终端最大化 / 最小化：<kbd>Ctrl</kbd> + <kbd>`</kbd> 
         - 关闭终端实例 ：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Q</kbd>
     - 配置功能（可能需要依赖插件）
         - 配置换行：<kbd>Alt</kbd> + <kbd>Z</kbd>
@@ -4658,7 +4655,7 @@ Bootstrap 适合短时间开发简单的静态网站
         - 打开所在目录：<kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>R</kbd>
         - 用外部应用打开文件： <kbd>Alt</kbd> + <kbd>B</kbd>
         - 固定标签页：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>K</kbd>
-        - Vim 模式：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd>
+        - Markdown 预览：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>V</kbd>
         - 提供建议：<kbd>Shift</kbd> + <kbd>Space</kbd>
 
 ##### （三）C++ 环境配置文件
