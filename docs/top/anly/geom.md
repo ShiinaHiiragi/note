@@ -22,8 +22,67 @@
 
 ## 2.2 射影几何
 ### 2.2.1 射影几何
+1. 射影几何：设 $V^{n+1}$ 是体 $F$ 上的 $n+1$ 维向量空间，其中全体 $1$ 维、$2$ 维，$\cdots$、$n$ 维子空间以及 $V^{n+1}$ 所构成的集合称为 $F$ 上的 $n$ 维射影几何，记作 $\boldsymbol{P}\left(V^{n+1}\right)$ 或 $\boldsymbol{P}(V)$．$V^{n+1}$ 中的 $1$ 维子空间称为「点」；$2$ 维子空间称为「线」，$\cdots$，$k+1$ 维子空间称为「$k$ 维面」 $\cdots\ n$ 维子空间称为「超平面」；$V^{n+1}$ 本身称为 $n$ 维射影空间，记作 $P^n$ 或 $F P^n$
+    1. 结合关系：设 $V^{n+1}$ 是体 $F$ 上的向量空间，$\boldsymbol{P}\left(V^{n+1}\right)$ 是相应的 $n$ 维射影几何．$S$ 和 $T$ 分别是 $V^{n+1}$ 中的 $k+1$ 维和 $l+1$ 维子空间
+        1. 若 $S \subset T$，则称 $k$ 维面 $S$ 属于 $l$ 维面 $T$
+        2. $S+T$ 称为 $k$ 维面 $S$ 与 $l$ 维面 $T$ 的联合
+        3. $S \cap T$ 称为 $k$ 维面 $S$ 与 $l$ 维面 $T$ 的交
+        4. 若 $S \cap T=0$，则 $S+T$ 称为 $S$ 与 $T$ 的直和，记成 $S \oplus T$
+
+        利用维数定理，可以证明如下命题
+
+        1. 对于 $2$ 维射影几何 $\boldsymbol{P}\left(V^3\right)$
+            - 不同两点的联合是一直线
+            - 不同两直线的交是一点
+        2. 对于 $3$ 维射影几何 $\boldsymbol{P}\left(V^4\right)$
+            - 两个不同点的联合是一直线
+            - 两个不同平面的交是一直线
+            - 两个不同的并且又是相交的直线的联合是一平面
+            - 两个不同的共面直线的交是一点
+            - 一点与不过此点的直线的联合是一平面
+            - 一平面与不在此平面上的直线的交是一点
+
+    2. 同构：一个射影几何 $P$ 和另一个射影几何 $P^{\prime}$ 之间的一一对应关系 $\pi$（即点对应点，线对应线等），称为射影几何间的同构．$\pi$ 保持结合关系不变，即 $\pi$ 满足条件 $\forall M, N \in \boldsymbol{P} : M \subset N \Leftrightarrow \pi(M) \subset \pi(N)$．如果存在这样的同构，则称射影几何 $\boldsymbol{P}$ 与 $\boldsymbol{P}^{\prime}$ 同构
+        1. 对于两个射影几何的同构，有
+            - $\pi(M+N)=\pi(M)+\pi(N)$
+            - $\pi(M \cap N)=\pi(M) \cap \pi(N)$
+        2. 如果 $V$ 和 $V^{\prime}$ 是同一体上的同维数的向量空间，则射影几何 $\boldsymbol{P}(V)$ 和 $\boldsymbol{P}\left(V^{\prime}\right)$ 同构
+
+    3. 齐次向量：$\boldsymbol{P}\left(V^{n+1}\right)$ 中的一个点 $A=[x a]$ 的代表向量 $a$ 称为这点的齐次向量
+        1. $\text{Desargues}$ 定理：设两个三点形 $A B C$ 和 $A^{\prime} B^{\prime} C^{\prime}$ 的三对对边两两相交，交点分别是 $L=B C \cap B^{\prime} C^{\prime}$，$M=C A \cap C^{\prime} A^{\prime}$，$N=A B \cap A^{\prime} B^{\prime}$，则这两个三点形对应顶点的连线 $A A^{\prime}, B B^{\prime}, C C^{\prime}$ 共点的充要条件是 $L, M, N$ 三点共线
+        2. $\text{Pappus}$ 定理：对于域 $F$ 上的射影几何 $\boldsymbol{P}(V)$, 设 $A, B, C$ 和 $A^{\prime}, B^{\prime}, C^{\prime}$ 分别是两条共面直线 $k$ 和 $k^{\prime}$ 上的点．命 $L=B^{\prime} C \cap B C^{\prime}$，$M=C^{\prime} A \cap C A^{\prime}$，$N=A^{\prime} B \cap$ $A B^{\prime}$，则 $L, M, N$ 三点共线
+
+2. 交比与调和点列
+    1. 交比：共线四点 $A=[a], B=[b], C=[a+b], D=[\lambda a+\mu b]$ 的交比是 $(A B, C D)= \dfrac{\lambda}{\mu}\ (\lambda \mu \neq 0)$．射影空间中的透视对应保持交比不变
+        1. 共线四点 $A=[a], B=[b], C=\left[a+\lambda_1 b\right], D=\left[a+\lambda_2 b\right]$，则
+
+            $$
+            (A B, C D)=\dfrac{\lambda_1}{\lambda_2}
+            $$
+
+        2. 共线四点 $A=\left[a+\lambda_1 b\right], B=\left[a+\lambda_2 b\right], C=\left[a+\lambda_3 b\right], D=\left[a+\lambda_4 b\right]$，则
+
+            $$
+            (A B, C D)=\dfrac{\left(\lambda_1-\lambda_3\right)\left(\lambda_2-\lambda_4\right)}{\left(\lambda_2-\lambda_3\right)\left(\lambda_1-\lambda_4\right)}
+            $$
+
+        3. 共线四点 $A=\left[\lambda_1 a+\mu_1 b\right], B=\left[\lambda_2 a+\mu_2 b\right], C=\left[\lambda_3 a+\mu_3 b\right], D=\left[\lambda_4 a+\mu_4 b\right]$，则
+
+            $$
+            (A B, C D)=\dfrac{\left(\lambda_3 \mu_1-\lambda_1 \mu_3\right)\left(\lambda_4 \mu_2-\lambda_2 \mu_4\right)}{\left(\lambda_3 \mu_2-\lambda_2 \mu_3\right)\left(\lambda_4 \mu_1-\lambda_1 \mu_4\right)}
+            $$
+
+        4. 共线四点 $A=[a], B=[b], C=\left[\lambda_1 a+\mu_1 b\right], D=\left[\lambda_2 a+\mu_2 b\right]$，则
+
+            $$
+            (A B, C D)=\dfrac{\lambda_2 \mu_1}{\lambda_1 \mu_2}
+            $$
+
+    2. 调和点列：设共线四点 $A, B, C, D$．若其交比 $(A B, C D)=-1$，则称点偶 $A, B$ 调和分割点偶 $C, D$，或称 $A, B, C, D$ 是调和点列．设 $A, B, C$ 三点共线，则唯一确定一点 $D$，使得 $A, B, C, D$ 成调和点列
 
 ### 2.2.2 射影变换
+1. 射影变换
+2. 直射变换
 
 ## 2.3 仿射几何
 ### 2.3.1 仿射几何
