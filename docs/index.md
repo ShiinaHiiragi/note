@@ -97,8 +97,7 @@ const refList = [
         author: ["Robin Turner", "Nick Nicholas"],
         title: "Lojban For Beginners",
         type: "EB/OL",
-        page: [1, 185],
-        plot: 131
+        page: [1, 185]
     },
     {
         author: ["蔡曙山"],
@@ -345,7 +344,7 @@ const refList = [
         page: [1, 151],
         press: "高等教育出版社",
         locate: "北京",
-        plot: 66 + (115 - 111)
+        plot: 66 + (123 - 111)
     },
     {
         author: ["熊金城"],

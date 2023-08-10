@@ -11,7 +11,6 @@
 
     |                     标题                      |              作者              | 分类  |
     | :-------------------------------------------: | :----------------------------: | :---: |
-    |             Lojban For Beginners              |  Robin Turner、Nick Nicholas   |  一   |
     |              符号学：原理与推演               |             赵毅衡             |  二   |
     |                  结构证明论                   |             马明辉             |  三   |
     |                  初等模型论                   |             姚宁远             |  三   |
@@ -28,16 +27,15 @@
 
     <div class="text-table">
 
-    |                              标题                              |              作者              | 分类  |
-    | :------------------------------------------------------------: | :----------------------------: | :---: |
-    |                          Lean Manual                           |       Microsoft Research       |  一   |
-    |                       逆数学と 2 階算術                        |            田中一之            |  三   |
-    |                            近世代数                            |             丘维声             |  四   |
-    |                            微分几何                            |          彭家贵、陈卿          |  五   |
-    |                            实变函数                            | 程其襄、张奠宙、胡善文、薛以峰 |  六   |
-    |                         现代概率论基础                         |             汪嘉冈             |  七   |
-    |                          高等数理统计                          |     茆诗松、王静龙、濮晓龙     |  七   |
-    | The Formal Semantics of Programming Languages: An Introduction |         Glynn Winskel          |  八   |
+    |       标题        |              作者              | 分类  |
+    | :---------------: | :----------------------------: | :---: |
+    |    Lean Manual    |       Microsoft Research       |  一   |
+    | 逆数学と 2 階算術 |            田中一之            |  三   |
+    |     近世代数      |             丘维声             |  四   |
+    |     微分几何      |          彭家贵、陈卿          |  五   |
+    |     实变函数      | 程其襄、张奠宙、胡善文、薛以峰 |  六   |
+    |  现代概率论基础   |             汪嘉冈             |  七   |
+    |   高等数理统计    |     茆诗松、王静龙、濮晓龙     |  七   |
 
     </div>
 
@@ -66,6 +64,7 @@
     | The Higher Infinite: Large Cardinals in Set Theory from Their Beginnings |         Akihiro Kanamori          |  三   |
     |                               代数拓扑讲义                               |              周建伟               |  五   |
     |                              流形与几何初步                              |              梅加强               |  五   |
+    |      The Formal Semantics of Programming Languages: An Introduction      |           Glynn Winskel           |  八   |
     |        Homotopy Type Theory: Univalent Foundations of Mathematics        | The Univalent Foundations Program |  八   |
 
     </div>
