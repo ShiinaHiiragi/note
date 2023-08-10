@@ -54,30 +54,10 @@
 
 2. 交比与调和点列
     1. 交比：共线四点 $A=[a], B=[b], C=[a+b], D=[\lambda a+\mu b]$ 的交比是 $(A B, C D)= \dfrac{\lambda}{\mu}\ (\lambda \mu \neq 0)$．射影空间中的透视对应保持交比不变
-        1. 共线四点 $A=[a], B=[b], C=\left[a+\lambda_1 b\right], D=\left[a+\lambda_2 b\right]$，则
-
-            $$
-            (A B, C D)=\dfrac{\lambda_1}{\lambda_2}
-            $$
-
-        2. 共线四点 $A=\left[a+\lambda_1 b\right], B=\left[a+\lambda_2 b\right], C=\left[a+\lambda_3 b\right], D=\left[a+\lambda_4 b\right]$，则
-
-            $$
-            (A B, C D)=\dfrac{\left(\lambda_1-\lambda_3\right)\left(\lambda_2-\lambda_4\right)}{\left(\lambda_2-\lambda_3\right)\left(\lambda_1-\lambda_4\right)}
-            $$
-
-        3. 共线四点 $A=\left[\lambda_1 a+\mu_1 b\right], B=\left[\lambda_2 a+\mu_2 b\right], C=\left[\lambda_3 a+\mu_3 b\right], D=\left[\lambda_4 a+\mu_4 b\right]$，则
-
-            $$
-            (A B, C D)=\dfrac{\left(\lambda_3 \mu_1-\lambda_1 \mu_3\right)\left(\lambda_4 \mu_2-\lambda_2 \mu_4\right)}{\left(\lambda_3 \mu_2-\lambda_2 \mu_3\right)\left(\lambda_4 \mu_1-\lambda_1 \mu_4\right)}
-            $$
-
-        4. 共线四点 $A=[a], B=[b], C=\left[\lambda_1 a+\mu_1 b\right], D=\left[\lambda_2 a+\mu_2 b\right]$，则
-
-            $$
-            (A B, C D)=\dfrac{\lambda_2 \mu_1}{\lambda_1 \mu_2}
-            $$
-
+        1. 共线四点 $A=[a], B=[b], C=\left[a+\lambda_1 b\right], D=\left[a+\lambda_2 b\right]$，则 $(A B, C D)=\dfrac{\lambda_1}{\lambda_2}$
+        2. 共线四点 $A=\left[a+\lambda_1 b\right], B=\left[a+\lambda_2 b\right], C=\left[a+\lambda_3 b\right], D=\left[a+\lambda_4 b\right]$，则 $(A B, C D)=\dfrac{\left(\lambda_1-\lambda_3\right)\left(\lambda_2-\lambda_4\right)}{\left(\lambda_2-\lambda_3\right)\left(\lambda_1-\lambda_4\right)}$
+        3. 共线四点 $A=\left[\lambda_1 a+\mu_1 b\right], B=\left[\lambda_2 a+\mu_2 b\right], C=\left[\lambda_3 a+\mu_3 b\right], D=\left[\lambda_4 a+\mu_4 b\right]$，则 $(A B, C D)=\dfrac{\left(\lambda_3 \mu_1-\lambda_1 \mu_3\right)\left(\lambda_4 \mu_2-\lambda_2 \mu_4\right)}{\left(\lambda_3 \mu_2-\lambda_2 \mu_3\right)\left(\lambda_4 \mu_1-\lambda_1 \mu_4\right)}$
+        4. 共线四点 $A=[a], B=[b], C=\left[\lambda_1 a+\mu_1 b\right], D=\left[\lambda_2 a+\mu_2 b\right]$，则 $(A B, C D)=\dfrac{\lambda_2 \mu_1}{\lambda_1 \mu_2}$
     2. 调和点列：设共线四点 $A, B, C, D$．若其交比 $(A B, C D)=-1$，则称点偶 $A, B$ 调和分割点偶 $C, D$，或称 $A, B, C, D$ 是调和点列．设 $A, B, C$ 三点共线，则唯一确定一点 $D$，使得 $A, B, C, D$ 成调和点列
 
 ### 2.2.2 射影变换
