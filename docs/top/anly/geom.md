@@ -117,7 +117,16 @@
 2. 直射变换：设映射 $f: V \rightarrow V$ 是向量空间 $V$ 上的自同构，其所诱导的射影变换 $P(f)$ : $\boldsymbol{P}(V) \rightarrow \boldsymbol{P}(V)$ 称为射影几何 $\boldsymbol{P}(V)$ 的直射变换．如果直射变换保持 $\boldsymbol{P}(V)$ 中一个超平面上每一点不变，则称为中心直射
     1. 非恒同的中心直射，除了不变超平面 $H$ 中的点外，有且只有一个不动点 $A$（可能在 $H$ 上），称为直射中心
     2. 射影几何 $\boldsymbol{P}(V)$ 的任何直射变换是有限个中心直射的乘积
-3. 对射变换
+3. 对射变换：设 $V$ 及 $V^*$ 是体 $F$ 上的 $n+1$ 维向量空间．$f$ 是同构，$f: V \rightarrow V^*$，$f$ 诱导射影变换 $\boldsymbol{P}(f): \boldsymbol{P}(V) \rightarrow \boldsymbol{P}\left(V^*\right)$．$0$ 是零化映射，$0: \boldsymbol{P}\left(V^*\right) \rightarrow \boldsymbol{P}(V)$，两个映射的组合 $0$．称 $\boldsymbol{P}(f): \boldsymbol{P}(V) \rightarrow \boldsymbol{P}(V)$ 为 $\boldsymbol{P}(V)$ 上的对射变换
+    1. 设 $M \in \boldsymbol{P}(V)$，对射变换把 $M$ 变成 $\left(M^*\right)^0 \in \boldsymbol{P}(V)$，则 $\operatorname{dim} M+\operatorname{dim}\left(M^*\right)^0=\operatorname{dim} V$
+    2. 设 $\alpha, \beta, \gamma, \delta$ 对应的齐次向量依次是 $\left(\lambda_1 u+\mu_1 v\right),\left(\lambda_2 u+\mu_2 v\right),\left(\lambda_3 u+\mu_3 v^{\prime}\right),\left(\lambda_4 u+\mu_4 v\right)$，则
+
+        $$
+        (\alpha \beta, \gamma \delta)=\dfrac{\left(\dfrac{\mu_1}{\lambda_1}-\dfrac{\mu_3}{\lambda_3}\right)\left(\dfrac{\mu_2}{\lambda_2}-\dfrac{\mu_4}{\lambda_4}\right)}{\left(\dfrac{\mu_2}{\lambda_2}-\dfrac{\mu_3}{\lambda_3}\right)\left(\dfrac{\mu_1}{\lambda_1}-\dfrac{\mu_4}{\lambda_4}\right)}=\dfrac{\left(\lambda_3 \mu_1-\lambda_1 \mu_3\right)\left(\lambda_4 \mu_2-\lambda_2 \mu_4\right)}{\left(\lambda_3 \mu_2-\lambda_2 \mu_3\right)\left(\lambda_4 \mu_1-\lambda_1 \mu_4\right)}
+        $$
+
+    3. 设 $\alpha, \beta, \gamma, \delta$ 是共轴超平面，任一直线 $l$ 依次交 $\alpha, \beta, \gamma, \delta$ 于 $A, B, C, D$，则 $(\alpha \beta, \gamma \delta)=(A B, C D)$
+    4. 对射变换把共线点映成共轴超平面，并保持交比不变
 
 ## 2.3 仿射几何
 ### 2.3.1 仿射几何
