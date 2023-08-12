@@ -59,7 +59,7 @@
         3. 共线四点 $A=\left[\lambda_1 a+\mu_1 b\right], B=\left[\lambda_2 a+\mu_2 b\right], C=\left[\lambda_3 a+\mu_3 b\right], D=\left[\lambda_4 a+\mu_4 b\right]$，则 $(A B, C D)=\dfrac{\left(\lambda_3 \mu_1-\lambda_1 \mu_3\right)\left(\lambda_4 \mu_2-\lambda_2 \mu_4\right)}{\left(\lambda_3 \mu_2-\lambda_2 \mu_3\right)\left(\lambda_4 \mu_1-\lambda_1 \mu_4\right)}$
         4. 共线四点 $A=[a], B=[b], C=\left[\lambda_1 a+\mu_1 b\right], D=\left[\lambda_2 a+\mu_2 b\right]$，则 $(A B, C D)=\dfrac{\lambda_2 \mu_1}{\lambda_1 \mu_2}$
     2. 调和点列：设共线四点 $A, B, C, D$．若其交比 $(A B, C D)=-1$，则称点偶 $A, B$ 调和分割点偶 $C, D$，或称 $A, B, C, D$ 是调和点列．设 $A, B, C$ 三点共线，则唯一确定一点 $D$，使得 $A, B, C, D$ 成调和点列
-3. 射影坐标：设 $V$ 是体 $F$ 上的 $n+1$ 维向量空间．在 $V$ 上选定一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，它确定了向量空间的同构
+3. 射影坐标：设 $V$ 是体 $F$ 上的 $n+1$ 维向量空间．在 $V$ 上选定一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，其确定了向量空间的同构
 
     $$
     \begin{gathered}
@@ -74,15 +74,15 @@
     \boldsymbol{P}(f): \boldsymbol{P}\left(V^{n+1}\right) \rightarrow \boldsymbol{P}\left(F^{n+1}\right)
     $$
 
-    1. 参考标架：将有序点组 $\left\{\left[a_0\right],\left[a_1\right],\left[a_2\right], \cdots,\left[a_n\right]\right\}$ 或 $\left\{A_0, A_1, A_2, \cdots, A_n\right\}$ 称为射影几何 $\boldsymbol{P}\left(V^{n+1}\right)$ 的射影坐标系的参考标架
-    2. 标准参考标架：对于点 $E$，调整齐次向量 $a_i$，使得 $[e]=E=\left[a_0+a_1+a_2+\cdots+a_n\right]$，则点组 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 的标准参考标架
-    3. 齐次坐标：将 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 中点 $A=[a]$ 的齐次坐标，且有 $A_i=\left[a_i\right]=\left[\lambda a_i\right]$
-    4. 非齐次坐标：设点 $P$ 的齐次坐标为 $\left(x_0, x_1, x_2, \cdots, x_n\right),\ x_0 \neq 0$，令 $\bar{x}_1=\dfrac{x_1}{x_0}, \quad \bar{x}_2=\dfrac{x_2}{x_0}, \cdots, \bar{x}_n=\dfrac{x_n}{x_0}$，则 $\left(\bar{x}_1, \bar{x}_2, \cdots, \bar{x}_n\right)$ 称为 $P$ 点的非齐次射影坐标，简称为射影坐标
+    1. 参考标架：将有序点组 $\left\{\left[a_0\right],\left[a_1\right],\left[a_2\right], \cdots,\left[a_n\right]\right\}$ 或 $\left\{A_0, A_1, A_2, \cdots, A_n\right\}$ 称为射影几何 $\boldsymbol{P}\left(V^{n+1}\right)$ 的射影坐标系的参考标架；对于点 $E$，调整齐次向量 $a_i$，使得 $[e]=E=\left[a_0+a_1+a_2+\cdots+a_n\right]$，则点组 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 的标准参考标架
+    2. 齐次坐标与非齐次坐标：将 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 中点 $A=[a]$ 的齐次坐标，且有 $A_i=\left[a_i\right]=\left[\lambda a_i\right]$；设点 $P$ 的齐次坐标为 $\left(x_0, x_1, x_2, \cdots, x_n\right),\ x_0 \neq 0$，令 $\overline{x}_1=\dfrac{x_1}{x_0}, \quad \overline{x}_2=\dfrac{x_2}{x_0}, \cdots, \overline{x}_n=\dfrac{x_n}{x_0}$，则称 $\left(\overline{x}_1, \overline{x}_2, \cdots, \overline{x}_n\right)$ 为 $P$ 点的非齐次射影坐标，简称为射影坐标
+
+    设 $V$ 和 $V^{\prime}$ 都是体 $F$ 上的 $n+1$ 维向量空间．$\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 和 $\left\{A_0^{\prime}, A_1^{\prime}, A_2^{\prime}, \cdots, A_n^{\prime}, E^{\prime}\right\}$ 分别是 $n$ 维射影几何 $\boldsymbol{P}(V)$ 和 $\boldsymbol{P}\left(V^{\prime}\right)$ 的标准参考标架．则存在唯一的射影变换 $\boldsymbol{P}(f)$，使得 $\boldsymbol{P}(f)\left(A_i\right)=A_i^{\prime}(i=0,1,2, \cdots, n), \boldsymbol{P}(f)(E)=E^{\prime}$
 
 4. 对偶原理
 
 ### 2.2.2 射影变换
-1. 射影变换：设 $V$ 和 $V^{\prime}$ 是体 $F$ 上两个向量空间，且 $\operatorname{dim} V=\operatorname{dim} V^{\prime}$，$f: V \rightarrow V^{\prime}$ 是同构．它诱导的映射
+1. 射影变换：设 $V$ 和 $V^{\prime}$ 是体 $F$ 上两个向量空间，且 $\operatorname{dim} V=\operatorname{dim} V^{\prime}$，$f: V \rightarrow V^{\prime}$ 是同构．其诱导的映射
 
     $$
     \boldsymbol{P}(f): \boldsymbol{P}(V) \rightarrow \boldsymbol{P}\left(V^{\prime}\right)
@@ -93,8 +93,8 @@
     1. 设 $V, V^{\prime}$ 是体 $F$ 上的两个向量空间，$\operatorname{dim} V=\operatorname{dim} V^{\prime}$．两个同构 $f, g: V \rightarrow V^{\prime}$ 确定同一射影变换 $\boldsymbol{P}(f)=\boldsymbol{P}(g)$ 的充要条件是存在数 $\rho \in F$，使得 $g=\rho f$
     2. 射影变换把共线点变成共线点，且保持交比不变
 
-2. 直射变换：设映射 $f: V \rightarrow V$ 是向量空间 $V$ 上的自同构，它所诱导的射影变换 $P(f)$ : $\boldsymbol{P}(V) \rightarrow \boldsymbol{P}(V)$ 称为射影几何 $\boldsymbol{P}(V)$ 的直射变换．如果直射变换保持 $\boldsymbol{P}(V)$ 中一个超平面上每一点不变，则称为中心直射
-    1. 非恒同的中心直射，除了不变超平面 $H$ 中的点外，有且只有一个不动点 $A$（可能在 $H$ 上），它称为直射中心
+2. 直射变换：设映射 $f: V \rightarrow V$ 是向量空间 $V$ 上的自同构，其所诱导的射影变换 $P(f)$ : $\boldsymbol{P}(V) \rightarrow \boldsymbol{P}(V)$ 称为射影几何 $\boldsymbol{P}(V)$ 的直射变换．如果直射变换保持 $\boldsymbol{P}(V)$ 中一个超平面上每一点不变，则称为中心直射
+    1. 非恒同的中心直射，除了不变超平面 $H$ 中的点外，有且只有一个不动点 $A$（可能在 $H$ 上），称为直射中心
     2. 射影几何 $\boldsymbol{P}(V)$ 的任何直射变换是有限个中心直射的乘积
 3. 对射变换
 
