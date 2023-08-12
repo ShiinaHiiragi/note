@@ -49,8 +49,8 @@
         2. 如果 $V$ 和 $V^{\prime}$ 是同一体上的同维数的向量空间，则射影几何 $\boldsymbol{P}(V)$ 和 $\boldsymbol{P}\left(V^{\prime}\right)$ 同构
 
     3. 齐次向量：$\boldsymbol{P}\left(V^{n+1}\right)$ 中的一个点 $A=[x a]$ 的代表向量 $a$ 称为这点的齐次向量
-        1. $\text{Desargues}$ 定理：设两个三点形 $A B C$ 和 $A^{\prime} B^{\prime} C^{\prime}$ 的三对对边两两相交，交点分别是 $L=B C \cap B^{\prime} C^{\prime}$，$M=C A \cap C^{\prime} A^{\prime}$ 与 $N=A B \cap A^{\prime} B^{\prime}$，则这两个三点形对应顶点的连线 $A A^{\prime}, B B^{\prime}, C C^{\prime}$ 共点的充要条件是 $L, M, N$ 三点共线
-        2. $\text{Pappus}$ 定理：对于域 $F$ 上的射影几何 $\boldsymbol{P}(V)$, 设 $A, B, C$ 和 $A^{\prime}, B^{\prime}, C^{\prime}$ 分别是两条共面直线 $k$ 和 $k^{\prime}$ 上的点．令 $L=B^{\prime} C \cap B C^{\prime}$，$M=C^{\prime} A \cap C A^{\prime}$ 以及 $N=A^{\prime} B \cap$ $A B^{\prime}$，则 $L, M, N$ 三点共线
+        1. $\text{Desargues}$ 定理：设两个三点形 $A B C$ 和 $A^{\prime} B^{\prime} C^{\prime}$ 的三对对边两两相交，交点为 $L=B C \cap B^{\prime} C^{\prime}, M=C A \cap C^{\prime} A^{\prime}$ 与 $N=A B \cap A^{\prime} B^{\prime}$，则这两个三点形对应顶点的连线 $A A^{\prime}, B B^{\prime}, C C^{\prime}$ 共点的充要条件是 $L, M, N$ 三点共线
+        2. $\text{Pappus}$ 定理：对于域 $F$ 上的射影几何 $\boldsymbol{P}(V)$, 设 $A, B, C$ 和 $A^{\prime}, B^{\prime}, C^{\prime}$ 分别是两条共面直线 $k$ 和 $k^{\prime}$ 上的点．令 $L=B^{\prime} C \cap B C^{\prime}, M=C^{\prime} A \cap C A^{\prime}$ 以及 $N=A^{\prime} B \ \cap$ $A B^{\prime}$，则 $L, M, N$ 三点共线
 
 2. 交比与调和点列
     1. 交比：共线四点 $A=[a], B=[b], C=[a+b], D=[\lambda a+\mu b]$ 的交比是 $(A B, C D)= \dfrac{\lambda}{\mu}\ (\lambda \mu \neq 0)$．射影空间中的透视对应保持交比不变
@@ -59,27 +59,7 @@
         3. 共线四点 $A=\left[\lambda_1 a+\mu_1 b\right], B=\left[\lambda_2 a+\mu_2 b\right], C=\left[\lambda_3 a+\mu_3 b\right], D=\left[\lambda_4 a+\mu_4 b\right]$，则 $(A B, C D)=\dfrac{\left(\lambda_3 \mu_1-\lambda_1 \mu_3\right)\left(\lambda_4 \mu_2-\lambda_2 \mu_4\right)}{\left(\lambda_3 \mu_2-\lambda_2 \mu_3\right)\left(\lambda_4 \mu_1-\lambda_1 \mu_4\right)}$
         4. 共线四点 $A=[a], B=[b], C=\left[\lambda_1 a+\mu_1 b\right], D=\left[\lambda_2 a+\mu_2 b\right]$，则 $(A B, C D)=\dfrac{\lambda_2 \mu_1}{\lambda_1 \mu_2}$
     2. 调和点列：设共线四点 $A, B, C, D$．若其交比 $(A B, C D)=-1$，则称点偶 $A, B$ 调和分割点偶 $C, D$，或称 $A, B, C, D$ 是调和点列．设 $A, B, C$ 三点共线，则唯一确定一点 $D$，使得 $A, B, C, D$ 成调和点列
-3. 射影坐标：设 $V$ 是体 $F$ 上的 $n+1$ 维向量空间．在 $V$ 上选定一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，其确定了向量空间的同构
-
-    $$
-    \begin{gathered}
-    f: V^{n+1} \rightarrow F^{n+1} \\
-    a=x_0 a_0+x_1 a_1+x_2 a_2+\cdots+x_n a_n \mapsto\left(x_0, x_1, x_2, \cdots, x_n\right)
-    \end{gathered}
-    $$
-
-    该同构确定了射影变换
-
-    $$
-    \boldsymbol{P}(f): \boldsymbol{P}\left(V^{n+1}\right) \rightarrow \boldsymbol{P}\left(F^{n+1}\right)
-    $$
-
-    1. 参考标架：将有序点组 $\left\{\left[a_0\right],\left[a_1\right],\left[a_2\right], \cdots,\left[a_n\right]\right\}$ 或 $\left\{A_0, A_1, A_2, \cdots, A_n\right\}$ 称为射影几何 $\boldsymbol{P}\left(V^{n+1}\right)$ 的射影坐标系的参考标架；对于点 $E$，调整齐次向量 $a_i$，使得 $[e]=E=\left[a_0+a_1+a_2+\cdots+a_n\right]$，则点组 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 的标准参考标架
-    2. 齐次坐标与非齐次坐标：将 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 中点 $A=[a]$ 的齐次坐标，且有 $A_i=\left[a_i\right]=\left[\lambda a_i\right]$；设点 $P$ 的齐次坐标为 $\left(x_0, x_1, x_2, \cdots, x_n\right),\ x_0 \neq 0$，令 $\overline{x}_1=\dfrac{x_1}{x_0}, \quad \overline{x}_2=\dfrac{x_2}{x_0}, \cdots, \overline{x}_n=\dfrac{x_n}{x_0}$，则称 $\left(\overline{x}_1, \overline{x}_2, \cdots, \overline{x}_n\right)$ 为 $P$ 点的非齐次射影坐标，简称为射影坐标
-
-    设 $V$ 和 $V^{\prime}$ 都是体 $F$ 上的 $n+1$ 维向量空间．$\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 和 $\left\{A_0^{\prime}, A_1^{\prime}, A_2^{\prime}, \cdots, A_n^{\prime}, E^{\prime}\right\}$ 分别是 $n$ 维射影几何 $\boldsymbol{P}(V)$ 和 $\boldsymbol{P}\left(V^{\prime}\right)$ 的标准参考标架．则存在唯一的射影变换 $\boldsymbol{P}(f)$，使得 $\boldsymbol{P}(f)\left(A_i\right)=A_i^{\prime}(i=0,1,2, \cdots, n), \boldsymbol{P}(f)(E)=E^{\prime}$
-
-4. 对偶原理：射影几何 $P(V)$ 中的命题 $(P)$ 成立，当且仅当射影几何 $\boldsymbol{P}\left(V^*\right)$ 中的对偶命题 $\left(P^*\right)$ 成立
+3. 对偶原理：射影几何 $P(V)$ 中的命题 $(P)$ 成立，当且仅当射影几何 $\boldsymbol{P}\left(V^*\right)$ 中的对偶命题 $\left(P^*\right)$ 成立
     1. 对偶空间：设 $V$ 是体 $F$ 上的 $n+1$ 维向量空间，$\left\{e_0, e_1, e_2, \cdots, e_n\right\}$ 是 $V$ 的一组基底，$V$ 上全体线性函数的集合记作 $V^*=L(V, F)$，称为 $V$ 的对偶空间．在 $V^*$ 中引人加法和数乘运算如下：对于 $\forall f, g \in V^*, k \in F, v \in V$
 
         $$
@@ -100,7 +80,7 @@
             - $(M \cap N)^0=M^0+N^0$
 
     2. 对偶映射：零化映射 $M \rightarrow M^0$ 给出 $\boldsymbol{P}(V) \rightarrow \boldsymbol{P}\left(V^*\right)$ 的一一映射
-    3. 对偶命题：对于射影几何 $\boldsymbol{P}(V)$ 的一个结合命题 $(P)=\left\{M_1, M_2, \cdots, \subset,+, \cap\right\}$，将 $M_i$ 改成 $M_i^0$，$\subset$ 改成 $\supset$，$+$改成 $\cap$，$\cap$ 改成 $+$，则得到 $P\left(V^*\right)$ 中的一个结合命题 $\left(P^*\right)= \left\{M_1^0, M_2^0, \cdots, \supset, \cap,+\right\}$．$\left(P^*\right)$ 称为 $(P)$ 的对偶命题
+    3. 对偶命题：对于射影几何 $\boldsymbol{P}(V)$ 的一个结合命题 $(P)=\left\{M_1, M_2, \cdots, \subset,+, \cap\right\}$，将 $M_i$ 改成 $M_i^0$，$\subset$ 改成 $\supset$，$+$ 改成 $\cap$，$\cap$ 改成 $+$，则得到 $P\left(V^*\right)$ 中的一个结合命题 $\left(P^*\right)= \left\{M_1^0, M_2^0, \cdots, \supset, \cap,+\right\}$．$\left(P^*\right)$ 称为 $(P)$ 的对偶命题
 
 ### 2.2.2 射影变换
 1. 射影变换：设 $V$ 和 $V^{\prime}$ 是体 $F$ 上两个向量空间，且 $\operatorname{dim} V=\operatorname{dim} V^{\prime}$，$f: V \rightarrow V^{\prime}$ 是同构．其诱导的映射
@@ -127,6 +107,27 @@
 
     3. 设 $\alpha, \beta, \gamma, \delta$ 是共轴超平面，任一直线 $l$ 依次交 $\alpha, \beta, \gamma, \delta$ 于 $A, B, C, D$，则 $(\alpha \beta, \gamma \delta)=(A B, C D)$
     4. 对射变换把共线点映成共轴超平面，并保持交比不变
+
+### 2.2.3 射影空间
+1. 射影坐标：设 $V$ 是体 $F$ 上的 $n+1$ 维向量空间．在 $V$ 上选定一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，其确定了向量空间的同构
+
+    $$
+    \begin{gathered}
+    f: V^{n+1} \rightarrow F^{n+1} \\
+    a=x_0 a_0+x_1 a_1+x_2 a_2+\cdots+x_n a_n \mapsto\left(x_0, x_1, x_2, \cdots, x_n\right)
+    \end{gathered}
+    $$
+
+    该同构确定了射影变换
+
+    $$
+    \boldsymbol{P}(f): \boldsymbol{P}\left(V^{n+1}\right) \rightarrow \boldsymbol{P}\left(F^{n+1}\right)
+    $$
+
+    1. 参考标架：将有序点组 $\left\{\left[a_0\right],\left[a_1\right],\left[a_2\right], \cdots,\left[a_n\right]\right\}$ 或 $\left\{A_0, A_1, A_2, \cdots, A_n\right\}$ 称为射影几何 $\boldsymbol{P}\left(V^{n+1}\right)$ 的射影坐标系的参考标架；对于点 $E$，调整齐次向量 $a_i$，使得 $[e]=E=\left[a_0+a_1+a_2+\cdots+a_n\right]$，则点组 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 的标准参考标架
+    2. 齐次坐标与非齐次坐标：将 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 中点 $A=[a]$ 的齐次坐标，且有 $A_i=\left[a_i\right]=\left[\lambda a_i\right]$；设点 $P$ 的齐次坐标为 $\left(x_0, x_1, x_2, \cdots, x_n\right),\ x_0 \neq 0$，令 $\overline{x}_1=\dfrac{x_1}{x_0}, \quad \overline{x}_2=\dfrac{x_2}{x_0}, \cdots, \overline{x}_n=\dfrac{x_n}{x_0}$，则称 $\left(\overline{x}_1, \overline{x}_2, \cdots, \overline{x}_n\right)$ 为 $P$ 点的非齐次射影坐标，简称为射影坐标
+
+2. 设 $V$ 和 $V^{\prime}$ 都是体 $F$ 上的 $n+1$ 维向量空间．$\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 和 $\left\{A_0^{\prime}, A_1^{\prime}, A_2^{\prime}, \cdots, A_n^{\prime}, E^{\prime}\right\}$ 分别是 $n$ 维射影几何 $\boldsymbol{P}(V)$ 和 $\boldsymbol{P}\left(V^{\prime}\right)$ 的标准参考标架．则存在唯一的射影变换 $\boldsymbol{P}(f)$，使得 $\boldsymbol{P}(f)\left(A_i\right)=A_i^{\prime}(i=0,1,2, \cdots, n), \boldsymbol{P}(f)(E)=E^{\prime}$
 
 ## 2.3 仿射几何
 ### 2.3.1 仿射几何
