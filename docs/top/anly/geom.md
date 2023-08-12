@@ -148,11 +148,14 @@
     3. 仿射几何中的定理
         1. 仿射 $\text{Desargues}$ 定理：在仿射空间 $A(V)$ 中，如果两三点形的三对对应顶点连线交于一点或平行，则对应边相交或平行；三对对应边都相交时交点在一直线上
         2. 仿射 $\text{Pappus}$ 定理：设点 $A, B, C$ 和 $A^{\prime}, B^{\prime}, C^{\prime}$ 分别在两条共面的直线上，再设 $L=B C^{\prime} \cap B^{\prime} C, M=C A^{\prime} \cap C^{\prime} A, N=A B^{\prime} \cap A^{\prime} B$，则 $L, M, N$ 三点共线
-2. 单比：仿射空间中共线三点 $A, B, C$ 的单比记作 $(A B C)=\left(A B, C D_{\infty}\right)$，其中 $D_{\infty}$ 是直线与无穷远超平面的交点
+2. 单比与有向距离
+    1. 单比：仿射空间中共线三点 $A, B, C$ 的单比记作 $(A B C)=\left(A B, C D_{\infty}\right)$，其中 $D_{\infty}$ 是直线与无穷远超平面的交点
+    2. 定向：给定实 $n$ 维仿射空间 $A^n$ 中的直线 $l$，$D$ 是其无穷远点，记为 $D_{\infty}$．则 $l$ 上任一对点 $A, B$ 确定了这条直线的定向．$l$ 上任一点 $P$ 有坐标 $\lambda=\left(P B, A D_{\infty}\right)$，规定 $\lambda$ 增大的方向是直线 $l$ 的正向，$\lambda$ 减少的方向是直线 $l$ 的负向，将正向记作 $\overrightarrow{A B}$
+    3. 有向线段：如果仿射空间 $A^n$ 中一条直线已经规定了正向，规定这条直线上任意两点所确定的线段的其中一点是始端，另一点是终端，则有从始端指向终端的方向．如果这个方向和直线的方向一致，则称这个线段为正向线段，否则为负向线段．将有向线段记作 $\overrightarrow{P Q}$，其中 $P$ 是始端，$Q$ 是终端
 
-### 2.3.2 仿射坐标与仿射变换
+### 2.3.2 仿射坐标与变换
 1. 仿射坐标
-    1. 仿射参考标架：设 $V$ 是域 $F$ 上的 $n+1$ 维向量空间．对于射影几何 $\boldsymbol{P}(V)$，选定标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$，使得 $A_0 \notin H, A_1, A_2, \cdots, A_n \in H, E \notin H$，则这个标架称为仿射几何 $A(V)$ 的仿射参考标架
+    1. 仿射参考标架：设 $V$ 是域 $F$ 上的 $n+1$ 维线性空间．对于射影几何 $\boldsymbol{P}(V)$，选定标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$，使得 $A_0 \notin H, A_1, A_2, \cdots, A_n \in H, E \notin H$，则这个标架称为仿射几何 $A(V)$ 的仿射参考标架
     2. 齐次坐标：在 $V$ 中取一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，使得 $a_1, a_2, \cdots, a_n \in H$ 且 $A_0=\left[a_0\right], A_1=\left[a_1\right], \cdots, A_n=\left[a_n\right]$，$E=\left[a_0+a_1+a_2+\cdots+a_n\right]$．则对于 $\boldsymbol{P}(V)$ 中任一点 $P=[p]$，设 $p=x_0 a_0+x_1 a_1+x_2 a_2+\cdots+x_n a_n$，则 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为点 $P$ 对于标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 的齐次坐标
     3. 仿射坐标：若 $P \notin H$，则 $P$ 是 $A(V)$ 中的点，其齐次坐标 $x_0 \neq 0$．令 $\widetilde{x}_1=\dfrac{x_1}{x_0}, \widetilde{x}_2=\dfrac{x_2}{x_0}, \cdots, \widetilde{x}_i=\dfrac{x_i}{x_0}, \cdots, \widetilde{x}_n=\dfrac{x_n}{x_0}$，称 $\left(\widetilde{x}_1, \widetilde{x}_2, \cdots, \widetilde{x}_n\right)$ 为 $n$ 维仿射几何 $A(V)$ 中点 $P$ 对于仿射参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 的仿射坐标．对于 $A(V)$ 中一点 $P$，其齐次坐标 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 可以差一个比例因子，但仿射坐标 $\left(\widetilde{x}_1, \widetilde{x}_2, \cdots, \widetilde{x}_n\right)$ 唯一确定
 2. 仿射变换：$P(V)$ 的一个直射变换如果保持无穷远超平面 $H$ 不变, 则称为 $A(V)$ 的仿射变换
@@ -210,41 +213,37 @@
         3. 称集合 $\{M \mid \overrightarrow{M_1M} = t\overrightarrow{M_1M_2}, t \in [0, 1]\}$ 为以 $M_1, M_2$ 为端点的线段，记作 $\overline{M_1M_2}$
 
 ## 2.4 Euclid 几何
-### 2.4.1 Euclid 几何
+### 2.4.1 Euclid 几何与坐标
+1. $\text{Euclid}$ 空间：给定一个仿射空间，如果对于其任意两点都能定义它们之间的距离，且这个距离定义满足三角形不等式，则这个仿射空间就称为 $\text{Euclid}$ 空间．$\text{Euclid}$ 空间中全体点，线，$\cdots$，超平面的集合称为 $\text{Euclid}$ 几何
+    1. 实 $\text{Euclid}$ 空间：任取 $A^n$ 中两点 $P=[a]$ 和 $Q=[b]$，定义其间的距离为 $d(P Q)=d([a],[b])=|b-a|$，则 $A^n$ 是一个实 $n$ 维 $\text{Euclid}$ 空间，记作 $E^n$
+    2. 有向距离：对于 $\text{Euclid}$ 空间的有向线段 $\overrightarrow{P Q}$，定义有向距离 $d(\overrightarrow{P Q})= \pm d(P Q)$，其中正向线段取正号，否则取负号
+    3. $\text{Descartes}$ 标架与 $\text{Descartes}$ 坐标系：若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架．由 $\text{Descartes}$ 标架确定的坐标系称作 $\text{Descartes}$ 坐标系．特别地，若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架．由 $\text{Descartes}$ 直角标架确定的坐标系称作 $\text{Descartes}$ 直角坐标系
+2. $\text{Euclid}$ 空间下的坐标系
+    1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
 
-### 2.4.2 Euclid 坐标
-1. $\text{Euclid}$ 空间：设 $\mathscr A$ 是一个 $n$ 维仿射空间，$A, B$ 为仿射空间中的两个点，若与 $\mathscr A$ 相联系的线性空间是一个 $\text{Euclid}$ 线性空间，则可定义仿射空间的度量 $\rho$ 为 $\rho(A, B) = |\overrightarrow{AB}|$．此时称 $\mathscr A$ 为一个 $\text{Euclid}$ 空间，记作 $E^n$
-2. $\text{Descartes}$ 标架与 $\text{Descartes}$ 坐标系
-    1. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架．由 $\text{Descartes}$ 标架确定的坐标系称作 $\text{Descartes}$ 坐标系．特别地，若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架．由 $\text{Descartes}$ 直角标架确定的坐标系称作 $\text{Descartes}$ 直角坐标系
-    2. $\text{Descartes}$ 直角坐标系的实例
-        1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
+        <div class="text-table">
 
-            <div class="text-table">
+        |   象限   |            点集            |   象限   |            点集            |
+        | :------: | :------------------------: | :------: | :------------------------: |
+        | 第一象限 | $\{(x, y) \mid x>0, y>0\}$ | 第三象限 | $\{(x, y) \mid x<0, y<0\}$ |
+        | 第二象限 | $\{(x, y) \mid x<0, y>0\}$ | 第四象限 | $\{(x, y) \mid x>0, y<0\}$ |
 
-            |   象限   |            点集            |
-            | :------: | :------------------------: |
-            | 第一象限 | $\{(x, y) \mid x>0, y>0\}$ |
-            | 第二象限 | $\{(x, y) \mid x<0, y>0\}$ |
-            | 第三象限 | $\{(x, y) \mid x<0, y<0\}$ |
-            | 第四象限 | $\{(x, y) \mid x>0, y<0\}$ |
+        </div>
 
-            </div>
+    2. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1, \boldsymbol e_2$ 与 $\boldsymbol e_3$ 对应的三个坐标轴为 $x$ 轴，$y$ 轴与 $z$ 轴，记坐标系为 $Oxyz$．三个坐标轴将平面分成八个卦限
 
-        2. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1, \boldsymbol e_2$ 与 $\boldsymbol e_3$ 对应的三个坐标轴为 $x$ 轴，$y$ 轴与 $z$ 轴，记坐标系为 $Oxyz$．三个坐标轴将平面分成八个卦限
+        <div class="text-table">
 
-            <div class="text-table">
+        |   卦限   |                点集                |   卦限   |                 点集                 |
+        | :------: | :--------------------------------: | :------: | :----------------------------------: |
+        | 第一卦限 | $\{(x, y, z) \mid x>0, y>0, z>0\}$ | 第五卦限 | $\{(x, y, z) \mid x>0, y>0, z < 0\}$ |
+        | 第二卦限 | $\{(x, y, z) \mid x<0, y>0, z>0\}$ | 第六卦限 | $\{(x, y, z) \mid x<0, y>0, z < 0\}$ |
+        | 第三卦限 | $\{(x, y, z) \mid x<0, y<0, z>0\}$ | 第七卦限 | $\{(x, y, z) \mid x<0, y<0, z < 0\}$ |
+        | 第四卦限 | $\{(x, y, z) \mid x>0, y<0, z>0\}$ | 第八卦限 | $\{(x, y, z) \mid x>0, y<0, z < 0\}$ |
 
-            |   卦限   |                点集                |   卦限   |                 点集                 |
-            | :------: | :--------------------------------: | :------: | :----------------------------------: |
-            | 第一卦限 | $\{(x, y, z) \mid x>0, y>0, z>0\}$ | 第五卦限 | $\{(x, y, z) \mid x>0, y>0, z < 0\}$ |
-            | 第二卦限 | $\{(x, y, z) \mid x<0, y>0, z>0\}$ | 第六卦限 | $\{(x, y, z) \mid x<0, y>0, z < 0\}$ |
-            | 第三卦限 | $\{(x, y, z) \mid x<0, y<0, z>0\}$ | 第七卦限 | $\{(x, y, z) \mid x<0, y<0, z < 0\}$ |
-            | 第四卦限 | $\{(x, y, z) \mid x>0, y<0, z>0\}$ | 第八卦限 | $\{(x, y, z) \mid x>0, y<0, z < 0\}$ |
+        </div>
 
-            </div>
-
-3. $\text{Euclid}$ 空间下的其他坐标系
-    1. 极坐标系：$E^2$ 中的一个顶点 $O$ 与基 $\boldsymbol e$ 组成了一个极坐标系，称 $O$ 为极点，$\boldsymbol e$ 所在的直线为极轴．任意有序数对 $(\rho, \theta)$（其中 $\rho \geqslant 0, -\pi < \varphi \leqslant \pi$）唯一对应了平面中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$，$\theta$ 为 $\overrightarrow{OP}$ 与 $\boldsymbol e$ 的夹角．并称 $\rho$ 为极径，称 $\theta$ 为极角，称 $(\rho, \theta)$ 为点 $P$ 的极坐标，记作 $P(\rho, \theta)$
+    3. 极坐标系：$E^2$ 中的一个顶点 $O$ 与基 $\boldsymbol e$ 组成了一个极坐标系，称 $O$ 为极点，$\boldsymbol e$ 所在的直线为极轴．任意有序数对 $(\rho, \theta)$（其中 $\rho \geqslant 0, -\pi < \varphi \leqslant \pi$）唯一对应了平面中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$，$\theta$ 为 $\overrightarrow{OP}$ 与 $\boldsymbol e$ 的夹角．并称 $\rho$ 为极径，称 $\theta$ 为极角，称 $(\rho, \theta)$ 为点 $P$ 的极坐标，记作 $P(\rho, \theta)$
         1. 极坐标化为平面直角坐标
 
             $$
@@ -267,10 +266,7 @@
             \end{aligned}\right.
             $$
 
-        !!! note "圆锥曲线统一极坐标方程"
-            设焦点为 $F$，准线为 $l$ 的圆锥曲线离心率为 $e$，焦点到准线的距离为 $p$，则圆锥曲线的极坐标方程为 $\rho = \dfrac{ep}{1-e\cos \theta}$
-
-    2. 球坐标系：$E^3$ 中的一个顶点 $O$ 与不共线的基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个球坐标系，称 $O$ 为原点．设 $\overrightarrow{OP}$ 在 $\mathrm{span}(\boldsymbol e_1, \boldsymbol e_2)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, \theta)$（其中 $\rho \geqslant 0, -\pi<\varphi \leqslant \pi, -\dfrac{\pi}{2} \leqslant \theta \leqslant \dfrac{\pi}{2}$）唯一对应了空间中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$．则 $\varphi$ 表示 $\overrightarrow{OM}$ 与 $\boldsymbol e_1$ 的夹角，$\theta$ 是 $\overrightarrow{OP}$ 与 $\overrightarrow{OM}$ 的夹角．称 $(\rho, \varphi, \theta)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, \theta)$
+    4. 球坐标系：$E^3$ 中的一个顶点 $O$ 与不共线的基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个球坐标系，称 $O$ 为原点．设 $\overrightarrow{OP}$ 在 $\mathrm{span}(\boldsymbol e_1, \boldsymbol e_2)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, \theta)$（其中 $\rho \geqslant 0, -\pi<\varphi \leqslant \pi, -\dfrac{\pi}{2} \leqslant \theta \leqslant \dfrac{\pi}{2}$）唯一对应了空间中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$．则 $\varphi$ 表示 $\overrightarrow{OM}$ 与 $\boldsymbol e_1$ 的夹角，$\theta$ 是 $\overrightarrow{OP}$ 与 $\overrightarrow{OM}$ 的夹角．称 $(\rho, \varphi, \theta)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, \theta)$
         1. 球坐标化为空间直角坐标
 
             $$
@@ -297,7 +293,7 @@
             \end{array}\right.
             $$
 
-    3. 柱坐标系：$E^3$ 中的一个顶点 $O$ 与正交的两个基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个柱坐标系，也称作半极坐标．点 $O$ 与基 $e_1$ 组成一个平面上的极坐标系．设 $\overrightarrow{OP}$ 在 $\mathbf N(\boldsymbol e_1)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, u)$（其中 $\rho \geqslant 0, -\pi< \varphi \leqslant \pi, u \in \mathbf R$）唯一对应了空间中的点 $P$，其中 $(\rho, \varphi)$ 是 $\overrightarrow{OM}$ 在点 $O$ 与基 $e_1$ 形成的极坐标系下的坐标，$|u| = |\overrightarrow{MP}|$．称 $(\rho, \varphi, u)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, u)$
+    5. 柱坐标系：$E^3$ 中的一个顶点 $O$ 与正交的两个基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个柱坐标系，也称作半极坐标．点 $O$ 与基 $e_1$ 组成一个平面上的极坐标系．设 $\overrightarrow{OP}$ 在 $\mathbf N(\boldsymbol e_1)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, u)$（其中 $\rho \geqslant 0, -\pi< \varphi \leqslant \pi, u \in \mathbf R$）唯一对应了空间中的点 $P$，其中 $(\rho, \varphi)$ 是 $\overrightarrow{OM}$ 在点 $O$ 与基 $e_1$ 形成的极坐标系下的坐标，$|u| = |\overrightarrow{MP}|$．称 $(\rho, \varphi, u)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, u)$
         1. 柱坐标化为空间直角坐标
 
             $$
@@ -324,13 +320,15 @@
             \end{array}\right.
             $$
 
-4. 复点：若 $n$ 维 $\text{Desvartes}$ 坐标系的坐标 $(x_1, x_2, \cdots, x_n)$ 中至少有一个是虚数，则称其为虚点，否则称其为实点．若两个虚点的对应坐标都是共轭复数，那么这两点称作一对共轭虚点，实点与虚点统称为复点
+3. 复点：若 $n$ 维 $\text{Desvartes}$ 坐标系的坐标 $(x_1, x_2, \cdots, x_n)$ 中至少有一个是虚数，则称其为虚点，否则称其为实点．若两个虚点的对应坐标都是共轭复数，那么这两点称作一对共轭虚点，实点与虚点统称为复点
     1. 复向量：若向量 $\overrightarrow{AB} = (x_1, x_2, \cdots, x_n)$ 中至少有一个是虚数，则称其为虚向量，否则称其为实向量．实向量与虚向量统称为复向量
     2. 复直线：平面上直线的一般式方程为 $Ax + By + C = 0$．若 $A, B, C$ 与三个实数成比例，那么直线为实直线，否则为虚直线．实直线与虚直线统称为复直线
 
-### 2.4.3 Euclid 变换
-1. 正交变换
-2. 合同变换
+### 2.4.2 Euclid 变换
+1. 正交变换：对于线性映射 $f: H \rightarrow H$，如果 $f$ 保持度量 $\tau$ 不变，即 $\forall a, b \in H: \tau(f(a), f(b))=\tau(a, b)$，则 $f$ 称为 $\text{Euclid}$ 线性空间 $(H, \tau)$ 的正交变换
+    1. 保持长度不变的线性映射是正交变换
+    2. 正交变换的坐标表示中的系数矩阵是正交矩阵
+2. 合同变换：若实 $n$ 维 $\text{Euclid}$ 空间上的仿射变换保持长度不变，则称其为实 $\text{Euclid}$ 空间 $E^n$ 中的合同变换
 
 !!! note "几何变换的分类"
 
