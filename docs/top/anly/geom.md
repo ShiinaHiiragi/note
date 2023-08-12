@@ -82,7 +82,28 @@
     2. 对偶映射：零化映射 $M \rightarrow M^0$ 给出 $\boldsymbol{P}(V) \rightarrow \boldsymbol{P}\left(V^*\right)$ 的一一映射
     3. 对偶命题：对于射影几何 $\boldsymbol{P}(V)$ 的一个结合命题 $(P)=\left\{M_1, M_2, \cdots, \subset,+, \cap\right\}$，将 $M_i$ 改成 $M_i^0$，$\subset$ 改成 $\supset$，$+$ 改成 $\cap$，$\cap$ 改成 $+$，则得到 $P\left(V^*\right)$ 中的一个结合命题 $\left(P^*\right)= \left\{M_1^0, M_2^0, \cdots, \supset, \cap,+\right\}$．$\left(P^*\right)$ 称为 $(P)$ 的对偶命题
 
-### 2.2.2 射影变换
+### 2.2.2 射影坐标
+1. 射影坐标：设 $V$ 是体 $F$ 上的 $n+1$ 维线性空间．在 $V$ 上选定一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，其确定了线性空间的同构
+
+    $$
+    \begin{gathered}
+    f: V^{n+1} \rightarrow F^{n+1} \\
+    a=x_0 a_0+x_1 a_1+x_2 a_2+\cdots+x_n a_n \mapsto\left(x_0, x_1, x_2, \cdots, x_n\right)
+    \end{gathered}
+    $$
+
+    该同构确定了射影变换
+
+    $$
+    \boldsymbol{P}(f): \boldsymbol{P}\left(V^{n+1}\right) \rightarrow \boldsymbol{P}\left(F^{n+1}\right)
+    $$
+
+    1. 参考标架：将有序点组 $\left\{\left[a_0\right],\left[a_1\right],\left[a_2\right], \cdots,\left[a_n\right]\right\}$ 或 $\left\{A_0, A_1, A_2, \cdots, A_n\right\}$ 称为射影几何 $\boldsymbol{P}\left(V^{n+1}\right)$ 的射影坐标系的参考标架；对于点 $E$，调整齐次向量 $a_i$，使得 $[e]=E=\left[a_0+a_1+a_2+\cdots+a_n\right]$，则点组 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 的标准参考标架
+    2. 齐次坐标与非齐次坐标：将 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 中点 $A=[a]$ 的齐次坐标，且有 $A_i=\left[a_i\right]=\left[\lambda a_i\right]$；设点 $P$ 的齐次坐标为 $\left(x_0, x_1, x_2, \cdots, x_n\right),\ x_0 \neq 0$，令 $\overline{x}_1=\dfrac{x_1}{x_0}, \overline{x}_2=\dfrac{x_2}{x_0}, \cdots, \overline{x}_n=\dfrac{x_n}{x_0}$，则称 $\left(\overline{x}_1, \overline{x}_2, \cdots, \overline{x}_n\right)$ 为 $P$ 点的非齐次射影坐标，简称为射影坐标
+
+2. 设 $V$ 和 $V^{\prime}$ 都是体 $F$ 上的 $n+1$ 维线性空间．$\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 和 $\left\{A_0^{\prime}, A_1^{\prime}, A_2^{\prime}, \cdots, A_n^{\prime}, E^{\prime}\right\}$ 分别是 $n$ 维射影几何 $\boldsymbol{P}(V)$ 和 $\boldsymbol{P}\left(V^{\prime}\right)$ 的标准参考标架．则存在唯一的射影变换 $\boldsymbol{P}(f)$，使得 $\boldsymbol{P}(f)\left(A_i\right)=A_i^{\prime}(i=0,1,2, \cdots, n), \boldsymbol{P}(f)(E)=E^{\prime}$
+
+### 2.2.3 射影变换
 1. 射影变换：设 $V$ 和 $V^{\prime}$ 是体 $F$ 上两个线性空间，且 $\operatorname{dim} V=\operatorname{dim} V^{\prime}$，$f: V \rightarrow V^{\prime}$ 是同构．其诱导的映射
 
     $$
@@ -108,27 +129,6 @@
     3. 设 $\alpha, \beta, \gamma, \delta$ 是共轴超平面，任一直线 $l$ 依次交 $\alpha, \beta, \gamma, \delta$ 于 $A, B, C, D$，则 $(\alpha \beta, \gamma \delta)=(A B, C D)$
     4. 对射变换把共线点映成共轴超平面，并保持交比不变
 
-### 2.2.3 射影坐标
-1. 射影坐标：设 $V$ 是体 $F$ 上的 $n+1$ 维线性空间．在 $V$ 上选定一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，其确定了线性空间的同构
-
-    $$
-    \begin{gathered}
-    f: V^{n+1} \rightarrow F^{n+1} \\
-    a=x_0 a_0+x_1 a_1+x_2 a_2+\cdots+x_n a_n \mapsto\left(x_0, x_1, x_2, \cdots, x_n\right)
-    \end{gathered}
-    $$
-
-    该同构确定了射影变换
-
-    $$
-    \boldsymbol{P}(f): \boldsymbol{P}\left(V^{n+1}\right) \rightarrow \boldsymbol{P}\left(F^{n+1}\right)
-    $$
-
-    1. 参考标架：将有序点组 $\left\{\left[a_0\right],\left[a_1\right],\left[a_2\right], \cdots,\left[a_n\right]\right\}$ 或 $\left\{A_0, A_1, A_2, \cdots, A_n\right\}$ 称为射影几何 $\boldsymbol{P}\left(V^{n+1}\right)$ 的射影坐标系的参考标架；对于点 $E$，调整齐次向量 $a_i$，使得 $[e]=E=\left[a_0+a_1+a_2+\cdots+a_n\right]$，则点组 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 的标准参考标架
-    2. 齐次坐标与非齐次坐标：将 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 中点 $A=[a]$ 的齐次坐标，且有 $A_i=\left[a_i\right]=\left[\lambda a_i\right]$；设点 $P$ 的齐次坐标为 $\left(x_0, x_1, x_2, \cdots, x_n\right),\ x_0 \neq 0$，令 $\overline{x}_1=\dfrac{x_1}{x_0}, \overline{x}_2=\dfrac{x_2}{x_0}, \cdots, \overline{x}_n=\dfrac{x_n}{x_0}$，则称 $\left(\overline{x}_1, \overline{x}_2, \cdots, \overline{x}_n\right)$ 为 $P$ 点的非齐次射影坐标，简称为射影坐标
-
-2. 设 $V$ 和 $V^{\prime}$ 都是体 $F$ 上的 $n+1$ 维线性空间．$\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 和 $\left\{A_0^{\prime}, A_1^{\prime}, A_2^{\prime}, \cdots, A_n^{\prime}, E^{\prime}\right\}$ 分别是 $n$ 维射影几何 $\boldsymbol{P}(V)$ 和 $\boldsymbol{P}\left(V^{\prime}\right)$ 的标准参考标架．则存在唯一的射影变换 $\boldsymbol{P}(f)$，使得 $\boldsymbol{P}(f)\left(A_i\right)=A_i^{\prime}(i=0,1,2, \cdots, n), \boldsymbol{P}(f)(E)=E^{\prime}$
-
 ## 2.3 仿射几何
 ### 2.3.1 仿射几何
 1. 仿射几何：设 $V^{n+1}$ 是一般体 $F$ 上的 $n+1$ 维线性空间，$H$ 是 $V$ 中一个固定的 $n$ 维子空间．$\boldsymbol{P}(V) \backslash H$ 是 $V$ 中所有的子空间，但不包括 $H$ 和 $H$ 的所有子空间的集合，再加 $V \backslash H$，称为 $F$ 上的 $n$ 维仿射几何，记作 $A(V)$．其中 $V \backslash H$ 中的一维子空间称为「点」，二维子空间称为「线」，$\cdots$，$k+1$ 维子空间称为「$k$ 维面」，$\cdots$，$n$ 维子空间称为「超平面」．$V \backslash H$ 本身称为 $n$ 维仿射空间，记作 $A^n$ 或 $A_F^n$，$V$ 中的 $n$ 维子空间 $H$ 称为仿射几何 $A(V)$ 的无穷远超平面
@@ -150,15 +150,19 @@
         2. 仿射 $\text{Pappus}$ 定理：设点 $A, B, C$ 和 $A^{\prime}, B^{\prime}, C^{\prime}$ 分别在两条共面的直线上，再设 $L=B C^{\prime} \cap B^{\prime} C, M=C A^{\prime} \cap C^{\prime} A, N=A B^{\prime} \cap A^{\prime} B$，则 $L, M, N$ 三点共线
 2. 单比：仿射空间中共线三点 $A, B, C$ 的单比记作 $(A B C)=\left(A B, C D_{\infty}\right)$，其中 $D_{\infty}$ 是直线与无穷远超平面的交点
 
-### 2.3.2 仿射变换
-
-### 2.3.3 仿射坐标
+### 2.3.2 仿射坐标与仿射变换
 1. 仿射坐标
     1. 仿射参考标架：设 $V$ 是域 $F$ 上的 $n+1$ 维向量空间．对于射影几何 $\boldsymbol{P}(V)$，选定标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$，使得 $A_0 \notin H, A_1, A_2, \cdots, A_n \in H, E \notin H$，则这个标架称为仿射几何 $A(V)$ 的仿射参考标架
     2. 齐次坐标：在 $V$ 中取一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，使得 $a_1, a_2, \cdots, a_n \in H$ 且 $A_0=\left[a_0\right], A_1=\left[a_1\right], \cdots, A_n=\left[a_n\right]$，$E=\left[a_0+a_1+a_2+\cdots+a_n\right]$．则对于 $\boldsymbol{P}(V)$ 中任一点 $P=[p]$，设 $p=x_0 a_0+x_1 a_1+x_2 a_2+\cdots+x_n a_n$，则 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为点 $P$ 对于标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 的齐次坐标
     3. 仿射坐标：若 $P \notin H$，则 $P$ 是 $A(V)$ 中的点，其齐次坐标 $x_0 \neq 0$．令 $\widetilde{x}_1=\dfrac{x_1}{x_0}, \widetilde{x}_2=\dfrac{x_2}{x_0}, \cdots, \widetilde{x}_i=\dfrac{x_i}{x_0}, \cdots, \widetilde{x}_n=\dfrac{x_n}{x_0}$，称 $\left(\widetilde{x}_1, \widetilde{x}_2, \cdots, \widetilde{x}_n\right)$ 为 $n$ 维仿射几何 $A(V)$ 中点 $P$ 对于仿射参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 的仿射坐标．对于 $A(V)$ 中一点 $P$，其齐次坐标 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 可以差一个比例因子，但仿射坐标 $\left(\widetilde{x}_1, \widetilde{x}_2, \cdots, \widetilde{x}_n\right)$ 唯一确定
-2. 仿射空间的线性空间进路
+2. 仿射变换：$P(V)$ 的一个直射变换如果保持无穷远超平面 $H$ 不变, 则称为 $A(V)$ 的仿射变换
+    1. 若仿射变换 $\boldsymbol{A}(f): \boldsymbol{A}(V) \rightarrow \boldsymbol{A}(V)$ 使线性无关点组 $\left\{A_0, A_1, \cdots, A_n\right\}$ 分别对应线性无关的点组 $\left\{A_0^{\prime}, A_1^{\prime}, A_2^{\prime}, \cdots, A_n^{\prime}\right\}$，则这个仿射变换是唯一确定的
+    2. 仿射几何 $A(V)$ 中，仿射变换 $\boldsymbol{A}(f): \boldsymbol{A}(V) \rightarrow \boldsymbol{A}(V)$ 保持元素间的平行关系不变
+    3. 仿射变换把共线点变成共线点，并保持单比不变
+
+!!! note "仿射空间定义的线性空间进路"
     1. 线性空间的同构
+
         1. $\mathbf R^n$ 是 $\mathbf R$ 上的线性空间：设 $(x_1, x_2, \cdots, x_n), (y_1, y_2, \cdots, y_n) \in \mathbf R^n$，定义 $\mathbf R^n$ 上的加法运算与 $\mathbf R$ 上的数乘运算
 
             $$
@@ -189,17 +193,17 @@
 
         则称 $\mathscr A$ 为与线性空间 $V$ 相联系的仿射空间，并记 $v(A, B) = \overrightarrow{AB} \ (A, B \in \mathscr A)$
 
-        1. 维度：$\mathscr A$ 的维度为与之相联系的线性空间 $V$ 的维度，记作 $\operatorname{dim} {\mathscr A} = \operatorname{dim} V$
-        2. 任何线性空间都是一个仿射空间：设 $V$ 是一个线性空间，定义 $\overrightarrow{\boldsymbol \alpha \boldsymbol \beta} = \boldsymbol \beta - \boldsymbol \alpha$，则 $V$ 是一个仿射空间
+        3. 维度：$\mathscr A$ 的维度为与之相联系的线性空间 $V$ 的维度，记作 $\operatorname{dim} {\mathscr A} = \operatorname{dim} V$
+        4. 任何线性空间都是一个仿射空间：设 $V$ 是一个线性空间，定义 $\overrightarrow{\boldsymbol \alpha \boldsymbol \beta} = \boldsymbol \beta - \boldsymbol \alpha$，则 $V$ 是一个仿射空间
 
     3. 仿射几何公理的完备性：任何维数相同的仿射空间都是同构的
         1. 设 $\mathbf R^n$ 是一个与 $\text{Euclid}$ 线性空间 $\mathbf R^n$ 相联系的仿射空间．设 $A = (a_1, a_2, \cdots, a_n), B = (b_1, b_2, \cdots, b_n)$，并定义 $\overrightarrow{AB} = (b_1 - a_1, b_2 - a_2, \cdots, b_n - a_n)$，其中点 $A$ 称为向量 $\overrightarrow{AB}$ 的始点，点 $B$ 称为向量 $\overrightarrow{AB}$ 的终点
         2. 仿射空间的同构：设 $\mathscr A, \mathscr B$ 是两个仿射空间，且相联系的线性空间 $V, W$ 存在同构映射 $\varphi: V \to W$．若存在一个双射 $\psi: \mathscr A \to \mathscr B$ 使得对于任意 $A, B \in \mathscr A$，均有 $\overrightarrow{\psi(A) \psi(B)} = \varphi(\overrightarrow{AB})$，则称 $\mathscr A$ 与 $\mathscr B$ 同构
-            - 设 $\mathscr A$ 为任意仿射空间，任选 $O \in \mathscr A$．对于任意 $A \in \mathscr A$，构造径向量（或称向径） $\psi_O(A) = \overrightarrow{OA}$，则 $\mathscr A$ 同构于相联系的被看作为仿射空间的线性空间 $V$
-            - 任何一个被看作仿射空间的 $n$ 维线性空间同构于仿射空间 $\mathbf R^n$
+            1. 设 $\mathscr A$ 为任意仿射空间，任选 $O \in \mathscr A$．对于任意 $A \in \mathscr A$，构造径向量（或称向径） $\psi_O(A) = \overrightarrow{OA}$，则 $\mathscr A$ 同构于相联系的被看作为仿射空间的线性空间 $V$
+            2. 任何一个被看作仿射空间的 $n$ 维线性空间同构于仿射空间 $\mathbf R^n$
         3. 仿射标架：设 $\mathscr A$ 为仿射空间，$V$ 为与之联系的线性空间，称 $\mathscr A$ 中一点 $O$ 与基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 组成的集合称为 $\mathscr A$ 中的仿射标架，记作 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$，称点 $O$ 为原点，称基所在的直线为坐标轴
-            - 每个仿射标架 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
-            - 当标架取定后，仿射空间与与之联系的线性空间与 $\mathbf R^n$ 具有一一对应的关系，称之为坐标系．由仿射标架确定的坐标系称作仿射坐标系
+            1. 每个仿射标架 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
+            2. 当标架取定后，仿射空间与与之联系的线性空间与 $\mathbf R^n$ 具有一一对应的关系，称之为坐标系．由仿射标架确定的坐标系称作仿射坐标系
     4. 直线：设 $\mathscr A$ 是一个仿射空间，由点 $M \in \mathscr A$ 与一个非零向量 $\boldsymbol \alpha$ 给出的直线定义为使得 $\overrightarrow{PM}$ 与 $\boldsymbol \alpha$ 共线的点 $P \in \mathscr A$ 的集合．称 $\boldsymbol \alpha$ 为直线的方向向量，任意与直线的方向向量垂直的向量称为直线 $l$ 的法向量
         1. 任何与 $\boldsymbol \alpha$ 共线的向量称其与直线平行，则所有平行于一条直线的向量形成一个 $1$ 维线性空间
         2. 通过仿射空间中的任意两个不同的点 $M_1, M_2$ 有且仅有一条直线，记作 $M_1M_2$
@@ -208,24 +212,7 @@
 ## 2.4 Euclid 几何
 ### 2.4.1 Euclid 几何
 
-### 2.4.2 Euclid 变换
-1. 正交变换
-2. 合同变换
-3. 几何变换的分类
-
-    $$
-    \textsf{射影变换} \left\{\begin{aligned} & \textsf{透视变换} \\ & \textsf{仿射变换} \left\{\begin{aligned} & \textsf{平移变换} \\ & \textsf{线性变换} \left\{\begin{aligned} & \textsf{恒同变换} \\ & \textsf{旋转变换} \\ & \textsf{放缩变换} \left\{\begin{aligned} & \textsf{各向同性放缩变换：包括中心对称变换} \\ & \textsf{非各向同性放缩变换：包括反射变换} \end{aligned}\right. \\ & \textsf{剪切变换} \end{aligned}\right. \end{aligned}\right. \end{aligned}\right.
-    $$
-
-    1. 特殊的仿射变换
-        - 位似变换：平移变换、恒同变换、各向同性放缩变换
-        - 相似变换：平移变换、恒同变换、旋转变换、各向同性放缩变换
-        - 合同变换：平移变换、恒同变换、旋转变换、中心对称变换、反射变换
-        - 刚体变换[^1]：平移变换、恒同变换、旋转变换
-    2. 特殊的线性变换
-        - 正交变换：恒同变换、旋转变换、中心对称变换、反射变换
-
-### 2.4.3 Euclid 坐标
+### 2.4.2 Euclid 坐标
 1. $\text{Euclid}$ 空间：设 $\mathscr A$ 是一个 $n$ 维仿射空间，$A, B$ 为仿射空间中的两个点，若与 $\mathscr A$ 相联系的线性空间是一个 $\text{Euclid}$ 线性空间，则可定义仿射空间的度量 $\rho$ 为 $\rho(A, B) = |\overrightarrow{AB}|$．此时称 $\mathscr A$ 为一个 $\text{Euclid}$ 空间，记作 $E^n$
 2. $\text{Descartes}$ 标架与 $\text{Descartes}$ 坐标系
     1. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架．由 $\text{Descartes}$ 标架确定的坐标系称作 $\text{Descartes}$ 坐标系．特别地，若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架．由 $\text{Descartes}$ 直角标架确定的坐标系称作 $\text{Descartes}$ 直角坐标系
@@ -341,4 +328,22 @@
     1. 复向量：若向量 $\overrightarrow{AB} = (x_1, x_2, \cdots, x_n)$ 中至少有一个是虚数，则称其为虚向量，否则称其为实向量．实向量与虚向量统称为复向量
     2. 复直线：平面上直线的一般式方程为 $Ax + By + C = 0$．若 $A, B, C$ 与三个实数成比例，那么直线为实直线，否则为虚直线．实直线与虚直线统称为复直线
 
-[^1]: 其他资料也称其为「欧氏变换」．此名词在本页面未被引入，且与「$\text{Euclid}$ 变换」不同义
+### 2.4.3 Euclid 变换
+1. 正交变换
+2. 合同变换
+
+!!! note "几何变换的分类"
+
+    $$
+    \textsf{射影变换} \left\{\begin{aligned} & \textsf{透视变换} \\ & \textsf{仿射变换} \left\{\begin{aligned} & \textsf{平移变换} \\ & \textsf{线性变换} \left\{\begin{aligned} & \textsf{恒同变换} \\ & \textsf{旋转变换} \\ & \textsf{放缩变换} \left\{\begin{aligned} & \textsf{各向同性放缩变换：包括中心对称变换} \\ & \textsf{非各向同性放缩变换：包括反射变换} \end{aligned}\right. \\ & \textsf{剪切变换} \end{aligned}\right. \end{aligned}\right. \end{aligned}\right.
+    $$
+
+    1. 特殊的仿射变换
+        - 位似变换：平移变换、恒同变换、各向同性放缩变换
+        - 相似变换：平移变换、恒同变换、旋转变换、各向同性放缩变换
+        - 合同变换：平移变换、恒同变换、旋转变换、中心对称变换、反射变换
+        - 刚体变换：平移变换、恒同变换、旋转变换
+    2. 特殊的线性变换
+        - 正交变换：恒同变换、旋转变换、中心对称变换、反射变换
+
+    注释：其他资料也将「刚体变换」称为「欧氏变换」．此名词在本页面未被引入，且与「$\text{Euclid}$ 变换」不同义
