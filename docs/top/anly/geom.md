@@ -139,7 +139,7 @@
     2. 任何线性空间都是一个仿射空间：设 $V$ 是一个线性空间，定义 $\overrightarrow{\boldsymbol \alpha \boldsymbol \beta} = \boldsymbol \beta - \boldsymbol \alpha$，则 $V$ 是一个仿射空间
 
 3. 仿射几何公理的完备性：任何维数相同的仿射空间都是同构的
-    1. 设 $\mathbf R^n$ 是一个与内积空间 $\mathbf R^n$ 相联系的仿射空间．设 $A = (a_1, a_2, \cdots, a_n), B = (b_1, b_2, \cdots, b_n)$，并定义 $\overrightarrow{AB} = (b_1 - a_1, b_2 - a_2, \cdots, b_n - a_n)$，其中点 $A$ 称为向量 $\overrightarrow{AB}$ 的始点，点 $B$ 称为向量 $\overrightarrow{AB}$ 的终点
+    1. 设 $\mathbf R^n$ 是一个与 $\text{Euclid}$ 线性空间 $\mathbf R^n$ 相联系的仿射空间．设 $A = (a_1, a_2, \cdots, a_n), B = (b_1, b_2, \cdots, b_n)$，并定义 $\overrightarrow{AB} = (b_1 - a_1, b_2 - a_2, \cdots, b_n - a_n)$，其中点 $A$ 称为向量 $\overrightarrow{AB}$ 的始点，点 $B$ 称为向量 $\overrightarrow{AB}$ 的终点
     2. 仿射空间的同构：设 $\mathscr A, \mathscr B$ 是两个仿射空间，且相联系的线性空间 $V, W$ 存在同构映射 $\varphi: V \to W$．若存在一个双射 $\psi: \mathscr A \to \mathscr B$ 使得对于任意 $A, B \in \mathscr A$，均有 $\overrightarrow{\psi(A) \psi(B)} = \varphi(\overrightarrow{AB})$，则称 $\mathscr A$ 与 $\mathscr B$ 同构
         1. 设 $\mathscr A$ 为任意仿射空间，任选 $O \in \mathscr A$．对于任意 $A \in \mathscr A$，构造径向量（或称向径） $\psi_O(A) = \overrightarrow{OA}$，则 $\mathscr A$ 同构于相联系的被看作为仿射空间的线性空间 $V$
         2. 任何一个被看作仿射空间的 $n$ 维线性空间同构于仿射空间 $\mathbf R^n$
@@ -154,7 +154,11 @@
 
 ## 2.4 Euclid 几何
 ### 2.4.1 Euclid 几何
-1. $\text{Euclid}$ 空间：设 $\mathscr A$ 是一个 $n$ 维仿射空间，$A, B$ 为仿射空间中的两个点，若与 $\mathscr A$ 相联系的线性空间是一个内积空间，则可定义仿射空间的度量 $\rho$ 为 $\rho(A, B) = |\overrightarrow{AB}|$．此时称 $\mathscr A$ 为一个 $\text{Euclid}$ 空间，记作 $E^n$
+
+### 2.4.2 Euclid 变换
+
+### 2.4.3 Euclid 空间
+1. $\text{Euclid}$ 空间：设 $\mathscr A$ 是一个 $n$ 维仿射空间，$A, B$ 为仿射空间中的两个点，若与 $\mathscr A$ 相联系的线性空间是一个 $\text{Euclid}$ 线性空间，则可定义仿射空间的度量 $\rho$ 为 $\rho(A, B) = |\overrightarrow{AB}|$．此时称 $\mathscr A$ 为一个 $\text{Euclid}$ 空间，记作 $E^n$
 2. $\text{Descartes}$ 标架与 $\text{Descartes}$ 坐标系
     1. 若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架．由 $\text{Descartes}$ 标架确定的坐标系称作 $\text{Descartes}$ 坐标系．特别地，若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架．由 $\text{Descartes}$ 直角标架确定的坐标系称作 $\text{Descartes}$ 直角坐标系
     2. $\text{Descartes}$ 直角坐标系的实例
@@ -268,7 +272,3 @@
 4. 复点：若 $n$ 维 $\text{Desvartes}$ 坐标系的坐标 $(x_1, x_2, \cdots, x_n)$ 中至少有一个是虚数，则称其为虚点，否则称其为实点．若两个虚点的对应坐标都是共轭复数，那么这两点称作一对共轭虚点，实点与虚点统称为复点
     1. 复向量：若向量 $\overrightarrow{AB} = (x_1, x_2, \cdots, x_n)$ 中至少有一个是虚数，则称其为虚向量，否则称其为实向量．实向量与虚向量统称为复向量
     2. 复直线：平面上直线的一般式方程为 $Ax + By + C = 0$．若 $A, B, C$ 与三个实数成比例，那么直线为实直线，否则为虚直线．实直线与虚直线统称为复直线
-
-### 2.4.2 正交变换
-
-### 2.4.3 合同变换
