@@ -79,7 +79,28 @@
 
     设 $V$ 和 $V^{\prime}$ 都是体 $F$ 上的 $n+1$ 维向量空间．$\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 和 $\left\{A_0^{\prime}, A_1^{\prime}, A_2^{\prime}, \cdots, A_n^{\prime}, E^{\prime}\right\}$ 分别是 $n$ 维射影几何 $\boldsymbol{P}(V)$ 和 $\boldsymbol{P}\left(V^{\prime}\right)$ 的标准参考标架．则存在唯一的射影变换 $\boldsymbol{P}(f)$，使得 $\boldsymbol{P}(f)\left(A_i\right)=A_i^{\prime}(i=0,1,2, \cdots, n), \boldsymbol{P}(f)(E)=E^{\prime}$
 
-4. 对偶原理
+4. 对偶原理：射影几何 $P(V)$ 中的命题 $(P)$ 成立，当且仅当射影几何 $\boldsymbol{P}\left(V^*\right)$ 中的对偶命题 $\left(P^*\right)$ 成立
+    1. 对偶空间：设 $V$ 是体 $F$ 上的 $n+1$ 维向量空间，$\left\{e_0, e_1, e_2, \cdots, e_n\right\}$ 是 $V$ 的一组基底，$V$ 上全体线性函数的集合记作 $V^*=L(V, F)$，称为 $V$ 的对偶空间．在 $V^*$ 中引人加法和数乘运算如下：对于 $\forall f, g \in V^*, k \in F, v \in V$
+
+        $$
+        \begin{aligned}
+        (k f)(v) & =k f(v) \\
+        (f+g)(v) & =f(v)+g(v)
+        \end{aligned}
+        $$
+
+        则 $V^*$ 也是 $F$ 上的向量空间
+
+        1. 设 $V$ 是 $n+1$ 维向量空间，$V^*$ 是 $V$ 的对偶空间，则有 $\operatorname{dim} V=\operatorname{dim} V^*=$ $n+1$
+        2. 设 $M$ 是 $V$ 的子空间，$M^0$ 是 $V^*$ 的子空间，使得 $M^0=\left\{f \in V^*: f(M)=0\right\}$．称 $M^0$ 为 $M$ 的零化子空间，称 $0: \boldsymbol{P}(V) \rightarrow \boldsymbol{P}\left(V^*\right), M \rightarrow M^0$ 为零化映射．零化映射 $M \rightarrow M^0$ 是 $V$ 的子空间到 $V^*$ 的子空间上的一一映射，且有
+            - $\operatorname{dim} M+\operatorname{dim} M^0=\operatorname{dim} V=\operatorname{dim} V^*$
+            - $M^{00}=M$
+            - $M \subset N \Rightarrow M^0 \supset N^0$
+            - $(M+N)^0=M^0 \cap N^0$
+            - $(M \cap N)^0=M^0+N^0$
+
+    2. 对偶映射：零化映射 $M \rightarrow M^0$ 给出 $\boldsymbol{P}(V) \rightarrow \boldsymbol{P}\left(V^*\right)$ 的一一映射
+    3. 对偶命题：对于射影几何 $\boldsymbol{P}(V)$ 的一个结合命题 $(P)=\left\{M_1, M_2, \cdots, \subset,+, \cap\right\}$，将 $M_i$ 改成 $M_i^0$，$\subset$ 改成 $\supset$，$+$改成 $\cap$，$\cap$ 改成 $+$，则得到 $P\left(V^*\right)$ 中的一个结合命题 $\left(P^*\right)= \left\{M_1^0, M_2^0, \cdots, \supset, \cap,+\right\}$．$\left(P^*\right)$ 称为 $(P)$ 的对偶命题
 
 ### 2.2.2 射影变换
 1. 射影变换：设 $V$ 和 $V^{\prime}$ 是体 $F$ 上两个向量空间，且 $\operatorname{dim} V=\operatorname{dim} V^{\prime}$，$f: V \rightarrow V^{\prime}$ 是同构．其诱导的映射
@@ -156,6 +177,21 @@
 ### 2.4.1 Euclid 几何
 
 ### 2.4.2 Euclid 变换
+1. 正交变换
+2. 合同变换
+3. 几何变换的分类
+
+    $$
+    \textsf{射影变换} \left\{\begin{aligned} & \textsf{透视变换} \\ & \textsf{仿射变换} \left\{\begin{aligned} & \textsf{平移变换} \\ & \textsf{线性变换} \left\{\begin{aligned} & \textsf{恒同变换} \\ & \textsf{旋转变换} \\ & \textsf{放缩变换} \left\{\begin{aligned} & \textsf{各向同性放缩变换：包括中心对称变换} \\ & \textsf{非各向同性放缩变换：包括反射变换} \end{aligned}\right. \\ & \textsf{剪切变换} \end{aligned}\right. \end{aligned}\right. \end{aligned}\right.
+    $$
+
+    1. 特殊的仿射变换
+        - 位似变换：平移变换、恒同变换、各向同性放缩变换
+        - 相似变换：平移变换、恒同变换、旋转变换、各向同性放缩变换
+        - 合同变换：平移变换、恒同变换、旋转变换、中心对称变换、反射变换
+        - 刚体变换[^1]：平移变换、恒同变换、旋转变换
+    2. 特殊的线性变换
+        - 正交变换：恒同变换、旋转变换、中心对称变换、反射变换
 
 ### 2.4.3 Euclid 空间
 1. $\text{Euclid}$ 空间：设 $\mathscr A$ 是一个 $n$ 维仿射空间，$A, B$ 为仿射空间中的两个点，若与 $\mathscr A$ 相联系的线性空间是一个 $\text{Euclid}$ 线性空间，则可定义仿射空间的度量 $\rho$ 为 $\rho(A, B) = |\overrightarrow{AB}|$．此时称 $\mathscr A$ 为一个 $\text{Euclid}$ 空间，记作 $E^n$
@@ -272,3 +308,5 @@
 4. 复点：若 $n$ 维 $\text{Desvartes}$ 坐标系的坐标 $(x_1, x_2, \cdots, x_n)$ 中至少有一个是虚数，则称其为虚点，否则称其为实点．若两个虚点的对应坐标都是共轭复数，那么这两点称作一对共轭虚点，实点与虚点统称为复点
     1. 复向量：若向量 $\overrightarrow{AB} = (x_1, x_2, \cdots, x_n)$ 中至少有一个是虚数，则称其为虚向量，否则称其为实向量．实向量与虚向量统称为复向量
     2. 复直线：平面上直线的一般式方程为 $Ax + By + C = 0$．若 $A, B, C$ 与三个实数成比例，那么直线为实直线，否则为虚直线．实直线与虚直线统称为复直线
+
+[^1]: 其他资料也称其为「欧氏变换」．此名词在本页面未被引入，且与「$\text{Euclid}$ 变换」不同义
