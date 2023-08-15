@@ -334,7 +334,7 @@
     $$
 
     1. 仿射变换使有心二阶超曲面变成有心二阶超曲面，使抛物面变成抛物面
-    2. 有心二阶超曲面的标准形是 $\lambda_0+\lambda_1 \tilde{x}_1^2+\lambda_2 \tilde{x}_2^2+\cdots+\lambda_r \tilde{x}_r^2=0$，抛物面的标准形是 $\lambda_1 \tilde{x}_1+\lambda_2 \tilde{x}_2^2+\cdots+\lambda_r \tilde{x}_r^2=0$，其中 $r=\sigma$ 的秩为 $-1$
+    2. 有心二阶超曲面的标准形是 $\lambda_0+\lambda_1 \widetilde{x}_1^2+\lambda_2 \widetilde{x}_2^2+\cdots+\lambda_r \widetilde{x}_r^2=0$，抛物面的标准形是 $\lambda_1 \widetilde{x}_1+\lambda_2 \widetilde{x}_2^2+\cdots+\lambda_r \widetilde{x}_r^2=0$，其中 $r=\sigma$ 的秩为 $-1$
 
 ### 5.3.3 Euclid 空间的二次超曲面
 1. 二次超曲面的表达式：任给一个实对称双线性形式 $\sigma: V \times V \rightarrow \mathbf{R}, \sigma(a, b)=\sigma(b, a), \forall a, b \in V$，则得到实 $n$ 维 $\text{Euclid}$ 空间 $E^n$ 中的一个二次超曲面 $Q(a)$，其表达式为 $\sigma(a, a)=0$
@@ -344,7 +344,10 @@
 
     2. 设 $Q(\sigma)$ 是 $\text{Euclid}$ 空间 $E^n$ 中的二次超曲面，由于对称双线性形式 $\sigma$ 不一定是正定的，所以 $(V, \sigma)$ 不是 $\text{Euclid}$ 线性空间，因此将其称为内积线性空间，对称双线性形式 $\sigma$ 称为它的内积．如果对于内积 $\sigma$ 来说，$H^{\perp} \not \subset H$，则 $E^n$ 中的二次超曲面 $Q(\sigma)$ 称为有心二次超曲面，$H^{\perp}$ 称为二次超曲面 $Q(\sigma)$ 的中心，它是无穷远超平面 $H$ 的极点．如果 $H^{\perp} \subset H$，则 $Q(\sigma)$ 称为 $E^n$ 的无心二次超曲面或抛物面
 
-2. $\text{Euclid}$ 空间中的有心二次超曲面
+2. $\text{Euclid}$ 空间中的有心二次超曲面：一个有心二次超曲面的中心是无穷远超平面 $H$ 的极点，任给一点 $(\overline{x}_0^0, \overline{x}_1^0, \overline{x}_2^0, \cdots, \overline{x}_n^0)$，其极面方程为 ${\displaystyle \sum_{i, j=0}^n b_{i j} \overline{x}_i^0 \overline{x}_j=0}$，换成非齐次坐标后得到方程组 ${\displaystyle \sum_{i=1}^n b_{i j} x_i^0+b_j=0 \ (j=1,2, \cdots, n)}$，其解 $\left(x_1^0, x_2^0, \cdots, x_n^0\right)$ 为有心二次超曲面中心的 $\text{Descartes}$ 坐标
+    1. 二次超曲面是有心的充要条件是系数矩阵 $B=\begin{bmatrix} b_{i j} \\ \end{bmatrix}$ 是可逆的，即 $\operatorname{det}(B)=\operatorname{det}\left(b_{i j}\right) \neq 0$
+    2. 二次超曲面上一点 $\left(x_1, x_2, \cdots, x_n\right)$ 的法方向是 $\left(\dfrac{\partial \varphi(x)}{\partial x_1}, \dfrac{\partial \varphi(x)}{\partial x_2}, \cdots, \dfrac{\partial \varphi(x)}{\partial x_n}\right)$
+    3. 给出 $\text{Euclid}$ 空间中一个非退化有心二次超曲面，则总能找到一个 $\text{Descartes}$ 坐标系或一个正交变换，使二次超曲面的坐标表示方程化成标准形 $\lambda_1 x_1^2+\lambda_2 x_2^2+\cdots+\lambda_n x_n^2=1$，其中 $\lambda_i$ 是非零实数
 3. $\text{Euclid}$ 空间中的抛物面：给出 $\text{Euclid}$ 空间 $E^n$ 中的一个非退化抛物面 $Q(\sigma)$，则总可以通过正交变换找到一个 $\text{Descartes}$ 坐标系，使得这个抛物面的坐标表示式可以简化为 $2 \lambda_1 x_1+\lambda_2 x_2^2+\cdots+\lambda_n x_n^2=0$
 
 ## 5.4 曲面的局部理论
