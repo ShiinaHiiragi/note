@@ -285,6 +285,18 @@
     3. 设 $M$ 是向量空间 $V$ 的子空间，$\sigma_M$ 是 $\sigma$ 在 $M$ 上的限制．如果 $\sigma_M$ 是退化的，即 $\sigma_M$ 的秩小于 $\operatorname{dim} M$，则 $M$ 称为 $V$ 的退化子空间
         1. $M$ 是 $V$ 的非退化子空间，当且仅当 $\sigma_M$ 的秩等于 $\operatorname{dim} M$
         2. 设 $M$ 是 $V$ 中的非退化子空间，则 $V=M \oplus M^{\perp}$
+    4. 内积空间结构定理：设 $(V, \sigma)$ 是内积空间，则 $V=A_0 \oplus A_1 \oplus A_2 \oplus \cdots \oplus A_r \oplus V^{\perp}$．其中 $\operatorname{dim} A_i=1, r+1=\sigma$ 的秩，$A_i \perp A_j\ (i, j=0,1,2, \cdots, r, i \neq j)$
+        1. 对称矩阵合同于一个对角矩阵
+        2. 设 $V$ 是复向量空间，则存在一组基使得 $\sigma$ 的矩阵表示是 $\left(\sigma ;\left\{a_i\right\}\right)=\left[\begin{array}{c c} I_{r+1} & 0 \\ 0 & 0 \end{array}\right]$
+        3. 设 $V$ 是实向量空间，则存在一组基使得 $\sigma$ 的矩阵表示是 $\left(\sigma ;\left\{e_i\right\}\right)=\left[\begin{array}{ccc} I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0 \end{array}\right]$，其中 $p+q+1=r+1$
+    5. 一个实值对称双线性形式 $\sigma$ 称为
+        1. 半正定的，指 $\forall a \in V, a \neq 0, \sigma(a, a) \geqslant 0$
+        2. 正定的，指 $\forall a \in V, a \neq 0, \sigma(a, a)>0$
+        3. 半负定的，指 $\forall a \in V, a \neq 0, \sigma(a, a) \leqslant 0$
+        4. 负定的，指 $\forall a \in V, a \neq 0, \sigma(a, a)<0$
+    6. 设 $V$ 是实向量空间，$\sigma$ 的矩阵表示是 $\left[\begin{array}{ccc}I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0\end{array}\right]$，称 $p-q$ 为 $\sigma$ 的符号差
+        1. 设 $V$ 是实向量空间，$\sigma$ 的矩阵表示是 $\left[\begin{array}{ccc}I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0\end{array}\right]$．当 $p=n+1$ 时，$\sigma$ 正定；当 $p<n+1$ 并且 $q=0$ 时，$\sigma$ 半正定；当 $q=n+1$ 时，$\sigma$ 负定；当 $q<n+1$ 且 $p=0$ 时，$\sigma$ 半负定
+        2. 惯性定律：实向量空间 $V$ 上的两个双线性形式 $\sigma$ 和 $\tau$ 是合同的，当且仅当它们的秩相等，符号差相同
 
 ## 5.3 曲面的局部理论
 ### 5.3.1 曲面的微积分
