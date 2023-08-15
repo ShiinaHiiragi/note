@@ -336,7 +336,12 @@
     1. 仿射变换使有心二阶超曲面变成有心二阶超曲面，使抛物面变成抛物面
     2. 有心二阶超曲面的标准形是 $\lambda_0+\lambda_1 \tilde{x}_1^2+\lambda_2 \tilde{x}_2^2+\cdots+\lambda_r \tilde{x}_r^2=0$，抛物面的标准形是 $\lambda_1 \tilde{x}_1+\lambda_2 \tilde{x}_2^2+\cdots+\lambda_r \tilde{x}_r^2=0$，其中 $r=\sigma$ 的秩为 $-1$
 
-### 5.3.3 Euclid 空间的二阶超曲面
+### 5.3.3 Euclid 空间的二次超曲面
+1. 任给一个实对称双线性形式 $\sigma: V \times V \rightarrow \mathbf{R}, \sigma(a, b)=\sigma(b, a), \forall a, b \in V$，则得到实 $n$ 维 $\text{Euclid}$ 空间 $E^n$ 中的一个二次超曲面 $Q(a)$，其表达式为 $\sigma(a, a)=0$
+    1. 二次超曲面 $Q(\sigma)$ 的 $\text{Descartes}$ 坐标表示式为 ${\displaystyle \sum_{i, j=1}^n b_{i j} x_i x_j+2 \sum_{i=1}^n b_i x_i+h=0}$
+    2. 二次超曲面 $Q(\sigma)$ 的齐次坐标 $x_i=\dfrac{\overline{x}_i}{\overline{x}_0}$ 表示式为 ${\displaystyle \sum_{i, j=0}^n b_{i j} \overline{x}_i \overline{x}_j=0}$，其中 $b_{i j}=b_{j i}, b_{i 0}=b_{0 i}=b_i, b_{00}=h$
+2. $\text{Euclid}$ 空间中的有心二次超曲面
+3. $\text{Euclid}$ 空间中的抛物面：给出 $\text{Euclid}$ 空间 $E^n$ 中的一个非退化抛物面 $Q(\sigma)$，则总可以通过正交变换找到一个 $\text{Descartes}$ 坐标系，使得这个抛物面的坐标表示式可以简化为 $2 \lambda_1 x_1+\lambda_2 x_2^2+\cdots+\lambda_n x_n^2=0$
 
 ## 5.4 曲面的局部理论
 ### 5.4.1 曲面的微积分
