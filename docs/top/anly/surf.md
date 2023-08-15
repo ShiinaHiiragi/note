@@ -1,4 +1,4 @@
-# 5 曲面方程与曲面论
+# 5 曲面理论
 
 ## 5.1 二次曲面一般理论
 ### 5.1.1 符号与记法
@@ -218,7 +218,7 @@
         3. 点（或称虚母线二次锥面）：$I_{2}>0, I_{1} I_{3}>0, I_{4}=0$
         4. 单叶双曲面：$I_{3} \neq 0, I_{2} \leqslant 0 \ (\textsf{或 } I_{1} I_{3} \leqslant 0), I_{4}>0$
         5. 双叶双曲面：$I_{3} \neq 0, I_{2} \leqslant 0 \ (\textsf{或 } I_{1} I_{3} \leqslant 0), I_{4}<0$
-        6. 二次雉面：$I_{3} \neq 0, I_{2} \leqslant 0 \ (\textsf{或 } I_{1} I_{3} \leqslant 0), I_{4}=0$
+        6. 二次锥面：$I_{3} \neq 0, I_{2} \leqslant 0 \ (\textsf{或 } I_{1} I_{3} \leqslant 0), I_{4}=0$
         7. 椭圆抛物面：$I_{3}=0, I_{4}<0$
         8. 双曲抛物面 ：$I_{3}=0, I_{4}>0$
         9. 椭圆柱面：$I_{3}=I_{4}=0, I_{2}>0, I_{1} K_{2}<0$
@@ -298,8 +298,15 @@
         1. 设 $V$ 是实向量空间，$\sigma$ 的矩阵表示是 $\left[\begin{array}{ccc}I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0\end{array}\right]$．当 $p=n+1$ 时，$\sigma$ 正定；当 $p<n+1$ 并且 $q=0$ 时，$\sigma$ 半正定；当 $q=n+1$ 时，$\sigma$ 负定；当 $q<n+1$ 且 $p=0$ 时，$\sigma$ 半负定
         2. 惯性定律：实向量空间 $V$ 上的两个双线性形式 $\sigma$ 和 $\tau$ 是合同的，当且仅当它们的秩相等，符号差相同
 
-## 5.3 曲面的局部理论
-### 5.3.1 曲面的微积分
+## 5.3 二次超曲面
+### 5.3.1 二次超曲面射影分类
+
+### 5.3.2 二次超曲面仿射理论
+
+### 5.3.3 Euclid 空间的二次超曲面
+
+## 5.4 曲面的局部理论
+### 5.4.1 曲面的微积分
 1. 平面图形的面积：如果一块图形是由连续曲线 $y=f_{1}(x), y=f_{2}(x)$ 与 $x=a, x=b \ (a<b)$ 所围成，且在 $[a, b]$ 上有 $f_{1}(x) \leqslant f_{2}(x)$，则图形的面积为 ${\displaystyle \int_{a}^{b}\left[f_{2}(x)-f_{1}(x)\right] \mathrm{d} x}$
     1. 若曲线方程为参数形式 $\left\{\begin{array}{l}x=x(t) \\y=y(t)\end{array}\right.$，其中 $\alpha \leqslant t \leqslant \beta$．设 $x(t)$ 随 $t$ 的增加而增加且 $x(\alpha)=a, x(\beta)=b$．$x(t), y(t)$ 及 $x^{\prime}(t)$ 在 $[\alpha, \beta]$ 连续，则由曲线 $x=x(t), y=y(t)$ 与 $x$ 轴及直线 $x=a, x=b$ 所围成的图形面积为 ${\displaystyle \int_{\alpha}^{\beta}|y(t)| x^{\prime}(t) \mathrm{d} t}$
     2. 由射线 $\theta=\alpha, \theta=\beta \ (\alpha<\beta)$ 及两条连续曲线 $r=r_{1}(\theta), r=r_{2}(\theta)\left(r_{2} \ (\theta) \leqslant r_{1}(\theta)\right)$ 所围成的图形的面积为 ${\displaystyle \dfrac{1}{2} \int_{\alpha}^{\beta}\left[r_{1}^{2}(\theta)-r_{2}^{2}(\theta)\right] \mathrm{d} \theta}$
@@ -435,8 +442,8 @@
     !!! note "$\text{Stokes}$ 公式的推广"
         高次的微分形式 $\mathrm{d} \omega$ 在给定区域上的积分等于低一次的微分形式 $\omega$ 在低一维的区域边界上的积分，写作 ${\displaystyle \int_{\partial M} \omega=\int_{M} \mathrm{d} \omega}$
 
-### 5.3.2 曲面与曲率
+### 5.4.2 曲面与曲率
 
-### 5.3.3 曲面论基本定理
+### 5.4.3 曲面论基本定理
 
-## 5.4 曲面的内蕴理论
+## 5.5 曲面的内蕴理论

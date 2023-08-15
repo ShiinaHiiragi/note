@@ -153,7 +153,7 @@
     2. 定向：给定实 $n$ 维仿射空间 $A^n$ 中的直线 $l$，$D$ 是其无穷远点，记为 $D_{\infty}$．则 $l$ 上任一对点 $A, B$ 确定了这条直线的定向．$l$ 上任一点 $P$ 有坐标 $\lambda=\left(P B, A D_{\infty}\right)$，规定 $\lambda$ 增大的方向是直线 $l$ 的正向，$\lambda$ 减少的方向是直线 $l$ 的负向，将正向记作 $\overrightarrow{A B}$
     3. 有向线段：如果仿射空间 $A^n$ 中一条直线已经规定了正向，规定这条直线上任意两点所确定的线段的其中一点是始端，另一点是终端，则有从始端指向终端的方向．如果这个方向和直线的方向一致，则称这个线段为正向线段，否则为负向线段．将有向线段记作 $\overrightarrow{P Q}$，其中 $P$ 是始端，$Q$ 是终端
 
-### 2.3.2 仿射坐标与变换
+### 2.3.2 仿射坐标与仿射变换
 1. 仿射坐标
     1. 仿射参考标架：设 $V$ 是域 $F$ 上的 $n+1$ 维线性空间．对于射影几何 $\boldsymbol{P}(V)$，选定标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$，使得 $A_0 \notin H, A_1, A_2, \cdots, A_n \in H, E \notin H$，则这个标架称为仿射几何 $A(V)$ 的仿射参考标架
     2. 齐次坐标：在 $V$ 中取一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，使得 $a_1, a_2, \cdots, a_n \in H$ 且 $A_0=\left[a_0\right], A_1=\left[a_1\right], \cdots, A_n=\left[a_n\right]$，$E=\left[a_0+a_1+a_2+\cdots+a_n\right]$．则对于 $\boldsymbol{P}(V)$ 中任一点 $P=[p]$，设 $p=x_0 a_0+x_1 a_1+x_2 a_2+\cdots+x_n a_n$，则 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为点 $P$ 对于标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 的齐次坐标
@@ -213,7 +213,7 @@
         3. 称集合 $\{M \mid \overrightarrow{M_1M} = t\overrightarrow{M_1M_2}, t \in [0, 1]\}$ 为以 $M_1, M_2$ 为端点的线段，记作 $\overline{M_1M_2}$
 
 ## 2.4 Euclid 几何
-### 2.4.1 Euclid 几何与坐标
+### 2.4.1 Euclid 几何与 Euclid 坐标
 1. $\text{Euclid}$ 空间：给定一个仿射空间，如果对于其任意两点都能定义它们之间的距离，且这个距离定义满足三角形不等式，则这个仿射空间就称为 $\text{Euclid}$ 空间．$\text{Euclid}$ 空间中全体点，线，$\cdots$，超平面的集合称为 $\text{Euclid}$ 几何
     1. 实 $\text{Euclid}$ 空间：任取 $A^n$ 中两点 $P=[a]$ 和 $Q=[b]$，定义其间的距离为 $d(P Q)=d([a],[b])=|b-a|$，则 $A^n$ 是一个实 $n$ 维 $\text{Euclid}$ 空间，记作 $E^n$
     2. 有向距离：对于 $\text{Euclid}$ 空间的有向线段 $\overrightarrow{P Q}$，定义有向距离 $d(\overrightarrow{P Q})= \pm d(P Q)$，其中正向线段取正号，否则取负号
