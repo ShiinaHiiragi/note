@@ -299,7 +299,7 @@
         1. 设 $V$ 是实线性空间，$\sigma$ 的矩阵表示是 $\left[\begin{array}{ccc}I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0\end{array}\right]$．当 $p=n+1$ 时，$\sigma$ 正定；当 $p<n+1$ 并且 $q=0$ 时，$\sigma$ 半正定；当 $q=n+1$ 时，$\sigma$ 负定；当 $q<n+1$ 且 $p=0$ 时，$\sigma$ 半负定
         2. 惯性定律：实线性空间 $V$ 上的两个双线性形式 $\sigma$ 和 $\tau$ 是合同的，当且仅当它们的秩相等，符号差相同
 
-## 5.3 二阶超曲面理论
+## 5.3 二阶超曲面与二次超曲面
 ### 5.3.1 二阶超曲面射影分类
 1. 设 $(V, \sigma)$ 是内积空间，$\boldsymbol{P}(V)$ 是 $V$ 所确定的射影几何，$P(V)$ 中的点集 $Q(\sigma)=\{A=[a] \in \boldsymbol{P}(V): \sigma(a, a)=0\}$，称为 $\boldsymbol{P}(V)$ 中的射影二阶超曲面或二阶超曲面．$\sigma$ 的秩即为 $Q(\sigma)$ 的秩
     1. 二阶超曲面 $Q(\sigma)$ 是退化的，当且仅当 $\sigma$ 是退化的
@@ -337,9 +337,13 @@
     2. 有心二阶超曲面的标准形是 $\lambda_0+\lambda_1 \tilde{x}_1^2+\lambda_2 \tilde{x}_2^2+\cdots+\lambda_r \tilde{x}_r^2=0$，抛物面的标准形是 $\lambda_1 \tilde{x}_1+\lambda_2 \tilde{x}_2^2+\cdots+\lambda_r \tilde{x}_r^2=0$，其中 $r=\sigma$ 的秩为 $-1$
 
 ### 5.3.3 Euclid 空间的二次超曲面
-1. 任给一个实对称双线性形式 $\sigma: V \times V \rightarrow \mathbf{R}, \sigma(a, b)=\sigma(b, a), \forall a, b \in V$，则得到实 $n$ 维 $\text{Euclid}$ 空间 $E^n$ 中的一个二次超曲面 $Q(a)$，其表达式为 $\sigma(a, a)=0$
-    1. 二次超曲面 $Q(\sigma)$ 的 $\text{Descartes}$ 坐标表示式为 ${\displaystyle \sum_{i, j=1}^n b_{i j} x_i x_j+2 \sum_{i=1}^n b_i x_i+h=0}$
-    2. 二次超曲面 $Q(\sigma)$ 的齐次坐标 $x_i=\dfrac{\overline{x}_i}{\overline{x}_0}$ 表示式为 ${\displaystyle \sum_{i, j=0}^n b_{i j} \overline{x}_i \overline{x}_j=0}$，其中 $b_{i j}=b_{j i}, b_{i 0}=b_{0 i}=b_i, b_{00}=h$
+1. 二次超曲面的表达式：任给一个实对称双线性形式 $\sigma: V \times V \rightarrow \mathbf{R}, \sigma(a, b)=\sigma(b, a), \forall a, b \in V$，则得到实 $n$ 维 $\text{Euclid}$ 空间 $E^n$ 中的一个二次超曲面 $Q(a)$，其表达式为 $\sigma(a, a)=0$
+    1. $Q(\sigma)$ 的 $\text{Descartes}$ 坐标表示式为 ${\displaystyle \sum_{i, j=1}^n b_{i j} x_i x_j+2 \sum_{i=1}^n b_i x_i+h=0}$
+
+        $Q(\sigma)$ 的齐次坐标 $x_i=\dfrac{\overline{x}_i}{\overline{x}_0}$ 表示式为 ${\displaystyle \sum_{i, j=0}^n b_{i j} \overline{x}_i \overline{x}_j=0}$，其中 $b_{i j}=b_{j i}, b_{i 0}=b_{0 i}=b_i, b_{00}=h$
+
+    2. 设 $Q(\sigma)$ 是 $\text{Euclid}$ 空间 $E^n$ 中的二次超曲面，由于对称双线性形式 $\sigma$ 不一定是正定的，所以 $(V, \sigma)$ 不是 $\text{Euclid}$ 线性空间，因此将其称为内积线性空间，对称双线性形式 $\sigma$ 称为它的内积．如果对于内积 $\sigma$ 来说，$H^{\perp} \not \subset H$，则 $E^n$ 中的二次超曲面 $Q(\sigma)$ 称为有心二次超曲面，$H^{\perp}$ 称为二次超曲面 $Q(\sigma)$ 的中心，它是无穷远超平面 $H$ 的极点．如果 $H^{\perp} \subset H$，则 $Q(\sigma)$ 称为 $E^n$ 的无心二次超曲面或抛物面
+
 2. $\text{Euclid}$ 空间中的有心二次超曲面
 3. $\text{Euclid}$ 空间中的抛物面：给出 $\text{Euclid}$ 空间 $E^n$ 中的一个非退化抛物面 $Q(\sigma)$，则总可以通过正交变换找到一个 $\text{Descartes}$ 坐标系，使得这个抛物面的坐标表示式可以简化为 $2 \lambda_1 x_1+\lambda_2 x_2^2+\cdots+\lambda_n x_n^2=0$
 
