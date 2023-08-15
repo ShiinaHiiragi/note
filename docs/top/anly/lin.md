@@ -151,7 +151,7 @@
         !!! note "最小二乘解"
             设 $\boldsymbol A = \begin{bmatrix} \boldsymbol \alpha_1 & \boldsymbol \alpha_2 & \cdots & \boldsymbol \alpha_l \\ \end{bmatrix}$，其中向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_l$ 线性无关，$\boldsymbol \alpha_i \in \mathbf R^n \ (i = 1, 2, \cdots, l)$．现有向量 $\boldsymbol \beta \in \mathbf R^n$，则 $\beta$ 在子空间 $\mathbf C(\boldsymbol A)$ 中的正交投影为 $\boldsymbol{Ax} = \boldsymbol A (\boldsymbol A^{\mathrm T} \boldsymbol A)^{-1} \boldsymbol A^{\mathrm T} \boldsymbol \beta$
 
-    4. $\text{Schmidt}$ 正交化：将 $n$ 维向量空间 $V$ 的任意一组基 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n$ 化为标准正交基 $\boldsymbol \gamma_1, \boldsymbol \gamma_2, \cdots, \boldsymbol \gamma_n$，其中
+    4. $\text{Schmidt}$ 正交化：将 $n$ 维线性空间 $V$ 的任意一组基 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_n$ 化为标准正交基 $\boldsymbol \gamma_1, \boldsymbol \gamma_2, \cdots, \boldsymbol \gamma_n$，其中
 
         $$
         \boldsymbol \gamma_i = \left\{\begin{aligned}
@@ -239,7 +239,7 @@
 
         其中 $e_{ij} = \left<\boldsymbol \varepsilon_i, \boldsymbol \varepsilon_j\right>$．当且仅当矩阵为对称的正定矩阵时，$\boldsymbol x^{\mathrm T} \boldsymbol E \boldsymbol y$ 定义了一个内积
 
-3. $\text{Grassmann}$ 代数：设 $V$ 是一个 $n$ 维向量空间，则 $V$ 中任意 $m$ 个有序向量 $\boldsymbol \alpha_1, \cdots, \boldsymbol \alpha_m$ 的外积记为 $\boldsymbol \alpha_1 \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m$，称为一个 $m$ 重可分解向量．所有 $m$ 重可分解向量形式上作线性扩张所得的空间记为 $\wedge^m(V)$，其中的元素称为 $m$ 重向量．在 $\wedge^m(V)$ 中规定外积运算 $\wedge$ 满足下列运算法则
+3. $\text{Grassmann}$ 代数：设 $V$ 是一个 $n$ 维线性空间，则 $V$ 中任意 $m$ 个有序向量 $\boldsymbol \alpha_1, \cdots, \boldsymbol \alpha_m$ 的外积记为 $\boldsymbol \alpha_1 \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m$，称为一个 $m$ 重可分解向量．所有 $m$ 重可分解向量形式上作线性扩张所得的空间记为 $\wedge^m(V)$，其中的元素称为 $m$ 重向量．在 $\wedge^m(V)$ 中规定外积运算 $\wedge$ 满足下列运算法则
     1. 反对称性：$\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_i \wedge \cdots \wedge \boldsymbol \alpha_m=(-1)^{i-1} \boldsymbol \alpha_i \wedge \boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_{i-1} \wedge \boldsymbol \alpha_{i+1} \wedge \cdots \wedge \boldsymbol \alpha_m$
     2. 线性分配律：设 $\lambda, \mu \in \mathbf R$
 
@@ -247,10 +247,10 @@
         \left(\lambda \boldsymbol \alpha_1+\mu \boldsymbol \beta\right) \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m = \lambda\left(\boldsymbol \alpha_1 \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m\right)+\mu\left(\boldsymbol \beta \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m\right)
         $$
 
-    则 $\wedge^m(V)$ 是一个 $C_n^m$ 维向量空间．特别地，当 $m > n$ 时, $\wedge^m(V)$ 只含有 $m$ 重零向量
+    则 $\wedge^m(V)$ 是一个 $C_n^m$ 维线性空间．特别地，当 $m > n$ 时, $\wedge^m(V)$ 只含有 $m$ 重零向量
 
     1. 约定 $\wedge^0(V)$ 表示实数系，任何实数 $\lambda$ 与一个 $m$ 重向量 $\boldsymbol{p}$ 的外积规定为 $\lambda \boldsymbol{p}$，$\wedge^1(V)$ 就是 $V$ 本身
-    2. 记 $G(V)=\wedge^0(V) \oplus \wedge^1(V) \oplus \cdots \oplus \wedge^n(V)$，$G(V)$ 是一个 $2^n$ 维的向量空间，外积运算 $\wedge$ 自然延拓成 $G(V)$ 中的外积运算
+    2. 记 $G(V)=\wedge^0(V) \oplus \wedge^1(V) \oplus \cdots \oplus \wedge^n(V)$，$G(V)$ 是一个 $2^n$ 维的线性空间，外积运算 $\wedge$ 自然延拓成 $G(V)$ 中的外积运算
 
         $$
         \left(\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_p\right) \wedge\left(\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_q\right)= \left\{\begin{aligned}&\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_p \wedge \boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_q, & p+q \leqslant n, \\ & 0, & p+q>n .\end{aligned}\right.
@@ -324,7 +324,7 @@
         \mathrm{d} x_{i, 1} \wedge \cdots \wedge \mathrm{d} x_{i r} \wedge \mathrm{d} x_{i r+1} \cdots \wedge \mathrm{d} x_{i k}=-\mathrm{d} x_{i 1} \wedge \cdots \wedge \mathrm{d} x_{i r+1} \wedge \mathrm{d} x_{i r} \cdots \wedge \mathrm{d} x_{i k}, 1 \leqslant r \leqslant k-1
         $$
 
-        且如果 $i_{1}, i_{2}, \cdots, i_{k}$ 中有两个是相同的，则规定 $\mathrm{d} x_{i 1} \wedge \mathrm{d} x_{i 2} \wedge \cdots \wedge \mathrm{d} x_{i k}=0$．以这些有序元为基构造一个 $C^{\prime}(U)$ 上的向量空间 $\wedge^{k}(U)$，$\wedge^{k}(U)$ 的元素称为 $k$ 次微分形式，简称 $k-$形式．于是一般 $k-$形式就可表示为
+        且如果 $i_{1}, i_{2}, \cdots, i_{k}$ 中有两个是相同的，则规定 $\mathrm{d} x_{i 1} \wedge \mathrm{d} x_{i 2} \wedge \cdots \wedge \mathrm{d} x_{i k}=0$．以这些有序元为基构造一个 $C^{\prime}(U)$ 上的线性空间 $\wedge^{k}(U)$，$\wedge^{k}(U)$ 的元素称为 $k$ 次微分形式，简称 $k-$形式．于是一般 $k-$形式就可表示为
 
         $$
         \sum_{1 \leqslant i_{1}<i_{2}<\cdots<i_{k} \leqslant n} g_{i_{1}, i_{2}, \cdots, i_{k}}(\boldsymbol{x}) \mathrm{d} x_{i 1} \wedge \mathrm{d} x_{i 2} \wedge \cdots \wedge \mathrm{d} x_{i k}

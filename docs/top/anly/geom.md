@@ -59,7 +59,7 @@
         3. 共线四点 $A=\left[\lambda_1 a+\mu_1 b\right], B=\left[\lambda_2 a+\mu_2 b\right], C=\left[\lambda_3 a+\mu_3 b\right], D=\left[\lambda_4 a+\mu_4 b\right]$，则 $(A B, C D)=\dfrac{\left(\lambda_3 \mu_1-\lambda_1 \mu_3\right)\left(\lambda_4 \mu_2-\lambda_2 \mu_4\right)}{\left(\lambda_3 \mu_2-\lambda_2 \mu_3\right)\left(\lambda_4 \mu_1-\lambda_1 \mu_4\right)}$
         4. 共线四点 $A=[a], B=[b], C=\left[\lambda_1 a+\mu_1 b\right], D=\left[\lambda_2 a+\mu_2 b\right]$，则 $(A B, C D)=\dfrac{\lambda_2 \mu_1}{\lambda_1 \mu_2}$
     2. 调和点列：设共线四点 $A, B, C, D$．若其交比 $(A B, C D)=-1$，则称点偶 $A, B$ 调和分割点偶 $C, D$，或称 $A, B, C, D$ 是调和点列．设 $A, B, C$ 三点共线，则唯一确定一点 $D$，使得 $A, B, C, D$ 成调和点列
-3. 对偶原理：射影几何 $P(V)$ 中的命题 $(P)$ 成立，当且仅当射影几何 $\boldsymbol{P}\left(V^*\right)$ 中的对偶命题 $\left(P^*\right)$ 成立
+3. 对偶原理：射影几何 $\boldsymbol{P}(V)$ 中的命题 $(P)$ 成立，当且仅当射影几何 $\boldsymbol{P}\left(V^*\right)$ 中的对偶命题 $\left(P^*\right)$ 成立
     1. 对偶空间：设 $V$ 是体 $F$ 上的 $n+1$ 维线性空间，$\left\{e_0, e_1, e_2, \cdots, e_n\right\}$ 是 $V$ 的一组基底，$V$ 上全体线性函数的集合记作 $V^*=L(V, F)$，称为 $V$ 的对偶空间．在 $V^*$ 中引人加法和数乘运算如下：对于 $\forall f, g \in V^*, k \in F, v \in V$
 
         $$
@@ -131,10 +131,10 @@
 
 ## 2.3 仿射几何
 ### 2.3.1 仿射几何
-1. 仿射几何：设 $V^{n+1}$ 是一般体 $F$ 上的 $n+1$ 维线性空间，$H$ 是 $V$ 中一个固定的 $n$ 维子空间．$\boldsymbol{P}(V) \backslash H$ 是 $V$ 中所有的子空间，但不包括 $H$ 和 $H$ 的所有子空间的集合，再加 $V \backslash H$，称为 $F$ 上的 $n$ 维仿射几何，记作 $A(V)$．其中 $V \backslash H$ 中的一维子空间称为「点」，二维子空间称为「线」，$\cdots$，$k+1$ 维子空间称为「$k$ 维面」，$\cdots$，$n$ 维子空间称为「超平面」．$V \backslash H$ 本身称为 $n$ 维仿射空间，记作 $A^n$ 或 $A_F^n$，$V$ 中的 $n$ 维子空间 $H$ 称为仿射几何 $A(V)$ 的无穷远超平面
-    1. 实仿射空间：当 $F = \textbf{R}$ 时，称 $V \backslash H$ 为实 $n$ 维仿射空间，记作 $A^n$
-    2. 结合关系：如果 $A(V)$ 中的两个元素 $S$ 和 $T$ 满足 $S \cap T \subset H$，则称元素 $S$ 和 $T$ 是平行的
-        1. 当 $\operatorname{dim} V=3$ 时，二维仿射几何 $A(V)$ 中有下列结合关系
+1. 仿射几何：设 $V^{n+1}$ 是一般体 $F$ 上的 $n+1$ 维线性空间，$H$ 是 $V$ 中一个固定的 $n$ 维子空间．$\boldsymbol{P}(V) - H$ 是 $V$ 中所有的子空间，但不包括 $H$ 和 $H$ 的所有子空间的集合，再加 $V - H$，称为 $F$ 上的 $n$ 维仿射几何，记作 $\boldsymbol{A}(V)$．其中 $V - H$ 中的一维子空间称为「点」，二维子空间称为「线」，$\cdots$，$k+1$ 维子空间称为「$k$ 维面」，$\cdots$，$n$ 维子空间称为「超平面」．$V - H$ 本身称为 $n$ 维仿射空间，记作 $A^n$ 或 $A_F^n$，$V$ 中的 $n$ 维子空间 $H$ 称为仿射几何 $\boldsymbol{A}(V)$ 的无穷远超平面
+    1. 实仿射空间：当 $F = \textbf{R}$ 时，称 $V - H$ 为实 $n$ 维仿射空间，记作 $A^n$
+    2. 结合关系：如果 $\boldsymbol{A}(V)$ 中的两个元素 $S$ 和 $T$ 满足 $S \cap T \subset H$，则称元素 $S$ 和 $T$ 是平行的
+        1. 当 $\operatorname{dim} V=3$ 时，二维仿射几何 $\boldsymbol{A}(V)$ 中有下列结合关系
             - 连接两点有一条直线
             - 两条不平行的直线相交于一点
         2. 当 $\operatorname{dim} V=4$ 时，三维仿射几何 $\boldsymbol{A}(V)$ 中有下列结合关系
@@ -146,7 +146,7 @@
             - 过一条直线和不在直线上的一点有一平面
             - 一平面和与它不平行的直线交于一点
     3. 仿射几何中的定理
-        1. 仿射 $\text{Desargues}$ 定理：在仿射空间 $A(V)$ 中，如果两三点形的三对对应顶点连线交于一点或平行，则对应边相交或平行；三对对应边都相交时交点在一直线上
+        1. 仿射 $\text{Desargues}$ 定理：在仿射空间 $\boldsymbol{A}(V)$ 中，如果两三点形的三对对应顶点连线交于一点或平行，则对应边相交或平行；三对对应边都相交时交点在一直线上
         2. 仿射 $\text{Pappus}$ 定理：设点 $A, B, C$ 和 $A^{\prime}, B^{\prime}, C^{\prime}$ 分别在两条共面的直线上，再设 $L=B C^{\prime} \cap B^{\prime} C, M=C A^{\prime} \cap C^{\prime} A$ 以及 $N=A B^{\prime} \cap A^{\prime} B$，则 $L, M, N$ 三点共线
 2. 单比与有向距离
     1. 单比：仿射空间中共线三点 $A, B, C$ 的单比记作 $(A B C)=\left(A B, C D_{\infty}\right)$，其中 $D_{\infty}$ 是直线与无穷远超平面的交点
@@ -155,15 +155,15 @@
 
 ### 2.3.2 仿射坐标与仿射变换
 1. 仿射坐标
-    1. 仿射参考标架：设 $V$ 是域 $F$ 上的 $n+1$ 维线性空间．对于射影几何 $\boldsymbol{P}(V)$，选定标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$，使得 $A_0 \notin H, A_1, A_2, \cdots, A_n \in H, E \notin H$，则这个标架称为仿射几何 $A(V)$ 的仿射参考标架
+    1. 仿射参考标架：设 $V$ 是域 $F$ 上的 $n+1$ 维线性空间．对于射影几何 $\boldsymbol{P}(V)$，选定标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$，使得 $A_0 \notin H, A_1, A_2, \cdots, A_n \in H, E \notin H$，则这个标架称为仿射几何 $\boldsymbol{A}(V)$ 的仿射参考标架
     2. 齐次坐标：在 $V$ 中取一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，使得 $a_1, a_2, \cdots, a_n \in H$ 且 $A_0=\left[a_0\right], A_1=\left[a_1\right], \cdots, A_n=\left[a_n\right]$，$E=\left[a_0+a_1+a_2+\cdots+a_n\right]$．则对于 $\boldsymbol{P}(V)$ 中任一点 $P=[p]$，设 $p=x_0 a_0+x_1 a_1+x_2 a_2+\cdots+x_n a_n$，则 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为点 $P$ 对于标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 的齐次坐标
-    3. 仿射坐标：若 $P \notin H$，则 $P$ 是 $A(V)$ 中的点，其齐次坐标 $x_0 \neq 0$．令 $\widetilde{x}_1=\dfrac{x_1}{x_0}, \widetilde{x}_2=\dfrac{x_2}{x_0}, \cdots, \widetilde{x}_i=\dfrac{x_i}{x_0}, \cdots, \widetilde{x}_n=\dfrac{x_n}{x_0}$，称 $\left(\widetilde{x}_1, \widetilde{x}_2, \cdots, \widetilde{x}_n\right)$ 为 $n$ 维仿射几何 $A(V)$ 中点 $P$ 对于仿射参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 的仿射坐标．对于 $A(V)$ 中一点 $P$，其齐次坐标 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 可以差一个比例因子，但仿射坐标 $\left(\widetilde{x}_1, \widetilde{x}_2, \cdots, \widetilde{x}_n\right)$ 唯一确定
-2. 仿射变换：$P(V)$ 的一个直射变换如果保持无穷远超平面 $H$ 不变, 则称为 $A(V)$ 的仿射变换
+    3. 仿射坐标：若 $P \notin H$，则 $P$ 是 $\boldsymbol{A}(V)$ 中的点，其齐次坐标 $x_0 \neq 0$．令 $\widetilde{x}_1=\dfrac{x_1}{x_0}, \widetilde{x}_2=\dfrac{x_2}{x_0}, \cdots, \widetilde{x}_i=\dfrac{x_i}{x_0}, \cdots, \widetilde{x}_n=\dfrac{x_n}{x_0}$，称 $\left(\widetilde{x}_1, \widetilde{x}_2, \cdots, \widetilde{x}_n\right)$ 为 $n$ 维仿射几何 $\boldsymbol{A}(V)$ 中点 $P$ 对于仿射参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 的仿射坐标．对于 $\boldsymbol{A}(V)$ 中一点 $P$，其齐次坐标 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 可以差一个比例因子，但仿射坐标 $\left(\widetilde{x}_1, \widetilde{x}_2, \cdots, \widetilde{x}_n\right)$ 唯一确定
+2. 仿射变换：$\boldsymbol{P}(V)$ 的一个直射变换如果保持无穷远超平面 $H$ 不变, 则称为 $\boldsymbol{A}(V)$ 的仿射变换
     1. 若仿射变换 $\boldsymbol{A}(f): \boldsymbol{A}(V) \rightarrow \boldsymbol{A}(V)$ 使线性无关点组 $\left\{A_0, A_1, \cdots, A_n\right\}$ 分别对应线性无关的点组 $\left\{A_0^{\prime}, A_1^{\prime}, A_2^{\prime}, \cdots, A_n^{\prime}\right\}$，则这个仿射变换是唯一确定的
-    2. 仿射几何 $A(V)$ 中，仿射变换 $\boldsymbol{A}(f): \boldsymbol{A}(V) \rightarrow \boldsymbol{A}(V)$ 保持元素间的平行关系不变
+    2. 仿射几何 $\boldsymbol{A}(V)$ 中，仿射变换 $\boldsymbol{A}(f): \boldsymbol{A}(V) \rightarrow \boldsymbol{A}(V)$ 保持元素间的平行关系不变
     3. 仿射变换把共线点变成共线点，并保持单比不变
 
-!!! note "仿射空间定义的线性空间进路"
+!!! note "构造仿射空间的其他进路"
     1. 线性空间的同构
 
         1. $\mathbf R^n$ 是 $\mathbf R$ 上的线性空间：设 $(x_1, x_2, \cdots, x_n), (y_1, y_2, \cdots, y_n) \in \mathbf R^n$，定义 $\mathbf R^n$ 上的加法运算与 $\mathbf R$ 上的数乘运算
@@ -215,9 +215,11 @@
 ## 2.4 Euclid 几何
 ### 2.4.1 Euclid 几何与 Euclid 坐标
 1. $\text{Euclid}$ 空间：给定一个仿射空间，如果对于其任意两点都能定义它们之间的距离，且这个距离定义满足三角形不等式，则这个仿射空间就称为 $\text{Euclid}$ 空间．$\text{Euclid}$ 空间中全体点，线，$\cdots$，超平面的集合称为 $\text{Euclid}$ 几何
-    1. 实 $\text{Euclid}$ 空间：任取 $A^n$ 中两点 $P=[a]$ 和 $Q=[b]$，定义其间的距离为 $d(P Q)=d([a],[b])=|b-a|$，则 $A^n$ 是一个实 $n$ 维 $\text{Euclid}$ 空间，记作 $E^n$
-    2. 有向距离：对于 $\text{Euclid}$ 空间的有向线段 $\overrightarrow{P Q}$，定义有向距离 $d(\overrightarrow{P Q})= \pm d(P Q)$，其中正向线段取正号，否则取负号
-    3. $\text{Descartes}$ 标架与 $\text{Descartes}$ 坐标系：若仿射标架的基均为单位向量，称该仿射标架为 $\text{Descartes}$ 标架．由 $\text{Descartes}$ 标架确定的坐标系称作 $\text{Descartes}$ 坐标系．特别地，若 $\text{Descartes}$ 标架的基两两正交，则称该仿射标架为 $\text{Descartes}$ 直角标架．由 $\text{Descartes}$ 直角标架确定的坐标系称作 $\text{Descartes}$ 直角坐标系
+    1. 有向距离：对于 $\text{Euclid}$ 空间的有向线段 $\overrightarrow{P Q}$，定义有向距离 $d(\overrightarrow{P Q})= \pm d(P Q)$，其中正向线段取正号，否则取负号
+    2. 实 $\text{Euclid}$ 空间：任取 $A^n$ 中两点 $P=[a]$ 和 $Q=[b]$，定义其间的距离为 $d(P Q)=d([a],[b])=|b-a|$，则 $A^n$ 是一个实 $n$ 维 $\text{Euclid}$ 空间，记作 $E^n$
+    3. $\text{Descartes}$ 坐标系与 $\text{Descartes}$ 坐标：给出一个实 $n+1$ 维线性空间 $V$，$H$ 是它的一个超平面，$V - H$ 确定一个实 $n$ 维仿射空间 $A^n$．在 $H$ 中引进正定内积 $\tau$，使其成为一个 $\text{Euclid}$ 线性空间 $(H, \tau)$, 它确定了仿射空间 $A^n$ 中两点之间的距离，使其成为一个 $\text{Euclid}$ 空间 $E^n$
+        1. 在 $(H, \tau)$ 中选一组标准基 $\left\{e_1, e_2, \cdots, e_n\right\}$ 扩充成 $V$ 的一组基 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$，命 $A_i=\left[e_i\right](i=0,1,2, \cdots, n)$ 及 $E=\left[e_0+e_1+e_2+\cdots+e_n\right]$，称 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 为 $E^n$ 的 $\text{Descartes}$ 坐标系．对 $\forall P=[a] \in E^n$，设 ${\displaystyle a=e_0+\sum_{i=1}^n x_i e_i}$，则 $\left(x_1, x_2, \cdots, x_n\right)$ 称为点 $P=[a]$ 的 $\text{Descartes}$ 坐标
+        2. 在 $(H, \tau)$ 中选一组标准正交基 $\left\{e_1, e_2, \cdots, e_n\right\}$ 扩充成 $V$ 的一组基 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$，命 $A_i=\left[e_i\right](i=0,1,2, \cdots, n)$ 及 $E=\left[e_0+e_1+e_2+\cdots+e_n\right]$，称 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 为 $E^n$ 的 $\text{Descartes}$ 直角坐标系．对 $\forall P=[a] \in E^n$，设 ${\displaystyle a=e_0+\sum_{i=1}^n x_i e_i}$，则 $\left(x_1, x_2, \cdots, x_n\right)$ 称为点 $P=[a]$ 的 $\text{Descartes}$ 直角坐标
 2. $\text{Euclid}$ 空间下的坐标系
     1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
 

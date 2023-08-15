@@ -251,7 +251,7 @@
         3. 设 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$ 是 $V$ 的一组基，则双线性形式 $\sigma$ 和 $\tau$ 是合同的当且仅当它们对于基 $\left\{e_i\right\}$ 的矩阵表示是合同的
     3. 双线性形式 $\sigma$ 的秩是其矩阵表示 $\left(\sigma ;\left\{e_i\right\}\right)$ 的秩
         1. 如果 $\sigma$ 的秩小于 $\operatorname{dim} V=n+1$，则 $\sigma$ 称为退化的；如果 $\sigma$ 的秩等于 $\operatorname{dim} V=n+1$，则 $\sigma$ 称为非退化的
-        2. 设 $\sigma$ 是向量空间 $V$ 上的双线性形式，$\sigma$ 确定了一个 $V \rightarrow V^*$ 的线性变换
+        2. 设 $\sigma$ 是线性空间 $V$ 上的双线性形式，$\sigma$ 确定了一个 $V \rightarrow V^*$ 的线性变换
 
             $$
             \begin{gathered}
@@ -260,9 +260,9 @@
             \end{gathered}
             $$
 
-    4. 对称双线性形式：设 $\sigma$ 是向量空间 $V$ 上的双线性形式，如果 $\sigma(x, y)=\sigma(y, x), \forall x, y \in V$，则称 $\sigma$ 为对称双线性形式．对于 $V$ 的一组基 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$，对称双线性形式 $\sigma$ 的表示矩阵 $S=\left(\sigma ;\left\{e_i\right\}\right)= \sigma\left(e_i, e_j\right)=\left(S_{i j}\right)$ 是对称矩阵
+    4. 对称双线性形式：设 $\sigma$ 是线性空间 $V$ 上的双线性形式，如果 $\sigma(x, y)=\sigma(y, x), \forall x, y \in V$，则称 $\sigma$ 为对称双线性形式．对于 $V$ 的一组基 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$，对称双线性形式 $\sigma$ 的表示矩阵 $S=\left(\sigma ;\left\{e_i\right\}\right)= \sigma\left(e_i, e_j\right)=\left(S_{i j}\right)$ 是对称矩阵
 
-2. 内积空间：设 $(V, \sigma)$ 是定义了对称双线性形式的向量空间，$x \cdot y=\sigma(x, y)=\sigma(y, x)=y \cdot x, \forall x, y \in V$ 称为 $(V, \sigma)$ 上的内积，$(V, \sigma)$ 称为内积空间
+2. 内积空间：设 $(V, \sigma)$ 是定义了对称双线性形式的线性空间，$x \cdot y=\sigma(x, y)=\sigma(y, x)=y \cdot x, \forall x, y \in V$ 称为 $(V, \sigma)$ 上的内积，$(V, \sigma)$ 称为内积空间
     1. 设 $(V, \sigma)$ 是内积空间，向量 $x, y \in V$．若 $x \cdot y=0$ 或 $\sigma(x, y)={\displaystyle \sum_{i, j=0}^n S_{i j} x_i y_j=0}$，称 $x, y$ 为正交的或垂直的，记为 $x \perp y$
     2. 设 $M$ 是 $V$ 一个子空间，集合 $M^{\perp}$ 为
 
@@ -272,7 +272,7 @@
 
         称为 $M$ 在 $V$ 中的正交补
 
-        1. 设 $M, N$ 是向量空间 $V$ 的子空间，$M \subset N$，则 $M^{\perp} \supset N^{\perp}$
+        1. 设 $M, N$ 是线性空间 $V$ 的子空间，$M \subset N$，则 $M^{\perp} \supset N^{\perp}$
         2. 设 $(V, \sigma)$ 是内积空间，则 $\sigma$ 的秩等于 $\operatorname{dim} V-\operatorname{dim} V^{\perp}$
         3. 对称双线性形式 $\sigma$ 是非退化的，其充要条件是 $V^{\perp}=0$
         4. 设 $(V, \sigma)$ 是内积空间，$M$ 是 $(V, \sigma)$ 的子空间，则 $\operatorname{dim} M+\operatorname{dim} M^{\perp}=\operatorname{dim} V+\operatorname{dim}\left(M \cap V^{\perp}\right)$．特别地，如果 $\sigma$ 是非退化的双线性形式，即 $V^{\perp}=0$，则有 $\operatorname{dim} M+\operatorname{dim} M^{\perp}=\operatorname{dim} V$
@@ -283,21 +283,21 @@
             - $(M+N)^{\perp}=M^{\perp} \cap N^{\perp}$
             - $(M \cap N)^{\perp}=M^{\perp}+N^{\perp}$
 
-    3. 设 $M$ 是向量空间 $V$ 的子空间，$\sigma_M$ 是 $\sigma$ 在 $M$ 上的限制．如果 $\sigma_M$ 是退化的，即 $\sigma_M$ 的秩小于 $\operatorname{dim} M$，则 $M$ 称为 $V$ 的退化子空间
+    3. 设 $M$ 是线性空间 $V$ 的子空间，$\sigma_M$ 是 $\sigma$ 在 $M$ 上的限制．如果 $\sigma_M$ 是退化的，即 $\sigma_M$ 的秩小于 $\operatorname{dim} M$，则 $M$ 称为 $V$ 的退化子空间
         1. $M$ 是 $V$ 的非退化子空间，当且仅当 $\sigma_M$ 的秩等于 $\operatorname{dim} M$
         2. 设 $M$ 是 $V$ 中的非退化子空间，则 $V=M \oplus M^{\perp}$
     4. 内积空间结构定理：设 $(V, \sigma)$ 是内积空间，则 $V=A_0 \oplus A_1 \oplus A_2 \oplus \cdots \oplus A_r \oplus V^{\perp}$．其中 $\operatorname{dim} A_i=1, r+1=\sigma$ 的秩，$A_i \perp A_j\ (i, j=0,1,2, \cdots, r, i \neq j)$
         1. 对称矩阵合同于一个对角矩阵
-        2. 设 $V$ 是复向量空间，则存在一组基使得 $\sigma$ 的矩阵表示是 $\left(\sigma ;\left\{a_i\right\}\right)=\left[\begin{array}{c c} I_{r+1} & 0 \\ 0 & 0 \end{array}\right]$
-        3. 设 $V$ 是实向量空间，则存在一组基使得 $\sigma$ 的矩阵表示是 $\left(\sigma ;\left\{e_i\right\}\right)=\left[\begin{array}{ccc} I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0 \end{array}\right]$，其中 $p+q+1=r+1$
+        2. 设 $V$ 是复线性空间，则存在一组基使得 $\sigma$ 的矩阵表示是 $\left(\sigma ;\left\{a_i\right\}\right)=\left[\begin{array}{c c} I_{r+1} & 0 \\ 0 & 0 \end{array}\right]$
+        3. 设 $V$ 是实线性空间，则存在一组基使得 $\sigma$ 的矩阵表示是 $\left(\sigma ;\left\{e_i\right\}\right)=\left[\begin{array}{ccc} I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0 \end{array}\right]$，其中 $p+q+1=r+1$
     5. 一个实值对称双线性形式 $\sigma$ 称为
         1. 半正定的，指 $\forall a \in V, a \neq 0, \sigma(a, a) \geqslant 0$
         2. 正定的，指 $\forall a \in V, a \neq 0, \sigma(a, a)>0$
         3. 半负定的，指 $\forall a \in V, a \neq 0, \sigma(a, a) \leqslant 0$
         4. 负定的，指 $\forall a \in V, a \neq 0, \sigma(a, a)<0$
-    6. 设 $V$ 是实向量空间，$\sigma$ 的矩阵表示是 $\left[\begin{array}{ccc}I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0\end{array}\right]$，称 $p-q$ 为 $\sigma$ 的符号差
-        1. 设 $V$ 是实向量空间，$\sigma$ 的矩阵表示是 $\left[\begin{array}{ccc}I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0\end{array}\right]$．当 $p=n+1$ 时，$\sigma$ 正定；当 $p<n+1$ 并且 $q=0$ 时，$\sigma$ 半正定；当 $q=n+1$ 时，$\sigma$ 负定；当 $q<n+1$ 且 $p=0$ 时，$\sigma$ 半负定
-        2. 惯性定律：实向量空间 $V$ 上的两个双线性形式 $\sigma$ 和 $\tau$ 是合同的，当且仅当它们的秩相等，符号差相同
+    6. 设 $V$ 是实线性空间，$\sigma$ 的矩阵表示是 $\left[\begin{array}{ccc}I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0\end{array}\right]$，称 $p-q$ 为 $\sigma$ 的符号差
+        1. 设 $V$ 是实线性空间，$\sigma$ 的矩阵表示是 $\left[\begin{array}{ccc}I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0\end{array}\right]$．当 $p=n+1$ 时，$\sigma$ 正定；当 $p<n+1$ 并且 $q=0$ 时，$\sigma$ 半正定；当 $q=n+1$ 时，$\sigma$ 负定；当 $q<n+1$ 且 $p=0$ 时，$\sigma$ 半负定
+        2. 惯性定律：实线性空间 $V$ 上的两个双线性形式 $\sigma$ 和 $\tau$ 是合同的，当且仅当它们的秩相等，符号差相同
 
 ## 5.3 二阶超曲面理论
 ### 5.3.1 二阶超曲面射影分类
@@ -309,7 +309,7 @@
         1. 子空间 $M$ 与子空间 $N$ 的和的极面 $(M+N)^{\perp}$ 是 $M$ 与 $N$ 的极面之交 $M^{\perp} \cap N^{\perp}$
         2. 子空间 $M$ 与子空间 $N$ 的交的极面 $(M \cap N)^{\perp}$ 是 $M$ 与 $N$ 的极面之和 $M^{\perp}+N^{\perp}$
     2. 共轭点：设 $Q(\sigma)$ 是 $\boldsymbol{P}(V)$ 中的二阶超曲面，两点 $A=[a], B=[b]$ 称为关于 $Q(\sigma)$ 的共轭点，是指 $a \perp b$，即 $\sigma(a, b)=0$．过点 $A=[a]$ 任作直线 $M=[a, b]$ 交二阶曲面 $Q(\sigma)$ 于两点 $P=[p], R=$ $[r]$，则 $B=[b]$ 是 $P, R, A$ 的第四调和共轭点，即 $(P R, A B)=-1$ 的充要条件是 $B, A$ 关于 $Q(\sigma)$ 共轭
-    3. 退化子空间：设 $M$ 是向量空间 $V$ 的子空间，若 $M \cap M^{\perp}=0$，则 $M$ 称为 $V$ 的非退化子空间；若 $M \cap M^{\perp} \neq 0$，则称 $M$ 为 $V$ 的退化子空间
+    3. 退化子空间：设 $M$ 是线性空间 $V$ 的子空间，若 $M \cap M^{\perp}=0$，则 $M$ 称为 $V$ 的非退化子空间；若 $M \cap M^{\perp} \neq 0$，则称 $M$ 为 $V$ 的退化子空间
     4. 切面与切点：设 $M$ 是体 $F$ 上的射影几何 $\boldsymbol{P}(V)$ 中的 $k$ 维面．$M$ 称为切于二阶超曲面 $Q(\sigma)$，是指 $M \cap M^{\perp} \neq 0$．此时称 $M$ 为 $Q(\sigma)$ 的 $k$ 维切面，$M \cap M^{\perp}$ 中的点称为切点
 
 ### 5.3.2 二阶超曲面仿射理论
