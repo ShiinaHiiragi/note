@@ -239,9 +239,10 @@
     \sigma\left(a x_1+b x_2, y\right) & =a \sigma\left(x_1, y\right)+b \sigma\left(x_2, y\right) \\
     \sigma\left(x, a y_1+b y_2\right) & =a \sigma\left(x, y_1\right)+b \sigma\left(x, y_2\right)
     \end{aligned}
+    \quad \forall x_1, x_2, y_1, y_2 \in V
     $$
 
-    其中 $\forall x_1, x_2, y_1, y_2 \in V$，则 $\sigma$ 称为 $V$ 上的双线性形式，定义了双线性形式 $\sigma$ 的线性空间 $V$ 记为 $(V, \sigma)$
+    则 $\sigma$ 称为 $V$ 上的双线性形式，定义了双线性形式 $\sigma$ 的线性空间 $V$ 记为 $(V, \sigma)$
 
     1. 设 $(V, \sigma),\left(V^{\prime}, \sigma^{\prime}\right)$ 是两个定义了双线性形式的线性空间，$f$ 是线性映射 $f: V \rightarrow V^{\prime}$．则 $f$ 诱导了线性空间 $V$ 上的双线性形式 $f^* \sigma^{\prime}$，使得 $\left(f^* \sigma^{\prime}\right)(x, y)=\sigma^{\prime}(f(x), f(y)), \forall x, y \in V$
     2. 设 $(V, \sigma),\left(V^{\prime}, \sigma^{\prime}\right)$ 是两个定义了双线性形式的线性空间，若存在同构 $f: V \rightarrow V^{\prime}$ 有 $\sigma(x, y)=\sigma^{\prime}(f(x), f(y))=f^* \sigma^{\prime}(x, y)$ 其中 $\forall x, y \in V$，则称 $(V, \sigma)$ 和 $\left(V^{\prime}, \sigma^{\prime}\right)$ 是同构的
@@ -298,12 +299,44 @@
         1. 设 $V$ 是实向量空间，$\sigma$ 的矩阵表示是 $\left[\begin{array}{ccc}I_p & 0 & 0 \\ 0 & -I_q & 0 \\ 0 & 0 & 0\end{array}\right]$．当 $p=n+1$ 时，$\sigma$ 正定；当 $p<n+1$ 并且 $q=0$ 时，$\sigma$ 半正定；当 $q=n+1$ 时，$\sigma$ 负定；当 $q<n+1$ 且 $p=0$ 时，$\sigma$ 半负定
         2. 惯性定律：实向量空间 $V$ 上的两个双线性形式 $\sigma$ 和 $\tau$ 是合同的，当且仅当它们的秩相等，符号差相同
 
-## 5.3 二次超曲面
-### 5.3.1 二次超曲面射影分类
+## 5.3 二阶超曲面理论
+### 5.3.1 二阶超曲面射影分类
+1. 设 $(V, \sigma)$ 是内积空间，$\boldsymbol{P}(V)$ 是 $V$ 所确定的射影几何，$P(V)$ 中的点集 $Q(\sigma)=\{A=[a] \in \boldsymbol{P}(V): \sigma(a, a)=0\}$，称为 $\boldsymbol{P}(V)$ 中的射影二阶超曲面或二阶超曲面．$\sigma$ 的秩即为 $Q(\sigma)$ 的秩
+    1. 二阶超曲面 $Q(\sigma)$ 是退化的，当且仅当 $\sigma$ 是退化的
+    2. 射影变换把二阶超曲面映成二阶超曲面，且保持秩不变
+2. 配极变换：设 $\boldsymbol{P}(V)$ 中的二阶超曲面 $Q(\sigma)$ 确定了内积空间 $(V, \sigma)$，配极变换 $\boldsymbol{P}(V) \rightarrow \boldsymbol{P}(V)$ 是把 $V$ 中的子空间 $M$ 映成其正交补空间的变换 $M \rightarrow M^{\perp} \cdot M^{\perp}$ 称为 $M$ 对于二阶超曲面 $Q(\sigma)$ 的极面
+    1. 配极原则：如果子空间 $M \subset$ 子空间 $N$，则 $M$ 的极面 $M^{\perp} \supset N$ 的极面 $N^{\perp}$
+        1. 子空间 $M$ 与子空间 $N$ 的和的极面 $(M+N)^{\perp}$ 是 $M$ 与 $N$ 的极面之交 $M^{\perp} \cap N^{\perp}$
+        2. 子空间 $M$ 与子空间 $N$ 的交的极面 $(M \cap N)^{\perp}$ 是 $M$ 与 $N$ 的极面之和 $M^{\perp}+N^{\perp}$
+    2. 共轭点：设 $Q(\sigma)$ 是 $\boldsymbol{P}(V)$ 中的二阶超曲面，两点 $A=[a], B=[b]$ 称为关于 $Q(\sigma)$ 的共轭点，是指 $a \perp b$，即 $\sigma(a, b)=0$．过点 $A=[a]$ 任作直线 $M=[a, b]$ 交二阶曲面 $Q(\sigma)$ 于两点 $P=[p], R=$ $[r]$，则 $B=[b]$ 是 $P, R, A$ 的第四调和共轭点，即 $(P R, A B)=-1$ 的充要条件是 $B, A$ 关于 $Q(\sigma)$ 共轭
+    3. 退化子空间：设 $M$ 是向量空间 $V$ 的子空间，若 $M \cap M^{\perp}=0$，则 $M$ 称为 $V$ 的非退化子空间；若 $M \cap M^{\perp} \neq 0$，则称 $M$ 为 $V$ 的退化子空间
+    4. 切面与切点：设 $M$ 是体 $F$ 上的射影几何 $\boldsymbol{P}(V)$ 中的 $k$ 维面．$M$ 称为切于二阶超曲面 $Q(\sigma)$，是指 $M \cap M^{\perp} \neq 0$．此时称 $M$ 为 $Q(\sigma)$ 的 $k$ 维切面，$M \cap M^{\perp}$ 中的点称为切点
 
-### 5.3.2 二次超曲面仿射理论
+### 5.3.2 二阶超曲面仿射理论
+1. 仿射二阶超曲面：设 $(V, \sigma)$ 是域 $F$ 上的内积空间，$\boldsymbol{P}(V)$ 是相应的射影几何，在 $V$ 中固定一个超平面 $H$ 作为无穷远超平面
 
-### 5.3.3 Euclid 空间的二次超曲面
+    $$
+    H=\left\{\left(x_0, x_1, x_2, \cdots, x_n\right) \in V, x_0=0\right\}
+    $$
+
+    则得一个仿射几何 $\boldsymbol{A}(V)$．$\boldsymbol{A}(V)$ 中的仿射二阶超曲面是点集
+
+    $$
+    Q(\sigma)=\{A=[a] \in A(V): \sigma(a, a)=0\}
+    $$
+
+    如果点 $H^{\perp} \not \subset H$，则 $H^{\perp}$ 称为仿射二阶超曲面的中心．此时 $Q(\sigma)$ 称为有心二阶超曲面；否则如果 $H^{\perp} \subset H$，则 $Q(\sigma)$ 称为无心二阶超曲面，又称抛物面
+
+2. 设 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$ 是 $V$ 中的一组基，相应的坐标是 $\left(x_0, x_1, x_2, \cdots, x_n\right)$．它是 $\boldsymbol{P}(V)$ 中点的齐次坐标，$Q(\sigma)$ 的方程是 ${\displaystyle \sum_{i, j=0}^n a_{i j} x_i x_j=0 \ \left(a_{i j}=a_{j i}\right)}$，由于仿射空间中不包含无穷远点，所以 $x_0 \neq 0$，取仿射坐标 $\widetilde{x}_i=\dfrac{x_i}{x_0} \ (i=1,2, \cdots, n)$ 时，仿射二阶超曲面的方程是
+
+    $$
+    \sum_{i, j=1}^n a_{i j} \widetilde{x}_i \widetilde{x}_j+\sum_{j=1}^n a_{0 j} \widetilde{x}_j+a_{00}=0 \ \left(a_{i j}=a_{j i}\right)
+    $$
+
+    1. 仿射变换使有心二阶超曲面变成有心二阶超曲面，使抛物面变成抛物面
+    2. 有心二阶超曲面的标准形是 $\lambda_0+\lambda_1 \tilde{x}_1^2+\lambda_2 \tilde{x}_2^2+\cdots+\lambda_r \tilde{x}_r^2=0$，抛物面的标准形是 $\lambda_1 \tilde{x}_1+\lambda_2 \tilde{x}_2^2+\cdots+\lambda_r \tilde{x}_r^2=0$，其中 $r=\sigma$ 的秩为 $-1$
+
+### 5.3.3 Euclid 空间的二阶超曲面
 
 ## 5.4 曲面的局部理论
 ### 5.4.1 曲面的微积分
