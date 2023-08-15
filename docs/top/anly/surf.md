@@ -232,6 +232,59 @@
         17. 一对重合平面：$I_{3}=I_{4}=I_{2}=K_{2}=K_{1}=0$
 
 ## 5.2 二次曲面射影理论
+1. 双线性形式：设 $V$ 是域 $F$ 上的 $n+1$ 维线性空间，$\sigma$ 是其上的二元函数 $\sigma: V \times V \rightarrow F, (x, y) \mapsto \sigma(x, y)$．如果它对每一个变元都是线性的，即
+
+    $$
+    \begin{aligned}
+    \sigma\left(a x_1+b x_2, y\right) & =a \sigma\left(x_1, y\right)+b \sigma\left(x_2, y\right) \\
+    \sigma\left(x, a y_1+b y_2\right) & =a \sigma\left(x, y_1\right)+b \sigma\left(x, y_2\right)
+    \end{aligned}
+    $$
+
+    其中 $\forall x_1, x_2, y_1, y_2 \in V$，则 $\sigma$ 称为 $V$ 上的双线性形式，定义了双线性形式 $\sigma$ 的线性空间 $V$ 记为 $(V, \sigma)$
+
+    1. 设 $(V, \sigma),\left(V^{\prime}, \sigma^{\prime}\right)$ 是两个定义了双线性形式的线性空间，$f$ 是线性映射 $f: V \rightarrow V^{\prime}$．则 $f$ 诱导了线性空间 $V$ 上的双线性形式 $f^* \sigma^{\prime}$，使得 $\left(f^* \sigma^{\prime}\right)(x, y)=\sigma^{\prime}(f(x), f(y)), \forall x, y \in V$
+    2. 设 $(V, \sigma),\left(V^{\prime}, \sigma^{\prime}\right)$ 是两个定义了双线性形式的线性空间，若存在同构 $f: V \rightarrow V^{\prime}$ 有 $\sigma(x, y)=\sigma^{\prime}(f(x), f(y))=f^* \sigma^{\prime}(x, y)$ 其中 $\forall x, y \in V$，则称 $(V, \sigma)$ 和 $\left(V^{\prime}, \sigma^{\prime}\right)$ 是同构的
+        1. 设 $\sigma, \sigma^{\prime}$ 是向量 $V$ 上的两个双线性形式，若 $(V, \sigma)$ 和 $\left(V, \sigma^{\prime}\right)$ 是同构的，则称 $\sigma$ 和 $\sigma^{\prime}$ 是合同的
+        2. 设 $\sigma, \sigma^{\prime}$ 是 $V$ 上的两个双线性形式，$\sigma$ 和 $\sigma^{\prime}$ 是合同的当且仅当存在自同构 $f: V \rightarrow V$，使得 $\sigma=f^* \sigma^{\prime}$ 或 $\sigma^{\prime}=\left(f^{-1}\right)^* \sigma$
+        3. 设 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$ 是 $V$ 的一组基，则双线性形式 $\sigma$ 和 $\tau$ 是合同的当且仅当它们对于基 $\left\{e_i\right\}$ 的矩阵表示是合同的
+    3. 双线性形式 $\sigma$ 的秩是其矩阵表示 $\left(\sigma ;\left\{e_i\right\}\right)$ 的秩
+        1. 如果 $\sigma$ 的秩小于 $\operatorname{dim} V=n+1$，则 $\sigma$ 称为退化的；如果 $\sigma$ 的秩等于 $\operatorname{dim} V=n+1$，则 $\sigma$ 称为非退化的
+        2. 设 $\sigma$ 是向量空间 $V$ 上的双线性形式，$\sigma$ 确定了一个 $V \rightarrow V^*$ 的线性变换
+
+            $$
+            \begin{gathered}
+            \underset{\sim}{\sigma}: V \rightarrow V^* \\
+            \underset{\sim}{\sigma}(x)(y)=\sigma(x, y), \forall x, y \in V
+            \end{gathered}
+            $$
+
+    4. 对称双线性形式：设 $\sigma$ 是向量空间 $V$ 上的双线性形式，如果 $\sigma(x, y)=\sigma(y, x), \forall x, y \in V$，则称 $\sigma$ 为对称双线性形式．对于 $V$ 的一组基 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$，对称双线性形式 $\sigma$ 的表示矩阵 $S=\left(\sigma ;\left\{e_i\right\}\right)= \sigma\left(e_i, e_j\right)=\left(S_{i j}\right)$ 是对称矩阵
+
+2. 内积空间：设 $(V, \sigma)$ 是定义了对称双线性形式的向量空间，$x \cdot y=\sigma(x, y)=\sigma(y, x)=y \cdot x, \forall x, y \in V$ 称为 $(V, \sigma)$ 上的内积，$(V, \sigma)$ 称为内积空间
+    1. 设 $(V, \sigma)$ 是内积空间，向量 $x, y \in V$．若 $x \cdot y=0$ 或 $\sigma(x, y)={\displaystyle \sum_{i, j=0}^n S_{i j} x_i y_j=0}$，称 $x, y$ 为正交的或垂直的，记为 $x \perp y$
+    2. 设 $M$ 是 $V$ 一个子空间，集合 $M^{\perp}$ 为
+
+        $$
+        M^{\perp}=\{x \in V: \sigma(x, y)=\sigma(y, x)=0, \forall y \in M\}=\{x \in V: \sigma(x, M)=\sigma(M, x)=0\}
+        $$
+
+        称为 $M$ 在 $V$ 中的正交补
+
+        1. 设 $M, N$ 是向量空间 $V$ 的子空间，$M \subset N$，则 $M^{\perp} \supset N^{\perp}$
+        2. 设 $(V, \sigma)$ 是内积空间，则 $\sigma$ 的秩等于 $\operatorname{dim} V-\operatorname{dim} V^{\perp}$
+        3. 对称双线性形式 $\sigma$ 是非退化的，其充要条件是 $V^{\perp}=0$
+        4. 设 $(V, \sigma)$ 是内积空间，$M$ 是 $(V, \sigma)$ 的子空间，则 $\operatorname{dim} M+\operatorname{dim} M^{\perp}=\operatorname{dim} V+\operatorname{dim}\left(M \cap V^{\perp}\right)$．特别地，如果 $\sigma$ 是非退化的双线性形式，即 $V^{\perp}=0$，则有 $\operatorname{dim} M+\operatorname{dim} M^{\perp}=\operatorname{dim} V$
+        5. 设 $(V, \sigma)$ 是内积空间，其中对称双线性形式 $\sigma$ 是非退化的．定义 $V$ 中子空间之间的正交补映射 $M \rightarrow M^{\perp}$，则这个映射诱导了射影几何 $\boldsymbol{P}(V)$ 到自身的一一映射，并且具有如下性质
+            - $\operatorname{dim} M^{\perp}=\operatorname{dim} V-\operatorname{dim} M$
+            - $\left(M^{\perp}\right)^{\perp}=M$
+            - $M \subset N \Rightarrow M^{\perp} \supset N^{\perp}$
+            - $(M+N)^{\perp}=M^{\perp} \cap N^{\perp}$
+            - $(M \cap N)^{\perp}=M^{\perp}+N^{\perp}$
+
+    3. 设 $M$ 是向量空间 $V$ 的子空间，$\sigma_M$ 是 $\sigma$ 在 $M$ 上的限制．如果 $\sigma_M$ 是退化的，即 $\sigma_M$ 的秩小于 $\operatorname{dim} M$，则 $M$ 称为 $V$ 的退化子空间
+        1. $M$ 是 $V$ 的非退化子空间，当且仅当 $\sigma_M$ 的秩等于 $\operatorname{dim} M$
+        2. 设 $M$ 是 $V$ 中的非退化子空间，则 $V=M \oplus M^{\perp}$
 
 ## 5.3 曲面的局部理论
 ### 5.3.1 曲面的微积分

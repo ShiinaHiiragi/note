@@ -147,7 +147,7 @@
             - 一平面和与它不平行的直线交于一点
     3. 仿射几何中的定理
         1. 仿射 $\text{Desargues}$ 定理：在仿射空间 $A(V)$ 中，如果两三点形的三对对应顶点连线交于一点或平行，则对应边相交或平行；三对对应边都相交时交点在一直线上
-        2. 仿射 $\text{Pappus}$ 定理：设点 $A, B, C$ 和 $A^{\prime}, B^{\prime}, C^{\prime}$ 分别在两条共面的直线上，再设 $L=B C^{\prime} \cap B^{\prime} C, M=C A^{\prime} \cap C^{\prime} A, N=A B^{\prime} \cap A^{\prime} B$，则 $L, M, N$ 三点共线
+        2. 仿射 $\text{Pappus}$ 定理：设点 $A, B, C$ 和 $A^{\prime}, B^{\prime}, C^{\prime}$ 分别在两条共面的直线上，再设 $L=B C^{\prime} \cap B^{\prime} C, M=C A^{\prime} \cap C^{\prime} A$ 以及 $N=A B^{\prime} \cap A^{\prime} B$，则 $L, M, N$ 三点共线
 2. 单比与有向距离
     1. 单比：仿射空间中共线三点 $A, B, C$ 的单比记作 $(A B C)=\left(A B, C D_{\infty}\right)$，其中 $D_{\infty}$ 是直线与无穷远超平面的交点
     2. 定向：给定实 $n$ 维仿射空间 $A^n$ 中的直线 $l$，$D$ 是其无穷远点，记为 $D_{\infty}$．则 $l$ 上任一对点 $A, B$ 确定了这条直线的定向．$l$ 上任一点 $P$ 有坐标 $\lambda=\left(P B, A D_{\infty}\right)$，规定 $\lambda$ 增大的方向是直线 $l$ 的正向，$\lambda$ 减少的方向是直线 $l$ 的负向，将正向记作 $\overrightarrow{A B}$
