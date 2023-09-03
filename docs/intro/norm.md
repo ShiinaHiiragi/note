@@ -17,7 +17,6 @@
     |           递归论：算法与随机性基础            |      郝兆宽、杨睿之、杨跃      |  三   |
     |            数理逻辑：证明及其限度             |      郝兆宽、杨睿之、杨跃      |  三   |
     |           集合论：对无穷概念的探索            |         郝兆宽、杨睿之         |  三   |
-    |                   高等几何                    | 梅向明、刘增贤、王汇淳、王智秋 |  五   |
     | Type Theory and Formal Proof: an Introduction | Rob Nederpelt、Herman Geuvers  |  八   |
     |             自然语言形式理论研究              |         蔡曙山、邹崇理         |  八   |
 
