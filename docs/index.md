@@ -343,8 +343,7 @@ const refList = [
         year: 2020,
         page: [1, 151],
         press: "高等教育出版社",
-        locate: "北京",
-        plot: 121 + (66 - 66)
+        locate: "北京"
     },
     {
         author: ["熊金城"],
