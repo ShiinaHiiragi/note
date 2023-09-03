@@ -7,7 +7,7 @@
 ### 三、LEAN
 
 !!! note "参考文献"
-    {++『Lean Manual』（Microsoft Research）++}
+    『Lean Manual』（Microsoft Research）
 
 #### 1 组织特性
 
@@ -60,7 +60,7 @@
 
 !!! note "参考文献"
     1. 『结构证明论』（马明辉），下略
-    2. {++『Ordinal Analysis with an Introduction to Proof Theory』（Toshiyasu Arai）++}
+    2. 『Ordinal Analysis with an Introduction to Proof Theory』（Toshiyasu Arai）
 
 #### 1 命题逻辑
 1. Hilbert 系统：第一章
@@ -105,7 +105,7 @@
 !!! note "参考文献"
     1. 『递归论：算法与随机性基础』（郝兆宽、杨睿之、杨跃），下略
     2. 『数理逻辑：证明及其限度』（郝兆宽、杨睿之、杨跃）
-    3. {++『逆数学と 2 階算術』（田中一之）++}
+    3. 『逆数学と 2 階算術』（田中一之）
 
 #### 3 不可解度论
 1. 图灵归约与图灵度：§3.1、§3.2
@@ -127,7 +127,7 @@
 
 !!! note "参考文献"
     1. 『集合论：对无穷概念的探索』（郝兆宽、杨睿之）
-    2. {++『The Higher Infinite: Large Cardinals in Set Theory from Their Beginnings』（Akihiro Kanamori）++}
+    2. 『The Higher Infinite: Large Cardinals in Set Theory from Their Beginnings』（Akihiro Kanamori）
 
 #### 3 连续统假设
 1. 集宇宙：第七章
@@ -146,7 +146,7 @@
 ### 三、近世代数
 
 !!! note "参考文献"
-    {++『近世代数』（丘维声）++}
+    『近世代数』（丘维声）
 
 #### 1 群论
 
@@ -159,7 +159,7 @@
 ### 四、范畴论
 
 !!! note "参考文献"
-    {++『范畴论』（贺伟）++}
+    『范畴论』（贺伟）
 
 #### 1 范畴
 
@@ -171,7 +171,7 @@
 ### 一、解析几何
 
 !!! note "参考文献"
-    1. {++『微分几何』（彭家贵、陈卿）++}
+    1. 『微分几何』（彭家贵、陈卿）
 
 #### 4 曲线理论
 - 曲线的局部理论
@@ -185,7 +185,7 @@
 ### 三、代数拓扑
 
 !!! note "参考文献"
-    {++『代数拓扑讲义』（周建伟）++}
+    『代数拓扑讲义』（周建伟）
 
 #### 1 基本群
 
@@ -194,7 +194,7 @@
 ### 四、微分几何
 
 !!! note "参考文献"
-    {++『流形与几何初步』（梅加强）++}
+    『流形与几何初步』（梅加强）
 
 #### 1 微分流形
 
@@ -209,7 +209,7 @@
 ### 二、实分析
 
 !!! note "参考文献"
-    {++『实变函数与泛函分析基础』（程其襄、张奠宙、胡善文、薛以峰）++}
+    『实变函数与泛函分析基础』（程其襄、张奠宙、胡善文、薛以峰）
 
 #### 1 测度论
 
@@ -220,7 +220,7 @@
 ### 三、复分析
 
 !!! note "参考文献"
-    {++『复变函数论』（钟玉泉）++}
+    『复变函数论』（钟玉泉）
 
 #### 1 复变函数
 
@@ -237,7 +237,7 @@
 ### 四、泛函分析
 
 !!! note "参考文献"
-    {++『实变函数与泛函分析基础』（程其襄、张奠宙、胡善文、薛以峰）++}
+    『实变函数与泛函分析基础』（程其襄、张奠宙、胡善文、薛以峰）
 
 #### 1 赋范线性空间
 
@@ -251,8 +251,8 @@
 ### 一、概率论
 
 !!! note "参考文献"
-    1. {++『现代概率论基础』（汪嘉冈）++}
-    2. {++『随机过程』（方兆本、缪柏其）++}
+    1. 『现代概率论基础』（汪嘉冈）
+    2. 『随机过程』（方兆本、缪柏其）
 
 #### 1 可测空间
 
@@ -267,7 +267,7 @@
 ### 二、数理统计
 
 !!! note "参考文献"
-    {++『高等数理统计』（茆诗松、王静龙、濮晓龙）++}
+    『高等数理统计』（茆诗松、王静龙、濮晓龙）
 
 #### 1 统计量
 
@@ -280,8 +280,8 @@
 ### 三、信息理论
 
 !!! note "参考文献"
-    1. {++『信息论基础教程』（翟明岳）++}
-    2. {++『代数编码与密码』（许以超、马松雅）++}
+    1. 『信息论基础教程』（翟明岳）
+    2. 『代数编码与密码』（许以超、马松雅）
 
 #### 1 信息论
 
@@ -294,7 +294,7 @@
 
 !!! note "参考文献"
     1. 『Type Theory and Formal Proof: an Introduction』（Rob Nederpelt、Herman Geuvers）
-    2. {++『Homotopy Type Theory: Univalent Foundations of Mathematics』（The Univalent Foundations Program）++}
+    2. 『Homotopy Type Theory: Univalent Foundations of Mathematics』（The Univalent Foundations Program）
 
 #### 1 一般类型论
 
@@ -307,7 +307,7 @@
 ### 二、形式语言
 
 !!! note "参考文献"
-    {++『The Formal Semantics of Programming Languages: An Introduction』（Glynn Winskel）++}
+    『The Formal Semantics of Programming Languages: An Introduction』（Glynn Winskel）
 
 #### 2 形式语义
 1. 指称语义

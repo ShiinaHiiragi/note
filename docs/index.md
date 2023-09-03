@@ -181,20 +181,20 @@ const refList = [
         title: "初等模型论",
         type: "M",
         page: [1, 229],
-        plot: 30,
         press: "复旦大学出版社",
         locate: "上海",
-        year: 2018
+        year: 2018,
+        plot: 30
     },
     {
         author: ["郝兆宽", "杨睿之", "杨跃"],
         title: "递归论：算法与随机性基础",
         type: "M",
         page: [1, 191],
-        plot: 92,
         press: "复旦大学出版社",
         locate: "上海",
-        year: 2018
+        year: 2018,
+        plot: 92
     },
     {
         author: ["[美]Thomas H. Cormen", "[美]Charles E. Leiserson", "[美]Ronald L. Rivest", "[美]Clifford Stein"],
@@ -221,10 +221,10 @@ const refList = [
         title: "数理逻辑：证明及其限度",
         type: "M",
         page: [1, 236],
-        plot: 151,
         press: "复旦大学出版社",
         locate: "上海",
-        year: 2014
+        year: 2014,
+        plot: 151
     },
     {
         author: ["郝兆宽", "杨跃"],
