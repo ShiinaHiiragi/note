@@ -115,6 +115,8 @@
 2. 聚点与孤立点：设 $X$ 是一个拓扑空间，$A\subseteq X$
     1. 聚点：若点 $x\in X$ 的每一个邻域 $U$ 中都有 $U\cap(A-|x|)\neq \varnothing$，则称点 $x$ 是集合 $A$ 的一个聚点或极限点
     2. 孤立点：若 $x\in A$ 且存在 $x$ 的一个邻域 $U$ 使得 $U\cap(A-|x|)= \varnothing$，则称 $x$ 为 $A$ 的一个孤立点
+        1. 自密集：没有孤立点的集合
+        2. 完备集：自密闭集，即没有孤立点的闭集
 3. 导集：设 $X$ 是一个拓扑空间，$A\subseteq X$
     1. 定义：集合 $A$ 的所有聚点构成的集合，记作 $d(A)$
     2. 设 $X$ 是一个拓扑空间，$A\subseteq X$
@@ -166,6 +168,9 @@
     2. 设 $X$ 是一个拓扑空间，$A\subseteq X$
         1. $A^-=A^o\cup \partial(A), A^o=A^--\partial(A)$
         2. $\partial(A)=A^-\cap A{}'^-=(A^o\cup A{}'^o)'=\partial(A')$
+
+    !!! note "点的分类"
+        设 $X$ 是一个拓扑空间，$A\subseteq X$，点 $x\in X$．则 $x$ 是 $A$ 的 $\left\{\begin{aligned} & \textsf{内点} \\ & \textsf{边界点} \\ & \textsf{外点} \end{aligned}\right.$ 或 $\left\{\begin{aligned} & \textsf{聚点} \\ & \textsf{孤立点} \\ & \textsf{外点} \end{aligned}\right.$．易知 $A$ 的内点必定是 $A$ 的聚点；$A$ 的边界点必定是 $A$ 的聚点或孤立点
 
 ### 1.2.3 基与子基
 1. 基：设 $(X, \mathscr T)$ 是一个拓扑空间，$\mathscr B$ 是 $\mathscr T$ 的一个子族．若 $\forall U\in \mathscr T\ \exists \mathscr B_1\subseteq \mathscr B: U={\displaystyle \bigcup_{B\in \mathscr B_1}B}$，则称 $\mathscr B$ 是拓扑 $\mathscr T$ 的一个基
