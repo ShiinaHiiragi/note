@@ -173,6 +173,8 @@ nav:
       - 1 序列与级数: anly/princ/seq.md
       - 2 微分法: anly/princ/diff.md
       - 3 积分法: anly/princ/int.md
+    - 二、实分析:
+      - 1 测度论: anly/real/ms.md
   - 语言学:
     - 一、类型论:
       - 1 一般类型论: lang/type/gen.md

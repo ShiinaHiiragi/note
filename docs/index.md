@@ -382,6 +382,16 @@ const refList = [
         locate: "北京"
     },
     {
+        author: ["程其襄", "张奠宙", "胡善文", "薛以峰"],
+        title: "实变函数与泛函分析基础",
+        type: "M",
+        page: [5, 221],
+        year: 2019,
+        press: "高等教育出版社",
+        locate: "北京",
+        plot: 5 - 5
+    },
+    {
         author: ["Rob Nederpelt", "Herman Geuvers"],
         title: "Type Theory and Formal Proof: an Introduction",
         type: "M",
