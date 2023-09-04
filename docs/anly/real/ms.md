@@ -89,4 +89,31 @@
 
 ### 1.2.3 可测函数
 1. 可测函数：设 $f(x)$ 是定义在可测集 $E \subset \mathbf{R}^{n}$ 的实函数．如果对于任何有限实数 $a$，$E[f>a]$ 都是可测集，则称 $f(x)$ 为定义在 $E$ 上的可测函数
-2. 简单函数
+    1. 设 $f(x)$ 是定义在可测集 $E$ 上的实函数，下列任一条件都是 $f(x)$ 在 $E$ 上可测的充要条件
+        1. 对任何有限实数 $a, E[f \geqslant a]$ 都可测
+        2. 对任何有限实数 $a, E[f<a]$ 都可测
+        3. 对任何有限实数 $a, E[f \leqslant a]$ 都可测
+        4. 对任何有限实数 $a, b\ (a<b)$，$E[a \leqslant f<b]$ 都可测（但充分性要假定 $f(x)$ 是有限函数）
+    2. 设 $f(x)$ 在 $E$ 上可测，则 $E[f=a]$ 总可测，不论 $a$ 是有限实数或 $\pm \infty$
+    3. 可测集 $E \subset \mathbf{R}^{n}$ 上的连续函数是可测函数
+2. 简单函数：设 $f(x)$ 的定义域 $E$ 可分为有限个互不相交的可测集 $E_{1}, E_{2}, \cdots, E_{s}, E={\displaystyle \bigcup_{i=1}^{j} E_{i}}$，使 $f(x)$ 在每个 $E_{i}$ 上都等于某常数 $c_{i}$，则称 $f(x)$ 为简单函数
+    1. 设 $f(x)$ 是可测集 $E$ 上的可测函数，$E_{1} \subset E$ 为 $E$ 的可测子集，则 $f(x)$ 看作定义在 $E_{1}$ 上的函数时是 $E_{1}$ 上的可测函数
+
+        设 $f(x)$ 定义在有限个可测集 $E_{i} \ (1 \leqslant i \leqslant s)$ 的并集 ${\displaystyle E=\bigcup_{i=1}^{s} E_{i}}$ 上，且 $f(x)$ 在每个 $E_{i}$ 上都可测，则 $f(x)$ 在 $E$ 上也可测
+
+    2. 设 $f(x)$ 与 $g(x)$ 为 $E$ 上的可测函数，则 $E[f>g]$ 与 $E[f \geqslant g]$ 都是可测集
+    3. 设 $f(x), g(x)$ 在 $E$ 上可测，则下列函数（假定它们在 $E$ 上有意义）皆在 $E$ 上可测
+        1. $f(x)+g(x)$
+        2. $|f(x)|$
+        3. $\dfrac{1}{f(x)}$
+        4. $f(x) \cdot g(x)$
+    4. 设 $\left\{f_{n}(x)\right\}$ 是 $E$ 上一列（或有限个）可测函数，则 ${\displaystyle \mu(x)=\inf _{n} f_{n}(x)}$ 与 ${\displaystyle \lambda(x)=\sup _{n} f_{n}(x)}$ 都在 $E$ 上可测
+    5. 设 $\left\{f_{n}(x)\right\}$ 是 $E$ 上一列可测函数，则 ${\displaystyle F(x)=\varliminf_{n \rightarrow \infty} f_{n}(x), G(x)=\varlimsup_{n \rightarrow \infty} f_{n}(x)}$ 也在 $E$ 上可测．特别地，当 ${\displaystyle F(x)=\lim _{n} f_{n}(x)}$ 存在时，它也在 $E$ 上可测
+
+    !!! note "可测函数与简单函数的关系"
+        1. 若 $f(x)$ 在 $E$ 上非负可测，则存在可测简单函数列 $\left\{\varphi_{k}(x)\right\}$ 使得对任意 $x \in E$ 都有 $\varphi_{k}(x) \leqslant \varphi_{k+1}(x) \ (k=1,2, \cdots)$ 且 ${\displaystyle \lim _{k \rightarrow \infty} \varphi_{k}(x)=f(x)}$
+        2. 若 $f(x)$ 在 $E$ 上可测，则存在可测简单函数列 $\left\{\varphi_{k}(x)\right\}$ 使得对任意 $x \in E$ 都有 ${\displaystyle \lim _{k \rightarrow \infty} \varphi_{k}(x)=f(x)}$．若 $f(x)$ 在 $E$ 上有界，则上述收敛可以是一致的
+
+3. 设 $\pi$ 是一个与集合 $E$ 的点 $x$ 有关的命题．若存在 $E$ 的子集 $M$，满足 $m M=0$ 使得 $\pi$ 在 $E - M$ 上恒成立， 即 $E - E[\pi$ 成立$]$ 是零测度集，则称 $\pi$ 在 $E$ 上几乎处处成立，或说 $\pi$ $\text{a.e.}$于 $E$
+    1. $\text{Egorov}$ 定理：设 $m E<\infty$，$\left\{f_{n}\right\}$ 是 $E$ 上一列 $\text{a.e.}$收敛于一个 $\text{a.e.}$有限的函数 $f$ 的可测函数．则对任意 $\delta>0$，存在子集 $E_{\delta} \subset E$ 使 $\left\{f_{n}\right\}$ 在 $E_{\delta}$ 上一致收敛且 $m\left(E - E_{\delta}\right)<\delta$
+    2. $\text{Lusin}$ 定理：设 $f(x)$ 是 $E$ 上 $\text{a.e.}$有限的可测函数，则对任意 $\delta>0$，存在闭子集 $F_{\delta} \subset E$ 使 $f(x)$ 在 $F_{\delta}$ 上是连续函数且 $m\left(E - F_{\delta}\right)<\delta$
