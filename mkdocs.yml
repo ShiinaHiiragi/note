@@ -123,6 +123,7 @@ nav:
       - 5 文化认知: meta/cogn/civ.md
     - 二、符号学:
       - 1 符号原理: meta/sign/prin.md
+      - 2 符号的性质: meta/sign/prop.md
     - 三、分析哲学:
       - 1 演绎与证成: meta/logic/syntax.md
       - 2 真理与悖论: meta/logic/truth.md
