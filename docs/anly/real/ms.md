@@ -1,7 +1,7 @@
 # 1 测度论
 
 ## 1.1 外测度与内测度
-1. 外测度：设 $E$ 为 $\mathbf{R}^{n}$ 中任一点集，对于每一列覆盖 $E$ 的开区间 ${\displaystyle \bigcup_{i=1}^{\infty} I_{i} \supset E}$，作出其的体积总和 ${\displaystyle \mu=\sum_{i=1}^{\infty}\left|I_{i}\right|}$（$\mu$ 可以等于 $\infty$, 不同的区间列一般有不同的 $\mu$），所有这一切的 $\mu$ 组成一个下方有界的数集，其下确界（完全由 $E$ 确定）称为 $E$ 的勒贝格外测度，简称 $L$ 外测度或外测度，记为 $m^{*} E$，即 ${\displaystyle m^{*} E=\inf _{E \subset \bigcup_{i=1}^{\infty} I_{i}} \sum_{i=1}^{\infty}\left|I_{i}\right|}$
+1. 外测度：设 $E$ 为 $\mathbf{R}^{n}$ 中任一点集，对于每一列覆盖 $E$ 的开区间 ${\displaystyle \bigcup_{i=1}^{\infty} I_{i} \supset E}$，作出其的体积总和 ${\displaystyle \mu=\sum_{i=1}^{\infty}\left|I_{i}\right|}$（$\mu$ 可以等于 $\infty$, 不同的区间列一般有不同的 $\mu$），所有这一切的 $\mu$ 组成一个下方有界的数集，其下确界（完全由 $E$ 确定）称为 $E$ 的 $\text{Lesbegue}$ 外测度，简称 $L$ 外测度或外测度，记为 $m^{*} E$，即 ${\displaystyle m^{*} E=\inf _{E \subset \bigcup_{i=1}^{\infty} I_{i}} \sum_{i=1}^{\infty}\left|I_{i}\right|}$
     1. 外测度的性质
         1. 非负性：$m^{*} E \geqslant 0$，当 $E$ 为空集时，$m^{*} E=0$
         2. 单调性：设 $A \subset B$，则 $m^{*} A \leqslant m^{*} B$
@@ -13,7 +13,7 @@
 
 ## 1.2 可测性
 ### 1.2.1 可测集
-1. $L$ 可测集：设 $E$ 为 $\mathbf{R}^{n}$ 中的点集，如果对任一点集 $T$ 都有 $m^{*} T=m^{*}(T \cap E)+m^{*}\left(T \cap E'\right)$，则称 $E$ 是 $L$ 可测的．此时 $E$ 的 $L$ 外测度 $m^{*} E$ 称为 $E$ 的 $L$ 测度，记为 $m E$，记 $L$ 可测集全体为 $\mathscr{M}$
+1. $L$ 可测集：设 $E$ 为 $\mathbf{R}^{n}$ 中的点集，如果对任一点集 $T$ 都有 $m^{*} T=m^{*}(T \cap E)+m^{*}\left(T \cap E'\right)$，则称 $E$ 是 $\text{Lesbegue}$ 可测的或 $L$ 可测的．此时 $E$ 的 $L$ 外测度 $m^{*} E$ 称为 $E$ 的 $\text{Lesbegue}$ 测度或 $L$ 测度，记为 $m E$，记 $L$ 可测集全体为 $\mathscr{M}$
     1. 集合 $E$ 可测的充要条件是对于任意 $A \subset E, B \subset E'$ 总有 $m^{*}(A \cup B)=m^{*} A+m^{*} B$
     2. $S$ 可测的充要条件是 $S'$ 可测
     3. 设 $S_{1}, S_{2}$ 可测，则 $S_{1} \cup S_{2}$ 可测且当 $S_{1} \cap S_{2}=\varnothing$ 时，对于任意 $T$ 总有 $m^{*}\left[T \cap\left(S_{1} \cup S_{2}\right)\right]=m^{*}\left(T \cap S_{1}\right)+m^{*}\left(T \cap S_{2}\right)$
@@ -27,6 +27,10 @@
 
         设 $\left\{S_{i}\right\}$ 是一列递降的可测集合 $S_{1} \supset S_{2} \supset \cdots \supset S_{n} \supset \cdots$，令 ${\displaystyle S=\bigcap_{i=1}^{\infty} S_{i}=\lim _{n \rightarrow \infty} S_{n}}$，则 $m S_{1}<\infty$ 时，${\displaystyle m S=\lim _{n \rightarrow \infty} m S_{n}}$
 
+    6. 正规性：若 $E$ 是一可测集，则有
+        1. 外正规性：$m E=\inf \{m G: G$ 是开集$, E \subset G\}$
+        2. 内正规性：$m E=\sup \{m K: K$ 是紧集$, K \subset E\}$
+
     !!! note "利用外测度与内测度定义可测集"
         设 $E$ 为 $\mathbf{R}^n$ 中有界集，如果 $m^* E=m_{*} E$，则称 $E$ 是 $L$ 可测的．又设 $E$ 是 $\mathbf{R}^n$ 中的无界集，如果对任何开区间 $I$，有界集 $E \cap I$ 都是 $L$ 可测的，则称 $E$ 是 $L$ 可测的．对 $L$ 可测集 $E$，不管它有界或无界，一律称 $m^* E$ 为它的 $L$ 测度，简记为 $m E$
 
@@ -37,10 +41,33 @@
     2. 区间 $I$（不论开、闭或半开半闭区间）都是可测集合，且 $m I=|I|$
     3. 凡开集、闭集皆可测
 
-### 1.2.2 可测集类
-1. $\sigma$ 代数
-2. 可测集类
+### 1.2.2 测度空间
+1. $\sigma$ 代数：设 $\Omega$ 是由 $\mathbf{R}^{n}$ 的一些子集类组成的集类，如果 $\Omega$ 满足条件
+    1. $\varnothing \in \Omega$
+    2. 若 $E \in \Omega$，则 $E' \in \Omega$
+    3. 若 $E_{n} \in \Omega \ (n=1,2, \cdots)$，则 ${\displaystyle \bigcup_{n=1}^{\infty} E_{n} \in \Omega}$
+
+    则称 $\Omega$ 是 $\mathbf{R}^{n}$ 的一个 $\sigma$ 代数
+
+    1. $\mathbf{R}^{n}$ 中可测集全体所成的集类 $L_{n}$ 是一个 $\sigma$ 代数，当不至于混淆时可简记为 $L$
+    2. 如果 $\left\{\Omega_{\alpha}\right\}$ 是 $\mathbf{R}^{n}$ 上的一族 $\sigma$ 代数，则它们的交集 ${\displaystyle \bigcap_{\alpha} \Omega_{\alpha}}$ 也是 $\sigma$ 代数
+
+2. 正测度：设 $\Omega$ 是 $\mathbf{R}^{n}$ 上的一个 $\sigma$ 代数，如果定义在 $\Omega$ 上的非负值集合函数 $\mu$ 满足条件
+    1. $\mu(\varnothing)=0$
+    2. 若 $E_{n} \in \Omega \ (n=1,2, \cdots)$ 且任意 $n \neq m, E_{n} \cap E_{m}=\varnothing$，都有 ${\displaystyle \mu\left(\bigcup_{n=1}^{\infty} E_{n}\right)=\sum_{n=1}^{\infty} \mu\left(E_{n}\right)}$
+
+    则称 $\mu$ 是 $\Omega$ 上的（正）测度．易知 $\text{Lesbegue}$ 测度 $m$ 是定义在 $\sigma$ 代数 $L$ 上的测度
+
+3. 凡 $\text{Borel}$ 集都是 $\text{Lesbegue}$ 可测集
+    1. 设 $\Sigma$ 是 $\mathbf{R}^{n}$ 的一个子集族，则称所有包含 $\Sigma$ 的 $\sigma$ 代数的交集（即包含 $\Sigma$ 的最小 $\sigma$ 代数）为 $\Sigma$ 产生的 $\sigma$ 代数
+    2. 由 $\mathbf{R}^{n}$ 中全体开集组成的子集类生成的 $\sigma$ 代数记为 $\mathscr{B}_n$，称为 $\text{Borel}$ 代数．当不至于混淆时可简记为 $\mathscr{B}$
+    3. 设集合 $G$ 可表示为一列开集 $\left\{G_{i}\right\}$ 之交集 ${\displaystyle G=\bigcap_{i=1}^{\infty} G_{i}}$，则称 $G$ 为 $G_{\delta}$ 型集
+
+        设集合 $F$ 可表示为一列闭集 $\left\{F_{i}\right\}$ 之并集 ${\displaystyle F=\bigcup_{i=1}^{\infty} F_{i}}$，则称 $F$ 为 $F_{\sigma}$ 型集
+
+        1. 设 $E$ 是任一可测集，则一定存在 $G_{\delta}$ 型集 $G$ 使 $G \supset E$ 且 $m(G - E)=0$
+        2. 设 $E$ 是任一可测集，则一定存在 $F_{\sigma}$ 型集 $F$ 使 $F \subset E$ 且 $m(E - F)=0$
+
+4. 测度空间：若 $\Omega$ 是 $\mathbf{R}^{n}$ 上的一个 $\sigma$ 代数，$\mu$ 是 $\Omega$ 上的测度，则称 $\left(\mathbf{R}^{n}, \Omega, \mu\right)$ 为测度空间
 
 ### 1.2.3 可测函数
-
-### 1.2.4 不可测集
