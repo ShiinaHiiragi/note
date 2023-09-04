@@ -1,5 +1,22 @@
 # 1 测度论
 
+1. 实分析中的实数与函数运算
+    1. 允许以 $+\infty$ 或 $-\infty$ 成为函数值，$\pm \infty$ 也称为非真正的实数．通常的实数则称为有限实数，函数值都是有限实数的函数称为有限函数．因此有界函数必是有限函数，但反之不成立
+    2. $+\infty$ 是全体有限实数的上确界，$-\infty$ 是全体有限实数的下确界：$-\infty<a<+\infty$（$a$ 为任何有限实数）．从而对于上（下）方无界的递增（减）数列 $\left\{a_{n}\right\}$，总有 ${\displaystyle \lim _{n} a_{n}=+\infty \ (-\infty)}$
+    3. 对于任何有限实数 $a$ 有
+        1. $a+( \pm \infty)=( \pm \infty)+a=( \pm \infty)-a=a-(\mp \infty)= \pm \infty$
+        2. $\dfrac{a}{ \pm \infty}=0$
+        3. $(\pm \infty)+( \pm \infty)= \pm \infty$
+    4. 对任何有限实数 $a>0\ (<0)$
+        1. $a( \pm \infty)=( \pm \infty) a=\dfrac{ \pm \infty}{a}= \pm \infty \ (\mp \infty)$
+        2. $(+\infty)(+\infty)=(-\infty)(-\infty)=+\infty$
+        3. $(-\infty)(+\infty)=(+\infty)(-\infty)=-\infty$
+        4. $0 \cdot( \pm \infty)=( \pm \infty) \cdot 0=0$
+
+        反之，$( \pm \infty)-( \pm \infty),( \pm \infty)+(\mp \infty), \dfrac{ \pm \infty}{ \pm \infty}, \dfrac{\mp \infty}{ \pm \infty}, \dfrac{a}{0}, \dfrac{ \pm \infty}{0}$ 都认为是无意义的
+
+2. 一个定义在 $E \subset \mathbf{R}^{n}$ 上的实函数 $f(x)$ 确定了 $E$ 的一组子集 $\{x: x \in E, f(x)>a\}$（简记作 $E[f>a]$），其中 $a$ 取遍一切有限实数．反之，$f(x)$ 本身也由 $E$ 的这组子集完全确定
+
 ## 1.1 外测度与内测度
 1. 外测度：设 $E$ 为 $\mathbf{R}^{n}$ 中任一点集，对于每一列覆盖 $E$ 的开区间 ${\displaystyle \bigcup_{i=1}^{\infty} I_{i} \supset E}$，作出其的体积总和 ${\displaystyle \mu=\sum_{i=1}^{\infty}\left|I_{i}\right|}$（$\mu$ 可以等于 $\infty$, 不同的区间列一般有不同的 $\mu$），所有这一切的 $\mu$ 组成一个下方有界的数集，其下确界（完全由 $E$ 确定）称为 $E$ 的 $\text{Lesbegue}$ 外测度，简称 $L$ 外测度或外测度，记为 $m^{*} E$，即 ${\displaystyle m^{*} E=\inf _{E \subset \bigcup_{i=1}^{\infty} I_{i}} \sum_{i=1}^{\infty}\left|I_{i}\right|}$
     1. 外测度的性质
@@ -71,3 +88,5 @@
 4. 测度空间：若 $\Omega$ 是 $\mathbf{R}^{n}$ 上的一个 $\sigma$ 代数，$\mu$ 是 $\Omega$ 上的测度，则称 $\left(\mathbf{R}^{n}, \Omega, \mu\right)$ 为测度空间
 
 ### 1.2.3 可测函数
+1. 可测函数：设 $f(x)$ 是定义在可测集 $E \subset \mathbf{R}^{n}$ 的实函数．如果对于任何有限实数 $a$，$E[f>a]$ 都是可测集，则称 $f(x)$ 为定义在 $E$ 上的可测函数
+2. 简单函数
