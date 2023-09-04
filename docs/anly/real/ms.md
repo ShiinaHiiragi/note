@@ -2,7 +2,7 @@
 
 1. 实分析中的实数与函数运算
     1. 允许以 $+\infty$ 或 $-\infty$ 成为函数值，$\pm \infty$ 也称为非真正的实数．通常的实数则称为有限实数，函数值都是有限实数的函数称为有限函数．因此有界函数必是有限函数，但反之不成立
-    2. $+\infty$ 是全体有限实数的上确界，$-\infty$ 是全体有限实数的下确界：$-\infty<a<+\infty$（$a$ 为任何有限实数）．从而对于上（下）方无界的递增（减）数列 $\left\{a_{n}\right\}$，总有 ${\displaystyle \lim _{n} a_{n}=+\infty \ (-\infty)}$
+    2. $+\infty$ 是全体有限实数的上确界，$-\infty$ 是全体有限实数的下确界：$-\infty<a<+\infty$（$a$ 为任何有限实数）．从而对于上（下）方无界的递增（减）数列 $\left\{a_{n}\right\}$，总有 ${\displaystyle \lim _{n \to \infty} a_{n}=+\infty \ (-\infty)}$
     3. 对于任何有限实数 $a$ 有
         1. $a+( \pm \infty)=( \pm \infty)+a=( \pm \infty)-a=a-(\mp \infty)= \pm \infty$
         2. $\dfrac{a}{ \pm \infty}=0$
@@ -108,7 +108,7 @@
         3. $\dfrac{1}{f(x)}$
         4. $f(x) \cdot g(x)$
     4. 设 $\left\{f_{n}(x)\right\}$ 是 $E$ 上一列（或有限个）可测函数，则 ${\displaystyle \mu(x)=\inf _{n} f_{n}(x)}$ 与 ${\displaystyle \lambda(x)=\sup _{n} f_{n}(x)}$ 都在 $E$ 上可测
-    5. 设 $\left\{f_{n}(x)\right\}$ 是 $E$ 上一列可测函数，则 ${\displaystyle F(x)=\varliminf_{n \rightarrow \infty} f_{n}(x), G(x)=\varlimsup_{n \rightarrow \infty} f_{n}(x)}$ 也在 $E$ 上可测．特别地，当 ${\displaystyle F(x)=\lim _{n} f_{n}(x)}$ 存在时，它也在 $E$ 上可测
+    5. 设 $\left\{f_{n}(x)\right\}$ 是 $E$ 上一列可测函数，则 ${\displaystyle F(x)=\varliminf_{n \rightarrow \infty} f_{n}(x), G(x)=\varlimsup_{n \rightarrow \infty} f_{n}(x)}$ 也在 $E$ 上可测．特别地，当 ${\displaystyle F(x)=\lim _{n \to \infty} f_{n}(x)}$ 存在时，它也在 $E$ 上可测
 
     !!! note "可测函数与简单函数的关系"
         1. 若 $f(x)$ 在 $E$ 上非负可测，则存在可测简单函数列 $\left\{\varphi_{k}(x)\right\}$ 使得对任意 $x \in E$ 都有 $\varphi_{k}(x) \leqslant \varphi_{k+1}(x) \ (k=1,2, \cdots)$ 且 ${\displaystyle \lim _{k \rightarrow \infty} \varphi_{k}(x)=f(x)}$
@@ -117,3 +117,10 @@
 3. 设 $\pi$ 是一个与集合 $E$ 的点 $x$ 有关的命题．若存在 $E$ 的子集 $M$，满足 $m M=0$ 使得 $\pi$ 在 $E - M$ 上恒成立， 即 $E - E[\pi$ 成立$]$ 是零测度集，则称 $\pi$ 在 $E$ 上几乎处处成立，或说 $\pi$ $\text{a.e.}$于 $E$
     1. $\text{Egorov}$ 定理：设 $m E<\infty$，$\left\{f_{n}\right\}$ 是 $E$ 上一列 $\text{a.e.}$收敛于一个 $\text{a.e.}$有限的函数 $f$ 的可测函数．则对任意 $\delta>0$，存在子集 $E_{\delta} \subset E$ 使 $\left\{f_{n}\right\}$ 在 $E_{\delta}$ 上一致收敛且 $m\left(E - E_{\delta}\right)<\delta$
     2. $\text{Lusin}$ 定理：设 $f(x)$ 是 $E$ 上 $\text{a.e.}$有限的可测函数，则对任意 $\delta>0$，存在闭子集 $F_{\delta} \subset E$ 使 $f(x)$ 在 $F_{\delta}$ 上是连续函数且 $m\left(E - F_{\delta}\right)<\delta$
+        1. $\text{Lusin}$ 定理的逆命题也成立
+        2. 设 $f(x)$ 是 $E \subset \mathbf{R}$ 上 $\text{a.e.}$有限的可测函数，则对任意 $\delta>0$，存在闭集 $F \subset E$ 及整个 $\mathbf{R}$ 上的连续函数 $g(x)$（$F$ 及 $g(x)$ 依赖于 $\delta$）使得在 $F$ 上 $g(x)=f(x)$ 且 $m(E - F)<\delta$．此外还可要求 ${\displaystyle \sup _{\mathbf{R}} g(x)=\sup _{F} f(x)}$ 及 ${\displaystyle \inf _{\mathbf{R}} g(x)=\inf _{F} f(x)}$
+    3. 依测度收敛：设 $\left\{f_{n}\right\}$ 是 $E \subset \mathbf{R}^{q}$ 上的一列 $\text{a.e.}$有限的可测函数，若有 $E$ 上 $\text{a.e.}$有限的可测函数 $f(x)$ 有「对任意 $\sigma>0$ 有 ${\displaystyle \lim _{n \to \infty} m E\left[\left|f_{n}-f\right| \geqslant \sigma\right]=0}$」，则称函数列 $\left\{f_{n}\right\}$ 依测度收敛于 $f$，或度量收敛于 $f$，记为 $f_{n}(x) \Rightarrow f(x)$
+        1. $\text{a.e.}$收敛的函数列可能不依测度收敛，依测度收敛的函数列可能不 $\text{a.e.}$收敛
+        2. $\text{Riesz}$ 定理：设在 $E$ 上 $\left\{f_{n}\right\}$ 依测度收敛于 $f$，则存在子列 $\left\{f_{n_{i}}\right\}$ 在 $E$ 上 $\text{a.e.}$收敛于 $f$
+        3. $\text{Lesbegue}$ 定理：设 $m E<\infty$，$\left\{f_{n}\right\}$ 是 $E$ 上 $\text{a.e.}$有限的可测函数列且在 $E$ 上 $\text{a.e.}$收敛于 $\text{a.e.}$有限的函数 $f$，则 $f_{n}(x) \Rightarrow f(x)$
+        4. 设 $f_{n}(x) \Rightarrow f(x), f_{n}(x) \Rightarrow g(x)$，则 $f(x)=g(x)$ $\text{a.e.}$于 $E$
