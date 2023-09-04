@@ -334,7 +334,6 @@
     5. 若 $f(x, y)$ 在矩形 $[a, b] \times [c, d]$ 上连续，则 ${\displaystyle \int_{c}^{d} \mathrm{d} y \int_{a}^{b} f(x, y) \mathrm{d} x=\int_{a}^{b} \mathrm{d} x \int_{c}^{d} f(x, y) \mathrm{d} y}$
 
 ### 3.3.2 含参变量的反常积分
-
 形如 ${\displaystyle \int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 的积分称为含参变量 $y$ 的反常积分
 
 1. 一致收敛积分
