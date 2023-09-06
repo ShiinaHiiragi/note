@@ -73,6 +73,5 @@
     |                               代数拓扑讲义                               |              周建伟               |  五   |
     |                              流形与几何初步                              |              梅加强               |  五   |
     |      The Formal Semantics of Programming Languages: An Introduction      |           Glynn Winskel           |  八   |
-    |        Homotopy Type Theory: Univalent Foundations of Mathematics        | The Univalent Foundations Program |  八   |
 
     </div>

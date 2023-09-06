@@ -88,5 +88,19 @@
         2. 设 $f(P)=f(x, y)$ 在 $A \times B \subseteq \mathbf{R}^{p+q}$ 上可积，则对 $\text{a.e.}$的 $x \in A$，$f(x, y)$ 作为 $y$ 的函数在 $B$ 上可积．又 ${\displaystyle \int_{B} f(x, y) \mathrm{d} y}$ 作为 $x$ 的函数在 $A$ 上可积且 ${\displaystyle \int_{A \times B} f(P) \mathrm{d} P=\int_{A} \mathrm{d} x \int_{B} f(x, y) \mathrm{d} y}$
 
 ### 2.1.2 不定积分
+1. 有界变差函数
 
 ## 2.2 微分
+1. $\text{Vitali}$ 覆盖定理：设 $E \subseteq \mathbf{R}$ 且 $m^{*} E<\infty$，$\mathscr{V}$ 是 $E$ 的 $V-$覆盖，则可选出区间列 $\left\{I_{n}\right\} \subseteq \mathscr{T}$，使得各 $I_{n}$ 互不相交且 $m\left(E - \bigcup_{k} I_{k}\right)=0$ 成立
+    1. $V-$覆盖：设 $E \subseteq \mathbf{R}$，$\mathscr{V}=\{I\}$ 是长度为正的区间族．如果对于任意 $x \in E$ 及任意 $\varepsilon>0$，存在区间 $I_{x} \in \mathscr{V}$ 使 $x \in I_{x}$ 且 $m I_{x}<\varepsilon$，则称 $\mathscr{V}$ 依 $\text{Vitali}$ 意义覆盖 $E$，简称 $E$ 的 $V$-覆盖
+    2. 设 $E \subseteq \mathbf{R}$ 且 $m^{*} E<\infty, \mathscr{V}$ 是 $E$ 的 $V$-覆盖，则对任何 $\varepsilon>0$，可从 $\mathscr{V}$ 中选出互不相交的有限个区间 $I_{1}, I_{2}, \cdots, I_{n}$ 使得 ${\displaystyle m^{*}\left(E - \bigcup_{i=1}^{n} I_{i}\right)<\varepsilon}$
+2. 单调函数的可微性
+    1. 列导数：设 $f(x)$ 为 $[a, b]$ 上的有限函数，$x_{0} \in[a, b]$．若存在数列 $h_{n} \rightarrow 0\left(h_{n} \neq 0\right)$ 使极限 ${\displaystyle \lim _{n \to \infty} \dfrac{f\left(x_{0}+h_{n}\right)-f\left(x_{0}\right)}{h_{n}}=\lambda}$ 存在（$\lambda$ 可为 $\pm \infty$），则称 $\lambda$ 为 $f(x)$ 在点 $x_{0}$ 处的一个列导数，记为 $D f\left(x_{0}\right)=\lambda$
+        1. 列导数 $D f\left(x_{0}\right)$ 与数列 $\left\{h_{n}\right\}$ 的取法有关，$f(x)$ 在点 $x_{0}$ 存在导数 $f^{\prime}\left(x_{0}\right)$ 当且仅当 $f(x)$ 在点 $x_{0}$ 处的一切列导数都相等
+        2. 设 $f(x)$ 为 $[a, b]$ 上的严格增函数
+            - 如果对于 $E \subseteq[a, b]$ 中每一点 $x$，至少有一个列导数 $D f(x) \leqslant p \ (p \geqslant 0)$，则 $m^{*} f(E) \leqslant p m^{*} E$
+            - 如果对于 $E \subseteq[a, b]$ 中每一点 $x$，至少有一个列导数 $D f(x) \geqslant q \ (q \geqslant 0)$，则 $m^{*} f(E) \geqslant q m^{*} E$
+    2. 设 $f(x)$ 为 $[a, b]$ 上的单调函数
+        1. $f(x)$ 在 $[a, b]$ 上几乎处处存在导数 $f^{\prime}(x)$
+        2. $f^{\prime}(x)$ 在 $[a, b]$ 上可积
+        3. 如果 $f(x)$ 为增函数，则有 ${\displaystyle \int_{a}^{b} f^{\prime}(x) \mathrm{d} x \leqslant f(b)-f(a)}$

@@ -291,16 +291,13 @@
 ### 一、类型论
 
 !!! note "参考文献"
-    1. 『Type Theory and Formal Proof: an Introduction』（Rob Nederpelt、Herman Geuvers）
-    2. 『Homotopy Type Theory: Univalent Foundations of Mathematics』（The Univalent Foundations Program）
+    『Type Theory and Formal Proof: an Introduction』（Rob Nederpelt、Herman Geuvers）
 
 #### 1 一般类型论
 
 #### 2 依值类型论
 
 #### 3 数学基础
-
-#### 4 同伦类型论
 
 ### 二、形式语言
 
