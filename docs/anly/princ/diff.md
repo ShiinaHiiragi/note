@@ -33,7 +33,7 @@
 1. 连续性的定义
     1. 多元函数的连续性：设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$z=f(\boldsymbol{x})$ 是定义在 $D$ 上的函数，$\boldsymbol{x}_{0} \in D$ 为定点．如果 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=f\left(x_{0}\right)}$，则称函数 $f$ 在点 $x_{0}$ 连续
     2. 向量值函数的连续性：设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$x_{0} \in D$ 为一定点，$\boldsymbol f: D \rightarrow \mathbf{R}^{m}$ 是向量值函数．如果 $\boldsymbol f$ 满足 ${\displaystyle \lim _{x \rightarrow x_{0}} \boldsymbol f(x)=\boldsymbol f\left(x_{0}\right)}$，则称 $\boldsymbol f$ 在 $x_{0}$ 点连续
-        1. 设点集 $K \subset \mathbf{R}^{n}, \boldsymbol{f}: K \rightarrow \mathbf{R}^{m}$ 为向量值函数，$\boldsymbol{x}_{0} \in K$．如果对于任意给定的 $\varepsilon>0$，存在 $\delta>0$ 使得当 $\boldsymbol{x} \in O\left(\boldsymbol{x}_{0}, \delta\right) \cap K$ 时有 $\left|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{f}\left(\boldsymbol{x}_{0}\right)\right|<\varepsilon$，则称 $\boldsymbol{f}$ 在点 $\boldsymbol{x}_{0}$ 连续．如果映射 $\boldsymbol{f}$ 在 $K$ 上每一点连续，则称 $\boldsymbol{f}$ 在 $K$ 上连续，或称映射 $\boldsymbol{f}$ 为 $K$ 上的连续映射
+        1. 设点集 $K \subseteq \mathbf{R}^{n}, \boldsymbol{f}: K \rightarrow \mathbf{R}^{m}$ 为向量值函数，$\boldsymbol{x}_{0} \in K$．如果对于任意给定的 $\varepsilon>0$，存在 $\delta>0$ 使得当 $\boldsymbol{x} \in O\left(\boldsymbol{x}_{0}, \delta\right) \cap K$ 时有 $\left|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{f}\left(\boldsymbol{x}_{0}\right)\right|<\varepsilon$，则称 $\boldsymbol{f}$ 在点 $\boldsymbol{x}_{0}$ 连续．如果映射 $\boldsymbol{f}$ 在 $K$ 上每一点连续，则称 $\boldsymbol{f}$ 在 $K$ 上连续，或称映射 $\boldsymbol{f}$ 为 $K$ 上的连续映射
         2. 设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$\boldsymbol{x}_{0} \in D$ 为一定点，那么映射 $\boldsymbol f: D \rightarrow \mathbf{R}^{m}$ 在 $\boldsymbol{x}_{0}$ 点连续的充分必要条件为函数 $f_{1}, f_{2}, \cdots, f_{m}$ 在 $x_{0}$ 点连续
         3. 如果 $\boldsymbol g$ 在 $D$ 上连续，$\boldsymbol f$ 在 $\Omega$ 上连续，那么复合映射 $\boldsymbol f \circ \boldsymbol g$ 在 $D$ 上连续
 2. 连续函数的性质
@@ -51,7 +51,7 @@
         2. 介值定理：设 $K$ 为 $\mathbf{R}^{n}$ 中连通的紧集，$f$ 是 $K$ 上的连续函数，则 $f$ 的值域是闭区间 $[m, M]$
 
         !!! note "凸区域"
-            设 $D \subset \mathbf{R}^{n}$ 是区域，若对于任意两点 $x_{0}, x_{1} \in D$ 和一切 $\lambda \in[0,1]$ 恒有 $\boldsymbol{x}_{0}+\lambda\left(\boldsymbol{x}_{1}-\boldsymbol{x}_{0}\right) \in D$，则称 $D$ 为凸区域
+            设 $D \subseteq \mathbf{R}^{n}$ 是区域，若对于任意两点 $x_{0}, x_{1} \in D$ 和一切 $\lambda \in[0,1]$ 恒有 $\boldsymbol{x}_{0}+\lambda\left(\boldsymbol{x}_{1}-\boldsymbol{x}_{0}\right) \in D$，则称 $D$ 为凸区域
 
 ### 2.1.3 连续统
 1. 实数系基本定理：以下六个定理相互等价
@@ -151,17 +151,17 @@
 
 ## 2.3 多元微分法
 ### 2.3.1 偏导数
-1. 二元函数的偏导数：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．如果存在极限 ${\displaystyle \lim _{\Delta x \rightarrow 0} \frac{f\left(x_{0}+\Delta x, y_{0}\right)-f\left(x_{0}, y_{0}\right)}{\Delta x}}$，则称函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 可偏导，并称此极限为 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 的偏导数，记为 $\dfrac{\partial z}{\partial x}\left(x_{0}, y_{0}\right)$ 或 $f_{x}\left(x_{0}, y_{0}\right)$ 或 $\dfrac{\partial f}{\partial x}\left(x_{0}, y_{0}\right)$．若 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 和 $y$ 均可偏导，则简称 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 可偏导
+1. 二元函数的偏导数：设 $D \subseteq \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．如果存在极限 ${\displaystyle \lim _{\Delta x \rightarrow 0} \frac{f\left(x_{0}+\Delta x, y_{0}\right)-f\left(x_{0}, y_{0}\right)}{\Delta x}}$，则称函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 可偏导，并称此极限为 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 的偏导数，记为 $\dfrac{\partial z}{\partial x}\left(x_{0}, y_{0}\right)$ 或 $f_{x}\left(x_{0}, y_{0}\right)$ 或 $\dfrac{\partial f}{\partial x}\left(x_{0}, y_{0}\right)$．若 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 关于 $x$ 和 $y$ 均可偏导，则简称 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 可偏导
     1. 偏导函数：如果函数 $f$ 在 $D$ 中每一点都关于 $x$ 可偏导，则 $D$ 中每一点 $(x, y)$ 与其相应的 $f$ 关于 $x$ 的偏导数 $f_{x}(x, y)$ 构成了一种对应关系即二元函数关系，称为 $f$ 关于 $x$ 的偏导函数（也称为偏导数），记为 $\dfrac{\partial z}{\partial x}$ 或 $f_{x}(x, y)$ 或 $\dfrac{\partial f}{\partial x}$
-    2. 方向导数：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点，$\boldsymbol{v}=(\cos \alpha, \sin \alpha)$ 为一个方向．如果极限 ${\displaystyle \lim _{t \rightarrow 0+} \dfrac{f\left(x_{0}+t \cos \alpha, y_{0}+t \sin \alpha\right)-f\left(x_{0}, y_{0}\right)}{t}}$ 存在，则称此极限为函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 的沿方向 $\boldsymbol{v}$ 的方向导数，记为 $\dfrac{\partial f}{\partial \boldsymbol{v}}\left(x_{0}, y_{0}\right)$
-    3. 高阶偏导数：设 $z=f(x, y)$ 在区域 $D \subset \mathbf{R}^{2}$ 上具有偏导函数 $\dfrac{\partial z}{\partial x}=f_{x}(x, y)$ 与 $\dfrac{\partial z}{\partial y}=f_{y}(x, y)$，那么在 $D$ 上，$f_{x}(x, y)$ 与 $f_{y}(x, y)$ 都是 $x, y$ 的二元函数．如果这两个偏导函数的偏导数也存在，则称它们是 $f(x, y)$ 的二阶偏导数，二阶及二阶以上的偏导数统称为高阶偏导数
+    2. 方向导数：设 $D \subseteq \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点，$\boldsymbol{v}=(\cos \alpha, \sin \alpha)$ 为一个方向．如果极限 ${\displaystyle \lim _{t \rightarrow 0+} \dfrac{f\left(x_{0}+t \cos \alpha, y_{0}+t \sin \alpha\right)-f\left(x_{0}, y_{0}\right)}{t}}$ 存在，则称此极限为函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 的沿方向 $\boldsymbol{v}$ 的方向导数，记为 $\dfrac{\partial f}{\partial \boldsymbol{v}}\left(x_{0}, y_{0}\right)$
+    3. 高阶偏导数：设 $z=f(x, y)$ 在区域 $D \subseteq \mathbf{R}^{2}$ 上具有偏导函数 $\dfrac{\partial z}{\partial x}=f_{x}(x, y)$ 与 $\dfrac{\partial z}{\partial y}=f_{y}(x, y)$，那么在 $D$ 上，$f_{x}(x, y)$ 与 $f_{y}(x, y)$ 都是 $x, y$ 的二元函数．如果这两个偏导函数的偏导数也存在，则称它们是 $f(x, y)$ 的二阶偏导数，二阶及二阶以上的偏导数统称为高阶偏导数
         1. 二阶偏导数：
             - $\dfrac{\partial^{2} z}{\partial x^{2}}=\dfrac{\partial}{\partial x}\left(\dfrac{\partial z}{\partial x}\right)=\dfrac{\partial}{\partial x}\left(f_{x}(x, y)\right)=f_{x x}(x, y)$
             - $\dfrac{\partial^{2} z}{\partial x \partial y}=\dfrac{\partial}{\partial x}\left(\dfrac{\partial z}{\partial y}\right)=\dfrac{\partial}{\partial x}\left(f_{y}(x, y)\right)=f_{y x}(x, y)$
             - $\dfrac{\partial^{2} z}{\partial y \partial x}=\dfrac{\partial}{\partial y}\left(\dfrac{\partial z}{\partial x}\right)=\dfrac{\partial}{\partial y}\left(f_{x}(x, y)\right)=f_{x y}(x, y)$
             - $\dfrac{\partial^{2} z}{\partial y^{2}}=\dfrac{\partial}{\partial y}\left(\dfrac{\partial z}{\partial y}\right)=\dfrac{\partial}{\partial y}\left(f_{y}(x, y)\right)=f_{y y}(x, y)$
         2. 如果函数 $z=f(x, y)$ 的两个混合偏导数 $f_{x y}$ 和 $f_{y x}$ 在点 $\left(x_{0}, y_{0}\right)$ 连续，那么等式 $f_{x y}\left(x_{0}, y_{0}\right)=f_{y x}\left(x_{0}, y_{0}\right)$ 成立
-    4. 链式法则：设 $z=f(x, y) \ ((x, y) \in D_{f})$ 是区域 $D_{f} \subset \mathbf{R}^{2}$ 上的二元函数，而 $\boldsymbol{g}: D_{g} \rightarrow \mathbf{R}^{2}$ 是区域 $D_{g} \subset \mathbf{R}^{2}$ 上的二元二维向量值函数．如果 $g$ 的值域 $g\left(D_{g}\right) \subset D_{f}$，那么可以构造复合函数 $z=f \circ g=f[x(u, v), y(u, v)] \ ((u, v) \in D_{g})$．设 $g$ 在 $\left(u_{0}, v_{0}\right) \in D_{g}$ 点可导，即 $x=x(u, v), y=y(u, v)$ 在 $\left(u_{0}, v_{0}\right)$ 点可偏导．记 $x_{0}=x\left(u_{0}, v_{0}\right), y_{0}=y\left(u_{0}, v_{0}\right)$，如果 $f$ 在 $\left(x_{0}, y_{0}\right)$ 点可微，那么
+    4. 链式法则：设 $z=f(x, y) \ ((x, y) \in D_{f})$ 是区域 $D_{f} \subseteq \mathbf{R}^{2}$ 上的二元函数，而 $\boldsymbol{g}: D_{g} \rightarrow \mathbf{R}^{2}$ 是区域 $D_{g} \subseteq \mathbf{R}^{2}$ 上的二元二维向量值函数．如果 $g$ 的值域 $g\left(D_{g}\right) \subseteq D_{f}$，那么可以构造复合函数 $z=f \circ g=f[x(u, v), y(u, v)] \ ((u, v) \in D_{g})$．设 $g$ 在 $\left(u_{0}, v_{0}\right) \in D_{g}$ 点可导，即 $x=x(u, v), y=y(u, v)$ 在 $\left(u_{0}, v_{0}\right)$ 点可偏导．记 $x_{0}=x\left(u_{0}, v_{0}\right), y_{0}=y\left(u_{0}, v_{0}\right)$，如果 $f$ 在 $\left(x_{0}, y_{0}\right)$ 点可微，那么
 
         $$
         \begin{aligned}
@@ -170,7 +170,7 @@
         \end{aligned}
         $$
 
-2. $n$ 元函数的偏导数：设 $\boldsymbol{x}^{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 为开集 $D \subset \mathbf{R}^{n}$ 中一定点，定义 $n$ 元函数
+2. $n$ 元函数的偏导数：设 $\boldsymbol{x}^{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 为开集 $D \subseteq \mathbf{R}^{n}$ 中一定点，定义 $n$ 元函数
 
     $$
     u=f\left(x_{1}, x_{2}, \cdots, x_{n}\right),\left(x_{1}, x_{2}, \cdots, x_{n}\right) \in D
@@ -183,7 +183,7 @@
     $$
 
     1. 如果函数 $f$ 在开集（或区域）$D$ 上每一点关于每个 $x_{i}$ 都可偏导，则称 $f$ 在 $D$ 上可偏导
-    2. 链式法则：设 $z=f\left(y_{1}, y_{2}, \cdots, y_{m}\right) \ (\left(y_{1}, y_{2}, \cdots, y_{m}\right) \in D_{f})$ 为区域 $D_{f} \subset \mathbf{R}^{m}$ 上的 $m$ 元函数．又设 $\boldsymbol g: D_{g} \rightarrow \mathbf{R}^{m}$，为区域 $D_{g} \subset \mathbf{R}^{n}$ 上的 $n$ 元 $m$ 维向量值函数．如果 $\boldsymbol{g}$ 的值域 $\boldsymbol g\left(D_{g}\right) \subset D_{f}$，那么可以构造复合函数
+    2. 链式法则：设 $z=f\left(y_{1}, y_{2}, \cdots, y_{m}\right) \ (\left(y_{1}, y_{2}, \cdots, y_{m}\right) \in D_{f})$ 为区域 $D_{f} \subseteq \mathbf{R}^{m}$ 上的 $m$ 元函数．又设 $\boldsymbol g: D_{g} \rightarrow \mathbf{R}^{m}$，为区域 $D_{g} \subseteq \mathbf{R}^{n}$ 上的 $n$ 元 $m$ 维向量值函数．如果 $\boldsymbol{g}$ 的值域 $\boldsymbol g\left(D_{g}\right) \subseteq D_{f}$，那么可以构造复合函数
 
         $$
         z=f \circ \boldsymbol g=f\left[y_{1}\left(x_{1}, x_{2}, \cdots, x_{n}\right), y_{2}\left(x_{1}, x_{2}, \cdots, x_{n}\right), \cdots, y_{m}\left(x_{1}, x_{2}, \cdots, x_{n}\right)\right], \left(x_{1}, x_{2}, \cdots, x_{n}\right) \in D_{g}
@@ -227,7 +227,7 @@
             - 若将 $\Delta \boldsymbol{x}$ 记为 $\mathrm{d} \boldsymbol{x}=\left(\mathrm{d} x_{1}, \mathrm{d} x_{2}, \cdots, \mathrm{d} x_{n}\right)$，那么有 $\mathrm{d} \boldsymbol{y}=\boldsymbol{A} \mathrm{d} \boldsymbol{x}$
             - 如果向量值函数 $\boldsymbol{f}$ 在 $D$ 上每一点可微，则称 $\boldsymbol{f}$ 在 $D$ 上可微
         3. 向量值函数 $\boldsymbol{f}$ 在 $x^{0}$ 点可微的充分必要条件是它的坐标分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 都在 $x^{0}$ 点可微．此时成立微分公式 $\mathrm{d} \boldsymbol{y}=\boldsymbol{f}^{\prime}\left(\boldsymbol{x}^{0}\right) \mathrm{d} \boldsymbol{x}$
-    2. 链式法则：设 $\boldsymbol f: D_{f}\left(\subset \mathbf{R}^{k}\right) \rightarrow \mathbf{R}^{m}$ 与 $\boldsymbol g: D_{g}\left(\subset \mathbf{R}^{n}\right) \rightarrow \mathbf{R}^{k}$ 分别是多元向量值函数，且分别在 $D_{f}$ 与 $D_{g}$ 上具有连续导数．如果 $\boldsymbol g$ 的值域 $\boldsymbol g\left(D_{g}\right) \subset D_{f}$，并记 $\boldsymbol{u}=\boldsymbol{g}(\boldsymbol{x})$，那么复合向量值函数 $\boldsymbol f \circ \boldsymbol g$ 在 $D_{g}$ 上也具有连续的导数，并且成立等式
+    2. 链式法则：设 $\boldsymbol f: D_{f}\left(\subseteq \mathbf{R}^{k}\right) \rightarrow \mathbf{R}^{m}$ 与 $\boldsymbol g: D_{g}\left(\subseteq \mathbf{R}^{n}\right) \rightarrow \mathbf{R}^{k}$ 分别是多元向量值函数，且分别在 $D_{f}$ 与 $D_{g}$ 上具有连续导数．如果 $\boldsymbol g$ 的值域 $\boldsymbol g\left(D_{g}\right) \subseteq D_{f}$，并记 $\boldsymbol{u}=\boldsymbol{g}(\boldsymbol{x})$，那么复合向量值函数 $\boldsymbol f \circ \boldsymbol g$ 在 $D_{g}$ 上也具有连续的导数，并且成立等式
 
         $$
         (\boldsymbol f \circ \boldsymbol g)^{\prime}(\boldsymbol x)=\boldsymbol f^{\prime}(\boldsymbol u) \cdot \boldsymbol g^{\prime}(\boldsymbol x)=\boldsymbol f^{\prime}[\boldsymbol g(x)] \cdot \boldsymbol g^{\prime}(\boldsymbol x)
@@ -382,9 +382,9 @@
     2. $\dfrac{\partial u}{\partial x}=\dfrac{\partial y}{\partial v} / \dfrac{\partial(x, y)}{\partial(u, v)}, \dfrac{\partial u}{\partial y}=-\dfrac{\partial x}{\partial v} / \dfrac{\partial(x, y)}{\partial(u, v)}, \dfrac{\partial v}{\partial x}=-\dfrac{\partial y}{\partial u} / \dfrac{\partial(x, y)}{\partial(u, v)}, \dfrac{\partial v}{\partial y}=\dfrac{\partial x}{\partial u} / \dfrac{\partial(x, y)}{\partial(u, v)}$
 
 ### 2.3.2 全微分
-1. 全微分：设 $D \subset \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．若存在只与点 $\left(x_{0}, y_{0}\right)$ 有关而与 $\Delta x, \Delta y$ 无关的常数 $A$ 和 $B$，使得 $\Delta z=A \Delta x+B \Delta y+o\left(\sqrt{\Delta x^{2}+\Delta y^{2}}\right)$，这里 $o\left(\sqrt{\Delta x^{2}+\Delta y^{2}}\right)$ 表示在 $\sqrt{\Delta x^{2}+\Delta y^{2}} \rightarrow 0$ 时比 $\sqrt{\Delta x^{2}+\Delta y^{2}}$ 高阶的无穷小量．则称函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处是可微的，并称其线性主要部分 $A \Delta x+B \Delta y$ 为 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处的全微分，记为 $\mathrm{d} z\left(x_{0}, y_{0}\right)$ 或 $\mathrm{d} f\left(x_{0}, y_{0}\right)$
+1. 全微分：设 $D \subseteq \mathbf{R}^{2}$ 为开集，$z=f(x, y) \ ((x, y) \in D)$ 是定义在 $D$ 上的二元函数，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．若存在只与点 $\left(x_{0}, y_{0}\right)$ 有关而与 $\Delta x, \Delta y$ 无关的常数 $A$ 和 $B$，使得 $\Delta z=A \Delta x+B \Delta y+o\left(\sqrt{\Delta x^{2}+\Delta y^{2}}\right)$，这里 $o\left(\sqrt{\Delta x^{2}+\Delta y^{2}}\right)$ 表示在 $\sqrt{\Delta x^{2}+\Delta y^{2}} \rightarrow 0$ 时比 $\sqrt{\Delta x^{2}+\Delta y^{2}}$ 高阶的无穷小量．则称函数 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处是可微的，并称其线性主要部分 $A \Delta x+B \Delta y$ 为 $f$ 在点 $\left(x_{0}, y_{0}\right)$ 处的全微分，记为 $\mathrm{d} z\left(x_{0}, y_{0}\right)$ 或 $\mathrm{d} f\left(x_{0}, y_{0}\right)$
     1. 全微分公式：$\mathrm{d} f\left(x_{0}, y_{0}\right)=\dfrac{\partial f}{\partial x}\left(x_{0}, y_{0}\right) \mathrm{d} x+\dfrac{\partial f}{\partial y}\left(x_{0}, y_{0}\right) \mathrm{d} y$
-    2. 方向导数：设 $D \subset \mathbf{R}^{2}$ 为开集，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．如果函数 $z=f(x, y) \ ((x, y) \in D)$ 在 $\left(x_{0}, y_{0}\right)$ 可微，那么对于任一方向 $\boldsymbol{v}=(\cos \alpha, \sin \alpha)$，$f$ 在 $\left(x_{0}, y_{0}\right)$ 点沿方向 $\boldsymbol{v}$ 的方向导数存在，且
+    2. 方向导数：设 $D \subseteq \mathbf{R}^{2}$ 为开集，$\left(x_{0}, y_{0}\right) \in D$ 为一定点．如果函数 $z=f(x, y) \ ((x, y) \in D)$ 在 $\left(x_{0}, y_{0}\right)$ 可微，那么对于任一方向 $\boldsymbol{v}=(\cos \alpha, \sin \alpha)$，$f$ 在 $\left(x_{0}, y_{0}\right)$ 点沿方向 $\boldsymbol{v}$ 的方向导数存在，且
 
         $$
         \dfrac{\partial f}{\partial \boldsymbol v}\left(x_{0}, y_{0}\right)=\dfrac{\partial f}{\partial x}\left(x_{0}, y_{0}\right) \cos \alpha+\dfrac{\partial f}{\partial y}\left(x_{0}, y_{0}\right) \sin \alpha
@@ -502,7 +502,7 @@
         2. 若两函数 $f(x)$ 及 $g(x)$ 在 $(a, b)$ 内满足 $f^{\prime}(x)=g^{\prime}(x)$，则在 $(a, b)$ 内 $f(x)=g(x)+C$（$C$ 为常数）
         3. 若 $f(x)$ 在 $[a, b]$ 上存在有界导数，则 $f(x)$ 在 $[a, b]$ 满足 $\text{Lipschitz}$ 条件，即存在常数 $L$，对 $[a, b]$ 上任意两点 $x^{\prime}, x^{\prime \prime}$ 有 $\left|f\left(x^{\prime}\right)-f\left(x^{\prime \prime}\right)\right| \leqslant L\left|x^{\prime}-x^{\prime \prime}\right|$
     3. $\text{Cauchy}$ 中值定理：若 $f(x)$ 与 $g(x)$ 在闭区间 $[a, b]$ 上连续，在开区间 $(a, b)$ 内可导，且 $g^{\prime}(x) \neq 0$．则在 $(a, b)$ 内至少存在一点 $\xi$，使 $\dfrac{f(b)-f(a)}{g(b)-g(a)}=\dfrac{f^{\prime}(\xi)}{g^{\prime}(\xi)}$
-    4. 多元函数中值定理：设 $n$ 元函数 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 在凸区域 $D \subset \mathbf{R}^{n}$ 上可微，则对于 $D$ 内任意两点 $\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 和 $\left(x_{1}^{0}+\Delta x_{1}, x_{2}^{0}+\Delta x_{2}, \cdots, x_{n}^{0}+\Delta x_{n}\right)$，至少存在一个 $\theta \ (0<\theta<1)$，使得
+    4. 多元函数中值定理：设 $n$ 元函数 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 在凸区域 $D \subseteq \mathbf{R}^{n}$ 上可微，则对于 $D$ 内任意两点 $\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 和 $\left(x_{1}^{0}+\Delta x_{1}, x_{2}^{0}+\Delta x_{2}, \cdots, x_{n}^{0}+\Delta x_{n}\right)$，至少存在一个 $\theta \ (0<\theta<1)$，使得
 
         $$
         \begin{aligned}

@@ -167,7 +167,7 @@
         T: y_{1}=y_{1}\left(x_{1}, x_{2}, \cdots, x_{n}\right), y_{2}=y_{2}\left(x_{1}, x_{2}, \cdots, x_{n}\right), \cdots, y_{n}=y_{n}\left(x_{1}, x_{2}, \cdots, x_{n}\right)
         $$
 
-        将 $U$ 一一对应地映到 $V \subset \mathbf{R}^{n}$ 上，因此其有逆变换 $T^{-1}$．进一步假设 $y_1, y_2, \cdots, y_n$ 都具有连续偏导数，且这个映射的 $\text{Jacobi}$ 行列式不等于零．如果 $f\left(y_{1}, y_{2}, \cdots, y_{n}\right)$ 是 $T(\Omega)$ 上的连续函数，那么变量代换公式
+        将 $U$ 一一对应地映到 $V \subseteq \mathbf{R}^{n}$ 上，因此其有逆变换 $T^{-1}$．进一步假设 $y_1, y_2, \cdots, y_n$ 都具有连续偏导数，且这个映射的 $\text{Jacobi}$ 行列式不等于零．如果 $f\left(y_{1}, y_{2}, \cdots, y_{n}\right)$ 是 $T(\Omega)$ 上的连续函数，那么变量代换公式
 
         $$
         \int_{T(\Omega)} f\left(y_{1}, y_{2}, \cdots, y_{n}\right) \mathrm{d} y_{1} \mathrm{d} y_{2} \cdots \mathrm{d} y_{n}=\int_{\Omega} f\left(y_{1}(\boldsymbol{x}), y_{2}(\boldsymbol{x}), \cdots, y_{n}(\boldsymbol{x})\right)\left|\frac{\partial\left(y_{1}, y_{2}, \cdots, y_{n}\right)}{\partial\left(x_{1}, x_{2}, \cdots, x_{n}\right)}\right| \mathrm{d} x_{1} \mathrm{d} x_{2} \cdots \mathrm{d} x
@@ -264,7 +264,7 @@
     1. 设 $f(x, y)$ 为无界区域 $D$ 上的非负函数，如果 $\left\{\Gamma_{n}\right\}$ 是一列曲线，其割出的 $D$ 的有界子区域 $\left\{D_{n}\right\}$ 满足
 
         $$
-        D_{1} \subset D_{2} \subset \cdots \subset D_{n} \subset \cdots, \lim _{n \rightarrow \infty} d\left(\Gamma_{n}\right)=+\infty
+        D_{1} \subseteq D_{2} \subseteq \cdots \subseteq D_{n} \subseteq \cdots, \lim _{n \rightarrow \infty} d\left(\Gamma_{n}\right)=+\infty
         $$
 
         则反常积分 ${\displaystyle \iint_{D} f(x, y) \mathrm{d} x \mathrm{d} y}$ 在 $D$ 上收敛的充分必要条件是数列 ${\displaystyle \left\{\iint_{D_{n}} f(x, y) \mathrm{d} x \mathrm{d} y\right\}}$ 收敛，且在收敛时有

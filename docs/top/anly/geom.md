@@ -24,7 +24,7 @@
 ### 2.2.1 射影几何
 1. 射影几何：设 $V^{n+1}$ 是体 $F$ 上的 $n+1$ 维线性空间，其中全体 $1$ 维，$2$ 维，$\cdots$，$n$ 维子空间以及 $V^{n+1}$ 所构成的集合称为 $F$ 上的 $n$ 维射影几何，记作 $\boldsymbol{P}\left(V^{n+1}\right)$ 或 $\boldsymbol{P}(V)$．$V^{n+1}$ 中的 $1$ 维子空间称为「点」；$2$ 维子空间称为「线」，$\cdots$，$k+1$ 维子空间称为「$k$ 维面」 $\cdots\ n$ 维子空间称为「超平面」；$V^{n+1}$ 本身称为 $n$ 维射影空间，记作 $P^n$ 或 $F P^n$
     1. 结合关系：设 $V^{n+1}$ 是体 $F$ 上的线性空间，$\boldsymbol{P}\left(V^{n+1}\right)$ 是相应的 $n$ 维射影几何．$S$ 和 $T$ 分别是 $V^{n+1}$ 中的 $k+1$ 维和 $l+1$ 维子空间
-        1. 若 $S \subset T$，则称 $k$ 维面 $S$ 属于 $l$ 维面 $T$
+        1. 若 $S \subseteq T$，则称 $k$ 维面 $S$ 属于 $l$ 维面 $T$
         2. $S+T$ 称为 $k$ 维面 $S$ 与 $l$ 维面 $T$ 的联合
         3. $S \cap T$ 称为 $k$ 维面 $S$ 与 $l$ 维面 $T$ 的交
         4. 若 $S \cap T=0$，则 $S+T$ 称为 $S$ 与 $T$ 的直和，记成 $S \oplus T$
@@ -42,7 +42,7 @@
             - 一点与不过此点的直线的联合是一平面
             - 一平面与不在此平面上的直线的交是一点
 
-    2. 同构：一个射影几何 $P$ 和另一个射影几何 $P^{\prime}$ 之间的一一对应关系 $\pi$（即点对应点，线对应线等），称为射影几何间的同构．$\pi$ 保持结合关系不变，即 $\pi$ 满足条件 $\forall M, N \in \boldsymbol{P} : M \subset N \Leftrightarrow \pi(M) \subset \pi(N)$．如果存在这样的同构，则称射影几何 $\boldsymbol{P}$ 与 $\boldsymbol{P}^{\prime}$ 同构
+    2. 同构：一个射影几何 $P$ 和另一个射影几何 $P^{\prime}$ 之间的一一对应关系 $\pi$（即点对应点，线对应线等），称为射影几何间的同构．$\pi$ 保持结合关系不变，即 $\pi$ 满足条件 $\forall M, N \in \boldsymbol{P} : M \subseteq N \Leftrightarrow \pi(M) \subseteq \pi(N)$．如果存在这样的同构，则称射影几何 $\boldsymbol{P}$ 与 $\boldsymbol{P}^{\prime}$ 同构
         1. 对于两个射影几何的同构，有
             - $\pi(M+N)=\pi(M)+\pi(N)$
             - $\pi(M \cap N)=\pi(M) \cap \pi(N)$
@@ -75,12 +75,12 @@
         2. 设 $M$ 是 $V$ 的子空间，$M^0$ 是 $V^*$ 的子空间，使得 $M^0=\left\{f \in V^*: f(M)=0\right\}$．称 $M^0$ 为 $M$ 的零化子空间，称 $0: \boldsymbol{P}(V) \rightarrow \boldsymbol{P}\left(V^*\right), M \rightarrow M^0$ 为零化映射．零化映射 $M \rightarrow M^0$ 是 $V$ 的子空间到 $V^*$ 的子空间上的一一映射，且有
             - $\operatorname{dim} M+\operatorname{dim} M^0=\operatorname{dim} V=\operatorname{dim} V^*$
             - $M^{00}=M$
-            - $M \subset N \Rightarrow M^0 \supset N^0$
+            - $M \subseteq N \Rightarrow M^0 \supset N^0$
             - $(M+N)^0=M^0 \cap N^0$
             - $(M \cap N)^0=M^0+N^0$
 
     2. 对偶映射：零化映射 $M \rightarrow M^0$ 给出 $\boldsymbol{P}(V) \rightarrow \boldsymbol{P}\left(V^*\right)$ 的一一映射
-    3. 对偶命题：对于射影几何 $\boldsymbol{P}(V)$ 的一个结合命题 $(P)=\left\{M_1, M_2, \cdots, \subset,+, \cap\right\}$，将 $M_i$ 改成 $M_i^0$，$\subset$ 改成 $\supset$，$+$ 改成 $\cap$，$\cap$ 改成 $+$，则得到 $P\left(V^*\right)$ 中的一个结合命题 $\left(P^*\right)= \left\{M_1^0, M_2^0, \cdots, \supset, \cap,+\right\}$．$\left(P^*\right)$ 称为 $(P)$ 的对偶命题
+    3. 对偶命题：对于射影几何 $\boldsymbol{P}(V)$ 的一个结合命题 $(P)=\left\{M_1, M_2, \cdots, \subseteq,+, \cap\right\}$，将 $M_i$ 改成 $M_i^0$，$\subseteq$ 改成 $\supset$，$+$ 改成 $\cap$，$\cap$ 改成 $+$，则得到 $P\left(V^*\right)$ 中的一个结合命题 $\left(P^*\right)= \left\{M_1^0, M_2^0, \cdots, \supset, \cap,+\right\}$．$\left(P^*\right)$ 称为 $(P)$ 的对偶命题
 
 ### 2.2.2 射影坐标
 1. 射影坐标：设 $V$ 是体 $F$ 上的 $n+1$ 维线性空间．在 $V$ 上选定一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，其确定了线性空间的同构
@@ -133,7 +133,7 @@
 ### 2.3.1 仿射几何
 1. 仿射几何：设 $V^{n+1}$ 是一般体 $F$ 上的 $n+1$ 维线性空间，$H$ 是 $V$ 中一个固定的 $n$ 维子空间．$\boldsymbol{P}(V) - H$ 是 $V$ 中所有的子空间，但不包括 $H$ 和 $H$ 的所有子空间的集合，再加 $V - H$，称为 $F$ 上的 $n$ 维仿射几何，记作 $\boldsymbol{A}(V)$．其中 $V - H$ 中的一维子空间称为「点」，二维子空间称为「线」，$\cdots$，$k+1$ 维子空间称为「$k$ 维面」，$\cdots$，$n$ 维子空间称为「超平面」．$V - H$ 本身称为 $n$ 维仿射空间，记作 $A^n$ 或 $A_F^n$，$V$ 中的 $n$ 维子空间 $H$ 称为仿射几何 $\boldsymbol{A}(V)$ 的无穷远超平面
     1. 实仿射空间：当 $F = \textbf{R}$ 时，称 $V - H$ 为实 $n$ 维仿射空间，记作 $A^n$
-    2. 结合关系：如果 $\boldsymbol{A}(V)$ 中的两个元素 $S$ 和 $T$ 满足 $S \cap T \subset H$，则称元素 $S$ 和 $T$ 是平行的
+    2. 结合关系：如果 $\boldsymbol{A}(V)$ 中的两个元素 $S$ 和 $T$ 满足 $S \cap T \subseteq H$，则称元素 $S$ 和 $T$ 是平行的
         1. 当 $\operatorname{dim} V=3$ 时，二维仿射几何 $\boldsymbol{A}(V)$ 中有下列结合关系
             - 连接两点有一条直线
             - 两条不平行的直线相交于一点
