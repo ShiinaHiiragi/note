@@ -67,12 +67,25 @@
     1. 设 $f(x)$ 是 $[a, b]$ 上有界函数，则 $f(x)$ 在 $[a, b]$ 上 $R$ 可积的充要条件为 $f(x)$ 在 $[a, b]$ 上 $\text{a.e.}$连续
     2. 设 $f(x)$ 是 $[a, b]$ 上的一个有界函数，若 $f(x)$ 在 $[a, b]$ 上 $R$ 可积，则 $f(x)$ 在 $[a, b]$ 上 $L$ 可积且 ${\displaystyle (L)\int_{[a, b]} f(x) \mathrm{d} x=(R) \int_{a}^{b} f(x) \mathrm{d} x}$
     3. 设 $f(x)$ 是 $[a, \infty)$ 上的一个非负实函数，若对于任意的 $A>a$，$f(x)$ 在 $[a, A]$ 上 $R$ 可积且 $R$ 反常积分 ${\displaystyle (R) \int_{a}^{\infty} f(x) \mathrm{d} x}$ 收敛，则 $f(x)$ 在 $[a, \infty)$ 上 $L$ 可积且 ${\displaystyle (L) \int_{[a, \infty)} f(x) \mathrm{d} x=(R) \int_{a}^{\infty} f(x) \mathrm{d} x}$
-5. $\text{Lesbegue}$ 积分的几何意义
+5. 截面与下方图形
     1. 截面：设 $E$ 是 $\mathbf{R}^{p+q}$ 中一点集，$x_{0}$ 是 $\mathbf{R}^{p}$ 中一固定点，则 $\mathbf{R}^{q}$ 中的点集 $\left\{y \in \mathbf{R}^{q}:\left(x_{0}, y\right) \in E\right\}$ 称为 $E$ 关于 $x_{0}$ 的截面，记为 $E_{x_{0}}$；也可定义 $E$ 关于 $y_{0} \in \mathbf{R}^{\prime}$ 的截面 $\left\{x \in \mathbf{R}^{p}:\left(x, y_{0}\right) \in E\right\}=E_{y_{0}}$
-        1. 如果 $A_{1} \subseteq A_{2}$，则 $\left(A_{1}\right)_{x} \subseteq \left(A_{2}\right)_{x}$
-        2. 如果 $A_{1} \cap A_{2}=\varnothing$，则 $\left(A_{1}\right)_{x} \cap\left(A_{2}\right)_{x}=\varnothing$
-        3. ${\displaystyle \left(\bigcup_{i} A_{i}\right)_{x}=\bigcup_{i}\left(A_{i}\right)_{x},\left(\bigcap_{i} A_{i}\right)_{x}=\bigcap_{i}\left(A_{i}\right)_{x}}$
-        4. $\left(A_{1} - A_{2}\right)_{x}=\left(A_{1}\right)_{x} -\left(A_{2}\right)_{x}$
+        1. 截面的性质
+            - 如果 $A_{1} \subseteq A_{2}$，则 $\left(A_{1}\right)_{x} \subseteq \left(A_{2}\right)_{x}$
+            - 如果 $A_{1} \cap A_{2}=\varnothing$，则 $\left(A_{1}\right)_{x} \cap\left(A_{2}\right)_{x}=\varnothing$
+            - ${\displaystyle \left(\bigcup_{i} A_{i}\right)_{x}=\bigcup_{i}\left(A_{i}\right)_{x},\left(\bigcap_{i} A_{i}\right)_{x}=\bigcap_{i}\left(A_{i}\right)_{x}}$
+            - $\left(A_{1} - A_{2}\right)_{x}=\left(A_{1}\right)_{x} -\left(A_{2}\right)_{x}$
+        2. 截面定理：设 $E \subseteq \mathbf{R}^{p+q}$ 是可测集
+            - 对于 $\mathbf{R}^{p}$ 中几乎所有的点 $x$，$E_{x}$ 是 $\mathbf{R}^{q}$ 中可测集
+            - $m E_{x}$ 作为 $x$ 的函数，它是 $\mathbf{R}^{p}$ 上 $\text{a.e.}$有定义的可测函数
+            - ${\displaystyle m E=\int_{\mathbf{R}^{p}} m E_{x} \mathrm{~d} x}$
+        3. 设 $A, B$ 分别是 $\mathbf{R}^{p}, \mathbf{R}^{q}$ 中的可测集，则 $A \times B$ 是 $\mathbf{R}^{p+q}$ 中的可测集且 $m(A \times B)=m A \cdot m B$
+    2. 下方图形：设 $f(x)$ 是 $E \subseteq \mathbf{R}^{n}$ 上的非负函数，则 $\mathbf{R}^{n+1}$ 中的点集 $\{(x, z): x \in E, 0 \leqslant z<f(x)\}$ 称为 $f(x)$ 在 $E$ 上的下方图形，记为 $G(E, f)$
+6. 非负可测函数积分的几何意义：设 $f(x)$ 为可测集 $E \subseteq \mathbf{R}^{n}$ 上的非负函数，则有 ① $f(x)$ 是 $E$ 上的可测函数的充要条件是 $G(E, f)$ 是 $\mathbf{R}^{n+1}$ 中的可测集；② 当 $f(x)$ 在 $E$ 上可测时，${\displaystyle \int_{E} f(x) \mathrm{d} x=m G(E, f)}$
+    1. 设 $f(x)$ 为 $E \subseteq \mathbf{R}^{n}$ 上的可积函数，则 ${\displaystyle \int_{E} f(x) \mathrm{d} x=m G\left(E, f^{+}\right)-m G\left(E, f^{-}\right)}$
+    2. 可测函数 $f(x)$ 在 $E \subseteq \mathbf{R}^{n}$ 上可积分的充要条件是 $m G\left(E, f^{+}\right)$与 $m G\left(E, f^{-}\right)$ 都是有限的
+    3. $\text{Fubini}$ 定理
+        1. 设 $f(P)=f(x, y)$ 在 $A \times B \subseteq \mathbf{R}^{p+q}$（$A, B$ 分别为 $\mathbf{R}^{p}$ 与 $\mathbf{R}^{q}$ 中之可测集）上非负可测，则对 $\text{a.e.}$的 $x \in A$，$f(x, y)$ 作为 $y$ 的函数在 $B$ 上可测，且 ${\displaystyle \int_{A \times B} f(P) \mathrm{d} P=\int_{A} \mathrm{d} x \int_{B} f(x, y) \mathrm{d} y}$
+        2. 设 $f(P)=f(x, y)$ 在 $A \times B \subseteq \mathbf{R}^{p+q}$ 上可积，则对 $\text{a.e.}$的 $x \in A$，$f(x, y)$ 作为 $y$ 的函数在 $B$ 上可积．又 ${\displaystyle \int_{B} f(x, y) \mathrm{d} y}$ 作为 $x$ 的函数在 $A$ 上可积且 ${\displaystyle \int_{A \times B} f(P) \mathrm{d} P=\int_{A} \mathrm{d} x \int_{B} f(x, y) \mathrm{d} y}$
 
 ### 2.1.2 不定积分
 
