@@ -177,6 +177,9 @@ nav:
     - 二、实分析:
       - 1 测度论: anly/real/ms.md
       - 2 微分与积分: anly/real/lbg.md
+  - 统计学:
+    - 一、概率论:
+      - 1 概率与期望: stat/prob/prob.md
   - 语言学:
     - 一、类型论:
       - 1 一般类型论: lang/type/gen.md
