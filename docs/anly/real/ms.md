@@ -32,6 +32,10 @@
             - 包含集类 $\mathscr{C}$ 的最小 $\sigma$ 域称为由 $\mathscr{C}$ 生成的 $\sigma$ 域，记为 $\sigma(\mathscr{C})$
             - 对 $\Omega$ 的子集类 $\mathscr{C}$，若以 $\mathscr{C} \cap A$ 表示集类 $\{B A: B \in \mathscr{C}\}$，则 $\sigma_{\Omega}(\mathscr{C}) \cap A=\sigma_{A}(\mathscr{C} \cap A)$
 
+---  
+<p align="center"> 以下来自实分析 </p>
+---
+
 ## 1.2 可测空间
 1. 实分析中的实数与函数运算
     1. 允许以 $+\infty$ 或 $-\infty$ 成为函数值，$\pm \infty$ 也称为非真正的实数．通常的实数则称为有限实数，函数值都是有限实数的函数称为有限函数．因此有界函数必是有限函数，但反之不成立
