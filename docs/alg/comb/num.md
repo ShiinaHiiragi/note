@@ -261,7 +261,7 @@
     3. $\text{Lagrange}$ 定理：同余方程 $f(x) \equiv 0 \pmod{p}$，其中 $p$ 是质数，$a_n \not \equiv 0 \pmod{p}$ 的解数不超过它的次数
         1. $n$ 次同余方程的解数 $k \leqslant \min(n, p)$
         2. 若 $f(x)$ 是 $n$ 次多项式，$f(x) \equiv 0 \pmod{p}$ 的解数大于 $n$，则必有 $p \mid a_i, i = 1, 2, \cdots, n$
-    4. 同余方程 $f(x) \equiv 0 \pmod{p}$ 或者有 $p$ 个解，或者存在次数不超过 $p - 1$ 的整系数多项式 $r(x)$ 使得 同余方程 $f(x) \equiv 0 \pmod{p}$ 与 $r(x) \equiv 0 \pmod{p}$ 等价
+    4. 同余方程 $f(x) \equiv 0 \pmod{p}$ 或者有 $p$ 个解，或者存在次数不超过 $p - 1$ 的整系数多项式 $r(x)$ 使得同余方程 $f(x) \equiv 0 \pmod{p}$ 与 $r(x) \equiv 0 \pmod{p}$ 等价
     5. 设 $n \leqslant p$，则同余方程 $f(x) \equiv 0 \pmod{p}$ 有 $n$ 个解当且仅当存在整系数多项式 $q(x)$ 与 $r(x)$，且 $r(x)$ 的次数小于 $n$ 使得 $x^p - x = f(x)q(x) + p\cdot r(x)$
     6. 设 $p$ 是质数且 $n \mid (p - 1), p \nmid a$，则 $x^n \equiv a \pmod{p}$ 有解当且仅当 $a^{\frac{p-1}{n}} \equiv 1 \pmod{p}$．若有解，则解数为 $n$
 

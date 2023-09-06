@@ -140,7 +140,7 @@
     1. 若 $\dfrac{y}{z} \rightarrow 0$ 或 $\dfrac{z}{y} \rightarrow \infty$，则称 $y$ 关于 $z$ 是高阶无穷小量或 $z$ 关于 $y$ 是低阶无穷小量，记做 $y=o(z)$
     2. 若 $\dfrac{y}{z} \rightarrow a \neq 0$，则称 $y$ 和 $z$ 是同阶无穷小量．一般地，若存在常数 $A>0, B>0$，变量 $y$ 和 $z$ 自某值以后有 ${\displaystyle A \leqslant\left|\dfrac{y}{z}\right| \leqslant B}$，则称 $y$ 和 $z$ 是同阶无穷小量，记为 $y=O(z)$ 或 $z=O(y)$
     3. 当 $\dfrac{y}{z} \rightarrow 1$ 时，称 $y, z$ 是等价无穷小量，记为 $y \sim z$
-    4. 若以 $x$ 作为基本无穷小量，则当 $y$ 与 $x^{k}$（$k$ 为某一正数）为同阶无穷小量 时，称 $y$ 为 $k$ 阶无穷小量．特别地，当 $\dfrac{y}{x^{k}} \rightarrow a \neq 0$ 时，$y$ 为 $k$ 阶无穷小量，此时 $y$ 与 $a x^{k}$ 等价，称 $a x^{k}$ 为无穷小量 $y$ 的主要部分
+    4. 若以 $x$ 作为基本无穷小量，则当 $y$ 与 $x^{k}$（$k$ 为某一正数）为同阶无穷小量时，称 $y$ 为 $k$ 阶无穷小量．特别地，当 $\dfrac{y}{x^{k}} \rightarrow a \neq 0$ 时，$y$ 为 $k$ 阶无穷小量，此时 $y$ 与 $a x^{k}$ 等价，称 $a x^{k}$ 为无穷小量 $y$ 的主要部分
 3. 无穷大量：设 $\left\{x_{n}\right\}$ 是一个数列，如果对任意给定的 $G>0$，总存在正整数 $N$，当 $n>N$ 时有 $\left|x_{n}\right|>G$，则称 $\left\{x_{n}\right\}$ 是一个无穷大量，记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=\infty}$ 或 $x_{n} \rightarrow \infty \ (n \rightarrow \infty)$．无穷大量也有类似无穷小量的阶
     1. 无穷大量和无穷小量的关系：若 $\left\{x_{n}\right\}$ 为无穷大量，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷小量；若 $\left\{x_{n}\right\}$ 为无穷小量且 $x_{n} \neq 0 \ (n=1,2, \cdots)$，则其倒数所成的数列 $\left\{\dfrac{1}{x_{n}}\right\}$ 为无穷大量
     2. 正无穷大与负无穷大：对任意给定的 $G>0$，总存在 $N$，当 $n>N$ 时，若有 $x_{n}>$ $G$，则称 $\left\{x_{n}\right\}$ 是正无穷大量；若有 $-x_{n}>$ $G$，则称 $\left\{x_{n}\right\}$ 是负无穷大量

@@ -19,7 +19,7 @@
         1. 常数项：不含字母的项
         2. 同类型：所含字母相同，且相同字母的指数也相同的项．特别地，常数项都是同类项
 2. 一元多项式：设数域 $F$ 上的多项式 $f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots a_1x + a_0$
-    1. $a_n \neq 0$ 时，称 $n$ 为多项式的次数，$a_nx^n$ 为 多项式的首项，$a_n \neq 0$ 为首项系数
+    1. $a_n \neq 0$ 时，称 $n$ 为多项式的次数，$a_nx^n$ 为多项式的首项，$a_n \neq 0$ 为首项系数
     2. 若 $\forall x \in F: f(x) \equiv 0$，则 $a_i = 0 \ (i = 0, 1, \cdots, n)$
     3. 多项式恒等定理：设数域 $F$ 上的多项式 $g(x) = b_mx^m + b_{m-1}x^{m-1} + \cdots b_1x + b_0$
         1. $f(x) \equiv g(x) \leftrightarrow n = m \wedge a_i = b_i \ (i = 1, 2, \cdots, n)$
@@ -190,7 +190,7 @@
     2. 设 $f(x)$ 在 $(a, b)$ 内存在二阶导数 $f^{\prime \prime}(x)$，则
         1. 若在 $(a, b)$ 内有 $f^{\prime \prime}(x)<0$，则 $f(x)$ 在 $(a, b)$ 为凸函数
         2. 若在 $(a, b)$ 内有 $f^{\prime \prime}(x)>0$，则 $f(x)$ 在 $(a, b)$ 为凹函数
-6. 极值：设 $f(x)$ 在 $[a, b]$ 上连续．若对于一点 $x_{0}$，存在 $x_{0}$ 的某一邻域 $\left(x_{0}-\delta, x_{0}+\delta\right) \ (\delta>0)$，使对于此邻域中的任意点 $x$ 都有 $f(x) \leqslant f\left(x_{0}\right)$，则称 $f(x)$ 在 $x_{0}$ 有一极大值 $f\left(x_{0}\right)$，且 $x_{0}$ 为极大值点；如果在 $x_{0}$ 的某一邻域 $\left(x_{0}-\delta, x_{0}+\delta\right)$ 中总有 $f(x) \geqslant f\left(x_{0}\right)$，则称 $f(x)$ 在 $x_{0}$ 有一极小值 $f\left(x_{0}\right)$，且 $x_{0}$ 为极小值点．极大值与极 小值统称为极值，极大值点与极小值点统称为极值点
+6. 极值：设 $f(x)$ 在 $[a, b]$ 上连续．若对于一点 $x_{0}$，存在 $x_{0}$ 的某一邻域 $\left(x_{0}-\delta, x_{0}+\delta\right) \ (\delta>0)$，使对于此邻域中的任意点 $x$ 都有 $f(x) \leqslant f\left(x_{0}\right)$，则称 $f(x)$ 在 $x_{0}$ 有一极大值 $f\left(x_{0}\right)$，且 $x_{0}$ 为极大值点；如果在 $x_{0}$ 的某一邻域 $\left(x_{0}-\delta, x_{0}+\delta\right)$ 中总有 $f(x) \geqslant f\left(x_{0}\right)$，则称 $f(x)$ 在 $x_{0}$ 有一极小值 $f\left(x_{0}\right)$，且 $x_{0}$ 为极小值点．极大值与极小值统称为极值，极大值点与极小值点统称为极值点
     1. 极值的必要条件：若 $x_{0}$ 是 $f(x)$ 的极值点，那么 $x_{0}$ 是 $f^{\prime}(x)$ 的零点或 $f(x)$ 的不可导点
     2. 极值的判别
         1. 设 $f(x)$ 在 $\left(x_{0}-\delta, x_{0}\right)$ 和 $\left(x_{0}, x_{0}+\delta\right)$（其中 $\delta>0$）可导，则
