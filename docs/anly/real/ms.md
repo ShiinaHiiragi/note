@@ -43,7 +43,14 @@
 
     5. $\text{Borel}$ 域：若 $E$ 为拓扑空间，$\mathscr{B}_{E}$ 为 $E$ 中开集全体生成的 $\sigma$ 域，这一 $\sigma$ 域就称为 $E$ 上的 $\text{Borel}$ 域，$\mathscr{B}_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集．$n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
 
-### 1.1.2 单调类定理
+### 1.1.2 单调类
+
+## 1.2 可测性与测度
+### 1.2.1 可测空间
+
+### 1.2.2 可测映射
+
+### 1.2.3 测度空间
 
 ---  
 <p align="center"> 以下来自实分析 </p>
