@@ -179,7 +179,7 @@ nav:
       - 2 微分与积分: anly/real/lbg.md
   - 统计学:
     - 一、概率论:
-      - 1 概率空间: stat/prob/prob.md
+      - 1 概率与随机变量: stat/prob/prob.md
   - 语言学:
     - 一、类型论:
       - 1 一般类型论: lang/type/gen.md
