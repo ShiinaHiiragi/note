@@ -199,7 +199,7 @@
     1. 由对集公理可知，对于任意集合 $a, b$，$(a, b)$ 是集合
     2. 任何两个有序对 $(a_1, b_1), (a_2, b_2)$ 有 $(a_1, b_1) = (a_2, b_2)$ 当且仅当 $a_1 = a_2 \wedge b_1 = b_2$
     3. 假设 $(x_1, x_2, \cdots, x_{n-1})$ 已有定义，则 $n$ 元序组定义为 $(x_1, x_2, \cdots, x_n) = \left((x_1, x_2, \cdots, x_{n-1}), x_n\right)$
-2. $\text{Descartes}$ 积：设 $X, Y$ 为集合，则 $X$ 与 $Y$ 的 $\text{Descartes}$ 积定义为 $X \times Y = \left\{(x, y) \mid x \in X \wedge y \in Y\right\}$．特别地，若 $X = Y$，则将 $X \times X$ 记作 $X^2$
+2. $\text{Descartes}$ 积：设 $X, Y$ 为集合，则 $X$ 与 $Y$ 的 $\text{Descartes}$ 积定义为 $X \times Y = \left\{(x, y) \mid x \in X \wedge y \in Y\right\}$，也称作直积．特别地，若 $X = Y$，则将 $X \times X$ 记作 $X^2$
     1. 对于任意集合 $X, Y, Z$
         1. $(X \cup Y) \times Z = (X \times Z) \cup (Y \times Z)$
         2. $(X \cap Y) \times Z = (X \times Z) \cap (Y \times Z)$

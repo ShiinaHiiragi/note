@@ -360,8 +360,8 @@
         2. 设 $\omega$ 为 $k-$形式，$\eta$ 为 $l-$形式，则 $\mathrm{d}(\omega \wedge \eta)=\mathrm{d} \omega \wedge \eta+(-1)^{k} \omega \wedge \mathrm{d} \eta$
         3. 对任意 $\omega \in \Lambda$，有 $\mathrm{d}^{2} \omega=0$
 
-3. 场：设 $\Omega \subset \mathbf{R}^{3}$ 是一个区域，若在时刻 $t$，$\Omega$ 中每一点 $(x, y, z)$ 都有确定的数值 $f(x, y, z, t)$（或确定的向量值 $\boldsymbol{f}(x, y, z, t)$）与它对应，就称 $f(x, y, z, t)$（或 $\boldsymbol{f}(x, y, z, t)$）为 $\Omega$ 上的数量场（或向量场）．显然 $\Omega$ 上任何一个三元函数 $f(x, y, z)$ 都可以看成是 $\Omega$ 上的一个数量场
-    1. 梯度场：设 $D \subset \mathbf{R}^{3}$ 为开集，$\left(x_{0}, y_{0}, z_{0}\right) \in D$ 为一定点．如果函数 $w=f(x, y, z)$ 在 $\left(x_{0}, y_{0}, z_{0}\right)$ 点可偏导，则称向量 $\left(f_{x}\left(x_{0}, y_{0}, z_{0}\right), f_{y}\left(x_{0}, y_{0}, z_{0}\right), f_{z}\left(x_{0}, y_{0}, z_{0}\right)\right)$ 为 $f$ 在点 $\left(x_{0}, y_{0}, z_{0}\right)$ 的梯度，记为 $\operatorname{\mathbf{grad}} f\left(x_{0}, y_{0}, z_{0}\right)$
+3. 场：设 $\Omega \subseteq \mathbf{R}^{3}$ 是一个区域，若在时刻 $t$，$\Omega$ 中每一点 $(x, y, z)$ 都有确定的数值 $f(x, y, z, t)$（或确定的向量值 $\boldsymbol{f}(x, y, z, t)$）与它对应，就称 $f(x, y, z, t)$（或 $\boldsymbol{f}(x, y, z, t)$）为 $\Omega$ 上的数量场（或向量场）．显然 $\Omega$ 上任何一个三元函数 $f(x, y, z)$ 都可以看成是 $\Omega$ 上的一个数量场
+    1. 梯度场：设 $D \subseteq \mathbf{R}^{3}$ 为开集，$\left(x_{0}, y_{0}, z_{0}\right) \in D$ 为一定点．如果函数 $w=f(x, y, z)$ 在 $\left(x_{0}, y_{0}, z_{0}\right)$ 点可偏导，则称向量 $\left(f_{x}\left(x_{0}, y_{0}, z_{0}\right), f_{y}\left(x_{0}, y_{0}, z_{0}\right), f_{z}\left(x_{0}, y_{0}, z_{0}\right)\right)$ 为 $f$ 在点 $\left(x_{0}, y_{0}, z_{0}\right)$ 的梯度，记为 $\operatorname{\mathbf{grad}} f\left(x_{0}, y_{0}, z_{0}\right)$
         1. 若 $f \equiv c$（$c$ 为常数），则 $\operatorname{\mathbf{grad}} f=\mathbf{0}$
         2. 若 $\alpha, \beta$ 为常数，则 $\operatorname{\mathbf{grad}}(\alpha f+\beta g)=\alpha \operatorname{\mathbf{grad}} f+\beta \operatorname{\mathbf{grad}} g$
         3. $\operatorname{\mathbf{grad}}(f \cdot g)=f \cdot \operatorname{\mathbf{grad}} g+g \cdot \operatorname{\mathbf{grad}} f$
@@ -570,7 +570,7 @@
         3. 乘积法则：$\mathrm{d}(\boldsymbol{F}(\boldsymbol{X}) \boldsymbol{G}(\boldsymbol{X}))=\mathrm{d}(\boldsymbol{F}(\boldsymbol{X})) \boldsymbol{G}(\boldsymbol{X})+\boldsymbol{F}(\boldsymbol{X}) \mathrm{d}(\boldsymbol{G}(\boldsymbol{X}))$
         4. 转置法则：$\mathrm{d} \boldsymbol{F}^{\mathrm T}(\boldsymbol{X})=\left(\mathrm{d} \boldsymbol{F}(\boldsymbol{X})\right)^{\mathrm T}$
     2. 方阵微分的性质：设 $\boldsymbol X$ 是一个 $n \times n$ 方阵
-        1. 行列式：$\mathrm{d}\operatorname{det}(\boldsymbol{X})=\operatorname{det}(\boldsymbol{X}) \operatorname{tr}\left(\boldsymbol{X}^{-1} \mathrm{~d} \boldsymbol{X}\right)=\operatorname{tr}\left(\operatorname{det}(\boldsymbol{X}) \boldsymbol{X}^{-1} \mathrm{~d} \boldsymbol{X}\right)$
-        2. 逆矩阵：$\mathrm{d}\left(\boldsymbol{X}^{-1}\right)=-\boldsymbol{X}^{-1} \mathrm{~d}(\boldsymbol{X}) \boldsymbol{X}^{-1}$
+        1. 行列式：$\mathrm{d}\operatorname{det}(\boldsymbol{X})=\operatorname{det}(\boldsymbol{X}) \operatorname{tr}\left(\boldsymbol{X}^{-1} \mathrm{d} \boldsymbol{X}\right)=\operatorname{tr}\left(\operatorname{det}(\boldsymbol{X}) \boldsymbol{X}^{-1} \mathrm{d} \boldsymbol{X}\right)$
+        2. 逆矩阵：$\mathrm{d}\left(\boldsymbol{X}^{-1}\right)=-\boldsymbol{X}^{-1} \mathrm{d}(\boldsymbol{X}) \boldsymbol{X}^{-1}$
 
         上述 $\boldsymbol X$ 均可替换为对应的 $\boldsymbol F_{n \times n}(\boldsymbol X)$
