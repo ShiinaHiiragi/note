@@ -2,8 +2,17 @@
 
 ## 1.1 集合代数
 ### 1.1.1 环与域
-1. 环：设 $\mathscr{R} \subseteq \mathcal{P}(\Omega)$ 是一个非空集类，若 $A, B \in \mathscr{R}$ 蕴含 $A - B \in \mathscr{R}$ 与 $A \cup B \in \mathscr{R}$，则称 $\mathscr{R}$ 为环
-2. 域：设 $\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 是一个非空集类，若 $A, B \in \mathscr{A}$ 蕴含 $A' \in \mathscr{A}$ 与 $A \cup B \in \mathscr{A}$，则称 $\mathscr{A}$ 为域或代数
+1. 环：设 $\mathscr{R} \subseteq \mathcal{P}(\Omega)$ 是一个非空集类，若 $A, B \in \mathscr{R}$ 蕴含 $A - B \in \mathscr{R}$ 与 $A \cup B \in \mathscr{R}$，则称 $\mathscr{R}$ 为 $\Omega$ 上的环
+    - $\sigma$ 环：设 $\mathscr{C}$ 是 $\mathcal{P}(\Omega)$ 的非空子集类，若有
+        1. 若 $A \in \mathscr{C}, B \in \mathscr{C}$，则 $A - B \in \mathscr{C}$
+        2. 若对 $n \geqslant 1, A_{n} \in \mathscr{C}$，则 ${\displaystyle \bigcup_{n=1}^{\infty} A_{n} \in \mathscr{C}}$
+
+        则称 $\mathscr{C}$ 为 $\Omega$ 上的 $\sigma$ 环
+
+        1. $\mathscr{F}$ 为 $\sigma$ 域的充要条件是 $\mathscr{F}$ 为一个包含 $\Omega$ 的 $\sigma$ 环
+        2. 在 $\sigma$ 环中，对可列集合序列的交集、上限、下限运算也是封闭的
+
+2. 域：设 $\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 是一个非空集类，若 $A, B \in \mathscr{A}$ 蕴含 $A' \in \mathscr{A}$ 与 $A \cup B \in \mathscr{A}$，则称 $\mathscr{A}$ 为 $\Omega$ 上的域或代数
     1. 设 $\mathscr{A}$ 是域，则有
         1. $\Omega \in \mathscr{A}, \varnothing \in \mathscr{A}$
         2. 若 $A, B \in \mathscr{A}$，则 $A B \in \mathscr{A}, A - B \in \mathscr{A}, A \triangle B \in \mathscr{A}$
@@ -16,7 +25,7 @@
         2. 当 $A, B \in \mathscr{S}$，必有 $A \cap B \in \mathscr{S}$
         3. 若 $A \in \mathscr{S}$，则 $A'$ 可表为 $\mathscr{S}$ 中两两互不相交集合的有限并
 
-        则称 $\mathscr{S}$ 为半域或半代数
+        则称 $\mathscr{S}$ 为 $\Omega$ 上的半域或半代数
 
         1. 域必为半域
         2. 若 $\mathscr{S}$ 为半域，则 ${\displaystyle \mathscr{A}=\left\{A=\sum_{i \in I} S_{i}:\left\{S_{i}, i \in I\right\} \textsf{ 为 } \mathscr{S} \textsf{ 中两两互不相交的有限族}\right\}}$ 是包含 $\mathscr{S}$ 的最小域
@@ -25,19 +34,21 @@
         1. 若 $A \in \mathscr{F}$，则 $A' \in \mathscr{F}$
         2. 若对每个 $n \geqslant 1$ 都有 $A_{n} \in \mathscr{F}$，则 ${\displaystyle \bigcup_{i=1}^{\infty} A_{n} \in \mathscr{F}}$
 
-        则称 $\mathscr{F}$ 为 $\sigma$ 域或 $\sigma$ 代数
+        则称 $\mathscr{F}$ 为 $\Omega$ 上的 $\sigma$ 域或 $\sigma$ 代数
 
         1. $\mathscr{F}$ 为 $\sigma$ 域，则 $\mathscr{F}$ 为一个域，且当 $n \geqslant 1, A_{n} \in \mathscr{F}$ 时，必有 ${\displaystyle \bigcap_{n \geqslant 1} A_{n} \in \mathscr{F}, \varliminf_{n \rightarrow \infty} A_{n} \in \mathscr{F}, \varlimsup_{{n \rightarrow \infty}} A_{n} \in \mathscr{F}}$
         2. 若 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，则必存在包含 $\mathscr{C}$ 的最小 $\sigma$ 域
             - 包含集类 $\mathscr{C}$ 的最小 $\sigma$ 域称为由 $\mathscr{C}$ 生成的 $\sigma$ 域，记为 $\sigma(\mathscr{C})$
             - 对 $\Omega$ 的子集类 $\mathscr{C}$，若以 $\mathscr{C} \cap A$ 表示集类 $\{B A: B \in \mathscr{C}\}$，则 $\sigma_{\Omega}(\mathscr{C}) \cap A=\sigma_{A}(\mathscr{C} \cap A)$
 
+### 1.1.2 π 类
+
 ---  
 <p align="center"> 以下来自实分析 </p>
 ---
 
 ## 1.2 可测空间
-1. 实分析中的实数与函数运算
+1. 实分析中的实数与函数运算：记广义实数集 $\hat{\mathbf{R}}=\mathbf{R} \cup \{+\infty, -\infty\}$
     1. 允许以 $+\infty$ 或 $-\infty$ 成为函数值，$\pm \infty$ 也称为非真正的实数．通常的实数则称为有限实数，函数值都是有限实数的函数称为有限函数．因此有界函数必是有限函数，但反之不成立
     2. $+\infty$ 是全体有限实数的上确界，$-\infty$ 是全体有限实数的下确界：$-\infty<a<+\infty$（$a$ 为任何有限实数）．从而对于上（下）方无界的递增（减）数列 $\left\{a_{n}\right\}$，总有 ${\displaystyle \lim _{n \to \infty} a_{n}=+\infty \ (-\infty)}$
     3. 对于任何有限实数 $a$ 有
@@ -52,21 +63,21 @@
 
         反之，$( \pm \infty)-( \pm \infty),( \pm \infty)+(\mp \infty), \dfrac{ \pm \infty}{ \pm \infty}, \dfrac{\mp \infty}{ \pm \infty}, \dfrac{a}{0}, \dfrac{ \pm \infty}{0}$ 都认为是无意义的
 
-2. 一个定义在 $E \subseteq \mathbf{R}^{n}$ 上的实函数 $f(x)$ 确定了 $E$ 的一组子集 $\{x: x \in E, f(x)>a\}$（简记作 $E[f>a]$），其中 $a$ 取遍一切有限实数．反之，$f(x)$ 本身也由 $E$ 的这组子集完全确定
+2. 一个定义在 $E \subseteq \hat{\mathbf{R}}^{n}$ 上的实函数 $f(x)$ 确定了 $E$ 的一组子集 $\{x: x \in E, f(x)>a\}$（简记作 $E[f>a]$），其中 $a$ 取遍一切有限实数．反之，$f(x)$ 本身也由 $E$ 的这组子集完全确定
 
 ### 1.2.1 外测度与内测度
-1. 外测度：设 $E$ 为 $\mathbf{R}^{n}$ 中任一点集，对于每一列覆盖 $E$ 的开区间 ${\displaystyle \bigcup_{i=1}^{\infty} I_{i} \supset E}$，作出其的体积总和 ${\displaystyle \mu=\sum_{i=1}^{\infty}\left|I_{i}\right|}$（$\mu$ 可以等于 $\infty$, 不同的区间列一般有不同的 $\mu$），所有这一切的 $\mu$ 组成一个下方有界的数集，其下确界（完全由 $E$ 确定）称为 $E$ 的 $\text{Lesbegue}$ 外测度，简称 $L$ 外测度或外测度，记为 $m^{*} E$，即 ${\displaystyle m^{*} E=\inf _{E \subseteq \bigcup_{i=1}^{\infty} I_{i}} \sum_{i=1}^{\infty}\left|I_{i}\right|}$
+1. 外测度：设 $E$ 为 $\hat{\mathbf{R}}^{n}$ 中任一点集，对于每一列覆盖 $E$ 的开区间 ${\displaystyle \bigcup_{i=1}^{\infty} I_{i} \supset E}$，作出其的体积总和 ${\displaystyle \mu=\sum_{i=1}^{\infty}\left|I_{i}\right|}$（$\mu$ 可以等于 $\infty$, 不同的区间列一般有不同的 $\mu$），所有这一切的 $\mu$ 组成一个下方有界的数集，其下确界（完全由 $E$ 确定）称为 $E$ 的 $\text{Lesbegue}$ 外测度，简称 $L$ 外测度或外测度，记为 $m^{*} E$，即 ${\displaystyle m^{*} E=\inf _{E \subseteq \bigcup_{i=1}^{\infty} I_{i}} \sum_{i=1}^{\infty}\left|I_{i}\right|}$
     1. 外测度的性质
         1. 非负性：$m^{*} E \geqslant 0$，当 $E$ 为空集时，$m^{*} E=0$
         2. 单调性：设 $A \subseteq B$，则 $m^{*} A \leqslant m^{*} B$
         3. 次可数可加性：${\displaystyle m^{*}\left(\bigcup_{i=1}^{\infty} A_{i}\right) \leqslant \sum_{i=1}^{\infty} m^{*} A_{i}}$
-    2. 设 $E \subseteq \mathbf{R}^{n}$，则 $m^{*} I=m^{*}(I \cap E)+m^{*}\left(I \cap E'\right)$ 式对 $\mathbf{R}^{n}$ 中任何开区间都成立的充要条件是对 $\mathbf{R}^{n}$ 中的任何点集 $T$ 都有 $m^{*} T=m^{*}(T \cap E)+m^{*}\left(T \cap E'\right)$
-2. 内测度：设 $E$ 为 $\mathbf{R}^n$ 中的有界集，$I$ 为任一包含 $E$ 的开区间，则称 $|I|-m^*(I-E)$ 为 $E$ 的内测度，记为 $m_{*} E$
+    2. 设 $E \subseteq \hat{\mathbf{R}}^{n}$，则 $m^{*} I=m^{*}(I \cap E)+m^{*}\left(I \cap E'\right)$ 式对 $\hat{\mathbf{R}}^{n}$ 中任何开区间都成立的充要条件是对 $\hat{\mathbf{R}}^{n}$ 中的任何点集 $T$ 都有 $m^{*} T=m^{*}(T \cap E)+m^{*}\left(T \cap E'\right)$
+2. 内测度：设 $E$ 为 $\hat{\mathbf{R}}^n$ 中的有界集，$I$ 为任一包含 $E$ 的开区间，则称 $|I|-m^*(I-E)$ 为 $E$ 的内测度，记为 $m_{*} E$
     1. $m_{*} E$ 与 $I$ 的选择无关
     2. $0 \leqslant m_{*} E \leqslant m^{*} E$ 恒成立
 
 ### 1.2.2 可测空间
-1. $L$ 可测集：设 $E$ 为 $\mathbf{R}^{n}$ 中的点集，如果对任一点集 $T$ 都有 $m^{*} T=m^{*}(T \cap E)+m^{*}\left(T \cap E'\right)$，则称 $E$ 是 $\text{Lesbegue}$ 可测的或 $L$ 可测的．此时 $E$ 的 $L$ 外测度 $m^{*} E$ 称为 $E$ 的 $\text{Lesbegue}$ 测度或 $L$ 测度，记为 $m E$，记 $L$ 可测集全体为 $\mathscr{M}$
+1. $L$ 可测集：设 $E$ 为 $\hat{\mathbf{R}}^{n}$ 中的点集，如果对任一点集 $T$ 都有 $m^{*} T=m^{*}(T \cap E)+m^{*}\left(T \cap E'\right)$，则称 $E$ 是 $\text{Lesbegue}$ 可测的或 $L$ 可测的．此时 $E$ 的 $L$ 外测度 $m^{*} E$ 称为 $E$ 的 $\text{Lesbegue}$ 测度或 $L$ 测度，记为 $m E$，记 $L$ 可测集全体为 $\mathscr{M}$
     1. 集合 $E$ 可测的充要条件是对于任意 $A \subseteq E, B \subseteq E'$ 总有 $m^{*}(A \cup B)=m^{*} A+m^{*} B$
     2. $S$ 可测的充要条件是 $S'$ 可测
     3. 设 $S_{1}, S_{2}$ 可测，则 $S_{1} \cup S_{2}$ 可测且当 $S_{1} \cap S_{2}=\varnothing$ 时，对于任意 $T$ 总有 $m^{*}\left[T \cap\left(S_{1} \cup S_{2}\right)\right]=m^{*}\left(T \cap S_{1}\right)+m^{*}\left(T \cap S_{2}\right)$
@@ -85,7 +96,7 @@
         2. 内正规性：$m E=\sup \{m K: K$ 是紧集$, K \subseteq E\}$
 
     !!! note "利用外测度与内测度定义可测集"
-        设 $E$ 为 $\mathbf{R}^n$ 中有界集，如果 $m^* E=m_{*} E$，则称 $E$ 是 $L$ 可测的．又设 $E$ 是 $\mathbf{R}^n$ 中的无界集，如果对任何开区间 $I$，有界集 $E \cap I$ 都是 $L$ 可测的，则称 $E$ 是 $L$ 可测的．对 $L$ 可测集 $E$，不管它有界或无界，一律称 $m^* E$ 为它的 $L$ 测度，简记为 $m E$
+        设 $E$ 为 $\hat{\mathbf{R}}^n$ 中有界集，如果 $m^* E=m_{*} E$，则称 $E$ 是 $L$ 可测的．又设 $E$ 是 $\hat{\mathbf{R}}^n$ 中的无界集，如果对任何开区间 $I$，有界集 $E \cap I$ 都是 $L$ 可测的，则称 $E$ 是 $L$ 可测的．对 $L$ 可测集 $E$，不管它有界或无界，一律称 $m^* E$ 为它的 $L$ 测度，简记为 $m E$
 
 2. 常见的可测集
     1. 零测度集：凡外测度为零之集皆可测，称为零测度集
@@ -96,15 +107,15 @@
 3. 可测空间
 
 ### 1.2.3 测度空间
-1. 正测度：设 $\Omega$ 是 $\mathbf{R}^{n}$ 上的一个 $\sigma$ 域，如果定义在 $\Omega$ 上的非负值集合函数 $\mu$ 满足条件
+1. 正测度：设 $\Omega$ 是 $\hat{\mathbf{R}}^{n}$ 上的一个 $\sigma$ 域，如果定义在 $\Omega$ 上的非负值集合函数 $\mu$ 满足条件
     1. $\mu(\varnothing)=0$
     2. 若 $E_{n} \in \Omega \ (n=1,2, \cdots)$ 且任意 $n \neq m, E_{n} \cap E_{m}=\varnothing$，都有 ${\displaystyle \mu\left(\bigcup_{n=1}^{\infty} E_{n}\right)=\sum_{n=1}^{\infty} \mu\left(E_{n}\right)}$
 
     则称 $\mu$ 是 $\Omega$ 上的（正）测度．易知 $\text{Lesbegue}$ 测度 $m$ 是定义在 $\sigma$ 域 $L$ 上的测度
 
 2. 凡 $\text{Borel}$ 集都是 $\text{Lesbegue}$ 可测集
-    1. 设 $\Sigma$ 是 $\mathbf{R}^{n}$ 的一个子集族，则称所有包含 $\Sigma$ 的 $\sigma$ 域的交集（即包含 $\Sigma$ 的最小 $\sigma$ 域）为 $\Sigma$ 产生的 $\sigma$ 域
-    2. 由 $\mathbf{R}^{n}$ 中全体开集组成的子集类生成的 $\sigma$ 域记为 $\mathscr{B}_n$，称为 $\text{Borel}$ 域．当不至于混淆时可简记为 $\mathscr{B}$
+    1. 设 $\Sigma$ 是 $\hat{\mathbf{R}}^{n}$ 的一个子集族，则称所有包含 $\Sigma$ 的 $\sigma$ 域的交集（即包含 $\Sigma$ 的最小 $\sigma$ 域）为 $\Sigma$ 产生的 $\sigma$ 域
+    2. 由 $\hat{\mathbf{R}}^{n}$ 中全体开集组成的子集类生成的 $\sigma$ 域记为 $\mathscr{B}_n$，称为 $\text{Borel}$ 域．当不至于混淆时可简记为 $\mathscr{B}$
     3. 设集合 $G$ 可表示为一列开集 $\left\{G_{i}\right\}$ 之交集 ${\displaystyle G=\bigcap_{i=1}^{\infty} G_{i}}$，则称 $G$ 为 $G_{\delta}$ 型集
 
         设集合 $F$ 可表示为一列闭集 $\left\{F_{i}\right\}$ 之并集 ${\displaystyle F=\bigcup_{i=1}^{\infty} F_{i}}$，则称 $F$ 为 $F_{\sigma}$ 型集
@@ -112,17 +123,17 @@
         1. 设 $E$ 是任一可测集，则一定存在 $G_{\delta}$ 型集 $G$ 使 $G \supset E$ 且 $m(G - E)=0$
         2. 设 $E$ 是任一可测集，则一定存在 $F_{\sigma}$ 型集 $F$ 使 $F \subseteq E$ 且 $m(E - F)=0$
 
-3. 测度空间：若 $\Omega$ 是 $\mathbf{R}^{n}$ 上的一个 $\sigma$ 域，$\mu$ 是 $\Omega$ 上的测度，则称 $\left(\mathbf{R}^{n}, \Omega, \mu\right)$ 为测度空间
+3. 测度空间：若 $\Omega$ 是 $\hat{\mathbf{R}}^{n}$ 上的一个 $\sigma$ 域，$\mu$ 是 $\Omega$ 上的测度，则称 $\left(\hat{\mathbf{R}}^{n}, \Omega, \mu\right)$ 为测度空间
 
 ### 1.2.4 可测映射
-1. 可测函数：设 $f(x)$ 是定义在可测集 $E \subseteq \mathbf{R}^{n}$ 的实函数．如果对于任何有限实数 $a$，$E[f>a]$ 都是可测集，则称 $f(x)$ 为定义在 $E$ 上的可测函数
+1. 可测函数：设 $f(x)$ 是定义在可测集 $E \subseteq \hat{\mathbf{R}}^{n}$ 的实函数．如果对于任何有限实数 $a$，$E[f>a]$ 都是可测集，则称 $f(x)$ 为定义在 $E$ 上的可测函数
     1. 设 $f(x)$ 是定义在可测集 $E$ 上的实函数，下列任一条件都是 $f(x)$ 在 $E$ 上可测的充要条件
         1. 对任何有限实数 $a, E[f \geqslant a]$ 都可测
         2. 对任何有限实数 $a, E[f<a]$ 都可测
         3. 对任何有限实数 $a, E[f \leqslant a]$ 都可测
         4. 对任何有限实数 $a, b\ (a<b)$，$E[a \leqslant f<b]$ 都可测（但充分性要假定 $f(x)$ 是有限函数）
     2. 设 $f(x)$ 在 $E$ 上可测，则 $E[f=a]$ 总可测，不论 $a$ 是有限实数或 $\pm \infty$
-    3. 可测集 $E \subseteq \mathbf{R}^{n}$ 上的连续函数是可测函数
+    3. 可测集 $E \subseteq \hat{\mathbf{R}}^{n}$ 上的连续函数是可测函数
 2. 简单函数：设 $f(x)$ 的定义域 $E$ 可分为有限个互不相交的可测集 $E_{1}, E_{2}, \cdots, E_{s}, E={\displaystyle \bigcup_{i=1}^{j} E_{i}}$，使 $f(x)$ 在每个 $E_{i}$ 上都等于某常数 $c_{i}$，则称 $f(x)$ 为简单函数
     1. 设 $f(x)$ 是可测集 $E$ 上的可测函数，$E_{1} \subseteq E$ 为 $E$ 的可测子集，则 $f(x)$ 看作定义在 $E_{1}$ 上的函数时是 $E_{1}$ 上的可测函数
 
@@ -145,8 +156,8 @@
     1. $\text{Egorov}$ 定理：设 $m E<\infty$，$\left\{f_{n}\right\}$ 是 $E$ 上一列 $\text{a.e.}$收敛于一个 $\text{a.e.}$有限的函数 $f$ 的可测函数．则对任意 $\delta>0$，存在子集 $E_{\delta} \subseteq E$ 使 $\left\{f_{n}\right\}$ 在 $E_{\delta}$ 上一致收敛且 $m\left(E - E_{\delta}\right)<\delta$
     2. $\text{Lusin}$ 定理：设 $f(x)$ 是 $E$ 上 $\text{a.e.}$有限的可测函数，则对任意 $\delta>0$，存在闭子集 $F_{\delta} \subseteq E$ 使 $f(x)$ 在 $F_{\delta}$ 上是连续函数且 $m\left(E - F_{\delta}\right)<\delta$
         1. $\text{Lusin}$ 定理的逆命题也成立
-        2. 设 $f(x)$ 是 $E \subseteq \mathbf{R}$ 上 $\text{a.e.}$有限的可测函数，则对任意 $\delta>0$，存在闭集 $F \subseteq E$ 及整个 $\mathbf{R}$ 上的连续函数 $g(x)$（$F$ 及 $g(x)$ 依赖于 $\delta$）使得在 $F$ 上 $g(x)=f(x)$ 且 $m(E - F)<\delta$．此外还可要求 ${\displaystyle \sup _{\mathbf{R}} g(x)=\sup _{F} f(x)}$ 及 ${\displaystyle \inf _{\mathbf{R}} g(x)=\inf _{F} f(x)}$
-    3. 依测度收敛：设 $\left\{f_{n}\right\}$ 是 $E \subseteq \mathbf{R}^{q}$ 上的一列 $\text{a.e.}$有限的可测函数，若有 $E$ 上 $\text{a.e.}$有限的可测函数 $f(x)$ 有「对任意 $\sigma>0$ 有 ${\displaystyle \lim _{n \to \infty} m E\left[\left|f_{n}-f\right| \geqslant \sigma\right]=0}$」，则称函数列 $\left\{f_{n}\right\}$ 依测度收敛于 $f$，或度量收敛于 $f$，记为 $f_{n}(x) \Rightarrow f(x)$
+        2. 设 $f(x)$ 是 $E \subseteq \hat{\mathbf{R}}$ 上 $\text{a.e.}$有限的可测函数，则对任意 $\delta>0$，存在闭集 $F \subseteq E$ 及整个 $\hat{\mathbf{R}}$ 上的连续函数 $g(x)$（$F$ 及 $g(x)$ 依赖于 $\delta$）使得在 $F$ 上 $g(x)=f(x)$ 且 $m(E - F)<\delta$．此外还可要求 ${\displaystyle \sup _{\hat{\mathbf{R}}} g(x)=\sup _{F} f(x)}$ 及 ${\displaystyle \inf _{\hat{\mathbf{R}}} g(x)=\inf _{F} f(x)}$
+    3. 依测度收敛：设 $\left\{f_{n}\right\}$ 是 $E \subseteq \hat{\mathbf{R}}^{q}$ 上的一列 $\text{a.e.}$有限的可测函数，若有 $E$ 上 $\text{a.e.}$有限的可测函数 $f(x)$ 有「对任意 $\sigma>0$ 有 ${\displaystyle \lim _{n \to \infty} m E\left[\left|f_{n}-f\right| \geqslant \sigma\right]=0}$」，则称函数列 $\left\{f_{n}\right\}$ 依测度收敛于 $f$，或度量收敛于 $f$，记为 $f_{n}(x) \Rightarrow f(x)$
         1. $\text{a.e.}$收敛的函数列可能不依测度收敛，依测度收敛的函数列可能不 $\text{a.e.}$收敛
         2. $\text{Riesz}$ 定理：设在 $E$ 上 $\left\{f_{n}\right\}$ 依测度收敛于 $f$，则存在子列 $\left\{f_{n_{i}}\right\}$ 在 $E$ 上 $\text{a.e.}$收敛于 $f$
         3. $\text{Lesbegue}$ 定理：设 $m E<\infty$，$\left\{f_{n}\right\}$ 是 $E$ 上 $\text{a.e.}$有限的可测函数列且在 $E$ 上 $\text{a.e.}$收敛于 $\text{a.e.}$有限的函数 $f$，则 $f_{n}(x) \Rightarrow f(x)$
