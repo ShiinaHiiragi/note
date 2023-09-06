@@ -241,11 +241,14 @@
             其中 $p_\alpha$ 是 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 的第 $\alpha$ 个投射
 
 4. 关系：对于集合 $R$，如果存在 $X, Y$ 使得 $R \subseteq X \times Y$，则称 $R$ 为二元关系，用 $R(x, y)$ 或 $xRy$ 表示 $(x, y) \in R$．其中定义域（或称作投影）定义为 $\mathrm{dom}(R) = \left\{x \mid \exists y \ R(x, y)\right\}$，值域定义为 $\mathrm{ran}(R) = \left\{y \mid \exists x \in X \ R(x, y)\right\}$
-    1. 像与逆像：集合 $X$ 在关系 $R$ 下的像定义为 $R[X] = \left\{y \in \mathrm{ran}(R) \mid \exists x \in X \ (R(x, y))\right\}$；集合 $Y$ 在关系 $R$ 下的逆像定义为 $R^{-1}[Y] = \left\{x \in \mathrm{dom}(R) \mid \exists y \in Y \ (R(x, y))\right\}$
-        1. $R[X \cup Y] = R[X] \cup R[Y]$
-        2. $R[X \cap Y] \subseteq R[X] \cap R[Y]$
-        3. $R[X - Y] \supseteq R[X] - R[Y]$
-        4. 对于任意映射 $f$ 有 $f[X \cap Y] \subseteq f[X] \cap f[Y], f^{-1}[X \cap Y] = f^{-1}[X] \cap f^{-1}[Y]$
+    1. 像与逆像：集合 $A \subseteq X$ 在关系 $R$ 下的像定义为 $R[A] = \left\{y \in \mathrm{ran}(R) \mid \exists x \in A \ (R(x, y))\right\}$；集合 $B \subseteq Y$ 在关系 $R$ 下的逆像（也称作原像）定义为 $R^{-1}[B] = \left\{x \in \mathrm{dom}(R) \mid \exists y \in B \ (R(x, y))\right\}$
+        1. $R[A \cup B] = R[A] \cup R[B]$
+        2. $R[A \cap B] \subseteq R[A] \cap R[B]$
+        3. $R[A - B] \supseteq R[A] - R[B]$
+        4. 对于任意映射 $f$ 有 $f[A \cap B] \subseteq f[A] \cap f[B], f^{-1}[A \cap B] = f^{-1}[A] \cap f^{-1}[B]$
+
+        对于集合 $\mathscr{A} \subseteq \mathcal{P}(X)$，定义关系 $R$ 下的像为 $R[\mathscr{A}] = \left\{R[A] \in \mathcal{P}(Y) \mid A \in \mathscr{A}\right\}$；对于集合 $\mathscr{B} \subseteq \mathcal{P}(Y)$，定义关系 $R$ 下的逆像（也称作原像）为 $R^{-1}[\mathscr{B}] = \left\{R^{-1}[B] \in \mathcal{P}(X) \mid B \in \mathscr{B}\right\}$
+
     2. 逆关系与复合关系：定义二元关系 $R$ 的逆为 $R^{-1} = \left\{(x, y) \mid R(y, x)\right\}$；复合为 $S \circ R = \left\{(x, z) \mid \exists y \ (R(x, y) \wedge S(y, z))\right\}$
         1. $(R^{-1})^{-1} = R, (S \circ R)^{-1} = R^{-1} \circ S^{-1}$
         2. $X \circ (Y \circ Z) = (X \circ Y) \circ Z$
@@ -365,7 +368,9 @@
                 - $I_{A \triangle B}=\left|I_{A}-I_{B}\right|=I_{A}+I_{B} \pmod{2}$
 
         3. 部分映射：在定义域的某些点上没有定义的映射，与之相对的是全映射
+
     5. 限制与扩张：对任意映射 $f$ 与集合 $A$，称映射 $g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 为 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张
+
 2. 逆映射与复合映射
     1. 逆映射：一个映射是可逆的当且仅当它是单射，如果 $f$ 是可逆的，则 $f^{-1}$ 也是可逆的且 $(f^{-1})^{-1} = f$．当 $f$ 为函数时，称 $f^{-1}$ 为 $f$ 的反函数
     2. 复合映射：令 $f, g$ 为映射，则复合 $h = g \circ f$ 也是映射，且 $h$ 的定义域为 $\mathrm{dom}(h) = \mathrm{dom}(f) \cap f^{-1}[\mathrm{dom}(g)]$
