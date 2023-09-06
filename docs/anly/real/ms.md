@@ -41,13 +41,15 @@
             - 包含集类 $\mathscr{C}$ 的最小 $\sigma$ 域称为由 $\mathscr{C}$ 生成的 $\sigma$ 域，记为 $\sigma(\mathscr{C})$
             - 对 $\Omega$ 的子集类 $\mathscr{C}$，若以 $\mathscr{C} \cap A$ 表示集类 $\{B A: B \in \mathscr{C}\}$，则 $\sigma_{\Omega}(\mathscr{C}) \cap A=\sigma_{A}(\mathscr{C} \cap A)$
 
-### 1.1.2 π 类
+    5. $\text{Borel}$ 域：若 $E$ 为拓扑空间，$\mathscr{B}_{E}$ 为 $E$ 中开集全体生成的 $\sigma$ 域，这一 $\sigma$ 域就称为 $E$ 上的 $\text{Borel}$ 域，$\mathscr{B}_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集．$n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
+
+### 1.1.2 单调类定理
 
 ---  
 <p align="center"> 以下来自实分析 </p>
 ---
 
-## 1.2 可测空间
+## 1.2 可测性与测度
 1. 实分析中的实数与函数运算：记广义实数集 $\hat{\mathbf{R}}=\mathbf{R} \cup \{+\infty, -\infty\}$
     1. 允许以 $+\infty$ 或 $-\infty$ 成为函数值，$\pm \infty$ 也称为非真正的实数．通常的实数则称为有限实数，函数值都是有限实数的函数称为有限函数．因此有界函数必是有限函数，但反之不成立
     2. $+\infty$ 是全体有限实数的上确界，$-\infty$ 是全体有限实数的下确界：$-\infty<a<+\infty$（$a$ 为任何有限实数）．从而对于上（下）方无界的递增（减）数列 $\left\{a_{n}\right\}$，总有 ${\displaystyle \lim _{n \to \infty} a_{n}=+\infty \ (-\infty)}$
