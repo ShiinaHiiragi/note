@@ -170,6 +170,20 @@
         3. 当 $h=+\infty$ 时，数列 $\left\{x_{n}\right\}$ 的极限为 $+\infty$
     3. ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=A}$（有限或无穷大）的充要条件为 ${\displaystyle \varlimsup_{n \rightarrow \infty} x_{n}=\underset{n \rightarrow \infty}{\underline{\lim}} x_{n}=A}$
 
+    !!! note "集合序列的上极限与下极限"
+        - 对集合序列 $\left\{A_{n}, n \geqslant 1\right\}$，定义
+
+            $$
+            \begin{aligned}
+            \varlimsup_{n \rightarrow \infty} A_{n} & = \limsup _{n \rightarrow \infty} A_{n} = \bigcap_{k \geqslant 1} \bigcup_{n \geqslant k} A_{n} \\
+            \varliminf_{n \rightarrow \infty} A_{n} & = \liminf _{n \rightarrow \infty} A_{n} = \bigcup_{k \geqslant 1} \bigcap_{n \geqslant k} A_{n}
+            \end{aligned}
+            $$
+
+            分别为 $\left\{A_{n}, n \geqslant 1\right\}$ 的上（下）极限，也称作上限（下限）点集
+
+        - 当 ${\displaystyle \varliminf_{n \to \infty} A_{n}=\varlimsup_{n \to \infty} A_{n}}$ 时，称 $\left\{A_{n}\right\}$ 有极限，并记 ${\displaystyle \lim _{n \rightarrow \infty} A_{n}=\varlimsup_{n \rightarrow \infty} A_{n}}$，称它为 $\left\{A_{n}\right\}$ 的极限
+
 ### 1.3.2 一元函数极限
 1. 函数极限的定义
     1. 函数在 $x_{0}$ 点的极限：设函数 $f(x)$ 在 $x_{0}$ 点的某个去心球形邻域有定义

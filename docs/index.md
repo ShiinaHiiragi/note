@@ -392,6 +392,16 @@ const refList = [
         plot: 123
     },
     {
+        author: ["汪嘉冈"],
+        title: "现代概率论基础",
+        type: "M",
+        page: [1, 192],
+        year: 2005,
+        press: "复旦大学出版社",
+        locate: "上海",
+        plot: 1
+    },
+    {
         author: ["Rob Nederpelt", "Herman Geuvers"],
         title: "Type Theory and Formal Proof: an Introduction",
         type: "M",
