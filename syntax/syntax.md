@@ -4976,6 +4976,17 @@ Bootstrap 适合短时间开发简单的静态网站
 3. 切换大小写：`~`（相互转换），`gU`（转大写），`gu`（转小写）
 
 #### 4.3.5 Others
+1. Pandoc：
+
+    ```shell
+    pandoc src.md -o dst.pdf --pdf-engine=xelatex -V CJKmainfont="Noto Serif SC" -M geometry:"margin=25mm"
+    ```
+
+2. Wine：
+
+    ```shell
+    env WINEPREFIX="~/.wine" wine "C:\\path\\to\\executable"
+    ```
 
 ### 4.4 Designing
 
