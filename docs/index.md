@@ -385,11 +385,11 @@ const refList = [
         author: ["程其襄", "张奠宙", "胡善文", "薛以峰"],
         title: "实变函数与泛函分析基础",
         type: "M",
-        page: [5, 221],
+        page: [1, 221],
         year: 2019,
         press: "高等教育出版社",
         locate: "北京",
-        plot: 112 - 5
+        plot: 123
     },
     {
         author: ["Rob Nederpelt", "Herman Geuvers"],

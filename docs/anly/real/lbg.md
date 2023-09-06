@@ -104,8 +104,8 @@
         2. 设 $f(P)=f(x, y)$ 在 $A \times B \subseteq \mathbf{R}^{p+q}$ 上可积，则对 $\text{a.e.}$的 $x \in A$，$f(x, y)$ 作为 $y$ 的函数在 $B$ 上可积．又 ${\displaystyle \int_{B} f(x, y) \mathrm{d} y}$ 作为 $x$ 的函数在 $A$ 上可积且 ${\displaystyle \int_{A \times B} f(P) \mathrm{d} P=\int_{A} \mathrm{d} x \int_{B} f(x, y) \mathrm{d} y}$
 
 ### 2.2.2 不定积分
-1. 有界变差函数：设 $f(x)$ 为 $[a, b]$ 上的有限函数，如果对于 $[a, b]$ 的一切分划 $T$，使 ${\displaystyle \left\{\sum_{i=1}^{n}\left|f\left(x_{i}\right)-f\left(x_{i-1}\right)\right|\right\}}$ 成一有界数集，则称 $f(x)$ 为 $[a, b]$ 上的有界变差函数（或囿变函数），并称该有界数集的上确界为 $f(x)$ 在 $[a, b]$ 上的全变差，记为 $\stackrel{b}{\underset{a}{\large \textbf{V} \large}}(f)$．用一个分划作成的和数 ${\displaystyle V=\sum_{i=1}^{n}\left|f\left(x_{i}\right)-f\left(x_{i-1}\right)\right|}$ 称为 $f(x)$ 在此分划下对应的变差
-    1. 弧长：设 $C$ 是平面上一条连续弧，$x=\varphi(t), y=\psi(t)$，$\alpha \leqslant t \leqslant \beta$ 是它的参数表示．$\varphi(t), \psi(t)$ 为 $[\alpha, \beta]$ 上的连续函数，相应于区间 $[\alpha, \beta]$ 的任一分划 $T: \alpha=t_{0}<t_{1}<\cdots<t_{n}=\beta$ 得到 $C$ 上一组分点 $P_{i}=\left(\varphi\left(t_{i}\right), \psi\left(t_{i}\right)\right), i=0,1,2, \cdots, n$．设依次联结各分点 $P_{i}$ 所得内接折线的长为 $L(T)$，如果对于 $[\alpha, \beta]$ 的一切分划 $T,\{L(T)\}$ 成一有界数集，则称 $C$ 为可求长的，并称其上确界 $L=\sup _{T} L(T)$ 为 $C$ 之长
+1. 有界变差函数：设 $f(x)$ 为 $[a, b]$ 上的有限函数，如果对于 $[a, b]$ 的一切划分 $T$，使 ${\displaystyle \left\{\sum_{i=1}^{n}\left|f\left(x_{i}\right)-f\left(x_{i-1}\right)\right|\right\}}$ 成一有界数集，则称 $f(x)$ 为 $[a, b]$ 上的有界变差函数（或囿变函数），并称该有界数集的上确界为 $f(x)$ 在 $[a, b]$ 上的全变差，记为 $\stackrel{b}{\underset{a}{\large \textbf{V} \large}}(f)$．用一个划分作成的和数 ${\displaystyle V=\sum_{i=1}^{n}\left|f\left(x_{i}\right)-f\left(x_{i-1}\right)\right|}$ 称为 $f(x)$ 在此划分下对应的变差
+    1. 弧长：设 $C$ 是平面上一条连续弧，$x=\varphi(t), y=\psi(t)$，$\alpha \leqslant t \leqslant \beta$ 是它的参数表示．$\varphi(t), \psi(t)$ 为 $[\alpha, \beta]$ 上的连续函数，相应于区间 $[\alpha, \beta]$ 的任一划分 $T: \alpha=t_{0}<t_{1}<\cdots<t_{n}=\beta$ 得到 $C$ 上一组分点 $P_{i}=\left(\varphi\left(t_{i}\right), \psi\left(t_{i}\right)\right), i=0,1,2, \cdots, n$．设依次联结各分点 $P_{i}$ 所得内接折线的长为 $L(T)$，如果对于 $[\alpha, \beta]$ 的一切划分 $T,\{L(T)\}$ 成一有界数集，则称 $C$ 为可求长的，并称其上确界 $L=\sup _{T} L(T)$ 为 $C$ 之长
     2. 连续弧 $x=\varphi(t), y=\psi(t), \alpha \leqslant t \leqslant \beta$ 可求长的充要条件是 $\varphi(t)$ 与 $\psi(t)$ 都是 $[\alpha, \beta]$ 上的有界变差函数
     3. 设 $f(x), g(x)$ 在 $[a, b]$ 上都有界变差，则有
         1. 可加性：在其任一子区间 $\left[a_{1}, b_{1}\right]$ 上有界变差．若 $a<c<b$ 且 $f(x)$ 分别在 $[a, c]$ 及 $[c, b]$ 上有界变差，则 $f(x)$ 在 $[a, b]$ 上也有界变差且 $\stackrel{b}{\underset{a}{\large \textbf{V} \large}}(f)=\stackrel{c}{\underset{a}{\large \textbf{V} \large}}(f)+\stackrel{b}{\underset{c}{\large \textbf{V} \large}}(f)$
@@ -123,3 +123,25 @@
     2. 设 $F(x)$ 是 $[a, b]$ 上的绝对连续函数，则 $\text{a.e.}$有定义的 $F^{\prime}(x)$ 在 $[a, b]$ 上可积且 ${\displaystyle F(x)=F(a)+\int_{a}^{x} F^{\prime}(t) \mathrm{d} t}$．即 $F(x)$ 总是 $[a, b]$ 上可积函数的不定积分
 
 ### 2.2.3 Stieltjes 积分
+1. $\text{Riemann}-\text{Stieltjes}$ 积分：设 $f(x), \alpha(x)$ 为 $[a, b]$ 上的有限函数，对 $[a, b]$ 作一划分 $T: a=x_{0}<x_{1}<\cdots<x_{n}=b$ 及属于此划分的任一组介点 $x_{i-1} \leqslant \xi_{i} \leqslant x_{i} \ (i=1,2, \cdots, n)$ 作和数（称作 $\text{Stieltjes}$ 和数，简称 $S$ 和数）${\displaystyle \sum_{i=1}^{n} f\left(\xi_{i}\right)\left[\alpha\left(x_{i}\right)-\alpha\left(x_{i-1}\right)\right]}$．如果当 $\delta(T) \rightarrow 0$ 时，此和数总趋于一确定的有限极限（不论 $T$ 分法如何，也不论介点取法如何），则称 $f(x)$ 在 $[a, b]$ 上关于 $\alpha(x)$ 为 $S$ 可积的，此极限叫做 $f(x)$ 在 $[a, b]$ 上关于 $\alpha(x)$ 的 $\text{Riemann}-\text{Stieltjes}$ 积分或 $S$ 积分，记为 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} \alpha(x)}$
+    1. $S$ 积分的性质
+        1. ${\displaystyle \int_{a}^{b}\left[f_{1}(x)+f_{2}(x)\right] \mathrm{d} \alpha(x)=\int_{a}^{b} f_{1}(x) \mathrm{d} \alpha(x)+\int_{a}^{b} f_{2}(x) \mathrm{d} \alpha(x)}$
+        2. ${\displaystyle \int_{a}^{b} f(x) \mathrm{d}\left(\alpha_{1}(x)+\alpha_{2}(x)\right)=\int_{a}^{b} f(x) \mathrm{d} \alpha_{1}(x)+\int_{a}^{b} f(x) \mathrm{d} \alpha_{2}(x)}$
+        3. 设 $k, l$ 为常数，则 ${\displaystyle \int_{a}^{b} k f(x) \mathrm{d}(l \alpha(x))=k \cdot l \int_{a}^{b} f(x) \mathrm{d} \alpha(x)}$
+        4. 设 $a<c<b$，则 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} \alpha(x)=\int_{a}' f(x) \mathrm{d} \alpha(x)+\int_{c}^{b} f(x) \mathrm{d} \alpha(x)}$，设左、右边各积分都存在
+    2. $S$ 积分存在的充分条件：设 $f(x)$ 在 $[a, b]$ 上连续，$\alpha(x)$ 在 $[a, b]$ 上是有界变差的，则 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} \alpha(x)}$ 存在
+    3. 设 $f(x)$ 在 $[a, b]$ 上连续，$\alpha(x)$ 处处可导且 $\alpha^{\prime}(x)$ 又 $R$ 可积，则 ${\displaystyle (S)\int_{a}^{b} f(x) \mathrm{d} \alpha(x)=(R) \int_{a}^{b} f(x) \alpha^{\prime}(x) \mathrm{d} x}$
+    4. 设 $f(x)$ 在 $[a, b]$ 上连续，$g(x)$ 为绝对连续，则 ${\displaystyle (S)\int_{a}^{b} f(x) \mathrm{d} g(x)=(L) \int_{a}^{b} f(x) g^{\prime}(x) \mathrm{d} x }$
+    5. 设 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} \alpha(x)}$ 与 ${\displaystyle \int_{a}^{b} \alpha(x) \mathrm{d} f(x)}$ 中有一个存在，则另一个也存在且 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} \alpha(x)+\int_{a}^{b} \alpha(x) \mathrm{d} f(x)=f(x) \alpha(x)\bigg|_{a} ^{b}}$
+    6. 设 $f(x)$ 在 $[a, b]$ 上是有界变差函数，$\alpha(x)$ 连续，则积分 ${\displaystyle \int_{a}^{b} f(x) \mathrm{d} \alpha(x)}$
+2. $\text{Lesbegue}-\text{Stieltjes}$ 外测度：对任一点集 $E \subseteq \mathbf{R}$，非负实数 ${\displaystyle \inf_{E \subseteq \bigcup_{i=1}^{\infty} I_i} \sum_{i=1}^{\infty} |I_{i}|}$ 称为 $E$ 关于分布函数 $\alpha(x)$ 的 $L-S$ 外测度，记为 $m_{\alpha}^{*} E$
+    1. 权：设 $\alpha(x)$ 为定义在 $\mathbf{R}$ 上的有限增函数，对任意开区间 $I=\left(x, x^{\prime}\right)$，称 $\alpha\left(x^{\prime}\right)-\alpha(x)$ 为区间 $I$ 的权，记为 $|I|=\alpha\left(x^{\prime}\right)-\alpha(x)$
+    2. $L-S$ 外测度与 $L$ 外测度有同样的基本性质
+        1. $m_{\alpha}^{*} E \geqslant 0$，且 $m_{\alpha}^{*} \varnothing=0$
+        2. 单调性：设 $A \subseteq B$，则 $m_{\alpha}^{*} A \leqslant m_{\alpha}^{*} B$
+        3. 次可数可加性：${\displaystyle m_{\alpha}^{*}\left(\bigcup_{i=1}^{\infty} E_{i}\right) \leqslant \sum_{i=1}^{\infty} m_{\alpha}^{*} E_{i}}$
+    3. 在 $L$ 测度中，区间 $\langle a, b\rangle$ 不论开、闭或半开半闭都是 $m_{\alpha}^{*}\langle a, b\rangle=b-a$，但在一般 $L-S$ 外测度中有
+        1. $m_{\alpha}^{*}(a, b)=\alpha(b-0)-\alpha(a+0)$
+        2. $m_{\alpha}^{*}(a, b]=\alpha(b+0)-\alpha(a+0)$
+        3. $m_{\alpha}^{*}[a, b]=\alpha(b+0)-\alpha(a-0)$
+        4. $m_{\alpha}^{*}[a, b)=\alpha(b-0)-\alpha(a-0)$
