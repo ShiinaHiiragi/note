@@ -60,7 +60,7 @@
 
 !!! note "参考文献"
     1. 『结构证明论』（马明辉），下略
-    2. 『Ordinal Analysis with an Introduction to Proof Theory』（Toshiyasu Arai）
+    2. {++『Ordinal Analysis with an Introduction to Proof Theory』（Toshiyasu Arai）++}
 
 #### 1 命题逻辑
 1. Hilbert 系统：第一章
@@ -127,7 +127,7 @@
 
 !!! note "参考文献"
     1. 『集合论：对无穷概念的探索』（郝兆宽、杨睿之）
-    2. 『The Higher Infinite: Large Cardinals in Set Theory from Their Beginnings』（Akihiro Kanamori）
+    2. {++『The Higher Infinite: Large Cardinals in Set Theory from Their Beginnings』（Akihiro Kanamori）++}
 
 #### 3 连续统假设
 1. 集宇宙：第七章
@@ -159,7 +159,7 @@
 ### 四、范畴论
 
 !!! note "参考文献"
-    『范畴论』（贺伟）
+    {++『范畴论』（贺伟）++}
 
 #### 1 范畴
 
@@ -185,7 +185,7 @@
 ### 三、代数拓扑
 
 !!! note "参考文献"
-    『代数拓扑讲义』（周建伟）
+    {++『代数拓扑讲义』（周建伟）++}
 
 #### 1 基本群
 
@@ -194,7 +194,7 @@
 ### 四、微分几何
 
 !!! note "参考文献"
-    『流形与几何初步』（梅加强）
+    {++『流形与几何初步』（梅加强）++}
 
 #### 1 微分流形
 
