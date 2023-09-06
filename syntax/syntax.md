@@ -4628,6 +4628,7 @@ Bootstrap 适合短时间开发简单的静态网站
         - 标签页转换
             - （终端与编辑器）上一个 / 下一个标签页：<kbd>Alt</kbd> + <kbd>PageUp</kbd> 或 <kbd>Alt</kbd> + <kbd>PageDown</kbd>
             - （仅编辑器）上一个 / 下一个标签页选择： <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Tab</kbd>
+        - 向右增加一个新窗口：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>End</kbd>
     - 页面滚动（终端和编辑器均可）
         - 向上 / 向下滚动：<kbd>Ctrl</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>ArrowDown</kbd>
         - 向上 / 向下滚动一页：<kbd>Ctrl</kbd> + <kbd>PageUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>PageDown</kbd>
