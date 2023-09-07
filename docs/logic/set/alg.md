@@ -1,6 +1,11 @@
 # 2 集合代数
 
-## 2.1 滤与理想
+## 2.1 格与 Boole 代数
+### 2.1.1 格
+
+### 2.1.2 Boole 代数
+
+## 2.2 滤与理想
 1. 滤：设 $X$ 为非空集合，$X$ 的子集族 $F \subseteq \mathcal{P}(X)$ 如果满足
     1. $X \in F$ 且 $\varnothing \notin F$
     2. 若 $X, Y \in F$，则 $X \cap Y \in F$
@@ -54,8 +59,8 @@
 
     2. 任何滤与理想都是 $\aleph_{0}-$完全的，$\aleph_{1}-$完全的滤和理想在历史上称为 $\sigma-$完全的．可数完全的滤对有穷交封闭的，$\aleph_{1}-$完全的滤对可数交封闭
 
-## 2.2 环与域
-### 2.2.1 环
+## 2.3 环与域
+### 2.3.1 环
 1. 环：设 $\mathscr{R} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in \mathscr{R}$ 蕴含 $A - B \in \mathscr{R}$ 与 $A \cup B \in \mathscr{R}$，则称 $\mathscr{R}$ 为 $\Omega$ 上的环
 2. $\sigma$ 环：设 $\mathscr{C}$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若有
     1. 若 $A \in \mathscr{C}, B \in \mathscr{C}$，则 $A - B \in \mathscr{C}$
@@ -66,7 +71,7 @@
     1. $\mathscr{F}$ 为 $\sigma$ 域的充要条件是 $\mathscr{F}$ 为一个包含 $\Omega$ 的 $\sigma$ 环
     2. 在 $\sigma$ 环中，对可数集合序列的交集、上限、下限运算也是封闭的
 
-### 2.2.2 域
+### 2.3.2 域
 1. 域：设 $\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in \mathscr{A}$ 蕴含 $A' \in \mathscr{A}$ 与 $A \cup B \in \mathscr{A}$，则称 $\mathscr{A}$ 为 $\Omega$ 上的域或代数
     1. 设 $\mathscr{A}$ 是域，则有
         1. $\Omega \in \mathscr{A}, \varnothing \in \mathscr{A}$
@@ -98,7 +103,7 @@
 
 4. $\text{Borel}$ 域：若 $E$ 为拓扑空间，$\mathscr{B}_{E}$ 为 $E$ 中开集全体生成的 $\sigma$ 域，这一 $\sigma$ 域就称为 $E$ 上的 $\text{Borel}$ 域，$\mathscr{B}_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集．$n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
 
-### 2.2.3 单调类
+### 2.3.3 单调类
 1. 单调类：设 $\mathscr{M}$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若对任一集合序列 $\{A_{n}, n \geqslant 1\} \subseteq \mathscr{M}$，且
     1. 当 $\left\{A_{n}\right\}$ 递增时，即 $A_{n} \subseteq A_{n+1}$，必有 ${\displaystyle \bigcup_{n=1}^{\infty} A_{n} \in \mathscr{M}}$
     2. 当 $\left\{A_{n}\right\}$ 递减时，即 $A_{n} \supseteq A_{n+1}$，必有 ${\displaystyle \bigcap_{n=1}^{\infty} A_{n} \in \mathscr{M}}$
