@@ -128,3 +128,17 @@
     2. 对 $\mathcal{P}(\Omega)$ 的任一子类 $\mathscr{C}$，必存在包含 $\mathscr{C}$ 的最小 $\lambda$ 类 $\lambda(\mathscr{C})$
     3. 若 $\mathscr{C}$ 为 $\pi$ 类，则 $\lambda(\mathscr{C})=\sigma(\mathscr{C})$
     4. 若 $\mathscr{D}$ 是 $\lambda$ 类，又 $\mathscr{C}$ 为 $\pi$ 类，$\mathscr{D} \supseteq \mathscr{C}$，则 $\mathscr{D} \supseteq \sigma(\mathscr{C})$
+
+3. $\mathscr{L}$ 类：设 $\mathscr{L}$ 为 $\Omega$ 上的函数族，当 $X \in \mathscr{L}$ 时，$X^{+}, X^{-} \in \mathscr{L}$．若 $\Omega$ 上的函数族 $\mathscr{H}$ 有
+    1. $1 \in \mathscr{H}$
+    2. $\mathscr{H}$ 是线性空间
+    3. 设 $X_{n} \geqslant 0, X_{n} \in \mathscr{H}, X_{n} \uparrow X$ 且 $X$ 有界或 $X \in \mathscr{L}$，则 $X \in \mathscr{H}$
+
+    则称其为 $\mathscr{H}$ 上的 $\mathscr{L}$ 类
+
+    1. 若 $\pi$ 类 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，又 $\mathscr{H}$ 为 $\Omega$ 上的一个 $\mathscr{L}$ 类，且 $\mathscr{H} \supseteq \left\{I_{A}, A \in \mathscr{C}\right\}$，则 $\mathscr{H}$ 包含 $\Omega$ 上一切属于 $\mathscr{L}$ 的 $\sigma(\mathscr{C})$ 可测函数
+    2. 若 $\mathscr{H}$ 为 $\Omega$ 上某些有界实函数的集合，则存在 $\Omega$ 上 $\sigma$ 域 $\mathscr{F}_{1}$，使 $\mathscr{H}$ 为 $\left(\Omega, \mathscr{F}_{1}\right)$ 有界随机变量全体的充要条件是
+        1. $\mathscr{H}$ 是线性空间
+        2. $1 \in \mathscr{H}$
+        3. $\mathscr{H}$ 是格
+        4. 若 $\left\{f_{n}, n \geqslant 1\right\}$ 是 $\mathscr{H}$ 中一致有界递增随机变量序列，${\displaystyle f=\lim _{n \to \infty} f_{n}}$, 则 $f \in \mathscr{H}$，且此时 $\mathscr{F}_{1}=\sigma(f, f \in \mathscr{H})$

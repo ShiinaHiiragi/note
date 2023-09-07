@@ -42,8 +42,9 @@
     2. $X$ 为 $(\Omega, \mathscr{F})$ 上的随机变量的充要条件是存在阶梯随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，使 ${\displaystyle X(\omega)=\lim _{n \rightarrow \infty} X_{n}(\omega), \  \forall \omega \in \Omega}$．且当 $X$ 为非负时，$\left\{X_{n}\right\}$ 可取成是非负递增的；当 $|X| \leqslant M$ 时，$\left\{X_{n}\right\}$ 也可取成是 $\left|X_{n}\right| \leqslant M$ 的
     3. 若 $X, Y$ 为随机变量，则对任意实数 $a, b$，只要 $a X+b Y, X Y, X / Y, X \vee Y, X \wedge Y$ 对每个 $\omega$ 有意义（即不发生 $0 \cdot \infty, (+\infty)+(-\infty), 0 / 0, \infty / \infty$ 等情况），它们就都是随机变量
     4. 若 $\left\{X_{n}, n \geqslant 1\right\}$ 为随机变量列，则 ${\displaystyle \left\{\omega: \varlimsup_{n \to \infty} X_{n}(\omega)=\varliminf_{n \to \infty} X_{n}(\omega)\right\}}$ 是 $\mathscr{F}$ 可测的
+    5. $\text{Doob}$ 定理：若 $f$ 是 $(\Omega, \mathscr{F})$ 到可测空间 $(E, \mathscr{E})$ 的可测映射，$\sigma(f)= f^{-1}[\mathscr{E}]$，则 $(\Omega, \mathscr{F})$ 上的随机变量 $X$ 为 $\sigma(f)$ 可测的充要条件是存在 $(E, \mathscr{E})$ 上的随机变量 $h$，使 $X=h \circ f$
 
-3. $\text{Doob}$ 定理
+3. 多维随机变量
 
 ### 1.2.2 期望
 
