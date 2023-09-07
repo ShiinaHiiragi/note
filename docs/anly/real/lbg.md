@@ -104,11 +104,11 @@
         2. 设 $f(P)=f(x, y)$ 在 $A \times B \subseteq \mathbf{R}^{p+q}$ 上可积，则对 $\text{a.e.}$的 $x \in A$，$f(x, y)$ 作为 $y$ 的函数在 $B$ 上可积．又 ${\displaystyle \int_{B} f(x, y) \mathrm{d} y}$ 作为 $x$ 的函数在 $A$ 上可积且 ${\displaystyle \int_{A \times B} f(P) \mathrm{d} P=\int_{A} \mathrm{d} x \int_{B} f(x, y) \mathrm{d} y}$
 
 ### 2.2.2 不定积分
-1. 有界变差函数：设 $f(x)$ 为 $[a, b]$ 上的有限函数，如果对于 $[a, b]$ 的一切划分 $T$，使 ${\displaystyle \left\{\sum_{i=1}^{n}\left|f\left(x_{i}\right)-f\left(x_{i-1}\right)\right|\right\}}$ 成一有界数集，则称 $f(x)$ 为 $[a, b]$ 上的有界变差函数（或囿变函数），并称该有界数集的上确界为 $f(x)$ 在 $[a, b]$ 上的全变差，记为 $\stackrel{b}{\underset{a}{\large \textbf{V} \large}}(f)$．用一个划分作成的和数 ${\displaystyle V=\sum_{i=1}^{n}\left|f\left(x_{i}\right)-f\left(x_{i-1}\right)\right|}$ 称为 $f(x)$ 在此划分下对应的变差
+1. 有界变差函数：设 $f(x)$ 为 $[a, b]$ 上的有限函数，如果对于 $[a, b]$ 的一切划分 $T$，使 ${\displaystyle \left\{\sum_{i=1}^{n}\left|f\left(x_{i}\right)-f\left(x_{i-1}\right)\right|\right\}}$ 成一有界数集，则称 $f(x)$ 为 $[a, b]$ 上的有界变差函数（或囿变函数），并称该有界数集的上确界为 $f(x)$ 在 $[a, b]$ 上的全变差，记为 $\underset{a}{\stackrel{b}{\large \textbf{V} \normalsize}}(f)$．用一个划分作成的和数 ${\displaystyle V=\sum_{i=1}^{n}\left|f\left(x_{i}\right)-f\left(x_{i-1}\right)\right|}$ 称为 $f(x)$ 在此划分下对应的变差
     1. 弧长：设 $C$ 是平面上一条连续弧，$x=\varphi(t), y=\psi(t)$，$\alpha \leqslant t \leqslant \beta$ 是它的参数表示．$\varphi(t), \psi(t)$ 为 $[\alpha, \beta]$ 上的连续函数，相应于区间 $[\alpha, \beta]$ 的任一划分 $T: \alpha=t_{0}<t_{1}<\cdots<t_{n}=\beta$ 得到 $C$ 上一组分点 $P_{i}=\left(\varphi\left(t_{i}\right), \psi\left(t_{i}\right)\right), i=0,1,2, \cdots, n$．设依次联结各分点 $P_{i}$ 所得内接折线的长为 $L(T)$，如果对于 $[\alpha, \beta]$ 的一切划分 $T,\{L(T)\}$ 成一有界数集，则称 $C$ 为可求长的，并称其上确界 $L=\sup _{T} L(T)$ 为 $C$ 之长
     2. 连续弧 $x=\varphi(t), y=\psi(t), \alpha \leqslant t \leqslant \beta$ 可求长的充要条件是 $\varphi(t)$ 与 $\psi(t)$ 都是 $[\alpha, \beta]$ 上的有界变差函数
     3. 设 $f(x), g(x)$ 在 $[a, b]$ 上都有界变差，则有
-        1. 可加性：在其任一子区间 $\left[a_{1}, b_{1}\right]$ 上有界变差．若 $a<c<b$ 且 $f(x)$ 分别在 $[a, c]$ 及 $[c, b]$ 上有界变差，则 $f(x)$ 在 $[a, b]$ 上也有界变差且 $\stackrel{b}{\underset{a}{\large \textbf{V} \large}}(f)=\stackrel{c}{\underset{a}{\large \textbf{V} \large}}(f)+\stackrel{b}{\underset{c}{\large \textbf{V} \large}}(f)$
+        1. 可加性：在其任一子区间 $\left[a_{1}, b_{1}\right]$ 上有界变差．若 $a<c<b$ 且 $f(x)$ 分别在 $[a, c]$ 及 $[c, b]$ 上有界变差，则 $f(x)$ 在 $[a, b]$ 上也有界变差且 $\underset{a}{\stackrel{b}{\large \textbf{V} \normalsize}}(f)=\underset{a}{\stackrel{c}{\large \textbf{V} \normalsize}}(f)+\underset{c}{\stackrel{b}{\large \textbf{V} \normalsize}}(f)$
         2. $f(x)$ 在 $[a, b]$ 上有界
         3. $f(x) \pm g(x), f(x) g(x)$ 在 $[a, b]$ 上有界变差
     4. $\text{Jordan}$ 分解：在 $[a, b]$ 上的任一有界变差函数 $f(x)$ 都可表示为 两个增函数之差

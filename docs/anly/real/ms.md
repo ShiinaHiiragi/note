@@ -3,7 +3,15 @@
 ## 1.1 可测性与测度
 ### 1.1.1 可测空间
 1. 可测空间：设 $\Omega$ 为集合，$\mathscr{F}$ 为由 $\Omega$ 的子集构成的 $\sigma$ 域，则 $(\Omega, \mathscr{F})$ 称为可测空间．$\mathscr{F}$ 中任一集合都称为 $\mathscr{F}$ 可测集，简称可测集
-2. 乘积可测空间
+2. 乘积空间：若 $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，称 $\Omega=\left\{\left(\omega_{1}, \cdots, \omega_{n}\right): \omega_{i} \in \Omega_{i}, 1 \leqslant i \leqslant n\right\}$ 为乘积空间，记为 ${\displaystyle \Omega=\prod_{i} \Omega_{i}}$
+    1. 矩形集：对 $A_{i} \subseteq \Omega_{i}, 1 \leqslant i \leqslant n$，集合 $A=\left\{\left(\omega_{1}, \cdots, \omega_{n}\right): \omega_{i} \in A_{i}, 1 \leqslant i \leqslant n\right\}$ 称为矩形集，记为 ${\displaystyle \prod_{i=1}^{n} A_i}$．特别地，当每个 $A_i \in \mathscr{F}_i$ 时，${\displaystyle A = \prod_{i=1}^{n} A_i}$ 又称为可测矩形
+    2. $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，${\displaystyle \Omega=\prod_{i=1}^{n}} \Omega_{i}$，$\mathscr{C}$ 表示 $\Omega$ 中可测矩形全体，则 $\mathscr{C}$ 是一个半域，而互不相交的可测矩形的有限并全体 $\mathscr{A}$ 就是一个域
+3. 乘积可测空间：若 $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，$\mathscr{C}$ 表示 $\Omega={\displaystyle \prod_{i=1}^{n}} \Omega_{i}$ 中可测矩形全体．在 $\Omega$ 上，$\mathscr{F} = \sigma(\mathscr{C})$ 称为乘积 $\sigma$ 域，并记 $\mathscr{F} = {\displaystyle \prod_{i=1}^{n}} \mathscr{F}_i$．又 $(\Omega, \mathscr{F})$ 称为乘积可测空间，记为 $(\Omega, \mathscr{F})={\displaystyle \prod_{i=1}^{n}}\left(\Omega_{i}, \mathscr{F}_{i}\right)$
+    1. 设 $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，$1 \leqslant m \leqslant n$
+        1. ${\displaystyle \prod_{i=1}^{n}} \Omega_{i}=\left({\displaystyle \prod_{i=1}^{m}} \Omega_{i}\right) \times\left({\displaystyle \prod_{i=m+1}^{n}} \Omega_{i}\right)$
+        2. ${\displaystyle \prod_{i=1}^{n}} \mathscr{F}_{i}=\left({\displaystyle \prod_{i=1}^{m}} \mathscr{F}_{i}\right) \times\left({\displaystyle \prod_{i=m+1}^{n}} \mathscr{F}_{i}\right)$
+        3. ${\displaystyle \prod_{i=1}^{n}}\left(\Omega_{i}, \mathscr{F}_{i}\right)=\left({\displaystyle \prod_{i=1}^{m}}\left(\Omega_{i}, \mathscr{F}_{i}\right)\right) \times\left({\displaystyle \prod_{i=m+1}^{n}}\left(\Omega_{i}, \mathscr{F}_{i}\right)\right)$
+    2. 若 $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，$(\Omega, \mathscr{F})={\displaystyle \prod_{i=1}^{n}} \left(\Omega_{i}, \mathscr{F}_{i}\right)$．则对任一 $A \in \mathscr{F}$ 及任意固定的 $\left(\omega_{1}, \cdots, \omega_{m}\right)$，截口集 $A\left(\omega_{1}, \cdots, \omega_{m}\right)=\left\{\left(\omega_{m+1}, \cdots, \omega_{n}\right):\left(\omega_{1}, \cdots, \omega_{n}\right) \in A\right\} \in {\displaystyle \prod_{i=m+1}^{n}} \mathscr{F}_{i}$
 
 ### 1.1.2 可测映射
 1. 可测映射
