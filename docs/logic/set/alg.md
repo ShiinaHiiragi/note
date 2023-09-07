@@ -103,8 +103,23 @@
     1. 当 $\left\{A_{n}\right\}$ 递增时，即 $A_{n} \subseteq A_{n+1}$，必有 ${\displaystyle \bigcup_{n=1}^{\infty} A_{n} \in \mathscr{M}}$
     2. 当 $\left\{A_{n}\right\}$ 递减时，即 $A_{n} \supseteq A_{n+1}$，必有 ${\displaystyle \bigcap_{n=1}^{\infty} A_{n} \in \mathscr{M}}$
 
-    则称 $\mathscr{M}$ 为单调类
+    则称 $\mathscr{M}$ 为 $\Omega$ 上的单调类
 
     1. 若非空 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，则必存在包含 $\mathscr{C}$ 的最小单调类 $\mathscr{M}(\mathscr{C})$，也称为由 $\mathscr{C}$ 生成的单调类
     2. $F$ 为 $\sigma$ 域的充要条件是 $\mathscr{F}$ 既是域又是单调类
     3. 单调类定理：若 $\mathscr{A}$ 为域，则 $\sigma(\mathscr{A})=\mathscr{M}(\mathscr{A})$
+
+2. $\pi$ 类：设 $\mathscr{C}$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若当 $A, B \in \mathscr{C}$ 时必有 $A B \in \mathscr{C}$，则称 $\mathscr{C}$ 为 $\Omega$ 上的 $\pi$ 类
+
+    $\lambda$ 类：设 $\mathscr{D}$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若它满足
+
+    1. 当 $A \in \mathscr{D}$ 时必有 $A' \in \mathscr{D}$
+    2. 当 $A, B \in \mathscr{D}$ 且 $A B=\varnothing$ 时，必有 $A+B \in \mathscr{D}$
+    3. 对递增序列 $\left\{A_{n}, n \geqslant 1\right\} \subseteq \mathscr{D}$，必有 ${\displaystyle \lim _{n \to \infty} A_{n} \in \mathscr{D}}$
+
+    则称 $\mathscr{D}$ 为 $\Omega$ 上的 $\lambda$ 类
+
+    1. $F$ 为 $\sigma$ 域的充要条件是它同时为 $\lambda$ 类和 $\pi$ 类
+    2. 对 $\mathcal{P}(\Omega)$ 的任一子类 $\mathscr{C}$，必存在包含 $\mathscr{C}$ 的最小 $\lambda$ 类 $\lambda(\mathscr{C})$
+    3. 若 $\mathscr{C}$ 为 $\pi$ 类，则 $\lambda(\mathscr{C})=\sigma(\mathscr{C})$
+    4. 若 $\mathscr{D}$ 是 $\lambda$ 类，又 $\mathscr{C}$ 为 $\pi$ 类，$\mathscr{D} \supseteq \mathscr{C}$，则 $\mathscr{D} \supseteq \sigma(\mathscr{C})$
