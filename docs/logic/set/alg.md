@@ -56,77 +56,77 @@
 
 ## 2.2 环与域
 ### 2.2.1 环
-1. 环：设 $\mathscr{R} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in \mathscr{R}$ 蕴含 $A - B \in \mathscr{R}$ 与 $A \cup B \in \mathscr{R}$，则称 $\mathscr{R}$ 为 $\Omega$ 上的环
-2. $\sigma$ 环：设 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
-    1. 若 $A \in \mathscr{C}, B \in \mathscr{C}$，则 $A - B \in \mathscr{C}$
-    2. 若对 $n \geqslant 1, A_{n} \in \mathscr{C}$，则 ${\displaystyle \bigcup_{n=1}^{\infty} A_{n} \in \mathscr{C}}$
+1. 环：设 $R \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in R$ 蕴含 $A - B \in R$ 与 $A \cup B \in R$，则称 $R$ 为 $\Omega$ 上的环
+2. $\sigma$ 环：设 $C \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
+    1. 若 $A \in C, B \in C$，则 $A - B \in C$
+    2. 若对 $n \geqslant 1, A_{n} \in C$，则 ${\displaystyle \bigcup_{n=1}^{\infty} A_{n} \in C}$
 
-    则称 $\mathscr{C}$ 为 $\Omega$ 上的 $\sigma$ 环
+    则称 $C$ 为 $\Omega$ 上的 $\sigma$ 环
 
-    1. $\mathscr{F}$ 为 $\sigma$ 域的充要条件是 $\mathscr{F}$ 为一个包含 $\Omega$ 的 $\sigma$ 环
+    1. $F$ 为 $\sigma$ 域的充要条件是 $F$ 为一个包含 $\Omega$ 的 $\sigma$ 环
     2. 在 $\sigma$ 环中，对可数集合序列的交集、上限、下限运算也是封闭的
 
 ### 2.2.2 域
-1. 域：设 $\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in \mathscr{A}$ 蕴含 $A' \in \mathscr{A}$ 与 $A \cup B \in \mathscr{A}$，则称 $\mathscr{A}$ 为 $\Omega$ 上的域或代数
-    1. 设 $\mathscr{A}$ 是域，则有
-        1. $\Omega \in \mathscr{A}, \varnothing \in \mathscr{A}$
-        2. 若 $A, B \in \mathscr{A}$，则 $A B \in \mathscr{A}, A - B \in \mathscr{A}, A \triangle B \in \mathscr{A}$
-        3. 若 $A_{j} \in \mathscr{A}, 1 \leqslant j \leqslant n$，则 ${\displaystyle \bigcup_{j=1}^{n} A_{j} \in \mathscr{A}, \bigcap_{j=1}^{n} A_{j} \in \mathscr{A}}$
-    2. 若 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，则必存在包含 $\mathscr{C}$ 的最小域 $\mathscr{A}$．即 $\mathscr{A}$ 为域，$\mathscr{A} \supseteq \mathscr{C}$ 且对任一域 $\mathscr{A}^{\prime} \supseteq \mathscr{C}$，必有 $\mathscr{A} \subseteq \mathscr{A}^{\prime}$
-        1. 对任一集族 $\mathscr{C}$，包含 $\mathscr{C}$ 的最小域称为由 $\mathscr{C}$ 张成的域，记为 $\mathscr{A}(\mathscr{C})$
+1. 域：设 $A \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in A$ 蕴含 $A' \in A$ 与 $A \cup B \in A$，则称 $A$ 为 $\Omega$ 上的域或代数
+    1. 设 $A$ 是域，则有
+        1. $\Omega \in A, \varnothing \in A$
+        2. 若 $A, B \in A$，则 $A B \in A, A - B \in A, A \triangle B \in A$
+        3. 若 $A_{j} \in A, 1 \leqslant j \leqslant n$，则 ${\displaystyle \bigcup_{j=1}^{n} A_{j} \in A, \bigcap_{j=1}^{n} A_{j} \in A}$
+    2. 若 $C \subseteq \mathcal{P}(\Omega)$，则必存在包含 $C$ 的最小域 $A$．即 $A$ 为域，$A \supseteq C$ 且对任一域 $A^{\prime} \supseteq C$，必有 $A \subseteq A^{\prime}$
+        1. 对任一集族 $C$，包含 $C$ 的最小域称为由 $C$ 张成的域，记为 $A(C)$
         2. $\Omega$ 中由单点集全体张成的域就是由 $\Omega$ 中有限集及其余集全体构成的集族
-2. 半域：设 $\mathscr{S} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
-    1. $\varnothing, \Omega \in \mathscr{S}$
-    2. 当 $A, B \in \mathscr{S}$，必有 $A \cap B \in \mathscr{S}$
-    3. 若 $A \in \mathscr{S}$，则 $A'$ 可表为 $\mathscr{S}$ 中两两互不相交集合的有限并
+2. 半域：设 $S \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
+    1. $\varnothing, \Omega \in S$
+    2. 当 $A, B \in S$，必有 $A \cap B \in S$
+    3. 若 $A \in S$，则 $A'$ 可表为 $S$ 中两两互不相交集合的有限并
 
-    则称 $\mathscr{S}$ 为 $\Omega$ 上的半域或半代数
+    则称 $S$ 为 $\Omega$ 上的半域或半代数
 
     1. 域必为半域
-    2. 若 $\mathscr{S}$ 为半域，则 ${\displaystyle \mathscr{A}=\left\{A=\sum_{i \in I} S_{i}:\left\{S_{i}, i \in I\right\} \textsf{ 为 } \mathscr{S} \textsf{ 中两两互不相交的有限族}\right\}}$ 是包含 $\mathscr{S}$ 的最小域
+    2. 若 $S$ 为半域，则 ${\displaystyle A=\left\{A=\sum_{i \in I} S_{i}:\left\{S_{i}, i \in I\right\} \textsf{ 为 } S \textsf{ 中两两互不相交的有限族}\right\}}$ 是包含 $S$ 的最小域
 
-3. $\sigma$ 域：设 $\mathscr{F} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
-    1. 若 $A \in \mathscr{F}$，则 $A' \in \mathscr{F}$
-    2. 若对每个 $n \geqslant 1$ 都有 $A_{n} \in \mathscr{F}$，则 ${\displaystyle \bigcup_{i=1}^{\infty} A_{n} \in \mathscr{F}}$
+3. $\sigma$ 域：设 $F \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
+    1. 若 $A \in F$，则 $A' \in F$
+    2. 若对每个 $n \geqslant 1$ 都有 $A_{n} \in F$，则 ${\displaystyle \bigcup_{i=1}^{\infty} A_{n} \in F}$
 
-    则称 $\mathscr{F}$ 为 $\Omega$ 上的 $\sigma$ 域或 $\sigma$ 代数
+    则称 $F$ 为 $\Omega$ 上的 $\sigma$ 域或 $\sigma$ 代数
 
-    1. $\mathscr{F}$ 为 $\sigma$ 域，则 $\mathscr{F}$ 为一个域，且当 $n \geqslant 1, A_{n} \in \mathscr{F}$ 时，必有 ${\displaystyle \bigcap_{n \geqslant 1} A_{n} \in \mathscr{F}, \varliminf_{n \rightarrow \infty} A_{n} \in \mathscr{F}, \varlimsup_{{n \rightarrow \infty}} A_{n} \in \mathscr{F}}$
-    2. 若 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，则必存在包含 $\mathscr{C}$ 的最小 $\sigma$ 域
-        1. 包含集族 $\mathscr{C}$ 的最小 $\sigma$ 域称为由 $\mathscr{C}$ 生成的 $\sigma$ 域，记为 $\sigma(\mathscr{C})$
-        2. 对 $\Omega$ 的子集族 $\mathscr{C}$，若以 $\mathscr{C} \cap A$ 表示集族 $\{B A: B \in \mathscr{C}\}$，则 $\sigma_{\Omega}(\mathscr{C}) \cap A=\sigma_{A}(\mathscr{C} \cap A)$
+    1. $F$ 为 $\sigma$ 域，则 $F$ 为一个域，且当 $n \geqslant 1, A_{n} \in F$ 时，必有 ${\displaystyle \bigcap_{n \geqslant 1} A_{n} \in F, \varliminf_{n \rightarrow \infty} A_{n} \in F, \varlimsup_{{n \rightarrow \infty}} A_{n} \in F}$
+    2. 若 $C \subseteq \mathcal{P}(\Omega)$，则必存在包含 $C$ 的最小 $\sigma$ 域
+        1. 包含集族 $C$ 的最小 $\sigma$ 域称为由 $C$ 生成的 $\sigma$ 域，记为 $\sigma(C)$
+        2. 对 $\Omega$ 的子集族 $C$，若以 $C \cap A$ 表示集族 $\{B A: B \in C\}$，则 $\sigma_{\Omega}(C) \cap A=\sigma_{A}(C \cap A)$
 
-4. $\text{Borel}$ 域：若 $E$ 为拓扑空间，$\mathscr{B}_{E}$ 为 $E$ 中开集全体生成的 $\sigma$ 域，这一 $\sigma$ 域就称为 $E$ 上的 $\text{Borel}$ 域，$\mathscr{B}_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集．$n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
+4. $\text{Borel}$ 域：若 $E$ 为拓扑空间，$B_{E}$ 为 $E$ 中开集全体生成的 $\sigma$ 域，这一 $\sigma$ 域就称为 $E$ 上的 $\text{Borel}$ 域，$B_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集．$n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
 
 ### 2.2.3 单调类
-1. 单调类：设 $\mathscr{M}$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若对任一集合序列 $\{A_{n}, n \geqslant 1\} \subseteq \mathscr{M}$，且
-    1. 当 $\left\{A_{n}\right\}$ 递增时，即 $A_{n} \subseteq A_{n+1}$，必有 ${\displaystyle \bigcup_{n=1}^{\infty} A_{n} \in \mathscr{M}}$
-    2. 当 $\left\{A_{n}\right\}$ 递减时，即 $A_{n} \supseteq A_{n+1}$，必有 ${\displaystyle \bigcap_{n=1}^{\infty} A_{n} \in \mathscr{M}}$
+1. 单调类：设 $M$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若对任一集合序列 $\{A_{n}, n \geqslant 1\} \subseteq M$，且
+    1. 当 $\left\{A_{n}\right\}$ 递增时，即 $A_{n} \subseteq A_{n+1}$，必有 ${\displaystyle \bigcup_{n=1}^{\infty} A_{n} \in M}$
+    2. 当 $\left\{A_{n}\right\}$ 递减时，即 $A_{n} \supseteq A_{n+1}$，必有 ${\displaystyle \bigcap_{n=1}^{\infty} A_{n} \in M}$
 
-    则称 $\mathscr{M}$ 为 $\Omega$ 上的单调类
+    则称 $M$ 为 $\Omega$ 上的单调类
 
-    1. 若非空 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，则必存在包含 $\mathscr{C}$ 的最小单调类 $\mathscr{M}(\mathscr{C})$，也称为由 $\mathscr{C}$ 生成的单调类
-    2. $F$ 为 $\sigma$ 域的充要条件是 $\mathscr{F}$ 既是域又是单调类
-    3. 单调类定理：若 $\mathscr{A}$ 为域，则 $\sigma(\mathscr{A})=\mathscr{M}(\mathscr{A})$
+    1. 若非空 $C \subseteq \mathcal{P}(\Omega)$，则必存在包含 $C$ 的最小单调类 $M(C)$，也称为由 $C$ 生成的单调类
+    2. $F$ 为 $\sigma$ 域的充要条件是 $F$ 既是域又是单调类
+    3. 单调类定理：若 $A$ 为域，则 $\sigma(A)=M(A)$
 
-2. $\pi$ 类：设 $\mathscr{C}$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若当 $A, B \in \mathscr{C}$ 时必有 $A B \in \mathscr{C}$，则称 $\mathscr{C}$ 为 $\Omega$ 上的 $\pi$ 类
+2. $\pi$ 类：设 $C$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若当 $A, B \in C$ 时必有 $A B \in C$，则称 $C$ 为 $\Omega$ 上的 $\pi$ 类
 
-    $\lambda$ 类：设 $\mathscr{D}$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若它满足
+    $\lambda$ 类：设 $D$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若它满足
 
-    1. 当 $A \in \mathscr{D}$ 时必有 $A' \in \mathscr{D}$
-    2. 当 $A, B \in \mathscr{D}$ 且 $A B=\varnothing$ 时，必有 $A+B \in \mathscr{D}$
-    3. 对递增序列 $\left\{A_{n}, n \geqslant 1\right\} \subseteq \mathscr{D}$，必有 ${\displaystyle \lim _{n \to \infty} A_{n} \in \mathscr{D}}$
+    1. 当 $A \in D$ 时必有 $A' \in D$
+    2. 当 $A, B \in D$ 且 $A B=\varnothing$ 时，必有 $A+B \in D$
+    3. 对递增序列 $\left\{A_{n}, n \geqslant 1\right\} \subseteq D$，必有 ${\displaystyle \lim _{n \to \infty} A_{n} \in D}$
 
-    则称 $\mathscr{D}$ 为 $\Omega$ 上的 $\lambda$ 类
+    则称 $D$ 为 $\Omega$ 上的 $\lambda$ 类
 
     1. $F$ 为 $\sigma$ 域的充要条件是它同时为 $\lambda$ 类和 $\pi$ 类
-    2. 对 $\mathcal{P}(\Omega)$ 的任一子类 $\mathscr{C}$，必存在包含 $\mathscr{C}$ 的最小 $\lambda$ 类 $\lambda(\mathscr{C})$
-    3. 若 $\mathscr{C}$ 为 $\pi$ 类，则 $\lambda(\mathscr{C})=\sigma(\mathscr{C})$
-    4. 若 $\mathscr{D}$ 是 $\lambda$ 类，又 $\mathscr{C}$ 为 $\pi$ 类，$\mathscr{D} \supseteq \mathscr{C}$，则 $\mathscr{D} \supseteq \sigma(\mathscr{C})$
+    2. 对 $\mathcal{P}(\Omega)$ 的任一子类 $C$，必存在包含 $C$ 的最小 $\lambda$ 类 $\lambda(C)$
+    3. 若 $C$ 为 $\pi$ 类，则 $\lambda(C)=\sigma(C)$
+    4. 若 $D$ 是 $\lambda$ 类，又 $C$ 为 $\pi$ 类，$D \supseteq C$，则 $D \supseteq \sigma(C)$
 
-3. $\mathscr{L}$ 类：设 $\mathscr{L}$ 为 $\Omega$ 上的函数族，当 $X \in \mathscr{L}$ 时，$X^{+}, X^{-} \in \mathscr{L}$．若 $\Omega$ 上的函数族 $\mathscr{H}$ 有
-    1. $1 \in \mathscr{H}$
-    2. $\mathscr{H}$ 是线性空间
-    3. 设 $X_{n} \geqslant 0, X_{n} \in \mathscr{H}, X_{n} \uparrow X$ 且 $X$ 有界或 $X \in \mathscr{L}$，则 $X \in \mathscr{H}$
+3. $L$ 类：设 $L$ 为 $\Omega$ 上的函数族，当 $X \in L$ 时，$X^{+}, X^{-} \in L$．若 $\Omega$ 上的函数族 $H$ 有
+    1. $1 \in H$
+    2. $H$ 是线性空间
+    3. 设 $X_{n} \geqslant 0, X_{n} \in H, X_{n} \uparrow X$ 且 $X$ 有界或 $X \in L$，则 $X \in H$
 
-    则称其为 $\mathscr{H}$ 上的 $\mathscr{L}$ 类．若 $\pi$ 类 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，又 $\mathscr{H}$ 为 $\Omega$ 上的一个 $\mathscr{L}$ 类，且 $\mathscr{H} \supseteq \left\{I_{A}, A \in \mathscr{C}\right\}$，则 $\mathscr{H}$ 包含 $\Omega$ 上一切属于 $\mathscr{L}$ 的 $\sigma(\mathscr{C})$ 可测函数
+    则称其为 $H$ 上的 $L$ 类．若 $\pi$ 类 $C \subseteq \mathcal{P}(\Omega)$，又 $H$ 为 $\Omega$ 上的一个 $L$ 类，且 $H \supseteq \left\{I_{A}, A \in C\right\}$，则 $H$ 包含 $\Omega$ 上一切属于 $L$ 的 $\sigma(C)$ 可测函数
