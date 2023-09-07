@@ -30,8 +30,11 @@
         其中 $\mathscr{B}_{E_{i}}=\sigma\left(\mathscr{T}_{i}\right), i \in I, \mathscr{B}_{E}=\sigma(\mathscr{T})$．特别地，有 $\left(\mathbf{R}^{n}, \mathscr{B}^{n}\right)=\small \underbrace{\normalsize (\mathbf{R}, \mathscr{B}) \times (\mathbf{R}, \mathscr{B}) \times \cdots \times(\mathbf{R}, \mathscr{B})}_{\normalsize n} \normalsize$，其中 $\mathscr{B}^{n}$ 也可看成为由可测矩形或由有理端点开矩形全体生成的 $\sigma$ 域
 
 ### 1.1.2 可测映射
-1. 可测映射
-2. 可测函数
+1. 可测映射：设 $\left(\Omega_{1}, \mathscr{F}_{1}\right),\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 为可测空间，$f: \Omega_{1} \to \Omega_{2}$．若对每个 $A \in \mathscr{F}_{2}, f^{-1}[A] \in \mathscr{F}_{1}$，即 $f^{-1}\left[\mathscr{F}_{2}\right] \subseteq \mathscr{F}_{1}$，则称 $f$ 为 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 到 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 的可测映射，记为 $f \in \mathscr{F}_{1} / \mathscr{F}_{2}$，或在 $\mathscr{F}_{2}$ 不引起混淆时简记为 $f \in \mathscr{F}_{1}$．记 $\sigma(f)=\sigma_{\Omega_{1}}(f)=f^{-1}\left[\mathscr{F}_{2}\right]$，称它为由 $f$ 生成的 $\sigma$ 域
+    1. 设 $f$ 为 $\Omega_{1}$ 到 $\Omega_{2}$ 的映射，$\mathscr{C}$ 为 $\mathcal{P}\left(\Omega_{2}\right)$ 的子类，则 $\sigma_{\Omega_{1}}\left(f^{-1}[\mathscr{C}]\right)=f^{-1}\left[\sigma_{\Omega_{2}}(\mathscr{C})\right]$
+    2. 若 $\left(\Omega_{1}, \mathscr{F}_{1}\right),\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 为可测空间，$\mathscr{C} \subseteq \mathcal{P}\left(\Omega_{2}\right)$，又 $\mathscr{F}_{2}=\sigma(\mathscr{C})$，则 $f \in \mathscr{F}_{1} / \mathscr{F}_{2}$ 的充要条件是 $f^{-1}[\mathscr{C}] \subseteq \mathscr{F}_{1}$
+    3. 设 $\left(\Omega_{i}, \mathscr{F}_{i}\right) \ (i=1,2,3)$ 为可测空间，若 $g$ 为 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 到 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 的可测映射，又 $f$ 为 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 到 $\left(\Omega_{3}, \mathscr{F}_{3}\right)$ 的可测映射，则 $f \circ g$ 是 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 到 $\left(\Omega_{3}, \mathscr{F}_{3}\right)$ 的可测映射
+2. 可测函数：由 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 或 $\left(\hat{\mathbf{R}}, \mathscr{B}_{\hat{\mathbf{R}}}\right)$ 的可测映射称为可测函数
 
 ### 1.1.3 测度空间
 1. 测度的性质
