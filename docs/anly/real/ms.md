@@ -27,7 +27,7 @@
         1. $\mathscr{B}_{E} ={\displaystyle \prod_{i \in I}} \mathscr{B}_{E_{i}}$
         2. $\left(E, \mathscr{B}_{E}\right) ={\displaystyle \prod_{i \in I}}\left(E_{i}, \mathscr{B}_{E_{i}}\right)$
 
-        其中 $\mathscr{B}_{E_{i}}=\sigma\left(\mathscr{T}_{i}\right), i \in I, \mathscr{B}_{E}=\sigma(\mathscr{T})$
+        其中 $\mathscr{B}_{E_{i}}=\sigma\left(\mathscr{T}_{i}\right), i \in I, \mathscr{B}_{E}=\sigma(\mathscr{T})$．特别地，有 $\left(\mathbf{R}^{n}, \mathscr{B}^{n}\right)=\small \underbrace{\normalsize (\mathbf{R}, \mathscr{B}) \times (\mathbf{R}, \mathscr{B}) \times \cdots \times(\mathbf{R}, \mathscr{B})}_{\normalsize n} \normalsize$，其中 $\mathscr{B}^{n}$ 也可看成为由可测矩形或由有理端点开矩形全体生成的 $\sigma$ 域
 
 ### 1.1.2 可测映射
 1. 可测映射
