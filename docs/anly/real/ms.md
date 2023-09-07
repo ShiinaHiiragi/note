@@ -6,12 +6,28 @@
 2. 乘积空间：若 $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，称 $\Omega=\left\{\left(\omega_{1}, \cdots, \omega_{n}\right): \omega_{i} \in \Omega_{i}, 1 \leqslant i \leqslant n\right\}$ 为乘积空间，记为 ${\displaystyle \Omega=\prod_{i} \Omega_{i}}$
     1. 矩形集：对 $A_{i} \subseteq \Omega_{i}, 1 \leqslant i \leqslant n$，集合 $A=\left\{\left(\omega_{1}, \cdots, \omega_{n}\right): \omega_{i} \in A_{i}, 1 \leqslant i \leqslant n\right\}$ 称为矩形集，记为 ${\displaystyle \prod_{i=1}^{n} A_i}$．特别地，当每个 $A_i \in \mathscr{F}_i$ 时，${\displaystyle A = \prod_{i=1}^{n} A_i}$ 又称为可测矩形
     2. $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，${\displaystyle \Omega=\prod_{i=1}^{n}} \Omega_{i}$，$\mathscr{C}$ 表示 $\Omega$ 中可测矩形全体，则 $\mathscr{C}$ 是一个半域，而互不相交的可测矩形的有限并全体 $\mathscr{A}$ 就是一个域
+
+    若 $\left\{\left(\Omega_{\alpha}, \mathscr{F}_{\alpha}\right), \alpha \in J\right\}$ 为一族可测空间，称 $\Omega=\left\{\left(\omega_{\alpha}, \alpha \in J\right): \omega_{\alpha} \in \Omega_{\alpha}, \alpha \in J\right\}$ 为 $\left(\omega_{\alpha}, \alpha \in J\right)$ 的乘积空间，记为 $\Omega={\displaystyle \prod_{\alpha \in J}} \Omega_{\alpha}$
+
+    1. 若 $I$ 为 $J$ 的有限子集，对 $A_{\alpha} \in \mathscr{F}_{\alpha}, \alpha \in I$ 有 $B=\left\{\left(\omega_{\alpha}, \alpha \in J\right) \in \Omega: \omega_{\alpha} \in A_{\alpha}, \alpha \in I\right\}$．称 $B$ 为有限维基底可测矩形柱，简称有限维矩形柱，${\displaystyle \prod_{\alpha \in I}} A_{\alpha}$ 称为 $B$ 的底
+    2. 若 $\mathscr{C}=\left\{B: B \textsf{ 为以 } {\displaystyle \prod_{\alpha \in I}} A_{\alpha} \textsf{ 为底的矩形柱，} A_{\alpha} \in \mathscr{F}_{\alpha}, \alpha \in \textsf{有限 } I \subseteq J\right\}$，其中 $I$ 取遍 $J$ 的一切有限子集，即 $\mathscr{C}$ 表示有限维基底可测矩形柱全体，则 $\mathscr{C}$ 是半域
+
 3. 乘积可测空间：若 $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，$\mathscr{C}$ 表示 $\Omega={\displaystyle \prod_{i=1}^{n}} \Omega_{i}$ 中可测矩形全体．在 $\Omega$ 上，$\mathscr{F} = \sigma(\mathscr{C})$ 称为乘积 $\sigma$ 域，并记 $\mathscr{F} = {\displaystyle \prod_{i=1}^{n}} \mathscr{F}_i$．又 $(\Omega, \mathscr{F})$ 称为乘积可测空间，记为 $(\Omega, \mathscr{F})={\displaystyle \prod_{i=1}^{n}}\left(\Omega_{i}, \mathscr{F}_{i}\right)$
     1. 设 $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，$1 \leqslant m \leqslant n$
         1. ${\displaystyle \prod_{i=1}^{n}} \Omega_{i}=\left({\displaystyle \prod_{i=1}^{m}} \Omega_{i}\right) \times\left({\displaystyle \prod_{i=m+1}^{n}} \Omega_{i}\right)$
         2. ${\displaystyle \prod_{i=1}^{n}} \mathscr{F}_{i}=\left({\displaystyle \prod_{i=1}^{m}} \mathscr{F}_{i}\right) \times\left({\displaystyle \prod_{i=m+1}^{n}} \mathscr{F}_{i}\right)$
         3. ${\displaystyle \prod_{i=1}^{n}}\left(\Omega_{i}, \mathscr{F}_{i}\right)=\left({\displaystyle \prod_{i=1}^{m}}\left(\Omega_{i}, \mathscr{F}_{i}\right)\right) \times\left({\displaystyle \prod_{i=m+1}^{n}}\left(\Omega_{i}, \mathscr{F}_{i}\right)\right)$
     2. 若 $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，$(\Omega, \mathscr{F})={\displaystyle \prod_{i=1}^{n}} \left(\Omega_{i}, \mathscr{F}_{i}\right)$．则对任一 $A \in \mathscr{F}$ 及任意固定的 $\left(\omega_{1}, \cdots, \omega_{m}\right)$，截口集 $A\left(\omega_{1}, \cdots, \omega_{m}\right)=\left\{\left(\omega_{m+1}, \cdots, \omega_{n}\right):\left(\omega_{1}, \cdots, \omega_{n}\right) \in A\right\} \in {\displaystyle \prod_{i=m+1}^{n}} \mathscr{F}_{i}$
+
+    在 $\Omega={\displaystyle \prod_{\alpha \in J}} \Omega_{\alpha}$ 上有 $\mathscr{C}=\left\{B: B \textsf{ 为以 } {\displaystyle \prod_{\alpha \in I}} A_{\alpha} \textsf{ 为底的矩形柱，} A_{\alpha} \in \mathscr{F}_{\alpha}, \alpha \in \textsf{有限 } I \subseteq J\right\}$，称 $\mathscr{F}=\sigma(\mathscr{C})$ 为 $\left\{\mathscr{F}_{\alpha}, \alpha \in J\right\}$ 的乘积 $\sigma$ 域，记为 $\mathscr{F}={\displaystyle \prod_{\alpha \in J}} \mathscr{F}_{\alpha}$．而 $(\Omega, \mathscr{F})$ 称为乘积可测空间，记为 $(\Omega, \mathscr{F}) ={\displaystyle \prod_{\alpha \in J}} \left(\Omega_{\alpha}, \mathscr{F}_{\alpha}\right)$
+
+    1. 在 $\Omega$ 中，若 $I$ 为 $J$ 的任意子集，$A \subseteq \Omega_{I}={\displaystyle \prod_{\alpha \in I}} \Omega_{\alpha}$，则 $B=A \times {\displaystyle \prod_{\alpha \in J - I}} \Omega_{\alpha}=\left\{\left(\omega_{\alpha}, \alpha \in J\right) \in \Omega:\left(\omega_{\alpha}, \alpha \in I\right) \in A\right\}$ 称为 $\Omega$ 中的柱集，$A$ 称为 $B$ 的底．当 $A \in {\displaystyle \prod_{\alpha \in I}} \mathscr{F}_{\alpha}$，柱集 $B$ 称为可测的．特别地，当 $I$ 为有限指标集时，$B$ 称为有限维基底可测柱集；当 $I$ 为可数指标集时，$B$ 称为可数维基底可测柱集，凡分别简称为有限维柱集或可数维柱集
+    2. 若 $\left\{\left(\Omega_{\alpha}, \mathscr{F}_{\alpha}\right), \alpha \in J\right\}$ 为一族可测空间，$J$ 为无限指标集，$(\Omega, \mathscr{F})= {\displaystyle \prod_{\alpha \in J}} \left(\Omega_{\alpha}, \mathscr{F} \alpha\right)$，又 $\mathscr{G}$ 表示 $\Omega$ 中可数维基底可测柱集全体，则 $\mathscr{F}=\mathscr{G}$
+    3. 若 $\left\{\left(E_{i}, \mathscr{T}_{i}\right), i \in I\right\}$ 为至多可数个具有可数基的拓扑空间，$(E, \mathscr{T})={\displaystyle \prod_{i \in I}}\left(E_{i}, \mathscr{T}_{i}\right)$ 为乘积拓扑空间，则有
+        1. $\mathscr{B}_{E} ={\displaystyle \prod_{i \in I}} \mathscr{B}_{E_{i}}$
+        2. $\left(E, \mathscr{B}_{E}\right) ={\displaystyle \prod_{i \in I}}\left(E_{i}, \mathscr{B}_{E_{i}}\right)$
+
+        其中 $\mathscr{B}_{E_{i}}=\sigma\left(\mathscr{T}_{i}\right), i \in I, \mathscr{B}_{E}=\sigma(\mathscr{T})$
 
 ### 1.1.2 可测映射
 1. 可测映射

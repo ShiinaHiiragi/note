@@ -64,7 +64,7 @@
     则称 $\mathscr{C}$ 为 $\Omega$ 上的 $\sigma$ 环
 
     1. $\mathscr{F}$ 为 $\sigma$ 域的充要条件是 $\mathscr{F}$ 为一个包含 $\Omega$ 的 $\sigma$ 环
-    2. 在 $\sigma$ 环中，对可列集合序列的交集、上限、下限运算也是封闭的
+    2. 在 $\sigma$ 环中，对可数集合序列的交集、上限、下限运算也是封闭的
 
 ### 2.2.2 域
 1. 域：设 $\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in \mathscr{A}$ 蕴含 $A' \in \mathscr{A}$ 与 $A \cup B \in \mathscr{A}$，则称 $\mathscr{A}$ 为 $\Omega$ 上的域或代数

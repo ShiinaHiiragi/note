@@ -147,8 +147,8 @@ nav:
     - 四、公理集合论:
       - 1 数学基础: logic/set/zfc.md
       - 2 集合代数: logic/set/alg.md
-      - 2 序数与基数: logic/set/ord.md
-      - 3 连续统假设: logic/set/cont.md
+      - 3 序数与基数: logic/set/ord.md
+      - 4 连续统假设: logic/set/cont.md
   - 代数学:
     - 一、初等代数:
       - 1 解析式与初等函数: alg/elem/form.md
