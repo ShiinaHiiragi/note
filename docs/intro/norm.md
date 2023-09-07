@@ -14,12 +14,27 @@
     | 符号学：原理与推演 |         赵毅衡         |  二   |
     |      微分几何      |      彭家贵、陈卿      |  五   |
     |   现代概率论基础   |         汪嘉冈         |  七   |
+    |     概率论基础     |         李贤平         |  七   |
     |      随机过程      |     方兆本、缪柏其     |  七   |
     |    高等数理统计    | 茆诗松、王静龙、濮晓龙 |  七   |
 
     </div>
 
 2. 第二阶段
+
+    <div class="text-table">
+
+    |      标题      |              作者              | 分类  |
+    | :------------: | :----------------------------: | :---: |
+    |  简明抽象代数  |          顾沛、张少强          |  四   |
+    |   复变函数论   |             钟玉泉             |  六   |
+    |    泛函分析    | 程其襄、张奠宙、胡善文、薛以峰 |  六   |
+    | 信息论基础教程 |             翟明岳             |  七   |
+    | 代数编码与密码 |         许以超、马松雅         |  七   |
+
+    </div>
+
+3. 第三阶段
 
     <div class="text-table">
 
@@ -33,31 +48,17 @@
 
     </div>
 
-3. 第三阶段
-
-    <div class="text-table">
-
-    |                     标题                      |              作者              | 分类  |
-    | :-------------------------------------------: | :----------------------------: | :---: |
-    |                  Lean Manual                  |       Microsoft Research       |  一   |
-    |               逆数学と 2 階算術               |            田中一之            |  三   |
-    |                   泛函分析                    | 程其襄、张奠宙、胡善文、薛以峰 |  六   |
-    | Type Theory and Formal Proof: an Introduction | Rob Nederpelt、Herman Geuvers  |  八   |
-    |             自然语言形式理论研究              |         蔡曙山、邹崇理         |  八   |
-
-    </div>
-
 4. 第四阶段
 
     <div class="text-table">
 
-    |                              标题                              |      作者      | 分类  |
-    | :------------------------------------------------------------: | :------------: | :---: |
-    |                            近世代数                            |     丘维声     |  四   |
-    |                           复变函数论                           |     钟玉泉     |  六   |
-    |                         信息论基础教程                         |     翟明岳     |  七   |
-    |                         代数编码与密码                         | 许以超、马松雅 |  七   |
-    | The Formal Semantics of Programming Languages: An Introduction | Glynn Winskel  |  八   |
+    |                              标题                              |             作者              | 分类  |
+    | :------------------------------------------------------------: | :---------------------------: | :---: |
+    |                          Lean Manual                           |      Microsoft Research       |  一   |
+    |                             范畴论                             |             贺伟              |  四   |
+    |         Type Theory and Formal Proof: an Introduction          | Rob Nederpelt、Herman Geuvers |  八   |
+    | The Formal Semantics of Programming Languages: An Introduction |         Glynn Winskel         |  八   |
+    |                      自然语言形式理论研究                      |        蔡曙山、邹崇理         |  八   |
 
     </div>
 
@@ -69,7 +70,7 @@
     | :----------------------------------------------------------------------: | :--------------: | :---: |
     |          Ordinal Analysis with an Introduction to Proof Theory           |  Toshiyasu Arai  |  三   |
     | The Higher Infinite: Large Cardinals in Set Theory from Their Beginnings | Akihiro Kanamori |  三   |
-    |                                  范畴论                                  |       贺伟       |  四   |
+    |                            逆数学と 2 階算術                             |     田中一之     |  三   |
     |                               代数拓扑讲义                               |      周建伟      |  五   |
     |                              流形与几何初步                              |      梅加强      |  五   |
 
