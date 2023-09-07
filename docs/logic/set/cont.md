@@ -1,6 +1,6 @@
-# 3 连续统假设
+# 4 连续统假设
 
-## 3.1 集宇宙
+## 4.1 集宇宙
 1. 良基集合类 $\mathbf{WF} = {\displaystyle \bigcup_{\alpha \in \mathrm{On}} V_{\alpha}}$，其中 $V_{\alpha}$ 定义如下：
     1. $V_{0}=\varnothing$
     2. $V_{\alpha+1}=\mathcal{P}\left(V_{\alpha}\right)$
@@ -13,6 +13,6 @@
     1. $\mathbf{GCH}$ 蕴含 $\mathbf{SCH}$
     2. 奇异基数假设的早期形式 $\mathbf{SCH}'$：如果 $\kappa$ 是强极限的奇异基数，则 $2^{\kappa}=\kappa^{+}$．显然 $\mathbf{SCH}$ 蕴含 $\mathbf{SCH}'$
 
-## 3.2 可构成集
+## 4.2 可构成集
 
-## 3.3 力迫法
+## 4.3 力迫法
