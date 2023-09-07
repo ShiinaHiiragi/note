@@ -441,7 +441,7 @@ const [plot, total] = refList.reduce(([plot, total], item) => {
         window.todo.push({
             title: item.title,
             percentage: item.percent,
-            remain: item.total - item.plot
+            remains: item.total - item.plot
         })
     }
     plot += item.plot;
@@ -452,6 +452,11 @@ const progress = (100 * plot / total);
 const progressBar = document.querySelector(".progress-percentage");
 progressBar.innerText = progress.toFixed(2) + "%";
 progressBar.style.width = progress.toFixed(0) + "%";
+
+console.log(
+    "%cInput `todo` to view unfinished references.",
+    "color: #C41C1C;"
+)
 
 const renderRef = (query, filterCond) => {
 refList
