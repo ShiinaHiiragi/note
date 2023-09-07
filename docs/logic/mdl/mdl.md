@@ -89,7 +89,7 @@
     2. 公理：设 $T$ 是一个 $S-$理论，如果 $\Sigma \subseteq T$ 且对每个 $\alpha \in T$ 都有 $\Sigma \vDash \alpha$，则称 $\Sigma$ 是 $T$ 的公理
     3. 完备理论：如果对每个 $S-$语句 $\alpha$ 都有 $\alpha \in \Sigma$ 或 $\neg \alpha \in \Sigma$，则称 $\Sigma$ 是完备的 $S-$理论
 3. 初等等价：设 $\mathfrak M$ 与 $\mathfrak N$ 是两个 $S-$结构，如果 $\mathrm{Th}(\mathfrak M) = \mathrm{Th}(\mathfrak N)$，则称 $\mathfrak M$ 与 $\mathfrak N$ 初等等价，记作 $\mathfrak M \equiv \mathfrak N$
-    1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathrm{Th}(\mathcal K) = \{\alpha \mid \alpha$ 是 $S-$语句且对任意 $\mathfrak M \in \mathcal K$ 都有 $\mathfrak M \vDash \alpha\}$．若 $\mathcal K = \{\mathcal M\}$，则将 $\mathrm{Th}(\mathcal K)$ 记作 $\mathrm{Th}(\mathfrak M)$，并称 $\mathrm{Th}(\mathfrak M)$ 为 $\mathfrak M$ 的理论，易知 $\mathrm{Th}(\mathfrak M)$ 是完备的 $S-$理论
+    1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathrm{Th}(\mathcal K) = \{\alpha \mid \alpha$ 是 $S-$语句且对任意 $\mathfrak M \in \mathcal K$ 都有 $\mathfrak M \vDash \alpha\}$．若 $\mathcal K = \{\mathfrak M\}$，则将 $\mathrm{Th}(\mathcal K)$ 记作 $\mathrm{Th}(\mathfrak M)$，并称 $\mathrm{Th}(\mathfrak M)$ 为 $\mathfrak M$ 的理论，易知 $\mathrm{Th}(\mathfrak M)$ 是完备的 $S-$理论
     2. 一个 $S-$理论 $T$ 是完备的当且仅当 $T$ 的模型相互初等等价
 4. 初等类：如果 $T$ 是 $S-$理论且 $\mathcal K = \{\mathfrak M \mid \mathfrak M$ 是 $S-$结构且 $\mathfrak M \vDash T\}$，则称 $\mathcal K$ 是一个初等类，记作 $\mathcal K = \mathrm{Mod}(T)$
     1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathcal K$ 是初等类当且仅当 $\mathcal K = \{\mathfrak M \mid \mathfrak M \vDash \mathrm{Th}(\mathcal K)\}$
@@ -131,9 +131,10 @@
     则称 $V$ 是 $F$ 上的线性空间
 
     !!! note "代数系统"
-        模型的论域 $S$ 与一个或若干个定义在 $S$ 上的函数符号 $Q_1, Q_2, \cdots, Q_k$ 构成一个代数系统 $\{S; Q_1, Q_2, \cdots, Q_k\}$
+        代数学通常将模型的论域 $A$ 与定义在 $A$ 上的函数符号 $f_1, f_2, \cdots, f_k$ 构成集合 $\{A; f_1, f_2, \cdots, f_k\}$ 称作代数系统
 
-        1. 称论域 $S$ 为该系统的载集合，或简称载集
-        2. 运算符对集合 $S$ 封闭，即对任意 $\Omega(Q_i) = n, 1 \leqslant i \leqslant k$，都有 $(a_1, a_2, \cdots, a_n) \in A^{n}$ 蕴含 $Q_i(a_1, a_2, \cdots, a_n) \in A^{n}$
+        1. 称论域 $A$ 为该系统的载集合，或简称载集
+        2. 运算符对集合 $A$ 封闭，即对任意 $\Omega(f_i) = n, 1 \leqslant i \leqslant k$，都有 $(a_1, a_2, \cdots, a_n) \in A^{n}$ 蕴含 $f_i(a_1, a_2, \cdots, a_n) \in A^{n}$
+        3. 模型的同态与同构定义对代数系统仍有效
 
 ## 1.3 紧致性定理

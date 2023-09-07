@@ -359,7 +359,7 @@ const refList = [
         title: "离散数学",
         type: "M",
         year: 2011,
-        page: [2, 141],
+        page: [2, 221],
         press: "人民邮电出版社",
         locate: "北京"
     },
