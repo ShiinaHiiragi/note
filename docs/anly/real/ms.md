@@ -34,7 +34,10 @@
     1. 设 $f$ 为 $\Omega_{1}$ 到 $\Omega_{2}$ 的映射，$\mathscr{C}$ 为 $\mathcal{P}\left(\Omega_{2}\right)$ 的子类，则 $\sigma_{\Omega_{1}}\left(f^{-1}[\mathscr{C}]\right)=f^{-1}\left[\sigma_{\Omega_{2}}(\mathscr{C})\right]$
     2. 若 $\left(\Omega_{1}, \mathscr{F}_{1}\right),\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 为可测空间，$\mathscr{C} \subseteq \mathcal{P}\left(\Omega_{2}\right)$，又 $\mathscr{F}_{2}=\sigma(\mathscr{C})$，则 $f \in \mathscr{F}_{1} / \mathscr{F}_{2}$ 的充要条件是 $f^{-1}[\mathscr{C}] \subseteq \mathscr{F}_{1}$
     3. 设 $\left(\Omega_{i}, \mathscr{F}_{i}\right) \ (i=1,2,3)$ 为可测空间，若 $g$ 为 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 到 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 的可测映射，又 $f$ 为 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 到 $\left(\Omega_{3}, \mathscr{F}_{3}\right)$ 的可测映射，则 $f \circ g$ 是 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 到 $\left(\Omega_{3}, \mathscr{F}_{3}\right)$ 的可测映射
-2. 可测函数：由 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 或 $\left(\hat{\mathbf{R}}, \mathscr{B}_{\hat{\mathbf{R}}}\right)$ 的可测映射称为可测函数．若 $\mathscr{F}_{1}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，且 $f \in \mathscr{F}_{1} / \mathscr{B}_{\hat{\mathbf{R}}}$，则称 $f$ 为 $\mathscr{F}_{1}$ 可测，记为 $f \in \mathscr{F}_{1}$
+2. 可测函数：由 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 或 $\left(\hat{\mathbf{R}}, \mathscr{B}_{\hat{\mathbf{R}}}\right)$ 的可测映射称为可测函数
+    1. 若 $\mathscr{F}_{1}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，且 $f \in \mathscr{F}_{1} / \mathscr{B}_{\hat{\mathbf{R}}}$，则称 $f$ 为 $\mathscr{F}_{1}$ 可测，记为 $f \in \mathscr{F}_{1}$
+    2. 若 $f$ 为 $\left(\mathbf{R}^{n}, \mathscr{B}^{n}\right)$ 到 $(\mathbf{R}, \mathscr{B})$ 的可测函数，则称 $f$ 为 $n$ 元 $\text{Borel}$ 可测函数或简称 $\text{Borel}$ 函数．可数维乘积空间 $\left(\mathbf{R}^{\infty}, \mathscr{B}^{\infty}\right)$ 到 $(\mathbf{R}, \mathscr{B})$ 的可测函数也称为 $\text{Borel}$ 函数
+    3. 若 $(\Omega, \mathscr{F})=\left(\Omega_{1}, \mathscr{F}_{1}\right) \times\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 为乘积空间，$f$ 为 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 的可测函数，则对 $\forall \omega_{1}^{0} \in \Omega_{1}, g\left(\omega_{2}\right)=f\left(\omega_{1}^{0}, \omega_{2}\right)$ 是 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 的可测函数
 
 ### 1.1.3 测度空间
 1. 测度的性质
