@@ -2,6 +2,26 @@
 
 ## 1.1 概率
 ### 1.1.1 事件
+1. 概率可测空间：设 $(\Omega, \mathscr{F})$ 为可测空间，对其赋予下述含义
+    1. $\Omega$ 表示某一试验中可能结果全体，称 $\Omega$ 为基本空间，$\Omega$ 的元素 $\omega$ 为基本事件
+    2. $\mathscr{F}$ 表示随机事件全体，称为事件 $\sigma$ 域
+
+    则称 $(\Omega, \mathscr{F})$ 为概率可测空间
+
+2. 事件：设 $(\Omega, \mathscr{F})$ 为概率可测空间，则 $\mathscr{F}$ 中任一元素 $A$ 都可称为随机事件或事件
+    1. 特殊事件
+        1. 设 $A \in \mathscr{F}$，则定义 $\widetilde{A}$ 为「在一次试验中 $A$ 含有的任一基本事件出现」
+        2. $\Omega$ 作为 $\mathscr{F}$ 的元素称为必然事件，$\varnothing$ 称为不可能事件
+    2. 事件的运算
+        1. 事件 $A'$ 称为事件 $A$ 的逆事件，表示「$A$ 不发生」的事件
+        2. 事件 $A \cup B$ 或 $\bigcup_{n} A_{n}$ 分别称为事件 $A, B$ 或 $\left\{A_{n}, n \geqslant 1\right\}$ 的并，分别表示 $A, B$ 或 $\left\{A_{n}\right\}$ 中至少有一个发生的事件
+
+            事件 $A \cap B$ 或 $\bigcap_{n} A_{n}$ 分别称为事件 $A, B$ 或 $\left\{A_{n}, n \geqslant 1\right\}$ 的交，表示同时发生的事件．$A \cap B$ 也可记作 $AB$
+
+        3. 若 $A B=\varnothing$，则称事件 $A, B$ 是互不相容的，此时将 $A \cup B$ 记作 $A + B$
+        4. 事件 ${\displaystyle \varlimsup_{n \to \infty} A_{n}}$ 称为 $\left\{A_{n}\right\}$ 的上限事件，表示 $\left\{A_{n}\right\}$ 中有无限个同时发生的事件，也记作 $\left\{A_{n}\right.$ i.o. ${\displaystyle \}=\varlimsup_{n \to \infty} A_{n}}$
+
+            事件 ${\displaystyle \varliminf_{n \to \infty} A_{n}}$ 称为 $\left\{A_{n}\right\}$ 的下限事件，表示 $\left\{A_{n}\right\}$ 中除有限个外同时发生的事件
 
 ### 1.1.2 概率
 
