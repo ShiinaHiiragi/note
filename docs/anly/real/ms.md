@@ -67,7 +67,7 @@
 
 2. 凡 $\text{Borel}$ 集都是 $\text{Lesbegue}$ 可测集
     1. 设 $\Sigma$ 是 $\hat{\mathbf{R}}^{n}$ 的一个子集族，则称所有包含 $\Sigma$ 的 $\sigma$ 域的交集（即包含 $\Sigma$ 的最小 $\sigma$ 域）为 $\Sigma$ 产生的 $\sigma$ 域
-    2. 由 $\hat{\mathbf{R}}^{n}$ 中全体开集组成的子集类生成的 $\sigma$ 域记为 $\mathscr{B}_n$，称为 $\text{Borel}$ 域．当不至于混淆时可简记为 $\mathscr{B}$
+    2. 由 $\hat{\mathbf{R}}^{n}$ 中全体开集组成的子集族生成的 $\sigma$ 域记为 $\mathscr{B}_n$，称为 $\text{Borel}$ 域．当不至于混淆时可简记为 $\mathscr{B}$
     3. 设集合 $G$ 可表示为一列开集 $\left\{G_{i}\right\}$ 之交集 ${\displaystyle G=\bigcap_{i=1}^{\infty} G_{i}}$，则称 $G$ 为 $G_{\delta}$ 型集
 
         设集合 $F$ 可表示为一列闭集 $\left\{F_{i}\right\}$ 之并集 ${\displaystyle F=\bigcup_{i=1}^{\infty} F_{i}}$，则称 $F$ 为 $F_{\sigma}$ 型集
