@@ -1,50 +1,5 @@
 # 1 测度论
 
-## 1.1 集合代数
-### 1.1.1 环与域
-1. 环：设 $\mathscr{R} \subseteq \mathcal{P}(\Omega)$ 是一个非空集类，若 $A, B \in \mathscr{R}$ 蕴含 $A - B \in \mathscr{R}$ 与 $A \cup B \in \mathscr{R}$，则称 $\mathscr{R}$ 为 $\Omega$ 上的环
-    - $\sigma$ 环：设 $\mathscr{C}$ 是 $\mathcal{P}(\Omega)$ 的非空子集类，若有
-        1. 若 $A \in \mathscr{C}, B \in \mathscr{C}$，则 $A - B \in \mathscr{C}$
-        2. 若对 $n \geqslant 1, A_{n} \in \mathscr{C}$，则 ${\displaystyle \bigcup_{n=1}^{\infty} A_{n} \in \mathscr{C}}$
-
-        则称 $\mathscr{C}$ 为 $\Omega$ 上的 $\sigma$ 环
-
-        1. $\mathscr{F}$ 为 $\sigma$ 域的充要条件是 $\mathscr{F}$ 为一个包含 $\Omega$ 的 $\sigma$ 环
-        2. 在 $\sigma$ 环中，对可列集合序列的交集、上限、下限运算也是封闭的
-
-2. 域：设 $\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 是一个非空集类，若 $A, B \in \mathscr{A}$ 蕴含 $A' \in \mathscr{A}$ 与 $A \cup B \in \mathscr{A}$，则称 $\mathscr{A}$ 为 $\Omega$ 上的域或代数
-    1. 设 $\mathscr{A}$ 是域，则有
-        1. $\Omega \in \mathscr{A}, \varnothing \in \mathscr{A}$
-        2. 若 $A, B \in \mathscr{A}$，则 $A B \in \mathscr{A}, A - B \in \mathscr{A}, A \triangle B \in \mathscr{A}$
-        3. 若 $A_{j} \in \mathscr{A}, 1 \leqslant j \leqslant n$，则 ${\displaystyle \bigcup_{j=1}^{n} A_{j} \in \mathscr{A}, \bigcap_{j=1}^{n} A_{j} \in \mathscr{A}}$
-    2. 若 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，则必存在包含 $\mathscr{C}$ 的最小域 $\mathscr{A}$．即 $\mathscr{A}$ 为域，$\mathscr{A} \supseteq \mathscr{C}$ 且对任一域 $\mathscr{A}^{\prime} \supseteq \mathscr{C}$，必有 $\mathscr{A} \subseteq \mathscr{A}^{\prime}$
-        1. 对任一集类 $\mathscr{C}$，包含 $\mathscr{C}$ 的最小域称为由 $\mathscr{C}$ 张成的域，记为 $\mathscr{A}(\mathscr{C})$
-        2. $\Omega$ 中由单点集全体张成的域就是由 $\Omega$ 中有限集及其余集全体构成的集类
-    3. 半域：设 $\mathscr{S}$ 是 $\mathcal{P}(\Omega)$ 的非空子集类，若有
-        1. $\varnothing, \Omega \in \mathscr{S}$
-        2. 当 $A, B \in \mathscr{S}$，必有 $A \cap B \in \mathscr{S}$
-        3. 若 $A \in \mathscr{S}$，则 $A'$ 可表为 $\mathscr{S}$ 中两两互不相交集合的有限并
-
-        则称 $\mathscr{S}$ 为 $\Omega$ 上的半域或半代数
-
-        1. 域必为半域
-        2. 若 $\mathscr{S}$ 为半域，则 ${\displaystyle \mathscr{A}=\left\{A=\sum_{i \in I} S_{i}:\left\{S_{i}, i \in I\right\} \textsf{ 为 } \mathscr{S} \textsf{ 中两两互不相交的有限族}\right\}}$ 是包含 $\mathscr{S}$ 的最小域
-
-    4. $\sigma$ 域：设 $\mathscr{F}$ 是 $\mathcal{P}(\Omega)$ 的非空子集类，若有
-        1. 若 $A \in \mathscr{F}$，则 $A' \in \mathscr{F}$
-        2. 若对每个 $n \geqslant 1$ 都有 $A_{n} \in \mathscr{F}$，则 ${\displaystyle \bigcup_{i=1}^{\infty} A_{n} \in \mathscr{F}}$
-
-        则称 $\mathscr{F}$ 为 $\Omega$ 上的 $\sigma$ 域或 $\sigma$ 代数
-
-        1. $\mathscr{F}$ 为 $\sigma$ 域，则 $\mathscr{F}$ 为一个域，且当 $n \geqslant 1, A_{n} \in \mathscr{F}$ 时，必有 ${\displaystyle \bigcap_{n \geqslant 1} A_{n} \in \mathscr{F}, \varliminf_{n \rightarrow \infty} A_{n} \in \mathscr{F}, \varlimsup_{{n \rightarrow \infty}} A_{n} \in \mathscr{F}}$
-        2. 若 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，则必存在包含 $\mathscr{C}$ 的最小 $\sigma$ 域
-            - 包含集类 $\mathscr{C}$ 的最小 $\sigma$ 域称为由 $\mathscr{C}$ 生成的 $\sigma$ 域，记为 $\sigma(\mathscr{C})$
-            - 对 $\Omega$ 的子集类 $\mathscr{C}$，若以 $\mathscr{C} \cap A$ 表示集类 $\{B A: B \in \mathscr{C}\}$，则 $\sigma_{\Omega}(\mathscr{C}) \cap A=\sigma_{A}(\mathscr{C} \cap A)$
-
-    5. $\text{Borel}$ 域：若 $E$ 为拓扑空间，$\mathscr{B}_{E}$ 为 $E$ 中开集全体生成的 $\sigma$ 域，这一 $\sigma$ 域就称为 $E$ 上的 $\text{Borel}$ 域，$\mathscr{B}_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集．$n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
-
-### 1.1.2 单调类
-
 ## 1.2 可测性与测度
 ### 1.2.1 可测空间
 1. 可测空间

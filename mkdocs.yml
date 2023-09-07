@@ -158,7 +158,7 @@ nav:
       - 1 初等数论: alg/comb/num.md
       - 2 大数理论: alg/comb/gg.md
       - 3 计数理论: alg/comb/comb.md
-      - 4 图论: top/point/graph.md
+      - 4 图论: alg/comb/graph.md
   - 几何学:
     - 一、解析几何:
       - 1 线性空间与向量: top/anly/lin.md
