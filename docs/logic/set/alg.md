@@ -2,6 +2,15 @@
 
 ## 2.1 格与 Boole 代数
 ### 2.1.1 格
+1. 格：设 $(L, \leqslant)$ 为偏序集，如果任意的 $a, b \in L$ 有最小上界与最大下界时，称 $L$ 为格．$a \vee b=\operatorname{lub}(a, b)$ 表示 $a, b$ 之最小上界，$a \wedge b=\operatorname{glb}(a, b)$ 表示 $a, b$ 之最大下界
+    1. 覆盖：设 $(L, <)$ 为格，如果 $a \leqslant b, a \neq b$（记为 $a < b$）且不存在 $u \in L-\{a, b\}$ 使 $a < u < b$，则称 $b$ 覆盖 $a$
+    2. 完全格：$(L, \leqslant)$ 为偏序集，当任 $A \subseteq L$ 有最大下界、最小上界时，$L$ 显然是格，称为完全格
+        1. $L$ 自身的最小上界是整个格 $L$ 的最大元，记为 $1$
+        2. $L$ 自身的最大下界为整个格 $L$ 的最小元，记为 $0$
+
+        于是任 $x \in L$，$x \leqslant 1$ 且 $0 \leqslant x$
+
+2. 格的性质
 
 ### 2.1.2 Boole 代数
 
@@ -62,7 +71,7 @@
 ## 2.3 环与域
 ### 2.3.1 环
 1. 环：设 $\mathscr{R} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in \mathscr{R}$ 蕴含 $A - B \in \mathscr{R}$ 与 $A \cup B \in \mathscr{R}$，则称 $\mathscr{R}$ 为 $\Omega$ 上的环
-2. $\sigma$ 环：设 $\mathscr{C}$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若有
+2. $\sigma$ 环：设 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
     1. 若 $A \in \mathscr{C}, B \in \mathscr{C}$，则 $A - B \in \mathscr{C}$
     2. 若对 $n \geqslant 1, A_{n} \in \mathscr{C}$，则 ${\displaystyle \bigcup_{n=1}^{\infty} A_{n} \in \mathscr{C}}$
 
@@ -80,7 +89,7 @@
     2. 若 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，则必存在包含 $\mathscr{C}$ 的最小域 $\mathscr{A}$．即 $\mathscr{A}$ 为域，$\mathscr{A} \supseteq \mathscr{C}$ 且对任一域 $\mathscr{A}^{\prime} \supseteq \mathscr{C}$，必有 $\mathscr{A} \subseteq \mathscr{A}^{\prime}$
         1. 对任一集族 $\mathscr{C}$，包含 $\mathscr{C}$ 的最小域称为由 $\mathscr{C}$ 张成的域，记为 $\mathscr{A}(\mathscr{C})$
         2. $\Omega$ 中由单点集全体张成的域就是由 $\Omega$ 中有限集及其余集全体构成的集族
-2. 半域：设 $\mathscr{S}$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若有
+2. 半域：设 $\mathscr{S} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
     1. $\varnothing, \Omega \in \mathscr{S}$
     2. 当 $A, B \in \mathscr{S}$，必有 $A \cap B \in \mathscr{S}$
     3. 若 $A \in \mathscr{S}$，则 $A'$ 可表为 $\mathscr{S}$ 中两两互不相交集合的有限并
@@ -90,7 +99,7 @@
     1. 域必为半域
     2. 若 $\mathscr{S}$ 为半域，则 ${\displaystyle \mathscr{A}=\left\{A=\sum_{i \in I} S_{i}:\left\{S_{i}, i \in I\right\} \textsf{ 为 } \mathscr{S} \textsf{ 中两两互不相交的有限族}\right\}}$ 是包含 $\mathscr{S}$ 的最小域
 
-3. $\sigma$ 域：设 $\mathscr{F}$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若有
+3. $\sigma$ 域：设 $\mathscr{F} \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
     1. 若 $A \in \mathscr{F}$，则 $A' \in \mathscr{F}$
     2. 若对每个 $n \geqslant 1$ 都有 $A_{n} \in \mathscr{F}$，则 ${\displaystyle \bigcup_{i=1}^{\infty} A_{n} \in \mathscr{F}}$
 
@@ -134,11 +143,4 @@
     2. $\mathscr{H}$ 是线性空间
     3. 设 $X_{n} \geqslant 0, X_{n} \in \mathscr{H}, X_{n} \uparrow X$ 且 $X$ 有界或 $X \in \mathscr{L}$，则 $X \in \mathscr{H}$
 
-    则称其为 $\mathscr{H}$ 上的 $\mathscr{L}$ 类
-
-    1. 若 $\pi$ 类 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，又 $\mathscr{H}$ 为 $\Omega$ 上的一个 $\mathscr{L}$ 类，且 $\mathscr{H} \supseteq \left\{I_{A}, A \in \mathscr{C}\right\}$，则 $\mathscr{H}$ 包含 $\Omega$ 上一切属于 $\mathscr{L}$ 的 $\sigma(\mathscr{C})$ 可测函数
-    2. 若 $\mathscr{H}$ 为 $\Omega$ 上某些有界实函数的集合，则存在 $\Omega$ 上 $\sigma$ 域 $\mathscr{F}_{1}$，使 $\mathscr{H}$ 为 $\left(\Omega, \mathscr{F}_{1}\right)$ 有界随机变量全体的充要条件是
-        1. $\mathscr{H}$ 是线性空间
-        2. $1 \in \mathscr{H}$
-        3. $\mathscr{H}$ 是格
-        4. 若 $\left\{f_{n}, n \geqslant 1\right\}$ 是 $\mathscr{H}$ 中一致有界递增随机变量序列，${\displaystyle f=\lim _{n \to \infty} f_{n}}$, 则 $f \in \mathscr{H}$，且此时 $\mathscr{F}_{1}=\sigma(f, f \in \mathscr{H})$
+    则称其为 $\mathscr{H}$ 上的 $\mathscr{L}$ 类．若 $\pi$ 类 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，又 $\mathscr{H}$ 为 $\Omega$ 上的一个 $\mathscr{L}$ 类，且 $\mathscr{H} \supseteq \left\{I_{A}, A \in \mathscr{C}\right\}$，则 $\mathscr{H}$ 包含 $\Omega$ 上一切属于 $\mathscr{L}$ 的 $\sigma(\mathscr{C})$ 可测函数

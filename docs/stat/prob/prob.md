@@ -36,13 +36,18 @@
     X(\omega)=x_{i} \textsf{，当 } \omega \in A_{i}, i \in I
     $$
 
-    则称 $X$ 为阶梯随机变量．显然阶梯随机变量是随机变量，且当 $x_{i}$ 互不相同时，$x_{i}$ 与 $A_{i}$ 由 $X$ 唯一确．对 $A \in \mathscr{F}$，$I_{A}(\omega)$ 是一个阶梯随机变量，$X$ 可表示为 ${\displaystyle X(\omega)=\sum_{i \in I} x_{i} I_{A_{i}}(\omega)}$
+    则称 $X$ 为阶梯随机变量．显然阶梯随机变量是随机变量，且当 $x_{i}$ 互不相同时，$x_{i}$ 与 $A_{i}$ 由 $X$ 唯一确定．对 $A \in \mathscr{F}$，$I_{A}(\omega)$ 是一个阶梯随机变量，$X$ 可表示为 ${\displaystyle X(\omega)=\sum_{i \in I} x_{i} I_{A_{i}}(\omega)}$
 
     1. $(\Omega, \mathscr{F})$ 上的阶梯随机变量全体构成一个代数和格
     2. $X$ 为 $(\Omega, \mathscr{F})$ 上的随机变量的充要条件是存在阶梯随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，使 ${\displaystyle X(\omega)=\lim _{n \rightarrow \infty} X_{n}(\omega), \  \forall \omega \in \Omega}$．且当 $X$ 为非负时，$\left\{X_{n}\right\}$ 可取成是非负递增的；当 $|X| \leqslant M$ 时，$\left\{X_{n}\right\}$ 也可取成是 $\left|X_{n}\right| \leqslant M$ 的
-    3. 若 $X, Y$ 为随机变量，则对任意实数 $a, b$，只要 $a X+b Y, X Y, X / Y, X \vee Y, X \wedge Y$ 对每个 $\omega$ 有意义（即不发生 $0 \cdot \infty, (+\infty)+(-\infty), 0 / 0, \infty / \infty$ 等情况），它们就都是随机变量
-    4. 若 $\left\{X_{n}, n \geqslant 1\right\}$ 为随机变量列，则 ${\displaystyle \left\{\omega: \varlimsup_{n \to \infty} X_{n}(\omega)=\varliminf_{n \to \infty} X_{n}(\omega)\right\}}$ 是 $\mathscr{F}$ 可测的
-    5. $\text{Doob}$ 定理：若 $f$ 是 $(\Omega, \mathscr{F})$ 到可测空间 $(E, \mathscr{E})$ 的可测映射，$\sigma(f)= f^{-1}[\mathscr{E}]$，则 $(\Omega, \mathscr{F})$ 上的随机变量 $X$ 为 $\sigma(f)$ 可测的充要条件是存在 $(E, \mathscr{E})$ 上的随机变量 $h$，使 $X=h \circ f$
+        1. 若 $X, Y$ 为随机变量，则对任意实数 $a, b$，只要 $a X+b Y, X Y, X / Y, X \vee Y, X \wedge Y$ 对每个 $\omega$ 有意义（即不发生 $0 \cdot \infty, (+\infty)+(-\infty), 0 / 0, \infty / \infty$ 等情况），它们就都是随机变量
+        2. 若 $\left\{X_{n}, n \geqslant 1\right\}$ 为随机变量列，则 ${\displaystyle \left\{\omega: \varlimsup_{n \to \infty} X_{n}(\omega)=\varliminf_{n \to \infty} X_{n}(\omega)\right\}}$ 是 $\mathscr{F}$ 可测的
+    3. $\text{Doob}$ 定理：若 $f$ 是 $(\Omega, \mathscr{F})$ 到可测空间 $(E, \mathscr{E})$ 的可测映射，$\sigma(f)= f^{-1}[\mathscr{E}]$，则 $(\Omega, \mathscr{F})$ 上的随机变量 $X$ 为 $\sigma(f)$ 可测的充要条件是存在 $(E, \mathscr{E})$ 上的随机变量 $h$，使 $X=h \circ f$
+    4. 若 $\mathscr{H}$ 为 $\Omega$ 上某些有界实函数的集合，则存在 $\Omega$ 上 $\sigma$ 域 $\mathscr{F}_{1}$，使 $\mathscr{H}$ 为 $\left(\Omega, \mathscr{F}_{1}\right)$ 有界随机变量全体的充要条件是
+        1. $\mathscr{H}$ 是线性空间
+        2. $1 \in \mathscr{H}$
+        3. $\mathscr{H}$ 是格
+        4. 若 $\left\{f_{n}, n \geqslant 1\right\}$ 是 $\mathscr{H}$ 中一致有界递增随机变量序列，${\displaystyle f=\lim _{n \to \infty} f_{n}}$, 则 $f \in \mathscr{H}$，且此时 $\mathscr{F}_{1}=\sigma(f, f \in \mathscr{H})$
 
 3. 多维随机变量：若 $X_{1}, X_{2}, \cdots, X_{n}$ 为 $n$ 个随机变量，则 $X=\left(X_{1}, X_{2}, \cdots, X_{n}\right)$ 称为 $n$ 维随机变量，也称随机向量
     1. $X=\left(X_{1}, X_{2}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量的充要条件是 $X$ 为 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}^{n}, \mathscr{B}^{n}\right)$ 的可测映射，且 $\sigma(X)=\sigma \ \left(X_{i}, 1 \leqslant i \leqslant n\right)$
