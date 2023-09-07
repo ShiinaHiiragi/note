@@ -432,10 +432,18 @@ const refList = [
     }
 ];
 
+window.todo = new Array();
 const [plot, total] = refList.reduce(([plot, total], item) => {
     item.total = item.page[1] - item.page[0] + 1;
     item.plot = item.plot ?? item.total;
     item.percent = (100 * item.plot / item.total).toFixed(2) + "%";
+    if (item.plot < item.total) {
+        window.todo.push({
+            title: item.title,
+            percentage: item.percent,
+            remain: item.total - item.plot
+        })
+    }
     plot += item.plot;
     total += item.total;
     return [plot, total];
