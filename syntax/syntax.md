@@ -4640,6 +4640,9 @@ Bootstrap 适合短时间开发简单的静态网站
         - 移到上一行 / 下一行：<kbd>ArrowUp</kbd> 或 <kbd>ArrowDown</kbd>
         - 移到行首 / 行尾：<kbd>Home</kbd> 或 <kbd>End</kbd>
         - （仅编辑器）向上 / 向下移动一页：<kbd>PageUp</kbd> 或 <kbd>PageDown</kbd>
+    - 成对括号操作（仅编辑器）
+        - 移动到成对括号的另一边：<kbd>Alt</kbd> + <kbd>ArrowRight</kbd>
+        - 缩小/扩大以成对括号为范围的内容选择：<kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>ArrowLeft</kbd> 或 <kbd>Shift</kbd> + <kbd>Alt</kbd> + <kbd>ArrowRight </kbd>
 4. 命令窗口
     - 命令窗口
         - 打开命令面板：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
