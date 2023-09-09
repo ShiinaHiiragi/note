@@ -4628,13 +4628,16 @@ Bootstrap 适合短时间开发简单的静态网站
         - 标签页转换
             - （终端与编辑器）上一个 / 下一个标签页：<kbd>Alt</kbd> + <kbd>PageUp</kbd> 或 <kbd>Alt</kbd> + <kbd>PageDown</kbd>
             - （仅编辑器）上一个 / 下一个标签页选择： <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>Tab</kbd> 或 <kbd>Ctrl</kbd> + <kbd>Tab</kbd>
+            - （仅编辑器）标签页左移 / 右移：<kbd>Alt</kbd> + <kbd>Home</kbd> 或 <kbd>Alt</kbd> + <kbd>End</kbd>
         - 向右增加一个新窗口：<kbd>Ctrl</kbd> + <kbd>Alt</kbd> + <kbd>End</kbd>
     - 页面滚动（终端和编辑器均可）
         - 向上 / 向下滚动：<kbd>Ctrl</kbd> + <kbd>ArrowUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>ArrowDown</kbd>
         - 向上 / 向下滚动一页：<kbd>Ctrl</kbd> + <kbd>PageUp</kbd> 或 <kbd>Ctrl</kbd> + <kbd>PageDown</kbd>
-        - 滚动到页面首 / 尾：<kbd>Ctrl</kbd> + <kbd>Home</kbd> 或 <kbd>Ctrl</kbd> + <kbd>End</kbd>
+        - 滚动到页面首 / 尾（编辑器中光标会移动）：<kbd>Ctrl</kbd> + <kbd>Home</kbd> 或 <kbd>Ctrl</kbd> + <kbd>End</kbd>
     - 光标移动（终端和编辑器均可）
+        - 移到上一个 / 下一个字符：<kbd>ArrowLeft</kbd> 或 <kbd>ArrowRight</kbd>
         - 移到上一个 / 下一个单词：<kbd>Ctrl</kbd> + <kbd>ArrowLeft</kbd> 或 <kbd>Ctrl</kbd> + <kbd>ArrowRight</kbd>
+        - 移到上一行 / 下一行：<kbd>ArrowUp</kbd> 或 <kbd>ArrowDown</kbd>
         - 移到行首 / 行尾：<kbd>Home</kbd> 或 <kbd>End</kbd>
         - （仅编辑器）向上 / 向下移动一页：<kbd>PageUp</kbd> 或 <kbd>PageDown</kbd>
 4. 命令窗口
@@ -4642,6 +4645,7 @@ Bootstrap 适合短时间开发简单的静态网站
         - 打开命令面板：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>P</kbd>
         - 打开开发工具：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>I</kbd>
         - 打开文件：<kbd>Ctrl</kbd> + <kbd>P</kbd> ，加 `:` 去往行号，加 `@` 去往符号
+          - <kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>O</kbd>：直接去往符号
         - 打开设置：<kbd>Ctrl</kbd> + <kbd>,</kbd>
     - 终端操作
         - 新建终端：<kbd>Ctrl</kbd> + <kbd>Shift</kbd> + <kbd>`</kbd>
