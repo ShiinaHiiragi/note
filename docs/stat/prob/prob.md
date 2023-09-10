@@ -55,6 +55,6 @@
         1. $\Omega$ 上有限实值函数 $Y$ 为 $\sigma\left(X_{i}, i \in J\right)$ 可测随机变量的充要条件是存在至多为可数的子集 $I$ 及 $\text{Borel}$ 函数 $f$，使 $Y=f\left[X_{i}, i \in I\right]$
         2. 若 $A \in \sigma\left(X_{i}, i \in J\right)$，必有 $J$ 的至多为可数的子集 $I$，使 $A \in \sigma\left(X_{i}, i \in I\right)$
 
-### 1.2.2 期望
+### 1.2.2 分布函数
 
-### 1.2.3 分布函数
+### 1.2.3 期望

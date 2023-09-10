@@ -66,7 +66,14 @@
             - 若 $\mu$ 为 $\sigma$ 可加的，则对每个递减序列 $\left\{A_{n}\right\}$，只要 ${\displaystyle \bigcap_{n \geqslant 1} A_{n} \in \mathscr{A}}$，且存在 $n_{0}$ 使 $\mu\left(A_{n_{0}}\right)<\infty$，则有 ${\displaystyle \lim _{n \rightarrow \infty} \downarrow \mu\left(A_{n}\right)=\mu\left(\bigcap_{n} \dot{A}_{n}\right)}$
         3. 若 $\mu$ 为 $\sigma$ 域上的测度，$\left\{A_{n}\right\}$ 为 $\mathscr{F}$ 中序列，则 ${\displaystyle \mu\left(\varliminf_{n \rightarrow \infty} A_{n}\right) \leqslant \varliminf_{n \rightarrow \infty} \mu\left(A_{n}\right)}$．若对某个 $n_{0}$${\displaystyle \mu\left(\bigcup_{n \geqslant n_{\mathrm{c}}} A_{n}\right)<\infty}$，则 ${\displaystyle \mu\left(\varlimsup_{n \rightarrow \infty} A_{n}\right) \geqslant \varlimsup_{n \rightarrow \infty} \mu\left(A_{n}\right)}$．特别地，当 ${\displaystyle \lim _{n \rightarrow \infty} A_{n}}$ 存在，且若对某个 $n_{0}$ 有 ${\displaystyle \mu\left(\bigcup_{n \geqslant n_{0}} A_{n}\right)<\infty}$ 时，有 ${\displaystyle \mu\left(\lim _{n \rightarrow \infty} A_{n}\right)=\lim _{n \rightarrow \infty} \mu\left(A_{n}\right)}$ 成立
 
-3. 完备测度
+3. 完备测度：设 $\mu$ 为 $\sigma$ 域 $\mathscr{F}$ 上的测度，$\mathscr{L}=\{A: A \in \mathscr{F}, \mu(A)=0\}$．又令 $\mathscr{N}=\{N \in \mathcal{P}(\Omega): \textsf{ 存在 } A \in \mathscr{L} \textsf{，使 } N \subseteq A\}$，则 $\mathscr{N}$ 中元素称为 $\mu$ 可略集．若 $\mathscr{N} \subseteq \mathscr{F}$，则称 $\mu$ 在 $\mathscr{F}$ 上为完备的
+    1. 可略集：若 $(\Omega, \mathscr{F}, P)$ 为完备概率空间，则 $\mathscr{N}$ 中的元素简称为可略集
+    2. 完备化扩张：若 $(\Omega, \mathscr{F}, \mu)$ 为测度空间，$\mathscr{N}$ 为 $\mu$ 可略集全体
+        1. $\overline{\mathscr{F}}=\{A \cup N: A \in \mathscr{F}, N \in \mathscr{N}\}$ 为 $\sigma$ 域$，$$\overline{F} \supseteq \mathscr{F}$
+        2. 在 $\overline{\mathscr{F}}$ 上，令 $\overline{\mu}(A \cup N)=\mu(A)$，则 $\overline{\mu}$ 是 $\overline{\mathscr{F}}$ 上测度，$\overline{\mu} \upharpoonright {\mathscr{F}}=\mu$，且当 $\mu$ 为概率测度时 $\overline{\mu}$ 亦然
+        3. $(\Omega, \overline{F}, \overline{\mu})$ 是完备测度空间，即 $\overline{\mu}$ 在 $\mathscr{F}$ 上是完备的
+
+        称 $(\Omega, \overline{F}, \overline{\mu})$ 为 $(\Omega, \mathscr{F}, \mu)$ 的完备化扩张
 
 ## 1.2 Lesbegue 测度
 1. 广义实数集：扩充实数集 $\mathbf R$，得到 $\hat{\mathbf{R}}=\mathbf{R} \cup \{+\infty, -\infty\}$
