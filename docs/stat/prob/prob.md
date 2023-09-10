@@ -27,6 +27,8 @@
 1. 概率测度：设 $\Omega$ 为一空间，$\mathscr{C} \subseteq \mathcal{P}(\Omega)$ 且 $\varnothing, \Omega \in \mathscr{C}$．若 $\mathscr{C}$ 上的测度 $\mu$ 满足 $\mu(\Omega)=1$，则称 $\mu$ 为概率测度
     1. 概率：事件 $A$ 的概率测度值 $\mu(A)$ 称为 $A$ 的概率
     2. 概率空间： 若 $(\Omega, \mathscr{F})$ 为可测空间，$P$ 为 $\mathscr{F}$ 上的概率测度，则称 $(\Omega, \mathscr{F}, P)$ 为概率空间
+        1. $\mathscr{S}$ 为 $\Omega$ 上的半域，$\mu$ 为 $\mathscr{S}$ 上的概率测度，则存在 $\mu$ 在由 $\mathscr{S}$ 张成的域 $\mathscr{A}(\mathscr{S})$ 上唯一延拓 $\nu$，$\nu$ 在 $\mathscr{A}(\mathscr{S})$ 亦是概率测度
+        2. 若 $(\Omega, \mathscr{F}, P)$ 为概率空间，$\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 为域，$\mathscr{F}=\sigma(\mathscr{A})$．则对每个 $A \in \mathscr{F}$ 及任一 $\varepsilon>0$，必存在 $B_{\varepsilon} \in \mathscr{A}$，使得 $P\left(A \triangle B_{\varepsilon}\right)<\varepsilon$
 
 ## 1.2 随机变量
 ### 1.2.1 随机变量
