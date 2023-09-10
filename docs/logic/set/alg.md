@@ -129,9 +129,9 @@
     3. 若 $C$ 为 $\pi$ 类，则 $\lambda(C)=\sigma(C)$
     4. 若 $D$ 是 $\lambda$ 类，又 $C$ 为 $\pi$ 类，$D \supseteq C$，则 $D \supseteq \sigma(C)$
 
-3. $L$ 类：设 $L$ 为 $\Omega$ 上的函数族，当 $X \in L$ 时，$X^{+}, X^{-} \in L$．若 $\Omega$ 上的函数族 $H$ 有
+3. $\mathscr{L}$ 类：设 $L$ 为 $\Omega$ 上的函数族，当 $X \in L$ 时，$X^{+}, X^{-} \in L$．若 $\Omega$ 上的函数族 $H$ 有
     1. $1 \in H$
     2. $H$ 是线性空间
     3. 设 $X_{n} \geqslant 0, X_{n} \in H, X_{n} \uparrow X$ 且 $X$ 有界或 $X \in L$，则 $X \in H$
 
-    则称其为 $H$ 上的 $L$ 类．若 $\pi$ 类 $C \subseteq \mathcal{P}(\Omega)$，又 $H$ 为 $\Omega$ 上的一个 $L$ 类，且 $H \supseteq \left\{I_{A}, A \in C\right\}$，则 $H$ 包含 $\Omega$ 上一切属于 $L$ 的 $\sigma(C)$ 可测函数
+    则称其为 $H$ 上的 $\mathscr{L}$ 类．若 $\pi$ 类 $C \subseteq \mathcal{P}(\Omega)$，又 $H$ 为 $\Omega$ 上的一个 $\mathscr{L}$ 类，且 $H \supseteq \left\{I_{A}, A \in C\right\}$，则 $H$ 包含 $\Omega$ 上一切属于 $L$ 的 $\sigma(C)$ 可测函数

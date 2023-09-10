@@ -40,8 +40,25 @@
     3. 若 $(\Omega, \mathscr{F})=\left(\Omega_{1}, \mathscr{F}_{1}\right) \times\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 为乘积空间，$f$ 为 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 的可测函数，则对 $\forall \omega_{1}^{0} \in \Omega_{1}, g\left(\omega_{2}\right)=f\left(\omega_{1}^{0}, \omega_{2}\right)$ 是 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 的可测函数
 
 ### 1.1.3 测度空间
-1. 测度的性质
-2. 正测度
+1. 集函数：设 $\Omega$ 为一空间，$\mathscr{C} \subseteq \mathcal{P}(\Omega), \mathscr{C}$ 上广义实值（可取 $\pm \infty$）函数 $\mu$ 称为集函数
+    1. 若对每个 $A \in \mathscr{C}$ 有 $|\mu(A)|<\infty$，则称 $\mu$ 为有限的
+
+        若对任意 $A, B \in \mathscr{C}, A B=\varnothing$，且 $A+B \in \mathscr{C}$，都有 $\mu(A+B)=\mu(A)+\mu(B)$，则称 $\mu$ 为有限可加的
+
+    2. 若对每个 $A \in \mathscr{C}$，存在 $\left\{A_{n}, n \geqslant 1\right\} \in \mathscr{C}$，使 $A=\bigcup_{n} A_{n}$，且对每个 $n$ 都有 $\left|\mu\left(A_{n}\right)\right|<\infty$，则称 $\mu$ 为在 $\mathscr{C}$ 上为 $\sigma$ 有限的，简称为 $\sigma$ 有限的
+
+        若对任意 $\left\{A_{n}, n \geqslant 1\right\} \subseteq \mathscr{C}$ 都有 $A_{i} A_{j}=\varnothing, i \neq j$，且 ${\displaystyle \sum_{i=1}^{\infty} A_{i} \in \mathscr{C}}$，则 ${\displaystyle \mu\left(\sum_{i=1}^{\infty} A_{i}\right)= \sum_{i=1}^{\infty} \mu\left(A_{i}\right)}$，则称 $\mu$ 在 $\mathscr{C}$ 上为 $\sigma$ 可加的或可数可加的
+
+2. 测度空间：若 $(\Omega, \mathscr{F})$ 为可测空间，$\mu$ 为 $\mathscr{F}$ 上的测度，则 $(\Omega, \mathscr{F}, \mu)$ 称为测度空间
+    1. 正测度：设 $\Omega$ 为一空间，$\mathscr{C} \subseteq \mathcal{P}(\Omega)$ 且 $\varnothing \in \mathscr{C}$．设 $\mu$ 为 $\mathscr{C}$ 上的集函数，若它满足
+        1. $\mu(\varnothing)=0$
+        2. $\mu$ 为非负的，即对每个 $A \in \mathscr{C}$ 都有 $\mu(A) \geqslant 0$
+        3. $\mu$ 为可数可加的
+
+        则称 $\mu$ 为测度或正测度
+
+    2. 域上的测度
+
 3. 完备测度
 
 ## 1.2 Lesbegue 测度
