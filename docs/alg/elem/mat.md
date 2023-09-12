@@ -710,7 +710,7 @@
     1. 一个特征向量只能属于一个特征值
     2. 方阵 $\boldsymbol A$ 属于 $\lambda$ 的全部特征向量与零向量组成的子空间称为方阵 $\boldsymbol A$ 的特征子空间
     3. 特征向量的线性无关性：若 $\lambda_1, \lambda_2, \cdots, \lambda_k$ 是矩阵 $\boldsymbol A$ 的不同特征值，$\boldsymbol x_{i1}, \boldsymbol x_{i2}, \cdots, \boldsymbol x_{ir} \ (1 \leqslant i \leqslant k)$ 是属于特征值 $\lambda_i$ 的线性无关的特征向量，则向量组 $\boldsymbol x_{11}, \boldsymbol x_{12}, \cdots, \boldsymbol x_{1r}, \boldsymbol x_{21}, \boldsymbol x_{22}, \cdots, \boldsymbol x_{2r}, \cdots, \boldsymbol x_{k1}, \boldsymbol x_{k2}, \cdots, \boldsymbol x_{kr}$ 线性无关
-2. 特征多项式：设 $n$ 阶方阵 $\boldsymbol A$ 的特征值为 $\lambda$，称 $\mathrm{det}(\lambda \boldsymbol I - \boldsymbol A)$ 为 $\boldsymbol A$ 的特诊多项式．方程 $\mathrm{det}(\lambda \boldsymbol I - \boldsymbol A) = 0$ 的根即为 $\boldsymbol A$ 的特征值，称其根为特征根（包括重根）
+2. 特征多项式：设 $n$ 阶方阵 $\boldsymbol A$ 的特征值为 $\lambda$，称 $\mathrm{det}(\lambda \boldsymbol I - \boldsymbol A)$ 为 $\boldsymbol A$ 的特征多项式．方程 $\mathrm{det}(\lambda \boldsymbol I - \boldsymbol A) = 0$ 的根即为 $\boldsymbol A$ 的特征值，称其根为特征根（包括重根）
     1. 方阵 $\boldsymbol A$ 的全体特征根之和等于其迹 $\mathrm{tr}(\boldsymbol A)$，全体特征根的乘积等于其行列式 $\mathrm{det}(\boldsymbol A)$
     2. 相似矩阵有相同的特征多项式
     3. 设 $\lambda_0$ 是方阵 $\boldsymbol A$ 的一个特征值，$V_0$ 是属于 $\lambda_0$ 的特征子空间．称 $\lambda_0$ 作为方阵 $\boldsymbol A$ 的特征多项式根的重数为 $\lambda_0$ 的代数重数，特征子空间 $V_0$ 的维数为 $\lambda_0$ 的几何重数，则每个特征值的代数重数不小于其几何重数
