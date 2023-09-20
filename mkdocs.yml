@@ -160,6 +160,7 @@ nav:
       - 3 计数理论: alg/comb/comb.md
       - 4 图论: alg/comb/graph.md
     - 三、近世代数:
+      - 1 群论: alg/mod/grp.md
       - 4 格论: alg/mod/ltt.md
   - 几何学:
     - 一、解析几何:
