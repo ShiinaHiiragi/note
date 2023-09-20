@@ -474,21 +474,21 @@
 
             是用三角多项式 $T_{n}(x)$ 在平方平均意义下逼近 $f(x)$ 的偏差．设 ${\displaystyle f(x) \sim \dfrac{a_{0}}{2}+\sum_{n=1}^{\infty} a_{n} \cos n x+b_{n} \sin n x}$，其 $n$ 次部分和 ${\displaystyle S_{n}(x)=\dfrac{a_{0}}{2}+\sum_{k=1}^{n} a_{k} \cos k x+b_{k} \sin k x}$ 是 $f(x)$ 的最佳平方平均逼近，亦即对任何 $n$ 次三角多项式 $T_{n}(x)$，都有 $\delta^{2}\left(f, S_{n}\right) \leqslant \delta^{2}\left(f, T_{n}\right)$
 
-    5. $\text{Fourier}$ 变换：称 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{e}^{-\mathrm{i} \omega x} \mathrm{d} x}$ 是 $f(x)$ 的 $\text{Fourier}$ 变换，记为 $\hat{f}(\omega)$ 或 $F(f)$，称 ${\displaystyle f(x)=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty} \hat{f}(\omega) \mathrm{e}^{\mathrm{i} \omega x} \mathrm{d} \omega}$ 是 $\hat{f}(\omega)$ 的 $\text{Fourier}$ 逆变换，并称 ${\displaystyle f(x)=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty} f(x) \mathrm{e}^{-i \omega x} \mathrm{d} x\right] \mathrm{e}^{\mathrm{i} \omega x} \mathrm{d} x}$ 是 $f(x)$ 的 $\text{Fourier}$ 积分公式
-        1. $\text{Riemann}$ 引理：${\displaystyle \lim _{\omega \rightarrow \infty} \hat{f}(\omega)=0}$
+    5. $\text{Fourier}$ 变换：称 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{e}^{-\mathrm{i} \omega x} \mathrm{d} x}$ 是 $f(x)$ 的 $\text{Fourier}$ 变换，记为 $\widehat{f}(\omega)$ 或 $F(f)$，称 ${\displaystyle f(x)=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty} \widehat{f}(\omega) \mathrm{e}^{\mathrm{i} \omega x} \mathrm{d} \omega}$ 是 $\widehat{f}(\omega)$ 的 $\text{Fourier}$ 逆变换，并称 ${\displaystyle f(x)=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty} f(x) \mathrm{e}^{-i \omega x} \mathrm{d} x\right] \mathrm{e}^{\mathrm{i} \omega x} \mathrm{d} x}$ 是 $f(x)$ 的 $\text{Fourier}$ 积分公式
+        1. $\text{Riemann}$ 引理：${\displaystyle \lim _{\omega \rightarrow \infty} \widehat{f}(\omega)=0}$
         2. $\text{Fourier}$ 变换的性质
-            1. $\hat{f}(\omega)$ 是 $\omega \in(-\infty,+\infty)$ 内的连续函数
+            1. $\widehat{f}(\omega)$ 是 $\omega \in(-\infty,+\infty)$ 内的连续函数
             2. $F\left(a_{1} f_{1}+a_{2} f_{2}\right)=a_{1} F\left(f_{1}\right)+a_{2} F\left(f_{2}\right)$，其中 $a_{1}, a_{2}$ 是两个任意给定的常数
             3. 对任何函数 $f(x)$，设 $\tau_{s} f(x)=f(x-s)$（即 $f(x)$ 的平移），则 $F\left(\tau_{s} f\right)=\mathrm{e}^{-i s \omega} F(f)$
-            4. 设 $f(x) \rightarrow 0 \ (x \rightarrow \pm \infty)$，则 $F\left(\dfrac{\mathrm{d}}{\mathrm{d} x} f\right)=\mathrm{i} \omega F(f)$ 或 $\hat{f}^{\prime}=\mathrm{i} \omega \hat{f}$
+            4. 设 $f(x) \rightarrow 0 \ (x \rightarrow \pm \infty)$，则 $F\left(\dfrac{\mathrm{d}}{\mathrm{d} x} f\right)=\mathrm{i} \omega F(f)$ 或 $\widehat{f}^{\prime}=\mathrm{i} \omega \widehat{f}$
             5. $F(-\mathrm{i} x f(x))=\dfrac{\mathrm{d}}{\mathrm{d} \omega} F(f)$
 
         !!! note "卷积"
             设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上定义，且积分 ${\displaystyle (f * g)(x)=\int_{-\infty}^{+\infty} f(t) g(x-t) \mathrm{d} t}$ 存在，则称函数 $f * g$ 为 $f$ 和 $g$ 的卷积
 
             1. 卷积的 $\text{Fourier}$ 变换：设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上绝对可积，则有 $F(f * g)=F(f) \cdot F(g)$
-            2. $\text{Parseval}$ 等式：设函数 $f$ 在 $(-\infty,+\infty)$ 上绝对可积，且 ${\displaystyle \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{d} x}$ 收敛．记 $f$ 的 $\text{Fourier}$ 变换为 $\hat{f}$，则
+            2. $\text{Parseval}$ 等式：设函数 $f$ 在 $(-\infty,+\infty)$ 上绝对可积，且 ${\displaystyle \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{d} x}$ 收敛．记 $f$ 的 $\text{Fourier}$ 变换为 $\widehat{f}$，则
 
                 $$
-                \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{d} x=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty}|\hat{f}(\omega)|^2 \mathrm{d} \omega
+                \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{d} x=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty}|\widehat{f}(\omega)|^2 \mathrm{d} \omega
                 $$
