@@ -160,7 +160,7 @@
     1. 紧子集：设 $X$ 是一个拓扑空间，$Y\subseteq X$．若 $Y$ 作为 $X$ 的子空间是一个紧空间，则称 $Y$ 是拓扑空间 $X$ 的一个紧子集
     2. 每一个紧空间都是 $\text{Lindel}\ddot{\mathrm{o}}\text{f}$ 空间，反之不然；实数空间 $R$ 不是一个紧空间
     3. 设 $X$ 是一个拓扑空间， $Y$ 是 $X$ 中的一个子集．则 $Y$ 是 $X$ 的一个紧子集当且仅当每一个由 $X$ 中的开集构成的 $Y$ 的覆盖都有有限子覆盖
-2. 具有有限交性质的集族：设 $\mathscr A$ 是一个集族，若 $\mathscr A_1$ 是 $\mathscr A$ 的一个有限子族，则 ${\displaystyle \bigcap_{A\in \mathscr A_1} A} \neq\varnothing$，则称 $\mathscr A$ 是一个具有有限交性质的集族
+2. 具有有限交性质的集族：设 $\mathscr A$ 是一个集族，若 $\mathscr A_1$ 是 $\mathscr A$ 的一个有限子族，则 ${\displaystyle \bigcap_{A\in \mathscr A_1} A} \neq\varnothing$，则称集族 $\mathscr A$ 具有有限交性质
     1. 设 $X$ 是一个拓扑空间，则 $X$ 是一个紧空间当且仅当 $X$ 中的每一个具有有限交性质的闭集族都有非空的交
     2. 设 $\mathscr B$ 是拓扑空间 $X$ 的一个基，并且 $X$ 的由 $\mathscr B$ 中的元素构成的每一个覆盖有一个有限子覆盖，则 $X$ 是一个紧空间
 3. 紧致性与 $\text T_2$ 空间

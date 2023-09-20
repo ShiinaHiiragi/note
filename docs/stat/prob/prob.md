@@ -29,6 +29,27 @@
     2. 概率空间： 若 $(\Omega, \mathscr{F})$ 为可测空间，$P$ 为 $\mathscr{F}$ 上的概率测度，则称 $(\Omega, \mathscr{F}, P)$ 为概率空间
         1. $\mathscr{S}$ 为 $\Omega$ 上的半域，$\mu$ 为 $\mathscr{S}$ 上的概率测度，则存在 $\mu$ 在由 $\mathscr{S}$ 张成的域 $\mathscr{A}(\mathscr{S})$ 上唯一延拓 $\nu$，$\nu$ 在 $\mathscr{A}(\mathscr{S})$ 亦是概率测度
         2. 若 $(\Omega, \mathscr{F}, P)$ 为概率空间，$\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 为域，$\mathscr{F}=\sigma(\mathscr{A})$．则对每个 $A \in \mathscr{F}$ 及任一 $\varepsilon>0$，必存在 $B_{\varepsilon} \in \mathscr{A}$，使得 $P\left(A \triangle B_{\varepsilon}\right)<\varepsilon$
+2. 概率测度的延拓和生成
+    1. 若 $P$ 为域 $\mathscr{A}$ 上的概率测度，则在 $\sigma(\mathscr{A})$ 上必有唯一的延拓 $\overline{P}$，$\overline{P}$ 亦为概率
+    2. 若 $P$ 为半域 $\mathscr{S}$ 上的概率测度，则在 $\sigma(\mathscr{S})$ 上必有唯一的延拓 $\overline{P}$，$\overline{P}$ 亦为概率
+    3. 若 $\mu$ 为域 $\mathscr{A}$（半域 $\mathscr{S}$）上的 $\sigma$ 有限测度，则在 $\sigma(\mathscr{A})(\sigma(\mathscr{S}))$ 上必有唯一的延拓 $\overline{\mu}$
+
+    !!! note "域上测度延拓定理"
+        1. 设 $\mathscr{A}$ 为由 $\Omega$ 子集构成的域，$P$ 为域 $\mathscr{A}$ 上的测度．又 $\left\{A_{n}, n \geqslant 1\right\}, \left\{B_{n}, n \geqslant 1\right\}$ 为 $\mathscr{A}$ 上的两个递增序列．若 ${\displaystyle \bigcup_{n} A_{n} \subseteq \bigcup_{n} B_{n}}$，则 ${\displaystyle \lim _{n \to \infty} P\left(A_{n}\right) \leqslant \lim _{n \to \infty} P\left(B_{n}\right)}$，进而若 ${\displaystyle \bigcup_{n} A_{n}=\bigcup_{n} B_{n}}$，则 ${\displaystyle \lim _{n \to \infty} P\left(A_{n}\right)=\lim _{n \to \infty} P\left(B_{n}\right)}$
+        2. 若 $\mathscr{A}$ 为域，$P$ 为 $\mathscr{A}$ 上概率测度，记 ${\displaystyle \mathscr{A}_{\sigma}=\left\{\bigcup_{m=1}^{\infty} A_{m}: A_{m} \in \mathscr{A}\right\}}$，则 $\mathscr{A} \subseteq \mathscr{A}_{\sigma}$．在 $\mathscr{A}_{\sigma}$ 上令 ${\displaystyle Q\left(\bigcup_{m=1}^{\infty} A_{m}\right)=\lim _{n \rightarrow \infty} P\left(\bigcup_{m=1}^{n} A_{m}\right) }$
+            1. 当 $A \in \mathscr{A}_{\sigma}$ 时，$0 \leqslant Q(A) \leqslant 1$
+            2. 当 $A_{1}, A_{2} \in \mathscr{A}_{\sigma}$，则 $A_{1} \cup A_{2}, A_{1} A_{2} \in \mathscr{A}_{\sigma}$，且 $Q$ 有强可加性：${\displaystyle Q\left(A_{1} \cup A_{2}\right)+Q\left(A_{1} A_{2}\right)=Q\left(A_{1}\right)+Q\left(A_{2}\right)}$
+            3. $Q$ 有单调性：若 $A_{1}, A_{2} \in \mathscr{A}_{\sigma}, A_{1} \subseteq A_{2}$，则 $Q\left(A_{1}\right) \leqslant Q\left(A_{2}\right)$
+            4. 若 $A_{n} \in \mathscr{A}_{\sigma}, A_{n} \uparrow A(n \rightarrow \infty)$，则 $A \in \mathscr{A}_{\sigma}$ 且 ${\displaystyle Q(A)=\lim _{n \to \infty} Q\left(A_{n}\right)}$
+        3. 对 $A \in \mathcal{P}(\Omega)$，令 $P^{*}(A)=\inf \left\{Q(B): B \supseteq A, B \in \mathscr{A}_{\sigma}\right\}$，称为相应于 $P$ 的外测度
+            1. $P^{*}\bigg|_{\mathscr{A}_{\sigma}}=Q$，对 $A \in \mathcal{P}(\Omega)$ 有 $0 \leqslant P^{*}(A) \leqslant 1$
+            2. $P^{*}\left(A_{1} \cup A_{2}\right)+P^{*}\left(A_{1} \cap A_{2}\right) \leqslant P^{*}\left(A_{1}\right)+P^{*}\left(A_{2}\right)$．特别地，$P^{*}$ 是半可加的：$P^{*}\left(A_{1} \cup A_{2}\right) \leqslant P^{*}\left(A_{1}\right)+P^{*}\left(A_{2}\right)$
+            3. $P^{*}$ 是单调的：若 $A_{1} \subseteq A_{2}$，则 $P^{*}\left(A_{1}\right) \leqslant P^{*}\left(A_{2}\right)$
+            4. 若 $A_{n} \uparrow A(n \rightarrow \infty)$，则 $P^{*}(A)=\lim _{n \rightarrow \infty} P^{*}\left(A_{n}\right)$．特别地，$P^{*}$ 是半 $\sigma$ 可加的：${\displaystyle P^{*}\left(\bigcup_{n=1}^{\infty} B_{n}\right) \leqslant \sum_{n=1}^{\infty} P^{*}\left(B_{n}\right)}$
+        4. 设 $\mathscr{D}=\left\{D \in \mathcal{P}(\Omega): P^{*}(D)+P^{*}\left(D'\right)=1\right\}$
+            1. $\mathscr{D}$ 为 $\sigma$ 域，$\mathscr{D} \supseteq \sigma(\mathscr{A})$
+            2. 若 $\overline{P}=P^{*}\bigg|_{\mathscr{D}}$，则 $\overline{P}$ 为 $\mathscr{D}$ 上完备概率测度且 $\overline{P}\bigg|_{\mathscr{A}}=P$
+            3. 对每个 $C \in \mathscr{D}$，必有 $E, F \in \sigma(A), E \subseteq C \subseteq F$ 且 $\overline{P}(F- E)=0$
 
 ## 1.2 随机变量
 ### 1.2.1 随机变量
