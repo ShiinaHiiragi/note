@@ -281,6 +281,16 @@ const refList = [
         locate: "東京"
     },
     {
+        author: ["顾沛", "邓少强"],
+        title: "简明抽象代数",
+        type: "M",
+        year: 2003,
+        page: [1, 129],
+        press: "高等教育出版社",
+        locate: "北京",
+        plot: 1
+    },
+    {
         author: ["[苏]М. М. По́стников"],
         title: "几何讲义：解析几何",
         type: "M",
