@@ -145,3 +145,4 @@
         2. $m_{\alpha}^{*}(a, b]=\alpha(b+0)-\alpha(a+0)$
         3. $m_{\alpha}^{*}[a, b]=\alpha(b+0)-\alpha(a-0)$
         4. $m_{\alpha}^{*}[a, b)=\alpha(b-0)-\alpha(a-0)$
+3. $\text{Lesbegue}-\text{Stieltjes}$ 测度：若 $F(x)$ 为 $\mathbf{R}$ 上右连续不减有界函数，则在 $(\mathbf{R}, \mathscr{B})$ 必存在唯一的 $\sigma$ 有限测度 $\mu$，使 $\mu((a, b])=F(b)-F(a), -\infty \leqslant a<b<+\infty$，称为由 $F$ 生成的 $\text{Lesbegue}-\text{Stieltjes}$ 测度或 $L-S$ 测度
