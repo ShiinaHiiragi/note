@@ -242,6 +242,7 @@ window.cookie_callback = (param) => {
             *正确示例*：
             :   - $\text{Fr}\acute{\mathrm e}\text{chet}$ 滤
                 - $\text{G}\ddot{\mathrm o}\text{del}$ 编码
+                - $\check{\mathrm Z}\text{i}\check{\mathrm z}\text{ek}$
 
     - 即使人名的内名不以拉丁字母拼写，也一律使用其拉丁字母转写
 
@@ -249,6 +250,13 @@ window.cookie_callback = (param) => {
             *正确示例*：
             :   - $\text{Ward}-\text{Takahashi}$ 恒等式
                 - $\text{Egorov}$ 定理
+
+    - 作为人名一部分的连字符存在于 `\text` 内部；作为表明定理或公式联合提出者的连字符位于 `\text` 外部
+
+        !!! note ""
+            *正确示例*：
+            :   - $\text{Newton}-\text{Leibniz}$ 公式
+                - $\text{Levi-Strauss}$ 将 $\text{Saussure}$ 的结构语言学研究纳入自己的神话研究中，形成了自己独特的结构主义神话学
 
     - **语言学**中作为示例的印欧语系语句采用 `\textit` 行内公式表示（为了与范畴名区分）；**语言学习**中作为示例的语句与嵌入到中文的通名不采用行内公式，嵌入到中文的专名需转义为中文
 
