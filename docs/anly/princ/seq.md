@@ -171,7 +171,7 @@
     3. ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=A}$（有限或无穷大）的充要条件为 ${\displaystyle \varlimsup_{n \rightarrow \infty} x_{n}=\underset{n \rightarrow \infty}{\underline{\lim}} x_{n}=A}$
 
     !!! note "集合序列的上极限与下极限"
-        - 对集合序列 $\left\{A_{n}, n \geqslant 1\right\}$，定义
+        - 对集合序列 $\left\{A_{n}\right\}_{n \geqslant 1}$，定义
 
             $$
             \begin{aligned}
@@ -180,7 +180,7 @@
             \end{aligned}
             $$
 
-            分别为 $\left\{A_{n}, n \geqslant 1\right\}$ 的上（下）极限，也称作上限（下限）点集
+            分别为 $\left\{A_{n}\right\}_{n \geqslant 1}$ 的上（下）极限，也称作上限（下限）点集
 
         - 当 ${\displaystyle \varliminf_{n \to \infty} A_{n}=\varlimsup_{n \to \infty} A_{n}}$ 时，称 $\left\{A_{n}\right\}$ 有极限，并记 ${\displaystyle \lim _{n \rightarrow \infty} A_{n}=\varlimsup_{n \rightarrow \infty} A_{n}}$，称它为 $\left\{A_{n}\right\}$ 的极限
 

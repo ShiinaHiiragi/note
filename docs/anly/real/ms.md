@@ -45,9 +45,9 @@
 
         若对任意 $A, B \in \mathscr{C}, A B=\varnothing$，且 $A+B \in \mathscr{C}$，都有 $\mu(A+B)=\mu(A)+\mu(B)$，则称 $\mu$ 为有限可加的
 
-    2. 若对每个 $A \in \mathscr{C}$，存在 $\left\{A_{n}, n \geqslant 1\right\} \in \mathscr{C}$，使 $A=\bigcup_{n} A_{n}$，且对每个 $n$ 都有 $\left|\mu\left(A_{n}\right)\right|<\infty$，则称 $\mu$ 为在 $\mathscr{C}$ 上为 $\sigma$ 有限的，简称为 $\sigma$ 有限的
+    2. 若对每个 $A \in \mathscr{C}$，存在 $\left\{A_{n}\right\}_{n \geqslant 1} \in \mathscr{C}$，使 $A=\bigcup_{n} A_{n}$，且对每个 $n$ 都有 $\left|\mu\left(A_{n}\right)\right|<\infty$，则称 $\mu$ 为在 $\mathscr{C}$ 上为 $\sigma$ 有限的，简称为 $\sigma$ 有限的
 
-        若对任意 $\left\{A_{n}, n \geqslant 1\right\} \subseteq \mathscr{C}$ 都有 $A_{i} A_{j}=\varnothing, i \neq j$，且 ${\displaystyle \sum_{i=1}^{\infty} A_{i} \in \mathscr{C}}$，则 ${\displaystyle \mu\left(\sum_{i=1}^{\infty} A_{i}\right)= \sum_{i=1}^{\infty} \mu\left(A_{i}\right)}$，则称 $\mu$ 在 $\mathscr{C}$ 上为 $\sigma$ 可加的或可数可加的
+        若对任意 $\left\{A_{n}\right\}_{n \geqslant 1} \subseteq \mathscr{C}$ 都有 $A_{i} A_{j}=\varnothing, i \neq j$，且 ${\displaystyle \sum_{i=1}^{\infty} A_{i} \in \mathscr{C}}$，则 ${\displaystyle \mu\left(\sum_{i=1}^{\infty} A_{i}\right)= \sum_{i=1}^{\infty} \mu\left(A_{i}\right)}$，则称 $\mu$ 在 $\mathscr{C}$ 上为 $\sigma$ 可加的或可数可加的
 
 2. 测度空间：若 $(\Omega, \mathscr{F})$ 为可测空间，$\mu$ 为 $\mathscr{F}$ 上的测度，则 $(\Omega, \mathscr{F}, \mu)$ 称为测度空间
     1. 正测度：设 $\Omega$ 为一空间，$\mathscr{C} \subseteq \mathcal{P}(\Omega)$ 且 $\varnothing \in \mathscr{C}$．设 $\mu$ 为 $\mathscr{C}$ 上的集函数，若它满足

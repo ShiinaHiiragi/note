@@ -14,9 +14,9 @@
         2. $\Omega$ 作为 $\mathscr{F}$ 的元素称为必然事件，$\varnothing$ 称为不可能事件
     2. 事件的运算
         1. 事件 $A'$ 称为事件 $A$ 的逆事件，表示「$A$ 不发生」的事件
-        2. 事件 $A \cup B$ 或 ${\displaystyle \bigcup_{n \geqslant 1} A_{n}}$ 分别称为事件 $A, B$ 或 $\left\{A_{n}, n \geqslant 1\right\}$ 的并，分别表示 $A, B$ 或 $\left\{A_{n}\right\}$ 中至少有一个发生的事件
+        2. 事件 $A \cup B$ 或 ${\displaystyle \bigcup_{n \geqslant 1} A_{n}}$ 分别称为事件 $A, B$ 或 $\left\{A_{n}\right\}_{n \geqslant 1}$ 的并，分别表示 $A, B$ 或 $\left\{A_{n}\right\}$ 中至少有一个发生的事件
 
-            事件 $A \cap B$ 或 ${\displaystyle \bigcap_{n \geqslant 1} A_{n}}$ 分别称为事件 $A, B$ 或 $\left\{A_{n}, n \geqslant 1\right\}$ 的交，表示同时发生的事件．$A \cap B$ 也可记作 $AB$
+            事件 $A \cap B$ 或 ${\displaystyle \bigcap_{n \geqslant 1} A_{n}}$ 分别称为事件 $A, B$ 或 $\left\{A_{n}\right\}_{n \geqslant 1}$ 的交，表示同时发生的事件．$A \cap B$ 也可记作 $AB$
 
         3. 若 $A B=\varnothing$，则称事件 $A, B$ 是互不相容的，此时将 $A \cup B$ 记作 $A + B$
         4. 事件 ${\displaystyle \varlimsup_{n \to \infty} A_{n}}$ 称为 $\left\{A_{n}\right\}$ 的上限事件，表示 $\left\{A_{n}\right\}$ 中有无限个同时发生的事件，也记作 $\left\{A_{n}\right.$ i.o. ${\displaystyle \}=\varlimsup_{n \to \infty} A_{n}}$
@@ -35,7 +35,7 @@
     3. 若 $\mu$ 为域 $\mathscr{A}$（半域 $\mathscr{S}$）上的 $\sigma$ 有限测度，则在 $\sigma(\mathscr{A})(\sigma(\mathscr{S}))$ 上必有唯一的延拓 $\overline{\mu}$
 
     !!! note "域上测度延拓定理"
-        1. 设 $\mathscr{A}$ 为由 $\Omega$ 子集构成的域，$P$ 为域 $\mathscr{A}$ 上的测度．又 $\left\{A_{n}, n \geqslant 1\right\}, \left\{B_{n}, n \geqslant 1\right\}$ 为 $\mathscr{A}$ 上的两个递增序列．若 ${\displaystyle \bigcup_{n} A_{n} \subseteq \bigcup_{n} B_{n}}$，则 ${\displaystyle \lim _{n \to \infty} P\left(A_{n}\right) \leqslant \lim _{n \to \infty} P\left(B_{n}\right)}$，进而若 ${\displaystyle \bigcup_{n} A_{n}=\bigcup_{n} B_{n}}$，则 ${\displaystyle \lim _{n \to \infty} P\left(A_{n}\right)=\lim _{n \to \infty} P\left(B_{n}\right)}$
+        1. 设 $\mathscr{A}$ 为由 $\Omega$ 子集构成的域，$P$ 为域 $\mathscr{A}$ 上的测度．又 $\left\{A_{n}\right\}_{n \geqslant 1}, \left\{B_{n}\right\}_{n \geqslant 1}$ 为 $\mathscr{A}$ 上的两个递增序列．若 ${\displaystyle \bigcup_{n} A_{n} \subseteq \bigcup_{n} B_{n}}$，则 ${\displaystyle \lim _{n \to \infty} P\left(A_{n}\right) \leqslant \lim _{n \to \infty} P\left(B_{n}\right)}$，进而若 ${\displaystyle \bigcup_{n} A_{n}=\bigcup_{n} B_{n}}$，则 ${\displaystyle \lim _{n \to \infty} P\left(A_{n}\right)=\lim _{n \to \infty} P\left(B_{n}\right)}$
         2. 若 $\mathscr{A}$ 为域，$P$ 为 $\mathscr{A}$ 上概率测度，记 ${\displaystyle \mathscr{A}_{\sigma}=\left\{\bigcup_{m=1}^{\infty} A_{m}: A_{m} \in \mathscr{A}\right\}}$，则 $\mathscr{A} \subseteq \mathscr{A}_{\sigma}$．在 $\mathscr{A}_{\sigma}$ 上令 ${\displaystyle Q\left(\bigcup_{m=1}^{\infty} A_{m}\right)=\lim _{n \rightarrow \infty} P\left(\bigcup_{m=1}^{n} A_{m}\right) }$
             1. 当 $A \in \mathscr{A}_{\sigma}$ 时，$0 \leqslant Q(A) \leqslant 1$
             2. 当 $A_{1}, A_{2} \in \mathscr{A}_{\sigma}$，则 $A_{1} \cup A_{2}, A_{1} A_{2} \in \mathscr{A}_{\sigma}$，且 $Q$ 有强可加性：${\displaystyle Q\left(A_{1} \cup A_{2}\right)+Q\left(A_{1} A_{2}\right)=Q\left(A_{1}\right)+Q\left(A_{2}\right)}$
@@ -61,13 +61,13 @@
     1. $(\Omega, \mathscr{F})$ 上的离散随机变量全体构成一个代数和格
     2. $X$ 为 $(\Omega, \mathscr{F})$ 上的随机变量的充要条件是存在离散随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，使 ${\displaystyle X(\omega)=\lim _{n \rightarrow \infty} X_{n}(\omega), \  \forall \omega \in \Omega}$．且当 $X$ 为非负时，$\left\{X_{n}\right\}$ 可取成是非负递增的；当 $|X| \leqslant M$ 时，$\left\{X_{n}\right\}$ 也可取成是 $\left|X_{n}\right| \leqslant M$ 的
         1. 若 $X, Y$ 为随机变量，则对任意实数 $a, b$，只要 $a X+b Y, X Y, X / Y, X \vee Y, X \wedge Y$ 对每个 $\omega$ 有意义（即不发生 $0 \cdot \infty, (+\infty)+(-\infty), 0 / 0, \infty / \infty$ 等情况），它们就都是随机变量
-        2. 若 $\left\{X_{n}, n \geqslant 1\right\}$ 为随机变量列，则 ${\displaystyle \left\{\omega: \varlimsup_{n \to \infty} X_{n}(\omega)=\varliminf_{n \to \infty} X_{n}(\omega)\right\}}$ 是 $\mathscr{F}$ 可测的
+        2. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量列，则 ${\displaystyle \left\{\omega: \varlimsup_{n \to \infty} X_{n}(\omega)=\varliminf_{n \to \infty} X_{n}(\omega)\right\}}$ 是 $\mathscr{F}$ 可测的
     3. $\text{Doob}$ 定理：若 $f$ 是 $(\Omega, \mathscr{F})$ 到可测空间 $(E, \mathscr{E})$ 的可测映射，$\sigma(f)= f^{-1}[\mathscr{E}]$，则 $(\Omega, \mathscr{F})$ 上的随机变量 $X$ 为 $\sigma(f)$ 可测的充要条件是存在 $(E, \mathscr{E})$ 上的随机变量 $h$，使 $X=h \circ f$
     4. 若 $\mathscr{H}$ 为 $\Omega$ 上某些有界实函数的集合，则存在 $\Omega$ 上 $\sigma$ 域 $\mathscr{F}_{1}$，使 $\mathscr{H}$ 为 $\left(\Omega, \mathscr{F}_{1}\right)$ 有界随机变量全体的充要条件是
         1. $\mathscr{H}$ 是线性空间
         2. $1 \in \mathscr{H}$
         3. $\mathscr{H}$ 是格
-        4. 若 $\left\{f_{n}, n \geqslant 1\right\}$ 是 $\mathscr{H}$ 中一致有界递增随机变量序列，${\displaystyle f=\lim _{n \to \infty} f_{n}}$, 则 $f \in \mathscr{H}$，且此时 $\mathscr{F}_{1}=\sigma(f, f \in \mathscr{H})$
+        4. 若 $\left\{f_{n}\right\}_{n \geqslant 1}$ 是 $\mathscr{H}$ 中一致有界递增随机变量序列，${\displaystyle f=\lim _{n \to \infty} f_{n}}$, 则 $f \in \mathscr{H}$，且此时 $\mathscr{F}_{1}=\sigma(f, f \in \mathscr{H})$
 
 3. 多维随机变量：若 $X_{1}, X_{2}, \cdots, X_{n}$ 为 $n$ 个随机变量，则 $X=\left(X_{1}, X_{2}, \cdots, X_{n}\right)$ 称为 $n$ 维随机变量，也称随机向量
     1. $X=\left(X_{1}, X_{2}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量的充要条件是 $X$ 为 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}^{n}, \mathscr{B}^{n}\right)$ 的可测映射，且 $\sigma(X)=\sigma \ \left(X_{i}, 1 \leqslant i \leqslant n\right)$
@@ -103,9 +103,9 @@
 
     1. 若 $\mathscr{E}$ 表示 $(\Omega, \mathscr{F})$ 上离散随机变量全体
         1. 期望 $\mathrm{E} X$ 是唯一满足 $\mathrm{E}\left(I_{A}\right)=P(A)$ 的 $\mathscr{E}$ 上的正线性泛函
-        2. $\mathrm{E}[\cdot]$ 在 $\mathscr{E}$ 上是单调的，且若 $\left\{X_{n}, n \geqslant 1\right\} \subseteq \mathscr{E}, X_{n} \uparrow(\textsf{或 }\downarrow) X \in \mathscr{E}$，则 $\mathrm{E}\left(X_{n}\right) \uparrow(\textsf{或 } \downarrow) \mathrm{E}(X)$
+        2. $\mathrm{E}[\cdot]$ 在 $\mathscr{E}$ 上是单调的，且若 $\left\{X_{n}\right\}_{n \geqslant 1} \subseteq \mathscr{E}, X_{n} \uparrow(\textsf{或 }\downarrow) X \in \mathscr{E}$，则 $\mathrm{E}\left(X_{n}\right) \uparrow(\textsf{或 } \downarrow) \mathrm{E}(X)$
         3. 若 $\mathrm{E}(\cdot)$ 为 $\mathscr{E}$ 上正线性泛函，$\mathrm{E}(1)=1$，且当 $\mathscr{E}$ 中序列 $X_{n} \downarrow 0$ 时，$\mathrm{E} X_{n} \downarrow 0$，则由 $Q(A)=\mathrm{E}\left(I_{A}\right)$ 可规定 $(\Omega, \mathscr{F})$ 上的概率测度
-    2. 若 $\mathscr{E}_{+}$ 表示非负离散随机变量全体，$\left\{X_{n}, n \geqslant 1\right\},\left\{Y_{n}, n \geqslant 1\right\}$ 都是 $\mathscr{E}_{+}$ 中递增序列，且 ${\displaystyle \lim _{n \to \infty} X_{n} \leqslant \lim _{n \to \infty} Y_{n}}$，则 ${\displaystyle \lim _{n \to \infty} E X_{n} \leqslant \lim _{n \to \infty} E Y_{n}}$．特别地，若 ${\displaystyle \lim _{n \to \infty} X_{n}=\lim _{n \to \infty} Y_{n}}$，则 ${\displaystyle \lim _{n \to \infty} E X_{n}=\lim _{n \to \infty} \mathrm{E} Y_{n}}$
+    2. 若 $\mathscr{E}_{+}$ 表示非负离散随机变量全体，$\left\{X_{n}\right\}_{n \geqslant 1},\left\{Y_{n}\right\}_{n \geqslant 1}$ 都是 $\mathscr{E}_{+}$ 中递增序列，且 ${\displaystyle \lim _{n \to \infty} X_{n} \leqslant \lim _{n \to \infty} Y_{n}}$，则 ${\displaystyle \lim _{n \to \infty} E X_{n} \leqslant \lim _{n \to \infty} E Y_{n}}$．特别地，若 ${\displaystyle \lim _{n \to \infty} X_{n}=\lim _{n \to \infty} Y_{n}}$，则 ${\displaystyle \lim _{n \to \infty} E X_{n}=\lim _{n \to \infty} \mathrm{E} Y_{n}}$
 
 2. 广义实值随机变量的期望：广义实值随机变量 $X$ 若 $\mathrm{E}\left[X^{+}\right]<\infty$ 及 $\mathrm{E}\left[X^{-}\right]<\infty$，则称 $X$ 为可积的，且以 $\mathrm{E} X=\mathrm{E} [X^{+}]-\mathrm{E} [X^{-}]$ 表示 $X$ 关于 $P$ 的积分，也称为期望或数学期望，记为 ${\displaystyle \int X \mathrm{dP}}$ 等．一般地，若 $\mathrm{E} X^{+}, \mathrm{E} X^{-}$ 中至少有一个取有限值，则称 $X$ 为准可积的，用 $\mathrm{E} X=\mathrm{E}\left[X^{+}\right]-\mathrm{E}\left[X^{-}\right]$表示 $X$ 关于 $P$ 的积分或期望
     1. 记 ${\displaystyle \mathscr{G}_{+}=\left\{X=\lim _{n \to \infty} \uparrow X_{n}: X_{n} \in \mathscr{E}_{+}\right\}}$，对 $X \in \mathscr{G}_{+}$，若 ${\displaystyle X=\lim _{n \to \infty} \uparrow X_{n}, X_{n} \in \mathscr{E}_{+}}$，令 ${\displaystyle \mathrm{E} X=\lim _{n \to \infty} \mathrm{E} X_{n}}$
@@ -120,7 +120,7 @@
             \mathrm{E}\left[X_{1}+X_{2}\right]=\mathrm{E}\left[X_{1}\right]+\mathrm{E}\left[X_{2}\right]=\mathrm{E}\left[X_{1} \vee X_{2}\right]+\mathrm{E}\left[X_{1} \wedge X_{2}\right]
             $$
 
-        7. $\left\{X_{n}, n \geqslant 1\right\}$ 为 $\mathscr{G}_{+}$ 中递增序列，则 $\lim _{n \to \infty} X_{n}=X \in \mathscr{G}_{+}$ 且 ${\displaystyle \mathrm{E} \lim _{n \to \infty} \uparrow X_{n}=\lim _{n \to \infty} \uparrow \mathrm{E} X_{n}}$
+        7. $\left\{X_{n}\right\}_{n \geqslant 1}$ 为 $\mathscr{G}_{+}$ 中递增序列，则 ${\displaystyle \lim _{n \to \infty} X_{n}=X \in \mathscr{G}_{+}}$ 且 ${\displaystyle \mathrm{E} \lim _{n \to \infty} \uparrow X_{n}=\lim _{n \to \infty} \uparrow \mathrm{E} X_{n}}$
 
     2. 若 $\mathrm{E}[\cdot]$ 表示概率空间 $(\Omega, \mathscr{F}, P)$ 上的准可积随机变量的期望
         1. $E X \in \mathbf\{\widehat{R}\}, E X \in \mathbf{R}$ 的充要条件是 $X^{+}, X^{-}$ 都可积，且这时必有 $P[X= \pm \infty]=0$
@@ -136,5 +136,13 @@
         P(|X| \geqslant a) & \leqslant \dfrac{1}{f(a)} \mathrm{E}[f(|X|)]
         \end{aligned}
         $$
+
+3. $\text{Lesbegue}$ 控制收敛定理：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，$\left|X_{n}\right| \leqslant Y, Y$ 可积，且 ${\displaystyle \lim _{n \to \infty} X_{n}=X}$ 存在，则 ${\displaystyle \lim _{n \to \infty} \mathrm{E} X_{n}=\mathrm{E} X}$
+    1. $\text{Levi}$ 引理
+        1. 若 $X_{n} \uparrow X$，且对某个 $n_{0}$，$X_{n_{0}}^{-}$ 可积，则 ${\displaystyle \lim _{n \to \infty} \uparrow \mathrm{E} X_{n}=\mathrm{E} X}$
+        2. 若 $X_{n} \downarrow X$，且对某个 $n_{0}$，$X_{n_{0}}^{+}$ 可积，则 ${\displaystyle \lim _{n \to \infty} \downarrow \mathrm{E} X_{n}=\mathrm{E} X}$
+    2. $\text{Fatou}$ 引理：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，$Y, Z$ 为可积随机变量
+        1. 若 $X_{n} \geqslant Z, n \geqslant n_{0}$，则 ${\displaystyle E\left[\varlimsup_{n \to \infty} X_{n}\right] \leqslant \varlimsup_{n \to \infty} \mathrm{E} X_{n}}$
+        2. 若 $X_{n} \leqslant Y, n \geqslant n_{0}$，则 ${\displaystyle \mathrm{E}\left[\varlimsup_{n \to \infty} X_{n}\right] \geqslant \varlimsup_{n \to \infty} \mathrm{E} X_{n}}$
 
 ### 1.4.2 方差与协方差

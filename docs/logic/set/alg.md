@@ -120,7 +120,7 @@
 
     1. 当 $A \in D$ 时必有 $A' \in D$
     2. 当 $A, B \in D$ 且 $A B=\varnothing$ 时，必有 $A+B \in D$
-    3. 对递增序列 $\left\{A_{n}, n \geqslant 1\right\} \subseteq D$，必有 ${\displaystyle \lim _{n \to \infty} A_{n} \in D}$
+    3. 对递增序列 $\left\{A_{n}\right\}_{n \geqslant 1} \subseteq D$，必有 ${\displaystyle \lim _{n \to \infty} A_{n} \in D}$
 
     则称 $D$ 为 $\Omega$ 上的 $\lambda$ 类
 
