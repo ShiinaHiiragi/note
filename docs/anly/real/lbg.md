@@ -146,3 +146,16 @@
         3. $m_{\alpha}^{*}[a, b]=\alpha(b+0)-\alpha(a-0)$
         4. $m_{\alpha}^{*}[a, b)=\alpha(b-0)-\alpha(a-0)$
 3. $\text{Lesbegue}-\text{Stieltjes}$ 测度：若 $F(x)$ 为 $\mathbf{\widehat{R}}$ 上右连续且单调不减的有界函数，则在 $(\mathbf{\widehat{R}}, \mathscr{B})$ 必存在唯一的 $\sigma$ 有限测度 $\mu$，使得 $\mu((a, b])=F(b)-F(a), -\infty \leqslant a<b<+\infty$，称为由 $F$ 生成的 $\text{Lesbegue}-\text{Stieltjes}$ 测度或 $L-S$ 测度
+    1. 若 $(\Omega, \mathscr{F}, \mu)$ 为测度空间，$Y$ 为 $(\Omega, \mathscr{F})$ 到可测空间 $(E, \mathscr{E})$ 的可测映射，$\mu Y^{-1}$ 为 $Y$ 在 $(E, \mathscr{E})$ 上的导出测度．又 $f$ 是 $(E, \mathscr{E})$ 上的可测函数，则下式两端任一端存在（有限）必可推出另一端也存在（有限），且有
+
+        $$
+        \int_{E} f(x) \mu Y^{-1}(\mathrm{d} x)=\int_{\Omega} f(Y(\omega)) \mu(\mathrm{d} \omega)
+        $$
+
+    2. 若 $f(x)$ 为有界区间 $[a, b]$ 上的连续函数，$F$ 为 $[a, b]$ 上的有限 $L-S$ 测度，则
+
+        $$
+        \int_{(a, b]} f(x) \mathrm{d} F(x)=\lim _{\max \left|\Delta x_{i}\right| \rightarrow 0} \sum_{i=1}^{n} f\left(\xi_{i}\right)\left[F\left(x_{i}\right)-F\left(x_{i-1}\right)\right]
+        $$
+
+        其中 $a=x_{0}<x_{1}<\cdots<x_{n}=b, \xi_{i} \in (x_{i-1}, x_{i}], 1 \leqslant i \leqslant n$，即此时 $L-S$ 积分与 $\text{Riemann}-\text{Stieltjes}$ 积分是一致的
