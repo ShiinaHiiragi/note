@@ -76,7 +76,23 @@
         1. $\Omega$ 上有限实值函数 $Y$ 为 $\sigma\left(X_{i}, i \in J\right)$ 可测随机变量的充要条件是存在至多为可数的子集 $I$ 及 $\text{Borel}$ 函数 $f$，使 $Y=f\left[X_{i}, i \in I\right]$
         2. 若 $A \in \sigma\left(X_{i}, i \in J\right)$，必有 $J$ 的至多为可数的子集 $I$，使 $A \in \sigma\left(X_{i}, i \in I\right)$
 
-### 1.2.2 随机变量的收敛性
+### 1.2.2 随机变量的等价类
+1. 几乎必然成立：设 $D(\omega)$ 表示与 $\omega \in \Omega$ 有关的一个论断，若概率测度 $P$ 有 $P(\{\omega \in \Omega: D(\omega)\}) = 1$ 成立，则称 $D(\omega)$ 在 $\Omega$ 上几乎必然成立或 $D(\omega)$ $\text{a.s.}$于 $\Omega$
+    1. 此时 $D(\omega)$ $\text{a.e.}$于 $\Omega$
+    2. 特别地，对随机变量 $X, Y$，若 $P[X \neq Y]=0$，则记 $X=Y$ $\text{a.s.}$，记作 $X \sim Y$，则 $\sim$ 构成随机变量间的等价关系
+2. 随机变量的等价类：记与 $X$ 等价的元素全体为 $\widetilde{X}=\left\{X^{\prime}: X^{\prime}\sim X \text{ a.s.}\right\}$
+    1. 任取类内元素作为代表，同时规定等价类间的运算
+        1. $c \widetilde{X} =\left\{c X^{\prime}: X^{\prime} \sim X\right\}$
+        2. $\widetilde{X}+\widetilde{Y} =\left\{X^{\prime}+Y^{\prime}: X^{\prime} \sim X, Y^{\prime} \sim Y\right\}$
+        3. $\widetilde{X} \widetilde{Y} =\left\{X^{\prime} Y^{\prime}: X^{\prime} \sim X, Y^{\prime} \sim Y\right\}$
+        4. $\widetilde{X} \vee \widetilde{Y} =\left\{X^{\prime} \vee Y^{\prime}: X^{\prime} \sim X, Y^{\prime} \sim Y\right\}$
+        5. $\widetilde{X} \wedge \widetilde{Y} =\left\{X^{\prime} \wedge Y^{\prime}: X^{\prime} \sim X, Y^{\prime} \sim Y\right\}$
+
+    2. 设 $\left\{X_{i}, i \in I\right\}$ 为一族随机变量，则必有唯一（不计 $\text{a.s.}$ 相等差别）随机变量 $Y$（可取 $\pm \infty$）满足
+        1. 对每个 $i \in I$，$X_{i} \leqslant Y$ $\text{a.s.}$
+        2. 若 $Y^{\prime}$ 也满足对每个 $i \in I, X_{i} \leqslant Y^{\prime}$ $\text{a.s.}$，则 $Y \leqslant Y^{\prime}$ $\text{a.s.}$
+
+### 1.2.3 随机变量的收敛性
 
 ## 1.3 概率分布
 ### 1.3.1 分布函数
@@ -87,11 +103,11 @@
         2. $F(x)$ 右连续
         3. ${\displaystyle \lim _{x \rightarrow-\infty} F(x)=0, \lim _{x \rightarrow+\infty} F(x)=1}$
 
-        反之，若 $F(x)$ 为 $\mathbf{R}$ 上满足上述命题的函数，则必存在概率空间 $(\Omega, \mathscr{F}, P)$ 及其上的随机变量 $X$ 使 $P[X \leqslant x]=F(x)$．取 $\Omega=\mathbf{R}, \mathscr{F}=\mathscr{B}$，$P$ 为由 $F$ 在 $(\mathbf{R}, \mathscr{B})$ 上生成的 $L-S$ 测度，则它是一个概率测度；令 $X(x)=x, x \in \mathbf{R}$，则它是一个随机变量且 $P(X \leqslant y)=P\{x: x \leqslant y\}=F(y)$．分别称 $(\mathbf{R}, \mathscr{B}, P)$ 和 $X$ 为标准概率空间和标准随机变量
+        反之，若 $F(x)$ 为 $\mathbf{R}$ 上满足上述命题的函数，则必存在概率空间 $(\Omega, \mathscr{F}, P)$ 及其上的随机变量 $X$ 使 $P[X \leqslant x]=F(x)$．取 $\Omega=\mathbf{R}, \mathscr{F}=\mathscr{B}$，$P$ 为由 $F$ 在 $(\mathbf{R}, \mathscr{B})$ 上生成的 $L-S$ 测度，则它是一个概率测度；令 $X(x)=x, x \in \mathbf{R}$，则它是一个随机变量且 $P[X \leqslant y]=P\{x: x \leqslant y\}=F(y)$．分别称 $(\mathbf{R}, \mathscr{B}, P)$ 和 $X$ 为标准概率空间和标准随机变量
 
     3. 若随机向量 $\left(X_{1}, \cdots, X_{n}\right)$ 和 $\left(Y_{1}, \cdots, Y_{n}\right)$ 有相同 $n$ 维分布函数，则对 $\mathbf{R}^{n}$ 到 $\mathbf{R}^{m}$ 的任一 $\text{Borel}$ 函数 $g$，$g\left(X_{1}, \cdots, X_{n}\right)$ 和 $g\left(Y_{1}, \cdots, Y_{n}\right)$ 有相同的分布，即对一切 $\mathbf{R}^{m}$ 中的 $\text{Borel}$ 集 $B$ 都有 $P\left\{g\left(X_{1}, \cdots, X_{n}\right) \in B\right\}=P\left\{g\left(Y_{1}, \cdots, Y_{n}\right) \in B\right\}$
 
-### 1.3.2 正态分布
+### 1.3.2 概率分布实例
 
 ## 1.4 期望与方差
 ### 1.4.1 数学期望
@@ -131,9 +147,9 @@
 
         $$
         \begin{aligned}
-        P(X \geqslant a) & \leqslant \dfrac{1}{a} \mathrm{E}\left[X I_{(X \geqslant a)}\right] \leqslant \dfrac{1}{a} \mathrm{E} X, \  a \geqslant 0 \\
-        P(|X| \geqslant a) & \leqslant \dfrac{1}{a^{p}} \mathrm{E}|X|^{p}, \  a>0, p>0 \\
-        P(|X| \geqslant a) & \leqslant \dfrac{1}{f(a)} \mathrm{E}[f(|X|)]
+        P[X \geqslant a] & \leqslant \dfrac{1}{a} \mathrm{E}\left[X I_{(X \geqslant a)}\right] \leqslant \dfrac{1}{a} \mathrm{E} X, \  a \geqslant 0 \\
+        P[|X| \geqslant a] & \leqslant \dfrac{1}{a^{p}} \mathrm{E}|X|^{p}, \  a>0, p>0 \\
+        P[|X| \geqslant a] & \leqslant \dfrac{1}{f(a)} \mathrm{E}[f(|X|)]
         \end{aligned}
         $$
 
