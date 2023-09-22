@@ -56,7 +56,7 @@
 1. 随机变量：设 $(\Omega, \mathscr{F})$ 为概率可测空间，则由 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 或 $\left(\widehat{\mathbf{R}}, \mathscr{B}_{\widehat{\mathbf{R}}}\right)$ 的可测函数称为（有限值）随机变量或或广义实值随机变量，也记为 $X \in \mathscr{F}$，通常用 $\text{r.v.}$作为随机变量的简写
     1. 若 $E=\left\{r_{n}\right\}$ 为 $\mathbf{R}$ 中稠密集，则 $X$ 为随机变量的充要条件是对每个 $r_{n} \in E$ 都有 $\left\{\omega: X(\omega) \leqslant r_{n}\right\} \in \mathscr{F}$
     2. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，则 ${\displaystyle \sup _{n \geqslant 1} X_{n},  \inf _{n \geqslant 1} X_{n}, \varlimsup_{n \rightarrow \infty} X_{n}, \varliminf_{n \rightarrow \infty} X_{n}}$ 都是随机变量
-2. 离散随机变量：若存在 $(\Omega, \mathscr{F})$ 的一个有限分割 $\left\{A_{i}, i \in I\right\}$（即 $I$ 为有限的，$A_{i} \in \mathscr{F}$，且 $A_{i} A_{j}=\varnothing, i \neq j, {\displaystyle \sum_{i \in I} A_{i}=\Omega}$）及互不相同的实数 $\left\{x_{i}, i \in I\right\}$，使 $\Omega$ 上的函数 $X$ 可表示为 $X(\omega)=x_{i}$，当 $\omega \in A_{i}, i \in I$，则称 $X$ 为离散随机变量．显然离散随机变量是随机变量，且若 $x_{i}$ 互不相同，$x_{i}$ 与 $A_{i}$ 由 $X$ 唯一确定．对 $A \in \mathscr{F}$，$I_{A}(\omega)$ 是离散随机变量，$X$ 可表示为 ${\displaystyle X(\omega)=\sum_{i \in I} x_{i} I_{A_{i}}(\omega)}$
+2. 离散随机变量：若存在 $(\Omega, \mathscr{F})$ 的一个有限分割 $\left\{A_{i}\right\}_{i \in I}$（即 $I$ 为有限的，$A_{i} \in \mathscr{F}$，且 $A_{i} A_{j}=\varnothing, i \neq j, {\displaystyle \sum_{i \in I} A_{i}=\Omega}$）及互不相同的实数 $\left\{x_{i}\right\}_{i \in I}$，使 $\Omega$ 上的函数 $X$ 可表示为 $X(\omega)=x_{i}$，当 $\omega \in A_{i}, i \in I$，则称 $X$ 为离散随机变量．显然离散随机变量是随机变量，且若 $x_{i}$ 互不相同，$x_{i}$ 与 $A_{i}$ 由 $X$ 唯一确定．对 $A \in \mathscr{F}$，$I_{A}(\omega)$ 是离散随机变量，$X$ 可表示为 ${\displaystyle X(\omega)=\sum_{i \in I} x_{i} I_{A_{i}}(\omega)}$
 
     1. $(\Omega, \mathscr{F})$ 上的离散随机变量全体构成一个代数和格
     2. $X$ 为 $(\Omega, \mathscr{F})$ 上的随机变量的充要条件是存在离散随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，使 ${\displaystyle X(\omega)=\lim _{n \rightarrow \infty} X_{n}(\omega), \  \forall \omega \in \Omega}$．且当 $X$ 为非负时，$\left\{X_{n}\right\}$ 可取成是非负递增的；当 $|X| \leqslant M$ 时，$\left\{X_{n}\right\}$ 也可取成是 $\left|X_{n}\right| \leqslant M$ 的
@@ -73,8 +73,8 @@
     1. $X=\left(X_{1}, X_{2}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量的充要条件是 $X$ 为 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}^{n}, \mathscr{B}^{n}\right)$ 的可测映射，且 $\sigma(X)=\sigma \ \left(X_{i}, 1 \leqslant i \leqslant n\right)$
     2. 若 $X=\left(X_{1}, X_{2}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量，则有限随机变量 $Y$ 为 $\sigma(X)$ 可测的充要条件是存在 $n$ 元 $\text{Borel}$ 函数 $h\left(x_{1}, x_{2}, \cdots, x_{n}\right)$，使 $Y=h\left(X_{1}, X_{2}, \cdots, X_{n}\right)$
     3. 设 $\left\{X_{i}, i \in J\right\}$ 为 $(\Omega, \mathscr{F})$ 上的一族随机变量，则
-        1. $\Omega$ 上有限实值函数 $Y$ 为 $\sigma\left(X_{i}, i \in J\right)$ 可测随机变量的充要条件是存在至多为可数的子集 $I$ 及 $\text{Borel}$ 函数 $f$，使 $Y=f\left[X_{i}, i \in I\right]$
-        2. 若 $A \in \sigma\left(X_{i}, i \in J\right)$，必有 $J$ 的至多为可数的子集 $I$，使 $A \in \sigma\left(X_{i}, i \in I\right)$
+        1. $\Omega$ 上有限实值函数 $Y$ 为 $\sigma\left(X_{i}, i \in J\right)$ 可测随机变量的充要条件是存在至多为可数的子集 $I$ 及 $\text{Borel}$ 函数 $f$，使 $Y=f\left[X_{i}\right]_{i \in I}$
+        2. 若 $A \in \sigma\left(X_{i}, i \in J\right)$，必有 $J$ 的至多为可数的子集 $I$，使 $A \in \sigma\left(X_{i}\right)_{i \in I}$
 
 ### 1.2.2 随机变量的等价类
 1. 几乎必然成立：设 $D(\omega)$ 表示与 $\omega \in \Omega$ 有关的一个论断，若概率测度 $P$ 有 $P(\{\omega \in \Omega: D(\omega)\}) = 1$ 成立，则称 $D(\omega)$ 在 $\Omega$ 上几乎必然成立或 $D(\omega)$ $\text{a.s.}$于 $\Omega$
@@ -88,12 +88,12 @@
     5. $\widetilde{X} \wedge \widetilde{Y} =\left\{X^{\prime} \wedge Y^{\prime}: X^{\prime} \sim X, Y^{\prime} \sim Y\right\}$
 
 ### 1.2.3 随机变量的收敛性
-1. 几乎必然收敛：随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$ 若有 ${\displaystyle \limsup _{n \to \infty} X_{n}=\liminf _{n \to \infty} X_{n}}$ $\text{a.s.}$，则不计等价类内的差别其唯一确定的极限 ${\displaystyle X=\limsup _{n \to \infty} X_{n}}$ 也记为 ${\displaystyle X=\lim _{n \to \infty} X_{n}}$ 或 $X_{n} \overset{\text{a.s.}}{\longrightarrow} X$，并称 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为几乎必然收敛于 $X$ 或以概率 $1$ 收敛于 $X$
+1. 几乎必然收敛：随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$ 若有 ${\displaystyle \limsup _{n \to \infty} X_{n}=\liminf _{n \to \infty} X_{n}}$ $\text{a.s.}$，则不计等价类内的差别其唯一确定的极限 ${\displaystyle X=\limsup _{n \to \infty} X_{n}}$ 也记为 ${\displaystyle X=\lim _{n \to \infty} X_{n}}$ 或 $X_{n} \stackrel{\text{a.s.}}{\longrightarrow} X$，并称 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为几乎必然收敛于 $X$ 或以概率 $1$ 收敛于 $X$
     1. 本性上（下）确界：设 $\left\{X_{i}\right\}_{i \in I}$ 为一族随机变量，则必有唯一（不计 $\text{a.s.}$相等差别）随机变量 $Y$（可取 $\pm \infty$）满足
         1. 对每个 $i \in I$，$X_{i} \leqslant Y$ $\text{a.s.}$
         2. 若 $Y^{\prime}$ 也满足对每个 $i \in I, X_{i} \leqslant Y^{\prime}$ $\text{a.s.}$，则 $Y \leqslant Y^{\prime}$ $\text{a.s.}$
 
-        称 $Y$ 为 $\left\{X_{i}, i \in I\right\}$ 的本性上确界，记为 $\underset{i \in I}{\operatorname{ess sup}} X_{i}$ 或 $\underset{i \in I}{\operatorname{esup}} X_{i}$
+        称 $Y$ 为 $\left\{X_{i}\right\}_{i \in I}$ 的本性上确界，记为 $\underset{i \in I}{\operatorname{ess sup}} X_{i}$ 或 $\underset{i \in I}{\operatorname{esup}} X_{i}$
 
         同样, $\underset{i \in I}{\operatorname{ess inf}} X_{i} =-\underset{i \in I}{\operatorname{ess sup}} (-X_{i})$, 称为 $\left\{X_{i}\right\}_{i \in I}$ 的本性下确界
 
@@ -102,7 +102,54 @@
         2. 随机变量序列 $\left\{X_{n}, n \geqslant 1\right\}$ $\text{a.s.}$收敛于有限随机变量的充要条件是它为 $\text{a.s.}$收敛意义下的 $\text{Cauchy}$ 序列，即当 $m, n \rightarrow \infty,\left\{X_{n}-X_{m}\right\}_{m, n \geqslant 1}$ $\text{a.s.}$收敛于零，或等价地 ${\displaystyle P\left(\bigcap_{N=1}^{\infty} \bigcup_{n, m=N}^{\infty}\left\{\left|X_{n}-X_{m}\right|>\varepsilon\right\}\right)=0, \forall \varepsilon>0}$
         3. 若正数列 $\left\{\varepsilon_{n}\right\}$ 满足 ${\displaystyle \sum_{n \geqslant 1} \varepsilon_{n}<\infty}$，又随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$ 满足 ${\displaystyle \sum_{n=1}^{\infty} P\left(\left|X_{n+1}-X_{n}\right|>\varepsilon_{n}\right)<\infty}$，则 $\left\{X_{n}\right\}_{n \geqslant 1}$ $\text{a.s.}$收敛于有限随机变量
 
-2. 依概率收敛
+2. 依概率收敛：随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，若存在有限随机变量 $X$，使 ${\displaystyle \lim _{n \rightarrow \infty} P\left(\left|X_{n}-X\right|>\varepsilon\right)=0, \forall \varepsilon>0}$，则称 $\left\{X_{n}\right\}_{n \geqslant 1}$ 依概率收敛于 $X$，记为 $X_{n} \stackrel{P}{\longrightarrow} X$ 或 $\underset{n \rightarrow \infty}{\operatorname{pr-lim}}=X$
+    1. 若随机变量列 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为依概率收敛下的 $\text{Cauchy}$ 基本列，即 ${\displaystyle \lim _{n, m \rightarrow \infty} P\left(\left|X_{n}-X_{m}\right|>\varepsilon\right)=0, \forall \varepsilon>0}$，则必有 $\text{a.s.}$收敛于有限随机变量的子序列 $\left\{X_{n_{k}}\right\}_{k \geqslant 1}$
+    2. 设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列
+        1. 若 ${\displaystyle \lim _{n \rightarrow \infty} X_{n}=X}$ $\text{a.s.}$，且 $X$ 为有限随机变量，则 $\underset{n \rightarrow \infty}{\operatorname{pr-lim}} X_{n}=X$
+        2. $\underset{n \rightarrow \infty}{\operatorname{pr-lim}} X_{n}=X$ 的充要条件是 $\left\{X_{n}\right\}$ 为依概率收敛下的 $\text{Cauchy}$ 基本列
+
+3. 一阶平均收敛：对 $(\Omega, \mathscr{F}, P)$ 上可积随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，若存在可积随机变量$X$，使得 ${\displaystyle \lim _{n \to \infty} \mathrm{E}\left|X_{n}-X\right|=0}$，则称 $\left\{X_{n}\right\}$（一阶）平均收敛或 $L^{1}$ 收敛于 $X$，记为 $X_{n} \stackrel{L^{1}}{\longrightarrow} X$
+    1. 一致可积：设 $(\Omega, \mathscr{F}, P)$ 上可积随机变量族为 $\left\{X_{i}\right\}_{i \in I}$，若 ${\displaystyle \lim _{N \rightarrow \infty} \sup _{i \in I} \int_{\left|X_{i}\right|>N}\left|X_{i}\right| \mathrm{dP}=0}$，则称 $\left\{X_{i}\right\}_{i \in I}$ 为一致可积的
+        1. 设 $(\Omega, \mathscr{F}, P)$ 上可积随机变量族为 $\mathscr{H}=\left\{X_{i}\right\}_{i \in I}$
+            - 若 $I$ 为有限集，则 $\mathscr{H}$ 一致可积
+            - 若对每个 $i \in I,\left|X_{i}\right| \leqslant Y$，$Y$ 可积，则 $\mathscr{H}$ 一致可积
+            - 若存在 $p>1, \sup _{i}$ E $\left|X_{i}\right|^{p}<\infty$，则 $\mathscr{H}$ 一致可积
+        2. $(\Omega, \mathscr{F}, P)$ 上可积随机变量族 $\mathscr{H}=\left\{X_{i}\right\}_{i \in I}$ 为一致可积的充要条件是
+            - 一致绝对连续：${\displaystyle \lim _{\delta \rightarrow 0} \sup _{P(A)<\delta} \sup _{i \in I} \int_{A}\left|X_{i}\right| \mathrm{dP}=0}$
+            - 积分一致有界：${\displaystyle \sup _{i \in I} E\left|X_{i}\right|<\infty}$
+    2. 对可积随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，下列条件等价
+        1. $X_{n} \stackrel{L^{1}}{\longrightarrow} X$
+        2. $\left\{X_{n}\right\}$ 为 $L^{1}$ 基本列，即 $\lim _{n, m \rightarrow \infty} \mathrm{E}\left|X_{n}-X_{m}\right|=0$
+        3. $\left\{X_{n}\right\}_{n \geqslant 1}$ 为一致可积的且 $X_{n} \stackrel{P}{\longrightarrow} X$
+    3. $\text{Jensen}$ 不等式：设 $f$ 为 $(a, b) \subseteq(-\infty,+\infty)$ 上的凸函数，$X$ 为取值 $(a, b)$ 的可积随机变量，则有 $\mathrm{E}[f(X)] \geqslant f(\mathrm{E} X)$
+4. $p$ 阶平均收敛：对 $p \geqslant 1$ 及随机变量等价类规定 $L^{p}(\Omega, \mathscr{F}, P)=\left\{X: X \textsf{ 为随机变量，}\|X\|_{p}<\infty\right\}$，称它为 $(\Omega, \mathscr{F}, P)$ 上的 $L^{p}$ 空间，简称 $L^{p}$ 空间．对 $L^{p}$ 中元素列 $\left\{X_{n}\right\}$ 及 $Y$，若 ${\displaystyle \lim _{n \rightarrow \infty}\left\|X_{n}-Y\right\|_{p}=0}$，则称 $\left\{X_{n}\right\}$ $p$ 次平均收敛或 $p$ 阶平均收敛于 $Y$，记为 $X_{n} \stackrel{L^{p}}{\longrightarrow} Y$．由于当 $p<\infty$ 时，$P\left(\left|X_{n}-Y\right|>\varepsilon\right) \leqslant \varepsilon^{-p} \ \mathrm{E}\left|X_{n}-Y\right|^{p}$，因此 $X_{n} \stackrel{L^{p}}{\longrightarrow} Y$，必有 $X_{n} \stackrel{P}{\longrightarrow} Y$
+    1. 对实随机变量 $X$，记
+
+        $$
+        \begin{aligned}
+        \|X\|_{p} & =(\mathrm{E}|X| p)^{\frac{1}{p}} \\
+        \|X\|_{\infty} & =\sup \{x: P(|X|>x)>0\}
+        \end{aligned}
+        $$
+
+        1. $\text{H}\ddot{\mathrm o}\text{der}$ 不等式：设 $p \geqslant 1, q \geqslant 1$ 满足 $\dfrac{1}{p}+ \dfrac{1}{q}=1$（约定 $1+ \dfrac{1}{\infty}=1$），$X, Y$ 为实值随机变量，则有 $E|X Y| \leqslant\|X\|_{p}\|Y\|_{q}$，且对 $1 \leqslant r \leqslant r^{\prime} \leqslant \infty$ 有 $\|X\|_{r} \leqslant\|X\|_{r^{\prime}}$
+        2. $\text{Minkowski}$ 不等式：对随机变量 $X, Y$ 及实数 $c, p \geqslant 1$，有 ① $\|c X\|_{p}=|c|\|X\|_{p}$；② $\|X+Y\|_{p} \leqslant\|X\|_{p}+\|Y\|_{p}$
+
+    2. $L^{p}$ 的性质
+        1. $\|\cdot\|_{p}$ 是 $L^{p}$ 中范数，$L^{p}$ 是线性赋范空间
+        2. 对 $p \in[1, \infty], L^{p}$ 为 $\text{Banach}$ 空间，且是一个完备格
+        3. 若在 $L^{2}(\Omega, \mathscr{F}, P)$ 中取 $(X, Y)=\mathrm{E}[X Y]$，则 $(X, Y)$ 是内积，$L^{2}(\Omega, \mathscr{F}, P)$ 是 $\text{Hilbert}$ 空间，且也是一个完备格
+    3. 对 $1 \leqslant p \leqslant \infty$ 及 $L^{p}$ 中元素列 $\left\{X_{n}\right\}$，下列两个事实等价
+        1. $X_{n} \stackrel{L^{p}}{\longrightarrow} X$
+        2. $\left\{X_{n}\right\}$ 是基本列，即 ${\displaystyle \lim _{n, m \rightarrow \infty}\left\|X_{n}-X_{m}\right\|_{p}=0}$
+
+        当 $1 \leqslant p<\infty$ 时，上述事实又与下列事实等价
+
+        - $\left\{\left|X_{n}\right|^{p}\right\}_{n \geqslant 1}$ 一致可积，且 $X_{n} \stackrel{P}{\longrightarrow} X$
+
+    4. 对 $p \in [1, \infty)$ 及随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，若存在 $Y \in L^{p} \ (\Omega, \mathscr{F}, P)$ 使对每个 $n$ 都有 $\left|X_{n}\right| \leqslant Y$，则当 $n \rightarrow \infty$ 时下列两个事实等价
+        1. $X_{n} \stackrel{p}{\rightarrow} X$
+        2. $X_{n} \stackrel{L^{p}}{\longrightarrow} X$
 
 ## 1.3 概率分布
 ### 1.3.1 分布函数
