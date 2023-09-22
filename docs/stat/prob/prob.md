@@ -88,8 +88,8 @@
     5. $\widetilde{X} \wedge \widetilde{Y} =\left\{X^{\prime} \wedge Y^{\prime}: X^{\prime} \sim X, Y^{\prime} \sim Y\right\}$
 
 ### 1.2.3 随机变量的收敛性
-1. 以概率 $1$ 收敛：随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$ 若有 ${\displaystyle \limsup _{n \to \infty} X_{n}=\liminf _{n \to \infty} X_{n}}$ $\text{a.s.}$，则不计等价类内的差别其唯一确定的极限 $X=\lim \sup _{n} X_{n}$ 也记为 $X=\lim _{n \to \infty} X_{n}$ 或 $X_{n} \overset{\text{a.s.}}{\longrightarrow} X$，并称 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为以概率 $1$ 收敛于 $X$ 或 $\text{a.s.}$收敛于 $X$
-    1. 本性上（下）确界：设 $\left\{X_{i}\right\}_{i \in I}$ 为一族随机变量，则必有唯一（不计 $\text{a.s.}$ 相等差别）随机变量 $Y$（可取 $\pm \infty$）满足
+1. 几乎必然收敛：随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$ 若有 ${\displaystyle \limsup _{n \to \infty} X_{n}=\liminf _{n \to \infty} X_{n}}$ $\text{a.s.}$，则不计等价类内的差别其唯一确定的极限 ${\displaystyle X=\limsup _{n \to \infty} X_{n}}$ 也记为 ${\displaystyle X=\lim _{n \to \infty} X_{n}}$ 或 $X_{n} \overset{\text{a.s.}}{\longrightarrow} X$，并称 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为几乎必然收敛于 $X$ 或以概率 $1$ 收敛于 $X$
+    1. 本性上（下）确界：设 $\left\{X_{i}\right\}_{i \in I}$ 为一族随机变量，则必有唯一（不计 $\text{a.s.}$相等差别）随机变量 $Y$（可取 $\pm \infty$）满足
         1. 对每个 $i \in I$，$X_{i} \leqslant Y$ $\text{a.s.}$
         2. 若 $Y^{\prime}$ 也满足对每个 $i \in I, X_{i} \leqslant Y^{\prime}$ $\text{a.s.}$，则 $Y \leqslant Y^{\prime}$ $\text{a.s.}$
 
@@ -98,6 +98,11 @@
         同样, $\underset{i \in I}{\operatorname{ess inf}} X_{i} =-\underset{i \in I}{\operatorname{ess sup}} (-X_{i})$, 称为 $\left\{X_{i}\right\}_{i \in I}$ 的本性下确界
 
     2. $\text{a.s.}$收敛的性质
+        1. 随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$ $\text{a.s.}$收敛于有限随机变量 $X$ 的充要条件是 ${\displaystyle P\left(\bigcap_{N=1}^{\infty} \bigcup_{n=N}^{\infty}\left\{\left|X_{n}-X\right|>\varepsilon\right\}\right)=0, \forall \varepsilon>0}$
+        2. 随机变量序列 $\left\{X_{n}, n \geqslant 1\right\}$ $\text{a.s.}$收敛于有限随机变量的充要条件是它为 $\text{a.s.}$收敛意义下的 $\text{Cauchy}$ 序列，即当 $m, n \rightarrow \infty,\left\{X_{n}-X_{m}\right\}_{m, n \geqslant 1}$ $\text{a.s.}$收敛于零，或等价地 ${\displaystyle P\left(\bigcap_{N=1}^{\infty} \bigcup_{n, m=N}^{\infty}\left\{\left|X_{n}-X_{m}\right|>\varepsilon\right\}\right)=0, \forall \varepsilon>0}$
+        3. 若正数列 $\left\{\varepsilon_{n}\right\}$ 满足 ${\displaystyle \sum_{n \geqslant 1} \varepsilon_{n}<\infty}$，又随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$ 满足 ${\displaystyle \sum_{n=1}^{\infty} P\left(\left|X_{n+1}-X_{n}\right|>\varepsilon_{n}\right)<\infty}$，则 $\left\{X_{n}\right\}_{n \geqslant 1}$ $\text{a.s.}$收敛于有限随机变量
+
+2. 依概率收敛
 
 ## 1.3 概率分布
 ### 1.3.1 分布函数
