@@ -228,3 +228,18 @@
     3. 若 $X$ 为 $(\Omega, \mathscr{F}, P)$ 上 $n$ 维随机变量，$F$ 为 $X$ 的 $n$ 元分布函数．又 $g\left(x_{1}, \cdots, x_{n}\right)$ 为 $n$ 元 $\text{Borel}$ 函数，$F_{g(X)}$ 表示 $g(X)$ 的分布函数，则当 $\mathrm{E} g(X)$ 存在时，${\displaystyle \mathrm{E} g(X)=\int_{\Omega} g(X(\omega)) P(\mathrm{d} \omega)=\int_{\mathbf{R}} y \mathrm{d} F_{g(X)}(y)=\int_{\mathbf{R}^{n}} g\left(x_{1}, \cdots, x_{n}\right) \mathrm{d} F\left(x_{1}, \cdots, x_{n}\right)}$．因此随机变量函数 $g(X)$ 的期望 ${\displaystyle \mathrm{E}[g(X)]=\int y \mathrm{d} F_{g(X)}(y)=\int g(x) \mathrm{d} F_{X}(x)}$
 
 ### 1.4.2 方差与协方差
+1. 矩的相关概念：若 $X$ 为 $(\Omega, \mathscr{F}, P)$ 上的随机变量且 $p>0$，称 $E|X|^{p}$ 为 $X$ 的 $p$ 阶绝对矩，$\mathrm{E} X^{p}$（若其存在）称为 $X$ 的 $p$ 阶矩
+    1. 方差：$\mathrm{D}X = \mathrm{E}[X-\mathrm{E} X]^{2}$ 称为 $X$ 的方差，也可记作 $\operatorname{Var}(X)$，方差的算术平方根称为标准差
+    2. 协方差：若 $Y$ 亦为随机变量，则称 $\operatorname{Cov}(X, Y) = [(X-\mathrm{E} X)(Y-\mathrm{E} Y)]$ 为 $X, Y$ 的协方差
+    3. 相关系数：定义
+
+        $$
+        \rho(X, Y)= \begin{cases}\dfrac{\operatorname{Cov}(X, Y)}{\sqrt{\mathrm{D}X \cdot \mathrm{D}Y}}, & \mathrm{D}X \cdot \mathrm{D}Y \neq 0 \\ 0, & \mathrm{D}X \cdot \mathrm{D}Y=0\end{cases}
+        $$
+
+        为 $X, Y$ 的相关系数．若 $\mathrm{E} X Y=0$，则称 $X, Y$ 为正交的；若 $\rho(X, Y)=0$，则称 $X, Y$ 为互不相关的
+
+        1. $|\operatorname{Cov}(X, Y)| \leqslant \sqrt{\mathrm{D}X \cdot \mathrm{D}Y}$
+        2. $|\rho(X, Y)| \leqslant 1$
+
+2. $\text{Chebyshev}$ 不等式：$P(|X-\mathrm{E} X|>a) \leqslant \dfrac{1}{a^{2}} \mathrm{D}X, a>0$
