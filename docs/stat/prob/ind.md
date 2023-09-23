@@ -1,7 +1,5 @@
 # 2 统计独立性
 
-
-
 ## 2.1 独立性
 设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$T$ 为某个参数集
 
@@ -18,13 +16,23 @@
         $$
 
     2. 设 $\left\{X_{t}\right\}_{t \in T}$ 为独立随机变量族，$\left\{T_{\alpha}, \alpha \in J\right\}$ 为 $T$ 的互不相交子集，$\left\{f_{\alpha}\left(X_{t}, t \in T_{\alpha}\right), \alpha \in J\right\}$ 为 $\text{Borel}$ 函数族，则 $\left\{Y_{\alpha}=f_{\alpha}\left(X_{t}, t \in T_{\alpha}\right), \alpha \in J\right\}$ 为独立随机变量族
-    3. 设 $\left\{X_{t}\right\}_{t \in T}$ 为独立随机变量族，且对每个 $t \in T$ 都有 $f_{t}\left(X_{t}\right)$ 可积（非负），则对 $T$ 的任一有限子集 $I$，都有 ${\displaystyle \mathrm{E}\left[\prod_{t \in I} f_{t}\left(X_{t}\right)\right]=\prod_{t \in I} \mathrm{E}\left[f_{t}\left(X_{t}\right)\right]}$
+    3. 设 $\left\{X_{t}\right\}_{t \in T}$ 为独立随机变量族，且对每个 $t \in T$ 都有 $f_{t}\left(X_{t}\right)$ 可积（非负），则对 $T$ 的任一有限子集 $I$，都有 ${\displaystyle \mathrm{E}\left[\prod_{t \in I} f_{t}\left(X_{t}\right)\right]=\prod_{t \in I} \mathrm{E}\left[f_{t}\left(X_{t}\right)\right]}$．特别地，若 $\left\{X_{t}\right\}_{t \in T}$ 为独立可积（非负）随机变量族，则对 $T$ 的任一有限子集 $I$，都有 ${\displaystyle \mathrm{E}\left[\prod_{t \in I} X_{t}\right]=\prod_{t \in I} \mathrm{E}\left[X_{t}\right]}$
 
 ## 2.2 独立随机变量序列
 ### 2.2.1 零一律
+1. 尾 $\sigma$ 域：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，记 ${\displaystyle \mathscr{B}^{*}=\bigcap_{n=1}^{\infty} \sigma\left(X_{k}, k \geqslant n\right)}$，则称 $\mathscr{B}^{*}$ 为关于 $X$ 的尾 $\sigma$ 域或尾事件域
+2. $\text{Kolmogorov}$ 零一律：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，则其尾事件域 $\mathscr{B}^{*}$ 中任一事件的概率必为 $0$ 或 $1$
+    1. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，$\mathscr{B}^{*}$ 为其尾事件域，则 $\mathscr{B}^{*}$ 可测随机变量 $Y$ 必为退化的，即 $Y$ 以概率 $1$ 取常数值
+    2. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列
+        1. ${\displaystyle \varlimsup_{n \to \infty} X_{n}, \varliminf_{n \to \infty} X_{n}}$ 为退化的
+        2. $\left\{\omega: {\displaystyle \lim _{n \to \infty} X_{n}} \textsf{ 存在}\right\}, \ \left\{\omega: {\displaystyle \sum_{n \to \infty} X_{n}} \textsf{ 收敛} \right\}, \ \left\{\omega: {\displaystyle \lim _{n \to \infty} \dfrac{1}{n} \sum_{j \leqslant n} X_{j}=0}\right\}$ 诸事件的概率为 $0$ 或 $1$
+
+3. $\text{Borel}-\text{Cantelli}$ 引理
+    1. 对事件列 $\left\{A_{n}\right\}_{n \geqslant 1}$，${\displaystyle \sum_{n=1}^{\infty} P\left(A_{n}\right)<\infty \to P\left(A_{n} \text{ i.o.}\right)=0}$
+    2. 若 $\left\{A_{n}\right\}_{n \geqslant 1}$ 为独立事件列，则 ${\displaystyle \sum_{n=1}^{\infty} P\left(A_{n}\right)=\infty \rightarrow P\left(A_{n} \text{ i.o.}\right)=1}$
 
 ### 2.2.2 独立项级数
 
-### 2.2.3 停时
+### 2.2.3 渐进理论
 
-## 2.3 渐进理论
+### 2.2.4 停时
