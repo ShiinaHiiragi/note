@@ -1,4 +1,4 @@
-# 4 条件概率与期望
+# 4 条件期望
 
 ## 4.1 条件期望
 1. 条件概率：设 $(\Omega, \mathscr{F}, P)$ 是一个概率空间且 $B \in \mathscr{F}, P(B)>0$，记条件概率 $P_{B}(A)=P(A \mid B)=\dfrac{P(A B)}{P(B)}$
