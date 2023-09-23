@@ -51,7 +51,7 @@
             2. 若 $\overline{P}=P^{*}\bigg|_{\mathscr{D}}$，则 $\overline{P}$ 为 $\mathscr{D}$ 上完备概率测度且 $\overline{P}\bigg|_{\mathscr{A}}=P$
             3. 对每个 $C \in \mathscr{D}$，必有 $E, F \in \sigma(A), E \subseteq C \subseteq F$ 且 $\overline{P}(F- E)=0$
 
-### 1.1.2 乘积概率测度
+### 1.1.3 乘积概率测度
 1. 转移概率：$\left(\Omega_{1}, \mathscr{F}_{1}\right),\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 为两个可测空间，$P\left(\omega_{1}, A_{2}\right)$ 为 $\Omega_{1} \times \mathscr{F}_{2}$ 到 $[0,1]$ 的函数，若满足
     1. 对每个 $\omega_{1} \in \Omega_{1}$，$P\left(\omega_{1}, \cdot\right)$ 是 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 上的概率测度
     2. 对每个 $A_{2} \in \mathscr{F}_{2}$，$P\left(\cdot, A_{2}\right)$ 是 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 上的可测函数
@@ -73,7 +73,7 @@
 
     2. $\text{Fubini}$ 定理：设 $\left(\Omega_{1}, \mathscr{F}_{1}, P_{1}\right)$ 和 $\left(\Omega_{2}, \mathscr{F}_{2}, P_{2}\right)$ 为两个概率空间，则在 $\left(\Omega_{1} \times \Omega_{2}, \mathscr{F}_{1} \times \mathscr{F}_{2}\right)$ 上存在唯一的一个概率测度 $P$ 满足 ${\displaystyle P\left(A_{1} \times A_{2}\right)=P_{1}\left(A_{1}\right) P_{2}\left(A_{2}\right), \  A_{1} \in \mathscr{F}_{1}, A_{2} \in \mathscr{F}_{2}}$
 
-2. 乘积测度：由 $\text{Fubini}$ 定理规定的测度称为乘积测度，记为 $P=P_{1} \times P_{2}$．又记
+2. 二维乘积测度：由 $\text{Fubini}$ 定理规定的测度称为乘积测度，记为 $P=P_{1} \times P_{2}$．又记
 
     $$
     \left(\Omega_{1} \times \Omega_{2}, \mathscr{F}_{1} \times \mathscr{F}_{2}, P\right)=\left(\Omega_{1}, \mathscr{F}_{1}, P_{1}\right) \times\left(\Omega_{2}, \mathscr{F}_{2}, P_{2}\right)
@@ -106,6 +106,13 @@
             $$
 
             反之，若对某一组满足上两式的 $\alpha, \beta, \gamma$ 式成立，则 $X \in L^{p}$
+
+3. 无限维乘积测度：若 $P_{T_{2}}$ 为 $\left(\Omega_{T_{2}}, \mathscr{F}_{T_{2}}\right)$ 上的概率，则 $P_{T_{2}}\left(\pi_{T_{1}}^{T_{2}}\right)^{-1}$ 为 $\left(\Omega_{T_{1}}, \mathscr{F}_{T_{1}}\right)$ 上的概率．反之对 $B \in \overline{\mathscr{F}}_{T_{1}}^{T_{2}}$，必存在完全确定的 $A=\pi_{T_{1}}^{T_{2}}(B) \in \mathscr{F}_{T_{1}}$，使 $B=\left(\pi_{T_{1}}^{T_{2}}\right)^{-1} A$．所以对 $\left(\Omega_{T_{1}}, \mathscr{F}_{T_{1}}\right)$ 上的概率 $P_{T_{1}}$，由 $Q(B)=Q\left(\left(\pi_{T_{1}}^{T_{2}}\right)^{-1}(A)\right)=P(A)$ 亦可完全确定地在 $\left(\Omega_{T_{2}}, \overline{\mathscr{F}}_{T_{1}}^{T_{2}}\right)$ 上规定一个概率 $Q$．特别地，由 $P_{T_{1}}$ 可在 $\left(\Omega, \overline{\mathscr{F}}_{T_{1}}\right)$ 上规定一个概率
+    1. 设对 $T$ 的有限子集 $T_{1}=\left\{t_{1}, \cdots, t_{n}\right\} \subseteq T$，以 $P_{T_{1}}$ 表示 $\left(\Omega_{T_{1}}, \mathscr{F}_{T_{2}}\right)$ 上的概率测度，则对测度族 $\{P_{T_{1}}, \textsf{ 有限 } T_{1} \subseteq T\}$，在 $(\Omega, \mathscr{F})$ 上存在非负有限可加集函数 $P$，满足对每个有限 $T_{1} \subseteq T$ 都有 $P\left(\pi_{T_{1}}^{T}\right)^{-1}=P_{T_{1}}$，其充要条件是 $\left\{P_{T_{1}}, T_{1} \subseteq T\right\}$ 满足下列相容性条件：对 $T$ 任意有限子集 $T_{1}, T_{2}$, $T_{1} \subseteq T_{2}$，有 $P_{T_{2}}\left(\pi_{T_{1}}^{T_{2}}\right)^{-1}=P_{T_{1}}$
+    2. 设 $\left\{P_{t_{1} \cdots t_{n}}, t_{1}, \cdots, t_{n} \in T\right\}$ 为 $\left\{\left(\Omega_{t}, \mathscr{F}_{t}\right), t \in T\right\}$ 的有限维乘积空间上的满足相容性条件的概率测度族，又对每个 $t \in T$，存在 $\mathscr{F}_{t}$ 的子类 $\mathscr{C}_{t}$ 具有有限交性质，且 $P_{t}(A)=\sup \left\{P_{t}(C): C \in \mathscr{C}_{t}, C \subseteq A\right\}, \  A \in \mathscr{F}_{t}$．则在 $\left(\Omega_{T}, \mathscr{F}_{T}\right)$ 上存在唯一概率测度 $P$，满足 $P\left(\pi_{T_{1}}^{T}\right)^{-1}=P_{T_{1}}\  (\textsf{对每个有限 } T_{1} \subseteq T)$
+        1. $\text{Kolmogorov}$ 定理：设对每个 $t \in T,\left(\mathbf{R}_{t}, \mathscr{B}_{t}\right)=\left(\mathbf{R}, \mathscr{B}^{1}\right), \mathscr{G}= \left\{F_{t_{1} \cdots t_{n}}: t_{1}, \cdots, t_{n} \in T\right\}$ 为 $\left\{\left(\mathbf{R}_{t}, \mathscr{B}_{t}\right): t \in T\right\}$ 的乘积空间上的相容有限维分布函数族，则在 $\left(\mathbf{R}^{T}, \mathscr{B}^{T}\right)$ 上存在概率测度 $P$，使 $P$ 以 $\mathscr{G}$ 为有限维分布函数族
+        2. 称 $\left(\mathbf{R}^{T}, \mathscr{B}^{T}, P\right)$ 为标准概率空间
+    3. 设 $\left\{\left(\Omega_{t}, \mathscr{F}_{t}, P_{t}\right), t \in T\right\}$ 为一族概率空间，则在乘积可测空间 $\left(\Omega_{T}, \mathscr{F}_{T}\right)$ 上存在唯一概率测度 $P$，满足对每个有限 $T_{1} \subseteq T$，有 ${\displaystyle P\left(\pi_{T_{1}}^{T}\right)^{-1}=\underset{t \in T_{1}}{\prod} P_{t}}$
 
 ## 1.2 随机变量
 ### 1.2.1 随机变量的概念
