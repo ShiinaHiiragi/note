@@ -51,7 +51,7 @@
             2. 若 $\overline{P}=P^{*}\bigg|_{\mathscr{D}}$，则 $\overline{P}$ 为 $\mathscr{D}$ 上完备概率测度且 $\overline{P}\bigg|_{\mathscr{A}}=P$
             3. 对每个 $C \in \mathscr{D}$，必有 $E, F \in \sigma(A), E \subseteq C \subseteq F$ 且 $\overline{P}(F- E)=0$
 
-3. 古典概型：令 $\Omega=\{a_n\}_{n\geqslant 1}$ 为可数集，则 $(\Omega, \mathscr{P}(\Omega))$ 是一个平凡可测空间．$A\in \mathscr{P}(\Omega)$ 是一个可数集或有限集，则 ${\displaystyle P(A)=P\left(\bigcup_{a\in A}\{a\}\right)=\sum_{a\in A}P(\{a\})}$．令 ${\displaystyle P_i=P(\{a_i\})\geqslant 0, \ \sum_{n=1}^\infty P_n=1}$，则 $P$ 构造了 $(\Omega, \mathscr{P})$ 上的一个概率
+3. 古典概型：令 $\Omega=\{a_n\}_{n\geqslant 1}$ 为可数集，则 $(\Omega, \mathcal{P}(\Omega))$ 是一个平凡可测空间．$A\in \mathcal{P}(\Omega)$ 是一个可数集或有限集，则 ${\displaystyle P(A)=P\left(\bigcup_{a\in A}\{a\}\right)=\sum_{a\in A}P(\{a\})}$．令 ${\displaystyle P_i=P(\{a_i\})\geqslant 0, \ \sum_{n=1}^\infty P_n=1}$，则 $P$ 构造了 $(\Omega, \mathcal{P})$ 上的一个概率
     1. 当 $\Omega$ 为有限集，$P(\{a_i\})=P(\{a_j\}), \ \forall a_i,a_j\in \Omega$ 时有 ${\displaystyle 1=P(\Omega)=\sum_{k=1}^n P(\{a_k\})=nP(\{a_1\})}$
     2. $P(\{a_i\})=\dfrac{1}{n}=\dfrac{1}{|\Omega|}$，${\displaystyle P(A)=\sum_{a\in A}P(\{a\})=\dfrac{|A|}{|\Omega|}}$，称 $|A|$ 为有利场合数，$|\Omega|$ 为样本空间数
 

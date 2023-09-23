@@ -3,7 +3,7 @@
 ## 3.1 独立性
 设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$T$ 为某个参数集
 
-1. 独立子类族：事件族 $\left\{A_{t}\right\}_{t \in T} \subseteq \mathscr{F}$ 称为（关于 $P$）独立的，若对 $T$ 的任一有限子集 $I \subseteq T$，${\displaystyle P\left(\bigcap_{t \in I} A_{t}\right)=\prod_{t \in I} P\left(A_{t}\right)}$．$\left\{\mathscr{C}_{t}\right\}_{t \in T}$ 为 $\mathscr{F}$ 的子类族，若对 $T$ 的任一有限子集 $I \subseteq T$ 有 ${\displaystyle \forall A_{t} \in \mathscr{C}_{t}, t \in I: P\left(\bigcap_{t \in I} A_{t}\right)=\prod_{t \in I} P\left(A_{t}\right)}$ 成立，则称 $\left\{\mathscr{C}_{t}\right\}_{t \in T}$ 为（关于 $P$）独立子类族．特别地，当 $\mathscr{C}_{t}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域时，$\left\{\mathscr{C}_{t}\right\}_{t \in T}$ 称为（关于 $P$）独立的 $\sigma$ 域族
+1. 独立子类族：事件族 $\left\{A_{t}\right\}_{t \in T} \subseteq \mathscr{F}$ 若有对 $T$ 的任一有限子集 $I \subseteq T$，${\displaystyle P\left(\bigcap_{t \in I} A_{t}\right)=\prod_{t \in I} P\left(A_{t}\right)}$，则该事件族为称为（关于 $P$）统计独立的．$\left\{\mathscr{C}_{t}\right\}_{t \in T}$ 为 $\mathscr{F}$ 的子类族，若对 $T$ 的任一有限子集 $I \subseteq T$ 有 ${\displaystyle \forall A_{t} \in \mathscr{C}_{t}, t \in I: P\left(\bigcap_{t \in I} A_{t}\right)=\prod_{t \in I} P\left(A_{t}\right)}$ 成立，则称 $\left\{\mathscr{C}_{t}\right\}_{t \in T}$ 为（关于 $P$）独立子类族．特别地，当 $\mathscr{C}_{t}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域时，$\left\{\mathscr{C}_{t}\right\}_{t \in T}$ 称为（关于 $P$）独立的 $\sigma$ 域族
     1. 设 $\left\{\mathscr{C}_{t}\right\}_{t \in T}$ 为 $\mathscr{F}$ 的子类族．若对每个 $t \in T, \mathscr{C}_{t}$ 为 $\pi$ 类，且 $\left\{\mathscr{C}_{t}\right\}_{t \in T}$ 为独立族
         1. $\left\{\mathscr{B}_{t}=\sigma\left(\mathscr{C}_{t}\right)\right\}_{t \in T}$ 为独立族
         2. 若 $\overline{\mathscr{B}}_{t}$ 表示 $\mathscr{B}_{t}$ 的完备化 $\sigma$ 域，则 $\left\{\overline{\mathscr{B}}_{t}\right\}_{t \in T}$ 为独立族
