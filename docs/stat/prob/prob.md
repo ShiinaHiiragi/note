@@ -52,7 +52,7 @@
             3. 对每个 $C \in \mathscr{D}$，必有 $E, F \in \sigma(A), E \subseteq C \subseteq F$ 且 $\overline{P}(F- E)=0$
 
 ## 1.2 随机变量
-### 1.2.1 随机变量的概念
+### 1.2.1 一维随机变量
 1. 随机变量：设 $(\Omega, \mathscr{F})$ 为概率可测空间，则由 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 或 $\left(\widehat{\mathbf{R}}, \mathscr{B}_{\widehat{\mathbf{R}}}\right)$ 的可测函数称为（有限值）随机变量或或广义实值随机变量，也记为 $X \in \mathscr{F}$，通常用 $\text{r.v.}$作为随机变量的简写
     1. 若 $E=\left\{r_{n}\right\}$ 为 $\mathbf{R}$ 中稠密集，则 $X$ 为随机变量的充要条件是对每个 $r_{n} \in E$ 都有 $\left\{\omega: X(\omega) \leqslant r_{n}\right\} \in \mathscr{F}$
     2. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，则 ${\displaystyle \sup _{n \geqslant 1} X_{n},  \inf _{n \geqslant 1} X_{n}, \varlimsup_{n \rightarrow \infty} X_{n}, \varliminf_{n \rightarrow \infty} X_{n}}$ 都是随机变量
@@ -76,7 +76,9 @@
         1. $\Omega$ 上有限实值函数 $Y$ 为 $\sigma\left(X_{i}, i \in J\right)$ 可测随机变量的充要条件是存在至多为可数的子集 $I$ 及 $\text{Borel}$ 函数 $f$，使 $Y=f\left[X_{i}\right]_{i \in I}$
         2. 若 $A \in \sigma\left(X_{i}, i \in J\right)$，必有 $J$ 的至多为可数的子集 $I$，使 $A \in \sigma\left(X_{i}\right)_{i \in I}$
 
-### 1.2.2 随机变量的等价类
+### 1.2.2 多维随机变量
+
+### 1.2.3 随机变量的等价类
 1. 几乎必然成立：设 $D(\omega)$ 表示与 $\omega \in \Omega$ 有关的一个论断，若概率测度 $P$ 有 $P(\{\omega \in \Omega: D(\omega)\}) = 1$ 成立，则称 $D(\omega)$ 在 $\Omega$ 上几乎必然成立或 $D(\omega)$ $\text{a.s.}$于 $\Omega$
     1. 此时 $D(\omega)$ $\text{a.e.}$于 $\Omega$
     2. 特别地，对随机变量 $X, Y$，若 $P[X \neq Y]=0$，则记 $X=Y$ $\text{a.s.}$，记作 $X \sim Y$，则 $\sim$ 构成随机变量间的等价关系
@@ -87,7 +89,7 @@
     4. $\widetilde{X} \vee \widetilde{Y} =\left\{X^{\prime} \vee Y^{\prime}: X^{\prime} \sim X, Y^{\prime} \sim Y\right\}$
     5. $\widetilde{X} \wedge \widetilde{Y} =\left\{X^{\prime} \wedge Y^{\prime}: X^{\prime} \sim X, Y^{\prime} \sim Y\right\}$
 
-### 1.2.3 随机变量的收敛性
+### 1.2.4 随机变量的收敛性
 1. 几乎必然收敛：随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$ 若有 ${\displaystyle \limsup _{n \to \infty} X_{n}=\liminf _{n \to \infty} X_{n}}$ $\text{a.s.}$，则不计等价类内的差别其唯一确定的极限 ${\displaystyle X=\limsup _{n \to \infty} X_{n}}$ 也记为 ${\displaystyle X=\lim _{n \to \infty} X_{n}}$ 或 $X_{n} \stackrel{\text{a.s.}}{\longrightarrow} X$，并称 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为几乎必然收敛于 $X$ 或以概率 $1$ 收敛于 $X$
     1. 本性上（下）确界：设 $\left\{X_{i}\right\}_{i \in I}$ 为一族随机变量，则必有唯一（不计 $\text{a.s.}$相等差别）随机变量 $Y$（可取 $\pm \infty$）满足
         1. 对每个 $i \in I$，$X_{i} \leqslant Y$ $\text{a.s.}$
