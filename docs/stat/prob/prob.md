@@ -137,7 +137,7 @@
         4. 若 $\left\{f_{n}\right\}_{n \geqslant 1}$ 是 $\mathscr{H}$ 中一致有界递增随机变量序列，${\displaystyle f=\lim _{n \to \infty} f_{n}}$, 则 $f \in \mathscr{H}$，且此时 $\mathscr{F}_{1}=\sigma(f, f \in \mathscr{H})$
 
 3. 多维随机变量：若 $X_{1}, X_{2}, \cdots, X_{n}$ 为 $n$ 个随机变量，则 $X=\left(X_{1}, X_{2}, \cdots, X_{n}\right)$ 称为 $n$ 维随机变量，也称随机向量
-    1. $X=\left(X_{1}, X_{2}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量的充要条件是 $X$ 为 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}^{n}, \mathscr{B}^{n}\right)$ 的可测映射，且 $\sigma(X)=\sigma \ \left(X_{i}, 1 \leqslant i \leqslant n\right)$
+    1. $X=\left(X_{1}, X_{2}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量的充要条件是 $X$ 为 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}^{n}, \mathscr{B}^{n}\right)$ 的可测映射且 $\sigma(X)=\sigma \ \left(X_{i}, 1 \leqslant i \leqslant n\right)$
     2. 若 $X=\left(X_{1}, X_{2}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量，则有限随机变量 $Y$ 为 $\sigma(X)$ 可测的充要条件是存在 $n$ 元 $\text{Borel}$ 函数 $h\left(x_{1}, x_{2}, \cdots, x_{n}\right)$，使 $Y=h\left(X_{1}, X_{2}, \cdots, X_{n}\right)$
     3. 设 $\left\{X_{i}, i \in J\right\}$ 为 $(\Omega, \mathscr{F})$ 上的一族随机变量，则
         1. $\Omega$ 上有限实值函数 $Y$ 为 $\sigma\left(X_{i}, i \in J\right)$ 可测随机变量的充要条件是存在至多为可数的子集 $I$ 及 $\text{Borel}$ 函数 $f$，使 $Y=f\left[X_{i}\right]_{i \in I}$
