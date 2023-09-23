@@ -79,6 +79,8 @@
 
         称 $(\Omega, \overline{F}, \overline{\mu})$ 为 $(\Omega, \mathscr{F}, \mu)$ 的完备化扩张
 
+### 1.1.4 广义测度
+
 ## 1.2 Lesbegue 测度
 1. 广义实数集：扩充实数集 $\mathbf R$，得到 $\widehat{\mathbf{R}}=\mathbf{R} \cup \{+\infty, -\infty\}$
     1. 允许以 $+\infty$ 或 $-\infty$ 成为函数值，$\pm \infty$ 也称为非真正的实数．通常的实数则称为有限实数，函数值都是有限实数的函数称为有限函数．因此有界函数必是有限函数，但反之不成立
