@@ -23,7 +23,7 @@
 
             事件 ${\displaystyle \varliminf_{n \to \infty} A_{n}}$ 称为 $\left\{A_{n}\right\}$ 的下限事件，表示 $\left\{A_{n}\right\}$ 中除有限个外同时发生的事件
 
-### 1.1.2 概率
+### 1.1.2 概率测度
 1. 概率测度：设 $\Omega$ 为一空间，$\mathscr{C} \subseteq \mathcal{P}(\Omega)$ 且 $\varnothing, \Omega \in \mathscr{C}$．若 $\mathscr{C}$ 上的测度 $\mu$ 满足 $\mu(\Omega)=1$，则称 $\mu$ 为概率测度
     1. 概率：事件 $A$ 的概率测度值 $\mu(A)$ 称为 $A$ 的概率
     2. 概率空间： 若 $(\Omega, \mathscr{F})$ 为可测空间，$P$ 为 $\mathscr{F}$ 上的概率测度，则称 $(\Omega, \mathscr{F}, P)$ 为概率空间
@@ -51,8 +51,64 @@
             2. 若 $\overline{P}=P^{*}\bigg|_{\mathscr{D}}$，则 $\overline{P}$ 为 $\mathscr{D}$ 上完备概率测度且 $\overline{P}\bigg|_{\mathscr{A}}=P$
             3. 对每个 $C \in \mathscr{D}$，必有 $E, F \in \sigma(A), E \subseteq C \subseteq F$ 且 $\overline{P}(F- E)=0$
 
+### 1.1.2 乘积概率测度
+1. 转移概率：$\left(\Omega_{1}, \mathscr{F}_{1}\right),\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 为两个可测空间，$P\left(\omega_{1}, A_{2}\right)$ 为 $\Omega_{1} \times \mathscr{F}_{2}$ 到 $[0,1]$ 的函数，若满足
+    1. 对每个 $\omega_{1} \in \Omega_{1}$，$P\left(\omega_{1}, \cdot\right)$ 是 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 上的概率测度
+    2. 对每个 $A_{2} \in \mathscr{F}_{2}$，$P\left(\cdot, A_{2}\right)$ 是 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 上的可测函数
+
+    则称 $P$ 为 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 到 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 的转移概率
+
+    1. 设 $\left(\Omega_{1}, \mathscr{F}_{1}\right),\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 为两个可测空间，$P_{1}$ 为 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 上的概率测度，$P_{12}$ 是一个转移概率
+        - 在 $\left(\Omega_{1} \times \Omega_{2}, \mathscr{F}_{1} \times \mathscr{F}_{2}\right)$ 上存在唯一概率测度 $P$，满足
+
+            $$
+            P\left(A_{1} \times A_{2}\right)=\int_{A_{1}} P_{12}\left(\omega_{1}, A_{2}\right) P_{1}\left(\mathrm{d} \omega_{1}\right), \  A_{1} \in \mathscr{F}_{1}, A_{2} \in \mathscr{F}_{2}
+            $$
+
+        - 对 $\left(\Omega_{1} \times \Omega_{2}, \mathscr{F}_{1} \times \mathscr{F}_{2}, P\right)$ 上每个非负（或准可积）随机变量 $X$，若 $X_{\omega_{1}}(\cdot)= X\left(\omega_{1}, \cdot\right)$ 表示 $X$ 的 $\omega_{1}$ 截口，则 ${\displaystyle Y\left(\omega_{1}\right)=\int X_{\omega_{1}}\left(\omega_{2}\right) P_{12}\left(\omega_{1}, \mathrm{d} \omega_{2}\right)}$ 是 $\Omega_{1}$ 上关于 $P_{1}$ $\text{a.s.}$有定义且非负（对 $P_{1}$ 准可积）$\mathscr{F}_{1}$ 可测随机变量．进而有
+
+            $$
+            \int_{\Omega_{1} \times \Omega_{2}} X \mathrm{d} P=\int_{\Omega_{1}}\left(\int_{\Omega_{2}} X_{\omega_{1}}\left(\omega_{2}\right) P_{12}\left(\omega_{1}, \mathrm{d} \omega_{2}\right)\right) P_{1}\left(\mathrm{d} \omega_{1}\right)
+            $$
+
+    2. $\text{Fubini}$ 定理：设 $\left(\Omega_{1}, \mathscr{F}_{1}, P_{1}\right)$ 和 $\left(\Omega_{2}, \mathscr{F}_{2}, P_{2}\right)$ 为两个概率空间，则在 $\left(\Omega_{1} \times \Omega_{2}, \mathscr{F}_{1} \times \mathscr{F}_{2}\right)$ 上存在唯一的一个概率测度 $P$ 满足 ${\displaystyle P\left(A_{1} \times A_{2}\right)=P_{1}\left(A_{1}\right) P_{2}\left(A_{2}\right), \  A_{1} \in \mathscr{F}_{1}, A_{2} \in \mathscr{F}_{2}}$
+
+2. 乘积测度：由 $\text{Fubini}$ 定理规定的测度称为乘积测度，记为 $P=P_{1} \times P_{2}$．又记
+
+    $$
+    \left(\Omega_{1} \times \Omega_{2}, \mathscr{F}_{1} \times \mathscr{F}_{2}, P\right)=\left(\Omega_{1}, \mathscr{F}_{1}, P_{1}\right) \times\left(\Omega_{2}, \mathscr{F}_{2}, P_{2}\right)
+    $$
+
+    称为乘积概率空间
+
+    1. $\left(\Omega_{1} \times \Omega_{2}, \mathscr{F}_{1} \times \mathscr{F}_{2}, P_{1} \times P_{2}\right)$ 上的随机变量 $X$ $\text{a.s.}$ $P$ 为零当且仅当其几乎每个 $\omega_{1}$ 截口 $X_{\omega_{1}}$ 在 $\left(\Omega_{2}, F_{2}, P_{2}\right)$ 上 $\text{a.s.}$ $P_{2}$ 为零
+    2. 随机变量 $X$ 在乘积概率空间上可积，则几乎每个 $\omega_{1}$ 截口 $X_{\omega_{1}}$ 在 $\left(\Omega_{2}, \mathscr{F}_{2}, P_{2}\right)$ 可积
+    3. 分部积分公式：若 $f, g$ 为 $(a, b]$ 上的右连续有界递增函数，由 $f, g$ 产生的测度仍分别用 $f, g$ 表示，则
+
+        $$
+        \begin{aligned}
+        \int_{(a, b]} f(x) \mathrm{d} g(x) & =f(b) g(b)\bigg|_{a} ^{b}-\int_{(a, b]} g(x-0) \mathrm{d} f(x) \\
+        \int_{(a, b]} f(x-0) \mathrm{d} g(x) & =f(b) g(b)\bigg|_{a} ^{b}-\int_{(a, b]} g(x-0) \mathrm{d} f(x)-\sum_{a, x \leqslant b} \Delta g(x) \Delta f(x)
+        \end{aligned}
+        $$
+
+        其中 $\Delta g(x)=g(x)-g(x-0), \Delta f(x)=f(x)-f(x-0)$
+
+    4. 联系分布的矩与尾概率：设 $p>0$
+        1. 若 $X \in L^{p}$，则对任意满足 $\dfrac{\alpha+1}{\beta}+\gamma=p, \alpha>-1, \beta, \gamma>0$ 的 $\alpha, \beta, \gamma$ 有 ${\displaystyle \sum_{n=1}^{\infty} n^{\alpha} \mathrm{E}\left[|X|^{\gamma} I_{|X|>n^{\beta}}\right]<\infty}$．反之，若对某一组满足上两式的 $\alpha, \beta, \gamma$ 成立，则 $X \in L^{p}$
+        2. 若 $X \in L^{p}$，则对任意满足 $\dfrac{\alpha+1}{\beta}+\gamma=p, \  \alpha<-1, \beta, \gamma>0$ 的 $\alpha, \beta, \gamma$ 有
+
+            $$
+            \begin{aligned}
+            \sum_{n=1}^{\infty} n^{\alpha} \mathrm{E}\left[|X|^{\gamma} I_{|X| \leqslant n^{\beta}}\right]&<\infty \\
+            \sum_{n=1}^{\infty} n^{\alpha} \mathrm{E}\left[\left|X \wedge n^{\beta}\right|^{\gamma}\right]&<\infty
+            \end{aligned}
+            $$
+
+            反之，若对某一组满足上两式的 $\alpha, \beta, \gamma$ 式成立，则 $X \in L^{p}$
+
 ## 1.2 随机变量
-### 1.2.1 一维随机变量
+### 1.2.1 随机变量的概念
 1. 随机变量：设 $(\Omega, \mathscr{F})$ 为概率可测空间，则由 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 或 $\left(\widehat{\mathbf{R}}, \mathscr{B}_{\widehat{\mathbf{R}}}\right)$ 的可测函数称为（有限值）随机变量或或广义实值随机变量，也记为 $X \in \mathscr{F}$，通常用 $\text{r.v.}$作为随机变量的简写
     1. 若 $E=\left\{r_{n}\right\}$ 为 $\mathbf{R}$ 中稠密集，则 $X$ 为随机变量的充要条件是对每个 $r_{n} \in E$ 都有 $\left\{\omega: X(\omega) \leqslant r_{n}\right\} \in \mathscr{F}$
     2. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，则 ${\displaystyle \sup _{n \geqslant 1} X_{n},  \inf _{n \geqslant 1} X_{n}, \varlimsup_{n \rightarrow \infty} X_{n}, \varliminf_{n \rightarrow \infty} X_{n}}$ 都是随机变量
@@ -76,9 +132,7 @@
         1. $\Omega$ 上有限实值函数 $Y$ 为 $\sigma\left(X_{i}, i \in J\right)$ 可测随机变量的充要条件是存在至多为可数的子集 $I$ 及 $\text{Borel}$ 函数 $f$，使 $Y=f\left[X_{i}\right]_{i \in I}$
         2. 若 $A \in \sigma\left(X_{i}, i \in J\right)$，必有 $J$ 的至多为可数的子集 $I$，使 $A \in \sigma\left(X_{i}\right)_{i \in I}$
 
-### 1.2.2 多维随机变量
-
-### 1.2.3 随机变量的等价类
+### 1.2.2 随机变量的等价类
 1. 几乎必然成立：设 $D(\omega)$ 表示与 $\omega \in \Omega$ 有关的一个论断，若概率测度 $P$ 有 $P(\{\omega \in \Omega: D(\omega)\}) = 1$ 成立，则称 $D(\omega)$ 在 $\Omega$ 上几乎必然成立或 $D(\omega)$ $\text{a.s.}$于 $\Omega$
     1. 此时 $D(\omega)$ $\text{a.e.}$于 $\Omega$
     2. 特别地，对随机变量 $X, Y$，若 $P[X \neq Y]=0$，则记 $X=Y$ $\text{a.s.}$，记作 $X \sim Y$，则 $\sim$ 构成随机变量间的等价关系
@@ -89,7 +143,7 @@
     4. $\widetilde{X} \vee \widetilde{Y} =\left\{X^{\prime} \vee Y^{\prime}: X^{\prime} \sim X, Y^{\prime} \sim Y\right\}$
     5. $\widetilde{X} \wedge \widetilde{Y} =\left\{X^{\prime} \wedge Y^{\prime}: X^{\prime} \sim X, Y^{\prime} \sim Y\right\}$
 
-### 1.2.4 随机变量的收敛性
+### 1.2.3 随机变量的收敛性
 1. 几乎必然收敛：随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$ 若有 ${\displaystyle \limsup _{n \to \infty} X_{n}=\liminf _{n \to \infty} X_{n}}$ $\text{a.s.}$，则不计等价类内的差别其唯一确定的极限 ${\displaystyle X=\limsup _{n \to \infty} X_{n}}$ 也记为 ${\displaystyle X=\lim _{n \to \infty} X_{n}}$ 或 $X_{n} \stackrel{\text{a.s.}}{\longrightarrow} X$，并称 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为几乎必然收敛于 $X$ 或以概率 $1$ 收敛于 $X$
     1. 本性上（下）确界：设 $\left\{X_{i}\right\}_{i \in I}$ 为一族随机变量，则必有唯一（不计 $\text{a.s.}$相等差别）随机变量 $Y$（可取 $\pm \infty$）满足
         1. 对每个 $i \in I$，$X_{i} \leqslant Y$ $\text{a.s.}$
