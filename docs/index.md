@@ -412,6 +412,17 @@ const refList = [
         plot: 99
     },
     {
+        author: ["平冈和幸", "堀玄"],
+        title: "程序员的数学 ② 概率统计",
+        type: "M",
+        year: 2015,
+        page: [1, 403],
+        trans: ["陈篠烟"],
+        press: "人民邮电出版社",
+        locate: "北京",
+        plot: 4
+    },
+    {
         author: ["Rob Nederpelt", "Herman Geuvers"],
         title: "Type Theory and Formal Proof: an Introduction",
         type: "M",
