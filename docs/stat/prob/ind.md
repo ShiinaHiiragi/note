@@ -1,6 +1,6 @@
-# 2 统计独立性
+# 3 统计独立性
 
-## 2.1 独立性
+## 3.1 独立性
 设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$T$ 为某个参数集
 
 1. 独立子类族：事件族 $\left\{A_{t}\right\}_{t \in T} \subseteq \mathscr{F}$ 称为（关于 $P$）独立的，若对 $T$ 的任一有限子集 $I \subseteq T$，${\displaystyle P\left(\bigcap_{t \in I} A_{t}\right)=\prod_{t \in I} P\left(A_{t}\right)}$．$\left\{\mathscr{C}_{t}\right\}_{t \in T}$ 为 $\mathscr{F}$ 的子类族，若对 $T$ 的任一有限子集 $I \subseteq T$ 有 ${\displaystyle \forall A_{t} \in \mathscr{C}_{t}, t \in I: P\left(\bigcap_{t \in I} A_{t}\right)=\prod_{t \in I} P\left(A_{t}\right)}$ 成立，则称 $\left\{\mathscr{C}_{t}\right\}_{t \in T}$ 为（关于 $P$）独立子类族．特别地，当 $\mathscr{C}_{t}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域时，$\left\{\mathscr{C}_{t}\right\}_{t \in T}$ 称为（关于 $P$）独立的 $\sigma$ 域族
@@ -18,8 +18,8 @@
     2. 设 $\left\{X_{t}\right\}_{t \in T}$ 为独立随机变量族，$\left\{T_{\alpha}, \alpha \in J\right\}$ 为 $T$ 的互不相交子集，$\left\{f_{\alpha}\left(X_{t}, t \in T_{\alpha}\right), \alpha \in J\right\}$ 为 $\text{Borel}$ 函数族，则 $\left\{Y_{\alpha}=f_{\alpha}\left(X_{t}, t \in T_{\alpha}\right), \alpha \in J\right\}$ 为独立随机变量族
     3. 设 $\left\{X_{t}\right\}_{t \in T}$ 为独立随机变量族，且对每个 $t \in T$ 都有 $f_{t}\left(X_{t}\right)$ 可积（非负），则对 $T$ 的任一有限子集 $I$，都有 ${\displaystyle \mathrm{E}\left[\prod_{t \in I} f_{t}\left(X_{t}\right)\right]=\prod_{t \in I} \mathrm{E}\left[f_{t}\left(X_{t}\right)\right]}$．特别地，若 $\left\{X_{t}\right\}_{t \in T}$ 为独立可积（非负）随机变量族，则对 $T$ 的任一有限子集 $I$，都有 ${\displaystyle \mathrm{E}\left[\prod_{t \in I} X_{t}\right]=\prod_{t \in I} \mathrm{E}\left[X_{t}\right]}$
 
-## 2.2 独立随机变量序列
-### 2.2.1 零一律
+## 3.2 独立随机变量序列
+### 3.2.1 零一律
 1. 尾 $\sigma$ 域：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，记 ${\displaystyle \mathscr{B}^{*}=\bigcap_{n=1}^{\infty} \sigma\left(X_{k}, k \geqslant n\right)}$，则称 $\mathscr{B}^{*}$ 为关于 $X$ 的尾 $\sigma$ 域或尾事件域
 2. $\text{Kolmogorov}$ 零一律：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，则其尾事件域 $\mathscr{B}^{*}$ 中任一事件的概率必为 $0$ 或 $1$
     1. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，$\mathscr{B}^{*}$ 为其尾事件域，则 $\mathscr{B}^{*}$ 可测随机变量 $Y$ 必为退化的，即 $Y$ 以概率 $1$ 取常数值
@@ -31,8 +31,8 @@
     1. 对事件列 $\left\{A_{n}\right\}_{n \geqslant 1}$，${\displaystyle \sum_{n=1}^{\infty} P\left(A_{n}\right)<\infty \to P\left(A_{n} \text{ i.o.}\right)=0}$
     2. 若 $\left\{A_{n}\right\}_{n \geqslant 1}$ 为独立事件列，则 ${\displaystyle \sum_{n=1}^{\infty} P\left(A_{n}\right)=\infty \rightarrow P\left(A_{n} \text{ i.o.}\right)=1}$
 
-### 2.2.2 独立项级数
+### 3.2.2 独立项级数
 
-### 2.2.3 渐进理论
+### 3.2.3 渐进理论
 
-### 2.2.4 停时
+### 3.2.4 停时
