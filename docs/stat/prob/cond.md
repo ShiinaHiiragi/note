@@ -70,5 +70,23 @@
         3. 对互不相交的事件列 $\left\{A_{n}\right\}$，${\displaystyle P\left(\sum_{n \to \infty} A_{n} \mid \mathscr{G}\right)=\sum_{n \to \infty} P\left(A_{n} \mid \mathscr{G}\right)}$ $\text{a.s.}$
 
 ## 4.2 条件概率分布
+1. 设 $\mathscr{F}_{1}, \mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，$\Omega \times \mathscr{F}_{1}$ 上的函数 $P(\omega, A)$ 若满足
+    1. 对每个 $\omega \in \Omega$，$P(\omega, \cdot)$ 是 $\mathscr{F}_{1}$ 上的概率测度
+    2. 对每个 $A \in \mathscr{F}_{1}, P(\cdot, A)$ 是 $(\Omega, \mathscr{G})$ 上的可测函数，且 $P(\omega, A)=P(A \mid \mathscr{G})$ $\text{a.s.}$
+
+    则称 $P(\omega, A)$ 为 $\mathscr{F}_{1}$ 上关于 $\mathscr{G}$ 的（正则）条件概率分布
+
+2. 设 $X=\left(X_{1}, \cdots, X_{n}\right)$ 或 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为 $(\Omega, \mathscr{F}, P)$ 上的随机向量或随机变量序列，$\mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，$\mathscr{B}^{n}$ 表示 $\mathbf{R}^{n}$ 中 $\text{Borel}$ 点集全体．若 $\Omega \times \mathscr{G}^{n}$，$1 \leqslant n \leqslant \infty$ 上的函数 $P_{X}(\omega, A)$ 满足
+    1. 对每个 $\omega$，$P_{X}(\omega, \cdot)$ 是 $\mathscr{B}^{n}$ 上概率测度
+    2. 对每个 $A \in \mathscr{B}^{n}$，$P_{X}(\cdot, A)$ 是 $\mathscr{G}$ 可测的，且 $P_{X}(\omega, A)=P\left(X^{-1}(A) \mid \mathscr{G}\right)$ $\text{a.s.}$
+
+    则称 $P_{X}(\omega, A)$ 为 $X$ 关于 $\mathscr{G}$ 的（正则）条件概率分布
+
+    1. $\text{Doob}$ 定理：若 $X=\left(X_{1}, \cdots, X_{n}\right)$ 为 $(\Omega, \mathscr{F}, P)$ 上的随机向量，$\mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，则存在 $X$ 关于 $\mathscr{G}$ 的条件概率分布
+    2. 若 $X=\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，$\mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，则存在 $X$ 关于 $\mathscr{G}$ 的正则条件概率分布
+    3. 设 $X=\left(X_{1}, \cdots, X_{n}\right)$ 或 $X=\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机向量或随机变量序列，$\mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域．若 $X$ 的值域 $\{X(\omega): \omega \in \Omega\}$ 为 $\text{Borel}$ 集，则存在 $\sigma(X)$ 上关于 $\mathscr{G}$ 的（正则）条件概率分布
+    4. 若 $P(\omega, A)$ 为 $\mathscr{F}_{1}$ 上关于 $\mathscr{G}$ 的条件概率分布，$Y=Y(\omega)$ 为 $\mathscr{F}_{1}$ 可测准可积随机变量，则 ${\displaystyle \mathrm{E}[Y \mid \mathcal{G}]=\int_{\Omega} Y\left(\omega^{\prime}\right) P\left(\omega, \mathrm{d} \omega^{\prime}\right)}$
+
+        若 $X$ 为 $n$ 维随机向量（或随机变量序列），$P_{X}(\omega, A)$ 为 $X$ 关于 $\mathscr{G}$ 的正则条件概率分布，$h$ 为 $\text{Borel}$ 函数，$h(X)$ 准可积，则有 ${\displaystyle \mathrm{E}[h(X) \mid \mathscr{G}]=\int_{\mathbf{R}^{n}\left(\mathbf{R}^{\infty}\right)} h(x) P(\omega, \mathrm{d} x)}$
 
 ## 4.3 条件独立性

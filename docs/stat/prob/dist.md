@@ -38,7 +38,7 @@
 
 ### 2.1.3 连续概率分布
 
-## 2.2 期望与方差
+## 2.2 期望与矩
 ### 2.2.1 数学期望
 1. 离散随机变量的期望：若 ${\displaystyle X(\omega)=\sum_{i} x_{i} I_{A_{i}}(\omega)}$ 为离散随机变量，则称 ${\displaystyle \sum_{i} x_{i} P\left(A_{i}\right)}$ 为 $X$ 的期望或 $X$ 关于 $P$ 的积分，记为
 
@@ -99,19 +99,14 @@
         1. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R, \mathscr{B}, P_X)\overset{g}{\longrightarrow}(R, B, P_{g(X)})$，有 ${\displaystyle E[g(X)]=\int_\Omega g\circ X\mathrm{d}P=\int_R g(x) \mathrm dP_X=\int_R g(x) \mathrm{d} F_{X}(x)}$
         2. 设 $X$ 存在密度函数 $p_X(x)$，则对任意非零可测函数 $g$ 或有界可测函数 $g$ 成立 ${\displaystyle E[g \circ X]=\int_R g(x)p_X(x)\mathrm dx}$
 
-### 2.2.2 方差与协方差
-1. 矩的相关概念：若 $X$ 为 $(\Omega, \mathscr{F}, P)$ 上的随机变量且 $p>0$，称 $E|X|^{p}$ 为 $X$ 的 $p$ 阶绝对矩，$\mathrm{E} X^{p}$（若其存在）称为 $X$ 的 $p$ 阶矩
-    1. 方差：$\mathrm{D}X = \mathrm{E}[X-\mathrm{E} X]^{2}$ 称为 $X$ 的方差，也可记作 $\operatorname{Var}(X)$，方差的算术平方根称为标准差
-    2. 协方差：若 $Y$ 亦为随机变量，则称 $\operatorname{Cov}(X, Y) = [(X-\mathrm{E} X)(Y-\mathrm{E} Y)]$ 为 $X, Y$ 的协方差
-    3. 相关系数：定义
-
-        $$
-        \rho(X, Y)= \begin{cases}\dfrac{\operatorname{Cov}(X, Y)}{\sqrt{\mathrm{D}X \cdot \mathrm{D}Y}}, & \mathrm{D}X \cdot \mathrm{D}Y \neq 0 \\ 0, & \mathrm{D}X \cdot \mathrm{D}Y=0\end{cases}
-        $$
-
-        为 $X, Y$ 的相关系数．若 $\mathrm{E} X Y=0$，则称 $X, Y$ 为正交的；若 $\rho(X, Y)=0$，则称 $X, Y$ 为互不相关的
-
-        1. $|\operatorname{Cov}(X, Y)| \leqslant \sqrt{\mathrm{D}X \cdot \mathrm{D}Y}$
-        2. $|\rho(X, Y)| \leqslant 1$
-
-2. $\text{Chebyshev}$ 不等式：$P(|X-\mathrm{E} X|>a) \leqslant \dfrac{1}{a^{2}} \mathrm{D}X, a>0$
+### 2.2.2 矩
+1. 矩：若随机变量 $X$ 有 $E|X|^n<+\infty$，则称 $EX^n$ 为 $X$ 的 $n$ 阶原点矩，$E|X|^{p}$ 为 $X$ 的 $p$ 阶绝对矩．此时 $EX^k \ (k\leqslant n)$ 均存在，称 $E[X-EX]^n$ 为 $X$ 的 $n$ 阶中心矩
+2. 方差：称 $X$ 的二阶中心矩 $\mathrm{D}X = \mathrm{E}[X-\mathrm{E} X]^{2}$ 为 $X$ 的方差，也可记作 $\operatorname{Var}(X)$，方差的算术平方根称为标准差
+    1. 方差的性质
+        1. $\mathrm{D}(c)=0$
+        2. $\mathrm{D}(X+c)=\mathrm{D}(X)$
+        3. $\mathrm{D}(cX)=c^2 \mathrm{D}(X)$
+        4. $\mathrm{E}[X-c]^2\geqslant \mathrm{D}X$，等号成立当且仅当 $c=\mathrm{E}X$
+    2. $\text{Chebyshev}$ 不等式：$P(|X-\mathrm{E} X|>a) \leqslant \dfrac{1}{a^{2}} \mathrm{D}X \ (a>0)$．一般地，对任意 $n \in \mathbf N$，有 $P[|X|\geqslant a]\leqslant \dfrac{\mathrm{E}|X|^n}{a^n}$
+3. 协方差：若 $X, Y$ 为随机变量，则称 $\operatorname{Cov}(X, Y) = \mathrm{E}[(X-\mathrm{E} X)(Y-\mathrm{E} Y)]$ 为 $X, Y$ 的协方差
+    1. 对任意随机变量 $X, Y$，有 $\mathrm{E}[XY]\leqslant (\mathrm{E}|X|^2)^{\frac{1}{2}}(\mathrm{E}|Y|^2)^{\frac{1}{2}}$，等号成立当且仅当存在 $t_0$ 使得 $P[X=t_0Y]=1$
