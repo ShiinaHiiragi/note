@@ -32,7 +32,42 @@
     1. 若 $X$ 为（准）可积随机变量，$\mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，则必存在唯一的（不计 $\text{a.s.}$相等的差别）准可积 $\mathscr{G}$ 可测随机变量 $Y$，满足 ${\displaystyle \int_{B} Y \mathrm{dP}=\int_{B} X \mathrm{dP}, \forall B \in \mathscr{G}}$ 或等价地 ${\displaystyle \int Z Y \mathrm{dP}=\int Z X \mathrm{dP}, \forall Z \in L_{\infty}(\mathscr{G})}$，其中 $L_{\infty}(\mathscr{G})$ 表示有界 $\mathscr{G}$ 可测随机变量全体
     2. $X$ 关于 $\mathscr{G}$ 的条件期望是存在的，且不计 $\text{a.s.}$相等的差别时唯一：$\mathrm{E}[X \mid \mathscr{G}]=\left.\dfrac{\mathrm{d} \nu}{\mathrm{dP}}\right|_{\mathscr{G}}$，其中 ${\displaystyle \nu(B)=\int_{B} X \mathrm{dP}}$
 
-2. 条件概率
+2. 条件概率：设 $\mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，$A \in \mathscr{F}$，则称 $\mathrm{E}\left[I_{A} \mid \mathscr{G}\right]$ 为 $A$ 关于 $\mathscr{G}$ 的条件概率，记为 $P(A \mid \mathscr{G})$
+    1. $P(A \mid \mathscr{G})$ 必须满足
+        1. $P(A \mid \mathscr{G})$ 是 $\mathscr{G}$ 可测的
+        2. ${\displaystyle P(A B)=\int_{B} P(A \mid \mathscr{G}) \mathrm{dP}, \forall B \in \mathscr{G}}$
+
+        且 $P(A \mid \mathscr{G})$ 是存在唯一的（若不计 $\text{a.s.}$相等的差别）
+
+    2. 若随机变量 $X$ 存在 $\Omega$ 的 $\mathscr{G}$ 可测分割 $\left\{B_{n}\right\}_{n \geqslant 1}$，使对每个 $n, X I_{B_{n}}$ 是可积的，则称其关于 $\mathscr{G}$ 为 $\sigma$ 可积的．此时必存在 $\mathscr{G}$ 可测有限的随机变量 $Y$，使 ${\displaystyle \mathrm{E}\left[X I_{B B_{n}}\right]=\mathrm{E}\left[Y I_{B B_{n}}\right], \ \forall B \in \mathscr{G}, n \geqslant 1}$
+
+3. 条件期望与概率的性质：设 $\sigma$ 域 $\mathscr{G}, \mathscr{G}_{1}, \mathscr{G}_{2}$ 等都是指 $\mathscr{F}$ 的子 $\sigma$ 域，以下涉及到条件期望的等式是在概率 $1$ 意义下的等式
+    1. 若 $X, Y$ 为可积随机变量，$\alpha, \beta$ 为任意常数
+        1. $\mathrm{E}[\alpha X+\beta Y \mid \mathscr{G}]=\alpha \mathrm{E}[X \mid \mathscr{B}]+\beta \mathrm{E}[Y \mid \mathscr{G}]$
+        2. $\mathrm{E}[1 \mid \mathscr{G}]=1$
+        3. 对可积随机变量 $X, Y$，若 $X \geqslant Y$，则 $\mathrm{E}[X \mid \mathscr{G}] \geqslant \mathrm{E}[Y \mid \mathscr{G}]$．特别地，当 $X \geqslant 0$，则 $\mathrm{E}[X \mid \mathscr{G}] \geqslant 0$
+        4. $|\mathrm{E}[X \mid \mathscr{G}]| \leqslant \mathrm{E}[|X| \mid \mathscr{G}]$
+    2. 设 $Y$ 为可积随机变量，$\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列
+        1. 条件期望的 $\text{Levi}$ 引理：若 $Y \leqslant X_{n} \uparrow X$, 则 ${\displaystyle \lim _{n \rightarrow \infty} \mathrm{E}\left[X_{n} \mid \mathscr{G}\right]=\mathrm{E}[X \mid \mathscr{G}]}$，若 $Y \geqslant X_{n} \downarrow X$，则上式也成立
+        2. 条件期望的 $\text{Fatou}$ 引理：若 $X_{n} \geqslant Y$，则 ${\displaystyle \mathrm{E}\left[\varliminf_{n \to \infty} X_{n} \mid \mathscr{G}\right] \leqslant \varliminf_{n \to \infty} \mathrm{E}\left[X_{n} \mid \mathscr{G}\right]}$．若 $X_{n} \leqslant Y$，则 ${\displaystyle \mathrm{E}\left[\varlimsup_{n \to \infty} X_{n} \mid \mathscr{G}\right] \geqslant \varlimsup_{n \to \infty} \mathrm{E}\left[X_{n} \mid \mathscr{G}\right]}$
+        3. 条件期望的 $\text{Lebesgue}$ 控制收敛定理：若 $\left|X_{n}\right| \leqslant Y$，且当 $n \rightarrow \infty$ 时，$X_{n} \stackrel{\text{a.s.}}{\longrightarrow} X$，则 ${\displaystyle \lim _{n \to \infty} \mathrm{E}\left[X_{n} \mid G\right]=\mathrm{E}[X \mid \xi]}$ $\text{a.s.}$
+    3. 若 $Y$ 为 $\mathscr{G}$ 可测随机变量，且 $X, X Y$ 可积
+        1. $\mathrm{E}[X Y \mid \mathscr{G}]=Y \mathrm{E}[X \mid \mathscr{G}]$．特别地，$\mathrm{E}[Y \mid \mathscr{G}]=Y$
+        2. $\mathscr{G}_{1}$ 为 $\mathscr{G}$ 的子 $\sigma$ 域，$X$ 为可积随机变量，则 $\mathrm{E}\left[\mathrm{E}\left[X \mid \mathscr{G}_{1}\right] \mid \mathscr{G}\right]=\mathrm{E}\left[X \mid \mathscr{G}_{1}\right]=\mathrm{E}\left[\mathrm{E}[X \mid \mathscr{G}] \mid \mathscr{G}_{1}\right]$
+        3. 若 $X$ 为可积随机变量，$\sigma(X)$ 与 $\mathscr{G}$ 独立，则 $\mathrm{E}[X \mid \mathscr{G}]=\mathrm{E}X$．特别地，当 $X, Y$ 相互独立时，$\mathrm{E}[X \mid Y]=\mathrm{E} X$
+    4. $\text{Jensen}$ 不等式：若 $X$ 及 $\varphi(X)$ 为可积随机变量，$\varphi(x)$ 为 $\mathbf{R}$ 上的有限下凸函数，则 $\varphi(\mathrm{E}[X \mid \mathscr{G}]) \leqslant \mathrm{E}[\varphi(X) \mid \mathscr{G}]$
+    5. 若 $p \geqslant 1$，对 $X \in L^{p}(\Omega, \mathscr{F}, P), T X = \mathrm{E}[X \mid \mathscr{G}]$，则 $T$ 是 $L^{p}(\Omega, \mathscr{F}, P)$ 的幂等映射 $\left(T^{2}=T\right)$，且 $\|T\| \leqslant 1$．特别当 $p=2$ 时，$T$ 是 $L^{2}(\Omega, \mathscr{F}, P)$ 到 $L^{2}(\Omega, \mathscr{G}, P)$ 的投影算子
+        1. 若 $p \geqslant 1, X \in L^{p}(\Omega, \mathscr{F}, P)$，则 $\mathrm{E}[X \mid \mathscr{G}] \in L^{p}(\Omega, \mathscr{F}, P)$，且 $\|\mathrm{E}[X \mid \mathscr{G}]\|_{p} \leqslant\|X\|_{p}$
+        2. 若 $Y \in L^{2}(\Omega, \mathscr{F}, P)$，$\left\{X_{t}\right\}_{t \in T}$ 为一随机变量族，则
+
+            $$
+            \mathrm{E}\left|Y-\mathrm{E}\left[Y \mid X_{t}, t \in T\right]\right|^{2}=\min \left\{\mathrm{E}[Y-Z]^{2}: Z \in L^{2}\left(\Omega, \sigma\left(X_{t}, t \in T\right), P\right)\right\}
+            $$
+
+    6. 条件概率 $P(A \mid G)$ 作为 $A$ 的函数，具有如下性质
+        1. $P(\Omega)=1$ $\text{a.s.}$
+        2. $P(A \mid \mathscr{G}) \geqslant 0$ $\text{a.s.}$
+        3. 对互不相交的事件列 $\left\{A_{n}\right\}$，${\displaystyle P\left(\sum_{n \to \infty} A_{n} \mid \mathscr{G}\right)=\sum_{n \to \infty} P\left(A_{n} \mid \mathscr{G}\right)}$ $\text{a.s.}$
 
 ## 4.2 条件概率分布
 
