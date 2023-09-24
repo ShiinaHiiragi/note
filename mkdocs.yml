@@ -186,7 +186,7 @@ nav:
       - 1 概率与随机变量: stat/prob/prob.md
       - 2 概率分布: stat/prob/dist.md
       - 3 统计独立性: stat/prob/ind.md
-      - 4 条件概率与期望: stat/prob/cond.md
+      - 4 条件概率: stat/prob/cond.md
   - 语言学:
     - 一、类型论:
       - 1 一般类型论: lang/type/gen.md

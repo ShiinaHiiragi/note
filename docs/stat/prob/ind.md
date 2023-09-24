@@ -25,7 +25,6 @@
     2. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列
         1. ${\displaystyle \varlimsup_{n \to \infty} X_{n}, \varliminf_{n \to \infty} X_{n}}$ 为退化的
         2. $\left\{\omega: {\displaystyle \lim _{n \to \infty} X_{n}} \textsf{ 存在}\right\}, \ \left\{\omega: {\displaystyle \sum_{n \to \infty} X_{n}} \textsf{ 收敛} \right\}, \ \left\{\omega: {\displaystyle \lim _{n \to \infty} \dfrac{1}{n} \sum_{j \leqslant n} X_{j}=0}\right\}$ 诸事件的概率为 $0$ 或 $1$
-
 3. $\text{Borel}-\text{Cantelli}$ 引理
     1. 对事件列 $\left\{A_{n}\right\}_{n \geqslant 1}$，${\displaystyle \sum_{n=1}^{\infty} P\left(A_{n}\right)<\infty \to P\left(A_{n} \text{ i.o.}\right)=0}$
     2. 若 $\left\{A_{n}\right\}_{n \geqslant 1}$ 为独立事件列，则 ${\displaystyle \sum_{n=1}^{\infty} P\left(A_{n}\right)=\infty \rightarrow P\left(A_{n} \text{ i.o.}\right)=1}$
