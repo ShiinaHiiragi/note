@@ -3,6 +3,17 @@
 ## 2.1 概率分布
 ### 2.1.1 概率分布相关概念
 1. 概率分布：若 $(\Omega, \mathscr{F}, \mu)$ 为测度空间，$f$ 为 $(\Omega, \mathscr{F})$ 到可测空间 $(E, \mathscr{E})$ 的可测映射，则 $\nu(B)=\mu\left(f^{-1}(B)\right), \ B \in \mathscr{E}$ 规定 $(E, \mathscr{E})$ 上的测度，称为 $f$ 在 $(E, \mathscr{E})$ 上诱导的测度．特别地当 $\mu$ 为概率测度时，$\nu$ 也是概率测度，称为 $f$ 在 $(E, \mathscr{E})$ 上诱导的概率分布
+    1. 边际分布与联合分布：设 $F_X(x_1, x_2, \cdots, x_n)$ 是随机向量 $X$ 诱导的分布函数
+        1. 令 $F_X(+\infty, \cdots, x_i, \cdots, +\infty) = P[X_i < x_i] = F_{X_i}(x_i)$，称 $F_{X_i}(x_i)$ 为边际分布，$F_X(x_1, x_2, \cdots, x_n)$ 本身为联合分布
+        2. 联合分布可以唯一确定边际分布，边际分布不能唯一确定联合分布
+        3. 若随机变量 $X, Y$ 存在联合密度 $p_{(X, Y)}(x, y)$，则 $X, Y$ 的边际密度函数必存在
+    2. 随机变量的变换
+        1. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R, \mathscr{B}, P_X)\overset{f}{\longrightarrow}(R, \mathscr{B})$．若 $X$ 的密度函数 $P_X(x)$ 存在，分情况讨论 $Y=f\circ X$ 的密度函数如下
+            1. $f$ 严格单调且存在导函数时，$P_Y(y)=P_X(f^{-1}(y))|(f^{-1}(y))'|$
+            2. $f(x)$ 有存在 $\mathbf R$ 上一个区间划分 $I_n, f\upharpoonright_{I_n}$ 严格单调时，${\displaystyle P_Y(y)=\sum_{n=1}^\infty P_X(f_n^{-1}(y))|(f^{-1}_n(y))|I_{f(I_n)}(y)}$
+        2. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R^n, \mathscr{B}^n, P_X)\overset{T}{\longrightarrow}(R^n, \mathscr{B}^n)$，若 $T$ 是 $(R^n, \mathscr{B}^n)\to (R^n, \mathscr{B}^n)$ 的一个双射且 $T$ 是一个局部微分同胚，$T$ 存在连续的混合偏导数 $\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}$ 且混合偏导数的行列式不为零．已知 $P_X(x_1, x_2, \cdots, x_n)$，则有 $P_Y(y_1, y_2, \cdots, y_n)=P_X(T^{-1}(y))\left|\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}\right|$
+            1. 若 $X_1, X_2, \cdots, X_n$ 是独立的，$f_1, f_2, \cdots, f_n$ 是 $n$ 个可测函数，则 $f(X_1), f(X_2), \cdots, f(X_n)$ 是独立的
+            2. 若 $X, Y$ 是独立服从某种分布类型的随机变量，如果 $X+Y$ 也具有该类型的分布，则称随机变量具有再生性．易知二项分布、$\mathrm{Poisson}$ 分布与正态分布分布是具有再生性的
 2. 分布函数：设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$X$ 为有限实值随机变量, 则 $F(x)=P[X \leqslant x]$ 称为 $X$ 的分布函数．若 $X=\left(X_{1}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量，则 $F\left(x_{1}, x_{2}, \cdots, x_{n}\right)=P\left[X_{1} \leqslant x_{1}, X_{2} \leqslant x_{2}, \cdots, X_{n} \leqslant x_{n}\right]$ 称为 $X$ 所诱导的 $n$ 维分布函数
     1. 设 $F(x)$ 为离散随机变量 $X$ 的分布函数
         1. $F(x)$ 单调递增
@@ -29,17 +40,6 @@
     2. 设随机向量 $X:(\Omega, \mathscr{F}, P)\to (R^n, \mathscr{B}^n)$ 诱导的分布函数为 $F_X(x_1, x_2, \cdots, x_n)$，若存在 $p(t_1, t_2, \cdots, t_n) \geqslant 0$ 使得 ${\displaystyle F_X(x_1, x_2, \cdots, x_n)=\int_{-\infty}^{x_1} \int_{-\infty}^{x_2}\cdots \int_{-\infty}^{x_n}p(t_1, t_2, \cdots, t_n)\mathrm{d}t_1\mathrm{d}t_2\cdots \mathrm{d}t_n}$，则称 $X$ 具有密度函数 $p(t_1, t_2, \cdots, t_n)$
         1. 若 $X$ 存在密度函数，则 $F_X(x_1, x_2, \cdots, x_n)$ 关于每个 $x_i$ 是连续的．事实上 $F_X$ 是 $n$ 元连续的
         2. 若 $X$ 的分布函数 $F_X$ 有 $\dfrac{\partial ^nF}{\partial x_1\cdots \partial x_n}$ 存在且连续，则 $X$ 必有密度函数 $p_X(x_1, x_2, \cdots, x_n)=\dfrac{\partial ^nF}{\partial x_1\cdots \partial x_n}$
-4. 边际分布与联合分布：设 $F_X(x_1, x_2, \cdots, x_n)$ 是随机向量 $X$ 诱导的分布函数
-    1. 令 $F_X(+\infty, \cdots, x_i, \cdots, +\infty) = P[X_i < x_i] = F_{X_i}(x_i)$，称 $F_{X_i}(x_i)$ 为边际分布，$F_X(x_1, x_2, \cdots, x_n)$ 本身为联合分布
-    2. 联合分布可以唯一确定边际分布，边际分布不能唯一确定联合分布
-    3. 若随机变量 $X, Y$ 存在联合密度 $p_{(X, Y)}(x, y)$，则 $X, Y$ 的边际密度函数必存在
-5. 随机变量的变换
-    1. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R, \mathscr{B}, P_X)\overset{f}{\longrightarrow}(R, \mathscr{B})$．若 $X$ 的密度函数 $P_X(x)$ 存在，则 $Y=f\circ X$ 的密度函数分情况讨论如下
-        1. $f$ 严格单调且存在导函数时，$P_Y(y)=P_X(f^{-1}(y))|(f^{-1}(y))'|$
-        2. $f(x)$ 有存在 $\mathbf R$ 上一个区间划分 $I_n, f\upharpoonright_{I_n}$ 严格单调时，${\displaystyle P_Y(y)=\sum_{n=1}^\infty P_X(f_n^{-1}(y))|(f^{-1}_n(y))|I_{f(I_n)}(y)}$
-    2. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R^n, \mathscr{B}^n, P_X)\overset{T}{\longrightarrow}(R^n, \mathscr{B}^n)$，若 $T$ 是 $(R^n, \mathscr{B}^n)\to (R^n, \mathscr{B}^n)$ 的一个双射且 $T$ 是一个局部微分同胚，$T$ 存在连续的混合偏导数 $\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}$ 且混合偏导数的行列式不为零．已知 $P_X(x_1, x_2, \cdots, x_n)$，则有 $P_Y(y_1, y_2, \cdots, y_n)=P_X(T^{-1}(y))\left|\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}\right|$
-        1. 若 $X_1, X_2, \cdots, X_n$ 是独立的，$f_1, f_2, \cdots, f_n$ 是 $n$ 个可测函数，则 $f(X_1), f(X_2), \cdots, f(X_n)$ 是独立的
-        2. 若 $X, Y$ 是独立服从某种分布类型的随机变量，如果 $X+Y$ 也具有该类型的分布，则称随机变量具有再生性．易知二项分布、$\mathrm{Poisson}$ 分布与正态分布分布是具有再生性的
 
 ### 2.1.2 离散概率分布
 1. 退化分布
