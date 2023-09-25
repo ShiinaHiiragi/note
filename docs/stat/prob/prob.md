@@ -210,8 +210,6 @@
         1. $X_{n} \stackrel{L^{p}}{\longrightarrow} X$
         2. $\left\{X_{n}\right\}$ 是基本列，即 ${\displaystyle \lim _{n, m \rightarrow \infty}\left\|X_{n}-X_{m}\right\|_{p}=0}$
 
-        当 $1 \leqslant p<\infty$ 时，上述事实又与下列事实等价
-
-        - $\left\{\left|X_{n}\right|^{p}\right\}_{n \geqslant 1}$ 一致可积，且 $X_{n} \stackrel{P}{\longrightarrow} X$
+        当 $1 \leqslant p<\infty$ 时，上述事实又与下述事实等价：$\left\{\left|X_{n}\right|^{p}\right\}_{n \geqslant 1}$ 一致可积，且 $X_{n} \stackrel{P}{\longrightarrow} X$
 
     4. 对 $p \in [1, \infty)$ 及随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，若存在 $Y \in L^{p} \ (\Omega, \mathscr{F}, P)$ 使对每个 $n$ 都有 $\left|X_{n}\right| \leqslant Y$，则当 $n \rightarrow \infty$ 时，$X_{n} \stackrel{p}{\longrightarrow} X$ 当且仅当 $X_{n} \stackrel{L^{p}}{\longrightarrow} X$
