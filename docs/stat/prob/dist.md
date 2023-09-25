@@ -1,4 +1,4 @@
-# 2 概率分布
+# 2 概率分布与特征
 
 ## 2.1 概率分布
 ### 2.1.1 概率分布相关概念
@@ -38,7 +38,7 @@
 
 ### 2.1.3 连续概率分布
 
-## 2.2 期望与矩
+## 2.2 分布与特征
 ### 2.2.1 数学期望
 1. 离散随机变量的期望：若 ${\displaystyle X(\omega)=\sum_{i} x_{i} I_{A_{i}}(\omega)}$ 为离散随机变量，则称 ${\displaystyle \sum_{i} x_{i} P\left(A_{i}\right)}$ 为 $X$ 的期望或 $X$ 关于 $P$ 的积分，记为
 
@@ -110,3 +110,45 @@
     2. $\text{Chebyshev}$ 不等式：$P(|X-\mathrm{E} X|>a) \leqslant \dfrac{1}{a^{2}} \mathrm{D}X \ (a>0)$．一般地，对任意 $n \in \mathbf N$，有 $P[|X|\geqslant a]\leqslant \dfrac{\mathrm{E}|X|^n}{a^n}$
 3. 协方差：若 $X, Y$ 为随机变量，则称 $\operatorname{Cov}(X, Y) = \mathrm{E}[(X-\mathrm{E} X)(Y-\mathrm{E} Y)]$ 为 $X, Y$ 的协方差
     1. 对任意随机变量 $X, Y$，有 $\mathrm{E}[XY]\leqslant (\mathrm{E}|X|^2)^{\frac{1}{2}}(\mathrm{E}|Y|^2)^{\frac{1}{2}}$，等号成立当且仅当存在 $t_0$ 使得 $P[X=t_0Y]=1$
+    2. 定义 $r(X, Y)=\dfrac{\mathrm{Cov}(X, Y)}{\sqrt{\mathrm{D} X\cdot \mathrm{D} Y}}$ 为 $X, Y$ 的相关系数．若 $r(X, Y)=0$，则称随机变量 $X, Y$ 线性无关
+        1. $|r(X, Y)| \leqslant 1$．$|r(X, Y)|$ 越大，则相关性越大
+        2. 若 $X, Y$ 独立，则 $X, Y$ 线性无关，反之不一定成立
+
+        !!! note "线性无关的等价条件"
+            下列命题等价
+
+            1. $X, Y$ 线性无关
+            2. $\mathrm{Cov}(X, Y)=0$
+            3. $\mathrm{E}XY=\mathrm{E}X\cdot \mathrm{E}Y$
+            4. $\mathrm{D}(X+Y)=\mathrm{D}X+\mathrm{D}Y$
+
+### 2.2.3 特征函数
+1. 随机变量的特征函数：若 $X, Y$ 是随机变量，$\mathrm{E}X, \mathrm{E}Y$ 存在，定义 $\mathrm{E}[X+\mathrm{i}Y]=\mathrm{E}[X]+\mathrm{i}\mathrm{E}[Y]$．令 $X$ 是一个随机变量，设 $\varphi_X(t)=\mathrm{E}e^{\mathrm{i}tX}=\mathrm{E}\cos tX+\mathrm{i}\mathrm{E}\sin tX$ 有定义，称 $\varphi_X(t)$ 是 $X$ 的一个特征函数
+    1. $|\varphi_X(t)| \leqslant 1, \varphi_X(0)=1$
+    2. $\overline{\varphi_X(t)}=\varphi_X(-t)$
+    3. ${\displaystyle \forall \lambda_i \forall t_i\in \mathbf R: \sum\lambda_i \overline{\lambda_j} \varphi_X(t_i-t_j)\geqslant 0}$
+    4. $\varphi_X$ 在 $\mathbf R$ 上一致连续
+2. 随机向量的特征函数：设 $X = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \varphi_X(t_1, t_2, \cdots, t_n)=\mathrm Ee^{\mathrm{i}t^TX}=\mathrm Ee^{\mathrm{i}\overline{\sum_{j=1}^n t_jx_j}}$
+    1. $|\varphi_X(t_1, t_2, \cdots, t_n)|\leqslant 1, |\varphi_X(0, 0, \cdots, 0)|=1$
+    2. $|\varphi_X(-t_1, -t_2, \cdots, -t_n)|=\overline{|\varphi_X(t_1, t_2, \cdots, t_n)|}$
+    3. $\varphi_X$ 是连续的
+    4. $\mathrm E|X_1|^{k_1}|X_2|^{k_2}\cdots |X_n|^{k_n}<+\infty$．于是 $\varphi_X(t_1, t_2, \cdots, t_n)$ 关于 $t$ 的混合偏导数 $\dfrac{\partial^{k_1+\cdots+k_n}}{\partial t_1^{k_1}\cdots \partial t_n^{k_n}}\varphi_X(t_1, t_2, \cdots, t_n)$ 存在，且 $\dfrac{\partial^{k_1+\cdots+k_n}}{\partial t_1^{k_1}\cdots \partial t_n^{k_n}}\varphi_X(t_1, t_2, \cdots, t_n)=\mathrm{E}\left[\dfrac{\partial^{k_1+\cdots+k_n}}{\partial t_1^{k_1}\cdots \partial t_n^{k_n}} e^{i\sum_{j=1}^n t_jx_j}\right]$
+    5. $\varphi_{x_{i_1},x_{i_2},\cdots,x_{i_k}}(t_{i_1},t_{i_2},\cdots,t_{i_n})=\varphi_X(0, \cdots, 0, t_{i_1}, 0, \cdots, 0, t_{i_2},0,\cdots, 0, t_{i_k}, 0, \cdots, 0)$
+3. 特征函数由分布函数唯一决定：${\displaystyle \varphi_X(t)=\mathrm Ee^{\mathrm{i}tx}=\int_{\mathbf R}e^{\mathrm{i}tx}\mathrm dF_X(x)}$
+    1. 令 ${\displaystyle g(x; x_1, x_2, T)=\dfrac{1}{2\pi}\int_{-T}^T \dfrac{\sin t(x-x_1)-\sin t(x-x_2)}{t}\mathrm dt}$
+        1. $g(x; x_1, x_2, T)$ 是有界函数
+        2. ${\displaystyle \lim_{T\to +\infty} g(x; x_1, x_2, T)}=\left\{\begin{aligned}&0, & x>x_2\\ &\dfrac{1}{2}, & x=x_2\\ &1, & x_1<x<x \\&-\dfrac{1}{2}, & x=x_1\\ &0, & x<x_1\end{aligned}\right.$
+    2. 随机变量的逆转公式：$x_1, x_2\in C(F_X)$（$F_X$ 的连续点全集），则
+
+        $$
+        F(x_2)-F(x_1)=\lim_{T\to +\infty} \dfrac{1}{2\pi} \int_{-T}^T \dfrac{e^{-\mathrm{i}tx_1}-e^{-\mathrm{i}tx_2}}{\mathrm{i}t}\varphi_X(t)\mathrm dt
+        $$
+
+        1. ${\displaystyle \forall x\in C(F_X), F(x)=\lim_{x_1\in C(F), x_1\to -\infty} \lim_{T\to +\infty}\dfrac{1}{2\pi} \int_{-T}^T\dfrac{e^{-\mathrm{i}tx_1}-e^{-\mathrm{i}tx_2}}{\mathrm{i}t}\varphi_X(t)\mathrm dt, F(x)=\lim_{x'\in C(F), x'\to x^-}F(x')}$
+        2. 若 $X$ 的特征函数 $\varphi_X(t)$ 绝对可积，则 $F_X(x)$ 一定存在密度函数 ${\displaystyle P_X(t)=\dfrac{1}{2\pi} \int_{-\infty}^{+\infty} e^{-\mathrm{i}tx}\varphi_X(t)\mathrm dt}$
+
+    3. 随机向量的逆转公式
+
+        $$
+        P[a_1<X_1<b_1, \cdots, a_n<X_n<b_n]=\lim_{T_j \to \infty} \dfrac{1}{(2\pi)^n}\int_{-T_1}^{T_1}\cdots\int_{-T_n}^{T_n}\prod_{j=1}^n \dfrac{e^{-\mathrm{i}t_ja_j}-e^{-\mathrm{i}t_jb_j}}{\mathrm{i}t_j}\varphi_X(t_1, t_2, \cdots, t_n)\mathrm dt_1 \cdots \mathrm dt_1
+        $$
