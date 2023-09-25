@@ -33,6 +33,13 @@
     1. 令 $F_X(+\infty, \cdots, x_i, \cdots, +\infty) = P[X_i < x_i] = F_{X_i}(x_i)$，称 $F_{X_i}(x_i)$ 为边际分布，$F_X(x_1, x_2, \cdots, x_n)$ 本身为联合分布
     2. 联合分布可以唯一确定边际分布，边际分布不能唯一确定联合分布
     3. 若随机变量 $X, Y$ 存在联合密度 $p_{(X, Y)}(x, y)$，则 $X, Y$ 的边际密度函数必存在
+5. 随机变量的变换
+    1. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R, \mathscr{B}, P_X)\overset{f}{\longrightarrow}(R, \mathscr{B})$．若 $X$ 的密度函数 $P_X(x)$ 存在，则 $Y=f\circ X$ 的密度函数分情况讨论如下
+        1. $f$ 严格单调且存在导函数时，$P_Y(y)=P_X(f^{-1}(y))|(f^{-1}(y))'|$
+        2. $f(x)$ 有存在 $\mathbf R$ 上一个区间划分 $I_n, f\upharpoonright_{I_n}$ 严格单调时，${\displaystyle P_Y(y)=\sum_{n=1}^\infty P_X(f_n^{-1}(y))|(f^{-1}_n(y))|I_{f(I_n)}(y)}$
+    2. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R^n, \mathscr{B}^n, P_X)\overset{T}{\longrightarrow}(R^n, \mathscr{B}^n)$，若 $T$ 是 $(R^n, \mathscr{B}^n)\to (R^n, \mathscr{B}^n)$ 的一个双射且 $T$ 是一个局部微分同胚，$T$ 存在连续的混合偏导数 $\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}$ 且混合偏导数的行列式不为零．已知 $P_X(x_1, x_2, \cdots, x_n)$，则有 $P_Y(y_1, y_2, \cdots, y_n)=P_X(T^{-1}(y))\left|\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}\right|$
+        1. 若 $X_1, X_2, \cdots, X_n$ 是独立的，$f_1, f_2, \cdots, f_n$ 是 $n$ 个可测函数，则 $f(X_1), f(X_2), \cdots, f(X_n)$ 是独立的
+        2. 若 $X, Y$ 是独立服从某种分布类型的随机变量，如果 $X+Y$ 也具有该类型的分布，则称随机变量具有再生性．易知二项分布、$\mathrm{Poisson}$ 分布与正态分布分布是具有再生性的
 
 ### 2.1.2 离散概率分布
 1. 退化分布
@@ -113,6 +120,7 @@
         2. 设 $W_k$ 为从第 $k-1$ 次发生事件到第 $k$ 次事件发生所经历的时间，则 $T_k={\displaystyle \sum_{i=0}^k W_i}$
 
     2. 分布特征：$\mathrm{E}X=\lambda^{-1}, \ \mathrm{D}X=\lambda^{-2}, \ \varphi_X(t)=\left(1-\dfrac{\mathrm{i} t}{\lambda}\right)^{-1}$
+
 ## 2.2 分布特征
 ### 2.2.1 数学期望
 1. 离散随机变量的期望：若 ${\displaystyle X(\omega)=\sum_{i} x_{i} I_{A_{i}}(\omega)}$ 为离散随机变量，则称 ${\displaystyle \sum_{i} x_{i} P\left(A_{i}\right)}$ 为 $X$ 的期望或 $X$ 关于 $P$ 的积分，记为

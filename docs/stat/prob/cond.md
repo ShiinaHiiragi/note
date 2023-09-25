@@ -21,8 +21,7 @@
 
     2. 若 $V$ 为离散型随机变量，$B_{n}=\left\{\omega: V=a_{n}\right\}$，且 $\left\{B_{n}\right\}$ 为 $\Omega$ 的分割，则 ${\displaystyle \mathrm{E}\left[X \mid V=a_{n}\right]=\mathrm{E}_{B_{n}}[X]}$
     3. 考虑 ${\displaystyle \mathrm{E}[X \mid V]=\sum_{n \geqslant 1} \mathrm{E}_{B_{n}}[X] I_{V=a_{n}}=\sum_{n \geqslant 1} \mathrm{E}_{B_{n}}[X] I_{B_{n}}}$，其在 $V$ 取不同值的各种情况下都表示 $X$ 关于 $V$ 的条件期望．此时对 $C \in \sigma(V)$，若 ${\displaystyle C=\sum_{k \geqslant 1} B_{n_{k}}}$，则必有 ${\displaystyle \int_{C} \mathrm{E}[X \mid V] \mathrm{dP}=\sum_{k} \mathrm{E}_{B_{n_{k}}}[X \mid V] P\left(B_{n_{k}}\right)=\sum_{k} \int_{B_{n_{k}}} X \mathrm{dP}=\int_{C} X \mathrm{dP}}$
-
-3. 回归
+    4. 回归：设 $X, Y$ 是两个随机变量，$Y$ 与 $X$ 存在某种关联且 $X$ 可观测．则当且仅当 $f(X)=E[Y\mid X]$ 时，近似 $f(X)$ 的平均误差 $E[|Y-f(X)|^2]$ 最小，称 $E[Y\mid X]$ 为 $Y$ 的一个回归
 
 ### 4.1.2 现代定义
 1. 条件期望：设 $\mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，$X$ 为（准）可积随机变量，$Y$ 为满足下列条件的随机变量
@@ -109,3 +108,20 @@
     3. 对可积随机变量 $Y=h\left(X_{1}, X_{2}\right)$ 有 ${\displaystyle \mathrm{E}\left[h\left(X_{1}, X_{2}\right) \mid X_{2}\right]=\int_{-\infty}^{\infty} h\left(s, X_{2}\right) f_{12}\left(s \mid X_{2}\right) \mathrm{d} s}$
 
 ## 4.3 条件独立性
+1. $\mathscr{G}$ 是 $\mathscr{F}$ 的子 $\sigma$ 域，$\left\{\mathscr{G}_{t}\right\}_{t \in T}$ 是 $\mathscr{F}$ 的子 $\sigma$ 域族．若对 $T$ 的任一有限子集 $I$，${\displaystyle P\left(\bigcap_{t \in I} B_{t} \mid \mathscr{G}\right)=\prod_{t \in I} P\left(B_{t} \mid \mathscr{G}\right), \forall B_{t} \in \mathscr{G}_{t}, t \in I}$ 成立，则称 $\left\{\mathscr{G}_{t}\right\}_{t \in T}$ 关于 $\mathscr{G}$ 是条件独立的
+    1. 若 $\mathscr{G}=\{\varnothing, \Omega\}$，则 $\left\{\mathscr{G}_{t}\right\}_{t \in T}$ 关于 $\mathscr{G}$ 的条件独立性等价于 $\left\{\mathscr{G}_{t}\right\}_{t \in T}$ 为独立的
+    2. 若 $I$ 为 $T$ 的有限子集，则下列事实相互等价
+        1. $\mathscr{G}_{t}=\sigma\left(\mathscr{C}_{t}\right)$，对每个 $t \in T$，$\mathscr{C}_{t}$ 为 $\pi$ 类，有 ${\displaystyle P\left(\bigcap_{t \in I} C_{t} \mid \mathscr{G}\right)=\prod_{t \in I} P\left(C_{t} \mid \mathscr{G}\right), \forall C_{t} \in \mathscr{C}_{t}, t \in I}$
+        2. $\left\{\mathscr{G}_{t}\right\}_{t \in T}$ 关于 $\mathscr{G}$ 条件独立
+        3. ${\displaystyle \mathrm{E}\left[\prod_{t \in I} X_{t} \mid \mathscr{G}\right]=\prod_{t \in I} \mathrm{E}\left[X_{t} \mid \mathscr{G}\right], \forall X_{t} \in L_{\infty}\left(\mathscr{G}_{t}\right), t \in I}$
+2. $\mathscr{G}_{1}, \mathscr{G}_{2}$ 关于 $\mathscr{G}$ 条件独立的充要条件是 ${\displaystyle P\left(B_{1} \mid \mathscr{G} \vee \mathscr{G}_{2}\right)=P\left(B_{1} \mid \mathscr{G}\right), \forall B_{1} \in \mathscr{G}_{1}}$
+    1. 下列任一条件都是 $\mathscr{G}_{1}, \mathscr{G}_{2}$ 关于 $\mathscr{G}$ 条件独立的充要条件
+
+        $$
+        \begin{array}{ll}
+        P\left(B_{1} \mid \mathscr{G} \vee \mathscr{G}_{2}\right)=P\left(B_{1} \mid \mathscr{G}\right), & \forall B_{1} \in \mathscr{G}_{1} \\
+        P\left(B_{2} \mid \mathscr{G} \vee \mathscr{G}_{1}\right)=P\left(B_{2} \mid \mathscr{G}\right), & \forall B_{2} \in \mathscr{G}_{2}
+        \end{array}
+        $$
+
+    2. 若 $\mathscr{G}_{1}$ 与 $\mathscr{G} \vee \mathscr{G}_{2}$ 独立，则 $\mathscr{G}_{1}, \mathscr{G}_{2}$ 关于 $\mathscr{G}$ 条件独立
