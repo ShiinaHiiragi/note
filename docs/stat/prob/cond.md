@@ -22,6 +22,8 @@
     2. 若 $V$ 为离散型随机变量，$B_{n}=\left\{\omega: V=a_{n}\right\}$，且 $\left\{B_{n}\right\}$ 为 $\Omega$ 的分割，则 ${\displaystyle \mathrm{E}\left[X \mid V=a_{n}\right]=\mathrm{E}_{B_{n}}[X]}$
     3. 考虑 ${\displaystyle \mathrm{E}[X \mid V]=\sum_{n \geqslant 1} \mathrm{E}_{B_{n}}[X] I_{V=a_{n}}=\sum_{n \geqslant 1} \mathrm{E}_{B_{n}}[X] I_{B_{n}}}$，其在 $V$ 取不同值的各种情况下都表示 $X$ 关于 $V$ 的条件期望．此时对 $C \in \sigma(V)$，若 ${\displaystyle C=\sum_{k \geqslant 1} B_{n_{k}}}$，则必有 ${\displaystyle \int_{C} \mathrm{E}[X \mid V] \mathrm{dP}=\sum_{k} \mathrm{E}_{B_{n_{k}}}[X \mid V] P\left(B_{n_{k}}\right)=\sum_{k} \int_{B_{n_{k}}} X \mathrm{dP}=\int_{C} X \mathrm{dP}}$
 
+3. 回归
+
 ### 4.1.2 现代定义
 1. 条件期望：设 $\mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，$X$ 为（准）可积随机变量，$Y$ 为满足下列条件的随机变量
     1. $Y$ 为 $\mathscr{G}$ 可测的
@@ -88,5 +90,22 @@
     4. 若 $P(\omega, A)$ 为 $\mathscr{F}_{1}$ 上关于 $\mathscr{G}$ 的条件概率分布，$Y=Y(\omega)$ 为 $\mathscr{F}_{1}$ 可测准可积随机变量，则 ${\displaystyle \mathrm{E}[Y \mid \mathcal{G}]=\int_{\Omega} Y\left(\omega^{\prime}\right) P\left(\omega, \mathrm{d} \omega^{\prime}\right)}$
 
         若 $X$ 为 $n$ 维随机向量（或随机变量序列），$P_{X}(\omega, A)$ 为 $X$ 关于 $\mathscr{G}$ 的正则条件概率分布，$h$ 为 $\text{Borel}$ 函数，$h(X)$ 准可积，则有 ${\displaystyle \mathrm{E}[h(X) \mid \mathscr{G}]=\int_{\mathbf{R}^{n}\left(\mathbf{R}^{\infty}\right)} h(x) P(\omega, \mathrm{d} x)}$
+
+3. 若 $X=\left(X_{1}, X_{2}\right)$ 为 $\left(\mathbf{R}^{2}, \mathscr{B}^{2}, P\right)$ 上的标准随机变量，且其分布函数 $F$ 绝对连续，即 ${\displaystyle F\left(x_{1}, x_{2}\right)=\int_{-\infty}^{x_{1}} \int_{-\infty}^{x_{2}} f(s, t) \mathrm{d} s \mathrm{d} t}$．其中分布密度 $f$ 为 $\text{Borel}$ 可测的，令
+
+    $$
+    \begin{aligned}
+    f_{1}\left(x_{1}\right)& =\int_{-\infty}^{\infty} f\left(x_{1}, t\right) \mathrm{d} t \\
+    f_{2}\left(x_{2}\right)& =\int_{-\infty}^{\infty} f\left(t, x_{2}\right) \mathrm{d} t \\
+    f_{12}\left(x_{1} \mid x_{2}\right)& = \begin{cases}\dfrac{f\left(x_{1}, x_{2}\right)}{f_{2}\left(x_{2}\right)}, & f_{2}\left(x_{2}\right)>0, \\
+    f_{1}\left(x_{1}\right), & f_{2}\left(x_{2}\right)=0,\end{cases}
+    \end{aligned}
+    $$
+
+    则 $f_{1}\left(x_{1}\right), f_{2}\left(x_{2}\right), f_{12}\left(x_{1} \mid x_{2}\right)$ 为 $\mathbf{R}^{2}$ 上 $\text{Borel}$ 函数．$f_{12}\left(x_{1} \mid x_{2}\right)$ 又称为当 $X_{2}=x_{2}$ 时 $X_{1}$ 的条件分布密度
+
+    1. 若 $B \in \mathscr{B}^{2}, x=\left(x_{1}, x_{2}\right) \in \mathbf{R}^{2}$，令 ${\displaystyle P(x, B)=\int_{\left\{s:\left(s, x_{2}\right) \in B\right\}} f_{12}\left(s \mid x_{2}\right) \mathrm{d} s}$，则对每个 $x \in \mathbf{R}^{2}$，$P(x, B)$ 是 $\mathscr{B}^{2}$ 上概率测度
+    2. 对每个 $B \in \mathscr{B}^{2}$，$P(X, B)$ 是 $\sigma\left(X_{2}\right)$ 可测的，且对 $B \in \mathscr{B}^{2}$ 有 ${\displaystyle \int_{A_{2}} P(X, B) \mathrm{d}P=\int_{A_{2}} P\left(B \mid X_{2}\right) \mathrm{d}P}$，所以 $P(x, B)$ 是 $X$ 关于 $X_{2}$ 的正则条件概率分布
+    3. 对可积随机变量 $Y=h\left(X_{1}, X_{2}\right)$ 有 ${\displaystyle \mathrm{E}\left[h\left(X_{1}, X_{2}\right) \mid X_{2}\right]=\int_{-\infty}^{\infty} h\left(s, X_{2}\right) f_{12}\left(s \mid X_{2}\right) \mathrm{d} s}$
 
 ## 4.3 条件独立性

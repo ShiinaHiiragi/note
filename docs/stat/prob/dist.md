@@ -72,7 +72,47 @@
     1. 设 $[a, b] \subseteq \mathbf R$ 且 $a < b$，则密度函数 $p(x)=\left\{\begin{aligned} & \dfrac{1}{b-a}, & a \leqslant x \leqslant b \\ & 0, & \text{otherwise} \end{aligned}\right.$ 给出的分布称为均匀分布
     2. 分布特征：$\mathrm{E}X=\dfrac{a+b}{2}, \ \mathrm{D}X=\dfrac{(b-a)}{12}, \ \varphi_X(t)=\dfrac{\mathrm{e}^{\mathrm{i}tb} - \mathrm{e}^{\mathrm{i}ta}}{\mathrm{i}t(b-a)}$
 2. 正态分布（$\text{Gauss}$ 分布）：$X \sim N(\mu, \sigma^2)$
+    1. 称由密度函数 $p(x; \mu, \sigma^2)=\dfrac{1}{\sqrt{2\pi}\cdot \sigma}e^{-\frac{(x-\mu)^2}{2\sigma ^2}}$ 确定的参数为 $\mu, \sigma^2$ 的正态分布，也可记作 $\phi(x; \mu, \sigma^2)$．特别地，令 $\Phi(x)=\phi(x; 0, 1)$ 为标准正态分布
+        1. 设 $X\sim \phi(x; \mu, \sigma^2)$，则 ① $P[X\leqslant x]=\Phi \left(\dfrac{x-\mu}{\sigma} \right)$；② $\dfrac{X - \mu}{\sigma} \sim N(0, 1)$
+        2. 在一次试验中，$X$ 几乎总是落在 $(\mu-3\sigma, \mu+3\sigma)$ 之中
 
+            $$
+            \begin{aligned}
+            P[|X-\mu|<\sigma] & \approx 68.27\% \\
+            P[|X-\mu|<2\sigma] & \approx 95.45\% \\
+            P[|X-\mu|<3\sigma] & \approx 99.73\%
+            \end{aligned}
+            $$
+
+    2. 分布特征：$\mathrm{E}X=\mu, \ \mathrm{D}X=\sigma^2, \ \varphi_X(t)=\mathrm{e}^{\mathrm{i}\mu t - \frac{1}{2}\sigma^2 t^2}$
+
+3. 多元正态分布：$X\sim N(\boldsymbol \mu, \boldsymbol B)$
+    1. 设 $\boldsymbol B$ 是一个对称正定矩阵，称由密度函数 $p_n(x)=\dfrac{1}{(2\pi)^{\frac{n}{2}}|\boldsymbol B|^{\frac{1}{2}}}\exp\left\{-\dfrac{1}{2}(\boldsymbol x-\boldsymbol \mu)^{\mathrm{T}}\boldsymbol B^{-1}(\boldsymbol x-\boldsymbol \mu)\right\}$ 确定的的 $n$ 元正态分布
+    2. 二元正态函数：$n=2$ 时，设 $(X, Y)\sim N\left(\begin{bmatrix}\mu_1 \\ \mu_2\end{bmatrix}, \begin{bmatrix} \sigma_1^2 &r\sigma_1\sigma_2 \\ r\sigma_1\sigma_2 &\sigma_2^2\end{bmatrix}\right)$．由于 $\boldsymbol B$ 为正定矩阵，于是 $0<r<1$
+        1. 边际分布密度函数
+
+            $$
+            p_X(x)=\dfrac{1}{\sqrt{2\pi} \cdot \sigma_1}\exp\left\{-\dfrac{(x-\mu_1)^2}{2\sigma_1^2}\right\}, p_X(x)=\dfrac{1}{\sqrt{2\pi} \cdot \sigma_2}\exp\left\{-\dfrac{(x-\mu_2)^2}{2\sigma_2^2}\right\}
+            $$
+
+        2. 条件分布密度函数
+
+            $$
+            p_{X|Y}(x|y)=\dfrac{1}{\sqrt{2\pi} \sigma_1 \sqrt{1-r^2}}\exp\left\{-\dfrac{\left[(x-\left(\mu_1+r\dfrac{\sigma_1}{\sigma_2}(y-\mu_2)\right)\right]^2}{2\sigma_1^2(1-r^2)}\right\} \sim N\left(\mu_1+r\dfrac{\sigma_1}{\sigma_2}(y-\mu_2), \sigma_1^2(1-r^2)\right)
+            $$
+
+        3. $X$ 与 $Y$ 独立当且仅当 $r=0$
+        4. $r(X, Y)=r$，即 $X, Y$ 线性无关当且仅当 $r=0$
+        5. 设随机变量 $X$ 与 $Y$ 独立且 $(X, Y)$ 存在联合密度函数 $P_{X, Y}(x, y)=h(\sqrt{x^2+y^2})$，则 $X, Y$ 服从正态分布
+
+    3. 特征函数：$\varphi_X(\boldsymbol t)=e^{\mathrm{i}\boldsymbol t\boldsymbol \mu-\frac{1}{2}\boldsymbol t^{\mathrm{T}}\boldsymbol B\boldsymbol t}$
+
+4. 指数分布：$X \sim \operatorname{Exp}(\lambda)$
+    1. 密度函数 $p(x)=\left\{\begin{aligned}&\lambda e^{-\lambda x}, & x>0 \\&0, & x\leqslant 0\end{aligned}\right. \ (\lambda > 0)$ 可写作 $p(x)=\lambda e^{-\lambda x} I_{[x\geqslant 0]}$，称密度函数为 $p(x)$ 的随机变量 $X$ 服从指数分布
+        1. 无记忆性：设 $T_1$ 为首次发生某事件的时间，则 $P[T_1>s+t|T_1>t]=P[T_1>s]$ 当且仅当 $T_1$ 服从指数分布
+        2. 设 $W_k$ 为从第 $k-1$ 次发生事件到第 $k$ 次事件发生所经历的时间，则 $T_k={\displaystyle \sum_{i=0}^k W_i}$
+
+    2. 分布特征：$\mathrm{E}X=\lambda^{-1}, \ \mathrm{D}X=\lambda^{-2}, \ \varphi_X(t)=\left(1-\dfrac{\mathrm{i} t}{\lambda}\right)^{-1}$
 ## 2.2 分布特征
 ### 2.2.1 数学期望
 1. 离散随机变量的期望：若 ${\displaystyle X(\omega)=\sum_{i} x_{i} I_{A_{i}}(\omega)}$ 为离散随机变量，则称 ${\displaystyle \sum_{i} x_{i} P\left(A_{i}\right)}$ 为 $X$ 的期望或 $X$ 关于 $P$ 的积分，记为
