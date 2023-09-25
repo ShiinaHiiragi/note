@@ -35,10 +35,35 @@
     3. 若随机变量 $X, Y$ 存在联合密度 $p_{(X, Y)}(x, y)$，则 $X, Y$ 的边际密度函数必存在
 
 ### 2.1.2 离散概率分布
+1. 退化分布
+    1. $P[X=c]=1$
+    2. 分布特征：$\mathrm{E}X=c, \ \mathrm{D}X=0, \ \varphi_X(t) = \mathrm{e}^{\mathrm{i}ct}$
+2. $\text{Bernoulli}$ 分布（两点分布）
+    1. $\mathrm{Bernoulli}$ 试验：设 $\Omega=\{0,1\}, \mathscr{F}=\mathcal{P}(\Omega)$，且 $P(\{1\})=p, P(\{0\})=q=1-p$
+    2. 随机变量 $X: \Omega \to \mathbf R$ 表示 $\mathrm{Bernoulli}$ 试验中成功的次数，则 $P[X=1]=p, \ P[X=0]=q$
+    3. 分布特征：$\mathrm{E}X=p, \ \mathrm{D}X=pq, \ \varphi_X(t) = p\mathrm{e}^{\mathrm{i}t}+q$
+3. 二项分布：$X \sim B(n, p)$
+    1. $n$ 重独立 $\mathrm{Bernoulli}$ 试验：设 $\Omega^n=\{0, 1\}^{n}, \mathscr{F}=\mathcal{P}(\Omega)$，且 $P(\{(a_1,\cdots,a_n)\})={\displaystyle \prod_{i=1}^n P(\{a_i\})}$
+    2. 随机变量 $X: \Omega^{n} \to \mathbf R$ 表示 $n$ 次独立 $\mathrm{Bernoulli}$ 试验中成功的次数，则 $P[X=k]=b(k;n,p)=C_n^{k} p^k \cdot q^{n-k}$
+        1. $b(k;n,p)=b(n-k;n,1-p)$
+        2. 使 $b(k;n,p)$ 最大的 $k=\lfloor (n+1)\cdot p\rfloor$
+    3. 分布特征：$\mathrm{E}X=np, \ \mathrm{D}X=npq, \ \varphi_X(t) = (p\mathrm{e}^{\mathrm{i}t}+q)^{n}$
+4. 几何分布
+    1. 可数重独立 $\mathrm{Bernoulli}$ 试验：设 $\Omega^{\mathbf N}=\{0, 1\}^{\mathbf N}, \mathscr{F}=\mathcal{P}(\Omega)$，且 $P(\{(a_1,a_2,\cdots,a_n)\}\times \Omega^\infty)={\displaystyle \prod_{i=1}^n P(a_i)}$
+    2. 随机变量 $X: \Omega^{\mathbf N} \to \mathbf R$ 表示可数次独立 $\mathrm{Bernoulli}$ 试验中成功的次数，随机变量 $T_1: \Omega^{\mathbf N} \to \mathbf R$ 表示可数次独立 $\mathrm{Bernoulli}$ 试验中首次成功的位次 $\inf \{n: X_n = 1\}$．如果永远不成功，则记为 $T_1=\inf \varnothing=+\infty$，于是 $T_1\in N\cup \{+\infty\}$
+        1. $P[T_1=k]=q^{k-1}\cdot p$
+        2. 无穷次试验必然成功：${\displaystyle \sum_{k=1}^{\infty}P[T_1=k]=1}$
+        3. 无记忆性: $P[T_1=n+m \mid T_1\geqslant m]=p\cdot q^n$
+        4. 若 $P[T_1=n+1 \mid T_1>n]=a$，则 $T_1$ 必然服从几何分布
+    3. 分布特征：$\mathrm{E}X=\dfrac{1}{p}, \ \mathrm{D}X=\dfrac{q}{p^2}, \ \varphi_X(t) = \dfrac{p\mathrm{e}^{\mathrm{i}t}}{1-q\cdot \mathrm{e}^{\mathrm{i}t}}$
+5. $\text{Poisson}$ 分布：$X \sim P(\lambda)$
+    1. 在独立试验中，事件 $A$ 在试验中出现的概率为 $p_n$，它与实验总数有关．如果 $np_n\to \lambda$，则有 ${\displaystyle \lim_{n \to \infty} b(k;n,p_n)\to \dfrac{\lambda^k}{k!} e^{-\lambda}}$，记为 $p(k; \lambda)$．由于 ${\displaystyle \sum_{k=0}^\infty \dfrac{\lambda^k}{k!}\cdot e^{-\lambda}=1}$，于是称 $p(k;\lambda)$ 为 $\text{Poisson}$ 分布
+    2. 分布特征：$\mathrm{E}X=\lambda, \ \mathrm{D}X=\lambda, \ \varphi_X(t)=\mathrm{e}^{\lambda(e^{\mathrm{i}t}-1)}$
+    3. 在应用中，当 $p\leqslant 0.1$ 时，一般就可以使用近似公式 $b(k;n,p)\approx \dfrac{(np)^k}{k!}\cdot e^{-np}$
 
 ### 2.1.3 连续概率分布
 
-## 2.2 分布与特征
+## 2.2 分布特征
 ### 2.2.1 数学期望
 1. 离散随机变量的期望：若 ${\displaystyle X(\omega)=\sum_{i} x_{i} I_{A_{i}}(\omega)}$ 为离散随机变量，则称 ${\displaystyle \sum_{i} x_{i} P\left(A_{i}\right)}$ 为 $X$ 的期望或 $X$ 关于 $P$ 的积分，记为
 

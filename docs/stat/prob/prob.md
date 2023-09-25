@@ -215,5 +215,5 @@
         - $\left\{\left|X_{n}\right|^{p}\right\}_{n \geqslant 1}$ 一致可积，且 $X_{n} \stackrel{P}{\longrightarrow} X$
 
     4. 对 $p \in [1, \infty)$ 及随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，若存在 $Y \in L^{p} \ (\Omega, \mathscr{F}, P)$ 使对每个 $n$ 都有 $\left|X_{n}\right| \leqslant Y$，则当 $n \rightarrow \infty$ 时下列两个事实等价
-        1. $X_{n} \stackrel{p}{\rightarrow} X$
+        1. $X_{n} \stackrel{p}{\longrightarrow} X$
         2. $X_{n} \stackrel{L^{p}}{\longrightarrow} X$
