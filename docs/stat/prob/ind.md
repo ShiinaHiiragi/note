@@ -107,4 +107,4 @@
         2. $\text{Khintchine}$ 弱大数定律：设 $\left\{X_n\right\}_{n\geqslant 1}$ 为独立同分布随机变量序列，如果 $\mathrm{E}X_1=\mu$，则 $\dfrac{S_n}{n} \stackrel{P}{\longrightarrow} \mu$
         3. $\text{Kolmogorov}$ 强大数定律：设 $\left\{X_n\right\}_{n\geqslant 1}$ 为独立同分布随机变量序列，则存在常数 $a$ 使得 $\dfrac{S_n-n a}{n} \stackrel{\text{a.s.}}{\longrightarrow} 0$ 的充要条件是 $\mathrm{E}X_1=a, \mathrm{E}|X_1|<\infty$
 
-2. 中心极限定理
+2. 中心极限定理：设 $\left\{X_n\right\}_{n\geqslant 1}$ 为独立同分布随机变量序列，$\mathrm{E}X^2_n$ 存在，即 $X_n$ 存在数学期望 $\mathrm{E}X_n=\mu, \ DX_n=\sigma^2$．若 ${\displaystyle \mathrm{E}\left[\sum_{k=1}^n X_k\right]=\sum_{k=1}^n \mathrm{E}X_k=n\mu, \  \mathrm{D}\left[\sum_{k=1}^n X_k\right]=\sum_{k=1}^n \mathrm{D}X_k=n\sigma^2}$，则 ${\displaystyle \dfrac{{\displaystyle \sum_{k=1}^n X_n-n\mu}}{\sqrt{n\sigma^2}}=\dfrac{{\displaystyle \sum_{k=1}^n(X_n-\mu)}}{\sqrt{n} \sigma} \overset{w}{\longrightarrow} N(0, 1)}$
