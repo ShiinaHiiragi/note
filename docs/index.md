@@ -412,6 +412,16 @@ const refList = [
         plot: 116
     },
     {
+        author: ["李贤平"],
+        title: "概率论基础",
+        type: "M",
+        page: [1, 391],
+        year: 2010,
+        press: "高等教育出版社",
+        locate: "北京",
+        plot: 1
+    },
+    {
         author: ["平冈和幸", "堀玄"],
         title: "程序员的数学 ② 概率统计",
         type: "M",
