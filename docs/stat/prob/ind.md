@@ -64,3 +64,47 @@
         $$
 
 ### 3.2.3 渐进理论
+1. 大数定律：设 $X=\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，${\displaystyle S_{n}=\sum_{j \leqslant n} X_{j}}$．若存在常数序列 $\left\{a_{n}\right\},\left\{b_{n}\right\}$ 使 $\dfrac{S_{n}}{b_{n}}-a_{n} \rightarrow 0$ $\text{a.s.}$（或依概率），则称 $X$ 满足强大数（弱大数）定律，也称 $S_{n}$ 是 $\text{a.s.}$（依概率）稳定的
+    1. $\text{Markov}$ 大数定律：设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，${\displaystyle S_{n}=\sum_{j \leqslant n} X_{j},\left\{b_{n}\right\}}$ 为趋于 $+\infty$ 的序列．若当 $n \rightarrow \infty$ 时
+
+        $$
+        \begin{aligned}
+        \sum_{j=1}^{n} P\left[\left|X_{j}\right|>b_{n}\right]&=o(1) \\
+        \dfrac{1}{b_{n}^{2}} \sum_{j=1}^{n} \mathrm{D}\left[X_{j} I_{\left|X_{j}\right| \leqslant b_{n}}\right]&=o(1)
+        \end{aligned}
+        $$
+
+        则取 ${\displaystyle a_{n}=\sum_{j=1}^{n} \mathrm{E}\left[X_{j} I_{\left|X_{j}\right| \leqslant b_{n}}\right]}$，必有 $\dfrac{1}{b_{n}}\left(S_{n}-a_{n}\right) \overset{P}{\longrightarrow} 0$．特别地，若上两式及 ${\displaystyle \dfrac{1}{b_{n}} \sum_{j=1}^{n} \mathrm{E}\left[X_{j} I_{\left|X_{j}\right| \leqslant b_{n}}\right]=o(1)}$ 成立，则必有 $\dfrac{S_{n}}{b_{n}} \overset{P}{\longrightarrow} 0$
+
+        1. 设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立同分布（简写作 $\text{i.i.d.}$）的随机变量序列，则存在常数列 $C_{n}$，使 ${\displaystyle \left(\dfrac{1}{n} \sum_{j=1}^{n} X_{j}-C_{n}\right) \overset{P}{\longrightarrow} 0}$ 的充要条件是 ${\displaystyle \lim _{n \rightarrow \infty} n P\left[\left|X_{1}\right|>n\right]=0}$，且这时 $C_{n}$ 可取为 $C_{n}=\mathrm{E}\left[X_{1} I_{\left|X_{n}\right| \leqslant n}\right]$
+        2. $\text{Khintchine}$ 大数定律：设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立同分布随机变量序列，则 ${\displaystyle \dfrac{1}{n} \sum_{j=1}^{n} X_{j} \overset{P}{\longrightarrow} a}$ 的充要条件是
+
+            $$
+            \begin{aligned}
+            \lim _{n \rightarrow \infty} n P\left(\left|X_{1}\right|>n\right)&=0 \\
+            \lim _{n \rightarrow \infty} \mathrm{E}\left[X_{1} I_{\left|X_{1}\right| \leqslant n}\right]&=a
+            \end{aligned}
+            $$
+
+    2. $\text{Kolmogorov}$ 大数定律：设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立同分布随机变量序列，则存在常数列 $\left\{C_{n}\right\}$，使 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{1}{n} \sum_{j=1}^{n}\left(X_{j}-C_{n}\right)=0}$ $\text{a.s.}$ 的充要条件是 $\mathrm{E}\left|X_{1}\right|<\infty$，且这时必有 $C_{n}=\mathrm{E} X_{1}+o(1)$ 与 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{1}{n} \sum_{j=1}^{n} X_{j}=\mathrm{E} X_{1} \ \text{a.s.}}$
+        1. $\text{Kronecker}$ 引理：设 $\left\{x_{k}\right\}$ 为实数列，$\left\{b_{k}\right\}$ 为递增趋于 $+\infty$ 的正数列，则 ${\displaystyle \sum_{j\geqslant 1} \dfrac{x_{j}}{b_{j}}}$ 收敛 $\to$ ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{1}{b_{n}} \sum_{j=1}^{n} x_{j}=0}$
+            - 设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，$\mathrm{E} X_{n}=0, \ \sigma_{n}^{2}=\mathrm{E} X_{n}^{2}<\infty$．记 ${\displaystyle S_{n}=\sum_{j=1}^{n} X_{j}, \  s_{n}^{2}=\sum_{j=1}^{n} \sigma_{j}^{2}}$，若 $s_{n}^{2} \rightarrow \infty$，则对任一 $\varepsilon>0$，${\displaystyle \lim _{n \rightarrow \infty} \dfrac{S_{n}}{s_{n}\left(\log s_{n}^{2}\right)^{\frac{1}{2}+\varepsilon}}=0}$ $\text{a.s.}$
+            - 设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立同分布随机变量序列，且 $\mathrm{E} X_{n}=0, \ \mathrm{E} X_{n}^{2}<\infty$，则对任一 $\varepsilon>0$ 都有
+
+                $$
+                \begin{aligned}
+                \lim _{n \rightarrow \infty} \dfrac{1}{n^{\frac{1}{2}+\varepsilon}} \sum_{j=1}^{n} X_{j}&=0 \ \text{a.s.} \\
+                \lim _{n \rightarrow \infty} \dfrac{1}{n^{\frac{1}{2}}(\log n)^{\frac{1}{2}+\varepsilon}} \sum_{j=1}^{n} X_{j}&=0 \ \text{a.s.}
+                \end{aligned}
+                $$
+
+        2. $\text{Glivenko}-\text{Cantelli}$ 定理：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立同分布随机变量序列，经验分布函数 $F_n$ 是总体分布 $F$ 的估计，定义为 ${\displaystyle F_{n}(x)=\dfrac{\#\left\{1 \leqslant j \leqslant n: X_{j} \leqslant x\right\}}{n}=\dfrac{1}{n} \sum_{j=1}^{n} I_{X_{j} \leqslant x}}$，则 ${\displaystyle \lim _{n \rightarrow \infty} \sup _{x \in \mathbf{R}}\left|F_{n}(x)-F(x)\right|=0}$ $\text{a.s.}$
+
+    !!! note "大数定律的经典表述"
+        3. $\text{Markov}$ 弱大数定律：若随机变量序列 $\left\{X_n\right\}_{n\geqslant 1}$ 满足 ${\displaystyle \lim _{n \rightarrow \infty} \frac{\mathrm{D}S_n}{n^2}=0}$，则 $\dfrac{S_n-\mathrm{E}S_n}{n} \stackrel{P}{\longrightarrow} 0$
+            1. $\text{Bernoulli}$ 大数定律：设 $X_n \sim B(n, p)$，则 $\dfrac{X_n}{n} \stackrel{P}{\longrightarrow} p$
+            2. $\text{Chebyshev}$ 弱大数定律：若随机变量序列 $\left\{X_n\right\}_{n\geqslant 1}$ 中的随机变量两两不相关且存在 $C>0$ 使得 $\mathrm{D}\left(X_n\right) \leq C$，则 $\dfrac{S_n-\mathrm{E}S_n}{n} \stackrel{P}{\longrightarrow} 0$
+        4. $\text{Khintchine}$ 弱大数定律：设 $\left\{X_n\right\}_{n\geqslant 1}$ 为独立同分布随机变量序列，如果 $\mathrm{E}X_1=\mu$，则 $\dfrac{S_n}{n} \stackrel{P}{\longrightarrow} \mu$
+        5. $\text{Kolmogorov}$ 强大数定律：设 $\left\{X_n\right\}_{n\geqslant 1}$ 为独立同分布随机变量序列，则存在常数 $a$ 使得 $\dfrac{S_n-n a}{n} \stackrel{\text{a.s.}}{\longrightarrow} 0$ 的充要条件是 $\mathrm{E}X_1=a, \mathrm{E}|X_1|<\infty$
+
+2. 中心极限定理
