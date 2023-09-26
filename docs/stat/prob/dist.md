@@ -221,7 +221,7 @@
     1. 令 ${\displaystyle g(x; x_1, x_2, T)=\dfrac{1}{2\pi}\int_{-T}^T \dfrac{\sin t(x-x_1)-\sin t(x-x_2)}{t}\mathrm dt}$
         1. $g(x; x_1, x_2, T)$ 是有界函数
         2. ${\displaystyle \lim_{T\to +\infty} g(x; x_1, x_2, T)}=\left\{\begin{aligned}&0, & x>x_2\\ &\dfrac{1}{2}, & x=x_2\\ &1, & x_1<x<x \\&-\dfrac{1}{2}, & x=x_1\\ &0, & x<x_1\end{aligned}\right.$
-    2. 随机变量的逆转公式：$x_1, x_2\in C(F_X)$（$F_X$ 的连续点全集），则
+    2. 随机变量的逆转公式：$x_1, x_2\in C(F_X)$，则
 
         $$
         F(x_2)-F(x_1)=\lim_{T\to +\infty} \dfrac{1}{2\pi} \int_{-T}^T \dfrac{e^{-\mathrm{i}tx_1}-e^{-\mathrm{i}tx_2}}{\mathrm{i}t}\varphi_X(t)\mathrm dt

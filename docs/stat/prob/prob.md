@@ -213,3 +213,14 @@
         当 $1 \leqslant p<\infty$ 时，上述事实又与下述事实等价：$\left\{\left|X_{n}\right|^{p}\right\}_{n \geqslant 1}$ 一致可积，且 $X_{n} \stackrel{P}{\longrightarrow} X$
 
     4. 对 $p \in [1, \infty)$ 及随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，若存在 $Y \in L^{p} \ (\Omega, \mathscr{F}, P)$ 使对每个 $n$ 都有 $\left|X_{n}\right| \leqslant Y$，则当 $n \rightarrow \infty$ 时，$X_{n} \stackrel{p}{\longrightarrow} X$ 当且仅当 $X_{n} \stackrel{L^{p}}{\longrightarrow} X$
+
+5. 依分布收敛：若 $(X_n), X$ 是随机变量，若 $F_{X_n} \overset{w}{\longrightarrow} F_X$，则称 $X_n$ 依分布收敛于 $X$，记为 $X_n \overset{w}{\longrightarrow} X$．依分布收敛只关心 $X_n$ 的分布函数，所以 $X_n$ 和 $X$ 可以定义在不同的概率空间上
+    1. 分布函数的弱收敛：若 $|F_n(x)|$ 是一列非负递增函数列，如果对 $\forall x\in C(F)$（$F$ 的连续点全集）恒有 ${\displaystyle \lim_{n\to \infty} F_n(x)=F(x)}$，则称 $F_n(x)$ 弱收敛到 $F(x)$（$F(x)$ 单调递增），记作 $F_{n} \overset{w}{\longrightarrow} F$
+        1. 若 $D$ 是 $R$ 的一个稠密子集且对于任意 $x\in D$ 都有 ${\displaystyle \lim_{n\to \infty} F_n(x)=F(x)}$，则 $F_{n} \overset{w}{\longrightarrow} F$
+        2. 若 $F_n(x) \overset{w}{\longrightarrow} F(x), a, b\in C(F), F_n(x)$ 一致连续．又设 $f(x)\in C[a, b]$，则 ${\displaystyle \lim_{n\to \infty} \int_a^b f(x) \mathrm dF_n(x)=\int_a^b f(x) \mathrm dF(x)}$
+        3. 若 ${\displaystyle F_n(x) \overset{w}{\longrightarrow} F(x), \lim_{n\to \infty} F_n(-\infty) \to F(-\infty), \lim_{n\to \infty} F_n(+\infty) \to F(+\infty)}$，则对 $\mathbf R$ 上任意一个有界连续函数 $f(x)$ 有 ${\displaystyle \int_{-\infty}^{+\infty}f(x) \mathrm dF_n(x)\to \int_{-\infty}^{+\infty} f(x) \mathrm dF(x)}$
+        4. 若 $F_n(x)$ 是一列分布函数，则存在一个子列 $F_{n_k}(x)$ 以及一个非负递增的 $F(x)$，使得 $F_{n_k}(x)\overset{w}{\longrightarrow} F(x)$
+        5. 设 $F_n$ 是分布函数，$\varphi_n$ 是 $F_n$ 的分布函数有 $\varphi_n(t)\to \varphi(t)$，若 $\varphi$ 在零点连续，则存在一个分布函数 $F$ 使得 $\varphi = \varphi_F$ 以及 $F_n \overset{w}{\longrightarrow} F$
+    2. 依分布收敛的性质
+        1. 若 $X_n \overset{P}{\longrightarrow} X$，则 $X_n \overset{w}{\longrightarrow} X$，反之不成立
+        2. $X_n \overset{P}{\longrightarrow} c$ 当且仅当 $X_n \overset{w}{\longrightarrow} c$
