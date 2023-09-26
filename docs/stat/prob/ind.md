@@ -37,6 +37,17 @@
     2. 若 $\left\{A_{n}\right\}_{n \geqslant 1}$ 为独立事件列，则 ${\displaystyle \sum_{n=1}^{\infty} P\left(A_{n}\right)=\infty \rightarrow P\left(A_{n} \text{ i.o.}\right)=1}$
 
 ### 3.2.2 独立项级数
+1. 设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，${\displaystyle S_{n}=\sum_{j \leqslant n} X_{j}}$．当 $\left\{S_{n}\right\}$ $\text{a.s.}$（或依概率）收敛于有限随机变量 $S$，则称随机变量级数 ${\displaystyle \sum_{j=1}^{\infty} X_{j}}$ $\text{a.s.}$（或依概率）收敛
+    1. $\text{Kolmogorov}$ 不等式：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，且 $\mathrm{E} X_{n}=0, \mathrm{E} X_{n}^{2}<\infty$．记 ${\displaystyle S_{n}=\sum_{j \leqslant n} X_{j}}$，则对任一 $\varepsilon>0$ 都有 ${\displaystyle P\left(\max _{1 \leqslant j \leqslant n}\left|S_{j}\right| \geqslant \varepsilon\right) \leqslant \dfrac{\mathrm{E} S_{n}^{2}}{\varepsilon^{2}}}$
+    2. 设 $\left\{Y_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，则 ${\displaystyle \sum_{n \geqslant 1} \mathrm{D}\left[Y_{n}\right]<\infty \to \sum_{n=1}^{\infty}\left(Y_{n}-\mathrm{E} Y_{n}\right)}$ $\text{a.s.}$收敛
+    3. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，且 $\left|X_{n}\right| \leqslant C \ \text{a.s.}, \ \mathrm{E} X_{n}=0$．记 ${\displaystyle S_{n}=\sum_{j=1}^{n} X_{j}}$
+        1. 对任一 $\varepsilon>0$，有 ${\displaystyle P\left(\max _{1 \leqslant j \leqslant n}\left|S_{j}\right| \leqslant \varepsilon\right) \leqslant \dfrac{(C+\varepsilon)^{2}}{\mathrm{E} S_{n}^{2}}}$
+        2. 若 ${\displaystyle \sum_{n \geqslant 1} X_{n}}$ $\text{a.s.}$收敛，则 ${\displaystyle \sum_{n \geqslant 1} \mathrm{D}\left[X_{n}\right]<\infty}$
+2. 对随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$ 及 $\left\{Y_{n}\right\}_{n \geqslant 1}$，若 $P\left(X_{n} \neq Y_{n} \  \text{ i.o.}\right)=0$，则称 $\left\{X_{n}\right\}_{n \geqslant 1}$ 与 $\left\{Y_{n}\right\}_{n \geqslant 1}$ 为等价的
+    1. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 与 $\left\{Y_{n}\right\}_{n \geqslant 1}$ 等价，则 ${\displaystyle \sum_{n \geqslant 1}\left(X_{n}-Y_{n}\right)}$ $\text{a.s.}$收敛，且对趋于无穷的数列 $\left\{a_{n}\right\}$ 有 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{1}{a_{n}} \sum_{j=1}^{n}\left(X_{j}-Y_{j}\right)=0}$ $\text{a.s.}$
+    2. 三级数定理：设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，记 $X_{n}^{(a)}(\omega)=X_{n}(\omega) I_{\left|X_{n}(\omega)\right| \leqslant a}$，则级数 ${\displaystyle \sum_{n \geqslant 1} X_{n}}$ $\text{a.s.}$收敛的充要条件是对某一（任一）$a \in(0, \infty)$，级数 ${\displaystyle \sum_{n \geqslant 1} P\left(\left|X_{n}\right|>a\right), \  \sum_{n \geqslant 1} \mathrm{E} X_{n}^{(a)}, \  \sum_{n \geqslant 1} \mathrm{D}\left[X_{n}^{(a)}\right]}$ 同时收敛
+    3. $\text{Ottaviani}$ 不等式：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，$a, b, c$ 为正数且 ${\displaystyle P\left(\left|\sum_{j=k+1}^{n} X_{j}\right| \leqslant b\right) \geqslant a, \  0 \leqslant k \leqslant n-1}$，则 ${\displaystyle P\left(\max _{1 \leqslant k \leqslant n}\left|\sum_{j=1}^{k} X_{j}\right|>b+c\right) \leqslant \dfrac{1}{a} P\left(\left|\sum_{j=1}^{n} X_{j}\right|>c\right)}$
+    4. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，则 ${\displaystyle \sum_{n \geqslant 1} X_{n}}$ $\text{a.s.}$收敛与 ${\displaystyle \sum_{n \geqslant 1} X_{n}}$ 依概率收敛是等价的
 
 ### 3.2.3 渐进理论
 
