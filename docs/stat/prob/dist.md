@@ -183,6 +183,9 @@
             - 若 $X_{n} \geqslant Z, n \geqslant n_{0}$，则 ${\displaystyle E\left[\varlimsup_{n \to \infty} X_{n}\right] \leqslant \varlimsup_{n \to \infty} \mathrm{E} X_{n}}$
             - 若 $X_{n} \leqslant Y, n \geqslant n_{0}$，则 ${\displaystyle \mathrm{E}\left[\varlimsup_{n \to \infty} X_{n}\right] \geqslant \varlimsup_{n \to \infty} \mathrm{E} X_{n}}$
 
+    !!! note "随机向量的数学期望"
+        设 $X = (X_1, X_2, \cdots, X_n)$ 是随机向量，则 $\mathrm{E}X = (\mathrm{E}X_1, \mathrm{E}X_2, \cdots, \mathrm{E}X_n)$（方差的定义方式同理）
+
 3. 不定积分：设 $X$ 为随机变量，$A \in \mathscr{F}$．若 $X$ 准可积，则记 ${\displaystyle \int_{A} X \mathrm{dP}=\mathrm{E}\left[X I_{A}\right]}$，${\displaystyle \phi(A)=\int_{A} X \mathrm{dP}}$ 看作为 $A \in \mathscr{F}$ 的函数时称为 $X$ 的不定积分
     1. 设 $X$ 准可积，${\displaystyle \phi(A)=\int_{A} X \mathrm{dP}}$
         1. $\phi$ 是 $\mathscr{F}$ 上的 $\sigma$ 可加集函数，特别当 $X \geqslant 0$ 时，$\phi$ 是 $\mathscr{F}$ 上的测度
@@ -191,10 +194,11 @@
     3. 若 $X$ 为 $(\Omega, \mathscr{F}, P)$ 上 $n$ 维随机变量，$F$ 为 $X$ 的 $n$ 元分布函数．又 $g\left(x_{1}, \cdots, x_{n}\right)$ 为 $n$ 元 $\text{Borel}$ 函数，$F_{g(X)}$ 表示 $g(X)$ 的分布函数，则当 $\mathrm{E} g(X)$ 存在时，${\displaystyle \mathrm{E} g(X)=\int_{\Omega} g(X(\omega)) P(\mathrm{d} \omega)=\int_{\mathbf{R}} y \mathrm{d} F_{g(X)}(y)=\int_{\mathbf{R}^{n}} g\left(x_{1}, \cdots, x_{n}\right) \mathrm{d} F\left(x_{1}, \cdots, x_{n}\right)}$
         1. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R, \mathscr{B}, P_X)\overset{g}{\longrightarrow}(R, B, P_{g(X)})$，有 ${\displaystyle E[g(X)]=\int_\Omega g\circ X\mathrm{d}P=\int_R g(x) \mathrm dP_X=\int_R g(x) \mathrm{d} F_{X}(x)}$
         2. 设 $X$ 存在密度函数 $p_X(x)$，则对任意非零可测函数 $g$ 或有界可测函数 $g$ 成立 ${\displaystyle E[g \circ X]=\int_R g(x)p_X(x)\mathrm dx}$
+        3. 对任意常数 $c_i, i = 1, 2, \cdots , n$ 以及常数 $b$ 有 ${\displaystyle \mathrm{E}\left[\sum_{i=1}^{n} c_i X_i + b\right] = \sum_{i=1}^{n} c_i \mathrm{E}X_i + b}$ 成立．特别地，$\mathrm{E}[b] = b$
 
 ### 2.2.2 矩
 1. 矩：若随机变量 $X$ 有 $E|X|^n<+\infty$，则称 $EX^n$ 为 $X$ 的 $n$ 阶原点矩，$E|X|^{p}$ 为 $X$ 的 $p$ 阶绝对矩．此时 $EX^k \ (k\leqslant n)$ 均存在，称 $E[X-EX]^n$ 为 $X$ 的 $n$ 阶中心矩
-2. 方差：称 $X$ 的二阶中心矩 $\mathrm{D}X = \mathrm{E}[X-\mathrm{E} X]^{2}$ 为 $X$ 的方差，也可记作 $\operatorname{Var}(X)$，方差的算术平方根称为标准差
+2. 方差：称 $X$ 的二阶中心矩 $\mathrm{D}X = \mathrm{E}[X-\mathrm{E} X]^{2}$ 为 $X$ 的方差，也可记作 $\operatorname{Var}(X)$，方差的算术平方根称为标准差或均方差
     1. 方差的性质
         1. $\mathrm{D}(c)=0$
         2. $\mathrm{D}(X+c)=\mathrm{D}(X)$
@@ -202,10 +206,11 @@
         4. $\mathrm{E}[X-c]^2\geqslant \mathrm{D}X$，等号成立当且仅当 $c=\mathrm{E}X$
     2. $\text{Chebyshev}$ 不等式：$P(|X-\mathrm{E} X|>a) \leqslant \dfrac{1}{a^{2}} \mathrm{D}X \ (a>0)$．一般地，对任意 $n \in \mathbf N$，有 $P[|X|\geqslant a]\leqslant \dfrac{\mathrm{E}|X|^n}{a^n}$
 3. 协方差：若 $X, Y$ 为随机变量，则称 $\operatorname{Cov}(X, Y) = \mathrm{E}[(X-\mathrm{E} X)(Y-\mathrm{E} Y)]$ 为 $X, Y$ 的协方差
-    1. 对任意随机变量 $X, Y$，有 $\mathrm{E}[XY]\leqslant (\mathrm{E}|X|^2)^{\frac{1}{2}}(\mathrm{E}|Y|^2)^{\frac{1}{2}}$，等号成立当且仅当存在 $t_0$ 使得 $P[X=t_0Y]=1$
+    1. $\text{Cauchy}-\text{Schwarz}$ 不等式：对任意随机变量 $X, Y$，有 $\mathrm{E}[XY]\leqslant (\mathrm{E}|X|^2)^{\frac{1}{2}}(\mathrm{E}|Y|^2)^{\frac{1}{2}}$，等号成立当且仅当存在 $t_0$ 使得 $P[X=t_0Y]=1$
     2. 定义 $r(X, Y)=\dfrac{\mathrm{Cov}(X, Y)}{\sqrt{\mathrm{D} X\cdot \mathrm{D} Y}}$ 为 $X, Y$ 的相关系数．若 $r(X, Y)=0$，则称随机变量 $X, Y$ 线性无关
-        1. $|r(X, Y)| \leqslant 1$．$|r(X, Y)|$ 越大，则相关性越大
+        1. $|r(X, Y)| \leqslant 1$．当 $|r| = 1$ 时，称 $X$ 与 $Y$ 有完全线性关系：$r = 1$ 时称为完全正相关；$r = -1$ 时称为完全负相关
         2. 若 $X, Y$ 独立，则 $X, Y$ 线性无关，反之不一定成立
+        3. 若 $X, Y$ 同为二元正态分布或二值随机变量，则 $X$ 与 $Y$ 独立当且仅当 $X$ 与 $Y$ 不想管
 
         !!! note "线性无关的等价条件"
             下列命题等价
