@@ -272,7 +272,7 @@
 ### 二、形式语言
 
 !!! note "参考文献"
-    『The Formal Semantics of Programming Languages: An Introduction』（Glynn Winskel）
+    『计算系统的形式语义』（陆汝钤）
 
 #### 2 形式语义
 1. 指称语义
