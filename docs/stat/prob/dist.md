@@ -7,7 +7,7 @@
         1. 令 $F_X(+\infty, \cdots, x_i, \cdots, +\infty) = P[X_i < x_i] = F_{X_i}(x_i)$，称 $F_{X_i}(x_i)$ 为边际分布，$F_X(x_1, x_2, \cdots, x_n)$ 本身为联合分布
         2. 联合分布可以唯一确定边际分布，边际分布不能唯一确定联合分布
         3. 若随机变量 $X, Y$ 存在联合密度 $p_{(X, Y)}(x, y)$，则 $X, Y$ 的边际密度函数必存在
-    2. 随机变量的变换
+    2. 随机变量的变换：设 $f$ 与 $T$ 分别为一元与 $n$ 元 $\text{Borel}$ 可测函数
         1. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R, \mathscr{B}, P_X)\overset{f}{\longrightarrow}(R, \mathscr{B})$．若 $X$ 的密度函数 $P_X(x)$ 存在，分情况讨论 $Y=f\circ X$ 的密度函数如下
             1. $f$ 严格单调且存在导函数时，$P_Y(y)=P_X(f^{-1}(y))|(f^{-1}(y))'|$
             2. $f(x)$ 有存在 $\mathbf R$ 上一个区间划分 $I_n, f\upharpoonright_{I_n}$ 严格单调时，${\displaystyle P_Y(y)=\sum_{n=1}^\infty P_X(f_n^{-1}(y))|(f^{-1}_n(y))|I_{f(I_n)}(y)}$
@@ -97,21 +97,27 @@
 3. 多元正态分布：$X\sim N(\boldsymbol \mu, \boldsymbol B)$
     1. 设 $\boldsymbol B$ 是一个对称正定矩阵，称由密度函数 $p_n(x)=\dfrac{1}{(2\pi)^{\frac{n}{2}}|\boldsymbol B|^{\frac{1}{2}}}\exp\left\{-\dfrac{1}{2}(\boldsymbol x-\boldsymbol \mu)^{\mathrm{T}}\boldsymbol B^{-1}(\boldsymbol x-\boldsymbol \mu)\right\}$ 确定的的 $n$ 元正态分布
     2. 二元正态函数：$n=2$ 时，设 $(X, Y)\sim N\left(\begin{bmatrix}\mu_1 \\ \mu_2\end{bmatrix}, \begin{bmatrix} \sigma_1^2 &r\sigma_1\sigma_2 \\ r\sigma_1\sigma_2 &\sigma_2^2\end{bmatrix}\right)$．由于 $\boldsymbol B$ 为正定矩阵，于是 $0<r<1$
-        1. 边际分布密度函数
+        1. （联合分布）密度函数
+
+            $$
+            p(x, y) =\frac{1}{2 \pi \sigma_1 \sigma_2 \sqrt{1-r^2}} \exp \left\{-\frac{1}{2\left(1-r^2\right)} \times\right. {\left.\left[\frac{\left(x-\mu_1\right)^2}{\sigma_1^2}-2 r \frac{\left(x-\mu_1\right)\left(y-\mu_2\right)}{\sigma_1 \sigma_2}+\frac{\left(y-\mu_2\right)^2}{\sigma_2^2}\right]\right\} }
+            $$
+
+        2. 边际分布密度函数
 
             $$
             p_X(x)=\dfrac{1}{\sqrt{2\pi} \cdot \sigma_1}\exp\left\{-\dfrac{(x-\mu_1)^2}{2\sigma_1^2}\right\}, p_X(x)=\dfrac{1}{\sqrt{2\pi} \cdot \sigma_2}\exp\left\{-\dfrac{(x-\mu_2)^2}{2\sigma_2^2}\right\}
             $$
 
-        2. 条件分布密度函数
+        3. 条件分布密度函数
 
             $$
             p_{X|Y}(x|y)=\dfrac{1}{\sqrt{2\pi} \sigma_1 \sqrt{1-r^2}}\exp\left\{-\dfrac{\left[(x-\left(\mu_1+r\dfrac{\sigma_1}{\sigma_2}(y-\mu_2)\right)\right]^2}{2\sigma_1^2(1-r^2)}\right\} \sim N\left(\mu_1+r\dfrac{\sigma_1}{\sigma_2}(y-\mu_2), \sigma_1^2(1-r^2)\right)
             $$
 
-        3. $X$ 与 $Y$ 独立当且仅当 $r=0$
-        4. $r(X, Y)=r$，即 $X, Y$ 线性无关当且仅当 $r=0$
-        5. 设随机变量 $X$ 与 $Y$ 独立且 $(X, Y)$ 存在联合密度函数 $P_{X, Y}(x, y)=h(\sqrt{x^2+y^2})$，则 $X, Y$ 服从正态分布
+        4. $X$ 与 $Y$ 独立当且仅当 $r=0$
+        5. $r(X, Y)=r$，即 $X, Y$ 线性无关当且仅当 $r=0$
+        6. 设随机变量 $X$ 与 $Y$ 独立且 $(X, Y)$ 存在联合密度函数 $P_{X, Y}(x, y)=h(\sqrt{x^2+y^2})$，则 $X, Y$ 服从正态分布
 
     3. 特征函数：$\varphi_X(\boldsymbol t)=e^{\mathrm{i}\boldsymbol t\boldsymbol \mu-\frac{1}{2}\boldsymbol t^{\mathrm{T}}\boldsymbol B\boldsymbol t}$
 
