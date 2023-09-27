@@ -418,8 +418,7 @@ const refList = [
         page: [1, 391],
         year: 2010,
         press: "高等教育出版社",
-        locate: "北京",
-        plot: 1
+        locate: "北京"
     },
     {
         author: ["平冈和幸", "堀玄"],
@@ -429,8 +428,7 @@ const refList = [
         page: [1, 403],
         trans: ["陈篠烟"],
         press: "人民邮电出版社",
-        locate: "北京",
-        plot: 38
+        locate: "北京"
     },
     {
         author: ["Rob Nederpelt", "Herman Geuvers"],

@@ -101,9 +101,9 @@
         2. $\text{Glivenko}-\text{Cantelli}$ 定理：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立同分布随机变量序列，经验分布函数 $F_n$ 是总体分布 $F$ 的估计，定义为 ${\displaystyle F_{n}(x)=\dfrac{\#\left\{1 \leqslant j \leqslant n: X_{j} \leqslant x\right\}}{n}=\dfrac{1}{n} \sum_{j=1}^{n} I_{X_{j} \leqslant x}}$，则 ${\displaystyle \lim _{n \rightarrow \infty} \sup _{x \in \mathbf{R}}\left|F_{n}(x)-F(x)\right|=0}$ $\text{a.s.}$
 
     !!! note "大数定律的经典表述"
-        1. $\text{Markov}$ 弱大数定律：若随机变量序列 $\left\{X_n\right\}_{n\geqslant 1}$ 满足 ${\displaystyle \lim _{n \rightarrow \infty} \frac{\mathrm{D}S_n}{n^2}=0}$，则 $\dfrac{S_n-\mathrm{E}S_n}{n} \stackrel{P}{\longrightarrow} 0$
+        1. $\text{Markov}$ 弱大数定律：若随机变量序列 $\left\{X_n\right\}_{n\geqslant 1}$ 满足 ${\displaystyle \lim _{n \rightarrow \infty} \frac{\mathrm{D}S_n}{n^2}=0}$（$\text{Markov}$ 条件），则 $\dfrac{S_n-\mathrm{E}S_n}{n} \stackrel{P}{\longrightarrow} 0$
             1. $\text{Bernoulli}$ 大数定律：设 $X_n \sim B(n, p)$，则 $\dfrac{X_n}{n} \stackrel{P}{\longrightarrow} p$
-            2. $\text{Chebyshev}$ 弱大数定律：若随机变量序列 $\left\{X_n\right\}_{n\geqslant 1}$ 中的随机变量两两不相关且存在 $C>0$ 使得 $\mathrm{D}X_n \leq C$，则 $\dfrac{S_n-\mathrm{E}S_n}{n} \stackrel{P}{\longrightarrow} 0$
+            2. $\text{Chebyshev}$ 弱大数定律：若随机变量序列 $\left\{X_n\right\}_{n\geqslant 1}$ 中的随机变量两两不相关且存在 $C>0$ 使得 $\mathrm{D}X_n \leqslant C$，则 $\dfrac{S_n-\mathrm{E}S_n}{n} \stackrel{P}{\longrightarrow} 0$
         2. $\text{Khintchine}$ 弱大数定律：设 $\left\{X_n\right\}_{n\geqslant 1}$ 为独立同分布随机变量序列，如果 $\mathrm{E}X_1=\mu$，则 $\dfrac{S_n}{n} \stackrel{P}{\longrightarrow} \mu$
         3. $\text{Kolmogorov}$ 强大数定律：设 $\left\{X_n\right\}_{n\geqslant 1}$ 为独立同分布随机变量序列，则存在常数 $a$ 使得 $\dfrac{S_n-n a}{n} \stackrel{\text{a.s.}}{\longrightarrow} 0$ 的充要条件是 $\mathrm{E}X_1=a, \mathrm{E}|X_1|<\infty$
 
