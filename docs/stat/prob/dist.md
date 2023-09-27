@@ -220,6 +220,19 @@
             3. $\mathrm{E}XY=\mathrm{E}X\cdot \mathrm{E}Y$
             4. $\mathrm{D}(X+Y)=\mathrm{D}X+\mathrm{D}Y$
 
+    3. 协方差矩阵：设 $X = (X_1, X_2, \cdots, X_n)$ 是随机向量，则定义 $\sigma_{ij} = \operatorname{Cov}(X_i, X_j)$，称
+
+        $$
+        \boldsymbol \Sigma = \begin{bmatrix}
+        \sigma_{11} & \sigma_{12} & \cdots & \sigma_{1n} \\
+        \sigma_{21} & \sigma_{22} & \cdots & \sigma_{2n} \\
+        \vdots & \vdots & \ddots & \vdots \\
+        \sigma_{n1} & \sigma_{n2} & \cdots & \sigma_{nn} \\
+        \end{bmatrix}
+        $$
+
+        为 $X$ 的协方差矩阵．易知 $\boldsymbol \Sigma$ 是一个对称的非负定矩阵
+
 ### 2.2.3 特征函数
 1. 随机变量的特征函数：若 $X, Y$ 是随机变量，$\mathrm{E}X, \mathrm{E}Y$ 存在，定义 $\mathrm{E}[X+\mathrm{i}Y]=\mathrm{E}[X]+\mathrm{i}\mathrm{E}[Y]$．令 $X$ 是一个随机变量，设 $\varphi_X(t)=\mathrm{E}e^{\mathrm{i}tX}=\mathrm{E}\cos tX+\mathrm{i}\mathrm{E}\sin tX$ 有定义，称 $\varphi_X(t)$ 是 $X$ 的一个特征函数
     1. $|\varphi_X(t)| \leqslant 1, \varphi_X(0)=1$
