@@ -189,6 +189,23 @@
         2. $\left\{X_{n}\right\}$ 为 $L^{1}$ 基本列，即 $\lim _{n, m \rightarrow \infty} \mathrm{E}\left|X_{n}-X_{m}\right|=0$
         3. $\left\{X_{n}\right\}_{n \geqslant 1}$ 为一致可积的且 $X_{n} \stackrel{P}{\longrightarrow} X$
     3. $\text{Jensen}$ 不等式：设 $f$ 为 $(a, b) \subseteq(-\infty,+\infty)$ 上的凸函数，$X$ 为取值 $(a, b)$ 的可积随机变量，则有 $\mathrm{E}[f(X)] \geqslant f(\mathrm{E} X)$
+    4. $\text{Gibbs}$ 不等式
+        1. 设 $X, Y$ 是离散值随机变量，且遵从分布 $\mathrm{P}[X=i] = q(i), \mathrm{P}[Y=i] = p(i)$．此时有
+
+            $$
+            D(p \ \|\  q) = \mathrm{E}\left[\log \dfrac{p(Y)}{q(Y)}\right]=\sum p(i) \log \dfrac{p(i)}{q(i)} \geqslant 0
+            $$
+
+            求和范围为所有概率不为零的值，等号成立当且仅当 $X$ 与 $Y$ 的分布相同
+
+        2. 设 $X, Y$ 是实数值随机变量，且概率密度函数为 $f_X(u) = q(u) , f_Y(u) - p(u)$．此时有
+
+            $$
+            D(p \ \|\  q) = \mathrm{E}\left[\log \dfrac{p(Y)}{q(Y)}\right]=\int p(u) \log \dfrac{p(u)}{q(u)} \mathrm{d} u \geqslant 0
+            $$
+
+            积分范围为所有概率密度不为零的值，等号成立当且仅当 $X$ 与 $Y$ 的分布相同
+
 4. $p$ 阶平均收敛：对 $p \geqslant 1$ 及随机变量等价类规定 $L^{p}(\Omega, \mathscr{F}, P)=\left\{X: X \textsf{ 为随机变量，}\|X\|_{p}<\infty\right\}$，称它为 $(\Omega, \mathscr{F}, P)$ 上的 $L^{p}$ 空间，简称 $L^{p}$ 空间．对 $L^{p}$ 中元素列 $\left\{X_{n}\right\}$ 及 $Y$，若 ${\displaystyle \lim _{n \rightarrow \infty}\left\|X_{n}-Y\right\|_{p}=0}$，则称 $\left\{X_{n}\right\}$ $p$ 次平均收敛或 $p$ 阶平均收敛于 $Y$，记为 $X_{n} \stackrel{L^{p}}{\longrightarrow} Y$．由于当 $p<\infty$ 时，$P\left(\left|X_{n}-Y\right|>\varepsilon\right) \leqslant \varepsilon^{-p} \ \mathrm{E}\left|X_{n}-Y\right|^{p}$，因此 $X_{n} \stackrel{L^{p}}{\longrightarrow} Y$，必有 $X_{n} \stackrel{P}{\longrightarrow} Y$
     1. 对实随机变量 $X$，记
 
@@ -225,14 +242,14 @@
         1. 若 $X_n \overset{P}{\longrightarrow} X$，则 $X_n \overset{w}{\longrightarrow} X$，反之不成立
         2. $X_n \overset{P}{\longrightarrow} c$ 当且仅当 $X_n \overset{w}{\longrightarrow} c$
 
-!!! note "各种收敛间的关系"
+    !!! note "各种收敛间的关系"
 
-    $$
-    \begin{aligned}
-    \textsf{几乎必然收敛} & \\
-    & \searrow & \\
-    & \textsf{依概率收敛} \to \textsf{依分布收敛} \\
-    & \nearrow & \\
-    \textsf{均方收敛} &
-    \end{aligned}
-    $$
+        $$
+        \begin{aligned}
+        \textsf{几乎必然收敛} & \\
+        & \searrow & \\
+        & \textsf{依概率收敛} \to \textsf{依分布收敛} \\
+        & \nearrow & \\
+        \textsf{均方收敛} &
+        \end{aligned}
+        $$
