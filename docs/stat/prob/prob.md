@@ -224,3 +224,15 @@
     2. 依分布收敛的性质
         1. 若 $X_n \overset{P}{\longrightarrow} X$，则 $X_n \overset{w}{\longrightarrow} X$，反之不成立
         2. $X_n \overset{P}{\longrightarrow} c$ 当且仅当 $X_n \overset{w}{\longrightarrow} c$
+
+!!! note "各种收敛间的关系"
+
+    $$
+    \begin{aligned}
+    \textsf{几乎必然收敛} & \\
+    & \searrow & \\
+    & \textsf{依概率收敛} \to \textsf{依分布收敛} \\
+    & \nearrow & \\
+    \textsf{均方收敛} &
+    \end{aligned}
+    $$

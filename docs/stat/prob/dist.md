@@ -80,8 +80,9 @@
     2. 分布特征：$\mathrm{E}X=\dfrac{a+b}{2}, \ \mathrm{D}X=\dfrac{(b-a)}{12}, \ \varphi_X(t)=\dfrac{\mathrm{e}^{\mathrm{i}tb} - \mathrm{e}^{\mathrm{i}ta}}{\mathrm{i}t(b-a)}$
 2. 正态分布（$\text{Gauss}$ 分布）：$X \sim N(\mu, \sigma^2)$
     1. 称由密度函数 $p(x; \mu, \sigma^2)=\dfrac{1}{\sqrt{2\pi}\cdot \sigma}e^{-\frac{(x-\mu)^2}{2\sigma ^2}}$ 确定的参数为 $\mu, \sigma^2$ 的正态分布，也可记作 $\phi(x; \mu, \sigma^2)$．特别地，令 $\Phi(x)=\phi(x; 0, 1)$ 为标准正态分布
-        1. 设 $X\sim \phi(x; \mu, \sigma^2)$，则 ① $P[X\leqslant x]=\Phi \left(\dfrac{x-\mu}{\sigma} \right)$；② $\dfrac{X - \mu}{\sigma} \sim N(0, 1)$
-        2. 在一次试验中，$X$ 几乎总是落在 $(\mu-3\sigma, \mu+3\sigma)$ 之中
+        1. 高斯积分：${\displaystyle \int_{-\infty}^{+\infty} \mathrm{e}^{-ax^2} = \sqrt{\dfrac{\pi}{a}}}$
+        2. 设 $X\sim \phi(x; \mu, \sigma^2)$，则 ① $P[X\leqslant x]=\Phi \left(\dfrac{x-\mu}{\sigma} \right)$；② $\dfrac{X - \mu}{\sigma} \sim N(0, 1)$
+        3. 在一次试验中，$X$ 几乎总是落在 $(\mu-3\sigma, \mu+3\sigma)$ 之中
 
             $$
             \begin{aligned}
@@ -161,9 +162,12 @@
         \begin{aligned}
         P[X \geqslant a] & \leqslant \dfrac{1}{a} \mathrm{E}\left[X I_{(X \geqslant a)}\right] \leqslant \dfrac{1}{a} \mathrm{E} X, \  a \geqslant 0 \\
         P[|X| \geqslant a] & \leqslant \dfrac{1}{a^{p}} \mathrm{E}|X|^{p}, \  a>0, p>0 \\
-        P[|X| \geqslant a] & \leqslant \dfrac{1}{f(a)} \mathrm{E}[f(|X|)]
+        P[|X| \geqslant a] & \leqslant \dfrac{1}{f(a)} \mathrm{E}[f(|X|)] \\
+        P[X \geqslant a] & = P[\mathrm{e}^{tX} \geqslant \mathrm{e}^{tc}] \leqslant \dfrac{1}{\mathrm{e}^{tc}} \mathrm{E} [\mathrm{e}^{tX}]
         \end{aligned}
         $$
+
+        最后一个式子称作 $\text{Chernoff}$ 界
 
     4. $\text{Lesbegue}$ 控制收敛定理：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，$\left|X_{n}\right| \leqslant Y, Y$ 可积，且 ${\displaystyle \lim _{n \to \infty} X_{n}=X}$ 存在，则 ${\displaystyle \lim _{n \to \infty} \mathrm{E} X_{n}=\mathrm{E} X}$
         1. $\text{Levi}$ 引理
