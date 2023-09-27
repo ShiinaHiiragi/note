@@ -103,7 +103,7 @@ nav:
   - 通用:
     - 介绍: index.md
     - 版式规范: intro/format.md
-    - 内容规范: intro/norm.md
+    - 内容规范: intro/toc.md
   - 认识基础:
     - 一、形式逻辑:
       - 1 概念: cogn/form/cep.md
