@@ -108,7 +108,17 @@
 
     设 $f$ 为 $(\Omega, \mathscr{F})$ 的可测函数，若 $f$ 关于 $\mu$ 的变差 $|\mu|$ 是可积的，即 ${\displaystyle \int|f| \mathrm{d}|\mu|<\infty}$，则称 $f$ 为关于广义测度 $\mu$ 是可积的
 
-3. $\text{Lebesgue}$ 分解
+3. $\text{Lebesgue}$ 分解：若 $(\Omega, \mathscr{F})$ 为可测空间，$\mu, \nu$ 为其上的 $\sigma$ 有限测度，则可将 $\nu$ 唯一地表为 $\nu=\nu_{1}+\nu_{2}$，其中 $\nu_{1}, \nu_{2}$ 都是 $\sigma$ 有限广义测度，且 $\nu_{1} \ll \mu, \nu_{2} \perp \mu$，上述分解又称为 $\nu$ 关于 $\mu$ 的 $\text{Lebesgue}$ 分解
+    1. 设 $f$ 为测度空间 $(\Omega, \mathscr{F}, \mu)$ 上的可测函数，若存在互不相交的可测集序列 ${\displaystyle \left\{A_{n}\right\}_{n \geqslant 1}, \sum_{n \geqslant 1} A_{n}=\Omega}$，使 ${\displaystyle \int_{A_{n}}|f| \mathrm{d} \mu<\infty}$，则称 $f$ 为 $\sigma$ 可积的．此时若 ${\displaystyle \sum_{n \geqslant 1} \int_{A_{n}} f \mathrm{d} \mu}$ 有意义，则记为 ${\displaystyle \int f \mathrm{d} \mu}$
+        1. 设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$\nu$ 为其上的有限测度，则存在唯一的 $f \in L^{1}(\Omega, \mathscr{F}, P)$ 及 $P$ 可略集 $N$ 使
+
+            $$
+            \nu(A)=\int_{A} f(\omega) P(\mathrm{d} \omega)+\nu(A N), \  \forall A \in \mathscr{F}
+            $$
+
+        2. 设 $(\Omega, \mathscr{F})$ 为可测空间，$\mu, \nu$ 为其上的 $\sigma$ 有限广义测度（不取 $-\infty$），则必存在唯一的关于 $|\mu|$ 为 $\sigma$ 可积的 $f$ 及 $|\mu|$ 可略集 $N$，使 ${\displaystyle \nu(A)=\int_{A} f(\omega)|\mu|(\mathrm{d} \omega)+\nu(A N)}$
+
+    2. 可测空间 $(\Omega, \mathscr{F})$ 上的广义测度 $\mu, \nu$ 若对每个 $A \in \mathscr{F}$，由 $|\mu|(A)=$ 0 可推出 $\nu(A)=0$，则称 $\nu$ 关于 $\mu$ 是绝对连续的，记为 $\nu \ll \mu$．若 $\nu \ll \mu$，$\mu \ll \nu$ 同时成立，则记为 $\nu \equiv \mu$ 或 $\nu \sim \mu$，称 $\mu, \nu$ 为相互等价的．若存在 $A \in \mathscr{F}$ 使 $|\mu|(A)=0$，$|\nu|\left(A'\right)=0$，则称 $\mu, \nu$ 为相互奇异的，记为 $\mu \perp \nu$
 
 ## 1.2 Lebesgue 测度
 1. 广义实数集：扩充实数集 $\mathbf R$，得到 $\widehat{\mathbf{R}}=\mathbf{R} \cup \{+\infty, -\infty\}$
