@@ -175,7 +175,7 @@
 
         最后一个式子称作 $\text{Chernoff}$ 界
 
-    4. $\text{Lesbegue}$ 控制收敛定理：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，$\left|X_{n}\right| \leqslant Y, Y$ 可积，且 ${\displaystyle \lim _{n \to \infty} X_{n}=X}$ 存在，则 ${\displaystyle \lim _{n \to \infty} \mathrm{E} X_{n}=\mathrm{E} X}$
+    4. $\text{Lebesgue}$ 控制收敛定理：若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，$\left|X_{n}\right| \leqslant Y, Y$ 可积，且 ${\displaystyle \lim _{n \to \infty} X_{n}=X}$ 存在，则 ${\displaystyle \lim _{n \to \infty} \mathrm{E} X_{n}=\mathrm{E} X}$
         1. $\text{Levi}$ 引理
             - 若 $X_{n} \uparrow X$，且对某个 $n_{0}$，$X_{n_{0}}^{-}$ 可积，则 ${\displaystyle \lim _{n \to \infty} \uparrow \mathrm{E} X_{n}=\mathrm{E} X}$
             - 若 $X_{n} \downarrow X$，且对某个 $n_{0}$，$X_{n_{0}}^{+}$ 可积，则 ${\displaystyle \lim _{n \to \infty} \downarrow \mathrm{E} X_{n}=\mathrm{E} X}$

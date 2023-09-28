@@ -90,11 +90,27 @@
     2. 若 $\mu$ 为广义测度，则其必定是有限可加的，即 $\mu(A+B)=\mu(A)+\mu(B)$
     3. 设 $\mu$ 为 $(\Omega, \mathscr{F})$ 上的广义测度（按约定它只在 $(-\infty, \infty]$ 取值），则必存在 $C \in \mathscr{F}$，使 ${\displaystyle \mu(C)=\inf _{A \in \mathscr{F}} \mu(A)}$
 
-2. $\text{Hahn}-\text{Jordan}$ 分解
-    1. $\text{Hahn}$ 分解定理：设 $\mu$ 为可测空间 $(\Omega, \mathscr{F})$ 上的广义测度，则存在互不相交的 $D^{+}, D^{-} \in \mathscr{F}$，使 $\Omega=D^{+}+D^{-}$，且对每一可测集 $A \subseteq D^{+}\left(D^{-}\right)$，必有 $\mu(A) \geqslant 0(\leqslant 0)$
-    2. $\text{Jordan}$ 分解定理
+2. $\text{Hahn}-\text{Jordan}$ 分解：若 $\mu$ 为可测空间 $(\Omega, \mathscr{F})$ 上的广义测度，由 $\text{Hahn}$ 分解定理规定的分解 $\Omega=D+D'$ 称为空间 $\Omega$ 关于 $\mu$ 的 $\text{Hahn}$ 分解，由 $\text{Jordan}$ 分解定理规定的分解 $\mu=\mu^{+}-\mu^{-}$ 称为 $\mu$ 的 $\text{Jordan}$ 分解，$\mu^{+}, \mu^{-}$ 及 $|\mu|$ 分别称为 $\mu$ 的正变差、负变差和全变差．对广义测度，规定 $\mu_{1} \vee \mu_{2}=\mu_{1}+\left(\mu_{2}-\mu_{1}\right)^{+}, \  \mu_{1} \wedge \mu_{2}=\mu_{1}-\left(\mu_{1}-\mu_{2}\right)^{+}$
+    1. $\text{Hahn}$ 分解定理：设 $\mu$ 为可测空间 $(\Omega, \mathscr{F})$ 上的广义测度
+        1. 存在互不相交的 $D^{+}, D^{-} \in \mathscr{F}$，使 $\Omega=D^{+}+D^{-}$，且对每一可测集 $A \subseteq D^{+}\left(D^{-}\right)$，必有 $\mu(A) \geqslant 0(\leqslant 0)$
+        2. 若 $\Omega=\widetilde{D}^{+}+\widetilde{D}^{-}$ 且对每一可测集 $A \subseteq \widetilde{D}^{+}(\widetilde{D}^{-})$ 有 $\mu(A) \geqslant 0(\leqslant 0)$，则 $\widetilde{D}^{+} \Delta D^{+}(\widetilde{D}^{-} \triangle D^{-})$ 的可测子集均为 $\mu$ 零集
+    2. $\text{Jordan}$ 分解定理：若 $\mu$ 为可测空间 $(\Omega, \mathscr{F})$ 上的广义测度，$C \in \mathscr{F}$ 由 ${\displaystyle \mu(C)=\inf _{A \in \mathscr{F}} \mu(A)}$ 规定
+        1. 对每个 $A \in \mathscr{F}$，若取 $\mu^{+}(A)=\mu\left(A C'\right), \  \mu^{-}(A)=-\mu(A C)$，则 $\mu^{+}, \mu^{-}$ 都是 $(\Omega, \mathscr{F})$ 上的正测度，$\mu=\mu^{+}-\mu^{-}$ 且
 
-## 1.2 Lesbegue 测度
+            $$
+            \begin{aligned}
+            \mu^{+}(A)&=\sup \{\mu(B): B \subseteq A, B \in \mathscr{F}\} \\
+            \mu^{-}(A)&=\sup \{-\mu(B): B \subseteq A, B \in \mathscr{F}\}
+            \end{aligned}
+            $$
+
+        2. 若 $\mu=\mu_{2}-\mu_{1}, \mu_{2}, \mu_{1}$ 都是 $(\Omega, \mathscr{F})$ 上的正测度，则对每个 $A \in \mathscr{F}$ 有 $\mu^{+}(A) \leqslant \mu_{2}(A), \  \mu^{-}(A) \leqslant \mu_{1}(A)$
+
+    设 $f$ 为 $(\Omega, \mathscr{F})$ 的可测函数，若 $f$ 关于 $\mu$ 的变差 $|\mu|$ 是可积的，即 ${\displaystyle \int|f| \mathrm{d}|\mu|<\infty}$，则称 $f$ 为关于广义测度 $\mu$ 是可积的
+
+3. $\text{Lebesgue}$ 分解
+
+## 1.2 Lebesgue 测度
 1. 广义实数集：扩充实数集 $\mathbf R$，得到 $\widehat{\mathbf{R}}=\mathbf{R} \cup \{+\infty, -\infty\}$
     1. 允许以 $+\infty$ 或 $-\infty$ 成为函数值，$\pm \infty$ 也称为非真正的实数．通常的实数则称为有限实数，函数值都是有限实数的函数称为有限函数．因此有界函数必是有限函数，但反之不成立
     2. $+\infty$ 是全体有限实数的上确界，$-\infty$ 是全体有限实数的下确界：$-\infty<a<+\infty$（$a$ 为任何有限实数）．从而对于上（下）方无界的递增（减）数列 $\left\{a_{n}\right\}$，总有 ${\displaystyle \lim _{n \to \infty} a_{n}=+\infty \ (-\infty)}$
@@ -113,7 +129,7 @@
 2. 一个定义在 $E \subseteq \widehat{\mathbf{R}}^{n}$ 上的实函数 $f(x)$ 确定了 $E$ 的一组子集 $\{x: x \in E, f(x)>a\}$（简记作 $E[f>a]$），其中 $a$ 取遍一切有限实数．反之，$f(x)$ 本身也由 $E$ 的这组子集完全确定
 
 ### 1.2.1 外侧度与内测度
-1. 外测度：设 $E$ 为 $\widehat{\mathbf{R}}^{n}$ 中任一点集，对于每一列覆盖 $E$ 的开区间 ${\displaystyle \bigcup_{i=1}^{\infty} I_{i} \supset E}$，作出其的体积总和 ${\displaystyle \mu=\sum_{i=1}^{\infty}\left|I_{i}\right|}$（$\mu$ 可以等于 $\infty$, 不同的区间列一般有不同的 $\mu$），所有这一切的 $\mu$ 组成一个下方有界的数集，其下确界（完全由 $E$ 确定）称为 $E$ 的 $\text{Lesbegue}$ 外测度，简称 $L$ 外测度或外测度，记为 $m^{*} E$，即 ${\displaystyle m^{*} E=\inf _{E \subseteq \bigcup_{i=1}^{\infty} I_{i}} \sum_{i=1}^{\infty}\left|I_{i}\right|}$
+1. 外测度：设 $E$ 为 $\widehat{\mathbf{R}}^{n}$ 中任一点集，对于每一列覆盖 $E$ 的开区间 ${\displaystyle \bigcup_{i=1}^{\infty} I_{i} \supset E}$，作出其的体积总和 ${\displaystyle \mu=\sum_{i=1}^{\infty}\left|I_{i}\right|}$（$\mu$ 可以等于 $\infty$, 不同的区间列一般有不同的 $\mu$），所有这一切的 $\mu$ 组成一个下方有界的数集，其下确界（完全由 $E$ 确定）称为 $E$ 的 $\text{Lebesgue}$ 外测度，简称 $L$ 外测度或外测度，记为 $m^{*} E$，即 ${\displaystyle m^{*} E=\inf _{E \subseteq \bigcup_{i=1}^{\infty} I_{i}} \sum_{i=1}^{\infty}\left|I_{i}\right|}$
     1. 外测度的性质
         1. 非负性：$m^{*} E \geqslant 0$，当 $E$ 为空集时，$m^{*} E=0$
         2. 单调性：设 $A \subseteq B$，则 $m^{*} A \leqslant m^{*} B$
@@ -124,7 +140,7 @@
     2. $0 \leqslant m_{*} E \leqslant m^{*} E$ 恒成立
 
 ### 1.2.2 可测性
-1. $L$ 可测集：设 $E$ 为 $\widehat{\mathbf{R}}^{n}$ 中的点集，如果对任一点集 $T$ 都有 $m^{*} T=m^{*}(T \cap E)+m^{*}\left(T \cap E'\right)$，则称 $E$ 是 $\text{Lesbegue}$ 可测的或 $L$ 可测的．此时 $E$ 的 $L$ 外测度 $m^{*} E$ 称为 $E$ 的 $\text{Lesbegue}$ 测度或 $L$ 测度，记为 $m E$，记 $L$ 可测集全体为 $\mathscr{M}$
+1. $L$ 可测集：设 $E$ 为 $\widehat{\mathbf{R}}^{n}$ 中的点集，如果对任一点集 $T$ 都有 $m^{*} T=m^{*}(T \cap E)+m^{*}\left(T \cap E'\right)$，则称 $E$ 是 $\text{Lebesgue}$ 可测的或 $L$ 可测的．此时 $E$ 的 $L$ 外测度 $m^{*} E$ 称为 $E$ 的 $\text{Lebesgue}$ 测度或 $L$ 测度，记为 $m E$，记 $L$ 可测集全体为 $\mathscr{M}$
     1. 集合 $E$ 可测的充要条件是对于任意 $A \subseteq E, B \subseteq E'$ 总有 $m^{*}(A \cup B)=m^{*} A+m^{*} B$
     2. $S$ 可测的充要条件是 $S'$ 可测
     3. 设 $S_{1}, S_{2}$ 可测，则 $S_{1} \cup S_{2}$ 可测且当 $S_{1} \cap S_{2}=\varnothing$ 时，对于任意 $T$ 总有 $m^{*}\left[T \cap\left(S_{1} \cup S_{2}\right)\right]=m^{*}\left(T \cap S_{1}\right)+m^{*}\left(T \cap S_{2}\right)$
@@ -145,7 +161,7 @@
     !!! note "利用外测度与内测度定义可测集"
         设 $E$ 为 $\widehat{\mathbf{R}}^n$ 中有界集，如果 $m^* E=m_{*} E$，则称 $E$ 是 $L$ 可测的．又设 $E$ 是 $\widehat{\mathbf{R}}^n$ 中的无界集，如果对任何开区间 $I$，有界集 $E \cap I$ 都是 $L$ 可测的，则称 $E$ 是 $L$ 可测的．对 $L$ 可测集 $E$，不管它有界或无界，一律称 $m^* E$ 为它的 $L$ 测度，简记为 $m E$
 
-2. 凡 $\text{Borel}$ 集都是 $\text{Lesbegue}$ 可测集
+2. 凡 $\text{Borel}$ 集都是 $\text{Lebesgue}$ 可测集
     1. 设 $\Sigma$ 是 $\widehat{\mathbf{R}}^{n}$ 的一个子集族，则称所有包含 $\Sigma$ 的 $\sigma$ 域的交集（即包含 $\Sigma$ 的最小 $\sigma$ 域）为 $\Sigma$ 产生的 $\sigma$ 域
     2. 由 $\widehat{\mathbf{R}}^{n}$ 中全体开集组成的子集族生成的 $\sigma$ 域记为 $\mathscr{B}_n$，称为 $\text{Borel}$ 域．当不至于混淆时可简记为 $\mathscr{B}$
     3. 设集合 $G$ 可表示为一列开集 $\left\{G_{i}\right\}$ 之交集 ${\displaystyle G=\bigcap_{i=1}^{\infty} G_{i}}$，则称 $G$ 为 $G_{\delta}$ 型集
@@ -190,5 +206,5 @@
     3. 依测度收敛：设 $\left\{f_{n}\right\}$ 是 $E \subseteq \widehat{\mathbf{R}}^{q}$ 上的一列 $\text{a.e.}$有限的可测函数，若有 $E$ 上 $\text{a.e.}$有限的可测函数 $f(x)$ 有「对任意 $\sigma>0$ 有 ${\displaystyle \lim _{n \to \infty} m E\left[\left|f_{n}-f\right| \geqslant \sigma\right]=0}$」，则称函数列 $\left\{f_{n}\right\}$ 依测度收敛于 $f$，或度量收敛于 $f$，记为 $f_{n}(x) \Rightarrow f(x)$
         1. $\text{a.e.}$收敛的函数列可能不依测度收敛，依测度收敛的函数列可能不 $\text{a.e.}$收敛
         2. $\text{Riesz}$ 定理：设在 $E$ 上 $\left\{f_{n}\right\}$ 依测度收敛于 $f$，则存在子列 $\left\{f_{n_{i}}\right\}$ 在 $E$ 上 $\text{a.e.}$收敛于 $f$
-        3. $\text{Lesbegue}$ 定理：设 $m E<\infty$，$\left\{f_{n}\right\}$ 是 $E$ 上 $\text{a.e.}$有限的可测函数列且在 $E$ 上 $\text{a.e.}$收敛于 $\text{a.e.}$有限的函数 $f$，则 $f_{n}(x) \Rightarrow f(x)$
+        3. $\text{Lebesgue}$ 定理：设 $m E<\infty$，$\left\{f_{n}\right\}$ 是 $E$ 上 $\text{a.e.}$有限的可测函数列且在 $E$ 上 $\text{a.e.}$收敛于 $\text{a.e.}$有限的函数 $f$，则 $f_{n}(x) \Rightarrow f(x)$
         4. 设 $f_{n}(x) \Rightarrow f(x), f_{n}(x) \Rightarrow g(x)$，则 $f(x)=g(x)$ $\text{a.e.}$于 $E$
