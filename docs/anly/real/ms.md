@@ -80,6 +80,19 @@
         称 $(\Omega, \overline{F}, \overline{\mu})$ 为 $(\Omega, \mathscr{F}, \mu)$ 的完备化扩张
 
 ### 1.1.4 广义测度
+1. 广义测度：可测空间 $(\Omega, \mathscr{F})$ 上取值于 $[-\infty,+\infty]$ 的集函数 $\mu$ 若满足
+    1. $\mu(\varnothing)=0$
+    2. ${\displaystyle \mu\left(\sum_{i=1}^{\infty} A_{i}\right)=\sum_{i=1}^{\infty} \mu\left(A_{i}\right)}$
+
+    则 $\mu$ 称为广义测度或变号测度（有时也将广义测度称为测度，将测度称为正测度）
+
+    1. 若 $(\Omega, \mathscr{F}, \lambda)$ 是测度空间，$f$ 为其上的（准）可积函数，则 ${\displaystyle \mu(A)=\int_{A} f(\omega) \lambda(\mathrm{d} \omega)}$ 是一个广义测度
+    2. 若 $\mu$ 为广义测度，则其必定是有限可加的，即 $\mu(A+B)=\mu(A)+\mu(B)$
+    3. 设 $\mu$ 为 $(\Omega, \mathscr{F})$ 上的广义测度（按约定它只在 $(-\infty, \infty]$ 取值），则必存在 $C \in \mathscr{F}$，使 ${\displaystyle \mu(C)=\inf _{A \in \mathscr{F}} \mu(A)}$
+
+2. $\text{Hahn}-\text{Jordan}$ 分解
+    1. $\text{Hahn}$ 分解定理：设 $\mu$ 为可测空间 $(\Omega, \mathscr{F})$ 上的广义测度，则存在互不相交的 $D^{+}, D^{-} \in \mathscr{F}$，使 $\Omega=D^{+}+D^{-}$，且对每一可测集 $A \subseteq D^{+}\left(D^{-}\right)$，必有 $\mu(A) \geqslant 0(\leqslant 0)$
+    2. $\text{Jordan}$ 分解定理
 
 ## 1.2 Lesbegue 测度
 1. 广义实数集：扩充实数集 $\mathbf R$，得到 $\widehat{\mathbf{R}}=\mathbf{R} \cup \{+\infty, -\infty\}$
