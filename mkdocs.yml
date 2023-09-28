@@ -187,7 +187,6 @@ nav:
       - 2 概率分布与特征: stat/prob/dist.md
       - 3 统计独立性: stat/prob/ind.md
       - 4 条件期望: stat/prob/cond.md
-      - 5 鞅论: stat/prob/mart.md
   - 语言学:
     - 一、类型论:
       - 1 一般类型论: lang/type/gen.md
