@@ -34,9 +34,20 @@
     5. 若随机向量 $\left(X_{1}, \cdots, X_{n}\right)$ 和 $\left(Y_{1}, \cdots, Y_{n}\right)$ 有相同 $n$ 维分布函数，则对 $\mathbf{R}^{n}$ 到 $\mathbf{R}^{m}$ 的任一 $\text{Borel}$ 函数 $g$，$g\left(X_{1}, \cdots, X_{n}\right)$ 和 $g\left(Y_{1}, \cdots, Y_{n}\right)$ 有相同的分布，即对一切 $\mathbf{R}^{m}$ 中的 $\text{Borel}$ 集 $B$ 都有 $P\left\{g\left(X_{1}, \cdots, X_{n}\right) \in B\right\}=P\left\{g\left(Y_{1}, \cdots, Y_{n}\right) \in B\right\}$
 
 3. 连续随机变量的密度函数
-    1. 设连续随机变量 $X$ 诱导的分布函数为 $F_X(x)$，若存在 $p(t) \geqslant 0$ 使得 ${\displaystyle \forall x \left(F_X(x)=\int_{-\infty}^x p(t)\mathrm{d}t\right)}$，则称 $p(t)$ 是随机变量 $X$ 的密度函数
+    1. 若 $F$ 表示随机变量 $X$ 的分布函数，$\mu_{F}$ 表示由 $F$ 在 $(\mathbf{R}, \mathscr{B})$ 上生成的 $L-S$ 测度，又 $\lambda$ 表示 $(\mathbf{R}, \mathscr{B})$ 上的 $\text{Lebesgue}$ 测度，则 $\mu_{F} \ll \lambda$ 的充要条件是存在 $f \in L^{1}(\mathrm{d} \lambda)$，使
+
+        $$
+        \begin{aligned}
+        \mu_{F}(B)&=\int_{B} f(x) \lambda(\mathrm{d} x)=\int_{B} f(x) \mathrm{d} x \\
+        F(x)&=\int_{(-\infty, x]} f(t) \mathrm{d} t=\int_{-\infty}^{x} f(t) \mathrm{d} t
+        \end{aligned}
+        $$
+
+        则此时称关于 $\text{Lebesgue}$ 测度几乎处处唯一确定的可积函数 $f$ 称为分布密度
+
         1. $F_X(x)$ 存在密度函数的必要条件是 $F_X$ 连续，从而单点概率为 $0$
         2. 若 $F_X(x)$ 是某个函数的原函数，则 $F_X(x)$ 一定存在密度函数．特别地，如果 $F_X$ 可导并且存在连续的导函数 $F'$，则 $p(t)=F'(t)$ 为密度函数
+
     2. 设随机向量 $X:(\Omega, \mathscr{F}, P)\to (R^n, \mathscr{B}^n)$ 诱导的分布函数为 $F_X(x_1, x_2, \cdots, x_n)$，若存在 $p(t_1, t_2, \cdots, t_n) \geqslant 0$ 使得 ${\displaystyle F_X(x_1, x_2, \cdots, x_n)=\int_{-\infty}^{x_1} \int_{-\infty}^{x_2}\cdots \int_{-\infty}^{x_n}p(t_1, t_2, \cdots, t_n)\mathrm{d}t_1\mathrm{d}t_2\cdots \mathrm{d}t_n}$，则称 $X$ 具有密度函数 $p(t_1, t_2, \cdots, t_n)$
         1. 若 $X$ 存在密度函数，则 $F_X(x_1, x_2, \cdots, x_n)$ 关于每个 $x_i$ 是连续的．事实上 $F_X$ 是 $n$ 元连续的
         2. 若 $X$ 的分布函数 $F_X$ 有 $\dfrac{\partial ^nF}{\partial x_1\cdots \partial x_n}$ 存在且连续，则 $X$ 必有密度函数 $p_X(x_1, x_2, \cdots, x_n)=\dfrac{\partial ^nF}{\partial x_1\cdots \partial x_n}$

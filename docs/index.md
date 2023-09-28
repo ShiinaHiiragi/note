@@ -408,8 +408,7 @@ const refList = [
         page: [1, 165],
         year: 2005,
         press: "复旦大学出版社",
-        locate: "上海",
-        plot: 116
+        locate: "上海"
     },
     {
         author: ["李贤平"],
