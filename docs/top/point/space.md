@@ -7,8 +7,9 @@
     2. 对称性：$\rho(x, y) = \rho(y, x)$
     3. 三角不等式：$\rho(x, z) \leqslant \rho(x, y) + \rho(y, z)$
 2. 度量空间：若 $\rho$ 是集合 $X$ 的一个度量，则偶对 $(X, \rho)$ 是一个度量空间，即 $X$ 是一个对于度量 $\rho$ 而言的度量空间．对于任意两点 $x, y\in X$，称 $\rho(x, y)$ 为点 $x$ 到点 $y$ 的一个距离
-    1. $n$ 维 $\text{Euclid}$ 空间：对于 $\mathbf R^n$．定义 $\rho: \mathbf R^n\times \mathbf R^n \to \mathbf R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^n(x_i-y_i)^2}}$，这个度量称为 $\mathbf R^n$ 的通常度量．特别地，当 $n=1$ 时，称 $\mathbf R$ 为实数空间
-    2. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)\mid {\displaystyle \sum_{i=1}^\infty x_i^2}<\infty, x_i\in \mathbf R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有
+    1. 离散空间：设 $(X, \rho)$ 是一个度量空间，若 $\forall x\in X\ \exists \delta_x>0: \rho(x, y)>\delta_x$ 对于任何 $y\in X, y\neq x$ 成立，则称 $(X, \rho)$ 是离散的，或称 $\rho$ 是 $X$ 的一个离散度量
+    2. $\text{Euclid}$ 空间：对于 $\mathbf R^n$．定义 $\rho: \mathbf R^n\times \mathbf R^n \to \mathbf R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^n(x_i-y_i)^2}}$，这个度量称为 $\mathbf R^n$ 的通常度量．特别地，当 $n=1$ 时，称 $\mathbf R$ 为实数空间
+    3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)\mid {\displaystyle \sum_{i=1}^\infty x_i^2}<\infty, x_i\in \mathbf R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有
 
         $$
         \forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}}
@@ -16,7 +17,9 @@
 
         容易验证这是良定义，这个度量称之为 $H$ 的通常度量
 
-    3. 离散度量：设 $(X, \rho)$ 是一个度量空间，若 $\forall x\in X\ \exists \delta_x>0: \rho(x, y)>\delta_x$ 对于任何 $y\in X, y\neq x$ 成立，则称 $(X, \rho)$ 是离散的，或称 $\rho$ 是 $X$ 的一个离散度量
+    4. 序列空间：令 $S$ 表示实数（或复数）列全体，对 $S$ 中任意两点 $x = (x_1, x_2, \cdots, x_n, \cdots)$ 与 $y = (y_1, y_2, \cdots, y_n, \cdots)$，令 $\rho(x, y) = {\displaystyle \sum_{i=1}^{\infty} \dfrac{1}{2^{i}} \dfrac{|x_i - y_i|}{1+|x_i - y_i|}}$，则 $\rho$ 是 $S$ 上的一个度量
+    5. 有界函数空间：设 $A$ 是一给定的集合，令 $B(A)$ 表示 $A$ 上有界实值（或复值）函数全体，对 $B(A)$ 中任意两点 $x, y$，定义 ${\displaystyle \rho(x, y)=\sup _{t \in A}|x(t)-y(t)|}$，则 $\rho$ 是 $B(A)$ 上的一个度量
+    6. $L-$可测函数空间：设 $X$ 为 $\mathbf{R}^{n}$ 中 $L-$可测子集．$\mathscr{M}(X)$ 为 $X$ 上实值（或复值）的 $L$ 可测函数全体，$m$ 为 $L$ 测度．对任意两个可测函数 $f(t)$ 及 $g(t)$，令 ${\displaystyle \rho(f, g)=\int_{X} \dfrac{|f(t)-g(t)|}{1+|f(t)-g(t)|} \mathrm{d} t}$，则 $\rho$ 是 $\mathscr{M}(X)$ 上的一个度量
 
 3. 球形邻域：设 $(X, \rho)$ 是一个度量空间，$x\in X$，对于任意给定的实数 $\varepsilon >0$，集合 $B(x, \varepsilon) = B_\varepsilon(x) = \{y\in X\mid \rho(x, y)<\varepsilon\}$ 为一个以 $x$ 为中心，以 $\varepsilon$ 为半径的球形领域，或称为 $x$ 的一个 $\varepsilon-$邻域
     1. 每一点 $x\in X$ 至少有一个球形领域，并且点 $x$ 属于它的每一个球形邻域

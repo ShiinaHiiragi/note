@@ -14,8 +14,10 @@
         1. 赋范线性空间是一种特殊的度量空间
         2. 对任意数 $\alpha$ 和向量 $x, y \in X$，有 $d(x-y, 0)=d(x, y)$ 及 $d(\alpha x, 0)=|\alpha| d(x, 0)$
 
-2. 有限维赋范线性空间的性质
-    1. 
+2. 设 $\left(R_{1},\|\cdot\|_{1}\right)$ 和 $\left(R_{2},\|\cdot\|_{2}\right)$ 是两个赋范线性空间．如果存在从 $R_{1}$ 到 $R_{2}$ 上的映射 $\varphi$ 满足条件：对任意 $x, y \in R_{1}$ 及数 $\alpha, \beta$ 都有 $\varphi(\alpha x+\beta y)=\alpha \varphi(x)+\beta \varphi(y)$ 以及正数 $c_{1}, c_{2}$，使得对一切 $x \in R_{1}$ 都有 ${\displaystyle c_{1}\|\varphi(x)\|_{2} \leqslant\|x\|_{1} \leqslant c_{2}\|\varphi(x)\|_{2}}$，则称 $\left(R_{1},\|\cdot\|_{1}\right)$ 和 $\left(R_{2},\|\cdot\|_{2}\right)$ 这两个赋范空间是拓扑同构的
+    1. 设 $X$ 是 $n$ 维赋范线性空间，$\left\{e_{1}, e_{2}, \cdots, e_{n}\right\}$ 是 $X$ 的一组基，则存在常数 $M$ 和 $M^{\prime}$，使得对一切 ${\displaystyle x=\sum_{k=1}^{n} \xi_{k} e_{k}}$ 成立
+    2. 设在有限维线性空间上定义了两个范数 $\|\cdot\|_{1}$ 和 $\|\cdot\|_{2}$，则必存在常数 $M$ 和 $M^{\prime}$，使得对任意 $x \in X$，成立不等式 $M\|x\|_{1} \leqslant\|x\|_{2} \leqslant M^{\prime}\|x\|_{1}$
+    3. 任何有限维赋范空间都和同维数 $\text{Euclid}$ 空间（或某个 $\mathbf{C}^{n}$）拓扑同构，同数域上的相同维数的有限维赋范空间彼此拓扑同构
 
 ## 1.2 Banach 空间
 - $\text{Banach}$ 空间：完备的赋范线性空间．$\text{Banach}$ 空间实例如下
