@@ -47,15 +47,17 @@
 4. 完备化：设 $X$ 是一个度量空间，$X^*$ 是一个完备度量空间．若 $X$ 与 $X^*$ 的一个稠密的度量子空间同距，则称完备度量空间 $X^*$ 是 $X$ 的一个完备化
     1. 每一个度量空间都有完备化
     2. 每一个度量空间的任意两个完备化同距
-5. 完全有界：设 $(X, \rho)$ 是一个度量空间，$\varepsilon>0$ 是一个实数．$X$ 的有限子集 $A$ 称为一个 $\varepsilon-$网，若对于任何 $x\in X$ 有 $\rho(x, A)<\varepsilon$．若对于任何实数 $\varepsilon>0$，$X$ 有一个 $\varepsilon-$网，则称度量空间是完全有界的
+5. 完全有界：设 $(X, \rho)$ 是一个度量空间，$\varepsilon>0$ 是一个实数，$A$ 为 $X$ 的有限子集．若对于任何 $x\in X$ 有 $\rho(x, A)<\varepsilon$，则称 $A$ 为一个 $\varepsilon-$网．若对于任何实数 $\varepsilon>0$，$X$ 有一个 $\varepsilon-$网，则称度量空间是完全有界的
     1. 设 $(X, \rho)$ 是一个度量空间，则 $(X, \rho)$ 是紧的当且仅当 $(X, \rho)$ 是一个完全有界的完备度量空间
-    2. 设 $(X, \rho)$ 是一个完备度量空间，若由 $X$ 的子集构成的一个序列 $\{E_1, E_2, \cdots\}$ 满足条件 $E_1\supset E_2\supset \cdots \wedge {\displaystyle \lim_{i\to \infty} \mathrm{diam}(E_i)} = 0$，其中 $\mathrm{diam}(E_i)$ 表示 $E_i$ 的直径，则 ${\displaystyle \bigcap_{i\in \mathbf Z_+}E^-_i}$ 是一个单点集
-    3. $\text{Baire}$ 定理：设 $X$ 是一个完备的度量空间，若 $G_1, G_2, \cdots$ 是 $X$ 中的可数个稠密的开集，则交集 ${\displaystyle \bigcap_{i\in \mathbf Z_+} G_i}$ 是 $X$ 中的一个稠密子集
+    2. 设 $(X, \rho)$ 是一个完备度量空间，若由 $X$ 的子集构成的一个序列 $\{E_1, E_2, \cdots\}$ 满足 $E_1\supset E_2\supset \cdots \wedge {\displaystyle \lim_{i\to \infty} \mathrm{diam}(E_i)} = 0$，其中 $\mathrm{diam}(E_i)$ 表示 $E_i$ 的直径，则 ${\displaystyle \bigcap_{i\in \mathbf Z_+}E^-_i}$ 是一个单点集
+    3. $\text{Baire}$ 定理：设 $X$ 是完备度量空间，若 $G_1, G_2, \cdots$ 是 $X$ 中的可数个稠密的开集，则交集 ${\displaystyle \bigcap_{i\in \mathbf Z_+} G_i}$ 是 $X$ 中的一个稠密子集
 
         !!! note "$\text{Baire}$ 定理的其他表述形式"
             设 $X$ 是一个拓扑空间，若 $A^{-o}=\varnothing$，则称 $A$ 为 $X$ 的一个无处稠密子集．若 $X$ 的子集 $F$ 可以表示为 $X$ 中可数个无处稠密的子集之并，则称 $F$ 为第一范畴集，若 $X$ 的子集不是第一范畴集，则称之为第二范畴集
 
             据此 $\text{Baire}$ 定理可以重述为「完备度量空间中的任何一个非空开集都是第二范畴集」
+
+6. 压缩映射原理：设 $X$ 是度量空间，映射 $f: X \to X$，若存在 $\alpha \in (0, 1)$ 使得对所有的 $x, y \in X$ 都有 $d(f(x), f(y)) \leqslant \alpha d(x, y)$，则称 $f$ 是压缩映射．设 $X$ 是完备的度量空间，$f$ 是 $X$ 上的压缩映射，则 $f$ 有且只有一个不动点
 
 ## 1.2 拓扑空间
 ### 1.2.1 拓扑空间
