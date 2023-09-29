@@ -1,7 +1,7 @@
 # 2 微分与积分
 
 ## 2.1 微分
-1. $\text{Vitali}$ 覆盖定理：设 $E \subseteq \widehat{\mathbf{R}}$ 且 $m^{*} E<\infty$，$\mathscr{V}$ 是 $E$ 的 $V-$覆盖，则可选出区间列 $\left\{I_{n}\right\} \subseteq \mathscr{T}$，使得各 $I_{n}$ 互不相交且 $m\left(E - \bigcup_{k} I_{k}\right)=0$ 成立
+1. $\text{Vitali}$ 覆盖定理：设 $E \subseteq \widehat{\mathbf{R}}$ 且 $m^{*} E<\infty$，$\mathscr{V}$ 是 $E$ 的 $V-$覆盖，则可选出区间列 $\left\{I_{n}\right\} \subseteq \mathscr{T}$，使得各 $I_{n}$ 互不相交且 ${\displaystyle m\left(E - \bigcup I_{k}\right)=0}$ 成立
     1. $V-$覆盖：设 $E \subseteq \widehat{\mathbf{R}}$，$\mathscr{V}=\{I\}$ 是长度为正的区间族．如果对于任意 $x \in E$ 及任意 $\varepsilon>0$，存在区间 $I_{x} \in \mathscr{V}$ 使 $x \in I_{x}$ 且 $m I_{x}<\varepsilon$，则称 $\mathscr{V}$ 依 $\text{Vitali}$ 意义覆盖 $E$，简称 $E$ 的 $V$-覆盖
     2. 设 $E \subseteq \widehat{\mathbf{R}}$ 且 $m^{*} E<\infty, \mathscr{V}$ 是 $E$ 的 $V$-覆盖，则对任何 $\varepsilon>0$，可从 $\mathscr{V}$ 中选出互不相交的有限个区间 $I_{1}, I_{2}, \cdots, I_{n}$ 使得 ${\displaystyle m^{*}\left(E - \bigcup_{i=1}^{n} I_{i}\right)<\varepsilon}$
 2. 单调函数的可微性

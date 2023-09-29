@@ -3,7 +3,7 @@
 ## 1.1 序列
 1. 序列：以自然数 $n$ 或全体自然数的集合 $\mathbf N$ 为定义域的映射，如果其定义域是 $n \in \mathbf N$，则称为长度为 $n$ 的有穷序列．特别地，定义域为 $0$ 的序列称为空序列，定义域为 $\mathbf N$ 的序列称为无穷序列
     1. 有穷序列：$\left<a_i \mid i < n\right>$ 或 $\left<a_0, a_1, \cdots, a_{n-1}\right>$，其值域表示为 $\left\{a_i \mid i < n\right\}$ 或 $\left\{a_0, a_1, \cdots, a_{n-1}\right\}$．特别地，空序列的表示为 $\left<\ \right>$，其值域为 $\varnothing$
-    2. 无穷序列：$\left<a_i \mid i \in \mathbf N\right>$ 或 $\left<a_i\right>_{i = 0}^{\infty}$，其值域表示为 $\left\{a_i \mid i \in \mathbf N\right\}$ 或 $\left\{a_i\right\}_{i = 0}^{\infty}$
+    2. 无穷序列：$\left<a_i \mid i \in \mathbf N\right>$ 或 $\left<a_i\right>_{i = 0}^{\infty}$，其值域表示为 $\left\{a_i\right\}_{i = 0}^{\infty}, \left\{a_i\right\}_{i \geqslant 0}$ 或 $\left\{a_i \mid i \in \mathbf N\right\}$
     3. 由 $A$ 的元素组成的所有有穷序列的集合：$A^* = A^{<\mathbf N} = {\displaystyle \bigcup_{n \in \mathbf N} A^n}$
 2. 超穷序列：定义域为序数 $\alpha$ 的映射称为长度为 $\alpha$ 的序列．不严格地定义映射 $\mathbf{F}: \mathbf{On} \rightarrow \mathbf{V}$
     1. 如果存在一个公式 $\varphi(x, y)$ 有 $\forall x \exists ! y \ \varphi(x, y)$，并定义类 $\mathbf{F}=\{(x, y) \mid \varphi(x, y)\}$，则 $\mathbf{F}(x)$ 就是使得 $\varphi(x, y)$ 成立的唯一的 $y$
