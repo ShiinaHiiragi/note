@@ -216,7 +216,7 @@
         \end{aligned}
         $$
 
-        1. $\text{H}\ddot{\mathrm o}\text{der}$ 不等式：设 $p \geqslant 1, q \geqslant 1$ 满足 $\dfrac{1}{p}+ \dfrac{1}{q}=1$（约定 $1+ \dfrac{1}{\infty}=1$），$X, Y$ 为实值随机变量，则有 $E|X Y| \leqslant\|X\|_{p}\|Y\|_{q}$，且对 $1 \leqslant r \leqslant r^{\prime} \leqslant \infty$ 有 $\|X\|_{r} \leqslant\|X\|_{r^{\prime}}$
+        1. $\text{H}\ddot{\mathrm o}\text{lder}$ 不等式：设 $p \geqslant 1, q \geqslant 1$ 满足 $\dfrac{1}{p}+ \dfrac{1}{q}=1$（约定 $1+ \dfrac{1}{\infty}=1$），$X, Y$ 为实值随机变量，则有 $E|X Y| \leqslant\|X\|_{p}\|Y\|_{q}$，且对 $1 \leqslant r \leqslant r^{\prime} \leqslant \infty$ 有 $\|X\|_{r} \leqslant\|X\|_{r^{\prime}}$
         2. $\text{Minkowski}$ 不等式：对随机变量 $X, Y$ 及实数 $c, p \geqslant 1$，有 ① $\|c X\|_{p}=|c|\|X\|_{p}$；② $\|X+Y\|_{p} \leqslant\|X\|_{p}+\|Y\|_{p}$
 
     2. $L^{p}$ 的性质

@@ -6,13 +6,18 @@
     1. 正定性：$\rho(x, y)\geqslant 0 \wedge \rho(x, y)=0 \leftrightarrow x=y$
     2. 对称性：$\rho(x, y) = \rho(y, x)$
     3. 三角不等式：$\rho(x, z) \leqslant \rho(x, y) + \rho(y, z)$
-2. 度量空间：若 $\rho$ 是集合 $X$ 的一个度量，则偶对 $(X, \rho)$ 是一个度量空间，即 $X$ 是一个对于度量 $\rho$ 而言的度量空间
-    1. 对于任意两点 $x, y\in X$，称 $\rho(x, y)$ 为点 $x$ 到点 $y$ 的一个距离
-    2. 度量空间的实例
-        1. 实数空间：对于实数集合 $\mathbf R$，定义 $\rho: \mathbf R\times \mathbf R\to \mathbf R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)=|x-y|$，这个度量称之为 $R$ 的通常度量
-        2. $n$ 维 $\text{Euclid}$ 空间：对于 $\mathbf R^n$．定义 $\rho: \mathbf R^n\times \mathbf R^n \to \mathbf R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^n(x_i-y_i)^2}}$，这个度量称为 $\mathbf R^n$ 的通常度量
-        3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)\mid {\displaystyle \sum_{i=1}^\infty x_i^2}<\infty, x_i\in \mathbf R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有 $\forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}}$．容易验证这是良定义，这个度量称之为 $H$ 的通常度量
-        4. 离散度量：设 $(X, \rho)$ 是一个度量空间，若 $\forall x\in X\ \exists \delta_x>0: \rho(x, y)>\delta_x$ 对于任何 $y\in X, y\neq x$ 成立，则称 $(X, \rho)$ 是离散的，或称 $\rho$ 是 $X$ 的一个离散度量
+2. 度量空间：若 $\rho$ 是集合 $X$ 的一个度量，则偶对 $(X, \rho)$ 是一个度量空间，即 $X$ 是一个对于度量 $\rho$ 而言的度量空间．对于任意两点 $x, y\in X$，称 $\rho(x, y)$ 为点 $x$ 到点 $y$ 的一个距离
+    1. $n$ 维 $\text{Euclid}$ 空间：对于 $\mathbf R^n$．定义 $\rho: \mathbf R^n\times \mathbf R^n \to \mathbf R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^n(x_i-y_i)^2}}$，这个度量称为 $\mathbf R^n$ 的通常度量．特别地，当 $n=1$ 时，称 $\mathbf R$ 为实数空间
+    2. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)\mid {\displaystyle \sum_{i=1}^\infty x_i^2}<\infty, x_i\in \mathbf R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有
+
+        $$
+        \forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}}
+        $$
+
+        容易验证这是良定义，这个度量称之为 $H$ 的通常度量
+
+    3. 离散度量：设 $(X, \rho)$ 是一个度量空间，若 $\forall x\in X\ \exists \delta_x>0: \rho(x, y)>\delta_x$ 对于任何 $y\in X, y\neq x$ 成立，则称 $(X, \rho)$ 是离散的，或称 $\rho$ 是 $X$ 的一个离散度量
+
 3. 球形邻域：设 $(X, \rho)$ 是一个度量空间，$x\in X$，对于任意给定的实数 $\varepsilon >0$，集合 $B(x, \varepsilon) = B_\varepsilon(x) = \{y\in X\mid \rho(x, y)<\varepsilon\}$ 为一个以 $x$ 为中心，以 $\varepsilon$ 为半径的球形领域，或称为 $x$ 的一个 $\varepsilon-$邻域
     1. 每一点 $x\in X$ 至少有一个球形领域，并且点 $x$ 属于它的每一个球形邻域
     2. 对于点 $x\in X$ 的任意两个球形邻域，存在 $x$ 的一个球形邻域同时包含于两者

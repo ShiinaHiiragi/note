@@ -15,10 +15,14 @@
         2. 对任意数 $\alpha$ 和向量 $x, y \in X$，有 $d(x-y, 0)=d(x, y)$ 及 $d(\alpha x, 0)=|\alpha| d(x, 0)$
 
 2. 有限维赋范线性空间的性质
+    1. 
 
 ## 1.2 Banach 空间
-- $\text{Banach}$ 空间：完备的赋范线性空间
-    1. $\text{Euclid}$ 空间 $\mathbf R^n$：对每个 $x=\left(\xi_{1}, \xi_{2}, \cdots, \xi_{n}\right) \in \mathbf{R}^{n}$，定义 $\|x\|=\sqrt{\left|\xi_{1}\right|^{2}+\left|\xi_{2}\right|^{2}+\cdots+\left|\xi_{n}\right|^{2}}$，则 $\mathbf R^n$ 是 $\text{Banach}$ 空间
-    2. $C[a, b]$ 空间：记闭空间 $[a, b]$ 上实值（或复值）连续函数全体为 $C[a, b]$．对每个 $x \in C[a, b]$，定义 ${\displaystyle \|x\| = \max_{a \leqslant t \leqslant b} |x(t)|}$，则 $C[a, b]$ 是 $\text{Banach}$ 空间
-    3. $l^{\infty}$ 空间：记有界实（或复）数列全体为 $l^{\infty}$．对每个 $x=\left(\xi_{1}, \xi_{2}, \cdots\right) \in l^{\infty}$，定义 ${\displaystyle \|x\|=\sup \left|\xi_{j}\right|}$，则 $l^{\infty}$ 是 $\text{Banach}$ 空间
-    4. $L^{p}[a, b]$ 空间：设 $f(t)$ 是 $[a, b]$ 上复值可测函数，$p>0$．如果 $|f(x)|^{p}$ 是 $[a, b]$ 上 $L$ 可积函数，则称 $f(t)$ 是 $[a, b]$ 上 $p$ 方可积函数，记 $[a, b]$ 上 $p$ 方可积函数全体为 $L^{p}[a, b]$．在空间 $L^{p}[a, b]$ 中，将两个 $\text{a.e.}$相等的函数视为 $L^{p}[a, b]$ 中同一个元素而不加以区别．对每个 $f \in L^{p}[a, b]$，定义 ${\displaystyle \|f\|_{p}=\left(\int_{a}^{b}|f(t)|^{p} \mathrm{d} t\right)^{\frac{1}{p}}}$，则当 $p \geqslant 1$ 时，$L^{p}[a, b]$ 按 $\|\cdot\|_{p}$ 成为 $\text{Banach}$ 空间
+- $\text{Banach}$ 空间：完备的赋范线性空间．$\text{Banach}$ 空间实例如下
+    1. $\text{Euclid}$ 空间 $\mathbf R^n$：对每个 $x=\left(\xi_{1}, \xi_{2}, \cdots, \xi_{n}\right) \in \mathbf{R}^{n}$，定义 $\|x\|=\sqrt{\left|\xi_{1}\right|^{2}+\left|\xi_{2}\right|^{2}+\cdots+\left|\xi_{n}\right|^{2}}$
+    2. $C[a, b]$ 空间：记闭空间 $[a, b]$ 上实值（或复值）连续函数全体为 $C[a, b]$．对每个 $x \in C[a, b]$，定义 ${\displaystyle \|x\| = \max_{a \leqslant t \leqslant b} |x(t)|}$
+    3. $l^{p}$ 空间：记 ${\displaystyle l^{p} = \left\{x=\{x_k\}: \sum_{k=1}^{\infty} x_{k}^{p} < \infty\right\}}$．对每个 $x=\left(\xi_{1}, \xi_{2}, \cdots\right) \in l^{\infty}$，定义 ${\displaystyle \|x\|_{p}=\left(\sum_{i=1}^{\infty}\left|\xi_{i}\right|^{p}\right)^{\frac{1}{p}}}$
+    4. $l^{\infty}$ 空间：记有界实（或复）数列全体为 $l^{\infty}$．对每个 $x=\left(\xi_{1}, \xi_{2}, \cdots\right) \in l^{\infty}$，定义 ${\displaystyle \|x\|=\sup \left|\xi_{j}\right|}$
+    5. $L^{p}[a, b]$ 空间：设 $f(t)$ 是 $[a, b]$ 上复值可测函数，$p>0$．如果 $|f(x)|^{p}$ 是 $[a, b]$ 上 $L$ 可积函数，则称 $f(t)$ 是 $[a, b]$ 上 $p$ 方可积函数，记 $[a, b]$ 上 $p$ 方可积函数全体为 $L^{p}[a, b]$．在空间 $L^{p}[a, b]$ 中，将两个 $\text{a.e.}$相等的函数视为 $L^{p}[a, b]$ 中同一个元素而不加以区别．对每个 $f \in L^{p}[a, b]$，定义 ${\displaystyle \|f\|_{p}=\left(\int_{a}^{b}|f(t)|^{p} \mathrm{d} t\right)^{\frac{1}{p}}}$，则当 $p \geqslant 1$ 时，$L^{p}[a, b]$ 按 $\|\cdot\|_{p}$ 成为 $\text{Banach}$ 空间
+        1. $\text{H}\mathrm{\ddot{o}}\text{lder}$ 不等式：设 $p>1, \dfrac{1}{p}+\dfrac{1}{q}=1, f \in L^{p}[a, b], g \in L^{q}[a, b]$，那么 $f(t) g(t)$ 在 $[a, b]$ 上 $L$ 可积，并且 ${\displaystyle \int_{a}^{b}|f(t) g(t)| \mathrm{d} t \leqslant\|f\|_{p}\|g\|_{q}}$
+        2. $\text{Minkowski}$ 不等式：设 $p \geqslant 1, f, g \in L^{p}[a, b]$，那么 $f+g \in L^{p}[a, b]$，并且不等式 $\|f+g\|_{p} \leqslant\|f\|_{p}+\|g\|_{p}$ 成立
