@@ -71,3 +71,18 @@
         2. 任何可分 $\text{Hilbert}$ 空间必和某个 $\mathbf{R}^{n}\left(\mathbf{C}^{n}\right)$ 或 $l^{2}$ 同构
 
 ### 1.3.2 Hilbert 空间的算子
+1. 自伴算子：设 $T$ 为 $\text{Hilbert}$ 空间 $X$ 到 $X$ 中的有界线性算子，若 $T=T^{*}$，则称 $T$ 为 $X$ 上的自伴算子
+    1. 设 $T$ 为复 $\text{Hilbert}$ 空间 $X$ 上有界线性算子，则 $T$ 为自伴算子的充要条件为对一切 $x \in X$，$\langle T x, x\rangle$ 是实数
+    2. 设 $T_{1}$ 和 $T_{2}$ 是 $\text{Hilbert}$ 空间 $X$ 上两个自伴算子，则 $T_{1} T_{2}$ 自伴的充要条件为 $T_{1} T_{2}=T_{2} T_{1}$
+    3. 设 $\left\{T_{n}\right\}$ 是 $\text{Hilbert}$ 空间 $X$ 上一列自伴算子，并且 ${\displaystyle \lim _{n \rightarrow \infty} T_{n}=T}$，那么 $T$ 仍为 $X$ 上自伴算子
+2. 酉算子：设 $T$ 为 $\text{Hilbert}$ 空间 $X$ 到 $X$ 中的有界线性算子，若 $T$ 是 $X$ 到 $X$ 上的一对一映射，且 $T^{*}=T^{-1}$，则称 $T$ 为 $X$ 上的酉算子
+    1. 设 $U$ 及 $V$ 是 $\text{Hilbert}$ 空间 $X$ 上两个酉算子
+        1. $U$ 是保范算子，即对任何 $x \in X$，成立 $\|U x\|=\|x\|$
+        2. 当 $X \neq\{0\}$ 时，$\|U\|=1$
+        3. $U^{-1}$ 是酉算子
+        4. $U V$ 是酉算子
+        5. 若 $U_{n}, n=1,2, \cdots$ 是 $X$ 上一列酉算子，且 $\left\{U_{n}\right\}$ 收敛于有界算子 $A$，则 $A$ 也为酉算子
+    2. 设 $T$ 为复 $\text{Hilbert}$ 空间 $X$ 上有界线性算子，那么 $T$ 是酉算子的充要条件为 $T$ 是映射到上的保范算子
+3. 正规算子：设 $T$ 为 $\text{Hilbert}$ 空间 $X$ 到 $X$ 中的有界线性算子，若 $T T^{*}=T^{*} T$，则称 $T$ 为 $X$ 上的正规算子
+    1. 设 $T$ 是复 $\text{Hilbert}$ 空间 $X$ 上有界线性算子，$A+\mathrm{i} B$ 为 $T$ 的笛卡儿分解，则 $T$ 为正规算子的充要条件为 $A B=B A$
+    2. 设 $T$ 为复 $\text{Hilbert}$ 空间 $X$ 上有界线性算子，则 $T$ 为正规算子的充要条件为对任何 $x \in X$，有 $\left\|T^{*} x\right\|=\|T x\|$
