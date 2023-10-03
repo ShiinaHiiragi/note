@@ -13,6 +13,7 @@
     3. 导出距离：令 $d(x, y)=\|x-y\| \ (x, y \in X)$，则 $d$ 是 $X$ 上的距离且 $\left\{x_{n}\right\}$ 依范数收敛于 $x$ 等价于 $\left\{x_{n}\right\}$ 按距离 $d$ 收敛于 $x$，称 $d$ 为由范数 $\|\cdot\|$ 导出的距离
         1. 赋范线性空间是一种特殊的度量空间
         2. 对任意数 $\alpha$ 和向量 $x, y \in X$，有 $d(x-y, 0)=d(x, y)$ 及 $d(\alpha x, 0)=|\alpha| d(x, 0)$
+    4. 商空间：设 $X$ 是赋范线性空间，$V$ 是 $X$ 中的闭子空间．定义 $X$ 上的一个等价关系 $\sim$ 如下．设 $x_{1}, x_{2} \in X, x_{1} \sim x_{2}$ 表示 $x_{1}-x_{2} \in V$．对 $x \in X$，以 $[x]=\{y \in X: x \sim y, y \in X\}$ 表示 $x$ 的等价类并记 $X / V=\{[x]: x \in X\}$．$X / V$ 称为 $X$ 以 $V$ 为模的商空间，在 $X / V$ 中定义加法和数乘为 $[x]+[y]=[x+y], \alpha[x]=[\alpha x]$，任意 $x, y \in X, \alpha$ 为数．定义 $X / V$ 上的非负函数 $\|[x]\|=\inf \{\|x+v\|: v \in V\}$，任意 $x \in X$
 
 2. 设 $\left(R_{1},\|\cdot\|_{1}\right)$ 和 $\left(R_{2},\|\cdot\|_{2}\right)$ 是两个赋范线性空间．如果存在从 $R_{1}$ 到 $R_{2}$ 上的映射 $\varphi$ 满足条件：对任意 $x, y \in R_{1}$ 及数 $\alpha, \beta$ 都有 $\varphi(\alpha x+\beta y)=\alpha \varphi(x)+\beta \varphi(y)$ 以及正数 $c_{1}, c_{2}$，使得对一切 $x \in R_{1}$ 都有 ${\displaystyle c_{1}\|\varphi(x)\|_{2} \leqslant\|x\|_{1} \leqslant c_{2}\|\varphi(x)\|_{2}}$，则称 $\left(R_{1},\|\cdot\|_{1}\right)$ 和 $\left(R_{2},\|\cdot\|_{2}\right)$ 这两个赋范空间是拓扑同构的
     1. 设 $X$ 是 $n$ 维赋范线性空间，$\left\{e_{1}, e_{2}, \cdots, e_{n}\right\}$ 是 $X$ 的一组基，则存在常数 $M$ 和 $M^{\prime}$，使得对一切 ${\displaystyle x=\sum_{k=1}^{n} \xi_{k} e_{k}}$ 成立
