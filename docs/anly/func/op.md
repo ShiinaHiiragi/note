@@ -46,17 +46,5 @@
 2. 共轭代数：设 $X$ 是赋范线性空间，令 $X^{\prime}$ 表示 $X$ 上连续线性泛函全体所成的空间，称为 $X$ 的共轭空间
     1. 设 $X$ 和 $Y$ 是两个赋范线性空间，$T$ 是 $X$ 到 $Y$ 中的线性算子且对所有 $x \in X$ 有 $\|T x\|=\|x\|$，则称 $T$ 是 $X$ 到 $Y$ 中的保距算子，如果 $T$ 又是映射到 $Y$ 上的，则称 $T$ 是同构映射，此时称 $X$ 与 $Y$ 同构
     2. 任何赋范线性空间的共轭空间是 $\text{Banach}$ 空间
-3. $\text{Hilbert}$ 空间上的连续线性泛函
-    1. $\text{Riesz}$ 定理：设 $X$ 是 $\text{Hilbert}$ 空间，$f$ 是 $X$ 上连续线性泛函，那么存在唯一的 $z \in X$，使对每个 $x \in X$，有 $f(x)=\langle x, z\rangle$ 且 $\|f\|=\|z\|$
-    2. 对每个 $y \in X$，令 $T y=f_{y}$，其中 $f_{y}$ 为 $X$ 上连续线性泛函 $f_{y}(x)=\langle x, y\rangle, x \in X$，$T$ 是 $X$ 到 $X^{\prime}$ 上的映射，其中 $X^{\prime}$ 表示 $X$ 上连续线性泛函全体所成的 $\text{Banach}$ 空间．称满足 $T(\alpha x+\beta y)=\overline{\alpha} T x+\overline{\beta} T y$ 的映射 $T$ 是复共轭线性映射
-        1. 映射 $T y=f_{y}$ 是 $X$ 到 $X^{\prime}$ 上保持范数不变的复共轭线性映射，称为复共轭同构映射
-        2. 若存在 $\text{Hilbert}$ 空间 $X$ 到 $\widetilde{X}$ 上的复共轭同构映射，则称 $X$ 与 $\widetilde{X}$ 是复共轭同构，并不加以区别视为同一，写成 $X=\widetilde{X}$
-        3. 当 $X$ 是 $\text{Hilbert}$ 空间时，$X=X^{\prime}$，即 $X$ 是息共轭的
-    3. 设 $X$ 和 $Y$ 是两个 $\text{Hilbert}$ 空间，$A \in \mathscr{B}(X, Y)$，那么存在唯一的 $A^{*} \in \mathscr{B}(Y$, $X)$，使得对任何 $x \in X$ 及 $y \in Y$，有 $\langle A x, y\rangle=\left\langle x, A^{*} y\right\rangle$ 且 $\left\|A^{*}\right\|=\|A\|$．称算子 $A^{*}$ 为 $A$ 的 $\text{Hilbert}$ 共轭算子，或简称为共轭算子
-        1. $(A+B)^{*}=A^{*}+B^{*}$
-        2. $(\alpha A)^{*}=\alpha A^{*}$
-        3. $\left(A^{*}\right)^{*}=A$
-        4. $\left\|A^{*} A\right\|=\left\|A A^{*}\right\|=\|A\|^{2}$，由此可知 $A^{*} A=0$ 等价于 $A=0$
-        5. 当 $X=Y$ 时，$(A B)^{*}=B^{*} A^{*}$
 
 ## 2.3 谱
