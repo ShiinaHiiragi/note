@@ -29,3 +29,5 @@
     5. $L^{p}[a, b]$ 空间：设 $f(t)$ 是 $[a, b]$ 上复值可测函数，$p>0$．如果 $|f(x)|^{p}$ 是 $[a, b]$ 上 $L$ 可积函数，则称 $f(t)$ 是 $[a, b]$ 上 $p$ 方可积函数，记 $[a, b]$ 上 $p$ 方可积函数全体为 $L^{p}[a, b]$．在空间 $L^{p}[a, b]$ 中，将两个 $\text{a.e.}$相等的函数视为 $L^{p}[a, b]$ 中同一个元素而不加以区别．对每个 $f \in L^{p}[a, b]$，定义 ${\displaystyle \|f\|_{p}=\left(\int_{a}^{b}|f(t)|^{p} \mathrm{d} t\right)^{\frac{1}{p}}}$，则当 $p \geqslant 1$ 时，$L^{p}[a, b]$ 按 $\|\cdot\|_{p}$ 成为 $\text{Banach}$ 空间
         1. $\text{H}\mathrm{\ddot{o}}\text{lder}$ 不等式：设 $p>1, \dfrac{1}{p}+\dfrac{1}{q}=1, f \in L^{p}[a, b], g \in L^{q}[a, b]$，那么 $f(t) g(t)$ 在 $[a, b]$ 上 $L$ 可积，并且 ${\displaystyle \int_{a}^{b}|f(t) g(t)| \mathrm{d} t \leqslant\|f\|_{p}\|g\|_{q}}$
         2. $\text{Minkowski}$ 不等式：设 $p \geqslant 1, f, g \in L^{p}[a, b]$，那么 $f+g \in L^{p}[a, b]$，并且不等式 $\|f+g\|_{p} \leqslant\|f\|_{p}+\|g\|_{p}$ 成立
+
+## 1.3 Hilbert 空间
