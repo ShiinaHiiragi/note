@@ -210,7 +210,7 @@
     4. 直线：设 $\mathscr A$ 是一个仿射空间，由点 $M \in \mathscr A$ 与一个非零向量 $\boldsymbol \alpha$ 给出的直线定义为使得 $\overrightarrow{PM}$ 与 $\boldsymbol \alpha$ 共线的点 $P \in \mathscr A$ 的集合．称 $\boldsymbol \alpha$ 为直线的方向向量，任意与直线的方向向量垂直的向量称为直线 $l$ 的法向量
         1. 任何与 $\boldsymbol \alpha$ 共线的向量称其与直线平行，则所有平行于一条直线的向量形成一个 $1$ 维线性空间
         2. 通过仿射空间中的任意两个不同的点 $M_1, M_2$ 有且仅有一条直线，记作 $M_1M_2$
-        3. 称集合 $\{M \mid \overrightarrow{M_1M} = t\overrightarrow{M_1M_2}, t \in [0, 1]\}$ 为以 $M_1, M_2$ 为端点的线段，记作 $\overline{M_1M_2}$
+        3. 称集合 $\{M \mid \overrightarrow{M_1M} = t\overrightarrow{M_1M_2}, t \in [0, 1]\}$ 为以 $M_1, M_2$ 为端点的线段，记作 $\overline{M_1M_2}$．设 $M \subseteq \mathscr A$，对 $M$ 中的任意两点 $M_1, M_2$，必有 $\overline{M_1M_2} \subseteq \mathscr A$，则称 $M$ 为 $\mathscr A$ 中的凸集
 
 ## 2.4 Euclid 几何
 ### 2.4.1 Euclid 几何与 Euclid 坐标

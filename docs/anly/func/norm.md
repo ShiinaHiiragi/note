@@ -31,3 +31,15 @@
         2. $\text{Minkowski}$ 不等式：设 $p \geqslant 1, f, g \in L^{p}[a, b]$，那么 $f+g \in L^{p}[a, b]$，并且不等式 $\|f+g\|_{p} \leqslant\|f\|_{p}+\|g\|_{p}$ 成立
 
 ## 1.3 Hilbert 空间
+### 1.3.1 规范正交系
+1. $\text{Hilbert}$ 空间：设 $X$ 是 $\text{Euclid}$ 线性空间，对于任意 $x \in X$，令 $\|x\| = \sqrt{\left<x, x\right>}$，称 $\|\cdot\|$ 为由内积导出的范数．若 $X$ 按范数 $\|\cdot\|$ 完备，则称 $X$ 为 $\text{Hilbert}$ 空间
+    1. 正交投影：设 $Y$ 是 $\text{Hilbert}$ 空间 $X$ 的闭子空间，那么有 $X=Y \ \dot{+} \ Y^{\perp}$．于是当 $Y$ 是 $\text{Hilbert}$ 空间 $X$ 的闭子空间时，对每个 $x \in X$，存在唯一 $y \in Y$ 及 $z \in Y^{\perp}$ 使得 $x=y \oplus z$，称 $y$ 为 $x$ 在空间 $Y$ 上的正交投影，简称为投影
+    2. 投影算子：定义 $X$ 到 $Y$ 上的映射 $P x=y$ 对任意 $x \in X$ 成立，其中 $y$ 是 $x$ 在 $Y$ 上的投影，称 $P$ 为 $X$ 到 $Y$ 上的投影算子
+        1. $P$ 是 $X$ 到 $Y$ 上的有界线性算子，且当 $Y \neq\{0\}$ 时，$\|P\|=1$
+        2. $P X=Y, P Y=Y, P Y^{\perp}=\{0\}$
+        3. $P^{2}=P$，其中 $P^{2}=P P$
+    3. 设 $Y$ 是 $\text{Hilbert}$ 空间 $X$ 的闭子空间，则有 $Y=Y^{\perp \perp}$
+    4. 设 $M$ 是 $\text{Hilbert}$ 空间 $X$ 中非空子集，则 $\operatorname{span} M$ 在 $X$ 中稠密的充要条件为 $M^{\perp}=\{0\}$
+2. 规范正交系
+
+### 1.3.2 Hilbert 空间的算子
