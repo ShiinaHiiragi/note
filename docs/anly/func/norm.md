@@ -40,6 +40,22 @@
 5. 一致有界性定理：设 $X$ 是 $\text{Banach}$ 空间，$Y$ 是赋范空间，$\mathscr{B}$，$(X, Y)$ 表示 $X$ 到 $Y$ 中的有界线性算子全体，$T_{n} \in \mathscr{B}(X, Y)$．若对每个 $x \in X$，$\left\{\left\|T_{n} x\right\|\right\}$ 有界，即 $\left\|T_{n} x\right\| \leqslant C_{x}$（其中 $C_{x}$ 是一与 $x$ 有关的实数），则 $\left\{T_{n}\right\}$ 一致有界，即存在与 $x$ 无关的实数 $C$，使得对一切正整数 $n$，有 $\left\|T_{n}\right\| \leqslant C$．该定理也称作共鸣定理
     1. 设 $\left\{f_{n}\right\}$ 是 $\text{Banach}$ 空间 $X$ 上的一列泛函，如果 $\left\{f_{n}\right\}$ 在 $X$ 的每点 $x$ 处有界，那么 $\left\{f_{n}\right\}$ 一致有界
     2. 存在一个实值的连续函数，其 $\text{Fourier}$ 级数在给定的 $t_{0}$ 处是发散的
+6. 设 $T_{n}$ 是由 $\text{Banach}$ 空间 $X$ 到 $\text{Banach}$ 空间 $Y$ 中的有界线性算子序列，则 $\left\{T_{n}\right\}$ 强收敛的充要条件是 ① $\left\{\left\|T_{n}\right\|\right\}$ 有界；② 对 $X$ 中一稠密子集 $D$ 中的每个 $x$，$\left\{T_{n} x\right\}$ 都收敛
+    1. 设 $X$ 是赋范线性空间，$x_{n} \in X, n=1,2, \cdots$，如果存在 $x \in X$，使得 ${\displaystyle \lim_{n \rightarrow \infty} \left\|x_{n}-x\right\| \rightarrow 0}$，则称点列 $\left\{x_{n}\right\}$ 强收敛于 $x$，如果对任意的 $f \in X^{\prime}$，都有 $f\left(x_{n}\right) \rightarrow f(x)(n \rightarrow \infty)$，则称点列 $\left\{x_{n}\right\}$ 弱收敛于 $x$．强收敛必定弱收敛，反之则不一定成立
+    2. 设 $X$ 是赋范线性空间，$X^{\prime}$ 是 $X$ 的共轭空间，泛函列 $f_{n} \in X^{\prime}(n=1,2, \cdots)$，如果存在 $f \in X^{\prime}$，使得
+        1. $\left\|f_{n}-f\right\| \rightarrow 0 \ (n \rightarrow \infty)$，则称 $\left\{f_{n}\right\}$ 强收敛于 $f$
+        2. 对任意 $x \in X$，都有 $| f_{n}(x)-f(x)| \to 0 \ (n \rightarrow \infty)$，则称 $\left\{f_{n}\right\}$ 弱收敛于 $f$
+        3. 若对任意的 $F \in\left(X^{\prime}\right)^{\prime}$，都有 $F\left(f_{n}\right) \rightarrow F(f) \ (n \rightarrow \infty)$，则称 $\left\{f_{n}\right\}$ 弱收敛于 $f$
+    3. 设 $X$ 和 $Y$ 是两个赋范线性空间，$\mathscr{B}(X, Y)$ 表示 $X$ 到 $Y$ 中的有界线性算子全体所成的空间，$T_{n} \in \mathscr{B}(X, Y)$，若存在 $T \in \mathscr{B}(X, Y)$，使得
+        1. $\left\|T_{n}-T\right\| \rightarrow 0 \ (n \rightarrow \infty)$，则称算子列 $\left\{T_{n}\right\}$ 一致收敛于 $T$
+        2. 对任意的 $x \in X,\left\|T_{n} x-T x\right\| \rightarrow 0 \ (n \rightarrow \infty)$，则称 $\left\{T_{n}\right\}$ 强收敛于 $T$
+        3. 对任意 $x \in X$ 和任意的 $f \in Y^{\prime}, f\left(T_{n} x\right) \rightarrow f(T x) \ (n \rightarrow \infty)$，则称 $\left\{T_{n}\right\}$ 弱收敛于 $T$
+7. 逆算子定理：设 $X$ 和 $Y$ 都是 $\text{Banach}$ 空间，如果 $T$ 是从 $X$ 到 $Y$ 上的一对一有界线性算子，则 $T$ 的逆算子 $T^{-1}$ 也是有界线性算子
+    1. 开映射定理：设 $X$ 和 $Y$ 是两个度量空间，$f$ 是 $X$ 到 $Y$ 的映射，若 $f$ 将 $X$ 中的开集映射成 $Y$ 中的开集，则称 $f$ 是开映射．若 $X$ 和 $Y$ 是两个 $\text{Banach}$ 空间，$T$ 是 $X$ 到 $Y$ 上的有界线性映射，则 $T$ 是开映射
+    2. 设在线性空间 $X$ 上有两个范数 $\|\cdot\|_{1}$ 和 $\|\cdot\|_{2}$，如果 $X$ 关于这两个范数都成为 $\text{Banach}$ 空间，而且范数 $\|\cdot\|_{2}$ 关于范数 $\|\cdot\|_{1}$ 连续，那么范数 $\|\cdot\|_{1}$ 也必关于 $\|\cdot\|_{2}$ 连续
+8. 闭图像定理：设 $X$ 和 $Y$ 是 $\text{Banach}$ 空间，$T$ 是 $\mathscr{D}(T) \subseteq X$ 到 $Y$ 中闭线性算子．如果 $\mathscr{D}(T)$ 是闭的，则 $T$ 是有界算子
+    1. 设 $X$ 和 $Y$ 是赋范空间，$T$ 是 $X$ 的子空间 $\mathscr{D}(T)$ 到 $Y$ 的线性算子，称 $X \times Y$ 的集合 $G(T)=\{(x, y): x \in \mathscr{D}(T), y=T x\}$ 为算子 $T$ 的图像
+    2. 在 $X \times Y$ 中，定义 $\|(x, y)\|=\|x\|+\|y\|$，易知 $X \times Y$ 按 $\|(x, y)\|$ 成为赋范线性空间．如果 $G(T)$ 是 $X \times Y$ 中的闭集，则称 $T$ 是闭算子
 
 ## 1.3 Hilbert 空间
 ### 1.3.1 规范正交系
