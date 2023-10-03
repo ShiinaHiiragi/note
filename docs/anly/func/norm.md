@@ -46,11 +46,28 @@
         1. 设 $X$ 是 $\text{Euclid}$ 线性空间，$M$ 是 $X$ 中规范正交系，任取 $M$ 中有限个向量 $e_{1}, e_{2}, \cdots$, $e_{n}$，那么有
             - ${\displaystyle \left\|x-\sum_{i=1}^{n}\left\langle x, e_{i}\right\rangle e_{i}\right\|^{2}=\|x\|^{2}-\sum_{i=1}^{n}\left|\left\langle x, e_{i}\right\rangle\right|^{2} \geqslant 0}$
             - ${\displaystyle \left\|x-\sum_{i=1}^{n} \alpha_{i} e_{i}\right\| \geqslant\left\|x-\sum_{i=1}^{n}\left\langle x, e_{i}\right\rangle e_{i}\right\|}$，其中 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$ 为任意 $n$ 个数
-        2. $\text{Bessel}$ 不等式：设 $\left\{e_{k}\right\}$ 是 $\text{Euclid}$ 线性空间 $X$ 中至多可数的规范正交系，则对每个 $x \in X$，有 ${\displaystyle \sum_{i=1}^{\infty}\left|\left\langle x, e_{i}\right\rangle\right|^{2} \leqslant\|x\|^{2}}$
+        2. $\text{Bessel}$ 不等式：设 $\left\{e_{k}\right\}$ 是 $\text{Euclid}$ 线性空间 $X$ 中至多可数的规范正交系，则对每个 $x \in X$，有 ${\displaystyle \sum_{i=1}^{\infty}\left|\left\langle x, e_{i}\right\rangle\right|^{2} \leqslant\|x\|^{2}}$．若 $\text{Bessel}$ 不等式中等号成立，则称此等式为 $\text{Parseval}$ 等式
         3. 设 $\left\{e_{k}\right\}$ 为 $\text{Hilbert}$ 空间 $X$ 中的有限或可数规范正交系
             - 级数 ${\displaystyle \sum_{i=1}^{\infty} \alpha_{i} e_{i}}$ 收敛的充要条件为级数 ${\displaystyle \sum_{i=1}^{\infty}\left|\alpha_{i}\right|^{2}}$ 收敛
             - 若 ${\displaystyle x=\sum_{i=1}^{\infty} \alpha_{i} e_{i}}$，则 $\alpha_{i}=\left\langle x, e_{i}\right\rangle, i=1,2, \cdots$，故 ${\displaystyle x=\sum_{i=1}^{\infty}\left\langle x, e_{i}\right\rangle e_{i}}$
             - 对任何 $x \in X$，级数 ${\displaystyle \sum_{i=1}^{\infty}\left\langle x, e_{i}\right\rangle e_{i}}$ 收敛
-    3. 完全规范正交系
+    3. 完全规范正交系：设 $M$ 是 $\text{Euclid}$ 线性空间 $X$ 中的规范正交系，如果 $\overline{\operatorname{span} M}=X$，则称 $M$ 是 $X$ 中的完全规范正交系
+        1. 设 $M$ 是 $\text{Hilbert}$ 空间 $X$ 中规范正交系，那么 $M$ 完全的充要条件为 $M^{\perp}= \{0\}$
+        2. $M$ 是 $\text{Hilbert}$ 空间中完全规范正交系的充要条件为对所有 $x \in X$，成立 $\text{Parseval}$ 等式
+        3. $\text{Gram}-\text{Schmidt}$ 正交化：设 $\left\{x_{1}, x_{2}, \cdots\right\}$ 是 $\text{Euclid}$ 线性空间 $X$ 中有限或可数个线性无关向量，那么必有 $X$ 中规范正交系 $\left\{e_{1}, e_{2} \cdots\right\}$，使对任何正整数 $n$，有 ${\displaystyle \operatorname{span}\left\{e_{1}, e_{2}, \cdots, e_{n}\right\}=\operatorname{span}\left\{x_{1}, x_{2}, \cdots, x_{n}\right\}}$
+        4. 每个非零 $\text{Hilbert}$ 空间必有完全规范正交系
+    4. 设 $X$ 和 $\widetilde{X}$ 是两个 $\text{Euclid}$ 线性空间，若存在 $X$ 到 $\widetilde{X}$ 上的映射 $T$，使对任何 $x, y \in X$ 及数 $\alpha, \beta$，满足
+
+        $$
+        \begin{aligned}
+        T(\alpha x+\beta y)&=\alpha T x+\beta T y \\
+        \langle T x, T y\rangle&=\langle x, y\rangle
+        \end{aligned}
+        $$
+
+        则称 $X$ 和 $\widetilde{X}$ 同构，并称 $T$ 为 $X$ 到 $\widetilde{X}$ 上的同构映射
+
+        1. 两个 $\text{Hilbert}$ 空间 $X$ 与 $\widetilde{X}$ 同构的充要条件是 $X$ 与 $\widetilde{X}$ 具有相同的 $\text{Hilbert}$ 维数
+        2. 任何可分 $\text{Hilbert}$ 空间必和某个 $\mathbf{R}^{n}\left(\mathbf{C}^{n}\right)$ 或 $l^{2}$ 同构
 
 ### 1.3.2 Hilbert 空间的算子
