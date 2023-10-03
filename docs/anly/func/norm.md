@@ -21,7 +21,7 @@
     3. 任何有限维赋范空间都和同维数 $\text{Euclid}$ 空间（或某个 $\mathbf{C}^{n}$）拓扑同构，同数域上的相同维数的有限维赋范空间彼此拓扑同构
 
 ## 1.2 Banach 空间
-- $\text{Banach}$ 空间：完备的赋范线性空间．$\text{Banach}$ 空间实例如下
+1. $\text{Banach}$ 空间：完备的赋范线性空间．$\text{Banach}$ 空间实例如下
     1. $\text{Euclid}$ 空间 $\mathbf R^n$：对每个 $x=\left(\xi_{1}, \xi_{2}, \cdots, \xi_{n}\right) \in \mathbf{R}^{n}$，定义 $\|x\|=\sqrt{\left|\xi_{1}\right|^{2}+\left|\xi_{2}\right|^{2}+\cdots+\left|\xi_{n}\right|^{2}}$
     2. $C[a, b]$ 空间：记闭空间 $[a, b]$ 上实值（或复值）连续函数全体为 $C[a, b]$．对每个 $x \in C[a, b]$，定义 ${\displaystyle \|x\| = \max_{a \leqslant t \leqslant b} |x(t)|}$
     3. $l^{p}$ 空间：记 ${\displaystyle l^{p} = \left\{x=\{x_k\}: \sum_{k=1}^{\infty} x_{k}^{p} < \infty\right\}}$．对每个 $x=\left(\xi_{1}, \xi_{2}, \cdots\right) \in l^{\infty}$，定义 ${\displaystyle \|x\|_{p}=\left(\sum_{i=1}^{\infty}\left|\xi_{i}\right|^{p}\right)^{\frac{1}{p}}}$
@@ -29,6 +29,11 @@
     5. $L^{p}[a, b]$ 空间：设 $f(t)$ 是 $[a, b]$ 上复值可测函数，$p>0$．如果 $|f(x)|^{p}$ 是 $[a, b]$ 上 $L$ 可积函数，则称 $f(t)$ 是 $[a, b]$ 上 $p$ 方可积函数，记 $[a, b]$ 上 $p$ 方可积函数全体为 $L^{p}[a, b]$．在空间 $L^{p}[a, b]$ 中，将两个 $\text{a.e.}$相等的函数视为 $L^{p}[a, b]$ 中同一个元素而不加以区别．对每个 $f \in L^{p}[a, b]$，定义 ${\displaystyle \|f\|_{p}=\left(\int_{a}^{b}|f(t)|^{p} \mathrm{d} t\right)^{\frac{1}{p}}}$，则当 $p \geqslant 1$ 时，$L^{p}[a, b]$ 按 $\|\cdot\|_{p}$ 成为 $\text{Banach}$ 空间
         1. $\text{H}\mathrm{\ddot{o}}\text{lder}$ 不等式：设 $p>1, \dfrac{1}{p}+\dfrac{1}{q}=1, f \in L^{p}[a, b], g \in L^{q}[a, b]$，那么 $f(t) g(t)$ 在 $[a, b]$ 上 $L$ 可积，并且 ${\displaystyle \int_{a}^{b}|f(t) g(t)| \mathrm{d} t \leqslant\|f\|_{p}\|g\|_{q}}$
         2. $\text{Minkowski}$ 不等式：设 $p \geqslant 1, f, g \in L^{p}[a, b]$，那么 $f+g \in L^{p}[a, b]$，并且不等式 $\|f+g\|_{p} \leqslant\|f\|_{p}+\|g\|_{p}$ 成立
+2. $\text{Hahn}-\text{Banach}$ 泛函延拓定理：设 $X$ 是实线性空间，$p(x)$ 是 $X$ 上次线性泛函．若 $f$ 是 $X$ 的子空间 $Z$ 上的实线性泛函，且被 $p(x)$ 控制，即满足 $f(x) \leqslant p(x), x \in Z$，则存在 $X$ 上的实线性泛函 $\widetilde{f}$，使当 $x \in Z$ 时，有 $\widetilde{f}(x)=f(x)$，并且在整个空间 $X$ 上仍被 $p(x)$ 控制 $\widetilde{f}(x) \leqslant p(x), x \in X$
+    1. 设 $X$ 是实或复的线性空间，$p(x)$ 是 $X$ 上次线性泛函，$f(x)$ 是定义在 $X$ 的子空间 $Z$ 上的实或复的线性泛函，且满足 $|f(x)| \leqslant p(x), x \in Z$，则存在 $X$ 上线性泛函 $\widetilde{f}$ 是 $f$ 的延拓，且满足 $|\widetilde{f}(x)| \leqslant p(x), x \in X$
+    2. 设 $f$ 是赋范空间 $X$ 的子空间 $Z$ 上的连续线性泛函，则必存在 $X$ 上连续线性泛函 $\widetilde{f}$ 是 $f$ 的保范延拓，即当 $x \in Z$ 时，有 $\widetilde{f}(x)=f(x)$ 且 $\|\widetilde{f}\|_{x}=\|f\|_{z}$
+    3. 设 $X$ 是赋范线性空间，$x_{0} \in X, x_{0} \neq 0$，则必存在 $X$ 上的有界线性泛函 $f(x)$，使得 $\|f\|=1$，并且 $f\left(x_{0}\right)=\left\|x_{0}\right\|$
+3. $\text{Riesz}$ 表示定理：$C[a, b]$ 上每一个连续线性泛函 $F$ 都可以表示成为 ${\displaystyle F(f)=\int_{a}^{b} f(t) \mathrm{d} g(t), f \in C[a, b]}$，其中 $g(t)$ 是 $[a, b]$ 上有界变差函数，并且 $\|F\|=\underset{a}{\stackrel{b}{\large \textbf{V} \normalsize}}(g)$
 
 ## 1.3 Hilbert 空间
 ### 1.3.1 规范正交系
