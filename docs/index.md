@@ -398,8 +398,7 @@ const refList = [
         page: [1, 221],
         year: 2019,
         press: "高等教育出版社",
-        locate: "北京",
-        plot: 203
+        locate: "北京"
     },
     {
         author: ["汪嘉冈"],

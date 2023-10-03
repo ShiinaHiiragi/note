@@ -55,4 +55,74 @@
 
     称 $X$ 上满足上述两个条件的泛函为次线性泛函
 
-## 2.3 谱
+## 2.3 谱论
+### 2.3.1 谱的概念与分类
+1. 正则算子：设 $X$ 是赋范线性空间，$T \in \mathscr{B}(X)$．若 $T^{-1}$ 存在且是定义在整个 $X$ 上的有界线性算子，则称 $T$ 是 $X$ 上的正则算子
+    1. $T$ 是正则算子的充要条件是存在有界算子 $B \in \mathscr{B}(X)$，使得 $B T=T B=I$，其中 $I$ 是恒等算子
+    2. 若 $A, B$ 是正则算子，则 $T=A B$ 也是正则算子，且 $(A B)^{-1}=B^{-1} A^{-1}$
+2. 谱的概念：设 $T \in \mathscr{B}(X)$，$\lambda$ 是一复数．若 $(T-\lambda I)$ 正则，则称 $\lambda$ 是算子 $T$ 的正则点，$T$ 的正则点全体称为 $T$ 的正则集或豫解集，记为 $\rho(T)$．不是正则点的复数称为 $T$ 的谱点，其全体构成 $T$ 的谱，记为 $\sigma(T)$
+3. 谱的分类：设 $\lambda \in \sigma(T)$，即 $T-\lambda I$ 不存在有界逆算子，可分三种情况
+    1. 如果 $T-\lambda I$ 不是一对一，此时存在 $x \in X, x \neq 0$，使 $(T-\lambda I) x=0$，即 $T x=\lambda x$，这时称 $\lambda$ 是算子 $T$ 的特征值，$x$ 称为相应于特征值 $\lambda$ 的特征向量，$T$ 的特征值全体称为 $T$ 的点谱，记为 $\sigma_{p}(T)$
+    2. $(T-\lambda I)$ 是一对一的，但值域不充满全空间
+    3. $(T-\lambda I)$ 是 $X$ 到 $X$ 上的一对一算子，但 $(T-\lambda I)^{-1}$ 不是有界的
+
+### 2.3.2 有界线性算子的谱
+设 $X$ 为 $\text{Banach}$ 空间
+
+1. 设 $T \in \mathscr{B}(X),\|T\|<1$，则 $1 \in \rho(T)$．这时 $I-T$ 有定义在全空间上的有界逆算子
+
+    $$
+    (I-T)^{-1}=\sum_{k=0}^{\infty} T^{k}=I+T+T^{2}+\cdots+T^{k}+\cdots
+    $$
+
+    这里的级数按 $\mathscr{B}(X)$ 中范数收敛
+
+2. 谱集的闭性：设 $T \in \mathscr{B}(X)$，则 $\rho(T)$ 是开集，$\sigma(T)$ 是闭集
+3. 设 $T \in \mathscr{B}(X)$，则 $\sigma(T)$ 是 $\mathbf{C}$ 中的非空有界闭集，且当 $\lambda \in \sigma(T)$ 时，有 $|\lambda| \leqslant\|T\|$
+
+### 2.3.3 全连续算子的谱
+1. 全连续算子：设 $X$ 和 $Y$ 是赋范线性空间，$T$ 是 $X$ 到 $Y$ 的线性算子．如果对 $X$ 的任何有界子集 $M$，$T M$ 都是 $Y$ 中相对紧集，则称 $T$ 为全连续算子，亦称紧算子
+    1. 设 $X$ 是度量空间，$M$ 是 $X$ 中子集．若 $\overline{M}$ 是 $X$ 中紧集，则称 $M$ 为 $X$ 中的相对紧集
+    2. 设 $\left\{T_{n}\right\}$ 是 $X$ 到 $Y$ 上的全连续算子列，$Y$ 是 $\text{Banach}$ 空间，而且 $\left\|T-T_{n}\right\| \rightarrow 0 \ (n \rightarrow \infty)$，则 $T$ 也是全连续算子
+2. 设 $\left\{e_{k}\right\}$ 为 $H$ 的任意一组规范正交基，定义 $\mathscr{J}(H)$ 上的线性泛函 $\tau$ 为 ${\displaystyle \tau(T)=\sum_{k=1}^{\infty}\left\langle T e_{k}, e_{k}\right\rangle}$，任意 $T \in \mathscr{J}(H)$．当 $H=\mathrm{C}^{n}$，$A=\begin{bmatrix} a_{i j} \\ \end{bmatrix}_{n \times n}$ 为 $H$ 上的线性算子时，${\displaystyle \tau(A)=\sum_{k=1}^{n} a_{k k}}$ 是 $A$ 的迹．因而当 $H$ 是可分无限维时，也称 $\tau$ 为 $\mathscr{J}(H)$ 上的迹
+    1. 上述的迹 $\tau$ 具有下列性质
+        1. 设 $V$ 是 $H$ 中的 $n$ 维子空间，$P$ 是 $H$ 到 $V$ 的正交投影算子，则 $\tau(P)=n$
+        2. 设 $T \in \mathscr{Z}(H), B \in \mathscr{B}(H)$，则 $\tau(T B)=\tau(B T)$
+    2. 设 $A$ 是 $H$ 上的全连续算子，则对任意 $\varepsilon>0$，存在 $A_{\varepsilon} \in \mathscr{J}(H)$ 使得 $\left\|A-A_{\varepsilon}\right\|<\varepsilon$
+    3. 设 $A$ 是全连续算子，$I$ 为 $H$ 上的单位算子
+        1. $\mathscr{R}(I+A)$ 闭且 $\operatorname{dim} \mathscr{N}(I+A)<\infty, \operatorname{dim} \mathscr{N}\left(I+A^{*}\right)<\infty$
+        2. $\mathscr{N}(I+A)=\{0\} \rightarrow \mathscr{N}\left(I+A^{*}\right)=\{0\}$
+3. $\text{Riesz}-\text{Schauder}$ 定理：设 $A$ 是 $H$ 上的全连续算子
+    1. $0 \in \sigma(A)$
+    2. 若 $\lambda \in \sigma(A) -\{0\}$，则 $\lambda \in \sigma_{p}(A)$ 且 $\operatorname{dim} \mathscr{N}(A-\lambda I)<\infty$
+    3. 若 $\left\{\lambda_{n}\right\} \subseteq \sigma_{p}(A)$ 是无限互不相同的点列，则 ${\displaystyle \lim _{n \rightarrow \infty} \lambda_{n}=0}$
+4. $\text{Hilbert}$ 定理：设 $A$ 是 $H$ 上的自伴全连续算子，$\left\{\mu_{j}\right\},\left\{\varphi_{j}\right\}$ 及 $V$ 如下所述．则对任意 $x \in H$ 有
+
+    $$
+    V^{\perp}=\mathscr{N}(A) \ ; \ A x=\sum_{j} \mu_{j}\left\langle x, \varphi_{j}\right\rangle \varphi_{j}
+    $$
+
+    1. 设 $A$ 是 $H$ 上的自伴全连续算子
+        1. 存在 $e \in H,\|e\|=1$，使得 $\|A e\|=\|A\|$
+        2. $\|A\|$ 或 $-\|A\|$ 是 $A$ 的点谱
+    2. 设 $A$ 是 $H$ 上自伴全连续算子
+        1. $\sigma(A) \subseteq \mathbf{R}$
+        2. 对 $\lambda, \mu \in \sigma_{p}(A)$ 且 $\mu \neq \lambda$，有 $\mathscr{N}(A-\lambda I) \perp \mathscr{N}(A-\mu I)$
+
+### 2.3.4 算子与指标
+1. $\text{Fredholm}$ 算子：设 $T \in \mathscr{B}(H)$．如果 $T$ 满足下列条件
+    1. $\mathscr{R}(T)$ 在 $H$ 中闭
+    2. $\operatorname{dim} \mathscr{N}(T)<\infty, \operatorname{dim} \mathscr{N}\left(T^{*}\right)<\infty$
+
+    则称 $T$ 为 $\text{Fredholm}$ 算子，以 $\operatorname{Fred}(H)$ 表示 $\mathscr{B}(H)$ 中 $\text{Fredholm}$ 算子全体．设 $T \in \mathscr{B}(H)$
+
+    1. 若 $T \in \operatorname{Fred}(H)$，则存在 $S \in \mathscr{B}(H)$ 使 $S T=I-P, T S=I-Q$，其中 $P: H \rightarrow \mathscr{N}(T), Q: H \rightarrow \mathscr{N}\left(T^{*}\right)$ 是投影算子
+    2. 若存在 $B_{1}, B_{2} \in \mathscr{B}(H)$ 及全连续算子 $K_{1}, K_{2}: H \rightarrow H$ 使得 $B_{1} T=I+K_{1}, T B_{2}=I+ K_{2}$，则 $T \in \operatorname{Fred}(H)$
+
+2. $\text{Fredholm}$ 指标：设 $T \in \operatorname{Fred}(H)$，$\operatorname{dim} \mathscr{N}(T)-\operatorname{dim} \mathscr{N}\left(T^{*}\right)$ 称为 $T$ 的 $\text{Fredholm}$ 指标，记为 $\operatorname{ind}(T)$
+    1. 设 $T \in \operatorname{Fred}(H), \tau$ 为 $\mathscr{J}(H)$ 上的迹．若存在 $B \in \mathscr{B}(H)$ 及 $F_{1}, F_{2} \in \mathscr{J}(H)$ 使得 $B T=I+F_{1}, T B=I+F_{2}$．则 $\operatorname{ind}(T)=\tau(T B-B T)$
+    2. 设 $S, T \in \operatorname{Fred}(H), G, K \in \mathscr{B}(H)$，其中 $G$ 是可逆算子，$K$ 是全连续算子
+        1. $S T \in \operatorname{Fred}(H)$ 且 $\operatorname{ind}(S T)=\operatorname{ind}(S)+\operatorname{ind}(T)$
+        2. $G+K \in \operatorname{Fred}(H)$ 且 $\operatorname{ind}(G+K)=0$
+        3. 存在 $\delta>0$，使得对任意 $C \in U(T, \delta)$ 有 $C \in \operatorname{Fred}(H)$ 且 $\operatorname{ind}(T)=\operatorname{ind}(C)$
+    3. 设 $T \in \operatorname{Fred}(H)$，$K$ 是 $H$ 上全连续算子．则 $T+K \in \operatorname{Fred}(H)$ 且 $\operatorname{ind}(T+K)=\operatorname{ind}(T)$
