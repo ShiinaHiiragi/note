@@ -34,6 +34,12 @@
     2. 设 $f$ 是赋范空间 $X$ 的子空间 $Z$ 上的连续线性泛函，则必存在 $X$ 上连续线性泛函 $\widetilde{f}$ 是 $f$ 的保范延拓，即当 $x \in Z$ 时，有 $\widetilde{f}(x)=f(x)$ 且 $\|\widetilde{f}\|_{x}=\|f\|_{z}$
     3. 设 $X$ 是赋范线性空间，$x_{0} \in X, x_{0} \neq 0$，则必存在 $X$ 上的有界线性泛函 $f(x)$，使得 $\|f\|=1$，并且 $f\left(x_{0}\right)=\left\|x_{0}\right\|$
 3. $\text{Riesz}$ 表示定理：$C[a, b]$ 上每一个连续线性泛函 $F$ 都可以表示成为 ${\displaystyle F(f)=\int_{a}^{b} f(t) \mathrm{d} g(t), f \in C[a, b]}$，其中 $g(t)$ 是 $[a, b]$ 上有界变差函数，并且 $\|F\|=\underset{a}{\stackrel{b}{\large \textbf{V} \normalsize}}(g)$
+4. $\text{Baire}$ 纲定理：若 $X$ 是非空的完备度量空间，则 $X$ 是第二纲集
+    1. 疏朗集：设 $M$ 是度量空间 $X$ 中子集，若 $M$ 不在 $X$ 任何半径不为零的开球中稠密，则称 $M$ 是 $X$ 中的无处稠密集或疏朗集
+    2. 第一纲集与第二纲集：设 $X$ 是度量空间，$M$ 是 $X$ 中子集，若 $M$ 是 $X$ 中有限个或可数个疏朗集的并集，则称 $M$ 是第一纲集，不是第一纲集的集称为第二纲集
+5. 一致有界性定理：设 $X$ 是 $\text{Banach}$ 空间，$Y$ 是赋范空间，$\mathscr{B}$，$(X, Y)$ 表示 $X$ 到 $Y$ 中的有界线性算子全体，$T_{n} \in \mathscr{B}(X, Y)$．若对每个 $x \in X$，$\left\{\left\|T_{n} x\right\|\right\}$ 有界，即 $\left\|T_{n} x\right\| \leqslant C_{x}$（其中 $C_{x}$ 是一与 $x$ 有关的实数），则 $\left\{T_{n}\right\}$ 一致有界，即存在与 $x$ 无关的实数 $C$，使得对一切正整数 $n$，有 $\left\|T_{n}\right\| \leqslant C$．该定理也称作共鸣定理
+    1. 设 $\left\{f_{n}\right\}$ 是 $\text{Banach}$ 空间 $X$ 上的一列泛函，如果 $\left\{f_{n}\right\}$ 在 $X$ 的每点 $x$ 处有界，那么 $\left\{f_{n}\right\}$ 一致有界
+    2. 存在一个实值的连续函数，其 $\text{Fourier}$ 级数在给定的 $t_{0}$ 处是发散的
 
 ## 1.3 Hilbert 空间
 ### 1.3.1 规范正交系
