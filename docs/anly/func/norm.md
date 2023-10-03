@@ -40,6 +40,17 @@
         3. $P^{2}=P$，其中 $P^{2}=P P$
     3. 设 $Y$ 是 $\text{Hilbert}$ 空间 $X$ 的闭子空间，则有 $Y=Y^{\perp \perp}$
     4. 设 $M$ 是 $\text{Hilbert}$ 空间 $X$ 中非空子集，则 $\operatorname{span} M$ 在 $X$ 中稠密的充要条件为 $M^{\perp}=\{0\}$
-2. 规范正交系
+2. 规范正交系：设 $M$ 是 $\text{Euclid}$ 线性空间 $X$ 的一个不含零的子集，若 $M$ 中向量两两正交，则称 $M$ 为 $X$ 中的正交系，又若 $M$ 中向量的范数都为 $1$，则称 $M$ 为 $X$ 中规范正交系
+    1. 部分和：设 $X$ 是赋范线性空间，$x_{i}$ 是 $X$ 中一列向量，$\alpha_{1}, \alpha_{2}, \cdots$ 是一列数，作形式级数 ${\displaystyle \sum_{i=1}^{\infty} \alpha_{i} x_{i}}$．称 ${\displaystyle S_{n}=\sum_{i=1}^{n} \alpha_{i} x_{i}}$ 为级数的 $n$ 项部分和，若存在 $x \in X$，使 $S_{n} \rightarrow x(n \rightarrow \infty)$，则称级数收敛，并称 $x$ 为这个级数的和，记为 ${\displaystyle x=\sum_{i=1}^{\infty} \alpha_{i} x_{i}}$
+    2. $\text{Fourier}$ 系数：设 $M$ 为 $\text{Euclid}$ 线性空间 $X$ 中的规范正交系，$x \in X$，称数集 $\{\langle x, e\rangle: e \in M\}$ 为向量 $x$ 关于规范正交系 $M$ 的 $\text{Fourier}$ 系数集，而称 $\langle x, e\rangle$ 为 $x$ 关于 $e$ 的 $\text{Fourier}$ 系数
+        1. 设 $X$ 是 $\text{Euclid}$ 线性空间，$M$ 是 $X$ 中规范正交系，任取 $M$ 中有限个向量 $e_{1}, e_{2}, \cdots$, $e_{n}$，那么有
+            - ${\displaystyle \left\|x-\sum_{i=1}^{n}\left\langle x, e_{i}\right\rangle e_{i}\right\|^{2}=\|x\|^{2}-\sum_{i=1}^{n}\left|\left\langle x, e_{i}\right\rangle\right|^{2} \geqslant 0}$
+            - ${\displaystyle \left\|x-\sum_{i=1}^{n} \alpha_{i} e_{i}\right\| \geqslant\left\|x-\sum_{i=1}^{n}\left\langle x, e_{i}\right\rangle e_{i}\right\|}$，其中 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$ 为任意 $n$ 个数
+        2. $\text{Bessel}$ 不等式：设 $\left\{e_{k}\right\}$ 是 $\text{Euclid}$ 线性空间 $X$ 中至多可数的规范正交系，则对每个 $x \in X$，有 ${\displaystyle \sum_{i=1}^{\infty}\left|\left\langle x, e_{i}\right\rangle\right|^{2} \leqslant\|x\|^{2}}$
+        3. 设 $\left\{e_{k}\right\}$ 为 $\text{Hilbert}$ 空间 $X$ 中的有限或可数规范正交系
+            - 级数 ${\displaystyle \sum_{i=1}^{\infty} \alpha_{i} e_{i}}$ 收敛的充要条件为级数 ${\displaystyle \sum_{i=1}^{\infty}\left|\alpha_{i}\right|^{2}}$ 收敛
+            - 若 ${\displaystyle x=\sum_{i=1}^{\infty} \alpha_{i} e_{i}}$，则 $\alpha_{i}=\left\langle x, e_{i}\right\rangle, i=1,2, \cdots$，故 ${\displaystyle x=\sum_{i=1}^{\infty}\left\langle x, e_{i}\right\rangle e_{i}}$
+            - 对任何 $x \in X$，级数 ${\displaystyle \sum_{i=1}^{\infty}\left\langle x, e_{i}\right\rangle e_{i}}$ 收敛
+    3. 完全规范正交系
 
 ### 1.3.2 Hilbert 空间的算子
