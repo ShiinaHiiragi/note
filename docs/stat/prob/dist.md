@@ -250,7 +250,7 @@
     2. $\overline{\varphi_X(t)}=\varphi_X(-t)$
     3. ${\displaystyle \forall \lambda_i \forall t_i\in \mathbf R: \sum\lambda_i \overline{\lambda_j} \varphi_X(t_i-t_j)\geqslant 0}$
     4. $\varphi_X$ 在 $\mathbf R$ 上一致连续
-2. 随机向量的特征函数：设 $X = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \varphi_X(t_1, t_2, \cdots, t_n)=\mathrm Ee^{\mathrm{i}t^TX}=\mathrm Ee^{\mathrm{i}\overline{\sum_{j=1}^n t_jx_j}}$
+2. 随机向量的特征函数：设 $X = (x_1, x_2, \cdots, x_n), \varphi_X(t_1, t_2, \cdots, t_n)=\mathrm Ee^{\mathrm{i}t^TX}=\mathrm Ee^{\mathrm{i}\overline{\sum_{j=1}^n t_jx_j}}$
     1. $|\varphi_X(t_1, t_2, \cdots, t_n)|\leqslant 1, |\varphi_X(0, 0, \cdots, 0)|=1$
     2. $|\varphi_X(-t_1, -t_2, \cdots, -t_n)|=\overline{|\varphi_X(t_1, t_2, \cdots, t_n)|}$
     3. $\varphi_X$ 是连续的
