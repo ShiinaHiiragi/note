@@ -84,7 +84,7 @@
 1. 全连续算子：设 $X$ 和 $Y$ 是赋范线性空间，$T$ 是 $X$ 到 $Y$ 的线性算子．如果对 $X$ 的任何有界子集 $M$，$T M$ 都是 $Y$ 中相对紧集，则称 $T$ 为全连续算子，亦称紧算子
     1. 设 $X$ 是度量空间，$M$ 是 $X$ 中子集．若 $\overline{M}$ 是 $X$ 中紧集，则称 $M$ 为 $X$ 中的相对紧集
     2. 设 $\left\{T_{n}\right\}$ 是 $X$ 到 $Y$ 上的全连续算子列，$Y$ 是 $\text{Banach}$ 空间，而且 $\left\|T-T_{n}\right\| \rightarrow 0 \ (n \rightarrow \infty)$，则 $T$ 也是全连续算子
-2. 设 $\left\{e_{k}\right\}$ 为 $H$ 的任意一组规范正交基，定义 $\mathscr{J}(H)$ 上的线性泛函 $\tau$ 为 ${\displaystyle \tau(T)=\sum_{k=1}^{\infty}\left\langle T e_{k}, e_{k}\right\rangle}$，任意 $T \in \mathscr{J}(H)$．当 $H=\mathrm{C}^{n}$，$A=\begin{bmatrix} a_{i j} \\ \end{bmatrix}_{n \times n}$ 为 $H$ 上的线性算子时，${\displaystyle \tau(A)=\sum_{k=1}^{n} a_{k k}}$ 是 $A$ 的迹．因而当 $H$ 是可分无限维时，也称 $\tau$ 为 $\mathscr{J}(H)$ 上的迹
+2. 设 $\left\{\boldsymbol{e}_{k}\right\}$ 为 $H$ 的任意一组规范正交基，定义 $\mathscr{J}(H)$ 上的线性泛函 $\tau$ 为 ${\displaystyle \tau(T)=\sum_{k=1}^{\infty}\left\langle T \boldsymbol{e}_{k}, \boldsymbol{e}_{k}\right\rangle}$，任意 $T \in \mathscr{J}(H)$．当 $H=\mathrm{C}^{n}$，$A=\begin{bmatrix} a_{i j} \\ \end{bmatrix}_{n \times n}$ 为 $H$ 上的线性算子时，${\displaystyle \tau(A)=\sum_{k=1}^{n} a_{k k}}$ 是 $A$ 的迹．因而当 $H$ 是可分无限维时，也称 $\tau$ 为 $\mathscr{J}(H)$ 上的迹
     1. 上述的迹 $\tau$ 具有下列性质
         1. 设 $V$ 是 $H$ 中的 $n$ 维子空间，$P$ 是 $H$ 到 $V$ 的正交投影算子，则 $\tau(P)=n$
         2. 设 $T \in \mathscr{Z}(H), B \in \mathscr{B}(H)$，则 $\tau(T B)=\tau(B T)$
@@ -103,7 +103,7 @@
     $$
 
     1. 设 $A$ 是 $H$ 上的自伴全连续算子
-        1. 存在 $e \in H,\|e\|=1$，使得 $\|A e\|=\|A\|$
+        1. 存在 $\boldsymbol{e} \in H,\|\boldsymbol{e}\|=1$，使得 $\|A \boldsymbol{e}\|=\|A\|$
         2. $\|A\|$ 或 $-\|A\|$ 是 $A$ 的点谱
     2. 设 $A$ 是 $H$ 上自伴全连续算子
         1. $\sigma(A) \subseteq \mathbf{R}$
