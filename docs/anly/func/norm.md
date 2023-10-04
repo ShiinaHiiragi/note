@@ -31,7 +31,7 @@
         2. $\text{Minkowski}$ 不等式：设 $p \geqslant 1, f, g \in L^{p}[a, b]$，那么 $f+g \in L^{p}[a, b]$，并且不等式 $\|f+g\|_{p} \leqslant\|f\|_{p}+\|g\|_{p}$ 成立
 2. $\text{Hahn}-\text{Banach}$ 泛函延拓定理：设 $X$ 是实线性空间，$p(\boldsymbol{x})$ 是 $X$ 上次线性泛函．若 $f$ 是 $X$ 的子空间 $Z$ 上的实线性泛函，且被 $p(\boldsymbol{x})$ 控制，即满足 $f(\boldsymbol{x}) \leqslant p(\boldsymbol{x}), \boldsymbol{x} \in Z$，则存在 $X$ 上的实线性泛函 $\widetilde{f}$，使当 $\boldsymbol{x} \in Z$ 时，有 $\widetilde{f}(\boldsymbol{x})=f(\boldsymbol{x})$，并且在整个空间 $X$ 上仍被 $p(\boldsymbol{x})$ 控制 $\widetilde{f}(\boldsymbol{x}) \leqslant p(\boldsymbol{x}), \boldsymbol{x} \in X$
     1. 设 $X$ 是实或复的线性空间，$p(\boldsymbol{x})$ 是 $X$ 上次线性泛函，$f(\boldsymbol{x})$ 是定义在 $X$ 的子空间 $Z$ 上的实或复的线性泛函，且满足 $|f(\boldsymbol{x})| \leqslant p(\boldsymbol{x}), \boldsymbol{x} \in Z$，则存在 $X$ 上线性泛函 $\widetilde{f}$ 是 $f$ 的延拓，且满足 $|\widetilde{f}(\boldsymbol{x})| \leqslant p(\boldsymbol{x}), \boldsymbol{x} \in X$
-    2. 设 $f$ 是赋范空间 $X$ 的子空间 $Z$ 上的连续线性泛函，则必存在 $X$ 上连续线性泛函 $\widetilde{f}$ 是 $f$ 的保范延拓，即当 $\boldsymbol{x} \in Z$ 时，有 $\widetilde{f}(\boldsymbol{x})=f(\boldsymbol{x})$ 且 $\|\widetilde{f}\|_{\boldsymbol{x}}=\|f\|_{z}$
+    2. 设 $f$ 是赋范空间 $X$ 的子空间 $Z$ 上的连续线性泛函，则必存在 $X$ 上连续线性泛函 $\widetilde{f}$ 是 $f$ 的保范延拓，即当 $\boldsymbol{x} \in Z$ 时，有 $\widetilde{f}(\boldsymbol{x})=f(\boldsymbol{x})$ 且 $\|\widetilde{f}\|_{\boldsymbol{x}}=\|f\|_{\boldsymbol{z}}$
     3. 设 $X$ 是赋范线性空间，$\boldsymbol{x}_{0} \in X, \boldsymbol{x}_{0} \neq 0$，则必存在 $X$ 上的有界线性泛函 $f(\boldsymbol{x})$，使得 $\|f\|=1$，并且 $f\left(\boldsymbol{x}_{0}\right)=\left\|\boldsymbol{x}_{0}\right\|$
 3. $\text{Riesz}$ 表示定理：$C[a, b]$ 上每一个连续线性泛函 $F$ 都可以表示成为 ${\displaystyle F(f)=\int_{a}^{b} f(t) \mathrm{d} g(t), f \in C[a, b]}$，其中 $g(t)$ 是 $[a, b]$ 上有界变差函数，并且 $\|F\|=\underset{a}{\stackrel{b}{\large \textbf{V} \normalsize}}(g)$
 4. $\text{Baire}$ 纲定理：若 $X$ 是非空的完备度量空间，则 $X$ 是第二纲集
@@ -60,7 +60,7 @@
 ## 1.3 Hilbert 空间
 ### 1.3.1 规范正交系
 1. $\text{Hilbert}$ 空间：设 $X$ 是 $\text{Euclid}$ 线性空间，对于任意 $\boldsymbol{x} \in X$，令 $\|\boldsymbol{x}\| = \sqrt{\left<\boldsymbol{x}, \boldsymbol{x}\right>}$，称 $\|\cdot\|$ 为由内积导出的范数．若 $X$ 按范数 $\|\cdot\|$ 完备，则称 $X$ 为 $\text{Hilbert}$ 空间
-    1. 正交投影：设 $Y$ 是 $\text{Hilbert}$ 空间 $X$ 的闭子空间，那么有 $X=Y \ \dot{+} \ Y^{\perp}$．于是当 $Y$ 是 $\text{Hilbert}$ 空间 $X$ 的闭子空间时，对每个 $\boldsymbol{x} \in X$，存在唯一 $\boldsymbol{y} \in Y$ 及 $z \in Y^{\perp}$ 使得 $\boldsymbol{x}=\boldsymbol{y} \oplus z$，称 $\boldsymbol{y}$ 为 $\boldsymbol{x}$ 在空间 $Y$ 上的正交投影，简称为投影
+    1. 正交投影：设 $Y$ 是 $\text{Hilbert}$ 空间 $X$ 的闭子空间，那么有 $X=Y \ \dot{+} \ Y^{\perp}$．于是当 $Y$ 是 $\text{Hilbert}$ 空间 $X$ 的闭子空间时，对每个 $\boldsymbol{x} \in X$，存在唯一 $\boldsymbol{y} \in Y$ 及 $\boldsymbol{z} \in Y^{\perp}$ 使得 $\boldsymbol{x}=\boldsymbol{y} \oplus \boldsymbol{z}$，称 $\boldsymbol{y}$ 为 $\boldsymbol{x}$ 在空间 $Y$ 上的正交投影，简称为投影
     2. 投影算子：定义 $X$ 到 $Y$ 上的映射 $P \boldsymbol{x}=\boldsymbol{y}$ 对任意 $\boldsymbol{x} \in X$ 成立，其中 $\boldsymbol{y}$ 是 $\boldsymbol{x}$ 在 $Y$ 上的投影，称 $P$ 为 $X$ 到 $Y$ 上的投影算子
         1. $P$ 是 $X$ 到 $Y$ 上的有界线性算子，且当 $Y \neq\{0\}$ 时，$\|P\|=1$
         2. $P X=Y, P Y=Y, P Y^{\perp}=\{0\}$
@@ -69,19 +69,19 @@
     4. 设 $M$ 是 $\text{Hilbert}$ 空间 $X$ 中非空子集，则 $\operatorname{span} M$ 在 $X$ 中稠密的充要条件为 $M^{\perp}=\{0\}$
 2. 规范正交系：设 $M$ 是 $\text{Euclid}$ 线性空间 $X$ 的一个不含零的子集，若 $M$ 中向量两两正交，则称 $M$ 为 $X$ 中的正交系，又若 $M$ 中向量的范数都为 $1$，则称 $M$ 为 $X$ 中规范正交系
     1. 部分和：设 $X$ 是赋范线性空间，$\boldsymbol{x}_{i}$ 是 $X$ 中一列向量，$\alpha_{1}, \alpha_{2}, \cdots$ 是一列数，作形式级数 ${\displaystyle \sum_{i=1}^{\infty} \alpha_{i} \boldsymbol{x}_{i}}$．称 ${\displaystyle S_{n}=\sum_{i=1}^{n} \alpha_{i} \boldsymbol{x}_{i}}$ 为级数的 $n$ 项部分和，若存在 $\boldsymbol{x} \in X$，使 $S_{n} \rightarrow \boldsymbol{x}(n \rightarrow \infty)$，则称级数收敛，并称 $\boldsymbol{x}$ 为这个级数的和，记为 ${\displaystyle \boldsymbol{x}=\sum_{i=1}^{\infty} \alpha_{i} \boldsymbol{x}_{i}}$
-    2. $\text{Fourier}$ 系数：设 $M$ 为 $\text{Euclid}$ 线性空间 $X$ 中的规范正交系，$\boldsymbol{x} \in X$，称数集 $\{\langle \boldsymbol{x}, e\rangle: e \in M\}$ 为向量 $\boldsymbol{x}$ 关于规范正交系 $M$ 的 $\text{Fourier}$ 系数集，而称 $\langle \boldsymbol{x}, e\rangle$ 为 $\boldsymbol{x}$ 关于 $e$ 的 $\text{Fourier}$ 系数
-        1. 设 $X$ 是 $\text{Euclid}$ 线性空间，$M$ 是 $X$ 中规范正交系，任取 $M$ 中有限个向量 $e_{1}, e_{2}, \cdots$, $e_{n}$，那么有
-            - ${\displaystyle \left\|\boldsymbol{x}-\sum_{i=1}^{n}\left\langle \boldsymbol{x}, e_{i}\right\rangle e_{i}\right\|^{2}=\|\boldsymbol{x}\|^{2}-\sum_{i=1}^{n}\left|\left\langle \boldsymbol{x}, e_{i}\right\rangle\right|^{2} \geqslant 0}$
-            - ${\displaystyle \left\|\boldsymbol{x}-\sum_{i=1}^{n} \alpha_{i} e_{i}\right\| \geqslant\left\|\boldsymbol{x}-\sum_{i=1}^{n}\left\langle \boldsymbol{x}, e_{i}\right\rangle e_{i}\right\|}$，其中 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$ 为任意 $n$ 个数
-        2. $\text{Bessel}$ 不等式：设 $\left\{e_{k}\right\}$ 是 $\text{Euclid}$ 线性空间 $X$ 中至多可数的规范正交系，则对每个 $\boldsymbol{x} \in X$，有 ${\displaystyle \sum_{i=1}^{\infty}\left|\left\langle \boldsymbol{x}, e_{i}\right\rangle\right|^{2} \leqslant\|\boldsymbol{x}\|^{2}}$．若 $\text{Bessel}$ 不等式中等号成立，则称此等式为 $\text{Parseval}$ 等式
-        3. 设 $\left\{e_{k}\right\}$ 为 $\text{Hilbert}$ 空间 $X$ 中的有限或可数规范正交系
-            - 级数 ${\displaystyle \sum_{i=1}^{\infty} \alpha_{i} e_{i}}$ 收敛的充要条件为级数 ${\displaystyle \sum_{i=1}^{\infty}\left|\alpha_{i}\right|^{2}}$ 收敛
-            - 若 ${\displaystyle \boldsymbol{x}=\sum_{i=1}^{\infty} \alpha_{i} e_{i}}$，则 $\alpha_{i}=\left\langle \boldsymbol{x}, e_{i}\right\rangle, i=1,2, \cdots$，故 ${\displaystyle \boldsymbol{x}=\sum_{i=1}^{\infty}\left\langle \boldsymbol{x}, e_{i}\right\rangle e_{i}}$
-            - 对任何 $\boldsymbol{x} \in X$，级数 ${\displaystyle \sum_{i=1}^{\infty}\left\langle \boldsymbol{x}, e_{i}\right\rangle e_{i}}$ 收敛
+    2. $\text{Fourier}$ 系数：设 $M$ 为 $\text{Euclid}$ 线性空间 $X$ 中的规范正交系，$\boldsymbol{x} \in X$，称数集 $\{\langle \boldsymbol{x}, \boldsymbol{e}\rangle: \boldsymbol{e} \in M\}$ 为向量 $\boldsymbol{x}$ 关于规范正交系 $M$ 的 $\text{Fourier}$ 系数集，而称 $\langle \boldsymbol{x}, \boldsymbol{e}\rangle$ 为 $\boldsymbol{x}$ 关于 $\boldsymbol{e}$ 的 $\text{Fourier}$ 系数
+        1. 设 $X$ 是 $\text{Euclid}$ 线性空间，$M$ 是 $X$ 中规范正交系，任取 $M$ 中有限个向量 $\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots$, $\boldsymbol{e}_{n}$，那么有
+            - ${\displaystyle \left\|\boldsymbol{x}-\sum_{i=1}^{n}\left\langle \boldsymbol{x}, \boldsymbol{e}_{i}\right\rangle \boldsymbol{e}_{i}\right\|^{2}=\|\boldsymbol{x}\|^{2}-\sum_{i=1}^{n}\left|\left\langle \boldsymbol{x}, \boldsymbol{e}_{i}\right\rangle\right|^{2} \geqslant 0}$
+            - ${\displaystyle \left\|\boldsymbol{x}-\sum_{i=1}^{n} \alpha_{i} \boldsymbol{e}_{i}\right\| \geqslant\left\|\boldsymbol{x}-\sum_{i=1}^{n}\left\langle \boldsymbol{x}, \boldsymbol{e}_{i}\right\rangle \boldsymbol{e}_{i}\right\|}$，其中 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$ 为任意 $n$ 个数
+        2. $\text{Bessel}$ 不等式：设 $\left\{\boldsymbol{e}_{k}\right\}$ 是 $\text{Euclid}$ 线性空间 $X$ 中至多可数的规范正交系，则对每个 $\boldsymbol{x} \in X$，有 ${\displaystyle \sum_{i=1}^{\infty}\left|\left\langle \boldsymbol{x}, \boldsymbol{e}_{i}\right\rangle\right|^{2} \leqslant\|\boldsymbol{x}\|^{2}}$．若 $\text{Bessel}$ 不等式中等号成立，则称此等式为 $\text{Parseval}$ 等式
+        3. 设 $\left\{\boldsymbol{e}_{k}\right\}$ 为 $\text{Hilbert}$ 空间 $X$ 中的有限或可数规范正交系
+            - 级数 ${\displaystyle \sum_{i=1}^{\infty} \alpha_{i} \boldsymbol{e}_{i}}$ 收敛的充要条件为级数 ${\displaystyle \sum_{i=1}^{\infty}\left|\alpha_{i}\right|^{2}}$ 收敛
+            - 若 ${\displaystyle \boldsymbol{x}=\sum_{i=1}^{\infty} \alpha_{i} \boldsymbol{e}_{i}}$，则 $\alpha_{i}=\left\langle \boldsymbol{x}, \boldsymbol{e}_{i}\right\rangle, i=1,2, \cdots$，故 ${\displaystyle \boldsymbol{x}=\sum_{i=1}^{\infty}\left\langle \boldsymbol{x}, \boldsymbol{e}_{i}\right\rangle \boldsymbol{e}_{i}}$
+            - 对任何 $\boldsymbol{x} \in X$，级数 ${\displaystyle \sum_{i=1}^{\infty}\left\langle \boldsymbol{x}, \boldsymbol{e}_{i}\right\rangle \boldsymbol{e}_{i}}$ 收敛
     3. 完全规范正交系：设 $M$ 是 $\text{Euclid}$ 线性空间 $X$ 中的规范正交系，如果 $\overline{\operatorname{span} M}=X$，则称 $M$ 是 $X$ 中的完全规范正交系
         1. 设 $M$ 是 $\text{Hilbert}$ 空间 $X$ 中规范正交系，那么 $M$ 完全的充要条件为 $M^{\perp}= \{0\}$
         2. $M$ 是 $\text{Hilbert}$ 空间中完全规范正交系的充要条件为对所有 $\boldsymbol{x} \in X$，成立 $\text{Parseval}$ 等式
-        3. $\text{Gram}-\text{Schmidt}$ 正交化：设 $\left\{\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \cdots\right\}$ 是 $\text{Euclid}$ 线性空间 $X$ 中有限或可数个线性无关向量，那么必有 $X$ 中规范正交系 $\left\{e_{1}, e_{2} \cdots\right\}$，使对任何正整数 $n$，有 ${\displaystyle \operatorname{span}\left\{e_{1}, e_{2}, \cdots, e_{n}\right\}=\operatorname{span}\left\{\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \cdots, \boldsymbol{x}_{n}\right\}}$
+        3. $\text{Gram}-\text{Schmidt}$ 正交化：设 $\left\{\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \cdots\right\}$ 是 $\text{Euclid}$ 线性空间 $X$ 中有限或可数个线性无关向量，那么必有 $X$ 中规范正交系 $\left\{\boldsymbol{e}_{1}, \boldsymbol{e}_{2} \cdots\right\}$，使对任何正整数 $n$，有 ${\displaystyle \operatorname{span}\left\{\boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \cdots, \boldsymbol{e}_{n}\right\}=\operatorname{span}\left\{\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \cdots, \boldsymbol{x}_{n}\right\}}$
         4. 每个非零 $\text{Hilbert}$ 空间必有完全规范正交系
     4. 设 $X$ 和 $\widetilde{X}$ 是两个 $\text{Euclid}$ 线性空间，若存在 $X$ 到 $\widetilde{X}$ 上的映射 $T$，使对任何 $\boldsymbol{x}, \boldsymbol{y} \in X$ 及数 $\alpha, \beta$，满足
 
@@ -98,12 +98,12 @@
         2. 任何可分 $\text{Hilbert}$ 空间必和某个 $\mathbf{R}^{n}\left(\mathbf{C}^{n}\right)$ 或 $l^{2}$ 同构
 
 ### 1.3.2 Hilbert 空间的泛函
-1. $\text{Riesz}$ 定理：设 $X$ 是 $\text{Hilbert}$ 空间，$f$ 是 $X$ 上连续线性泛函，那么存在唯一的 $z \in X$，使对每个 $\boldsymbol{x} \in X$，有 $f(\boldsymbol{x})=\langle \boldsymbol{x}, z\rangle$ 且 $\|f\|=\|z\|$
+1. $\text{Riesz}$ 定理：设 $X$ 是 $\text{Hilbert}$ 空间，$f$ 是 $X$ 上连续线性泛函，那么存在唯一的 $\boldsymbol{z} \in X$，使对每个 $\boldsymbol{x} \in X$，有 $f(\boldsymbol{x})=\langle \boldsymbol{x}, \boldsymbol{z}\rangle$ 且 $\|f\|=\|\boldsymbol{z}\|$
 2. 对每个 $\boldsymbol{y} \in X$，令 $T \boldsymbol{y}=f_{\boldsymbol{y}}$，其中 $f_{\boldsymbol{y}}$ 为 $X$ 上连续线性泛函 $f_{\boldsymbol{y}}(\boldsymbol{x})=\langle \boldsymbol{x}, \boldsymbol{y}\rangle, \boldsymbol{x} \in X$，$T$ 是 $X$ 到 $X^{\prime}$ 上的映射，其中 $X^{\prime}$ 表示 $X$ 上连续线性泛函全体所成的 $\text{Banach}$ 空间．称满足 $T(\alpha \boldsymbol{x}+\beta \boldsymbol{y})=\overline{\alpha} T \boldsymbol{x}+\overline{\beta} T \boldsymbol{y}$ 的映射 $T$ 是复共轭线性映射
     1. 映射 $T \boldsymbol{y}=f_{\boldsymbol{y}}$ 是 $X$ 到 $X^{\prime}$ 上保持范数不变的复共轭线性映射，称为复共轭同构映射
     2. 若存在 $\text{Hilbert}$ 空间 $X$ 到 $\widetilde{X}$ 上的复共轭同构映射，则称 $X$ 与 $\widetilde{X}$ 是复共轭同构，并不加以区别视为同一，写成 $X=\widetilde{X}$
     3. 当 $X$ 是 $\text{Hilbert}$ 空间时，$X=X^{\prime}$，即 $X$ 是息共轭的
-3. 设 $X$ 和 $Y$ 是两个 $\text{Hilbert}$ 空间，$A \in \mathscr{B}(X, Y)$，那么存在唯一的 $A^{*} \in \mathscr{B}(Y$, $X)$，使得对任何 $\boldsymbol{x} \in X$ 及 $\boldsymbol{y} \in Y$，有 $\langle A \boldsymbol{x}, \boldsymbol{y}\rangle=\left\langle \boldsymbol{x}, A^{*} \boldsymbol{y}\right\rangle$ 且 $\left\|A^{*}\right\|=\|A\|$．称算子 $A^{*}$ 为 $A$ 的 $\text{Hilbert}$ 共轭算子，或简称为共轭算子
+3. 设 $X$ 和 $Y$ 是两个 $\text{Hilbert}$ 空间，$A \in \mathscr{B}(X, Y)$，则存在唯一的 $A^{*} \in \mathscr{B}(Y$, $X)$，使得对任何 $\boldsymbol{x} \in X$ 及 $\boldsymbol{y} \in Y$ 有 $\left\|A^{*}\right\|=\|A\|$ 且 $\langle A \boldsymbol{x}, \boldsymbol{y}\rangle=\left\langle \boldsymbol{x}, A^{*} \boldsymbol{y}\right\rangle$．称算子 $A^{*}$ 为 $A$ 的 $\text{Hilbert}$ 共轭算子，或简称为共轭算子
     1. $(A+B)^{*}=A^{*}+B^{*}$
     2. $(\alpha A)^{*}=\alpha A^{*}$
     3. $\left(A^{*}\right)^{*}=A$

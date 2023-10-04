@@ -49,7 +49,7 @@
     3. 设 $X, Y$ 是两个赋范线性空间，$X^{\prime}$ 和 $Y^{\prime}$ 分别是 $X$ 和 $Y$ 的共轭空间，$T$ 是 $X$ 到 $Y$ 中的有界线性算子
         1. 对任意 $g \in Y^{\prime}$，定义 $X$ 上的泛函 $f(\boldsymbol{x})=g(T \boldsymbol{x})$，则可以建立 $g \mapsto f$ 的对应，即由 $T$ 派生出一个从 $Y^{\prime}$ 到 $X^{\prime}$ 的算子 $T^{\times}: T^{\times} g=f$．称 $T^{\times}$ 为 $T$ 的共轭算子
         2. 有界线性算子 $T$ 的共轭算子 $T^{\times}$ 也是有界线性算子，且 $\left\|T^{\times}\right\|=\|T\|$
-3. 次线性泛函：设 $X$ 是赋范线性空间，子空间 $Z\subseteq X$，$f$ 是 $Z$ 上连续线性泛函，令 ${\displaystyle \|f\|_{Z}=\sup_{\boldsymbol{x} \in Z, \ \|\boldsymbol{x}\|=1}|f(\boldsymbol{x})|, p(\boldsymbol{x})=\|f\|_{z}\|\boldsymbol{x}\|}$，则 $p(\boldsymbol{x})$ 是在整个 $X$ 上有定义的泛函，并且满足
+3. 次线性泛函：设 $X$ 是赋范线性空间，子空间 $Z\subseteq X$，$f$ 是 $Z$ 上连续线性泛函，令 ${\displaystyle \|f\|_{Z}=\sup_{\boldsymbol{x} \in Z, \ \|\boldsymbol{x}\|=1}|f(\boldsymbol{x})|, p(\boldsymbol{x})=\|f\|_{\boldsymbol{z}}\|\boldsymbol{x}\|}$，则 $p(\boldsymbol{x})$ 是在整个 $X$ 上有定义的泛函，并且满足
     1. $p(\alpha \boldsymbol{x})=|\alpha| p(\boldsymbol{x}), \boldsymbol{x} \in X, \alpha$ 为数
     2. $p(\boldsymbol{x}+\boldsymbol{y}) \leqslant p(\boldsymbol{x})+p(\boldsymbol{y}), \boldsymbol{x}, \boldsymbol{y} \in X$
 
@@ -84,7 +84,7 @@
 1. 全连续算子：设 $X$ 和 $Y$ 是赋范线性空间，$T$ 是 $X$ 到 $Y$ 的线性算子．如果对 $X$ 的任何有界子集 $M$，$T M$ 都是 $Y$ 中相对紧集，则称 $T$ 为全连续算子，亦称紧算子
     1. 设 $X$ 是度量空间，$M$ 是 $X$ 中子集．若 $\overline{M}$ 是 $X$ 中紧集，则称 $M$ 为 $X$ 中的相对紧集
     2. 设 $\left\{T_{n}\right\}$ 是 $X$ 到 $Y$ 上的全连续算子列，$Y$ 是 $\text{Banach}$ 空间，而且 $\left\|T-T_{n}\right\| \rightarrow 0 \ (n \rightarrow \infty)$，则 $T$ 也是全连续算子
-2. 设 $\left\{e_{k}\right\}$ 为 $H$ 的任意一组规范正交基，定义 $\mathscr{J}(H)$ 上的线性泛函 $\tau$ 为 ${\displaystyle \tau(T)=\sum_{k=1}^{\infty}\left\langle T e_{k}, e_{k}\right\rangle}$，任意 $T \in \mathscr{J}(H)$．当 $H=\mathrm{C}^{n}$，$A=\begin{bmatri\boldsymbol{x}} a_{i j} \\ \end{bmatri\boldsymbol{x}}_{n \times n}$ 为 $H$ 上的线性算子时，${\displaystyle \tau(A)=\sum_{k=1}^{n} a_{k k}}$ 是 $A$ 的迹．因而当 $H$ 是可分无限维时，也称 $\tau$ 为 $\mathscr{J}(H)$ 上的迹
+2. 设 $\left\{e_{k}\right\}$ 为 $H$ 的任意一组规范正交基，定义 $\mathscr{J}(H)$ 上的线性泛函 $\tau$ 为 ${\displaystyle \tau(T)=\sum_{k=1}^{\infty}\left\langle T e_{k}, e_{k}\right\rangle}$，任意 $T \in \mathscr{J}(H)$．当 $H=\mathrm{C}^{n}$，$A=\begin{bmatrix} a_{i j} \\ \end{bmatrix}_{n \times n}$ 为 $H$ 上的线性算子时，${\displaystyle \tau(A)=\sum_{k=1}^{n} a_{k k}}$ 是 $A$ 的迹．因而当 $H$ 是可分无限维时，也称 $\tau$ 为 $\mathscr{J}(H)$ 上的迹
     1. 上述的迹 $\tau$ 具有下列性质
         1. 设 $V$ 是 $H$ 中的 $n$ 维子空间，$P$ 是 $H$ 到 $V$ 的正交投影算子，则 $\tau(P)=n$
         2. 设 $T \in \mathscr{Z}(H), B \in \mathscr{B}(H)$，则 $\tau(T B)=\tau(B T)$
