@@ -131,10 +131,13 @@
     则称 $V$ 是 $F$ 上的线性空间
 
     !!! note "代数系统"
-        代数学通常将模型的论域 $A$ 与定义在 $A$ 上的函数符号 $f_1, f_2, \cdots, f_k$ 构成集合 $\{A; f_1, f_2, \cdots, f_k\}$ 称作代数系统
+        代数学上通常将模型的论域 $A$ 与定义在 $A$ 上的函数符号 $f_1, f_2, \cdots, f_k$ 构成集合 $\{A; f_1, f_2, \cdots, f_k\}$ 称作代数系统
 
-        1. 称论域 $A$ 为该系统的载集合，或简称载集
-        2. 运算符对集合 $A$ 封闭，即对任意 $\Omega(f_i) = n, 1 \leqslant i \leqslant k$，都有 $(a_1, a_2, \cdots, a_n) \in A^{n}$ 蕴含 $f_i(a_1, a_2, \cdots, a_n) \in A^{n}$
+        1. 称论域 $A$ 为该系统的载集合，或简称载集，$f_i$ 为代数运算符，简称作运算符
+        2. $n$ 元运算符对集合 $A$ 封闭，即对任意 $\Omega(f_i) = n, 1 \leqslant i \leqslant k$，都有 $(a_1, a_2, \cdots, a_n) \in A^{n}$ 蕴含 $f_i(a_1, a_2, \cdots, a_n) \in A^{n}$
+            1. 若 $A$ 中的二元运算符 $\circ$ 有 $(a \circ b) \circ c=a \circ \left(b \circ c\right)$ 对 $\forall a, b, c \in A$ 均成立，则称该运算满足结合律
+            2. 若 $A$ 中的二元运算符 $\circ$ 有 $a \circ b=b \circ a$ 对 $\forall a, b \in A$ 均成立，则称该运算满足交换律
+            3. 若 $A$ 中的二元运算符 $\circ$ 与 $+$ 有 $a \circ (b+c)=a \circ b+a \circ c$ 对 $\forall a, b, c \in A$ 均成立，则称 $\circ$ 满足对 $+$ 的结合律，简称作满足分配律
         3. 模型的同态与同构定义对代数系统仍有效
 
 ## 1.3 紧致性定理
