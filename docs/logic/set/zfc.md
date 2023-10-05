@@ -359,16 +359,17 @@
         3. 双射：既是单射又是满射的映射
     4. 映射例举
         1. 恒等映射：对任意集合 $X$，定义 $\mathrm{id}_X: X \to X$ 为 $\mathrm{id}_X(x) = x$，作为关系被称为 $X$ 上的恒等关系
-        2. 特征映射：对任意集合 $X$，定义特征映射（或示性映射）$I_X(x) = \left\{\begin{aligned} & 1, & x \in X \\ & 0, & x \notin X \end{aligned}\right.$
+        2. 嵌入映射：对任意集合 $X$，定义 $X_{0} \subseteq X$ 到 $X$ 的嵌入映射 $i(x)=x, \forall x \in X_0$
+        3. 特征映射：对任意集合 $X$，定义特征映射（或示性映射）$I_X(x) = \left\{\begin{aligned} & 1, & x \in X \\ & 0, & x \notin X \end{aligned}\right.$
 
             !!! note "特征映射的性质"
-                - ${\displaystyle I_{\alpha} \bigcup_{\alpha}=\bigvee_{\alpha} I_{A_{\alpha}}\left(\bigvee_{\alpha} I_{A_{\alpha}} \triangleq \sup _{\alpha} I_{A_{\alpha}}\right), \  I_{\sum_{\alpha} A_{\alpha}}=\sum_{\alpha} I_{A_{\alpha}}}$
-                - ${\displaystyle I_{\alpha} A_{\alpha}=\bigwedge_{\alpha} I_{A_{\alpha}}\left(\bigwedge_{\alpha} I_{A_{\alpha}} \triangleq \inf _{\alpha} I_{A_{\alpha}}\right)}$
+                - ${\displaystyle I_{\alpha} \bigcup=\bigvee I_{A_{\alpha}}\left(\bigvee I_{A_{\alpha}} \triangleq \sup I_{A_{\alpha}}\right), \  I_{\sum A_{\alpha}}=\sum I_{A_{\alpha}}}$
+                - ${\displaystyle I_{\alpha} A_{\alpha}=\bigwedge I_{A_{\alpha}}\left(\bigwedge I_{A_{\alpha}} \triangleq \inf I_{A_{\alpha}}\right)}$
                 - $I_{A'}=1-I_{A}$
                 - $I_{A-B}=I_{A}-I_{B}$
                 - $I_{A \triangle B}=\left|I_{A}-I_{B}\right|=I_{A}+I_{B} \pmod{2}$
 
-        3. 部分映射：在定义域的某些点上没有定义的映射，与之相对的是全映射
+        4. 部分映射：在定义域的某些点上没有定义的映射，与之相对的是全映射
 
     5. 限制与扩张：对任意映射 $f$ 与集合 $A$，称映射 $g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 为 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张或延拓
 
