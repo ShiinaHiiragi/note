@@ -105,7 +105,6 @@
         并将只满足 $\sigma_2$ 的结构称为半群，只满足 $\sigma_1, \sigma_2$ 的结构称为幺半群
 
     2. 令 $\sigma_4: \forall x \forall y \ (x \cdot y = y \cdot x)$，如果 $\mathfrak M$ 是 $Ax_{AG} = Ax_G \cup \{\sigma_4\}$ 的模型，则称 $\mathfrak M$ 是 $\text{Abel}$ 群或交换群
-    3. 设 $\mathfrak M = (M, \cdot^\mathfrak M, e^\mathfrak M)$ 是一个群，如果对任意的 $a\in M$ 都存在一个正整数 $n$，使得 $a^n = e^\mathfrak M$，则称 $\mathfrak M$ 是一个挠群．设 $\mathcal K_{TG} = \{\mathfrak M \mid \mathfrak M$ 是一个 $G-$结构且是一个挠群$\}$，则 $\mathcal K_{TG}$ 不是一个初等类
 
 2. 环：令 $R = \{\cdot, +, o, e\}$，则 $\mathscr L(R)$ 是环的语言，其中 $\cdot, + \in \mathbf F, o, e \in \mathbf C$ 且 $\Omega(\cdot) = \Omega(+) = 2$，将 $\cdot(t_1, t_2)$ 与 $+(t_1, t_2)$ 分别记作 $t_1 \cdot t_2$ 与 $t_1 + t_2$
     1. 如果结构 $\mathfrak M = (M, \cdot^\mathfrak M, +^\mathfrak M, o^\mathfrak M, e^\mathfrak M)$ 满足如下条件，则称 $\mathfrak M$ 是一个环，将 $\cdot^\mathfrak M$ 与 $+^\mathfrak M$ 分别称为 $\mathfrak M$ 的乘法与加法，将 $o^\mathfrak M$ 与 $e^\mathfrak M$ 分别称为 $\mathfrak M$ 的零元与幺元

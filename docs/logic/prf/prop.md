@@ -94,7 +94,7 @@
                 - 析取范式：若公式 $\alpha$ 形如 $\alpha=\gamma_1 \vee \gamma_2 \vee \cdots \vee \gamma_k$，其中每个 $\gamma_i$ 都形如 $\gamma_i=\beta_{i 1} \wedge \beta_{i 2} \wedge \cdots \wedge \beta_{i n}$，且 $\beta_{i j}$ 是一个命题符号或命题符号的否定，则称 $\alpha$ 是析取范式
 
 4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统 $\mathbf{HK}$
-    1. 公理与推理规则：一个推理规则的形式是 $\begin{prooftree} \AxiomC{\(\alpha_1\)} \AxiomC{\(\alpha_2\)} \AxiomC{\(\cdots\)} \AxiomC{\(\alpha_n\)} \QuaternaryInfC{\(\alpha_0\)} \end{prooftree}$，其中 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 称为 $R$ 的前提，$\alpha_0$ 称为 $R$ 的结论
+    1. 公理与推理规则：一个推理规则的形式是 $\begin{prooftree} \AxiomC{\(\alpha_1\)} \AxiomC{\(\alpha_2\)} \AxiomC{\(\cdots\)} \AxiomC{\(\alpha_n\)} \QuaternaryInfC{\(\alpha_0\)} \end{prooftree}$，其中称 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为 $R$ 的前提，$\alpha_0$ 为 $R$ 的结论
         1. 公理：若将 $p_0, p_1, p_2$ 替换为模式字母 $\alpha, \beta, \gamma$，可去掉代入规则 $\text{sub}$，得到的系统与 $\mathbf{HK}$ 等价
             - $\text{A}_1: p_0 \to (p_1 \to p_0)$
             - $\text{A}_2: (p_0 \to (p_1 \to p_2)) \to ((p_0 \to p_1) \to (p_0 \to p_2))$
@@ -109,7 +109,7 @@
         2. 推理规则
             - 肯定前件规则：$\begin{prooftree} \AxiomC{\(\alpha \to \beta\)} \AxiomC{\(\alpha\)} \RightLabel{ (mp)} \BinaryInfC{\(\beta\)} \end{prooftree}$
             - 代入规则：$\begin{prooftree} \AxiomC{\(\alpha\)} \RightLabel{ (sub)} \UnaryInfC{\(\sigma(\alpha)\)} \end{prooftree}$，其中 $\sigma$ 是任意代入
-    2. 令 $X \neq \varnothing$ 且 $S\subseteq X\times X$，对任意 $x\in X$，令 $S(x) = \{y\in X\mid xSy\}$．对任意子集 $Y\subseteq X$，令 $S[Y] = {\displaystyle \bigcup \{S(y) \mid y\in Y\}}$，对任意自然数 $n\leqslant 0$ 与 $x\in X$，定义 $S^0[x]=\{x\}, S^{n+1}[x] = S[S^n[x]]$
+    2. 令 $X \neq \varnothing$ 且 $S\subseteq X\times X$，对任意 $x\in X$，令 $S(x) = \{y\in X\mid xSy\}$．对任意 $Y\subseteq X$，令 $S[Y] = {\displaystyle \bigcup \{S(y) \mid y\in Y\}}$，对任意自然数 $n\leqslant 0$ 与 $x\in X$，定义 $S^0[x]=\{x\}, S^{n+1}[x] = S[S^n[x]]$
         1. 若 $X$ 是有穷集且满足以下条件，则称 $(X, S)$ 为有穷树结构，$X$ 中的元组称为节点
             - 存在 $r\in X$ 满足条件：对任意 $x\in X$ 都存在自然数 $n\geqslant 0$ 使得 $rS^nx$，称 $r$ 为 $(X, S)$ 的根节点
             - 对任意 $x, y, z\in X$，若 $xSz$ 且 $ySz$，那么 $x=y$

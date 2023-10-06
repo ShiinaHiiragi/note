@@ -260,9 +260,9 @@
     1. 无穷级数的性质
         1. 若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 收敛，$a$ 为任一常数，则 ${\displaystyle \sum_{n=1}^{\infty} a u_{n}}$ 亦收敛，且有 ${\displaystyle \sum_{n=1}^{\infty} a u_{n}=a \sum_{n=1}^{\infty} u_{n}}$
         2. 若两个级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 和 ${\displaystyle \sum_{n=1}^{\infty} v_{n}}$ 都收敛，则 ${\displaystyle \sum_{n=1}^{\infty}\left(u_{n} \pm v_{n}\right)}$ 也收敛，且有 ${\displaystyle \sum_{n=1}^{\infty}\left(u_{n} \pm v_{n}\right)=\sum_{n=1}^{\infty} u_{n} \pm \sum_{n=1}^{\infty} v_{n}}$
-        3. 一个收敛级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$，对其项任意加括号后所成级数 $\left(u_{1}+u_{2}+\cdots+u_{i_{1}}\right)+\left(u_{i_{1}+1}+\cdots+u_{i_{2}}\right)+\cdots$ 仍收敛，且和不变
+        3. 一个收敛级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$，对其项任意加括号后所成级数 $\left(u_{1}+u_{2}+\cdots+u_{i_{1}}\right)+\left(u_{i_{1}+1}+\cdots+u_{i_{2}}\right)+\cdots$ 仍收敛且和不变
         4. 收敛的必要条件：若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 收敛，则 $u_{n} \rightarrow 0 \ (n \rightarrow \infty)$
-    2. $\text{Cauchy}$ 收敛原理：级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 收敛的充要条件是对任意给定的正数 $\varepsilon$，总存在 $N$ 使得当 $n>N$ 时，对于任意的正整数 $p$，都有 $\left|u_{n+1}+u_{n+2}+\cdots+u_{n+p}\right|<\varepsilon$
+    2. $\text{Cauchy}$ 收敛原理：级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 收敛的充要条件是对任意给定的正数 $\varepsilon$，总存在 $N$ 使得当 $n>N$ 时，对于任意的正整数 $p$ 都有 $\left|u_{n+1}+u_{n+2}+\cdots+u_{n+p}\right|<\varepsilon$
 2. 正项级数：每一项都是非负的级数称为正项级数
     1. 比较判别法：给定两正项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}, {\displaystyle \sum_{n=1}^{\infty} v_{n}}$，若有 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{u_{n}}{v_{n}}=l \ (0<l<+\infty)}$，那么这两个级数同时收敛或发散
     2. $\text{Cauchy}$ 判别法：对于正项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$，设 ${\displaystyle r=\varlimsup_{n \rightarrow \infty} \sqrt[n]{u_{n}}}$
@@ -325,7 +325,7 @@
 1. 函数项级数：设 $u_{n}(x) \ (n=1,2, \cdots)$ 是定义在实数集 $X$ 上的函数，称 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)=u_{1}(x)+u_{2}(x)+\cdots+u_{n}(x)+\cdots}$ 是函数项级数，并称 ${\displaystyle S_{n}(x)=\sum_{k=1}^{n} u_{k}(x)}$ 是这一级数的 $n$ 次部分和
     1. 如果对 $X$ 中的一点 $x_{0}$，数项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}\left(x_{0}\right)=u_{1}\left(x_{0}\right)+u_{2}\left(x_{0}\right)+\cdots+u_{n}\left(x_{0}\right)+\cdots}$ 收敛，则称函数项级数在 $x_{0}$ 点收敛，否则称其在 $x_{0}$ 点发散
     2. 如果对 $X$ 中任何一点 $x$，级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 收敛，则称函数项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 在 $X$ 上收敛（即在每一点都收敛）．此时对每一点 $x \in X$，级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 有和，记为 $S(x)$，从而 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)=S(x)}$
-2. 一致收敛：设有函数列 $\left\{S_{n}(x)\right\}$（或函数项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 的部分和序列），若对任给的 $\varepsilon>0$，存在只依赖于 $\varepsilon$ 的正整数 $N(\varepsilon)$ 使 $n>N(\varepsilon)$ 时，不等式 $\left|S_{n}(x)-S(x)\right|<\varepsilon$（对函数项级数, 此式也可写为 ${\displaystyle \left|r_{n}(x)\right|=\left|\sum_{k=n+1}^{\infty} u_{k}(x)\right|<\varepsilon}$）对 $X$ 上一切 $x$ 都成立, 则称 $\left\{S_{n}(x)\right\}$ 在 $X$ 上一致收敛于 $S(x)$．当 $S_{n}(x)$ 在 $(a, b)$ 内任一闭区间上一致收敛时，称 $S_{n}(x)$ 在区间 $(a, b)$ 内闭一致收敛
+2. 一致收敛：设有函数列 $\left\{S_{n}(x)\right\}$（或函数项级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 的部分和序列），若对任给的 $\varepsilon>0$，存在只依赖于 $\varepsilon$ 的正整数 $N(\varepsilon)$ 使 $n>N(\varepsilon)$ 时，不等式 $\left|S_{n}(x)-S(x)\right|<\varepsilon$（对函数项级数也可写为 ${\displaystyle \left|r_{n}(x)\right|=\left|\sum_{k=n+1}^{\infty} u_{k}(x)\right|<\varepsilon}$）对 $X$ 上一切 $x$ 都成立, 则称 $\left\{S_{n}(x)\right\}$ 在 $X$ 上一致收敛于 $S(x)$．当 $S_{n}(x)$ 在 $(a, b)$ 内任一闭区间上一致收敛时，称 $S_{n}(x)$ 在区间 $(a, b)$ 内闭一致收敛
     1. 一致收敛的充要条件
         1. 设 $\left\|S_{n}-S\right\|={\displaystyle \sup _{x \in X}\left|S_{n}(x)-S(x)\right|}$，则 $S_{n}(x)$ 在 $X$ 上一致收敛于 $S(x)$ 当且仅当 ${\displaystyle \lim _{n \rightarrow \infty}\left\|S_{n}-S\right\|=0}$
         2. $\text{Cauchy}$ 充要条件：函数列 $\left\{S_{n}(x)\right\}$ 在 $X$ 上一致收敛的充要条件为对任给的 $\varepsilon>0$，可得正整数 $N=N(\varepsilon)$ 使 $n>N$ 时，不等式 $\left|S_{n+p}(x)-S_{n}(x)\right|<\varepsilon$ 对任意的正整数 $p$ 和 $X$ 上任意的 $x$ 都成立
@@ -350,14 +350,14 @@
 
         把上述各性质的 $S_{n}(x)$ 都作为函数项级数的 $n$ 项部分和看待，则得到函数项级数相类似的定理
 
-        1. 和的连续性：若 $[a, b]$ 上级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 每项 $u_{n}(x)$ 都连续且 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 一致收敛于 $S(x)$，则 $S(x)$ 也在 $[a, b]$ 上连续
-        2. 逐项求积：设 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 在 $[a, b]$ 上一致收敛于 $S(x)$ 且每一 $u_{n}(x)$ 都在 $[a, b]$ 上连续，则
+        4. 和的连续性：若 $[a, b]$ 上级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 每项 $u_{n}(x)$ 都连续且 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 一致收敛于 $S(x)$，则 $S(x)$ 也在 $[a, b]$ 上连续
+        5. 逐项求积：设 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 在 $[a, b]$ 上一致收敛于 $S(x)$ 且每一 $u_{n}(x)$ 都在 $[a, b]$ 上连续，则
 
             $$
             \sum_{n=1}^{\infty} \int_{a}^{b} u_{n}(x) \mathrm{d} x=\int_{a}^{b} S(x) \mathrm{d} x=\int_{a}^{b} \sum_{n=1}^{\infty} u_{n}(x) \mathrm{d} x
             $$
 
-        3. 逐项求导：若在 $[a, b]$ 上，${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 的每一项都具有连续导数 $u_{n}^{\prime}(x)$ 且 ${\displaystyle \sum_{n=1}^{\infty} u_{n}^{\prime}(x)}$ 一致收敛于 $\sigma(x)$，又 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 收敛于 $S(x)$，则 $S^{\prime}(x)=\sigma(x)$，即
+        6. 逐项求导：若在 $[a, b]$ 上，${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 的每一项都具有连续导数 $u_{n}^{\prime}(x)$ 且 ${\displaystyle \sum_{n=1}^{\infty} u_{n}^{\prime}(x)}$ 一致收敛于 $\sigma(x)$，又 ${\displaystyle \sum_{n=1}^{\infty} u_{n}(x)}$ 收敛于 $S(x)$，则 $S^{\prime}(x)=\sigma(x)$，即
 
             $$
             \dfrac{\mathrm{d}}{\mathrm{d} x} \sum_{n=1}^{\infty} u_{n}(x)=\sum_{n=1}^{\infty} \dfrac{\mathrm{d}}{\mathrm{d} x} u_{n}(x)
@@ -486,8 +486,8 @@
         !!! note "卷积"
             设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上定义，且积分 ${\displaystyle (f * g)(x)=\int_{-\infty}^{+\infty} f(t) g(x-t) \mathrm{d} t}$ 存在，则称函数 $f * g$ 为 $f$ 和 $g$ 的卷积
 
-            1. 卷积的 $\text{Fourier}$ 变换：设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上绝对可积，则有 $F(f * g)=F(f) \cdot F(g)$
-            2. $\text{Parseval}$ 等式：设函数 $f$ 在 $(-\infty,+\infty)$ 上绝对可积，且 ${\displaystyle \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{d} x}$ 收敛．记 $f$ 的 $\text{Fourier}$ 变换为 $\widehat{f}$，则
+            6. 卷积的 $\text{Fourier}$ 变换：设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上绝对可积，则有 $F(f * g)=F(f) \cdot F(g)$
+            7. $\text{Parseval}$ 等式：设函数 $f$ 在 $(-\infty,+\infty)$ 上绝对可积，且 ${\displaystyle \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{d} x}$ 收敛．记 $f$ 的 $\text{Fourier}$ 变换为 $\widehat{f}$，则
 
                 $$
                 \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{d} x=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty}|\widehat{f}(\omega)|^2 \mathrm{d} \omega

@@ -776,7 +776,7 @@
 
         则称这种形式为二次型的标准形
 
-    2. 对于二次型 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$，存在正交阵 $\boldsymbol P$ 使得经过正交变换 $\boldsymbol y = \boldsymbol P^{\mathrm T} \boldsymbol x$ 的二次型 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$ 可化为标准形 $\lambda_1 y_1^2 + \lambda_2 y_2^2 + \cdots + \lambda_n y_n^2$，其中 $\lambda_1, \lambda_2, \cdots, \lambda_n$ 是实对称矩阵 $\boldsymbol A$ 的全部特征值
+    2. 对于二次型 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$，存在正交阵 $\boldsymbol P$ 使得经过正交变换 $\boldsymbol y = \boldsymbol P^{\mathrm T} \boldsymbol x$ 的二次型 $\boldsymbol x^{\mathrm T} \boldsymbol{Ax}$ 化为标准形 $\lambda_1 y_1^2 + \lambda_2 y_2^2 + \cdots + \lambda_n y_n^2$，其中 $\lambda_1, \lambda_2, \cdots, \lambda_n$ 是实对称矩阵 $\boldsymbol A$ 的全部特征值
 
 2. $\text{Rayleigh}$ 商：设 $\boldsymbol A$ 为 $n$ 阶实对称矩阵，$\boldsymbol x$ 为 $n$ 元非零列向量，称 $\dfrac{\boldsymbol x^{\mathrm T} \boldsymbol{Ax}}{\boldsymbol x^{\mathrm T} \boldsymbol x}$ 为 $\boldsymbol A$ 的 $\text{Rayleigh}$ 商
     1. 实对称矩阵 $\boldsymbol A$ 的 $\text{Rayleigh}$ 商的最大值为 $\boldsymbol A$ 的最大特征值
