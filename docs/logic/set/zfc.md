@@ -383,7 +383,8 @@
     2. 映射 $f, g$ 相容当且仅当 $f \cap g$ 是映射，当且仅当 $f \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right) = g \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right)$
 4. 令 $X, Y$ 是集合，$X$ 到 $Y$ 的所有映射组成的集合定义为 $Y^X = \left\{f \mid f: X \to Y\right\}$
     1. 对任意集合 $X, Y$，$X^Y$ 都是集合
-    2. 对任意集合 $X$，有 $\varnothing^{X} = \varnothing$；对任意集合 $Y$，有 $Y^{\varnothing} = \left\{\varnothing_{Y}\right\}$
+    2. 对任意集合 $X$，有 $\varnothing^{X} = \varnothing$
+    3. 注意到 $\varnothing$ 到任意集合 $Y$ 都有一个空函数 $\varnothing_Y$，因此对任意集合 $Y$，有 $Y^{\varnothing} = \left\{\varnothing_{Y}\right\}$
 
 ## 1.3 数系
 ### 1.3.1 自然数集
