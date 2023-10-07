@@ -288,7 +288,7 @@ const refList = [
         page: [1, 129],
         press: "高等教育出版社",
         locate: "北京",
-        plot: 19
+        plot: 28
     },
     {
         author: ["[苏]М. М. По́стников"],
