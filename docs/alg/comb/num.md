@@ -148,7 +148,11 @@
         2. 若 $a \equiv b \pmod{m_i} \ (1 \leqslant i \leqslant k)$，则 $a \equiv b \pmod{[m_1, m_2, \cdots, m_k]}$
 
 ### 1.3.2 同余类
-1. 同余类：给定正整数 $m$，对于每个整数 $i \ (0 \leqslant i \leqslant m - 1)$，称集合 $R_i(m) = \{n \mid n \equiv i \pmod{m}, n \in \mathbf Z\}$ 是模 $m$ 的一个同余类
+1. 同余类：给定正整数 $m$，对于每个整数 $i \ (0 \leqslant i \leqslant m - 1)$，称 $R_i(m) = \{n \mid n \equiv i \pmod{m}, n \in \mathbf Z\}$ 是模 $m$ 的一个同余类
+
+    !!! note "同余类加群"
+        定义商群 $\mathbf Z/m \mathbf Z = \left\{\overline{1}, \overline{2}, \cdots, \overline{m - 1}\right\}$，注意到 $Z$ 中的运算是加法，所以商群中的运算通常仍记为加法，则对任意 $r_1, r_2 \in \mathbf Z$，定义 $\overline{r_1} + \overline{r_2} = \overline{(r_1 + r_2)}$，记 $\mathbf Z_m = \mathbf Z/m \mathbf Z$，称为模 $m$ 的同余类加群
+
 2. 简化同余类：设 $R$ 是模 $m$ 的一个同余类，若任意 $a \in R$ 都有 $(a, m) = 1$ 成立，则称 $R$ 是模 $m$ 的一个简化同余类
     1. 对于正整数 $k$，令函数 $\varphi(k)$ 的值等于模 $k$ 的所有简化同余类的个数，称 $\varphi(k)$ 为 $\text{Euler}$ 函数
     2. 特别地，$\varphi(1) = 1$；当 $p$ 为质数时，$\varphi(p) = p - 1, \varphi(p^k) = p^k - p^{k - 1}$
