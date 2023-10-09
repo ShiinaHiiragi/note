@@ -285,10 +285,9 @@ const refList = [
         title: "简明抽象代数",
         type: "M",
         year: 2003,
-        page: [1, 129],
+        page: [1, 126],
         press: "高等教育出版社",
-        locate: "北京",
-        plot: 97
+        locate: "北京"
     },
     {
         author: ["[苏]М. М. По́стников"],
