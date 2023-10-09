@@ -162,6 +162,7 @@ nav:
     - 三、近世代数:
       - 1 群论: alg/mod/grp.md
       - 2 环论: alg/mod/ring.md
+      - 3 域论: alg/mod/fld.md
       - 4 格论: alg/mod/ltt.md
   - 几何学:
     - 一、解析几何:
