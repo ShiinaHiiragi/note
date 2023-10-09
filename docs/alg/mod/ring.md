@@ -2,6 +2,7 @@
 
 ## 2.1 环的性质
 ### 2.1.1 环
+1. 环：令 $M = \{\cdot, +, o, e\}$，结构 $\mathfrak M = (R, \cdot^\mathfrak M, +^\mathfrak M, o^\mathfrak M, e^\mathfrak M)$ 是一个环，则将 $\mathfrak M$ 看作代数结构时记作 $\{R; +, \cdot\}$
 
 ### 2.1.2 子环与商环
 

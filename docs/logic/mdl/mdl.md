@@ -108,20 +108,24 @@
 
 2. 环：令 $R = \{\cdot, +, o, e\}$，则 $\mathscr L(R)$ 是环的语言，其中 $\cdot, + \in \mathbf F, o, e \in \mathbf C$ 且 $\Omega(\cdot) = \Omega(+) = 2$，将 $\cdot(t_1, t_2)$ 与 $+(t_1, t_2)$ 分别记作 $t_1 \cdot t_2$ 与 $t_1 + t_2$
     1. 如果结构 $\mathfrak M = (M, \cdot^\mathfrak M, +^\mathfrak M, o^\mathfrak M, e^\mathfrak M)$ 满足如下条件，则称 $\mathfrak M$ 是一个环，将 $\cdot^\mathfrak M$ 与 $+^\mathfrak M$ 分别称为 $\mathfrak M$ 的乘法与加法，将 $o^\mathfrak M$ 与 $e^\mathfrak M$ 分别称为 $\mathfrak M$ 的零元与幺元
-        1. $\mathfrak M \upharpoonright \mathscr L(G) \vDash \{\sigma_1, \sigma_2\}$，即对 $\{\cdot, e\}$ 构成一个幺半群
+        1. $\mathfrak M \upharpoonright \mathscr L(G) \vDash \{\sigma_2\}$，即对 $\{\cdot, e\}$ 构成一个半群
         2. $\mathfrak M \upharpoonright \mathscr L(\{+, o\})$ 是一个 $\text{Abel}$ 群
         3. $\mathfrak M \vDash \forall x \forall y \forall z \ ((x \cdot (y + z) = (x \cdot y) + (x \cdot z)) \wedge ((y + z) \cdot x = (y \cdot x) + (z \cdot x)))$
 
         若 $\mathfrak M \upharpoonright \mathscr L(\{+, o\})$ 仅是 $\text{Abel}$ 幺半群，则称结构 $\mathfrak M$ 为半环
 
-    2. 设 $\mathfrak M$ 是一个环且 $\mathfrak M \vDash \forall x \ (\neg (x = o) \to \exists y \ (x \cdot y = e))$，则称 $\mathfrak M$ 是一个体
-    3. 设 $\mathfrak M$ 是一个环且 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \sigma_4$，则称 $\mathfrak M$ 是一个 $\text{Abel}$ 环或交换环
+    2. 设 $\mathfrak M$ 是一个环，且
+        1. 若 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \sigma_1$，则称 $\mathfrak M$ 是一个幺环
+        2. 若 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \sigma_4$，则称 $\mathfrak M$ 是一个 $\text{Abel}$ 环或交换环
+        3. 若 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \{\sigma_1, \sigma_4\}$，则称 $\mathfrak M$ 是一个 $\text{Abel}$ 幺环或交换幺环
+        4. 若 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \forall x \forall y \ (\neg (x = o) \to \neg (y = o) \to \neg(x \cdot y = o))$，则称 $\mathfrak M$ 是一个整环，称使 $x \cdot y = 0$ 的 $x$ 或 $y$ 为左零因子或右零因子，统称为零因子
+    3. 设 $\mathfrak M$ 是一个幺环，且若 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \forall x \ (\neg (x = o) \to \exists y \ (x \cdot y = e))$，则称 $\mathfrak M$ 是一个体（除环）
 
-3. 域：如果交换环 $\mathfrak M$ 有 $\mathfrak M \vDash \forall x \ (\neg (x = o) \to \exists y \ (x \cdot y = e))$，则称 $\mathfrak M$ 是一个域
+3. 域：如果体 $\mathfrak M$ 有 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \sigma_4$，则称 $\mathfrak M$ 是一个域（即 $\text{Abel}$ 除环或交换除环）
     1. 对每个非零的 $a\in M$ 都存在唯一的 $b\in M$ 使得 $a \cdot^\mathfrak M b = e^\mathfrak M$，称 $b$ 为 $a$ 的（乘法逆），记作 $a^{-1}$
     2. 如果域 $\mathfrak M$ 的论域 $M$ 是有限集合，则称 $\mathfrak M$ 是有限域
     3. 设 $\mathcal K_{FF} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构，且是一个有限域$\}$ 不是一个初等类；令 $\overline{\mathcal K_{FF}} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构且 $\mathfrak M \vDash \mathrm{Th}(\mathcal K_{FF})\}$ 是一个初等类，称之为伪有限域
-4. 线性空间：设结构 $\mathfrak M = (F, +^\mathfrak M, \times^\mathfrak M, 0^\mathfrak M, 1^\mathfrak M)$ 是一个域，$\mathrm{VF} = \{+, 0\} \cup F$，其中 $\{+\} \cup F \subseteq \mathbf F, 0 \in \mathbf C$ 且 $\Omega(+) = 2, \Omega[F] = \{1\}$．如果结构 $\mathfrak V = (V, +^\mathfrak V, 0^\mathfrak V, \{\sigma^\mathfrak V \mid \sigma \in F\})$ 有
+4. 线性空间：设结构 $\mathfrak M = (F, +^\mathfrak M, \times^\mathfrak M, 0^\mathfrak M, 1^\mathfrak M)$ 是一个域，$\mathrm{VF} = \{+, 0\} \cup F$，其中 $\{+\} \cup F \subseteq \mathbf F, 0 \in \mathbf C$ 且 $\Omega(+) = 2$，$\Omega[F] = \{1\}$．如果结构 $\mathfrak V = (V, +^\mathfrak V, 0^\mathfrak V, \{\sigma^\mathfrak V \mid \sigma \in F\})$ 有
     1. $(V, +, 0)$ 是一个 $\text{Abel}$ 群
     2. 对任意的 $x \in V$ 有 $0^\mathfrak{MV}(x) = 0^\mathfrak V, 1^\mathfrak{MV}(x) = x$
     3. 每个 $\sigma \in F$ 都解释为群结构 $(V, +, 0)$ 到 $(V, +, 0)$ 的同态 $\sigma^\mathfrak V: V\to V$
