@@ -118,7 +118,7 @@
         1. 若 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \sigma_1$，则称 $\mathfrak M$ 是一个幺环
         2. 若 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \sigma_4$，则称 $\mathfrak M$ 是一个 $\text{Abel}$ 环或交换环
         3. 若 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \{\sigma_1, \sigma_4\}$，则称 $\mathfrak M$ 是一个 $\text{Abel}$ 幺环或交换幺环
-        4. 若 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \forall x \forall y \ (\neg (x = o) \to \neg (y = o) \to \neg(x \cdot y = o))$，则称 $\mathfrak M$ 是一个整环，称使 $x \cdot y = 0$ 的 $x$ 或 $y$ 为左零因子或右零因子，统称为零因子
+        4. 若 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \forall x \forall y \ (\neg (x = o) \to \neg (y = o) \to \neg(x \cdot y = o))$，则称 $\mathfrak M$ 是一个整环
     3. 设 $\mathfrak M$ 是一个幺环，且若 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \forall x \ (\neg (x = o) \to \exists y \ (x \cdot y = e))$，则称 $\mathfrak M$ 是一个体（除环）
 
 3. 域：如果体 $\mathfrak M$ 有 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \sigma_4$，则称 $\mathfrak M$ 是一个域（即 $\text{Abel}$ 除环或交换除环）
