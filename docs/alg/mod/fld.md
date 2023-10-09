@@ -66,3 +66,19 @@
 ### 3.2.3 可分扩张
 
 ## 3.3 Galois 理论
+1. $\text{Galois}$ 群与不变子域：设 $K$ 是域 $F$ 的有限扩张，则 $K$ 的所有 $F-$自同构的集合关于映射的乘法构成一个群，称为 $K$ 在 $F$ 上的 $\text{Galois}$ 群，记为 $\operatorname{Gal}(K / F)$．设 $G$ 为域 $K$ 的自同构群 $\operatorname{Aut}(K)$ 的一个子群，则集合 $\{a \in K \mid g(a)=a, \forall g \in G\}$ 是 $K$ 的一个子域，称为 $K$ 的 $G-$不变子域，记为 $\operatorname{Inv} G$
+2. $\text{Galois}$ 扩张：若域 $F$ 的有限扩张 $K$ 满足 $\operatorname{Inv}(\operatorname{Gal}(K / F))=F$，则称 $K$ 是 $F$ 的 $\text{Galois}$ 扩张
+    1. 正规扩张：设 $F$ 为域，$K$ 为 $F$ 的一个代数扩张，若 $F[x]$ 中的一个不可约多项式 $p(x)$ 在 $K$ 中有一个根，则 $p(x)$ 的所有根都在 $K$ 中，即在 $K$ 中 $p(x)$ 可以分解为一次因式的乘积，此时称 $K$ 为 $F$ 的正规扩张
+    2. 设 $K$ 是域 $F$ 的扩域，则下列条件等价
+        1. $K$ 是 $F$ 的 $\text{Galois}$ 扩张
+        2. $K$ 是 $F$ 的有限可分正规扩张
+        3. $K$ 是可分多项式 $f(x) \in F[x]$ 的分裂域，且此时有 $|\mathrm{Gal}(K / F)|=[K: F]$
+3. $\text{Galois}$ 基本定理
+    1. 定义 $\Sigma$ 到 $\Gamma$ 的映射 $\textrm{Gal}: E \mapsto \textrm{Gal}(K / E), \forall E \in \Sigma$，称之为 $\text{Galois}$ 映射，则 $\text{Galois}$ 映射是可逆映射，其逆映射为 $\Gamma$ 到 $\Sigma$ 的映射 $\textrm{Inv}: H \mapsto \operatorname{Inv} H, \forall H \in \Gamma$
+    2. $\forall H_{1}, H_{2} \in \Gamma$ 有 $H_{2} \subseteq H_{1} \leftrightarrow \operatorname{Inv} H_{1} \subseteq \operatorname{Inv} H_{2}$
+    3. $\forall H_{1}, H_{2} \in \Gamma, H_{2} \subseteq H_{1}$，则有 $\left[H_{1}: H_{2}\right]=\left[\operatorname{Inv} H_{2}: \operatorname{Inv} H_{1}\right]$
+    4. $\forall H_{1}, H_{2} \in \Gamma, H_{2} \subseteq H_{1}$，则有 $H_{2} \triangleleft H_{1} \leftrightarrow \operatorname{Inv} H_{2}$ 是 $\operatorname{Inv} H_{1}$ 的正规扩张，且此时 $\mathrm{Gal}\left(\operatorname{Inv} H_{2} / \operatorname{Inv} H_{1}\right) \simeq H_{1} / H_{2}$
+4. 设 $F$ 是特征为 $0$ 的域，$f(x) \in F[x]$ 是无重根的多项式，则方程 $f(x)=0$ 对 $F$ 可用根式解的充要条件是 $f(x)=0$ 对基域 $F$ 的 $\text{Galois}$ 群 $G(f(x), F)$ 为可解群
+    1. 方程的 $\text{Galois}$ 群：设 $f(x)$ 是域 $F$ 上的多项式，即 $f(x) \in F[x]$．设 $F$ 是特征为 $0$ 的域，$f(x)$ 是无重根的多项式，记 $K$ 是 $f(x)$ 的分裂域，则称 $\mathrm{Gal}(K / F)$ 为方程 $f(x)=0$ 对基域 $F$ 的 $\text{Galois}$ 群，记为 $G(f(x), F)$
+    2. 方程可用根式解：设 $K$ 是域 $F$ 的扩张，若有中间域序列 $F=F_{0} \subseteq F_{1} \subseteq \cdots \subseteq F_{i} \subseteq F_{i+1} \subseteq \cdots \subseteq F_{m}=K$ 使得每一 $F_{i+1}$ 都是 $x^{n_{1+1}}-a_{i+1} \in F_{i}[x]$ 的分裂域，则称 $K$ 是 $F$ 的根式扩张．设多项式 $f(x) \in F[x]$，若有 $F$ 的根式扩张 $K$ 包含 $f(x)$ 的分裂域，则称方程 $f(x)=0$ 对 $F$ 可用根式解
+    3. 次数不小于 $5$ 的文字系数多项式（即方程所有系数是独立的或称代数无关的）方程不能用根式解
