@@ -428,6 +428,16 @@ const refList = [
         locate: "北京"
     },
     {
+        author: ["许以超", "马松雅"],
+        title: "代数编码与密码",
+        type: "M",
+        page: [1, 196],
+        year: 2015,
+        press: "高等教育出版社",
+        locate: "北京",
+        plot: 7
+    },
+    {
         author: ["Rob Nederpelt", "Herman Geuvers"],
         title: "Type Theory and Formal Proof: an Introduction",
         type: "M",

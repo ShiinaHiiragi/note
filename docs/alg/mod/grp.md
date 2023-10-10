@@ -55,19 +55,36 @@
         2. $a, b \in H \rightarrow a b \in H, a^{-1} \in H$
         3. $a, b \in H \rightarrow a b^{-1} \in H$
     4. 设 $H$ 为群 $G$ 的非空有限子集，则 $H \leqslant G \leftrightarrow H$ 对 $G$ 中的运算封闭
-    5. 若 $H_{1}, H_{2}$ 均是群 $G$ 的子群，则 $H_{1} \cap H_{2} \leqslant G$
 2. 陪集：设 $H$ 是群 $G$ 的子群，$a \in G$，则分别称 $a H=\{a h \mid h \in H\},\ H a=\{h a \mid h \in H\}$ 为以 $a$ 为代表的 $H$ 的左陪集，右陪集
     1. 设 $H$ 是群 $G$ 的子群，则由 $a R b \leftrightarrow a^{-1} b \in H$ 确定的 $G$ 中的关系 $R$ 是一个等价关系，且 $a$ 所在的等价类 $\overline{a}$ 恰为以 $a$ 为代表的 $H$ 的左陪集 $a H$．故 $H$ 的全体左陪集（重复的只取一个）的集合 $\{a H\}$ 是 $G$ 的一个分类
     2. 设 $H$ 是群 $G$ 的子群，$a, b \in G$，则 $a H=b H \leftrightarrow a^{-1} b \in H$
 3. 陪集空间：设 $H$ 为群 $G$ 的子群，$G$ 关于等价关系 $a R b \leftrightarrow a^{-1} b \in H$ 的商集合 $G / R$ 称为 $G$ 对 $H$ 的左商集，也称为 $G$ 对 $H$ 的左陪集空间，也记为 $G / H$．$G / H$ 的基数 $|G / H|$ 称为 $H$ 在 $G$ 中的指数，记为 $[G: H]$
     1. $\text{Lagrange}$ 定理：设 $G$ 是有限群，$H \leqslant G$，则有 $|G|=[G: H] \cdot|H|$，从而子群 $H$ 的阶是群 $G$ 的阶的因子
     2. 设 $G$ 是有限群，$K \leqslant G$，$H \leqslant K$，则有 $[G: H]=[G: K] \cdot[K: H]$
-4. 正规子群：设 $G$ 是群，$H \leqslant G$，如果有 $ghg^{-1} \in H, \forall g \in G, \forall h \in H$，则称 $H$ 为 $G$ 的一个正规子群，记为 $H \triangleleft G$
+4. 正规子群：设 $G$ 是群，$H \leqslant G$，如果有 $g^{-1}hg \in H, \forall g \in G, \forall h \in H$，则称 $H$ 为 $G$ 的一个正规子群，记为 $H \triangleleft G$
     1. 平凡子群以及交换群的任何子群都是正规子群
     2. 设 $G$ 是群，$H \leqslant G$，则下列条件等价
         1. $H \triangleleft G$
         2. $gH=Hg, \forall g \in G$
         3. $g_{1} H \cdot g_{2} H=g_{1} g_{2} H, \forall g_{1}, g_{2} \in G$
+    3. 共轭关系：任取 $g \in G$，定义群 $G$ 到自身内的映射 $\operatorname{ad}(g): x \rightarrow g^{-1} x g, \  \forall x \in G$，称 $\operatorname{ad}(g)$ 为共轭映射．在群 $G$ 中任取两个元素 $a$ 和 $b$，如果存在元素 $g \in G$，使得 $b=(\operatorname{ad}(g))(a)=g^{-1} a g$，则称 $b$ 共轭于 $a$
+        1. 共轭关系是等价关系：设 $G$ 为有限群，于是存在共轭关系下的代表元集 $\left\{d_{1}, \cdots, d_{r}\right\}$．记以 $d_{j}$ 为代表元素的共轭等价类为 $\mathfrak{S}_{j}$，于是 $G$ 分解为两两不相交的共轭等价类的并集
+
+            $$
+            G=\bigcup_{j=1}^{r} \mathfrak{S}_{j}, \  \mathfrak{S}_{i} \cap \mathfrak{S}_{j}=\varnothing, \  1 \leqslant i<j \leqslant r
+            $$
+
+        2. 设 $G$ 为群，$G$ 中子集 $C(G)=\{x \in G \mid x g=g x, \forall g \in G\}$ 为 $G$ 的正规子群，称为群 $G$ 的中心，$C(G)$ 中的元素称为群 $G$ 的中心元素．$G$ 中元素 $g \in C(G)$ 当且仅当存在 $\mathfrak{S}_{j}, 1 \leqslant j \leqslant r$ 使得 $\mathfrak{S}_{j} = \{g\}$，于是
+
+            $$
+            \begin{aligned}
+            G&=C(G) \cup\left(\bigcup_{1 \leqslant j \leqslant r,\left|\mathfrak{S}_{j}\right|>1} \mathfrak{S}_{j}\right) \\
+            |G|&=|C(G)|+\sum_{1 \leqslant j \leqslant r,\left|\mathfrak{S}_{j}\right|>1}\left|\mathfrak{S}_{j}\right|
+            \end{aligned}
+            $$
+
+    4. 设 $H_{1}, H_{2}, \cdots, H_{s}$ 是群 $G$ 的 $s$ 个子群（正规子群），则 $H_{0}= H_{1} \cap H_{2} \cap \cdots \cap H_{s}$ 仍是 $G$ 的子群（正规子群）
+
 5. 商群：设 $G$ 是群，$H \leqslant G$，$R$ 是 $G$ 中由 $a R b \leftrightarrow a^{-1} b \in H$ 定义的关系，则 $R$ 是 $G$ 中的同余关系 $\leftrightarrow H \triangleleft G$．此时商集合 $G / R$ 对同余关系 $R$ 导出的运算也构成一个群，称为 $G$ 对 $H$ 的商群，记为 $G / H$
 
 ## 1.2 群同态
@@ -98,7 +115,7 @@
 4. 自同态与自同构：群 $G$ 到自身的同态映射称为 $G$ 的一个自同态，到自身的同构映射称为 $G$ 的一个自同构，用 $\operatorname{Aut}(G)$ 表示群 $G$ 的自同构群
     1. 设 $G$ 是群，则 $\operatorname{Aut}(G) \leqslant S_{G}$
     2. 设 $G$ 为群，$a \in G$，定义映射 $\sigma_{a}: G \rightarrow G$ 为 $\sigma_{a}(g)=a g a^{-1}, \forall g \in G$，则 $\sigma_{u} \in \operatorname{Aut}(G)$ 称为由 $a$ 决定的内自同构．记 $\operatorname{Inn}(G)=\left\{\sigma_{a} \mid a \in G\right\}$，则 $\operatorname{Inn}(G) \triangleleft \operatorname{Aut}(G)$，称 $\operatorname{Inn}(G)$ 为 $G$ 的内自同构群
-    3. 群 $G$ 中，与 $G$ 中所有元素可交换的元素的集合称为群 $G$ 的中心，记为 $C(G)$．于是 $C(G)=\operatorname{ker} f$，$G / C(G) \simeq \operatorname{Inn}(G)$
+    3. $C(G)=\operatorname{ker} f$，$G / C(G) \simeq \operatorname{Inn}(G)$
 
 ## 1.3 群实例
 ### 1.3.1 循环群
