@@ -524,17 +524,17 @@
 
         !!! note "比例的性质"
             1. 设 $a : b = c : d$，则有
-                - 交叉积：$ad = bc$
+                - 交叉积：$a \cdot^{\mathbf Z} d = b \cdot^{\mathbf Z} c$
                 - 更比定理：$a : c = b : d$
                 - 反比定理：$d : c = b : a$
-                - 合比定理：$(a+b) : a = (c+d) : c$
-                - 分比定理：$(a-b) : a = (c-d) : c$
-                - 合分比定理：$(a+b) : (a-b) = (c+d) : (c-d)$
+                - 合比定理：$(a+^{\mathbf Z}b) : a = (c+^{\mathbf Z}d) : c$
+                - 分比定理：$(a-^{\mathbf Z}b) : a = (c-^{\mathbf Z}d) : c$
+                - 合分比定理：$(a+^{\mathbf Z}b) : (a-^{\mathbf Z}b) = (c+^{\mathbf Z}d) : (c-^{\mathbf Z}d)$
             2. 比例链：若几个比相等 $a_1 : b_2 = a_2 : b_2 = \cdots = a_n : b_n$，则可简写为比例链 $a_1 : a_2 : \cdots : a_n = b_1 : b_2 : \cdots : b_n$
             3. 等比公式：若 $a_1 : a_2 : \cdots : a_n = b_1 : b_2 : \cdots : b_n$，则
 
                 $$
-                \dfrac{a_1}{b_1}=\dfrac{a_1+a_2+\cdots+a_n}{b_1+b_2+\cdots+b_n}=\dfrac{\lambda_1 a_1+\lambda_2 a_2+\cdots+\lambda_n a_n}{\lambda_1 b_1+\lambda_2 b_2+\cdots+\lambda_n b_n}=\dfrac{\sqrt{a_1^2+a_2^2+\cdots+a_n^2}}{\sqrt{b_1^2+b_2^2+\cdots+b_n^2}}
+                \dfrac{a_1}{b_1}=\dfrac{a_1+^{\mathbf Z}a_2+^{\mathbf Z}\cdots+^{\mathbf Z}a_n}{b_1+^{\mathbf Z}b_2+^{\mathbf Z}\cdots+^{\mathbf Z}b_n}=\dfrac{\lambda_1 a_1+^{\mathbf Z}\lambda_2 a_2+^{\mathbf Z}\cdots+^{\mathbf Z}\lambda_n a_n}{\lambda_1 b_1+^{\mathbf Z}\lambda_2 b_2+^{\mathbf Z}\cdots+^{\mathbf Z}\lambda_n b_n}=\dfrac{\sqrt{a_1^2+^{\mathbf Z}a_2^2+^{\mathbf Z}\cdots+^{\mathbf Z}a_n^2}}{\sqrt{b_1^2+^{\mathbf Z}b_2^2+^{\mathbf Z}\cdots+^{\mathbf Z}b_n^2}}
                 $$
 
                 其中 $\lambda_i$ 是一组任意不全为零的常数，$b_i$ 都不等于零 $(i = 1,2, \cdots, n)$.
@@ -567,14 +567,14 @@
 
     |                       集合                        |       区间表示       |     名称     |
     | :-----------------------------------------------: | :------------------: | :----------: |
-    | $\left\{w \mid x \leqslant w \leqslant y\right\}$ |       $[x, y]$       |    闭区间    |
-    |         $\left\{w \mid x < w < y\right\}$         |       $(x, y)$       |    开区间    |
-    |     $\left\{w \mid x \leqslant w < y\right\}$     |       $[x, y)$       | 半开半闭区间 |
-    |     $\left\{w \mid x < w \leqslant y\right\}$     |       $(x, y]$       | 半开半闭区间 |
-    |       $\left\{w \mid w \geqslant x\right\}$       |    $[x, +\infty)$    | 半开半闭区间 |
-    |           $\left\{w \mid w > x\right\}$           |    $(x, +\infty)$    |    开区间    |
-    |       $\left\{w \mid w \leqslant x\right\}$       |    $(-\infty, x]$    | 半开半闭区间 |
-    |           $\left\{w \mid w < x\right\}$           |    $(-\infty, x)$    |    开区间    |
+    | $\left\{w \mid x \leqslant^{\mathbf R} w \leqslant^{\mathbf R} y\right\}$ |       $[x, y]$       |    闭区间    |
+    |         $\left\{w \mid x <^{\mathbf R} w <^{\mathbf R} y\right\}$         |       $(x, y)$       |    开区间    |
+    |     $\left\{w \mid x \leqslant^{\mathbf R} w <^{\mathbf R} y\right\}$     |       $[x, y)$       | 半开半闭区间 |
+    |     $\left\{w \mid x <^{\mathbf R} w \leqslant^{\mathbf R} y\right\}$     |       $(x, y]$       | 半开半闭区间 |
+    |       $\left\{w \mid w \geqslant^{\mathbf R} x\right\}$       |    $[x, +\infty)$    | 半开半闭区间 |
+    |           $\left\{w \mid w >^{\mathbf R} x\right\}$           |    $(x, +\infty)$    |    开区间    |
+    |       $\left\{w \mid w \leqslant^{\mathbf R} x\right\}$       |    $(-\infty, x]$    | 半开半闭区间 |
+    |           $\left\{w \mid w <^{\mathbf R} x\right\}$           |    $(-\infty, x)$    |    开区间    |
     |                    $\mathbf R$                    | $(-\infty, +\infty)$ |    开区间    |
 
     </div>
