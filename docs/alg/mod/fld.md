@@ -4,16 +4,29 @@
 ### 3.1.1 有限域
 
 ### 3.1.2 域上多项式环
-1. 一般域上多项式环：设 $F$ 为一个域，$x$ 为一个文字（符号），则称由形如
+1. 一般域上多项式环：设 $F$ 为域，$x$ 是一个（文字）未定元，称 $f(x)=a_{0}+a_{1} x+\cdots+a_{n} x^{n}$ 为域 $F$ 上的多项式，其中 $a_{i} \in F, 0 \leqslant i \leqslant n$．如果 $a_{n} \neq 0$，则称多项式 $f(x)$ 的次数为 $n$，记作 $\operatorname{deg}(f(x))=n$. $a_{n}$ 称为首项系数
+    1. 记 $F[x]$ 为域 $F$ 上关于未定元 $x$ 的所有多项式构成的集合，在 $F[x]$ 中引进加法和乘法：设 ${\displaystyle f(x)=\sum_{i=0}^{n} a_{i} x^{i} \in F[x]}$，${\displaystyle g(x)=\sum_{j=0}^{m} b_{j} x^{j} \in F[x]}$，定义
 
-    $$
-    \left\{a_{n} x^{n}+a_{n-1} x^{n-1}+\cdots+a_{1} x+a_{0} \mid n \in \mathbf{N} \cup\{0\}, a_{i} \in F, i=1,2, \cdots, n\right\}
-    $$
+        $$
+        \begin{aligned}
+        f(x)+g(x)&=\sum_{i=0}^{\max \{n, m\}}\left(a_{i}+b_{i}\right) x^{i} \\
+        f(x) g(x)&=\sum_{k=0}^{n+m}\left(\sum_{i=0}^{k} a_{i} b_{k-i}\right) x^{k}
+        \end{aligned}
+        $$
 
-    的所有元素组成的集合 $F[x]$ 为 $F$ 上的一元多项式环，简称为 $F$ 上的多项式环．在 $F[x]$ 上定义加法和乘法后，$F[x]$ 构成交换幺环．设 $f(x)=a_{n} x^{n}+a_{n-1} x^{n-1}+\cdots+a_{1} x+a_{0}, a_{n} \neq 0, n \geqslant 0$，则称 $n$ 为非零多项式 $f(x)$ 的次数，记为 $\operatorname{deg} f(x)$
+        其中 $a_{n+1}=a_{n+2}=\cdots=a_{n+m}=0, b_{m+1}=b_{m+2}=\cdots=b_{m+n}=0$．则 $F[x]$ 是交换整环，称为域 $F$ 上的多项式环
 
-    1. 对任意 $f(x) \in F[x]$，存在 $q(x), r(x) \in F[x]$ 使得 $f(x)=q(x) g(x)+r(x)$，其中 $r(x)=0$ 或 $\operatorname{deg} r(x)<\operatorname{deg} g(x)$，且这样的 $q(x), r(x)$ 惟一．作 $F[x]^{*}$ 到 $\mathrm{N} \cup\{0\}$ 的映射 $\delta(f(x))=\operatorname{deg} f(x), \forall f(x) \in F[x]^{\cdot}$，则可知 $F[x]$ 是 $\text{Euclid}$ 环
-    2. 设 $f(x) \in F[x]$ 不可约，则 $\langle f(x)\rangle$ 为 $F[x]$ 的极大理想，因此 $F[x] /\langle f(x)\rangle$ 是一个域
+    2. 作 $F[x]^{*}$ 到 $\mathrm{N} \cup\{0\}$ 的映射 $\delta(f(x))=\operatorname{deg} f(x), \forall f(x) \in F[x]^{\cdot}$，则可知 $F[x]$ 是 $\text{Euclid}$ 环
+        1. 设 $a(x), b(x) \in F[x]$，而 $b(x) \neq 0$，则在 $F[x]$ 中唯一存在多项式 $q(x)$ 和 $r(x)$，使得 $a(x)=q(x) b(x)+r(x)$，其中 $r(x)=0$ 或 $r(x) \neq 0,0 \leqslant \operatorname{deg}(r(x))<\operatorname{deg}(b(x))$
+        2. 存在域 $F$ 上的多项式 $u(x)$ 和 $v(x)$，使得 $u(x) f(x)+v(x) g(x)=(f(x), g(x))$，其中 $(f(x), g(x))$ 为 $f(x)$ 与 $g(x)$ 的最大公因式，可用辗转相除法求出
+        3. 唯一析因定理：设 $f(x)$ 为域 $F$ 上的多项式环 $F[x]$ 中次数大于零的多项式，则 $f(x)$ 有因式分解
+
+            $$f(x)=a_{0} q_{1}(x) q_{2}(x) \cdots q_{t}(x)
+            $$
+
+            其中 $q_{1}(x), q_{2}(x), \cdots, q_{t}(x)$ 为域 $F$ 上次数大于零且首项系数为 1 的不可约多项式，则 $s=t$，并且存在 $1,2, \cdots, s$ 的排列 $j_{1} j_{2} \cdots j_{s}$，使得 $p_{i}(x)=q_{j_{i}}(x) \in F[x]$, $i=1, \cdots, s$
+
+    3. 设 $f(x) \in F[x]$ 不可约，则 $\langle f(x)\rangle$ 为 $F[x]$ 的极大理想，因此 $F[x] /\langle f(x)\rangle$ 是一个域
 
 2. 有限域上多项式环
 
@@ -36,7 +49,7 @@
     1. 设 $R$ 为整环，则 $R$ 的分式域存在
     2. 整环 $R$ 的分式域是包含 $R$ 的最小域，因而惟一
 2. 素域：不包含任何非平凡子域的域
-    1. 设 $\Pi$ 为一个素域，则 $\Pi \simeq Q$ 或 $\Pi \simeq Z$（$p$ 为质数）
+    1. 设 $\Pi$ 为一个素域，则 $\Pi \simeq \mathbf Q$ 或 $\Pi \simeq \mathbf Z_p$（$p$ 为质数）
     2. 设 $K$ 为域，$p$ 为质数
         1. $K$ 的特征为 $p$ 当且仅当 $p a=0, \ \forall a \in K$
         2. $K$ 的特征为零当且仅当 $n a \neq 0, \ \forall n \in \mathrm{N}, a \in K^{*}$

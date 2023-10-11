@@ -155,7 +155,7 @@
 
         1. 同余类群：在 $\mathbf Z_m$ 中定义加法运算 $+$，即对任意 $r_1, r_2 \in \mathbf Z$，定义 $\overline{r_1} + \overline{r_2} = \overline{(r_1 + r_2)}$，则 $\{\mathbf Z_{m}; +\}$ 构成交换群，称为模 $m$ 的同余类群
         2. 同余类环：在 $\mathbf Z_m$ 中定义乘法运算 $\cdot$，即对任意 $r_1, r_2 \in \mathbf Z$，定义 $\overline{r_1} \cdot \overline{r_2} = \overline{(r_1 \cdot r_2)}$，则 $\{\mathbf Z_{m}; +, \cdot\}$ 构成环，称为模 $m$ 的同余类环
-        3. 同余类域：当 $p$ 为质数时，$\mathbf Z_p$ 对乘法运算构成交换群，此时 $\mathbf Z_p$ 构成域，称为模 $m$ 的同余类域
+        3. 同余类域：当 $p$ 为质数时，$\mathbf Z_p$ 对乘法运算构成交换群，此时 $\mathbf Z_p$ 构成域，称为模 $m$ 的同余类域，也可记作素域 $\Pi_{p}$
 
 2. 简化同余类：设 $R$ 是模 $m$ 的一个同余类，若任意 $a \in R$ 都有 $(a, m) = 1$ 成立，则称 $R$ 是模 $m$ 的一个简化同余类
     1. 对于正整数 $k$，令函数 $\varphi(k)$ 的值等于模 $k$ 的所有简化同余类的个数，称 $\varphi(k)$ 为 $\text{Euler}$ 函数

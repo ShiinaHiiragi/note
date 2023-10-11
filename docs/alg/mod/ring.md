@@ -103,5 +103,5 @@
 3. 主理想整环是惟一析因环
 
 ### 2.3.3 Euclid 环
-1. 设 $R$ 为一个整环．若存在从 $R^{*}$ 到 $\mathbf{N} \cup\{0\}$ 的映射 $\delta$，使得 $\forall a, b \in R, b \neq 0$，存在 $q, r \in R$ 满足 $a=q b+r$，其中 $r=0$ 或 $\delta(r)<\delta(b)$．则称 $R$ 为 $\text{Euclid}$ 环
+1. 设 $R$ 为一个整环．若存在从 $R^{*}$ 到 $\mathbf{N} \cup\{0\}$ 的映射 $\delta$，使得 $\forall a, b \in R, b \neq 0$，存在 $q, r \in R$ 满足 $a=q b+r$，其中 $r=0$ 或 $\delta(r)<\delta(b)$．则称 $R$ 为 $\text{Euclid}$ 环，此时可以在 $R$ 上做辗转相除法
 2. $\text{Euclid}$ 环是主理想整环，因此是惟一析因环
