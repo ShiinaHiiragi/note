@@ -28,7 +28,7 @@
         1. 设 $A$ 为 $R$ 的非空子集，所有 $R$ 中包含 $A$ 的理想之交仍为 $R$ 的理想，称为由 $A$ 生成的理想，记为 $\langle A\rangle$
         2. 若 $R$ 为交换幺环，则 $\langle A\rangle$ 是由所有形如 ${\displaystyle \sum_{i=1}^{n} x_{i} a_{i}, n \in \mathrm{N}, x_{i} \in R, \ a_{i} \in A, i=1,2, \cdots, n}$ 的元素组成的集合，记为 $L$
         3. 当 $A$ 只包含一个元素 $a$ 时，记 $\langle A\rangle$ 为 $\langle a\rangle$，称为由 $a$ 生成的主理想
-3. 商环：设 $I$ 为环 $R$ 的理想，在 $R$ 中定义关系 $\sim$ 为 $a \sim b \leftrightarrow a-b \in I$，则关系 $\sim$ 是 $R$ 中的等价关系，且对于 $R$ 的加法和乘法都是同余关系．将 $a \in R$ 所在的等价类记为 $a+I$，在商集合 $R / \sim=R / I$ 上定义加法和乘法如下
+3. 商环：设 $I$ 为环 $R$ 的理想，在 $R$ 中定义关系 $\sim$ 为 $a \sim b \leftrightarrow a-b \in I$，则关系 $\sim$ 是 $R$ 中的等价关系，记作 $a \equiv b \pmod R_{0}$，且对于 $R$ 的加法和乘法都是同余关系．将代表元 $a \in R$ 所在的等价类（也可称作模 $I$ 的同余类）记为 $a+I$，在商集 $R / \sim$ 上定义加法和乘法如下
 
     $$
     \begin{aligned}
