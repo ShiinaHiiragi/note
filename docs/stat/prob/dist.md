@@ -106,7 +106,7 @@
     2. 分布特征：$\mathrm{E}X=\mu, \ \mathrm{D}X=\sigma^2, \ \varphi_X(t)=\mathrm{e}^{\mathrm{i}\mu t - \frac{1}{2}\sigma^2 t^2}$
 
 3. 多元正态分布：$X\sim N(\boldsymbol \mu, \boldsymbol B)$
-    1. 设 $\boldsymbol B$ 是一个对称正定矩阵，称由密度函数 $p_n(x)=\dfrac{1}{(2\pi)^{\frac{n}{2}}|\boldsymbol B|^{\frac{1}{2}}}\exp\left\{-\dfrac{1}{2}(\boldsymbol x-\boldsymbol \mu)^{\mathrm{T}}\boldsymbol B^{-1}(\boldsymbol x-\boldsymbol \mu)\right\}$ 确定的的 $n$ 元正态分布
+    1. 设 $\boldsymbol B$ 是一个对称正定矩阵，称由密度函数 $p_n(\boldsymbol x)=\dfrac{1}{(2\pi)^{\frac{n}{2}}|\boldsymbol B|^{\frac{1}{2}}}\exp\left\{-\dfrac{1}{2}(\boldsymbol x-\boldsymbol \mu)^{\mathrm{T}}\boldsymbol B^{-1}(\boldsymbol x-\boldsymbol \mu)\right\}$ 确定的的 $n$ 元正态分布．其中 $\boldsymbol \mu$ 为随机向量的均值，$\boldsymbol B$ 为随机向量的协方差矩阵
     2. 二元正态函数：$n=2$ 时，设 $(X, Y)\sim N\left(\begin{bmatrix}\mu_1 \\ \mu_2\end{bmatrix}, \begin{bmatrix} \sigma_1^2 &r\sigma_1\sigma_2 \\ r\sigma_1\sigma_2 &\sigma_2^2\end{bmatrix}\right)$．由于 $\boldsymbol B$ 为正定矩阵，于是 $0<r<1$
         1. （联合分布）密度函数
 
