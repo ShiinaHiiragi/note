@@ -86,16 +86,15 @@
         1. $=_{\beta}$ 扩展了 $\twoheadrightarrow_{\beta}$ 的定义，即若 $M \twoheadrightarrow_{\beta} N$，则 $M =_{\beta} N$
         2. $=_{\beta}$ 是一个等价关系
 
-2. $\beta-$正规形式：设 $M \in \Lambda$，则若 $M$ 不包含任何可归约式时，称 $M$ 为 $\beta-$正规形式
-    1. 当 $M$ 为 $\beta-$正规形式时，则 $M \twoheadrightarrow_{\beta} N$ 蕴含 $M \equiv N$，反之不成立
+2. $\beta-$正规形式：设 $M \in \Lambda$，则若 $M$ 不包含任何可归约式时，称 $M$ 为 $\beta-$正规形式．当 $M$ 为 $\beta-$正规形式时，则 $M \twoheadrightarrow_{\beta} N$ 蕴含 $M \equiv N$，反之不成立
+    1. 归约路径：$M$ 的一个有穷归约路径是一个有穷 $\lambda-$项序列 $N_0, N_1, \cdots, N_n$，使得 $N_0 \equiv M$ 且对于任意 $0 \leqslant i < n$ 都有 $N_i \to_{\beta} N_{i+1}$；$M$ 的一个无穷归约路径是一个无穷 $\lambda-$项序列 $N_0, N_1, N_2, \cdots$，使得 $N_0 \equiv M$ 且对于任意 $i \in \mathbf N$ 都有 $N_i \to_{\beta} N_{i+1}$
+    2. 可正规化：若存在 $\beta-$正规形式 $N$ 使得 $M =_{\beta} N$，则称 $M$ 是 $\beta-$可正规化的或弱可正规化的，也可称 $M$ 有正规形式 $N$，另外称 $N$ 是 $M$ 的一个正规形式；若不存在从 $M$ 开始的无穷归约路径，则称 $M$ 是强可正规化的
 
         !!! note "$\beta-$正规形式例举"
-            1. 定义 $\Omega = (\lambda x.xx)(\lambda x.xx)$，则 $\Omega$ 不是 $\beta-$正规形式且无 $\beta-$正规形式
-            2. 定义 $\Delta = \lambda x.xxx$，则 $\Delta \Delta \to_{\beta} \Delta \Delta \Delta \to_{\beta} \Delta \Delta \Delta \Delta \to_{\beta} \cdots$ 不是 $\beta-$正规形式且无 $\beta-$正规形式；而 $(\lambda u.v)\Omega$ 有 $\beta-$正规形式 $v$，且存在无穷归约路径
+            1. 定义 $\Omega = (\lambda x.xx)(\lambda x.xx)$，则 $\Omega$ 不是 $\beta-$正规形式且无 $\beta-$正规形式，$(\lambda u.v)\Omega$ 有 $\beta-$正规形式 $v$，且存在无穷归约路径
+            2. 定义 $\Delta = \lambda x.xxx$，则 $\Delta \Delta \to_{\beta} \Delta \Delta \Delta \to_{\beta} \Delta \Delta \Delta \Delta \to_{\beta} \cdots$ 不是 $\beta-$正规形式且无 $\beta-$正规形式
 
-    2. 归约路径：$M$ 的一个有穷归约路径是一个有穷 $\lambda-$项序列 $N_0, N_1, \cdots, N_n$，使得 $N_0 \equiv M$ 且对于任意 $0 \leqslant i < n$ 都有 $N_i \to_{\beta} N_{i+1}$；$M$ 的一个无穷归约路径是一个无穷 $\lambda-$项序列 $N_0, N_1, N_2, \cdots$，使得 $N_0 \equiv M$ 且对于任意 $i \in \mathbf N$ 都有 $N_i \to_{\beta} N_{i+1}$
-    3. 可正规化：若存在 $\beta-$正规形式使得 $M =_{\beta} N$，则称 $M$ 是（弱）可正规化的或称 $M$ 有正规形式 $N$，称 $N$ 是 $M$ 的一个正规形式；若不存在从 $M$ 开始的无穷归约路径，则称 $M$ 是强可正规化的
-    4. $\text{Church}-\text{Rosser}$ 定理：对于给定的 $M \in \Lambda$，若有 $M \twoheadrightarrow_{\beta} N_1, M \twoheadrightarrow_{\beta} N_2$，则存在 $N_3 \in \Lambda$ 使得 $N_1 \twoheadrightarrow_{\beta} N_3, N_2 \twoheadrightarrow_{\beta} N_3$
+    3. $\text{Church}-\text{Rosser}$ 定理：对于给定的 $M \in \Lambda$，若有 $M \twoheadrightarrow_{\beta} N_1, M \twoheadrightarrow_{\beta} N_2$，则存在 $N_3 \in \Lambda$ 使得 $N_1 \twoheadrightarrow_{\beta} N_3, N_2 \twoheadrightarrow_{\beta} N_3$
         1. 设 $M =_{\beta} N$，则存在 $L \in \Lambda$ 使得 $M \twoheadrightarrow_{\beta} L, N \twoheadrightarrow_{\beta} L$
         2. 若 $M$ 有正规形式 $N$，则 $M \twoheadrightarrow_{\beta} N$
         3. 一个 $\lambda-$项至多有一个 $\beta-$正规形式
