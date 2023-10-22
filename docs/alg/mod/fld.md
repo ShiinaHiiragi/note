@@ -50,8 +50,8 @@
     2. 整环 $R$ 的分式域是包含 $R$ 的最小域，因而惟一
 2. 素域：不包含任何非平凡子域的域
     1. 设 $\Pi$ 为一个素域，则 $\Pi \simeq \mathbf Q$ 或 $\Pi \simeq \mathbf Z_p$（$p$ 为质数）
-    2. 设 $K$ 为域，$p$ 为质数
-        1. $K$ 的特征为 $p$ 当且仅当 $p a=0, \ \forall a \in K$
+    2. 设 $K$ 为域，$p$ 为质数，则域 $K$ 的特征不是零就是质数．特别地，有限域的特征一定为质数
+        1. $K$ 的特征为 $p$ 当且仅当 $p a=0, \ \forall a \in K$．此时有 $K=\{0, e, 2 e, \cdots,(p-1) e\}$
         2. $K$ 的特征为零当且仅当 $n a \neq 0, \ \forall n \in \mathrm{N}, a \in K^{*}$
 3. 扩域：若域 $F$ 是域 $K$ 的子域，则称 $K$ 为 $F$ 的扩张，或称 $K$ 为 $F$ 的扩域
     1. 设 $K$ 为域 $F$ 的扩域，$S \subseteq K$
@@ -64,16 +64,22 @@
 ### 3.2.1 单扩张
 1. 单扩张：设 $K$ 为 $F$ 的扩域且存在 $\alpha \in K$ 使得 $K=F(\alpha)$，则称 $K$ 为 $F$ 的单扩张．若 $\alpha$ 为 $F$ 上的代数元，则称 $K$ 为 $F$ 的单代数扩张；若 $\alpha$ 为 $F$ 上的超越元，则 $K$ 称为 $F$ 的单超越扩张
     1. 若 $\alpha$ 是域 $F$ 上的超越元，则 $F(\alpha) \simeq F(x)$，其中 $F(x)$ 是 $F$ 上的多项式环 $F[x]$ 的分式域
-    2. 若 $\alpha$ 是 $F$ 上的代数元，则 $F(\alpha) \simeq F[x] /\langle p(x)\rangle$，其中 $p(x)$ 是 $F[x]$ 的一个由 $\alpha$ 惟一确定的首一不可约多项式且 $p(\alpha)=0$
-2. 不可约多项式：设 $K$ 为 $F$ 的扩域，$\alpha \in K$ 是 $F$ 上的代数元．$F [x]$ 中以 $\alpha$ 为根的不可约首一多项式称为 $\alpha$ 在 $F$ 上的不可约多项式，记为 $\operatorname{Irr}(\alpha, F)$，它的次数称为 $\alpha$ 在 $F$ 上的次数，记为 $\operatorname{deg}(\alpha, F)$
+    2. 若 $\alpha$ 是 $F$ 上的代数元，则 $F(\alpha) \simeq F[x] /\langle p(x)\rangle$，其中 $p(x)$ 是 $F[x]$ 的一个由 $\alpha$ 惟一确定的首一（即首项系数为一）不可约多项式且 $p(\alpha)=0$
+2. 极小多项式：设 $K$ 为 $F$ 的扩域，$\alpha \in K$ 是 $F$ 上的代数元．$F [x]$ 中以 $\alpha$ 为根的不可约首一多项式称为 $\alpha$ 在 $F$ 上的极小多项式，记为 $\operatorname{Irr}(\alpha, F)$，它的次数称为 $\alpha$ 在 $F$ 上的次数，记为 $\operatorname{deg}(\alpha, F)$
     1. 对于 $F$ 上的代数元 $\alpha, F(\alpha) \simeq F[x] /\langle\operatorname{Irr}(\alpha, F)\rangle$ 且 $\langle\operatorname{Irr}(\alpha, F)\rangle =\{f(x) \in F[x] \mid \operatorname{Irr}(\alpha, F) \mid f(x)\}$
     2. 设 $F(\alpha)$ 是 $F$ 的单代数扩张，$\operatorname{deg}(\alpha, F)=n$，则 $F(\alpha)$ 是 $F$ 上的 $n$ 维线性空间，且 $1, \alpha, \alpha^{2}, \cdots, \alpha^{n-1}$ 是 $F(\alpha)$ 的一组基
 3. 单扩张的等价性
     1. 若 $F\left(\alpha_{1}\right), F\left(\alpha_{2}\right)$ 都是 $F$ 的单超越扩张，则 $F\left(\alpha_{1}\right), F\left(\alpha_{2}\right)$ 是 $F$ 的等价扩张
     2. 对任何 $F[x]$ 上的首一不可约多项式 $p(x)$，存在 $F$ 的单代数扩张 $F(\beta)$ 使得 $\operatorname{Irr}(\beta, F)=p(x)$，且任何满足这个条件的两个单代数扩张一定是 $F$ 的等价扩张
 
+    !!! note "实数域的扩张"
+        设 $p(x) = x^2 + 1 \in \mathbf R[x]$，则 $p(x)$ 为极小多项式
+
+        1. 构造 $\mathbf R$ 的二次扩域 $\mathbf R[x]/(x^2 + 1)$，定义映射 $f: \mathbf R[x]/(x^2 + 1) \to \mathbf C$ 为 $f(ax + b + (x^2 + 1)) = a \mathrm i + b$，其中 $a, b \in \mathbf R$，则 $f$ 为 $R[x]/(x^2 + 1)$ 到 $\mathbf C$ 的一个同构映射，即有 $\mathbf R[x]/(x^2 + 1) \simeq \mathbf C$
+        2. 设 $\mathbf R(\mathrm i)$ 是使得 $\operatorname{Irr}(\mathrm i, \mathbf R)=p(x)$ 的单扩域，则线性空间 $\mathbf R(\mathrm i) = \{a_0 + a_1 \mathrm i \mid a_0, a_1 \in \mathbf R\} \simeq \mathbf C \simeq \mathbf R(-\mathrm i)$
+
 ### 3.2.2 代数扩张
-1. 代数扩张：设 $K$ 为域 $F$ 的扩域，若 $K$ 中的每个元素都是 $F$ 上的代数元，则称 $K$ 为 $F$ 的代数扩张
+1. 代数扩张：设 $K$ 为域 $F$ 的扩域，若 $K$ 中的每个元素都是 $F$ 上的代数元，则称 $K$ 为 $F$ 的代数扩张．当 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为域 $F$ 上的代数元时，记 $F(\alpha_1, \alpha_2, \cdots, \alpha_n)$ 为包含 $F$ 的最小代数扩域．特别地，当 $n=1$ 时，即为 $F$ 的单代数扩张
     1. 有限扩张与无限扩张：设 $K$ 为 $F$ 的扩域，若 $K$ 作为 $F$ 上的线性空间是有限维的，则称 $K$ 为 $F$ 的有限扩张．$K$ 的维数称为 $K$ 在 $F$ 上的次数，记为 $[K: F]$．若 $K$ 作为 $F$ 上的线性空间是无限维的，则称 $K$ 为 $F$ 的无限扩张
     2. 设 $F(\alpha)$ 为 $F$ 的单扩张，则下列条件等价
         1. $F(\alpha)$ 是 $F$ 的代数扩张
