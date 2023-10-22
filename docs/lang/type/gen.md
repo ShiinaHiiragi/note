@@ -9,7 +9,7 @@
 
     通常用 $x, y, z$ 表示变元，用 $L, M, N, P, Q, R$ 表示 $\lambda-$项．若 $M, N \in \Lambda$ 在句法上等同，则记作 $M \equiv N$
 
-    4. 子项：设 $P$ 是一个 $\lambda-$项，定义多重集 $\mathrm{Sub}(P)$ 包含 $M$ 的所有子项
+    1. 子项：设 $P$ 是一个 $\lambda-$项，定义多重集 $\mathrm{Sub}(P)$ 包含 $M$ 的所有子项
         1. 基础：对于任意 $x \in V$，有 $\mathrm{Sub}(x) = \{x\}$
         2. 应用：$\mathrm{Sub}((MN)) = \mathrm{Sub}(M) \cup \mathrm{Sub}(N) \cup \{(MN)\}$
         3. 抽象：$\mathrm{Sub}((\lambda x.M)) = \mathrm{Sub}(M) \cup \{(\lambda x.M)\}$
@@ -19,13 +19,14 @@
         4. 子项作为关系具有自反性与传递性
         5. 真子项：若 $L$ 是 $M$ 的子项且 $L$ 与 $M$ 不等同，则称 $L$ 是 $M$ 的真子项
 
-    5. 多变量 $\lambda$ 表达式：形如 $(\lambda x.M)$ 的项是单变量 $\lambda$ 表达式
+    2. 多变量 $\lambda$ 表达式：形如 $(\lambda x.M)$ 的项是单变量 $\lambda$ 表达式
         1. 多变量 $\lambda$ 表达式可以用多元有序组表示参数，例如 $\lambda (x, y).(x^2+y)$
         2. 习惯上用多个单变量 $\lambda$ 表达式表示多变量 $\lambda$ 表达式，但其与对应的多变量 $\lambda$ 表达式有所区别，例如 $\lambda x.(\lambda y.(x^2 + y))$
-    6. 括号简化：在不影响可读性的前提下，部分括号可以省略
+    3. 括号简化：在不影响可读性的前提下，部分括号可以省略
         1. 最外层的括号可被省略，例如 $MN$ 表示 $(MN)$，$\lambda x.M$ 表示 $(\lambda x.M)$
         2. 「应用」的优先级高于「抽象」，例如 $\lambda x.MN$ 表示 $\lambda x.(MN)$
-        3. 「应用」是左结合的，例如 $MNL$ 表示 $((MN)L)$；而「抽象」是右结合的，且可以被简写在一起，例如 $\lambda xy.M$ 表示 $\lambda x.(\lambda y.M)$
+            - 「应用」是左结合的，例如 $MNL$ 表示 $((MN)L)$
+            - 「抽象」是右结合的，且可以被简写在一起，例如 $\lambda xy.M$ 表示 $\lambda x.(\lambda y.M)$
 
 2. 变元的种类
     1. 绑定出现：出现在 $\lambda$ 后面的第一个变元
@@ -40,18 +41,19 @@
 
     若 $M \in \Lambda$ 有 $\mathrm{FV}(M) = \varnothing$，则称 $M$ 为 $\lambda-$闭项或组合子．所有的 $\lambda-$闭项组成的集合记作 $\Lambda^0$
 
-3. $\alpha-$等价：记 $M^{x \to y}$ 为将所有在 $M$ 中自由出现的 $x$ 替换为 $y$，定义 $\alpha-$等价性 $=_{\alpha}$ 如下
-    1. 重命名：$\lambda x.M =_{\alpha} \lambda y.M^{x \to y}$
-    2. 相容性：若 $M =_{\alpha} N$，则 $ML =_{\alpha} NL, LM =_{\alpha} LN$，且对于任意 $z \in V$ 有 $\lambda z.M =_{\alpha} \lambda z.N$
+3. $\alpha-$等价：记 $M^{x \to y}$ 为将所有在 $M$ 中自由出现的 $x$ 替换为 $y$，定义 $\alpha-$转换或称 $\alpha-$等价性 $=_{\alpha}$ 如下
+    1. 等价性：$=_{\alpha}$ 具有自反性、对称性以及传递性
+    2. 重命名：$\lambda x.M =_{\alpha} \lambda y.M^{x \to y}$
+    3. 相容性：若 $M =_{\alpha} N$，则 $ML =_{\alpha} NL, LM =_{\alpha} LN$，且对于任意 $z \in V$ 有 $\lambda z.M =_{\alpha} \lambda z.N$
 
-    则 $=_{\alpha}$ 是等价关系，通常也用 $\equiv$ 表示 $=_{\alpha}$
+    在宽松意义下，通常也用句法等价的 $\equiv$ 表示 $=_{\alpha}$
 
-    3. 若 $M =_{\alpha} N$，则称 $M$ 与 $N$ 是 $\alpha-$可转换的或 $\alpha-$等价的．也称 $M$ 是 $N$ 的一个 $\alpha-$变式，反之亦然
-    4. $\alpha-$等价性随 $\lambda-$的项构造而保持：令 $M_1 =_{\alpha} M_2, N_1 =_{\alpha} N_2$，则
+    1. 若 $M =_{\alpha} N$，则称 $M$ 与 $N$ 是 $\alpha-$可转换的或 $\alpha-$等价的．也称 $M$ 是 $N$ 的一个 $\alpha-$变式，反之亦然
+    2. $\alpha-$等价性随 $\lambda-$的项构造而保持：令 $M_1 =_{\alpha} M_2, N_1 =_{\alpha} N_2$，则
         1. $M_1N_1 =_{\alpha} M_2N_2$
         2. $\lambda x.M_1 =_{\alpha} \lambda x.M_2$
         3. $M_1[x:=N_1] =_{\alpha} M_2[x:=N_2]$
-    5. 模 $\alpha-$等价：将 $\alpha-$等价的 $\lambda-$项看作同一个抽象的 $\lambda-$项，其约束变元与绑定变元的选择是任意的
+    3. 模 $\alpha-$等价：将 $\alpha-$等价的 $\lambda-$项看作同一个抽象的 $\lambda-$项，其约束变元与绑定变元的选择是任意的
 
         !!! note "$\text{Barendregt}$ 规约"
             选择 $\lambda-$项的绑定变元使其互不相同，且均与任意自由出现的变元不同
@@ -59,7 +61,7 @@
 4. 替换：设 $M \in \Lambda$，定义替换 $M[x:=N]$ 如下
     1. $y[x:=N] = \left\{\begin{aligned} & N, & y\equiv x \\ & y, & y \not\equiv x \end{aligned}\right.$
     2. $(PQ)[x:=N] \equiv (P[x:=N])(Q[x:=N])$
-    3. 若 $\lambda z.P^{y \to z}$ 与 $\lambda y.P$ 等价且 $z \notin \mathrm{FV}(N)$，则 $(\lambda y.P)[x:=N] \equiv \lambda z.(P^{y \to z}[x:=N])$
+    3. 若 $\lambda z.P^{y \to z}$ 与 $\lambda y.P$ 等价使得 $z \notin \mathrm{FV}(N)$，则 $(\lambda y.P)[x:=N] \equiv \lambda z.(P^{y \to z}[x:=N])$
 
     设 $x \not\equiv y$ 且 $x \notin \mathrm{FV}(L)$，则 $M[x:=N][y:=L] \equiv M[y:=L][x:=N[y:=L]]$
 
