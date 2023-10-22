@@ -157,9 +157,17 @@
         2. 同余类环：在 $\mathbf Z_m$ 中定义乘法运算 $\cdot$，即对任意 $r_1, r_2 \in \mathbf Z$，定义 $\overline{r_1} \cdot \overline{r_2} = \overline{(r_1 \cdot r_2)}$，则 $\{\mathbf Z_{m}; +, \cdot\}$ 构成环，称为模 $m$ 的同余类环
         3. 同余类域：当 $p$ 为质数时，$\mathbf Z_p$ 对乘法运算构成交换群，此时 $\mathbf Z_p$ 构成域，称为模 $m$ 的同余类域，也可记作素域 $\Pi_{p}$
 
-2. 简化同余类：设 $R$ 是模 $m$ 的一个同余类，若任意 $a \in R$ 都有 $(a, m) = 1$ 成立，则称 $R$ 是模 $m$ 的一个简化同余类
-    1. 对于正整数 $k$，令函数 $\varphi(k)$ 的值等于模 $k$ 的所有简化同余类的个数，称 $\varphi(k)$ 为 $\text{Euler}$ 函数
-    2. 特别地，$\varphi(1) = 1$；当 $p$ 为质数时，$\varphi(p) = p - 1, \varphi(p^k) = p^k - p^{k - 1}$
+2. 简化同余类：设 $R$ 是模 $m$ 的一个同余类，若任意 $a \in R$ 都有 $(a, m) = 1$ 成立，则称 $R$ 是模 $m$ 的一个简化同余类．对于正整数 $k$，令函数 $\varphi(k)$ 的值等于模 $k$ 的所有简化同余类的个数，称 $\varphi(k)$ 为 $\text{Euler}$ 函数
+    1. $\varphi(1)=\varphi(2)=1, \varphi(3)=\varphi(4)=2$
+    2. 当 $p$ 为质数时，$\varphi(p) = p - 1, \varphi(p^k) = p^k - p^{k - 1}$
+    3. 对任意正整数 $n$，$n={\displaystyle \sum_{d \mid n} \varphi(d)}$
+    4. 若正整数 $n$ 和 $m$ 互质，则有乘积性质 $\varphi(n m)=\varphi(n) \varphi(m)$
+    5. 设正整数 $n>1$ 的因数分解为 $n=p_{1}^{e_{1}} p_{2}^{e_{2}} \cdots p_{s}^{e_{s}}$，其中 $p_{1}, p_{2}, \cdots, p_{s}$ 为互不相同的质数，$e_{1}, e_{2}, \cdots, e_{s}$ 为正整数，则
+
+        $$
+        \varphi(n)=n\left(1-\dfrac{1}{p_{1}}\right)\left(1-\dfrac{1}{p_{2}}\right) \cdots\left(1-\dfrac{1}{p_{s}}\right)
+        $$
+
 3. 完全同余系：设 $m$ 是正整数，从模 $m$ 的每一个同余类中任取一个数 $x_i \ (0 \leqslant i \leqslant m - 1)$，称集合 $\{x_0, x_1, \cdots, x_{m - 1}\}$ 是模 $m$ 的一个完全同余系
     1. 整数集合 $A$ 是模 $m$ 的完全同余系当且仅当 ① $|A| = m$；② $A$ 中任何两个整数对模 $m$ 不同余
     2. 设 $a, b \in \mathbf Z$，若 $m \geqslant 1, (a, m) = 1$ 且 $\{x_1, x_2, \cdots, x_m\}$ 是模 $m$ 的一个完全同余系，则 $\{ax_1 + b, ax_2 + b, \cdots, ax_m + b\}$ 也是模 $m$ 的完全同余系
@@ -183,7 +191,7 @@
 1. 一次同余方程的一般形式：$ax \equiv b \pmod{m}$
     1. 同余方程 $ax \equiv b \pmod{m}$ 等价于不定方程 $ax + my = b$
     2. 设 $a, b$ 是整数，$a \not \equiv 0 \pmod{m}$，则同余方程 $ax \equiv b \pmod{m}$ 有解当且仅当 $(a, m) \mid b$．若有解，则恰有 $d = (a, m)$ 个解
-2. 中国剩余定理（孙子定理）：设 $m_1, m_2, \cdots, m_k$ 是 $k$ 个两两互质的正整数，$m = m_1 m_2 \cdots m_k$．设 $M_i = \dfrac{m}{m_i} \ (i = 1, 2, \cdots, k)$，则同余式组
+2. 中国剩余定理（孙子定理）：设正整数 $m_1, m_2, \cdots, m_k$ 两两互质，$m = m_1 m_2 \cdots m_k$．设 $M_i = \dfrac{m}{m_i} \ (i = 1, 2, \cdots, k)$，则同余式组
 
     $$
     \left\{\begin{aligned}
