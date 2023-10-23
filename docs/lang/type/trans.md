@@ -30,9 +30,12 @@
 - $\beta-$normalising：$\beta-$可正规化
 - weakly normalising：弱可正规化
 - strongly normalising：强可正规化
-- redex (reduciable expression)：可规约式
+- redex (reduciable expression)：可归约式
 - contractum：收缩式
 - fixed point：不动点
 
 ## 2 Simply Typed Lambda Calculus：简单类型 λ 演算
 - simple types：简单类型
+- typing statements：类型声明
+- typable：可类型化
+- typing：类型分配

@@ -107,6 +107,16 @@
     1. 类型变元：若 $\alpha \in \mathrm V$，则 $\alpha \in \mathrm T$
     2. 箭头类型：若 $\sigma, \tau \in \mathrm T$，则 $(\sigma \to \tau) \in \mathrm T$
 
-    通常情况下用 $\alpha, \beta$ 表示类型变元，用 $\sigma, \tau$ 表示任意简单类型．最外层的括号可被省略，箭头类型是右结合的
+    通常情况下用 $\alpha, \beta$ 表示类型变元，用 $\sigma, \tau$ 表示任意简单类型
+
+    1. 最外层的括号可被省略，箭头类型是右结合的
+    2. 类型声明：用 $M: \sigma$ 表示「项 $M$ 的类型为 $\sigma$」．若
+        1. 唯一性：若 $x: \sigma$ 且 $x: \tau$，则 $\sigma \equiv \tau$
+        2. 应用：若 $M: \sigma \to \tau$ 且 $N: \sigma$，则 $MN: \tau$
+        3. 抽象：若 $x: \sigma$ 且 $M: \tau$，则 $\lambda x.M: \sigma \to \tau$
+
+        若项 $M$ 存在类型 $\sigma$ 使得 $M: \sigma$，则称 $M$ 是可类型化的
+
+2. 类型分配
 
 ### 1.2 λ<sub>→</sub> 系统
