@@ -68,7 +68,7 @@
 ### 1.1.2 归约
 1. $\beta-$归约与 $\beta-$等价性
     1. 单步 $\beta-$归约：设 $P, Q \in \Lambda$，定义单步 $P \to_{\beta} Q$ 如下
-        1. 基础：$(\lambda x \cdot M) N \rightarrow_\beta M[x:=N]$
+        1. 基础：$(\lambda x.M) N \rightarrow_\beta M[x:=N]$
         2. 相容性：若 $M \to_{\beta} N$，则 $ML \to_{\beta} NL, LM \to_{\beta} LN$ 且对于任意 $x \in V$ 有 $\lambda x.M \to_{\beta} \lambda x.N$
 
         称 $P$ 为可归约式，$Q$ 为 $P$ 的收缩式
@@ -129,6 +129,11 @@
         3. 投影：设 $\Phi$ 是变元集合，则语境 $\Gamma$ 在 $\Phi$ 上的投影 $\Gamma \upharpoonright \Phi$ 定义为子语境 $\Gamma'$，使得 $\mathrm{dom}(\Gamma') = \mathrm{dom}(\Gamma) \cap \Phi$
     2. 推断：在给定语境 $\Gamma$ 下推导出的类型陈述，记作 $\Gamma \vdash M: \sigma$
 
+3. 替换：设 $M \in \Lambda_{\mathrm T}$，定义替换 $M[x:=N]$ 如下
+    1. $y[x:=N] = \left\{\begin{aligned} & N, & y\equiv x \\ & y, & y \not\equiv x \end{aligned}\right.$
+    2. $(PQ)[x:=N] \equiv (P[x:=N])(Q[x:=N])$
+    3. 若 $\lambda z: \sigma.P^{y \to z}$ 与 $\lambda y: \sigma.P$ 等价使得 $z \notin \mathrm{FV}(N)$，则 $(\lambda y: \sigma.P)[x:=N] \equiv \lambda z: \sigma.(P^{y \to z}[x:=N])$
+
 ### 1.2 Church λ<sub>→</sub> 系统
 1. $\text{Church }\lambda_{\to}$ 派生规则
     1. 变元：如果 $x: \sigma \in \Gamma$，则 $\Gamma \vdash x: \sigma$
@@ -153,5 +158,20 @@
         3. 若 $\Gamma \vdash \lambda x: \sigma.M: \rho$，则存在类型 $\tau$ 使得 $\Gamma, x: \sigma \vdash M: \tau$ 以及 $\rho \equiv \sigma \to \tau$
     6. 子项引理：若 $M$ 是合法项，则 $M$ 的所有子项均合法
     7. 类型唯一性：设 $\Gamma \vdash M: \sigma$ 以及 $\Gamma \vdash M: \tau$，则 $\sigma \equiv \tau$
+    8. 替换引理：设 $\Gamma', \Gamma'', x: \sigma \vdash M: \tau$ 且 $\Gamma' \vdash N: \sigma$，则 $\Gamma', \Gamma'' \vdash M[x := N]: \tau$
 
-2. 还原
+2. $\beta-$归约：设 $P, Q \in \Lambda$，定义单步 $P \to_{\beta} Q$ 如下
+    1. 基础：$(\lambda x: \sigma.M) N \rightarrow_\beta M[x:=N]$
+    2. 相容性：若 $M \to_{\beta} N$，则 $ML \to_{\beta} NL, LM \to_{\beta} LN$ 且对于任意 $x: \sigma$ 有 $\lambda x: \sigma.M \to_{\beta} \lambda x: \sigma.N$
+
+    多步 $P \twoheadrightarrow_{\beta} Q$ 与 $\beta-$等价性也可仿照无类型 $\lambda$ 演算定义
+
+    1. $\text{Church}-\text{Rosser}$ 定理：对于给定的 $M \in \Lambda_{\mathrm T}$，若有 $M \twoheadrightarrow_{\beta} N_1, M \twoheadrightarrow_{\beta} N_2$，则存在 $N_3 \in \Lambda$ 使得 $N_1 \twoheadrightarrow_{\beta} N_3, N_2 \twoheadrightarrow_{\beta} N_3$
+        1. 设 $M =_{\beta} N$，则存在 $L$ 使得 $M \twoheadrightarrow_{\beta} L$ 以及 $N \twoheadrightarrow_{\beta} L$
+        2. 若 $\Gamma \vdash L: \rho$，且若 $L \twoheadrightarrow_{\beta} L'$，则 $\Gamma \vdash L': \rho$
+    2. 终止定理：任意合法项 $M$ 均是强可正规化的，也称作强可正规化定理
+
+3. $\text{Church }\lambda_{\to}$ 解决了无类型 $\lambda$ 演算的以下问题：
+    1. 自应用的不存在性由类型的唯一性确保
+    2. $\beta-$正规形式的存在性由终止定理确保
+    3. 并非所有合法 $\lambda-$项都有不动点

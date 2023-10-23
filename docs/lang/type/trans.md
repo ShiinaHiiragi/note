@@ -56,3 +56,5 @@
 - thinning：稀疏化
 - condensing：压缩
 - generation：生成
+- termination：终止
+- self-application：自应用
