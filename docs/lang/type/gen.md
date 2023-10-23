@@ -123,8 +123,11 @@
 
     变元种类的定义与无类型 $\lambda$ 演算保持一致 
 
-    1. 推断：在给定语境 $\Gamma$ 下推导出的类型陈述，记作 $\Gamma \vdash M: \sigma$
-    2. 语境：一系列自由变元的类型声明 $\Gamma = \{x_1: \sigma_1, x_2: \sigma_2, \cdots, x_n: \sigma_n\}$，并将其中的主体变元视作约束变元
+    1. 语境：一系列有序的自由变元类型声明 $\Gamma \equiv x_1: \sigma_1, x_2: \sigma_2, \cdots, x_n: \sigma_n$，并将其中的主体变元视作约束变元
+        1. 子语境：设 $\Gamma'$ 是一个语境，若所有 $\Gamma'$ 中的类型声明都在 $\Gamma$ 中出现，则称 $\Gamma'$ 是 $\Gamma$ 的子语境，记作 $\Gamma' \subseteq \Gamma$．特别地，若 $\Gamma' \subseteq \Gamma$ 且 $\Gamma \subseteq \Gamma'$，则称 $\Gamma'$ 是 $\Gamma$ 的一个排列 
+        2. 域：语境 $\Gamma$ 中的主体变元序列 $\left<x_1, x_2, \cdots, x_n\right>$，记作 $\mathrm{dom}(\Gamma)$
+        3. 投影：设 $\Phi$ 是变元集合，则语境 $\Gamma$ 在 $\Phi$ 上的投影 $\Gamma \upharpoonright \Phi$ 定义为子语境 $\Gamma'$，使得 $\mathrm{dom}(\Gamma') = \mathrm{dom}(\Gamma) \cap \Phi$
+    2. 推断：在给定语境 $\Gamma$ 下推导出的类型陈述，记作 $\Gamma \vdash M: \sigma$
 
 ### 1.2 Church λ<sub>→</sub> 系统
 1. $\text{Church }\lambda_{\to}$ 派生规则
@@ -140,4 +143,15 @@
 
     上述问题在 $\lambda_{\to}$ 中均可判定
 
-2. 一般性质
+    1. 自由变元引理：若 $\Gamma \vdash L: \sigma$，则 $\mathrm{FV}(L) \subseteq \mathrm{dom}(\Gamma)$
+    2. 稀疏化引理：设 $\Gamma'$ 与 $\Gamma''$ 是两个语境且 $\Gamma' \subseteq \Gamma''$，若 $\Gamma' \vdash M: \sigma$，则有 $\Gamma'' \vdash M: \sigma$
+    3. 压缩引理：若 $\Gamma \vdash M: \sigma$，则 $\Gamma \upharpoonright \mathrm{FV}(M) \vdash M: \sigma$
+    4. 排列引理：若 $\Gamma \vdash M: \sigma$，且 $\Gamma'$ 是 $\Gamma$ 的一个排列，则 $\Gamma' \vdash M: \sigma$
+    5. 生成引理
+        1. 若 $\Gamma \vdash x: \sigma$，则 $x: \sigma \in \Gamma$
+        2. 若 $\Gamma \vdash MN: \tau$，则存在类型 $\sigma$ 使得 $\Gamma \vdash M: \sigma \to \tau$ 以及 $\Gamma \vdash N: \sigma$
+        3. 若 $\Gamma \vdash \lambda x: \sigma.M: \rho$，则存在类型 $\tau$ 使得 $\Gamma, x: \sigma \vdash M: \tau$ 以及 $\rho \equiv \sigma \to \tau$
+    6. 子项引理：若 $M$ 是合法项，则 $M$ 的所有子项均合法
+    7. 类型唯一性：设 $\Gamma \vdash M: \sigma$ 以及 $\Gamma \vdash M: \tau$，则 $\sigma \equiv \tau$
+
+2. 还原

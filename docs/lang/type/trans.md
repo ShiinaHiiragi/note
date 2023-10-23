@@ -42,6 +42,10 @@
 - typable：可类型化
 - typing：类型分配
 - context：语境
+- subcontext：子语境
+- domain：域
+- permutation：排列
+- projection：投影
 - judgement：推断
 - pre-typed：预类型化
 - well-typedness：良类型性
@@ -49,3 +53,6 @@
 - type checking：类型检查
 - term finding：项查找
 - term construction：项构建
+- thinning：稀疏化
+- condensing：压缩
+- generation：生成
