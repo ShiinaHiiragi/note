@@ -19,9 +19,9 @@
         4. 子项作为关系具有自反性与传递性
         5. 真子项：若 $L$ 是 $M$ 的子项且 $L$ 与 $M$ 不等同，则称 $L$ 是 $M$ 的真子项
 
-    2. 多变量 $\lambda$ 表达式：形如 $(\lambda x.M)$ 的项是单变量 $\lambda$ 表达式
-        1. 多变量 $\lambda$ 表达式可以用多元有序组表示参数，例如 $\lambda (x, y).(x^2+y)$
-        2. 习惯上用多个单变量 $\lambda$ 表达式表示多变量 $\lambda$ 表达式，但其与对应的多变量 $\lambda$ 表达式有所区别，例如 $\lambda x.(\lambda y.(x^2 + y))$
+    2. 多变元 $\lambda$ 表达式：形如 $(\lambda x.M)$ 的项是单变元 $\lambda$ 表达式
+        1. 多变元 $\lambda$ 表达式可以用多元有序组表示参数，例如 $\lambda (x, y).(x^2+y)$
+        2. 习惯上用多个单变元 $\lambda$ 表达式表示多变元 $\lambda$ 表达式，但其与对应的多变元 $\lambda$ 表达式有所区别，例如 $\lambda x.(\lambda y.(x^2 + y))$
     3. 括号简化：在不影响可读性的前提下，部分括号可以省略
         1. 最外层的括号可被省略，例如 $MN$ 表示 $(MN)$，$\lambda x.M$ 表示 $(\lambda x.M)$
         2. 「应用」的优先级高于「抽象」，例如 $\lambda x.MN$ 表示 $\lambda x.(MN)$
@@ -102,3 +102,11 @@
 3. 不动点定理：对于所有的 $L \in \Lambda$，定义不动点组合子 $Y \equiv \lambda y.(\lambda x.y(xx))(\lambda x.y(xx))$，则对于任意 $L \in \Lambda$，定义 $M \equiv YL$，有 $LM =_{\beta} M$ 成立
 
 ## 1.2 简单类型 λ 演算
+### 1.1 简单类型
+1. 简单类型：设无穷集合类型变元 $\mathrm V = \{\alpha, \beta, \gamma, \cdots\}$，定义所有简单类型集合 $\mathrm T$ 如下
+    1. 类型变元：若 $\alpha \in \mathrm V$，则 $\alpha \in \mathrm T$
+    2. 箭头类型：若 $\sigma, \tau \in \mathrm T$，则 $(\sigma \to \tau) \in \mathrm T$
+
+    通常情况下用 $\alpha, \beta$ 表示类型变元，用 $\sigma, \tau$ 表示任意简单类型．最外层的括号可被省略，箭头类型是右结合的
+
+### 1.2 λ<sub>→</sub> 系统

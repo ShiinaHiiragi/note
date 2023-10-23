@@ -4,7 +4,6 @@
 - 本节不公开，全书内容记录后将被删除
 
 ## 1 Untyped Lambda Calculus：无类型 λ 演算
-
 - variables：变元
 - $\lambda-$terms：$\lambda-$项
 - application：应用
@@ -36,3 +35,4 @@
 - fixed point：不动点
 
 ## 2 Simply Typed Lambda Calculus：简单类型 λ 演算
+- simple types：简单类型
