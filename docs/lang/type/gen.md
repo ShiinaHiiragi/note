@@ -126,9 +126,18 @@
     1. 推断：在给定语境 $\Gamma$ 下推导出的类型陈述，记作 $\Gamma \vdash M: \sigma$
     2. 语境：一系列自由变元的类型声明 $\Gamma = \{x_1: \sigma_1, x_2: \sigma_2, \cdots, x_n: \sigma_n\}$，并将其中的主体变元视作约束变元
 
-3. $\text{Church }\lambda_{\to}$ 派生规则
+### 1.2 Church λ<sub>→</sub> 系统
+1. $\text{Church }\lambda_{\to}$ 派生规则
     1. 变元：如果 $x: \sigma \in \Gamma$，则 $\Gamma \vdash x: \sigma$
     2. 应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: \sigma \to \tau\)} \AxiomC{\(\Gamma \to N: \sigma\)} \BinaryInfC{\(\Gamma \vdash MN: \tau\)} \end{prooftree}$
     3. 抽象：$\begin{prooftree} \AxiomC{\(\Gamma, x: \sigma \vdash M: \tau\)} \UnaryInfC{\(\Gamma \vdash \lambda x:\sigma.M: \sigma \to \tau\)} \end{prooftree}$
 
-### 1.2 基础性质
+    若 $\lambda_{\to}$ 中的预类型化项 $M$ 存在语境 $\Gamma$ 与类型 $\rho$ 使得 $\Gamma \vdash M: \rho$，则称 $M$ 是合法的
+
+    1. 良类型性：已知 $\lambda-$项 $M$，找到使 $M$ 合法的语境与类型，也称作可类型化性．特别地，若语境已经给定，则称为类型指派
+    2. 类型检查：已知语境 $\Gamma$ 以及 $\lambda-$项类型陈述 $M: \sigma$，判定推导关系 $\Gamma \vdash M: \sigma$ 是否成立
+    3. 项查找：已知语境 $\Gamma$ 以及类型 $\sigma$，找到对应的 $\lambda-$项 $M$ 使得 $\Gamma \vdash M: \sigma$，也称作项构建
+
+    上述问题在 $\lambda_{\to}$ 中均可判定
+
+2. 一般性质

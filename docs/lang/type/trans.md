@@ -38,8 +38,14 @@
 - simple types：简单类型
 - statements：陈述
 - declaration：声明
+- typability：可类型化性
 - typable：可类型化
 - typing：类型分配
 - context：语境
 - judgement：推断
 - pre-typed：预类型化
+- well-typedness：良类型性
+- type assignment：类型指派
+- type checking：类型检查
+- term finding：项查找
+- term construction：项构建
