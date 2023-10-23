@@ -58,3 +58,5 @@
 - generation：生成
 - termination：终止
 - self-application：自应用
+
+## 3 Second Order Typed Lambda Calculus：二阶类型 λ 演算

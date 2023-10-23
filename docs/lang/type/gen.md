@@ -134,7 +134,7 @@
     2. $(PQ)[x:=N] \equiv (P[x:=N])(Q[x:=N])$
     3. 若 $\lambda z: \sigma.P^{y \to z}$ 与 $\lambda y: \sigma.P$ 等价使得 $z \notin \mathrm{FV}(N)$，则 $(\lambda y: \sigma.P)[x:=N] \equiv \lambda z: \sigma.(P^{y \to z}[x:=N])$
 
-### 1.2 Church λ<sub>→</sub> 系统
+### 1.2 Church λ<sub>→</sub>
 1. $\text{Church }\lambda_{\to}$ 派生规则
     1. 变元：如果 $x: \sigma \in \Gamma$，则 $\Gamma \vdash x: \sigma$
     2. 应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: \sigma \to \tau\)} \AxiomC{\(\Gamma \to N: \sigma\)} \BinaryInfC{\(\Gamma \vdash MN: \tau\)} \end{prooftree}$
@@ -175,3 +175,5 @@
     1. 自应用的不存在性由类型的唯一性确保
     2. $\beta-$正规形式的存在性由终止定理确保
     3. 并非所有合法 $\lambda-$项都有不动点
+
+## 1.3 二阶类型 λ 演算
