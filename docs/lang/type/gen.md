@@ -114,9 +114,6 @@
         1. 类型声明：当主体 $M$ 为单变元 $x$ 时，称 $x: \sigma$ 为类型声明
         2. 唯一性：若变元 $x$ 有 $x: \sigma$ 且 $x: \tau$，则 $\sigma \equiv \tau$
         3. 可类型化：若项 $M$ 存在类型 $\sigma$ 使得 $M: \sigma$，则称 $M$ 是可类型化的
-            - 应用：若 $M: \sigma \to \tau$ 且 $N: \sigma$，则 $MN: \tau$
-            - 抽象：若 $x: \sigma$ 且 $M: \tau$，则 $\lambda x.M: \sigma \to \tau$
-
     3. 类型分配：在变元陈述时规定类型被称为显式类型分配，也称作 $\text{Church}$ 类型分配；反之不规定变元类型的称为隐式类型分配，也称作 $\text{Curry}$ 类型分配
 
 2. 预类型化 $\lambda-$项 $\Lambda_{\mathrm T}$：定义变元的无穷集 $V = \left\{x, y, z, \cdots\right\}$，$\mathrm T$ 为类型集合，则所有预类型化 $\lambda-$项的集合 $\Lambda_{\mathrm T}$ 定义如下
@@ -129,6 +126,9 @@
     1. 推断：在给定语境 $\Gamma$ 下推导出的类型陈述，记作 $\Gamma \vdash M: \sigma$
     2. 语境：一系列自由变元的类型声明 $\Gamma = \{x_1: \sigma_1, x_2: \sigma_2, \cdots, x_n: \sigma_n\}$，并将其中的主体变元视作约束变元
 
-3. 派生系统
+3. $\text{Church }\lambda_{\to}$ 派生规则
+    1. 变元：如果 $x: \sigma \in \Gamma$，则 $\Gamma \vdash x: \sigma$
+    2. 应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: \sigma \to \tau\)} \AxiomC{\(\Gamma \to N: \sigma\)} \BinaryInfC{\(\Gamma \vdash MN: \tau\)} \end{prooftree}$
+    3. 抽象：$\begin{prooftree} \AxiomC{\(\Gamma, x: \sigma \vdash M: \tau\)} \UnaryInfC{\(\Gamma \vdash \lambda x:\sigma.M: \sigma \to \tau\)} \end{prooftree}$
 
-### 1.2 λ<sub>→</sub> 系统
+### 1.2 基础性质
