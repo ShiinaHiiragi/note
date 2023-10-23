@@ -36,6 +36,10 @@
 
 ## 2 Simply Typed Lambda Calculus：简单类型 λ 演算
 - simple types：简单类型
-- typing statements：类型声明
+- statements：陈述
+- declaration：声明
 - typable：可类型化
 - typing：类型分配
+- context：语境
+- judgement：推断
+- pre-typed：预类型化

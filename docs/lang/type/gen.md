@@ -2,10 +2,10 @@
 
 ## 1.1 无类型 λ 演算
 ### 1.1.1 构造原理
-1. $\lambda-$项：$\lambda$ 演算的表达式称为 $\lambda-$项．定义变元的无穷集 $V = \left\{x, y, z, \cdots\right\}$，定义所有 $\lambda-$项的集合 $\Lambda$ 如下
+1. $\lambda-$项：$\lambda$ 演算的表达式称为 $\lambda-$项．定义变元的无穷集 $V = \left\{x, y, z, \cdots\right\}$，则所有 $\lambda-$项的集合定义 $\Lambda$ 如下
     1. 基础：若 $u \in V$，则 $u \in \Lambda$
     2. 应用：若 $M, N \in \Lambda$，则 $(MN) \in \Lambda$
-    3. 抽象：若 $u \in V$ 且 $M \in \Lambda$，则 $(\lambda u.M) \in \Lambda$，称子项 $M$ 为 $(\lambda x.M)$ 的主体
+    3. 抽象：若 $u \in V$ 且 $M \in \Lambda$，则 $(\lambda u.M) \in \Lambda$，称子项 $M$ 为 $(\lambda u.M)$ 的正体
 
     通常用 $x, y, z$ 表示变元，用 $L, M, N, P, Q, R$ 表示 $\lambda-$项．若 $M, N \in \Lambda$ 在句法上等同，则记作 $M \equiv N$
 
@@ -103,20 +103,32 @@
 
 ## 1.2 简单类型 λ 演算
 ### 1.1 简单类型
-1. 简单类型：设无穷集合类型变元 $\mathrm V = \{\alpha, \beta, \gamma, \cdots\}$，定义所有简单类型集合 $\mathrm T$ 如下
+1. 简单类型：设类型变元的无穷集 $\mathrm V = \{\alpha, \beta, \gamma, \cdots\}$，定义所有简单类型集合 $\mathrm T$ 如下
     1. 类型变元：若 $\alpha \in \mathrm V$，则 $\alpha \in \mathrm T$
     2. 箭头类型：若 $\sigma, \tau \in \mathrm T$，则 $(\sigma \to \tau) \in \mathrm T$
 
     通常情况下用 $\alpha, \beta$ 表示类型变元，用 $\sigma, \tau$ 表示任意简单类型
 
     1. 最外层的括号可被省略，箭头类型是右结合的
-    2. 类型声明：用 $M: \sigma$ 表示「项 $M$ 的类型为 $\sigma$」．若
-        1. 唯一性：若 $x: \sigma$ 且 $x: \tau$，则 $\sigma \equiv \tau$
-        2. 应用：若 $M: \sigma \to \tau$ 且 $N: \sigma$，则 $MN: \tau$
-        3. 抽象：若 $x: \sigma$ 且 $M: \tau$，则 $\lambda x.M: \sigma \to \tau$
+    2. 类型陈述：若 $M \in \Lambda_{\mathrm T}$ 以及 $\sigma \in \mathrm T$，则用 $M: \sigma$ 表示「项 $M$ 的类型为 $\sigma$」，并称 $M$ 为主体，$\sigma$ 为类型
+        1. 类型声明：当主体 $M$ 为单变元 $x$ 时，称 $x: \sigma$ 为类型声明
+        2. 唯一性：若变元 $x$ 有 $x: \sigma$ 且 $x: \tau$，则 $\sigma \equiv \tau$
+        3. 可类型化：若项 $M$ 存在类型 $\sigma$ 使得 $M: \sigma$，则称 $M$ 是可类型化的
+            - 应用：若 $M: \sigma \to \tau$ 且 $N: \sigma$，则 $MN: \tau$
+            - 抽象：若 $x: \sigma$ 且 $M: \tau$，则 $\lambda x.M: \sigma \to \tau$
 
-        若项 $M$ 存在类型 $\sigma$ 使得 $M: \sigma$，则称 $M$ 是可类型化的
+    3. 类型分配：在变元陈述时规定类型被称为显式类型分配，也称作 $\text{Church}$ 类型分配；反之不规定变元类型的称为隐式类型分配，也称作 $\text{Curry}$ 类型分配
 
-2. 类型分配
+2. 预类型化 $\lambda-$项 $\Lambda_{\mathrm T}$：定义变元的无穷集 $V = \left\{x, y, z, \cdots\right\}$，$\mathrm T$ 为类型集合，则所有预类型化 $\lambda-$项的集合 $\Lambda_{\mathrm T}$ 定义如下
+    1. 基础：若 $u \in V$，则 $u \in \Lambda_{\mathrm T}$
+    2. 应用：若 $M, N \in \Lambda_{\mathrm T}$，则 $(MN) \in \Lambda_{\mathrm T}$
+    3. 抽象：若 $u \in V, \sigma \in \mathrm T$ 且 $M \in \Lambda_{\mathrm T}$，则 $(\lambda u: \sigma.M) \in \Lambda_{\mathrm T}$
+
+    变元种类的定义与无类型 $\lambda$ 演算保持一致 
+
+    1. 推断：在给定语境 $\Gamma$ 下推导出的类型陈述，记作 $\Gamma \vdash M: \sigma$
+    2. 语境：一系列自由变元的类型声明 $\Gamma = \{x_1: \sigma_1, x_2: \sigma_2, \cdots, x_n: \sigma_n\}$，并将其中的主体变元视作约束变元
+
+3. 派生系统
 
 ### 1.2 λ<sub>→</sub> 系统
