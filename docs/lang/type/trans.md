@@ -12,8 +12,8 @@
 - subterms：子项
 - proper subterm：真子项
 - free occurence：自由出现
-- bound occurence：绑定出现
-- binding occurence：约束出现
+- bound occurence：约束出现
+- binding occurence：绑定出现
 - close $\lambda-$terms：$\lambda-$闭项
 - combinator：组合子
 - $\alpha-$convertion：$\alpha-$转换

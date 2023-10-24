@@ -29,7 +29,7 @@
             - 「抽象」是右结合的，且可以被简写在一起，例如 $\lambda xy.M$ 表示 $\lambda x.(\lambda y.M)$
 
 2. 变元的种类
-    1. 绑定出现：出现在 $\lambda$ 后面的第一个变元
+    1. 约束出现：出现在 $\lambda$ 后面的第一个变元
     2. 自由出现：对于 $M \in \Lambda$，定义自由出现的变元集合 $\mathrm{FV}(M)$ 如下
         1. 基础：$\mathrm{FV}(x) = \{x\}$
         2. 应用：$\mathrm{FV}(MN) = \mathrm{FV}(M) \cup \mathrm{FV}(N)$
@@ -37,7 +37,7 @@
 
         $\mathrm{FV}(M)$ 的元素是在 $M$ 中的某处自由出现的变元
 
-    3. 约束出现：即不是绑定出现，也不是自由出现的变元
+    3. 绑定出现：即不是约束出现，也不是自由出现的变元
 
     若 $M \in \Lambda$ 有 $\mathrm{FV}(M) = \varnothing$，则称 $M$ 为 $\lambda-$闭项或组合子．所有的 $\lambda-$闭项组成的集合记作 $\Lambda^0$
 
@@ -53,10 +53,10 @@
         1. $M_1N_1 =_{\alpha} M_2N_2$
         2. $\lambda x.M_1 =_{\alpha} \lambda x.M_2$
         3. $M_1[x:=N_1] =_{\alpha} M_2[x:=N_2]$
-    3. 模 $\alpha-$等价：将 $\alpha-$等价的 $\lambda-$项看作同一个抽象的 $\lambda-$项，其约束变元与绑定变元的选择是任意的
+    3. 模 $\alpha-$等价：将 $\alpha-$等价的 $\lambda-$项看作同一个抽象的 $\lambda-$项，其绑定变元与约束变元的选择是任意的
 
         !!! note "$\text{Barendregt}$ 规约"
-            选择 $\lambda-$项的绑定变元使其互不相同，且均与任意自由出现的变元不同
+            选择 $\lambda-$项的约束变元使其互不相同，且均与任意自由出现的变元不同
 
 4. 替换：设 $M \in \Lambda$，定义替换 $M[x:=N]$ 如下
     1. $y[x:=N] = \left\{\begin{aligned} & N, & y\equiv x \\ & y, & y \not\equiv x \end{aligned}\right.$
@@ -123,7 +123,7 @@
 
     变元种类的定义与无类型 $\lambda$ 演算保持一致 
 
-    1. 语境：一系列有序的自由变元类型声明 $\Gamma \equiv x_1: \sigma_1, x_2: \sigma_2, \cdots, x_n: \sigma_n$，并将其中的主体变元视作约束变元
+    1. 语境：一系列有序的自由变元类型声明 $\Gamma \equiv x_1: \sigma_1, x_2: \sigma_2, \cdots, x_n: \sigma_n$，并将其中的主体变元视作绑定变元
         1. 子语境：设 $\Gamma'$ 是一个语境，若所有 $\Gamma'$ 中的类型声明都在 $\Gamma$ 中出现，则称 $\Gamma'$ 是 $\Gamma$ 的子语境，记作 $\Gamma' \subseteq \Gamma$．特别地，若 $\Gamma' \subseteq \Gamma$ 且 $\Gamma \subseteq \Gamma'$，则称 $\Gamma'$ 是 $\Gamma$ 的一个排列 
         2. 域：语境 $\Gamma$ 中的主体变元序列 $\left<x_1, x_2, \cdots, x_n\right>$，记作 $\mathrm{dom}(\Gamma)$
         3. 投影：设 $\Phi$ 是变元集合，则语境 $\Gamma$ 在 $\Phi$ 上的投影 $\Gamma \upharpoonright \Phi$ 定义为子语境 $\Gamma'$，使得 $\mathrm{dom}(\Gamma') = \mathrm{dom}(\Gamma) \cap \Phi$
