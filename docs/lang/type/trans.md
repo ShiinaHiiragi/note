@@ -13,9 +13,10 @@
 - subterms：子项
 - proper subterm：真子项
 - occur：出现
-- bound occurence：约束出现
-- free occurence：自由出现
-- binding occurence：绑定出现
+- occurence：出现
+- bound：约束
+- free：自由
+- binding：绑定
 - close terms：闭项
 - combinator：组合子
 - equality：等价性
