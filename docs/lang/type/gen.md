@@ -2,7 +2,7 @@
 
 ## 1.1 无类型 λ 演算
 ### 1.1.1 构造原理
-1. $\lambda-$项：$\lambda$ 演算的表达式称为 $\lambda-$项．定义变元的无穷集 $V = \left\{x, y, z, \cdots\right\}$，则所有 $\lambda-$项的集合定义 $\Lambda$ 如下
+1. $\lambda-$项：$\lambda$ 演算的表达式称为 $\lambda-$项．定义变元的无穷集 $V = \left\{u, v, w, \cdots\right\}$，则所有 $\lambda-$项的集合定义 $\Lambda$ 如下
     1. 基础：若 $u \in V$，则 $u \in \Lambda$
     2. 应用：若 $M, N \in \Lambda$，则 $(MN) \in \Lambda$
     3. 抽象：若 $u \in V$ 且 $M \in \Lambda$，则 $(\lambda u.M) \in \Lambda$，称子项 $M$ 为 $(\lambda u.M)$ 的正体
@@ -103,7 +103,7 @@
 
 ## 1.2 简单类型 λ 演算
 ### 1.1 简单类型
-1. 简单类型：设类型变元的无穷集 $\mathrm V = \{\alpha, \beta, \gamma, \cdots\}$，定义所有简单类型集合 $\mathrm T$ 如下
+1. 简单类型：设类型变元的无穷集为 $\mathrm V = \{\alpha, \beta, \gamma, \cdots\}$，定义所有简单类型集合 $\mathrm T$ 如下
     1. 类型变元：若 $\alpha \in \mathrm V$，则 $\alpha \in \mathrm T$
     2. 箭头类型：若 $\sigma, \tau \in \mathrm T$，则 $(\sigma \to \tau) \in \mathrm T$
 
@@ -116,10 +116,10 @@
         3. 可类型化：若项 $M$ 存在类型 $\sigma$ 使得 $M: \sigma$，则称 $M$ 是可类型化的
     3. 类型分配：在变元陈述时规定类型被称为显式类型分配，也称作 $\text{Church}$ 类型分配；反之不规定变元类型的称为隐式类型分配，也称作 $\text{Curry}$ 类型分配
 
-2. 预类型化 $\lambda-$项 $\Lambda_{\mathrm T}$：定义变元的无穷集 $V = \left\{x, y, z, \cdots\right\}$，$\mathrm T$ 为类型集合，则所有预类型化 $\lambda-$项的集合 $\Lambda_{\mathrm T}$ 定义如下
+2. $\lambda_{\to}-$项 $\Lambda_{\mathrm T}$：定义变元的无穷集 $V = \left\{u, v, w, \cdots\right\}$，$\mathrm T$ 为类型集合，则所有预类型化 $\lambda-$项的集合 $\Lambda_{\mathrm T}$ 定义如下
     1. 基础：若 $u \in V$，则 $u \in \Lambda_{\mathrm T}$
     2. 应用：若 $M, N \in \Lambda_{\mathrm T}$，则 $(MN) \in \Lambda_{\mathrm T}$
-    3. 抽象：若 $u \in V, \sigma \in \mathrm T$ 且 $M \in \Lambda_{\mathrm T}$，则 $(\lambda u: \sigma.M) \in \Lambda_{\mathrm T}$
+    3. 抽象：若 $u \in V, \sigma \in \mathrm T$ 且 $M \in \Lambda_{\mathrm T}$，则 $(\lambda u: \sigma.M) \in \Lambda_{\mathrm T}$，此时称项 $\lambda u: \sigma: M$ 依赖于项 $u$
 
     变元种类的定义与无类型 $\lambda$ 演算保持一致 
 
@@ -177,3 +177,13 @@
     3. 并非所有合法 $\lambda-$项都有不动点
 
 ## 1.3 二阶类型 λ 演算
+1. $\lambda_2-$类型：设类型变元的无穷集为 $\mathrm V = \{\alpha, \beta, \gamma, \cdots\}$，定义所有二阶类型集合 $\mathrm T_2$ 如下
+    1. 类型变元：若 $\alpha \in \mathrm V$，则 $\alpha \in \mathrm T_2$
+    2. 箭头类型：若 $\sigma, \tau \in \mathrm T_2$，则 $(\sigma \to \tau) \in \mathrm T_2$
+    3. $\Pi-$类型：若 $\alpha \in \mathrm V, \sigma \in T_2$，则 $(\Pi \alpha. *: \sigma) \in \mathrm T_2$，也称作乘积类型，称 $\Pi$ 为 $\Pi-$绑定器或类型绑定器
+2. $\lambda_2-$项：定义变元的无穷集 $V = \left\{u, v, w, \cdots\right\}$，$\mathbf V$ 为类型变元的无穷集，$\mathrm T_2$ 为类型集合，则所有二阶预类型化 $\lambda-$项的集合 $\Lambda_{\mathrm T_2}$ 定义如下
+    1. 基础：若 $u \in V$，则 $u \in \Lambda_{\mathrm T_2}$
+    2. 应用：若 $M, N \in \Lambda_{\mathrm T_2}$，则 $(MN) \in \Lambda_{\mathrm T_2}$
+    3. 抽象：若 $u \in V, \sigma \in \mathrm T_2$ 且 $M \in \Lambda_{\mathrm T_2}$，则 $(\lambda u: \sigma.M) \in \Lambda_{\mathrm T_2}$
+    4. 二阶应用：若 $M \in \Lambda_{\mathrm T_2}, \sigma \in \mathrm T_2$，则 $(M\sigma) \in \Lambda_{\mathrm T_2}$
+    5. 二阶抽象：若 $\alpha \in \mathbf V$ 且 $M \in \Lambda_{\mathrm T_2}$，则 $(\lambda \alpha: *.M) \in \Lambda_{\mathrm T_2}$，此时称项 $\lambda \alpha: *.M$ 依赖于类型 $\alpha$，并称该项为多态函数

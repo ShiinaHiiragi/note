@@ -60,3 +60,11 @@
 - self-application：自应用
 
 ## 3 Second Order Typed Lambda Calculus：二阶类型 λ 演算
+
+- second order：二阶
+- depends on：依赖于
+- polymorphic：多态
+- $\Pi-$types：$\Pi-$类型
+- product types：乘积类型
+- $\Pi-$binder：$\Pi-$绑定器
+- type-binder：类型绑定器
