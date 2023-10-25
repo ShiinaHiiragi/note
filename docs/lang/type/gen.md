@@ -177,6 +177,7 @@
     3. 并非所有合法 $\lambda-$项都有不动点
 
 ## 1.3 二阶类型 λ 演算
+### 1.3.1 二阶类型
 1. $\lambda_2-$类型：设类型变元的无穷集为 $\mathrm V = \{\alpha, \beta, \gamma, \cdots\}$，定义所有二阶类型集合 $\mathrm T_2$ 如下
     1. 类型变元：若 $\alpha \in \mathrm V$，则 $\alpha \in \mathrm T_2$
     2. 箭头类型：若 $\sigma, \tau \in \mathrm T_2$，则 $(\sigma \to \tau) \in \mathrm T_2$
@@ -186,4 +187,17 @@
     2. 应用：若 $M, N \in \Lambda_{\mathrm T_2}$，则 $(MN) \in \Lambda_{\mathrm T_2}$
     3. 抽象：若 $u \in V, \sigma \in \mathrm T_2$ 且 $M \in \Lambda_{\mathrm T_2}$，则 $(\lambda u: \sigma.M) \in \Lambda_{\mathrm T_2}$
     4. 二阶应用：若 $M \in \Lambda_{\mathrm T_2}, \sigma \in \mathrm T_2$，则 $(M\sigma) \in \Lambda_{\mathrm T_2}$
-    5. 二阶抽象：若 $\alpha \in \mathbf V$ 且 $M \in \Lambda_{\mathrm T_2}$，则 $(\lambda \alpha: *.M) \in \Lambda_{\mathrm T_2}$，此时称项 $\lambda \alpha: *.M$ 依赖于类型 $\alpha$，并称该项为多态函数
+    5. 二阶抽象：若 $\alpha \in \mathbf V$ 且 $M \in \Lambda_{\mathrm T_2}$，则 $(\lambda \alpha: *.M) \in \Lambda_{\mathrm T_2}$，此时称项 $\lambda \alpha: *.M$ 依赖于类型 $\alpha$
+
+    称形如 $\lambda \alpha: *.M$ 的 $\lambda$ 表达式为多态函数
+
+    简化规则
+
+3. 陈述与声明的扩充
+4. $\lambda_2-$语境
+
+### 1.3.2 F 系统
+
+1. $\lambda_2$ 系统的派生规则
+2. $\beta-$归约
+3. $\lambda_2$ 的性质
