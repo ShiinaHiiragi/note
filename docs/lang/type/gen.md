@@ -1,4 +1,4 @@
-# 1 一般类型论
+# 1 一般类型论与 F 系统
 
 ## 1.1 无类型 λ 演算
 ### 1.1.1 构造原理
@@ -135,7 +135,7 @@
     3. 若 $\lambda z: \sigma.P^{y \to z}$ 与 $\lambda y: \sigma.P$ 等价使得 $z \notin \mathrm{FV}(N)$，则 $(\lambda y: \sigma.P)[x:=N] \equiv \lambda z: \sigma.(P^{y \to z}[x:=N])$
 
 ### 1.2 Church λ<sub>→</sub>
-1. $\text{Church }\lambda_{\to}$ 派生规则
+1. 将简单类型 $\lambda$ 演算记作 $\lambda_{\to}$ 或 $\text{Church }\lambda_{\to}$，则其派生规则定义如下：
     1. 变元：如果 $x: \sigma \in \Gamma$，则 $\Gamma \vdash x: \sigma$
     2. 应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: \sigma \to \tau\)} \AxiomC{\(\Gamma \to N: \sigma\)} \BinaryInfC{\(\Gamma \vdash MN: \tau\)} \end{prooftree}$
     3. 抽象：$\begin{prooftree} \AxiomC{\(\Gamma, x: \sigma \vdash M: \tau\)} \UnaryInfC{\(\Gamma \vdash \lambda x:\sigma.M: \sigma \to \tau\)} \end{prooftree}$

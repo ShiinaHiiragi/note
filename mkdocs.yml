@@ -194,7 +194,7 @@ nav:
       - 4 条件期望: stat/prob/cond.md
   - 语言学:
     - 一、类型论:
-      - 1 一般类型论: lang/type/gen.md
+      - 1 一般类型论与 F 系统: lang/type/gen.md
     - 二、形式语言:
       - 1 形式文法与自动机: lang/formal/gr.md
     - 三、自然语言:
