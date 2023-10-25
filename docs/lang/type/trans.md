@@ -26,10 +26,12 @@
 - convention：规约
 - convertible：可转换
 - convertion：转换
+- currying：$\text{Curry}$ 化
 
 ## D
 - declaration：声明
 - depends on：依赖于
+- derivation：派生
 - domain：域
 
 ## E
