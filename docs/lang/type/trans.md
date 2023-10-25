@@ -17,7 +17,7 @@
 
 ## C
 - checking：检查
-- close terms：闭项
+- close term：闭项
 - combinator：组合子
 - condensing：压缩
 - construction：构建
@@ -73,22 +73,22 @@
 ## S
 - second order：二阶
 - self-application：自应用
-- statements：陈述
+- statement：陈述
 - subcontext：子语境
 - substitution：替换
-- subterms：子项
+- subterm：子项
 
 ## T
 - termination：终止
-- terms：项
+- term：项
 - thinning：稀疏化
 - typability：可类型化性
 - typable：可类型化
-- types：类型
+- type：类型
 - typing：类型分配
 
 ## V
-- variables：变元
+- variable：变元
 - variant：变式
 
 ## W
