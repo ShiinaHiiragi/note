@@ -191,10 +191,22 @@
 
     称形如 $\lambda \alpha: *.M$ 的 $\lambda$ 表达式为多态函数
 
-    简化规则
+    1. 简写规则
+        1. 最外层括号可以被省略，应用是左结合的
+        2. 应用与 $\to$ 优先级高于抽象与二阶抽象
+        3. 同类型的连续抽象或二阶抽象可以以右结合的方式组合在一起
+        4. 箭头类型是右结合的
 
-3. 陈述与声明的扩充
-4. $\lambda_2-$语境
+        例如 $(\Pi \alpha: *. (\Pi \beta: *. (\alpha \to (\beta \to \alpha)))$ 可简写为 $\Pi \alpha, \beta: *. \alpha \to \beta \to \alpha$
+
+    2. 陈述与声明的扩充
+        1. 陈述是形如 $M: \sigma$ 或 $\sigma: *$ 的 $\lambda$ 表达式，其中 $M \in \Lambda_{\mathrm T_2}, \sigma \in \mathrm T_2$
+        2. 声明是主体为项变元或类型变元的陈述
+
+3. $\lambda_2-$语境 $\Gamma$ 与其域 $\operatorname{dom}(\Gamma)$ 递归定义如下：
+    1. $\varnothing$ 是一个 $\lambda_2-$语境，且 $\operatorname{dom}(\varnothing) = \left<\right>$，即空序列
+    2. 若 $\Gamma$ 是一个 $\lambda_2-$语境且 $\alpha \in \mathrm{V}, \alpha \notin \operatorname{dom} (\Gamma)$，则 $\Gamma, \alpha: *$ 是一个 $\lambda_2-$语境且 $\operatorname{dom}(\Gamma, \alpha: *) = \operatorname{dom}(\Gamma) \cup \left<\alpha\right>$
+    3. 若 $\Gamma$ 是一个 $\lambda_2-$语境．若 $\rho \in \mathrm T_2$ 使得对于所有 $\rho$ 中自由出现的类型变元 $\alpha$，都有 $\alpha \in \operatorname{dom}(\Gamma)$ 成立，且 $x \notin \operatorname{dom}(\Gamma)$，则 $\Gamma, x: \rho$ 是一个 $\lambda_2-$语境且 $\operatorname{dom}(\Gamma, x: \rho) = \operatorname{dom}(\Gamma) \cup \left<x\right>$
 
 ### 1.3.2 F 系统
 
