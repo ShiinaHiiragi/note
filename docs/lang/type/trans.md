@@ -1,9 +1,10 @@
 # [类型论] 翻译表
 
-- 每一章节记录首次出现的专名，再次出现的专名沿用前述翻译
+- 不记录专名本身，而只记录构成专名的词语翻译方式
+- 具体专名的翻译方式是按顺序组合各单词的翻译
 - 本节不公开，全书内容记录后将被删除
 
-## 1 Untyped Lambda Calculus：无类型 λ 演算
+## A
 - variables：变元
 - terms：项
 - application：应用
@@ -11,7 +12,7 @@
 - body：正体
 - subterms：子项
 - proper subterm：真子项
-- occur 出现
+- occur：出现
 - bound occurence：约束出现
 - free occurence：自由出现
 - binding occurence：绑定出现
@@ -29,13 +30,11 @@
 - reduction：归约
 - normal form：正规形式
 - normalising：可正规化
-- weakly normalising：弱可正规化
-- strongly normalising：强可正规化
 - redex (reduciable expression)：可归约式
 - contractum：收缩式
 - fixed point：不动点
 
-## 2 Simply Typed Lambda Calculus：简单类型 λ 演算
+## B
 - types：类型
 - typability：可类型化性
 - typable：可类型化
@@ -50,17 +49,17 @@
 - permutation：排列
 - projection：投影
 - judgement：推断
-- type assignment：类型指派
-- type checking：类型检查
-- term finding：项查找
-- term construction：项构建
+- assignment：指派
+- checking：检查
+- finding：查找
+- construction：构建
 - thinning：稀疏化
 - condensing：压缩
 - generation：生成
 - termination：终止
 - self-application：自应用
 
-## 3 Second Order Typed Lambda Calculus：二阶类型 λ 演算
+## C
 - second order：二阶
 - depends on：依赖于
 - polymorphic：多态
