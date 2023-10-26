@@ -198,6 +198,7 @@ nav:
       - 2 依值类型论: lang/type/dep.md
     - 二、形式语言:
       - 1 形式文法与自动机: lang/formal/gr.md
+      - 2 形式语义: lang/formal/sem.md
     - 三、自然语言:
       - 1 句法学: lang/nat/syntax.md
       - 3 语用学: lang/nat/pragma.md
