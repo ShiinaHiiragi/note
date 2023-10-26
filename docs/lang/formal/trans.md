@@ -30,6 +30,7 @@
 ## S
 - statement：语句
 - structural：结构
+- substitution：替换
 
 ## V
 - variable：变量

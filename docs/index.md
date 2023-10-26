@@ -445,9 +445,9 @@ const refList = [
         year: 2007,
         press: "Springer Science & Business Media",
         locate: "London",
-        plot: 1
+        plot: 19
     },
-        {
+    {
         author: ["陈有祺"],
         title: "形式语言与自动机",
         type: "M",
