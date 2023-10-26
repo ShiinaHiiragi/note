@@ -28,11 +28,11 @@
 
         $$
         \begin{aligned}
-        \mathcal A [\![n]\!] s& = \mathcal N[\![n]\!]\\
-        \mathcal A [\![x]\!] s& = s(x)\\
-        \mathcal A [\![a_1 + a_2]\!] s& = \mathcal A [\![a_1]\!] s + \mathcal A [\![a_2]\!] s\\
-        \mathcal A [\![a_1 * a_2]\!] s& = \mathcal A [\![a_1]\!] s \times \mathcal A [\![a_2]\!] s\\
-        \mathcal A [\![a_1 - a_2]\!] s& = \mathcal A [\![a_1]\!] s - \mathcal A [\![a_2]\!] s
+        \mathcal A [\![n]\!](s)& = \mathcal N[\![n]\!]\\
+        \mathcal A [\![x]\!](s)& = s(x)\\
+        \mathcal A [\![a_1 + a_2]\!](s)& = \mathcal A [\![a_1]\!](s) + \mathcal A [\![a_2]\!](s)\\
+        \mathcal A [\![a_1 * a_2]\!](s)& = \mathcal A [\![a_1]\!](s) \times \mathcal A [\![a_2]\!](s)\\
+        \mathcal A [\![a_1 - a_2]\!](s)& = \mathcal A [\![a_1]\!](s) - \mathcal A [\![a_2]\!](s)
         \end{aligned}
         $$
 
@@ -50,25 +50,25 @@
             \end{aligned}
             $$
 
-        2. 设 $s, s' \in \mathbf{State}$ 对任意 $x \in \operatorname{FV}(a)$ 都有 $s(x) = s'(x)$，则 $\mathcal A[\![a]\!]s = \mathcal A[\![a]\!]s'$ 恒成立
+        2. 设 $s, s' \in \mathbf{State}$ 对任意 $x \in \operatorname{FV}(a)$ 都有 $s(x) = s'(x)$，则 $\mathcal A[\![a]\!](s) = \mathcal A[\![a]\!](s)'$ 恒成立
 
     3. 对于 $\text{Boolean}$ 表达式，递归定义语义函数 $\mathcal B: \mathbf{Bexp} \to (\mathbf{State} \to \mathbf{T})$：
 
         $$
         \begin{aligned}
-        \mathcal B [\![\text{true}]\!] s& = \top \\
-        \mathcal B [\![\text{false}]\!] s& = \bot \\
-        \mathcal B [\![a_1 = a_2]\!] s& = \left\{\begin{aligned}
-            & \top, & \textsf{若 } \mathcal A [\![a_1]\!] s = \mathcal A [\![a_2]\!] s \\
-            & \bot, & \textsf{若 } \mathcal A [\![a_1]\!] s \neq \mathcal A [\![a_2]\!] s
+        \mathcal B [\![\text{true}]\!](s)& = \top \\
+        \mathcal B [\![\text{false}]\!](s)& = \bot \\
+        \mathcal B [\![a_1 = a_2]\!](s)& = \left\{\begin{aligned}
+            & \top, & \textsf{若 } \mathcal A [\![a_1]\!](s) = \mathcal A [\![a_2]\!](s) \\
+            & \bot, & \textsf{若 } \mathcal A [\![a_1]\!](s) \neq \mathcal A [\![a_2]\!](s)
             \end{aligned}\right. \\
-        \mathcal B [\![\neg b]\!] s& = \left\{\begin{aligned}
-            & \top, & \textsf{若 } \mathcal B [\![b]\!] s = \bot \\
-            & \bot, & \textsf{若 } \mathcal B [\![b]\!] s = \top
+        \mathcal B [\![\neg b]\!](s)& = \left\{\begin{aligned}
+            & \top, & \textsf{若 } \mathcal B [\![b]\!](s) = \bot \\
+            & \bot, & \textsf{若 } \mathcal B [\![b]\!](s) = \top
             \end{aligned}\right. \\
-        \mathcal B [\![b_1 \wedge b_2]\!] s& = \left\{\begin{aligned}
-            & \top, & \textsf{若 } \mathcal B [\![b_1]\!] s = \top \textsf{ 且 } \mathcal B [\![B_2]\!] s = \top \\
-            & \bot, & \textsf{若 } \mathcal B [\![b_1]\!] s = \bot \textsf{ 或 } \mathcal B [\![B_2]\!] s = \bot
+        \mathcal B [\![b_1 \wedge b_2]\!](s)& = \left\{\begin{aligned}
+            & \top, & \textsf{若 } \mathcal B [\![b_1]\!](s) = \top \textsf{ 且 } \mathcal B [\![B_2]\!](s) = \top \\
+            & \bot, & \textsf{若 } \mathcal B [\![b_1]\!](s) = \bot \textsf{ 或 } \mathcal B [\![B_2]\!](s) = \bot
             \end{aligned}\right. \\
         \end{aligned}
         $$
@@ -88,7 +88,7 @@
             \end{aligned}
             $$
 
-        2. 设 $s, s' \in \mathbf{State}$ 对任意 $x \in \operatorname{FV}(a)$ 都有 $s(x) = s'(x)$，则 $\mathcal B[\![b]\!]s = \mathcal B[\![b]\!]s'$ 恒成立
+        2. 设 $s, s' \in \mathbf{State}$ 对任意 $x \in \operatorname{FV}(a)$ 都有 $s(x) = s'(x)$，则 $\mathcal B[\![b]\!](s) = \mathcal B[\![b]\!](s)'$ 恒成立
 
 3. 替换：将算术表达式 $a$ 中出现的所有 $y$ 替换为算术表达式 $a_0$ 记作 $a[y \to a_0]$，递归定义为
 
@@ -131,8 +131,8 @@
 
         $$
         \begin{aligned}
-        \mathcal A[\![a[y \to a_0]]\!]s & = \mathcal A[\![a]\!](s[y \to \mathcal A[\![a_0]\!]s]) \\
-        \mathcal B[\![b[y \to a_0]]\!]s & = \mathcal B[\![b]\!](s[y \to \mathcal A[\![a_0]\!]s])
+        \mathcal A[\![a[y \to a_0]]\!](s) & = \mathcal A[\![a]\!](s[y \to \mathcal A[\![a_0]\!](s)]) \\
+        \mathcal B[\![b[y \to a_0]]\!](s) & = \mathcal B[\![b]\!](s[y \to \mathcal A[\![a_0]\!](s)])
         \end{aligned}
         $$
 

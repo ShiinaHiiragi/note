@@ -53,7 +53,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，现处于第一阶段"
-    <label> 现在进度：类型论 · 一般类型论 </label>
+    <label> 现在进度：类型论 · 依值类型论 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
