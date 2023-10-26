@@ -87,7 +87,7 @@
 !!! note "参考文献"
     1. 『递归论：算法与随机性基础』（郝兆宽、杨睿之、杨跃），下略
     2. 『数理逻辑：证明及其限度』（郝兆宽、杨睿之、杨跃）
-    3. {++『逆数学と 2 階算術』（田中一之）++}
+    3. 『逆数学と 2 階算術』（田中一之）
 
 #### 3 不可解度论
 1. 图灵归约与图灵度：§3.1、§3.2
@@ -109,7 +109,7 @@
 
 !!! note "参考文献"
     1. 『集合论：对无穷概念的探索』（郝兆宽、杨睿之）
-    2. {++『The Higher Infinite: Large Cardinals in Set Theory from Their Beginnings』（Akihiro Kanamori）++}
+    2. {++『The Higher Infinite: Large Cardinals in Set Theory from their Beginnings』（Akihiro Kanamori）++}
 
 #### 3 连续统假设
 1. 集宇宙：第七章
