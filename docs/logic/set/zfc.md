@@ -249,7 +249,7 @@
 
         对于集合 $\mathscr{A} \subseteq \mathcal{P}(X)$，定义关系 $R$ 下的像为 $R[\mathscr{A}] = \left\{R[A] \in \mathcal{P}(Y) \mid A \in \mathscr{A}\right\}$；对于集合 $\mathscr{B} \subseteq \mathcal{P}(Y)$，定义关系 $R$ 下的逆像（也称作原像）为 $R^{-1}[\mathscr{B}] = \left\{R^{-1}[B] \in \mathcal{P}(X) \mid B \in \mathscr{B}\right\}$
 
-    2. 逆关系与复合关系：定义二元关系 $R$ 的逆为 $R^{-1} = \left\{(x, y) \mid R(y, x)\right\}$；复合为 $S \circ R = \left\{(x, z) \mid \exists y \ (R(x, y) \wedge S(y, z))\right\}$
+    2. 逆关系与复合关系：关系 $S, R$ 的逆为 $R^{-1} = \left\{(x, y) \mid R(y, x)\right\}$，复合为 $S \circ R = R \diamond S = \left\{(x, z) \mid \exists y \ (R(x, y) \wedge S(y, z))\right\}$
         1. $(R^{-1})^{-1} = R, (S \circ R)^{-1} = R^{-1} \circ S^{-1}$
         2. $X \circ (Y \circ Z) = (X \circ Y) \circ Z$
         3. $(X \cup Y) \circ Z = (X \circ Z) \cup (Y \circ Z), Z \circ (X \cup Y) = (Z \circ X) \cup (Z \circ Y)$
@@ -369,7 +369,9 @@
                 - $I_{A-B}=I_{A}-I_{B}$
                 - $I_{A \triangle B}=\left|I_{A}-I_{B}\right|=I_{A}+I_{B} \pmod{2}$
 
-        4. 部分映射：在定义域的某些点上没有定义的映射，与之相对的是全映射
+        4. 部分映射：在定义域的某些点上没有定义的映射
+            - 与部分映射相对的是（全）映射
+            - 设 $g_1, g_2$ 是部分映射，则复合映射 $g_2 \circ g_1$ 也是部分映射
 
     5. 限制与扩张：对任意映射 $f$ 与集合 $A$，称映射 $g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 为 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张或延拓
 

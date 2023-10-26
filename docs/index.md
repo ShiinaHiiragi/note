@@ -441,7 +441,7 @@ const refList = [
         author: ["Hanne Riis Nielson", "Flemming Nielson"],
         title: "Semantics with Applications: an Appetizer",
         type: "M",
-        page: [1, 246],
+        page: [1, 254],
         year: 2007,
         press: "Springer Science & Business Media",
         locate: "London",
