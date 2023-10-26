@@ -3,7 +3,7 @@
 ## 简介
 
 <div class="entry start">
-    <img src="assets/cube-outline.svg" style="width: 1.2rem" />
+    <img src="assets/icons/cube-outline.svg" style="width: 1.2rem" />
     <div class="sub-entry">
         <div class="caption">逻辑与形而上学</div>
         <div class="value">
@@ -13,7 +13,7 @@
 </div>
 
 <div class="entry start">
-    <img src="assets/book-search-outline.svg" style="width: 1.2rem" />
+    <img src="assets/icons/book-search-outline.svg" style="width: 1.2rem" />
     <div class="sub-entry">
         <div class="caption">如何使用</div>
         <div class="value">
@@ -23,7 +23,7 @@
 </div>
 
 <div class="entry start">
-    <img src="assets/pencil.svg" style="width: 1.2rem" />
+    <img src="assets/icons/pencil.svg" style="width: 1.2rem" />
     <div class="sub-entry">
         <div class="caption">前置知识</div>
         <div class="value">
@@ -33,7 +33,7 @@
 </div>
 
 <div class="entry start">
-    <img src="assets/monitor-cellphone.svg" style="width: 1.2rem" />
+    <img src="assets/icons/monitor-cellphone.svg" style="width: 1.2rem" />
     <div class="sub-entry">
         <div class="caption">手机访问</div>
         <div class="value">
@@ -43,7 +43,7 @@
 </div>
 
 <div class="entry start">
-    <img src="assets/github.svg" style="width: 1.2rem" />
+    <img src="assets/icons/github.svg" style="width: 1.2rem" />
     <div class="sub-entry">
         <div class="caption">本项目已开源</div>
         <div class="value">
@@ -428,16 +428,6 @@ const refList = [
         locate: "北京"
     },
     {
-        author: ["许以超", "马松雅"],
-        title: "代数编码与密码",
-        type: "M",
-        page: [1, 196],
-        year: 2015,
-        press: "高等教育出版社",
-        locate: "北京",
-        plot: 47
-    },
-    {
         author: ["Rob Nederpelt", "Herman Geuvers"],
         title: "Type Theory and Formal Proof: an Introduction",
         type: "M",
@@ -448,6 +438,16 @@ const refList = [
         plot: 85
     },
     {
+        author: ["Hanne Riis Nielson", "Flemming Nielson"],
+        title: "Semantics with Applications: an Appetizer",
+        type: "M",
+        page: [1, 246],
+        year: 2007,
+        press: "Springer Science & Business Media",
+        locate: "London",
+        plot: 1
+    },
+        {
         author: ["陈有祺"],
         title: "形式语言与自动机",
         type: "M",

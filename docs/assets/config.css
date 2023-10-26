@@ -20,17 +20,17 @@ strong {
 /* Define Fonts */
 @font-face {
   font-family: "Noto Sans";
-  src: "NotoSans-Regular.ttf";
+  src: "fonts/NotoSans-Regular.ttf";
 }
 
 @font-face {
   font-family: "Noto Sans SC";
-  src: "NotoSansSC-Regular.otf";
+  src: "fonts/NotoSansSC-Regular.otf";
 }
 
 @font-face {
   font-family: "Noto Serif SC";
-  src: "NotoSerifSC-Regular.otf";
+  src: "fonts/NotoSerifSC-Regular.otf";
 }
 
 /* General Title */
