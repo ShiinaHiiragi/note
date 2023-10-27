@@ -124,7 +124,7 @@
 ### 四、范畴论
 
 !!! note "参考文献"
-    『范畴论』（贺伟）
+    『Basic Category Theory』（Tom Leinster）
 
 #### 1 范畴
 
