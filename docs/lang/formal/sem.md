@@ -199,6 +199,8 @@
     1. 对于任意状态 $S$，$\mathcal S_{\text{sos}}[\![S]\!]$ 是一个部分函数
     2. 若 $\left<S, s\right> \Rightarrow^{*} s'$，则 $\mathcal S_{\text{sos}}[\![S]\!](s) = s'$，否则该部分函数无定义
 3. 语义等价：对于 $\textbf{While}$ 中的任意语句 $S$，均有 $\mathcal S_{\text{ns}}[\![S]\!] = \mathcal S_{\text{sos}} [\![S]\!]$
+    1. 对于 $\textbf{While}$ 中的任意语句 $S$ 与状态 $s, s'$，均有 $\left<S, s\right> \to s'$ 蕴含 $\left<S, s\right> \Rightarrow^{*} s'$
+    2. 对于 $\textbf{While}$ 中的任意语句 $S$ 与状态 $s, s'$，均有 $\left<S, s\right> \Rightarrow^{k} s'$ 蕴含 $\left<S, s\right> \to s'$
 
 ## 2.2 指称语义
 
