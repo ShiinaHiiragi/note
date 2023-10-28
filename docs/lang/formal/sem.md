@@ -139,12 +139,12 @@
 ## 2.1 操作语义
 - 操作语义学的传递系统由两种格局构成
     1. $\left<S, s\right>$，其中 $S$ 表示将要执行的语句，$s$ 表示语句执行的初始状态
-    2. $s$：表示终止状态，即中止格局
+    2. $s$：表示终止状态，即终止格局
 
 ### 2.1.1 自然语义
 1. 自然语义（即大步操作语义）的传递关系写作 $\left<S, s\right> \to s'$，即从状态 $s$ 执行语句 $S$ 后，状态变为 $s'$．传递关系递归定义如下：
-    1. $[\text{ass}_{\text{ns}}]: \ \left<x:=a, s\right> \to s[x \to \mathcal A[\![a]\!](s)]$
-    2. $[\text{skip}_{\text{ns}}]: \ \left<\text{skip}, s\right> \to S$
+    1. $[\text{skip}_{\text{ns}}]: \ \left<\text{skip}, s\right> \to S$
+    2. $[\text{ass}_{\text{ns}}]: \ \left<x:=a, s\right> \to s[x \to \mathcal A[\![a]\!](s)]$
     3. $[\text{comp}_{\text{ns}}]: \ \begin{prooftree} \AxiomC{\(\left<S_1, s\right> \to s'\)} \AxiomC{\(\left<S_2, s'\right> \to s''\)} \BinaryInfC{\(\left<S_1; S_2, s\right> \to s''\)} \end{prooftree}$
     4. $[\text{if}_{\text{ns}}^{\text{t}}]: \ \begin{prooftree} \AxiomC{\(\left<S_1, s\right> \to s'\)} \UnaryInfC{\(\left<\text{if } b \text{ then } S_1 \text{ else } S_2, s\right> \to s'\)} \end{prooftree}$，若 $\mathcal B[\![b]\!](s) = \top$
     5. $[\text{if}_{\text{ns}}^{\text{f}}]: \ \begin{prooftree} \AxiomC{\(\left<S_2, s\right> \to s'\)} \UnaryInfC{\(\left<\text{if } b \text{ then } S_1 \text{ else } S_2, s\right> \to s'\)} \end{prooftree}$，若 $\mathcal B[\![b]\!](s) = \bot$
@@ -157,11 +157,11 @@
         1. 派生树的根节点是 $\left<S, s\right> \to s'$，叶节点是上述公理的实例
         2. 若派生树只有一个节点，且是公理的实例，则称该派生树是简单的，否则成其是复合的
     2. 自然语义是确定的，即对所有给定的语句 $S$ 与状态 $s, s', s''$，都有 $\left<S, s\right> \to s'$ 与 $\left<S, s\right> \to s''$ 蕴含 $s' = s''$
-    3. 定义语义函数：$\mathcal S_{\text{ns}}: \mathbf{Stm} \to (\mathbf{State} \rightharpoonup \mathbf{State})$
-        1. 对于任意状态 $S$，$\mathcal S_{\text{ns}}[\![S]\!]$ 是一个部分函数
-        2. 若 $\left<S, s\right> \to s'$，则 $\mathcal S_{\text{ns}}[\![S]\!](s) = s'$，否则该部分函数无定义
 
-2. 语义等价：对于语句 $S_1, S_2$ 以及任意状态 $s$ 与 $s'$，若 $\left<S_1, s\right> \to S'$ 当且仅当 $\left<S_2, s\right> \to s'$，则称语句 $S_1, S_2$ 语义等价
+2. 定义语义函数：$\mathcal S_{\text{ns}}: \mathbf{Stm} \to (\mathbf{State} \rightharpoonup \mathbf{State})$
+    1. 对于任意状态 $S$，$\mathcal S_{\text{ns}}[\![S]\!]$ 是一个部分函数
+    2. 若 $\left<S, s\right> \to s'$，则 $\mathcal S_{\text{ns}}[\![S]\!](s) = s'$，否则该部分函数无定义
+3. 语义等价：对于语句 $S_1, S_2$ 以及任意状态 $s$ 与 $s'$，若 $\left<S_1, s\right> \to S'$ 当且仅当 $\left<S_2, s\right> \to s'$，则称语句 $S_1, S_2$ 语义等价
     1. 在自然语义的定义下，$\text{while } b \text{ do } S$ 与 $\text{if } b \text{ then } (\text{S; while } b \text{ do } S) \text{ else skip}$ 语义等价
     2. 在自然语义的定义下，$S_1; (S_2; S_3)$ 与 $(S_1; S_2); S_3$ 语义等价
 
@@ -170,7 +170,35 @@
     1. 若 $\gamma$ 形如 $\left<S', s'\right>$，则语句 $S$ 从状态 $s$ 的执行是不完全的，且余下的计算可以由中间格局 $\left<S', s'\right>$ 表示
     2. 若 $\gamma$ 形如 $s'$，则语句 $S$ 从状态 $s$ 的执行完全，且终止状态为 $s'$
 
-    若不存在 $\gamma$ 使得 $\left<S, s\right> \Rightarrow \gamma$，则称 $\left<S, s\right>$ 是阻塞的．传递关系递归定义如下：
+    传递关系递归定义如下：
+
+    1. $[\text{skip}_{\text{sos}}]: \ \left<\text{skip}, s\right> \Rightarrow s$
+    2. $[\text{ass}_{\text{sos}}]: \ \left<x:=a, s\right> \Rightarrow s[x \to \mathcal A[\![a]\!](s)]$
+    3. $[\text{comp}_{\text{sos}}^{1}]: \ \begin{prooftree} \AxiomC{\(\left<S_1, s\right> \Rightarrow \left<S_1', s'\right>\)} \UnaryInfC{\(\left<S_1; S_2, s\right> \Rightarrow \left<S_1'; S_2, s'\right>\)} \end{prooftree}$
+    4. $[\text{comp}_{\text{sos}}^{2}]: \ \begin{prooftree} \AxiomC{\(\left<S_1, s\right> \Rightarrow s'\)} \UnaryInfC{\(\left<S_1; S_2, s\right> \Rightarrow \left<S_2, s'\right>\)} \end{prooftree}$
+    5. $[\text{if}_{\text{sos}}^{\text{t}}]: \ \left<\text{if } b \text{ then } S_1 \text{ else } S_2, s\right> \Rightarrow \left<S_1, s\right>$，若 $\mathcal B[\![b]\!]s = \top$
+    6. $[\text{if}_{\text{sos}}^{\text{f}}]: \ \left<\text{if } b \text{ then } S_1 \text{ else } S_2, s\right> \Rightarrow \left<S_2, s\right>$，若 $\mathcal B[\![b]\!]s = \bot$
+    7. $[\text{while}_{\text{sos}}]: \ \left<\text{while } b \text{ do } S, s\right> \Rightarrow \left<\text{if } b \text{ then } (\text{S; while } b \text{ do } S) \text{ else skip}, s\right>$
+
+    若不存在 $\gamma$ 使得 $\left<S, s\right> \Rightarrow \gamma$，则称 $\left<S, s\right>$ 是阻塞的
+
+    1. 从状态 $s$ 开始执行语句 $S$ 所产生序列，被称作派生序列，其有两种类型
+        1. 有穷序列：$\gamma_0, \gamma_1, \cdots, \gamma_k$，也可写作 $\gamma_0 \Rightarrow \gamma_1 \Rightarrow \cdots \Rightarrow \gamma_k$，使得 $\gamma_0 = \left<S, s\right>$ 且 $\gamma_i \Rightarrow \gamma_{i+1}$ 对任意 $0 \leqslant i < k$ 均成立．此时 $\gamma_k$ 是终止格局或阻塞格局，称以状态 $s$ 在语句 $S$ 上的执行终止，并在 $\gamma_k$ 为终止格局时称该执行成功终止
+        2. 无穷序列 $\gamma_0, \gamma_1, \gamma_2, \cdots$，也可写作 $\gamma_0 \Rightarrow \gamma_1 \Rightarrow \gamma_2 \Rightarrow \cdots$，使得 $\gamma_0 = \left<S, s\right>$ 且 $\gamma_i \Rightarrow \gamma_{i+1}$ 对任意 $i \geqslant 0$ 均成立，称以状态 $s$ 在语句 $S$ 上的执行陷入循环
+
+        若语句 $S$ 在所有状态上的执行都终止，则称语句 $S$ 总是终止，若在所有状态上的执行都陷入循环，则称语句 $S$ 总是陷入循环
+
+    2. 用 $\gamma_0 \Rightarrow^{i} \gamma_i$ 表示从格局 $\gamma_0$ 到 $\gamma_i$ 需要执行 $i$ 步，用 $\gamma_0 \Rightarrow^{*} \gamma_i$ 表示从格局 $\gamma_0$ 到 $\gamma_i$ 需要执行有限步．上述两者是派生序列当且仅当 $\gamma_i$ 是终止格局或阻塞格局
+        1. 若 $\left<S_1; S_2, s\right> \Rightarrow^{k} s''$，则存在状态 $s'$ 与 $k_0 \in \mathbf N$，使得 $\left<S_1, s\right> \Rightarrow^{k_0} s'$ 以及 $\left<S_2, s'\right> \Rightarrow^{k-k_0} s''$
+        2. 若 $\left<S_1, s\right> \Rightarrow^{k} s'$，则 $\left<S_1; S_2, s\right> \Rightarrow^{k} \left<S_2, s'\right>$
+    3. 结构操作语义是确定的，即对所有给定的语句 $S$，状态 $s$ 与格局 $\gamma, \gamma'$，都有 $\left<S, s\right> \Rightarrow \gamma$ 与 $\left<S, s\right> \Rightarrow \gamma'$ 蕴含 $\gamma = \gamma'$
+        1. 对于一个给定格局 $\left<S, s\right>$，仅存在唯一的派生序列
+        2. 不存在 $\textbf{While}$ 中给定的语句 $S$ 与状态 $s$，其执行既能终止又能陷入循环
+
+2. 定义语义函数：$\mathcal S_{\text{sos}}: \mathbf{Stm} \to (\mathbf{State} \rightharpoonup \mathbf{State})$
+    1. 对于任意状态 $S$，$\mathcal S_{\text{sos}}[\![S]\!]$ 是一个部分函数
+    2. 若 $\left<S, s\right> \Rightarrow^{*} s'$，则 $\mathcal S_{\text{sos}}[\![S]\!](s) = s'$，否则该部分函数无定义
+3. 语义等价：对于 $\textbf{While}$ 中的任意语句 $S$，均有 $\mathcal S_{\text{ns}}[\![S]\!] = \mathcal S_{\text{sos}} [\![S]\!]$
 
 ## 2.2 指称语义
 
