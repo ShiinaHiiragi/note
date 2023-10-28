@@ -137,9 +137,40 @@
         $$
 
 ## 2.1 操作语义
+- 操作语义学的传递系统由两种格局构成
+    1. $\left<S, s\right>$，其中 $S$ 表示将要执行的语句，$s$ 表示语句执行的初始状态
+    2. $s$：表示终止状态，即中止格局
+
 ### 2.1.1 自然语义
+1. 自然语义（即大步操作语义）的传递关系写作 $\left<S, s\right> \to s'$，即从状态 $s$ 执行语句 $S$ 后，状态变为 $s'$．传递关系递归定义如下：
+    1. $[\text{ass}_{\text{ns}}]: \ \left<x:=a, s\right> \to s[x \to \mathcal A[\![a]\!](s)]$
+    2. $[\text{skip}_{\text{ns}}]: \ \left<\text{skip}, s\right> \to S$
+    3. $[\text{comp}_{\text{ns}}]: \ \begin{prooftree} \AxiomC{\(\left<S_1, s\right> \to s'\)} \AxiomC{\(\left<S_2, s'\right> \to s''\)} \BinaryInfC{\(\left<S_1; S_2, s\right> \to s''\)} \end{prooftree}$
+    4. $[\text{if}_{\text{ns}}^{\text{t}}]: \ \begin{prooftree} \AxiomC{\(\left<S_1, s\right> \to s'\)} \UnaryInfC{\(\left<\text{if } b \text{ then } S_1 \text{ else } S_2, s\right> \to s'\)} \end{prooftree}$，若 $\mathcal B[\![b]\!](s) = \top$
+    5. $[\text{if}_{\text{ns}}^{\text{f}}]: \ \begin{prooftree} \AxiomC{\(\left<S_2, s\right> \to s'\)} \UnaryInfC{\(\left<\text{if } b \text{ then } S_1 \text{ else } S_2, s\right> \to s'\)} \end{prooftree}$，若 $\mathcal B[\![b]\!](s) = \bot$
+    6. $[\text{while}_{\text{ns}}^{\text{t}}]: \ \begin{prooftree} \AxiomC{\(\left<S, s\right> \to s'\)} \AxiomC{\(\left<\text{while } b \text{ do } S, s'\right> \to s''\)} \BinaryInfC{\(\left<\text{while } b \text{ do } S, s\right> \to s''\)} \end{prooftree}$，若 $\mathcal B[\![b]\!](s) = \top$
+    7. $[\text{while}_{\text{ns}}^{\text{f}}]: \ \left<\text{while } b \text{ do } S, s\right> \to s$，若 $\mathcal B[\![b]\!](s) = \bot$
+
+    称上述没有前提的推导规则为公理
+
+    1. 用上述规则生成传递关系 $\left<S, s\right> \to s'$ 可得到派生树
+        1. 派生树的根节点是 $\left<S, s\right> \to s'$，叶节点是上述公理的实例
+        2. 若派生树只有一个节点，且是公理的实例，则称该派生树是简单的，否则成其是复合的
+    2. 自然语义是确定的，即对所有给定的语句 $S$ 与状态 $s, s', s''$，都有 $\left<S, s\right> \to s'$ 与 $\left<S, s\right> \to s''$ 蕴含 $s' = s''$
+    3. 定义语义函数：$\mathcal S_{\text{ns}}: \mathbf{Stm} \to (\mathbf{State} \rightharpoonup \mathbf{State})$
+        1. 对于任意状态 $S$，$\mathcal S_{\text{ns}}[\![S]\!]$ 是一个部分函数
+        2. 若 $\left<S, s\right> \to s'$，则 $\mathcal S_{\text{ns}}[\![S]\!](s) = s'$，否则该部分函数无定义
+
+2. 语义等价：对于语句 $S_1, S_2$ 以及任意状态 $s$ 与 $s'$，若 $\left<S_1, s\right> \to S'$ 当且仅当 $\left<S_2, s\right> \to s'$，则称语句 $S_1, S_2$ 语义等价
+    1. 在自然语义的定义下，$\text{while } b \text{ do } S$ 与 $\text{if } b \text{ then } (\text{S; while } b \text{ do } S) \text{ else skip}$ 语义等价
+    2. 在自然语义的定义下，$S_1; (S_2; S_3)$ 与 $(S_1; S_2); S_3$ 语义等价
 
 ### 2.1.2 结构操作语义
+1. 结构操作语义（即小步操作语义）的传递关系写作 $\left<S, s\right> \Rightarrow \gamma$
+    1. 若 $\gamma$ 形如 $\left<S', s'\right>$，则语句 $S$ 从状态 $s$ 的执行是不完全的，且余下的计算可以由中间格局 $\left<S', s'\right>$ 表示
+    2. 若 $\gamma$ 形如 $s'$，则语句 $S$ 从状态 $s$ 的执行完全，且终止状态为 $s'$
+
+    若不存在 $\gamma$ 使得 $\left<S, s\right> \Rightarrow \gamma$，则称 $\left<S, s\right>$ 是阻塞的．传递关系递归定义如下：
 
 ## 2.2 指称语义
 

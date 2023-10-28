@@ -12,6 +12,7 @@
 - basis：基本
 
 ## C
+- configuration：格局
 - composite：复合
 
 ## D
