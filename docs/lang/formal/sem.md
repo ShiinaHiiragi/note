@@ -155,7 +155,7 @@
 
     1. 用上述规则生成传递关系 $\left<S, s\right> \to s'$ 可得到派生树
         1. 派生树的根节点是 $\left<S, s\right> \to s'$，叶节点是上述公理的实例
-        2. 若派生树只有一个节点，且是公理的实例，则称该派生树是简单的，否则成其是复合的
+        2. 若派生树只有一个节点，且是公理的实例，则称该派生树是简单的，否则称其是复合的
     2. 自然语义是确定的，即对所有给定的语句 $S$ 与状态 $s, s', s''$，都有 $\left<S, s\right> \to s'$ 与 $\left<S, s\right> \to s''$ 蕴含 $s' = s''$
 
 2. 定义语义函数：$\mathcal S_{\text{ns}}: \mathbf{Stm} \to (\mathbf{State} \rightharpoonup \mathbf{State})$
