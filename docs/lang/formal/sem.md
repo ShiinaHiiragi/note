@@ -225,10 +225,22 @@
         1. $g$ 是 $F$ 的不动点，即 $F(g) = g$
         2. $g$ 是 $F$ 最小不动点，即若 $g'$ 是 $F$ 的不动点，则对于任意状态 $s$ 与 $s'$，若 $g(s) = s'$，则 $g'(s) = s'$
 
-2. 不动点理论：设 $\mathbf{S}$ 是全体部分函数 $\mathbf{State} \rightharpoonup \mathbf{State}$ 组成的集合
-    1. 设 $\sqsubseteq$ 是集合 $D$ 上的偏序关系，$d \in D$．若对于任意 $d' \in D$，都有 $d \sqsubseteq d'$ 成立，则称 $d$ 是 $D$ 上的最小元素，记作 $\bot_{D}$
-        1. 若偏序集 $(D, \sqsubseteq)$ 上有最小元素 $\bot_{D}$，则 $\bot_{D}$ 唯一
-        2. 偏序集 $(\mathbf{S}, \sqsubseteq)$ 上最小元素 $\bot$ 存在，定义为 $\bot = \varnothing$，即对任意状态 $s$ 都有 $\bot(s)$ 无定义
-    2. 完全偏序集
+2. 完全偏序集：设 $\mathbf{S}$ 是全体部分函数 $\mathbf{State} \rightharpoonup \mathbf{State}$ 组成的集合
+    1. 最小元：设 $\sqsubseteq$ 是集合 $D$ 上的偏序关系，$d \in D$．若对于任意 $d' \in D$，都有 $d \sqsubseteq d'$ 成立，则称 $d$ 是 $D$ 上的最小元，记作 $\bot_{D}$
+        1. 若偏序集 $(D, \sqsubseteq)$ 上有最小元 $\bot_{D}$，则 $\bot_{D}$ 唯一
+        2. 偏序集 $(\mathbf{S}, \sqsubseteq)$ 上最小元 $\bot$ 存在，定义为 $\bot = \varnothing$，即对任意状态 $s$ 都有 $\bot(s)$ 无定义
+    2. 链：称偏序集 $D$ 的全序子集为 $D$ 的一条链，若 $D$ 的所有链 $Y$ 都有最小上界（记作 ${\displaystyle \bigsqcup X_0}$），则称 $D$ 为链完全偏序集
+        1. 若 $(D, \sqsubseteq)$ 是一个链完全偏序集，则 $D$ 有最小元 $\bot = {\displaystyle \bigsqcup \varnothing}$
+        2. $(\mathbf{S}, \sqsubseteq)$ 是一个链完全偏序集，且对于链 $Y$ 的最小上界 ${\displaystyle \bigsqcup Y = \bigcup Y}$
+3. 保序函数：偏序集 $(D, \sqsubseteq)$ 与 $(D', \sqsubseteq')$ 满足链完全偏序条件，令 $f: D \to D', d_1, d_2 \in D$，若 $d_1 \sqsubseteq d_2$ 蕴含 $f(d_1) \sqsubseteq f(d_2)$，则称 $f$ 是保序函数
+    1. 设偏序集 $(D, \sqsubseteq), (D', \sqsubseteq')$ 与 $(D'', \sqsubseteq'')$ 满足链完全偏序条件，令 $f: D \to D', f': D' \to D''$ 是保序函数，则 $f' \circ f$ 也是保序函数
+    2. 设偏序集 $(D, \sqsubseteq)$ 与 $(D', \sqsubseteq')$ 满足链完全偏序条件，$f: D \to D'$ 是一个保序函数．若 $Y$ 是 $D$ 中的链，则 $f[Y]$ 是 $D'$ 中的链且 ${\displaystyle \bigsqcup f[Y] \sqsubseteq' f\left(\bigsqcup Y\right)}$，即保序函数无法保持链上的最小上界性质
+4. 连续函数：设偏序集 $(D, \sqsubseteq)$ 与 $(D', \sqsubseteq')$ 满足链完全偏序条件，$f: D \to D'$ 是一个保序函数．若对于所有非空链 $Y$ 均有 ${\displaystyle \bigsqcup f[Y] = f\left(\bigsqcup Y\right)}$，则称 $f$ 是一个连续函数．若上述性质对空集也成立（即 $f(\bot) = \bot$），则称 $f$ 是严格连续函数
+    1. 设偏序集 $(D, \sqsubseteq), (D', \sqsubseteq')$ 与 $(D'', \sqsubseteq'')$ 满足链完全偏序条件，令 $f: D \to D', f': D' \to D''$ 是连续函数，则 $f' \circ f$ 也是连续函数
+    2. 最小不动点定理：令 $f: D \to D$ 是链完全偏序集 $(D, \sqsubseteq)$ 上的连续函数，最小元为 $\bot$，则 $\operatorname{FIX} f = {\displaystyle \bigsqcup \left\{[f^{n}](\bot) \mid n \geqslant 0\right\}}$ 即 $D$ 中函数 $f$ 的最小不动点，其中 $[f^{n}]$ 是函数 $f$ 的 $n$ 次复合
+        1. 令 $f: D \to D$ 是链完全偏序集 $(D, \sqsubseteq)$ 上的连续函数，$d \in D$ 满足 $f(d) \sqsubseteq d$，则 $\operatorname{FIX} f \sqsubseteq d$
+        2. 令 $(D, \sqsubseteq)$ 是一个链完全偏序集，定义 $(D \times D, \sqsubseteq')$ 为 $f_1 \sqsubseteq' f_2$ 当且仅当对所有 $d \in D$ 都有 $f_1(d) \sqsubseteq f_2(d)$
+            - $(D \times D, \sqsubseteq')$ 也是一个链完全偏序集
+            - 对所有 $D \times D$ 中连续函数的非空链 $\mathcal F$，都有 ${\displaystyle \operatorname{FIX}\left(\bigsqcup' \mathcal F\right) = \bigsqcup \left\{\operatorname{FIX} f \mid f \in \mathcal F\right\}}$
 
 ## 2.3 公理语义
