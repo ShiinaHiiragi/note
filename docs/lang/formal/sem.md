@@ -210,7 +210,7 @@
     4. $\mathcal S_{\text{ds}}[\![\text{if } b \text{ then } S_1 \text{ else } S_2]\!] = \operatorname{cond}(\mathcal B[\![b]\!], \mathcal S_{\text{ds}}[\![S_1]\!], \mathcal S_{\text{ds}}[\![S_2]\!])$
     5. $\mathcal S_{\text{ds}}[\![\text{while } b \text{ do } S]\!] = \operatorname{FIX} F$
 
-    其中辅助函数定义如下：
+    可证明上述定义的语义函数是全函数，其中辅助函数定义如下：
 
     1. 定义 $\mathrm{cond}: (\mathbf{State} \to \mathbf{T}) \times (\mathbf{State} \rightharpoonup \mathbf{State}) \times (\mathbf{State} \rightharpoonup \mathbf{State}) \to (\mathbf{State} \rightharpoonup \mathbf{State})$ 为
 
@@ -242,5 +242,9 @@
         2. 令 $(D, \sqsubseteq)$ 是一个链完全偏序集，定义 $(D \times D, \sqsubseteq')$ 为 $f_1 \sqsubseteq' f_2$ 当且仅当对所有 $d \in D$ 都有 $f_1(d) \sqsubseteq f_2(d)$
             - $(D \times D, \sqsubseteq')$ 也是一个链完全偏序集
             - 对所有 $D \times D$ 中连续函数的非空链 $\mathcal F$，都有 ${\displaystyle \operatorname{FIX}\left(\bigsqcup' \mathcal F\right) = \bigsqcup \left\{\operatorname{FIX} f \mid f \in \mathcal F\right\}}$
+    3. 函数 $F(g) = \operatorname{cond}(\mathcal B[\![b]\!], g \circ \mathcal S_{\text{ds}}, \mathrm{id}) = F_1 \circ F_2(g)$ 是连续函数
+        1. 令 $g_0: \mathbf{State} \rightharpoonup \mathbf{State}, p: \mathbf{State} \to \mathbf{T}$，则 $F_1(g) = \operatorname{cond}(p, g, g_0)$ 是连续函数
+        2. 令 $g_0: \mathbf{State} \rightharpoonup \mathbf{State}$，则 $F_2(g) = g \circ g_0$ 与 $F_3(g) = g_0 \circ g$ 均是连续函数
+5. 语义等价：对于 $\textbf{While}$ 中的任意语句 $S$，均有 $\mathcal S_{\text{sos}}[\![S]\!] = \mathcal S_{\text{ds}}[\![S]\!]$
 
 ## 2.3 公理语义
