@@ -203,5 +203,28 @@
     2. 对于 $\textbf{While}$ 中的任意语句 $S$ 与状态 $s, s'$，均有 $\left<S, s\right> \Rightarrow^{k} s'$ 蕴含 $\left<S, s\right> \to s'$
 
 ## 2.2 指称语义
+1. 递归定义指称语义函数 $\mathcal S_{\text{ds}}: \mathbf{Stm} \to (\mathbf{State} \rightharpoonup \mathbf{State})$ 如下
+    1. $\mathcal S_{\text{ds}}[\![x:=a]\!]s = s[x \to \mathcal A[\![a]\!]s]$
+    2. $\mathcal S_{\text{ds}}[\![\text{skip}]\!] = \mathrm{id}$
+    3. $\mathcal S_{\text{ds}}[\![S_1; S_2]\!] = \mathcal S_{\text{ds}}[\![S_2]\!] \circ \mathcal S_{\text{ds}} [\![S_1]\!]$
+    4. $\mathcal S_{\text{ds}}[\![\text{if } b \text{ then } S_1 \text{ else } S_2]\!] = \operatorname{cond}(\mathcal B[\![b]\!], \mathcal S_{\text{ds}}[\![S_1]\!], \mathcal S_{\text{ds}}[\![S_2]\!])$
+    5. $\mathcal S_{\text{ds}}[\![\text{while } b \text{ do } S]\!] = \operatorname{FIX} F$
+
+    其中辅助函数定义如下：
+
+    1. 定义 $\mathrm{cond}: (\mathbf{State} \to \mathbf{T}) \times (\mathbf{State} \rightharpoonup \mathbf{State}) \times (\mathbf{State} \rightharpoonup \mathbf{State}) \to (\mathbf{State} \rightharpoonup \mathbf{State})$ 为
+
+        $$
+        \operatorname{cond}(p, g_1, g_2)(s) = \left\{\begin{aligned}
+        & g_1, & p(s) = \top \\
+        & g_2, & p(s) = \bot
+        \end{aligned}\right.
+        $$
+
+    2. 定义 $\mathrm{FIX}: ((\mathbf{State} \rightharpoonup \mathbf{State}) \to (\mathbf{State} \rightharpoonup \mathbf{State})) \to (\mathbf{State} \rightharpoonup \mathbf{State})$ 为函数 $F$ 的不动点，其中 $F$ 定义为 $F(g) = \operatorname{cond}(\mathcal B[\![b]\!], g \circ \mathcal S_{\text{ds}}, \mathrm{id})$．$\operatorname{FIX} F$ 定义为满足下列两个条件的函数 $g$
+        1. $g$ 是 $F$ 的不动点，即 $F(g) = g$
+        2. 若 $g_0$ 是 $F$ 的不动点，则对于任意状态 $s$ 与 $s'$，若 $g(s) = s'$，则 $g_0(s) = s'$
+
+2. 不动点理论
 
 ## 2.3 公理语义
