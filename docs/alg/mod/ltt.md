@@ -1,7 +1,7 @@
 # 4 格论
 
 ## 4.1 格
-1. 格：设 $(L, \leqslant)$ 为偏序集，如果任意的 $a, b \in L$ 有最小上界与最大下界时，称 $L$ 为格．$a \vee b=\operatorname{lub}(a, b)$ 表示 $a, b$ 之最小上界，$a \wedge b=\operatorname{glb}(a, b)$ 表示 $a, b$ 之最大下界
+1. 格：设 $(L, \leqslant)$ 为偏序集，如果任意的 $a, b \in L$ 有最小上界与最大下界时，称 $L$ 为格．$a \vee b=\operatorname{sup}\{a, b\}$ 表示 $a, b$ 之最小上界，$a \wedge b=\operatorname{inf}\{a, b\}$ 表示 $a, b$ 之最大下界
     1. 覆盖：设 $(L, <)$ 为格，如果 $a \leqslant b, a \neq b$（记为 $a < b$）且不存在 $u \in L-\{a, b\}$ 使 $a < u < b$，则称 $b$ 覆盖 $a$
     2. 完全格：$(L, \leqslant)$ 为偏序集，当任意 $A \subseteq L$ 有最大下界、最小上界时，$L$ 显然是格，称为完全格
         1. $L$ 自身的最小上界是整个格 $L$ 的最大元，记为 $1$
@@ -58,7 +58,7 @@
         9. $C_{1}:  a \wedge a^{\prime}=0, a \vee a^{\prime}=1$
         10. $C_{2}: 0^{\prime}=1,1^{\prime}=0$
         11. $C_{3}: (a \wedge b)^{\prime}=a^{\prime} \vee b^{\prime},(a \vee b)^{\prime}=a^{\prime} \wedge b^{\prime}$
-        12. $P_{1}:  a \wedge b=\operatorname{glb}(a, b), a \vee b=\operatorname{lub}(a, b)$
+        12. $P_{1}:  a \wedge b=\operatorname{inf}\{a, b\}, a \vee b=\operatorname{sup}\{a, b\}$
         13. $P_{2}:  a \leqslant b \leftrightarrow a \wedge b=a \leftrightarrow a \vee b=b$
         14. $P_{3}:  a \leqslant b \leftrightarrow a \wedge b^{\prime}=0 \leftrightarrow b^{\prime} \leqslant a^{\prime} \leftrightarrow a^{\prime} \vee b=1$
 

@@ -372,6 +372,7 @@
         4. 部分映射：在定义域的某些点上没有定义的映射，通常记作 $f: X \rightharpoonup Y$
             - 与部分映射相对的是（全）映射
             - 设 $g_1, g_2$ 是部分映射，则复合映射 $g_2 \circ g_1$ 也是部分映射
+            - 设 $g_1, g_2: X \rightharpoonup Y$，则将 $g_1 \subseteq g_2$ 记作 $g_1 \sqsubseteq g_2$，将 $g_1 \supseteq g_2$ 记作 $g_1 \sqsupseteq g_2$
 
     5. 限制与扩张：对任意映射 $f$ 与集合 $A$，称映射 $g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 为 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张或延拓
 

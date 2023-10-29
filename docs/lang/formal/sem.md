@@ -223,8 +223,12 @@
 
     2. 定义 $\mathrm{FIX}: ((\mathbf{State} \rightharpoonup \mathbf{State}) \to (\mathbf{State} \rightharpoonup \mathbf{State})) \to (\mathbf{State} \rightharpoonup \mathbf{State})$ 为函数 $F$ 的不动点，其中 $F$ 定义为 $F(g) = \operatorname{cond}(\mathcal B[\![b]\!], g \circ \mathcal S_{\text{ds}}, \mathrm{id})$．$\operatorname{FIX} F$ 定义为满足下列两个条件的函数 $g$
         1. $g$ 是 $F$ 的不动点，即 $F(g) = g$
-        2. 若 $g_0$ 是 $F$ 的不动点，则对于任意状态 $s$ 与 $s'$，若 $g(s) = s'$，则 $g_0(s) = s'$
+        2. $g$ 是 $F$ 最小不动点，即若 $g'$ 是 $F$ 的不动点，则对于任意状态 $s$ 与 $s'$，若 $g(s) = s'$，则 $g'(s) = s'$
 
-2. 不动点理论
+2. 不动点理论：设 $\mathbf{S}$ 是全体部分函数 $\mathbf{State} \rightharpoonup \mathbf{State}$ 组成的集合
+    1. 设 $\sqsubseteq$ 是集合 $D$ 上的偏序关系，$d \in D$．若对于任意 $d' \in D$，都有 $d \sqsubseteq d'$ 成立，则称 $d$ 是 $D$ 上的最小元素，记作 $\bot_{D}$
+        1. 若偏序集 $(D, \sqsubseteq)$ 上有最小元素 $\bot_{D}$，则 $\bot_{D}$ 唯一
+        2. 偏序集 $(\mathbf{S}, \sqsubseteq)$ 上最小元素 $\bot$ 存在，定义为 $\bot = \varnothing$，即对任意状态 $s$ 都有 $\bot(s)$ 无定义
+    2. 完全偏序集
 
 ## 2.3 公理语义
