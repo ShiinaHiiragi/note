@@ -230,16 +230,6 @@
 
 #### 3 数学基础
 
-### 二、形式语言
-
-!!! note "参考文献"
-    『Semantics with Applications: an Appetizer』（Hanne Riis Nielson、Flemming Nielson）
-
-#### 2 形式语义
-1. 操作语义
-2. 指称语义
-3. 公理语义
-
 ### 三、自然语言
 
 !!! note "参考文献"

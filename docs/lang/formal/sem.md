@@ -248,3 +248,29 @@
 5. 语义等价：对于 $\textbf{While}$ 中的任意语句 $S$，均有 $\mathcal S_{\text{sos}}[\![S]\!] = \mathcal S_{\text{ds}}[\![S]\!]$
 
 ## 2.3 公理语义
+1. 部分正确性质：若程序终止，则变量的初始值和最终值之间的特定关系称为部分正确性质
+    1. 部分正确断言：一个断言形如 $\{\ P \ \} \ S \ \{\ Q \ \}$，其中 $S$ 为 $\text{Boolean}$ 表达式，$P, Q$ 为谓词．称 $P$ 为前置条件，$Q$ 为后置条件
+        1. 若状态 $s$ 满足表达式 $P$，即 $\mathcal B[\![P]\!](s) = \top$，且若语句 $S$ 以状态 $s$ 的执行终止后状态变为 $s'$，则 $\mathcal B[\![Q]\!](s') = \top$
+        2. $\text{Boolean}$ 表达式可以出现在程序中不存在的逻辑变量吗，并有如下简写
+            - $P_1 \vee P_2$：表示 $\neg (\neg P_1 \wedge \neg P_2)$
+            - $P_1 \to P_2$：表示 $\neg (P_1 \wedge \neg P_2)$
+            - $P[x \to \mathcal A[\![a]\!]](s) = P(s[x \to \mathcal A[\![A]\!](s)])$
+    2. 完全正确性质：若程序必然终止且具有某个部分正确性质，则称该程序具有完全正确性质
+2. 部分正确性质的公理语义系统
+    1. $[\text{ass}_{\text{p}}]: \ \{\ P[x \to \mathcal A[\![a]\!]] \ \} \ x := a \ \{\ P \ \}$
+    2. $[\text{skip}_{\text{p}}]: \ \{\ P \ \} \ \mathrm{skip} \ \{\ P \ \}$
+    3. $[\text{comp}_{\text{p}}]: \ \begin{prooftree} \AxiomC{\(\{\ P \ \} \ S_1 \ \{\ Q \ \}\)} \AxiomC{\(\{\ Q \ \} \ S_2 \ \{\ R \ \}\)} \BinaryInfC{\(\{\ P \ \} \ S_1; S_2 \ \{\ R \ \}\)} \end{prooftree}$
+    4. $[\text{if}_{\text{p}}]: \ \begin{prooftree} \AxiomC{\(\{\ \mathcal B[\![b]\!] \wedge P \ \} \ S_1 \ \{\ Q \ \}\)} \AxiomC{\(\{\ \neg \mathcal B[\![b]\!] \wedge P \ \} \ S_2 \ \{\ Q \ \}\)} \BinaryInfC{\(\{\ P \ \} \ \text{if } b \text{ then } S_1 \text{ else } S_2 \ \{\ Q \ \}\)} \end{prooftree}$
+    5. $[\text{while}_{\text{p}}]: \ \begin{prooftree} \AxiomC{\(\{\ \mathcal B[\![b]\!] \wedge P \ \} \ S \ \{\ P \ \}\)} \UnaryInfC{\(\{\ P \ \} \ \text{while } b \text{ do } S \ \{\ \neg \mathcal B[\![b]\!] \wedge P \ \}\)} \end{prooftree}$
+    6. $[\text{cons}_{\text{p}}]: \ \begin{prooftree} \AxiomC{\(\{\ P' \ \} \ S \ \{\ Q' \ \}\)} \UnaryInfC{\(\{\ P \ \} \ S \ \{\ Q \ \}\)} \end{prooftree}$，若 $P \to P'$ 且 $Q' \to Q$
+
+    若断言 $\{\ P \ \} \ S \ \{\ Q \ \}$ 可被推出，则记作 $\vdash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \}$
+
+    1. 用上述规则生成部分正确性质可得到推理树
+        1. 派生树的根节点是部分正确断言，叶节点是上述公理的实例
+        2. 若推理树只有一个节点，且是公理的实例，则称该推理树是简单的，否则称其是复合的
+    2. 可靠性与完备性：设 $\{\ P \ \} \ S \ \{\ Q \ \}$ 是一个部分正确断言，若对于任意 $s$，若 $P(s) = \top$ 以及 $\left<S, s\right> \to s'$ 蕴含 $Q(s') = \top$，则称 $\{\ P \ \} \ S \ \{\ Q \ \}$ 是有效的，记作 $\vDash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \}$
+        1. 可靠性：$\vdash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \} \to \; \vDash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \}$，即若推理系统可以得出某个部分正确性质，则该性质也被操作语义或指称语义所拥有
+        2. 完备性：$\vDash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \} \to \; \vdash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \}$，即若操作语义或指称语义拥有某个部分正确性质，则该性质必然可以被推理系统推出
+
+3. 语义等价：对于语句 $S_1, S_2$ 以及任意 $\text{Boolean}$ 表达式 $P, Q$，若 $\vdash_{\text{P}} \{\ P \ \} \ S_1 \ \{\ Q \ \}$ 当且仅当 $\vdash_{\text{P}} \{\ P \ \} \ S_2 \ \{\ Q \ \}$，则称语句 $S_1, S_2$ 语义等价

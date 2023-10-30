@@ -444,8 +444,7 @@ const refList = [
         page: [1, 254],
         year: 2007,
         press: "Springer Science & Business Media",
-        locate: "London",
-        plot: 205
+        locate: "London"
     },
     {
         author: ["陈有祺"],
