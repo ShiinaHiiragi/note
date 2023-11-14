@@ -1,7 +1,83 @@
 # 2 依值类型论
 
-## 2.1 类型依赖类型
+## 2.1 依值函数类型
+### 2.1.1 二阶类型论
+1. $\lambda_2-$类型：设类型变元的无穷集为 $\mathrm V = \{\alpha, \beta, \gamma, \cdots\}$，定义所有二阶类型集合 $\mathrm T_2$ 如下
+    1. 类型变元：若 $\alpha \in \mathrm V$，则 $\alpha \in \mathrm T_2$
+    2. 箭头类型：若 $\sigma, \tau \in \mathrm T_2$，则 $(\sigma \to \tau) \in \mathrm T_2$
+    3. $\Pi-$类型：若 $\alpha \in \mathrm V, \sigma \in T_2$，则 $(\Pi \alpha. *: \sigma) \in \mathrm T_2$，也称作乘积类型，称 $\Pi$ 为 $\Pi-$绑定器或类型绑定器
+2. $\lambda_2-$项：定义变元的无穷集 $V = \left\{u, v, w, \cdots\right\}$，$\mathbf V$ 为类型变元的无穷集，$\mathrm T_2$ 为类型集合，则所有二阶预类型化 $\lambda-$项的集合 $\Lambda_{2}$ 定义如下
+    1. 基础：若 $u \in V$，则 $u \in \Lambda_{2}$
+    2. 应用：若 $M, N \in \Lambda_{2}$，则 $(MN) \in \Lambda_{2}$
+    3. 抽象：若 $u \in V, \sigma \in \mathrm T_2$ 且 $M \in \Lambda_{2}$，则 $(\lambda u: \sigma.M) \in \Lambda_{2}$
+    4. 二阶应用：若 $M \in \Lambda_{2}, \sigma \in \mathrm T_2$，则 $(M\sigma) \in \Lambda_{2}$
+    5. 二阶抽象：若 $\alpha \in \mathbf V$ 且 $M \in \Lambda_{2}$，则 $(\lambda \alpha: *.M) \in \Lambda_{2}$，此时称项 $\lambda \alpha: *.M$ 依赖于类型 $\alpha$
 
-## 2.2 项依赖类型
+    称形如 $\lambda \alpha: *.M$ 的 $\lambda$ 表达式为多态函数
 
-## 2.3 构造演算
+    1. 简写规则
+        1. 最外层括号可以被省略，应用是左结合的
+        2. 应用与 $\to$ 优先级高于抽象与二阶抽象
+        3. 同类型的连续抽象或二阶抽象可以以右结合的方式组合在一起
+        4. 箭头类型是右结合的
+
+        例如 $(\Pi \alpha: *. (\Pi \beta: *. (\alpha \to (\beta \to \alpha)))$ 可简写为 $\Pi \alpha, \beta: *. \alpha \to \beta \to \alpha$
+
+    2. 陈述与声明的扩充
+        1. 陈述是形如 $M: \sigma$ 或 $\sigma: *$ 的 $\lambda$ 表达式，其中 $M \in \Lambda_{2}, \sigma \in \mathrm T_2$
+        2. 声明是主体为项变元或类型变元的陈述
+
+3. $\lambda_2-$语境 $\Gamma$ 与其域 $\operatorname{dom}(\Gamma)$ 递归定义如下：
+    1. $\varnothing$ 是一个 $\lambda_2-$语境，且 $\operatorname{dom}(\varnothing) = \left<\right>$，即空序列
+    2. 若 $\Gamma$ 是一个 $\lambda_2-$语境且 $\alpha \in \mathrm{V}, \alpha \notin \operatorname{dom} (\Gamma)$，则 $\Gamma, \alpha: *$ 是一个 $\lambda_2-$语境且 $\operatorname{dom}(\Gamma, \alpha: *) = \operatorname{dom}(\Gamma) \cup \left<\alpha\right>$
+    3. 若 $\Gamma$ 是一个 $\lambda_2-$语境．若 $\rho \in \mathrm T_2$ 使得对于所有 $\rho$ 中自由出现的类型变元 $\alpha$，都有 $\alpha \in \operatorname{dom}(\Gamma)$ 成立，且 $x \notin \operatorname{dom}(\Gamma)$，则 $\Gamma, x: \rho$ 是一个 $\lambda_2-$语境且 $\operatorname{dom}(\Gamma, x: \rho) = \operatorname{dom}(\Gamma) \cup \left<x\right>$
+
+4. $\lambda_2$ 系统的派生规则：
+    1. 变元：若 $\Gamma$ 是一个 $\lambda_2-$语境且 $x: \sigma \in \Gamma$，则 $\Gamma \vdash x: \sigma$
+    2. 应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: \sigma \to \tau\)} \AxiomC{\(\Gamma \to N: \sigma\)} \BinaryInfC{\(\Gamma \vdash MN: \tau\)} \end{prooftree}$
+    3. 抽象：$\begin{prooftree} \AxiomC{\(\Gamma, x: \sigma \vdash M: \tau\)} \UnaryInfC{\(\Gamma \vdash \lambda x:\sigma.M: \sigma \to \tau\)} \end{prooftree}$
+    4. 二阶应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: (\Pi: \alpha: *. A)\)} \AxiomC{\(\Gamma \vdash B: *\)} \BinaryInfC{\(\Gamma \vdash MB: A[\alpha := B]\)} \end{prooftree}$
+    5. 二阶抽象：$\begin{prooftree} \AxiomC{\(\Gamma, \alpha: * \vdash M: A\)} \UnaryInfC{\(\Gamma \vdash \lambda \alpha: *. M: \Pi \alpha:*. A\)} \end{prooftree}$
+    6. 形成规则：若 $\Gamma$ 是一个 $\lambda_2-$语境，$B \in \mathrm T_2$ 且 $B$ 中所有自由类型变量已在 $B$ 中声明，则 $\Gamma \vdash B: *$
+
+    若 $\lambda_{\mathrm T_2}$ 中的二阶预类型化项 $M$ 存在语境 $\Gamma$ 与类型 $\rho \in \mathrm T_2$ 使得 $\Gamma \vdash M: \rho$，则称 $M$ 是合法的
+
+5. $\alpha-$等价：定义 $\alpha-$转换或称 $\alpha-$等价性 $=_{\alpha}$ 如下
+    1. 重命名
+        1. 项变元的重命名：设 $M \in \lambda_{\mathrm T_2}$，若 $y \notin \mathrm{FV}(M)$ 且 $y$ 不在 $M$ 中绑定出现，则 $\lambda x: \sigma.M =_{\alpha} \lambda y: \sigma. M^{x \to y}$
+        2. 类型变元的重命名：设 $\beta$ 不在 $M$ 中出现，则
+
+            $$
+            \begin{aligned}
+            \lambda \alpha: *. M & =_{\alpha} \lambda \beta: *. M[\alpha := \beta] \\
+            \Pi \alpha: *. M & =_{\alpha} \Pi \beta: *. M[\alpha := \beta]
+            \end{aligned}
+            $$
+
+    2. 相容性：若 $M =_{\alpha} N$，则 $ML =_{\alpha} NL, LM =_{\alpha} LN$，且对于任意 $z \in V$ 有 $\lambda z.M =_{\alpha} \lambda z.N$
+    3. 等价性：$=_{\alpha}$ 具有自反性、对称性以及传递性
+
+6. $\beta-$归约：设 $P, Q \in \Lambda_{2}$，定义单步 $P \to_{\beta} Q$ 如下
+    1. 基础：$(\lambda x: \sigma.M) N \rightarrow_\beta M[x:=N]$
+    2. 二阶基础：$(\lambda \alpha: *. M)T \to _{\beta} M[\alpha := T]$
+    3. 相容性：若 $M \to_{\beta} N$，则 $ML \to_{\beta} NL, LM \to_{\beta} LN$ 且对于任意 $x: \sigma$ 或 $\alpha: *$ 有 $\lambda x: \sigma.M \to_{\beta} \lambda x: \sigma.N$ 以及 $\lambda \alpha: *.M \to_{\beta} \lambda \alpha: *.N$
+
+    多步 $P \twoheadrightarrow_{\beta} Q$ 与 $\beta-$等价性可仿照 $\lambda_{\to}$ 定义
+
+7. $\lambda_2$ 的性质：$\lambda_{\to}$ 的性质在 $\lambda_2$ 中均成立，除排列引理在 $\lambda_2$ 中不再成立
+
+### 2.1.2 类型依赖类型
+
+### 2.1.3 项依赖类型
+
+## 2.2 构造演算
+### 2.2.1 λ<sub>C</sub> 系统
+
+### 2.2.2 Curry-Howard 同构
+
+## 2.3 定义与证明
+### 2.3.1 定义
+
+### 2.3.2 λ<sub>D<sub>0</sub></sub> 系统
+
+### 2.3.3 λ<sub>D</sub> 系统
