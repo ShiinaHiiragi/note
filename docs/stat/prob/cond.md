@@ -25,7 +25,7 @@
         1. 线性回归：现实应用中，常用 $L(X) = aX+b$ 近似 $Y$, 使 $\mathrm{E}[Y-L(X)]^2$ 取最小值，称之为最佳线性预测
             - 易知 $L(X) = \mathrm{E}Y + r(X, Y) \dfrac{\mathrm{D}Y}{\mathrm{D}X}(X - \mathrm{E}X)$，称其为 $Y$ 的线性回归
             - 二阶矩理论：$\operatorname{Cov}(L(X), Y - L(X))=0$，说明残差 $Y - L(X)$ 中不再包含对预测 $Y$ 有用的信息
-        2. 条件方差：若 $\mathrm{E}[Y \mid X=a]=\mu(a)$，则定义其方差 $\mathrm{D}[Y \mid X=a]=\mathrm{E}[(Y - \mu(a))^2 \mid X=a]$
+        2. 条件方差：$\mathrm{D}[Y \mid X]=\mathrm{E}[(Y - \mathrm{E}[Y \mid X])^2 \mid X]$
 
 ### 4.1.2 现代定义
 1. 条件期望：设 $\mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，$X$ 为（准）可积随机变量，$Y$ 为满足下列条件的随机变量
