@@ -99,6 +99,40 @@
 
 ## 2.2 构造演算
 ### 2.2.1 λ<sub>C</sub> 系统
+1. 构造演算：$\lambda_{\mathrm C}$ 系统是在 $\lambda_{\to}$ 系统上增加 $\lambda_{2}, \lambda_{\underline{\omega}}, \lambda_{\mathrm P}$ 派生规则得到的系统，也称作 $\lambda-$立方或 $\text{Barendregt}$ 立方
+    1. $\text{sort}$：$\varnothing \vdash *: \square$
+    2. 变元：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: s\)} \UnaryInfC{\(\Gamma, x: A \vdash x: A\)} \end{prooftree}$（若 $x \notin \Gamma$）
+    3. 弱化：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: B\)} \AxiomC{\(\Gamma \vdash C: s\)} \BinaryInfC{\(\Gamma, x: C \vdash A: B\)} \end{prooftree}$（若 $x \notin \Gamma$）
+    4. 形成规则：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: s_1\)} \AxiomC{\(\Gamma, x: A \vdash B: s_2\)} \BinaryInfC{\(\Gamma \vdash \Pi x: A. B: s_2\)} \end{prooftree}$
+    5. 应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: \Pi x: A. B\)} \AxiomC{\(\Gamma \vdash N: A\)} \BinaryInfC{\(\Gamma \vdash MN: B[x := N]\)} \end{prooftree}$
+    6. 抽象：$\begin{prooftree} \AxiomC{\(\Gamma, x: A \vdash M: B\)} \AxiomC{\(\Gamma \vdash \Pi x: A. B: s\)} \BinaryInfC{\(\Gamma \vdash \lambda x: A. M: \Pi x: A. B\)} \end{prooftree}$
+    7. 转换：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: B\)} \AxiomC{\(\Gamma \vdash B': s\)} \BinaryInfC{\(\Gamma \vdash A: B'\)} \end{prooftree}$（其中 $B =_{\beta} B'$）
+2. 表达式：定义 $\lambda_{\mathrm C}$ 的表达式 $\mathrm E$ 如下
+    1. 若 $s \in \text{sort}$，则 $s \in \mathrm E$
+    2. 若 $u \in \mathrm V$，则 $u \in \mathrm E$
+    3. 若 $u \in \mathrm V, e_1, e_2 \in \mathrm E$，则 $(\lambda u: e_1.e_2), (\Pi u: e_1. e_2)$ 或 $(e_1 e_2) \in \mathrm E$
+
+    若表达式 $M$ 存在 $\Gamma$ 与 $N$ 使得 $\Gamma \vdash M: N$ 或 $\Gamma \vdash N: M$，则称 $M$ 是合法的
+
+3. $\lambda_{\mathrm C}$ 的引理
+    1. 自由变元引理：若 $\Gamma \vdash A: B$，则 $\mathrm{FV}(A), \mathrm{FV}(B) \subseteq \mathrm{dom}(\Gamma)$
+    2. 良形式性引理：若语境 $\Gamma$ 存在 $A, B$ 使得 $\Gamma \vdash A: B$，则称 $\Gamma$ 是良形式的
+    3. 稀疏化引理：设 $\Gamma'$ 与 $\Gamma''$ 是两个语境且 $\Gamma' \subseteq \Gamma''$，若 $\Gamma' \vdash A: B$ 且 $\Gamma''$ 是良形式的，则有 $\Gamma'' \vdash A: B$
+    4. 压缩引理：若 $\Gamma', x: A, \Gamma'' \vdash B: C$ 且 $x$ 不在 $\Gamma'', B$ 或 $C$ 中出现，则 $\Gamma, \Gamma'' \vdash B: C$
+    5. 排列引理：设 $\Gamma'$ 与 $\Gamma''$ 是两个语境且 $\Gamma''$ 是 $\Gamma'$ 的一个排列，若 $\Gamma' \vdash A: B$ 且 $\Gamma''$ 是良形式的的，则有 $\Gamma'' \vdash A: B$
+    6. 生成引理
+        1. 若 $\Gamma \vdash x: C$，则存在 $s \in \mathrm{sort}$ 与表达式 $B$ 使得 $B =_{\beta} C, \Gamma \vdash B: s$ 以及 $x: B \in \Gamma$
+        2. 若 $\Gamma \vdash MN: C$，则 $M$ 有 $\Pi-$类型，即存在表达式 $A, B$ 使得 $\Gamma \vdash M: \Pi x: A.B$ 且 $\Gamma \vdash N: A, C =_{\beta} B[x := N]$
+        3. 若 $\Gamma \vdash \lambda x: A. b: C$，则存在 $s \in \mathrm{sort}$ 与表达式 $B$ 使得 $C =_{\beta} \Pi x: A. B$，其中 $\Gamma \vdash \Pi x: A. B: s$ 且 $\Gamma, x: A \vdash b: B$
+        4. 若 $\Gamma \vdash \Pi x: A. B: C$，则存在 $s_1, s_2 \in \mathrm{sort}$ 使得 $C \equiv s_2$ 且 $\Gamma \vdash A: s_1$ 且 $\Gamma, x: A \vdash B: s_2$
+    7. 子项引理：若 $M$ 是合法项，则 $M$ 的所有子项均合法
+    8. 类型唯一性：设 $\Gamma \vdash A: B_1$ 以及 $\Gamma \vdash A: B_2$，则 $B_1 =_{\beta} B_2$
+    9. 替换引理：设 $\Gamma', x: A, \Gamma''\vdash B: C$ 且 $\Gamma' \vdash D: A$，则 $\Gamma', \Gamma'' [x := D] \vdash B[x := D]: C[x := D]$
+4. $\text{Church}-\text{Rosser}$ 定理：对于给定的 $M \in \mathrm E$，若有 $M \twoheadrightarrow_{\beta} N_1, M \twoheadrightarrow_{\beta} N_2$，则存在 $N_3 \in \Lambda$ 使得 $N_1 \twoheadrightarrow_{\beta} N_3, N_2 \twoheadrightarrow_{\beta} N_3$
+    1. 设 $M =_{\beta} N$，则存在 $L$ 使得 $M \twoheadrightarrow_{\beta} L$ 以及 $N \twoheadrightarrow_{\beta} L$
+    2. 主体归约引理：若 $\Gamma \vdash A: B$，且若 $A \twoheadrightarrow_{\beta} A'$，则 $\Gamma \vdash A': B$
+5. 终止定理：任意合法项 $M$ 均是强可正规化的
+6. 可判定性：在 $\lambda_{\mathrm C}$ 及其子系统中，良类型性问题与类型检查问题是可判定的，而项查找问题是不可判定的
 
 ### 2.2.2 Curry-Howard 同构
 

@@ -28,6 +28,7 @@
 - convention：规约
 - convertible：可转换
 - convertion：转换
+- cube：立方
 - currying：$\text{Curry}$ 化
 
 ## D
@@ -41,6 +42,7 @@
 - equal：等价
 - equivalence：等价性
 - equivalent：等价
+- expresssion：表达式
 
 ## F
 - finding：查找
@@ -50,6 +52,9 @@
 
 ## G
 - generation：生成
+
+## I
+- inhabited：可居留
 
 ## J
 - judgement：推断
@@ -101,5 +106,5 @@
 
 ## W
 - weaken：弱化
-- well-formed：良形式的
+- well-formed：良形式性
 - well-typedness：良类型性

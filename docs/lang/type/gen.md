@@ -127,6 +127,7 @@
         1. 子语境：设 $\Gamma'$ 是一个语境，若所有 $\Gamma'$ 中的类型声明都在 $\Gamma$ 中出现，则称 $\Gamma'$ 是 $\Gamma$ 的子语境，记作 $\Gamma' \subseteq \Gamma$．特别地，若 $\Gamma' \subseteq \Gamma$ 且 $\Gamma \subseteq \Gamma'$，则称 $\Gamma'$ 是 $\Gamma$ 的一个排列 
         2. 域：语境 $\Gamma$ 中的主体变元序列 $\left<x_1, x_2, \cdots, x_n\right>$，记作 $\mathrm{dom}(\Gamma)$
         3. 投影：设 $\Phi$ 是变元集合，则语境 $\Gamma$ 在 $\Phi$ 上的投影 $\Gamma \upharpoonright \Phi$ 定义为子语境 $\Gamma'$，使得 $\mathrm{dom}(\Gamma') = \mathrm{dom}(\Gamma) \cap \Phi$
+        4. 良形式：若语境 $\Gamma$ 可以形成可派生推断，则称 $\Gamma$ 是良形式的
     2. 推断：在给定语境 $\Gamma$ 下推导出的类型陈述，记作 $\Gamma \vdash M: \sigma$
 
 3. 替换：设 $M \in \Lambda_{\mathrm T}$，定义替换 $M[x:=N]$ 如下
