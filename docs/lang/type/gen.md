@@ -144,7 +144,7 @@
 
     1. 良类型性：已知 $\lambda-$项 $M$，找到使 $M$ 合法的语境与类型，也称作可类型化性．特别地，若语境已经给定，则称为类型指派
     2. 类型检查：已知语境 $\Gamma$ 以及 $\lambda-$项类型陈述 $M: \sigma$，判定推导关系 $\Gamma \vdash M: \sigma$ 是否成立
-    3. 项查找：已知语境 $\Gamma$ 以及类型 $\sigma$，找到对应的 $\lambda-$项 $M$ 使得 $\Gamma \vdash M: \sigma$，也称作项构建
+    3. 项查找：已知语境 $\Gamma$ 以及类型 $\sigma$，找到对应的 $\lambda-$项 $M$ 使得 $\Gamma \vdash M: \sigma$，也称作项构造
 
     上述问题在 $\lambda_{\to}$ 中均可判定
 

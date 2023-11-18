@@ -16,11 +16,12 @@
 - bound：约束
 
 ## C
+- calculus：盐酸
 - checking：检查
 - close term：闭项
 - combinator：组合子
 - condensing：压缩
-- construction：构建
+- construction：构造
 - constructor：构造器
 - context：语境
 - contractum：收缩式
@@ -81,6 +82,7 @@
 - self-application：自应用
 - statement：陈述
 - subcontext：子语境
+- subject：主体
 - substitution：替换
 - subterm：子项
 
@@ -99,4 +101,5 @@
 
 ## W
 - weaken：弱化
+- well-formed：良形式的
 - well-typedness：良类型性

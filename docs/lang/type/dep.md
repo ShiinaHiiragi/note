@@ -75,16 +75,27 @@
         3. 推断链：设 $t \in \Lambda_{\mathrm T}, \sigma \in \mathrm{T}, \kappa \in \mathrm K$，则可用 $t: \sigma: \kappa: \square$ 表示类型层级，称其为推断链
 2. $\lambda_{\underline{\omega}}$ 系统的派生规则
     1. $\text{sort}$：$\varnothing \vdash *: \square$
-    2. 变元：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: s\)} \UnaryInfC{\(\Gamma, x: A \vdash x: A\)} \end{prooftree}$，其中 $x \notin \Gamma$
-    3. 弱化：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: B\)} \AxiomC{\(\Gamma \vdash C: s\)} \BinaryInfC{\(\Gamma, x: C \vdash A: B\)} \end{prooftree}$，其中 $x \notin \Gamma$
+    2. 变元：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: s\)} \UnaryInfC{\(\Gamma, x: A \vdash x: A\)} \end{prooftree}$（若 $x \notin \Gamma$）
+    3. 弱化：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: B\)} \AxiomC{\(\Gamma \vdash C: s\)} \BinaryInfC{\(\Gamma, x: C \vdash A: B\)} \end{prooftree}$（若 $x \notin \Gamma$）
     4. 形成规则：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: s\)} \AxiomC{\(\Gamma \vdash B: s\)} \BinaryInfC{\(\Gamma \vdash A \to B: s\)} \end{prooftree}$
     5. 应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: A \to B\)} \AxiomC{\(\Gamma \vdash N: A\)} \BinaryInfC{\(\Gamma \vdash MN: B\)} \end{prooftree}$
     6. 抽象：$\begin{prooftree} \AxiomC{\(\Gamma, x: A \vdash M: B\)} \AxiomC{\(\Gamma \vdash A \to B: s\)} \BinaryInfC{\(\Gamma \vdash \lambda x: A. M: A \to B\)} \end{prooftree}$
-    7. 转换：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: B\)} \AxiomC{\(\Gamma \vdash B': s\)} \BinaryInfC{\(\Gamma \vdash A: B'\)} \end{prooftree}$，其中 $B =_{\beta} B'$
-
-        !!! note "转换规则"
+    7. 转换：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: B\)} \AxiomC{\(\Gamma \vdash B': s\)} \BinaryInfC{\(\Gamma \vdash A: B'\)} \end{prooftree}$（其中 $B =_{\beta} B'$）
+3. $\lambda_{\underline{\omega}}$ 的性质：$\lambda_{\to}$ 的性质在 $\lambda_{\underline{\omega}}$ 中均成立，除类型唯一性在 $\lambda_{\underline{\omega}}$ 中不再成立（类型在归约意义下的唯一性成立：若 $\Gamma \vdash A: B_1$ 且 $\Gamma \vdash A: B_2$，则 $B_1 =_{\beta} B_2$）
 
 ### 2.1.3 项依赖类型
+1. $\lambda_{\mathrm P}$ 系统的派生规则
+    1. $\text{sort}$：$\varnothing \vdash *: \square$
+    2. 变元：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: s\)} \UnaryInfC{\(\Gamma, x: A \vdash x: A\)} \end{prooftree}$（若 $x \notin \Gamma$）
+    3. 弱化：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: B\)} \AxiomC{\(\Gamma \vdash C: s\)} \BinaryInfC{\(\Gamma, x: C \vdash A: B\)} \end{prooftree}$（若 $x \notin \Gamma$）
+    4. 形成规则：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: *\)} \AxiomC{\(\Gamma, x: A \vdash B: s\)} \BinaryInfC{\(\Gamma \vdash \Pi x: A. B: s\)} \end{prooftree}$
+    5. 应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: \Pi x: A. B\)} \AxiomC{\(\Gamma \vdash N: A\)} \BinaryInfC{\(\Gamma \vdash MN: B[x := N]\)} \end{prooftree}$
+    6. 抽象：$\begin{prooftree} \AxiomC{\(\Gamma, x: A \vdash M: B\)} \AxiomC{\(\Gamma \vdash \Pi x: A. B: s\)} \BinaryInfC{\(\Gamma \vdash \lambda x: A. M: \Pi x: A. B\)} \end{prooftree}$
+    7. 转换：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: B\)} \AxiomC{\(\Gamma \vdash B': s\)} \BinaryInfC{\(\Gamma \vdash A: B'\)} \end{prooftree}$（其中 $B =_{\beta} B'$）
+
+    若 $\Pi-$类型 $\Pi x: A. B$ 中 $x$ 不出现在 $B$ 中，则可将其简记作 $A \to B$
+
+2. $\lambda_{\mathrm P}$ 的性质：$\lambda_{\underline{\omega}}$ 的性质在 $\lambda_{\mathrm P}$ 中均成立
 
 ## 2.2 构造演算
 ### 2.2.1 λ<sub>C</sub> 系统
