@@ -21,6 +21,7 @@
 - combinator：组合子
 - condensing：压缩
 - construction：构建
+- constructor：构造器
 - context：语境
 - contractum：收缩式
 - convention：规约
@@ -51,6 +52,9 @@
 
 ## J
 - judgement：推断
+
+## K
+- kind：种类
 
 ## N
 - normal form：正规形式
@@ -94,4 +98,5 @@
 - variant：变式
 
 ## W
+- weaken：弱化
 - well-typedness：良类型性

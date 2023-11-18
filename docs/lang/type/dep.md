@@ -67,6 +67,22 @@
 7. $\lambda_2$ 的性质：$\lambda_{\to}$ 的性质在 $\lambda_2$ 中均成立，除排列引理在 $\lambda_2$ 中不再成立
 
 ### 2.1.2 类型依赖类型
+1. 种类：定义所有超类集合 $\mathrm K$ 为 ① $* \in \mathrm K$；② 若 $\kappa, \mu \in \mathrm K$，则 $(\kappa \to \mu) \in \mathrm K$
+    1. 种类的括号省略规则与类型一致
+    2. 定义所有种类的类型为 $\square$
+        1. 定义集合 $\mathrm{sort} = \{*, \square\}$，并常用 $s$ 表示 $\mathrm{sort}$ 中的某个元素
+        2. 类型构造器：若 $\kappa: \square$ 及 $M: \kappa$，则称 $M$ 是一个（类型）构造器．若 $\kappa \neq *$，则称 $M$ 为真构造器
+        3. 推断链：设 $t \in \Lambda_{\mathrm T}, \sigma \in \mathrm{T}, \kappa \in \mathrm K$，则可用 $t: \sigma: \kappa: \square$ 表示类型层级，称其为推断链
+2. $\lambda_{\underline{\omega}}$ 系统的派生规则
+    1. $\text{sort}$：$\varnothing \vdash *: \square$
+    2. 变元：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: s\)} \UnaryInfC{\(\Gamma, x: A \vdash x: A\)} \end{prooftree}$，其中 $x \notin \Gamma$
+    3. 弱化：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: B\)} \AxiomC{\(\Gamma \vdash C: s\)} \BinaryInfC{\(\Gamma, x: C \vdash A: B\)} \end{prooftree}$，其中 $x \notin \Gamma$
+    4. 形成规则：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: s\)} \AxiomC{\(\Gamma \vdash B: s\)} \BinaryInfC{\(\Gamma \vdash A \to B: s\)} \end{prooftree}$
+    5. 应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: A \to B\)} \AxiomC{\(\Gamma \vdash N: A\)} \BinaryInfC{\(\Gamma \vdash MN: B\)} \end{prooftree}$
+    6. 抽象：$\begin{prooftree} \AxiomC{\(\Gamma, x: A \vdash M: B\)} \AxiomC{\(\Gamma \vdash A \to B: s\)} \BinaryInfC{\(\Gamma \vdash \lambda x: A. M: A \to B\)} \end{prooftree}$
+    7. 转换：$\begin{prooftree} \AxiomC{\(\Gamma \vdash A: B\)} \AxiomC{\(\Gamma \vdash B': s\)} \BinaryInfC{\(\Gamma \vdash A: B'\)} \end{prooftree}$，其中 $B =_{\beta} B'$
+
+        !!! note "转换规则"
 
 ### 2.1.3 项依赖类型
 
