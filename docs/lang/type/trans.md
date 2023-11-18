@@ -54,7 +54,9 @@
 - generation：生成
 
 ## I
+- implication：蕴含
 - inhabited：可居留
+- interpretation：解释
 
 ## J
 - judgement：推断

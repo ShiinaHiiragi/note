@@ -135,6 +135,17 @@
 6. 可判定性：在 $\lambda_{\mathrm C}$ 及其子系统中，良类型性问题与类型检查问题是可判定的，而项查找问题是不可判定的
 
 ### 2.2.2 Curry-Howard 同构
+1. $\text{PAT}-$解释：将集合论编码到类型论
+    1. 将集合 $S$ 解释为类型 $S: *$，集合的元素即为项
+    2. 将命题 $A$ 解释为类型 $A: *$，命题 $A$ 的证明 $p$ 解释为类型为 $A$ 的项 $p: A$，因此 $A$ 为真命题当且仅当 $A$ 可居留
+    3. 将谓词 $P$ 解释为函数 $P: S \to *$，其中 $S: *$ 为集合．对于任意 $a: S$，$Pa: *$ 是一个命题
+2. 逻辑联结词与量词
+    1. 蕴含：设 $A, B$ 为命题，则命题 $A$ 蕴含 $B$ 解释为 $A \to B$（即 $\Pi x: A. B$，但其中的 $x$ 不可能在 $B$ 中自由出现）
+        1. 应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: A \to B\)} \AxiomC{\(\Gamma \vdash N: A\)} \BinaryInfC{\(\Gamma \vdash MN: B\)} \end{prooftree}$
+        2. 抽象：$\begin{prooftree} \AxiomC{\(\Gamma, x: A \vdash M: B\)} \AxiomC{\(\Gamma \vdash A \to B: s\)} \BinaryInfC{\(\Gamma \vdash \lambda x: A. M: A \to B\)} \end{prooftree}$
+    2. 全称量化：设 $S: *$ 为集合，$P: S \to *$ 为谓词，则命题 $\forall x \in S \ (P(x))$ 解释为 $\Pi x: S. Px$
+        1. 应用：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: \Pi x: A. B\)} \AxiomC{\(\Gamma \vdash N: A\)} \BinaryInfC{\(\Gamma \vdash MN: B[x := N]\)} \end{prooftree}$
+        2. 抽象：$\begin{prooftree} \AxiomC{\(\Gamma, x: A \vdash M: B\)} \AxiomC{\(\Gamma \vdash \Pi x: A. B: s\)} \BinaryInfC{\(\Gamma \vdash \lambda x: A. M: \Pi x: A. B\)} \end{prooftree}$
 
 ## 2.3 定义与证明
 ### 2.3.1 定义

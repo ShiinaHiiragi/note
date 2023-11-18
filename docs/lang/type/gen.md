@@ -114,6 +114,7 @@
         1. 类型声明：当主体 $M$ 为单变元 $x$ 时，称 $x: \sigma$ 为类型声明
         2. 唯一性：若变元 $x$ 有 $x: \sigma$ 且 $x: \tau$，则 $\sigma \equiv \tau$
         3. 可类型化：若项 $M$ 存在类型 $\sigma$ 使得 $M: \sigma$，则称 $M$ 是可类型化的
+        4. 可居留：若类型 $\sigma$ 存在项 $M$ 使得 $M: \sigma$，则称 $M$ 是可居留的
     3. 类型分配：在变元陈述时规定类型被称为显式类型分配，也称作 $\text{Church}$ 类型分配；反之不规定变元类型的称为隐式类型分配，也称作 $\text{Curry}$ 类型分配
 
 2. $\lambda_{\to}-$项 $\Lambda_{\mathrm T}$：定义变元的无穷集 $V = \left\{u, v, w, \cdots\right\}$，$\mathrm T$ 为类型集合，则所有预类型化 $\lambda-$项的集合 $\Lambda_{\mathrm T}$ 定义如下
