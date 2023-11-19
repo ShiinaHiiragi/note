@@ -38,6 +38,8 @@
 - domain：域
 
 ## E
+- elimination：消去
+- encode：编码
 - equality：等价性
 - equal：等价
 - equivalence：等价性
@@ -57,6 +59,7 @@
 - implication：蕴含
 - inhabited：可居留
 - interpretation：解释
+- introduction：引入
 
 ## J
 - judgement：推断

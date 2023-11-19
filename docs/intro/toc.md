@@ -124,7 +124,7 @@
 ### 四、范畴论
 
 !!! note "参考文献"
-    『Basic Category Theory』（Tom Leinster）
+    『Category Theory in Context』（Emily Riehl）
 
 #### 1 范畴
 

@@ -120,7 +120,7 @@
             - 链的长度定义为 $|c|=k$，单个节点链的长度为 $0$．从而有穷树结构 $(X, S)$ 的高度定义为 $\max\{\left|c\right|: c$ 是 $(X, R)$ 的极大链$\}$
     3. 在 $\mathbf{HK}$ 中，从公式集 $\Gamma$ 到公式 $\alpha$ 的一个推导是由公式组成的以 $\alpha$ 为根节点的有穷树结构 $\mathcal D$，其中每个节点满足三个条件之一：① $\gamma$ 是公理或 $\gamma \in \Gamma$；② $\gamma$ 是从子节点 $\beta$ 和 $\beta \to \gamma$ 运用规则 $\text{mp}$ 得到的；③ $\gamma$ 是从子节点 $\beta$ 利用规则 $\text{sub}$ 得到的，其中 $\beta$ 是公理
         1. 用 $\mathcal {D, E}$ 等表示推导，用 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\alpha\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\alpha$ 为根节点的推导
-        2. 在 $\mathbf{HK}$ 中，若存在公式集 $\Gamma$ 到公式 $\alpha$ 的推导，则称 $\alpha$ 是 $\Gamma$ 的句法后承，记作 $\Gamma \vdash_\mathbf{HK} \alpha$，不引起歧义时，下标 $\mathbf{HK}$ 可删除
+        2. 在 $\mathbf{HK}$ 中，若存在公式集 $\Gamma$ 到公式 $\alpha$ 的推导，则称 $\alpha$ 是 $\Gamma$ 的句法后承，记作 $\Gamma \vdash_\mathbf{HK} \alpha$，无歧义时下标 $\mathbf{HK}$ 可删除
         3. 若存在从 $\Gamma$ 到 $\alpha$ 的推导，则称公式 $\alpha$ 在 $\mathbf{HK}$ 中可证；若 $\varnothing \vdash_\mathbf{HK} \alpha$，称公式在 $\mathbf{HK}$ 中可证，或称 $\alpha$ 是 $\mathbf{HK}$ 的定理，记作 $\vdash_\mathbf{HK} \alpha$．用 $\mathrm{Thm}(\mathbf{HK})$ 表示 $\mathbf{HK}$ 中所有定理的集合
     4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统元定理
         1. $\alpha, \Gamma \vdash_\mathbf{HK} \alpha$，$\bot, \Gamma \vdash_\mathbf{HK} \alpha$
