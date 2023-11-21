@@ -154,7 +154,7 @@
         2. 右引入：$\begin{prooftree} \AxiomC{\(\Gamma \vdash x: B\)} \UnaryInfC{\(\Gamma \vdash \lambda C: *. \lambda y: A \to C. \lambda z: B \to C. zx: \Pi C: *. (A \to C) \to (B \to C) \to C\)} \end{prooftree}$
         3. 消去：$\begin{prooftree} \AxiomC{\(\Gamma \vdash x: \Pi D: *. (A \to D) \to (B \to D) \to D\)} \AxiomC{\(\Gamma \vdash y: A \to C\)} \AxiomC{\(\Gamma \vdash z: B \to C\)} \TrinaryInfC{\(\Gamma \vdash xCyz: C\)} \end{prooftree}$
     6. 等价：设 $A, B$ 为命题，则命题 $A \leftrightarrow B$ 定义为 $(A \to B) \wedge (B \to A)$
-3. 命题逻辑：在直觉主义逻辑的基础上增加排中律 $A \vee \neg A$ 或与其等价的双重否定律 $\neg \neg A \to A$，可得到经典命题逻辑系统
+3. 命题逻辑：在直觉主义逻辑的基础上增加排中律 $A \vee \neg A$ 或双重否定律 $\neg \neg A \to A$，可得到经典命题逻辑系统
 4. 一阶逻辑：在命题逻辑的基础上增加量词
     1. 全称量化：设 $S: *$ 为集合，$P: S \to *$ 为谓词，则命题 $\forall x \in S \ (P(x))$ 解释为 $\Pi x: S. Px$
         1. 消去：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: \Pi x: A. B\)} \AxiomC{\(\Gamma \vdash N: A\)} \BinaryInfC{\(\Gamma \vdash MN: B[x := N]\)} \end{prooftree}$
