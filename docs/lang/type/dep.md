@@ -139,13 +139,29 @@
     1. 将集合 $S$ 解释为类型 $S: *$，集合的元素即为项
     2. 将命题 $A$ 解释为类型 $A: *$，命题 $A$ 的证明 $p$ 解释为类型为 $A$ 的项 $p: A$，因此 $A$ 为真命题当且仅当 $A$ 可居留
     3. 将谓词 $P$ 解释为函数 $P: S \to *$，其中 $S: *$ 为集合．对于任意 $a: S$，$Pa: *$ 是一个命题
-2. 逻辑联结词与量词的编码与派生规则
+2. 直觉主义逻辑的编码与派生规则
     1. 蕴含：设 $A, B$ 为命题，则命题 $A$ 蕴含 $B$ 解释为 $A \to B$（即 $\Pi x: A. B$，但其中的 $x$ 不可能在 $B$ 中自由出现）
         1. 消去：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: A \to B\)} \AxiomC{\(\Gamma \vdash N: A\)} \BinaryInfC{\(\Gamma \vdash MN: B\)} \end{prooftree}$
         2. 引入：$\begin{prooftree} \AxiomC{\(\Gamma, x: A \vdash M: B\)} \AxiomC{\(\Gamma \vdash A \to B: s\)} \BinaryInfC{\(\Gamma \vdash \lambda x: A. M: A \to B\)} \end{prooftree}$
-    2. 全称量化：设 $S: *$ 为集合，$P: S \to *$ 为谓词，则命题 $\forall x \in S \ (P(x))$ 解释为 $\Pi x: S. Px$
+    2. 恒假：定义 $\bot$ 为 $\Pi \alpha: *. \alpha$，则有消去规则 $\begin{prooftree} \AxiomC{\(\Gamma \vdash f: \Pi \alpha: *. \alpha\)} \UnaryInfC{\(\Gamma \vdash fA: A\)} \end{prooftree}$ 成立
+    3. 否定：定义 $\neg A$ 为 $A \to \bot$，则有消去规则 $\begin{prooftree} \AxiomC{\(\Gamma \vdash M: \neg A\)} \AxiomC{\(\Gamma \vdash N: A\)} \BinaryInfC{\(\Gamma \vdash MN: \bot\)} \end{prooftree}$ 成立
+    4. 合取：设 $A, B$ 为命题，则命题 $A \wedge B$ 定义为 $\Pi C: *. (A \to B \to C) \to C$
+        1. 引入：$\begin{prooftree} \AxiomC{\(\Gamma \vdash x: A\)} \AxiomC{\(\Gamma \vdash y  : B\)} \BinaryInfC{\(\Gamma \vdash \lambda C: *.\lambda z: A \to B \to C. zxy: \Pi C: *. (A \to B \to C) \to C\)} \end{prooftree}$
+        2. 左消去：$\begin{prooftree} \AxiomC{\(\Gamma \vdash z: \Pi C: *. (A \to B \to C) \to C\)} \UnaryInfC{\(\Gamma \vdash zA (\lambda x: A. \lambda y: B. x): A\)} \end{prooftree}$
+        3. 右消去：$\begin{prooftree} \AxiomC{\(\Gamma \vdash z: \Pi C: *. (A \to B \to C) \to C\)} \UnaryInfC{\(\Gamma \vdash zB (\lambda x: A. \lambda y: B. y): B\)} \end{prooftree}$
+    5. 析取：设 $A, B$ 为命题，则命题 $A \vee B$ 定义为 $\Pi C: *. (A \to C) \to (B \to C) \to C$
+        1. 左引入：$\begin{prooftree} \AxiomC{\(\Gamma \vdash x: A\)} \UnaryInfC{\(\Gamma \vdash \lambda C: *. \lambda y: A \to C. \lambda z: B \to C. yx: \Pi C: *. (A \to C) \to (B \to C) \to C\)} \end{prooftree}$
+        2. 右引入：$\begin{prooftree} \AxiomC{\(\Gamma \vdash x: B\)} \UnaryInfC{\(\Gamma \vdash \lambda C: *. \lambda y: A \to C. \lambda z: B \to C. zx: \Pi C: *. (A \to C) \to (B \to C) \to C\)} \end{prooftree}$
+        3. 消去：$\begin{prooftree} \AxiomC{\(\Gamma \vdash x: \Pi D: *. (A \to D) \to (B \to D) \to D\)} \AxiomC{\(\Gamma \vdash y: A \to C\)} \AxiomC{\(\Gamma \vdash z: B \to C\)} \TrinaryInfC{\(\Gamma \vdash xCyz: C\)} \end{prooftree}$
+    6. 等价：设 $A, B$ 为命题，则命题 $A \leftrightarrow B$ 定义为 $(A \to B) \wedge (B \to A)$
+3. 命题逻辑：在直觉主义逻辑的基础上增加排中律 $A \vee \neg A$ 或与其等价的双重否定律 $\neg \neg A \to A$，可得到经典命题逻辑系统
+4. 一阶逻辑：在命题逻辑的基础上增加量词
+    1. 全称量化：设 $S: *$ 为集合，$P: S \to *$ 为谓词，则命题 $\forall x \in S \ (P(x))$ 解释为 $\Pi x: S. Px$
         1. 消去：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: \Pi x: A. B\)} \AxiomC{\(\Gamma \vdash N: A\)} \BinaryInfC{\(\Gamma \vdash MN: B[x := N]\)} \end{prooftree}$
         2. 引入：$\begin{prooftree} \AxiomC{\(\Gamma, x: A \vdash M: B\)} \AxiomC{\(\Gamma \vdash \Pi x: A. B: s\)} \BinaryInfC{\(\Gamma \vdash \lambda x: A. M: \Pi x: A. B\)} \end{prooftree}$
+    2. 存在量化：设 $S: *$ 为集合，$P: S \to *$ 为谓词，则命题 $\exists x \in S \ (P(x))$ 解释为 $\Pi \alpha: *. \Pi x: S. (Px \to \alpha) \to \alpha$
+        1. 消去：$\begin{prooftree} \AxiomC{\(\Gamma \vdash x: \Pi \alpha: *. \Pi x: S. (Px \to \alpha) \to \alpha\)} \AxiomC{\(\Gamma \vdash y: \Pi x: S. Px \to A\)} \BinaryInfC{\(\Gamma \vdash xAy: A\)} \end{prooftree}$
+        2. 引入：$\begin{prooftree} \AxiomC{\(\Gamma \vdash a: S\)} \AxiomC{\(\Gamma \vdash u: Pa\)} \BinaryInfC{\(\Gamma \to \lambda \alpha: *. \lambda v: (\Pi x: S. (Px \to \alpha)). vau: \Pi \alpha: *. \Pi x: S. (Px \to \alpha) \to \alpha\)} \end{prooftree}$
 
 ## 2.3 定义与证明
 ### 2.3.1 定义
