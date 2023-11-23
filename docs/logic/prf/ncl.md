@@ -1,7 +1,7 @@
-# 3 非经典逻辑
+# 4 非经典逻辑
 
-## 3.1 二阶逻辑
-### 3.1.1 二阶语言与标准语义
+## 4.1 二阶逻辑
+### 4.1.1 二阶语言与标准语义
 1. 二阶语言 $\mathscr L_2(S)$ 即二阶逻辑的形式语言，由逻辑符号和非逻辑符号组成
     1. 逻辑符号
         1. 变元集 $\mathbf{Var} = \mathbf V_r \cup \mathbf V_f \cup \mathbf V_l$
@@ -122,7 +122,7 @@
         1. 在 $\mathbf H_2$ 中可靠性定理对二阶语言标准语义成立，但完全性、紧致性与 $\text{L}\ddot{\mathrm o}\text{wenheim} - \text{Skolem}$ 定理均对其不成立
         2. 标准语义的不完全性定理：令 $\mathbf H$ 是 $\mathscr L_2(S)$ 的任一能行可靠的演绎系统，则存在重言式不是 $\mathbf H$ 中的定理
 
-### 3.1.2 非标准语义
+### 4.1.2 非标准语义
 1. $\text{Henkin}$ 语义
     1. 结构：一个 $\text{Henkin}$ 结构是 $\mathfrak A^{\mathrm H} = (A, R, F, I)$
         1. $A$ 是个体域
@@ -175,6 +175,6 @@
         2. 对 $\mathscr L_2(S)$ 的任意公式 $\alpha$ 或公式集 $\Gamma$，$\alpha$ 或 $\Gamma$ 是 $\text{Henkin}$ 可满足的当且仅当 $\alpha$ 或 $\Gamma$ 是一阶可满足的
     3. 若 $\text{Henkin}$ 结构（或一阶结构）满足选择公理与概括公理模式，则称其为忠实于 $\mathbf H_2$ 的，此时 $\text{Henkin}$ 结构（或一阶结构）具有可靠性、完全性、紧致性并满足 $\text{L}\ddot{\mathrm o}\text{wenheim} - \text{Skolem}$ 定理
 
-## 3.2 模态命题逻辑
+## 4.2 模态命题逻辑
 
-## 3.3 代数逻辑
+## 4.3 代数逻辑

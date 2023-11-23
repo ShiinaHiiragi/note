@@ -1,7 +1,7 @@
-# 4 序数分析
+# 5 序数分析
 
-## 4.1 序数记号
-### 4.1.1 序数函数
+## 5.1 序数记号
+### 5.1.1 序数函数
 1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
     1. $\varphi_0(\beta) = \omega^{\beta}$
     2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\xi \mapsto \varphi_{\alpha}(\xi)$ 的第 $\beta$ 个不动点
@@ -9,11 +9,11 @@
 
     所有 $\text{Veblen}$ 函数的不动点均从 $0$ 开始计数
 
-    4. 扩展 $\text{Veblen}$ 函数：将 $\varphi_{\alpha}(\gamma)$ 视作二元函数 $\varphi(\alpha, \gamma)$，令 $z$ 为多于或等于 $0$ 个 $0$ 的简记，$s$ 为多于或等于 $0$ 个序数变量 $\alpha_1, \alpha_2, \cdots, \alpha_n \ (\alpha_1 > 0)$ 的简记，则定义
+    1. 扩展 $\text{Veblen}$ 函数：将 $\varphi_{\alpha}(\gamma)$ 视作二元函数 $\varphi(\alpha, \gamma)$，令 $z$ 为多于或等于 $0$ 个 $0$ 的简记，$s$ 为多于或等于 $0$ 个序数变量 $\alpha_1, \alpha_2, \cdots, \alpha_n \ (\alpha_1 > 0)$ 的简记，则定义
         1. $\varphi(\gamma)=\omega^\gamma$
         2. $\varphi(z,s,\gamma)=\varphi(s,\gamma)$
         3. 若 $\alpha_{n+1} > 0$，则 $\varphi(s, \alpha_{n+1}, z, \gamma)$ 表示「对所有序数 $\beta < \alpha_{n+1}$ 对应的函数 $\xi \mapsto \varphi(s, \beta, \xi, z)$」的第 $\gamma$ 个公共不动点
-    5. 超限 $\text{Veblen}$ 函数：利用数阵 $\varphi \begin{pmatrix} \alpha_1 & \alpha_2 & \cdots & \alpha_n \\ \beta_1 & \beta_2 & \cdots & \beta_n \\ \end{pmatrix}$ 表示 $\text{Veblen}$ 函数，其中 $\beta_i$ 表示 $\alpha_i$ 在扩展 $\text{Veblen}$ 函数的位置
+    2. 超限 $\text{Veblen}$ 函数：利用数阵 $\varphi \begin{pmatrix} \alpha_1 & \alpha_2 & \cdots & \alpha_n \\ \beta_1 & \beta_2 & \cdots & \beta_n \\ \end{pmatrix}$ 表示 $\text{Veblen}$ 函数，其中 $\beta_i$ 表示 $\alpha_i$ 在扩展 $\text{Veblen}$ 函数的位置
 
 2. 序数塌缩函数 $\text{OCF}$：设 $\Omega_{\alpha} = \aleph_{\alpha}, \Omega = \aleph_1$
     1. $\text{Feferman } \theta-$函数
@@ -55,7 +55,7 @@
     3. 若对任何自然数 $n$ 都有 $f_i(n) \in K$ 且 $f_i(n) <_{\mathcal O} f_i(n + 1)$，则 $3 \cdot 5^i \in K, {\displaystyle \mathcal{O}(3 \cdot 5^i) = \sup_{k \in \omega} \mathcal{O}(f_i(k))}$，且对于所有 $k$ 都有 $f_i(k) <_\mathcal{O} 3 \cdot 5^i$
     4. $a <_\mathcal{O} b$ 与 $b <_\mathcal{O} c$ 蕴含 $a <_\mathcal{O} c$
 
-### 4.1.2 可数序数
+### 5.1.2 可数序数
 1. 递归序数
     1. 定义 $\varphi_{1}(\gamma) = \varepsilon_{\gamma}$，即满足 $\omega^\xi = \xi$ 的解
 
@@ -98,4 +98,4 @@
         1. 递归序数：若序数 $\alpha$ 存在某个自然数集上的递归关系 $R$ 使得 $R$ 为与 $\alpha$ 同构的良序，则称 $\alpha$ 为递归序数或可计算序数．递归序数即所有 $\text{Kleene } \mathcal{O}-$记号可表示的序数
         2. $\omega_1^{\mathrm{CK}}$ 无法用 $\text{OCF}$ 等序数记号表示
 
-## 4.2 序数分析
+## 5.2 序数分析

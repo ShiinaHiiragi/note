@@ -133,12 +133,13 @@ nav:
       - 1 基本问题与历史观点: meta/math/cep.md
       - 2 三大主义: meta/math/doctr.md
       - 3 当代观点: meta/math/cont.md
-  - 数理逻辑:
+  - 逻辑学:
     - 一、证明论:
-      - 1 命题逻辑: logic/prf/prop.md
-      - 2 一阶逻辑: logic/prf/pred.md
-      - 3 非经典逻辑: logic/prf/ncl.md
-      - 4 序数分析: logic/prf/ord.md
+      - 1 Hilbert 系统: logic/prf/axiom.md
+      # - 2 自然演绎: logic/prf/nat.md
+      # - 3 相继式演算: logic/prf/seq.md
+      - 4 非经典逻辑: logic/prf/ncl.md
+      - 5 序数分析: logic/prf/ord.md
     - 二、模型论:
       - 1 结构与模型: logic/mdl/mdl.md
     - 三、递归论:
