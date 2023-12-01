@@ -1,6 +1,8 @@
 # 1 工具与指令
 
 ## 1.1 LEAN
+1. LEAN 是一种函数式编程语言，可将其作为交互式定理证明器
+2. LEAN 项目由 $\text{Leonardo de Moura}$ 于 $\text{2013}$ 年在 $\text{Microsoft}$ 研究院发起，目前最新版本是 LEAN 4
 
 ## 1.2 工具
 1. `elan`：管理 LEAN 编译器工具链
