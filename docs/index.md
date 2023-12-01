@@ -47,7 +47,7 @@
     <div class="sub-entry">
         <div class="caption">本项目已开源</div>
         <div class="value">
-            所有源文件在 <a href="https://github.com/ShiinaHiiragi/note/" target="_blank"> GitHub </a> 可见，采用 GPL-3.0 协议方式开源
+            所有源文件在 <a href="https://github.com/ShiinaHiiragi/note/" target="_blank"> GitHub </a> 可见，采用 GPL-3.0 协议开源
         </div>
     </div>
 </div>
@@ -96,9 +96,27 @@ const refList = [
     {
         author: ["Robin Turner", "Nick Nicholas"],
         title: "Lojban For Beginners",
-        type: "EB/OL",
+        type: "DB/OL",
         page: [1, 185]
     },
+    // {
+    //     author: ["David Thrane Christiansen"],
+    //     title: "Functional Programming in Lean",
+    //     type: "DB/OL",
+    //     page: [1, 437]
+    // },
+    // {
+    //     author: ["Jeremy Avigad", "Leonardo de Moura", "Soonho Kong", "Sebastian Ullrich"],
+    //     title: "Theorem Proving in Lean 4",
+    //     type: "DB/OL",
+    //     page: [1, 194]
+    // },
+    // {
+    //     author: ["Microsoft Corporation"],
+    //     title: "Lean Manual",
+    //     type: "DB/OL",
+    //     page: [1, 154]
+    // },
     {
         author: ["蔡曙山"],
         title: "认知科学导论",
@@ -509,17 +527,17 @@ refList
                 case "M":
                     return result +
                         (trans ? `${trans.join(",")},译. ` : ``) +
-                        `${press}:${locate}, ${year}: ${page[0]}-${[page[1]]}.`
+                        `${press}:${locate}, ${year}.`
                     break;
                 case "J":
                     return result + (
                         arXiv === undefined
-                        ? `${journal}, ${year}, ${section}: ${page[0]}-${[page[1]]}.`
+                        ? `${journal}, ${year}, ${section}.`
                         : `arXiv:${arXiv}, ${year}.`
                     )
                     break;
                 default:
-                    // [EB/OL]
+                    // [DB/OL]
                     return result;
                     break;
             }
