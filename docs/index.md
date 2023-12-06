@@ -99,7 +99,6 @@ const refList = [
         type: "DB/OL",
         page: [1, 185]
     },
-    // https://lean-lang.org/functional_programming_in_lean/getting-to-know/types.html
     // {
     //     author: ["David Thrane Christiansen"],
     //     title: "Functional Programming in Lean",
