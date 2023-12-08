@@ -118,7 +118,7 @@ nav:
       - 1 体系与指令: cogn/lean/cmd.md
       - 2 控制结构: cogn/lean/ctrl.md
       - 3 类型系统: cogn/lean/type.md
-      - 4 扩展与标准库: cogn/lean/lib.md
+      - 4 扩展与库: cogn/lean/lib.md
   - 形而上学:
     - 一、认知科学:
       - 1 神经认知: meta/cogn/nerve.md
