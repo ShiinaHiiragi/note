@@ -37,6 +37,14 @@
     def mult (n m: Nat) := n * m
     ```
 
+3. 缩写：用 `abbrev` 代替 `def` 可创建简单的符号表示，而不会为该表达式计算与创建新对象
+
+    ```haskell
+    abbrev two := 1 + 1
+    abbrev N: Type := Nat
+    def one: N := 1
+    ```
+
 ### 2.2.3 定理
 
 ### 2.2.4 单子
