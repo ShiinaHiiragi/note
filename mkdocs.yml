@@ -30,6 +30,7 @@ theme:
   icon:
     logo: material/cube-outline
   features:
+    - content.code.copy
     - navigation.tracking
     - navigation.tabs
     - navigation.expand
