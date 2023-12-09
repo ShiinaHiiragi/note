@@ -163,9 +163,7 @@
         1. 消去：$\begin{prooftree} \AxiomC{\(\Gamma \vdash x: \Pi \alpha: *. \Pi x: S. (Px \to \alpha) \to \alpha\)} \AxiomC{\(\Gamma \vdash y: \Pi x: S. Px \to A\)} \BinaryInfC{\(\Gamma \vdash xAy: A\)} \end{prooftree}$
         2. 引入：$\begin{prooftree} \AxiomC{\(\Gamma \vdash a: S\)} \AxiomC{\(\Gamma \vdash u: Pa\)} \BinaryInfC{\(\Gamma \to \lambda \alpha: *. \lambda v: (\Pi x: S. (Px \to \alpha)). vau: \Pi \alpha: *. \Pi x: S. (Px \to \alpha) \to \alpha\)} \end{prooftree}$
 
-## 2.3 定义与证明
-### 2.3.1 定义
+## 2.3 定义与形式证明
+### 2.3.1 λ<sub>D<sub>0</sub></sub> 系统
 
-### 2.3.2 λ<sub>D<sub>0</sub></sub> 系统
-
-### 2.3.3 λ<sub>D</sub> 系统
+### 2.3.2 λ<sub>D</sub> 系统
