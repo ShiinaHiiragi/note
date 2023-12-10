@@ -347,7 +347,7 @@
         3. $t(R) = {\displaystyle \bigcup_{n \in \mathbf Z_+} R^n}$，进一步当 $|X| = n \in \mathbf Z_+$ 时，则 $t(R) = {\displaystyle \bigcup_{i=1}^n R^i}$
 
 ### 1.2.2 映射
-1. 二元关系 $f$ 若有 $(x, y) \in f \wedge (x, z) \in f \to y = x$，则称 $f$ 是映射，其中 $y$ 称作 $f$ 在 $x$ 处的值，记作 $f(x) = y$ 或 $f: x \mapsto y$．若 $\mathrm{dom}(f) = X, \mathrm{ran}(f) \subseteq Y$，则称 $f$ 是 $X$ 到 $Y$ 的映射或算子，记作 $f: X \to Y$ 或 $x \mapsto f(x)$
+1. 二元关系 $f$ 若有 $(x, y) \in f \wedge (x, z) \in f \to y = x$，则称 $f$ 是映射，其中 $y$ 称作 $f$ 在 $x$ 处的值，记作 $f(x) = y$ 或 $f: x \mapsto y$．若 $\mathrm{dom}(f) = X, \mathrm{ran}(f) \subseteq Y$，则称 $f$ 是 $X$ 到 $Y$ 的映射或算子，称 $Y$ 为 $f$ 的陪域或上域，记作 $f: X \to Y$ 或 $x \mapsto f(x)$
     1. 映射的等同：令 $f, g$ 为映射，$f = g$ 当且仅当 $\mathrm{dom}(f) = \mathrm{dom}(g)$ 且对于所有 $x \in \mathrm{dom}(f)$ 都有 $f(x) = g(x)$
     2. 特殊映射：设 $f: X \to Y$ 是一个映射
         1. 函数：当 $X, Y$ 均为数集时，称 $f$ 为函数
