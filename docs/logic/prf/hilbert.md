@@ -1,6 +1,7 @@
 # 1 Hilbert 系统
 
-## 1.1 经典命题逻辑
+## 1.1 命题逻辑
+### 1.1.1 经典命题逻辑
 1. 经典命题逻辑形式语言的初始符号
     1. 可数命题变元集：$\mathbf{Prop} = \{p_i\mid i<\omega\}$，用 $p, q, r$ 等表示 $\mathbf{Prop}$ 中的任意命题变元
     2. 联结词：零元联结词 $\bot$（恒假）；二元联结词 $\wedge$（合取）、$\vee$（析取）与 $\to$（蕴含）
@@ -242,6 +243,8 @@
 
         !!! note "证明插值性质的引理"
             若 $\mathrm{var}(\alpha) \cap \mathrm{var}(\beta) = \varnothing$，那么 $\vDash \alpha \to \beta$ 当且仅当 $\vDash \neg \alpha$ 或 $\vDash \beta$
+
+### 1.1.2 直觉主义逻辑
 
 ## 1.2 一阶逻辑
 1. 一阶语言 $\mathscr L(S)$ 即一阶逻辑的形式语言，由逻辑符号和非逻辑符号组成

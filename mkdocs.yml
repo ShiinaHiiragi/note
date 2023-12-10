@@ -141,7 +141,7 @@ nav:
       - 3 当代观点: meta/math/cont.md
   - 逻辑学:
     - 一、证明论:
-      - 1 Hilbert 系统: logic/prf/axiom.md
+      - 1 Hilbert 系统: logic/prf/hilbert.md
       # - 2 自然演绎: logic/prf/nat.md
       # - 3 相继式演算: logic/prf/seq.md
       - 4 非经典逻辑: logic/prf/ncl.md
