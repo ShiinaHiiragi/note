@@ -65,7 +65,7 @@
 
     设 $x \not\equiv y$ 且 $x \notin \mathrm{FV}(L)$，则 $M[x:=N][y:=L] \equiv M[y:=L][x:=N[y:=L]]$
 
-### 1.1.2 归约
+### 1.1.2 β-归约
 1. $\beta-$归约与 $\beta-$等价性
     1. 单步 $\beta-$归约：设 $P, Q \in \Lambda$，定义单步 $P \to_{\beta} Q$ 如下
         1. 基础：$(\lambda x.M) N \rightarrow_\beta M[x:=N]$
