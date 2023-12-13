@@ -21,6 +21,7 @@
 - close term：闭项
 - combinator：组合子
 - condensing：压缩
+- constant：常元
 - construction：构造
 - constructor：构造器
 - context：语境
@@ -33,8 +34,12 @@
 
 ## D
 - declaration：声明
+- definien：定义项
+- definiendum：被定义项
+- definition：定义
 - depends on：依赖于
 - derivation：派生
+- descriptive：描述
 - domain：域
 
 ## E
@@ -58,6 +63,7 @@
 ## I
 - implication：蕴含
 - inhabited：可居留
+- instantiation：实例化
 - interpretation：解释
 - introduction：引入
 
@@ -79,9 +85,10 @@
 - permutation：排列
 - polymorphic：多态
 - pre-typed：预类型化
+- primitive：原语
 - product：乘积
 - projection：投影
-- proper subterm：真子项
+- proper：真~
 
 ## R
 - redex (reduciable expression)：可归约式
@@ -104,6 +111,9 @@
 - typable：可类型化
 - type：类型
 - typing：类型分配
+
+## U
+- unfoldable：可展的
 
 ## V
 - variable：变元

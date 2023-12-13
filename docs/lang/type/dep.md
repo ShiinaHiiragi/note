@@ -164,9 +164,60 @@
         2. 引入：$\begin{prooftree} \AxiomC{\(\Gamma \vdash a: S\)} \AxiomC{\(\Gamma \vdash u: Pa\)} \BinaryInfC{\(\Gamma \to \lambda \alpha: *. \lambda v: (\Pi x: S. (Px \to \alpha)). vau: \Pi \alpha: *. \Pi x: S. (Px \to \alpha) \to \alpha\)} \end{prooftree}$
 
 ## 2.3 定义与形式证明
-### 2.3.1 λD 系统
+### 2.3.1 定义
+1. 表达式：给定常元的无限集 $C = \{a, b, c, \cdots\}$ 且有 $\mathrm V \cap C = \varnothing$．定义 $\lambda_{\mathrm D}$ 的表达式 $\mathrm E_{\mathrm D}$ 如下
+    1. 若 $s \in \text{sort}$，则 $s \in \mathrm E_{\mathrm D}$
+    2. 若 $u \in \mathrm V$，则 $u \in \mathrm E_{\mathrm D}$
+    3. 若 $u \in \mathrm V, e_1, e_2 \in \mathrm E_{\mathrm D}, \overline e \in \overline{\mathrm E_{\mathrm D}}, c \in C$，则 $(\lambda u: e_1.e_2), (\Pi u: e_1. e_2), (e_1 e_2)$ 或 $c(\overline e) \in \mathrm E_{\mathrm D}$，其中 $\overline{\mathrm E_{\mathrm D}}$ 表示 $\lambda_{\mathrm D}$ 表达式列表
+2. 定义：令 $\mathcal D \equiv \Gamma \rhd a(\overline x) := M: N$，其中 $\Gamma =\overline x: \overline A, M = K / \bot \!\!\! \bot$ 且 $\overline x \in \overline{\mathrm V}, a \in C, A_i, K, N \in \mathrm E_{\mathrm D}$．当 $M = K$ 时，称 $\mathcal D$ 为 $\lambda_{\mathrm D}$ 的描述定义或真定义，当 $M = \bot \!\!\! \bot$ 时，称 $\mathcal D$ 为 $\lambda_{\mathrm D}$ 的原语定义
+    1. 定义的组成
+        1. $\Gamma$：$\mathcal D$ 的语境
+        2. $a(\overline{x})$：$\mathcal D$ 的被定义项，并称 $a$ 为被定义常元，$\overline{x}$ 为其参数列表．当 $\mathcal D$ 为描述定义时，称 $a$ 为真常元；当 $\mathcal D$ 为原语定义时，称 $a$ 为原语常元
+        3. $M: N$：$\mathcal D$ 的陈述，并称 $M = K / \bot \!\!\! \bot$ 为定义项或正体，$N$ 为类型
+    2. 环境：定义的有限列表，通常记作 $\Delta \equiv \mathcal D_1, \mathcal D_2, \cdots, \mathcal D_k$
+        1. 扩展推断：称形如 $\Delta; \Gamma \vdash M: N$ 的表达式为扩展推断或带定义的推断，其中 $\Delta$ 为环境，$\Gamma$ 为语境且 $M, N \in \mathrm E_{\mathrm D}$
+        2. 将增加了定义 $\mathcal D$ 的环境 $\Delta$ 简写作 $\Delta, \mathcal D$
 
-### 2.3.2 逻辑系统
+### 2.3.2 δ-归约
+1. $\delta-$归约与 $\delta-$等价性
+    1. 单步 $\delta-$归约：设 $\Gamma \rhd a(\overline x) := M: N \in \Delta$，定义单步定义展开 $\overset{\Delta}{\to}_{\delta}$ 如下
+        1. 基础：$a(\overline U) \overset{\Delta}{\to} M[\overline x := \overline U]$
+        2. 相容性：若 $M \overset{\Delta}{\to} N$，则 $ML \overset{\Delta}{\to} NL, LM \overset{\Delta}{\to} LN$ 且对于任意 $x: L$ 有 $\lambda x: L.M \overset{\Delta}{\to} \lambda x: L.N$ 以及对任意 $b \in C$ 有 $b(\cdots, M, \cdots) \overset{\Delta}{\to} b(\cdots, M', \cdots)$
+
+        通常将 $\overset{\Delta}{\to}_{\delta}$ 简记为 $\overset{\Delta}{\to}$，表示在环境 $\Delta$ 下的 $\delta-$归约
+
+    2. 多步 $\delta-$归约：设 $M, N \in \mathrm E_{\mathrm D}$，定义多步 $M \overset{\Delta}{\twoheadrightarrow} N$ 为存在 $n \geqslant 0$ 与 $M_0, M_1, \cdots, M_n$ 使得 $M \equiv M_0, M_n \equiv N$ 且对于任意 $0 \leqslant i < n$ 有 $M_i \overset{\Delta}{\to} M_{i+1}$
+    3. $\delta-$等价性：设 $M, N \in \mathrm E_{\mathrm D}$，定义 $M \overset{\Delta}{=} N$ 为存在 $n \geqslant 0$ 与 $M_0, M_1, \cdots, M_n$ 使得 $M \equiv M_0, M_n \equiv N$ 且对于任意 $0 \leqslant i < n$ 有 $M_i \overset{\Delta}{\to} M_{i+1}$ 或 $M_{i+1} \overset{\Delta}{\to} M_i$，称 $M$ 与 $N$ 为 $\delta-$可转换的
+
+2. $\delta-$正规形式：设 $\Delta$ 是一个环境，$K \in \mathrm E_{\mathrm D}$
+    1. 若常元 $a \in C$ 被 $\Delta$ 中的描述定义约束，则称 $a$ 是可展的
+    2. 若 $K$ 中不存在与 $\Delta$ 相关的可展常元，则称 $K$ 是与 $\Delta$ 相关的 $\delta-$正规形式
+    3. 若存在与 $\Delta$ 相关的 $\delta-$正规形式 $L$ 使得 $K \overset{\Delta}{=} L$，则称 $K$ 有与 $\Delta$ 相关的 $\delta-$正规形式 $L$，并称 $K$ 是 $\delta-$可正规化的
+3. $\beta \delta-$等价性：设 $M, N \in \mathrm E_{\mathrm D}$，定义 $M \overset{\Delta}{=}_{\beta} N$ 为存在 $n \geqslant 0$ 与 $M_0, M_1, \cdots, M_n$ 使得 $M \equiv M_0, M_n \equiv N$ 且对于任意 $0 \leqslant i < n$，有以下四种情形成立
+    1. $M_i \to_{\beta} M_{i+1}$
+    2. $M_i \overset{\Delta}{\to} M_{i+1}$
+    3. $M_{i+1} \to_{\beta} M_i$
+    4. $M_{i+1} \overset{\Delta}{\to} M_i$
+
+    称 $M$ 与 $N$ 为 $\beta \delta-$可转换的
+
+### 2.3.3 λ<sub>D</sub> 系统
+1. $\lambda_{\mathrm D}$ 是 $\lambda_{\mathrm C}$ 的扩展，其派生规则如下
+    1. $\text{sort}$：$\varnothing; \varnothing \vdash *: \square$
+    2. 变元：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash A: s\)} \UnaryInfC{\(\Delta; \Gamma, x: A \vdash x: A\)} \end{prooftree}$（若 $x \notin \Gamma$）
+    3. 弱化：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash A: B\)} \AxiomC{\(\Delta; \Gamma \vdash C: s\)} \BinaryInfC{\(\Delta; \Gamma, x: C \vdash A: B\)} \end{prooftree}$（若 $x \notin \Gamma$）
+    4. 形成规则：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash A: s_1\)} \AxiomC{\(\Delta; \Gamma, x: A \vdash B: s_2\)} \BinaryInfC{\(\Delta; \Gamma \vdash \Pi x: A. B: s_2\)} \end{prooftree}$
+    5. 应用：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash M: \Pi x: A. B\)} \AxiomC{\(\Delta; \Gamma \vdash N: A\)} \BinaryInfC{\(\Delta; \Gamma \vdash MN: B[x := N]\)} \end{prooftree}$
+    6. 抽象：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma, x: A \vdash M: B\)} \AxiomC{\(\Delta; \Gamma \vdash \Pi x: A. B: s\)} \BinaryInfC{\(\Delta; \Gamma \vdash \lambda x: A. M: \Pi x: A. B\)} \end{prooftree}$
+    7. 转换：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash A: B\)} \AxiomC{\(\Delta; \Gamma \vdash B': s\)} \BinaryInfC{\(\Delta; \Gamma \vdash A: B'\)} \end{prooftree}$（其中 $B \overset{\Delta}{=}_{\beta} B'$）
+    8. 定义：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash K: L\)} \AxiomC{\(\Delta; \overline x: \overline A \vdash M: N\)} \BinaryInfC{\(\Delta, \overline x: \overline A \rhd a(\overline x) := M: N; \Gamma \vdash K: L\)} \end{prooftree}$（若 $a \notin \Delta$）
+    9. 原语定义：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash K: L\)} \AxiomC{\(\Delta; \overline x: \overline A \vdash N: S\)} \BinaryInfC{\(\Delta, \overline x: \overline A \rhd a(\overline x) := \bot \!\!\! \bot: N; \Gamma \vdash K: L\)} \end{prooftree}$（若 $a \notin \Delta$）
+    10. 实例化：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash *: \square\)} \AxiomC{\(\Delta; \Gamma \vdash \overline U: \overline{A[\overline x := \overline U]}\)} \BinaryInfC{\(\Delta; \Gamma \vdash a(\overline U): N[\overline x := \overline U]\)} \end{prooftree}$（若 $\overline x: \overline A \rhd a(\overline x) := M: N \in \Delta$）
+    11. 原语实例化：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash *: \square\)} \AxiomC{\(\Delta; \Gamma \vdash \overline U: \overline{A[\overline x := \overline U]}\)} \BinaryInfC{\(\Delta; \Gamma \vdash a(\overline U): N[\overline x := \overline U]\)} \end{prooftree}$（若 $\overline x: \overline A \rhd a(\overline x) := \bot \!\!\! \bot: N \in \Delta$）
+2. 导出规则：$\begin{prooftree} \AxiomC{\(\Delta; \overline x: \overline A \vdash M: N\)} \UnaryInfC{\(\Delta, \overline x: \overline A \rhd a(\overline x) := M: N; \overline x: \overline A \vdash a(\overline x): N\)} \end{prooftree}$（其中 $a \notin \Delta$）
+3. $\lambda_{\mathrm D}$ 的引理
+
+### 2.3.4 逻辑系统
 
 $$
 \newcommand{\fitch}[1]{\begin{array}{rlr}#1\end{array}}
