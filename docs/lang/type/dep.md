@@ -1,5 +1,17 @@
 # 2 依值类型论
 
+$$
+\newcommand{\fitch}[1]{\begin{array}{rlr}#1\end{array}}
+\newcommand{\fcol}[1]{\begin{array}{r}#1\end{array}}
+\newcommand{\scol}[1]{\begin{array}{l}#1\end{array}}
+\newcommand{\tcol}[1]{\begin{array}{l}#1\end{array}}
+\newcommand{\rootcol}[1]{\, \, \begin{array}{l}#1\end{array}}
+\newcommand{\subcol}[1]{\, \, \begin{array}{|l}#1\end{array}}
+\newcommand{\startsub}{\\[-0.29em]}
+\newcommand{\endsub}{\startsub}
+\newcommand{\fendl}{\\[0.044em]}
+$$
+
 ## 2.1 依值函数类型
 ### 2.1.1 二阶类型论
 1. $\lambda_2-$类型：设类型变元的无穷集为 $\mathrm V = \{\alpha, \beta, \gamma, \cdots\}$，定义所有二阶类型集合 $\mathrm T_2$ 如下
@@ -139,6 +151,9 @@
     1. 将集合 $S$ 解释为类型 $S: *$，集合的元素即为项
     2. 将命题 $A$ 解释为类型 $A: *$，命题 $A$ 的证明 $p$ 解释为类型为 $A$ 的项 $p: A$，因此 $A$ 为真命题当且仅当 $A$ 可居留
     3. 将谓词 $P$ 解释为函数 $P: S \to *$，其中 $S: *$ 为集合．对于任意 $a: S$，$Pa: *$ 是一个命题
+
+    可将集合 $S$ 的类型记为 $*_{s}$，命题 $A$ 的类型记为 $*_{p}$，但两者实质上都是 $*$
+
 2. 直觉主义逻辑的编码与派生规则
     1. 蕴含：设 $A, B$ 为命题，则命题 $A$ 蕴含 $B$ 解释为 $A \to B$（即 $\Pi x: A. B$，但其中的 $x$ 不可能在 $B$ 中自由出现）
         1. 消去：$\begin{prooftree} \AxiomC{\(\Gamma \vdash M: A \to B\)} \AxiomC{\(\Gamma \vdash N: A\)} \BinaryInfC{\(\Gamma \vdash MN: B\)} \end{prooftree}$
@@ -219,44 +234,197 @@
 
 ### 2.3.4 逻辑系统
 
-$$
-\newcommand{\fitch}[1]{\begin{array}{rlr}#1\end{array}}
-\newcommand{\fcol}[1]{\begin{array}{r}#1\end{array}}
-\newcommand{\scol}[1]{\begin{array}{l}#1\end{array}}
-\newcommand{\tcol}[1]{\begin{array}{l}#1\end{array}}
-\newcommand{\subcol}[1]{\, \, \begin{array}{|l}#1\end{array}}
-\newcommand{\startsub}{\\[-0.29em]}
-\newcommand{\endsub}{\startsub}
-\newcommand{\fendl}{\\[0.044em]}
-$$
+1. 直觉主义命题逻辑
+    1. 蕴含：将 $\to(A, B)$ 简记为 $A \to B$
 
-$$
-\fitch{
-    \subcol{
-        \forall y \lnot P(y)
-        \startsub\hline\subcol{
-            \exists P(x)
-            \startsub\hline\subcol{
-                P(u) \\
+        $$
+        \fitch{
+            \subcol{
+                A, B: *_{p} \\
                 \hline
-                \forall y \lnot P(y) \\
-                \lnot P(u) \\
-                \perp
-            } \endsub
-            \perp
-        }\endsub
-        \lnot \exists x P(x)
-    }
-    \tcol{
-        P \fendl
-        P \fendl
-        P \fendl
-        R,1 \fendl
-        \forall E,4 \fendl
-        \lnot E,4,5 \fendl
-        \exists E, 2 ,3-6 \fendl
-        \lnot I,2-7 \fendl
-    }
-}
-\quad \text{(Fitch Style Proof Example)}
-$$
+                \to(A, B) := A \to B: *_{p}
+                \startsub \subcol{
+                    u: A \to B \\
+                    \hline
+                    \to_{\text{in}}(A, B, u) := u: A \to B
+                }
+                \startsub \subcol{
+                    u: A \to B \mid v: A \\
+                    \hline
+                    \to_{\text{el}}(A, B, u, v) := uv: B
+                }
+            }
+        }
+        $$
+
+    2. 恒假
+
+        $$
+        \fitch{
+            \rootcol{
+                \bot := \Pi A: *_{p}.A: *
+                \startsub \subcol{
+                    A: *_{p}
+                    \startsub \hline \subcol{
+                        u: A \mid v: A \to \bot \\
+                        \hline
+                        \bot_{\text{in}}(A, u, v) := vu: \bot
+                    }
+                    \startsub \subcol{
+                        u: \bot \\
+                        \hline
+                        \bot_{\text{el}}(A, u) := uA: A
+                    }
+                }
+            }
+        }
+        $$
+
+    3. 否定：将 $\neg(A)$ 简记为 $\neg A$
+
+        $$
+        \fitch{
+            \subcol{
+                A: *_{p} \\
+                \hline
+                \neg (A) := A \to \bot: *_{p}
+                \startsub \subcol{
+                    u: A \to \bot \\
+                    \hline
+                    \neg_{\text{in}}(A, u) := u: \neg A
+                }
+                \startsub \subcol{
+                    u: \neg A \mid v: A \\
+                    \hline
+                    \neg_{\text{el}}(A, u, v) := uv: \bot
+                }
+            }
+        }
+        $$
+
+    4. 合取：将 $\wedge(A, B)$ 简记为 $A \wedge B$
+
+        $$
+        \fitch{
+            \subcol{
+                A, B: *_{p} \\
+                \hline
+                \wedge(A, B) := \Pi C: *_{p}.(A \to B \to C) \to C: *_{p}
+                \startsub \subcol{
+                    u: A \mid v: B \\
+                    \hline
+                    \wedge_{\text{in}}(A, B, u, v) := \lambda C: *_{p}. \lambda w: A \to B \to C. wuv: A \wedge B
+                }
+                \startsub \subcol{
+                    u: A \wedge B \\
+                    \hline
+                    \wedge_{\text{el}_1}(A, B, u) := u A(\lambda v: A.\lambda w: B.v): A \\
+                    \wedge_{\text{el}_2}(A, B, u) := u B(\lambda v: A.\lambda w: B.w): B
+                }
+            }
+        }
+        $$
+
+    5. 析取：将 $\vee(A, B)$ 简记为 $A \vee B$
+
+        $$
+        \fitch{
+            \subcol{
+                A, B: *_{p} \\
+                \hline
+                \vee(A, B) := \Pi C: *.(A \to C) \to (B \to C) \to C: *_{p}
+                \startsub \subcol{
+                    u: A \\
+                    \hline
+                    \vee_{\text{in}_1}(A, B, u) := \lambda C: *_{p}. \lambda v: A \to C. \lambda w: B \to C. vu: A \vee B
+                }
+                \startsub \subcol{
+                    u: B \\
+                    \hline
+                    \vee_{\text{in}_2}(A, B, u) := \lambda C: *_{p}. \lambda v: A \to C. \lambda w: B \to C. wu: A \vee B
+                }
+                \startsub \subcol{
+                    C: *_{p}
+                    \startsub \hline \subcol{
+                        u: A \vee B \mid v: A \to C \mid w: B \to C \\
+                        \hline
+                        \vee_{\text{el}}(A, B, C, u, v, w) := uCvw: C
+                    }
+                }
+            }
+        }
+        $$
+
+    6. 等价：将 $\leftrightarrow(A, B)$ 简记为 $A \leftrightarrow B$
+
+        $$
+        \fitch{
+            \subcol{
+                A, B: *_{p} \\
+                \hline
+                \leftrightarrow(A, B) := (A \to B) \wedge (B \to A): *_{p}
+                \startsub \subcol{
+                    u: A \to B \mid v: B \to A \\
+                    \hline
+                    \leftrightarrow_{\text{in}}(A, B, u, v) := \wedge_{\text{in}}(A \to B, B \to A, u, v): A \leftrightarrow B
+                }
+                \startsub \subcol{
+                    u: A \leftrightarrow B \\
+                    \hline
+                    \leftrightarrow_{\text{el}_1}(A, B, u) := \wedge_{\text{el}_1}(A \to B, B \to A, u): A \to B \\
+                    \leftrightarrow_{\text{el}_2}(A, B, u) := \wedge_{\text{el}_2}(A \to B, B \to A, u): B \to A
+                }
+            }
+        }
+        $$
+
+2. 经典命题逻辑
+    1. 排中律
+
+        $$
+        \fitch{
+            \subcol{
+                A: *_{p} \\
+                \hline
+                \operatorname{ET}(A) := \bot \!\!\! \bot: A \vee \neg A
+            }
+        }
+        $$
+
+    2. 双重否定律：可从排中律推出
+
+        $$
+        \fitch{
+            \subcol{
+                A: *_{p}
+                \startsub \hline \subcol{
+                    u: A \\
+                    \hline
+                    \neg \neg_{\text{in}}(A, u) := \lambda v: \neg A.vu : \neg \neg A
+                }
+                \endsub
+                a_1(A) := \lambda v: A. v: A \to A
+                \startsub \subcol{
+                    u: \neg \neg A
+                    \startsub \hline \subcol{
+                        v: \neg A \\
+                        \hline
+                        a_2(A, u, v) := uv: \bot \\
+                        a_3(A, u, v) := a_2(A, u, v) A: A
+                    }
+                    \endsub
+                    a_4(A, u) := \lambda v: \neg A. a_3(A, u, v): \neg A \to A \\
+                    a_5(A, u) := \operatorname{ET}(A) \  A \ a_1(A) \ a_4(A, u): A
+                }
+                \endsub
+                \operatorname{DN}(A) := \lambda u: \neg \neg A. a_5(A, u): \neg \neg A \to A
+                \startsub \subcol{
+                    u: \neg \neg A \\
+                    \hline
+                    \neg \neg_{\text{el}}(A, u) := \operatorname{DN}(A) u: A
+                }
+            }
+        }
+        $$
+
+3. 直觉主义一阶逻辑

@@ -83,6 +83,11 @@ div.arithmatex {
   overflow: inherit !important;
 }
 
+/* New command must be placed after h1 */
+h1+div.arithmatex {
+  display: none;
+}
+
 mjx-utext[variant="sans-serif"] {
   font-family: var(--md-text-font) !important;
   font-weight: var(--normal-font-weight) !important;
