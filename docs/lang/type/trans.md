@@ -22,6 +22,8 @@
 - combination：组合
 - combinator：组合子
 - condensing：压缩
+- confluence：合流
+- confluent：可合流
 - constant：常元
 - construction：构造
 - constructor：构造器

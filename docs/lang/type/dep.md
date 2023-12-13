@@ -211,7 +211,12 @@ $$
     1. 若常元 $a \in C$ 被 $\Delta$ 中的描述定义约束，则称 $a$ 是可展的
     2. 若 $K$ 中不存在与 $\Delta$ 相关的可展常元，则称 $K$ 是与 $\Delta$ 相关的 $\delta-$正规形式
     3. 若存在与 $\Delta$ 相关的 $\delta-$正规形式 $L$ 使得 $K \overset{\Delta}{=} L$，则称 $K$ 有与 $\Delta$ 相关的 $\delta-$正规形式 $L$，并称 $K$ 是 $\delta-$可正规化的
-3. $\beta \delta-$等价性：设 $M, N \in \mathrm E_{\mathrm D}$，定义 $M \overset{\Delta}{=}_{\beta} N$ 为存在 $n \geqslant 0$ 与 $M_0, M_1, \cdots, M_n$ 使得 $M \equiv M_0, M_n \equiv N$ 且对于任意 $0 \leqslant i < n$，有以下四种情形成立
+        1. 对任何合法环境 $\Delta$，关系 $\overset{\Delta}{\to}$ 是弱可正规化的
+        2. 对任何合法环境 $\Delta$，关系 $\overset{\Delta}{\to}$ 是强可正规化的
+        3. 对任何合法环境 $\Delta$，关系 $\overset{\Delta}{\twoheadrightarrow}$ 是可合流的
+
+### 2.3.3 λ<sub>D</sub> 系统
+1. $\beta \delta-$等价性：设 $M, N \in \mathrm E_{\mathrm D}$，定义 $M \overset{\Delta}{=}_{\beta} N$ 为存在 $n \geqslant 0$ 与 $M_0, M_1, \cdots, M_n$ 使得 $M \equiv M_0, M_n \equiv N$ 且对于任意 $0 \leqslant i < n$，有以下四种情形成立
     1. $M_i \to_{\beta} M_{i+1}$
     2. $M_i \overset{\Delta}{\to} M_{i+1}$
     3. $M_{i+1} \to_{\beta} M_i$
@@ -219,8 +224,7 @@ $$
 
     称 $M$ 与 $N$ 为 $\beta \delta-$可转换的
 
-### 2.3.3 λ<sub>D</sub> 系统
-1. $\lambda_{\mathrm D}$ 是 $\lambda_{\mathrm C}$ 的扩展，其派生规则如下
+2. $\lambda_{\mathrm D}$ 是 $\lambda_{\mathrm C}$ 的扩展，其派生规则如下
     1. $\text{sort}$：$\varnothing; \varnothing \vdash *: \square$
     2. 变元：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash A: s\)} \UnaryInfC{\(\Delta; \Gamma, x: A \vdash x: A\)} \end{prooftree}$（若 $x \notin \Gamma$）
     3. 弱化：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash A: B\)} \AxiomC{\(\Delta; \Gamma \vdash C: s\)} \BinaryInfC{\(\Delta; \Gamma, x: C \vdash A: B\)} \end{prooftree}$（若 $x \notin \Gamma$）
@@ -232,7 +236,9 @@ $$
     9. 原语定义：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash K: L\)} \AxiomC{\(\Delta; \overline x: \overline A \vdash N: S\)} \BinaryInfC{\(\Delta, \overline x: \overline A \rhd a(\overline x) := \bot \!\!\! \bot: N; \Gamma \vdash K: L\)} \end{prooftree}$（若 $a \notin \Delta$）
     10. 实例化：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash *: \square\)} \AxiomC{\(\Delta; \Gamma \vdash \overline U: \overline{A[\overline x := \overline U]}\)} \BinaryInfC{\(\Delta; \Gamma \vdash a(\overline U): N[\overline x := \overline U]\)} \end{prooftree}$（若 $\overline x: \overline A \rhd a(\overline x) := M: N \in \Delta$）
     11. 原语实例化：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash *: \square\)} \AxiomC{\(\Delta; \Gamma \vdash \overline U: \overline{A[\overline x := \overline U]}\)} \BinaryInfC{\(\Delta; \Gamma \vdash a(\overline U): N[\overline x := \overline U]\)} \end{prooftree}$（若 $\overline x: \overline A \rhd a(\overline x) := \bot \!\!\! \bot: N \in \Delta$）
-2. 导出规则：$\begin{prooftree} \AxiomC{\(\Delta; \overline x: \overline A \vdash M: N\)} \UnaryInfC{\(\Delta, \overline x: \overline A \rhd a(\overline x) := M: N; \overline x: \overline A \vdash a(\overline x): N\)} \end{prooftree}$（其中 $a \notin \Delta$）
+
+    由以上派生规则可得到如下导出规则：$\begin{prooftree} \AxiomC{\(\Delta; \overline x: \overline A \vdash M: N\)} \UnaryInfC{\(\Delta, \overline x: \overline A \rhd a(\overline x) := M: N; \overline x: \overline A \vdash a(\overline x): N\)} \end{prooftree}$（其中 $a \notin \Delta$）
+
 3. $\lambda_{\mathrm D}$ 的引理
     1. 自由变元与常元引理：令 $\Delta; \Gamma \vdash M: N$，其中 $\Delta \equiv \Delta_1, \mathcal D, \Delta_2$ 且 $\mathcal D \equiv \overline x: \overline A \rhd a(\overline x) := K / \bot \!\!\! \bot: L, \Gamma \equiv \overline y: \overline B$
         1. 对于任意 $i$，都有 $\operatorname{FV} (A_i) \subset \{x_1, x_2, \cdots, x_{i-1}\}, \operatorname{FV} (K), \operatorname{FV} (L) \subset \{\overline x\}$
@@ -249,14 +255,27 @@ $$
             - $M, N$ 均关于 $\Delta_1$ 与 $\overline x: \overline A$ 合法
     3. 声明与定义的起始引理
         1. 语境：若 $\Delta; \Gamma$ 是合法组合且 $x: A \in \Gamma$，则 $\Delta; \Gamma \vdash x: A$
-        2. 环境：令 $\mathcal D \equiv \equiv \overline x: \overline A \rhd a(x) := M: N$，若 $\Delta$ 合法且 $\mathcal \in \Delta$，则 $\Delta; \overline x: \overline A \vdash M: N$ 且 $\Delta; \overline x: \overline A \vdash a(\overline x): N$
-    4. 稀疏化引理
+        2. 环境：令 $\mathcal D \equiv \overline x: \overline A \rhd a(x) := M: N$，若 $\Delta$ 合法且 $\mathcal \in \Delta$，则 $\Delta; \overline x: \overline A \vdash M: N$ 且 $\Delta; \overline x: \overline A \vdash a(\overline x): N$
+    4. 稀疏化引理：令 $\Delta_1 \subset \Delta_2, \Gamma_1 \subset \Gamma_2$，且令 $\Delta_2; \Gamma_2$ 为合法组合，则如果 $\Delta_1; \Gamma_1 \vdash M: N$，那么 $\Delta_2; \Gamma_2 \vdash M: N$
     5. 压缩引理
+        1. 环境：任意 $\Delta_1, \mathcal D, \Delta_2; \Gamma \vdash M: N$，其中定义 $\mathcal D \equiv \Gamma' \rhd a(\overline x) := K / \bot \!\!\! \bot: L$ 且不在 $\Delta_2, \Gamma, M$ 或 $N$ 的任何一个中出现，则 $\Delta_1, \Delta_2; \Gamma \vdash M: N$
+        2. 语境：若 $\Delta; \Gamma_1, x: A, \Gamma_2 \vdash M: N$ 且 $x$ 不在 $\Gamma_2, M$ 或 $N$ 的任何一个中出现，则 $\Delta; \Gamma_1, \Gamma_2 \vdash M: N$
     6. 生成引理
-    7. 子项引理
-    8. 类型唯一性
-    9. 替换引理
-    10. 主体归约引理
+        1. 若 $\Delta; \Gamma \vdash x: C$，则存在 $s \in \mathrm{sort}$ 与表达式 $B$ 使得 $B \overset{\Delta}{=}_{\beta} C, \Delta; \Gamma \vdash B$ 且 $x: B \in \Gamma$
+        2. 若 $\Delta; \Gamma \vdash MN: C$，则存在表达式 $A, B$ 使得 $\Delta; \Gamma \vdash M: \Pi x: A. B, \Delta; \Gamma \vdash N: A$ 以及 $C \overset{\Delta}{=}_{\beta} B[x := N]$
+        3. 若 $\Delta; \Gamma \vdash \lambda x: A.b: C$，则存在 $s \in \mathrm{sort}$ 以及表达式 $B$ 使得 $C \overset{\Delta}{=}_{\beta} \Pi x: A.B:C, \Delta; \Gamma \vdash \Pi x: A.B: s$ 以及 $\Delta; \Gamma, x: A \vdash b: B$
+        4. 若 $\Delta; \Gamma \vdash \Pi x: A.B: C$，则存在 $s_1, s_2 \in \mathrm{sort}$ 使得 $C \overset{\Delta}{=}_{\beta} s_2, \Delta; \Gamma \vdash A: s_1$ 且 $\Delta; \Gamma, x: A \vdash B: s_2$
+        5. 若 $\Delta; \Gamma \vdash a(\overline U): C$，则常元 $a$ 必然是 $\Delta$ 中定义 $\mathcal D \equiv \overline x: \overline A \rhd a(\overline x) := M / \bot \!\!\! \bot: N$ 的被定义常元且 $C \overset{\Delta}{=}_{\beta} N[\overline x := \overline U]$
+            - 若 $|\Gamma| = n > 0$，则存在 $\overline B$ 使得 $\Delta; \Gamma \vdash \overline U: \overline B$ 且对于任意 $1 \leqslant i \leqslant n$ 都有 $B_i \overset{\Delta}{=}_{\beta} A_i[\overline x := \overline U]$
+            - 若 $|\Gamma| = 0$ 且 $\mathcal D$ 是描述定义，则存在 $N'$ 使得 $N \overset{\Delta}{=}_{\beta} N'$ 且 $\Delta; \Gamma \vdash M: N'$
+            - 若 $|\Gamma| = 0$ 且 $\mathcal D$ 是原语定义，则有 $\Delta; \Gamma \vdash N: s$，其中 $s \in \mathrm{sort}$
+    7. 类型唯一性：若 $\Delta; \Gamma \vdash K: L_1$ 且 $\Delta; \Gamma \vdash K: L_2$，则 $L_1 \overset{\Delta}{=}_{\beta} L_2$
+    8. 替换引理：令 $\Delta; \Gamma_1, x: A, \Gamma_2 \vdash M: N$ 且 $\Delta; \Gamma_1 \vdash L: A$，则 $\Delta; \Gamma_1, \Gamma_2[x := L] \vdash M[x := L]: N[x := L]$
+4. $\text{Church}-\text{Rosser}$ 定理：设表达式 $L \in \mathrm E_{\mathrm D}$ 有 $L \overset{\Delta}{\twoheadrightarrow} L_1$ 且 $L \overset{\Delta}{\twoheadrightarrow} L_2$，则存在表达式 $L_3 \in \mathrm E_{\mathrm D}$ 使得 $L \overset{\Delta}{\twoheadrightarrow} L_1$ 与 $L \overset{\Delta}{\twoheadrightarrow} L_2$
+    1. 若 $L \in \mathrm E_{\mathrm D}$ 有 $\beta \delta-$正规形式，则该正规形式唯一
+        1. 若表达式 $L \in \mathrm E_{\mathrm D}$ 合法，则存在一个从 $L$ 开始、以其 $\beta \delta-$正规形式结束的有穷归约序列
+        2. 若表达式 $L \in \mathrm E_{\mathrm D}$ 合法，则不存在一个从 $L$ 开始的 $\beta \delta-$无穷归约序列
+    2. 主体归约引理：若 $\Delta; \Gamma \vdash M: N$ 且 $M \overset{\Delta}{\twoheadrightarrow} M'$ 或 $M \twoheadrightarrow_{\beta} M'$，则 $\Delta; \Gamma \vdash M': N$
 
 ### 2.3.4 逻辑系统
 
