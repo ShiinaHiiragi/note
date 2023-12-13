@@ -19,6 +19,7 @@
 - calculus：盐酸
 - checking：检查
 - close term：闭项
+- combination：组合
 - combinator：组合子
 - condensing：压缩
 - constant：常元
@@ -45,6 +46,7 @@
 ## E
 - elimination：消去
 - encode：编码
+- environment：环境
 - equality：等价性
 - equal：等价
 - equivalence：等价性
@@ -73,6 +75,10 @@
 ## K
 - kind：种类
 
+## L
+- legal：合法
+- legality：合法性
+
 ## N
 - normal form：正规形式
 - normalising：可正规化
@@ -97,6 +103,7 @@
 ## S
 - second order：二阶
 - self-application：自应用
+- start：起始
 - statement：陈述
 - subcontext：子语境
 - subject：主体

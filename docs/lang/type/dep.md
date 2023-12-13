@@ -124,22 +124,21 @@ $$
     2. 若 $u \in \mathrm V$，则 $u \in \mathrm E$
     3. 若 $u \in \mathrm V, e_1, e_2 \in \mathrm E$，则 $(\lambda u: e_1.e_2), (\Pi u: e_1. e_2)$ 或 $(e_1 e_2) \in \mathrm E$
 
-    若表达式 $M$ 存在 $\Gamma$ 与 $N$ 使得 $\Gamma \vdash M: N$ 或 $\Gamma \vdash N: M$，则称 $M$ 是合法的
+    若表达式 $M$ 存在 $\Gamma$ 与 $N$ 使得 $\Gamma \vdash M: N$ 或 $\Gamma \vdash N: M$，则称 $M$ 是合法的．若语境 $\Gamma$ 存在 $A, B$ 使得 $\Gamma \vdash A: B$，则称 $\Gamma$ 是良形式的
 
 3. $\lambda_{\mathrm C}$ 的引理
     1. 自由变元引理：若 $\Gamma \vdash A: B$，则 $\mathrm{FV}(A), \mathrm{FV}(B) \subseteq \mathrm{dom}(\Gamma)$
-    2. 良形式性引理：若语境 $\Gamma$ 存在 $A, B$ 使得 $\Gamma \vdash A: B$，则称 $\Gamma$ 是良形式的
-    3. 稀疏化引理：设 $\Gamma'$ 与 $\Gamma''$ 是两个语境且 $\Gamma' \subseteq \Gamma''$，若 $\Gamma' \vdash A: B$ 且 $\Gamma''$ 是良形式的，则有 $\Gamma'' \vdash A: B$
-    4. 压缩引理：若 $\Gamma', x: A, \Gamma'' \vdash B: C$ 且 $x$ 不在 $\Gamma'', B$ 或 $C$ 中出现，则 $\Gamma, \Gamma'' \vdash B: C$
-    5. 排列引理：设 $\Gamma'$ 与 $\Gamma''$ 是两个语境且 $\Gamma''$ 是 $\Gamma'$ 的一个排列，若 $\Gamma' \vdash A: B$ 且 $\Gamma''$ 是良形式的的，则有 $\Gamma'' \vdash A: B$
-    6. 生成引理
+    2. 稀疏化引理：设 $\Gamma'$ 与 $\Gamma''$ 是两个语境且 $\Gamma' \subseteq \Gamma''$，若 $\Gamma' \vdash A: B$ 且 $\Gamma''$ 是良形式的，则有 $\Gamma'' \vdash A: B$
+    3. 压缩引理：若 $\Gamma', x: A, \Gamma'' \vdash B: C$ 且 $x$ 不在 $\Gamma'', B$ 或 $C$ 中出现，则 $\Gamma, \Gamma'' \vdash B: C$
+    4. 排列引理：设 $\Gamma'$ 与 $\Gamma''$ 是两个语境且 $\Gamma''$ 是 $\Gamma'$ 的一个排列，若 $\Gamma' \vdash A: B$ 且 $\Gamma''$ 是良形式的的，则有 $\Gamma'' \vdash A: B$
+    5. 生成引理
         1. 若 $\Gamma \vdash x: C$，则存在 $s \in \mathrm{sort}$ 与表达式 $B$ 使得 $B =_{\beta} C, \Gamma \vdash B: s$ 以及 $x: B \in \Gamma$
         2. 若 $\Gamma \vdash MN: C$，则 $M$ 有 $\Pi-$类型，即存在表达式 $A, B$ 使得 $\Gamma \vdash M: \Pi x: A.B$ 且 $\Gamma \vdash N: A, C =_{\beta} B[x := N]$
         3. 若 $\Gamma \vdash \lambda x: A. b: C$，则存在 $s \in \mathrm{sort}$ 与表达式 $B$ 使得 $C =_{\beta} \Pi x: A. B$，其中 $\Gamma \vdash \Pi x: A. B: s$ 且 $\Gamma, x: A \vdash b: B$
         4. 若 $\Gamma \vdash \Pi x: A. B: C$，则存在 $s_1, s_2 \in \mathrm{sort}$ 使得 $C \equiv s_2$ 且 $\Gamma \vdash A: s_1$ 且 $\Gamma, x: A \vdash B: s_2$
-    7. 子项引理：若 $M$ 是合法项，则 $M$ 的所有子项均合法
-    8. 类型唯一性：设 $\Gamma \vdash A: B_1$ 以及 $\Gamma \vdash A: B_2$，则 $B_1 =_{\beta} B_2$
-    9. 替换引理：设 $\Gamma', x: A, \Gamma''\vdash B: C$ 且 $\Gamma' \vdash D: A$，则 $\Gamma', \Gamma'' [x := D] \vdash B[x := D]: C[x := D]$
+    6. 子项引理：若 $M$ 是合法项，则 $M$ 的所有子项均合法
+    7. 类型唯一性：设 $\Gamma \vdash A: B_1$ 以及 $\Gamma \vdash A: B_2$，则 $B_1 =_{\beta} B_2$
+    8. 替换引理：设 $\Gamma', x: A, \Gamma''\vdash B: C$ 且 $\Gamma' \vdash D: A$，则 $\Gamma', \Gamma'' [x := D] \vdash B[x := D]: C[x := D]$
 4. $\text{Church}-\text{Rosser}$ 定理：对于给定的 $M \in \mathrm E$，若有 $M \twoheadrightarrow_{\beta} N_1, M \twoheadrightarrow_{\beta} N_2$，则存在 $N_3 \in \Lambda$ 使得 $N_1 \twoheadrightarrow_{\beta} N_3, N_2 \twoheadrightarrow_{\beta} N_3$
     1. 设 $M =_{\beta} N$，则存在 $L$ 使得 $M \twoheadrightarrow_{\beta} L$ 以及 $N \twoheadrightarrow_{\beta} L$
     2. 主体归约引理：若 $\Gamma \vdash A: B$，且若 $A \twoheadrightarrow_{\beta} A'$，则 $\Gamma \vdash A': B$
@@ -192,6 +191,10 @@ $$
     2. 环境：定义的有限列表，通常记作 $\Delta \equiv \mathcal D_1, \mathcal D_2, \cdots, \mathcal D_k$
         1. 扩展推断：称形如 $\Delta; \Gamma \vdash M: N$ 的表达式为扩展推断或带定义的推断，其中 $\Delta$ 为环境，$\Gamma$ 为语境且 $M, N \in \mathrm E_{\mathrm D}$
         2. 将增加了定义 $\mathcal D$ 的环境 $\Delta$ 简写作 $\Delta, \mathcal D$
+3. 合法组合：设 $\Delta$ 是一个环境，$\Gamma$ 是一个语境．若存在表达式 $M, N$ 使得 $\Delta; \Gamma \vdash M: N$，则称 $\Delta; \Gamma$ 形成一个合法组合
+    1. 设 $M$ 是一个表达式，若存在环境 $\Delta$、语境 $\Gamma$ 以及表达式 $N$ 使得 $\Delta; \Gamma \vdash M: N$ 或 $\Delta; \Gamma \vdash N: M$，则称表达式 $M$ 是（关于 $\Delta$ 和 $\Gamma$）合法的
+    2. 设 $\Delta$ 是一个环境，若存在语境 $\Gamma$ 以及表达式 $M, N$ 使得 $\Delta; \Gamma \vdash M: N$，则称 $\Delta$ 是合法的
+    3. 设 $\Gamma$ 是一个语境，若存在环境 $\Delta$ 以及表达式 $M, N$ 使得 $\Delta; \Gamma \vdash M: N$，则称 $\Gamma$ 是合法的
 
 ### 2.3.2 δ-归约
 1. $\delta-$归约与 $\delta-$等价性
@@ -231,6 +234,29 @@ $$
     11. 原语实例化：$\begin{prooftree} \AxiomC{\(\Delta; \Gamma \vdash *: \square\)} \AxiomC{\(\Delta; \Gamma \vdash \overline U: \overline{A[\overline x := \overline U]}\)} \BinaryInfC{\(\Delta; \Gamma \vdash a(\overline U): N[\overline x := \overline U]\)} \end{prooftree}$（若 $\overline x: \overline A \rhd a(\overline x) := \bot \!\!\! \bot: N \in \Delta$）
 2. 导出规则：$\begin{prooftree} \AxiomC{\(\Delta; \overline x: \overline A \vdash M: N\)} \UnaryInfC{\(\Delta, \overline x: \overline A \rhd a(\overline x) := M: N; \overline x: \overline A \vdash a(\overline x): N\)} \end{prooftree}$（其中 $a \notin \Delta$）
 3. $\lambda_{\mathrm D}$ 的引理
+    1. 自由变元与常元引理：令 $\Delta; \Gamma \vdash M: N$，其中 $\Delta \equiv \Delta_1, \mathcal D, \Delta_2$ 且 $\mathcal D \equiv \overline x: \overline A \rhd a(\overline x) := K / \bot \!\!\! \bot: L, \Gamma \equiv \overline y: \overline B$
+        1. 对于任意 $i$，都有 $\operatorname{FV} (A_i) \subset \{x_1, x_2, \cdots, x_{i-1}\}, \operatorname{FV} (K), \operatorname{FV} (L) \subset \{\overline x\}$
+        2. 对于任意 $j$，都有 $\operatorname{FV} (B_i) \subset \{y_1, y_2, \cdots, y_{i-1}\}, \operatorname{FV} (M), \operatorname{FV} (N) \subset \{\overline y\}$
+        3. 常元不在 $\Delta_1$ 中出现
+        4. 若常元 $b$ 在 $\overline A, K$ 或 $L$ 中出现，则 $b \neq a$ 且 $b$ 是某个 $\mathcal D \in \Delta_1$ 的被定义常元
+        5. 若常元 $b$ 在 $\overline B, M$ 或 $N$ 中出现，则 $b$ 是某个 $\mathcal D \in \Delta$ 的被定义常元
+    2. 合法性引理
+        1. 若 $\Delta \equiv \Delta_1, \Delta_2$ 合法，则 $\Delta_1$ 合法
+        2. 若 $\Gamma \equiv \Gamma_1, \Gamma_2$ 合法，则 $\Gamma_1$ 合法
+        3. 若表达式 $M$ 合法，则 $M$ 的所有子表达式均合法
+        4. 若 $\mathcal D \equiv \overline x: \overline A \rhd a(x) := M / \bot \!\!\! \bot: N$ 在合法环境 $\Delta$ 中出现，不妨设 $\Delta \equiv \Delta_1, \mathcal D, \Delta_2$
+            - 每个 $A_i$ 关于 $\Delta_i$ 与 $x_1: A_1, x_2: A_2, \cdots, x_{i-1}: A_{i-1}$ 合法
+            - $M, N$ 均关于 $\Delta_1$ 与 $\overline x: \overline A$ 合法
+    3. 声明与定义的起始引理
+        1. 语境：若 $\Delta; \Gamma$ 是合法组合且 $x: A \in \Gamma$，则 $\Delta; \Gamma \vdash x: A$
+        2. 环境：令 $\mathcal D \equiv \equiv \overline x: \overline A \rhd a(x) := M: N$，若 $\Delta$ 合法且 $\mathcal \in \Delta$，则 $\Delta; \overline x: \overline A \vdash M: N$ 且 $\Delta; \overline x: \overline A \vdash a(\overline x): N$
+    4. 稀疏化引理
+    5. 压缩引理
+    6. 生成引理
+    7. 子项引理
+    8. 类型唯一性
+    9. 替换引理
+    10. 主体归约引理
 
 ### 2.3.4 逻辑系统
 
