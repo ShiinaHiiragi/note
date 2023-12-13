@@ -164,3 +164,48 @@
         2. 引入：$\begin{prooftree} \AxiomC{\(\Gamma \vdash a: S\)} \AxiomC{\(\Gamma \vdash u: Pa\)} \BinaryInfC{\(\Gamma \to \lambda \alpha: *. \lambda v: (\Pi x: S. (Px \to \alpha)). vau: \Pi \alpha: *. \Pi x: S. (Px \to \alpha) \to \alpha\)} \end{prooftree}$
 
 ## 2.3 定义与形式证明
+### 2.3.1 λD 系统
+
+### 2.3.2 逻辑系统
+
+$$
+\newcommand{\fitch}[1]{\begin{array}{rlr}#1\end{array}}
+\newcommand{\fcol}[1]{\begin{array}{r}#1\end{array}}
+\newcommand{\scol}[1]{\begin{array}{l}#1\end{array}}
+\newcommand{\tcol}[1]{\begin{array}{l}#1\end{array}}
+\newcommand{\subcol}[1]{\, \, \begin{array}{|l}#1\end{array}}
+\newcommand{\startsub}{\\[-0.29em]}
+\newcommand{\endsub}{\startsub}
+\newcommand{\fendl}{\\[0.044em]}
+$$
+
+$$
+\fitch{
+    \subcol{
+        \forall y \lnot P(y)
+        \startsub\hline\subcol{
+            \exists P(x)
+            \startsub\hline\subcol{
+                P(u) \\
+                \hline
+                \forall y \lnot P(y) \\
+                \lnot P(u) \\
+                \perp
+            } \endsub
+            \perp
+        }\endsub
+        \lnot \exists x P(x)
+    }
+    \tcol{
+        P \fendl
+        P \fendl
+        P \fendl
+        R,1 \fendl
+        \forall E,4 \fendl
+        \lnot E,4,5 \fendl
+        \exists E, 2 ,3-6 \fendl
+        \lnot I,2-7 \fendl
+    }
+}
+\quad \text{(Fitch Style Proof Example)}
+$$
