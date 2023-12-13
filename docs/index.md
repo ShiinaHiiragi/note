@@ -449,11 +449,11 @@ const refList = [
         author: ["Rob Nederpelt", "Herman Geuvers"],
         title: "Type Theory and Formal Proof: an Introduction",
         type: "M",
-        page: [1, 390],
+        page: [1, 409],
         year: 2014,
         press: "Cambridge University Press",
         locate: "Cambridge",
-        plot: 165
+        plot: 257
     },
     {
         author: ["Hanne Riis Nielson", "Flemming Nielson"],

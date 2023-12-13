@@ -1,0 +1,313 @@
+# 3 数学基础
+
+$$
+\newcommand{\fitch}[1]{\begin{array}{rlr}#1\end{array}}
+\newcommand{\fcol}[1]{\begin{array}{r}#1\end{array}}
+\newcommand{\scol}[1]{\begin{array}{l}#1\end{array}}
+\newcommand{\tcol}[1]{\begin{array}{l}#1\end{array}}
+\newcommand{\rootcol}[1]{\, \, \begin{array}{l}#1\end{array}}
+\newcommand{\subcol}[1]{\, \, \begin{array}{|l}#1\end{array}}
+\newcommand{\startsub}{\\[-0.29em]}
+\newcommand{\endsub}{\startsub}
+\newcommand{\fendl}{\\[0.044em]}
+$$
+
+## 3.1 数理逻辑
+### 3.1.1 直觉主义逻辑
+1. 直觉主义命题逻辑
+    1. 蕴含：将 $\to(A, B)$ 简记为 $A \to B$
+
+        $$
+        \fitch{
+            \subcol{
+                A, B: *_{p} \\
+                \hline
+                \to(A, B) := A \to B: *_{p}
+                \startsub \subcol{
+                    u: A \to B \\
+                    \hline
+                    \to_{\text{in}}(A, B, u) := u: A \to B
+                }
+                \startsub \subcol{
+                    u: A \to B \mid v: A \\
+                    \hline
+                    \to_{\text{el}}(A, B, u, v) := uv: B
+                }
+            }
+        }
+        $$
+
+    2. 恒假
+
+        $$
+        \fitch{
+            \rootcol{
+                \bot := \Pi A: *_{p}.A: *
+                \startsub \subcol{
+                    A: *_{p}
+                    \startsub \hline \subcol{
+                        u: A \mid v: A \to \bot \\
+                        \hline
+                        \bot_{\text{in}}(A, u, v) := vu: \bot
+                    }
+                    \startsub \subcol{
+                        u: \bot \\
+                        \hline
+                        \bot_{\text{el}}(A, u) := uA: A
+                    }
+                }
+            }
+        }
+        $$
+
+    3. 否定：将 $\neg(A)$ 简记为 $\neg A$
+
+        $$
+        \fitch{
+            \subcol{
+                A: *_{p} \\
+                \hline
+                \neg (A) := A \to \bot: *_{p}
+                \startsub \subcol{
+                    u: A \to \bot \\
+                    \hline
+                    \neg_{\text{in}}(A, u) := u: \neg A
+                }
+                \startsub \subcol{
+                    u: \neg A \mid v: A \\
+                    \hline
+                    \neg_{\text{el}}(A, u, v) := uv: \bot
+                }
+            }
+        }
+        $$
+
+    4. 合取：将 $\wedge(A, B)$ 简记为 $A \wedge B$
+
+        $$
+        \fitch{
+            \subcol{
+                A, B: *_{p} \\
+                \hline
+                \wedge(A, B) := \Pi C: *_{p}.(A \to B \to C) \to C: *_{p}
+                \startsub \subcol{
+                    u: A \mid v: B \\
+                    \hline
+                    \wedge_{\text{in}}(A, B, u, v) := \lambda C: *_{p}. \lambda w: A \to B \to C. wuv: A \wedge B
+                }
+                \startsub \subcol{
+                    u: A \wedge B \\
+                    \hline
+                    \wedge_{\text{el}_1}(A, B, u) := u A(\lambda v: A.\lambda w: B.v): A \\
+                    \wedge_{\text{el}_2}(A, B, u) := u B(\lambda v: A.\lambda w: B.w): B
+                }
+            }
+        }
+        $$
+
+    5. 析取：将 $\vee(A, B)$ 简记为 $A \vee B$
+
+        $$
+        \fitch{
+            \subcol{
+                A, B: *_{p} \\
+                \hline
+                \vee(A, B) := \Pi C: *.(A \to C) \to (B \to C) \to C: *_{p}
+                \startsub \subcol{
+                    u: A \\
+                    \hline
+                    \vee_{\text{in}_1}(A, B, u) := \lambda C: *_{p}. \lambda v: A \to C. \lambda w: B \to C. vu: A \vee B
+                }
+                \startsub \subcol{
+                    u: B \\
+                    \hline
+                    \vee_{\text{in}_2}(A, B, u) := \lambda C: *_{p}. \lambda v: A \to C. \lambda w: B \to C. wu: A \vee B
+                }
+                \startsub \subcol{
+                    C: *_{p}
+                    \startsub \hline \subcol{
+                        u: A \vee B \mid v: A \to C \mid w: B \to C \\
+                        \hline
+                        \vee_{\text{el}}(A, B, C, u, v, w) := uCvw: C
+                    }
+                }
+            }
+        }
+        $$
+
+    6. 等价：将 $\leftrightarrow(A, B)$ 简记为 $A \leftrightarrow B$
+
+        $$
+        \fitch{
+            \subcol{
+                A, B: *_{p} \\
+                \hline
+                \leftrightarrow(A, B) := (A \to B) \wedge (B \to A): *_{p}
+                \startsub \subcol{
+                    u: A \to B \mid v: B \to A \\
+                    \hline
+                    \leftrightarrow_{\text{in}}(A, B, u, v) := \wedge_{\text{in}}(A \to B, B \to A, u, v): A \leftrightarrow B
+                }
+                \startsub \subcol{
+                    u: A \leftrightarrow B \\
+                    \hline
+                    \leftrightarrow_{\text{el}_1}(A, B, u) := \wedge_{\text{el}_1}(A \to B, B \to A, u): A \to B \\
+                    \leftrightarrow_{\text{el}_2}(A, B, u) := \wedge_{\text{el}_2}(A \to B, B \to A, u): B \to A
+                }
+            }
+        }
+        $$
+
+2. 直觉主义一阶逻辑
+    1. 全称量化：将 $\forall(S, P)$ 简记为 $\forall x: S.P x$
+
+        $$
+        \fitch{
+            \subcol{
+                S: *_{p} \mid P: S \to *_{p} \\
+                \hline
+                \forall(S, P) := \Pi x:S. P x: *_{p}
+                \startsub \subcol{
+                    u: \Pi x: S. P x \\
+                    \hline
+                    \forall_{\text{in}}(S, P, u) := u: \forall x: S. P x
+                }
+                \startsub \subcol{
+                    u: \forall x: S. P x \mid v: S \\
+                    \hline
+                    \forall_{\text{el}}(S, P, u, v) := uv: Pv
+                }
+            }
+        }
+        $$
+
+    2. 存在量化：将 $\exists(S, P)$ 简记为 $\exists x: S.P x$
+
+        $$
+        \fitch{
+            \subcol{
+                S: *_{s} \mid P: S \to *_{p} \\
+                \hline
+                \exists(S, P) := \Pi A: *_{p}.((\forall x: S. (P x \to A)) \to A): *_{p}
+                \startsub \subcol{
+                    u: S \mid v: P u \\
+                    \hline
+                    \exists_{\text{in}}(S, P, u, v) := \lambda A: *_{p}. \lambda w: (\forall x: S.(P x \to A)).wuv: \exists x: S. P x
+                }
+                \startsub \subcol{
+                    u: \exists x: S. P x \mid A: *_{p} \mid v: \forall x: S.(P x \to A) \\
+                    \hline
+                    \exists_{\text{el}}(S, P, u, A, v) := uAv: A
+                }
+            }
+        }
+        $$
+
+### 3.1.2 经典逻辑
+1. 经典命题逻辑
+    1. 排中律
+
+        $$
+        \fitch{
+            \subcol{
+                A: *_{p} \\
+                \hline
+                \operatorname{ET}(A) := \bot \!\!\! \bot: A \vee \neg A
+            }
+        }
+        $$
+
+    2. 双重否定律：可从排中律推出
+
+        $$
+        \fitch{
+            \subcol{
+                A: *_{p}
+                \startsub \hline \subcol{
+                    u: A \\
+                    \hline
+                    \neg \neg_{\text{in}}(A, u) := \lambda v: \neg A.vu : \neg \neg A
+                }
+                \endsub
+                a_1(A) := \lambda v: A. v: A \to A
+                \startsub \subcol{
+                    u: \neg \neg A
+                    \startsub \hline \subcol{
+                        v: \neg A \\
+                        \hline
+                        a_2(A, u, v) := uv: \bot \\
+                        a_3(A, u, v) := a_2(A, u, v) A: A
+                    }
+                    \endsub
+                    a_4(A, u) := \lambda v: \neg A. a_3(A, u, v): \neg A \to A \\
+                    a_5(A, u) := \operatorname{ET}(A) \  A \ a_1(A) \ a_4(A, u): A
+                }
+                \endsub
+                \operatorname{DN}(A) := \lambda u: \neg \neg A. a_5(A, u): \neg \neg A \to A
+                \startsub \subcol{
+                    u: \neg \neg A \\
+                    \hline
+                    \neg \neg_{\text{el}}(A, u) := \operatorname{DN}(A) u: A
+                }
+            }
+        }
+        $$
+
+2. 经典一阶逻辑：存在量化可用全称量化定义
+
+    $$
+    \fitch{
+        \subcol{
+            S: *_{s} \mid P: S \to *_{p}
+            \startsub \hline \subcol{
+                u: \neg \forall x: S. \neg(P x)
+                \startsub \hline \subcol{
+                    v: \neg \exists y: S. P y
+                    \startsub \hline \subcol{
+                        u': \neg \exists x: S. P x
+                        \startsub \hline \subcol{
+                            y: S
+                            \startsub \hline \subcol{
+                                v': Py \\
+                                \hline
+                                a_1 := \exists_{\text{in}}(S, P, y, v'): \exists z: S.P z \\
+                                a_2 := u' a_1: \bot
+                            }
+                            \endsub
+                            a_3 := \lambda v: P y.a_2: \neg(P y)
+                        }
+                        \endsub
+                        a_4 := \lambda y: S.a_3: \forall y: S. \neg(P y)
+                    }
+                    \endsub
+                    a_5(S, P) := \lambda u: (\neg \exists x: S. P x). a_4: (\neg \exists x: S. P x) \to \forall y: S. \neg (P y) \\
+                    a_6 := a_4(S, P, v): \forall z: S. \neg (P z) \\
+                    a_7 := u a_6: \bot
+                }
+                \endsub
+                a_8 := \lambda v: (\neg \exists y: S. P y). a_7: \neg \neg \exists y: S. P y \\
+                a_9 := \neg \neg_{\text{el}}(\exists y: S. P y, a_8): \exists y: S. P y \\
+                \exists_{\text{alt-in}}(S, P, u) := a_9(S, P, u): \exists x: S. P x \\
+            }
+            \endsub
+            a_{10}(S, P) := \lambda u: (\neg \forall x: S. \neg(P x)).a_9: \neg \forall x: S. \neg(P x) \to \exists y: S. P y
+            \startsub \subcol{
+                u: \exists x: S. P x
+                \startsub \hline \subcol{
+                    v: \forall y: S. \neg (P y) \\
+                    \hline
+                    a_{11} := \exists_{el}(S, P, u, \bot, v): \bot
+                }
+                \endsub
+                a_{12} := \lambda v: (\forall y: S. \neg(P y)).a_{11}: \neg \forall y: S. \neg(P y) \\
+                \exists_{\text{alt-el}}(S, P, u) := a_{12}(S, P, u): \neg \forall x: S. \neg(P x)
+            }
+            \endsub
+            a_{13} := \lambda u: (\exists x: S. P x).a_2: (\exists x: S. P x) \to \neg (\forall y: S.\neg (P y))
+        }
+    }
+    $$
+
+## 3.2 集合论
+
+## 3.3 数与算术
