@@ -428,3 +428,101 @@ $$
         $$
 
 3. 直觉主义一阶逻辑
+    1. 全称量化：将 $\forall(S, P)$ 简记为 $\forall x: S.P x$
+
+        $$
+        \fitch{
+            \subcol{
+                S: *_{p} \mid P: S \to *_{p} \\
+                \hline
+                \forall(S, P) := \Pi x:S. P x: *_{p}
+                \startsub \subcol{
+                    u: \Pi x: S. P x \\
+                    \hline
+                    \forall_{\text{in}}(S, P, u) := u: \forall x: S. P x
+                }
+                \startsub \subcol{
+                    u: \forall x: S. P x \mid v: S \\
+                    \hline
+                    \forall_{\text{el}}(S, P, u, v) := uv: Pv
+                }
+            }
+        }
+        $$
+
+    2. 存在量化：将 $\exists(S, P)$ 简记为 $\exists x: S.P x$
+
+        $$
+        \fitch{
+            \subcol{
+                S: *_{s} \mid P: S \to *_{p} \\
+                \hline
+                \exists(S, P) := \Pi A: *_{p}.((\forall x: S. (P x \to A)) \to A): *_{p}
+                \startsub \subcol{
+                    u: S \mid v: P u \\
+                    \hline
+                    \exists_{\text{in}}(S, P, u, v) := \lambda A: *_{p}. \lambda w: (\forall x: S.(P x \to A)).wuv: \exists x: S. P x
+                }
+                \startsub \subcol{
+                    u: \exists x: S. P x \mid A: *_{p} \mid v: \forall x: S.(P x \to A) \\
+                    \hline
+                    \exists_{\text{el}}(S, P, u, A, v) := uAv: A
+                }
+            }
+        }
+        $$
+
+4. 经典一阶逻辑：存在量化可用全称量化定义
+
+    $$
+    \fitch{
+        \subcol{
+            S: *_{s} \mid P: S \to *_{p}
+            \startsub \hline \subcol{
+                u: \neg \forall x: S. \neg(P x)
+                \startsub \hline \subcol{
+                    v: \neg \exists y: S. P y
+                    \startsub \hline \subcol{
+                        u': \neg \exists x: S. P x
+                        \startsub \hline \subcol{
+                            y: S
+                            \startsub \hline \subcol{
+                                v': Py \\
+                                \hline
+                                a_1 := \exists_{\text{in}}(S, P, y, v'): \exists z: S.P z \\
+                                a_2 := u' a_1: \bot
+                            }
+                            \endsub
+                            a_3 := \lambda v: P y.a_2: \neg(P y)
+                        }
+                        \endsub
+                        a_4 := \lambda y: S.a_3: \forall y: S. \neg(P y)
+                    }
+                    \endsub
+                    a_5(S, P) := \lambda u: (\neg \exists x: S. P x). a_4: (\neg \exists x: S. P x) \to \forall y: S. \neg (P y) \\
+                    a_6 := a_4(S, P, v): \forall z: S. \neg (P z) \\
+                    a_7 := u a_6: \bot
+                }
+                \endsub
+                a_8 := \lambda v: (\neg \exists y: S. P y). a_7: \neg \neg \exists y: S. P y \\
+                a_9 := \neg \neg_{\text{el}}(\exists y: S. P y, a_8): \exists y: S. P y \\
+                \exists_{\text{alt-in}}(S, P, u) := a_9(S, P, u): \exists x: S. P x \\
+            }
+            \endsub
+            a_{10}(S, P) := \lambda u: (\neg \forall x: S. \neg(P x)).a_9: \neg \forall x: S. \neg(P x) \to \exists y: S. P y
+            \startsub \subcol{
+                u: \exists x: S. P x
+                \startsub \hline \subcol{
+                    v: \forall y: S. \neg (P y) \\
+                    \hline
+                    a_{11} := \exists_{el}(S, P, u, \bot, v): \bot
+                }
+                \endsub
+                a_{12} := \lambda v: (\forall y: S. \neg(P y)).a_{11}: \neg \forall y: S. \neg(P y) \\
+                \exists_{\text{alt-el}}(S, P, u) := a_{12}(S, P, u): \neg \forall x: S. \neg(P x)
+            }
+            \endsub
+            a_{13} := \lambda u: (\exists x: S. P x).a_2: (\exists x: S. P x) \to \neg (\forall y: S.\neg (P y))
+        }
+    }
+    $$
