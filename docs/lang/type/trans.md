@@ -16,7 +16,7 @@
 - bound：约束
 
 ## C
-- calculus：盐酸
+- calculus：演算
 - checking：检查
 - close term：闭项
 - combination：组合
