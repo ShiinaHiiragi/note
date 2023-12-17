@@ -270,40 +270,39 @@ $$
                             \startsub \hline \subcol{
                                 v': Py \\
                                 \hline
-                                a_1 := \exists_{\text{in}}(S, P, y, v'): \exists z: S.P z \\
-                                a_2 := u' a_1: \bot
+                                a_1(S, P, y, v') := \exists_{\text{in}}(S, P, y, v'): \exists x: S.P x \\
+                                a_2(S, P, u', y, v') := u' a_1(S, P, y, v'): \bot
                             }
                             \endsub
-                            a_3 := \lambda v: P y.a_2: \neg(P y)
+                            a_3(S, P, u', y) := \lambda v': P y.a_2(S, P, u', y, v'): \neg(P y)
                         }
                         \endsub
-                        a_4 := \lambda y: S.a_3: \forall y: S. \neg(P y)
+                        a_4(S, P, u') := \lambda y: S.a_3(S, P, u', y): \forall y: S. \neg(P y)
                     }
                     \endsub
-                    a_5(S, P) := \lambda u: (\neg \exists x: S. P x). a_4: (\neg \exists x: S. P x) \to \forall y: S. \neg (P y) \\
-                    a_6 := a_4(S, P, v): \forall z: S. \neg (P z) \\
-                    a_7 := u a_6: \bot
+                    a_5(S, P) := \lambda u': (\neg \exists x: S. P x). a_4(S, P, u'): (\neg \exists x: S. P x) \to \forall y: S. \neg (P y) \\
+                    a_6(S, P, u, v) := u a_4(S, P, v): \bot
                 }
                 \endsub
-                a_8 := \lambda v: (\neg \exists y: S. P y). a_7: \neg \neg \exists y: S. P y \\
-                a_9 := \neg \neg_{\text{el}}(\exists y: S. P y, a_8): \exists y: S. P y \\
-                \exists_{\text{alt-in}}(S, P, u) := a_9(S, P, u): \exists x: S. P x \\
+                a_7(S, P, u) := \lambda v: (\neg \exists y: S. P y). a_6(S, P, u, v): \neg \neg \exists y: S. P y \\
+                a_8(S, P, u) := \neg \neg_{\text{el}}(\exists y: S. P y, a_7(S, P, u)): \exists y: S. P y \\
+                \exists_{\text{alt-in}}(S, P, u) := a_8(S, P, u): \exists x: S. P x \\
             }
             \endsub
-            a_{10}(S, P) := \lambda u: (\neg \forall x: S. \neg(P x)).a_9: \neg \forall x: S. \neg(P x) \to \exists y: S. P y
+            a_9(S, P) := \lambda u: (\neg \forall x: S. \neg(P x)).a_8(S, P, u): \neg \forall x: S. \neg(P x) \to \exists y: S. P y
             \startsub \subcol{
                 u: \exists x: S. P x
                 \startsub \hline \subcol{
                     v: \forall y: S. \neg (P y) \\
                     \hline
-                    a_{11} := \exists_{el}(S, P, u, \bot, v): \bot
+                    a_{10}(S, P, u, v) := \exists_{el}(S, P, u, \bot, v): \bot
                 }
                 \endsub
-                a_{12} := \lambda v: (\forall y: S. \neg(P y)).a_{11}: \neg \forall y: S. \neg(P y) \\
-                \exists_{\text{alt-el}}(S, P, u) := a_{12}(S, P, u): \neg \forall x: S. \neg(P x)
+                a_{11}(S, P, u) := \lambda v: (\forall y: S. \neg(P y)).a_{10}(S, P, u, v): \neg \forall y: S. \neg(P y) \\
+                \exists_{\text{alt-el}}(S, P, u) := a_{11}(S, P, u): \neg \forall x: S. \neg(P x)
             }
             \endsub
-            a_{13} := \lambda u: (\exists x: S. P x).a_2: (\exists x: S. P x) \to \neg (\forall y: S.\neg (P y))
+            a_{12}(S, P) := \lambda u: (\exists x: S. P x).a_{11}(S, P, u): (\exists x: S. P x) \to \neg (\forall y: S.\neg (P y))
         }
     }
     $$
