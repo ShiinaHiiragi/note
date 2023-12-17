@@ -37,6 +37,24 @@ $$
         }
         $$
 
+        蕴含的引入策略：
+
+        $$
+        \fitch{
+            \rootcol{
+                \ \vdots
+                \startsub \subcol{
+                    x: A \\
+                    \hline
+                    \vdots \\
+                    a(\cdots, x) := \cdots: B
+                }
+                \endsub
+                b(\cdots) := \lambda x: A.a(\cdots, x): A \to B
+            }
+        }
+        $$
+
     2. 恒假
 
         $$
@@ -181,6 +199,24 @@ $$
         }
         $$
 
+        全称量化的引入策略：
+
+        $$
+        \fitch{
+            \rootcol{
+                \ \vdots
+                \startsub \subcol{
+                    x: S \\
+                    \hline
+                    \vdots \\
+                    a(\cdots, x) := \cdots: P x
+                }
+                \endsub
+                b(\cdots) := \lambda x: S.a(\cdots, x): \forall x: S.P x
+            }
+        }
+        $$
+
     2. 存在量化：将 $\exists(S, P)$ 简记为 $\exists x: S.P x$
 
         $$
@@ -199,6 +235,31 @@ $$
                     \hline
                     \exists_{\text{el}}(S, P, u, A, v) := uAv: A
                 }
+            }
+        }
+        $$
+
+        存在量化的引入策略：
+
+        $$
+        \fitch{
+            \rootcol{
+                \ \vdots \\
+                a(\cdots) := \cdots: \exists x: S.P x
+                \startsub \subcol{
+                    x: S
+                    \startsub \hline \subcol{
+                        u: Px \\
+                        \hline
+                        \vdots \\
+                        b(\cdots, x, u) := \cdots: A
+                    }
+                    \endsub
+                    c(\cdots, x) := \lambda u: P x.b(\cdots, x, u): Px \to A
+                }
+                \endsub
+                d(\cdots) := \lambda x: S.c(\cdots, x): \forall x: S.(P x \to A) \\
+                e(\cdots) := \exists_{\mathrm{el}}(S, P, a(\cdots), A, d(\cdots)): A
             }
         }
         $$
