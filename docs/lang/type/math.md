@@ -12,6 +12,8 @@ $$
 \newcommand{\fendl}{\\[0.044em]}
 $$
 
+- 设 $\Gamma \vdash a(\overline x) := N: *_{p}$ 与 $\Gamma \vdash b(\overline x) := M: N$ 在 $\lambda_{\mathrm D}$ 中可派生，则称 $a(\overline x)$ 为一个定理，$b(\overline x)$ 为定理 $a(\overline x)$ 的一个证明
+
 ## 3.1 逻辑学
 ### 3.1.1 直觉主义逻辑
 1. 直觉主义命题逻辑
@@ -217,7 +219,7 @@ $$
         }
         $$
 
-    2. 存在量化：将 $\exists(S, P)$ 简记为 $\exists x: S.P x$
+    2. 存在量化：将 $\exists(S, P)$ 简记为 $\exists x: S.P x$，记 $\iota (S, P, u)$ 为集合 $S$ 中满足命题 $P x$ 的唯一元素
 
         $$
         \fitch{
@@ -234,6 +236,15 @@ $$
                     u: \exists x: S. P x \mid A: *_{p} \mid v: \forall x: S.(P x \to A) \\
                     \hline
                     \exists_{\text{el}}(S, P, u, A, v) := uAv: A
+                }
+                \endsub
+                \exists^{\geqslant 1}(S, P) := \exists(S, P): *_{p} \\
+                \exists^{\leqslant 1}(S, P) := \forall y: S. \forall z: S.(P y \to P z \to (y =_{S} z)): *_{p} \\
+                \exists^{1}(S, P) := \exists^{\geqslant 1}(S, P) \wedge \exists^{\leqslant 1}(S, P)
+                \startsub \subcol{
+                    u: (\exists^{1} x: S.P x) \\
+                    \hline
+                    \iota (S, P, u) := \bot \!\!\! \bot: S
                 }
             }
         }
