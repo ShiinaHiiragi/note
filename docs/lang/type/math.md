@@ -369,5 +369,101 @@ $$
     $$
 
 ## 3.2 集合论
+1. 关系：将二元关系 $R \subseteq M \times N$ 解释为函数 $M \to N \to *_{p}$
+    1. 等词：将 $\operatorname{eq} (S, x, y)$ 简记为 $x =_{S} y$
+
+        $$
+        \fitch{
+            \subcol{
+                S: *_{s}
+                \startsub \hline \subcol{
+                    x: S
+                    \startsub \hline \subcol{
+                        y: S \\
+                        \hline
+                        \operatorname{eq} (S, x, y) := \Pi P: S \to *_{p}.(P x \leftrightarrow P y): *_{p}
+                    }
+                }
+            }
+        }
+        $$
+
+        依照 $\text{Leibniz}$ 对等价性的定义，「相等」即在所有可想象的情况下都无法区分
+
+    2. 集合 $S: *_{s}$ 上的关系 $R$ 可能具有自反性（$\operatorname{refl}$）、对称性（$\operatorname{symm}$）、传递性（$\operatorname{trans}$）、反自反性（$\operatorname{anti-refl}$）或反对称性（$\operatorname{anti-symm}$）
+
+        $$
+        \fitch{
+            \subcol{
+                S: *_{s}
+                \startsub \hline \subcol{
+                    R: S \to S \to *_{p} \\
+                    \hline
+                    \operatorname{refl}(S, R) := \forall x: S.(R \ x \ x): *_{p} \\
+                    \operatorname{symm}(S, R) := \forall x: S.\forall y: S.(R \ x \ y \to R \ y \ x): *_{p} \\
+                    \operatorname{trans}(S, R) := \forall x: S.\forall y: S.\forall z: S.(R \ x \ y \to R \ y \ z \to R \ x \ z): *_{p} \\
+                    \operatorname{anti-refl}(S, R) := \forall x: S. \neg (R \ x \ x): *_{p} \\
+                    \operatorname{anti-symm}(S, R) := \forall x: S.\forall y: S.(R \ x \ y \to R \ y \ x \to x = y): *_{p} \\
+                }
+            }
+        }
+        $$
+
+        1. 集合 $S: *_{s}$ 上的等词是一个等价关系，且具有替换性（$\operatorname{eq-subs}$）与一致性（$\operatorname{eq-cong}$）
+
+            $$
+            \fitch{
+                \subcol{
+                    S: *_{s} \mid T: *_{s}
+                    \startsub \hline \subcol{
+                        x: S \\
+                        \hline
+                        \operatorname{eq-refl} (S, x) := \cdots: \operatorname{refl} (S, =_{S})
+                        \startsub \subcol{
+                            y: S \\
+                            \hline
+                            \operatorname{eq-symm} (S, x, y) := \cdots: \operatorname{symm} (S, =_{S})
+                            \startsub \subcol{
+                                z: S \\
+                                \hline
+                                \operatorname{eq-trans} (S, x, y, z) := \cdots: \operatorname{trans} (S, =_{S})
+                            }
+                            \startsub \subcol{
+                                u: x =_{S} y
+                                \startsub \hline \subcol{
+                                    P: S \to *_{p} \mid v: P x \\
+                                    \hline
+                                    \operatorname{eq-subs}(S, P, x, y, u, v) := \cdots: P y
+                                }
+                                \startsub \subcol{
+                                    f: S \to T \\
+                                    \hline
+                                    \operatorname{eq-cong}(S, T, f, x, y, u) := \cdots: f x =_{T} f y``
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+            $$
+
+        2. 序关系：定义拟序（$\operatorname{pre-ord}$）、偏序（$\operatorname{part-ord}$）与全序（$\operatorname{total-ord}$）如下
+
+            $$
+            \fitch{
+                \subcol{
+                    S: *_{s}
+                    \startsub \hline \subcol{
+                        \leqslant: S \to S \to *_{p} \\
+                        \hline
+                        \operatorname{pre-ord} (S, \leqslant) := \operatorname{refl} (S, \leqslant) \wedge \operatorname{trans} (S, \leqslant): *_{p} \\
+                        \operatorname{part-ord} (S, \leqslant) := \operatorname{pre-ord} (S, \leqslant) \wedge \operatorname{anti-symm} (S, \leqslant): *_{p} \\
+                        \operatorname{total-ord} (S, \leqslant) := \operatorname{part-ord} (S, \leqslant) \wedge (\forall x: S. \forall y: S. (x \leqslant y \vee y \leqslant x)): *_{p} \\
+                    }
+                }
+            }
+            $$
+
+2. 子集
 
 ## 3.3 数与算术
