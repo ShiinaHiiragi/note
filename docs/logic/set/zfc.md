@@ -15,7 +15,7 @@
 
             $\exists x \ (x < A \wedge \varphi(x))$ 简写为 $\exists x < A \ \varphi(x)$
 
-        4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists !x \ \varphi(x)$
+        4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists^{1} x \ \varphi(x)$
 
 2. $\mathbf{ZFC}$ 公理
     1. 存在公理（$\text{Exi}$）：存在一个集合
@@ -100,13 +100,13 @@
     9. 替换公理模式（$\text{Rep}$）：给定公式 $\psi(x, y)$ 且对任意 $x$ 都有唯一的 $y$ 使得 $\psi(s, y)$ 成立，则对任一集合 $A$，集合 $\{y \mid \exists x \ (x \in A \wedge \psi(x, y))\}$ 存在
 
         $$
-        \forall A \forall x \in A \ \exists !y \ \psi(x, y) \to \exists B \forall x \in A \ \exists y \in B \ \psi(x, y)
+        \forall A \forall x \in A \ \exists^{1} y \ \psi(x, y) \to \exists B \forall x \in A \ \exists y \in B \ \psi(x, y)
         $$
 
     10. 选择公理（$\mathbf{AC}$）对任一集合 $X \neq \varnothing$，如果有 $\varnothing \neq X$ 且若 $x, y \in X, x \neq y$，则 $x \cap y = \varnothing$，则存在集合 $S$，对任意 $x \in X$，$S \cap x$ 是单点集
 
         $$
-        \forall x \ (\varnothing \notin X \wedge \forall x \in X \ \forall y \in X \ (x \cap y = \varnothing) \to \exists S \forall x \in X \ \exists !y \ (S \cap x = \{y\}))
+        \forall x \ (\varnothing \notin X \wedge \forall x \in X \ \forall y \in X \ (x \cap y = \varnothing) \to \exists S \forall x \in X \ \exists^{1} y \ (S \cap x = \{y\}))
         $$
 
         !!! note "选择公理的等价形式"
