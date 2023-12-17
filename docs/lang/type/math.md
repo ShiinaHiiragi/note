@@ -475,6 +475,48 @@ $$
             }
             $$
 
-2. 子集
+2. 作为谓词的子集：设集合 $V \subseteq S$，将 $\operatorname{element} (S, x, V)$ 简记为 $x \ \varepsilon_{S} \ V$ 或 $x \ \varepsilon \ V$，并将 $\lambda x: S.V x$ 记作 $\{x: S \mid x \ \varepsilon \ V\}$
+
+    $$
+    \fitch{
+        \subcol{
+            S: *_{s} \\
+            \hline
+            \mathcal P(S) := S \to *_{p}: \square
+            \startsub \subcol{
+                V, W: \mathcal P(S)
+                \startsub \hline \subcol{
+                    x: S \\
+                    \hline
+                    \operatorname{element} (S, x, V) := V x: *_{p}
+                }
+                \endsub
+                \subseteq(S, V, W) := \forall x: S.(x \ \varepsilon \ V \to x \ \varepsilon \ W): *_{p} \\
+                =(S, V, W) := (V \subseteq W \wedge W \subseteq V): *_{p} \\
+                \cup(S, V, W) := \{x: S \mid x \ \varepsilon \ V \vee x \ \varepsilon \ W\}: \mathcal P(S) \\
+                \cap(S, V, W) := \{x: S \mid x \ \varepsilon \ V \wedge x \ \varepsilon \ W\}: \mathcal P(S) \\
+                -(S, V, W) := \{x: S \mid x \ \varepsilon \ V \wedge \neg(x \ \varepsilon \ W)\}: \mathcal P(S) \\
+                '(S, V) := \{x: S \mid \neg(x \ \varepsilon \ V)\}: \mathcal P(S) \\
+                \textsf{以上分别简记为 } V \subseteq W, V = W, V \cup W, V \cap W, V - W \textsf{ 以及 } V'
+            }
+        }
+    }
+    $$
+
+    1. $\varepsilon$ 的引入与消去规则
+    2. $\text{Leibniz}$ 等词 $\widehat{=}_{\mathcal P(S)}$
 
 ## 3.3 数与算术
+
+<script>
+(function align() {
+  let display = document.querySelectorAll("mjx-container[display='true']");
+  if (display.length === 0) {
+    setTimeout(align, 100);
+  } else {
+    display.forEach((item) => {
+        item.style.setProperty("margin-left", "0", "important");
+    })
+  }
+})()
+</script>
