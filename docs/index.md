@@ -53,7 +53,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，现处于第一阶段"
-    <label> 现在进度：类型论 · 依值类型论 </label>
+    <label> 现在进度：符号学 · 符号句法学 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
@@ -452,8 +452,7 @@ const refList = [
         page: [1, 409],
         year: 2014,
         press: "Cambridge University Press",
-        locate: "Cambridge",
-        plot: 305
+        locate: "Cambridge"
     },
     {
         author: ["Hanne Riis Nielson", "Flemming Nielson"],

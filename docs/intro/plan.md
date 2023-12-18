@@ -1,9 +1,9 @@
 # 进度记录
 
 ## 理论计算机科学侧
-- 认识基础进路：<a target="_blank" href="lean-lang.org/functional_programming_in_lean/getting-to-know/structures.html">LEAN</a>
+- 认识基础进路：[LEAN](https://lean-lang.org/functional_programming_in_lean/getting-to-know/structures.html)
 - 形而上学进路：符号学
-- 语言学进路：类型论 → 句法学 → 语义学
+- 语言学进路：句法学 → 语义学
 
 ## 逻辑学侧
 - 逻辑学进路：结构证明论 → 模型论 → 递归论 → 数理逻辑 → 集合论 → 反推数学
@@ -53,3 +53,16 @@
 #### 3 流形的上同调
 
 #### 4 流形的椭圆算子
+
+<script>
+(function align() {
+  let display = document.querySelectorAll("a");
+  if (display.length === 0) {
+    setTimeout(align, 100);
+  } else {
+    display.forEach((item) => {
+        item.target = "_blank";
+    })
+  }
+})()
+</script>

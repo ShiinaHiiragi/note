@@ -187,17 +187,6 @@
 #### 3 代数密码学
 
 ## 第八部分 语言学
-### 一、类型论
-
-!!! note "参考文献"
-    『Type Theory and Formal Proof: an Introduction』（Rob Nederpelt、Herman Geuvers）
-
-#### 1 一般类型论
-
-#### 2 依值类型论
-
-#### 3 数学基础
-
 ### 三、自然语言
 
 !!! note "参考文献"
