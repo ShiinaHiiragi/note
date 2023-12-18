@@ -415,10 +415,13 @@ $$
                     \operatorname{trans}(S, R) := \forall x: S.\forall y: S.\forall z: S.(R \ x \ y \to R \ y \ z \to R \ x \ z): *_{p} \\
                     \operatorname{anti-refl}(S, R) := \forall x: S. \neg (R \ x \ x): *_{p} \\
                     \operatorname{anti-symm}(S, R) := \forall x: S.\forall y: S.(R \ x \ y \to R \ y \ x \to x = y): *_{p} \\
+                    \operatorname{equiv}(S, R) := \operatorname{refl} (S, R) \wedge \operatorname{symm} (S, R) \wedge \operatorname{trans} (S, R): *_{p}
                 }
             }
         }
         $$
+
+        子集上的性质同理可得
 
         1. 集合 $S: *_{s}$ 上的等词是一个等价关系，且具有替换性（$\operatorname{eq-subs}$）与一致性（$\operatorname{eq-cong}$）
 
@@ -458,18 +461,24 @@ $$
             }
             $$
 
-        2. 序关系：定义拟序（$\operatorname{pre-ord}$）、偏序（$\operatorname{part-ord}$）与全序（$\operatorname{total-ord}$）如下
+        2. 映射：映射 $R: S \to T \to *_{p}$ 与类型论函 $F: S \to T$ 数可以建立一一对应
 
             $$
             \fitch{
                 \subcol{
-                    S: *_{s}
+                    S, T: *_{s}
                     \startsub \hline \subcol{
-                        \leqslant: S \to S \to *_{p} \\
+                        F: S \to T \\
                         \hline
-                        \operatorname{pre-ord} (S, \leqslant) := \operatorname{refl} (S, \leqslant) \wedge \operatorname{trans} (S, \leqslant): *_{p} \\
-                        \operatorname{part-ord} (S, \leqslant) := \operatorname{pre-ord} (S, \leqslant) \wedge \operatorname{anti-symm} (S, \leqslant): *_{p} \\
-                        \operatorname{total-ord} (S, \leqslant) := \operatorname{part-ord} (S, \leqslant) \wedge (\forall x: S. \forall y: S. (x \leqslant y \vee y \leqslant x)): *_{p} \\
+                        R(S, T, F) := \lambda x: S.\lambda y: T.(y =_{T} F x): S \to T \to *_{p}
+                    }
+                    \startsub \subcol{
+                        R: S \to T \to *_{p}
+                        \startsub \hline \subcol{
+                            u: \forall x: S.\exists^{1} y: T.R \ x \ y \\
+                            \hline
+                            F(S, T, R, u) := \lambda x: S.\iota(T, R x, ux)
+                        }
                     }
                 }
             }
@@ -489,6 +498,16 @@ $$
                     x: S \\
                     \hline
                     \operatorname{element} (S, x, V) := V x: *_{p}
+                    \startsub \subcol{
+                        u: V x \\
+                        \hline
+                        \varepsilon_{\mathrm{in}}(S, V, x, u) := u: x \ \varepsilon \ \{x: S \mid V x\}
+                    }
+                    \startsub \subcol{
+                        v: (x \ \varepsilon \ \{x: S \mid V x\}) \\
+                        \hline
+                        \varepsilon_{\mathrm{el}} := v: V x
+                    }
                 }
                 \endsub
                 \subseteq(S, V, W) := \forall x: S.(x \ \varepsilon \ V \to x \ \varepsilon \ W): *_{p} \\
@@ -503,8 +522,45 @@ $$
     }
     $$
 
-    1. $\varepsilon$ 的引入与消去规则
-    2. $\text{Leibniz}$ 等词 $\widehat{=}_{\mathcal P(S)}$
+    1. 子集的 $\text{Leibniz}$ 等词：将 $\operatorname{eq-subset}(S, V, W)$ 简记为 $V \widehat{=}_{\mathcal P(S)} W$
+
+        $$
+        \fitch{
+            \subcol{
+                S: *_{s}
+                \startsub \hline \subcol{
+                    V, W: \mathcal P(S) \\
+                    \hline
+                    \operatorname{eq-subset} (S, V, W) := \Pi K: \mathcal P(S) \to *_{p}.(KV \leftrightarrow KW): *_{p}
+                    \startsub \subcol{
+                        u: V = W \\
+                        \hline
+                        \operatorname{eq-prop} (S, V, W, u) := \bot \!\!\! \bot: V \widehat{=}_{\mathcal P(S)} W
+                    }
+                    \startsub \subcol{
+                        u: V \widehat{=}_{\mathcal P(S)} W \\
+                        \hline
+                        =_{\mathrm{prop}}(S, V, W, u) := \cdots: (V \subseteq W \wedge W \subseteq V)
+                    }
+                }
+            }
+        }
+        $$
+
+        易证 $\text{Leibniz}$ 等词蕴含子集等词 $=$，但反之无法证明，因此需要单独设置公理
+
+    2. 空集与全集：对于集合 $S: *_{s}$，全集 $\operatorname{full-set} (S)$ 为包含 $S$ 中所有元素的集合，将 $\varnothing(S)$ 简记为 $\varnothing_{S}$
+
+        $$
+        \fitch{
+            \subcol{
+                S: *_{s} \\
+                \hline
+                \varnothing(S) := \{x: S \mid \bot\}: \mathcal P(S) \\
+                \operatorname{full-set} (S) := \{x: S \mid \neg \bot\}: \mathcal P(S)
+            }
+        }
+        $$
 
 ## 3.3 数与算术
 
