@@ -570,6 +570,7 @@ $$
   } else {
     display.forEach((item) => {
         item.style.setProperty("margin-left", "0", "important");
+        item.style.setProperty("text-align", "left", "important");
     })
   }
 })()
