@@ -427,6 +427,15 @@ const refList = [
         locate: "上海"
     },
     {
+        author: ["苏淳", "冯群强"],
+        title: "概率论",
+        type: "M",
+        page: [1, 292],
+        year: 2020,
+        press: "科学出版社",
+        locate: "北京"
+    },
+    {
         author: ["李贤平"],
         title: "概率论基础",
         type: "M",

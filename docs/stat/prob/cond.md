@@ -3,45 +3,30 @@
 ## 4.1 经典定义
 1. 条件概率：设 $(\Omega, \mathscr{F}, P)$ 是一个概率空间且 $B \in \mathscr{F}, P(B)>0$，记条件概率 $P_{B}(A)=P(A \mid B)=\dfrac{P(A B)}{P(B)}$
     1. 条件概率的性质
-        1. 固定 $B$ 让 $A$ 在 $\mathscr{F}$ 中变化时，条件概率 $P_{B}(\cdot)$ 也是 $(\Omega, \mathscr{F})$ 上的概率测度
-        2. 设 $\{A_n\}_{n \geqslant 1}$ 是互不相交的集合列，$A_n\cap A_m =\varnothing, n\neq m$，于是 ${\displaystyle P\left(\left. \bigcup_{n=1}^\infty A_n \ \right| \ A\right)=\sum_{n=1}^\infty P(A_n \mid A)}$
-    2. 乘法公式：设 $\{A_n\}_{n \geqslant 1}$ 是 $\mathscr{F}$ 的一个事件列，则 $P(A_1A_2\cdots A_n)=P(A_1)P(A_2 \mid A_1)\cdots P(A_n \mid A_1A_2\cdots A_{n-1})$
-    3. 全概率公式：设 $\{A_n\}_{n \geqslant 1}$ 构成了 $\Omega$ 上的一个分割，则有 ${\displaystyle P(B)=\sum_{n=1}^\infty P(A_n) \cdot P(B \mid A_n)}$
-    4. $\mathrm{Bayes}$ 公式：设 $\{A_n\}_{n \geqslant 1}$ 是 $\Omega$ 的一个划分，则 $P(A_i \mid B)=\dfrac{P(B \mid A_i) \cdot P(A_i)}{{\displaystyle \sum_{j=1}^\infty P(A_j) \cdot P(B \mid A_j)}}$．其中 $P(A_i)$ 称为先验概率，$P(A_i \mid B)$ 称为后验概率
-2. 条件期望：若 $X(\omega)$ 为（关于 $P$）可积随机变量，则 ${\displaystyle \mathrm{E} [Y \mid X] = \int_{-\infty}^{+\infty}\mathrm dy\cdot y \ P_{Y \mid X}(y \mid x)}$
-    1. 设 $\left\{B_{n}\right\}_{n \geqslant 1}$ 为 $\Omega$ 的可数可测分割，即 $B_{n} \in \mathscr{F},\left\{B_{n}\right\}_{n \geqslant 1}$ 互不相交且 ${\displaystyle \sum_{n \to \infty} B_{n}=\Omega}$，则对 $A \in \mathscr{F}$ 及 $P$ 可积随机变量 $X$ 有
+        1. 设 $\{A_n\}_{n \geqslant 1}$ 是互不相交的集合列，$A_n\cap A_m =\varnothing, n\neq m$，于是 ${\displaystyle P\left(\left. \bigcup_{n=1}^\infty A_n \ \right| \ A\right)=\sum_{n=1}^\infty P(A_n \mid A)}$
+        2. 乘法公式：设 $\{A_n\}_{n \geqslant 1}$ 是 $\mathscr{F}$ 的一个事件列，则 $P(A_1A_2\cdots A_n)=P(A_1)P(A_2 \mid A_1)\cdots P(A_n \mid A_1A_2\cdots A_{n-1})$
+        3. 全概率公式：设 $\{A_n\}_{n \geqslant 1}$ 构成了 $\Omega$ 上的一个分割，则有 ${\displaystyle P(B)=\sum_{n=1}^\infty P(A_n) \cdot P(B \mid A_n)}$
+    2. $\mathrm{Bayes}$ 公式：设 $\{A_n\}_{n \geqslant 1}$ 是 $\Omega$ 的一个划分，则 $P(A_i \mid B)=\dfrac{P(B \mid A_i) \cdot P(A_i)}{{\displaystyle \sum_{j=1}^\infty P(A_j) \cdot P(B \mid A_j)}}$．其中 $P(A_i)$ 称为先验概率，$P(A_i \mid B)$ 称为后验概率
+2. 条件分布：设条件概率 $P_{B}(A)=P(A \mid B)=\dfrac{P(A B)}{P(B)}$，固定 $B$ 并使 $A$ 在 $\mathscr{F}$ 中变化时，$P_{B}$ 也是 $(\Omega, \mathscr{F})$ 上的概率测度，可由随机变量 $X$ 诱导分布函数 $F(x) = P_{B}[X \leqslant x]$
+    1. 二维连续随机向量 $(X, Y)$ 的条件密度：设随机向量 $(X, Y)$ 的联合密度为 $p(x, y)$，边缘分布为 $p_1(x)$ 与 $p_2(y)$
+        1. 若 $P[a < Y \leqslant b] > 0$，则称 $p_1(x \mid [a, b]) = \dfrac{{\displaystyle \int_{a}^{b} p(x, v) \mathrm dv}}{{\displaystyle \int_{a}^{b} p_2(v) \mathrm dv}}$ 为 $X$ 在条件 $a \leqslant Y \leqslant b$ 下的条件密度函数，且有
 
-        $$
-        \begin{aligned}
-        P(A)&=\sum_{n=1}^{\infty} P\left(B_{n}\right) P_{B_{n}}(A) \\
-        \mathrm{E}[X]&=\sum_{n=1}^{\infty} \int_{B_{n}} X(\omega) P(\mathrm{d} \omega)=\sum_{n=1}^{\infty} P\left(B_{n}\right) \mathrm{E}_{B_{n}}[X]
-        \end{aligned}
-        $$
+            $$
+            P[X \leqslant x_{0} \mid a \leqslant Y \leqslant b] = \int_{-\infty}^{x_{0}} p_1(x \mid [a, b]) \mathrm dx
+            $$
 
-    2. 若 $V$ 为离散型随机变量，$B_{n}=\left\{\omega: V=a_{n}\right\}$，且 $\left\{B_{n}\right\}$ 为 $\Omega$ 的分割，则 ${\displaystyle \mathrm{E}\left[X \mid V=a_{n}\right]=\mathrm{E}_{B_{n}}[X]}$
-    3. 考虑 ${\displaystyle \mathrm{E}[X \mid V]=\sum_{n \geqslant 1} \mathrm{E}_{B_{n}}[X] I_{V=a_{n}}=\sum_{n \geqslant 1} \mathrm{E}_{B_{n}}[X] I_{B_{n}}}$，其在 $V$ 取不同值的各种情况下都表示 $X$ 关于 $V$ 的条件期望．此时对 $C \in \sigma(V)$，若 ${\displaystyle C=\sum_{k \geqslant 1} B_{n_{k}}}$，则必有 ${\displaystyle \int_{C} \mathrm{E}[X \mid V] \mathrm{dP}=\sum_{k} \mathrm{E}_{B_{n_{k}}}[X \mid V] P\left(B_{n_{k}}\right)=\sum_{k} \int_{B_{n_{k}}} X \mathrm{dP}=\int_{C} X \mathrm{dP}}$
-    4. 回归：设 $X, Y$ 是两个随机变量，$Y$ 与 $X$ 存在某种关联且 $X$ 可观测．则当且仅当 $f(X)=E[Y\mid X]$ 时，近似 $f(X)$ 的平均误差 $E[|Y-f(X)|^2]$ 最小，称 $E[Y\mid X]$ 为 $Y$ 的一个回归
-        1. 线性回归：现实应用中，常用 $L(X) = aX+b$ 近似 $Y$, 使 $\mathrm{E}[Y-L(X)]^2$ 取最小值，称之为最佳线性预测
-            - 易知 $L(X) = \mathrm{E}Y + r(X, Y) \dfrac{\mathrm{D}Y}{\mathrm{D}X}(X - \mathrm{E}X)$，称其为 $Y$ 的线性回归
+        2. 若 $p_{2}(y_0) > 0$，则称 $p_1(x \mid y_{0}) = \dfrac{p(x, y_{0})}{p_2(y_{0})}$ 为 $X$ 在条件 $Y = y_{0}$ 下的条件密度函数，且有
+
+            $$
+            P[X \leqslant x_0 \mid Y = y_0] = \int_{-\infty}^{x_{0}} p_1(x \mid y_{0}) \mathrm dx
+            $$
+
+    2. 二维连续随机向量 $(X, Y)$ 的条件期望：设随机向量 $(X, Y)$ 的联合密度为 $p(x, y)$，且有 ${\displaystyle \int_{-\infty}^{+\infty} |x| p_1(x \mid y) \mathrm dx} < \infty$，则 $X$ 在在条件 $Y = y_{0}$ 下的条件期望 $\mathrm{E}[X \mid Y] = \mathrm{E}[X \mid Y = y_{0}] = {\displaystyle \int_{-\infty}^{+\infty} x p_1(x \mid y_{0}) \mathrm dx}$
+        1. 全期望公式：若二维随机向量 $(X, Y)$ 有 $\mathrm{E} X, \mathrm{E} Y < \infty$ 且在任何条件 $Y = y$ 下都有 $g(y) = E[X \mid Y]$ 存在，则 $g(Y)$ 是一个随机变量且 $\mathrm{E}[\mathrm{E}[X \mid Y]] = \mathrm{E} X$
+        2. 条件方差：定义 $\mathrm{D}[X \mid Y] = \mathrm{E}[X^{2} \mid Y] - \left(\mathrm{E}[X \mid Y]\right)^{2}$，于是等式 $\mathrm{D} X = \mathrm{D}\left[\mathrm{E}[X \mid Y]\right] + \mathrm{E}\left[\mathrm{D}[X \mid Y]\right]$ 成立
+        3. 回归：设 $X, Y$ 是两个随机变量，$Y$ 与 $X$ 存在某种关联且 $X$ 可观测，则当且仅当 $f(X)=E[Y\mid X]$ 时，$Y$ 的近似 $f(X)$ 的平均误差 $E[|Y-f(X)|^2]$ 最小，称 $E[Y\mid X]$ 为 $Y$ 的一个回归．现实应用中，常用 $L(X) = aX+b$ 近似 $Y$, 使 $\mathrm{E}[Y-L(X)]^2$ 取最小值，称之为最佳线性预测
+            - 易知 $L(X) = \mathrm{E}Y + r(X, Y) \dfrac{\mathrm{D}Y}{\mathrm{D}X}(X - \mathrm{E}X)$，称 $L(X)$ 为 $Y$ 的线性回归
             - 二阶矩理论：$\operatorname{Cov}(L(X), Y - L(X))=0$，说明残差 $Y - L(X)$ 中不再包含对预测 $Y$ 有用的信息
-        2. 条件方差：$\mathrm{D}[Y \mid X]=\mathrm{E}[(Y - \mathrm{E}[Y \mid X])^2 \mid X]$
-
-3. 若 $X=\left(X_{1}, X_{2}\right)$ 为 $\left(\mathbf{R}^{2}, \mathscr{B}^{2}, P\right)$ 上的标准随机变量，且其分布函数 $F$ 绝对连续，即 ${\displaystyle F\left(x_{1}, x_{2}\right)=\int_{-\infty}^{x_{1}} \int_{-\infty}^{x_{2}} f(s, t) \mathrm{d} s \mathrm{d} t}$．其中分布密度 $f$ 为 $\text{Borel}$ 可测的，令
-
-    $$
-    \begin{aligned}
-    f_{1}\left(x_{1}\right)& =\int_{-\infty}^{\infty} f\left(x_{1}, t\right) \mathrm{d} t \\
-    f_{2}\left(x_{2}\right)& =\int_{-\infty}^{\infty} f\left(t, x_{2}\right) \mathrm{d} t \\
-    f_{12}\left(x_{1} \mid x_{2}\right)& = \begin{cases}\dfrac{f\left(x_{1}, x_{2}\right)}{f_{2}\left(x_{2}\right)}, & f_{2}\left(x_{2}\right)>0, \\
-    f_{1}\left(x_{1}\right), & f_{2}\left(x_{2}\right)=0,\end{cases}
-    \end{aligned}
-    $$
-
-    则 $f_{1}\left(x_{1}\right), f_{2}\left(x_{2}\right), f_{12}\left(x_{1} \mid x_{2}\right)$ 为 $\mathbf{R}^{2}$ 上 $\text{Borel}$ 函数．$f_{12}\left(x_{1} \mid x_{2}\right)$ 又称为当 $X_{2}=x_{2}$ 时 $X_{1}$ 的条件分布密度
-
-    1. 若 $B \in \mathscr{B}^{2}, x=\left(x_{1}, x_{2}\right) \in \mathbf{R}^{2}$，令 ${\displaystyle P(x, B)=\int_{\left\{s:\left(s, x_{2}\right) \in B\right\}} f_{12}\left(s \mid x_{2}\right) \mathrm{d} s}$，则对每个 $x \in \mathbf{R}^{2}$，$P(x, B)$ 是 $\mathscr{B}^{2}$ 上概率测度
-    2. 对每个 $B \in \mathscr{B}^{2}$，$P(X, B)$ 是 $\sigma\left(X_{2}\right)$ 可测的，且对 $B \in \mathscr{B}^{2}$ 有 ${\displaystyle \int_{A_{2}} P(X, B) \mathrm{d}P=\int_{A_{2}} P\left(B \mid X_{2}\right) \mathrm{d}P}$，所以 $P(x, B)$ 是 $X$ 关于 $X_{2}$ 的正则条件概率分布
-    3. 对可积随机变量 $Y=h\left(X_{1}, X_{2}\right)$ 有 ${\displaystyle \mathrm{E}\left[h\left(X_{1}, X_{2}\right) \mid X_{2}\right]=\int_{-\infty}^{\infty} h\left(s, X_{2}\right) f_{12}\left(s \mid X_{2}\right) \mathrm{d} s}$
 
 ## 4.2 现代定义
 ### 4.2.1 条件期望与概率
