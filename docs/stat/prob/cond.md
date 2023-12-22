@@ -1,7 +1,6 @@
 # 4 条件期望
 
-## 4.1 条件期望
-### 4.1.1 经典定义
+## 4.1 经典定义
 1. 条件概率：设 $(\Omega, \mathscr{F}, P)$ 是一个概率空间且 $B \in \mathscr{F}, P(B)>0$，记条件概率 $P_{B}(A)=P(A \mid B)=\dfrac{P(A B)}{P(B)}$
     1. 条件概率的性质
         1. 固定 $B$ 让 $A$ 在 $\mathscr{F}$ 中变化时，条件概率 $P_{B}(\cdot)$ 也是 $(\Omega, \mathscr{F})$ 上的概率测度
@@ -27,7 +26,25 @@
             - 二阶矩理论：$\operatorname{Cov}(L(X), Y - L(X))=0$，说明残差 $Y - L(X)$ 中不再包含对预测 $Y$ 有用的信息
         2. 条件方差：$\mathrm{D}[Y \mid X]=\mathrm{E}[(Y - \mathrm{E}[Y \mid X])^2 \mid X]$
 
-### 4.1.2 现代定义
+3. 若 $X=\left(X_{1}, X_{2}\right)$ 为 $\left(\mathbf{R}^{2}, \mathscr{B}^{2}, P\right)$ 上的标准随机变量，且其分布函数 $F$ 绝对连续，即 ${\displaystyle F\left(x_{1}, x_{2}\right)=\int_{-\infty}^{x_{1}} \int_{-\infty}^{x_{2}} f(s, t) \mathrm{d} s \mathrm{d} t}$．其中分布密度 $f$ 为 $\text{Borel}$ 可测的，令
+
+    $$
+    \begin{aligned}
+    f_{1}\left(x_{1}\right)& =\int_{-\infty}^{\infty} f\left(x_{1}, t\right) \mathrm{d} t \\
+    f_{2}\left(x_{2}\right)& =\int_{-\infty}^{\infty} f\left(t, x_{2}\right) \mathrm{d} t \\
+    f_{12}\left(x_{1} \mid x_{2}\right)& = \begin{cases}\dfrac{f\left(x_{1}, x_{2}\right)}{f_{2}\left(x_{2}\right)}, & f_{2}\left(x_{2}\right)>0, \\
+    f_{1}\left(x_{1}\right), & f_{2}\left(x_{2}\right)=0,\end{cases}
+    \end{aligned}
+    $$
+
+    则 $f_{1}\left(x_{1}\right), f_{2}\left(x_{2}\right), f_{12}\left(x_{1} \mid x_{2}\right)$ 为 $\mathbf{R}^{2}$ 上 $\text{Borel}$ 函数．$f_{12}\left(x_{1} \mid x_{2}\right)$ 又称为当 $X_{2}=x_{2}$ 时 $X_{1}$ 的条件分布密度
+
+    1. 若 $B \in \mathscr{B}^{2}, x=\left(x_{1}, x_{2}\right) \in \mathbf{R}^{2}$，令 ${\displaystyle P(x, B)=\int_{\left\{s:\left(s, x_{2}\right) \in B\right\}} f_{12}\left(s \mid x_{2}\right) \mathrm{d} s}$，则对每个 $x \in \mathbf{R}^{2}$，$P(x, B)$ 是 $\mathscr{B}^{2}$ 上概率测度
+    2. 对每个 $B \in \mathscr{B}^{2}$，$P(X, B)$ 是 $\sigma\left(X_{2}\right)$ 可测的，且对 $B \in \mathscr{B}^{2}$ 有 ${\displaystyle \int_{A_{2}} P(X, B) \mathrm{d}P=\int_{A_{2}} P\left(B \mid X_{2}\right) \mathrm{d}P}$，所以 $P(x, B)$ 是 $X$ 关于 $X_{2}$ 的正则条件概率分布
+    3. 对可积随机变量 $Y=h\left(X_{1}, X_{2}\right)$ 有 ${\displaystyle \mathrm{E}\left[h\left(X_{1}, X_{2}\right) \mid X_{2}\right]=\int_{-\infty}^{\infty} h\left(s, X_{2}\right) f_{12}\left(s \mid X_{2}\right) \mathrm{d} s}$
+
+## 4.2 现代定义
+### 4.2.1 条件期望与概率
 1. 条件期望：设 $\mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，$X$ 为（准）可积随机变量，$Y$ 为满足下列条件的随机变量
     1. $Y$ 为 $\mathscr{G}$ 可测的
     2. ${\displaystyle \int_{B} Y \mathrm{dP}=\int_{B} X \mathrm{dP}, \  \forall B \in \mathscr{G}}$
@@ -74,7 +91,7 @@
         2. $P(A \mid \mathscr{G}) \geqslant 0$ $\text{a.s.}$
         3. 对互不相交的事件列 $\left\{A_{n}\right\}$，${\displaystyle P\left(\sum_{n \to \infty} A_{n} \mid \mathscr{G}\right)=\sum_{n \to \infty} P\left(A_{n} \mid \mathscr{G}\right)}$ $\text{a.s.}$
 
-## 4.2 条件概率分布
+### 4.2.2 条件概率分布
 1. 设 $\mathscr{F}_{1}, \mathscr{G}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，$\Omega \times \mathscr{F}_{1}$ 上的函数 $P(\omega, A)$ 若满足
     1. 对每个 $\omega \in \Omega$，$P(\omega, \cdot)$ 是 $\mathscr{F}_{1}$ 上的概率测度
     2. 对每个 $A \in \mathscr{F}_{1}, P(\cdot, A)$ 是 $(\Omega, \mathscr{G})$ 上的可测函数，且 $P(\omega, A)=P(A \mid \mathscr{G})$ $\text{a.s.}$
@@ -94,24 +111,7 @@
 
         若 $X$ 为 $n$ 维随机向量（或随机变量序列），$P_{X}(\omega, A)$ 为 $X$ 关于 $\mathscr{G}$ 的正则条件概率分布，$h$ 为 $\text{Borel}$ 函数，$h(X)$ 准可积，则有 ${\displaystyle \mathrm{E}[h(X) \mid \mathscr{G}]=\int_{\mathbf{R}^{n}\left(\mathbf{R}^{\infty}\right)} h(x) P(\omega, \mathrm{d} x)}$
 
-3. 若 $X=\left(X_{1}, X_{2}\right)$ 为 $\left(\mathbf{R}^{2}, \mathscr{B}^{2}, P\right)$ 上的标准随机变量，且其分布函数 $F$ 绝对连续，即 ${\displaystyle F\left(x_{1}, x_{2}\right)=\int_{-\infty}^{x_{1}} \int_{-\infty}^{x_{2}} f(s, t) \mathrm{d} s \mathrm{d} t}$．其中分布密度 $f$ 为 $\text{Borel}$ 可测的，令
-
-    $$
-    \begin{aligned}
-    f_{1}\left(x_{1}\right)& =\int_{-\infty}^{\infty} f\left(x_{1}, t\right) \mathrm{d} t \\
-    f_{2}\left(x_{2}\right)& =\int_{-\infty}^{\infty} f\left(t, x_{2}\right) \mathrm{d} t \\
-    f_{12}\left(x_{1} \mid x_{2}\right)& = \begin{cases}\dfrac{f\left(x_{1}, x_{2}\right)}{f_{2}\left(x_{2}\right)}, & f_{2}\left(x_{2}\right)>0, \\
-    f_{1}\left(x_{1}\right), & f_{2}\left(x_{2}\right)=0,\end{cases}
-    \end{aligned}
-    $$
-
-    则 $f_{1}\left(x_{1}\right), f_{2}\left(x_{2}\right), f_{12}\left(x_{1} \mid x_{2}\right)$ 为 $\mathbf{R}^{2}$ 上 $\text{Borel}$ 函数．$f_{12}\left(x_{1} \mid x_{2}\right)$ 又称为当 $X_{2}=x_{2}$ 时 $X_{1}$ 的条件分布密度
-
-    1. 若 $B \in \mathscr{B}^{2}, x=\left(x_{1}, x_{2}\right) \in \mathbf{R}^{2}$，令 ${\displaystyle P(x, B)=\int_{\left\{s:\left(s, x_{2}\right) \in B\right\}} f_{12}\left(s \mid x_{2}\right) \mathrm{d} s}$，则对每个 $x \in \mathbf{R}^{2}$，$P(x, B)$ 是 $\mathscr{B}^{2}$ 上概率测度
-    2. 对每个 $B \in \mathscr{B}^{2}$，$P(X, B)$ 是 $\sigma\left(X_{2}\right)$ 可测的，且对 $B \in \mathscr{B}^{2}$ 有 ${\displaystyle \int_{A_{2}} P(X, B) \mathrm{d}P=\int_{A_{2}} P\left(B \mid X_{2}\right) \mathrm{d}P}$，所以 $P(x, B)$ 是 $X$ 关于 $X_{2}$ 的正则条件概率分布
-    3. 对可积随机变量 $Y=h\left(X_{1}, X_{2}\right)$ 有 ${\displaystyle \mathrm{E}\left[h\left(X_{1}, X_{2}\right) \mid X_{2}\right]=\int_{-\infty}^{\infty} h\left(s, X_{2}\right) f_{12}\left(s \mid X_{2}\right) \mathrm{d} s}$
-
-## 4.3 条件独立性
+### 4.2.3 条件独立性
 1. $\mathscr{G}$ 是 $\mathscr{F}$ 的子 $\sigma$ 域，$\left\{\mathscr{G}_{t}\right\}_{t \in T}$ 是 $\mathscr{F}$ 的子 $\sigma$ 域族．若对 $T$ 的任一有限子集 $I$，${\displaystyle P\left(\bigcap_{t \in I} B_{t} \mid \mathscr{G}\right)=\prod_{t \in I} P\left(B_{t} \mid \mathscr{G}\right), \forall B_{t} \in \mathscr{G}_{t}, t \in I}$ 成立，则称 $\left\{\mathscr{G}_{t}\right\}_{t \in T}$ 关于 $\mathscr{G}$ 是条件独立的
     1. 若 $\mathscr{G}=\{\varnothing, \Omega\}$，则 $\left\{\mathscr{G}_{t}\right\}_{t \in T}$ 关于 $\mathscr{G}$ 的条件独立性等价于 $\left\{\mathscr{G}_{t}\right\}_{t \in T}$ 为独立的
     2. 若 $I$ 为 $T$ 的有限子集，则下列事实相互等价

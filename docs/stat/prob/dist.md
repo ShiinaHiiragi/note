@@ -14,7 +14,7 @@
         2. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R^n, \mathscr{B}^n, P_X)\overset{T}{\longrightarrow}(R^n, \mathscr{B}^n)$，若 $T$ 是 $(R^n, \mathscr{B}^n)\to (R^n, \mathscr{B}^n)$ 的一个双射且 $T$ 是一个局部微分同胚，$T$ 存在连续的混合偏导数 $\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}$ 且混合偏导数的行列式不为零．已知 $P_X(x_1, x_2, \cdots, x_n)$，则有 $P_Y(y_1, y_2, \cdots, y_n)=P_X(T^{-1}(y))\left|\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}\right|$
             1. 若 $X_1, X_2, \cdots, X_n$ 是独立的，$f_1, f_2, \cdots, f_n$ 是 $n$ 个可测函数，则 $f(X_1), f(X_2), \cdots, f(X_n)$ 是独立的
             2. 若 $X, Y$ 是独立服从某种分布类型的随机变量，如果 $X+Y$ 也具有该类型的分布，则称随机变量具有再生性．易知二项分布、$\mathrm{Poisson}$ 分布与正态分布分布是具有再生性的
-2. 分布函数：设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$X$ 为有限实值随机变量, 则 $F(x)=P[X \leqslant x]$ 称为 $X$ 的分布函数．若 $X=\left(X_{1}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量，则 $F\left(x_{1}, x_{2}, \cdots, x_{n}\right)=P\left[X_{1} \leqslant x_{1}, X_{2} \leqslant x_{2}, \cdots, X_{n} \leqslant x_{n}\right]$ 称为 $X$ 所诱导的 $n$ 维分布函数
+2. 分布函数：设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$X$ 为有限实值随机变量, 则函数 $F(x)=P[X \leqslant x]$ 称为 $X$ 所诱导的分布函数．若 $X=\left(X_{1}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量，则 $F\left(x_{1}, x_{2}, \cdots, x_{n}\right)=P\left[X_{1} \leqslant x_{1}, X_{2} \leqslant x_{2}, \cdots, X_{n} \leqslant x_{n}\right]$ 称为 $X$ 所诱导的 $n$ 维分布函数
     1. 设 $F(x)$ 为离散随机变量 $X$ 的分布函数
         1. $F(x)$ 单调递增
         2. ${\displaystyle \lim _{x \rightarrow-\infty} F(x)=0, \lim _{x \rightarrow+\infty} F(x)=1}$
@@ -74,7 +74,7 @@
         3. 无记忆性: $P[T_1=n+m \mid T_1\geqslant m]=p\cdot q^n$
         4. 若 $P[T_1=n+1 \mid T_1>n]=a$，则 $T_1$ 必然服从几何分布
     3. 分布特征：$\mathrm{E}X=\dfrac{1}{p}, \ \mathrm{D}X=\dfrac{q}{p^2}, \ \varphi_X(t) = \dfrac{p\mathrm{e}^{\mathrm{i}t}}{1-q\mathrm{e}^{\mathrm{i}t}}$
-5. $\text{Pascal}$ 分布：$X \sim \operatorname{NB}(r, p)$
+5. 负二项分布（$\text{Pascal}$ 分布）：$X \sim \operatorname{NB}(r, p)$
     1. 随机变量 $X: \Omega^{\mathbf N} \to \mathbf R$ 表示可数次独立 $\mathrm{Bernoulli}$ 试验中成功的次数，随机变量 $T_m: \Omega^{\mathbf N} \to \mathbf R$ 表示可数次独立 $\mathrm{Bernoulli}$ 试验中第 $m$ 次成功的位次，则 $P[T_m=k]=f(k;m,p)=C_{k-1}^{m-1}\cdot p^m(1-p)^{k-m}$
     2. 分布特征：$\mathrm{E}X=\dfrac{r}{p}, \ \mathrm{D}X=\dfrac{rq}{p^2}, \ \varphi_X(t) = \left(\dfrac{p\mathrm{e}^{\mathrm{i}t}}{1-q\mathrm{e}^{\mathrm{i}t}}\right)^{r}$
 6. $\text{Poisson}$ 分布：$X \sim P(\lambda)$
