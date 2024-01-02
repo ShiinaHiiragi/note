@@ -10,15 +10,15 @@
 ## 2.1 简单命题
 ### 2.1.1 直言命题
 1. 概念：断定事物具有某种性质的命题，具有主项 $S$，谓项 $P$，联项和量项
-    1. 根据联项（是或不是）的不同，可以分为肯定命题或否定命题，根据量项（所有或有的）的不同，可以分为全程命题（包括单称命题）或特称命题
+    1. 根据联项（是或不是）的不同，可以分为肯定命题或否定命题，根据量项（所有或有的）的不同，可以分为全称命题（包括单称命题）或特称命题
     2. 周延性：在一个命题中，其主项或谓项的全部外延被做了断定，那么这个命题的主项或谓项就是周延的
-2. 四种命题形式：全称肯定命题（$\text{SAP}$，左上），全称否定命题（$\text{SEP}$，右上），特称肯定命题（$\text{SIP}$ 左下）以及特称否定命题（$\text{SOP}$，右下）
-    1. 利用韦恩图，可以表示概念外延间各种不同关系的图解。其中利用阴影部分表示不存在，用 「$+$」 表示存在
+2. 四种命题形式：全称肯定命题（$\text{SAP}$），全称否定命题（$\text{SEP}$），特称肯定命题（$\text{SIP}$）以及特称否定命题（$\text{SOP}$）
+    1. 利用 $\text{Venn}$ 图，可以表示概念外延间各种不同关系的图解。其中利用阴影部分表示不存在，用 「$+$」 表示存在
     2. 就主项而言，全称命题是周延的；就谓项而言，否定命题是周延的
 
     <figure markdown>
-        ![](../assets/prop_class.png)
-        <style> img[src$="prop_class.png"] { width: 600px; } </style>
+        ![](../assets/prop.svg)
+        <style> img[src$="prop.svg"] { width: 450px; } </style>
     </figure>
 
 3. 从下表主谓项之间的关系与不同命题形式之间的真假关系， 可以看出以下命题形式之间的关系，称之为逻辑方阵
@@ -35,15 +35,10 @@
 
     </div>
 
-    1. 反对关系：指全称肯定命题与全称否定命题
-    2. 矛盾关系：指全称肯定命题与特称否定命题或全称否定命题与特称肯定命题
-    3. 差等关系：指全称肯定命题与特称肯定命题或全称否定命题与特称否定命题
-    4. 下反对关系：指特称肯定命题与特称否定命题
-
-    <figure markdown>
-        ![](../assets/relation.png)
-        <style> img[src$="relation.png"] { width: 240px; } </style>
-    </figure>
+    1. 反对关系：全称肯定命题与全称否定命题
+    2. 矛盾关系：全称肯定命题与特称否定命题或全称否定命题与特称肯定命题
+    3. 差等关系：全称肯定命题与特称肯定命题或全称否定命题与特称否定命题
+    4. 下反对关系：特称肯定命题与特称否定命题
 
 4. 直言命题的推理
     1. 命题变形法：两种方法可以结合使用
@@ -205,12 +200,6 @@
     2. 可能否定命题：$S$ 不是 $P$ 是可能的，记作「可能 $\overline{p}$」，写作 $\lozenge \overline{p}$
     3. 必然肯定命题：$S$ 是 $P$ 是必然的，记作「必然 $p$」，写作 $\square p$
     4. 必然否定命题：$S$ 不是 $P$ 是必然的，记作「必然 $\overline{p}$」，写作 $\square \overline{p}$
-
-    <figure markdown>
-        ![](../assets/modal.png)
-        <style> img[src$="modal.png"] { width: 240px; } </style>
-    </figure>
-
 3. 模态推理：根据模态命题的性质及其相互间的逻辑关系进行推演
     1. 根据矛盾关系的直接推理：$\square p\leftrightarrow \overline{\lozenge \overline{p}}, \overline{\square p}\leftrightarrow \lozenge \overline{p}, \square \overline{p}\leftrightarrow \overline{\lozenge p}, \overline{\square \overline{p}}\leftrightarrow \lozenge p$
     2. 根据反对关系的直接推理：$\square p\to \overline{\square \overline{p}}, \square \overline{p} \to \overline{\square p}$
@@ -236,12 +225,6 @@
     2. 下反对关系：一个错误，另一个就正确；一个正确，另一个正确与否不定
     3. 差等关系：「必须」命题正确，则「允许」命题必正确；「必须」命题不正确，则「允许」命题正确与否不定；「允许」命题正确，「必须」命题正确与否不定；「允许」命题错误，则「必须」命题必不正确
     4. 矛盾关系：一个正确，另一个不正确；反之亦然
-
-        <figure markdown>
-            ![](../assets/normative.png)
-            <style> img[src$="normative.png"] { width: 240px; } </style>
-        </figure>
-
 3. 规范推理：以规范命题为其前提和结论的演绎推理，其前提至少有一个是规范命题
     1. 根据规范命题矛盾关系的直接推理：$O_p\leftrightarrow \overline{P_\overline{p}}, \overline{O_p}\leftrightarrow P_\overline{p}, O_\overline{p}\leftrightarrow \overline{P_p}, \overline{O_\overline{p}}\leftrightarrow P_p$
     2. 根据规范命题反对关系的直接推理：$O_p\to \overline{O_\overline{p}}, O_\overline{p} \to \overline{O_p}$

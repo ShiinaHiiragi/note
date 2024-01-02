@@ -361,14 +361,14 @@ window.cookie_callback = (param) => {
     !!! note ""
         === "正确示例"
             <figure markdown>
-                ![](../assets/favicon.png)
-                <style> img[src$="favicon.png"] { width: 48px; } </style>
+                ![](../assets/favicon.svg)
+                <style> img[src$="favicon.svg"] { width: 48px; } </style>
             </figure>
         === "LaTeX"
             ```html
             <figure markdown>
-                ![](../assets/favicon.png)
-                <style> img[src$="favicon.png"] { width: 48px; } </style>
+                ![](../assets/favicon.svg)
+                <style> img[src$="favicon.svg"] { width: 48px; } </style>
             </figure>
             ```
 
