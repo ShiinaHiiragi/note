@@ -162,8 +162,8 @@
             $\text{Atkinson}$ 与 $\text{Shiffrin}$ 提出的三种记忆的关系如下图所示
 
             <figure markdown>
-                ![](../assets/memory.png)
-                <style> img[src$="memory.png"] { width: 480px; } </style>
+                ![](../assets/memory.svg)
+                <style> img[src$="memory.svg"] { width: 480px; } </style>
             </figure>
 
 3. 记忆的脑机制：海马区是长时记忆的暂时场所，信息最终存在于大脑皮层的相关部位，表达记忆信息需从前额叶皮层表达
