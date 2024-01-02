@@ -44,12 +44,6 @@
 
 ### 3.1.1 平面直线
 1. 平面直线的一般方程：$Ax + By + C = 0 \ (A^2 + B^2 \neq 0)$
-
-    <figure markdown>
-        ![](../assets/line.png)
-        <style> img[src$="line.png"] { width: 280px; } </style>
-    </figure>
-
     1. 斜率与倾角：当 $B \neq 0$ 时，称 $k = -\dfrac{A}{B}$ 为直线的斜率，称 $\arctan k$ 为直线的倾角 $\theta$，后者是 $l$ 上方向向量与基 $\boldsymbol e_1$ 的夹角，且其取值范围为 $\left[\left. 0, \dfrac{\pi}{2}\right)\right. \cup \left( \dfrac{\pi}{2}, \pi\right)$；当 $B = 0$ 时，称直线 $l$ 的斜率不存在，倾角为 $\dfrac{\pi}{2}$
     2. 法线与法距：称过点 $O$ 且与直线 $l$ 垂直于点 $N$ 的直线为 $l$ 的法线．定义法线的辐角为 $x$ 轴对应的基 $\boldsymbol e_1$ 逆时针旋转到法向量 $\overrightarrow{ON}$ 经过的角度，并定义法距为 $|\overrightarrow{ON}| = \dfrac{\left|C\right|}{\sqrt{A^2+B^2}}$
     3. 直线的截距：称直线与坐标轴的交点（如果存在）对应的实数为直线的截距
@@ -241,12 +235,6 @@
 
 ### 3.1.3 椭圆与圆
 1. 椭圆的定义：设 $F_1, F_2$ 为两点，则到两点的距离之和为定长的点集称为椭圆．称点 $F_1, F_2$ 为焦点，$|\overrightarrow{F_1 F_2}|$ 为焦距，焦距的一半称为半焦距
-
-    <figure markdown>
-        ![](../assets/ellipse.png)
-        <style> img[src$="ellipse.png"] { width: 320px; } </style>
-    </figure>
-
     1. 标准方程：设定长为 $a$，令 $b = \sqrt{a^2 - c^2} > 0$
 
         <div class="text-table">
@@ -301,12 +289,6 @@
 
 ### 3.1.4 双曲线
 1. 双曲线：设 $F_1, F_2$ 为两点，则到两点的距离之差的绝对值为定长的点集称为双曲线．称点 $F_1, F_2$ 为焦点，$|\overrightarrow{F_1 F_2}|$ 为焦距，焦距的一半称为半焦距
-
-    <figure markdown>
-        ![](../assets/hyperbola.png)
-        <style> img[src$="hyperbola.png"] { width: 300px; } </style>
-    </figure>
-
     1. 标准方程
 
         <div class="text-table">
@@ -345,12 +327,6 @@
 
 ### 3.1.5 抛物线
 1. 抛物线：设 $F$ 是一个点，$l$ 为一条直线．则到点 $F$ 的距离等于到直线 $l$ 距离的点集称为抛物线．称点 $F$ 为焦点，直线 $l$ 为准线
-
-    <figure markdown>
-        ![](../assets/parabola.png)
-        <style> img[src$="parabola.png"] { width: 320px; } </style>
-    </figure>
-
     1. 标准方程
 
         <div class="text-table">
