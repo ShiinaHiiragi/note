@@ -282,12 +282,6 @@
         2. 称线段 $\overline{B_1B_2}$ 为椭圆的短轴，其长度为 $2b$，并称 $b$ 为椭圆 $E$ 的半短轴长
     3. 离心率：设半焦距 $c = \sqrt{a^2 - b^2}$，定义椭圆 $E$ 的离心率为椭圆上的点到焦点的距离与到准线的距离之比 $e = \dfrac ca \in (0, 1)$．取 $e = 0$，则椭圆退化为圆
 3. 圆的定义：到顶点距离为定长的点集，称该定长为圆的半径
-
-    <figure markdown>
-        ![](../assets/circle.png)
-        <style> img[src$="circle.png"] { width: 320px; } </style>
-    </figure>
-
     1. 标准方程：圆心坐标为 $(a, b)$，半径为 $r$ 的圆方程为 $(x - a)^2 + (y - b)^2 = r^2$
     2. 一般方程：$C: x^2 + y^2 + Dx + Ey + F = 0$，设 $\Delta = D^2 + E^2 - 4F$
         1. 若 $\Delta > 0$，方程的轨迹是一个圆，且圆心坐标为 $\left(-\dfrac D2, - \dfrac E2\right)$，半径为 $\dfrac{\sqrt{D^2 + E^2 - 4F}}{2}$
@@ -295,7 +289,6 @@
         3. 若 $\Delta < 0$，则方程没有实数解，此时称之为虚圆
     3. 极坐标方程：圆心坐标为 $(\rho_0, \theta_0)$，半径为 $r$ 的圆的极坐标方程为 $\rho^2 - 2\rho_0\rho \cos(\theta - \theta_0) + \rho_0^2 = r^2$
     4. 参数方程：圆心坐标为 $(a, b)$，半径为 $r$ 的圆的参数方程为 $C: \left\{\begin{aligned} & x = a + r\cos \theta \\ & y = b + r\sin\theta \end{aligned}\right.$
-
 4. 圆的性质：设 $C: (x - a)^2 + (y - b)^2 = r^2$ 是一个圆
     1. 圆与点的关系：设 $M(x_0, y_0)$ 是一个点，$(x - a)^2 + (y - b)^2 = r^2$ 是一个圆
         1. 点在圆外当且仅当 $(x_0 - a)^2 + (y_0 - b)^2 > r^2$
