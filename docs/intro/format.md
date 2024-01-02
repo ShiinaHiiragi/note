@@ -356,26 +356,26 @@ window.cookie_callback = (param) => {
             - 若 {--$a = pb + r$&ensp;，--}则 $(a, b) = (b, r)$
             - 若记 $\mathscr P$ 为 $X$ 中所有单点子集构成的族，那么 $Y^X$ 的点式收敛拓扑恰好是 $\mathscr{T_P}$。因此点式收敛拓扑也被称作{--点 $-$ 开拓扑--}
 
-3. 图片：使用 `figure` 标签插入图片，`.` 为当前文件所在目录
+3. 图片：原则上正文只插入 Inkscape 绘制的矢量图像。使用 `figure` 标签插入图片，`.` 为当前文件所在目录
 
     !!! note ""
-        === "正确示例"
+        === "示例"
             <figure markdown>
-                ![](../assets/favicon.svg)
-                <style> img[src$="favicon.svg"] { width: 48px; } </style>
+                ![](../assets/favicon.png)
+                <style> img[src$="favicon.png"] { width: 48px; } </style>
             </figure>
         === "LaTeX"
             ```html
             <figure markdown>
-                ![](../assets/favicon.svg)
-                <style> img[src$="favicon.svg"] { width: 48px; } </style>
+                ![](../assets/favicon.png)
+                <style> img[src$="favicon.png"] { width: 48px; } </style>
             </figure>
             ```
 
 4. 表格：为使表格居中，必须设置表格的 `text-align` 属性
 
     !!! note ""
-        === "正确示例"
+        === "示例"
             <div class="text-table">
 
             |  $x$  | $f(x) = x^2$ | $g(x) = x^3$ |
