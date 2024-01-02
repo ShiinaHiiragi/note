@@ -221,7 +221,12 @@
         1. 在 $(H, \tau)$ 中选一组标准基 $\left\{e_1, e_2, \cdots, e_n\right\}$ 扩充成 $V$ 的一组基 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$，命 $A_i=\left[e_i\right](i=0,1,2, \cdots, n)$ 及 $E=\left[e_0+e_1+e_2+\cdots+e_n\right]$，称 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 为 $E^n$ 的 $\text{Descartes}$ 坐标系．对 $\forall P=[a] \in E^n$，设 ${\displaystyle a=e_0+\sum_{i=1}^n x_i e_i}$，则 $\left(x_1, x_2, \cdots, x_n\right)$ 称为点 $P=[a]$ 的 $\text{Descartes}$ 坐标
         2. 在 $(H, \tau)$ 中选一组标准正交基 $\left\{e_1, e_2, \cdots, e_n\right\}$ 扩充成 $V$ 的一组基 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$，命 $A_i=\left[e_i\right](i=0,1,2, \cdots, n)$ 及 $E=\left[e_0+e_1+e_2+\cdots+e_n\right]$，称 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 为 $E^n$ 的 $\text{Descartes}$ 直角坐标系．对 $\forall P=[a] \in E^n$，设 ${\displaystyle a=e_0+\sum_{i=1}^n x_i e_i}$，则 $\left(x_1, x_2, \cdots, x_n\right)$ 称为点 $P=[a]$ 的 $\text{Descartes}$ 直角坐标
 2. $\text{Euclid}$ 空间下的坐标系
-    1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
+    1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基向量 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
+
+        <figure markdown>
+            ![](../assets/two-cord.svg)
+            <style> img[src$="two-cord.svg"] { width: 280px; } </style>
+        </figure>
 
         <div class="text-table">
 
@@ -232,7 +237,7 @@
 
         </div>
 
-    2. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系．习惯称基 $\boldsymbol e_1, \boldsymbol e_2$ 与 $\boldsymbol e_3$ 对应的三个坐标轴为 $x$ 轴，$y$ 轴与 $z$ 轴，记坐标系为 $Oxyz$．三个坐标轴将平面分成八个卦限
+    2. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系．习惯称基向量 $\boldsymbol e_1, \boldsymbol e_2$ 与 $\boldsymbol e_3$ 对应的三个坐标轴为 $x$ 轴，$y$ 轴与 $z$ 轴，记坐标系为 $Oxyz$．三个坐标轴将平面分成八个卦限
 
         <div class="text-table">
 
@@ -346,5 +351,5 @@
     2. 特殊的线性变换
         - 正交变换：恒同变换、旋转变换、中心对称变换、反射变换
 
-[^1]: 三点形：平面内不共线的三点与其每两点的连线所组成的图形，同理可得到 $n$ 点形与 $n$ 线形的定义
+[^1]: 三点形：平面内不共线的三点与其每两点的连线所组成的图形，同理可得 $n$ 点形与 $n$ 线形的定义
 [^2]: 其他资料也将「刚体变换」称为「欧氏变换」．此名词在本页面从未被引入，且与「$\text{Euclid}$ 变换」不同义
