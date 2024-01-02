@@ -75,8 +75,8 @@
     6. 递归可枚举集之外，还存在非递归可枚举集即任何语言
 
     <figure markdown>
-        ![](../assets/spec.png)
-        <style> img[src$="spec.png"] { width: 300px; } </style>
+        ![](../assets/spec.svg)
+        <style> img[src$="spec.svg"] { width: 300px; } </style>
     </figure>
 
 ## 1.2 正则文法
@@ -279,8 +279,8 @@
     - $F \subseteq Q$ 是终结状态集
 
     <figure markdown>
-        ![](../assets/pda.png)
-        <style> img[src$="pda.png"] { width: 420px; } </style>
+        ![](../assets/pda.svg)
+        <style> img[src$="pda.svg"] { width: 360px; } </style>
     </figure>
 
     1. 转移函数的一般形式为 $\delta(q, a, Z) = \{(p_1, \gamma_1), (p_2, \gamma_2), \cdots, (p_m, \gamma_m)\}$，其中 $q \in Q, a \in \Sigma \cup \{\varepsilon\}, Z \in \Gamma, p_i \in Q$ 且有 $\gamma_i \in \Gamma^* \ (i = 1, 2, \cdots, m, m \geqslant 0)$，表示当下推自动机的当前状态为 $q$，读头读到输入符号为 $a$ 且栈顶符号为 $Z$ 时
@@ -533,8 +533,8 @@
     - $r \in Q$ 是拒绝状态
 
     <figure markdown>
-        ![](../assets/tm.png)
-        <style> img[src$="tm.png"] { width: 420px; } </style>
+        ![](../assets/tm.svg)
+        <style> img[src$="tm.svg"] { width: 320px; } </style>
     </figure>
 
     1. $\text{Turing}$ 机的格局（$\text{ID}$）是一个特殊的符号串 $\alpha_1 q \alpha_2$，其中 $q \in Q, \alpha_1, \alpha_2 \in \Gamma^*$
