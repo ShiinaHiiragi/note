@@ -49,7 +49,7 @@
         2. 如果 $V$ 和 $V^{\prime}$ 是同一体上的同维数的线性空间，则射影几何 $\boldsymbol{P}(V)$ 和 $\boldsymbol{P}\left(V^{\prime}\right)$ 同构
 
     3. 齐次向量：$\boldsymbol{P}\left(V^{n+1}\right)$ 中的一个点 $A=[x a]$ 的代表向量 $a$ 称为这点的齐次向量
-        1. $\text{Desargues}$ 定理：设两个三点形 $A B C$ 和 $A^{\prime} B^{\prime} C^{\prime}$ 的三对对边两两相交，交点为 $L=B C \cap B^{\prime} C^{\prime}, M=C A \cap C^{\prime} A^{\prime}$ 与 $N=A B \cap A^{\prime} B^{\prime}$，则这两个三点形对应顶点的连线 $A A^{\prime}, B B^{\prime}, C C^{\prime}$ 共点的充要条件是 $L, M, N$ 三点共线
+        1. $\text{Desargues}$ 定理：设两个三点形[^1] $A B C$ 和 $A^{\prime} B^{\prime} C^{\prime}$ 的三对对边两两相交，交点为 $L=B C \cap B^{\prime} C^{\prime}, M=C A \cap C^{\prime} A^{\prime}$ 与 $N=A B \cap A^{\prime} B^{\prime}$，则这两个三点形对应顶点的连线 $A A^{\prime}, B B^{\prime}, C C^{\prime}$ 共点的充要条件是 $L, M, N$ 三点共线
         2. $\text{Pappus}$ 定理：对于域 $F$ 上的射影几何 $\boldsymbol{P}(V)$, 设 $A, B, C$ 和 $A^{\prime}, B^{\prime}, C^{\prime}$ 分别是两条共面直线 $k$ 和 $k^{\prime}$ 上的点．令 $L=B^{\prime} C \cap B C^{\prime}, M=C^{\prime} A \cap C A^{\prime}$ 以及 $N=A^{\prime} B \ \cap$ $A B^{\prime}$，则 $L, M, N$ 三点共线
 
 2. 交比与调和点列：射影空间中的透视对应保持交比不变
@@ -342,8 +342,9 @@
         - 位似变换：平移变换、恒同变换、各向同性放缩变换
         - 相似变换：平移变换、恒同变换、旋转变换、各向同性放缩变换
         - 合同变换：平移变换、恒同变换、旋转变换、中心对称变换、反射变换
-        - 刚体变换：平移变换、恒同变换、旋转变换
+        - 刚体变换[^2]：平移变换、恒同变换、旋转变换
     2. 特殊的线性变换
         - 正交变换：恒同变换、旋转变换、中心对称变换、反射变换
 
-    注释：其他资料也将「刚体变换」称为「欧氏变换」．此名词在本页面未被引入，且与「$\text{Euclid}$ 变换」不同义
+[^1]: 三点形：平面内不共线的三点与其每两点的连线所组成的图形，同理可得到 $n$ 点形与 $n$ 线形的定义
+[^2]: 其他资料也将「刚体变换」称为「欧氏变换」．此名词在本页面从未被引入，且与「$\text{Euclid}$ 变换」不同义

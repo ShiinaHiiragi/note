@@ -250,7 +250,7 @@
         \vdots & \vdots &  & \vdots \\
         a_{m1} & a_{m2} & \cdots & a_{mn} \\
         \end{bmatrix}
-        \xrightarrow{R_{ij}}
+        \overset{R_{ij}}{\longrightarrow}
         \begin{bmatrix}
         a_{11} & a_{12} & \cdots & a_{1n} \\
         \vdots & \vdots &  & \vdots \\
@@ -272,7 +272,7 @@
         \vdots & \vdots &  & \vdots \\
         a_{m1} & a_{m2} & \cdots & a_{mn} \\
         \end{bmatrix}
-        \xrightarrow{kR_i}
+        \overset{kR_i}{\longrightarrow}
         \begin{bmatrix}
         a_{11} & a_{12} & \cdots & a_{1n} \\
         \vdots & \vdots &  & \vdots \\
