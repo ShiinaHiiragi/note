@@ -220,8 +220,9 @@
     3. $\text{Descartes}$ 坐标系与 $\text{Descartes}$ 坐标：给出一个实 $n+1$ 维线性空间 $V$，$H$ 是它的一个超平面，$V - H$ 确定一个实 $n$ 维仿射空间 $A^n$．在 $H$ 中引进正定内积 $\tau$，使其成为一个 $\text{Euclid}$ 线性空间 $(H, \tau)$, 它确定了仿射空间 $A^n$ 中两点之间的距离，使其成为一个 $\text{Euclid}$ 空间 $E^n$
         1. 在 $(H, \tau)$ 中选一组标准基 $\left\{e_1, e_2, \cdots, e_n\right\}$ 扩充成 $V$ 的一组基 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$，命 $A_i=\left[e_i\right](i=0,1,2, \cdots, n)$ 及 $E=\left[e_0+e_1+e_2+\cdots+e_n\right]$，称 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 为 $E^n$ 的 $\text{Descartes}$ 坐标系．对 $\forall P=[a] \in E^n$，设 ${\displaystyle a=e_0+\sum_{i=1}^n x_i e_i}$，则 $\left(x_1, x_2, \cdots, x_n\right)$ 称为点 $P=[a]$ 的 $\text{Descartes}$ 坐标
         2. 在 $(H, \tau)$ 中选一组标准正交基 $\left\{e_1, e_2, \cdots, e_n\right\}$ 扩充成 $V$ 的一组基 $\left\{e_0, e_1, e_2, \cdots, e_n\right\}$，命 $A_i=\left[e_i\right](i=0,1,2, \cdots, n)$ 及 $E=\left[e_0+e_1+e_2+\cdots+e_n\right]$，称 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 为 $E^n$ 的 $\text{Descartes}$ 直角坐标系．对 $\forall P=[a] \in E^n$，设 ${\displaystyle a=e_0+\sum_{i=1}^n x_i e_i}$，则 $\left(x_1, x_2, \cdots, x_n\right)$ 称为点 $P=[a]$ 的 $\text{Descartes}$ 直角坐标
-2. $\text{Euclid}$ 空间下的坐标系
-    1. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基向量 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
+2. 常见的 $\text{Descartes}$ 直角坐标系
+    1. 数轴：$1$ 维 $\text{Descartes}$ 直角坐标系．由于每个实数与数轴上的点一一对应，因此也将数轴称作（$1$ 维）连续统
+    2. 平面直角坐标系：$2$ 维 $\text{Descartes}$ 直角坐标系．习惯称基向量 $\boldsymbol e_1$ 与 $\boldsymbol e_2$ 对应的两个坐标轴为 $x$ 轴与 $y$ 轴，记坐标系为 $xOy$．两个坐标轴将平面分成四个象限
 
         <figure markdown>
             ![](../assets/two-cord.svg)
@@ -237,7 +238,12 @@
 
         </div>
 
-    2. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系．习惯称基向量 $\boldsymbol e_1, \boldsymbol e_2$ 与 $\boldsymbol e_3$ 对应的三个坐标轴为 $x$ 轴，$y$ 轴与 $z$ 轴，记坐标系为 $Oxyz$．三个坐标轴将平面分成八个卦限
+    3. 空间直角坐标系：$3$ 维 $\text{Descartes}$ 直角坐标系．习惯称基向量 $\boldsymbol e_1, \boldsymbol e_2$ 与 $\boldsymbol e_3$ 对应的三个坐标轴为 $x$ 轴，$y$ 轴与 $z$ 轴，记坐标系为 $Oxyz$．三个坐标轴将平面分成八个卦限
+
+        <figure markdown>
+            ![](../assets/three-cord.svg)
+            <style> img[src$="three-cord.svg"] { width: 280px; } </style>
+        </figure>
 
         <div class="text-table">
 
@@ -250,7 +256,8 @@
 
         </div>
 
-    3. 极坐标系：$E^2$ 中的一个顶点 $O$ 与基 $\boldsymbol e$ 组成了一个极坐标系，称 $O$ 为极点，$\boldsymbol e$ 所在的直线为极轴．任意有序数对 $(\rho, \theta)$（其中 $\rho \geqslant 0, -\pi < \varphi \leqslant \pi$）唯一对应了平面中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$，$\theta$ 为 $\overrightarrow{OP}$ 与 $\boldsymbol e$ 的夹角．并称 $\rho$ 为极径，称 $\theta$ 为极角，称 $(\rho, \theta)$ 为点 $P$ 的极坐标，记作 $P(\rho, \theta)$
+3. $\text{Euclid}$ 空间下的坐标系
+    1. 极坐标系：$E^2$ 中的一个顶点 $O$ 与基 $\boldsymbol e$ 组成了一个极坐标系，称 $O$ 为极点，$\boldsymbol e$ 所在的直线为极轴．任意有序数对 $(\rho, \theta)$（其中 $\rho \geqslant 0, -\pi < \varphi \leqslant \pi$）唯一对应了平面中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$，$\theta$ 为 $\overrightarrow{OP}$ 与 $\boldsymbol e$ 的夹角．并称 $\rho$ 为极径，称 $\theta$ 为极角，称 $(\rho, \theta)$ 为点 $P$ 的极坐标，记作 $P(\rho, \theta)$
         1. 极坐标化为平面直角坐标
 
             $$
@@ -273,7 +280,7 @@
             \end{aligned}\right.
             $$
 
-    4. 球坐标系：$E^3$ 中的一个顶点 $O$ 与不共线的基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个球坐标系，称 $O$ 为原点．设 $\overrightarrow{OP}$ 在 $\mathrm{span}(\boldsymbol e_1, \boldsymbol e_2)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, \theta)$（其中 $\rho \geqslant 0, -\pi<\varphi \leqslant \pi, -\dfrac{\pi}{2} \leqslant \theta \leqslant \dfrac{\pi}{2}$）唯一对应了空间中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$．则 $\varphi$ 表示 $\overrightarrow{OM}$ 与 $\boldsymbol e_1$ 的夹角，$\theta$ 是 $\overrightarrow{OP}$ 与 $\overrightarrow{OM}$ 的夹角．称 $(\rho, \varphi, \theta)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, \theta)$
+    2. 球坐标系：$E^3$ 中的一个顶点 $O$ 与不共线的基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个球坐标系，称 $O$ 为原点．设 $\overrightarrow{OP}$ 在 $\mathrm{span}(\boldsymbol e_1, \boldsymbol e_2)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, \theta)$（其中 $\rho \geqslant 0, -\pi<\varphi \leqslant \pi, -\dfrac{\pi}{2} \leqslant \theta \leqslant \dfrac{\pi}{2}$）唯一对应了空间中的点 $P$，其中 $\rho = |\overrightarrow{OP}|$．则 $\varphi$ 表示 $\overrightarrow{OM}$ 与 $\boldsymbol e_1$ 的夹角，$\theta$ 是 $\overrightarrow{OP}$ 与 $\overrightarrow{OM}$ 的夹角．称 $(\rho, \varphi, \theta)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, \theta)$
         1. 球坐标化为空间直角坐标
 
             $$
@@ -300,7 +307,7 @@
             \end{array}\right.
             $$
 
-    5. 柱坐标系：$E^3$ 中的一个顶点 $O$ 与正交的两个基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个柱坐标系，也称作半极坐标．点 $O$ 与基 $e_1$ 组成一个平面上的极坐标系．设 $\overrightarrow{OP}$ 在 $\mathbf N(\boldsymbol e_1)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, u)$（其中 $\rho \geqslant 0, -\pi< \varphi \leqslant \pi, u \in \mathbf R$）唯一对应了空间中的点 $P$，其中 $(\rho, \varphi)$ 是 $\overrightarrow{OM}$ 在点 $O$ 与基 $e_1$ 形成的极坐标系下的坐标，$|u| = |\overrightarrow{MP}|$．称 $(\rho, \varphi, u)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, u)$
+    3. 柱坐标系：$E^3$ 中的一个顶点 $O$ 与正交的两个基 $\boldsymbol e_1, \boldsymbol e_2$ 组成了一个柱坐标系，也称作半极坐标．点 $O$ 与基 $e_1$ 组成一个平面上的极坐标系．设 $\overrightarrow{OP}$ 在 $\mathbf N(\boldsymbol e_1)$ 的正交投影为 $\overrightarrow{OM}$，则任意 $3$ 元有序组 $(\rho, \varphi, u)$（其中 $\rho \geqslant 0, -\pi< \varphi \leqslant \pi, u \in \mathbf R$）唯一对应了空间中的点 $P$，其中 $(\rho, \varphi)$ 是 $\overrightarrow{OM}$ 在点 $O$ 与基 $e_1$ 形成的极坐标系下的坐标，$|u| = |\overrightarrow{MP}|$．称 $(\rho, \varphi, u)$ 为点 $P$ 的球坐标，记作 $P(\rho, \varphi, u)$
         1. 柱坐标化为空间直角坐标
 
             $$
