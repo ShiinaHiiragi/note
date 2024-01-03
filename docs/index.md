@@ -99,24 +99,6 @@ const refList = [
         type: "DB/OL",
         page: [1, 185]
     },
-    // {
-    //     author: ["David Thrane Christiansen"],
-    //     title: "Functional Programming in Lean",
-    //     type: "DB/OL",
-    //     page: [1, 437]
-    // },
-    // {
-    //     author: ["Jeremy Avigad", "Leonardo de Moura", "Soonho Kong", "Sebastian Ullrich"],
-    //     title: "Theorem Proving in Lean 4",
-    //     type: "DB/OL",
-    //     page: [1, 194]
-    // },
-    // {
-    //     author: ["Microsoft Corporation"],
-    //     title: "Lean Manual",
-    //     type: "DB/OL",
-    //     page: [1, 154]
-    // },
     {
         author: ["蔡曙山"],
         title: "认知科学导论",

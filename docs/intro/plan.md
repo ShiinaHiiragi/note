@@ -1,7 +1,7 @@
 # 进度记录
 
 ## 理论计算机科学侧
-- 认识基础进路：[LEAN](https://lean-lang.org/functional_programming_in_lean/getting-to-know/structures.html)
+- 认识基础进路：Lean
 - 形而上学进路：符号学
 - 语言学进路：句法学 → 语义学
 
