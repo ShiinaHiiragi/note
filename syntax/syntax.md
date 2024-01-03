@@ -571,10 +571,10 @@
           }
         };
         
-        alice.fullName="Alice Ignace"
+        alice.fullName = "Alice Ignace"
         ```
 
-9. Prototype：原型，相当于超类。原型引用不能成闭环，且只能为对象或者 `null`
+9. Prototype：原型，即实例所属的模板。原型引用不能成闭环，且只能为对象或者 `null`
 
     - `__proto__` 是 `[[Prototype]]` 的 `getter` 和 `setter`，现代规范建议使用函数 `Object.getPrototypeOf` 和 `Object.setPrototypeOf` 来取代 `__proto__`
 
@@ -582,12 +582,12 @@
 
     - `Array.prototype`，`Number.prototype`，`Funtion.prototype` 的原型都是 `Object.protptype`，而 `Object.prototype` 的原型为 `null`，即为顶端
 
-        > 利用 `Array.prototype.func = function() { ... }` 的方法，可以向这个类添加方法，一般用于 Polyfilling
+        > 利用 `ClassName.prototype.func = function() { ... }` 的方法，可以向这个类添加方法，一般用于 Polyfilling。请注意 `prototype` 是函数特有的属性，而 `__proto__` 是每个对象都拥有的属性
         >
         > `Object`，`Function` 和 `Function.prototype` 的代码不是 JavaScript 实现的（Native Code），所以「Object 是一个 Function 的实例，而 Object 作为 Function 实例同时也是一个 Object 实例」这种从属关系是 `instanceof` 运算的结果，不代表实际构建中逻辑关系的绝对次序
         >
         > <img src="assets/proto.jpg" style="zoom: 32%;" />
-    
+
     - `obj instanceof Class` 的计算过程
         - 如果 Class 有静态方法 `Symbol.hasInstance`，那就直接调用这个方法
         - 大多数 Class 没有 `Symbol.hasInstance`，此时 `obj instanceof Class` 将检查 `Class.prototype` 是否等于 `obj` 的原型链中的原型之一
