@@ -264,6 +264,15 @@ const refList = [
         locate: "北京"
     },
     {
+        author: ["张贤达"],
+        title: "矩阵分析与应用",
+        type: "M",
+        year: 2013,
+        page: [143, 151],
+        press: "清华大学出版社",
+        locate: "北京"
+    },
+    {
         author: ["Terence Parr", "Jeremy Howard"],
         title: "The matrix calculus you need for deep learning",
         type: "J",
