@@ -212,17 +212,8 @@
         2. 向量的减法：若向量 $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma$ 有 $\boldsymbol \alpha = \boldsymbol \beta + \boldsymbol \gamma$，则称 $\boldsymbol \gamma$ 为向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的差，记作 $\boldsymbol \gamma = \boldsymbol \alpha - \boldsymbol \beta = \boldsymbol \alpha + (-\boldsymbol \beta)$
     2. 向量的定比分点：设向量 $\overrightarrow{P_1 P_2}$ 的始点为 $P_1(x_1, x_2, \cdots, x_n)$，终点为 $P_2(y_1, y_2, \cdots, y_n)$，则分向量 $\overrightarrow{P_1 P_2}$ 成定比 $\lambda \ (\lambda \neq -1)$ 的分点 $P$ 的坐标为 $P \left(\dfrac{x_1 + \lambda y_1}{1 + \lambda}, \dfrac{x_2 + \lambda y_2}{1 + \lambda}, \cdots, \dfrac{x_n + \lambda y_n}{1 + \lambda}\right)$
 
-2. 向量的内积：设 $\boldsymbol \alpha = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol \beta = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$，则内积 $\left<\boldsymbol \alpha, \boldsymbol \beta\right> = x_1 y_1 + x_2 y_2 + \cdots + x_n y_n$
-    1. 定义向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的夹角 $\theta = \arccos \dfrac{\left<\boldsymbol \alpha, \boldsymbol \beta\right>}{|\boldsymbol \alpha| |\boldsymbol \beta|}$，并记 $\cos \theta$ 为 $\cos \left<\boldsymbol \alpha, \boldsymbol \beta\right>$，记 $\sin \theta$ 为 $\sin \left<\boldsymbol \alpha, \boldsymbol \beta\right>$．特别地，称非零向量与基所成的夹角为该向量的方向角
-
-        !!! note "角度的分类"
-            设 $\theta \in \mathbf R$ 为一个角度
-
-            1. 若 $\theta \in \left(0, +\infty\right)$，则称 $\theta$ 为正角；若 $\theta \in \left(-\infty, 0\right)$，则称 $\theta$ 为负角
-            2. 若 $\theta \in \left(0, \dfrac{\pi}{2}\right)$，则称 $\theta$ 为锐角；若 $\theta \in \left(\dfrac{\pi}{2}, \pi\right)$，则称 $\theta$ 为钝角
-            3. 若 $\theta = 0$，则称 $\theta$ 为零角；若 $\theta = \dfrac{\pi}{2}$，则称 $\theta$ 为直角；若 $\theta = \pi$，则称 $\theta$ 为平角；若 $\theta = 2\pi$，则称 $\theta$ 为周角
-
-    2. 仿射坐标系下的内积：设 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 是一个仿射标架，则
+2. 向量的内积：设 $\boldsymbol \alpha = \begin{bmatrix} x_1 & x_2 & \cdots & x_n \\ \end{bmatrix}^{\mathrm T}, \boldsymbol \beta = \begin{bmatrix} y_1 & y_2 & \cdots & y_n \\ \end{bmatrix}^{\mathrm T}$
+    1. 仿射坐标系下的内积：设 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 是一个仿射标架且 $e_{ij} = \left<\boldsymbol \varepsilon_i, \boldsymbol \varepsilon_j\right>$，则
 
         $$
         \begin{aligned}
@@ -239,7 +230,17 @@
         \end{aligned}
         $$
 
-        其中 $e_{ij} = \left<\boldsymbol \varepsilon_i, \boldsymbol \varepsilon_j\right>$．当且仅当矩阵为对称的正定矩阵时，$\boldsymbol x^{\mathrm T} \boldsymbol E \boldsymbol y$ 定义了一个内积
+        1. 当且仅当矩阵为对称的正定矩阵时，$\boldsymbol x^{\mathrm T} \boldsymbol E \boldsymbol y$ 定义了一个内积
+        2. 当且仅当 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 为标准正交基时，$\left<\boldsymbol \alpha, \boldsymbol \beta\right> = x_1 y_1 + x_2 y_2 + \cdots + x_n y_n$
+
+    2. 在 $\text{Descartes}$ 坐标系下，定义向量 $\boldsymbol \alpha$ 与 $\boldsymbol \beta$ 的夹角 $\theta = \arccos \dfrac{\left<\boldsymbol \alpha, \boldsymbol \beta\right>}{|\boldsymbol \alpha| |\boldsymbol \beta|}$，并记 $\cos \theta$ 为 $\cos \left<\boldsymbol \alpha, \boldsymbol \beta\right>$，记 $\sin \theta$ 为 $\sin \left<\boldsymbol \alpha, \boldsymbol \beta\right>$．特别地，称非零向量与基所成的夹角为该向量的方向角
+
+        !!! note "角度的分类"
+            设 $\theta \in \mathbf R$ 为一个角度
+
+            1. 若 $\theta \in \left(0, +\infty\right)$，则称 $\theta$ 为正角；若 $\theta \in \left(-\infty, 0\right)$，则称 $\theta$ 为负角
+            2. 若 $\theta \in \left(0, \dfrac{\pi}{2}\right)$，则称 $\theta$ 为锐角；若 $\theta \in \left(\dfrac{\pi}{2}, \pi\right)$，则称 $\theta$ 为钝角
+            3. 若 $\theta = 0$，则称 $\theta$ 为零角；若 $\theta = \dfrac{\pi}{2}$，则称 $\theta$ 为直角；若 $\theta = \pi$，则称 $\theta$ 为平角；若 $\theta = 2\pi$，则称 $\theta$ 为周角
 
 3. $\text{Grassmann}$ 代数：设 $V$ 是一个 $n$ 维线性空间，则 $V$ 中任意 $m$ 个有序向量 $\boldsymbol \alpha_1, \cdots, \boldsymbol \alpha_m$ 的外积记为 $\boldsymbol \alpha_1 \wedge \boldsymbol \alpha_2 \wedge \cdots \wedge \boldsymbol \alpha_m$，称为一个 $m$ 重可分解向量．所有 $m$ 重可分解向量形式上作线性扩张所得的空间记为 $\wedge^m(V)$，其中的元素称为 $m$ 重向量．在 $\wedge^m(V)$ 中规定外积运算 $\wedge$ 满足下列运算法则
     1. 反对称性：$\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_i \wedge \cdots \wedge \boldsymbol \alpha_m=(-1)^{i-1} \boldsymbol \alpha_i \wedge \boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_{i-1} \wedge \boldsymbol \alpha_{i+1} \wedge \cdots \wedge \boldsymbol \alpha_m$
@@ -251,8 +252,8 @@
 
     则 $\wedge^m(V)$ 是一个 $C_n^m$ 维线性空间．特别地，当 $m > n$ 时, $\wedge^m(V)$ 只含有 $m$ 重零向量
 
-    1. 约定 $\wedge^0(V)$ 表示实数系，任何实数 $\lambda$ 与一个 $m$ 重向量 $\boldsymbol{p}$ 的外积规定为 $\lambda \boldsymbol{p}$，$\wedge^1(V)$ 就是 $V$ 本身
-    2. 记 $G(V)=\wedge^0(V) \oplus \wedge^1(V) \oplus \cdots \oplus \wedge^n(V)$，$G(V)$ 是一个 $2^n$ 维的线性空间，外积运算 $\wedge$ 自然延拓成 $G(V)$ 中的外积运算
+    3. 约定 $\wedge^0(V)$ 表示实数系，任何实数 $\lambda$ 与一个 $m$ 重向量 $\boldsymbol{p}$ 的外积规定为 $\lambda \boldsymbol{p}$，$\wedge^1(V)$ 就是 $V$ 本身
+    4. 记 $G(V)=\wedge^0(V) \oplus \wedge^1(V) \oplus \cdots \oplus \wedge^n(V)$，$G(V)$ 是一个 $2^n$ 维的线性空间，外积运算 $\wedge$ 自然延拓成 $G(V)$ 中的外积运算
 
         $$
         \left(\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_p\right) \wedge\left(\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_q\right)= \left\{\begin{aligned}&\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_p \wedge \boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_q, & p+q \leqslant n, \\ & 0, & p+q>n .\end{aligned}\right.
@@ -260,7 +261,7 @@
 
         并要求满足结合律及线性分配律．$G(V)$ 连同外积运算 $\wedge$ 称为 $V$ 上的 $\text{Grassmann}$ 代数
 
-    3. 对两个 $m$ 重可分解向量 $\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m$ 和 $\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m$，规定内积为
+    5. 对两个 $m$ 重可分解向量 $\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m$ 和 $\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m$，规定内积为
 
         $$
         \left\langle\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m, \boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m\right\rangle=
@@ -274,7 +275,7 @@
 
         然后用线性分配律延拓为 $\wedge^m(V)$ 中的内积．特别地，称 $\left|\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m\right|=\sqrt{\left\langle\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m, \boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m\right\rangle}$ 为 $\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m$ 的长度
 
-    4. 定义由两个 $m$ 重可分解向量 $\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m$ 和 $\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m$ 所确定的 $m$ 维平面之间的夹角为
+    6. 定义由两个 $m$ 重可分解向量 $\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m$ 和 $\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m$ 所确定的 $m$ 维平面之间的夹角为
 
         $$
         \theta=\arccos \dfrac{\left\langle\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m, \boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m\right\rangle}{\left|\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m\right|\left|\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m\right|}

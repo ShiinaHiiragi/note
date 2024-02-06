@@ -296,18 +296,10 @@
         1. 设 $f(x)$ 在 $[a, b]$ 上有连续导数，将 $x$ 作为参数，推导出的弧长公式为 ${\displaystyle \int_{a}^{b} \sqrt{1+\left[f^{\prime}(x)\right]^{2}} \mathrm{d} x}$
         2. 设曲线段的极坐标方程为 $r=r(\theta) \ (\alpha \leqslant \theta \leqslant \beta)$ 且 $r'(\theta)$ 在 $[\alpha, \beta]$ 上连续，则弧长公式为 ${\displaystyle \int_{\alpha}^{\beta} \sqrt{\left[r^{\prime}(\theta)\right]^{2}+[r(\theta)]^{2}} \mathrm{d} \theta}$
 
-2. 光滑曲线：若 $\boldsymbol{r}^{\prime}(t)=x^{\prime}(t) \boldsymbol{e}_1+y^{\prime}(t) \boldsymbol{e}_2+z^{\prime}(t) \boldsymbol{e}_3$ 在 $[a, b]$ 上连续，并且 $\boldsymbol{r}^{\prime}(t) \neq \mathbf{0} \ (t \in[a, b])$，则称曲线
-
-    $$
-    \Gamma: \boldsymbol{r}(t)=x(t) \boldsymbol{e}_1+y(t) \boldsymbol{e}_2+z(t) \boldsymbol{e}_3, a \leqslant t \leqslant b
-    $$
-
-    所确定的空间曲线为光滑曲线
-
+2. 光滑曲线：若曲线 $\Gamma: \boldsymbol{r}(t)=x(t) \boldsymbol{e}_1+y(t) \boldsymbol{e}_2+z(t) \boldsymbol{e}_3, \ a \leqslant t \leqslant b$ 的任意分量都在 $[a, b]$ 上 $n$ 阶可导且连续，则称其为 $C^{n}$ 函数．特别地，若该曲线的任意分量都无穷阶可导，则称其为 $C^{\infty}$ 函数，则称曲线 $\boldsymbol{r}(t)$ 所确定的空间曲线为光滑曲线
     1. 切向量：$\Gamma$ 在 $P_{0}$ 点的切线的一个方向向量为 $\boldsymbol{r}^{\prime}\left(t_{0}\right)=\left(x^{\prime}\left(t_{0}\right), y^{\prime}\left(t_{0}\right), z^{\prime}\left(t_{0}\right)\right)$
     2. 法平面：过 $P_{0}$ 点且与切线垂直的平面 $x^{\prime}\left(t_{0}\right)\left(x-x_{0}\right)+y^{\prime}\left(t_{0}\right)\left(y-y_{0}\right)+z^{\prime}\left(t_{0}\right)\left(z-z_{0}\right)=0$ 或 $\boldsymbol r^{\prime}\left(t_{0}\right) \cdot\left(\boldsymbol x-\boldsymbol x_{0}\right)=0$
     3. 曲线的弧长：${\displaystyle s=\int_{a}^{b} \sqrt{[x^{\prime}(t)]^2+[y^{\prime}(t)]^2+[z^{\prime}(t)]^2} \mathrm{d} t}$
-
 3. 第一类曲线积分：设 $L$ 是空间 $\mathbf{R}^{3}$ 上一条可求长的连续曲线，端点为 $A, B$，函数 $f(x, y, z)$ 在 $L$ 上有界．令 $A=P_{0}, B=P_{n}$，在 $L$ 上从 $A$ 到 $B$ 顺序地插入分点 $P_{1}, P_{2}, \cdots, P_{n-1}$，再分别在每个小弧段 $P_{i-1} P_{i}$ 上任取一点 $\left(\xi_{i}, \eta_{i}, \zeta_{i}\right)$，并记第 $i$ 个小弧段 $P_{i-1} P_{i}$ 的长度为 $\Delta s_{i}(i=1,2, \cdots, n)$．作和式 ${\displaystyle \sum_{i=1}^{n} f\left(\xi_{i}, \eta_{i}, \zeta_{i}\right) \Delta s_{i}}$，如果当所有小弧段的最大长度 $\lambda$ 趋于零时，这个和式的极限存在且与分点 $\left\{P_{i}\right\}$ 的取法及 $P_{i-1} P_{i}$ 上的点 $\left(\xi_{i}, \eta_{i}, \zeta_{i}\right)$ 的取法无关，则称这个极限值为 $f(x, y, z)$ 在曲线 $L$ 上的第一类曲线积分，记为 ${\displaystyle \int_{L} f(x, y, z) \mathrm{d} s}$ 或 ${\displaystyle \int_{L} f(P) \mathrm{d} s}$，即
 
     $$
