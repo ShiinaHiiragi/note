@@ -133,7 +133,7 @@ const refList = [
         title: "符号学：原理与推演",
         type: "M",
         year: 2016,
-        page: [1, 370],
+        page: [1, 390],
         press: "南京大学出版社",
         locate: "南京",
         plot: 219
