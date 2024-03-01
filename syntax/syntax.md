@@ -3885,17 +3885,17 @@ Bootstrap 适合短时间开发简单的静态网站
 2. 关键字参数：使用关键字参数允许函数调用时参数的顺序与声明时不一致
 
    ```python
-   def p(str):
-       print(str)
+   def p(msg):
+       print(msg)
    
-   p(str="Hello World!")
+   p(msg="Hello World!")
    ```
 
 3. 默认参数：调用函数时，如果没有传递参数，则会使用默认参数
 
    ```python
-   def p(str="Hello World!"):
-       print(str)
+   def p(msg="Hello World!"):
+       print(msg)
    
    p()
    ```
@@ -3905,70 +3905,124 @@ Bootstrap 适合短时间开发简单的静态网站
 ##### （二）迭代器与生成器
 
 1. 迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束
-	
-	```python
-	>>> list=[0, 1, 2, 3]
-	>>> it = iter(list)
-	>>> print (next(it))
-	0
-	>>> print (next(it))
-	1
-	```
+   
+   ```python
+   >>> list=[0, 1, 2, 3]
+   >>> it = iter(list)
+   >>> print (next(it))
+   0
+   >>> print (next(it))
+   1
+   ```
 
 2. 把一个类作为一个迭代器使用需要在类中实现魔术方法 `__iter__()` 与 `__next__()`
-	
-	```python
-	import sys
-	
-	class ins():
-	    def __iter__(self):
-	        return ins_iterator()
-	
-	class ins_iterator():
-	    def __init__(self):
-	        self.counter = 0
-	
-	    def __next__(self):
-	        res = self.counter
-	        if res < 4:
-	            self.counter += 1
-	            return res
-	        else:
-	            raise StopIteration
-	
-	inst = ins()
-	it = iter(inst)
-	while True:
-	    try:
-	        print(next(it))
-	    except StopIteration:
-	        sys.exit()
-	```
-	
+   
+   ```python
+   import sys
+   
+   class ins():
+       def __iter__(self):
+           return ins_iterator()
+   
+   class ins_iterator():
+       def __init__(self):
+           self.counter = 0
+   
+       def __next__(self):
+           res = self.counter
+           if res < 4:
+               self.counter += 1
+               return res
+           else:
+               raise StopIteration
+   
+   inst = ins()
+   it = iter(inst)
+   while True:
+       try:
+           print(next(it))
+       except StopIteration:
+           sys.exit()
+   ```
+   
 3. 生成器：使用了 `yield` 关键字的函数
-	
-	```python
-	import sys
-	
-	def fibonacci(n):
-	    a, b, counter = 0, 1, 0
-	    while True:
-	        if (counter > n):
-	            return
-	        yield a
-	        a, b = b, a + b
-	        counter += 1
-	
-	f = fibonacci(10)
-	while True:
-	    try:
-	        print(next(f), end=" ")
-	    except StopIteration:
-	        print()
-	        sys.exit()
-	```
+   
+   ```python
+   import sys
+   
+   def fibonacci(n):
+       a, b, counter = 0, 1, 0
+       while True:
+           if (counter > n):
+               return
+           yield a
+           a, b = b, a + b
+           counter += 1
+   
+   f = fibonacci(10)
+   while True:
+       try:
+           print(next(f), end=" ")
+       except StopIteration:
+           print()
+           sys.exit()
+   ```
 
-##### （三）类与对象
+##### （三）装饰器
+1. 用 `@` 实现装饰器模式
+
+   ```python
+   def decorator(func):
+       def wrapper(*arg):
+           print(id(func))
+           func(*arg)
+       return wrapper
+   
+   @decorator
+   def p(msg):
+       print(msg)
+   
+   p("Hello World!")
+   ```
+
+   用内置 `functools` 保证被装饰的函数信息保持原样
+
+   ```python
+   import functools
+   
+   def decorator(func):
+       @functools.wraps(func)
+       def wrapper(*arg):
+           print(id(func))
+           func(*arg)
+       return wrapper
+   
+   @decorator
+   def p(msg):
+       print(msg)
+   
+   print(p.__name__)  # p
+   ```
+
+2. 类装饰器默认调用 `__call__` 方法
+
+  ```python
+  class Decorator:
+      def __init__(self, func):
+          self.func = func
+
+      def __call__(self, *arg):
+          print(id(self.func))
+          self.func(*arg)
+
+  @Decorator
+  def p(msg):
+      print(msg)
+
+  p("Hello World!")
+  ```
+
+##### （四）类与对象
 
 1. 类变量和实例变量
    - 类变量属于类所有，可以使用类名或对象名引用
@@ -3998,8 +4052,8 @@ Bootstrap 适合短时间开发简单的静态网站
      - `__getitem__(self, key)`： 定义获取容器中指定元素的行为
      - `__delitem__(self, key)`：定义删除容器中指定元素的行为
      - `__contains__(self, item)`：定义当使用成员测试运算符（in 或 not in）时的行为
-     - `__len__(self)`：定义当被 len() 调用时的行为
-     - `__reversed__(self)`：定义当被 reversed() 调用时的行为
+     - `__len__(self)`：定义当被 `len()` 调用时的行为
+     - `__reversed__(self)`：定义当被 `reversed()` 调用时的行为
      
    - 可调用对象：`__call__()`，将对象作为函数调用
 
@@ -4088,6 +4142,8 @@ Bootstrap 适合短时间开发简单的静态网站
    from sound.effects.echo import echofilter
    echofilter(input, output, delay=0.7, atten=4)
    ```
+
+3. 可使用 `PYTHONPATH` 环境变量指定包
 
 ##### （二）序列化
 
