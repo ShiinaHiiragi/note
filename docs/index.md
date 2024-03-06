@@ -53,7 +53,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，现处于第一阶段"
-    <label> 现在进度：符号学 · 符号句法学 </label>
+    <label> 现在进度：句法学 · 短语结构理论 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
