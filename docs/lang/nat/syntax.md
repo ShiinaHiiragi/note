@@ -27,9 +27,28 @@
         - $\text{D}$：限定词
     2. 常用短语规则
         1. 名词短语
+            - $\text{NP} \to \text{D N}$
+            - $\text{NP} \to \text{D N PP}$
+            - $\text{NP} \to \text{D N S}'$
+            - $\text{NP} \to \text{(D) N}$
+            - $\text{NP} \to \text{NP N}$
         2. 时态与情态
+            - $\text{S} \to \text{NP Aux VP}$
+            - $\text{Aux} \to \text{Tense(Modal)}$
+            - $\text{Aux} \to \text{Tense(Modal)(Neg)}$
         3. 动词短语
+            - $\text{VP} \to \text{V NP}$
+            - $\text{VP} \to \text{V (NP)}$
+            - $\text{PP} \to \text{P NP}$
+            - $\text{VP} \to \text{V NP PP}$
+            - $\text{VP} \to \text{V S}$
+            - $\text{S}' \to \text{Comp S}$，其中 $\text{S}'$ 为从句补语
+            - $\text{VP} \to \text{V S'}$
         4. 形容词与副词短语
+            - $\text{AP} \to \text{A (PP)}$
+            - $\text{VP} \to \text{V AP}$
+            - $\text{VP} \to \text{(ADV) V (NP) (ADV)}$
+            - $\text{S} \to \text{(ADV) NP Aux VP (ADV)}$
 
 3. 短语标记：标示语句的要素结构的形式符号，例如$\text{Chomsky}$ 在『句法结构』中用如下短语结构规则
 
