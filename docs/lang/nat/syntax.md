@@ -191,7 +191,19 @@
         2. $X' \to \text{complement(s) } X$
     2. 限定词、中心词和补语的规则和结构：$X'' \to \text{specifier } X' \to \text{ complement}$
 3. 功能短语结构
-4. 结构表现层与移动
+    1. 变形短语（$\text{IP}$）有两个内在层次：① $\text{IP}(\text{I}'')$：包含 $\text{I}'$ 和一个限定成分；② $\text{I}'$：包含 $\text{I}$ 和一个补语
+
+        <figure markdown>
+            ![](../assets/ip.svg)
+            <style> img[src$="ip.svg"] { width: 250px; } </style>
+        </figure>
+
+        1. $\text{IP}(\text{I}'')$ 处于结构的最高层，$\text{I}'$ 连同其左侧的限定成分处于中间层，$\text{I}$ 与其右侧的补语处于最底层
+        2. 中心成分 $\text{I}$ 并不必然是词汇中的一个词项，而是一个表示时态与数的一致性的抽象特征的综合体
+
+    2. 补语化成分短语（$\text{CP}$）：包括 $\text{C}'$ 和 $\text{C}$ 两个常见的层次，并带有可能的限定成分和补语
+
+4. 结构表现层与移动：表层结构和深层结构之间的关系在于移动，即表层结构等于深层结构加移动
 
 ### 1.2.2 θ-理论与功能范畴
 
