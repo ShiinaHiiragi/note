@@ -207,4 +207,5 @@ nav:
       - 2 形式语义: lang/formal/sem.md
     - 三、自然语言:
       - 1 句法学: lang/nat/syntax.md
+      - 2 语义学: lang/nat/semant.md
       - 3 语用学: lang/nat/pragma.md
