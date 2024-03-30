@@ -191,8 +191,7 @@ nav:
     - 四、泛函分析:
       - 1 赋范线性空间: anly/func/norm.md
       - 2 算子与泛函: anly/func/op.md
-  - 统计学:
-    - 一、概率论:
+    - 五、概率论:
       - 1 概率与随机变量: stat/prob/prob.md
       - 2 概率分布与特征: stat/prob/dist.md
       - 3 统计独立性: stat/prob/ind.md
