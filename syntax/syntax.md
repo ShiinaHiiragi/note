@@ -3825,7 +3825,7 @@ Bootstrap 适合短时间开发简单的静态网站
 
 #### 2.4.1 基本数据类型
 
-1. 标准数据的分类
+1. 标准数据的分类：按照「修改值时是否在原内存位置修改」分类
     - 不可变数据：Number、`str`、`tuple`
     - 可变数据：`list`、`dict`、`set`
 
@@ -4006,21 +4006,21 @@ Bootstrap 适合短时间开发简单的静态网站
 
 2. 类装饰器默认调用 `__call__` 方法
 
-  ```python
-  class Decorator:
-      def __init__(self, func):
-          self.func = func
-
-      def __call__(self, *arg):
-          print(id(self.func))
-          self.func(*arg)
-
-  @Decorator
-  def p(msg):
-      print(msg)
-
-  p("Hello World!")
-  ```
+    ```python
+    class Decorator:
+        def __init__(self, func):
+            self.func = func
+    
+        def __call__(self, *arg):
+            print(id(self.func))
+            self.func(*arg)
+    
+    @Decorator
+    def p(msg):
+        print(msg)
+    
+    p("Hello World!")
+    ```
 
 ##### （四）类与对象
 
@@ -4039,9 +4039,9 @@ Bootstrap 适合短时间开发简单的静态网站
    - 类表示：`__str__()` / `__repr__()`，转化为字符串 / 打印信息
    
    - 访问控制
-     - `__setattr__(self, key, value)`：定义当一个属性被设置时的行为
+     - `__setattr__(self, key, value)`：设置某个属性时调用
      
-     - `__getattr__(self, key)`：定义当用户试图获取一个不存在的属性时的行为
+     - `__getattr__(self, key)`：获取某个属性时调用
      
      - `__delattr__(self, key)`：删除某个属性时调用
      
