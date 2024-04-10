@@ -4118,6 +4118,38 @@ Bootstrap 适合短时间开发简单的静态网站
 
 ##### （二）发布
 
+1. 假设有一个测试包 `package-test`，文件结构如下（保证包文件无连字符，工程文件无此限制）
+
+    ```
+    package-test-root/
+        setup.py
+        package_test_pack/
+            __init__.py
+            ...
+        README.md
+        LICENSE
+    ```
+
+    编写 `setup.py` 如下
+
+    ```python
+    from setuptools import setup, find_packages
+
+    setup(
+        name="package-test-pack",
+        version="0.0.1",
+        packages=find_packages(),
+    )
+    ```
+
+    - 执行 `python setup.py develop` 可将 `package-test-root` 加入到 `sys.path`，从而实时响应包内容变化
+    - 执行 `python setup.py install` 可将包安装到 `site-packages`，从而全局调用 `package_test_pack`
+
+2. 安装 `wheel` 以发布 `.whl` 文件
+    - 执行 `python setup.py sdist bdist_wheel`，可在 `dist` 文件夹下看到 `package-test-pack-0.1.0.tar.gz` 与 `package_test_pack-0.1.0-py3-none-any.whl` 两个包
+    - 执行 `pip install ./dist/package_test_pack-0.1.0-py3-none-any.whl`，可将包安装到 `site-packages`
+    - 可将包发布到 TestPyPI 以测试包索引
+
 ### 2.5 Application
 
 #### 2.5.1 Electron
