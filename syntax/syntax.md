@@ -4061,91 +4061,62 @@ Bootstrap 适合短时间开发简单的静态网站
 
 ##### （一）模块导入
 
-1. 在解释器的当前目录或者 `sys.path` 中的某个目录里面创建一个模块 `lib.py`
+1. 在 Python 中，一个 `.py` 文件可以称为模块，包含了 `__init__.py` 文件的称为包
+    - 当一个模块被执行时，Python 会从 `sys.path` 给出的路径去找在模块中引入的包或其它模块，如果找不到则报错
+    - 在执行文件所在目录或者其他 `sys.path` 可访问到的某个目录里面创建一个模块 `package`
 
-   ```python
-   def dist(x, y):
-       return abs(x - y)
-   
-   def reverse(x):
-       return -x
-   
-   if __name__ == "__main__":
-       print("!")
-   ```
+        ```python
+        package/
+            __init__.py
+            subpackage1/
+                __init__.py
+                moduleX.py
+                moduleY.py
+            subpackage2/
+                __init__.py
+                moduleZ.py
+            moduleA.py
+        ```
 
-   在原文件导入：
+2. 绝对导入：使用 `import <>` 或 `from <> import <>` 两种语法
+    - 在 `moduleA` 模块内，使用下面的绝对导入语句是有效的：
 
-   ```python
-   import lib
-   from lib import reverse
-   
-   print(lib.dist(0, 2))
-   print(reverse(0))
-   ```
+        ```python
+        import subpackage1.moduleX as moduleX
+        from subpackage2 import moduleZ
+        ```
+        
+    - 假如要改变层级较高的包名，那么所有导入路径都要随之更改
+    
+3. 相对导入：相对导入只能使用 `from <> import <>` 语法，并且使用 `.` 作为前导点
+    - 在 `subpackage1/moduleX.py` 或者 `subpackage1/__init__.py` 模块内可以使用相对导入的方式：
 
-   可以使用 `as` 定义别名：
+        ```python
+        from .moduleY import spam
+        from .moduleY import spam as ham
+        from . import moduleY
+        ```
+        
+    - 执行 `moduleA.py` 时，每个文件的 `__name__` 与 `__package__` 变量都不同
+        - `moduleA.py` 的 `__name__` 是 `"__main__"`，即为顶层模块，此时 `__package__` 是 `None`
+        - `subpackage1/moduleX.py` 的 `__name__` 是 `subpackage1.moduleX`，顶层模块为 `subpackage1`，此时 `__package__` 是 `subpackage1`．这表明 `moduleX` 无法通过相对导入访问到 `moduleZ`
+    
+    - **使用了相对导入的模块文件不能作为顶层执行文件**
+    
+4. `__init__.py` 可以用于导入，例如在 `subpackage2/__init__.py` 中加入
 
-   ```python
-   import lib as l
-   from lib import reverse as r
-   
-   print(l.dist(0, 2))
-   print(r(0))
-   ```
+    ```python
+    from .moduleZ import foo
+    ```
 
-2. 假设有包结构：
+    则可在 `moduleA.py` 用两种方式导入 `foo`
 
-   ```shell
-   sound/
-         __init__.py
-         formats/
-                 __init__.py
-                 wavread.py
-                 wavwrite.py
-                 aiffread.py
-                 aiffwrite.py
-                 auread.py
-                 auwrite.py
-                 ...
-         effects/
-                 __init__.py
-                 echo.py
-                 surround.py
-                 reverse.py
-                 ...
-         filters/
-                 __init__.py
-                 equalizer.py
-                 vocoder.py
-                 karaoke.py
-                 ...
-   ```
+    ```python
+    from subpackage2.moduleZ import funcZ
+    from subpackage2 import funcZ
+    ```
 
-   则可以每次只导入一个包里面的特定模块：
-
-   ```python
-   import sound.effects.echo
-   sound.effects.echo.echofilter(input, output, delay=0.7, atten=4)
-   ```
-
-   或直接导入子模块 `echo`：
-
-   ```python
-   from sound.effects import echo
-   echo.echofilter(input, output, delay=0.7, atten=4)
-   ```
-
-   或直接导入一个函数或者变量：
-
-   ```python
-   from sound.effects.echo import echofilter
-   echofilter(input, output, delay=0.7, atten=4)
-   ```
-
-3. 可使用 `PYTHONPATH` 环境变量指定包
-
-##### （二）序列化
+##### （二）发布
 
 ### 2.5 Application
 
