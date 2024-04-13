@@ -41,6 +41,7 @@
     3. 令 $\|\alpha\|$ 为表达式 $\alpha$ 的语义值，则若 $\|\alpha\|$ 的语义类型为 $e$ 且 $\left\|\beta\right\|$ 的语义类型为 $\left<e, t\right>$，则 $\left\|\beta\right\|\ (\|\alpha\|)$ 的语义类型为 $t$
 
 ## 2.2 类型—逻辑语法
+### 2.2.1 Lambek 演算
 1. 类型—逻辑语法也称作类型逻辑的范畴语法，其基础是简单的范畴语法
     1. 该范畴语法有三个初始范畴，每个范畴对应高阶逻辑的某个类型
         1. $\text{np}$：描述名词短语，对应 $\text{Ind}$
@@ -89,7 +90,24 @@
         1. $\text{Cut}$ 规则的消除：若存在后承 $\Gamma \Rightarrow A: \alpha$ 的一个自然证明，则存在后承 $\Gamma \Rightarrow A: \alpha' (\alpha' \equiv \alpha)$ 的一个消除 $C$ 模式的证明
         2. 有穷推演：对任何序列 $\Gamma$ 和范畴 $A$ 来说，存在之多有穷多个可证的后承 $\Gamma \Rightarrow A: \alpha$，且每个后承具有有穷个证明
         3. 可判定性：相对有穷词库 $\text{Lex}$，后承 $\Gamma \Rightarrow A: \alpha$ 是否可推演的问题是可判定的
-4. 语法逻辑
+
+### 2.2.2 范畴语法逻辑
+1. 语法逻辑的重要特征是回归到范畴句法演算，重新构建其语义理论
+    1. 语法逻辑的合式公式集合 $\mathscr{F}$ 是在基本范畴集合 $\mathscr{A}$ 基础上对构成算子封闭的集合
+        1. 若 $c \in \mathscr{A}$，则 $c \in \mathscr{F}$
+        2. 若 $A, B \in \mathscr{F}$，则 $A / B, A \backslash B, A \cdot B \in \mathscr{F}$
+    2. 公理与推演规则
+        1. 同一公理：$A \to A$
+        2. 结合公理：$(A \cdot B) \cdot C \leftrightarrow A \cdot (B \cdot C)$
+        3. $A \cdot B \to C \vdash A \to C \backslash B, A \to C \backslash B \vdash A \cdot B \to C$
+        4. $A \cdot B \to C \vdash B \to A \backslash C, B \to A \backslash C \vdash A \cdot B \to C$
+        5. 若 $A \to B$ 且 $B \to C$，则 $A \to C$
+2. 语法逻辑的语义解释基础为三元模态框架 $\left<W, R^{3}\right>$，其中可能世界集合 $W$ 被当作自然语言来源（符号、句法和语义的信息）的集合，$R^{3}$ 表示语言毗连生成的情况
+    1. 框架语义的赋值函项 $v$：对原子公式 $p$ 而言，$v(p) \subseteq W$
+        1. $v(A \cdot B) = \{x \mid \exists y \exists z \ (R^{3}xyz \wedge y \in v(A) \wedge z \in v(B))\}$
+        2. $v(A / B) = \{y \mid \forall x \forall z \ (R^{3} xyz \wedge z \in v(B) \to x \in v(A))\}$
+        3. $v(A \backslash B) = \{z \mid \forall x \forall y \ (R^{3} xyz \wedge y \in v(A) \to x \in v(B))\}$
+    2. 可靠性/完全性定理：$\vdash A \rightarrow B$ 当且仅当对每个三元框架的每个赋值 $v$ 而言，$v(A) \subseteq v(B)$
 
 ## 2.3 广义量词理论
 
