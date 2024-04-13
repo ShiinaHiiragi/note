@@ -363,6 +363,16 @@ const refList = [
         locate: "北京"
     },
     {
+        author: ["彭家贵", "陈卿"],
+        title: "微分几何",
+        type: "M",
+        year: 2002,
+        page: [3, 152],
+        press: "高等教育出版社",
+        locate: "北京",
+        plot: 15 - 3
+    },
+    {
         author: ["熊金城"],
         title: "点集拓扑讲义",
         type: "M",
