@@ -41,6 +41,55 @@
     3. 令 $\|\alpha\|$ 为表达式 $\alpha$ 的语义值，则若 $\|\alpha\|$ 的语义类型为 $e$ 且 $\left\|\beta\right\|$ 的语义类型为 $\left<e, t\right>$，则 $\left\|\beta\right\|\ (\|\alpha\|)$ 的语义类型为 $t$
 
 ## 2.2 类型—逻辑语法
+1. 类型—逻辑语法也称作类型逻辑的范畴语法，其基础是简单的范畴语法
+    1. 该范畴语法有三个初始范畴，每个范畴对应高阶逻辑的某个类型
+        1. $\text{np}$：描述名词短语，对应 $\text{Ind}$
+        2. $\text{n}$：描述普通名词，对应 $\text{Ind} \to \text{Bool}$
+        3. $\text{s}$：描述语句，对应 $\text{Bool}$
+
+        其集合写作 $\text{BaseCat}$
+
+    2. 包括初始范畴和派生范畴的所有范畴的集合写作 $\text{Cat}$，定义为
+        1. $\text{BaseCat} \subseteq \text{Cat}$
+        2. 若 $A, B \in \text{Cat}$，则 $A / B, B \backslash A \in \text{Cat}$
+
+        对派生的范畴给出扩展的对应函项 $\text{Typ}$
+
+        1. $\operatorname{Typ}(\text{np}) = \text{Ind}, \operatorname{Typ}(\text{n}) = \text{Ind} \to \text{Bool}, \operatorname{Typ}(\text{s}) = \text{Bool}$
+        2. $\operatorname{Typ}(A/B) = \operatorname{Typ}(B \backslash A) = \operatorname{Typ}(B) \to \operatorname{Typ}(A)$
+
+2. 类型—逻辑语法的词库中，每个词条以自然语言的一个单词打头，同时显示单词对应的句法范畴以及 $\lambda-$词项，例如
+
+    $$
+    \text{John} \vdash \text{np}:\mathbf{John}, \quad
+    \text{John} \Rightarrow \text{np}:\mathbf{John}, \quad 
+    \begin{prooftree}
+    \AxiomC{$\text{John}$}
+    \UnaryInfC{$\text{np}:\mathbf{John}$}
+    \end{prooftree}
+    $$
+
+    类型—逻辑语法在附加一些意义公设的条件下只需四条规则
+
+    1. $\begin{prooftree} \AxiomC{\(\begin{gathered} & \vdots \\ & A/B: \alpha \end{gathered}\)} \AxiomC{\(\begin{gathered} & \vdots \\ & B: \beta \end{gathered}\)} \BinaryInfC{\(A : \alpha(\beta)\)} \end{prooftree}$
+    2. $\begin{prooftree} \AxiomC{\(\begin{gathered} & \vdots \\ & B: \beta \end{gathered}\)} \AxiomC{\(\begin{gathered} & \vdots \\ & B \backslash A: \alpha \end{gathered}\)} \BinaryInfC{\(A : \alpha(\beta)\)} \end{prooftree}$
+    3. $\begin{prooftree} \AxiomC{\(\begin{gathered} \begin{array} & \vdots \qquad & [A: x]^{n} \\  \vdots \qquad & \vdots \end{array} \\ B: \alpha \end{gathered}\)} \UnaryInfC{\(B / A: \lambda x. \alpha\)} \end{prooftree}$
+    4. $\begin{prooftree} \AxiomC{\(\begin{gathered} \begin{array} & [A: x]^{n} \qquad & \vdots \\  \vdots \qquad & \vdots \end{array} \\ B: \alpha \end{gathered}\)} \UnaryInfC{\(B \backslash A: \lambda x. \alpha\)} \end{prooftree}$
+
+3. $\text{Lambek}$ 演算：刻画自然语言句法语义特征所用工具都由该系统提供
+    1. 在类型—逻辑语法中，后承的概念表现为重写关系 $C_1, C_2, \cdots, C_n \Rightarrow C$，其中 $C_i$ 是范畴与 $\lambda-$ 词项的配对 $\left<A_i : \alpha_i\right>$
+    2. $\text{Lambek}$ 演算包括下列演绎模式
+        1. $\text{I}: \begin{prooftree} \AxiomC{\(\)} \UnaryInfC{\(A: \alpha \Rightarrow A: \alpha\)} \end{prooftree}$
+        2. $\text{C}: \begin{prooftree} \AxiomC{\(\Gamma_2 \Rightarrow B: \beta\)} \AxiomC{\(\Gamma_1, B: \beta, \Gamma_3 \Rightarrow A: \alpha\)} \BinaryInfC{\(\Gamma_1, \Gamma_2, \Gamma_3 \Rightarrow A: \alpha\)} \end{prooftree}$
+        3. $\text{/L}: \begin{prooftree} \AxiomC{\(\Delta \Rightarrow B: \beta\)} \AxiomC{\(\Gamma_1, A: \alpha(\beta), \Gamma_2 \Rightarrow C: \gamma\)} \BinaryInfC{\(\Gamma_1, A/B: \alpha, \Delta, \Gamma_2 \Rightarrow C: \gamma\)} \end{prooftree}$
+        4. $\text{\L}: \begin{prooftree} \AxiomC{\(\Delta \Rightarrow B: \beta\)} \AxiomC{\(\Gamma_1, A: \alpha(\beta), \Gamma_2 \Rightarrow C: \gamma\)} \BinaryInfC{\(\Gamma_1, \Delta, A \backslash B: \alpha, \Gamma_2 \Rightarrow C: \gamma\)} \end{prooftree}$
+        5. $\text{/R}: \begin{prooftree} \AxiomC{\(\Gamma, A: x \Rightarrow B: \alpha\)} \UnaryInfC{\(\Gamma \Rightarrow B/A: \lambda x.\alpha\)} \end{prooftree}$（其中 $x$ 为新名，$\Gamma$ 非空）
+        6. $\text{\R}: \begin{prooftree} \AxiomC{\(A: x, \Gamma \Rightarrow B: \alpha\)} \UnaryInfC{\(\Gamma \Rightarrow B \backslash A: \lambda x.\alpha\)} \end{prooftree}$（其中 $x$ 为新名，$\Gamma$ 非空）
+    3. 后承证明由有穷树 $P$ 构成，该树的每一子树是上述定义中的演绎模式之一．设 $C_1, C_2, \cdots, C_n \Rightarrow C$ 是一个后承，若存在一个根为 $C_1, C_2, \cdots, C_n \Rightarrow C$ 的无假设后承证明，则称该后承是可推演的
+        1. $\text{Cut}$ 规则的消除：若存在后承 $\Gamma \Rightarrow A: \alpha$ 的一个自然证明，则存在后承 $\Gamma \Rightarrow A: \alpha' (\alpha' \equiv \alpha)$ 的一个消除 $C$ 模式的证明
+        2. 有穷推演：对任何序列 $\Gamma$ 和范畴 $A$ 来说，存在之多有穷多个可证的后承 $\Gamma \Rightarrow A: \alpha$，且每个后承具有有穷个证明
+        3. 可判定性：相对有穷词库 $\text{Lex}$，后承 $\Gamma \Rightarrow A: \alpha$ 是否可推演的问题是可判定的
+4. 语法逻辑
 
 ## 2.3 广义量词理论
 
