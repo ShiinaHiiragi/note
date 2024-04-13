@@ -1,33 +1,5 @@
 # 进度记录
 
-### Lean
-
-!!! note "参考文献"
-    - 『Functional Programming in Lean』（David Thrane Christiansen）
-    - 『Theorem Proving in Lean 4』（Jeremy Avigad、Leonardo de Moura、Soonho Kong、Sebastian Ullrich）
-    - 『Lean 4 manual』（Microsoft Corporation）
-    - 『Metaprogramming in Lean 4』（Arthur Paulino、Damiano Testa、Edward Ayers、Evgenia Karunus、Henrik Böving、Jannis Limperg、Siddhartha Gadgil、Siddharth Bhat）
-
-#### 1 体系与组织
-1. 终端工具
-2. 项目结构
-3. 风格参考
-
-#### 2 控制结构
-1. 指令与组织特性
-2. 表达式
-3. 证明与策略
-4. 宏与扩展
-
-#### 3 类型系统
-1. 类型与类型类
-2. 依值类型
-
-#### 4 内建库
-1. 设计模式
-2. 内建扩展
-3. 内建类
-
 ### 证明论
 
 !!! note "参考文献"

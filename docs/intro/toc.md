@@ -1,7 +1,36 @@
 # 内容规范
+
 ## 凡例
 - 全站以逻辑学作为核心内容，同时辐射与逻辑学具有关联的学科，包括数学、哲学、语言学等
 - 本站的定位是「笔记」，即已存在于世且广受公认的客观知识列表，而非引导入门者的教程段落，亦非语料作者的个人观点阐述，也并非前沿领域的最新研究辑录
+
+### Lean
+
+!!! note "参考文献"
+    - 『Functional Programming in Lean』（David Thrane Christiansen）
+    - 『Theorem Proving in Lean 4』（Jeremy Avigad、Leonardo de Moura、Soonho Kong、Sebastian Ullrich）
+    - 『Lean 4 manual』（Microsoft Corporation）
+    - 『Metaprogramming in Lean 4』（Arthur Paulino、Damiano Testa、Edward Ayers、Evgenia Karunus、Henrik Böving、Jannis Limperg、Siddhartha Gadgil、Siddharth Bhat）
+
+#### 1 体系与组织
+1. 终端工具
+2. 项目结构
+3. 风格参考
+
+#### 2 控制结构
+1. 指令与组织特性
+2. 表达式
+3. 证明与策略
+4. 宏与扩展
+
+#### 3 类型系统
+1. 类型与类型类
+2. 依值类型
+
+#### 4 内建库
+1. 设计模式
+2. 内建扩展
+3. 内建类
 
 ## 第三部分 数理逻辑
 ### 一、证明论
@@ -129,17 +158,3 @@
     『随机过程』（方兆本、缪柏其）
 
 #### 5 随机过程
-
-## 第七部分 语言学
-### 三、自然语言
-
-!!! note "参考文献"
-    『自然语言形式理论研究』（蔡曙山、邹崇理）
-
-#### 2 语义学
-1. 古典范畴语法：第五章第一节后半
-2. Montague 语法：第五章第二节
-3. 类型—逻辑语法与语法逻辑：第五章第三、第四节
-4. 广义量词理论：第五章第五节
-5. 话语表现理论：第五章第六节
-6. 情境语义学：第五章第七节
