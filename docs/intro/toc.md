@@ -12,25 +12,25 @@
     - 『Lean 4 manual』（Microsoft Corporation）
     - 『Metaprogramming in Lean 4』（Arthur Paulino、Damiano Testa、Edward Ayers、Evgenia Karunus、Henrik Böving、Jannis Limperg、Siddhartha Gadgil、Siddharth Bhat）
 
-#### 1 体系与组织
-1. 终端工具
-2. 项目结构
-3. 风格参考
+#### 1 系统与原理
+1. 工具与组织（终端工具，文件组织）
+2. 元编程
 
-#### 2 控制结构
-1. 指令与组织特性
-2. 表达式
-3. 证明与策略
-4. 宏与扩展
+#### 2 句法范畴
+1. 指令
+2. 项
+3. 策略
+4. 属性
+5. 其他范畴
 
-#### 3 类型系统
-1. 类型与类型类
-2. 依值类型
+#### 3 设计模式
+1. 函子
+2. Applicative
+3. 单子
 
-#### 4 内建库
-1. 设计模式
-2. 内建扩展
-3. 内建类
+#### 4 内建类
+1. 逻辑结构
+2. 数据类型与结构
 
 ## 第三部分 数理逻辑
 ### 一、证明论
