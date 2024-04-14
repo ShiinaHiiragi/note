@@ -13,24 +13,30 @@
     - 『Metaprogramming in Lean 4』（Arthur Paulino、Damiano Testa、Edward Ayers、Evgenia Karunus、Henrik Böving、Jannis Limperg、Siddhartha Gadgil、Siddharth Bhat）
 
 #### 1 系统与原理
-1. 工具与组织（终端工具，文件组织）
-2. 元编程
+1. 环境配置
+    1. 文件组织
+    2. 终端工具
+    3. 风格规约
+2. 编译原理
 
 #### 2 句法范畴
-1. 指令
-2. 项
+1. 项
+2. 指令
 3. 策略
 4. 属性
-5. 其他范畴
+5. 句法与宏
+6. 层级与优先级
+7. do 元素
 
 #### 3 设计模式
-1. 函子
+1. Functor
 2. Applicative
-3. 单子
+3. Monad
 
 #### 4 内建类
 1. 逻辑结构
-2. 数据类型与结构
+2. 数据类型
+3. 数据结构
 
 ## 第三部分 数理逻辑
 ### 一、证明论
