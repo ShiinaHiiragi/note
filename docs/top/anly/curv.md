@@ -422,3 +422,61 @@
         成立，其中 $\overset{\LARGE{\frown}}{AB}$ 为任意从 $A$ 到 $B$ 的路径
 
 ### 4.3.2 曲线论基本定理
+1. 设平面正则曲线 $\boldsymbol{r}(t)=(x(t), y(t)), t \in(a, b)$，且有 $\boldsymbol{r}^{\prime}(t)=\dfrac{\mathrm d \boldsymbol r}{\mathrm d t}=\left(x^{\prime}(t), y^{\prime}(t)\right)$
+    1. 设 $c, t$ 为时间点且 $[c, t] \subseteq(a, b)$，则曲线弧长 ${\displaystyle s(t)=\int_{c}^{t}\left|\boldsymbol{r}^{\prime}(u)\right| \mathrm d u}$ 单调递增，存在函数 $t = t(s)$
+        1. 弧长参数：曲线可写作 $\boldsymbol{r}(s)=\boldsymbol{r}(x(s), y(s))=\boldsymbol{r}(x(t(s)), y(t(s)))$，称 $s$ 为曲线的弧长参数
+        2. 用 $\cdot$ 表示对参数 $s$ 求导，则 $\dot{\boldsymbol{r}}(s)=\dfrac{\mathrm d \boldsymbol{r}}{\mathrm d s}=(\dot{x}(s), \dot{y}(s))$ 为单位向量，记作 $\boldsymbol t(s)$
+    2. 称 $\boldsymbol t(s)$ 为曲线 $\boldsymbol{r}$ 的单位切向量，与 $\boldsymbol t(s)$ 垂直的单位向量 $\boldsymbol{n}(s)$ 称为曲线 $\boldsymbol{r}$ 在点 $(x(s), y(s))$ 的单位法向量，称 $\{\boldsymbol{r}(s) ; \boldsymbol{t}(s), \boldsymbol{n}(s)\}$ 为沿曲线 $\boldsymbol{r}$ 的 $\text{Frenet}$ 标架，并称由
+
+        $$
+        \dfrac{\mathrm d}{\mathrm d s}\left[\begin{array}{c}
+        \boldsymbol t(s) \\
+        \boldsymbol n(s)
+        \end{array}\right]=\left[\begin{array}{cc}
+        0 & \kappa(s) \\
+        -\kappa(s) & 0
+        \end{array}\right]\left[\begin{array}{c}
+        \boldsymbol t(s) \\
+        \boldsymbol n(s)
+        \end{array}\right]
+        $$
+
+        确定的函数 $\kappa(s)$ 为曲线 $\boldsymbol{r}(s)$ 的曲率
+
+        1. $\kappa(s) \equiv 0 \leftrightarrow \boldsymbol r(s)$ 是直线
+        2. $\kappa(s) \equiv a \neq 0 \leftrightarrow \boldsymbol r(s)$ 是半径为 $\left|\dfrac{1}{a}\right|$ 的圆（$a$ 为常数）
+
+2. 设空间正则曲线 $\boldsymbol r(t)=(x(t), y(t), z(t)), t \in(a, b)$，取 $\boldsymbol{r}$ 的弧长参数 $s$：${\displaystyle s(t)=\int_{a}^{t}\left|\boldsymbol{r}^{\prime}(u)\right| \mathrm d u}$，将 $\boldsymbol{r}$ 表示为弧长参数曲线 $\boldsymbol{r}(s)=(x(s), y(s), z(s))$
+    1. 记 $\kappa(s)=|\dot{\boldsymbol t}(s)|=\sqrt{\ddot{x}^{2}+\ddot{y}^{2}+\ddot{z}^{2}}$ 为曲线 $\boldsymbol r$ 的曲率
+        1. 称 $\boldsymbol t(s)=\dot{\boldsymbol r}(s)$ 是 $\boldsymbol r$ 的单位切向量，$\dot{\boldsymbol{t}}(s)$ 为曲线 $\boldsymbol{r}(s)$ 的曲率向量
+        2. 与 $\boldsymbol{t}(s)$ 垂直的向量称为曲线在该点的法向量．法向量全体构成过点且与 $\boldsymbol{t}$ 垂直的平面称为曲线 $\boldsymbol{r}$ 在该点的法平面
+        3. 当 $\kappa(s)>0$ 时，称 $\boldsymbol{n}(s)=\dfrac{1}{\kappa(s)} \dot{\boldsymbol{t}}(s)$ 是曲线 $\boldsymbol{r}$ 的主法向量
+        4. 设 $\boldsymbol{t}(s)$ 和 $\boldsymbol{n}(s)$ 是以 $\boldsymbol r(s)$ 为起点的相互正交的单位向量，令 $\boldsymbol{b}(s)=\boldsymbol{t}(s) \wedge \boldsymbol{n}(s)$，则称 $\boldsymbol b(s)$ 为曲线 $\boldsymbol{r}$ 的副法向量
+    2. 称沿曲线 $\boldsymbol{r}$ 的正交标架 $\{\boldsymbol{r}(s) ; \boldsymbol{t}(s), \boldsymbol{n}(s), \boldsymbol{b}(s)\}$ 为曲线的 $\text{Frenet}$ 标架，并称由 $\text{Frenet}$ 公式
+
+        $$
+        \dfrac{\mathrm d}{\mathrm d s}\left[\begin{array}{c}
+        \boldsymbol{t} \\
+        \boldsymbol{n} \\
+        \boldsymbol{b}
+        \end{array}\right]=\left[\begin{array}{ccc}
+        0 & \kappa & 0 \\
+        -\kappa & 0 & \tau \\
+        0 & -\tau & 0
+        \end{array}\right]\left[\begin{array}{c}
+        \boldsymbol{t} \\
+        \boldsymbol{n} \\
+        \boldsymbol{b}
+        \end{array}\right]
+        $$
+
+        确定的函数 $\tau$ 为曲线 $\boldsymbol{r}(s)$ 的挠率
+
+        1. 称三根坐标轴为曲线的切线、主法线和副法线
+        2. 称三个坐标平面为曲线在该点的法平面（以 $\boldsymbol t$ 为法向量）、密切平面（以 $\boldsymbol b$ 为法向量）和从切平面（以 $\boldsymbol n$ 为法向量）
+        3. 若空间曲线 $\boldsymbol r$ 的曲率 $\kappa>0$，则 $\boldsymbol{r}$ 落在某个平面上的充要条件是 $\tau \equiv 0$
+
+3. 曲线论基本定理：设 $\boldsymbol r(t), t \in(a, b)$ 是 $\mathbf{R}^{3}$ 的一条正则曲线，$t=t(u), u \in (\alpha, \beta)$ 是参数变换，$\dfrac{\mathrm d t}{\mathrm d u} \neq 0$．当 $\dfrac{\mathrm d t}{\mathrm d u} > 0$ 时，称参数变换 $t=t(u)$ 是保持定向的，或称 $u$ 与 $t$ 是曲线 $\boldsymbol{r}$ 的同定向参数
+    1. 曲线的弧长、曲率和挠率在刚体运动下不变
+    2. 设 $\boldsymbol{r}_{1}(s)$ 和 $\boldsymbol{r}_{2}(s)$ 是 $\mathbf{R}^{3}$ 的两条弧长参数曲线，定义在同一个参数区间 $(a, b)$ 上．设 $\kappa_{1}(s)=\kappa_{2}(s)>0, \tau_{1}(s)=\tau_{2}(s)$ 对任意 $s \in(a, b)$ 成立，则存在 $\mathbf{R}^{3}$ 的一个刚体运动 $\mathcal{T}$ 把曲线 $\boldsymbol{r}_{2}$ 变为 $\boldsymbol{r}_{1}$，即 $\boldsymbol{r}_{1}=\mathcal{T} \circ \boldsymbol{r}_{2}$
+    3. 设 $\kappa=\kappa(s)$ 和 $\tau=\tau(s)$ 是定义在区间 $(a, b)$ 上的两个连续可微函数且 $\kappa(s)>0$．存在 $\mathbf{R}^{3}$ 的弧长参数曲线 $\boldsymbol{r}(s), s \in(a, b)$ 以 $s$ 为弧长参数，以 $\kappa$ 和 $\tau$ 为曲率和挠率
