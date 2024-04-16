@@ -36,6 +36,7 @@
 - functor：⟦不翻译⟧
 
 ## I
+- identifier：标识符
 - inductive：归纳
 - interpolation：插值
 
