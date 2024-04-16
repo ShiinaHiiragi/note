@@ -117,8 +117,8 @@ nav:
       - 3 句法与篇章法: cogn/jbo/syntax.md
     - 三、Lean:
       - 1 系统原理: cogn/lean/sys.md
-      - 2 句法解析: cogn/lean/parse.md
-      - 3 内建类型: cogn/lean/type.md
+      - 2 句法范畴: cogn/lean/cat.md
+      - 3 初始模块: cogn/lean/init.md
       - 4 设计模式: cogn/lean/ptn.md
   - 形而上学:
     - 一、认知科学:
