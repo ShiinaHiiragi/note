@@ -7,14 +7,15 @@
 ### Lean
 
 !!! note "参考文献"
+    - 『The Lean 4 Theorem Prover and Programming Language』（Leonardo de Moura、Sebastian Ullrich）
     - 『Functional Programming in Lean』（David Thrane Christiansen）
     - 『Theorem Proving in Lean 4』（Jeremy Avigad、Leonardo de Moura、Soonho Kong、Sebastian Ullrich）
     - 『Lean 4 manual』（Microsoft Corporation）
     - 『Metaprogramming in Lean 4』（Arthur Paulino、Damiano Testa、Edward Ayers、Evgenia Karunus、Henrik Böving、Jannis Limperg、Siddhartha Gadgil、Siddharth Bhat）
 
 #### 1 系统与原理
-1. 环境配置
-2. 元编程
+1. 编译原理
+2. 环境配置
 3. 风格规约
 
 #### 2 句法范畴
@@ -28,12 +29,11 @@
 #### 3 内建类
 1. 预定义记号
 2. 内建类型
-3. 公理与定理
+3. 数学基础
 
 #### 4 设计模式
-1. Functor
-2. Applicative
-3. Monad
+1. 句法解析参考
+2. 系统 Monad
 
 ## 第三部分 数理逻辑
 ### 一、证明论
