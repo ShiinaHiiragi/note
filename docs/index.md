@@ -370,7 +370,7 @@ const refList = [
         page: [3, 152],
         press: "高等教育出版社",
         locate: "北京",
-        plot: 31 - 3
+        plot: 47
     },
     {
         author: ["熊金城"],
