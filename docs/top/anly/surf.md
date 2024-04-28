@@ -529,11 +529,22 @@
 ### 5.4.3 基本不变量
 设 $S$ 是 $\mathbf{R}^{3}$ 的曲面，参数表示为 $\boldsymbol{r}=\boldsymbol{r}(u, v)$
 
-1. 第一基本形式：$I=\mathrm d s^{2}=E \mathrm d u \cdot \mathrm d u+2 F \mathrm d u \cdot \mathrm d v+G \mathrm d v \cdot \mathrm d v$
+1. 第一基本形式：$I=\mathrm d s^{2}=E \mathrm d u \cdot \mathrm d u+2 F \mathrm d u \cdot \mathrm d v+G \mathrm d v \cdot \mathrm d v$，其中 $E=\left\langle\boldsymbol{r}_{u}, \boldsymbol{r}_{u}\right\rangle, F=\left\langle\boldsymbol{r}_{u}, \boldsymbol{r}_{v}\right\rangle, G=\left\langle\boldsymbol{r}_{v}, \boldsymbol{r}_{v}\right\rangle$
     1. 曲面 $S$ 的第一基本形式与参数选取无关
     2. 曲面的第一基本形式在 $\mathbf{R}^{3}$ 的合同变换下不变，即若 $\mathbf{R}^{3}$ 的合同变换 $\mathcal{T}$ 将曲面 $S$ 变为曲面 $\widetilde{S}: \widetilde{\boldsymbol{r}}(u, v)=\mathcal{T} \circ \boldsymbol{r}(u, v)$，则曲面 $\widetilde{S}$ 的第一基本形式 $\widetilde{\mathrm{I}}(u, v)$ 与曲面 $S$ 的第一基本形式 $\mathrm{I}(u, v)$ 相同
 2. 第二基本形式：设 $S$ 的单位法向量为 $\boldsymbol{n}=\dfrac{\boldsymbol{r}_{u} \wedge \boldsymbol{r}_{v}}{\left|\boldsymbol{r}_{u} \wedge \boldsymbol{r}_{v}\right|}$，则定义 $\mathrm{II}=-\langle \mathrm d r, \mathrm d n\rangle$ 为曲面 $S$ 的第二基本形式
-    1. 定义 $L, M, N$ 如上，则 $\mathrm{II} = -\left\langle\boldsymbol{r}_{u} \mathrm d u+\boldsymbol{r}_{v} \mathrm d v, \boldsymbol{n}_{u} \mathrm d u+\boldsymbol{n}_{v} \mathrm d v\right\rangle = L \mathrm d u \mathrm d u+2 M \mathrm d u \mathrm d v+N \mathrm d v \mathrm d v$
+    1. 定义函数
+
+        $$
+        \begin{aligned}
+        & L=\left\langle\boldsymbol{r}_{u u}, \boldsymbol{n}\right\rangle=-\left\langle\boldsymbol{r}_{u}, \boldsymbol{n}_{u}\right\rangle \\
+        & M=\left\langle\boldsymbol{r}_{u v}, \boldsymbol{n}\right\rangle=-\left\langle\boldsymbol{r}_{u}, \boldsymbol{n}_{v}\right\rangle=-\left\langle\boldsymbol{r}_{v}, \boldsymbol{n}_{u}\right\rangle \\
+        & N=\left\langle\boldsymbol{r}_{v v}, \boldsymbol{n}\right\rangle=-\left\langle\boldsymbol{r}_{v}, \boldsymbol{n}_{v}\right\rangle
+        \end{aligned}
+        $$
+
+        则 $\mathrm{II} = -\left\langle\boldsymbol{r}_{u} \mathrm d u+\boldsymbol{r}_{v} \mathrm d v, \boldsymbol{n}_{u} \mathrm d u+\boldsymbol{n}_{v} \mathrm d v\right\rangle = L \mathrm d u \mathrm d u+2 M \mathrm d u \mathrm d v+N \mathrm d v \mathrm d v$
+
     2. 曲面的第二基本形式是关于 $(\mathrm d u, \mathrm d v)$ 的二次型
         1. $L N-M^{2}>0$：此时 $\text{II}$ 正定或负定，这样的点附近，曲面的形状是凸的（或凹的，由法向选取决定）
         2. $L N-M^{2}<0$：此时 $\text{II}$ 不定，这样的点附近，曲面是马鞍型的
@@ -554,16 +565,7 @@
         3. 当 $L N-M^{2}=0$ 时，这样的点称为曲面的抛物点
             - 当 $L 、 M 、 N$ 不全为零时，仅有一个切方向使法曲率 $k_{n}$ 为零，这个方向亦称作曲面在该点的渐近方向；这个渐近方向将切平面分割为两个区域，在这两个区域内法曲率均不为 $0$ 且符号相等
             - 当 $L=M=N=0$ 时，法曲率 $k_{n}$ 沿任何方向均为零，这样的点又称作平点
-    2. 曲面 $S$ 沿非零切向量 $\boldsymbol{w}=\xi \boldsymbol{r}_{u}+\eta \boldsymbol{r}_{v}$ 的法曲率定义为 $k_{n}(\boldsymbol{w})=\dfrac{\mathrm{II}(\boldsymbol{w}, \boldsymbol{w})}{\mathrm{I}(\boldsymbol{w}, \boldsymbol{w})}=\dfrac{L \xi^{2}+2 M \xi \eta+N \eta^{2}}{E \xi^{2}+2 F \xi \eta+G \eta^{2}}$，其中
-
-        $$
-        \begin{aligned}
-        & L=\left\langle\boldsymbol{r}_{u u}, \boldsymbol{n}\right\rangle=-\left\langle\boldsymbol{r}_{u}, \boldsymbol{n}_{u}\right\rangle \\
-        & M=\left\langle\boldsymbol{r}_{u v}, \boldsymbol{n}\right\rangle=-\left\langle\boldsymbol{r}_{u}, \boldsymbol{n}_{v}\right\rangle=-\left\langle\boldsymbol{r}_{v}, \boldsymbol{n}_{u}\right\rangle \\
-        & N=\left\langle\boldsymbol{r}_{v v}, \boldsymbol{n}\right\rangle=-\left\langle\boldsymbol{r}_{v}, \boldsymbol{n}_{v}\right\rangle
-        \end{aligned}
-        $$
-
+    2. 曲面 $S$ 沿非零切向量 $\boldsymbol{w}=\xi \boldsymbol{r}_{u}+\eta \boldsymbol{r}_{v}$ 的法曲率定义为 $k_{n}(\boldsymbol{w})=\dfrac{\mathrm{II}(\boldsymbol{w}, \boldsymbol{w})}{\mathrm{I}(\boldsymbol{w}, \boldsymbol{w})}=\dfrac{L \xi^{2}+2 M \xi \eta+N \eta^{2}}{E \xi^{2}+2 F \xi \eta+G \eta^{2}}$
     3. 对曲面 $S$ 的任意单位切向量 $\boldsymbol{v}$，曲面 $S$ 沿 $\boldsymbol{v}$ 方向的法曲率可表为 $k_{n}(\boldsymbol{v})=\langle\mathcal{W}(\boldsymbol{v}), \boldsymbol{v}\rangle$
 
 2. $\text{Gauss}$ 映射：设曲面 $S$ 的参数表示为 $\boldsymbol r=\boldsymbol r(u, v)$，在每点有一个确定的单位法向量 $\boldsymbol{n}(u, v)$．平行移动 $n$ 使之起点落在原点，则 $n$ 的终点就落在 $\mathbf{R}^{3}$ 的单位球面 $S^{2}$ 上，从而得到映射 $\boldsymbol g: \boldsymbol{r}(u, v) \rightarrow \boldsymbol{n}(u, v)$，称为曲面 $S$ 的 $\text{Gauss}$ 映射
@@ -572,7 +574,7 @@
         1. $\text{Weingarten}$ 变换与曲面的参数选取无关
         2. $\text{Weingarten}$ 变换是曲面切平面到自身的自共轭变换，即对任意 $\boldsymbol{v}$ 都有 $\boldsymbol{w} \in T_{P} S$
     2. 设 $k$ 是 $\text{Weingarten}$ 变换 $\mathcal{W}: T_{P} S \rightarrow T_{P} S$ 的一个特征值，$\boldsymbol{v}$ 是相应的单位特征向量．将 $\text{Weingarten}$ 变换在 $P$ 点的两个特征值称为曲面 $S$ 在 $P$ 点的主曲率，特征值对应的两个（实）特征方向称为曲面在 $P$ 点的主方向
-        1. 设曲面 $S$ 的参数表示为 $\boldsymbol r(u, v)$，在切平面的基 $\left\{\boldsymbol{r}_{u}, \boldsymbol{r}_{v}\right\}$ 下 $\text{Weingarten}$ 变换的系数矩阵是 $\left[\begin{array}{ll}a & b \\ c & d\end{array}\right]$，则主曲率 $k_1, k_2$ 满足方程 $k^{2}-\dfrac{L G-2 M F+N E}{E G-F^{2}} k+\dfrac{L N-M^{2}}{E G-F^{2}}=0$，其中 $E=\left\langle\boldsymbol{r}_{u}, \boldsymbol{r}_{u}\right\rangle, F=\left\langle\boldsymbol{r}_{u}, \boldsymbol{r}_{v}\right\rangle, G=\left\langle\boldsymbol{r}_{v}, \boldsymbol{r}_{v}\right\rangle$
+        1. 设曲面 $S$ 的参数表示为 $\boldsymbol r(u, v)$，在切平面的基 $\left\{\boldsymbol{r}_{u}, \boldsymbol{r}_{v}\right\}$ 下 $\text{Weingarten}$ 变换的系数矩阵是 $\left[\begin{array}{ll}a & b \\ c & d\end{array}\right]$，则主曲率 $k_1, k_2$ 满足方程 $k^{2}-\dfrac{L G-2 M F+N E}{E G-F^{2}} k+\dfrac{L N-M^{2}}{E G-F^{2}}=0$
         2. 称 $H=\dfrac{1}{2}\left(k_{1}+k_{2}\right)$ 为曲面的平均曲率，$K=k_{1} k_{2}$ 为曲面的 $\text{Gauss}$ 曲率，于是
 
             $$
