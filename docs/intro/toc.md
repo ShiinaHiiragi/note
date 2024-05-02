@@ -4,7 +4,8 @@
 - 全站以逻辑学作为核心内容，同时辐射与逻辑学具有关联的学科，包括数学、哲学、语言学等
 - 本站的定位是「笔记」，即已存在于世且广受公认的客观知识列表，而非引导入门者的教程段落，亦非语料作者的个人观点阐述，也并非前沿领域的最新研究辑录
 
-### Lean
+## 第一部分 认识基础
+### 三、Lean
 
 !!! note "参考文献"
     - 『The Lean 4 Theorem Prover and Programming Language』（Leonardo de Moura、Sebastian Ullrich）
