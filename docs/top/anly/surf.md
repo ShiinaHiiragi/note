@@ -612,8 +612,73 @@
     3. 当 $K=0$ 时，$P$ 是抛物点，$S^{*}$ 是抛物柱面
     4. 曲面在一点 $P$ 的两个主曲率相等时，在 $P$ 点有 $\dfrac{L}{E}=\dfrac{M}{F}=\dfrac{N}{G}=k$，称点 $P$ 为曲面的脐点．特别地，当 $k \neq 0$ 时点 $P$ 称为圆点；当 $k=0$ 时，$L=M=N=0$，这时称点 $P$ 为曲面的平点
 
-### 5.4.5 活动标架与自然标架
+### 5.4.5 活动标架
+1. 设 $\mathbf{R}^{3}$ 的曲面 $S$ 的参数表示为 $\boldsymbol{r}=\boldsymbol{r}(u, v)$，参数曲面 $S$ 上的光滑向量场 $\boldsymbol{x}(u, v)$ 对于 $S$ 上的任意一点 $\boldsymbol{r}(u, v)$，都有向量 $\boldsymbol{x}(u, v)$ 从点 $\boldsymbol{r}(u, v)$ 出发，且 $\boldsymbol{x}(u, v)$ 光滑地依赖于参数 $(u, v)$
+    1. 若 $\boldsymbol{x}(u, v)$ 是曲面 $S$ 在点 $\boldsymbol{r}(u, v)$ 的切向量，$\boldsymbol{x}(u, v)$ 称为曲面 $S$ 的切向量场，显然 $\boldsymbol{r}_{u}$ 和 $\boldsymbol{r}_{v}$ 是曲面 $S$ 的切向量场
+    2. 若 $\boldsymbol{x}(u, v)$ 是曲面 $S$ 在点 $\boldsymbol{r}(u, v)$ 的法向量，$\boldsymbol{x}(u, v)$ 称为曲面 $S$ 的法向量场，显然 $\dfrac{\boldsymbol{r}_{u} \wedge \boldsymbol{r}_{v}}{\left|\boldsymbol{r}_{u} \wedge \boldsymbol{r}_{v}\right|}$ 是曲面 $S$ 的（单位）法向量场
+
+    记单位法向量为 $\boldsymbol{n}$，则 $\left\{\boldsymbol{r}(u, v) ; \boldsymbol{r}_{u}, \boldsymbol{r}_{v}, \boldsymbol{n}\right\}$ 构成以 $\boldsymbol{r}(u, v)$ 为原点的 $\mathbf{R}^{3}$ 的一个标架，其全体称为参数曲面 $S$ 的自然标架（场）
+
+2. 曲面 $S$ 上的活动标架（场）：以曲面上的点为原点的 $\mathbf{R}^{3}$ 的坐标系 $\left\{\boldsymbol{r}(u, v) ; \boldsymbol{x}_{1}(u, v), \boldsymbol{x}_{2}(u, v), \boldsymbol{x}_{3}(u, v)\right\}$，其中 $\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \boldsymbol{x}_{3}$ 是曲面 $S$ 上的处处线性无关的向量场，即 $\left(\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \boldsymbol{x}_{3}\right) \neq 0$
+    1. 一般要求 $\left(\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \boldsymbol{x}_{3}\right)>0$ 以保证这些标架均为正定向的
+    2. 特别地，如果 $\left\{\boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \boldsymbol{x}_{3}\right\}$ 为单位正交标架，则称 $\left\{\boldsymbol{r}(u, v) ; \boldsymbol{x}_{1}, \boldsymbol{x}_{2}, \boldsymbol{x}_{3}\right\}$ 为曲面 $S$ 的正交（活动）标架或规范（活动）标架
+        1. 设 $S$ 是 $\mathbf{R}^{3}$ 的曲面，$\left\{\boldsymbol{r} ; \boldsymbol{e}_{1}, \boldsymbol{e}_{2}, \boldsymbol{e}_{3}\right\}$ 是 $S$ 的正交标架，则
+
+            $$
+            \begin{aligned}
+            \mathrm d \boldsymbol{r} &= \omega_{1} \boldsymbol{e}_{1}+\omega_{2} \boldsymbol{e}_{2} \\
+            \mathrm d \boldsymbol{e}_{1} &= \omega_{12} \boldsymbol{e}_{2}+\omega_{13} \boldsymbol{e}_{3} \\
+            \mathrm d \boldsymbol{e}_{2} &= \omega_{21} \boldsymbol{e}_{1}+\omega_{23} \boldsymbol{e}_{3} \\
+            \mathrm d \boldsymbol{e}_{3} &= \omega_{31} \boldsymbol{e}_{1}+\omega_{32} \boldsymbol{e}_{2}
+            \end{aligned}
+            $$
+
+            其中 $\omega_{i j}+\omega_{j i}=0$，曲面 $S$ 的第一基本形式和第二基本形式分别为
+
+            $$
+            \begin{aligned}
+            \text{I}&=\omega_{1} \omega_{1}+\omega_{2} \omega_{2}, \\
+            \text{II}&=\omega_{1} \omega_{13}+\omega_{2} \omega_{23} .
+            \end{aligned}
+            $$
+
+        2. 曲面的第一基本形式与正交标架的选取无关，曲面的第二基本形式与同法向的正交标架选取无关
+        3. 设 $\omega_{13}=h_{11} \omega_{1}+h_{12} \omega_{2}, \  \omega_{23}=h_{21} \omega_{1}+h_{22} \omega_{2}$，令 $\boldsymbol{B}=\left[\begin{array}{cc} h_{11} & h_{21} \\ h_{12} & h_{22}\end{array}\right]$，则矩阵 $\boldsymbol{B}$ 的特征值是曲面的主曲率，且曲面的 $\text{Gauss}$ 曲率 $K=\operatorname{det}(\boldsymbol{B})=\left(h_{11} h_{22}-h_{12}^{2}\right)$，平均曲率 $H=\dfrac{1}{2} \operatorname{tr} (\boldsymbol{B})=\dfrac{1}{2}\left(h_{11}+h_{22}\right)$
+
+3. 引入如下记号
+
+    $$
+    \begin{aligned}
+    \boldsymbol{r}&=\boldsymbol{r}\left(u^{1}, u^{2}\right) \\
+    \boldsymbol{r}_{\alpha}&=\dfrac{\partial \boldsymbol{r}}{\partial u^{\alpha}}, \alpha=1,2 \\
+    \boldsymbol{r}_{\alpha \beta}&=\dfrac{\partial^{2} \boldsymbol{r}}{\partial u^{\alpha} \partial u^{\beta}}\left(u^{1}, u^{2}\right),  \alpha, \beta=1,2 \\
+    \boldsymbol{n}&=\dfrac{\boldsymbol{r}_{1} \wedge \boldsymbol{r}_{2}}{\left|\boldsymbol{r}_{1} \wedge \boldsymbol{r}_{2}\right|} \\
+    g_{\alpha \beta}&=\left\langle\boldsymbol{r}_{\alpha}, \boldsymbol{r}_{\beta}\right\rangle, \alpha, \beta=1,2 \\
+    b_{\alpha \beta}&=\left\langle\boldsymbol{r}_{\alpha \beta}, \boldsymbol{n}\right\rangle=-\left\langle\boldsymbol{r}_{\alpha}, \boldsymbol{n}_{\beta}\right\rangle, \alpha, \beta=1,2
+    \end{aligned}
+    $$
+
+    1. 称 $\Gamma_{\alpha \beta}^{\gamma}=\dfrac{1}{2} g^{\gamma \xi}\left\{\dfrac{\partial g_{\alpha \xi}}{\partial u^{\beta}}+\dfrac{\partial g_{\beta \xi}}{\partial u^{\alpha}}-\dfrac{\partial g_{\alpha \beta}}{\partial u^{\xi}}\right\}$ 为曲面的 $\text{Christoffel}$ 符号，$\Gamma_{\xi \alpha \beta}=g_{\gamma \xi} \Gamma_{\alpha \beta}^{\gamma}=\dfrac{1}{2}\left\{\dfrac{\partial g_{\alpha \xi}}{\partial u^{\beta}}+\dfrac{\partial g_{\beta \xi}}{\partial u^{\alpha}}-\dfrac{\partial g_{\alpha \beta}}{\partial u^{\xi}}\right\}$ 为曲面的第二类 $\text{Christoffel}$ 符号
+    2. 称方程
+
+        $$
+        \left\{\begin{aligned}
+        & \dfrac{\partial \boldsymbol{r}}{\partial u^{\alpha}}=\boldsymbol{r}_{\alpha}, & \alpha=1,2 \\
+        & \dfrac{\partial \boldsymbol{r}_{\alpha}}{\partial u^{\beta}}=\Gamma_{\alpha \beta}^{\gamma} \boldsymbol{r}_{\gamma}+b_{\alpha \beta} \boldsymbol{n}, & \alpha, \beta=1,2 \\
+        & \dfrac{\partial \boldsymbol{n}}{\partial u^{\alpha}}=-b_{\alpha}^{\beta} \boldsymbol{r}_{\beta} . & \alpha=1,2
+        \end{aligned}\right.
+        $$
+
+        为曲面 $S$ 自然标架 $\left\{\boldsymbol{r} ; \boldsymbol{r}_{1}, \boldsymbol{r}_{2}, \boldsymbol{n}\right\}$ 的运动方程
 
 ### 5.4.6 曲面论基本定理
+1. 曲面的结构方程：引入 $\text{Riemann}$ 记号 $R_{\delta \alpha \beta \gamma}=g_{\delta \xi}\left(\dfrac{\partial \Gamma_{\alpha \beta}^{\xi}}{\partial u^{\gamma}}-\dfrac{\partial \Gamma_{\alpha \gamma}^{\xi}}{\partial u^{\beta}}+\Gamma_{\alpha \beta}^{\eta} \Gamma_{\eta \gamma}^{\xi}-\Gamma_{\alpha \gamma}^{\eta} \Gamma_{\eta \beta}^{\xi}\right)$
+    1. $\text{Gauss}$ 方程：$\dfrac{\partial \Gamma_{\alpha \beta}^{\xi}}{\partial u^{\gamma}}-\dfrac{\partial \Gamma_{\alpha \gamma}^{\xi}}{\partial u^{\beta}}+\Gamma_{\alpha \beta}^{\eta} \Gamma_{\eta \gamma}^{\xi}-\Gamma_{\alpha \gamma}^{\eta} \Gamma_{\eta \beta}^{\xi}-b_{\alpha \beta} b_{\gamma}^{\xi}+b_{\alpha \gamma} b_{\beta}^{\xi}=0$
+        1. $R_{\delta \alpha \beta \gamma} = g_{\delta \xi}\left(b_{\alpha \beta} b_{\gamma}^{\xi}-b_{\alpha \gamma} b_{\beta}^{\xi}\right)=-\left(b_{\alpha \gamma} b_{\beta \delta}-b_{\alpha \beta} b_{\gamma \delta}\right)$
+        2. $R_{\delta \alpha \beta \gamma}=R_{\beta \gamma \delta \alpha}=-R_{\alpha \delta \beta \gamma}=-R_{\delta \alpha \gamma \beta}$
+    2. $\text{Codazzi}$ 方程：$\dfrac{\partial b_{\alpha \beta}}{\partial u^{\gamma}}-\dfrac{\partial b_{\alpha \gamma}}{\partial u^{\beta}}+\Gamma_{\alpha \beta}^{\xi} b_{\xi \gamma}-\Gamma_{\alpha \gamma}^{\xi} b_{\xi \beta}=0 \leftrightarrow \dfrac{\partial b_{\beta}^{\xi}}{\partial u^{\gamma}}-\dfrac{\partial b_{\gamma}^{\xi}}{\partial u^{\beta}}=-b_{\beta}^{\eta} \Gamma_{\eta \gamma}^{\xi}+b_{\gamma}^{\eta} \Gamma_{\eta \beta}^{\xi}$
+2. 曲面的存在惟一性定理
+    1. 唯一性定理：设 $S_{1}$ 和 $S_{2}$ 是定义在同一个参数域 $D$ 上的两个曲面，其的参数表示分别为 $\boldsymbol{r}\left(u^{1}, u^{2}\right)$ 和 $\widetilde{\boldsymbol{r}}\left(u^{1}, u^{2}\right)$．如果对任意 $\left(u^{1}, u^{2}\right) \in D$，$S_{1}$ 和 $S_{2}$ 在 $\left(u^{1}, u^{2}\right)$ 点有相同的第一基本形式和第二基本形式，则 $S_{1}$ 和 $S_{2}$ 相差一个 $\mathbf{R}^{3}$ 的刚体运动，即存在 $\mathbf{R}^{3}$ 的一个刚体运动 $\mathcal{T}$ 使得 $\widetilde{\boldsymbol{r}}=\mathcal{T} \circ \boldsymbol{r}$
+    2. 存在性定理：如果 $\Gamma_{\alpha \beta}^{\gamma}, b_{\alpha \beta}, b_{\beta}^{\alpha}$ 满足 $\text{Gauss}-\text{Codazzi}$ 方程，则对任意 $u_{0}=\left(u_{0}^{1}, u_{0}^{2}\right) \in D$，存在 $u_{0}$ 的一个邻域 $U \subseteq D$ 以及定义在 $U$ 上的曲面 $\boldsymbol{r}\left(u_{1}, u_{2}\right): U \rightarrow \mathbf{R}^{3}$ 使得 $\varphi$ 和 $\psi$ 分别为该曲面的第一、第二基本形式
 
 ## 5.5 曲面的内蕴理论
