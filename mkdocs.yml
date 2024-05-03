@@ -194,8 +194,8 @@ nav:
       - 1 测度论: anly/real/ms.md
       - 2 微分与积分: anly/real/lbg.md
     - 三、复分析:
-      - 1 解析函数: anly/cmplx/anly.md
-      # - 2 复积分: anly/cmplx/int.md
+      - 1 复函数: anly/cmplx/func.md
+      # - 2 解析函数: anly/cmplx/anly.md
       # - 3 留数理论: anly/cmplx/res.md
       # - 4 共形映射: anly/cmplx/cm.md
     - 四、泛函分析:
