@@ -117,9 +117,9 @@ nav:
       - 3 句法与篇章法: cogn/jbo/syntax.md
     - 三、Lean:
       - 1 系统原理: cogn/lean/sys.md
-      - 2 句法范畴: cogn/lean/cat.md
-      - 3 初始模块: cogn/lean/init.md
-      - 4 元编程: cogn/lean/meta.md
+      # - 2 句法范畴: cogn/lean/cat.md
+      # - 3 初始模块: cogn/lean/init.md
+      # - 4 元编程: cogn/lean/meta.md
   - 形而上学:
     - 一、认知科学:
       - 1 神经认知: meta/cogn/nerve.md
@@ -193,6 +193,11 @@ nav:
     - 二、实分析:
       - 1 测度论: anly/real/ms.md
       - 2 微分与积分: anly/real/lbg.md
+    - 三、复分析:
+      - 1 解析函数: anly/cmplx/anly.md
+      # - 2 复积分: anly/cmplx/int.md
+      # - 3 留数理论: anly/cmplx/res.md
+      # - 4 共形映射: anly/cmplx/cm.md
     - 四、泛函分析:
       - 1 赋范线性空间: anly/func/norm.md
       - 2 算子与泛函: anly/func/op.md
