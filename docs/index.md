@@ -100,6 +100,15 @@ const refList = [
         page: [1, 185]
     },
     {
+        author: ["John W. Cowan"],
+        title: "The Complete Lojban Language",
+        type: "M",
+        page: [489, 503],
+        year: 2016,
+        press: "Logical Language Group, Incorporated",
+        locate: "Fairfax"
+    },
+    {
         author: ["蔡曙山"],
         title: "认知科学导论",
         type: "M",
