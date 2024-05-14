@@ -620,10 +620,11 @@
     记 $f[\mathbf R] = \overline{\mathbf R}$，并将其与 $\mathbf R$ 等同，于是 $\mathbf R = \overline{\mathbf R} \subseteq \mathbf C$
 
 6. 共轭复数：若 $x, y \in \mathbf R, w \in \mathbf C, z = x^{\mathbf C} +^{\mathbf C} y^{\mathbf C} \cdot^{\mathbf C} \mathrm i \in \mathbf C$，则定义 $\overline z = x^{\mathbf C} -^{\mathbf C} y^{\mathbf C} \cdot^{\mathbf C} \mathrm i$ 为 $z$ 的共轭复数
-    1. $\overline{z +^{\mathbf C} w} = \overline z +^{\mathbf C} \overline w, \overline{z \cdot^{\mathbf C} w} = \overline z \cdot^{\mathbf C} \overline w$
-    2. 设 $z +^{\mathbf C} \overline z = (2^{\mathbf R} \cdot^{\mathbf R} \text{Re}(z))^{\mathbf C}, z -^{\mathbf C} \overline z = 2^{\mathbf C} \cdot^{\mathbf C} \mathrm i \cdot^{\mathbf C} \text{Im}(z)^{\mathbf C}$
-    3. 对于任意 $z \in \mathbf C$，存在 $x \in \mathbf R$ 使得 $z \cdot^{\mathbf C} \overline z = x^{\mathbf C}$ 且 $x \geqslant^{\mathbf R} 0^{\mathbf R}$
+    1. $\overline{\overline{z}} = z$
+    2. $\overline{z +^{\mathbf C} w} = \overline z +^{\mathbf C} \overline w, \overline{z \cdot^{\mathbf C} w} = \overline z \cdot^{\mathbf C} \overline w$
+    3. 设 $z +^{\mathbf C} \overline z = (2^{\mathbf R} \cdot^{\mathbf R} \text{Re}(z))^{\mathbf C}, z -^{\mathbf C} \overline z = 2^{\mathbf C} \cdot^{\mathbf C} \mathrm i \cdot^{\mathbf C} \text{Im}(z)^{\mathbf C}$
+    4. 对于任意 $z \in \mathbf C$，存在 $x \in \mathbf R$ 使得 $z \cdot^{\mathbf C} \overline z = x^{\mathbf C}$ 且 $x \geqslant^{\mathbf R} 0^{\mathbf R}$
 7. 模：设 $z, w \in \mathbf C, x^{\mathbf C} = z \cdot^{\mathbf C} \overline z$，定义模 $|z| = \sqrt{x}$
-    1. $|\overline z| = |z|, |\text{Re}(z)| \leqslant^{\mathbf R} |z|$
+    1. $|\overline z| = |z|, |\text{Re}(z)| \leqslant^{\mathbf R} |z|, |\text{Im}(z)| \leqslant^{\mathbf R} |z|, |z| \leqslant^{\mathbf R} |\text{Re}(z)| + |\text{Im}(z)|$
     2. $|z| \geqslant^{\mathbf R} 0^{\mathbf R}$，等号成立当且仅当 $z^{\mathbf C} = 0^{\mathbf C}$
     3. $|z +^{\mathbf C} w| \leqslant^{\mathbf R} |z| +^{\mathbf R} |w|, |z \cdot^{\mathbf C} w| = |z| \cdot^{\mathbf R} |w|$

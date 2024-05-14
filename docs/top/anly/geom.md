@@ -153,7 +153,7 @@
     2. 定向：给定实 $n$ 维仿射空间 $A^n$ 中的直线 $l$，$D$ 是其无穷远点，记为 $D_{\infty}$．则 $l$ 上任一对点 $A, B$ 确定了这条直线的定向．$l$ 上任一点 $P$ 有坐标 $\lambda=\left(P B, A D_{\infty}\right)$，规定 $\lambda$ 增大的方向是直线 $l$ 的正向，$\lambda$ 减少的方向是直线 $l$ 的负向，将正向记作 $\overrightarrow{A B}$
     3. 有向线段：如果仿射空间 $A^n$ 中一条直线已经规定了正向，规定这条直线上任意两点所确定的线段的其中一点是始端，另一点是终端，则有从始端指向终端的方向．如果这个方向和直线的方向一致，则称这个线段为正向线段，否则为负向线段．将有向线段记作 $\overrightarrow{P Q}$，其中 $P$ 是始端，$Q$ 是终端
 
-### 2.3.2 仿射坐标与仿射变换
+### 2.3.2 仿射变换
 1. 仿射坐标
     1. 仿射参考标架：设 $V$ 是域 $F$ 上的 $n+1$ 维线性空间．对于射影几何 $\boldsymbol{P}(V)$，选定标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$，使得 $A_0 \notin H, A_1, A_2, \cdots, A_n \in H, E \notin H$，则这个标架称为仿射几何 $\boldsymbol{A}(V)$ 的仿射参考标架
     2. 齐次坐标：在 $V$ 中取一组基 $\left\{a_0, a_1, a_2, \cdots, a_n\right\}$，使得 $a_1, a_2, \cdots, a_n \in H$ 且 $A_0=\left[a_0\right], A_1=\left[a_1\right], \cdots, A_n=\left[a_n\right]$，$E=\left[a_0+a_1+a_2+\cdots+a_n\right]$．则对于 $\boldsymbol{P}(V)$ 中任一点 $P=[p]$，设 $p=x_0 a_0+x_1 a_1+x_2 a_2+\cdots+x_n a_n$，则 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为点 $P$ 对于标准参考标架 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 的齐次坐标
@@ -213,7 +213,7 @@
         3. 称集合 $\{M \mid \overrightarrow{M_1M} = t\overrightarrow{M_1M_2}, t \in [0, 1]\}$ 为以 $M_1, M_2$ 为端点的线段，记作 $\overline{M_1M_2}$．设 $M \subseteq \mathscr A$，对 $M$ 中的任意两点 $M_1, M_2$，必有 $\overline{M_1M_2} \subseteq \mathscr A$，则称 $M$ 为 $\mathscr A$ 中的凸集
 
 ## 2.4 Euclid 几何
-### 2.4.1 Euclid 几何与 Euclid 坐标
+### 2.4.1 Euclid 几何
 1. $\text{Euclid}$ 空间：给定一个仿射空间，如果对于其任意两点都能定义它们之间的距离，且这个距离定义满足三角形不等式，则这个仿射空间就称为 $\text{Euclid}$ 空间．$\text{Euclid}$ 空间中全体点，线，$\cdots$，超平面的集合称为 $\text{Euclid}$ 几何
     1. 有向距离：对于 $\text{Euclid}$ 空间的有向线段 $\overrightarrow{P Q}$，定义有向距离 $d(\overrightarrow{P Q})= \pm d(P Q)$，其中正向线段取正号，否则取负号
     2. 实 $\text{Euclid}$ 空间：任取 $A^n$ 中两点 $P=[a]$ 和 $Q=[b]$，定义其间的距离为 $d(P Q)=d([a],[b])=|b-a|$，则 $A^n$ 是一个实 $n$ 维 $\text{Euclid}$ 空间，记作 $E^n$
@@ -334,9 +334,36 @@
             \end{array}\right.
             $$
 
-3. 复点：若 $n$ 维 $\text{Desvartes}$ 坐标系的坐标 $(x_1, x_2, \cdots, x_n)$ 中至少有一个是虚数，则称其为虚点，否则称其为实点．若两个虚点的对应坐标都是共轭复数，那么这两点称作一对共轭虚点，实点与虚点统称为复点
-    1. 复向量：若向量 $\overrightarrow{AB} = (x_1, x_2, \cdots, x_n)$ 中至少有一个是虚数，则称其为虚向量，否则称其为实向量．实向量与虚向量统称为复向量
+4. 复点：若 $n$ 维 $\text{Desvartes}$ 坐标系的坐标 $(x_1, x_2, \cdots, x_n)$ 中至少有一个是虚数，则称其为虚点，否则称其为实点．若两个虚点的对应坐标都是共轭复数，那么这两点称作一对共轭虚点，实点与虚点统称为复点
+    1. 复向量：若向量 $\overrightarrow{AB} = (x_1, x_2, \cdots, x_n)$ 中至少有一个虚数，则称其为虚向量，否则称实向量．实向量与虚向量统称为复向量
     2. 复直线：平面上直线的一般式方程为 $Ax + By + C = 0$．若 $A, B, C$ 与三个实数成比例，那么直线为实直线，否则为虚直线．实直线与虚直线统称为复直线
+5. 复数的几何表示：在平面上建立直角坐标系 $O x y$ 后，复数与平面上的点（或向量）建立起一一对应．采用极坐标，则复数有三角表示 $z=r(\cos \varphi+\mathrm i \sin \varphi)=r e^{\mathrm i \varphi}$，称 $\varphi$ 为 $z$ 的辐角，并将辐角在 $-\pi<\varphi \leqslant \pi$ 内的值称为辐角的主值，记作 $\arg z$
+    1. 一般有
+
+        $$
+        \arg z=
+        \left\{\begin{aligned}
+        & \arctan \dfrac{y}{x}, & x>0 \\
+        & \pi+\arctan \dfrac{y}{x}, & x<0, y>0 \\
+        & -\pi+\arctan \dfrac{y}{x}, & x<0, y<0
+        \end{aligned}\right.
+        $$
+
+    2. 复数乘法的几何意义
+        1. $\left|z_{1} z_{2}\right|=\left|z_{1}\right|\left|z_{2}\right|, \operatorname{arg}\left(z_{1} z_{2}\right)=\operatorname{arg} z_{1}+\operatorname{arg} z_{2}$
+        2. $\left|\dfrac{z_{1}}{z_{2}}\right|=\dfrac{\left|z_{1}\right|}{\left|z_{2}\right|}, \operatorname{arg}\left(\dfrac{z_{1}}{z_{2}}\right)=\operatorname{arg} z_{1}-\operatorname{arg} z_{2}$
+    3. 设 $n$ 是复数，则方程 $\omega^{n} = z$ 有 $n$ 个互不相同的解
+
+        $$
+        \begin{aligned}
+        w_{0} & =\sqrt[n]{r}\left(\cos \dfrac{\varphi}{n}+i \sin \dfrac{\varphi}{n}\right) \\
+        w_{1} & =\sqrt[n]{r}\left(\cos \dfrac{\varphi+2 \pi}{n}+i \sin \dfrac{\varphi+2 \pi}{n}\right) \\
+        & \ \ \vdots \\
+        w_{n-1} & =\sqrt[n]{r}\left(\cos \dfrac{\varphi+2(n-1) \pi}{n}+i \sin \dfrac{\varphi+2(n-1) \pi}{n}\right)
+        \end{aligned}
+        $$
+
+        这 $n$ 个 $n$ 次根的模位于以原点为中心、以 $\sqrt[n]{r}$ 为半径的圆上，且这 $n$ 个点刚好将圆周分成 $n$ 等分
 
 ### 2.4.2 Euclid 变换
 1. 正交变换：对于线性映射 $f: H \rightarrow H$，如果 $f$ 保持度量 $\tau$ 不变，即 $\forall a, b \in H: \tau(f(a), f(b))=\tau(a, b)$，则 $f$ 称为 $\text{Euclid}$ 线性空间 $(H, \tau)$ 的正交变换

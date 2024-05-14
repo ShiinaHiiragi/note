@@ -426,6 +426,16 @@ const refList = [
         locate: "北京"
     },
     {
+        author: ["潘永亮", "汪琥庭", "汪芳庭", "宋立功"],
+        title: "复变函数",
+        type: "M",
+        page: [1, 175],
+        year: 2004,
+        press: "科学出版社",
+        locate: "北京",
+        plot: 9
+    },
+    {
         author: ["汪嘉冈"],
         title: "现代概率论基础",
         type: "M",
