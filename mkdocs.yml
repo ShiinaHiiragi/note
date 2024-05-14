@@ -115,6 +115,7 @@ nav:
       - 1 体系与正字法: cogn/jbo/phone.md
       - 2 词法与构词法: cogn/jbo/lex.md
       - 3 句法与篇章法: cogn/jbo/syntax.md
+      - 4 EBNF 文法: cogn/jbo/bnf.md
     - 三、Lean:
       - 1 系统原理: cogn/lean/sys.md
       # - 2 句法范畴: cogn/lean/cat.md
