@@ -1,7 +1,9 @@
 # 1 复函数
 
-## 1.1 极限与微分
-### 1.1.1 复数列的极限
+## 1.1 多值函数
+
+## 1.2 极限与微分
+### 1.2.1 复数列的极限
 1. 设 $z_{1}, z_{2}, \cdots, z_{n} \cdots$ 是一复数序列（简称为复数列），$z_{0}$ 是一给定的复数．若对于任给的 $\varepsilon>0$，存在正整数 $N$，当 $n>N$ 时总有 $\left|z_{n}-z_{0}\right|<\varepsilon$，则称复数列 $\left\{z_{n}\right\}$ 收敛于 $z_{0}$，或称 $z_{0}$ 是复数列 $\left\{z_{n}\right\}$ 的极限，记为 ${\displaystyle \lim _{n \rightarrow \infty} z_{n}=z_{0}}$ 或 ${\displaystyle z_{n} \rightarrow z_{0} \ (n \rightarrow \infty)}$
     1. 设 $r>0$，称点集 $B\left(z_{0}, r\right)=\left\{z \in \mathbf{C}:\left|z-z_{0}\right|<r\right\}$ 为以 $z_{0}$ 为中心、以 $r$ 为半径的球形邻域或 $z_{0}$ 的一个 $r-$邻域
     2. 复数列收敛的充要条件
@@ -15,7 +17,7 @@
         2. $z \neq 0 \to z \cdot \infty = \infty \cdot z = \infty, \dfrac{z}{0} = \infty$
         3. $|\infty| = +\infty$，且 $\infty$ 的实部、虚部及辐角均无意义，$\infty \cdot 0, \infty \pm \infty, \dfrac{\infty}{\infty}$ 无意义
 
-### 1.1.2 复函数的极限
+### 1.2.2 复函数的极限
 1. 复函数 $w=f(z)$ 对应两个二元实函数：$w=f(z)=f(x+y \mathrm i)=u(x, y)+\mathrm i v(x, y)$
 2. 设函数 $w=f(z)$ 在 $z_{0}$ 的去心邻域 $0<\left|z-z_{0}\right|<R \ (R>0)$ 内有定义，$w_{0}$ 是给定的复数．若对任意的 $\varepsilon>0$，存在 $\delta>0$ 使得当 $0< \left|z-z_{0}\right|<\delta$ 时恒有 $\left|f(z)-w_{0}\right|<\varepsilon$，则称当 $z$ 趋于 $z_{0}$ 时 $f(z)$ 以 $w_{0}$ 为极限，记作 ${\displaystyle \lim _{z \rightarrow z_{0}} f(z)=w_{0}}$
     1. 若极限存在则必唯一
@@ -26,7 +28,7 @@
     2. 连续函数的和、差、积、商（分母不为零）与复合函数仍然是同一点或同一区域内的连续函数
     3. 有界闭区域 $D$ 上的连续函数 $f(z)$ 在 $D$ 上必有界，且 $|f(z)|$ 在 $D$ 上必有最大值与最小值
 
-### 1.1.3 复函数的微分
+### 1.2.3 复函数的微分
 1. 设函数 $w=f(z)$ 定义在域 $D$ 上，$z_{0} \in D$．若极限 ${\displaystyle \lim _{\Delta z \rightarrow 0} \dfrac{f\left(z_{0}+\Delta z\right)-f\left(z_{0}\right)}{\Delta z}}$ 存在，则称 $f(z)$ 在点 $z_{0}$ 可导，称这个极限值为 $f(z)$ 在点 $z_{0}$ 的导数，记作 $f^{\prime}\left(z_{0}\right)$ 或 $\left.\dfrac{\mathrm d w}{\mathrm d z}\right|_{z=z_{0}}$．当 $f(z)$ 在区域 $D$ 内处处可导时，称 $f(z)$ 在区域 $D$ 内可导
     1. 若 $f(z), g(z)$ 都在点 $z$（或区域）可导，则其和、差、积、商（分母在该处不为零）也在该处可导
         1. $(f(z) \pm g(z))^{\prime}=f^{\prime}(z) \pm g^{\prime}(z)$
@@ -37,8 +39,6 @@
 2. 若函数 $w=f(z)$ 在点 $z_{0}$ 的增量 $\Delta w$ 可表示为 $\Delta w=A \Delta z+o(|\Delta z|)$，其中 $A$ 是只与 $z_{0}$ 有关的复常数，则称 $w=f(z)$ 在点 $z_{0}$ 可微，且称 $\Delta w$ 的线性主部 $A \Delta z$ 为 $w=f(z)$ 在点 $z_{0}$ 的微分，记作 $\mathrm d w=A \Delta z$
     1. 函数 $w=f(z)$ 在点 $z_{0}$ 可导与在点 $z_{0}$ 可微等价
     2. 若函数 $w=f(z)$ 在点 $z_{0}$ 可导（可微），则 $f(z)$ 必然在 $z_0$ 点连续
-
-## 1.2 多值函数
 
 ## 1.3 复积分
 
