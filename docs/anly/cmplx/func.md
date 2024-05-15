@@ -1,6 +1,12 @@
 # 1 复函数
 
 ## 1.1 多值函数
+1. 辐角函数：$\operatorname{Arg} z=\arg z+2 k \pi, k \in \mathbf Z$
+2. 对数函数：使 $z=e^{w}$ 的复数 $w$ 称为 $z$ 的（自然）对数，记作 $\operatorname{Ln} z$
+    1. 对于每一个 $z \neq 0$，都有 $w=\operatorname{Ln} z=\ln |z|+\mathrm i \operatorname{arg}$．记 $\ln z = \ln |z| + \mathrm i \arg z$ 为对数 $\operatorname{Ln} z$ 的主值
+    2. 对于 $z_1, z_2 \neq 0$ 都有 $\operatorname{Ln}\left(z_{1} z_{2}\right)=\operatorname{Ln} z_{1}+\operatorname{Ln} z_{2}$ 与 $\operatorname{Ln} \dfrac{z_{1}}{z_{2}}=\operatorname{Ln} z_{1}-\operatorname{Ln} z_{2}$
+    3. 设复数 $z \neq 0, \alpha \in \mathbf R$，定义 $z$ 的 $\alpha$ 次幂函数 $z^{\alpha} = e^{\alpha \operatorname{Ln} z}$
+3. 根式函数：满足 $z=w^{n}$ 的函数 $w=\sqrt[n]{z}=\sqrt[n]{|z|} e^{i \frac{\mathrm{Arg} \ z}{n} z}$，其中整数 $n > 1$．定义主值 $(\sqrt[n]{z})_{0}=\sqrt[n]{|z|} e^{i \frac{\arg z}{n}}$
 
 ## 1.2 极限与微分
 ### 1.2.1 复数列的极限
