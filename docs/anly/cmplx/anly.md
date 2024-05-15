@@ -43,6 +43,7 @@
     1. 设 $f(z)$ 在单连通域 $D$ 内解析，$C$ 是 $D$ 内的闭曲线，则 ${\displaystyle \int_{c} f(z) \mathrm d z=0}$
     2. 设 $f(z)$ 在单连通域 $D$ 内解析，$C$ 是 $D$ 内一条起于点 $z_{0}$ 而终于点 $z$ 的曲线，则积分 ${\displaystyle \int_{C} f(\zeta) \mathrm d \zeta}$ 不依赖于积分路径 $C$，而只由 $z_{0}, z$ 确定，此时该积分可记为 ${\displaystyle \int_{z_{0}}^{z} f(\zeta) \mathrm d \zeta}$ 或 ${\displaystyle \int_{z_{0}}^{z} f(z) \mathrm d z}$
     3. 复合闭路定理：设 $f(z)$ 在复合闭路 $C=C_{0}+C_{1}^{-}+C_{2}^{-}+\cdots+C_{n}^{-}$ 及其所围的多连通区域 $D$ 解析，则 ${\displaystyle \oint_{C} f(z) \mathrm d z=0}$，即 ${\displaystyle \oint_{C_{0}} f(z) \mathrm d z=\sum_{k=1}^{n} \oint_{C_{k}} f(z) \mathrm d z}$
-3. 原函数
+3. 设函数 $f$ 在域 $D$ 内连续，其在 $D$ 内的积分与路径无关且 $z_{0} \in D$，则变限积分 ${\displaystyle F(z)=\int_{z_{0}}^{z} f(z) \mathrm d z \ (z \in D)}$ 在 $D$ 内解析，且 $F$ 是 $f$ 的原函数．于是 $\text{Newton}-\text{Leibniz}$ 公式的复形式 ${\displaystyle \int_{z_{0}}^{z} f(z) \mathrm d z=F(z)-F\left(z_{0}\right)}$ 成立
+4. $\text{Cauchy}$ 积分公式
 
 ### 2.2.2 调和函数
