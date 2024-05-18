@@ -30,7 +30,7 @@
         & a, & n=1, b=0 \\
         & 0, & n=2, b=0 \\
         & 1, & n \geqslant 3, b=0 \\
-        & H_{n-1}\left(a, H_n(a, b-1)\right), & \text{otherwise}
+        & H_{n-1}\left(a, H_n(a, b-1)\right), & \textsf{否则}
         \end{aligned}\right.
         $$
 

@@ -87,7 +87,7 @@
 
 ### 2.1.3 连续概率分布
 1. 均匀分布：$X \sim U[a, b]$
-    1. 设 $[a, b] \subseteq \mathbf R$ 且 $a < b$，则密度函数 $p(x)=\left\{\begin{aligned} & \dfrac{1}{b-a}, & a \leqslant x \leqslant b \\ & 0, & \text{otherwise} \end{aligned}\right.$ 给出的分布称为均匀分布
+    1. 设 $[a, b] \subseteq \mathbf R$ 且 $a < b$，则密度函数 $p(x)=\left\{\begin{aligned} & \dfrac{1}{b-a}, & a \leqslant x \leqslant b \\ & 0, & \textsf{否则} \end{aligned}\right.$ 给出的分布称为均匀分布
     2. 分布特征：$\mathrm{E}X=\dfrac{a+b}{2}, \ \mathrm{D}X=\dfrac{(b-a)}{12}, \ \varphi_X(t)=\dfrac{\mathrm{e}^{\mathrm{i}tb} - \mathrm{e}^{\mathrm{i}ta}}{\mathrm{i}t(b-a)}$
 2. 正态分布（$\text{Gauss}$ 分布）：$X \sim N(\mu, \sigma^2)$
     1. 称由密度函数 $p(x; \mu, \sigma^2)=\dfrac{1}{\sqrt{2\pi}\cdot \sigma}e^{-\frac{(x-\mu)^2}{2\sigma ^2}}$ 确定的参数为 $\mu, \sigma^2$ 的正态分布，也可记作 $\phi(x; \mu, \sigma^2)$．特别地，令 $\Phi(x)=\phi(x; 0, 1)$ 为标准正态分布
