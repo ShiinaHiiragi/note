@@ -413,7 +413,7 @@
         \end{aligned}
         $$
 
-        并定义 $\text{Laplace}$ 算子 $\Delta=\nabla \cdot \nabla=\dfrac{\partial^{2}}{\partial x^{2}}+\dfrac{\partial^{2}}{\partial y^{2}}+\dfrac{\partial^{2}}{\partial z^{2}}$，满足 $\text{Laplace}$ 方程 $\Delta u=\dfrac{\partial^{2} u}{\partial x^{2}}+\dfrac{\partial^{2} u}{\partial y^{2}}+\dfrac{\partial^{2} u}{\partial z^{2}}=0$ 的函数称为调和函数
+        并定义 $\text{Laplace}$ 算子 $\Delta=\nabla \cdot \nabla=\dfrac{\partial^{2}}{\partial x^{2}}+\dfrac{\partial^{2}}{\partial y^{2}}+\dfrac{\partial^{2}}{\partial z^{2}}$
 
     2. $\text{Green}$ 公式重述为 ${\displaystyle \iint_{\partial \Omega} \boldsymbol a \cdot \mathrm{d} \boldsymbol S=\iiint_{\Omega} \nabla \cdot \boldsymbol a \mathrm{d} V}$，$\text{Stokes}$ 公式重述为 ${\displaystyle \int_{\partial \Sigma} \boldsymbol{a} \cdot \mathrm{d} \boldsymbol s=\iint_{\Sigma}(\nabla \times \boldsymbol a) \cdot \mathrm{d} \boldsymbol S}$
         1. $\text{Green}$ 第一公式：${\displaystyle \iiint_{\Omega}(\nabla f \cdot \nabla g+f \Delta g) \mathrm{d} V=\iint_{\partial \Omega} f \dfrac{\partial g}{\partial \boldsymbol{n}} \mathrm{d} S}$
