@@ -8,7 +8,7 @@
 1. 模型初始输入的嵌入是一个 $C \times T$ 矩阵
 
     $$
-    \operatorname{col}(\boldsymbol E_{I}, j) = \operatorname{col}(\boldsymbol E_{T}, x_{j}) + \operatorname{col}(\boldsymbol E_{P}, j), 1 \leqslant j \leqslant T
+    \mathrm{col}(\boldsymbol E_{I}, j) = \mathrm{col}(\boldsymbol E_{T}, x_{j}) + \mathrm{col}(\boldsymbol E_{P}, j), 1 \leqslant j \leqslant T
     $$
 
     - Token 嵌入是一个预先指定的 $C \times N$ 矩阵 $\boldsymbol E_{T}$
@@ -16,7 +16,7 @@
         - 正余弦位置编码：设 $1 \leqslant i \leqslant C, 1 \leqslant j \leqslant T$，则
 
             $$
-            \operatorname{entry} (\boldsymbol E_{P}, i, j)=
+            \mathrm{entry} (\boldsymbol E_{P}, i, j)=
             \begin{cases}
             \sin \left(j / 10000^{(i-2) / C}\right), & i \bmod 2=0 \\
             \cos \left(j / 10000^{(i-1) / C}\right), & i \bmod 2=1
@@ -53,27 +53,27 @@
 
     $$
     \begin{aligned}
-    \operatorname{entry} (\boldsymbol E', i, j) & = \dfrac{\operatorname{entry} (\boldsymbol E, i, j) - \mu_j}{\sigma_{j}} \cdot \gamma + \beta, 1 \leqslant i \leqslant C, 1 \leqslant j \leqslant T \\
-    \mu_{j} & = \mathrm E \left[\operatorname{col} (\boldsymbol E, j)\right], 1 \leqslant j \leqslant T \\
-    \sigma_{j} & = \sqrt{\mathrm D \left[\operatorname{col} (\boldsymbol E, j)\right] + \varepsilon}, 1 \leqslant j \leqslant T \\
+    \mathrm{entry} (\boldsymbol E', i, j) & = \dfrac{\mathrm{entry} (\boldsymbol E, i, j) - \mu_j}{\sigma_{j}} \cdot \gamma + \beta, 1 \leqslant i \leqslant C, 1 \leqslant j \leqslant T \\
+    \mu_{j} & = \mathrm E \left[\mathrm{col} (\boldsymbol E, j)\right], 1 \leqslant j \leqslant T \\
+    \sigma_{j} & = \sqrt{\mathrm D \left[\mathrm{col} (\boldsymbol E, j)\right] + \varepsilon}, 1 \leqslant j \leqslant T \\
     \end{aligned}
     $$
 
-    即对于任意 $1 \leqslant j \leqslant T$，$\operatorname{col} (\boldsymbol E', j)$ 服从 $\text{Gauss}$ 分布 $N(\beta, \gamma^2)$．$\varepsilon$ 是事前指定的小正数以保证除数不为零
+    即对于任意 $1 \leqslant j \leqslant T$，$\mathrm{col} (\boldsymbol E', j)$ 服从 $\text{Gauss}$ 分布 $N(\beta, \gamma^2)$．$\varepsilon$ 是事前指定的小正数以保证除数不为零
 
     - 均方根归一化：加快训练速度
 
         $$
         \begin{aligned}
-        \operatorname{RMSNorm}(\boldsymbol{x}) & =\frac{\boldsymbol{x}}{\operatorname{RMS}(\boldsymbol{x})} \cdot \gamma \\
-        \operatorname{RMS}(\boldsymbol{x}) & =\sqrt{\frac{1}{H} \sum_{i=1}^H x_i^2}
+        \mathrm{RMSNorm}(\boldsymbol{x}) & =\frac{\boldsymbol{x}}{\mathrm{RMS}(\boldsymbol{x})} \cdot \gamma \\
+        \mathrm{RMS}(\boldsymbol{x}) & =\sqrt{\frac{1}{H} \sum_{i=1}^H x_i^2}
         \end{aligned}
         $$
 
     - 归一化层的位置
-        - 层后归一化：$\operatorname{Post-Norm}(\boldsymbol{x})=\operatorname{Norm}(\boldsymbol{x}+\operatorname{Sublayer}(\boldsymbol{x}))$
-        - 层前归一化：$\operatorname{Pre-Norm}(\boldsymbol{x})=\boldsymbol{x}+\operatorname{Sublayer}(\operatorname{Norm}(\boldsymbol{x}))$
-        - 夹心归一化：$\operatorname{Sandwich-Norm}(\boldsymbol{x})=\boldsymbol{x}+\operatorname{Norm}(\operatorname{Sublayer}(\operatorname{Norm}(\boldsymbol{x})))$
+        - 层后归一化：$\mathrm{Post-Norm}(\boldsymbol{x})=\mathrm{Norm}(\boldsymbol{x}+\mathrm{Sublayer}(\boldsymbol{x}))$
+        - 层前归一化：$\mathrm{Pre-Norm}(\boldsymbol{x})=\boldsymbol{x}+\mathrm{Sublayer}(\mathrm{Norm}(\boldsymbol{x}))$
+        - 夹心归一化：$\mathrm{Sandwich-Norm}(\boldsymbol{x})=\boldsymbol{x}+\mathrm{Norm}(\mathrm{Sublayer}(\mathrm{Norm}(\boldsymbol{x})))$
 
 3. 对于给定的 $C \times T$ 嵌入矩阵 $\boldsymbol E$，经全连接层将嵌入向量维度扩张为 $M$（通常为 $C$ 的整数倍），随后还原：
 
@@ -82,12 +82,12 @@
     $$
 
     - 设全连接层的 $M \times C$ 权重矩阵为 $\boldsymbol W$，$M$ 维偏移向量 $\boldsymbol b_{W}$ 扩展为 $M \times T$ 偏移矩阵 $\boldsymbol B_{W}$，则扩张后的 $M \times T$ 嵌入矩阵 $\boldsymbol E' = f\left(\boldsymbol W \boldsymbol E + \boldsymbol B_{W}\right)$，其中激活函数 $f: \mathbf R^{M \times T} \to \mathbf R^{M \times T}$ 对矩阵每个元素使用相同函数
-        - $\operatorname{ReLu}(x) = \max(x, 0)$
-        - $\operatorname{Swish}(x)=x \cdot \operatorname{sigmoid}(x)$
-        - ${\displaystyle \operatorname{GELU}(x)=0.5 x \cdot[1+\operatorname{erf}(x / \sqrt{2})], \operatorname{erf}(x)=\frac{2}{\sqrt{\pi}} \int_1^x e^{-t^2} d t}$
+        - $\mathrm{ReLu}(x) = \max(x, 0)$
+        - $\mathrm{Swish}(x)=x \cdot \mathrm{sigmoid}(x)$
+        - ${\displaystyle \mathrm{GELU}(x)=0.5 x \cdot[1+\mathrm{erf}(x / \sqrt{2})], \mathrm{erf}(x)=\frac{2}{\sqrt{\pi}} \int_1^x e^{-t^2} d t}$
 
         > 注意
-        > 1. 对于 $\operatorname{col} (\boldsymbol E, j)$，扩张后的 $M \times T$ 嵌入矩阵 $\boldsymbol E'$ 的元素 $\operatorname{entry} (\boldsymbol E', i, j) = f\left(\operatorname{row}(\boldsymbol W, i) \cdot \operatorname{col} (\boldsymbol E, j) + \boldsymbol b_{i}\right)$
+        > 1. 对于 $\mathrm{col} (\boldsymbol E, j)$，扩张后的 $M \times T$ 嵌入矩阵 $\boldsymbol E'$ 的元素 $\mathrm{entry} (\boldsymbol E', i, j) = f\left(\mathrm{row}(\boldsymbol W, i) \cdot \mathrm{col} (\boldsymbol E, j) + \boldsymbol b_{i}\right)$
         > 2. 将 $C$ 维嵌入向量转为 $M$ 维嵌入向量需要 $CM$ 个权重参数，对于 $T$ 个 Token 对应每一列嵌入向量，使用的权重参数是相同的，因此此处不需要 $T$ 个权重矩阵
 
     - 设全连接层的 $C \times M$ 投影矩阵为 $\boldsymbol P$，$C$ 维偏移向量 $\boldsymbol b_{P}$ 扩展为 $C \times T$ 偏移矩阵 $\boldsymbol B_{P}$，则还原后的 $C \times T$ 嵌入矩阵 $\boldsymbol E'' = \boldsymbol P \boldsymbol E' + \boldsymbol B_{P}$
@@ -105,13 +105,13 @@
 
         均为 $A \times T$ 的矩阵
 
-    - 对任意 $1 \leqslant j \leqslant T$，$\operatorname{col} (\boldsymbol K, j)$ 与 $\operatorname{col} (\boldsymbol V, j)$ 一一对应，因此 $\boldsymbol Q$ 内的各向量通过 $\boldsymbol K$ 得到 $\boldsymbol V$ 相加的权重
+    - 对任意 $1 \leqslant j \leqslant T$，$\mathrm{col} (\boldsymbol K, j)$ 与 $\mathrm{col} (\boldsymbol V, j)$ 一一对应，因此 $\boldsymbol Q$ 内的各向量通过 $\boldsymbol K$ 得到 $\boldsymbol V$ 相加的权重
 
         $$
         \begin{aligned}
-        w_k & = \operatorname{col} (\boldsymbol Q, j) ^{\mathrm T} \operatorname{col} (\boldsymbol K, k), 1 \leqslant k \leqslant j \\
-        [w'_1, w'_2, ..., w'_j] & = \operatorname{Softmax} ([w_1, w_2, ..., w_j]) \\
-        \mathrm{result} & = \sum_{k=0}^{j} w'_k \operatorname{col} (\boldsymbol V, k)
+        w_k & = \mathrm{col} (\boldsymbol Q, j) ^{\mathrm T} \mathrm{col} (\boldsymbol K, k), 1 \leqslant k \leqslant j \\
+        [w'_1, w'_2, ..., w'_j] & = \mathrm{Softmax} ([w_1, w_2, ..., w_j]) \\
+        \mathrm{result} & = \sum_{k=0}^{j} w'_k \mathrm{col} (\boldsymbol V, k)
         \end{aligned}
         $$
 
@@ -121,11 +121,11 @@
         \boldsymbol U = \left\{\begin{aligned} & 1, & i \leqslant j \\ & 0, & i > j \end{aligned}\right.
         $$
 
-        是一个上三角矩阵．对任意 $1 \leqslant j \leqslant T$，$\operatorname{col} (\boldsymbol A, j)$ 为 $\operatorname{col} (\boldsymbol Q, j)$ 对应的权重．设逐列 $\text{Softmax}$（忽略后导 $0$）的注意力矩阵为 $A'$，则有
+        是一个上三角矩阵．对任意 $1 \leqslant j \leqslant T$，$\mathrm{col} (\boldsymbol A, j)$ 为 $\mathrm{col} (\boldsymbol Q, j)$ 对应的权重．设逐列 $\text{Softmax}$（忽略后导 $0$）的注意力矩阵为 $A'$，则有
 
         $$
-        \operatorname{entry} (\boldsymbol A', i, j) = \left\{\begin{aligned}
-        & \dfrac{\exp\left\{ \operatorname{entry} (\boldsymbol A, i, j) \right\}}{{\displaystyle \sum_{k=1}^{j} \exp\left\{ \operatorname{entry} (\boldsymbol A, k, j)\right\}}}, & i \leqslant j \\
+        \mathrm{entry} (\boldsymbol A', i, j) = \left\{\begin{aligned}
+        & \dfrac{\exp\left\{ \mathrm{entry} (\boldsymbol A, i, j) \right\}}{{\displaystyle \sum_{k=1}^{j} \exp\left\{ \mathrm{entry} (\boldsymbol A, k, j)\right\}}}, & i \leqslant j \\
         & 0, & i > j
         \end{aligned}\right.    
         $$
@@ -137,14 +137,14 @@
 5. 对于给定的 $C \times T$ 嵌入矩阵 $\boldsymbol E$，模型先通过线性层（相当于无偏移的全连接层前半部分）得到 $\text{Logits}$ 矩阵，再通过 $\text{Softmax}$ 归一化得到输出矩阵
 
     $$
-    \boldsymbol O = \operatorname{Softmax}(\boldsymbol H \boldsymbol E)
+    \boldsymbol O = \mathrm{Softmax}(\boldsymbol H \boldsymbol E)
     $$
 
     - $\text{Logits}$ 矩阵是一个 $N \times T$ 的矩阵，它标识了每一个 Token 概率值的原始值．设语言模型头部权重是一个 $N \times C$ 权重矩阵 $\boldsymbol H$，则 $\text{Logits}$ 矩阵 $\boldsymbol L = \boldsymbol H \boldsymbol E$
     - 设逐列 $\text{Softmax}$ 后的输出矩阵为 $\boldsymbol O$，则
 
         $$
-        \operatorname{entry} (\boldsymbol O, i, j) = \dfrac{\operatorname{exp}\left\{ \operatorname{entry} (\boldsymbol L, i, j)\right\}}{{\displaystyle \sum_{k=1}^{N} \operatorname{exp}\left\{\operatorname{entry} (\boldsymbol L, k, j)\right\}}}
+        \mathrm{entry} (\boldsymbol O, i, j) = \dfrac{\mathrm{exp}\left\{ \mathrm{entry} (\boldsymbol L, i, j)\right\}}{{\displaystyle \sum_{k=1}^{N} \mathrm{exp}\left\{\mathrm{entry} (\boldsymbol L, k, j)\right\}}}
         $$
 
 Nano-GPT 的结构：
@@ -155,8 +155,8 @@ Nano-GPT 的结构：
 - 层归一化 + 线性层 + $\text{Softmax}$ 层
 
 #### Sampling
-1. 输入序列 $S = \left<x_{1}, x_{2}, ..., x_{T}\right>$ 中仅有前 $t$ 个 Token 有意义，则输出矩阵 $\boldsymbol O$ 的第 $t$ 列 $\operatorname{col} (\boldsymbol O, t)$ 指示了下一个 Token 的概率分布 $P\left(x_{t+1} \mid x_1 x_2 ... x_{t}\right)$
-    - Greedy Search：每一步都选择概率最高的 Token，即 $x_{t+1} = \underset{1 \leqslant i \leqslant N}{\mathrm{argmax}} \operatorname{entry} (\boldsymbol O, i, t)$
+1. 输入序列 $S = \left<x_{1}, x_{2}, ..., x_{T}\right>$ 中仅有前 $t$ 个 Token 有意义，则输出矩阵 $\boldsymbol O$ 的第 $t$ 列 $\mathrm{col} (\boldsymbol O, t)$ 指示了下一个 Token 的概率分布 $P\left(x_{t+1} \mid x_1 x_2 ... x_{t}\right)$
+    - Greedy Search：每一步都选择概率最高的 Token，即 $x_{t+1} = \underset{1 \leqslant i \leqslant N}{\mathrm{argmax}} \mathrm{entry} (\boldsymbol O, i, t)$
     - Beam Search：每步保留概率最高的 $n$ 个 Token，并最终从中选出最高概率的序列
     - Top-K 采样：从概率最高的 $K$ 个 Token 中采样，重新对概率进行归一化并按此概率随机选取 Token
     - Top-P 采样：从概率最高的 Token 中，累积概率首次超过 $P$ 的前若干个 Token 中采样，重新对概率进行归一化并按此概率随机选取 Token
@@ -164,7 +164,7 @@ Nano-GPT 的结构：
 2. 在最终的 $\text{Softmax}$ 过程中，若增加温度参数 $\theta > 0$
 
     $$
-    \operatorname{entry} (\boldsymbol O, i, j) = \dfrac{\operatorname{exp}\left\{\dfrac{\operatorname{entry} (\boldsymbol L, i, j)}{\theta}\right\}}{{\displaystyle \sum_{k=1}^{N} \operatorname{exp}\left\{\dfrac{\operatorname{entry} (\boldsymbol L, k, j)}{\theta}\right\}}}
+    \mathrm{entry} (\boldsymbol O, i, j) = \dfrac{\mathrm{exp}\left\{\dfrac{\mathrm{entry} (\boldsymbol L, i, j)}{\theta}\right\}}{{\displaystyle \sum_{k=1}^{N} \mathrm{exp}\left\{\dfrac{\mathrm{entry} (\boldsymbol L, k, j)}{\theta}\right\}}}
     $$
 
     则可改变概率分布的集中性
@@ -307,13 +307,13 @@ Nano-GPT 的结构：
             - 基于梯度裁剪的目标函数：裁剪策略比率的变化范围，防止策略更新过于激进
 
                 $$
-                \mathcal{J}_{\mathrm{CLIP}}(\theta)=\widehat{\mathrm{E}}_t\left[\min \left(r_t(\theta) \widehat{A}_t, \operatorname{clip}\left(r_t(\theta), 1-\varepsilon, 1+\varepsilon\right) \widehat{A}_t\right)\right]
+                \mathcal{J}_{\mathrm{CLIP}}(\theta)=\widehat{\mathrm{E}}_t\left[\min \left(r_t(\theta) \widehat{A}_t, \mathrm{clip}\left(r_t(\theta), 1-\varepsilon, 1+\varepsilon\right) \widehat{A}_t\right)\right]
                 $$
 
             - 基于 $\text{KL}-$散度的目标函数：设 $\beta$ 是超参数，则
 
                 $$
-                \mathcal{J}_{\mathrm{KLPEN}}(\theta)=\widehat{\mathrm{E}}_t\left[r_t(\theta) \widehat{A}_t-\beta \operatorname{KL}\left[\pi_{\theta_{\text {old }}}\left(\mid s_t\right), \pi_\theta\left(\mid s_t\right)\right]\right]
+                \mathcal{J}_{\mathrm{KLPEN}}(\theta)=\widehat{\mathrm{E}}_t\left[r_t(\theta) \widehat{A}_t-\beta \mathrm{KL}\left[\pi_{\theta_{\text {old }}}\left(\mid s_t\right), \pi_\theta\left(\mid s_t\right)\right]\right]
                 $$
 
         > **PPO 训练流程**
@@ -1200,7 +1200,7 @@ print(mlp(X).shape)
     print(A.grad_fn)  # <MmBackward0 at 0x26029e53ac0>
     ```
     
-    - 在上例 $L = \operatorname{sum} (\boldsymbol A + \boldsymbol B) = \operatorname{sum} (\boldsymbol X \boldsymbol Y + \boldsymbol B)$ 中，有 $\dfrac{\partial L}{\partial \boldsymbol X} = \dfrac{\partial L}{\partial \boldsymbol A} \cdot \dfrac{\partial \boldsymbol A}{\partial \boldsymbol X} = \boldsymbol Y^{\mathrm T} \cdot \dfrac{\partial L}{\partial \boldsymbol A}$ 成立
+    - 在上例 $L = \mathrm{sum} (\boldsymbol A + \boldsymbol B) = \mathrm{sum} (\boldsymbol X \boldsymbol Y + \boldsymbol B)$ 中，有 $\dfrac{\partial L}{\partial \boldsymbol X} = \dfrac{\partial L}{\partial \boldsymbol A} \cdot \dfrac{\partial \boldsymbol A}{\partial \boldsymbol X} = \boldsymbol Y^{\mathrm T} \cdot \dfrac{\partial L}{\partial \boldsymbol A}$ 成立
 
         ```python
         # tensor([[2.5367, 1.3179, 2.5914, 1.9586, 1.9559, 1.6149],
