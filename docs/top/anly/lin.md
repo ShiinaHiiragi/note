@@ -521,6 +521,9 @@
         2. 线性法则：$\mathrm{d}\left(c_1 \boldsymbol{F}(\boldsymbol{X})+c_2 \boldsymbol{G}(\boldsymbol{X})\right)=c_1 \mathrm{d} \boldsymbol{F}(\boldsymbol{X})+c_2 \mathrm{d} \boldsymbol{G}(\boldsymbol{X})$
         3. 乘积法则：$\mathrm{d}(\boldsymbol{F}(\boldsymbol{X}) \boldsymbol{G}(\boldsymbol{X}))=\mathrm{d}(\boldsymbol{F}(\boldsymbol{X})) \boldsymbol{G}(\boldsymbol{X})+\boldsymbol{F}(\boldsymbol{X}) \mathrm{d}(\boldsymbol{G}(\boldsymbol{X}))$
         4. 转置法则：$\mathrm{d} \boldsymbol{F}^{\mathrm T}(\boldsymbol{X})=\left(\mathrm{d} \boldsymbol{F}(\boldsymbol{X})\right)^{\mathrm T}$
+
+        上述 $\boldsymbol{F}$ 退化为 $\boldsymbol{f}$ 或 $f$ 时，等式亦成立
+
     2. 方阵微分的性质：设 $\boldsymbol X$ 是一个 $n \times n$ 方阵
         1. 行列式：$\mathrm{d}\operatorname{det}(\boldsymbol{X})=\operatorname{det}(\boldsymbol{X}) \operatorname{tr}\left(\boldsymbol{X}^{-1} \mathrm{d} \boldsymbol{X}\right)=\operatorname{tr}\left(\operatorname{det}(\boldsymbol{X}) \boldsymbol{X}^{-1} \mathrm{d} \boldsymbol{X}\right)$
         2. 逆矩阵：$\mathrm{d}\left(\boldsymbol{X}^{-1}\right)=-\boldsymbol{X}^{-1} \mathrm{d}(\boldsymbol{X}) \boldsymbol{X}^{-1}$
