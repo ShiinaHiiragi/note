@@ -3821,338 +3821,9 @@ Bootstrap 适合短时间开发简单的静态网站
               from FileName: Line:in Method
     ```
 
-### 2.4 Python
+### 2.4 Application
 
-#### 2.4.1 基本数据类型
-
-1. 标准数据的分类：按照「修改值时是否在原内存位置修改」分类
-    - 不可变数据：Number、`str`、`tuple`
-    - 可变数据：`list`、`dict`、`set`
-
-    其中后四种的初始化方法如下：
-
-    |   类    |    初始化为空     |        括号初始化         |            初始化函数             |                      推导式                      |
-    | :-----: | :---------------: | :-----------------------: | :-------------------------------: | :----------------------------------------------: |
-    | `list`  | `[]` 或 `list()`  |        `[0, 1, 2]`        |           `list(iter)`            |          `[expr for i in iter if cond]`          |
-    | `tuple` | `()` 或 `tuple()` |        `(0, 1, 2)`        |           `tuple(iter)`           |          `(expr for i in iter if cond)`          |
-    | `dict`  | `{}` 或 `dict()`  | `{ "zero": 0, "one": 1 }` | `dict(iter)` 或 `dict(key=value)` | `{ key_expr: value_expr for i in iter if cond }` |
-    |  `set`  |      `set()`      |        `{0, 1, 2}`        |            `set(iter)`            |          `{expr for i in iter if cond}`          |
-
-2. 内建操作符或函数
-    - `del`：删除对象引用
-    - `id(obj)`：返回对象 `id`
-    - `type(obj)`：返回对象类型
-    - `isinstance(obj, class)`：返回对象是否属于给定类，当 `obj` 为子类对象时也返回 `True`
-
-3. 编码：使用 `b'str'` 生成 `bytes` 对象
-
-    ```python
-    s = "中文"
-    b = s.encode()
-    
-    print(b)                  # b'\xe4\xb8\xad\xe6\x96\x87'
-    print(b.decode("utf-8"))  # 中文
-    ```
-
-#### 2.4.2 运算符
-
-1. 运算符与对应魔术方法
-
-    | 运算符               | 类型       | 魔术方法                                                     |
-    | -------------------- | ---------- | ------------------------------------------------------------ |
-    | `+` / `-` / `*` / `/` | 算术运算符 | `__add__` / `__sub__` / `__mul__` / `__truediv__` |
-    | `@` / `//` / `**` / `%` | 算术运算符 | `__matmul__` / `__floordiv__` / `__pow__` / `__mod__`    |
-    | `<` / `<=` / `==` / `!=` / `>` / `>=` | 比较运算符 | `__lt__` / `__le__` / `__eq__` / `__ne__` / `__gt__` / `__ge__` |
-    | `+=` / `-=` / `*=` / `/=` | 赋值运算符 | `__iadd__` / `__isub__` / `__imul__` / `__itruediv__` |
-    | `@=` / `//=` / `**=` / `%=` | 赋值运算符 | `__imatmul__` / `__ifloordiv__` / `__ipow__` / `__imod__` |
-    | `<<` / `>>` / `&` / `^` / `|` / `~` | 位运算符 | `__lshift__` / `__rshift__` / `__and__` / `__xor__` / `__or__` / `__invert__` |
-
-2. 无魔术方法的运算符
-
-    | 运算符               | 描述                    |
-    | -------------------- | ----------------------- |
-    | `=` / `:=`           | 赋值运算符 / 海象运算符 |
-    | `and` / `or` / `not` | 逻辑运算符              |
-    | `in` / `not in`      | 成员运算符              |
-    | `is` / `is not`      | 身份运算符              |
-
-#### 2.4.3 函数与类
-
-##### （一）参数类型
-
-1. 必需参数：必须以正确的顺序传入函数，调用时的数量必须和声明时一样
-
-2. 关键字参数：使用关键字参数允许函数调用时参数的顺序与声明时不一致
-
-   ```python
-   def p(msg):
-       print(msg)
-   
-   p(msg="Hello World!")
-   ```
-
-3. 默认参数：调用函数时，如果没有传递参数，则会使用默认参数
-
-   ```python
-   def p(msg="Hello World!"):
-       print(msg)
-   
-   p()
-   ```
-
-4. 不定长参数：使用 `*args` 捕获所有未命名的变量参数，生成一个元组；使用 `**kwargs` 捕获所有命名的变量参数，生成一个字典
-
-##### （二）迭代器与生成器
-
-1. 迭代器对象从集合的第一个元素开始访问，直到所有的元素被访问完结束
-   
-   ```python
-   >>> list=[0, 1, 2, 3]
-   >>> it = iter(list)
-   >>> print (next(it))
-   0
-   >>> print (next(it))
-   1
-   ```
-
-2. 把一个类作为一个迭代器使用需要在类中实现魔术方法 `__iter__()` 与 `__next__()`
-   
-   ```python
-   import sys
-   
-   class ins():
-       def __iter__(self):
-           return ins_iterator()
-   
-   class ins_iterator():
-       def __init__(self):
-           self.counter = 0
-   
-       def __next__(self):
-           res = self.counter
-           if res < 4:
-               self.counter += 1
-               return res
-           else:
-               raise StopIteration
-   
-   inst = ins()
-   it = iter(inst)
-   while True:
-       try:
-           print(next(it))
-       except StopIteration:
-           sys.exit()
-   ```
-   
-3. 生成器：使用了 `yield` 关键字的函数
-   
-   ```python
-   import sys
-   
-   def fibonacci(n):
-       a, b, counter = 0, 1, 0
-       while True:
-           if (counter > n):
-               return
-           yield a
-           a, b = b, a + b
-           counter += 1
-   
-   f = fibonacci(10)
-   while True:
-       try:
-           print(next(f), end=" ")
-       except StopIteration:
-           print()
-           sys.exit()
-   ```
-
-##### （三）装饰器
-1. 用 `@` 实现装饰器模式
-
-   ```python
-   def decorator(func):
-       def wrapper(*arg):
-           print(id(func))
-           func(*arg)
-       return wrapper
-   
-   @decorator
-   def p(msg):
-       print(msg)
-   
-   p("Hello World!")
-   ```
-
-   用内置 `functools` 保证被装饰的函数信息保持原样
-
-   ```python
-   import functools
-   
-   def decorator(func):
-       @functools.wraps(func)
-       def wrapper(*arg):
-           print(id(func))
-           func(*arg)
-       return wrapper
-   
-   @decorator
-   def p(msg):
-       print(msg)
-   
-   print(p.__name__)  # p
-   ```
-
-2. 类装饰器默认调用 `__call__` 方法
-
-    ```python
-    class Decorator:
-        def __init__(self, func):
-            self.func = func
-    
-        def __call__(self, *arg):
-            print(id(self.func))
-            self.func(*arg)
-    
-    @Decorator
-    def p(msg):
-        print(msg)
-    
-    p("Hello World!")
-    ```
-
-##### （四）类与对象
-
-1. 类变量和实例变量
-   - 类变量属于类所有，可以使用类名或对象名引用
-     - 直接修改类变量，各实例未自行修改类变量时，引用到的值都会改变
-     - 如果在实例中对类变量赋值，会复制一份为实例变量，覆盖类变量
-   - 实例变量属于实例所有，只能使用对象名引用
-   
-2. 魔术方法
-   - 构造与初始化
-     - `__new__()`：构造方法，在 `__init__()`之前调用
-     - `__init__()`：构造器
-     - `__del__()`：析构器
-     
-   - 类表示：`__str__()` / `__repr__()`，转化为字符串 / 打印信息
-   
-   - 访问控制
-     - `__setattr__(self, key, value)`：设置某个属性时调用
-     
-     - `__getattr__(self, key)`：获取某个属性时调用
-     
-     - `__delattr__(self, key)`：删除某个属性时调用
-     
-       > 注意：在 `__setattr__` 使用 `self.key = value` 会导致循环调用，应使用 `self.__dict__[key] = value`
-     
-   - 容器类
-     - `__setitem__(self, key, value)`：定义设置容器中指定元素的行为
-     - `__getitem__(self, key)`： 定义获取容器中指定元素的行为
-     - `__delitem__(self, key)`：定义删除容器中指定元素的行为
-     - `__contains__(self, item)`：定义当使用成员测试运算符（in 或 not in）时的行为
-     - `__len__(self)`：定义当被 `len()` 调用时的行为
-     - `__reversed__(self)`：定义当被 `reversed()` 调用时的行为
-     
-   - 可调用对象：`__call__()`，将对象作为函数调用
-
-#### 2.4.4 模块
-
-##### （一）模块导入
-
-1. 在 Python 中，一个 `.py` 文件可以称为模块，包含了 `__init__.py` 文件的称为包
-    - 当一个模块被执行时，Python 会从 `sys.path` 给出的路径去找在模块中引入的包或其它模块，如果找不到则报错
-    - 在执行文件所在目录或者其他 `sys.path` 可访问到的某个目录里面创建一个模块 `package`
-
-        ```python
-        package/
-            __init__.py
-            subpackage1/
-                __init__.py
-                moduleX.py
-                moduleY.py
-            subpackage2/
-                __init__.py
-                moduleZ.py
-            moduleA.py
-        ```
-
-2. 绝对导入：使用 `import <>` 或 `from <> import <>` 两种语法
-    - 在 `moduleA` 模块内，使用下面的绝对导入语句是有效的：
-
-        ```python
-        import subpackage1.moduleX as moduleX
-        from subpackage2 import moduleZ
-        ```
-        
-    - 假如要改变层级较高的包名，那么所有导入路径都要随之更改
-    
-3. 相对导入：相对导入只能使用 `from <> import <>` 语法，并且使用 `.` 作为前导点
-    - 在 `subpackage1/moduleX.py` 或者 `subpackage1/__init__.py` 模块内可以使用相对导入的方式：
-
-        ```python
-        from .moduleY import spam
-        from .moduleY import spam as ham
-        from . import moduleY
-        ```
-        
-    - 执行 `moduleA.py` 时，每个文件的 `__name__` 与 `__package__` 变量都不同
-        - `moduleA.py` 的 `__name__` 是 `"__main__"`，即为顶层模块，此时 `__package__` 是 `None`
-        - `subpackage1/moduleX.py` 的 `__name__` 是 `subpackage1.moduleX`，顶层模块为 `subpackage1`，此时 `__package__` 是 `subpackage1`．这表明 `moduleX` 无法通过相对导入访问到 `moduleZ`
-    
-    - **使用了相对导入的模块文件不能作为顶层执行文件**
-    
-4. `__init__.py` 可以用于导入，例如在 `subpackage2/__init__.py` 中加入
-
-    ```python
-    from .moduleZ import foo
-    ```
-
-    则可在 `moduleA.py` 用两种方式导入 `foo`
-
-    ```python
-    from subpackage2.moduleZ import funcZ
-    from subpackage2 import funcZ
-    ```
-
-##### （二）发布
-
-1. 假设有一个测试包 `package-test`，文件结构如下（保证包文件无连字符，工程文件无此限制）
-
-    ```
-    package-test-root/
-        setup.py
-        package_test_pack/
-            __init__.py
-            ...
-        README.md
-        LICENSE
-    ```
-
-    编写 `setup.py` 如下
-
-    ```python
-    from setuptools import setup, find_packages
-
-    setup(
-        name="package-test-pack",
-        version="0.0.1",
-        packages=find_packages(),
-    )
-    ```
-
-    - 执行 `python setup.py develop` 可将 `package-test-root` 加入到 `sys.path`，从而实时响应包内容变化
-    - 执行 `python setup.py install` 可将包安装到 `site-packages`，从而全局调用 `package_test_pack`
-
-2. 安装 `wheel` 以发布 `.whl` 文件
-    - 执行 `python setup.py sdist bdist_wheel`，可在 `dist` 文件夹下看到 `package-test-pack-0.1.0.tar.gz` 与 `package_test_pack-0.1.0-py3-none-any.whl` 两个包
-    - 执行 `pip install ./dist/package_test_pack-0.1.0-py3-none-any.whl`，可将包安装到 `site-packages`
-    - 可将包发布到 TestPyPI 以测试包索引
-
-### 2.5 Application
-
-#### 2.5.1 Electron
+#### 2.4.1 Electron
 
 ##### （一）进程
 
@@ -4276,15 +3947,13 @@ Bootstrap 适合短时间开发简单的静态网站
     - `--overwrite`：新的打包会覆写原来的打包内容，可选
     - `--no-prune`：默认形况下会不打包开发依赖并对生产依赖进行剪枝，这个选项会不剪枝，可选
 
-#### 2.5.2 Flutter
+#### 2.4.2 Flutter
 
-## 3 ALGORITHM
+## 3 OTHER
 
-## 4 OTHER
+### 3.1 Protocol
 
-### 4.1 Protocol
-
-#### 4.1.1 JSON & XML
+#### 3.1.1 JSON & XML
 
 ##### （一）JSON
 
@@ -4323,7 +3992,7 @@ Bootstrap 适合短时间开发简单的静态网站
 
     - 与 HTML 不同的是，XML 的连续空格会被保留，以 LF 存储换行
 
-#### 4.1.2 Web Protocol
+#### 3.1.2 Web Protocol
 
 ##### （一）TCP/IP 协议
 
@@ -4445,11 +4114,9 @@ Bootstrap 适合短时间开发简单的静态网站
     - `$.get(URL, callback);` ：通过 HTTP GET 请求从服务器上请求数据
     - `$.post(URL, data, callback);`：通过 HTTP POST 请求向服务器提交数据。其中，可选的 `data` 参数规定连同请求发送的数据
 
-### 4.2 Cryptography
+### 3.2 Tool
 
-### 4.3 Tool
-
-#### 4.3.1 Linux
+#### 3.2.1 Linux
 
 ##### （一）文件系统
 
@@ -4623,7 +4290,7 @@ Bootstrap 适合短时间开发简单的静态网站
     - `man <cmd>`：查看指令的用法，绝大部分指令可以通过参数 `--help` 等形式获取帮助
     - `xdg-open <prog>`：用恰当的外部应用打开目标文件
 
-#### 4.3.2 VS Code
+#### 3.2.2 VS Code
 
 ##### （一）预定义变量
 
@@ -4747,7 +4414,7 @@ Bootstrap 适合短时间开发简单的静态网站
     | `args`           | 运行的程序的命令行参数                 |
     | `problemMatcher` | 错误捕获设置                           |
 
-#### 4.3.3 Git
+#### 3.2.3 Git
 
 ##### （一）Git 模型
 
@@ -4907,7 +4574,7 @@ Bootstrap 适合短时间开发简单的静态网站
 
         > 在使用 SSH 时，远程仓库 `url` 为 `git@github.com:username/<repo>.git`
 
-#### 4.3.4 Vim
+#### 3.2.4 Vim
 
 ##### （一）模式
 
@@ -5041,7 +4708,7 @@ Bootstrap 适合短时间开发简单的静态网站
 
 3. 切换大小写：`~`（相互转换），`gU`（转大写），`gu`（转小写）
 
-#### 4.3.5 Others
+#### 3.2.5 Others
 1. Pandoc：
 
     ```shell
@@ -5054,11 +4721,9 @@ Bootstrap 适合短时间开发简单的静态网站
     env WINEPREFIX="~/.wine" wine "C:\\path\\to\\executable"
     ```
 
-### 4.4 Designing
+### 3.4 Designing and Hardware
 
-#### 4.4.1 Copywriting
-
-##### （〇）引号与撇号
+#### 3.4.1 Copywriting
 
 1. 引号的码位
 
@@ -5084,13 +4749,7 @@ Bootstrap 适合短时间开发简单的静态网站
 
     - 出于对「中文专用引号」的追求，以及在中西文混排下对弯引号渲染的需求不同，有越来越多的人倾向于使用「直角引号」代替国标推荐的弯引号
 
-#### 4.4.2 User Interface
-
-### 4.5 Hardware
-
-#### 4.5.1 Organization
-
-#### 4.5.2 Instruction Set
+#### 3.4.2 Instruction Set
 
 ##### （一）体系结构
 
