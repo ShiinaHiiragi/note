@@ -156,7 +156,7 @@ Nano-GPT 的结构：
 
 #### Sampling
 1. 输入序列 $S = \left<x_{1}, x_{2}, ..., x_{T}\right>$ 中仅有前 $t$ 个 Token 有意义，则输出矩阵 $\boldsymbol O$ 的第 $t$ 列 $\mathrm{col} (\boldsymbol O, t)$ 指示了下一个 Token 的概率分布 $P\left(x_{t+1} \mid x_1 x_2 ... x_{t}\right)$
-    - Greedy Search：每一步都选择概率最高的 Token，即 $x_{t+1} = \underset{1 \leqslant i \leqslant N}{\mathrm{argmax}} \mathrm{entry} (\boldsymbol O, i, t)$
+    - Greedy Search：每一步都选择概率最高的 Token，即 $x_{t+1} = \underset{1 \leqslant i \leqslant N}{\mathrm{argmax}} \ \mathrm{entry} (\boldsymbol O, i, t)$
     - Beam Search：每步保留概率最高的 $n$ 个 Token，并最终从中选出最高概率的序列
     - Top-K 采样：从概率最高的 $K$ 个 Token 中采样，重新对概率进行归一化并按此概率随机选取 Token
     - Top-P 采样：从概率最高的 Token 中，累积概率首次超过 $P$ 的前若干个 Token 中采样，重新对概率进行归一化并按此概率随机选取 Token
