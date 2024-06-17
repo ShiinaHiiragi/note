@@ -1110,6 +1110,9 @@ class MLP(nn.Module):
         self.c_proj = nn.Linear(4 * n_embd, 2 * n_embd, bias=True)
         self.dropout = nn.Dropout(0.0)
 
+        nn.init.normal_(self.c_fc.weight)
+        nn.init.zeros_(self.c_proj.weight)
+
     def forward(self, x):
         x = self.c_fc(x)
         x = self.gelu(x)
@@ -1129,6 +1132,8 @@ X = torch.rand(4, 8, 16)
 print(mlp)
 # torch.Size([4, 8, 32])
 print(mlp(X).shape)
+# torch.Size([64, 16])
+print(mlp.c_fc.weight.shape)
 ```
 
 1. 预定义 `nn.Module` 子类
@@ -1163,10 +1168,10 @@ print(mlp(X).shape)
     - `nn.ModuleList(module_list)` / `nn.ModuleDict(module_dict)`：一系列容器，不可直接调用
     - `nn.Sigmoid()` / `nn.ReLU()` / `nn.GELU()`：激活函数
 
-2. 其他非模块 `nn` 类
+2. 非模块 `nn` 类
     - `nn.functional`：一系列预定义函数，例如卷积
+    - `nn.init`：初始化方法，例如零初始化 / 正态分布初始化
     - `nn.Parameter(X)`：用于参数的张量
-    - `nn.CrossEntropyLoss(X, Y)` / `nn.KLDivLoss(X, Y)`：用于计算损失
     - `nn.Dropout()`：随机将元素归零
 
         ```python
@@ -1178,7 +1183,8 @@ print(mlp(X).shape)
         print(before, after / (row_size * col_size))  # tensor(0) tensor(0.2109)
         ```
 
-3. 优化器：包括 `optim.SGD` / `optim.Adam` 等
+3. 损失函数：包括 `nn.CrossEntropyLoss(X, Y)` / `nn.KLDivLoss(X, Y)` 等
+4. 优化器：包括 `optim.SGD` / `optim.Adam` 等
 
 #### Backward
 1. PyTorch 自动求导基于计算图，其中 `grad_fn` 是计算导数值的函数
@@ -1216,8 +1222,9 @@ print(mlp(X).shape)
         ```
     
     - 使用 `with torch.no_grad()` 或 `tensor.detach()` 禁用自动梯度以提速
+    - `model.eval()` 也可禁用梯度，但此函数用于后续评估，会改变某些模块的运行方式（例如停止 `dropout`）
     - 一次计算只能进行一次反向传播，若需要多次计算，则需要在前一次使用 `backward(retain_graph=True)`
-    
+
 2. 梯度下降训练：假设前述 `MLP` 与 `SampleDataset` 已经定义
 
     ```python
