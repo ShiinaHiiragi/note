@@ -1170,7 +1170,6 @@ print(mlp.c_fc.weight.shape)
 
 2. 非模块 `nn` 类
     - `nn.functional`：一系列预定义函数，例如卷积
-    - `nn.init`：初始化方法，例如零初始化 / 正态分布初始化
     - `nn.Parameter(X)`：用于参数的张量
     - `nn.Dropout()`：随机将元素归零
 
@@ -1183,8 +1182,9 @@ print(mlp.c_fc.weight.shape)
         print(before, after / (row_size * col_size))  # tensor(0) tensor(0.2109)
         ```
 
-3. 损失函数：包括 `nn.CrossEntropyLoss(X, Y)` / `nn.KLDivLoss(X, Y)` 等
-4. 优化器：包括 `optim.SGD` / `optim.Adam` 等
+3. 初始化：包括 `nn.init.zeros_` / `nn.init.normal_` 等
+4. 损失函数：包括 `nn.CrossEntropyLoss(X, Y)` / `nn.KLDivLoss(X, Y)` 等
+5. 优化器：包括 `optim.SGD` / `optim.Adam` 等
 
 #### Backward
 1. PyTorch 自动求导基于计算图，其中 `grad_fn` 是计算导数值的函数
