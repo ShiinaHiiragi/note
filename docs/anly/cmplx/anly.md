@@ -71,7 +71,7 @@
 
 2. 平均值公式：设 $u(z)$ 是域 $D$ 内的调和函数，$\overline{A}:\left|z-z_{0}\right| \leqslant R \ (R> 0)$ 是 $D$ 内的圆盘，则 ${\displaystyle u\left(z_{0}\right)=\dfrac{1}{2 \pi} \int_{0}^{2 \pi} u\left(z_{0}+R e^{i \theta}\right) \mathrm d \theta}$，即调和函数 $u(z)$ 在圆心 $z_{0}$ 的值等于其在圆周上值的积分平均
 3. 极值原理：若 $u(z)$ 在有界域 $D$ 内是非常数的调和函数，且在有界闭域 $\overline{D}=D+\gamma$ 上连续，其中 $\gamma$ 是 $D$ 的边界，则函数 $u(z)$ 在 $\overline{D}$ 上的最大值与最小值只能在边界 $\gamma$ 上取到
-4. $\text{Poisson}$ 积分公式：设 $u(z)$ 是闭圆盘 $\overline{D}:\left|z-z_{0}\right| \leqslant R \ (R>0)$ 上的调和函数，则对此圆内任一点 $z=z_{0}+r e^{i \varphi}$，其中 $r<R$ 且 $0 \leqslant \varphi \leqslant 2 \pi$ 有 ${\displaystyle u(z)=\dfrac{1}{2 \pi} \int_{0}^{2 \pi} u\left(z_{0}+R e^{2 \theta}\right) \dfrac{R^{2}-r^{2}}{R^{2}-2 \operatorname{Rr} \cos (\theta-\varphi)+r^{2}} \mathrm d \theta}$
+4. $\text{Poisson}$ 积分公式：设 $u(z)$ 是闭圆盘 $\overline{D}:\left|z-z_{0}\right| \leqslant R \ (R>0)$ 上的调和函数，则对此圆内任一点 $z=z_{0}+r e^{i \varphi}$，其中 $r<R$ 且 $0 \leqslant \varphi \leqslant 2 \pi$ 有 ${\displaystyle u(z)=\dfrac{1}{2 \pi} \int_{0}^{2 \pi} u\left(z_{0}+R e^{2 \theta}\right) \dfrac{R^{2}-r^{2}}{R^{2}-2 Rr \cos (\theta-\varphi)+r^{2}} \mathrm d \theta}$
 5. $\text{Dirichlet}$ 问题：求在区域 $D$ 内调和且在 $\overline{D}=D+C$ 上连续的函数 $u(z)$，使其在边界 $C$ 上取给定的连续函数 $f(\zeta)$．即求解
 
     $$
