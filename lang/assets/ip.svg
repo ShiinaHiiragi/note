@@ -1,0 +1,232 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="77.273003mm"
+   height="60.804001mm"
+   viewBox="0 0 77.273003 60.804001"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="ip.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="2.1095398"
+     inkscape:cx="150.50676"
+     inkscape:cy="131.30826"
+     inkscape:window-width="1440"
+     inkscape:window-height="830"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect13"
+       is_visible="true"
+       lpeversion="1.3"
+       threshold="142.857"
+       steps="1"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect11"
+       is_visible="true"
+       lpeversion="1.3"
+       threshold="142.857"
+       steps="1"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect7"
+       is_visible="true"
+       lpeversion="1.3"
+       threshold="100"
+       steps="1"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect6"
+       is_visible="true"
+       lpeversion="1.3"
+       threshold="100"
+       steps="1"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect5"
+       is_visible="true"
+       lpeversion="1.3"
+       threshold="100"
+       steps="1"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect4"
+       is_visible="true"
+       lpeversion="1.3"
+       threshold="100"
+       steps="1"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+    <inkscape:path-effect
+       effect="simplify"
+       id="path-effect3"
+       is_visible="true"
+       lpeversion="1.3"
+       threshold="100"
+       steps="1"
+       smooth_angles="360"
+       helper_size="0"
+       simplify_individual_paths="false"
+       simplify_just_coalesce="false" />
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-71.297264,-47.57184)">
+    <text
+       xml:space="preserve"
+       style="font-size:4.9389px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+       x="114.27943"
+       y="52.230633"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+         x="114.27943"
+         y="52.230633">IP</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.9389px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+       x="115.56415"
+       y="70.814194"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+         x="115.56415"
+         y="70.814194">I'</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.757895;stroke-opacity:1"
+       d="m 114.76092,51.970556 c 0,7.449697 0,14.899416 0,22.349113"
+       id="path6"
+       inkscape:path-effect="#path-effect7"
+       inkscape:original-d="M 114.76092,51.970556 V 74.319669"
+       transform="matrix(0.52777777,0,0,0.52777777,55.955298,26.225251)" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-opacity:1"
+       d="M 116.72615,72.190079 91.246759,83.656539"
+       id="path7" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.4;stroke-opacity:1"
+       d="M 116.51455,72.190079 141.994,83.656539"
+       id="path8" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.9389px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+       x="89.356667"
+       y="89.460442"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+         x="89.356667"
+         y="89.460442">I</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.9389px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+       x="139.00038"
+       y="89.460442"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+         x="139.00038"
+         y="89.460442">VP</tspan><tspan
+         sodipodi:role="line"
+         style="fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+         x="139.00038"
+         y="94.399338"
+         id="tspan10" /></text>
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.757895;stroke-opacity:1"
+       d="m 114.76092,51.970556 c 0,7.449697 0,14.899416 0,22.349113"
+       id="path10"
+       inkscape:path-effect="#path-effect11"
+       inkscape:original-d="M 114.76092,51.970556 V 74.319669"
+       transform="matrix(0.52777777,0,0,0.52777777,55.955298,26.225251)" />
+    <path
+       style="fill:#000000;fill-opacity:1;stroke:#000000;stroke-width:0.757895;stroke-opacity:1"
+       d="m 114.76092,51.970556 c 0,7.449697 0,14.899416 0,22.349113"
+       id="path11"
+       inkscape:path-effect="#path-effect13"
+       inkscape:original-d="M 114.76092,51.970556 V 74.319669"
+       transform="matrix(0.52777777,0,0,0.52777777,81.884466,64.322308)" />
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+       x="77.715004"
+       y="95.810448"
+       id="text13"><tspan
+         sodipodi:role="line"
+         style="font-size:4.23333px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+         x="77.715004"
+         y="95.810448"
+         id="tspan14">(Tense, AGR)</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+       x="72.423332"
+       y="101.63129"
+       id="text15"><tspan
+         sodipodi:role="line"
+         style="font-size:4.23333px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+         x="72.423332"
+         y="101.63129"
+         id="tspan15">[Present][Singular]</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:4.23333px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+       x="138.28827"
+       y="106.37902"
+       id="text16"><tspan
+         sodipodi:role="line"
+         style="font-size:4.23333px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.4;stroke-opacity:1"
+         x="138.28827"
+         y="106.37902"
+         id="tspan16">......</tspan></text>
+  </g>
+</svg>
