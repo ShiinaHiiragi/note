@@ -35,3 +35,21 @@
     3. 有界闭区域 $D$ 上的连续函数 $f(z)$ 在 $D$ 上必有界，且 $|f(z)|$ 在 $D$ 上必有最大值与最小值
 
 ## 1.3 级数展开
+1. 复数的无穷级数：设 $\left\{z_{n}\right\}$ 为复数列，称 ${\displaystyle \sum_{n=1}^{\infty} z_{n}=z_{1}+z_{2}+\cdots+z_{n}+\cdots}$ 是一个无穷级数
+    1. 无穷级数的前 $n$ 项和 ${\displaystyle S_{n}=\sum_{k=1}^{n} z_{k}}$ 称为该级数的第 $n$ 个部分和．如果这些部分和构成的复数列 $\left\{S_{n}\right\}$ 收敛，即存在 $S \in \mathbf{C}$，使得 ${\displaystyle \lim _{n \rightarrow \infty} S_{n}=S}$，则称级数 (1) 是收敛的，其和为 $S$，记作 ${\displaystyle \sum_{n=1}^{\infty} z_{n}=z_{1}+z_{2}+\cdots+z_{n}+\cdots=S}$
+        1. 设 ${\displaystyle \sum_{n=0}^{\infty} z_{n}}$ 为复级数，$z_{n}=a_{n}+\mathrm i b_{n}, a_{n} \in \mathbf{R}, b_{n} \in \mathbf{R}$，则 ${\displaystyle \sum_{n=0}^{\infty} z_{n}}$ 收敛的充要条件是实级数 ${\displaystyle \sum_{n=0}^{\infty} a_{n}, \sum_{n=0}^{\infty} b_{n}}$ 都收敛；且当 ${\displaystyle \sum_{n=0}^{\infty} z_{n}}$ 收敛时，有 ${\displaystyle \sum_{n=0}^{\infty} z_{n}=\sum_{n=0}^{\infty} a_{n}+\mathrm i \sum_{n=0}^{\infty} b_{n}}$
+        2. 级数的 $\text{Cauchy}$ 收敛准则：级数 ${\displaystyle \sum_{n=1}^{\infty} z_{n}=z_{1}+z_{2}+\cdots+z_{n}+\cdots}$ 收敛的充要条件是对于任给 $\varepsilon>0$，存在正整数 $N$，使得当 $n \geqslant N, p \geqslant$ 1 时 $\left|z_{n+1}+z_{n+2}+\cdots+z_{n+p}\right|<\varepsilon$．特别地，若级数 ${\displaystyle \sum_{n=0}^{\infty} z_{n}}$ 收敛，则 ${\displaystyle \lim _{n \rightarrow \infty} z_{n}=0}$
+        3. 若实级数 ${\displaystyle \sum_{n=1}^{\infty}\left|z_{n}\right|}$ 收敛，则称级数 ${\displaystyle \sum_{n=1}^{\infty} z_{n}}$ 绝对收敛．绝对收敛的级数一定收敛，反之不一定成立
+    2. 设在集合 $D \subseteq \mathbf{C}$ 上给定函数列 $\left\{f_{n}(z)\right\}$．若对于每一点 $z \in D$，级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)=f_{1}(z)+f_{2}(z)+\cdots+f_{n}(z)+\cdots}$ 收敛，则称函数项级数在 $D$ 上收敛．此时对于 $D$ 上每一点 $z$，级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 都有一个确定的和，记为 $f(z)$，即 ${\displaystyle f(z)=\sum_{n=1}^{\infty} f_{n}(z)}$ 是确定在 $D$ 上的一个函数，称为和函数
+    3. 函数项级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在集合 $D$ 上一致收敛到 $f(z)$，指对任意的 $\varepsilon>0$，一定存在一个只依赖于 $\varepsilon$，而不依赖于 $z$ 的 $N$，使得对所有的 $n \geqslant N$ 和所有的 $z \in D$，都有 $\left|S_{n}(z)-f(z)\right|<\varepsilon$，其中 ${\displaystyle S_{n}(z)=\sum_{k=1}^{n} f_{k}(z)}$，是级数的部分和
+
+2. $\text{Weierstrass}$ 判别法：设 $\left\{f_{n}(z)\right\}$ 是定义在 $D$ 上的函数列，并且 $\left|f_{n}(z)\right| \leqslant M_{n} \ (n=1,2, \cdots)$，而正项级数 ${\displaystyle \sum_{n=1}^{\infty} M_{n}}$ 收敛，则级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $D$ 上一致收敛
+    1. 若 $f_{n}(z) \ (n=1,2, \cdots)$ 在集合 $D$ 上连续，级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $D$ 上一致收敛到 $f(z)$，则 $f(z)$ 在 $D$ 上连续
+    2. 若 $f_{n}(z) \ (n=1,2, \cdots)$ 在曲线 $\gamma$ 上连续，级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $\gamma$ 上一致收敛到 $f(z)$，则 ${\displaystyle \int_{\gamma} f(z) \mathrm d z=\sum_{n=1}^{\infty} \int_{\gamma} f_{n}(z) \mathrm d z}$
+    3. $\text{Weierstrass}$ 定理：若 $f_{n}(z) \ (n=1,2, \cdots)$ 在域 $D$ 中解析且 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $D$ 中一致收敛到函数 $f(z)$，则 $f(z)$ 在 $D$ 中解析，并且可以逐项求导到任意多阶，即有 ${\displaystyle f^{(k)}(z)=\sum_{n=1}^{\infty} f_{n}^{(k)}(z) \ (k=1,2, \cdots)}$；若 $f_{n}(z) \ (n=1,2, \cdots)$ 在域 $D$ 中解析且 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $D$ 中内闭一致收敛到函数 $f(z)$，则 $f(z)$ 在 $D$ 中解析，且 ${\displaystyle \sum_{n=1}^{\infty} f_{n}^{(k)}(z)}$ 在 $D$ 中内闭一致收敛到 $f^{(k)}(z)$
+
+### 1.3.1 幂级数
+
+### 1.3.2 Taloy 级数
+
+### 1.3.3 Laurent 级数
