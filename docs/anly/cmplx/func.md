@@ -49,7 +49,23 @@
     3. $\text{Weierstrass}$ 定理：若 $f_{n}(z) \ (n=1,2, \cdots)$ 在域 $D$ 中解析且 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $D$ 中一致收敛到函数 $f(z)$，则 $f(z)$ 在 $D$ 中解析，并且可以逐项求导到任意多阶，即有 ${\displaystyle f^{(k)}(z)=\sum_{n=1}^{\infty} f_{n}^{(k)}(z) \ (k=1,2, \cdots)}$；若 $f_{n}(z) \ (n=1,2, \cdots)$ 在域 $D$ 中解析且 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $D$ 中内闭一致收敛到函数 $f(z)$，则 $f(z)$ 在 $D$ 中解析，且 ${\displaystyle \sum_{n=1}^{\infty} f_{n}^{(k)}(z)}$ 在 $D$ 中内闭一致收敛到 $f^{(k)}(z)$
 
 ### 1.3.1 幂级数
+1. 设 $z_{0} \in \mathbf{C}$，形如 ${\displaystyle \sum_{n=0}^{\infty} c_{n}\left(z-z_{0}\right)^{n}=c_{0}+c_{1}\left(z-z_{0}\right)+\cdots+c_{n}\left(z-z_{0}\right)+\cdots}$ 的函数项级数称为中心在 $z_{0}$ 的幂级数，这里 $c_{n} \in \mathbf{C}, z \in \mathbf{C}$．假定 $z_{0}=0$ 时幂级数为 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}=c_{0}+c_{1} z+\cdots+c_{n} z^{n}+\cdots}$
+    1. $\text{Abel}$ 定理：若幂级数 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $z_{0} \ (\neq 0)$ 处收敛，则 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $|z|< \left|z_{0}\right|$ 中内闭绝对一致收敛；若 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $z_{0} \ (\neq 0)$ 处发散，则 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $|z|>\left|z_{0}\right|$ 发散
+    2. 若 ${\displaystyle L=\lim _{n \rightarrow \infty}\left|\dfrac{c_{n+1}}{c_{n}}\right|}$ 或 ${\displaystyle L=\lim _{n \rightarrow \infty} \sqrt[n]{\left|c_{n}\right|}}$ 存在，则幂级数 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}=c_{0}+c_{1} z+\cdots+c_{n} z^{n}+\cdots}$ 的收敛半径为 $R=\dfrac{1}{L}$
+2. 设幂级数 ${\displaystyle \sum_{n=0}^{\infty} c_{n}\left(z-z_{0}\right)^{n}=c_{0}+c_{1}\left(z-z_{0}\right)+\cdots+c_{n}\left(z-z_{0}\right)+\cdots}$ 的收敛半径为 $R$，则其和函数 $f(z)$ 在它的收敛圆内解析，且 $f^{(k)}(z)=k!c_{k}+(k+1) k \cdots 2 c_{k+1}\left(z-z_{0}\right)+\cdots$ 在收敛圆内成立，即在收敛圆内可逐次微商
+3. 若函数 $f(z)$ 在圆 $\Gamma:|z-a|<R$ 内解析，则 $f(z)$ 在 $\Gamma$ 内可以展为幂级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} \dfrac{f^{(n)}(a)}{n!}(z-a)^{n}}$，这个幂级数称为 $f(z)$ 在点 $z=a$ 的 $\text{Taylor}$ 级数
+    1. 指数函数 $f(z)=e^{z}$ 在 $\mathbf{C}$ 上解析且 $f^{(n)}(z)=e^{z} \ (n=0,1,2, \cdots), f^{(n)}(0)=1$，则 ${\displaystyle e^{z}=1+z+\dfrac{z^{2}}{2!}+\cdots+\dfrac{z^{n}}{n!}+\cdots}$
+    2. 对数函数 $f(z)=\ln (1+z)$：${\displaystyle \ln (1+z)=\sum_{n=1}^{\infty} \dfrac{(-1)^{n-1}}{n} z^{n}, \ |z|<1, -\pi<\arg (1-z)<\pi}$
+    3. 幂函数 $f(z)=z^{\alpha}$（$\alpha$ 不是整数）：${\displaystyle (1+z)^{\alpha}=1+\binom{\alpha}{1} z+\binom{\alpha}{2} z^{2}+\cdots+\binom{\alpha}{n} z^{n}+\cdots(|z|<1)}$
+    4. 三角函数 $\sin z, \cos z$
 
-### 1.3.2 Taloy 级数
+        $$
+        \begin{aligned}
+        \sin z&=\dfrac{1}{2 \mathrm i}\left(e^{i z}-e^{-i z}\right)=\sum_{n=0}^{\infty} \dfrac{(-1)^{n}}{(2 n+1)!} z^{2 n+1} \\
+        \cos z&=\dfrac{1}{2}\left(e^{i z}+e^{-i z}\right)=\sum_{n=0}^{\infty} \dfrac{(-1)^{n}}{(2 n)!} z^{2 n}
+        \end{aligned}
+        $$
 
 ### 1.3.3 Laurent 级数
+
+### 1.3.4 Γ 函数
