@@ -61,14 +61,14 @@
     1. $\text{Abel}$ 定理：若幂级数 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $z_{0} \ (\neq 0)$ 处收敛，则 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $|z|< \left|z_{0}\right|$ 中内闭绝对一致收敛；若 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $z_{0} \ (\neq 0)$ 处发散，则 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $|z|>\left|z_{0}\right|$ 发散
     2. 若 ${\displaystyle L=\lim _{n \rightarrow \infty}\left|\dfrac{c_{n+1}}{c_{n}}\right|}$ 或 ${\displaystyle L=\lim _{n \rightarrow \infty} \sqrt[n]{\left|c_{n}\right|}}$ 存在，则幂级数 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}=c_{0}+c_{1} z+\cdots+c_{n} z^{n}+\cdots}$ 的收敛半径为 $R=\dfrac{1}{L}$
     3. 设幂级数 ${\displaystyle \sum_{n=0}^{\infty} c_{n}\left(z-z_{0}\right)^{n}=c_{0}+c_{1}\left(z-z_{0}\right)+\cdots+c_{n}\left(z-z_{0}\right)+\cdots}$ 的收敛半径为 $R$，则其和函数 $f(z)$ 在它的收敛圆内解析，且 $f^{(k)}(z)=k!c_{k}+(k+1) k \cdots 2 c_{k+1}\left(z-z_{0}\right)+\cdots$ 在收敛圆内成立，即在收敛圆内可逐次微商
-2. 设幂级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} c_{n} z^{n}}$ 的收敛半径是 $R$，$O \zeta_{0}$ 是收敛圆 $D$ 内的一条半径，$z_{0} \neq 0$ 是 $O \zeta_{0}$ 上的一点，$f(z)$ 在 $z_{0}$ 的邻域内可展为 $\text{Taylor}$ 级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} \dfrac{f^{(n)}\left(z_{0}\right)}{n!}\left(z-z_{0}\right)^{n}}$，其收敛半径 $\rho \geqslant R-\left|z_{0}\right|$
+2. 设幂级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} c_{n} z^{n}}$ 的收敛半径是 $R$，$O \zeta_{0}$ 是收敛圆 $D$ 内的一条半径，$z_{0} \neq 0$ 是 $O \zeta_{0}$ 上的一点，$f(z)$ 在 $z_{0}$ 的邻域内可展开为 $\text{Taylor}$ 级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} \dfrac{f^{(n)}\left(z_{0}\right)}{n!}\left(z-z_{0}\right)^{n}}$，其收敛半径 $\rho \geqslant R-\left|z_{0}\right|$
     1. 若 $\rho>R-\left|z_{0}\right|$，此时 $\text{Taylor}$ 级数的收敛圆 $D_{1}:\left|z-z_{0}\right|<\rho$ 内有一部分在 $D$ 的外部．设 $g(z)$ 为级数在 $D_{1}$ 内的和函数，那么当 $z \in D_{1} \cap D$ 时，$g(z)=f(z)$，所以 $f(z)$ 解析延拓到 $D_{1}-D_{1} \cap D$，称 $f(z)$ 可以沿半径 $O \zeta_{0}$ 解析延拓，$g(z)$ 是 $f(z)$ 的直接解析延拓
     2. 若 $\rho=R-\left|z_{0}\right|$，此时 $\text{Taylor}$ 级数的收敛圆 $D_{1}$ 在 $D$ 内，圆周 $\left|z-z_{0}\right|=\rho$ 与圆周 $|z|=R$ 相切于 $\zeta_{0}$．在 $\zeta_{0}$ 的任意邻域 $B\left(\zeta_{0} ; \delta\right)$ 内不存在一个解析函数 $g(z)$，使得在 $B\left(\zeta_{0} ; \delta\right) \cap D$ 内，$g(z)=f(z)$．因此 $f(z)$ 不可能沿 $O \zeta_{0}$ 解析延拓到 $D$ 外，称 $\zeta_{0}$ 是 $f(z)$ 的一个延拓奇点
 
     幂级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} c_{n} z^{n}}$ 的收敛半径是 $R$，$O \zeta_{0}$ 的收敛圆周 $|z|=R$ 上至少有 $f(z)$ 的一个延拓奇点
 
 ### 1.3.2 Taylor 级数
-1. 若函数 $f(z)$ 在圆 $\Gamma:|z-a|<R$ 内解析，则 $f(z)$ 在 $\Gamma$ 内可以展为幂级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} \dfrac{f^{(n)}(a)}{n!}(z-a)^{n}}$，这个幂级数称为 $f(z)$ 在点 $z=a$ 的 $\text{Taylor}$ 级数
+1. 若函数 $f(z)$ 在圆 $\Gamma:|z-a|<R$ 内解析，则 $f(z)$ 在 $\Gamma$ 内可以展开为幂级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} \dfrac{f^{(n)}(a)}{n!}(z-a)^{n}}$，这个幂级数称为 $f(z)$ 在点 $z=a$ 的 $\text{Taylor}$ 级数
     1. 指数函数 $f(z)=e^{z}$ 在 $\mathbf{C}$ 上解析且 $f^{(n)}(z)=e^{z} \ (n=0,1,2, \cdots), f^{(n)}(0)=1$：${\displaystyle e^{z}=1+z+\dfrac{z^{2}}{2!}+\cdots+\dfrac{z^{n}}{n!}+\cdots}$
     2. 对数函数 $f(z)=\ln (1+z)$：${\displaystyle \ln (1+z)=\sum_{n=1}^{\infty} \dfrac{(-1)^{n-1}}{n} z^{n}, \ |z|<1, -\pi<\arg (1-z)<\pi}$
     3. 幂函数 $f(z)=z^{\alpha}$（$\alpha$ 不是整数）：${\displaystyle (1+z)^{\alpha}=1+\binom{\alpha}{1} z+\binom{\alpha}{2} z^{2}+\cdots+\binom{\alpha}{n} z^{n}+\cdots(|z|<1)}$
@@ -81,12 +81,67 @@
         \end{aligned}
         $$
 
-2. 设函数 $f(z)$ 在域 $D$ 内解析，若点 $z_{0} \in D$ 且 $f\left(z_{0}\right)=0$，则称 $z_{0}$ 为 $f(z)$ 的零点．因为 $z_{0} \in D$，所以存在点 $z_{0}$ 的一个邻域 $B\left(z_{0} ; r\right) \subseteq D, f(z)$ 在 $B\left(z_{0}, r\right)$ 内可展为 $\text{Taylor}$ 级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} c_{n}\left(z-z_{0}\right)^{n} \ \left(\left|z-z_{0}\right|<r\right)}$，其中 $c_{n}=\dfrac{1}{n!} f^{(n)}\left(z_{0}\right)$
+2. 设函数 $f(z)$ 在域 $D$ 内解析，若点 $z_{0} \in D$ 且 $f\left(z_{0}\right)=0$，则称 $z_{0}$ 为 $f(z)$ 的零点．因为 $z_{0} \in D$，所以存在点 $z_{0}$ 的一个邻域 $B\left(z_{0} ; r\right) \subseteq D, f(z)$ 在 $B\left(z_{0}, r\right)$ 内可展开为 $\text{Taylor}$ 级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} c_{n}\left(z-z_{0}\right)^{n} \ \left(\left|z-z_{0}\right|<r\right)}$，其中 $c_{n}=\dfrac{1}{n!} f^{(n)}\left(z_{0}\right)$
     1. 设 $f$ 在域 $D$ 上解析，如果 $f$ 在 $D$ 中的小圆盘 $B\left(z_{0}, r\right)$ 上恒为零，那么 $f$ 在 $D$ 上恒为零
     2. 唯一性定理：设函数 $f_{1}(z), f_{2}(z)$ 在域 $D$ 内解析，且点集 $A \subseteq D$ 有一个属于 $D$ 的极限点 $a$．若 $f_{1}(z)=f_{2}(z)$ 在 $A$ 上恒成立，则 $f_{1}(z)=f_{2}(z)$ 在 $D$ 内恒成立
         1. 若非零函数 $f(z)$ 在域 $D$ 内解析，则 $f(z)$ 在 $D$ 内的零点是孤立的，即若 $f\left(z_{0}\right)=0$，则存在邻域 $B\left(z_{0} ; \delta\right)(\delta>0)$，使得 $f(z)$ 在 $B\left(z_{0}, \delta\right)$ 只有 $z_{0}$ 一个零点
         2. 设在实数轴上有恒等式 $f(x)=g(x), f(z)$ 和 $g(z)$ 在全平面内解析，且在实轴上分别与 $f(x), g(x)$ 相一致，则对一切复数 $z$ 有 $f(z)=g(z)$
 
 ### 1.3.3 Laurent 级数
+1. 无穷级数 ${\displaystyle \sum_{n=-\infty}^{\infty} c_{n}(z-a)^{n}, \  c_{n}, a \in C}$ 称为在 $z=a$ 的 $\text{Laurent}$ 级数，由两部分组成
+    1. 解析部分（正则部分）：${\displaystyle \varphi(z)=\sum_{n=0}^{\infty} c_{n}(z-a)^{n}}$
+    2. 主要部分（奇异部分）：${\displaystyle \psi(z)=\sum_{n=1}^{\infty} c_{-n}(z-a)^{-n}}$
+
+    当且仅当级数 $\varphi(z)$ 和 $\psi(z)$ 同时在点 $z_{0}$ 处收敛时，称级数在点 $z=z_{0}$ 收敛
+
+    1. 若 $\text{Laurent}$ 级数 ${\displaystyle \sum_{n=-\infty}^{\infty} c_{n}(z-a)^{n}}$ 的收敛圆环为 $D: r<|z-a|<R$，则其在 $D$ 内绝对收敛，在 $D$ 中内闭一致收敛，其和函数 $f(z)$ 在 $D$ 内解析
+    2. 若函数 $f(z)$ 在圆环 $D: r<|z-a|<R \ (0 \leqslant r<R \leqslant+\infty)$ 内解析，则 ${\displaystyle f(z)=\sum_{n=-\infty}^{\infty} c_{n}(z-a)^{n}}$ 展开式唯一，其中 ${\displaystyle c_{n}=\dfrac{1}{2 \pi \mathrm i} \oint_{|\zeta-a|=\rho} \dfrac{f(\zeta)}{(\zeta-a)^{n+1}} \mathrm d \zeta \ (r<\rho<R)}$
+
+2. 若函数 $f(z)$ 只要在 $a$ 点的去心邻域内有定义且解析，则称 $a$ 点是 $f(z)$ 的一个孤立奇点，$f(z)$ 在 $0<|z-a|<R$ 内展开为 $\text{Laurent}$ 级数 ${\displaystyle f(z)=\sum_{n=-\infty}^{\infty} c_{n}(z-a)^{n}=\varphi(z)+\psi(z)}$
+    1. 级数 ${\displaystyle \varphi(z)=\sum_{n=0}^{\infty} c_{n}(z-a)^{n} \ (|z-a|<R)}$ 是 $f(z)$ 的 $\text{Laurent}$ 展开式的解析部分，在圆 $|z-a|<R$ 内解析
+    2. 级数 ${\displaystyle \psi(z)=\sum_{n=1}^{\infty} c_{-n}(z-a)^{-n} \ (0<|z-a|<\infty)}$ 是 $f(z)$ 的 $\text{Laurent}$ 展开式的主要部分，在 $0<|z-a|<\infty$ 内解析
+
+    按极限形式可将孤立奇点分为三类
+
+    1. ${\displaystyle \lim _{z \rightarrow a} f(z)=A(\neq \infty)}$，即 ${\displaystyle \lim _{z \rightarrow a} f(z)}$ 存在且有限，称 $z=a$ 是 $f(z)$ 的可去奇点，其充要条件是 $\psi(z)$ 的系数 $c_{-n}$ 全等于零．此时在 $0<|z-a|<R$ 上 $f(z)=\varphi(z)$，因为 $\varphi(z)$ 在圆 $|z-a|<R$ 内解析，所以 $a$ 是 $f(z)$ 的可去奇点
+    2. ${\displaystyle \lim _{z \rightarrow a} f(z)=\infty}$，称 $z=a$ 为 $f(z)$ 的极点．其充要条件是 $\psi(z)$ 只含有有限项．此时
+
+        $$
+        \begin{aligned}
+        \psi(z)&=\dfrac{c_{1}}{z-a}+\cdots+\dfrac{c_{-m}}{(z-a)^{m}}, \  c_{-m} \neq 0 \\
+        f(z)&=\varphi(z)+\psi(z) \\
+        &=\dfrac{c_{-m}}{(z-a)^{m}}+\cdots+\dfrac{c_{-1}}{z-a}+c_{0}+c_{1}(z-a) \\
+        &=\dfrac{1}{(z-a)^{m}} g(z)
+        \end{aligned}
+        $$
+
+        其中 $g(z)=c_{-m}+c_{-m+1}(z-a)+\cdots, \  c_{-m}=g(a)$．此时称 $a$ 是 $f(z)$ 的 $m$ 阶极点，当 $m=1$ 时称 $a$ 为 $f(z)$ 的简单极点
+
+    3. ${\displaystyle \lim _{z \rightarrow a} f(z)}$ 不存在，即存在两个复数序列 $\left\{z_{n}\right\}$ 和 $\left\{w_{n}\right\}$，当 $z_{n} \rightarrow a, w_{n} \rightarrow a (n \rightarrow \infty)$ 时，有 ${\displaystyle \lim _{n \rightarrow \infty} f\left(z_{n}\right) \neq \lim _{n \rightarrow \infty} f\left(w_{n}\right)}$，此时称 $a$ 是 $f(z)$ 的一个本性奇点．其充要条件是级数 $\psi(z)$ 的系数 $c_{-n}$ 有无穷多个不为零
+
+3. 若函数 $f(z)$ 在 $\mathbf{C}$ 上解析，则称 $f(z)$ 是一个整函数，此时，$f(z)$ 在 $\mathbf{C}$ 上的 $\text{Taylor}$ 展开式为 ${\displaystyle f(z)=\sum_{n=0}^{\infty} c_{n} z^{n}}$
+    1. $z=\infty$ 是 $f(z)$ 的孤立奇点，因此 $f(z)$ 的 $\text{Taylor}$ 展开式也是 $f(z)$ 在 $\infty$ 的邻域内的 $\text{Laurent}$ 展开式
+        1. 若 $z=\infty$ 为 $f(z)$ 的可去奇点，则 $f(z)$ 为常数
+        2. 若 $z=\infty$ 是 $f(z)$ 的一个 $m$ 阶极点，则 $c_{n}=0 \ (n>m)$，$f(z)$ 是一个 $m$ 次多项式
+
+            $$
+            f(z)=c_{0}+c_{1} z+c_{2} z^{2}+\cdots+c_{m} z^{m}, c_{m} \neq 0
+            $$
+
+        3. 若 $z=\infty$ 是 $f(z)$ 的一个本性奇点，则 $f(z)=c_{0}+c_{1} z+\cdots+c_{n} z^{n}+\cdots$，其中 $c_{n}(n \geqslant 1)$ 有无穷多个不为零．此时称 $f(z)$ 是超越整函数
+
+    2. 若函数 $f(z)$ 在 $\mathbf{C}$ 上最多除去极点外，没有其他的奇点，则称 $f(z)$ 是一个亚纯函数
+        1. 整函数与有理函数 $f(z)=\dfrac{P_{n}(z)}{Q_{m}(z)}$ 是亚纯函数是亚纯函数，其中
+
+            $$
+            \begin{aligned}
+            & P_{n}(z)=a_{0}+a_{1} z+\cdots+a_{n} z^{n}, \  a_{n} \neq 0 \\
+            & Q_{m}(z)=b_{0}+b_{1} z+\cdots+b_{m} z^{m}, \  b_{m} \neq 0
+            \end{aligned}
+            $$
+
+            $Q_{m}(z)$ 的零点是 $f(z)$ 的极点，在 $\mathbf{C}$ 上除去这有穷个极点外，$f(z)$ 是解析的
+
+        2. 若 $z=\infty$ 是亚纯函数 $f(z)$ 的可去奇点或极点，则 $f(z)$ 必是有理函数
 
 ### 1.3.4 Γ 函数
