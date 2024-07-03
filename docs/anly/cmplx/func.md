@@ -42,18 +42,33 @@
         3. 若实级数 ${\displaystyle \sum_{n=1}^{\infty}\left|z_{n}\right|}$ 收敛，则称级数 ${\displaystyle \sum_{n=1}^{\infty} z_{n}}$ 绝对收敛．绝对收敛的级数一定收敛，反之不一定成立
     2. 设在集合 $D \subseteq \mathbf{C}$ 上给定函数列 $\left\{f_{n}(z)\right\}$．若对于每一点 $z \in D$，级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)=f_{1}(z)+f_{2}(z)+\cdots+f_{n}(z)+\cdots}$ 收敛，则称函数项级数在 $D$ 上收敛．此时对于 $D$ 上每一点 $z$，级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 都有一个确定的和，记为 $f(z)$，即 ${\displaystyle f(z)=\sum_{n=1}^{\infty} f_{n}(z)}$ 是确定在 $D$ 上的一个函数，称为和函数
     3. 函数项级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在集合 $D$ 上一致收敛到 $f(z)$，指对任意的 $\varepsilon>0$，一定存在一个只依赖于 $\varepsilon$，而不依赖于 $z$ 的 $N$，使得对所有的 $n \geqslant N$ 和所有的 $z \in D$，都有 $\left|S_{n}(z)-f(z)\right|<\varepsilon$，其中 ${\displaystyle S_{n}(z)=\sum_{k=1}^{n} f_{k}(z)}$，是级数的部分和
-
 2. $\text{Weierstrass}$ 判别法：设 $\left\{f_{n}(z)\right\}$ 是定义在 $D$ 上的函数列，并且 $\left|f_{n}(z)\right| \leqslant M_{n} \ (n=1,2, \cdots)$，而正项级数 ${\displaystyle \sum_{n=1}^{\infty} M_{n}}$ 收敛，则级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $D$ 上一致收敛
     1. 若 $f_{n}(z) \ (n=1,2, \cdots)$ 在集合 $D$ 上连续，级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $D$ 上一致收敛到 $f(z)$，则 $f(z)$ 在 $D$ 上连续
     2. 若 $f_{n}(z) \ (n=1,2, \cdots)$ 在曲线 $\gamma$ 上连续，级数 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $\gamma$ 上一致收敛到 $f(z)$，则 ${\displaystyle \int_{\gamma} f(z) \mathrm d z=\sum_{n=1}^{\infty} \int_{\gamma} f_{n}(z) \mathrm d z}$
     3. $\text{Weierstrass}$ 定理：若 $f_{n}(z) \ (n=1,2, \cdots)$ 在域 $D$ 中解析且 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $D$ 中一致收敛到函数 $f(z)$，则 $f(z)$ 在 $D$ 中解析，并且可以逐项求导到任意多阶，即有 ${\displaystyle f^{(k)}(z)=\sum_{n=1}^{\infty} f_{n}^{(k)}(z) \ (k=1,2, \cdots)}$；若 $f_{n}(z) \ (n=1,2, \cdots)$ 在域 $D$ 中解析且 ${\displaystyle \sum_{n=1}^{\infty} f_{n}(z)}$ 在 $D$ 中内闭一致收敛到函数 $f(z)$，则 $f(z)$ 在 $D$ 中解析，且 ${\displaystyle \sum_{n=1}^{\infty} f_{n}^{(k)}(z)}$ 在 $D$ 中内闭一致收敛到 $f^{(k)}(z)$
+3. 解析延拓：设函数 $f(z)$ 在域 $D$ 内解析，如果存在一个比 $D$ 更大的域 $G(D \subseteq G, D \neq G)$ 以及 $G$ 上的解析函数 $F(z)$ 使得当 $z \in D$ 时有 $F(z)=f(z)$，则称 $f(z)$ 可以解析延拓到 $G-D$
+    1. 设 $F_{1}(z)$ 和 $F_{2}(z)$ 是 $f(z)$ 在 $D$ 上的两个解析延拓，则当 $z \in G$ 时，$F_{1}(z)=F_{2}(z)$
+    2. 考虑两个函数 $f_{1}(z), f_{2}(z)$，分别在域 $D_{1}$ 及 $D_{2}$ 内解析，且 $D_{1}$ 与 $D_{2}$ 的交是域 $D$．在 $D$ 内 $f_{1}(z)=f_{2}(z)$，那么在域 $D_{1} \cup D_{2}$ 内确定的函数
+
+        $$
+        f(z)= \begin{cases}f_{1}(z), & z \in D_{1}, \\ f_{2}(z) & z \in D_{2}\end{cases}
+        $$
+
+        是解析的，称 $f_{1}(z), f_{2}(z)$ 互为解析延拓
 
 ### 1.3.1 幂级数
 1. 设 $z_{0} \in \mathbf{C}$，形如 ${\displaystyle \sum_{n=0}^{\infty} c_{n}\left(z-z_{0}\right)^{n}=c_{0}+c_{1}\left(z-z_{0}\right)+\cdots+c_{n}\left(z-z_{0}\right)+\cdots}$ 的函数项级数称为中心在 $z_{0}$ 的幂级数，这里 $c_{n} \in \mathbf{C}, z \in \mathbf{C}$．假定 $z_{0}=0$ 时幂级数为 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}=c_{0}+c_{1} z+\cdots+c_{n} z^{n}+\cdots}$
     1. $\text{Abel}$ 定理：若幂级数 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $z_{0} \ (\neq 0)$ 处收敛，则 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $|z|< \left|z_{0}\right|$ 中内闭绝对一致收敛；若 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $z_{0} \ (\neq 0)$ 处发散，则 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}}$ 在 $|z|>\left|z_{0}\right|$ 发散
     2. 若 ${\displaystyle L=\lim _{n \rightarrow \infty}\left|\dfrac{c_{n+1}}{c_{n}}\right|}$ 或 ${\displaystyle L=\lim _{n \rightarrow \infty} \sqrt[n]{\left|c_{n}\right|}}$ 存在，则幂级数 ${\displaystyle \sum_{n=0}^{\infty} c_{n} z^{n}=c_{0}+c_{1} z+\cdots+c_{n} z^{n}+\cdots}$ 的收敛半径为 $R=\dfrac{1}{L}$
     3. 设幂级数 ${\displaystyle \sum_{n=0}^{\infty} c_{n}\left(z-z_{0}\right)^{n}=c_{0}+c_{1}\left(z-z_{0}\right)+\cdots+c_{n}\left(z-z_{0}\right)+\cdots}$ 的收敛半径为 $R$，则其和函数 $f(z)$ 在它的收敛圆内解析，且 $f^{(k)}(z)=k!c_{k}+(k+1) k \cdots 2 c_{k+1}\left(z-z_{0}\right)+\cdots$ 在收敛圆内成立，即在收敛圆内可逐次微商
-2. 若函数 $f(z)$ 在圆 $\Gamma:|z-a|<R$ 内解析，则 $f(z)$ 在 $\Gamma$ 内可以展为幂级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} \dfrac{f^{(n)}(a)}{n!}(z-a)^{n}}$，这个幂级数称为 $f(z)$ 在点 $z=a$ 的 $\text{Taylor}$ 级数
+2. 设幂级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} c_{n} z^{n}}$ 的收敛半径是 $R$，$O \zeta_{0}$ 是收敛圆 $D$ 内的一条半径，$z_{0} \neq 0$ 是 $O \zeta_{0}$ 上的一点，$f(z)$ 在 $z_{0}$ 的邻域内可展为 $\text{Taylor}$ 级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} \dfrac{f^{(n)}\left(z_{0}\right)}{n!}\left(z-z_{0}\right)^{n}}$，其收敛半径 $\rho \geqslant R-\left|z_{0}\right|$
+    1. 若 $\rho>R-\left|z_{0}\right|$，此时 $\text{Taylor}$ 级数的收敛圆 $D_{1}:\left|z-z_{0}\right|<\rho$ 内有一部分在 $D$ 的外部．设 $g(z)$ 为级数在 $D_{1}$ 内的和函数，那么当 $z \in D_{1} \cap D$ 时，$g(z)=f(z)$，所以 $f(z)$ 解析延拓到 $D_{1}-D_{1} \cap D$，称 $f(z)$ 可以沿半径 $O \zeta_{0}$ 解析延拓，$g(z)$ 是 $f(z)$ 的直接解析延拓
+    2. 若 $\rho=R-\left|z_{0}\right|$，此时 $\text{Taylor}$ 级数的收敛圆 $D_{1}$ 在 $D$ 内，圆周 $\left|z-z_{0}\right|=\rho$ 与圆周 $|z|=R$ 相切于 $\zeta_{0}$．在 $\zeta_{0}$ 的任意邻域 $B\left(\zeta_{0} ; \delta\right)$ 内不存在一个解析函数 $g(z)$，使得在 $B\left(\zeta_{0} ; \delta\right) \cap D$ 内，$g(z)=f(z)$．因此 $f(z)$ 不可能沿 $O \zeta_{0}$ 解析延拓到 $D$ 外，称 $\zeta_{0}$ 是 $f(z)$ 的一个延拓奇点
+
+    幂级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} c_{n} z^{n}}$ 的收敛半径是 $R$，$O \zeta_{0}$ 的收敛圆周 $|z|=R$ 上至少有 $f(z)$ 的一个延拓奇点
+
+### 1.3.2 Taylor 级数
+1. 若函数 $f(z)$ 在圆 $\Gamma:|z-a|<R$ 内解析，则 $f(z)$ 在 $\Gamma$ 内可以展为幂级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} \dfrac{f^{(n)}(a)}{n!}(z-a)^{n}}$，这个幂级数称为 $f(z)$ 在点 $z=a$ 的 $\text{Taylor}$ 级数
     1. 指数函数 $f(z)=e^{z}$ 在 $\mathbf{C}$ 上解析且 $f^{(n)}(z)=e^{z} \ (n=0,1,2, \cdots), f^{(n)}(0)=1$：${\displaystyle e^{z}=1+z+\dfrac{z^{2}}{2!}+\cdots+\dfrac{z^{n}}{n!}+\cdots}$
     2. 对数函数 $f(z)=\ln (1+z)$：${\displaystyle \ln (1+z)=\sum_{n=1}^{\infty} \dfrac{(-1)^{n-1}}{n} z^{n}, \ |z|<1, -\pi<\arg (1-z)<\pi}$
     3. 幂函数 $f(z)=z^{\alpha}$（$\alpha$ 不是整数）：${\displaystyle (1+z)^{\alpha}=1+\binom{\alpha}{1} z+\binom{\alpha}{2} z^{2}+\cdots+\binom{\alpha}{n} z^{n}+\cdots(|z|<1)}$
@@ -66,6 +81,12 @@
         \end{aligned}
         $$
 
-### 1.3.2 Laurent 级数
+2. 设函数 $f(z)$ 在域 $D$ 内解析，若点 $z_{0} \in D$ 且 $f\left(z_{0}\right)=0$，则称 $z_{0}$ 为 $f(z)$ 的零点．因为 $z_{0} \in D$，所以存在点 $z_{0}$ 的一个邻域 $B\left(z_{0} ; r\right) \subseteq D, f(z)$ 在 $B\left(z_{0}, r\right)$ 内可展为 $\text{Taylor}$ 级数 ${\displaystyle f(z)=\sum_{n=0}^{\infty} c_{n}\left(z-z_{0}\right)^{n} \ \left(\left|z-z_{0}\right|<r\right)}$，其中 $c_{n}=\dfrac{1}{n!} f^{(n)}\left(z_{0}\right)$
+    1. 设 $f$ 在域 $D$ 上解析，如果 $f$ 在 $D$ 中的小圆盘 $B\left(z_{0}, r\right)$ 上恒为零，那么 $f$ 在 $D$ 上恒为零
+    2. 唯一性定理：设函数 $f_{1}(z), f_{2}(z)$ 在域 $D$ 内解析，且点集 $A \subseteq D$ 有一个属于 $D$ 的极限点 $a$．若 $f_{1}(z)=f_{2}(z)$ 在 $A$ 上恒成立，则 $f_{1}(z)=f_{2}(z)$ 在 $D$ 内恒成立
+        1. 若非零函数 $f(z)$ 在域 $D$ 内解析，则 $f(z)$ 在 $D$ 内的零点是孤立的，即若 $f\left(z_{0}\right)=0$，则存在邻域 $B\left(z_{0} ; \delta\right)(\delta>0)$，使得 $f(z)$ 在 $B\left(z_{0}, \delta\right)$ 只有 $z_{0}$ 一个零点
+        2. 设在实数轴上有恒等式 $f(x)=g(x), f(z)$ 和 $g(z)$ 在全平面内解析，且在实轴上分别与 $f(x), g(x)$ 相一致，则对一切复数 $z$ 有 $f(z)=g(z)$
 
-### 1.3.3 Γ 函数
+### 1.3.3 Laurent 级数
+
+### 1.3.4 Γ 函数
