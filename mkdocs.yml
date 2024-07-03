@@ -197,8 +197,7 @@ nav:
     - 三、复分析:
       - 1 复函数: anly/cmplx/func.md
       - 2 微分与积分: anly/cmplx/anly.md
-      # - 3 留数理论: anly/cmplx/res.md
-      # - 4 共形映射: anly/cmplx/cm.md
+      - 3 留数理论: anly/cmplx/res.md
     - 四、泛函分析:
       - 1 赋范线性空间: anly/func/norm.md
       - 2 算子与泛函: anly/func/op.md
