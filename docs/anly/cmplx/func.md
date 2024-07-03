@@ -144,4 +144,11 @@
 
         2. 若 $z=\infty$ 是亚纯函数 $f(z)$ 的可去奇点或极点，则 $f(z)$ 必是有理函数
 
-### 1.3.4 Γ 函数
+### 1.3.4 Gamma 函数
+1. 考虑复数域上的 $\Gamma$ 函数 ${\displaystyle \Gamma(z)=\int_{0}^{+\infty} e^{-t} t^{z-1} \mathrm d t} = \alpha(z) + \beta(z)$
+    1. ${\displaystyle \alpha(z)=\int_{0}^{1} e^{-t} t^{z-1} \mathrm d t, \  \operatorname{Re}(z)>0}$ 在半平面 $\operatorname{Re}(z)>0$ 内解析
+    2. ${\displaystyle \beta(z)=\int_{1}^{+\infty} e^{-t} t^{z-1} d t, \  \operatorname{Re}(z)>0}$ 是整函数
+2. 递推关系 $\Gamma(z)=\dfrac{\Gamma(z+1)}{z}$ 可将 $\Gamma(z)$ 延拓到全平面，除 $z= 0,-1,-2, \cdots,-n, \cdots$ 是一阶极点外，$\Gamma(z)$ 处处解析
+    1. 余元公式：$\Gamma(z) \Gamma(1-z)=\dfrac{\pi}{\sin \pi z}$
+    2. 加倍公式：$\Gamma(2 z)=\dfrac{2^{2 z-1}}{\sqrt{\pi}} \Gamma(z) \Gamma\left(z+\dfrac{1}{2}\right)$
+    3. $\Gamma(z)$ 无零点，$\dfrac{1}{\Gamma(z)}$ 是整函数
