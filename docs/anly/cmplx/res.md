@@ -71,6 +71,20 @@
     3. $\text{Poisson}$ 积分：${\displaystyle \int_{0}^{+\infty} e^{-a x^{2}} \cos b x \mathrm d x=\dfrac{1}{2} \sqrt{\dfrac{\pi}{a}} e^{-\frac{b^{2}}{4 a}}}$
 
 ### 3.1.3 辐角原理
+1. 辐角原理：设 $f(z)$ 是域 $D$ 中的亚纯函数，$\gamma$ 是 $D$ 内闭路，其内部也属于 $D$．$a_{k}$ 是 $f(z)$ 在 $\gamma$ 内部的零点，其阶数为 $\alpha_{k} \ (k=1,2, \cdots, n)$；$b_{j}$ 是 $f(z)$ 在 $\gamma$ 内部的极点，其阶数为 $\beta_{j} \ (j=1,2, \cdots, m)$．如果 $f(z)$ 在 $\gamma$ 上没有零点和极点，则
+
+    $$
+    \dfrac{1}{2 \pi \mathrm i} \oint_{\gamma} \dfrac{f^{\prime}(z)}{f(z)} \mathrm d z=\sum_{k=1}^{n} \alpha_{k}-\sum_{j=1}^{m} \beta_{j}=N-P
+    $$
+
+    其中 $N$ 为 $f(z)$ 在 $\gamma$ 内部的零点个数 ${\displaystyle \sum_{k=1}^{n} \alpha_{k}}$，$P$ 是 $f(z)$ 在 $\gamma$ 内部的极点个数 ${\displaystyle \sum_{j=1}^{m} \beta_{j}}$
+
+    1. 映射 $w=f(z)$ 把闭路 $\gamma$ 映为 $w$ 平面上逐段光滑闭曲线 $\Gamma: w=\Gamma(t)=f[\gamma(t)], \alpha \leqslant t \leqslant \beta$．由于 $f(z) \neq 0, z \in \gamma$，所以 $\Gamma$ 不过原点，于是 ${\displaystyle \dfrac{1}{2 \pi \mathrm i} \oint_{\gamma} \dfrac{f^{\prime}(z)}{f(z)} \mathrm d z=\dfrac{1}{2 \pi \mathrm i} \oint_{\Gamma} \dfrac{d w}{w}}$
+    2. 若函数 $f(z)$ 在 $D$ 内解析，则 $f(z)$ 在 $\gamma$ 内部的零点个数 ${\displaystyle N=\dfrac{1}{2 \pi \mathrm i} \oint_{\gamma} \dfrac{f^{\prime}(z)}{f(z)} \mathrm d z=\dfrac{1}{2 \pi} \Delta_{\gamma} \operatorname{arg} f(z)}$
+
+2. $\text{Rouch}\acute{\mathrm e}$ 定理：设 $\gamma$ 是域 $D$ 内的闭路，其内部属于 $D$．若函数 $f(z)$ 及 $g(z)$ 在域 $D$ 内解析，在 $\gamma$ 上有 $|f(z)-g(z)|<|f(z)|$，则 $f(z)$ 和 $g(z)$ 在 $\gamma$ 内部有相同的零点个数
+    1. 设函数 $f(z)$ 在域 $D$ 内解析，$z_{0} \in D$．记 $w_{0}=f\left(z_{0}\right)$，如果 $z_{0}$ 是 $f(z)-w_{0}$ 的 $m$ 阶零点，则对于充分小的 $\rho>0$，必存在 $\delta>0$，使得对于圆 $\left|w-w_{0}\right|<\delta$内的每一点 $A$，函数 $f(z)-A$ 在 $\left|z-z_{0}\right|<\rho$ 内恰有 $m$ 个零点
+    2. 代数基本定理: $n$ 次代数方程 $p(z)=a_{n} z^{n}+a_{n-1} z^{n-1}+\cdots+a_{1} z+a_{0}=0 \ (a_{n} \neq 0)$ 恰有 $n$ 个根
 
 ## 3.2 共形映射
 ### 3.2.1 共形映射
