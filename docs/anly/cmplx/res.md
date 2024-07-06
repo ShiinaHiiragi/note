@@ -118,3 +118,33 @@
     4. 设 $z_{2}, z_{3}, z_{4}$ 是 $\mathbf{C}_{\infty}$ 上不同的点，$w=T(z)$ 是线性变换，则对于任意 $z_{1}$ 有 $\left(z_{1}, z_{2}, z_{3}, z_{4}\right)=\left(T\left(z_{1}\right), T\left(z_{2}\right), T\left(z_{3}\right), T\left(z_{4}\right)\right)$
 
 ## 3.3 Laplace 变换
+1. 设 $f(t)$ 是实变量 $t$ 的实值或复值函数，当 $t<0$ 时 $f(t)=0$ 且满足
+    1. $f(t)$ 与 $f^{\prime}(t)$ 在整个 $t$ 轴上连续，或者在任意具有有限长度的区间上仅有有限个第一类不连续点
+    2. $f(t)$ 是指数增长型的，即存在两个常数 $K>0, c \geqslant 0$，使得对所有的 $t \geqslant 0$，有 $|f(t)| \leqslant K e^{c t}$，称 $c$ 为 $f(t)$ 的增长指数
+
+    如果 $p=\sigma+\mathrm i s$，其中 $\sigma>0$，则表达式 ${\displaystyle F(p)=L[f(t)]=\int_{0}^{+\infty} f(t) e^{-p t} \mathrm d t}$ 就称为函数 $f(t)$ 的 $\text{Laplace}$ 变换或像函数，$f(t)$ 则称为 $F(p)$ 的 $\text{Laplace}$  反变换或本函数，记为 $f(t)=L^{-1}[F(p)]$．$F(p)$ 是含复参变量的广义积分，是复参变量 $p$ 的复函数
+
+    1. 若 $f(t)$ 满足上述两个条件，则像函数 $F(p)$ 在半平面 $\operatorname{Re}(p)>c$ 上有意义且解析
+    2. 设 $p$ 趋于无穷，且 $\operatorname{Re}(p)=\sigma$ 无限增大，则像函数 $F(p)$ 趋于 $0$，即 ${\displaystyle \lim _{\sigma \rightarrow \infty} F(p)=0}$
+
+2. $\text{Laplace}$ 变换的基本性质：
+    1. 线性关系：设 $f(t)$ 及 $g(t)$ 都可作 $\text{Laplace}$ 变换，则对于任何两个常数 $\alpha, \beta$ 有 $L[\alpha f(t)+\beta g(t)]=\alpha L[f(t)]+\beta L[g(t)]$；若记 $L[f(t)]=F(p), L[g(t)]=G(p)$，则反变换式 $L^{-1}[\alpha F(p)+\beta G(p)]=\alpha f(t)+\beta g(t)=\alpha L^{-1}[F(p)]+\beta L^{-1}[G(p)]$，即逆变换 $L^{-1}$ 也是线性的
+    2. 相似定理：设 $L[f(t)]=F(p)$，则对于任一常数 $\alpha>0$ 有 $L[f(\alpha t)]=\dfrac{1}{\alpha} F\left(\dfrac{p}{\alpha}\right)$
+    3. 本函数的微分法：如果 $f(t)$ 及 $f^{\prime}(t)$ 都满足两个条件，且设 $L[f(t)]=F(p)$，则 $L\left[f^{\prime}(t)\right]=p F(p)-f(+0)$
+    4. 本函数的积分法：设 $L[f(t)]=F(p)$，则 ${\displaystyle L\left[\int_{0}^{t} f(t) \mathrm d t\right]=\dfrac{F(p)}{p}}$
+    5. 像函数的微分法：若 $f(t)$ 满足两个条件，则 $F^{\prime}(p)=L[-t f(t)]$．更一般地，$F^{(n)}(p)=L\left[(-t)^{n} f(t)\right]$
+    6. 像函数的积分法：若 $f(t)$ 满足两个条件，其像函数 $F(p)$ 的积分 ${\displaystyle \int_{p}^{\infty} F(p) d p}$ 收敛（积分路线取在 $\operatorname{Re}(p)>c$ 中），且当 $t \rightarrow 0$ 时，$\left|\dfrac{f(t)}{t}\right|$ 有界，则 ${\displaystyle L\left[\dfrac{f(t)}{t}\right]=\int_{p}^{\infty} F(p) \mathrm d p}$
+    7. 延迟性：设 $L[f(t)]=F(p)$．则 $L[f(t-\tau)]= e^{-p \tau} F(p) \ (\tau>0)$
+    8. 周期函数的像函数：设 $L[f(t)]=F(p)$，则对任何一个复常数 $\lambda$ 有 $L\left[e^{\lambda t} f(t)\right]=F(p-\lambda)$
+    9. 卷积定理：设 $f_{1}(t)$ 及 $f_{2}(t)$ 都满足 $\text{Laplace}$ 变换存在的条件，且 $L\left[f_{1}(t)\right]= F_{1}(p), L\left[f_{2}(t)\right]=F_{2}(p)$，则
+
+        $$
+        L\left[f_{1} * f_{2}\right]=L\left[f_{1}\right] \cdot L\left[f_{2}\right] \vee L^{-1}\left[F_{1}(p) \cdot F_{2}(p)\right]=f_{1}(t) * f_{2}(t)
+        $$
+
+3. 由像函数求本函数
+    1. 部分分式法：有理真分式函数一定存在本函数
+    2. $\text{Laplace}$ 变换的反演公式
+        1. 设 $f(t)$ 满足 $\text{Laplace}$ 变换存在性的条件，$c$ 为其增长指数．设 $L[f(t)]=F(p)$，则对任意取定的 $\sigma>c$，在 $f(t)$ 的连续点处有 ${\displaystyle f(t)=\dfrac{1}{2 \pi \mathrm i} \int_{\sigma-i \infty}^{\sigma+\mathrm i \infty} F(p) e^{p t} \mathrm d p}$
+        2. 设 $F(p)$ 除在半平面 $\operatorname{Re}(p) \leqslant \sigma$ 内有奇点 $p_{1}, p_{2}, \cdots, p_{n}$ 外，在 $p$ 平面内处处解析，当 $p \rightarrow \infty$ 时，$F(p) \rightarrow 0$，且积分 ${\displaystyle \int_{\sigma-i \infty}^{\sigma+\mathrm i \infty} F(p) \mathrm d p \ (\sigma>c)}$ 绝对收敛，则 $F(p)$ 的本函数是 ${\displaystyle f(t)=\dfrac{1}{2 \pi \mathrm i} \int_{\sigma-i \infty}^{\sigma+\mathrm i \infty} F(p) e^{p t} \mathrm d p=\sum_{k=1}^{n} \operatorname{Res}\left[F(p) e^{p t}, p_{k}\right], t>0}$
+    3. 级数方法：若 $F(p)$ 在 $\infty$ 点解析，且它在 $\infty$ 点的邻域内有 $\text{Laurent}$ 展开式 ${\displaystyle F(p)=\sum_{k=1}^{\infty} \dfrac{c_{k}}{p^{k}}}$，把此级数逐项求本函数，得到级数 ${\displaystyle \sum_{k=1}^{\infty} \dfrac{c_{k}}{(k-1)!} t^{k-1}}$，则这个级数的收敛半径为 $+\infty$，其所定义的函数 $f(t)$ 满足不等式 $|f(t)| \leqslant K e^{c t}$，其中 $t \geqslant 0, K, c$ 是正常数，且 $h(t) f(t)$ 是 $F(p)$ 的本函数

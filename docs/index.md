@@ -432,8 +432,7 @@ const refList = [
         page: [1, 175],
         year: 2004,
         press: "科学出版社",
-        locate: "北京",
-        plot: 176
+        locate: "北京"
     },
     {
         author: ["汪嘉冈"],
