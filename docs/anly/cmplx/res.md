@@ -83,12 +83,38 @@
     2. 若函数 $f(z)$ 在 $D$ 内解析，则 $f(z)$ 在 $\gamma$ 内部的零点个数 ${\displaystyle N=\dfrac{1}{2 \pi \mathrm i} \oint_{\gamma} \dfrac{f^{\prime}(z)}{f(z)} \mathrm d z=\dfrac{1}{2 \pi} \Delta_{\gamma} \operatorname{arg} f(z)}$
 
 2. $\text{Rouch}\acute{\mathrm e}$ 定理：设 $\gamma$ 是域 $D$ 内的闭路，其内部属于 $D$．若函数 $f(z)$ 及 $g(z)$ 在域 $D$ 内解析，在 $\gamma$ 上有 $|f(z)-g(z)|<|f(z)|$，则 $f(z)$ 和 $g(z)$ 在 $\gamma$ 内部有相同的零点个数
-    1. 设函数 $f(z)$ 在域 $D$ 内解析，$z_{0} \in D$．记 $w_{0}=f\left(z_{0}\right)$，如果 $z_{0}$ 是 $f(z)-w_{0}$ 的 $m$ 阶零点，则对于充分小的 $\rho>0$，必存在 $\delta>0$，使得对于圆 $\left|w-w_{0}\right|<\delta$内的每一点 $A$，函数 $f(z)-A$ 在 $\left|z-z_{0}\right|<\rho$ 内恰有 $m$ 个零点
+    1. 设函数 $f(z)$ 在域 $D$ 内解析，$z_{0} \in D$．记 $w_{0}=f\left(z_{0}\right)$，如果 $z_{0}$ 是 $f(z)-w_{0}$ 的 $m$ 阶零点，则对于充分小的 $\rho>0$，必存在 $\delta>0$，使得对于圆 $\left|w-w_{0}\right|<\delta$ 内的每一点 $A$，函数 $f(z)-A$ 在 $\left|z-z_{0}\right|<\rho$ 内恰有 $m$ 个零点
     2. 代数基本定理: $n$ 次代数方程 $p(z)=a_{n} z^{n}+a_{n-1} z^{n-1}+\cdots+a_{1} z+a_{0}=0 \ (a_{n} \neq 0)$ 恰有 $n$ 个根
 
 ## 3.2 共形映射
 ### 3.2.1 共形映射
+1. 设函数 $f(z)$ 在区域 $D$ 内解析，$z_{0} \in D$ 且 $f^{\prime}\left(z_{0}\right) \neq 0$．又设 $\gamma: z=\gamma(t)= x(t)+\mathrm i y(t),\left(t_{0} \leqslant t \leqslant t_{1}\right)$ 是域 $D$ 内过点 $z_{0}$ 的一条光滑曲线，且 $\gamma\left(t_{0}\right)=z_{0}$, $\gamma^{\prime}\left(t_{0}\right) \neq 0$
+    1. $f(z)$ 把曲线 $\gamma$ 映为过点 $w_{0}=f\left(z_{0}\right)$ 的光滑曲线 $\Gamma: w=\sigma(t)=f(\gamma(t)), \  t_{0} \leqslant t \leqslant t_{1}$，$\Gamma$ 在点 $w_{0}$ 处的切向量的辐角与曲线 $\gamma$ 在点 $z_{0}$ 处切向量的辐角之差恒为 $\arg f^{\prime}\left(z_{0}\right)$，而与曲线 $\gamma$ 无关
+    2. 设 $\gamma_{1}, \gamma_{2}$ 是 $D$ 内过点 $z_{0}$ 的任意两条光滑曲线，其方程分别为 $z=\gamma_{1}(t) \ \left(t_{0} \leqslant t \leqslant t_{1}\right)$ 与 $z=\gamma_{2}(t) \ \left(t_{0} \leqslant t \leqslant t_{1}\right)$，且有 $\gamma_{1}\left(t_{0}\right)=\gamma_{2}\left(t_{0}\right)=z_{0}$
+        1. 在解析映射 $w=f(z)$ 下的像分别是通过点 $w_{0}=f\left(z_{0}\right)$ 的光滑曲线 $\Gamma_{1}: w=\sigma_{1}(t), \ \Gamma_{2}: w=\sigma_{2}(t)$
+        2. 如果 $f^{\prime}\left(z_{0}\right) \neq 0$，那么在映射 $w=f(z)$ 的作用下，过点 $z_{0}$ 的任意两条光滑曲线的夹角（两条曲线在某点的夹角定义为这两条曲线在该点的切线的夹角）在大小与旋转方向上都保持不变，称 $f(z)$ 在点 $z_{0}$ 处是保角的
+    3. 任取过点 $z_{0}$ 的曲线 $\gamma(t)$，其在映射 $f(z)$ 下像为 $\Gamma: w=\sigma(t)=f(\gamma(t))$，则 ${\displaystyle \lim _{\substack{z \rightarrow z_{0} \\ z \in \gamma}} \dfrac{\left|f(z)-f\left(z_{0}\right)\right|}{\left|z-z_{0}\right|}=\left|f^{\prime}\left(z_{0}\right)\right|}$，即像点之间的距离与原像之间的距离之比仅与 $z_{0}$ 有关，而与曲线 $\gamma$ 无关，称 $\left|f^{\prime}\left(z_{0}\right)\right|$ 为 $f$ 在 $z_{0}$ 处的伸缩率
+2. 将导数不为零的映射称为共形映射
+    1. 保域性：若 $f$ 是域 $D$ 上非常数的解析函数，则 $f(D)$ 是一个域
+    2. 若 $f(z)$ 是域 $D$ 内的单叶函数（即一对一的解析函数），则对每一点 $z \in D$，有 $f^{\prime}(z) \neq 0$；反之若 $z_{0} \in D, f^{\prime}\left(z_{0}\right) \neq 0$，则 $f(z)$ 在 $z_{0}$ 的某个邻域内是单叶的
+    3. 若函数 $f$ 在域 $D$ 上单叶，则其反函数 $g=f^{-1}$ 在 $G=f(D)$ 上也单叶，而且 $\left(f^{-1}\right)^{\prime}(w)=\dfrac{1}{f^{\prime}(z)}, \  w =f(z)\in G$
+    4. 边界对应原理：设 $G$ 是一个域，$\gamma$ 是 $G$ 内的闭路，其内部 $D$ 属于 $G$．若函数 $f(z)$ 在 $G$ 内解析，把 $\gamma$ 一一对应地映射成闭路 $\Gamma$，则 $w=f(z)$ 在 $D$ 内单叶，把 $D$ 映为 $\Gamma$ 的内部 $\Omega$
+    5. $\text{Riemann}$ 映射定理：设 $G$ 是单连通区域且 $G \neq \mathbf{C}$，则存在单叶函数 $w=f(z)$ 将 $G$ 共形映射为单位圆盘 $B_{0}:|w|<1$．对任一确定的点 $a \in G$，若进一步要求 $f(a)=0, \arg f^{\prime}(a)=\alpha$（$\alpha$ 是给定的实常数），那么共形映射 $w=f(z)$ 唯一确定
+3. $\text{Schwarz}-\text{Christoffel}$ 映射：如果函数 $w=f(z)$ 作出一个把上半平面 $\operatorname{Im} z>0$ 映成有界多边形内部的共形映射，此多边形在顶点 $w_{k}$ 处的内角为 $\beta_{k} \pi \ \left(0<\beta_{k}<2, k=1,2, \cdots, n, \beta_{1}+\beta_{2}+\cdots+\beta_{n}=n-2\right)$，并且实轴上对应于这多边形顶点的点 $a_{k}\left(-\infty<a_{1}<a_{2}<\cdots<a_{n}<+\infty\right)$ 均已知，则 ${\displaystyle f(z)=C \int_{z_{0}}^{z}\left(z-a_{1}\right)^{\beta_{1}-1}\left(z-a_{2}\right)^{\beta_{2}-1} \cdots\left(z-a_{n}\right)^{\beta_{n}-1} \mathrm d z+B}$，其中 $z_{0}\left(\operatorname{Im} z_{0} \geqslant 0\right)$ 是任意选定的点，$B$ 及 $C$ 是复常数，积分号下的各多值函数可取主值
 
 ### 3.2.2 分式线性变换
+1. 形如 $w=T(z)=\dfrac{a z+b}{c z+d}$ 的函数称为分式线性变换，其中 $a, b, c, d$ 是复常数且 $\Delta=\left|\begin{array}{ll}a & b \\c & d\end{array}\right|=a d-b c \neq 0$．若 $c \neq 0$，规定 $T(-d / c)=\infty, T(\infty)=a / c$；若 $c=0$，规定 $T(\infty)=\infty$，于是分式线性变换 $w=T(z)$ 把扩充 $z$ 平面映为扩充 $w$ 平面
+    1. 反函数 $z=T^{-1}(w)=\dfrac{-d w+b}{c w-a}$ 也是一个分式线性变换
+    3. 设 $T(z)$ 是分式线性变换，若 $c \neq 0$，则其导数 $T^{\prime}(z)=\dfrac{a d-b c}{(c z+d)^{2}}$，所以在除去点 $z=-d / c$ 及 $z=\infty$ 外，分式线性变换保角；若 $c=0$，则 $T(z)= A z+B, T^{\prime}(z)=A$，所以 $T(z)$ 在有穷复平面上是保角的
+2. 分式线性的几种简单特例：一般的分式线性变换可分解为下述 $4$ 种简单变换的复合
+    1. 平移变换：$T: w=z+b \ (b \in \mathbf C)$
+    2. 旋转变换：$R: w=e^{i \theta} z \ (\theta \in \mathbf R)$
+    3. 相似变换：$S: w=r z \ (r \in \mathbf R \wedge R > 0)$
+    4. 反演变换：$I: w=\dfrac{1}{z}$，这个变换可以分解为 $z_{1}=\dfrac{1}{\overline{z}}$ 与 $w=\overline{z_{1}}$
+3. 设 $\gamma$ 是以 $z_{0}$ 为圆心，$R$ 为半径的圆周．若 $z_{1}, z_{2}$ 两点满足条件 $z_{2}-z_{0}=\dfrac{R^{2}}{\overline{z_{1}-z_{0}}}$，则称 $z_{1}, z_{2}$ 是关于圆周 $\gamma$ 的两个对称点．特别地，对于圆周 $\gamma$ 上的点，与其对称的点就是自身；圆心 $z=z_{0}$ 和无穷远点 $z=\infty$ 也看作关于 $\gamma$ 对称
+    1. 任意一个圆周都可以表示为 $\left|\dfrac{z-z_{1}}{z-z_{2}}\right|=k, \ (k>0)$，其中 $z_{1}, z_{2}$ 是关于其两个对称点．当 $k \neq 1$ 时，圆周的圆心 $z_{0}$ 及半径 $R$ 分别为 $z_{0}=\dfrac{z_{1}-k^{2} z_{2}}{1-k^{2}}, \  R=\dfrac{k\left|z_{1}-z_{2}\right|}{\left|1-k^{2}\right|}$
+    2. 扩充复平面上两点 $z_{1}$ 和 $z_{2}$ 关于圆周 $\gamma$ 对称的充要条件是过点 $z_{1}$ 和 $z_{2}$ 的任意圆周都与 $\gamma$ 正交
+    3. 分式线性变换的保圆性：任意分式线性变换 $w=T(z)=\dfrac{a z+b}{c z+d} \ (a d-b c \neq 0)$ 将圆周 $K$ 映为圆周 $H$，并且将关于 $K$ 的两个对称点映为关于圆周 $H$ 的两个对称点
+    4. 设 $z_{2}, z_{3}, z_{4}$ 是 $\mathbf{C}_{\infty}$ 上不同的点，$w=T(z)$ 是线性变换，则对于任意 $z_{1}$ 有 $\left(z_{1}, z_{2}, z_{3}, z_{4}\right)=\left(T\left(z_{1}\right), T\left(z_{2}\right), T\left(z_{3}\right), T\left(z_{4}\right)\right)$
 
 ## 3.3 Laplace 变换
