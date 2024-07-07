@@ -8,7 +8,6 @@
 ### 三、Lean
 
 !!! note "参考文献"
-    - 『The Lean 4 Theorem Prover and Programming Language』（Leonardo de Moura、Sebastian Ullrich）
     - 『Functional Programming in Lean』（David Thrane Christiansen）
     - 『Theorem Proving in Lean 4』（Jeremy Avigad、Leonardo de Moura、Soonho Kong、Sebastian Ullrich）
     - 『Lean 4 manual』（Microsoft Corporation）
@@ -110,17 +109,3 @@
 #### 3 连续统假设
 1. 集宇宙：第七章
 2. 可构成集：第八章
-
-## 第六部分 分析学
-### 三、复分析
-
-!!! note "参考文献"
-    『复变函数论』（钟玉泉）
-
-#### 1 解析函数
-
-#### 2 复分析
-
-#### 3 留数理论
-
-#### 4 共形映射

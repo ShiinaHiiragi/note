@@ -24,12 +24,14 @@
 ## D
 - declaration：声明
 - definition：定义
+- dependency：依赖项
 
 ## E
 - elaborate：⟦不翻译⟧
 - elaborator：⟦不翻译⟧
 - element：元素
 - enumerate：枚举
+- evaluate：⟦不翻译⟧
 - expression：表达式
 
 ## F
@@ -76,4 +78,5 @@
 - tag：标签
 - term：项
 - theorem：定理
+- toolchain：工具链
 - type：类型

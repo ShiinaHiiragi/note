@@ -109,6 +109,36 @@ const refList = [
         locate: "Fairfax"
     },
     {
+        author: ["Leonardo de Moura", "Sebastian Ullrich"],
+        title: "The Lean 4 Theorem Prover and Programming Language",
+        type: "DB/OL",
+        page: [1, 11]
+    },
+    // {
+    //     author: ["David Thrane Christiansen"],
+    //     title: "Functional Programming in Lean",
+    //     type: "DB/OL",
+    //     page: [1, 437]
+    // },
+    // {
+    //     author: ["Jeremy Avigad", "Leonardo de Moura", "Soonho Kong", "Sebastian Ullrich"],
+    //     title: "Theorem Proving in Lean 4",
+    //     type: "DB/OL",
+    //     page: [1, 194]
+    // },
+    // {
+    //     author: ["Arthur Paulino", "Damiano Testa", "Edward Ayers", "Evgenia Karunus", "Henrik Böving", "Jannis Limperg", "Siddhartha Gadgil", "Siddharth Bhat"],
+    //     title: "Metaprogramming in Lean 4",
+    //     type: "DB/OL",
+    //     page: [1, 103]
+    // },
+    // {
+    //     author: ["Microsoft Corporation"],
+    //     title: "Lean Manual",
+    //     type: "DB/OL",
+    //     page: [1, 154]
+    // },
+    {
         author: ["蔡曙山"],
         title: "认知科学导论",
         type: "M",
