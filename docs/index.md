@@ -132,12 +132,12 @@ const refList = [
     //     type: "DB/OL",
     //     page: [1, 103]
     // },
-    // {
-    //     author: ["Microsoft Corporation"],
-    //     title: "Lean Manual",
-    //     type: "DB/OL",
-    //     page: [1, 154]
-    // },
+    {
+        author: ["Microsoft Corporation"],
+        title: "Lean Manual",
+        type: "DB/OL",
+        page: [1, 154]
+    },
     {
         author: ["蔡曙山"],
         title: "认知科学导论",
