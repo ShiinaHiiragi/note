@@ -47,11 +47,14 @@ markdown_extensions:
   - def_list
   - footnotes
   - pymdownx.details
-  - pymdownx.superfences
   - pymdownx.highlight:
+      use_pygments: true
       anchor_linenums: true
+      line_spans: __span
+      pygments_lang_class: true
   - pymdownx.inlinehilite
   - pymdownx.snippets
+  - pymdownx.superfences
   - pymdownx.tabbed:
       alternate_style: true
   - pymdownx.critic
@@ -120,7 +123,7 @@ nav:
       - 1 系统原理: cogn/lean/sys.md
       # - 2 句法范畴: cogn/lean/cat.md
       # - 3 初始模块: cogn/lean/init.md
-      # - 4 元编程: cogn/lean/meta.md
+      - 4 元编程: cogn/lean/meta.md
   - 形而上学:
     - 一、认知科学:
       - 1 神经认知: meta/cogn/nerve.md

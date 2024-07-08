@@ -58,7 +58,7 @@ $$
 1. Lean 包是 Lake 代码分发的基本单位，包含如下内容
     1. `lakefile.lean`：`lake` 构建所需配置，早期版本可使用 TOML 文件．`lakefile.lean` 默认配置如下
 
-        ```haskell
+        ```lean
         import Lake
         open Lake DSL
 
@@ -86,7 +86,7 @@ $$
 
     5. 依赖项：也称作当前包的上游（当前包是依赖项的下游），通过如下语法引入
 
-        ```haskell
+        ```lean
         require ["<scope>" /] <pkg-name> [@ <version>]
           [from <source>] [with <options>]
         ```
@@ -96,12 +96,26 @@ $$
         3. 对于 `Mathlib`，在执行 `lake build` 前应先执行 `lake exe cache get` 以规避从零开始构建
 
     !!! note "工作区与目标"
-        4. 工作区：Lake 的最大组织单元，它包括一个包（称为 Root）、可移动依赖项与 Lake 环境
-        5. 目标：Lake 的基本构建单元
+        1. 工作区：Lake 的最大组织单元，它包括一个包（称为 Root）、可移动依赖项与 Lake 环境
+        2. 目标：Lake 的基本构建单元
             1. 内建目标类型包括二进制可执行文件（从含有主函数的 Root 构建）、Lean 库与外部库
             2. Facet：从其他组织单元构建得到的元素
 
 2. 模块：Lake 构建系统的最小代码单元，通常由 Lean 源代码、一系列二进制库（`olean` 或 `ilean`）以及系统共享库构成
+
+    ```lean
+    @[run_builtin_parser_attribute_hooks]
+    def module := leading_parser header
+        >> many (commandParser >> ppLine >> ppLine)
+
+    def header := leading_parser optional («prelude» >> ppLine)
+        >> many («import» >> ppLine)
+        >> ppLine
+    def «prelude» := leading_parser "prelude"
+    def «import» := leading_parser "import "
+        >> optional "runtime"
+        >> identWithPartialTrailingDot
+    ```
 
     !!! note "模块名层级与命名空间层级"
         Lean 中的模块名层级与命名空间层级解耦
