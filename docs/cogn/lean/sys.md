@@ -106,19 +106,21 @@ $$
     ```lean
     @[run_builtin_parser_attribute_hooks]
     def module := leading_parser header
-        >> many (commandParser >> ppLine >> ppLine)
+      >> many (commandParser >> ppLine >> ppLine)
 
     def header := leading_parser optional («prelude» >> ppLine)
-        >> many («import» >> ppLine)
-        >> ppLine
+      >> many («import» >> ppLine)
+      >> ppLine
     def «prelude» := leading_parser "prelude"
     def «import» := leading_parser "import "
-        >> optional "runtime"
-        >> identWithPartialTrailingDot
+      >> optional "runtime"
+      >> identWithPartialTrailingDot
     ```
 
     1. `prelude`：不导入 Init.Prelude 模块
-    2. `import`：导入指定模块，
+    2. `import`：导入指定模块
+        1. Lean 将模块名的所有 `.` 解释为目录，模块层级的最后一个标识符为文件
+        2. 以尖括号 `«...»` 包围模块名时可以使用空格或保留字
 
     !!! note "模块名层级与命名空间层级"
         Lean 中的模块名层级与命名空间层级解耦
