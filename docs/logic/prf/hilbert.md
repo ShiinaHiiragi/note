@@ -126,18 +126,18 @@
         2. 代入规则：$\begin{prooftree} \AxiomC{\(\alpha\)} \RightLabel{ (sub)} \UnaryInfC{\(\sigma(\alpha)\)} \end{prooftree}$，其中 $\sigma$ 是任意代入
 
     2. 令 $X \neq \varnothing$ 且 $S\subseteq X\times X$，对任意 $x\in X$，令 $S(x) = \{y\in X\mid xSy\}$．对任意 $Y\subseteq X$，令 $S[Y] = {\displaystyle \bigcup \{S(y) \mid y\in Y\}}$，对任意自然数 $n\leqslant 0$ 与 $x\in X$，定义 $S^0[x]=\{x\}, S^{n+1}[x] = S[S^n[x]]$
-        1. 若 $X$ 是有穷集且满足以下条件，则称 $(X, S)$ 为有穷树结构，$X$ 中的元组称为节点
+        1. 若 $X$ 是有穷集且满足以下条件，则称 $(X, S)$ 为有穷树结构，$X$ 中的元组称为节点．若 $xSy$，则称 $y$ 是 $x$ 的子节点
             - 存在 $r\in X$ 满足条件：对任意 $x\in X$ 都存在自然数 $n\geqslant 0$ 使得 $rS^nx$，称 $r$ 为 $(X, S)$ 的根节点
             - 对任意 $x, y, z\in X$，若 $xSz$ 且 $ySz$，那么 $x=y$
             - 不存在 $x_0, x_1, \cdots, x_k \in X$ 和自然数 $m, n$ 使得 $x_0S^mx_k$ 且 $x_kS^nx_0$
-        2. 在有穷树结构 $(X, S)$ 中，若 $xSy$，则称 $y$ 是 $x$ 的子节点
-        3. 在有穷树结构 $(X, S)$ 中，一条链 $c$ 是一个序列 $\left<x_0, x_1, \cdots, x_k\right>$ 使得对所有 $i\neq j < k$ 都有 $x_i\neq x_j$ 且 $x_iSx_{i+1}$
+        2. 在有穷树结构 $(X, S)$ 中，一条链 $c$ 是一个序列 $\left<x_0, x_1, \cdots, x_k\right>$ 使得对所有 $i\neq j < k$ 都有 $x_i\neq x_j$ 且 $x_iSx_{i+1}$
             - 若一条链 $c = \left<x_0, x_1, \cdots, x_k\right>$ 不存在 $y=X-c$ 使得 $x_kSy$，则称 $c$ 为极大链．极大链的第一个元素称为根节点；最后一个元素称为叶节点
-            - 链的长度定义为 $|c|=k$，单个节点链的长度为 $0$．从而有穷树结构 $(X, S)$ 的高度定义为 $\max\{\left|c\right|: c$ 是 $(X, R)$ 的极大链$\}$
+            - 链的长度定义为 $|c|=k$，单个节点链的长度为 $0$
+            - 有穷树结构 $(X, S)$ 的高度定义为 $\max\{\left|c\right|: c$ 是 $(X, R)$ 的极大链$\}$
     3. 在 $\mathbf{HK}$ 中，从公式集 $\Gamma$ 到公式 $\alpha$ 的一个推导是由公式组成的以 $\alpha$ 为根节点的有穷树结构 $\mathcal D$，其中每个节点满足三个条件之一：① $\gamma$ 是公理或 $\gamma \in \Gamma$；② $\gamma$ 是从子节点 $\beta$ 和 $\beta \to \gamma$ 运用规则 $\text{mp}$ 得到的；③ $\gamma$ 是从子节点 $\beta$ 利用规则 $\text{sub}$ 得到的，其中 $\beta$ 是公理
         1. 用 $\mathcal {D, E}$ 等表示推导，用 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\alpha\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\alpha$ 为根节点的推导
         2. 在 $\mathbf{HK}$ 中，若存在公式集 $\Gamma$ 到公式 $\alpha$ 的推导，则称 $\alpha$ 是 $\Gamma$ 的句法后承，记作 $\Gamma \vdash_\mathbf{HK} \alpha$，无歧义时下标 $\mathbf{HK}$ 可删除
-        3. 若存在从 $\Gamma$ 到 $\alpha$ 的推导，则称公式 $\alpha$ 在 $\mathbf{HK}$ 中可证；若 $\varnothing \vdash_\mathbf{HK} \alpha$，称公式在 $\mathbf{HK}$ 中可证，或称 $\alpha$ 是 $\mathbf{HK}$ 的定理，记作 $\vdash_\mathbf{HK} \alpha$．用 $\mathrm{Thm}(\mathbf{HK})$ 表示 $\mathbf{HK}$ 中所有定理的集合
+        3. 若 $\varnothing \vdash_\mathbf{HK} \alpha$，称公式在 $\mathbf{HK}$ 中可证，或 $\alpha$ 是 $\mathbf{HK}$ 的定理，记作 $\vdash_\mathbf{HK} \alpha$．用 $\mathrm{Thm}(\mathbf{HK})$ 表示 $\mathbf{HK}$ 中所有定理的集合
     4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统元定理
         1. $\alpha, \Gamma \vdash_\mathbf{HK} \alpha$，$\bot, \Gamma \vdash_\mathbf{HK} \alpha$
         2. 对任意公式集 $\Gamma$ 和公式 $\alpha$，$\Gamma \vdash_\mathbf{HK} \alpha$ 当且仅当存在有穷子集 $\Delta \subseteq \Gamma$ 使得 $\Delta \vdash_\mathbf{HK} \alpha$
@@ -154,7 +154,7 @@
 
 5. 经典命题逻辑的后承演算 $\mathfrak{C}_\mathbf{HK}$ 由后承公理模式和后承规则组成
     1. 后承公理模式：
-        - $\alpha, \Gamma \vDash \alpha \ (\mathrm{Id})$
+        - $\alpha, \Gamma \vdash \alpha \ (\mathrm{Id})$
         - $\bot, \Gamma \vdash \alpha \ (\bot)$
     2. 后承规则：
 
@@ -256,15 +256,12 @@
     1. $\text{Post}$ 完全性：$\mathbf{HK}$ 是 $\text{Post}$ 完全的，即若 $\nvdash_\mathbf{HK} \alpha$，那么在系统 $\mathbf{HK}$ 上增加 $\alpha$ 作为公理所得到的系统是不一致的
     2. 可判定性：$\mathbf{CL}$ 是可判定的，即存在一种能行的方法使得对任何公式 $\alpha$ 可在有穷步骤之内确定 $\alpha$ 是否属于 $\mathbf{CL}$，因此 $\mathrm{Thm}(\mathbf{HK})$ 是可判定的
     3. 析取性质：$\mathbf{HK}$ 不具有析取性质，即存在公式 $\alpha \vee \beta$，有 $\vdash_\mathbf{HK} \alpha \vee \beta$ 且 $\nvdash_\mathbf{HK} \alpha$ 且 $\nvdash_\mathbf{HK} \beta$
-    4. 插值性质：$\mathbf{HK}$ 具有插值性质，即对任何公式 $\alpha \to \beta$，若 $\vdash_\mathbf{HK} \alpha \to \beta$，那么存在公式 $\gamma$ 使得
+    4. 插值性质：$\mathbf{HK}$ 具有插值性质，即对任何公式 $\alpha \to \beta$，若 $\vdash_\mathbf{HK} \alpha \to \beta$，那么存在公式 $\chi$ 使得
         1. $\vdash_\mathbf{HK} \alpha \to \chi$
         2. $\vdash_\mathbf{HK} \chi \to \beta$
         3. 变元条件：$\mathrm{var}(\chi) \subseteq \mathrm{var}(\alpha) \subseteq \mathrm{var}(\beta)$
 
         公式 $\chi$ 称为 $\alpha$ 与 $\beta$ 的插值
-
-        !!! note "证明插值性质的引理"
-            若 $\mathrm{var}(\alpha) \cap \mathrm{var}(\beta) = \varnothing$，那么 $\vDash \alpha \to \beta$ 当且仅当 $\vDash \neg \alpha$ 或 $\vDash \beta$
 
 ### 1.1.2 直觉主义逻辑
 
