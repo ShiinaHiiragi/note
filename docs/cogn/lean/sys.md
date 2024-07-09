@@ -26,7 +26,7 @@ $$
 ### 1.2.1 终端工具
 1. `elan`：管理 Lean 编译器工具链（类比于 Node.js 的 `nvm`）
     1. `show`：列出所有工具链与 Lean 版本
-    2. `update [toolchain]`：升级工具链与 `elan`，未指定参数时升级所有工具链与 `elan`
+    2. `update [toolchain]`：升级工具链与 Elan，未指定参数时升级所有工具链与 Elan
     3. `default <toolchain>`：指定默认工具链
     4. `toolchain <SUBCOMMAND>`：修改或查询已安装工具链
         1. `list`：列出所有已安装工具链
@@ -35,9 +35,9 @@ $$
         4. `link`：通过符号链接到一个目录以创建自定义工具链
     5. `which <command>`：列出运行指令的二进制文件
     6. `run <toolchain> <command>`：以指定工具链的环境配置运行指令
-    7. `self <SUBCOMMAND>`：修改 `elan`
-        1. `update`：下载并安装 `elan` 更新
-        2. `uninstall`：卸载 `elan`
+    7. `self <SUBCOMMAND>`：修改 Elan
+        1. `update`：下载并安装 Elan 更新
+        2. `uninstall`：卸载 Elan
 2. `lake`：构建 Lean 包及其依赖项（类比于 Node.js 的 `npm`）
     1. `init <name> [template]`：在当前目录创建 Lean 包
     2. `new <name> [template]`：在新目录创建一个 Lean 包
@@ -116,6 +116,9 @@ $$
         >> optional "runtime"
         >> identWithPartialTrailingDot
     ```
+
+    1. `prelude`：不导入 Init.Prelude 模块
+    2. `import`：导入指定模块，
 
     !!! note "模块名层级与命名空间层级"
         Lean 中的模块名层级与命名空间层级解耦
