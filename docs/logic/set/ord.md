@@ -151,7 +151,7 @@
         g_{1}(m) &=m \\
         g_{n+1}(m) &= \left\{\begin{aligned}
         & S_{n+1}\left(g_{n}(m)\right)-1, & g_{n}(m)>0 \\
-        & 0, & \text{otherswise}
+        & 0, & \textsf{否则}
         \end{aligned}\right.
         \end{aligned}
         $$

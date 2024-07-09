@@ -22,7 +22,7 @@
         一个二阶语言由非逻辑符号集合 $S$ 决定．当 $S = \varnothing$ 时，$\mathscr L_2(S)$ 可简记为 $\mathscr L_2$，这是语言中的纯逻辑部分
 
 2. 二阶逻辑项与公式的句法
-    1. 二阶语言 $\mathscr L_2(S)$ 的类型是从 $\mathbf V_r \cup \mathbf V_f \cup \mathbf R \cup \mathbf F$ 的正整数集合的函数 $\Omega: S \to Z_+$
+    1. 二阶语言 $\mathscr L_2(S)$ 的类型是从 $\mathbf V_r \cup \mathbf V_f \cup \mathbf R \cup \mathbf F$ 的正整数集合的函数 $\Omega: S \to \mathbf Z_+$
         1. 对每个 $R \in \mathbf V_r \cup \mathbf R$，$\Omega(R)$ 称为 $R$ 的元数，$R$ 为 $\Omega(R)$ 元关系符号
         2. 对每个 $f \in \mathbf V_f \cup \mathbf F$，$\Omega(f)$ 称为 $f$ 的元数，$f$ 为 $\Omega(f)$ 元关系符号
     2. 二阶语言 $\mathscr L_2(S)$ 的项集 $\mathcal T(S)$ 归纳定义如下

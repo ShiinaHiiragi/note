@@ -103,7 +103,7 @@
         \forall A \forall x \in A \ \exists^{1} y \ \psi(x, y) \to \exists B \forall x \in A \ \exists y \in B \ \psi(x, y)
         $$
 
-    10. 选择公理（$\mathbf{AC}$）对任一集合 $X \neq \varnothing$，如果有 $\varnothing \neq X$ 且若 $x, y \in X, x \neq y$，则 $x \cap y = \varnothing$，则存在集合 $S$，对任意 $x \in X$，$S \cap x$ 是单点集
+    10. 选择公理（$\mathbf{AC}$）对任一集合 $X \neq \varnothing$，若有 $\varnothing \neq X$ 且若 $x, y \in X, x \neq y$，则 $x \cap y = \varnothing$，则存在集合 $S$，对任意 $x \in X$，$S \cap x$ 是单点集
 
         $$
         \forall x \ (\varnothing \notin X \wedge \forall x \in X \ \forall y \in X \ (x \cap y = \varnothing) \to \exists S \forall x \in X \ \exists^{1} y \ (S \cap x = \{y\}))
@@ -186,9 +186,10 @@
         \end{aligned}
         $$
 
-5. 多重集：对象可重复出现的全体，集合中不同元素个数为 $n$ 时，称之为 $n$ 元多重集
-    1. 重数：多重集中对象出现的次数，当表示元素重复任意多次数时，可记为 $\infty$
-    2. 若有限多重集 $S$ 有 $a_1, a_2, \cdots, a_n$ 共 $n$ 个不同的元素，且 $a_i$ 的重数为 $p_i$，则 $S = \left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}$
+5. 多重集：函数 $f: A \to \mathbf Z_+ \cup \{\infty\}$，并将 $a \in A$ 简记为 $a \in f$
+    1. 重数：多重集中对象 $a \in A$ 出现的次数 $f(a)$，当表示元素重复任意多次数时，可记为 $\infty$
+    2. 元数：集合中不同元素个数；当元数为 $n$ 时，称集合为 $n$ 元多重集
+    3. 若有限多重集 $S$ 有 $a_1, a_2, \cdots, a_n$ 共 $n$ 个不同的元素，且 $a_i$ 的重数为 $p_i$，则 $S$ 可记作 $\left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}$
 6. 类与真类：令 $\varphi(u)$ 为一个性质，$\{u \mid \varphi(u)\}$ 不一定是集合，这样的对象被称为类，不是集合的类被称为真类
     1. 每个集合都是类，例如 $\left\{x \mid x \neq x\right\}$
     2. 用 $\mathbf V = \left\{x \mid x = x\right\}$ 表示「所有集合」的类，$x \in \mathbf V$ 不是集合论语言的公式，而只是公式 $x = x$ 的一种记法
