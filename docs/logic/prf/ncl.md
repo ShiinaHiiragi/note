@@ -46,10 +46,10 @@
 
             $$
             \begin{aligned}
-            & \alpha \vee \beta = \neg \alpha \to \beta \\
-            & \alpha \wedge \beta = \neg (\alpha \to \neg \beta) \\
-            & \alpha \leftrightarrow \beta = (\alpha \to \beta) \wedge (\beta \to \alpha) \\
-            & \exists u \alpha = \neg \forall u \neg \alpha
+            \alpha \vee \beta & = \neg \alpha \to \beta \\
+            \alpha \wedge \beta & = \neg (\alpha \to \neg \beta) \\
+            \alpha \leftrightarrow \beta & = (\alpha \to \beta) \wedge (\beta \to \alpha) \\
+            \exists u \alpha & = \neg \forall u \neg \alpha
             \end{aligned}
             $$
 
