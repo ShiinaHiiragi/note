@@ -111,7 +111,9 @@ $$
     def header := leading_parser optional («prelude» >> ppLine)
       >> many («import» >> ppLine)
       >> ppLine
+
     def «prelude» := leading_parser "prelude"
+
     def «import» := leading_parser "import "
       >> optional "runtime"
       >> identWithPartialTrailingDot
