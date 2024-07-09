@@ -13,6 +13,7 @@
 - axiom：公理
 
 ## B
+- backtrack：回溯
 - binder：绑定器
 - binary：二进制
 - build：构建
@@ -21,6 +22,8 @@
 ## C
 - category：范畴
 - class：类
+- codepoint：码点
+- coercion：隐式转换
 - command：指令
 - compile：编译
 - compiler：编译器
@@ -40,6 +43,7 @@
 - element：元素
 - enumerate：枚举
 - environment：环境
+- escape：转义字符
 - evaluate：⟦不翻译⟧
 - expression：表达式
 
@@ -52,10 +56,13 @@
 - generic type：泛型
 
 ## H
+- heterogeneous：异构的
 - hierarchy：层级
+- homogeneous：同构的
 
 ## I
 - identifier：标识符
+- indent：缩进
 - inductive：归纳
 - integer：整数
 - interpolation：插值
@@ -74,6 +81,7 @@
 - monad：⟦不翻译⟧
 
 ## N
+- name：名称
 - notation：记号
 
 ## O
@@ -109,6 +117,7 @@
 - tag：标签
 - term：项
 - theorem：定理
+- token：词元
 - toolchain：工具链
 - type：类型
 
