@@ -5,8 +5,8 @@
 1. 二阶语言 $\mathscr L_2(S)$ 即二阶逻辑的形式语言，由逻辑符号和非逻辑符号组成
     1. 逻辑符号
         1. 变元集 $\mathbf{Var} = \mathbf V_r \cup \mathbf V_f \cup \mathbf V_l$
-            - 变关系符：$\mathbf V_r = \{X_i \mid i\in \lambda\}$，用 $X, Y, Z$ 表示任意变个体符
-            - 变函数符：$\mathbf V_f = \{f_i \mid i\in \lambda\}$，用 $f, g, h$ 表示任意变个体符
+            - 变关系符：$\mathbf V_r = \{X_i \mid i\in \lambda\}$，用 $X, Y, Z$ 表示任意变关系符
+            - 变函数符：$\mathbf V_f = \{f_i \mid i\in \lambda\}$，用 $f, g, h$ 表示任意变函数符
             - 变个体符：$\mathbf V_l = \{x_i \mid i\in \lambda\}$，用 $x, y, z$ 表示任意变个体符
 
             通常用上标表示其类型，例如用 $X^2$ 表示二元变关系符
@@ -42,7 +42,7 @@
         其中 $X \in \mathbf V_r , R \in  \mathbf R$ 且 $t_1, t_2, \cdots, t_{\Omega(R)}$ 是项，$u \in \mathbf{Var}$
 
     3. 相关概念
-        1. 设 $\alpha, \beta \in \mathscr F(S), u \in \mathbf{Var}$，则定义常用联结词如下：
+        1. 设 $\alpha, \beta \in \mathcal F(S), u \in \mathbf{Var}$，则定义常用联结词如下：
 
             $$
             \begin{aligned}

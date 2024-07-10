@@ -406,7 +406,7 @@
             \end{aligned}
             $$
 
-            其中 $\overline{x_i}$ 是 $\overline x$ 中满足条件 $x_i\in \mathrm{FV}(\exists x\alpha)$ 且 $x_i \neq t_i$ 的所有变元的序列．如果 $x\in \mathrm{var}(t_{i_1}) \cup \mathrm{var}(t_{i_2}) \cup \cdots \cup \mathrm{var}(t_{i_n})$，则 $u = x$，否则 $u$ 为第一个不在 $\alpha, t_{i_1}, t_{i_2}, \cdots, t_{i_n}$ 中出现的变元，变元 $u$ 的引入保证 $\overline{t_i}$ 中出现的变元不被任何量词约束
+            其中 $\overline{x_i}$ 是 $\overline x$ 中满足条件 $x_i\in \mathrm{FV}(\mathbf Q x\alpha)$ 且 $x_i \neq t_i$ 的所有变元的序列．如果 $x \notin \mathrm{var}(t_{i_1}) \cup \mathrm{var}(t_{i_2}) \cup \cdots \cup \mathrm{var}(t_{i_n})$，则 $u = x$，否则 $u$ 为第一个不在 $\alpha, t_{i_1}, t_{i_2}, \cdots, t_{i_n}$ 中出现的变元，变元 $u$ 的引入保证 $\overline{t_i}$ 中出现的变元不被任何量词约束
 
         4. 通常用 $\alpha(c_1, c_2, \cdots, c_n)$ 表示公式 $\alpha(c_1/x_1)(c_2/x_2)\cdots(c_n/x_n)$
             - $\alpha(c_1, c_2, \cdots, c_n)$ 是一个 $S-$语句
@@ -435,23 +435,24 @@
 
     2. 模型：一个模型是有序对 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是结构，$\sigma$ 是 $\mathfrak A$ 中的指派
         1. 指派：结构 $\mathfrak A = (A, I)$ 中的 $\mathfrak A-$指派是一个函数 $\sigma: \mathbf{Var} \to A$；也用 $\left<\sigma(x_i)\right>_{i\in \lambda}$ 表示 $\sigma$，其中 $\lambda$ 是 $\mathbf{Var}$ 的指标集
-        2. 对模型 $\mathfrak M = (\mathfrak A, \sigma)$ 和任意变元 $x$，定义指派 $\sigma[a/x]: \mathbf{Var} \to A$ 为 $\sigma[a/x](y) = \left\{\begin{aligned} & a, & y = x \\ & \sigma(y), & y\neq x \end{aligned}\right.$，指派 $\sigma[\alpha /x]$ 与 $\sigma$ 至多在 $x$ 处的值不同
+        2. 对模型 $\mathfrak M = (\mathfrak A, \sigma)$ 和任意变元 $x$，定义指派 $\sigma[a/x]: \mathbf{Var} \to A$ 为 $\sigma[a/x](y) = \left\{\begin{aligned} & a, & y = x \\ & \sigma(y), & y\neq x \end{aligned}\right.$
+            - 指派 $\sigma[\alpha /x]$ 与 $\sigma$ 至多在 $x$ 处的值不同
             - 设指派 $\overline b = \left<b_i\right>_{i\in \lambda}$，此时将替换记作 $\overline b[a/x]$
             - 令 $\overline a = \left<a_1, a_2, \cdots, a_n\right>, \overline x = \left<x_1, x_2, \cdots, x_n\right>$，记 $\sigma[\overline a / \overline x] = \sigma[a_1/x_1][a_2/x_2] \cdots [a_n/x_n]$
         3. 项解释：对任意结构 $\mathfrak A$ 和模型 $\mathfrak M = (\mathfrak A, \sigma)$，$\overline b = \left<b_i\right>_{i\in \lambda}$ 是一个 $\mathfrak A-$指派，项 $t$ 在 $\mathfrak M$ 中的解释 $t^\mathfrak M$ 归纳定义为
 
             $$
             \begin{aligned}
-            x^\mathfrak M = x^\mathfrak A[\overline b] &= \sigma(x) \\
+            x^\mathfrak M = t^\mathfrak A[\overline b] &= \sigma(x) \\
             c^\mathfrak M = t^\mathfrak A[\overline b] &= c^\mathfrak A \\
-            f(\overline t)^\mathfrak M = f(\overline t)^\mathfrak A[\overline b] &= f^\mathfrak A(\overline t^\mathfrak A[\overline b]) = f^\mathfrak A(\overline t^\mathfrak M)
+            f(\overline t)^\mathfrak M = t^\mathfrak A[\overline b] &= f^\mathfrak A(\overline t^\mathfrak M) = f^\mathfrak A(\overline t^\mathfrak A[\overline b])
             \end{aligned}
             $$
 
             其中 $\overline t^\mathfrak M = \left<t_1^\mathfrak M, t_2^\mathfrak M, \cdots, t_{\Omega(f)}^\mathfrak M\right>, \overline t^\mathfrak A[\overline b] = \left<t_1^\mathfrak A[\overline b], t_2^\mathfrak A[\overline b], \cdots, t_{\Omega(f)}^\mathfrak A[\overline b]\right>$
 
             !!! note "项解释与函数"
-                设 $\mathfrak A$ 是一个 $S-$结构，$t = t(\overline x)$ 是一个项，其中 $\overline x = \left<x_1, x_2, \cdots, x_m\right>$．在 $\mathfrak A$ 中将 $t$ 解释解释为一个函数 $t: A^m \to A$，对于任意一点 $\overline a = \left<a_1, a_2, \cdots, a_m\right> \in A^m$，将 $t^\mathfrak A$ 递归定义为
+                设 $\mathfrak A$ 是一个 $S-$结构，$t = t(\overline x)$ 是一个项，其中 $\overline x = \left<x_1, x_2, \cdots, x_m\right>$．在 $\mathfrak A$ 中将 $t$ 解释为一个函数 $t: A^m \to A$，对于任意一点 $\overline a = \left<a_1, a_2, \cdots, a_m\right> \in A^m$，将 $t^\mathfrak A$ 递归定义为
 
                 1. 如果 $t$ 是常元符号 $c$，则 $t^\mathfrak A(\overline a) = c^\mathfrak A$ 是一个常函数
                 2. 如果 $t$ 是变元符号 $x_i$，则 $t^\mathfrak A = a_i$ 是一个坐标函数
@@ -488,13 +489,13 @@
                 6. $\forall x\alpha \to \alpha(t/x)$
 
     4. 设 $\alpha$ 是一个公式，$\Sigma$ 是一个公式集，如果对任意模型 $\mathfrak M$ 都有 $\mathfrak M \vDash \Sigma$ 蕴涵 $\mathfrak M \vDash \alpha$，则称 $\alpha$ 是 $\Sigma$ 的语义后承，或称 $\Sigma$ 语义蕴含 $\alpha$，记作 $\Sigma \vDash \alpha$
-        1. 对于公式集 $\alpha$，如果存在模型 $\mathfrak M$ 使得 $\mathfrak M \vDash \Sigma$，则称 $\Sigma$ 可满足
+        1. 对于公式集 $\Sigma$，如果存在模型 $\mathfrak M$ 使得 $\mathfrak M \vDash \Sigma$，则称 $\Sigma$ 可满足
             - 对于公式 $\alpha$，如果 $\{\alpha\}$ 可满足，则称 $\alpha$ 可满足
             - 对任意公式集 $\Sigma \cup \{\alpha\}$，$\Sigma \vDash \alpha$ 当且仅当 $\Sigma \cup \{\neg \alpha\}$ 不可满足
-        2. 令 $\mathfrak M_1 = (\mathfrak A_1, \sigma)$ 与 $\mathfrak M_2 = (\mathfrak A_2, \sigma)$ 分别是 $S_1-$结构和 $S_2-$结构上的模型，其中 $\mathfrak A_1$ 与 $\mathfrak A_2$ 有相同的论域 $A$，令 $S = S_1 \cap S_2$
+        2. 令 $\mathfrak M_1 = (\mathfrak A_1, \sigma), \mathfrak M_2 = (\mathfrak A_2, \sigma)$ 分别是 $S_1-$结构和 $S_2-$结构上的模型，其中 $\mathfrak A_1$ 与 $\mathfrak A_2$ 有相同论域 $A$，令 $S = S_1 \cap S_2$
             - 对任意项 $s\in \mathcal T(S)$，$s^{\mathfrak M_1} = s^{\mathfrak M_2}$
             - 对任意公式 $\alpha \in \mathcal F(S)$，$\mathfrak M_1 \vDash \alpha$ 当且仅当 $\mathfrak M_2 \vDash \alpha$
-        3. 对任意模型 $\mathfrak M = (\mathfrak A, \sigma)$，设 $\mathfrak M' = (\mathfrak A, \sigma[\overline t^{\mathfrak M}]/\overline x)$
+        3. 对任意模型 $\mathfrak M = (\mathfrak A, \sigma)$，设 $\mathfrak M' = (\mathfrak A, \sigma[\overline t^{\mathfrak M}/\overline x])$
             - 对任意项 $s$ 都有 $s(\overline t/\overline x)^{\mathfrak M} = s^{\mathfrak M'}$
             - 对任意公式 $\alpha$，$\mathfrak M \vDash \alpha(\overline t/\overline x)$ 当且仅当 $\mathfrak M' \vDash \alpha$
 
@@ -524,10 +525,10 @@
 
             对于 $\mathrm{gen}$，需要保证 $x$ 不在 $\alpha$ 的推理中自然出现
 
-    2. 在 $\mathbf{H}_1$ 中的一个推导是由公式组成的有穷树结构 $\mathcal D$，其中每个节点 $\gamma$ 要么是公理，要么是从子节点公式运用推理规则 $\text{mp}$ 或 $\text{gen}$ 得到的
+    2. 在 $\mathbf{H}_1$ 中的推导是由公式组成的有穷树结构 $\mathcal D$，每个节点 $\gamma$ 要么是公理，要么是从子节点运用规则 $\text{mp}$ 或 $\text{gen}$ 得到的
         1. 用 $\mathcal D, \mathcal E$ 表示推导，记号 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\varphi\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\varphi$ 为根节点的推导
         2. 如果存在以公式 $\alpha$ 为根节点的推导，则称 $\alpha$ 在 $\mathbf H_1$ 可证，或称 $\alpha$ 是 $\mathbf H_1$ 的定理，记作 $\vdash_{\mathbf H_1} \alpha$，用 $\mathrm{Thm}(\mathbf H_1)$ 表示 $\mathbf H_1$ 所有定理的集合，在不引发歧义的情况下可以删除下标 $\mathbf H_1$
-        3. 如果对于公式 $\alpha_0, \alpha_1, \cdots, \alpha_n$ 有 $\vdash_{\mathbf H_1} \alpha_i\ (1 \leqslant i \leqslant n)$ 蕴含 $\vdash_{\mathbf H_1}$，则称以 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为前提且以 $\alpha_0$ 为结论的推理规则 $\text{R}$ 在 $\mathbf H_1$ 中可允许
+        3. 如果对于公式 $\alpha_0, \alpha_1, \cdots, \alpha_n$ 有 $\vdash_{\mathbf H_1} \alpha_i\ (1 \leqslant i \leqslant n)$ 蕴含 $\vdash_{\mathbf H_1} \alpha_0$，则称以 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为前提且以 $\alpha_0$ 为结论的推理规则 $\begin{prooftree} \AxiomC{\(\alpha_1\)} \AxiomC{\(\alpha_2\)} \AxiomC{\(\cdots\)} \AxiomC{\(\alpha_n\)} \QuaternaryInfC{\(\alpha_0\)} \end{prooftree}$ 在 $\mathbf H_1$ 中可允许
         4. 如果存在公式集 $\Sigma$ 的有穷子集 $\Sigma_0$ 使得对公式 $\alpha$ 有 $\vdash_{\mathbf H_1} \bigwedge \Sigma_0 \to \alpha$，则称 $\alpha$ 是 $\Sigma$ 的句法后承，记作 $\Sigma \vdash_{\mathbf H_1} \alpha$
     3. 元定理
         1. 演绎定理：$\alpha, \Sigma \vdash_{\mathbf H_1} \beta$ 当且仅当 $\Sigma \vdash_{\mathbf H_1} \alpha \to \beta$
@@ -605,9 +606,7 @@
     $$
 
 7. 一致性：如果公式集 $\Sigma$ 有 $\Sigma \nvdash_{\mathbf H_1} \bot$，则称公式集 $\Sigma$ 是 $\mathbf H_1-$一致的，否则称 $\Sigma$ 是 $\mathbf H_1-$不一致的
-    1. 对任意公式集 $\Sigma \cup \{\alpha\}$ 有
-        1. $\Sigma \nvdash_{\mathbf H_1} \neg \alpha$ 当且仅当 $\Sigma \cup \{\alpha\}$ 是 $\mathbf H_1-$一致的
-        2. $\Sigma \nvdash_{\mathbf H_1} \alpha$ 当且仅当 $\Sigma \cup \{\neg \alpha\}$ 是 $\mathbf H_1-$一致的
+    1. $\Sigma \nvdash_{\mathbf H_1} \neg \alpha$ 当且仅当 $\Sigma \cup \{\alpha\}$ 是 $\mathbf H_1-$一致的；$\Sigma \nvdash_{\mathbf H_1} \alpha$ 当且仅当 $\Sigma \cup \{\neg \alpha\}$ 是 $\mathbf H_1-$一致的
     2. 一个公式集 $\Sigma$ 是 $\mathbf H_1$ 一致的当且仅当 $\Sigma$ 的每个有穷子集是 $\mathbf H_1$ 一致的
 8. 可靠性：如果 $\Sigma \vdash_{\mathbf H_1} \alpha$，那么 $\Sigma \vDash \alpha$
     1. 对任意公式 $\alpha, \beta$
@@ -628,7 +627,7 @@
             - 对任意公式 $\alpha$，$\mathfrak M^\Sigma \vDash \forall \overline x\alpha$ 当且仅当对所有项序列 $\overline t$ 都有 $\mathfrak M^\Sigma \vDash \alpha(\overline t/\overline x)$
     2. 如果公式集 $\Sigma$ 对任意公式 $\alpha$ 都有 $\Sigma \vdash_{\mathbf H_1} \alpha$ 或 $\Sigma \nvdash_{\mathbf H_1} \neg \alpha$，则称公式集 $\Sigma$ 是完备的；如果公式集 $\Sigma$ 对每个公式 $\exists x\alpha \in \mathcal F(S)$ 都有 $t\in \mathcal T(S)$ 使得 $\Sigma \vdash_{\mathbf H_1} \exists x\alpha \to \alpha(t/x)$，则称 $\Sigma$ 是证据集
         1. 设 $\Sigma$ 是 $\mathbf H_1-$一致的完备证据集，对任意公式集 $\Sigma \cup \{\alpha, \beta\}$，在 $\mathbf H_1$ 中成立
-            - $\Sigma \vdash \neg$ 当且仅当 $\Sigma \nvdash \alpha$
+            - $\Sigma \vdash \neg \alpha$ 当且仅当 $\Sigma \nvdash \alpha$
             - $\Sigma \vdash \alpha \wedge \beta$ 当且仅当 $\Sigma \vdash \alpha$ 且 $\Sigma \vdash \beta$
             - $\Sigma \vdash \alpha \vee \beta$ 当且仅当 $\Sigma \vdash \alpha$ 或 $\Sigma \vdash \beta$
             - $\Sigma \vdash \alpha \to \beta$ 当且仅当 $\Sigma \nvdash \alpha$ 或 $\Sigma \vdash \beta$
