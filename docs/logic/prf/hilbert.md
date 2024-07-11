@@ -439,24 +439,26 @@
             - 指派 $\sigma[\alpha /x]$ 与 $\sigma$ 至多在 $x$ 处的值不同
             - 设指派 $\overline b = \left<b_i\right>_{i\in \lambda}$，此时将替换记作 $\overline b[a/x]$
             - 令 $\overline a = \left<a_1, a_2, \cdots, a_n\right>, \overline x = \left<x_1, x_2, \cdots, x_n\right>$，记 $\sigma[\overline a / \overline x] = \sigma[a_1/x_1][a_2/x_2] \cdots [a_n/x_n]$
-        3. 项解释：对任意结构 $\mathfrak A$ 和模型 $\mathfrak M = (\mathfrak A, \sigma)$，$\overline b = \left<b_i\right>_{i\in \lambda}$ 是一个 $\mathfrak A-$指派，项 $t$ 在 $\mathfrak M$ 中的解释 $t^\mathfrak M$ 归纳定义为
+        3. 项解释：对任意结构 $\mathfrak A$ 和模型 $\mathfrak M = (\mathfrak A, \sigma)$，$\overline b = \left<b_i\right>_{i\in \lambda}$ 是一个 $\mathfrak A-$指派，项 $t$ 在 $\mathfrak M$ 中的解释 $t^\mathfrak M = t^\mathfrak A[\overline b]$ 归纳定义为
 
             $$
             \begin{aligned}
-            x^\mathfrak M = t^\mathfrak A[\overline b] &= \sigma(x) \\
-            c^\mathfrak M = t^\mathfrak A[\overline b] &= c^\mathfrak A \\
-            f(\overline t)^\mathfrak M = t^\mathfrak A[\overline b] &= f^\mathfrak A(\overline t^\mathfrak M) = f^\mathfrak A(\overline t^\mathfrak A[\overline b])
+            x^\mathfrak M &= \sigma(x) \\
+            c^\mathfrak M &= c^\mathfrak A \\
+            f(\overline t)^\mathfrak M &= f^\mathfrak A(\overline t^\mathfrak M) = f^\mathfrak A(\overline t^\mathfrak A[\overline b])
             \end{aligned}
             $$
 
             其中 $\overline t^\mathfrak M = \left<t_1^\mathfrak M, t_2^\mathfrak M, \cdots, t_{\Omega(f)}^\mathfrak M\right>, \overline t^\mathfrak A[\overline b] = \left<t_1^\mathfrak A[\overline b], t_2^\mathfrak A[\overline b], \cdots, t_{\Omega(f)}^\mathfrak A[\overline b]\right>$
 
             !!! note "项解释与函数"
-                设 $\mathfrak A$ 是一个 $S-$结构，$t = t(\overline x)$ 是一个项，其中 $\overline x = \left<x_1, x_2, \cdots, x_m\right>$．在 $\mathfrak A$ 中将 $t$ 解释为一个函数 $t: A^m \to A$，对于任意一点 $\overline a = \left<a_1, a_2, \cdots, a_m\right> \in A^m$，将 $t^\mathfrak A$ 递归定义为
+                设 $\mathfrak A$ 是一个 $S-$结构，$t = t(\overline x)$ 是一个项，其中 $\overline x = \left<x_1, x_2, \cdots, x_m\right>$．在 $\mathfrak A$ 中将 $t$ 解释为一个函数 $t: A^m \to A$，从而对于 $A^m$ 内的任意一点 $\overline a = \left<a_1, a_2, \cdots, a_m\right>$，将 $t^\mathfrak A$ 递归定义为
 
                 1. 如果 $t$ 是常元符号 $c$，则 $t^\mathfrak A(\overline a) = c^\mathfrak A$ 是一个常函数
                 2. 如果 $t$ 是变元符号 $x_i$，则 $t^\mathfrak A = a_i$ 是一个坐标函数
                 3. 如果 $t$ 是 $ft_1 t_2 \cdots t_{\Omega(f)}$，其中 $t_1, t_2, \cdots, t_{\Omega(f)}$ 是项且 $f$ 是函数符号，则 $t^\mathfrak A = f^\mathfrak A(t^\mathfrak A_1(\overline a), t^\mathfrak A_2(\overline a), \cdots, t^\mathfrak A_{\Omega(f)}(\overline a))$
+
+                此时 $t^{\mathfrak A}[\overline a] = t^{\mathfrak A}(a_1, a_2, \cdots, a_m)$，其中前者是项 $t$ 在 $\mathfrak A-$指派下的值，后者是函数 $t^{\mathfrak A}$ 在点 $\overline a$ 下的值
 
     3. 语义后承：模型 $\mathfrak M$ 与公式 $\alpha$ 的满足关系 $\mathfrak M \vDash \alpha$ 定义为
 
@@ -472,7 +474,7 @@
         \end{aligned}
         $$
 
-        设指派 $\overline a = \left<a_i\right>_{i\in \lambda}$，此时将满足关系记作 $\mathfrak A \vDash \alpha[\overline a]$，称 $\mathfrak A$ 满足 $\alpha[\overline a]$、$\alpha[\overline a]$ 在 $\mathfrak A$ 中为真或 $\overline a$ 在 $\mathfrak A$ 中实现了 $\alpha$．考虑到公式 $\alpha(x_1, x_2, \cdots, x_n)$ 在指派下的真值仅与该指派在其自由变元上的值有关，设 $\overline b = (b_1, b_2, \cdots, b_n) \in A^n$，则满足关系也可记作 $\mathfrak A \vDash \alpha(\overline b)$
+        设指派 $\overline a = \left<a_i\right>_{i\in \lambda}$，此时将满足关系记作 $\mathfrak A \vDash \alpha[\overline a]$ 或 $\mathfrak A \vDash \alpha(\overline b)$，称 $\mathfrak A$ 满足 $\alpha[\overline a]$、$\alpha[\overline a]$ 在 $\mathfrak A$ 中为真或 $\overline a$ 在 $\mathfrak A$ 中实现了 $\alpha$．考虑到公式 $\alpha(x_1, x_2, \cdots, x_n)$ 在指派下的真值仅与该指派在其自由变元上的值有关
 
         1. 对任意公式集 $\Sigma$，若对所有 $\alpha \in \Sigma$ 都有 $\mathfrak M \vDash \alpha$，则记作 $\mathfrak M \vDash \Sigma$
         2. 如果公式（包括语句）$\alpha$ 有对于结构 $\mathfrak A$ 中的任意指派 $\sigma$ 都有 $(\mathfrak A, \sigma) \vDash \alpha$，则称 $\alpha$ 在 $\mathfrak A$ 上有效，记作 $\mathfrak A \vDash \alpha$．特别地，若 $\Sigma$ 是一个语句集，且对任意 $\alpha \in \Sigma$ 都有 $\mathfrak A \vDash \alpha$，则记作 $\mathfrak A \vDash \Sigma$
