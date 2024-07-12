@@ -280,7 +280,7 @@
 
     !!! note "形式主义进路"
         1. 证明论下的命题逻辑与一阶逻辑是从朴素集合论中建立的理论，因此变元集 $\mathbf{Var}$ 与一阶语言 $\mathscr L(S)$ 的基数 $\lambda$ 在本节中均至多为 $\omega$
-        2. 在模型论中一阶语言是通过证明论中一阶语言理论建立的公理集合论重新构造的形式语言系统，是一个被拓展为可以包含不可数个非逻辑符号的集合．因此 $\lambda$ 是一个无穷基数；变元序列写作 $\left<x_{i}\right>_{i \in \lambda}$，并用 $\left<x_{m_1}, x_{m_2}, \cdots, x_{m_n}\right>, m_k\in \lambda$（$m_i < m_j$ 当且仅当 $i < j$）表示有穷自由变元序列
+        2. 在模型论中一阶语言是通过证明论中一阶语言理论建立的公理集合论重新构造的形式语言系统，是一个被拓展为可以包含不可数个非逻辑符号的集合．因此 $\lambda$ 是一个无穷基数，变元序列写作 $\left<x_{i}\right>_{i \in \lambda}$，并用 $\left<x_{m_1}, x_{m_2}, \cdots, x_{m_n}\right>, m_k\in \lambda$（$m_i < m_j$ 当且仅当 $i < j$）表示有穷自由变元序列
 
 2. 一阶逻辑项与公式的句法
     1. 一阶语言 $\mathscr L(S)$ 的类型是从 $\mathbf R \cup \mathbf F$ 的正整数集合的函数 $\Omega: S \to \mathbf Z_+$
@@ -458,7 +458,7 @@
                 2. 如果 $t$ 是变元符号 $x_i$，则 $t^\mathfrak A = a_i$ 是一个坐标函数
                 3. 如果 $t$ 是 $ft_1 t_2 \cdots t_{\Omega(f)}$，其中 $t_1, t_2, \cdots, t_{\Omega(f)}$ 是项且 $f$ 是函数符号，则 $t^\mathfrak A = f^\mathfrak A(t^\mathfrak A_1(\overline a), t^\mathfrak A_2(\overline a), \cdots, t^\mathfrak A_{\Omega(f)}(\overline a))$
 
-                此时 $t^{\mathfrak A}[\overline a] = t^{\mathfrak A}(a_1, a_2, \cdots, a_m)$，其中前者是项 $t$ 在 $\mathfrak A-$指派下的值，后者是函数 $t^{\mathfrak A}$ 在点 $\overline a$ 下的值
+                此时 $t^{\mathfrak A}[\overline a] = t^{\mathfrak A}(\overline a) = t^{\mathfrak A}(a_1, a_2, \cdots, a_m)$，其中前者是项 $t$ 在 $\mathfrak A-$指派下的值，后者是函数 $t^{\mathfrak A}$ 在点 $\overline a$ 下的值
 
     3. 语义后承：模型 $\mathfrak M$ 与公式 $\alpha$ 的满足关系 $\mathfrak M \vDash \alpha$ 定义为
 
