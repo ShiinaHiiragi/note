@@ -477,8 +477,9 @@
         设指派 $\overline a = \left<a_i\right>_{i\in \lambda}$，此时将满足关系记作 $\mathfrak A \vDash \alpha[\overline a]$ 或 $\mathfrak A \vDash \alpha(\overline b)$，称 $\mathfrak A$ 满足 $\alpha[\overline a]$、$\alpha[\overline a]$ 在 $\mathfrak A$ 中为真或 $\overline a$ 在 $\mathfrak A$ 中实现了 $\alpha$
 
         1. 对任意公式集 $\Sigma$，若对所有 $\alpha \in \Sigma$ 都有 $\mathfrak M \vDash \alpha$，则记作 $\mathfrak M \vDash \Sigma$
-        2. 如果公式（包括语句）$\alpha$ 有对于结构 $\mathfrak A$ 中的任意指派 $\sigma$ 都有 $(\mathfrak A, \sigma) \vDash \alpha$，则称 $\alpha$ 在 $\mathfrak A$ 上有效，记作 $\mathfrak A \vDash \alpha$．特别地，若 $\Sigma$ 是一个语句集，且对任意 $\alpha \in \Sigma$ 都有 $\mathfrak A \vDash \alpha$，则记作 $\mathfrak A \vDash \Sigma$
-        3. 如果公式 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称公式 $\alpha$ 有效，记作 $\vDash_1 \alpha$，设一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) \mid \vDash_1 \alpha\}$
+        2. 如果公式（包括语句）$\alpha$ 有对于结构 $\mathfrak A$ 中的任意指派 $\sigma$ 都有 $(\mathfrak A, \sigma) \vDash \alpha$，则称 $\alpha$ 在 $\mathfrak A$ 上有效，记作 $\mathfrak A \vDash \alpha$
+        3. 若 $\Sigma$ 是一个语句集，且对任意 $\alpha \in \Sigma$ 都有 $\mathfrak A \vDash \alpha$，则记作 $\mathfrak A \vDash \Sigma$
+        4. 如果公式 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称公式 $\alpha$ 有效，记作 $\vDash_1 \alpha$，设一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) \mid \vDash_1 \alpha\}$
 
             !!! note "有效式"
                 以下公式都是有效的
@@ -607,7 +608,7 @@
     }
     $$
 
-7. 一致性：如果公式集 $\Sigma$ 有 $\Sigma \nvdash_{\mathbf H_1} \bot$，则称公式集 $\Sigma$ 是 $\mathbf H_1-$一致的，否则称 $\Sigma$ 是 $\mathbf H_1-$不一致的
+7. 一致性（相容性）：如果公式集 $\Sigma$ 有 $\Sigma \nvdash_{\mathbf H_1} \bot$，则称公式集 $\Sigma$ 是 $\mathbf H_1-$一致的，否则称 $\Sigma$ 是 $\mathbf H_1-$不一致的
     1. $\Sigma \nvdash_{\mathbf H_1} \neg \alpha$ 当且仅当 $\Sigma \cup \{\alpha\}$ 是 $\mathbf H_1-$一致的；$\Sigma \nvdash_{\mathbf H_1} \alpha$ 当且仅当 $\Sigma \cup \{\neg \alpha\}$ 是 $\mathbf H_1-$一致的
     2. 一个公式集 $\Sigma$ 是 $\mathbf H_1$ 一致的当且仅当 $\Sigma$ 的每个有穷子集是 $\mathbf H_1$ 一致的
 8. 可靠性：如果 $\Sigma \vdash_{\mathbf H_1} \alpha$，那么 $\Sigma \vDash \alpha$

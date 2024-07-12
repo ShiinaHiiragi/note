@@ -70,7 +70,7 @@
 
 3. 生成子结构：设 $\mathfrak A$ 为论域为 $A$ 的 $S-$结构，对任意 $N \subseteq A$ 存在一个论域包含 $N$ 的 $\mathfrak A$ 的子结构 $\mathfrak N$，使得对于任意论域包含 $N$ 的 $\mathfrak A$ 的子结构 $\mathfrak B$ 都有 $\mathfrak N \subseteq \mathfrak B$，称 $\mathfrak N$ 是由 $N$ 生成的子结构，记作 $\left<N\right>^\mathfrak A$
     1. 若存在 $N_0 \subseteq A$ 为有限集使得 $\mathfrak N = \left<N\right>^\mathfrak A$，则称 $\mathfrak N$ 是有限生成的
-    2. 设 $N\subseteq A$，则 $\left<N\right>^\mathfrak A$ 的论域是 $\overline N = \{t^\mathfrak A(b_1, b_2, \cdots, b_m) \mid t \in \mathcal T(N), b_1, b_2, \cdots, b_n \in N\}$
+    2. 设 $N\subseteq A$，则 $\left<N\right>^\mathfrak A$ 的论域是 $\overline N = \{t^\mathfrak A(b_1, b_2, \cdots, b_m) \mid t \in \mathfrak T(N), b_1, b_2, \cdots, b_n \in N\}$
     3. 设 $N\subseteq A$，则 $\left<N\right>^\mathfrak A \leqslant \max\{|N|, |S|, \aleph_0\}$
 4. 初等子结构：设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的结构，若存在 $h: \mathfrak A \to \mathfrak B$ 是一个初等嵌入且 $A \subseteq B$，则称 $\mathfrak A$ 是 $\mathfrak B$ 的初等子结构，记作 $\mathfrak A \prec \mathfrak B$；同时称 $\mathfrak B$ 是 $\mathfrak A$ 的初等膨胀，记作 $\mathfrak B \succ \mathfrak A$
     1. 如果 $N \subseteq A$，$N$ 是 $\mathfrak A$ 的子结构，且子结构 $\mathfrak N = \left\{N, \{Z^\mathfrak A \upharpoonright N\}_{Z \in S}\right\}$ 还是 $\mathfrak A$ 的初等子结构，则称集合 $N$ 是 $\mathfrak A$ 的初等子结构
@@ -89,16 +89,16 @@
 ### 1.2.1 理论与公理
 1. 模型：设 $\mathfrak M$ 是一个 $S-$结构，$\Sigma$ 是一个 $S-$语句集，$\sigma$ 是一个 $S-$语句．若 $\mathfrak M \vDash \Sigma$，则称 $\mathfrak M$ 是语句集 $\Sigma$ 的模型
     1. 蕴涵：如果 $\Sigma$ 的模型均是 $\{\sigma\}$ 的模型，则 $\Sigma$ 蕴含 $\sigma$，记作 $\Sigma \vDash \sigma$
-    2. 模型原理：如果 $\Sigma$ 有一个模型，则 $\Sigma$ 是一致的；如果 $\{\sigma\}$ 一致，则称 $\sigma$ 一致
+    2. 模型原理：如果 $\Sigma$ 有一个模型，则 $\Sigma$ 是一致的（或称可满足的或相容的）；如果 $\{\sigma\}$ 一致，则称 $\sigma$ 一致
 2. 理论：设 $\mathfrak M$ 是一个 $S-$结构，$\Sigma$ 是一个 $S-$语句集．如果对任意被 $\Sigma$ 蕴含的语句 $\alpha$ 都有 $\alpha \in \Sigma$，则称 $\Sigma$ 是一个 $S-$理论
     1. 若 $\Sigma$ 是一个语句集，则 $\Sigma' = \{\sigma \mid \Sigma \vDash \sigma\}$ 是一个 $S-$理论
     2. 公理：设 $T$ 是一个 $S-$理论，如果 $\Sigma \subseteq T$ 且对每个 $\alpha \in T$ 都有 $\Sigma \vDash \alpha$，则称 $\Sigma$ 是 $T$ 的公理
     3. 完备理论：如果对每个 $S-$语句 $\alpha$ 都有 $\alpha \in \Sigma$ 或 $\neg \alpha \in \Sigma$，则称 $\Sigma$ 是完备的 $S-$理论
 3. 初等等价：设 $\mathfrak M$ 与 $\mathfrak N$ 是两个 $S-$结构，如果 $\mathrm{Th}(\mathfrak M) = \mathrm{Th}(\mathfrak N)$，则称 $\mathfrak M$ 与 $\mathfrak N$ 初等等价，记作 $\mathfrak M \equiv \mathfrak N$
-    1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathrm{Th}(\mathcal K) = \{\alpha \mid \alpha$ 是 $S-$语句且对任意 $\mathfrak M \in \mathcal K$ 都有 $\mathfrak M \vDash \alpha\}$．若 $\mathcal K = \{\mathfrak M\}$，则将 $\mathrm{Th}(\mathcal K)$ 记作 $\mathrm{Th}(\mathfrak M)$，并称 $\mathrm{Th}(\mathfrak M)$ 为 $\mathfrak M$ 的理论，易知 $\mathrm{Th}(\mathfrak M)$ 是完备的 $S-$理论
+    1. 设 $\mathfrak K$ 是一族 $S-$结构，则 $\mathrm{Th}(\mathfrak K) = \{\alpha \mid \alpha$ 是 $S-$语句且对任意 $\mathfrak M \in \mathfrak K$ 都有 $\mathfrak M \vDash \alpha\}$．若 $\mathfrak K = \{\mathfrak M\}$，则将 $\mathrm{Th}(\mathfrak K)$ 记作 $\mathrm{Th}(\mathfrak M)$，并称 $\mathrm{Th}(\mathfrak M)$ 为 $\mathfrak M$ 的理论，易知 $\mathrm{Th}(\mathfrak M)$ 是完备的 $S-$理论
     2. 一个 $S-$理论 $T$ 是完备的当且仅当 $T$ 的模型相互初等等价
-4. 初等类：如果 $T$ 是 $S-$理论且 $\mathcal K = \{\mathfrak M \mid \mathfrak M$ 是 $S-$结构且 $\mathfrak M \vDash T\}$，则称 $\mathcal K$ 是一个初等类，记作 $\mathcal K = \mathrm{Mod}(T)$
-    1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathcal K$ 是初等类当且仅当 $\mathcal K = \{\mathfrak M \mid \mathfrak M \vDash \mathrm{Th}(\mathcal K)\}$
+4. 初等类：如果 $T$ 是 $S-$理论且 $\mathfrak K = \{\mathfrak M \mid \mathfrak M$ 是 $S-$结构且 $\mathfrak M \vDash T\}$，则称 $\mathfrak K$ 是一个初等类，记作 $\mathfrak K = \mathrm{Mod}(T)$
+    1. 设 $\mathfrak K$ 是一族 $S-$结构，则 $\mathfrak K$ 是初等类当且仅当 $\mathfrak K = \{\mathfrak M \mid \mathfrak M \vDash \mathrm{Th}(\mathfrak K)\}$
     2. 如果结构 $\mathfrak M$ 与 $\mathfrak N$ 初等等价且 $\mid \mathfrak M\mid < \aleph_0$，则 $\mathfrak M \cong \mathfrak N$
 
 ### 1.2.2 模型与代数结构
@@ -130,7 +130,7 @@
 3. 域：如果体 $\mathfrak M$ 有 $\mathfrak M \upharpoonright \mathscr L(G) \vDash \sigma_4$，则称 $\mathfrak M$ 是一个域（即 $\text{Abel}$ 除环或交换除环）
     1. 对每个非零的 $a\in M$ 都存在唯一的 $b\in M$ 使得 $a \cdot^\mathfrak M b = e^\mathfrak M$，称 $b$ 为 $a$ 的（乘法逆），记作 $a^{-1}$
     2. 如果域 $\mathfrak M$ 的论域 $M$ 是有限集合，则称 $\mathfrak M$ 是有限域或 $\text{Galois}$ 域．含 $q$ 个元素的有限域通常记作 $F_{q}$ 或 $\mathrm{GF}(q)$
-    3. 设 $\mathcal K_{FF} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构，且是一个有限域$\}$ 不是一个初等类；令 $\overline{\mathcal K_{FF}} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构且 $\mathfrak M \vDash \mathrm{Th}(\mathcal K_{FF})\}$ 是一个初等类，称之为伪有限域
+    3. 设 $\mathfrak K_{FF} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构，且是一个有限域$\}$ 不是一个初等类；令 $\overline{\mathfrak K_{FF}} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构且 $\mathfrak M \vDash \mathrm{Th}(\mathfrak K_{FF})\}$ 是一个初等类，称之为伪有限域
 4. 线性空间：设结构 $\mathfrak M = (F, +^\mathfrak M, \times^\mathfrak M, 0^\mathfrak M, 1^\mathfrak M)$ 是一个域，$\mathrm{VF} = \{+, 0\} \cup F$，其中 $\{+\} \cup F \subseteq \mathbf F, 0 \in \mathbf C$ 且 $\Omega(+) = 2$，$\Omega[F] = \{1\}$．如果结构 $\mathfrak V = (V, +^\mathfrak V, 0^\mathfrak V, \{\sigma^\mathfrak V \mid \sigma \in F\})$ 有
     1. $(V, +, 0)$ 是一个 $\text{Abel}$ 群
     2. 对任意的 $x \in V$ 有 $0^\mathfrak{MV}(x) = 0^\mathfrak V, 1^\mathfrak{MV}(x) = x$
@@ -150,3 +150,17 @@
         3. 模型的同态与同构定义对代数系统仍有效
 
 ## 1.3 紧致性定理
+1. $\text{Henkin}$ 性质：若语句集 $\Sigma$ 对形如 $\exists x \ \alpha(x)$ 的公式，$\exists x \ \alpha(x) \in \Sigma$ 蕴含存在常元 $c$ 使得 $\alpha(c) \in \Sigma$，则称 $\Sigma$ 具有 $\text{Henkin}$ 性质
+    1. 设 $\Sigma$ 是一个语句集，若 $\Sigma$ 的任意有限子集 $\Sigma_{0}$ 都有模型，则称 $\Sigma$ 是有限一致的（或称有限可满足的或有限相容的）
+        1. 如果语句集 $\Sigma$ 是有限一致的，则对任意的语句 $\sigma$，语句集 $\Sigma \cup \{\sigma\}$ 和 $\Sigma \cup\{\neg \sigma\}$ 至少有一个是有限一致的
+        2. 设语句集 $\Sigma$ 是有限一致的，若 $\exists x \ \alpha(x) \in \Sigma$ 且常元符号 $c$ 没有在 $\Sigma$ 的语句中出现过，则 $\Sigma \cup\{\alpha(c)\}$ 是有限一致的
+    2. 如果 $\Sigma$ 是有限一致的，且对任意的语句 $\sigma$ 都有 $\sigma \in \Sigma$ 或者 $\neg \sigma \in \Sigma$，则称 $\Sigma$ 是极大有限一致的
+        1. 如果语句集 $\Sigma$ 是有限一致的，则存在极大有限一致的语句集 $\Sigma^{\prime}$ 使得 $\Sigma \subseteq \Sigma^{\prime}$
+        2. 设语句集 $\Sigma$ 极大有限一致，则对于任意的语句 $\sigma$
+            - $\sigma \in \Sigma$ 当且仅当 $\neg \sigma \notin \Sigma$
+            - 如果任意结构都满足 $\sigma$，则 $\sigma \in \Sigma$
+        3. 如果语句集 $\Sigma$ 是极大有限一致的，则对任意的语句 $\sigma_{1}, \sigma_{2}$，有 $\sigma_{1} \wedge \sigma_{2} \in \Sigma$ 当且仅当 $\left\{\sigma_{1}, \sigma_{2}\right\} \subseteq \Sigma$
+    3. 设 $\beta$ 是公式，若 $x$ 不是 $\beta$ 的自由变元，则对任意的结构 $\mathfrak{A}$ 和 $\mathfrak{A}-$指派 $\overline{b}$ ，有 $\mathfrak{A} \vDash \beta[\overline{b}]$ 当且仅当 $\mathfrak{A} \vDash(\exists x \beta)[\overline{b}]$
+2. 紧致性定理：设 $S$ 可数，则 $S-$语句集 $\Sigma$ 是有限一致的当且仅当 $\Sigma$ 是一致的
+    1. 若 $\mathscr L(S^{*})$ 是一个语言，$\Sigma^{*}$ 是一个有限一致的 $S^{*}-$语句集，则 $\Sigma^{*}$ 有一个基数不超过 $\left|S^{*}\right|$ 的模型
+    2. 设 $\Sigma$ 与 $\Gamma$ 是两个语句集，若 $\Sigma \vDash \bigvee \Gamma$，即对每个结构 $\mathfrak{A} \vDash \Sigma$，都存在 $\gamma \in \Gamma$ 使得 $\mathfrak{A} \vDash \gamma$，则存在 $\Sigma$ 的有限子集 $\Sigma_{0}$ 及 $\Gamma$ 的有限子集 $\Gamma_{0}$，使得 $\Sigma_{0} \vDash \bigvee \Gamma_{0}$
