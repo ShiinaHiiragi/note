@@ -78,7 +78,7 @@
 1. 域：设 $A \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in A$ 蕴含 $A' \in A$ 与 $A \cup B \in A$，则称 $A$ 为 $\Omega$ 上的域或代数
     1. 设 $A$ 是域，则有
         1. $\Omega \in A, \varnothing \in A$
-        2. 若 $A, B \in A$，则 $A B \in A, A - B \in A, A \triangle B \in A$
+        2. 若 $A, B \in A$，则 $A \cap B \in A, A - B \in A, A \triangle B \in A$
         3. 若 $A_{j} \in A, 1 \leqslant j \leqslant n$，则 ${\displaystyle \bigcup_{j=1}^{n} A_{j} \in A, \bigcap_{j=1}^{n} A_{j} \in A}$
     2. 若 $C \subseteq \mathcal{P}(\Omega)$，则必存在包含 $C$ 的最小域 $A$．即 $A$ 为域，$A \supseteq C$ 且对任一域 $A^{\prime} \supseteq C$，必有 $A \subseteq A^{\prime}$
         1. 对任一集族 $C$，包含 $C$ 的最小域称为由 $C$ 张成的域，记为 $A(C)$
@@ -117,12 +117,12 @@
     2. $F$ 为 $\sigma$ 域的充要条件是 $F$ 既是域又是单调类
     3. 单调类定理：若 $A$ 为域，则 $\sigma(A)=M(A)$
 
-2. $\pi$ 类：设 $C$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若当 $A, B \in C$ 时必有 $A B \in C$，则称 $C$ 为 $\Omega$ 上的 $\pi$ 类
+2. $\pi$ 类：设 $C$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若当 $A, B \in C$ 时必有 $A \cap B \in C$，则称 $C$ 为 $\Omega$ 上的 $\pi$ 类
 
     $\lambda$ 类：设 $D$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若它满足
 
     1. 当 $A \in D$ 时必有 $A' \in D$
-    2. 当 $A, B \in D$ 且 $A B=\varnothing$ 时，必有 $A+B \in D$
+    2. 当 $A, B \in D$ 且 $A \cap B=\varnothing$ 时，必有 $A+B \in D$
     3. 对递增序列 $\left\{A_{n}\right\}_{n \geqslant 1} \subseteq D$，必有 ${\displaystyle \lim _{n \to \infty} A_{n} \in D}$
 
     则称 $D$ 为 $\Omega$ 上的 $\lambda$ 类
