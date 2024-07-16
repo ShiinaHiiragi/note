@@ -13,8 +13,8 @@
         则称 $F$ 为 $X$ 上的滤
 
         1. 平凡滤：$F=\{X\}$ 是 $X$ 上的滤，也是 $X$ 上最小的滤且是 $X$ 上任何滤的子集，称之为平凡滤
-        2. 主滤：令 $A \subseteq X$ 非空，定义 $F=\{X \subseteq X \mid A \subseteq X\}$，则 $F$ 是 $X$ 上的滤，称之为由 $A$ 生成的 $X$ 上的主滤
-        3. 极大滤：对任意滤 $F$，如果不存在滤 $F^{\prime}$ 使得 $F \subset F^{\prime}$，则称 $F$ 为极大滤或超滤
+        2. 主滤：令 $A \subseteq X$ 非空，定义 $F=\{S \subseteq X \mid A \subseteq S\}$，则 $F$ 是 $X$ 上的滤，称之为由 $A$ 生成的 $X$ 上的主滤
+        3. 极大滤：对任意滤 $F$，如果不存在滤 $F^{\prime}$ 使得 $F \subset F^{\prime}$，则称 $F$ 为极大滤
         4. $\text{Fr}\acute{\mathrm e}\text{chet}$ 滤：取无穷集 $X$，定义 $F=\{S \subseteq X \mid X-S \textsf{ 有穷}\}$，则 $F$ 是 $S$ 上的滤且不是主滤，称为 $\text{Fr}\acute{\mathrm e}\text{chet}$ 滤
 
     2. 理想：设 $X$ 为非空集合，$X$ 的子集族 $I \subseteq \mathcal{P}(X)$ 如果满足
@@ -26,7 +26,10 @@
 
         1. 平凡理想：$I = \{\varnothing\}$ 是 $X$ 上的平凡理想
         2. 主理想：对任意 $A \subseteq X$，定义 $I=\{S \mid S \subseteq A\}$，称为由 $A$ 生成的 $X$ 上的主理想
-        3. $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想：对任意无穷集合 $X$，$X$ 的所有有穷集组成的集合族 $I$ 是 $X$ 上的理想，是 $\text{Fr}\acute{\mathrm e}\text{chet}$ 滤的对偶，称为 $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想
+        3. 极大理想：对任意理想 $I$，如果不存在理想 $I^{\prime}$ 使得 $I \subset I^{\prime}$，则称 $I$ 为极大理想
+        4. $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想：对任意无穷集合 $X$，$X$ 的所有有穷集组成的集合族 $I$ 是 $X$ 上的理想，称为 $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想
+            - $I$ 不是主理想
+            - $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想是 $\text{Fr}\acute{\mathrm e}\text{chet}$ 滤的对偶
 
     3. 滤与理想的对偶性
         1. 如果 $F$ 是 $X$ 上的滤，则 $I=\{X-S \mid S \in F\}$ 是 $X$ 上的理想
