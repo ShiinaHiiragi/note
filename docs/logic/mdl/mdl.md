@@ -190,4 +190,6 @@
 3. 紧致性定理：设 $S$ 可数，则 $S-$语句集 $\Sigma$ 是有限一致的当且仅当 $\Sigma$ 是一致的
     1. 若 $\mathscr L(S^{*})$ 是一个语言，$\Sigma^{*}$ 是一个有限一致的 $S^{*}-$语句集，则 $\Sigma^{*}$ 有一个基数不超过 $\left|S^{*}\right|$ 的模型
     2. 设 $\Sigma$ 与 $\Gamma$ 是两个语句集，若 $\Sigma \vDash \bigvee \Gamma$，即对每个结构 $\mathfrak{A} \vDash \Sigma$，都存在 $\gamma \in \Gamma$ 使得 $\mathfrak{A} \vDash \gamma$，则存在 $\Sigma$ 的有限子集 $\Sigma_{0}$ 及 $\Gamma$ 的有限子集 $\Gamma_{0}$，使得 $\Sigma_{0} \vDash \bigvee \Gamma_{0}$
-4. 设
+    3. 设 $\mathcal{T}$ 是全体完备一致的 $S-$理论集合．设 $\Sigma$ 是语句集，则将 $\{T \in \mathcal{T} \mid \Sigma \subseteq T\}$ 记作 $[\Sigma]$；若 $\Sigma=\{\sigma\}$，则 $[\Sigma]$ 也记作 $[\sigma]$
+        1. 令 $\tau=\{X \subseteq \mathcal{T} \mid$ 存在语句集 $\Sigma$ 使得 $X$ 的补集 $\mathcal{T} - X=[\Sigma]\} \subseteq \mathcal{P}(\mathcal{T})$，则 $(\mathcal{T}, \tau)$ 是一个紧致的、完全不连通的空间
+        2. $\mathcal{T}$ 是紧空间等价于紧致性定理成立
