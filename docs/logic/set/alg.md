@@ -1,7 +1,7 @@
 # 2 集合代数
 
 ## 2.1 滤与理想
-1. 有穷交性质：对任意集合族 $G$，如果 $G$ 的任意有穷子集 $H$ 都满足 $\cap H \neq \varnothing$，则称 $G$ 具有有穷交性质
+1. 有穷交性质：对任意集合族 $G$，如果 $G$ 的任意有穷个子集 $H_1, H_2, \cdots, H_n$ 都满足 ${\displaystyle \bigcap_{i=1}^{n} H_i \neq \varnothing}$，则称 $G$ 具有有穷交性质
     1. 任何滤都有有穷交性质
     2. 任取集合 $X$，令 $G \subseteq \mathcal{P}(X)$ 为具有有穷交性质的非空集合族，则存在 $X$ 上的滤 $F$ 使得 $G \subseteq F$，称滤 $F$ 为 $G$ 生成的滤
 2. 滤与理想为对偶概念
