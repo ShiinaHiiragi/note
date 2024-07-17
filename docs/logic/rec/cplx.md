@@ -130,9 +130,9 @@
         1. 空间可构造：对于函数 $f: \mathbf N \to \mathbf N$，其中 $f(n)$ 至少为 $O(\log_2 n)$，如果函数 $f$ 将 $1^n$ 映射为 $f(n)$ 的二进制表示，且该函数在空间 $O(f(n))$ 内是可计算的，则称该函数为空间可构造的
         2. 对于任意两个函数 $f_1, f_2: \mathbf N \to \mathbf N$ 有 $\mathrm{SPACE}(f_1(n)) \subset \mathrm{SPACE}(f_2(n))$，其中 $f_1(n) = \omicron(f_2(n))$ 且 $f_2$ 是空间可构造的
         3. 对于任意两个实数 $0 \leqslant \varepsilon_1 < \varepsilon_2$ 有 $\mathrm{SPACE}(n^{\varepsilon_1}) \subset \mathrm{SPACE}(n^{\varepsilon_2})$
-    2. 时间层次定理：对于任何时间可构造函数 $t: \mathbf N \to \mathbf N$，存在语言 $L$ 在时间 $O(t(n))$ 内可判定，不能在时间 $\omicron\left(\dfrac{t(n)}{\log_2 t(n)}\right)$ 内判定
+    2. 时间层次定理：对于任何时间可构造函数 $t: \mathbf N \to \mathbf N$，存在语言 $L$ 在 $O(t(n))$ 内可判定，不能在 $\omicron\left(\dfrac{t(n)}{\log_2 t(n)}\right)$ 内判定
         1. 时间可构造：对于函数 $t: \mathbf N \to \mathbf N$，其中 $t(n)$ 至少为 $O(n \log_2 n)$，如果函数 $t$ 将 $1^n$ 映射为 $t(n)$ 的二进制表示，且该函数在时间 $O(t(n))$ 内是可计算的，则称该函数为空间可构造的
-        2. 对于任意两个函数 $t_1, t_2: \mathbf N \to \mathbf N$ 有 $\mathrm{TIME}(t_1(n)) \subset \mathrm{TIME}(t_2(n))$，其中 $t_1(n) = \omicron\left(\dfrac{t_2(n)}{\log_2 t_2(n)}\right)$ 且 $t_2$ 是时间可构造的
+        2. 对于任意两个函数 $t_1, t_2: \mathbf N \to \mathbf N$ 有 $\mathrm{TIME}(t_1(n)) \subset \mathrm{TIME}(t_2(n))$，其中 $t_1(n) = \omicron\left(\dfrac{t_2(n)}{\log_2 t_2(n)}\right)$ 且 $t_2$ 时间可构造
         3. 对于任意两个实数 $1 \leqslant \varepsilon_1 < \varepsilon_2$ 有 $\mathrm{TIME}(n^{\varepsilon_1}) \subset \mathrm{TIME}(n^{\varepsilon_2})$
 3. 相对化
     1. 神谕：针对一个语言的神谕是一个能判断任何串 $w$ 是否在该语言中的设备
