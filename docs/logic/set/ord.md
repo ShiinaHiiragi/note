@@ -291,7 +291,7 @@
     5. 幂函数在 $\kappa^{\lambda}$ 在 $\textbf{ZFC}$ 下的行为：令 $\lambda$ 为无穷基数，对任意无穷基数 $\kappa$，$\kappa^{\lambda}$ 可计算如下
         1. 如果 $\kappa$ 不是 $\lambda-$强的，则存在 $\mu<\kappa$ 使得 $\kappa^{\lambda}=\mu^{\lambda}$
         2. 如果 $\kappa \leqslant \lambda$，则 $\kappa^{\lambda}=2^{\lambda}$
-        3. 如果 $\kappa>\lambda$ 且 $\kappa$ 是 $\lambda$-强的，则
+        3. 如果 $\kappa>\lambda$ 且 $\kappa$ 是 $\lambda-$强的，则
             - 如果 $\operatorname{cf}(\kappa)>\lambda$，则 $\kappa^{\lambda}=\kappa$
             - 如果 $\operatorname{cf}(\kappa) \leqslant \lambda$，则 $\kappa^{\lambda}=\kappa^{\mathrm{cff}(\kappa)}$
 

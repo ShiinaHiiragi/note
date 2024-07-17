@@ -165,7 +165,7 @@
     1. 令 ${\displaystyle \prod_{i \in I} A_{i}=\left\{\left.f: I \to \bigcup_{i \in I} A_{i} \ \right| \ f(i) \in A_{i}\right\}}$
         1. 若 $f \in {\displaystyle \prod_{i \in I} A_{i}}$ 且 $f(i)=a_{i}$，则用 $\left(a_{i}\right)_{i \in I}$ 来表示 $f$
         2. 定义 ${\displaystyle \prod_{i \in I} A_{i}}$ 上的关系 $\sim_{\mathcal{U}}$ 为 $s \sim_{\mathcal{U}} t$ 当且仅当 $\{i \in I \mid s(i)=t(i)\} \in \mathcal{U}_{0}$，则 $\sim_{\mathcal{U}}$ 是等价关系
-    2. 用 $[t]$ 表示 $t \in {\displaystyle \prod_{i \in I} A_{i}}$ 的等价类，用 ${\displaystyle \prod_{i \in I} A_{i} / \sim_{\mathcal{U}}}$ 表示 ${\displaystyle \prod_{i \in I} A_{i}}$ 关于等价关系 $\sim \mathcal{U}$ 的等价类的集合 $\{[t] \mid t \in \left.\Pi_{i \in I} A_{i}\right\}$，则 $\mathfrak{A}={\displaystyle \left\{\prod_{i \in I} A_{i} / \sim_{\mathcal{U}},\left\{Z^{\mathfrak{A}}\right\}_{Z \in L}\right\}}$ 是一个 $S$-结构
+    2. 用 $[t]$ 表示 $t \in {\displaystyle \prod_{i \in I} A_{i}}$ 的等价类，用 ${\displaystyle \prod_{i \in I} A_{i} / \sim_{\mathcal{U}}}$ 表示 ${\displaystyle \prod_{i \in I} A_{i}}$ 关于等价关系 $\sim \mathcal{U}$ 的等价类的集合 $\{[t] \mid t \in \left.\Pi_{i \in I} A_{i}\right\}$，则 $\mathfrak{A}={\displaystyle \left\{\prod_{i \in I} A_{i} / \sim_{\mathcal{U}},\left\{Z^{\mathfrak{A}}\right\}_{Z \in L}\right\}}$ 是一个 $S-$结构
         1. 若 $c$ 是常元符号，令 $c_{i}=c^{\mathfrak{A}_{i}}$，则 $\left(c_{i}\right)_{i \in I} \in {\displaystyle \prod_{i \in I} A_{i}}$，将 $c$ 解释为 $\left(c_{i}\right)_{i \in I}$ 的等价类 $\left[\left(c_{i}\right)_{i \in I}\right]$
         2. 若 $f$ 是 $n$ 元函数，对任意 $t_{1}, \cdots, t_{n} \in {\displaystyle \prod_{i \in I} A_{i}}$，令 $f^{\mathfrak{A}}\left(\left[t_{1}\right], \cdots,\left[t_{n}\right]\right)=\left[\left(f^{\mathfrak{A}_{i}}\left(t_{1}(i), \cdots, t_{n}(i)\right)\right)_{i \in I}\right]$
         3. 若 $R$ 是 $n$ 元关系，对任意 $t_{1}, \cdots, t_{n} \in {\displaystyle \prod_{i \in I} A_{i}}$ 都有 $\left(\left[t_{1}\right], \cdots,\left[t_{n}\right]\right) \in R^{\mathfrak{A}}$ 当且仅当 $\left\{i \in I \mid\left(t_{1}(i), \cdots, t_{n}(i)\right) \in R^{\mathfrak{A}}\right\} \in \mathcal{U}$
@@ -174,7 +174,7 @@
 
     3. $\text{Lo}\acute{\mathrm s}$ 超积定理：设 $I$ 是一个集合，$\mathcal{U}$ 是 $I$ 上的一个滤，$\{\mathfrak{A}_i \mid i \in I\}$ 是一族结构，$\left[s_{1}\right], \cdots,\left[s_{n}\right] \in {\displaystyle \prod_{i \in I} A_{i} / \sim_{\mathcal{U}}}$，$\alpha\left(x_{1}, \cdots, x_{n}\right)$ 是一个正公式，则 ${\displaystyle \prod_{i \in I} \mathfrak{A}_{i} / \sim_{\mathcal{U}}} \vDash \alpha\left(\left[s_{1}\right], \cdots,\left[s_{n}\right]\right)$ 当且仅当 $\left\{i \in I \mid \mathfrak{A}_{i} \vDash \alpha\left(s_{1}(i), \cdots, s_{n}(i)\right)\right\} \in \mathcal{U}_{0}$．若 $\mathcal{U}$ 是 $I$ 上的一个超滤，则上式对任意公式 $\alpha\left(x_{1}, \cdots, x_{n}\right)$ 均成立
         1. 若 $\mathcal{U}$ 是集合 $I$ 上的一个超滤，$\mathfrak{B}$ 是一个结构，则 $\mathfrak{B}^{I} / \sim_{\mathcal{U}}$ 与 $\mathfrak{B}$ 初等等价
-        2. 设 $\mathcal{K}$ 是一族 $S$-结构，则 $\mathcal{K}$ 是初等类当且仅当 $\mathcal{K}$ 关于初等等价关系和超积封闭
+        2. 设 $\mathcal{K}$ 是一族 $S-$结构，则 $\mathcal{K}$ 是初等类当且仅当 $\mathcal{K}$ 关于初等等价关系和超积封闭
     4. $\text{Keisler}-\text{Shelah}$ 同构定理：两个结构 $\mathfrak{A}$ 和 $\mathfrak{B}$ 初等等价当且仅当存在集合 $I$ 及 $I$ 上的超滤 $\mathcal{U}$ 使得 $\mathfrak{A}^{I} / \sim_{\mathcal{U}} \cong \mathfrak{B}^{I} / \sim_{\mathcal{U}}$
     5. 设 $\mathfrak{C}$ 是一族结构，构造序列 $\left\{\mathfrak{C}_{n} \mid n \in \mathbf{N}\right\}$ 使得
         1. $\mathfrak{C}_{0}=\mathfrak{C}$
@@ -193,3 +193,10 @@
     3. 设 $\mathcal{T}$ 是全体完备一致的 $S-$理论集合．设 $\Sigma$ 是语句集，则将 $\{T \in \mathcal{T} \mid \Sigma \subseteq T\}$ 记作 $[\Sigma]$；若 $\Sigma=\{\sigma\}$，则 $[\Sigma]$ 也记作 $[\sigma]$
         1. 令 $\tau=\{X \subseteq \mathcal{T} \mid$ 存在语句集 $\Sigma$ 使得 $X$ 的补集 $\mathcal{T} - X=[\Sigma]\} \subseteq \mathcal{P}(\mathcal{T})$，则 $(\mathcal{T}, \tau)$ 是一个紧致的、完全不连通的空间
         2. $\mathcal{T}$ 是紧空间等价于紧致性定理成立
+
+4. 设 $T$ 是一个理论，用 $S_{n}(T)$ 表示 $T$ 的全体完全 $n-$型构成的集合
+    1. 设 $I$ 是一个指标集，$\Sigma\left(x_{i}\right)_{i \in I}$ 是一个公式集
+        1. 若 $\Sigma\left(x_{i}\right)_{i \in I}$ 是一致的，则称 $\Sigma\left(x_{i}\right)_{i \in I}$ 是一个 $I-$型；若 $T$ 是一个理论（不必是完备的）且 $T \cup \Sigma\left(x_{i}\right)_{i \in I}$ 是一致的，则称 $\Sigma$ 是 $T$ 的 $I-$型．当 $I=\{0, \cdots, n-1\}$ 时，称 $T$ 的 $I-$型为 $T$ 的 $n-$型
+        2. 设 $\Sigma\left(x_{i}\right)_{i \in I}$ 是理论 $T$ 的 $I-$型，若对任意的 $i_{1}, \cdots, i_{n} \in I$ 及任意的公式 $\alpha\left(x_{i_{1}}, \cdots, x_{i_{n}}\right)$，总有 $\alpha\left(x_{i_{1}}, \cdots, x_{i_{n}}\right) \in \Sigma$ 或 $\neg \alpha\left(x_{i_{1}}, \cdots, x_{i_{n}}\right) \in \Sigma$，则称 $\Sigma$ 是 $T$ 的完全 $I-$型．类似地，也可定义 $T$ 的完全 $n-$型
+        3. 设 $\mathfrak{A}$ 是一个结构，$T=\operatorname{Th}(\mathfrak{A})$，则 $\Sigma\left(x_{i}\right)_{i \in I}$ 是 $T$ 的 $I-$型当且仅当对每个有限的 $\Sigma_{0} \subseteq \Sigma$，都有 $\mathfrak{A} \vDash \exists \overline{x} \ \left(\bigwedge \Sigma_{0}(\overline{x})\right)$，其中 $\overline{x}=x_{i_{1}}, \cdots, x_{i_{n}}$ 是所有的出现在 $\Sigma_{0}$ 中的自由变元
+    2. 在 $S_{n}(T)$ 上引入一个拓扑 $\tau$，即 $X \subseteq S_{n}(T)$ 是闭集当且仅当存在 $T$ 的一个 $n-$型 $\Sigma\left(x_{0}, \cdots, x_{n-1}\right)$，使得 $X=\left\{p\left(x_{0}, \cdots, x_{n-1}\right) \in S_{n}(T) \mid \Sigma\right. \subseteq p\}$ 。我们把这样的 $X$ 记作 $[\Sigma]$

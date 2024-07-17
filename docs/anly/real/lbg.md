@@ -2,8 +2,8 @@
 
 ## 2.1 微分
 1. $\text{Vitali}$ 覆盖定理：设 $E \subseteq \widehat{\mathbf{R}}$ 且 $m^{*} E<\infty$，$\mathscr{V}$ 是 $E$ 的 $V-$覆盖，则可选出区间列 $\left\{I_{n}\right\} \subseteq \mathscr{T}$，使得各 $I_{n}$ 互不相交且 ${\displaystyle m\left(E - \bigcup I_{k}\right)=0}$ 成立
-    1. $V-$覆盖：设 $E \subseteq \widehat{\mathbf{R}}$，$\mathscr{V}=\{I\}$ 是长度为正的区间族．如果对于任意 $x \in E$ 及任意 $\varepsilon>0$，存在区间 $I_{x} \in \mathscr{V}$ 使 $x \in I_{x}$ 且 $m I_{x}<\varepsilon$，则称 $\mathscr{V}$ 依 $\text{Vitali}$ 意义覆盖 $E$，简称 $E$ 的 $V$-覆盖
-    2. 设 $E \subseteq \widehat{\mathbf{R}}$ 且 $m^{*} E<\infty, \mathscr{V}$ 是 $E$ 的 $V$-覆盖，则对任何 $\varepsilon>0$，可从 $\mathscr{V}$ 中选出互不相交的有限个区间 $I_{1}, I_{2}, \cdots, I_{n}$ 使得 ${\displaystyle m^{*}\left(E - \bigcup_{i=1}^{n} I_{i}\right)<\varepsilon}$
+    1. $V-$覆盖：设 $E \subseteq \widehat{\mathbf{R}}$，$\mathscr{V}=\{I\}$ 是长度为正的区间族．如果对于任意 $x \in E$ 及任意 $\varepsilon>0$，存在区间 $I_{x} \in \mathscr{V}$ 使 $x \in I_{x}$ 且 $m I_{x}<\varepsilon$，则称 $\mathscr{V}$ 依 $\text{Vitali}$ 意义覆盖 $E$，简称 $E$ 的 $V-$覆盖
+    2. 设 $E \subseteq \widehat{\mathbf{R}}$ 且 $m^{*} E<\infty, \mathscr{V}$ 是 $E$ 的 $V-$覆盖，则对任何 $\varepsilon>0$，可从 $\mathscr{V}$ 中选出互不相交的有限个区间 $I_{1}, I_{2}, \cdots, I_{n}$ 使得 ${\displaystyle m^{*}\left(E - \bigcup_{i=1}^{n} I_{i}\right)<\varepsilon}$
 2. 单调函数的可微性
     1. 列导数：设 $f(x)$ 为 $[a, b]$ 上的有限函数，$x_{0} \in[a, b]$．若存在数列 $h_{n} \rightarrow 0\left(h_{n} \neq 0\right)$ 使极限 ${\displaystyle \lim _{n \to \infty} \dfrac{f\left(x_{0}+h_{n}\right)-f\left(x_{0}\right)}{h_{n}}=\lambda}$ 存在（$\lambda$ 可为 $\pm \infty$），则称 $\lambda$ 为 $f(x)$ 在点 $x_{0}$ 处的一个列导数，记为 $D f\left(x_{0}\right)=\lambda$
         1. 列导数 $D f\left(x_{0}\right)$ 与数列 $\left\{h_{n}\right\}$ 的取法有关，$f(x)$ 在点 $x_{0}$ 存在导数 $f^{\prime}\left(x_{0}\right)$ 当且仅当 $f(x)$ 在点 $x_{0}$ 处的一切列导数都相等

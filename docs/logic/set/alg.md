@@ -62,9 +62,9 @@
     3. 超滤存在定理：集合 $X$ 上的任何滤 $F_{0}$，都存在超滤 $G$ 使得 $F_{0} \subseteq G$．该命题无法在 $\mathbf{ZF}$ 内得证
 
 4. 对任意无穷基数 $\kappa$，$\kappa-$完全滤与 $\kappa-$完全理想为对偶概念
-    1. $\kappa-$完全滤：如果集合 $X$ 上的滤 $F$ 满足「若 $F^{\prime} \subseteq F$ 且 $\left|F^{\prime}\right|<\kappa$，则 $\bigcap F^{\prime} \in F$」，则称 $F$ 是 $\kappa$-完全的
+    1. $\kappa-$完全滤：如果集合 $X$ 上的滤 $F$ 满足「若 $F^{\prime} \subseteq F$ 且 $\left|F^{\prime}\right|<\kappa$，则 $\bigcap F^{\prime} \in F$」，则称 $F$ 是 $\kappa-$完全的
 
-        $\kappa-$完全理想：如果集合 $X$ 上的理想 $I$ 满足「若 $I^{\prime} \subseteq I$ 且 $\left|I^{\prime}\right|<\kappa$，则 $\bigcup I^{\prime} \in I$」，则称 $I$ 是 $\kappa$-完全的
+        $\kappa-$完全理想：如果集合 $X$ 上的理想 $I$ 满足「若 $I^{\prime} \subseteq I$ 且 $\left|I^{\prime}\right|<\kappa$，则 $\bigcup I^{\prime} \in I$」，则称 $I$ 是 $\kappa-$完全的
 
     2. 任何滤与理想都是 $\aleph_{0}-$完全的，$\aleph_{1}-$完全的滤和理想在历史上称为 $\sigma-$完全的．可数完全的滤是对有穷交封闭的，$\aleph_{1}-$完全的滤对可数交封闭
 
