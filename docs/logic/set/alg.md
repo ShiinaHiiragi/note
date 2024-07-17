@@ -4,6 +4,12 @@
 1. 有穷交性质：对任意集合族 $G$，如果 $G$ 的任意有穷个子集 $H_1, H_2, \cdots, H_n$ 都满足 ${\displaystyle \bigcap_{i=1}^{n} H_i \neq \varnothing}$，则称 $G$ 具有有穷交性质
     1. 任何滤都有有穷交性质
     2. 任取集合 $X$，令 $G \subseteq \mathcal{P}(X)$ 为具有有穷交性质的非空集合族，则存在 $X$ 上的滤 $F$ 使得 $G \subseteq F$，称滤 $F$ 为 $G$ 生成的滤
+        1. $G_0 = G$
+        2. 若 $n = 2i+ 1$，则 $G_n = {\displaystyle \left\{\left.\bigcap_{1 \leqslant k \leqslant m} A_k \ \right| \ A_1, A_2, \cdots, A_m \in G_{2i}, m \in \mathbf N\right\}}$
+        3. 若 $n = 2i + 2$，则 $G_n = \{B \subseteq I \mid$ 存在 $A \in G_{2i+1}$ 使得 $A \subseteq B \}$
+
+        令 $\overline G = {\displaystyle \bigcup_{i \in \mathbf N} G_i}$，则 $\overline G$ 是包含 $G$ 的一个滤
+
 2. 滤与理想为对偶概念
     1. 滤：设 $X$ 为非空集合，$X$ 的子集族 $F \subseteq \mathcal{P}(X)$ 如果满足
         1. $X \in F$ 且 $\varnothing \notin F$

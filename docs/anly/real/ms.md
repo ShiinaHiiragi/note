@@ -61,7 +61,16 @@
 
         则称 $\mu$ 为测度或正测度
 
-    2. 半域或域上的测度
+    2. 超滤上的测度：设集合 $\Omega$ 上的超滤 $\mathscr F \subseteq \mathcal P(\Omega)$，则 $\mathscr F$ 诱导出 $\Omega$ 上的一个 $\{0, 1\}-$测度 $\mu: \mathcal P(\Omega) \to 2$ 为
+
+        $$
+        \mu(A) = \left\{\begin{aligned}
+        & 1, &A \in \mathscr F \\
+        & 0, &A \notin \mathscr F
+        \end{aligned}\right.
+        $$
+
+    3. 半域或域上的测度
         1. $\mathscr{S}$ 为 $\Omega$ 上的半域，$\mu$ 为 $\mathscr{S}$ 上的非负可加集函数，则存在 $\mu$ 在由 $\mathscr{S}$ 张成的域 $\mathscr{A}(\mathscr{S})$ 上的唯一延拓 $\nu$，$\nu$ 在 $\mathscr{A}(\mathscr{S})$ 亦是非负可加的，且当 $\mu$ 为可数可加时, $\nu$ 亦可数可加
         2. 若 $\mu$ 为域 $\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 上的非负有限可加集函数
             - $\mu$ 是单调的，即当 $A \subseteq B$, 必有 $\mu(A) \leqslant \mu(B)$

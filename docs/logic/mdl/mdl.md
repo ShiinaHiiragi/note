@@ -161,6 +161,33 @@
             - 如果任意结构都满足 $\sigma$，则 $\sigma \in \Sigma$
         3. 如果语句集 $\Sigma$ 是极大有限一致的，则对任意的语句 $\sigma_{1}, \sigma_{2}$，有 $\sigma_{1} \wedge \sigma_{2} \in \Sigma$ 当且仅当 $\left\{\sigma_{1}, \sigma_{2}\right\} \subseteq \Sigma$
     3. 设 $\beta$ 是公式，若 $x$ 不是 $\beta$ 的自由变元，则对任意的结构 $\mathfrak{A}$ 和 $\mathfrak{A}-$指派 $\overline{b}$ ，有 $\mathfrak{A} \vDash \beta[\overline{b}]$ 当且仅当 $\mathfrak{A} \vDash(\exists x \beta)[\overline{b}]$
-2. 紧致性定理：设 $S$ 可数，则 $S-$语句集 $\Sigma$ 是有限一致的当且仅当 $\Sigma$ 是一致的
+2. 超积：设 $I$ 是一个集合，$\mathcal{U}$ 是 $I$ 上的一个滤，$\left\{\mathfrak{A}_{i} \mid i \in I\right\}$ 是一族结构，其中每个 $\mathfrak{A}_{i}$ 的论域是 $A_{i}$
+    1. 令 ${\displaystyle \prod_{i \in I} A_{i}=\left\{\left.f: I \to \bigcup_{i \in I} A_{i} \ \right| \ f(i) \in A_{i}\right\}}$
+        1. 若 $f \in {\displaystyle \prod_{i \in I} A_{i}}$ 且 $f(i)=a_{i}$，则用 $\left(a_{i}\right)_{i \in I}$ 来表示 $f$
+        2. 定义 ${\displaystyle \prod_{i \in I} A_{i}}$ 上的关系 $\sim_{\mathcal{U}}$ 为 $s \sim_{\mathcal{U}} t$ 当且仅当 $\{i \in I \mid s(i)=t(i)\} \in \mathcal{U}_{0}$，则 $\sim_{\mathcal{U}}$ 是等价关系
+    2. 用 $[t]$ 表示 $t \in {\displaystyle \prod_{i \in I} A_{i}}$ 的等价类，用 ${\displaystyle \prod_{i \in I} A_{i} / \sim_{\mathcal{U}}}$ 表示 ${\displaystyle \prod_{i \in I} A_{i}}$ 关于等价关系 $\sim \mathcal{U}$ 的等价类的集合 $\{[t] \mid t \in \left.\Pi_{i \in I} A_{i}\right\}$，则 $\mathfrak{A}={\displaystyle \left\{\prod_{i \in I} A_{i} / \sim_{\mathcal{U}},\left\{Z^{\mathfrak{A}}\right\}_{Z \in L}\right\}}$ 是一个 $S$-结构
+        1. 若 $c$ 是常元符号，令 $c_{i}=c^{\mathfrak{A}_{i}}$，则 $\left(c_{i}\right)_{i \in I} \in {\displaystyle \prod_{i \in I} A_{i}}$，将 $c$ 解释为 $\left(c_{i}\right)_{i \in I}$ 的等价类 $\left[\left(c_{i}\right)_{i \in I}\right]$
+        2. 若 $f$ 是 $n$ 元函数，对任意 $t_{1}, \cdots, t_{n} \in {\displaystyle \prod_{i \in I} A_{i}}$，令 $f^{\mathfrak{A}}\left(\left[t_{1}\right], \cdots,\left[t_{n}\right]\right)=\left[\left(f^{\mathfrak{A}_{i}}\left(t_{1}(i), \cdots, t_{n}(i)\right)\right)_{i \in I}\right]$
+        3. 若 $R$ 是 $n$ 元关系，对任意 $t_{1}, \cdots, t_{n} \in {\displaystyle \prod_{i \in I} A_{i}}$ 都有 $\left(\left[t_{1}\right], \cdots,\left[t_{n}\right]\right) \in R^{\mathfrak{A}}$ 当且仅当 $\left\{i \in I \mid\left(t_{1}(i), \cdots, t_{n}(i)\right) \in R^{\mathfrak{A}}\right\} \in \mathcal{U}$
+
+        若 $\mathcal{U}$ 是集合 $I$ 上的一个超滤，$\mathfrak{B}$ 是一个结构，对每个 $i \in I$，令 $\mathfrak{A}_{i}= \mathfrak{B}$，则将 ${\displaystyle \prod_{i \in I} \mathfrak{A}_{i} / \sim_{\mathcal{U}}}$ 记作 $\mathfrak{B}^{I} / \sim_{\mathcal{U}}$
+
+    3. $\text{Lo}\acute{\mathrm s}$ 超积定理：设 $I$ 是一个集合，$\mathcal{U}$ 是 $I$ 上的一个滤，$\{\mathfrak{A}_i \mid i \in I\}$ 是一族结构，$\left[s_{1}\right], \cdots,\left[s_{n}\right] \in {\displaystyle \prod_{i \in I} A_{i} / \sim_{\mathcal{U}}}$，$\alpha\left(x_{1}, \cdots, x_{n}\right)$ 是一个正公式，则 ${\displaystyle \prod_{i \in I} \mathfrak{A}_{i} / \sim_{\mathcal{U}}} \vDash \alpha\left(\left[s_{1}\right], \cdots,\left[s_{n}\right]\right)$ 当且仅当 $\left\{i \in I \mid \mathfrak{A}_{i} \vDash \alpha\left(s_{1}(i), \cdots, s_{n}(i)\right)\right\} \in \mathcal{U}_{0}$．若 $\mathcal{U}$ 是 $I$ 上的一个超滤，则上式对任意公式 $\alpha\left(x_{1}, \cdots, x_{n}\right)$ 均成立
+        1. 若 $\mathcal{U}$ 是集合 $I$ 上的一个超滤，$\mathfrak{B}$ 是一个结构，则 $\mathfrak{B}^{I} / \sim_{\mathcal{U}}$ 与 $\mathfrak{B}$ 初等等价
+        2. 设 $\mathcal{K}$ 是一族 $S$-结构，则 $\mathcal{K}$ 是初等类当且仅当 $\mathcal{K}$ 关于初等等价关系和超积封闭
+    4. $\text{Keisler}-\text{Shelah}$ 同构定理：两个结构 $\mathfrak{A}$ 和 $\mathfrak{B}$ 初等等价当且仅当存在集合 $I$ 及 $I$ 上的超滤 $\mathcal{U}$ 使得 $\mathfrak{A}^{I} / \sim_{\mathcal{U}} \cong \mathfrak{B}^{I} / \sim_{\mathcal{U}}$
+    5. 设 $\mathfrak{C}$ 是一族结构，构造序列 $\left\{\mathfrak{C}_{n} \mid n \in \mathbf{N}\right\}$ 使得
+        1. $\mathfrak{C}_{0}=\mathfrak{C}$
+        2. 若 $n=2 i+1$，则 $\mathfrak{C}_{n}=\left\{\mathfrak{A} \mid \mathfrak{A}\right.$ 是结构且存在 $\mathfrak{B} \in \mathfrak{C}_{2 i}$ 使得 $\left.\mathfrak{A} \equiv \mathfrak{B}\right\}$
+        3. 若 $n=2 i+2$，则 $\mathfrak{C}_{n}=\left\{\mathfrak{A} \mid \mathfrak{A}\right.$ 是 $\mathfrak{C}_{2 i+1}$ 中一族结构的超积$\}$
+
+        则 ${\displaystyle \overline{\mathfrak{C}}=\bigcup_{n \in \mathbf{N}} \mathfrak{C}_{n}}$ 是包含 $\mathfrak{C}$ 的最小的初等类，称之为 $\mathfrak{C}$ 的初等类闭包
+
+        1. 设 $\mathfrak{A}$ 是一个结构，如果对任意的语句 $\sigma$ 都有 $\mathfrak{A} \vDash \sigma$ 蕴涵着存在有限结构 $\mathfrak{A}_{0} \vDash \sigma$，则称 $\mathfrak{A}$ 是伪有限的
+        2. 如果 $\mathfrak{A}$ 是伪有限的，并且不是有限的，则称 $\mathfrak{A}$ 是严格伪有限的
+        3. $\mathfrak{A}$ 是伪有限的当且仅当 $\mathfrak{A}$ 与一族有限结构的超积初等等价
+
+3. 紧致性定理：设 $S$ 可数，则 $S-$语句集 $\Sigma$ 是有限一致的当且仅当 $\Sigma$ 是一致的
     1. 若 $\mathscr L(S^{*})$ 是一个语言，$\Sigma^{*}$ 是一个有限一致的 $S^{*}-$语句集，则 $\Sigma^{*}$ 有一个基数不超过 $\left|S^{*}\right|$ 的模型
     2. 设 $\Sigma$ 与 $\Gamma$ 是两个语句集，若 $\Sigma \vDash \bigvee \Gamma$，即对每个结构 $\mathfrak{A} \vDash \Sigma$，都存在 $\gamma \in \Gamma$ 使得 $\mathfrak{A} \vDash \gamma$，则存在 $\Sigma$ 的有限子集 $\Sigma_{0}$ 及 $\Gamma$ 的有限子集 $\Gamma_{0}$，使得 $\Sigma_{0} \vDash \bigvee \Gamma_{0}$
+4. 设

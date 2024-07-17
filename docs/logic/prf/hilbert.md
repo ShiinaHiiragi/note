@@ -304,10 +304,11 @@
 
     3. 公式的类型：一个公式至多含有有穷个变元符号，记作 $\alpha(x_1, x_2, \cdots, x_n)$，且有 $\mathrm{FV}(\alpha) \subseteq \{x_1, x_2, \cdots, x_n\}$，每个 $x_k(1 \leqslant k \leqslant n)$ 均在 $\alpha$ 中自由出现
         1. 原子公式：形如 $Rt_1 t_2 \cdots t_{\Omega(R)}$ 或 $\bot$ 的公式
-        2. 语句：如果公式中的变元均为约束变元，则称该公式为 $S-$语句
-        3. 无量词公式：含有的符号均为自由变元的公式
-        4. 存在公式：递归定义存在公式为 ① 无量词公式 $\alpha$；② 形如 $\exists x\beta$ 的公式，其中 $\beta$ 是存在公式
-        5. 全称公式：递归定义全称公式为 ① 无量词公式 $\alpha$；② 形如 $\exists x\beta$ 的公式，其中 $\beta$ 是全称公式
+        2. 正公式：逻辑连接词只有 $\wedge$ 与 $\vee$ 的公式
+        3. 语句：如果公式中的变元均为约束变元，则称该公式为 $S-$语句
+        4. 无量词公式：含有的符号均为自由变元的公式
+        5. 存在公式：递归定义存在公式为 ① 无量词公式 $\alpha$；② 形如 $\exists x\beta$ 的公式，其中 $\beta$ 是存在公式
+        6. 全称公式：递归定义全称公式为 ① 无量词公式 $\alpha$；② 形如 $\exists x\beta$ 的公式，其中 $\beta$ 是全称公式
     4. 特殊记法
         1. 定义缩写 $\neg \alpha = \alpha \to \bot$，$\alpha \leftrightarrow \beta = (\alpha \to \beta) \wedge (\beta \to \alpha)$
         2. 对于 $\mathbf Q\in \{\forall, \exists\}$ 和有穷长的变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，公式 $\mathbf Qx_1 \mathbf Qx_2 \cdots \mathbf Qx_n \alpha$ 记作 $\mathbf Q \overline x \alpha$
