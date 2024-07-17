@@ -199,4 +199,12 @@
         1. 若 $\Sigma\left(x_{i}\right)_{i \in I}$ 是一致的，则称 $\Sigma\left(x_{i}\right)_{i \in I}$ 是一个 $I-$型；若 $T$ 是一个理论（不必是完备的）且 $T \cup \Sigma\left(x_{i}\right)_{i \in I}$ 是一致的，则称 $\Sigma$ 是 $T$ 的 $I-$型．当 $I=\{0, \cdots, n-1\}$ 时，称 $T$ 的 $I-$型为 $T$ 的 $n-$型
         2. 设 $\Sigma\left(x_{i}\right)_{i \in I}$ 是理论 $T$ 的 $I-$型，若对任意的 $i_{1}, \cdots, i_{n} \in I$ 及任意的公式 $\alpha\left(x_{i_{1}}, \cdots, x_{i_{n}}\right)$，总有 $\alpha\left(x_{i_{1}}, \cdots, x_{i_{n}}\right) \in \Sigma$ 或 $\neg \alpha\left(x_{i_{1}}, \cdots, x_{i_{n}}\right) \in \Sigma$，则称 $\Sigma$ 是 $T$ 的完全 $I-$型．类似地，也可定义 $T$ 的完全 $n-$型
         3. 设 $\mathfrak{A}$ 是一个结构，$T=\operatorname{Th}(\mathfrak{A})$，则 $\Sigma\left(x_{i}\right)_{i \in I}$ 是 $T$ 的 $I-$型当且仅当对每个有限的 $\Sigma_{0} \subseteq \Sigma$，都有 $\mathfrak{A} \vDash \exists \overline{x} \ \left(\bigwedge \Sigma_{0}(\overline{x})\right)$，其中 $\overline{x}=x_{i_{1}}, \cdots, x_{i_{n}}$ 是所有的出现在 $\Sigma_{0}$ 中的自由变元
-    2. 在 $S_{n}(T)$ 上引入一个拓扑 $\tau$，即 $X \subseteq S_{n}(T)$ 是闭集当且仅当存在 $T$ 的一个 $n-$型 $\Sigma\left(x_{0}, \cdots, x_{n-1}\right)$，使得 $X=\left\{p\left(x_{0}, \cdots, x_{n-1}\right) \in S_{n}(T) \mid \Sigma\right. \subseteq p\}$ 。我们把这样的 $X$ 记作 $[\Sigma]$
+    2. 在 $S_{n}(T)$ 上引入一个拓扑 $\tau$，即 $X \subseteq S_{n}(T)$ 是闭集当且仅当存在 $T$ 的一个 $n-$型 $\Sigma\left(x_{0}, \cdots, x_{n-1}\right)$，使得 $X=\left\{p\left(x_{0}, \cdots, x_{n-1}\right) \in S_{n}(T) \mid \Sigma\right. \subseteq p\}$，并将 $X$ 记作 $[\Sigma]$，将 $[\{\alpha\}]$ 记作 $[\alpha]$
+        1. $\left(S_{n}(T), \tau\right)$ 是一个紧致的、完全不连通的 $\text{Hausdorff}$ 空间
+        2. $X \subseteq S_{n}(T)$ 是开闭集当且仅当存在公式 $\alpha\left(x_{0}, \cdots, x_{n-1}\right)$，使得 $X=[\{\alpha\}]$
+5. $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理
+    1. 下行 $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理：设 $\mathfrak{A}$ 是一个论域为 $A$ 的结构，$M \subseteq A$，则存在 $B \subseteq A$ 使得 $B$ 是 $\mathfrak{A}$ 的初等子结构有 $M \subseteq B$ 且 $|B| \leqslant \max \left\{|M|,|S|, \aleph_{0}\right\}$
+    2. 上行 $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理：设 $\mathfrak{A}$ 是一个论域为 $A$ 的 $S-$结构，其中 $A$ 是无穷集合，$\lambda \geqslant|A|+|S|$，则存在基数为 $\lambda$ 的 $S-$结构 $\mathfrak{B}$ 使得 $\mathfrak{A} \prec \mathfrak{B}$
+        1. 设 $T$ 是一个 $S-$理论，且 $T$ 有一个无穷模型．若无穷基数 $\lambda \geqslant |S|$，则存在 $T$ 的基数为 $\lambda$ 的模型
+        2. 设结构 $\mathfrak{A}_{1}$ 和 $\mathfrak{A}_{2}$ 初等等价，则存在结构 $\mathfrak{B}$ 及初等嵌入 $g_{1}$ : $\mathfrak{A}_{1} \to \mathfrak{B}$ 和初等嵌入 $g_{2}: \mathfrak{A}_{2} \to \mathfrak{B}$
+        3. 设结构 $\mathfrak{A}_{1}$ 和 $\mathfrak{A}_{2}$ 初等等价，则存在结构 $\mathfrak{B}$ 使得 $\mathfrak{A}_{1} \prec \mathfrak{B}$ 且 $\mathfrak{A}_{2} \prec \mathfrak{B}$
