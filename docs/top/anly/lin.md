@@ -157,7 +157,7 @@
 
         $$
         \boldsymbol \gamma_i = \left\{\begin{aligned}
-        & \dfrac{\boldsymbol \alpha_i - \boldsymbol \gamma_1 \boldsymbol \gamma_1^{\mathrm T} \boldsymbol \alpha_i - \boldsymbol \gamma_2 \boldsymbol \gamma_2^{\mathrm T} \boldsymbol \alpha_i - \cdots - \boldsymbol \gamma_{i-1} \boldsymbol \gamma_{i-1}^{\mathrm T} \boldsymbol \alpha_i}{\left|\boldsymbol \alpha_i - \boldsymbol \gamma_1 \boldsymbol \gamma_1^{\mathrm T} \boldsymbol \alpha_i - \boldsymbol \gamma_2 \boldsymbol \gamma_2^{\mathrm T} \boldsymbol \alpha_i - \cdots - \boldsymbol \gamma_{i-1} \boldsymbol \gamma_{i-1}^{\mathrm T} \boldsymbol \alpha_i\right|}, & i > 1 \\
+        & \dfrac{\boldsymbol \alpha_i - \boldsymbol \gamma_1 \boldsymbol \gamma_1^{\mathrm T} \boldsymbol \alpha_1 - \boldsymbol \gamma_2 \boldsymbol \gamma_2^{\mathrm T} \boldsymbol \alpha_2 - \cdots - \boldsymbol \gamma_{i-1} \boldsymbol \gamma_{i-1}^{\mathrm T} \boldsymbol \alpha_{i-1}}{\left|\boldsymbol \alpha_i - \boldsymbol \gamma_1 \boldsymbol \gamma_1^{\mathrm T} \boldsymbol \alpha_1 - \boldsymbol \gamma_2 \boldsymbol \gamma_2^{\mathrm T} \boldsymbol \alpha_2 - \cdots - \boldsymbol \gamma_{i-1} \boldsymbol \gamma_{i-1}^{\mathrm T} \boldsymbol \alpha_{i-1}\right|}, & i > 1 \\
         & \dfrac{\boldsymbol \alpha_1}{|\boldsymbol \alpha_1|}, & i = 1
         \end{aligned}\right.
         $$
