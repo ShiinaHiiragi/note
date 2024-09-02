@@ -3,17 +3,15 @@
 ## 2.1 指令范畴
 ### 2.1.1 定义与声明
 
-### 2.1.2 修饰符
-
-### 2.1.3 辅助指令
-1. `eval`：对表达式进行规约
+### 2.1.2 辅助指令
+1. `eval`：对项进行规约
 
     ```lean
     def eval := leading_parser "#eval "
       >> termParser
     ```
 
-2. `check`：检查表达式的类型而不求值
+2. `check`：仅检查项的类型而不求值
 
     ```lean
     def check := leading_parser "#check "
@@ -22,6 +20,25 @@
 
 ## 2.2 项范畴
 ### 2.2.1 表达式
+Lean 中任意项都有对应表达式
+
+```lean
+inductive Expr where
+  | bvar (deBruijnIndex : Nat)
+  | fvar (fvarId : FVarId)
+  | mvar (mvarId : MVarId)
+  | sort (u : Level)
+  | const (declName : Name) (us : List Level)
+  | app (fn : Expr) (arg : Expr)
+  | lam (binderName : Name) (binderType : Expr) (body : Expr) (binderInfo : BinderInfo)
+  | forallE (binderName : Name) (binderType : Expr) (body : Expr) (binderInfo : BinderInfo)
+  | letE (declName : Name) (type : Expr) (value : Expr) (body : Expr) (nonDep : Bool)
+  | lit : Literal → Expr
+  | mdata (data : MData) (expr : Expr)
+  | proj (typeName : Name) (idx : Nat) (struct : Expr)
+```
+
+### 2.2.2 非表达式
 1. `«leading_parser»`：Lean 内部使用的句法解析器
 
     ```lean
@@ -39,12 +56,6 @@
       >> (withoutPosition (withoutForbidden (termParser >> " :" >> optional (ppSpace >> termParser))))
       >> ")"
     ```
-
-### 2.2.2 绑定器
-
-### 2.2.3 模式匹配
-
-### 2.2.4 占位符
 
 ## 2.3 属性范畴
 ### 2.3.1 内建属性
