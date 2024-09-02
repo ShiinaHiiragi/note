@@ -5,7 +5,7 @@
 - 本节不公开，所有内容录入后将被删除
 
 ## A
-- applicative：⟦不翻译⟧
+- applicative：应用
 - argument：参数
 - assumptions：假设
 - attribute：属性
@@ -38,19 +38,19 @@
 - downstream：下游
 
 ## E
-- elaborate：⟦不翻译⟧
-- elaborator：⟦不翻译⟧
+- elaborate：繁饰
+- elaborator：繁饰器
 - element：元素
 - enumerate：枚举
 - environment：环境
 - escape：转义字符
-- evaluate：⟦不翻译⟧
+- evaluate：求值
 - expression：表达式
 
 ## F
 - function：函数
 - functional：函数式
-- functor：⟦不翻译⟧
+- functor：函子
 
 ## G
 - generic type：泛型
@@ -78,7 +78,7 @@
 - modify：修改
 - modifier：修饰符
 - module：模块
-- monad：⟦不翻译⟧
+- monad：单子
 
 ## N
 - name：名称

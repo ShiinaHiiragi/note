@@ -6,28 +6,39 @@
 ### 2.1.2 修饰符
 
 ### 2.1.3 辅助指令
-1. `#eval`：规约项的值
+1. `eval`：对表达式进行规约
 
     ```lean
     def eval := leading_parser "#eval "
       >> termParser
     ```
 
-2. `#check`
+2. `check`：检查表达式的类型而不求值
+
+    ```lean
+    def check := leading_parser "#check "
+      >> termParser
+    ```
 
 ## 2.2 项范畴
 ### 2.2.1 表达式
-1. `leading_parser`：Lean 内部使用的句法解析器
+1. `«leading_parser»`：Lean 内部使用的句法解析器
 
     ```lean
-    def «leading_parser»  := leading_parser:leadPrec "leading_parser"
+    def «leading_parser» := leading_parser:leadPrec "leading_parser"
       >> optExprPrecedence
       >> optional withAnonymousAntiquot
       >> ppSpace
       >> termParser
     ```
 
-2. 占位符
+2. `typeAscription`：类型归属记号，指示 Lean 将表达式解释为指定类型
+
+    ```lean
+    def typeAscription := leading_parser "("
+      >> (withoutPosition (withoutForbidden (termParser >> " :" >> optional (ppSpace >> termParser))))
+      >> ")"
+    ```
 
 ### 2.2.2 绑定器
 

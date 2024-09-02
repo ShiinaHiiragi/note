@@ -2,6 +2,15 @@
 
 ## 3.1 预定义记号
 ### 3.1.1 表达式
+1. `termIfThenElse`：条件表达式
+
+    ```lean
+    @[inherit_doc ite] syntax (name := termIfThenElse)
+      ppRealGroup(ppRealFill(ppIndent("if " term " then") ppSpace term)
+        ppDedent(ppSpace) ppRealFill("else " term)) : term
+    ```
+
+2. ...
 
 ### 3.1.2 操作符
 
