@@ -38,24 +38,29 @@ inductive Expr where
   | proj (typeName : Name) (idx : Nat) (struct : Expr)
 ```
 
+1. `bvar`：约束变量
+2. `fvar`：自由变量
+3. `mvar`：元变量
+4. `sort`：类型
+5. `const`：常量
+6. `app`：函数应用
+7. `lam`：$\lambda$ 表达式
+8. `forallE`：依值箭头表达式
+9. `letE`：`let` 绑定器
+10. `lit`：字面值
+11. `mdata`：元数据
+12. `proj`：投影
+
 ### 2.2.2 非表达式
-1. `«leading_parser»`：Lean 内部使用的句法解析器
-
-    ```lean
-    def «leading_parser» := leading_parser:leadPrec "leading_parser"
-      >> optExprPrecedence
-      >> optional withAnonymousAntiquot
-      >> ppSpace
-      >> termParser
-    ```
-
-2. `typeAscription`：类型归属记号，指示 Lean 将表达式解释为指定类型
+1. `typeAscription`：类型归属记号，指示 Lean 将表达式解释为指定类型
 
     ```lean
     def typeAscription := leading_parser "("
       >> (withoutPosition (withoutForbidden (termParser >> " :" >> optional (ppSpace >> termParser))))
       >> ")"
     ```
+
+2. ...
 
 ## 2.3 属性范畴
 ### 2.3.1 内建属性

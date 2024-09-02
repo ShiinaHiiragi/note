@@ -53,7 +53,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，现处于第一阶段"
-    <label> 现在进度：Lean Theorem Prover </label>
+    <label> 现在进度：Functional Programming in Lean §1.3 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>

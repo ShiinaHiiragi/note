@@ -16,6 +16,7 @@
 - backtrack：回溯
 - binder：绑定器
 - binary：二进制
+- bound：约束
 - build：构建
 - built-in：内建
 
