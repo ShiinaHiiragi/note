@@ -33,6 +33,7 @@
 ## D
 - declaration：声明
 - definition：定义
+- delimiter：分隔符
 - dependency：依赖项
 - distribution：分发
 - document：文档
