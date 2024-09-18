@@ -65,23 +65,29 @@
 1. 基础组合子
     1. `andthen(p, q)`：先后依次解析 `p` 与 `q`，是类型类 `AndThen` 的实现，因此也可使用其异构记号 `p >> q`
     2. `orelse(p, q)`：当且仅当解析 `p` 失败时解析 `q`，是类型类 `OrElse` 的实现，因此也可使用其异构记号 `p <|> q`
-    3. `atomic(p)`：解析 `p`，且失败时不会读入额外字符．这一特性适用于 `p <|> q`，因其在 `p` 解析失败时不会回溯
-    4. `recover(p, h)`：用 `h` 恢复 `p` 中产生的错误，直到得出正确状态，与 `<|>` 的区别较微妙
-    5. `lookahead(p)`：解析 `p` 但不构建节点，且成功时回溯到原位；相当于在不读入下一词元的条件下对下文进行断言
-    6. `notFollowedBy(p, info : String)`：当且仅当解析 `p` 失败时继续，否则返回消息 `info`
-    7. `sepBy(p, s : String)`：解析由 `s` 分隔的若干个 `p`
-    8. `sepBy1(p, s : String)`：解析由 `s` 分隔的若干个 `p`，必须至少成功一次
-2. 位置组合子
+    3. `recover(p, h)`：用 `h` 恢复 `p` 中产生的错误，直到得出正确状态，与 `<|>` 的区别较微妙
+    4. `atomic(p)`：解析 `p`，且失败时不会读入额外字符．这一特性适用于 `p <|> q`，因其在 `p` 解析失败时不会回溯
+2. 重复与成组
+    1. `optional(p)`：解析 `p`，失败时返回空值；也可写作 `(p)?`
+    2. `many(p)`：重复解析 `p` 直到失败，当元数大于一时自动将 `p` 替换为 `group(p)`；也可写作 `(p)*`
+    3. `many1(p)`：类似于 `many(p)`，必须至少成功一次
+    4. `group(p)`：解析 `p`，将结果封装在一个类型为 `groupKind` 的节点
+3. 位置与缩进
     1. `withPosition(p)`：解析 `p`，记录并保存当前位置
-    2. `withPosition(p)`：解析 `p`，并暂时忽略已保存位置
+    2. `withoutPosition(p)`：解析 `p`，并暂时忽略已保存位置
     3. `withForbidden(tk, p)`：解析 `p`，不允许出现词元 `tk`
     4. `withoutForbidden(p)`：解析 `p`，忽略不允许出现的词元（如有）
     5. `manyIndent(p)`：相当于 `withPosition((colGe p)*)`
-    6. `many1Indent(p)`：相当于 `withPosition((colGe p)+)`
-3. 附加组合子
-    1. `optional(p)`：解析 `p`，失败时返回空值；也可写作 `(p)?`
-    2. `many(p)`：重复解析 `p` 直到失败，当元数大于一时自动将 `p` 替换为 `group(p)`；也可写作 `(p)*`
-    3. `many1(p)`：重复解析 `p` 直到失败，必须至少成功一次，当元数大于一时自动将 `p` 替换为 `group(p)`；也可写作 `(p)+`
-    4. `group(p)`：解析 `p`，将结果封装在一个类型为 `groupKind` 的节点
+    6. `many1Indent(p)`：类似于 `manyIndent(p)`，相当于 `withPosition((colGe p)+)`
+4. 分隔符相关
+    1. `sepBy(p, s : String)`：重复解析由 `s` 分隔的 `p`
+    2. `sepBy1(p, s : String)`：类似于 `sepBy(p, s)`，必须至少成功一次
+    3. `sepByIndent(p, s : String)`：重复解析由 `s` 分隔的 `p`．当后续 `p` 换行且缩进不小于第一个 `p`，则分隔符 `s` 可选
+    4. `sepBy1Indent(p, s : String)`：类似于 `sepByIndent(p, s)`，必须至少成功一次
+    5. `sepByIndentSemicolon(p)`：相当于 `sepByIndent(p, "; ")`
+    6. `sepBy1IndentSemicolon(p)`：类似于 `sepByIndentSemicolon(p)`，相当于 `sepBy1Indent(p, "; ")`
+5. 其他组合子
+    1. `lookahead(p)`：解析 `p` 但不构建节点，且成功时回溯到原位；相当于在不读入下一词元的条件下对下文进行断言
+    2. `notFollowedBy(p, info : String)`：当且仅当解析 `p` 失败时继续，否则返回消息 `info`
 
 ## 4.2 系统级单子
