@@ -22,39 +22,46 @@
           >> Term.optType
         ```
 
-    3. `declVal`：声明的右半部分，形如
-        - `:= expr`，用于简单声明
-        - 一系列 `| pat => expr`，用于 `match`
-        - `where` 及跟随于其后的 `field := value`，用于 `structure`
+    3. `declVal`：声明的右半部分，分为三种形式
+        - `declValSimple`：形如 `:= expr`，用于简单声明
+        - `declValEqns`：一系列 `| pat => expr`，用于 `match`
+        - `whereStructInst`：`where` 及跟随于其后的 `field := value`，用于 `structure`
 
         ```lean
-        def declVal := withAntiquot (mkAntiquot
-          "declVal"
-          `Lean.Parser.Command.declVal
-          (isPseudoKind := true)
-        ) <| declValSimple
-          <|> declValEqns
-          <|> whereStructInst
+        @[run_builtin_parser_attribute_hooks]
+        def Term.whereDecls := leading_parser ppDedent ppLine
+          >> "where"
+          >> sepBy1Indent (ppGroup letRecDecl) "; " (allowTrailingSep := true)
 
+        def declBody : Parser := lookahead (setExpected [] "by")
+          >> termParser leadPrec <|> termParser
         def declValSimple := leading_parser " :="
           >> ppHardLineUnlessUngrouped
           >> declBody
           >> Termination.suffix
           >> optional Term.whereDecls
 
+        @[run_builtin_parser_attribute_hooks]
+        def matchAltsWhereDecls := leading_parser matchAlts
+          >> Termination.suffix
+          >> optional whereDecls
         def declValEqns := leading_parser Term.matchAltsWhereDecls
 
         def whereStructInst := leading_parser ppIndent ppSpace
           >> "where"
           >> sepByIndent (ppGroup whereStructField) "; " (allowTrailingSep := true)
           >> optional Term.whereDecls
+
+        def declVal := withAntiquot (mkAntiquot "declVal" `Lean.Parser.Command.declVal (isPseudoKind := true))
+          <| declValSimple <|> declValEqns <|> whereStructInst
         ```
 
 2. `declaration`：常量声明
 
     ```lean
-    @[builtin_command_parser] def declaration := leading_parser declModifiers false
-    >> («abbrev»
+    @[builtin_command_parser]
+    def declaration := leading_parser declModifiers false
+      >> («abbrev»
         <|> definition
         <|> «theorem»
         <|> «opaque»
@@ -64,7 +71,7 @@
         <|> «inductive»
         <|> classInductive
         <|> «structure»
-    )
+      )
     ```
 
     1. `abbrev`：缩写  <!--TODO -->
