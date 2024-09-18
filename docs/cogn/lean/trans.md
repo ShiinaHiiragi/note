@@ -69,6 +69,9 @@
 - integer：整数
 - interpolation：插值
 
+## K
+- kind：种类
+
 ## L
 - level：层级
 - library：库

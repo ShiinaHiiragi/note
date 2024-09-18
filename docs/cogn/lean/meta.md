@@ -71,7 +71,7 @@
     1. `optional(p)`：解析 `p`，失败时返回空值；也可写作 `(p)?`
     2. `many(p)`：重复解析 `p` 直到失败，当元数大于一时自动将 `p` 替换为 `group(p)`；也可写作 `(p)*`
     3. `many1(p)`：类似于 `many(p)`，必须至少成功一次
-    4. `group(p)`：解析 `p`，将结果封装在一个类型为 `groupKind` 的节点
+    4. `group(p)`：解析 `p`，将结果封装在一个种类为 `groupKind` 的节点
 3. 位置与缩进
     1. `withPosition(p)`：解析 `p`，记录并保存当前位置
     2. `withoutPosition(p)`：解析 `p`，并暂时忽略已保存位置
@@ -86,7 +86,12 @@
     4. `sepBy1Indent(p, s : String)`：类似于 `sepByIndent(p, s)`，必须至少成功一次
     5. `sepByIndentSemicolon(p)`：相当于 `sepByIndent(p, "; ")`
     6. `sepBy1IndentSemicolon(p)`：类似于 `sepByIndentSemicolon(p)`，相当于 `sepBy1Indent(p, "; ")`
-5. 其他组合子
+5. 反引用相关
+    1. `mkAntiquot(n : String, k : SyntaxNodeKind)`：解析形如 `$e` 或 `$e:n` 的反引用
+        1. `mkAntiquot` 调用 `leadingNode` 创建种类为 ``k ++ `antiquot`` 的节点，该节点表示一个种类为 `n` 的句法元素
+        2. 可用 `$$` 转义 `` `() `` 中的反引用，例如 `` #check `(def var $$x:declVal) ``
+    2. `withAntiquot(q, p)`：`q` 通常为 `mkAntiquot ...`，因此相当于 `mkAntiquot ... <|> p`
+6. 其他组合子
     1. `lookahead(p)`：解析 `p` 但不构建节点，且成功时回溯到原位；相当于在不读入下一词元的条件下对下文进行断言
     2. `notFollowedBy(p, info : String)`：当且仅当解析 `p` 失败时继续，否则返回消息 `info`
 
