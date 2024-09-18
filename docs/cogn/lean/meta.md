@@ -69,6 +69,8 @@
     4. `recover(p, h)`：用 `h` 恢复 `p` 中产生的错误，直到得出正确状态，与 `<|>` 的区别较微妙
     5. `lookahead(p)`：解析 `p` 但不构建节点，且成功时回溯到原位；相当于在不读入下一词元的条件下对下文进行断言
     6. `notFollowedBy(p, info : String)`：当且仅当解析 `p` 失败时继续，否则返回消息 `info`
+    7. `sepBy(p, s : String)`：解析由 `s` 分隔的若干个 `p`
+    8. `sepBy1(p, s : String)`：解析由 `s` 分隔的若干个 `p`，必须至少成功一次
 2. 位置组合子
     1. `withPosition(p)`：解析 `p`，记录并保存当前位置
     2. `withPosition(p)`：解析 `p`，并暂时忽略已保存位置

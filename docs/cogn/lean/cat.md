@@ -28,6 +28,14 @@
         - `where` 及跟随于其后的 `field := value`，用于 `structure`
 
         ```lean
+        def declVal := withAntiquot (mkAntiquot
+          "declVal"
+          `Lean.Parser.Command.declVal
+          (isPseudoKind := true)
+        ) <| declValSimple
+          <|> declValEqns
+          <|> whereStructInst
+
         def declValSimple := leading_parser " :="
           >> ppHardLineUnlessUngrouped
           >> declBody
@@ -40,14 +48,6 @@
           >> "where"
           >> sepByIndent (ppGroup whereStructField) "; " (allowTrailingSep := true)
           >> optional Term.whereDecls
-
-        def declVal := withAntiquot (mkAntiquot
-          "declVal"
-          `Lean.Parser.Command.declVal
-          (isPseudoKind := true)
-        ) <| declValSimple
-          <|> declValEqns
-          <|> whereStructInst
         ```
 
 2. `declaration`：常量声明
