@@ -26,7 +26,16 @@
 1. 数据类型
 2. 数据结构
 3. 编译相关
-    1. `Syntax`：句法结构
+    1. `Name`：名称
+
+        ```lean
+        inductive Name where
+          | anonymous : Name
+          | str (pre : Name) (str : String)
+          | num (pre : Name) (i : Nat)
+        ```
+
+    2. `Syntax`：句法结构
 
         ```lean
         inductive Syntax where
@@ -36,7 +45,7 @@
           | ident (info : SourceInfo) (rawVal : Substring) (val : Name) (preresolved : List Syntax.Preresolved)
         ```
 
-    2. `Expr`：表达式，Lean 中任意项都有对应表达式
+    3. `Expr`：表达式，Lean 中任意项都有对应表达式
 
         ```lean
         inductive Expr where

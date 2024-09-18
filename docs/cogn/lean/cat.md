@@ -13,7 +13,7 @@
           )
         ```
 
-    2. `declSig` 与 `optDeclSig`：常量声明时的（可选）类型标注，形如 `: type`
+    2. `declSig` 与 `optDeclSig`：常量声明时的（可选）参数列表与类型标注，形如 `: type`
 
         ```lean
         def declSig := leading_parser many (ppSpace >> (Term.binderIdent <|> Term.bracketedBinder))
@@ -74,7 +74,7 @@
       )
     ```
 
-    1. `abbrev`：缩写  <!--TODO -->
+    1. `abbrev`：缩写，Lean 会将其标记为可约定义（即可展开的定义）
 
         ```lean
         def «abbrev» := leading_parser "abbrev "
@@ -83,7 +83,7 @@
           >> declVal
         ```
 
-    2. `definition`：定义  <!--TODO -->
+    2. `definition`：定义常量
 
         ```lean
         def optDefDeriving := optional (ppDedent ppLine
