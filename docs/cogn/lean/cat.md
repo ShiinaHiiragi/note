@@ -208,9 +208,17 @@
       <|> strictImplicitBinder requireType
       <|> implicitBinder requireType
       <|> instBinder
+
+    def binderType (requireType := false) : Parser := if requireType
+      then node nullKind (" : " >> termParser)
+      else optional (" : " >> termParser)
+    def binderTactic := leading_parser atomic (symbol " := " >> " by ")
+      >> Tactic.tacticSeq
+    def binderDefault := leading_parser " := "
+      >> termParser
     ```
 
-    1. `explicitBinder`：显式绑定器：形如 `(x y : A)` 或 `(x y)`
+    1. `explicitBinder`：显式绑定器，形如 `(x y : A)` 或 `(x y)`，可通过 `(x : A := v)` 或 `(x : A := by tac)` 指定默认值
 
         ```lean
         def explicitBinder (requireType := false) := leading_parser ppGroup <| "("
@@ -220,7 +228,7 @@
           ) >> ")"
         ```
 
-    2. `implicitBinder`：隐式绑定器：形如 `{x y : A}` 或 `{x y}`
+    2. `implicitBinder`：隐式绑定器，形如 `{x y : A}` 或 `{x y}`
 
         ```lean
         def implicitBinder (requireType := false) := leading_parser ppGroup <| "{"
@@ -228,9 +236,15 @@
           >> "}"
         ```
 
-    3. `strictImplicitBinder`：严格隐式绑定器：形如 `⦃y z : A⦄`、`{{y z : A}}`、`⦃y z⦄` 或 `{{y z}}`
+        1. 通常模式下，隐式绑定器应能被自主推断，Lean 会自动为该参数填充占位符 `_`
+        2. 在 `@` 显式模式下，隐式绑定器与显式绑定器表现相一致
+
+    3. `strictImplicitBinder`：严格隐式绑定器，形如 `⦃x y : A⦄`、`{{x y : A}}`、`⦃x y⦄` 或 `{{x y}}`
 
         ```lean
+        def strictImplicitLeftBracket := atomic (group (symbol "{" >> "{")) <|> "⦃"
+        def strictImplicitRightBracket := atomic (group (symbol "}" >> "}")) <|> "⦄"
+
         def strictImplicitBinder (requireType := false) := leading_parser ppGroup
           <| strictImplicitLeftBracket
           >> many1 binderIdent
@@ -238,13 +252,22 @@
           >> strictImplicitRightBracket
         ```
 
-    4. `instBinder`：实例绑定器：形如 `[A]` 或 `[x : A]`，不可声明多个变量
+        1. 除非指定了至少一个后续显式参数，严格隐式绑定器不会自动插入占位符 `_`
+        2. 假设遵循上述规则，严格隐式绑定器与隐式绑定器表现相一致
+
+    4. `instBinder`：实例绑定器，形如 `[C]` 或 `[inst : C]`
 
         ```lean
+        def optIdent : Parser := optional (atomic (ident >> " : "))
+
         def instBinder := leading_parser ppGroup <| "["
           >> withoutPosition (optIdent >> termParser)
           >> "]"
         ```
+
+        1. 单个实例绑定器不可同时指定多个变量
+        2. 通常模式下，Lean 自动进行类型类推断并插入 `C` 的实例
+        3. 在 `@` 显式模式下，如果 `_` 被用于实例隐式参数，则仍可实行类型类推断；也可通过 `(_)` 禁用该特性
 
 ### 2.3.4 其他
 
