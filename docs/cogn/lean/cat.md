@@ -16,8 +16,11 @@
     2. `declSig` 与 `optDeclSig`：常量声明时的（可选）参数列表与类型标注，形如 `: type`
 
         ```lean
+        def typeSpec := leading_parser " : " >> termParser
         def declSig := leading_parser many (ppSpace >> (Term.binderIdent <|> Term.bracketedBinder))
           >> Term.typeSpec
+
+        def optType : Parser := optional typeSpec
         def optDeclSig := leading_parser many (ppSpace >> (Term.binderIdent <|> Term.bracketedBinder))
           >> Term.optType
         ```
@@ -47,6 +50,7 @@
           >> optional whereDecls
         def declValEqns := leading_parser Term.matchAltsWhereDecls
 
+        def whereStructField := leading_parser Term.letDecl
         def whereStructInst := leading_parser ppIndent ppSpace
           >> "where"
           >> sepByIndent (ppGroup whereStructField) "; " (allowTrailingSep := true)
@@ -139,6 +143,16 @@
 2. ...
 
 ### 2.3.3 绑定器
+1. 括号绑定器
+
+    ```lean
+    def bracketedBinder (requireType := false) := withAntiquot (
+        mkAntiquot "bracketedBinder" decl_name% (isPseudoKind := true)
+    ) <| explicitBinder requireType
+      <|> strictImplicitBinder requireType
+      <|> implicitBinder requireType
+      <|> instBinder
+    ```
 
 ### 2.3.4 模式匹配
 

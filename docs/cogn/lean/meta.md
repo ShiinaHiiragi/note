@@ -31,9 +31,11 @@
     ```
 
 2. 标识符解析器
-    1. `ident` 与 `rawIdent`：解析（可能带有命名空间的）标识符
-    2. `identWithPartialTrailingDot`：无法解析成功；用于自动补全
-    3. `hygieneInfo`：不解析字符，捕捉环境信息并创建匿名标识符；用于实现 `have := ...` 句法
+    1. `hole`：占位符项 `_`
+    2. `ident` 与 `rawIdent`：解析（可能带有命名空间的）标识符
+    3. `binderIdent`：`ident` 或 `hole`
+    4. `identWithPartialTrailingDot`：无法解析成功；用于自动补全
+    5. `hygieneInfo`：不解析字符，捕捉环境信息并创建匿名标识符；用于实现 `have := ...` 句法
 3. 字面值解析器
     1. `numLit`：解析二进制、八进制、十六进制或十进制的整数字面值
     2. `scientificLit`：解析科学计数法记号的浮点数字面值
