@@ -189,8 +189,7 @@
       >> ")"
     ```
 
-2. `tuple`：有序对
-3. `structInst`：结构实例
+2. `structInst`：结构实例
 
 ### 2.3.3 通用
 1. （可选）类型标注
@@ -211,10 +210,41 @@
       <|> instBinder
     ```
 
-    1. `explicitBinder`：显式绑定器：形如 `(x y : A)`
-    2. `strictImplicitBinder`：隐式绑定器：形如 `{x y : A}`
-    3. `implicitBinder`：严格隐式绑定器：形如 `⦃y z : A⦄` 或 `{{y z : A}}`
+    1. `explicitBinder`：显式绑定器：形如 `(x y : A)` 或 `(x y)`
+
+        ```lean
+        def explicitBinder (requireType := false) := leading_parser ppGroup <| "("
+          >> withoutPosition (many1 binderIdent
+            >> binderType requireType
+            >> optional (binderTactic <|> binderDefault)
+          ) >> ")"
+        ```
+
+    2. `implicitBinder`：隐式绑定器：形如 `{x y : A}` 或 `{x y}`
+
+        ```lean
+        def implicitBinder (requireType := false) := leading_parser ppGroup <| "{"
+          >> withoutPosition (many1 binderIdent >> binderType requireType)
+          >> "}"
+        ```
+
+    3. `strictImplicitBinder`：严格隐式绑定器：形如 `⦃y z : A⦄`、`{{y z : A}}`、`⦃y z⦄` 或 `{{y z}}`
+
+        ```lean
+        def strictImplicitBinder (requireType := false) := leading_parser ppGroup
+          <| strictImplicitLeftBracket
+          >> many1 binderIdent
+          >> binderType requireType
+          >> strictImplicitRightBracket
+        ```
+
     4. `instBinder`：实例绑定器：形如 `[A]` 或 `[x : A]`，不可声明多个变量
+
+        ```lean
+        def instBinder := leading_parser ppGroup <| "["
+          >> withoutPosition (optIdent >> termParser)
+          >> "]"
+        ```
 
 ### 2.3.4 其他
 
