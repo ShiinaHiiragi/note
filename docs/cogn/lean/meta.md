@@ -13,7 +13,7 @@
     ```
 
     1. 当 `parser` 为 `String` 元素时，存在 `Coe` 隐式转换为 `Parser` 元素的实现
-    2. 称 `Parser → Parser` 元素为组合子，其在 `leading_parser` 宏中通常与其他 `Parser` 元素组合使用
+    2. 称 `Parser → Parser` 或返回 `Parser` 元素的函数为组合子，其在 `leading_parser` 宏中通常与其他 `Parser` 元素组合使用
 
 ### 4.1.1 解析器
 1. `CategoryParser`：特定范畴的句法解析器

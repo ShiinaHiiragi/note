@@ -55,7 +55,13 @@ $$
 
 ### 1.2.2 文件组织与模块
 1. Lean 包是 Lake 代码分发的基本单位，包含如下内容
-    1. `lakefile.lean`：`lake` 构建所需配置，早期版本可使用 TOML 文件．`lakefile.lean` 默认配置如下
+    1. `lean-toolchain`：包含包所使用的 Lean 特定版本标识符，默认配置如下
+
+        ```plaintext
+        leanprover/lean4:stable
+        ```
+
+    2. `lakefile.lean`：`lake` 构建所需配置，早期版本可使用 TOML 文件．`lakefile.lean` 默认配置如下
 
         ```lean
         import Lake
@@ -68,12 +74,6 @@ $$
         @[default_target]
         lean_exe «project» where
         root := `Main
-        ```
-
-    2. `lean-toolchain`：包含包所使用的 Lean 特定版本标识符，默认配置如下
-
-        ```plaintext
-        leanprover/lean4:stable
         ```
 
     3. `Main.lean`：Lean 编译器在此文件查找主函数 `main`
