@@ -16,11 +16,9 @@
     2. `declSig` 与 `optDeclSig`：常量声明时的（可选）参数列表与类型标注，形如 `: type`
 
         ```lean
-        def typeSpec := leading_parser " : " >> termParser
         def declSig := leading_parser many (ppSpace >> (Term.binderIdent <|> Term.bracketedBinder))
           >> Term.typeSpec
 
-        def optType : Parser := optional typeSpec
         def optDeclSig := leading_parser many (ppSpace >> (Term.binderIdent <|> Term.bracketedBinder))
           >> Term.optType
         ```
@@ -140,10 +138,7 @@
       >> ")"
     ```
 
-2. ...
-
-### 2.3.3 绑定器
-1. 括号绑定器
+2. `bracketedBinder`：括号绑定器
 
     ```lean
     def bracketedBinder (requireType := false) := withAntiquot (
@@ -154,9 +149,24 @@
       <|> instBinder
     ```
 
-### 2.3.4 模式匹配
+    1. `explicitBinder`：显式绑定器：形如 `(x y : A)`
+    2. `strictImplicitBinder`：隐式绑定器：形如 `{x y : A}`
+    3. `implicitBinder`：严格隐式绑定器：形如 `⦃y z : A⦄` 或 `{{y z : A}}`
+    4. `instBinder`：实例绑定器：形如 `[A]` 或 `[x : A]`，不可声明多个变量
 
-### 2.3.5 其他
+### 2.3.3 模式匹配
+
+### 2.3.4 其他
+
+### 2.3.5 通用
+1. （可选）类型标注
+
+    ```lean
+    def typeSpec := leading_parser " : " >> termParser
+    def optType : Parser := optional typeSpec
+    ```
+
+2. ...
 
 ## 2.3 属性范畴
 ### 2.3.1 内建属性
