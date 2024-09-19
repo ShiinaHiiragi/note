@@ -5,6 +5,7 @@
 - 本节不公开，所有内容录入后将被删除
 
 ## A
+- anonymous：匿名
 - applicative：应用
 - argument：参数
 - assumptions：假设
@@ -29,6 +30,7 @@
 - compile：编译
 - compiler：编译器
 - configuration：配置
+- constructor：构造函数
 
 ## D
 - declaration：声明
@@ -94,6 +96,7 @@
 
 ## P
 - parameter：参数
+- parentheses：括号
 - parse：句法解析
 - parser：（句法）解析器
 - pattern：模式
@@ -124,6 +127,7 @@
 - theorem：定理
 - token：词元
 - toolchain：工具链
+- tuple：有序对
 - type：类型
 
 ## U
