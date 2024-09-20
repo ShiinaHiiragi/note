@@ -257,11 +257,29 @@
         def optType : Parser := optional typeSpec
         ```
 
-3. 依值箭头表达式
+3. 依值箭头表达式：右结合
 
 ### 2.3.3 函数与应用
 1. $\lambda$ 表达式
-2. 应用
+2. 应用：左结合，可使用 `<|` 改变结合顺序
+
+    ```lean
+    def namedArgument := leading_parser (withAnonymousAntiquot := false) atomic ("(" >> ident >> " := ")
+      >> withoutPosition termParser
+      >> ")"
+    def ellipsis := leading_parser (withAnonymousAntiquot := false) ".."
+      >> notFollowedBy "." "`.` immediately after `..`"
+    def argument := checkWsBefore "expected space"
+      >> checkColGt "expected to be indented"
+      >> (namedArgument <|> ellipsis <|> termParser argPrec)
+
+    @[builtin_term_parser]
+    def app := trailing_parser:leadPrec:maxPrec many1 argument
+    ```
+
+    1. `namedArgument`：命名参数，形如 `(field := value)`
+    2. `ellipsis`：省略号 `..`
+    3. `termParser`：直接传入一个普通项
 
 ### 2.3.4 标识符与字面值
 1. 标识符与占位符

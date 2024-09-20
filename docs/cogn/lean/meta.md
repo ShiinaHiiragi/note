@@ -1,13 +1,20 @@
 # 4 元编程
 
 ## 4.1 句法解析参考
-- Lean 内部解析器使用宏 `leading_parser parser` 进行句法解析，调用函数 `leadingNode` 从而创建节点 `node name parser`，其中 `name : SyntaxNodeKind` 是节点名
+- Lean 内部解析器使用宏 `leading_parser parser` 或 `trailing_parser parser` 进行句法解析，前者调用函数 `leadingNode` 从而创建节点 `node name parser`，其中 `name : SyntaxNodeKind` 是节点种类
 
     ```lean
     @[builtin_term_parser]
     def «leading_parser» := leading_parser:leadPrec "leading_parser"
       >> optExprPrecedence
       >> optional withAnonymousAntiquot
+      >> ppSpace
+      >> termParser
+
+    @[builtin_term_parser]
+    def «trailing_parser» := leading_parser:leadPrec "trailing_parser"
+      >> optExprPrecedence
+      >> optExprPrecedence
       >> ppSpace
       >> termParser
     ```
