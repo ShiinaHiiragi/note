@@ -15,11 +15,11 @@ $$
 \text{Binary Code}
 $$
 
-1. 句法解析：将 Lean `String` 元素转换为 Lean `Syntax` 元素
+1. 句法解析（Parsing）：将 Lean `String` 元素转换为 Lean `Syntax` 元素
     1. 先执行一次 `syntax` 规则
     2. 然后执行零到多次 `(macro; syntax)` 规则，直到不存在可匹配的宏
-2. 繁饰：将 Lean `Syntax` 元素转换为 Lean `Expr` 元素、执行指令
-3. 求值与编译：将 Lean `Expr` 元素转换为可执行代码
+2. 繁饰（Elaboration）：将 Lean `Syntax` 元素转换为 Lean `Expr` 元素、执行指令
+3. 求值（Evaluation）与编译（Compilation）：将 Lean `Expr` 元素转换为可执行代码
 
 ## 1.2 环境配置
 ### 1.2.1 终端工具

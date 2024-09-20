@@ -6,6 +6,7 @@
 
 ## A
 - anonymous：匿名
+- antiquot：反引用
 - applicative：应用
 - argument：参数
 - assumptions：假设
@@ -121,12 +122,14 @@
 
 ## Q
 - query：查询
+- quotation：引用
 
 ## R
 - relation：关系
 
 ## S
 - script：脚本
+- separate：分隔
 - set：集合
 - sort：分类
 - specify：标注
