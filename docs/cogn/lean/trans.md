@@ -9,6 +9,7 @@
 - applicative：应用
 - argument：参数
 - assumptions：假设
+- arrow：箭头
 - attribute：属性
 - auxiliary：辅助
 - axiom：公理
@@ -27,6 +28,7 @@
 - codepoint：码点
 - coercion：隐式转换
 - command：指令
+- comment：注释
 - compile：编译
 - compiler：编译器
 - configuration：配置

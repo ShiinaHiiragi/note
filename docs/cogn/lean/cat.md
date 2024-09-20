@@ -111,6 +111,20 @@
       >> optional («partial» <|> «nonrec»)
     ```
 
+    1. `docComment`：文档注释，不可单独使用
+
+        ```lean
+        def docComment := leading_parser ppDedent $ "/--"
+        >> ppSpace
+        >> commentBody
+        >> ppLine
+        ```
+
+        1. `commentBody` 中对 `-/` 进行检测
+        2. 文档注释会被解析并保存到句法树中，可通过 `TSyntax.getDocString` 获得注释文本
+
+    2. `«partial»`
+
 ### 2.1.2 辅助指令
 1. `eval`：对项进行归约
 
@@ -127,79 +141,8 @@
     ```
 
 ## 2.2 项范畴
-### 2.3.1 表达式
-1. 类型相关
-
-    ```lean
-    @[builtin_term_parser]
-    def type := leading_parser "Type"
-      >> optional (checkWsBefore ""
-        >> checkPrec leadPrec
-        >> checkColGt
-        >> levelParser maxPrec
-      )
-    @[builtin_term_parser]
-    def sort := leading_parser "Sort"
-      >> optional (
-        checkWsBefore ""
-        >> checkPrec leadPrec
-        >> checkColGt
-        >> levelParser maxPrec
-      )
-    @[builtin_term_parser]
-    def prop := leading_parser "Prop"
-    ```
-
-    1. `Type`
-    2. `Sort`
-    3. `Prop`
-
-2. 标识符与字面值
-    1. 标识符与占位符相关
-
-        ```lean
-        @[builtin_term_parser]
-        def ident := checkPrec maxPrec >> Parser.ident
-        @[builtin_term_parser]
-        def hole := leading_parser "_"
-        @[builtin_term_parser]
-        def syntheticHole := leading_parser "?" >> (ident <|> hole)
-        def binderIdent : Parser := ident <|> hole
-        ```
-
-    2. 字面值：包括整数、浮点数、字符串与字符
-
-        ```lean
-        @[builtin_term_parser]
-        def num : Parser := checkPrec maxPrec >> numLit
-        @[builtin_term_parser]
-        def scientific : Parser := checkPrec maxPrec >> scientificLit
-        @[builtin_term_parser]
-        def str : Parser := checkPrec maxPrec >> strLit
-        @[builtin_term_parser]
-        def char : Parser := checkPrec maxPrec >> charLit
-        ```
-
-### 2.3.2 记号
-1. `typeAscription`：类型归属记号，指示 Lean 将表达式解释为指定类型
-
-    ```lean
-    def typeAscription := leading_parser "("
-      >> (withoutPosition (withoutForbidden (termParser >> " :" >> optional (ppSpace >> termParser))))
-      >> ")"
-    ```
-
-2. `structInst`：结构实例
-
-### 2.3.3 通用
-1. （可选）类型标注
-
-    ```lean
-    def typeSpec := leading_parser " : " >> termParser
-    def optType : Parser := optional typeSpec
-    ```
-
-2. `bracketedBinder`：括号绑定器
+### 2.3.1 变量与元变量
+1. `bracketedBinder`：括号绑定器
 
     ```lean
     def bracketedBinder (requireType := false) := withAntiquot (
@@ -269,7 +212,84 @@
         2. 通常模式下，Lean 自动进行类型类推断并插入 `C` 的实例
         3. 在 `@` 显式模式下，如果 `_` 被用于实例隐式参数，则仍可实行类型类推断；也可通过 `(_)` 禁用该特性
 
-### 2.3.4 其他
+2. 元变量
+
+### 2.3.2 宇宙与类型
+1. `Type` 与 `Sort`
+
+    ```lean
+    @[builtin_term_parser]
+    def type := leading_parser "Type"
+      >> optional (checkWsBefore ""
+        >> checkPrec leadPrec
+        >> checkColGt
+        >> levelParser maxPrec
+      )
+    @[builtin_term_parser]
+    def sort := leading_parser "Sort"
+      >> optional (
+        checkWsBefore ""
+        >> checkPrec leadPrec
+        >> checkColGt
+        >> levelParser maxPrec
+      )
+    @[builtin_term_parser]
+    def prop := leading_parser "Prop"
+    ```
+
+    1. `Type`
+    2. `Sort`
+    3. `Prop`
+
+2. 类型归属与类型标注
+    1. `typeAscription`：类型归属记号，指示 Lean 将表达式解释为指定类型
+
+        ```lean
+        def typeAscription := leading_parser "("
+          >> (withoutPosition (withoutForbidden (termParser >> " :" >> optional (ppSpace >> termParser))))
+          >> ")"
+        ```
+
+    2. 通用（可选）类型标注
+
+        ```lean
+        def typeSpec := leading_parser " : " >> termParser
+        def optType : Parser := optional typeSpec
+        ```
+
+3. 依值箭头表达式
+
+### 2.3.3 函数与应用
+1. $\lambda$ 表达式
+2. 应用
+
+### 2.3.4 标识符与字面值
+1. 标识符与占位符
+
+    ```lean
+    @[builtin_term_parser]
+    def ident := checkPrec maxPrec >> Parser.ident
+    @[builtin_term_parser]
+    def hole := leading_parser "_"
+    @[builtin_term_parser]
+    def syntheticHole := leading_parser "?" >> (ident <|> hole)
+    def binderIdent : Parser := ident <|> hole
+    ```
+
+2. 字面值：包括整数、浮点数、字符串与字符
+
+    ```lean
+    @[builtin_term_parser]
+    def num : Parser := checkPrec maxPrec >> numLit
+    @[builtin_term_parser]
+    def scientific : Parser := checkPrec maxPrec >> scientificLit
+    @[builtin_term_parser]
+    def str : Parser := checkPrec maxPrec >> strLit
+    @[builtin_term_parser]
+    def char : Parser := checkPrec maxPrec >> charLit
+    ```
+
+### 2.3.5 其他记号
 
 ## 2.3 属性范畴
 ### 2.3.1 内建属性
