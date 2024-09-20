@@ -8,7 +8,10 @@
         ```lean
         def declId := leading_parser ident
           >> optional (".{"
-            >> sepBy1 (recover ident (skipUntil (fun c =>c.isWhitespace || c ∈ [',', '}']))) ", "
+            >> sepBy1 (recover
+              ident
+              (skipUntil (fun c =>c.isWhitespace || c ∈ [',', '}']))
+            ) ", "
             >> "}"
           )
         ```
@@ -16,17 +19,18 @@
     2. `declSig` 与 `optDeclSig`：常量声明时的（可选）参数列表与类型标注，形如 `: type`
 
         ```lean
-        def declSig := leading_parser many (ppSpace >> (Term.binderIdent <|> Term.bracketedBinder))
+        def declSig := leading_parser many (ppSpace
+          >> (Term.binderIdent <|> Term.bracketedBinder)
+        )
           >> Term.typeSpec
 
-        def optDeclSig := leading_parser many (ppSpace >> (Term.binderIdent <|> Term.bracketedBinder))
+        def optDeclSig := leading_parser many (ppSpace
+          >> (Term.binderIdent <|> Term.bracketedBinder)
+        )
           >> Term.optType
         ```
 
     3. `declVal`：声明的右半部分，分为三种形式
-        - `declValSimple`：形如 `:= expr`，用于简单声明
-        - `declValEqns`：一系列 `| pat => expr`，用于 `match`
-        - `whereStructInst`：`where` 及跟随于其后的 `field := value`，用于 `structure`
 
         ```lean
         @[run_builtin_parser_attribute_hooks]
@@ -54,8 +58,28 @@
           >> sepByIndent (ppGroup whereStructField) "; " (allowTrailingSep := true)
           >> optional Term.whereDecls
 
-        def declVal := withAntiquot (mkAntiquot "declVal" `Lean.Parser.Command.declVal (isPseudoKind := true))
+        def declVal := withAntiquot (mkAntiquot
+          "declVal"
+          `Lean.Parser.Command.declVal
+          (isPseudoKind := true)
+        )
           <| declValSimple <|> declValEqns <|> whereStructInst
+        ```
+
+        1. `declValSimple`：形如 `:= expr`，用于简单声明
+        2. `declValEqns`：一系列 `| pat => expr`，用于 `match`
+        3. `whereStructInst`：`where` 及跟随于其后的 `field := value`，用于 `structure`
+
+    4. `optDeriving`：要求 Lean 生成代码
+
+        ```lean
+        def derivingClasses := sepBy1 (group
+          (ident >> optional (" with " >> ppIndent Term.structInst))
+        ) ", "
+        def optDeriving := leading_parser optional (ppLine
+          >> atomic ("deriving " >> notSymbol "instance")
+          >> derivingClasses
+        )
         ```
 
 2. `declaration`：常量声明
@@ -100,7 +124,49 @@
           >> optDefDeriving
         ```
 
-    3. `«structure»`：定义结构体
+    3. `«structure»`：定义结构体（与类型类）
+
+        ```lean
+        def structureTk := leading_parser "structure "
+        def classTk := leading_parser "class "
+
+        def «extends» := leading_parser " extends " >> sepBy1 termParser ", "
+        def structCtor := leading_parser atomic (ppIndent (declModifiers true >> ident >> " :: "))
+
+        def structExplicitBinder := leading_parser atomic (declModifiers true >> "(")
+          >> withoutPosition (many1 ident
+            >> ppIndent optDeclSig
+            >> optional (Term.binderTactic <|> Term.binderDefault)
+          )
+          >> ")"
+        def structImplicitBinder := leading_parser atomic (declModifiers true >> "{")
+          >> withoutPosition (many1 ident >> declSig)
+          >> "}"
+        def structInstBinder := leading_parser atomic (declModifiers true >> "[")
+          >> withoutPosition (many1 ident >> declSig)
+          >> "]"
+        def structSimpleBinder := leading_parser atomic (declModifiers true >> ident)
+          >> optDeclSig
+          >> optional (Term.binderTactic <|> Term.binderDefault)
+
+        def structFields := leading_parser manyIndent
+          <| ppLine
+          >> checkColGe
+          >> ppGroup (structExplicitBinder
+            <|> structImplicitBinder
+            <|> structInstBinder
+            <|> structSimpleBinder
+          )
+
+        def «structure» := leading_parser (structureTk <|> classTk)
+          >> declId
+          >> ppIndent (many (ppSpace >> Term.bracketedBinder) >> optional «extends» >> Term.optType)
+          >> optional ((symbol " := " <|> " where ") >> optional structCtor >> structFields)
+          >> optDeriving
+        ```
+
+        1. `«extends»`
+        2. `structCtor`
 
 3. `declModifiers`：声明修饰符
 
@@ -117,9 +183,9 @@
 
         ```lean
         def docComment := leading_parser ppDedent $ "/--"
-        >> ppSpace
-        >> commentBody
-        >> ppLine
+          >> ppSpace
+          >> commentBody
+          >> ppLine
         ```
 
         1. `commentBody` 中对 `-/` 进行检测
@@ -147,13 +213,6 @@
 1. `bracketedBinder`：括号绑定器
 
     ```lean
-    def bracketedBinder (requireType := false) := withAntiquot (
-        mkAntiquot "bracketedBinder" decl_name% (isPseudoKind := true)
-    ) <| explicitBinder requireType
-      <|> strictImplicitBinder requireType
-      <|> implicitBinder requireType
-      <|> instBinder
-
     def binderType (requireType := false) : Parser := if requireType
       then node nullKind (" : " >> termParser)
       else optional (" : " >> termParser)
@@ -161,6 +220,16 @@
       >> Tactic.tacticSeq
     def binderDefault := leading_parser " := "
       >> termParser
+
+    def bracketedBinder (requireType := false) := withAntiquot (mkAntiquot
+      "bracketedBinder"
+      decl_name%
+      (isPseudoKind := true)
+    )
+      <| explicitBinder requireType
+      <|> strictImplicitBinder requireType
+      <|> implicitBinder requireType
+      <|> instBinder
     ```
 
     1. `explicitBinder`：显式绑定器，形如 `(x y : A)` 或 `(x y)`，可通过 `(x : A := v)` 或 `(x : A := by tac)` 指定默认值
@@ -170,7 +239,8 @@
           >> withoutPosition (many1 binderIdent
             >> binderType requireType
             >> optional (binderTactic <|> binderDefault)
-          ) >> ")"
+          )
+          >> ")"
         ```
 
     2. `implicitBinder`：隐式绑定器，形如 `{x y : A}` 或 `{x y}`
@@ -230,8 +300,7 @@
 
     @[builtin_term_parser]
     def sort := leading_parser "Sort"
-      >> optional (
-        checkWsBefore ""
+      >> optional (checkWsBefore ""
         >> checkPrec leadPrec
         >> checkColGt
         >> levelParser maxPrec
@@ -250,7 +319,9 @@
 
         ```lean
         def typeAscription := leading_parser "("
-          >> (withoutPosition (withoutForbidden (termParser >> " :" >> optional (ppSpace >> termParser))))
+          >> (withoutPosition (withoutForbidden
+            (termParser >> " :" >> optional (ppSpace >> termParser))
+          ))
           >> ")"
         ```
 
@@ -268,7 +339,9 @@
 2. 应用：左结合，可使用 `<|` 改变结合顺序
 
     ```lean
-    def namedArgument := leading_parser (withAnonymousAntiquot := false) atomic ("(" >> ident >> " := ")
+    def namedArgument := leading_parser (withAnonymousAntiquot := false) atomic (
+        "(" >> ident >> " := "
+      )
       >> withoutPosition termParser
       >> ")"
     def ellipsis := leading_parser (withAnonymousAntiquot := false) ".."
