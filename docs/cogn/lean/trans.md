@@ -5,6 +5,7 @@
 - 本节不公开，所有内容录入后将被删除
 
 ## A
+- accessor：访问器
 - anonymous：匿名
 - antiquot：反引用
 - applicative：应用
@@ -35,7 +36,7 @@
 - compiler：编译器
 - configuration：配置
 - constant：常量
-- constructor：构造函数
+- constructor：构造子
 
 ## D
 - declaration：声明
@@ -60,7 +61,7 @@
 - extended：扩展
 
 ## F
-- field：域
+- field：字段
 - function：函数
 - functional：函数式
 - functor：函子
@@ -136,7 +137,7 @@
 - specify：标注
 - strict：严格
 - string：字符串
-- structure：结构
+- structure：结构（体）
 - syntax：句法
 
 ## T

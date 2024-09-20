@@ -166,7 +166,47 @@
         ```
 
         1. `«extends»`
-        2. `structCtor`
+        2. `structCtor`：结构体构造子，结构 `S` 的默认构造子名称为 `S.mk`
+            - 构造子是一个接受所有字段作为输入值的函数
+            - 可通过在 `:=` 或 `where` 后、所有字段前添加 `name ::` 以修改默认构造子名称为 `name`
+        3. 访问器：结构体的每个字段定义了相应的访问器函数，其在结构体的命名空间中与字段具有相同名称
+
+        !!! note "特殊结构体构造子"
+
+            1. `structInst`：形如 `{ x := e, ... }`
+
+                ```lean
+                def structInstField := ppGroup $ leading_parser structInstLVal >> " := " >> termParser
+                def structInstFieldAbbrev := leading_parser atomic (ident
+                >> notFollowedBy ("." <|> ":=" <|> symbol "[") "invalid field abbreviation"
+                )
+
+                def optEllipsis := leading_parser optional " .."
+
+                @[builtin_term_parser]
+                def structInst := leading_parser "{ "
+                >> withoutPosition (optional (atomic (sepBy1 termParser ", " >> " with "))
+                    >> sepByIndent (structInstFieldAbbrev <|> structInstField) ", " (allowTrailingSep := true)
+                    >> optEllipsis
+                    >> optional (" : " >> termParser))
+                >> " }"
+                ```
+
+                - 若 `e` 与 `x` 同名，则 `:= e` 可被省略
+                - 若结构体元素预期类型无法被自动推断，可通过 `:` 在大括号内指定类型（在大括号外指定类型的行为是 `typeAscription`）
+                - 若已存在结构体元素 `legacy`，则可通过 `with` 创建一个部分不同的新元素，例如 `{ legacy with x := e }`
+
+            2. `anonymousCtor`：匿名构造子，形如 `⟨e, ...⟩`
+
+                ```lean
+                @[builtin_term_parser]
+                def anonymousCtor := leading_parser "⟨"
+                  >> withoutPosition (withoutForbidden (sepBy termParser ", " (allowTrailingSep := true)))
+                  >> "⟩"
+                ```
+
+                - 相当于 `c e ...`，其中预期类型是具有单个构造子 `c` 的归纳类型
+                - 如果参数超过两个，则余下参数变为新匿名构造子应用，例如 `⟨a, b, c⟩ : α × (β × γ)` 等价于 `⟨a, ⟨b, c⟩⟩`
 
 3. `declModifiers`：声明修饰符
 
@@ -191,12 +231,26 @@
         1. `commentBody` 中对 `-/` 进行检测
         2. 文档注释会被解析并保存到句法树中，可通过 `TSyntax.getDocString` 获得注释文本
 
-    2. `«partial»`
+    2. `attributes`：属性，即与对象相关联的标签
+
+        ```lean
+        def «scoped» := leading_parser "scoped "
+        def «local»  := leading_parser "local "
+        def attrKind := leading_parser optional («scoped» <|> «local»)
+
+        def attrInstance := ppGroup $ leading_parser attrKind
+          >> attrParser
+
+        def attributes := leading_parser "@["
+          >> withoutPosition (sepBy1 attrInstance ", ")
+          >> "] "
+        ```
 
 ### 2.1.2 辅助指令
 1. `eval`：对项进行归约
 
     ```lean
+    @[builtin_command_parser]
     def eval := leading_parser "#eval "
       >> termParser
     ```
@@ -204,6 +258,7 @@
 2. `check`：仅检查项的类型而不求值
 
     ```lean
+    @[builtin_command_parser]
     def check := leading_parser "#check "
       >> termParser
     ```
@@ -358,7 +413,18 @@
     2. `ellipsis`：省略号 `..`
     3. `termParser`：直接传入一个普通项
 
-3. 扩展域记号
+3. 扩展字段记号：若 `e : T`，则可将 `T.f e` 简记为 `e.f`，`f` 可以是序号或标识符
+
+    ```lean
+    @[builtin_term_parser]
+    def proj := trailing_parser checkNoWsBefore
+      >> "."
+      >> checkNoWsBefore
+      >> (fieldIdx <|> rawIdent)
+    ```
+
+    1. 若 `e : T` 且存在 `T.f` 的声明，则 `e.f` 等价于 `T.f (p := e)`，其中 `p` 是第一个类型为 `T` 的显式参数
+    2. 若 `T` 是一个结构体类型且 `i` 是一个正数，则 `e.i` 是 `e` 的第 `i` 个字段之简写
 
 ### 2.3.4 标识符与字面值
 1. 标识符与占位符
@@ -389,6 +455,8 @@
 ### 2.3.5 其他记号
 
 ## 2.3 属性范畴
+<!-- TODO：解释本文出现的所有属性 -->
+
 ### 2.3.1 内建属性
 
 ### 2.3.2 标签属性
