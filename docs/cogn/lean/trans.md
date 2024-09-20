@@ -127,6 +127,7 @@
 - quotation：引用
 
 ## R
+- recursive：递归
 - relation：关系
 
 ## S
@@ -138,6 +139,7 @@
 - strict：严格
 - string：字符串
 - structure：结构（体）
+- sum：和
 - syntax：句法
 
 ## T

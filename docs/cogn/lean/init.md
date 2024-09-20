@@ -30,7 +30,7 @@
 ## 3.2 内建类型
 ### 3.2.1 结构体类型
 1. 数据类型
-    1. `Prod`：直积
+    1. `Prod`：直积类型
 
         ```lean
         structure Prod (α : Type u) (β : Type v) where
@@ -67,18 +67,40 @@
 
 ### 3.2.2 归纳类型
 1. 数据类型
-    1. `Unit`
+    1. `Sum`：和类型
 
         ```lean
-        inductive PUnit : Sort u where
-          | unit : PUnit
-
-        abbrev Unit : Type := PUnit
-        @[match_pattern]
-        abbrev Unit.unit : Unit := PUnit.unit
+        inductive Sum (α : Type u) (β : Type v) where
+          | inl (val : α) : Sum α β
+          | inr (val : β) : Sum α β
         ```
 
-    2. `Nat`：自然数
+    2. `Empty` 与 `Unit`：空类型与单位类型
+
+        ```lean
+        inductive Empty : Type
+
+        inductive PUnit : Sort u where
+          | unit : PUnit
+        ```
+
+    3. `Option`：可选类型
+
+        ```lean
+        inductive Option (α : Type u) where
+          | none : Option α
+          | some (val : α) : Option α
+        ```
+
+    4. `Bool`：真值
+
+        ```lean
+        inductive Bool : Type where
+          | false : Bool
+          | true : Bool
+        ```
+
+    5. `Nat`：自然数
 
         ```lean
         inductive Nat where
