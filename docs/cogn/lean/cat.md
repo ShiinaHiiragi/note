@@ -16,7 +16,7 @@
           )
         ```
 
-    2. `declSig` 与 `optDeclSig`：常量声明时的（可选）参数列表与类型标注，形如 `: type`
+    2. `declSig` 与 `optDeclSig`：常量声明时的（可选）参数列表与类型标注，形如 `[...] : type`
 
         ```lean
         def declSig := leading_parser many (ppSpace
@@ -124,7 +124,30 @@
           >> optDefDeriving
         ```
 
-    3. `«structure»`：定义结构体（与类型类）
+    3. «inductive»：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
+
+        ```lean
+        def ctor := leading_parser atomic (optional docComment >> "\n| ")
+          >> ppGroup (declModifiers true >> rawIdent >> optDeclSig)
+
+        def computedField := leading_parser declModifiers true
+          >> ident
+          >> " : "
+          >> termParser
+          >> Term.matchAlts
+        def computedFields := leading_parser "with"
+          >> manyIndent (ppLine >> ppGroup computedField)
+
+        def «inductive» := leading_parser "inductive "
+          >> recover declId skipUntilWsOrDelim
+          >> ppIndent optDeclSig
+          >> optional (symbol " :=" <|> " where")
+          >> many ctor
+          >> optional (ppDedent ppLine >> computedFields)
+          >> optDeriving
+        ```
+
+    4. `«structure»`：定义结构体（与类型类）
 
         ```lean
         def structureTk := leading_parser "structure "
@@ -165,7 +188,7 @@
           >> optDeriving
         ```
 
-        1. `«extends»`
+        1. `«extends»` <!-- TODO -->
         2. `structCtor`：结构体构造子，结构 `S` 的默认构造子名称为 `S.mk`
             - 构造子是一个接受所有字段作为输入值的函数
             - 可通过在 `:=` 或 `where` 后、所有字段前添加 `name ::` 以修改默认构造子名称为 `name`
@@ -339,7 +362,7 @@
         2. 通常模式下，Lean 自动进行类型类推断并插入 `C` 的实例
         3. 在 `@` 显式模式下，如果 `_` 被用于实例隐式参数，则仍可实行类型类推断；也可通过 `(_)` 禁用该特性
 
-2. 元变量
+2. 元变量 <!-- TODO -->
 
 ### 2.3.2 宇宙与类型
 1. `Type` 与 `Sort`
@@ -365,9 +388,9 @@
     def prop := leading_parser "Prop"
     ```
 
-    1. `Type`：类型
-    2. `Sort`：分类
-    3. `Prop`
+    1. `Type`：类型 <!-- TODO -->
+    2. `Sort`：分类 <!-- TODO -->
+    3. `Prop` <!-- TODO -->
 
 2. 类型归属与类型标注
     1. `typeAscription`：类型归属记号，指示 Lean 将表达式解释为指定类型
@@ -387,10 +410,10 @@
         def optType : Parser := optional typeSpec
         ```
 
-3. 依值箭头表达式：右结合
+3. 依值箭头表达式：右结合 <!-- TODO -->
 
 ### 2.3.3 函数与应用
-1. $\lambda$ 表达式
+1. $\lambda$ 表达式 <!-- TODO -->
 2. 应用：左结合，可使用 `<|` 改变结合顺序
 
     ```lean

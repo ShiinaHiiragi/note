@@ -30,7 +30,7 @@
 ## 3.2 内建类型
 ### 3.2.1 结构体类型
 1. 数据类型
-    1. `Prod`：直积类型
+    1. `Prod`：直积类型 <!-- TODO -->
 
         ```lean
         structure Prod (α : Type u) (β : Type v) where
@@ -39,7 +39,7 @@
           snd : β
         ```
 
-    2. `Float`：浮点数
+    2. `Float`：浮点数 <!-- TODO -->
 
         ```lean
         structure FloatSpec where
@@ -63,11 +63,11 @@
           val : floatSpec.float
         ```
 
-2. 数据结构
+2. 数据结构 <!-- TODO -->
 
 ### 3.2.2 归纳类型
 1. 数据类型
-    1. `Sum`：和类型
+    1. `Sum`：和类型 <!-- TODO -->
 
         ```lean
         inductive Sum (α : Type u) (β : Type v) where
@@ -75,7 +75,7 @@
           | inr (val : β) : Sum α β
         ```
 
-    2. `Empty` 与 `Unit`：空类型与单位类型
+    2. `Empty` 与 `Unit`：空类型与单位类型 <!-- TODO -->
 
         ```lean
         inductive Empty : Type
@@ -84,7 +84,7 @@
           | unit : PUnit
         ```
 
-    3. `Option`：可选类型
+    3. `Option`：可选类型 <!-- TODO -->
 
         ```lean
         inductive Option (α : Type u) where
@@ -92,7 +92,7 @@
           | some (val : α) : Option α
         ```
 
-    4. `Bool`：真值
+    4. `Bool`：真值 <!-- TODO -->
 
         ```lean
         inductive Bool : Type where
@@ -100,7 +100,7 @@
           | true : Bool
         ```
 
-    5. `Nat`：自然数
+    5. `Nat`：自然数 <!-- TODO -->
 
         ```lean
         inductive Nat where
@@ -108,9 +108,9 @@
           | succ (n : Nat) : Nat
         ```
 
-2. 数据结构
+2. 数据结构 <!-- TODO -->
 3. 编译相关
-    1. `Name`：名称
+    1. `Name`：名称 <!-- TODO -->
 
         ```lean
         inductive Name where
@@ -119,7 +119,7 @@
           | num (pre : Name) (i : Nat)
         ```
 
-    2. `Syntax`：句法结构，其中 `SyntaxNodeKind` 即节点种类，用于给 `Syntax` 元素分类
+    2. `Syntax`：句法结构，其中 `SyntaxNodeKind` 即节点种类，用于给 `Syntax` 元素分类 <!-- TODO -->
 
         ```lean
         abbrev SyntaxNodeKind := Name
@@ -133,7 +133,7 @@
           raw : Syntax
         ```
 
-    3. `Expr`：表达式
+    3. `Expr`：表达式 <!-- TODO -->
 
         ```lean
         inductive Expr where
