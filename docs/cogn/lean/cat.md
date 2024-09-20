@@ -261,7 +261,7 @@
 
         ```lean
         def «scoped» := leading_parser "scoped "
-        def «local»  := leading_parser "local "
+        def «local» := leading_parser "local "
         def attrKind := leading_parser optional («scoped» <|> «local»)
 
         def attrInstance := ppGroup $ leading_parser attrKind
@@ -395,7 +395,31 @@
     2. `Sort`：分类 <!-- TODO -->
     3. `Prop` <!-- TODO -->
 
-2. 类型归属与类型标注
+2. 函数类型表达式 <!-- TODO -->
+    1. `arrow`：箭头表达式，右结合
+
+        ```lean
+        @[builtin_term_parser] def arrow := trailing_parser checkPrec 25
+          >> unicodeSymbol " → " " -> "
+          >> termParser 25
+        ```
+
+    2. `depArrow` 与 `«forall»`：依值箭头表达式与任意符号，左结合
+
+        ```lean
+        @[builtin_term_parser] def depArrow := leading_parser:25 bracketedBinder true
+          >> unicodeSymbol " → " " -> "
+          >> termParser
+
+        @[builtin_term_parser]
+        def «forall» := leading_parser:leadPrec unicodeSymbol "∀" "forall"
+          >> many1 (ppSpace >> (binderIdent <|> bracketedBinder))
+          >> optType
+          >> ", "
+          >> termParser
+        ```
+
+3. 类型归属与类型标注
     1. `typeAscription`：类型归属记号，指示 Lean 将表达式解释为指定类型
 
         ```lean
@@ -412,8 +436,6 @@
         def typeSpec := leading_parser " : " >> termParser
         def optType : Parser := optional typeSpec
         ```
-
-3. 依值箭头表达式：右结合 <!-- TODO -->
 
 ### 2.3.3 函数与应用
 1. $\lambda$ 表达式 <!-- TODO -->
@@ -479,6 +501,54 @@
     ```
 
 ### 2.3.5 其他记号
+1. `«match»` 模式匹配，形如 `match e, ... with | p, ... => f | ...`
+
+    ```lean
+    def trueVal := leading_parser nonReservedSymbol "true"
+    def falseVal := leading_parser nonReservedSymbol "false"
+    def generalizingParam := leading_parser atomic ("(" >> nonReservedSymbol "generalizing")
+      >> " := "
+      >> (trueVal <|> falseVal)  >> ")"
+      >> ppSpace
+
+    def motive := leading_parser atomic ("(" >> nonReservedSymbol "motive" >> " := ")
+      >> withoutPosition termParser
+      >> ")"
+      >> ppSpace
+
+    def matchDiscr := leading_parser optional (atomic (ident >> " : "))
+      >> termParser
+
+    def matchAlt (rhsParser : Parser := termParser) : Parser :=
+      leading_parser (withAnonymousAntiquot := false) "| "
+        >> ppIndent (sepBy1 (sepBy1 termParser ", ") " | "
+          >> darrow
+          >> checkColGe "..."
+          >> rhsParser
+        )
+    def matchAlts (rhsParser : Parser := termParser) : Parser :=
+      leading_parser withPosition $ many1Indent (ppLine >> matchAlt rhsParser)
+
+    @[builtin_term_parser]
+    def «match» := leading_parser:leadPrec "match "
+      >> optional generalizingParam
+      >> optional motive
+      >> sepBy1 matchDiscr ", "
+      >> " with"
+      >> ppDedent matchAlts
+    ```
+
+    1. `generalizingParam`：当不构建证明时，`match` 不会自动替换因变量类型中匹配的变量，可用 `match (generalizing := true)` 以强制执行此操作
+    2. `matchDiscr`：形如 `h1 : e1, e2, h3 : e3, ...`
+        1. 若以 `match h : e, ... with | p, ... => f | ...` 使用模式匹配，则在 `f` 中可用 ``h : e = p``
+        2. `Syntax` 引用也可用于模式匹配，从而将 `Syntax` 值与引号、模式变量或占位符 `_` 进行匹配
+    3. `matchAlts`：若以 `,` 分隔多个 `matchDiscr`，则 `matchAlts` 也应对应相同数量的参数
+
+2. 其他符号
+
+    ```lean
+    def darrow : Parser := " => "
+    ```
 
 ## 2.3 属性范畴
 <!-- TODO：解释本文出现的所有属性 -->
