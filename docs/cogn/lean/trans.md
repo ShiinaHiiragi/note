@@ -19,6 +19,7 @@
 - binder：绑定器
 - binary：二进制
 - bound：约束
+- bracket：括号
 - build：构建
 - built-in：内建
 
@@ -32,6 +33,7 @@
 - compile：编译
 - compiler：编译器
 - configuration：配置
+- constant：常量
 - constructor：构造函数
 
 ## D
@@ -39,6 +41,7 @@
 - definition：定义
 - delimiter：分隔符
 - dependency：依赖项
+- dependent：依值
 - distribution：分发
 - document：文档
 - downstream：下游
@@ -51,9 +54,12 @@
 - environment：环境
 - escape：转义字符
 - evaluate：求值
+- explicit：显式
 - expression：表达式
+- extended：扩展
 
 ## F
+- field：域
 - function：函数
 - functional：函数式
 - functor：函子
@@ -68,8 +74,10 @@
 
 ## I
 - identifier：标识符
+- implicit：隐式
 - indent：缩进
 - inductive：归纳
+- instance：实例
 - integer：整数
 - interpolation：插值
 
@@ -80,6 +88,7 @@
 - level：层级
 - library：库
 - list：列表
+- literal：字面值
 
 ## M
 - macro：宏
@@ -91,6 +100,7 @@
 
 ## N
 - name：名称
+- node：节点
 - notation：记号
 
 ## O
@@ -118,6 +128,9 @@
 ## S
 - script：脚本
 - set：集合
+- sort：分类
+- specify：标注
+- strict：严格
 - string：字符串
 - structure：结构
 - syntax：句法

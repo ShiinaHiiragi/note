@@ -35,14 +35,18 @@
           | num (pre : Name) (i : Nat)
         ```
 
-    2. `Syntax`：句法结构
+    2. `Syntax`：句法结构，其中 `SyntaxNodeKind` 即节点种类，用于给 `Syntax` 元素分类
 
         ```lean
+        abbrev SyntaxNodeKind := Name
         inductive Syntax where
           | missing
           | node (info : SourceInfo) (kind : SyntaxNodeKind) (args : Array Syntax)
           | atom (info : SourceInfo) (val : String)
           | ident (info : SourceInfo) (rawVal : Substring) (val : Name) (preresolved : List Syntax.Preresolved)
+
+        structure TSyntax (ks : SyntaxNodeKinds) where
+          raw : Syntax
         ```
 
     3. `Expr`：表达式

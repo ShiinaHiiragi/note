@@ -237,8 +237,8 @@
     def prop := leading_parser "Prop"
     ```
 
-    1. `Type`
-    2. `Sort`
+    1. `Type`：类型
+    2. `Sort`：分类
     3. `Prop`
 
 2. 类型归属与类型标注
@@ -280,6 +280,8 @@
     1. `namedArgument`：命名参数，形如 `(field := value)`
     2. `ellipsis`：省略号 `..`
     3. `termParser`：直接传入一个普通项
+
+3. 扩展域记号
 
 ### 2.3.4 标识符与字面值
 1. 标识符与占位符
