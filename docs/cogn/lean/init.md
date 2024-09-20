@@ -2,18 +2,26 @@
 
 ## 3.1 预定义记号
 ### 3.1.1 表达式
-1. `termIfThenElse`：条件表达式
+1. `termIfThenElse`
 
     ```lean
-    @[inherit_doc ite] syntax (name := termIfThenElse)
-      ppRealGroup(
-        ppRealFill(ppIndent("if " term " then") ppSpace term)
-        ppDedent(ppSpace)
-        ppRealFill("else " term)
-      ) : term
+    @[inherit_doc ite]
+    syntax (name := termIfThenElse) ppRealGroup(
+      ppRealFill(ppIndent("if " term " then") ppSpace term)
+      ppDedent(ppSpace)
+      ppRealFill("else " term)
+    ) : term
     ```
 
-2. ...
+2. `termIfLet`
+
+    ```lean
+    syntax (name := termIfLet) ppRealGroup(
+      ppRealFill(ppIndent("if " "let " term " := " term " then") ppSpace term)
+      ppDedent(ppSpace)
+      ppRealFill("else " term)
+    ) : term
+    ```
 
 ### 3.1.2 操作符
 
@@ -21,9 +29,63 @@
 
 ## 3.2 内建类型
 ### 3.2.1 结构类型
+1. 数据类型
+    1. `Prod`：直积
+
+        ```lean
+        structure Prod (α : Type u) (β : Type v) where
+          mk ::
+          fst : α
+          snd : β
+        ```
+
+    2. `Float`：浮点数
+
+        ```lean
+        structure FloatSpec where
+          float : Type
+          val   : float
+          lt    : float → float → Prop
+          le    : float → float → Prop
+          decLt : DecidableRel lt
+          decLe : DecidableRel le
+
+        opaque floatSpec : FloatSpec := {
+          float := Unit,
+          val   := (),
+          lt    := fun _ _ => True,
+          le    := fun _ _ => True,
+          decLt := fun _ _ => inferInstanceAs (Decidable True),
+          decLe := fun _ _ => inferInstanceAs (Decidable True)
+        }
+
+        structure Float where
+          val : floatSpec.float
+        ```
+
+2. 数据结构
 
 ### 3.2.2 归纳类型
 1. 数据类型
+    1. `Unit`
+
+        ```lean
+        inductive PUnit : Sort u where
+          | unit : PUnit
+
+        abbrev Unit : Type := PUnit
+        @[match_pattern]
+        abbrev Unit.unit : Unit := PUnit.unit
+        ```
+
+    2. `Nat`：自然数
+
+        ```lean
+        inductive Nat where
+          | zero : Nat
+          | succ (n : Nat) : Nat
+        ```
+
 2. 数据结构
 3. 编译相关
     1. `Name`：名称

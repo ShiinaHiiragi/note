@@ -100,6 +100,8 @@
           >> optDefDeriving
         ```
 
+    3. `«structure»`：定义结构体
+
 3. `declModifiers`：声明修饰符
 
     ```lean
@@ -225,6 +227,7 @@
         >> checkColGt
         >> levelParser maxPrec
       )
+
     @[builtin_term_parser]
     def sort := leading_parser "Sort"
       >> optional (
@@ -233,6 +236,7 @@
         >> checkColGt
         >> levelParser maxPrec
       )
+
     @[builtin_term_parser]
     def prop := leading_parser "Prop"
     ```

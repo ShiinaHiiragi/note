@@ -116,6 +116,7 @@
 - placeholder：占位符
 - predicate：谓词
 - priority：优先级
+- product：直积
 - program：程序
 - programming：编程
 - proposition：命题
