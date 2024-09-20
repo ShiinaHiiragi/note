@@ -61,6 +61,7 @@
 - extended：扩展
 
 ## F
+- family：族
 - field：字段
 - function：函数
 - functional：函数式
@@ -78,6 +79,7 @@
 - identifier：标识符
 - implicit：隐式
 - indent：缩进
+- index：索引
 - inductive：归纳
 - instance：实例
 - integer：整数
