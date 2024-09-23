@@ -177,17 +177,23 @@
 
         def structFields := leading_parser manyIndent
           <| ppLine
-          >> checkColGe
-          >> ppGroup (structExplicitBinder
-            <|> structImplicitBinder
-            <|> structInstBinder
-            <|> structSimpleBinder
-          )
+            >> checkColGe
+            >> ppGroup (structExplicitBinder
+              <|> structImplicitBinder
+              <|> structInstBinder
+              <|> structSimpleBinder
+            )
 
         def «structure» := leading_parser (structureTk <|> classTk)
           >> declId
-          >> ppIndent (many (ppSpace >> Term.bracketedBinder) >> optional «extends» >> Term.optType)
-          >> optional ((symbol " := " <|> " where ") >> optional structCtor >> structFields)
+          >> ppIndent (many (ppSpace >> Term.bracketedBinder)
+            >> optional «extends»
+            >> Term.optType
+          )
+          >> optional ((symbol " := " <|> " where ")
+            >> optional structCtor
+            >> structFields
+          )
           >> optDeriving
         ```
 
@@ -202,9 +208,10 @@
             1. `structInst`：形如 `{ x := e, ... }`
 
                 ```lean
-                def structInstField := ppGroup $ leading_parser structInstLVal >> " := " >> termParser
+                def structInstField := ppGroup
+                  $ leading_parser structInstLVal >> " := " >> termParser
                 def structInstFieldAbbrev := leading_parser atomic (ident
-                >> notFollowedBy ("." <|> ":=" <|> symbol "[") "invalid field abbreviation"
+                  >> notFollowedBy ("." <|> ":=" <|> symbol "[") "ERROR INFO"
                 )
 
                 def optEllipsis := leading_parser optional " .."
@@ -212,9 +219,13 @@
                 @[builtin_term_parser]
                 def structInst := leading_parser "{ "
                 >> withoutPosition (optional (atomic (sepBy1 termParser ", " >> " with "))
-                    >> sepByIndent (structInstFieldAbbrev <|> structInstField) ", " (allowTrailingSep := true)
-                    >> optEllipsis
-                    >> optional (" : " >> termParser))
+                  >> (sepByIndent
+                    (structInstFieldAbbrev <|> structInstField)
+                    ", "
+                    (allowTrailingSep := true)
+                  )
+                  >> optEllipsis
+                  >> optional (" : " >> termParser))
                 >> " }"
                 ```
 
@@ -227,7 +238,9 @@
                 ```lean
                 @[builtin_term_parser]
                 def anonymousCtor := leading_parser "⟨"
-                  >> withoutPosition (withoutForbidden (sepBy termParser ", " (allowTrailingSep := true)))
+                  >> withoutPosition (withoutForbidden
+                    (sepBy termParser ", " (allowTrailingSep := true))
+                  )
                   >> "⟩"
                 ```
 
@@ -308,9 +321,9 @@
       (isPseudoKind := true)
     )
       <| explicitBinder requireType
-      <|> strictImplicitBinder requireType
-      <|> implicitBinder requireType
-      <|> instBinder
+        <|> strictImplicitBinder requireType
+        <|> implicitBinder requireType
+        <|> instBinder
     ```
 
     1. `explicitBinder`：显式绑定器，形如 `(x y : A)` 或 `(x y)`，可通过 `(x : A := v)` 或 `(x : A := by tac)` 指定默认值
@@ -343,9 +356,9 @@
 
         def strictImplicitBinder (requireType := false) := leading_parser ppGroup
           <| strictImplicitLeftBracket
-          >> many1 binderIdent
-          >> binderType requireType
-          >> strictImplicitRightBracket
+            >> many1 binderIdent
+            >> binderType requireType
+            >> strictImplicitRightBracket
         ```
 
         1. 除非指定了至少一个后续显式参数，严格隐式绑定器不会自动插入占位符 `_`
@@ -523,7 +536,7 @@
       leading_parser (withAnonymousAntiquot := false) "| "
         >> ppIndent (sepBy1 (sepBy1 termParser ", ") " | "
           >> darrow
-          >> checkColGe "..."
+          >> checkColGe "ERROR INFO"
           >> rhsParser
         )
     def matchAlts (rhsParser : Parser := termParser) : Parser :=

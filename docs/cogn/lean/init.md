@@ -127,7 +127,7 @@
           | missing
           | node (info : SourceInfo) (kind : SyntaxNodeKind) (args : Array Syntax)
           | atom (info : SourceInfo) (val : String)
-          | ident (info : SourceInfo) (rawVal : Substring) (val : Name) (preresolved : List Syntax.Preresolved)
+          | ident (info : SourceInfo) (rawVal : Substring) (val : Name) (preresolved : List Preresolved)
 
         structure TSyntax (ks : SyntaxNodeKinds) where
           raw : Syntax

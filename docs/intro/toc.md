@@ -14,7 +14,7 @@
     - 『Metaprogramming in Lean 4』（Arthur Paulino、Damiano Testa、Edward Ayers、Evgenia Karunus、Henrik Böving、Jannis Limperg、Siddhartha Gadgil、Siddharth Bhat）
 
 #### 1 系统与原理
-1. 编译原理
+1. 编译过程
 2. 环境配置
 3. 风格规约
 
