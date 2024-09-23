@@ -517,7 +517,7 @@
     def binderIdent : Parser := ident <|> hole
     ```
 
-2. 字面值：包括整数、浮点数、字符串与字符
+2. 字面值：包括整数、浮点数、字符串、字符与名称
 
     ```lean
     @[builtin_term_parser]
@@ -528,6 +528,8 @@
     def str : Parser := checkPrec maxPrec >> strLit
     @[builtin_term_parser]
     def char : Parser := checkPrec maxPrec >> charLit
+    @[builtin_term_parser]
+    def quotedName := leading_parser nameLit
     ```
 
 ### 2.3.5 其他记号
@@ -574,7 +576,26 @@
         2. `Syntax` 引用也可用于模式匹配，从而将 `Syntax` 值与引号、模式变量或占位符 `_` 进行匹配
     3. `matchAlts`：若以 `,` 分隔多个 `matchDiscr`，则 `matchAlts` 也应对应相同数量的参数
 
-2. 通用记号
+2. 引号
+    1. `doubleQuotedName`：表示 `Name` 元素，但会请求 Lean 静态检查名称是否位于声明范围内
+
+        ```lean
+        @[builtin_term_parser]
+        def doubleQuotedName := leading_parser "`"
+          >> checkNoWsBefore
+          >> rawCh '`' (trailingWs := false)
+          >> ident
+        ```
+
+    2. `quot`：（一系列）命令的句法引用，使用 `:` 指定句法成分种类
+
+        ```lean
+        @[builtin_term_parser low] def quot := leading_parser "`("
+          >> withoutPosition (incQuotDepth (many1Unbox commandParser))
+          >> ")"
+        ```
+
+3. 通用记号
 
     ```lean
     def darrow : Parser := " => "

@@ -41,7 +41,7 @@
         @[inherit_doc] infixr:35 " × " => Prod
         ```
 
-    2. `Float`：浮点数 <!-- TODO -->
+    2. `Float`：浮点数
 
         ```lean
         structure FloatSpec where
@@ -66,13 +66,16 @@
         ```
 
 2. 数据结构
-    1. `Array`：数组
+    1. `Array`：数组，此类型在运行时有特殊处理
 
         ```lean
         structure Array (α : Type u) where
           mk ::
           data : List α
         ```
+
+        1. 数组在以线性方式使用，且所有更新都将对数组进行破坏性执行时性能最佳
+        2. 从证明观点来看，`Array α` 仅是 `List α` 的包装类
 
     2. <!-- TODO -->
 
@@ -147,7 +150,7 @@
     2. <!-- TODO -->
 
 3. 编译相关
-    1. `Name`：名称 <!-- TODO -->
+    1. `Name`：名称，由点 `.` 分隔的一系列字符串或数字
 
         ```lean
         inductive Name where
@@ -156,7 +159,11 @@
           | num (pre : Name) (i : Nat)
         ```
 
-    2. `Syntax`：句法结构，其中 `SyntaxNodeKind` 即节点种类，用于给 `Syntax` 元素分类 <!-- TODO -->
+        1. `anonymous`：用于名称顶级，例如 `Lean.Meta` 表示为 `.str (.str .anonymous "Lean") "Meta"`
+        2. `str`：字符串名称
+        3. `num`：数字名称，用于自由变量和元变量的层次名称
+
+    2. `Syntax`：句法结构，其中 `SyntaxNodeKind` 即节点种类，用于给 `Syntax` 元素分类
 
         ```lean
         abbrev SyntaxNodeKind := Name
@@ -170,7 +177,19 @@
           raw : Syntax
         ```
 
-    3. `Expr`：表达式 <!-- TODO -->
+        1. `missing`：对应于由于解析错误而缺失的句法树部分
+        2. `node`：种类为 `kind`，子节点包含在 `args` 的节点
+        3. `atom`：对应关键字或字面值
+        4. `ident`：对应由 `ident` 或 `rawIdent` 解析的标识符
+
+        通常使用 `TSyntax`，即给定句法种类的 `Syntax`
+
+        ```lean
+        structure TSyntax (ks : SyntaxNodeKinds) where
+          raw : Syntax
+        ```
+
+    3. `Expr`：表达式．Lean 中任意项都有对应表达式
 
         ```lean
         inductive Expr where
@@ -188,19 +207,22 @@
           | proj (typeName : Name) (idx : Nat) (struct : Expr)
         ```
 
-        <!-- 1. `bvar`：约束变量，用 $\text{de Bruijn}$ 序列表示
-        1. `fvar`：自由变量，即非约束出现的变量，用 `LocalContext` 内的 ID 表示
-        2. `mvar`：元变量，相当于表达式中的占位符，用 `MetavarContext` 内的 ID 表示
-        3. `sort`：`Type u` 或 `Prop` 等
-        4. `const`：在 Lean 文档中预定义的常量
-        5. `app`：函数应用
-        6. `lam`：$\lambda$ 表达式 `lam n t b`，相当于 `fun ($n : $t) => $b`
-        7. `forallE`：依值箭头表达式 `forallE n t b`，相当于 `($n : $t) → $b`  
+        1. `bvar`：约束变量，用 $\text{de Bruijn}$ 序列表示
+        2. `fvar`：自由变量，即非约束出现的变量，用 `LocalContext` 内的 ID 表示
+        3. `mvar`：元变量，相当于表达式中的占位符，用 `MetavarContext` 内的 ID 表示
+        4. `sort`：`Sort u`、`Type u` 或 `Prop`
+            - `Prop` 表示为 `.sort .zero`,
+            - `Sort u` 表示为 ``.sort (.param `u)``
+            - `Type u` 表示为 ``.sort (.succ (.param `u))``
+        5. `const`：在模块中或由另一个导入的模块先前定义的（多态）常量
+        6. `app`：函数应用．使用部分应用来表示多个参数
+        7. `lam`：$\lambda$ 表达式 `lam n t b`，相当于 `fun ($n : $t) => $b`
+        8. `forallE`：依值箭头表达式 `forallE n t b`，相当于 `($n : $t) → $b`  
             非依值箭头表达式 `α → β` 是依值箭头表达式 `(a : α) → β`（其中 `β` 不依赖于 `a`）的特殊情形
-        8.  `letE`：`let` 表达式 `letE n t v b`，相当于 `let ($n : $t) := $v in $b`
-        9.  `lit`：字面值
-        10. `mdata`：元数据
-        11. `proj`：投影 -->
+        9.  `letE`：`let` 表达式 `letE n t v b`，相当于 `let ($n : $t) := $v in $b`
+        10. `lit`：字面值．并非真实需要，仅为自然数或字符串在内存中提供更紧凑的表示
+        11. `mdata`：元数据，提供位置信息、`Syntax` 节点引用、对 Pretty Printer 的提示以及繁饰过程信息
+        12. `proj`：投影，即扩展字段记号．并非真实需要，仅为项提供更紧凑的表示以加速归约
 
 ### 3.2.3 类型类
 
