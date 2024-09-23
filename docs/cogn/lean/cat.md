@@ -247,6 +247,21 @@
                 - 相当于 `c e ...`，其中预期类型是具有单个构造子 `c` 的归纳类型
                 - 如果参数超过两个，则余下参数变为新匿名构造子应用，例如 `⟨a, b, c⟩ : α × (β × γ)` 等价于 `⟨a, ⟨b, c⟩⟩`
 
+            3. `tuple`：有序对构造子，形如 `(e, ...)`
+
+                ```lean
+                @[builtin_term_parser] def tuple := leading_parser "("
+                  >> optional (withoutPosition (withoutForbidden (termParser
+                    >> ", "
+                    >> sepBy1 termParser ", " (allowTrailingSep := true)
+                  )))
+                  >> ")"
+                ```
+
+                - `()` 是 `Unit.unit` 的简写
+                - `(a b)` 是 `Prod.mk a b` 的简写
+                - `(a, b, c)` 是 `(a, (b, c))` 的简写，以此类推
+
 3. `declModifiers`：声明修饰符
 
     ```lean

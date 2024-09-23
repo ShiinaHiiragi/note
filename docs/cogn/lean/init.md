@@ -1,6 +1,6 @@
 # 3 初始模块
 
-## 3.1 预定义记号
+## 3.1 预定义
 ### 3.1.1 表达式
 1. `termIfThenElse`
 
@@ -23,20 +23,22 @@
     ) : term
     ```
 
-### 3.1.2 操作符
+### 3.1.2 记号
 
 ### 3.1.3 字符串插值
 
 ## 3.2 内建类型
 ### 3.2.1 结构体类型
 1. 数据类型
-    1. `Prod`：直积类型 <!-- TODO -->
+    1. `Prod`：直积类型
 
         ```lean
         structure Prod (α : Type u) (β : Type v) where
           mk ::
           fst : α
           snd : β
+
+        @[inherit_doc] infixr:35 " × " => Prod
         ```
 
     2. `Float`：浮点数 <!-- TODO -->
@@ -108,7 +110,17 @@
           | succ (n : Nat) : Nat
         ```
 
-2. 数据结构 <!-- TODO -->
+2. 数据结构
+    1. `List`：列表  <!-- TODO -->
+
+        ```lean
+        inductive List (α : Type u) where
+          | nil : List α
+          | cons (head : α) (tail : List α) : List α
+        ```
+
+    2. <!-- TODO -->
+
 3. 编译相关
     1. `Name`：名称 <!-- TODO -->
 
