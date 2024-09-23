@@ -46,17 +46,17 @@
         ```lean
         structure FloatSpec where
           float : Type
-          val   : float
-          lt    : float → float → Prop
-          le    : float → float → Prop
+          val : float
+          lt : float → float → Prop
+          le : float → float → Prop
           decLt : DecidableRel lt
           decLe : DecidableRel le
 
         opaque floatSpec : FloatSpec := {
           float := Unit,
-          val   := (),
-          lt    := fun _ _ => True,
-          le    := fun _ _ => True,
+          val := (),
+          lt := fun _ _ => True,
+          le := fun _ _ => True,
           decLt := fun _ _ => inferInstanceAs (Decidable True),
           decLe := fun _ _ => inferInstanceAs (Decidable True)
         }
@@ -65,28 +65,47 @@
           val : floatSpec.float
         ```
 
-2. 数据结构 <!-- TODO -->
+2. 数据结构
+    1. `Array`：数组
+
+        ```lean
+        structure Array (α : Type u) where
+          mk ::
+          data : List α
+        ```
+
+    2. <!-- TODO -->
 
 ### 3.2.2 归纳类型
 1. 数据类型
-    1. `Sum`：和类型 <!-- TODO -->
+    1. `Sum`：和类型
 
         ```lean
         inductive Sum (α : Type u) (β : Type v) where
           | inl (val : α) : Sum α β
           | inr (val : β) : Sum α β
+
+        @[inherit_doc] infixr:30 " ⊕ " => Sum
         ```
 
-    2. `Empty` 与 `Unit`：空类型与单位类型 <!-- TODO -->
+    2. `Empty` 空类型，没有构造子
 
         ```lean
         inductive Empty : Type
-
-        inductive PUnit : Sort u where
-          | unit : PUnit
         ```
 
-    3. `Option`：可选类型 <!-- TODO -->
+    3. `Unit`：单位类型，具有一个元素的规范类型
+
+        ```lean
+        inductive PUnit : Sort u where
+          | unit : PUnit
+
+        abbrev Unit : Type := PUnit
+        @[match_pattern]
+        abbrev Unit.unit : Unit := PUnit.unit
+        ```
+
+    3. `Option`：可选类型，用于表示失败的可能性或可空性
 
         ```lean
         inductive Option (α : Type u) where
@@ -94,7 +113,7 @@
           | some (val : α) : Option α
         ```
 
-    4. `Bool`：真值 <!-- TODO -->
+    4. `Bool`：真值
 
         ```lean
         inductive Bool : Type where
@@ -102,7 +121,7 @@
           | true : Bool
         ```
 
-    5. `Nat`：自然数 <!-- TODO -->
+    5. `Nat`：自然数，内核与编译器都对此类型进行了特殊处理
 
         ```lean
         inductive Nat where
@@ -110,14 +129,20 @@
           | succ (n : Nat) : Nat
         ```
 
+        1. 内核可将 `zero` 或 `succ n` 表达式简化为自然数字面值
+        2. 运行时本身具有 `Nat` 的特殊表示（直接存储最多 `2^63` 的数字），更大的数字使用任意精度的 `bignum`
+
 2. 数据结构
-    1. `List`：列表  <!-- TODO -->
+    1. `List`：（有序）列表，以链表形式实现
 
         ```lean
         inductive List (α : Type u) where
           | nil : List α
           | cons (head : α) (tail : List α) : List α
         ```
+
+        1. `List α` 相较 `Array α` 更易于推理
+        2. 当尾部的多个值共享时，`List α` 更易用于持久数据结构，否则 `Array α` 的性能更好，因其可以进行破坏性更新
 
     2. <!-- TODO -->
 
