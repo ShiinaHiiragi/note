@@ -1,0 +1,204 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="189.8441mm"
+   height="38.240913mm"
+   viewBox="0 0 189.8441 38.240913"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="memory.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="0.74583496"
+     inkscape:cx="323.79817"
+     inkscape:cy="25.474805"
+     inkscape:window-width="1440"
+     inkscape:window-height="830"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="DartArrow"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-49.616645,-73.263598)">
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42"
+       x="49.464245"
+       y="82.826576"
+       id="text1"><tspan
+         sodipodi:role="line"
+         id="tspan1"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC Medium';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-opacity:1"
+         x="49.464245"
+         y="82.826576">刺激</tspan></text>
+    <g
+       id="g3"
+       transform="translate(33.255071,10.583333)">
+      <rect
+         style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-opacity:1"
+         id="rect2"
+         width="29.097971"
+         height="9.532094"
+         x="60.48101"
+         y="65.219589" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42"
+         x="63.669308"
+         y="72.243248"
+         id="text3"><tspan
+           sodipodi:role="line"
+           id="tspan3"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC Medium';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-opacity:1"
+           x="63.669308"
+           y="72.243248">瞬时记忆</tspan></text>
+    </g>
+    <g
+       id="g4"
+       transform="translate(91.463408,10.583333)">
+      <rect
+         style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-opacity:1"
+         id="rect3"
+         width="29.097971"
+         height="9.532094"
+         x="60.48101"
+         y="65.219589" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42"
+         x="63.669308"
+         y="72.243248"
+         id="text4"><tspan
+           sodipodi:role="line"
+           id="tspan4"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC Medium';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-opacity:1"
+           x="63.669308"
+           y="72.243248">短时记忆</tspan></text>
+    </g>
+    <g
+       id="g5"
+       transform="translate(149.67177,10.583333)">
+      <rect
+         style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-opacity:1"
+         id="rect4"
+         width="29.097971"
+         height="9.532094"
+         x="60.48101"
+         y="65.219589" />
+      <text
+         xml:space="preserve"
+         style="font-size:5.64444px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42"
+         x="63.669308"
+         y="72.243248"
+         id="text5"><tspan
+           sodipodi:role="line"
+           id="tspan5"
+           style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC Medium';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-opacity:1"
+           x="63.669308"
+           y="72.243248">长时记忆</tspan></text>
+    </g>
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-opacity:1;marker-end:url(#DartArrow)"
+       d="m 122.9001,80.443551 h 26.28757"
+       id="path5" />
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-opacity:1;marker-end:url(#DartArrow)"
+       d="m 181.10847,80.443551 h 26.28757"
+       id="path7" />
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-opacity:1;marker-end:url(#DartArrow)"
+       d="M 64.691747,80.443551 H 90.979306"
+       id="path8" />
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42"
+       x="130.25818"
+       y="78.067017"
+       id="text8"><tspan
+         sodipodi:role="line"
+         id="tspan8"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC Medium';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-opacity:1"
+         x="130.25818"
+         y="78.067017">注意</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42"
+       x="188.46657"
+       y="78.067017"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC Medium';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-opacity:1"
+         x="188.46657"
+         y="78.067017">复述</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-opacity:1;marker-end:url(#DartArrow)"
+       d="M 108.12966,85.374095 V 102.3678"
+       id="path9" />
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42"
+       x="102.46956"
+       y="111.0586"
+       id="text10"><tspan
+         sodipodi:role="line"
+         id="tspan10"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC Medium';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-opacity:1"
+         x="102.46956"
+         y="111.0586">遗忘</tspan></text>
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-opacity:1;marker-end:url(#DartArrow)"
+       d="M 166.33803,85.374095 V 102.3678"
+       id="path10" />
+    <text
+       xml:space="preserve"
+       style="font-size:5.64444px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42"
+       x="160.67792"
+       y="111.0586"
+       id="text11"><tspan
+         sodipodi:role="line"
+         id="tspan11"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC Medium';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-opacity:1"
+         x="160.67792"
+         y="111.0586">遗忘</tspan></text>
+  </g>
+</svg>
