@@ -672,12 +672,14 @@ Nano-GPT 的结构：
     - `__sizeof__(self)`：定义被 `sys.getsizeof()` 调用时的行为
 
 4. 访问控制
-    - `__setattr__(self, key, value)`：设置某个属性时调用．在 `__setattr__` 使用 `self.key = value` 会导致循环调用，应使用 `self.__dict__[key] = value`
+    - `__setattr__(self, key, value)`：设置某个属性时调用
+        - `obj.key = value` 与 `setattr(obj, key, value)` 都调用 `obj.__setattr__(key, value)`
+        - 在其内部用 `self.key = value` 会导致循环调用，应使用 `self.__dict__[key] = value`
     - `__getattr__(self, key)`：获取某个属性时调用
+        - `obj.key = value` 与 `setattr(obj, key, value)` 都先查找对应属性，找不到后再调用 `obj.__getattr__(key)`
+        - `__getattribute__(self, key)`：若被定义，则不进行属性查找而无条件调用该函数
+        - 如果同时定义了 `__getattribute__` 与 `__getattr__`，则后者不会被调用
     - `__delattr__(self, key)`：删除某个属性时调用（`del obj.key`）
-    - `__getattribute__(self, key)`：无条件被调用以实现对类实例属性的访问
-      - 如果类还定义了 `__getattr__()`，则后者不会被调用
-      - 除非 `__getattribute__()` 显式地调用它或是引发了 `AttributeError`
 
 5. 容器类相关
     - `__setitem__(self, key, value)`：定义设置容器中指定元素的行为
