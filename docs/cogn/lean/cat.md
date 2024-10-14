@@ -67,7 +67,7 @@
         ```
 
         1. `declValSimple`：形如 `:= expr`，用于简单声明
-        2. `declValEqns`：一系列 `| pat => expr`，用于 `match`
+        2. `declValEqns`：一系列 `| pat => expr`，用于模式匹配定义
         3. `whereStructInst`：`where` 及跟随于其后的 `field := value`，用于 `structure`
 
     4. `optDeriving`：要求 Lean 生成代码
@@ -473,12 +473,10 @@
 2. 应用：左结合，可使用 `<|` 改变结合顺序
 
     ```lean
-    def namedArgument := leading_parser (withAnonymousAntiquot := false) atomic (
-        "(" >> ident >> " := "
-      )
+    def namedArgument := leading_parser atomic ("(" >> ident >> " := ")
       >> withoutPosition termParser
       >> ")"
-    def ellipsis := leading_parser (withAnonymousAntiquot := false) ".."
+    def ellipsis := leading_parser ".."
       >> notFollowedBy "." "`.` immediately after `..`"
     def argument := checkWsBefore "expected space"
       >> checkColGt "expected to be indented"
@@ -533,8 +531,53 @@
     def quotedName := leading_parser nameLit
     ```
 
-### 2.3.5 其他记号
-1. `«match»` 模式匹配，形如 `match e, ... with | p, ... => f | ...`
+### 2.3.5 局部定义
+1. `«let»`：局部定义可用的表达式（称为主体）必须在新行上，且列数不大于 `let` 关键字的所在列
+
+    ```lean
+    def letIdBinder := withAntiquot (mkAntiquot "letIdBinder" decl_name% (isPseudoKind := true))
+      <| binderIdent <|> bracketedBinder
+    def letIdLhs : Parser := binderIdent
+      >> notFollowedBy (checkNoWsBefore "" >> "[") "ERROR INFO"
+      >> many (ppSpace >> letIdBinder)
+      >> optType
+
+    def letIdDecl := leading_parser atomic (letIdLhs >> " := ")
+      >> termParser
+    def letPatDecl := leading_parser atomic (termParser >> pushNone >> optType >> " := ")
+      >> termParser
+    def letEqnsDecl := leading_parser letIdLhs
+      >> (" := " <|> matchAlts)
+
+    def letDecl := leading_parser notFollowedBy (nonReservedSymbol "rec") "rec"
+      >> (letIdDecl <|> letPatDecl <|> letEqnsDecl)
+    @[builtin_term_parser]
+    def «let» := leading_parser:leadPrec withPosition ("let " >> letDecl)
+      >> optSemicolon termParser
+    ```
+
+    1. `letIdDecl`：形如 `let x := e`
+    2. `letPatDecl`：形如 `let pat := e`，其中 `pat` 是任意项
+    3. `letEqnsDecl`：形如 `let f | pat1 => e1 | pat2 => e2 ...`
+
+2. `«letrec»`：递归 `let` 定义必须通过编写 `let rec` 明确表示
+
+    ```lean
+    def letRecDecl := leading_parser optional Command.docComment
+      >> optional «attributes»
+      >> letDecl
+      >> Termination.suffix
+    def letRecDecls := leading_parser sepBy1 letRecDecl ", "
+
+    @[builtin_term_parser]
+    def «letrec» := leading_parser:leadPrec withPosition (group
+      ("let " >> nonReservedSymbol "rec ") >> letRecDecls
+    )
+      >> optSemicolon termParser
+    ```
+
+### 2.3.6 其他记号
+1. `«match»`：模式匹配，形如 `match e, ... with | p, ... => f | ...`
 
     ```lean
     def trueVal := leading_parser nonReservedSymbol "true"
@@ -553,7 +596,7 @@
       >> termParser
 
     def matchAlt (rhsParser : Parser := termParser) : Parser :=
-      leading_parser (withAnonymousAntiquot := false) "| "
+      leading_parser "| "
         >> ppIndent (sepBy1 (sepBy1 termParser ", ") " | "
           >> darrow
           >> checkColGe "ERROR INFO"
@@ -595,12 +638,6 @@
           >> withoutPosition (incQuotDepth (many1Unbox commandParser))
           >> ")"
         ```
-
-3. 通用记号
-
-    ```lean
-    def darrow : Parser := " => "
-    ```
 
 ## 2.3 属性范畴
 <!-- TODO：解释本文出现的所有属性 -->
