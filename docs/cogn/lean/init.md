@@ -166,7 +166,7 @@
           | num (pre : Name) (i : Nat)
         ```
 
-        1. `anonymous`：用于名称顶级，例如 `Lean.Meta` 表示为 `.str (.str .anonymous "Lean") "Meta"`
+        1. `anonymous`：顶级名称，例如 `Lean.Meta` 表示为 `.str (.str .anonymous "Lean") "Meta"`
         2. `str`：字符串名称
         3. `num`：数字名称，用于自由变量和元变量的层次名称
 

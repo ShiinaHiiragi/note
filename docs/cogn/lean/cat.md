@@ -469,7 +469,49 @@
         ```
 
 ### 2.3.3 函数与应用
-1. $\lambda$ 表达式 <!-- TODO -->
+1. $\lambda$ 表达式：即匿名函数
+
+    ```lean
+    def funImplicitBinder := withAntiquot (mkAntiquot "implicitBinder" ``implicitBinder)
+      <| atomic (lookahead ("{" >> many1 binderIdent >> (symbol " : " <|> "}")))
+        >> implicitBinder
+    def funStrictImplicitBinder := atomic (lookahead (strictImplicitLeftBracket
+      >> many1 binderIdent
+      >> (symbol " : " <|> strictImplicitRightBracket)
+    ))
+      >> strictImplicitBinder
+
+    def funBinder : Parser := withAntiquot (mkAntiquot "funBinder" decl_name% (isPseudoKind := true))
+      <| funStrictImplicitBinder
+        <|> funImplicitBinder
+        <|> instBinder
+        <|> termParser maxPrec
+
+    def basicFun : Parser := leading_parser ppGroup (many1 (ppSpace >> funBinder)
+      >> optType
+      >> unicodeSymbol " ↦" " =>")
+      >> ppSpace
+      >> termParser
+
+    @[builtin_term_parser]
+    def «fun» := leading_parser:maxPrec ppAllowUngrouped
+      >> unicodeSymbol "λ" "fun"
+      >> (basicFun <|> matchAlts)
+    ```
+
+    !!! note "括号函数"
+        `·` 将最靠近的一对括号创建为函数
+
+        1. 用 `·` 表示参数，括号内的表达式表示函数体
+        2. `paren` 也是普通括号的句法
+
+        ```lean
+        @[builtin_term_parser] 
+        def paren := leading_parser "("
+          >> withoutPosition (withoutForbidden (ppDedentIfGrouped termParser))
+          >> ")"
+        ```
+
 2. 应用：左结合，可使用 `<|` 改变结合顺序
 
     ```lean
