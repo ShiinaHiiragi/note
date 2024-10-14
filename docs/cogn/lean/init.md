@@ -72,6 +72,8 @@
         structure Array (α : Type u) where
           mk ::
           data : List α
+
+        syntax "#[" withoutPosition(sepBy(term, ", ")) "]" : term
         ```
 
         1. 数组在以线性方式使用，且所有更新都将对数组进行破坏性执行时性能最佳
@@ -142,10 +144,15 @@
         inductive List (α : Type u) where
           | nil : List α
           | cons (head : α) (tail : List α) : List α
+
+        @[inherit_doc]
+        infixr:67 " :: " => List.cons
+        syntax "[" withoutPosition(term,*,?) "]"  : term
+        syntax "%[" withoutPosition(term,*,? " | " term) "]" : term
         ```
 
-        1. `List α` 相较 `Array α` 更易于推理
-        2. 当尾部的多个值共享时，`List α` 更易用于持久数据结构，否则 `Array α` 的性能更好，因其可以进行破坏性更新
+        1. 当尾部的多个值共享时，`List α` 更易用于持久数据结构，否则 `Array α` 的性能更好，因其可以进行破坏性更新
+        2. `[a, b, c]` 是 `a :: b :: c :: []` 的简记，`%[a, b, c | tail]` 是 `a :: b :: c :: tail` 的简记
 
     2. <!-- TODO -->
 
