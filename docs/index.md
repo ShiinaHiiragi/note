@@ -53,10 +53,12 @@
 </div>
 
 !!! abstract "此项目尚未完成，现处于第一阶段"
-    <label> 现在进度：Functional Programming in Lean §1.6 </label>
+    <label> 现在进度：Functional Programming in Lean </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
+
+    <!-- https://www.leanprover.cn/fp-lean-zh/getting-to-know/conveniences.html#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0 -->
 
 ## 参考文献
 
