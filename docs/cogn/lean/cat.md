@@ -124,7 +124,7 @@
           >> optDefDeriving
         ```
 
-    3. «inductive»：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
+    3. `«inductive»`：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
 
         ```lean
         def ctor := leading_parser atomic (optional docComment >> "\n| ")

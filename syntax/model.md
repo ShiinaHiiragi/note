@@ -552,26 +552,46 @@ Nano-GPT 的结构：
 
 2. 特殊方法
     - 私有方法：双下划线方法，类外只能通过 `_className__methodName` 访问
+        - 可将私有方法看作普通方法 `_className__methodName`，由解释器自动根据代码位置填充
+        - 子类中调用 `super()._Base__private()` 与 `self._Base__private()` 等效
+        - 子类中无法调用 `super().__private()`，因其与 `super()._Child__private()` 等效
     - 类方法：附加 `@classmethod` 装饰器的方法，第一个参数为类
     - 静态方法：附加 `@staticmethod` 装饰器的方法，无强制参数
 
     ```python
     class Person:
         __counter = 0
-        def __init__(self, name, age):
-            self.__change(name, age)
-    
-        def __change(self, name, age):
+        def __init__(self, name: str, age: int) -> None:
             self.name = name
             self.age = age
-    
+            self.__func()
+
+        def __func(self):
+            print(f"_Person__func() called with {self.__dict__}")
+
+        def __call__(self):
+            self.__func()
+
         @classmethod
         def step(cls):
             cls.__counter += 1
             return cls
-    
-    alice = Person("Alice", 14)
-    alice._Person__change("Aisling", 15)
+
+    class Student(Person):
+        def __init__(self, name: str, age: int, id: str) -> None:
+            super().__init__(name, age)
+            self.id = id
+            self.__func()
+
+        def __func(self):
+            print(f"_Student__func() called with {self.__dict__}")
+
+        def __call__(self):
+            self.__func()
+
+    # _Person__func() called with {'name': 'Alice', 'age': 14}
+    # _Student__func() called with {'name': 'Alice', 'age': 14, 'id': '1001.4999'}
+    alice = Student("Alice", 14, "1001.4999")
     ```
 
 #### Magic Method
