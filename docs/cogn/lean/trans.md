@@ -6,6 +6,7 @@
 
 ## A
 - accessor：访问器
+- action：活动
 - anonymous：匿名
 - antiquot：反引用
 - applicative：应用
@@ -56,6 +57,7 @@
 - environment：环境
 - escape：转义字符
 - evaluate：求值
+- execution：执行
 - explicit：显式
 - expression：表达式
 - extended：扩展
