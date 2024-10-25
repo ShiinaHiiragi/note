@@ -368,7 +368,7 @@ Nano-GPT 的结构：
     ```python
     s = "汉字"
     b = s.encode()
-    
+
     print(b)                  # b'\xe6\xb1\x89\xe5\xad\x97'
     print(b.decode("utf-8"))  # 汉字
     ```
@@ -412,7 +412,7 @@ Nano-GPT 的结构：
         print(first, second, third, fourth)  # 1 2 3 4
         print(args)                          # (0, 0)
         print(kwargs)                        # {'fifth': 5}
-    
+
     # Positional argument cannot appear after keyword arguments
     func(1, 2, 0, 0, third=3, fourth=4, fifth=5)
     ```
@@ -469,7 +469,7 @@ Nano-GPT 的结构：
 
     ```python
     import sys
-    
+
     def fibonacci(n):
         a, b, counter = 0, 1, 0
         while True:
@@ -478,7 +478,7 @@ Nano-GPT 的结构：
             yield a
             a, b = b, a + b
             counter += 1
-    
+
     f = fibonacci(10)
     while True:
         try:
@@ -530,15 +530,15 @@ Nano-GPT 的结构：
     class Decorator:
         def __init__(self, func):
             self.func = func
-    
+
         def __call__(self, *arg):
             print(id(self.func))
             self.func(*arg)
-    
+
     @Decorator
     def p(msg):
         print(msg)
-    
+
     p("Hello World!")
     ```
 
@@ -930,7 +930,7 @@ Nano-GPT 的结构：
 
         ```python
         from typing import TypeVar
-        
+
         T = TypeVar('T', str, int)
         def add(left: T, right: T) -> T:
             return left + right
@@ -969,13 +969,13 @@ Nano-GPT 的结构：
         rand = torch.rand(shape)    # or rand(*shape), rand ~ U(0, 1)
         ones = torch.ones(shape)    # or ones(*shape)
         zeros = torch.zeros(shape)  # or zeros(*shape)
-        
+
         new_randn = torch.randn_like(randn)
         new_rand = torch.rand_like(rand)
         new_ones = torch.ones_like(ones)
         new_zeros = torch.zeros_like(zeros)
         ```
-        
+
     - 使用 `torch.arange` 生成范围
 
 3. 切片与索引：假设有数组如下
@@ -987,9 +987,9 @@ Nano-GPT 的结构：
     #         [12, 13, 14, 15]])
     X = torch.arange(16).reshape(4, 4)
     ```
-    
+
     - 使用 `start:end:step` 或数组确定范围
-    
+
         ```python
         >>> X[::2]
         tensor([[ 0,  1,  2,  3],
@@ -998,9 +998,9 @@ Nano-GPT 的结构：
         tensor([[ 4,  5,  6,  7],
                 [12, 13, 14, 15]])
         ```
-    
+
     - 使用逗号分隔不同维度，`...` 相当于 `:`
-    
+
         ```python
         >>> X[1:3, 1:3]
         tensor([[ 5,  6],
@@ -1017,14 +1017,14 @@ Nano-GPT 的结构：
         >>> X[[1, 3], [1, 3]]
         tensor([ 5, 15])
         ```
-    
+
     - 使用 `bool` 数组选择特定元素
-    
+
         ```python
         >>> X[X > 12]
         tensor([13, 14, 15])
         ```
-    
+
 4. 广播：两个数组逐元素操作时，需保证两数组形状一致，否则需按照广播规则扩张较小数组
     - 输入数组向维度最多的数组看齐，不足的维度在前面加 `1` 补齐
     - 输出数组的形状是输入数组形状的各个维度上的最大值
@@ -1099,21 +1099,21 @@ Nano-GPT 的结构：
     ```python
     import torch
     from torch.utils.data import Dataset, DataLoader
-    
+
     class SampleDataset(Dataset):
         def __init__(self, size, row_size, col_size):
             self.size = size
             self.data = torch.rand(size, row_size, col_size)
-    
+
         def __len__(self):
             return self.size
-    
+
         def __getitem__(self, key):
             return self.data[key], key
-    
+
     dataset = SampleDataset(32, 4, 4)
     loader = DataLoader(dataset, batch_size=6, shuffle=True)
-    
+
     # torch.Size([6, 4, 4]) tensor([20,  3, 18, 14, 26, 13])
     # torch.Size([6, 4, 4]) tensor([11,  1, 17, 30,  5, 16])
     # torch.Size([6, 4, 4]) tensor([10, 24,  2, 23,  4, 22])
@@ -1223,18 +1223,18 @@ print(mlp.c_fc.weight.shape)
     Y = torch.rand(6, 4)
     X.requires_grad_(True)
     Y.requires_grad_(True)
-    
+
     A = X @ Y
     B = torch.autograd.Variable(torch.rand(2, 4), requires_grad=True)
     L = torch.sum(A + B)
     A.retain_grad()
     B.retain_grad()
     L.retain_grad()
-    
+
     L.backward()
     print(A.grad_fn)  # <MmBackward0 at 0x26029e53ac0>
     ```
-    
+
     - 在上例 $L = \mathrm{sum} (\boldsymbol A + \boldsymbol B) = \mathrm{sum} (\boldsymbol X \boldsymbol Y + \boldsymbol B)$ 中，有 $\dfrac{\partial L}{\partial \boldsymbol X} = \dfrac{\partial L}{\partial \boldsymbol A} \cdot \dfrac{\partial \boldsymbol A}{\partial \boldsymbol X} = \boldsymbol Y^{\mathrm T} \cdot \dfrac{\partial L}{\partial \boldsymbol A}$ 成立
 
         ```python
@@ -1249,7 +1249,7 @@ print(mlp.c_fc.weight.shape)
         #         [1., 1., 1., 1.]])
         print(B.grad)
         ```
-    
+
     - 使用 `with torch.no_grad()` 或 `tensor.detach()` 禁用自动梯度以提速
     - `model.eval()` 也可禁用梯度，但此函数用于后续评估，会改变某些模块的运行方式（例如停止 `dropout`）
     - 一次计算只能进行一次反向传播，若需要多次计算，则需要在前一次使用 `backward(retain_graph=True)`
@@ -1276,7 +1276,7 @@ print(mlp.c_fc.weight.shape)
             pred = model(X)
             y = nn.functional.one_hot(y, 32)
             loss = loss_fn(pred, y)
-    
+
             optimizer.zero_grad()
             loss.backward()
             optimizer.step()
