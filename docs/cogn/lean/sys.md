@@ -52,6 +52,12 @@ $$
     9. `update`：升级依赖项并保存到 Manifest 文件
     10. `serve`：启动 Lean Language Server
 3. `lean`：类型检查、编译各 Lean 文件以及提供有关当前正在编写的文件信息（类比于 Node.js 的 `node`）
+    1. `--run`：以余下参数调用文件中的 `main` 定义
+    2. `--o=oname` / `-o`：创建 `olean` 文件
+    3. `--i=ilean` / `-i`：创建 `ilean` 文件
+    4. `--c=fname` / `-c` 指定 C 输出文件名
+    5. `--bc=fname` / `-b` 指定 LLVM 二进制文件名
+    6. `--root=dir`：设置根目录，从中计算输入文件的模块名
 
 ### 1.2.2 文件组织与模块
 1. Lean 包是 Lake 代码分发的基本单位，包含如下内容
