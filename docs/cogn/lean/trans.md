@@ -104,6 +104,7 @@
 
 ## N
 - name：名称
+- namespace：命名空间
 - node：节点
 - notation：记号
 

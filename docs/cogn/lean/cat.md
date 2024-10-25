@@ -302,6 +302,67 @@
         ```
 
 ### 2.1.2 组织特性
+1. `namespace`：将一系列声明放在命名空间
+
+    ```lean
+    @[builtin_command_parser] def «namespace» := leading_parser "namespace "
+      >> checkColGt
+      >> ident
+    ```
+
+    1. Lean 中的每个名称都位于一个命名空间，且多层命名空间可被直接定义
+    2. 命名空间名称仅用作前缀，不假设本身是否被定义
+
+2. `section`：限制 `variable` 的作用范围
+
+    ```lean
+    @[builtin_command_parser] def «section» := leading_parser "section"
+      >> optional (ppSpace >> checkColGt >> ident)
+    ```
+
+    1. `variable` 命令指示 Lean 将声明的变量作为绑定变量插入定义中
+    2. 匿名 `section` 可不提供标识符
+
+3. `end`：封闭 `namespace` 与 `section`
+
+    ```lean
+    @[builtin_command_parser] def «end» := leading_parser "end"
+      >> optional (ppSpace >> checkColGt >> ident)
+    ```
+
+4. `open`：在不显式指定的情况下使用对应命名空间内的名称
+
+    ```lean
+    def openHiding := leading_parser ppSpace
+      >> atomic (ident >> " hiding")
+      >> many1 (ppSpace >> checkColGt >> ident)
+    def openRenamingItem := leading_parser ident
+      >> unicodeSymbol " → " " -> "
+      >> checkColGt
+      >> ident
+    def openRenaming := leading_parser ppSpace
+      >> atomic (ident >> " renaming ")
+      >> sepBy1 openRenamingItem ", "
+    def openOnly := leading_parser ppSpace
+      >> atomic (ident >> " (") >> many1 ident >> ")"
+    def openSimple := leading_parser many1 (ppSpace >> checkColGt >> ident)
+    def openScoped := leading_parser " scoped"
+      >> many1 (ppSpace >> checkColGt >> ident)
+
+    def openDecl := withAntiquot (mkAntiquot
+      "openDecl"
+      `Lean.Parser.Command.openDecl
+      (isPseudoKind := true)
+    )
+      <| openHiding
+        <|> openRenaming
+        <|> openOnly
+        <|> openSimple
+        <|> openScoped
+
+    @[builtin_command_parser]
+    def «open» := leading_parser withPosition ("open" >> openDecl)
+    ```
 
 ### 2.1.3 辅助指令
 1. `eval`：对项进行归约
@@ -662,7 +723,7 @@
         2. `Syntax` 引用也可用于模式匹配，从而将 `Syntax` 值与引号、模式变量或占位符 `_` 进行匹配
     3. `matchAlts`：若以 `,` 分隔多个 `matchDiscr`，则 `matchAlts` 也应对应相同数量的参数
 
-2. 引号
+2. 引用相关
     1. `doubleQuotedName`：表示 `Name` 元素，但会请求 Lean 静态检查名称是否位于声明范围内
 
         ```lean
@@ -680,6 +741,15 @@
           >> withoutPosition (incQuotDepth (many1Unbox commandParser))
           >> ")"
         ```
+
+3. `open`：区别于作为命令的 `open`，仅使 `open` 作用与单独语句上
+
+    ```lean
+    @[builtin_term_parser]
+    def «open» := leading_parser:leadPrec "open"
+        >> Command.openDecl
+        >> withOpenDecl (" in " >> termParser)
+    ```
 
 ## 2.3 属性范畴
 <!-- TODO：解释本文出现的所有属性 -->
