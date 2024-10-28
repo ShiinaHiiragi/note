@@ -251,7 +251,8 @@
             3. `tuple`：有序对构造子，形如 `(e, ...)`
 
                 ```lean
-                @[builtin_term_parser] def tuple := leading_parser "("
+                @[builtin_term_parser]
+                def tuple := leading_parser "("
                   >> optional (withoutPosition (withoutForbidden (termParser
                     >> ", "
                     >> sepBy1 termParser ", " (allowTrailingSep := true)
@@ -305,7 +306,8 @@
 1. `namespace`：将一系列声明放在命名空间
 
     ```lean
-    @[builtin_command_parser] def «namespace» := leading_parser "namespace "
+    @[builtin_command_parser]
+    def «namespace» := leading_parser "namespace "
       >> checkColGt
       >> ident
     ```
@@ -316,7 +318,8 @@
 2. `section`：限制 `variable` 的作用范围
 
     ```lean
-    @[builtin_command_parser] def «section» := leading_parser "section"
+    @[builtin_command_parser]
+    def «section» := leading_parser "section"
       >> optional (ppSpace >> checkColGt >> ident)
     ```
 
@@ -326,7 +329,8 @@
 3. `end`：封闭 `namespace` 与 `section`
 
     ```lean
-    @[builtin_command_parser] def «end» := leading_parser "end"
+    @[builtin_command_parser]
+    def «end» := leading_parser "end"
       >> optional (ppSpace >> checkColGt >> ident)
     ```
 
@@ -363,6 +367,9 @@
     @[builtin_command_parser]
     def «open» := leading_parser withPosition ("open" >> openDecl)
     ```
+
+    1. `openSimple`：打开命名空间
+    2. `openOnly`：仅打开命名空间内的特定名称
 
 ### 2.1.3 辅助指令
 1. `eval`：对项进行归约
@@ -491,7 +498,8 @@
     1. `arrow`：箭头表达式，右结合
 
         ```lean
-        @[builtin_term_parser] def arrow := trailing_parser checkPrec 25
+        @[builtin_term_parser]
+        def arrow := trailing_parser checkPrec 25
           >> unicodeSymbol " → " " -> "
           >> termParser 25
         ```
@@ -499,7 +507,8 @@
     2. `depArrow` 与 `«forall»`：依值箭头表达式与任意符号，左结合
 
         ```lean
-        @[builtin_term_parser] def depArrow := leading_parser:25 bracketedBinder true
+        @[builtin_term_parser]
+        def depArrow := leading_parser:25 bracketedBinder true
           >> unicodeSymbol " → " " -> "
           >> termParser
 
@@ -737,7 +746,8 @@
     2. `quot`：（一系列）命令的句法引用，使用 `:` 指定句法成分种类
 
         ```lean
-        @[builtin_term_parser low] def quot := leading_parser "`("
+        @[builtin_term_parser low]
+        def quot := leading_parser "`("
           >> withoutPosition (incQuotDepth (many1Unbox commandParser))
           >> ")"
         ```
@@ -752,11 +762,16 @@
     ```
 
 ## 2.3 属性范畴
-<!-- TODO：解释本文出现的所有属性 -->
+- 与 Lean 声明关联的元数据
+    1. 内建属性：先于 `Lean.Parser` 定义的属性
+    2. 标签属性：在定义所在模块中标记声明
+    3. 参数属性：标签属性的变体，可以在其中将参数附加到属性
+    4. 枚举属性：给定类型为 `α` 的列表 `[a₁, a₂, ..., aₙ]`，枚举属性提供属性 `Attrᵢ` 用于将值 `aᵢ` 与声明关联起来
 
 ### 2.3.1 内建属性
 
 ### 2.3.2 标签属性
+1. `default_target`：`lake build` 默认构建标注此属性的目标
 
 ### 2.3.3 参数属性
 
