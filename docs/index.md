@@ -58,7 +58,8 @@
         <div class="progress-percentage"> </div>
     </div>
 
-    <!-- https://www.leanprover.cn/fp-lean-zh/getting-to-know/conveniences.html#%E5%8C%BF%E5%90%8D%E5%87%BD%E6%95%B0 -->
+    <!-- https://www.leanprover.cn/fp-lean-zh/hello-world/conveniences.html -->
+    <!-- 整理属性；解析 `do` 语句块 -->
 
 ## 参考文献
 
