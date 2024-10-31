@@ -46,7 +46,15 @@
         @[inherit_doc] infixr:35 " × " => Prod
         ```
 
-    2. `Float`：浮点数
+    2. `Char`：字符
+
+        ```lean
+        structure Char where
+          val : UInt32
+          valid : val.isValidChar
+        ```
+
+    3. `Float`：浮点数
 
         ```lean
         structure FloatSpec where
@@ -84,10 +92,16 @@
         1. 数组在以线性方式使用，且所有更新都将对数组进行破坏性执行时性能最佳
         2. 从证明观点来看，`Array α` 仅是 `List α` 的包装类
 
-    2. <!-- TODO -->
+    2. `String`：字符串，编译器会将此类型的数据表示覆盖为字节序列
+
+        ```lean
+        structure String where
+          mk ::
+          data : List Char
+        ```
 
 ### 3.2.2 归纳类型
-1. 数据类型
+1. 枚举类型
     1. `Sum`：和类型
 
         ```lean
@@ -115,7 +129,7 @@
         abbrev Unit.unit : Unit := PUnit.unit
         ```
 
-    3. `Option`：可选类型，用于表示失败的可能性或可空性
+    4. `Option`：可选类型，用于表示失败的可能性或可空性
 
         ```lean
         inductive Option (α : Type u) where
@@ -123,7 +137,7 @@
           | some (val : α) : Option α
         ```
 
-    4. `Bool`：真值
+    5. `Bool`：真值类
 
         ```lean
         inductive Bool : Type where
@@ -131,7 +145,16 @@
           | true : Bool
         ```
 
-    5. `Nat`：自然数，内核与编译器都对此类型进行了特殊处理
+    6. `Exception`：异常类
+
+        ```lean
+        inductive Except (ε : Type u) (α : Type v) where
+          | error : ε → Except ε α
+          | ok : α → Except ε α
+        ```
+
+2. 递归类型
+    1. `Nat`：自然数，内核与编译器都对此类型进行了特殊处理
 
         ```lean
         inductive Nat where
@@ -140,10 +163,20 @@
         ```
 
         1. 内核可将 `zero` 或 `succ n` 表达式简化为自然数字面值
-        2. 运行时本身具有 `Nat` 的特殊表示（直接存储最多 `2^63` 的数字），更大的数字使用任意精度的 `bignum`
+        2. 运行时本身具有 `Nat` 的特殊表示（直接存储最多 63 位数字），更大的数字使用任意精度的 `bignum`
 
-2. 数据结构
-    1. `List`：（有序）列表，以链表形式实现
+    2. `Int`：整数，此类型在运行时有特殊处理
+
+        ```lean
+        inductive Int : Type where
+          | ofNat   : Nat → Int
+          | negSucc : Nat → Int
+        ```
+
+        1. 当数字较小时，直接存储有符号整数
+        2. 较大的数字（超过 63 位时）使用任意精度 `bignum` 库
+
+    3. `List`：（有序）列表，以链表形式实现
 
         ```lean
         inductive List (α : Type u) where
@@ -158,8 +191,6 @@
 
         1. 当尾部的多个值共享时，`List α` 更易用于持久数据结构，否则 `Array α` 的性能更好，因其可以进行破坏性更新
         2. `[a, b, c]` 是 `a :: b :: c :: []` 的简记，`%[a, b, c | tail]` 是 `a :: b :: c :: tail` 的简记
-
-    2. <!-- TODO -->
 
 3. 编译相关
     1. `Name`：名称，由点 `.` 分隔的一系列字符串或数字
