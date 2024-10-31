@@ -856,3 +856,53 @@
 ### 2.6.2 优先级范畴
 
 ### 2.6.3 do 元素范畴
+1. `doLet`：局部定义
+
+    ```lean
+    @[builtin_doElem_parser]
+    def doLet := leading_parser "let "
+      >> optional "mut "
+      >> letDecl
+    ```
+
+2. `doExpr`：作为语句的项
+
+    ```lean
+    @[builtin_doElem_parser]
+    def doExpr := leading_parser notFollowedByRedefinedTermToken
+      >> termParser
+      >> notFollowedBy (symbol ":=" <|> symbol "←" <|> symbol "<-") "ERROR INFO"
+    ```
+
+    1. `liftMethod`：简单提升嵌套活动．只能用于 `do` 语句块中
+
+        ```lean
+        @[builtin_term_parser]
+        def liftMethod := leading_parser:minPrec leftArrow
+          >> termParser
+        ```
+
+    2. `doReturn`：`return e` 将包围块求值为 `pure e`，跳过所有更深层的语句
+
+        ```lean
+        @[builtin_doElem_parser]
+        def doReturn := leading_parser:leadPrec withPosition ("return"
+          >> optional (ppSpace >> checkLineEq >> termParser)
+        )
+        ```
+
+3. `doLetArrow`：左箭头表达式
+
+    ```lean
+    def doIdDecl := leading_parser atomic (ident >> optType >> ppSpace >> leftArrow)
+      >> doElemParser
+    def doPatDecl := leading_parser atomic (termParser >> ppSpace >> leftArrow)
+      >> doElemParser
+      >> optional (checkColGt >> " | " >> doSeq)
+
+    @[builtin_doElem_parser]
+    def doLetArrow := leading_parser withPosition ("let "
+      >> optional "mut "
+      >> (doIdDecl <|> doPatDecl)
+    )
+    ```
