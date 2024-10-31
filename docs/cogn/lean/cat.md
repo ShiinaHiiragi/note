@@ -643,6 +643,25 @@
     def quotedName := leading_parser nameLit
     ```
 
+    1. `doubleQuotedName`：表示 `Name` 元素，但会请求 Lean 静态检查名称是否位于声明范围内
+
+        ```lean
+        @[builtin_term_parser]
+        def doubleQuotedName := leading_parser "`"
+          >> checkNoWsBefore
+          >> rawCh '`' (trailingWs := false)
+          >> ident
+        ```
+
+    2. `quot`：（一系列）命令的句法引用，使用 `:` 指定句法成分种类
+
+        ```lean
+        @[builtin_term_parser low]
+        def quot := leading_parser "`("
+          >> withoutPosition (incQuotDepth (many1Unbox commandParser))
+          >> ")"
+        ```
+
 ### 2.3.5 局部定义
 1. `«let»`：局部定义可用的表达式（称为主体）必须在新行上，且列数不大于 `let` 关键字的所在列
 
@@ -798,27 +817,7 @@
         1. 当 `xᵢ` 为 `()` 时，`αᵢ` 必为 `Unit`
         2. 所有 `m` 必须相同，但 `α₁, α₂, ⋯, αₙ, β` 可各不相同
 
-3. 引用相关
-    1. `doubleQuotedName`：表示 `Name` 元素，但会请求 Lean 静态检查名称是否位于声明范围内
-
-        ```lean
-        @[builtin_term_parser]
-        def doubleQuotedName := leading_parser "`"
-          >> checkNoWsBefore
-          >> rawCh '`' (trailingWs := false)
-          >> ident
-        ```
-
-    2. `quot`：（一系列）命令的句法引用，使用 `:` 指定句法成分种类
-
-        ```lean
-        @[builtin_term_parser low]
-        def quot := leading_parser "`("
-          >> withoutPosition (incQuotDepth (many1Unbox commandParser))
-          >> ")"
-        ```
-
-4. `«open»`：区别于作为命令的 `open`，仅使 `open` 作用于单独语句上
+3. `«open»`：区别于作为命令的 `open`，仅使 `open` 作用于单独语句上
 
     ```lean
     @[builtin_term_parser]
