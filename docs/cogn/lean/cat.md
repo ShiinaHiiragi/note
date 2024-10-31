@@ -755,14 +755,48 @@
     ```
 
     1. 对于 `do { E }`，直接译为 `E`
-    2. 对于 `do { let x ← E1; Stmt; ...; En }`，译为 `E1 >>= fun x => do { Stmt; ...; En }`
-    3. 对于 `do { E1 Stmt; ...; En }`，译为 `E1 >>= fun () => do { Stmt; ...; En }`
-    4. 对于 `do { let x := E1; Stmt; ...; En }`，译为
+    2. 对于 `do { let x ← E₁; Stmt; ...; Eₙ }`，译为 `E₁ >>= fun x => do { Stmt; ...; Eₙ }`
+    3. 对于 `do { E₁ Stmt; ...; Eₙ }`，译为 `E₁ >>= fun () => do { Stmt; ...; Eₙ }`
+    4. 对于 `do { let x := E₁; Stmt; ...; Eₙ }`，译为
 
         ```lean
-        let x := E1
-        do { Stmt; ...; En }
+        let x := E₁
+        do { Stmt; ...; Eₙ }
         ```
+
+    !!! note "do 记号内的类型"
+        `do` 语句块
+
+        ```lean
+        do E₁
+            E₂
+            ...
+            Eₙ
+            E
+        ```
+
+        可译为
+
+        ```lean
+        E₁ >>= fun x₁ =>
+          E₂ >>= fun x₂ =>
+            ...
+              Eₙ >>= fun xₙ =>
+                E
+        ```
+
+        设 `m` 为单子类型，`α₁, α₂, ⋯, αₙ, β` 为任意类型，则
+
+        ```lean
+        E₁ : m α₁
+        E₂ : m α₂
+        ...
+        Eₙ : m αₙ
+        E  : m β
+        ```
+
+        1. `xᵢ` 是 `αᵢ` 元素或 `()` 的简记；当 `xᵢ` 为 `()` 时，`αᵢ` 必为 `Unit`
+        2. 所有 `m` 必须相同，但 `α₁, α₂, ⋯, αₙ, β` 可各不相同
 
 3. 引用相关
     1. `doubleQuotedName`：表示 `Name` 元素，但会请求 Lean 静态检查名称是否位于声明范围内
