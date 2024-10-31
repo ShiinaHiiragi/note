@@ -100,7 +100,7 @@
       )
     ```
 
-    1. `abbrev`：缩写，Lean 会将其标记为可约定义（即可展开的定义）
+    1. `«abbrev»`：缩写，Lean 会将其标记为可约定义（即可展开的定义）
 
         ```lean
         def «abbrev» := leading_parser "abbrev "
@@ -315,7 +315,7 @@
     1. Lean 中的每个名称都位于一个命名空间，且多层命名空间可被直接定义
     2. 命名空间名称仅用作前缀，不假设本身是否被定义
 
-2. `section`：限制 `variable` 的作用范围
+2. `«section»`：限制 `variable` 的作用范围
 
     ```lean
     @[builtin_command_parser]
@@ -326,7 +326,7 @@
     1. `variable` 命令指示 Lean 将声明的变量作为绑定变量插入定义中
     2. 匿名 `section` 可不提供标识符
 
-3. `end`：封闭 `namespace` 与 `section`
+3. `«end»`：封闭 `namespace` 与 `section`
 
     ```lean
     @[builtin_command_parser]
@@ -334,7 +334,7 @@
       >> optional (ppSpace >> checkColGt >> ident)
     ```
 
-4. `open`：在不显式指定的情况下使用对应命名空间内的名称
+4. `«open»`：在不显式指定的情况下使用对应命名空间内的名称
 
     ```lean
     def openHiding := leading_parser ppSpace
@@ -539,7 +539,7 @@
         ```
 
 ### 2.3.3 函数与应用
-1. $\lambda$ 表达式：即匿名函数
+1. `«fun»`：$\lambda$ 表达式，即匿名函数
 
     ```lean
     def funImplicitBinder := withAntiquot (mkAntiquot "implicitBinder" ``implicitBinder)
@@ -732,7 +732,39 @@
         2. `Syntax` 引用也可用于模式匹配，从而将 `Syntax` 值与引号、模式变量或占位符 `_` 进行匹配
     3. `matchAlts`：若以 `,` 分隔多个 `matchDiscr`，则 `matchAlts` 也应对应相同数量的参数
 
-2. 引用相关
+2. `«do»`：单子的简便记法
+
+    ```lean
+    def doSeqItem := leading_parser ppLine
+      >> doElemParser
+      >> optional "; "
+
+    def doSeqIndent := leading_parser many1Indent doSeqItem
+    def doSeqBracketed := leading_parser "{"
+      >> withoutPosition (many1 doSeqItem)
+      >> ppLine
+      >> "}"
+
+    def doSeq := withAntiquot (mkAntiquot "doSeq" decl_name% (isPseudoKind := true))
+      <| doSeqBracketed <|> doSeqIndent
+
+    @[builtin_term_parser]
+    def «do» := leading_parser:argPrec ppAllowUngrouped
+      >> "do "
+      >> doSeq
+    ```
+
+    1. 对于 `do { E }`，直接译为 `E`
+    2. 对于 `do { let x ← E1; Stmt; ...; En }`，译为 `E1 >>= fun x => do { Stmt; ...; En }`
+    3. 对于 `do { E1 Stmt; ...; En }`，译为 `E1 >>= fun () => do { Stmt; ...; En }`
+    4. 对于 `do { let x := E1; Stmt; ...; En }`，译为
+
+        ```lean
+        let x := E1
+        do { Stmt; ...; En }
+        ```
+
+3. 引用相关
     1. `doubleQuotedName`：表示 `Name` 元素，但会请求 Lean 静态检查名称是否位于声明范围内
 
         ```lean
@@ -752,7 +784,7 @@
           >> ")"
         ```
 
-3. `open`：区别于作为命令的 `open`，仅使 `open` 作用与单独语句上
+4. `«open»`：区别于作为命令的 `open`，仅使 `open` 作用于单独语句上
 
     ```lean
     @[builtin_term_parser]
