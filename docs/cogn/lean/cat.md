@@ -834,14 +834,41 @@
     4. 枚举属性：给定类型为 `α` 的列表 `[a₁, a₂, ..., aₙ]`，枚举属性提供属性 `Attrᵢ` 用于将值 `aᵢ` 与声明关联起来
 
 ### 2.3.1 内建属性
+1. 与句法范畴对应的属性
+    1. `builtin_term_parser`：对应 `termParser`
+    2. `builtin_command_parser`：对应 `commandParser`
+    3. `builtin_attr_parser`：对应 `attrParser`
+    4. `builtin_tactic_parser`：对应 `tacticParser`
+    5. `builtin_syntax_parser`：对应 `syntaxParser`
+    6. `builtin_level_parser`：对应 `levelParser`
+    7. `builtin_prio_parser`：对应 `priorityParser`
+    8. `builtin_prec_parser`：对应 `precedenceParser`
+    9. `builtin_doElem_parser`：对应 `doElemParser`
+2. `inherit_doc`：从指定声明继承文档
 
 ### 2.3.2 标签属性
-1. `default_target`：`lake build` 默认构建标注此属性的目标
-2. <!-- TODO: 归类所有出现在本文的属性 -->
+1. `match_pattern`：标记可以在模式中使用的定义
+2. Lake DSL 相关属性
+    1. `package`：将定义标记为 Lake 包配置
+    2. `package_dep`：将定义标记为 Lake 包依赖项
+    3. `script`：将定义标记为 Lake 脚本
+    4. `default_script`：将 Lake 脚本标记为包的默认脚本
+    5. `lean_lib`：将定义标记为 Lake Lean 库目标配置
+    6. `lean_exe`：将定义标记为 Lake Lean 可执行目标配置
+    7. `extern_lib`：将定义标记为 Lake 外部库目标
+    8. `target`：将定义标记为自定义 Lake 目标
+    9. `default_target`：将 Lake 目标标记为包的默认目标
 
 ### 2.3.3 参数属性
+1. `export`：代码生成器使用的名称
+2. `extern`：指定外部函数作为定义实现
+3. `implemented_by`：实现 `opaque` 常量的 Lean 函数名称
 
 ### 2.3.4 枚举属性
+1. `inline`：标记定义为内联
+2. `noinline`：标记定义为不内联
+3. `macro_inline`：标记定义在 ANF 转换之前始终内联
+4. `always_inline`：标记定义始终内联
 
 ## 2.4 策略范畴
 
