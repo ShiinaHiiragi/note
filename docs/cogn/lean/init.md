@@ -444,22 +444,6 @@
         @[inherit_doc] infixl:75 " >>> " => HShiftRight.hShiftRight
         ```
 
-    7. `HOrElse`
-
-        ```lean
-        class HOrElse (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-          hOrElse : α → (Unit → β) → γ
-        @[inherit_doc HOrElse.hOrElse] syntax:20 term:21 " <|> " term:20 : term
-        ```
-
-    8. `HAndThen`
-
-        ```lean
-        class HAndThen (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-          hAndThen : α → (Unit → β) → γ
-        @[inherit_doc HAndThen.hAndThen] syntax:60 term:61 " >> " term:60 : term
-        ```
-
 3. 比较运算
     1. `LE`：小于等于
 
@@ -507,25 +491,13 @@
     1. 通用类型类
 
         ```lean
+        class Pure (f : Type u → Type v) where
+          pure {α : Type u} : α → f α
+
         class Bind (m : Type u → Type v) where
           bind : {α β : Type u} → m α → (α → m β) → m β
         @[inherit_doc] infixl:55  " >>= " => Bind.bind
 
-        class Pure (f : Type u → Type v) where
-          pure {α : Type u} : α → f α
-        ```
-
-    2. `Functor`：函子
-
-        ```lean
-        class Functor (f : Type u → Type v) : Type (max (u+1) v) where
-          map : {α β : Type u} → (α → β) → f α → f β
-          mapConst : {α β : Type u} → α → f β → f α := Function.comp map (Function.const _)
-        ```
-
-    3. `Seq`：序列
-
-        ```lean
         class Seq (f : Type u → Type v) : Type (max (u+1) v) where
           seq : {α β : Type u} → f (α → β) → (Unit → f α) → f β
         @[inherit_doc] notation:60 a:60 " <*> " b:61 => Seq.seq a fun _ : Unit => b
@@ -537,9 +509,25 @@
         class SeqRight (f : Type u → Type v) : Type (max (u+1) v) where
           seqRight : {α β : Type u} → f α → (Unit → f β) → f β
         @[inherit_doc] notation:60 a:60 " *> " b:61 => SeqRight.seqRight a fun _ : Unit => b
+
+        class HOrElse (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hOrElse : α → (Unit → β) → γ
+        @[inherit_doc HOrElse.hOrElse] syntax:20 term:21 " <|> " term:20 : term
+
+        class HAndThen (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hAndThen : α → (Unit → β) → γ
+        @[inherit_doc HAndThen.hAndThen] syntax:60 term:61 " >> " term:60 : term
         ```
 
-    4. `Applicative`：应用函子
+    2. `Functor`：函子
+
+        ```lean
+        class Functor (f : Type u → Type v) : Type (max (u+1) v) where
+          map : {α β : Type u} → (α → β) → f α → f β
+          mapConst : {α β : Type u} → α → f β → f α := Function.comp map (Function.const _)
+        ```
+
+    3. `Applicative`：应用函子
 
         ```lean
         class Applicative (f : Type u → Type v) extends Functor f, Pure f, Seq f, SeqLeft f, SeqRight f where
@@ -548,7 +536,7 @@
           seqRight := fun a b => Seq.seq (Functor.map (Function.const _ id) a) b
         ```
 
-    5. `Monad`：单子
+    4. `Monad`：单子
 
         ```lean
         class Monad (m : Type u → Type v) extends Applicative m, Bind m : Type (max (u+1) v) where
@@ -559,7 +547,7 @@
         ```
 
 ## 3.3 数学基础
-### 3.3.1 逻辑学
+### 3.3.1 命题与证明
 1. 命题：区分于 `Bool` 或 `Empty`
     1. `True`：真命题
 
@@ -657,4 +645,4 @@
     theorem Eq.trans {α : Sort u} {a b c : α} (h₁ : Eq a b) (h₂ : Eq b c) : Eq a c := h₂ ▸ h₁
     ```
 
-### 3.3.2 公理
+### 3.3.2 公理与计算
