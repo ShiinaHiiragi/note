@@ -31,6 +31,9 @@
     ```
 
 ### 3.1.2 记号
+1. 运算符相关
+
+2. 解析器相关
 
 ## 3.2 内建类型
 ### 3.2.1 结构体类型
@@ -183,8 +186,7 @@
           | nil : List α
           | cons (head : α) (tail : List α) : List α
 
-        @[inherit_doc]
-        infixr:67 " :: " => List.cons
+        @[inherit_doc] infixr:67 " :: " => List.cons
         syntax "[" withoutPosition(term,*,?) "]"  : term
         syntax "%[" withoutPosition(term,*,? " | " term) "]" : term
         ```
@@ -270,3 +272,103 @@
 ### 3.2.3 类型类
 
 ## 3.3 数学基础
+### 3.3.1 逻辑学
+1. 真值命题：区分于 `Bool` 或 `Empty`
+    1. `True`：真命题
+
+        ```lean
+        inductive True : Prop where
+          | intro : True
+
+        @[inherit_doc True.intro]
+        def trivial : True := ⟨⟩
+        ```
+
+    2. `False`：假命题
+
+        ```lean
+        inductive False : Prop
+
+        @[macro_inline]
+        def False.elim {C : Sort u} (h : False) : C := h.rec
+        ```
+
+2. 逻辑联结词
+    1. `Not`：否定
+
+        ```lean
+        def Not (a : Prop) : Prop := a → False
+        ```
+
+    2. `And`：合取
+
+        ```lean
+        @[pp_using_anonymous_constructor]
+        structure And (a b : Prop) : Prop where
+          intro ::
+          left : a
+          right : b
+
+        @[inherit_doc] infixr:35 " /\\ " => And
+        @[inherit_doc] infixr:35 " ∧ "   => And
+        ```
+
+    3. `Or`：析取
+
+        ```lean
+        inductive Or (a b : Prop) : Prop where
+          | inl (h : a) : Or a b
+          | inr (h : b) : Or a b
+
+        @[inherit_doc] infixr:30 " \\/ " => Or
+        @[inherit_doc] infixr:30 " ∨  "  => Or
+
+        theorem Or.intro_left (b : Prop) (h : a) : Or a b := Or.inl h
+        theorem Or.intro_right (a : Prop) (h : b) : Or a b := Or.inr h
+        theorem Or.elim {c : Prop} (h : Or a b) (left : a → c) (right : b → c) : c :=
+        match h with
+          | Or.inl h => left h
+          | Or.inr h => right h
+        ```
+
+    4. `Iff`：逻辑等价
+
+        ```lean
+        structure Iff (a b : Prop) : Prop where
+          intro ::
+          mp : a → b
+          mpr : b → a
+
+        @[inherit_doc] infix:20 " <-> " => Iff
+        @[inherit_doc] infix:20 " ↔ "   => Iff
+        ```
+
+3. 量词
+    1. 全称量词：通过依值类型实现
+
+        ```lean
+        syntax "∀ " binderIdent binderPred ", " term : term
+        ```
+
+    2. `Exists`：存在量词
+
+        ```lean
+        inductive Exists {α : Sort u} (p : α → Prop) : Prop where
+          | intro (w : α) (h : p w) : Exists p
+
+        syntax "∃ " binderIdent binderPred ", " term : term
+        ```
+
+4. 等价关系
+
+    ```lean
+    inductive Eq : α → α → Prop where
+      | refl (a : α) : Eq a a
+
+    @[inherit_doc] infix:50 " = " => Eq
+
+    theorem Eq.symm {α : Sort u} {a b : α} (h : Eq a b) : Eq b a := h ▸ rfl
+    theorem Eq.trans {α : Sort u} {a b c : α} (h₁ : Eq a b) (h₂ : Eq b c) : Eq a c := h₂ ▸ h₁
+    ```
+
+### 3.3.2 公理

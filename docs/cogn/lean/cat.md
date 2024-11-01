@@ -599,7 +599,7 @@
         2. `paren` 也是普通括号的句法
 
         ```lean
-        @[builtin_term_parser] 
+        @[builtin_term_parser]
         def paren := leading_parser "("
           >> withoutPosition (withoutForbidden (ppDedentIfGrouped termParser))
           >> ")"
