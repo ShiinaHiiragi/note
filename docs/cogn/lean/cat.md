@@ -126,6 +126,15 @@
 
     3. `«instance»`：类型类重载实例
 
+        ```lean
+        def «instance» := leading_parser Term.attrKind
+          >> "instance"
+          >> optNamedPrio
+          >> optional (ppSpace >> declId)
+          >> ppIndent declSig
+          >> declVal
+        ```
+
     4. `«inductive»`：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
 
         ```lean
@@ -947,3 +956,15 @@
       >> (doIdDecl <|> doPatDecl)
     )
     ```
+
+### 2.6.4 通用记号
+
+```lean
+def darrow : Parser := " => "
+
+def namedPrio := leading_parser atomic (" (" >> nonReservedSymbol "priority")
+  >> " := "
+  >> withoutPosition priorityParser
+  >> ")"
+def optNamedPrio := optional namedPrio
+```
