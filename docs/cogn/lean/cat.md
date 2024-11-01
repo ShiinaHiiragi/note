@@ -68,7 +68,7 @@
 
         1. `declValSimple`：形如 `:= expr`，用于简单声明
         2. `declValEqns`：一系列 `| pat => expr`，用于模式匹配定义
-        3. `whereStructInst`：`where` 及跟随于其后的 `field := value`，用于 `structure`
+        3. `whereStructInst`：`where` 及跟随于其后的 `field := value`，用于结构体与类型类
 
     4. `optDeriving`：要求 Lean 生成代码
 
@@ -124,7 +124,9 @@
           >> optDefDeriving
         ```
 
-    3. `«inductive»`：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
+    3. `«instance»`：类型类重载实例
+
+    4. `«inductive»`：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
 
         ```lean
         def ctor := leading_parser atomic (optional docComment >> "\n| ")
@@ -151,7 +153,7 @@
         2. 构造子的参数不能是一个将正在定义的数据类型
         3. 归纳类型本身不描述类型，需要 `optDeclSig` 参数才能使得类型成立
 
-    4. `«structure»`：定义结构体（与类型类）
+    5. `«structure»`：定义结构体与类型类
 
         ```lean
         def structureTk := leading_parser "structure "
@@ -209,11 +211,11 @@
             1. `structInst`：形如 `{ x := e, ... }`
 
                 ```lean
-                def structInstField := ppGroup
-                  $ leading_parser structInstLVal >> " := " >> termParser
                 def structInstFieldAbbrev := leading_parser atomic (ident
                   >> notFollowedBy ("." <|> ":=" <|> symbol "[") "ERROR INFO"
                 )
+                def structInstField := ppGroup
+                  $ leading_parser structInstLVal >> " := " >> termParser
 
                 def optEllipsis := leading_parser optional " .."
 
@@ -538,18 +540,30 @@
         def optType : Parser := optional typeSpec
         ```
 
+    !!! note "项与类型的关系"
+        1. 每个项都有对应类型，因此冒号右侧的项必然存在
+        2. 并非所有项都是类型，例如下述声明不合法：
+
+            ```lean
+            class Plus (α : Type) where
+              plus : α → α → α
+
+            variable (x : Plus Nat)  # ⊢ Type
+            variable (x : Plus)      # Error: type expected, got (Plus : Type → Type)
+            ```
+
 ### 2.3.3 函数与应用
 1. `«fun»`：$\lambda$ 表达式，即匿名函数
 
     ```lean
-    def funImplicitBinder := withAntiquot (mkAntiquot "implicitBinder" ``implicitBinder)
-      <| atomic (lookahead ("{" >> many1 binderIdent >> (symbol " : " <|> "}")))
-        >> implicitBinder
     def funStrictImplicitBinder := atomic (lookahead (strictImplicitLeftBracket
       >> many1 binderIdent
       >> (symbol " : " <|> strictImplicitRightBracket)
     ))
       >> strictImplicitBinder
+    def funImplicitBinder := withAntiquot (mkAntiquot "implicitBinder" ``implicitBinder)
+      <| atomic (lookahead ("{" >> many1 binderIdent >> (symbol " : " <|> "}")))
+        >> implicitBinder
 
     def funBinder : Parser := withAntiquot (mkAntiquot "funBinder" decl_name% (isPseudoKind := true))
       <| funStrictImplicitBinder
