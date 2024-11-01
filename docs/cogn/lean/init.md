@@ -30,43 +30,7 @@
     syntax:max "s!" interpolatedStr(term) : term
     ```
 
-### 3.1.2 运算符
-1. 真值运算符
-    1. `and`：与运算
-
-        ```lean
-        @[inherit_doc] infixl:35 " && " => and
-        @[macro_inline] def and (x y : Bool) : Bool := match x with
-          | false => false
-          | true => y
-        ```
-
-    2. `or`：或运算
-
-        ```lean
-        @[inherit_doc] infixl:30 " || " => or
-        @[macro_inline] def or (x y : Bool) : Bool := match x with
-          | true => true
-          | false => y
-        ```
-
-    3. `not`：非运算
-
-        ```lean
-        @[inherit_doc] notation:max "!" b:40 => not b
-        @[inline] def not : Bool → Bool
-          | true => false
-          | false => true
-        ```
-
-2. 其他运算符
-
-    ```lean
-    syntax (name := rawNatLit) "nat_lit " num : term
-    @[inherit_doc] infixr:90 " ∘ " => Function.comp
-    ```
-
-### 3.1.3 句法记号
+### 3.1.2 句法记号
 1. 句法范畴
 
     ```lean
@@ -85,7 +49,41 @@
     end Parser.Category
     ```
 
-2. ...
+2. 层级相关宏
+
+    ```lean
+    macro "max" : prec => `(prec| 1024)
+    macro "arg" : prec => `(prec| 1023)
+    macro "lead" : prec => `(prec| 1022)
+    macro "(" p:prec ")" : prec => return p
+    macro "min" : prec => `(prec| 10)
+    macro "min1" : prec => `(prec| 11)
+    macro "max_prec" : term => `(1024)
+    ```
+
+3. 优先级相关宏
+
+    ```lean
+    macro "default" : prio => `(prio| 1000)
+    macro "low" : prio => `(prio| 100)
+    macro "mid" : prio => `(prio| 500)
+    macro "high" : prio => `(prio| 10000)
+    macro "(" p:prio ")" : prio => return p
+    ```
+
+4. 组合子运算符
+
+    ```lean
+    syntax:arg stx:max "+" : stx
+    syntax:arg stx:max "*" : stx
+    syntax:arg stx:max "?" : stx
+    syntax:2 stx:2 " <|> " stx:1 : stx
+
+    macro:arg x:stx:max ",+"   : stx => `(stx| sepBy1($x, ",", ", "))
+    macro:arg x:stx:max ",*,?" : stx => `(stx| sepBy($x, ",", ", ", allowTrailingSep))
+    macro:arg x:stx:max ",+,?" : stx => `(stx| sepBy1($x, ",", ", ", allowTrailingSep))
+    macro:arg "!" x:stx:max : stx => `(stx| notFollowedBy($x))
+    ```
 
 ## 3.2 内建类型
 ### 3.2.1 结构体类型
@@ -97,7 +95,6 @@
           mk ::
           fst : α
           snd : β
-
         @[inherit_doc] infixr:35 " × " => Prod
         ```
 
@@ -140,7 +137,6 @@
         structure Array (α : Type u) where
           mk ::
           data : List α
-
         syntax "#[" withoutPosition(sepBy(term, ", ")) "]" : term
         ```
 
@@ -163,7 +159,6 @@
         inductive Sum (α : Type u) (β : Type v) where
           | inl (val : α) : Sum α β
           | inr (val : β) : Sum α β
-
         @[inherit_doc] infixr:30 " ⊕ " => Sum
         ```
 
@@ -444,6 +439,36 @@
         @[inherit_doc] infixl:75 " >>> " => HShiftRight.hShiftRight
         ```
 
+    !!! note "真值运算"
+
+        1. `and`：与运算
+
+            ```lean
+            @[macro_inline] def and (x y : Bool) : Bool := match x with
+              | false => false
+              | true => y
+            @[inherit_doc] infixl:35 " && " => and
+            ```
+
+        2. `or`：或运算
+
+            ```lean
+            @[macro_inline] def or (x y : Bool) : Bool := match x with
+              | true => true
+              | false => y
+            @[inherit_doc] infixl:30 " || " => or
+            ```
+
+        3. `not`：非运算
+
+            ```lean
+
+            @[inline] def not : Bool → Bool
+              | true => false
+              | false => true
+            @[inherit_doc] notation:max "!" b:40 => not b
+            ```
+
 3. 比较运算
     1. `LE`：小于等于
 
@@ -485,6 +510,9 @@
         class BEq (α : Type u) where
           beq : α → α → Bool
         @[inherit_doc] infix:50 " == " => BEq.beq
+
+        @[inline] def bne {α : Type u} [BEq α] (a b : α) : Bool := !(a == b)
+        @[inherit_doc] infix:50 " != " => bne
         ```
 
 4. 函子与单子
@@ -546,8 +574,10 @@
           seqRight x y := bind x fun _ => y ()
         ```
 
+5. 强制类型转换
+
 ## 3.3 数学基础
-### 3.3.1 命题与证明
+### 3.3.1 逻辑学
 1. 命题：区分于 `Bool` 或 `Empty`
     1. `True`：真命题
 
@@ -635,14 +665,26 @@
         ```
 
 4. 等价关系
+    1. `HasEquiv`：等价
 
-    ```lean
-    inductive Eq : α → α → Prop where
-      | refl (a : α) : Eq a a
+        ```lean
+        class HasEquiv (α : Sort u) where
+          Equiv : α → α → Sort v
+        @[inherit_doc] infix:50 " ≈ "  => HasEquiv.Equiv
+        ```
 
-    @[inherit_doc] infix:50 " = " => Eq
-    theorem Eq.symm {α : Sort u} {a b : α} (h : Eq a b) : Eq b a := h ▸ rfl
-    theorem Eq.trans {α : Sort u} {a b c : α} (h₁ : Eq a b) (h₂ : Eq b c) : Eq a c := h₂ ▸ h₁
-    ```
+    2. `Eq`：相等
 
-### 3.3.2 公理与计算
+        ```lean
+        inductive Eq : α → α → Prop where
+          | refl (a : α) : Eq a a
+
+        @[inherit_doc] infix:50 " = " => Eq
+        theorem Eq.symm {α : Sort u} {a b : α} (h : Eq a b) : Eq b a := h ▸ rfl
+        theorem Eq.trans {α : Sort u} {a b c : α} (h₁ : Eq a b) (h₂ : Eq b c) : Eq a c := h₂ ▸ h₁
+
+        @[reducible] def Ne {α : Sort u} (a b : α) := ¬(a = b)
+        @[inherit_doc] infix:50 " ≠ "  => Ne
+        ```
+
+### 3.3.2 集合论
