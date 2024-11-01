@@ -31,30 +31,39 @@
     ```
 
 ### 3.1.2 运算符
-1. 函数运算符
+1. 真值运算符
+    1. `and`：与运算
+
+        ```lean
+        @[inherit_doc] infixl:35 " && " => and
+        @[macro_inline] def and (x y : Bool) : Bool := match x with
+          | false => false
+          | true => y
+        ```
+
+    2. `or`：或运算
+
+        ```lean
+        @[inherit_doc] infixl:30 " || " => or
+        @[macro_inline] def or (x y : Bool) : Bool := match x with
+          | true => true
+          | false => y
+        ```
+
+    3. `not`：非运算
+
+        ```lean
+        @[inherit_doc] notation:max "!" b:40 => not b
+        @[inline] def not : Bool → Bool
+          | true => false
+          | false => true
+        ```
+
+2. 其他运算符
 
     ```lean
     syntax (name := rawNatLit) "nat_lit " num : term
     @[inherit_doc] infixr:90 " ∘ " => Function.comp
-    ```
-
-2. 真值运算符
-
-    ```lean
-    @[inherit_doc] infixl:35 " && " => and
-    @[macro_inline] def and (x y : Bool) : Bool := match x with
-      | false => false
-      | true => y
-
-    @[inherit_doc] infixl:30 " || " => or
-    @[macro_inline] def or (x y : Bool) : Bool := match x with
-      | true => true
-      | false => y
-
-    @[inherit_doc] notation:max "!" b:40 => not b
-    @[inline] def not : Bool → Bool
-      | true => false
-      | false => true
     ```
 
 ### 3.1.3 句法记号
@@ -313,113 +322,188 @@
         12. `proj`：投影，即扩展字段记号．并非真实需要，仅为项提供更紧凑的表示以加速归约
 
 ### 3.2.3 类型类
-1. 一元算术运算
+1. 算术运算
+    1. `Neg`：取负
 
-    ```lean
-    class Neg (α : Type u) where
-      neg : α → α
-    @[inherit_doc] prefix:75 "-" => Neg.neg
+        ```lean
+        class Neg (α : Type u) where
+          neg : α → α
+        @[inherit_doc] prefix:75 "-" => Neg.neg
+        ```
 
-    class Complement (α : Type u) where
-      complement : α → α
-    @[inherit_doc] prefix:100 "~~~" => Complement.complement
-    ```
+    2. `HAdd`：加法
 
-2. 二元算术运算
+        ```lean
+        class HAdd (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hAdd : α → β → γ
+        @[inherit_doc] infixl:65 " + " => HAdd.hAdd
+        ```
 
-    ```lean
-    class HAdd (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hAdd : α → β → γ
-    @[inherit_doc] infixl:65 " + " => HAdd.hAdd
+    3. `HSub`：减法
 
-    class HSub (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hSub : α → β → γ
-    @[inherit_doc] infixl:65 " - " => HSub.hSub
+        ```lean
+        class HSub (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hSub : α → β → γ
+        @[inherit_doc] infixl:65 " - " => HSub.hSub
+        ```
 
-    class HMul (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hMul : α → β → γ
-    @[inherit_doc] infixl:70 " * " => HMul.hMul
+    4. `HMul`：乘法
 
-    class HDiv (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hDiv : α → β → γ
-    @[inherit_doc] infixl:70 " / " => HDiv.hDiv
+        ```lean
+        class HMul (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hMul : α → β → γ
+        @[inherit_doc] infixl:70 " * " => HMul.hMul
+        ```
 
-    class HPow (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hPow : α → β → γ
-    @[inherit_doc] infixr:80 " ^ " => HPow.hPow
+    5. `HDiv`：除法
 
-    class HAppend (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hAppend : α → β → γ
-    @[inherit_doc] infixl:65 " ++ " => HAppend.hAppend
+        ```lean
+        class HDiv (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hDiv : α → β → γ
+        @[inherit_doc] infixl:70 " / " => HDiv.hDiv
+        ```
 
-    class HMod (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hMod : α → β → γ
-    @[inherit_doc] infixl:70 " % " => HMod.hMod
+    6. `HPow`：乘方
 
-    class Dvd (α : Type _) where
-      dvd : α → α → Prop
-    @[inherit_doc] infix:50  " ∣ " => Dvd.dvd
-    ```
+        ```lean
+        class HPow (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hPow : α → β → γ
+        @[inherit_doc] infixr:80 " ^ " => HPow.hPow
+        ```
 
-3. 逻辑运算
+    7. `HAppend`：连接
 
-    ```lean
-    class HOrElse (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hOrElse : α → (Unit → β) → γ
-    @[inherit_doc HOrElse.hOrElse] syntax:20 term:21 " <|> " term:20 : term
+        ```lean
+        class HAppend (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hAppend : α → β → γ
+        @[inherit_doc] infixl:65 " ++ " => HAppend.hAppend
+        ```
 
-    class HAndThen (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hAndThen : α → (Unit → β) → γ
-    @[inherit_doc HAndThen.hAndThen] syntax:60 term:61 " >> " term:60 : term
+    8. `HMod`：取余
 
-    class HAnd (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hAnd : α → β → γ
-    @[inherit_doc] infixl:60 " &&& " => HAnd.hAnd
+        ```lean
+        class HMod (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hMod : α → β → γ
+        @[inherit_doc] infixl:70 " % " => HMod.hMod
+        ```
 
-    class HXor (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hXor : α → β → γ
-    @[inherit_doc] infixl:58 " ^^^ " => HXor.hXor
+    9. `Dvd`：同余
 
-    class HOr (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hOr : α → β → γ
-    @[inherit_doc] infixl:55 " ||| " => HOr.hOr
+        ```lean
+        class Dvd (α : Type _) where
+          dvd : α → α → Prop
+        @[inherit_doc] infix:50  " ∣ " => Dvd.dvd
+        ```
 
-    class HShiftLeft (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hShiftLeft : α → β → γ
-    @[inherit_doc] infixl:75 " <<< " => HShiftLeft.hShiftLeft
+2. 逻辑运算
+    1. `Complement`：按位取反
 
-    class HShiftRight (α : Type u) (β : Type v) (γ : outParam (Type w)) where
-      hShiftRight : α → β → γ
-    @[inherit_doc] infixl:75 " >>> " => HShiftRight.hShiftRight
-    ```
+        ```lean
+        class Complement (α : Type u) where
+          complement : α → α
+        @[inherit_doc] prefix:100 "~~~" => Complement.complement
+        ```
 
-4. 比较运算
+    2. `HAnd`：按位与
 
-    ```lean
-    class LE (α : Type u) where
-      le : α → α → Prop
-    @[inherit_doc] infix:50 " <= " => LE.le
-    @[inherit_doc] infix:50 " ≤ "  => LE.le
+        ```lean
+        class HAnd (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hAnd : α → β → γ
+        @[inherit_doc] infixl:60 " &&& " => HAnd.hAnd
+        ```
 
-    class LT (α : Type u) where
-      lt : α → α → Prop
-    @[inherit_doc] infix:50 " < "  => LT.lt
+    3. `HXor`：按位或
 
-    @[reducible]
-    def GE.ge {α : Type u} [LE α] (a b : α) : Prop := LE.le b a
-    @[inherit_doc] infix:50 " >= " => GE.ge
-    @[inherit_doc] infix:50 " ≥ "  => GE.ge
+        ```lean
+        class HXor (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hXor : α → β → γ
+        @[inherit_doc] infixl:58 " ^^^ " => HXor.hXor
+        ```
 
-    @[reducible]
-    def GT.gt {α : Type u} [LT α] (a b : α) : Prop := LT.lt b a
-    @[inherit_doc] infix:50 " > "  => GT.gt
+    4. `HOr`：按位非
 
-    class BEq (α : Type u) where
-      beq : α → α → Bool
-    @[inherit_doc] infix:50 " == " => BEq.beq
-    ```
+        ```lean
+        class HOr (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hOr : α → β → γ
+        @[inherit_doc] infixl:55 " ||| " => HOr.hOr
+        ```
 
-5. 函子与单子
+    5. `HShiftLeft`：左移
+
+        ```lean
+        class HShiftLeft (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hShiftLeft : α → β → γ
+        @[inherit_doc] infixl:75 " <<< " => HShiftLeft.hShiftLeft
+        ```
+
+    6. `HShiftRight`：右移
+
+        ```lean
+        class HShiftRight (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hShiftRight : α → β → γ
+        @[inherit_doc] infixl:75 " >>> " => HShiftRight.hShiftRight
+        ```
+
+    7. `HOrElse`
+
+        ```lean
+        class HOrElse (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hOrElse : α → (Unit → β) → γ
+        @[inherit_doc HOrElse.hOrElse] syntax:20 term:21 " <|> " term:20 : term
+        ```
+
+    8. `HAndThen`
+
+        ```lean
+        class HAndThen (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+          hAndThen : α → (Unit → β) → γ
+        @[inherit_doc HAndThen.hAndThen] syntax:60 term:61 " >> " term:60 : term
+        ```
+
+3. 比较运算
+    1. `LE`：小于等于
+
+        ```lean
+        class LE (α : Type u) where
+          le : α → α → Prop
+        @[inherit_doc] infix:50 " <= " => LE.le
+        @[inherit_doc] infix:50 " ≤ "  => LE.le
+        ```
+
+    2. `LT`：小于
+
+        ```lean
+        class LT (α : Type u) where
+          lt : α → α → Prop
+        @[inherit_doc] infix:50 " < "  => LT.lt
+        ```
+
+    3. `GE`：大于等于
+
+        ```lean
+        @[reducible]
+        def GE.ge {α : Type u} [LE α] (a b : α) : Prop := LE.le b a
+        @[inherit_doc] infix:50 " >= " => GE.ge
+        @[inherit_doc] infix:50 " ≥ "  => GE.ge
+        ```
+
+    4. `GT`：大于
+
+        ```lean
+        @[reducible]
+        def GT.gt {α : Type u} [LT α] (a b : α) : Prop := LT.lt b a
+        @[inherit_doc] infix:50 " > "  => GT.gt
+        ```
+
+    5. `BEq`：真值相等
+
+        ```lean
+        class BEq (α : Type u) where
+          beq : α → α → Bool
+        @[inherit_doc] infix:50 " == " => BEq.beq
+        ```
+
+4. 函子与单子
     1. 通用类型类
 
         ```lean
@@ -476,7 +560,7 @@
 
 ## 3.3 数学基础
 ### 3.3.1 逻辑学
-1. 真值命题：区分于 `Bool` 或 `Empty`
+1. 命题：区分于 `Bool` 或 `Empty`
     1. `True`：真命题
 
         ```lean
@@ -569,7 +653,6 @@
       | refl (a : α) : Eq a a
 
     @[inherit_doc] infix:50 " = " => Eq
-
     theorem Eq.symm {α : Sort u} {a b : α} (h : Eq a b) : Eq b a := h ▸ rfl
     theorem Eq.trans {α : Sort u} {a b c : α} (h₁ : Eq a b) (h₂ : Eq b c) : Eq a c := h₂ ▸ h₁
     ```
