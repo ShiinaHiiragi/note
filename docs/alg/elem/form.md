@@ -160,7 +160,7 @@
 3. $\text{Euler}$ 公式：$e^{\pm \mathrm{i} x}=\cos x \pm \mathrm{i} \sin x \ (x \in \mathbf C)$
 
     !!! note "倍角的 $\text{de Moivre}$ 公式"
-        $\text{de Moivre}$ 公式是 $\text{Euler}$ 公式的推论：${\displaystyle \cos n x+\mathrm{i} \sin n x=\sum_{k=0}^n \mathrm{i}^k\dbinom{n}{k} \cos ^{n-k} x \sin ^k x}$，分离复数的实部和虚部得到三角函数的倍角公式：
+        $\text{de Moivre}$ 公式是 $\text{Euler}$ 公式的推论：${\displaystyle \cos n x+\mathrm{i} \sin n x=\sum_{k=0}^n \mathrm{i}^k\dbinom{n}{k} \cos ^{n-k} x \sin ^k x}$，分离复数的实部和虚部得到三角函数的倍角公式
 
         $$
         \begin{aligned}

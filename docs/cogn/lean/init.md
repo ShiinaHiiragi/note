@@ -30,10 +30,53 @@
     syntax:max "s!" interpolatedStr(term) : term
     ```
 
-### 3.1.2 记号
-1. 运算符相关
+### 3.1.2 运算符
+1. 函数运算符
 
-2. 解析器相关
+    ```lean
+    syntax (name := rawNatLit) "nat_lit " num : term
+    @[inherit_doc] infixr:90 " ∘ " => Function.comp
+    ```
+
+2. 真值运算符
+
+    ```lean
+    @[inherit_doc] infixl:35 " && " => and
+    @[macro_inline] def and (x y : Bool) : Bool := match x with
+      | false => false
+      | true => y
+
+    @[inherit_doc] infixl:30 " || " => or
+    @[macro_inline] def or (x y : Bool) : Bool := match x with
+      | true => true
+      | false => y
+
+    @[inherit_doc] notation:max "!" b:40 => not b
+    @[inline] def not : Bool → Bool
+      | true => false
+      | false => true
+    ```
+
+### 3.1.3 句法记号
+1. 句法范畴
+
+    ```lean
+    structure Parser.Category
+
+    namespace Parser.Category
+    def term    : Category := {}
+    def command : Category := {}
+    def attr    : Category := {}
+    def tactic  : Category := {}
+    def stx     : Category := {}
+    def level   : Category := {}
+    def prio    : Category := {}
+    def prec    : Category := {}
+    def doElem  : Category := {}
+    end Parser.Category
+    ```
+
+2. ...
 
 ## 3.2 内建类型
 ### 3.2.1 结构体类型
@@ -270,6 +313,166 @@
         12. `proj`：投影，即扩展字段记号．并非真实需要，仅为项提供更紧凑的表示以加速归约
 
 ### 3.2.3 类型类
+1. 一元算术运算
+
+    ```lean
+    class Neg (α : Type u) where
+      neg : α → α
+    @[inherit_doc] prefix:75 "-" => Neg.neg
+
+    class Complement (α : Type u) where
+      complement : α → α
+    @[inherit_doc] prefix:100 "~~~" => Complement.complement
+    ```
+
+2. 二元算术运算
+
+    ```lean
+    class HAdd (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hAdd : α → β → γ
+    @[inherit_doc] infixl:65 " + " => HAdd.hAdd
+
+    class HSub (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hSub : α → β → γ
+    @[inherit_doc] infixl:65 " - " => HSub.hSub
+
+    class HMul (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hMul : α → β → γ
+    @[inherit_doc] infixl:70 " * " => HMul.hMul
+
+    class HDiv (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hDiv : α → β → γ
+    @[inherit_doc] infixl:70 " / " => HDiv.hDiv
+
+    class HPow (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hPow : α → β → γ
+    @[inherit_doc] infixr:80 " ^ " => HPow.hPow
+
+    class HAppend (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hAppend : α → β → γ
+    @[inherit_doc] infixl:65 " ++ " => HAppend.hAppend
+
+    class HMod (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hMod : α → β → γ
+    @[inherit_doc] infixl:70 " % " => HMod.hMod
+
+    class Dvd (α : Type _) where
+      dvd : α → α → Prop
+    @[inherit_doc] infix:50  " ∣ " => Dvd.dvd
+    ```
+
+3. 逻辑运算
+
+    ```lean
+    class HOrElse (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hOrElse : α → (Unit → β) → γ
+    @[inherit_doc HOrElse.hOrElse] syntax:20 term:21 " <|> " term:20 : term
+
+    class HAndThen (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hAndThen : α → (Unit → β) → γ
+    @[inherit_doc HAndThen.hAndThen] syntax:60 term:61 " >> " term:60 : term
+
+    class HAnd (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hAnd : α → β → γ
+    @[inherit_doc] infixl:60 " &&& " => HAnd.hAnd
+
+    class HXor (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hXor : α → β → γ
+    @[inherit_doc] infixl:58 " ^^^ " => HXor.hXor
+
+    class HOr (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hOr : α → β → γ
+    @[inherit_doc] infixl:55 " ||| " => HOr.hOr
+
+    class HShiftLeft (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hShiftLeft : α → β → γ
+    @[inherit_doc] infixl:75 " <<< " => HShiftLeft.hShiftLeft
+
+    class HShiftRight (α : Type u) (β : Type v) (γ : outParam (Type w)) where
+      hShiftRight : α → β → γ
+    @[inherit_doc] infixl:75 " >>> " => HShiftRight.hShiftRight
+    ```
+
+4. 比较运算
+
+    ```lean
+    class LE (α : Type u) where
+      le : α → α → Prop
+    @[inherit_doc] infix:50 " <= " => LE.le
+    @[inherit_doc] infix:50 " ≤ "  => LE.le
+
+    class LT (α : Type u) where
+      lt : α → α → Prop
+    @[inherit_doc] infix:50 " < "  => LT.lt
+
+    @[reducible]
+    def GE.ge {α : Type u} [LE α] (a b : α) : Prop := LE.le b a
+    @[inherit_doc] infix:50 " >= " => GE.ge
+    @[inherit_doc] infix:50 " ≥ "  => GE.ge
+
+    @[reducible]
+    def GT.gt {α : Type u} [LT α] (a b : α) : Prop := LT.lt b a
+    @[inherit_doc] infix:50 " > "  => GT.gt
+
+    class BEq (α : Type u) where
+      beq : α → α → Bool
+    @[inherit_doc] infix:50 " == " => BEq.beq
+    ```
+
+5. 函子与单子
+    1. 通用类型类
+
+        ```lean
+        class Bind (m : Type u → Type v) where
+          bind : {α β : Type u} → m α → (α → m β) → m β
+        @[inherit_doc] infixl:55  " >>= " => Bind.bind
+
+        class Pure (f : Type u → Type v) where
+          pure {α : Type u} : α → f α
+        ```
+
+    2. `Functor`：函子
+
+        ```lean
+        class Functor (f : Type u → Type v) : Type (max (u+1) v) where
+          map : {α β : Type u} → (α → β) → f α → f β
+          mapConst : {α β : Type u} → α → f β → f α := Function.comp map (Function.const _)
+        ```
+
+    3. `Seq`：序列
+
+        ```lean
+        class Seq (f : Type u → Type v) : Type (max (u+1) v) where
+          seq : {α β : Type u} → f (α → β) → (Unit → f α) → f β
+        @[inherit_doc] notation:60 a:60 " <*> " b:61 => Seq.seq a fun _ : Unit => b
+
+        class SeqLeft (f : Type u → Type v) : Type (max (u+1) v) where
+          seqLeft : {α β : Type u} → f α → (Unit → f β) → f α
+        @[inherit_doc] notation:60 a:60 " <* " b:61 => SeqLeft.seqLeft a fun _ : Unit => b
+
+        class SeqRight (f : Type u → Type v) : Type (max (u+1) v) where
+          seqRight : {α β : Type u} → f α → (Unit → f β) → f β
+        @[inherit_doc] notation:60 a:60 " *> " b:61 => SeqRight.seqRight a fun _ : Unit => b
+        ```
+
+    4. `Applicative`：应用函子
+
+        ```lean
+        class Applicative (f : Type u → Type v) extends Functor f, Pure f, Seq f, SeqLeft f, SeqRight f where
+          map := fun x y => Seq.seq (pure x) fun _ => y
+          seqLeft := fun a b => Seq.seq (Functor.map (Function.const _) a) b
+          seqRight := fun a b => Seq.seq (Functor.map (Function.const _ id) a) b
+        ```
+
+    5. `Monad`：单子
+
+        ```lean
+        class Monad (m : Type u → Type v) extends Applicative m, Bind m : Type (max (u+1) v) where
+          map f x := bind x (Function.comp pure f)
+          seq f x := bind f fun y => Functor.map y (x ())
+          seqLeft x y := bind x fun a => bind (y ()) (fun _ => pure a)
+          seqRight x y := bind x fun _ => y ()
+        ```
 
 ## 3.3 数学基础
 ### 3.3.1 逻辑学
@@ -310,7 +513,7 @@
           right : b
 
         @[inherit_doc] infixr:35 " /\\ " => And
-        @[inherit_doc] infixr:35 " ∧ "   => And
+        @[inherit_doc] infixr:35 " ∧ " => And
         ```
 
     3. `Or`：析取
@@ -321,7 +524,7 @@
           | inr (h : b) : Or a b
 
         @[inherit_doc] infixr:30 " \\/ " => Or
-        @[inherit_doc] infixr:30 " ∨  "  => Or
+        @[inherit_doc] infixr:30 " ∨  " => Or
 
         theorem Or.intro_left (b : Prop) (h : a) : Or a b := Or.inl h
         theorem Or.intro_right (a : Prop) (h : b) : Or a b := Or.inr h
@@ -340,7 +543,7 @@
           mpr : b → a
 
         @[inherit_doc] infix:20 " <-> " => Iff
-        @[inherit_doc] infix:20 " ↔ "   => Iff
+        @[inherit_doc] infix:20 " ↔ " => Iff
         ```
 
 3. 量词
