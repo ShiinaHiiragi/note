@@ -3,26 +3,24 @@
 ## 3.1 预定义
 ### 3.1.1 表达式
 1. 条件表达式
+
+    ```lean
+    @[inherit_doc ite]
+    syntax (name := termIfThenElse) ppRealGroup(
+      ppRealFill(ppIndent("if " term " then") ppSpace term)
+      ppDedent(ppSpace)
+      ppRealFill("else " term)
+    ) : term
+
+    syntax (name := termIfLet) ppRealGroup(
+      ppRealFill(ppIndent("if " "let " term " := " term " then") ppSpace term)
+      ppDedent(ppSpace)
+      ppRealFill("else " term)
+    ) : term
+    ```
+
     1. `termIfThenElse`：通用 `if` 表达式
-
-        ```lean
-        @[inherit_doc ite]
-        syntax (name := termIfThenElse) ppRealGroup(
-          ppRealFill(ppIndent("if " term " then") ppSpace term)
-          ppDedent(ppSpace)
-          ppRealFill("else " term)
-        ) : term
-        ```
-
-    2. `termIfLet`：可使用模式匹配，用于在某些场景下代替 `match`
-
-        ```lean
-        syntax (name := termIfLet) ppRealGroup(
-          ppRealFill(ppIndent("if " "let " term " := " term " then") ppSpace term)
-          ppDedent(ppSpace)
-          ppRealFill("else " term)
-        ) : term
-        ```
+    2. `termIfLet`：可使用模式匹配，在某些场景下能代替 `match`
 
 2. 字符串插值：组合子 `interpolatedStr` 解析含有 `{term}` 的字符串，将其解释为项（而非字符串）
 
