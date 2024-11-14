@@ -3935,7 +3935,6 @@ Bootstrap 适合短时间开发简单的静态网站
     - 在前端环境下（例如 HTML 引用的图片，样式表或 JavaScript 脚本），都是以该文件为当前目录的引用，在发布版下，这些文件在 exe 目录的 `./resources/app` 下
 
     - 在后端环境下，后端引用的任何资源（例如 `fs` 模块读取文件），都是以工程目录为当前目录。在调试版和发布版两个版本下位置一致
-
 2. `electron-packager . ProjectName` 可用于打包，调用的命令行参数如下
     - `.`：`package.json` 的位置
     - `ProjectName`：生成的打包应用的名字
@@ -3947,172 +3946,25 @@ Bootstrap 适合短时间开发简单的静态网站
     - `--overwrite`：新的打包会覆写原来的打包内容，可选
     - `--no-prune`：默认形况下会不打包开发依赖并对生产依赖进行剪枝，这个选项会不剪枝，可选
 
-#### 2.4.2 Flutter
 
-## 3 OTHER
 
-### 3.1 Protocol
 
-#### 3.1.1 JSON & XML
 
-##### （一）JSON
 
-1. JSON 是 JavaScript 的对象格式，是存储和交换文本信息的语法，书写规则较 JavaScript 更加严格
-    - JSON 文件的文件类型是 `.json`，MIME 类型是 `application/json`
-2. JSON 的值类型：数字、字符串、布尔值、数组、对象和 `null`。其中，对象以 `"key": value` 的形式书写，必须要使用双引号，最后一个键值对不加逗号
 
-##### （二）XML
 
-1. XML 基本结构
 
-    ```xml
-    <?xml version="1.0" encoding="UTF-8"?>
-    <note>
-      <to> Tove </to>
-      <from> Jani </from>
-      <heading> Reminder </heading>
-      <body> Don't forget me this weekend! </body>
-    </note>
-    ```
 
-    - 第一行是 XML 声明（可选，放在第一行），定义 XML 的版本和所使用的编码
-    - XML 文档必须包含根元素，该元素是所有其他元素的父元素。XML 文档中的元素形成了一棵文档树，这棵树从根部开始，并扩展到树的最底端
 
-2. XML 元素语法
 
-    - XML 标签对大小写敏感，XML 命名规则如下
-        - 名称可以包含字母、数字以及其他的字符
-        - 名称不能以数字或者标点符号开始；不能以字母 XML（任何大小写形式）开始；不能包含空格
-    - 所有的 XML 元素都必须有一个关闭标签，且必须正确嵌套
-    - XML 属性值必须加引号
 
-3. 与 HTML 的相同点和不同点
 
-    - XML 的五个实体符号以及注释形式与 HTML 定义的一致
 
-    - 与 HTML 不同的是，XML 的连续空格会被保留，以 LF 存储换行
 
-#### 3.1.2 Web Protocol
 
-##### （一）TCP/IP 协议
 
-1. TCP/IP 是供已连接因特网的计算机进行通信的通信协议，包含一系列用于处理数据通信的协议
-2. IP 地址
-    - TCP/IP 使用 4 组数字来为计算机编址，每个计算机必须有一个唯一的 4 组数字的地址
-    - 每组数字必须在 0 到 255 之间，并由点号隔开，比如：192.168.1.60
-    - 用于 TCP/IP 地址的名字被称为域名，例如 google.com 就是一个域名
-3. 协议族：TCP/IP 是基于 TCP 和 IP 这两个最初的协议之上的不同的通信协议的集合，下面列出部分
-    - 传输控制协议（TCP）：TCP 用于从应用程序到网络的数据传输控制，TCP 负责在数据传送之前将它们分割为 IP 包，然后在它们到达的时候将它们重组
-    - 网际协议（IP）：IP 负责在因特网上发送和接收数据包
-    - 超文本传输协议（HTTP）：HTTP 用于从 web 客户端向 web 服务器发送请求，并从 web 服务器向 web 客户端返回内容（网页）
-    - 安全的超文本传输协议（HTTPS）：HTTPS 负责在 web 服务器和 web 浏览器之间的安全通信
-    - 安全套接字层（SSL）：SSL 协议用于为安全数据传输加密数据
-    - 文件传输协议（FTP）：FTP 负责计算机之间的文件传输
-    - 简易邮件传输协议（SMTP），因特网消息访问协议（IMAP），邮局协议（POP）：电子邮件的协议
 
-##### （二）HTTP 协议
 
-1. HTTP是基于客户端 / 服务端的架构模型，通过一个可靠的链接来交换信息，是一个无状态的请求 / 响应协议
-
-    - 无连接：无连接即限制每次连接只处理一个请求。服务器处理完客户的请求，并收到客户的应答后，即断开连接
-    - 无状态：指协议对于事务处理没有记忆能力
-    - 媒体独立：只要客户端和服务器知道如何处理的数据内容，任何类型的数据都可以通过 HTTP 发送
-    - HTTP 使用统一资源标识符（URI）来传输数据和建立连接
-
-2. 消息结构
-
-    - 客户端请求报文：客户端发送一个HTTP请求到服务器的请求消息包括以下格式
-
-        - 请求行：请求方法、空格、URL、空格、协议版本、CRLF
-        - 请求头（多行）：「头部字段名: 值 CRLF」
-        - 空行：CRLF
-        - 请求体：请求数据
-
-        实例：
-
-        ```http
-        GET /hello.txt HTTP/1.1
-        User-Agent: curl/7.16.3 libcurl/7.16.3 OpenSSL/0.9.7l zlib/1.2.3
-        Host: www.example.com
-        Accept-Language: en, mi
-        ```
-
-    - 服务器响应报文
-
-        - 响应行：报文协议与版本、空格、状态码、空格、状态描述、CRLF
-        - 响应头
-        - 空行：CRLF
-        - 响应体：响应正文
-
-        实例：
-
-        ```http
-        HTTP/1.1 200 OK
-        Date: Mon, 27 Jul 2009 12:28:53 GMT
-        Server: Apache
-        Last-Modified: Wed, 22 Jul 2009 19:15:56 GMT
-        ETag: "34aa387-d-1568eb00"
-        Accept-Ranges: bytes
-        Content-Length: 51
-        Vary: Accept-Encoding
-        Content-Type: text/plain
-        ```
-
-3. 请求行与响应行
-
-    - 请求头处的请求方法：以 `GET` 与 `POST` 最常用
-        - `GET`：向特定的资源发出请求，其行为一般是幂等的（即没有副作用）
-        - `POST`：向指定资源提交数据进行处理请求（例如提交表单或者上传文件），数据被包含在请求体中。`POST` 请求可能会导致新的资源的创建或已有资源的修改（即不幂等）
-
-    - 响应行的状态码：以下是几个常见的状态码
-
-        | 状态码 | 状态码名称            | 中文描述                                                                       |
-        | ------ | --------------------- | ------------------------------------------------------------------------------ |
-        | 100    | Continue              | 继续。客户端应继续其请求                                                       |
-        | 200    | OK                    | 请求成功。一般用于 GET 与 POST 请求                                            |
-        | 204    | No Content            | 无内容。服务器成功处理，但未返回内容                                           |
-        | 304    | Not Modified          | 未修改。所请求的资源未修改，服务器返回此状态码时，不会返回任何资源             |
-        | 400    | Bad Request           | 客户端请求的语法错误，服务器无法理解                                           |
-        | 401    | Unauthorized          | 请求要求用户的身份认证                                                         |
-        | 403    | Forbidden             | 服务器理解请求客户端的请求，但是拒绝执行此请求                                 |
-        | 404    | Not Found             | 服务器无法根据客户端的请求找到资源                                             |
-        | 406    | Not Acceptable        | 服务器无法根据客户端请求的内容特性完成请求                                     |
-        | 500    | Internal Server Error | 服务器内部错误，无法完成请求                                                   |
-        | 502    | Bad Gateway           | 作为网关或者代理工作的服务器尝试执行请求时，从远程服务器接收到了一个无效的响应 |
-
-##### （三）AJAX
-
-1. AJAX 指异步 JavaScript 和 XML，它不是新的编程语言，而是一种使用现有标准的新方法
-
-    -  `XMLHttpRequest` 对象：通过 `XMLHttpRequest` 可以在不刷新页面的情况下请求特定 URL，获取数据
-    
-    - `readyState` 是 `XMLHttpRequest` 对象的属性，取值在 0 ~ 4 之间。当`readyState` 发生变化，则会调用 `XMLHttpRequest` 对象绑定的 `onreadystatechange` 对应的函数
-    
-      | `readyState` | 描述                     |
-      | ------------ | ------------------------ |
-      | `0`          | 请求未初始化             |
-      | `1`          | 服务器连接已建立         |
-      | `2`          | 请求已接收               |
-      | `3`          | 请求处理中               |
-      | `4`          | 请求已完成，且响应已就绪 |
-    
-    ```javascript
-    var xhr= new XMLHttpRequest(),
-        method = "GET",
-        url = "https://developer.mozilla.org/";
-    
-    xhr.open(method, url, true);
-    xhr.onreadystatechange = function () {
-      if(xhr.readyState === XMLHttpRequest.DONE && xhr.status === 200)
-        console.log(xhr.responseText)
-    }
-    xhr.send();
-    ```
-
-2. jQuery 提供了 AJAX 方法
-    - `$(selector).load(URL, data, callback);` ：从服务器加载数据，并把返回的数据放入被选元素中。其中，可选的 `data` 参数规定与请求一同发送的查询字符串键 / 值对集合
-    - `$.get(URL, callback);` ：通过 HTTP GET 请求从服务器上请求数据
-    - `$.post(URL, data, callback);`：通过 HTTP POST 请求向服务器提交数据。其中，可选的 `data` 参数规定连同请求发送的数据
 
 ### 3.2 Tool
 
@@ -4721,33 +4573,23 @@ Bootstrap 适合短时间开发简单的静态网站
     env WINEPREFIX="~/.wine" wine "C:\\path\\to\\executable"
     ```
 
-### 3.4 Designing and Hardware
 
-#### 3.4.1 Copywriting
 
-1. 引号的码位
 
-    | 符号   | 名称           | Unicode     |
-    | ------ | -------------- | ----------- |
-    | `'`    | 单直引号       | U+0027      |
-    | `"`    | 双直引号       | U+0022      |
-    | `‘’`   | 弯引号（单）   | U+2018/2019 |
-    | `“”`   | 弯引号（双）   | U+201C/201D |
-    | `「」` | 直角引号（单） | U+300C/300D |
-    | `『』` | 直角引号（双） | U+300E/300F |
-    | `’`    | 撇号           | U+2019      |
-    | `′`    | 角分符号       | U+2032      |
-    | `″`    | 角秒符号       | U+2033      |
 
-2. 引号的使用方式：
 
-    - 打字机时代为为了节省空间、减少机械结构，设置了「直引号」，为现代计算机所继承。这种引号现在被称为 「Dumb Quotes」
 
-    - 中国大陆或英文正式出版物使用的引号是「弯引号」，在英文字体下为半角符号、在中文字体下为全角符号。对于网页排版而言，弯引号的宽度根据网页的 CSS 对于字体的定义有所不同
 
-        <img src="./assets/quotes.png" style="zoom: 50%;" />
 
-    - 出于对「中文专用引号」的追求，以及在中西文混排下对弯引号渲染的需求不同，有越来越多的人倾向于使用「直角引号」代替国标推荐的弯引号
+
+
+
+
+
+
+
+
+
 
 #### 3.4.2 Instruction Set
 
