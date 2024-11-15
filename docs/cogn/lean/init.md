@@ -274,11 +274,6 @@
 
         通常使用 `TSyntax`，即给定句法种类的 `Syntax`
 
-        ```lean
-        structure TSyntax (ks : SyntaxNodeKinds) where
-          raw : Syntax
-        ```
-
     3. `Expr`：表达式．Lean 中任意项都有对应表达式
 
         ```lean
