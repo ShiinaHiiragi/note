@@ -208,10 +208,15 @@
         inductive Nat where
           | zero : Nat
           | succ (n : Nat) : Nat
+
+        syntax (name := rawNatLit) "nat_lit " num : term
         ```
 
         1. 内核可将 `zero` 或 `succ n` 表达式简化为自然数字面值
         2. 运行时本身具有 `Nat` 的特殊表示（直接存储最多 63 位数字），更大的数字使用任意精度的 `bignum`
+        3. 宏 `nat_lit` 构建一个原始数字字面值，可以用于避免定义时的无穷倒退
+            - `nat_lit` 对应表达式的 `Expr.lit (.natVal n)`
+            - 解析器将数字字面值转化为 `(OfNat.ofNat (nat_lit n) : α)`，即使 `α` 为 `Nat`
 
     2. `Int`：整数，此类型在运行时有特殊处理
 
@@ -319,7 +324,7 @@
         @[inherit_doc] prefix:75 "-" => Neg.neg
         ```
 
-    2. `HAdd`：加法
+    2. `HAdd`：异构加法
 
         ```lean
         class HAdd (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -327,7 +332,7 @@
         @[inherit_doc] infixl:65 " + " => HAdd.hAdd
         ```
 
-    3. `HSub`：减法
+    3. `HSub`：异构减法
 
         ```lean
         class HSub (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -335,7 +340,7 @@
         @[inherit_doc] infixl:65 " - " => HSub.hSub
         ```
 
-    4. `HMul`：乘法
+    4. `HMul`：异构乘法
 
         ```lean
         class HMul (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -343,7 +348,7 @@
         @[inherit_doc] infixl:70 " * " => HMul.hMul
         ```
 
-    5. `HDiv`：除法
+    5. `HDiv`：异构除法
 
         ```lean
         class HDiv (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -351,7 +356,7 @@
         @[inherit_doc] infixl:70 " / " => HDiv.hDiv
         ```
 
-    6. `HPow`：乘方
+    6. `HPow`：异构乘方
 
         ```lean
         class HPow (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -359,7 +364,7 @@
         @[inherit_doc] infixr:80 " ^ " => HPow.hPow
         ```
 
-    7. `HAppend`：连接
+    7. `HAppend`：异构连接
 
         ```lean
         class HAppend (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -367,7 +372,7 @@
         @[inherit_doc] infixl:65 " ++ " => HAppend.hAppend
         ```
 
-    8. `HMod`：取余
+    8. `HMod`：异构取余
 
         ```lean
         class HMod (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -392,7 +397,7 @@
         @[inherit_doc] prefix:100 "~~~" => Complement.complement
         ```
 
-    2. `HAnd`：按位与
+    2. `HAnd`：异构按位与
 
         ```lean
         class HAnd (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -400,7 +405,7 @@
         @[inherit_doc] infixl:60 " &&& " => HAnd.hAnd
         ```
 
-    3. `HXor`：按位或
+    3. `HXor`：异构按位或
 
         ```lean
         class HXor (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -408,7 +413,7 @@
         @[inherit_doc] infixl:58 " ^^^ " => HXor.hXor
         ```
 
-    4. `HOr`：按位非
+    4. `HOr`：异构按位非
 
         ```lean
         class HOr (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -416,7 +421,7 @@
         @[inherit_doc] infixl:55 " ||| " => HOr.hOr
         ```
 
-    5. `HShiftLeft`：左移
+    5. `HShiftLeft`：异构左移
 
         ```lean
         class HShiftLeft (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -424,7 +429,7 @@
         @[inherit_doc] infixl:75 " <<< " => HShiftLeft.hShiftLeft
         ```
 
-    6. `HShiftRight`：右移
+    6. `HShiftRight`：异构右移
 
         ```lean
         class HShiftRight (α : Type u) (β : Type v) (γ : outParam (Type w)) where
@@ -567,7 +572,24 @@
           seqRight x y := bind x fun _ => y ()
         ```
 
-5. 强制类型转换
+5. 类型转换与强制类型转换
+    1. `OfNat`：将自然数转换到其他类型
+
+        ```lean
+        class OfNat (α : Type u) (_ : Nat) where
+          ofNat : α
+        ```
+
+        例如 `37 : α` 相当于 `(OfNat.ofNat (nat_lit 37) : α)`
+
+    2. `ToString`：将其他类型转换到字符串，用于字符串插值或 `IO` 等
+
+        ```lean
+        class ToString (α : Type u) where
+          toString : α → String
+        ```
+
+    3. `Coe`
 
 ## 3.3 数学基础
 ### 3.3.1 逻辑学

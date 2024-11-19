@@ -382,6 +382,20 @@
     1. `openSimple`：打开命名空间
     2. `openOnly`：仅打开命名空间内的特定名称
 
+5. `«export»`：`export Some.Namespace (name₁ name₂)` 使得 `name₁` 与 `name₂`
+
+    ```lean
+    @[builtin_command_parser]
+    def «export» := leading_parser "export "
+      >> ident
+      >> " ("
+      >> many1 ident
+      >> ")"
+    ```
+
+    1. 在当前命名空间无需前缀 `Some.Namespace` 即可访问
+    2. 在 `export` 所在命名空间 `N` 之外以 `N.name₁` 与 `N.name₂` 形式访问
+
 ### 2.1.3 辅助指令
 1. `eval`：对项进行归约
 
@@ -421,6 +435,9 @@
         <|> strictImplicitBinder requireType
         <|> implicitBinder requireType
         <|> instBinder
+
+    @[builtin_term_parser] def explicit := leading_parser "@"
+      >> termParser maxPrec
     ```
 
     1. `explicitBinder`：显式绑定器，形如 `(x y : A)` 或 `(x y)`，可通过 `(x : A := v)` 或 `(x : A := by tac)` 指定默认值
@@ -636,7 +653,8 @@
     ```
 
     1. 若 `e : T` 且存在 `T.f` 的声明，则 `e.f` 等价于 `T.f (p := e)`，其中 `p` 是第一个类型为 `T` 的显式参数
-    2. 若 `T` 是一个结构体类型且 `i` 是一个正数，则 `e.i` 是 `e` 的第 `i` 个字段之简写
+    2. 若 `T` 是一个结构体类型且 `f : F` 是 `T` 的一个字段，则 `T.f` 是一个类型为 `T → F` 的函数，于是 `T.f e` 可简写为 `e.f`
+    3. 若 `T` 是一个结构体类型且 `i` 是一个正数，则 `e.i` 是 `e` 的第 `i` 个字段之简写
 
 ### 2.3.4 标识符与字面值
 1. 标识符与占位符
