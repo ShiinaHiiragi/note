@@ -9,10 +9,19 @@
 1. 序数表示
 2. 序数分析
 
+### 递归论
+
+!!! note "参考文献"
+    『逆数学と 2 階算術』（田中一之）
+
+#### 5 形式算术
+- 二阶算术
+
 ### 公理集合论
 
 !!! note "参考文献"
-    『The Higher Infinite: Large Cardinals in Set Theory from their Beginnings』（Akihiro Kanamori）
+    1. 『集合论：对无穷概念的探索』（郝兆宽、杨睿之）
+    2. 『The Higher Infinite: Large Cardinals in Set Theory from their Beginnings』（Akihiro Kanamori）
 
 #### 4 高阶无穷
 1. 力迫：第九章
