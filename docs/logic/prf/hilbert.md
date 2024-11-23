@@ -1,6 +1,6 @@
 # 1 Hilbert 系统
 
-- 一个推理规则的形式是
+- 一个推理规则 $R$ 的形式是
 
     $$
     \begin{prooftree}

@@ -72,7 +72,7 @@
     1. 若存在 $N_0 \subseteq A$ 为有限集使得 $\mathfrak N = \left<N\right>^\mathfrak A$，则称 $\mathfrak N$ 是有限生成的
     2. 设 $N\subseteq A$，则 $\left<N\right>^\mathfrak A$ 的论域是 $\overline N = \{t^\mathfrak A(b_1, b_2, \cdots, b_m) \mid t \in \mathfrak T(N), b_1, b_2, \cdots, b_n \in N\}$
     3. 设 $N\subseteq A$，则 $\left<N\right>^\mathfrak A \leqslant \max\{|N|, |S|, \aleph_0\}$
-4. 初等子结构：设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的结构，若存在 $h: \mathfrak A \to \mathfrak B$ 是一个初等嵌入且 $A \subseteq B$，则称 $\mathfrak A$ 是 $\mathfrak B$ 的初等子结构，记作 $\mathfrak A \prec \mathfrak B$；同时称 $\mathfrak B$ 是 $\mathfrak A$ 的初等膨胀，记作 $\mathfrak B \succ \mathfrak A$
+4. 初等子结构：设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的 $S-$结构，若存在 $h: \mathfrak A \to \mathfrak B$ 是一个初等嵌入且 $A \subseteq B$，则称 $\mathfrak A$ 是 $\mathfrak B$ 的初等子结构，记作 $\mathfrak A \prec \mathfrak B$；同时称 $\mathfrak B$ 是 $\mathfrak A$ 的初等膨胀，记作 $\mathfrak B \succ \mathfrak A$
     1. 如果 $N \subseteq A$，$N$ 是 $\mathfrak A$ 的子结构，且子结构 $\mathfrak N = \left\{N, \{Z^\mathfrak A \upharpoonright N\}_{Z \in S}\right\}$ 还是 $\mathfrak A$ 的初等子结构，则称集合 $N$ 是 $\mathfrak A$ 的初等子结构
     2. 如果 $H: \mathfrak A \to \mathfrak B$ 是初等嵌入，则存在 $\mathfrak A$ 的初等膨胀 $\overline{\mathfrak A}$ 使得 $H$ 可以被扩张为 $\overline{\mathfrak A}$ 到 $\mathfrak B$ 的同构
     3. $\text{Tarski}-\text{Vaught}$ 测试：设 $\mathfrak A$ 是 $\mathfrak B$ 的子结构，则 $A \prec B$ 当且仅当对每个公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n}, y)$ 及 $a_1, a_2, \cdots, a_n \in A$ 都有 $\mathfrak B \vDash \exists y \ \alpha(a_1, a_2, \cdots, a_n, y) \to \mathfrak A \vDash \exists y \ \alpha(a_1, a_2, \cdots, a_n, y)$
@@ -95,7 +95,9 @@
     2. 公理：设 $T$ 是一个 $S-$理论，如果 $\Sigma \subseteq T$ 且对每个 $\alpha \in T$ 都有 $\Sigma \vDash \alpha$，则称 $\Sigma$ 是 $T$ 的公理
     3. 完备理论：如果对每个 $S-$语句 $\alpha$ 都有 $\alpha \in \Sigma$ 或 $\neg \alpha \in \Sigma$，则称 $\Sigma$ 是完备的 $S-$理论
 3. 初等等价：设 $\mathfrak M$ 与 $\mathfrak N$ 是两个 $S-$结构，如果 $\mathrm{Th}(\mathfrak M) = \mathrm{Th}(\mathfrak N)$，则称 $\mathfrak M$ 与 $\mathfrak N$ 初等等价，记作 $\mathfrak M \equiv \mathfrak N$
-    1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathrm{Th}(\mathcal K) = \{\alpha \mid \alpha$ 是 $S-$语句且对任意 $\mathfrak M \in \mathcal K$ 都有 $\mathfrak M \vDash \alpha\}$．若 $\mathcal K = \{\mathfrak M\}$，则将 $\mathrm{Th}(\mathcal K)$ 记作 $\mathrm{Th}(\mathfrak M)$，并称 $\mathrm{Th}(\mathfrak M)$ 为 $\mathfrak M$ 的理论，易知 $\mathrm{Th}(\mathfrak M)$ 是完备的 $S-$理论
+    1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathrm{Th}(\mathcal K) = \{\alpha \mid \alpha$ 是 $S-$语句且对任意 $\mathfrak M \in \mathcal K$ 都有 $\mathfrak M \vDash \alpha\}$
+        1. 若 $\mathcal K = \{\mathfrak M\}$，则将 $\mathrm{Th}(\mathcal K)$ 记作 $\mathrm{Th}(\mathfrak M)$，并称 $\mathrm{Th}(\mathfrak M)$ 为 $\mathfrak M$ 的理论
+        2. $\mathrm{Th}(\mathfrak M)$ 是完备的 $S-$理论
     2. 一个 $S-$理论 $T$ 是完备的当且仅当 $T$ 的模型相互初等等价
 4. 初等类：如果 $T$ 是 $S-$理论且 $\mathcal K = \{\mathfrak M \mid \mathfrak M$ 是 $S-$结构且 $\mathfrak M \vDash T\}$，则称 $\mathcal K$ 是一个初等类，记作 $\mathcal K = \mathrm{Mod}(T)$
     1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathcal K$ 是初等类当且仅当 $\mathcal K = \{\mathfrak M \mid \mathfrak M \vDash \mathrm{Th}(\mathcal K)\}$
