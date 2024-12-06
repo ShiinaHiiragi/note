@@ -162,6 +162,12 @@
         2. 构造子的参数不能是一个将正在定义的数据类型
         3. 当归纳类型可以被推断时，构造子命名空间可以省略，但需要保留点号
 
+            ```lean
+            @[builtin_term_parser] def dotIdent := leading_parser "."
+              >> checkNoWsBefore
+              >> rawIdent
+            ```
+
     5. `classInductive`：归纳类型类
 
         ```lean
@@ -220,7 +226,7 @@
           >> optDeriving
         ```
 
-        1. `«extends»` <!-- TODO -->
+        1. `«extends»`：结构体继承，允许结构体类型提供另一种结构体类型的接口，并添加额外属性
         2. `structCtor`：结构体构造子，结构 `S` 的默认构造子名称为 `S.mk`
             - 构造子是一个接受所有字段作为输入值的函数，其名称置于与类型同名的命名空间中
             - 可通过在 `:=` 或 `where` 后、所有字段前添加 `name ::` 以修改默认构造子名称为 `name`
@@ -848,7 +854,9 @@
     2. `matchDiscr`：形如 `h1 : e1, e2, h3 : e3, ...`
         1. 若以 `match h : e, ... with | p, ... => f | ...` 使用模式匹配，则在 `f` 中可用 ``h : e = p``
         2. `Syntax` 引用也可用于模式匹配，从而将 `Syntax` 值与引号、模式变量或占位符 `_` 进行匹配
-    3. `matchAlts`：若以 `,` 分隔多个 `matchDiscr`，则 `matchAlts` 也应对应相同数量的参数
+    3. `matchAlts`
+        1. 若以 `,` 分隔多个 `matchDiscr`，则 `matchAlts` 也应对应相同数量的参数
+        2. 若以 `|` 分隔多个分支，则 `rhsParser` 的绑定变量必须对所有分支都有意义
 
 2. `«do»`：单子的简便记法
 
