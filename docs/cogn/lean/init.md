@@ -3,24 +3,39 @@
 ## 3.1 预定义句法
 ### 3.1.1 表达式
 1. 条件表达式
-
-    ```lean
-    @[inherit_doc ite]
-    syntax (name := termIfThenElse) ppRealGroup(
-      ppRealFill(ppIndent("if " term " then") ppSpace term)
-      ppDedent(ppSpace)
-      ppRealFill("else " term)
-    ) : term
-
-    syntax (name := termIfLet) ppRealGroup(
-      ppRealFill(ppIndent("if " "let " term " := " term " then") ppSpace term)
-      ppDedent(ppSpace)
-      ppRealFill("else " term)
-    ) : term
-    ```
-
     1. `termIfThenElse`：通用 `if` 表达式
+        ```lean
+        @[inherit_doc ite]
+        syntax (name := termIfThenElse) ppRealGroup(
+          ppRealFill(ppIndent("if " term " then") ppSpace term)
+          ppDedent(ppSpace)
+          ppRealFill("else " term)
+        ) : term
+        ```
+
     2. `termIfLet`：可使用模式匹配，在某些场景下能代替 `match`
+
+        ```lean
+        syntax (name := termIfLet) ppRealGroup(
+          ppRealFill(ppIndent("if " "let " term " := " term " then") ppSpace term)
+          ppDedent(ppSpace)
+          ppRealFill("else " term)
+        ) : term
+        ```
+
+    3. `termDepIfThenElse`：绑定一个证据变量，在 `then` 分支提供命题的证明，在 `else` 分支提供命题的证伪
+
+        ```lean
+        @[inherit_doc dite] syntax (name := termDepIfThenElse) ppRealGroup(
+          ppRealFill(
+            ppIndent("if " Lean.binderIdent " : " term " then")
+            ppSpace
+            term
+          )
+          ppDedent(ppSpace)
+          ppRealFill("else " term)
+        ) : term
+        ```
 
 2. 字符串插值：组合子 `interpolatedStr` 解析含有 `{term}` 的字符串，将其解释为项（而非字符串）
 
@@ -77,7 +92,7 @@
     syntax:arg stx:max "?" : stx
     syntax:2 stx:2 " <|> " stx:1 : stx
 
-    macro:arg x:stx:max ",+"   : stx => `(stx| sepBy1($x, ",", ", "))
+    macro:arg x:stx:max ",+" : stx => `(stx| sepBy1($x, ",", ", "))
     macro:arg x:stx:max ",*,?" : stx => `(stx| sepBy($x, ",", ", ", allowTrailingSep))
     macro:arg x:stx:max ",+,?" : stx => `(stx| sepBy1($x, ",", ", ", allowTrailingSep))
     macro:arg "!" x:stx:max : stx => `(stx| notFollowedBy($x))
@@ -87,7 +102,7 @@
 ### 3.2.1 生成函数
 
 ### 3.2.2 函数
-1. 恒等函数
+1. 函数相关
     1. `id`：恒等函数
 
         ```lean
@@ -95,16 +110,36 @@
         def id {α : Sort u} (a : α) : α := a
         ```
 
-    2. `Id`：恒等单子，将纯代码与单子 API 一起使用
+        !!! note "恒等单子"
+
+            `Id`：将纯代码与单子 API 一起使用
+
+            ```lean
+            def Id (type : Type u) : Type u := type
+
+            @[always_inline]
+            instance : Monad Id where
+            pure x := x
+            bind x f := f x
+            map f x := f x
+            ```
+
+    2. 复合函数
 
         ```lean
-        def Id (type : Type u) : Type u := type
+        @[inline]
+        def Function.comp {α : Sort u} {β : Sort v} {δ : Sort w} (f : β → δ) (g : α → β) : α → δ :=
+          fun x => f (g x)
 
-        @[always_inline]
-        instance : Monad Id where
-          pure x := x
-          bind x f := f x
-          map f x := f x
+        @[inherit_doc]
+        infixr:90 " ∘ "  => Function.comp
+        ```
+
+    3. 常函数
+
+        ```lean
+        @[inline] def Function.const {α : Sort u} (β : Sort v) (a : α) : β → α :=
+          fun _ => a
         ```
 
 2. 参数标记
@@ -189,6 +224,18 @@
           mk ::
           data : List Char
         ```
+
+3. `Subtype`：子类型，包括值 `val` 与证据 `property`
+
+    ```lean
+    @[pp_using_anonymous_constructor]
+    structure Subtype {α : Sort u} (p : α → Prop) where
+      val : α
+      property : p val
+
+    @[inherit_doc Subtype]
+    syntax "{ " withoutPosition(ident (" : " term)? " // " term) " }" : term
+    ```
 
 ### 3.3.2 归纳类型
 1. 枚举类型
@@ -600,12 +647,12 @@
 
         ```lean
         class inductive Decidable (p : Prop) where
-        | isFalse (h : Not p) : Decidable p
-        | isTrue (h : p) : Decidable p
+          | isFalse (h : Not p) : Decidable p
+          | isTrue (h : p) : Decidable p
 
         @[inline_if_reduce, nospecialize]
         def Decidable.decide (p : Prop) [h : Decidable p] : Bool :=
-        h.casesOn (fun _ => false) (fun _ => true)
+          h.casesOn (fun _ => false) (fun _ => true)
 
         abbrev DecidablePred {α : Sort u} (r : α → Prop) :=
         (a : α) → Decidable (r a)
@@ -771,6 +818,9 @@
         ```lean
         class BEq (α : Type u) where
           beq : α → α → Bool
+
+        instance [DecidableEq α] : BEq α where
+          beq a b := decide (Eq a b)
 
         @[inherit_doc]
         infix:50 " == " => BEq.beq
