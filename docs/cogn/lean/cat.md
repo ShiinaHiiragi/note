@@ -226,7 +226,56 @@
           >> optDeriving
         ```
 
-        1. `«extends»`：结构体继承，允许结构体类型提供另一种结构体类型的接口，并添加额外属性
+        1. `«extends»`：结构体继承，实质上创建了 `to` 前缀的字段
+            - `structInst` 可以使用被继承结构的字段初始化
+            - 扩展字段记号为被继承结构的字段提供了额外支持
+            - 指定多重继承时，仅创建第一条到父结构体的 `to` 前缀字段，余下字段直接复制，其他 `to` 前缀函数自动生成
+
+            ```lean
+            structure Person where
+              name : String
+              age : Nat
+
+            structure Student extends Person where
+              score : Int
+
+            structure Staff extends Person where
+              salary : Float
+
+            structure Intern extends Student, Staff where
+
+            def alice : Student := { name := "Alice", age := 14, score := 100 }
+            def aisling : Intern := {
+              toStudent := ⟨⟨"Aisling", 16⟩, -100⟩,
+              salary := 1000
+            }
+
+            #check Student.toPerson   -- Student.toPerson (self : Student) : Person
+            #check Intern.toStudent   -- Intern.toStudent (self : Intern) : Student
+            #check Intern.toStaff     -- Intern.toStaff (self : Intern) : Staff
+
+            #check alice.toPerson     -- alice.toPerson : Person
+            #check alice.name         -- alice.name : String
+
+            #check aisling.toStudent  -- aisling.toStudent : Student
+            #check aisling.toStaff    -- aisling.toStaff : Staff
+            #check aisling.toPerson   -- aisling.toPerson : Person
+            #check aisling.name       -- aisling.name : String
+
+            -- application type mismatch
+            --   alice.name
+            -- argument
+            --   alice
+            -- has type
+            --   Student : Type
+            -- but is expected to have type
+            --   Person : Type
+            #check Person.name alice
+
+            -- unknown constant 'Intern.toPerson'
+            #check Intern.toPerson
+            ```
+
         2. `structCtor`：结构体构造子，结构 `S` 的默认构造子名称为 `S.mk`
             - 构造子是一个接受所有字段作为输入值的函数，其名称置于与类型同名的命名空间中
             - 可通过在 `:=` 或 `where` 后、所有字段前添加 `name ::` 以修改默认构造子名称为 `name`
@@ -955,7 +1004,11 @@
 2. 与类型类对应的属性
     1. `instance`：标记类型类实例
     2. `default_instance`：标记类型类默认实例
-3. `inherit_doc`：从指定声明继承文档
+3. 与规约对应的属性
+    1. `reducible`：可归约声明
+    2. `semireducible`：部分可归约声明
+    3. `irreducible`：不可归约声明
+4. `inherit_doc`：从指定声明继承文档
 
 ### 2.3.2 标签属性
 1. `match_pattern`：标记可以在模式中使用的定义
