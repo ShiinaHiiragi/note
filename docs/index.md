@@ -58,7 +58,7 @@
         <div class="progress-percentage"> </div>
     </div>
 
-    <!-- https://www.leanprover.cn/fp-lean-zh/type-classes/pos.html -->
+    <!-- https://www.leanprover.cn/fp-lean-zh/monads/class.html -->
 
 ## 参考文献
 
