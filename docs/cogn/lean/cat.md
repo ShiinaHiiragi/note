@@ -162,7 +162,18 @@
         2. 构造子的参数不能是一个将正在定义的数据类型
         3. 归纳类型本身不描述类型，需要 `optDeclSig` 参数才能使得类型成立
 
-    5. `«structure»`：定义结构体与类型类
+    5. `classInductive`：归纳类型类
+
+        ```lean
+        def classInductive := leading_parser atomic (group (symbol "class " >> "inductive "))
+          >> recover declId skipUntilWsOrDelim
+          >> ppIndent optDeclSig
+          >> optional (symbol " :=" <|> " where")
+          >> many ctor
+          >> optDeriving
+        ```
+
+    6. `«structure»`：定义结构体与类型类
 
         ```lean
         def structureTk := leading_parser "structure "
@@ -478,7 +489,7 @@
         1. 除非指定了至少一个后续显式参数，严格隐式绑定器不会自动插入占位符 `_`
         2. 假设遵循上述规则，严格隐式绑定器与隐式绑定器表现相一致
 
-    4. `instBinder`：实例绑定器，形如 `[C]` 或 `[inst : C]`
+    4. `instBinder`：实例绑定器，形如 `[C]` 或 `[inst : C]`．Lean 通过归一化找到唯一能通过类型检查的参数值
 
         ```lean
         def optIdent : Parser := optional (atomic (ident >> " : "))

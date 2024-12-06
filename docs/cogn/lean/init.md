@@ -1,6 +1,6 @@
 # 3 初始模块
 
-## 3.1 预定义
+## 3.1 预定义句法
 ### 3.1.1 表达式
 1. 条件表达式
 
@@ -83,7 +83,10 @@
     macro:arg "!" x:stx:max : stx => `(stx| notFollowedBy($x))
     ```
 
-### 3.1.3 工具
+## 3.2 预定义结构
+### 3.2.1 生成函数
+
+### 3.2.2 工具
 1. `optParam`：标记可选参数，`x : optParam α default` 相当于 `(x : α := default)`
 
     ```lean
@@ -98,8 +101,8 @@
     def outParam (α : Sort u) : Sort u := α
     ```
 
-## 3.2 内建类型
-### 3.2.1 结构体类型
+## 3.3 内建类型
+### 3.3.1 结构体类型
 1. 数据类型
     1. `Prod`：直积类型
 
@@ -164,7 +167,7 @@
           data : List Char
         ```
 
-### 3.2.2 归纳类型
+### 3.3.2 归纳类型
 1. 枚举类型
     1. `Sum`：和类型
 
@@ -329,7 +332,7 @@
         11. `mdata`：元数据，提供位置信息、`Syntax` 节点引用、对 Pretty Printer 的提示以及繁饰过程信息
         12. `proj`：投影，即扩展字段记号．并非真实需要，仅为项提供更紧凑的表示以加速归约
 
-### 3.2.3 类型类
+### 3.3.3 类型类
 1. 算术运算
     1. `Neg`：取负
 
@@ -606,8 +609,29 @@
 
     3. `Coe`
 
-## 3.3 数学基础
-### 3.3.1 逻辑学
+6. 可判定性：等同于 `Bool` 及其证明，用于推断命题的计算策略，从而可在 `if` 中编写命题并执行
+
+    ```lean
+    class inductive Decidable (p : Prop) where
+      | isFalse (h : Not p) : Decidable p
+      | isTrue (h : p) : Decidable p
+
+    @[inline_if_reduce, nospecialize]
+    def Decidable.decide (p : Prop) [h : Decidable p] : Bool :=
+      h.casesOn (fun _ => false) (fun _ => true)
+
+    abbrev DecidablePred {α : Sort u} (r : α → Prop) :=
+      (a : α) → Decidable (r a)
+
+    abbrev DecidableRel {α : Sort u} (r : α → α → Prop) :=
+      (a b : α) → Decidable (r a b)
+
+    abbrev DecidableEq (α : Sort u) :=
+      (a b : α) → Decidable (Eq a b)
+    ```
+
+## 3.4 数学基础
+### 3.4.1 逻辑学
 1. 命题：区分于 `Bool` 或 `Empty`
     1. `True`：真命题
 
@@ -717,4 +741,4 @@
         @[inherit_doc] infix:50 " ≠ "  => Ne
         ```
 
-### 3.3.2 集合论
+### 3.4.2 集合论
