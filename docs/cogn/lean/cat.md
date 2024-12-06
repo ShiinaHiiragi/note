@@ -324,6 +324,17 @@
           >> "] "
         ```
 
+4. `«deriving»`：单独为类型类派生实例
+
+    ```lean
+    @[builtin_command_parser]
+    def «deriving» := leading_parser "deriving "
+      >> "instance "
+      >> derivingClasses
+      >> " for "
+      >> sepBy1 (recover ident skip) ", "
+    ```
+
 ### 2.1.2 组织特性
 1. `namespace`：将一系列声明放在命名空间
 

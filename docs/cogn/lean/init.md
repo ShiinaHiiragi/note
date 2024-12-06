@@ -520,17 +520,6 @@
         @[inherit_doc] infix:50 " > "  => GT.gt
         ```
 
-    5. `BEq`：真值相等
-
-        ```lean
-        class BEq (α : Type u) where
-          beq : α → α → Bool
-        @[inherit_doc] infix:50 " == " => BEq.beq
-
-        @[inline] def bne {α : Type u} [BEq α] (a b : α) : Bool := !(a == b)
-        @[inherit_doc] infix:50 " != " => bne
-        ```
-
 4. 函子与单子
     1. 通用类型类
 
@@ -591,7 +580,7 @@
         ```
 
 5. 类型转换与强制类型转换
-    1. `OfNat`：将自然数转换到其他类型
+    1. `OfNat`：将自然数字面值转换到其他类型
 
         ```lean
         class OfNat (α : Type u) (_ : Nat) where
@@ -607,9 +596,90 @@
           toString : α → String
         ```
 
-    3. `Coe`
+    3. `Coe`：强制类型转换
 
-6. 可判定性：等同于 `Bool` 及其证明，用于推断命题的计算策略，从而可在 `if` 中编写命题并执行
+        ```lean
+        class Coe (α : semiOutParam (Sort u)) (β : Sort v) where
+          coe : α → β
+
+        syntax:1024 (name := coeNotation) "↑" term:1024 : term
+        ```
+
+        1. 链式强制转换：通过一系列较小的强制转换组成完整的强制转换；存在循环强制转换时，Lean 不会陷入无限循环
+        2. 当且仅当推断类型与程序需要类型不匹配时，Lean 才会自动使用强制转换
+        3. 当强制转换结果依赖于具体值时，使用依值强制类型转换 `CoeDep`
+
+            ```lean
+            class CoeDep (α : Sort u) (_ : α) (β : Sort v) where
+              coe : β
+            ```
+
+        4. 当强制转换结果为分类或函数时，使用 `CoeSort` 或 `CoeFun`
+
+            ```lean
+            class CoeSort (α : Sort u) (β : outParam (Sort v)) where
+              coe : α → β
+
+            class CoeFun (α : Sort u) (γ : outParam (α → Sort v)) where
+              coe : (f : α) → γ f
+
+            syntax:1024 (name := coeFunNotation) "⇑" term:1024 : term
+            syntax:1024 (name := coeSortNotation) "↥" term:1024 : term
+            ```
+
+6. 派生标准类：编译器可自动构造部分类型类的良好实例
+    1. `Repr`：表示类，将某种类型的值转换为 `Format` 类型
+
+        ```lean
+        inductive Format where
+          | nil : Format
+          | line : Format
+          | align (force : Bool) : Format
+          | text : String → Format
+
+        class Repr (α : Type u) where
+          reprPrec : α → Nat → Format
+        ```
+
+    2. `BEq`：真值相等
+
+        ```lean
+        class BEq (α : Type u) where
+          beq : α → α → Bool
+        @[inherit_doc] infix:50 " == " => BEq.beq
+
+        @[inline] def bne {α : Type u} [BEq α] (a b : α) : Bool := !(a == b)
+        @[inherit_doc] infix:50 " != " => bne
+        ```
+
+    3. `Ord`：排序
+
+        ```lean
+        inductive Ordering where
+          | lt
+          | eq
+          | gt
+        deriving Inhabited, BEq
+
+        class Ord (α : Type u) where
+          compare : α → α → Ordering
+        ```
+
+    4. `Hashable`：散列值
+
+        ```lean
+        class Hashable (α : Sort u) where
+          hash : α → UInt64
+        ```
+
+    5. `Inhabited`：默认值，通常在超出值域时调用
+
+        ```lean
+        class Inhabited (α : Sort u) where
+          default : α
+        ```
+
+7. `Deciable`：可判定性，等同于 `Bool` 及其证明，用于推断命题的计算策略，从而可在 `if` 中编写命题并执行
 
     ```lean
     class inductive Decidable (p : Prop) where
