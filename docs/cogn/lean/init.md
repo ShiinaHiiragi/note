@@ -595,6 +595,28 @@
         infix:50 " > "  => GT.gt
         ```
 
+    !!! note "可判定性"
+        `Deciable`：等同于 `Bool` 及其证明，用于推断命题的计算策略，从而可在 `if` 中编写命题并执行
+
+        ```lean
+        class inductive Decidable (p : Prop) where
+        | isFalse (h : Not p) : Decidable p
+        | isTrue (h : p) : Decidable p
+
+        @[inline_if_reduce, nospecialize]
+        def Decidable.decide (p : Prop) [h : Decidable p] : Bool :=
+        h.casesOn (fun _ => false) (fun _ => true)
+
+        abbrev DecidablePred {α : Sort u} (r : α → Prop) :=
+        (a : α) → Decidable (r a)
+
+        abbrev DecidableRel {α : Sort u} (r : α → α → Prop) :=
+        (a b : α) → Decidable (r a b)
+
+        abbrev DecidableEq (α : Sort u) :=
+        (a b : α) → Decidable (Eq a b)
+        ```
+
 4. 函子与单子
     1. 通用类型类
 
@@ -665,6 +687,22 @@
           seqLeft x y := bind x fun a => bind (y ()) (fun _ => pure a)
           seqRight x y := bind x fun _ => y ()
         ```
+
+    !!! note "函子与单子的规约"
+        1. 函子的规约
+            1. `id <$> x` 等价于 `x`
+            2. `map (fun y => f (g y)) x` 等价于 `map f (map g x)`
+        2. 应用函子的规约
+            1. 同一律：`pure id <*> v` 等价于 `v`
+            2. 函数复合律：`pure (· ∘ ·) <*> u <*> v <*> w` 等价于 `u <*> (v <*> w)`
+            3. `pure f <*> pure x` 等价于 `pure (f x)`
+            4. `u <*> pure x` 等价于 `pure (fun f => f x) <*> u`
+        3. 单子的规约
+            1. `pure` 为 `bind` 的左单位元：`bind (pure v) f` 等价于 `f v`
+            2. `pure` 为 `bind` 的右单位元：`bind v pure` 等价于 `v`
+            3. 结合律：`bind (bind v f) g` 等价于 `bind v (fun x => bind (f x) g)`
+
+        易证任意单子都是应用函子，任意应用函子都是函子
 
 5. 类型转换与强制类型转换
     1. `OfNat`：将自然数字面值转换到其他类型
@@ -771,26 +809,46 @@
           default : α
         ```
 
-7. `Deciable`：可判定性，等同于 `Bool` 及其证明，用于推断命题的计算策略，从而可在 `if` 中编写命题并执行
+7. `EStateM`：同时跟踪状态和错误，是 `IO` 单子的基础
 
     ```lean
-    class inductive Decidable (p : Prop) where
-      | isFalse (h : Not p) : Decidable p
-      | isTrue (h : p) : Decidable p
+    def IO.RealWorld : Type := Unit
+    inductive EStateM.Result (ε σ α : Type u) where
+      | ok    : α → σ → Result ε σ α
+      | error : ε → σ → Result ε σ α
 
-    @[inline_if_reduce, nospecialize]
-    def Decidable.decide (p : Prop) [h : Decidable p] : Bool :=
-      h.casesOn (fun _ => false) (fun _ => true)
-
-    abbrev DecidablePred {α : Sort u} (r : α → Prop) :=
-      (a : α) → Decidable (r a)
-
-    abbrev DecidableRel {α : Sort u} (r : α → α → Prop) :=
-      (a b : α) → Decidable (r a b)
-
-    abbrev DecidableEq (α : Sort u) :=
-      (a b : α) → Decidable (Eq a b)
+    def EStateM (ε σ α : Type u) := σ → Result ε σ α
+    def EIO (ε : Type) : Type → Type := EStateM ε IO.RealWorld
+    abbrev IO : Type → Type := EIO IO.Error
     ```
+
+    1. 状态即现实世界，由于机能限制而仅用 `Unit` 表示
+    2. `EStateM ε σ` 单子不改变状态，仅传递结果或错误信息
+
+        ```lean
+        @[always_inline, inline]
+        protected def pure (a : α) : EStateM ε σ α := fun s => Result.ok a s
+
+        @[always_inline, inline]
+        protected def bind (x : EStateM ε σ α) (f : α → EStateM ε σ β) : EStateM ε σ β :=
+          fun s => match x s with
+            | Result.ok a s => f a s
+            | Result.error e s => Result.error e s
+
+        @[always_inline]
+        instance instMonad : Monad (EStateM ε σ) where
+          bind := EStateM.bind
+          pure := EStateM.pure
+          map := EStateM.map
+          seqRight := EStateM.seqRight
+        ```
+
+    !!! note "IO 活动的副作用"
+        1. 内部视角：IO 活动没有副作用，它接受一个唯一的现实世界状态，返回改变后的世界
+        2. 外部视角：`bind` 函数定义的内容是副作用，当执行主体为 `do` 的 `main` 函数时
+            1. 为了获得最后 `main` 的返回值，需要执行前面所有 `bind`，从而产生副作用
+            2. 返回得到 `IO Unit` 元素没有意义，起作用的只是中间的副作用过程
+            3. 副作用实质上靠 Lean RTS（运行时系统）执行原语而得以可能，Lean 本身仅对 IO 活动原语进行描述
 
 ## 3.4 数学基础
 ### 3.4.1 逻辑学

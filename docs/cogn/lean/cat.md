@@ -160,7 +160,7 @@
 
         1. `ctor`：若干个构造子，其名称置于与类型同名的命名空间中
         2. 构造子的参数不能是一个将正在定义的数据类型
-        3. 归纳类型本身不描述类型，需要 `optDeclSig` 参数才能使得类型成立
+        3. 当归纳类型可以被推断时，构造子命名空间可以省略，但需要保留点号
 
     5. `classInductive`：归纳类型类
 
@@ -324,6 +324,15 @@
           >> "] "
         ```
 
+    3. `visibility`：修改定义在命名空间外的可见性
+
+        ```lean
+        def «private» := leading_parser "private "
+        def «protected» := leading_parser "protected "
+
+        def visibility := «private» <|> «protected»
+        ```
+
 4. `«deriving»`：单独为类型类派生实例
 
     ```lean
@@ -434,6 +443,32 @@
     def check := leading_parser "#check "
       >> termParser
     ```
+
+3. `print`：揭示数据类型和定义的内部结构
+
+    ```lean
+    @[builtin_command_parser]
+    def print := leading_parser "#print "
+      >> (ident <|> strLit)
+    ```
+
+    1. `printAxioms`：列出依赖公理
+
+        ```lean
+        @[builtin_command_parser]
+        def printAxioms := leading_parser "#print "
+          >> nonReservedSymbol "axioms "
+          >> ident
+        ```
+
+    2. `printEqns`：列出等式
+
+        ```lean
+        @[builtin_command_parser]
+        def printEqns := leading_parser "#print "
+          >> (nonReservedSymbol "equations " <|> nonReservedSymbol "eqns ")
+          >> ident
+        ```
 
 ## 2.2 项范畴
 ### 2.3.1 变量与元变量
