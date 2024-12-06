@@ -885,7 +885,10 @@
     7. `builtin_prio_parser`：对应 `priorityParser`
     8. `builtin_prec_parser`：对应 `precedenceParser`
     9. `builtin_doElem_parser`：对应 `doElemParser`
-2. `inherit_doc`：从指定声明继承文档
+2. 与类型类对应的属性
+    1. `instance`：标记类型类实例
+    2. `default_instance`：标记类型类默认实例
+3. `inherit_doc`：从指定声明继承文档
 
 ### 2.3.2 标签属性
 1. `match_pattern`：标记可以在模式中使用的定义

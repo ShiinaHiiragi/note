@@ -83,6 +83,21 @@
     macro:arg "!" x:stx:max : stx => `(stx| notFollowedBy($x))
     ```
 
+### 3.1.3 工具
+1. `optParam`：标记可选参数，`x : optParam α default` 相当于 `(x : α := default)`
+
+    ```lean
+    @[reducible]
+    def optParam (α : Sort u) (default : α) : Sort u := α
+    ```
+
+2. `outParam`：在类型类中标记输出参数，在无法进行实例搜索时运行类型类推断，并采用找到的第一个解决方案
+
+    ```lean
+    @[reducible]
+    def outParam (α : Sort u) : Sort u := α
+    ```
+
 ## 3.2 内建类型
 ### 3.2.1 结构体类型
 1. 数据类型
