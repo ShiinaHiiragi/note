@@ -458,7 +458,8 @@
         <|> implicitBinder requireType
         <|> instBinder
 
-    @[builtin_term_parser] def explicit := leading_parser "@"
+    @[builtin_term_parser]
+    def explicit := leading_parser "@"
       >> termParser maxPrec
     ```
 
