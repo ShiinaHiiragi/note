@@ -8,9 +8,7 @@
 ### 三、Lean
 
 !!! note "参考文献"
-    - 『Functional Programming in Lean』（David Thrane Christiansen）
     - 『Theorem Proving in Lean 4』（Jeremy Avigad、Leonardo de Moura、Soonho Kong、Sebastian Ullrich）
-    - 『Lean 4 manual』（Microsoft Corporation）
     - 『Metaprogramming in Lean 4』（Arthur Paulino、Damiano Testa、Edward Ayers、Evgenia Karunus、Henrik Böving、Jannis Limperg、Siddhartha Gadgil、Siddharth Bhat）
 
 #### 1 系统与原理
