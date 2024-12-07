@@ -469,6 +469,8 @@
     2. `openOnly`：仅打开命名空间内的特定名称
 
 5. `«export»`：`export Some.Namespace (name₁ name₂)` 使得 `name₁` 与 `name₂`
+    1. 在当前命名空间无需前缀 `Some.Namespace` 即可访问
+    2. 在 `export` 所在命名空间 `N` 之外以 `N.name₁` 与 `N.name₂` 形式访问
 
     ```lean
     @[builtin_command_parser]
@@ -478,9 +480,6 @@
       >> many1 ident
       >> ")"
     ```
-
-    1. 在当前命名空间无需前缀 `Some.Namespace` 即可访问
-    2. 在 `export` 所在命名空间 `N` 之外以 `N.name₁` 与 `N.name₂` 形式访问
 
 ### 2.1.3 辅助指令
 1. `eval`：对项进行归约
@@ -608,7 +607,7 @@
 2. 元变量 <!-- TODO -->
 
 ### 2.3.2 宇宙与类型
-1. `Type` 与 `Sort`
+1. `Type`、`Sort` 与 `Prop`：类型、分类与命题
 
     ```lean
     @[builtin_term_parser]
@@ -631,9 +630,19 @@
     def prop := leading_parser "Prop"
     ```
 
-    1. `Type`：类型 <!-- TODO -->
-    2. `Sort`：分类 <!-- TODO -->
-    3. `Prop` <!-- TODO -->
+    1. `Prop` 即 `Sort 0` 或 `Sort`；`Type 0` 或 `Type` 即 `Sort 1`；`Type n` 即 `Sort (n + 1)`
+    2. `Sort n` 的类型是 `Type n`；`Type n` 的类型是 `Type (n + 1)`
+    3. 函数类型占据可同时包含参数类型和返回类型的最小宇宙，除非函数返回 `Prop`（此时函数类型也为 `Prop`）
+
+        <div class="text-table">
+
+        |   分类   |   类型   |  命题  |
+        | :------: | :------: | :----: |
+        | `Sort 0` |    —     | `Prop` |
+        | `Sort 1` | `Type 0` |   —    |
+        | `Sort 2` | `Type 1` |   —    |
+
+        </div>
 
 2. 函数类型表达式
     1. `arrow`：箭头表达式，右结合
@@ -1043,8 +1052,61 @@
 
 ## 2.6 其他范畴
 ### 2.6.1 层级范畴
+1. `num`、`ident` 与 `hole`：
+
+    ```lean
+
+    @[builtin_level_parser]
+    def num := checkPrec maxPrec
+      >> numLit
+
+    @[builtin_level_parser]
+    def ident := checkPrec maxPrec
+      >> Parser.ident
+
+    @[builtin_level_parser]
+    def hole := leading_parser "_"
+    ```
+
+2. `max` 与 `imax`：
+
+    ```lean
+    @[builtin_level_parser]
+    def paren := leading_parser "("
+      >> withoutPosition levelParser
+      >> ")"
+
+    @[builtin_level_parser]
+    def max := leading_parser nonReservedSymbol "max" true
+      >> many1 (ppSpace >> levelParser maxPrec)
+
+    @[builtin_level_parser]
+    def imax := leading_parser nonReservedSymbol "imax" true
+      >> many1 (ppSpace >> levelParser maxPrec)
+    ```
 
 ### 2.6.2 优先级范畴
+1. `numPrio`：用于各种声明
+
+    ```lean
+    @[builtin_prio_parser]
+    def numPrio := checkPrec maxPrec
+      >> numLit
+
+    def namedPrio := leading_parser atomic (" (" >> nonReservedSymbol "priority")
+      >> " := "
+      >> withoutPosition priorityParser
+      >> ")"
+    def optNamedPrio := optional namedPrio
+    ```
+
+2. `numPrec`：用于句法或宏等元编程声明
+
+    ```lean
+    @[builtin_prec_parser]
+    def numPrec := checkPrec maxPrec
+      >> numLit
+    ```
 
 ### 2.6.3 do 元素范畴
 1. `doLet`：局部定义
@@ -1102,10 +1164,4 @@
 
 ```lean
 def darrow : Parser := " => "
-
-def namedPrio := leading_parser atomic (" (" >> nonReservedSymbol "priority")
-  >> " := "
-  >> withoutPosition priorityParser
-  >> ")"
-def optNamedPrio := optional namedPrio
 ```

@@ -673,37 +673,31 @@
 
         class Bind (m : Type u → Type v) where
           bind : {α β : Type u} → m α → (α → m β) → m β
-
         @[inherit_doc]
         infixl:55  " >>= " => Bind.bind
 
         class Seq (f : Type u → Type v) : Type (max (u+1) v) where
           seq : {α β : Type u} → f (α → β) → (Unit → f α) → f β
-
         @[inherit_doc]
         notation:60 a:60 " <*> " b:61 => Seq.seq a fun _ : Unit => b
 
         class SeqLeft (f : Type u → Type v) : Type (max (u+1) v) where
           seqLeft : {α β : Type u} → f α → (Unit → f β) → f α
-
         @[inherit_doc]
         notation:60 a:60 " <* " b:61 => SeqLeft.seqLeft a fun _ : Unit => b
 
         class SeqRight (f : Type u → Type v) : Type (max (u+1) v) where
           seqRight : {α β : Type u} → f α → (Unit → f β) → f β
-
         @[inherit_doc]
         notation:60 a:60 " *> " b:61 => SeqRight.seqRight a fun _ : Unit => b
 
         class HOrElse (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hOrElse : α → (Unit → β) → γ
-
         @[inherit_doc HOrElse.hOrElse]
         syntax:20 term:21 " <|> " term:20 : term
 
         class HAndThen (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hAndThen : α → (Unit → β) → γ
-
         @[inherit_doc HAndThen.hAndThen]
         syntax:60 term:61 " >> " term:60 : term
         ```
@@ -723,6 +717,11 @@
           map := fun x y => Seq.seq (pure x) fun _ => y
           seqLeft := fun a b => Seq.seq (Functor.map (Function.const _) a) b
           seqRight := fun a b => Seq.seq (Functor.map (Function.const _ id) a) b
+
+        class Alternative (f : Type u → Type v) extends Applicative f : Type (max (u+1) v) where
+          failure : {α : Type u} → f α
+          orElse  : {α : Type u} → f α → (Unit → f α) → f α
+        instance (f : Type u → Type v) (α : Type u) [Alternative f] : OrElse (f α) := ⟨Alternative.orElse⟩
         ```
 
     4. `Monad`：单子
