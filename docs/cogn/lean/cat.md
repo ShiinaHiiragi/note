@@ -630,9 +630,10 @@
     def prop := leading_parser "Prop"
     ```
 
-    1. `Prop` 即 `Sort 0` 或 `Sort`；`Type 0` 或 `Type` 即 `Sort 1`；`Type n` 即 `Sort (n + 1)`
-    2. `Sort n` 的类型是 `Type n`；`Type n` 的类型是 `Type (n + 1)`
-    3. 函数类型占据可同时包含参数类型和返回类型的最小宇宙，除非函数返回 `Prop`（此时函数类型也为 `Prop`）
+    1. 宇宙层级
+        1. `Prop` 即 `Sort 0` 或 `Sort`；`Type 0` 或 `Type` 即 `Sort 1`；`Type n` 即 `Sort (n + 1)`
+        2. `Sort n` 的类型是 `Type n`；`Type n` 的类型是 `Type (n + 1)`
+        3. 函数类型占据可同时包含参数类型和返回类型的最小宇宙，除非函数返回 `Prop`（此时函数类型也为 `Prop`）
 
         <div class="text-table">
 
@@ -643,6 +644,17 @@
         | `Sort 2` | `Type 1` |   —    |
 
         </div>
+
+    2. `explicitUniv`：显式标识层级
+
+        ```lean
+        @[builtin_term_parser]
+        def explicitUniv : TrailingParser := trailing_parser checkStackTop isIdent "ERROR INFO"
+          >> checkNoWsBefore "ERROR INFO"
+          >> ".{"
+          >> sepBy1 levelParser ", "
+          >> "}"
+        ```
 
 2. 函数类型表达式
     1. `arrow`：箭头表达式，右结合
@@ -1052,7 +1064,7 @@
 
 ## 2.6 其他范畴
 ### 2.6.1 层级范畴
-1. `num`、`ident` 与 `hole`：
+1. `num`、`ident` 与 `hole`：数字、标识符与占位符
 
     ```lean
 
@@ -1068,7 +1080,7 @@
     def hole := leading_parser "_"
     ```
 
-2. `max` 与 `imax`：
+2. 最大层级与层级增加，其中 `imax u v` 在 `v` 为 `0` 时得到 `0`
 
     ```lean
     @[builtin_level_parser]
@@ -1083,6 +1095,10 @@
     @[builtin_level_parser]
     def imax := leading_parser nonReservedSymbol "imax" true
       >> many1 (ppSpace >> levelParser maxPrec)
+
+    @[builtin_level_parser]
+    def addLit := trailing_parser:65 " + "
+      >> numLit
     ```
 
 ### 2.6.2 优先级范畴
