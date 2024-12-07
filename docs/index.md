@@ -53,12 +53,10 @@
 </div>
 
 !!! abstract "此项目尚未完成，现处于第一阶段"
-    <label> 现在进度：Functional Programming in Lean </label>
+    <label> 现在进度：Theorem Proving in Lean 4 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
-
-    <!-- https://www.leanprover.cn/fp-lean-zh/monads/class.html -->
 
 ## 参考文献
 
@@ -116,12 +114,12 @@ const refList = [
         type: "DB/OL",
         page: [1, 11]
     },
-    // {
-    //     author: ["David Thrane Christiansen"],
-    //     title: "Functional Programming in Lean",
-    //     type: "DB/OL",
-    //     page: [1, 437]
-    // },
+    {
+        author: ["David Thrane Christiansen"],
+        title: "Functional Programming in Lean",
+        type: "DB/OL",
+        page: [1, 437]
+    },
     // {
     //     author: ["Jeremy Avigad", "Leonardo de Moura", "Soonho Kong", "Sebastian Ullrich"],
     //     title: "Theorem Proving in Lean 4",
