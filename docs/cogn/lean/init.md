@@ -178,12 +178,30 @@
         infixr:35 " × " => Prod
         ```
 
-    2. `Char`：字符
+    2. `Fin`：严格小于 `n` 的自然数，`UInt` 系列类型在运行时用固定精度的机器整数表示
 
         ```lean
-        structure Char where
-          val : UInt32
-          valid : val.isValidChar
+        @[pp_using_anonymous_constructor]
+        structure Fin (n : Nat) where
+          mk ::
+          val  : Nat
+          isLt : LT.lt val n
+
+        structure BitVec (w : Nat) where
+          ofFin ::
+          toFin : Fin (hPow 2 w)
+
+        structure UInt8 where
+          toBitVec : BitVec 8
+
+        structure UInt16 where
+          toBitVec : BitVec 16
+
+        structure UInt32 where
+          toBitVec : BitVec 32
+
+        structure UInt64 where
+          toBitVec: BitVec 64
         ```
 
     3. `Float`：浮点数
@@ -210,6 +228,14 @@
           val : floatSpec.float
         ```
 
+    4. `Char`：字符，运行时以用一般字符表示
+
+        ```lean
+        structure Char where
+          val : UInt32
+          valid : val.isValidChar
+        ```
+
 2. 数据结构
     1. `Array`：数组，此类型在运行时有特殊处理
 
@@ -223,7 +249,7 @@
         1. 数组在以线性方式使用，且所有更新都将对数组进行破坏性执行时性能最佳
         2. 从证明观点来看，`Array α` 仅是 `List α` 的包装类
 
-    2. `String`：字符串，编译器会将此类型的数据表示覆盖为字节序列
+    2. `String`：字符串，编译器会将此类型的数据表示覆盖为 UTF-8 编码的字节序列
 
         ```lean
         structure String where
@@ -314,16 +340,13 @@
             - `nat_lit` 对应表达式的 `Expr.lit (.natVal n)`
             - 解析器将数字字面值转化为 `(OfNat.ofNat (nat_lit n) : α)`，即使 `α` 为 `Nat`
 
-    2. `Int`：整数，此类型在运行时有特殊处理
+    2. `Int`：整数，当数字较小时直接存储有符号整数，较大的数字（超过 63 位时）使用任意精度 `bignum` 库
 
         ```lean
         inductive Int : Type where
           | ofNat   : Nat → Int
           | negSucc : Nat → Int
         ```
-
-        1. 当数字较小时，直接存储有符号整数
-        2. 较大的数字（超过 63 位时）使用任意精度 `bignum` 库
 
     3. `List`：（有序）列表，以链表形式实现
 
