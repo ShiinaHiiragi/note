@@ -400,85 +400,97 @@
     ```
 
 ### 2.1.2 组织特性
-1. `namespace`：将一系列声明放在命名空间
+1. `namespace` 与 `section`
+
+    1. `namespace`：将一系列声明放在命名空间
+
+        ```lean
+        @[builtin_command_parser]
+        def «namespace» := leading_parser "namespace "
+          >> checkColGt
+          >> ident
+        ```
+
+        1. Lean 中的每个名称都位于一个命名空间，且多层命名空间可被直接定义
+        2. 命名空间名称仅用作前缀，不假设本身是否被定义
+
+    2. `«section»`：限制 `variable` 的作用范围
+
+        ```lean
+        @[builtin_command_parser]
+        def «section» := leading_parser "section"
+          >> optional (ppSpace >> checkColGt >> ident)
+        ```
+
+        1. `variable` 命令指示 Lean 将声明的变量作为绑定变量插入定义中
+        2. 匿名 `section` 可不提供标识符
+
+    3. `«end»`：封闭 `namespace` 与 `section`
+
+        ```lean
+        @[builtin_command_parser]
+        def «end» := leading_parser "end"
+          >> optional (ppSpace >> checkColGt >> ident)
+        ```
+
+2. `«open»` 与 `«export»`
+    1. `«open»`：在不显式指定的情况下使用对应命名空间内的名称
+
+        ```lean
+        def openHiding := leading_parser ppSpace
+          >> atomic (ident >> " hiding")
+          >> many1 (ppSpace >> checkColGt >> ident)
+        def openRenamingItem := leading_parser ident
+          >> unicodeSymbol " → " " -> "
+          >> checkColGt
+          >> ident
+        def openRenaming := leading_parser ppSpace
+          >> atomic (ident >> " renaming ")
+          >> sepBy1 openRenamingItem ", "
+        def openOnly := leading_parser ppSpace
+          >> atomic (ident >> " (") >> many1 ident >> ")"
+        def openSimple := leading_parser many1 (ppSpace >> checkColGt >> ident)
+        def openScoped := leading_parser " scoped"
+          >> many1 (ppSpace >> checkColGt >> ident)
+
+        def openDecl := withAntiquot (mkAntiquot
+          "openDecl"
+          `Lean.Parser.Command.openDecl
+          (isPseudoKind := true)
+        )
+          <| openHiding
+            <|> openRenaming
+            <|> openOnly
+            <|> openSimple
+            <|> openScoped
+
+        @[builtin_command_parser]
+        def «open» := leading_parser withPosition ("open" >> openDecl)
+        ```
+
+        1. `openSimple`：打开命名空间
+        2. `openOnly`：仅打开命名空间内的特定名称
+
+    2. `export Some.Namespace (name₁ name₂)` 使得 `name₁` 与 `name₂`
+        1. 在当前命名空间无需前缀 `Some.Namespace` 即可访问
+        2. 在 `export` 所在命名空间 `N` 之外以 `N.name₁` 与 `N.name₂` 形式访问
+
+        ```lean
+        @[builtin_command_parser]
+        def «export» := leading_parser "export "
+          >> ident
+          >> " ("
+          >> many1 ident
+          >> ")"
+        ```
+
+3. `«mutual»`：包围互相调用的代码
 
     ```lean
     @[builtin_command_parser]
-    def «namespace» := leading_parser "namespace "
-      >> checkColGt
-      >> ident
-    ```
-
-    1. Lean 中的每个名称都位于一个命名空间，且多层命名空间可被直接定义
-    2. 命名空间名称仅用作前缀，不假设本身是否被定义
-
-2. `«section»`：限制 `variable` 的作用范围
-
-    ```lean
-    @[builtin_command_parser]
-    def «section» := leading_parser "section"
-      >> optional (ppSpace >> checkColGt >> ident)
-    ```
-
-    1. `variable` 命令指示 Lean 将声明的变量作为绑定变量插入定义中
-    2. 匿名 `section` 可不提供标识符
-
-3. `«end»`：封闭 `namespace` 与 `section`
-
-    ```lean
-    @[builtin_command_parser]
-    def «end» := leading_parser "end"
-      >> optional (ppSpace >> checkColGt >> ident)
-    ```
-
-4. `«open»`：在不显式指定的情况下使用对应命名空间内的名称
-
-    ```lean
-    def openHiding := leading_parser ppSpace
-      >> atomic (ident >> " hiding")
-      >> many1 (ppSpace >> checkColGt >> ident)
-    def openRenamingItem := leading_parser ident
-      >> unicodeSymbol " → " " -> "
-      >> checkColGt
-      >> ident
-    def openRenaming := leading_parser ppSpace
-      >> atomic (ident >> " renaming ")
-      >> sepBy1 openRenamingItem ", "
-    def openOnly := leading_parser ppSpace
-      >> atomic (ident >> " (") >> many1 ident >> ")"
-    def openSimple := leading_parser many1 (ppSpace >> checkColGt >> ident)
-    def openScoped := leading_parser " scoped"
-      >> many1 (ppSpace >> checkColGt >> ident)
-
-    def openDecl := withAntiquot (mkAntiquot
-      "openDecl"
-      `Lean.Parser.Command.openDecl
-      (isPseudoKind := true)
-    )
-      <| openHiding
-        <|> openRenaming
-        <|> openOnly
-        <|> openSimple
-        <|> openScoped
-
-    @[builtin_command_parser]
-    def «open» := leading_parser withPosition ("open" >> openDecl)
-    ```
-
-    1. `openSimple`：打开命名空间
-    2. `openOnly`：仅打开命名空间内的特定名称
-
-5. `«export»`：`export Some.Namespace (name₁ name₂)` 使得 `name₁` 与 `name₂`
-    1. 在当前命名空间无需前缀 `Some.Namespace` 即可访问
-    2. 在 `export` 所在命名空间 `N` 之外以 `N.name₁` 与 `N.name₂` 形式访问
-
-    ```lean
-    @[builtin_command_parser]
-    def «export» := leading_parser "export "
-      >> ident
-      >> " ("
-      >> many1 ident
-      >> ")"
+    def «mutual» := leading_parser "mutual"
+      >> many1 (ppLine >> notSymbol "end" >> commandParser)
+      >> ppDedent (ppLine >> "end")
     ```
 
 ### 2.1.3 辅助指令

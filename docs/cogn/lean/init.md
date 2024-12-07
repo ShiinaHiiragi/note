@@ -37,7 +37,13 @@
         ) : term
         ```
 
-2. 字符串插值：组合子 `interpolatedStr` 解析含有 `{term}` 的字符串，将其解释为项（而非字符串）
+2. 管道符：用 `f <| x` 表示 `f x`，用 `f <| g <| x` 表示 `f (g x)`
+
+    ```lean
+    syntax:min term " <| " term:min : term
+    ```
+
+3. 字符串插值：组合子 `interpolatedStr` 解析含有 `{term}` 的字符串，将其解释为项（而非字符串）
 
     ```lean
     syntax:max "s!" interpolatedStr(term) : term
