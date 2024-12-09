@@ -955,6 +955,9 @@
 
         ```lean
         def Not (a : Prop) : Prop := a → False
+
+        @[inherit_doc]
+        notation:max "¬" p:40 => Not p
         ```
 
     2. `And`：合取
@@ -968,7 +971,6 @@
 
         @[inherit_doc]
         infixr:35 " /\\ " => And
-
         @[inherit_doc]
         infixr:35 " ∧ " => And
         ```

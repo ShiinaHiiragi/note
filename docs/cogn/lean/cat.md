@@ -124,7 +124,16 @@
           >> optDefDeriving
         ```
 
-    3. `«instance»`：类型类重载实例
+    3. `«theorem»`：基本与 `definition` 一致，习惯上用于定理证明
+
+        ```lean
+        def «theorem» := leading_parser "theorem "
+          >> recover declId skipUntilWsOrDelim
+          >> ppIndent declSig
+          >> declVal
+        ```
+
+    4. `«instance»`：类型类重载实例
 
         ```lean
         def «instance» := leading_parser Term.attrKind
@@ -135,7 +144,15 @@
           >> declVal
         ```
 
-    4. `«inductive»`：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
+    5. `«axiom»`：声明公理，可能破坏逻辑一致性
+
+        ```lean
+        def «axiom» := leading_parser "axiom "
+          >> recover declId skipUntilWsOrDelim
+          >> ppIndent declSig
+        ```
+
+    6. `«inductive»`：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
 
         ```lean
         def ctor := leading_parser atomic (optional docComment >> "\n| ")
@@ -168,7 +185,7 @@
               >> rawIdent
             ```
 
-    5. `classInductive`：归纳类型类
+    7. `classInductive`：归纳类型类
 
         ```lean
         def classInductive := leading_parser atomic (group (symbol "class " >> "inductive "))
@@ -179,7 +196,7 @@
           >> optDeriving
         ```
 
-    6. `«structure»`：定义结构体与类型类
+    8. `«structure»`：定义结构体与类型类
 
         ```lean
         def structureTk := leading_parser "structure "
@@ -388,7 +405,24 @@
         def visibility := «private» <|> «protected»
         ```
 
-4. `«deriving»`：单独为类型类派生实例
+4. 变量声明
+    1. `«universe»`：宇宙变量
+
+        ```lean
+        @[builtin_command_parser]
+        def «universe» := leading_parser "universe"
+          >> many1 (ppSpace >> checkColGt >> ident)
+        ```
+
+    2. `«variable»`：函数变量，指示 Lean 将声明的变量作为绑定变量插入定义中
+
+        ```lean
+        @[builtin_command_parser]
+        def «variable» := leading_parser "variable"
+          >> many1 (ppSpace >> checkColGt >> Term.bracketedBinder)
+        ```
+
+5. `«deriving»`：单独为类型类派生实例
 
     ```lean
     @[builtin_command_parser]
@@ -724,6 +758,23 @@
             variable (x : Plus)      # Error: type expected, got (Plus : Type → Type)
             ```
 
+    3. 命题标注
+
+        ```lean
+        def byTactic' := leading_parser "by "
+          >> Tactic.tacticSeqIndentGt
+
+        def fromTerm   := leading_parser "from "
+          >> termParser
+
+        def showRhs := fromTerm <|> byTactic'
+        @[builtin_term_parser]
+        def «show» := leading_parser:leadPrec "show "
+          >> termParser
+          >> ppSpace
+          >> showRhs
+        ```
+
 ### 2.3.3 函数与应用
 1. `«fun»`：$\lambda$ 表达式，即匿名函数
 
@@ -803,7 +854,7 @@
     3. 若 `T` 是一个结构体类型且 `i` 是一个正数，则 `e.i` 是 `e` 的第 `i` 个字段之简写
 
 ### 2.3.4 标识符与字面值
-1. 标识符与占位符
+1. 标识符与占位符：后者指示 Lean 自动填充
 
     ```lean
     @[builtin_term_parser]
