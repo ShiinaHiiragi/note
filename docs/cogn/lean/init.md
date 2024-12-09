@@ -958,6 +958,12 @@
 
         @[inherit_doc]
         notation:max "¬" p:40 => Not p
+
+        @[macro_inline]
+        def False.elim {C : Sort u} (h : False) : C := h.rec
+
+        @[macro_inline]
+        def absurd {a : Prop} {b : Sort v} (h₁ : a) (h₂ : Not a) : b := (h₂ h₁).rec
         ```
 
     2. `And`：合取
@@ -974,6 +980,10 @@
         @[inherit_doc]
         infixr:35 " ∧ " => And
         ```
+
+        1. `And.intro`：合取引入规则
+        2. `And.left`：左合取消去规则
+        3. `And.right`：右合取消去规则
 
     3. `Or`：析取
 
@@ -994,6 +1004,10 @@
           | Or.inl h => left h
           | Or.inr h => right h
         ```
+
+        1. `Or.inl` 或 `Or.intro_left`：左析取引入规则
+        2. `Or.inr` 或 `Or.intro_right`：右析取引入规则
+        3. `Or.elim`：析取消去规则
 
     4. `Iff`：逻辑等价
 
@@ -1053,4 +1067,4 @@
         infix:50 " ≠ "  => Ne
         ```
 
-### 3.4.2 集合论
+### 3.4.2 公理

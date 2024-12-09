@@ -152,7 +152,15 @@
           >> ppIndent declSig
         ```
 
-    6. `«inductive»`：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
+    6. `«example»`：声明一个无名且不永久保存的定理
+
+        ```lean
+        def «example» := leading_parser "example"
+          >> ppIndent optDeclSig
+          >> declVal
+        ```
+
+    7. `«inductive»`：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
 
         ```lean
         def ctor := leading_parser atomic (optional docComment >> "\n| ")
@@ -185,7 +193,7 @@
               >> rawIdent
             ```
 
-    7. `classInductive`：归纳类型类
+    8. `classInductive`：归纳类型类
 
         ```lean
         def classInductive := leading_parser atomic (group (symbol "class " >> "inductive "))
@@ -196,7 +204,7 @@
           >> optDeriving
         ```
 
-    8. `«structure»`：定义结构体与类型类
+    9.  `«structure»`：定义结构体与类型类
 
         ```lean
         def structureTk := leading_parser "structure "
@@ -728,7 +736,7 @@
           >> termParser
         ```
 
-3. 类型归属与类型标注
+3. 类型归属与类型（命题）标注
     1. `typeAscription`：类型归属记号，指示 Lean 将表达式解释为指定类型
 
         ```lean
@@ -739,26 +747,26 @@
           >> ")"
         ```
 
-    2. 通用（可选）类型标注
+    2. `typeSpec` 与 `optType`：通用（可选）类型标注
 
         ```lean
         def typeSpec := leading_parser " : " >> termParser
         def optType : Parser := optional typeSpec
         ```
 
-    !!! note "项与类型的关系"
-        1. 每个项都有对应类型，因此冒号右侧的项必然存在
-        2. 并非所有项都是类型，例如下述声明不合法：
+        !!! note "项与类型的关系"
+            1. 每个项都有对应类型，因此冒号右侧的项必然存在
+            2. 并非所有项都是类型，例如下述声明不合法：
 
-            ```lean
-            class Plus (α : Type) where
-              plus : α → α → α
+                ```lean
+                class Plus (α : Type) where
+                  plus : α → α → α
 
-            variable (x : Plus Nat)  # ⊢ Type
-            variable (x : Plus)      # Error: type expected, got (Plus : Type → Type)
-            ```
+                variable (x : Plus Nat)  # ⊢ Type
+                variable (x : Plus)      # Error: type expected, got (Plus : Type → Type)
+                ```
 
-    3. 命题标注
+    3. `«show»`：命题标注
 
         ```lean
         def byTactic' := leading_parser "by "
@@ -774,6 +782,16 @@
           >> ppSpace
           >> showRhs
         ```
+
+        !!! note "倒推"
+            从目标向后推理的结构化方法，将原证明目标转移到假设
+
+            ```lean
+            def sufficesDecl := leading_parser (atomic (group (binderIdent >> " : ")) <|> hygieneInfo)
+              >> termParser
+              >> ppSpace
+              >> showRhs
+            ```
 
 ### 2.3.3 函数与应用
 1. `«fun»`：$\lambda$ 表达式，即匿名函数
@@ -854,17 +872,24 @@
     3. 若 `T` 是一个结构体类型且 `i` 是一个正数，则 `e.i` 是 `e` 的第 `i` 个字段之简写
 
 ### 2.3.4 标识符与字面值
-1. 标识符与占位符：后者指示 Lean 自动填充
+1. 标识符与占位符
 
     ```lean
     @[builtin_term_parser]
     def ident := checkPrec maxPrec >> Parser.ident
+
     @[builtin_term_parser]
     def hole := leading_parser "_"
+    @[builtin_term_parser]
+    def «sorry» := leading_parser "sorry"
+
     @[builtin_term_parser]
     def syntheticHole := leading_parser "?" >> (ident <|> hole)
     def binderIdent : Parser := ident <|> hole
     ```
+
+    1. `hole`：占位符，指示 Lean 自动填充
+    2. `«sorry»`：生成任何证明或对象，可用于增量性地构建长证明
 
 2. 字面值：包括整数、浮点数、字符串、字符与名称
 
@@ -942,6 +967,28 @@
     def «letrec» := leading_parser:leadPrec withPosition (group
       ("let " >> nonReservedSymbol "rec ") >> letRecDecls
     )
+      >> optSemicolon termParser
+    ```
+
+3. `«have»`：形如 `have := e`、`have f x1 x2 := e`、`have pat := e` 或 `have f | pat1 => e1 | pat2 => e2 ...`
+
+    ```lean
+    def haveId := leading_parser (withAnonymousAntiquot := false) (ppSpace >> binderIdent)
+      <|> hygieneInfo
+    def haveIdLhs := haveId
+      >> many (ppSpace >> letIdBinder)
+      >> optType
+
+    def haveIdDecl := leading_parser (withAnonymousAntiquot := false) atomic (haveIdLhs >> " := ")
+      >> termParser
+    def haveEqnsDecl := leading_parser (withAnonymousAntiquot := false) haveIdLhs
+      >> matchAlts
+
+    def haveDecl := leading_parser (withAnonymousAntiquot := false) haveIdDecl
+      <|> (ppSpace >> letPatDecl)
+      <|> haveEqnsDecl
+    @[builtin_term_parser]
+    def «have» := leading_parser:leadPrec withPosition ("have" >> haveDecl)
       >> optSemicolon termParser
     ```
 
