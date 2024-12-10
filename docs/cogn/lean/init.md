@@ -1,5 +1,7 @@
 # 3 初始模块
 
+- Lean 启动时自动导入库中 Init 文件夹的内容
+
 ## 3.1 预定义句法
 ### 3.1.1 表达式
 1. 条件表达式
@@ -161,6 +163,7 @@
     5. `generalize`：将目标中的任意表达式替换为新的变量
 
         ```lean
+        syntax generalizeArg := atomic(ident " : ")? term:51 " = " ident
         syntax (name := generalize) "generalize " generalizeArg,+ (location)? : tactic
         ```
 
@@ -172,6 +175,7 @@
     1. `case`：子目标分支
 
         ```lean
+        syntax caseArg := binderIdent (ppSpace binderIdent)*
         syntax (name := case) "case " sepBy1(caseArg, " | ") " => " tacticSeq : tactic
         ```
 
@@ -182,13 +186,22 @@
     2. `cases`：分解归纳类型
 
         ```lean
+        syntax casesTarget := atomic(ident " : ")? term
+        syntax inductionAlts := " with" (ppSpace tactic)? withPosition((colGe inductionAlt)+)
+
         syntax (name := cases) "cases " casesTarget,+ (" using " term)? (inductionAlts)? : tactic
         ```
 
-        1. `case h with | cons₁ => tac₁ | cons₂ => tac₂`：类似于模式匹配
+        1. `cases h with | cons₁ => tac₁ | cons₂ => tac₂`：类似于模式匹配
         2. `cases h`：非结构化组织
 
-    3. `cdot`：匿名分支目标，可用于 `case` 或 `cases`
+    3. `split`：分割嵌套的 `if` 或 `match` 结构
+
+        ```lean
+        syntax (name := split) "split" (ppSpace colGt term)? (location)? : tactic
+        ```
+
+    4. `cdot`：匿名分支目标，可用于 `case` 或 `cases`
 
         ```lean
         syntax cdotTk := patternIgnore("· " <|> ". ")
@@ -196,33 +209,58 @@
         ```
 
 3. 启发式自动化
+
+    ```lean
+    syntax config := atomic(" (" &"config") " := " withoutPosition(term) ")"
+
+    syntax locationWildcard := " *"
+    syntax locationHyp := (ppSpace colGt term:max)+ patternIgnore(ppSpace (atomic("|" noWs "-") <|> "⊢"))?
+    syntax location := withPosition(" at" (locationWildcard <|> locationHyp))
+    ```
+
     1. `rfl`：相当于 `exact rfl`
 
         ```lean
         syntax "rfl" : tactic
+        syntax (name := eqRefl) "eq_refl" : tactic
         syntax (name := applyRfl) "apply_rfl" : tactic
-
-        macro_rules | `(tactic| rfl) => `(tactic| apply_rfl)
-        macro_rules | `(tactic| rfl) => `(tactic| eq_refl)
-        macro_rules | `(tactic| rfl) => `(tactic| exact HEq.rfl)
         ```
 
-    2. `simp`：在项中以任意顺序在任何适用位置重复应用给定等式以重写目标
+    2. `rewrite` 或 `rw`：依次利用一系列类型断定为等式的项对目标进行重写
 
         ```lean
+        syntax rwRule := patternIgnore("← " <|> "<- ")? term
+        syntax rwRuleSeq := " [" withoutPosition(rwRule,*,?) "]"
+
+        syntax (name := rewriteSeq) "rewrite" (config)? rwRuleSeq (location)? : tactic
+        macro (name := rwSeq) "rw " c:(config)? s:rwRuleSeq l:(location)? : tactic => ...
+        ```
+
+        1. 得到形如 `t = t` 的恒等式后，`rewrite` 自动关闭证明
+        2. 重写策略在遍历项时选择发现的第一个匹配，可通过附加参数指定适当的子项
+        3. `←t` 指示策略在反方向上使用等式 `t`
+        4. `rewrite [t] at h` 在假设 `h` 处应用重写 `t`
+
+    3. `simp`：反复重写目标项，以任意顺序在任何适用位置重复应用等式
+
+        ```lean
+        syntax discharger :=
+          atomic(" (" patternIgnore(&"discharger" <|> &"disch")) " := " withoutPosition(tacticSeq) ")"
+
+        syntax simpPre   := "↓"
+        syntax simpPost  := "↑"
+
+        syntax simpLemma := (simpPre <|> simpPost)? patternIgnore("← " <|> "<- ")? term
+        syntax simpErase := "-" term:max
+        syntax simpStar := "*"
+
         syntax (name := simp) "simp" (config)? (discharger)? (&" only")?
-        (" [" withoutPosition((simpStar <|> simpErase <|> simpLemma),*,?) "]")? (location)? : tactic
+          (" [" withoutPosition((simpStar <|> simpErase <|> simpLemma),*,?) "]")? (location)? : tactic
         ```
 
-    3. `rw`：使用给定等式重写目标，若可将目标简化为恒等式 `t = t`，则用自反性证明
-
-        ```lean
-        macro (name := rwSeq) "rw " c:optConfig s:rwRuleSeq l:(location)? : tactic =>
-          match s with
-          | `(rwRuleSeq| [$rs,*]%$rbrak) =>
-              `(tactic| (rewrite $c [$rs,*] $(l)?; with_annotate_state $rbrak (try (with_reducible rfl))))
-          | _ => Macro.throwUnsupported
-        ```
+        1. `simp` 策略使用局部列表与所有带有 `simp` 属性的定理重写
+        2. `simp only` 排除使用默认值，仅使用列表内的定理简化
+        3. 可在列表内使用通配符 `*` 以使用局部环境中存在的所有假设，或用 `-` 前缀阻止使用特定定理
 
     4. `assumption`：在当前目标的背景下查看假设，若有与结论相匹配的假设，则应用此假设
 
@@ -264,12 +302,12 @@
     3. `tac <;> tac'`：在主要目标上运行 `tac`，并对产生的每个子目标使用 `tac'`
 
         ```lean
-        macro:1 x:tactic tk:" <;> " y:tactic:2 : tactic => `(tactic|
-        focus
-          $x:tactic
-          -- annotate token with state after executing `x`
-          with_annotate_state $tk skip
-          all_goals $y:tactic)
+        macro:1 x:tactic tk:" <;> " y:tactic:2 : tactic => `(
+          tactic|focus
+            $x:tactic
+            with_annotate_state $tk skip
+            all_goals $y:tactic
+        )
         ```
 
     4. `first | tac | ...`：运行每个策略直到其中一个成功，否则返回失败

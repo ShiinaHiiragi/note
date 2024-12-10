@@ -485,6 +485,19 @@
           >> optionValue
         ```
 
+    5. `«attribute»`：将属性的范围限制在当前小节或文件中
+
+        ```lean
+        def eraseAttr := leading_parser "-" >> rawIdent
+
+        @[builtin_command_parser]
+        def «attribute» := leading_parser "attribute "
+          >> "["
+          >> withoutPosition (sepBy1 (eraseAttr <|> Term.attrInstance) ", ")
+          >> "]"
+          >> many1 (ppSpace >> ident)
+        ```
+
 2. `«open»` 与 `«export»`
     1. `«open»`：在不显式指定的情况下使用对应命名空间内的名称
 
@@ -1174,20 +1187,20 @@
     1. `reducible`：可归约声明
     2. `semireducible`：部分可归约声明
     3. `irreducible`：不可归约声明
-4. `inherit_doc`：从指定声明继承文档
+4. `inherit_doc`：从特定声明继承文档
 
 ### 2.3.2 标签属性
 1. `match_pattern`：标记可以在模式中使用的定义
 2. Lake DSL 相关属性
-    1. `package`：将定义标记为 Lake 包配置
-    2. `package_dep`：将定义标记为 Lake 包依赖项
-    3. `script`：将定义标记为 Lake 脚本
-    4. `default_script`：将 Lake 脚本标记为包的默认脚本
-    5. `lean_lib`：将定义标记为 Lake Lean 库目标配置
-    6. `lean_exe`：将定义标记为 Lake Lean 可执行目标配置
-    7. `extern_lib`：将定义标记为 Lake 外部库目标
-    8. `target`：将定义标记为自定义 Lake 目标
-    9. `default_target`：将 Lake 目标标记为包的默认目标
+    1. `package`：标记 Lake 包配置
+    2. `package_dep`：标记 Lake 包依赖项
+    3. `script`：标记 Lake 脚本
+    4. `default_script`：标记包的默认脚本
+    5. `lean_lib`：标记 Lake Lean 库目标配置
+    6. `lean_exe`：标记 Lake Lean 可执行目标配置
+    7. `extern_lib`：标记 Lake 外部库目标
+    8. `target`：标记自定义 Lake 目标
+    9. `default_target`：标记包的默认目标
 
 ### 2.3.3 参数属性
 1. `export`：代码生成器使用的名称
@@ -1199,6 +1212,10 @@
 2. `noinline`：标记定义为不内联
 3. `macro_inline`：标记定义在 ANF 转换之前始终内联
 4. `always_inline`：标记定义始终内联
+
+### 2.3.5 其他属性
+1. `simp`：`simp` 策略可用等式
+2. `seval`：符号求值器
 
 ## 2.4 策略范畴
 1. `«unknown»`：无法识别策略的回落机制
