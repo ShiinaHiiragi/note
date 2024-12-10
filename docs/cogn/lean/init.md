@@ -37,13 +37,26 @@
         ) : term
         ```
 
-2. 管道符：用 `f <| x` 表示 `f x`，用 `f <| g <| x` 表示 `f (g x)`
+2. `calc`：计算式，定义 `Trans` 类型类实例后可以配置为任意形式的关系式
+
+    ```lean
+    syntax (name := calc) "calc" calcSteps : term
+
+    @[inherit_doc «calc»]
+    syntax (name := calcTactic) "calc" calcSteps : tactic
+
+    syntax calcFirstStep := ppIndent(colGe term (" := " term)?)
+    syntax calcStep := ppIndent(colGe term " := " term)
+    syntax calcSteps := ppLine withPosition(calcFirstStep) withPosition((ppLine linebreak calcStep)*)
+    ```
+
+3. 管道符：用 `f <| x` 表示 `f x`，用 `f <| g <| x` 表示 `f (g x)`
 
     ```lean
     syntax:min term " <| " term:min : term
     ```
 
-3. 字符串插值：组合子 `interpolatedStr` 解析含有 `{term}` 的字符串，将其解释为项（而非字符串）
+4. 字符串插值：组合子 `interpolatedStr` 解析含有 `{term}` 的字符串，将其解释为项（而非字符串）
 
     ```lean
     syntax:max "s!" interpolatedStr(term) : term
@@ -102,6 +115,33 @@
     macro:arg x:stx:max ",*,?" : stx => `(stx| sepBy($x, ",", ", ", allowTrailingSep))
     macro:arg x:stx:max ",+,?" : stx => `(stx| sepBy1($x, ",", ", ", allowTrailingSep))
     macro:arg "!" x:stx:max : stx => `(stx| notFollowedBy($x))
+    ```
+
+### 3.1.3 策略
+1. `simp`：在项中以任意顺序在任何适用位置重复应用给定等式以重写目标
+
+    ```lean
+    syntax (name := simp) "simp" (config)? (discharger)? (&" only")?
+      (" [" withoutPosition((simpStar <|> simpErase <|> simpLemma),*,?) "]")? (location)? : tactic
+    ```
+
+2. `rw`：使用给定等式重写目标，若可将目标简化为恒等式 `t = t`，则用自反性证明
+
+    ```lean
+    macro (name := rwSeq) "rw " c:optConfig s:rwRuleSeq l:(location)? : tactic =>
+      match s with
+      | `(rwRuleSeq| [$rs,*]%$rbrak) =>
+        `(tactic| (rewrite $c [$rs,*] $(l)?; with_annotate_state $rbrak (try (with_reducible rfl))))
+      | _ => Macro.throwUnsupported
+    ```
+
+3. `assumption`：当目标可以被自动推断时，可以指示 Lean 填写
+
+    ```lean
+    syntax (name := assumption) "assumption" : tactic
+
+    syntax "‹" withoutPosition(term) "›" : term
+    macro_rules | `(‹$type›) => `((by assumption : $type))
     ```
 
 ## 3.2 预定义函数
@@ -593,7 +633,8 @@
 
             ```lean
             @[macro_inline]
-            def and (x y : Bool) : Bool := match x with
+            def and (x y : Bool) : Bool :=
+              match x with
               | false => false
               | true => y
 
@@ -605,7 +646,8 @@
 
             ```lean
             @[macro_inline]
-            def or (x y : Bool) : Bool := match x with
+            def or (x y : Bool) : Bool :=
+              match x with
               | true => true
               | false => y
 
@@ -626,7 +668,7 @@
             notation:max "!" b:40 => not b
             ```
 
-3. 比较运算
+3. 关系运算
     1. `LE`：小于等于
 
         ```lean
@@ -1000,7 +1042,7 @@
         theorem Or.intro_left (b : Prop) (h : a) : Or a b := Or.inl h
         theorem Or.intro_right (a : Prop) (h : b) : Or a b := Or.inr h
         theorem Or.elim {c : Prop} (h : Or a b) (left : a → c) (right : b → c) : c :=
-        match h with
+          match h with
           | Or.inl h => left h
           | Or.inr h => right h
         ```
@@ -1030,16 +1072,21 @@
         syntax "∀ " binderIdent binderPred ", " term : term
         ```
 
-    2. `Exists`：存在量词
+    2. `Exists`：存在量词，可以如 `Exists.elim` 内部所示直接以 `match` 或 `let` 消去量词
 
         ```lean
         inductive Exists {α : Sort u} (p : α → Prop) : Prop where
           | intro (w : α) (h : p w) : Exists p
 
         syntax "∃ " binderIdent binderPred ", " term : term
+
+        theorem Exists.elim {α : Sort u} {p : α → Prop} {b : Prop}
+           (h₁ : Exists (fun x => p x)) (h₂ : ∀ (a : α), p a → b) : b :=
+          match h₁ with
+          | intro a h => h₂ a h
         ```
 
-4. 等价关系
+4. 等价与关系
     1. `HasEquiv`：等价
 
         ```lean
@@ -1056,8 +1103,12 @@
         inductive Eq : α → α → Prop where
           | refl (a : α) : Eq a a
 
+        @[match_pattern]
+        def rfl {α : Sort u} {a : α} : Eq a a := Eq.refl a
+
         @[inherit_doc]
         infix:50 " = " => Eq
+
         theorem Eq.symm {α : Sort u} {a b : α} (h : Eq a b) : Eq b a := h ▸ rfl
         theorem Eq.trans {α : Sort u} {a b c : α} (h₁ : Eq a b) (h₂ : Eq b c) : Eq a c := h₂ ▸ h₁
 
@@ -1065,6 +1116,34 @@
         def Ne {α : Sort u} (a b : α) := ¬(a = b)
         @[inherit_doc]
         infix:50 " ≠ "  => Ne
+        ```
+
+        1. `Eq.refl` 可用于证明恒等式：可 $\beta-$归约为相同形式的项会被视为相同
+        2. `Eq.subst`：若 `a = b` 且 `e : p a`，则 `h ▸ e : p b`
+
+            ```lean
+            variable {α : Sort u} {β : Sort v}
+
+            theorem Eq.subst {motive : α → Prop} {a b : α} (h₁ : Eq a b) (h₂ : motive a) : motive b :=
+              Eq.ndrec h₂ h₁
+
+            theorem congrArg {a₁ a₂ : α} (f : α → β) (h : Eq a₁ a₂) : Eq (f a₁) (f a₂) :=
+              h ▸ rfl
+            theorem congr {f₁ f₂ : α → β} {a₁ a₂ : α} (h₁ : Eq f₁ f₂) (h₂ : Eq a₁ a₂) : Eq (f₁ a₁) (f₂ a₂) :=
+              h₁ ▸ h₂ ▸ rfl
+            theorem congrFun {β : α → Sort v} {f g : (x : α) → β x} (h : Eq f g) (a : α) : Eq (f a) (g a) :=
+              h ▸ rfl
+
+            @[builtin_term_parser]
+            def subst := trailing_parser:75 " ▸ "
+              >> sepBy1 (termParser 75) " ▸ "
+            ```
+
+    3. `Trans`：传递性，可用于 `Trans`
+
+        ```lean
+        class Trans (r : α → β → Sort u) (s : β → γ → Sort v) (t : outParam (α → γ → Sort w)) where
+          trans : r a b → s b c → t a c
         ```
 
 ### 3.4.2 公理

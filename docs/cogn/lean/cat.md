@@ -456,7 +456,7 @@
         1. Lean 中的每个名称都位于一个命名空间，且多层命名空间可被直接定义
         2. 命名空间名称仅用作前缀，不假设本身是否被定义
 
-    2. `«section»`：限制 `variable` 的作用范围
+    2. `«section»`：小节，限制 `variable` 的作用范围
 
         ```lean
         @[builtin_command_parser]
@@ -473,6 +473,16 @@
         @[builtin_command_parser]
         def «end» := leading_parser "end"
           >> optional (ppSpace >> checkColGt >> ident)
+        ```
+
+    4. `«set_option»`：改变 Lean 行为，生效范围到命名空间或小节的 `end` 或文件尾
+
+        ```lean
+        @[builtin_command_parser]
+        def «set_option» := leading_parser "set_option "
+          >> identWithPartialTrailingDot
+          >> ppSpace
+          >> optionValue
         ```
 
 2. `«open»` 与 `«export»`
@@ -794,7 +804,7 @@
             ```
 
 ### 2.3.3 函数与应用
-1. `«fun»`：$\lambda$ 表达式，即匿名函数
+1. `«fun»`：$\lambda$ 表达式，即匿名函数．变量名部分支持单项模式匹配
 
     ```lean
     def funStrictImplicitBinder := atomic (lookahead (strictImplicitLeftBracket
@@ -857,7 +867,7 @@
     2. `ellipsis`：省略号 `..`
     3. `termParser`：直接传入一个普通项
 
-3. 扩展字段记号：若 `e : T`，则可将 `T.f e` 简记为 `e.f`，`f` 可以是索引或标识符
+3. 扩展字段记号：若 `e : T`，则可将 `T.f e` 简记为 `e.f`，`f` 可以是索引或标识符．也称作投影记号
 
     ```lean
     @[builtin_term_parser]
@@ -916,13 +926,17 @@
           >> ident
         ```
 
-    2. `quot`：（一系列）命令的句法引用，使用 `:` 指定句法成分种类
+    2. `quot` 与 `precheckedQuot`：（一系列）命令的句法引用，使用 `:` 指定句法成分种类
 
         ```lean
         @[builtin_term_parser low]
         def quot := leading_parser "`("
           >> withoutPosition (incQuotDepth (many1Unbox commandParser))
           >> ")"
+
+        @[builtin_term_parser]
+        def precheckedQuot := leading_parser "`"
+          >> quot
         ```
 
 ### 2.3.5 局部定义
@@ -951,7 +965,7 @@
     ```
 
     1. `letIdDecl`：形如 `let x := e`
-    2. `letPatDecl`：形如 `let pat := e`，其中 `pat` 是任意项
+    2. `letPatDecl`：形如 `let pat := e`，相当于只有一项的模式匹配
     3. `letEqnsDecl`：形如 `let f | pat1 => e1 | pat2 => e2 ...`
 
 2. `«letrec»`：递归 `let` 定义必须通过编写 `let rec` 明确表示
@@ -991,6 +1005,8 @@
     def «have» := leading_parser:leadPrec withPosition ("have" >> haveDecl)
       >> optSemicolon termParser
     ```
+
+    当使用匿名 `have` 时，可用 `this` 指代最新的表达式
 
 ### 2.3.6 其他记号
 1. `«match»`：模式匹配，形如 `match e, ... with | p, ... => f | ...`
@@ -1105,7 +1121,26 @@
         2. 所有 `m` 必须相同，但 `α₁, α₂, ⋯, αₙ, β` 可各不相同
         3. 最终返回值类型为 `m β`
 
-3. `«open»`：区别于作为命令的 `open`，仅使 `open` 作用于单独语句上
+3. `byTactic`：证明策略，指示 Lean 如何构建证明
+
+    ```lean
+    def tacticSeq1Indented : Parser := leading_parser sepBy1IndentSemicolon tacticParser
+    def tacticSeqBracketed : Parser := leading_parser "{"
+      >> sepByIndentSemicolon tacticParser
+      >> ppDedent (ppLine >> "}")
+
+    def tacticSeq := leading_parser tacticSeqBracketed <|> tacticSeq1Indented
+    def tacticSeqIndentGt := withAntiquot (mkAntiquot "tacticSeq" ``tacticSeq)
+      <| node ``tacticSeq
+      <| tacticSeqBracketed
+        <|> (checkColGt "indented tactic sequence" >> tacticSeq1Indented)
+
+    @[builtin_term_parser]
+    def byTactic := leading_parser:leadPrec ppAllowUngrouped >> "by " >> Tactic.tacticSeqIndentGt
+    def byTactic' := leading_parser "by " >> Tactic.tacticSeqIndentGt
+    ```
+
+4. `«open»`：区别于作为命令的 `open`，仅使 `open` 作用于单独语句上
 
     ```lean
     @[builtin_term_parser]
@@ -1166,6 +1201,42 @@
 4. `always_inline`：标记定义始终内联
 
 ## 2.4 策略范畴
+1. `«unknown»`：无法识别策略的回落机制
+
+    ```lean
+    @[builtin_tactic_parser]
+    def «unknown» := leading_parser withPosition (ident >> errorAtSavedPos "ERROR INFO" true)
+    ```
+
+2. `«match»`：策略内模式匹配
+
+    ```lean
+    @[builtin_tactic_parser]
+    def «match» := leading_parser:leadPrec "match "
+      >> optional Term.generalizingParam
+      >> optional Term.motive
+      >> sepBy1 Term.matchDiscr ", "
+      >> " with "
+      >> ppDedent matchAlts
+
+    @[builtin_tactic_parser]
+    def introMatch := leading_parser nonReservedSymbol "intro"
+      >> matchAlts
+    ```
+
+3. `decide`：用于可判定相等性的目标
+
+    ```lean
+    @[builtin_tactic_parser]
+    def decide := leading_parser nonReservedSymbol "decide"
+    ```
+
+    `native_decide`：使用 `#eval` 对可判定性实例求值，效率高于 `decide`
+
+    ```lean
+    @[builtin_tactic_parser]
+    def nativeDecide := leading_parser nonReservedSymbol "native_decide"
+    ```
 
 ## 2.5 句法范畴
 ### 2.5.1 句法
