@@ -118,34 +118,199 @@
     ```
 
 ### 3.1.3 策略
-1. `simp`：在项中以任意顺序在任何适用位置重复应用给定等式以重写目标
+1. 改变证明目标
+    1. `apply`：．整合结论与当前目标中的表达式，并为剩余的未证明部分创建新目标
+
+        ```lean
+        syntax (name := apply) "apply " term : tactic
+
+        syntax (name := applyRfl) "apply_rfl" : tactic
+        syntax (name := constructor) "constructor" : tactic
+        ```
+
+        1. `apply_rfl`：应用形如 `x ~ x` 的目标，其中 `~` 是不为等词的自反关系
+        2. `constructor`：总是应用递归定义类型的第一个适用构造子
+
+    2. `exact`：当目标类型与提供的表达式类型相同时，关闭主要目标
+
+        ```lean
+        syntax (name := exact) "exact " term : tactic
+
+        syntax (name := refine) "refine " term : tactic
+        macro "admit" : tactic => `(tactic| exact @sorryAx _ false)
+        ```
+
+        1. `refine e` 与 `exact e` 类似，但当 `e` 中空洞（`?x` 或 `?_`）未解决时转化为新目标
+        2. `admit`：相当于 `exact sorry`
+
+    3. `intro`：引入任何类型的变量
+
+        ```lean
+        syntax (name := intro) "intro" notFollowedBy("|") (ppSpace colGt term:max)* : tactic
+        ```
+
+        1. `intro e` 引入匿名假设，可使用单项模式匹配
+        2. `intro | n + 1, 0 => tac | ...`：多项模式匹配
+
+    4. `revert`：将假设（以及上下文中所有依赖它的后续元素）还原到目标，产生一个蕴含；相当于 `intro` 的逆操作
+
+        ```lean
+        syntax (name := revert) "revert" (ppSpace colGt term:max)+ : tactic
+        ```
+
+    5. `generalize`：将目标中的任意表达式替换为新的变量
+
+        ```lean
+        syntax (name := generalize) "generalize " generalizeArg,+ (location)? : tactic
+        ```
+
+        1. `generalize ([h :] e = x),+` 将所有出现的 `e` 替换为 `x`，若 `h` 被指定，则 `h : e = x` 也被引入
+        2. `generalize e = x at h₁ ... hₙ`：在 `h₁`, ..., `hₙ` 内泛化 `e`
+        3. `generalize e = x at *`：泛化所有 `e`
+
+2. 证明结构化
+    1. `case`：子目标分支
+
+        ```lean
+        syntax (name := case) "case " sepBy1(caseArg, " | ") " => " tacticSeq : tactic
+        ```
+
+        1. `case tag => tac`：基本形式
+        2. `case tag x₁ ... xₙ => tac`：重命名若干个最新假设并使名称可见
+        3. `case tag₁ | tag₂ => tac`：相当于 `(case tag₁ => tac); (case tag₂ => tac)`
+
+    2. `cases`：分解归纳类型
+
+        ```lean
+        syntax (name := cases) "cases " casesTarget,+ (" using " term)? (inductionAlts)? : tactic
+        ```
+
+        1. `case h with | cons₁ => tac₁ | cons₂ => tac₂`：类似于模式匹配
+        2. `cases h`：非结构化组织
+
+    3. `cdot`：匿名分支目标，可用于 `case` 或 `cases`
+
+        ```lean
+        syntax cdotTk := patternIgnore("· " <|> ". ")
+        syntax (name := cdot) cdotTk tacticSeqIndentGt : tactic
+        ```
+
+3. 启发式自动化
+    1. `rfl`：相当于 `exact rfl`
+
+        ```lean
+        syntax "rfl" : tactic
+        syntax (name := applyRfl) "apply_rfl" : tactic
+
+        macro_rules | `(tactic| rfl) => `(tactic| apply_rfl)
+        macro_rules | `(tactic| rfl) => `(tactic| eq_refl)
+        macro_rules | `(tactic| rfl) => `(tactic| exact HEq.rfl)
+        ```
+
+    2. `simp`：在项中以任意顺序在任何适用位置重复应用给定等式以重写目标
+
+        ```lean
+        syntax (name := simp) "simp" (config)? (discharger)? (&" only")?
+        (" [" withoutPosition((simpStar <|> simpErase <|> simpLemma),*,?) "]")? (location)? : tactic
+        ```
+
+    3. `rw`：使用给定等式重写目标，若可将目标简化为恒等式 `t = t`，则用自反性证明
+
+        ```lean
+        macro (name := rwSeq) "rw " c:optConfig s:rwRuleSeq l:(location)? : tactic =>
+          match s with
+          | `(rwRuleSeq| [$rs,*]%$rbrak) =>
+              `(tactic| (rewrite $c [$rs,*] $(l)?; with_annotate_state $rbrak (try (with_reducible rfl))))
+          | _ => Macro.throwUnsupported
+        ```
+
+    4. `assumption`：在当前目标的背景下查看假设，若有与结论相匹配的假设，则应用此假设
+
+        ```lean
+        syntax (name := assumption) "assumption" : tactic
+
+        syntax "‹" withoutPosition(term) "›" : term
+        macro_rules | `(‹$type›) => `((by assumption : $type))
+        ```
+
+    5. `contradiction`：搜索当前目标假设中的矛盾
+
+        ```lean
+        syntax (name := contradiction) "contradiction" : tactic
+        ```
+
+4. 组合器：与其他策略组合使用
+    1. `try`：尝试使用策略，不返回错误
+
+        ```lean
+        macro "try " t:tacticSeq : tactic => `(tactic| first | $t | skip)
+        ```
+
+    2. `repeat`：多次使用某个策略
+
+        ```lean
+        syntax "repeat " tacticSeq : tactic
+        macro_rules
+          | `(tactic| repeat $seq) => `(tactic| first | ($seq); repeat $seq | skip)
+
+        syntax (name := repeat') "repeat' " tacticSeq : tactic
+        syntax (name := repeat1') "repeat1' " tacticSeq : tactic
+        ```
+
+        1. `repeat tac`：多次使用策略 `tac` 直到失败，因此该策略必须最终失败
+        2. `repeat' tac`：多次递归使用策略 `tac` 直到失败，即如果生成子目标，也会使用 `tac`
+        3. `repeat1' tac`：多次使用策略 `tac` 直到失败，必须至少成功一次
+
+    3. `tac <;> tac'`：在主要目标上运行 `tac`，并对产生的每个子目标使用 `tac'`
+
+        ```lean
+        macro:1 x:tactic tk:" <;> " y:tactic:2 : tactic => `(tactic|
+        focus
+          $x:tactic
+          -- annotate token with state after executing `x`
+          with_annotate_state $tk skip
+          all_goals $y:tactic)
+        ```
+
+    4. `first | tac | ...`：运行每个策略直到其中一个成功，否则返回失败
+
+        ```lean
+        syntax (name := first) "first " withPosition((ppDedent(ppLine) colGe "| " tacticSeq)+) : tactic
+        ```
+
+    5. `all_goals` 与 `any_goals`：将策略应用于所有未完成的目标，直到所有（或至少一个）目标成功
+
+        ```lean
+        syntax (name := allGoals) "all_goals " tacticSeq : tactic
+        syntax (name := anyGoals) "any_goals " tacticSeq : tactic
+        ```
+
+    6. `focus`：确保策略只影响当前的目标，暂时将其他目标从作用范围中隐藏
+
+        ```lean
+        syntax (name := focus) "focus " tacticSeq : tactic
+        ```
+
+    7. `unhygienic`：允许访问 Lean 自动生成的名称
+
+        ```lean
+        macro "unhygienic " t:tacticSeq : tactic => `(tactic| set_option tactic.hygienic false in $t)
+        ```
+
+5. 表达式策略
 
     ```lean
-    syntax (name := simp) "simp" (config)? (discharger)? (&" only")?
-      (" [" withoutPosition((simpStar <|> simpErase <|> simpLemma),*,?) "]")? (location)? : tactic
-    ```
+    macro "let " d:letDecl : tactic => `(tactic| refine_lift let $d:letDecl; ?_)
+    syntax (name := letrec) withPosition(atomic("let " &"rec ") letRecDecls) : tactic
+    syntax "have " haveDecl : tactic
 
-2. `rw`：使用给定等式重写目标，若可将目标简化为恒等式 `t = t`，则用自反性证明
-
-    ```lean
-    macro (name := rwSeq) "rw " c:optConfig s:rwRuleSeq l:(location)? : tactic =>
-      match s with
-      | `(rwRuleSeq| [$rs,*]%$rbrak) =>
-        `(tactic| (rewrite $c [$rs,*] $(l)?; with_annotate_state $rbrak (try (with_reducible rfl))))
-      | _ => Macro.throwUnsupported
-    ```
-
-3. `assumption`：当目标可以被自动推断时，可以指示 Lean 填写
-
-    ```lean
-    syntax (name := assumption) "assumption" : tactic
-
-    syntax "‹" withoutPosition(term) "›" : term
-    macro_rules | `(‹$type›) => `((by assumption : $type))
+    macro "show " e:term : tactic => `(tactic| refine_lift show $e from ?_)
+    macro "suffices " d:sufficesDecl : tactic => `(tactic| refine_lift suffices $d; ?_)
     ```
 
 ## 3.2 预定义函数
 ### 3.2.1 生成函数
+<!-- TODO -->
 
 ### 3.2.2 函数
 1. 函数相关
@@ -1147,3 +1312,4 @@
         ```
 
 ### 3.4.2 公理
+<!-- TODO -->
