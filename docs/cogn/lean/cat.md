@@ -451,16 +451,30 @@
           >> many1 (ppSpace >> checkColGt >> Term.bracketedBinder)
         ```
 
-5. `«deriving»`：单独为类型类派生实例
+5. 补充定义
+    1. `«attribute»`：为定义指定属性
 
-    ```lean
-    @[builtin_command_parser]
-    def «deriving» := leading_parser "deriving "
-      >> "instance "
-      >> derivingClasses
-      >> " for "
-      >> sepBy1 (recover ident skip) ", "
-    ```
+        ```lean
+        def eraseAttr := leading_parser "-" >> rawIdent
+
+        @[builtin_command_parser]
+        def «attribute» := leading_parser "attribute "
+          >> "["
+          >> withoutPosition (sepBy1 (eraseAttr <|> Term.attrInstance) ", ")
+          >> "]"
+          >> many1 (ppSpace >> ident)
+        ```
+
+    2. `«deriving»`：为类型定义派生实例
+
+        ```lean
+        @[builtin_command_parser]
+        def «deriving» := leading_parser "deriving "
+          >> "instance "
+          >> derivingClasses
+          >> " for "
+          >> sepBy1 (recover ident skip) ", "
+        ```
 
 ### 2.1.2 组织特性
 1. `namespace` 与 `section`
@@ -505,19 +519,6 @@
           >> identWithPartialTrailingDot
           >> ppSpace
           >> optionValue
-        ```
-
-    5. `«attribute»`：在定义外指定属性，生效范围限制在命名空间、小节或文件内
-
-        ```lean
-        def eraseAttr := leading_parser "-" >> rawIdent
-
-        @[builtin_command_parser]
-        def «attribute» := leading_parser "attribute "
-          >> "["
-          >> withoutPosition (sepBy1 (eraseAttr <|> Term.attrInstance) ", ")
-          >> "]"
-          >> many1 (ppSpace >> ident)
         ```
 
 2. `«open»` 与 `«export»`
@@ -1231,19 +1232,19 @@
     4. `inherit_doc`：从特定声明继承文档
 2. 标签属性：在定义所在模块中标记声明
     1. `match_pattern`：标记可在模式识别中使用的定义
-    2. ...
+    2. `computed_field`：用于归纳类型的 `computedFields`
 3. 参数属性：标签属性的变体，可以在其中将参数附加到属性
     1. `export`：将 Lean 定义导出为外部可调用符号
     2. `extern`：指定外部库函数作为定义实现，标记该属性的常量不可被用于证明 `False`
     3. `implemented_by`：指定 Lean 函数作为定义实现（可能为 `unsafe`）
 4. 枚举属性：给定类型为 `α` 的列表 `[a₁, a₂, ..., aₙ]`，枚举属性提供属性 `Attrᵢ` 用于将值 `aᵢ` 与声明关联起来
     1. `inline`：标记定义为内联
-    2. `noinline`：标记定义为不内联
-    3. `macro_inline`：标记定义在 ANF 转换之前始终内联
+    2. `noinline`：标记定义为非内联
+    3. `macro_inline`：标记定义在 ANF 转换前内联
     4. `always_inline`：标记定义始终内联
-5. 其他属性
-    1. `simp`：简化策略可用等式
-    2. `seval`：符号求值器
+
+    !!! note "其他属性"
+        - `simp`：标记简化策略可用等式
 
 ## 2.4 策略范畴
 1. `«unknown»`：无法识别策略的回落机制
