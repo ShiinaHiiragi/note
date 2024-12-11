@@ -121,7 +121,7 @@
 
 ### 3.1.3 策略
 1. 改变证明目标
-    1. `apply`：．整合结论与当前目标中的表达式，并为剩余的未证明部分创建新目标
+    1. `apply`：整合结论与当前目标中的表达式，并为剩余的未证明部分创建新目标
 
         ```lean
         syntax (name := apply) "apply " term : tactic
@@ -142,7 +142,7 @@
         macro "admit" : tactic => `(tactic| exact @sorryAx _ false)
         ```
 
-        1. `refine e` 与 `exact e` 类似，但当 `e` 中空洞（`?x` 或 `?_`）未解决时转化为新目标
+        1. `refine e` 与 `exact e` 类似，但 `refine e` 在当 `e` 中空洞（`?x` 或 `?_`）未解决时转化为新目标
         2. `admit`：相当于 `exact sorry`
 
     3. `intro`：引入任何类型的变量
@@ -226,7 +226,7 @@
         syntax (name := applyRfl) "apply_rfl" : tactic
         ```
 
-    2. `rewrite` 或 `rw`：依次利用一系列类型断定为等式的项对目标进行重写
+    2. `rewrite` 或 `rw`：依次利用一系列类型断定为等式的项对目标进行重写，并在得到形如 `t = t` 的恒等式后自动关闭证明
 
         ```lean
         syntax rwRule := patternIgnore("← " <|> "<- ")? term
@@ -236,10 +236,8 @@
         macro (name := rwSeq) "rw " c:(config)? s:rwRuleSeq l:(location)? : tactic => ...
         ```
 
-        1. 得到形如 `t = t` 的恒等式后，`rewrite` 自动关闭证明
-        2. 重写策略在遍历项时选择发现的第一个匹配，可通过附加参数指定适当的子项
-        3. `←t` 指示策略在反方向上使用等式 `t`
-        4. `rewrite [t] at h` 在假设 `h` 处应用重写 `t`
+        1. 重写策略在遍历项时选择发现的第一个匹配，可通过附加参数指定适当的子项
+        2. `←t` 指示策略在反方向上使用等式 `t`
 
     3. `simp`：反复重写目标项，以任意顺序在任何适用位置重复应用等式
 

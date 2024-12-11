@@ -1162,6 +1162,29 @@
     def byTactic' := leading_parser "by " >> Tactic.tacticSeqIndentGt
     ```
 
+4. `Termination.suffix`：停机性证明
+
+    ```lean
+    def terminationBy := leading_parser "termination_by "
+      >> optional (atomic (many (ppSpace >> Term.binderIdent) >> " => "))
+      >> termParser
+    @[inherit_doc terminationBy]
+    def terminationBy? := leading_parser "termination_by?"
+
+    def decreasingBy := leading_parser ppDedent ppLine
+      >> "decreasing_by "
+      >> Tactic.tacticSeqIndentGt
+
+    def Termination.suffix := leading_parser optional (ppDedent ppLine
+      >> (terminationBy? <|> terminationBy)
+    )
+      >> optional decreasingBy
+    ```
+
+    1. `terminationBy`：提供停机参数，若要使用 `:` 后的匿名参数，可以匿名函数形式命名
+    2. `terminationBy?`：建议自动推断的停机参数
+    3. `decreasingBy`：手动证明终止参数，在每次递归调用时都会减少
+
 ## 2.3 属性范畴
 - 与 Lean 声明关联的元数据
     1. 内建属性：先于 `Lean.Parser` 定义的属性
