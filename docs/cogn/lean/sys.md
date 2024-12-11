@@ -61,34 +61,24 @@ $$
 
 ### 1.2.2 文件组织与模块
 1. Lean 包是 Lake 代码分发的基本单位，包含如下内容
-    1. `lean-toolchain`：包含包所使用的 Lean 特定版本标识符，默认配置如下
+    1. `Main.lean`：Lean 编译器在此文件查找主函数 `main`
+    2. `lean-toolchain`：包含包所使用的 Lean 特定版本标识符
+    3. `lakefile.lean`：`lake` 构建配置，包含若干个目标（Lake 的基本构建单元）
+        1. `package «package-name»`：包声明，有且仅有一个
+        2. `lean_lib «target-name»`：Lean 库声明
+        3. `extern_lib «target-name» (pkg)`：外部库声明，即从其他语言构建的静态库
+        4. `lean_exe «target-name» where`：可执行文件
+        5. `target «target-name» (pkg) : α`：自定义目标，即特定于具体执行平台的库或可执行文件的构建目标
 
-        ```plaintext
-        leanprover/lean4:stable
-        ```
+        构建得到的 `.o`、`.c`、`.olean` 与 `.ilean` 文件均称作构建生成的 Facet
 
-    2. `lakefile.lean`：`lake` 构建所需配置，早期版本可使用 TOML 文件．`lakefile.lean` 默认配置如下
+        1. `package_facet «facet-name» (pkg : Package) : α`：包 Facet
+        2. `library_facet «facet-name» (lib : LeanLib) : α`：库 Facet
+        3. `module_facet «facet-name» (mod : Module) : α`：模块 Facet
 
-        ```lean
-        import Lake
-        open Lake DSL
-
-        package «project» where
-
-        lean_lib «Project» where
-
-        @[default_target]
-        lean_exe «project» where
-        root := `Main
-        ```
-
-    3. `Main.lean`：Lean 编译器在此文件查找主函数 `main`
     4. 库：共享同一配置的模块集合，通常包括
         1. 模块 Root：根目录下的 Lean 文件，用于决定库内应当包含的模块
         2. 一系列模块 Glob：决定用于 `lake build` 的模块
-
-        外部库是从其他语言构建得到的静态库
-
     5. 依赖项：也称作当前包的上游（当前包是依赖项的下游），通过如下语法引入
 
         ```lean
@@ -100,11 +90,8 @@ $$
         2. 依赖项具体版本信息会被记录于 `lake-manifest.json` 以保证可再现性
         3. 对于 `Mathlib`，在执行 `lake build` 前应先执行 `lake exe cache get` 以规避从零开始构建
 
-    !!! note "工作区与目标"
-        1. 工作区：Lake 的最大组织单元，它包括一个包（称为 Root）、可移动依赖项与 Lake 环境
-        2. 目标：Lake 的基本构建单元
-            1. 内建目标类型包括二进制可执行文件（从含有主函数的 Root 构建）、Lean 库与外部库
-            2. Facet：从其他组织单元构建得到的元素
+    !!! note "工作区"
+        Lake 的最大组织单元，它包括一个包（称为 Root）、可移动依赖项与 Lake 环境
 
 2. 模块：Lake 构建系统的最小代码单元，通常由 Lean 源代码、一系列二进制库（`olean` 或 `ilean`）以及系统共享库构成
 
