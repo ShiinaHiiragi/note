@@ -907,7 +907,7 @@
     ```
 
     1. `namedArgument`：命名参数，形如 `(field := value)`
-    2. `ellipsis`：省略号 `..`
+    2. `ellipsis`：提供缺少的显式参数作为占位符
     3. `termParser`：直接传入一个普通项
 
 3. 扩展字段记号：若 `e : T`，则可将 `T.f e` 简记为 `e.f`，`f` 可以是索引或标识符．也称作投影记号
