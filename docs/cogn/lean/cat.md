@@ -514,6 +514,11 @@
     4. `«set_option»`：改变 Lean 行为，生效范围限制在命名空间、小节或文件内
 
         ```lean
+        def optionValue := nonReservedSymbol "true"
+          <|> nonReservedSymbol "false"
+          <|> strLit
+          <|> numLit
+
         @[builtin_command_parser]
         def «set_option» := leading_parser "set_option "
           >> identWithPartialTrailingDot
@@ -1046,14 +1051,27 @@
 
     当使用匿名 `have` 时，可用 `this` 指代最新的表达式
 
-4. `«open»`：区别于作为命令的 `open`，仅使 `open` 作用于单独语句上
+4. 单句命令
+    1. `«open»`：作用于单独语句的 `open`
 
-    ```lean
-    @[builtin_term_parser]
-    def «open» := leading_parser:leadPrec "open"
-        >> Command.openDecl
-        >> withOpenDecl (" in " >> termParser)
-    ```
+        ```lean
+        @[builtin_term_parser]
+        def «open» := leading_parser:leadPrec "open"
+            >> Command.openDecl
+            >> withOpenDecl (" in " >> termParser)
+        ```
+
+    2. `«set_option»`：作用于单独语句的 `set_option`
+
+        ```lean
+        @[builtin_term_parser]
+        def «set_option» := leading_parser:leadPrec "set_option "
+          >> identWithPartialTrailingDot
+          >> ppSpace
+          >> Command.optionValue
+          >> " in "
+          >> termParser
+        ```
 
 ### 2.3.6 其他记号
 1. `«match»`：模式匹配，形如 `match e, ... with | p, ... => f | ...`
@@ -1283,6 +1301,28 @@
     @[builtin_tactic_parser]
     def nativeDecide := leading_parser nonReservedSymbol "native_decide"
     ```
+
+4. 内建表达式策略
+    1. `«open»`
+
+        ```lean
+        @[builtin_tactic_parser]
+        def «open» := leading_parser:leadPrec "open "
+          >> Command.openDecl
+          >> withOpenDecl (" in " >> tacticSeq)
+        ```
+
+    2. `«set_option»`
+
+        ```lean
+        @[builtin_tactic_parser]
+        def «set_option» := leading_parser:leadPrec "set_option "
+          >> identWithPartialTrailingDot
+          >> ppSpace
+          >> Command.optionValue
+          >> " in "
+          >> tacticSeq
+        ```
 
 ## 2.5 句法范畴
 ### 2.5.1 句法
