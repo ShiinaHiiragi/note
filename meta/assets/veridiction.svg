@@ -1,0 +1,156 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="64.590515mm"
+   height="56.996311mm"
+   viewBox="0 0 64.590515 56.996311"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="veridiction.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4916699"
+     inkscape:cx="162.56948"
+     inkscape:cy="139.44104"
+     inkscape:window-width="1440"
+     inkscape:window-height="830"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1" />
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-88.04047,-60.727193)">
+    <rect
+       style="fill:none;stroke:#000000;stroke-width:0.42;stroke-dasharray:none"
+       id="rect1"
+       width="43.695248"
+       height="43.69545"
+       x="99.303955"
+       y="66.991203" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.42;stroke-dasharray:none"
+       d="M 99.439525,67.168278 142.86795,110.52833"
+       id="path1" />
+    <path
+       style="fill:none;stroke:#000000;stroke-width:0.42;stroke-dasharray:none"
+       d="M 142.81061,67.230997 99.377267,110.54001"
+       id="path2" />
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:none;stroke:#000000;stroke-width:0.42;stroke-dasharray:none"
+       x="90.078392"
+       y="63.848423"
+       id="text2"><tspan
+         sodipodi:role="line"
+         id="tspan2"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42"
+         x="90.078392"
+         y="63.848423">是</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:none;stroke:#000000;stroke-width:0.42;stroke-dasharray:none"
+       x="118.94154"
+       y="63.697582"
+       id="text2-8"><tspan
+         sodipodi:role="line"
+         id="tspan2-1"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42"
+         x="118.94154"
+         y="63.697582">真</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:none;stroke:#000000;stroke-width:0.42;stroke-dasharray:none"
+       x="147.12137"
+       y="63.697582"
+       id="text3"><tspan
+         sodipodi:role="line"
+         id="tspan3"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42"
+         x="147.12137"
+         y="63.697582">似</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:none;stroke:#000000;stroke-width:0.42;stroke-dasharray:none"
+       x="87.955803"
+       y="117.19758"
+       id="text4"><tspan
+         sodipodi:role="line"
+         id="tspan4"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42"
+         x="87.955803"
+         y="117.19758">非似</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:none;stroke:#000000;stroke-width:0.42;stroke-dasharray:none"
+       x="118.94154"
+       y="117.44481"
+       id="text5"><tspan
+         sodipodi:role="line"
+         id="tspan5"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42"
+         x="118.94154"
+         y="117.44481">假</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:none;stroke:#000000;stroke-width:0.42;stroke-dasharray:none"
+       x="145.70242"
+       y="117.07453"
+       id="text6"><tspan
+         sodipodi:role="line"
+         id="tspan6"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42"
+         x="145.70242"
+         y="117.07453">非是</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:none;stroke:#000000;stroke-width:0.42;stroke-dasharray:none"
+       x="87.955803"
+       y="90.21006"
+       id="text7"><tspan
+         sodipodi:role="line"
+         id="tspan7"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42"
+         x="87.955803"
+         y="90.21006">保密</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42"
+         x="87.955803"
+         y="93.737839"
+         id="tspan8">伪装</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-size:3.52778px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:none;stroke:#000000;stroke-width:0.42;stroke-dasharray:none"
+       x="145.70242"
+       y="90.167435"
+       id="text9"><tspan
+         sodipodi:role="line"
+         id="tspan9"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42"
+         x="145.70242"
+         y="90.167435">幻觉</tspan><tspan
+         sodipodi:role="line"
+         style="font-size:3.52778px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42"
+         x="145.70242"
+         y="93.695213"
+         id="tspan10">想象</tspan></text>
+  </g>
+</svg>
