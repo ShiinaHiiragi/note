@@ -133,7 +133,16 @@
           >> declVal
         ```
 
-    4. `«instance»`：类型类重载实例
+    4. `«opaque»`：不透明常量．不执行类型检查，未提供值时利用 `Inhabited` 类型类创建默认值
+
+        ```lean
+        def «opaque» := leading_parser "opaque "
+          >> recover declId skipUntilWsOrDelim
+          >> ppIndent declSig
+          >> optional declValSimple
+        ```
+
+    5. `«instance»`：类型类重载实例
 
         ```lean
         def «instance» := leading_parser Term.attrKind
@@ -144,7 +153,7 @@
           >> declVal
         ```
 
-    5. `«axiom»`：声明公理，可能破坏逻辑一致性
+    6. `«axiom»`：声明公理，可能破坏逻辑一致性
 
         ```lean
         def «axiom» := leading_parser "axiom "
@@ -152,7 +161,7 @@
           >> ppIndent declSig
         ```
 
-    6. `«example»`：声明一个无名且不永久保存的定理
+    7. `«example»`：声明一个无名且不永久保存的定理
 
         ```lean
         def «example» := leading_parser "example"
@@ -160,7 +169,7 @@
           >> declVal
         ```
 
-    7. `«inductive»`：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
+    8. `«inductive»`：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
 
         ```lean
         def ctor := leading_parser atomic (optional docComment >> "\n| ")
@@ -193,7 +202,7 @@
               >> rawIdent
             ```
 
-    8. `classInductive`：归纳类型类
+    9.  `classInductive`：归纳类型类
 
         ```lean
         def classInductive := leading_parser atomic (group (symbol "class " >> "inductive "))
@@ -204,7 +213,7 @@
           >> optDeriving
         ```
 
-    9.  `«structure»`：定义结构体与类型类
+    10. `«structure»`：定义结构体与类型类
 
         ```lean
         def structureTk := leading_parser "structure "
@@ -404,13 +413,25 @@
           >> "] "
         ```
 
-    3. `visibility`：修改定义在命名空间外的可见性
+    3. `visibility`：修改定义在命名空间外的可见性，本质是阻止 Lean 创建较短的别名
 
         ```lean
         def «private» := leading_parser "private "
         def «protected» := leading_parser "protected "
 
         def visibility := «private» <|> «protected»
+        ```
+
+    4. `«unsafe»`：使用了不安全特性的函数．普通函数不能直接调用 `unsafe` 函数
+
+        ```lean
+        def «unsafe» := leading_parser "unsafe "
+        ```
+
+    5. `«partial»`：非全函数，即不一定停机的函数
+
+        ```lean
+        def «partial» := leading_parser "partial "
         ```
 
 4. 变量声明
@@ -455,6 +476,7 @@
 
         1. Lean 中的每个名称都位于一个命名空间，且多层命名空间可被直接定义
         2. 命名空间名称仅用作前缀，不假设本身是否被定义
+        3. `_root_` 是系统保留命名空间，用于显式指明空前缀
 
     2. `«section»`：小节，限制 `variable` 的作用范围
 
@@ -475,7 +497,7 @@
           >> optional (ppSpace >> checkColGt >> ident)
         ```
 
-    4. `«set_option»`：改变 Lean 行为，生效范围到命名空间或小节的 `end` 或文件尾
+    4. `«set_option»`：改变 Lean 行为，生效范围限制在命名空间、小节或文件内
 
         ```lean
         @[builtin_command_parser]
@@ -485,7 +507,7 @@
           >> optionValue
         ```
 
-    5. `«attribute»`：将属性的范围限制在当前小节或文件中
+    5. `«attribute»`：在定义外指定属性，生效范围限制在命名空间、小节或文件内
 
         ```lean
         def eraseAttr := leading_parser "-" >> rawIdent
@@ -499,7 +521,7 @@
         ```
 
 2. `«open»` 与 `«export»`
-    1. `«open»`：在不显式指定的情况下使用对应命名空间内的名称
+    1. `«open»`：在不显式指定的情况下使用对应命名空间内的名称，本质为常量创建了别名
 
         ```lean
         def openHiding := leading_parser ppSpace
@@ -533,8 +555,10 @@
         def «open» := leading_parser withPosition ("open" >> openDecl)
         ```
 
-        1. `openSimple`：打开命名空间
-        2. `openOnly`：仅打开命名空间内的特定名称
+        1. `openHiding`：打开命名空间，除了指定名称
+        2. `openRenaming`：仅打开命名空间内的特定名称，并为指定名称重命名
+        3. `openOnly`：仅打开命名空间内的特定名称
+        4. `openSimple`：打开命名空间
 
     2. `export Some.Namespace (name₁ name₂)` 使得 `name₁` 与 `name₂`
         1. 在当前命名空间无需前缀 `Some.Namespace` 即可访问
@@ -1186,59 +1210,40 @@
     3. `decreasingBy`：手动证明终止参数，在每次递归调用时都会减少
 
 ## 2.3 属性范畴
-- 与 Lean 声明关联的元数据
-    1. 内建属性：先于 `Lean.Parser` 定义的属性
-    2. 标签属性：在定义所在模块中标记声明
-    3. 参数属性：标签属性的变体，可以在其中将参数附加到属性
-    4. 枚举属性：给定类型为 `α` 的列表 `[a₁, a₂, ..., aₙ]`，枚举属性提供属性 `Attrᵢ` 用于将值 `aᵢ` 与声明关联起来
-
-### 2.3.1 内建属性
-1. 与句法范畴对应的属性
-    1. `builtin_term_parser`：对应 `termParser`
-    2. `builtin_command_parser`：对应 `commandParser`
-    3. `builtin_attr_parser`：对应 `attrParser`
-    4. `builtin_tactic_parser`：对应 `tacticParser`
-    5. `builtin_syntax_parser`：对应 `syntaxParser`
-    6. `builtin_level_parser`：对应 `levelParser`
-    7. `builtin_prio_parser`：对应 `priorityParser`
-    8. `builtin_prec_parser`：对应 `precedenceParser`
-    9. `builtin_doElem_parser`：对应 `doElemParser`
-2. 与类型类对应的属性
-    1. `instance`：标记类型类实例
-    2. `default_instance`：标记类型类默认实例
-3. 与归约对应的属性
-    1. `reducible`：可归约声明
-    2. `semireducible`：部分可归约声明
-    3. `irreducible`：不可归约声明
-4. `inherit_doc`：从特定声明继承文档
-
-### 2.3.2 标签属性
-1. `match_pattern`：标记可以在模式中使用的定义
-2. Lake DSL 相关属性
-    1. `package`：标记 Lake 包配置
-    2. `package_dep`：标记 Lake 包依赖项
-    3. `script`：标记 Lake 脚本
-    4. `default_script`：标记包的默认脚本
-    5. `lean_lib`：标记 Lake Lean 库目标配置
-    6. `lean_exe`：标记 Lake Lean 可执行目标配置
-    7. `extern_lib`：标记 Lake 外部库目标
-    8. `target`：标记自定义 Lake 目标
-    9. `default_target`：标记包的默认目标
-
-### 2.3.3 参数属性
-1. `export`：代码生成器使用的名称
-2. `extern`：指定外部库函数作为定义实现
-3. `implemented_by`：实现 `opaque` 常量的 Lean 函数名称
-
-### 2.3.4 枚举属性
-1. `inline`：标记定义为内联
-2. `noinline`：标记定义为不内联
-3. `macro_inline`：标记定义在 ANF 转换之前始终内联
-4. `always_inline`：标记定义始终内联
-
-### 2.3.5 其他属性
-1. `simp`：`simp` 策略可用等式
-2. `seval`：符号求值器
+1. 内建属性：先于 `Lean.Parser` 定义的属性
+    1. 与句法范畴对应的属性
+        1. `builtin_term_parser`：对应 `termParser`
+        2. `builtin_command_parser`：对应 `commandParser`
+        3. `builtin_attr_parser`：对应 `attrParser`
+        4. `builtin_tactic_parser`：对应 `tacticParser`
+        5. `builtin_syntax_parser`：对应 `syntaxParser`
+        6. `builtin_level_parser`：对应 `levelParser`
+        7. `builtin_prio_parser`：对应 `priorityParser`
+        8. `builtin_prec_parser`：对应 `precedenceParser`
+        9. `builtin_doElem_parser`：对应 `doElemParser`
+    2. 与类型类对应的属性
+        1. `instance`：标记类型类实例（定义可不使用 `instance`）
+        2. `default_instance`：标记类型类默认实例
+    3. 与可约性对应的属性
+        1. `reducible`：可约声明，在任何地方展开．`abbrev` 应用的设置
+        2. `semireducible`：部分可约声明，部分开销较高的自动化不展开．`def` 默认应用的设置
+        3. `irreducible`：不可约声明，从不展开
+    4. `inherit_doc`：从特定声明继承文档
+2. 标签属性：在定义所在模块中标记声明
+    1. `match_pattern`：标记可在模式识别中使用的定义
+    2. ...
+3. 参数属性：标签属性的变体，可以在其中将参数附加到属性
+    1. `export`：将 Lean 定义导出为外部可调用符号
+    2. `extern`：指定外部库函数作为定义实现，标记该属性的常量不可被用于证明 `False`
+    3. `implemented_by`：指定 Lean 函数作为定义实现（可能为 `unsafe`）
+4. 枚举属性：给定类型为 `α` 的列表 `[a₁, a₂, ..., aₙ]`，枚举属性提供属性 `Attrᵢ` 用于将值 `aᵢ` 与声明关联起来
+    1. `inline`：标记定义为内联
+    2. `noinline`：标记定义为不内联
+    3. `macro_inline`：标记定义在 ANF 转换之前始终内联
+    4. `always_inline`：标记定义始终内联
+5. 其他属性
+    1. `simp`：简化策略可用等式
+    2. `seval`：符号求值器
 
 ## 2.4 策略范畴
 1. `«unknown»`：无法识别策略的回落机制

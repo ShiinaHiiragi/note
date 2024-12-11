@@ -63,7 +63,7 @@ $$
 1. Lean 包是 Lake 代码分发的基本单位，包含如下内容
     1. `Main.lean`：Lean 编译器在此文件查找主函数 `main`
     2. `lean-toolchain`：包含包所使用的 Lean 特定版本标识符
-    3. `lakefile.lean`：`lake` 构建配置，包含若干个目标（Lake 的基本构建单元）
+    3. `lakefile.lean`：`lake` 构建配置，包含若干个目标（Lake 的基本构建单元），可用 `default_target` 属性标记默认目标
         1. `package «package-name»`：包声明，有且仅有一个
         2. `lean_lib «target-name»`：Lean 库声明
         3. `extern_lib «target-name» (pkg)`：外部库声明，即从其他语言构建的静态库
