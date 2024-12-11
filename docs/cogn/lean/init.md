@@ -39,7 +39,7 @@
         ) : term
         ```
 
-2. `calc`：计算式，定义 `Trans` 类型类实例后可以配置为任意形式的关系式
+2. 计算式：定义 `Trans` 类型类实例后可以配置为任意形式的关系式
 
     ```lean
     syntax (name := calc) "calc" calcSteps : term
@@ -373,7 +373,7 @@
             map f x := f x
             ```
 
-    2. 复合函数
+    2. `Function.comp`：复合函数
 
         ```lean
         @[inline]
@@ -384,7 +384,7 @@
         infixr:90 " ∘ "  => Function.comp
         ```
 
-    3. 常函数
+    3. `Function.const`：常函数
 
         ```lean
         @[inline] def Function.const {α : Sort u} (β : Sort v) (a : α) : β → α :=
@@ -500,17 +500,17 @@
           data : List Char
         ```
 
-3. `Subtype`：子类型，包括值 `val` 与证据 `property`
+    3. `Subtype`：子类型，包括值 `val` 与证据 `property`
 
-    ```lean
-    @[pp_using_anonymous_constructor]
-    structure Subtype {α : Sort u} (p : α → Prop) where
-      val : α
-      property : p val
+        ```lean
+        @[pp_using_anonymous_constructor]
+        structure Subtype {α : Sort u} (p : α → Prop) where
+          val : α
+          property : p val
 
-    @[inherit_doc Subtype]
-    syntax "{ " withoutPosition(ident (" : " term)? " // " term) " }" : term
-    ```
+        @[inherit_doc Subtype]
+        syntax "{ " withoutPosition(ident (" : " term)? " // " term) " }" : term
+        ```
 
 ### 3.3.2 归纳类型
 1. 枚举类型

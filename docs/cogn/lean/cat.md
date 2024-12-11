@@ -1021,6 +1021,15 @@
 
     当使用匿名 `have` 时，可用 `this` 指代最新的表达式
 
+4. `«open»`：区别于作为命令的 `open`，仅使 `open` 作用于单独语句上
+
+    ```lean
+    @[builtin_term_parser]
+    def «open» := leading_parser:leadPrec "open"
+        >> Command.openDecl
+        >> withOpenDecl (" in " >> termParser)
+    ```
+
 ### 2.3.6 其他记号
 1. `«match»`：模式匹配，形如 `match e, ... with | p, ... => f | ...`
 
@@ -1153,15 +1162,6 @@
     def byTactic' := leading_parser "by " >> Tactic.tacticSeqIndentGt
     ```
 
-4. `«open»`：区别于作为命令的 `open`，仅使 `open` 作用于单独语句上
-
-    ```lean
-    @[builtin_term_parser]
-    def «open» := leading_parser:leadPrec "open"
-        >> Command.openDecl
-        >> withOpenDecl (" in " >> termParser)
-    ```
-
 ## 2.3 属性范畴
 - 与 Lean 声明关联的元数据
     1. 内建属性：先于 `Lean.Parser` 定义的属性
@@ -1183,7 +1183,7 @@
 2. 与类型类对应的属性
     1. `instance`：标记类型类实例
     2. `default_instance`：标记类型类默认实例
-3. 与规约对应的属性
+3. 与归约对应的属性
     1. `reducible`：可归约声明
     2. `semireducible`：部分可归约声明
     3. `irreducible`：不可归约声明
