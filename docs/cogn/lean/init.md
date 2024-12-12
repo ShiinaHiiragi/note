@@ -172,6 +172,12 @@
         3. `generalize e = x at *`：泛化所有 `e`
 
 2. 证明结构化
+
+    ```lean
+    syntax casesTarget := atomic(ident " : ")? term
+    syntax inductionAlts := " with" (ppSpace tactic)? withPosition((colGe inductionAlt)+)
+    ```
+
     1. `case`：子目标分支
 
         ```lean
@@ -183,25 +189,33 @@
         2. `case tag x₁ ... xₙ => tac`：重命名若干个最新假设并使名称可见
         3. `case tag₁ | tag₂ => tac`：相当于 `(case tag₁ => tac); (case tag₂ => tac)`
 
-    2. `cases`：分解归纳类型
+    2. `cases`：分解归纳类型，当接续表达式（`cases e`）时 相当于 `generalize e = n; cases n`
 
         ```lean
-        syntax casesTarget := atomic(ident " : ")? term
-        syntax inductionAlts := " with" (ppSpace tactic)? withPosition((colGe inductionAlt)+)
-
         syntax (name := cases) "cases " casesTarget,+ (" using " term)? (inductionAlts)? : tactic
         ```
 
         1. `cases h with | cons₁ => tac₁ | cons₂ => tac₂`：类似于模式匹配
-        2. `cases h`：非结构化组织
+        2. `cases h`：非结构化组织，也可用 `case` 结构化
 
-    3. `split`：分割嵌套的 `if` 或 `match` 结构
+    3. `induction`：归纳证明
+
+        ```lean
+        syntax (name := induction) "induction " term,+ (" using " term)?
+          (" generalizing" (ppSpace colGt term:max)+)? (inductionAlts)? : tactic
+        ```
+
+        1. 结构与 `cases` 类似，可使用 `with` 或 `case`
+        2. `induction` 接受归纳前提作为参数，且只能接续标识符
+        3. `using` 可接受自定义递归器作为归纳原则
+
+    4. `split`：分割嵌套的 `if` 或 `match` 结构
 
         ```lean
         syntax (name := split) "split" (ppSpace colGt term)? (location)? : tactic
         ```
 
-    4. `cdot`：匿名分支目标，可用于 `case` 或 `cases`
+    5. `cdot`：匿名分支目标，可用于 `case` 或 `cases`
 
         ```lean
         syntax cdotTk := patternIgnore("· " <|> ". ")
@@ -275,6 +289,13 @@
         syntax (name := contradiction) "contradiction" : tactic
         ```
 
+    6. `injection`：若 `c` 是归纳类型的构造子，则 `(c m₁ n₁) = (c m₂ n₂)` 蕴含 `m₁ = m₂` 与 `n₁ = n₂`
+
+        ```lean
+        syntax (name := injection) "injection " term
+          (" with" (ppSpace colGt (ident <|> hole))+)? : tactic
+        ```
+
 4. 组合器：与其他策略组合使用
     1. `try`：尝试使用策略，不返回错误
 
@@ -346,7 +367,13 @@
 
 ## 3.2 预定义函数
 ### 3.2.1 生成函数
-<!-- TODO -->
+1. `rec` 与 `recOn`：消去递归器
+    1. `motive`：被定义函数的陪域
+    2. 归纳分支是小前提，类型元素是大前提
+    3. `recOn` 的大前提发生在小前提之前，此函数基于 `rec` 实现
+2. `casesOn`：分支递归器
+    1. 模式匹配基于此函数实现，此函数基于 `rec` 实现
+    2. `casesOn` 在小前提中没有 `motive` 作为条件
 
 ### 3.2.2 函数
 1. 函数相关
