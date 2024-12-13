@@ -13,8 +13,8 @@
     1. 线性组合：设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m, \boldsymbol \beta$ 为一组 $n$ 元向量．若存在一组实数 $k_1, k_2, \cdots, k_m$ 使得 $\boldsymbol \beta = k_1 \boldsymbol \alpha_1 + k_2 \boldsymbol \alpha_2 + \cdots + k_m \boldsymbol \alpha_m$，则称向量 $\boldsymbol \beta$ 是 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m$ 的线性组合，或称 $\boldsymbol \beta$ 可由 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m$ 线性表出，$k_1, k_2, \cdots, k_m$ 称为线性组合系数或线性表出系数
 
         !!! note "向量的共线与共面"
-            1. 设向量 $\boldsymbol e \neq 0$，若向量 $\boldsymbol r$ 是 $\boldsymbol e$ 的线性组合，则称向量 $\boldsymbol r$ 与向量 $\boldsymbol e$ 共线
-            2. 设向量 $\boldsymbol e_1, \boldsymbol e_2$ 不共线，若向量 $\boldsymbol r$ 是 $\boldsymbol e_1, \boldsymbol e_2$ 的线性组合，则称向量 $\boldsymbol r$ 与向量 $\boldsymbol e_1, \boldsymbol e_2$ 共面
+            - 设向量 $\boldsymbol e \neq 0$，若向量 $\boldsymbol r$ 是 $\boldsymbol e$ 的线性组合，则称向量 $\boldsymbol r$ 与向量 $\boldsymbol e$ 共线
+            - 设向量 $\boldsymbol e_1, \boldsymbol e_2$ 不共线，若向量 $\boldsymbol r$ 是 $\boldsymbol e_1, \boldsymbol e_2$ 的线性组合，则称向量 $\boldsymbol r$ 与向量 $\boldsymbol e_1, \boldsymbol e_2$ 共面
 
     2. 线性相关的性质
         1. 若一个向量组线性无关，则其任何一个部分向量组线性无关
@@ -284,15 +284,14 @@
     !!! note "空间向量的外积与混合积"
         设 $\boldsymbol \alpha, \boldsymbol \beta$ 是 $3$ 维线性空间的两个向量
 
-        1. 外积：记 $\boldsymbol \alpha \wedge \boldsymbol \beta$ 为 $\boldsymbol \alpha \times \boldsymbol \beta$，且有 $|\boldsymbol \alpha \times \boldsymbol \beta|=|\boldsymbol \alpha||\boldsymbol \beta| \sin \langle\boldsymbol \alpha, \boldsymbol \beta\rangle$，其方向与 $\boldsymbol \alpha$ 和 $\boldsymbol \beta$ 正交
+        - 外积：记 $\boldsymbol \alpha \wedge \boldsymbol \beta$ 为 $\boldsymbol \alpha \times \boldsymbol \beta$，且有 $|\boldsymbol \alpha \times \boldsymbol \beta|=|\boldsymbol \alpha||\boldsymbol \beta| \sin \langle\boldsymbol \alpha, \boldsymbol \beta\rangle$，其方向与 $\boldsymbol \alpha$ 和 $\boldsymbol \beta$ 正交
             1. $\boldsymbol \alpha \times \boldsymbol \beta=-\boldsymbol \beta \times \boldsymbol \alpha$
             2. $(\lambda \boldsymbol \alpha+\mu \boldsymbol \beta) \times \boldsymbol \gamma=\lambda(\boldsymbol \alpha \times \boldsymbol \gamma)+\mu(\boldsymbol \beta \times \boldsymbol \gamma) \ (\lambda, \mu \in \mathbf R)$
             3. $(\boldsymbol \alpha \times \boldsymbol \beta) \times \boldsymbol \gamma-\boldsymbol \alpha \times(\boldsymbol \beta \times \boldsymbol \gamma)=(\boldsymbol \alpha \cdot \boldsymbol \beta) \boldsymbol \gamma-(\boldsymbol \beta \cdot \boldsymbol \gamma) \boldsymbol \alpha$
-
-        2. 双重外积：设 $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma$ 为三个向量，定义其双重外积为 $\boldsymbol \alpha \times \boldsymbol \beta \times \boldsymbol \gamma = \boldsymbol \alpha \times \boldsymbol \beta \times \boldsymbol \gamma = (\boldsymbol \alpha \boldsymbol \gamma) \boldsymbol \beta - (\boldsymbol \beta \boldsymbol \gamma) \boldsymbol \alpha$
+        - 双重外积：设 $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma$ 为三个向量，定义其双重外积为 $\boldsymbol \alpha \times \boldsymbol \beta \times \boldsymbol \gamma = \boldsymbol \alpha \times \boldsymbol \beta \times \boldsymbol \gamma = (\boldsymbol \alpha \boldsymbol \gamma) \boldsymbol \beta - (\boldsymbol \beta \boldsymbol \gamma) \boldsymbol \alpha$
             1. $\text{Lagrange}$ 恒等式：$(\boldsymbol \alpha \times \boldsymbol \beta) \cdot\left(\boldsymbol \alpha^{\prime} \times \boldsymbol \beta^{\prime}\right)=\begin{vmatrix} \boldsymbol \alpha \cdot \boldsymbol \alpha^{\prime} & \boldsymbol \alpha \cdot \boldsymbol \beta^{\prime} \\ \boldsymbol \beta \cdot \boldsymbol \alpha^{\prime} & \boldsymbol \beta \cdot \boldsymbol \beta^{\prime} \end{vmatrix}$
             2. $\text{Jacobi}$ 恒等式：$(\boldsymbol \alpha \times \boldsymbol \beta) \times \boldsymbol \gamma + (\boldsymbol \beta \times \boldsymbol \gamma) \times \boldsymbol \alpha + (\boldsymbol \gamma \times \boldsymbol \alpha) \times \boldsymbol \beta = 0$
-        3. 混合积：设 $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma$ 为三个向量，定义其混合积 $V(\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma)=(\boldsymbol \alpha \times \boldsymbol \beta) \cdot \boldsymbol \gamma$
+        - 混合积：设 $\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma$ 为三个向量，定义其混合积 $V(\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma)=(\boldsymbol \alpha \times \boldsymbol \beta) \cdot \boldsymbol \gamma$
             1. $V(\boldsymbol \alpha, \boldsymbol \beta, \boldsymbol \gamma)=V(\boldsymbol \beta, \boldsymbol \gamma, \boldsymbol \alpha)=V(\boldsymbol \gamma, \boldsymbol \alpha, \boldsymbol \beta)=-V(\boldsymbol \beta, \boldsymbol \alpha, \boldsymbol \gamma)=-V(\boldsymbol \gamma, \boldsymbol \beta, \boldsymbol \alpha)=-V(\boldsymbol \alpha, \boldsymbol \gamma, \boldsymbol \beta)$
             2. $V\left(\lambda \boldsymbol \alpha_1+\mu \boldsymbol \alpha_2, \boldsymbol \beta, \boldsymbol \gamma\right)=\lambda V\left(\boldsymbol \alpha_1, \boldsymbol \beta, \boldsymbol \gamma\right)+\mu V\left(\boldsymbol \alpha_2, \boldsymbol \beta, \boldsymbol \gamma\right)$
 

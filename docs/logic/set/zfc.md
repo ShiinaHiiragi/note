@@ -274,8 +274,8 @@
         1. 令 $S$ 为 $X$ 的划分，定义 $X$ 上的二元关系 $\sim_S = \left\{(x, y) \in X^2 \mid \exists c \in S \ (s \in c \wedge y \in c)\right\}$，易知 $\sim_S$ 是等价关系
 
             !!! note "等价关系与划分的对应"
-                1. 设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，则 $\sim_1 = \sim_2$ 当且仅当 $X / \sim_1 = X / \sim_2$
-                2. 设 $\sim$ 为 $X$ 上的等价关系，则 $\sim_{X / \sim} = \sim$ 且 $X / \sim_S = S$
+                - 设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，则 $\sim_1 = \sim_2$ 当且仅当 $X / \sim_1 = X / \sim_2$
+                - 设 $\sim$ 为 $X$ 上的等价关系，则 $\sim_{X / \sim} = \sim$ 且 $X / \sim_S = S$
 
                 总而言之，集合 $X$ 上的所有等价关系与划分形成一一对应
 
