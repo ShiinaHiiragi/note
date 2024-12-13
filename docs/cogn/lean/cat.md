@@ -646,6 +646,40 @@
           >> ident
         ```
 
+### 2.1.4 特殊指令
+1. `«init_quot»`：定义类型 `α` 上的二元关系 `r` 形成的商 `Quot r`
+
+    ```lean
+    @[builtin_command_parser] def «init_quot» := leading_parser "init_quot"
+    ```
+
+    增加四个定义
+
+    ```lean
+    opaque Quot {α : Sort u} (r : α → α → Prop) : Sort u
+
+    opaque Quot.mk {α : Sort u} (r : α → α → Prop) (a : α) : Quot r
+
+    opaque Quot.ind {α : Sort u} {r : α → α → Prop} {β : Quot r → Prop} :
+      (∀ a : α, β (Quot.mk r a)) → ∀ q : Quot r, β q
+
+    opaque Quot.lift {α : Sort u} {r : α → α → Prop} {β : Sort v} (f : α → β) :
+      (∀ a b : α, r a b → Eq (f a) (f b)) → Quot r → β
+    ```
+
+    1. `Quot.mk`：将类型 `α` 映射到商 `@Quot α r`
+    2. `Quit.ind`：设 `β` 是 `Quot r` 上的谓词，且对任意 `Quot.mk a : Quot r` 成立，则 `β` 对任意 `q : Quot r` 成立
+    3. `Quot.lift`：设函数 `f : α → β` 有 `r a b` 蕴含 `f a = f b`，则可从 `f` 导出函数 `f': Quot r → β`
+
+2. `addDocString`：将文档注释添加到现有声明，替换既存文档注释
+
+    ```lean
+    @[builtin_command_parser]
+    def addDocString := leading_parser docComment
+      >> "add_decl_doc "
+      >> ident
+    ```
+
 ## 2.2 项范畴
 ### 2.3.1 变量与元变量
 1. `bracketedBinder`：括号绑定器

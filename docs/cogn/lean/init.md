@@ -1301,7 +1301,35 @@
           default : α
         ```
 
-7. `EStateM`：同时跟踪状态和错误，是 `IO` 单子的基础
+        !!! note "非空归纳类型类"
+            非空类区别于 `Inhabited` 在于 `Nonempty α` 是一个命题，这表明其不携带存在的元素，而只证明存在这种元素
+
+            ```lean
+            class inductive Nonempty (α : Sort u) : Prop where
+              | intro (val : α) : Nonempty α
+            ```
+
+            1. 命题 `Nonempty α` 等价于命题 `∃ x : α, True`
+
+                ```lean
+                example (α : Type u) : Nonempty α ↔ ∃ x : α, True :=
+                  Iff.intro (fun ⟨a⟩ => ⟨a, trivial⟩) (fun ⟨a, _⟩ => ⟨a⟩)
+                ```
+
+            2. 命题 `∃ x : α, p x` 不等价于类型 `{x : α // p x}`
+                1. 前者是命题，其元素通常不可约，Lean 对其仅进行类型检查
+                2. 后者是类型，其元素需要被存储或计算
+
+                因此前者通过 `match` 得到的存在性见证不可直接用于后者，需要选择公理的介入
+
+                ```lean
+                -- tactic 'cases' failed, nested error:
+                -- tactic 'induction' failed, recursor 'Exists.casesOn' can only eliminate into Prop
+                example {α : Type} (p q : α → Prop) : (h : ∃ x, p x) → {x : α // px}
+                  | ⟨w, hw⟩ => ⟨w, hw⟩
+                ```
+
+7. IO 活动：`EStateM` 同时跟踪状态和错误，是 `IO` 单子的基础
 
     ```lean
     def IO.RealWorld : Type := Unit
@@ -1458,18 +1486,8 @@
           | intro a h => h₂ a h
         ```
 
-4. 等价与关系
-    1. `HasEquiv`：等价
-
-        ```lean
-        class HasEquiv (α : Sort u) where
-          Equiv : α → α → Sort v
-
-        @[inherit_doc]
-        infix:50 " ≈ "  => HasEquiv.Equiv
-        ```
-
-    2. `Eq`：相等
+4. 等词与等价
+    1. `Eq`：等词
 
         ```lean
         inductive Eq : α → α → Prop where
@@ -1522,11 +1540,32 @@
               >> sepBy1 (termParser 75) " ▸ "
             ```
 
-    3. `Trans`：传递性，可用于 `Trans`
+    2. `Trans`：传递性类型类，可用于计算式证明
 
         ```lean
         class Trans (r : α → β → Sort u) (s : β → γ → Sort v) (t : outParam (α → γ → Sort w)) where
           trans : r a b → s b c → t a c
+        ```
+
+    3. `Equivalence`：等价与广集
+
+        ```lean
+        structure Equivalence {α : Sort u} (r : α → α → Prop) : Prop where
+          refl  : ∀ x, r x x
+          symm  : ∀ {x y}, r x y → r y x
+          trans : ∀ {x y z}, r x y → r y z → r x z
+
+        class Setoid (α : Sort u) where
+          r : α → α → Prop
+          iseqv : Equivalence r
+
+        class HasEquiv (α : Sort u) where
+          Equiv : α → α → Sort v
+
+        @[inherit_doc]
+        infix:50 " ≈ "  => HasEquiv.Equiv
+
+        instance {α : Sort u} [Setoid α] : HasEquiv α := ⟨Setoid.r⟩
         ```
 
 5. 良基性与良基归纳
@@ -1554,21 +1593,85 @@
         `Nat` 的默认良基关系实例是 `<`
 
 ### 3.4.2 扩展公理
-1. `propext`：命题外延性
+1. `propext`：命题外延性，即互相蕴含的两个命题实质相等
 
-2. `Quot`：商
+    ```lean
+    axiom propext {a b : Prop} : (a ↔ b) → a = b
+    ```
 
-3. `choice`：选择公理
+2. `Quot.sound`：任意 `α` 中元素 `a, b` 有 `r a b` 蕴含 `Quot.mk r a = Quot.mk r b`
 
-4. `em`：排中律
+    ```lean
+    axiom sound : ∀ {α : Sort u} {r : α → α → Prop} {a b : α}, r a b → Quot.mk r a = Quot.mk r b
+    ```
 
-<!--
-经典逻辑 `Classical` 下，所有命题都可判定
+    1. 设 `r'` 有 `r a b` 当且仅当 `Quot.mk r a = Quot.mk r b`
+        1. `r'` 为等价关系，且 `r a b` 蕴含 `r' a b`
+        2. 若 `r''` 是包含 `r` 的任意等价关系，则 `r' a b` 蕴含 `r'' a b`
+    2. 对于类型 `α` 上的等价关系 `r`，`@Quot α r` 是商集，且 `Quot.mk r a = Quot.mk r b` 蕴含 `a ≈ b`
 
-```lean
-noncomputable scoped instance (priority := low) propDecidable (a : Prop) : Decidable a :=
-  choice <| match em a with
-    | Or.inl h => ⟨isTrue h⟩
-    | Or.inr h => ⟨isFalse h⟩
-```
--->
+        ```lean
+        def Quotient {α : Sort u} (s : Setoid α) := @Quot α Setoid.r
+        theorem exact {s : Setoid α} {a b : α} : Quotient.mk s a = Quotient.mk s b → a ≈ b :=
+          fun h => rel_of_eq h
+        ```
+
+    3. `funext`：函数外延性，通过 `Quot.sound` 公理证明
+
+        ```lean
+        theorem funext {α : Sort u} {β : α → Sort v} {f g : (x : α) → β x} (h : ∀ x, f x = g x) : f = g := ...
+        ```
+
+3. `Classical.choice`：选择公理
+
+    ```lean
+    axiom Classical.choice {α : Sort u} : Nonempty α → α
+    ```
+
+    1. `indefiniteDescriptio`：选择公理等价于非限定摹状词
+
+        ```lean
+        noncomputable def indefiniteDescription
+          {α : Sort u}
+          (p : α → Prop)
+          (h : ∃ x, p x)
+          : {x // p x} :=
+          choice <| let ⟨x, px⟩ := h; ⟨⟨x, px⟩⟩
+
+        noncomputable def choose {α : Sort u} {p : α → Prop} (h : ∃ x, p x) : α :=
+          (indefiniteDescription p h).val
+
+        theorem choose_spec {α : Sort u} {p : α → Prop} (h : ∃ x, p x) : p (choose h) :=
+          (indefiniteDescription p h).property
+
+        noncomputable def strongIndefiniteDescription
+          {α : Sort u}
+          (p : α → Prop)
+          (h : Nonempty α)
+          : {x : α // (∃ y : α, p y) → p x} := ...
+
+        noncomputable def epsilon {α : Sort u} [h : Nonempty α] (p : α → Prop) : α :=
+          (strongIndefiniteDescription p h).val
+
+        theorem epsilon_spec_aux
+          {α : Sort u}
+          (h : Nonempty α)
+          (p : α → Prop)
+          : (∃ y, p y) → p (@epsilon α h p) :=
+          (strongIndefiniteDescription p h).property
+        ```
+
+    1. `Classical.em`：排中律．根据 $\text{Diaconescu}$ 定理，`em` 可由 `propext`、`funext` 与 `Classical.choice` 导出
+
+        ```lean
+        theorem em (p : Prop) : p ∨ ¬p := ...
+        ```
+
+    2. `propDecidable`：经典逻辑下所有命题都可判定
+
+        ```lean
+        noncomputable scoped instance (priority := low) propDecidable (a : Prop) : Decidable a :=
+          choice <| match em a with
+            | Or.inl h => ⟨isTrue h⟩
+            | Or.inr h => ⟨isFalse h⟩
+        ```
