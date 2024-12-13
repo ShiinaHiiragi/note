@@ -711,8 +711,8 @@
         1. 内核可将 `zero` 或 `succ n` 表达式简化为自然数字面值
         2. 运行时本身具有 `Nat` 的特殊表示（直接存储最多 63 位数字），更大的数字使用任意精度的 `bignum`
         3. 宏 `nat_lit` 构建一个原始数字字面值，可以用于避免定义时的无穷倒退
-            - `nat_lit` 对应表达式的 `Expr.lit (.natVal n)`
-            - 解析器将数字字面值转化为 `(OfNat.ofNat (nat_lit n) : α)`，即使 `α` 为 `Nat`
+            1. `nat_lit` 对应表达式的 `Expr.lit (.natVal n)`
+            2. 解析器将数字字面值转化为 `(OfNat.ofNat (nat_lit n) : α)`，即使 `α` 为 `Nat`
 
     2. `Int`：整数，当数字较小时直接存储有符号整数，较大的数字（超过 63 位时）使用任意精度 `bignum` 库
 
@@ -795,9 +795,9 @@
         2. `fvar`：自由变量，即非约束出现的变量，用 `LocalContext` 内的 ID 表示
         3. `mvar`：元变量，相当于表达式中的占位符，用 `MetavarContext` 内的 ID 表示
         4. `sort`：`Sort u`、`Type u` 或 `Prop`
-            - `Prop` 表示为 `.sort .zero`,
-            - `Sort u` 表示为 ``.sort (.param `u)``
-            - `Type u` 表示为 ``.sort (.succ (.param `u))``
+            1. `Prop` 表示为 `.sort .zero`,
+            2. `Sort u` 表示为 ``.sort (.param `u)``
+            3. `Type u` 表示为 ``.sort (.succ (.param `u))``
         5. `const`：在模块中或由另一个导入的模块先前定义的（多态）常量
         6. `app`：函数应用．使用部分应用来表示多个参数
         7. `lam`：$\lambda$ 表达式 `lam n t b`，相当于 `fun ($n : $t) => $b`

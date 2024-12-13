@@ -178,12 +178,12 @@
 3. 一阶平均收敛：对 $(\Omega, \mathscr{F}, P)$ 上可积随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，若存在可积随机变量$X$，使得 ${\displaystyle \lim _{n \to \infty} \mathrm{E}\left|X_{n}-X\right|=0}$，则称 $\left\{X_{n}\right\}$（一阶）平均收敛或 $L^{1}$ 收敛于 $X$，记为 $X_{n} \stackrel{L^{1}}{\longrightarrow} X$
     1. 一致可积：设 $(\Omega, \mathscr{F}, P)$ 上可积随机变量族为 $\left\{X_{i}\right\}_{i \in I}$，若 ${\displaystyle \lim _{N \rightarrow \infty} \sup _{i \in I} \int_{\left|X_{i}\right|>N}\left|X_{i}\right| \mathrm{dP}=0}$，则称 $\left\{X_{i}\right\}_{i \in I}$ 为一致可积的
         1. 设 $(\Omega, \mathscr{F}, P)$ 上可积随机变量族为 $\mathscr{H}=\left\{X_{i}\right\}_{i \in I}$
-            - 若 $I$ 为有限集，则 $\mathscr{H}$ 一致可积
-            - 若对每个 $i \in I,\left|X_{i}\right| \leqslant Y$，$Y$ 可积，则 $\mathscr{H}$ 一致可积
-            - 若存在 $p>1, \sup _{i}$ E $\left|X_{i}\right|^{p}<\infty$，则 $\mathscr{H}$ 一致可积
+            1. 若 $I$ 为有限集，则 $\mathscr{H}$ 一致可积
+            2. 若对每个 $i \in I,\left|X_{i}\right| \leqslant Y$，$Y$ 可积，则 $\mathscr{H}$ 一致可积
+            3. 若存在 $p>1, \sup _{i}$ E $\left|X_{i}\right|^{p}<\infty$，则 $\mathscr{H}$ 一致可积
         2. $(\Omega, \mathscr{F}, P)$ 上可积随机变量族 $\mathscr{H}=\left\{X_{i}\right\}_{i \in I}$ 为一致可积的充要条件是
-            - 一致绝对连续：${\displaystyle \lim _{\delta \rightarrow 0} \sup _{P(A)<\delta} \sup _{i \in I} \int_{A}\left|X_{i}\right| \mathrm{dP}=0}$
-            - 积分一致有界：${\displaystyle \sup _{i \in I} E\left|X_{i}\right|<\infty}$
+            1. 一致绝对连续：${\displaystyle \lim _{\delta \rightarrow 0} \sup _{P(A)<\delta} \sup _{i \in I} \int_{A}\left|X_{i}\right| \mathrm{dP}=0}$
+            2. 积分一致有界：${\displaystyle \sup _{i \in I} E\left|X_{i}\right|<\infty}$
     2. 对可积随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，下列条件等价
         1. $X_{n} \stackrel{L^{1}}{\longrightarrow} X$
         2. $\left\{X_{n}\right\}$ 为 $L^{1}$ 基本列，即 $\lim _{n, m \rightarrow \infty} \mathrm{E}\left|X_{n}-X_{m}\right|=0$

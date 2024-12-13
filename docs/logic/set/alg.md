@@ -34,8 +34,8 @@
         2. 主理想：对任意 $A \subseteq X$，定义 $I=\{S \mid S \subseteq A\}$，称为由 $A$ 生成的 $X$ 上的主理想
         3. 极大理想：对任意理想 $I$，如果不存在理想 $I^{\prime}$ 使得 $I \subset I^{\prime}$，则称 $I$ 为极大理想
         4. $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想：对任意无穷集合 $X$，$X$ 的所有有穷集组成的集合族 $I$ 是 $X$ 上的理想，称为 $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想
-            - $I$ 不是主理想
-            - $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想是 $\text{Fr}\acute{\mathrm e}\text{chet}$ 滤的对偶
+            1. $I$ 不是主理想
+            2. $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想是 $\text{Fr}\acute{\mathrm e}\text{chet}$ 滤的对偶
 
     3. 滤与理想的对偶性
         1. 如果 $F$ 是 $X$ 上的滤，则 $I=\{X-S \mid S \in F\}$ 是 $X$ 上的理想

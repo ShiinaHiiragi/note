@@ -88,8 +88,8 @@
 
     2. $\text{Kolmogorov}$ 大数定律：设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立同分布随机变量序列，则存在常数列 $\left\{C_{n}\right\}$，使 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{1}{n} \sum_{j=1}^{n}\left(X_{j}-C_{n}\right)=0}$ $\text{a.s.}$ 的充要条件是 $\mathrm{E}\left|X_{1}\right|<\infty$，且这时必有 $C_{n}=\mathrm{E} X_{1}+o(1)$ 与 ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{1}{n} \sum_{j=1}^{n} X_{j}=\mathrm{E} X_{1} \ \text{a.s.}}$
         1. $\text{Kronecker}$ 引理：设 $\left\{x_{k}\right\}$ 为实数列，$\left\{b_{k}\right\}$ 为递增趋于 $+\infty$ 的正数列，则 ${\displaystyle \sum_{j\geqslant 1} \dfrac{x_{j}}{b_{j}}}$ 收敛 $\to$ ${\displaystyle \lim _{n \rightarrow \infty} \dfrac{1}{b_{n}} \sum_{j=1}^{n} x_{j}=0}$
-            - 设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，$\mathrm{E} X_{n}=0, \ \sigma_{n}^{2}=\mathrm{E} X_{n}^{2}<\infty$．记 ${\displaystyle S_{n}=\sum_{j=1}^{n} X_{j}, \  s_{n}^{2}=\sum_{j=1}^{n} \sigma_{j}^{2}}$，若 $s_{n}^{2} \rightarrow \infty$，则对任一 $\varepsilon>0$，${\displaystyle \lim _{n \rightarrow \infty} \dfrac{S_{n}}{s_{n}\left(\log s_{n}^{2}\right)^{\frac{1}{2}+\varepsilon}}=0}$ $\text{a.s.}$
-            - 设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立同分布随机变量序列，且 $\mathrm{E} X_{n}=0, \ \mathrm{E} X_{n}^{2}<\infty$，则对任一 $\varepsilon>0$ 都有
+            1. 设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立随机变量序列，$\mathrm{E} X_{n}=0, \ \sigma_{n}^{2}=\mathrm{E} X_{n}^{2}<\infty$．记 ${\displaystyle S_{n}=\sum_{j=1}^{n} X_{j}, \  s_{n}^{2}=\sum_{j=1}^{n} \sigma_{j}^{2}}$，若 $s_{n}^{2} \rightarrow \infty$，则对任一 $\varepsilon>0$，${\displaystyle \lim _{n \rightarrow \infty} \dfrac{S_{n}}{s_{n}\left(\log s_{n}^{2}\right)^{\frac{1}{2}+\varepsilon}}=0}$ $\text{a.s.}$
+            2. 设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立同分布随机变量序列，且 $\mathrm{E} X_{n}=0, \ \mathrm{E} X_{n}^{2}<\infty$，则对任一 $\varepsilon>0$ 都有
 
                 $$
                 \begin{aligned}

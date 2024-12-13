@@ -101,8 +101,8 @@
         3. 设 $\boldsymbol A = \mathrm{diag}(a_1, a_2, \cdots, a_n), \boldsymbol B = \mathrm{diag}(b_1, b_2, \cdots, b_n)$，则 $\boldsymbol{AB} = \boldsymbol{BA} = \mathrm{diag}(a_1 b_1, a_2 b_2, \cdots, a_n, b_n)$
         4. 若 $\boldsymbol A$ 与 $\boldsymbol B$ 均为 $n$ 阶上（下）三角阵，则 $\boldsymbol{AB}$ 为上（下）三角阵
         5. 设 $\boldsymbol A$ 是 $n$ 阶方阵，$k \in \mathbf N$，则 $k$ 个 $\boldsymbol A$ 的乘积称为方阵 $\boldsymbol A$ 的 $k$ 次幂，记作 $\boldsymbol A^k$，并规定 $\boldsymbol A^0 = \boldsymbol I$
-            - $\boldsymbol A^k \boldsymbol A^l = \boldsymbol A^{k+l}, (\boldsymbol A^k)^l = \boldsymbol A^{kl} \ (k, l \in \mathbf N)$
-            - 当 $\boldsymbol{AB} = \boldsymbol{BA}$ 时，有 $(\boldsymbol{AB})^k = \boldsymbol A^k \boldsymbol B^k$
+            1. $\boldsymbol A^k \boldsymbol A^l = \boldsymbol A^{k+l}, (\boldsymbol A^k)^l = \boldsymbol A^{kl} \ (k, l \in \mathbf N)$
+            2. 当 $\boldsymbol{AB} = \boldsymbol{BA}$ 时，有 $(\boldsymbol{AB})^k = \boldsymbol A^k \boldsymbol B^k$
 4. 分块矩阵：设 $\boldsymbol A$ 是一个 $m \times n$ 的矩阵，将矩阵分块得到
 
     $$

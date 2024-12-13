@@ -290,8 +290,8 @@
     2. 格局（$\text{ID}$）：下推自动机的一个格局是一个三元组 $(q, w, r)$，其中 $q$ 为下推自动机的当前状态，$w$ 为尚未读入的输入符号串，$\gamma$ 为当前在栈中的符号串
         1. 当下推自动机执行一次 $\delta$ 动作后，由一个格局 $\text{ID}_i$ 转换到下一个格局 $\text{ID}_{i+1}$，记作 $\text{ID}_i \vdash_M \text{ID}_{i+1}$，在不引发歧义的情况下，$M$ 可以省略
         2. 用 $\vdash_M^*$ 表示任意多次转换，由归纳法定义
-            - 对任何格局 $I$，都有 $I \vdash_M^* I$
-            - 如果存在某个格局 $K$，使得 $I \vdash_M^* K$ 与 $K \vdash_M^* J$，则 $I \vdash_M^* J$
+            1. 对任何格局 $I$，都有 $I \vdash_M^* I$
+            2. 如果存在某个格局 $K$，使得 $I \vdash_M^* K$ 与 $K \vdash_M^* J$，则 $I \vdash_M^* J$
 
             即存在格局序列 $K_1, K_2, \cdots, K_n$ 使得 $I = K_1, J = K_n$，且对于任意 $1 \leqslant i < n$ 都有 $K_i \vdash_M^* K_{i+1}$，则有 $I \vdash_M^* J$
 
@@ -326,9 +326,9 @@
     1. 确定的下推自动机的标准形式
         1. 每个确定的上下文无关语言都可由下述确定的下推自动机所接受：在 $M$ 中，一切 $\delta(q, a, X) = (p, \gamma)$ 都有 $|\gamma| \leqslant 2$
         2. 每个确定的上下文无关语言 $L$ 都能被下述确定的下推自动机 $M = (Q, \Sigma, \Gamma, \delta, q_0, Z_0, F)$ 所接受：对每个 $\delta(q, a, X) = (p, \gamma)$，$\gamma$ 只能有如下三种形式
-            - $\gamma = \varepsilon$
-            - $\gamma = X$
-            - $\gamma = YX \ (X, Y \in \Gamma)$
+            1. $\gamma = \varepsilon$
+            2. $\gamma = X$
+            3. $\gamma = YX \ (X, Y \in \Gamma)$
     2. 设 $M$ 是一个确定的下推自动机，则存在等价的确定的下推自动机 $M'$ 能扫描完整个输入串
 
 ### 1.4.2 上下文无关语言
@@ -350,8 +350,8 @@
 3. 上下文无关文法的化简
     1. 设 $G = (V, T, P, S)$ 是一个上下文无关文法
         1. 无用符号：定义两类符号 $X$ 为无用符号
-            - $X \in V \cup T$，但 $X$ 不出现在任何由 $S$ 推导出的字符串中
-            - $X \in V$，但 $X$ 不能推导出任何终结符串
+            1. $X \in V \cup T$，但 $X$ 不出现在任何由 $S$ 推导出的字符串中
+            2. $X \in V$，但 $X$ 不能推导出任何终结符串
         2. 可为空：对于 $A \in V$，若有 $A \overset{*}{\Rightarrow} \varepsilon$，则称 $A$ 是可为空的
         3. 单一产生式：$P$ 中形如 $A \to B \ (A, B \in V)$ 的产生式
     2. 每个不含 $\varepsilon$ 的上下无关语言都可由一个不带无用符号、不带 $\varepsilon-$产生式且不带单一产生式的上下文无关文法产生
@@ -426,13 +426,13 @@
         1. 给定 $\text{Turing}$ 机 $M$ 与输入串 $x$，其无效计算集合（即 $\text{VALCOMPH}(M, x)$ 关于 $(\Gamma \cup Q \cup \{\sharp\})^*$ 的补集）$\text{INVALCOMPS}(M, x)$ 是一个上下文无关语言
         2. 对于任意给定的上下文无关文法 $G = (V, T, P, S)$，$L(G) = T^*$ 是否成立的问题是不可判定的
         3. 设 $G_1, G_2$ 是任意两个 $\Sigma$ 上的上下文无关文法，$R$ 是任意一个正则语言，则以下命题是否成立是不可判定的
-            - $L(G_1) = L(G_2)$
-            - $L(G_2) \subseteq L(G_1)$
-            - $L(G_1) = R$
-            - $R \subseteq L(G_1)$
-            - $L(G_1) \cap L(G_2) = \varnothing$
-            - $\Sigma^* - L(G_1)$ 是一个上下文无关语言
-            - $L(G_1) \cap L(G_2)$ 是一个上下文无关语言
+            1. $L(G_1) = L(G_2)$
+            2. $L(G_2) \subseteq L(G_1)$
+            3. $L(G_1) = R$
+            4. $R \subseteq L(G_1)$
+            5. $L(G_1) \cap L(G_2) = \varnothing$
+            6. $\Sigma^* - L(G_1)$ 是一个上下文无关语言
+            7. $L(G_1) \cap L(G_2)$ 是一个上下文无关语言
         4. 给定 $\text{Turing}$ 机 $M$，其可接受计算集合 $\text{ACCOMPS}(M) = \{\text{VALCOMPH}(M, x) \mid x \in L(M) \}$ 是两个上下文无关语言的交集，其补集是一个上下文无关语言
         5. 设 $\text{Turing}$ 机在每个输入串上至少能做两个动作，则 $L(M)$ 有穷当且仅当 $\text{ACCOMPS}(M)$ 是一个上下文无关语言
     2. $\text{Post}$ 对应问题（$\text{PCP}$）：$\text{PCP}$ 的一个实例是包含在字母表 $\Sigma$ 上的两个字符串表 $A = w_1, w_2, \cdots, w_k$ 与 $B = x_1, x_2, \cdots, x_k$，其中 $w_i, x_i \in \Sigma^* \ (i = 1, 2, \cdots, k, k \geqslant 1)$．若存在一个整数序列 $i_1, i_2, \cdots, i_m \ (m \geqslant 1)$，使得 $w_{i_1} w_{i_2} \cdots w_{i_m} = x_{i_1} x_{i_2} \cdots x_{i_m}$，则称 $\text{PCP}$ 的这个实例有解，且 $i_1, i_2, \cdots, i_m$ 是一组解
@@ -573,8 +573,8 @@
     5. 作为枚举器的 $\text{Turing}$ 机：一种特殊的多带 $\text{Turing}$ 机
         1. 枚举器没有输入串的概念，而是用一条带作为输出带．这条带上符号一经打印就不能改动，且带头一直向右，永不回头
         2. 枚举器 $M$ 输出的语言记作 $G(M)$，
-            - 设有某个枚举器 $M_1$，则存在 $\text{Turing}$ 机 $M_2$ 使得 $L(M_2) = G(M_1)$
-            - 设有某个 $\text{Turing}$ 机 $M_1$，则存在枚举器 $M_2$ 使得 $G(M_2) = L(M_1)$
+            1. 设有某个枚举器 $M_1$，则存在 $\text{Turing}$ 机 $M_2$ 使得 $L(M_2) = G(M_1)$
+            2. 设有某个 $\text{Turing}$ 机 $M_1$，则存在枚举器 $M_2$ 使得 $G(M_2) = L(M_1)$
 
 ### 1.5.2 短语结构语言
 1. 通用 $\text{Turing}$ 机

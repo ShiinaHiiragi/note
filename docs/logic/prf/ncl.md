@@ -5,9 +5,9 @@
 1. 二阶语言 $\mathscr L_2(S)$ 即二阶逻辑的形式语言，由逻辑符号和非逻辑符号组成
     1. 逻辑符号
         1. 变元集 $\mathbf{Var} = \mathbf V_r \cup \mathbf V_f \cup \mathbf V_l$
-            - 变关系符：$\mathbf V_r = \{X_i \mid i\in \lambda\}$，用 $X, Y, Z$ 表示任意变关系符
-            - 变函数符：$\mathbf V_f = \{f_i \mid i\in \lambda\}$，用 $f, g, h$ 表示任意变函数符
-            - 变个体符：$\mathbf V_l = \{x_i \mid i\in \lambda\}$，用 $x, y, z$ 表示任意变个体符
+            1. 变关系符：$\mathbf V_r = \{X_i \mid i\in \lambda\}$，用 $X, Y, Z$ 表示任意变关系符
+            2. 变函数符：$\mathbf V_f = \{f_i \mid i\in \lambda\}$，用 $f, g, h$ 表示任意变函数符
+            3. 变个体符：$\mathbf V_l = \{x_i \mid i\in \lambda\}$，用 $x, y, z$ 表示任意变个体符
 
             通常用上标表示其类型，例如用 $X^2$ 表示二元变关系符
 
@@ -15,9 +15,9 @@
         3. 括号 $)$ 与 $($
 
     2. 非逻辑符号：令 $S = \mathbf R \cup \mathbf F \cup \mathbf C$
-        - 关系符号集 $\mathbf R = \{R_i\mid i\in \lambda\}$，用 $R, Q, H$ 表示任意关系符号
-        - 函数符号集 $\mathbf F = \{\varphi_i\mid i\in \lambda\}$，用 $\varphi, \psi$ 表示任意函数符号
-        - 个体符号集 $\mathbf C = \{c_i\mid i\in \lambda\}$，用 $a, b, c$ 表示任意个体符号
+        1. 关系符号集 $\mathbf R = \{R_i\mid i\in \lambda\}$，用 $R, Q, H$ 表示任意关系符号
+        2. 函数符号集 $\mathbf F = \{\varphi_i\mid i\in \lambda\}$，用 $\varphi, \psi$ 表示任意函数符号
+        3. 个体符号集 $\mathbf C = \{c_i\mid i\in \lambda\}$，用 $a, b, c$ 表示任意个体符号
 
         一个二阶语言由非逻辑符号集合 $S$ 决定．当 $S = \varnothing$ 时，$\mathscr L_2(S)$ 可简记为 $\mathscr L_2$，这是语言中的纯逻辑部分
 

@@ -11,13 +11,13 @@
         2. 初式行为式：偏离形式化的显示行为式的行为式
     2. 得体：一个行为式话语是得体的当且仅当这个话语是在合适的情形下说出的，一个得体的行为式话语被说出的条件是切当的，否则是不切当的
         1. 外在条件
-            - （$\text{A.1}$）必须存在一个公认的，确有约定效果的约定程序，该程序包括由一定的人在一定的情形中说出的一定话语
-            - （$\text{A.2}$）在某一确定场合中，那些特定的人和情境被被援引的特出程序的执行必须是合适的
-            - （$\text{B.1}$）所有参与者必须正确地实施该程序
-            - （$\text{B.2}$）所有参与者必须完全地实施该程序
+            1. （$\text{A.1}$）必须存在一个公认的，确有约定效果的约定程序，该程序包括由一定的人在一定的情形中说出的一定话语
+            2. （$\text{A.2}$）在某一确定场合中，那些特定的人和情境被被援引的特出程序的执行必须是合适的
+            3. （$\text{B.1}$）所有参与者必须正确地实施该程序
+            4. （$\text{B.2}$）所有参与者必须完全地实施该程序
         2. 内在条件
-            - （$\mathrm{\Gamma.1}$）使用这种程序的，通常是那些具有一定思想或感情的参与者，或者是那些为参与者主持仪式的人．因此，无论是那些参与者还是与程序的实施有关的人，事实上都必须具备那种思想或情感，并且参与者自己必须有意这样去做
-            - （$\mathrm{\Gamma.2}$）参与者自己后来确实这样去做
+            1. （$\mathrm{\Gamma.1}$）使用这种程序的，通常是那些具有一定思想或感情的参与者，或者是那些为参与者主持仪式的人．因此，无论是那些参与者还是与程序的实施有关的人，事实上都必须具备那种思想或情感，并且参与者自己必须有意这样去做
+            2. （$\mathrm{\Gamma.2}$）参与者自己后来确实这样去做
         3. 违反规则造成的不切当情况
 
             $$
@@ -308,14 +308,14 @@
 
         !!! note "结构意义的例子"
             1. 约翰介绍 $[$比尔$]_F$ 给苏珊
-                - 结构意义：$\left< [\![\lambda x[\text{introduce}(j, x, s)]]\!], \right.$比尔$\left. \right>$
-                - 表示性质，被约翰介绍给苏珊，个体是比尔
+                1. 结构意义：$\left< [\![\lambda x[\text{introduce}(j, x, s)]]\!], \right.$比尔$\left. \right>$
+                2. 表示性质，被约翰介绍给苏珊，个体是比尔
             2. 约翰介绍比尔给 $[$苏珊$]_F$
-                - 结构意义：$\left< [\![\lambda y[\text{introduce}(j, b, y)]]\!], \right.$苏珊$\left. \right>$
-                - 表示性质，约翰将比尔介绍给的某人，个体是苏珊
+                1. 结构意义：$\left< [\![\lambda y[\text{introduce}(j, b, y)]]\!], \right.$苏珊$\left. \right>$
+                2. 表示性质，约翰将比尔介绍给的某人，个体是苏珊
             3. 具有双焦点的语句（约翰介绍 $[$比尔$]_F$ 给 $[$苏珊$]_F$）
-                - 结构意义：$\left< [\![\lambda x, y[\text{introduce}(j, x, y)]]\!], \right.$比尔$,$ 苏珊$\left. \right>$
-                - 表示关系，当且仅当约翰介绍 $x$ 给 $y$，关系成立，个体是比尔、苏珊
+                1. 结构意义：$\left< [\![\lambda x, y[\text{introduce}(j, x, y)]]\!], \right.$比尔$,$ 苏珊$\left. \right>$
+                2. 表示关系，当且仅当约翰介绍 $x$ 给 $y$，关系成立，个体是比尔、苏珊
 
     3. 根据问题理论，一个特殊问句表示一个由 $\lambda$ 抽象运算得到的属性
     4. 根据 $\text{Horn}$ 关于「仅仅」的语义学在助词位置上的「仅仅」是一个句子副词，这样就可以用公式来表述语句副词「仅仅」的语义规则．$\text{Rooth}$ 对其的表述：令 $\left< Q^n, \alpha_1, \alpha_2, \cdots, \alpha_n \right>$ 是语句 $S$ 的结构意义，语句「仅仅 $S$」 断定对所有序列 $\left< \beta_1, \beta_2, \cdots, \beta_n \right>$，如果 $Q^n \left< \beta_1, \beta_2, \cdots, \beta_n \right>$ 真，则 $\left< \beta_1, \beta_2, \cdots, \beta_n \right> = \left< \alpha_1, \alpha_2, \cdots, \alpha_n \right>$
@@ -359,10 +359,10 @@
         2. 对任意变元 $\alpha$，有 $[\![\alpha]\!]^{\mathfrak M, g} = g(\alpha)$
         3. 如果 $\alpha, \beta$ 的类型为 $e$，则对所有 $w\in W_\mathfrak M$，有 $w\in [\![(\alpha = \beta)]\!]^{\mathfrak M, g} \leftrightarrow [\![\alpha]\!]^{\mathfrak M, g} = [\![\beta]\!]^{\mathfrak M, g}$
         4. 如果 $\alpha, \beta$ 的类型为 $t$
-            - $[\![\neg \alpha]\!]^{\mathfrak M, g} = W_\mathfrak M - [\![\alpha]\!]^{\mathfrak M, g}$
-            - $[\![\alpha \wedge \beta]\!]^{\mathfrak M, g} = [\![\alpha]\!]^{\mathfrak M, g} \cap [\![\beta]\!]^{\mathfrak M, g}$
-            - $[\![\alpha \vee \beta]\!]^{\mathfrak M, g} = [\![\alpha]\!]^{\mathfrak M, g} \cup [\![\beta]\!]^{\mathfrak M, g}$
-            - $[\![\alpha \to \beta]\!]^{\mathfrak M, g} = [\![\neg \alpha]\!]^{\mathfrak M, g} \cup [\![\beta]\!]^{\mathfrak M, g}$
+            1. $[\![\neg \alpha]\!]^{\mathfrak M, g} = W_\mathfrak M - [\![\alpha]\!]^{\mathfrak M, g}$
+            2. $[\![\alpha \wedge \beta]\!]^{\mathfrak M, g} = [\![\alpha]\!]^{\mathfrak M, g} \cap [\![\beta]\!]^{\mathfrak M, g}$
+            3. $[\![\alpha \vee \beta]\!]^{\mathfrak M, g} = [\![\alpha]\!]^{\mathfrak M, g} \cup [\![\beta]\!]^{\mathfrak M, g}$
+            4. $[\![\alpha \to \beta]\!]^{\mathfrak M, g} = [\![\neg \alpha]\!]^{\mathfrak M, g} \cup [\![\beta]\!]^{\mathfrak M, g}$
         5. 如果 $\square [\gamma]$（$\lozenge [\gamma]$）的类型为 $t$，则对所有的 $w\in W_\mathfrak M, w\in [\![\square [\Gamma]]\!]^{\mathfrak M, g}$（$[\![\lozenge [\Gamma]]\!]^{\mathfrak M, g}$）当且仅当对所有 $w'\in W_\mathfrak M$ 满足 $w<w', w'\in [\![\gamma]\!]^{\mathfrak M, g}$
         6. 如果 $\exists u[\Gamma]$（$\forall u[\Gamma]$）的类型为 $t$，则对于所有 $w\in W_\mathfrak M, w\in [\![\exists u[\Gamma]]\!]^{\mathfrak M, g}$（$[\![\exists u[\gamma]]\!]^{\mathfrak M, g}$）当且仅当对 $\mathfrak M$ 的所有与 $g$ 相同的指派 $g'$，除非 $g'$ 指派不同的值到 $u$，否则都有 $w\in [\![\Gamma]\!]^{\mathfrak M, g}$（$[\![\exists u[\gamma]]\!]^{\mathfrak M, g}$）
         7. 如果 $\alpha$ 的类型为 $\tau$，$u$ 是类型为 $\sigma$ 的变元，则 $[\![\lambda u[\alpha]]\!]^{\mathfrak M, g}$ 函数 $f\in D_{\left< \sigma, \tau \right>, \mathfrak M}$ 使得对任意 $h\in D_{\sigma, \mathfrak M}$ 有 $f(h) = [\![\alpha]\!]^{\mathfrak M, g[u\to h]}$，其中 $[u\to h]$ 是一个与 $g$ 同一的函数，除了对 $u$ 指派值 $h$
@@ -439,14 +439,14 @@ $\text{Clark}$ 将人们对间接言语行为的反应分为四个方面来研�
         2. 当听者完全确定说者不想要 $R$，则 $r=0$；当听者完全确定说者想要 $R$，则 $r=1$
     2. $\text{Clark}$ 提出有三种可能的决策模式
         1. 有序的决策规则：反应基于估计 $\widehat q = a+b, \widehat r = \dfrac b{a+b}$
-            - 以概率 $q$ 回答 $Q$
-            - 如果 $Q$ 被回答，则以概率 $r$ 对 $R$ 作出反应，否则以概率 $1$ 对 $R$ 作出反应
+            1. 以概率 $q$ 回答 $Q$
+            2. 如果 $Q$ 被回答，则以概率 $r$ 对 $R$ 作出反应，否则以概率 $1$ 对 $R$ 作出反应
         2. 两种策略以相反的方式进行：估计值 $\widehat q = \dfrac b{b+c}, \widehat r = b+c$
-            - 以概率 $r$ 对 $R$ 作出反应
-            - 如果对 $R$ 作出反应，则依概率 $r$ 回答 $Q$，否则以概率 $1$ 回答 $Q$
+            1. 以概率 $r$ 对 $R$ 作出反应
+            2. 如果对 $R$ 作出反应，则依概率 $r$ 回答 $Q$，否则以概率 $1$ 回答 $Q$
         3. 两种策略类似：估计值 $\widehat q = \dfrac b{b+c}, \widehat r = \dfrac b{a+b}$
-            - 以概率 $q$ 回答 $Q$，以概率 $r$ 对 $R$ 作出反应，两者相互独立
-            - 若无结果，则转向上一条规则
+            1. 以概率 $q$ 回答 $Q$，以概率 $r$ 对 $R$ 作出反应，两者相互独立
+            2. 若无结果，则转向上一条规则
     3. $\text{Clark}$ 设计了五组实验验证他的间接言语行为理论
 3. 一般讨论：根据这些实验，$\text{Clark}$ 得到有关间接言语行为及其反应的一些新特征
     1. $\text{Clark}$ 认为通过他的理论和实验，间接言语行为理论在关于字面意义的严肃性、关于语义的不确定性和关于条件的言语行为这三个方面变得更加完善

@@ -157,9 +157,9 @@
         除上述定义外不存在其他的原始数列
 
         1. 一个原始数列与唯一序数对应：设序数 $\alpha, \beta$ 分别与基本列 $S, T$ 对应，记作 $\alpha \leftrightarrow S, \beta \leftrightarrow T$
-            - $0 \leftrightarrow \left<\right>$
-            - $\omega^{\alpha} \leftrightarrow \left<0\right> + S'$
-            - 若 $\alpha > \beta$，则 $S$ 字典序大于 $T$ 且 $\alpha + \beta \leftrightarrow S + T$
+            1. $0 \leftrightarrow \left<\right>$
+            2. $\omega^{\alpha} \leftrightarrow \left<0\right> + S'$
+            3. 若 $\alpha > \beta$，则 $S$ 字典序大于 $T$ 且 $\alpha + \beta \leftrightarrow S + T$
 
             $$
             \begin{aligned}
@@ -183,8 +183,8 @@
         1. $\left<\right>[n] = n$
         2. 当 $S_n = 0$ 时，$S[n]=\left<S_0, S_1, \cdots, S_{n-1}\right>[f(n)]$
         3. 当 $S_n > 0$ 时，将数列分为好的部分 $g$ 与坏的部分 $b$，令 $r$ 为满足 $k < n$ 且 $S_k < S_n$ 的最大非负整数
-            - 若 $k$ 不存在，则 $g = \left<S_0, S_1, \cdots, S_{n-1}\right>, b = \left<\right>$
-            - 若 $k$ 存在，则 $g = \left<S_0, S_1, \cdots, S_{k-1}\right>, b = \left<S_{k}, S_{k+1}, \cdots, S_{n-1}\right>$
+            1. 若 $k$ 不存在，则 $g = \left<S_0, S_1, \cdots, S_{n-1}\right>, b = \left<\right>$
+            2. 若 $k$ 存在，则 $g = \left<S_0, S_1, \cdots, S_{k-1}\right>, b = \left<S_{k}, S_{k+1}, \cdots, S_{n-1}\right>$
 
             令 $S[n] = \left<\right.g \oplus \small \underbrace{\normalsize b \oplus b \oplus \cdots \oplus b}_{\normalsize f(n)+1} \normalsize\left.\right>[f(n)]$
 
@@ -495,25 +495,25 @@
         特别地，有 $\{\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize\} \approx F\left[\omega^\omega\right](n)$ 成立
 
     2. 多维数阵：设 $A$ 是一个 $n$ 维数阵，定义如下概念
-        - 底数 $b$：数阵的第 $1$ 项
-        - 指数 $p$：数阵的第 $2$ 项
-        - 驾驶员：指数后的第一个非 $1$ 项，有可能是数阵的第 $3$ 项
-        - 副驾驶：是驾驶员的前一项．如果驾驶员是其所在列的第一项，则副驾驶不存在
-        - 结构：代表比数阵维度低的子数阵，前四维分别是项（$X^0$），列（$X^1$），平面（$X^2$），领域（$X^3$）
-        - 前结构：「前项」是位于驾驶员所在列且在驾驶员前面的项；「前列」是位于驾驶员所在平面且在驾驶员前面的列；「前平面」是位于驾驶员所在领域且在驾驶员前面的平面
-        - 指数块：代表结构 $S$，但将 $X$ 换成 $p$，表示长度为 $p$ 的超立方体
-        - 飞机：包含驾驶员、前项、前结构的指数块
-        - 乘客：是飞机中非驾驶员或副驾驶的项
+        1. 底数 $b$：数阵的第 $1$ 项
+        2. 指数 $p$：数阵的第 $2$ 项
+        3. 驾驶员：指数后的第一个非 $1$ 项，有可能是数阵的第 $3$ 项
+        4. 副驾驶：是驾驶员的前一项．如果驾驶员是其所在列的第一项，则副驾驶不存在
+        5. 结构：代表比数阵维度低的子数阵，前四维分别是项（$X^0$），列（$X^1$），平面（$X^2$），领域（$X^3$）
+        6. 前结构：「前项」是位于驾驶员所在列且在驾驶员前面的项；「前列」是位于驾驶员所在平面且在驾驶员前面的列；「前平面」是位于驾驶员所在领域且在驾驶员前面的平面
+        7. 指数块：代表结构 $S$，但将 $X$ 换成 $p$，表示长度为 $p$ 的超立方体
+        8. 飞机：包含驾驶员、前项、前结构的指数块
+        9. 乘客：是飞机中非驾驶员或副驾驶的项
 
         并定义如下运算规则
 
         1. 指数规则：如果 $p = 1$，则 $v(A) = b$
         2. 初始规则：如果没有驾驶员，则 $v(A) = b^p$
         3. 灾难规则：如果不符合上述规则，则
-            - 驾驶员的值减 $1$
-            - 副驾驶的指变为「原数阵将指数减去 $1$ 后的值」
-            - 所有乘客变为 $b$
-            - 其他部份不变
+            1. 驾驶员的值减 $1$
+            2. 副驾驶的指变为「原数阵将指数减去 $1$ 后的值」
+            3. 所有乘客变为 $b$
+            4. 其他部份不变
 
         用 $(n)$ 分隔符分隔 $n$ 维的数据，数阵中填充 $1$ 不会影响结果
 

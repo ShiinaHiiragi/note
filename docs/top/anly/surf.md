@@ -93,9 +93,9 @@
     2. 二次曲面根据其中心可以分为如下种类
         1. 中心二次曲面：有惟一中心的二次曲面，此时 $I_3 \neq 0$
         2. 非中心二次曲面：无心曲面、线心曲面与面心曲面的统称，此时 $I_3 = 0$
-            - 无心二次曲面：没有中心的二次曲面
-            - 线心二次曲面：有无数中心且构成一条直线的二次曲面
-            - 面心二次曲面：有无数中心且构成一个平面的二次曲面
+            1. 无心二次曲面：没有中心的二次曲面
+            2. 线心二次曲面：有无数中心且构成一条直线的二次曲面
+            3. 面心二次曲面：有无数中心且构成一个平面的二次曲面
 
 4. 切线与切平面
     1. 切线：若直线与二次曲面相交于两个相互重合的点，则这条直线称作二次曲面的切线，重合的交点称作切点．如果直线全部在二次曲面上，则这条直线也称作二次曲面的切线，直线上的每一点都是切点
@@ -277,11 +277,11 @@
         3. 对称双线性形式 $\sigma$ 是非退化的，其充要条件是 $V^{\perp}=0$
         4. 设 $(V, \sigma)$ 是内积空间，$M$ 是 $(V, \sigma)$ 的子空间，则 $\operatorname{dim} M+\operatorname{dim} M^{\perp}=\operatorname{dim} V+\operatorname{dim}\left(M \cap V^{\perp}\right)$．特别地，如果 $\sigma$ 是非退化的双线性形式，即 $V^{\perp}=0$，则有 $\operatorname{dim} M+\operatorname{dim} M^{\perp}=\operatorname{dim} V$
         5. 设 $(V, \sigma)$ 是内积空间，其中对称双线性形式 $\sigma$ 是非退化的．定义 $V$ 中子空间之间的正交补映射 $M \rightarrow M^{\perp}$，则这个映射诱导了射影几何 $\boldsymbol{P}(V)$ 到自身的一一映射，并且具有如下性质
-            - $\operatorname{dim} M^{\perp}=\operatorname{dim} V-\operatorname{dim} M$
-            - $\left(M^{\perp}\right)^{\perp}=M$
-            - $M \subset N \Rightarrow M^{\perp} \supset N^{\perp}$
-            - $(M+N)^{\perp}=M^{\perp} \cap N^{\perp}$
-            - $(M \cap N)^{\perp}=M^{\perp}+N^{\perp}$
+            1. $\operatorname{dim} M^{\perp}=\operatorname{dim} V-\operatorname{dim} M$
+            2. $\left(M^{\perp}\right)^{\perp}=M$
+            3. $M \subset N \Rightarrow M^{\perp} \supset N^{\perp}$
+            4. $(M+N)^{\perp}=M^{\perp} \cap N^{\perp}$
+            5. $(M \cap N)^{\perp}=M^{\perp}+N^{\perp}$
 
     3. 设 $M$ 是线性空间 $V$ 的子空间，$\sigma_M$ 是 $\sigma$ 在 $M$ 上的限制．如果 $\sigma_M$ 是退化的，即 $\sigma_M$ 的秩小于 $\operatorname{dim} M$，则 $M$ 称为 $V$ 的退化子空间
         1. $M$ 是 $V$ 的非退化子空间，当且仅当 $\sigma_M$ 的秩等于 $\operatorname{dim} M$
@@ -563,8 +563,8 @@
         1. 当 $L N-M^{2}>0$ 时，沿 $P$ 点任何切向的法曲率同时为正或为负，称这样的点为曲面的椭圆点
         2. 当 $L N-M^{2}<0$ 时，$k_{n}(v)=0$ 关于 $v$ 恰好有两个线性无关的解，这两个方向称为曲面在该点的渐近方向；这两个渐近方向将切平面分割为四个区域，在相对的两个区域上，法曲率的符号相等，这样的点称为曲面的双曲点
         3. 当 $L N-M^{2}=0$ 时，这样的点称为曲面的抛物点
-            - 当 $L 、 M 、 N$ 不全为零时，仅有一个切方向使法曲率 $k_{n}$ 为零，这个方向亦称作曲面在该点的渐近方向；这个渐近方向将切平面分割为两个区域，在这两个区域内法曲率均不为 $0$ 且符号相等
-            - 当 $L=M=N=0$ 时，法曲率 $k_{n}$ 沿任何方向均为零，这样的点又称作平点
+            1. 当 $L 、 M 、 N$ 不全为零时，仅有一个切方向使法曲率 $k_{n}$ 为零，这个方向亦称作曲面在该点的渐近方向；这个渐近方向将切平面分割为两个区域，在这两个区域内法曲率均不为 $0$ 且符号相等
+            2. 当 $L=M=N=0$ 时，法曲率 $k_{n}$ 沿任何方向均为零，这样的点又称作平点
     2. 曲面 $S$ 沿非零切向量 $\boldsymbol{w}=\xi \boldsymbol{r}_{u}+\eta \boldsymbol{r}_{v}$ 的法曲率定义为 $k_{n}(\boldsymbol{w})=\dfrac{\mathrm{II}(\boldsymbol{w}, \boldsymbol{w})}{\mathrm{I}(\boldsymbol{w}, \boldsymbol{w})}=\dfrac{L \xi^{2}+2 M \xi \eta+N \eta^{2}}{E \xi^{2}+2 F \xi \eta+G \eta^{2}}$
     3. 对曲面 $S$ 的任意单位切向量 $\boldsymbol{v}$，曲面 $S$ 沿 $\boldsymbol{v}$ 方向的法曲率可表为 $k_{n}(\boldsymbol{v})=\langle\mathcal{W}(\boldsymbol{v}), \boldsymbol{v}\rangle$
 

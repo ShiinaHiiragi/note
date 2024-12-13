@@ -39,11 +39,11 @@
         2. $G$ 中任一元 $a$ 与其逆元 $a^{-1}$ 有相同的阶
         3. 设 $a$ 是群 $G$ 中一元，则 $a$ 的阶无穷 $\leftrightarrow \forall m \neq n, m, n \in Z: a^{m} \neq a^{n}$
         4. 设 $a$ 是群 $G$ 中一元，$a$ 的阶为 $d$
-            - $\forall h \in Z$，有 $a^{h}=e \leftrightarrow d \mid h$
-            - $\forall m, n \in Z$，有 $a^{m}=a^{n} \leftrightarrow d \mid(m-n) \leftrightarrow m \equiv n \pmod d$
+            1. $\forall h \in Z$，有 $a^{h}=e \leftrightarrow d \mid h$
+            2. $\forall m, n \in Z$，有 $a^{m}=a^{n} \leftrightarrow d \mid(m-n) \leftrightarrow m \equiv n \pmod d$
         5. 设 $a$ 是群 $G$ 中一元，$a$ 的阶为 $d$，$k \in \mathrm{N}$
-            - $a^{k}$ 的阶为 $\dfrac{d}{(d, k)}$，其中 $(d, k)$ 是 $d, k$ 的最大公因数
-            - $a^{k}$ 的阶为 $d \leftrightarrow(d, k)=1$
+            1. $a^{k}$ 的阶为 $\dfrac{d}{(d, k)}$，其中 $(d, k)$ 是 $d, k$ 的最大公因数
+            2. $a^{k}$ 的阶为 $d \leftrightarrow(d, k)=1$
         6. 设 $a, b$ 是群 $G$ 中的元素，$a$ 的阶为 $m$，$b$ 的阶为 $n$，$a b=b a$，$(m, n)=1$，则 $a b$ 的阶为 $m n$
 
 ### 1.1.2 子群与商群

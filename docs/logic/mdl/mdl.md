@@ -159,8 +159,8 @@
     2. 如果 $\Sigma$ 是有限一致的，且对任意的语句 $\sigma$ 都有 $\sigma \in \Sigma$ 或者 $\neg \sigma \in \Sigma$，则称 $\Sigma$ 是极大有限一致的
         1. 如果语句集 $\Sigma$ 是有限一致的，则存在极大有限一致的语句集 $\Sigma^{\prime}$ 使得 $\Sigma \subseteq \Sigma^{\prime}$
         2. 设语句集 $\Sigma$ 极大有限一致，则对于任意的语句 $\sigma$
-            - $\sigma \in \Sigma$ 当且仅当 $\neg \sigma \notin \Sigma$
-            - 如果任意结构都满足 $\sigma$，则 $\sigma \in \Sigma$
+            1. $\sigma \in \Sigma$ 当且仅当 $\neg \sigma \notin \Sigma$
+            2. 如果任意结构都满足 $\sigma$，则 $\sigma \in \Sigma$
         3. 如果语句集 $\Sigma$ 是极大有限一致的，则对任意的语句 $\sigma_{1}, \sigma_{2}$，有 $\sigma_{1} \wedge \sigma_{2} \in \Sigma$ 当且仅当 $\left\{\sigma_{1}, \sigma_{2}\right\} \subseteq \Sigma$
     3. 设 $\beta$ 是公式，若 $x$ 不是 $\beta$ 的自由变元，则对任意的结构 $\mathfrak{A}$ 和 $\mathfrak{A}-$指派 $\overline{b}$ ，有 $\mathfrak{A} \vDash \beta[\overline{b}]$ 当且仅当 $\mathfrak{A} \vDash(\exists x \beta)[\overline{b}]$
 2. 超积：设 $I$ 是一个集合，$\mathcal{U}$ 是 $I$ 上的一个滤，$\left\{\mathfrak{A}_{i} \mid i \in I\right\}$ 是一族结构，其中每个 $\mathfrak{A}_{i}$ 的论域是 $A_{i}$

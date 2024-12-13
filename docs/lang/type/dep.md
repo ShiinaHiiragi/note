@@ -239,8 +239,8 @@
         2. 若 $\Gamma \equiv \Gamma_1, \Gamma_2$ 合法，则 $\Gamma_1$ 合法
         3. 若表达式 $M$ 合法，则 $M$ 的所有子表达式均合法
         4. 若 $\mathcal D \equiv \overline x: \overline A \rhd a(x) := M / \bot \!\!\! \bot: N$ 在合法环境 $\Delta$ 中出现，不妨设 $\Delta \equiv \Delta_1, \mathcal D, \Delta_2$
-            - 每个 $A_i$ 关于 $\Delta_i$ 与 $x_1: A_1, x_2: A_2, \cdots, x_{i-1}: A_{i-1}$ 合法
-            - $M, N$ 均关于 $\Delta_1$ 与 $\overline x: \overline A$ 合法
+            1. 每个 $A_i$ 关于 $\Delta_i$ 与 $x_1: A_1, x_2: A_2, \cdots, x_{i-1}: A_{i-1}$ 合法
+            2. $M, N$ 均关于 $\Delta_1$ 与 $\overline x: \overline A$ 合法
     3. 声明与定义的起始引理
         1. 语境：若 $\Delta; \Gamma$ 是合法组合且 $x: A \in \Gamma$，则 $\Delta; \Gamma \vdash x: A$
         2. 环境：令 $\mathcal D \equiv \overline x: \overline A \rhd a(x) := M: N$，若 $\Delta$ 合法且 $\mathcal \in \Delta$，则 $\Delta; \overline x: \overline A \vdash M: N$ 且 $\Delta; \overline x: \overline A \vdash a(\overline x): N$
@@ -254,9 +254,9 @@
         3. 若 $\Delta; \Gamma \vdash \lambda x: A.b: C$，则存在 $s \in \mathrm{sort}$ 以及表达式 $B$ 使得 $C \overset{\Delta}{=}_{\beta} \Pi x: A.B:C, \Delta; \Gamma \vdash \Pi x: A.B: s$ 以及 $\Delta; \Gamma, x: A \vdash b: B$
         4. 若 $\Delta; \Gamma \vdash \Pi x: A.B: C$，则存在 $s_1, s_2 \in \mathrm{sort}$ 使得 $C \overset{\Delta}{=}_{\beta} s_2, \Delta; \Gamma \vdash A: s_1$ 且 $\Delta; \Gamma, x: A \vdash B: s_2$
         5. 若 $\Delta; \Gamma \vdash a(\overline U): C$，则常元 $a$ 必然是 $\Delta$ 中定义 $\mathcal D \equiv \overline x: \overline A \rhd a(\overline x) := M / \bot \!\!\! \bot: N$ 的被定义常元且 $C \overset{\Delta}{=}_{\beta} N[\overline x := \overline U]$
-            - 若 $|\Gamma| = n > 0$，则存在 $\overline B$ 使得 $\Delta; \Gamma \vdash \overline U: \overline B$ 且对于任意 $1 \leqslant i \leqslant n$ 都有 $B_i \overset{\Delta}{=}_{\beta} A_i[\overline x := \overline U]$
-            - 若 $|\Gamma| = 0$ 且 $\mathcal D$ 是描述定义，则存在 $N'$ 使得 $N \overset{\Delta}{=}_{\beta} N'$ 且 $\Delta; \Gamma \vdash M: N'$
-            - 若 $|\Gamma| = 0$ 且 $\mathcal D$ 是原语定义，则有 $\Delta; \Gamma \vdash N: s$，其中 $s \in \mathrm{sort}$
+            1. 若 $|\Gamma| = n > 0$，则存在 $\overline B$ 使得 $\Delta; \Gamma \vdash \overline U: \overline B$ 且对于任意 $1 \leqslant i \leqslant n$ 都有 $B_i \overset{\Delta}{=}_{\beta} A_i[\overline x := \overline U]$
+            2. 若 $|\Gamma| = 0$ 且 $\mathcal D$ 是描述定义，则存在 $N'$ 使得 $N \overset{\Delta}{=}_{\beta} N'$ 且 $\Delta; \Gamma \vdash M: N'$
+            3. 若 $|\Gamma| = 0$ 且 $\mathcal D$ 是原语定义，则有 $\Delta; \Gamma \vdash N: s$，其中 $s \in \mathrm{sort}$
     7. 类型唯一性：若 $\Delta; \Gamma \vdash K: L_1$ 且 $\Delta; \Gamma \vdash K: L_2$，则 $L_1 \overset{\Delta}{=}_{\beta} L_2$
     8. 替换引理：令 $\Delta; \Gamma_1, x: A, \Gamma_2 \vdash M: N$ 且 $\Delta; \Gamma_1 \vdash L: A$，则 $\Delta; \Gamma_1, \Gamma_2[x := L] \vdash M[x := L]: N[x := L]$
 4. $\text{Church}-\text{Rosser}$ 定理：设表达式 $L \in \mathrm E_{\mathrm D}$ 有 $L \overset{\Delta}{\twoheadrightarrow} L_1$ 且 $L \overset{\Delta}{\twoheadrightarrow} L_2$，则存在表达式 $L_3 \in \mathrm E_{\mathrm D}$ 使得 $L \overset{\Delta}{\twoheadrightarrow} L_1$ 与 $L \overset{\Delta}{\twoheadrightarrow} L_2$

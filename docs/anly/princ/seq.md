@@ -121,9 +121,9 @@
 1. 数列极限：设 $\left\{x_{n}\right\}$ 是一个数列，$a$ 是实数．若对任意给定的 $\varepsilon>0$，总存在一个正整数 $N$，当 $n>N$ 时都有 $\left|x_{n}-a\right|<\varepsilon$，则称 $a$ 是数列 $\left\{x_{n}\right\}$ 的极限，或称数列 $\left\{x_{n}\right\}$ 收敛于 $a$ 记为 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 或 $x_{n} \rightarrow a \ (n \rightarrow \infty)$．此时也称数列 $\left\{x_{n}\right\}$ 极限存在
     1. 数列极限的性质
         1. 保序性：若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a, \lim _{n \rightarrow \infty} y_{n}=b}$ 且 $a>b$，则总存在正整数 $N$，当 $n>N$ 时，不等式 $x_{n}>y_{n}$ 成立
-            - 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a, \lim _{n \rightarrow \infty} y_{n}=b}$，且存在正整数 $N$ 使得当 $n>N$ 时，不等式 $x_{n}>y_{n}$ 都成立，则 $a \geqslant b$
-            - 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 且 $a>b$（其中 $b$ 为常数），则存在正整数 $N$，当 $n>N$ 时有 $x_{n}>b$
-            - 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 且 $a<c$（其中 $c$ 为常数），则当 $n$ 充分大时有 $x_{n}<c$．特别地，若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 且 $a<0$，则当 $n$ 充分大时有 $x_{n}<0$
+            1. 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a, \lim _{n \rightarrow \infty} y_{n}=b}$，且存在正整数 $N$ 使得当 $n>N$ 时，不等式 $x_{n}>y_{n}$ 都成立，则 $a \geqslant b$
+            2. 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 且 $a>b$（其中 $b$ 为常数），则存在正整数 $N$，当 $n>N$ 时有 $x_{n}>b$
+            3. 若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 且 $a<c$（其中 $c$ 为常数），则当 $n$ 充分大时有 $x_{n}<c$．特别地，若 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=a}$ 且 $a<0$，则当 $n$ 充分大时有 $x_{n}<0$
         2. 唯一性：若数列 $\left\{x_{n}\right\}$ 收敛，则它的极限唯一
         3. 有界性：收敛数列有界
         4. 夹逼准则：若存在正整数 $N$，当 $n>N$ 时有 $x_{n} \leqslant y_{n} \leqslant z_{n}$ 且 ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=\lim _{n \rightarrow \infty} z_{n}=a}$，则有 ${\displaystyle \lim _{n \rightarrow \infty} y_{n}=a}$
@@ -202,19 +202,19 @@
         !!! note "函数极限的定义"
             对于四种函数值的极限情况和六种自变量的极限过程，分别有相应的表述方式
 
-            - $f(x) \rightarrow A: \forall \varepsilon>0, \cdots:|f(x)-A|<\varepsilon$（其中 $A$ 为有限数）
-            - $f(x) \rightarrow \infty: \forall G>0, \cdots:|f(x)|>G$
-            - $f(x) \rightarrow+\infty: \forall G>0, \cdots: f(x)>G$
-            - $f(x) \rightarrow-\infty: \forall G>0, \cdots: f(x)<-G$
+            1. $f(x) \rightarrow A: \forall \varepsilon>0, \cdots:|f(x)-A|<\varepsilon$（其中 $A$ 为有限数）
+            2. $f(x) \rightarrow \infty: \forall G>0, \cdots:|f(x)|>G$
+            3. $f(x) \rightarrow+\infty: \forall G>0, \cdots: f(x)>G$
+            4. $f(x) \rightarrow-\infty: \forall G>0, \cdots: f(x)<-G$
 
             以及
 
-            - $x \rightarrow x_0: \cdots, \exists \delta>0, \forall x\left(0<\left|x-x_0\right|<\delta\right): \cdots$
-            - $x \rightarrow x_0+: \cdots, \exists \delta>0, \forall x\left(0<x-x_0<\delta\right): \cdots$
-            - $x \rightarrow x_0-: \cdots, \exists \delta>0, \forall x\left(-\delta<x-x_0<0\right): \cdots$
-            - $x \rightarrow \infty: \cdots, \exists X>0, \forall x(|x|>X): \cdots$
-            - $x \rightarrow+\infty: \cdots, \exists X>0, \forall x(x>X): \cdots$
-            - $x \rightarrow-\infty: \cdots, \exists X>0, \forall x(x<-X): \cdots$
+            1. $x \rightarrow x_0: \cdots, \exists \delta>0, \forall x\left(0<\left|x-x_0\right|<\delta\right): \cdots$
+            2. $x \rightarrow x_0+: \cdots, \exists \delta>0, \forall x\left(0<x-x_0<\delta\right): \cdots$
+            3. $x \rightarrow x_0-: \cdots, \exists \delta>0, \forall x\left(-\delta<x-x_0<0\right): \cdots$
+            4. $x \rightarrow \infty: \cdots, \exists X>0, \forall x(|x|>X): \cdots$
+            5. $x \rightarrow+\infty: \cdots, \exists X>0, \forall x(x>X): \cdots$
+            6. $x \rightarrow-\infty: \cdots, \exists X>0, \forall x(x<-X): \cdots$
 
 2. 函数极限的性质
     1. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$ 且存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x) \leqslant$ $g(x)$，则 $A \leqslant B$
@@ -463,8 +463,8 @@
 
     4. $\text{Fourier}$ 级数的性质
         1. 一致收敛性
-            - 设周期为 $2 \pi$ 的可积和绝对可积函数 $f(x)$ 在比 $[a, b]$ 更宽的区间 $[a-\delta, b+$ $\delta]$（其中 $\delta>0$）上有有界导数 $f^{\prime}(x)$，那么 $f(x)$ 的 $\text{Fourier}$ 级数在区间 $[a, b]$ 上一致收敛于 $f(x)$
-            - 设周期为 $2 \pi$ 的可积和绝对可积函数 $f(x)$ 在比 $[a, b]$ 更宽的区间 $[a-\delta, b+ \delta]$（其中 $\delta>0$）上连续且为分段单调函数，那么 $f(x)$ 的 $\text{Fourier}$ 级数在区间 $[a, b]$ 上一致收敛于 $f(x)$
+            1. 设周期为 $2 \pi$ 的可积和绝对可积函数 $f(x)$ 在比 $[a, b]$ 更宽的区间 $[a-\delta, b+$ $\delta]$（其中 $\delta>0$）上有有界导数 $f^{\prime}(x)$，那么 $f(x)$ 的 $\text{Fourier}$ 级数在区间 $[a, b]$ 上一致收敛于 $f(x)$
+            2. 设周期为 $2 \pi$ 的可积和绝对可积函数 $f(x)$ 在比 $[a, b]$ 更宽的区间 $[a-\delta, b+ \delta]$（其中 $\delta>0$）上连续且为分段单调函数，那么 $f(x)$ 的 $\text{Fourier}$ 级数在区间 $[a, b]$ 上一致收敛于 $f(x)$
         2. 逐项求积与逐项求导：设 $c$ 和 $x$ 是 $[-\pi, \pi]$ 上任意两点，$f(x)$ 是 $[-\pi, \pi]$ 上的分段连续函数，其 $\text{Fourier}$ 级数是 ${\displaystyle f(x) \sim \dfrac{a_{0}}{2}+\sum_{n=1}^{\infty} a_{n} \cos n x+b_{n} \sin n x}$，则有 ${\displaystyle \int_{c}^{x} f(t) \mathrm{d} t=\dfrac{a_{0}}{2}(x-c)+\sum_{n=1}^{\infty} \int_{c}^{x}\left(a_{n} \cos n t+b_{n} \sin n t\right) \mathrm{d} t}$
         3. 最佳平方平均逼近：设 $f(x)$ 是 $[-\pi, \pi]$ 上可积和平方可积函数，又设 $T_{n}(x)$ 是任意一个 $n$ 次三角多项式 ${\displaystyle T_{n}(x)=\dfrac{A_{0}}{2}+\sum_{k=1}^{n} A_{k} \cos k x+B_{k} \sin k x}$，其中 $A_{0}, A_{k}, B_{k}\ (k=1,2, \cdots)$ 为常数，称
 
@@ -477,19 +477,19 @@
     5. $\text{Fourier}$ 变换：称 ${\displaystyle \int_{-\infty}^{+\infty} f(x) \mathrm{e}^{-\mathrm{i} \omega x} \mathrm{d} x}$ 是 $f(x)$ 的 $\text{Fourier}$ 变换，记为 $\widehat{f}(\omega)$ 或 $F(f)$，称 ${\displaystyle f(x)=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty} \widehat{f}(\omega) \mathrm{e}^{\mathrm{i} \omega x} \mathrm{d} \omega}$ 是 $\widehat{f}(\omega)$ 的 $\text{Fourier}$ 逆变换，并称 ${\displaystyle f(x)=\dfrac{1}{2 \pi} \int_{-\infty}^{+\infty}\left[\int_{-\infty}^{+\infty} f(x) \mathrm{e}^{-i \omega x} \mathrm{d} x\right] \mathrm{e}^{\mathrm{i} \omega x} \mathrm{d} x}$ 是 $f(x)$ 的 $\text{Fourier}$ 积分公式
         1. $\text{Riemann}$ 引理：${\displaystyle \lim _{\omega \rightarrow \infty} \widehat{f}(\omega)=0}$
         2. $\text{Fourier}$ 变换的性质
-            - $\widehat{f}(\omega)$ 是 $\omega \in(-\infty,+\infty)$ 内的连续函数
-            - $F\left(a_{1} f_{1}+a_{2} f_{2}\right)=a_{1} F\left(f_{1}\right)+a_{2} F\left(f_{2}\right)$，其中 $a_{1}, a_{2}$ 是两个任意给定的常数
-            - 对任何函数 $f(x)$，设 $\tau_{s} f(x)=f(x-s)$（即 $f(x)$ 的平移），则 $F\left(\tau_{s} f\right)=\mathrm{e}^{-i s \omega} F(f)$
-            - 设 $f(x) \rightarrow 0 \ (x \rightarrow \pm \infty)$，则 $F\left(\dfrac{\mathrm{d}}{\mathrm{d} x} f\right)=\mathrm{i} \omega F(f)$ 或 $\widehat{f}^{\prime}=\mathrm{i} \omega \widehat{f}$
-            - $F(-\mathrm{i} x f(x))=\dfrac{\mathrm{d}}{\mathrm{d} \omega} F(f)$
+            1. $\widehat{f}(\omega)$ 是 $\omega \in(-\infty,+\infty)$ 内的连续函数
+            2. $F\left(a_{1} f_{1}+a_{2} f_{2}\right)=a_{1} F\left(f_{1}\right)+a_{2} F\left(f_{2}\right)$，其中 $a_{1}, a_{2}$ 是两个任意给定的常数
+            3. 对任何函数 $f(x)$，设 $\tau_{s} f(x)=f(x-s)$（即 $f(x)$ 的平移），则 $F\left(\tau_{s} f\right)=\mathrm{e}^{-i s \omega} F(f)$
+            4. 设 $f(x) \rightarrow 0 \ (x \rightarrow \pm \infty)$，则 $F\left(\dfrac{\mathrm{d}}{\mathrm{d} x} f\right)=\mathrm{i} \omega F(f)$ 或 $\widehat{f}^{\prime}=\mathrm{i} \omega \widehat{f}$
+            5. $F(-\mathrm{i} x f(x))=\dfrac{\mathrm{d}}{\mathrm{d} \omega} F(f)$
 
         !!! note "卷积"
             设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上定义，且积分 ${\displaystyle (f * g)(x)=\int_{-\infty}^{+\infty} f(t) g(x-t) \mathrm{d} t}$ 存在，则称函数 $f * g$ 为 $f$ 和 $g$ 的卷积
 
             1. 卷积的运算法则
-                - 交换律：$f * g=g * f$
-                - 结合律：$f *\left(g_{1} * g_{2}\right)=\left(f * g_{1}\right) * g_{2}$
-                - 分配律：$f *\left(g_{1}+g_{2}\right)=f * g_{1}+f * g_{2}$
+                1. 交换律：$f * g=g * f$
+                2. 结合律：$f *\left(g_{1} * g_{2}\right)=\left(f * g_{1}\right) * g_{2}$
+                3. 分配律：$f *\left(g_{1}+g_{2}\right)=f * g_{1}+f * g_{2}$
             2. 卷积的 $\text{Fourier}$ 变换：设函数 $f$ 和 $g$ 在 $(-\infty,+\infty)$ 上绝对可积，则有 $F(f * g)=F(f) \cdot F(g)$
             3. $\text{Parseval}$ 等式：设函数 $f$ 在 $(-\infty,+\infty)$ 上绝对可积，且 ${\displaystyle \int_{-\infty}^{+\infty}[f(x)]^2 \mathrm{d} x}$ 收敛．记 $f$ 的 $\text{Fourier}$ 变换为 $\widehat{f}$，则
 

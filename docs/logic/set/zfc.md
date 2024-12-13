@@ -110,14 +110,14 @@
         $$
 
         !!! note "选择公理的等价形式"
-            - 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$ 都有 ${\displaystyle \prod_{i \in I} X_{i} \neq \varnothing}$
-            - 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$，如果 $i \neq j \to X_{i} \cap X_{j}=\varnothing$，则存在集合 $S$，对每一 $i \in I$，都有 $\left|S \cap X_{i}\right|=1$
-            - 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$，存在函数 $f$ 满足对每一 $i \in I$，都有 $f\left(X_{i}\right) \in X_{i}$，称 $f$ 为选择函数
-            - 对任意不含空集的非空集族 $\mathscr F$ 上都存在选择映射 $f: \mathscr F \to \bigcup \mathscr F$ 使得对任意 $F \in \mathscr F$ 有 $f(F) \in F$
-            - 良序原理：每一集合上都存在一个良序
-            - $\text{Hausdorff}$ 极大链条件：任何偏序集都存在一个极大链
-            - $\text{Zorn}$ 引理：如果偏序集 $X$ 的每个链都有上界, 则 $X$ 有极大元
-            - $\text{Tychonoff}$ 定理：任何一族紧空间的积空间都是紧空间
+            1. 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$ 都有 ${\displaystyle \prod_{i \in I} X_{i} \neq \varnothing}$
+            2. 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$，如果 $i \neq j \to X_{i} \cap X_{j}=\varnothing$，则存在集合 $S$，对每一 $i \in I$，都有 $\left|S \cap X_{i}\right|=1$
+            3. 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$，存在函数 $f$ 满足对每一 $i \in I$，都有 $f\left(X_{i}\right) \in X_{i}$，称 $f$ 为选择函数
+            4. 对任意不含空集的非空集族 $\mathscr F$ 上都存在选择映射 $f: \mathscr F \to \bigcup \mathscr F$ 使得对任意 $F \in \mathscr F$ 有 $f(F) \in F$
+            5. 良序原理：每一集合上都存在一个良序
+            6. $\text{Hausdorff}$ 极大链条件：任何偏序集都存在一个极大链
+            7. $\text{Zorn}$ 引理：如果偏序集 $X$ 的每个链都有上界, 则 $X$ 有极大元
+            8. $\text{Tychonoff}$ 定理：任何一族紧空间的积空间都是紧空间
 
 3. 集合的运算性质：对于任意集合 $X, Y, Z$
     1. 子集的性质
@@ -286,9 +286,9 @@
         1. 对任意 $x, y \in X$，有 $x R_1 y \to x R_2 y$
         2. 如果 $R_1, R_2$ 都是等价关系，则对任何 $x \in X$，$x$ 对 $R_1$ 的等价类包含在 $x$ 对 $R_2$ 的等价类中
         3. 设 $S_1, S_2$ 是 $X$ 的两个划分，则
-            - $S_1 \cdot S_2$ 细分 $S_1$ 与 $S_2$，$S_1$ 与 $S_2$ 细分 $t(S_1 \cup S_2)$
-            - 设 $S$ 为 $X$ 的划分，若 $S$ 细分 $S_1$ 与 $S_2$，则 $S$ 细分 $S_1 \cdot S_2$
-            - 设 $S$ 为 $X$ 的划分，若 $S_1$ 与 $S_2$ 细分 $S$，则 $S_1 + S_2$ 细分 $S$
+            1. $S_1 \cdot S_2$ 细分 $S_1$ 与 $S_2$，$S_1$ 与 $S_2$ 细分 $t(S_1 \cup S_2)$
+            2. 设 $S$ 为 $X$ 的划分，若 $S$ 细分 $S_1$ 与 $S_2$，则 $S$ 细分 $S_1 \cdot S_2$
+            3. 设 $S$ 为 $X$ 的划分，若 $S_1$ 与 $S_2$ 细分 $S$，则 $S_1 + S_2$ 细分 $S$
 
 6. 序：令 $\prec, \leqslant$ 为 $X$ 上的二元关系
     1. 拟序：如果 $\prec$ 具有自反性与传递性，则称 $\prec$ 是 $X$ 上的拟序
@@ -298,8 +298,8 @@
         3. 最小元与最大元：如果 $a \in X$ 且 $\forall x \in X \ (a \leqslant x)$，则称 $a$ 为 $X$ 的最小元；反之如果 $a \in X$ 且 $\forall x \in X \ (a \geqslant x)$，则称 $a$ 为 $X$ 的最大元
         4. 上界与下界：设 $X_0 \subseteq X$，若存在 $a \in X$ 使得对于任意 $x \in X_0$ 都有 $a \geqslant x$，则称 $a$ 为 $X_0$ 在 $X$ 中的上界；若存在 $a \in X$ 使得对于任意 $x \in X_0$ 都有 $a \leqslant x$，则称 $a$ 为 $X_0$ 在 $X$ 中的下界
         5. 上确界与下确界：设 $X_0 \subseteq X$，若 $X_0$ 在 $X$ 中所有上界的集合有最小元 $a_0$，则称 $a_0$ 是 $X_0$ 的上确界或最小上界，记作 $\sup(X_0)$ 或 ${\displaystyle \sup_{x \in X_0}\left\{x\right\}}$；若 $X_0$ 在 $X$ 中所有下界的集合有最大元 $a_0$，则称 $a_0$ 是 $X_0$ 的下确界或最大下界，记作 $\inf(X_0)$ 或 ${\displaystyle \inf_{x \in X_0}\left\{x\right\}}$
-            - 函数（包括序列）的上下界或上下确界一般指其值域的上下界或上下确界
-            - 设数集有上（下）确界，则此上（下）确界唯一
+            1. 函数（包括序列）的上下界或上下确界一般指其值域的上下界或上下确界
+            2. 设数集有上（下）确界，则此上（下）确界唯一
 
         !!! note "逆关系的序"
             如果 $R$ 是 $X$ 上的序，则 $R^{-1}$ 也是 $X$ 上的序，令 $X_0 \subseteq X$
@@ -310,14 +310,14 @@
 
     3. 全序：如果偏序关系 $\leqslant$ 还具有连接性，即对所有 $x, y \in X$ 有 $x \leqslant y$ 或 $y \leqslant x$，则称 $\leqslant$ 是 $X$ 上的全序或线序
         1. 全序集的性质
-            - 全序集的任意两个元素是可比较的
-            - 全序集中极小元与最小元、极大元与最大元是同一的
+            1. 全序集的任意两个元素是可比较的
+            2. 全序集中极小元与最小元、极大元与最大元是同一的
         2. 完备全序集：具有最小上界性质的稠密线序集合
-            - 实数集合 $(\mathbf R, <^{\mathbf R})$ 是完备全序集
-            - 任何包含可数稠密子集的无端点完备全序集都与 $(\mathbf R, <^{\mathbf R})$ 同构
+            1. 实数集合 $(\mathbf R, <^{\mathbf R})$ 是完备全序集
+            2. 任何包含可数稠密子集的无端点完备全序集都与 $(\mathbf R, <^{\mathbf R})$ 同构
         3. 最小上界性质：全序集 $(X, \leqslant)$ 如果有「对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界」，则称 $X$ 有最小上界性质
-            - 有理数集合 $(\mathbf Q, \leqslant^{\mathbf Q})$ 没有最小上界性质
-            - 实数集合 $(\mathbf R, \leqslant^{\mathbf R})$ 有最小上界性质
+            1. 有理数集合 $(\mathbf Q, \leqslant^{\mathbf Q})$ 没有最小上界性质
+            2. 实数集合 $(\mathbf R, \leqslant^{\mathbf R})$ 有最小上界性质
 
 7. 关系的闭包：设 $R \subseteq X^2$ 的二元关系，定义 $R$ 的自反（对称、传递）闭包 $R'$，满足以下条件
     1. $R'$ 是自反的（对称的、传递的）
@@ -364,16 +364,16 @@
         3. 特征映射：对任意集合 $X$，定义特征映射（或示性映射）$I_X(x) = \left\{\begin{aligned} & 1, & x \in X \\ & 0, & x \notin X \end{aligned}\right.$
 
             !!! note "特征映射的性质"
-                - ${\displaystyle I_{\alpha} \bigcup=\bigvee I_{A_{\alpha}}\left(\bigvee I_{A_{\alpha}} \triangleq \sup I_{A_{\alpha}}\right), \  I_{\sum A_{\alpha}}=\sum I_{A_{\alpha}}}$
-                - ${\displaystyle I_{\alpha} A_{\alpha}=\bigwedge I_{A_{\alpha}}\left(\bigwedge I_{A_{\alpha}} \triangleq \inf I_{A_{\alpha}}\right)}$
-                - $I_{A'}=1-I_{A}$
-                - $I_{A-B}=I_{A}-I_{B}$
-                - $I_{A \triangle B}=\left|I_{A}-I_{B}\right|=I_{A}+I_{B} \pmod{2}$
+                1. ${\displaystyle I_{\alpha} \bigcup=\bigvee I_{A_{\alpha}}\left(\bigvee I_{A_{\alpha}} \triangleq \sup I_{A_{\alpha}}\right), \  I_{\sum A_{\alpha}}=\sum I_{A_{\alpha}}}$
+                2. ${\displaystyle I_{\alpha} A_{\alpha}=\bigwedge I_{A_{\alpha}}\left(\bigwedge I_{A_{\alpha}} \triangleq \inf I_{A_{\alpha}}\right)}$
+                3. $I_{A'}=1-I_{A}$
+                4. $I_{A-B}=I_{A}-I_{B}$
+                5. $I_{A \triangle B}=\left|I_{A}-I_{B}\right|=I_{A}+I_{B} \pmod{2}$
 
         4. 部分映射：在定义域的某些点上没有定义的映射，通常记作 $f: X \rightharpoonup Y$
-            - 与部分映射相对的是（全）映射
-            - 设 $g_1, g_2$ 是部分映射，则复合映射 $g_2 \circ g_1$ 也是部分映射
-            - 设 $g_1, g_2: X \rightharpoonup Y$，则将 $g_1 \subseteq g_2$ 记作 $g_1 \sqsubseteq g_2$，将 $g_1 \supseteq g_2$ 记作 $g_1 \sqsupseteq g_2$
+            1. 与部分映射相对的是（全）映射
+            2. 设 $g_1, g_2$ 是部分映射，则复合映射 $g_2 \circ g_1$ 也是部分映射
+            3. 设 $g_1, g_2: X \rightharpoonup Y$，则将 $g_1 \subseteq g_2$ 记作 $g_1 \sqsubseteq g_2$，将 $g_1 \supseteq g_2$ 记作 $g_1 \sqsupseteq g_2$
 
     5. 限制与扩张：对任意映射 $f$ 与集合 $A$，称映射 $g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 为 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张或延拓
 
@@ -445,16 +445,16 @@
 
     !!! note "常用运算符号"
         3. 定义累加符号为 ${\displaystyle \sum_{i = k}^n f(i) = f(k) + f(k + 1) + \cdots + f(n)}$，具有如下性质
-            - ${\displaystyle \sum_{k=0}^n a_k =\sum_{j=0}^n a_j}$
-            - ${\displaystyle \sum_{k=0}^n a_k =\sum_{j=N}^{n+N} a_{j-N}}$
-            - ${\displaystyle \sum_{k=0}^n a_k+\sum_{k=0}^n b_k=\sum_{k=0}^n\left(a_k+b_k\right)}$
-            - ${\displaystyle \left(\sum_{j=1}^m a_j\right)\left(\sum_{k=1}^n b_k\right)=\sum_{j=1}^m \sum_{k=1}^n a_j b_k}$
-            - ${\displaystyle \sum_{j=1}^m \sum_{k=1}^n a_{j k}=\sum_{k=1}^n \sum_{j=1}^m a_{j k}}$
+            1. ${\displaystyle \sum_{k=0}^n a_k =\sum_{j=0}^n a_j}$
+            2. ${\displaystyle \sum_{k=0}^n a_k =\sum_{j=N}^{n+N} a_{j-N}}$
+            3. ${\displaystyle \sum_{k=0}^n a_k+\sum_{k=0}^n b_k=\sum_{k=0}^n\left(a_k+b_k\right)}$
+            4. ${\displaystyle \left(\sum_{j=1}^m a_j\right)\left(\sum_{k=1}^n b_k\right)=\sum_{j=1}^m \sum_{k=1}^n a_j b_k}$
+            5. ${\displaystyle \sum_{j=1}^m \sum_{k=1}^n a_{j k}=\sum_{k=1}^n \sum_{j=1}^m a_{j k}}$
         4. 定义累乘符号为 ${\displaystyle \prod_{i = k}^n f(i) = f(k) f(k + 1) \cdots f(n)}$
-            - ${\displaystyle \prod_{k=0}^n a_k=\prod_{j=0}^n a_j}$
-            - ${\displaystyle \prod_{k=0}^n a_k=\prod_{j=N}^{n+N} a_{j-N}}$
-            - ${\displaystyle \prod_{k=0}^n a_k \prod_{k=0}^n b_k=\prod_{k=0}^n a_k b_k}$
-            - ${\displaystyle \prod_{j=1}^m \prod_{k=1}^n a_{j k}=\prod_{k=1}^n \prod_{j=1}^m a_{j k}}$
+            1. ${\displaystyle \prod_{k=0}^n a_k=\prod_{j=0}^n a_j}$
+            2. ${\displaystyle \prod_{k=0}^n a_k=\prod_{j=N}^{n+N} a_{j-N}}$
+            3. ${\displaystyle \prod_{k=0}^n a_k \prod_{k=0}^n b_k=\prod_{k=0}^n a_k b_k}$
+            4. ${\displaystyle \prod_{j=1}^m \prod_{k=1}^n a_{j k}=\prod_{k=1}^n \prod_{j=1}^m a_{j k}}$
 
         对于二元运算符 $*$，默认其运算具有左结合性：$a * b * c = (a * b) * c$
 
@@ -528,12 +528,12 @@
 
         !!! note "比例的性质"
             1. 设 $a : b = c : d$，则有
-                - 交叉积：$a \cdot^{\mathbf Z} d = b \cdot^{\mathbf Z} c$
-                - 更比定理：$a : c = b : d$
-                - 反比定理：$d : c = b : a$
-                - 合比定理：$(a+^{\mathbf Z}b) : a = (c+^{\mathbf Z}d) : c$
-                - 分比定理：$(a-^{\mathbf Z}b) : a = (c-^{\mathbf Z}d) : c$
-                - 合分比定理：$(a+^{\mathbf Z}b) : (a-^{\mathbf Z}b) = (c+^{\mathbf Z}d) : (c-^{\mathbf Z}d)$
+                1. 交叉积：$a \cdot^{\mathbf Z} d = b \cdot^{\mathbf Z} c$
+                2. 更比定理：$a : c = b : d$
+                3. 反比定理：$d : c = b : a$
+                4. 合比定理：$(a+^{\mathbf Z}b) : a = (c+^{\mathbf Z}d) : c$
+                5. 分比定理：$(a-^{\mathbf Z}b) : a = (c-^{\mathbf Z}d) : c$
+                6. 合分比定理：$(a+^{\mathbf Z}b) : (a-^{\mathbf Z}b) = (c+^{\mathbf Z}d) : (c-^{\mathbf Z}d)$
             2. 比例链：若几个比相等 $a_1 : b_2 = a_2 : b_2 = \cdots = a_n : b_n$，则可简写为比例链 $a_1 : a_2 : \cdots : a_n = b_1 : b_2 : \cdots : b_n$
             3. 等比公式：若 $a_1 : a_2 : \cdots : a_n = b_1 : b_2 : \cdots : b_n$，则
 

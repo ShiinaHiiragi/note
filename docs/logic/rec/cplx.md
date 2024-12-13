@@ -19,19 +19,19 @@
     2. 渐进比较的性质
         1. 对任意两个函数 $f, g: N \to \mathbf R_+$，有 $f(n) \in \Theta(g(n))$ 当且仅当 $f(n) \in O(g(n))$ 且 $f(n) \in \Omega(g(n))$
         2. 传递性
-            - $f(n) \in \Theta(g(n)) \wedge g(n) \in \Theta(h(n)) \to f(n) \in \Theta(h(n))$
-            - $f(n) \in O(g(n)) \wedge g(n) \in O(h(n)) \to f(n) \in O(h(n))$
-            - $f(n) \in \Omega(g(n)) \wedge g(n) \in \Omega(h(n)) \to f(n) \in \Omega(h(n))$
-            - $f(n) \in \omicron(g(n)) \wedge g(n) \in \omicron(h(n)) \to f(n) \in \omicron(h(n))$
-            - $f(n) \in \omega(g(n)) \wedge g(n) \in \omega(h(n)) \to f(n) \in \omega(h(n))$
+            1. $f(n) \in \Theta(g(n)) \wedge g(n) \in \Theta(h(n)) \to f(n) \in \Theta(h(n))$
+            2. $f(n) \in O(g(n)) \wedge g(n) \in O(h(n)) \to f(n) \in O(h(n))$
+            3. $f(n) \in \Omega(g(n)) \wedge g(n) \in \Omega(h(n)) \to f(n) \in \Omega(h(n))$
+            4. $f(n) \in \omicron(g(n)) \wedge g(n) \in \omicron(h(n)) \to f(n) \in \omicron(h(n))$
+            5. $f(n) \in \omega(g(n)) \wedge g(n) \in \omega(h(n)) \to f(n) \in \omega(h(n))$
         3. 自反性
-            - $f(n) \in \Theta(f(n))$
-            - $f(n) \in O(f(n))$
-            - $f(n) \in \omicron(f(n))$
+            1. $f(n) \in \Theta(f(n))$
+            2. $f(n) \in O(f(n))$
+            3. $f(n) \in \omicron(f(n))$
         4. 对称性与转置对称性
-            - $f(n) \in \Theta(g(n))$ 当且仅当 $g(n) \in \Theta(f(n))$
-            - $f(n) \in O(g(n))$ 当且仅当 $g(n) \in \Omega(f(n))$
-            - $f(n) \in \omicron(g(n))$ 当且仅当 $g(n) \in \omega(f(n))$
+            1. $f(n) \in \Theta(g(n))$ 当且仅当 $g(n) \in \Theta(f(n))$
+            2. $f(n) \in O(g(n))$ 当且仅当 $g(n) \in \Omega(f(n))$
+            3. $f(n) \in \omicron(g(n))$ 当且仅当 $g(n) \in \omega(f(n))$
 
     3. 多项式界：形如 $n^c$ 的界，其中 $c > 0$
 
@@ -70,10 +70,10 @@
         1. 多项式时间可计算函数：设 $f: \Sigma^* \to \Sigma^*$ 是一个函数，若存在多项式时间 $\text{Turing}$ 机 $M$ 使得在任何输入 $w$ 上，$M$ 停机时 $f(w)$ 恰好在纸带上，则称函数 $f$ 为多项式时间可计算函数
         2. 多项式时间映射可归约：设 $A, B$ 为两个语言，若存在多项式时间可计算函数 $f: \Sigma^* \to \Sigma^*$，对于每一个 $w$ 有 $w \in A \leftrightarrow f(w) \in B$，则称函数 $f$ 为 $A$ 到 $B$ 的多项式时间归约，$A$ 多项式时间可归约到 $B$，记作 $A \leqslant_P B$
         3. 可归约性的性质：设 $A \leqslant_P B$
-            - 若 $B \in \mathrm P$，则 $A \in \mathrm P$
-            - 若 $B \in \mathrm{NP}$，则 $A \in \mathrm{NP}$
-            - 若 $B \leqslant_P C$，则 $A \leqslant_P C$
-            - 若 $A$ 是 $\mathrm{NP}$ 完全的，$B \in \mathrm{NP}$，则 $B$ 是 $\mathrm{NP}$ 完全的
+            1. 若 $B \in \mathrm P$，则 $A \in \mathrm P$
+            2. 若 $B \in \mathrm{NP}$，则 $A \in \mathrm{NP}$
+            3. 若 $B \leqslant_P C$，则 $A \leqslant_P C$
+            4. 若 $A$ 是 $\mathrm{NP}$ 完全的，$B \in \mathrm{NP}$，则 $B$ 是 $\mathrm{NP}$ 完全的
     3. $\mathrm{NP}$ 完全问题：若 $L$ 是 $\mathrm{NP}$ 完全的且 $L \in \mathrm P$，则 $\mathrm P = \mathrm{NP}$
 
 ## 2.2 空间复杂性

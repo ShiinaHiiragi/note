@@ -126,8 +126,8 @@
 
         1. 如果 $f(\overline x, y)$ 是原始递归的，则有界和 ${\displaystyle \sum_{y \leqslant z} f(\overline x, y)}$ 与有界积 ${\displaystyle \prod_{y \leqslant z} f(\overline x, y)}$ 都是原始递归的
         2. 如果 $P(\overline x, z)$ 是一个原始递归谓词
-            - 谓词 $\exists z \leqslant y \ P(\overline x, z)$ 与 $\forall z \leqslant y \ P(\overline x, z)$ 都是原始递归的
-            - 定义函数 $f(\overline x, y) = \mu z \leqslant y \ P(\overline x, z)$，则 $f(\overline x, y)$ 也是原始递归的
+            1. 谓词 $\exists z \leqslant y \ P(\overline x, z)$ 与 $\forall z \leqslant y \ P(\overline x, z)$ 都是原始递归的
+            2. 定义函数 $f(\overline x, y) = \mu z \leqslant y \ P(\overline x, z)$，则 $f(\overline x, y)$ 也是原始递归的
 
     2. 正则 $\mu-$算子：令 $f: \mathbf N^{n+1} \to \mathbf N$ 为一个全函数，如果 $n$ 元函数 $g(x_1, x_2, \cdots, x_n)$ 满足正则性条件
 
@@ -178,9 +178,9 @@
         1. $\text{Turing}$ 机的编码和解码是能行的：用 $M_e$ 表示 $\text{G}\ddot{\mathrm o}\text{del}$ 数为 $e$ 的 $\text{Turing}$ 机，称 $e$ 为 $\text{Turing}$ 机或 $\text{Turing}$ 可计算函数的指标
 
             !!! note "$\text{Turing}$ 机与递归函数" 
-                - 用 $\Phi_e^{(n)}$ 表示由 $M_e$ 计算的 $n$ 元部分函数，将 $\Phi_e^{(1)}$ 简写为 $\Phi_e$．用 $M_{e_1} = M_{e_2}$ 表示 $M_{e_1}$ 与 $M_{e_2}$ 计算的是同一个部分函数
-                - 用 $\Phi_{e, s}(x) \downarrow = y$ 表示存在 $y$，$M_e$ 对于输入 $x$ 在 $s$ 步之内停机，且输入为 $y$（$x, y, e < s$）；如果不存在这样的 $y$，则记为 $\Phi_{e, s}(x) \uparrow$
-                - 若 $W_e$ 是部分递归函数 $\Phi_e$ 的定义域，则用 $W_e$ 表示 $\Phi_e$ 所确定的递归可枚举集；令 $W_{e, s} = \mathrm{dom}(\Phi_{e, s})$，$W_{e, s}$ 是有穷的且 $W_e = {\displaystyle \bigcup_{s \in \mathbf N} W_{e, s}}$
+                1. 用 $\Phi_e^{(n)}$ 表示由 $M_e$ 计算的 $n$ 元部分函数，将 $\Phi_e^{(1)}$ 简写为 $\Phi_e$．用 $M_{e_1} = M_{e_2}$ 表示 $M_{e_1}$ 与 $M_{e_2}$ 计算的是同一个部分函数
+                2. 用 $\Phi_{e, s}(x) \downarrow = y$ 表示存在 $y$，$M_e$ 对于输入 $x$ 在 $s$ 步之内停机，且输入为 $y$（$x, y, e < s$）；如果不存在这样的 $y$，则记为 $\Phi_{e, s}(x) \uparrow$
+                3. 若 $W_e$ 是部分递归函数 $\Phi_e$ 的定义域，则用 $W_e$ 表示 $\Phi_e$ 所确定的递归可枚举集；令 $W_{e, s} = \mathrm{dom}(\Phi_{e, s})$，$W_{e, s}$ 是有穷的且 $W_e = {\displaystyle \bigcup_{s \in \mathbf N} W_{e, s}}$
 
         1. 关于 $\text{Turing}$ 机的谓词是原始递归的：「$e$ 是一个 $\text{Turing}$ 机程序的编码」「$\text{Turing}$ 机 $e$ 中包含四元组 $s$」「状态 $q$ 是 $\text{Turing}$ 机 $e$ 的停机状态」与「$c$ 是一个格局的编码」
         2. 定义 $\text{Kleene}$ 谓词 $T(e, x, z)$ 为 $z$ 是程序 $e$ 对输入 $x$ 的计算过程的编码，则 $T$ 是原始递归的

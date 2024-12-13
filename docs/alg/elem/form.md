@@ -194,12 +194,12 @@
     1. 极值的必要条件：若 $x_{0}$ 是 $f(x)$ 的极值点，那么 $x_{0}$ 是 $f^{\prime}(x)$ 的零点或 $f(x)$ 的不可导点
     2. 极值的判别
         1. 设 $f(x)$ 在 $\left(x_{0}-\delta, x_{0}\right)$ 和 $\left(x_{0}, x_{0}+\delta\right)$（其中 $\delta>0$）可导，则
-            - 若在 $\left(x_{0}-\delta, x_{0}\right)$ 内 $f^{\prime}(x)<0$，而在 $\left(x_{0}, x_{0}+\delta\right)$ 内 $f^{\prime}(x)>0$，则 $x_{0}$ 为极小值点
-            - 若在 $\left(x_{0}-\delta, x_{0}\right)$ 内 $f^{\prime}(x)>0$，而在 $\left(x_{0}, x_{0}+\delta\right)$ 内 $f^{\prime}(x)<0$，则 $x_{0}$ 为极大值点
-            - 若 $f^{\prime}(x)$ 在这两个区间内不变号，则 $x_{0}$ 不是极值点
+            1. 若在 $\left(x_{0}-\delta, x_{0}\right)$ 内 $f^{\prime}(x)<0$，而在 $\left(x_{0}, x_{0}+\delta\right)$ 内 $f^{\prime}(x)>0$，则 $x_{0}$ 为极小值点
+            2. 若在 $\left(x_{0}-\delta, x_{0}\right)$ 内 $f^{\prime}(x)>0$，而在 $\left(x_{0}, x_{0}+\delta\right)$ 内 $f^{\prime}(x)<0$，则 $x_{0}$ 为极大值点
+            3. 若 $f^{\prime}(x)$ 在这两个区间内不变号，则 $x_{0}$ 不是极值点
         2. 设 $f(x)$ 一阶、二阶可导，且 $f^{\prime}\left(x_{0}\right)=0$，则
-            - 若 $f^{\prime \prime}\left(x_{0}\right)<0$，则 $f\left(x_{0}\right)$ 是极大值
-            - 若 $f^{\prime \prime}\left(x_{0}\right)>0$，则 $f\left(x_{0}\right)$ 是极小值
+            1. 若 $f^{\prime \prime}\left(x_{0}\right)<0$，则 $f\left(x_{0}\right)$ 是极大值
+            2. 若 $f^{\prime \prime}\left(x_{0}\right)>0$，则 $f\left(x_{0}\right)$ 是极小值
 7. 渐近线：设 $f(x)$ 是一个函数
     1. 水平渐近线：若 ${\displaystyle \lim _{x \rightarrow+\infty} f(x)=b}$ 或 ${\displaystyle \lim _{x \rightarrow-\infty} f(x)=b}$，则称 $y=b$ 是曲线 $y=f(x)$ 在 $x \rightarrow+\infty$ 或 $x \rightarrow-\infty$ 时的一条水平渐近线
     2. 垂直渐近线：若 ${\displaystyle \lim _{x \rightarrow c} f(x)=\infty}$，则称 $x=c$ 是 $y=f(x)$ 的一条垂直渐近线

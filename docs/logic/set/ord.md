@@ -48,8 +48,8 @@
 
     1. 如果 $\alpha$ 是序数，则 $\alpha$ 的后继 $\alpha^{+} = \alpha \cup \{\alpha\}$ 也是序数
         1. 如果不为 $0$ 的序数 $\alpha$ 有 $\exists \beta \ (\alpha = \beta^{+})$，则称 $\alpha$ 为后继序数，否则称 $\alpha$ 为极限序数
-            - $\mathbf N$ 是首个极限序数，因此作为序数的 $\mathbf N$ 通常记作 $\omega$
-            - 所有的序数都是 $0$、后继序数与极限序数中的一种
+            1. $\mathbf N$ 是首个极限序数，因此作为序数的 $\mathbf N$ 通常记作 $\omega$
+            2. 所有的序数都是 $0$、后继序数与极限序数中的一种
         2. 自然数恰好就是有穷序数，大于等于 $\omega$ 的序数称为无穷序数
     2. 序数的性质
         1. 如果 $\alpha$ 是序数，则 $\alpha$ 的所有元素是序数，所以 $\alpha=\{\beta \mid \beta<$ $\alpha \wedge \beta$ 是序数$\}$
@@ -68,9 +68,9 @@
         对任意序数 $\alpha, \beta$，都有 $\alpha+\beta=\alpha \cup\{\alpha+\delta \mid \delta<\beta\}$
 
         4. 令 $\left(W_{1},<_{1}\right),\left(W_{2},<_{2}\right)$ 为良序集，分别与 $\alpha_{1}, \alpha_{2}$ 同构．令 $(W,<)=\left(W_{1} \cup W_{2},<_{1}+<_{2}\right)$ 是 $W_1$ 与 $W_2$ 的和，则 $(W,<)$ 与 $\alpha_{1}+\alpha_{2}$ 同构
-            - 如果 $\alpha_{1}, \alpha_{2}$ 和 $\beta$ 是序数，则 $\beta+\alpha_{1}<\beta+\alpha_{2}$ 当且仅当 $\alpha_{1}<\alpha_{2}$
-            - 对所有的序数 $\alpha_{1}, \alpha_{2}$ 和 $\beta$，都有 $\beta+\alpha_{1}=\beta+\alpha_{2}$ 当且仅当 $\alpha_{1}=\alpha_{2}$
-            - 对所有的序数 $\alpha, \beta, \gamma$，都有 $(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)$
+            1. 如果 $\alpha_{1}, \alpha_{2}$ 和 $\beta$ 是序数，则 $\beta+\alpha_{1}<\beta+\alpha_{2}$ 当且仅当 $\alpha_{1}<\alpha_{2}$
+            2. 对所有的序数 $\alpha_{1}, \alpha_{2}$ 和 $\beta$，都有 $\beta+\alpha_{1}=\beta+\alpha_{2}$ 当且仅当 $\alpha_{1}=\alpha_{2}$
+            3. 对所有的序数 $\alpha, \beta, \gamma$，都有 $(\alpha+\beta)+\gamma=\alpha+(\beta+\gamma)$
         5. 对任意序数 $\alpha, \beta$，如果 $\alpha<\beta$，则存在唯一的序数 $\gamma$ 使得 $\alpha+\gamma=\beta$
 
     2. 序数的乘法：对所有序数 $\beta$
@@ -219,19 +219,19 @@
     1. 基数的加法：定义 $\kappa \oplus \lambda=|A \cup B|$，其中 $\kappa=|A|, \lambda=|B|$ 且 $A \cap B=\varnothing$
         1. 对加法的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，而且 $A \cap B=A^{\prime} \cap B^{\prime}=\varnothing$，则 $|A \cup B|=\left|A^{\prime} \cup B^{\prime}\right|$
         2. 基数加法的性质
-            - 交换律：$\kappa \oplus \lambda=\lambda \oplus \kappa$
-            - 结合律：$\kappa \oplus(\lambda \oplus \mu)=(\kappa \oplus \lambda) \oplus \mu$
-            - $\kappa \leqslant \kappa \oplus \lambda$
-            - 若 $\kappa_{1} \leqslant \kappa_{2}$ 且 $\lambda_{1} \leqslant \lambda_{2}$，则 $\kappa_{1} \oplus \lambda_{1} \leqslant \kappa_{2} \oplus \lambda_{2}$
+            1. 交换律：$\kappa \oplus \lambda=\lambda \oplus \kappa$
+            2. 结合律：$\kappa \oplus(\lambda \oplus \mu)=(\kappa \oplus \lambda) \oplus \mu$
+            3. $\kappa \leqslant \kappa \oplus \lambda$
+            4. 若 $\kappa_{1} \leqslant \kappa_{2}$ 且 $\lambda_{1} \leqslant \lambda_{2}$，则 $\kappa_{1} \oplus \lambda_{1} \leqslant \kappa_{2} \oplus \lambda_{2}$
     2. 基数的乘法：定义 $\kappa \otimes \lambda=|A \times B|$，其中 $|A|=\kappa, |B|=\lambda$
         1. 对乘法的定义不依赖于 $A, B$ 的选择：如果 $A, B, A^{\prime}, B^{\prime}$ 满足 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，则 $|A \times B|=$ $\left|A^{\prime} \times B^{\prime}\right|$
         2. 基数乘法的性质
-            - 交换律：$\kappa \otimes \lambda=\lambda \otimes \kappa$
-            - 结合律：$\kappa \otimes(\lambda \otimes \mu)=(\kappa \otimes \lambda) \otimes \mu$
-            - 分配律：$\kappa \otimes(\lambda \oplus \mu)=\kappa \otimes \lambda \oplus \kappa \otimes \mu$
-            - 如果 $\lambda>0$，则 $\kappa \leqslant \kappa \otimes \lambda$
-            - 如果 $\kappa_{1} \leqslant \kappa_{2}$ 且 $\lambda_{1} \leqslant \lambda_{2}$，则 $\kappa_{1} \otimes \lambda_{1} \leqslant \kappa_{2} \otimes \lambda_{2}$
-            - $\kappa \oplus \kappa=2 \otimes \kappa$．如果 $\kappa \geqslant 2$，则 $\kappa \oplus \kappa \leqslant \kappa \otimes \kappa$
+            1. 交换律：$\kappa \otimes \lambda=\lambda \otimes \kappa$
+            2. 结合律：$\kappa \otimes(\lambda \otimes \mu)=(\kappa \otimes \lambda) \otimes \mu$
+            3. 分配律：$\kappa \otimes(\lambda \oplus \mu)=\kappa \otimes \lambda \oplus \kappa \otimes \mu$
+            4. 如果 $\lambda>0$，则 $\kappa \leqslant \kappa \otimes \lambda$
+            5. 如果 $\kappa_{1} \leqslant \kappa_{2}$ 且 $\lambda_{1} \leqslant \lambda_{2}$，则 $\kappa_{1} \otimes \lambda_{1} \leqslant \kappa_{2} \otimes \lambda_{2}$
+            6. $\kappa \oplus \kappa=2 \otimes \kappa$．如果 $\kappa \geqslant 2$，则 $\kappa \oplus \kappa \leqslant \kappa \otimes \kappa$
         3. 对任意无穷基数 $\kappa, \lambda$ 均有
 
             $$
@@ -259,8 +259,8 @@
         4. 如果 ${\displaystyle \lambda \leqslant \sup _{\xi<\lambda} \kappa_{\xi}}$，则 ${\displaystyle \bigoplus_{\xi<\lambda} \kappa_{\xi}=\sup _{\xi<\lambda} \kappa_{\xi}}$
     2. 假设 $\left\langle\kappa_{i}\right\rangle_{i \in I}$ 为基数序列且 $\lambda$ 为基数，则
         1. 如果 $\left\{X_{j} \mid j \in J\right\}$ 是 $I$ 的划分，则
-            - 交换律和结合律：${\displaystyle \bigoplus_{i \in I} \kappa_{i}=\bigoplus_{j \in J} \bigoplus_{i \in X_{j}} \kappa_{i} \bigotimes_{i \in I} \kappa_{i}=\bigotimes_{j \in J} \bigotimes_{i \in X_{j}} \kappa_{i}}$
-            - 分配律：${\displaystyle \bigotimes_{j \in J} \bigoplus_{i \in X_{j}} \kappa_{i}=\bigoplus\left(\bigotimes_{j \in J} \kappa_{f(j)} \ \left|\ f \in \prod_{j \in J} X_{j} \right. \right)}$
+            1. 交换律和结合律：${\displaystyle \bigoplus_{i \in I} \kappa_{i}=\bigoplus_{j \in J} \bigoplus_{i \in X_{j}} \kappa_{i} \bigotimes_{i \in I} \kappa_{i}=\bigotimes_{j \in J} \bigotimes_{i \in X_{j}} \kappa_{i}}$
+            2. 分配律：${\displaystyle \bigotimes_{j \in J} \bigoplus_{i \in X_{j}} \kappa_{i}=\bigoplus\left(\bigotimes_{j \in J} \kappa_{f(j)} \ \left|\ f \in \prod_{j \in J} X_{j} \right. \right)}$
         2. ${\displaystyle \lambda \cdot \bigoplus_{i \in I} \kappa_{i}=\bigoplus_{i \in I} \lambda \cdot \kappa_{i}}$
         3. ${\displaystyle \lambda^{\oplus_{i \in I} \kappa_{i}}=\bigotimes_{i \in I} \lambda^{\kappa_{i}}}$
         4. ${\displaystyle \left(\bigotimes_{i \in I} \kappa_{i}\right)^{\lambda}=\bigotimes_{i \in I} \kappa_{i}^{\lambda}}$
@@ -292,8 +292,8 @@
         1. 如果 $\kappa$ 不是 $\lambda-$强的，则存在 $\mu<\kappa$ 使得 $\kappa^{\lambda}=\mu^{\lambda}$
         2. 如果 $\kappa \leqslant \lambda$，则 $\kappa^{\lambda}=2^{\lambda}$
         3. 如果 $\kappa>\lambda$ 且 $\kappa$ 是 $\lambda-$强的，则
-            - 如果 $\operatorname{cf}(\kappa)>\lambda$，则 $\kappa^{\lambda}=\kappa$
-            - 如果 $\operatorname{cf}(\kappa) \leqslant \lambda$，则 $\kappa^{\lambda}=\kappa^{\mathrm{cff}(\kappa)}$
+            1. 如果 $\operatorname{cf}(\kappa)>\lambda$，则 $\kappa^{\lambda}=\kappa$
+            2. 如果 $\operatorname{cf}(\kappa) \leqslant \lambda$，则 $\kappa^{\lambda}=\kappa^{\mathrm{cff}(\kappa)}$
 
 5. 基数与序列：设 $\kappa, \lambda$ 是无穷基数，则以下命题成立
     - $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
@@ -439,5 +439,5 @@
             则 $T$ 是 $\kappa$ 上的平稳集
 
         4. 令 $\kappa$ 是不可数正则基数，$K=\{\gamma<\kappa \mid \gamma$ 是极限序数$\}$，$S \subseteq K$ 是 $\kappa$ 上的平稳集．如果对任意 $\alpha \in S$，$f_{\alpha}$ 是 $\alpha$ 中递增的共尾序列且是连续的，则以下二者必有一真
-            - 存在 $\eta<\kappa$，对任意 $\xi<\kappa$，$S_{\xi}=\left\{\alpha \in S \mid \eta \in \operatorname{dom}\left(f_{\alpha}\right) \wedge f_{\alpha}(\eta) \geqslant \xi\right\}$ 是 $\kappa$ 上的平稳集
-            - 存在 $\kappa$ 上的无界闭集 $C$，对任意 $\gamma$ 都有 $\alpha \in C \cap S, \gamma<\alpha$ 蕴涵 $\gamma=f_{\alpha}(\gamma)$
+            1. 存在 $\eta<\kappa$，对任意 $\xi<\kappa$，$S_{\xi}=\left\{\alpha \in S \mid \eta \in \operatorname{dom}\left(f_{\alpha}\right) \wedge f_{\alpha}(\eta) \geqslant \xi\right\}$ 是 $\kappa$ 上的平稳集
+            2. 存在 $\kappa$ 上的无界闭集 $C$，对任意 $\gamma$ 都有 $\alpha \in C \cap S, \gamma<\alpha$ 蕴涵 $\gamma=f_{\alpha}(\gamma)$

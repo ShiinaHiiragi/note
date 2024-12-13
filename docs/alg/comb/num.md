@@ -101,8 +101,8 @@
 
                 则有 $aQ_k - bP_k = (-1)^{k-1}r_k \ (k = 1, 2, \cdots, n)$
 
-                - 若 $a, b$ 是任意两个非零整数，则存在整数 $x, y$ 可使 $ax + by = (a, b)$ 成立
-                - 若 $a, b$ 是非零整数，则 $(a, b) = 1 \leftrightarrow \exists x, y\in \mathbf Z: ax + by = 1$
+                1. 若 $a, b$ 是任意两个非零整数，则存在整数 $x, y$ 可使 $ax + by = (a, b)$ 成立
+                2. 若 $a, b$ 是非零整数，则 $(a, b) = 1 \leftrightarrow \exists x, y\in \mathbf Z: ax + by = 1$
 
     3. 设 $a, b$ 是任意两个不全为零的整数
         1. 若 $m$ 是任意一个正整数，则 $(ma, mb) = m(a, b)$

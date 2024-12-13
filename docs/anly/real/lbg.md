@@ -8,8 +8,8 @@
     1. 列导数：设 $f(x)$ 为 $[a, b]$ 上的有限函数，$x_{0} \in[a, b]$．若存在数列 $h_{n} \rightarrow 0\left(h_{n} \neq 0\right)$ 使极限 ${\displaystyle \lim _{n \to \infty} \dfrac{f\left(x_{0}+h_{n}\right)-f\left(x_{0}\right)}{h_{n}}=\lambda}$ 存在（$\lambda$ 可为 $\pm \infty$），则称 $\lambda$ 为 $f(x)$ 在点 $x_{0}$ 处的一个列导数，记为 $D f\left(x_{0}\right)=\lambda$
         1. 列导数 $D f\left(x_{0}\right)$ 与数列 $\left\{h_{n}\right\}$ 的取法有关，$f(x)$ 在点 $x_{0}$ 存在导数 $f^{\prime}\left(x_{0}\right)$ 当且仅当 $f(x)$ 在点 $x_{0}$ 处的一切列导数都相等
         2. 设 $f(x)$ 为 $[a, b]$ 上的严格增函数
-            - 如果对于 $E \subseteq[a, b]$ 中每一点 $x$，至少有一个列导数 $D f(x) \leqslant p \ (p \geqslant 0)$，则 $m^{*} f(E) \leqslant p m^{*} E$
-            - 如果对于 $E \subseteq[a, b]$ 中每一点 $x$，至少有一个列导数 $D f(x) \geqslant q \ (q \geqslant 0)$，则 $m^{*} f(E) \geqslant q m^{*} E$
+            1. 如果对于 $E \subseteq[a, b]$ 中每一点 $x$，至少有一个列导数 $D f(x) \leqslant p \ (p \geqslant 0)$，则 $m^{*} f(E) \leqslant p m^{*} E$
+            2. 如果对于 $E \subseteq[a, b]$ 中每一点 $x$，至少有一个列导数 $D f(x) \geqslant q \ (q \geqslant 0)$，则 $m^{*} f(E) \geqslant q m^{*} E$
     2. 设 $f(x)$ 为 $[a, b]$ 上的单调函数
         1. $f(x)$ 在 $[a, b]$ 上几乎处处存在导数 $f^{\prime}(x)$
         2. $f^{\prime}(x)$ 在 $[a, b]$ 上可积
@@ -86,14 +86,14 @@
 5. 截面与下方图形
     1. 截面：设 $E$ 是 $\widehat{\mathbf{R}}^{p+q}$ 中一点集，$x_{0}$ 是 $\widehat{\mathbf{R}}^{p}$ 中一固定点，则 $\widehat{\mathbf{R}}^{q}$ 中的点集 $\left\{y \in \widehat{\mathbf{R}}^{q}:\left(x_{0}, y\right) \in E\right\}$ 称为 $E$ 关于 $x_{0}$ 的截面，记为 $E_{x_{0}}$；也可定义 $E$ 关于 $y_{0} \in \widehat{\mathbf{R}}^{\prime}$ 的截面 $\left\{x \in \widehat{\mathbf{R}}^{p}:\left(x, y_{0}\right) \in E\right\}=E_{y_{0}}$
         1. 截面的性质
-            - 如果 $A_{1} \subseteq A_{2}$，则 $\left(A_{1}\right)_{x} \subseteq \left(A_{2}\right)_{x}$
-            - 如果 $A_{1} \cap A_{2}=\varnothing$，则 $\left(A_{1}\right)_{x} \cap\left(A_{2}\right)_{x}=\varnothing$
-            - ${\displaystyle \left(\bigcup_{i} A_{i}\right)_{x}=\bigcup_{i}\left(A_{i}\right)_{x},\left(\bigcap_{i} A_{i}\right)_{x}=\bigcap_{i}\left(A_{i}\right)_{x}}$
-            - $\left(A_{1} - A_{2}\right)_{x}=\left(A_{1}\right)_{x} -\left(A_{2}\right)_{x}$
+            1. 如果 $A_{1} \subseteq A_{2}$，则 $\left(A_{1}\right)_{x} \subseteq \left(A_{2}\right)_{x}$
+            2. 如果 $A_{1} \cap A_{2}=\varnothing$，则 $\left(A_{1}\right)_{x} \cap\left(A_{2}\right)_{x}=\varnothing$
+            3. ${\displaystyle \left(\bigcup_{i} A_{i}\right)_{x}=\bigcup_{i}\left(A_{i}\right)_{x},\left(\bigcap_{i} A_{i}\right)_{x}=\bigcap_{i}\left(A_{i}\right)_{x}}$
+            4. $\left(A_{1} - A_{2}\right)_{x}=\left(A_{1}\right)_{x} -\left(A_{2}\right)_{x}$
         2. 截面定理：设 $E \subseteq \widehat{\mathbf{R}}^{p+q}$ 是可测集
-            - 对于 $\widehat{\mathbf{R}}^{p}$ 中几乎所有的点 $x$，$E_{x}$ 是 $\widehat{\mathbf{R}}^{q}$ 中可测集
-            - $m E_{x}$ 作为 $x$ 的函数，它是 $\widehat{\mathbf{R}}^{p}$ 上 $\text{a.e.}$有定义的可测函数
-            - ${\displaystyle m E=\int_{\widehat{\mathbf{R}}^{p}} m E_{x} \mathrm{~d} x}$
+            1. 对于 $\widehat{\mathbf{R}}^{p}$ 中几乎所有的点 $x$，$E_{x}$ 是 $\widehat{\mathbf{R}}^{q}$ 中可测集
+            2. $m E_{x}$ 作为 $x$ 的函数，它是 $\widehat{\mathbf{R}}^{p}$ 上 $\text{a.e.}$有定义的可测函数
+            3. ${\displaystyle m E=\int_{\widehat{\mathbf{R}}^{p}} m E_{x} \mathrm{~d} x}$
         3. 设 $A, B$ 分别是 $\widehat{\mathbf{R}}^{p}, \widehat{\mathbf{R}}^{q}$ 中的可测集，则 $A \times B$ 是 $\widehat{\mathbf{R}}^{p+q}$ 中的可测集且 $m(A \times B)=m A \cdot m B$
     2. 下方图形：设 $f(x)$ 是 $E \subseteq \widehat{\mathbf{R}}^{n}$ 上的非负函数，则 $\widehat{\mathbf{R}}^{n+1}$ 中的点集 $\{(x, z): x \in E, 0 \leqslant z<f(x)\}$ 称为 $f(x)$ 在 $E$ 上的下方图形，记为 $G(E, f)$
 6. 非负可测函数积分的几何意义：设 $f(x)$ 为可测集 $E \subseteq \widehat{\mathbf{R}}^{n}$ 上的非负函数，则有 ① $f(x)$ 是 $E$ 上的可测函数的充要条件是 $G(E, f)$ 是 $\widehat{\mathbf{R}}^{n+1}$ 中的可测集；② 当 $f(x)$ 在 $E$ 上可测时，${\displaystyle \int_{E} f(x) \mathrm{d} x=m G(E, f)}$

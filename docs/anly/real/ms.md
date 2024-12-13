@@ -73,10 +73,10 @@
     3. 半域或域上的测度
         1. $\mathscr{S}$ 为 $\Omega$ 上的半域，$\mu$ 为 $\mathscr{S}$ 上的非负可加集函数，则存在 $\mu$ 在由 $\mathscr{S}$ 张成的域 $\mathscr{A}(\mathscr{S})$ 上的唯一延拓 $\nu$，$\nu$ 在 $\mathscr{A}(\mathscr{S})$ 亦是非负可加的，且当 $\mu$ 为可数可加时, $\nu$ 亦可数可加
         2. 若 $\mu$ 为域 $\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 上的非负有限可加集函数
-            - $\mu$ 是单调的，即当 $A \subseteq B$, 必有 $\mu(A) \leqslant \mu(B)$
-            - $\mu$ 是半可加的：若 ${\displaystyle A \subseteq \bigcup_{m=1}^{n} A_{m}}$，则 ${\displaystyle \mu(A) \leqslant \sum_{m=1}^{n} \mu\left(A_{m}\right)}$
-            - 为使 $\mu$ 是 $\sigma$ 可加的，当且仅当对每个递增序列 $\left\{A_{n}\right\}$，只要 ${\displaystyle \bigcup_{n \geqslant 1} A_{n} \in \mathscr{A}}$，则有 ${\displaystyle \lim _{n \rightarrow \infty} \uparrow \mu\left(A_{n}\right)=\mu\left(\bigcup_{n} A_{n}\right)}$
-            - 若 $\mu$ 为 $\sigma$ 可加的，则对每个递减序列 $\left\{A_{n}\right\}$，只要 ${\displaystyle \bigcap_{n \geqslant 1} A_{n} \in \mathscr{A}}$，且存在 $n_{0}$ 使 $\mu\left(A_{n_{0}}\right)<\infty$，则有 ${\displaystyle \lim _{n \rightarrow \infty} \downarrow \mu\left(A_{n}\right)=\mu\left(\bigcap_{n} A_{n}\right)}$
+            1. $\mu$ 是单调的，即当 $A \subseteq B$, 必有 $\mu(A) \leqslant \mu(B)$
+            2. $\mu$ 是半可加的：若 ${\displaystyle A \subseteq \bigcup_{m=1}^{n} A_{m}}$，则 ${\displaystyle \mu(A) \leqslant \sum_{m=1}^{n} \mu\left(A_{m}\right)}$
+            3. 为使 $\mu$ 是 $\sigma$ 可加的，当且仅当对每个递增序列 $\left\{A_{n}\right\}$，只要 ${\displaystyle \bigcup_{n \geqslant 1} A_{n} \in \mathscr{A}}$，则有 ${\displaystyle \lim _{n \rightarrow \infty} \uparrow \mu\left(A_{n}\right)=\mu\left(\bigcup_{n} A_{n}\right)}$
+            4. 若 $\mu$ 为 $\sigma$ 可加的，则对每个递减序列 $\left\{A_{n}\right\}$，只要 ${\displaystyle \bigcap_{n \geqslant 1} A_{n} \in \mathscr{A}}$，且存在 $n_{0}$ 使 $\mu\left(A_{n_{0}}\right)<\infty$，则有 ${\displaystyle \lim _{n \rightarrow \infty} \downarrow \mu\left(A_{n}\right)=\mu\left(\bigcap_{n} A_{n}\right)}$
         3. 若 $\mu$ 为 $\sigma$ 域上的测度，$\left\{A_{n}\right\}$ 为 $\mathscr{F}$ 中序列，则 ${\displaystyle \mu\left(\varliminf_{n \rightarrow \infty} A_{n}\right) \leqslant \varliminf_{n \rightarrow \infty} \mu\left(A_{n}\right)}$．若对某个 $n_{0}$${\displaystyle \mu\left(\bigcup_{n \geqslant n_{\mathrm{c}}} A_{n}\right)<\infty}$，则 ${\displaystyle \mu\left(\varlimsup_{n \rightarrow \infty} A_{n}\right) \geqslant \varlimsup_{n \rightarrow \infty} \mu\left(A_{n}\right)}$．特别地，当 ${\displaystyle \lim _{n \rightarrow \infty} A_{n}}$ 存在，且若对某个 $n_{0}$ 有 ${\displaystyle \mu\left(\bigcup_{n \geqslant n_{0}} A_{n}\right)<\infty}$ 时，有 ${\displaystyle \mu\left(\lim _{n \rightarrow \infty} A_{n}\right)=\lim _{n \rightarrow \infty} \mu\left(A_{n}\right)}$ 成立
 
 3. 完备测度：设 $\mu$ 为 $\sigma$ 域 $\mathscr{F}$ 上的测度，$\mathscr{L}=\{A: A \in \mathscr{F}, \mu(A)=0\}$．又令 $\mathscr{N}=\{N \in \mathcal{P}(\Omega): \textsf{ 存在 } A \in \mathscr{L} \textsf{，使 } N \subseteq A\}$，则 $\mathscr{N}$ 中元素称为 $\mu$ 可略集．若 $\mathscr{N} \subseteq \mathscr{F}$，则称 $\mu$ 在 $\mathscr{F}$ 上为完备的

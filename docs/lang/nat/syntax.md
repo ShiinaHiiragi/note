@@ -17,9 +17,9 @@
 2. 标准理论：称属于如下语法理论的每一种设计方案为标准理论
     1. 语法转换系统以不同的方式决定数量无限却由有限的短语标记构成的序列 $K$，每一个短语标记序列 $P_{1}, P_{2}, \cdots, P_{n}$ 应符合
         1. 表层结构：称以下情况中的 $P_{0}$ 为 $K$ 类开头的短语标记，把 $K$ 类里的短语标记称为由这种语法生成的语法结构
-            - $P_{n}$ 是表层结构
-            - 每一个 $P_{i}$ 是按照语法规则的条件所允许的方式通过对 $P_{i-1}$ 应用一定的转换规则构成
-            - 没有一种 $P_{i}$ 能使 $P_{0}, P_{1}, \cdots, P_{n}$ 符合前两个条件
+            1. $P_{n}$ 是表层结构
+            2. 每一个 $P_{i}$ 是按照语法规则的条件所允许的方式通过对 $P_{i-1}$ 应用一定的转换规则构成
+            3. 没有一种 $P_{i}$ 能使 $P_{0}, P_{1}, \cdots, P_{n}$ 符合前两个条件
         2. 与词汇成分 $I$ 有关的词汇转换把包含下一级结构 $Q$ 的短语标记 $P$ 映射到现在通过用 $I$ 替换 $Q$ 构成的短语标记 $P^{\prime}$ 上
         3. 设在 $K$ 中序列为 $P_{1}, P_{2}, \cdots, P_{n}$，其中有 $i$，如果 $j<i$，则由 $P_{j}$ 构成的 $P_{j+1}$ 所使用的转换是词汇的；如果 $j \geqslant i$，则由 $P_{j}$ 构成的 $P_{j+1}$ 所使用的转换是非词汇的．称 $P_{i}$ 为序列 $P_{1}, \cdots, P_{n}$ 里的后词汇结构，也称作深层结构
 
@@ -41,28 +41,28 @@
         - $\text{D}$：限定词
     2. 常用短语规则
         1. 名词短语
-            - $\text{NP} \to \text{D N}$
-            - $\text{NP} \to \text{D N PP}$
-            - $\text{NP} \to \text{D N S}'$
-            - $\text{NP} \to \text{(D) N}$
-            - $\text{NP} \to \text{NP N}$
+            1. $\text{NP} \to \text{D N}$
+            2. $\text{NP} \to \text{D N PP}$
+            3. $\text{NP} \to \text{D N S}'$
+            4. $\text{NP} \to \text{(D) N}$
+            5. $\text{NP} \to \text{NP N}$
         2. 时态与情态
-            - $\text{S} \to \text{NP Aux VP}$
-            - $\text{Aux} \to \text{Tense(Modal)}$
-            - $\text{Aux} \to \text{Tense(Modal)(Neg)}$
+            1. $\text{S} \to \text{NP Aux VP}$
+            2. $\text{Aux} \to \text{Tense(Modal)}$
+            3. $\text{Aux} \to \text{Tense(Modal)(Neg)}$
         3. 动词短语
-            - $\text{VP} \to \text{V NP}$
-            - $\text{VP} \to \text{V (NP)}$
-            - $\text{PP} \to \text{P NP}$
-            - $\text{VP} \to \text{V NP PP}$
-            - $\text{VP} \to \text{V S}$
-            - $\text{S}' \to \text{Comp S}$，其中 $\text{S}'$ 为从句补语
-            - $\text{VP} \to \text{V S'}$
+            1. $\text{VP} \to \text{V NP}$
+            2. $\text{VP} \to \text{V (NP)}$
+            3. $\text{PP} \to \text{P NP}$
+            4. $\text{VP} \to \text{V NP PP}$
+            5. $\text{VP} \to \text{V S}$
+            6. $\text{S}' \to \text{Comp S}$，其中 $\text{S}'$ 为从句补语
+            7. $\text{VP} \to \text{V S'}$
         4. 形容词与副词短语
-            - $\text{AP} \to \text{A (PP)}$
-            - $\text{VP} \to \text{V AP}$
-            - $\text{VP} \to \text{(ADV) V (NP) (ADV)}$
-            - $\text{S} \to \text{(ADV) NP Aux VP (ADV)}$
+            1. $\text{AP} \to \text{A (PP)}$
+            2. $\text{VP} \to \text{V AP}$
+            3. $\text{VP} \to \text{(ADV) V (NP) (ADV)}$
+            4. $\text{S} \to \text{(ADV) NP Aux VP (ADV)}$
 
 2. 短语标记：标示语句的要素结构的形式符号，例如 $\text{Chomsky}$ 在『句法结构』中用如下短语结构规则
 
@@ -154,8 +154,8 @@
     3. $\text{NP}-$移动：移动 $\text{NP}$ 到一个语义为空的主语位置，如果 $\text{NP}$
         1. 不包含于一个有时态变化的子句中的时态语句条件（$\text{TSC}$）：名词短语 $\text{NP}$ 只能从没有时态变化的从句移动到去除了目标主语位置的一个语义为空的主语位置上
         2. 受限定的主语不与其目标位置相分离的受限定主语条件（$\text{SSC}$）
-            - 名词短语 $\text{NP}$ 不能超过其所在的从合的主语而直接进入主句主语的位置
-            - 不定式等没有时态变化的从的中的名词短语 $\text{NP}$ 也不能移动到被动式主句的主语位置
+            1. 名词短语 $\text{NP}$ 不能超过其所在的从合的主语而直接进入主句主语的位置
+            2. 不定式等没有时态变化的从的中的名词短语 $\text{NP}$ 也不能移动到被动式主句的主语位置
     4. 附加成分转换：移动任意短语 $X\text{P}$，并将其置于动词短语 $\text{VP}$ 的最右端
     5. 笨重名词短语的转移：移动一个「笨重」的名词短语 $\text{NP}$，并将其置于动词短语 $\text{VP}$ 成分的最右端
 2. 终端范畴的转换

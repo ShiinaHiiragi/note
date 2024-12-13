@@ -32,20 +32,20 @@
         利用维数定理，可以证明如下命题
 
         1. 对于 $2$ 维射影几何 $\boldsymbol{P}\left(V^3\right)$
-            - 不同两点的联合是一直线
-            - 不同两直线的交是一点
+            1. 不同两点的联合是一直线
+            2. 不同两直线的交是一点
         2. 对于 $3$ 维射影几何 $\boldsymbol{P}\left(V^4\right)$
-            - 两个不同点的联合是一直线
-            - 两个不同平面的交是一直线
-            - 两个不同的并且又是相交的直线的联合是一平面
-            - 两个不同的共面直线的交是一点
-            - 一点与不过此点的直线的联合是一平面
-            - 一平面与不在此平面上的直线的交是一点
+            1. 两个不同点的联合是一直线
+            2. 两个不同平面的交是一直线
+            3. 两个不同的并且又是相交的直线的联合是一平面
+            4. 两个不同的共面直线的交是一点
+            5. 一点与不过此点的直线的联合是一平面
+            6. 一平面与不在此平面上的直线的交是一点
 
     2. 同构：一个射影几何 $P$ 和另一个射影几何 $P^{\prime}$ 之间的一一对应关系 $\pi$（即点对应点，线对应线等），称为射影几何间的同构．$\pi$ 保持结合关系不变，即 $\pi$ 满足条件 $\forall M, N \in \boldsymbol{P} : M \subseteq N \Leftrightarrow \pi(M) \subseteq \pi(N)$．如果存在这样的同构，则称射影几何 $\boldsymbol{P}$ 与 $\boldsymbol{P}^{\prime}$ 同构
         1. 对于两个射影几何的同构，有
-            - $\pi(M+N)=\pi(M)+\pi(N)$
-            - $\pi(M \cap N)=\pi(M) \cap \pi(N)$
+            1. $\pi(M+N)=\pi(M)+\pi(N)$
+            2. $\pi(M \cap N)=\pi(M) \cap \pi(N)$
         2. 如果 $V$ 和 $V^{\prime}$ 是同一体上的同维数的线性空间，则射影几何 $\boldsymbol{P}(V)$ 和 $\boldsymbol{P}\left(V^{\prime}\right)$ 同构
 
     3. 齐次向量：$\boldsymbol{P}\left(V^{n+1}\right)$ 中的一个点 $A=[x a]$ 的代表向量 $a$ 称为这点的齐次向量
@@ -73,11 +73,11 @@
 
         1. 设 $V$ 是 $n+1$ 维线性空间，$V^*$ 是 $V$ 的对偶空间，则有 $\operatorname{dim} V=\operatorname{dim} V^*=$ $n+1$
         2. 设 $M$ 是 $V$ 的子空间，$M^0$ 是 $V^*$ 的子空间，使得 $M^0=\left\{f \in V^*: f(M)=0\right\}$．称 $M^0$ 为 $M$ 的零化子空间，称 $0: \boldsymbol{P}(V) \rightarrow \boldsymbol{P}\left(V^*\right), M \rightarrow M^0$ 为零化映射．零化映射 $M \rightarrow M^0$ 是 $V$ 的子空间到 $V^*$ 的子空间上的一一映射，且有
-            - $\operatorname{dim} M+\operatorname{dim} M^0=\operatorname{dim} V=\operatorname{dim} V^*$
-            - $M^{00}=M$
-            - $M \subseteq N \Rightarrow M^0 \supset N^0$
-            - $(M+N)^0=M^0 \cap N^0$
-            - $(M \cap N)^0=M^0+N^0$
+            1. $\operatorname{dim} M+\operatorname{dim} M^0=\operatorname{dim} V=\operatorname{dim} V^*$
+            2. $M^{00}=M$
+            3. $M \subseteq N \Rightarrow M^0 \supset N^0$
+            4. $(M+N)^0=M^0 \cap N^0$
+            5. $(M \cap N)^0=M^0+N^0$
 
     2. 对偶映射：零化映射 $M \rightarrow M^0$ 给出 $\boldsymbol{P}(V) \rightarrow \boldsymbol{P}\left(V^*\right)$ 的一一映射
     3. 对偶命题：对于射影几何 $\boldsymbol{P}(V)$ 的一个结合命题 $(P)=\left\{M_1, M_2, \cdots, \subseteq,+, \cap\right\}$，将 $M_i$ 改成 $M_i^0$，$\subseteq$ 改成 $\supset$，$+$ 改成 $\cap$，$\cap$ 改成 $+$，则得到 $P\left(V^*\right)$ 中的一个结合命题 $\left(P^*\right)= \left\{M_1^0, M_2^0, \cdots, \supset, \cap,+\right\}$．$\left(P^*\right)$ 称为 $(P)$ 的对偶命题
@@ -135,16 +135,16 @@
     1. 实仿射空间：当 $F = \textbf{R}$ 时，称 $V - H$ 为实 $n$ 维仿射空间，记作 $A^n$
     2. 结合关系：如果 $\boldsymbol{A}(V)$ 中的两个元素 $S$ 和 $T$ 满足 $S \cap T \subseteq H$，则称元素 $S$ 和 $T$ 是平行的
         1. 当 $\operatorname{dim} V=3$ 时，二维仿射几何 $\boldsymbol{A}(V)$ 中有下列结合关系
-            - 连接两点有一条直线
-            - 两条不平行的直线相交于一点
+            1. 连接两点有一条直线
+            2. 两条不平行的直线相交于一点
         2. 当 $\operatorname{dim} V=4$ 时，三维仿射几何 $\boldsymbol{A}(V)$ 中有下列结合关系
-            - 连接两点有一条直线
-            - 两个不平行的平面交于一条直线
-            - 过两条相交直线有一平面
-            - 共面的两条不平行直线交于一点
-            - 过两条平行直线有一平面
-            - 过一条直线和不在直线上的一点有一平面
-            - 一平面和与它不平行的直线交于一点
+            1. 连接两点有一条直线
+            2. 两个不平行的平面交于一条直线
+            3. 过两条相交直线有一平面
+            4. 共面的两条不平行直线交于一点
+            5. 过两条平行直线有一平面
+            6. 过一条直线和不在直线上的一点有一平面
+            7. 一平面和与它不平行的直线交于一点
     3. 仿射几何中的定理
         1. 仿射 $\text{Desargues}$ 定理：在仿射空间 $\boldsymbol{A}(V)$ 中，如果两三点形的三对对应顶点连线交于一点或平行，则对应边相交或平行；三对对应边都相交时交点在一直线上
         2. 仿射 $\text{Pappus}$ 定理：设点 $A, B, C$ 和 $A^{\prime}, B^{\prime}, C^{\prime}$ 分别在两条共面的直线上，再设 $L=B C^{\prime} \cap B^{\prime} C, M=C A^{\prime} \cap C^{\prime} A$ 以及 $N=A B^{\prime} \cap A^{\prime} B$，则 $L, M, N$ 三点共线

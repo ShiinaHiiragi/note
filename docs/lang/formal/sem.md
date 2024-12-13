@@ -240,8 +240,8 @@
     2. 最小不动点定理：令 $f: D \to D$ 是链完全偏序集 $(D, \sqsubseteq)$ 上的连续函数，最小元为 $\bot$，则 $\operatorname{FIX} f = {\displaystyle \bigsqcup \left\{[f^{n}](\bot) \mid n \geqslant 0\right\}}$ 即 $D$ 中函数 $f$ 的最小不动点，其中 $[f^{n}]$ 是函数 $f$ 的 $n$ 次复合
         1. 令 $f: D \to D$ 是链完全偏序集 $(D, \sqsubseteq)$ 上的连续函数，$d \in D$ 满足 $f(d) \sqsubseteq d$，则 $\operatorname{FIX} f \sqsubseteq d$
         2. 令 $(D, \sqsubseteq)$ 是一个链完全偏序集，定义 $(D \times D, \sqsubseteq')$ 为 $f_1 \sqsubseteq' f_2$ 当且仅当对所有 $d \in D$ 都有 $f_1(d) \sqsubseteq f_2(d)$
-            - $(D \times D, \sqsubseteq')$ 也是一个链完全偏序集
-            - 对所有 $D \times D$ 中连续函数的非空链 $\mathcal F$，都有 ${\displaystyle \operatorname{FIX}\left(\bigsqcup' \mathcal F\right) = \bigsqcup \left\{\operatorname{FIX} f \mid f \in \mathcal F\right\}}$
+            1. $(D \times D, \sqsubseteq')$ 也是一个链完全偏序集
+            2. 对所有 $D \times D$ 中连续函数的非空链 $\mathcal F$，都有 ${\displaystyle \operatorname{FIX}\left(\bigsqcup' \mathcal F\right) = \bigsqcup \left\{\operatorname{FIX} f \mid f \in \mathcal F\right\}}$
     3. 函数 $F(g) = \operatorname{cond}(\mathcal B[\![b]\!], g \circ \mathcal S_{\text{ds}}, \mathrm{id}) = F_1 \circ F_2(g)$ 是连续函数
         1. 令 $g_0: \mathbf{State} \rightharpoonup \mathbf{State}, p: \mathbf{State} \to \mathbf{T}$，则 $F_1(g) = \operatorname{cond}(p, g, g_0)$ 是连续函数
         2. 令 $g_0: \mathbf{State} \rightharpoonup \mathbf{State}$，则 $F_2(g) = g \circ g_0$ 与 $F_3(g) = g_0 \circ g$ 均是连续函数
@@ -252,9 +252,9 @@
     1. 部分正确断言：一个断言形如 $\{\ P \ \} \ S \ \{\ Q \ \}$，其中 $S$ 为 $\text{Boolean}$ 表达式，$P, Q$ 为谓词．称 $P$ 为前置条件，$Q$ 为后置条件
         1. 若状态 $s$ 满足表达式 $P$，即 $\mathcal B[\![P]\!](s) = \top$，且若语句 $S$ 以状态 $s$ 的执行终止后状态变为 $s'$，则 $\mathcal B[\![Q]\!](s') = \top$
         2. $\text{Boolean}$ 表达式可以出现在程序中不存在的逻辑变量吗，并有如下简写
-            - $P_1 \vee P_2$：表示 $\neg (\neg P_1 \wedge \neg P_2)$
-            - $P_1 \to P_2$：表示 $\neg (P_1 \wedge \neg P_2)$
-            - $P[x \to \mathcal A[\![a]\!]](s) = P(s[x \to \mathcal A[\![A]\!](s)])$
+            1. $P_1 \vee P_2$：表示 $\neg (\neg P_1 \wedge \neg P_2)$
+            2. $P_1 \to P_2$：表示 $\neg (P_1 \wedge \neg P_2)$
+            3. $P[x \to \mathcal A[\![a]\!]](s) = P(s[x \to \mathcal A[\![A]\!](s)])$
     2. 完全正确性质：若程序必然终止且具有某个部分正确性质，则称该程序具有完全正确性质
 2. 部分正确性质的公理语义系统
     1. $[\text{ass}_{\text{p}}]: \ \{\ P[x \to \mathcal A[\![a]\!]] \ \} \ x := a \ \{\ P \ \}$
