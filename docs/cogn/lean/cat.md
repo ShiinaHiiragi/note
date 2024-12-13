@@ -214,7 +214,7 @@
           >> optDeriving
         ```
 
-    10. `«structure»`：定义结构体与类型类，相当于只有一个分支的归纳类型
+    10. `«structure»`：定义结构体与类型类，本质是只有一个分支的归纳类型
 
         ```lean
         def structureTk := leading_parser "structure "

@@ -1,10 +1,21 @@
 # 3 初始模块
 
-- Lean 启动时自动导入库中 Init 文件夹的内容
+- Lean 启动时自动导入库中 `Init` 模块的内容
 
 ## 3.1 预定义句法
 ### 3.1.1 表达式
 1. 条件表达式
+
+    ```lean
+    @[macro_inline]
+    def ite {α : Sort u} (c : Prop) [h : Decidable c] (t e : α) : α :=
+      h.casesOn (fun _ => e) (fun _ => t)
+
+    @[macro_inline]
+    def dite {α : Sort u} (c : Prop) [h : Decidable c] (t : c → α) (e : Not c → α) : α :=
+      h.casesOn e t
+    ```
+
     1. `termIfThenElse`：通用 `if` 表达式
         ```lean
         @[inherit_doc ite]
@@ -505,6 +516,12 @@
           fun _ => a
         ```
 
+    4. `inferInstance`：提供一个类型实例，可以 `(inferInstance : T)` 的形式使用
+
+        ```lean
+        abbrev inferInstance {α : Sort u} [i : α] : α := i
+        ```
+
 2. 参数标记
     1. `optParam`：标记可选参数，`x : optParam α default` 相当于 `(x : α := default)`
 
@@ -946,7 +963,16 @@
 
     !!! note "真值运算"
 
-        1. `and`：与运算
+        1. `cond`：条件运算
+
+            ```lean
+            @[macro_inline] def cond {α : Type u} (c : Bool) (x y : α) : α :=
+              match c with
+              | true  => x
+              | false => y
+            ```
+
+        2. `and`：与运算
 
             ```lean
             @[macro_inline]
@@ -959,7 +985,7 @@
             infixl:35 " && " => and
             ```
 
-        2. `or`：或运算
+        3. `or`：或运算
 
             ```lean
             @[macro_inline]
@@ -972,7 +998,7 @@
             infixl:30 " || " => or
             ```
 
-        3. `not`：非运算
+        4. `not`：非运算
 
             ```lean
 
@@ -1052,7 +1078,45 @@
         (a b : α) → Decidable (Eq a b)
         ```
 
-4. 函子与单子
+        1. `Init` 模块定义了等式和比较符的基本运算以及命题连词等命题的可判定性，例如
+
+            ```lean
+            @[macro_inline] instance {p q} [dp : Decidable p] [dq : Decidable q] : Decidable (And p q) :=
+              match dp with
+              | isTrue  hp =>
+                match dq with
+                | isTrue hq  => isTrue ⟨hp, hq⟩
+                | isFalse hq => isFalse (fun h => hq (And.right h))
+              | isFalse hp =>
+                isFalse (fun h => hp (And.left h))
+
+            @[macro_inline] instance [dp : Decidable p] [dq : Decidable q] : Decidable (Or p q) :=
+              match dp with
+              | isTrue  hp => isTrue (Or.inl hp)
+              | isFalse hp =>
+                match dq with
+                | isTrue hq  => isTrue (Or.inr hq)
+                | isFalse hq =>
+                  isFalse fun h => match h with
+                    | Or.inl h => hp h
+                    | Or.inr h => hq h
+
+            instance [dp : Decidable p] : Decidable (Not p) :=
+              match dp with
+              | isTrue hp  => isFalse (absurd hp)
+              | isFalse hp => isTrue hp
+            ```
+
+        2. 经典逻辑 `Classical` 下，所有命题都可判定
+
+            ```lean
+            noncomputable scoped instance (priority := low) propDecidable (a : Prop) : Decidable a :=
+              choice <| match em a with
+                | Or.inl h => ⟨isTrue h⟩
+                | Or.inr h => ⟨isFalse h⟩
+            ```
+
+1. 函子与单子
     1. 通用类型类
 
         ```lean
@@ -1138,7 +1202,7 @@
 
         易证任意单子都是应用函子，任意应用函子都是函子
 
-5. 类型转换与强制类型转换
+2. 类型转换与强制类型转换
     1. `OfNat`：将自然数字面值转换到其他类型
 
         ```lean
@@ -1186,7 +1250,7 @@
             syntax:1024 (name := coeSortNotation) "↥" term:1024 : term
             ```
 
-6. 派生标准类：编译器可自动构造部分类型类的良好实例
+3. 派生标准类：编译器可自动构造部分类型类的良好实例
     1. `Repr`：表示类，将某种类型的值转换为 `Format` 类型
 
         ```lean
@@ -1246,7 +1310,7 @@
           default : α
         ```
 
-7. `EStateM`：同时跟踪状态和错误，是 `IO` 单子的基础
+4. `EStateM`：同时跟踪状态和错误，是 `IO` 单子的基础
 
     ```lean
     def IO.RealWorld : Type := Unit
@@ -1419,6 +1483,17 @@
         ```lean
         inductive Eq : α → α → Prop where
           | refl (a : α) : Eq a a
+
+        @[simp]
+        abbrev Eq.ndrec.{u1, u2}
+          {α : Sort u2}
+          {a : α}
+          {motive : α → Sort u1}
+          (m : motive a)
+          {b : α}
+          (h : Eq a b)
+          : motive b :=
+          h.rec m
 
         @[match_pattern]
         def rfl {α : Sort u} {a : α} : Eq a a := Eq.refl a
