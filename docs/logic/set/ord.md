@@ -269,16 +269,16 @@
 4. 基数的幂：定义 $\kappa^{\lambda}=\left|A^{B}\right|$，其中 $|A|=\kappa$ 且 $|B|=\lambda$．特别地，称函数 $2^{\aleph_{\alpha}}$ 为连续统函数，$2^{\aleph_{0}}$ 为连续统的基数
     1. 对幂的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，则 $\left|A^{B}\right|=\left|A^{\prime B^{\prime}}\right|$
     2. 基数幂的性质：设 $\kappa, \lambda$ 是基数
-        - 如果 $\lambda>0$，则 $\kappa \leqslant \kappa^{\lambda}$
-        - 如果 $\kappa>1$，则 $\lambda \leqslant \kappa^{\lambda}$
-        - 如果 $\kappa_{1} \leqslant \kappa_{2}$ 且 $\lambda_{1} \leqslant \lambda_{2}$，则 $\kappa_{1}^{\lambda_{1}} \leqslant \kappa_{2}^{\lambda_{2}}$
-        - $\kappa \otimes \kappa=\kappa^{2}$
+        1. 如果 $\lambda>0$，则 $\kappa \leqslant \kappa^{\lambda}$
+        2. 如果 $\kappa>1$，则 $\lambda \leqslant \kappa^{\lambda}$
+        3. 如果 $\kappa_{1} \leqslant \kappa_{2}$ 且 $\lambda_{1} \leqslant \lambda_{2}$，则 $\kappa_{1}^{\lambda_{1}} \leqslant \kappa_{2}^{\lambda_{2}}$
+        4. $\kappa \otimes \kappa=\kappa^{2}$
     3. 无穷基数幂的性质：设 $\kappa, \lambda$ 是无穷基数
-        - $\kappa^{\lambda \oplus \mu}=\kappa^{\lambda} \otimes \kappa^{\mu}$
-        - $\left(\kappa^{\lambda}\right)^{\mu}=\kappa^{\lambda \otimes \mu}$
-        - $(\kappa \otimes \lambda)^{\mu}=\kappa^{\mu} \otimes \lambda^{\mu}$
-        - $2^{\kappa}>\kappa$
-        - 如果 $\kappa \leqslant \lambda$，则 $\kappa^{\lambda}=2^{\lambda}$
+        1. $\kappa^{\lambda \oplus \mu}=\kappa^{\lambda} \otimes \kappa^{\mu}$
+        2. $\left(\kappa^{\lambda}\right)^{\mu}=\kappa^{\lambda \otimes \mu}$
+        3. $(\kappa \otimes \lambda)^{\mu}=\kappa^{\mu} \otimes \lambda^{\mu}$
+        4. $2^{\kappa}>\kappa$
+        5. 如果 $\kappa \leqslant \lambda$，则 $\kappa^{\lambda}=2^{\lambda}$
     4. 设 $\alpha, \beta$ 是序数，$n \in \omega$，则以下命题成立
         1. $\text{Hausdorff}$ 公式：$\aleph_{\alpha+1}^{\aleph_{\beta}}=\aleph_{\alpha+1} \otimes \aleph_{\alpha}^{\aleph_{\beta}}$
 
@@ -296,9 +296,9 @@
             2. 如果 $\operatorname{cf}(\kappa) \leqslant \lambda$，则 $\kappa^{\lambda}=\kappa^{\mathrm{cff}(\kappa)}$
 
 5. 基数与序列：设 $\kappa, \lambda$ 是无穷基数，则以下命题成立
-    - $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
-    - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
-    - 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
+    1. $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
+    2. 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
+    3. 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
 6. 共尾：对任意序数 $\alpha$，若 $\operatorname{cf}(\alpha)$ 是满足性质「存在映射 $f: \beta \rightarrow \alpha$ 使得 $f[\beta]$ 在 $\alpha$ 中无界」的最小序数 $\beta$，则称映射 $f$ 为共尾映射，$\operatorname{cf}(\alpha)$ 为 $\alpha$ 的共尾．对任何序数 $\alpha$，若 $\operatorname{cf}(\alpha)=\alpha$，则称 $\alpha$ 是正则的，非正则的序数称为奇异的
 
     !!! note "序数的无界性"

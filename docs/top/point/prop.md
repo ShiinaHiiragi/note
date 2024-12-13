@@ -26,8 +26,9 @@
     2. 设 $X$ 是一个连通空间，$f: X\to R$ 是一个连续映射，则 $f[X]$ 是 $R$ 中的一个区间
         1. 介值定理：设 $f: [a, b]\to R$ 是从连续映射，则对于 $f(a)$ 与 $f(b)$ 之间的任何一个实数 $r$，存在 $z\in [a, b]$ 使得 $f(z)=r$
         2. 不动点定理：设 $f: [0, 1]\to [0, 1]$ 是一个连续映射，则存在 $z\in [0, 1]$ 使得 $f(z)=z$
-    3. 对径映射：设 $x=(x_1, x_2)\in S^1, S^1=\{(x, y\in \mathbf R)^2 \mid x^2+y^2=1\}$，点 $-x=(-x_1, -x_2)\in S^1$ 称为点 $x$ 的对径点．映射 $r: S^1\to S^1$ 使得 $\forall x\in S^1: r(x)=-x$ 称为对径映射
-        - $\text{Borsuk}-\text{Ulam}$ 定理：设 $f: S^1\to R$ 是一个连续映射，则在 $S^1$ 中存在一对对径点 $x$ 和 $-x$ 使得 $f(x)=f(-x)$
+    3. 设 $x=(x_1, x_2)\in S^1, S^1=\{(x, y\in \mathbf R)^2 \mid x^2+y^2=1\}$
+        1. 点 $-x=(-x_1, -x_2)\in S^1$ 称为点 $x$ 的对径点，映射 $r: S^1\to S^1$ 使得 $\forall x\in S^1: r(x)=-x$ 称为对径映射
+        2. $\text{Borsuk}-\text{Ulam}$ 定理：设 $f: S^1\to R$ 是一个连续映射，则在 $S^1$ 中存在一对对径点 $x$ 和 $-x$ 使得 $f(x)=f(-x)$
 6. $R^n$ 中的连通性
     1. $n>1$ 维 $\text{Euclid}$  空间 $R^n$ 的子集 $R^n-\{O\}$ 是一个连通子集，其中 $O=(0, 0, \cdots, 0)\in \mathbf R^n$
     2. $\text{Euclid}$ 平面 $R^2$ 与实数空间 $R$ 不同胚；进一步地，若 $n\neq l$，则 $R^n$ 与 $R^l$ 不同胚
@@ -88,7 +89,8 @@
 
 ### 3.2.2 可分空间
 1. 稠密子集：设 $X$ 是一个拓扑空间，$D\subseteq X$．若 $\overline D=X$，则称 $D$ 是 $X$ 的一个稠密子集
-    - 设 $X$ 是一个拓扑空间，$D$ 是 $X$ 的一个稠密子集．又设 $f, g: X\to R$ 都是连续映射，若 $f|_D=g|_D$，则 $f=g$
+    1. 设 $X$ 是一个拓扑空间，$D$ 是 $X$ 的一个稠密子集
+    2. 设 $f, g: X\to R$ 都是连续映射，若 $f|_D=g|_D$，则 $f=g$
 2. 可分空间：设 $X$ 是一个拓扑空间，若 $X$ 中有一个可数稠密子集，则称 $X$ 是一个可分空间
     1. 每一个 $\text A_2$ 空间都是可分空间；$\text A_2$ 空间的每一个子空间都是可分空间
     2. 每一个可分的度量空间都满足第二可数性公理；可分度量空间的每一个子空间都是可分空间
@@ -119,8 +121,7 @@
     2. $\text{Urysohn}$ 引理：设 $X$ 是一个拓扑空间，$[a, b]$ 是一个闭区间，则 $X$ 是一个正规空间当且仅当对于 $X$ 中的任意两个无交的闭集 $A$ 和 $B$，存在一个连续映射 $f: X\to [a, b]$ 使得当 $x\in A$ 时 $f(x)=a$ 和当 $x\in B$ 时 $f(x)=b$
     3. 设 $X$ 是一个正规空间， $A$ 是 $X$ 中的一个闭子集， $\lambda$ 是一个正实数，则对于任何一个连续映射 $g: A\to [-\lambda, \lambda]$，存在一个连续映射 $g^*: X\to \left[-\dfrac 13\lambda, \dfrac 13\lambda \right]$ 使得对于任何 $a\in A$ 有 $|g(a)-g^*(a)|\leqslant \dfrac 23\lambda$
     4. $\text{Tietze}$ 扩张定理：设 $X$ 是一个拓扑空间，$[a, b]$ 是一个闭区间，则 $X$ 是一个正规空间当且仅当对于 $X$ 中的任何一个闭集 $A$ 和任何一个连续映射 $f: A\to [a, b]$ 有一个连续映射 $g: X\to [a, b]$ 是 $f$ 的扩张
-4. $\text T_0$ 空间：设 $X$ 是一个拓扑空间，若 $x, y\in X, x\neq y$，则或者 $x$ 有一个开邻域 $U$ 使得 $y\notin U$，或者 $y$ 有一个开邻域 $V$ 使得 $x\notin V$，则称拓扑空间 $X$ 是一个 $\text T_0$ 空间
-    - 拓扑空间 $X$ 是一个 $\text T_0$ 空间当且仅当 $\forall x, y\in X: x\neq y\to \overline{|x|} \neq \overline{|y|}$
+4. $\text T_0$ 空间：设 $X$ 是一个拓扑空间，若 $x, y\in X, x\neq y$，则或者 $x$ 有一个开邻域 $U$ 使得 $y\notin U$，或者 $y$ 有一个开邻域 $V$ 使得 $x\notin V$，则称拓扑空间 $X$ 是一个 $\text T_0$ 空间．易知拓扑空间 $X$ 是一个 $\text T_0$ 空间当且仅当 $\forall x, y\in X: x\neq y\to \overline{|x|} \neq \overline{|y|}$
 5. $\text T_1$ 空间：设 $X$ 是一个拓扑空间，若 $x, y\in X, x\neq y$，则 $x$ 有一个开邻域 $U$ 使得 $y\notin U$，则称拓扑空间 $X$ 是一个 $\text T_1$ 空间
     1. 设 $X$ 是一个拓扑空间，则以下条件等价
         1. $X$ 是一个 $\text T_1$ 空间

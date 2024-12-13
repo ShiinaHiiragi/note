@@ -41,8 +41,7 @@
         2. $d = \left<d_1, d_2, \cdots, d_n\right> \ (d_i \geqslant 0, i = 1, 2, \cdots, n)$ 是可图化的当且仅当 ${\displaystyle \sum_{i=1}^n d_i}$ 为偶数
         3. 设非负整数列 $d = \left<d_1, d_2, \cdots, d_n\right>, (n-1) \geqslant d_1 \geqslant d_2 \geqslant \cdots \geqslant d_n \geqslant 0$，则 $d$ 可简单图化当且仅当对于每个满足 $1\leqslant r \leqslant n -1$ 的整数 $r$ 都有 ${\displaystyle \sum_{i=1}^r d_i \leqslant r(r-1) + \sum_{i=r+1}^n \min\{r, d_i\}}$ 且 ${\displaystyle \sum_{i=1}^n d_i}$ 为偶数
         4. 设非负整数列 $d = \left<d_1, d_2, \cdots, d_n\right>$，${\displaystyle \sum_{i=1}^n d_i}$ 为偶数且 $(n-1) \geqslant d_1 \geqslant d_2 \geqslant \cdots \geqslant d_n \geqslant 0$，则 $d$ 可简单图化当且仅当 $d' = \left<d_2 - 1, d_3 - 1, \cdots, d_{d_1} + 1, d_{d_1 + 2}, \cdots, d_n\right>$ 是可简单图化的
-    4. 入度与出度：设 $G$ 是一个有向图，以节点 $v$ 为起点的弧数称为 $v$ 的出度，记作 $d^+(v)$；以节点 $v$ 为终点的弧数称为 $v$ 的入度，记作 $d^-(v)$
-        - 在有向图中，所有节点的入度之和等于所有节点的出度之和
+    4. 入度与出度：设 $G$ 是一个有向图，以节点 $v$ 为起点的弧数称为 $v$ 的出度，记作 $d^+(v)$；以节点 $v$ 为终点的弧数称为 $v$ 的入度，记作 $d^-(v)$．在有向图中，所有节点的入度之和等于所有节点的出度之和
 4. 图同构
     1. 无向图的同构：设 $G_1 = (V_1, E_1), G_2 = (V_2, E_2)$ 是两个图，如果存在两个双射 $f: V_1 \to V_2, g: E_1 \to E_2$ 使得 $G_1$ 中的边 $e$ 与节点 $v, w$ 相关联当且仅当 $G_2$ 中的边 $g(e)$ 与节点 $f(v), f(w)$ 相关联，则称 $G_1$ 与 $G_2$ 是同构的，记作 $G_1 \cong G_2$，称 $f, g$ 为 $G_1$ 到 $G_2$ 的同构函数
         1. 两个图同构当且仅当对某一节点的顺序，其邻接矩阵相同

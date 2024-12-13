@@ -154,8 +154,8 @@
 
 5. 经典命题逻辑的后承演算 $\mathfrak{C}_\mathbf{HK}$ 由后承公理模式和后承规则组成
     1. 后承公理模式：
-        - $\alpha, \Gamma \vdash \alpha \ (\mathrm{Id})$
-        - $\bot, \Gamma \vdash \alpha \ (\bot)$
+        1. $\alpha, \Gamma \vdash \alpha \ (\mathrm{Id})$
+        2. $\bot, \Gamma \vdash \alpha \ (\bot)$
     2. 后承规则：
 
         $$
@@ -272,9 +272,9 @@
         2. 联结词 $\bot, \wedge, \vee, \to$ 与量词 $\forall, \exists$
         3. 括号 $)$ 与 $($
     2. 非逻辑符号：令 $S = \mathbf R \cup \mathbf F\cup \mathbf C$
-        - 关系符号集 $\mathbf R = \{R_i\mid i\in \lambda\}$，用 $P, Q, R$ 表示任意关系符号
-        - 函数符号集 $\mathbf F = \{f_i\mid i\in \lambda\}$，用 $f, g, h$ 表示任意函数符号
-        - 常元符号集 $\mathbf C = \{c_i\mid i\in \lambda\}$，用 $a, b, c$ 表示任意常元符号
+        1. 关系符号集 $\mathbf R = \{R_i\mid i\in \lambda\}$，用 $P, Q, R$ 表示任意关系符号
+        2. 函数符号集 $\mathbf F = \{f_i\mid i\in \lambda\}$，用 $f, g, h$ 表示任意函数符号
+        3. 常元符号集 $\mathbf C = \{c_i\mid i\in \lambda\}$，用 $a, b, c$ 表示任意常元符号
 
         一个一阶语言由非逻辑符号集合 $S$ 决定
 

@@ -31,14 +31,14 @@
 ### 1.1.1 短语结构理论
 1. 短语结构规则：形如 $X \rightarrow Y$ 的规则，即「重写 $X$ 为 $Y$」，其中 $X, Y$ 为一个或多个范畴，并称这些规则的集合为一个语法
     1. 常用范畴
-        - $\text{S}$：语句
-        - $\text{VP}$ 与 $\text{V}$：动词短语与动词
-        - $\text{NP}$ 与 $\text{N}$：名词短语与名词
-        - $\text{PP}$ 与 $\text{P}$：介词短语与介词
-        - $\text{AP}$ 与 $\text{A}$：形容词短语与形容词
-        - $\text{ADVP}$ 与 $\text{ADV}$：副词短语与副词
-        - $\text{M}$：情态词
-        - $\text{D}$：限定词
+        1. $\text{S}$：语句
+        2. $\text{VP}$ 与 $\text{V}$：动词短语与动词
+        3. $\text{NP}$ 与 $\text{N}$：名词短语与名词
+        4. $\text{PP}$ 与 $\text{P}$：介词短语与介词
+        5. $\text{AP}$ 与 $\text{A}$：形容词短语与形容词
+        6. $\text{ADVP}$ 与 $\text{ADV}$：副词短语与副词
+        7. $\text{M}$：情态词
+        8. $\text{D}$：限定词
     2. 常用短语规则
         1. 名词短语
             1. $\text{NP} \to \text{D N}$

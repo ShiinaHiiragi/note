@@ -63,13 +63,13 @@
     则称 $P$ 为 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 到 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 的转移概率
 
     1. 设 $\left(\Omega_{1}, \mathscr{F}_{1}\right),\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 为两个可测空间，$P_{1}$ 为 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 上的概率测度，$P_{12}$ 是一个转移概率
-        - 在 $\left(\Omega_{1} \times \Omega_{2}, \mathscr{F}_{1} \times \mathscr{F}_{2}\right)$ 上存在唯一概率测度 $P$，满足
+        1. 在 $\left(\Omega_{1} \times \Omega_{2}, \mathscr{F}_{1} \times \mathscr{F}_{2}\right)$ 上存在唯一概率测度 $P$，满足
 
             $$
             P\left(A_{1} \times A_{2}\right)=\int_{A_{1}} P_{12}\left(\omega_{1}, A_{2}\right) P_{1}\left(\mathrm{d} \omega_{1}\right), \  A_{1} \in \mathscr{F}_{1}, A_{2} \in \mathscr{F}_{2}
             $$
 
-        - 对 $\left(\Omega_{1} \times \Omega_{2}, \mathscr{F}_{1} \times \mathscr{F}_{2}, P\right)$ 上每个非负（或准可积）随机变量 $X$，若 $X_{\omega_{1}}(\cdot)= X\left(\omega_{1}, \cdot\right)$ 表示 $X$ 的 $\omega_{1}$ 截口，则 ${\displaystyle Y\left(\omega_{1}\right)=\int X_{\omega_{1}}\left(\omega_{2}\right) P_{12}\left(\omega_{1}, \mathrm{d} \omega_{2}\right)}$ 是 $\Omega_{1}$ 上关于 $P_{1}$ $\text{a.s.}$有定义且非负（对 $P_{1}$ 准可积）$\mathscr{F}_{1}$ 可测随机变量．进而有
+        2. 对 $\left(\Omega_{1} \times \Omega_{2}, \mathscr{F}_{1} \times \mathscr{F}_{2}, P\right)$ 上每个非负（或准可积）随机变量 $X$，若 $X_{\omega_{1}}(\cdot)= X\left(\omega_{1}, \cdot\right)$ 表示 $X$ 的 $\omega_{1}$ 截口，则 ${\displaystyle Y\left(\omega_{1}\right)=\int X_{\omega_{1}}\left(\omega_{2}\right) P_{12}\left(\omega_{1}, \mathrm{d} \omega_{2}\right)}$ 是 $\Omega_{1}$ 上关于 $P_{1}$ $\text{a.s.}$有定义且非负（对 $P_{1}$ 准可积）$\mathscr{F}_{1}$ 可测随机变量．进而有
 
             $$
             \int_{\Omega_{1} \times \Omega_{2}} X \mathrm{d} P=\int_{\Omega_{1}}\left(\int_{\Omega_{2}} X_{\omega_{1}}\left(\omega_{2}\right) P_{12}\left(\omega_{1}, \mathrm{d} \omega_{2}\right)\right) P_{1}\left(\mathrm{d} \omega_{1}\right)

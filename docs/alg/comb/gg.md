@@ -216,8 +216,8 @@
     $\text{Knuth}$ 箭头使用右结合的方式计算
 
     1. 利用 $\text{Knuth}$ 箭头定义的大数
-        - 定义 $\text{Tritri}$ 数为 $3 \uparrow^4 2 = 3 \uparrow \uparrow \uparrow 3 = 3 \uparrow \uparrow 7625597484987$
-        - 定义 $g_k(n)$ 如下
+        1. 定义 $\text{Tritri}$ 数为 $3 \uparrow^4 2 = 3 \uparrow \uparrow \uparrow 3 = 3 \uparrow \uparrow 7625597484987$
+        2. 定义 $g_k(n)$ 如下
 
             $$
             \begin{aligned}

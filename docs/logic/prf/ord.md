@@ -76,10 +76,11 @@
         1. $\varphi(1,0,0,0)=\theta_{\Omega^3}(0)=\psi\left(\Omega^{\Omega^2}\right)=\vartheta\left(\Omega^3\right)$
         2. $\text{Ackermann}$ 序数是 $\xi \mapsto \varphi(\xi, 0, 0)$ 的最小不动点
     4. 小 $\text{Veblen}$ 序数 $\text{SVO} = \sup \left\{\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots\right\}=\varphi \begin{pmatrix} 1 \\ \omega \\ \end{pmatrix}$
-        - $\text{SVO}=\theta_{\Omega^\omega}(0)=\psi\left(\Omega^{\Omega^\omega}\right)=\vartheta\left(\Omega^\omega\right)$
-    5. 大 $\text{Veblen}$ 序数：$\text{LVO}= \sup \left\{\varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix}, \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix} \\ \end{pmatrix}, \cdots\right\}= \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \vdots \\ \end{pmatrix} \\ \end{pmatrix} \\ \end{pmatrix}$
-        1. $\text{LVO}=\theta_{\Omega^{\Omega}}(0)=\psi\left(\Omega^{\Omega^{\Omega}}\right)=\vartheta\left(\Omega^{\Omega}\right)$
-        2. $\text{LVO}$ 是 $\xi \mapsto \varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix}$ 的最小不动点
+
+        大 $\text{Veblen}$ 序数：$\text{LVO}= \sup \left\{\varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix}, \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix} \\ \end{pmatrix}, \cdots\right\}= \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \vdots \\ \end{pmatrix} \\ \end{pmatrix} \\ \end{pmatrix}$
+
+        1. $\text{SVO}=\theta_{\Omega^\omega}(0)=\psi\left(\Omega^{\Omega^\omega}\right)=\vartheta\left(\Omega^\omega\right)$
+        2. $\text{LVO}=\theta_{\Omega^{\Omega}}(0)=\psi\left(\Omega^{\Omega^{\Omega}}\right)=\vartheta\left(\Omega^{\Omega}\right)$，是 $\xi \mapsto \varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix}$ 的最小不动点
 
 2. 大可数序数
     1. $\omega_1^\mathfrak{Ch}$：考察在可数无穷大上棋盘的有穷个棋子，设所有棋盘位置的集合为 $P$，定义函数 $V: P \to \omega_1$，对于黑白两方
@@ -89,8 +90,8 @@
 
         定义 $\omega_1^\mathfrak{Ch}$ 为白方可以胜利的位置对应值的上确界
 
-        1. 若棋盘上允许有无穷个棋子，则定义对应上确界为 $\omega_1^{\mathfrak{Ch}'}$
-        2. 若棋盘为三维且只允许有有穷个棋子，则定义对应上确界为 $\omega_1^{\mathfrak{Ch}_3}$，如果允许有无穷个棋子，则定义对应上确界为 $\omega_1^{\mathfrak{Ch}_3'}$
+        4. 若棋盘上允许有无穷个棋子，则定义对应上确界为 $\omega_1^{\mathfrak{Ch}'}$
+        5. 若棋盘为三维且只允许有有穷个棋子，则定义对应上确界为 $\omega_1^{\mathfrak{Ch}_3}$，如果允许有无穷个棋子，则定义对应上确界为 $\omega_1^{\mathfrak{Ch}_3'}$
 
         可以证明 $\omega_1^\mathfrak{Ch}, \omega_1^{\mathfrak{Ch}_3} \leqslant \omega_1^\text{CK}$ 且 $\omega_1^{\mathfrak{Ch}'} = \omega_1^{\mathfrak{Ch}_3'} = \omega_1$
 
