@@ -1078,45 +1078,36 @@
         (a b : α) → Decidable (Eq a b)
         ```
 
-        1. `Init` 模块定义了等式和比较符的基本运算以及命题连词等命题的可判定性，例如
+        `Init` 模块定义了等式和比较符的基本运算以及命题连词等命题的可判定性，例如
 
-            ```lean
-            @[macro_inline] instance {p q} [dp : Decidable p] [dq : Decidable q] : Decidable (And p q) :=
-              match dp with
-              | isTrue  hp =>
-                match dq with
-                | isTrue hq  => isTrue ⟨hp, hq⟩
-                | isFalse hq => isFalse (fun h => hq (And.right h))
-              | isFalse hp =>
-                isFalse (fun h => hp (And.left h))
+        ```lean
+        @[macro_inline] instance {p q} [dp : Decidable p] [dq : Decidable q] : Decidable (And p q) :=
+          match dp with
+          | isTrue  hp =>
+            match dq with
+            | isTrue hq  => isTrue ⟨hp, hq⟩
+            | isFalse hq => isFalse (fun h => hq (And.right h))
+          | isFalse hp =>
+            isFalse (fun h => hp (And.left h))
 
-            @[macro_inline] instance [dp : Decidable p] [dq : Decidable q] : Decidable (Or p q) :=
-              match dp with
-              | isTrue  hp => isTrue (Or.inl hp)
-              | isFalse hp =>
-                match dq with
-                | isTrue hq  => isTrue (Or.inr hq)
-                | isFalse hq =>
-                  isFalse fun h => match h with
-                    | Or.inl h => hp h
-                    | Or.inr h => hq h
+        @[macro_inline] instance [dp : Decidable p] [dq : Decidable q] : Decidable (Or p q) :=
+          match dp with
+          | isTrue  hp => isTrue (Or.inl hp)
+          | isFalse hp =>
+            match dq with
+            | isTrue hq  => isTrue (Or.inr hq)
+            | isFalse hq =>
+              isFalse fun h => match h with
+                | Or.inl h => hp h
+                | Or.inr h => hq h
 
-            instance [dp : Decidable p] : Decidable (Not p) :=
-              match dp with
-              | isTrue hp  => isFalse (absurd hp)
-              | isFalse hp => isTrue hp
-            ```
+        instance [dp : Decidable p] : Decidable (Not p) :=
+          match dp with
+          | isTrue hp  => isFalse (absurd hp)
+          | isFalse hp => isTrue hp
+        ```
 
-        2. 经典逻辑 `Classical` 下，所有命题都可判定
-
-            ```lean
-            noncomputable scoped instance (priority := low) propDecidable (a : Prop) : Decidable a :=
-              choice <| match em a with
-                | Or.inl h => ⟨isTrue h⟩
-                | Or.inr h => ⟨isFalse h⟩
-            ```
-
-1. 函子与单子
+4. 函子与单子
     1. 通用类型类
 
         ```lean
@@ -1202,7 +1193,7 @@
 
         易证任意单子都是应用函子，任意应用函子都是函子
 
-2. 类型转换与强制类型转换
+5. 类型转换与强制类型转换
     1. `OfNat`：将自然数字面值转换到其他类型
 
         ```lean
@@ -1250,7 +1241,7 @@
             syntax:1024 (name := coeSortNotation) "↥" term:1024 : term
             ```
 
-3. 派生标准类：编译器可自动构造部分类型类的良好实例
+6. 派生标准类：编译器可自动构造部分类型类的良好实例
     1. `Repr`：表示类，将某种类型的值转换为 `Format` 类型
 
         ```lean
@@ -1310,7 +1301,7 @@
           default : α
         ```
 
-4. `EStateM`：同时跟踪状态和错误，是 `IO` 单子的基础
+7. `EStateM`：同时跟踪状态和错误，是 `IO` 单子的基础
 
     ```lean
     def IO.RealWorld : Type := Unit
@@ -1562,5 +1553,22 @@
 
         `Nat` 的默认良基关系实例是 `<`
 
-### 3.4.2 公理
-<!-- TODO -->
+### 3.4.2 扩展公理
+1. `propext`：命题外延性
+
+2. `Quot`：商
+
+3. `choice`：选择公理
+
+4. `em`：排中律
+
+<!--
+经典逻辑 `Classical` 下，所有命题都可判定
+
+```lean
+noncomputable scoped instance (priority := low) propDecidable (a : Prop) : Decidable a :=
+  choice <| match em a with
+    | Or.inl h => ⟨isTrue h⟩
+    | Or.inr h => ⟨isFalse h⟩
+```
+-->
