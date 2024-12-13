@@ -219,7 +219,7 @@
     1. 紧度量空间是有界的
     2. 单位闭区间 $[0, 1]$ 是一个紧空间
     3. 设 $A$ 是 $n$ 维 $\text{Euclid}$ 空间 $R^n$ 的一个子集，则 $A$ 是一个紧子集当且仅当 $A$ 是一个有界闭集
-    4. 设 $X$ 是一个非空紧空间，$f: X\to R$ 是一个连续映射，则存在 $x_0, x_1\in X$ 使得对于任何 $x\in X$ 有 $f(x_0)\leqslant f(x)\leqslant f(x_1)$  
+    4. 设 $X$ 是一个非空紧空间，$f: X\to R$ 是一个连续映射，则存在 $x_0, x_1\in X$ 使得对于任何 $x\in X$ 有 $f(x_0)\leqslant f(x)\leqslant f(x_1)$
     5. 设 $m, n\in \mathbf Z$，则 $n$ 维单位球面 $S^n$ 与 $m$ 维 $\text{Euclid}$ 空间 $R^m$ 不同胚
 2. 直径：设 $A$ 是度量空间 $(X, \rho)$ 中的一个非空子集，定义集合 $A$ 的直径 $\mathrm{diam}(A)=\left\{\begin{aligned} &\sup\{\rho(x, y) \mid x, y\in A\}, &A\textsf{ 是有界的} \\& \infty, &\textsf{否则} \end{aligned}\right.$
 3. $\text{Lebesgue}$ 数：设 $(X, \rho)$ 是一个度量空间，$\mathscr A$ 是 $X$ 的一个开覆盖．若 $\forall A\subseteq X\ \exists \lambda>0: \mathrm{diam}(A)<\lambda \to A$ 包含于开覆盖 $\mathscr A$ 的某一个元素之中，则称 $\lambda$ 为开覆盖 $\mathscr A$ 的一个 $\text{Lebesgue}$ 数
