@@ -53,7 +53,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，现处于第一阶段"
-    <label> 现在进度：Theorem Proving in Lean 4 </label>
+    <label> 现在进度：Metaprogramming in Lean 4 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
@@ -120,12 +120,12 @@ const refList = [
         type: "DB/OL",
         page: [1, 437]
     },
-    // {
-    //     author: ["Jeremy Avigad", "Leonardo de Moura", "Soonho Kong", "Sebastian Ullrich"],
-    //     title: "Theorem Proving in Lean 4",
-    //     type: "DB/OL",
-    //     page: [1, 194]
-    // },
+    {
+        author: ["Jeremy Avigad", "Leonardo de Moura", "Soonho Kong", "Sebastian Ullrich"],
+        title: "Theorem Proving in Lean 4",
+        type: "DB/OL",
+        page: [1, 194]
+    },
     // {
     //     author: ["Arthur Paulino", "Damiano Testa", "Edward Ayers", "Evgenia Karunus", "Henrik Böving", "Jannis Limperg", "Siddhartha Gadgil", "Siddharth Bhat"],
     //     title: "Metaprogramming in Lean 4",
