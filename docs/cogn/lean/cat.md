@@ -66,9 +66,10 @@
           <| declValSimple <|> declValEqns <|> whereStructInst
         ```
 
-        1. `declValSimple`：形如 `:= expr`，用于简单声明
-        2. `declValEqns`：一系列 `| pat => expr`，用于模式匹配定义
-        3. `whereStructInst`：`where` 及跟随于其后的 `field := value`，用于结构体与类型类
+        1. `whereDecls`：一系列临时定义，也可用 `let` 代替
+        2. `declValSimple`：形如 `:= expr`，用于简单声明
+        3. `declValEqns`：一系列 `| pat => expr`，用于模式匹配定义
+        4. `whereStructInst`：`where` 及跟随于其后的 `field := value`，用于结构体与类型类
 
     4. `optDeriving`：要求 Lean 生成代码
 
@@ -422,13 +423,19 @@
         def visibility := «private» <|> «protected»
         ```
 
-    4. `«unsafe»`：使用了不安全特性的函数．普通函数不能直接调用 `unsafe` 函数
+    4. `«noncomputable»`：不可计算函数
+
+        ```lean
+        def «noncomputable» := leading_parser "noncomputable "
+        ```
+
+    5. `«unsafe»`：使用了不安全特性的函数．普通函数不能直接调用 `unsafe` 函数
 
         ```lean
         def «unsafe» := leading_parser "unsafe "
         ```
 
-    5. `«partial»`：非全函数，即不一定停机的函数
+    6. `«partial»`：非全函数，即不一定停机的函数
 
         ```lean
         def «partial» := leading_parser "partial "
@@ -589,7 +596,7 @@
     ```
 
 ### 2.1.3 辅助指令
-1. `eval`：对项进行归约
+1. `eval`：使用快速字节码求值器对项进行求值
 
     ```lean
     @[builtin_command_parser]
@@ -597,7 +604,15 @@
       >> termParser
     ```
 
-2. `check`：仅检查项的类型而不求值
+2. `#reduce`：使用内核类型检查程序对项进行归约，直到无法再进行归约
+
+    ```lean
+    @[builtin_command_parser]
+    def reduce := leading_parser "#reduce "
+      >> termParser
+    ```
+
+3. `check`：仅检查项的类型而不求值
 
     ```lean
     @[builtin_command_parser]
@@ -605,7 +620,7 @@
       >> termParser
     ```
 
-3. `print`：揭示数据类型和定义的内部结构
+4. `print`：揭示数据类型和定义的内部结构
 
     ```lean
     @[builtin_command_parser]
@@ -1074,7 +1089,7 @@
         ```
 
 ### 2.3.6 其他记号
-1. `«match»`：模式匹配，形如 `match e, ... with | p, ... => f | ...`
+1. `«match»`：模式匹配，形如 `match e, ... with | p, ... => f | ...`，分支条件可以重叠（使用第一个匹配项），不可遗漏
 
     ```lean
     def trueVal := leading_parser nonReservedSymbol "true"
@@ -1118,6 +1133,8 @@
     3. `matchAlts`
         1. 若以 `,` 分隔多个 `matchDiscr`，则 `matchAlts` 也应对应相同数量的参数
         2. 若以 `|` 分隔多个分支，则 `rhsParser` 的绑定变量必须对所有分支都有意义
+        3. `match` 默认只匹配构造子组成的项，或可被归约到构造子应用、且标记了 `match_pattern` 属性的函数
+        4. 若匹配项 `t` 含有不可被归约到构造子应用的项，则应使用 `.(t)` 表示其不可被访问
 
 2. `«do»`：单子的简便记法
 

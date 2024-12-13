@@ -367,13 +367,102 @@
 
 ## 3.2 预定义函数
 ### 3.2.1 生成函数
-1. `rec` 与 `recOn`：消去递归器
-    1. `recOn` 基于 `rec` 实现
-    2. `motive`：被定义函数的陪域
-    3. 归纳分支是小前提，类型元素是大前提，`recOn` 的大前提发生在小前提之前
-2. `casesOn`：分支递归器
-    1. 模式匹配基于 `casesOn` 实现，`casesOn` 基于 `rec` 实现
+1. `rec`：消去递归器
+
+    ```lean
+    Nat.rec.{u}
+    : {motive : Nat → Sort u}
+      → motive Nat.zero
+      → ((n : Nat) → motive n → motive n.succ)
+      → (t : Nat)
+      → motive t
+
+    @[reducible]
+    protected def Nat.recOn.{u}
+      : {motive : Nat → Sort u}
+        → (t : Nat)
+        → motive Nat.zero
+        → ((n : Nat) → motive n → motive n.succ)
+        → motive t :=
+      fun {motive} t zero succ => Nat.rec zero succ t
+
+    @[reducible]
+    protected def Nat.brecOn.{u}
+      : {motive : Nat → Sort u}
+        → (t : Nat)
+        → ((t : Nat) → Nat.below t → motive t)
+        → motive t :=
+      fun {motive} t F_1 => Prod.fst <| Nat.rec
+        ⟨F_1 Nat.zero PUnit.unit, PUnit.unit⟩
+        (fun n n_ih => ⟨F_1 n.succ ⟨n_ih, PUnit.unit⟩, ⟨n_ih, PUnit.unit⟩⟩)
+        t
+
+    @[reducible]
+    protected def Nat.binductionOn
+      : ∀ {motive : Nat → Prop} (t : Nat), (∀ (t : Nat), Nat.ibelow t → motive t)
+        → motive t :=
+      fun {motive} t F_1 => Prod.fst <| Nat.rec
+        ⟨F_1 Nat.zero True.intro, True.intro⟩
+        (fun n n_ih => ⟨F_1 n.succ ⟨n_ih, True.intro⟩, ⟨n_ih, True.intro⟩⟩)
+        t
+    ```
+
+    1. `motive` 是被定义函数的陪域，归纳分支是小前提，类型元素是大前提
+    2. `recOn`：基于 `rec` 实现，大前提发生在小前提之前
+    3. `brecOn`：基于 `rec` 与 `below` 实现
+    4. `binductionOn`：基于 `rec` 与 `ibelow` 实现，第二归纳法
+
+2. `casesOn`：基于 `rec` 实现，分支递归器
+    1. 模式匹配基于 `casesOn` 实现
     2. `casesOn` 相当于小前提中没有 `motive` 作为条件的 `recOn`
+
+    ```lean
+    @[reducible]
+    protected def Nat.casesOn.{u}
+      : {motive : Nat → Sort u}
+        → (t : Nat)
+        → motive Nat.zero
+        → ((n : Nat) → motive n.succ)
+        → motive t :=
+      fun {motive} t zero succ => Nat.rec zero (fun n n_ih => succ n) t
+    ```
+
+3. `below`：基于 `rec` 实现，仅用于递归类型（不用于枚举类型与结构类型）
+
+    ```lean
+    @[reducible]
+    protected def Nat.below.{u}
+      : {motive : Nat → Sort u}
+        → Nat
+        → Sort (max 1 u) :=
+      fun {motive} t => Nat.rec PUnit (fun n n_ih => PProd (PProd (motive n) n_ih) PUnit) t
+
+    @[reducible]
+    protected def Nat.ibelow
+      : {motive : Nat → Prop}
+        → Nat
+        → Prop :=
+      fun {motive} t => Nat.rec True (fun n n_ih => (motive n ∧ n_ih) ∧ True) t
+    ```
+
+    1. 若 `e : T`，则 `@T.below motive e` 是含有所有结构上「小于」 `e` 的、存储 `motive e` 的数据
+    2. `ibelow`：基于 `rec` 实现，`motive e` 类型仅为 `Prop`
+
+4. `noConfusion`：基于 `casesOn` 实现，仅用于归纳类型，用以区分同一类型下使用不同构造子的元素
+
+    ```lean
+    @[reducible]
+    protected def Nat.noConfusion.{u}
+      : {P : Sort u}
+        → {v1 v2 : Nat}
+        → v1 = v2
+        → Nat.noConfusionType P v1 v2 :=
+      fun {P} {v1 v2} h12 => Eq.ndrec
+        (motive := fun a => v1 = a → Nat.noConfusionType P v1 a)
+        (fun h11 => Nat.casesOn v1 (fun a => a) fun n a => a ⋯)
+        h12
+        h12
+    ```
 
 ### 3.2.2 函数
 1. 函数相关
@@ -1373,6 +1462,30 @@
         class Trans (r : α → β → Sort u) (s : β → γ → Sort v) (t : outParam (α → γ → Sort w)) where
           trans : r a b → s b c → t a c
         ```
+
+5. 良基性与良基归纳
+    1. `Acc`：在序关系 `r ≺ ` 下，当不存在无穷下降序列 `... ≺ y₂ ≺ y₁ ≺ y₀ ≺ x` 时，称 `x` 可被访问
+
+        ```lean
+        inductive Acc {α : Sort u} (r : α → α → Prop) : α → Prop where
+          | intro (x : α) (h : (y : α) → r y x → Acc r y) : Acc r x
+        ```
+
+    2. `WellFounded`：良基性，即类型内任意元素均可被访问
+
+        ```lean
+        inductive WellFounded {α : Sort u} (r : α → α → Prop) : Prop where
+          | intro (h : ∀ a, Acc r a) : WellFounded r
+
+        class WellFoundedRelation (α : Sort u) where
+          rel : α → α → Prop
+          wf  : WellFounded rel
+
+        noncomputable def fix (hwf : WellFounded r) (F : ∀ x, (∀ y, r y x → C y) → C x) (x : α) : C x :=
+          fixF F x (apply hwf x)
+        ```
+
+        `Nat` 的默认良基关系实例是 `<`
 
 ### 3.4.2 公理
 <!-- TODO -->
