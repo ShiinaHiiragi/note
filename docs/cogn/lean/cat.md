@@ -1141,6 +1141,7 @@
     def matchDiscr := leading_parser optional (atomic (ident >> " : "))
       >> termParser
 
+    def darrow : Parser := " => "
     def matchAlt (rhsParser : Parser := termParser) : Parser :=
       leading_parser "| "
         >> ppIndent (sepBy1 (sepBy1 termParser ", ") " | "
@@ -1495,9 +1496,3 @@
       >> (doIdDecl <|> doPatDecl)
     )
     ```
-
-### 2.6.4 通用记号
-
-```lean
-def darrow : Parser := " => "
-```
