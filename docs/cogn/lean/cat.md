@@ -195,7 +195,9 @@
 
         1. `ctor`：若干个构造子，其名称置于与类型同名的命名空间中
         2. 构造子的参数不能是一个将正在定义的数据类型
-        3. 当归纳类型可以被推断时，构造子命名空间可以省略，但需要保留点号
+
+        !!! note "构造子简化"
+            当归纳类型可以被推断时，构造子命名空间可以省略，但需要保留点号
 
             ```lean
             @[builtin_term_parser]
@@ -204,7 +206,7 @@
               >> rawIdent
             ```
 
-    9.  `classInductive`：归纳类型类
+    1.  `classInductive`：归纳类型类
 
         ```lean
         def classInductive := leading_parser atomic (group (symbol "class " >> "inductive "))
@@ -215,7 +217,7 @@
           >> optDeriving
         ```
 
-    10. `«structure»`：定义结构体与类型类，本质是只有一个分支的归纳类型
+    2.  `«structure»`：定义结构体与类型类，本质是只有一个分支的归纳类型
 
         ```lean
         def structureTk := leading_parser "structure "
@@ -596,7 +598,152 @@
       >> ppDedent (ppLine >> "end")
     ```
 
-### 2.1.3 辅助指令
+### 2.1.3 句法解析
+1. 通用解析器
+
+    ```lean
+    def namedName := leading_parser atomic (" (" >> nonReservedSymbol "name")
+      >> " := "
+      >> ident
+      >> ")"
+    def optNamedName := optional namedName
+
+    def optKind : Parser := optional (" (" >> nonReservedSymbol "kind" >> ":=" >> ident >> ")")
+    ```
+
+2. `«syntax»`：定义句法
+
+    ```lean
+    @[builtin_command_parser]
+    def «syntax» := leading_parser optional docComment
+      >> optional Term.«attributes»
+      >> Term.attrKind
+      >> "syntax "
+      >> optPrecedence
+      >> optNamedName
+      >> optNamedPrio
+      >> many1 (ppSpace >> syntaxParser argPrec)
+      >> " : "
+      >> ident
+    ```
+
+3. 宏与繁饰的语法糖
+    1. `«macro_rules»`：相当于 `@[macro ...] def ...`
+
+        ```lean
+        @[builtin_command_parser]
+        def «macro_rules» := suppressInsideQuot <| leading_parser optional docComment
+          >> optional Term.«attributes»
+          >> Term.attrKind
+          >> "macro_rules"
+          >> optKind
+          >> Term.matchAlts
+        ```
+
+    2. `«elab_rules»`：相当于 `@[command_elab ...] def ...`
+
+        ```lean
+        @[builtin_command_parser]
+        def «elab_rules» := leading_parser suppressInsideQuot <| optional docComment
+          >> optional Term.«attributes»
+          >> Term.attrKind
+          >> "elab_rules"
+          >> optKind
+          >> optional (" : " >> ident)
+          >> optional (" <= " >> ident)
+          >> Term.matchAlts
+        ```
+
+    3. `«macro»`：相当于 `syntax` 与 `macro`
+
+        ```lean
+        def macroArg := leading_parser optional (atomic (ident
+          >> checkNoWsBefore "no space before ':'"
+          >> ":"
+        ))
+          >> syntaxParser argPrec
+
+        def macroRhs : Parser := leading_parser withPosition termParser
+        def macroTail := leading_parser atomic (" : " >> ident)
+          >> darrow
+          >> macroRhs
+
+        @[builtin_command_parser]
+        def «macro» := leading_parser suppressInsideQuot <| optional docComment
+          >> optional Term.«attributes»
+          >> Term.attrKind
+          >> "macro"
+          >> optPrecedence
+          >> optNamedName
+          >> optNamedPrio
+          >> many1 (ppSpace >> macroArg)
+          >> macroTail
+        ```
+
+        1. `«notation»`
+
+            ```lean
+            def notationItem := ppSpace
+              >> withAntiquot (mkAntiquot "notationItem" decl_name%) (strLit <|> identPrec)
+
+            @[builtin_command_parser]
+            def «notation» := leading_parser optional docComment
+              >> optional Term.«attributes»
+              >> Term.attrKind
+              >> "notation"
+              >> optPrecedence
+              >> optNamedName
+              >> optNamedPrio
+              >> many notationItem
+              >> darrow
+              >> termParser
+            ```
+
+        2. `«mixfix»`
+
+            ```lean
+            def «prefix» := leading_parser "prefix"
+            def «infix» := leading_parser "infix"
+            def «infixl» := leading_parser "infixl"
+            def «infixr» := leading_parser "infixr"
+            def «postfix» := leading_parser "postfix"
+            def mixfixKind := «prefix» <|> «infix» <|> «infixl» <|> «infixr» <|> «postfix»
+
+            @[builtin_command_parser]
+            def «mixfix» := leading_parser optional docComment
+              >> optional Term.«attributes»
+              >> Term.attrKind
+              >> mixfixKind
+              >> precedence
+              >> optNamedName
+              >> optNamedPrio
+              >> ppSpace
+              >> strLit
+              >> darrow
+              >> termParser
+            ```
+
+    4. `«elab»`：相当于 `syntax` 与 `elab`
+
+        ```lean
+        def elabArg  := macroArg
+        def elabTail := leading_parser atomic (" : " >> ident >> optional (" <= " >> ident))
+          >> darrow
+          >> withPosition termParser
+
+        @[builtin_command_parser]
+        def «elab» := leading_parser suppressInsideQuot <| optional docComment
+          >> optional Term.«attributes»
+          >> Term.attrKind
+          >> "elab"
+          >> optPrecedence
+          >> optNamedName
+          >> optNamedPrio
+          >> many1 (ppSpace >> elabArg)
+          >> elabTail
+        ```
+
+### 2.1.4 辅助指令
 1. `eval`：使用快速字节码求值器对项进行求值
 
     ```lean
@@ -647,7 +794,7 @@
           >> ident
         ```
 
-### 2.1.4 特殊指令
+### 2.1.5 特殊指令
 1. `«init_quot»`：定义类型 `α` 上的二元关系 `r` 形成的商 `Quot r`
 
     ```lean
@@ -1318,6 +1465,8 @@
 
     !!! note "其他属性"
         - `simp`：标记简化策略可用等式
+        - `builtin_macro` 与 `macro`：定义宏
+        - `builtin_command_elab` 与 `command_elab`：定义繁饰器
 
 ## 2.4 策略范畴
 1. `«unknown»`：无法识别策略的回落机制
@@ -1446,6 +1595,10 @@
     @[builtin_prec_parser]
     def numPrec := checkPrec maxPrec
       >> numLit
+
+    def «precedence» := leading_parser ":"
+      >> precedenceParser maxPrec
+    def optPrecedence := optional (atomic «precedence»)
     ```
 
 ### 2.6.3 do 元素范畴
