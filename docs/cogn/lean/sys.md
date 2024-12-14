@@ -77,8 +77,8 @@ $$
         3. `module_facet «facet-name» (mod : Module) : α`：模块 Facet
 
     4. 库：共享同一配置的模块集合，通常包括
-        1. 模块 Root：根目录下的 Lean 文件，用于决定库内应当包含的模块
-        2. 一系列模块 Glob：决定用于 `lake build` 的模块
+        1. 模块「根」：根目录下的 Lean 文件，用于决定库内应当包含的模块
+        2. 一系列模块「团」：决定用于 `lake build` 的模块
     5. 依赖项：也称作当前包的上游（当前包是依赖项的下游），通过如下语法引入
 
         ```lean
@@ -91,7 +91,7 @@ $$
         3. 对于 `Mathlib`，在执行 `lake build` 前应先执行 `lake exe cache get` 以规避从零开始构建
 
     !!! note "工作区"
-        Lake 的最大组织单元，它包括一个包（称为 Root）、可移动依赖项与 Lake 环境
+        Lake 的最大组织单元，它包括一个包、可移动依赖项与 Lake 环境
 
 2. 模块：Lake 构建系统的最小代码单元，通常由 Lean 源代码、一系列二进制库（`olean` 或 `ilean`）以及系统共享库构成
 
@@ -111,7 +111,7 @@ $$
       >> identWithPartialTrailingDot
     ```
 
-    1. `prelude`：不导入 Init.Prelude 模块
+    1. `prelude`：不导入 `Init.Prelude` 模块
     2. `import`：传递性地导入指定模块
         1. Lean 将模块名的所有 `.` 解释为目录，模块层级的最后一个标识符为文件
         2. 以尖括号 `«...»` 包围模块名时可以使用空格或保留字
