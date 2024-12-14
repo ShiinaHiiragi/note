@@ -801,6 +801,37 @@
     3. `Expr`：表达式．Lean 中任意项都有对应表达式
 
         ```lean
+        structure FVarId where
+          name : Name
+        deriving Inhabited, BEq, Hashable
+
+        structure MVarId where
+          name : Name
+        deriving Inhabited, BEq, Hashable, Repr
+
+        inductive Level where
+          | zero   : Level
+          | succ   : Level → Level
+          | max    : Level → Level → Level
+          | imax   : Level → Level → Level
+          | param  : Name → Level
+          | mvar   : LMVarId → Level
+        with ...
+
+        inductive BinderInfo where
+          | default
+          | implicit
+          | strictImplicit
+          | instImplicit
+        deriving Inhabited, BEq, Repr
+
+        inductive Literal where
+          | natVal (val : Nat)
+          | strVal (val : String)
+        deriving Inhabited, BEq, Repr
+
+        abbrev MData := KVMap
+
         inductive Expr where
           | bvar (deBruijnIndex : Nat)
           | fvar (fvarId : FVarId)

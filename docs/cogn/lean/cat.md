@@ -599,7 +599,7 @@
     ```
 
 ### 2.1.3 句法解析
-1. 通用解析器
+1. `«syntax»`：句法解析
 
     ```lean
     def namedName := leading_parser atomic (" (" >> nonReservedSymbol "name")
@@ -607,13 +607,8 @@
       >> ident
       >> ")"
     def optNamedName := optional namedName
-
     def optKind : Parser := optional (" (" >> nonReservedSymbol "kind" >> ":=" >> ident >> ")")
-    ```
 
-2. `«syntax»`：定义句法
-
-    ```lean
     @[builtin_command_parser]
     def «syntax» := leading_parser optional docComment
       >> optional Term.«attributes»
@@ -627,7 +622,7 @@
       >> ident
     ```
 
-3. 宏与繁饰的语法糖
+2. 句法解析相关的语法糖
     1. `«macro_rules»`：相当于 `@[macro ...] def ...`
 
         ```lean
@@ -806,7 +801,6 @@
 
     ```lean
     opaque Quot {α : Sort u} (r : α → α → Prop) : Sort u
-
     opaque Quot.mk {α : Sort u} (r : α → α → Prop) (a : α) : Quot r
 
     opaque Quot.ind {α : Sort u} {r : α → α → Prop} {β : Quot r → Prop} :
@@ -830,88 +824,7 @@
     ```
 
 ## 2.2 项范畴
-### 2.3.1 变量与元变量
-1. `bracketedBinder`：括号绑定器
-
-    ```lean
-    def binderType (requireType := false) : Parser := if requireType
-      then node nullKind (" : " >> termParser)
-      else optional (" : " >> termParser)
-    def binderTactic := leading_parser atomic (symbol " := " >> " by ")
-      >> Tactic.tacticSeq
-    def binderDefault := leading_parser " := "
-      >> termParser
-
-    def bracketedBinder (requireType := false) := withAntiquot (mkAntiquot
-      "bracketedBinder"
-      decl_name%
-      (isPseudoKind := true)
-    )
-      <| explicitBinder requireType
-        <|> strictImplicitBinder requireType
-        <|> implicitBinder requireType
-        <|> instBinder
-
-    @[builtin_term_parser]
-    def explicit := leading_parser "@"
-      >> termParser maxPrec
-    ```
-
-    1. `explicitBinder`：显式绑定器，形如 `(x y : A)` 或 `(x y)`，可通过 `(x : A := v)` 或 `(x : A := by tac)` 指定默认值
-
-        ```lean
-        def explicitBinder (requireType := false) := leading_parser ppGroup <| "("
-          >> withoutPosition (many1 binderIdent
-            >> binderType requireType
-            >> optional (binderTactic <|> binderDefault)
-          )
-          >> ")"
-        ```
-
-    2. `implicitBinder`：隐式绑定器，形如 `{x y : A}` 或 `{x y}`
-
-        ```lean
-        def implicitBinder (requireType := false) := leading_parser ppGroup <| "{"
-          >> withoutPosition (many1 binderIdent >> binderType requireType)
-          >> "}"
-        ```
-
-        1. 通常模式下，隐式绑定器应能被自主推断，Lean 会自动为该参数填充占位符 `_`
-        2. 在 `@` 显式模式下，隐式绑定器与显式绑定器表现相一致
-
-    3. `strictImplicitBinder`：严格隐式绑定器，形如 `⦃x y : A⦄`、`{{x y : A}}`、`⦃x y⦄` 或 `{{x y}}`
-
-        ```lean
-        def strictImplicitLeftBracket := atomic (group (symbol "{" >> "{")) <|> "⦃"
-        def strictImplicitRightBracket := atomic (group (symbol "}" >> "}")) <|> "⦄"
-
-        def strictImplicitBinder (requireType := false) := leading_parser ppGroup
-          <| strictImplicitLeftBracket
-            >> many1 binderIdent
-            >> binderType requireType
-            >> strictImplicitRightBracket
-        ```
-
-        1. 除非指定了至少一个后续显式参数，严格隐式绑定器不会自动插入占位符 `_`
-        2. 假设遵循上述规则，严格隐式绑定器与隐式绑定器表现相一致
-
-    4. `instBinder`：实例绑定器，形如 `[C]` 或 `[inst : C]`．Lean 通过归一化找到唯一能通过类型检查的参数值
-
-        ```lean
-        def optIdent : Parser := optional (atomic (ident >> " : "))
-
-        def instBinder := leading_parser ppGroup <| "["
-          >> withoutPosition (optIdent >> termParser)
-          >> "]"
-        ```
-
-        1. 单个实例绑定器不可同时指定多个变量
-        2. 通常模式下，Lean 自动进行类型类推断并插入 `C` 的实例
-        3. 在 `@` 显式模式下，如果 `_` 被用于实例隐式参数，则仍可实行类型类推断；也可通过 `(_)` 禁用该特性
-
-2. 元变量 <!-- TODO -->
-
-### 2.3.2 宇宙与类型
+### 2.3.1 宇宙与类型
 1. `Type`、`Sort` 与 `Prop`：类型、分类与命题
 
     ```lean
@@ -1044,8 +957,86 @@
               >> showRhs
             ```
 
-### 2.3.3 函数与应用
-1. `«fun»`：$\lambda$ 表达式，即匿名函数．变量名部分支持单项模式匹配
+### 2.3.2 函数与应用
+1. `bracketedBinder`：括号绑定器
+
+    ```lean
+    def binderType (requireType := false) : Parser := if requireType
+      then node nullKind (" : " >> termParser)
+      else optional (" : " >> termParser)
+    def binderTactic := leading_parser atomic (symbol " := " >> " by ")
+      >> Tactic.tacticSeq
+    def binderDefault := leading_parser " := "
+      >> termParser
+
+    def bracketedBinder (requireType := false) := withAntiquot (mkAntiquot
+      "bracketedBinder"
+      decl_name%
+      (isPseudoKind := true)
+    )
+      <| explicitBinder requireType
+        <|> strictImplicitBinder requireType
+        <|> implicitBinder requireType
+        <|> instBinder
+
+    @[builtin_term_parser]
+    def explicit := leading_parser "@"
+      >> termParser maxPrec
+    ```
+
+    1. `explicitBinder`：显式绑定器，形如 `(x y : A)` 或 `(x y)`，可通过 `(x : A := v)` 或 `(x : A := by tac)` 指定默认值
+
+        ```lean
+        def explicitBinder (requireType := false) := leading_parser ppGroup <| "("
+          >> withoutPosition (many1 binderIdent
+            >> binderType requireType
+            >> optional (binderTactic <|> binderDefault)
+          )
+          >> ")"
+        ```
+
+    2. `implicitBinder`：隐式绑定器，形如 `{x y : A}` 或 `{x y}`
+
+        ```lean
+        def implicitBinder (requireType := false) := leading_parser ppGroup <| "{"
+          >> withoutPosition (many1 binderIdent >> binderType requireType)
+          >> "}"
+        ```
+
+        1. 通常模式下，隐式绑定器应能被自主推断，Lean 会自动为该参数填充占位符 `_`
+        2. 在 `@` 显式模式下，隐式绑定器与显式绑定器表现相一致
+
+    3. `strictImplicitBinder`：严格隐式绑定器，形如 `⦃x y : A⦄`、`{{x y : A}}`、`⦃x y⦄` 或 `{{x y}}`
+
+        ```lean
+        def strictImplicitLeftBracket := atomic (group (symbol "{" >> "{")) <|> "⦃"
+        def strictImplicitRightBracket := atomic (group (symbol "}" >> "}")) <|> "⦄"
+
+        def strictImplicitBinder (requireType := false) := leading_parser ppGroup
+          <| strictImplicitLeftBracket
+            >> many1 binderIdent
+            >> binderType requireType
+            >> strictImplicitRightBracket
+        ```
+
+        1. 除非指定了至少一个后续显式参数，严格隐式绑定器不会自动插入占位符 `_`
+        2. 假设遵循上述规则，严格隐式绑定器与隐式绑定器表现相一致
+
+    4. `instBinder`：实例绑定器，形如 `[C]` 或 `[inst : C]`．Lean 通过归一化找到唯一能通过类型检查的参数值
+
+        ```lean
+        def optIdent : Parser := optional (atomic (ident >> " : "))
+
+        def instBinder := leading_parser ppGroup <| "["
+          >> withoutPosition (optIdent >> termParser)
+          >> "]"
+        ```
+
+        1. 单个实例绑定器不可同时指定多个变量
+        2. 通常模式下，Lean 自动进行类型类推断并插入 `C` 的实例
+        3. 在 `@` 显式模式下，如果 `_` 被用于实例隐式参数，则仍可实行类型类推断；也可通过 `(_)` 禁用该特性
+
+2. `«fun»`：$\lambda$ 表达式，即匿名函数．变量名部分支持单项模式匹配
 
     ```lean
     def funStrictImplicitBinder := atomic (lookahead (strictImplicitLeftBracket
@@ -1088,7 +1079,7 @@
           >> ")"
         ```
 
-2. 应用：左结合，可使用 `<|` 改变结合顺序
+3. 应用：左结合，可使用 `<|` 改变结合顺序
 
     ```lean
     def namedArgument := leading_parser atomic ("(" >> ident >> " := ")
@@ -1108,7 +1099,7 @@
     2. `ellipsis`：提供缺少的显式参数作为占位符
     3. `termParser`：直接传入一个普通项
 
-3. 扩展字段记号：若 `e : T`，则可将 `T.f e` 简记为 `e.f`，`f` 可以是索引或标识符．也称作投影记号
+4. 扩展字段记号：若 `e : T`，则可将 `T.f e` 简记为 `e.f`，`f` 可以是索引或标识符．也称作投影记号
 
     ```lean
     @[builtin_term_parser]
@@ -1122,7 +1113,7 @@
     2. 若 `T` 是一个结构体类型且 `f : F` 是 `T` 的一个字段，则 `T.f` 是一个类型为 `T → F` 的函数，于是 `T.f e` 可简写为 `e.f`
     3. 若 `T` 是一个结构体类型且 `i` 是一个正数，则 `e.i` 是 `e` 的第 `i` 个字段之简写
 
-### 2.3.4 标识符与字面值
+### 2.3.3 标识符与字面值
 1. 标识符与占位符
 
     ```lean
@@ -1180,7 +1171,7 @@
           >> quot
         ```
 
-### 2.3.5 局部定义
+### 2.3.4 局部定义
 1. `«let»`：局部定义可用的表达式（称为主体）必须在新行上，且列数不大于 `let` 关键字的所在列
 
     ```lean
@@ -1271,7 +1262,7 @@
           >> termParser
         ```
 
-### 2.3.6 其他记号
+### 2.3.5 其他记号
 1. `«match»`：模式匹配，形如 `match e, ... with | p, ... => f | ...`，分支条件可以重叠（使用第一个匹配项），不可遗漏
 
     ```lean
@@ -1529,10 +1520,6 @@
         ```
 
 ## 2.5 句法范畴
-### 2.5.1 句法
-<!-- TODO -->
-
-### 2.5.2 宏
 <!-- TODO -->
 
 ## 2.6 其他范畴
