@@ -1,9 +1,26 @@
 # 3 初始模块
 
-- Lean 启动时自动导入库中 `Init` 模块的内容
-
 ## 3.1 预定义句法
-### 3.1.1 表达式
+1. Lean 启动时自动导入库中 `Init` 模块的内容
+2. 定义范畴如下
+
+    ```lean
+    structure Parser.Category
+
+    namespace Parser.Category
+    def term    : Category := {}
+    def command : Category := {}
+    def attr    : Category := {}
+    def tactic  : Category := {}
+    def stx     : Category := {}
+    def level   : Category := {}
+    def prio    : Category := {}
+    def prec    : Category := {}
+    def doElem  : Category := {}
+    end Parser.Category
+    ```
+
+### 3.1.1 项范畴
 1. 条件表达式
 
     ```lean
@@ -63,10 +80,11 @@
     syntax calcSteps := ppLine withPosition(calcFirstStep) withPosition((ppLine linebreak calcStep)*)
     ```
 
-3. 管道符：用 `f <| x` 表示 `f x`，用 `f <| g <| x` 表示 `f (g x)`
+3. 管道符：用 `f <| x` 或 `x |> f` 表示 `f x`，用 `f <| g <| x` 表示 `f (g x)`
 
     ```lean
     syntax:min term " <| " term:min : term
+    syntax:min term " |> " term:min1 : term
     ```
 
 4. 字符串插值：组合子 `interpolatedStr` 解析含有 `{term}` 的字符串，将其解释为项（而非字符串）
@@ -75,26 +93,8 @@
     syntax:max "s!" interpolatedStr(term) : term
     ```
 
-### 3.1.2 句法记号
-1. 句法范畴
-
-    ```lean
-    structure Parser.Category
-
-    namespace Parser.Category
-    def term    : Category := {}
-    def command : Category := {}
-    def attr    : Category := {}
-    def tactic  : Category := {}
-    def stx     : Category := {}
-    def level   : Category := {}
-    def prio    : Category := {}
-    def prec    : Category := {}
-    def doElem  : Category := {}
-    end Parser.Category
-    ```
-
-2. 层级相关宏
+### 3.1.2 句法范畴
+1. 层级相关宏
 
     ```lean
     macro "max" : prec => `(prec| 1024)
@@ -106,7 +106,7 @@
     macro "max_prec" : term => `(1024)
     ```
 
-3. 优先级相关宏
+2. 优先级相关宏
 
     ```lean
     macro "default" : prio => `(prio| 1000)
@@ -116,7 +116,7 @@
     macro "(" p:prio ")" : prio => return p
     ```
 
-4. 组合子运算符
+3. 组合子运算符
 
     ```lean
     syntax:arg stx:max "+" : stx
@@ -130,7 +130,7 @@
     macro:arg "!" x:stx:max : stx => `(stx| notFollowedBy($x))
     ```
 
-### 3.1.3 策略
+### 3.1.3 策略范畴
 1. 改变证明目标
     1. `apply`：整合结论与当前目标中的表达式，并为剩余的未证明部分创建新目标
 
@@ -376,8 +376,33 @@
     macro "suffices " d:sufficesDecl : tactic => `(tactic| refine_lift suffices $d; ?_)
     ```
 
+### 3.1.4 do 元素范畴
+1. `repeat`：循环
+
+    ```lean
+    syntax "repeat " doSeq : doElem
+    macro_rules
+      | `(doElem| repeat $seq) => `(doElem| for _ in Loop.mk do $seq)
+
+    syntax "repeat " doSeq ppDedent(ppLine) "until " term : doElem
+    macro_rules
+      | `(doElem| repeat $seq until $cond) => `(doElem| repeat do $seq:doSeq; if $cond then break)
+    ```
+
+2. `while`：等效于 `repeat` 与 带有 `if` 修饰的 `break`
+
+    ```lean
+    syntax "while " ident " : " termBeforeDo " do " doSeq : doElem
+    macro_rules
+      | `(doElem| while $h : $cond do $seq) => `(doElem| repeat if $h : $cond then $seq else break)
+
+    syntax "while " termBeforeDo " do " doSeq : doElem
+    macro_rules
+      | `(doElem| while $cond do $seq) => `(doElem| repeat if $cond then $seq else break)
+    ```
+
 ## 3.2 预定义函数
-### 3.2.1 生成函数
+### 3.2.1 递归器
 1. `rec`：消去递归器
 
     ```lean
@@ -808,6 +833,47 @@
         11. `mdata`：元数据，提供位置信息、`Syntax` 节点引用、对 Pretty Printer 的提示以及繁饰过程信息
         12. `proj`：投影，即扩展字段记号．并非真实需要，仅为项提供更紧凑的表示以加速归约
 
+4. IO 活动：`EStateM` 同时跟踪状态和错误，是 `IO` 单子的基础
+
+    ```lean
+    def IO.RealWorld : Type := Unit
+    inductive EStateM.Result (ε σ α : Type u) where
+      | ok    : α → σ → Result ε σ α
+      | error : ε → σ → Result ε σ α
+
+    def EStateM (ε σ α : Type u) := σ → Result ε σ α
+    def EIO (ε : Type) : Type → Type := EStateM ε IO.RealWorld
+    abbrev IO : Type → Type := EIO IO.Error
+    ```
+
+    1. 状态即现实世界，由于机能限制而仅用 `Unit` 表示
+    2. `EStateM ε σ` 单子不改变状态，仅传递结果或错误信息
+
+        ```lean
+        @[always_inline, inline]
+        protected def pure (a : α) : EStateM ε σ α := fun s => Result.ok a s
+
+        @[always_inline, inline]
+        protected def bind (x : EStateM ε σ α) (f : α → EStateM ε σ β) : EStateM ε σ β :=
+          fun s => match x s with
+            | Result.ok a s => f a s
+            | Result.error e s => Result.error e s
+
+        @[always_inline]
+        instance instMonad : Monad (EStateM ε σ) where
+          bind := EStateM.bind
+          pure := EStateM.pure
+          map := EStateM.map
+          seqRight := EStateM.seqRight
+        ```
+
+    !!! note "IO 活动的副作用"
+        1. 内部视角：IO 活动没有副作用，它接受一个唯一的现实世界状态，返回改变后的世界
+        2. 外部视角：`bind` 函数定义的内容是副作用，当执行主体为 `do` 的 `main` 函数时
+            1. 为了获得最后 `main` 的返回值，需要执行前面所有 `bind`，从而产生副作用
+            2. 返回得到 `IO Unit` 元素没有意义，起作用的只是中间的副作用过程
+            3. 副作用实质上靠 Lean RTS（运行时系统）执行原语而得以可能，Lean 本身仅对 IO 活动原语进行描述
+
 ### 3.3.3 类型类
 1. 算术运算
     1. `Neg`：取负
@@ -1011,7 +1077,7 @@
             notation:max "!" b:40 => not b
             ```
 
-3. 关系运算
+3. 比较运算
     1. `LE`：小于等于
 
         ```lean
@@ -1056,8 +1122,15 @@
         infix:50 " > "  => GT.gt
         ```
 
-    !!! note "可判定性"
-        `Deciable`：等同于 `Bool` 及其证明，用于推断命题的计算策略，从而可在 `if` 中编写命题并执行
+4. 关系与性质
+    1. `Trans`：传递性，可用于计算式证明
+
+        ```lean
+        class Trans (r : α → β → Sort u) (s : β → γ → Sort v) (t : outParam (α → γ → Sort w)) where
+          trans : r a b → s b c → t a c
+        ```
+
+    2. `Deciable`：可判定性，等同于 `Bool` 及其证明，用于推断命题的计算策略，从而可在 `if` 中编写命题并执行
 
         ```lean
         class inductive Decidable (p : Prop) where
@@ -1107,7 +1180,7 @@
           | isFalse hp => isTrue hp
         ```
 
-4. 函子与单子
+5. 函子与单子
     1. 通用类型类
 
         ```lean
@@ -1193,7 +1266,7 @@
 
         易证任意单子都是应用函子，任意应用函子都是函子
 
-5. 类型转换与强制类型转换
+6. 类型转换与强制类型转换
     1. `OfNat`：将自然数字面值转换到其他类型
 
         ```lean
@@ -1241,7 +1314,7 @@
             syntax:1024 (name := coeSortNotation) "↥" term:1024 : term
             ```
 
-6. 派生标准类：编译器可自动构造部分类型类的良好实例
+7. 派生标准类：编译器可自动构造部分类型类的良好实例
     1. `Repr`：表示类，将某种类型的值转换为 `Format` 类型
 
         ```lean
@@ -1328,47 +1401,6 @@
                 example {α : Type} (p q : α → Prop) : (h : ∃ x, p x) → {x : α // px}
                   | ⟨w, hw⟩ => ⟨w, hw⟩
                 ```
-
-7. IO 活动：`EStateM` 同时跟踪状态和错误，是 `IO` 单子的基础
-
-    ```lean
-    def IO.RealWorld : Type := Unit
-    inductive EStateM.Result (ε σ α : Type u) where
-      | ok    : α → σ → Result ε σ α
-      | error : ε → σ → Result ε σ α
-
-    def EStateM (ε σ α : Type u) := σ → Result ε σ α
-    def EIO (ε : Type) : Type → Type := EStateM ε IO.RealWorld
-    abbrev IO : Type → Type := EIO IO.Error
-    ```
-
-    1. 状态即现实世界，由于机能限制而仅用 `Unit` 表示
-    2. `EStateM ε σ` 单子不改变状态，仅传递结果或错误信息
-
-        ```lean
-        @[always_inline, inline]
-        protected def pure (a : α) : EStateM ε σ α := fun s => Result.ok a s
-
-        @[always_inline, inline]
-        protected def bind (x : EStateM ε σ α) (f : α → EStateM ε σ β) : EStateM ε σ β :=
-          fun s => match x s with
-            | Result.ok a s => f a s
-            | Result.error e s => Result.error e s
-
-        @[always_inline]
-        instance instMonad : Monad (EStateM ε σ) where
-          bind := EStateM.bind
-          pure := EStateM.pure
-          map := EStateM.map
-          seqRight := EStateM.seqRight
-        ```
-
-    !!! note "IO 活动的副作用"
-        1. 内部视角：IO 活动没有副作用，它接受一个唯一的现实世界状态，返回改变后的世界
-        2. 外部视角：`bind` 函数定义的内容是副作用，当执行主体为 `do` 的 `main` 函数时
-            1. 为了获得最后 `main` 的返回值，需要执行前面所有 `bind`，从而产生副作用
-            2. 返回得到 `IO Unit` 元素没有意义，起作用的只是中间的副作用过程
-            3. 副作用实质上靠 Lean RTS（运行时系统）执行原语而得以可能，Lean 本身仅对 IO 活动原语进行描述
 
 ## 3.4 数学基础
 ### 3.4.1 逻辑学
@@ -1540,14 +1572,7 @@
               >> sepBy1 (termParser 75) " ▸ "
             ```
 
-    2. `Trans`：传递性类型类，可用于计算式证明
-
-        ```lean
-        class Trans (r : α → β → Sort u) (s : β → γ → Sort v) (t : outParam (α → γ → Sort w)) where
-          trans : r a b → s b c → t a c
-        ```
-
-    3. `Equivalence`：等价与广集
+    2. `Equivalence`：等价与广集
 
         ```lean
         structure Equivalence {α : Sort u} (r : α → α → Prop) : Prop where

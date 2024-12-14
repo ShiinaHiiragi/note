@@ -1446,53 +1446,126 @@
     ```
 
 ### 2.6.3 do 元素范畴
-1. `doLet`：局部定义
-
-    ```lean
-    @[builtin_doElem_parser]
-    def doLet := leading_parser "let "
-      >> optional "mut "
-      >> letDecl
-    ```
-
-2. `doExpr`：作为语句的项
-
-    ```lean
-    @[builtin_doElem_parser]
-    def doExpr := leading_parser notFollowedByRedefinedTermToken
-      >> termParser
-      >> notFollowedBy (symbol ":=" <|> symbol "←" <|> symbol "<-") "ERROR INFO"
-    ```
-
-    1. `liftMethod`：简单提升嵌套活动．只能用于 `do` 语句块中
-
-        ```lean
-        @[builtin_term_parser]
-        def liftMethod := leading_parser:minPrec leftArrow
-          >> termParser
-        ```
-
-    2. `doReturn`：`return e` 将包围块求值为 `pure e`，跳过所有更深层的语句
+1. 基础表达式
+    1. `doLet` 与 `doLetRec`：`let` 局部定义
 
         ```lean
         @[builtin_doElem_parser]
-        def doReturn := leading_parser:leadPrec withPosition ("return"
+        def doLet := leading_parser "let "
+          >> optional "mut "
+          >> letDecl
+
+        @[builtin_doElem_parser]
+        def doLetRec := leading_parser group ("let " >> nonReservedSymbol "rec ")
+          >> letRecDecls
+        ```
+
+    2. `doExpr`：作为语句的项
+
+        ```lean
+        @[builtin_doElem_parser]
+        def doExpr := leading_parser notFollowedByRedefinedTermToken
+          >> termParser
+          >> notFollowedBy (symbol ":=" <|> symbol "←" <|> symbol "<-") "ERROR INFO"
+        ```
+
+        1. `liftMethod`：简单提升嵌套活动．只能用于 `do` 语句块中
+
+            ```lean
+            @[builtin_term_parser]
+            def liftMethod := leading_parser:minPrec leftArrow
+              >> termParser
+            ```
+
+        2. `doReturn`：`return e` 将包围块求值为 `pure e`，跳过所有更深层的语句
+
+            ```lean
+            @[builtin_doElem_parser]
+            def doReturn := leading_parser:leadPrec withPosition ("return"
+              >> optional (ppSpace >> checkLineEq >> termParser)
+            )
+            ```
+
+    3. `doLetArrow`：左箭头表达式
+
+        ```lean
+        def doIdDecl := leading_parser atomic (ident >> optType >> ppSpace >> leftArrow)
+          >> doElemParser
+        def doPatDecl := leading_parser atomic (termParser >> ppSpace >> leftArrow)
+          >> doElemParser
+          >> optional (checkColGt >> " | " >> doSeq)
+
+        @[builtin_doElem_parser]
+        def doLetArrow := leading_parser withPosition ("let "
+          >> optional "mut "
+          >> (doIdDecl <|> doPatDecl)
+        )
+        ```
+
+2. 附加特性
+    1. `doIf` 与 `doUnless`：条件语句
+
+        ```lean
+        @[builtin_doElem_parser]
+        def doIf := leading_parser withResetCache
+          <| withPositionAfterLinebreak
+          <| ppRealGroup
+          <| ppRealFill (ppIndent ("if " >> doIfCond >> " then") >> ppSpace >> doSeq)
+            >> many (checkColGe "ERROR INFO"
+              >> group (ppDedent ppSpace >> ppRealFill (elseIf >> doIfCond >> " then " >> doSeq))
+            )
+            >> optional (checkColGe "ERROR INFO"
+              >> ppDedent ppSpace
+              >> ppRealFill ("else " >> doSeq)
+            )
+
+        @[builtin_doElem_parser] def doUnless := leading_parser "unless "
+          >> withForbidden "do" termParser
+          >> " do "
+          >> doSeq
+        ```
+
+    2. `doFor`：循环语句
+
+        ```lean
+        def doForDecl := leading_parser optional (atomic (ident >> " : "))
+          >> termParser
+          >> " in "
+          >> withForbidden "do" termParser
+
+        @[builtin_doElem_parser]
+        def doFor := leading_parser "for "
+          >> sepBy1 doForDecl ", "
+          >> "do "
+          >> doSeq
+        ```
+
+    3. `doMatch`：模式匹配
+
+        ```lean
+        @[builtin_doElem_parser]
+        def doMatch := leading_parser:leadPrec "match "
+          >> optional Term.generalizingParam
+          >> optional Term.motive
+          >> sepBy1 matchDiscr ", "
+          >> " with"
+          >> doMatchAlts
+        ```
+
+    4. `doBreak`、`doContinue` 与 `doReturn`：控制语句
+
+        ```lean
+        @[builtin_doElem_parser] def doBreak := leading_parser "break"
+        @[builtin_doElem_parser] def doContinue := leading_parser "continue"
+        @[builtin_doElem_parser] def doReturn := leading_parser:leadPrec withPosition ("return"
           >> optional (ppSpace >> checkLineEq >> termParser)
         )
         ```
 
-3. `doLetArrow`：左箭头表达式
+    5. `doNested`：嵌套 `do` 语句块
 
-    ```lean
-    def doIdDecl := leading_parser atomic (ident >> optType >> ppSpace >> leftArrow)
-      >> doElemParser
-    def doPatDecl := leading_parser atomic (termParser >> ppSpace >> leftArrow)
-      >> doElemParser
-      >> optional (checkColGt >> " | " >> doSeq)
-
-    @[builtin_doElem_parser]
-    def doLetArrow := leading_parser withPosition ("let "
-      >> optional "mut "
-      >> (doIdDecl <|> doPatDecl)
-    )
-    ```
+        ```lean
+        @[builtin_doElem_parser]
+        def doNested := leading_parser "do "
+          >> doSeq
+        ```
