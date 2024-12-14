@@ -198,7 +198,8 @@
         3. 当归纳类型可以被推断时，构造子命名空间可以省略，但需要保留点号
 
             ```lean
-            @[builtin_term_parser] def dotIdent := leading_parser "."
+            @[builtin_term_parser]
+            def dotIdent := leading_parser "."
               >> checkNoWsBefore
               >> rawIdent
             ```
@@ -650,7 +651,8 @@
 1. `«init_quot»`：定义类型 `α` 上的二元关系 `r` 形成的商 `Quot r`
 
     ```lean
-    @[builtin_command_parser] def «init_quot» := leading_parser "init_quot"
+    @[builtin_command_parser]
+    def «init_quot» := leading_parser "init_quot"
     ```
 
     增加四个定义
@@ -1263,6 +1265,7 @@
     def terminationBy := leading_parser "termination_by "
       >> optional (atomic (many (ppSpace >> Term.binderIdent) >> " => "))
       >> termParser
+
     @[inherit_doc terminationBy]
     def terminationBy? := leading_parser "termination_by?"
 
@@ -1519,7 +1522,8 @@
               >> ppRealFill ("else " >> doSeq)
             )
 
-        @[builtin_doElem_parser] def doUnless := leading_parser "unless "
+        @[builtin_doElem_parser]
+        def doUnless := leading_parser "unless "
           >> withForbidden "do" termParser
           >> " do "
           >> doSeq
@@ -1555,9 +1559,14 @@
     4. `doBreak`、`doContinue` 与 `doReturn`：控制语句
 
         ```lean
-        @[builtin_doElem_parser] def doBreak := leading_parser "break"
-        @[builtin_doElem_parser] def doContinue := leading_parser "continue"
-        @[builtin_doElem_parser] def doReturn := leading_parser:leadPrec withPosition ("return"
+        @[builtin_doElem_parser]
+        def doBreak := leading_parser "break"
+
+        @[builtin_doElem_parser]
+        def doContinue := leading_parser "continue"
+
+        @[builtin_doElem_parser]
+        def doReturn := leading_parser:leadPrec withPosition ("return"
           >> optional (ppSpace >> checkLineEq >> termParser)
         )
         ```

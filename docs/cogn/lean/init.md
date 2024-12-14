@@ -1032,7 +1032,8 @@
         1. `cond`：条件运算
 
             ```lean
-            @[macro_inline] def cond {α : Type u} (c : Bool) (x y : α) : α :=
+            @[macro_inline]
+            def cond {α : Type u} (c : Bool) (x y : α) : α :=
               match c with
               | true  => x
               | false => y
@@ -1154,7 +1155,8 @@
         `Init` 模块定义了等式和比较符的基本运算以及命题连词等命题的可判定性，例如
 
         ```lean
-        @[macro_inline] instance {p q} [dp : Decidable p] [dq : Decidable q] : Decidable (And p q) :=
+        @[macro_inline]
+        instance {p q} [dp : Decidable p] [dq : Decidable q] : Decidable (And p q) :=
           match dp with
           | isTrue  hp =>
             match dq with
@@ -1163,7 +1165,8 @@
           | isFalse hp =>
             isFalse (fun h => hp (And.left h))
 
-        @[macro_inline] instance [dp : Decidable p] [dq : Decidable q] : Decidable (Or p q) :=
+        @[macro_inline]
+        instance [dp : Decidable p] [dq : Decidable q] : Decidable (Or p q) :=
           match dp with
           | isTrue  hp => isTrue (Or.inl hp)
           | isFalse hp =>
