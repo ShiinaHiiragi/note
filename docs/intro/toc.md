@@ -4,35 +4,6 @@
 - 全站以逻辑学作为核心内容，同时辐射与逻辑学具有关联的学科，包括数学、哲学、语言学等
 - 本站的定位是「笔记」，即已存在于世且广受公认的客观知识列表，而非引导入门者的教程段落，亦非语料作者的个人观点阐述，也并非前沿领域的最新研究辑录
 
-## 第一部分 认识基础
-### 三、Lean
-
-!!! note "参考文献"
-    - 『Theorem Proving in Lean 4』（Jeremy Avigad、Leonardo de Moura、Soonho Kong、Sebastian Ullrich）
-    - 『Metaprogramming in Lean 4』（Arthur Paulino、Damiano Testa、Edward Ayers、Evgenia Karunus、Henrik Böving、Jannis Limperg、Siddhartha Gadgil、Siddharth Bhat）
-
-#### 1 系统与原理
-1. 编译过程
-2. 环境配置
-3. 风格规约
-
-#### 2 句法范畴
-1. 指令范畴
-2. 项范畴
-3. 属性范畴
-4. 策略范畴
-5. 句法范畴
-6. 其他范畴
-
-#### 3 内建类
-1. 预定义
-2. 内建类型
-3. 数学基础
-
-#### 4 设计模式
-1. 句法解析参考
-2. 系统级单子
-
 ## 第三部分 数理逻辑
 ### 一、证明论
 
