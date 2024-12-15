@@ -918,6 +918,17 @@
 
         通常使用 `TSyntax`，即给定句法种类的 `Syntax`
 
+        1. 范畴是对种类的再分组，但部分种类没有范畴
+        2. 可使用 `` `() `` 句法模式代替 `TSyntax` 或 `Syntax` 进行模式匹配
+
+        ```lean linenums="1"
+        instance : CoeOut (TSyntax ks) Syntax where
+          coe stx := stx.raw
+
+        instance : Coe Syntax (TSyntax `rawStx) where
+          coe stx := ⟨stx⟩
+        ```
+
     3. `Expr`：表达式．Lean 中任意项都有对应表达式
 
         ```lean linenums="1"

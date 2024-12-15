@@ -1177,7 +1177,7 @@
           >> ident
         ```
 
-    2. `quot` 与 `precheckedQuot`：（一系列）命令的句法引用，使用 `:` 指定句法成分种类
+    2. `quot` 与 `precheckedQuot`：（一系列）命令的句法模式，用于模式匹配时使用 `` `(category| ...)` `` 表示自定义句法范畴
 
         ```lean linenums="1"
         @[builtin_term_parser low]
@@ -1188,6 +1188,13 @@
         @[builtin_term_parser]
         def precheckedQuot := leading_parser "`"
           >> quot
+
+        @[builtin_term_parser]
+        def dynamicQuot := withoutPosition <| leading_parser "`("
+          >> ident
+          >> "| "
+          >> incQuotDepth (parserOfStack 1)
+          >> ")"
         ```
 
 ### 2.3.4 局部定义
