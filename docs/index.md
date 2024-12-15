@@ -53,7 +53,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，现处于第一阶段"
-    <label> 现在进度：Metaprogramming in Lean 4 </label>
+    <label> 现在进度：模型论 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
@@ -126,12 +126,12 @@ const refList = [
         type: "DB/OL",
         page: [1, 194]
     },
-    // {
-    //     author: ["Arthur Paulino", "Damiano Testa", "Edward Ayers", "Evgenia Karunus", "Henrik Böving", "Jannis Limperg", "Siddhartha Gadgil", "Siddharth Bhat"],
-    //     title: "Metaprogramming in Lean 4",
-    //     type: "DB/OL",
-    //     page: [1, 103]
-    // },
+    {
+        author: ["Arthur Paulino", "Damiano Testa", "Edward Ayers", "Evgenia Karunus", "Henrik Böving", "Jannis Limperg", "Siddhartha Gadgil", "Siddharth Bhat"],
+        title: "Metaprogramming in Lean 4",
+        type: "DB/OL",
+        page: [1, 103]
+    },
     {
         author: ["Microsoft Corporation"],
         title: "Lean Manual",
