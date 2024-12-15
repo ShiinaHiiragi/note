@@ -88,7 +88,7 @@
 - interpolation：插值
 
 ## K
-- kind：种类
+- kind：类别
 
 ## L
 - level：层级

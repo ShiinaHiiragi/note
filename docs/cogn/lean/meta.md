@@ -1,7 +1,7 @@
 # 4 元编程
 
 ## 4.1 句法解析参考
-- Lean 内部解析器使用宏 `leading_parser parser` 或 `trailing_parser parser` 进行句法解析，前者调用函数 `leadingNode` 从而创建节点 `node name parser`，其中 `name : SyntaxNodeKind` 是节点种类
+- Lean 内部解析器使用宏 `leading_parser parser` 或 `trailing_parser parser` 进行句法解析，前者调用函数 `leadingNode` 从而创建节点 `node name parser`，其中 `name : SyntaxNodeKind` 是节点类别
 
     ```lean linenums="1"
     @[builtin_term_parser]
@@ -78,7 +78,7 @@
     1. `optional(p)`：解析 `p`，失败时返回空值；也可写作 `(p)?`
     2. `many(p)`：重复解析 `p` 直到失败，当元数大于一时自动将 `p` 替换为 `group(p)`；也可写作 `(p)*`
     3. `many1(p)`：类似于 `many(p)`，必须至少成功一次
-    4. `group(p)`：解析 `p`，将结果封装在一个种类为 `groupKind` 的节点
+    4. `group(p)`：解析 `p`，将结果封装在一个类别为 `groupKind` 的节点
 3. 位置与缩进
     1. `withPosition(p)`：解析 `p`，记录并保存当前位置
     2. `withoutPosition(p)`：解析 `p`，并暂时忽略已保存位置
@@ -95,7 +95,7 @@
     6. `sepBy1IndentSemicolon(p)`：类似于 `sepByIndentSemicolon(p)`，相当于 `sepBy1Indent(p, "; ")`
 5. 反引用相关
     1. `mkAntiquot(n : String, k : SyntaxNodeKind)`：解析形如 `$e` 或 `$e:n` 的反引用
-        1. `mkAntiquot` 调用 `leadingNode` 创建种类为 ``k ++ `antiquot`` 的节点，该节点表示一个种类为 `n` 的句法元素
+        1. `mkAntiquot` 调用 `leadingNode` 创建类别为 ``k ++ `antiquot`` 的节点，该节点表示一个类别为 `n` 的句法元素
         2. 可用 `$$` 转义 `` `() `` 中的反引用，例如 `` #check `(def var $$x:declVal) ``
     2. `withAntiquot(q, p)`：`q` 通常为 `mkAntiquot ...`，因此相当于 `mkAntiquot ... <|> p`
 6. 其他组合子
@@ -109,20 +109,26 @@
     abbrev CoreM := ReaderT Context <| StateRefT State (EIO Exception)
     ```
 
-2. `MetaM`：元变量语境，即当前声明的元变量集及其赋值
+2. `MacroM`：宏
+
+    ```lean linenums="1"
+    abbrev MacroM := ReaderT Macro.Context (EStateM Macro.Exception Macro.State)
+    ```
+
+3. `MetaM`：元变量语境，即当前声明的元变量集及其赋值
 
     ```lean linenums="1"
     abbrev MetaM  := ReaderT Context $ StateRefT State CoreM
     ```
 
-3. `TermElabM`：繁饰过程中使用的信息
+4. `TermElabM`：繁饰过程中使用的信息
 
     ```lean linenums="1"
     abbrev TermElabM := ReaderT Context $ StateRefT State MetaM
     abbrev TermElab := Syntax → Option Expr → TermElabM Expr
     ```
 
-4. `TacticM`：当前目标列表
+5. `TacticM`：当前目标列表
 
     ```lean linenums="1"
     abbrev TacticM := ReaderT Context $ StateRefT State TermElabM

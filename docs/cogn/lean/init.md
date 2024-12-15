@@ -868,7 +868,7 @@
         2. `str`：字符串名称
         3. `num`：数字名称，用于自由变量和元变量的层次名称
 
-    2. `Syntax`：句法结构，其中 `SyntaxNodeKind` 即节点种类，用于给 `Syntax` 元素分类
+    2. `Syntax`：句法结构，其中 `SyntaxNodeKind` 即节点类别，用于给 `Syntax` 元素分类
 
         ```lean linenums="1"
         abbrev SyntaxNodeKind := Name
@@ -912,13 +912,13 @@
         ```
 
         1. `missing`：对应于由于解析错误而缺失的句法树部分
-        2. `node`：种类为 `kind`，子节点包含在 `args` 的节点
+        2. `node`：类别为 `kind`，子节点包含在 `args` 的节点
         3. `atom`：对应关键字或字面值
         4. `ident`：对应由 `ident` 或 `rawIdent` 解析的标识符
 
-        通常使用 `TSyntax`，即给定句法种类的 `Syntax`
+        通常使用 `TSyntax`，即给定句法类别的 `Syntax`
 
-        1. 范畴是对种类的再分组，但部分种类没有范畴
+        1. 范畴是对类别的再分组，但部分类别没有范畴
         2. 可使用 `` `() `` 句法模式代替 `TSyntax` 或 `Syntax` 进行模式匹配
 
         ```lean linenums="1"
