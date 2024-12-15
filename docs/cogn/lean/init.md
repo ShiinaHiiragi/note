@@ -365,8 +365,8 @@
         syntax discharger :=
           atomic(" (" patternIgnore(&"discharger" <|> &"disch")) " := " withoutPosition(tacticSeq) ")"
 
-        syntax simpPre   := "↓"
-        syntax simpPost  := "↑"
+        syntax simpPre := "↓"
+        syntax simpPost := "↑"
 
         syntax simpLemma := (simpPre <|> simpPost)? patternIgnore("← " <|> "<- ")? term
         syntax simpErase := "-" term:max
@@ -657,6 +657,13 @@
         def outParam (α : Sort u) : Sort u := α
         ```
 
+    3. `semiOutParam`：在类型类中标记半输出参数，此时类型类的实例需始终为该参数填充一个值
+
+        ```lean
+        @[reducible]
+        def semiOutParam (α : Sort u) : Sort u := α
+        ```
+
 ## 3.3 内建类型
 ### 3.3.1 结构体类型
 1. 数据类型
@@ -678,7 +685,7 @@
         @[pp_using_anonymous_constructor]
         structure Fin (n : Nat) where
           mk ::
-          val  : Nat
+          val : Nat
           isLt : LT.lt val n
 
         structure BitVec (w : Nat) where
@@ -838,7 +845,7 @@
 
         ```lean linenums="1"
         inductive Int : Type where
-          | ofNat   : Nat → Int
+          | ofNat : Nat → Int
           | negSucc : Nat → Int
         ```
 
@@ -945,12 +952,12 @@
         deriving Inhabited, BEq, Hashable, Repr
 
         inductive Level where
-          | zero   : Level
-          | succ   : Level → Level
-          | max    : Level → Level → Level
-          | imax   : Level → Level → Level
-          | param  : Name → Level
-          | mvar   : LMVarId → Level
+          | zero : Level
+          | succ : Level → Level
+          | max : Level → Level → Level
+          | imax : Level → Level → Level
+          | param : Name → Level
+          | mvar : LMVarId → Level
         with ...
 
         inductive BinderInfo where
@@ -1004,7 +1011,7 @@
     ```lean linenums="1"
     def IO.RealWorld : Type := Unit
     inductive EStateM.Result (ε σ α : Type u) where
-      | ok    : α → σ → Result ε σ α
+      | ok : α → σ → Result ε σ α
       | error : ε → σ → Result ε σ α
 
     def EStateM (ε σ α : Type u) := σ → Result ε σ α
@@ -1462,7 +1469,7 @@
 
         class Alternative (f : Type u → Type v) extends Applicative f : Type (max (u+1) v) where
           failure : {α : Type u} → f α
-          orElse  : {α : Type u} → f α → (Unit → f α) → f α
+          orElse : {α : Type u} → f α → (Unit → f α) → f α
         instance (f : Type u → Type v) (α : Type u) [Alternative f] : OrElse (f α) := ⟨Alternative.orElse⟩
         ```
 
@@ -1629,20 +1636,118 @@
                 ```
 
 ### 3.3.4 转换器
-1. `OptionT`
-2. `ExceptT`
-3. `ReaderT`
+1. `OptionT`：组合 `Option` 单子
+
+    ```lean linenums="1"
+    def OptionT (m : Type u → Type v) (α : Type u) : Type v :=
+      m (Option α)
+
+    section
+    variable {m : Type u → Type v} [Monad m] {α β : Type u}
+
+    protected def mk (x : m (Option α)) : OptionT m α := x
+
+    @[always_inline, inline]
+    def run (x : OptionT m α) : m (Option α) := x
+
+    @[always_inline, inline]
+    protected def pure (a : α) : OptionT m α := OptionT.mk do
+      pure (some a)
+
+    @[always_inline, inline]
+    protected def bind (x : OptionT m α) (f : α → OptionT m β) : OptionT m β := OptionT.mk do
+      match (← x) with
+      | some a => f a
+      | none   => pure none
+
+    @[always_inline]
+    instance : Monad (OptionT m) where
+      pure := OptionT.pure
+      bind := OptionT.bind
+
+    @[always_inline, inline] protected def lift (x : m α) : OptionT m α := OptionT.mk do
+      return some (← x)
+
+    instance : MonadLift m (OptionT m) := ⟨OptionT.lift⟩
+    end
+    ```
+
+2. `ExceptT`：组合 `Except` 单子
+
+    ```lean linenums="1"
+    def ExceptT (ε : Type u) (m : Type u → Type v) (α : Type u) : Type v :=
+      m (Except ε α)
+
+    section
+    variable {ε : Type u} {m : Type u → Type v} [Monad m]
+
+    @[always_inline, inline]
+    def mk {α : Type u} (x : m (Except ε α)) : ExceptT ε m α := x
+
+    @[always_inline, inline]
+    def run {α : Type u} (x : ExceptT ε m α) : m (Except ε α) := x
+
+    @[always_inline, inline]
+    protected def pure {α : Type u} (a : α) : ExceptT ε m α :=
+      ExceptT.mk <| pure (Except.ok a)
+
+    @[always_inline, inline]
+    protected def bindCont {α β : Type u} (f : α → ExceptT ε m β) : Except ε α → m (Except ε β)
+      | Except.ok a    => f a
+      | Except.error e => pure (Except.error e)
+
+    @[always_inline, inline]
+    protected def bind {α β : Type u} (ma : ExceptT ε m α) (f : α → ExceptT ε m β) : ExceptT ε m β :=
+      ExceptT.mk <| ma >>= ExceptT.bindCont f
+
+    @[always_inline, inline]
+    protected def lift {α : Type u} (t : m α) : ExceptT ε m α :=
+      ExceptT.mk <| Except.ok <$> t
+    @[always_inline]
+    instance : MonadLift (Except ε) (ExceptT ε m) := ⟨fun e => ExceptT.mk <| pure e⟩
+    instance : MonadLift m (ExceptT ε m) := ⟨ExceptT.lift⟩
+    end
+    ```
+
+    对应的类型类包括异常的抛出与处理
+
+    ```lean linenums="1"
+    @[always_inline, inline]
+    protected def tryCatch {α : Type u} (ma : ExceptT ε m α) (handle : ε → ExceptT ε m α) : ExceptT ε m α :=
+      ExceptT.mk <| ma >>= fun res => match res with
+      | Except.ok a    => pure (Except.ok a)
+      | Except.error e => (handle e)
+
+    class MonadExceptOf (ε : semiOutParam (Type u)) (m : Type v → Type w) where
+      throw {α : Type v} : ε → m α
+      tryCatch {α : Type v} (body : m α) (handler : ε → m α) : m α
+
+    @[always_inline]
+    instance (m : Type u → Type v) (ε : Type u) [Monad m] : MonadExceptOf ε (ExceptT ε m) where
+      throw e := ExceptT.mk <| pure (Except.error e)
+      tryCatch := ExceptT.tryCatch
+
+    class MonadExcept (ε : outParam (Type u)) (m : Type v → Type w) where
+      throw {α : Type v} : ε → m α
+      tryCatch {α : Type v} : m α → (ε → m α) → m α
+
+    instance (ε : outParam (Type u)) (m : Type v → Type w) [MonadExceptOf ε m] : MonadExcept ε m where
+      throw := throwThe ε
+      tryCatch := tryCatchThe ε
+    ```
+
+3. `ReaderT`：组合 `ρ` 类型的配置
 
     ```lean linenums="1"
     def ReaderT (ρ : Type u) (m : Type u → Type v) (α : Type u) : Type (max u v) :=
       ρ → m α
 
-    @[always_inline, inline]
-    def ReaderT.run (x : ReaderT ρ m α) (r : ρ) : m α :=
-      x r
-
     section
     variable {ρ : Type u} {m : Type u → Type v}
+
+    @[always_inline, inline]
+    def run (x : ReaderT ρ m α) (r : ρ) : m α :=
+      x r
 
     @[always_inline, inline]
     protected def pure [Monad m] {α} (a : α) : ReaderT ρ m α :=
@@ -1670,18 +1775,14 @@
         class MonadReaderOf (ρ : semiOutParam (Type u)) (m : Type u → Type v) where
           read : m ρ
 
-        @[always_inline, inline]
-        def readThe (ρ : Type u) {m : Type u → Type v} [MonadReaderOf ρ m] : m ρ :=
-          MonadReaderOf.read
+        instance {ρ : Type u} {m : Type u → Type v} [Monad m] : MonadReaderOf ρ (ReaderT ρ m) where
+          read := ReaderT.read
 
         class MonadReader (ρ : outParam (Type u)) (m : Type u → Type v) where
           read : m ρ
 
         instance (ρ : Type u) (m : Type u → Type v) [MonadReaderOf ρ m] : MonadReader ρ m where
           read := readThe ρ
-
-        instance {ρ : Type u} {m : Type u → Type v} [Monad m] : MonadReaderOf ρ (ReaderT ρ m) where
-          read := ReaderT.read
         ```
 
     2. `MonadWithReaderOf` 与 `MonadWithReader`：以被 `f : ρ → ρ` 修改的上下文运行内部 `x : m α`
@@ -1690,33 +1791,96 @@
         class MonadWithReaderOf (ρ : semiOutParam (Type u)) (m : Type u → Type v) where
           withReader {α : Type u} : (ρ → ρ) → m α → m α
 
-        @[always_inline, inline]
-        def withTheReader
-          (ρ : Type u)
-          {m : Type u → Type v}
-          [MonadWithReaderOf ρ m]
-          {α : Type u}
-          (f : ρ → ρ)
-          (x : m α)
-          : m α :=
-          MonadWithReaderOf.withReader f x
-
-        class MonadWithReader (ρ : outParam (Type u)) (m : Type u → Type v) where
-          withReader {α : Type u} : (ρ → ρ) → m α → m α
+        instance {ρ : Type u} {m : Type u → Type v} : MonadWithReaderOf ρ (ReaderT ρ m) where
+          withReader f x := fun ctx => x (f ctx)
 
         instance (ρ : Type u) (m : Type u → Type v) [MonadWithReaderOf ρ m] : MonadWithReader ρ m where
           withReader := withTheReader ρ
 
-        instance {ρ : Type u} {m : Type u → Type v} : MonadWithReaderOf ρ (ReaderT ρ m) where
-          withReader f x := fun ctx => x (f ctx)
+        class MonadWithReader (ρ : outParam (Type u)) (m : Type u → Type v) where
+          withReader {α : Type u} : (ρ → ρ) → m α → m α
         ```
 
-1. `StateT`
+4. `StateT`：组合 `σ` 类型的状态
+
+    ```lean linenums="1"
+    def StateT (σ : Type u) (m : Type u → Type v) (α : Type u) : Type (max u v) :=
+      σ → m (α × σ)
+
+    section
+    variable {σ : Type u} {m : Type u → Type v}
+    variable [Monad m] {α β : Type u}
+
+    @[always_inline, inline]
+    def run (x : StateT σ m α) (s : σ) : m (α × σ) := x s
+    @[always_inline, inline]
+    def run' [Functor m] (x : StateT σ m α) (s : σ) : m α := (·.1) <$> x s
+
+    @[always_inline, inline]
+    protected def pure (a : α) : StateT σ m α :=
+      fun s => pure (a, s)
+
+    @[always_inline, inline]
+    protected def bind (x : StateT σ m α) (f : α → StateT σ m β) : StateT σ m β :=
+      fun s => do let (a, s) ← x s; f a s
+
+    @[always_inline, inline]
+    protected def map (f : α → β) (x : StateT σ m α) : StateT σ m β :=
+      fun s => do let (a, s) ← x s; pure (f a, s)
+
+    @[always_inline]
+    instance : Monad (StateT σ m) where
+      pure := StateT.pure
+      bind := StateT.bind
+      map := StateT.map
+
+    @[always_inline, inline]
+    protected def lift {α : Type u} (t : m α) : StateT σ m α :=
+      fun s => do let a ← t; pure (a, s)
+    instance : MonadLift m (StateT σ m) := ⟨StateT.lift⟩
+    end
+    ```
+
+    对应的类型类包括状态的读写
+
+    ```lean linenums="1"
+    @[always_inline, inline]
+    protected def get : StateT σ m σ :=
+      fun s => pure (s, s)
+
+    @[always_inline, inline]
+    protected def set : σ → StateT σ m PUnit :=
+      fun s' _ => pure (⟨⟩, s')
+
+    @[always_inline, inline]
+    protected def modifyGet (f : σ → α × σ) : StateT σ m α :=
+      fun s => pure (f s)
+
+    class MonadStateOf (σ : semiOutParam (Type u)) (m : Type u → Type v) where
+      get : m σ
+      set : σ → m PUnit
+      modifyGet {α : Type u} : (σ → Prod α σ) → m α
+
+    instance [Monad m] : MonadStateOf σ (StateT σ m) where
+      get := StateT.get
+      set := StateT.set
+      modifyGet := StateT.modifyGet
+
+    class MonadState (σ : outParam (Type u)) (m : Type u → Type v) where
+      get : m σ
+      set : σ → m PUnit
+      modifyGet {α : Type u} : (σ → Prod α σ) → m α
+
+    instance (σ : Type u) (m : Type u → Type v) [MonadStateOf σ m] : MonadState σ m where
+      set := MonadStateOf.set
+      get := getThe σ
+      modifyGet f := MonadStateOf.modifyGet f
+    ```
 
     !!! note "单子转换器的规约"
-        1. 以单子为参数定义或数据类型 `T`：形如 `... → (Type u → Type v) → Type u → Type v`
-        2. `T m` 也是单子：其实例依赖于单子 `m` 实例
-        3. 单子提升 `MonadLift` 的实例：使得任意单子 `m` 的操作可被转换为 `T m` 的操作
+        1. 单子参数类型 `T`：形如 `... → (Type u → Type v) → Type u → Type v`
+        2. `T m` 是单子：其实例依赖于单子 `m` 实例
+        3. 单子提升 `MonadLift` 实例：使任意单子 `m` 的操作可被转换为外层 `T m` 的操作
 
             ```lean linenums="1"
             class MonadLift (m : semiOutParam (Type u → Type v)) (n : Type u → Type w) where
@@ -1916,8 +2080,8 @@
 
         ```lean linenums="1"
         structure Equivalence {α : Sort u} (r : α → α → Prop) : Prop where
-          refl  : ∀ x, r x x
-          symm  : ∀ {x y}, r x y → r y x
+          refl : ∀ x, r x x
+          symm : ∀ {x y}, r x y → r y x
           trans : ∀ {x y z}, r x y → r y z → r x z
 
         class Setoid (α : Sort u) where
@@ -1949,7 +2113,7 @@
 
         class WellFoundedRelation (α : Sort u) where
           rel : α → α → Prop
-          wf  : WellFounded rel
+          wf : WellFounded rel
 
         noncomputable def fix (hwf : WellFounded r) (F : ∀ x, (∀ y, r y x → C y) → C x) (x : α) : C x :=
           fixF F x (apply hwf x)

@@ -740,7 +740,7 @@
     4. `«elab»`：相当于 `syntax` 与 `elab`
 
         ```lean linenums="1"
-        def elabArg  := macroArg
+        def elabArg := macroArg
         def elabTail := leading_parser atomic (" : " >> ident >> optional (" <= " >> ident))
           >> darrow
           >> withPosition termParser
@@ -955,7 +955,7 @@
         def byTactic' := leading_parser "by "
           >> Tactic.tacticSeqIndentGt
 
-        def fromTerm   := leading_parser "from "
+        def fromTerm := leading_parser "from "
           >> termParser
 
         def showRhs := fromTerm <|> byTactic'
