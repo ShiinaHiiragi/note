@@ -80,9 +80,10 @@
     syntax calcSteps := ppLine withPosition(calcFirstStep) withPosition((ppLine linebreak calcStep)*)
     ```
 
-3. 管道符：用 `f <| x` 或 `x |> f` 表示 `f x`，用 `f <| g <| x` 表示 `f (g x)`
+3. 管道符：用 `f $ x`、`f <| x` 或 `x |> f` 表示 `f x`，用 `f $ g $ x` 或 `f <| g <| x` 表示 `f (g x)`
 
     ```lean linenums="1"
+    syntax:min term atomic(" $" ws) term:min : term
     syntax:min term " <| " term:min : term
     syntax:min term " |> " term:min1 : term
     ```
@@ -90,6 +91,9 @@
 4. 字符串插值：组合子 `interpolatedStr` 解析含有 `{term}` 的字符串，将其解释为项（而非字符串）
 
     ```lean linenums="1"
+    def interpolatedStr (p : Parser) : Parser :=
+      withAntiquot (mkAntiquot "interpolatedStr" interpolatedStrKind) $ interpolatedStrNoAntiquot p
+
     syntax:max "s!" interpolatedStr(term) : term
     ```
 
@@ -1623,6 +1627,101 @@
                 example {α : Type} (p q : α → Prop) : (h : ∃ x, p x) → {x : α // px}
                   | ⟨w, hw⟩ => ⟨w, hw⟩
                 ```
+
+### 3.3.4 转换器
+1. `OptionT`
+2. `ExceptT`
+3. `ReaderT`
+
+    ```lean linenums="1"
+    def ReaderT (ρ : Type u) (m : Type u → Type v) (α : Type u) : Type (max u v) :=
+      ρ → m α
+
+    @[always_inline, inline]
+    def ReaderT.run (x : ReaderT ρ m α) (r : ρ) : m α :=
+      x r
+
+    section
+    variable {ρ : Type u} {m : Type u → Type v}
+
+    @[always_inline, inline]
+    protected def pure [Monad m] {α} (a : α) : ReaderT ρ m α :=
+      fun _ => pure a
+
+    @[always_inline, inline]
+    protected def bind [Monad m] {α β} (x : ReaderT ρ m α) (f : α → ReaderT ρ m β) : ReaderT ρ m β :=
+      fun r => bind (x r) fun a => f a r
+
+    instance [Monad m] : Monad (ReaderT ρ m) where
+      bind := ReaderT.bind
+
+    instance : MonadLift m (ReaderT ρ m) where
+      monadLift x := fun _ => x
+    end
+    ```
+
+    1. `MonadReaderOf` 与 `MonadReader`：从单子 `m` 读取状态 `ρ`
+
+        ```lean linenums="1"
+        @[always_inline, inline]
+        protected def ReaderT.read {ρ : Type u} {m : Type u → Type v} [Monad m] : ReaderT ρ m ρ :=
+          pure
+
+        class MonadReaderOf (ρ : semiOutParam (Type u)) (m : Type u → Type v) where
+          read : m ρ
+
+        @[always_inline, inline]
+        def readThe (ρ : Type u) {m : Type u → Type v} [MonadReaderOf ρ m] : m ρ :=
+          MonadReaderOf.read
+
+        class MonadReader (ρ : outParam (Type u)) (m : Type u → Type v) where
+          read : m ρ
+
+        instance (ρ : Type u) (m : Type u → Type v) [MonadReaderOf ρ m] : MonadReader ρ m where
+          read := readThe ρ
+
+        instance {ρ : Type u} {m : Type u → Type v} [Monad m] : MonadReaderOf ρ (ReaderT ρ m) where
+          read := ReaderT.read
+        ```
+
+    2. `MonadWithReaderOf` 与 `MonadWithReader`：以被 `f : ρ → ρ` 修改的上下文运行内部 `x : m α`
+
+        ```lean linenums="1"
+        class MonadWithReaderOf (ρ : semiOutParam (Type u)) (m : Type u → Type v) where
+          withReader {α : Type u} : (ρ → ρ) → m α → m α
+
+        @[always_inline, inline]
+        def withTheReader
+          (ρ : Type u)
+          {m : Type u → Type v}
+          [MonadWithReaderOf ρ m]
+          {α : Type u}
+          (f : ρ → ρ)
+          (x : m α)
+          : m α :=
+          MonadWithReaderOf.withReader f x
+
+        class MonadWithReader (ρ : outParam (Type u)) (m : Type u → Type v) where
+          withReader {α : Type u} : (ρ → ρ) → m α → m α
+
+        instance (ρ : Type u) (m : Type u → Type v) [MonadWithReaderOf ρ m] : MonadWithReader ρ m where
+          withReader := withTheReader ρ
+
+        instance {ρ : Type u} {m : Type u → Type v} : MonadWithReaderOf ρ (ReaderT ρ m) where
+          withReader f x := fun ctx => x (f ctx)
+        ```
+
+1. `StateT`
+
+    !!! note "单子转换器的规约"
+        1. 以单子为参数定义或数据类型 `T`：形如 `... → (Type u → Type v) → Type u → Type v`
+        2. `T m` 也是单子：其实例依赖于单子 `m` 实例
+        3. 单子提升 `MonadLift` 的实例：使得任意单子 `m` 的操作可被转换为 `T m` 的操作
+
+            ```lean linenums="1"
+            class MonadLift (m : semiOutParam (Type u → Type v)) (n : Type u → Type w) where
+              monadLift : {α : Type u} → m α → n α
+            ```
 
 ## 3.4 数学基础
 ### 3.4.1 逻辑学

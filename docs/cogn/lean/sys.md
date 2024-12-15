@@ -19,8 +19,8 @@ $$
     1. 先执行一次 `syntax` 规则
     2. 然后执行零到多次 `(macro; syntax)` 规则，直到不存在可匹配的宏
 2. 繁饰（Elaboration）：将 Lean `Syntax` 元素转换为 Lean `Expr` 元素（抽象语法树）、执行指令
-3. 求值（Evaluation）：将 `Expr` 元素转化为 LCNF（ANF 的一种）后，转化为中间表示
-4. 编译（Compilation）：C 编译器或 LLVM 后端将中间表示转化为可执行代码
+3. 求值（Evaluation）：将 `Expr` 元素转化为 LCNF（ANF 的一种）后，进一步转化为中间表示
+4. 编译（Compilation）：通过 C 编译器或 LLVM 后端将中间表示转化为可执行代码
 
 ## 1.2 环境配置
 ### 1.2.1 终端工具
