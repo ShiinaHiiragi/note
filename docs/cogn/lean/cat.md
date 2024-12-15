@@ -599,28 +599,47 @@
     ```
 
 ### 2.1.3 句法解析
-1. `«syntax»`：句法解析
+1. 句法解析
+    1. `«syntax»`：声明句法规则
 
-    ```lean linenums="1"
-    def namedName := leading_parser atomic (" (" >> nonReservedSymbol "name")
-      >> " := "
-      >> ident
-      >> ")"
-    def optNamedName := optional namedName
-    def optKind : Parser := optional (" (" >> nonReservedSymbol "kind" >> ":=" >> ident >> ")")
+        ```lean linenums="1"
+        def namedName := leading_parser atomic (" (" >> nonReservedSymbol "name")
+          >> " := "
+          >> ident
+          >> ")"
+        def optNamedName := optional namedName
+        def optKind : Parser := optional (" (" >> nonReservedSymbol "kind" >> ":=" >> ident >> ")")
 
-    @[builtin_command_parser]
-    def «syntax» := leading_parser optional docComment
-      >> optional Term.«attributes»
-      >> Term.attrKind
-      >> "syntax "
-      >> optPrecedence
-      >> optNamedName
-      >> optNamedPrio
-      >> many1 (ppSpace >> syntaxParser argPrec)
-      >> " : "
-      >> ident
-    ```
+        @[builtin_command_parser]
+        def «syntax» := leading_parser optional docComment
+          >> optional Term.«attributes»
+          >> Term.attrKind
+          >> "syntax "
+          >> optPrecedence
+          >> optNamedName
+          >> optNamedPrio
+          >> many1 (ppSpace >> syntaxParser argPrec)
+          >> " : "
+          >> ident
+        ```
+
+    2. `syntaxCat`：声明句法范畴
+
+        ```lean linenums="1"
+        def catBehaviorBoth := leading_parser nonReservedSymbol "both"
+        def catBehaviorSymbol := leading_parser nonReservedSymbol "symbol"
+        def catBehavior := optional (" ("
+          >> nonReservedSymbol "behavior"
+          >> " := "
+          >> (catBehaviorBoth <|> catBehaviorSymbol) >> ")"
+        )
+
+        @[builtin_command_parser]
+        def syntaxCat := leading_parser optional docComment
+          >> "declare_syntax_cat "
+          >> ident
+          >> catBehavior
+        ```
 
 2. 句法解析相关的语法糖
     1. `«macro_rules»`：相当于 `@[macro ...] def ...`

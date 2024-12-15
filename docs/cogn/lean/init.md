@@ -94,7 +94,98 @@
     ```
 
 ### 3.1.2 句法范畴
-1. 层级相关宏
+1. 内置解析器
+
+    ```lean linenums="1" title="Lean/Parser.lean"
+    builtin_initialize
+      register_parser_alias "ws" checkWsBefore { stackSz? := some 0 }
+      register_parser_alias "noWs" checkNoWsBefore { stackSz? := some 0 }
+      register_parser_alias "linebreak" checkLinebreakBefore { stackSz? := some 0 }
+      register_parser_alias (kind := numLitKind) "num" numLit
+      register_parser_alias (kind := strLitKind) "str" strLit
+      register_parser_alias (kind := charLitKind) "char" charLit
+      register_parser_alias (kind := nameLitKind) "name" nameLit
+      register_parser_alias (kind := scientificLitKind) "scientific" scientificLit
+      register_parser_alias (kind := identKind) ident
+      register_parser_alias (kind := hygieneInfoKind) hygieneInfo
+      register_parser_alias "colGt" checkColGt { stackSz? := some 0 }
+      register_parser_alias "colGe" checkColGe { stackSz? := some 0 }
+      register_parser_alias "colEq" checkColEq { stackSz? := some 0 }
+      register_parser_alias "lineEq" checkLineEq { stackSz? := some 0 }
+      register_parser_alias lookahead { stackSz? := some 0 }
+      register_parser_alias atomic { stackSz? := none }
+      register_parser_alias many
+      register_parser_alias many1
+      register_parser_alias manyIndent
+      register_parser_alias many1Indent
+      register_parser_alias optional { autoGroupArgs := false }
+      register_parser_alias withPosition { stackSz? := none }
+      register_parser_alias withoutPosition { stackSz? := none }
+      register_parser_alias withoutForbidden { stackSz? := none }
+      register_parser_alias (kind := interpolatedStrKind) interpolatedStr
+      register_parser_alias orelse
+      register_parser_alias andthen { stackSz? := none }
+      register_parser_alias recover
+    ```
+
+    ```lean linenums="1" title="Lean/Parser/Command.lean"
+    builtin_initialize
+      register_parser_alias (kind := ``declModifiers) "declModifiers" declModifiersF
+      register_parser_alias (kind := ``declModifiers) "nestedDeclModifiers declModifiersT
+      register_parser_alias declId
+      register_parser_alias declSig
+      register_parser_alias declVal
+      register_parser_alias optDeclSig
+      register_parser_alias openDecl
+      register_parser_alias docComment
+    ```
+
+    ```lean linenums="1" title="Lean/Parser/Term.lean"
+    builtin_initialize
+      register_parser_alias sepByIndentSemicolon
+      register_parser_alias sepBy1IndentSemicolon
+      register_parser_alias letDecl
+      register_parser_alias haveDecl
+      register_parser_alias sufficesDecl
+      register_parser_alias letRecDecls
+      register_parser_alias hole
+      register_parser_alias syntheticHole
+      register_parser_alias matchDiscr
+      register_parser_alias bracketedBinder
+      register_parser_alias attrKind
+      register_parser_alias optSemicolon
+    ```
+
+    ```lean linenums="1" title="Lean/Parser/Tactic.lean"
+    builtin_initialize
+      register_parser_alias tacticSeq
+      register_parser_alias tacticSeqIndentGt
+    ```
+
+    ```lean linenums="1" title="Lean/Parser/Do.lean"
+    builtin_initialize
+      register_parser_alias doSeq
+      register_parser_alias termBeforeDo
+    ```
+
+    ```lean linenums="1" title="Lean/Parser/Extra.lean"
+    builtin_initialize
+      register_parser_alias patternIgnore { autoGroupArgs := false }
+      register_parser_alias group { autoGroupArgs := false }
+      register_parser_alias ppHardSpace { stackSz? := some 0 }
+      register_parser_alias ppSpace { stackSz? := some 0 }
+      register_parser_alias ppLine { stackSz? := some 0 }
+      register_parser_alias ppGroup { stackSz? := none }
+      register_parser_alias ppRealGroup { stackSz? := none }
+      register_parser_alias ppRealFill { stackSz? := none }
+      register_parser_alias ppIndent { stackSz? := none }
+      register_parser_alias ppDedent { stackSz? := none }
+      register_parser_alias ppDedentIfGrouped { stackSz? := none }
+      register_parser_alias ppAllowUngrouped { stackSz? := some 0 }
+      register_parser_alias ppHardLineUnlessUngrouped { stackSz? := some 0 }
+    ```
+
+2. 层级相关宏
 
     ```lean linenums="1"
     macro "max" : prec => `(prec| 1024)
@@ -106,7 +197,7 @@
     macro "max_prec" : term => `(1024)
     ```
 
-2. 优先级相关宏
+3. 优先级相关宏
 
     ```lean linenums="1"
     macro "default" : prio => `(prio| 1000)
@@ -116,7 +207,7 @@
     macro "(" p:prio ")" : prio => return p
     ```
 
-3. 组合子运算符
+4. 组合子运算符
 
     ```lean linenums="1"
     syntax:arg stx:max "+" : stx
@@ -786,6 +877,35 @@
           | node (info : SourceInfo) (kind : SyntaxNodeKind) (args : Array Syntax)
           | atom (info : SourceInfo) (val : String)
           | ident (info : SourceInfo) (rawVal : Substring) (val : Name) (preresolved : List Preresolved)
+
+        def mkApp (fn : Term) : (args : TSyntaxArray `term) → Term
+          | #[]  => fn
+          | args => ⟨mkNode `Lean.Parser.Term.app #[fn, mkNullNode args.raw]⟩
+
+        def mkCApp (fn : Name) (args : TSyntaxArray `term) : Term :=
+          mkApp (mkCIdent fn) args
+
+        def mkLit (kind : SyntaxNodeKind) (val : String) (info := SourceInfo.none) : TSyntax kind :=
+          let atom : Syntax := Syntax.atom info val
+          mkNode kind #[atom]
+
+        def mkCharLit (val : Char) (info := SourceInfo.none) : CharLit :=
+          mkLit charLitKind (Char.quote val) info
+
+        def mkStrLit (val : String) (info := SourceInfo.none) : StrLit :=
+          mkLit strLitKind (String.quote val) info
+
+        def mkNumLit (val : String) (info := SourceInfo.none) : NumLit :=
+          mkLit numLitKind val info
+
+        def mkNatLit (val : Nat) (info := SourceInfo.none) : NumLit :=
+          mkLit numLitKind (toString val) info
+
+        def mkScientificLit (val : String) (info := SourceInfo.none) : TSyntax scientificLitKind :=
+          mkLit scientificLitKind val info
+
+        def mkNameLit (val : String) (info := SourceInfo.none) : NameLit :=
+          mkLit nameLitKind val info
 
         structure TSyntax (ks : SyntaxNodeKinds) where
           raw : Syntax
