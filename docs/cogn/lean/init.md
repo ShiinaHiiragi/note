@@ -659,7 +659,7 @@
 
     3. `semiOutParam`：在类型类中标记半输出参数，此时类型类的实例需始终为该参数填充一个值
 
-        ```lean
+        ```lean linenums="1"
         @[reducible]
         def semiOutParam (α : Sort u) : Sort u := α
         ```
