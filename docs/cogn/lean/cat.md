@@ -5,7 +5,7 @@
 1. 定义与声明的相关解析器
     1. `declId`：可能跟随宇宙名称列表的标识符，形如 `foo` 或 `foo.{u,v}`
 
-        ```lean
+        ```lean linenums="1"
         def declId := leading_parser ident
           >> optional (".{"
             >> sepBy1 (recover
@@ -18,7 +18,7 @@
 
     2. `declSig` 与 `optDeclSig`：常量声明时的（可选）参数列表与类型标注，形如 `[...] : type`
 
-        ```lean
+        ```lean linenums="1"
         def declSig := leading_parser many (ppSpace
           >> (Term.binderIdent <|> Term.bracketedBinder)
         )
@@ -32,7 +32,7 @@
 
     3. `declVal`：声明的右半部分，分为三种形式
 
-        ```lean
+        ```lean linenums="1"
         @[run_builtin_parser_attribute_hooks]
         def Term.whereDecls := leading_parser ppDedent ppLine
           >> "where"
@@ -73,7 +73,7 @@
 
     4. `optDeriving`：要求 Lean 生成代码
 
-        ```lean
+        ```lean linenums="1"
         def derivingClasses := sepBy1 (group
           (ident >> optional (" with " >> ppIndent Term.structInst))
         ) ", "
@@ -85,7 +85,7 @@
 
 2. `declaration`：常量声明
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_command_parser]
     def declaration := leading_parser declModifiers false
       >> («abbrev»
@@ -103,7 +103,7 @@
 
     1. `«abbrev»`：缩写，Lean 会将其标记为可约定义（即可展开的定义）
 
-        ```lean
+        ```lean linenums="1"
         def «abbrev» := leading_parser "abbrev "
           >> declId
           >> ppIndent optDeclSig
@@ -112,7 +112,7 @@
 
     2. `definition`：定义常量
 
-        ```lean
+        ```lean linenums="1"
         def optDefDeriving := optional (ppDedent ppLine
           >> atomic ("deriving " >> notSymbol "instance")
           >> sepBy1 ident ", "
@@ -127,7 +127,7 @@
 
     3. `«theorem»`：基本与 `definition` 一致，习惯上用于定理证明
 
-        ```lean
+        ```lean linenums="1"
         def «theorem» := leading_parser "theorem "
           >> recover declId skipUntilWsOrDelim
           >> ppIndent declSig
@@ -136,7 +136,7 @@
 
     4. `«opaque»`：不透明常量．不执行类型检查，未提供值时利用 `Inhabited` 类型类创建默认值
 
-        ```lean
+        ```lean linenums="1"
         def «opaque» := leading_parser "opaque "
           >> recover declId skipUntilWsOrDelim
           >> ppIndent declSig
@@ -145,7 +145,7 @@
 
     5. `«instance»`：类型类重载实例
 
-        ```lean
+        ```lean linenums="1"
         def «instance» := leading_parser Term.attrKind
           >> "instance"
           >> optNamedPrio
@@ -156,7 +156,7 @@
 
     6. `«axiom»`：声明公理，可能破坏逻辑一致性
 
-        ```lean
+        ```lean linenums="1"
         def «axiom» := leading_parser "axiom "
           >> recover declId skipUntilWsOrDelim
           >> ppIndent declSig
@@ -164,7 +164,7 @@
 
     7. `«example»`：声明一个无名且不永久保存的定理
 
-        ```lean
+        ```lean linenums="1"
         def «example» := leading_parser "example"
           >> ppIndent optDeclSig
           >> declVal
@@ -172,7 +172,7 @@
 
     8. `«inductive»`：归纳类型，包括可以选择的枚举类型与可以包含自身实例的递归类型
 
-        ```lean
+        ```lean linenums="1"
         def ctor := leading_parser atomic (optional docComment >> "\n| ")
           >> ppGroup (declModifiers true >> rawIdent >> optDeclSig)
 
@@ -199,7 +199,7 @@
         !!! note "构造子简化"
             当归纳类型可以被推断时，构造子命名空间可以省略，但需要保留点号
 
-            ```lean
+            ```lean linenums="1"
             @[builtin_term_parser]
             def dotIdent := leading_parser "."
               >> checkNoWsBefore
@@ -208,7 +208,7 @@
 
     1.  `classInductive`：归纳类型类
 
-        ```lean
+        ```lean linenums="1"
         def classInductive := leading_parser atomic (group (symbol "class " >> "inductive "))
           >> recover declId skipUntilWsOrDelim
           >> ppIndent optDeclSig
@@ -219,7 +219,7 @@
 
     2.  `«structure»`：定义结构体与类型类，本质是只有一个分支的归纳类型
 
-        ```lean
+        ```lean linenums="1"
         def structureTk := leading_parser "structure "
         def classTk := leading_parser "class "
 
@@ -269,7 +269,7 @@
             2. 扩展字段记号为被继承结构的字段提供了额外支持
             3. 指定多重继承时，仅创建第一条到父结构体的 `to` 前缀字段，余下字段直接复制，其他 `to` 前缀函数自动生成
 
-            ```lean
+            ```lean linenums="1"
             structure Person where
               name : String
               age : Nat
@@ -323,7 +323,7 @@
 
             1. `structInst`：形如 `{ x := e, ... }`
 
-                ```lean
+                ```lean linenums="1"
                 def structInstFieldAbbrev := leading_parser atomic (ident
                   >> notFollowedBy ("." <|> ":=" <|> symbol "[") "ERROR INFO"
                 )
@@ -351,7 +351,7 @@
 
             2. `anonymousCtor`：匿名构造子，形如 `⟨e, ...⟩`
 
-                ```lean
+                ```lean linenums="1"
                 @[builtin_term_parser]
                 def anonymousCtor := leading_parser "⟨"
                   >> withoutPosition (withoutForbidden
@@ -365,7 +365,7 @@
 
             3. `tuple`：有序对构造子，形如 `(e, ...)`
 
-                ```lean
+                ```lean linenums="1"
                 @[builtin_term_parser]
                 def tuple := leading_parser "("
                   >> optional (withoutPosition (withoutForbidden (termParser
@@ -381,7 +381,7 @@
 
 3. `declModifiers`：声明修饰符
 
-    ```lean
+    ```lean linenums="1"
     def declModifiers (inline : Bool) := leading_parser optional docComment
       >> optional (Term.«attributes» >> if inline then skip else ppDedent ppLine)
       >> optional visibility
@@ -392,7 +392,7 @@
 
     1. `docComment`：文档注释，不可单独使用
 
-        ```lean
+        ```lean linenums="1"
         def docComment := leading_parser ppDedent $ "/--"
           >> ppSpace
           >> commentBody
@@ -404,7 +404,7 @@
 
     2. `attributes`：属性，即与对象相关联的标签
 
-        ```lean
+        ```lean linenums="1"
         def «scoped» := leading_parser "scoped "
         def «local» := leading_parser "local "
         def attrKind := leading_parser optional («scoped» <|> «local»)
@@ -419,7 +419,7 @@
 
     3. `visibility`：修改定义在命名空间外的可见性，本质是阻止 Lean 创建较短的别名
 
-        ```lean
+        ```lean linenums="1"
         def «private» := leading_parser "private "
         def «protected» := leading_parser "protected "
 
@@ -428,26 +428,26 @@
 
     4. `«noncomputable»`：不可计算函数
 
-        ```lean
+        ```lean linenums="1"
         def «noncomputable» := leading_parser "noncomputable "
         ```
 
     5. `«unsafe»`：使用了不安全特性的函数．普通函数不能直接调用 `unsafe` 函数
 
-        ```lean
+        ```lean linenums="1"
         def «unsafe» := leading_parser "unsafe "
         ```
 
     6. `«partial»`：非全函数，即不一定停机的函数
 
-        ```lean
+        ```lean linenums="1"
         def «partial» := leading_parser "partial "
         ```
 
 4. 变量声明
     1. `«universe»`：宇宙变量
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_command_parser]
         def «universe» := leading_parser "universe"
           >> many1 (ppSpace >> checkColGt >> ident)
@@ -455,7 +455,7 @@
 
     2. `«variable»`：函数变量，指示 Lean 将声明的变量作为绑定变量插入定义中
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_command_parser]
         def «variable» := leading_parser "variable"
           >> many1 (ppSpace >> checkColGt >> Term.bracketedBinder)
@@ -464,7 +464,7 @@
 5. 补充定义
     1. `«attribute»`：为定义指定属性
 
-        ```lean
+        ```lean linenums="1"
         def eraseAttr := leading_parser "-" >> rawIdent
 
         @[builtin_command_parser]
@@ -477,7 +477,7 @@
 
     2. `«deriving»`：为类型定义派生实例
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_command_parser]
         def «deriving» := leading_parser "deriving "
           >> "instance "
@@ -491,7 +491,7 @@
 
     1. `namespace`：将一系列声明放在命名空间
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_command_parser]
         def «namespace» := leading_parser "namespace "
           >> checkColGt
@@ -504,7 +504,7 @@
 
     2. `«section»`：小节，限制 `variable` 的作用范围
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_command_parser]
         def «section» := leading_parser "section"
           >> optional (ppSpace >> checkColGt >> ident)
@@ -515,7 +515,7 @@
 
     3. `«end»`：封闭 `namespace` 与 `section`
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_command_parser]
         def «end» := leading_parser "end"
           >> optional (ppSpace >> checkColGt >> ident)
@@ -523,7 +523,7 @@
 
     4. `«set_option»`：改变 Lean 行为，生效范围限制在命名空间、小节或文件内
 
-        ```lean
+        ```lean linenums="1"
         def optionValue := nonReservedSymbol "true"
           <|> nonReservedSymbol "false"
           <|> strLit
@@ -539,7 +539,7 @@
 2. `«open»` 与 `«export»`
     1. `«open»`：在不显式指定的情况下使用对应命名空间内的名称，本质为常量创建了别名
 
-        ```lean
+        ```lean linenums="1"
         def openHiding := leading_parser ppSpace
           >> atomic (ident >> " hiding")
           >> many1 (ppSpace >> checkColGt >> ident)
@@ -580,7 +580,7 @@
         1. 在当前命名空间无需前缀 `Some.Namespace` 即可访问
         2. 在 `export` 所在命名空间 `N` 之外以 `N.name₁` 与 `N.name₂` 形式访问
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_command_parser]
         def «export» := leading_parser "export "
           >> ident
@@ -591,7 +591,7 @@
 
 3. `«mutual»`：包围互相调用的代码
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_command_parser]
     def «mutual» := leading_parser "mutual"
       >> many1 (ppLine >> notSymbol "end" >> commandParser)
@@ -601,7 +601,7 @@
 ### 2.1.3 句法解析
 1. `«syntax»`：句法解析
 
-    ```lean
+    ```lean linenums="1"
     def namedName := leading_parser atomic (" (" >> nonReservedSymbol "name")
       >> " := "
       >> ident
@@ -625,7 +625,7 @@
 2. 句法解析相关的语法糖
     1. `«macro_rules»`：相当于 `@[macro ...] def ...`
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_command_parser]
         def «macro_rules» := suppressInsideQuot <| leading_parser optional docComment
           >> optional Term.«attributes»
@@ -637,7 +637,7 @@
 
     2. `«elab_rules»`：相当于 `@[command_elab ...] def ...`
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_command_parser]
         def «elab_rules» := leading_parser suppressInsideQuot <| optional docComment
           >> optional Term.«attributes»
@@ -651,7 +651,7 @@
 
     3. `«macro»`：相当于 `syntax` 与 `macro`
 
-        ```lean
+        ```lean linenums="1"
         def macroArg := leading_parser optional (atomic (ident
           >> checkNoWsBefore "no space before ':'"
           >> ":"
@@ -677,7 +677,7 @@
 
         1. `«notation»`
 
-            ```lean
+            ```lean linenums="1"
             def notationItem := ppSpace
               >> withAntiquot (mkAntiquot "notationItem" decl_name%) (strLit <|> identPrec)
 
@@ -696,7 +696,7 @@
 
         2. `«mixfix»`
 
-            ```lean
+            ```lean linenums="1"
             def «prefix» := leading_parser "prefix"
             def «infix» := leading_parser "infix"
             def «infixl» := leading_parser "infixl"
@@ -720,7 +720,7 @@
 
     4. `«elab»`：相当于 `syntax` 与 `elab`
 
-        ```lean
+        ```lean linenums="1"
         def elabArg  := macroArg
         def elabTail := leading_parser atomic (" : " >> ident >> optional (" <= " >> ident))
           >> darrow
@@ -741,7 +741,7 @@
 ### 2.1.4 辅助指令
 1. `eval`：使用快速字节码求值器对项进行求值
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_command_parser]
     def eval := leading_parser "#eval "
       >> termParser
@@ -749,7 +749,7 @@
 
 2. `#reduce`：使用内核类型检查程序对项进行归约，直到无法再进行归约
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_command_parser]
     def reduce := leading_parser "#reduce "
       >> termParser
@@ -757,7 +757,7 @@
 
 3. `check`：仅检查项的类型而不求值
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_command_parser]
     def check := leading_parser "#check "
       >> termParser
@@ -765,7 +765,7 @@
 
 4. `print`：揭示数据类型和定义的内部结构
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_command_parser]
     def print := leading_parser "#print "
       >> (ident <|> strLit)
@@ -773,7 +773,7 @@
 
     1. `printAxioms`：列出依赖公理
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_command_parser]
         def printAxioms := leading_parser "#print "
           >> nonReservedSymbol "axioms "
@@ -782,7 +782,7 @@
 
     2. `printEqns`：列出等式
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_command_parser]
         def printEqns := leading_parser "#print "
           >> (nonReservedSymbol "equations " <|> nonReservedSymbol "eqns ")
@@ -792,14 +792,14 @@
 ### 2.1.5 特殊指令
 1. `«init_quot»`：定义类型 `α` 上的二元关系 `r` 形成的商 `Quot r`
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_command_parser]
     def «init_quot» := leading_parser "init_quot"
     ```
 
     增加四个定义
 
-    ```lean
+    ```lean linenums="1"
     opaque Quot {α : Sort u} (r : α → α → Prop) : Sort u
     opaque Quot.mk {α : Sort u} (r : α → α → Prop) (a : α) : Quot r
 
@@ -816,7 +816,7 @@
 
 2. `addDocString`：将文档注释添加到现有声明，替换既存文档注释
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_command_parser]
     def addDocString := leading_parser docComment
       >> "add_decl_doc "
@@ -827,7 +827,7 @@
 ### 2.3.1 宇宙与类型
 1. `Type`、`Sort` 与 `Prop`：类型、分类与命题
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_term_parser]
     def type := leading_parser "Type"
       >> optional (checkWsBefore ""
@@ -865,7 +865,7 @@
 
     2. `explicitUniv`：显式标识层级
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_term_parser]
         def explicitUniv : TrailingParser := trailing_parser checkStackTop isIdent "ERROR INFO"
           >> checkNoWsBefore "ERROR INFO"
@@ -877,7 +877,7 @@
 2. 函数类型表达式
     1. `arrow`：箭头表达式，右结合
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_term_parser]
         def arrow := trailing_parser checkPrec 25
           >> unicodeSymbol " → " " -> "
@@ -886,7 +886,7 @@
 
     2. `depArrow` 与 `«forall»`：依值箭头表达式与任意符号，左结合
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_term_parser]
         def depArrow := leading_parser:25 bracketedBinder true
           >> unicodeSymbol " → " " -> "
@@ -903,7 +903,7 @@
 3. 类型归属与类型（命题）标注
     1. `typeAscription`：类型归属记号，指示 Lean 将表达式解释为指定类型
 
-        ```lean
+        ```lean linenums="1"
         def typeAscription := leading_parser "("
           >> (withoutPosition (withoutForbidden
             (termParser >> " :" >> optional (ppSpace >> termParser))
@@ -913,7 +913,7 @@
 
     2. `typeSpec` 与 `optType`：通用（可选）类型标注
 
-        ```lean
+        ```lean linenums="1"
         def typeSpec := leading_parser " : " >> termParser
         def optType : Parser := optional typeSpec
         ```
@@ -922,7 +922,7 @@
             1. 每个项都有对应类型，因此冒号右侧的项必然存在
             2. 并非所有项都是类型，例如下述声明不合法：
 
-                ```lean
+                ```lean linenums="1"
                 class Plus (α : Type) where
                   plus : α → α → α
 
@@ -932,7 +932,7 @@
 
     3. `«show»`：命题标注
 
-        ```lean
+        ```lean linenums="1"
         def byTactic' := leading_parser "by "
           >> Tactic.tacticSeqIndentGt
 
@@ -950,7 +950,7 @@
         !!! note "倒推"
             从目标向后推理的结构化方法，将原证明目标转移到假设
 
-            ```lean
+            ```lean linenums="1"
             def sufficesDecl := leading_parser (atomic (group (binderIdent >> " : ")) <|> hygieneInfo)
               >> termParser
               >> ppSpace
@@ -960,7 +960,7 @@
 ### 2.3.2 函数与应用
 1. `bracketedBinder`：括号绑定器
 
-    ```lean
+    ```lean linenums="1"
     def binderType (requireType := false) : Parser := if requireType
       then node nullKind (" : " >> termParser)
       else optional (" : " >> termParser)
@@ -986,7 +986,7 @@
 
     1. `explicitBinder`：显式绑定器，形如 `(x y : A)` 或 `(x y)`，可通过 `(x : A := v)` 或 `(x : A := by tac)` 指定默认值
 
-        ```lean
+        ```lean linenums="1"
         def explicitBinder (requireType := false) := leading_parser ppGroup <| "("
           >> withoutPosition (many1 binderIdent
             >> binderType requireType
@@ -997,7 +997,7 @@
 
     2. `implicitBinder`：隐式绑定器，形如 `{x y : A}` 或 `{x y}`
 
-        ```lean
+        ```lean linenums="1"
         def implicitBinder (requireType := false) := leading_parser ppGroup <| "{"
           >> withoutPosition (many1 binderIdent >> binderType requireType)
           >> "}"
@@ -1008,7 +1008,7 @@
 
     3. `strictImplicitBinder`：严格隐式绑定器，形如 `⦃x y : A⦄`、`{{x y : A}}`、`⦃x y⦄` 或 `{{x y}}`
 
-        ```lean
+        ```lean linenums="1"
         def strictImplicitLeftBracket := atomic (group (symbol "{" >> "{")) <|> "⦃"
         def strictImplicitRightBracket := atomic (group (symbol "}" >> "}")) <|> "⦄"
 
@@ -1024,7 +1024,7 @@
 
     4. `instBinder`：实例绑定器，形如 `[C]` 或 `[inst : C]`．Lean 通过归一化找到唯一能通过类型检查的参数值
 
-        ```lean
+        ```lean linenums="1"
         def optIdent : Parser := optional (atomic (ident >> " : "))
 
         def instBinder := leading_parser ppGroup <| "["
@@ -1038,7 +1038,7 @@
 
 2. `«fun»`：$\lambda$ 表达式，即匿名函数．变量名部分支持单项模式匹配
 
-    ```lean
+    ```lean linenums="1"
     def funStrictImplicitBinder := atomic (lookahead (strictImplicitLeftBracket
       >> many1 binderIdent
       >> (symbol " : " <|> strictImplicitRightBracket)
@@ -1072,7 +1072,7 @@
         1. 用 `·` 表示参数，括号内的表达式表示函数体
         2. `paren` 也是普通括号的句法
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_term_parser]
         def paren := leading_parser "("
           >> withoutPosition (withoutForbidden (ppDedentIfGrouped termParser))
@@ -1081,7 +1081,7 @@
 
 3. 应用：左结合，可使用 `<|` 改变结合顺序
 
-    ```lean
+    ```lean linenums="1"
     def namedArgument := leading_parser atomic ("(" >> ident >> " := ")
       >> withoutPosition termParser
       >> ")"
@@ -1101,7 +1101,7 @@
 
 4. 扩展字段记号：若 `e : T`，则可将 `T.f e` 简记为 `e.f`，`f` 可以是索引或标识符．也称作投影记号
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_term_parser]
     def proj := trailing_parser checkNoWsBefore
       >> "."
@@ -1116,7 +1116,7 @@
 ### 2.3.3 标识符与字面值
 1. 标识符与占位符
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_term_parser]
     def ident := checkPrec maxPrec >> Parser.ident
 
@@ -1135,7 +1135,7 @@
 
 2. 字面值：包括整数、浮点数、字符串、字符与名称
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_term_parser]
     def num : Parser := checkPrec maxPrec >> numLit
     @[builtin_term_parser]
@@ -1150,7 +1150,7 @@
 
     1. `doubleQuotedName`：表示 `Name` 元素，但会请求 Lean 静态检查名称是否位于声明范围内
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_term_parser]
         def doubleQuotedName := leading_parser "`"
           >> checkNoWsBefore
@@ -1160,7 +1160,7 @@
 
     2. `quot` 与 `precheckedQuot`：（一系列）命令的句法引用，使用 `:` 指定句法成分种类
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_term_parser low]
         def quot := leading_parser "`("
           >> withoutPosition (incQuotDepth (many1Unbox commandParser))
@@ -1174,7 +1174,7 @@
 ### 2.3.4 局部定义
 1. `«let»`：局部定义可用的表达式（称为主体）必须在新行上，且列数不大于 `let` 关键字的所在列
 
-    ```lean
+    ```lean linenums="1"
     def letIdBinder := withAntiquot (mkAntiquot "letIdBinder" decl_name% (isPseudoKind := true))
       <| binderIdent <|> bracketedBinder
     def letIdLhs : Parser := binderIdent
@@ -1202,7 +1202,7 @@
 
 2. `«letrec»`：递归 `let` 定义必须通过编写 `let rec` 明确表示
 
-    ```lean
+    ```lean linenums="1"
     def letRecDecl := leading_parser optional Command.docComment
       >> optional «attributes»
       >> letDecl
@@ -1218,7 +1218,7 @@
 
 3. `«have»`：形如 `have := e`、`have f x1 x2 := e`、`have pat := e` 或 `have f | pat1 => e1 | pat2 => e2 ...`
 
-    ```lean
+    ```lean linenums="1"
     def haveId := leading_parser (withAnonymousAntiquot := false) (ppSpace >> binderIdent)
       <|> hygieneInfo
     def haveIdLhs := haveId
@@ -1243,7 +1243,7 @@
 4. 单句命令
     1. `«open»`：作用于单独语句的 `open`
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_term_parser]
         def «open» := leading_parser:leadPrec "open"
             >> Command.openDecl
@@ -1252,7 +1252,7 @@
 
     2. `«set_option»`：作用于单独语句的 `set_option`
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_term_parser]
         def «set_option» := leading_parser:leadPrec "set_option "
           >> identWithPartialTrailingDot
@@ -1265,7 +1265,7 @@
 ### 2.3.5 其他记号
 1. `«match»`：模式匹配，形如 `match e, ... with | p, ... => f | ...`，分支条件可以重叠（使用第一个匹配项），不可遗漏
 
-    ```lean
+    ```lean linenums="1"
     def trueVal := leading_parser nonReservedSymbol "true"
     def falseVal := leading_parser nonReservedSymbol "false"
     def generalizingParam := leading_parser atomic ("(" >> nonReservedSymbol "generalizing")
@@ -1313,7 +1313,7 @@
 
 2. `«do»`：单子的简便记法
 
-    ```lean
+    ```lean linenums="1"
     def doSeqItem := leading_parser ppLine
       >> doElemParser
       >> optional "; "
@@ -1338,7 +1338,7 @@
     3. 对于 `do { E₁ S; ...; Eₙ }`，译为 `E₁ >>= fun () => do { S; ...; Eₙ }`
     4. 对于 `do { let x := E₁; S; ...; Eₙ }`，译为
 
-        ```lean
+        ```lean linenums="1"
         let x := E₁
         do { S; ...; Eₙ }
         ```
@@ -1346,7 +1346,7 @@
     !!! note "do 记号内的类型"
         忽略 `let x := E`．设 `S₁, S₂, ⋯, Sₙ` 为语句 `Eᵢ` 或 `let x ← Eᵢ`，`Eᵢ` 与 `E` 为表达式，则下述语句块
 
-        ```lean
+        ```lean linenums="1"
         do S₁
             S₂
             ...
@@ -1356,7 +1356,7 @@
 
         可译为
 
-        ```lean
+        ```lean linenums="1"
         E₁ >>= fun x₁ =>
           E₂ >>= fun x₂ =>
             ...
@@ -1366,7 +1366,7 @@
 
         其中 `xᵢ` 是 `αᵢ` 元素或 `()` 的简记．设 `m` 为单子类型，`α₁, α₂, ⋯, αₙ, β` 为任意类型，则
 
-        ```lean
+        ```lean linenums="1"
         E₁ : m α₁
         E₂ : m α₂
         ...
@@ -1380,7 +1380,7 @@
 
 3. `byTactic`：证明策略，指示 Lean 如何构建证明
 
-    ```lean
+    ```lean linenums="1"
     def tacticSeq1Indented : Parser := leading_parser sepBy1IndentSemicolon tacticParser
     def tacticSeqBracketed : Parser := leading_parser "{"
       >> sepByIndentSemicolon tacticParser
@@ -1399,7 +1399,7 @@
 
 4. `Termination.suffix`：停机性证明
 
-    ```lean
+    ```lean linenums="1"
     def terminationBy := leading_parser "termination_by "
       >> optional (atomic (many (ppSpace >> Term.binderIdent) >> " => "))
       >> termParser
@@ -1462,14 +1462,14 @@
 ## 2.4 策略范畴
 1. `«unknown»`：无法识别策略的回落机制
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_tactic_parser]
     def «unknown» := leading_parser withPosition (ident >> errorAtSavedPos "ERROR INFO" true)
     ```
 
 2. `«match»`：策略内模式匹配
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_tactic_parser]
     def «match» := leading_parser:leadPrec "match "
       >> optional Term.generalizingParam
@@ -1485,14 +1485,14 @@
 
 3. `decide`：用于可判定相等性的目标
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_tactic_parser]
     def decide := leading_parser nonReservedSymbol "decide"
     ```
 
     `native_decide`：使用 `#eval` 对可判定性实例求值，效率高于 `decide`
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_tactic_parser]
     def nativeDecide := leading_parser nonReservedSymbol "native_decide"
     ```
@@ -1500,7 +1500,7 @@
 4. 内建表达式策略
     1. `«open»`
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_tactic_parser]
         def «open» := leading_parser:leadPrec "open "
           >> Command.openDecl
@@ -1509,7 +1509,7 @@
 
     2. `«set_option»`
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_tactic_parser]
         def «set_option» := leading_parser:leadPrec "set_option "
           >> identWithPartialTrailingDot
@@ -1526,7 +1526,7 @@
 ### 2.6.1 层级范畴
 1. `num`、`ident` 与 `hole`：数字、标识符与占位符
 
-    ```lean
+    ```lean linenums="1"
 
     @[builtin_level_parser]
     def num := checkPrec maxPrec
@@ -1542,7 +1542,7 @@
 
 2. 最大层级与层级增加，其中 `imax u v` 在 `v` 为 `0` 时得到 `0`
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_level_parser]
     def paren := leading_parser "("
       >> withoutPosition levelParser
@@ -1564,7 +1564,7 @@
 ### 2.6.2 优先级范畴
 1. `numPrio`：用于各种声明
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_prio_parser]
     def numPrio := checkPrec maxPrec
       >> numLit
@@ -1578,7 +1578,7 @@
 
 2. `numPrec`：用于句法或宏等元编程声明
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_prec_parser]
     def numPrec := checkPrec maxPrec
       >> numLit
@@ -1592,7 +1592,7 @@
 1. 基础表达式
     1. `doLet` 与 `doLetRec`：`let` 局部定义
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_doElem_parser]
         def doLet := leading_parser "let "
           >> optional "mut "
@@ -1605,7 +1605,7 @@
 
     2. `doExpr`：作为语句的项
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_doElem_parser]
         def doExpr := leading_parser notFollowedByRedefinedTermToken
           >> termParser
@@ -1614,7 +1614,7 @@
 
         1. `liftMethod`：简单提升嵌套活动．只能用于 `do` 语句块中
 
-            ```lean
+            ```lean linenums="1"
             @[builtin_term_parser]
             def liftMethod := leading_parser:minPrec leftArrow
               >> termParser
@@ -1622,7 +1622,7 @@
 
         2. `doReturn`：`return e` 将包围块求值为 `pure e`，跳过所有更深层的语句
 
-            ```lean
+            ```lean linenums="1"
             @[builtin_doElem_parser]
             def doReturn := leading_parser:leadPrec withPosition ("return"
               >> optional (ppSpace >> checkLineEq >> termParser)
@@ -1631,7 +1631,7 @@
 
     3. `doLetArrow`：左箭头表达式
 
-        ```lean
+        ```lean linenums="1"
         def doIdDecl := leading_parser atomic (ident >> optType >> ppSpace >> leftArrow)
           >> doElemParser
         def doPatDecl := leading_parser atomic (termParser >> ppSpace >> leftArrow)
@@ -1648,7 +1648,7 @@
 2. 附加特性
     1. `doIf` 与 `doUnless`：条件语句
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_doElem_parser]
         def doIf := leading_parser withResetCache
           <| withPositionAfterLinebreak
@@ -1671,7 +1671,7 @@
 
     2. `doFor`：循环语句
 
-        ```lean
+        ```lean linenums="1"
         def doForDecl := leading_parser optional (atomic (ident >> " : "))
           >> termParser
           >> " in "
@@ -1686,7 +1686,7 @@
 
     3. `doMatch`：模式匹配
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_doElem_parser]
         def doMatch := leading_parser:leadPrec "match "
           >> optional Term.generalizingParam
@@ -1698,7 +1698,7 @@
 
     4. `doBreak`、`doContinue` 与 `doReturn`：控制语句
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_doElem_parser]
         def doBreak := leading_parser "break"
 
@@ -1713,7 +1713,7 @@
 
     5. `doNested`：嵌套 `do` 语句块
 
-        ```lean
+        ```lean linenums="1"
         @[builtin_doElem_parser]
         def doNested := leading_parser "do "
           >> doSeq

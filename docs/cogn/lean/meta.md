@@ -3,7 +3,7 @@
 ## 4.1 句法解析参考
 - Lean 内部解析器使用宏 `leading_parser parser` 或 `trailing_parser parser` 进行句法解析，前者调用函数 `leadingNode` 从而创建节点 `node name parser`，其中 `name : SyntaxNodeKind` 是节点种类
 
-    ```lean
+    ```lean linenums="1"
     @[builtin_term_parser]
     def «leading_parser» := leading_parser:leadPrec "leading_parser"
       >> optExprPrecedence
@@ -25,7 +25,7 @@
 ### 4.1.1 解析器
 1. `CategoryParser`：特定范畴的句法解析器
 
-    ```lean
+    ```lean linenums="1"
     def termParser                (prec : Nat := 0) : Parser := categoryParser `term    prec
     @[inline] def commandParser    (rbp : Nat := 0) : Parser := categoryParser `command  rbp
     @[inline] def attrParser       (rbp : Nat := 0) : Parser := categoryParser `attr     rbp
@@ -54,7 +54,7 @@
     4. `lineEq`：要求当前词元的行位置与保存位置相同
 5. Pretty Printer：不读入字符，仅提出对 Pretty Printer 输出的建议
 
-    ```lean
+    ```lean linenums="1"
     @[inline] def ppHardSpace               : Parser := skip
     @[inline] def ppSpace                   : Parser := skip
     @[inline] def ppLine                    : Parser := skip

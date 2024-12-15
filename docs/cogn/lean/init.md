@@ -4,7 +4,7 @@
 1. Lean 启动时自动导入库中 `Init` 模块的内容
 2. 定义范畴如下
 
-    ```lean
+    ```lean linenums="1"
     structure Parser.Category
 
     namespace Parser.Category
@@ -23,7 +23,7 @@
 ### 3.1.1 项范畴
 1. 条件表达式
 
-    ```lean
+    ```lean linenums="1"
     @[macro_inline]
     def ite {α : Sort u} (c : Prop) [h : Decidable c] (t e : α) : α :=
       h.casesOn (fun _ => e) (fun _ => t)
@@ -34,7 +34,7 @@
     ```
 
     1. `termIfThenElse`：通用 `if` 表达式
-        ```lean
+        ```lean linenums="1"
         @[inherit_doc ite]
         syntax (name := termIfThenElse) ppRealGroup(
           ppRealFill(ppIndent("if " term " then") ppSpace term)
@@ -45,7 +45,7 @@
 
     2. `termIfLet`：可使用模式匹配，在某些场景下能代替 `match`
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := termIfLet) ppRealGroup(
           ppRealFill(ppIndent("if " "let " term " := " term " then") ppSpace term)
           ppDedent(ppSpace)
@@ -55,7 +55,7 @@
 
     3. `termDepIfThenElse`：绑定一个证据变量，在 `then` 分支提供命题的证明，在 `else` 分支提供命题的证伪
 
-        ```lean
+        ```lean linenums="1"
         @[inherit_doc dite] syntax (name := termDepIfThenElse) ppRealGroup(
           ppRealFill(
             ppIndent("if " Lean.binderIdent " : " term " then")
@@ -69,7 +69,7 @@
 
 2. 计算式：定义 `Trans` 类型类实例后可以配置为任意形式的关系式
 
-    ```lean
+    ```lean linenums="1"
     syntax (name := calc) "calc" calcSteps : term
 
     @[inherit_doc «calc»]
@@ -82,21 +82,21 @@
 
 3. 管道符：用 `f <| x` 或 `x |> f` 表示 `f x`，用 `f <| g <| x` 表示 `f (g x)`
 
-    ```lean
+    ```lean linenums="1"
     syntax:min term " <| " term:min : term
     syntax:min term " |> " term:min1 : term
     ```
 
 4. 字符串插值：组合子 `interpolatedStr` 解析含有 `{term}` 的字符串，将其解释为项（而非字符串）
 
-    ```lean
+    ```lean linenums="1"
     syntax:max "s!" interpolatedStr(term) : term
     ```
 
 ### 3.1.2 句法范畴
 1. 层级相关宏
 
-    ```lean
+    ```lean linenums="1"
     macro "max" : prec => `(prec| 1024)
     macro "arg" : prec => `(prec| 1023)
     macro "lead" : prec => `(prec| 1022)
@@ -108,7 +108,7 @@
 
 2. 优先级相关宏
 
-    ```lean
+    ```lean linenums="1"
     macro "default" : prio => `(prio| 1000)
     macro "low" : prio => `(prio| 100)
     macro "mid" : prio => `(prio| 500)
@@ -118,7 +118,7 @@
 
 3. 组合子运算符
 
-    ```lean
+    ```lean linenums="1"
     syntax:arg stx:max "+" : stx
     syntax:arg stx:max "*" : stx
     syntax:arg stx:max "?" : stx
@@ -134,7 +134,7 @@
 1. 改变证明目标
     1. `apply`：整合结论与当前目标中的表达式，并为剩余的未证明部分创建新目标
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := apply) "apply " term : tactic
 
         syntax (name := applyRfl) "apply_rfl" : tactic
@@ -146,7 +146,7 @@
 
     2. `exact`：当目标类型与提供的表达式类型相同时，关闭主要目标
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := exact) "exact " term : tactic
 
         syntax (name := refine) "refine " term : tactic
@@ -158,7 +158,7 @@
 
     3. `intro`：引入任何类型的变量
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := intro) "intro" notFollowedBy("|") (ppSpace colGt term:max)* : tactic
         ```
 
@@ -167,13 +167,13 @@
 
     4. `revert`：将假设（以及上下文中所有依赖它的后续元素）还原到目标，产生一个蕴含；相当于 `intro` 的逆操作
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := revert) "revert" (ppSpace colGt term:max)+ : tactic
         ```
 
     5. `generalize`：将目标中的任意表达式替换为新的变量
 
-        ```lean
+        ```lean linenums="1"
         syntax generalizeArg := atomic(ident " : ")? term:51 " = " ident
         syntax (name := generalize) "generalize " generalizeArg,+ (location)? : tactic
         ```
@@ -184,14 +184,14 @@
 
 2. 证明结构化
 
-    ```lean
+    ```lean linenums="1"
     syntax casesTarget := atomic(ident " : ")? term
     syntax inductionAlts := " with" (ppSpace tactic)? withPosition((colGe inductionAlt)+)
     ```
 
     1. `case`：子目标分支
 
-        ```lean
+        ```lean linenums="1"
         syntax caseArg := binderIdent (ppSpace binderIdent)*
         syntax (name := case) "case " sepBy1(caseArg, " | ") " => " tacticSeq : tactic
         ```
@@ -202,7 +202,7 @@
 
     2. `cases`：分解归纳类型，当接续表达式（`cases e`）时 相当于 `generalize e = n; cases n`
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := cases) "cases " casesTarget,+ (" using " term)? (inductionAlts)? : tactic
         ```
 
@@ -211,7 +211,7 @@
 
     3. `induction`：归纳证明
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := induction) "induction " term,+ (" using " term)?
           (" generalizing" (ppSpace colGt term:max)+)? (inductionAlts)? : tactic
         ```
@@ -222,20 +222,20 @@
 
     4. `split`：分割嵌套的 `if` 或 `match` 结构
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := split) "split" (ppSpace colGt term)? (location)? : tactic
         ```
 
     5. `cdot`：匿名分支目标，可用于 `case` 或 `cases`
 
-        ```lean
+        ```lean linenums="1"
         syntax cdotTk := patternIgnore("· " <|> ". ")
         syntax (name := cdot) cdotTk tacticSeqIndentGt : tactic
         ```
 
 3. 启发式自动化
 
-    ```lean
+    ```lean linenums="1"
     syntax config := atomic(" (" &"config") " := " withoutPosition(term) ")"
 
     syntax locationWildcard := " *"
@@ -245,7 +245,7 @@
 
     1. `rfl`：相当于 `exact rfl`
 
-        ```lean
+        ```lean linenums="1"
         syntax "rfl" : tactic
         syntax (name := eqRefl) "eq_refl" : tactic
         syntax (name := applyRfl) "apply_rfl" : tactic
@@ -253,7 +253,7 @@
 
     2. `rewrite` 或 `rw`：依次利用一系列类型断定为等式的项对目标进行重写，并在得到形如 `t = t` 的恒等式后自动关闭证明
 
-        ```lean
+        ```lean linenums="1"
         syntax rwRule := patternIgnore("← " <|> "<- ")? term
         syntax rwRuleSeq := " [" withoutPosition(rwRule,*,?) "]"
 
@@ -266,7 +266,7 @@
 
     3. `simp`：反复重写目标项，以任意顺序在任何适用位置重复应用等式
 
-        ```lean
+        ```lean linenums="1"
         syntax discharger :=
           atomic(" (" patternIgnore(&"discharger" <|> &"disch")) " := " withoutPosition(tacticSeq) ")"
 
@@ -287,7 +287,7 @@
 
     4. `assumption`：在当前目标的背景下查看假设，若有与结论相匹配的假设，则应用此假设
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := assumption) "assumption" : tactic
 
         syntax "‹" withoutPosition(term) "›" : term
@@ -296,13 +296,13 @@
 
     5. `contradiction`：搜索当前目标假设中的矛盾
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := contradiction) "contradiction" : tactic
         ```
 
     6. `injection`：若 `c` 是归纳类型的构造子，则 `(c m₁ n₁) = (c m₂ n₂)` 蕴含 `m₁ = m₂` 与 `n₁ = n₂`
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := injection) "injection " term
           (" with" (ppSpace colGt (ident <|> hole))+)? : tactic
         ```
@@ -310,13 +310,13 @@
 4. 组合器：与其他策略组合使用
     1. `try`：尝试使用策略，不返回错误
 
-        ```lean
+        ```lean linenums="1"
         macro "try " t:tacticSeq : tactic => `(tactic| first | $t | skip)
         ```
 
     2. `repeat`：多次使用某个策略
 
-        ```lean
+        ```lean linenums="1"
         syntax "repeat " tacticSeq : tactic
         macro_rules
           | `(tactic| repeat $seq) => `(tactic| first | ($seq); repeat $seq | skip)
@@ -331,7 +331,7 @@
 
     3. `tac <;> tac'`：在主要目标上运行 `tac`，并对产生的每个子目标使用 `tac'`
 
-        ```lean
+        ```lean linenums="1"
         macro:1 x:tactic tk:" <;> " y:tactic:2 : tactic => `(
           tactic|focus
             $x:tactic
@@ -342,32 +342,32 @@
 
     4. `first | tac | ...`：运行每个策略直到其中一个成功，否则返回失败
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := first) "first " withPosition((ppDedent(ppLine) colGe "| " tacticSeq)+) : tactic
         ```
 
     5. `all_goals` 与 `any_goals`：将策略应用于所有未完成的目标，直到所有（或至少一个）目标成功
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := allGoals) "all_goals " tacticSeq : tactic
         syntax (name := anyGoals) "any_goals " tacticSeq : tactic
         ```
 
     6. `focus`：确保策略只影响当前的目标，暂时将其他目标从作用范围中隐藏
 
-        ```lean
+        ```lean linenums="1"
         syntax (name := focus) "focus " tacticSeq : tactic
         ```
 
     7. `unhygienic`：允许访问 Lean 自动生成的名称
 
-        ```lean
+        ```lean linenums="1"
         macro "unhygienic " t:tacticSeq : tactic => `(tactic| set_option tactic.hygienic false in $t)
         ```
 
 5. 表达式策略
 
-    ```lean
+    ```lean linenums="1"
     macro "let " d:letDecl : tactic => `(tactic| refine_lift let $d:letDecl; ?_)
     syntax (name := letrec) withPosition(atomic("let " &"rec ") letRecDecls) : tactic
     syntax "have " haveDecl : tactic
@@ -379,7 +379,7 @@
 ### 3.1.4 do 元素范畴
 1. `repeat`：循环
 
-    ```lean
+    ```lean linenums="1"
     syntax "repeat " doSeq : doElem
     macro_rules
       | `(doElem| repeat $seq) => `(doElem| for _ in Loop.mk do $seq)
@@ -391,7 +391,7 @@
 
 2. `while`：等效于 `repeat` 与 带有 `if` 修饰的 `break`
 
-    ```lean
+    ```lean linenums="1"
     syntax "while " ident " : " termBeforeDo " do " doSeq : doElem
     macro_rules
       | `(doElem| while $h : $cond do $seq) => `(doElem| repeat if $h : $cond then $seq else break)
@@ -405,7 +405,7 @@
 ### 3.2.1 递归器
 1. `rec`：消去递归器
 
-    ```lean
+    ```lean linenums="1"
     Nat.rec.{u}
     : {motive : Nat → Sort u}
       → motive Nat.zero
@@ -452,7 +452,7 @@
     1. 模式匹配基于 `casesOn` 实现
     2. `casesOn` 相当于小前提中没有 `motive` 作为条件的 `recOn`
 
-    ```lean
+    ```lean linenums="1"
     @[reducible]
     protected def Nat.casesOn.{u}
       : {motive : Nat → Sort u}
@@ -465,7 +465,7 @@
 
 3. `below`：基于 `rec` 实现，仅用于递归类型（不用于枚举类型与结构类型）
 
-    ```lean
+    ```lean linenums="1"
     @[reducible]
     protected def Nat.below.{u}
       : {motive : Nat → Sort u}
@@ -486,7 +486,7 @@
 
 4. `noConfusion`：基于 `casesOn` 实现，仅用于归纳类型，用以区分同一类型下使用不同构造子的元素
 
-    ```lean
+    ```lean linenums="1"
     @[reducible]
     protected def Nat.noConfusion.{u}
       : {P : Sort u}
@@ -504,7 +504,7 @@
 1. 函数相关
     1. `id`：恒等函数
 
-        ```lean
+        ```lean linenums="1"
         @[inline]
         def id {α : Sort u} (a : α) : α := a
         ```
@@ -513,7 +513,7 @@
 
             `Id`：将纯代码与单子 API 一起使用
 
-            ```lean
+            ```lean linenums="1"
             def Id (type : Type u) : Type u := type
 
             @[always_inline]
@@ -525,7 +525,7 @@
 
     2. `Function.comp`：复合函数
 
-        ```lean
+        ```lean linenums="1"
         @[inline]
         def Function.comp {α : Sort u} {β : Sort v} {δ : Sort w} (f : β → δ) (g : α → β) : α → δ :=
           fun x => f (g x)
@@ -536,28 +536,28 @@
 
     3. `Function.const`：常函数
 
-        ```lean
+        ```lean linenums="1"
         @[inline] def Function.const {α : Sort u} (β : Sort v) (a : α) : β → α :=
           fun _ => a
         ```
 
     4. `inferInstance`：提供一个类型实例，可以 `(inferInstance : T)` 的形式使用
 
-        ```lean
+        ```lean linenums="1"
         abbrev inferInstance {α : Sort u} [i : α] : α := i
         ```
 
 2. 参数标记
     1. `optParam`：标记可选参数，`x : optParam α default` 相当于 `(x : α := default)`
 
-        ```lean
+        ```lean linenums="1"
         @[reducible]
         def optParam (α : Sort u) (default : α) : Sort u := α
         ```
 
     2. `outParam`：在类型类中标记输出参数，在无法进行实例搜索时运行类型类推断，并采用找到的第一个解决方案
 
-        ```lean
+        ```lean linenums="1"
         @[reducible]
         def outParam (α : Sort u) : Sort u := α
         ```
@@ -567,7 +567,7 @@
 1. 数据类型
     1. `Prod`：直积类型
 
-        ```lean
+        ```lean linenums="1"
         structure Prod (α : Type u) (β : Type v) where
           mk ::
           fst : α
@@ -579,7 +579,7 @@
 
     2. `Fin`：严格小于 `n` 的自然数，`UInt` 系列类型在运行时用固定精度的机器整数表示
 
-        ```lean
+        ```lean linenums="1"
         @[pp_using_anonymous_constructor]
         structure Fin (n : Nat) where
           mk ::
@@ -605,7 +605,7 @@
 
     3. `Float`：浮点数
 
-        ```lean
+        ```lean linenums="1"
         structure FloatSpec where
           float : Type
           val : float
@@ -629,7 +629,7 @@
 
     4. `Char`：字符，运行时以用一般字符表示
 
-        ```lean
+        ```lean linenums="1"
         structure Char where
           val : UInt32
           valid : val.isValidChar
@@ -638,7 +638,7 @@
 2. 数据结构
     1. `Array`：数组，此类型在运行时有特殊处理
 
-        ```lean
+        ```lean linenums="1"
         structure Array (α : Type u) where
           mk ::
           data : List α
@@ -650,7 +650,7 @@
 
     2. `String`：字符串，编译器会将此类型的数据表示覆盖为 UTF-8 编码的字节序列
 
-        ```lean
+        ```lean linenums="1"
         structure String where
           mk ::
           data : List Char
@@ -658,7 +658,7 @@
 
     3. `Subtype`：子类型，包括值 `val` 与证据 `property`
 
-        ```lean
+        ```lean linenums="1"
         @[pp_using_anonymous_constructor]
         structure Subtype {α : Sort u} (p : α → Prop) where
           val : α
@@ -672,7 +672,7 @@
 1. 枚举类型
     1. `Sum`：和类型
 
-        ```lean
+        ```lean linenums="1"
         inductive Sum (α : Type u) (β : Type v) where
           | inl (val : α) : Sum α β
           | inr (val : β) : Sum α β
@@ -683,13 +683,13 @@
 
     2. `Empty` 空类型，没有构造子
 
-        ```lean
+        ```lean linenums="1"
         inductive Empty : Type
         ```
 
     3. `Unit`：单位类型，具有一个元素的规范类型
 
-        ```lean
+        ```lean linenums="1"
         inductive PUnit : Sort u where
           | unit : PUnit
 
@@ -700,7 +700,7 @@
 
     4. `Option`：可选类型，用于表示失败的可能性或可空性
 
-        ```lean
+        ```lean linenums="1"
         inductive Option (α : Type u) where
           | none : Option α
           | some (val : α) : Option α
@@ -708,7 +708,7 @@
 
     5. `Bool`：真值类
 
-        ```lean
+        ```lean linenums="1"
         inductive Bool : Type where
           | false : Bool
           | true : Bool
@@ -716,7 +716,7 @@
 
     6. `Exception`：异常类
 
-        ```lean
+        ```lean linenums="1"
         inductive Except (ε : Type u) (α : Type v) where
           | error : ε → Except ε α
           | ok : α → Except ε α
@@ -725,7 +725,7 @@
 2. 递归类型
     1. `Nat`：自然数，内核与编译器都对此类型进行了特殊处理
 
-        ```lean
+        ```lean linenums="1"
         inductive Nat where
           | zero : Nat
           | succ (n : Nat) : Nat
@@ -741,7 +741,7 @@
 
     2. `Int`：整数，当数字较小时直接存储有符号整数，较大的数字（超过 63 位时）使用任意精度 `bignum` 库
 
-        ```lean
+        ```lean linenums="1"
         inductive Int : Type where
           | ofNat   : Nat → Int
           | negSucc : Nat → Int
@@ -749,7 +749,7 @@
 
     3. `List`：（有序）列表，以链表形式实现
 
-        ```lean
+        ```lean linenums="1"
         inductive List (α : Type u) where
           | nil : List α
           | cons (head : α) (tail : List α) : List α
@@ -766,7 +766,7 @@
 3. 编译相关
     1. `Name`：名称，由点 `.` 分隔的一系列字符串或数字
 
-        ```lean
+        ```lean linenums="1"
         inductive Name where
           | anonymous : Name
           | str (pre : Name) (str : String)
@@ -779,7 +779,7 @@
 
     2. `Syntax`：句法结构，其中 `SyntaxNodeKind` 即节点种类，用于给 `Syntax` 元素分类
 
-        ```lean
+        ```lean linenums="1"
         abbrev SyntaxNodeKind := Name
         inductive Syntax where
           | missing
@@ -800,7 +800,7 @@
 
     3. `Expr`：表达式．Lean 中任意项都有对应表达式
 
-        ```lean
+        ```lean linenums="1"
         structure FVarId where
           name : Name
         deriving Inhabited, BEq, Hashable
@@ -866,7 +866,7 @@
 
 4. IO 活动：`EStateM` 同时跟踪状态和错误，是 `IO` 单子的基础
 
-    ```lean
+    ```lean linenums="1"
     def IO.RealWorld : Type := Unit
     inductive EStateM.Result (ε σ α : Type u) where
       | ok    : α → σ → Result ε σ α
@@ -880,7 +880,7 @@
     1. 状态即现实世界，由于机能限制而仅用 `Unit` 表示
     2. `EStateM ε σ` 单子不改变状态，仅传递结果或错误信息
 
-        ```lean
+        ```lean linenums="1"
         @[always_inline, inline]
         protected def pure (a : α) : EStateM ε σ α := fun s => Result.ok a s
 
@@ -898,18 +898,74 @@
           seqRight := EStateM.seqRight
         ```
 
-    !!! note "IO 活动的副作用"
-        1. 内部视角：IO 活动没有副作用，它接受一个唯一的现实世界状态，返回改变后的世界
-        2. 外部视角：`bind` 函数定义的内容是副作用，当执行主体为 `do` 的 `main` 函数时
-            1. 为了获得最后 `main` 的返回值，需要执行前面所有 `bind`，从而产生副作用
-            2. 返回得到 `IO Unit` 元素没有意义，起作用的只是中间的副作用过程
-            3. 副作用实质上靠 Lean RTS（运行时系统）执行原语而得以可能，Lean 本身仅对 IO 活动原语进行描述
+    !!! note "单子在求值前已经确定"
+        1. 对不与外界交互（即不引入 IO）的程序，所有单子行为固定
+
+            ```lean linenums="1"
+            instance : Monad <| Except ε where
+              pure item := Except.ok item
+              bind except next :=
+                match except with
+                | Except.error msg => Except.error msg
+                | Except.ok item => next item
+
+            def test : Except Nat Nat := do
+              pure 0
+
+            #reduce test  -- Except.ok 0
+            #eval test    -- Except.ok 0
+            ```
+
+        2. 对与外界交互的程序，主函数 `main` 归约结果是函数，只有 `#eval` 启动时，才能得到返回值（并执行副作用）
+
+            ```lean linenums="1"
+            def test : IO Nat := do
+              let x ← pure 0
+              pure x
+
+            def testEquiv : EStateM IO.Error IO.RealWorld Nat :=
+              fun s => match (fun s => EStateM.Result.ok 0 s) s with
+                | .ok a s => (fun x => fun s => .ok x s) a s
+                | .error e s => .error e s
+
+            #reduce test       -- fun s => EStateM.Result.ok 0 s
+            #reduce testEquiv  -- fun s => EStateM.Result.ok 0 s
+            #eval test         -- 0
+            ```
+
+            1. 内部视角：IO 活动没有副作用，它接受一个唯一的现实世界状态，返回改变后的世界
+            2. 外部视角：副作用实质上靠 Lean RTS（运行时系统）执行原语而得以可能，Lean 本身仅对 IO 活动原语进行描述
+
+            `main` 的内容在执行前就得以确定，因为 `main` 只是「如何改变世界，并获得返回值/错误类型」的说明书
+
+            ```lean linenums="1" hl_lines="9"
+            def main : IO Unit := do
+              (← IO.getStdout).putStr "0"
+              pure ()
+
+            -- fun s => EStateM.Result.rec
+            --   (fun a a_1 => EStateM.Result.rec
+            --     (fun a a => EStateM.Result.ok PUnit.unit a)
+            --     (fun a a_2 => EStateM.Result.error a a_2)
+            --     (a.5 "0" a_1)
+            --   )
+            --   (fun a a_1 => EStateM.Result.error a a_1)
+            --   (EStateM.Result.rec
+            --     (fun a a_1 => EStateM.Result.ok a a_1)
+            --     (fun a a_1 => Empty.rec (fun x =>
+            --       (fun x => EStateM.Result IO.Error IO.RealWorld IO.FS.Stream)
+            --       (EStateM.Result.error x a_1)
+            --     ) a)
+            --     (IO.getStdout s)
+            --   )
+            #reduce main
+            ```
 
 ### 3.3.3 类型类
 1. 算术运算
     1. `Neg`：取负
 
-        ```lean
+        ```lean linenums="1"
         class Neg (α : Type u) where
           neg : α → α
 
@@ -919,7 +975,7 @@
 
     2. `HAdd`：异构加法
 
-        ```lean
+        ```lean linenums="1"
         class HAdd (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hAdd : α → β → γ
 
@@ -929,7 +985,7 @@
 
     3. `HSub`：异构减法
 
-        ```lean
+        ```lean linenums="1"
         class HSub (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hSub : α → β → γ
 
@@ -939,7 +995,7 @@
 
     4. `HMul`：异构乘法
 
-        ```lean
+        ```lean linenums="1"
         class HMul (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hMul : α → β → γ
 
@@ -949,7 +1005,7 @@
 
     5. `HDiv`：异构除法
 
-        ```lean
+        ```lean linenums="1"
         class HDiv (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hDiv : α → β → γ
 
@@ -959,7 +1015,7 @@
 
     6. `HPow`：异构乘方
 
-        ```lean
+        ```lean linenums="1"
         class HPow (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hPow : α → β → γ
 
@@ -969,7 +1025,7 @@
 
     7. `HAppend`：异构连接
 
-        ```lean
+        ```lean linenums="1"
         class HAppend (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hAppend : α → β → γ
 
@@ -979,7 +1035,7 @@
 
     8. `HMod`：异构取余
 
-        ```lean
+        ```lean linenums="1"
         class HMod (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hMod : α → β → γ
 
@@ -989,7 +1045,7 @@
 
     9. `Dvd`：同余
 
-        ```lean
+        ```lean linenums="1"
         class Dvd (α : Type _) where
           dvd : α → α → Prop
 
@@ -1000,7 +1056,7 @@
 2. 逻辑运算
     1. `Complement`：按位取反
 
-        ```lean
+        ```lean linenums="1"
         class Complement (α : Type u) where
           complement : α → α
 
@@ -1010,7 +1066,7 @@
 
     2. `HAnd`：异构按位与
 
-        ```lean
+        ```lean linenums="1"
         class HAnd (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hAnd : α → β → γ
 
@@ -1020,7 +1076,7 @@
 
     3. `HXor`：异构按位或
 
-        ```lean
+        ```lean linenums="1"
         class HXor (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hXor : α → β → γ
 
@@ -1030,7 +1086,7 @@
 
     4. `HOr`：异构按位非
 
-        ```lean
+        ```lean linenums="1"
         class HOr (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hOr : α → β → γ
 
@@ -1040,7 +1096,7 @@
 
     5. `HShiftLeft`：异构左移
 
-        ```lean
+        ```lean linenums="1"
         class HShiftLeft (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hShiftLeft : α → β → γ
 
@@ -1050,7 +1106,7 @@
 
     6. `HShiftRight`：异构右移
 
-        ```lean
+        ```lean linenums="1"
         class HShiftRight (α : Type u) (β : Type v) (γ : outParam (Type w)) where
           hShiftRight : α → β → γ
 
@@ -1062,7 +1118,7 @@
 
         1. `cond`：条件运算
 
-            ```lean
+            ```lean linenums="1"
             @[macro_inline]
             def cond {α : Type u} (c : Bool) (x y : α) : α :=
               match c with
@@ -1072,7 +1128,7 @@
 
         2. `and`：与运算
 
-            ```lean
+            ```lean linenums="1"
             @[macro_inline]
             def and (x y : Bool) : Bool :=
               match x with
@@ -1085,7 +1141,7 @@
 
         3. `or`：或运算
 
-            ```lean
+            ```lean linenums="1"
             @[macro_inline]
             def or (x y : Bool) : Bool :=
               match x with
@@ -1098,7 +1154,7 @@
 
         4. `not`：非运算
 
-            ```lean
+            ```lean linenums="1"
 
             @[inline]
             def not : Bool → Bool
@@ -1112,7 +1168,7 @@
 3. 比较运算
     1. `LE`：小于等于
 
-        ```lean
+        ```lean linenums="1"
         class LE (α : Type u) where
           le : α → α → Prop
 
@@ -1124,7 +1180,7 @@
 
     2. `LT`：小于
 
-        ```lean
+        ```lean linenums="1"
         class LT (α : Type u) where
           lt : α → α → Prop
 
@@ -1134,7 +1190,7 @@
 
     3. `GE`：大于等于
 
-        ```lean
+        ```lean linenums="1"
         @[reducible]
         def GE.ge {α : Type u} [LE α] (a b : α) : Prop := LE.le b a
 
@@ -1146,7 +1202,7 @@
 
     4. `GT`：大于
 
-        ```lean
+        ```lean linenums="1"
         @[reducible]
         def GT.gt {α : Type u} [LT α] (a b : α) : Prop := LT.lt b a
 
@@ -1157,14 +1213,14 @@
 4. 关系与性质
     1. `Trans`：传递性，可用于计算式证明
 
-        ```lean
+        ```lean linenums="1"
         class Trans (r : α → β → Sort u) (s : β → γ → Sort v) (t : outParam (α → γ → Sort w)) where
           trans : r a b → s b c → t a c
         ```
 
     2. `Deciable`：可判定性，等同于 `Bool` 及其证明，用于推断命题的计算策略，从而可在 `if` 中编写命题并执行
 
-        ```lean
+        ```lean linenums="1"
         class inductive Decidable (p : Prop) where
           | isFalse (h : Not p) : Decidable p
           | isTrue (h : p) : Decidable p
@@ -1185,7 +1241,7 @@
 
         `Init` 模块定义了等式和比较符的基本运算以及命题连词等命题的可判定性，例如
 
-        ```lean
+        ```lean linenums="1"
         @[macro_inline]
         instance {p q} [dp : Decidable p] [dq : Decidable q] : Decidable (And p q) :=
           match dp with
@@ -1217,7 +1273,7 @@
 5. 函子与单子
     1. 通用类型类
 
-        ```lean
+        ```lean linenums="1"
         class Pure (f : Type u → Type v) where
           pure {α : Type u} : α → f α
 
@@ -1254,7 +1310,7 @@
 
     2. `Functor`：函子
 
-        ```lean
+        ```lean linenums="1"
         class Functor (f : Type u → Type v) : Type (max (u+1) v) where
           map : {α β : Type u} → (α → β) → f α → f β
           mapConst : {α β : Type u} → α → f β → f α := Function.comp map (Function.const _)
@@ -1262,8 +1318,9 @@
 
     3. `Applicative`：应用函子
 
-        ```lean
-        class Applicative (f : Type u → Type v) extends Functor f, Pure f, Seq f, SeqLeft f, SeqRight f where
+        ```lean linenums="1"
+        class Applicative (f : Type u → Type v)
+          extends Functor f, Pure f, Seq f, SeqLeft f, SeqRight f where
           map := fun x y => Seq.seq (pure x) fun _ => y
           seqLeft := fun a b => Seq.seq (Functor.map (Function.const _) a) b
           seqRight := fun a b => Seq.seq (Functor.map (Function.const _ id) a) b
@@ -1276,7 +1333,7 @@
 
     4. `Monad`：单子
 
-        ```lean
+        ```lean linenums="1"
         class Monad (m : Type u → Type v) extends Applicative m, Bind m : Type (max (u+1) v) where
           map f x := bind x (Function.comp pure f)
           seq f x := bind f fun y => Functor.map y (x ())
@@ -1303,7 +1360,7 @@
 6. 类型转换与强制类型转换
     1. `OfNat`：将自然数字面值转换到其他类型
 
-        ```lean
+        ```lean linenums="1"
         class OfNat (α : Type u) (_ : Nat) where
           ofNat : α
         ```
@@ -1312,14 +1369,14 @@
 
     2. `ToString`：将其他类型转换到字符串，用于字符串插值或 `IO` 等
 
-        ```lean
+        ```lean linenums="1"
         class ToString (α : Type u) where
           toString : α → String
         ```
 
     3. `Coe`：强制类型转换
 
-        ```lean
+        ```lean linenums="1"
         class Coe (α : semiOutParam (Sort u)) (β : Sort v) where
           coe : α → β
 
@@ -1330,14 +1387,14 @@
         2. 当且仅当推断类型与程序需要类型不匹配时，Lean 才会自动使用强制转换
         3. 当强制转换结果依赖于具体值时，使用依值强制类型转换 `CoeDep`
 
-            ```lean
+            ```lean linenums="1"
             class CoeDep (α : Sort u) (_ : α) (β : Sort v) where
               coe : β
             ```
 
         4. 当强制转换结果为分类或函数时，使用 `CoeSort` 或 `CoeFun`
 
-            ```lean
+            ```lean linenums="1"
             class CoeSort (α : Sort u) (β : outParam (Sort v)) where
               coe : α → β
 
@@ -1351,7 +1408,7 @@
 7. 派生标准类：编译器可自动构造部分类型类的良好实例
     1. `Repr`：表示类，将某种类型的值转换为 `Format` 类型
 
-        ```lean
+        ```lean linenums="1"
         inductive Format where
           | nil : Format
           | line : Format
@@ -1364,7 +1421,7 @@
 
     2. `BEq`：真值相等
 
-        ```lean
+        ```lean linenums="1"
         class BEq (α : Type u) where
           beq : α → α → Bool
 
@@ -1383,7 +1440,7 @@
 
     3. `Ord`：排序
 
-        ```lean
+        ```lean linenums="1"
         inductive Ordering where
           | lt
           | eq
@@ -1396,14 +1453,14 @@
 
     4. `Hashable`：散列值
 
-        ```lean
+        ```lean linenums="1"
         class Hashable (α : Sort u) where
           hash : α → UInt64
         ```
 
     5. `Inhabited`：默认值，通常在超出值域时调用
 
-        ```lean
+        ```lean linenums="1"
         class Inhabited (α : Sort u) where
           default : α
         ```
@@ -1411,14 +1468,14 @@
         !!! note "非空归纳类型类"
             非空类区别于 `Inhabited` 在于 `Nonempty α` 是一个命题，这表明其不携带存在的元素，而只证明存在这种元素
 
-            ```lean
+            ```lean linenums="1"
             class inductive Nonempty (α : Sort u) : Prop where
               | intro (val : α) : Nonempty α
             ```
 
             1. 命题 `Nonempty α` 等价于命题 `∃ x : α, True`
 
-                ```lean
+                ```lean linenums="1"
                 example (α : Type u) : Nonempty α ↔ ∃ x : α, True :=
                   Iff.intro (fun ⟨a⟩ => ⟨a, trivial⟩) (fun ⟨a, _⟩ => ⟨a⟩)
                 ```
@@ -1429,7 +1486,7 @@
 
                 因此前者通过 `match` 得到的存在性见证不可直接用于后者，需要选择公理的介入
 
-                ```lean
+                ```lean linenums="1"
                 -- tactic 'cases' failed, nested error:
                 -- tactic 'induction' failed, recursor 'Exists.casesOn' can only eliminate into Prop
                 example {α : Type} (p q : α → Prop) : (h : ∃ x, p x) → {x : α // px}
@@ -1441,7 +1498,7 @@
 1. 命题：区分于 `Bool` 或 `Empty`
     1. `True`：真命题
 
-        ```lean
+        ```lean linenums="1"
         inductive True : Prop where
           | intro : True
 
@@ -1451,7 +1508,7 @@
 
     2. `False`：假命题
 
-        ```lean
+        ```lean linenums="1"
         inductive False : Prop
 
         @[macro_inline]
@@ -1461,7 +1518,7 @@
 2. 逻辑联结词
     1. `Not`：否定
 
-        ```lean
+        ```lean linenums="1"
         def Not (a : Prop) : Prop := a → False
 
         @[inherit_doc]
@@ -1476,7 +1533,7 @@
 
     2. `And`：合取
 
-        ```lean
+        ```lean linenums="1"
         @[pp_using_anonymous_constructor]
         structure And (a b : Prop) : Prop where
           intro ::
@@ -1495,7 +1552,7 @@
 
     3. `Or`：析取
 
-        ```lean
+        ```lean linenums="1"
         inductive Or (a b : Prop) : Prop where
           | inl (h : a) : Or a b
           | inr (h : b) : Or a b
@@ -1519,7 +1576,7 @@
 
     4. `Iff`：逻辑等价
 
-        ```lean
+        ```lean linenums="1"
         structure Iff (a b : Prop) : Prop where
           intro ::
           mp : a → b
@@ -1534,13 +1591,13 @@
 3. 量词
     1. 全称量词：通过依值类型实现
 
-        ```lean
+        ```lean linenums="1"
         syntax "∀ " binderIdent binderPred ", " term : term
         ```
 
     2. `Exists`：存在量词，可以如 `Exists.elim` 内部所示直接以 `match` 或 `let` 消去量词
 
-        ```lean
+        ```lean linenums="1"
         inductive Exists {α : Sort u} (p : α → Prop) : Prop where
           | intro (w : α) (h : p w) : Exists p
 
@@ -1555,7 +1612,7 @@
 4. 等词与等价
     1. `Eq`：等词
 
-        ```lean
+        ```lean linenums="1"
         inductive Eq : α → α → Prop where
           | refl (a : α) : Eq a a
 
@@ -1588,17 +1645,36 @@
         1. `Eq.refl` 可用于证明恒等式：可 $\beta-$归约为相同形式的项会被视为相同
         2. `Eq.subst`：若 `a = b` 且 `e : p a`，则 `h ▸ e : p b`
 
-            ```lean
+            ```lean linenums="1"
             variable {α : Sort u} {β : Sort v}
 
-            theorem Eq.subst {motive : α → Prop} {a b : α} (h₁ : Eq a b) (h₂ : motive a) : motive b :=
+            theorem Eq.subst
+              {motive : α → Prop}
+              {a b : α}
+              (h₁ : Eq a b)
+              (h₂ : motive a)
+              : motive b :=
               Eq.ndrec h₂ h₁
 
-            theorem congrArg {a₁ a₂ : α} (f : α → β) (h : Eq a₁ a₂) : Eq (f a₁) (f a₂) :=
+            theorem congrArg
+              {a₁ a₂ : α}
+              (f : α → β)
+              (h : Eq a₁ a₂)
+              : Eq (f a₁) (f a₂) :=
               h ▸ rfl
-            theorem congr {f₁ f₂ : α → β} {a₁ a₂ : α} (h₁ : Eq f₁ f₂) (h₂ : Eq a₁ a₂) : Eq (f₁ a₁) (f₂ a₂) :=
+            theorem congr
+              {f₁ f₂ : α → β}
+              {a₁ a₂ : α}
+              (h₁ : Eq f₁ f₂)
+              (h₂ : Eq a₁ a₂)
+              : Eq (f₁ a₁) (f₂ a₂) :=
               h₁ ▸ h₂ ▸ rfl
-            theorem congrFun {β : α → Sort v} {f g : (x : α) → β x} (h : Eq f g) (a : α) : Eq (f a) (g a) :=
+            theorem congrFun
+              {β : α → Sort v}
+              {f g : (x : α) → β x}
+              (h : Eq f g)
+              (a : α)
+              : Eq (f a) (g a) :=
               h ▸ rfl
 
             @[builtin_term_parser]
@@ -1608,7 +1684,7 @@
 
     2. `Equivalence`：等价与广集
 
-        ```lean
+        ```lean linenums="1"
         structure Equivalence {α : Sort u} (r : α → α → Prop) : Prop where
           refl  : ∀ x, r x x
           symm  : ∀ {x y}, r x y → r y x
@@ -1630,14 +1706,14 @@
 5. 良基性与良基归纳
     1. `Acc`：在序关系 `r ≺ ` 下，当不存在无穷下降序列 `... ≺ y₂ ≺ y₁ ≺ y₀ ≺ x` 时，称 `x` 可被访问
 
-        ```lean
+        ```lean linenums="1"
         inductive Acc {α : Sort u} (r : α → α → Prop) : α → Prop where
           | intro (x : α) (h : (y : α) → r y x → Acc r y) : Acc r x
         ```
 
     2. `WellFounded`：良基性，即类型内任意元素均可被访问
 
-        ```lean
+        ```lean linenums="1"
         inductive WellFounded {α : Sort u} (r : α → α → Prop) : Prop where
           | intro (h : ∀ a, Acc r a) : WellFounded r
 
@@ -1654,13 +1730,13 @@
 ### 3.4.2 扩展公理
 1. `propext`：命题外延性，即互相蕴含的两个命题实质相等
 
-    ```lean
+    ```lean linenums="1"
     axiom propext {a b : Prop} : (a ↔ b) → a = b
     ```
 
 2. `Quot.sound`：任意 `α` 中元素 `a, b` 有 `r a b` 蕴含 `Quot.mk r a = Quot.mk r b`
 
-    ```lean
+    ```lean linenums="1"
     axiom sound : ∀ {α : Sort u} {r : α → α → Prop} {a b : α}, r a b → Quot.mk r a = Quot.mk r b
     ```
 
@@ -1669,7 +1745,7 @@
         2. 若 `r''` 是包含 `r` 的任意等价关系，则 `r' a b` 蕴含 `r'' a b`
     2. 对于类型 `α` 上的等价关系 `r`，`@Quot α r` 是商集，且 `Quot.mk r a = Quot.mk r b` 蕴含 `a ≈ b`
 
-        ```lean
+        ```lean linenums="1"
         def Quotient {α : Sort u} (s : Setoid α) := @Quot α Setoid.r
         theorem exact {s : Setoid α} {a b : α} : Quotient.mk s a = Quotient.mk s b → a ≈ b :=
           fun h => rel_of_eq h
@@ -1677,19 +1753,19 @@
 
     3. `funext`：函数外延性，通过 `Quot.sound` 公理证明
 
-        ```lean
-        theorem funext {α : Sort u} {β : α → Sort v} {f g : (x : α) → β x} (h : ∀ x, f x = g x) : f = g := ...
+        ```lean linenums="1"
+        theorem funext {α : Sort u} {β : α → Sort v} {f g : (x : α) → β x} (h : ∀ x, f x = g x) : f = g
         ```
 
 3. `Classical.choice`：选择公理
 
-    ```lean
+    ```lean linenums="1"
     axiom Classical.choice {α : Sort u} : Nonempty α → α
     ```
 
     1. `indefiniteDescriptio`：选择公理等价于非限定摹状词
 
-        ```lean
+        ```lean linenums="1"
         noncomputable def indefiniteDescription
           {α : Sort u}
           (p : α → Prop)
@@ -1722,13 +1798,13 @@
 
     1. `Classical.em`：排中律．根据 $\text{Diaconescu}$ 定理，`em` 可由 `propext`、`funext` 与 `Classical.choice` 导出
 
-        ```lean
+        ```lean linenums="1"
         theorem em (p : Prop) : p ∨ ¬p := ...
         ```
 
     2. `propDecidable`：经典逻辑下所有命题都可判定
 
-        ```lean
+        ```lean linenums="1"
         noncomputable scoped instance (priority := low) propDecidable (a : Prop) : Decidable a :=
           choice <| match em a with
             | Or.inl h => ⟨isTrue h⟩

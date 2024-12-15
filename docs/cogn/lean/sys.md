@@ -82,7 +82,7 @@ $$
         2. 一系列模块「团」：决定用于 `lake build` 的模块
     5. 依赖项：也称作当前包的上游（当前包是依赖项的下游），通过如下语法引入
 
-        ```lean
+        ```lean linenums="1"
         require ["<scope>" /] <pkg-name> [@ <version>]
           [from <source>] [with <options>]
         ```
@@ -96,7 +96,7 @@ $$
 
 2. 模块：Lake 构建系统的最小代码单元，通常由 Lean 源代码、一系列二进制库（`olean` 或 `ilean`）以及系统共享库构成
 
-    ```lean
+    ```lean linenums="1"
     @[run_builtin_parser_attribute_hooks]
     def module := leading_parser header
       >> many (commandParser >> ppLine >> ppLine)
