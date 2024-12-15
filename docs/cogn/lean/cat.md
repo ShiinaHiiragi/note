@@ -1520,7 +1520,71 @@
         ```
 
 ## 2.5 句法范畴
-<!-- TODO -->
+1. 范畴与标识符
+
+    ```lean linenums="1"
+    @[builtin_syntax_parser]
+    def cat := leading_parser ident
+      >> optPrecedence
+
+    @[builtin_syntax_parser]
+    def atom := leading_parser strLit
+
+    @[builtin_syntax_parser]
+    def nonReserved := leading_parser "&"
+      >> strLit
+    ```
+
+2. 括号相关
+
+    ```lean linenums="1"
+    @[builtin_syntax_parser]
+    def paren := leading_parser "("
+      >> withoutPosition (many1 syntaxParser)
+      >> ")"
+
+    @[builtin_syntax_parser]
+    def unary := leading_parser ident
+      >> checkNoWsBefore
+      >> "("
+      >> withoutPosition (many1 syntaxParser)
+      >> ")"
+
+    @[builtin_syntax_parser]
+    def binary := leading_parser ident
+      >> checkNoWsBefore
+      >> "("
+      >> withoutPosition (many1 syntaxParser
+      >> ", "
+      >> many1 syntaxParser)
+      >> ")"
+    ```
+
+3. 分隔符组合子
+
+    ```lean linenums="1"
+    @[builtin_syntax_parser]
+    def sepBy := leading_parser "sepBy("
+      >> withoutPosition (many1 syntaxParser
+      >> ", "
+      >> strLit
+      >> optional (", "
+      >> many1 syntaxParser)
+      >> optional (", "
+      >> nonReservedSymbol "allowTrailingSep"))
+      >> ")"
+
+    @[builtin_syntax_parser]
+    def sepBy1 := leading_parser "sepBy1("
+      >> withoutPosition (many1 syntaxParser
+      >> ", "
+      >> strLit
+      >> optional (", "
+      >> many1 syntaxParser)
+      >> optional (", "
+      >> nonReservedSymbol "allowTrailingSep"))
+      >> ")"
+    ```
 
 ## 2.6 其他范畴
 ### 2.6.1 层级范畴

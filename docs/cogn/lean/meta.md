@@ -103,4 +103,28 @@
     2. `notFollowedBy(p, info : String)`：当且仅当解析 `p` 失败时继续，否则返回消息 `info`
 
 ## 4.2 系统级单子
-<!-- TODO -->
+1. `CoreM`： Lean 环境，即程序当前点已声明或导入的事物集
+
+    ```lean linenums="1"
+    abbrev CoreM := ReaderT Context <| StateRefT State (EIO Exception)
+    ```
+
+2. `MetaM`：元变量语境，即当前声明的元变量集及其赋值
+
+    ```lean linenums="1"
+    abbrev MetaM  := ReaderT Context $ StateRefT State CoreM
+    ```
+
+3. `TermElabM`：繁饰过程中使用的信息
+
+    ```lean linenums="1"
+    abbrev TermElabM := ReaderT Context $ StateRefT State MetaM
+    abbrev TermElab := Syntax → Option Expr → TermElabM Expr
+    ```
+
+4. `TacticM`：当前目标列表
+
+    ```lean linenums="1"
+    abbrev TacticM := ReaderT Context $ StateRefT State TermElabM
+    abbrev Tactic := Syntax → TacticM Unit
+    ```
