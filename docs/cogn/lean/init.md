@@ -56,7 +56,8 @@
     3. `termDepIfThenElse`：绑定一个证据变量，在 `then` 分支提供命题的证明，在 `else` 分支提供命题的证伪
 
         ```lean linenums="1"
-        @[inherit_doc dite] syntax (name := termDepIfThenElse) ppRealGroup(
+        @[inherit_doc dite]
+        syntax (name := termDepIfThenElse) ppRealGroup(
           ppRealFill(
             ppIndent("if " Lean.binderIdent " : " term " then")
             ppSpace
@@ -632,7 +633,8 @@
     3. `Function.const`：常函数
 
         ```lean linenums="1"
-        @[inline] def Function.const {α : Sort u} (β : Sort v) (a : α) : β → α :=
+        @[inline]
+        def Function.const {α : Sort u} (β : Sort v) (a : α) : β → α :=
           fun _ => a
         ```
 
@@ -1665,11 +1667,31 @@
       pure := OptionT.pure
       bind := OptionT.bind
 
-    @[always_inline, inline] protected def lift (x : m α) : OptionT m α := OptionT.mk do
+    @[always_inline, inline]
+    protected def lift (x : m α) : OptionT m α := OptionT.mk do
       return some (← x)
 
     instance : MonadLift m (OptionT m) := ⟨OptionT.lift⟩
     end
+    ```
+
+    对应的类型类是 `Alternative`
+
+    ```lean linenums="1"
+    @[always_inline, inline]
+    protected def orElse (x : OptionT m α) (y : Unit → OptionT m α)
+    : OptionT m α := OptionT.mk do
+      match (← x) with
+      | some a => pure (some a)
+      | _      => y ()
+
+    @[always_inline, inline]
+    protected def fail : OptionT m α := OptionT.mk do
+      pure none
+
+    instance : Alternative (OptionT m) where
+      failure := OptionT.fail
+      orElse  := OptionT.orElse
     ```
 
 2. `ExceptT`：组合 `Except` 单子
