@@ -1709,32 +1709,53 @@
     end
     ```
 
-    对应的类型类包括异常的抛出与处理
+    1. `MonadExceptOf` 与 `MonadExcept`：异常的抛出与处理
 
-    ```lean linenums="1"
-    @[always_inline, inline]
-    protected def tryCatch {α : Type u} (ma : ExceptT ε m α) (handle : ε → ExceptT ε m α) : ExceptT ε m α :=
-      ExceptT.mk <| ma >>= fun res => match res with
-      | Except.ok a    => pure (Except.ok a)
-      | Except.error e => (handle e)
+        ```lean linenums="1"
+        @[always_inline, inline]
+        protected def tryCatch {α : Type u} (ma : ExceptT ε m α) (handle : ε → ExceptT ε m α)
+          : ExceptT ε m α :=
+          ExceptT.mk <| ma >>= fun res => match res with
+          | Except.ok a    => pure (Except.ok a)
+          | Except.error e => (handle e)
 
-    class MonadExceptOf (ε : semiOutParam (Type u)) (m : Type v → Type w) where
-      throw {α : Type v} : ε → m α
-      tryCatch {α : Type v} (body : m α) (handler : ε → m α) : m α
+        class MonadExceptOf (ε : semiOutParam (Type u)) (m : Type v → Type w) where
+          throw {α : Type v} : ε → m α
+          tryCatch {α : Type v} (body : m α) (handler : ε → m α) : m α
 
-    @[always_inline]
-    instance (m : Type u → Type v) (ε : Type u) [Monad m] : MonadExceptOf ε (ExceptT ε m) where
-      throw e := ExceptT.mk <| pure (Except.error e)
-      tryCatch := ExceptT.tryCatch
+        @[always_inline]
+        instance (m : Type u → Type v) (ε : Type u) [Monad m] : MonadExceptOf ε (ExceptT ε m) where
+          throw e := ExceptT.mk <| pure (Except.error e)
+          tryCatch := ExceptT.tryCatch
 
-    class MonadExcept (ε : outParam (Type u)) (m : Type v → Type w) where
-      throw {α : Type v} : ε → m α
-      tryCatch {α : Type v} : m α → (ε → m α) → m α
+        class MonadExcept (ε : outParam (Type u)) (m : Type v → Type w) where
+          throw {α : Type v} : ε → m α
+          tryCatch {α : Type v} : m α → (ε → m α) → m α
 
-    instance (ε : outParam (Type u)) (m : Type v → Type w) [MonadExceptOf ε m] : MonadExcept ε m where
-      throw := throwThe ε
-      tryCatch := tryCatchThe ε
-    ```
+        instance (ε : outParam (Type u)) (m : Type v → Type w) [MonadExceptOf ε m] : MonadExcept ε m where
+          throw := throwThe ε
+          tryCatch := tryCatchThe ε
+        ```
+
+    2. `MonadFinally`：异常的后处理
+
+        ```lean linenums="1"
+        class MonadFinally (m : Type u → Type v) where
+          tryFinally' {α β} : m α → (Option α → m β) → m (α × β)
+
+        @[always_inline]
+        instance ExceptT.finally {m : Type u → Type v} {ε : Type u} [MonadFinally m] [Monad m]
+          : MonadFinally (ExceptT ε m) where
+          tryFinally' := fun x h => ExceptT.mk do
+            let r ← tryFinally' x fun e? =>
+              match e? with
+              | some (.ok a) => h (some a)
+              | _ => h none
+            match r with
+            | (.ok a, .ok b) => pure (.ok (a, b))
+            | (_, .error e) => pure (.error e)
+            | (.error e, _) => pure (.error e)
+        ```
 
 3. `ReaderT`：组合 `ρ` 类型的配置
 
