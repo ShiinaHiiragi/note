@@ -816,6 +816,9 @@
         inductive Bool : Type where
           | false : Bool
           | true : Bool
+
+        instance boolToProp : Coe Bool Prop where
+          coe b := Eq b true
         ```
 
     6. `Exception`：异常类
