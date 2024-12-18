@@ -1021,6 +1021,8 @@
 
     def EStateM (ε σ α : Type u) := σ → Result ε σ α
     def EIO (ε : Type) : Type → Type := EStateM ε IO.RealWorld
+
+    def BaseIO := EIO Empty
     abbrev IO : Type → Type := EIO IO.Error
     ```
 
@@ -1641,7 +1643,7 @@
                 ```
 
 ### 3.3.4 转换器
-1. `OptionT`：组合 `Option` 单子
+1. `OptionT`：组合 `Option` 单子．为了正确选取 `Monad` 实例，需要定义 `mk` 函数
 
     ```lean linenums="1"
     def OptionT (m : Type u → Type v) (α : Type u) : Type v :=
@@ -1697,7 +1699,7 @@
       orElse  := OptionT.orElse
     ```
 
-2. `ExceptT`：组合 `Except` 单子
+2. `ExceptT`：组合 `Except` 单子．为了正确选取 `Monad` 实例，需要定义 `mk` 函数
 
     ```lean linenums="1"
     def ExceptT (ε : Type u) (m : Type u → Type v) (α : Type u) : Type v :=

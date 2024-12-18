@@ -1702,23 +1702,6 @@
           >> notFollowedBy (symbol ":=" <|> symbol "←" <|> symbol "<-") "ERROR INFO"
         ```
 
-        1. `liftMethod`：简单提升嵌套活动．只能用于 `do` 语句块中
-
-            ```lean linenums="1"
-            @[builtin_term_parser]
-            def liftMethod := leading_parser:minPrec leftArrow
-              >> termParser
-            ```
-
-        2. `doReturn`：`return e` 将包围块求值为 `pure e`，跳过所有更深层的语句
-
-            ```lean linenums="1"
-            @[builtin_doElem_parser]
-            def doReturn := leading_parser:leadPrec withPosition ("return"
-              >> optional (ppSpace >> checkLineEq >> termParser)
-            )
-            ```
-
     3. `doLetArrow`：左箭头表达式
 
         ```lean linenums="1"
@@ -1733,6 +1716,14 @@
           >> optional "mut "
           >> (doIdDecl <|> doPatDecl)
         )
+        ```
+
+        `liftMethod`：简单提升嵌套活动．只能用于 `do` 语句块中
+
+        ```lean linenums="1"
+        @[builtin_term_parser]
+        def liftMethod := leading_parser:minPrec leftArrow
+          >> termParser
         ```
 
 2. 附加特性
@@ -1774,7 +1765,29 @@
           >> doSeq
         ```
 
-    3. `doMatch`：模式匹配
+    3. `doTry`：异常处理，是 `MonadExcept` 的简写
+
+        ```lean linenums="1"
+        def doCatch := leading_parser ppDedent ppLine
+          >> atomic ("catch " >> binderIdent)
+          >> optional (" : " >> termParser)
+          >> darrow
+          >> doSeq
+        def doCatchMatch := leading_parser ppDedent ppLine
+          >> "catch "
+          >> doMatchAlts
+        def doFinally := leading_parser ppDedent ppLine
+          >> "finally "
+          >> doSeq
+
+        @[builtin_doElem_parser]
+        def doTry := leading_parser "try "
+          >> doSeq
+          >> many (doCatch <|> doCatchMatch)
+          >> optional doFinally
+        ```
+
+    4. `doMatch`：模式匹配
 
         ```lean linenums="1"
         @[builtin_doElem_parser]
@@ -1786,7 +1799,7 @@
           >> doMatchAlts
         ```
 
-    4. `doBreak`、`doContinue` 与 `doReturn`：控制语句
+    5. `doBreak`、`doContinue` 与 `doReturn`：控制语句
 
         ```lean linenums="1"
         @[builtin_doElem_parser]
@@ -1801,7 +1814,7 @@
         )
         ```
 
-    5. `doNested`：嵌套 `do` 语句块
+    6. `doNested`：嵌套 `do` 语句块
 
         ```lean linenums="1"
         @[builtin_doElem_parser]
