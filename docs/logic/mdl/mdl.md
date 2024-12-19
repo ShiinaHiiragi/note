@@ -68,7 +68,7 @@
     2. 如果 $h$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入，则 $h[A]$ 是 $\mathfrak B$ 的子结构
     3. 设 $A \subseteq B$，则 $\mathfrak A \subseteq \mathfrak B$ 当且仅当论域为 $A$ 的 $\mathfrak B_A \vDash \mathrm{Diag}(\mathfrak A)$
 
-3. 生成子结构：设 $\mathfrak A$ 为论域为 $A$ 的 $S-$结构，对任意 $N \subseteq A$ 存在一个论域包含 $N$ 的 $\mathfrak A$ 的子结构 $\mathfrak N$，使得对于任意论域包含 $N$ 的 $\mathfrak A$ 的子结构 $\mathfrak B$ 都有 $\mathfrak N \subseteq \mathfrak B$，称 $\mathfrak N$ 是由 $N$ 生成的子结构，记作 $\left<N\right>^\mathfrak A$
+3. 生成子结构：设 $\mathfrak A$ 为论域为 $A$ 的 $S-$结构，对任意 $N \subseteq A$ 存在一个论域包含 $N$ 的、$\mathfrak A$ 的子结构 $\mathfrak N$，使得对于任意论域包含 $N$ 的 $\mathfrak A$ 的子结构 $\mathfrak B$ 都有 $\mathfrak N \subseteq \mathfrak B$，称 $\mathfrak N$ 是由 $N$ 生成的子结构，记作 $\left<N\right>^\mathfrak A$
     1. 若存在 $N_0 \subseteq A$ 为有限集使得 $\mathfrak N = \left<N\right>^\mathfrak A$，则称 $\mathfrak N$ 是有限生成的
     2. 设 $N\subseteq A$，则 $\left<N\right>^\mathfrak A$ 的论域是 $\overline N = \{t^\mathfrak A(b_1, b_2, \cdots, b_m) \mid t \in \mathfrak T(N), b_1, b_2, \cdots, b_n \in N\}$
     3. 设 $N\subseteq A$，则 $\left<N\right>^\mathfrak A \leqslant \max\{|N|, |S|, \aleph_0\}$
