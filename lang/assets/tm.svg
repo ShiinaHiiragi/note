@@ -1,0 +1,575 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<!-- Created with Inkscape (http://www.inkscape.org/) -->
+
+<svg
+   width="109.77671mm"
+   height="34.76799mm"
+   viewBox="0 0 109.77671 34.76799"
+   version="1.1"
+   id="svg1"
+   inkscape:version="1.3.2 (091e20e, 2023-11-25, custom)"
+   sodipodi:docname="tm.svg"
+   xmlns:inkscape="http://www.inkscape.org/namespaces/inkscape"
+   xmlns:sodipodi="http://sodipodi.sourceforge.net/DTD/sodipodi-0.dtd"
+   xmlns="http://www.w3.org/2000/svg"
+   xmlns:svg="http://www.w3.org/2000/svg"
+   xmlns:ns1="http://www.iki.fi/pav/software/textext/">
+  <sodipodi:namedview
+     id="namedview1"
+     pagecolor="#ffffff"
+     bordercolor="#000000"
+     borderopacity="0.25"
+     inkscape:showpageshadow="2"
+     inkscape:pageopacity="0.0"
+     inkscape:pagecheckerboard="0"
+     inkscape:deskcolor="#d1d1d1"
+     inkscape:document-units="mm"
+     inkscape:zoom="1.4142136"
+     inkscape:cx="242.18407"
+     inkscape:cy="1.4142136"
+     inkscape:window-width="1440"
+     inkscape:window-height="830"
+     inkscape:window-x="-6"
+     inkscape:window-y="-6"
+     inkscape:window-maximized="1"
+     inkscape:current-layer="layer1" />
+  <defs
+     id="defs1">
+    <marker
+       style="overflow:visible"
+       id="DartArrow"
+       refX="0"
+       refY="0"
+       orient="auto-start-reverse"
+       inkscape:stockid="Dart arrow"
+       markerWidth="1"
+       markerHeight="1"
+       viewBox="0 0 1 1"
+       inkscape:isstock="true"
+       inkscape:collect="always"
+       preserveAspectRatio="xMidYMid">
+      <path
+         style="fill:context-stroke;fill-rule:evenodd;stroke:none"
+         d="M 0,0 5,-5 -12.5,0 5,5 Z"
+         transform="scale(-0.5)"
+         id="path6" />
+    </marker>
+  </defs>
+  <g
+     inkscape:label="Layer 1"
+     inkscape:groupmode="layer"
+     id="layer1"
+     transform="translate(-59.240165,-82.688361)">
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect1"
+       width="10.284628"
+       height="10.284628"
+       x="59.450165"
+       y="82.898361" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect2"
+       width="10.284628"
+       height="10.284628"
+       x="69.767441"
+       y="82.898361" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect3"
+       width="10.284628"
+       height="10.284628"
+       x="80.087654"
+       y="82.898361" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect4"
+       width="10.284628"
+       height="10.284628"
+       x="90.404938"
+       y="82.898361" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect5"
+       width="10.284628"
+       height="10.284628"
+       x="100.72515"
+       y="82.898361" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect6"
+       width="10.284628"
+       height="10.284628"
+       x="111.04243"
+       y="82.898361" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect7"
+       width="10.284628"
+       height="10.284628"
+       x="121.36263"
+       y="82.898361" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect8"
+       width="10.284628"
+       height="10.284628"
+       x="131.67995"
+       y="82.898361" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect9"
+       width="10.284628"
+       height="10.284628"
+       x="142.00012"
+       y="82.898361" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect10"
+       width="10.284628"
+       height="10.284628"
+       x="152.31747"
+       y="82.898361" />
+    <path
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1;marker-start:url(#DartArrow)"
+       d="M 105.60335,95.574622 V 106.68694"
+       id="path33" />
+    <rect
+       style="fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect33"
+       width="25.944139"
+       height="10.284628"
+       x="92.591721"
+       y="106.96172" />
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:4.93889px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC Medium';fill:#000000;fill-opacity:0;stroke:#000000;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       x="98.334549"
+       y="113.94945"
+       id="text33"><tspan
+         sodipodi:role="line"
+         id="tspan33"
+         style="font-size:4.93889px;fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-opacity:1"
+         x="98.334549"
+         y="113.94945">控制器</tspan></text>
+    <rect
+       style="fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       id="rect86"
+       width="1.0534304"
+       height="9.8646297"
+       x="162.29433"
+       y="83.108055" />
+    <g
+       transform="matrix(0.529167,0,0,0.529167,63.396401,86.434803)"
+       ns1:version="1.10.0"
+       ns1:texconverter="xelatex"
+       ns1:pdfconverter="inkscape"
+       ns1:text="$0$"
+       ns1:preamble="C:\Users\Ichinoe\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+       ns1:scale="1.5"
+       ns1:alignment="middle center"
+       ns1:stroke-to-path="0"
+       ns1:inkscapeversion="1.3.2"
+       id="g1792"
+       ns1:jacobian_sqrt="0.529167">
+      <defs
+         id="id-bdd0becf-18a3-45d0-8923-3c5803568ede">
+        <g
+           id="id-06979b99-5b08-468c-9bd7-225c6f344fe5">
+          <g
+             id="id-e1b626d2-4139-4ace-9aec-a44516b1e8c8">
+            <path
+               d="m 4.578125,-3.1875 c 0,-0.796875 -0.046875,-1.59375 -0.390625,-2.328125 -0.453125,-0.96875 -1.28125,-1.125 -1.6875,-1.125 -0.609375,0 -1.328125,0.265625 -1.75,1.1875 -0.3125,0.6875 -0.359375,1.46875 -0.359375,2.265625 0,0.75 0.03125,1.640625 0.453125,2.40625 0.421875,0.796875 1.15625,1 1.640625,1 0.53125,0 1.296875,-0.203125 1.734375,-1.15625 0.3125,-0.6875 0.359375,-1.46875 0.359375,-2.25 z M 2.484375,0 C 2.09375,0 1.5,-0.25 1.328125,-1.203125 1.21875,-1.796875 1.21875,-2.71875 1.21875,-3.3125 c 0,-0.640625 0,-1.296875 0.078125,-1.828125 0.1875,-1.1875 0.9375,-1.28125 1.1875,-1.28125 0.328125,0 0.984375,0.1875 1.171875,1.171875 0.109375,0.5625 0.109375,1.3125 0.109375,1.9375 0,0.75 0,1.421875 -0.109375,2.0625 C 3.5,-0.296875 2.9375,0 2.484375,0 Z m 0,0"
+               id="id-7457e52e-12ea-4aa2-aa8d-5d7a31aaebf4" />
+          </g>
+        </g>
+      </defs>
+      <g
+         fill="#000000"
+         fill-opacity="1"
+         id="id-3c43cb76-5db4-41c3-88e2-a0ac8682f217"
+         transform="translate(-149.103,-128.124)">
+        <g
+           transform="translate(148.712,134.765)"
+           id="g8354">
+          <path
+             d="m 4.578125,-3.1875 c 0,-0.796875 -0.046875,-1.59375 -0.390625,-2.328125 -0.453125,-0.96875 -1.28125,-1.125 -1.6875,-1.125 -0.609375,0 -1.328125,0.265625 -1.75,1.1875 -0.3125,0.6875 -0.359375,1.46875 -0.359375,2.265625 0,0.75 0.03125,1.640625 0.453125,2.40625 0.421875,0.796875 1.15625,1 1.640625,1 0.53125,0 1.296875,-0.203125 1.734375,-1.15625 0.3125,-0.6875 0.359375,-1.46875 0.359375,-2.25 z M 2.484375,0 C 2.09375,0 1.5,-0.25 1.328125,-1.203125 1.21875,-1.796875 1.21875,-2.71875 1.21875,-3.3125 c 0,-0.640625 0,-1.296875 0.078125,-1.828125 0.1875,-1.1875 0.9375,-1.28125 1.1875,-1.28125 0.328125,0 0.984375,0.1875 1.171875,1.171875 0.109375,0.5625 0.109375,1.3125 0.109375,1.9375 0,0.75 0,1.421875 -0.109375,2.0625 C 3.5,-0.296875 2.9375,0 2.484375,0 Z m 0,0"
+             id="id-758b2594-721b-49d3-96ea-688c005ac77c" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.529167,0,0,0.529167,94.585136,86.434803)"
+       ns1:version="1.10.0"
+       ns1:texconverter="xelatex"
+       ns1:pdfconverter="inkscape"
+       ns1:text="$0$"
+       ns1:preamble="C:\Users\Ichinoe\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+       ns1:scale="1.5"
+       ns1:alignment="middle center"
+       ns1:stroke-to-path="0"
+       ns1:inkscapeversion="1.3.2"
+       id="g91"
+       ns1:jacobian_sqrt="0.529167">
+      <defs
+         id="defs88">
+        <g
+           id="g88">
+          <g
+             id="g87">
+            <path
+               d="m 4.578125,-3.1875 c 0,-0.796875 -0.046875,-1.59375 -0.390625,-2.328125 -0.453125,-0.96875 -1.28125,-1.125 -1.6875,-1.125 -0.609375,0 -1.328125,0.265625 -1.75,1.1875 -0.3125,0.6875 -0.359375,1.46875 -0.359375,2.265625 0,0.75 0.03125,1.640625 0.453125,2.40625 0.421875,0.796875 1.15625,1 1.640625,1 0.53125,0 1.296875,-0.203125 1.734375,-1.15625 0.3125,-0.6875 0.359375,-1.46875 0.359375,-2.25 z M 2.484375,0 C 2.09375,0 1.5,-0.25 1.328125,-1.203125 1.21875,-1.796875 1.21875,-2.71875 1.21875,-3.3125 c 0,-0.640625 0,-1.296875 0.078125,-1.828125 0.1875,-1.1875 0.9375,-1.28125 1.1875,-1.28125 0.328125,0 0.984375,0.1875 1.171875,1.171875 0.109375,0.5625 0.109375,1.3125 0.109375,1.9375 0,0.75 0,1.421875 -0.109375,2.0625 C 3.5,-0.296875 2.9375,0 2.484375,0 Z m 0,0"
+               id="path87" />
+          </g>
+        </g>
+      </defs>
+      <g
+         fill="#000000"
+         fill-opacity="1"
+         id="g90"
+         transform="translate(-149.103,-128.124)">
+        <g
+           transform="translate(148.712,134.765)"
+           id="g89">
+          <path
+             d="m 4.578125,-3.1875 c 0,-0.796875 -0.046875,-1.59375 -0.390625,-2.328125 -0.453125,-0.96875 -1.28125,-1.125 -1.6875,-1.125 -0.609375,0 -1.328125,0.265625 -1.75,1.1875 -0.3125,0.6875 -0.359375,1.46875 -0.359375,2.265625 0,0.75 0.03125,1.640625 0.453125,2.40625 0.421875,0.796875 1.15625,1 1.640625,1 0.53125,0 1.296875,-0.203125 1.734375,-1.15625 0.3125,-0.6875 0.359375,-1.46875 0.359375,-2.25 z M 2.484375,0 C 2.09375,0 1.5,-0.25 1.328125,-1.203125 1.21875,-1.796875 1.21875,-2.71875 1.21875,-3.3125 c 0,-0.640625 0,-1.296875 0.078125,-1.828125 0.1875,-1.1875 0.9375,-1.28125 1.1875,-1.28125 0.328125,0 0.984375,0.1875 1.171875,1.171875 0.109375,0.5625 0.109375,1.3125 0.109375,1.9375 0,0.75 0,1.421875 -0.109375,2.0625 C 3.5,-0.296875 2.9375,0 2.484375,0 Z m 0,0"
+             id="path88" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.529167,0,0,0.529167,74.0322,86.4929)"
+       ns1:version="1.10.0"
+       ns1:texconverter="xelatex"
+       ns1:pdfconverter="inkscape"
+       ns1:text="$1$"
+       ns1:preamble="C:\Users\Ichinoe\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+       ns1:scale="1.5"
+       ns1:alignment="middle center"
+       ns1:stroke-to-path="0"
+       ns1:inkscapeversion="1.3.2"
+       id="g96"
+       ns1:jacobian_sqrt="0.529167">
+      <defs
+         id="id-3177feea-b788-4e16-848b-326413f47d2c">
+        <g
+           id="id-8beae9fb-4043-4432-a119-c5493434e337">
+          <g
+             id="id-d8e62caf-eb34-44dd-8bf4-699361c7b8fc">
+            <path
+               d="m 2.9375,-6.375 c 0,-0.25 0,-0.265625 -0.234375,-0.265625 C 2.078125,-6 1.203125,-6 0.890625,-6 v 0.3125 c 0.203125,0 0.78125,0 1.296875,-0.265625 v 5.171875 c 0,0.359375 -0.03125,0.46875 -0.921875,0.46875 h -0.3125 V 0 c 0.34375,-0.03125 1.203125,-0.03125 1.609375,-0.03125 0.390625,0 1.265625,0 1.609375,0.03125 v -0.3125 h -0.3125 c -0.90625,0 -0.921875,-0.109375 -0.921875,-0.46875 z m 0,0"
+               id="id-6b8c4d0a-f0d1-4c2b-8533-8a29b9eebd2f" />
+          </g>
+        </g>
+      </defs>
+      <g
+         fill="#000000"
+         fill-opacity="1"
+         id="id-dcb09b59-e317-47e8-a0d1-1d29dcd45a00"
+         transform="translate(-149.603,-128.124)">
+        <g
+           transform="translate(148.712,134.765)"
+           id="g9483">
+          <path
+             d="m 2.9375,-6.375 c 0,-0.25 0,-0.265625 -0.234375,-0.265625 C 2.078125,-6 1.203125,-6 0.890625,-6 v 0.3125 c 0.203125,0 0.78125,0 1.296875,-0.265625 v 5.171875 c 0,0.359375 -0.03125,0.46875 -0.921875,0.46875 h -0.3125 V 0 c 0.34375,-0.03125 1.203125,-0.03125 1.609375,-0.03125 0.390625,0 1.265625,0 1.609375,0.03125 v -0.3125 h -0.3125 c -0.90625,0 -0.921875,-0.109375 -0.921875,-0.46875 z m 0,0"
+             id="id-419378e6-9420-4fb3-b9be-23019fe8e2f1" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.529167,0,0,0.529167,84.428445,86.4929)"
+       ns1:version="1.10.0"
+       ns1:texconverter="xelatex"
+       ns1:pdfconverter="inkscape"
+       ns1:text="$1$"
+       ns1:preamble="C:\Users\Ichinoe\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+       ns1:scale="1.5"
+       ns1:alignment="middle center"
+       ns1:stroke-to-path="0"
+       ns1:inkscapeversion="1.3.2"
+       id="g101"
+       ns1:jacobian_sqrt="0.529167">
+      <defs
+         id="defs98">
+        <g
+           id="g98">
+          <g
+             id="g97">
+            <path
+               d="m 2.9375,-6.375 c 0,-0.25 0,-0.265625 -0.234375,-0.265625 C 2.078125,-6 1.203125,-6 0.890625,-6 v 0.3125 c 0.203125,0 0.78125,0 1.296875,-0.265625 v 5.171875 c 0,0.359375 -0.03125,0.46875 -0.921875,0.46875 h -0.3125 V 0 c 0.34375,-0.03125 1.203125,-0.03125 1.609375,-0.03125 0.390625,0 1.265625,0 1.609375,0.03125 v -0.3125 h -0.3125 c -0.90625,0 -0.921875,-0.109375 -0.921875,-0.46875 z m 0,0"
+               id="path96" />
+          </g>
+        </g>
+      </defs>
+      <g
+         fill="#000000"
+         fill-opacity="1"
+         id="g100"
+         transform="translate(-149.603,-128.124)">
+        <g
+           transform="translate(148.712,134.765)"
+           id="g99">
+          <path
+             d="m 2.9375,-6.375 c 0,-0.25 0,-0.265625 -0.234375,-0.265625 C 2.078125,-6 1.203125,-6 0.890625,-6 v 0.3125 c 0.203125,0 0.78125,0 1.296875,-0.265625 v 5.171875 c 0,0.359375 -0.03125,0.46875 -0.921875,0.46875 h -0.3125 V 0 c 0.34375,-0.03125 1.203125,-0.03125 1.609375,-0.03125 0.390625,0 1.265625,0 1.609375,0.03125 v -0.3125 h -0.3125 c -0.90625,0 -0.921875,-0.109375 -0.921875,-0.46875 z m 0,0"
+             id="path98" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.529167,0,0,0.529167,104.65967,86.4929)"
+       ns1:version="1.10.0"
+       ns1:texconverter="xelatex"
+       ns1:pdfconverter="inkscape"
+       ns1:text="$1$"
+       ns1:preamble="C:\Users\Ichinoe\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+       ns1:scale="1.5"
+       ns1:alignment="middle center"
+       ns1:stroke-to-path="0"
+       ns1:inkscapeversion="1.3.2"
+       id="g106"
+       ns1:jacobian_sqrt="0.529167">
+      <defs
+         id="defs103">
+        <g
+           id="g103">
+          <g
+             id="g102">
+            <path
+               d="m 2.9375,-6.375 c 0,-0.25 0,-0.265625 -0.234375,-0.265625 C 2.078125,-6 1.203125,-6 0.890625,-6 v 0.3125 c 0.203125,0 0.78125,0 1.296875,-0.265625 v 5.171875 c 0,0.359375 -0.03125,0.46875 -0.921875,0.46875 h -0.3125 V 0 c 0.34375,-0.03125 1.203125,-0.03125 1.609375,-0.03125 0.390625,0 1.265625,0 1.609375,0.03125 v -0.3125 h -0.3125 c -0.90625,0 -0.921875,-0.109375 -0.921875,-0.46875 z m 0,0"
+               id="path101" />
+          </g>
+        </g>
+      </defs>
+      <g
+         fill="#000000"
+         fill-opacity="1"
+         id="g105"
+         transform="translate(-149.603,-128.124)">
+        <g
+           transform="translate(148.712,134.765)"
+           id="g104">
+          <path
+             d="m 2.9375,-6.375 c 0,-0.25 0,-0.265625 -0.234375,-0.265625 C 2.078125,-6 1.203125,-6 0.890625,-6 v 0.3125 c 0.203125,0 0.78125,0 1.296875,-0.265625 v 5.171875 c 0,0.359375 -0.03125,0.46875 -0.921875,0.46875 h -0.3125 V 0 c 0.34375,-0.03125 1.203125,-0.03125 1.609375,-0.03125 0.390625,0 1.265625,0 1.609375,0.03125 v -0.3125 h -0.3125 c -0.90625,0 -0.921875,-0.109375 -0.921875,-0.46875 z m 0,0"
+             id="path103" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.529167,0,0,0.529167,115.00345,86.434803)"
+       ns1:version="1.10.0"
+       ns1:texconverter="xelatex"
+       ns1:pdfconverter="inkscape"
+       ns1:text="$0$"
+       ns1:preamble="C:\Users\Ichinoe\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+       ns1:scale="1.5"
+       ns1:alignment="middle center"
+       ns1:stroke-to-path="0"
+       ns1:inkscapeversion="1.3.2"
+       id="g111"
+       ns1:jacobian_sqrt="0.529167">
+      <defs
+         id="defs108">
+        <g
+           id="g108">
+          <g
+             id="g107">
+            <path
+               d="m 4.578125,-3.1875 c 0,-0.796875 -0.046875,-1.59375 -0.390625,-2.328125 -0.453125,-0.96875 -1.28125,-1.125 -1.6875,-1.125 -0.609375,0 -1.328125,0.265625 -1.75,1.1875 -0.3125,0.6875 -0.359375,1.46875 -0.359375,2.265625 0,0.75 0.03125,1.640625 0.453125,2.40625 0.421875,0.796875 1.15625,1 1.640625,1 0.53125,0 1.296875,-0.203125 1.734375,-1.15625 0.3125,-0.6875 0.359375,-1.46875 0.359375,-2.25 z M 2.484375,0 C 2.09375,0 1.5,-0.25 1.328125,-1.203125 1.21875,-1.796875 1.21875,-2.71875 1.21875,-3.3125 c 0,-0.640625 0,-1.296875 0.078125,-1.828125 0.1875,-1.1875 0.9375,-1.28125 1.1875,-1.28125 0.328125,0 0.984375,0.1875 1.171875,1.171875 0.109375,0.5625 0.109375,1.3125 0.109375,1.9375 0,0.75 0,1.421875 -0.109375,2.0625 C 3.5,-0.296875 2.9375,0 2.484375,0 Z m 0,0"
+               id="path106" />
+          </g>
+        </g>
+      </defs>
+      <g
+         fill="#000000"
+         fill-opacity="1"
+         id="g110"
+         transform="translate(-149.103,-128.124)">
+        <g
+           transform="translate(148.712,134.765)"
+           id="g109">
+          <path
+             d="m 4.578125,-3.1875 c 0,-0.796875 -0.046875,-1.59375 -0.390625,-2.328125 -0.453125,-0.96875 -1.28125,-1.125 -1.6875,-1.125 -0.609375,0 -1.328125,0.265625 -1.75,1.1875 -0.3125,0.6875 -0.359375,1.46875 -0.359375,2.265625 0,0.75 0.03125,1.640625 0.453125,2.40625 0.421875,0.796875 1.15625,1 1.640625,1 0.53125,0 1.296875,-0.203125 1.734375,-1.15625 0.3125,-0.6875 0.359375,-1.46875 0.359375,-2.25 z M 2.484375,0 C 2.09375,0 1.5,-0.25 1.328125,-1.203125 1.21875,-1.796875 1.21875,-2.71875 1.21875,-3.3125 c 0,-0.640625 0,-1.296875 0.078125,-1.828125 0.1875,-1.1875 0.9375,-1.28125 1.1875,-1.28125 0.328125,0 0.984375,0.1875 1.171875,1.171875 0.109375,0.5625 0.109375,1.3125 0.109375,1.9375 0,0.75 0,1.421875 -0.109375,2.0625 C 3.5,-0.296875 2.9375,0 2.484375,0 Z m 0,0"
+             id="path108" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.529167,0,0,0.529167,125.03792,86.857594)"
+       ns1:version="1.10.0"
+       ns1:texconverter="xelatex"
+       ns1:pdfconverter="inkscape"
+       ns1:text="$\\sqcup$"
+       ns1:preamble="C:\Users\Ichinoe\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+       ns1:scale="1.5"
+       ns1:alignment="middle center"
+       ns1:stroke-to-path="0"
+       ns1:inkscapeversion="1.3.2"
+       id="g9054"
+       ns1:jacobian_sqrt="0.529167">
+      <defs
+         id="id-d7ba82f5-7490-471c-be1d-e629ec9c3911">
+        <g
+           id="id-b14b54f2-1dda-4d5f-b32d-a06e3134aff3">
+          <g
+             id="id-d2ce8562-89ca-4779-b581-81cc49815d01">
+            <path
+               d="m 6.03125,-5.609375 c 0,-0.171875 0,-0.359375 -0.203125,-0.359375 C 5.625,-5.96875 5.625,-5.78125 5.625,-5.609375 V -0.40625 H 1 V -5.609375 C 1,-5.78125 1,-5.96875 0.8125,-5.96875 c -0.203125,0 -0.203125,0.1875 -0.203125,0.359375 v 5.25 C 0.609375,-0.046875 0.640625,0 0.96875,0 H 5.671875 C 6,0 6.03125,-0.03125 6.03125,-0.359375 Z m 0,0"
+               id="id-59d55cb7-cd18-4fd6-82a9-13fcd7bbe451" />
+          </g>
+        </g>
+      </defs>
+      <g
+         fill="#000000"
+         fill-opacity="1"
+         id="id-4b347e95-c257-4e5c-b6af-c992a2ba3972"
+         transform="translate(-149.321,-128.796)">
+        <g
+           transform="translate(148.712,134.765)"
+           id="g8482">
+          <path
+             d="m 6.03125,-5.609375 c 0,-0.171875 0,-0.359375 -0.203125,-0.359375 C 5.625,-5.96875 5.625,-5.78125 5.625,-5.609375 V -0.40625 H 1 V -5.609375 C 1,-5.78125 1,-5.96875 0.8125,-5.96875 c -0.203125,0 -0.203125,0.1875 -0.203125,0.359375 v 5.25 C 0.609375,-0.046875 0.640625,0 0.96875,0 H 5.671875 C 6,0 6.03125,-0.03125 6.03125,-0.359375 Z m 0,0"
+             id="id-47793e85-ae4e-445d-a8a7-5576b2dab882" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.529167,0,0,0.529167,135.24708,86.857594)"
+       ns1:version="1.10.0"
+       ns1:texconverter="xelatex"
+       ns1:pdfconverter="inkscape"
+       ns1:text="$\\sqcup$"
+       ns1:preamble="C:\Users\Ichinoe\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+       ns1:scale="1.5"
+       ns1:alignment="middle center"
+       ns1:stroke-to-path="0"
+       ns1:inkscapeversion="1.3.2"
+       id="g116"
+       ns1:jacobian_sqrt="0.529167">
+      <defs
+         id="defs113">
+        <g
+           id="g113">
+          <g
+             id="g112">
+            <path
+               d="m 6.03125,-5.609375 c 0,-0.171875 0,-0.359375 -0.203125,-0.359375 C 5.625,-5.96875 5.625,-5.78125 5.625,-5.609375 V -0.40625 H 1 V -5.609375 C 1,-5.78125 1,-5.96875 0.8125,-5.96875 c -0.203125,0 -0.203125,0.1875 -0.203125,0.359375 v 5.25 C 0.609375,-0.046875 0.640625,0 0.96875,0 H 5.671875 C 6,0 6.03125,-0.03125 6.03125,-0.359375 Z m 0,0"
+               id="path111" />
+          </g>
+        </g>
+      </defs>
+      <g
+         fill="#000000"
+         fill-opacity="1"
+         id="g115"
+         transform="translate(-149.321,-128.796)">
+        <g
+           transform="translate(148.712,134.765)"
+           id="g114">
+          <path
+             d="m 6.03125,-5.609375 c 0,-0.171875 0,-0.359375 -0.203125,-0.359375 C 5.625,-5.96875 5.625,-5.78125 5.625,-5.609375 V -0.40625 H 1 V -5.609375 C 1,-5.78125 1,-5.96875 0.8125,-5.96875 c -0.203125,0 -0.203125,0.1875 -0.203125,0.359375 v 5.25 C 0.609375,-0.046875 0.640625,0 0.96875,0 H 5.671875 C 6,0 6.03125,-0.03125 6.03125,-0.359375 Z m 0,0"
+             id="path113" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.529167,0,0,0.529167,145.45624,86.857594)"
+       ns1:version="1.10.0"
+       ns1:texconverter="xelatex"
+       ns1:pdfconverter="inkscape"
+       ns1:text="$\\sqcup$"
+       ns1:preamble="C:\Users\Ichinoe\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+       ns1:scale="1.5"
+       ns1:alignment="middle center"
+       ns1:stroke-to-path="0"
+       ns1:inkscapeversion="1.3.2"
+       id="g121"
+       ns1:jacobian_sqrt="0.529167">
+      <defs
+         id="defs118">
+        <g
+           id="g118">
+          <g
+             id="g117">
+            <path
+               d="m 6.03125,-5.609375 c 0,-0.171875 0,-0.359375 -0.203125,-0.359375 C 5.625,-5.96875 5.625,-5.78125 5.625,-5.609375 V -0.40625 H 1 V -5.609375 C 1,-5.78125 1,-5.96875 0.8125,-5.96875 c -0.203125,0 -0.203125,0.1875 -0.203125,0.359375 v 5.25 C 0.609375,-0.046875 0.640625,0 0.96875,0 H 5.671875 C 6,0 6.03125,-0.03125 6.03125,-0.359375 Z m 0,0"
+               id="path116" />
+          </g>
+        </g>
+      </defs>
+      <g
+         fill="#000000"
+         fill-opacity="1"
+         id="g120"
+         transform="translate(-149.321,-128.796)">
+        <g
+           transform="translate(148.712,134.765)"
+           id="g119">
+          <path
+             d="m 6.03125,-5.609375 c 0,-0.171875 0,-0.359375 -0.203125,-0.359375 C 5.625,-5.96875 5.625,-5.78125 5.625,-5.609375 V -0.40625 H 1 V -5.609375 C 1,-5.78125 1,-5.96875 0.8125,-5.96875 c -0.203125,0 -0.203125,0.1875 -0.203125,0.359375 v 5.25 C 0.609375,-0.046875 0.640625,0 0.96875,0 H 5.671875 C 6,0 6.03125,-0.03125 6.03125,-0.359375 Z m 0,0"
+             id="path118" />
+        </g>
+      </g>
+    </g>
+    <g
+       transform="matrix(0.529167,0,0,0.529167,155.85249,86.857594)"
+       ns1:version="1.10.0"
+       ns1:texconverter="xelatex"
+       ns1:pdfconverter="inkscape"
+       ns1:text="$\\sqcup$"
+       ns1:preamble="C:\Users\Ichinoe\AppData\Roaming\inkscape\extensions\textext\default_packages.tex"
+       ns1:scale="1.5"
+       ns1:alignment="middle center"
+       ns1:stroke-to-path="0"
+       ns1:inkscapeversion="1.3.2"
+       id="g126"
+       ns1:jacobian_sqrt="0.529167">
+      <defs
+         id="defs123">
+        <g
+           id="g123">
+          <g
+             id="g122">
+            <path
+               d="m 6.03125,-5.609375 c 0,-0.171875 0,-0.359375 -0.203125,-0.359375 C 5.625,-5.96875 5.625,-5.78125 5.625,-5.609375 V -0.40625 H 1 V -5.609375 C 1,-5.78125 1,-5.96875 0.8125,-5.96875 c -0.203125,0 -0.203125,0.1875 -0.203125,0.359375 v 5.25 C 0.609375,-0.046875 0.640625,0 0.96875,0 H 5.671875 C 6,0 6.03125,-0.03125 6.03125,-0.359375 Z m 0,0"
+               id="path121" />
+          </g>
+        </g>
+      </defs>
+      <g
+         fill="#000000"
+         fill-opacity="1"
+         id="g125"
+         transform="translate(-149.321,-128.796)">
+        <g
+           transform="translate(148.712,134.765)"
+           id="g124">
+          <path
+             d="m 6.03125,-5.609375 c 0,-0.171875 0,-0.359375 -0.203125,-0.359375 C 5.625,-5.96875 5.625,-5.78125 5.625,-5.609375 V -0.40625 H 1 V -5.609375 C 1,-5.78125 1,-5.96875 0.8125,-5.96875 c -0.203125,0 -0.203125,0.1875 -0.203125,0.359375 v 5.25 C 0.609375,-0.046875 0.640625,0 0.96875,0 H 5.671875 C 6,0 6.03125,-0.03125 6.03125,-0.359375 Z m 0,0"
+             id="path123" />
+        </g>
+      </g>
+    </g>
+    <text
+       xml:space="preserve"
+       style="font-weight:500;font-size:4.9389px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC Medium';fill:#ffffff;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       x="164.62619"
+       y="90.398468"
+       id="text126"><tspan
+         sodipodi:role="line"
+         id="tspan126"
+         style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:1;stroke-width:0.42"
+         x="164.62619"
+         y="90.398468">…</tspan></text>
+    <text
+       xml:space="preserve"
+       style="font-style:normal;font-variant:normal;font-weight:normal;font-stretch:normal;font-size:4.58611px;line-height:1;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC';fill:#000000;fill-opacity:1;stroke:none;stroke-width:0.42;stroke-dasharray:none;stroke-opacity:1"
+       x="109.43504"
+       y="102.28135"
+       id="text127"><tspan
+         sodipodi:role="line"
+         id="tspan127"
+         style="font-style:normal;font-variant:normal;font-weight:500;font-stretch:normal;font-size:4.58611px;font-family:'Noto Serif SC';-inkscape-font-specification:'Noto Serif SC Medium';stroke-width:0.42"
+         x="109.43504"
+         y="102.28135">双向读写头</tspan></text>
+  </g>
+</svg>
