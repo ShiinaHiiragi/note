@@ -420,7 +420,7 @@
 
     2. $F_{CB}(\kappa)$ 关于对角线交封闭：对任意不可数正则基数 $\kappa$ 及 $\kappa$ 上的无界闭集的序列 $\left\langle X_{\gamma} \mid \gamma<\kappa\right\rangle$，$\triangle_{\gamma<\kappa} X_{\gamma}$ 是无界闭集
 
-3. 平稳集：设 $\alpha$ 为任意极限序数且 $\operatorname{cf}(\alpha)>\omega$．若 $S \subseteq \alpha$ 满足对任意 $\alpha$ 的无界闭集 $C$ 都有 $S \cap C \neq \emptyset$，则称 $S$ 是 $\alpha$ 上的平稳集；称 $I_{N S}(\alpha)=\{X \subseteq \alpha \mid \exists C \ (C$ 是 $\alpha$ 的无界闭子集 $\wedge X \cap C=\varnothing\}$ 为 $\alpha$ 上的非平稳理想
+3. 平稳集：设 $\alpha$ 为任意极限序数且 $\operatorname{cf}(\alpha)>\omega$．若 $S \subseteq \alpha$ 满足对任意 $\alpha$ 的无界闭集 $C$ 都有 $S \cap C \neq \varnothing$，则称 $S$ 是 $\alpha$ 上的平稳集；称 $I_{N S}(\alpha)=\{X \subseteq \alpha \mid \exists C \ (C$ 是 $\alpha$ 的无界闭子集 $\wedge X \cap C=\varnothing\}$ 为 $\alpha$ 上的非平稳理想
     1. 假设 $\alpha$ 是极限序数，$\operatorname{cf}(\alpha)>\omega$
         1. $\alpha$ 上的无界闭集都是平稳集，若 $S$ 是平稳集且 $S \subseteq T \subseteq \alpha$，则 $T$ 是平稳集
         2. $\alpha$ 上的平稳集都是无界的
