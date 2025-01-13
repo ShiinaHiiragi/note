@@ -25,7 +25,7 @@
         2. 对任意有限的 $M \subseteq A$，$M$ 上的任意一个 $n-$型都被 $A$ 实现
         3. 对任意有限的 $M \subseteq A$，任意的 $p \in S_{n}(M)$ 都被 $A$ 实现
     2. 任意的 $S-$结构 $A$ 都有一个 $\omega-$饱和的初等膨胀 $B$．当 $S$ 和 $A$ 都可数时，$B$ 的基数可不超过 $2^{\omega}$
-5. 设 $A$ 是一个结构，若对任意的有限集 $M \subseteq A$ 与 $n \in \mathbf{B}$，如果 $\overline{a}, \overline{b} \in A^{n}$ 使得 $\operatorname{tp}_{A}(\overline{a} / M)=\operatorname{tp}_{A}(\overline{b} / M)$，则对任意的 $c \in A$ 都存在 $d \in A$ 使得 $\operatorname{tp}_{A}(\overline{a}, c / M)=\operatorname{tp}_{A}(\overline{b}, d / M)$，则称 $A$ 是 $\omega-$齐次结构
+5. 设 $A$ 是一个结构，若对任意的有限集 $M \subseteq A$ 与 $n \in \mathbf{N}$，如果 $\overline{a}, \overline{b} \in A^{n}$ 使得 $\operatorname{tp}_{A}(\overline{a} / M)=\operatorname{tp}_{A}(\overline{b} / M)$，则对任意的 $c \in A$ 都存在 $d \in A$ 使得 $\operatorname{tp}_{A}(\overline{a}, c / M)=\operatorname{tp}_{A}(\overline{b}, d / M)$，则称 $A$ 是 $\omega-$齐次结构
     1. 设 $A$ 是一个结构，$\overline{a}, \overline{b} \in A^{k}$ 是 $A$ 中两个 $k-$元组且 $\operatorname{tp}_{A}(\overline{a})= \operatorname{tp}_{A}(\overline{b})$．$\Sigma(\overline{x}, \overline{y})$ 是一个 $S-$公式集，其中 $\overline{y}=y_{1}, \cdots, y_{k}$
         1. 如果 $\mathcal{L}_{\overline{a}}-$公式集 $\Sigma(\overline x, \overline a)$ 是 $\overline{a}$ 上的一个 $n-$型，则 $\mathcal{L}_{\overline{b}}-$公式集 $\Sigma(\overline x, \overline b)$ 是 $\overline b$ 上的一个 $n-$型
         2. 如果 $\Sigma(\overline{x}, \overline{a})$ 是 $\overline{a}$ 上的一个完全 $n-$型，则 $\Sigma(\overline{x}, \overline{b})$ 是 $\overline{b}$ 上的一个完全 $n$ 型
@@ -34,5 +34,33 @@
     4. 如果 $S$ 可数，且 $A$ 是可数的 $S-$结构，则 $A$ 有一个可数的初等膨胀 $B$ 是 $\omega-$齐次的
 
 ### 2.1.2 不可数模型
+1. 任意无穷基数的饱和性与齐次性：设 $A$ 是一个 $S-$结构，$\kappa$ 是一个无穷基数
+    1. 若对任意的 $M \subseteq A$ 与 $0<n \in \mathbf{N}$，如果 $|M|<\kappa$，有 $S_{n}(M)$ 中的所有的型都被 $A$ 实现，则称 $A$ 为 $\kappa-$饱和结构．如果 $A$ 是 $|A|-$饱和的，则称 $A$ 是饱和结构
+    2. 若对任意满足 $|I|<\kappa$ 的指标集 $I$，如果 $\overline{a}=\left(a_{i}\right)_{i \in I} \in A^{I}$ 和 $\overline{b}=\left(b_{i}\right)_{i \in I} \in A^{I}$ 满足 $\operatorname{tp}_{A}(\overline{a})=\operatorname{tp}_{A}(\overline{b})$，则对任意的 $c \in A$，都存在 $d \in A$ 使得 $\operatorname{tp}_{A}(\overline{a}, c)=\operatorname{tp}_{A}(\overline{b}, d)$，则称 $A$ 为 $\kappa-$齐次结构．如果 $A$ 是 $|A|-$齐次的，则称 $A$ 是齐次结构
+    3. 若对任意满足 $|I|<\kappa$ 的指标集 $I$，如果 $\overline{a}=\left(a_{i}\right)_{i \in I} \in A^{I}$ 和 $\overline{b}=\left(b_{i}\right)_{i \in I} \in A^{I}$ 满足 $\operatorname{tp}_{A}(\overline{a})=\operatorname{tp}_{A}(\overline{b})$，则存在自同构 $f: A \to A$ 使得 $f\left(a_{i}\right)=b_{i}$，则称 $A$ 为强 $\kappa-$齐次结构．如果 $A$ 是强 $|A|-$齐次的，则称 $A$ 是强齐次结构
+
+    设 $A$ 与 $B$ 是 $S-$结构， $\kappa$ 是一个无穷基数
+
+    1. $A$ 是 $\kappa-$饱和的当且仅当对任意的 $M \subseteq A$，如果 $|M|<\kappa$，则 $S_{1}(M)$ 中的所有型都被 $A$ 实现．
+    2. $A$ 是 $\kappa-$饱和的当且仅当对任意的 $M \subseteq A$ 与指标集 $I$，如果 $|M|<\kappa$ 且 $|I|<\kappa$，则 $S_{I}(M)$ 中的所有型都被 $A$ 实现
+    3. 如果 $A$ 是 $\kappa-$饱和的，则 $A$ 是 $\kappa-$齐次的
+    4. 如果 $A$ 是齐次的，则 $A$ 是强齐次的
+    5. 如果 $A$ 是饱和的，则 $A$ 是强齐次的
+    6. 若 $A \equiv B,|A| =|B|=\kappa$，且 $A$ 与 $B$ 均是饱和结构，则 $A \cong B$
+
+2. 设 $A$ 和 $B$ 是初等等价的 $S-$结构，$\kappa$ 是一个无穷基数，$|A| \leqslant \kappa$ 且 $B$ 是 $\kappa-$饱和的，则存在 $A$ 到 $B$ 的初等嵌入
+3. 设 $A$ 是 $S-$结构，如果基数 $\kappa$ 满足 $\kappa \geqslant \max \{|S|, \omega\}$ 且 $2^{\kappa} \geqslant |A|$，则存在 $A$ 的 $\kappa^{+}-$饱和的初等膨胀 $B$，且 $B$ 的基数不超过 $2^{\kappa}$
+    1. 如果 $\mathbf{GCH}$ 成立，则 $B$ 是饱和模型
+    2. 假设 $\mathbf{GCH}$ 成立，如果 $T$ 是有无穷模型的 $S-$理论且 $\kappa>\max \{|S|$, $\alpha\}$ 是一个正则基数，则存在 $T$ 的基数为 $\kappa$ 的饱和模型
+    3. 若 $A \vDash T$ 且 $|A|=\lambda$，有 $\left|S_{1}(A)\right|=\lambda$，则称 $T$ 是 $\lambda-$稳定理论是指
+4. 设 $\kappa$ 是一无穷基数，则任何无穷的 $S-$结构 $A$ 都有一个初等膨胀 $B$，使得 $B$ 既是 $\kappa-$饱和的，又是强 $\kappa-$齐次的
+    1. 设 $A$ 与 $B$ 均是 $S-$结构，$\kappa$ 是一个无穷基数使得
+        1. 对任意 $0<n \in \mathbf{N}$ 与 $\overline{a} \in A^{n}$，都有 $\operatorname{tp}_{A}(\overline{a})$ 被 $B$ 实现
+        2. 对任意 $0<n \in \mathbf{N}$ 与 $\operatorname{tp}_{B}(\overline{b})$ 被 $A$ 实现
+        3. $B$ 是 $\kappa-$齐次的
+
+        则对任意的基数 $\lambda<\kappa$ 及 $\overline{b} \in A^{\lambda}$，有 $\operatorname{tp}_{A}(\overline{b})$ 被 $B$ 实现
+
+    2. 设 $T$ 是完备的 $S-$理论，$\kappa$ 是一个无穷基数，$A$ 和 $B$ 均是 $T$ 的基数为 $\kappa$ 的齐次模型且对任意的 $p \in S_{n}(T)$，都有 $A \vDash p$ 蕴涵 $B \vDash p$，则 $A \cong B$
 
 ## 2.2 量词消去
