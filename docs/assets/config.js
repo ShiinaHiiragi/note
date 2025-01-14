@@ -137,14 +137,15 @@ false && document.addEventListener("DOMContentLoaded", () => {
 
       return nodes
         .reduce((prev, current, currentIndex) => {
-          if (isList(current) || currentIndex === nodes.length - 1) {
+          const isLast = currentIndex === nodes.length - 1;
+          if (isList(current) || isLast) {
             return {
               lastIndex: currentIndex + 1,
               elementList: [
                 ...prev.elementList,
                 nodes.slice(
                   prev.lastIndex,
-                  currentIndex + Number(!isList(current))
+                  currentIndex + Number(isLast)
                 )
               ]
             }
@@ -182,9 +183,9 @@ false && document.addEventListener("DOMContentLoaded", () => {
         const lastLineWidth = rectInfo.right - rectInfo.left;
         const lastLineRight = rectInfo.lastRect.right - rectInfo.left;
         if (lastLineRight < lastLineWidth * 0.1) {
-          elementList.forEach(
-            (item) => item.parentElement.classList.add("hanging")
-          );
+          elementList.forEach((item) => {
+            return item.parentElement.classList.add("hanging");
+          });
         }
       }
     });
