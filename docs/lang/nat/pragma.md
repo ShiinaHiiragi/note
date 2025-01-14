@@ -318,7 +318,7 @@
                 2. 表示关系，当且仅当约翰介绍 $x$ 给 $y$，关系成立，个体是比尔、苏珊
 
     3. 根据问题理论，一个特殊问句表示一个由 $\lambda$ 抽象运算得到的属性
-    4. 根据 $\text{Horn}$ 关于「仅仅」的语义学在助词位置上的「仅仅」是一个句子副词，这样就可以用公式来表述语句副词「仅仅」的语义规则．$\text{Rooth}$ 对其的表述：令 $\left< Q^n, \alpha_1, \alpha_2, \cdots, \alpha_n \right>$ 是语句 $S$ 的结构意义，语句「仅仅 $S$」 断定对所有序列 $\left< \beta_1, \beta_2, \cdots, \beta_n \right>$，如果 $Q^n \left< \beta_1, \beta_2, \cdots, \beta_n \right>$ 真，则 $\left< \beta_1, \beta_2, \cdots, \beta_n \right> = \left< \alpha_1, \alpha_2, \cdots, \alpha_n \right>$
+    4. 根据 $\text{Horn}$ 关于「仅仅」的语义学在助词位置上的「仅仅」是一个语句副词，这样就可以用公式来表述语句副词「仅仅」的语义规则．$\text{Rooth}$ 对其的表述：令 $\left< Q^n, \alpha_1, \alpha_2, \cdots, \alpha_n \right>$ 是语句 $S$ 的结构意义，语句「仅仅 $S$」 断定对所有序列 $\left< \beta_1, \beta_2, \cdots, \beta_n \right>$，如果 $Q^n \left< \beta_1, \beta_2, \cdots, \beta_n \right>$ 真，则 $\left< \beta_1, \beta_2, \cdots, \beta_n \right> = \left< \alpha_1, \alpha_2, \cdots, \alpha_n \right>$
 
 7. 变异语义学：$\text{Rooth}$ 提出
     1. 每一个语句都有两个不同的模型论解释，一个是通常的语义值，记为 $[\![]\!]^o$；另一个是焦点导出的解释，记为 $[\![]\!]^t$，称为「$p$ 集合」或「焦点语义值」
