@@ -125,9 +125,9 @@ if (__md_get("__consent")?.local) {
   localSerif.removeValue();
 }
 
-// change `false` -> `true` to enable hanging lines checker
+// user `checker()` in console to enanle hanging lines checker
 // ensure the recall ratio which means false positive samples may occur
-false && document.addEventListener("DOMContentLoaded", () => {
+window.checker = () => {
   Array
     .from(document.querySelectorAll("article p, article li"))
     .map((element) => {
@@ -189,4 +189,5 @@ false && document.addEventListener("DOMContentLoaded", () => {
         }
       }
     });
-});
+  console.log(0);
+};
