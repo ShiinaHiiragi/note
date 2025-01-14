@@ -140,3 +140,18 @@
     2. $T$ 是 $\omega-$稳定的理论当且仅当与以下命题等价
         1. 对任意的模型 $A \vDash T$ 以及任意的 $S_{A}-$公式 $\alpha(\overline{x})$，都有 $\mathrm{RA}(\alpha(\overline{x}))<\infty$（等价地，$\operatorname{RA}(\overline{x}=\overline{x})<\infty$）
         2. 对任意的 $\lambda \geqslant \omega$，$T$ 是 $\lambda-$稳定的
+2. 设 $\left(I,<_{I}\right)$ 是一个线序集，$A$ 是一个结构，$M \subseteq X \subseteq A,\left(a_{i}\right)_{i \in I}$ 是 $X$ 中的序列
+    1. 如果序列 $\left(a_{i}\right)_{i \in I}$ 满足 $a_{j} \notin \operatorname{acl}_{A}\left(M \cup\left\{a_{i} \mid i<_{I} j\right\}\right)$，则称 $\left(a_{i}\right)_{i \in I}$ 是 $M$ 上一个代数独立序列
+    2. 如果 $\left(a_{i}\right)_{i \in I}$ 是 $M$ 上的一个代数独立序列且 $X \subseteq \operatorname{acl}_{A}\left(M \cup\left\{a_{i} \mid i \in I\right\}\right)$，则称 $\left(a_{i}\right)_{i \in I}$ 是 $X$ 在 $M$ 上的一个基
+
+    设 $A$ 是一个结构，$M, N \subseteq X \subseteq A$
+
+    1. 如果对任意的 $b \in N$ 都有 $b \notin \operatorname{acl}_{A}(M \cup(N -\{b\}))$，则称 $N$ 在 $M$ 上代数独立
+    2. 如果 $N$ 在 $M$ 上代数独立且 $X \subseteq \operatorname{acl}_{A}(M \cup N)$，则称 $N$ 是 $X$ 在 $M$ 上的一个基
+
+3. 设 $T$ 是强极小理论，$A \vDash T, X \subseteq M$，$N$ 是 $X$ 的基，则称 $|N|$ 为 $X$ 的维数，记作 $\operatorname{dim}(X)$
+    1. 设 $T$ 是强极小理论，$M \vDash T$，对任意的 $b, c \in M$ 及 $M \subseteq M$，如果 $b \in \operatorname{acl}(M \cup\{c\}) - \operatorname{acl}(M)$，则 $c \in \operatorname{acl}(M \cup\{b\})$
+    2. 设 $T$ 是强极小理论，$X \subseteq M$．如果 $\left\{a_{i} \mid i \in I\right\}$ 和 $\left\{b_{j} \mid j \in J\right\}$ 均是 $X$ 的基，则 $|I|=|J|$
+    3. 如果 $T$ 是强极小理论，则对任意的不可数基数 $\lambda$，$T$ 都是 $\lambda-$范畴的
+
+### 3.2.4 Morley 定理

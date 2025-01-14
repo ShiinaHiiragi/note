@@ -70,9 +70,6 @@ const changeMathJax = () => {
         options: {
             ignoreHtmlClass: ".*|",
             processHtmlClass: "arithmatex"
-        },
-        chtml: {
-            scale: 0.94
         }
     };
 }
@@ -89,12 +86,12 @@ const changeFont = (isSerif) => {
     }
 
     if (isSerif) {
-        changeVar("--md-text-font", "\"Noto Serif SC\"");
+        changeVar("--md-text-font", "\"ML Modern Roman\", \"Noto Serif SC\"");
         changeVar("--normal-font-weight", "500");
         changeVar("--bold-font-weight", "700");
         changeVar("--title-font-weight", "500");
     } else {
-        changeVar("--md-text-font", "\"Noto Sans\", \"Noto Sans SC\"");
+        changeVar("--md-text-font", "\"Noto Sans SC\"");
         changeVar("--normal-font-weight", "400");
         changeVar("--bold-font-weight", "600");
         changeVar("--title-font-weight", "300");

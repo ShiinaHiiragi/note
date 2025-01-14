@@ -1,5 +1,5 @@
 :root {
-  --md-text-font: "Noto Serif SC";
+  --md-text-font: "ML Modern Roman", "Noto Serif SC";
   --normal-font-weight: 500;
   --bold-font-weight: 700;
   --title-font-weight: 500;
@@ -19,11 +19,6 @@ strong {
 
 /* Define Fonts */
 @font-face {
-  font-family: "Noto Sans";
-  src: "fonts/NotoSans-Regular.ttf";
-}
-
-@font-face {
   font-family: "Noto Sans SC";
   src: "fonts/NotoSansSC-Regular.otf";
 }
@@ -31,6 +26,27 @@ strong {
 @font-face {
   font-family: "Noto Serif SC";
   src: "fonts/NotoSerifSC-Regular.otf";
+}
+
+@font-face {
+  font-family: "ML Modern Roman";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/MLModernRoman-Regular12.ttf");
+}
+
+@font-face {
+  font-family: "ML Modern Roman";
+  font-style: italic;
+  font-weight: normal;
+  src: url("fonts/MLModernRoman-Itablic12.ttf");
+}
+
+@font-face {
+  font-family: "ML Modern Roman";
+  font-style: normal;
+  font-weight: bold;
+  src: url("fonts/MLModernRoman-Bold12.ttf");
 }
 
 /* General Title */
