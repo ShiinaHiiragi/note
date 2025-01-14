@@ -114,3 +114,8 @@ div.admonition.note mjx-utext[variant="sans-serif"] {
   font-family: var(--md-text-font) !important;
   font-size: 0.64rem !important;
 }
+
+/* Testing */
+.hanging {
+  outline: 2px dashed rgb(231, 76, 60);
+}

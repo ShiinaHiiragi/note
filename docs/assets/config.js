@@ -1,101 +1,101 @@
 Array.prototype.contain = function (value) {
-    for (var i = 0; i < this.length; i += 1) {
-        if (this[i] == value) {
-            return true;
-        }
+  for (var i = 0; i < this.length; i += 1) {
+    if (this[i] == value) {
+      return true;
     }
-    return false;
+  }
+  return false;
 };
 
 let LocalStorageMananger = function (keyName, regulation) {
-    this.keyName = keyName;
-    this.regulation = regulation;
-    if (!new.target) {
-        return new window.LocalStorageMananger(keyName);
+  this.keyName = keyName;
+  this.regulation = regulation;
+  if (!new.target) {
+    return new window.LocalStorageMananger(keyName);
+  }
+
+  this.initValue = function (value, regulation) {
+    if (regulation === undefined) {
+      regulation = this.regulation;
     }
 
-    this.initValue = function (value, regulation) {
-        if (regulation === undefined) {
-            regulation = this.regulation;
-        }
-
-        if (regulation !== undefined) {
-            console.assert(regulation.contain(value));
-            if (!regulation.contain(localStorage.getItem(this.keyName))) {
-                localStorage.setItem(this.keyName, value);
-            }
-        } else if (localStorage.getItem === null) {
-            localStorage.setItem(this.keyName, value);
-        }
-    }
-
-    this.setValue = function (value, regulation) {
-        if (regulation === undefined) {
-            regulation = this.regulation;
-        }
-
-        if (regulation !== undefined) {
-            console.assert(regulation.contain(value));
-        }
+    if (regulation !== undefined) {
+      console.assert(regulation.contain(value));
+      if (!regulation.contain(localStorage.getItem(this.keyName))) {
         localStorage.setItem(this.keyName, value);
+      }
+    } else if (localStorage.getItem === null) {
+      localStorage.setItem(this.keyName, value);
+    }
+  }
+
+  this.setValue = function (value, regulation) {
+    if (regulation === undefined) {
+      regulation = this.regulation;
     }
 
-    this.getValue = function () {
-        return localStorage.getItem(this.keyName);
+    if (regulation !== undefined) {
+      console.assert(regulation.contain(value));
     }
+    localStorage.setItem(this.keyName, value);
+  }
 
-    this.removeValue = function () {
-        return localStorage.removeItem(this.keyName);
-    }
+  this.getValue = function () {
+    return localStorage.getItem(this.keyName);
+  }
+
+  this.removeValue = function () {
+    return localStorage.removeItem(this.keyName);
+  }
 }
 
 const changeMathJax = () => {
-    window.MathJax = {
-        tex: {
-            inlineMath: [
-                ["\\(", "\\)"]
-            ],
-            displayMath: [
-                ["\\[", "\\]"]
-            ],
-            packages: { '[+]': ['autoload'] },
-            processEscapes: true,
-            processEnvironments: true
-        },
-        loader: {
-            load: [
-                '[tex]/autoload'
-            ]
-        },
-        options: {
-            ignoreHtmlClass: ".*|",
-            processHtmlClass: "arithmatex"
-        }
-    };
+  window.MathJax = {
+    tex: {
+      inlineMath: [
+        ["\\(", "\\)"]
+      ],
+      displayMath: [
+        ["\\[", "\\]"]
+      ],
+      packages: { '[+]': ['autoload'] },
+      processEscapes: true,
+      processEnvironments: true
+    },
+    loader: {
+      load: [
+        '[tex]/autoload'
+      ]
+    },
+    options: {
+      ignoreHtmlClass: ".*|",
+      processHtmlClass: "arithmatex"
+    }
+  };
 }
 
 const changeYear = () => {
-    document.querySelectorAll(".year").forEach((item) => {
-        item.innerText = new Date().getFullYear()
-    });
+  document.querySelectorAll(".year").forEach((item) => {
+    item.innerText = new Date().getFullYear()
+  });
 }
 
 const changeFont = (isSerif) => {
-    const changeVar = (key, value) => {
-        document.querySelector(":root").style.setProperty(key, value);
-    }
+  const changeVar = (key, value) => {
+    document.querySelector(":root").style.setProperty(key, value);
+  }
 
-    if (isSerif) {
-        changeVar("--md-text-font", "\"ML Modern Roman\", \"Noto Serif SC\", serif");
-        changeVar("--normal-font-weight", "500");
-        changeVar("--bold-font-weight", "700");
-        changeVar("--title-font-weight", "500");
-    } else {
-        changeVar("--md-text-font", "\"Noto Sans SC\", sans-serif");
-        changeVar("--normal-font-weight", "400");
-        changeVar("--bold-font-weight", "600");
-        changeVar("--title-font-weight", "300");
-    }
+  if (isSerif) {
+    changeVar("--md-text-font", "\"ML Modern Roman\", \"Noto Serif SC\", serif");
+    changeVar("--normal-font-weight", "500");
+    changeVar("--bold-font-weight", "700");
+    changeVar("--title-font-weight", "500");
+  } else {
+    changeVar("--md-text-font", "\"Noto Sans SC\", sans-serif");
+    changeVar("--normal-font-weight", "400");
+    changeVar("--bold-font-weight", "600");
+    changeVar("--title-font-weight", "300");
+  }
 }
 
 // cookie of local setting
@@ -108,19 +108,39 @@ changeYear();
 
 // execute when mobile phone is detected
 if (/Android|iPhone/i.test(navigator.userAgent)) {
-    changeFont(true);
+  changeFont(true);
 }
 
 // execute when cookie is enabled
 if (__md_get("__consent")?.local) {
-    localSerif.initValue("true");
-    window.cookie_callback?.({
-        localSerif: localSerif
-    })
+  localSerif.initValue("true");
+  window.cookie_callback?.({
+    localSerif: localSerif
+  })
 
-    if (localSerif.getValue() == "false") {
-        changeFont(false);
-    }
+  if (localSerif.getValue() == "false") {
+    changeFont(false);
+  }
 } else {
-    localSerif.removeValue();
+  localSerif.removeValue();
 }
+
+// document.addEventListener("DOMContentLoaded", () => {
+//   const elements = document.querySelectorAll("p, ol, ul");
+
+//   elements.forEach((element) => {
+//     const elementWidth = element.clientWidth;
+//     const range = document.createRange();
+
+//     range.selectNodeContents(element);
+//     const rects = range.getClientRects();
+//     const lastLineRect = rects[rects.length - 1];
+
+//     if (lastLineRect) {
+//       const lastLineWidth = lastLineRect.width;
+//       if (lastLineWidth < elementWidth * 0.1) {
+//         element.classList.add("hanging");
+//       }
+//     }
+//   });
+// });
