@@ -125,22 +125,67 @@ if (__md_get("__consent")?.local) {
   localSerif.removeValue();
 }
 
-// document.addEventListener("DOMContentLoaded", () => {
-//   const elements = document.querySelectorAll("p, ol, ul");
+// change `false` -> `true` to enable hanging lines checker
+// ensure the recall ratio which means false positive samples may occur
+false && document.addEventListener("DOMContentLoaded", () => {
+  Array
+    .from(document.querySelectorAll("article p, article li"))
+    .map((element) => {
+      const nodes = Array.from(element.childNodes);
+      const isList = (node) => node.nodeType === Node.ELEMENT_NODE
+        && ["OL", "UL"].includes(node.nodeName);
 
-//   elements.forEach((element) => {
-//     const elementWidth = element.clientWidth;
-//     const range = document.createRange();
+      return nodes
+        .reduce((prev, current, currentIndex) => {
+          if (isList(current) || currentIndex === nodes.length - 1) {
+            return {
+              lastIndex: currentIndex + 1,
+              elementList: [
+                ...prev.elementList,
+                nodes.slice(
+                  prev.lastIndex,
+                  currentIndex + Number(!isList(current))
+                )
+              ]
+            }
+          } else {
+            return prev;
+          }
+        }, {
+          lastIndex: 0,
+          elementList: []
+        })
+        .elementList
+        .flat(1);
+    })
+    .forEach((elementList) => {
+      const getRects = (element) => {
+        const range = document.createRange();
+        range.selectNodeContents(element);
+        return range.getClientRects();
+      };
 
-//     range.selectNodeContents(element);
-//     const rects = range.getClientRects();
-//     const lastLineRect = rects[rects.length - 1];
+      const rectInfo = elementList
+        .map((item) => Array.from(getRects(item)))
+        .flat(1)
+        .reduce((prev, current) => ({
+          left: Math.min(prev.left, current.left),
+          right: Math.max(prev.right, current.right),
+          lastRect: current
+        }), {
+          left: Infinity,
+          right: -Infinity,
+          lastRect: null
+        });
 
-//     if (lastLineRect) {
-//       const lastLineWidth = lastLineRect.width;
-//       if (lastLineWidth < elementWidth * 0.1) {
-//         element.classList.add("hanging");
-//       }
-//     }
-//   });
-// });
+      if (rectInfo.lastRect !== null) {
+        const lastLineWidth = rectInfo.right - rectInfo.left;
+        const lastLineRight = rectInfo.lastRect.right - rectInfo.left;
+        if (lastLineRight < lastLineWidth * 0.1) {
+          elementList.forEach(
+            (item) => item.parentElement.classList.add("hanging")
+          );
+        }
+      }
+    });
+});

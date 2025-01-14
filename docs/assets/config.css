@@ -118,4 +118,5 @@ div.admonition.note mjx-utext[variant="sans-serif"] {
 /* Testing */
 .hanging {
   outline: 2px dashed rgb(231, 76, 60);
+  background-color: rgba(231, 76, 60, 16%);
 }
