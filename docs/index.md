@@ -221,8 +221,7 @@ const refList = [
         page: [1, 229],
         press: "复旦大学出版社",
         locate: "上海",
-        year: 2018,
-        plot: 169
+        year: 2018
     },
     {
         author: ["郝兆宽", "杨睿之", "杨跃"],
