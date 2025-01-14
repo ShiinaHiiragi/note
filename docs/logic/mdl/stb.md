@@ -57,3 +57,10 @@
     3. 对任意的 $n \in \mathbf{N}^{+}$，存在 $m \in \mathbf{N}$ 与 $\alpha_{0}\left(x_{0}, \cdots, x_{n-1}\right), \cdots, \alpha_{m-1}\left(x_{0}, \cdots, x_{n-1}\right)$，使得对任意的 $S-$公式 $\beta\left(x_{0}, \cdots, x_{n-1}\right)$，都存在 $i<m$ 使得 $T \vDash \forall x_{0} \cdots x_{n-1}\left(\beta\left(x_{0}, \cdots, x_{n-1}\right) \leftrightarrow \alpha_{i}\left(x_{0}, \cdots, x_{n-1}\right)\right)$
 
 ## 3.2 稳定理论
+### 3.2.1 ω-稳定性
+
+### 3.2.2 Morley 秩
+
+### 3.2.3 稳定理论
+
+### 3.2.4 分叉性

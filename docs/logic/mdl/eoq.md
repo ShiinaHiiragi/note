@@ -51,7 +51,7 @@
 3. 设 $A$ 是 $S-$结构，如果基数 $\kappa$ 满足 $\kappa \geqslant \max \{|S|, \omega\}$ 且 $2^{\kappa} \geqslant |A|$，则存在 $A$ 的 $\kappa^{+}-$饱和的初等膨胀 $B$，且 $B$ 的基数不超过 $2^{\kappa}$
     1. 如果 $\mathbf{GCH}$ 成立，则 $B$ 是饱和模型
     2. 假设 $\mathbf{GCH}$ 成立，如果 $T$ 是有无穷模型的 $S-$理论且 $\kappa>\max \{|S|$, $\alpha\}$ 是一个正则基数，则存在 $T$ 的基数为 $\kappa$ 的饱和模型
-    3. 若 $A \vDash T$ 且 $|A|=\lambda$，有 $\left|S_{1}(A)\right|=\lambda$，则称 $T$ 是 $\lambda-$稳定理论是指
+    3. 若 $A \vDash T$ 且 $|A|=\lambda$，有 $\left|S_{1}(A)\right|=\lambda$，则称 $T$ 是 $\lambda-$稳定理论
 4. 设 $\kappa$ 是一无穷基数，则任何无穷的 $S-$结构 $A$ 都有一个初等膨胀 $B$，使得 $B$ 既是 $\kappa-$饱和的，又是强 $\kappa-$齐次的
     1. 设 $A$ 与 $B$ 均是 $S-$结构，$\kappa$ 是一个无穷基数使得
         1. 对任意 $0<n \in \mathbf{N}$ 与 $\overline{a} \in A^{n}$，都有 $\operatorname{tp}_{A}(\overline{a})$ 被 $B$ 实现
