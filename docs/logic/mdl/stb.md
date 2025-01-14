@@ -51,9 +51,9 @@
         2. $T$ 有一个可数的 $\omega-$饱和模型
     3. 设 $T$ 是有无穷模型的可数完备 $S-$理论，且对任意的 $n \in \mathbf{N}$，都有 $S_{n}(T)$ 可数，则 $T$ 有素模型 $A_{0}$ 和可数的饱和模型 $A_{1}$，即对任意可数的 $A \vDash T$，均有 $A_{0} \prec A \prec A_{1}$
 
-4. 设 $T$ 是有无穷模型的可数完备 $S-$理论，则 $T$ 是 $\omega-$范畴的当且仅当对任意 $n \in \mathbf{N}$，$S_{n}(T)$ 是离散拓扑空间．此时以下命题等价
-    1. $T$ 是 $\omega-$范畴的
-    2. 对任意的 $n \in \mathbf{N}^{+}$，都有 $S_{n}(T)$ 是有穷集
+4. 设 $T$ 是有无穷模型的可数完备 $S-$理论，则 $T$ 是 $\omega-$范畴的当且仅当以下任一命题成立
+    1. （定义）对任意 $n \in \mathbf{N}$，$S_{n}(T)$ 是离散拓扑空间
+    2. 对任意的 $n \in \mathbf{N}^{+}$，$S_{n}(T)$ 都是有穷集
     3. 对任意的 $n \in \mathbf{N}^{+}$，存在 $m \in \mathbf{N}$ 与 $\alpha_{0}\left(x_{0}, \cdots, x_{n-1}\right), \cdots, \alpha_{m-1}\left(x_{0}, \cdots, x_{n-1}\right)$，使得对任意的 $S-$公式 $\beta\left(x_{0}, \cdots, x_{n-1}\right)$，都存在 $i<m$ 使得 $T \vDash \forall x_{0} \cdots x_{n-1}\left(\beta\left(x_{0}, \cdots, x_{n-1}\right) \leftrightarrow \alpha_{i}\left(x_{0}, \cdots, x_{n-1}\right)\right)$
 
 ## 3.2 稳定理论
