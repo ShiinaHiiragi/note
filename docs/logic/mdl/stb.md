@@ -58,6 +58,21 @@
 
 ## 3.2 稳定理论
 ### 3.2.1 ω-稳定性
+1. 设 $T$ 是一个 $S-$理论，$\lambda$ 是一个基数．若存在一个无穷基数 $\lambda$ 使得 $T$ 是 $\lambda-$稳定的，则称 $T$ 是稳定的
+    1. 称一个理论 $T$ 是 $\omega-$稳定的当且仅当对任意的 $A \vDash T$，若 $M \subseteq A$ 是可数的，则 $S_{1}(M, A)$ 是可数的
+    2. 称一个理论 $T$ 是 $\lambda-$稳定的当且仅当对任意的 $A \vDash T$，若 $M \subseteq A$ 的基数小于等于 $\lambda$，则 $S_{1}(M, A)$ 的基数小于等于 $\lambda$
+2. 设 $T$ 是一个 $S-$理论，$\alpha(\overline{x}, \overline{y})$ 是一个 $S-$公式．若存在 $A \vDash T$ 及 $A$ 中的两个序列 $\left(\overline{a}_{i}\right)_{i \in \omega}$ 和 $(\overline{b}_{i})_{i \in \omega}$，使得 $A \vDash \alpha(\overline{a}_{i}, \overline{b}_{j})$ 当且仅当 $i<j$，则称公式 $\alpha(\overline{x}, \overline{y})$ 关于 $T$ 具有序性质．若存在一个 $S-$公式具有序性质，则称 $T$ 有序性质，否则称 $T$ 没有序性质
+    1. 如果理论 $T$ 有序性质，则对任意的线序 $\left(I,<_{I}\right)$，存在一个 $S-$公式 $\alpha(\overline{x}, \overline{y}), B \vDash T$ 及 $B$ 中的不可辨元序列 $(\overline{c}_{i}, \overline{d}_{i})_{i \in I}$，使得 $B \vDash \alpha(\overline{c}_{i}, \overline{d}_{j})$ 当且仅当 $i<_{I} j$
+    2. 如果理论 $T$ 是 $\omega-$稳定的，则 $T$ 没有序性质
+    3. 对任意的无穷基数 $\lambda$，都存在一个稠密线序 $(I,<)$ 及 $I$ 的稠密子集 $M$，使得 $|M| \leqslant \lambda<|I|$
+    4. 如果 $\lambda$ 是一个无穷基数，则 $\lambda-$稳定的理论都没有序性质
+3. 设 $A$ 是一个 $S-$结构，$M \subseteq A,(I,<)$ 是一个线序，$\left(a_{i}\right)_{i \in I}$ 是 $A$ 中的一个 $M-$不可辩元序列．如果对任意的 $n \in \mathbf{N}^{+}$，$\left\{\beta_{1}, \cdots, \beta_{n}\right\} \subseteq I$ 及任意的一个双射 $\sigma:\{1, \cdots, n\} \longrightarrow\{1, \cdots, n\}$（即 $\{1, \cdots, n\}$ 上的置换），都有
+
+    $$
+    \operatorname{tp}_{A}\left(a_{\beta_{1}}, \cdots, a_{\beta_{n}} / M\right)=\operatorname{tp}_{A}\left(a_{\beta_{\sigma(1)}}, \cdots, a_{\beta_{\sigma(n)}} M\right)
+    $$
+
+    则称 $\left(a_{i}\right)_{i \in I}$ 是 $M$ 上的完全不可辨元序列．易知若 $\lambda$ 是一个无穷基数，理论 $T$ 是 $\lambda-$稳定的且 $A \vDash T$，则 $A$ 中的任意不可辩元序列都是完全不可辨元序列
 
 ### 3.2.2 Morley 秩
 
