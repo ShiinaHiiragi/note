@@ -83,8 +83,8 @@
 2. 设 $A$ 与 $B$ 均为 $S-$结构，$0<n \in \mathbf{N}, \overline{a} \in A^{n}, \overline{b} \in B^{n}$．若 $\operatorname{qftp}_{A}(\overline{a})=\mathrm{qftp}_{B}(\overline{b})$，则称 $(\overline{a}, \overline{b})$ 是 $A$ 到 $B$ 的一个部分同构
     1. $A$ 与 $B$ 之间存在的部分同构 $(\overline{a}, \overline{b})$ 可以唯一地扩张为由 $\overline{a}$ 生成的子结构 $M$ 和由 $\overline{b}$ 生成的子结构 $N$ 之间的同构映射
     2. 若 $(\overline{a}, \overline{b})$ 是 $A$ 到 $B$ 的部分同构，则 $\left\{a_{0}, \cdots, a_{n-1}\right\}$ 生成的 $A$ 的子结构 $\langle\overline{a}\rangle^{A}$ 与 $\left\{b_{0}, \cdots, b_{n-1}\right\}$ 生成的 $B$ 的子结构 $\langle\overline{b}\rangle^{B}$ 同构
-3. 设 $A$ 与 $B$ 均为 $S-$结构，$\mathscr{I}$ 是 $A$ 到 $B$ 的部分同构所构成的集合．若对任意的 $(\overline{a}, \overline{b}) \in \mathscr{I}$ 及任意的 $c \in A$，都存在 $d \in B$ 使得 $(\overline{a} c, \overline{b} d) \in \mathscr{I}$；反之对任意的 $d^{\prime} \in B$，也存在 $c^{\prime} \in A$ 使得 $\left(\overline{a} c^{\prime}, \overline{b} d^{\prime}\right) \in \mathscr{I}$，则称 $\mathscr{I}$ 具有进退性质
-    1. 设 $T$ 是一个 $S-$理论，则 $T$ 有量词消去当且仅当若 $A, B$ 均是 $T$ 的 $\omega-$饱和模型，且 $\mathscr{I}$ 是 $A$ 到 $B$ 的所有部分同构所构成的集合，则 $\mathscr{I}$ 有进退性质
+3. 设 $A$ 与 $B$ 均为 $S-$结构，$I$ 是 $A$ 到 $B$ 的部分同构所构成的集合．若对任意的 $(\overline{a}, \overline{b}) \in I$ 及任意的 $c \in A$，都存在 $d \in B$ 使得 $(\overline{a} c, \overline{b} d) \in I$；反之对任意的 $d^{\prime} \in B$，也存在 $c^{\prime} \in A$ 使得 $\left(\overline{a} c^{\prime}, \overline{b} d^{\prime}\right) \in I$，则称 $I$ 具有进退性质
+    1. 设 $T$ 是一个 $S-$理论，则 $T$ 有量词消去当且仅当若 $A, B$ 均是 $T$ 的 $\omega-$饱和模型，且 $I$ 是 $A$ 到 $B$ 的所有部分同构所构成的集合，则 $I$ 有进退性质
     2. 设 $T$ 是一个 $S-$理论，则 $T$ 有量词消去当且仅当若$A_{1}, A_{2}$ 均是 $T$ 的模型，$M$ 同时是 $A_{1}$ 和 $A_{2}$ 的子结构，则对任意的无量词 $S_{M}-$公式 $\alpha(x)$ 均有 $A_{1} \vDash \exists x \alpha(x) \leftrightarrow A_{2} \vDash \exists x \alpha(x)$
 
 ### 2.2.3 模型完全
