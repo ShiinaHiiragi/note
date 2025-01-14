@@ -142,7 +142,7 @@
             1. 否定前件式：由 $p\leftarrow q$ 和 $\overline{p}$ 推出 $\overline{q}$
             2. 肯定后件式：由 $p\leftarrow q$ 和 $q$ 推出 $p$
             3. 肯定前件不能肯定后件，否定后件不能否定前件
-        3. 充分必要条件假言命题：前件既是后件的充分条件，又是后件的必要条件。记作 $p \leftrightarrow q=(p\to q)\wedge(p\leftarrow q)$，读作 「$p$ 等值于 $q$」
+        3. 充分必要条件假言命题：前件是后件的充分必要条件，记作 $p \leftrightarrow q=(p\to q)\wedge(p\leftarrow q)$，读作 「$p$ 等值于 $q$」
             1. 由 $p\leftrightarrow q$ 和 $p$ 可推出 $q$；和 $q$ 可推出 $p$
             2. 由 $p\leftrightarrow q$ 和 $\overline{p}$ 可推出 $\overline{q}$；和 $\overline{q}$ 可推出 $\overline{p}$
 4. 负命题：对原命题断定情况的否定而作出的命题，记作 $\overline{p}$ 或 $\neg p$，读作 「非 $p$」
