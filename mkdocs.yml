@@ -156,6 +156,7 @@ nav:
     - 二、模型论:
       - 1 结构与模型: logic/mdl/mdl.md
       - 2 量词消去: logic/mdl/eoq.md
+      - 3 稳定理论: logic/mdl/stb.md
     - 三、递归论:
       - 1 可计算理论: logic/rec/calc.md
       - 2 计算复杂性理论: logic/rec/cplx.md
