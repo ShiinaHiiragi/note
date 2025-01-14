@@ -502,7 +502,7 @@ const refList = [
     },
     {
         author: ["Rob Nederpelt", "Herman Geuvers"],
-        title: "Type Theory and Formal Proof: an Introduction",
+        title: "Type Theory and Formal Proof",
         type: "M",
         page: [1, 409],
         year: 2014,
