@@ -150,8 +150,30 @@
     2. 如果 $N$ 在 $M$ 上代数独立且 $X \subseteq \operatorname{acl}_{A}(M \cup N)$，则称 $N$ 是 $X$ 在 $M$ 上的一个基
 
 3. 设 $T$ 是强极小理论，$A \vDash T, X \subseteq M$，$N$ 是 $X$ 的基，则称 $|N|$ 为 $X$ 的维数，记作 $\operatorname{dim}(X)$
-    1. 设 $T$ 是强极小理论，$M \vDash T$，对任意的 $b, c \in M$ 及 $M \subseteq M$，如果 $b \in \operatorname{acl}(M \cup\{c\}) - \operatorname{acl}(M)$，则 $c \in \operatorname{acl}(M \cup\{b\})$
+    1. 设 $T$ 是强极小理论，$M \vDash T$，对任意的 $b, c \in M$ 及 $M \subseteq M$．如果 $b \in \operatorname{acl}(M \cup\{c\}) - \operatorname{acl}(M)$，则 $c \in \operatorname{acl}(M \cup\{b\})$
     2. 设 $T$ 是强极小理论，$X \subseteq M$．如果 $\left\{a_{i} \mid i \in I\right\}$ 和 $\left\{b_{j} \mid j \in J\right\}$ 均是 $X$ 的基，则 $|I|=|J|$
     3. 如果 $T$ 是强极小理论，则对任意的不可数基数 $\lambda$，$T$ 都是 $\lambda-$范畴的
 
 ### 3.2.4 Morley 定理
+1. 设 $\overline{S}$ 是任意语言，$\overline{T}$ 是一个 $\overline{S}-$理论（可以是不完备的）．称 $\overline{T}$ 具有 $\text{Skolem}$ 函数当且仅当对任意的 $\overline{S}-$公式 $\alpha(x, \overline{y})$，存在一个 $\overline{S}$ 中的函数符号 $f$，使得 $\overline{T} \vDash \forall y(\exists x \alpha(x, \overline{y}) \leftrightarrow \alpha(f(\overline{y}), \overline{y}))$
+    1. 设 $S$ 是任意语言，设 $T$ 是一个 $S-$理论（$T$ 可以没有无穷模型），则存在基数 $\leqslant|S|+\omega$ 的语言 $S^{\prime} \supseteq S$ 及 $S^{\prime}-$理论 $T^{\prime} \supseteq T$，使得 $T^{\prime}$ 具有 $\text{Skolem}$ 函数
+    2. 设 $T$ 是一个可数的理论，$\kappa$ 是一个不可数的基数，则存在 $T$ 的一个基数为 $\kappa$ 的模型 $A$，使得对任意可数的 $M \subseteq A$，$A$ 至多可以实现 $S_{1}(M, A)$ 中的可数多个型
+    3. 设 $\lambda$ 是一个不可数基数，理论 $T$ 是 $\lambda-$范畴的，则 $T$ 是 $\omega-$稳定的
+2. 设 $A$ 是一个 $S-$结构，$M \subseteq A$．如果存在一个序数 $\gamma$ 及 $A$ 中的一个序列 $\left(b_{\alpha} \mid \alpha<\gamma\right)$ 使得
+    1. $A=M \cup\left\{b_{\alpha} \mid \alpha<\gamma\right\}$
+    2. 对任意的 $\beta \in \gamma, \operatorname{tp}_{A}\left(b_{\beta} / M \cup\left\{b_{\alpha} \mid \alpha<\beta\right\}\right)$ 是孤立型
+
+    则称 $A$ 是在 $M$ 上可构造的，且称 $\left(b_{\alpha} \mid \alpha<\gamma\right)$ 是 $A$ 在 $M$ 上的构造序列
+
+    1. 设 $A$ 是一个 $S-$结构，$M \subseteq A$，结构 $A$ 是 $M$ 上可构造的
+        1. 对任意的 $\overline{c} \in A^{n}, \operatorname{tp}_{A}(\overline{c} / M)$ 是孤立型，即 $A$ 是 $M$ 上的原子结构
+        2. 对任意 $S_A-$公式 $\alpha(\overline x)$，都存在一个 $S_M-$公式 $\beta(\overline x)$ 使得 $\alpha(M^{|\overline x|})=\beta\left(M^{|\overline{x}|}\right)$
+    2. 设 $T$ 是 $\omega-$稳定的理论，$A \vDash T, M \subseteq A$，$\kappa$ 是不可数基数
+        1. 存在 $A$ 的初等子结构 $B$，使得 $B$ 是 $M$ 上可构造的且 $|B|=\max \left\{|M|, \aleph_{0}\right\}$
+        2. $\alpha(\overline{x})$ 是一个 $S_{M}-$公式，且 $(\operatorname{RA}(\alpha), \mathrm{d}A(\alpha))=(\alpha, d)$．如果 $A$ 中的一个序列 $(\overline{b}_{i})_{i<\omega}$ 满足
+            1. 对任意的 $i \in \omega, A \vDash \alpha(\overline{b}_{i})$
+            2. 对任意的 $i \in \omega$ 有 $(\operatorname{RA}(\operatorname{tp}_{A}(\overline{b}_{i} / M \cup\{\overline{b}_{j} \mid j<i\})), \operatorname{d}A(\operatorname{tp}_{A}(\overline{b}_{i} / M \cup\{\overline{b}_{j} \mid j<i\})))=(\alpha, d)$，那么 $(\overline{b}_{i})_{i \in \omega}$ 是 $M$ 上的（完全）不可辨元序列
+
+        3. 如果 $T$ 的基数为 $\kappa$ 的模型都是饱和的，则对任意的不可数基数 $\lambda$，$T$ 都有一个基数为 $\lambda$ 的饱和模型
+
+3. $\text{Morley}$ 定理：设 $\lambda$ 是一个不可数基数，且理论 $T$ 是一个可数的理论．若 $T$ 是 $\lambda-$范畴，则任意的不可数基数 $\kappa$ 都有 $T$ 是 $\kappa-$范畴的，此时也称 $T$ 是不可数范畴的理论

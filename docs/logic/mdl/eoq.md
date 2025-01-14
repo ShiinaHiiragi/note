@@ -19,7 +19,7 @@
     2. 设 $M \subseteq A$，若 $S_{M}-$公式集 $\Sigma(\overline{x})$ 是 $\operatorname{Th}(A, a)_{a \in M}$ 的 $n-$型，则称 $\Sigma(\overline{x})$ 是 $(A, M)$ 上的 $n-$型或 $M$ 上的 $n-$型
     3. 设 $M \subseteq A \prec B$，则 $\Sigma(\overline{x})$ 是 $(A, M)$ 上的 $n-$型当且仅当 $\Sigma(\overline{x})$ 是 $(B, M)$ 上的 $n-$型，即以上定义关于初等膨胀是不变的，只与参数集合 $M$ 有关．因此当不引起歧义时，也可称 $\Sigma$ 为 $M$ 上的 $n-$型
 
-4. 设 $A$ 是一个结构，若对任意的 $n<\omega$，变元组 $\overline{x}=\left(x_{0}, \cdots, x_{n}\right)$ 与有限集 $M \subseteq A$，当 $S_{M}-$ 公式集 $\Sigma(\overline{x})$ 在 $A$ 中有限可满足时，$\Sigma(\overline{x})$ 被 $A$ 实现（满足），则称 $A$ 是 $\omega-$饱和结构
+4. 设 $A$ 是一个结构，若对任意的 $n<\omega$，变元组 $\overline{x}=\left(x_{0}, \cdots, x_{n}\right)$ 与有限集 $M \subseteq A$，当 $S_{M}-$公式集 $\Sigma(\overline{x})$ 在 $A$ 中有限可满足时，$\Sigma(\overline{x})$ 被 $A$ 实现（满足），则称 $A$ 是 $\omega-$饱和结构
     1. 设 $A$ 是一个结构，则 $A$ 是 $\omega-$饱和结构与以下命题等价
         1. 对任意有限的 $M \subseteq A$，$M$ 上的任意一个 $n-$型都被 $A$ 实现
         2. 对任意有限的 $M \subseteq A$，任意的 $p \in S_{n}(M)$ 都被 $A$ 实现
