@@ -190,3 +190,8 @@ window.checker = () => Array
     }
     return prev;
   }, 0);
+
+console.log(
+  "%cInput `checker()` to annotate hanging lines.",
+  "color: #C41C1C;"
+)
