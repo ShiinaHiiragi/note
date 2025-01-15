@@ -25,21 +25,21 @@ strong {
   font-family: "ML Modern Roman";
   font-style: normal;
   font-weight: normal;
-  src: url("fonts/MLModernRoman-Regular12.ttf");
+  src: url("fonts/ML Modern Roman Regular.ttf");
 }
 
 @font-face {
   font-family: "ML Modern Roman";
   font-style: italic;
   font-weight: normal;
-  src: url("fonts/MLModernRoman-Itablic12.ttf");
+  src: url("fonts/ML Modern Roman Italic.ttf");
 }
 
 @font-face {
   font-family: "ML Modern Roman";
   font-style: normal;
   font-weight: bold;
-  src: url("fonts/MLModernRoman-Bold12.ttf");
+  src: url("fonts/ML Modern Roman Bold.ttf");
 }
 
 /* General Title */

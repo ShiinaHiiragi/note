@@ -86,12 +86,12 @@ const changeFont = (isSerif) => {
   }
 
   if (isSerif) {
-    changeVar("--md-text-font", "\"ML Modern Roman\", \"Noto Serif SC\", serif");
+    changeVar("--md-text-font", "'ML Modern Roman', 'Noto Serif SC', serif");
     changeVar("--normal-font-weight", "500");
     changeVar("--bold-font-weight", "700");
     changeVar("--title-font-weight", "500");
   } else {
-    changeVar("--md-text-font", "\"Noto Sans SC\", sans-serif");
+    changeVar("--md-text-font", "'Noto Sans SC', sans-serif");
     changeVar("--normal-font-weight", "400");
     changeVar("--bold-font-weight", "600");
     changeVar("--title-font-weight", "300");
