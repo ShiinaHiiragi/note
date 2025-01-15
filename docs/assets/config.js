@@ -91,7 +91,7 @@ const changeFont = (isSerif) => {
     changeVar("--bold-font-weight", "700");
     changeVar("--title-font-weight", "500");
   } else {
-    changeVar("--md-text-font", "'Inter', 'Noto Sans SC', sans-serif");
+    changeVar("--md-text-font", "'Segoe UI', 'Noto Sans SC', sans-serif");
     changeVar("--normal-font-weight", "400");
     changeVar("--bold-font-weight", "600");
     changeVar("--title-font-weight", "400");
