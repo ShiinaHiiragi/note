@@ -128,7 +128,7 @@ if (__md_get("__consent")?.local) {
 // user `checker()` in console to enanle hanging lines checker
 // ensure the recall ratio which means false positive samples may occur
 window.checker = () => {
-  Array
+  const counter = Array
     .from(document.querySelectorAll("article p, article li"))
     .map((element) => {
       const nodes = Array.from(element.childNodes);
@@ -159,7 +159,7 @@ window.checker = () => {
         .elementList
         .flat(1);
     })
-    .forEach((elementList) => {
+    .reduce((prev, elementList) => {
       const getRects = (element) => {
         const range = document.createRange();
         range.selectNodeContents(element);
@@ -186,8 +186,10 @@ window.checker = () => {
           elementList.forEach((item) => {
             return item.parentElement.classList.add("hanging");
           });
+          return prev + 1
         }
       }
-    });
-  console.log(0);
+      return prev;
+    }, 0);
+  console.log(counter);
 };
