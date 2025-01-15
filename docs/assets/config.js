@@ -127,69 +127,66 @@ if (__md_get("__consent")?.local) {
 
 // user `checker()` in console to enanle hanging lines checker
 // ensure the recall ratio which means false positive samples may occur
-window.checker = () => {
-  const counter = Array
-    .from(document.querySelectorAll("article p, article li"))
-    .map((element) => {
-      const nodes = Array.from(element.childNodes);
-      const isList = (node) => node.nodeType === Node.ELEMENT_NODE
-        && ["OL", "UL"].includes(node.nodeName);
+window.checker = () => Array
+  .from(document.querySelectorAll("article p, article li"))
+  .map((element) => {
+    const nodes = Array.from(element.childNodes);
+    const isList = (node) => node.nodeType === Node.ELEMENT_NODE
+      && ["OL", "UL"].includes(node.nodeName);
 
-      return nodes
-        .reduce((prev, current, currentIndex) => {
-          const isLast = currentIndex === nodes.length - 1;
-          if (isList(current) || isLast) {
-            return {
-              lastIndex: currentIndex + 1,
-              elementList: [
-                ...prev.elementList,
-                nodes.slice(
-                  prev.lastIndex,
-                  currentIndex + Number(isLast)
-                )
-              ]
-            }
-          } else {
-            return prev;
+    return nodes
+      .reduce((prev, current, currentIndex) => {
+        const isLast = currentIndex === nodes.length - 1;
+        if (isList(current) || isLast) {
+          return {
+            lastIndex: currentIndex + 1,
+            elementList: [
+              ...prev.elementList,
+              nodes.slice(
+                prev.lastIndex,
+                currentIndex + Number(isLast)
+              )
+            ]
           }
-        }, {
-          lastIndex: 0,
-          elementList: []
-        })
-        .elementList
-        .flat(1);
-    })
-    .reduce((prev, elementList) => {
-      const getRects = (element) => {
-        const range = document.createRange();
-        range.selectNodeContents(element);
-        return range.getClientRects();
-      };
-
-      const rectInfo = elementList
-        .map((item) => Array.from(getRects(item)))
-        .flat(1)
-        .reduce((prev, current) => ({
-          left: Math.min(prev.left, current.left),
-          right: Math.max(prev.right, current.right),
-          lastRect: current
-        }), {
-          left: Infinity,
-          right: -Infinity,
-          lastRect: null
-        });
-
-      if (rectInfo.lastRect !== null) {
-        const lastLineWidth = rectInfo.right - rectInfo.left;
-        const lastLineRight = rectInfo.lastRect.right - rectInfo.left;
-        if (lastLineRight < lastLineWidth * 0.1) {
-          elementList.forEach((item) => {
-            return item.parentElement.classList.add("hanging");
-          });
-          return prev + 1
+        } else {
+          return prev;
         }
+      }, {
+        lastIndex: 0,
+        elementList: []
+      })
+      .elementList
+      .flat(1);
+  })
+  .reduce((prev, elementList) => {
+    const getRects = (element) => {
+      const range = document.createRange();
+      range.selectNodeContents(element);
+      return range.getClientRects();
+    };
+
+    const rectInfo = elementList
+      .map((item) => Array.from(getRects(item)))
+      .flat(1)
+      .reduce((prev, current) => ({
+        left: Math.min(prev.left, current.left),
+        right: Math.max(prev.right, current.right),
+        lastRect: current
+      }), {
+        left: Infinity,
+        right: -Infinity,
+        lastRect: null
+      });
+
+    if (rectInfo.lastRect !== null) {
+      const lastLineWidth = rectInfo.right - rectInfo.left;
+      const lastLineRight = rectInfo.lastRect.right - rectInfo.left;
+      if (lastLineRight < lastLineWidth * 0.1) {
+        elementList.forEach((item) => {
+          return item.parentElement.classList.add("hanging");
+        });
+        return prev + 1
       }
-      return prev;
-    }, 0);
-  console.log(counter);
-};
+    }
+    return prev;
+  }, 0);
