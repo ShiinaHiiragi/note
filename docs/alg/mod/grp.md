@@ -102,7 +102,9 @@
     1. 设 $f$ 是群 $G_{1}$ 到群 $G_{2}$ 的同态，则 $\operatorname{ker} f \triangleleft G_{1}$
     2. 设 $f$ 是群 $G_{1}$ 到群 $G_{2}$ 的同态，则 $f$ 是单同态 $\leftrightarrow \operatorname{ker} f=\left\{e_{1}\right\}$，这里 $e_{1}$ 是 $G_{1}$ 的幺元
 3. 群同态基本定理：设 $f$ 是群 $G_{1}$ 到群 $G_{2}$ 的满同态映射，则 $G_{1} / \operatorname{ker} f \simeq G_{2}$
-    1. 设 $G$ 为一群，$f$ 是 $G$ 到另一群的同态映射，则 $G$ 的同态象 $f[G]$ 必同构于 $G$ 的商群 $G / \operatorname{ker} f$; 反之，$G$ 的任一商群都可看作 $G$ 的同态象
+    1. 设 $G$ 为一群，$f$ 是 $G$ 到另一群的同态映射
+        1. $G$ 的同态象 $f[G]$ 必同构于 $G$ 的商群 $G / \operatorname{ker} f$
+        2. $G$ 的任一商群都可看作 $G$ 的同态象
     2. 设 $f$ 是群 $G_{1}$ 到群 $G_{2}$ 的满同态，$N=\operatorname{ker} f$
         1. $f$ 建立了 $G_{1}$ 中包含 $N$ 的子群与 $G_{2}$ 中子群间的双射
         2. 上述双射把正规子群对应到正规子群
@@ -112,7 +114,7 @@
         1. $H N$ 是 $G$ 中包含 $N$ 的子群，且 $H N=\pi^{-1}[\pi[H]]$，即 $H N$ 是 $H$ 在 $\pi$ 映射下的象集合 $\pi[H]$ 的原象 $\pi^{-1}[\pi[H]]$
         2. $(H \cap N) \triangleleft H$，且 $\operatorname{ker}\left(\pi \upharpoonright H\right)=H \cap N$
         3. $H N / N \simeq H /(H \cap N)$
-4. 自同态与自同构：群 $G$ 到自身的同态映射称为 $G$ 的一个自同态，到自身的同构映射称为 $G$ 的一个自同构，用 $\operatorname{Aut}(G)$ 表示群 $G$ 的自同构群
+4. 自同态与自同构：群 $G$ 到自身的同态（同构）映射称为 $G$ 的一个自同态（自同构），用 $\operatorname{Aut}(G)$ 表示群 $G$ 的自同构群
     1. 设 $G$ 是群，则 $\operatorname{Aut}(G) \leqslant S_{G}$
     2. 设 $G$ 为群，$a \in G$，定义映射 $\sigma_{a}: G \rightarrow G$ 为 $\sigma_{a}(g)=a g a^{-1}, \forall g \in G$，则 $\sigma_{u} \in \operatorname{Aut}(G)$ 称为由 $a$ 决定的内自同构．记 $\operatorname{Inn}(G)=\left\{\sigma_{a} \mid a \in G\right\}$，则 $\operatorname{Inn}(G) \triangleleft \operatorname{Aut}(G)$，称 $\operatorname{Inn}(G)$ 为 $G$ 的内自同构群
     3. $C(G)=\operatorname{ker} f$，$G / C(G) \simeq \operatorname{Inn}(G)$

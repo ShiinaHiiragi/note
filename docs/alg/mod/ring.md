@@ -2,10 +2,10 @@
 
 ## 2.1 环的性质
 ### 2.1.1 环
-1. 环：令 $M = \{\cdot, +, o, e\}$，结构 $\mathfrak M = (R, \cdot^\mathfrak M, +^\mathfrak M, o^\mathfrak M, e^\mathfrak M)$ 是一个环，则将 $\mathfrak M$ 看作代数结构时记作 $\{R; +, \cdot\}$，称 $+$ 与 $\cdot$ 为加法运算与乘法运算
+1. 环：令 $M = \{\cdot, +, o, e\}$，结构 $\mathfrak M = (R, \cdot^\mathfrak M, +^\mathfrak M, o^\mathfrak M, e^\mathfrak M)$ 是一个环，则将 $\mathfrak M$ 看作代数结构时记作 $\{R; +, \cdot\}$，分别称 $+$ 与 $\cdot$ 为加法运算与乘法运算
     1. 零元：将 $R$ 对于加法做成的群的单位元记为 $0$，称为 $R$ 的零元
     2. 负元：设 $a \in R$，将 $a$ 在加法运算下的逆记为 $-a$，称为 $a$ 的负元
-    3. 将 $m$ 个 $a$ 连加得到的结果记为 $m a$ 并规定 $0 a=0$，$(-n) a= -(n a)$；将 $m$ 个 $a$ 连乘得到的结果记为 $a^{m}$；将 $a+(- b)$ 简写成 $a-b$
+    3. 将 $m$ 个 $a$ 连加记为 $m a$，规定 $0 a=0, (-n) a= -(n a)$；将 $m$ 个 $a$ 连乘记为 $a^{m}$；将 $a+(- b)$ 简写成 $a-b$
         1. $(m+n) a=m a+n a, \ m(-a)=-(m a), \ (m n) a=m(n a)$
         2. $m(a+b)=m a+m b, \ \forall a, b \in R, m, n \in \mathbf{Z}$
         3. $a^{m} a^{n}=a^{m+n},\left(a^{m}\right)^{n}=a^{m n}, \ \forall m, n \in \mathbf{N}, a \in R$
@@ -46,7 +46,7 @@
     1. 设 $R$ 为交换幺环，$I$ 是 $R$ 的一个理想，$I \neq R$，则 $I$ 是素理想当且仅当 $R / I$ 为整环
     2. 设 $f$ 为交换幺环 $R$ 到 $R^{\prime}$ 的满同态，$I$ 是 $R$ 中包含 $K=\operatorname{ker} f$ 的一个素理想，则 $f(I)$ 是 $R^{\prime}$ 的素理想
     3. 设 $R$ 是交换幺环，$I$ 是 $R$ 的真理想，则 $I$ 是 $R$ 的素理想当且仅当对任何理想 $M, N$，由 $M N \subseteq I$ 可推出 $M \subseteq I$ 或 $N \subseteq I$
-5. 极大理想：设 $R$ 是交换幺环，$M$ 是 $R$ 的理想，若 $M \neq R$，且不存在 $R$ 的真理想 $N$ 使得 $M \subseteq N, M \neq N$，则称 $M$ 为 $R$ 的极大理想
+5. 极大理想：设 $R$ 是交换幺环，$M$ 是 $R$ 的理想，若 $M \neq R$ 且不存在 $R$ 的真理想 $N$ 有 $M \subseteq N, M \neq N$，称 $M$ 为 $R$ 的极大理想
     1. 设 $R$ 为交换幺环，$M$ 为 $R$ 的理想，则 $M$ 是 $R$ 的极大理想当且仅当 $R / M$ 为域
     2. 交换幺环的极大理想必为素理想
 

@@ -483,7 +483,7 @@
             \end{aligned}
             $$
 
-4. 谱分解：设 $\boldsymbol A$ 为 $n$ 阶实对称矩阵，存在正交阵 $\boldsymbol P$ 使得 $\boldsymbol A = \boldsymbol{P \Lambda P}^{\mathrm T}$．其中 $\boldsymbol \Lambda = \mathrm{diag}(\lambda_1, \lambda_2, \cdots, \lambda_n)$ 且有 $\boldsymbol P = \begin{bmatrix} \boldsymbol p_1 & \boldsymbol p_2 & \cdots & \boldsymbol p_n \\ \end{bmatrix}$．$\lambda_i$ 是 $\boldsymbol A$ 的特征值，正交阵 $\boldsymbol P$ 的第 $i$ 列向量 $\boldsymbol p_i$ 是 $\lambda_i$ 对应的单位特征向量，展开可得
+4. 谱分解：设 $\boldsymbol A$ 为 $n$ 阶实对称矩阵，存在正交阵 $\boldsymbol P$ 使得 $\boldsymbol A = \boldsymbol{P \Lambda P}^{\mathrm T}$．其中 $\boldsymbol \Lambda = \mathrm{diag}(\lambda_1, \lambda_2, \cdots, \lambda_n)$ 且 $\boldsymbol P = \begin{bmatrix} \boldsymbol p_1 & \boldsymbol p_2 & \cdots & \boldsymbol p_n \\ \end{bmatrix}$．$\lambda_i$ 是 $\boldsymbol A$ 的特征值，正交阵 $\boldsymbol P$ 的第 $i$ 列向量 $\boldsymbol p_i$ 是 $\lambda_i$ 对应的单位特征向量，展开可得
 
     $$
     \begin{aligned}
@@ -506,7 +506,7 @@
 
     从而将 $\boldsymbol A$ 分解为 $n$ 个秩为 $1$ 矩阵的线性组合
 
-5. 奇异值分解：设矩阵 $\boldsymbol A_{m \times n}$ 的秩为 $r$，则存在 $m$ 阶正交矩阵 $\boldsymbol U$ 与 $n$ 阶正交矩阵 $\boldsymbol V$ 使得 $\boldsymbol A = \boldsymbol{U \Sigma V}^{\mathrm T}$，其中 $\Sigma$ 为 $m \times n$ 分块对角矩阵
+5. 奇异值分解：设矩阵 $\boldsymbol A_{m \times n}$ 秩为 $r$，则存在 $m$ 阶正交矩阵 $\boldsymbol U$ 与 $n$ 阶正交矩阵 $\boldsymbol V$ 有 $\boldsymbol A = \boldsymbol{U \Sigma V}^{\mathrm T}$，$\boldsymbol \Sigma$ 为 $m \times n$ 分块对角矩阵
 
     $$
     \boldsymbol \Sigma = \begin{bmatrix}
@@ -688,7 +688,7 @@
     2. 初等矩阵的行列式分别为 $\mathrm{det}(\boldsymbol E_{ij}) = -1, \mathrm{det}(\boldsymbol E_i(k)) = k \neq 0, \mathrm{det}(\boldsymbol E_{ij}(k)) = 1$
     3. 设 $\boldsymbol A$ 是 $n$ 阶方阵，则 $\mathrm{det}(\boldsymbol A^{\mathrm T}) = \mathrm{det}(\boldsymbol A), \mathrm{det}(\boldsymbol A^{-1}) = \dfrac{1}{\mathrm{det}(\boldsymbol A)}$
     4. 设 $\boldsymbol A_1, \boldsymbol A_2, \cdots, \boldsymbol A_n$ 均为 $n$ 阶方阵，则 $\mathrm{\det}(\boldsymbol A_1 \boldsymbol A_2 \cdots \boldsymbol A_k) = \mathrm{det}(\boldsymbol A_1) \cdot \mathrm{det}(\boldsymbol A_2) \cdots \mathrm{det}(\boldsymbol A_k)$
-4. 顺序主子式：在 $n$ 阶矩阵 $\boldsymbol A = [a_{ij}]$ 中，取前 $k$ 行以及前 $k$ 列得到 $\boldsymbol A$ 的 $k$ 阶子矩阵的行列式 $(k \leqslant n)$ 称为 $\boldsymbol A$ 的 $k$ 阶顺序主子式，记作 $\Delta_k$
+4. 在 $n$ 阶矩阵 $\boldsymbol A = [a_{ij}]$ 中，取前 $k$ 行以及前 $k$ 列得到 $\boldsymbol A$ 的 $k$ 阶子矩阵的行列式 $(k \leqslant n)$ 称为 $\boldsymbol A$ 的 $k$ 阶顺序主子式，记作 $\Delta_k$
 
     $$
     \begin{aligned}

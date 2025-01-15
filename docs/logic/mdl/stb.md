@@ -129,7 +129,7 @@
     2. 对任意的 $\eta \in 2^{<\omega}, A \vDash \forall \overline{x}\left(\alpha_{\eta \frown i} \rightarrow \alpha_{\eta}\right)$，其中 $i=0,1$
     3. 对任意的 $\eta \in 2^{<\omega}, A \vDash \neg \exists \overline{x}\left(\alpha_{\eta \frown 0} \wedge \alpha_{\eta \frown 1}\right)$
 
-    则称 $\Gamma$ 是一个 $S_{A}-$公式关于 $T$ 的二叉树．如果对于 $T$ 的任意模型 $A$，都不存在 $S_{A}-$公式的二叉树，则称 $T$ 是完全超越的
+    则称 $\Gamma$ 是一个 $S_{A}-$公式关于 $T$ 的二分树．如果对于 $T$ 的任意模型 $A$，都不存在 $S_{A}-$公式的二分树，则称 $T$ 是完全超越的
 
     1. 一个可数理论 $T$ 是完全超越的当且仅当 $T$ 是 $\omega-$稳定的，即完全超越的理论就是对任意的无穷基数 $\lambda$ 都是 $\lambda-$稳定的理论
     2. 设 $T$ 是 $\omega-$稳定理论，则对任意无穷基数 $\kappa$ 以及任意正则基数 $\lambda \leqslant \kappa$，$T$ 都有一个基数为 $\kappa$ 的 $\lambda-$饱和模型

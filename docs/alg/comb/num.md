@@ -172,9 +172,12 @@
     1. 整数集合 $A$ 是模 $m$ 的完全同余系当且仅当 ① $|A| = m$；② $A$ 中任何两个整数对模 $m$ 不同余
     2. 设 $a, b \in \mathbf Z$，若 $m \geqslant 1, (a, m) = 1$ 且 $\{x_1, x_2, \cdots, x_m\}$ 是模 $m$ 的一个完全同余系，则 $\{ax_1 + b, ax_2 + b, \cdots, ax_m + b\}$ 也是模 $m$ 的完全同余系
     3. 设 $m_1, m_2 \in \mathbf N, A \in \mathbf Z, (A, m_1) = 1$，又 $X = \{x_1, x_2, \cdots, x_{m_1}\}, Y = \{y_1, y_2, \cdots, y_{m_2}\}$ 分别是模 $m_1$ 与模 $m_2$ 的完全同余系，则 $R = \{Ax + m_1y \mid x \in X, y \in Y\}$ 是模 $m_1, m_2$ 的一个完全同余系
-4. 简化同余系：对于正整数 $m$，从 $m$ 的简化同余类中各取一个数 $x_i$，构成一个集合 $\{x_1, x_2, \cdots, x_{\varphi(m)}\}$，称为模 $m$ 的一个简化同余系
-    1. 整数集合 $A$ 是模 $m$ 的简化同余系当且仅当 ① $|A| = \varphi(m)$；② $A$ 中任何两个整数对模 $m$ 不同余；③ $A$ 中的每个整数都与 $m$ 互质
-    2. 设 $a \in \mathbf Z$ 且 $(a, m) = 1$，$B = \{x_1, x_2, \cdots, x_{\varphi(m)}\}$ 是模 $m$ 的简化同余系，则 $A = \{ax_1, ax_2, \cdots, ax_{\varphi(m)}\}$ 也是模 $m$ 的简化同余系
+4. 简化同余系：对于正整数 $m$，从 $m$ 的简化同余类中各取一个数 $x_i$，构成集合 $\{x_1, x_2, \cdots, x_{\varphi(m)}\}$，称为模 $m$ 的一个简化同余系
+    1. 整数集合 $A$ 是模 $m$ 的简化同余系当且仅当
+        1. $|A| = \varphi(m)$
+        2. $A$ 中任何两个整数对模 $m$ 不同余
+        3. $A$ 中的每个整数都与 $m$ 互质
+    2. 设 $a \in \mathbf Z$ 且 $(a, m) = 1$，$B = \{x_1, x_2, \cdots, x_{\varphi(m)}\}$ 是模 $m$ 简化同余系，则 $A = \{ax_1, ax_2, \cdots, ax_{\varphi(m)}\}$ 也是模 $m$ 简化同余系
     3. 设 $m_1, m_2 \in \mathbf N, (m_1, m_2) = 1$，又设 $X = \{x_1, x_2, \cdots, x_{\varphi(m_1)}\}, Y = \{y_1, y_2, \cdots, y_{\varphi(m_2)}\}$ 分别是模 $m_1$ 与模 $m_2$ 的简化同余系，则 $A = \{m_1y + m_2x \mid x \in X, y \in Y\}$ 是模 $m_1m_2$ 的简化同余系
     4. 若 $r$ 通过模 $c$ 的最小非负完全同余系，则 $g'$ 通过模 $m$ 的一个简化同余系
 
@@ -183,7 +186,7 @@
 2. $\text{Fermat}$ 定理：设 $p$ 是质数，则对于任意整数 $a$ 有 $a^p \equiv a \pmod{p}$
 
 ## 1.4 同余方程
-- 同余方程：设 $f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ 是整系数多项式，称 $f(x) \equiv 0 \pmod{m}$ 是关于未知数 $x$ 的模 $m$ 同余方程
+- 同余方程：设 $f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0$ 是整系数多项式，称 $f(x) \equiv 0 \pmod{m}$ 是关于 $x$ 的模 $m$ 同余方程
     1. 若 $a_n \not \equiv 0 \pmod{m}$，则称 $f(x) \equiv 0 \pmod{m}$ 为 $n$ 次同余方程
     2. 若 $a$ 是使 $f(a) \equiv 0 \pmod{m}$ 成立的一个整数，则 $x \equiv a \pmod{m}$ 称为 $f(x) \equiv 0 \pmod{m}$ 的一个解
 
@@ -283,7 +286,7 @@
 
 ## 1.5 原根与指标
 ### 1.5.1 指数与原根
-1. 设 $m > 1, (a, m) = 1$，则使 $a^r \equiv 1 \pmod{m}$ 成立的最小正整数 $r$ 称为 $a$ 对模 $m$ 的指数或 $a$ 对模 $m$ 的阶，记为 $\delta_m(a)$，简记作 $\delta(a)$
+1. 设 $m > 1, (a, m) = 1$，则使 $a^r \equiv 1 \pmod{m}$ 成立的最小正整数 $r$ 称为 $a$ 对模 $m$ 的指数（或阶），记为 $\delta_m(a)$，简记作 $\delta(a)$
     1. $\delta_m(a) \leqslant \varphi(m)$
     2. 若 $a \equiv b \pmod{m}, (a, m) = 1$，则 $\delta_m(a) = \delta_m(b)$
     3. 若 $m > 1, (a, m) = 1, a^n \equiv 1 \pmod{m}$，则 $\delta(a) \mid n$．特别地，若 $p$ 是指数，$(a, p) = 1$，则 $\delta(a) \mid p - 1$
@@ -361,9 +364,9 @@
         1. 若 $a_n > 1, b_m > 1$，则 $n = m, a_i = b_i \ (1 \leqslant i \leqslant n)$
         2. 若 $a_n$ 是大于 $i$ 的整数，则有理数 $\dfrac ab$ 仅有两种表示成简单连分数的方法，即 $\left<a_1, a_2, \cdots, a_n\right> = \left<a_1, a_2, \cdots, a_n - 1, 1\right>$
     3. 设 $\dfrac{p_k}{q_k}$ 是实数 $\alpha$ 的第 $k$ 个渐近分数，则若 $0 < q \leqslant q_k$，则 $\left|a - \dfrac{p_k}{q_k}\right| \leqslant \left|a - \dfrac pq\right|$
-    4. 若 $\dfrac{p_j}{q_j}$ 是无理数 $\alpha$ 的第 $j$ 个渐近分数，$j = 1, 2, \cdots, r$ 与 $s$ 都是整数，且 $s > 0, k \in \mathbf Z_+$ 使得 $|sa - r| < |q_k\alpha - p_k|$，则 $s \geqslant q_{k+1}$
+    4. 若 $\dfrac{p_j}{q_j}$ 是无理数 $\alpha$ 的第 $j$ 个渐近分数，$j = 1, 2, \cdots, r$ 与 $s$ 是整数且 $s > 0, k \in \mathbf Z_+$ 使得 $|sa - r| < |q_k\alpha - p_k|$，则 $s \geqslant q_{k+1}$
         1. 设 $\dfrac{p_j}{q_j}$ 是无理数 $\alpha$ 的第 $j$ 个渐近分数，$j = 1, 2, \cdots$，如果 $\dfrac rs$ 为一有理数，其中 $r, s$ 都是整数，且 $s > 0, k \in \mathbf Z_+$ 使得 $\left|\alpha -\dfrac rs\right| < \left|\alpha -  \dfrac{p_k}{q_k}\right|$，那么 $s > q$
-        2. 如果 $\alpha$ 是一个无理数，且 $\dfrac rs$ 是一个既约分数且 $r, s \in \mathbf Z, s > 0$ 使得 $\left|\alpha - \dfrac rs\right| < \dfrac{1}{2s^2}$，那么 $\dfrac rs$ 是 $\alpha$ 的简单连分数的一个渐近分数
+        2. 若 $\alpha$ 是无理数，$\dfrac rs$ 是既约分数且 $r, s \in \mathbf Z, s > 0$ 使得 $\left|\alpha - \dfrac rs\right| < \dfrac{1}{2s^2}$，则 $\dfrac rs$ 是 $\alpha$ 的简单连分数的一个渐近分数
 4. 循环连分数：设 $\left<a_1, a_2, \cdots, a_n, \cdots\right>$ 是无限简单连分数，如果存在两个整数 $s \geqslant 0, t > 0$ 使得 $a_{s+i} = a_{s + kt + i}, i = 1, 2, \cdots, t, k \in \mathbf N$，则称 $\left<a_1, a_2, \cdots, a_n, \cdots\right>$ 是循环连分数，并记作 $\left<a_1, a_2, \cdots, a_s, \dot a_{s+1}, \dot a_{s+2}, \cdots, \dot a_{s+t}\right>$；如果 $s = 0$，则称它是纯循环连分数
     1. 任何循环连分数表示一个不可约整系数二次方程的实根
     2. 设 $\beta$ 是二次不可约整系数方程 $Ax^2 + Bx + C = 0$ 的实根，则 $\beta$ 的简单连分数是循环连分数

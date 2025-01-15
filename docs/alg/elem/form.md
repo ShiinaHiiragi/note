@@ -62,7 +62,7 @@
     1. 分式的恒等：如果两个分式 $\dfrac{f_1(x)}{g_1(x)}$ 与 $\dfrac{f_2(x)}{g_2(x)}$ 对于 $x$ 在其公共定义域上的任意取值都有相等的值，那么 $\dfrac{f_1(x)}{g_1(x)} \equiv \dfrac{f_2(x)}{g_2(x)}$
         1. $\dfrac{f_1(x)}{g_1(x)} \equiv \dfrac{f_2(x)}{g_2(x)}$ 当且仅当 $f_1(x)g_2(x) = f_2(x)g_1(x)$
         2. 若 $\dfrac{f_1(x)}{g_1(x)} \equiv \dfrac{f_2(x)}{g_2(x)}$ 且 $g_1(x) = g_2(x)$，则 $f_1(x) = f_2(x)$
-    2. 既约分式：如果分式 $\dfrac{f(x)}{g(x)}$ 的分子和分母除常数因子外没有其他公因式，则称该分式为既约分式或不可约分式，称 $f(x)$ 与 $g(x)$ 互质
+    2. 既约分式：如果分式 $\dfrac{f(x)}{g(x)}$ 的分子和分母除常数因子外没有其他公因式，则称该分式为既约分式，称 $f(x)$ 与 $g(x)$ 互质
     3. 分式的基本性质
         1. 如果 $\dfrac{f(x)}{g(x)}$ 是一个分式，$h(x)$ 是一个非零多项式，则 $\dfrac{f(x)}{g(x)} \equiv \dfrac{f(x) \cdot h(x)}{g(x) \cdot h(x)}$
         2. 任何有理分式 $\dfrac{f(x)}{g(x)}$ 都有一个既约分式与之恒等，除去数值因子外，这个既约分式是唯一的
@@ -89,7 +89,7 @@
     2. 根式的化简
         1. 最简根式：如果一个根式的被开方数的幂指数与根指数互质，被开方数的每个因式的幂指数都小于根指数，且被开放数不含分母，则称此根式为最简根式
         2. 复合二次根式：设 $A > 0, B > 0$ 且 $A^2 - B > 0$，则二次根式 $\sqrt{A \pm \sqrt{B}} = \sqrt{\dfrac{A + \sqrt{A^2 - B}}{2}} \pm \sqrt{\dfrac{A - \sqrt{A^2 - B}}{2}}$
-3. 共轭根式：设 $P$ 是已知根式（$P \not\equiv 0$），若有根式 $Q$（$Q \not\equiv 0$）使乘积 $PQ$ 为有理式，则称 $Q$ 是 $P$ 的共轭根式，或称 $P, Q$ 互为共轭根式
+3. 设 $P$ 是已知根式（$P \not\equiv 0$），若有根式 $Q$（$Q \not\equiv 0$）使乘积 $PQ$ 为有理式，则称 $Q$ 是 $P$ 的共轭根式，或称 $P, Q$ 互为共轭根式
     1. 对于根式 $P = \sqrt[n]{x_1^{r_1} x_2^{r_2} \cdots x_m^{r_m}}$，其中 $r_1, r_2, \cdots, r_m < n$ 且为正整数，则 $P$ 的共轭根式为 $Q = \sqrt[n]{x_1^{n-r_1} x_2^{n-r_2} \cdots x_m^{n-r_m}}$
     2. 对于根式 $P = \sqrt[n]{x} - \sqrt[n]{y}$，其共轭根式为 $Q = \sqrt[n]{x^{n-1}} + \sqrt[n]{x^{n-2}y} + \cdots + \sqrt[n]{xy^{n-2}} + \sqrt[n]{y^{n-1}}$
     3. 对于根式 $P = \sqrt[n]{x} + \sqrt[n]{y}$，其共轭根式为 $Q = \left\{\begin{aligned} & \sqrt[n]{x^{n-1}} - \sqrt[n]{x^{n-2}y} + \cdots - \sqrt[n]{xy^{n-2}} + \sqrt[n]{y^{n-1}} \\ & \sqrt[n]{x^{n-1}} - \sqrt[n]{x^{n-2}y} + \cdots + \sqrt[n]{xy^{n-2}} - \sqrt[n]{y^{n-1}} \end{aligned}\right.$
@@ -190,7 +190,12 @@
     2. 设 $f(x)$ 在 $(a, b)$ 内存在二阶导数 $f^{\prime \prime}(x)$，则
         1. 若在 $(a, b)$ 内有 $f^{\prime \prime}(x)<0$，则 $f(x)$ 在 $(a, b)$ 为凸函数
         2. 若在 $(a, b)$ 内有 $f^{\prime \prime}(x)>0$，则 $f(x)$ 在 $(a, b)$ 为凹函数
-6. 极值：设 $f(x)$ 在 $[a, b]$ 上连续．若对于一点 $x_{0}$，存在 $x_{0}$ 的某一邻域 $\left(x_{0}-\delta, x_{0}+\delta\right) \ (\delta>0)$，使对于此邻域中的任意点 $x$ 都有 $f(x) \leqslant f\left(x_{0}\right)$，则称 $f(x)$ 在 $x_{0}$ 有一极大值 $f\left(x_{0}\right)$，且 $x_{0}$ 为极大值点；如果在 $x_{0}$ 的某一邻域 $\left(x_{0}-\delta, x_{0}+\delta\right)$ 中总有 $f(x) \geqslant f\left(x_{0}\right)$，则称 $f(x)$ 在 $x_{0}$ 有一极小值 $f\left(x_{0}\right)$，且 $x_{0}$ 为极小值点．极大值与极小值统称为极值，极大值点与极小值点统称为极值点
+6. 极值：设 $f(x)$ 在 $[a, b]$ 上连续
+    1. 若对于一点 $x_{0}$，存在 $x_{0}$ 的某一邻域 $\left(x_{0}-\delta, x_{0}+\delta\right) \ (\delta>0)$，使对于此邻域中的任意点 $x$ 都有 $f(x) \leqslant f\left(x_{0}\right)$，则称 $f(x)$ 在 $x_{0}$ 有一极大值 $f\left(x_{0}\right)$，且 $x_{0}$ 为极大值点
+    2. 如果在 $x_{0}$ 的某一邻域 $\left(x_{0}-\delta, x_{0}+\delta\right)$ 中总有 $f(x) \geqslant f\left(x_{0}\right)$，则称 $f(x)$ 在 $x_{0}$ 有一极小值 $f\left(x_{0}\right)$，且 $x_{0}$ 为极小值点
+
+    极大值与极小值统称为极值，极大值点与极小值点统称为极值点
+
     1. 极值的必要条件：若 $x_{0}$ 是 $f(x)$ 的极值点，那么 $x_{0}$ 是 $f^{\prime}(x)$ 的零点或 $f(x)$ 的不可导点
     2. 极值的判别
         1. 设 $f(x)$ 在 $\left(x_{0}-\delta, x_{0}\right)$ 和 $\left(x_{0}, x_{0}+\delta\right)$（其中 $\delta>0$）可导，则
@@ -200,6 +205,7 @@
         2. 设 $f(x)$ 一阶、二阶可导，且 $f^{\prime}\left(x_{0}\right)=0$，则
             1. 若 $f^{\prime \prime}\left(x_{0}\right)<0$，则 $f\left(x_{0}\right)$ 是极大值
             2. 若 $f^{\prime \prime}\left(x_{0}\right)>0$，则 $f\left(x_{0}\right)$ 是极小值
+
 7. 渐近线：设 $f(x)$ 是一个函数
     1. 水平渐近线：若 ${\displaystyle \lim _{x \rightarrow+\infty} f(x)=b}$ 或 ${\displaystyle \lim _{x \rightarrow-\infty} f(x)=b}$，则称 $y=b$ 是曲线 $y=f(x)$ 在 $x \rightarrow+\infty$ 或 $x \rightarrow-\infty$ 时的一条水平渐近线
     2. 垂直渐近线：若 ${\displaystyle \lim _{x \rightarrow c} f(x)=\infty}$，则称 $x=c$ 是 $y=f(x)$ 的一条垂直渐近线

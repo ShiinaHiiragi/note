@@ -68,7 +68,7 @@
         1. ${\displaystyle F(S)=\bigcup_{S^{\prime} \subseteq S} F\left(S^{\prime}\right)}$，其中 $S^{\prime}$ 取遍 $S$ 的所有有限子集
         2. 若 $S=S_{1} \cup S_{2}$，则 $F(S)=F\left(S_{1}\right)\left(S_{2}\right)=F\left(S_{2}\right)\left(S_{1}\right)$
         3. $F\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}\right)=F\left(\alpha_{1}\right)\left(\alpha_{2}\right) \cdots\left(\alpha_{n}\right)$
-    2. 设 $K$ 为域 $F$ 的扩域，$\alpha \in K$．若存在域 $F$ 上的非零多项式 $f(x)$ 使得 $f(\alpha)=0$，则称 $\alpha$ 为 $F$ 上的代数元，否则称 $\alpha$ 为 $F$ 上的超越元
+    2. 设 $K$ 为域 $F$ 的扩域，且 $\alpha \in K$．若存在域 $F$ 上的非零多项式 $f(x)$ 使得 $f(\alpha)=0$，则称 $\alpha$ 为 $F$ 上的代数元，否则称 $\alpha$ 为 $F$ 上的超越元
 4. 等价扩张：设 $K_{1}, K_{2}$ 都是 $F$ 的扩域，若存在 $K_{1}$ 到 $K_{2}$ 上的同构 $\varphi$ 使得 $\varphi \upharpoonright F=\mathrm{id}_{F}$，则称 $K_{1}, K_{2}$ 为 $F$ 的等价扩张，$\varphi$ 称为 $F-$同构．当 $K_{1}=K_{2}$ 时，称 $\varphi$ 为 $F-$自同构
 
 ### 3.2.1 单扩张
@@ -96,7 +96,7 @@
         2. $\alpha$ 是 $F$ 上的代数元
         3. $F(\alpha)$ 是 $F$ 的有限扩张
     3. 设 $E$ 为域 $F$ 的有限扩张，$K$ 为 $E$ 的有限扩张，则 $K$ 是 $F$ 的有限扩张且 $[K: F]=[K: E][E: F]$
-        1. $F\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}\right)$ 是域 $F$ 的代数扩张当且仅当 $F\left(\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}\right)$ 是 $F$ 的有限扩张当且仅当 $\alpha_{1}, \alpha_{2}, \cdots, \alpha_{n}$ 是 $F$ 上的代数元
+        1. $F\left(\alpha_{1}, \cdots, \alpha_{n}\right)$ 是域 $F$ 的代数扩张当且仅当 $F\left(\alpha_{1}, \cdots, \alpha_{n}\right)$ 是 $F$ 的有限扩张当且仅当 $\alpha_{1}, \cdots, \alpha_{n}$ 是 $F$ 上的代数元
         2. 域 $F$ 上的两个代数元的和、差、积、商（分母不为零）仍为 $F$ 上的代数元
         3. 设 $E=F(S)$，其中 $S$ 的元素都是 $F$ 上的代数元，则 $E$ 是 $F$ 的代数扩张
         4. 若 $E$ 是域 $F$ 的代数扩张，$K$ 是 $E$ 的代数扩张，则 $K$ 是 $F$ 的代数扩张

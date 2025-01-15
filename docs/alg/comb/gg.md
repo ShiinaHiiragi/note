@@ -335,7 +335,7 @@
         其中 $X$ 表示 $0$ 个以上的自然数，$Y, Y_1, Y_2$ 表示 $0$ 个以上的整数序列，$Z$ 表示 $0$ 个以上的 $0$，$a, b, c$ 表示 $0$ 以上的正整数
 
         1. 对于大整数 $N$，记 $\mathrm{index} [\cdots, b_3, b_2, b_1, b_0, a_0] = \cdots + N^3 \cdot b_3 + N^2 \cdot b_2 + N \cdot b_1 + b_0$，则 $A$ 中序列按 $\mathrm{index}$ 从大到小的顺序排列，且 $A$ 中不存在 $\mathrm{index}$ 相同的序列
-        2. 二重序列 $\text{Ackermann}$ 函数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $A([\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize], [n]) \approx F[\omega^{\omega^{\omega}}](n)$，$n$ 重序列 $\text{Ackermann}$ 函数可达到 $F[\varepsilon_0](n)$
+        2. 二重序列 $\text{Ackermann}$ 函数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $A([\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize], [n]) \approx F[\omega^{\omega^{\omega}}](n)$
 
 5. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
 
@@ -507,9 +507,9 @@
 
         并定义如下运算规则
 
-        1. 指数规则：如果 $p = 1$，则 $v(A) = b$
-        2. 初始规则：如果没有驾驶员，则 $v(A) = b^p$
-        3. 灾难规则：如果不符合上述规则，则
+        10. 指数规则：如果 $p = 1$，则 $v(A) = b$
+        11. 初始规则：如果没有驾驶员，则 $v(A) = b^p$
+        12. 灾难规则：如果不符合上述规则，则
             1. 驾驶员的值减 $1$
             2. 副驾驶的指变为「原数阵将指数减去 $1$ 后的值」
             3. 所有乘客变为 $b$
@@ -517,7 +517,7 @@
 
         用 $(n)$ 分隔符分隔 $n$ 维的数据，数阵中填充 $1$ 不会影响结果
 
-        4. 数阵运算符：定义 $a^n \& b = \{b, a(n)2\}$，例如
+        13. 数阵运算符：定义 $a^n \& b = \{b, a(n)2\}$，例如
 
             $$
             5^2 \& 5 = \{5,5(2) 2\}=\left\{\begin{array}{ccccc}
@@ -529,7 +529,7 @@
             \end{array}\right\}\approx F\left[\omega^{\omega^2}\right](5)
             $$
 
-        5. 定义 $\text{Gongulus} = \{10, 10 (100) 2\}$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\omega^{\omega^{100}}\right](10)$
+        14. 定义 $\text{Gongulus} = \{10, 10 (100) 2\}$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\omega^{\omega^{100}}\right](10)$
 
     3. 迭代幂次数阵：扩展 $(n)$ 分隔符为数阵
         1. 每个数阵对应一个关于 $X$ 的函数 $f(X)$，令这个映射为 $\sigma$．设 $b_0, b_1, \cdots, b_n \in \mathbf N$，$(A), (B)$ 均为数阵且 $(B)$ 在 $(A)$ 中已经出现 $k - 1$ 次，则 $\sigma$ 定义如下
@@ -599,9 +599,9 @@
     1. 设（一阶）海狸机 $\text{BB} = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$ 有 $n$ 个状态，且满足以下条件：① 字母表 $\Sigma = \{0, 1\}$；② 起始格局下纸带上均为 $0$．定义 $\Sigma_1(n)$ 为 $n$ 状态海狸机停机时纸带上 $1$ 的最大数量
         1. $\Sigma_1(0) = 0, \Sigma_1(1) = 1, \Sigma_1(2) = 4, \Sigma_1(3) = 6, \Sigma_1(4) = 13$
         2. $\Sigma_1(5) \geqslant 4098, \Sigma_1(6) \geqslant 10 \uparrow \uparrow 15$
-    2. 设 $k$ 阶海狸机是带有一个对 $k-1$ 阶海狸机的神谕的 $n$ 状态 $\text{Turing}$ 机，定义 $\Sigma_k(n)$ 为 $n$ 状态 $k$ 阶海狸机停机时纸带上 $1$ 的最大数量
-
-    $\Sigma_k$ 的 $\text{FGH}$ 近似为 $F\left[\omega_k^{\text{CK}}\right](n)$
+    2. 定义 $\Sigma_k(n)$ 为 $n$ 状态 $k$ 阶海狸机停机时纸带上 $1$ 的最大数量
+        1. 定义 $k$ 阶海狸机是带有一个对 $k-1$ 阶海狸机神谕的 $n$ 状态 $\text{Turing}$ 机
+        2. $\Sigma_k$ 的 $\text{FGH}$ 近似为 $F\left[\omega_k^{\text{CK}}\right](n)$
 
 2. $\Xi$ 函数：定义如下操作符
 
