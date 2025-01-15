@@ -7,20 +7,18 @@ dev_addr: 127.0.0.1:3000
 
 theme:
   name: material
+  font:
+    text: false
   palette:
     - scheme: default
       primary: indigo
       accent: blue
-      font:
-        text: Noto Sans SC
       toggle:
         icon: material/toggle-switch
         name: 切换到白色主题
     - scheme: defualt
       primary: white
       accent: indigo
-      font:
-        text: Noto Serif SC
       toggle:
         icon: material/toggle-switch-off-outline
         name: 切换到原主题

@@ -20,12 +20,12 @@ strong {
 /* Define Fonts */
 @font-face {
   font-family: "Noto Sans SC";
-  src: "fonts/NotoSansSC-Regular.otf";
+  src: url("fonts/NotoSansSC-Regular.otf");
 }
 
 @font-face {
   font-family: "Noto Serif SC";
-  src: "fonts/NotoSerifSC-Regular.otf";
+  src: url("fonts/NotoSerifSC-Regular.otf");
 }
 
 @font-face {
