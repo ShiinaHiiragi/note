@@ -42,6 +42,27 @@ strong {
   src: url("fonts/ML Modern Roman Bold.ttf");
 }
 
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Inter Regular.ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: italic;
+  font-weight: normal;
+  src: url("fonts/Inter Italic.ttf");
+}
+
+@font-face {
+  font-family: "Inter";
+  font-style: normal;
+  font-weight: bold;
+  src: url("fonts/Inter Bold.ttf");
+}
+
 /* General Title */
 .md-ellipsis {
   font-weight: var(--normal-font-weight);
