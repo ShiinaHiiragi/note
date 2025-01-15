@@ -99,7 +99,14 @@
     4. 将经典命题逻辑 $\mathbf{CL}$ 定义为所有重言式的集合，即 $\mathbf{CL} = \{\alpha \in \mathscr L \mid \vDash \alpha\}$
         1. 对任意公式 $\alpha$ 和代入 $\sigma$，若 $\alpha \in \mathbf{CL}$，则 $\sigma(\alpha) \in \mathbf{CL}$
         2. 对任意公式 $\alpha, \beta$，若 $\alpha, \alpha \to \beta \in \mathbf{CL}$，则 $\beta \in \mathbf{CL}$
-    5. 真值函数：令 $\alpha$ 是公式且 $\mathrm{var}(\alpha) = \{p_1, p_2, \cdots, p_n\}$，若对于 $n$ 元函数 $f: 2^n \to 2$ 与 $\varepsilon = (\alpha_1, \alpha_2, \cdots, \alpha_n) \in 2^n$ 都有 $f(\theta(p_1), \theta(p_2), \cdots, \theta(p_n)) = \widehat \theta(\alpha)$，其中 $\theta$ 是任意赋值使得对每个 $1\leqslant i\leqslant n$ 都有 $\theta(p_i) = a_i$，则 $\alpha$ 定义 $n$ 元真值函数 $f$，也记作 $B_{\alpha}^n$
+    5. 真值函数：令 $\alpha$ 是公式且 $\mathrm{var}(\alpha) = \{p_1, p_2, \cdots, p_n\}$，若对于 $n$ 元函数 $f: 2^n \to 2$ 与 $\varepsilon = (\alpha_1, \alpha_2, \cdots, \alpha_n) \in 2^n$ 都有
+
+        $$
+        f(\theta(p_1), \theta(p_2), \cdots, \theta(p_n)) = \widehat \theta(\alpha)
+        $$
+
+        其中 $\theta$ 是任意赋值使得对每个 $1\leqslant i\leqslant n$ 都有 $\theta(p_i) = a_i$，则 $\alpha$ 定义 $n$ 元真值函数 $f$，也记作 $B_{\alpha}^n$
+
         1. 任意 $n$ 元真值函数 $f: 2^n \to 2$ 在 $\mathscr L$ 中可定义，即存在 $\alpha \in \mathscr L$ 使得 $f = B_\alpha^n$
         2. 完全组：设 $G \subseteq \{\bot, \top, \neg, \wedge, \vee, \to, \leftrightarrow\}$，若任何一个真值函数都可以用只含 $G$ 中联结词的公式表达，则称集合 $G$ 是命题联结词的完全组
 
@@ -134,10 +141,16 @@
             1. 若一条链 $c = \left<x_0, x_1, \cdots, x_k\right>$ 不存在 $y=X-c$ 使得 $x_kSy$，则称 $c$ 为极大链．极大链的第一个元素称为根节点；最后一个元素称为叶节点
             2. 链的长度定义为 $|c|=k$，单个节点链的长度为 $0$
             3. 有穷树结构 $(X, S)$ 的高度定义为 $\max\{\left|c\right|: c$ 是 $(X, R)$ 的极大链$\}$
-    3. 在 $\mathbf{HK}$ 中，从公式集 $\Gamma$ 到公式 $\alpha$ 的一个推导是由公式组成的以 $\alpha$ 为根节点的有穷树结构 $\mathcal D$，其中每个节点满足三个条件之一：① $\gamma$ 是公理或 $\gamma \in \Gamma$；② $\gamma$ 是从子节点 $\beta$ 和 $\beta \to \gamma$ 运用规则 $\text{mp}$ 得到的；③ $\gamma$ 是从子节点 $\beta$ 利用规则 $\text{sub}$ 得到的，其中 $\beta$ 是公理
-        1. 用 $\mathcal {D, E}$ 等表示推导，用 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\alpha\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\alpha$ 为根节点的推导
-        2. 在 $\mathbf{HK}$ 中，若存在公式集 $\Gamma$ 到公式 $\alpha$ 的推导，则称 $\alpha$ 是 $\Gamma$ 的句法后承，记作 $\Gamma \vdash_\mathbf{HK} \alpha$，无歧义时下标 $\mathbf{HK}$ 可删除
-        3. 若 $\varnothing \vdash_\mathbf{HK} \alpha$，称公式在 $\mathbf{HK}$ 中可证，或 $\alpha$ 是 $\mathbf{HK}$ 的定理，记作 $\vdash_\mathbf{HK} \alpha$．用 $\mathrm{Thm}(\mathbf{HK})$ 表示 $\mathbf{HK}$ 中所有定理的集合
+    3. 在 $\mathbf{HK}$ 中，从公式集 $\Gamma$ 到公式 $\alpha$ 的一个推导是由公式组成的以 $\alpha$ 为根节点的有穷树结构 $\mathcal D$，其中每个节点满足
+        1. $\gamma$ 是公理或 $\gamma \in \Gamma$
+        2. $\gamma$ 是从子节点 $\beta$ 和 $\beta \to \gamma$ 运用规则 $\text{mp}$ 得到的
+        3. $\gamma$ 是从子节点 $\beta$ 利用规则 $\text{sub}$ 得到的，其中 $\beta$ 是公理
+
+        三个条件之一，并用 $\mathcal {D, E}$ 等表示推导，用 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\alpha\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\alpha$ 为根节点的推导
+
+        1. 在 $\mathbf{HK}$ 中，若存在公式集 $\Gamma$ 到公式 $\alpha$ 的推导，则称 $\alpha$ 是 $\Gamma$ 的句法后承，记作 $\Gamma \vdash_\mathbf{HK} \alpha$，无歧义时下标 $\mathbf{HK}$ 可删除
+        2. 若 $\varnothing \vdash_\mathbf{HK} \alpha$，称公式在 $\mathbf{HK}$ 中可证，或 $\alpha$ 是 $\mathbf{HK}$ 的定理，记作 $\vdash_\mathbf{HK} \alpha$．用 $\mathrm{Thm}(\mathbf{HK})$ 表示 $\mathbf{HK}$ 中所有定理的集合
+
     4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统元定理
         1. $\alpha, \Gamma \vdash_\mathbf{HK} \alpha$，$\bot, \Gamma \vdash_\mathbf{HK} \alpha$
         2. 对任意公式集 $\Gamma$ 和公式 $\alpha$，$\Gamma \vdash_\mathbf{HK} \alpha$ 当且仅当存在有穷子集 $\Delta \subseteq \Gamma$ 使得 $\Delta \vdash_\mathbf{HK} \alpha$
@@ -316,7 +329,7 @@
         2. 对于 $\mathbf Q\in \{\forall, \exists\}$ 和有穷长的变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，公式 $\mathbf Qx_1 \mathbf Qx_2 \cdots \mathbf Qx_n \alpha$ 记作 $\mathbf Q \overline x \alpha$
         3. 设 $t$ 为项，$\overline x$ 为有穷长的变元序列 $\left<x_1, x_2, \cdots, x_n\right>$．记 $t = t(\overline x)$ 为含有变元 $x_1, x_2, \cdots, x_n$ 的项
 
-3. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串的性质，设 ① 对任意原子公式 $\alpha$ 都有 $\mathcal R(\alpha)$；② 对任意 $\alpha, \beta \in \mathcal F(S)$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$；③ 对任意 $\alpha \in \mathcal F(S)$ 和变元符号 $x$，若 $\mathcal R(\alpha)$，则 $\mathcal R(\exists x\alpha)$；那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathcal F(S)$ 都成立
+3. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串性质，设 ① 对任意原子公式 $\alpha$ 都有 $\mathcal R(\alpha)$；② 对任意 $\alpha, \beta \in \mathcal F(S)$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$；③ 对任意 $\alpha \in \mathcal F(S)$ 和变元符号 $x$，若 $\mathcal R(\alpha)$，则 $\mathcal R(\exists x\alpha)$；那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathcal F(S)$ 都成立
     1. 项与公式的性质
         1. 项 $t$ 的复杂度定义为
 
@@ -385,7 +398,7 @@
 
             3. 对形如 $\mathbf Q x\beta$ 的公式，称 $\beta$ 为量词 $\mathbf Qx$ 的辖域．如果变元 $x$ 在公式 $\alpha$ 中的一次出现不在任何量词 $\mathbf Qx$ 的辖域内，则称此次出现为自由出现；否则称之为约束出现，此时变元 $x$ 在 $\alpha$ 中被左侧最近的量词 $\mathbf Qx$ 约束
 
-    2. 替换与变换：对于任意项序列 $\overline t = \left<t_1, t_2, \cdots, t_n\right>$ 和任意变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，用 $\overline t / \overline x$ 表示分别用 $t_i$ 替换 $x_i$，其中 $1 \leqslant i \leqslant n$
+    2. 替换与变换：对于任意项序列 $\overline t = \left<t_1, t_2, \cdots, t_n\right>$ 和任意变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，用 $\overline t / \overline x$ 表示分别用 $t_i$ 替换 $x_i$
         1. 对于公式 $\alpha$，如果公式 $\alpha^\flat$ 是使用不在 $\alpha$ 中出现的新变元 $y_1, y_2, \cdots, y_n$ 分别同时替换 $\alpha$ 中约束变元 $x_1, x_2, \cdots, x_n$ 的所有约束出现得到的公式，则称 $\alpha^\flat$ 是 $\alpha$ 的字母变换
         2. 对任意项 $s\in \mathcal T(S)$，归纳定义 $s(\overline t/\overline y)$ 为
 
@@ -432,9 +445,9 @@
 
                 则定义 $\{\mathfrak A_i\mid i\in I\}$ 的交为一个以 ${\displaystyle \bigcap_{i\in I}A_i}$ 为论域的 $S-$结构，记作 ${\displaystyle \bigcap_{i\in I}\mathfrak A_i}$
 
-                1. 对每个 $n$ 元关系符号 $R\in \mathbf R$，$R^{\bigcap_{i\in I}\mathfrak A_i} = {\displaystyle \bigcap_{i\in I}R^{\mathfrak A_i}}$
-                2. 对每个 $n$ 元函数符号 $f\in \mathbf F$，$f^{\bigcap_{i\in I}\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n)$
-                3. 对每个常元符号，$c\in \mathbf C$，$c^{\bigcap_{i\in I}\mathfrak A_i} = C^{\mathfrak A_i}$
+                4. 对每个 $n$ 元关系符号 $R\in \mathbf R$，$R^{\bigcap_{i\in I}\mathfrak A_i} = {\displaystyle \bigcap_{i\in I}R^{\mathfrak A_i}}$
+                5. 对每个 $n$ 元函数符号 $f\in \mathbf F$，$f^{\bigcap_{i\in I}\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n)$
+                6. 对每个常元符号，$c\in \mathbf C$，$c^{\bigcap_{i\in I}\mathfrak A_i} = C^{\mathfrak A_i}$
 
     2. 模型：一个模型是有序对 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是结构，$\sigma$ 是 $\mathfrak A$ 中的指派
         1. 指派：结构 $\mathfrak A = (A, I)$ 中的 $\mathfrak A-$指派是一个函数 $\sigma: \mathbf{Var} \to A$；也用 $\left<\sigma(x_i)\right>_{i\in \lambda}$ 表示 $\sigma$，其中 $\lambda$ 是 $\mathbf{Var}$ 的指标集

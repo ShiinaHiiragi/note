@@ -3,7 +3,9 @@
 ## 1.1 可计算模型
 ### 1.1.1 Turing 机
 1. 递归论 $\text{Turing}$ 机模型：设双向无限带 $\text{Turing}$ 机为 $M = (Q, \Sigma, \Gamma, \delta, B, q_s, q_t, q_r)$．其中字母表 $\Sigma = \{0, 1\}$，$q_h = \{q_t, q_r\}$，表示停机状态．从而一台 $\text{Turing}$ 完全由其指令集 $\delta$ 决定而与其物理装置无关
-    1. $\text{Turing}$ 机的输入是 $n$ 个自然数，自然数 $m$ 用带上 $m + 1$ 个连续的 $1$ 表示，如果输入为 $n$ 元组 $m_1, m_2, \cdots, m_n$，则用空格 $0$ 隔开数字
+    1. $\text{Turing}$ 机的输入是 $n$ 个自然数
+        1. 自然数 $m$ 用带上 $m + 1$ 个连续的 $1$ 表示
+        2. 如果输入为 $n$ 元组 $m_1, m_2, \cdots, m_n$，则用空格 $0$ 隔开数字
     2. $\text{Turing}$ 机的输出是停机时纸带上所有 $1$ 的总数，$1$ 不一定是连续的
 2. $\text{Turing}$ 机计算函数：设 $f$ 为 $\mathbf N^n \to \mathbf N$ 的（部分）函数，$M$ 为 $\text{Turing}$ 机．则称 $\text{Turing}$ 机 $M$ 计算函数 $f$ 当且仅当对任意 $n$ 元组 $(x_1, x_2, \cdots, x_n)$．如果 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机且输出为 $f(x_1, x_2, \cdots, x_n)$；如果 $(x_1, x_2, \cdots, x_n) \notin \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时不会停机
     1. 用 $f(x_1, x_2, \cdots, x_n) \downarrow$ 表示 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$，此时称 $f$ 在 $(x_1, x_2, \cdots, x_n)$ 处收敛；用 $f(x_1, x_2, \cdots, x_n) \uparrow$ 表示 $(x_1, x_2, \cdots, x_n) \notin \mathrm{dom}(f)$，此时称 $f$ 在 $(x_1, x_2, \cdots, x_n)$ 处发散
@@ -175,7 +177,7 @@
         2. 任何一台标准的 $\text{Turing}$ 机 $M_1$ 都可以被一台纸带是单向无穷的 $\text{Turing}$ 机 $M_2$ 所模拟
         3. $\text{Turing}$ 可计算函数对复合运算、原始递归与极小算子封闭
     2. 任何 $\text{Turing}$ 可计算函数都是部分递归的
-        1. $\text{Turing}$ 机的编码和解码是能行的：用 $M_e$ 表示 $\text{G}\ddot{\mathrm o}\text{del}$ 数为 $e$ 的 $\text{Turing}$ 机，称 $e$ 为 $\text{Turing}$ 机或 $\text{Turing}$ 可计算函数的指标
+        1. $\text{Turing}$ 机编码和解码是能行的：用 $M_e$ 表示 $\text{G}\ddot{\mathrm o}\text{del}$ 数为 $e$ 的 $\text{Turing}$ 机，称 $e$ 为 $\text{Turing}$ 机或 $\text{Turing}$ 可计算函数的指标
 
             !!! note "$\text{Turing}$ 机与递归函数" 
                 1. 用 $\Phi_e^{(n)}$ 表示由 $M_e$ 计算的 $n$ 元部分函数，将 $\Phi_e^{(1)}$ 简写为 $\Phi_e$．用 $M_{e_1} = M_{e_2}$ 表示 $M_{e_1}$ 与 $M_{e_2}$ 计算的是同一个部分函数
@@ -190,7 +192,7 @@
 ## 1.2 递归定理
 1. 参数定理（$\text{Kleene} \ s-m-n$ 定理的一般形式）：令 $m, n \in \mathbf N^+$，则存在原始递归的单射 $s_n^m: \mathbf N^{m+1} \to \mathbf N$，使得对任意 $x \in \mathbf N, \overline y \in \mathbf N^m$ 都有 $\Phi_{s_n^m(x, \overline y)}^{(n)} (\overline z) = \Phi_x^{(m+n)} (\overline y, \overline z)$
     1. $s-m-n$ 定理：令 $\Phi: \mathbf N^2 \to \mathbf N$ 为一个二元部分递归函数，则存在一个原始递归函数 $g: \mathbf N \to N$ 使得对所有的 $e, x$ 有 $\Phi_{g(e)}(x) = \Phi(e, x)$
-    2. 填充引理：每一部分递归函数 $\Phi_e$ 都有无穷多个指标，即 $I = \{i \mid \Phi_i = \Phi_e\}$ 是无穷的，且可以能行地找出一个无穷子集 $A_e \subseteq I$
+    2. 填充引理：每一部分递归函数 $\Phi_e$ 都有无穷多个指标，即 $I = \{i \mid \Phi_i = \Phi_e\}$ 是无穷的，且可能行地找出一个无穷子集 $A_e \subseteq I$
 2. 递归定理：令 $f$ 为一个递归函数，则存在一个自然数 $n$ 使得 $\Phi_{f(n)} = \Phi_n$
     1. 假定 $f$ 是一个递归函数，则存在任意大的自然数 $n$ 使得 $\Phi_{f(n)} = \Phi_n$
     2. 带参数的递归定理：如果 $f(x, y)$ 是一个递归函数，则存在一个单射递归函数 $n(y)$ 使得 $\Phi_{n(y)} = \Phi_{f(n(y), y)}$
@@ -231,4 +233,4 @@
     3. 指标集：令 $A \subseteq \mathbf N$，如果对任意 $x, y$ 有 $(x \in A \wedge \Phi_x = \Phi_y) \rightarrow y \in A$，则称 $A$ 是指标集
         1. $\text{Rice}$ 定理：如果 $A$ 是非平凡的指标集，即 $A \neq \varnothing, \mathbf N$，则或者 $K \leqslant_1 A$，或者 $K \leqslant_1 \mathbf N - A$．因此一个指标集是递归的当且仅当其是平凡的
         2. $\text{Rice} - \text{Shapiro}$ 定理：令 $\mathcal A$ 是 $\mathbf N$ 到 $\mathbf N$ 的部分递归函数的集合且有 $A = \{e \mid \phi_e \in \mathcal A\}$ 是递归可枚举的，则部分递归函数 $\psi: \mathbf N \to \mathbf N \in \mathcal A$ 当且仅当存在 $\psi$ 的有穷限制属于 $\mathcal A$
-5. $\text{Hilbert}$ 第十问题：对任意 $\text{Diophantus}$ 方程，即只有有穷个未知数的整系数方程 $P(x_1, x_2, \cdots, x_n) = 0$，是否有整数解是不可判定的
+5. $\text{Hilbert}$ 第十问题：对任意 $\text{Diophantus}$ 方程，即只有有穷个未知数的整系数方程 $P(x_1, x_2, \cdots, x_n) = 0$，是否有整数解不可判定

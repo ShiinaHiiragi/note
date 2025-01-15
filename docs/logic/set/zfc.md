@@ -297,7 +297,7 @@
         2. 极大元与极小元：如果 $a \in X$ 且 $\forall x \in X \ (\neg (a > x))$，则称 $a$ 为 $X$ 的极小元；反之如果 $a \in X$ 且 $\forall x \in X \ (\neg (a < x))$，则称 $a$ 为 $X$ 的极大元
         3. 最小元与最大元：如果 $a \in X$ 且 $\forall x \in X \ (a \leqslant x)$，则称 $a$ 为 $X$ 的最小元；反之如果 $a \in X$ 且 $\forall x \in X \ (a \geqslant x)$，则称 $a$ 为 $X$ 的最大元
         4. 上界与下界：设 $X_0 \subseteq X$，若存在 $a \in X$ 使得对于任意 $x \in X_0$ 都有 $a \geqslant x$，则称 $a$ 为 $X_0$ 在 $X$ 中的上界；若存在 $a \in X$ 使得对于任意 $x \in X_0$ 都有 $a \leqslant x$，则称 $a$ 为 $X_0$ 在 $X$ 中的下界
-        5. 上确界与下确界：设 $X_0 \subseteq X$，若 $X_0$ 在 $X$ 中所有上界的集合有最小元 $a_0$，则称 $a_0$ 是 $X_0$ 的上确界或最小上界，记作 $\sup(X_0)$ 或 ${\displaystyle \sup_{x \in X_0}\left\{x\right\}}$；若 $X_0$ 在 $X$ 中所有下界的集合有最大元 $a_0$，则称 $a_0$ 是 $X_0$ 的下确界或最大下界，记作 $\inf(X_0)$ 或 ${\displaystyle \inf_{x \in X_0}\left\{x\right\}}$
+        5. 上确界与下确界：设 $X_0 \subseteq X$，若 $X_0$ 在 $X$ 中所有上界的集合有最小元 $a_0$，则称 $a_0$ 是 $X_0$ 的上确界（或最小上界），记作 $\sup(X_0)$ 或 ${\displaystyle \sup_{x \in X_0}\left\{x\right\}}$；若 $X_0$ 在 $X$ 中所有下界的集合有最大元 $a_0$，则称 $a_0$ 是 $X_0$ 的下确界（或最大下界），记作 $\inf(X_0)$ 或 ${\displaystyle \inf_{x \in X_0}\left\{x\right\}}$
             1. 函数（包括序列）的上下界或上下确界一般指其值域的上下界或上下确界
             2. 设数集有上（下）确界，则此上（下）确界唯一
 
