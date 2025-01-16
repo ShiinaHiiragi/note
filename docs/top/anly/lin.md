@@ -10,7 +10,9 @@
 
 ### 1.1.1 线性相关
 1. 线性相关：设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s \ (s \geqslant 1)$ 为一组 $n$ 元向量，若存在不全为零的系数 $k_1, k_2, \cdots, k_s$ 使得 $k_1 \boldsymbol \alpha_1 + k_2 \boldsymbol \alpha_2 + \cdots + k_s \boldsymbol \alpha_s = \boldsymbol 0$，则称向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s$ 线性相关，否则称向量组线性无关
-    1. 线性组合：设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m, \boldsymbol \beta$ 为一组 $n$ 元向量．若存在一组实数 $k_1, k_2, \cdots, k_m$ 使得 $\boldsymbol \beta = k_1 \boldsymbol \alpha_1 + k_2 \boldsymbol \alpha_2 + \cdots + k_m \boldsymbol \alpha_m$，则称向量 $\boldsymbol \beta$ 是 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m$ 的线性组合，或称 $\boldsymbol \beta$ 可由 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m$ 线性表出，$k_1, k_2, \cdots, k_m$ 称为线性组合系数或线性表出系数
+    1. 线性组合：设 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m, \boldsymbol \beta$ 为一组 $n$ 元向量
+        1. 若存在一组实数 $k_1, k_2, \cdots, k_m$ 使得 $\boldsymbol \beta = k_1 \boldsymbol \alpha_1 + k_2 \boldsymbol \alpha_2 + \cdots + k_m \boldsymbol \alpha_m$，则称向量 $\boldsymbol \beta$ 是 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m$ 的线性组合，或称 $\boldsymbol \beta$ 可由 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_m$ 线性表出
+        2. $k_1, k_2, \cdots, k_m$ 称为线性组合系数或线性表出系数
 
         !!! note "向量的共线与共面"
             - 设向量 $\boldsymbol e \neq 0$，若向量 $\boldsymbol r$ 是 $\boldsymbol e$ 的线性组合，则称向量 $\boldsymbol r$ 与向量 $\boldsymbol e$ 共线
@@ -24,7 +26,7 @@
         1. 线性无关
         2. 加入原向量组（如果有）中其他任一向量所形成的新的部分向量组均线性相关
 
-        则称部分向量组 $\boldsymbol \alpha_{i_1}, \boldsymbol \alpha_{i_2}, \cdots, \boldsymbol \alpha_{i_r}$ 为向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s$ 的一个极大线性无关组．特别地，线性无关向量组的极大线性无关组是其本身
+        称部分向量组 $\boldsymbol \alpha_{i_1}, \boldsymbol \alpha_{i_2}, \cdots, \boldsymbol \alpha_{i_r}$ 为向量组 $\boldsymbol \alpha_1, \boldsymbol \alpha_2, \cdots, \boldsymbol \alpha_s$ 的一个极大线性无关组；线性无关向量组的极大线性无关组是其本身
 
         1. 向量组中任一向量都可由该向量组的极大线性无关组线性表出
         2. 一个向量组的任意两个极大线性无关组可以相互线性表出，且所含向量个数相等
@@ -51,7 +53,7 @@
         2. 线性方程组 $\boldsymbol{Ax} = \boldsymbol \beta$ 有解的充要条件是 $\boldsymbol \beta \in \mathbf C(\boldsymbol A)$
 
 3. 坐标：设向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 是 $n$ 维线性空间 $V$ 的一组基，$\boldsymbol \alpha$ 是 $V$ 中的任一向量，若 $\boldsymbol \alpha = x_1 \boldsymbol \varepsilon_1 + x_2 \boldsymbol \varepsilon_2 + \cdots + x_n \boldsymbol \varepsilon_n$，则称 $x_1, x_2, \cdots, x_n$ 为向量 $\boldsymbol \alpha$ 在基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 下的坐标
-    1. 基与维数：设 $V$ 是线性空间，如果在 $V$ 中存在 $n$ 个线性无关的向量 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 使得 $V$ 中任一向量 $\boldsymbol \alpha$ 均可由这些向量线性表出，则称向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 为线性空间 $V$ 的一组基，$n$ 称为线性空间 $V$ 的维数，记作 $\operatorname{dim} V = n$，并称 $V$ 是 $n$ 维线性空间
+    1. 基与维数：设 $V$ 是线性空间，若 $V$ 中存在 $n$ 个线性无关的向量 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 使得 $V$ 中任一向量 $\boldsymbol \alpha$ 均可由它们线性表出，则称向量组 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 为线性空间 $V$ 的一组基，称 $n$ 为线性空间 $V$ 的维数，记作 $\operatorname{dim} V = n$，并称 $V$ 是 $n$ 维线性空间
     2. 任意向量在给定基下的坐标唯一：通常将向量写作行向量或列向量的形式，并看作是特殊的矩阵．设向量 $\boldsymbol \alpha$ 有
 
         $$
@@ -273,7 +275,7 @@
         \end{vmatrix}
         $$
 
-        然后用线性分配律延拓为 $\wedge^m(V)$ 中的内积．特别地，称 $\left|\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m\right|=\sqrt{\left\langle\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m, \boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m\right\rangle}$ 为 $\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m$ 的长度
+        用线性分配律延拓为 $\wedge^m(V)$ 中的内积，并称 $\left|\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m\right|=\sqrt{\left\langle\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m, \boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m\right\rangle}$ 为 $\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m$ 的长度
 
     6. 定义由两个 $m$ 重可分解向量 $\boldsymbol \alpha_1 \wedge \cdots \wedge \boldsymbol \alpha_m$ 和 $\boldsymbol \beta_1 \wedge \cdots \wedge \boldsymbol \beta_m$ 所确定的 $m$ 维平面之间的夹角为
 
@@ -356,7 +358,7 @@
         \end{aligned}
         $$
 
-        同时，对空间 $\Lambda=\Lambda^{0}+\Lambda^{1}+\cdots+\Lambda^{n}$ 上的任意一个元素，定义 $\omega=\omega_{0}+\omega_{1}+\cdots+\omega_{n} \ (\omega_{i} \in \Lambda^{i})$．称这样的微分运算 $\mathrm{d}$ 为外微分
+        对空间 $\Lambda=\Lambda^{0}+\Lambda^{1}+\cdots+\Lambda^{n}$ 上的任意一个元素，定义 $\omega=\omega_{0}+\omega_{1}+\cdots+\omega_{n} \ (\omega_{i} \in \Lambda^{i})$．称这样的微分运算 $\mathrm{d}$ 为外微分
 
         1. 微分运算 $\mathrm{d}: \Lambda \rightarrow \Lambda$ 是线性的：$\mathrm{d}(\alpha \omega+\beta \eta)=\alpha \mathrm{d} \omega+\beta \mathrm{d} \eta$，其中 $\omega, \eta \in \Lambda$，$\alpha, \beta$ 为常数
         2. 设 $\omega$ 为 $k-$形式，$\eta$ 为 $l-$形式，则 $\mathrm{d}(\omega \wedge \eta)=\mathrm{d} \omega \wedge \eta+(-1)^{k} \omega \wedge \mathrm{d} \eta$
@@ -428,7 +430,7 @@
 
 5. 保守场与势函数
     1. 有势场：设 $\boldsymbol{a}(x, y, z)=P(x, y, z) \boldsymbol{e}_1+Q(x, y, z) \boldsymbol{e}_2+R(x, y, z) \boldsymbol{e}_3 \ ((x, y, z) \in \Omega)$ 为向量场，其中 $P, Q, R$ 在区域 $\Omega$ 上连续．若存在函数 $U(x, y, z)$ 满足 $\boldsymbol{a}=\operatorname{grad} U$，则称向量场 $\boldsymbol{a}$ 为有势场, 并称函数 $V=-U$ 为势函数
-    2. 保守场：如果对于 $\Omega$ 内任意两点 $A, B$，积分值 ${\displaystyle \int_{L} P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d} z}$ 只与 $A, B$ 两点有关，而与从 $A$ 到 $B$ 的路径（只考虑光滑或分段光滑曲线）$L$ 无关，就称曲线积分 ${\displaystyle \int_{L} P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d}}$ 与路径无关．如果在向量场 $\boldsymbol{a}$ 中曲线积分与路径无关，则称 $\boldsymbol{a}$ 为保守场
+    2. 保守场：若对 $\Omega$ 内任意两点 $A, B$，积分 ${\displaystyle \int_{L} P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d} z}$ 只与 $A, B$ 两点有关，与从 $A$ 到 $B$ 的路径（只考虑光滑或分段光滑曲线）$L$ 无关，则称曲线积分 ${\displaystyle \int_{L} P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d}}$ 与路径无关．若向量场 $\boldsymbol{a}$ 中曲线积分与路径无关，则称 $\boldsymbol{a}$ 为保守场
     3. 设 $\Omega \in \mathbf{R}^{3}$ 为单连通区域，在 $\Omega$ 上定义向量场 $\boldsymbol{a}(x, y, z)=P(x, y, z) \boldsymbol{e}_1+Q(x, y, z) \boldsymbol{e}_2+R(x, y, z) \boldsymbol{e}_3 \ ((x, y, z) \in \Omega)$，$P(x, y, z), Q(x, y, z), R(x, y, z)$ 在 $\Omega$ 上具有连续偏导数，则 $\boldsymbol{a}$ 是保守场 $\leftrightarrow \boldsymbol{a}$ 是有势场 $\leftrightarrow \boldsymbol{a}$ 是无旋场
     4. 设函数 $P(x, y, z), Q(x, y, z)$ 和 $R(x, y, z)$ 在单连通区域 $\Omega$ 上连续，若 $U(x, y, z)$ 是 $1-$形式 $P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d} z$ 的一个原函数（即在 $\Omega$ 上恒有 $\mathrm{d} U=P \mathrm{d} x+Q \mathrm{d} y+R \mathrm{d} z$），则对于 $\Omega$ 内任意两点 $A\left(x_{A}, y_{A}, z_{A}\right), B\left(x_{B}, y_{B}, z_{B}\right)$ 有
 

@@ -2,7 +2,7 @@
 
 ## 5.1 二次曲面一般理论
 ### 5.1.1 符号与记法
-在空间，由三元二次方程 $a_{11} x^{2}+a_{22} y^{2}+a_{33} z^{2}+2 a_{12} x y+2 a_{13} x z+2 a_{23} y z+2 a_{14} x+2 a_{24} y+2 a_{34} z+a_{44}=0$ 所表示的曲面称作二次曲面
+空间中由三元二次方程 $a_{11} x^{2}+a_{22} y^{2}+a_{33} z^{2}+2 a_{12} x y+2 a_{13} x z+2 a_{23} y z+2 a_{14} x+2 a_{24} y+2 a_{34} z+a_{44}=0$ 表示的曲面称作二次曲面
 
 1. 引进如下记号：
 
@@ -76,7 +76,7 @@
     2. $\Phi(X, Y, Z)=0$ 时
         1. $X F_{1}\left(x_{0}, y_{0}, z_{0}\right)+Y F_{2}\left(x_{0}, y_{0}, z_{0}\right)+Z F_{3}\left(x_{0}, y_{0}, z_{0}\right) \neq 0$，此时方程是关于 $t$ 的一次方程，直线与二次曲面有惟一交点
         2. $X F_{1}\left(x_{0}, y_{0}, z_{0}\right)+Y F_{2}\left(x_{0}, y_{0}, z_{0}\right)+Z F_{3}\left(x_{0}, y_{0}, z_{0}\right)=0$，而 $F\left(x_{0}, y_{0}, z_{0}\right) \neq 0$，此时方程无解，两者无交点
-        3. $X F_{1}\left(x_{0}, y_{0}, z_{0}\right)+Y F_{2}\left(x_{0}, y_{0}, z_{0}\right)+Z F_{3}\left(x_{0}, y_{0}, z_{0}\right)=$ $F\left(x_{0}, y_{0}, z_{0}\right)=0$，此时方程为恒等式，直线上的任何点都在二次曲面上
+        3. $X F_{1}\left(x_{0}, y_{0}, z_{0}\right)+Y F_{2}\left(x_{0}, y_{0}, z_{0}\right)+Z F_{3}\left(x_{0}, y_{0}, z_{0}\right)=$ $F\left(x_{0}, y_{0}, z_{0}\right)=0$，此时方程为恒等式，直线上任何点都在曲面上
 
 2. 渐近方向：满足条件 $\Phi(X, Y, Z)=0$ 的方向 $X: Y: Z$ 称作二次曲面的渐近方向，否则称作非渐近方向
 3. 中心：若点 $C$ 是二次曲面的通过它的所有弦的中点，则点 $C$ 称作二次曲面的中心
@@ -193,7 +193,7 @@
     \end{array}\right.
     $$
 
-    时有 $f\left(a_{11}, a_{12}, \cdots, a_{44}\right)=f\left(a_{11}^{\prime}, a_{12}^{\prime}, \cdots, a_{44}^{\prime}\right)$，则这个函数 $f$ 称作二次曲面在刚体变换下的不变量；若函数 $f$ 的值只是经过旋转变换
+    时有 $f\left(a_{11}, a_{12}, \cdots, a_{44}\right)=f\left(a_{11}^{\prime}, a_{12}^{\prime}, \cdots, a_{44}^{\prime}\right)$，则称函数 $f$ 为二次曲面在刚体变换下的不变量；若 $f$ 的值只是经过旋转变换
 
     $$
     \left\{\begin{array}{l}
@@ -283,7 +283,7 @@
             4. $(M+N)^{\perp}=M^{\perp} \cap N^{\perp}$
             5. $(M \cap N)^{\perp}=M^{\perp}+N^{\perp}$
 
-    3. 设 $M$ 是线性空间 $V$ 的子空间，$\sigma_M$ 是 $\sigma$ 在 $M$ 上的限制．如果 $\sigma_M$ 是退化的，即 $\sigma_M$ 的秩小于 $\operatorname{dim} M$，则 $M$ 称为 $V$ 的退化子空间
+    3. 设 $M$ 是线性空间 $V$ 的子空间，$\sigma_M$ 是 $\sigma$ 在 $M$ 上的限制．若 $\sigma_M$ 是退化的，则称 $M$ 为 $V$ 的退化子空间
         1. $M$ 是 $V$ 的非退化子空间，当且仅当 $\sigma_M$ 的秩等于 $\operatorname{dim} M$
         2. 设 $M$ 是 $V$ 中的非退化子空间，则 $V=M \oplus M^{\perp}$
     4. 内积空间结构定理：设 $(V, \sigma)$ 是内积空间，则 $V=A_0 \oplus A_1 \oplus A_2 \oplus \cdots \oplus A_r \oplus V^{\perp}$．其中 $\operatorname{dim} A_i=1, r+1=\sigma$ 的秩，$A_i \perp A_j\ (i, j=0,1,2, \cdots, r, i \neq j)$
@@ -334,7 +334,7 @@
     $$
 
     1. 仿射变换使有心二阶超曲面变成有心二阶超曲面，使抛物面变成抛物面
-    2. 有心二阶超曲面的标准形是 $\lambda_0+\lambda_1 \widetilde{x}_1^2+\lambda_2 \widetilde{x}_2^2+\cdots+\lambda_r \widetilde{x}_r^2=0$，抛物面的标准形是 $\lambda_1 \widetilde{x}_1+\lambda_2 \widetilde{x}_2^2+\cdots+\lambda_r \widetilde{x}_r^2=0$，其中 $r=\sigma$ 的秩为 $-1$
+    2. 有心二阶超曲面标准形是 $\lambda_0+\lambda_1 \widetilde{x}_1^2+\cdots+\lambda_r \widetilde{x}_r^2=0$，抛物面标准形是 $\lambda_1 \widetilde{x}_1+\lambda_2 \widetilde{x}_2^2+\cdots+\lambda_r \widetilde{x}_r^2=0$，其中 $r=\sigma$ 的秩为 $-1$
 
 ### 5.3.3 Euclid 空间的二次超曲面
 1. 二次超曲面的表达式：任给一个实对称双线性形式 $\sigma: V \times V \rightarrow \mathbf{R}, \sigma(a, b)=\sigma(b, a), \forall a, b \in V$，则得到实 $n$ 维 $\text{Euclid}$ 空间 $E^n$ 中的一个二次超曲面 $Q(a)$，其表达式为 $\sigma(a, a)=0$
@@ -406,7 +406,7 @@
     \iint_{\Sigma} \boldsymbol f \cdot \boldsymbol n \mathrm{d} S=\iint_{\Sigma}[P(x, y, z) \cos \alpha+Q(x, y, z) \cos \beta+R(x, y, z) \cos \gamma] \mathrm{d} S
     $$
 
-    为 $f$ 在 $\Sigma$ 上的第二类曲面积分．记 $2-$形式 $\omega=P(x, y, z) \mathrm{d} y \wedge \mathrm{d} z+Q(x, y, z) \mathrm{d} z \wedge \mathrm{d} x+R(x, y, z) \mathrm{d} x \wedge \mathrm{d} y$，则第二类曲面积分也可记为
+    为 $f$ 在 $\Sigma$ 上的第二类曲面积分．记 $2-$形式 $\omega=P(x, y, z) \mathrm{d} y \wedge \mathrm{d} z+Q(x, y, z) \mathrm{d} z \wedge \mathrm{d} x+R(x, y, z) \mathrm{d} x \wedge \mathrm{d} y$，则曲面积分也可记为
 
     $$
     \int_{\Sigma} \omega=\iint_{\Sigma} P(x, y, z) \mathrm{d} y \wedge \mathrm{d} z+Q(x, y, z) \mathrm{d} z \wedge \mathrm{d} x+R(x, y, z) \mathrm{d} x \wedge \mathrm{d} y=\iint_{\Sigma} f \cdot \mathrm{d} \boldsymbol S
@@ -795,7 +795,7 @@
             \left(g_{\alpha \beta}\right)(P)=\left(\delta_{\alpha \beta}\right), \  \dfrac{\partial g_{\alpha \beta}}{\partial x^{\gamma}}(P)=0, \  \forall \alpha, \beta, \gamma=1,2
             $$
 
-    3. 法坐标系与测地极坐标系之间变换的 $\text{Jacobi}$ 行列式为 $\dfrac{\partial\left(x^{1}, x^{2}\right)}{\partial(\rho, \theta)}=\rho$，这表明测地极坐标系 $(\rho, \theta)$ 是曲面在点 $P$ 附近（$P$ 点除外）的正则参数．在测地极坐标系下，$\rho$ 线（$\theta$ 为常数）是过 $P$ 点的测地线，$\theta$ 线（$\rho$ 为常数）称为以 $P$ 为中心，$\rho$ 为半径的测地圆
+    3. 法坐标系与测地极坐标系间变换的 $\text{Jacobi}$ 行列式为 $\dfrac{\partial\left(x^{1}, x^{2}\right)}{\partial(\rho, \theta)}=\rho$．在测地极坐标系下，$\rho$ 线（$\theta$ 为常数）是过 $P$ 点的测地线，$\theta$ 线（$\rho$ 为常数）称为以 $P$ 为中心，$\rho$ 为半径的测地圆
         1. $\mathrm{I}=\mathrm{d} s^{2}=\mathrm{d} \rho^{2}+G(\rho, \theta) \mathrm{d} \theta^{2}$
         2. ${\displaystyle \lim _{\rho \rightarrow 0} \sqrt{G}=0}$
         3. ${\displaystyle \lim _{\rho \rightarrow 0}(\sqrt{G})_{\rho}=1}$

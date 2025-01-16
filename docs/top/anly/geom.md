@@ -23,7 +23,7 @@
 ## 2.2 射影几何
 ### 2.2.1 射影几何
 1. 射影几何：设 $V^{n+1}$ 是体 $F$ 上的 $n+1$ 维线性空间，其中全体 $1$ 维，$2$ 维，$\cdots$，$n$ 维子空间以及 $V^{n+1}$ 所构成的集合称为 $F$ 上的 $n$ 维射影几何，记作 $\boldsymbol{P}\left(V^{n+1}\right)$ 或 $\boldsymbol{P}(V)$．$V^{n+1}$ 中的 $1$ 维子空间称为「点」；$2$ 维子空间称为「线」，$\cdots$，$k+1$ 维子空间称为「$k$ 维面」 $\cdots\ n$ 维子空间称为「超平面」；$V^{n+1}$ 本身称为 $n$ 维射影空间，记作 $P^n$ 或 $F P^n$
-    1. 结合关系：设 $V^{n+1}$ 是体 $F$ 上的线性空间，$\boldsymbol{P}\left(V^{n+1}\right)$ 是相应的 $n$ 维射影几何．$S$ 和 $T$ 分别是 $V^{n+1}$ 中的 $k+1$ 维和 $l+1$ 维子空间
+    1. 结合关系：设 $V^{n+1}$ 是体 $F$ 上线性空间，$\boldsymbol{P}\left(V^{n+1}\right)$ 是相应 $n$ 维射影几何．$S$ 和 $T$ 分别是 $V^{n+1}$ 中 $k+1$ 维和 $l+1$ 维子空间
         1. 若 $S \subseteq T$，则称 $k$ 维面 $S$ 属于 $l$ 维面 $T$
         2. $S+T$ 称为 $k$ 维面 $S$ 与 $l$ 维面 $T$ 的联合
         3. $S \cap T$ 称为 $k$ 维面 $S$ 与 $l$ 维面 $T$ 的交
@@ -42,7 +42,7 @@
             5. 一点与不过此点的直线的联合是一平面
             6. 一平面与不在此平面上的直线的交是一点
 
-    2. 同构：一个射影几何 $P$ 和另一个射影几何 $P^{\prime}$ 之间的一一对应关系 $\pi$（即点对应点，线对应线等），称为射影几何间的同构．$\pi$ 保持结合关系不变，即 $\pi$ 满足条件 $\forall M, N \in \boldsymbol{P} : M \subseteq N \Leftrightarrow \pi(M) \subseteq \pi(N)$．如果存在这样的同构，则称射影几何 $\boldsymbol{P}$ 与 $\boldsymbol{P}^{\prime}$ 同构
+    2. 同构：射影几何 $P$ 和另一射影几何 $P^{\prime}$ 之间的一一对应关系 $\pi$（即点对点，线对线等），称为射影几何间的同构．$\pi$ 保持结合关系不变，即 $\pi$ 满足条件 $\forall M, N \in \boldsymbol{P} : M \subseteq N \Leftrightarrow \pi(M) \subseteq \pi(N)$．如果存在这样的同构，则称射影几何 $\boldsymbol{P}$ 与 $\boldsymbol{P}^{\prime}$ 同构
         1. 对于两个射影几何的同构，有
             1. $\pi(M+N)=\pi(M)+\pi(N)$
             2. $\pi(M \cap N)=\pi(M) \cap \pi(N)$
@@ -98,7 +98,7 @@
     \boldsymbol{P}(f): \boldsymbol{P}\left(V^{n+1}\right) \rightarrow \boldsymbol{P}\left(F^{n+1}\right)
     $$
 
-    1. 参考标架：将有序点组 $\left\{\left[a_0\right],\left[a_1\right],\left[a_2\right], \cdots,\left[a_n\right]\right\}$ 或 $\left\{A_0, A_1, A_2, \cdots, A_n\right\}$ 称为射影几何 $\boldsymbol{P}\left(V^{n+1}\right)$ 的射影坐标系的参考标架；对于点 $E$，调整齐次向量 $a_i$，使得 $[e]=E=\left[a_0+a_1+a_2+\cdots+a_n\right]$，则点组 $\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 的标准参考标架
+    1. 参考标架：称有序点组 $\left\{\left[a_0\right],\left[a_1\right], \cdots,\left[a_n\right]\right\}$ 或 $\left\{A_0, A_1, \cdots, A_n\right\}$ 为射影几何 $\boldsymbol{P}\left(V^{n+1}\right)$ 的射影坐标系的参考标架；对于点 $E$，调整齐次向量 $a_i$，使得 $[e]=E=\left[a_0+a_1+\cdots+a_n\right]$，则点组 $\left\{A_0, A_1, \cdots, A_n, E\right\}$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 的标准参考标架
     2. 齐次坐标与非齐次坐标：将 $\left(x_0, x_1, x_2, \cdots, x_n\right)$ 称为 $\boldsymbol{P}\left(V^{n+1}\right)$ 中点 $A=[a]$ 的齐次坐标，且有 $A_i=\left[a_i\right]=\left[\lambda a_i\right]$；设点 $P$ 的齐次坐标为 $\left(x_0, x_1, x_2, \cdots, x_n\right),\ x_0 \neq 0$，令 $\overline{x}_1=\dfrac{x_1}{x_0}, \overline{x}_2=\dfrac{x_2}{x_0}, \cdots, \overline{x}_n=\dfrac{x_n}{x_0}$，则称 $\left(\overline{x}_1, \overline{x}_2, \cdots, \overline{x}_n\right)$ 为 $P$ 点的非齐次射影坐标，简称为射影坐标
 
 2. 设 $V$ 和 $V^{\prime}$ 都是体 $F$ 上的 $n+1$ 维线性空间．$\left\{A_0, A_1, A_2, \cdots, A_n, E\right\}$ 和 $\left\{A_0^{\prime}, A_1^{\prime}, A_2^{\prime}, \cdots, A_n^{\prime}, E^{\prime}\right\}$ 分别是 $n$ 维射影几何 $\boldsymbol{P}(V)$ 和 $\boldsymbol{P}\left(V^{\prime}\right)$ 的标准参考标架．则存在唯一的射影变换 $\boldsymbol{P}(f)$，使得 $\boldsymbol{P}(f)\left(A_i\right)=A_i^{\prime}(i=0,1,2, \cdots, n), \boldsymbol{P}(f)(E)=E^{\prime}$
@@ -201,8 +201,8 @@
 
     3. 仿射几何公理的完备性：任何维数相同的仿射空间都是同构的
         1. 设 $\mathbf R^n$ 是与 $\text{Euclid}$ 线性空间 $\mathbf R^n$ 相联系的仿射空间．设 $A = (a_1, a_2, \cdots, a_n), B = (b_1, b_2, \cdots, b_n)$，并定义 $\overrightarrow{AB} = (b_1 - a_1, b_2 - a_2, \cdots, b_n - a_n)$，其中点 $A$ 称为向量 $\overrightarrow{AB}$ 的始点，点 $B$ 称为向量 $\overrightarrow{AB}$ 的终点
-        2. 仿射空间的同构：设 $\mathscr A, \mathscr B$ 是两个仿射空间，且相联系的线性空间 $V, W$ 存在同构映射 $\varphi: V \to W$．若存在一个双射 $\psi: \mathscr A \to \mathscr B$ 使得对于任意 $A, B \in \mathscr A$，均有 $\overrightarrow{\psi(A) \psi(B)} = \varphi(\overrightarrow{AB})$，则称 $\mathscr A$ 与 $\mathscr B$ 同构
-            1. 设 $\mathscr A$ 为任意仿射空间，任选 $O \in \mathscr A$．对于任意 $A \in \mathscr A$，构造径向量（或称向径） $\psi_O(A) = \overrightarrow{OA}$，则 $\mathscr A$ 同构于相联系的被看作为仿射空间的线性空间 $V$
+        2. 仿射空间的同构：设 $\mathscr A, \mathscr B$ 是两个仿射空间，且相联系的线性空间 $V, W$ 存在同构映射 $\varphi: V \to W$．若存在双射 $\psi: \mathscr A \to \mathscr B$ 使得对于任意 $A, B \in \mathscr A$，均有 $\overrightarrow{\psi(A) \psi(B)} = \varphi(\overrightarrow{AB})$，则称 $\mathscr A$ 与 $\mathscr B$ 同构
+            1. 设 $\mathscr A$ 为任意仿射空间，任选 $O \in \mathscr A$．对任意 $A \in \mathscr A$，构造径向量（或称向径） $\psi_O(A) = \overrightarrow{OA}$，则 $\mathscr A$ 同构于相联系被看作为仿射空间的线性空间 $V$
             2. 任何一个被看作仿射空间的 $n$ 维线性空间同构于仿射空间 $\mathbf R^n$
         3. 仿射标架：设 $\mathscr A$ 为仿射空间，$V$ 为与之联系的线性空间，称 $\mathscr A$ 中点 $O$ 与基 $\boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n$ 组成的集合称为 $\mathscr A$ 中的仿射标架，记作 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$，称点 $O$ 为原点，称基所在的直线为坐标轴
             1. 每个仿射标架 $[O; \boldsymbol \varepsilon_1, \boldsymbol \varepsilon_2, \cdots, \boldsymbol \varepsilon_n]$ 确定一个同构 $\psi: \mathscr A \to \mathbf R^n$，称之为坐标同构．当 $\psi(A) = (x_1, x_2, \cdots, x_n)$ 时，记作 $A(x_1, x_2, \cdots, x_n)$
@@ -210,7 +210,8 @@
     4. 直线：设 $\mathscr A$ 是一个仿射空间，由点 $M \in \mathscr A$ 与一个非零向量 $\boldsymbol \alpha$ 给出的直线定义为使得 $\overrightarrow{PM}$ 与 $\boldsymbol \alpha$ 共线的点 $P \in \mathscr A$ 的集合．称 $\boldsymbol \alpha$ 为直线的方向向量，任意与直线的方向向量垂直的向量称为直线 $l$ 的法向量
         1. 任何与 $\boldsymbol \alpha$ 共线的向量称其与直线平行，则所有平行于一条直线的向量形成一个 $1$ 维线性空间
         2. 通过仿射空间中的任意两个不同的点 $M_1, M_2$ 有且仅有一条直线，记作 $M_1M_2$
-        3. 称集合 $\{M \mid \overrightarrow{M_1M} = t\overrightarrow{M_1M_2}, t \in [0, 1]\}$ 为以 $M_1, M_2$ 为端点的线段，记作 $\overline{M_1M_2}$．设 $M \subseteq \mathscr A$，对 $M$ 中的任意两点 $M_1, M_2$，必有 $\overline{M_1M_2} \subseteq \mathscr A$，则称 $M$ 为 $\mathscr A$ 中的凸集
+        3. 称集合 $\{M \mid \overrightarrow{M_1M} = t\overrightarrow{M_1M_2}, t \in [0, 1]\}$ 为以 $M_1, M_2$ 为端点的线段，记作 $\overline{M_1M_2}$
+        4. 设 $M \subseteq \mathscr A$，对 $M$ 中的任意两点 $M_1, M_2$，必有 $\overline{M_1M_2} \subseteq \mathscr A$，则称 $M$ 为 $\mathscr A$ 中的凸集
 
 ## 2.4 Euclid 几何
 ### 2.4.1 Euclid 几何

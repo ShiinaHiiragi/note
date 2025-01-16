@@ -29,7 +29,7 @@
     \end{aligned}\right.
     $$
 
-    是两个曲面方程且相交于曲线 $L$．若点 $P(x, y, z)$ 在曲线 $L$ 上当且仅当 $(x, y, z)$ 满足该方程组，则称方程组为空间曲线 $L$ 的一般方程
+    是两曲面方程且相交于曲线 $L$．若点 $P(x, y, z)$ 在曲线 $L$ 上当且仅当 $(x, y, z)$ 满足该方程组，则称其为空间曲线 $L$ 的一般方程
 
     1. 向量式参数方程：设向量函数 $r(t)=x(t) \boldsymbol{e}_1+y(t) \boldsymbol{e}_2+z(t) \boldsymbol{e}_3$，当 $t \in [a, b]$ 时, $\boldsymbol{r}(t)$ 的终点全部都在空间曲线 $L$ 上，反之空间曲线 $L$ 上的任意点的径向量都可由 $t$ 的某个值表示（$a \leqslant t \leqslant b$），则称该方程为空间曲线 $L$ 的向量式参数方程
     2. 坐标式参数方程：设 $r(t)=x(t) \boldsymbol{e}_1+y(t) \boldsymbol{e}_2+z(t) \boldsymbol{e}_3$ 为曲线的向量式参数方程，则称
@@ -237,7 +237,7 @@
             $$
 
 ### 3.1.3 椭圆与圆
-1. 椭圆的定义：设 $F_1, F_2$ 为两点，则到两点的距离之和为定长的点集称为椭圆．称点 $F_1, F_2$ 为焦点，$|\overrightarrow{F_1 F_2}|$ 为焦距，焦距的一半称为半焦距
+1. 椭圆的定义：设 $F_1, F_2$ 为两点，则称到两点的距离之和为定长的点集为椭圆．称点 $F_1, F_2$ 为焦点，$|\overrightarrow{F_1 F_2}|$ 为焦距
     1. 标准方程：设定长为 $a$，令 $b = \sqrt{a^2 - c^2} > 0$
 
         <div class="text-table">
@@ -262,7 +262,11 @@
 
             其中 $(X_c, Y_c)$ 为椭圆中心坐标
 
-    3. 参数方程：椭圆 $E: \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$ 的参数方程为 $\left\{\begin{aligned} & x = a\cos \varphi \\ & y = b\sin \varphi \end{aligned}\right.$，椭圆 $E: \dfrac{y^2}{a^2} + \dfrac{x^2}{b^2} = 1$ 的参数方程为 $\left\{\begin{aligned} & x = b\cos \varphi \\ & y = a\sin \varphi \end{aligned}\right.$，其中 $\varphi$ 是参数，称作离心角
+    3. 参数方程
+        1. 椭圆 $E: \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1$ 的参数方程为 $\left\{\begin{aligned} & x = a\cos \varphi \\ & y = b\sin \varphi \end{aligned}\right.$
+        2. 椭圆 $E: \dfrac{y^2}{a^2} + \dfrac{x^2}{b^2} = 1$ 的参数方程为 $\left\{\begin{aligned} & x = b\cos \varphi \\ & y = a\sin \varphi \end{aligned}\right.$
+
+        其中 $\varphi$ 是参数，称作离心角
 
 2. 椭圆的性质：设 $E: \dfrac{x^2}{a^2} + \dfrac{y^2}{b^2} = 1 \ (a > b > 0)$ 为一个椭圆
     1. 对称性：设 $P(x_0, y_0)$ 是一个点
@@ -316,13 +320,17 @@
 
             其中 $(X_c, Y_c)$ 为双曲线中心坐标
 
-    3. 参数方程：双曲线 $H: \dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1$ 的参数方程为 $\left\{\begin{aligned} & x = a\sec \varphi \\ & y = b\tan \varphi \end{aligned}\right.$，双曲线 $H: \dfrac{y^2}{a^2} - \dfrac{x^2}{b^2} = 1$ 的参数方程为 $\left\{\begin{aligned} & x = b\sec \varphi \\ & y = a\tan \varphi \end{aligned}\right.$，其中 $\varphi$ 是参数
+    3. 参数方程
+        1. 双曲线 $H: \dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1$ 的参数方程为 $\left\{\begin{aligned} & x = a\sec \varphi \\ & y = b\tan \varphi \end{aligned}\right.$
+        2. 双曲线 $H: \dfrac{y^2}{a^2} - \dfrac{x^2}{b^2} = 1$ 的参数方程为 $\left\{\begin{aligned} & x = b\sec \varphi \\ & y = a\tan \varphi \end{aligned}\right.$
+
+        其中 $\varphi$ 是参数
 
 2. 双曲线的性质：设 $H: \dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 1 \ (a, b > 0)$ 为一个双曲线
     1. 对称性：设 $P(x_0, y_0)$ 是一个点
         1. 双曲线 $H$ 关于 $x$ 轴与 $y$ 轴对称：$\dfrac{x_0^2}{a^2} - \dfrac{y_0^2}{b^2} = 1 \leftrightarrow \dfrac{(-x_0)^2}{a^2} - \dfrac{y_0^2}{b^2} = 1 \leftrightarrow \dfrac{x_0^2}{a^2} - \dfrac{(-y_0)^2}{b^2} = 1$
         2. 双曲线 $H$ 关于中心 $O(0, 0)$ 中心对称：$\dfrac{x_0^2}{a^2} - \dfrac{y_0^2}{b^2} = 1 \leftrightarrow \dfrac{(-x_0)^2}{a^2} - \dfrac{(-y_0)^2}{b^2} = 1$
-    2. 截距：双曲线与坐标轴的交点对应的实数，称两个交点 $A_1(-a, 0), A_2(a, 0)$ 为双曲线 $H$ 的顶点，设 $B_1(0, b), B_2(0, -b)$ 为两个点
+    2. 截距：双曲线与坐标轴的交点对应的实数，称两个交点 $A_1(-a, 0), A_2(a, 0)$ 为双曲线 $H$ 的顶点．设 $B_1(0, b), B_2(0, -b)$ 为两点
         1. 称线段 $\overline{A_1A_2}$ 为双曲线的实轴，其长度为 $2a$，并称 $a$ 为双曲线 $H$ 的实半轴长
         2. 称线段 $\overline{B_1B_2}$ 为双曲线的虚轴，其长度为 $2b$，并称 $b$ 为双曲线 $H$ 的虚半轴长
     3. 渐近线：$\dfrac{x^2}{a^2} - \dfrac{y^2}{b^2} = 0$，即 $y = \pm \dfrac ba x$．设 $P(x_0, y_0)$ 在双曲线上，则 $P$ 到渐近线的距离 $d$ 趋近于 $0$
@@ -588,9 +596,10 @@
 
         称作空间曲线 $L$ 在 $xOy, xOz, yOz$ 坐标面上的射影曲线
 
-2. 锥面：空间中通过一定点且与定曲线相交的一族直线所生成的曲面，称这些直线为锥面的母线，定点为锥面的顶点，定曲线为锥面的准线
-    1. 锥面的方程：设锥面的准线为 $\left\{\begin{array}{l}F_1(x, y, z)=0 \\F_2(x, y, z)=0\end{array}\right.$，顶点为 $A\left(x_0, y_0, z_0\right)$．若 $M_1\left(x_1, y_1, z_1\right)$ 为准线上的任意点，则锥面过点 $M_1$ 的母线为 $\dfrac{x-x_0}{x_1-x_0}=\dfrac{y-y_0}{y_1-y_0}=\dfrac{z-z_0}{z_1-z_0}$，且有 $F_1\left(x_1, y_1, z_1\right)=0, F_2\left(x_1, y_1, z_1\right)=0$
-    2. 锥面的判定：关于 $x, y, z$ 的齐次方程总表示顶点在坐标原点的锥面
+2. 锥面：空间中通过一定点且与定曲线相交的一族直线生成的曲面
+    1. 称这些直线为锥面的母线，定点为锥面的顶点，定曲线为锥面的准线
+    2. 锥面的方程：设锥面的准线为 $\left\{\begin{array}{l}F_1(x, y, z)=0 \\F_2(x, y, z)=0\end{array}\right.$，顶点为 $A\left(x_0, y_0, z_0\right)$．若 $M_1\left(x_1, y_1, z_1\right)$ 为准线上的任意点，则锥面过点 $M_1$ 的母线为 $\dfrac{x-x_0}{x_1-x_0}=\dfrac{y-y_0}{y_1-y_0}=\dfrac{z-z_0}{z_1-z_0}$，且有 $F_1\left(x_1, y_1, z_1\right)=0, F_2\left(x_1, y_1, z_1\right)=0$
+    3. 锥面的判定：关于 $x, y, z$ 的齐次方程总表示顶点在坐标原点的锥面
         1. 在特殊的情况下，关于 $x, y, z$ 的齐次方程可能只表示一个原点，称其为具有实顶点的虚锥面
         2. 关于 $x-x_0, y-y_0, z-z_0$ 的齐次方程表示顶点在 $\left(x_0, y_0, z_0\right)$ 的锥面
 
@@ -615,7 +624,7 @@
         2. 轴与半轴：称同一条对称轴上的两顶点间的线段以及其长度 $2 a, 2 b$ 与 $2 c$ 为椭球面的轴；称轴的一半为椭球面的半轴．当 $a>b>c$ 时，$2 a, 2 b$ 与 $2 c$ 分别称作椭球面的长轴、中轴与短轴；$a, b$ 与 $c$ 分别称作椭球面的长半轴、中半轴与短半轴
         3. 主截线：用坐标面 $z=0, y=0, x=0$ 分别来截割椭球面，则所得截口都是椭圆，称作椭球面的主截线或主椭圆
     2. 椭球面的性质
-        1. 对称性：椭球面关于三坐标平面、三坐标轴与坐标原点都对称，称椭球面的对称平面、对称轴与对称中心为其主平面、主轴与中心
+        1. 对称性：椭球面关于三坐标平面、轴与坐标原点对称，称椭球面对称平面、对称轴与对称中心为其主平面、主轴与中心
         2. 有界性：椭球面上的任何一点的坐标 $(x, y, z)$ 总有 $|x| \leqslant a,|y| \leqslant b,|z| \leqslant c$
 5. 双曲面：单叶双曲面与双叶双曲面的统称
     1. 单叶双曲面：在直角坐标系下，由方程 $\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}-\dfrac{z^{2}}{c^{2}}=1$ 所表示的曲面称作单叶双曲面．方程称作单叶双曲面的标准方程，其中 $a, b, c$ 是任意的正常数．方程 $\dfrac{x^{2}}{a^{2}}-\dfrac{y^{2}}{b^{2}}+\dfrac{z^{2}}{c^{2}}=1$ 与 $-\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}+\dfrac{z^{2}}{c^{2}}=1$ 所表示的图形也都是单叶双曲面
@@ -623,10 +632,15 @@
         2. 用三个坐标平面 $z=0, y=0, x=0$ 分别截割曲面，所得的截线 $\left\{\begin{array}{l}\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}=1 \\z=0 \end{array}\right.$ 为 $x O y$ 面上的椭圆；$\left\{\begin{array}{l}\dfrac{x^{2}}{a^{2}}-\dfrac{z^{2}}{c^{2}}=1 \\y=0 \end{array}\right.$ 与 $\left\{\begin{array}{l}\dfrac{y^{2}}{b^{2}}-\dfrac{z^{2}}{c^{2}}=1 \\x=0\end{array}\right.$ 分别为 $x O z$ 面与 $y O z$ 面上的双曲线，这两条双曲线有着共同的虚轴与虚轴长
     2. 双叶双曲面：在直角坐标系下，由方程 $\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}-\dfrac{z^{2}}{c^{2}}=-1$ 所表示的图形称作双叶双曲面．方程称作双叶双曲面的标准方程，其中 $a, b, c$ 是任意的正常数
         1. 曲面上的点恒有 $z^{2} \geqslant c^{2}$，因此曲面分成两叶 $z \geqslant c$ 与 $z \leqslant-c$
-        2. 坐标平面 $z=0$ 与曲面不相交，而与其他两个坐标平面 $y=0$ 与 $x=0$ 分别交曲面于两条双曲线 $\left\{\begin{array}{l}\dfrac{z^{2}}{c^{2}}-\dfrac{x^{2}}{a^{2}}=1 \\y=0\end{array}\right.$ 与 $\left\{\begin{array}{l}\dfrac{z^{2}}{c^{2}}-\dfrac{y^{2}}{b^{2}}=1 \\x=0\end{array}\right.$
+        2. 坐标平面 $z=0$ 与曲面不相交，而与其他两个坐标平面 $y=0$ 与 $x=0$ 分别交曲面于两条双曲线
+        
+            $$
+            \left\{\begin{array}{l}\dfrac{z^{2}}{c^{2}}-\dfrac{x^{2}}{a^{2}}=1 \\y=0\end{array}\right. \textsf{ 与 } \left\{\begin{array}{l}\dfrac{z^{2}}{c^{2}}-\dfrac{y^{2}}{b^{2}}=1 \\x=0\end{array}\right.
+            $$
+
 6. 抛物面：椭圆抛物面与双曲抛物面的统称，它们都没有对称中心，因此也称作无心二次曲面
     1. 椭圆抛物面：在直角坐标系下，由方程 $\dfrac{x^{2}}{a^{2}}+\dfrac{y^{2}}{b^{2}}=2 z$ 所表示的曲面称作椭圆拋物面．方程称作椭圆拋物面的标准方程，其中 $a, b$ 是任意的正常数
-        1. 椭圆抛物面对称于 $x O z$ 与 $y O z$ 坐标面，也对称于 $z$ 轴．但其没有对称中心，与对称轴交于点 $O(0,0,0)$，称作椭圆抛物面的顶点
+        1. 椭圆抛物面对称于 $x O z$ 与 $y O z$ 坐标面与 $z$ 轴，但没有对称中心；曲面与对称轴交于点 $O(0,0,0)$，称作其顶点
         2. 用坐标面 $y=0$ 及 $x=0$ 截割曲面，分别得抛物线 $\left\{\begin{array}{l}x^{2}=2 a^{2} z \\y=0\end{array}\right.$ 与 $\left\{\begin{array}{l}y^{2}=2 b^{2} z \\x=0\end{array}\right.$，这两条拋物线称作椭圆拋物面的主拋物线，开口方向都与 $z$ 轴的正向一致
         3. 若 $a=b$，则方程变为 $x^{2}+y^{2}=2 a^{2} z$，此时曲面成为旋转抛物面
     2. 双曲抛物面：在直角坐标系下，由方程 $\dfrac{x^{2}}{a^{2}}-\dfrac{y^{2}}{b^{2}}=2 z$ 所表示的曲面称作双曲拋物面，也称作马鞍面．方程称作双曲拋物面的标准方程，其中 $a, b$ 为任意的正常数
@@ -663,4 +677,3 @@
         1. 对于单叶双曲面上的点，两族直母线中各有一条直母线通过该点；对于双曲抛物面上的点，两族直母线中各有一条直母线通过这一点
         2. 单叶双曲面上异族的任意两直母线必共面，双曲抛物面上异族的任意两直母线必相交
         3. 单叶双曲面或双曲抛物面上同族的任意两直母线总是异面直线，双曲抛物面同族的全体直母线平行于同一平面
-
