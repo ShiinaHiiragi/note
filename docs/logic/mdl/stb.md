@@ -6,7 +6,7 @@
     1. 对任意的 $n \in \mathbf{N}^{+}$，$S_{n}(T)$ 可数
     2. 对任意的 $A \vDash T$，若 $M \subseteq A$ 是有限集合，则 $S_{1}(M, A)$ 可数
     3. 对任意的 $n \in \mathbf{N}^{+}$ 与 $A \vDash T$，若 $M \subseteq A$ 是有限集合，则 $S_{n}(M, A)$ 可数
-2. 设 $T$ 是一个 $S-$理论，$\Sigma\left(x_{0}, \cdots, x_{n-1}\right)$ 是 $T$ 的一个 $n-$型．如果存在一个 $S-$公式 $\alpha\left(x_{0}, \cdots, x_{n-1}\right)$，使得
+2. 主型：设 $T$ 是一个 $S-$理论，$\Sigma\left(x_{0}, \cdots, x_{n-1}\right)$ 是 $T$ 的一个 $n-$型．如果存在一个 $S-$公式 $\alpha\left(x_{0}, \cdots, x_{n-1}\right)$，使得
     1. $T \cup \alpha\left(x_{0}, \cdots, x_{n-1}\right)$ 是一致的
     2. 对任意 $\beta\left(x_{0}, \cdots, x_{n-1}\right) \in \Sigma\left(x_{0}, \cdots, x_{n-1}\right)$，均有 $T \vDash \forall x_{0}, \cdots, x_{n-1}\left(\alpha\left(x_{0}, \cdots, x_{n-1}\right) \rightarrow \beta\left(x_{0}, \cdots, x_{n-1}\right)\right)$
 
@@ -16,7 +16,7 @@
     2. 若 $S-$理论 $T$ 是可数理论，$X$ 是 $T$ 的可数多个非主型，则存在可数的 $A \vDash T$ 使得 $A$ 可以省略任意的 $p \in X$
 
 ### 3.1.2 素模型
-1. 设 $A$ 是一个 $S-$结构
+1. 原子结构与原子公式：设 $A$ 是一个 $S-$结构
     1. 若对任意的 $n \in \mathbf{N}^{+}$ 与 $\overline{a} \in A^{n}$，都有 $\operatorname{tp}_{A}(\overline{a})$ 是主型，则称 $A$ 是原子结构
     2. 设 $M \subseteq A$，若对任意的 $n \in \mathbf{N}^{+}$ 与 $\overline{a} \in A^{n}$，$\operatorname{tp}_{A}(\overline{a} / M)$ 都是主型，则称 $A$ 是 $M$ 上的原子结构
     3. 设 $T$ 是一个完全 $S-$理论，若存在 $p \in S_{n}(T)$ 使得 $p=[\alpha]$，即 $\alpha$ 孤立了 $S_{n}(T)$ 中的一个型，则称公式 $\alpha\left(x_{0}, \cdots, x_{n-1}\right)$ 是 $T$ 的原子公式（或完全公式）
@@ -27,7 +27,7 @@
     2. $T$ 有一个可数的原子模型
     3. 对任意的 $n \in \mathbf{N}, S_{n}(T)$ 中的孤立/主型是稠密的
 
-2. 设 $T$ 是一个完备的 $S-$理论，$A$ 是 $T$ 的一个模型，若对任意的 $B \vDash T$，均存在 $A$ 到 $B$ 的初等嵌入，则称 $A$ 是素模型
+2. 素模型：设 $T$ 是一个完备的 $S-$理论，$A$ 是 $T$ 的一个模型，若对任意的 $B \vDash T$，均存在 $A$ 到 $B$ 的初等嵌入，则称 $A$ 是素模型
     1. 设 $T$ 是有无穷模型的可数完备 $S-$理论，$A$ 是一个 $T$ 的模型
         1. $A$ 是 $T$ 的素模型当且仅当 $A$ 是 $T$ 的可数原子模型
         2. $T$ 的原子模型都是 $\omega-$齐次的
@@ -61,12 +61,12 @@
 1. 设 $T$ 是一个 $S-$理论，$\lambda$ 是一个基数．若存在一个无穷基数 $\lambda$ 使得 $T$ 是 $\lambda-$稳定的，则称 $T$ 是稳定的
     1. 称一个理论 $T$ 是 $\omega-$稳定的当且仅当对任意的 $A \vDash T$，若 $M \subseteq A$ 是可数的，则 $S_{1}(M, A)$ 是可数的
     2. 称一个理论 $T$ 是 $\lambda-$稳定的当且仅当对任意的 $A \vDash T$，若 $M \subseteq A$ 的基数小于等于 $\lambda$，则 $S_{1}(M, A)$ 的基数小于等于 $\lambda$
-2. 设 $T$ 是一个 $S-$理论，$\alpha(\overline{x}, \overline{y})$ 是一个 $S-$公式．若存在 $A \vDash T$ 及 $A$ 中的两个序列 $\left(\overline{a}_{i}\right)_{i \in \omega}$ 和 $(\overline{b}_{i})_{i \in \omega}$，使得 $A \vDash \alpha(\overline{a}_{i}, \overline{b}_{j})$ 当且仅当 $i<j$，则称公式 $\alpha(\overline{x}, \overline{y})$ 关于 $T$ 具有序性质．若存在一个 $S-$公式具有序性质，则称 $T$ 有序性质，否则称 $T$ 没有序性质
+2. 序性质：设 $T$ 是一个 $S-$理论，$\alpha(\overline{x}, \overline{y})$ 是一个 $S-$公式．若存在 $A \vDash T$ 及 $A$ 中的两个序列 $\left(\overline{a}_{i}\right)_{i \in \omega}$ 和 $(\overline{b}_{i})_{i \in \omega}$ 使得 $A \vDash \alpha(\overline{a}_{i}, \overline{b}_{j})$ 当且仅当 $i<j$，则称公式 $\alpha(\overline{x}, \overline{y})$ 关于 $T$ 具有序性质．若存在 $S-$公式具有序性质，则称 $T$ 有序性质，否则称 $T$ 没有序性质
     1. 如果理论 $T$ 有序性质，则对任意的线序 $\left(I,<_{I}\right)$，存在一个 $S-$公式 $\alpha(\overline{x}, \overline{y}), B \vDash T$ 及 $B$ 中的不可辨元序列 $(\overline{c}_{i}, \overline{d}_{i})_{i \in I}$，使得 $B \vDash \alpha(\overline{c}_{i}, \overline{d}_{j})$ 当且仅当 $i<_{I} j$
     2. 如果理论 $T$ 是 $\omega-$稳定的，则 $T$ 没有序性质
     3. 对任意的无穷基数 $\lambda$，都存在一个稠密线序 $(I,<)$ 及 $I$ 的稠密子集 $M$，使得 $|M| \leqslant \lambda<|I|$
     4. 如果 $\lambda$ 是一个无穷基数，则 $\lambda-$稳定的理论都没有序性质
-3. 设 $A$ 是一个 $S-$结构，$M \subseteq A,(I,<)$ 是一个线序，$\left(a_{i}\right)_{i \in I}$ 是 $A$ 中的一个 $M-$不可辩元序列．如果对任意的 $n \in \mathbf{N}^{+}$，$\left\{\beta_{1}, \cdots, \beta_{n}\right\} \subseteq I$ 及任意的一个双射 $\sigma:\{1, \cdots, n\} \longrightarrow\{1, \cdots, n\}$（即 $\{1, \cdots, n\}$ 上的置换），都有
+3. 完全不可辨元序列：设 $A$ 是一个 $S-$结构，$M \subseteq A,(I,<)$ 是一个线序，$\left(a_{i}\right)_{i \in I}$ 是 $A$ 中的一个 $M-$不可辩元序列．如果对任意的 $n \in \mathbf{N}^{+}$，$\left\{\beta_{1}, \cdots, \beta_{n}\right\} \subseteq I$ 及任意的一个双射 $\sigma:\{1, \cdots, n\} \longrightarrow\{1, \cdots, n\}$（即 $\{1, \cdots, n\}$ 上的置换），都有
 
     $$
     \operatorname{tp}_{A}\left(a_{\beta_{1}}, \cdots, a_{\beta_{n}} / M\right)=\operatorname{tp}_{A}\left(a_{\beta_{\sigma(1)}}, \cdots, a_{\beta_{\sigma(n)}} M\right)
@@ -155,11 +155,11 @@
     3. 如果 $T$ 是强极小理论，则对任意的不可数基数 $\lambda$，$T$ 都是 $\lambda-$范畴的
 
 ### 3.2.4 Morley 定理
-1. 设 $\overline{S}$ 是任意语言，$\overline{T}$ 是一个 $\overline{S}-$理论（可以是不完备的）．称 $\overline{T}$ 具有 $\text{Skolem}$ 函数当且仅当对任意的 $\overline{S}-$公式 $\alpha(x, \overline{y})$，存在一个 $\overline{S}$ 中的函数符号 $f$，使得 $\overline{T} \vDash \forall y(\exists x \alpha(x, \overline{y}) \leftrightarrow \alpha(f(\overline{y}), \overline{y}))$
-    1. 设 $S$ 是任意语言，设 $T$ 是一个 $S-$理论（$T$ 可以没有无穷模型），则存在基数 $\leqslant|S|+\omega$ 的语言 $S^{\prime} \supseteq S$ 及 $S^{\prime}-$理论 $T^{\prime} \supseteq T$，使得 $T^{\prime}$ 具有 $\text{Skolem}$ 函数
+1. $\text{Skolem}$ 函数：设 $\overline{S}$ 是任意语言，$\overline{T}$ 是一个 $\overline{S}-$理论（可以是不完备的）．称 $\overline{T}$ 具有 $\text{Skolem}$ 函数当且仅当对任意的 $\overline{S}-$公式 $\alpha(x, \overline{y})$，存在一个 $\overline{S}$ 中的函数符号 $f$，使得 $\overline{T} \vDash \forall y(\exists x \alpha(x, \overline{y}) \leftrightarrow \alpha(f(\overline{y}), \overline{y}))$
+    1. 设 $S$ 是任意语言，$T$ 是一个 $S-$理论（$T$ 可以没有无穷模型），则存在基数 $\leqslant|S|+\omega$ 的语言 $S^{\prime} \supseteq S$ 及 $S^{\prime}-$理论 $T^{\prime} \supseteq T$，使得 $T^{\prime}$ 具有 $\text{Skolem}$ 函数
     2. 设 $T$ 是一个可数的理论，$\kappa$ 是一个不可数的基数，则存在 $T$ 的一个基数为 $\kappa$ 的模型 $A$，使得对任意可数的 $M \subseteq A$，$A$ 至多可以实现 $S_{1}(M, A)$ 中的可数多个型
     3. 设 $\lambda$ 是一个不可数基数，理论 $T$ 是 $\lambda-$范畴的，则 $T$ 是 $\omega-$稳定的
-2. 设 $A$ 是一个 $S-$结构，$M \subseteq A$．如果存在一个序数 $\gamma$ 及 $A$ 中的一个序列 $\left(b_{\alpha} \mid \alpha<\gamma\right)$ 使得
+2. 构造序列：设 $A$ 是一个 $S-$结构，$M \subseteq A$．如果存在一个序数 $\gamma$ 及 $A$ 中的一个序列 $\left(b_{\alpha} \mid \alpha<\gamma\right)$ 使得
     1. $A=M \cup\left\{b_{\alpha} \mid \alpha<\gamma\right\}$
     2. 对任意的 $\beta \in \gamma, \operatorname{tp}_{A}\left(b_{\beta} / M \cup\left\{b_{\alpha} \mid \alpha<\beta\right\}\right)$ 是孤立型
 
