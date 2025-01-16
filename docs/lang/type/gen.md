@@ -76,7 +76,7 @@
     2. 多步 $\beta-$归约：设 $M, N \in \Lambda$，定义多步 $M \twoheadrightarrow_{\beta} N$ 为存在 $n \geqslant 0$ 与 $M_0, M_1, \cdots, M_n$ 使得 $M \equiv M_0, M_n \equiv N$ 且对于任意 $0 \leqslant i < n$ 有 $M_i \to_{\beta} M_{i+1}$，即
 
         $$
-        M \equiv M_0 \rightarrow_\beta M_1 \rightarrow_\beta M_2 \rightarrow_\beta \ldots \rightarrow_\beta M_{n-2} \rightarrow_\beta M_{n-1} \rightarrow_\beta M_n \equiv N
+        M \equiv M_0 \rightarrow_\beta M_1 \rightarrow_\beta M_2 \rightarrow_\beta \cdots \rightarrow_\beta M_{n-2} \rightarrow_\beta M_{n-1} \rightarrow_\beta M_n \equiv N
         $$
 
         1. $\twoheadrightarrow_{\beta}$ 扩展了 $\to_{\beta}$ 的定义，即若 $M \to_{\beta} N$，则 $M \twoheadrightarrow_{\beta} N$
