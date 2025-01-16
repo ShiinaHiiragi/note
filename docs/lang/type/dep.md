@@ -6,7 +6,7 @@
     1. 类型变元：若 $\alpha \in \mathrm V$，则 $\alpha \in \mathrm T_2$
     2. 箭头类型：若 $\sigma, \tau \in \mathrm T_2$，则 $(\sigma \to \tau) \in \mathrm T_2$
     3. $\Pi-$类型：若 $\alpha \in \mathrm V, \sigma \in T_2$，则 $(\Pi \alpha. *: \sigma) \in \mathrm T_2$，也称作乘积类型，称 $\Pi$ 为 $\Pi-$绑定器或类型绑定器
-2. $\lambda_2-$项：定义变元的无穷集 $V = \left\{u, v, w, \cdots\right\}$，$\mathbf V$ 为类型变元的无穷集，$\mathrm T_2$ 为类型集合，则所有二阶预类型化 $\lambda-$项的集合 $\Lambda_{2}$ 定义如下
+2. $\lambda_2-$项：定义变元集 $V = \left\{u, v, w, \cdots\right\}$，$\mathbf V$ 为类型变元的无穷集，$\mathrm T_2$ 为类型集合，则所有二阶预类型化 $\lambda-$项的集合 $\Lambda_{2}$ 定义如下
     1. 基础：若 $u \in V$，则 $u \in \Lambda_{2}$
     2. 应用：若 $M, N \in \Lambda_{2}$，则 $(MN) \in \Lambda_{2}$
     3. 抽象：若 $u \in V, \sigma \in \mathrm T_2$ 且 $M \in \Lambda_{2}$，则 $(\lambda u: \sigma.M) \in \Lambda_{2}$
@@ -112,7 +112,10 @@
     2. 若 $u \in \mathrm V$，则 $u \in \mathrm E$
     3. 若 $u \in \mathrm V, e_1, e_2 \in \mathrm E$，则 $(\lambda u: e_1.e_2), (\Pi u: e_1. e_2)$ 或 $(e_1 e_2) \in \mathrm E$
 
-    若表达式 $M$ 存在 $\Gamma$ 与 $N$ 使得 $\Gamma \vdash M: N$ 或 $\Gamma \vdash N: M$，则称 $M$ 是合法的．若语境 $\Gamma$ 存在 $A, B$ 使得 $\Gamma \vdash A: B$，则称 $\Gamma$ 是良形式的
+    设 $M$ 为表达式，$\Gamma$ 为语境
+
+    1. 对于 $M$，若存在 $\Gamma$ 与 $N$ 使得 $\Gamma \vdash M: N$ 或 $\Gamma \vdash N: M$，则称 $M$ 是合法的
+    2. 对于 $\Gamma$，若存在 $A, B$ 使得 $\Gamma \vdash A: B$，则称 $\Gamma$ 是良形式的
 
 3. $\lambda_{\mathrm C}$ 的引理
     1. 自由变元引理：若 $\Gamma \vdash A: B$，则 $\mathrm{FV}(A), \mathrm{FV}(B) \subseteq \mathrm{dom}(\Gamma)$

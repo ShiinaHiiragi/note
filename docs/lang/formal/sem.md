@@ -186,7 +186,7 @@
         1. 有穷序列：$\gamma_0, \gamma_1, \cdots, \gamma_k$，也可写作 $\gamma_0 \Rightarrow \gamma_1 \Rightarrow \cdots \Rightarrow \gamma_k$，使得 $\gamma_0 = \left<S, s\right>$ 且 $\gamma_i \Rightarrow \gamma_{i+1}$ 对任意 $0 \leqslant i < k$ 均成立．此时 $\gamma_k$ 是终止格局或阻塞格局，称以状态 $s$ 在语句 $S$ 上的执行终止，并在 $\gamma_k$ 为终止格局时称该执行成功终止
         2. 无穷序列 $\gamma_0, \gamma_1, \gamma_2, \cdots$，也可写作 $\gamma_0 \Rightarrow \gamma_1 \Rightarrow \gamma_2 \Rightarrow \cdots$，使得 $\gamma_0 = \left<S, s\right>$ 且 $\gamma_i \Rightarrow \gamma_{i+1}$ 对任意 $i \geqslant 0$ 均成立，称以状态 $s$ 在语句 $S$ 上的执行陷入循环
 
-        若语句 $S$ 在所有状态上的执行都终止，则称语句 $S$ 总是终止，若在所有状态上的执行都陷入循环，则称语句 $S$ 总是陷入循环
+        若语句 $S$ 在所有状态上的执行都终止，则称语句 $S$ 总是终止，若所有状态上的执行都陷入循环，则称语句 $S$ 总是陷入循环
 
     2. 用 $\gamma_0 \Rightarrow^{i} \gamma_i$ 表示从格局 $\gamma_0$ 到 $\gamma_i$ 需要执行 $i$ 步，用 $\gamma_0 \Rightarrow^{*} \gamma_i$ 表示从格局 $\gamma_0$ 到 $\gamma_i$ 需要执行有限步．上述两者是派生序列当且仅当 $\gamma_i$ 是终止格局或阻塞格局
         1. 若 $\left<S_1; S_2, s\right> \Rightarrow^{k} s''$，则存在状态 $s'$ 与 $k_0 \in \mathbf N$，使得 $\left<S_1, s\right> \Rightarrow^{k_0} s'$ 以及 $\left<S_2, s'\right> \Rightarrow^{k-k_0} s''$
@@ -232,11 +232,11 @@
     2. 链：称偏序集 $D$ 的全序子集为 $D$ 的一条链，若 $D$ 的所有链 $Y$ 都有最小上界（记作 ${\displaystyle \bigsqcup X_0}$），则称 $D$ 为链完全偏序集
         1. 若 $(D, \sqsubseteq)$ 是一个链完全偏序集，则 $D$ 有最小元 $\bot = {\displaystyle \bigsqcup \varnothing}$
         2. $(\mathbf{S}, \sqsubseteq)$ 是一个链完全偏序集，且对于链 $Y$ 的最小上界 ${\displaystyle \bigsqcup Y = \bigcup Y}$
-3. 保序函数：偏序集 $(D, \sqsubseteq)$ 与 $(D', \sqsubseteq')$ 满足链完全偏序条件，令 $f: D \to D', d_1, d_2 \in D$，若 $d_1 \sqsubseteq d_2$ 蕴含 $f(d_1) \sqsubseteq f(d_2)$，则称 $f$ 是保序函数
-    1. 设偏序集 $(D, \sqsubseteq), (D', \sqsubseteq')$ 与 $(D'', \sqsubseteq'')$ 满足链完全偏序条件，令 $f: D \to D', f': D' \to D''$ 是保序函数，则 $f' \circ f$ 也是保序函数
+3. 保序函数：设偏序集 $(D, \sqsubseteq)$ 与 $(D', \sqsubseteq')$ 满足链完全偏序条件，令 $f: D \to D'$ 且 $d_1, d_2 \in D$，若 $d_1 \sqsubseteq d_2$ 蕴含 $f(d_1) \sqsubseteq f(d_2)$，则称 $f$ 是保序函数
+    1. 设偏序集 $(D, \sqsubseteq), (D', \sqsubseteq')$ 与 $(D'', \sqsubseteq'')$ 满足链完全偏序条件，$f: D \to D', f': D' \to D''$ 是保序函数，则 $f' \circ f$ 也是保序函数
     2. 设偏序集 $(D, \sqsubseteq)$ 与 $(D', \sqsubseteq')$ 满足链完全偏序条件，$f: D \to D'$ 是一个保序函数．若 $Y$ 是 $D$ 中的链，则 $f[Y]$ 是 $D'$ 中的链且 ${\displaystyle \bigsqcup f[Y] \sqsubseteq' f\left(\bigsqcup Y\right)}$，即保序函数无法保持链上的最小上界性质
 4. 连续函数：设偏序集 $(D, \sqsubseteq)$ 与 $(D', \sqsubseteq')$ 满足链完全偏序条件，$f: D \to D'$ 是一个保序函数．若对于所有非空链 $Y$ 均有 ${\displaystyle \bigsqcup f[Y] = f\left(\bigsqcup Y\right)}$，则称 $f$ 是一个连续函数．若上述性质对空集也成立（即 $f(\bot) = \bot$），则称 $f$ 是严格连续函数
-    1. 设偏序集 $(D, \sqsubseteq), (D', \sqsubseteq')$ 与 $(D'', \sqsubseteq'')$ 满足链完全偏序条件，令 $f: D \to D', f': D' \to D''$ 是连续函数，则 $f' \circ f$ 也是连续函数
+    1. 设偏序集 $(D, \sqsubseteq), (D', \sqsubseteq')$ 与 $(D'', \sqsubseteq'')$ 满足链完全偏序条件，$f: D \to D', f': D' \to D''$ 是连续函数，则 $f' \circ f$ 也是连续函数
     2. 最小不动点定理：令 $f: D \to D$ 是链完全偏序集 $(D, \sqsubseteq)$ 上的连续函数，最小元为 $\bot$，则 $\operatorname{FIX} f = {\displaystyle \bigsqcup \left\{[f^{n}](\bot) \mid n \geqslant 0\right\}}$ 即 $D$ 中函数 $f$ 的最小不动点，其中 $[f^{n}]$ 是函数 $f$ 的 $n$ 次复合
         1. 令 $f: D \to D$ 是链完全偏序集 $(D, \sqsubseteq)$ 上的连续函数，$d \in D$ 满足 $f(d) \sqsubseteq d$，则 $\operatorname{FIX} f \sqsubseteq d$
         2. 令 $(D, \sqsubseteq)$ 是一个链完全偏序集，定义 $(D \times D, \sqsubseteq')$ 为 $f_1 \sqsubseteq' f_2$ 当且仅当对所有 $d \in D$ 都有 $f_1(d) \sqsubseteq f_2(d)$
@@ -270,7 +270,7 @@
         1. 派生树的根节点是部分正确断言，叶节点是上述公理的实例
         2. 若推理树只有一个节点，且是公理的实例，则称该推理树是简单的，否则称其是复合的
     2. 可靠性与完备性：设 $\{\ P \ \} \ S \ \{\ Q \ \}$ 是一个部分正确断言，若对于任意 $s$，若 $P(s) = \top$ 以及 $\left<S, s\right> \to s'$ 蕴含 $Q(s') = \top$，则称 $\{\ P \ \} \ S \ \{\ Q \ \}$ 是有效的，记作 $\vDash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \}$
-        1. 可靠性：$\vdash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \} \to \; \vDash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \}$，即若推理系统可以得出某个部分正确性质，则该性质也被操作语义或指称语义所拥有
-        2. 完备性：$\vDash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \} \to \; \vdash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \}$，即若操作语义或指称语义拥有某个部分正确性质，则该性质必然可以被推理系统推出
+        1. 可靠性：$\vdash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \} \to \; \vDash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \}$，即若推理系统可得出某部分正确性质，则它也被操作语义或指称语义拥有
+        2. 完备性：$\vDash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \} \to \; \vdash_{\text{P}} \{\ P \ \} \ S \ \{\ Q \ \}$，即若操作语义或指称语义拥有某部分正确性质，则它可被推理系统推出
 
-3. 语义等价：对于语句 $S_1, S_2$ 以及任意 $\text{Boolean}$ 表达式 $P, Q$，若 $\vdash_{\text{P}} \{\ P \ \} \ S_1 \ \{\ Q \ \}$ 当且仅当 $\vdash_{\text{P}} \{\ P \ \} \ S_2 \ \{\ Q \ \}$，则称语句 $S_1, S_2$ 语义等价
+3. 语义等价：对于语句 $S_1, S_2$ 以及任意 $\text{Boolean}$ 表达式 $P, Q$，$\vdash_{\text{P}} \{\ P \ \} \ S_1 \ \{\ Q \ \}$ 当且仅当 $\vdash_{\text{P}} \{\ P \ \} \ S_2 \ \{\ Q \ \}$

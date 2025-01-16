@@ -18,7 +18,7 @@
         1. 称 $x$ 为 $xy$ 的前缀，当 $y \neq \varepsilon$ 时，称 $x$ 是 $xy$ 的真前缀
         2. 称 $y$ 为 $xy$ 的后缀，当 $x \neq \varepsilon$ 时，称 $y$ 是 $xy$ 的真后缀
         3. 设 $L$ 是字母表 $\Sigma$ 上的语言，若 $L$ 中任何字符串都不是另一个字符串的前缀，则称 $L$ 具有前缀性质
-    4. 同态：设 $\Sigma, \Delta$ 是两个字母表，$h: \Sigma \to \Delta^*$，如果对于一切 $x, y \in \Sigma^*$ 都有 $h(xy) = h(x)h(y)$，则称 $h$ 为从 $\Sigma$ 到 $\Delta^*$ 的一个同态映射
+    4. 同态：设 $\Sigma, \Delta$ 是字母表，$h: \Sigma \to \Delta^*$，若对于一切 $x, y \in \Sigma^*$ 都有 $h(xy) = h(x)h(y)$，则称 $h$ 为从 $\Sigma$ 到 $\Delta^*$ 的一个同态映射
 
 2. 语言的运算
     1. 连接运算：设 $L_1, L_2$ 为字母表 $\Sigma_1, \Sigma_2$ 上的语言，则 $L_1$ 与 $L_2$ 的连接定义为 $L_1 L_2 = \left\{xy \mid x \in L_1, y \in L_2\right\}$
@@ -62,10 +62,13 @@
 
 ### 1.1.2 谱系定理
 1. $\text{Chomsky}$ 分类法：对于文法 $G = (V, T, P, S)$，按以下标准分为四类
-    1. $0$ 型文法/短语结构文法（$\text{PSG}$）：无其他限制的形式文法，其语言称作短语结构语言（$\text{PSL}$）
-    2. $1$ 型文法/上下文有关文法（$\text{CSG}$）：$P$ 中的各产生式 $\alpha \to \beta$ 都有 $|\alpha| \leqslant |\beta|$ 的语言，其语言称作上下文有关语言（$\text{CSL}$）
-    3. $2$ 型文法/上下文无关文法（$\text{CFG}$）：$P$ 中的各产生式都具有 $A \to (V \cup T)^*$ 的形式的语言，其语言称作上下文无关语言（$\text{CFL}$）
-    4. $3$ 型文法/正则文法（$\text{RG}$）：各产生式都形如 $A \to a$ 或 $A \to aB$ 的语言，其中 $a \in T \cup \{\varepsilon\}, A, B \in V$，其语言称作正则语言（$\text{RL}$）
+    1. 短语结构文法（$\text{PSG}$）：无其他限制的形式文法，其语言称作短语结构语言（$\text{PSL}$）
+    2. 上下文有关文法（$\text{CSG}$）：$P$ 中的各产生式 $\alpha \to \beta$ 都有 $|\alpha| \leqslant |\beta|$ 的语言，其语言称作上下文有关语言（$\text{CSL}$）
+    3. 上下文无关文法（$\text{CFG}$）：$P$ 中的各产生式都具有 $A \to (V \cup T)^*$ 的形式的语言，其语言称作上下文无关语言（$\text{CFL}$）
+    4. 正则文法（$\text{RG}$）：各产生式都形如 $A \to a$ 或 $A \to aB$ 的语言，其中 $a \in T \cup \{\varepsilon\}, A, B \in V$，其语言称作正则语言（$\text{RL}$）
+
+    以上文法也分别被称作 $1 \sim 4$ 型文法
+
 2. 谱系定理：在同一字母表（例如取字母表 $\Sigma = \{0, 1\}$）上，各语言类之间存在以下关系
     1. 正则语言类真包含于上下文无关语言类中：$\text{RL} \subset \text{CFL}$
     2. 确定的上下文无关语言包含正则语言，但包含于上下文语言之间：$\text{RL} \subset \text{DCFL} \subset \text{CFL}$
@@ -103,7 +106,7 @@
 
     2. 给定有穷自动机 $M = (Q, \Sigma, \delta, q_0, F)$，若 $\delta(q_0, x) \in F \ (x \in \Sigma^*)$，则称字符串 $x$ 被 $M$ 接受．被 $M$ 而接受的全部字符串构成的集合称为被有穷自动机 $M$ 接受的语言，记作 $L(M)$
 
-2. 一个非确定的有穷自动机（$\text{NFA}$）是一个五元组 $M = (Q, \Sigma, \delta, q_0, F)$，除转移函数 $\delta: Q \times \Sigma \to \mathcal P(Q)$ 外，其他定义与有穷自动机相同
+2. 一个非确定的有穷自动机（$\text{NFA}$）是一个五元组 $M = (Q, \Sigma, \delta, q_0, F)$，其定义除转移函数 $\delta: Q \times \Sigma \to \mathcal P(Q)$ 外与 $\text{DFA}$ 相同
     1. 对于非确定的有穷自动机 $M = (Q, \Sigma, \delta, q_0, F)$，其扩充转移函数 $\widehat \delta: Q \times \Sigma^* \to \mathcal P(Q)$ 定义为
 
         $$
@@ -238,7 +241,7 @@
         5. $(s + t)r = sr + tr$
         6. $(r^*)^* = r^*$
         7. $\varnothing^* = \varepsilon^* = \varepsilon$
-    4. 检验正则表达式定理：设 $E$ 是带有变量 $V_1, V_2, \cdots, V_m$ 的正则表达式，通过将 $V_i$ 的每次出现都换成符号 $a_i \ (1 \leqslant i \leqslant m)$ 得到具体表达式 $C$，则从每个属于 $L(C)$ 的串 $a_1, a_2, \cdots, a_k$ 出发将每个符号 $a_i \ (1 \leqslant i \leqslant k)$ 都换成对应的语言 $L(V_i)$ 从而构造出 $L(E)$
+    4. 检验正则表达式定理：设 $E$ 是带变量 $V_1, V_2, \cdots, V_m$ 的正则表达式，通过将 $V_i$ 的各出现换成符号 $a_i \ (1 \leqslant i \leqslant m)$ 得到具体表达式 $C$，则从每个属于 $L(C)$ 的串 $a_1, a_2, \cdots, a_k$ 出发将每个符号 $a_i \ (1 \leqslant i \leqslant k)$ 都换成对应的语言 $L(V_i)$ 从而构造出 $L(E)$
 
 4. 泵引理：设 $L$ 是一个正则语言，则存在只依赖于 $L$ 的正整数 $k$，对任何串 $x, y, z \ (xyz \in L)$，只要 $|y| \geqslant k$，就可以将 $y$ 写成 $y = uvw \ (v \neq \varepsilon, |uv| \leqslant k)$ 使得对于任何 $i \geqslant 0$ 都有 $xuv^iwz \in L$
 5. 正则语言的封闭性：设 $L_1, L_2$ 是两个 $\Sigma$ 上的正则语言
@@ -343,8 +346,8 @@
     对于一棵语法分析树，将其叶节点上的标记从左到右收集起来组成的字符串称为该语法分析树的边缘
 
     1. 设 $G = (V, T, P, S)$ 是一个上下文无关文法，则 $S \overset{*}{\Rightarrow} \alpha \ (\alpha \in V \cup T)$ 当且仅当在 $G$ 中存在一棵以 $\alpha$ 为边缘的语法分析树
-    2. 二义性：对于某个上下文无关语言，若有某个字符串 $w \in L(G)$，存在两棵不同的语法分析树都以 $w$ 为边缘，则称该文法是有二义性的
-        1. 如果某些上下文无关语言，无论用什么上下文无关文法去产生，该文法都是有二义性的，则称这种语言为固有二义性的上下文无关语言
+    2. 对于某个上下文无关语言，若有某个字符串 $w \in L(G)$，存在两棵不同的语法分析树都以 $w$ 为边缘，则称该文法是有二义性的
+        1. 如果某些上下文无关语言，无论用什么文法产生都有二义性，则称这种语言为固有二义性的上下文无关语言
         2. 对于上下文无关文法 $G$，如果从开始符号 $S$ 推高过程的每一步都只能替换句型中最左边的变元，则称此推导过程为最左推导；如果从开始符号 $S$ 推高过程的每一步都只能替换句型中最右边的变元，则称此推导过程为最右推导
 
 3. 上下文无关文法的化简
@@ -422,7 +425,7 @@
         3. $\Sigma^* - L = \varnothing$
         4. $L$ 是正则语言
 8. 不可判定性
-    1. 有效计算历史：给定 $\text{Turing}$ 机 $M$ 与输入串 $x$，定义 $M$ 在 $x$ 上的有效计算历史 $\text{VALCOMPH}(M, x)$ 是形如 $\sharp \alpha_0 \sharp \alpha_1^R \sharp \alpha_2 \sharp \alpha_3^R \sharp \cdots \sharp \alpha_N \sharp$ 的字符串，其中 $\alpha_i \ (i = 0, 1, \cdots, N)$ 是 $M$ 在 $x$ 上的格局，$\alpha_0$ 是初始格局，$\alpha_N$ 是 $M$ 在 $x$ 上到达接受状态或拒绝状态时的格局，对于任何 $0 \leqslant i < N$ 有 $\alpha_i \vdash_M \alpha_{i+1}$，$\sharp$ 是一个用于分隔的，区别于 $M$ 的带符号和状态符号的特殊符号
+    1. 给定 $\text{Turing}$ 机 $M$ 与输入串 $x$，定义 $M$ 在 $x$ 上的有效计算历史 $\text{VALCOMPH}(M, x)$ 是形如 $\sharp \alpha_0 \sharp \alpha_1^R \sharp \alpha_2 \sharp \alpha_3^R \sharp \cdots \sharp \alpha_N \sharp$ 的字符串，其中 $\alpha_i \ (i = 0, 1, \cdots, N)$ 是 $M$ 在 $x$ 上的格局，$\alpha_0$ 是初始格局，$\alpha_N$ 是 $M$ 在 $x$ 上到达接受状态或拒绝状态时的格局，对于任何 $0 \leqslant i < N$ 有 $\alpha_i \vdash_M \alpha_{i+1}$，$\sharp$ 是一个用于分隔的，区别于 $M$ 的带符号和状态符号的特殊符号
         1. 给定 $\text{Turing}$ 机 $M$ 与输入串 $x$，其无效计算集合（即 $\text{VALCOMPH}(M, x)$ 关于 $(\Gamma \cup Q \cup \{\sharp\})^*$ 的补集）$\text{INVALCOMPS}(M, x)$ 是一个上下文无关语言
         2. 对于任意给定的上下文无关文法 $G = (V, T, P, S)$，$L(G) = T^*$ 是否成立的问题是不可判定的
         3. 设 $G_1, G_2$ 是任意两个 $\Sigma$ 上的上下文无关文法，$R$ 是任意一个正则语言，则以下命题是否成立是不可判定的
