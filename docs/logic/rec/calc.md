@@ -112,7 +112,7 @@
             \end{aligned}
             $$
 
-        2. $\text{Ackermann}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 使得 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
+        2. $\text{Ackermann}$ 函数不是原始递归的：对任意原始递归函数 $f(x_1, x_2, \cdots, x_n)$ 都存在自然数 $r$ 有 $f(x_1, x_2, \cdots, x_n) < A(r, x)$，其中 $x = \max(x_1, x_2, \cdots, x_n)$
 
 3. 有界极小算子与正则 $\mu-$算子
     1. 有界极小算子：令 $P(\overline x, z)$ 为一个 $(k + 1)$ 元的性质，定义
