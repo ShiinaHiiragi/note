@@ -74,7 +74,7 @@
         \end{aligned}
         $$
 
-        则取 ${\displaystyle a_{n}=\sum_{j=1}^{n} \mathrm{E}\left[X_{j} I_{\left|X_{j}\right| \leqslant b_{n}}\right]}$，必有 $\dfrac{1}{b_{n}}\left(S_{n}-a_{n}\right) \overset{P}{\longrightarrow} 0$．特别地，若上两式及 ${\displaystyle \dfrac{1}{b_{n}} \sum_{j=1}^{n} \mathrm{E}\left[X_{j} I_{\left|X_{j}\right| \leqslant b_{n}}\right]=o(1)}$ 成立，则必有 $\dfrac{S_{n}}{b_{n}} \overset{P}{\longrightarrow} 0$
+        则取 ${\displaystyle a_{n}=\sum_{j=1}^{n} \mathrm{E}\left[X_{j} I_{\left|X_{j}\right| \leqslant b_{n}}\right]}$ 有 $\dfrac{1}{b_{n}}\left(S_{n}-a_{n}\right) \overset{P}{\longrightarrow} 0$．特别地，若上两式及 ${\displaystyle \dfrac{1}{b_{n}} \sum_{j=1}^{n} \mathrm{E}\left[X_{j} I_{\left|X_{j}\right| \leqslant b_{n}}\right]=o(1)}$ 成立，则有 $\dfrac{S_{n}}{b_{n}} \overset{P}{\longrightarrow} 0$
 
         1. 设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立同分布（简写作 $\text{i.i.d.}$）的随机变量序列，则存在常数列 $C_{n}$，使 ${\displaystyle \left(\dfrac{1}{n} \sum_{j=1}^{n} X_{j}-C_{n}\right) \overset{P}{\longrightarrow} 0}$ 的充要条件是 ${\displaystyle \lim _{n \rightarrow \infty} n P\left[\left|X_{1}\right|>n\right]=0}$，且这时 $C_{n}$ 可取为 $C_{n}=\mathrm{E}\left[X_{1} I_{\left|X_{n}\right| \leqslant n}\right]$
         2. $\text{Khintchine}$ 大数定律：设 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为独立同分布随机变量序列，则 ${\displaystyle \dfrac{1}{n} \sum_{j=1}^{n} X_{j} \overset{P}{\longrightarrow} a}$ 的充要条件是

@@ -6,7 +6,14 @@
         1. 设 $\{A_n\}_{n \geqslant 1}$ 是互不相交的集合列，$A_n\cap A_m =\varnothing, n\neq m$，于是 ${\displaystyle P\left(\left. \bigcup_{n=1}^\infty A_n \ \right| \ A\right)=\sum_{n=1}^\infty P(A_n \mid A)}$
         2. 乘法公式：设 $\{A_n\}_{n \geqslant 1}$ 是 $\mathscr{F}$ 的一个事件列，则 $P(A_1A_2\cdots A_n)=P(A_1)P(A_2 \mid A_1)\cdots P(A_n \mid A_1A_2\cdots A_{n-1})$
         3. 全概率公式：设 $\{A_n\}_{n \geqslant 1}$ 构成了 $\Omega$ 上的一个分割，则有 ${\displaystyle P(B)=\sum_{n=1}^\infty P(A_n) \cdot P(B \mid A_n)}$
-    2. $\mathrm{Bayes}$ 公式：设 $\{A_n\}_{n \geqslant 1}$ 是 $\Omega$ 的一个划分，则 $P(A_i \mid B)=\dfrac{P(B \mid A_i) \cdot P(A_i)}{{\displaystyle \sum_{j=1}^\infty P(A_j) \cdot P(B \mid A_j)}}$．其中 $P(A_i)$ 称为先验概率，$P(A_i \mid B)$ 称为后验概率
+    2. $\mathrm{Bayes}$ 公式：设 $\{A_n\}_{n \geqslant 1}$ 是 $\Omega$ 的一个划分，则
+
+        $$
+        P(A_i \mid B)=\dfrac{P(B \mid A_i) \cdot P(A_i)}{{\displaystyle \sum_{j=1}^\infty P(A_j) \cdot P(B \mid A_j)}}
+        $$
+
+        其中 $P(A_i)$ 称为先验概率，$P(A_i \mid B)$ 称为后验概率
+
 2. 条件分布：设条件概率 $P_{B}(A)=P(A \mid B)=\dfrac{P(A B)}{P(B)}$，固定 $B$ 并使 $A$ 在 $\mathscr{F}$ 中变化时，$P_{B}$ 也是 $(\Omega, \mathscr{F})$ 上的概率测度，可由随机变量 $X$ 诱导分布函数 $F(x) = P_{B}[X \leqslant x]$
     1. 二维连续随机向量 $(X, Y)$ 的条件密度：设随机向量 $(X, Y)$ 的联合密度为 $p(x, y)$，边缘分布为 $p_1(x)$ 与 $p_2(y)$
         1. 若 $P[a < Y \leqslant b] > 0$，则称 $p_1(x \mid [a, b]) = \dfrac{{\displaystyle \int_{a}^{b} p(x, v) \mathrm dv}}{{\displaystyle \int_{a}^{b} p_2(v) \mathrm dv}}$ 为 $X$ 在条件 $a \leqslant Y \leqslant b$ 下的条件密度函数，且有

@@ -237,7 +237,7 @@
         2. 若 $F_n(x) \overset{w}{\longrightarrow} F(x), a, b\in C(F), F_n(x)$ 一致连续．又设 $f(x)\in C[a, b]$，则 ${\displaystyle \lim_{n\to \infty} \int_a^b f(x) \mathrm dF_n(x)=\int_a^b f(x) \mathrm dF(x)}$
         3. 若 ${\displaystyle F_n(x) \overset{w}{\longrightarrow} F(x), \lim_{n\to \infty} F_n(-\infty) \to F(-\infty), \lim_{n\to \infty} F_n(+\infty) \to F(+\infty)}$，则对 $\mathbf R$ 上任意一个有界连续函数 $f(x)$ 有 ${\displaystyle \int_{-\infty}^{+\infty}f(x) \mathrm dF_n(x)\to \int_{-\infty}^{+\infty} f(x) \mathrm dF(x)}$
         4. 若 $F_n(x)$ 是一列分布函数，则存在一个子列 $F_{n_k}(x)$ 以及一个非负递增的 $F(x)$，使得 $F_{n_k}(x)\overset{w}{\longrightarrow} F(x)$
-        5. 设 $F_n$ 是分布函数，$\varphi_n$ 是 $F_n$ 的分布函数有 $\varphi_n(t)\to \varphi(t)$，若 $\varphi$ 在零点连续，则存在一个分布函数 $F$ 使得 $\varphi = \varphi_F$ 以及 $F_n \overset{w}{\longrightarrow} F$
+        5. 设 $F_n$ 是分布函数，$\varphi_n$ 是 $F_n$ 分布函数且 $\varphi_n(t)\to \varphi(t)$，若 $\varphi$ 在零点连续，则存在分布函数 $F$ 有 $\varphi = \varphi_F$ 且 $F_n \overset{w}{\longrightarrow} F$
     2. 依分布收敛的性质
         1. 若 $X_n \overset{P}{\longrightarrow} X$，则 $X_n \overset{w}{\longrightarrow} X$，反之不成立
         2. $X_n \overset{P}{\longrightarrow} c$ 当且仅当 $X_n \overset{w}{\longrightarrow} c$
