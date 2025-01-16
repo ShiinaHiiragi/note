@@ -2,7 +2,7 @@
 
 ## 1.1 序列
 1. 序列：以自然数 $n$ 或全体自然数的集合 $\mathbf N$ 为定义域的映射，如果其定义域是 $n \in \mathbf N$，则称为长度为 $n$ 的有穷序列．特别地，定义域为 $0$ 的序列称为空序列，定义域为 $\mathbf N$ 的序列称为无穷序列
-    1. 有穷序列：$\left<a_i \mid i < n\right>$ 或 $\left<a_0, a_1, \cdots, a_{n-1}\right>$，其值域表示为 $\left\{a_i \mid i < n\right\}$ 或 $\left\{a_0, a_1, \cdots, a_{n-1}\right\}$．特别地，空序列的表示为 $\left<\ \right>$，其值域为 $\varnothing$
+    1. 有穷序列：$\left<a_i \mid i < n\right>$ 或 $\left<a_0, a_1, \cdots, a_{n-1}\right>$，其值域表示为 $\left\{a_i \mid i < n\right\}$ 或 $\left\{a_0, a_1, \cdots, a_{n-1}\right\}$．特别地，空序列的表示为 $\left<\ \right>$
     2. 无穷序列：$\left<a_i \mid i \in \mathbf N\right>$ 或 $\left<a_i\right>_{i = 0}^{\infty}$，其值域表示为 $\left\{a_i\right\}_{i = 0}^{\infty}, \left\{a_i\right\}_{i \geqslant 0}$ 或 $\left\{a_i \mid i \in \mathbf N\right\}$
     3. 由 $A$ 的元素组成的所有有穷序列的集合：$A^* = A^{<\mathbf N} = {\displaystyle \bigcup_{n \in \mathbf N} A^n}$
 2. 超穷序列：定义域为序数 $\alpha$ 的映射称为长度为 $\alpha$ 的序列．不严格地定义映射 $\mathbf{F}: \mathbf{On} \rightarrow \mathbf{V}$
@@ -14,7 +14,7 @@
 ## 1.2 数列
 1. 数列：以数集作为值域的序列称为数列，通常以正整数集 $\mathbf Z_+$ 作为定义域．一般记为 $a_1, a_2, \cdots, a_n, \cdots$，简记作 $\{a_n\}$
     1. 通项公式：如果数列 $\{a_n\}$ 的第 $n$ 项（即通项）与 $n$ 之间具有函数关系 $f(n)$，则称这个公式为该数列的通项公式
-    2. 子列：在数列 $\{a_n\}$ 中，保持原来次序自左往右任意选取无穷多个项的数列 $a_{n_{1}}, a_{n_{2}}, \cdots, a_{n_{k}}, \cdots$ 称为 $\left\{a_{n}\right\}$ 的一个子列，简记作 $\{a_{n_{k}}\}$
+    2. 子列：在数列 $\{a_n\}$ 中，保持原来次序自左往右任选无穷项的数列 $a_{n_{1}}, a_{n_{2}}, \cdots, a_{n_{k}}, \cdots$ 称为 $\left\{a_{n}\right\}$ 的一个子列，简记作 $\{a_{n_{k}}\}$
     3. 前 $n$ 项和：对于数列 $\{a_n\}$，称 ${\displaystyle \sum_{i=1}^n a_i}$ 为该数列的前 $n$ 项和，记作 $S_n$
         1. $\{S_n\}$ 也是一个数列，且有 $a_n = \left\{\begin{aligned} & S_1, & n = 1 \\ & S_n - S_{n-1}, & n > 1 \end{aligned}\right.$
         2. 级数：记 ${\displaystyle \sum_{i=1}^\infty a_i = \lim_{n \to \infty} \sum_{i=1}^n a_i = \lim_{n \to \infty} S_n}$ ，称之为无穷级数
@@ -165,7 +165,7 @@
         2. 当 $H=+\infty$ 时，对任何数 $N>0$，在 $\left\{x_{n}\right\}$ 中必有无穷多个项大于 $N$
         3. 当 $H=-\infty$ 时，数列 $\left\{x_{n}\right\}$ 以 $-\infty$ 为极限
     2. 设 ${\displaystyle h=\underset{n \rightarrow \infty}{\underline{\lim}} x_{n}}$，则在 $\left\{x_{n}\right\}$ 中必存在一个子列，其极限为 $h$ 且 $h$ 是 $\left\{x_{n}\right\}$ 中所有收敛子列的极限中的最小值
-        1. 当 $h$ 有限时，对 $h$ 的任何 $\varepsilon$ 邻域 $(h-\varepsilon, h+\varepsilon)$，在数列 $\left\{x_{n}\right\}$ 中有无穷多个项属于这个邻域，而最多只有有限多个小于 $h-\varepsilon$
+        1. 当 $h$ 有限时，对 $h$ 的任何 $\varepsilon$ 邻域 $(h-\varepsilon, h+\varepsilon)$，在数列 $\left\{x_{n}\right\}$ 中有无穷项属于此邻域，而最多只有有限多个小于 $h-\varepsilon$
         2. 当 $h=-\infty$ 时，对任何数 $N>0$，在数列 $\left\{x_{n}\right\}$ 中有无穷多个项小于 $-N$
         3. 当 $h=+\infty$ 时，数列 $\left\{x_{n}\right\}$ 的极限为 $+\infty$
     3. ${\displaystyle \lim _{n \rightarrow \infty} x_{n}=A}$（有限或无穷大）的充要条件为 ${\displaystyle \varlimsup_{n \rightarrow \infty} x_{n}=\underset{n \rightarrow \infty}{\underline{\lim}} x_{n}=A}$
@@ -312,8 +312,6 @@
         \end{array}\right.
         \end{aligned}
         $$
-
-        则有
 
         1. 若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 绝对收敛，则级数 ${\displaystyle \sum_{n=1}^{\infty} v_{n}}$ 和 ${\displaystyle \sum_{n=1}^{\infty} w_{n}}$ 都收敛
         2. 若级数 ${\displaystyle \sum_{n=1}^{\infty} u_{n}}$ 条件收敛，则级数 ${\displaystyle \sum_{n=1}^{\infty} v_{n}}$ 和 ${\displaystyle \sum_{n=1}^{\infty} w_{n}}$ 都发散

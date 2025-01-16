@@ -1,7 +1,7 @@
 # 2 算子与泛函
 
 ## 2.1 有界线性算子
-1. 线性算子：设 $X$ 和 $Y$ 是两个同为实（或复）的线性空间，$\mathscr{D}$ 是 $X$ 的线性子空间，$T$ 为 $\mathscr{D}$ 到 $Y$ 中的映射，如果对任何 $\boldsymbol{x}, \boldsymbol{y} \in \mathscr{D}$ 及数 $\alpha$，有
+1. 线性算子：设 $X$ 和 $Y$ 是两个同为实（或复）的线性空间，$\mathscr{D}$ 是 $X$ 的线性子空间，$T$ 为 $\mathscr{D}$ 到 $Y$ 中的映射，如果对任何 $\boldsymbol{x}, \boldsymbol{y} \in \mathscr{D}$ 及数 $\alpha$，都有
 
     $$
     \begin{aligned}

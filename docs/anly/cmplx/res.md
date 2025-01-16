@@ -128,7 +128,9 @@
     2. 设 $p$ 趋于无穷，且 $\operatorname{Re}(p)=\sigma$ 无限增大，则像函数 $F(p)$ 趋于 $0$，即 ${\displaystyle \lim _{\sigma \rightarrow \infty} F(p)=0}$
 
 2. $\text{Laplace}$ 变换的基本性质：
-    1. 线性关系：设 $f(t)$ 及 $g(t)$ 都可作 $\text{Laplace}$ 变换，则对于任何两个常数 $\alpha, \beta$ 有 $L[\alpha f(t)+\beta g(t)]=\alpha L[f(t)]+\beta L[g(t)]$；若记 $L[f(t)]=F(p), L[g(t)]=G(p)$，则反变换式 $L^{-1}[\alpha F(p)+\beta G(p)]=\alpha f(t)+\beta g(t)=\alpha L^{-1}[F(p)]+\beta L^{-1}[G(p)]$，即逆变换 $L^{-1}$ 也是线性的
+    1. 线性关系：设 $f(t)$ 及 $g(t)$ 都可作 $\text{Laplace}$ 变换，记 $L[f(t)]=F(p), L[g(t)]=G(p)$
+        1. 对于任何两个常数 $\alpha, \beta$ 有 $L[\alpha f(t)+\beta g(t)]=\alpha L[f(t)]+\beta L[g(t)]$
+        2. 反变换式 $L^{-1}[\alpha F(p)+\beta G(p)]=\alpha f(t)+\beta g(t)=\alpha L^{-1}[F(p)]+\beta L^{-1}[G(p)]$，即逆变换 $L^{-1}$ 也是线性的
     2. 相似定理：设 $L[f(t)]=F(p)$，则对于任一常数 $\alpha>0$ 有 $L[f(\alpha t)]=\dfrac{1}{\alpha} F\left(\dfrac{p}{\alpha}\right)$
     3. 本函数的微分法：如果 $f(t)$ 及 $f^{\prime}(t)$ 都满足两个条件，且设 $L[f(t)]=F(p)$，则 $L\left[f^{\prime}(t)\right]=p F(p)-f(+0)$
     4. 本函数的积分法：设 $L[f(t)]=F(p)$，则 ${\displaystyle L\left[\int_{0}^{t} f(t) \mathrm d t\right]=\dfrac{F(p)}{p}}$

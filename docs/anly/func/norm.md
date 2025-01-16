@@ -50,7 +50,7 @@
         1. $\left\|T_{n}-T\right\| \rightarrow 0 \ (n \rightarrow \infty)$，则称算子列 $\left\{T_{n}\right\}$ 一致收敛于 $T$
         2. 对任意的 $\boldsymbol{x} \in X,\left\|T_{n} \boldsymbol{x}-T \boldsymbol{x}\right\| \rightarrow 0 \ (n \rightarrow \infty)$，则称 $\left\{T_{n}\right\}$ 强收敛于 $T$
         3. 对任意 $\boldsymbol{x} \in X$ 和任意的 $f \in Y^{\prime}, f\left(T_{n} \boldsymbol{x}\right) \rightarrow f(T \boldsymbol{x}) \ (n \rightarrow \infty)$，则称 $\left\{T_{n}\right\}$ 弱收敛于 $T$
-7. 逆算子定理：设 $X$ 和 $Y$ 都是 $\text{Banach}$ 空间，若 $T$ 是从 $X$ 到 $Y$ 上的一对一有界线性算子，则 $T$ 的逆算子 $T^{-1}$ 也是有界线性算子
+7. 逆算子定理：设 $X$ 和 $Y$ 都是 $\text{Banach}$ 空间，若 $T$ 是从 $X$ 到 $Y$ 上的一对一有界线性算子，则其逆算子 $T^{-1}$ 也是有界线性算子
     1. 开映射定理：设 $X$ 和 $Y$ 是两个度量空间，$f$ 是 $X$ 到 $Y$ 的映射，若 $f$ 将 $X$ 中的开集映射成 $Y$ 中的开集，则称 $f$ 是开映射．若 $X$ 和 $Y$ 是两个 $\text{Banach}$ 空间，$T$ 是 $X$ 到 $Y$ 上的有界线性映射，则 $T$ 是开映射
     2. 设在线性空间 $X$ 上有两个范数 $\|\cdot\|_{1}$ 和 $\|\cdot\|_{2}$，如果 $X$ 关于这两个范数都成为 $\text{Banach}$ 空间，而且范数 $\|\cdot\|_{2}$ 关于范数 $\|\cdot\|_{1}$ 连续，那么范数 $\|\cdot\|_{1}$ 也必关于 $\|\cdot\|_{2}$ 连续
 8. 闭图像定理：设 $X$ 和 $Y$ 是 $\text{Banach}$ 空间，$T$ 是 $\mathscr{D}(T) \subseteq X$ 到 $Y$ 中闭线性算子．如果 $\mathscr{D}(T)$ 是闭的，则 $T$ 是有界算子
@@ -98,7 +98,7 @@
         2. 任何可分 $\text{Hilbert}$ 空间必和某个 $\mathbf{R}^{n}\left(\mathbf{C}^{n}\right)$ 或 $l^{2}$ 同构
 
 ### 1.3.2 Hilbert 空间的泛函
-1. $\text{Riesz}$ 定理：设 $X$ 是 $\text{Hilbert}$ 空间，$f$ 是 $X$ 上连续线性泛函，那么存在唯一的 $\boldsymbol{z} \in X$，使对每个 $\boldsymbol{x} \in X$，有 $f(\boldsymbol{x})=\langle \boldsymbol{x}, \boldsymbol{z}\rangle$ 且 $\|f\|=\|\boldsymbol{z}\|$
+1. $\text{Riesz}$ 定理：设 $X$ 是 $\text{Hilbert}$ 空间，$f$ 是 $X$ 上连续线性泛函，则存在唯一 $\boldsymbol{z} \in X$，使对每个 $\boldsymbol{x} \in X$ 有 $f(\boldsymbol{x})=\langle \boldsymbol{x}, \boldsymbol{z}\rangle$ 且 $\|f\|=\|\boldsymbol{z}\|$
 2. 对每个 $\boldsymbol{y} \in X$，令 $T \boldsymbol{y}=f_{\boldsymbol{y}}$，其中 $f_{\boldsymbol{y}}$ 为 $X$ 上连续线性泛函 $f_{\boldsymbol{y}}(\boldsymbol{x})=\langle \boldsymbol{x}, \boldsymbol{y}\rangle, \boldsymbol{x} \in X$，$T$ 是 $X$ 到 $X^{\prime}$ 上的映射，其中 $X^{\prime}$ 表示 $X$ 上连续线性泛函全体所成的 $\text{Banach}$ 空间．称满足 $T(\alpha \boldsymbol{x}+\beta \boldsymbol{y})=\overline{\alpha} T \boldsymbol{x}+\overline{\beta} T \boldsymbol{y}$ 的映射 $T$ 是复共轭线性映射
     1. 映射 $T \boldsymbol{y}=f_{\boldsymbol{y}}$ 是 $X$ 到 $X^{\prime}$ 上保持范数不变的复共轭线性映射，称为复共轭同构映射
     2. 若存在 $\text{Hilbert}$ 空间 $X$ 到 $\widetilde{X}$ 上的复共轭同构映射，则称 $X$ 与 $\widetilde{X}$ 是复共轭同构，并不加以区别视为同一，写成 $X=\widetilde{X}$
@@ -115,7 +115,7 @@
     1. 设 $T$ 为复 $\text{Hilbert}$ 空间 $X$ 上有界线性算子，则 $T$ 为自伴算子的充要条件为对一切 $\boldsymbol{x} \in X$，$\langle T \boldsymbol{x}, \boldsymbol{x}\rangle$ 是实数
     2. 设 $T_{1}$ 和 $T_{2}$ 是 $\text{Hilbert}$ 空间 $X$ 上两个自伴算子，则 $T_{1} T_{2}$ 自伴的充要条件为 $T_{1} T_{2}=T_{2} T_{1}$
     3. 设 $\left\{T_{n}\right\}$ 是 $\text{Hilbert}$ 空间 $X$ 上一列自伴算子，并且 ${\displaystyle \lim _{n \rightarrow \infty} T_{n}=T}$，那么 $T$ 仍为 $X$ 上自伴算子
-2. 酉算子：设 $T$ 为 $\text{Hilbert}$ 空间 $X$ 到 $X$ 中的有界线性算子，若 $T$ 是 $X$ 到 $X$ 上的一对一映射，且 $T^{*}=T^{-1}$，则称 $T$ 为 $X$ 上的酉算子
+2. 酉算子：设 $T$ 为 $\text{Hilbert}$ 空间 $X$ 到 $X$ 的有界线性算子，若 $T: X \to X$ 是一对一映射且 $T^{*}=T^{-1}$，则称 $T$ 为 $X$ 上的酉算子
     1. 设 $U$ 及 $V$ 是 $\text{Hilbert}$ 空间 $X$ 上两个酉算子
         1. $U$ 是保范算子，即对任何 $\boldsymbol{x} \in X$，成立 $\|U \boldsymbol{x}\|=\|\boldsymbol{x}\|$
         2. 当 $X \neq\{0\}$ 时，$\|U\|=1$

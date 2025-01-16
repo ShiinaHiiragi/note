@@ -23,7 +23,7 @@
     1. 有界性：$f(x)$ 在 $[a, b]$ 上有界
     2. 最值：在 $[a, b]$ 内至少有两点 $\xi_{1}$ 和 $\xi_{2}$，使得对 $[a, b]$ 内的一切 $x$，有 $f\left(\xi_{1}\right) \leqslant f(x) \leqslant f\left(\xi_{2}\right)$
     3. 零点存在定理：若 $f(a)f(b) < 0$，则在 $[a, b]$ 内至少有一点 $\xi$，使 $f(\xi)=0$
-    4. 介值定理：设 $f(x)$ 在 $[a, b]$ 上的最小值为 $m$，最大值为 $M$．则对任何 $c \ (m<c<M)$，在 $[a, b]$ 内至少存在一个 $\xi$，使得 $f(\xi)=c$
+    4. 介值定理：设 $f(x)$ 在 $[a, b]$ 上最小值为 $m$，最大值为 $M$，则对任意 $c \ (m<c<M)$，$[a, b]$ 内至少存在一个 $\xi$ 使得 $f(\xi)=c$
     5. $\text{Cantor}$ 定理：$f(x)$ 在 $[a, b]$ 上一致连续
 
         !!! note "一致连续"
@@ -34,7 +34,7 @@
     1. 多元函数的连续性：设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$z=f(\boldsymbol{x})$ 是定义在 $D$ 上的函数，$\boldsymbol{x}_{0} \in D$ 为定点．如果 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=f\left(x_{0}\right)}$，则称函数 $f$ 在点 $x_{0}$ 连续
     2. 向量值函数的连续性：设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$x_{0} \in D$ 为一定点，$\boldsymbol f: D \rightarrow \mathbf{R}^{m}$ 是向量值函数．如果 $\boldsymbol f$ 满足 ${\displaystyle \lim _{x \rightarrow x_{0}} \boldsymbol f(x)=\boldsymbol f\left(x_{0}\right)}$，则称 $\boldsymbol f$ 在 $x_{0}$ 点连续
         1. 设点集 $K \subseteq \mathbf{R}^{n}, \boldsymbol{f}: K \rightarrow \mathbf{R}^{m}$ 为向量值函数，$\boldsymbol{x}_{0} \in K$．如果对于任意给定的 $\varepsilon>0$，存在 $\delta>0$ 使得当 $\boldsymbol{x} \in O\left(\boldsymbol{x}_{0}, \delta\right) \cap K$ 时有 $\left|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{f}\left(\boldsymbol{x}_{0}\right)\right|<\varepsilon$，则称 $\boldsymbol{f}$ 在点 $\boldsymbol{x}_{0}$ 连续．如果映射 $\boldsymbol{f}$ 在 $K$ 上每一点连续，则称 $\boldsymbol{f}$ 在 $K$ 上连续，或称映射 $\boldsymbol{f}$ 为 $K$ 上的连续映射
-        2. 设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$\boldsymbol{x}_{0} \in D$ 为一定点，那么映射 $\boldsymbol f: D \rightarrow \mathbf{R}^{m}$ 在 $\boldsymbol{x}_{0}$ 点连续的充分必要条件为函数 $f_{1}, f_{2}, \cdots, f_{m}$ 在 $x_{0}$ 点连续
+        2. 设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$\boldsymbol{x}_{0} \in D$ 为定点，则映射 $\boldsymbol f: D \rightarrow \mathbf{R}^{m}$ 在 $\boldsymbol{x}_{0}$ 点连续当且仅当函数 $f_{1}, f_{2}, \cdots, f_{m}$ 在 $x_{0}$ 点连续
         3. 如果 $\boldsymbol g$ 在 $D$ 上连续，$\boldsymbol f$ 在 $\Omega$ 上连续，那么复合映射 $\boldsymbol f \circ \boldsymbol g$ 在 $D$ 上连续
 2. 连续函数的性质
     1. 紧集上的连续映射：设 $S$ 为 $\mathbf R^n$ 上的点集，如果 $S$ 的任意一个开覆盖 $\{U_n\}$ 中总存在一个有限子覆盖，则称 $S$ 为紧集
@@ -70,8 +70,8 @@
 2. $\text{Euclid}$ 空间基本定理：以下四个定理相互等价
     1. $\text{Cantor}$ 闭区域套定理：设 $\left\{S_{k}\right\}$ 是 $\mathbf{R}^{n}$ 上的非空闭集序列，满足 $S_{1} \supset S_{2} \supset \cdots \supset S_{k} \supset S_{k+1} \supset \cdots$ 及 ${\displaystyle \lim _{k \rightarrow \infty} \operatorname{diam} S_{k}=0}$，则存在惟一点属于 ${\displaystyle \bigcap_{k=1}^{\infty} S_{k}}$．这里 $\operatorname{diam} S=\sup \{|x-y| \mid x, y \in S\}$
     2. $\text{Weierstrass}$ 定理：$\mathbf{R}^{n}$ 上的有界点列 $\left\{\boldsymbol{x}_{k}\right\}$ 中必有收敛子列
-    3. $\text{Heine}-\text{Borel}$ 定理：$\mathbf{R}^{n}$ 上的点集 $S$ 是紧集的充分必要条件为其是有界闭集
-    4. $\text{Cauchy}$ 收敛原理：$\mathbf{R}^{n}$ 上的点列 $\left\{\boldsymbol{x}_{k}\right\}$ 收敛的充分必要条件是对于任意给定的 $\varepsilon>0$，存在正整数 $K$ 使得对任意 $k, l>K$ 有 $\left|\boldsymbol{x}_{l}-\boldsymbol{x}_{k}\right|<\varepsilon$
+    3. $\text{Heine}-\text{Borel}$ 定理：$\mathbf{R}^{n}$ 上的点集 $S$ 是紧集当且仅当其是有界闭集
+    4. $\text{Cauchy}$ 收敛原理：$\mathbf{R}^{n}$ 上的点列 $\left\{\boldsymbol{x}_{k}\right\}$ 收敛当且仅当对任意给定 $\varepsilon>0$，存在 $K \in \mathbf Z_+$ 使得对任意 $k, l>K$ 有 $\left|\boldsymbol{x}_{l}-\boldsymbol{x}_{k}\right|<\varepsilon$
 
 ## 2.2 一元微分法
 ### 2.3.1 导数
@@ -134,9 +134,10 @@
     2. $\text{Leibniz}$ 公式：${\displaystyle [u(x) v(x)]^{(n)}=\sum_{k=0}^{n} \mathrm{C}_{n}^{k} u^{(n-k)} v^{(k)}}$
 
 ### 2.3.2 微分
-1. 可微性：若 $y=f(x)$ 是定义在某一区间上的函数，设 $\Delta y=f(x+\Delta x)-f(x)=A \Delta x+o(\Delta x) \ (\Delta x \rightarrow 0)$，其中 $A$ 是 $x$ 的函数, 而与 $\Delta x$ 无关，则称 $f(x)$ 在点 $x$ 是可微的，且称 $A \Delta x$ 为 $f(x)$ 在点 $x$ 的微分，记为 $\mathrm{d} y$ 或 $\mathrm{d} f(x)$．易知函数的可微性与可导性是等价的
-    1. 由于 $A \Delta x$ 是 $\Delta x$ 的线性函数，且当 $\Delta x$ 充分小时 $\Delta y \sim A \Delta x$，则称 $\mathrm{d} y$ 是 $\Delta y$ 的线性主部
-    2. 高阶微分：定义 $n$ 阶微分 $\mathrm{d}^n y = f^{(n)}(x) \mathrm{d} x^n$
+1. 可微性：若 $y=f(x)$ 是定义在某一区间上的函数，设 $\Delta y=f(x+\Delta x)-f(x)=A \Delta x+o(\Delta x) \ (\Delta x \rightarrow 0)$，其中 $A$ 是 $x$ 的函数, 而与 $\Delta x$ 无关，则称 $f(x)$ 在点 $x$ 是可微的，且称 $A \Delta x$ 为 $f(x)$ 在点 $x$ 的微分，记为 $\mathrm{d} y$ 或 $\mathrm{d} f(x)$
+    1. 函数的可微性与可导性等价
+    2. 由于 $A \Delta x$ 是 $\Delta x$ 的线性函数，且当 $\Delta x$ 充分小时 $\Delta y \sim A \Delta x$，则称 $\mathrm{d} y$ 是 $\Delta y$ 的线性主部
+    3. 高阶微分：定义 $n$ 阶微分 $\mathrm{d}^n y = f^{(n)}(x) \mathrm{d} x^n$
 2. 微分的运算法则
     1. $\mathrm{d}[f(x) \pm g(x)]=\mathrm{d} f(x) \pm \mathrm{d} g(x)$
     2. $\mathrm{d}[f(x) \cdot g(x)]=g(x) \mathrm{d} f(x)+f(x) \mathrm{d} g(x)$
@@ -222,7 +223,7 @@
     为向量值函数 $\boldsymbol f$ 在 $x^{0}$ 点的导数或 $\text{Jacobi}$ 矩阵，记为 $\boldsymbol f^{\prime}\left(x^{0}\right), \mathrm{D} \boldsymbol f\left(x^{0}\right)$ 或 $J_{\boldsymbol f}\left(x^{0}\right)$．如果向量值函数 $\boldsymbol{f}$ 在 $D$ 上每一点可导，则称 $\boldsymbol{f}$ 在 $D$ 上可导．此时对应关系 $x \in D \mapsto \boldsymbol f^{\prime}(x)=J_{\boldsymbol f}(x)$ 称为 $f$ 在 $D$ 上的导数, 记为 $\boldsymbol f^{\prime}\left(x\right), \mathrm{D} \boldsymbol f\left(x\right)$ 或 $J_{\boldsymbol f}\left(x\right)$
 
     1. 向量值函数 $\boldsymbol{f}$ 连续、可导和可微就是它的每一个坐标分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 连续、可导和可微
-        1. 若 $\boldsymbol{f}$ 的每一个分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 的偏导数都在 $\boldsymbol{x}^{0}$ 点连续，即 $f$ 的 $\text{Jacobi}$ 矩阵的每个元素都在 $x^{0}$ 点连续，则称向量值函数 $f$ 的导数在 $x^{0}$ 点连续．如果向量值函数 $\boldsymbol f$ 的导数在 $D$ 上每一点连续，则称 $\boldsymbol f$ 的导数在 $D$ 上连续
+        1. 若 $\boldsymbol{f}$ 的每一个分量函数 $f_{i}\left(x_{1}, x_{2}, \cdots, x_{n}\right) \ (i=1,2, \cdots, m)$ 的偏导数都在 $\boldsymbol{x}^{0}$ 点连续，即 $f$ 的 $\text{Jacobi}$ 矩阵的每个元素都在 $x^{0}$ 点连续，则称向量值函数 $f$ 的导数在 $x^{0}$ 点连续．若 $\boldsymbol f$ 的导数在 $D$ 上每一点连续，则称 $\boldsymbol f$ 的导数在 $D$ 上连续
         2. 若存在只与 $\boldsymbol{x}^{0}$ 有关，与 $\Delta \boldsymbol{x}$ 无关的矩阵 $\boldsymbol{A}$ 使得在 $\boldsymbol{x}^{0}$ 点附近有 $\Delta y=f\left(x^{0}+\Delta x\right)-f\left(x^{0}\right)=A \Delta x+o(\Delta x)$ （其中 $\Delta x=\left(\Delta x_{1}, \Delta x_{2}, \cdots, \Delta x_{n}\right)$，$o(\Delta x)$ 是列向量，其模是 $\|\Delta x\|$ 的高阶无穷小量），则称向量值函数 $f$ 在 $x^{0}$ 点可微，并称 $\boldsymbol{A} \Delta x$ 为 $f$ 在 $\boldsymbol{x}^{0}$ 点的微分，记为 $\mathrm{d} \boldsymbol{y}$
             1. 若将 $\Delta \boldsymbol{x}$ 记为 $\mathrm{d} \boldsymbol{x}=\left(\mathrm{d} x_{1}, \mathrm{d} x_{2}, \cdots, \mathrm{d} x_{n}\right)$，那么有 $\mathrm{d} \boldsymbol{y}=\boldsymbol{A} \mathrm{d} \boldsymbol{x}$
             2. 如果向量值函数 $\boldsymbol{f}$ 在 $D$ 上每一点可微，则称 $\boldsymbol{f}$ 在 $D$ 上可微
@@ -243,7 +244,7 @@
 
         那么
 
-        1. 在点 $\left(x_{0}, y_{0}\right)$ 附近可以从函数方程 $F(x, y)=0$ 惟一确定隐函数 $y=f(x) \ (x \in O\left(x_{0}, \rho\right))$，它满足 $F(x, f(x))=0$ 以及 $y_{0}=f\left(x_{0}\right)$
+        1. 点 $\left(x_{0}, y_{0}\right)$ 附近可从方程 $F(x, y)=0$ 惟一确定隐函数 $y=f(x) \ (x \in O\left(x_{0}, \rho\right))$ 满足 $F(x, f(x))=0$ 以及 $y_{0}=f\left(x_{0}\right)$
         2. 隐函数 $y=f(x)$ 在 $x \in O\left(x_{0}, \rho\right)$ 上连续
         3. 急函数 $y=f(x)$ 在 $x \in O\left(x_{0}, \rho\right)$ 上具有连续的导数，且 $\dfrac{\mathrm{d} y}{\mathrm{d} x}=-\dfrac{F_{x}(x, y)}{F_{y}(x, y)}$
 
@@ -376,8 +377,6 @@
     \right.
     $$
 
-    满足
-
     1. $u_{0}=u\left(x_{0}, y_{0}\right), v_{0}=v\left(x_{0}, y_{0}\right)$
     2. $\dfrac{\partial u}{\partial x}=\dfrac{\partial y}{\partial v} / \dfrac{\partial(x, y)}{\partial(u, v)}, \dfrac{\partial u}{\partial y}=-\dfrac{\partial x}{\partial v} / \dfrac{\partial(x, y)}{\partial(u, v)}, \dfrac{\partial v}{\partial x}=-\dfrac{\partial y}{\partial u} / \dfrac{\partial(x, y)}{\partial(u, v)}, \dfrac{\partial v}{\partial y}=\dfrac{\partial x}{\partial u} / \dfrac{\partial(x, y)}{\partial(u, v)}$
 
@@ -420,7 +419,7 @@
         全微分的形式不变性在高阶微分时不成立
 
 ### 2.3.3 极值
-1. 多元函数的极值：设 $D \in \mathbf{R}^{n}$ 为开区域，$f(\boldsymbol{x})$ 为定义在 $D$ 上的函数，$\boldsymbol{x}_{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right) \in D$．若存在 $\boldsymbol{x}_{0}$ 的邻域 $O\left(x_{0}, r\right)$ 使得 $f\left(\boldsymbol{x}_{0}\right) \geqslant f(\boldsymbol{x})$ 或 $f\left(\boldsymbol{x}_{0}\right) \leqslant f(\boldsymbol{x}) \ (\boldsymbol{x} \in O\left(\boldsymbol{x}_{0}, r\right))$，则称 $x_{0}$ 为 $f$ 的极大值点或极小值点；相应地，称 $f\left(x_{0}\right)$ 为相应的极大值或极小值
+1. 多元函数的极值：设 $D \in \mathbf{R}^{n}$ 为开区域，$f(\boldsymbol{x})$ 为定义在 $D$ 上的函数，$\boldsymbol{x}_{0}=\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right) \in D$．若存在 $\boldsymbol{x}_{0}$ 的邻域 $O\left(x_{0}, r\right)$ 使得 $f\left(\boldsymbol{x}_{0}\right) \geqslant f(\boldsymbol{x})$ 或 $f\left(\boldsymbol{x}_{0}\right) \leqslant f(\boldsymbol{x}) \ (\boldsymbol{x} \in O\left(\boldsymbol{x}_{0}, r\right))$，则称 $x_{0}$ 为 $f$ 的极大值点或极小值点，称 $f\left(x_{0}\right)$ 为相应的极大值或极小值
     1. 极大值点与极小值点统称为极值点；极大值与极小值统称为极值
     2. 极值点的必要条件：设 $x_{0}$ 为函数 $f$ 的极值点，且 $f$ 在 $\boldsymbol{x}_{0}$ 点可偏导，则 $f$ 在 $\boldsymbol{x}_{0}$ 点的各个一阶偏导数都为零，即
 
@@ -523,7 +522,7 @@
         1. $R_{n}(x)=\dfrac{f^{(n+1)}(\xi)}{(n+1) !} x^{n+1}$，$\xi \in (0, x)$．称 $R_n(x)$ 为 $\text{Lagrange}$ 余项
         2. 当 $x \rightarrow 0$ 时，$R_{n}(x)$ 是关于 $x^{n}$ 的高阶无穷小，因此当 $|x|$ 充分小时，余项 $R_{n}(x)=o\left(x^{n}\right)$，称为 $\text{Peano}$ 余项
 
-    2. 多元函数：设 $n$ 元函数 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 在点 $\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 附近具有 $k+1$ 阶的连续偏导数，那么在这点附近成立如下的公式
+    2. 多元函数：设 $n$ 元函数 $f\left(x_{1}, x_{2}, \cdots, x_{n}\right)$ 在点 $\left(x_{1}^{0}, x_{2}^{0}, \cdots, x_{n}^{0}\right)$ 附近具有 $k+1$ 阶的连续偏导数，那么在这点附近有
 
         $$
         \begin{aligned}

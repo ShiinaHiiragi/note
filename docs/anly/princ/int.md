@@ -343,7 +343,7 @@
     2. 一致收敛积分的判别
         1. $\text{Weierstrass}$ 判别法：设有函数 $F(x)$，使 $|f(x, y)| \leqslant F(x), a \leqslant x<+\infty, c \leqslant y \leqslant d$．如果积分 ${\displaystyle \int_{a}^{+\infty} F(x) \mathrm{d} x}$ 收敛，那么 ${\displaystyle \int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 关于 $y$ 在 $[c, d]$ 上一致收敛
         2. $\text{Abel}$ 判别法：设 ${\displaystyle \int_{a}^{+\infty} f(x, y) \mathrm{d} x}$ 关于 $y \in[c, d]$ 为一致收敛，$g(x, y)$ 对 $x$ 单调（即对每个固定的 $y \in[c, d]$，$g(x, y)$ 作为 $x$ 的函数是单调的），并且关于 $y$ 为一致有界，即存在正数 $L$，对所讨论范围内的一切 $x, y$ 成立 $|g(x, y)|<L$．那么积分 ${\displaystyle \int_{a}^{+\infty} f(x, y) g(x, y) \mathrm{d} x}$ 关于 $y$ 在 $[c, d]$ 上一致收敛
-        3. $\text{Dirichlet}$ 判别法：设积分 ${\displaystyle \int_{a}^{A} f(x, y) \mathrm{d} x}$ 对于 $A \geqslant a$ 和 $y \in[c, d]$ 一致有界，即存在正数 $K$，使对上述的 $A, y$ 有 ${\displaystyle \left|\int_{a}^{A} f(x, y) \mathrm{d} x\right| \leqslant K}$．又 $g(x, y)$ 关于 $x$ 为单调，并且当 $x \rightarrow+\infty$ 时，$g(x, y)$ 关于 $[c, d]$ 上的 $y$ 一致趋于零，即对任意给定的正数 $\varepsilon$ 有 $A_{0}$，当 $x \geqslant A_{0}$ 时，对一切 $y \in[c, d]$ 有 $|g(x, y)|<\varepsilon$．那么积分 ${\displaystyle \int_{a}^{+\infty} f(x, y) g(x, y) \mathrm{d} x}$ 关于 $y$ 在 $[c, d]$ 上一致收敛
+        3. $\text{Dirichlet}$ 判别法：设积分 ${\displaystyle \int_{a}^{A} f(x, y) \mathrm{d} x}$ 对于 $A \geqslant a$ 和 $y \in[c, d]$ 一致有界，$g(x, y)$ 关于 $x$ 单调，且当 $x \rightarrow+\infty$ 时，$g(x, y)$ 关于 $[c, d]$ 上的 $y$ 一致趋于零，那么积分 ${\displaystyle \int_{a}^{+\infty} f(x, y) g(x, y) \mathrm{d} x}$ 关于 $y$ 在 $[c, d]$ 上一致收敛
 
         !!! note "符号函数"
             定义符号函数 $\operatorname{sgn}(x)={\displaystyle \dfrac{2}{\pi} \int_{0}^{+\infty} \dfrac{\sin x t}{t} \mathrm{d} t}=\left\{\begin{aligned} & 1, & x > 0 \\ & 0, & x = 0 \\ & -1, & x < 0 \end{aligned}\right.$

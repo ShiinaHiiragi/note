@@ -2,7 +2,7 @@
 
 ## 1.1 可测性与测度
 ### 1.1.1 可测空间
-1. 可测空间：设 $\Omega$ 为集合，$\mathscr{F}$ 为由 $\Omega$ 的子集构成的 $\sigma$ 域，则 $(\Omega, \mathscr{F})$ 称为可测空间．$\mathscr{F}$ 中任一集合都称为 $\mathscr{F}$ 可测集，简称可测集
+1. 可测空间：设 $\Omega$ 为集合，$\mathscr{F}$ 为 $\Omega$ 的子集构成的 $\sigma$ 域，则 $(\Omega, \mathscr{F})$ 称为可测空间．$\mathscr{F}$ 中任一集合都称为 $\mathscr{F}$ 可测集，简称可测集
 2. 乘积空间：若 $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，称 $\Omega=\left\{\left(\omega_{1}, \cdots, \omega_{n}\right): \omega_{i} \in \Omega_{i}, 1 \leqslant i \leqslant n\right\}$ 为乘积空间，记为 ${\displaystyle \Omega=\prod_{i} \Omega_{i}}$
     1. 矩形集：对 $A_{i} \subseteq \Omega_{i}, 1 \leqslant i \leqslant n$，集合 $A=\left\{\left(\omega_{1}, \cdots, \omega_{n}\right): \omega_{i} \in A_{i}, 1 \leqslant i \leqslant n\right\}$ 称为矩形集，记为 ${\displaystyle \prod_{i=1}^{n} A_i}$．特别地，当每个 $A_i \in \mathscr{F}_i$ 时，${\displaystyle A = \prod_{i=1}^{n} A_i}$ 又称为可测矩形
     2. $\left(\Omega_{i}, \mathscr{F}_{i}\right), 1 \leqslant i \leqslant n$ 是 $n$ 个可测空间，${\displaystyle \Omega=\prod_{i=1}^{n}} \Omega_{i}$，$\mathscr{C}$ 表示 $\Omega$ 中可测矩形全体，则 $\mathscr{C}$ 是一个半域，而互不相交的可测矩形的有限并全体 $\mathscr{A}$ 就是一个域
@@ -22,7 +22,7 @@
     在 $\Omega={\displaystyle \prod_{\alpha \in J}} \Omega_{\alpha}$ 上有 $\mathscr{C}=\left\{B: B \textsf{ 为以 } {\displaystyle \prod_{\alpha \in I}} A_{\alpha} \textsf{ 为底的矩形柱，} A_{\alpha} \in \mathscr{F}_{\alpha}, \alpha \in \textsf{有限 } I \subseteq J\right\}$，称 $\mathscr{F}=\sigma(\mathscr{C})$ 为 $\left\{\mathscr{F}_{\alpha}\right\}_{\alpha \in J}$ 的乘积 $\sigma$ 域，记为 $\mathscr{F}={\displaystyle \prod_{\alpha \in J}} \mathscr{F}_{\alpha}$．而 $(\Omega, \mathscr{F})$ 称为乘积可测空间，记为 $(\Omega, \mathscr{F}) ={\displaystyle \prod_{\alpha \in J}} \left(\Omega_{\alpha}, \mathscr{F}_{\alpha}\right)$
 
     1. 在 $\Omega$ 中，若 $I$ 为 $J$ 的任意子集，$A \subseteq \Omega_{I}={\displaystyle \prod_{\alpha \in I}} \Omega_{\alpha}$，则 $B=A \times {\displaystyle \prod_{\alpha \in J - I}} \Omega_{\alpha}=\left\{\left(\omega_{\alpha}, \alpha \in J\right) \in \Omega:\left(\omega_{\alpha}, \alpha \in I\right) \in A\right\}$ 称为 $\Omega$ 中的柱集，$A$ 称为 $B$ 的底．当 $A \in {\displaystyle \prod_{\alpha \in I}} \mathscr{F}_{\alpha}$，柱集 $B$ 称为可测的．特别地，当 $I$ 为有限指标集时，$B$ 称为有限维基底可测柱集；当 $I$ 为可数指标集时，$B$ 称为可数维基底可测柱集，凡分别简称为有限维柱集或可数维柱集
-    2. 若 $\left\{\left(\Omega_{\alpha}, \mathscr{F}_{\alpha}\right)\right\}_{\alpha \in J}$ 为一族可测空间，$J$ 为无限指标集，$(\Omega, \mathscr{F})= {\displaystyle \prod_{\alpha \in J}} \left(\Omega_{\alpha}, \mathscr{F} \alpha\right)$，又 $\mathscr{G}$ 表示 $\Omega$ 中可数维基底可测柱集全体，则 $\mathscr{F}=\mathscr{G}$
+    2. 假设 $\left\{\left(\Omega_{\alpha}, \mathscr{F}_{\alpha}\right)\right\}_{\alpha \in J}$ 为一族可测空间，$J$ 为无限指标集，$(\Omega, \mathscr{F})= {\displaystyle \prod_{\alpha \in J}} \left(\Omega_{\alpha}, \mathscr{F} \alpha\right)$，又 $\mathscr{G}$ 表示 $\Omega$ 中可数维基底可测柱集全体，则有 $\mathscr{F}=\mathscr{G}$ 成立
     3. 若 $\left\{\left(E_{i}, \mathscr{T}_{i}\right)\right\}_{i \in I}$ 为至多可数个具有可数基的拓扑空间，$(E, \mathscr{T})={\displaystyle \prod_{i \in I}}\left(E_{i}, \mathscr{T}_{i}\right)$ 为乘积拓扑空间，则有
         1. $\mathscr{B}_{E} ={\displaystyle \prod_{i \in I}} \mathscr{B}_{E_{i}}$
         2. $\left(E, \mathscr{B}_{E}\right) ={\displaystyle \prod_{i \in I}}\left(E_{i}, \mathscr{B}_{E_{i}}\right)$
@@ -49,9 +49,9 @@
 
         若对任意 $A, B \in \mathscr{C}, A B=\varnothing$，且 $A+B \in \mathscr{C}$，都有 $\mu(A+B)=\mu(A)+\mu(B)$，则称 $\mu$ 为有限可加的
 
-    2. 若对每个 $A \in \mathscr{C}$，存在 $\left\{A_{n}\right\}_{n \geqslant 1} \in \mathscr{C}$，使 $A=\bigcup_{n} A_{n}$，且对每个 $n$ 都有 $\left|\mu\left(A_{n}\right)\right|<\infty$，则称 $\mu$ 为在 $\mathscr{C}$ 上为 $\sigma$ 有限的，简称为 $\sigma$ 有限的
+    2. 若对每个 $A \in \mathscr{C}$，存在 $\left\{A_{n}\right\}_{n \geqslant 1} \in \mathscr{C}$，使 $A=\bigcup_{n} A_{n}$，且对每个 $n$ 都有 $\left|\mu\left(A_{n}\right)\right|<\infty$，则称 $\mu$（在 $\mathscr{C}$ 上）为 $\sigma$ 有限的
 
-        若对任意 $\left\{A_{n}\right\}_{n \geqslant 1} \subseteq \mathscr{C}$ 都有 $A_{i} A_{j}=\varnothing, i \neq j$，且 ${\displaystyle \sum_{i=1}^{\infty} A_{i} \in \mathscr{C}}$，则 ${\displaystyle \mu\left(\sum_{i=1}^{\infty} A_{i}\right)= \sum_{i=1}^{\infty} \mu\left(A_{i}\right)}$，则称 $\mu$ 在 $\mathscr{C}$ 上为 $\sigma$ 可加的或可数可加的
+        若对任意 $\left\{A_{n}\right\}_{n \geqslant 1} \subseteq \mathscr{C}$ 都有 $A_{i} A_{j}=\varnothing, i \neq j$，且 ${\displaystyle \sum_{i=1}^{\infty} A_{i} \in \mathscr{C}}$，则 ${\displaystyle \mu\left(\sum_{i=1}^{\infty} A_{i}\right)= \sum_{i=1}^{\infty} \mu\left(A_{i}\right)}$，则称 $\mu$（在 $\mathscr{C}$ 上）为 $\sigma$ 可加的
 
 2. 测度空间：若 $(\Omega, \mathscr{F})$ 为可测空间，$\mu$ 为 $\mathscr{F}$ 上的测度，则 $(\Omega, \mathscr{F}, \mu)$ 称为测度空间
     1. 正测度：设 $\Omega$ 为一空间，$\mathscr{C} \subseteq \mathcal{P}(\Omega)$ 且 $\varnothing \in \mathscr{C}$．设 $\mu$ 为 $\mathscr{C}$ 上的集函数，若它满足
@@ -208,7 +208,7 @@
         4. 对任何有限实数 $a, b\ (a<b)$，$E[a \leqslant f<b]$ 都可测（但充分性要假定 $f(x)$ 是有限函数）
     2. 设 $f(x)$ 在 $E$ 上可测，则 $E[f=a]$ 总可测，不论 $a$ 是有限实数或 $\pm \infty$
     3. 可测集 $E \subseteq \widehat{\mathbf{R}}^{n}$ 上的连续函数或单调函数是可测函数
-2. 简单函数：设 $f(x)$ 的定义域 $E$ 可分为有限个互不相交的可测集 $E_{1}, E_{2}, \cdots, E_{s}, E={\displaystyle \bigcup_{i=1}^{j} E_{i}}$，使 $f(x)$ 在每个 $E_{i}$ 上都等于某常数 $c_{i}$，则称 $f(x)$ 为简单函数
+2. 简单函数：设 $f(x)$ 的定义域 $E$ 可分为有限个互不相交的可测集 $E_{1}, E_{2}, \cdots, E_{s}, E={\displaystyle \bigcup_{i=1}^{j} E_{i}}$，使得 $f(x)$ 在每个 $E_{i}$ 上都等于某常数 $c_{i}$，则称 $f(x)$ 为简单函数
     1. 设 $f(x)$ 是可测集 $E$ 上的可测函数，$E_{1} \subseteq E$ 为 $E$ 的可测子集，则 $f(x)$ 看作定义在 $E_{1}$ 上的函数时是 $E_{1}$ 上的可测函数
 
         设 $f(x)$ 定义在有限个可测集 $E_{i} \ (1 \leqslant i \leqslant s)$ 的并集 ${\displaystyle E=\bigcup_{i=1}^{s} E_{i}}$ 上，且 $f(x)$ 在每个 $E_{i}$ 上都可测，则 $f(x)$ 在 $E$ 上也可测
