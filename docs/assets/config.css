@@ -121,16 +121,16 @@ h1+div.arithmatex {
 mjx-utext[variant="sans-serif"] {
   font-family: var(--md-text-font) !important;
   font-weight: var(--normal-font-weight) !important;
-  font-size: 0.8rem !important;
 }
 
 div.admonition.note mjx-utext[variant="sans-serif"] {
   font-family: var(--md-text-font) !important;
+  font-weight: var(--normal-font-weight) !important;
   font-size: 0.64rem !important;
 }
 
 /* Testing */
 .hanging {
-  outline: 2px dashed rgb(231, 76, 60);
-  background-color: rgba(231, 76, 60, 16%);
+  outline: 2px dashed rgb(230, 75, 60);
+  background-color: rgba(230, 75, 60, 16%);
 }
