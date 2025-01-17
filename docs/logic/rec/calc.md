@@ -68,27 +68,23 @@
             称函数 $f$ 为从 $g$ 和 $h$ 经强递归得到的
 
     3. 除法的定义
-        1. 商函数：定义
+        1. 商函数是原始递归函数
 
             $$
             \mathrm{quo}(x, y) = \left\{\begin{aligned}
-            & q, x \neq 0 \wedge \exists r < x \ (y = xq + r) \\
-            & 0, x = 0
+            & q, & x \neq 0 \wedge \exists r < x \ (y = xq + r) \\
+            & 0, & x = 0
             \end{aligned}\right.
             $$
 
-            可知 $\mathrm{quo}(x, y)$ 是原始递归函数
-
-        2. 余数函数：定义
+        2. 余数函数是原始递归函数
 
             $$
             \mathrm{rem}(x, y) = \left\{\begin{aligned}
-            & r, x \neq 0, \exists q \leqslant y \ (y = xq + r) \wedge r < x \\
-            & 0, x = 0
+            & r, & x \neq 0, \exists q \leqslant y \ (y = xq + r) \wedge r < x \\
+            & 0, & x = 0
             \end{aligned}\right.
             $$
-
-            可知 $\mathrm{rem}(x, y)$ 是原始递归函数
 
     4. $\text{Ackermann}$ 函数
         1. 三元 $\text{Ackermann}$ 函数 $\Phi(n, x, y)$ 递归定义：
