@@ -196,7 +196,7 @@
         1. $A = \varnothing$ 或 $A$ 是某个原始递归函数的值域
         2. $A$ 是某个部分递归函数的值域
         3. $A$ 的部分特征函数是部分递归的，其中定义 $A$ 的部分特征函数 $\chi_{A_p}(x) = \left\{\begin{aligned} & 1, & x \in A \\ & \textsf{无定义}, & x \notin A \end{aligned}\right.$
-        4. $A$ 是某个部分递归函数的定义域
+        4. $A$ 是某个部分递归函数的定义域，此时可用 $W_{e}$ 表示 $\Phi_{e}$ 所确定的递归可枚举集
         5. 存在一个二元递归谓词 $R(x, y)$ 使得 $A$ 具有形式 $A = \{x \mid \exists y \ R(x, y)\}$
     3. 假定 $A, B \subseteq \mathbf N^k$ 都是递归可枚举的
         1. $A \cup B, A \cap B$ 都是递归可枚举的
@@ -211,16 +211,13 @@
 3. 可判定性：如果一个问题的集合是递归的，则称该问题是可判定的或可解的，否则称其为不可判定的或不可解的
     1. 停机问题：任意给定的 $\text{Turing}$ 机在任意给定的输入串上是否停机（接受或拒绝）的问题是不可判定的
         1. 集合 $K = \{e \mid \Phi_e(e)$ 有定义$\}$ 是递归可枚举的，但不是递归的
-        2. 集合 $K_0 = \{\mathrm{enc}(x, y) \mid \Phi_x(y) \downarrow\}$ 不是递归的
+        2. 集合 $K_0 = \{\left<x, y\right> \mid \Phi_x(y) \downarrow\}$ 不是递归的
     2. 递归集类是递归可枚举集类的真子类，递归可枚举集不对补集运算封闭
-4. 归约
-    1. 多一归约与一一归约：设 $A, B$ 为两个集合
-        1. 如果存在一个递归全函数 $g: \mathbf N \to \mathbf N$ 满足对任意 $x$ 都有 $x \in A$ 当且仅当 $g(x) \in B$，则称集合 $A$ 可以多一归约或 $m-$归约到集合 $B$，记作 $A \leqslant_m B$
-        2. 如果 $A \leqslant_m B$ 且 $g$ 为单射，则称集合 $A$ 可以一一归约或 $1-$归约到集合 $B$，记作 $A \leqslant_1 B$
-    2. 递归集与递归可枚举集的归约：设 $A \leqslant_m B$
+4. 多一归约与一一归约：设 $A, B$ 为两个集合，如果存在一个递归全函数 $g: \mathbf N \to \mathbf N$ 满足对任意 $x$ 都有 $x \in A$ 当且仅当 $g(x) \in B$，则称集合 $A$ 可以多一归约或 $m-$归约到集合 $B$，记作 $A \leqslant_m B$；如果 $A \leqslant_m B$ 且 $g$ 为单射，则称集合 $A$ 可以一一归约或 $1-$归约到集合 $B$，记作 $A \leqslant_1 B$
+    1. 递归集与递归可枚举集的归约：设 $A \leqslant_m B$
         1. 若 $B$ 是递归可枚举集，则 $A$ 也是递归可枚举集
         2. 若 $B$ 是递归集，则 $A$ 也是递归集
-    3. 指标集：令 $A \subseteq \mathbf N$，如果对任意 $x, y$ 有 $(x \in A \wedge \Phi_x = \Phi_y) \rightarrow y \in A$，则称 $A$ 是指标集
+    2. 指标集：令 $A \subseteq \mathbf N$，如果对任意 $x, y$ 有 $(x \in A \wedge \Phi_x = \Phi_y) \rightarrow y \in A$，则称 $A$ 是指标集
         1. $\text{Rice}$ 定理：如果 $A$ 是非平凡的指标集，即 $A \neq \varnothing, \mathbf N$，则或者 $K \leqslant_1 A$，或者 $K \leqslant_1 \mathbf N - A$．因此一个指标集是递归的当且仅当其是平凡的
         2. $\text{Rice} - \text{Shapiro}$ 定理：令 $\mathcal A$ 是 $\mathbf N$ 到 $\mathbf N$ 的部分递归函数的集合且有 $A = \{e \mid \phi_e \in \mathcal A\}$ 是递归可枚举的，则部分递归函数 $\psi: \mathbf N \to \mathbf N \in \mathcal A$ 当且仅当存在 $\psi$ 的有穷限制属于 $\mathcal A$
 5. $\text{Hilbert}$ 第十问题：对任意 $\text{Diophantus}$ 方程，即只有有穷个未知数的整系数方程 $P(x_1, x_2, \cdots, x_n) = 0$，是否有整数解不可判定
