@@ -315,8 +315,25 @@
         3. 假设 $\gamma$ 是极限序数，$\left\langle\alpha_{\xi} \mid \xi<\gamma\right\rangle$ 是序数的严格递增序列且 $\alpha$ 是其极限，则 $\operatorname{cf}(\alpha)=\operatorname{cf}(\gamma)$
     3. 对任意无穷基数 $\kappa$，$\kappa^{+}$ 是正则的
         1. 任何奇异的基数都是极限基数
-        2. 对任意无穷基数，总存在比它大的奇异基数
+        2. 对任意无穷基数，总存在比它大的奇异基数，例如对于任意无穷基数 $\aleph_{\alpha}$，存在 $\operatorname{cf}(\aleph_{\alpha + \omega}) = \omega$
         3. 一个极限基数是正则基数的必要条件是 $\alpha=\aleph_{\alpha}$
+
+        $$
+        \textsf{序数} \left\{\begin{aligned}
+        & \textsf{有穷序数} \\
+        & \textsf{无穷序数} \left\{\begin{aligned}
+            & \textsf{非基数的序数} \to \textsf{奇异序数} \\
+            & \textsf{基数} \left\{\begin{aligned}
+                & \textsf{后继基数} \to \textsf{正则序数} \\
+                & \textsf{极限基数} \left\{\begin{aligned}
+                    & \textsf{奇异序数} \\
+                    & \textsf{正则序数：弱不可达基数}
+                    \end{aligned}\right.
+                \end{aligned}\right.
+            \end{aligned}\right.
+        \end{aligned}\right.
+        $$
+
     4. $\text{K}\ddot{\mathrm o}\text{nig}$ 定理：如果对任意 $i \in I$ 都有 $\kappa_{i}<\lambda_{i}$，则 ${\displaystyle \bigoplus_{i \in I} \kappa_{i}<\bigotimes_{i \in I} \lambda_{i}}$
         1. $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：对任何无穷基数 $\kappa$，都有 $\kappa^{\mathrm{cf}(\kappa)}>\kappa$
         2. 对任意序数 $\alpha, \beta$ 都有 $\operatorname{cf}(2^{\aleph_{\alpha}})>\aleph_{\alpha}$ 且 $\operatorname{cf}(\aleph_{\alpha}^{\aleph_{\beta}})>\aleph_{\beta}$
@@ -325,12 +342,9 @@
         2. 若 $A \subseteq \kappa$ 且 $|A|<\kappa$，则 $A$ 在 $\kappa$ 中有界，即存在 $\alpha<\kappa$，$A \subseteq \alpha$
         3. 如果 $|I|<\kappa$，$\left\{\kappa_{i} \mid i \in I\right\}$ 为一集基数，且对任意 $i \in I$ 有 $\kappa_{i}<\kappa$，则 ${\displaystyle \bigoplus_{i \in I} \kappa_{i}<\kappa}$
         4. 令 $\lambda<\kappa$，如果长度为 $\lambda$ 的序列 $\left\langle X_{\xi}\right\rangle_{\xi<\lambda}$ 满足对任意 $\xi<\lambda$，都有 $\left|X_{\xi}\right|<\kappa$，则 ${\displaystyle \left|\bigcup_{\xi<\lambda} X_{\xi}\right|<\kappa_{0}}$
-    6. 不可达基数
-        1. 弱不可达基数：正则的极限基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
-        2. 强不可达基数：强极限的正则基数，在 $\mathbf{ZFC}$ 下不能证明存在这样的基数
-
-            !!! note "强极限性"
-                令 $\kappa, \lambda$ 为基数且 $\lambda<\kappa$．若对任意 $\mu<\kappa$ 都有 $\mu^{\lambda}<\kappa$，则称 $\kappa$ 是 $\lambda-$强的；若对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强的，则称 $\kappa$ 是是强极限的
+    6. 不可达基数：在 $\mathbf{ZFC}$ 下无法证明存在性
+        1. 弱不可达基数：正则的极限基数，
+        2. 强不可达基数：强极限的正则基数，其中强极限即对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强（即对任意 $\mu < \kappa$ 都有 $\mu^{\lambda}<\kappa$）
 
 7. 定义无穷基数上 $\text{Gimel}$ 函数为 $\gimel(\kappa)=\kappa^{\mathrm{cf}(\kappa)}$
     1. 对任意无穷基数 $\kappa, \lambda$ 有
