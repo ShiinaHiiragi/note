@@ -178,7 +178,7 @@
         1. 可数集增加或减少有限个元素后，得到的集合仍是可数集
         2. 如果 $A_1, A_2, \cdots, A_n, \cdots$ 都是可数的，则 ${\displaystyle \bigcup_{k \leqslant n}} A_k$ 是可数的且 ${\displaystyle \bigcup_{n \in \mathbf N}} A_n$ 也是可数的
         3. 如果 $A_1, A_2, \cdots, A_n, \cdots$ 都是可数的，则 $A_1 \times A_2 \times \cdots \times A_n$ 是可数的，但 $A_1 \times A_2 \times \cdots \times A_n \times \cdots$ 是不可数的
-        4. 如果 $A$ 是可数的，则 $A^{< \mathbf N}$  与$A$ 的所有有穷子集组成的集合都是可数的
+        4. 如果 $A$ 是可数的，则 $A^{< \mathbf N}$  与 $A$ 的所有有穷子集组成的集合都是可数的
         5. 如果 $A$ 是可数的，则 $A$ 上等价关系的等价类是至多可数的
     2. 可数集与不可数集合例举
         1. $\text{Cantor}$ 定理：$2^{\mathbf N}$ 是不可数的
@@ -296,9 +296,9 @@
             2. 如果 $\operatorname{cf}(\kappa) \leqslant \lambda$，则 $\kappa^{\lambda}=\kappa^{\mathrm{cff}(\kappa)}$
 
 5. 基数与序列：设 $\kappa, \lambda$ 是无穷基数，则以下命题成立
-    1. $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
-    2. 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
-    3. 若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
+    1. 若 $\lambda$ 是基数，则定义 $\kappa^{<\lambda}=\left|X^{<\lambda}\right|$，其中 $|X|=\kappa$．易知 $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
+    2. 以 $[\kappa]^{\lambda}$ 表示集合 $\{X \subseteq \kappa\mid |X|=\lambda\}$ 的基数．若 $\kappa<\lambda$，则$[\kappa]^{\lambda}=0$；若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
+    3. 以 $[\kappa]^{<\lambda}$ 表示集合 $\{X \subseteq \kappa \mid |X|<\lambda\}$ 的基数．若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
 6. 共尾：对任意序数 $\alpha$，若 $\operatorname{cf}(\alpha)$ 是满足性质「存在映射 $f: \beta \rightarrow \alpha$ 使得 $f[\beta]$ 在 $\alpha$ 中无界」的最小序数 $\beta$，则称映射 $f$ 为共尾映射，$\operatorname{cf}(\alpha)$ 为 $\alpha$ 的共尾．对任何序数 $\alpha$，若 $\operatorname{cf}(\alpha)=\alpha$，则称 $\alpha$ 是正则的，非正则的序数称为奇异的
 
     !!! note "序数的无界性"

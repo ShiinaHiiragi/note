@@ -7,9 +7,7 @@
     3. 由 $A$ 的元素组成的所有有穷序列的集合：$A^* = A^{<\mathbf N} = {\displaystyle \bigcup_{n \in \mathbf N} A^n}$
 2. 超穷序列：定义域为序数 $\alpha$ 的映射称为长度为 $\alpha$ 的序列．不严格地定义映射 $\mathbf{F}: \mathbf{On} \rightarrow \mathbf{V}$
     1. 如果存在一个公式 $\varphi(x, y)$ 有 $\forall x \exists^{1} y \ \varphi(x, y)$，并定义类 $\mathbf{F}=\{(x, y) \mid \varphi(x, y)\}$，则 $\mathbf{F}(x)$ 就是使得 $\varphi(x, y)$ 成立的唯一的 $y$
-    2. 假设 $X$ 为集合，$\alpha$ 为序数，令 $X^{<\alpha}=\bigcup\left\{X^{\beta} \mid \beta<\alpha\right\}$．若 $\lambda$ 是基数，则定义 $\kappa^{<\lambda}=\left|X^{<\lambda}\right|$，其中 $|X|=\kappa$
-        1. 以 $[\kappa]^{\lambda}$ 表示集合 $\{X \subseteq \kappa\mid |X|=\lambda\}$ 的基数．当 $\kappa<\lambda$ 时，$[\kappa]^{\lambda}=0$
-        2. 以 $[\kappa]^{<\lambda}$ 表示集合 $\{X \subseteq \kappa \mid |X|<\lambda\}$ 的基数
+    2. 假设 $X$ 为集合，$\alpha$ 为序数，令 $X^{<\alpha}=\bigcup\left\{X^{\beta} \mid \beta<\alpha\right\}$
 
 ## 1.2 数列
 1. 数列：以数集作为值域的序列称为数列，通常以正整数集 $\mathbf Z_+$ 作为定义域．一般记为 $a_1, a_2, \cdots, a_n, \cdots$，简记作 $\{a_n\}$
