@@ -336,7 +336,7 @@
             & \textsf{非基数的序数} \to \textsf{奇异序数} \\
             & \textsf{基数} \left\{\begin{aligned}
                 & \textsf{后继基数} \to \textsf{正则序数} \\
-                & \textsf{极限基数} \left\{\begin{aligned}
+                & \textsf{极限基数} \to \left\{\begin{aligned}
                     & \textsf{奇异序数} \\
                     & \textsf{正则序数：弱不可达基数}
                     \end{aligned}\right.
