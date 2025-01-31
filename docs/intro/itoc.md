@@ -17,17 +17,6 @@
 #### 5 形式算术
 - 二阶算术
 
-### 公理集合论
-
-!!! note "参考文献"
-    1. 『集合论：对无穷概念的探索』（郝兆宽、杨睿之）
-    2. 『The Higher Infinite: Large Cardinals in Set Theory from their Beginnings』（Akihiro Kanamori）
-
-#### 4 高阶无穷
-1. 力迫：第九章
-2. 可测性
-3. 强假设
-
 ### 范畴论
 
 !!! note "参考文献"
