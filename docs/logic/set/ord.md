@@ -266,7 +266,7 @@
         4. ${\displaystyle \left(\bigotimes_{i \in I} \kappa_{i}\right)^{\lambda}=\bigotimes_{i \in I} \kappa_{i}^{\lambda}}$
     3. 假设 $\lambda$ 为无穷基数，$\left\{\kappa_{\xi}\right\}_{\xi<\lambda}$ 是非零基数的序列且是非降的，则 ${\displaystyle \bigotimes_{\xi<\lambda} \kappa_{\xi}}=\left(\sup _{\xi<\lambda} \kappa_{\xi}\right)^{\lambda}$
 
-4. 基数的幂：定义 $\kappa^{\lambda}=\left|A^{B}\right|$，其中 $|A|=\kappa$ 且 $|B|=\lambda$．特别地，称函数 $2^{\aleph_{\alpha}}$ 为连续统函数，$2^{\aleph_{0}}$ 为连续统的基数
+4. 基数的幂：定义 $\kappa^{\lambda}=\left|A^{B}\right|$，其中 $|A|=\kappa$ 且 $|B|=\lambda$
     1. 对幂的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，则 $\left|A^{B}\right|=\left|A^{\prime B^{\prime}}\right|$
     2. 基数幂的性质：设 $\kappa, \lambda$ 是基数
         1. 如果 $\lambda>0$，则 $\kappa \leqslant \kappa^{\lambda}$
@@ -278,7 +278,6 @@
         2. $\left(\kappa^{\lambda}\right)^{\mu}=\kappa^{\lambda \otimes \mu}$
         3. $(\kappa \otimes \lambda)^{\mu}=\kappa^{\mu} \otimes \lambda^{\mu}$
         4. $2^{\kappa}>\kappa$
-        5. 如果 $\kappa \leqslant \lambda$，则 $\kappa^{\lambda}=2^{\lambda}$
     4. 设 $\alpha, \beta$ 是序数，$n \in \omega$，则以下命题成立
         1. $\text{Hausdorff}$ 公式：$\aleph_{\alpha+1}^{\aleph_{\beta}}=\aleph_{\alpha+1} \otimes \aleph_{\alpha}^{\aleph_{\beta}}$
 
@@ -294,12 +293,24 @@
         3. 如果 $\kappa>\lambda$ 且 $\kappa$ 是 $\lambda-$强的，则
             1. 如果 $\operatorname{cf}(\kappa)>\lambda$，则 $\kappa^{\lambda}=\kappa$
             2. 如果 $\operatorname{cf}(\kappa) \leqslant \lambda$，则 $\kappa^{\lambda}=\kappa^{\mathrm{cf}(\kappa)}$
+    6. 定义无穷基数上 $\text{Gimel}$ 函数为 $\gimel(\kappa)=\kappa^{\mathrm{cf}(\kappa)}$，则对任意无穷基数 $\kappa, \lambda$ 有
 
-5. 基数与序列：设 $\kappa, \lambda$ 是无穷基数，则以下命题成立
-    1. 若 $\lambda$ 是基数，则定义 $\kappa^{<\lambda}=\left|X^{<\lambda}\right|$，其中 $|X|=\kappa$．易知 $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
-    2. 以 $[\kappa]^{\lambda}$ 表示集合 $\{X \subseteq \kappa\mid |X|=\lambda\}$ 的基数．若 $\kappa<\lambda$，则$[\kappa]^{\lambda}=0$；若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
-    3. 以 $[\kappa]^{<\lambda}$ 表示集合 $\{X \subseteq \kappa \mid |X|<\lambda\}$ 的基数．若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
-6. 共尾：对任意序数 $\alpha$，若 $\operatorname{cf}(\alpha)$ 是满足性质「存在映射 $f: \beta \rightarrow \alpha$ 使得 $f[\beta]$ 在 $\alpha$ 中无界」的最小序数 $\beta$，则称映射 $f$ 为共尾映射，$\operatorname{cf}(\alpha)$ 为 $\alpha$ 的共尾．对任何序数 $\alpha$，若 $\operatorname{cf}(\alpha)=\alpha$，则称 $\alpha$ 是正则的，非正则的序数称为奇异的
+        $$
+        \begin{aligned}
+        & \kappa^{\lambda}= \left\{\begin{aligned} & 2^{\lambda}, & \textsf{或 } \\ & \kappa, & \textsf{或 } \\ & \gimel(\mu), & \operatorname{cf}(\mu) \leqslant \lambda<\mu \end{aligned}\right. \\
+        & 2^{\kappa}= \left\{\begin{aligned}& J(\kappa), & \textsf{ 若 } \kappa \textsf{ 是后继基数 } \\ & 2^{\mu_{0}} \otimes I(\kappa), & \textsf{ 若 } \kappa \textsf{ 是极限基数且 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\ & I\left(2^{<\kappa}\right), & \textsf{ 若 } \kappa \textsf{ 是极限基数且连续统函数在 } \kappa \textsf{ 下不存在不动点 }\end{aligned}\right.
+        \end{aligned}
+        $$
+
+        1. 如果 $\kappa$ 是极限基数，则 $2^{\kappa}=\left(2^{<\kappa}\right)^{\mathrm{cf}(\kappa)}$
+        2. 如果 $\kappa$ 是强极限基数，则 $2^{\kappa}=\kappa^{\operatorname{cf}(\kappa)}$
+
+    7. 基数与序列：设 $\kappa, \lambda$ 是无穷基数，则以下命题成立
+        1. 若 $\lambda$ 是基数，则定义 $\kappa^{<\lambda}=\left|X^{<\lambda}\right|$，其中 $|X|=\kappa$．易知 $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
+        2. 以 $[\kappa]^{\lambda}$ 表示集合 $\{X \subseteq \kappa\mid |X|=\lambda\}$ 的基数．若 $\kappa<\lambda$，则$[\kappa]^{\lambda}=0$；若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
+        3. 以 $[\kappa]^{<\lambda}$ 表示集合 $\{X \subseteq \kappa \mid |X|<\lambda\}$ 的基数．若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
+
+5. 共尾：对任意序数 $\alpha$，若 $\operatorname{cf}(\alpha)$ 是满足性质「存在映射 $f: \beta \rightarrow \alpha$ 使得 $f[\beta]$ 在 $\alpha$ 中无界」的最小序数 $\beta$，则称映射 $f$ 为共尾映射，$\operatorname{cf}(\alpha)$ 为 $\alpha$ 的共尾．对任何序数 $\alpha$，若 $\operatorname{cf}(\alpha)=\alpha$，则称 $\alpha$ 是正则的，非正则的序数称为奇异的
 
     !!! note "序数的无界性"
         设 $A$ 是序数 $\alpha$ 的子集，如果 $A$ 满足 $\forall \gamma<\alpha \ \exists \xi \in A \ (\gamma \leqslant \xi)$，则称 $A$ 在 $\alpha$ 中是无界的
@@ -344,50 +355,39 @@
         4. 令 $\lambda<\kappa$，如果长度为 $\lambda$ 的序列 $\left\langle X_{\xi}\right\rangle_{\xi<\lambda}$ 满足对任意 $\xi<\lambda$，都有 $\left|X_{\xi}\right|<\kappa$，则 ${\displaystyle \left|\bigcup_{\xi<\lambda} X_{\xi}\right|<\kappa_{0}}$
     6. 不可达基数：在 $\mathbf{ZFC}$ 下无法证明存在性
         1. 弱不可达基数：正则的极限基数，
-        2. 强不可达基数：强极限的正则基数，其中强极限即对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强（即对任意 $\mu < \kappa$ 都有 $\mu^{\lambda}<\kappa$）
+        2. 强不可达基数：正则的强极限基数，其中强极限即对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强（即对任意 $\mu < \kappa$ 都有 $\mu^{\lambda}<\kappa$）
 
-7. 定义无穷基数上 $\text{Gimel}$ 函数为 $\gimel(\kappa)=\kappa^{\mathrm{cf}(\kappa)}$
-    1. 对任意无穷基数 $\kappa, \lambda$ 有
+6. 连续统函数：$2^{\aleph_{\alpha}}$，并称 $2^{\aleph_{0}}$ 为连续统的基数
+    1. 对任意基数 $\kappa$，如果存在 $\mu_{0}<\kappa$ 使得对任意 $\mu_{0} \leqslant \mu<\kappa$ 都有 $2^{\mu}=2^{\mu_{0}}$，则称 $2^{\mu_{0}}$ 为连续统函数在 $\kappa$ 下的不动点．如果这样的不动点存在，也称连续统函数在 $\kappa$ 下终究为常量
+    2. 连续统假设下的基数幂
+        1. 令 $\kappa, \lambda$ 为无穷基数，同时假设 $\textbf{GCH}$ 成立，则
 
-        $$
-        \begin{aligned}
-        & \kappa^{\lambda}= \left\{\begin{aligned} & 2^{\lambda}, & \textsf{或 } \\ & \kappa, & \textsf{或 } \\ & \gimel(\mu), & \operatorname{cf}(\mu) \leqslant \lambda<\mu \end{aligned}\right. \\
-        & 2^{\kappa}= \left\{\begin{aligned}& J(\kappa), & \textsf{ 若 } \kappa \textsf{ 是后继基数 } \\ & 2^{\mu_{0}} \otimes I(\kappa), & \textsf{ 若 } \kappa \textsf{ 是极限基数且 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\ & I\left(2^{<\kappa}\right), & \textsf{ 若 } \kappa \textsf{ 是极限基数且连续统函数在 } \kappa \textsf{ 下不存在不动点 }\end{aligned}\right.
-        \end{aligned}
-        $$
+            $$
+            \kappa^{\lambda}=\left\{\begin{aligned}
+            & \lambda^{+}, & \kappa \leqslant \lambda ; \\
+            & \kappa^{+}, & \operatorname{cf}(\kappa) \leqslant \lambda<\kappa ; \\
+            & \kappa, & \lambda<\operatorname{cf}(\kappa)
+            \end{aligned}\right.
+            $$
 
-        1. 如果 $\kappa$ 是极限基数，则 $2^{\kappa}=\left(2^{<\kappa}\right)^{\mathrm{cf}(\kappa)}$
-        2. 如果 $\kappa$ 是强极限基数，则 $2^{\kappa}=\kappa^{\operatorname{cf}(\kappa)}$
+        2. 令 $\kappa, \lambda$ 为无穷基数，同时假设 $\textbf{SCH}$ 成立，则
 
-    2. 对任意基数 $\kappa$，如果存在 $\mu_{0}<\kappa$ 使得对任意 $\mu_{0} \leqslant \mu<\kappa$ 都有 $2^{\mu}=2^{\mu_{0}}$，则称 $2^{\mu_{0}}$ 为连续统函数在 $\kappa$ 下的不动点．如果这样的不动点存在，也称连续统函数在 $\kappa$ 下终究为常量
-    3. 令 $\kappa, \lambda$ 为无穷基数，同时假设 $\textbf{GCH}$ 成立，则
+            $$
+            \kappa^{\lambda}= \left\{\begin{aligned}
+            & 2^{\lambda}, & \kappa \leqslant 2^{\lambda} \\
+            & \kappa^{+}, & \kappa>2^{\lambda} \wedge \operatorname{cf}(\kappa) \leqslant \lambda \\
+            & \kappa, & \kappa>2^{\lambda} \wedge \operatorname{cf}(\kappa)>\lambda_{0}
+            \end{aligned}\right.
+            $$
 
-        $$
-        \kappa^{\lambda}=\left\{\begin{aligned}
-        & \lambda^{+}, & \kappa \leqslant \lambda ; \\
-        & \kappa^{+}, & \operatorname{cf}(\kappa) \leqslant \lambda<\kappa ; \\
-        & \kappa, & \lambda<\operatorname{cf}(\kappa)
-        \end{aligned}\right.
-        $$
+        3. 令 $\kappa$ 为奇异基数，同时假设 $\mathbf{SCH}$ 成立，则
 
-    4. 令 $\kappa, \lambda$ 为无穷基数，同时假设 $\textbf{SCH}$ 成立，则
-
-        $$
-        \kappa^{\lambda}= \left\{\begin{aligned}
-        & 2^{\lambda}, & \kappa \leqslant 2^{\lambda} \\
-        & \kappa^{+}, & \kappa>2^{\lambda} \wedge \operatorname{cf}(\kappa) \leqslant \lambda \\
-        & \kappa, & \kappa>2^{\lambda} \wedge \operatorname{cf}(\kappa)>\lambda_{0}
-        \end{aligned}\right.
-        $$
-
-    5. 令 $\kappa$ 为奇异基数，同时假设 $\mathbf{SCH}$ 成立，则
-
-        $$
-        2^{\kappa}= \left\{\begin{aligned}
-        & 2^{\mu_{0}}, & \textsf{若 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\
-        & \left(2^{<\kappa}\right)^{+}, & \textsf{若连续统函数在 } \kappa \textsf{ 下没有不动点 }
-        \end{aligned}\right.
-        $$
+            $$
+            2^{\kappa}= \left\{\begin{aligned}
+            & 2^{\mu_{0}}, & \textsf{若 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\
+            & \left(2^{<\kappa}\right)^{+}, & \textsf{若连续统函数在 } \kappa \textsf{ 下没有不动点 }
+            \end{aligned}\right.
+            $$
 
 ### 3.2.3 无界闭集
 1. 无界闭集：令 $\alpha$ 为极限序数，$\alpha$ 的子集 $C \subseteq \alpha$ 如果满足
