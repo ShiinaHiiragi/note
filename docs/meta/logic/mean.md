@@ -79,7 +79,7 @@
         2. 一个不定摹状词的对象存在定义为命题函项「$x$ 是一个有性质 $\varphi$ 的对象」有时真，即 $\exists x \ \varphi(x)$
     2. 限定摹状词：用 $\iota$ 代表定冠词，用 $\iota x \varphi x$ 表示「那个唯一具有性质 $\varphi$ 的个体」
         1. 包含限定摹状词的命题 $\psi(\iota x \varphi x)$ 定义为 $\exists c \ (\forall x \ ((\varphi(x) \leftrightarrow x = c) \wedge \psi(c)))$
-        2. 用 $\exists!$ 表示「恰好存在一个」，则有定义 $\exists! (\iota x \varphi x) = \exists c \ (\forall x \ (\varphi(x) \leftrightarrow x = c))$
+        2. 用 $\exists^1$ 表示「恰好存在一个」，则有定义 $\exists^1 (\iota x \varphi x) = \exists c \ (\forall x \ (\varphi(x) \leftrightarrow x = c))$
         3. 初现：如果摹状词以整个命题为辖域，则称其在命题中是初现，用 $[\iota x \varphi x](\neg \psi(\iota x \varphi x))$ 表示摹状词在其中有初现，定义为 $\exists c \ (\forall x \ ((\varphi(x) \leftrightarrow x = c) \wedge \neg \psi(c)))$
         4. 次现：如果摹状词以命题中的一个支命题为辖域，则称其在命题中是次现，用 $\neg [\iota x \varphi x](\neg \psi(\iota x \varphi x))$ 表示摹状词在其中有次现，定义为 $\neg \exists c \ (\forall x \ ((\varphi(x) \leftrightarrow x = c) \wedge \neg \psi(c)))$
 4. 存在是命题函项的基本属性

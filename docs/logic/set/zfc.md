@@ -13,7 +13,7 @@
 
         3. $\forall x \ (x < A \to \varphi(x))$：$\forall x < A \ \varphi(x)$
 
-            $\exists x \ (x < A \wedge \varphi(x))$ 简写为 $\exists x < A \ \varphi(x)$
+            $\exists x \ (x < A \wedge \varphi(x))$：$\exists x < A \ \varphi(x)$
 
         4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists^{1} x \ \varphi(x)$
 
