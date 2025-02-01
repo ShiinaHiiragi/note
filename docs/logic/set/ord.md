@@ -215,6 +215,8 @@
                 1. 对任意 $\alpha$，$\aleph_{\alpha}$ 是无穷基数
                 2. 对任意无穷基数 $\kappa$，存在 $\alpha$ 使得 $\kappa=\aleph_{\alpha}$
 
+    4. 强极限基数：对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强（即对任意 $\mu < \kappa$ 都有 $\mu^{\lambda}<\kappa$）的
+
 2. 基数的和与积
     1. 基数的加法：定义 $\kappa \oplus \lambda=|A \cup B|$，其中 $\kappa=|A|, \lambda=|B|$ 且 $A \cap B=\varnothing$
         1. 对加法的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，而且 $A \cap B=A^{\prime} \cap B^{\prime}=\varnothing$，则 $|A \cup B|=\left|A^{\prime} \cup B^{\prime}\right|$
@@ -293,19 +295,8 @@
         3. 如果 $\kappa>\lambda$ 且 $\kappa$ 是 $\lambda-$强的，则
             1. 如果 $\operatorname{cf}(\kappa)>\lambda$，则 $\kappa^{\lambda}=\kappa$
             2. 如果 $\operatorname{cf}(\kappa) \leqslant \lambda$，则 $\kappa^{\lambda}=\kappa^{\mathrm{cf}(\kappa)}$
-    6. 定义无穷基数上 $\text{Gimel}$ 函数为 $\gimel(\kappa)=\kappa^{\mathrm{cf}(\kappa)}$，则对任意无穷基数 $\kappa, \lambda$ 有
 
-        $$
-        \begin{aligned}
-        & \kappa^{\lambda}= \left\{\begin{aligned} & 2^{\lambda}, & \textsf{或 } \\ & \kappa, & \textsf{或 } \\ & \gimel(\mu), & \operatorname{cf}(\mu) \leqslant \lambda<\mu \end{aligned}\right. \\
-        & 2^{\kappa}= \left\{\begin{aligned}& J(\kappa), & \textsf{ 若 } \kappa \textsf{ 是后继基数 } \\ & 2^{\mu_{0}} \otimes I(\kappa), & \textsf{ 若 } \kappa \textsf{ 是极限基数且 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\ & I\left(2^{<\kappa}\right), & \textsf{ 若 } \kappa \textsf{ 是极限基数且连续统函数在 } \kappa \textsf{ 下不存在不动点 }\end{aligned}\right.
-        \end{aligned}
-        $$
-
-        1. 如果 $\kappa$ 是极限基数，则 $2^{\kappa}=\left(2^{<\kappa}\right)^{\mathrm{cf}(\kappa)}$
-        2. 如果 $\kappa$ 是强极限基数，则 $2^{\kappa}=\kappa^{\operatorname{cf}(\kappa)}$
-
-    7. 基数与序列：设 $\kappa, \lambda$ 是无穷基数，则以下命题成立
+    6. 基数与序列：设 $\kappa, \lambda$ 是无穷基数，则以下命题成立
         1. 若 $\lambda$ 是基数，则定义 $\kappa^{<\lambda}=\left|X^{<\lambda}\right|$，其中 $|X|=\kappa$．易知 $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
         2. 以 $[\kappa]^{\lambda}$ 表示集合 $\{X \subseteq \kappa\mid |X|=\lambda\}$ 的基数．若 $\kappa<\lambda$，则$[\kappa]^{\lambda}=0$；若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
         3. 以 $[\kappa]^{<\lambda}$ 表示集合 $\{X \subseteq \kappa \mid |X|<\lambda\}$ 的基数．若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
@@ -355,11 +346,25 @@
         4. 令 $\lambda<\kappa$，如果长度为 $\lambda$ 的序列 $\left\langle X_{\xi}\right\rangle_{\xi<\lambda}$ 满足对任意 $\xi<\lambda$，都有 $\left|X_{\xi}\right|<\kappa$，则 ${\displaystyle \left|\bigcup_{\xi<\lambda} X_{\xi}\right|<\kappa_{0}}$
     6. 不可达基数：在 $\mathbf{ZFC}$ 下无法证明存在性
         1. 弱不可达基数：正则的极限基数，
-        2. 强不可达基数：正则的强极限基数，其中强极限即对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强（即对任意 $\mu < \kappa$ 都有 $\mu^{\lambda}<\kappa$）
+        2. 强不可达基数：正则的强极限基数
 
 6. 连续统函数：$2^{\aleph_{\alpha}}$，并称 $2^{\aleph_{0}}$ 为连续统的基数
-    1. 对任意基数 $\kappa$，如果存在 $\mu_{0}<\kappa$ 使得对任意 $\mu_{0} \leqslant \mu<\kappa$ 都有 $2^{\mu}=2^{\mu_{0}}$，则称 $2^{\mu_{0}}$ 为连续统函数在 $\kappa$ 下的不动点．如果这样的不动点存在，也称连续统函数在 $\kappa$ 下终究为常量
-    2. 连续统假设下的基数幂
+    1. 定义无穷基数上 $\text{Gimel}$ 函数为 $\gimel(\kappa)=\kappa^{\mathrm{cf}(\kappa)}$，则对任意无穷基数 $\kappa, \lambda$ 有
+
+        $$
+        \kappa^{\lambda}= \left\{\begin{aligned} & 2^{\lambda}, & \textsf{或 } \\ & \kappa, & \textsf{或 } \\ & \gimel(\mu), & \operatorname{cf}(\mu) \leqslant \lambda<\mu \end{aligned}\right.
+        $$
+
+    2. 对任意基数 $\kappa$，如果存在 $\mu_{0}<\kappa$ 使得对任意 $\mu_{0} \leqslant \mu<\kappa$ 都有 $2^{\mu}=2^{\mu_{0}}$，则称 $2^{\mu_{0}}$ 为连续统函数在 $\kappa$ 下的不动点；如果这样的不动点存在，也称连续统函数在 $\kappa$ 下终究为常量．设 $\kappa$ 为无穷基数，则
+
+        $$
+        2^{\kappa}= \left\{\begin{aligned}& J(\kappa), & \textsf{ 若 } \kappa \textsf{ 是后继基数 } \\ & 2^{\mu_{0}} \otimes I(\kappa), & \textsf{ 若 } \kappa \textsf{ 是极限基数且 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\ & I\left(2^{<\kappa}\right), & \textsf{ 若 } \kappa \textsf{ 是极限基数且连续统函数在 } \kappa \textsf{ 下不存在不动点 }\end{aligned}\right.
+        $$
+
+        1. 如果 $\kappa$ 是极限基数，则 $2^{\kappa}=\left(2^{<\kappa}\right)^{\mathrm{cf}(\kappa)}$
+        2. 如果 $\kappa$ 是强极限基数，则 $2^{\kappa}=\kappa^{\operatorname{cf}(\kappa)}$
+
+    3. 连续统假设下的基数幂
         1. 令 $\kappa, \lambda$ 为无穷基数，同时假设 $\textbf{GCH}$ 成立，则
 
             $$
