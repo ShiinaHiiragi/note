@@ -641,7 +641,7 @@
             2. 对任意原子公式 $\alpha$，$\mathfrak M^\Sigma \vDash \alpha$ 当且仅当 $\Sigma \vdash_{\mathbf H_1} \alpha$
             3. 对任意公式 $\alpha$，$\mathfrak M^\Sigma \vDash \exists \overline x\alpha$ 当且仅当存在项序列 $\overline t$ 使得 $\mathfrak M^\Sigma \vDash \alpha(\overline t/\overline x)$
             4. 对任意公式 $\alpha$，$\mathfrak M^\Sigma \vDash \forall \overline x\alpha$ 当且仅当对所有项序列 $\overline t$ 都有 $\mathfrak M^\Sigma \vDash \alpha(\overline t/\overline x)$
-    2. 如果公式集 $\Sigma$ 对任意公式 $\alpha$ 都有 $\Sigma \vdash_{\mathbf H_1} \alpha$ 或 $\Sigma \nvdash_{\mathbf H_1} \neg \alpha$，则称公式集 $\Sigma$ 是完备的；如果公式集 $\Sigma$ 对每个公式 $\exists x\alpha \in \mathcal F(S)$ 都有 $t\in \mathcal T(S)$ 使得 $\Sigma \vdash_{\mathbf H_1} \exists x\alpha \to \alpha(t/x)$，则称 $\Sigma$ 是证据集
+    2. 如果公式集 $\Sigma$ 对任意公式 $\alpha$ 都有 $\Sigma \vdash_{\mathbf H_1} \alpha$ 或 $\Sigma \vdash_{\mathbf H_1} \neg \alpha$，则称公式集 $\Sigma$ 是完备的；如果公式集 $\Sigma$ 对每个公式 $\exists x\alpha \in \mathcal F(S)$ 都有 $t\in \mathcal T(S)$ 使得 $\Sigma \vdash_{\mathbf H_1} \exists x\alpha \to \alpha(t/x)$，则称 $\Sigma$ 是证据集
         1. 设 $\Sigma$ 是 $\mathbf H_1-$一致的完备证据集，对任意公式集 $\Sigma \cup \{\alpha, \beta\}$，在 $\mathbf H_1$ 中成立
             1. $\Sigma \vdash \neg \alpha$ 当且仅当 $\Sigma \nvdash \alpha$
             2. $\Sigma \vdash \alpha \wedge \beta$ 当且仅当 $\Sigma \vdash \alpha$ 且 $\Sigma \vdash \beta$
