@@ -52,7 +52,7 @@
 3. $\text{Kleene } \mathcal{O}-$记号：按照 $\text{Turing}$ 机编码的字典序枚举所有部分递归函数 $f_1, f_2, \cdots$，设 $K$ 表示所有记号，$<_{\mathcal O}$ 表示 $K$ 的良基严格偏序．定义 $\mathcal O: K \to \mathbf{On}$ 如下
     1. $0 \in K$ 且 $\mathcal O(0) = 0$
     2. 若 $n \in K$ 且 $\mathcal O(n) = \alpha$，则 $n <_{\mathcal O} 2^{n} \in K$ 且 $\mathcal O(2^{n}) = \alpha + 1$
-    3. 若对任何自然数 $n$ 都有 $f_i(n) \in K$ 且 $f_i(n) <_{\mathcal O} f_i(n + 1)$，则 $3 \cdot 5^i \in K, {\displaystyle \mathcal{O}(3 \cdot 5^i) = \sup_{k \in \omega} \mathcal{O}(f_i(k))}$，且对于所有 $k$ 都有 $f_i(k) <_\mathcal{O} 3 \cdot 5^i$
+    3. 若对任意 $n \in \mathbf N$ 有 $f_i(n) \in K$ 且 $f_i(n) <_{\mathcal O} f_i(n + 1)$，则 $3 \cdot 5^i \in K, {\displaystyle \mathcal{O}(3 \cdot 5^i) = \sup_{k \in \omega} \mathcal{O}(f_i(k))}$ 且对所有 $k$ 都有 $f_i(k) <_\mathcal{O} 3 \cdot 5^i$
     4. $a <_\mathcal{O} b$ 与 $b <_\mathcal{O} c$ 蕴含 $a <_\mathcal{O} c$
 
 ### 5.1.2 可数序数

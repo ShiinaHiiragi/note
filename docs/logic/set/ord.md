@@ -187,12 +187,11 @@
 
 ### 3.2.2 基数
 1. 基数：集合 $A$ 的基数 $|A|$ 定义为与其等势的最小序数
-    1. 对任意序数 $\alpha$, 以下条件等价
-        1. $\alpha$ 是基数
-        2. $|\alpha|=\alpha$
-        3. 对任意序数 $\beta$，如果 $\beta<\alpha$，则 $\beta<|\alpha|$
-        4. 对任意序数 $\beta$，如果 $\beta<\alpha$，则 $|\beta|<|\alpha|$
-        5. 对任意序数 $\beta$，如果 $\beta<\alpha$，则 $|\beta| \neq|\alpha|$
+    1. 对任意基数 $\alpha$, 以下条件等价
+        1. $|\alpha|=\alpha$
+        2. 对任意序数 $\beta$，如果 $\beta<\alpha$，则 $\beta<|\alpha|$
+        3. 对任意序数 $\beta$，如果 $\beta<\alpha$，则 $|\beta|<|\alpha|$
+        4. 对任意序数 $\beta$，如果 $\beta<\alpha$，则 $|\beta| \neq|\alpha|$
 
         一个序数是某个集合的基数当且仅当不存在比它小的序数与其等势，称这样的序数为前段序数
 
@@ -200,8 +199,8 @@
         1. 对任何基数 $\lambda$，都存在一个大于它的最小基数，记作 $\lambda^{+}$，称其为 $\lambda$ 的 $\text{Hartogs}$ 数
         2. 如果 $K$ 是基数的集合，则 $\alpha=\bigcup K$ 是基数
     3. 基数的分类
-        1. 如果 $\lambda=\kappa^{+}$，则称 $\lambda$ 为后继基数．如果 $\lambda \geqslant \omega$ 且不是后继基数，则称 $\lambda$ 为极限基数
-        2. 自然数恰好就是有穷基数，大于等于 $\omega$ 的基数称为无穷基数
+        1. 自然数恰好就是有穷基数，大于等于 $\omega$ 的基数称为无穷基数
+        2. 如果 $\lambda=\kappa^{+}$，则称 $\lambda$ 为后继基数．如果 $\lambda \geqslant \omega$ 且不是后继基数，则称 $\lambda$ 为极限基数
 
             !!! note "无穷基数的表示"
                 通常用字符 $\aleph$ 或 $\omega$ 表示无穷基数，从第一个无穷基数开始分别记作 $\aleph_{0}, \aleph_{1}, \aleph_{2}, \cdots$ 或 $\omega_{0}, \omega_{1}, \omega_{2}, \cdots$．对任意序数 $\alpha$，递归定义 $\omega_{\alpha}$ 与 $\aleph_{\alpha}$ 如下：
@@ -212,8 +211,8 @@
 
                 无穷基数一定是极限序数，$\aleph_{\alpha}$ 恰好表示「第 $\alpha$ 个无穷基数」，由以下定理保证：
 
-                1. 对任意 $\alpha$，$\aleph_{\alpha}$ 是无穷基数
-                2. 对任意无穷基数 $\kappa$，存在 $\alpha$ 使得 $\kappa=\aleph_{\alpha}$
+                4. 对任意 $\alpha$，$\aleph_{\alpha}$ 是无穷基数
+                5. 对任意无穷基数 $\kappa$，存在 $\alpha$ 使得 $\kappa=\aleph_{\alpha}$
 
     4. 强极限基数：对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强（即对任意 $\mu < \kappa$ 都有 $\mu^{\lambda}<\kappa$）的
 
@@ -266,7 +265,7 @@
         2. ${\displaystyle \lambda \cdot \bigoplus_{i \in I} \kappa_{i}=\bigoplus_{i \in I} \lambda \cdot \kappa_{i}}$
         3. ${\displaystyle \lambda^{\oplus_{i \in I} \kappa_{i}}=\bigotimes_{i \in I} \lambda^{\kappa_{i}}}$
         4. ${\displaystyle \left(\bigotimes_{i \in I} \kappa_{i}\right)^{\lambda}=\bigotimes_{i \in I} \kappa_{i}^{\lambda}}$
-    3. 假设 $\lambda$ 为无穷基数，$\left\{\kappa_{\xi}\right\}_{\xi<\lambda}$ 是非零基数的序列且是非降的，则 ${\displaystyle \bigotimes_{\xi<\lambda} \kappa_{\xi}}=\left(\sup _{\xi<\lambda} \kappa_{\xi}\right)^{\lambda}$
+    3. 假设 $\lambda$ 为无穷基数，$\left\{\kappa_{\xi}\right\}_{\xi<\lambda}$ 是非零基数的序列且是非降的，则 ${\displaystyle \bigotimes_{\xi<\lambda} \kappa_{\xi}}=({\displaystyle \sup _{\xi<\lambda} \kappa_{\xi}})^{\lambda}$
 
 4. 基数的幂：定义 $\kappa^{\lambda}=\left|A^{B}\right|$，其中 $|A|=\kappa$ 且 $|B|=\lambda$
     1. 对幂的定义不依赖于 $A, B$ 的选择：如果 $|A|=\left|A^{\prime}\right|$ 且 $|B|=\left|B^{\prime}\right|$，则 $\left|A^{B}\right|=\left|A^{\prime B^{\prime}}\right|$
@@ -297,9 +296,9 @@
             2. 如果 $\operatorname{cf}(\kappa) \leqslant \lambda$，则 $\kappa^{\lambda}=\kappa^{\mathrm{cf}(\kappa)}$
 
     6. 基数与序列：设 $\kappa, \lambda$ 是无穷基数，则以下命题成立
-        1. 若 $\lambda$ 是基数，则定义 $\kappa^{<\lambda}=\left|X^{<\lambda}\right|$，其中 $|X|=\kappa$．易知 $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
-        2. 以 $[\kappa]^{\lambda}$ 表示集合 $\{X \subseteq \kappa\mid |X|=\lambda\}$ 的基数．若 $\kappa<\lambda$，则$[\kappa]^{\lambda}=0$；若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
-        3. 以 $[\kappa]^{<\lambda}$ 表示集合 $\{X \subseteq \kappa \mid |X|<\lambda\}$ 的基数．若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
+        1. 设 $\lambda$ 是基数，定义 $\kappa^{<\lambda}=\left|X^{<\lambda}\right|$，其中 $|X|=\kappa$，则 $\kappa^{<\lambda}=\sup \left\{\kappa^{\eta} \mid \eta\right.$ 是基数且 $\left.\eta<\lambda\right\}$
+        2. 以 $[\kappa]^{\lambda}$ 表示集合 $\{X \subseteq \kappa\mid |X|=\lambda\}$ 的基数，那么若 $\kappa<\lambda$，则$[\kappa]^{\lambda}=0$；若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{\lambda}=\kappa^{\lambda}$
+        3. 以 $[\kappa]^{<\lambda}$ 表示集合 $\{X \subseteq \kappa \mid |X|<\lambda\}$ 的基数，那么若 $\lambda \leqslant \kappa$, 则 $[\kappa]^{<\lambda}=\kappa^{<\lambda}$
 
 5. 共尾：对任意序数 $\alpha$，若 $\operatorname{cf}(\alpha)$ 是满足性质「存在映射 $f: \beta \rightarrow \alpha$ 使得 $f[\beta]$ 在 $\alpha$ 中无界」的最小序数 $\beta$，则称映射 $f$ 为共尾映射，$\operatorname{cf}(\alpha)$ 为 $\alpha$ 的共尾．对任何序数 $\alpha$，若 $\operatorname{cf}(\alpha)=\alpha$，则称 $\alpha$ 是正则的，非正则的序数称为奇异的
 
@@ -344,9 +343,6 @@
         2. 若 $A \subseteq \kappa$ 且 $|A|<\kappa$，则 $A$ 在 $\kappa$ 中有界，即存在 $\alpha<\kappa$，$A \subseteq \alpha$
         3. 如果 $|I|<\kappa$，$\left\{\kappa_{i} \mid i \in I\right\}$ 为一集基数，且对任意 $i \in I$ 有 $\kappa_{i}<\kappa$，则 ${\displaystyle \bigoplus_{i \in I} \kappa_{i}<\kappa}$
         4. 令 $\lambda<\kappa$，如果长度为 $\lambda$ 的序列 $\left\langle X_{\xi}\right\rangle_{\xi<\lambda}$ 满足对任意 $\xi<\lambda$，都有 $\left|X_{\xi}\right|<\kappa$，则 ${\displaystyle \left|\bigcup_{\xi<\lambda} X_{\xi}\right|<\kappa_{0}}$
-    6. 不可达基数：在 $\mathbf{ZFC}$ 下无法证明存在性
-        1. 弱不可达基数：正则的极限基数，
-        2. 强不可达基数：正则的强极限基数
 
 6. 连续统函数：$2^{\aleph_{\alpha}}$，并称 $2^{\aleph_{0}}$ 为连续统的基数
     1. 定义无穷基数上 $\text{Gimel}$ 函数为 $\gimel(\kappa)=\kappa^{\mathrm{cf}(\kappa)}$，则对任意无穷基数 $\kappa, \lambda$ 有
@@ -393,6 +389,10 @@
             & \left(2^{<\kappa}\right)^{+}, & \textsf{若连续统函数在 } \kappa \textsf{ 下没有不动点 }
             \end{aligned}\right.
             $$
+
+7. 不可达基数：在 $\mathbf{ZFC}$ 下无法证明存在性
+    1. 弱不可达基数：正则的极限基数
+    2. 强不可达基数：正则的强极限基数
 
 ### 3.2.3 无界闭集
 1. 无界闭集：令 $\alpha$ 为极限序数，$\alpha$ 的子集 $C \subseteq \alpha$ 如果满足
