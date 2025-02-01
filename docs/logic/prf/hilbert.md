@@ -252,24 +252,22 @@
     2. 可靠性的等价形式：若 $\Gamma$ 是可满足的，则 $\Gamma$ 是 $\mathbf{HK}-$一致的
 7. 一致性：$\mathbf{HK}$ 是一致的
     1. 若公式集 $\Gamma$ 有 $\Gamma \nvdash_\mathbf{HK} \bot$，则称 $\Gamma$ 是 $\mathbf{HK}-$一致的，否则 $\Gamma$ 是 $\mathbf{HK}-$不一致的
-    2. 若公式集 $\Gamma$ 是 $\mathbf{HK}-$一致的，且对任何 $\mathbf{HK}-$一致的公式集 $\Delta$，若 $\Gamma \subseteq \Delta$，那么 $\Gamma = \Delta$，则称 $\Gamma$ 是极大 $\mathbf{HK}-$一致的
-    3. 对任何极大 $\mathbf{HK}-$一致公式集 $\Gamma$
+    2. 若公式集 $\Gamma$ 是 $\mathbf{HK}-$一致的，且对任何 $\mathbf{HK}-$一致的公式集 $\Delta$，若 $\Gamma \subseteq \Delta$ 有 $\Gamma = \Delta$，则称 $\Gamma$ 是极大 $\mathbf{HK}-$一致的，此时有
         1. 若 $\Gamma \vdash_\mathbf{HK} \alpha$，则 $\alpha \in \Gamma$
         2. $\mathrm{Thm}(\mathbf{HK}) \subseteq \Gamma$ 且 $\bot \notin \Gamma$
         3. $\neg \alpha \in \Gamma$ 当且仅当 $\alpha \notin \Gamma$
         4. $\alpha \wedge \beta \in \Gamma$ 当且仅当 $\alpha \in \Gamma$ 且 $\beta \in \Gamma$
         5. $\alpha \vee \beta \in \Gamma$ 当且仅当 $\alpha \in \Gamma$ 或 $\beta \in \Gamma$
         6. $\alpha \to \beta \in \Gamma$ 当且仅当 $\alpha \notin \Gamma$ 或 $\beta \in \Gamma$
-    4. $\text{Lindenbaum}$ 定理：若 $\Gamma$ 是$\mathbf{HK}-$一致的公式集，那么存在极大 $\mathbf{HK}-$一致的公式集 $\Delta$ 使得 $\Gamma \subseteq \Delta$
+    3. $\text{Lindenbaum}$ 定理：若 $\Gamma$ 是$\mathbf{HK}-$一致的公式集，那么存在极大 $\mathbf{HK}-$一致的公式集 $\Delta$ 使得 $\Gamma \subseteq \Delta$
 8. 完全性：若 $\Gamma \vDash \alpha$，那么 $\Gamma \vdash_\mathbf{HK} \alpha$
     1. $\mathbf{CL} \subseteq \mathrm{Thm}(\mathbf{HK})$
     2. 完全性的等价形式：若 $\Gamma$ 是 $\mathbf{HK}-$一致的，则 $\Gamma$ 是可满足的
     3. 紧致性：一个公式集 $\Gamma$ 可满足当且仅当 $\Gamma$ 的每个有穷子集可满足
 9.  其他性质
     1. $\text{Post}$ 完全性：$\mathbf{HK}$ 是 $\text{Post}$ 完全的，即若 $\nvdash_\mathbf{HK} \alpha$，那么在系统 $\mathbf{HK}$ 上增加 $\alpha$ 作为公理所得到的系统是不一致的
-    2. 可判定性：$\mathbf{CL}$ 是可判定的，即存在一种能行的方法使得对任何公式 $\alpha$ 可在有穷步骤之内确定 $\alpha$ 是否属于 $\mathbf{CL}$，因此 $\mathrm{Thm}(\mathbf{HK})$ 是可判定的
-    3. 析取性质：$\mathbf{HK}$ 不具有析取性质，即存在公式 $\alpha \vee \beta$，有 $\vdash_\mathbf{HK} \alpha \vee \beta$ 且 $\nvdash_\mathbf{HK} \alpha$ 且 $\nvdash_\mathbf{HK} \beta$
-    4. 插值性质：$\mathbf{HK}$ 具有插值性质，即对任何公式 $\alpha \to \beta$，若 $\vdash_\mathbf{HK} \alpha \to \beta$，那么存在公式 $\chi$ 使得
+    2. 析取性质：$\mathbf{HK}$ 不具有析取性质，即存在公式 $\alpha \vee \beta$，有 $\vdash_\mathbf{HK} \alpha \vee \beta$ 且 $\nvdash_\mathbf{HK} \alpha$ 且 $\nvdash_\mathbf{HK} \beta$
+    3. 插值性质：$\mathbf{HK}$ 具有插值性质，即对任何公式 $\alpha \to \beta$，若 $\vdash_\mathbf{HK} \alpha \to \beta$，那么存在公式 $\chi$ 使得
         1. $\vdash_\mathbf{HK} \alpha \to \chi$
         2. $\vdash_\mathbf{HK} \chi \to \beta$
         3. 变元条件：$\mathrm{var}(\chi) \subseteq \mathrm{var}(\alpha) \subseteq \mathrm{var}(\beta)$
@@ -624,7 +622,8 @@
 
 7. 一致性（相容性）：如果公式集 $\Sigma$ 有 $\Sigma \nvdash_{\mathbf H_1} \bot$，则称公式集 $\Sigma$ 是 $\mathbf H_1-$一致的，否则称 $\Sigma$ 是 $\mathbf H_1-$不一致的
     1. $\Sigma \nvdash_{\mathbf H_1} \neg \alpha$ 当且仅当 $\Sigma \cup \{\alpha\}$ 是 $\mathbf H_1-$一致的；$\Sigma \nvdash_{\mathbf H_1} \alpha$ 当且仅当 $\Sigma \cup \{\neg \alpha\}$ 是 $\mathbf H_1-$一致的
-    2. 一个公式集 $\Sigma$ 是 $\mathbf H_1$ 一致的当且仅当 $\Sigma$ 的每个有穷子集是 $\mathbf H_1$ 一致的
+    2. 若公式集 $\Sigma$ 是 $\mathbf{H_1}-$一致的，且对任何 $\mathbf{H_1}-$一致的公式集 $\Delta$，若 $\Sigma \subseteq \Delta$，那么 $\Sigma = \Delta$，则称 $\Sigma$ 是极大 $\mathbf{H_1}-$一致的
+    3. 一个公式集 $\Sigma$ 是 $\mathbf H_1$ 一致的当且仅当 $\Sigma$ 的每个有穷子集是 $\mathbf H_1$ 一致的
 8. 可靠性：如果 $\Sigma \vdash_{\mathbf H_1} \alpha$，那么 $\Sigma \vDash \alpha$
     1. 对任意公式 $\alpha, \beta$
         1. 如果 $\vDash_1 \alpha$ 且 $\vDash_1 \alpha \to \beta$，则 $\vDash \beta$
