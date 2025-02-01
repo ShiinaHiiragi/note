@@ -76,7 +76,7 @@
 4. 初等子结构：设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的 $S-$结构，若存在 $h: \mathfrak A \to \mathfrak B$ 是一个初等嵌入且 $A \subseteq B$，则称 $\mathfrak A$ 是 $\mathfrak B$ 的初等子结构，记作 $\mathfrak A \prec \mathfrak B$；同时称 $\mathfrak B$ 是 $\mathfrak A$ 的初等膨胀，记作 $\mathfrak B \succ \mathfrak A$
     1. 如果 $N \subseteq A$，$N$ 是 $\mathfrak A$ 的子结构，且子结构 $\mathfrak N = \left\{N, \{Z^\mathfrak A \upharpoonright N\}_{Z \in S}\right\}$ 还是 $\mathfrak A$ 的初等子结构，则称集合 $N$ 是 $\mathfrak A$ 的初等子结构
     2. 如果 $H: \mathfrak A \to \mathfrak B$ 是初等嵌入，则存在 $\mathfrak A$ 的初等膨胀 $\overline{\mathfrak A}$ 使得 $H$ 可以被扩张为 $\overline{\mathfrak A}$ 到 $\mathfrak B$ 的同构
-    3. $\text{Tarski}-\text{Vaught}$ 测试：设 $\mathfrak A$ 是 $\mathfrak B$ 的子结构，则 $A \prec B$ 当且仅当对每个公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n}, y)$ 及 $a_1, a_2, \cdots, a_n \in A$ 都有 $\mathfrak B \vDash \exists y \ \alpha(a_1, a_2, \cdots, a_n, y) \to \mathfrak A \vDash \exists y \ \alpha(a_1, a_2, \cdots, a_n, y)$
+    3. $\text{Tarski}-\text{Vaught}$ 判别法：设 $\mathfrak A$ 是 $\mathfrak B$ 的子结构，则 $A \prec B$ 当且仅当对每个公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n}, y)$ 及 $a_1, a_2, \cdots, a_n \in A$ 都有 $\mathfrak B \vDash \exists y \ \alpha(a_1, a_2, \cdots, a_n, y) \to \mathfrak A \vDash \exists y \ \alpha(a_1, a_2, \cdots, a_n, y)$
     4. $\text{Tarski}$ 准则：设 $M \subseteq A$ 非空，则 $M$ 是 $\mathfrak A$ 的初等子结构当且仅当若 $X \subseteq A$ 是非空的 $M-$可定义子集，则 $X \cap M = \varnothing$
 5. 定向集：设 $(I, <)$ 是一个偏序集，如果对任意的 $i, j \in I$ 都存在 $k \in I$ 使得 $i \leqslant k$ 且 $j \leqslant k$，则称 $(I, <)$ 是一个定向集
     1. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i \mid i \in I\}$ 是一族 $S-$结构
@@ -94,8 +94,12 @@
 2. 理论：设 $\mathfrak M$ 是一个 $S-$结构，$\Sigma$ 是一个 $S-$语句集．如果对任意被 $\Sigma$ 蕴含的语句 $\alpha$ 都有 $\alpha \in \Sigma$，则称 $\Sigma$ 是一个 $S-$理论
     1. 若 $S$ 可数，则称 $S-$理论 $T$ 可数
     2. 若 $\Sigma$ 是一个语句集，则 $\Sigma' = \{\sigma \mid \Sigma \vDash \sigma\}$ 是一个 $S-$理论
-    3. 公理：设 $T$ 是一个 $S-$理论，如果 $\Sigma \subseteq T$ 且对每个 $\alpha \in T$ 都有 $\Sigma \vDash \alpha$，则称 $\Sigma$ 是 $T$ 的公理
-    4. 完备理论：如果对每个 $S-$语句 $\alpha$ 都有 $\alpha \in \Sigma$ 或 $\neg \alpha \in \Sigma$，则称 $\Sigma$ 是完备的 $S-$理论
+    3. 设 $T$ 是一个 $S-$理论，如果 $\Sigma \subseteq T$ 且对每个 $\alpha \in T$ 都有 $\Sigma \vDash \alpha$，则称 $\Sigma$ 是 $T$ 的公理
+        1. 称理论 $T$ 是可公理化的
+        2. 若 $\Sigma$ 有穷，则称理论 $T$ 是可有穷公理化的
+    4. 若对每个 $S-$语句 $\alpha$ 都有 $\alpha \in \Sigma$ 或 $\neg \alpha \in \Sigma$，则称 $\Sigma$ 是完备的 $S-$理论
+        1. 设 $\lambda$ 是基数，若 $S-$理论 $T$ 的基数为 $\lambda$ 的模型都相互同构，则称理论 $T$ 是 $\lambda-$范畴的
+        2. $\text{Lo}\acute{\mathrm s}-\text{Vaught}$ 判别法：若 $S-$理论 $T$ 只有无穷模型，且 $T$ 是 $\lambda-$范畴的，其中 $\lambda \geqslant |\mathscr L(S)| = |S|+\aleph_{0}$，则 $T$ 是完备的
 3. 初等等价：设 $\mathfrak M$ 与 $\mathfrak N$ 是两个 $S-$结构，如果 $\mathrm{Th}(\mathfrak M) = \mathrm{Th}(\mathfrak N)$，则称 $\mathfrak M$ 与 $\mathfrak N$ 初等等价，记作 $\mathfrak M \equiv \mathfrak N$
     1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathrm{Th}(\mathcal K) = \{\alpha \mid \alpha$ 是 $S-$语句且对任意 $\mathfrak M \in \mathcal K$ 都有 $\mathfrak M \vDash \alpha\}$
         1. 若 $\mathcal K = \{\mathfrak M\}$，则将 $\mathrm{Th}(\mathcal K)$ 记作 $\mathrm{Th}(\mathfrak M)$，并称 $\mathrm{Th}(\mathfrak M)$ 为 $\mathfrak M$ 的理论
@@ -207,8 +211,8 @@
         1. $\left(S_{n}(T), \tau\right)$ 是一个紧致的、完全不连通的 $\text{Hausdorff}$ 空间
         2. $X \subseteq S_{n}(T)$ 是开闭集当且仅当存在公式 $\alpha\left(x_{0}, \cdots, x_{n-1}\right)$，使得 $X=[\{\alpha\}]$
 5. $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理
-    1. 下行 $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理：设 $\mathfrak{A}$ 是一个论域为 $A$ 的结构，$M \subseteq A$，则存在 $B \subseteq A$ 使得 $B$ 是 $\mathfrak{A}$ 的初等子结构有 $M \subseteq B$ 且 $|B| \leqslant \max \left\{|M|,|S|, \aleph_{0}\right\}$
-    2. 上行 $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理：设 $\mathfrak{A}$ 是一个论域为 $A$ 的 $S-$结构，其中 $A$ 是无穷集合，$\lambda \geqslant|A|+|S|$，则存在基数为 $\lambda$ 的 $S-$结构 $\mathfrak{B}$ 使得 $\mathfrak{A} \prec \mathfrak{B}$
+    1. 下行 $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理：设 $\mathfrak{A}$ 是一个论域为 $A$ 的 $S-$结构，$M \subseteq A$，则存在 $B \subseteq A$ 使得 $B$ 是 $\mathfrak{A}$ 的初等子结构有 $M \subseteq B$ 且 $|B| \leqslant \max \left\{|M|,|S|, \aleph_{0}\right\}$，即 $|B| \leqslant |M|$ 且 $|B| \leqslant |\mathscr L(S)|$
+    2. 上行 $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理：设 $\mathfrak{A}$ 是一个论域为 $A$ 的 $S-$结构，其中 $A$ 是无穷集合，$\lambda \geqslant|A|\oplus |S|$，则存在基数为 $\lambda$ 的 $S-$结构 $\mathfrak{B}$ 使得 $\mathfrak{A} \prec \mathfrak{B}$
         1. 设 $T$ 是一个 $S-$理论，且 $T$ 有一个无穷模型．若无穷基数 $\lambda \geqslant |S|$，则存在 $T$ 的基数为 $\lambda$ 的模型
         2. 设结构 $\mathfrak{A}_{1}$ 和 $\mathfrak{A}_{2}$ 初等等价，则存在结构 $\mathfrak{B}$ 及初等嵌入 $g_{1}$ : $\mathfrak{A}_{1} \to \mathfrak{B}$ 和初等嵌入 $g_{2}: \mathfrak{A}_{2} \to \mathfrak{B}$
         3. 设结构 $\mathfrak{A}_{1}$ 和 $\mathfrak{A}_{2}$ 初等等价，则存在结构 $\mathfrak{B}$ 使得 $\mathfrak{A}_{1} \prec \mathfrak{B}$ 且 $\mathfrak{A}_{2} \prec \mathfrak{B}$

@@ -17,7 +17,7 @@
 
         4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists^{1} x \ \varphi(x)$
 
-2. $\mathbf{ZFC}$ 公理
+2. 设 $\mathbf{ZFC} = \mathbf{ZF} + \mathbf{AC}$ 是公理集
     1. 存在公理（$\text{Exi}$）：存在一个集合
 
         $$
