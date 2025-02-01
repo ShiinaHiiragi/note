@@ -344,21 +344,25 @@
         3. 如果 $|I|<\kappa$，$\left\{\kappa_{i} \mid i \in I\right\}$ 为一集基数，且对任意 $i \in I$ 有 $\kappa_{i}<\kappa$，则 ${\displaystyle \bigoplus_{i \in I} \kappa_{i}<\kappa}$
         4. 令 $\lambda<\kappa$，如果长度为 $\lambda$ 的序列 $\left\langle X_{\xi}\right\rangle_{\xi<\lambda}$ 满足对任意 $\xi<\lambda$，都有 $\left|X_{\xi}\right|<\kappa$，则 ${\displaystyle \left|\bigcup_{\xi<\lambda} X_{\xi}\right|<\kappa_{0}}$
 
-6. 连续统函数：$2^{\aleph_{\alpha}}$，并称 $2^{\aleph_{0}}$ 为连续统的基数
-    1. 定义无穷基数上 $\text{Gimel}$ 函数为 $\gimel(\kappa)=\kappa^{\mathrm{cf}(\kappa)}$，则对任意无穷基数 $\kappa, \lambda$ 有
+6. 连续统假设 $\mathbf{CH}: 2^{\aleph_{0}}=\aleph_{1}$ 与广义连续统假设 $\mathbf{GCH}: 2^{\aleph_{\alpha}}=\aleph_{\alpha+1}$
+    1. 奇异基数假设 $\mathbf{SCH}$：对任意无穷基数 $\kappa$，如果 $2^{\mathrm{cf}(\kappa)}<\kappa$，则 $\kappa^{\operatorname{cf}(\kappa)}=\kappa^{+}$
+        1. $\mathbf{GCH}$ 蕴含 $\mathbf{SCH}$
+        2. 奇异基数假设的早期形式 $\mathbf{SCH}'$：如果 $\kappa$ 是强极限的奇异基数，则 $2^{\kappa}=\kappa^{+}$．显然 $\mathbf{SCH}$ 蕴含 $\mathbf{SCH}'$
+    2. 连续统函数：$2^{\aleph_{\alpha}}$，并称 $2^{\aleph_{0}}$ 为连续统的基数
+        1. 定义无穷基数上 $\text{Gimel}$ 函数为 $\gimel(\kappa)=\kappa^{\mathrm{cf}(\kappa)}$，则对任意无穷基数 $\kappa, \lambda$ 有
 
-        $$
-        \kappa^{\lambda}= \left\{\begin{aligned} & 2^{\lambda}, & \textsf{或 } \\ & \kappa, & \textsf{或 } \\ & \gimel(\mu), & \operatorname{cf}(\mu) \leqslant \lambda<\mu \end{aligned}\right.
-        $$
+            $$
+            \kappa^{\lambda}= \left\{\begin{aligned} & 2^{\lambda}, & \textsf{或 } \\ & \kappa, & \textsf{或 } \\ & \gimel(\mu), & \operatorname{cf}(\mu) \leqslant \lambda<\mu \end{aligned}\right.
+            $$
 
-    2. 对任意基数 $\kappa$，如果存在 $\mu_{0}<\kappa$ 使得对任意 $\mu_{0} \leqslant \mu<\kappa$ 都有 $2^{\mu}=2^{\mu_{0}}$，则称 $2^{\mu_{0}}$ 为连续统函数在 $\kappa$ 下的不动点；如果这样的不动点存在，也称连续统函数在 $\kappa$ 下终究为常量．设 $\kappa$ 为无穷基数，则
+        2. 对任意基数 $\kappa$，如果存在 $\mu_{0}<\kappa$ 使得对任意 $\mu_{0} \leqslant \mu<\kappa$ 都有 $2^{\mu}=2^{\mu_{0}}$，则称 $2^{\mu_{0}}$ 为连续统函数在 $\kappa$ 下的不动点；如果这样的不动点存在，也称连续统函数在 $\kappa$ 下终究为常量．设 $\kappa$ 为无穷基数，则
 
-        $$
-        2^{\kappa}= \left\{\begin{aligned}& J(\kappa), & \textsf{ 若 } \kappa \textsf{ 是后继基数 } \\ & 2^{\mu_{0}} \otimes I(\kappa), & \textsf{ 若 } \kappa \textsf{ 是极限基数且 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\ & I\left(2^{<\kappa}\right), & \textsf{ 若 } \kappa \textsf{ 是极限基数且连续统函数在 } \kappa \textsf{ 下不存在不动点 }\end{aligned}\right.
-        $$
+            $$
+            2^{\kappa}= \left\{\begin{aligned}& J(\kappa), & \textsf{ 若 } \kappa \textsf{ 是后继基数 } \\ & 2^{\mu_{0}} \otimes I(\kappa), & \textsf{ 若 } \kappa \textsf{ 是极限基数且 } 2^{\mu_{0}} \textsf{ 是连续统函数在 } \kappa \textsf{ 下的不动点 } \\ & I\left(2^{<\kappa}\right), & \textsf{ 若 } \kappa \textsf{ 是极限基数且连续统函数在 } \kappa \textsf{ 下不存在不动点 }\end{aligned}\right.
+            $$
 
-        1. 如果 $\kappa$ 是极限基数，则 $2^{\kappa}=\left(2^{<\kappa}\right)^{\mathrm{cf}(\kappa)}$
-        2. 如果 $\kappa$ 是强极限基数，则 $2^{\kappa}=\kappa^{\operatorname{cf}(\kappa)}$
+            1. 如果 $\kappa$ 是极限基数，则 $2^{\kappa}=\left(2^{<\kappa}\right)^{\mathrm{cf}(\kappa)}$
+            2. 如果 $\kappa$ 是强极限基数，则 $2^{\kappa}=\kappa^{\operatorname{cf}(\kappa)}$
 
     3. 连续统假设下的基数幂
         1. 令 $\kappa, \lambda$ 为无穷基数，同时假设 $\textbf{GCH}$ 成立，则
@@ -389,10 +393,6 @@
             & \left(2^{<\kappa}\right)^{+}, & \textsf{若连续统函数在 } \kappa \textsf{ 下没有不动点 }
             \end{aligned}\right.
             $$
-
-7. 不可达基数：在 $\mathbf{ZFC}$ 下无法证明存在性
-    1. 弱不可达基数：正则的极限基数
-    2. 强不可达基数：正则的强极限基数
 
 ### 3.2.3 无界闭集
 1. 无界闭集：令 $\alpha$ 为极限序数，$\alpha$ 的子集 $C \subseteq \alpha$ 如果满足
