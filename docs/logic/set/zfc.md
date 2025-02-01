@@ -189,7 +189,7 @@
 5. 多重集：函数 $f: A \to \mathbf Z_+ \cup \{\infty\}$，并将 $a \in A$ 简记为 $a \in f$
     1. 重数：多重集中对象 $a \in A$ 出现的次数 $f(a)$，当表示元素重复任意多次数时，可记为 $\infty$
     2. 元数：集合中不同元素个数；当元数为 $n$ 时，称集合为 $n$ 元多重集
-    3. 若有限多重集 $S$ 有 $a_1, a_2, \cdots, a_n$ 共 $n$ 个不同的元素，且 $a_i$ 的重数为 $p_i$，则 $S$ 可记作 $\left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}$
+    3. 若有穷多重集 $S$ 有 $a_1, a_2, \cdots, a_n$ 共 $n$ 个不同的元素，且 $a_i$ 的重数为 $p_i$，则 $S$ 可记作 $\left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}$
 6. 类与真类：令 $\varphi(u)$ 为一个性质，$\{u \mid \varphi(u)\}$ 不一定是集合，这样的对象被称为类，不是集合的类被称为真类
     1. 每个集合都是类，例如 $\left\{x \mid x \neq x\right\}$
     2. 用 $\mathbf V = \left\{x \mid x = x\right\}$ 表示「所有集合」的类，$x \in \mathbf V$ 不是集合论语言的公式，而只是公式 $x = x$ 的一种记法

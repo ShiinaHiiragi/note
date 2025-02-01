@@ -88,16 +88,16 @@
         3. 若 $A_{j} \in A, 1 \leqslant j \leqslant n$，则 ${\displaystyle \bigcup_{j=1}^{n} A_{j} \in A, \bigcap_{j=1}^{n} A_{j} \in A}$
     2. 若 $C \subseteq \mathcal{P}(\Omega)$，则必存在包含 $C$ 的最小域 $A$．即 $A$ 为域，$A \supseteq C$ 且对任一域 $A^{\prime} \supseteq C$，必有 $A \subseteq A^{\prime}$
         1. 对任一集族 $C$，包含 $C$ 的最小域称为由 $C$ 张成的域，记为 $A(C)$
-        2. $\Omega$ 中由单点集全体张成的域就是由 $\Omega$ 中有限集及其余集全体构成的集族
+        2. $\Omega$ 中由单点集全体张成的域就是由 $\Omega$ 中有穷集及其余集全体构成的集族
 2. 半域：设 $S \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
     1. $\varnothing, \Omega \in S$
     2. 当 $A, B \in S$，必有 $A \cap B \in S$
-    3. 若 $A \in S$，则 $A'$ 可表为 $S$ 中两两互不相交集合的有限并
+    3. 若 $A \in S$，则 $A'$ 可表为 $S$ 中两两互不相交集合的有穷并
 
     则称 $S$ 为 $\Omega$ 上的半域或半代数
 
     1. 域必为半域
-    2. 若 $S$ 为半域，则 ${\displaystyle A=\left\{A=\sum_{i \in I} S_{i}:\left\{S_{i}, i \in I\right\} \textsf{ 为 } S \textsf{ 中两两互不相交的有限族}\right\}}$ 是包含 $S$ 的最小域
+    2. 若 $S$ 为半域，则 ${\displaystyle A=\left\{A=\sum_{i \in I} S_{i}:\left\{S_{i}, i \in I\right\} \textsf{ 为 } S \textsf{ 中两两互不相交的有穷族}\right\}}$ 是包含 $S$ 的最小域
 
 3. $\sigma$ 域：设 $F \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
     1. 若 $A \in F$，则 $A' \in F$
