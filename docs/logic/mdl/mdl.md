@@ -34,6 +34,7 @@
 
     1. 称同态 $h: \mathfrak A \to \mathfrak A$ 为结构 $\mathfrak A$ 上的一个自同态
     2. 设 $\mathfrak A, \mathfrak B$ 是两个 $S-$结构，若 $h: \mathfrak A \to \mathfrak B$ 是一个同态且 $t$ 是一个项，则对任意 $\mathfrak A-$指派 $\overline b$ 都有 $h(t^\mathfrak A[\overline b]) = t^\mathfrak B[h(\overline b)]$
+    3. 对任意无量词（且无等词）的公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 与 $\overline a \in A^n$ 有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(h(\overline b))$
 
 2. 嵌入与同构：设 $\mathfrak A, \mathfrak B$ 是论域分别为 $A, B$ 的两个 $S-$结构，$h: A \to B$ 是一个映射．将 $\mathfrak B$ 扩张为论域为 $A$ 的 $\mathfrak B'$ 使得对于新常元 $a \in A$，有 $a^{\mathfrak B'} = h(a)$，记 $\mathfrak B' = (\mathfrak B, h(a))_{a\in A}$
     1. 嵌入：如果同态 $h: \mathfrak A \to \mathfrak B$ 是单射且对每个 $n$ 元关系符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 当且仅当 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$，则称 $h$ 是（$\mathfrak A$ 到 $\mathfrak B$）的嵌入

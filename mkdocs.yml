@@ -158,6 +158,7 @@ nav:
     - 三、递归论:
       - 1 可计算理论: logic/rec/calc.md
       - 2 计算复杂性理论: logic/rec/cplx.md
+      - 5 形式算数: logic/rec/arith.md
     - 四、公理集合论:
       - 1 数学基础: logic/set/zfc.md
       - 2 集合代数: logic/set/alg.md

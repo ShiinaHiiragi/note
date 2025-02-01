@@ -289,7 +289,7 @@
         2. 函数符号集 $\mathbf F = \{f_i\mid i\in \lambda\}$，用 $f, g, h$ 表示任意函数符号
         3. 常元符号集 $\mathbf C = \{c_i\mid i\in \lambda\}$，用 $a, b, c$ 表示任意常元符号
 
-        一个一阶语言由非逻辑符号集合 $S$ 决定
+        一个一阶语言由非逻辑符号集合 $S$ 决定，并定义语言的基数 $|\mathscr L(S)| = \max\{|S|, \aleph_0\}$
 
     !!! note "形式主义进路"
         1. 证明论下的命题逻辑与一阶逻辑是从朴素集合论中建立的理论，因此变元集 $\mathbf{Var}$ 与一阶语言 $\mathscr L(S)$ 的基数 $\lambda$ 在本节中均至多为 $\omega$
@@ -476,7 +476,7 @@
 
                 此时 $t^{\mathfrak A}[\overline a] = t^{\mathfrak A}(\overline a) = t^{\mathfrak A}(a_1, a_2, \cdots, a_m)$，其中前者是项 $t$ 在 $\mathfrak A-$指派下的值，后者是函数 $t^{\mathfrak A}$ 在点 $\overline a$ 下的值
 
-    3. 语义后承：模型 $\mathfrak M$ 与公式 $\alpha$ 的满足关系 $\mathfrak M \vDash \alpha$ 定义为
+    3. 语义后承：模型 $\mathfrak M$ 与公式 $\alpha$ 的满足关系 $\mathfrak M \vDash \alpha$ 即 $(\mathfrak A, \sigma) \vDash \alpha$ 定义为
 
         $$
         \begin{aligned}
@@ -490,7 +490,7 @@
         \end{aligned}
         $$
 
-        设指派 $\overline a = \left<a_i\right>_{i\in \lambda}$，此时将满足关系记作 $\mathfrak A \vDash \alpha[\overline a]$ 或 $\mathfrak A \vDash \alpha(\overline b)$，称 $\mathfrak A$ 满足 $\alpha[\overline a]$、$\alpha[\overline a]$ 在 $\mathfrak A$ 中为真或 $\overline a$ 在 $\mathfrak A$ 中实现了 $\alpha$
+        设指派 $\overline a = \left<a_i\right>_{i\in \lambda}$，此时也可将满足关系记作 $\mathfrak A \vDash \alpha[\overline a]$ 或 $\mathfrak A \vDash \alpha(\overline b)$，称 $\mathfrak A$ 满足 $\alpha[\overline a]$、$\alpha[\overline a]$ 在 $\mathfrak A$ 中为真或 $\overline a$ 在 $\mathfrak A$ 中实现了 $\alpha$
 
         1. 对任意公式集 $\Sigma$，若对所有 $\alpha \in \Sigma$ 都有 $\mathfrak M \vDash \alpha$，则记作 $\mathfrak M \vDash \Sigma$
         2. 如果公式（包括语句）$\alpha$ 有对于结构 $\mathfrak A$ 中的任意指派 $\sigma$ 都有 $(\mathfrak A, \sigma) \vDash \alpha$，则称 $\alpha$ 在 $\mathfrak A$ 上有效，记作 $\mathfrak A \vDash \alpha$
