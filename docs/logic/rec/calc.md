@@ -7,13 +7,14 @@
         1. 自然数 $m$ 用带上 $m + 1$ 个连续的 $1$ 表示
         2. 如果输入为 $n$ 元组 $m_1, m_2, \cdots, m_n$，则用空格 $0$ 隔开数字
     2. $\text{Turing}$ 机的输出是停机时纸带上所有 $1$ 的总数，$1$ 不一定是连续的
+    3. 对于对象 $O$，将其编码记作 $\ulcorner O\urcorner$
 2. $\text{Turing}$ 机计算函数：设 $f$ 为 $\mathbf N^n \to \mathbf N$ 的（部分）函数，$M$ 为 $\text{Turing}$ 机．则称 $\text{Turing}$ 机 $M$ 计算函数 $f$ 当且仅当对任意 $n$ 元组 $(x_1, x_2, \cdots, x_n)$．如果 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机且输出为 $f(x_1, x_2, \cdots, x_n)$；如果 $(x_1, x_2, \cdots, x_n) \notin \mathrm{dom}(f)$，则 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时不会停机
     1. 用 $f(x_1, x_2, \cdots, x_n) \downarrow$ 表示 $(x_1, x_2, \cdots, x_n) \in \mathrm{dom}(f)$，此时称 $f$ 在 $(x_1, x_2, \cdots, x_n)$ 处收敛；用 $f(x_1, x_2, \cdots, x_n) \uparrow$ 表示 $(x_1, x_2, \cdots, x_n) \notin \mathrm{dom}(f)$，此时称 $f$ 在 $(x_1, x_2, \cdots, x_n)$ 处发散
     2. 用 $M(x_1, x_2, \cdots, x_n)\downarrow$ 表示 $M$ 以 $(x_1, x_2, \cdots, x_n)$ 为输入时会停机
     3. 如果一个自然数上的函数存在一个计算它的 $\text{Turing}$ 机，则称之为 $\text{Turing}$ 可计算的，否则称之为 $\text{Turing}$ 不可计算的；如果一个自然数上的关系集合特征函数是 $\text{Turing}$ 可计算的，则称之为 $\text{Turing}$ 可判定的
 3. 标准化：对任意 $\text{Turing}$ 机 $M$，都存在 $\text{Turing}$ 机 $M'$ 将其输出标准化，即
     1. 对任意函数 $f$，$f$ 是 $M'$ 可计算的，当且仅当 $f$ 是 $M$ 可计算的且对于任意输入 $\overline x$，$M$ 与 $M'$ 给出相同的输出
-    2. 在 $M'$ 的终止格局中，纸带上所有的 $1$ 是连续的，
+    2. 在 $M'$ 的终止格局中，纸带上所有的 $1$ 是连续的
 
 ### 1.1.2 递归函数
 1. 初始函数
@@ -211,7 +212,7 @@
 3. 可判定性：如果一个问题的集合是递归的，则称该问题是可判定的或可解的，否则称其为不可判定的或不可解的
     1. 停机问题：任意给定的 $\text{Turing}$ 机在任意给定的输入串上是否停机（接受或拒绝）的问题是不可判定的
         1. 集合 $K = \{e \mid \Phi_e(e)$ 有定义$\}$ 是递归可枚举的，但不是递归的
-        2. 集合 $K_0 = \{\left<x, y\right> \mid \Phi_x(y) \downarrow\}$ 不是递归的
+        2. 集合 $K_0 = \{\mathrm{enc}(x, y) \mid \Phi_x(y) \downarrow\}$ 不是递归的
     2. 递归集类是递归可枚举集类的真子类，递归可枚举集不对补集运算封闭
 4. 多一归约与一一归约：设 $A, B$ 为两个集合，如果存在一个递归全函数 $g: \mathbf N \to \mathbf N$ 满足对任意 $x$ 都有 $x \in A$ 当且仅当 $g(x) \in B$，则称集合 $A$ 可以多一归约或 $m-$归约到集合 $B$，记作 $A \leqslant_m B$；如果 $A \leqslant_m B$ 且 $g$ 为单射，则称集合 $A$ 可以一一归约或 $1-$归约到集合 $B$，记作 $A \leqslant_1 B$
     1. 递归集与递归可枚举集的归约：设 $A \leqslant_m B$

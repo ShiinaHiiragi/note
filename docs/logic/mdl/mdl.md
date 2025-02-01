@@ -100,7 +100,7 @@
         1. 若 $\mathcal K = \{\mathfrak M\}$，则将 $\mathrm{Th}(\mathcal K)$ 记作 $\mathrm{Th}(\mathfrak M)$，并称 $\mathrm{Th}(\mathfrak M)$ 为 $\mathfrak M$ 的理论
         2. $\mathrm{Th}(\mathfrak M)$ 是完备的 $S-$理论
     2. 一个 $S-$理论 $T$ 是完备的当且仅当 $T$ 的模型相互初等等价
-4. 初等类：如果 $T$ 是 $S-$理论且 $\mathcal K = \{\mathfrak M \mid \mathfrak M$ 是 $S-$结构且 $\mathfrak M \vDash T\}$，则称 $\mathcal K$ 是一个初等类，记作 $\mathcal K = \mathrm{Mod}(T)$
+4. 初等类：如果 $T$ 是 $S-$理论且 $\mathcal K = \{\mathfrak M \mid \mathfrak M$ 是 $S-$结构且 $\mathfrak M \vDash T\}$，则称 $\mathcal K$ 是一个（广义）初等类，记作 $\mathcal K = \mathrm{Mod}(T)$
     1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathcal K$ 是初等类当且仅当 $\mathcal K = \{\mathfrak M \mid \mathfrak M \vDash \mathrm{Th}(\mathcal K)\}$
     2. 如果结构 $\mathfrak M$ 与 $\mathfrak N$ 初等等价且 $\mid \mathfrak M\mid < \aleph_0$，则 $\mathfrak M \cong \mathfrak N$
 
