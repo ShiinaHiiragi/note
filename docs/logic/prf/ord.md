@@ -15,7 +15,7 @@
         3. 若 $\alpha_{n+1} > 0$，则 $\varphi(s, \alpha_{n+1}, z, \gamma)$ 表示「对所有序数 $\beta < \alpha_{n+1}$ 对应的函数 $\xi \mapsto \varphi(s, \beta, \xi, z)$」的第 $\gamma$ 个公共不动点
     2. 超限 $\text{Veblen}$ 函数：利用数阵 $\varphi \begin{pmatrix} \alpha_1 & \alpha_2 & \cdots & \alpha_n \\ \beta_1 & \beta_2 & \cdots & \beta_n \\ \end{pmatrix}$ 表示 $\text{Veblen}$ 函数，其中 $\beta_i$ 表示 $\alpha_i$ 在扩展 $\text{Veblen}$ 函数的位置
 
-2. 序数塌缩函数 $\text{OCF}$：设 $\Omega_{\alpha} = \aleph_{\alpha}, \Omega = \aleph_1$
+2. 序数折叠函数 $\text{OCF}$：设 $\Omega_{\alpha} = \aleph_{\alpha}, \Omega = \aleph_1$
     1. $\text{Feferman } \theta-$函数
 
         $$
