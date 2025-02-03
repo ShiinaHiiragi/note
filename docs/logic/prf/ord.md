@@ -61,8 +61,8 @@
 
         $$
         \begin{aligned}
-        \varepsilon_0 & = \lim(\omega, \omega^{\omega}, \omega^{\omega^{\omega}}, \cdots) = \omega \uparrow \uparrow \omega \\
-        \varepsilon_{\alpha+1} & = \lim(\varepsilon_\alpha+1, \omega^{\varepsilon_\alpha+1}, \omega^{\omega^{\varepsilon_\alpha+1}}, \cdots) = \varepsilon_\alpha \uparrow \uparrow \omega \\
+        \varepsilon_0 & = \sup(\omega, \omega^{\omega}, \omega^{\omega^{\omega}}, \cdots) = \omega \uparrow \uparrow \omega \\
+        \varepsilon_{\alpha+1} & = \sup(\varepsilon_\alpha+1, \omega^{\varepsilon_\alpha+1}, \omega^{\omega^{\varepsilon_\alpha+1}}, \cdots) = \varepsilon_\alpha \uparrow \uparrow \omega \\
         \varepsilon_{\alpha} & = \sup \left\{\varepsilon_\beta \mid \beta<\alpha\right\} \ (\alpha \textsf{ 为极限序数})
         \end{aligned}
         $$
