@@ -493,10 +493,10 @@
         1. 对任意公式集 $\Sigma$，若对所有 $\alpha \in \Sigma$ 都有 $\mathfrak M \vDash \alpha$，则记作 $\mathfrak M \vDash \Sigma$
         2. 如果公式（包括语句）$\alpha$ 有对于结构 $\mathfrak A$ 中的任意指派 $\sigma$ 都有 $(\mathfrak A, \sigma) \vDash \alpha$，则称 $\alpha$ 在 $\mathfrak A$ 上有效，记作 $\mathfrak A \vDash \alpha$
         3. 若 $\Sigma$ 是一个语句集，且对任意 $\alpha \in \Sigma$ 都有 $\mathfrak A \vDash \alpha$，则记作 $\mathfrak A \vDash \Sigma$
-        4. 如果公式 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称公式 $\alpha$ 有效，记作 $\vDash_1 \alpha$，设一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) \mid \vDash_1 \alpha\}$
+        4. 如果语句 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称语句 $\alpha$ 有效，记作 $\vDash_1 \alpha$，设一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) \mid \vDash_1 \alpha\}$
 
             !!! note "有效式"
-                以下公式都是有效的
+                以下语句都是有效的
 
                 1. $\forall x \ (\alpha \wedge \beta) \leftrightarrow \forall x\alpha \wedge \forall x\beta$
                 2. $\exists x \ (\alpha \vee \beta) \leftrightarrow \exists x\alpha \vee \exists x\beta$
