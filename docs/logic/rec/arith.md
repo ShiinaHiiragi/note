@@ -1,6 +1,6 @@
-# 5 形式算术
+# 4 形式算术
 
-## 5.1 一阶算术
+## 4.1 一阶算术
 1. 初等数论的语言 $\mathscr L(S)$，其中 $S = \{=, \mathrm{S}, +, \times, 0\}$ 且 $\Omega(=) = 2, \Omega(\mathrm{S}) = 1, \Omega(+) = \Omega(\times) = 2, 0 \in \mathbf C$，设模型 $\mathfrak N = \{\mathbf N, \{Z^{\mathfrak N}\}_{Z \in S}\}$
     1. 设 $\text{Peano}$ 算术 $\mathbf{PA}$ 是如下公理的理论
         1. $\forall x \ (\mathrm{S} x \not = 0)$
@@ -15,11 +15,11 @@
 
     2. 设 $\text{Robinson}$ 算术 $\mathbf{Q}$ 是如下公理的理论
 
-## 5.2 不完备定理
-### 5.2.1 可表示性
+## 4.2 不完备定理
+### 4.2.1 可表示性
 
-### 5.2.2 可证性
+### 4.2.2 可证性
 
-### 5.2.3 不完备定理
+### 4.2.3 不完备定理
 
-## 5.3 二阶算术
+## 4.3 二阶算术
