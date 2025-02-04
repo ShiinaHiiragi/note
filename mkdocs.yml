@@ -147,8 +147,8 @@ nav:
   - 逻辑学:
     - 一、证明论:
       - 1 Hilbert 系统: logic/prf/hilbert.md
-      - 2 自然演绎: logic/prf/nat.md
-      - 3 相继式演算: logic/prf/seq.md
+      # - 2 自然演绎: logic/prf/nat.md
+      # - 3 相继式演算: logic/prf/seq.md
       - 4 非经典逻辑: logic/prf/ncl.md
       - 5 序数分析: logic/prf/ord.md
     - 二、模型论:
@@ -159,14 +159,14 @@ nav:
       - 1 可计算理论: logic/rec/calc.md
       - 2 计算复杂性理论: logic/rec/cplx.md
       - 3 不可解度论: logic/rec/dou.md
-      - 4 形式算术: logic/rec/arith.md
-      - 5 随机性理论: logic/rec/rand.md
+      # - 4 形式算术: logic/rec/arith.md
+      # - 5 随机性理论: logic/rec/rand.md
     - 四、公理集合论:
       - 1 数学基础: logic/set/zfc.md
       - 2 集合代数: logic/set/alg.md
       - 3 序数与基数: logic/set/ord.md
-      - 4 集宇宙: logic/set/univ.md
-      - 5 高阶无穷: logic/set/card.md
+      # - 4 集宇宙: logic/set/univ.md
+      # - 5 高阶无穷: logic/set/card.md
   - 代数学:
     - 一、初等代数:
       - 1 解析式与初等函数: alg/elem/form.md
