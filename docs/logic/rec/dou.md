@@ -14,14 +14,7 @@
     3. 假定 $A, B \subseteq \mathbf N^k$ 都是递归可枚举的
         1. $A \cup B, A \cap B$ 都是递归可枚举的
         2. 集合 $C = \{\overline x \in \mathbf N^{k-1} \mid \exists y \ ((\overline x, y) \in A)\}$ 也是递归可枚举的，即递归可枚举关系对存在量词封闭
-2. $\Sigma_1-$集：如果集合 $A$ 是一个递归关系的投影，则称 $A$ 是 $\Sigma_1-$形式的
-    1. 一个集合 $A$ 是递归可枚举集当且仅当 $A$ 是 $\Sigma_1-$集
-        1. 如果 $R \subseteq \mathbf N^{n+1}$ 是 $n + 1$ 元递归关系，且 $A = \{x \mid \exists y_1 \exists y_2 \cdots \exists y_n \ R(x, y_1, y_2, \cdots, y_n)\}$，则 $A$ 是 $\Sigma_1$ 的
-        2. 单值化：如果 $R \subseteq \mathbf N^2$ 是递归可枚举的关系，则存在一个部分递归函数 $\Phi$ 满足 $\Phi(x) \downarrow \wedge R(x,\Phi(x))$，当且仅当 $\exists y \ R(x, y)$
-        3. 部分函数 $\psi$ 是部分递归的当且仅当其图像 $G = \{(x, y) \mid y = \psi(x)\}$ 是递归可枚举的
-        4. 递归可枚举集能行地、一致地对交和并封闭，即存在递归函数 $f, g$ 使得 $W_{f(x, y)} = W_x \cap W_y$，且 $W_{g(x, y)} = W_x \cup W_y$
-    2. 如果集合 $A$ 及其补集 $\mathbf N - A$ 都是 $\Sigma_1$ 的，则 $A$ 是 $\Delta_1$ 的，此时 $A$ 为递归集
-3. 可判定性：如果一个问题的集合是递归的，则称该问题是可判定的或可解的，否则称其为不可判定的或不可解的
+2. 可判定性：如果一个问题的集合是递归的，则称该问题是可判定的或可解的，否则称其为不可判定的或不可解的
     1. 停机问题：任意给定的 $\text{Turing}$ 机在任意给定的输入串上是否停机（接受或拒绝）的问题是不可判定的
         1. 集合 $K = \{e \mid \Phi_e(e)$ 有定义$\}$ 是递归可枚举的，但不是递归的
         2. 集合 $K_0 = \{\mathrm{enc}(x, y) \mid \Phi_x(y) \downarrow\}$ 不是递归的
@@ -41,3 +34,13 @@
 ### 3.2.2 Turing 度
 
 ## 3.3 算术分层
+1. $\Sigma_1-$集：如果集合 $A$ 是一个递归关系的投影，则称 $A$ 是 $\Sigma_1-$形式的，此时 $A$ 是递归可枚举集
+
+    $\Delta_1-$集：如果集合 $A$ 及其补集 $\mathbf N - A$ 都是 $\Sigma_1$ 的，则称 $A$ 是 $\Delta_1$形式的，此时 $A$ 是递归集
+
+    1. 如果 $R \subseteq \mathbf N^{n+1}$ 是 $n + 1$ 元递归关系，且 $A = \{x \mid \exists y_1 \exists y_2 \cdots \exists y_n \ R(x, y_1, y_2, \cdots, y_n)\}$，则 $A$ 是 $\Sigma_1$ 的
+    2. 单值化：如果 $R \subseteq \mathbf N^2$ 是递归可枚举的关系，则存在一个部分递归函数 $\Phi$ 满足 $\Phi(x) \downarrow \wedge R(x,\Phi(x))$，当且仅当 $\exists y \ R(x, y)$
+    3. 部分函数 $\psi$ 是部分递归的当且仅当其图像 $G = \{(x, y) \mid y = \psi(x)\}$ 是递归可枚举的
+    4. 递归可枚举集能行地、一致地对交和并封闭，即存在递归函数 $f, g$ 使得 $W_{f(x, y)} = W_x \cap W_y$，且 $W_{g(x, y)} = W_x \cup W_y$
+
+2. 一阶算术的公式分层

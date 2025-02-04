@@ -140,7 +140,7 @@
     对任意 $\overline{b} \in A^{n}$，定义 $\mathrm{RA}(\overline{b} / M)=\mathrm{RA}\left(\operatorname{tp}_{A}(\overline{b} / M)\right), \operatorname{d}A(\overline{b} / M)= \mathrm{d}A\left(\operatorname{tp}_{A}(\overline{b} / M)\right)$
 
 6. 设 $T$ 是一个可数理论，若对任意的基数 $\lambda \geqslant 2^{\omega}$，都有 $T$ 是 $\lambda-$稳定的，称 $T$ 是超稳定的
-    1. 整数集上加法群的理论 $\operatorname{Th}(\mathbf{Z}, +, 0)$ 是超稳定的，但不是 $\omega-$稳定的
+    1. 整数集上加法群的理论是超稳定的，但不是 $\omega-$稳定的
     2. 设 $T$ 是 $\omega-$稳定理论，$A \vDash T, M \subseteq A, p(\overline{x}) \in S_{n}(M, A)$．如果 $\alpha(\overline{x}) \in p$ 使得 $(\operatorname{RA}(\alpha), \mathrm{d}A(\alpha))=(\operatorname{RA}(p), \mathrm{d}A(p))$，则 $p$ 被 $\alpha$ 确定：对任意的 $S_{M}-$公式 $\beta$，有 $\beta \in p$ 当且仅当 $(\operatorname{RA}(\alpha), \mathrm{d}A(\alpha))=(\operatorname{RA}(\alpha \wedge \beta), \mathrm{d}A(\alpha \wedge \beta))$
     3. 如果理论 $T$ 是 $\omega-$稳定的，$A \vDash T$，则 $A$ 中的不可辨元序列均是完全不可辨的
 

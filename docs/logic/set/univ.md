@@ -6,7 +6,7 @@
     1. $V_{0}=\varnothing$
     2. $V_{\alpha+1}=\mathcal{P}\left(V_{\alpha}\right)$
     3. 对任意极限序数 $\lambda$，$V_{\lambda}={\displaystyle \bigcup_{\beta<\lambda} V_{\beta}}$
-2. ...
+2. 集宇宙与正则公理
 
 ### 4.1.2 绝对性
 
