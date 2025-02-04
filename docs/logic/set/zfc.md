@@ -17,7 +17,7 @@
 
         4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists^{1} x \ \varphi(x)$
 
-2. 设 $\mathbf{ZFC} = \mathbf{ZF} + \mathbf{AC}$ 是如下公理的理论
+2. 设 $\mathbf{ZFC}$ 是如下公理的理论
     1. 存在公理（$\text{Exi}$）：存在一个集合
 
         $$
@@ -87,7 +87,7 @@
         2. 无穷公理保证了 $\left\{\varnothing, \left\{\varnothing\right\}, \left\{\varnothing, \left\{\varnothing\right\}\right\}, \cdots\right\} \subseteq X$ 是一个集合
         3. 归纳集：如果集合 $X$ 有 $\varnothing \in X \wedge \forall x \ (x \in X \to S(x) \in X)$，则称 $X$ 为归纳集
 
-    8. 正则公理（$\text{Fnd}$）：对任一集合 $x \neq \varnothing$，存在 $y \in x$ 使得 $y \cap x = \varnothing$
+    8. 正则公理（$\text{Fnd}$）：对任一集合 $x \neq \varnothing$，存在 $y \in x$ 使得 $y \cap x = \varnothing$，也称作基础公理
 
         $$
         \forall x \ (x \neq \varnothing \to \exists y \ (y \in x \wedge x \cap y = \varnothing))
@@ -109,15 +109,23 @@
         \forall x \ (\varnothing \notin X \wedge \forall x \in X \ \forall y \in X \ (x \cap y = \varnothing) \to \exists S \forall x \in X \ \exists^{1} y \ (S \cap x = \{y\}))
         $$
 
-        !!! note "选择公理的等价形式"
-            1. 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$ 都有 ${\displaystyle \prod_{i \in I} X_{i} \neq \varnothing}$
-            2. 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$，如果 $i \neq j \to X_{i} \cap X_{j}=\varnothing$，则存在集合 $S$，对每一 $i \in I$，都有 $\left|S \cap X_{i}\right|=1$
-            3. 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$，存在函数 $f$ 满足对每一 $i \in I$，都有 $f\left(X_{i}\right) \in X_{i}$，称 $f$ 为选择函数
-            4. 对任意不含空集的非空集族 $\mathscr F$ 上都存在选择映射 $f: \mathscr F \to \bigcup \mathscr F$ 使得对任意 $F \in \mathscr F$ 有 $f(F) \in F$
-            5. 良序原理：每一集合上都存在一个良序
-            6. $\text{Hausdorff}$ 极大链条件：任何偏序集都存在一个极大链
-            7. $\text{Zorn}$ 引理：如果偏序集 $X$ 的每个链都有上界, 则 $X$ 有极大元
-            8. $\text{Tychonoff}$ 定理：任何一族紧空间的积空间都是紧空间
+        选择公理的等价形式包括
+
+        1. 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$ 都有 ${\displaystyle \prod_{i \in I} X_{i} \neq \varnothing}$
+        2. 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$，如果 $i \neq j \to X_{i} \cap X_{j}=\varnothing$，则存在集合 $S$，对每一 $i \in I$，都有 $\left|S \cap X_{i}\right|=1$
+        3. 对任意非空集合的族 $\left\{X_{i}\right\}_{i \in I}$，存在函数 $f$ 满足对每一 $i \in I$，都有 $f\left(X_{i}\right) \in X_{i}$，称 $f$ 为选择函数
+        4. 对任意不含空集的非空集族 $\mathscr F$ 上都存在选择映射 $f: \mathscr F \to \bigcup \mathscr F$ 使得对任意 $F \in \mathscr F$ 有 $f(F) \in F$
+        5. 良序原理：每一集合上都存在一个良序
+        6. $\text{Hausdorff}$ 极大链条件：任何偏序集都存在一个极大链
+        7. $\text{Zorn}$ 引理：如果偏序集 $X$ 的每个链都有上界, 则 $X$ 有极大元
+        8. $\text{Tychonoff}$ 定理：任何一族紧空间的积空间都是紧空间
+
+        !!! note "$\mathbf{ZFC}$ 相关理论简写"
+            1. $\mathbf{ZF} = \mathbf{ZFC} - \mathbf{AC}$
+            2. $\mathbf{ZF^{-}} = \mathbf{ZF} - \mathrm{Fnd}$
+            3. $\mathbf{ZFC^{-}} = \mathbf{ZFC} - \mathrm{Fnd}$
+            4. $\mathbf{ZC} = \mathbf{ZFC} - \mathrm{Rep}$
+            5. $\mathbf{Z} = \mathbf{ZF} - \mathrm{Rep}$
 
 3. 集合的运算性质：对于任意集合 $X, Y, Z$
     1. 子集的性质

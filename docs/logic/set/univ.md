@@ -8,7 +8,9 @@
     3. 对任意极限序数 $\lambda$，$V_{\lambda}={\displaystyle \bigcup_{\beta<\lambda} V_{\beta}}$
 2. ...
 
-### 4.1.2 相对一致性
+### 4.1.2 绝对性
+
+### 4.1.3 相对一致性
 
 ## 4.2 Gödel 可构成宇宙
 
