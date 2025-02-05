@@ -1,6 +1,7 @@
 # 5 序数分析
 
 ## 5.1 序数记号
+### 5.1.1 递归序数记号
 1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
     1. $\varphi_0(\beta) = \omega^{\beta}$
     2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\xi \mapsto \varphi_{\alpha}(\xi)$ 的第 $\beta$ 个不动点
@@ -14,45 +15,47 @@
         3. 若 $\alpha_{n+1} > 0$，则 $\varphi(s, \alpha_{n+1}, z, \gamma)$ 表示「对所有序数 $\beta < \alpha_{n+1}$ 对应的函数 $\xi \mapsto \varphi(s, \beta, \xi, z)$」的第 $\gamma$ 个公共不动点
     2. 超限 $\text{Veblen}$ 函数：利用数阵 $\varphi \begin{pmatrix} \alpha_1 & \alpha_2 & \cdots & \alpha_n \\ \beta_1 & \beta_2 & \cdots & \beta_n \\ \end{pmatrix}$ 表示 $\text{Veblen}$ 函数，其中 $\beta_i$ 表示 $\alpha_i$ 在扩展 $\text{Veblen}$ 函数的位置
 
-2. 序数折叠函数 $\text{OCF}$：设 $\Omega_{\alpha}$ 为第 $\alpha$ 个非递归序数
-    1. $\text{Feferman } \theta-$函数
-
-        $$
-        \begin{aligned}
-        C_0(\alpha, \beta) & =\beta \cup\left\{0, \omega_1, \omega_2, \cdots, \omega_\omega\right\} \\
-        C_{n+1}(\alpha, \beta) & =\left\{\gamma+\delta, \theta_{\xi}(\eta) \mid \gamma, \delta, \xi, \eta \in C_n(\alpha, \beta) ; \xi<\alpha\right\} \\
-        C(\alpha, \beta) & =\bigcup_{n<\omega} C_n(\alpha, \beta) \\
-        \theta_\alpha(\beta) & =\min \left\{\gamma \mid \gamma \notin C(\alpha, \gamma) \wedge \forall \delta<\beta: \theta_\alpha(\delta)<\gamma\right\}
-        \end{aligned}
-        $$
-
-    2. $\text{Madore } \psi-$函数：当对于所有 $\beta < \alpha$ 的 $\psi(\beta)$ 都有定义时，定义 $\psi(\alpha)$ 如下
-
-        $$
-        \begin{aligned}
-        C_0(\alpha) & =\{0,1, \omega, \Omega\} \\
-        C_{n+1}(\alpha) & =\left\{\beta_1+\beta_2, \beta_1 \beta_2, \beta_1^{\beta_2}, \psi(\beta) \mid \beta_1, \beta_2, \beta \in C_n(\alpha) ; \beta<\alpha\right\} \\
-        C(\alpha) & =\bigcup_{n<\omega} C_n(\alpha) \\
-        \psi(\alpha) & =\min \{\beta \in \Omega \mid \beta \notin C(\alpha)\}
-        \end{aligned}
-        $$
-
-    3. $\text{Weiermann } \vartheta-$函数
-
-        $$
-        \begin{aligned}
-        C_0(\alpha, \beta) & =\beta \cup\{0, \Omega\} \\
-        C_{n+1}(\alpha, \beta) & =\left\{\gamma+\delta, \omega^\gamma, \vartheta(\eta) \mid \gamma, \delta, \eta \in C_n(\alpha, \beta) ; \eta<\alpha\right\} \\
-        C(\alpha, \beta) & =\bigcup_{n<\omega} C_n(\alpha, \beta) \\
-        \vartheta(\alpha) & =\min \{\beta<\Omega \mid C(\alpha, \beta) \cap \Omega \subseteq \beta \wedge \alpha \in C(\alpha, \beta)\}
-        \end{aligned}
-        $$
-
-3. $\text{Kleene } \mathcal{O}-$记号：按照 $\text{Turing}$ 机编码的字典序枚举所有部分递归函数 $f_1, f_2, \cdots$，设 $K$ 表示所有记号，$<_{\mathcal O}$ 表示 $K$ 的良基严格偏序．定义 $\mathcal O: K \to \mathbf{On}$ 如下
+2. $\text{Kleene } \mathcal{O}-$记号：按照 $\text{Turing}$ 机编码的字典序枚举所有部分递归函数 $f_1, f_2, \cdots$，设 $K$ 表示所有记号，$<_{\mathcal O}$ 表示 $K$ 的良基严格偏序．定义 $\mathcal O: K \to \mathbf{On}$ 如下
     1. $0 \in K$ 且 $\mathcal O(0) = 0$
     2. 若 $n \in K$ 且 $\mathcal O(n) = \alpha$，则 $n <_{\mathcal O} 2^{n} \in K$ 且 $\mathcal O(2^{n}) = \alpha + 1$
     3. 若对任意 $n \in \mathbf N$ 有 $f_i(n) \in K$ 且 $f_i(n) <_{\mathcal O} f_i(n + 1)$，则 $3 \cdot 5^i \in K, {\displaystyle \mathcal{O}(3 \cdot 5^i) = \sup_{k \in \omega} \mathcal{O}(f_i(k))}$ 且对所有 $k$ 都有 $f_i(k) <_\mathcal{O} 3 \cdot 5^i$
     4. $a <_\mathcal{O} b$ 与 $b <_\mathcal{O} c$ 蕴含 $a <_\mathcal{O} c$
+
+### 5.1.2 序数折叠函数
+设 $\Omega_{\alpha}$ 为第 $\alpha$ 个非递归序数
+
+1. $\text{Feferman } \theta-$函数
+
+    $$
+    \begin{aligned}
+    C_0(\alpha, \beta) & =\beta \cup\left\{0, \omega_1, \omega_2, \cdots, \omega_\omega\right\} \\
+    C_{n+1}(\alpha, \beta) & =\left\{\gamma+\delta, \theta_{\xi}(\eta) \mid \gamma, \delta, \xi, \eta \in C_n(\alpha, \beta) ; \xi<\alpha\right\} \\
+    C(\alpha, \beta) & =\bigcup_{n<\omega} C_n(\alpha, \beta) \\
+    \theta_\alpha(\beta) & =\min \left\{\gamma \mid \gamma \notin C(\alpha, \gamma) \wedge \forall \delta<\beta: \theta_\alpha(\delta)<\gamma\right\}
+    \end{aligned}
+    $$
+
+2. $\text{Madore } \psi-$函数：当对于所有 $\beta < \alpha$ 的 $\psi(\beta)$ 都有定义时，定义 $\psi(\alpha)$ 如下
+
+    $$
+    \begin{aligned}
+    C_0(\alpha) & =\{0,1, \omega, \Omega\} \\
+    C_{n+1}(\alpha) & =\left\{\beta_1+\beta_2, \beta_1 \beta_2, \beta_1^{\beta_2}, \psi(\beta) \mid \beta_1, \beta_2, \beta \in C_n(\alpha) ; \beta<\alpha\right\} \\
+    C(\alpha) & =\bigcup_{n<\omega} C_n(\alpha) \\
+    \psi(\alpha) & =\min \{\beta \in \Omega \mid \beta \notin C(\alpha)\}
+    \end{aligned}
+    $$
+
+3. $\text{Weiermann } \vartheta-$函数
+
+    $$
+    \begin{aligned}
+    C_0(\alpha, \beta) & =\beta \cup\{0, \Omega\} \\
+    C_{n+1}(\alpha, \beta) & =\left\{\gamma+\delta, \omega^\gamma, \vartheta(\eta) \mid \gamma, \delta, \eta \in C_n(\alpha, \beta) ; \eta<\alpha\right\} \\
+    C(\alpha, \beta) & =\bigcup_{n<\omega} C_n(\alpha, \beta) \\
+    \vartheta(\alpha) & =\min \{\beta<\Omega \mid C(\alpha, \beta) \cap \Omega \subseteq \beta \wedge \alpha \in C(\alpha, \beta)\}
+    \end{aligned}
+    $$
 
 ## 5.2 可数序数
 1. 定义 $\varphi_{1}(\gamma) = \varepsilon_{\gamma}$，即满足 $\omega^\xi = \xi$ 的解
