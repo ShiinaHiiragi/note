@@ -7,7 +7,7 @@
     <div class="sub-entry">
         <div class="caption">逻辑与形而上学</div>
         <div class="value">
-            一本关于逻辑学、数学、哲学、语言学与理论计算机科学等学科基础的笔记
+            关于逻辑学、数学、哲学、语言学与理论计算机科学等学科基础的笔记
         </div>
     </div>
 </div>
@@ -17,7 +17,7 @@
     <div class="sub-entry">
         <div class="caption">如何使用</div>
         <div class="value">
-            根据需求进行索引，而非「学习」或「研究」
+            根据需求进行索引，而非从零开始的学习或阐述个人立场的研究
         </div>
     </div>
 </div>
@@ -638,7 +638,7 @@ renderRef(".ref", (item) => item.plot);
     padding-left: 8px;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 800px) {
     .sub-entry {
         flex-direction: column;
     }
