@@ -165,7 +165,7 @@ nav:
       - 1 数学基础: logic/set/zfc.md
       - 2 集合代数: logic/set/alg.md
       - 3 序数与基数: logic/set/ord.md
-      # - 4 集宇宙: logic/set/univ.md
+      - 4 集宇宙: logic/set/univ.md
       # - 5 高阶无穷: logic/set/card.md
   - 代数学:
     - 一、初等代数:

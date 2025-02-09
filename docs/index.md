@@ -273,6 +273,15 @@ const refList = [
         plot: 135
     },
     {
+        author: ["李文威"],
+        title: "代数学方法",
+        type: "M",
+        year: 2018,
+        page: [11, 26],
+        press: "高等教育出版社",
+        locate: "北京"
+    },
+    {
         author: ["周焕山"],
         title: "初等代数研究",
         type: "M",
