@@ -24,3 +24,19 @@
 2. 通用 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 测试
 
 ### 5.2.3 基于不可预测性
+1. 鞅：令 $d: 2^{<\omega} \rightarrow \mathbf{R}^{\geqslant 0}$ 是以大于等于 $0$ 的实数为值域的函数
+    1. 称 $d$ 是一个鞅当且仅当对任意 $\sigma$ 都有 $d(\sigma)=\dfrac{d(\sigma 0)+d(\sigma 1)}{2}$
+    2. 称 $d$ 是一个上鞅当且仅当 $d(\sigma) \geqslant \dfrac{d(\sigma 0)+d(\sigma 1)}{2}$
+    3. 称（上）鞅在序列 $Z \in 2^{\omega}$ 上获胜当且仅当 ${\displaystyle \sup _{n \in \mathbf{N}} d(Z \upharpoonright n)=\infty}$，定义（上）鞅 $d$ 的获胜集 $S[d]=\left\{A \in 2^{\omega}: d \textsf{ 在 } A \textsf{ 上获胜}\right\}$
+
+    一般要求 $d(\varnothing)>0$
+
+    1. 假设 $d$ 是一个（上）鞅，$r \in \mathbf{R}^{+}$ 是正实数且函数 $f: 2^{<\omega} \rightarrow \mathbf{R}^{\geqslant 0}$ 满足 $f=r \cdot d$，则 $f$ 是一个（上）鞅且 $S[d]=S[f]$
+    2. 若 $d_{0}, d_{1}, \cdots$ 是（上）鞅且 ${\displaystyle \sum_{n \in \mathbf N} d_{n}(\varnothing)<\infty}$，则 ${\displaystyle \sum_{n \in \mathbf N} d_{n}}$ 也是（上）鞅
+    3. 假设 $d$ 是一个（上）鞅
+        1. 对任意 $\sigma \in 2^{<\omega}$、任意由 $\sigma$ 的尾节延伸组成的无前束集合 $S$ 都有 ${\displaystyle \sum_{\tau \in S} 2^{-|\tau|} d(\tau) \leqslant 2^{-|\sigma|} d(\sigma)}$
+        2. 令 $E_{k}=\{\sigma: d(\sigma) \geqslant k\}$，则 $\lambda\left(\left[E_{k}\right]^{\prec}\right) \leqslant d(\varnothing) / k$
+
+2. 称一个（上）鞅是递归可枚举的当且仅当其值是统一左递归可枚举的，即存在递归函数 $p: 2^{<\omega} \rightarrow \mathbf{N}$，任给 $\sigma \in 2^{<\omega}$，递归可枚举集合 $W_{p(\sigma)}$ 枚举所有小于 $d(\sigma)$ 的二进有理数
+    1. $\text{Schnorr}$ 定理：序列 $Z$ 是 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 随机的当且仅当不存在递归可枚举的（上）鞅在 $Z$ 上获胜
+    2. 存在通用的递归可枚举鞅 $d$，即对任何递归可枚举鞅 $f$，都有 $S[f] \subseteq S[d]$
