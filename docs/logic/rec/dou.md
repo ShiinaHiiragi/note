@@ -63,10 +63,74 @@
     3. 单集存在
 
 ### 3.2.2 Turing 度
-1. 相对可计算性
-2. $\text{Turing}$ 归约
-3. $\text{Turing}$ 度
-4. $\text{Turing}$ 跃迁
+1. 相对可计算性：全体相对于 $A$ 的部分递归函数（或 $A-$部分递归函数）的集合为最小的包含所有初始函数和 $A$ 的特征函数 $\chi_{A}$，并且对复合、原始递归和极小化封闭的函数集合；一个 $A-$部分递归的全函数称为 $A-$递归函数
+    1. 相对化通用函数定理：存在自然数 $z$，满足对所有 $A \subseteq \mathbf{N}$，对所有 $x, y \in \mathbf{N}$ 有 $\Phi_{z}^{A}(x, y)=\Phi_{x}^{A}(y)$
+    2. 相对化 $s-m-n$ 定理：对任意 $m, n \geqslant 1$，存在 $m+1$元的递归单射 $s_{n}^{m}$ 使得对任意集合 $A \subseteq \mathbf{N}$ 和任意自然数 $x, \overline{y}$，都有 $\Phi_{s_{n}^{m}(x, \overline{y})}^{A}(\overline{z})=\Phi_{x}^{A}(\overline{y}, \overline{z})$
+    3. 相对化递归定理：对所有集合 $A \subseteq \mathbf{N}$ 与 $x, y \in \mathbf{N}$，如果 $f(x, y)$ 是 $A-$递归的，则存在递归函数 $n(y)$ 使得 $\Phi_{n(y)}^{A}=\Phi_{f(n(y), y)}^{A}$
+
+    !!! note "相对可计算性的 $\text{Turing}$ 机版本"
+        称部分函数 $\psi$ 为相对于 $A$ $\text{Turing}$ 可计算的（或 $A-\text{Turing}$可计算的）当且仅当存在一台带信息源的 $\text{Turing}$ 机 $M$，使得若 $M$ 的信息源纸带上存放 $\chi_{A}$，则对所有自然数 $x$ 和 $y$ 有 $\psi(x)=y$，当且仅当 $M$ 对输入 $x$ 停机并输出 $y$
+
+        1. 一个部分函数 $\psi$ 是 $A-$部分递归的，当且仅当 $\psi$ 是 $A-\text{Turing}$可计算的
+        2. 若带信息源的 $\text{Turing}$ 机在计算 $\Phi_{e}^{A}(x)$ 时询问了自然数 $n$ 是否属于信息源 $A$，则称该计算过程使用了 $n$，将使用函数 $u(A ; e, x, s)$ 和 $u(A ; e, x)$ 分别定义为
+
+            $$
+            \begin{aligned}
+            u(A ; e, x, s) &= \left\{\begin{aligned}
+            & 1+v, & \textsf{若 } \Phi_{e, s}^{A}(x) \downarrow \textsf{ 且 } v \textsf{ 是计算过程中使用了的最大的自然数} \\
+            & 0, & \textsf{否则}
+            \end{aligned}\right. \\
+            u(A ; e, x) &= \left\{\begin{aligned}
+            & u(A ; e, x, s), & \textsf{ 如果存在 } s \textsf{ 使得 } \Phi_{e, s}^{A}(x) \downarrow \\
+            & \uparrow, & \textsf{ 否则 }
+            \end{aligned}\right.
+            \end{aligned}
+            $$
+
+2. 使用函数：对有穷序列 $\sigma \in 2^{<\omega}$，规定 $\Phi_{e, s}^{\sigma}(x)=y$ 当且仅当对某个集合 $A \supseteq \sigma$，使得 $\Phi_{e, s}^{A}(x)=y$，且在计算过程中仅使用了小于 $\sigma$ 长度的自然数 $z$．这里将集合 $A$ 等同于其特征函数，同时规定 $\Phi_{e}^{\sigma}(x)=y$ 当且仅当 $(\exists s)\left[\Phi_{e, s}^{\sigma}(x)=y\right]$
+    1. 对任意 $e, \sigma, x, s$
+        1. 集合 $\left\{\langle e, \sigma, x, s\rangle: \Phi_{e, s}^{\sigma}(x) \downarrow\right\}$ 是递归的
+        2. 集合 $\left\{\langle e, \sigma, x\rangle: \Phi_{e}^{\sigma}(x) \downarrow\right\}$ 是递归可枚举的
+    2. 使用原理
+        1. 如果 $\Phi_{e}^{A}(x)=y$，则 $(\exists s)(\exists \sigma \subseteq A)\left[\Phi_{e, s}^{\sigma}(x)=y\right]$
+        2. 如果 $\Phi_{e, s}^{\sigma}(x)=y$，则 $(\forall t \geqslant s)(\forall \tau \supseteq \sigma)\left[\Phi_{e, t}^{\top}(x)=y\right]$
+        3. 如果 $\Phi_{e}^{\sigma}(x)=y$，则 $(\forall A \supseteq \sigma)\left[\Phi_{e}^{A}(x)=y\right]$
+    3. 对任何自然数子集 $A$ 和 $B$，令 $v=u(A ; e, x, s)$，则 $\left[\Phi_{e, s}^{A}(x)=y \wedge A \upharpoonright v=B \upharpoonright v\right] \Rightarrow \Phi_{e, s}^{B}(x)=y$
+3. 设 $A, B$ 为自然数的集合
+    1. 称集合 $B$ 是 $A-$递归的当且仅当 $B$ 的特征函数是 $A-$递归的，即存在 $e, \chi_{B}=\Phi_{e}^{A}$．$B$ 是 $A-$递归的也称作 $B$ 递归于 $A$，或 $B$ 可以 $\text{Turing}$ 归约到 $A$，通常记作 $B \leqslant_{T} A$
+    2. 称 $B$ 是 $A-$递归可枚举的（或 $B$ 递归可枚举于 $A$）当且仅当存在 $e, B=W_{e}^{A}$，其中 $W_{e}^{A}$ 表示 $\Phi_{e}^{A}$ 的定义域
+    3. 称 $B$ 是 $\Sigma_{1}^{A}$ 的（或 $B$ 具有 $\Sigma_{1}^{A}$ 的形式）当且仅当 $B=\{x: \left.(\exists \overline{y}) R^{A}(x, \overline{y})\right\}$，其中 $R^{A}(x, \overline{y})$ 是一个 $A-$递归的谓词
+
+    若 $B \leqslant_{m} A$，则 $B \leqslant_{T} A$
+
+    1. $B \leqslant_{T} A$ 当且仅当 $B$ 和 $\overline{B}$ 都是 $A-$递归可枚举的
+    2. 下列命题等价
+        1. $B$ 是 $A-$递归可枚举的
+        2. $B=\varnothing$ 或 $B$ 是某个 $A-$递归（全）函数的值域
+        3. $B$ 是 $\Sigma_{1}^{A}$ 的
+
+4. $\text{Turing}$ 等价与 $\text{Turing}$ 度：令 $A, B$ 为自然数的集合，称集合 $A$ 和 $B$ $\text{Turing}$ 等价或 $A \equiv_{T} B$ 当且仅当 $A \leqslant_{T} B$ 且 $B \leqslant_{T} A$；称包含集合 $A$ 的等价类为 $A$ 的 $\text{Turing}$ 度，记作 $\operatorname{deg}(A)=\left\{B: B \equiv_{T} A\right\}$
+    1. 通常用 $\mathcal{D}$ 表示所有 $\text{Turing}$ 度的类，用 $\mathcal{R}$ 表示所有递归可枚举度的类，用 $\mathbf{a}, \mathbf{b}$ 等表示集合的 $\text{Turing}$ 度
+    2. 若 $\text{Turing}$ 度 $\mathbf{a}$ 包含一个递归可枚举集，则称其为递归可枚举的
+    3. 若 $A$ 是 $B-$递归可枚举的且 $B \leqslant_{T} C$，则 $A$ 是 $C-$递归可枚举的
+5. $\text{Turing}$ 跃迁
+    1. $\text{Turing}$ 归约：称 $\text{Turing}$ 度 $\mathbf{a}$ $\text{Turing}$ 归约到 $\text{Turing}$ 度 $\mathbf{b}$，或简单称为 $\mathbf{a}$ $\text{Turing}$ 小于等于 $\mathbf{b}$，记作 $\mathbf{a} \leqslant_{T} \mathbf{b}$ （或 $\mathbf{a} \leqslant \mathbf{b}$）当且仅当存在 $A \in \mathbf{a}$ 和 $B \in \mathbf{b}$，使得 $A \leqslant_{T} B$
+        1. 定义 $\mathbf{a} \vee \mathbf{b}=\operatorname{deg}(A \oplus B)$，其中 $A \in \mathbf{a}$ 且 $B \in \mathbf{b}$，称 $\vee$ 为 $\mathcal{D}$ 上的联算子
+        2. 整体度结构 $\left(\mathcal{D}, \leqslant_{T}, \vee\right)$ 与局部度结构 $\left(\mathcal{R}, \leqslant_{T}, \vee\right)$ 是上半格
+    2. 跃迁算子：令 $A$ 为自然数的集合
+        1. 称集合 $K^{A}=\left\{e: \Phi_{e}^{A}(e) \downarrow\right\}$ 为 $A$ 的跃迁，记作 $A^{\prime}$
+        2. 递归地定义 $A$ 的 $n-$次跃迁 $A^{(n)}$ 如下为 $A^{(0)}=A$ 且 $A^{(n+1)}=(A^{(n)})^{\prime}$
+    3. 跃迁定理
+        1. $A^{\prime}$ 是 $A$-递归可枚举的
+        2. $A^{\prime} \not\leqslant_{T} A$
+        3. $B$ 是 $A$-递归可枚举的当且仅当 $B \leqslant_{1} A^{\prime}$
+        4. $B \leqslant_{T} A$ 当且仅当 $B^{\prime} \leqslant_{1} A^{\prime}$
+        5. 如果 $B \equiv_{T} A$，则 $B^{\prime} \equiv_{1} A^{\prime}$，于是有 $B^{\prime} \equiv_{T} A^{\prime}$
+    4. $\text{Turing}$ 度序列：令 $\mathbf{0}^{(n)}$ 表示 $\varnothing^{(n)}$，则 $\mathbf{0}<\mathbf{0}^{\prime}<\mathbf{0}^{\prime \prime}<\cdots<\mathbf{0}^{(n)}<\cdots$ 构成一个严格递增的度序列，其最初几项的代表元为
+        1. $\mathbf{0}=\{B: B$ 递归 $\}$
+        2. $\mathbf{0}^{\prime}=\operatorname{deg}(K)=\operatorname{deg}\left(K_{0}\right)$
+        3. $\mathbf{0}^{\prime \prime}=\operatorname{deg}(\operatorname{Fin})=\operatorname{deg}(\operatorname{Tot})$，其中 $\operatorname{Fin} = \left\{x: W_{x}\right.$ 是有穷的$\}, \operatorname{Tot} = \left\{e: \Phi_{e}\right.$ 是全函数$\}$
+        4. $\mathbf{0}^{\prime \prime \prime}=\operatorname{deg}(\operatorname{Rec})$，其中 $\operatorname{Rec} = \left\{x: W_{x}\right.$ 是递归的$\}$
 
 ## 3.3 算术分层
 1. $\Sigma_1-$集：如果集合 $A$ 是一个递归关系的投影，则称 $A$ 是 $\Sigma_1-$形式的，此时 $A$ 是递归可枚举集
