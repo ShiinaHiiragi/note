@@ -53,7 +53,7 @@
 </div>
 
 !!! abstract "此项目尚未完成，现处于第一阶段"
-    <label> 现在进度：递归论 </label>
+    <label> 现在进度：连续统假设 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
@@ -230,8 +230,7 @@ const refList = [
         page: [1, 191],
         press: "复旦大学出版社",
         locate: "上海",
-        year: 2018,
-        plot: 92
+        year: 2018
     },
     {
         author: ["[美]Thomas H. Cormen", "[美]Charles E. Leiserson", "[美]Ronald L. Rivest", "[美]Clifford Stein"],
