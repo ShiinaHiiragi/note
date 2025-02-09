@@ -159,8 +159,8 @@ nav:
       - 1 可计算理论: logic/rec/calc.md
       - 2 计算复杂性理论: logic/rec/cplx.md
       - 3 不可解度论: logic/rec/dou.md
-      # - 4 形式算术: logic/rec/arith.md
-      # - 5 随机性理论: logic/rec/rand.md
+      - 4 形式算术: logic/rec/arith.md
+      - 5 随机性理论: logic/rec/rand.md
     - 四、公理集合论:
       - 1 数学基础: logic/set/zfc.md
       - 2 集合代数: logic/set/alg.md
