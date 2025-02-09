@@ -29,7 +29,38 @@
     2. 指标集：令 $A \subseteq \mathbf N$，如果对任意 $x, y$ 有 $(x \in A \wedge \Phi_x = \Phi_y) \rightarrow y \in A$，则称 $A$ 是指标集
         1. $\text{Rice}$ 定理：如果 $A$ 是非平凡的指标集，即 $A \neq \varnothing, \mathbf N$，则或者 $K \leqslant_1 A$，或者 $K \leqslant_1 \mathbf N - A$．因此一个指标集是递归的当且仅当其是平凡的
         2. $\text{Rice} - \text{Shapiro}$ 定理：令 $\mathcal A$ 是 $\mathbf N$ 到 $\mathbf N$ 的部分递归函数的集合且有 $A = \{e \mid \phi_e \in \mathcal A\}$ 是递归可枚举的，则部分递归函数 $\psi: \mathbf N \to \mathbf N \in \mathcal A$ 当且仅当存在 $\psi$ 的有穷限制属于 $\mathcal A$
-2. 多一度与一一度
+2. 多一度与一一度：称集合 $A$ 多一等价于集合 $B$ 或 $A \equiv_{m} B$ 当且仅当 $A \leqslant_{m} B$ 且 $B \leqslant_{m} A$；称 $A$ 多一等价于 $B$ 或 $A \equiv_{1} B$ 当且仅当 $A \leqslant_{1} B$ 且 $B \leqslant_{1} A$，分别称各自的等价类为多一度（或 $m-$度）和一一度（或 $1-$度）
+    1. 联算子：定义 $A \oplus B=\{2 x: x \in A\} \cup\{2 x+1: x \in B\}$ 为集合 $A$ 和 $B$ 的联，若 $a$ 和 $b$ 分别是集合 $A$ 和 $B$ 的 $m-$度，则函数 $(\mathbf{a}, \mathbf{b}) \mapsto A \oplus B \textsf{ 的 } m-\textsf{度 }$ 是良定义的，称为联算子
+        1. $A \leqslant_{m} A \oplus B$ 且 $B \leqslant_{m} A \oplus B$
+        2. 若 $A \leqslant_{m} C$ 且 $B \leqslant_{m} C$，则 $A \oplus B \leqslant_{m} C$
+        3. 若 $A \equiv_{m} C$ 且 $B \equiv_{m} D$，则 $A \oplus B \equiv_{m} C \oplus D$
+        4. 若 $A$ 和 $B$ 都是递归可枚举的，则 $A \oplus B$ 也是
+
+        $m-$度、$\leqslant_{m}$ 和联算子构成上半格
+
+    2. 设 $A$ 是一个集合，若 $A$ 是递归可枚举的，且对任何递归可枚举集 $B$ 都有 $B \leqslant_{m} A$，则称 $A$ 为 $m-$完全的；若 $A$ 是递归可枚举的，且对任何递归可枚举集 $B$ 都有 $B \leqslant_{1} A$，则称 $A$ 为 $1-$完全的
+        1. 集合 $K_{0}=\left\{\langle x, y\rangle: x \in W_{y}\right\}$ 是 $1-$完全的
+        2. 集合 $K=\left\{x: x \in W_{x}\right\}$ 是 $1-$完全的
+    3. 称集合 $A$ 递归同构于集合 $B$ 或 $A \cong B$ 当且仅当存在一个递归双射 $f: \mathbf{N} \rightarrow \mathbf{N}$，使得 $f[A]=B$
+        1. 一个 $A$ 到 $B$ 的部分递归同构 $h$ 是一个从 $A$ 到 $B$ 的有穷函数，满足 ① $h$ 是单射；② 对任一 $x \in \operatorname{dom}(h), x \in A$ 当且仅当 $h(x) \in B$
+        2. $A \cong B$ 当且仅当 $A \equiv_{1} B$
+    4. 一个集合 $A$ 是 $m-$完全的，当且仅当它是 $1-$完全的
+
+3. 单集：设 $A$ 是一个集合，若
+    1. $A$ 是递归可枚举的
+    2. $\overline{A}$ 是无穷的
+    3. 对任一无穷的递归可枚举集 $B$ 有 $B \cap A \neq \emptyset$
+
+    则称 $A$ 为单集
+
+    1. 产生集与创造集：称集合 $A$ 为产生集当且仅当存在一个递归函数 $p$ 使得若 $W_{x} \subseteq A$，则 $p(x) \in A - W_{x}$，此时称函数 $p$ 为集合 $A$ 的一个产生函数；称集合 $A$ 为创造集当且仅当是递归可枚举的，且其补集 $\overline{A}$ 是一个产生集
+        1. 如果 $P$ 是一个产生集，则 $\overline{K} \leqslant_{1} P$
+            1. 如果 $P$ 是一个产生集，则 $P$ 不是递归可枚举的，且 $P$ 有一个无穷的递归可枚举子集
+            2. 如果 $P$ 是一个产生集且 $P \leqslant_{m} A$，则 $A$ 也是一个产生集
+            3. 每一个产生集 $P$ 都有一个一一的产生函数
+        2. 如果 $A$ 是一个创造集，则 $A$ 是 $1-$完全的
+    2. 如果 $A$ 是一个单集，则 $A$ 既不是递归的，也不是 $m-$完全的
+    3. 单集存在
 
 ### 3.2.2 Turing 度
 
