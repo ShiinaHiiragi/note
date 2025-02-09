@@ -49,7 +49,7 @@
 3. 单集：设 $A$ 是一个集合，若
     1. $A$ 是递归可枚举的
     2. $\overline{A}$ 是无穷的
-    3. 对任一无穷的递归可枚举集 $B$ 有 $B \cap A \neq \emptyset$
+    3. 对任一无穷的递归可枚举集 $B$ 有 $B \cap A \neq \varnothing$
 
     则称 $A$ 为单集
 
@@ -131,6 +131,15 @@
         2. $\mathbf{0}^{\prime}=\operatorname{deg}(K)=\operatorname{deg}\left(K_{0}\right)$
         3. $\mathbf{0}^{\prime \prime}=\operatorname{deg}(\operatorname{Fin})=\operatorname{deg}(\operatorname{Tot})$，其中 $\operatorname{Fin} = \left\{x: W_{x}\right.$ 是有穷的$\}, \operatorname{Tot} = \left\{e: \Phi_{e}\right.$ 是全函数$\}$
         4. $\mathbf{0}^{\prime \prime \prime}=\operatorname{deg}(\operatorname{Rec})$，其中 $\operatorname{Rec} = \left\{x: W_{x}\right.$ 是递归的$\}$
+6. $\text{Post}$ 问题：是否存在非递归但又不完全的递归可枚举 $\text{Turing}$ 度？
+    1. $\text{Kleene}-\text{Post}$ 定理：存在两个互不归约且小于等于 $\mathbf{0}^{\prime}$ 的 $\text{Turing}$ 度 $\mathbf{a}$ 和 $\mathbf{b}$
+    2. $\text{Friedberg}-\text{Muchnik}$ 定理：存在两个互不归约的递归可枚举度 $\mathbf{a}$ 和 $\mathbf{b}$
+    3. $\text{Sacks}$ 分裂定理：每个非递归的递归可枚举集 $A$，都有一个递归可枚举的分裂 $\left(A_{0}, A_{1}\right)$
+        1. 假设 $A, A_{0}, A_{1}$ 都是自然数的子集，称 $\left(A_{0}, A_{1}\right)$ 是 $A$ 的一个递归可枚举的分裂当且仅当
+            1. $A_{0}, A_{1}$ 都是递归可枚举的
+            2. $A_{0}, A_{1}$ 不能互相 $\text{Turing}$ 归约，即 $A_{0} \not\leqslant_{T} A_{1}, A_{1} \not\leqslant_{T} A_{0}$
+            3. $A=A_{0} \sqcup A_{1}$，即 $A=A_{0} \cup A_{1}$ 并且 $A_{0} \cap A_{1}=\varnothing$
+        2. 如果 $\left(A_{0}, A_{1}\right)$ 是 $A$ 的一个分裂，则 $\operatorname{deg}(A)=\operatorname{deg}\left(A_{0}\right) \vee \operatorname{deg}\left(A_{1}\right)$ 且 $\operatorname{deg}\left(A_{i}\right)<\operatorname{deg}(A)$，其中 $i=0,1$
 
 ## 3.3 算术分层
 1. $\Sigma_1-$集：如果集合 $A$ 是一个递归关系的投影，则称 $A$ 是 $\Sigma_1-$形式的，此时 $A$ 是递归可枚举集
@@ -154,7 +163,31 @@
     2. 称集合 $B$ 是算术的当且仅当存在某个自然数 $n$，使得 $B$ 是 $\Sigma_{n}$的
     3. 对固定的集合 $A \subseteq \mathbf{N}$，通过在语言中添加新的一元谓词符号 $\dot{A}$，可以类似定义 $\Sigma_{n}^{A}、\Pi_{n}^{A}$ 和 $\Delta_{n}^{A}$ 的公式和集合
 
-3. 分层定理
-4. 极限引理
+3. 分层定理：对任一 $n>0$，$\left\{\Delta_{n}\right.$ 集合$\} \subsetneq\left\{\Sigma_{n}\right.$ 集合$\}$ 且 $\left\{\Delta_{n}\right.$ 集合$\} \subsetneq\left\{\Pi_{n}\right.$ 集合$\}$
+    1. 令 $A$ 和 $B$ 为自然数的子集
+        1. $A$ 是 $\Sigma_{n}$ 的，当且仅当它的补集 $\overline{A}$ 是 $\Pi_{n}$ 的
+        2. 如果 $A$ 是 $\Sigma_{n}$ 的或是 $\Pi_{n}$ 的，则对所有的 $m>n$，$A$ 都既是 $\Sigma_{m}$的，也是 $\Pi_{m}$ 的
+        3. 如果 $A$ 和 $B$ 都是 $\Sigma_{n}$ 的（或都是 $\Pi_{n}$ 的），则 $A \cup B$ 和 $A \cap B$ 都是 $\Sigma_{n}$ 的（或都是 $\Pi_{n}$ 的）
+        4. 如果 $R$ 是一个 $\Sigma_{n}$ 的关系且 $n>0$，则集合 $A=\{x:(\exists y) R(x, y)\}$ 是 $\Sigma_{n}$ 的
+        5. 如果 $B \leqslant_{m} A$，$A$ 是 $\Sigma_{n}$ 的且 $n>0$，则 $B$ 也是 $\Sigma_{n}$ 的
+        6. 如果 $R$ 是 $\Sigma_{n}$ 的（或是 $\Pi_{n}$ 的），则由下式定义的集合 $A$ 和 $B$ 也是 $\Sigma_{n}$ 的（或是 $\Pi_{n}$ 的）
 
-## 3.4 典型构造
+            $$
+            \begin{aligned}
+            & \langle x, y\rangle \in A \ \leftrightarrow \ (\forall z<y) R(x, y, z), \\
+            & \langle x, y\rangle \in B \ \leftrightarrow \ (\exists z<y) R(x, y, z)
+            \end{aligned}
+            $$
+
+    2. 称集合 $A$ 是 $\Sigma_{n}-$完全的当且仅当 $A$ 是 $\Sigma_{n}$ 的，且对任一 $\Sigma_{n}$ 的集合 $B$ 都有 $B \leqslant_{m} A$，类似可定义 $\Pi_{n}-$完全集，于是
+        1. 令 $B$ 是自然数的子集，则下述命题等价
+            1. $B$ 是 $\Sigma_{n+1}$ 的
+            2. $B$ 递归可枚举于某个 $\Pi_{n}$ 集
+            3. $B$ 递归可枚举于某个 $\Sigma_{n}$ 集
+        2. 当 $n>0$ 时，$\varnothing^{(n)}$ 是 $\Sigma_{n}$ 完全的
+        3. 一个集合 $B$ 是 $\Sigma_{n+1}$ 的当且仅当 $B$ 递归可枚举于 $\varnothing^{(n)}$
+        4. 一个集合 $B$ 是 $\Delta_{n+1}$ 的当且仅当 $B \leqslant_{T} \varnothing^{(n)}$，即 $B$ 递归于 $\varnothing^{(n)}$
+    3. $\text{Sch}\ddot{\mathrm{o}}\text{nfeld}$ 极限引理：令 $B$ 是自然数的一个子集，则下述命题等价
+        1. $B$ 是 $\Delta_{2}$ 的
+        2. $B \leqslant_{T} K$
+        3. 存在二元递归（全）函数 $f(x, s)$，使得对任一自然数 $x$，都有 ${\displaystyle \chi_{B}(x)=\lim _{s \rightarrow \infty} f(x, s)}$
