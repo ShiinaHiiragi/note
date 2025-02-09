@@ -20,8 +20,18 @@
 4. $\text{Chaitin}$ 数
 
 ### 5.2.2 基于测试
-1. $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 随机性
-2. 通用 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 测试
+1. $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 随机性：称序列 $Z \in 2^{\omega}$ 通过 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 测试 $\left\{U_{n}\right\}_{n<\omega}$ 当且仅当 ${\displaystyle Z \notin \bigcap_{n<\omega} U_{n}}$，定义 $Z \in 2^{\omega}$ 是 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 随机的当且仅当 $Z$ 通过所有的 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 测试
+    1. 称开集序列 $\left\{U_{n}\right\}_{n \in \omega}$ 是统一递归可枚举的，当且仅当集合 $\{\langle n, \sigma\rangle: \left.[\sigma] \subseteq U_{n}\right\}$ 是递归可枚举的
+        1. 称集合 $U \subseteq 2^{\omega}$ 是递归可枚举开集（或 $\Sigma_{1}^{0}$ 集）当且仅当存在（无前束的）递归可枚举集 $E \subseteq 2^{<\omega}$ 使得 $U=[E]^{2}$
+        2. 称集合 $P$ 是余递归可枚举闭集（或 $\Pi_{1}^{0}$ 集）当且仅当它的补集是递归可枚举开集
+    2. 令 $\left\{U_{n}\right\}_{n<\omega}$ 是统一递归可枚举的开集序列，若对任意 $n$ 有 $\lambda\left(U_{n}\right) \leqslant 2^{-n}$，则称 $\left\{U_{n}\right\}_{n<\omega}$ 是一个 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 测试
+    3. $M$ 是无前束程序，对 $k \in \mathbf{N}$，令 $S_{k}=\left\{\sigma: K_{M}(\sigma) \leqslant\right. |\sigma|-k\}$，即 $k$-可压缩的字符串组成的集合
+        1. $\lambda\left(\left[S_{k}\right]^{\prec}\right) \leqslant 2^{-k} \lambda\left([\operatorname{dom} M]^{\prec}\right)$
+        2. 对 $k \in \mathbf{N}$，$\lambda\left(\left[S_{k}\right]^{\prec}\right)$ 可以统一 $\text{Turing}$ 归约于 $\lambda\left([\operatorname{dom} M]^{\prec}\right)$
+    4. 序列 $Z$ 是 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 随机的，当且仅当 $Z$ 是 $1-$随机的
+2. 通用 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 测试：称 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 测试 $\left\{U_{n}\right\}_{n \in \omega}$ 是通用的当且仅当对任意 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 测试 $\left\{V_{n}\right\}_{n \in \omega}$，都有 ${\displaystyle \bigcap_{n \in \omega} V_{n} \subseteq \bigcap_{n \in \omega} U_{n}}$
+    1. 通用 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 测试存在
+    2. 令 $\mathrm{MLR}$ 是所有 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 随机序列组成的集合，则 $\mathrm{MLR}$ 是一个 $\Sigma_{2}^{0}$ 集合且 $\lambda(\mathrm{MLR})=1$
 
 ### 5.2.3 基于不可预测性
 1. 鞅：令 $d: 2^{<\omega} \rightarrow \mathbf{R}^{\geqslant 0}$ 是以大于等于 $0$ 的实数为值域的函数
@@ -32,7 +42,7 @@
     一般要求 $d(\varnothing)>0$
 
     1. 假设 $d$ 是一个（上）鞅，$r \in \mathbf{R}^{+}$ 是正实数且函数 $f: 2^{<\omega} \rightarrow \mathbf{R}^{\geqslant 0}$ 满足 $f=r \cdot d$，则 $f$ 是一个（上）鞅且 $S[d]=S[f]$
-    2. 若 $d_{0}, d_{1}, \cdots$ 是（上）鞅且 ${\displaystyle \sum_{n \in \mathbf N} d_{n}(\varnothing)<\infty}$，则 ${\displaystyle \sum_{n \in \mathbf N} d_{n}}$ 也是（上）鞅
+    2. 若 $d_{0}, d_{1}, \cdots$ 是（上）鞅且 ${\displaystyle \sum_{n \in \omega} d_{n}(\varnothing)<\infty}$，则 ${\displaystyle \sum_{n \in \omega} d_{n}}$ 也是（上）鞅
     3. 假设 $d$ 是一个（上）鞅
         1. 对任意 $\sigma \in 2^{<\omega}$、任意由 $\sigma$ 的尾节延伸组成的无前束集合 $S$ 都有 ${\displaystyle \sum_{\tau \in S} 2^{-|\tau|} d(\tau) \leqslant 2^{-|\sigma|} d(\sigma)}$
         2. 令 $E_{k}=\{\sigma: d(\sigma) \geqslant k\}$，则 $\lambda\left(\left[E_{k}\right]^{\prec}\right) \leqslant d(\varnothing) / k$
