@@ -72,7 +72,7 @@
         称部分函数 $\psi$ 为相对于 $A$ $\text{Turing}$ 可计算的（或 $A-\text{Turing}$可计算的）当且仅当存在一台带信息源的 $\text{Turing}$ 机 $M$，使得若 $M$ 的信息源纸带上存放 $\chi_{A}$，则对所有自然数 $x$ 和 $y$ 有 $\psi(x)=y$，当且仅当 $M$ 对输入 $x$ 停机并输出 $y$
 
         1. 一个部分函数 $\psi$ 是 $A-$部分递归的，当且仅当 $\psi$ 是 $A-\text{Turing}$可计算的
-        2. 若带信息源的 $\text{Turing}$ 机在计算 $\Phi_{e}^{A}(x)$ 时询问了自然数 $n$ 是否属于信息源 $A$，则称该计算过程使用了 $n$，将使用函数 $u(A ; e, x, s)$ 和 $u(A ; e, x)$ 分别定义为
+        2. 若带信息源的 $\text{Turing}$ 机在计算 $\Phi_{e}^{A}(x)$ 时询问了自然数 $n$ 是否属于信息源 $A$，则称该计算过程使用了 $n$，将使用函数 $u(A ; e, x, s)$ 和 $u(A ; e, x)$ 定义为
 
             $$
             \begin{aligned}
@@ -121,9 +121,9 @@
         1. 称集合 $K^{A}=\left\{e: \Phi_{e}^{A}(e) \downarrow\right\}$ 为 $A$ 的跃迁，记作 $A^{\prime}$
         2. 递归地定义 $A$ 的 $n-$次跃迁 $A^{(n)}$ 如下为 $A^{(0)}=A$ 且 $A^{(n+1)}=(A^{(n)})^{\prime}$
     3. 跃迁定理
-        1. $A^{\prime}$ 是 $A$-递归可枚举的
+        1. $A^{\prime}$ 是 $A-$递归可枚举的
         2. $A^{\prime} \not\leqslant_{T} A$
-        3. $B$ 是 $A$-递归可枚举的当且仅当 $B \leqslant_{1} A^{\prime}$
+        3. $B$ 是 $A-$递归可枚举的当且仅当 $B \leqslant_{1} A^{\prime}$
         4. $B \leqslant_{T} A$ 当且仅当 $B^{\prime} \leqslant_{1} A^{\prime}$
         5. 如果 $B \equiv_{T} A$，则 $B^{\prime} \equiv_{1} A^{\prime}$，于是有 $B^{\prime} \equiv_{T} A^{\prime}$
     4. $\text{Turing}$ 度序列：令 $\mathbf{0}^{(n)}$ 表示 $\varnothing^{(n)}$，则 $\mathbf{0}<\mathbf{0}^{\prime}<\mathbf{0}^{\prime \prime}<\cdots<\mathbf{0}^{(n)}<\cdots$ 构成一个严格递增的度序列，其最初几项的代表元为
@@ -142,7 +142,18 @@
     3. 部分函数 $\psi$ 是部分递归的当且仅当其图像 $G = \{(x, y) \mid y = \psi(x)\}$ 是递归可枚举的
     4. 递归可枚举集能行地、一致地对交和并封闭，即存在递归函数 $f, g$ 使得 $W_{f(x, y)} = W_x \cap W_y$，且 $W_{g(x, y)} = W_x \cup W_y$
 
-2. 一阶算术的公式分层
+2. 一阶算术的公式分层：在 $\textbf{PA}$ 的标准模型 $\mathfrak N$ 中，设 $n \geqslant 1$
+    1. 称一个公式 $\varphi$ 是 $\Sigma_{0}^{0}$ 或 $\Pi_{0}^{0}$ 的当且仅当 $\varphi$ 中的所有量词都是有界量词
+    2. 称公式 $\varphi$ 是 $\Sigma_{n}^{0}$ 的当且仅当 $\varphi$ 等价于一个形如 $\exists y \psi$ 的公式，其中 $\psi$ 是 $\Pi_{n-1}^{0}$ 的
+    3. 称公式 $\varphi$ 是 $\Pi_{n}^{0}$ 的当且仅当 $\varphi$ 等价于一个形如 $\forall y \psi$ 的公式，其中 $\psi$ 是 $\Sigma_{n-1}^{0}$ 的
+    4. 称公式 $\varphi$ 是 $\Delta_{n}^{0}$ 的当且仅当 $\varphi$ 既等价于一个形如 $\Sigma_{n}^{0}$ 的公式，又等价于一个形如 $\Pi_{n}^{0}$ 的公式
+
+    其中上标 $0$ 表示 $\varphi$ 是一阶算术中的公式，不引起歧义时可省略上标
+
+    1. 称集合 $B \subseteq \mathbf{N}$ 分别是 $\Sigma_{n}$ 的、$\Pi_{n}$ 的或 $\Delta_{n}$ 的当且仅当 $B$ 具有一个 $\Sigma_{n}、\Pi_{n}$ 或 $\Delta_{n}$ 的定义，即 $B=\{n \in \mathbf{N}: \mathfrak{N} \models \varphi(n)\}$
+    2. 称集合 $B$ 是算术的当且仅当存在某个自然数 $n$，使得 $B$ 是 $\Sigma_{n}$的
+    3. 对固定的集合 $A \subseteq \mathbf{N}$，通过在语言中添加新的一元谓词符号 $\dot{A}$，可以类似定义 $\Sigma_{n}^{A}、\Pi_{n}^{A}$ 和 $\Delta_{n}^{A}$ 的公式和集合
+
 3. 分层定理
 4. 极限引理
 
