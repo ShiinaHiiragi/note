@@ -141,10 +141,6 @@
         1. $X, \varnothing \in \mathscr F$
         2. 若 $A, B\in \mathscr F$，则 $A\cup B\in \mathscr F$
         3. 若 $\varnothing \neq \mathscr F_1\subseteq \mathscr F$，则 ${\displaystyle \bigcap_{A\in \mathscr F_1}A} \in \mathscr F$
-
-        !!! note "$\text{Cantor}$ 集"
-            在实数空间 $R$ 中，定义 $f_1, f_2: R\to R$ 使得对于任意 $t\in \mathbf R$ 有 $f_1(t)=\dfrac{t}{3}, f_2(t)=\dfrac{t+2}{3}$，则可以验证 $f_1, f_2$ 均为同胚，即任意开集 $U\subseteq R$，其 $f_1-$像与 $f_2-$像都是开集．定义 $A_1=\left(\dfrac13, \dfrac23\right), A_n=f_1[A_{n-1}]\cup f_2[A_{n-1}] (n > 1), A={\displaystyle \bigcup_{n\in \mathbf Z_+}A_n}$，称集合 $C=[0, 1]-A$ 为 $\text{Cantor }$ 集或标准 $\text{Cantor}$ 三分集，可以验证 $C$ 是一个闭集
-
 5. 闭包：设 $X$ 是一个拓扑空间，$A\subseteq X$，称集合 $A\cup d(A)$ 为集合 $A$ 的闭包，记作 $\overline A$ 或 $A^-$
     1. $x\in \overline A$ 当且仅当对于 $x$ 的任何一个邻域 $U$ 有 $U\cap A\neq \varnothing$
     2. 拓扑空间 $X$ 的子集 $A$ 是闭集当且仅当 $A=\overline A$，且任意子集 $A$ 的闭包 $\overline A$ 都是闭集
