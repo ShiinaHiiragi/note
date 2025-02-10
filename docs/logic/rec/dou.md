@@ -159,7 +159,7 @@
 
     其中上标 $0$ 表示 $\varphi$ 是一阶算术中的公式，不引起歧义时可省略上标
 
-    1. 称集合 $B \subseteq \mathbf{N}$ 分别是 $\Sigma_{n}$ 的、$\Pi_{n}$ 的或 $\Delta_{n}$ 的当且仅当 $B$ 具有一个 $\Sigma_{n}、\Pi_{n}$ 或 $\Delta_{n}$ 的定义，即 $B=\{n \in \mathbf{N}: \mathfrak{N} \models \varphi(n)\}$
+    1. 称集合 $B \subseteq \mathbf{N}$ 分别是 $\Sigma_{n}$ 的、$\Pi_{n}$ 的或 $\Delta_{n}$ 的当且仅当 $B$ 具有一个 $\Sigma_{n}、\Pi_{n}$ 或 $\Delta_{n}$ 的定义，即 $B=\{n \in \mathbf{N}: \mathfrak{N} \vDash \varphi(n)\}$
     2. 称集合 $B$ 是算术的当且仅当存在某个自然数 $n$，使得 $B$ 是 $\Sigma_{n}$ 的
     3. 对固定的集合 $A \subseteq \mathbf{N}$，通过在语言中添加新的一元谓词符号 $\dot{A}$，可以类似定义 $\Sigma_{n}^{A}、\Pi_{n}^{A}$ 和 $\Delta_{n}^{A}$ 的公式和集合
 

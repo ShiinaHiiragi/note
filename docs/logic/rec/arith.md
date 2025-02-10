@@ -105,18 +105,27 @@
     2. 以下关系是原始递归的
         1. $x$ 在 $\alpha$ 中自然出现，即 $x$ 是一个变元，$\alpha$ 是一个项或公式，且 $\natural x$ 在 $\natural \alpha$ 中自由出现
         2. $t$ 在 $\alpha$ 中可替换 $x$，即 $x$ 是一个变元，$\alpha$ 是一个公式，$t$ 是一个项且 $\natural t$ 在 $\natural \alpha$ 中可替换 $\natural x$
-        3. $\alpha$ 是 $\beta$ 的一个全程概括，即 $\alpha, \beta$ 是公式且 $\natural \alpha$ 是 $\natural \beta$ 的一个全程概括
-    3. 存在一个原始递归函数 $\operatorname{Sb}$ 使得对任意项或公式 $\alpha$，对任意变元 $x$ 和任意项 $t$ 有 $\operatorname{Sb}(\sharp \alpha, \sharp x, \sharp t) = \sharp \alpha(t/x)$
+        3. $\alpha$ 是 $\beta$ 的一个全称概括，即 $\alpha, \beta$ 是公式且 $\natural \alpha$ 是 $\natural \beta$ 的一个全称概括
+    3. 存在一个原始递归函数 $\operatorname{SUB}$ 使得对任意项或公式 $\alpha$，对任意变元 $x$ 和任意项 $t$ 有 $\operatorname{SUB}(\sharp \alpha, \sharp x, \sharp t) = \sharp \alpha(t/x)$
     4. 令 $T$ 为一个被集合 $X \subseteq T$ 所公理化的理论，此时 $X$ 是递归的
         1. 关系「$b$ 是一个 $T$ 上的一个证明序列」是递归的
         2. 关系 $\operatorname{BEW}_{T}(b, a)$ 为「$b$ 是一个 $T$ 上的一个证明序列且 $b_{\mathrm{lh}(b)-1}=a$」，则 $\mathrm{BEW}_{T}(b, a)$ 是递归的
         3. 关系 $\mathrm{BWB}_{T}(a)$ 为 $\exists b \ \mathrm{BEW}_{T}(b, a)$，则 $\mathrm{BWB}_{T}(a)$ 是递归可枚举的，在一般情况下是不递归的
 
 ### 4.2.2 可证性
-1. 设理论 $T$ 是可公理化的且 $\mathbf{Q} \subseteq T$
-    1. 定义 $\operatorname{Bew}_{T}(y, x)$ 与 $\operatorname{Bwb}_{T}(x)$ 为 $\mathbf{Q}$ 内的 $\mathrm{BEW}$ 和 $\mathrm{BWB}$，并记 $\square_{T} \alpha$ 为 $\mathrm{Bwb}_{T}(\sharp \alpha)$
-    2. 定义 $\operatorname{Con}(T)$ 为 $\neg \operatorname{Bwb}_{T}(\bot)$
-2. $\text{Hilbert}-\text{Bernays}-\text{L}\ddot{\mathrm{o}}\text{b}$ 可证性条件：令 $\sigma$ 和 $\tau$ 为闭语句
+1. 令 $\varphi(\overline{x}, y)$ 为公式，且 $\mathbf{PA} \vdash \forall x \exists^{1} y \ \varphi(\overline{x}, y)$，将 $S$ 扩张为 $S' = S \cup \{f\}$，加入公理 $\forall x \ \varphi(\overline{x}, f(\overline{x}))$
+    1. 对每一个 $S^{\prime}$ 上的公式 $\theta(\overline{v})$，在语言 $S$ 中都存在一个自然的翻译 $\theta^{*}(\overline{v})$
+    2. 设 $\mathfrak{A}$ 为 $S'$ 的一个结构，$\mathfrak{A} \vDash \forall x \ \varphi(\overline{x}, f(\overline{x}))$ 且 $\mathfrak{A} \vDash \mathbf{PA}$
+        1. 对所有的 $S^{\prime}$ 上的公式 $\theta(\overline{v})$ 和所有 $\overline{a} \in|\mathfrak{A}|^{k}$ 都有 $\mathfrak{A} \vDash \theta[\overline{a}]$ 当且仅当 $\mathfrak{A} \vDash \theta^{*}[\overline{a}]$
+        2. 对所有 $S^{\prime}$ 上的公式 $\theta$，$\mathfrak{A}$ 都满足对 $\theta$ 的归纳公理 $I \theta$
+        3. 对每一个 $S^{\prime}$ 上的公式 $\theta$，都在 $\mathbf{PA}$ 中添入一条新的归纳公理 $I \theta$．令 $\mathbf{PA}\left(S^{\prime}\right)$ 为扩充后的公理系统，则 $\mathbf{PA}\left(S^{\prime}\right)$ 是 $\mathbf{PA}$ 的一个保守扩张，即对每一个 $S$ 上的闭语句 $\sigma$ 都有 $\mathbf{PA}\left(S^{\prime}\right) \vdash \sigma$ 当且仅当 $\mathbf{PA} \vdash \sigma$
+    3. 称函数 $f$ 在 $T$ 中是可证递归的当且仅当存在一个 $\Sigma_{1}-$公式 $\varphi(\overline{x}, y)$ 使得 $T \vdash \forall \overline{x} \forall y \ (\varphi(\overline{x}, y) \leftrightarrow y=f(\overline{x}))$；称关系 $R$ 在 $T$ 中是可证递归的当且仅当存在 $\Sigma_{1}-$公式 $\varphi(\overline{x})$ 和 $\psi(\overline{x})$ 使得 $T \vdash \forall \overline{x} \ (R(\overline{x}) \leftrightarrow \varphi(\overline{x}) \leftrightarrow \neg \psi(\overline{x}))$
+        1. 令 $S^{\prime}=S \cup\{f, R\}$，$f$ 和 $R$ 是可证递归的函数和关系，则任何 $\mathbf{PA}\left(S^{\prime}\right)$ 中的可证递归函数和关系都在 $\mathbf{PA}$ 可证递归
+        2. 令 $f$ 为在 $\mathbf{PA}$ 中可证递归函数，令 $\mathfrak{N}$ 和 $\mathfrak{M}$ 为 $\mathbf{PA}$ 的模型且 $\mathfrak{M}$ 是 $\mathfrak{N}$ 的尾节扩张，则对所有的 $\overline{a}$ 有 $b \in \mathfrak{N}, f^{\mathfrak{N}}(\overline{a})=b$ 当且仅当 $f^{\mathfrak{M}}(\overline{a})=b$
+2. 设理论 $T$ 是可公理化的且 $\mathbf{Q} \subseteq T$，定义 $\operatorname{Bew}_{T}(y, x)$ 与 $\operatorname{Bwb}_{T}(x)$ 为 $\mathbf{Q}$ 内形式化的 $\mathrm{BEW}$ 和 $\mathrm{BWB}$
+    1. $\operatorname{Bew}_{T}(y, x)$ 是可证递归的，$\operatorname{Bwb}_{T}(x)$ 一般不是 $\Delta_1$ 的
+    2. 记 $\square_{T} \alpha$ 为 $\mathrm{Bwb}_{T}(\sharp \alpha)$，$\operatorname{Con}(T)$ 为 $\neg \square_{T} \bot$
+3. $\text{Hilbert}-\text{Bernays}-\text{L}\ddot{\mathrm{o}}\text{b}$ 可证性条件：令 $\sigma$ 和 $\tau$ 为闭语句
     1. $\text{D1}:$ 若 $\vdash_{T} \sigma$，则 $\vdash_{T} \square_{T} \sigma$
         1. $\text{D1}$ 不蕴涵 $\vdash_{T} \sigma \rightarrow \square_{T} \sigma$，后者不一定是元定理
         2. $\text{D1}$ 对任何 $\mathbf{Q}$ 的扩张 $T$ 都成立，即若 $\vdash_{T} \sigma$，则 $\vdash_{T} \square_{T} \sigma$
