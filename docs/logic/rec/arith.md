@@ -77,10 +77,73 @@
 
         则以上函数在 $\mathbf{Q}$ 中都是可表示的
 
-3. 算术编码
+3. 算术编码：为 $S$ 中的每个符号指派一个自然数，其中 $\sharp v_{i} = 2i + 21$
+
+    <div class="text-table">
+
+    |  $\zeta$  | $\sharp \zeta$ |    $\zeta$    | $\sharp \zeta$ |
+    | :-------: | :------------: | :-----------: | :------------: |
+    | $\forall$ |       1        |      $)$      |       13       |
+    |     0     |       3        |    $\neg$     |       15       |
+    |     S     |       5        | $\rightarrow$ |       17       |
+    |     +     |       7        |      $=$      |       19       |
+    |  $\cdot$  |       9        |    $v_{0}$    |       21       |
+    |    $($    |       11       |   $\cdots$    |    $\cdots$    |
+
+    </div>
+
+    指派给字符串 $\xi=\zeta_{0} \ldots \zeta_{n}$ 的 $\text{G}\ddot{\mathrm o}\text{del}$ 编码为 $\sharp \xi = \operatorname{enc}(\zeta_{0}, \zeta_{1}, \cdots, \zeta_{n})$，并用 $\natural \xi$ 表示 $\sharp \xi$ 的逆运算
+
+    1. 以下集合是原始递归的
+        1. $\{\sharp x: x$ 是一个变元$\}$
+        2. $\{\sharp t: t$ 是一个项$\}$
+        3. $\{\sharp \alpha: \alpha$ 是一个原子公式$\}$
+        4. $\{\sharp \alpha: \alpha$ 是一个公式$\}$
+        5. $\{\sharp \alpha: \alpha$ 是一个闭语句$\}$
+        6. $\{\sharp \alpha: \alpha$ 是一条逻辑公理$\}$
+        7. $\{\sharp m: m$ 是一个数码$\}$
+    2. 以下关系是原始递归的
+        1. $x$ 在 $\alpha$ 中自然出现，即 $x$ 是一个变元，$\alpha$ 是一个项或公式，且 $\natural x$ 在 $\natural \alpha$ 中自由出现
+        2. $t$ 在 $\alpha$ 中可替换 $x$，即 $x$ 是一个变元，$\alpha$ 是一个公式，$t$ 是一个项且 $\natural t$ 在 $\natural \alpha$ 中可替换 $\natural x$
+        3. $\alpha$ 是 $\beta$ 的一个全程概括，即 $\alpha, \beta$ 是公式且 $\natural \alpha$ 是 $\natural \beta$ 的一个全程概括
+    3. 存在一个原始递归函数 $\operatorname{Sb}$ 使得对任意项或公式 $\alpha$，对任意变元 $x$ 和任意项 $t$ 有 $\operatorname{Sb}(\sharp \alpha, \sharp x, \sharp t) = \sharp \alpha(t/x)$
+    4. 令 $T$ 为一个被集合 $X \subseteq T$ 所公理化的理论，此时 $X$ 是递归的
+        1. 关系「$b$ 是一个 $T$ 上的一个证明序列」是递归的
+        2. 关系 $\operatorname{BEW}_{T}(b, a)$ 为「$b$ 是一个 $T$ 上的一个证明序列且 $b_{\mathrm{lh}(b)-1}=a$」，则 $\mathrm{BEW}_{T}(b, a)$ 是递归的
+        3. 关系 $\mathrm{BWB}_{T}(a)$ 为 $\exists b \ \mathrm{BEW}_{T}(b, a)$，则 $\mathrm{BWB}_{T}(a)$ 是递归可枚举的，在一般情况下是不递归的
 
 ### 4.2.2 可证性
+1. 设理论 $T$ 是可公理化的且 $\mathbf{Q} \subseteq T$
+    1. 定义 $\operatorname{Bew}_{T}(y, x)$ 与 $\operatorname{Bwb}_{T}(x)$ 为 $\mathbf{Q}$ 内的 $\mathrm{BEW}$ 和 $\mathrm{BWB}$，并记 $\square_{T} \alpha$ 为 $\mathrm{Bwb}_{T}(\sharp \alpha)$
+    2. 定义 $\operatorname{Con}(T)$ 为 $\neg \operatorname{Bwb}_{T}(\bot)$
+2. $\text{Hilbert}-\text{Bernays}-\text{L}\ddot{\mathrm{o}}\text{b}$ 可证性条件：令 $\sigma$ 和 $\tau$ 为闭语句
+    1. $\text{D1}:$ 若 $\vdash_{T} \sigma$，则 $\vdash_{T} \square_{T} \sigma$
+        1. $\text{D1}$ 不蕴涵 $\vdash_{T} \sigma \rightarrow \square_{T} \sigma$，后者不一定是元定理
+        2. $\text{D1}$ 对任何 $\mathbf{Q}$ 的扩张 $T$ 都成立，即若 $\vdash_{T} \sigma$，则 $\vdash_{T} \square_{T} \sigma$
+    2. $\text{D2}: \ \vdash_{T} \square_{T}(\sigma \rightarrow \tau) \rightarrow \square_{T} \sigma \rightarrow \square_{T} \tau$
+        1. 若 $\text{D1}$ 与 $\text{D2}$ 成立，则 $\text{D0}:$ 若 $\sigma \vdash_{T} \tau$，则 $\square_{T} \sigma \vdash_{T} \square_{T} \tau_{0}$ 成立
+        2. 若 $\vdash_{T} \sigma \leftrightarrow \tau$ 则 $\vdash_{T} \square_{T} \sigma \leftrightarrow \square_{T} \tau$
+    3. $\text{D3}: \ \vdash_{T} \square_{T} \sigma \rightarrow \square_{T} \square_{T} \sigma$
 
 ### 4.2.3 不完备定理
+1. 不动点引理：给定公式 $\beta\left(v_{1}\right)$，其中只有变元 $v_{1}$ 自由出现，则可能行地找到一个闭语句 $\sigma$ 使得 $\mathbf{Q} \vdash \sigma \leftrightarrow \beta\left(\mathrm{S}^{\sharp \sigma} 0\right)$
+2. 第一不完备定理：理论 $T \subseteq \mathrm{Th}(\mathfrak{N})$ 是可公理化的，则 $T$ 是不完全的；特别地，没有 $\mathrm{Th}(\mathfrak{N})$ 的完全公理化
+    1. $\text{Tarski}$ 不可定义性定理：集合 $\sharp \mathrm{Th}(\mathfrak{N})$ 在结构 $\mathfrak{N}$ 中是不可定义的
+    2. $\text{G}\ddot{\mathrm o}\text{del}-\text{Rosser}$ 定理：令 $T \supseteq \mathbf{Q}$ 为一个可公理化理论．若 $T$ 是一致，则存在一个 $\Pi_{1}-$闭语句 $\sigma$ 使得 $T \nvdash \sigma$ 且 $T \nvdash \neg \sigma$
+    3. $\mathbf{Q}$ 强不可判定性：任何一个理论 $T$ 如果满足 $T \cup \mathbf{Q}$ 是一致的，则 $T$ 不是递归的
+3. 第二不完备定理：设理论 $T$ 是可公理化的且 $\mathbf{Q} \subseteq T$
+    1. 若 $T$ 一致，则 $\nvdash_{T} \mathrm{Con}(T)$
+    2. $\vdash_{T} \operatorname{Con}(T) \rightarrow \neg \square_{T} \operatorname{Con}(T)$
+
+    第二不完备定理说明 $\text{Hilbert}$ 纲领不可能照原样实现
+
+    1. 令 $\mathbf{PA}^*$ 为 $\mathbf{PA} + \neg \operatorname{Con}(\mathbf{PA})$，则 $\mathbf{PA}^*$ 一致
+    2. 定义超穷递归 $\forall \beta<\alpha \ (\forall \gamma<\beta \ \psi(\gamma) \rightarrow \psi(\beta)) \rightarrow \forall \beta<\alpha \ \psi(\beta)$，对任意序数 $\alpha < \varepsilon_{0}$，$\mathbf{PA}$ 可证明 $\operatorname{TI}(\alpha)$，但 $\mathbf{PA}$ 无法证明 $\operatorname{TI}(\varepsilon_{0})$，此时记 $\operatorname{PTO}(\mathbf{PA}) = \varepsilon$，称 $\mathbf{PA}$ 的证明论序数为 $\varepsilon_0$
+
+4. $\text{L}\ddot{\mathrm{o}}\text{b}$ 定理
+    1. $\vdash_{T} \square_{T}\left(\square_{T} \alpha \rightarrow \alpha\right) \rightarrow \square_{T} \alpha$
+    2. 若 $\vdash_{T} \square_{T} \alpha \rightarrow \alpha$，则 $\vdash_{T} \alpha$
+
+    令 $T$ 表示任何一个普遍有效的闭语句（例如 $0 = 0$），则 $T$ 是 $\square_{T}(x)$ 的唯一不动点
 
 ## 4.3 反推数学
