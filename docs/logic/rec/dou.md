@@ -42,7 +42,7 @@
         1. 集合 $K_{0}=\left\{\langle x, y\rangle: x \in W_{y}\right\}$ 是 $1-$完全的
         2. 集合 $K=\left\{x: x \in W_{x}\right\}$ 是 $1-$完全的
     3. 称集合 $A$ 递归同构于集合 $B$ 或 $A \cong B$ 当且仅当存在一个递归双射 $f: \mathbf{N} \rightarrow \mathbf{N}$，使得 $f[A]=B$
-        1. 一个 $A$ 到 $B$ 的部分递归同构 $h$ 是一个从 $A$ 到 $B$ 的有穷函数，满足 ① $h$ 是单射；② 对任一 $x \in \operatorname{dom}(h), x \in A$ 当且仅当 $h(x) \in B$
+        1. 一个 $A$ 到 $B$ 的部分递归同构 $h$ 是一个有穷函数且 ① $h$ 是单射；② 对任一 $x \in \operatorname{dom}(h), x \in A$ 当且仅当 $h(x) \in B$
         2. $\text{Myhill}$ 定理：$A \cong B$ 当且仅当 $A \equiv_{1} B$
     4. 一个集合 $A$ 是 $m-$完全的，当且仅当它是 $1-$完全的
 
@@ -53,14 +53,14 @@
 
     则称 $A$ 为单集
 
-    1. 产生集与创造集：称集合 $A$ 为产生集当且仅当存在一个递归函数 $p$ 使得若 $W_{x} \subseteq A$，则 $p(x) \in A - W_{x}$，此时称函数 $p$ 为集合 $A$ 的一个产生函数；称集合 $A$ 为创造集当且仅当是递归可枚举的，且其补集 $\overline{A}$ 是一个产生集
+    4. 产生集与创造集：称集合 $A$ 为产生集当且仅当存在一个递归函数 $p$ 使得若 $W_{x} \subseteq A$，则 $p(x) \in A - W_{x}$，此时称函数 $p$ 为集合 $A$ 的一个产生函数；称集合 $A$ 为创造集当且仅当是递归可枚举的，且其补集 $\overline{A}$ 是一个产生集
         1. 如果 $P$ 是一个产生集，则 $\overline{K} \leqslant_{1} P$
             1. 如果 $P$ 是一个产生集，则 $P$ 不是递归可枚举的，且 $P$ 有一个无穷的递归可枚举子集
             2. 如果 $P$ 是一个产生集且 $P \leqslant_{m} A$，则 $A$ 也是一个产生集
             3. 每一个产生集 $P$ 都有一个一一的产生函数
         2. 如果 $A$ 是一个创造集，则 $A$ 是 $1-$完全的
-    2. 如果 $A$ 是一个单集，则 $A$ 既不是递归的，也不是 $m-$完全的
-    3. $\text{Post}$ 定理：单集存在
+    5. 如果 $A$ 是一个单集，则 $A$ 既不是递归的，也不是 $m-$完全的
+    6. $\text{Post}$ 定理：单集存在
 
 ### 3.2.2 Turing 度
 1. 相对可计算性：全体相对于 $A$ 的部分递归函数（或 $A-$部分递归函数）的集合为最小的包含所有初始函数和 $A$ 的特征函数 $\chi_{A}$，并且对复合、原始递归和极小化封闭的函数集合；一个 $A-$部分递归的全函数称为 $A-$递归函数
@@ -87,19 +87,19 @@
             \end{aligned}
             $$
 
-2. 使用函数：对有穷序列 $\sigma \in 2^{<\omega}$，规定 $\Phi_{e, s}^{\sigma}(x)=y$ 当且仅当对某个集合 $A \supseteq \sigma$，使得 $\Phi_{e, s}^{A}(x)=y$，且在计算过程中仅使用了小于 $\sigma$ 长度的自然数 $z$．这里将集合 $A$ 等同于其特征函数，同时规定 $\Phi_{e}^{\sigma}(x)=y$ 当且仅当 $(\exists s)\left[\Phi_{e, s}^{\sigma}(x)=y\right]$
+2. 使用函数：对有穷序列 $\sigma \in 2^{<\omega}$，规定 $\Phi_{e, s}^{\sigma}(x)=y$ 当且仅当对某个集合 $A \supseteq \sigma$，使得 $\Phi_{e, s}^{A}(x)=y$，且在计算过程中仅使用了小于 $\sigma$ 长度的自然数 $z$．这里将集合 $A$ 等同于其特征函数，同时规定 $\Phi_{e}^{\sigma}(x)=y$ 当且仅当 $\exists s \ \left(\Phi_{e, s}^{\sigma}(x)=y\right)$
     1. 对任意 $e, \sigma, x, s$
         1. 集合 $\left\{\langle e, \sigma, x, s\rangle: \Phi_{e, s}^{\sigma}(x) \downarrow\right\}$ 是递归的
         2. 集合 $\left\{\langle e, \sigma, x\rangle: \Phi_{e}^{\sigma}(x) \downarrow\right\}$ 是递归可枚举的
     2. 使用原理
-        1. 如果 $\Phi_{e}^{A}(x)=y$，则 $(\exists s)(\exists \sigma \subseteq A)\left[\Phi_{e, s}^{\sigma}(x)=y\right]$
-        2. 如果 $\Phi_{e, s}^{\sigma}(x)=y$，则 $(\forall t \geqslant s)(\forall \tau \supseteq \sigma)\left[\Phi_{e, t}^{\top}(x)=y\right]$
-        3. 如果 $\Phi_{e}^{\sigma}(x)=y$，则 $(\forall A \supseteq \sigma)\left[\Phi_{e}^{A}(x)=y\right]$
+        1. 如果 $\Phi_{e}^{A}(x)=y$，则 $\exists s \ \exists \sigma \subseteq A \ \left(\Phi_{e, s}^{\sigma}(x)=y\right)$
+        2. 如果 $\Phi_{e, s}^{\sigma}(x)=y$，则 $\forall t \geqslant s \ \forall \tau \supseteq \sigma \ \left(\Phi_{e, t}^{\top}(x)=y\right)$
+        3. 如果 $\Phi_{e}^{\sigma}(x)=y$，则 $\forall A \supseteq \sigma \ \left(\Phi_{e}^{A}(x)=y\right)$
     3. 对任何自然数子集 $A$ 和 $B$，令 $v=u(A ; e, x, s)$，则 $\left[\Phi_{e, s}^{A}(x)=y \wedge A \upharpoonright v=B \upharpoonright v\right] \Rightarrow \Phi_{e, s}^{B}(x)=y$
 3. 设 $A, B$ 为自然数的集合
     1. 称集合 $B$ 是 $A-$递归的当且仅当 $B$ 的特征函数是 $A-$递归的，即存在 $e, \chi_{B}=\Phi_{e}^{A}$．$B$ 是 $A-$递归的也称作 $B$ 递归于 $A$，或 $B$ 可以 $\text{Turing}$ 归约到 $A$，通常记作 $B \leqslant_{T} A$
     2. 称 $B$ 是 $A-$递归可枚举的（或 $B$ 递归可枚举于 $A$）当且仅当存在 $e, B=W_{e}^{A}$，其中 $W_{e}^{A}$ 表示 $\Phi_{e}^{A}$ 的定义域
-    3. 称 $B$ 是 $\Sigma_{1}^{A}$ 的（或 $B$ 具有 $\Sigma_{1}^{A}$ 的形式）当且仅当 $B=\{x: \left.(\exists \overline{y}) R^{A}(x, \overline{y})\right\}$，其中 $R^{A}(x, \overline{y})$ 是一个 $A-$递归的谓词
+    3. 称 $B$ 是 $\Sigma_{1}^{A}$ 的（或 $B$ 具有 $\Sigma_{1}^{A}$ 的形式）当且仅当 $B=\{x: \left.\exists \overline{y} \ R^{A}(x, \overline{y})\right\}$，其中 $R^{A}(x, \overline{y})$ 是一个 $A-$递归的谓词
 
     若 $B \leqslant_{m} A$，则 $B \leqslant_{T} A$
 
@@ -153,8 +153,8 @@
 
 2. 一阶算术的公式分层：在 $\textbf{PA}$ 的标准模型 $\mathfrak N$ 中，设 $n \geqslant 1$
     1. 称一个公式 $\varphi$ 是 $\Sigma_{0}^{0}$ 或 $\Pi_{0}^{0}$ 的当且仅当 $\varphi$ 中的所有量词都是有界量词
-    2. 称公式 $\varphi$ 是 $\Sigma_{n}^{0}$ 的当且仅当 $\varphi$ 等价于一个形如 $\exists y \psi$ 的公式，其中 $\psi$ 是 $\Pi_{n-1}^{0}$ 的
-    3. 称公式 $\varphi$ 是 $\Pi_{n}^{0}$ 的当且仅当 $\varphi$ 等价于一个形如 $\forall y \psi$ 的公式，其中 $\psi$ 是 $\Sigma_{n-1}^{0}$ 的
+    2. 称公式 $\varphi$ 是 $\Sigma_{n}^{0}$ 的当且仅当 $\varphi$ 等价于一个形如 $\exists y_1 \exists y_2 \cdots \exists y_k \psi$ 的公式，其中 $\psi$ 是 $\Pi_{n-1}^{0}$ 的
+    3. 称公式 $\varphi$ 是 $\Pi_{n}^{0}$ 的当且仅当 $\varphi$ 等价于一个形如 $\forall y_1 \forall y_2 \cdots \forall y_k \psi$ 的公式，其中 $\psi$ 是 $\Sigma_{n-1}^{0}$ 的
     4. 称公式 $\varphi$ 是 $\Delta_{n}^{0}$ 的当且仅当 $\varphi$ 既等价于一个形如 $\Sigma_{n}^{0}$ 的公式，又等价于一个形如 $\Pi_{n}^{0}$ 的公式
 
     其中上标 $0$ 表示 $\varphi$ 是一阶算术中的公式，不引起歧义时可省略上标
@@ -168,7 +168,7 @@
         1. $A$ 是 $\Sigma_{n}$ 的，当且仅当它的补集 $\overline{A}$ 是 $\Pi_{n}$ 的
         2. 如果 $A$ 是 $\Sigma_{n}$ 的或是 $\Pi_{n}$ 的，则对所有的 $m>n$，$A$ 都既是 $\Sigma_{m}$ 的，也是 $\Pi_{m}$ 的
         3. 如果 $A$ 和 $B$ 都是 $\Sigma_{n}$ 的（或都是 $\Pi_{n}$ 的），则 $A \cup B$ 和 $A \cap B$ 都是 $\Sigma_{n}$ 的（或都是 $\Pi_{n}$ 的）
-        4. 如果 $R$ 是一个 $\Sigma_{n}$ 的关系且 $n>0$，则集合 $A=\{x:(\exists y) R(x, y)\}$ 是 $\Sigma_{n}$ 的
+        4. 如果 $R$ 是一个 $\Sigma_{n}$ 的关系且 $n>0$，则集合 $A=\{x:\exists y \ R(x, y)\}$ 是 $\Sigma_{n}$ 的
         5. 如果 $B \leqslant_{m} A$，$A$ 是 $\Sigma_{n}$ 的且 $n>0$，则 $B$ 也是 $\Sigma_{n}$ 的
         6. 如果 $R$ 是 $\Sigma_{n}$ 的（或是 $\Pi_{n}$ 的），则由下式定义的集合 $A$ 和 $B$ 也是 $\Sigma_{n}$ 的（或是 $\Pi_{n}$ 的）
 
