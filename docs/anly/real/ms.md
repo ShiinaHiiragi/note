@@ -129,7 +129,7 @@
 
     2. 可测空间 $(\Omega, \mathscr{F})$ 上的广义测度 $\mu, \nu$ 若对每个 $A \in \mathscr{F}$，由 $|\mu|(A)=$ 0 可推出 $\nu(A)=0$，则称 $\nu$ 关于 $\mu$ 是绝对连续的，记为 $\nu \ll \mu$．若 $\nu \ll \mu$，$\mu \ll \nu$ 同时成立，则记为 $\nu \equiv \mu$ 或 $\nu \sim \mu$，称 $\mu, \nu$ 为相互等价的．若存在 $A \in \mathscr{F}$ 使 $|\mu|(A)=0$，$|\nu|\left(A'\right)=0$，则称 $\mu, \nu$ 为相互奇异的，记为 $\mu \perp \nu$
 
-4. $\text{Randon}-\text{Nikodym}$ 定理：设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$\nu$ 为其上的广义测度且 $\nu \ll P$，则存在唯一随机变量 $f, f^{-}$可积，使 ${\displaystyle \nu(A)=\int_{A} f(\omega) P(\mathrm{d} \omega), \  \forall A \in \mathscr{F}}$，且此时 $\nu$ 为正测度的充要条件是 $f \geqslant 0$ $\text{a.s.}$．$\nu$ 为有限测度的充要条件是 $f$ 可积，$\nu$ 为 $\sigma$ 有限测度的充要条件是 $f$ 有限．称 $f$ 为 $\nu$ 关于 $P$ 的 $\text{Randon}-\text{Nikodym}$ 导数，简称 $R-N$ 导数，也记为 $f=\dfrac{\mathrm{d} \nu}{\mathrm{dP}}$ 及 $\nu=f \cdot P$
+4. $\text{Randon}-\text{Nikodym}$ 定理：设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$\nu$ 为其上的广义测度且 $\nu \ll P$，则存在唯一随机变量 $f, f^{-}$ 可积，使 ${\displaystyle \nu(A)=\int_{A} f(\omega) P(\mathrm{d} \omega), \  \forall A \in \mathscr{F}}$，且此时 $\nu$ 为正测度的充要条件是 $f \geqslant 0$ $\text{a.s.}$．$\nu$ 为有限测度的充要条件是 $f$ 可积，$\nu$ 为 $\sigma$ 有限测度的充要条件是 $f$ 有限．称 $f$ 为 $\nu$ 关于 $P$ 的 $\text{Randon}-\text{Nikodym}$ 导数，简称 $R-N$ 导数，也记为 $f=\dfrac{\mathrm{d} \nu}{\mathrm{dP}}$ 及 $\nu=f \cdot P$
     1. 设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$\nu$ 为其上的有限测度，则下列条件等价
         1. $\nu \ll P$
         2. 存在 $f \in L^{1}(\Omega, \mathscr{F}, P)$ 满足 ${\displaystyle \nu(A)=\int_{A} f(\omega) P(\mathrm{d} \omega), \  \forall A \in \mathscr{F}}$

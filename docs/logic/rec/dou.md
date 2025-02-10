@@ -65,13 +65,13 @@
 ### 3.2.2 Turing 度
 1. 相对可计算性：全体相对于 $A$ 的部分递归函数（或 $A-$部分递归函数）的集合为最小的包含所有初始函数和 $A$ 的特征函数 $\chi_{A}$，并且对复合、原始递归和极小化封闭的函数集合；一个 $A-$部分递归的全函数称为 $A-$递归函数
     1. 相对化通用函数定理：存在自然数 $z$，满足对所有 $A \subseteq \mathbf{N}$，对所有 $x, y \in \mathbf{N}$ 有 $\Phi_{z}^{A}(x, y)=\Phi_{x}^{A}(y)$
-    2. 相对化 $s-m-n$ 定理：对任意 $m, n \geqslant 1$，存在 $m+1$元的递归单射 $s_{n}^{m}$ 使得对任意集合 $A \subseteq \mathbf{N}$ 和任意自然数 $x, \overline{y}$，都有 $\Phi_{s_{n}^{m}(x, \overline{y})}^{A}(\overline{z})=\Phi_{x}^{A}(\overline{y}, \overline{z})$
+    2. 相对化 $s-m-n$ 定理：对任意 $m, n \geqslant 1$，存在 $m+1$ 元的递归单射 $s_{n}^{m}$ 使得对任意集合 $A \subseteq \mathbf{N}$ 和任意自然数 $x, \overline{y}$，都有 $\Phi_{s_{n}^{m}(x, \overline{y})}^{A}(\overline{z})=\Phi_{x}^{A}(\overline{y}, \overline{z})$
     3. 相对化递归定理：对所有集合 $A \subseteq \mathbf{N}$ 与 $x, y \in \mathbf{N}$，如果 $f(x, y)$ 是 $A-$递归的，则存在递归函数 $n(y)$ 使得 $\Phi_{n(y)}^{A}=\Phi_{f(n(y), y)}^{A}$
 
     !!! note "相对可计算性的 $\text{Turing}$ 机版本"
-        称部分函数 $\psi$ 为相对于 $A$ $\text{Turing}$ 可计算的（或 $A-\text{Turing}$可计算的）当且仅当存在一台带信息源的 $\text{Turing}$ 机 $M$，使得若 $M$ 的信息源纸带上存放 $\chi_{A}$，则对所有自然数 $x$ 和 $y$ 有 $\psi(x)=y$，当且仅当 $M$ 对输入 $x$ 停机并输出 $y$
+        称部分函数 $\psi$ 为相对于 $A$ $\text{Turing}$ 可计算的（或 $A-\text{Turing}$ 可计算的）当且仅当存在一台带信息源的 $\text{Turing}$ 机 $M$，使得若 $M$ 的信息源纸带上存放 $\chi_{A}$，则对所有自然数 $x$ 和 $y$ 有 $\psi(x)=y$，当且仅当 $M$ 对输入 $x$ 停机并输出 $y$
 
-        1. 一个部分函数 $\psi$ 是 $A-$部分递归的，当且仅当 $\psi$ 是 $A-\text{Turing}$可计算的
+        1. 一个部分函数 $\psi$ 是 $A-$部分递归的，当且仅当 $\psi$ 是 $A-\text{Turing}$ 可计算的
         2. 若带信息源的 $\text{Turing}$ 机在计算 $\Phi_{e}^{A}(x)$ 时询问了自然数 $n$ 是否属于信息源 $A$，则称该计算过程使用了 $n$，将使用函数 $u(A ; e, x, s)$ 和 $u(A ; e, x)$ 定义为
 
             $$
@@ -144,7 +144,7 @@
 ## 3.3 算术分层
 1. $\Sigma_1-$集：如果集合 $A$ 是一个递归关系的投影，则称 $A$ 是 $\Sigma_1-$形式的，此时 $A$ 是递归可枚举集
 
-    $\Delta_1-$集：如果集合 $A$ 及其补集 $\mathbf N - A$ 都是 $\Sigma_1$ 的，则称 $A$ 是 $\Delta_1$形式的，此时 $A$ 是递归集
+    $\Delta_1-$集：如果集合 $A$ 及其补集 $\mathbf N - A$ 都是 $\Sigma_1$ 的，则称 $A$ 是 $\Delta_1$ 形式的，此时 $A$ 是递归集
 
     1. 如果 $R \subseteq \mathbf N^{n+1}$ 是 $n + 1$ 元递归关系，且 $A = \{x \mid \exists y_1 \exists y_2 \cdots \exists y_n \ R(x, y_1, y_2, \cdots, y_n)\}$，则 $A$ 是 $\Sigma_1$ 的
     2. 单值化：如果 $R \subseteq \mathbf N^2$ 是递归可枚举的关系，则存在一个部分递归函数 $\Phi$ 满足 $\Phi(x) \downarrow \wedge R(x,\Phi(x))$，当且仅当 $\exists y \ R(x, y)$
@@ -160,13 +160,13 @@
     其中上标 $0$ 表示 $\varphi$ 是一阶算术中的公式，不引起歧义时可省略上标
 
     1. 称集合 $B \subseteq \mathbf{N}$ 分别是 $\Sigma_{n}$ 的、$\Pi_{n}$ 的或 $\Delta_{n}$ 的当且仅当 $B$ 具有一个 $\Sigma_{n}、\Pi_{n}$ 或 $\Delta_{n}$ 的定义，即 $B=\{n \in \mathbf{N}: \mathfrak{N} \models \varphi(n)\}$
-    2. 称集合 $B$ 是算术的当且仅当存在某个自然数 $n$，使得 $B$ 是 $\Sigma_{n}$的
+    2. 称集合 $B$ 是算术的当且仅当存在某个自然数 $n$，使得 $B$ 是 $\Sigma_{n}$ 的
     3. 对固定的集合 $A \subseteq \mathbf{N}$，通过在语言中添加新的一元谓词符号 $\dot{A}$，可以类似定义 $\Sigma_{n}^{A}、\Pi_{n}^{A}$ 和 $\Delta_{n}^{A}$ 的公式和集合
 
 3. 分层定理：对任一 $n>0$，$\left\{\Delta_{n}\right.$ 集合$\} \subsetneq\left\{\Sigma_{n}\right.$ 集合$\}$ 且 $\left\{\Delta_{n}\right.$ 集合$\} \subsetneq\left\{\Pi_{n}\right.$ 集合$\}$
     1. 令 $A$ 和 $B$ 为自然数的子集
         1. $A$ 是 $\Sigma_{n}$ 的，当且仅当它的补集 $\overline{A}$ 是 $\Pi_{n}$ 的
-        2. 如果 $A$ 是 $\Sigma_{n}$ 的或是 $\Pi_{n}$ 的，则对所有的 $m>n$，$A$ 都既是 $\Sigma_{m}$的，也是 $\Pi_{m}$ 的
+        2. 如果 $A$ 是 $\Sigma_{n}$ 的或是 $\Pi_{n}$ 的，则对所有的 $m>n$，$A$ 都既是 $\Sigma_{m}$ 的，也是 $\Pi_{m}$ 的
         3. 如果 $A$ 和 $B$ 都是 $\Sigma_{n}$ 的（或都是 $\Pi_{n}$ 的），则 $A \cup B$ 和 $A \cap B$ 都是 $\Sigma_{n}$ 的（或都是 $\Pi_{n}$ 的）
         4. 如果 $R$ 是一个 $\Sigma_{n}$ 的关系且 $n>0$，则集合 $A=\{x:(\exists y) R(x, y)\}$ 是 $\Sigma_{n}$ 的
         5. 如果 $B \leqslant_{m} A$，$A$ 是 $\Sigma_{n}$ 的且 $n>0$，则 $B$ 也是 $\Sigma_{n}$ 的

@@ -101,7 +101,7 @@
         1. 当底数 $a = 0$ 时，$0^{\frac{m}{n}} = 0 \ (m, n \in \mathbf Z_+)$，$0^0$ 无意义
         2. 当底数 $a < 0$ 时，在分母为奇数时有意义，在分母为偶数时无意义
     2. 无理指数幂
-        1. 退缩闭区间：设 $a > 1$，$\alpha = p.p_1 p_2 \cdots p_n$ 是正无理数，则序列 $[a^{\alpha_0^-}, a^{\alpha_0^+}], [a^{\alpha_1^-}, a^{\alpha_1^+}], \cdots, [a^{\alpha_n^-}, a^{\alpha_n^+}]$ 是一个退缩闭区间序列，其中 $\alpha_n^-$ 与 $\alpha_n^+$ 分别表示 $\alpha$的精确到 $\dfrac{1}{10^n}$ 的不足与过剩近似值；当 $0 < a < 1$ 时，可以证明 $[a^{\alpha_0^+}, a^{\alpha_0^-}], [a^{\alpha_1^+}, a^{\alpha_1^-}], \cdots, [a^{\alpha_n^+}, a^{\alpha_n^-}]$ 是一个退缩闭区间序列
+        1. 退缩闭区间：设 $a > 1$，$\alpha = p.p_1 p_2 \cdots p_n$ 是正无理数，则序列 $[a^{\alpha_0^-}, a^{\alpha_0^+}], [a^{\alpha_1^-}, a^{\alpha_1^+}], \cdots, [a^{\alpha_n^-}, a^{\alpha_n^+}]$ 是一个退缩闭区间序列，其中 $\alpha_n^-$ 与 $\alpha_n^+$ 分别表示 $\alpha$ 的精确到 $\dfrac{1}{10^n}$ 的不足与过剩近似值；当 $0 < a < 1$ 时，可以证明 $[a^{\alpha_0^+}, a^{\alpha_0^-}], [a^{\alpha_1^+}, a^{\alpha_1^-}], \cdots, [a^{\alpha_n^+}, a^{\alpha_n^-}]$ 是一个退缩闭区间序列
         2. 由退缩闭区间序列所确定的唯一实数称作幂 $a^\alpha$
     3. 实数指数幂的运算法则：设 $a, b > 0, m, n \in \mathbf R$
         1. $a^m \cdot a^n = a^{m + n}$
