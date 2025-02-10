@@ -136,8 +136,6 @@
         3. 对于任意两个实数 $1 \leqslant \varepsilon_1 < \varepsilon_2$ 有 $\mathrm{TIME}(n^{\varepsilon_1}) \subset \mathrm{TIME}(n^{\varepsilon_2})$
 3. 相对化
     1. 神谕：针对一个语言的神谕是一个能判断任何串 $w$ 是否在该语言中的设备
-        1. 神谕 $\text{Turing}$ 机 $M^A$：在通常的 $\text{Turing}$ 机上增加查询 $A$ 的神谕的能力．每当 $M^A$ 在被称为神谕带的特殊纸带上写下一个字符串时，它就能在一步内得知该字符串是否属于 $A$
-        2. 令 $\mathrm{P}^A$ 是采用神谕 $A$ 的确定型多项式时间神谕 $\text{Turing}$ 机可判定的语言类；$\mathrm{NP}^A$ 是采用神谕 $A$ 的非确定型多项式时间神谕 $\text{Turing}$ 机可判定的语言类
-    2. 对角化方法的局限性
+    2. 令 $\mathrm{P}^A$ 是采用神谕 $A$ 的确定型多项式时间神谕 $\text{Turing}$ 机可判定的语言类；$\mathrm{NP}^A$ 是采用神谕 $A$ 的非确定型多项式时间神谕 $\text{Turing}$ 机可判定的语言类
         1. 存在神谕 $A$ 使得 $\mathrm{P}^A \neq \mathrm{NP}^A$
         2. 存在神谕 $B$ 使得 $\mathrm{P}^B = \mathrm{NP}^B$

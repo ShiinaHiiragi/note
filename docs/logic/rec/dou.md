@@ -68,7 +68,7 @@
     2. 相对化 $s-m-n$ 定理：对任意 $m, n \geqslant 1$，存在 $m+1$ 元的递归单射 $s_{n}^{m}$ 使得对任意集合 $A \subseteq \mathbf{N}$ 和任意自然数 $x, \overline{y}$，都有 $\Phi_{s_{n}^{m}(x, \overline{y})}^{A}(\overline{z})=\Phi_{x}^{A}(\overline{y}, \overline{z})$
     3. 相对化递归定理：对所有集合 $A \subseteq \mathbf{N}$ 与 $x, y \in \mathbf{N}$，如果 $f(x, y)$ 是 $A-$递归的，则存在递归函数 $n(y)$ 使得 $\Phi_{n(y)}^{A}=\Phi_{f(n(y), y)}^{A}$
 
-    !!! note "相对可计算性的 $\text{Turing}$ 机版本"
+    !!! note "神谕机"
         称部分函数 $\psi$ 为相对于 $A$ $\text{Turing}$ 可计算的（或 $A-\text{Turing}$ 可计算的）当且仅当存在一台带信息源的 $\text{Turing}$ 机 $M$，使得若 $M$ 的信息源纸带上存放 $\chi_{A}$，则对所有自然数 $x$ 和 $y$ 有 $\psi(x)=y$，当且仅当 $M$ 对输入 $x$ 停机并输出 $y$
 
         1. 一个部分函数 $\psi$ 是 $A-$部分递归的，当且仅当 $\psi$ 是 $A-\text{Turing}$ 可计算的
@@ -174,8 +174,8 @@
 
             $$
             \begin{aligned}
-            & \langle x, y\rangle \in A \ \leftrightarrow \ (\forall z<y) R(x, y, z), \\
-            & \langle x, y\rangle \in B \ \leftrightarrow \ (\exists z<y) R(x, y, z)
+            & \langle x, y\rangle \in A \ \leftrightarrow \ \forall z<y \ R(x, y, z) \\
+            & \langle x, y\rangle \in B \ \leftrightarrow \ \exists z<y \ R(x, y, z)
             \end{aligned}
             $$
 
