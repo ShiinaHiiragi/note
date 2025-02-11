@@ -469,85 +469,6 @@
 
         3. 定义 $\text{Fish 5}$ 函数 $F_5(x) = ((\cdots((m(x) m(x-1)) m(x-2)) \cdots m(2)) m(1))(x)$，$\text{Fish 5}$ 数为 $F_5 = F_5^{63}(3)$
 
-7. $\text{BEAF}$ 数阵
-    1. 线性数阵：设 $A = (a_1, a_2, \cdots, a_n)$ 为正整数组成的 $n$ 元有序组，则数阵符号是从这个 $n$ 元有序组到正整数的映射 $v(A) = \{x_1, x_2, \cdots, x_n\}$，并定义为
-        1. $\{a_0\} = a_0$
-        2. $\{a_1, a_2\} = a_1^{a_2}$
-        3. $\{a_1, a_2, \cdots, a_n, 1\} = \{a_1, a_2, \cdots, a_n\}$
-        4. 当第二个元素为 $1$ 时，有 $\{a_1, 1, a_3, \cdots, a_n\} = a_1$；当第三个元素为 $1$ 时，有
-
-            $$
-            \{a_1, a_2, 1, \cdots, 1, a_{x+3}, \cdots, a_n\} = \left\{a_1, a_1, \{a_1, a_2 - 1, 1, \cdots, 1, a_{x+3}, \cdots, a_n\}, a_{x+3} - 1, a_{x+4}, \cdots, a_n\right\}
-            $$
-
-        5. 当以上条件均不满足时，有 $\{a_1, a_2, \cdots, a_n\} = \left\{a_1, \{a_1, a_2 - 1, a_3, \cdots, a_n\}, a_3 - 1, a_4, \cdots, a_n\right\}$
-
-        对于三个正整数的数阵有 $\{a, b, c\}=a \rightarrow b \rightarrow c=a \uparrow^c b$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为
-
-        $$
-        \begin{aligned}
-        & \left\{n+1, m+1, a_0+1, a_1+1, a_2+1, \cdots, a_k+1\right\} \\
-        \approx \ & \left[F\left[\omega^k \times a_k+\cdots+\omega^2 \times a_2+\omega \times a_1+a_0\right]^m\right](n) \\
-        = \ & H\left[\omega^{\omega^k \times a_k+\cdots+\omega^2 \times a_2+\omega \times a_1+a_0} \times m\right](n)
-        \end{aligned}
-        $$
-
-        特别地，有 $\{\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize\} \approx F\left[\omega^\omega\right](n)$ 成立
-
-    2. 多维数阵：设 $A$ 是一个 $n$ 维数阵，定义如下概念
-        1. 底数 $b$：数阵的第 $1$ 项
-        2. 指数 $p$：数阵的第 $2$ 项
-        3. 驾驶员：指数后的第一个非 $1$ 项，有可能是数阵的第 $3$ 项
-        4. 副驾驶：是驾驶员的前一项．如果驾驶员是其所在列的第一项，则副驾驶不存在
-        5. 结构：代表比数阵维度低的子数阵，前四维分别是项（$X^0$），列（$X^1$），平面（$X^2$），领域（$X^3$）
-        6. 前结构：「前项」是位于驾驶员所在列且在驾驶员前面的项；「前列」是位于驾驶员所在平面且在驾驶员前面的列；「前平面」是位于驾驶员所在领域且在驾驶员前面的平面
-        7. 指数块：代表结构 $S$，但将 $X$ 换成 $p$，表示长度为 $p$ 的超立方体
-        8. 飞机：包含驾驶员、前项、前结构的指数块
-        9. 乘客：是飞机中非驾驶员或副驾驶的项
-
-        并定义如下运算规则
-
-        10. 指数规则：如果 $p = 1$，则 $v(A) = b$
-        11. 初始规则：如果没有驾驶员，则 $v(A) = b^p$
-        12. 灾难规则：如果不符合上述规则，则
-            1. 驾驶员的值减 $1$
-            2. 副驾驶的指变为「原数阵将指数减去 $1$ 后的值」
-            3. 所有乘客变为 $b$
-            4. 其他部份不变
-
-        用 $(n)$ 分隔符分隔 $n$ 维的数据，数阵中填充 $1$ 不会影响结果
-
-        13. 数阵运算符：定义 $a^n \& b = \{b, a(n)2\}$，例如
-
-            $$
-            5^2 \& 5 = \{5,5(2) 2\}=\left\{\begin{array}{ccccc}
-            5 & 5 & 5 & 5 & 5 \\
-            5 & 5 & 5 & 5 & 5 \\
-            5 & 5 & 5 & 5 & 5 \\
-            5 & 5 & 5 & 5 & 5 \\
-            5 & 5 & 5 & 5 & 5
-            \end{array}\right\}\approx F\left[\omega^{\omega^2}\right](5)
-            $$
-
-        14. 定义 $\text{Gongulus} = \{10, 10 (100) 2\}$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\omega^{\omega^{100}}\right](10)$
-
-    3. 迭代幂次数阵：扩展 $(n)$ 分隔符为数阵
-        1. 每个数阵对应一个关于 $X$ 的函数 $f(X)$，令这个映射为 $\sigma$．设 $b_0, b_1, \cdots, b_n \in \mathbf N$，$(A), (B)$ 均为数阵且 $(B)$ 在 $(A)$ 中已经出现 $k - 1$ 次，则 $\sigma$ 定义如下
-
-            $$
-            \begin{aligned}
-            \sigma(b_0) & = X^{b_0} \\
-            \sigma(b_0, b_1, \cdots, b_n) & = \sigma((0) b_0, b_1, \cdots, b_n) \\
-            \sigma(A (B) b_0, b_1, \cdots, b_n) & = \sigma(A) \cdot X^{b_0 X^{k \sigma(B)} + b_1 X^{k \sigma(B) + 1} + \cdots + b_n X^{k \sigma(B) + n}}
-            \end{aligned}
-            $$
-
-            例如 $\sigma((1)(1)1)=X^{X^{2X}}, \sigma(((0, 1) 1) 1)=X \uparrow\uparrow 6$
-
-        2. 定义 $\text{dulatri} = \{3, 3(0, 2)2\} = X^{2X} \& 3$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\omega^{\omega^{\omega^2}}\right](3)$
-
-            定义 $\text{goppatoth} = 10 \uparrow \uparrow 100 \& 10$，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $F\left[\varepsilon_0\right](100)$
-
 ### 2.3.2 高阶算术
 1. $\text{Fish 6}$ 数的 $\text{FGH}$ 近似：$F_4 \approx F[\zeta_0 + 1](63)$
     1. 定义集合 $M[m, n]$ 如下
@@ -596,9 +517,15 @@
 
 ## 2.4 不可计算函数
 1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数
-    1. 设（一阶）海狸机 $\text{BB} = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$ 有 $n$ 个状态，且满足以下条件：① 字母表 $\Sigma = \{0, 1\}$；② 起始格局下纸带上均为 $0$．定义 $\Sigma_1(n)$ 为 $n$ 状态海狸机停机时纸带上 $1$ 的最大数量
+    1. 设（一阶）海狸机 $\text{BB} = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$ 有 $n$ 个状态，且满足
+        1. 字母表 $\Sigma = \{0, 1\}$
+        2. 起始格局下纸带上均为 $0$
+
+        定义 $\Sigma_1(n)$ 为 $n$ 状态海狸机停机时纸带上 $1$ 的最大数量
+
         1. $\Sigma_1(0) = 0, \Sigma_1(1) = 1, \Sigma_1(2) = 4, \Sigma_1(3) = 6, \Sigma_1(4) = 13$
         2. $\Sigma_1(5) \geqslant 4098, \Sigma_1(6) \geqslant 10 \uparrow \uparrow 15$
+
     2. 定义 $\Sigma_k(n)$ 为 $n$ 状态 $k$ 阶海狸机停机时纸带上 $1$ 的最大数量
         1. 定义 $k$ 阶海狸机是带有一个对 $k-1$ 阶海狸机神谕的 $n$ 状态 $\text{Turing}$ 机
         2. $\Sigma_k$ 的 $\text{FGH}$ 近似为 $F\left[\omega_k^{\text{CK}}\right](n)$

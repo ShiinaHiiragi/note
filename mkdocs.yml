@@ -156,7 +156,7 @@ nav:
       - 2 量词消去: logic/mdl/eoq.md
       - 3 稳定理论: logic/mdl/stb.md
     - 三、递归论:
-      - 1 可计算理论: logic/rec/calc.md
+      - 1 可计算理论: logic/rec/comp.md
       - 2 计算复杂性理论: logic/rec/cplx.md
       - 3 不可解度论: logic/rec/dou.md
       - 4 形式算术: logic/rec/arith.md
