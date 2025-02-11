@@ -27,9 +27,9 @@
         9. $\vdash \forall x(x \leqslant \mathrm{S}^{n} \ 0 \vee \mathrm{S}^{n} \ 0 \leqslant x)$
     2. 引入公理 $x \leqslant y \leftrightarrow \exists z \ (x+z=y)$ 得到 $\mathbf{Q}_{\leqslant}$
         1. 令 $\Phi \in \{\Sigma_{n}, \Sigma_{n}^{+}, \Pi_{n}, \Pi_{n}^{+}, \Delta_{n}, \Delta_{n}^{+}\}$ 为公式层次，则对所有 $A \in \Phi$ 引入公理
-            1. 归纳公理：$\Phi-\mathrm{IND} = A(0) \wedge \forall x \ (A(x) \to A(S x)) \to \forall x \ A(x)$
-            2. 最小公理：$\Phi-\mathrm{MIN} = \exists x \ A(x) \to \exists x \ (A(x) \wedge \neg \exists y \ (y<x \wedge A(y)))$
-            3. 替换公理：$\Phi-\mathrm{REPL} = \forall x \leqslant t \ \exists y \ A(x, y) \to \exists z \ \forall x \leqslant t \ \exists y \leqslant z \ A(x, y)$
+            1. 归纳公理（$\Phi-\mathrm{IND}$）：$A(0) \wedge \forall x \ (A(x) \to A(S x)) \to \forall x \ A(x)$
+            2. 最小公理（$\Phi-\mathrm{MIN}$）：$\exists x \ A(x) \to \exists x \ (A(x) \wedge \neg \exists y \ (y<x \wedge A(y)))$
+            3. 替换公理（$\Phi-\mathrm{REPL}$）：$\forall x \leqslant t \ \exists y \ A(x, y) \to \exists z \ \forall x \leqslant t \ \exists y \leqslant z \ A(x, y)$
 
             定义 $\mathbf{I\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{IND}, \mathbf{L\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{MIN}, \mathbf{B\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{REPL}$
 
@@ -65,6 +65,30 @@
         2. 若限制仅在不含否定联结词的公式上归纳，则可在 $\widehat{\mathbf{ID}}_{\nu}$ 基础上进一步弱化得到 $\mathbf{ID}_{\nu}\#$
 
 ### 4.1.2 二阶算术
+1. 用小写字母 $i, j, k, m, n, \ldots$ 表示自然数，用 $X, Y, Z, \ldots$ 表示集合．设 $S-$语句集为
+    1. $\forall x \ (\mathrm{S} x \not = 0)$
+    2. $\forall x \forall y \ (\mathrm{S} x = \mathrm{S} y \rightarrow x = y)$
+    3. $\forall x \ (x+0 = x)$
+    4. $\forall x \forall y \ (x+\mathrm{S} y = \mathrm{S}(x+y))$
+    5. $\forall x \ (x \times 0 = 0)$
+    6. $\forall x \forall y \ (x \times \mathrm{S} y = x \times y+x)$
+    7. 归纳公理模式（$\mathrm{Ind}$）：对所有不含 $X$ 作为自由变元的公式 $X$ 有 $\forall X(0 \in X \wedge \forall n(n \in X \rightarrow n+1 \in X)) \rightarrow \forall n(n \in X)$
+    8. 理解公理模式（$\mathrm{Com}$）：对所有不含 $X$ 作为自由变元的公式 $X$ 有 $\exists X \forall n(n \in X \leftrightarrow \varphi(n))$
+
+    定义二阶算术 $\mathbf{Z}_2$ 是以上公理的理论
+
+    1. 对于层次 $\Phi = \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$ 的公式，定义公理
+        1. $\Phi-$归纳公理模式（$\Phi-\mathrm{Ind}$）：$(\varphi(0) \wedge \forall n \ (\varphi(n) \rightarrow \varphi(n+1))) \rightarrow \forall n \ \varphi(n)$
+        2. $\Phi-$理解公理模式（$\Phi-\mathrm{Com}$）：$\forall n \ (\varphi(n) \leftrightarrow \psi(n)) \rightarrow \exists X \forall n \ (n \in X \leftrightarrow \varphi(n))$
+
+    2. 对于任意 $\mathbf{Z}_2$ 的子系统 $\mathbf{T}_0$，令 $\mathbf{T} = \mathbf{T}_0 + \mathrm{1-Ind}$，其中 $\mathrm{1-Ind}$ 是对所有一阶公式都成立的归纳公理模式
+    3. $\mathbf{Z}_2 = \mathbf{\Pi}_\omega^1-\mathbf{CA}$，一般地有 $\mathbf{Z}_{n+3} = \mathbf{\Pi}_\omega^{n+2}-\mathbf{CA}, \mathbf{Z}_\omega = \mathbf{\Pi}_0^\omega-\mathbf{CA}$
+
+2. $\mathbf{RCA}_0 = \mathbf{Q} + \Delta_1^0-\mathrm{Ind} + \Pi_1^0-\mathrm{Com}$
+3. $\mathbf{WKL}_0 = \mathbf{RCA}_0 + \text{K}\ddot{\mathrm o}\text{nig}$
+4. $\mathbf{ACA}_0 = \mathbf{RCA}_0 + \forall n \in \mathbf{N} \ (\Sigma_n^0-\mathrm{Com})$
+5. $\mathbf{ATR}_0 = \mathbf{RCA}_0 + \mathrm{Atr}$
+6. $\mathbf{\Phi}-\mathbf{CA}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{Com}$，其中 $\Phi = \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
 
 ## 4.2 不完备定理
 ### 4.2.1 可表示性
