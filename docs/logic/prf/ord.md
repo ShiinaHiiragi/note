@@ -1,7 +1,7 @@
 # 5 序数分析
 
-## 5.1 序数记号
-### 5.1.1 递归序数
+## 5.1 序数记号与函数
+### 5.1.1 序数记号
 1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
     1. $\varphi_0(\beta) = \omega^{\beta}$
     2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\xi \mapsto \varphi_{\alpha}(\xi)$ 的第 $\beta$ 个不动点
@@ -29,27 +29,53 @@
         2. 记 $\Omega_1 = \Omega$，对于任意序数 $\alpha > 1$，定义 $\Omega_\alpha$ 为包含 $\{\Omega_{\gamma} \mid 0 < \gamma < \alpha\}$ 且对后继运算与长度为 $\omega$ 的序列取上确界运算封闭的最小集合
 
 ### 5.1.2 序数折叠函数
-1. $\text{Madore} \ \psi-$函数
-    1. $C_{\nu}^{0}(\alpha)=\left\{\xi \mid \xi<\Omega_{\nu}\right\} \cup\left\{\Omega_{\mu} \mid \mu \in \mathbf{Ord}\right\}$
-    2. $C_{\nu}^{n+1}(\alpha)=\left\{\gamma+\delta, \gamma \cdot \delta, \gamma^{\delta}, \psi_{\mu}(\eta) \mid \gamma, \delta, \mu, \eta \in C_{\nu}^{n}(\alpha), \mu<\nu, \eta<\alpha\right\}$
-    3. $C_{\nu}(\alpha)={\displaystyle \bigcup_{n<\omega} C_{\nu}^{n}(\alpha)}$
-    4. $\psi_{\nu}(\alpha)=\min \left\{\beta<\Omega_{\nu+1} \mid \beta \notin C_{\nu}(\alpha)\right\}$
+1. $\psi$ 型定义
+    1. $\text{Bachmann} \ \psi-$函数：令 $\Omega$ 为不可数序数，定义 $C^{\Omega}(\alpha, \beta)$ 为 $\beta \cup\{0, \Omega\}$ 在 $+,\left(\xi \mapsto \omega^{\xi}\right),\left(\xi \mapsto \psi_{\Omega}(\xi)\right)_{\xi<\alpha}$ 下的闭包，定义 $\psi_{\Omega}(\alpha)=\min \left\{\rho<\Omega: C^{\Omega}(\alpha, \rho) \cap \Omega=\rho\right\}$
+    2. $\text{Buchholz} \ \psi-$函数
+        1. $C_{\nu}^{0}(\alpha)=\left\{\beta \mid \beta<\Omega_{\nu}\right\}$
+        2. $C_{\nu}^{n+1}(\alpha)=\left\{\beta+\gamma, \psi_{\mu}(\eta) \mid \mu, \beta, \gamma, \eta \in C_{\nu}^{n}(\alpha) \wedge \eta<\alpha\right\}$
+        3. $C_{\nu}(\alpha)={\displaystyle \bigcup_{n<\omega} C_{\nu}^{n}(\alpha)}$
+        4. $\psi_{\nu}(\alpha)=\min \left\{\gamma \mid \gamma \notin C_{\nu}(\alpha)\right\}$
 
-    其中 $\alpha, \nu$ 为任意序数，$n$ 为任意自然数，$\Omega_{\nu}$ 为第 $\nu$ 个非递归序数．通常记 $\psi_0$ 为 $\psi$
+        其中 $\Omega_{\nu} = \left\{\begin{aligned} & 1, & \nu=0 \\ & \aleph_{\nu}, & \nu>0 \end{aligned}\right.$
 
-2. $\text{Feferman} \ \theta-$函数
-    1. $C_{0}(\alpha, \beta)=\beta \cup\left\{0, \omega_{1}, \omega_{2}, \ldots, \omega_{\omega}\right\}$
-    2. $C_{n+1}(\alpha, \beta)=\left\{\gamma+\delta, \theta_{\xi}(\eta) \mid \gamma, \delta, \xi, \eta \in C_{n}(\alpha, \beta) \wedge \xi<\alpha\right\}$
-    3. $C(\alpha, \beta)={\displaystyle \bigcup_{n<\omega} C_{n}(\alpha, \beta)}$
-    4. $\theta_{\alpha}(\beta)=\min \left\{\gamma \mid \gamma \notin C(\alpha, \gamma) \wedge \forall(\delta<\beta)\left(\theta_{\alpha}(\delta)<\gamma\right)\right\}$
+    3. $\text{Madore} \ \psi-$函数
+        1. $C_{\nu}^{0}(\alpha)=\left\{\xi \mid \xi<\Omega_{\nu}\right\} \cup\left\{\Omega_{\mu} \mid \mu \in \mathbf{Ord}\right\}$
+        2. $C_{\nu}^{n+1}(\alpha)=\left\{\gamma+\delta, \gamma \cdot \delta, \gamma^{\delta}, \psi_{\mu}(\eta) \mid \gamma, \delta, \mu, \eta \in C_{\nu}^{n}(\alpha), \mu<\nu, \eta<\alpha\right\}$
+        3. $C_{\nu}(\alpha)={\displaystyle \bigcup_{n<\omega} C_{\nu}^{n}(\alpha)}$
+        4. $\psi_{\nu}(\alpha)=\min \left\{\beta<\Omega_{\nu+1} \mid \beta \notin C_{\nu}(\alpha)\right\}$
 
-    对任意 $\alpha, \beta<\Gamma_{0}$，有 $\theta_{\alpha}(\beta)=\varphi_{\alpha}(\beta)$
+        通常记 $\psi_0$ 为 $\psi$；不加说明时，默认用此函数作为默认 $\psi$ 型函数
 
-3. $\text{Weiermann} \ \vartheta-$函数
-    1. $C_{0}(\alpha, \beta)=\beta \cup\{0, \Omega\}$
-    2. $C_{n+1}(\alpha, \beta)=\left\{\gamma+\delta, \omega^{\gamma}, \vartheta(\eta) \mid \gamma, \delta, \eta \in C_{n}(\alpha, \beta) ; \eta<\alpha\right\}$
-    3. $C(\alpha, \beta)={\displaystyle \bigcup_{n<\omega} C_{n}(\alpha, \beta)}$
-    4. $\vartheta(\alpha)=\min \{\beta<\Omega \mid C(\alpha, \beta) \cap \Omega \subseteq \beta \wedge \alpha \in C(\alpha, \beta)\}$
+2. $\theta$ 型定义
+    1. $\text{Bird} \ \theta-$函数： $\theta\left(\Omega^{n-1} a_{n-1}+\cdots+\Omega^{2} a_{2}+\Omega a_{1}+a_{0}, b\right)=\varphi\left(a_{n-1}, \ldots, a_{2}, a_{1}, a_{0}, b\right)$
+    2. $\text{Feferman} \ \theta-$函数
+        1. $C_{0}(\alpha, \beta)=\beta \cup\left\{0, \omega_{1}, \omega_{2}, \ldots, \omega_{\omega}\right\}$
+        2. $C_{n+1}(\alpha, \beta)=\left\{\gamma+\delta, \theta_{\xi}(\eta) \mid \gamma, \delta, \xi, \eta \in C_{n}(\alpha, \beta) \wedge \xi<\alpha\right\}$
+        3. $C(\alpha, \beta)={\displaystyle \bigcup_{n<\omega} C_{n}(\alpha, \beta)}$
+        4. $\theta_{\alpha}(\beta)=\min \left\{\gamma \mid \gamma \notin C(\alpha, \gamma) \wedge \forall(\delta<\beta)\left(\theta_{\alpha}(\delta)<\gamma\right)\right\}$
+
+        对任意 $\alpha, \beta<\Gamma_{0}$，有 $\theta_{\alpha}(\beta)=\varphi_{\alpha}(\beta)$；不加说明时，默认用此函数作为默认 $\theta$ 型函数
+
+3. $\vartheta$ 型定义
+    1. $\text{Wilken} \ \vartheta-$函数：令 $\Omega_{0}$ 为 $1$ 或形如 $\varepsilon_{\alpha}$ 形式的序数，$\Omega_{1}>\Omega_{0}$ 为不可数正则基数；对 $0<i<\omega$，令 $\Omega_{i+1}$ 为 $\Omega_{i}$ 的后继基数．对 $0<n<\omega, 0 \leqslant m<n$ 与 $\beta<\Omega_{m+1}$，定义
+        1. $\Omega_{m} \cup \beta \subseteq C_{m}^{n}(\alpha, \beta)$
+        2. $\xi, \eta \in C_{m}^{n}(\alpha, \beta) \rightarrow \xi+\eta \in C_{m}^{n}(\alpha, \beta)$
+        3. $\xi \in C_{m}^{n}(\alpha, \beta) \cap \Omega_{k+2} \rightarrow \vartheta_{k}^{n}(\xi) \in C_{m}^{n}(\alpha, \beta), m<k<n$
+        4. $\xi \in C_{m}^{n}(\alpha, \beta) \cap \alpha \rightarrow \vartheta_{m}^{n}(\xi) \in C_{m}^{n}(\alpha, \beta)$
+        5. $\vartheta_{m}^{n}(\alpha)=\min \left(\left\{\xi<\Omega_{m+1} \mid C_{m}^{n}(\alpha, \xi) \cap \Omega_{m+1} \subseteq \xi \wedge \alpha \in C_{m}^{n}(\alpha, \xi)\right\} \cup\left\{\Omega_{m+1}\right\}\right)$
+    2. $\text{Wilken}-\text{Weiermann} \ \vartheta-$函数：令 $\Omega_{0}$ 为 $1$ 或形如 $\varepsilon_{\alpha}$ 的序数，设 $\Omega_{1}>\Omega_{0}$ 为不可数正则基数；对于 $0<i<\omega$，设 $\Omega_{i+1}$ 为 $\Omega_{i}$ 的后继基数；设 $\Omega_{\omega}=\sup _{i<\omega} \Omega_{i}$．对于所有 $\beta \leqslant \Omega_{i+1}$，定义
+        1. $\Omega_{i} \cup \beta \subseteq \overline{C}_{i}(\alpha, \beta)$
+        2. $\xi, \eta \in \overline{C}_{i}(\alpha, \beta) \Rightarrow \xi+\eta \in \overline{C}_{i}(\alpha, \beta)$
+        3. $j \leqslant i<\omega \wedge \xi \in \overline{C}_{j}\left(\xi, \Omega_{j+1}\right) \cap \overline{C}_{i}(\alpha, \beta) \cap \alpha \Rightarrow \overline{\vartheta}_{j}(\xi) \in \overline{C}_{i}(\alpha, \beta)$
+        4. $\overline{\vartheta}_{i}(\alpha) =\min (\{\xi<\Omega_{i+1} \mid \alpha \in \overline{C}_{i}(\alpha, \xi) \wedge \overline{C}_{i}(\alpha, \xi) \cap \Omega_{i+1} \subseteq \xi\} \cup\left\{\Omega_{i+1}\right\})$
+    3. $\text{Weiermann} \ \vartheta-$函数
+        1. $C_{0}(\alpha, \beta)=\beta \cup\{0, \Omega\}$
+        2. $C_{n+1}(\alpha, \beta)=\left\{\gamma+\delta, \omega^{\gamma}, \vartheta(\eta) \mid \gamma, \delta, \eta \in C_{n}(\alpha, \beta) ; \eta<\alpha\right\}$
+        3. $C(\alpha, \beta)={\displaystyle \bigcup_{n<\omega} C_{n}(\alpha, \beta)}$
+        4. $\vartheta(\alpha)=\min \{\beta<\Omega \mid C(\alpha, \beta) \cap \Omega \subseteq \beta \wedge \alpha \in C(\alpha, \beta)\}$
+
+        不加说明时，默认用此函数作为默认 $\vartheta$ 型函数
 
 ## 5.2 可数序数
 ### 5.2.1 递归序数
