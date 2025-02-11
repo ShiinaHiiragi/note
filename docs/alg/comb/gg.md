@@ -364,140 +364,27 @@
         \end{aligned}
         $$
 
-6. $\text{Fish}$ 数
-    1. $\text{Fish 1}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_1 \approx F[\omega^2+1](63)$
-        1. 定义从自然数和函数到自然数和函数的映射 $S: (m,f(x)) \to (g(m),g(x))$，其中 $g(x)$ 定义为
-
-            $$
-            \begin{eqnarray*}
-            B(0,n) & = & f(n) \\ 
-            B(m+1,0) & = & B(m, 1) \\ 
-            B(m+1,n+1) & = & B(m, B(m+1, n)) \\
-            g(x) & = & B(x,x) 
-            \end{eqnarray*}
-            $$
-
-        2. 定义从「数集、函数和映射 $S$」到「数集、函数和映射 $S'$」的映射 $SS:(m,f(x),S)\to (n,g(x),S')$ 如下：
-
-            $$
-            S S(m, f, S)=\left(\left[S^{f(m)}\right](m, f), \left[S^{f(m)}\right]\right)
-            $$
-
-        3. 设 $m_0 = 3, f_0(x) = x + 1, S_0 = S$，则记 $(F_1, F_1(x), S_{63}) = [SS^{63}](m_0, f_0, S_0)$，称 $F_1$ 为 $\text{Fish 1}$ 数，$F_1(x)$ 为 $\text{Fish 1}$ 函数
-
-    2. $\text{Fish 2}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_2 \approx F[\omega^3](63)$
-        1. 定义从自然数和函数到自然数和函数的映射 $S: (m,f(x)) \to (g(m),g(x))$，其中 $g(x)$ 定义为
-
-            $$
-            \begin{eqnarray*}
-            B(0,n) & = & f(n) \\ 
-            B(m+1,0) & = & B(m, 1) \\ 
-            B(m+1,n+1) & = & B(m, B(m+1, n)) \\
-            g(x) & = & B(x,x) 
-            \end{eqnarray*}
-            $$
-
-        2. 对于映射 $S$，定义新的映射 $S^*$ 为 $S^*(f)(x)=[S^x](f)(x)$，同样定义从「数集、函数和映射 $S$」到「数集、函数和映射 $S'$」的映射 $SS:(m,f(x),S)\to (n,g(x),S')$ 如下：
-
-            $$
-            S S(m, f, S)=\left(\left[S^{f(m)}\right](f)(m),\left[S^{f(m)}\right]^*(f), \left[S^{f(m)}\right]\right)
-            $$
-
-        3. 设 $m_0 = 3, f_0(x) = x + 1, S_0 = S$，则记 $(F_2, F_2(x), S_{63}) = [SS^{63}](m_0, f_0, S_0)$，称 $F_2$ 为 $\text{Fish 2}$ 数，$F_2(x)$ 为 $\text{Fish 2}$ 函数
-
-    3. $\text{Fish 3}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_3 \approx F[\omega^{\omega+1} \times 63 + 1](63)$
-        1. 设 $n \in \mathbf Z_+$，则定义从函数 $f(x)$ 到 $g(x)$ 的映射 $s(n)$ 为
-
-            $$
-            s(n)(f) = \left\{\begin{aligned}
-            & [f^x](x), & n = 1 \\
-            & \left[s(n-1)^x\right](f(x)), & n > 1
-            \end{aligned}\right.
-            $$
-
-        2. 定义从函数 $f(x)$ 到 $g(x)$ 的映射 $ss(n)$ 为
-
-            $$
-            ss(n)(f) = \left\{\begin{aligned}
-            & s(x)(f), & n=1 \\
-            & [ss(n-1)^{x}](f), & n>1
-            \end{aligned}\right.
-            $$
-
-        3. 设 $f(x) = 1$，定义 $\text{Fish 3}$ 函数 $F_3(x) = \left[ss(2)^{63}\right](f)$，$\text{Fish 3}$ 数为 $F_3 = F_3^{63}(3)$
-
-    4. $\text{Fish 5}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_5 \approx F[\varepsilon_0 + 1](63)$
-        1. 定义如下集合：
-
-            $$
-            M_n = \left\{\begin{aligned}
-            & \mathbf N, & n = 0 \\
-            & M_{n-1}^{M_{n-1}}, & n > 0
-            \end{aligned}\right.
-            $$
-
-            并将 $M_n$ 中的元素称为 $M_n$ 变换
-
-        2. 定义 $m(n) \in M_n \ (n \geqslant 1)$ 如下：
-
-            $$
-            \begin{aligned}
-            & \textsf{ 对 } f_n \in M_n, m(n+1)(f_n) = g_n \textsf{ 定义如下：} \\
-            & \quad \textsf{ 对 } f_{n-1} \in M_{n-1}, g_n(f_{n-1}) = g_{n-1} \textsf{ 定义如下：} \\
-            & \quad \quad \textsf{ 对 } f_{n-2} \in M_{n-2}, g_{n-1}(f_{n-2}) = g_{n-2} \textsf{ 定义如下：} \\
-            & \quad \quad \quad \ldots \\
-            & \quad \quad \quad \quad \textsf{ 对 } f_{0} \in M_{0}, g_{1}(f_{0}) = g_{0} \textsf{ 定义如下：} \\
-            & \quad \quad \quad \quad \quad g_0=\left(\cdots\left(\left(\left[f_n^{f_0}\right] f_{n-1}\right) f_{n-2}\right) \cdots f_1\right) f_0
-            \end{aligned}
-            $$
-
-        3. 定义 $\text{Fish 5}$ 函数 $F_5(x) = ((\cdots((m(x) m(x-1)) m(x-2)) \cdots m(2)) m(1))(x)$，$\text{Fish 5}$ 数为 $F_5 = F_5^{63}(3)$
+6. $\text{Goodstein}$ 数列：令 $g_{n}(m)$ 为 $\text{Goodstein}$ 定理中定义的序列，定义 $G(m) = \mu n [g_{n}(m) = 0]$，则其 $\text{Wainer}$ 层级的 $\text{FGH}$ 近似为 $G(2 \uparrow \uparrow n)=F[\omega \uparrow \uparrow(n-1)](3)-3$
 
 ### 2.3.2 高阶算术
-1. $\text{Fish 6}$ 数的 $\text{FGH}$ 近似：$F_4 \approx F[\zeta_0 + 1](63)$
-    1. 定义集合 $M[m, n]$ 如下
+1. $\text{TREE}$ 序列：给定 $k \in \mathbf N$，对于 $k-$可着色树的一个序列 $T_1, T_2, \cdots$ 有
+    1. 每个树 $T_i$ 至多有 $i$ 个顶点
+    2. 对于任意 $i<j$，$T_i$ 都不是 $T_j$ 的图子式
 
-        $$
-        \begin{aligned}
-        M[0, 1] & = \mathbf N^{\mathbf N} \\
-        M[m, 1] & = M[m - 1, 1] \times M[m - 1, 2] \times M[m - 1, 3] \times \cdots \\
-        M[m, n] & = M[m, n - 1]^{M[m, n - 1]}
-        \end{aligned}
-        $$
+    定义该序列的最大长度为 $\text{TREE}[k]$
 
-    2. $m(m, n) \in M[m, n]$ 定义如下
+    1. $\text{TREE}[1] = 1, \text{TREE}[2] = 3, \text{TREE}[3] > F[\textrm{SVO}](G)$，其中 $G$ 为 $\text{Graham}$ 数
+    2. 若树不着色，且树 $T_i$ 至多有 $i + k$ 个顶点，其余条件不变，则将该序列的最大长度记为 $\text{tree}(k)$
 
-        $$
-        \begin{aligned}
-        m(0,1)(x) & = x+1 \\
-        m(m, n+1)(f_n)(f_{n-1}) \cdots (f_1)(x) & = [f_n^x] (f_{n-1}) \cdots (f_1)(x) \ (m = 0, n > 0 \vee m > 0, n > 1) \\
-        m(m+1,1) & = {[m(m, 1), m(m, 2), m(m, 3), \cdots] } \\
-        m(m+1,2)\left[a_1, a_2, \cdots\right] & = \left[b_1, b_2, \cdots\right] \\
-        b_n (f_{n-1}) \cdots (f_1)(x) & = a_y (a_{y-1}) \cdots (a_n) (f_{n-1}) \cdots (f_1) (x) \ (y=\max (x, n))
-        \end{aligned}
-        $$
+2. 次立方图数：给定 $k \in \mathbf N$，对于图的一个序列 $G_1, G_2, \cdots$ 有
+    1. 个图 $G_i$ 都是次立方图，即每个顶点的度数至多为 $3$
+    2. 个图 $G_i$ 至多有 $i+k$ 个顶点
+    3. 于任意 $i<j$，$G_i$ 都不是 $G_j$ 的图子式
 
-    3. 定义 $\text{Fish 6}$ 函数 $F_6(x) = m(x, 2) m(x, 1)(x)$，并定义 $\text{Fish 6}$ 数为 $F_6 = F_{6}^{63}(3)$
+    定义该序列的最大长度为 $\text{SCG}(k)$
 
-2. 图论问题
-    1. $\text{TREE}$ 序列：给定 $k \in \mathbf N$，对于 $k-$可着色树的一个序列 $T_1, T_2, \cdots$ 有
-        1. 每个树 $T_i$ 至多有 $i$ 个顶点
-        2. 对于任意 $i<j$，$T_i$ 都不是 $T_j$ 的图子式
-
-        定义该序列的最大长度为 $\text{TREE}[k]$
-
-        3. $\text{TREE}[1] = 1, \text{TREE}[2] = 3, \text{TREE}[3] > F[\textrm{SVO}](G)$，其中 $G$ 为 $\text{Graham}$ 数
-        4. 若树不着色，且树 $T_i$ 至多有 $i + k$ 个顶点，其余条件不变，则将该序列的最大长度记为 $\text{tree}(k)$
-
-    2. 次立方图数：给定 $k \in \mathbf N$，对于图的一个序列 $G_1, G_2, \cdots$ 有
-        1. 个图 $G_i$ 都是次立方图，即每个顶点的度数至多为 $3$
-        2. 个图 $G_i$ 至多有 $i+k$ 个顶点
-        3. 于任意 $i<j$，$G_i$ 都不是 $G_j$ 的图子式
-
-        定义该序列的最大长度为 $\text{SCG}(k)$
-
-        4. $\text{SCG}(k)$ 的 $\text{FGH}$ 近似为 $F\left[\psi_0\left(\Omega_\omega\right)\right](k) \leqslant \operatorname{SCG}(k)<F\left[\psi_0\left(\varepsilon_{\Omega_\omega+1}\right)\right](k)$
-        5. 若要求次立方图无环且无多重边，则定义满足该条件的序列最大长度为 $\text{SSCG}(k)$
+    1. $\text{SCG}(k)$ 的 $\text{FGH}$ 近似为 $F\left[\psi_0\left(\Omega_\omega\right)\right](k) \leqslant \operatorname{SCG}(k)<F\left[\psi_0\left(\varepsilon_{\Omega_\omega+1}\right)\right](k)$
+    2. 若要求次立方图无环且无多重边，则定义满足该条件的序列最大长度为 $\text{SSCG}(k)$
 
 ## 2.4 不可计算函数
 1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数
@@ -539,30 +426,3 @@
     $$
 
 3. $\text{Rayo}$ 数：定义 $\mathrm{Rayo}(n)$ 为一阶集合论中大于用不超过 $n$ 个符号所能表示的任何数的最小正整数，设 $\text{Rayo}$ 数为 $\mathrm{Rayo}(10^{100})$
-4. $\text{Fish}$ 数
-    1. $\text{Fish 4}$ 数的 $\text{FGH}$ 近似：$F_4 \approx F\left[\omega_{\left(\omega^{\omega+1}\right) 63}^{\mathrm{CK}}+1\right](63)$
-        1. 设 $f$ 为函数，定义 $s'(1)(f) = g$，其中函数 $g(n)$ 是拥有对 $f$ 的神谕的忙海狸函数，即拥有神谕的 $n$ 状态忙海狸停机时纸带上 $1$ 的最大数量
-        2. 仿照 $F_3$ 定义 $ss'(n)$ 如下
-
-            $$
-            \begin{array}{rll}
-            s^{\prime}(n) f=g, & g(x)=\left[s^{\prime}(n-1)^x\right] f(x) \ (n>1) \\
-            s s^{\prime}(1) f=g, & g(x)=s^{\prime}(x) f(x) \\
-            s s^{\prime}(n) f=g, & g(x)=\left[s s^{\prime}(n-1)^x\right] f(x) \ (n>1)
-            \end{array}
-            $$
-
-        3. 定义 $\text{Fish 4}$ 函数 $F_4(x) = [ss'(2)^{63}](f)$，其中 $f(x) = x + 1$，并定义 $\text{Fish 4}$ 数为 $F_4 = F_{4}^{63}(3)$
-
-    2. $\text{Fish 7}$ 数的 $\text{Rayo}$ 层级近似：$F_7 \approx R_{\zeta_0}^{63}(10^{100})$
-        1. 设 $f$ 为函数，$f(a) = b$ 表示序列的第 $a$ 个和第 $b$ 个对象满足关系 $f(a) = b$．定义映射 $\text{RR}(f) = g$，其中函数 $g(n)$ 是将神谕 $f$ 加入一阶集合论的 $\text{Rayo}$ 函数
-        2. 将 $\text{Fish 6}$ 数中的 $m(0, 2)$ 替换为 $\text{RR}$，定义 $\text{Fish 7}$ 函数 $F_7(x) = m(x,2)m(x,1)(x)$，并定义 $\text{Fish 7}$ 数为 $F_7 = F_{7}^{63}(10^{100})$
-        3. 利用映射 $\text{RR}$ 定义 $\text{Rayo}$ 层级：
-
-            $$
-            \begin{aligned}
-            R_0(n) & = n \\
-            R_{\alpha+1} (n) & = \text{RR}(R_\alpha) (n) \\
-            R_\alpha (n) & = R_{\alpha[n]} (n) \ (\alpha \textsf{ 为极限序数且 } \alpha[n] \textsf{ 为基本列})
-            \end{aligned}
-            $$

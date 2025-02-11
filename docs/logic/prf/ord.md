@@ -20,41 +20,24 @@
     2. 若 $n \in K$ 且 $\mathcal O(n) = \alpha$，则 $n <_{\mathcal O} 2^{n} \in K$ 且 $\mathcal O(2^{n}) = \alpha + 1$
     3. 若对任意 $n \in \mathbf N$ 有 $\Phi_i(n) \in K$ 且 $\Phi_i(n) <_{\mathcal O} \Phi_i(n + 1)$，则 $3 \cdot 5^i \in K, {\displaystyle \mathcal{O}(3 \cdot 5^i) = \sup_{k \in \omega} \mathcal{O}(\Phi_i(k))}$ 且对所有 $k$ 有 $\Phi_i(k) <_\mathcal{O} 3 \cdot 5^i$
 
-    可由 $\mathcal{O}$ 表示的序数集合等价于全体递归序数集合
+    可由 $\mathcal{O}$ 表示的序数集合等价于全体递归序数集合 $\Omega$
+
+    !!! note "非递归序数"
+        1. 设 $\Omega$ 为包含 $0$ 且对后继运算与长度为 $\omega$ 的序列取上确界运算封闭的最小集合，则称 $\Omega$ 为非递归序数，$\Omega$ 的元素为递归序数
+        2. 记 $\Omega_1 = \Omega$，对于任意序数 $\alpha > 1$，定义 $\Omega_\alpha$ 为包含 $\{\Omega_{\gamma} \mid 0 < \gamma < \alpha\}$ 且对后继运算与长度为 $\omega$ 的序列取上确界运算封闭的最小集合
 
 ### 5.1.2 序数折叠函数
-1. $\text{Madore } \psi-$函数：当对于所有 $\beta < \alpha$ 的 $\psi(\beta)$ 都有定义时，定义 $\psi(\alpha)$ 如下
+1. $\text{Madore } \psi-$函数
+    1. $C_{\nu}^{0}(\alpha)=\left\{\xi \mid \xi<\Omega_{\nu}\right\} \cup\left\{\Omega_{\mu} \mid \mu \in \mathbf{Ord}\right\}$
+    2. $C_{\nu}^{n+1}(\alpha)=\left\{\gamma+\delta, \gamma \cdot \delta, \gamma^{\delta}, \psi_{\mu}(\eta) \mid \gamma, \delta, \mu, \eta \in C_{\nu}^{n}(\alpha), \mu<\nu, \eta<\alpha\right\}$
+    3. $C_{\nu}(\alpha)={\displaystyle \bigcup_{n<\omega} C_{\nu}^{n}(\alpha)}$
+    4. $\psi_{\nu}(\alpha)=\min \left\{\beta<\Omega_{\nu+1} \mid \beta \notin C_{\nu}(\alpha)\right\}$
 
-    $$
-    \begin{aligned}
-    C_0(\alpha) & =\{0,1, \omega, \Omega\} \\
-    C_{n+1}(\alpha) & =\left\{\beta_1+\beta_2, \beta_1 \beta_2, \beta_1^{\beta_2}, \psi(\beta) \mid \beta_1, \beta_2, \beta \in C_n(\alpha) ; \beta<\alpha\right\} \\
-    C(\alpha) & =\bigcup_{n<\omega} C_n(\alpha) \\
-    \psi(\alpha) & =\min \{\beta \in \Omega \mid \beta \notin C(\alpha)\}
-    \end{aligned}
-    $$
+    其中 $\alpha, \nu$ 为任意序数，$n$ 为任意自然数，$\Omega_{\nu}$ 为第 $\nu$ 个非递归序数
 
-2. $\text{Feferman } \theta-$函数
+2. $\text{Feferman } \theta-$函数：...
 
-    $$
-    \begin{aligned}
-    C_0(\alpha, \beta) & =\beta \cup\left\{0, \omega_1, \omega_2, \cdots, \omega_\omega\right\} \\
-    C_{n+1}(\alpha, \beta) & =\left\{\gamma+\delta, \theta_{\xi}(\eta) \mid \gamma, \delta, \xi, \eta \in C_n(\alpha, \beta) ; \xi<\alpha\right\} \\
-    C(\alpha, \beta) & =\bigcup_{n<\omega} C_n(\alpha, \beta) \\
-    \theta_\alpha(\beta) & =\min \left\{\gamma \mid \gamma \notin C(\alpha, \gamma) \wedge \forall \delta<\beta: \theta_\alpha(\delta)<\gamma\right\}
-    \end{aligned}
-    $$
-
-3. $\text{Weiermann } \vartheta-$函数
-
-    $$
-    \begin{aligned}
-    C_0(\alpha, \beta) & =\beta \cup\{0, \Omega\} \\
-    C_{n+1}(\alpha, \beta) & =\left\{\gamma+\delta, \omega^\gamma, \vartheta(\eta) \mid \gamma, \delta, \eta \in C_n(\alpha, \beta) ; \eta<\alpha\right\} \\
-    C(\alpha, \beta) & =\bigcup_{n<\omega} C_n(\alpha, \beta) \\
-    \vartheta(\alpha) & =\min \{\beta<\Omega \mid C(\alpha, \beta) \cap \Omega \subseteq \beta \wedge \alpha \in C(\alpha, \beta)\}
-    \end{aligned}
-    $$
+3. $\text{Weiermann } \vartheta-$函数：...
 
 ## 5.2 可数序数
 ### 5.2.1 递归序数
@@ -75,6 +58,7 @@
     2. 大 $\text{Veblen}$ 序数：$\text{LVO}= \sup \left\{\varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix}, \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix} \\ \end{pmatrix}, \cdots\right\}= \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \vdots \\ \end{pmatrix} \\ \end{pmatrix} \\ \end{pmatrix}=\theta_{\Omega^{\Omega}}(0)=\psi\left(\Omega^{\Omega^{\Omega}}\right)=\vartheta\left(\Omega^{\Omega}\right)$，是映射 $\xi \mapsto \varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix}$ 的最小不动点
 
 ### 5.2.2 大可数序数
-1. $\text{Church}-\text{Kleene}$ 序数：$\omega_{1}^{\mathrm{CK}} = \Omega_1 = \Omega$
+1. $\text{Church}-\text{Kleene}$ 序数：$\omega_{1}^{\mathrm{CK}} = \Omega$
+2. ...
 
 ## 5.3 证明论序数

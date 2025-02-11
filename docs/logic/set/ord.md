@@ -57,8 +57,6 @@
         3. 对任意序数的集合 $X$，$\bigcup X$ 是序数且 $\bigcup X=\sup (X)$；若 $X \neq \varnothing$，则 $\bigcap X$ 是序数且 $\bigcap X=\inf (X)$
         4. 序数间的 $<$ 关系具有良序性质，因此任意非空的序数集合都在 $<$ 下是良序集
     3. 序型：假设 $(X, R)$ 是良序集，定义其序型为与其同构的唯一序数，记作 $\operatorname{type}(X, R)$ 或 $\operatorname{type}(X)$
-        1. 递归序数：若对序数 $\alpha$，存在递归良序集 $(X, R)$ 使得 $X$ 是自然数的递归子集族且 $\operatorname{type}(X, R) = \alpha$，则称 $\alpha$ 为递归序数
-        2. 记首个非递归序数为 $\Omega_1$（或 $\Omega$），这是所有递归序数的上确界
     4. 序数类：全体序数构成一个真类，记作 $\mathbf{On}$，「$\alpha$ 是序数」可简写作 $\alpha \in \mathbf{On}$
 
 2. 序数的算术
