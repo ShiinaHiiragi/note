@@ -162,7 +162,7 @@ nav:
       - 4 形式算术: logic/rec/arith.md
       - 5 随机性理论: logic/rec/rand.md
     - 四、公理集合论:
-      - 1 数学基础: logic/set/zfc.md
+      - 1 数学基础: logic/set/base.md
       - 2 集合代数: logic/set/alg.md
       - 3 序数与基数: logic/set/ord.md
       - 4 集宇宙: logic/set/univ.md

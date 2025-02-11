@@ -1,23 +1,25 @@
 # 1 数学基础
 
-## 1.1 ZFC 公理
-1. 集合论语言 $\mathscr L(S)$，其中 $S = \{=, \in\}$ 且 $\Omega(=) = \Omega(\in) = 2$
-    1. 等词公理
-        1. $x = x$
-        2. $x = y \rightarrow \left(\alpha \rightarrow \alpha^{\prime}\right)$，其中 $\alpha$ 为原子公式且 $\alpha^{\prime}$ 是将 $\alpha$ 中若干个 $x$ 的出现用 $y$ 替换所得
-    2. 定义如下缩写记号：
-        1. $\neg x \in A$：$x \notin A$
-        2. $\forall x \ (x \in A \to \varphi(x))$：$\forall x \in A \ \varphi(x)$
+## 1.1 集合论公理
+集合论语言 $\mathscr L(S)$，其中 $S = \{=, \in\}$ 且 $\Omega(=) = \Omega(\in) = 2$
 
-            $\exists x \ (x \in A \wedge \varphi(x))$：$\exists x \in A \ \varphi(x)$
+1. 等词公理
+    1. $x = x$
+    2. $x = y \rightarrow \left(\alpha \rightarrow \alpha^{\prime}\right)$，其中 $\alpha$ 为原子公式且 $\alpha^{\prime}$ 是将 $\alpha$ 中若干个 $x$ 的出现用 $y$ 替换所得
+2. 定义如下缩写记号：
+    1. $\neg x \in A$：$x \notin A$
+    2. $\forall x \ (x \in A \to \varphi(x))$：$\forall x \in A \ \varphi(x)$
 
-        3. $\forall x \ (x < A \to \varphi(x))$：$\forall x < A \ \varphi(x)$
+        $\exists x \ (x \in A \wedge \varphi(x))$：$\exists x \in A \ \varphi(x)$
 
-            $\exists x \ (x < A \wedge \varphi(x))$：$\exists x < A \ \varphi(x)$
+    3. $\forall x \ (x < A \to \varphi(x))$：$\forall x < A \ \varphi(x)$
 
-        4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists^{1} x \ \varphi(x)$
+        $\exists x \ (x < A \wedge \varphi(x))$：$\exists x < A \ \varphi(x)$
 
-2. 设 $\mathbf{ZFC}$ 是如下公理的理论
+    4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists^{1} x \ \varphi(x)$
+
+### 1.1.1 ZFC 公理
+1. 设 $\mathbf{ZFC}$ 是如下公理的理论
     1. 存在公理（$\text{Exi}$）：存在一个集合
 
         $$
@@ -127,7 +129,7 @@
             4. $\mathbf{ZC} = \mathbf{ZFC} - \mathrm{Rep}$
             5. $\mathbf{Z} = \mathbf{ZF} - \mathrm{Rep}$
 
-3. 集合的运算性质：对于任意集合 $X, Y, Z$
+2. 集合的运算性质：对于任意集合 $X, Y, Z$
     1. 子集的性质
         1. $\varnothing \subseteq X$
         2. $X \subseteq X$
@@ -145,7 +147,7 @@
     5. $\text{De Morgan}$ 律
         1. $X - (Y \cup Z) = (X - Y) \cap (X - Z)$
         2. $X - (Y \cap Z) = (X - Y) \cup (X - Z)$
-4. 指标系统：设 $\Gamma$ 是一个集合，$\mathscr X$ 是一个集族，则每一个满射 $\varphi: \Gamma \to \mathscr X$ 称为一个以 $\Gamma$ 为指标集的指标系统．记 $X_\gamma = \varphi(\gamma)$，则 $\varphi = \left\{(\gamma, X_\gamma) \mid \gamma \in \Gamma\right\} \subseteq \Gamma \times \mathscr X$ 常记作 $\mathscr X = \{X_\gamma \mid \gamma \in \Gamma\}$ 或 $\left\{X_\gamma\right\}_{\gamma \in \Gamma}$
+3. 指标系统：设 $\Gamma$ 是一个集合，$\mathscr X$ 是一个集族，则每一个满射 $\varphi: \Gamma \to \mathscr X$ 称为一个以 $\Gamma$ 为指标集的指标系统．记 $X_\gamma = \varphi(\gamma)$，则 $\varphi = \left\{(\gamma, X_\gamma) \mid \gamma \in \Gamma\right\} \subseteq \Gamma \times \mathscr X$ 常记作 $\mathscr X = \{X_\gamma \mid \gamma \in \Gamma\}$ 或 $\left\{X_\gamma\right\}_{\gamma \in \Gamma}$
     1. 定义并集与交集：
 
         $$
@@ -194,13 +196,17 @@
         \end{aligned}
         $$
 
-5. 多重集：函数 $f: A \to \mathbf Z_+ \cup \{\infty\}$，并将 $a \in A$ 简记为 $a \in f$
+4. 多重集：函数 $f: A \to \mathbf Z_+ \cup \{\infty\}$，并将 $a \in A$ 简记为 $a \in f$
     1. 重数：多重集中对象 $a \in A$ 出现的次数 $f(a)$，当表示元素重复任意多次数时，可记为 $\infty$
     2. 元数：集合中不同元素个数；当元数为 $n$ 时，称集合为 $n$ 元多重集
     3. 若有穷多重集 $S$ 有 $a_1, a_2, \cdots, a_n$ 共 $n$ 个不同的元素，且 $a_i$ 的重数为 $p_i$，则 $S$ 可记作 $\left\{p_1 \cdot a_1, p_2 \cdot a_2, \cdots, p_n \cdot a_n\right\}$
-6. 类与真类：令 $\varphi(u)$ 为一个性质，$\{u \mid \varphi(u)\}$ 不一定是集合，这样的对象被称为类，不是集合的类被称为真类
+5. 类与真类：令 $\varphi(u)$ 为一个性质，$\{u \mid \varphi(u)\}$ 不一定是集合，这样的对象被称为类，不是集合的类被称为真类
     1. 每个集合都是类，例如 $\left\{x \mid x \neq x\right\}$
     2. 用 $\mathbf V = \left\{x \mid x = x\right\}$ 表示「所有集合」的类，$x \in \mathbf V$ 不是集合论语言的公式，而只是公式 $x = x$ 的一种记法
+
+### 1.1.2 KP 公理
+
+### 1.1.3 NBG 公理
 
 ## 1.2 关系与映射
 ### 1.2.1 关系
@@ -637,3 +643,5 @@
     1. $|\overline z| = |z|, |\text{Re}(z)| \leqslant^{\mathbf R} |z|, |\text{Im}(z)| \leqslant^{\mathbf R} |z|, |z| \leqslant^{\mathbf R} |\text{Re}(z)| + |\text{Im}(z)|$
     2. $|z| \geqslant^{\mathbf R} 0^{\mathbf R}$，等号成立当且仅当 $z^{\mathbf C} = 0^{\mathbf C}$
     3. $|z +^{\mathbf C} w| \leqslant^{\mathbf R} |z| +^{\mathbf R} |w|, |z \cdot^{\mathbf C} w| = |z| \cdot^{\mathbf R} |w|$
+
+## 1.4 其他集合论
