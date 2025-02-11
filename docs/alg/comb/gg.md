@@ -364,7 +364,22 @@
         \end{aligned}
         $$
 
-6. $\text{Goodstein}$ 数列：令 $g_{n}(m)$ 为 $\text{Goodstein}$ 定理中定义的序列，定义 $G(m) = \mu n [g_{n}(m) = 0]$，则其 $\text{Wainer}$ 层级的 $\text{FGH}$ 近似为 $G(2 \uparrow \uparrow n)=F[\omega \uparrow \uparrow(n-1)](3)-3$
+6. 燃烧数：定义
+
+    $$
+    f(x) = \left\{\begin{aligned}
+    & -x, & x<0 \\
+    & \dfrac{1}{2}f(x-f(x-1)), & x \geqslant 0
+    \end{aligned}\right.
+    $$
+
+    令 $g(n) = \dfrac{1}{f(n)}$，则其 $\text{Wainer}$ 层级的 $\text{FGH}$ 近似有 $g(n) \leqslant F[\varepsilon_{0}](n-c)$
+
+7. $\text{Goodstein}$ 数列：令 $g_{n}(m)$ 为 $\text{Goodstein}$ 定理中定义的序列，定义 $G(m) = \mu n [g_{n}(m) = 0]$，则其 $\text{Wainer}$ 层级的 $\text{FGH}$ 近似为
+
+    $$
+    G(2 \uparrow \uparrow n)=F[\omega \uparrow \uparrow(n-1)](3)-3
+    $$
 
 ### 2.3.2 高阶算术
 1. $\text{TREE}$ 序列：给定 $k \in \mathbf N$，对于 $k-$可着色树的一个序列 $T_1, T_2, \cdots$ 有
