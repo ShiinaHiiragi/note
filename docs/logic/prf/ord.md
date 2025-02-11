@@ -105,3 +105,7 @@
 3. 稳定序数
 
 ## 5.3 证明论序数
+1. $\text{Robinson}$ 算术：$\operatorname{PTO}(\mathbf{Q}) = \omega$
+    1. $\operatorname{PTO}\left(\mathbf{I \Delta_{0}}\right)=\omega^{2}, \operatorname{PTO}\left(\mathbf{I \Delta_{0}^{+}}\right)=\operatorname{PTO}\left(\mathbf{I \Delta_{0}}+\exp \right)=\omega^{3}$
+    2. $\operatorname{PTO}\left(\mathbf{I \Sigma_{n+1}}\right)=\omega \uparrow \uparrow (n+2)$
+2. $\text{Peano}$ 算术：$\operatorname{PTO}(\mathbf{PA}) = \varepsilon_0$

@@ -163,6 +163,11 @@
     2. 称集合 $B$ 是算术的当且仅当存在某个自然数 $n$，使得 $B$ 是 $\Sigma_{n}$ 的
     3. 对固定的集合 $A \subseteq \mathbf{N}$，通过在语言中添加新的一元谓词符号 $\dot{A}$，可以类似定义 $\Sigma_{n}^{A}、\Pi_{n}^{A}$ 和 $\Delta_{n}^{A}$ 的公式和集合
 
+    !!! note "扩展公式分层"
+        1. $\Sigma_{0}^{n+}=\Pi_{0}^{n+}=\Delta_{0}$
+        2. $\Sigma_{n+1}^{n+}$ 是将任意块存在量词和有界全称量词添加到 $\Pi_{n}^{n+}$ 的公式前得到的公式集
+        3. $\Pi_{n+1}^{n+}$ 是将任意块全称量词和有界存在量词添加到 $\Sigma_{n}^{n+}$ 的公式前得到的公式集
+
 3. 分层定理：对任一 $n>0$，$\left\{\Delta_{n}\right.$ 集合$\} \subsetneq\left\{\Sigma_{n}\right.$ 集合$\}$ 且 $\left\{\Delta_{n}\right.$ 集合$\} \subsetneq\left\{\Pi_{n}\right.$ 集合$\}$
     1. 令 $A$ 和 $B$ 为自然数的子集
         1. $A$ 是 $\Sigma_{n}$ 的，当且仅当它的补集 $\overline{A}$ 是 $\Pi_{n}$ 的

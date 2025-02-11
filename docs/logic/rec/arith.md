@@ -25,7 +25,22 @@
         7. 如果 $m \not \leqslant n$ 则 $\vdash \mathrm{S}^{m} \ 0 \not \leqslant \mathrm{S}^{n} \ 0$
         8. $\vdash \forall x(x \leqslant \mathrm{S}^{n} \ 0 \leftrightarrow x = 0 \vee \cdots \vee x = \mathrm{S}^{n} \ 0)$
         9. $\vdash \forall x(x \leqslant \mathrm{S}^{n} \ 0 \vee \mathrm{S}^{n} \ 0 \leqslant x)$
-    2. $\text{Robinson}$ 算术的扩展
+    2. $\text{Robinson}$ 算术的扩展：$\mathbf{Q}$ 引入公理 $x \leqslant y \leftrightarrow \exists z \ (x+z=y)$ 得到 $\mathbf{Q}_{\leqslant}$
+        1. 令 $\Phi \in \{\Sigma_{n}, \Sigma_{n}^{+}, \Pi_{n}, \Pi_{n}^{+}, \Delta_{n}, \Delta_{n}^{+}\}$ 为公式层次，则对所有 $A \in \Phi$ 引入公理
+            1. 归纳公理：$\Phi-\mathrm{IND} = A(0) \wedge \forall x \ (A(x) \to A(S x)) \to \forall x \ A(x)$
+            2. 最小公理：$\Phi-\mathrm{MIN} = \exists x \ A(x) \to \exists x \ (A(x) \wedge \neg \exists y \ (y<x \wedge A(y)))$
+            3. 替换公理：$\Phi-\mathrm{REPL} = \forall x \leqslant t \ \exists y \ A(x, y) \to \exists z \ \forall x \leqslant t \ \exists y \leqslant z \ A(x, y)$
+
+            定义 $\mathbf{I\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{IND}, \mathbf{L\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{MIN}, \mathbf{B\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{REPL}$
+
+            1. $\mathbf{I \Sigma_{n+1}}  \vdash \mathbf{B \Sigma_{n+1}}$
+            2. $\mathbf{B \Sigma_{n+1}} \vdash \mathbf{B \Pi_{n}}$
+            3. $\mathbf{B \Sigma_{n+1}} \vdash \mathbf{I \Sigma_{n}}$
+            4. $\mathbf{I \Sigma_{n}} \mathrel{⟛} \mathbf{I \Pi_{n}} \mathrel{⟛} \mathbf{L \Sigma_{n}} \mathrel{⟛} \mathbf{L \Pi_{n}}$
+
+        2. 定义 $\log x=\min \left\{y \mid 2^{y} \leqslant x\right\}$ 以及 $\omega_{1}(x, y)=x^{\log y}, \omega_{n+1}(x, y)=2^{\omega_{n}(\log x, \log y)}$
+            1. $\Omega_{n}: \forall x \forall y \exists z \ \left(z=\omega_{n}(x, y)\right)$
+            2. $\mathrm{exp}: \forall x \forall y \exists z \ \left(x^{y}=z\right)$
 
 2. 设 $S-$语句集为
     1. $\forall x \ (\mathrm{S} x \not = 0)$
@@ -45,7 +60,7 @@
 
 ## 4.2 不完备定理
 ### 4.2.1 可表示性
-1. 关系的可表示性：令 $T$ 为包含 $\mathbf{Q}$ 的理论，称自然数上的 $k$ 元关系 $P$ 为在 $T$ 中（数码逐点）可表示的当且仅当存在 $P$ 的一个表示公式 $\rho(\overline{x})$ 使得 $\left(n_{1}, n_{2}, \ldots, n_{k}\right) \in P \Rightarrow T \vdash \rho\left(\mathrm{S}^{n_{1}} \ 0, \mathrm{S}^{n_{2}} \ 0, \ldots, \mathrm{S}^{n_{k}} \ 0\right)$ 且 $\left(n_{1}, n_{2}, \ldots, n_{k}\right) \notin P \Rightarrow T \vdash \neg \rho\left(\mathrm{S}^{n_{1}} \ 0, \mathrm{S}^{n_{2}} \ 0, \ldots, \mathrm{S}^{n_{k}} \ 0\right)$
+1. 关系的可表示性：令 $T$ 为包含 $\mathbf{Q}$ 的理论，称自然数上的 $k$ 元关系 $P$ 为在 $T$ 中（数码逐点）可表示的当且仅当存在 $P$ 的一个表示公式 $\rho(\overline{x})$ 使得 $\left(n_{1}, n_{2}, \ldots, n_{k}\right) \in P \to T \vdash \rho\left(\mathrm{S}^{n_{1}} \ 0, \mathrm{S}^{n_{2}} \ 0, \ldots, \mathrm{S}^{n_{k}} \ 0\right)$ 且 $\left(n_{1}, n_{2}, \ldots, n_{k}\right) \notin P \to T \vdash \neg \rho\left(\mathrm{S}^{n_{1}} \ 0, \mathrm{S}^{n_{2}} \ 0, \ldots, \mathrm{S}^{n_{k}} \ 0\right)$
     1. 可表示性的简单性质
         1. 如果 $P$ 是可表示的，则 $P$ 是递归的
         2. 可表示的关系在否定、析取与合取运算下封闭
@@ -53,7 +68,7 @@
         4. $P$ 在 $\operatorname{Th}(\mathfrak{N})$ 中被 $\rho$ 表示当且仅当 $P$ 在结构 $\mathfrak{N}$ 中被 $\rho$ 定义
     2. $\mathbf{Q}$ 的 $\Sigma_{1}-$完备性：对任一 $\Sigma_{1}-$闭语句 $\tau$ 有 $\mathfrak{N} \models \tau$ 当且仅当 $\mathbf{Q} \vdash \tau$
     3. 若关系 $P \subseteq \mathbf{N}^{k+1}$ 被 $\rho(\overline{x}, \overline{y})$ 表示，则关系 $\exists c<$ b \ $P(\overline{a}, c)$ 和 $\forall c<b \ P(\overline{a}, c)$ 分别被 $\exists z<y \ \rho(\overline{x}, z)$ 和 $\forall z<y \ \rho(\overline{x}, z)$ 表示
-    4. 对任何 $k$ 元关系 $R \subseteq \mathbf{N}^{k}$ 和任何递归且一致的扩张 $T \supseteq Q$，以下命题等价
+    4. 对任何 $k$ 元关系 $R \subseteq \mathbf{N}^{k}$ 和任何递归且一致的扩张 $T \toeq Q$，以下命题等价
         1. $R$ 在 $T$ 中可表示
         2. $R$ 是一个递归关系
         3. $R$ 在 $T$ 中可被一个 $\Delta_{1}$ 公式表示
