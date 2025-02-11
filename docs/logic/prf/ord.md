@@ -106,8 +106,9 @@
 
 ## 5.3 证明论序数
 1. $\text{Robinson}$ 算术：$\operatorname{PTO}(\mathbf{Q}) = \omega$
-    1. $\operatorname{PTO}\left(\mathbf{I \Delta_{0}}\right)=\omega^{2}, \operatorname{PTO}\left(\mathbf{I \Delta_{0}^{+}}\right)=\operatorname{PTO}\left(\mathbf{I \Delta_{0}}+\exp \right)=\omega^{3}$
-    2. $\operatorname{PTO}\left(\mathbf{I \Sigma_{n+1}}\right)=\omega \uparrow \uparrow (n+2)$
+    1. $\operatorname{PTO}\left(\mathbf{I \Delta}_{0}\right)=\omega^{2}, \operatorname{PTO}\left(\mathbf{I \Delta}_{0}^{+}\right)=\operatorname{PTO}\left(\mathbf{I \Delta}_{0}+\exp \right)=\omega^{3}$
+    2. $\operatorname{PTO}\left(\mathbf{I \Sigma}_{n+1}\right)=\omega \uparrow \uparrow (n+2)$
 2. $\text{Peano}$ 算术：$\operatorname{PTO}(\mathbf{PA}) = \varepsilon_0$
-    1. $\operatorname{PTO}(\widehat{\mathbf{ID}}_\mathbf{1}) = \varphi(\varepsilon_0, 0), \operatorname{PTO}(\widehat{\mathbf{ID}}_\mathbf{<\omega}) = \Gamma_{0}, \operatorname{PTO}(\widehat{\mathbf{ID}}_\mathbf{\omega}) = \Gamma_{\varepsilon_0}, \operatorname{PTO}(\widehat{\mathbf{ID}}_\mathbf{<\varepsilon_0}) = \varphi(1, \varepsilon_0, 0), \operatorname{PTO}(\widehat{\mathbf{ID}}_\mathbf{<\Gamma_0}) = \varphi(1, \Gamma_0, 0)$
-    2. $\operatorname{PTO}(\mathbf{ID_{1}}) = \psi\left(\varepsilon_{\Omega+1}\right), \operatorname{PTO}(\mathbf{ID_{2}}) = \psi\left(\varepsilon_{\Omega_{2}+1}\right), \operatorname{PTO}(\mathbf{ID_{<\omega}}) = \psi\left(\Omega_{\omega}\right), \operatorname{PTO}(\mathbf{ID_{\omega}}) = \psi\left(\varepsilon_{\Omega_{\omega}+1}\right), \operatorname{PTO}(\mathbf{ID_{\varepsilon_0}}) = \psi\left(\Omega_{\varepsilon_{0}}\right)$
+    1. $\operatorname{PTO}(\mathbf{ID}_{1}\#) = \varphi(\omega, 0)$
+    2. $\operatorname{PTO}(\widehat{\mathbf{ID}}_{1}) = \varphi(\varepsilon_0, 0), \operatorname{PTO}(\widehat{\mathbf{ID}}_{<\omega}) = \Gamma_{0}, \operatorname{PTO}(\widehat{\mathbf{ID}}_{\omega}) = \Gamma_{\varepsilon_0}, \operatorname{PTO}(\widehat{\mathbf{ID}}_{<\varepsilon_0}) = \varphi(1, \varepsilon_0, 0), \operatorname{PTO}(\widehat{\mathbf{ID}}_{<\Gamma_0}) = \varphi(1, \Gamma_0, 0)$
+    3. $\operatorname{PTO}(\mathbf{ID}_{1}) = \psi\left(\varepsilon_{\Omega+1}\right), \operatorname{PTO}(\mathbf{ID}_{2}) = \psi\left(\varepsilon_{\Omega_{2}+1}\right), \operatorname{PTO}(\mathbf{ID}_{<\omega}) = \psi\left(\Omega_{\omega}\right), \operatorname{PTO}(\mathbf{ID}_{\omega}) = \psi\left(\varepsilon_{\Omega_{\omega}+1}\right), \operatorname{PTO}(\mathbf{ID}_{\varepsilon_0}) = \psi\left(\Omega_{\varepsilon_{0}}\right)$

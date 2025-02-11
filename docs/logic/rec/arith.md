@@ -33,10 +33,10 @@
 
             定义 $\mathbf{I\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{IND}, \mathbf{L\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{MIN}, \mathbf{B\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{REPL}$
 
-            4. $\mathbf{I \Sigma_{n+1}}  \vdash \mathbf{B \Sigma_{n+1}}$
-            5. $\mathbf{B \Sigma_{n+1}} \vdash \mathbf{B \Pi_{n}}$
-            6. $\mathbf{B \Sigma_{n+1}} \vdash \mathbf{I \Sigma_{n}}$
-            7. $\mathbf{I \Sigma_{n}} \mathrel{⟛} \mathbf{I \Pi_{n}} \mathrel{⟛} \mathbf{L \Sigma_{n}} \mathrel{⟛} \mathbf{L \Pi_{n}}$
+            1. $\mathbf{I \Sigma}_{n+1}  \vdash \mathbf{B \Sigma}_{n+1}$
+            2. $\mathbf{B \Sigma}_{n+1} \vdash \mathbf{B \Pi}_{n}$
+            3. $\mathbf{B \Sigma}_{n+1} \vdash \mathbf{I \Sigma}_{n}$
+            4. $\mathbf{I \Sigma}_{n} \mathrel{⟛} \mathbf{I \Pi}_{n} \mathrel{⟛} \mathbf{L \Sigma}_{n} \mathrel{⟛} \mathbf{L \Pi}_{n}$
 
         2. 定义 $\log x=\min \left\{y \mid 2^{y} \leqslant x\right\}$ 以及 $\omega_{1}(x, y)=x^{\log y}, \omega_{n+1}(x, y)=2^{\omega_{n}(\log x, \log y)}$
             1. $\Omega_{n}: \forall x \forall y \exists z \ \left(z=\omega_{n}(x, y)\right)$
@@ -59,10 +59,10 @@
         2. $\forall y \forall x_{0} \forall x_{1} \ (P_{<y}^{\mathfrak{M}} x_{0} x_{1} \leftrightarrow x_{0}<y \wedge x_{1} \in P_{x_{0}}^{\mathfrak{M}})$
         3. $\forall x \ (\mathfrak{M}_{u}(F, x) \rightarrow F(x)) \rightarrow \forall x \ (P_{u}^{\mathfrak{M}} x \rightarrow F(x))$
 
-        得到理论 $\mathbf{ID_{\nu}}$，并定义 ${\displaystyle \mathbf{ID_{<\nu}}=\bigcup_{\mu<\nu} \mathbf{ID_{\mu}}}$
+        得到理论 $\mathbf{ID}_{\nu}$，并定义 ${\displaystyle \mathbf{ID}_{<\nu}=\bigcup_{\mu<\nu} \mathbf{ID}_{\mu}}$
 
-        1. 若去除归纳定义集 $I \subseteq \mathbf{N}$ 需要是某单调算子 $\Gamma: P(N) \rightarrow P(N)$ 的**最小**不动点限制，则得到弱化的 $\widehat{\mathbf{ID}}_\mathbf{\nu}$ 系统
-        2. 若限制仅在不含否定联结词的公式上归纳，则可在 $\widehat{\mathbf{ID}}_\mathbf{\nu}$ 基础上进一步弱化得到 $\mathbf{ID_{\nu}\#}$
+        1. 若去除归纳定义集 $I \subseteq \mathbf{N}$ 需要是某单调算子 $\Gamma: \mathcal P(\mathbf N) \rightarrow \mathcal P(\mathbf N)$ 的**最小**不动点限制，则得到弱化的 $\widehat{\mathbf{ID}}_{\nu}$ 系统
+        2. 若限制仅在不含否定联结词的公式上归纳，则可在 $\widehat{\mathbf{ID}}_{\nu}$ 基础上进一步弱化得到 $\mathbf{ID}_{\nu}\#$
 
 ### 4.1.2 二阶算术
 
