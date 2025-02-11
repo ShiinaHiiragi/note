@@ -1,7 +1,7 @@
 # 5 序数分析
 
 ## 5.1 序数记号
-### 5.1.1 递归序数记号
+### 5.1.1 递归序数
 1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
     1. $\varphi_0(\beta) = \omega^{\beta}$
     2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\xi \mapsto \varphi_{\alpha}(\xi)$ 的第 $\beta$ 个不动点
@@ -20,7 +20,7 @@
     2. 若 $n \in K$ 且 $\mathcal O(n) = \alpha$，则 $n <_{\mathcal O} 2^{n} \in K$ 且 $\mathcal O(2^{n}) = \alpha + 1$
     3. 若对任意 $n \in \mathbf N$ 有 $\Phi_i(n) \in K$ 且 $\Phi_i(n) <_{\mathcal O} \Phi_i(n + 1)$，则 $3 \cdot 5^i \in K, {\displaystyle \mathcal{O}(3 \cdot 5^i) = \sup_{k \in \omega} \mathcal{O}(\Phi_i(k))}$ 且对所有 $k$ 有 $\Phi_i(k) <_\mathcal{O} 3 \cdot 5^i$
 
-    可由 $\mathcal{O}$ 表示的序数集合等价于全体递归序数集合 $\Omega$
+    易知可由 $\mathcal{O}$ 表示的序数集合等价于全体递归序数集合 $\Omega$
 
     !!! note "递归序数与非递归序数"
         1. 设 $\Omega$ 为包含 $0$ 且对后继运算与长度为 $\omega$ 的序列取上确界运算封闭的最小集合，则称 $\Omega$ 为非递归序数
@@ -37,31 +37,41 @@
 
     其中 $\alpha, \nu$ 为任意序数，$n$ 为任意自然数，$\Omega_{\nu}$ 为第 $\nu$ 个非递归序数．通常记 $\psi_0$ 为 $\psi$
 
-2. $\text{Feferman} \ \theta-$函数：...
+2. $\text{Feferman} \ \theta-$函数
+    1. $C_{0}(\alpha, \beta)=\beta \cup\left\{0, \omega_{1}, \omega_{2}, \ldots, \omega_{\omega}\right\}$
+    2. $C_{n+1}(\alpha, \beta)=\left\{\gamma+\delta, \theta_{\xi}(\eta) \mid \gamma, \delta, \xi, \eta \in C_{n}(\alpha, \beta) \wedge \xi<\alpha\right\}$
+    3. $C(\alpha, \beta)={\displaystyle \bigcup_{n<\omega} C_{n}(\alpha, \beta)}$
+    4. $\theta_{\alpha}(\beta)=\min \left\{\gamma \mid \gamma \notin C(\alpha, \gamma) \wedge \forall(\delta<\beta)\left(\theta_{\alpha}(\delta)<\gamma\right)\right\}$
 
-3. $\text{Weiermann} \ \vartheta-$函数：...
+    对任意 $\alpha, \beta<\Gamma_{0}$，有 $\theta_{\alpha}(\beta)=\varphi_{\alpha}(\beta)$
+
+3. $\text{Weiermann} \ \vartheta-$函数
+    1. $C_{0}(\alpha, \beta)=\beta \cup\{0, \Omega\}$
+    2. $C_{n+1}(\alpha, \beta)=\left\{\gamma+\delta, \omega^{\gamma}, \vartheta(\eta) \mid \gamma, \delta, \eta \in C_{n}(\alpha, \beta) ; \eta<\alpha\right\}$
+    3. $C(\alpha, \beta)={\displaystyle \bigcup_{n<\omega} C_{n}(\alpha, \beta)}$
+    4. $\vartheta(\alpha)=\min \{\beta<\Omega \mid C(\alpha, \beta) \cap \Omega \subseteq \beta \wedge \alpha \in C(\alpha, \beta)\}$
 
 ## 5.2 可数序数
 ### 5.2.1 递归序数
 1. $\text{Cantor}$ 序数系列
-    1. 小 $\text{Cantor}$ 序数 $\text{SCO} = \varepsilon_{0}$，其中 $\varepsilon_{\gamma} = \varphi_{1}(\gamma)$ 是满足 $\omega^\xi = \xi$ 的解
-    2. $\text{Cantor}$ 序数 $\text{CO} = \zeta_{0}$，其中 $\zeta_{\gamma} = \varphi_2(\gamma)$ 是满足 $\varepsilon_{\xi} = \xi$ 的解
-    3. 大 $\text{Cantor}$ 序数 $\text{LCO} = \eta_{0}$，其中 $\eta_{\gamma} = \varphi_3(\gamma)$ 是满足 $\zeta_{\xi} = \xi$ 的解
-    4. 超 $\text{Cantor}$ 序数 $\text{HCO} = \varphi_{\omega}(0)$
+    1. 小 $\text{Cantor}$ 序数：$\text{SCO} = \varepsilon_{0}$，其中 $\varepsilon_{\gamma} = \varphi_{1}(\gamma)$ 是满足 $\omega^\xi = \xi$ 的解
+    2. $\text{Cantor}$ 序数：$\text{CO} = \zeta_{0}$，其中 $\zeta_{\gamma} = \varphi_2(\gamma)$ 是满足 $\varepsilon_{\xi} = \xi$ 的解
+    3. 大 $\text{Cantor}$ 序数：$\text{LCO} = \eta_{0}$，其中 $\eta_{\gamma} = \varphi_3(\gamma)$ 是满足 $\zeta_{\xi} = \xi$ 的解
+    4. 超 $\text{Cantor}$ 序数：$\text{HCO} = \varphi_{\omega}(0)$
 2. $\text{Feferman}-\text{Sch}\ddot{\mathrm u}\text{tte}$ 序数与 $\text{Ackermann}$ 序数
-    1. $\text{Feferman}-\text{Sch}\ddot{\mathrm u}\text{tte}$ 序数：设 $\varphi(1, 0, \gamma) = \Gamma_{\gamma}$，称 $\Gamma_0$ 为 $\text{Feferman}-\text{Sch}\ddot{\mathrm u}\text{tte}$ 序数
+    1. $\text{Feferman}-\text{Sch}\ddot{\mathrm u}\text{tte}$ 序数：$\text{FSO} = \Gamma_0$，其中 $\Gamma_{\gamma} = \varphi(1, 0, \gamma)$
         1. $\Gamma_0=\varphi(1,0,0)=\varphi \begin{pmatrix} 1 \\ 2 \\ \end{pmatrix}=\theta_{\Omega}(0)=\psi\left(\Omega^{\Omega}\right)$
         2. $\Gamma_0$ 是满足 $\varphi_{\alpha}(0) = \alpha$ 的最小序数，且有 $\Gamma_0 = \varphi_{\varphi_{\varphi_{._{._..}.}(0)}(0)}(0) = \varphi(\varphi(\varphi(\cdots),0),0),0)$
-    2. $\text{Ackermann}$ 序数：$\varphi(1, 0, 0, 0)$
+    2. $\text{Ackermann}$ 序数：$\text{AO} = \varphi(1, 0, 0, 0)$
         1. $\varphi(1,0,0,0)=\theta_{\Omega^3}(0)=\psi\left(\Omega^{\Omega^2}\right)=\vartheta\left(\Omega^3\right)$
         2. $\text{Ackermann}$ 序数是 $\xi \mapsto \varphi(\xi, 0, 0)$ 的最小不动点
 3. $\text{Veblen}$ 序数系列
-    1. 小 $\text{Veblen}$ 序数 $\text{SVO} = \sup \left\{\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots\right\}=\varphi \begin{pmatrix} 1 \\ \omega \\ \end{pmatrix}=\theta_{\Omega^\omega}(0)=\psi\left(\Omega^{\Omega^\omega}\right)=\vartheta\left(\Omega^\omega\right)$
+    1. 小 $\text{Veblen}$ 序数：$\text{SVO} = \sup \left\{\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots\right\}=\varphi \begin{pmatrix} 1 \\ \omega \\ \end{pmatrix}=\theta_{\Omega^\omega}(0)=\psi\left(\Omega^{\Omega^\omega}\right)=\vartheta\left(\Omega^\omega\right)$
     2. 大 $\text{Veblen}$ 序数：$\text{LVO}= \sup \left\{\varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix}, \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix} \\ \end{pmatrix}, \cdots\right\}= \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \vdots \\ \end{pmatrix} \\ \end{pmatrix} \\ \end{pmatrix}=\theta_{\Omega^{\Omega}}(0)=\psi\left(\Omega^{\Omega^{\Omega}}\right)=\vartheta\left(\Omega^{\Omega}\right)$，是映射 $\xi \mapsto \varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix}$ 的最小不动点
 4. $\text{OCF}$ 定义的序数
-    1. $\text{Bachmann}-\text{Howard}$ 序数 $\text{BHO} = \psi\left(\psi_{1}(0)\right)$
-    2. $\text{Buchholz}$ 序数 $\text{BO} = \psi\left(\Omega_{\omega}\right)$
-    3. $\text{Takeuti}-\text{Feferman}-\text{Buchholz}$ 序数 $\text{TFBO} = \psi\left(\psi_{\omega}(0)\right)$
+    1. $\text{Bachmann}-\text{Howard}$ 序数：$\text{BHO} = \psi\left(\psi_{1}(0)\right)$
+    2. $\text{Buchholz}$ 序数：$\text{BO} = \psi\left(\Omega_{\omega}\right)$
+    3. $\text{Takeuti}-\text{Feferman}-\text{Buchholz}$ 序数：$\text{TFBO} = \psi\left(\psi_{\omega}(0)\right)$
 
 ### 5.2.2 大可数序数
 1. 容许序数
