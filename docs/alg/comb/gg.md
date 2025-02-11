@@ -387,21 +387,7 @@
     2. 若要求次立方图无环且无多重边，则定义满足该条件的序列最大长度为 $\text{SSCG}(k)$
 
 ## 2.4 不可计算函数
-1. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数
-    1. 设（一阶）海狸机 $\text{BB} = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$ 有 $n$ 个状态，且满足
-        1. 字母表 $\Sigma = \{0, 1\}$
-        2. 起始格局下纸带上均为 $0$
-
-        定义 $\Sigma_1(n)$ 为 $n$ 状态海狸机停机时纸带上 $1$ 的最大数量
-
-        1. $\Sigma_1(0) = 0, \Sigma_1(1) = 1, \Sigma_1(2) = 4, \Sigma_1(3) = 6, \Sigma_1(4) = 13$
-        2. $\Sigma_1(5) \geqslant 4098, \Sigma_1(6) \geqslant 10 \uparrow \uparrow 15$
-
-    2. 定义 $\Sigma_k(n)$ 为 $n$ 状态 $k$ 阶海狸机停机时纸带上 $1$ 的最大数量
-        1. 定义 $k$ 阶海狸机是带有一个对 $k-1$ 阶海狸机神谕的 $n$ 状态 $\text{Turing}$ 机
-        2. $\Sigma_k$ 的 $\text{FGH}$ 近似为 $F\left[\omega_k^{\text{CK}}\right](n)$
-
-2. $\Xi$ 函数：定义如下操作符
+1. $\Xi$ 函数：定义如下操作符
 
     $$
     \begin{aligned}
@@ -425,4 +411,21 @@
     \end{aligned}
     $$
 
-3. $\text{Rayo}$ 数：定义 $\mathrm{Rayo}(n)$ 为一阶集合论中大于用不超过 $n$ 个符号所能表示的任何数的最小正整数，设 $\text{Rayo}$ 数为 $\mathrm{Rayo}(10^{100})$
+2. $\text{Rad}\acute{\mathrm o} \ \Sigma-$函数：也称作忙海狸函数
+    1. 设（一阶）海狸机 $\text{BB} = (Q, \Sigma, \Gamma, \delta, B, s, t, r)$ 有 $n$ 个状态，且满足
+        1. 字母表 $\Sigma = \{0, 1\}$
+        2. 起始格局下纸带上均为 $0$
+
+        定义 $\Sigma_1(n)$ 为 $n$ 状态海狸机停机时纸带上 $1$ 的最大数量
+
+        3. $\Sigma_1(0) = 0, \Sigma_1(1) = 1, \Sigma_1(2) = 4, \Sigma_1(3) = 6, \Sigma_1(4) = 13$
+        4. $\Sigma_1(5) \geqslant 4098, \Sigma_1(6) \geqslant 10 \uparrow \uparrow 15$
+
+    2. 定义 $\Sigma_k(n)$ 为 $n$ 状态 $k$ 阶海狸机停机时纸带上 $1$ 的最大数量
+        1. 定义 $k$ 阶海狸机是带有一个对 $k-1$ 阶海狸机神谕的 $n$ 状态 $\text{Turing}$ 机
+        2. $\Sigma_k$ 的 $\text{FGH}$ 近似为 $F\left[\omega_k^{\text{CK}}\right](n)$
+
+3. $\text{TR}$ 函数：令 $T$ 为具有固定算术嵌入的理论，$n \in \mathbf N$．定义 $\operatorname{TR}(T, n)$ 为最小的整数 $N$，使得对于任何 $\text{Turing}$ 机 $M$，若 $M$ 停机在 $T$ 中在 $n$ 个符号内是可证明的，那么 $M$ 会在 $N$ 步内停止
+    1. 定义 $\mathrm{I0}(n) = \mathrm{TR}(\mathbf{ZFC}+\mathbf{I0}, n)$
+    2. 定义超越整数 $\text{TI} = \operatorname{TR}\left(\mathbf{ZFC}, 2^{1000}\right)$
+4. $\text{Rayo}$ 数：定义 $\mathrm{Rayo}(n)$ 为一阶集合论中大于不超过 $n$ 个符号所能表示的任何数的最小正整数，设 $\text{Rayo}$ 数为 $\mathrm{Rayo}(10^{100})$
