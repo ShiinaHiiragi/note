@@ -99,48 +99,49 @@
         \end{aligned}
         $$
 
-2. $\text{Hardy}$ 函数：对于序数 $\alpha$，定义 $H[\alpha]: \mathbf N \to \mathbf N$ 如下
+2. 设 $F[\alpha]$ 是增长函数，$f: \mathbf N \to \mathbf N$．若存在 $N \in \mathbf N$ 使得对于任意 $n > N$ 与任意序数 $\beta$ 都有 $\left|f(n)-F[\alpha](n)\right| \leqslant\left|f(n)-F[\beta](n)\right|$，则称函数 $f(n)$ 的增长率为 $\alpha$，记作 $f(n) \sim \alpha$
+    1. $\text{Hardy}$ 函数：对于序数 $\alpha$，定义 $H[\alpha]: \mathbf N \to \mathbf N$ 如下
 
-    $$
-    \begin{aligned}
-    H[0](n) & =n \\
-    H[\alpha+1](n) & =H[\alpha](n+1) \\
-    H[\alpha](n) & =H[\alpha[n]](n) \ (\alpha \textsf{ 为极限序数且 } \alpha[n] \textsf{ 为基本列})
-    \end{aligned}
-    $$
+        $$
+        \begin{aligned}
+        H[0](n) & =n \\
+        H[\alpha+1](n) & =H[\alpha](n+1) \\
+        H[\alpha](n) & =H[\alpha[n]](n) \ (\alpha \textsf{ 为极限序数且 } \alpha[n] \textsf{ 为基本列})
+        \end{aligned}
+        $$
 
-    未取定基本列的 $\text{Hardy}$ 函数不是良定义的概念，此处基本列取 $\text{Wainer}$ 层级
+        未取定基本列的 $\text{Hardy}$ 函数不是良定义的概念，此处基本列取 $\text{Wainer}$ 层级
 
-    1. $\text{Hardy}$ 函数的复合：若不存在 $\gamma$ 使得 $\alpha + \beta = \gamma + \beta$，则 $H[\alpha + \beta](n) = H[\alpha](H[\beta](n))$
-    2. $\text{Hardy}$ 函数的增长率：对于 $m > 1$ 时有 $H[\omega^m](n) > 2 \uparrow^{m-1} n$
+        1. $\text{Hardy}$ 函数的复合：若不存在 $\gamma$ 使得 $\alpha + \beta = \gamma + \beta$，则 $H[\alpha + \beta](n) = H[\alpha](H[\beta](n))$
+        2. $\text{Hardy}$ 函数的增长率：对于 $m > 1$ 时有 $H[\omega^m](n) > 2 \uparrow^{m-1} n$
 
-3. 急增长函数 $\text{FGH}$（也称作快速增长层级）：
+    2. 急增长函数 $\text{FGH}$（也称作快速增长层级）：
 
-    $$
-    \begin{aligned}
-    F[0](n) & =n+1 \\
-    F[\alpha+1](n) & =\left[F[\alpha]^n\right](n) \\
-    F[\alpha](n) & =F\left[\alpha[n]\right](n) \ (\alpha \textsf{ 为极限序数且 } \alpha[n] \textsf{ 为基本列})
-    \end{aligned}
-    $$
+        $$
+        \begin{aligned}
+        F[0](n) & =n+1 \\
+        F[\alpha+1](n) & =\left[F[\alpha]^n\right](n) \\
+        F[\alpha](n) & =F\left[\alpha[n]\right](n) \ (\alpha \textsf{ 为极限序数且 } \alpha[n] \textsf{ 为基本列})
+        \end{aligned}
+        $$
 
-    1. 当 $\alpha < \varepsilon_0$ 时有 $F[\alpha](n)=H\left[\omega^\alpha\right](n)$
-    2. 当 $\alpha = \varepsilon_0$ 时有 $F\left[\varepsilon_0\right](n) \approx H\left[\varepsilon_0\right](n+1)=H\left[\varepsilon_0+1\right](n)$ 近似成立
+        1. 当 $\alpha < \varepsilon_0$ 时有 $F[\alpha](n)=H\left[\omega^\alpha\right](n)$
+        2. 当 $\alpha = \varepsilon_0$ 时有 $F\left[\varepsilon_0\right](n) \approx H\left[\varepsilon_0\right](n+1)=H\left[\varepsilon_0+1\right](n)$ 近似成立
 
-4. 缓增长函数 $\text{SGH}$（也称作缓慢增长层级）：
+    3. 缓增长函数 $\text{SGH}$（也称作缓慢增长层级）：
 
-    $$
-    \begin{aligned}
-    G[0](n) & =0 \\
-    G[\alpha+1](n) & =G[\alpha](n)+1 \\
-    G[\alpha](n) & =G\left[\alpha[n]\right](n) \ (\alpha \textsf{ 为极限序数且 } \alpha[n] \textsf{ 为基本列})
-    \end{aligned}
-    $$
+        $$
+        \begin{aligned}
+        G[0](n) & =0 \\
+        G[\alpha+1](n) & =G[\alpha](n)+1 \\
+        G[\alpha](n) & =G\left[\alpha[n]\right](n) \ (\alpha \textsf{ 为极限序数且 } \alpha[n] \textsf{ 为基本列})
+        \end{aligned}
+        $$
 
-    1. 缓增长函数的速度慢于 $\text{Hardy}$ 函数，且有 $G[\varepsilon_0](n) = n \uparrow \uparrow n$
-    2. 缓增长函数追上急增长函数的时机取决于基本列的选择
+        1. 缓增长函数的速度慢于 $\text{Hardy}$ 函数，且有 $G[\varepsilon_0](n) = n \uparrow \uparrow n$
+        2. 缓增长函数追上急增长函数的时机取决于基本列的选择
 
-5. 原始数列数：设「$\oplus$」为数列的拼接运算，例如 $\left<0, 1\right> \oplus \left<0\right> = \left<0, 1, 0\right>$
+3. 原始数列数：设「$\oplus$」为数列的拼接运算，例如 $\left<0, 1\right> \oplus \left<0\right> = \left<0, 1, 0\right>$
     1. 原始数列的递归定义：设 $S = \left<S_0, S_1, \cdots, S_n\right> \ (S_i \in \mathbf N)$
         1. 空数列 $\left<\right>$ 是原始数列
         2. 若 $S$ 是至多只含一个 $0$ 的原始数列，则 $w(S) = \left<0\right> \oplus S'$ 也是原始数列，其中
@@ -156,28 +157,11 @@
 
         除上述定义外不存在其他的原始数列
 
-        1. 一个原始数列与唯一序数对应：设序数 $\alpha, \beta$ 分别与基本列 $S, T$ 对应，记作 $\alpha \leftrightarrow S, \beta \leftrightarrow T$
+        4. 一个原始数列与唯一序数对应：设序数 $\alpha, \beta$ 分别与基本列 $S, T$ 对应，记作 $\alpha \leftrightarrow S, \beta \leftrightarrow T$
             1. $0 \leftrightarrow \left<\right>$
             2. $\omega^{\alpha} \leftrightarrow \left<0\right> + S'$
             3. 若 $\alpha > \beta$，则 $S$ 字典序大于 $T$ 且 $\alpha + \beta \leftrightarrow S + T$
-
-            $$
-            \begin{aligned}
-            1 & \leftrightarrow\left<0\right> \\
-            2 & \leftrightarrow\left<0,0\right> \\
-            \omega & \leftrightarrow\left<0,1\right> \\
-            \omega+2 & \leftrightarrow\left<0,1,0,0\right> \\
-            \omega \cdot 2 & \leftrightarrow\left<0,1,0,1\right> \\
-            \omega^2 & \leftrightarrow\left<0,1,1\right> \\
-            \omega^2+\omega & \leftrightarrow\left<0,1,1,0,1\right> \\
-            \omega^3 & \leftrightarrow\left<0,1,1,1\right> \\
-            \omega^\omega & \leftrightarrow\left<0,1,2\right> \\
-            \omega^{\omega^\omega} & \leftrightarrow\left<0,1,2,3\right> \\
-            \omega^{\omega^{\left(\omega^\omega+1\right)}} & \leftrightarrow\left<0,1,2,3,4,2\right>
-            \end{aligned}
-            $$
-
-        2. 若非空原始数列 $S$ 的末尾不为 $0$，则称 $S$ 为极限原始数列
+        5. 若非空原始数列 $S$ 的末尾不为 $0$，则称 $S$ 为极限原始数列
 
     2. 原始数列系统：设 $S$ 为原始数列，$f(n) = n^2 + 1$．定义 $S[n]: \mathbf N \to \mathbf N$ 如下
         1. $\left<\right>[n] = n$
@@ -197,9 +181,9 @@
 
         从而可定义原始数列基本列下的急增长函数 $F[S](n)$ 如下：
 
-        1. $F[()](n)=n+1$
-        2. $F[S+(0)]=\left[F[S]^n\right](n)$
-        3. $F[S](n)=F[S[n]](n)$，其中 $S$ 为极限原始数列
+        4. $F[()](n)=n+1$
+        5. $F[S+(0)]=\left[F[S]^n\right](n)$
+        6. $F[S](n)=F[S[n]](n)$，其中 $S$ 为极限原始数列
 
 ## 2.3 可计算函数
 ### 2.3.1 递归函数
@@ -442,7 +426,7 @@
 
         3. 设 $f(x) = 1$，定义 $\text{Fish 3}$ 函数 $F_3(x) = \left[ss(2)^{63}\right](f)$，$\text{Fish 3}$ 数为 $F_3 = F_3^{63}(3)$
 
-    4. $\text{Fish 5}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_5 \approx F[\varepsilon + 1](63)$
+    4. $\text{Fish 5}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_5 \approx F[\varepsilon_0 + 1](63)$
         1. 定义如下集合：
 
             $$
