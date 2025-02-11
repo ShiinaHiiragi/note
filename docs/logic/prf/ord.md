@@ -145,3 +145,12 @@
     4. $\operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}+\mathbf{BI}\right)=\psi\left(\varepsilon_{I+1}\right), \operatorname{PTO}\left(\mathbf{\Sigma}_{2}^{1}-\mathbf{AC}+\mathbf{BI}\right)=\psi\left(\varepsilon_{I+1}\right)$
 
 ### 5.3.2 KP 集合论
+- $\operatorname{PTO}(\mathbf{KP}^{-})=\omega, \operatorname{PTO}(\mathbf{KP}^{-\infty})=\varepsilon_0, \operatorname{PTO}(\mathbf{KP})=\psi\left(\varepsilon_{\Omega+1}\right)$
+    1. $\mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Pi}_{1}-\mathbf{Fnd}+\mathbf{\Sigma}_{1}-\mathbf{Ind}\right)=\omega^{\omega}, \mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Pi}_{1}-\mathbf{Fnd}+ \mathbf{Ind}\right)=\varepsilon_{0}$
+    2. $\mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Sigma}_{1}-\mathbf{Fnd}\right)=\varphi(\varphi(\omega, 0), 0), \mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Sigma}_{1}-\mathbf{Fnd}+ \mathbf{Ind}\right)=\varphi\left(\varphi\left(\varepsilon_{0}, 0\right), 0\right)$
+    3. $\mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Pi}_{2}-\mathbf{Fnd}\right)=\psi\left(\Omega^{\Omega^{\omega}}\right), \mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Pi}_{2}-\mathbf{Fnd}+ \mathbf{Ind}\right)=\psi\left(\Omega^{\Omega_{0}^{\varepsilon}}\right), \mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Pi}_{3}-\mathbf{Fnd}\right)=\psi\left(\Omega^{\Omega^{\Omega^{\omega}}}\right)$
+    4. $\mathrm{PTO}\left(\mathbf{KPi}^{-}\right)=\Gamma_{0}, \mathrm{PTO}\left(\mathbf{KPi}^{-}+\mathbf{\Sigma}_{1}-\mathbf{Ind}\right)=\varphi(1, \omega, 0), \mathrm{PTO}\left(\mathbf{KPi}^{-}+\mathbf{Ind}\right)=\varphi\left(1, \varepsilon_{0}, 0\right)$
+    5. $\mathrm{PTO}\left(\mathbf{KPi}^{R}\right)=\psi\left(\Omega_{\omega}\right), \mathrm{PTO}\left(\mathbf{KPi}\right)=\psi\left(\varepsilon_{I+1}\right)$
+    6. $\mathrm{PTO}\left(\mathbf{KPl}^{-}\right)=\Gamma_{0}, \mathrm{PTO}\left(\mathbf{KPl}^{-}+\mathbf{Ind}\right)=\varphi\left(1,0, \varepsilon_{0}\right)$
+    7. $\mathrm{PTO}\left(\mathbf{KPl}^{R}\right)=\psi\left(\Omega_{\omega}\right), \mathrm{PTO}(\mathbf{KPl})=\psi\left(\varepsilon_{\Omega_{\omega}+1}\right)$
+    8. $\mathrm{PTO}\left(\mathbf{KPM}^{-}\right)=\varphi(\omega, 0,0), \mathrm{PTO}(\mathbf{KPM})=\psi\left(\varepsilon_{M+1}\right)$

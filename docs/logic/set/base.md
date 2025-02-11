@@ -122,12 +122,12 @@
         7. $\text{Zorn}$ 引理：如果偏序集 $X$ 的每个链都有上界, 则 $X$ 有极大元
         8. $\text{Tychonoff}$ 定理：任何一族紧空间的积空间都是紧空间
 
-        !!! note "$\mathbf{ZFC}$ 相关理论简写"
-            1. $\mathbf{ZF} = \mathbf{ZFC} - \mathbf{AC}$
-            2. $\mathbf{ZF^{-}} = \mathbf{ZF} - \mathrm{Fnd}$
-            3. $\mathbf{ZFC^{-}} = \mathbf{ZFC} - \mathrm{Fnd}$
-            4. $\mathbf{ZC} = \mathbf{ZFC} - \mathrm{Rep}$
-            5. $\mathbf{Z} = \mathbf{ZF} - \mathrm{Rep}$
+    !!! note "$\mathbf{ZFC}$ 相关理论简写"
+        1. $\mathbf{ZF} = \mathbf{ZFC} - \mathbf{AC}$
+        2. $\mathbf{ZF^{-}} = \mathbf{ZF} - \mathrm{Fnd}$
+        3. $\mathbf{ZFC^{-}} = \mathbf{ZFC} - \mathrm{Fnd}$
+        4. $\mathbf{ZC} = \mathbf{ZFC} - \mathrm{Rep}$
+        5. $\mathbf{Z} = \mathbf{ZF} - \mathrm{Rep}$
 
 2. 集合的运算性质：对于任意集合 $X, Y, Z$
     1. 子集的性质
@@ -205,7 +205,61 @@
     2. 用 $\mathbf V = \left\{x \mid x = x\right\}$ 表示「所有集合」的类，$x \in \mathbf V$ 不是集合论语言的公式，而只是公式 $x = x$ 的一种记法
 
 ### 1.1.2 KP 公理
-1. $\text{Kripke}-\text{Platek}$ 集合论
+1. $\text{Kripke}-\text{Platek}$ 集合论：设 $\mathbf{KP}$ 是如下公理的理论
+    1. 外延公理（$\text{Ext}$）
+
+        $$
+        \forall u \forall v \ (u=v \leftrightarrow \forall x \in u \ (x \in v) \wedge \forall x \in v \ (x \in u))
+        $$
+
+    2. 基础公理模式（$\text{Fnd}$）
+
+        $$
+        \exists x \ F(x) \rightarrow \exists x \ (F(x) \wedge \forall y \in x \ \neg F(y))
+        $$
+
+    3. 对集公理（$\text{Pai}$）
+
+        $$
+        \forall x \forall y \exists z \ (x \in z \wedge y \in z)
+        $$
+
+    4. 并集公理（$\text{Uni}$）
+
+        $$
+        \forall u \ \exists w \ \forall y \in u \ \forall z \in y \ (z \in w)
+        $$
+
+    5. $\Delta_0-$分离公理模式（$\Delta_0-\text{Sep}$）：设 $F(x, \overline{v})$ 为 $\Delta_{0}$ 公式
+
+        $$
+        \forall \overline{v} \forall a \exists z \forall x \ (x \in z \leftrightarrow x \in a \wedge F(x, \overline{v}))
+        $$
+
+    6. $\Delta_0-$收集公理模式（$\Delta_0-\text{Col}$）：设 $F(x, y, \overline{v})$ 为 $\Delta_{0}$ 公式
+
+        $$
+        \forall \overline{v} \forall u \ (\forall x \in u \ \exists y \ F(x, y, \overline{v}) \rightarrow \exists z \ \forall x \in u \ \exists y \in z \ F(x, y, \overline{v}))
+        $$
+
+    7. 无穷公理（$\text{Inf}$）
+
+        $$
+        \exists u \ (\varnothing \in u \wedge \forall x \in u \ (x \cup\{x\} \in u))
+        $$
+
+    !!! note "$\mathbf{KP}$ 相关理论简写"
+        定义层级 $\Phi \in \{\Sigma_{n}, \Pi_{n}, \Delta_{n}\}$
+
+        1. $\mathbf{KP}^{-} = \mathbf{KP} - \mathbf{Fnd}$
+        2. 定义空集公理（$\text{Exi}$）：$\exists A \forall x \ (x \notin A)$，则 $\mathbf{KP}^{-\infty} = \mathbf{KP} - \mathbf{Inf} + \mathbf{Exi}$
+        3. 定义正则公式（$\text{Reg}$）：$\forall x \ (\exists a \ (a \in x) \to \exists y \ (y \in x \wedge \neg \exists z \ (z \in y \wedge z \in x)))$，则 $\mathbf{KP}^{R} = \mathbf{KP} - \mathbf{Fnd} + \mathbf{Reg}$
+        4. 定义 $\Phi-$归纳公理模式（$\Phi-\text{Ind}$ ）：$F(0) \rightarrow\left(\forall x \ \left(F(x) \rightarrow F\left(x^{\prime}\right)\right) \rightarrow \forall x \ F(x)\right)$，其中 $F$ 为层级 $\Phi$ 的公式
+        5. 可将基础公理模式、$\Delta_0-$分离公理模式、$\Delta_0-$收集公理模式中的公式 $F$ 限制到层级 $\Phi$
+
+2. 容许集：设 $A$ 是一个传递集，若 $(A, \in)$ 是 $\mathbf{KP}$ 的一个模型，则称 $A$ 是容许集
+    1. 引入公理 $\text{Lim}: \forall x \exists y \ (x \in y \wedge y$ 为容许集$)$，定义 $\mathbf{KPi} = \mathbf{KP} + \mathrm{Lim}, \mathbf{KPl} = \mathbf{KPi} - (\Delta_0-\text{Col})$
+    2. 引入公理 $\text{Mahlo}: \forall x \exists y \ \varphi(x, y, \overline{z}) \rightarrow \exists w \ (\operatorname{Ad}(w) \wedge \forall x \in w \ \exists y \in w \ \varphi(x, y, \overline{z}))$，其中 $\varphi$ 为 $\Delta_{0}$ 公式，$\operatorname{Ad}$ 为一个满足传递性、容许性、相对性无限公理与三歧性的谓词，定义 $\mathbf{KPM} = \mathbf{KPi} + \mathrm{Mahlo}$
 
 ### 1.1.3 NBG 公理
 1. $\text{von Neumann}-\text{Bernays}-\text{G}\ddot{\mathrm{o}\text{del}}$ 集合论中的基本对象为类，集合是特殊的类．用 $X, Y, Z, \cdots$ 表示类，用 $x, y, z, \cdots$ 表示集合
