@@ -22,22 +22,24 @@
 
     可由 $\mathcal{O}$ 表示的序数集合等价于全体递归序数集合 $\Omega$
 
-    !!! note "非递归序数"
-        1. 设 $\Omega$ 为包含 $0$ 且对后继运算与长度为 $\omega$ 的序列取上确界运算封闭的最小集合，则称 $\Omega$ 为非递归序数，$\Omega$ 的元素为递归序数
+    !!! note "递归序数与非递归序数"
+        1. 设 $\Omega$ 为包含 $0$ 且对后继运算与长度为 $\omega$ 的序列取上确界运算封闭的最小集合，则称 $\Omega$ 为非递归序数
+            1. 定义 $\text{Church}-\text{Kleene}$ 序数 $\omega_{1}^{\mathrm{CK}} = \Omega$
+            2. $\Omega$ 的元素为全体递归序数
         2. 记 $\Omega_1 = \Omega$，对于任意序数 $\alpha > 1$，定义 $\Omega_\alpha$ 为包含 $\{\Omega_{\gamma} \mid 0 < \gamma < \alpha\}$ 且对后继运算与长度为 $\omega$ 的序列取上确界运算封闭的最小集合
 
 ### 5.1.2 序数折叠函数
-1. $\text{Madore } \psi-$函数
+1. $\text{Madore} \ \psi-$函数
     1. $C_{\nu}^{0}(\alpha)=\left\{\xi \mid \xi<\Omega_{\nu}\right\} \cup\left\{\Omega_{\mu} \mid \mu \in \mathbf{Ord}\right\}$
     2. $C_{\nu}^{n+1}(\alpha)=\left\{\gamma+\delta, \gamma \cdot \delta, \gamma^{\delta}, \psi_{\mu}(\eta) \mid \gamma, \delta, \mu, \eta \in C_{\nu}^{n}(\alpha), \mu<\nu, \eta<\alpha\right\}$
     3. $C_{\nu}(\alpha)={\displaystyle \bigcup_{n<\omega} C_{\nu}^{n}(\alpha)}$
     4. $\psi_{\nu}(\alpha)=\min \left\{\beta<\Omega_{\nu+1} \mid \beta \notin C_{\nu}(\alpha)\right\}$
 
-    其中 $\alpha, \nu$ 为任意序数，$n$ 为任意自然数，$\Omega_{\nu}$ 为第 $\nu$ 个非递归序数
+    其中 $\alpha, \nu$ 为任意序数，$n$ 为任意自然数，$\Omega_{\nu}$ 为第 $\nu$ 个非递归序数．通常记 $\psi_0$ 为 $\psi$
 
-2. $\text{Feferman } \theta-$函数：...
+2. $\text{Feferman} \ \theta-$函数：...
 
-3. $\text{Weiermann } \vartheta-$函数：...
+3. $\text{Weiermann} \ \vartheta-$函数：...
 
 ## 5.2 可数序数
 ### 5.2.1 递归序数
@@ -56,9 +58,14 @@
 3. $\text{Veblen}$ 序数系列
     1. 小 $\text{Veblen}$ 序数 $\text{SVO} = \sup \left\{\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots\right\}=\varphi \begin{pmatrix} 1 \\ \omega \\ \end{pmatrix}=\theta_{\Omega^\omega}(0)=\psi\left(\Omega^{\Omega^\omega}\right)=\vartheta\left(\Omega^\omega\right)$
     2. 大 $\text{Veblen}$ 序数：$\text{LVO}= \sup \left\{\varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix}, \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix} \\ \end{pmatrix}, \cdots\right\}= \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \vdots \\ \end{pmatrix} \\ \end{pmatrix} \\ \end{pmatrix}=\theta_{\Omega^{\Omega}}(0)=\psi\left(\Omega^{\Omega^{\Omega}}\right)=\vartheta\left(\Omega^{\Omega}\right)$，是映射 $\xi \mapsto \varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix}$ 的最小不动点
+4. $\text{OCF}$ 定义的序数
+    1. $\text{Bachmann}-\text{Howard}$ 序数 $\text{BHO} = \psi\left(\psi_{1}(0)\right)$
+    2. $\text{Buchholz}$ 序数 $\text{BO} = \psi\left(\Omega_{\omega}\right)$
+    3. $\text{Takeuti}-\text{Feferman}-\text{Buchholz}$ 序数 $\text{TFBO} = \psi\left(\psi_{\omega}(0)\right)$
 
 ### 5.2.2 大可数序数
-1. $\text{Church}-\text{Kleene}$ 序数：$\omega_{1}^{\mathrm{CK}} = \Omega$
-2. ...
+1. 容许序数
+2. 反射序数
+3. 稳定序数
 
 ## 5.3 证明论序数
