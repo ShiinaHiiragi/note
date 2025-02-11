@@ -25,7 +25,7 @@
         7. 如果 $m \not \leqslant n$ 则 $\vdash \mathrm{S}^{m} \ 0 \not \leqslant \mathrm{S}^{n} \ 0$
         8. $\vdash \forall x(x \leqslant \mathrm{S}^{n} \ 0 \leftrightarrow x = 0 \vee \cdots \vee x = \mathrm{S}^{n} \ 0)$
         9. $\vdash \forall x(x \leqslant \mathrm{S}^{n} \ 0 \vee \mathrm{S}^{n} \ 0 \leqslant x)$
-    2. $\text{Robinson}$ 算术的扩展：$\mathbf{Q}$ 引入公理 $x \leqslant y \leftrightarrow \exists z \ (x+z=y)$ 得到 $\mathbf{Q}_{\leqslant}$
+    2. 引入公理 $x \leqslant y \leftrightarrow \exists z \ (x+z=y)$ 得到 $\mathbf{Q}_{\leqslant}$
         1. 令 $\Phi \in \{\Sigma_{n}, \Sigma_{n}^{+}, \Pi_{n}, \Pi_{n}^{+}, \Delta_{n}, \Delta_{n}^{+}\}$ 为公式层次，则对所有 $A \in \Phi$ 引入公理
             1. 归纳公理：$\Phi-\mathrm{IND} = A(0) \wedge \forall x \ (A(x) \to A(S x)) \to \forall x \ A(x)$
             2. 最小公理：$\Phi-\mathrm{MIN} = \exists x \ A(x) \to \exists x \ (A(x) \wedge \neg \exists y \ (y<x \wedge A(y)))$
@@ -33,10 +33,10 @@
 
             定义 $\mathbf{I\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{IND}, \mathbf{L\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{MIN}, \mathbf{B\Phi} =\mathbf{Q}_{\leqslant}+\Phi-\mathrm{REPL}$
 
-            1. $\mathbf{I \Sigma_{n+1}}  \vdash \mathbf{B \Sigma_{n+1}}$
-            2. $\mathbf{B \Sigma_{n+1}} \vdash \mathbf{B \Pi_{n}}$
-            3. $\mathbf{B \Sigma_{n+1}} \vdash \mathbf{I \Sigma_{n}}$
-            4. $\mathbf{I \Sigma_{n}} \mathrel{⟛} \mathbf{I \Pi_{n}} \mathrel{⟛} \mathbf{L \Sigma_{n}} \mathrel{⟛} \mathbf{L \Pi_{n}}$
+            4. $\mathbf{I \Sigma_{n+1}}  \vdash \mathbf{B \Sigma_{n+1}}$
+            5. $\mathbf{B \Sigma_{n+1}} \vdash \mathbf{B \Pi_{n}}$
+            6. $\mathbf{B \Sigma_{n+1}} \vdash \mathbf{I \Sigma_{n}}$
+            7. $\mathbf{I \Sigma_{n}} \mathrel{⟛} \mathbf{I \Pi_{n}} \mathrel{⟛} \mathbf{L \Sigma_{n}} \mathrel{⟛} \mathbf{L \Pi_{n}}$
 
         2. 定义 $\log x=\min \left\{y \mid 2^{y} \leqslant x\right\}$ 以及 $\omega_{1}(x, y)=x^{\log y}, \omega_{n+1}(x, y)=2^{\omega_{n}(\log x, \log y)}$
             1. $\Omega_{n}: \forall x \forall y \exists z \ \left(z=\omega_{n}(x, y)\right)$
@@ -54,7 +54,15 @@
     定义 $\text{Peano}$ 算术 $\mathbf{PA}$ 是以上公理的理论
 
     1. 称 $\mathfrak N$ 是 $\mathfrak N = \{\mathbf N, \{Z^{\mathfrak N}\}_{Z \in S}\}$ 的标准模型，易知存在可数的非标准 $\mathbf{PA}$ 模型 $\mathfrak M$，即 $\mathfrak M$ 与 $\mathfrak N$ 初等等价但不同构
-    2. $\text{Peano}$ 算术的扩展
+    2. 在 $\mathbf{PA}$ 引入 $\nu$ 次递归定义的公理
+        1. $\forall y \forall x \ (Z_{y}(P_{y}^{\mathfrak{M}}, x) \rightarrow x \in P_{y}^{\mathfrak{M}})$
+        2. $\forall y \forall x_{0} \forall x_{1} \ (P_{<y}^{\mathfrak{M}} x_{0} x_{1} \leftrightarrow x_{0}<y \wedge x_{1} \in P_{x_{0}}^{\mathfrak{M}})$
+        3. $\forall x \ (\mathfrak{M}_{u}(F, x) \rightarrow F(x)) \rightarrow \forall x \ (P_{u}^{\mathfrak{M}} x \rightarrow F(x))$
+
+        得到理论 $\mathbf{ID_{\nu}}$，并定义 ${\displaystyle \mathbf{ID_{<\nu}}=\bigcup_{\mu<\nu} \mathbf{ID_{\mu}}}$
+
+        1. 若去除归纳定义集 $I \subseteq \mathbf{N}$ 需要是某单调算子 $\Gamma: P(N) \rightarrow P(N)$ 的**最小**不动点限制，则得到弱化的 $\widehat{\mathbf{ID}}_\mathbf{\nu}$ 系统
+        2. 若限制仅在不含否定联结词的公式上归纳，则可在 $\widehat{\mathbf{ID}}_\mathbf{\nu}$ 基础上进一步弱化得到 $\mathbf{ID_{\nu}\#}$
 
 ### 4.1.2 二阶算术
 
