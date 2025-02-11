@@ -261,6 +261,15 @@ const refList = [
         locate: "上海",
         year: 2014
     },
+    // {
+    //     author: ["田中一之"],
+    //     title: "逆数学と 2 階算術",
+    //     type: "M",
+    //     year: 2018,
+    //     page: [1, 105],
+    //     press: "河合文化教育研究所",
+    //     locate: "名古屋"
+    // },
     {
         author: ["郝兆宽", "杨跃"],
         title: "集合论：对无穷概念的探索",
@@ -333,6 +342,12 @@ const refList = [
         press: "株式会社インプレス R&D",
         locate: "東京"
     },
+    // {
+    //     author: ["曹知秋"],
+    //     title: "大数理论",
+    //     type: "DB/OL",
+    //     page: [1, 1524]
+    // },
     {
         author: ["顾沛", "邓少强"],
         title: "简明抽象代数",
