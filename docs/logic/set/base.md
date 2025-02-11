@@ -19,7 +19,7 @@
     4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists^{1} x \ \varphi(x)$
 
 ### 1.1.1 ZFC 公理
-1. 设 $\mathbf{ZFC}$ 是如下公理的理论
+1. $\text{Zermelo}-\text{Fraenkel}$ 集合论：设 $\mathbf{ZFC}$ 是如下公理的理论
     1. 存在公理（$\text{Exi}$）：存在一个集合
 
         $$
@@ -205,8 +205,119 @@
     2. 用 $\mathbf V = \left\{x \mid x = x\right\}$ 表示「所有集合」的类，$x \in \mathbf V$ 不是集合论语言的公式，而只是公式 $x = x$ 的一种记法
 
 ### 1.1.2 KP 公理
+1. $\text{Kripke}-\text{Platek}$ 集合论
 
 ### 1.1.3 NBG 公理
+1. $\text{von Neumann}-\text{Bernays}-\text{G}\ddot{\mathrm{o}\text{del}}$ 集合论中的基本对象为类，集合是特殊的类．用 $X, Y, Z, \cdots$ 表示类，用 $x, y, z, \cdots$ 表示集合
+    1. 集合公理：如果一个类是另一个类的元素，那么这个类就是集合
+
+        $$
+        \forall X \forall Y \ (X \in Y \rightarrow \mathbf{M}(X))
+        $$
+
+        谓词 $\mathbf{M}(X)$ 表示 $X$ 是集合
+
+    2. 类的外延公理：如果两个类的元素相同，则两个类相同
+
+        $$
+        \forall X \forall Y \ (\forall u \ (u \in X \leftrightarrow u \in Y) \leftrightarrow X=Y)
+        $$
+
+    3. 空集公理：存在一个集合没有任何元素
+
+        $$
+        \exists x \forall y \ (y \notin x)
+        $$
+
+    4. 并集公理
+
+        $$
+        \forall x \exists y \forall u \forall v \ (u \in v \wedge v \in x \rightarrow u \in y)
+        $$
+
+    5. 幂集公理
+
+        $$
+        \forall x \exists y \forall u \ (u \subseteq x \rightarrow u \in y)
+        $$
+
+    6. 无穷公理
+
+        $$
+        \exists s \ (\varnothing \in s \wedge \forall x \ (x \in s \rightarrow \exists y \ (y \in s \wedge x \subset y)))
+        $$
+
+    7. 替换公理
+
+        $$
+        \forall x \forall A \ (\mathbf{U}(A) \rightarrow \exists y \forall u \ (u \in y \rightarrow \exists v \ (v \in x \wedge\langle u, v\rangle \in A)))
+        $$
+
+        其中 $\mathbf{U}(X)$ 为单值：$\mathbf{U}(X) \leftrightarrow \forall u \forall v \forall w \ (\langle u, v\rangle \in X \wedge\langle u, w\rangle \in X \rightarrow v=w)$
+
+    8. 属类公理：存在一个类可以表示属于关系
+
+        $$
+        \exists A \forall x \forall y \ (x \in y \leftrightarrow\langle x, y\rangle \in A)
+        $$
+
+    9. 交类公理：两个类的交是类
+
+        $$
+        \forall A \forall B \exists C \forall u \ (u \in C \leftrightarrow(u \in A \wedge u \in B))
+        $$
+
+    10. 补类公理：一个类的补是类
+
+        $$
+        \forall A \exists B \forall u \ (u \in B \leftrightarrow u \notin B)
+        $$
+
+    11. 积类公理：一个类可以成为定义域
+
+        $$
+        \forall A \exists B \forall x \forall y \ (\langle x, y\rangle \in B \leftrightarrow x \in A)
+        $$
+
+    12. 定义域类公理：任何二元关系的定义域是类
+
+        $$
+        \forall A \exists B \forall x \ (x \in B \leftrightarrow \exists y \ (\langle x, y\rangle \in A))
+        $$
+
+    13. 逆类公理：任何二元关系的逆是类
+
+        $$
+        \forall A \exists B \forall x \forall y \ (\langle x, y\rangle \in B \leftrightarrow\langle y, x\rangle \in A)
+        $$
+
+    14. 轮换公理：任何三元关系的轮换是类
+
+        $$
+        \forall A \exists B \forall x \forall y \forall z \ (\langle x, y, z\rangle \in B \leftrightarrow\langle z, x, y\rangle \in A)
+        $$
+
+    15. 对换公理：任何三元关系的对换是类
+
+        $$
+        \forall A \exists B \forall x \forall y \forall z \ (\langle x, y, z\rangle \in B \leftrightarrow\langle x, z, y\rangle \in A)
+        $$
+
+    16. 类的正则公理
+
+        $$
+        \forall A \ (A \neq \varnothing \rightarrow \exists u \ (u \in A \wedge u \cap A=\varnothing))
+        $$
+
+    17. 类的选择公理
+
+        $$
+        \exists A \ (\mathcal{U}(A) \wedge \forall x \ (x \neq \varnothing \rightarrow \exists y \ (y \in x \wedge\langle x, y\rangle \in A)))
+        $$
+
+        定义 $\mathbf{BG}$ 为 $\mathbf{NBG}$ 除去类的选择公理
+
+2. $\mathbf{NBG}$ 与 $\mathbf{ZFC}$ 等价
 
 ## 1.2 关系与映射
 ### 1.2.1 关系
