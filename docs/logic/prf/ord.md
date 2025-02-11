@@ -47,6 +47,15 @@
 
         通常记 $\psi_0$ 为 $\psi$；不加说明时，默认用此函数作为默认 $\psi$ 型函数
 
+    4. $\text{J}\ddot{\mathrm{a}}\text{ger} \ \psi-$函数
+        1. $\left\{\kappa^{-}\right\} \cup \kappa^{-} \subseteq C_{\kappa}^{n}(\alpha)$
+        2. $S(\gamma) \subseteq C_{\kappa}^{n}(\alpha) \to \gamma \in C_{\kappa}^{n+1}(\alpha)$
+        3. $\beta, \gamma \in C_{\kappa}^{n}(\alpha) \to I_{\beta}(\gamma) \in C_{\kappa}^{n+1}(\alpha)$
+        4. $\gamma<\pi<\kappa \wedge \pi \in C_{\kappa}^{n}(\alpha) \to \gamma \in C_{\kappa}^{n+1}(\alpha)$
+        5. $\gamma<\alpha \wedge \gamma, \pi \in C_{\kappa}^{n}(\alpha) \wedge \gamma \in C_{\pi}(\gamma) \to \psi_{\pi}(\gamma) \in C_{\kappa}^{n+1}(\alpha)$
+        6. $C_{\kappa}(\alpha)={\displaystyle \bigcup\left\{C_{\kappa}^{n}(\alpha) \mid n<\omega\right\}}$
+        7. $\psi_{\kappa}(\alpha)=\min \left\{\xi \mid \xi \notin C_{\kappa}(\alpha)\right\}$
+
 2. $\theta$ 型定义
     1. $\text{Bird} \ \theta-$函数： $\theta\left(\Omega^{n-1} a_{n-1}+\cdots+\Omega^{2} a_{2}+\Omega a_{1}+a_{0}, b\right)=\varphi\left(a_{n-1}, \ldots, a_{2}, a_{1}, a_{0}, b\right)$
     2. $\text{Feferman} \ \theta-$函数
@@ -66,8 +75,8 @@
         5. $\vartheta_{m}^{n}(\alpha)=\min \left(\left\{\xi<\Omega_{m+1} \mid C_{m}^{n}(\alpha, \xi) \cap \Omega_{m+1} \subseteq \xi \wedge \alpha \in C_{m}^{n}(\alpha, \xi)\right\} \cup\left\{\Omega_{m+1}\right\}\right)$
     2. $\text{Wilken}-\text{Weiermann} \ \vartheta-$函数：令 $\Omega_{0}$ 为 $1$ 或形如 $\varepsilon_{\alpha}$ 的序数，设 $\Omega_{1}>\Omega_{0}$ 为不可数正则基数；对于 $0<i<\omega$，设 $\Omega_{i+1}$ 为 $\Omega_{i}$ 的后继基数；设 $\Omega_{\omega}=\sup _{i<\omega} \Omega_{i}$．对于所有 $\beta \leqslant \Omega_{i+1}$，定义
         1. $\Omega_{i} \cup \beta \subseteq \overline{C}_{i}(\alpha, \beta)$
-        2. $\xi, \eta \in \overline{C}_{i}(\alpha, \beta) \Rightarrow \xi+\eta \in \overline{C}_{i}(\alpha, \beta)$
-        3. $j \leqslant i<\omega \wedge \xi \in \overline{C}_{j}\left(\xi, \Omega_{j+1}\right) \cap \overline{C}_{i}(\alpha, \beta) \cap \alpha \Rightarrow \overline{\vartheta}_{j}(\xi) \in \overline{C}_{i}(\alpha, \beta)$
+        2. $\xi, \eta \in \overline{C}_{i}(\alpha, \beta) \to \xi+\eta \in \overline{C}_{i}(\alpha, \beta)$
+        3. $j \leqslant i<\omega \wedge \xi \in \overline{C}_{j}\left(\xi, \Omega_{j+1}\right) \cap \overline{C}_{i}(\alpha, \beta) \cap \alpha \to \overline{\vartheta}_{j}(\xi) \in \overline{C}_{i}(\alpha, \beta)$
         4. $\overline{\vartheta}_{i}(\alpha) =\min (\{\xi<\Omega_{i+1} \mid \alpha \in \overline{C}_{i}(\alpha, \xi) \wedge \overline{C}_{i}(\alpha, \xi) \cap \Omega_{i+1} \subseteq \xi\} \cup\left\{\Omega_{i+1}\right\})$
     3. $\text{Weiermann} \ \vartheta-$函数
         1. $C_{0}(\alpha, \beta)=\beta \cup\{0, \Omega\}$
@@ -115,9 +124,24 @@
     3. $\operatorname{PTO}(\mathbf{ID}_{1}) = \psi\left(\varepsilon_{\Omega+1}\right), \operatorname{PTO}(\mathbf{ID}_{2}) = \psi\left(\varepsilon_{\Omega_{2}+1}\right), \operatorname{PTO}(\mathbf{ID}_{<\omega}) = \psi\left(\Omega_{\omega}\right), \operatorname{PTO}(\mathbf{ID}_{\omega}) = \psi\left(\varepsilon_{\Omega_{\omega}+1}\right), \operatorname{PTO}(\mathbf{ID}_{\varepsilon_0}) = \psi\left(\Omega_{\varepsilon_{0}}\right)$
 
 ### 5.3.2 二阶算术
-1. $\mathbf{RCA}_0$ 子系统：$\operatorname{PTO}(\mathbf{RCA}_0)$
-2. $\mathbf{WKL}_0$ 子系统：$\operatorname{PTO}(\mathbf{WKL}_0)$
-3. $\mathbf{ACA}_0$ 子系统：$\operatorname{PTO}(\mathbf{ACA}_0)$
-4. $\mathbf{ATR}_0$ 子系统：$\operatorname{PTO}(\mathbf{ATR}_0)$
+1. $\mathbf{RCA}_0$ 子系统：$\operatorname{PTO}(\mathbf{RCA}_0) = \omega^{\omega}$
+2. $\mathbf{WKL}_0$ 子系统：$\operatorname{PTO}(\mathbf{WKL}_0) = \omega^{\omega}$
+3. $\mathbf{ACA}_0$ 子系统：$\operatorname{PTO}(\mathbf{ACA}_0) = \varepsilon_0$
+4. $\mathbf{ATR}_0$ 子系统：$\operatorname{PTO}(\mathbf{ATR}_0) = \Gamma_0$
+5. $\mathbf{\Phi}-\mathbf{AC}_0$ 子系统
+    1. $\operatorname{PTO}\left(\mathbf{\Sigma}_{1}^{1}-\mathbf{AC}_{0}\right)=\varepsilon_{0}, \operatorname{PTO}\left(\mathbf{\Sigma}_{1}^{1}-\mathbf{AC}\right)=\psi\left(\Omega^{\varepsilon_{0}}\right)$
+    2. $\operatorname{PTO}\left(\mathbf{\Sigma}_{2}^{1}-\mathbf{AC}\right)=\psi\left(\Omega_{\varepsilon_{0}}\right)$
+6. $\mathbf{\Phi}-\mathbf{CA}_0$ 子系统
+    1. $\operatorname{PTO}\left(\mathbf{\Delta}_{1}^{1}-\mathbf{CA}_{0}\right)=\varepsilon_{0}, \operatorname{PTO}\left(\mathbf{\Delta}_{1}^{1}-\mathbf{CA}\right)=\psi\left(\Omega^{\varepsilon_{0}}\right)$
+    2. $\operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}_{0}\right)=\psi\left(\Omega_{\omega}\right), \operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}\right)=\psi\left(\Omega_{\omega} \cdot \varepsilon_{0}\right)$
+    3. $\operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}_{0}\right)=\psi\left(\Omega_{\omega}\right), \operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}\right)=\psi\left(\Omega_{\varepsilon_{0}}\right)$
+7. $\mathbf{\Phi}-\mathbf{TR}_0$ 子系统
+    1. $\operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}_{0}\right)=\psi\left(\psi_{I}(0)\right), \operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}_{0}\right)=\psi\left(\psi_{I}(0) \cdot \varepsilon_{0}\right)$
+    2. $\operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{TR}_{0}\right)=\psi\left(\psi_{I}\left(I^{\omega}\right)\right), \operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{TR}\right)=\psi\left(\psi_{I}\left(I^{\varepsilon_{0}}\right)\right)$
+8. $\Phi-\mathrm{BI}$ 相关子系统
+    1. $\operatorname{PTO}(\mathbf{ACA}+\mathbf{BI})=\psi\left(\varepsilon_{\Omega+1}\right)$
+    2. $\operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}_{0}+\mathbf{\Pi}_{2}^{1}-\mathbf{BI}\right)=\psi\left(\Omega_{\omega}{ }^{\omega}\right), \operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}+\mathbf{BI}\right)=\psi\left(\varepsilon_{\Omega_{\omega}+1}\right), \operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}+\mathbf{BI}\right)=\psi\left(\varepsilon_{\psi_{I}(0)+1}\right)$
+    3. $\operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}_{0}+\mathbf{\Sigma}_{2}^{1}-\mathbf{BI}\right)=\psi\left(\psi_{I}\left(I^{\omega}\right)\right), \operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}+\mathbf{\Sigma}_{2}^{1}-\mathbf{BI}\right)=\psi\left(\psi_{I}\left(I^{\varepsilon_{0}}\right)\right)$
+    4. $\operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}+\mathbf{BI}\right)=\psi\left(\varepsilon_{I+1}\right), \operatorname{PTO}\left(\mathbf{\Sigma}_{2}^{1}-\mathbf{AC}+\mathbf{BI}\right)=\psi\left(\varepsilon_{I+1}\right)$
 
 ### 5.3.2 KP 集合论

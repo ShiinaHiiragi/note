@@ -643,5 +643,3 @@
     1. $|\overline z| = |z|, |\text{Re}(z)| \leqslant^{\mathbf R} |z|, |\text{Im}(z)| \leqslant^{\mathbf R} |z|, |z| \leqslant^{\mathbf R} |\text{Re}(z)| + |\text{Im}(z)|$
     2. $|z| \geqslant^{\mathbf R} 0^{\mathbf R}$，等号成立当且仅当 $z^{\mathbf C} = 0^{\mathbf C}$
     3. $|z +^{\mathbf C} w| \leqslant^{\mathbf R} |z| +^{\mathbf R} |w|, |z \cdot^{\mathbf C} w| = |z| \cdot^{\mathbf R} |w|$
-
-## 1.4 其他集合论
