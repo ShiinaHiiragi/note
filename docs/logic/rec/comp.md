@@ -1,7 +1,28 @@
 # 1 可计算理论
 
 ## 1.1 可计算模型
-### 1.1.1 Turing 机
+### 1.1.1 λ 演算
+1. 递归论 $\lambda$ 演算：在无类型 $\lambda$ 演算中，定义自然数
+
+    $$
+    \begin{aligned}
+    & 0 = \lambda s . \lambda z . z \\
+    & 1 = \lambda s . \lambda z . s(z) \\
+    & 2 = \lambda s . \lambda z . s(s(z)) \\
+    & \cdots
+    \end{aligned}
+    $$
+
+    1. 后继运算：定义 $S \equiv \lambda a . \lambda b . \lambda c . b(a b c)$
+    2. 递归函数：定义 $Y = \lambda y .(\lambda x . y(x x))(\lambda x . y(x x))$，则对于任意函数 $R$ 有 $YR \rightarrow R(YR)$
+
+2. 定义 $\top = \lambda x . \lambda y . x, \bot = \lambda x . \lambda y . y$，则
+    1. $\neg = \lambda x . x \bot \top$
+    2. $\rightarrow = \lambda x . \lambda y . x y (\neg x)$
+
+    构成命题完全组
+
+### 1.1.2 Turing 机
 1. 递归论 $\text{Turing}$ 机模型：设双向无限带 $\text{Turing}$ 机为 $M = (Q, \Sigma, \Gamma, \delta, B, q_s, q_t, q_r)$．其中字母表 $\Sigma = \{0, 1\}$，$q_h = \{q_t, q_r\}$，表示停机状态．从而一台 $\text{Turing}$ 完全由其指令集 $\delta$ 决定而与其物理装置无关
     1. $\text{Turing}$ 机的输入是 $n$ 个自然数
         1. 自然数 $m$ 用带上 $m + 1$ 个连续的 $1$ 表示
@@ -15,7 +36,7 @@
     1. 对任意函数 $f$，$f$ 是 $M'$ 可计算的，当且仅当 $f$ 是 $M$ 可计算的且对于任意输入 $\overline x$，$M$ 与 $M'$ 给出相同的输出
     2. 在 $M'$ 的终止格局中，纸带上所有的 $1$ 是连续的
 
-### 1.1.2 递归函数
+### 1.1.3 递归函数
 1. 初始函数
     1. 零函数 $Z(x) = 0$
     2. 后继函数 $S(x) = x + 1$
@@ -160,8 +181,11 @@
         1. 对于递归函数，这样的通用函数不存在
         2. 通用函数 $\Phi(e, x)$ 可以能行地枚举所有一元部分递归函数：$\Phi_{e}(x)=\Phi(e, x)$；$n$ 元部分递归函数用 $\Phi_{e}^{(n)}\left(x_{1}, \cdots, x_{n}\right)$ 枚举
 
-### 1.1.3 等价性
-1. 一个函数是 $\text{Turing}$ 可计算的当且仅当它是部分递归的
+### 1.1.4 等价性
+1. $\lambda$ 演算与部分递归函数等价
+    1. 任何部分递归函数都可用 $\lambda$ 演算编码
+    2. 任何 $\lambda$ 演算可编码的函数均为部分递归函数
+2. $\text{Turing}$ 可计算函数与部分递归函数等价
     1. 任何部分递归函数都是 $\text{Turing}$ 可计算的
         1. 每个初始函数都是 $\text{Turing}$ 可计算的
         2. 任何一台标准的 $\text{Turing}$ 机 $M_1$ 都可以被一台纸带是单向无穷的 $\text{Turing}$ 机 $M_2$ 所模拟
@@ -174,10 +198,10 @@
                 2. 用 $\Phi_{e, s}(x) \downarrow = y$ 表示存在 $y$，$M_e$ 对于输入 $x$ 在 $s$ 步之内停机，且输入为 $y$（$x, y, e < s$）；如果不存在这样的 $y$，则记为 $\Phi_{e, s}(x) \uparrow$
                 3. 若 $W_e$ 是部分递归函数 $\Phi_e$ 的定义域，则用 $W_e$ 表示 $\Phi_e$ 所确定的递归可枚举集；令 $W_{e, s} = \mathrm{dom}(\Phi_{e, s})$，$W_{e, s}$ 是有穷的且 $W_e = {\displaystyle \bigcup_{s \in \mathbf N} W_{e, s}}$
 
-        1. 关于 $\text{Turing}$ 机的谓词是原始递归的：「$e$ 是一个 $\text{Turing}$ 机程序的编码」「$\text{Turing}$ 机 $e$ 中包含四元组 $s$」「状态 $q$ 是 $\text{Turing}$ 机 $e$ 的停机状态」与「$c$ 是一个格局的编码」
-        2. 定义 $\text{Kleene}$ 谓词 $T(e, x, z)$ 为 $z$ 是程序 $e$ 对输入 $x$ 的计算过程的编码，则 $T$ 是原始递归的
+        2. 关于 $\text{Turing}$ 机的谓词是原始递归的：「$e$ 是一个 $\text{Turing}$ 机程序的编码」「$\text{Turing}$ 机 $e$ 中包含四元组 $s$」「状态 $q$ 是 $\text{Turing}$ 机 $e$ 的停机状态」与「$c$ 是一个格局的编码」
+        3. 定义 $\text{Kleene}$ 谓词 $T(e, x, z)$ 为 $z$ 是程序 $e$ 对输入 $x$ 的计算过程的编码，则 $T$ 是原始递归的
 
-2. $\text{Church}-\text{Turing}$ 论题：直观可计算函数类就是部分递归函数构成的类，也就是 $\text{Turing}$ 可计算函数类
+3. $\text{Church}-\text{Turing}$ 论题：直观可计算函数类就是部分递归函数构成的类，也就是 $\lambda$ 演算可编码函数类或 $\text{Turing}$ 可计算函数类
 
 ## 1.2 递归定理
 1. 参数定理（$\text{Kleene} \ s-m-n$ 定理的一般形式）：令 $m, n \in \mathbf N^+$，则存在原始递归的单射 $s_n^m: \mathbf N^{m+1} \to \mathbf N$，使得对任意 $x \in \mathbf N, \overline y \in \mathbf N^m$ 都有 $\Phi_{s_n^m(x, \overline y)}^{(n)} (\overline z) = \Phi_x^{(m+n)} (\overline y, \overline z)$
