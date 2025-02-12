@@ -30,7 +30,7 @@
 
 ### 5.1.2 序数折叠函数
 1. $\psi$ 型定义
-    1. $\text{Bachmann} \ \psi-$函数：令 $\Omega$ 为不可数序数，定义 $C^{\Omega}(\alpha, \beta)$ 为 $\beta \cup\{0, \Omega\}$ 在 $+,\left(\xi \mapsto \omega^{\xi}\right),\left(\xi \mapsto \psi_{\Omega}(\xi)\right)_{\xi<\alpha}$ 下的闭包，定义 $\psi_{\Omega}(\alpha)=\min \left\{\rho<\Omega: C^{\Omega}(\alpha, \rho) \cap \Omega=\rho\right\}$
+    1. $\text{Bachmann} \ \psi-$函数：令 $\Omega$ 为不可数序数（例如 $\omega_1$），定义 $C^{\Omega}(\alpha, \beta)$ 为 $\beta \cup\{0, \Omega\}$ 在 $+,\left(\xi \mapsto \omega^{\xi}\right),\left(\xi \mapsto \psi_{\Omega}(\xi)\right)_{\xi<\alpha}$ 下的闭包，则有 $\psi_{\Omega}(\alpha)=\min \left\{\rho<\Omega: C^{\Omega}(\alpha, \rho) \cap \Omega=\rho\right\}$
     2. $\text{Buchholz} \ \psi-$函数
         1. $C_{\nu}^{0}(\alpha)=\left\{\beta \mid \beta<\Omega_{\nu}\right\}$
         2. $C_{\nu}^{n+1}(\alpha)=\left\{\beta+\gamma, \psi_{\mu}(\eta) \mid \mu, \beta, \gamma, \eta \in C_{\nu}^{n}(\alpha) \wedge \eta<\alpha\right\}$
@@ -45,9 +45,16 @@
         3. $C_{\nu}(\alpha)={\displaystyle \bigcup_{n<\omega} C_{\nu}^{n}(\alpha)}$
         4. $\psi_{\nu}(\alpha)=\min \left\{\beta<\Omega_{\nu+1} \mid \beta \notin C_{\nu}(\alpha)\right\}$
 
-        通常记 $\psi_0$ 为 $\psi$；不加说明时，默认用此函数作为默认 $\psi$ 型函数
+        通常记 $\psi_0$ 为 $\psi$
 
-    4. $\text{J}\ddot{\mathrm{a}}\text{ger} \ \psi-$函数
+    4. $\text{J}\ddot{\mathrm{a}}\text{ger} \ \psi-$函数：设 $M$ 是最小的 $\text{Mahlo}$ 基数，$R$ 为全体小于 $M$ 的不可数正则序数集合，定义
+
+        $$
+        I_{\alpha} = \operatorname{enum}\left(\operatorname{cl} \left(\left\{\beta \in R \mid \forall \gamma<\alpha\left(I_{\gamma}(\beta)=\beta\right)\right\}\right)\right)
+        $$
+
+        其中枚举函数 $\operatorname{enum}(X): \operatorname{type}(X) \to X$ 是使得 $X = \operatorname{ran}(\operatorname{enum}(X))$ 的唯一严格递增函数
+
         1. $\left\{\kappa^{-}\right\} \cup \kappa^{-} \subseteq C_{\kappa}^{n}(\alpha)$
         2. $S(\gamma) \subseteq C_{\kappa}^{n}(\alpha) \to \gamma \in C_{\kappa}^{n+1}(\alpha)$
         3. $\beta, \gamma \in C_{\kappa}^{n}(\alpha) \to I_{\beta}(\gamma) \in C_{\kappa}^{n+1}(\alpha)$
@@ -55,6 +62,18 @@
         5. $\gamma<\alpha \wedge \gamma, \pi \in C_{\kappa}^{n}(\alpha) \wedge \gamma \in C_{\pi}(\gamma) \to \psi_{\pi}(\gamma) \in C_{\kappa}^{n+1}(\alpha)$
         6. $C_{\kappa}(\alpha)={\displaystyle \bigcup\left\{C_{\kappa}^{n}(\alpha) \mid n<\omega\right\}}$
         7. $\psi_{\kappa}(\alpha)=\min \left\{\xi \mid \xi \notin C_{\kappa}(\alpha)\right\}$
+
+    5. $\text{J}\ddot{\mathrm{a}}\text{ger}-\text{Buchholz} \ \psi-$函数：假设存在弱不可达基数，设 $I$ 为最小的弱不可达基数，$\mathrm{Reg}_{I}$ 表示小于等于 $I$ 的全体正则基数集合
+        1. $\mathrm{Cl}^{0}(\alpha, \beta)=\beta \cup\{0, \mathbf{I}\}$
+        2. $\mathrm{Cl}^{n+1}(\alpha, \beta)$ 是以下四个集合的并集
+            1. $\left\{\xi+\zeta \mid \xi, \zeta \in \mathrm{Cl}^{n}(\alpha, \beta)\right\}$
+            2. $\left\{\varphi_{\xi}(\zeta) \mid \xi, \zeta \in \mathrm{Cl}^{n}(\alpha, \beta)\right\}$
+            3. $\left\{\Omega_{\xi} \mid \xi \in \mathrm{Cl}^{n}(\alpha, \beta)\right\}$
+            4. $\left\{\psi_{\pi}(\xi) \mid \xi \in \mathrm{Cl}^{n}(\alpha, \beta) \cap \alpha \wedge \pi \in \mathrm{Cl}^{n}(\alpha, \beta) \cap \operatorname{Reg}_{\mathbf{I}}\right\}$
+        3. $\mathrm{Cl}(\alpha, \beta)={\displaystyle \bigcup_{n<\omega} \mathrm{Cl}^{n}(\alpha, \beta)}$
+        4. $\psi_{\kappa}(\alpha):=\min \{\xi \in \mathbf{On} \mid \kappa \in \mathrm{Cl}(\alpha, \xi) \wedge \mathrm{Cl}(\alpha, \xi) \cap \kappa \subseteq \xi\}$
+
+        不加说明时，默认用此函数作为默认 $\psi$ 型函数
 
 2. $\theta$ 型定义
     1. $\text{Bird} \ \theta-$函数： $\theta\left(\Omega^{n-1} a_{n-1}+\cdots+\Omega^{2} a_{2}+\Omega a_{1}+a_{0}, b\right)=\varphi\left(a_{n-1}, \ldots, a_{2}, a_{1}, a_{0}, b\right)$
@@ -138,7 +157,7 @@
 7. $\mathbf{\Phi}-\mathbf{TR}_0$ 子系统
     1. $\operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}_{0})=\psi(\psi_{I}(0)), \operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}_{0})=\psi(\psi_{I}(0) \cdot \varepsilon_{0})$
     2. $\operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{TR}_{0})=\psi(\psi_{I}(I^{\omega})), \operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{TR})=\psi(\psi_{I}(I^{\varepsilon_{0}}))$
-8. $\Phi-\mathrm{BI}$ 相关子系统
+8. $\Phi-\mathrm{BI}$ 公理相关子系统
     1. $\operatorname{PTO}(\mathbf{ACA}+\mathbf{BI})=\psi(\varepsilon_{\Omega+1})$
     2. $\operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}_{0}+\mathbf{\Pi}_{2}^{1}-\mathbf{BI})=\psi(\Omega_{\omega}{ }^{\omega}), \operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}+\mathbf{BI})=\psi(\varepsilon_{\Omega_{\omega}+1}), \operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}+\mathbf{BI})=\psi\left(\varepsilon_{\psi_{I}(0)+1}\right)$
     3. $\operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}_{0}+\mathbf{\Sigma}_{2}^{1}-\mathbf{BI})=\psi(\psi_{I}(I^{\omega})), \operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}+\mathbf{\Sigma}_{2}^{1}-\mathbf{BI})=\psi(\psi_{I}(I^{\varepsilon_{0}}))$

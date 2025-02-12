@@ -488,7 +488,7 @@
 
     定义该序列的最大长度为 $\text{SCG}(k)$
 
-    1. $\text{SCG}(k)$ 的 $\text{FGH}$ 近似为 $F\left[\psi_0\left(\Omega_\omega\right)\right](k) \leqslant \operatorname{SCG}(k)<F\left[\psi_0\left(\varepsilon_{\Omega_\omega+1}\right)\right](k)$
+    1. $\text{SCG}(k)$ 的 $\text{FGH}$ 近似为 $F\left[\psi_0\left(\Omega_\omega\right)\right](k) \leqslant \operatorname{SCG}(k)<F\left[\psi_0\left(\varepsilon_{\Omega_\omega+1}\right)\right](k)$，其中 $\psi$ 使用 $\text{Madore}$ 定义
     2. 若要求次立方图无环且无多重边，则定义满足该条件的序列最大长度为 $\text{SSCG}(k)$
 
 !!! note "$\text{Fish 6}$ 数"
