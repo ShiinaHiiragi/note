@@ -116,12 +116,12 @@
 ## 5.3 证明论序数
 ### 5.3.1 一阶算术
 1. $\text{Robinson}$ 算术：$\operatorname{PTO}(\mathbf{Q}) = \omega$
-    1. $\operatorname{PTO}\left(\mathbf{I \Delta}_{0}\right)=\omega^{2}, \operatorname{PTO}\left(\mathbf{I \Delta}_{0}^{+}\right)=\operatorname{PTO}\left(\mathbf{I \Delta}_{0}+\exp \right)=\omega^{3}$
-    2. $\operatorname{PTO}\left(\mathbf{I \Sigma}_{n+1}\right)=\omega \uparrow \uparrow (n+2)$
+    1. $\operatorname{PTO}(\mathbf{I \Delta}_{0})=\omega^{2}, \operatorname{PTO}(\mathbf{I \Delta}_{0}^{+})=\operatorname{PTO}(\mathbf{I \Delta}_{0}+\exp )=\omega^{3}$
+    2. $\operatorname{PTO}(\mathbf{I \Sigma}_{n+1})=\omega \uparrow \uparrow (n+2)$
 2. $\text{Peano}$ 算术：$\operatorname{PTO}(\mathbf{PA}) = \varepsilon_0$
     1. $\operatorname{PTO}(\mathbf{ID}_{1}\#) = \varphi(\omega, 0)$
     2. $\operatorname{PTO}(\widehat{\mathbf{ID}}_{1}) = \varphi(\varepsilon_0, 0), \operatorname{PTO}(\widehat{\mathbf{ID}}_{<\omega}) = \Gamma_{0}, \operatorname{PTO}(\widehat{\mathbf{ID}}_{\omega}) = \Gamma_{\varepsilon_0}, \operatorname{PTO}(\widehat{\mathbf{ID}}_{<\varepsilon_0}) = \varphi(1, \varepsilon_0, 0), \operatorname{PTO}(\widehat{\mathbf{ID}}_{<\Gamma_0}) = \varphi(1, \Gamma_0, 0)$
-    3. $\operatorname{PTO}(\mathbf{ID}_{1}) = \psi\left(\varepsilon_{\Omega+1}\right), \operatorname{PTO}(\mathbf{ID}_{2}) = \psi\left(\varepsilon_{\Omega_{2}+1}\right), \operatorname{PTO}(\mathbf{ID}_{<\omega}) = \psi\left(\Omega_{\omega}\right), \operatorname{PTO}(\mathbf{ID}_{\omega}) = \psi\left(\varepsilon_{\Omega_{\omega}+1}\right), \operatorname{PTO}(\mathbf{ID}_{\varepsilon_0}) = \psi\left(\Omega_{\varepsilon_{0}}\right)$
+    3. $\operatorname{PTO}(\mathbf{ID}_{1}) = \psi(\varepsilon_{\Omega+1}), \operatorname{PTO}(\mathbf{ID}_{2}) = \psi(\varepsilon_{\Omega_{2}+1}), \operatorname{PTO}(\mathbf{ID}_{<\omega}) = \psi(\Omega_{\omega}), \operatorname{PTO}(\mathbf{ID}_{\omega}) = \psi(\varepsilon_{\Omega_{\omega}+1}), \operatorname{PTO}(\mathbf{ID}_{\varepsilon_0}) = \psi(\Omega_{\varepsilon_{0}})$
 
 ### 5.3.2 二阶算术
 1. $\mathbf{RCA}_0$ 子系统：$\operatorname{PTO}(\mathbf{RCA}_0) = \omega^{\omega}$
@@ -129,28 +129,30 @@
 3. $\mathbf{ACA}_0$ 子系统：$\operatorname{PTO}(\mathbf{ACA}_0) = \varepsilon_0$
 4. $\mathbf{ATR}_0$ 子系统：$\operatorname{PTO}(\mathbf{ATR}_0) = \Gamma_0$
 5. $\mathbf{\Phi}-\mathbf{AC}_0$ 子系统
-    1. $\operatorname{PTO}\left(\mathbf{\Sigma}_{1}^{1}-\mathbf{AC}_{0}\right)=\varepsilon_{0}, \operatorname{PTO}\left(\mathbf{\Sigma}_{1}^{1}-\mathbf{AC}\right)=\psi\left(\Omega^{\varepsilon_{0}}\right)$
-    2. $\operatorname{PTO}\left(\mathbf{\Sigma}_{2}^{1}-\mathbf{AC}\right)=\psi\left(\Omega_{\varepsilon_{0}}\right)$
+    1. $\operatorname{PTO}(\mathbf{\Sigma}_{1}^{1}-\mathbf{AC}_{0})=\varepsilon_{0}, \operatorname{PTO}(\mathbf{\Sigma}_{1}^{1}-\mathbf{AC})=\psi(\Omega^{\varepsilon_{0}})$
+    2. $\operatorname{PTO}(\mathbf{\Sigma}_{2}^{1}-\mathbf{AC})=\psi(\Omega_{\varepsilon_{0}})$
 6. $\mathbf{\Phi}-\mathbf{CA}_0$ 子系统
-    1. $\operatorname{PTO}\left(\mathbf{\Delta}_{1}^{1}-\mathbf{CA}_{0}\right)=\varepsilon_{0}, \operatorname{PTO}\left(\mathbf{\Delta}_{1}^{1}-\mathbf{CA}\right)=\psi\left(\Omega^{\varepsilon_{0}}\right)$
-    2. $\operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}_{0}\right)=\psi\left(\Omega_{\omega}\right), \operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}\right)=\psi\left(\Omega_{\omega} \cdot \varepsilon_{0}\right)$
-    3. $\operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}_{0}\right)=\psi\left(\Omega_{\omega}\right), \operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}\right)=\psi\left(\Omega_{\varepsilon_{0}}\right)$
+    1. $\operatorname{PTO}(\mathbf{\Delta}_{1}^{1}-\mathbf{CA}_{0})=\varepsilon_{0}, \operatorname{PTO}(\mathbf{\Delta}_{1}^{1}-\mathbf{CA})=\psi(\Omega^{\varepsilon_{0}})$
+    2. $\operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}_{0})=\psi(\Omega_{\omega}), \operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{CA})=\psi(\Omega_{\omega} \cdot \varepsilon_{0})$
+    3. $\operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}_{0})=\psi(\Omega_{\omega}), \operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{CA})=\psi(\Omega_{\varepsilon_{0}})$
 7. $\mathbf{\Phi}-\mathbf{TR}_0$ 子系统
-    1. $\operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}_{0}\right)=\psi\left(\psi_{I}(0)\right), \operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}_{0}\right)=\psi\left(\psi_{I}(0) \cdot \varepsilon_{0}\right)$
-    2. $\operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{TR}_{0}\right)=\psi\left(\psi_{I}\left(I^{\omega}\right)\right), \operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{TR}\right)=\psi\left(\psi_{I}\left(I^{\varepsilon_{0}}\right)\right)$
+    1. $\operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}_{0})=\psi(\psi_{I}(0)), \operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}_{0})=\psi(\psi_{I}(0) \cdot \varepsilon_{0})$
+    2. $\operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{TR}_{0})=\psi(\psi_{I}(I^{\omega})), \operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{TR})=\psi(\psi_{I}(I^{\varepsilon_{0}}))$
 8. $\Phi-\mathrm{BI}$ 相关子系统
-    1. $\operatorname{PTO}(\mathbf{ACA}+\mathbf{BI})=\psi\left(\varepsilon_{\Omega+1}\right)$
-    2. $\operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}_{0}+\mathbf{\Pi}_{2}^{1}-\mathbf{BI}\right)=\psi\left(\Omega_{\omega}{ }^{\omega}\right), \operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}+\mathbf{BI}\right)=\psi\left(\varepsilon_{\Omega_{\omega}+1}\right), \operatorname{PTO}\left(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}+\mathbf{BI}\right)=\psi\left(\varepsilon_{\psi_{I}(0)+1}\right)$
-    3. $\operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}_{0}+\mathbf{\Sigma}_{2}^{1}-\mathbf{BI}\right)=\psi\left(\psi_{I}\left(I^{\omega}\right)\right), \operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}+\mathbf{\Sigma}_{2}^{1}-\mathbf{BI}\right)=\psi\left(\psi_{I}\left(I^{\varepsilon_{0}}\right)\right)$
-    4. $\operatorname{PTO}\left(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}+\mathbf{BI}\right)=\psi\left(\varepsilon_{I+1}\right), \operatorname{PTO}\left(\mathbf{\Sigma}_{2}^{1}-\mathbf{AC}+\mathbf{BI}\right)=\psi\left(\varepsilon_{I+1}\right)$
+    1. $\operatorname{PTO}(\mathbf{ACA}+\mathbf{BI})=\psi(\varepsilon_{\Omega+1})$
+    2. $\operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}_{0}+\mathbf{\Pi}_{2}^{1}-\mathbf{BI})=\psi(\Omega_{\omega}{ }^{\omega}), \operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}+\mathbf{BI})=\psi(\varepsilon_{\Omega_{\omega}+1}), \operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}+\mathbf{BI})=\psi\left(\varepsilon_{\psi_{I}(0)+1}\right)$
+    3. $\operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}_{0}+\mathbf{\Sigma}_{2}^{1}-\mathbf{BI})=\psi(\psi_{I}(I^{\omega})), \operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}+\mathbf{\Sigma}_{2}^{1}-\mathbf{BI})=\psi(\psi_{I}(I^{\varepsilon_{0}}))$
+    4. $\operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}+\mathbf{BI})=\psi(\varepsilon_{I+1}), \operatorname{PTO}(\mathbf{\Sigma}_{2}^{1}-\mathbf{AC}+\mathbf{BI})=\psi(\varepsilon_{I+1})$
 
 ### 5.3.2 KP 集合论
-- $\operatorname{PTO}(\mathbf{KP}^{-})=\omega, \operatorname{PTO}(\mathbf{KP}^{-\infty})=\varepsilon_0, \operatorname{PTO}(\mathbf{KP})=\psi\left(\varepsilon_{\Omega+1}\right)$
-    1. $\mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Pi}_{1}-\mathbf{Fnd}+\mathbf{\Sigma}_{1}-\mathbf{Ind}\right)=\omega^{\omega}, \mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Pi}_{1}-\mathbf{Fnd}+ \mathbf{Ind}\right)=\varepsilon_{0}$
-    2. $\mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Sigma}_{1}-\mathbf{Fnd}\right)=\varphi(\varphi(\omega, 0), 0), \mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Sigma}_{1}-\mathbf{Fnd}+ \mathbf{Ind}\right)=\varphi\left(\varphi\left(\varepsilon_{0}, 0\right), 0\right)$
-    3. $\mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Pi}_{2}-\mathbf{Fnd}\right)=\psi\left(\Omega^{\Omega^{\omega}}\right), \mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Pi}_{2}-\mathbf{Fnd}+ \mathbf{Ind}\right)=\psi\left(\Omega^{\Omega_{0}^{\varepsilon}}\right), \mathrm{PTO}\left(\mathbf{KP}^{-}+\mathbf{\Pi}_{3}-\mathbf{Fnd}\right)=\psi\left(\Omega^{\Omega^{\Omega^{\omega}}}\right)$
-    4. $\mathrm{PTO}\left(\mathbf{KPi}^{-}\right)=\Gamma_{0}, \mathrm{PTO}\left(\mathbf{KPi}^{-}+\mathbf{\Sigma}_{1}-\mathbf{Ind}\right)=\varphi(1, \omega, 0), \mathrm{PTO}\left(\mathbf{KPi}^{-}+\mathbf{Ind}\right)=\varphi\left(1, \varepsilon_{0}, 0\right)$
-    5. $\mathrm{PTO}\left(\mathbf{KPi}^{R}\right)=\psi\left(\Omega_{\omega}\right), \mathrm{PTO}\left(\mathbf{KPi}\right)=\psi\left(\varepsilon_{I+1}\right)$
-    6. $\mathrm{PTO}\left(\mathbf{KPl}^{-}\right)=\Gamma_{0}, \mathrm{PTO}\left(\mathbf{KPl}^{-}+\mathbf{Ind}\right)=\varphi\left(1,0, \varepsilon_{0}\right)$
-    7. $\mathrm{PTO}\left(\mathbf{KPl}^{R}\right)=\psi\left(\Omega_{\omega}\right), \mathrm{PTO}(\mathbf{KPl})=\psi\left(\varepsilon_{\Omega_{\omega}+1}\right)$
-    8. $\mathrm{PTO}\left(\mathbf{KPM}^{-}\right)=\varphi(\omega, 0,0), \mathrm{PTO}(\mathbf{KPM})=\psi\left(\varepsilon_{M+1}\right)$
+1. $\operatorname{PTO}(\mathbf{KP}^{-})=\omega, \operatorname{PTO}(\mathbf{KP}^{-\infty})=\varepsilon_0, \operatorname{PTO}(\mathbf{KP})=\psi(\varepsilon_{\Omega+1})$
+    1. $\mathrm{PTO}(\mathbf{KP}^{-}+\mathbf{\Pi}_{1}-\mathbf{Fnd}+\mathbf{\Sigma}_{1}-\mathbf{Ind})=\omega^{\omega}, \mathrm{PTO}(\mathbf{KP}^{-}+\mathbf{\Pi}_{1}-\mathbf{Fnd}+ \mathbf{Ind})=\varepsilon_{0}$
+    2. $\mathrm{PTO}(\mathbf{KP}^{-}+\mathbf{\Sigma}_{1}-\mathbf{Fnd})=\varphi(\varphi(\omega, 0), 0), \mathrm{PTO}(\mathbf{KP}^{-}+\mathbf{\Sigma}_{1}-\mathbf{Fnd}+ \mathbf{Ind})=\varphi(\varphi(\varepsilon_{0}, 0), 0)$
+    3. $\mathrm{PTO}(\mathbf{KP}^{-}+\mathbf{\Pi}_{2}-\mathbf{Fnd})=\psi\left(\Omega^{\Omega^{\omega}}\right), \mathrm{PTO}(\mathbf{KP}^{-}+\mathbf{\Pi}_{2}-\mathbf{Fnd}+ \mathbf{Ind})=\psi\left(\Omega^{\Omega_{0}^{\varepsilon}}\right), \mathrm{PTO}(\mathbf{KP}^{-}+\mathbf{\Pi}_{3}-\mathbf{Fnd})=\psi\left(\Omega^{\Omega^{\Omega^{\omega}}}\right)$
+2. $\mathrm{PTO}(\mathbf{KPi})=\psi(\varepsilon_{I+1})$
+    1. $\mathrm{PTO}(\mathbf{KPi}^{-})=\Gamma_{0}, \mathrm{PTO}(\mathbf{KPi}^{-}+\mathbf{\Sigma}_{1}-\mathbf{Ind})=\varphi(1, \omega, 0), \mathrm{PTO}(\mathbf{KPi}^{-}+\mathbf{Ind})=\varphi(1, \varepsilon_{0}, 0)$
+    2. $\mathrm{PTO}(\mathbf{KPi}^{R})=\psi(\Omega_{\omega})$
+3. $\mathrm{PTO}(\mathbf{KPl})=\psi(\varepsilon_{\Omega_{\omega}+1})$
+    1. $\mathrm{PTO}(\mathbf{KPl}^{-})=\Gamma_{0}, \mathrm{PTO}(\mathbf{KPl}^{-}+\mathbf{Ind})=\varphi(1,0, \varepsilon_{0})$
+    2. $\mathrm{PTO}(\mathbf{KPl}^{R})=\psi(\Omega_{\omega})$
+4. $\mathrm{PTO}(\mathbf{KPM}^{-})=\varphi(\omega, 0,0), \mathrm{PTO}(\mathbf{KPM})=\psi(\varepsilon_{M+1})$

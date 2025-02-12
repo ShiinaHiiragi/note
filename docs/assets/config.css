@@ -118,14 +118,20 @@ h1+div.arithmatex {
   display: none;
 }
 
+mjx-container {
+  font-size: 96% !important;
+}
+
 mjx-utext[variant="sans-serif"] {
   font-family: var(--md-text-font) !important;
   font-weight: var(--normal-font-weight) !important;
+  font-size: 100% !important;
 }
 
 div.admonition.note mjx-utext[variant="sans-serif"] {
   font-family: var(--md-text-font) !important;
   font-weight: var(--normal-font-weight) !important;
+  font-size: 100% !important;
 }
 
 /* Checker */
