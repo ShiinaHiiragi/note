@@ -550,8 +550,8 @@
 
         定义 $\Sigma_1(n)$ 为 $n$ 状态海狸机停机时纸带上 $1$ 的最大数量
 
-        3. $\Sigma_1(0) = 0, \Sigma_1(1) = 1, \Sigma_1(2) = 4, \Sigma_1(3) = 6, \Sigma_1(4) = 13$
-        4. $\Sigma_1(5) \geqslant 4098, \Sigma_1(6) \geqslant 10 \uparrow \uparrow 15$
+        3. $\Sigma_1(0) = 0, \Sigma_1(1) = 1, \Sigma_1(2) = 4, \Sigma_1(3) = 6, \Sigma_1(4) = 13, \Sigma_1(5) = 4098$
+        4. $\Sigma_1(6) \geqslant 10 \uparrow \uparrow 15, \Sigma_1(6) \geqslant 2 \uparrow^{5} 4, \Sigma_1(10) \geqslant F[\omega^2](25)$
 
     2. 定义 $\Sigma_k(n)$ 为 $n$ 状态 $k$ 阶海狸机停机时纸带上 $1$ 的最大数量
         1. 定义 $k$ 阶海狸机是带有一个对 $k-1$ 阶海狸机神谕的 $n$ 状态 $\text{Turing}$ 机
