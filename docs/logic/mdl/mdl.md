@@ -43,7 +43,7 @@
         3. $h$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入当且仅当 $(\mathfrak B, h(a))_{a\in A} \vDash \mathrm{Diag}(\mathfrak A)$，当且仅当 $(\mathfrak B, h(a))_{a\in A} \vDash \mathrm{Diag_{el}}(\mathfrak A)$
     2. 初等嵌入与部分嵌入：设 $M \subseteq A, N \subseteq B$
         1. 初等嵌入：若 $\eta: \mathfrak A \to \mathfrak B$ 对于任意的公式 $\alpha(\overline x)$ 与 $\overline a\in A^n$ 有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个初等嵌入
-        2. 部分嵌入：设 $\eta: M \to N$ 是一个单射，如果对于任意的 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，无量词公式 $\alpha(\overline x)$ 以及任意的 $\overline a\in M^n$，都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个部分嵌入．若 $M = A$，则 $\eta$ 是嵌入
+        2. 部分嵌入：设 $\eta: M \to N$ 是一个单射，如果对于任意的 $\overline x = \left(x_1, x_2, \cdots, x_n\right)$，无量词公式 $\alpha(\overline x)$ 以及任意的 $\overline a\in M^n$，都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个部分嵌入．若 $M = A$，则 $\eta$ 是嵌入
         3. 部分初等嵌入：设 $\eta: M \to N$ 是一个单射，如果对于任意的公式 $\alpha(\overline x)$ 以及任意的 $\overline a\in M^n$，都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个部分初等嵌入，显然部分初等嵌入一定是部分嵌入．若 $M = A$，则 $\eta$ 是初等嵌入
     3. 同构：如果嵌入 $h: \mathfrak A \to \mathfrak B$ 是满射，则称 $h$ 是（$\mathfrak A$ 到 $\mathfrak B$）的同构
         1. 如果存在 $\mathfrak A$ 到 $\mathfrak B$ 的同构，则称 $\mathfrak A$ 与 $\mathfrak B$ 同构，记作 $\mathfrak A \cong \mathfrak B$

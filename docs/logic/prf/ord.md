@@ -1,7 +1,7 @@
 # 5 序数分析
 
 ## 5.1 序数记号与函数
-### 5.1.1 序数记号
+### 5.1.1 递归序数
 1. $\text{Veblen}$ 函数：设 $\alpha, \beta$ 为序数，则定义映射 $\varphi_\alpha: \mathbf{On} \to \mathbf{On}$ 如下
     1. $\varphi_0(\beta) = \omega^{\beta}$
     2. 对于后继序数 $\alpha + 1$，定义 $\varphi_{\alpha+1}(\beta)$ 为 $\xi \mapsto \varphi_{\alpha}(\xi)$ 的第 $\beta$ 个不动点
@@ -28,7 +28,11 @@
             2. $\Omega$ 的元素为全体递归序数
         2. 记 $\Omega_1 = \Omega$，对于任意序数 $\alpha > 1$，定义 $\Omega_\alpha$ 为包含 $\{\Omega_{\gamma} \mid 0 < \gamma < \alpha\}$ 且对后继运算与长度为 $\omega$ 的序列取上确界运算封闭的最小集合
 
-### 5.1.2 序数折叠函数
+### 5.1.2 反射序数
+
+### 5.1.3 稳定序数
+
+### 5.1.4 序数折叠函数
 1. $\psi$ 型定义
     1. $\text{Bachmann} \ \psi-$函数：令 $\Omega$ 为不可数序数（例如 $\omega_1$），定义 $C^{\Omega}(\alpha, \beta)$ 为 $\beta \cup\{0, \Omega\}$ 在 $+,\left(\xi \mapsto \omega^{\xi}\right),\left(\xi \mapsto \psi_{\Omega}(\xi)\right)_{\xi<\alpha}$ 下的闭包，则有 $\psi_{\Omega}(\alpha)=\min \left\{\rho<\Omega: C^{\Omega}(\alpha, \rho) \cap \Omega=\rho\right\}$
     2. $\text{Buchholz} \ \psi-$函数
@@ -128,11 +132,10 @@
     3. $\text{Takeuti}-\text{Feferman}-\text{Buchholz}$ 序数：$\text{TFBO} = \psi\left(\psi_{\omega}(0)\right)$
 
 ### 5.2.2 大可数序数
-1. 容许序数
-2. 反射序数
-3. 稳定序数
 
 ## 5.3 证明论序数
+设 $I$ 为最小的弱不可达基数，设 $M$ 为最小的 $\text{Mahlo}$ 基数
+
 ### 5.3.1 一阶算术
 1. $\text{Robinson}$ 算术：$\operatorname{PTO}(\mathbf{Q}) = \omega$
     1. $\operatorname{PTO}(\mathbf{I \Delta}_{0})=\omega^{2}, \operatorname{PTO}(\mathbf{I \Delta}_{0}^{+})=\operatorname{PTO}(\mathbf{I \Delta}_{0}+\exp )=\omega^{3}$
