@@ -49,7 +49,15 @@
         3. 若 $s \in P$，则序数 $\alpha$ 是 $\pi(s)$ 反射的当且仅当 $\alpha$ 在 $s$ 反射序数上是 $\Pi_1$ 反射的
         4. 若 $s, t \in P$，则序数 $\alpha$ 是 $s \wedge t$ 反射的当且仅当 $\alpha$ 既是 $s$ 反射的，也是 $t$ 反射的
 
-3. 稳定序数
+3. 稳定序数：若序数 $\alpha$ 是关于 $f(\alpha)$ 是 $\Sigma_{1}$ 稳定的，则称 $\alpha$ 是 $f-$稳定的．通常用括号函数或 $\lambda$ 表达式表示 $f$
+    1. 若序数 $\alpha \leqslant \beta$ 且 $L_{\alpha} \prec_{\Sigma_{n}} L_{\beta}$，则称 $\alpha$ 关于 $\beta$ 是 $\Sigma_{n}$ 稳定的
+        1. 若 $L_{\alpha} \prec_{\Sigma_{n}} L_{\beta}$ 且 $L_{\beta} \prec_{\Sigma_{n}} L_{\gamma}$，则 $L_{\alpha} \prec_{\Sigma_{n}} L_{\gamma}$
+        2. 若 $L_{\alpha} \prec_{\Sigma_{n}} L_{\gamma}$ 且 $L_{\beta} \prec_{\Sigma_{n}} L_{\gamma}$，则 $L_{\alpha} \prec_{\Sigma_{n}} L_{\beta}$
+        3. 若 $L_{\alpha} \prec_{\Sigma_{1}} L_{\gamma}$ 且 $\beta<\gamma$，则 $L_{\alpha} \prec_{\Sigma_{1}} L_{\beta}$
+        4. 若对任意 $\alpha \in A$ 都有 $L_{\alpha} \prec_{\Sigma_{1}} L_{\beta}$，则 $L_{\sup A} \prec_{\Sigma_{1}} L_{\beta}$
+        5. 若对任意 $\beta \in B$ 都有 $L_{\alpha} \prec_{\Sigma_{1}} L_{\beta}$，则 $L_{\alpha} \prec_{\Sigma_{1}} L_{\mathrm{sup} B}$
+
+    2. 若 $\alpha$ 是 $(\cdot + 1)-$稳定的，则 $\alpha$ 是 $\Pi_{n}$ 反射序数对任意 $n \in \mathbf N$ 都成立
 
 ### 5.1.3 序数折叠函数
 1. $\psi$ 型定义
@@ -153,12 +161,15 @@
     5. $\text{J}\ddot{\mathrm{a}}\text{ger}$ 序数：$\text{JO} = \psi\left(\psi_{\Omega_{I+1}}(0)\right)$
 
 ### 5.2.2 大可数序数
-1. $\text{Church}-\text{Kleene}$ 序数：$\omega_{1}^{\mathrm{CK}} = \Omega_1$，即第一个容许序数
+1. $\text{Church}-\text{Kleene}$ 序数：$\omega_{1}^{\mathrm{CK}} = \Omega_1$，即最小的容许序数
 2. 反射序数
     1. 递归不可达序数：$\pi_2 \wedge \pi_1(\pi_2)$
     2. 递归 $\text{Mahlo}$ 序数：$\pi_2(\pi_2)$
     3. 不可转换序数：$\pi_2(\pi_2(\pi_2))$
     4. 递归弱紧致序数：$\pi_3$
+3. 稳定序数：设 $\alpha$ 为任意序数
+    1. 不可达稳定序数：定义 $f(\alpha)$ 是大于 $\alpha$ 的最小递归不可达序数，则定义不可达稳定序数为 $f-$稳定序数
+    2. $\text{Mahlo}$ 稳定序数：定义 $f(\alpha)$ 是大于 $\alpha$ 的最小递归 $\text{Mahlo}$ 序数，则定义 $\text{Mahlo}$ 稳定序数为 $f-$稳定序数
 
 ## 5.3 证明论序数
 设 $I$ 为最小的弱不可达基数，设 $M$ 为最小的 $\text{Mahlo}$ 基数

@@ -362,7 +362,7 @@ const refList = [
         title: "大数理论",
         type: "DB/OL",
         page: [1, 1524],
-        plot: 1524 - 50 - 46
+        plot: 1524 - 50
     },
     {
         author: ["顾沛", "邓少强"],

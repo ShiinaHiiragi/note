@@ -42,7 +42,7 @@
         2. $h: \mathfrak A \to B$ 是一个嵌入，如果 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 是一个存在公式，则对任意 $\overline a \in A^n$ 有 $\mathfrak A \vDash \alpha(\overline a)$ 蕴涵 $\mathfrak B \vDash \alpha(h(\overline a))$
         3. $h$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入当且仅当 $(\mathfrak B, h(a))_{a\in A} \vDash \mathrm{Diag}(\mathfrak A)$，当且仅当 $(\mathfrak B, h(a))_{a\in A} \vDash \mathrm{Diag_{el}}(\mathfrak A)$
     2. 初等嵌入与部分嵌入：设 $M \subseteq A, N \subseteq B$
-        1. 初等嵌入：若 $\eta: \mathfrak A \to \mathfrak B$ 对于任意的公式 $\alpha(\overline x)$ 与 $\overline a\in A^n$ 有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个初等嵌入
+        1. 初等嵌入：若 $\eta: \mathfrak A \to \mathfrak B$ 对于任意的公式 $\alpha(\overline x)$ 与 $\overline a\in A^n$ 都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个初等嵌入；若将条件放宽到 $\Phi \in \{\Pi_{n}^{m}, \Sigma_{n}^{m}, \Delta_{n}^{m}\}$ 层级的公式，则称之为 $\Phi-$初等嵌入
         2. 部分嵌入：设 $\eta: M \to N$ 是一个单射，如果对于任意的 $\overline x = \left(x_1, x_2, \cdots, x_n\right)$，无量词公式 $\alpha(\overline x)$ 以及任意的 $\overline a\in M^n$，都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个部分嵌入．若 $M = A$，则 $\eta$ 是嵌入
         3. 部分初等嵌入：设 $\eta: M \to N$ 是一个单射，如果对于任意的公式 $\alpha(\overline x)$ 以及任意的 $\overline a\in M^n$，都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个部分初等嵌入，显然部分初等嵌入一定是部分嵌入．若 $M = A$，则 $\eta$ 是初等嵌入
     3. 同构：如果嵌入 $h: \mathfrak A \to \mathfrak B$ 是满射，则称 $h$ 是（$\mathfrak A$ 到 $\mathfrak B$）的同构
@@ -73,7 +73,7 @@
     1. 若存在 $N_0 \subseteq A$ 为有限集使得 $\mathfrak N = \left<N\right>^\mathfrak A$，则称 $\mathfrak N$ 是有限生成的
     2. 设 $N\subseteq A$，则 $\left<N\right>^\mathfrak A$ 的论域是 $\overline N = \{t^\mathfrak A(b_1, b_2, \cdots, b_m) \mid t \in \mathfrak T(N), b_1, b_2, \cdots, b_n \in N\}$
     3. 设 $N\subseteq A$，则 $\left<N\right>^\mathfrak A \leqslant \max\{|N|, |S|, \aleph_0\}$
-4. 初等子结构：设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的 $S-$结构，若存在 $h: \mathfrak A \to \mathfrak B$ 是一个初等嵌入且 $A \subseteq B$，则称 $\mathfrak A$ 是 $\mathfrak B$ 的初等子结构，记作 $\mathfrak A \prec \mathfrak B$；同时称 $\mathfrak B$ 是 $\mathfrak A$ 的初等膨胀，记作 $\mathfrak B \succ \mathfrak A$
+4. 初等子结构：设 $\mathfrak A, \mathfrak B$ 分别是论域为 $A, B$ 的 $S-$结构，若存在 $h: \mathfrak A \to \mathfrak B$ 是一个初等嵌入（或 $\Phi-$初等嵌入）且 $A \subseteq B$，则称 $\mathfrak A$ 是 $\mathfrak B$ 的初等子结构（或 $\Phi-$初等子结构），记作 $\mathfrak A \prec \mathfrak B$（或 $\mathfrak A \prec_{\Phi} \mathfrak B$）；并称 $\mathfrak B$ 是 $\mathfrak A$ 的初等膨胀，记作 $\mathfrak B \succ \mathfrak A$（或 $\mathfrak B \succ_{\Phi} \mathfrak A$）
     1. 如果 $N \subseteq A$，$N$ 是 $\mathfrak A$ 的子结构，且子结构 $\mathfrak N = \left\{N, \{Z^\mathfrak A \upharpoonright N\}_{Z \in S}\right\}$ 还是 $\mathfrak A$ 的初等子结构，则称集合 $N$ 是 $\mathfrak A$ 的初等子结构
     2. 如果 $H: \mathfrak A \to \mathfrak B$ 是初等嵌入，则存在 $\mathfrak A$ 的初等膨胀 $\overline{\mathfrak A}$ 使得 $H$ 可以被扩张为 $\overline{\mathfrak A}$ 到 $\mathfrak B$ 的同构
     3. $\text{Tarski}-\text{Vaught}$ 判别法：设 $\mathfrak A$ 是 $\mathfrak B$ 的子结构，则 $A \prec B$ 当且仅当对每个公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n}, y)$ 及 $a_1, a_2, \cdots, a_n \in A$ 都有 $\mathfrak B \vDash \exists y \ \alpha(a_1, a_2, \cdots, a_n, y) \to \mathfrak A \vDash \exists y \ \alpha(a_1, a_2, \cdots, a_n, y)$
