@@ -257,9 +257,10 @@
         4. 定义 $\Phi-$归纳公理模式（$\Phi-\text{Ind}$ ）：$F(0) \rightarrow\left(\forall x \ \left(F(x) \rightarrow F\left(x^{\prime}\right)\right) \rightarrow \forall x \ F(x)\right)$，其中 $F$ 为层级 $\Phi$ 的公式
         5. 可将基础公理模式、$\Delta_0-$分离公理模式、$\Delta_0-$收集公理模式中的公式 $F$ 限制到层级 $\Phi$
 
-2. 容许集：设 $A$ 是一个传递集，若 $(A, \in)$ 是 $\mathbf{KP}$ 的一个模型，则称 $A$ 是容许集
-    1. 引入公理 $\text{Lim}: \forall x \exists y \ (x \in y \wedge y$ 为容许集$)$，定义 $\mathbf{KPi} = \mathbf{KP} + \mathrm{Lim}, \mathbf{KPl} = \mathbf{KPi} - (\Delta_0-\text{Col})$
-    2. 引入公理 $\text{Mahlo}: \forall x \exists y \ \varphi(x, y, \overline{z}) \rightarrow \exists w \ (\operatorname{Ad}(w) \wedge \forall x \in w \ \exists y \in w \ \varphi(x, y, \overline{z}))$，其中 $\varphi$ 为 $\Delta_{0}$ 公式，$\operatorname{Ad}$ 为一个满足传递性、容许性、相对性无限公理与三歧性的谓词，定义 $\mathbf{KPM} = \mathbf{KPi} + \mathrm{Mahlo}$
+2. 容许集：设 $L_{\alpha} \in \mathbf L$ 是一个传递集，若 $(L_{\alpha}, \in)$ 是 $\mathbf{KP}$ 的一个模型，则称 $L_{\alpha}$ 是容许集
+    1. 称使得 $L_{\alpha}$ 为容许集的序数 $\alpha$ 为容许序数，记 $\omega_{\alpha}^{\mathrm{CK}}$ 为第 $\alpha$ 个容许序数
+    2. 引入公理 $\text{Lim}: \forall x \exists y \ (x \in y \wedge y$ 为容许集$)$，定义 $\mathbf{KPi} = \mathbf{KP} + \mathrm{Lim}, \mathbf{KPl} = \mathbf{KPi} - (\Delta_0-\text{Col})$
+    3. 引入公理 $\text{Mahlo}: \forall x \exists y \ \varphi(x, y, \overline{z}) \rightarrow \exists w \ (\operatorname{Ad}(w) \wedge \forall x \in w \ \exists y \in w \ \varphi(x, y, \overline{z}))$，其中 $\varphi$ 为 $\Delta_{0}$ 公式，$\operatorname{Ad}$ 为一个满足传递性、容许性、相对性无限公理与三歧性的谓词，定义 $\mathbf{KPM} = \mathbf{KPi} + \mathrm{Mahlo}$
 
 ### 1.1.3 NBG 公理
 1. $\text{von Neumann}-\text{Bernays}-\text{G}\ddot{\mathrm{o}\text{del}}$ 集合论中的基本对象为类，集合是特殊的类．用 $X, Y, Z, \cdots$ 表示类，用 $x, y, z, \cdots$ 表示集合

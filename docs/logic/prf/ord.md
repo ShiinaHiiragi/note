@@ -27,6 +27,9 @@
     1. $\Omega_0 = 0$
     2. $\Omega_{\alpha + 1} = {\displaystyle \sup_{X} \{X \mid X = \{x \mid x = \varphi(x)^{L_{\Omega_{\alpha}}}, , \varphi \textsf{ 为 } \Sigma_1\textsf{ 公式}\}\}}$
     3. 若 $\alpha$ 为极限序数，则 $\omega_{\alpha} = \sup \{\omega_{\beta} \mid \beta < \alpha\}$
+
+    通常将 $\Omega_1$ 记作 $\Omega$
+
 2. 反射序数
 3. 稳定序数
 
@@ -130,6 +133,11 @@
     3. $\text{Takeuti}-\text{Feferman}-\text{Buchholz}$ 序数：$\text{TFBO} = \psi\left(\psi_{\omega}(0)\right)$
 
 ### 5.2.2 大可数序数
+1. $\text{Church}-\text{Kleene}$ 序数：$\omega_{1}^{\mathrm{CK}} = \Omega_1$，即第一个容许序数
+2. 递归不可达序数
+3. 递归 $\text{Mahlo}$ 序数
+4. 不可转换序数
+5. 递归弱紧致序数
 
 ## 5.3 证明论序数
 设 $I$ 为最小的弱不可达基数，设 $M$ 为最小的 $\text{Mahlo}$ 基数
