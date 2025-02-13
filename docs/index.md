@@ -215,6 +215,20 @@ const refList = [
         locate: "南京"
     },
     {
+        author: ["J. P. Aguilera"],
+        title: "The Order of Reflection",
+        type: "J",
+        page: [1, 21],
+        year: 2019,
+        arXiv: "1906.11769"
+    },
+    {
+        author: ["David Madore"],
+        title: "A Zoo of Ordinals",
+        type: "DB/OL",
+        page: [1, 10]
+    },
+    {
         author: ["姚宁远"],
         title: "初等模型论",
         type: "M",
@@ -328,7 +342,7 @@ const refList = [
     },
     {
         author: ["Terence Parr", "Jeremy Howard"],
-        title: "The matrix calculus you need for deep learning",
+        title: "The Matrix Calculus You Need for Deep Learning",
         type: "J",
         page: [1, 33],
         year: 2018,
