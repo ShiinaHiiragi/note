@@ -22,17 +22,15 @@
 
     易知可由 $\mathcal{O}$ 表示的序数集合等价于全体递归序数集合 $\Omega$
 
-    !!! note "递归序数与非递归序数"
-        1. 设 $\Omega$ 为包含 $0$ 且对后继运算与长度为 $\omega$ 的序列取上确界运算封闭的最小集合，则称 $\Omega$ 为非递归序数
-            1. 定义 $\text{Church}-\text{Kleene}$ 序数 $\omega_{1}^{\mathrm{CK}} = \Omega$
-            2. $\Omega$ 的元素为全体递归序数
-        2. 记 $\Omega_1 = \Omega$，对于任意序数 $\alpha > 1$，定义 $\Omega_\alpha$ 为包含 $\{\Omega_{\gamma} \mid 0 < \gamma < \alpha\}$ 且对后继运算与长度为 $\omega$ 的序列取上确界运算封闭的最小集合
+### 5.1.2 非递归序数
+1. 非递归序数：记 $\{\Omega_{\alpha} \mid \alpha \in \mathbf{On}\}$ 是所有非递归序数的类
+    1. $\Omega_0 = 0$
+    2. $\Omega_{\alpha + 1} = {\displaystyle \sup_{X} \{X \mid X = \{x \mid x = \varphi(x)^{L_{\Omega_{\alpha}}}, , \varphi \textsf{ 为 } \Sigma_1\textsf{ 公式}\}\}}$
+    3. 若 $\alpha$ 为极限序数，则 $\omega_{\alpha} = \sup \{\omega_{\beta} \mid \beta < \alpha\}$
+2. 反射序数
+3. 稳定序数
 
-### 5.1.2 反射序数
-
-### 5.1.3 稳定序数
-
-### 5.1.4 序数折叠函数
+### 5.1.3 序数折叠函数
 1. $\psi$ 型定义
     1. $\text{Bachmann} \ \psi-$函数：令 $\Omega$ 为不可数序数（例如 $\omega_1$），定义 $C^{\Omega}(\alpha, \beta)$ 为 $\beta \cup\{0, \Omega\}$ 在 $+,\left(\xi \mapsto \omega^{\xi}\right),\left(\xi \mapsto \psi_{\Omega}(\xi)\right)_{\xi<\alpha}$ 下的闭包，则有 $\psi_{\Omega}(\alpha)=\min \left\{\rho<\Omega: C^{\Omega}(\alpha, \rho) \cap \Omega=\rho\right\}$
     2. $\text{Buchholz} \ \psi-$函数
