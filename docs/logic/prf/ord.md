@@ -86,13 +86,13 @@
         6. $C_{\kappa}(\alpha)={\displaystyle \bigcup\left\{C_{\kappa}^{n}(\alpha) \mid n<\omega\right\}}$
         7. $\psi_{\kappa}(\alpha)=\min \left\{\xi \mid \xi \notin C_{\kappa}(\alpha)\right\}$
 
-    5. $\text{J}\ddot{\mathrm{a}}\text{ger}-\text{Buchholz} \ \psi-$函数：假设存在弱不可达基数，设 $I$ 为最小的弱不可达基数，$\mathrm{Reg}_{I}$ 表示小于等于 $I$ 的全体正则基数集合
-        1. $\mathrm{Cl}^{0}(\alpha, \beta)=\beta \cup\{0, \mathbf{I}\}$
+    5. $\text{J}\ddot{\mathrm{a}}\text{ger}-\text{Buchholz} \ \psi-$函数：假设存在弱不可达基数，设 $I$ 为最小的弱不可达基数，$\mathrm{Reg}_{I}$ 表示不大于 $I$ 的全体正则基数集合
+        1. $\mathrm{Cl}^{0}(\alpha, \beta)=\beta \cup\{0, I\}$
         2. $\mathrm{Cl}^{n+1}(\alpha, \beta)$ 是以下四个集合的并集
             1. $\left\{\xi+\zeta \mid \xi, \zeta \in \mathrm{Cl}^{n}(\alpha, \beta)\right\}$
             2. $\left\{\varphi_{\xi}(\zeta) \mid \xi, \zeta \in \mathrm{Cl}^{n}(\alpha, \beta)\right\}$
             3. $\left\{\Omega_{\xi} \mid \xi \in \mathrm{Cl}^{n}(\alpha, \beta)\right\}$
-            4. $\left\{\psi_{\pi}(\xi) \mid \xi \in \mathrm{Cl}^{n}(\alpha, \beta) \cap \alpha \wedge \pi \in \mathrm{Cl}^{n}(\alpha, \beta) \cap \operatorname{Reg}_{\mathbf{I}}\right\}$
+            4. $\left\{\psi_{\pi}(\xi) \mid \xi \in \mathrm{Cl}^{n}(\alpha, \beta) \cap \alpha \wedge \pi \in \mathrm{Cl}^{n}(\alpha, \beta) \cap \operatorname{Reg}_{I}\right\}$
         3. $\mathrm{Cl}(\alpha, \beta)={\displaystyle \bigcup_{n<\omega} \mathrm{Cl}^{n}(\alpha, \beta)}$
         4. $\psi_{\kappa}(\alpha):=\min \{\xi \in \mathbf{On} \mid \kappa \in \mathrm{Cl}(\alpha, \xi) \wedge \mathrm{Cl}(\alpha, \xi) \cap \kappa \subseteq \xi\}$
 
@@ -145,10 +145,12 @@
 3. $\text{Veblen}$ 序数系列
     1. 小 $\text{Veblen}$ 序数：$\text{SVO} = \sup \left\{\varphi(1, 0), \varphi(1, 0, 0), \varphi(1, 0, 0, 0), \cdots\right\}=\varphi \begin{pmatrix} 1 \\ \omega \\ \end{pmatrix}=\theta_{\Omega^\omega}(0)=\psi\left(\Omega^{\Omega^\omega}\right)=\vartheta\left(\Omega^\omega\right)$
     2. 大 $\text{Veblen}$ 序数：$\text{LVO}= \sup \left\{\varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix}, \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ 0 \\ \end{pmatrix} \\ \end{pmatrix}, \cdots\right\}= \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \varphi \begin{pmatrix} 1 \\ \vdots \\ \end{pmatrix} \\ \end{pmatrix} \\ \end{pmatrix}=\theta_{\Omega^{\Omega}}(0)=\psi\left(\Omega^{\Omega^{\Omega}}\right)=\vartheta\left(\Omega^{\Omega}\right)$，是映射 $\xi \mapsto \varphi \begin{pmatrix} 1 \\ \xi \\ \end{pmatrix}$ 的最小不动点
-4. $\text{OCF}$ 定义的序数
+4. $\text{OCF}$ 定义的序数：设递归不可达序数 $I = \pi_2 \wedge \pi_1(\pi_2)$
     1. $\text{Bachmann}-\text{Howard}$ 序数：$\text{BHO} = \psi\left(\psi_{1}(0)\right)$
     2. $\text{Buchholz}$ 序数：$\text{BO} = \psi\left(\Omega_{\omega}\right)$
     3. $\text{Takeuti}-\text{Feferman}-\text{Buchholz}$ 序数：$\text{TFBO} = \psi\left(\varepsilon_{\Omega_{\omega}}+1\right)$
+    4. 扩展 $\text{Buchholz}$ 序数：$\text{EBO} = \psi\left(\psi_{I}(0)\right)$
+    5. $\text{J}\ddot{\mathrm{a}}\text{ger}$ 序数：$\text{JO} = \psi\left(\psi_{\Omega_{I+1}}(0)\right)$
 
 ### 5.2.2 大可数序数
 1. $\text{Church}-\text{Kleene}$ 序数：$\omega_{1}^{\mathrm{CK}} = \Omega_1$，即第一个容许序数
