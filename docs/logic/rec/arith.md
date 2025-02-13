@@ -77,7 +77,7 @@
 
     定义二阶算术 $\mathbf{Z}_2$ 是以上公理的理论
 
-    1. 对于层级 $\Phi = \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$ 的公式 $\phi$，定义公理
+    1. 对于层级 $\Phi = \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$ 的公式 $\varphi$，定义公理
         1. $\Phi-$归纳公理模式（$\Phi-\mathrm{Ind}$）：$(\varphi(0) \wedge \forall n \ (\varphi(n) \rightarrow \varphi(n+1))) \rightarrow \forall n \ \varphi(n)$
         2. $\Phi-$理解公理模式（$\Phi-\mathrm{Com}$）：$\forall n \ (\varphi(n) \leftrightarrow \psi(n)) \rightarrow \exists X \forall n \ (n \in X \leftrightarrow \varphi(n))$
         3. $\Phi-\text{Bar}$ 归纳公理（$\Phi-\mathrm{BI}$）：若 $a \prec b$ 有定义，则 $(\forall i \prec j \ (i \in X) \to j \in X) \to \forall n \ \varphi(n)$，若取消 $\varphi$ 的限制，则记作 $\mathrm{BI}$

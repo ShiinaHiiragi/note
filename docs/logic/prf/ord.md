@@ -30,7 +30,25 @@
 
     通常将 $\Omega_1$ 记作 $\Omega$
 
-2. 反射序数
+2. 反射序数：设公式层级 $\Phi \in \{\Pi_1, \Sigma_1\}$
+    1. 设 $L_{\alpha} \in \mathbf{L}$，若 $L_{\alpha} \vDash \varphi$ 蕴含 $\beta \in (X \cap \alpha)$ 使得 $L_{\beta} \vDash \varphi$，则称 $L_{\alpha}$ 在 $X$ 上反射了公式 $\varphi$
+        1. 若 $L_{\alpha}$ 在 $X$ 上反射了所有的 $\Phi$ 公式，则称 $\alpha$ 是 $X$ 上的 $\Phi$ 反射序数
+        2. 若 $L_{\alpha}$ 在全体序数上反射了所有的 $\Phi$ 公式，则称 $\alpha$ 是 $\Phi$ 反射序数
+    2. 反射序数的性质
+        1. $\alpha$ 是 $X$ 上的 $\Pi_{n}$ 反射序数等价于 $\alpha$ 是 $X$ 上的 $\Sigma_{n+1}$ 反射序数
+        2. $\alpha$ 是 $X$ 上的 $\Pi_{0}$ 反射序数等价于 $\alpha$ 是 $X$ 上的 $\Pi_{1}$ 反射序数，等价于 $\alpha$ 是 $X$ 上的上确界
+        3. $\alpha$ 是 $X$ 上的 $\Pi_{2}$ 反射序数等价于 $\alpha$ 是 $X$ 上的容许序数
+    3. 通常用反射序数的模式表示满足相应条件的最小反射序数，其集合 $P$ 递归定义如下
+        1. 符号 $\varnothing \in P$
+        2. 若 $s, t \in P$，则 $s \wedge t, \sigma_1(s), \pi_1(s) \in P$
+
+        将 $\sigma_1(\varnothing), \pi_1(\varnothing)$ 简记作 $\sigma_1$ 与 $\pi_1$
+
+        1. 序数 $\alpha$ 是 $\sigma_1(\varnothing)$ 反射或 $\pi_1(\varnothing)$ 反射的当且仅当 $\alpha$ 反射是 $\Sigma_1$ 或 $\Pi_1$ 反射的
+        2. 若 $s \in P$，则序数 $\alpha$ 是 $\sigma(s)$ 反射的当且仅当 $\alpha$ 在 $s$ 反射序数上是 $\Sigma_1$ 反射的
+        3. 若 $s \in P$，则序数 $\alpha$ 是 $\pi(s)$ 反射的当且仅当 $\alpha$ 在 $s$ 反射序数上是 $\Pi_1$ 反射的
+        4. 若 $s, t \in P$，则序数 $\alpha$ 是 $s \wedge t$ 反射的当且仅当 $\alpha$ 既是 $s$ 反射的，也是 $t$ 反射的
+
 3. 稳定序数
 
 ### 5.1.3 序数折叠函数
@@ -130,14 +148,15 @@
 4. $\text{OCF}$ 定义的序数
     1. $\text{Bachmann}-\text{Howard}$ 序数：$\text{BHO} = \psi\left(\psi_{1}(0)\right)$
     2. $\text{Buchholz}$ 序数：$\text{BO} = \psi\left(\Omega_{\omega}\right)$
-    3. $\text{Takeuti}-\text{Feferman}-\text{Buchholz}$ 序数：$\text{TFBO} = \psi\left(\psi_{\omega}(0)\right)$
+    3. $\text{Takeuti}-\text{Feferman}-\text{Buchholz}$ 序数：$\text{TFBO} = \psi\left(\varepsilon_{\Omega_{\omega}}+1\right)$
 
 ### 5.2.2 大可数序数
 1. $\text{Church}-\text{Kleene}$ 序数：$\omega_{1}^{\mathrm{CK}} = \Omega_1$，即第一个容许序数
-2. 递归不可达序数
-3. 递归 $\text{Mahlo}$ 序数
-4. 不可转换序数
-5. 递归弱紧致序数
+2. 反射序数
+    1. 递归不可达序数：$\pi_2 \wedge \pi_1(\pi_2)$
+    2. 递归 $\text{Mahlo}$ 序数：$\pi_2(\pi_2)$
+    3. 不可转换序数：$\pi_2(\pi_2(\pi_2))$
+    4. 递归弱紧致序数：$\pi_3$
 
 ## 5.3 证明论序数
 设 $I$ 为最小的弱不可达基数，设 $M$ 为最小的 $\text{Mahlo}$ 基数
