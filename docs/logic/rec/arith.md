@@ -97,13 +97,11 @@
 3. $\mathbf{WKL}_0 = \mathbf{RCA}_0 + \Sigma_1^0-\mathrm{SP}$
     1. $\mathbf{WKL}_0$ 等价于 $\mathbf{RCA}_0 +$ 弱 $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：若 $T$ 为 $2^{<\omega}$ 的无限子树，则 $T$ 有一个无限分支
     2. ...
-4. $\mathbf{ACA}_0 = \mathbf{RCA}_0 + \Pi_0^1-\mathrm{CA}$
+4. $\mathbf{ACA}_0 = \mathbf{RCA}_0 + \Pi_0^1-\mathrm{CA}, \mathbf{\Phi}-\mathbf{CA}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{CA}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
     1. $\mathbf{ACA}_0$ 等价于 $\mathbf{RCA}_0 + \forall n \in \mathbf{N} \ (\Sigma_n^0-\mathrm{CA})$
     2. $\mathbf{ACA}_0$ 是一阶 $\text{Peano}$ 算术的一个保守扩张
-5. $\mathbf{ATR}_0 = \mathbf{RCA}_0 + \mathrm{TR}$
-6. $\mathbf{\Phi}-\mathbf{CA}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{CA}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
-7. $\mathbf{\Phi}-\mathbf{TR}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{TR}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
-8. $\mathbf{\Phi}-\mathbf{AC}_0 = \mathbf{RCA}_0 + \Phi-\mathbf{AC}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
+5. $\mathbf{ATR}_0 = \mathbf{RCA}_0 + \mathrm{TR}, \mathbf{\Phi}-\mathbf{TR}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{TR}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
+6. $\mathbf{\Phi}-\mathbf{AC}_0 = \mathbf{RCA}_0 + \Phi-\mathbf{AC}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
 
 ## 4.2 不完备定理
 ### 4.2.1 可表示性
