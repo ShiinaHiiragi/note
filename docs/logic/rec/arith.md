@@ -53,7 +53,9 @@
 
     定义 $\text{Peano}$ 算术 $\mathbf{PA}$ 是以上公理的理论
 
-    1. 称 $\mathfrak N$ 是 $\mathfrak N = \{\mathbf N, \{Z^{\mathfrak N}\}_{Z \in S}\}$ 的标准模型，易知存在可数的非标准 $\mathbf{PA}$ 模型 $\mathfrak M$，即 $\mathfrak M$ 与 $\mathfrak N$ 初等等价但不同构
+    1. 称 $\mathfrak N$ 是 $\mathfrak N = \{\mathbf N, \{Z^{\mathfrak N}\}_{Z \in S}\}$ 的标准模型
+        1. 存在可数的非标准 $\mathbf{PA}$ 模型 $\mathfrak M$，即 $\mathfrak M$ 与 $\mathfrak N$ 初等等价但不同构
+        2. $\text{Friedman}$ 定理：$\mathbf{PA}$ 两个非标准模型的其中一个必然与另一个的前段同构，此时称后者是前者的尾节扩张
     2. 在 $\mathbf{PA}$ 引入 $\nu$ 次递归定义的公理
         1. $\forall y \forall x \ (Z_{y}(P_{y}^{\mathfrak{M}}, x) \rightarrow x \in P_{y}^{\mathfrak{M}})$
         2. $\forall y \forall x_{0} \forall x_{1} \ (P_{<y}^{\mathfrak{M}} x_{0} x_{1} \leftrightarrow x_{0}<y \wedge x_{1} \in P_{x_{0}}^{\mathfrak{M}})$
@@ -96,8 +98,8 @@
     1. $\mathbf{WKL}_0$ 等价于 $\mathbf{RCA}_0 +$ 弱 $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：若 $T$ 为 $2^{<\omega}$ 的无限子树，则 $T$ 有一个无限分支
     2. ...
 4. $\mathbf{ACA}_0 = \mathbf{RCA}_0 + \Pi_0^1-\mathrm{CA}$
-    1. $\mathbf{ACA}_0$ 是 $\text{Peano}$ 算术的一个保守扩张
-    2. ...
+    1. $\mathbf{ACA}_0$ 等价于 $\mathbf{RCA}_0 + \forall n \in \mathbf{N} \ (\Sigma_n^0-\mathrm{CA})$
+    2. $\mathbf{ACA}_0$ 是一阶 $\text{Peano}$ 算术的一个保守扩张
 5. $\mathbf{ATR}_0 = \mathbf{RCA}_0 + \mathrm{TR}$
 6. $\mathbf{\Phi}-\mathbf{CA}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{CA}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
 7. $\mathbf{\Phi}-\mathbf{TR}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{TR}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
@@ -216,3 +218,6 @@
     令 $T$ 表示任何一个普遍有效的闭语句（例如 $0 = 0$），则 $T$ 是 $\square_{T}(x)$ 的唯一不动点
 
 ## 4.3 反推数学
+### 4.3.1 二阶算术子系统
+
+### 4.3.2 二阶算术体系
