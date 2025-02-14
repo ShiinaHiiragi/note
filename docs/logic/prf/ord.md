@@ -30,7 +30,7 @@
 
     通常将 $\Omega_1$ 记作 $\Omega$
 
-2. 反射序数：设公式层级 $\Phi \in \{\Pi_1, \Sigma_1\}$
+2. 反射序数：设公式层级 $\Phi \in \{\Pi_n, \Sigma_n\}$
     1. 设 $L_{\alpha} \in \mathbf{L}$，若 $L_{\alpha} \vDash \varphi$ 蕴含 $\beta \in (X \cap \alpha)$ 使得 $L_{\beta} \vDash \varphi$，则称 $L_{\alpha}$ 在 $X$ 上反射了公式 $\varphi$
         1. 若 $L_{\alpha}$ 在 $X$ 上反射了所有的 $\Phi$ 公式，则称 $\alpha$ 是 $X$ 上的 $\Phi$ 反射序数
         2. 若 $L_{\alpha}$ 在全体序数上反射了所有的 $\Phi$ 公式，则称 $\alpha$ 是 $\Phi$ 反射序数
@@ -170,6 +170,7 @@
 3. 稳定序数：设 $\alpha$ 为任意序数
     1. 不可达稳定序数：定义 $f(\alpha)$ 是大于 $\alpha$ 的最小递归不可达序数，则定义不可达稳定序数为 $f-$稳定序数
     2. $\text{Mahlo}$ 稳定序数：定义 $f(\alpha)$ 是大于 $\alpha$ 的最小递归 $\text{Mahlo}$ 序数，则定义 $\text{Mahlo}$ 稳定序数为 $f-$稳定序数
+    3. 不可投影序数：使得 $\alpha = \sup \{\beta < \alpha \mid L_{\beta} \prec_{\Sigma_1} L_{\alpha}\}$ 的序数，即使得 $\alpha$ 是 $\alpha-$稳定序数的序数 $\alpha$
 
 ## 5.3 证明论序数
 设 $I$ 为最小的弱不可达基数，设 $M$ 为最小的 $\text{Mahlo}$ 基数
