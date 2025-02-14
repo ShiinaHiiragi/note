@@ -109,8 +109,9 @@
     2. 若 $C \subseteq \mathcal{P}(\Omega)$，则必存在包含 $C$ 的最小 $\sigma$ 域
         1. 包含集族 $C$ 的最小 $\sigma$ 域称为由 $C$ 生成的 $\sigma$ 域，记为 $\sigma(C)$
         2. 对 $\Omega$ 的子集族 $C$，若以 $C \cap A$ 表示集族 $\{B A: B \in C\}$，则 $\sigma_{\Omega}(C) \cap A=\sigma_{A}(C \cap A)$
-
-4. $\text{Borel}$ 域：若 $E$ 为拓扑空间，$B_{E}$ 为 $E$ 中开集全体生成的 $\sigma$ 域，这一 $\sigma$ 域就称为 $E$ 上的 $\text{Borel}$ 域，$B_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集．$n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
+    3. $\text{Borel}$ 域：若 $E$ 为拓扑空间，$B_{E}$ 为 $E$ 中开集全体生成的 $\sigma$ 域，称为 $E$ 上的 $\text{Borel}$ 域
+        1. $B_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集
+        2. $n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
 
 ### 2.2.3 单调类
 1. 单调类：设 $M$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若对任一集合序列 $\{A_{n}, n \geqslant 1\} \subseteq M$，且

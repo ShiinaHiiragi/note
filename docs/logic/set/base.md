@@ -7,16 +7,17 @@
     1. $x = x$
     2. $x = y \rightarrow \left(\alpha \rightarrow \alpha^{\prime}\right)$，其中 $\alpha$ 为原子公式且 $\alpha^{\prime}$ 是将 $\alpha$ 中若干个 $x$ 的出现用 $y$ 替换所得
 2. 定义如下缩写记号：
-    1. $\neg x \in A$：$x \notin A$
-    2. $\forall x \ (x \in A \to \varphi(x))$：$\forall x \in A \ \varphi(x)$
+    1. $x \notin A$：$\neg x \in A$
+    2. 有界量词（或称受囿量词）
+        1. $\forall x \in A \ \varphi(x)$：$\forall x \ (x \in A \to \varphi(x))$
 
-        $\exists x \ (x \in A \wedge \varphi(x))$：$\exists x \in A \ \varphi(x)$
+            $\forall x < A \ \varphi(x)$：$\forall x \ (x < A \to \varphi(x))$
 
-    3. $\forall x \ (x < A \to \varphi(x))$：$\forall x < A \ \varphi(x)$
+        2. $\exists x \in A \ \varphi(x)$：$\exists x \ (x \in A \wedge \varphi(x))$
 
-        $\exists x \ (x < A \wedge \varphi(x))$：$\exists x < A \ \varphi(x)$
+            $\exists x < A \ \varphi(x)$：$\exists x \ (x < A \wedge \varphi(x))$
 
-    4. $\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$：$\exists^{1} x \ \varphi(x)$
+    3. $\exists^{1} x \ \varphi(x)$：$\exists x \ (\varphi(x) \wedge \forall y \ (\varphi(y) \to y = x))$
 
 ### 1.1.1 ZFC 公理
 1. $\text{Zermelo}-\text{Fraenkel}$ 集合论：设 $\mathbf{ZFC}$ 是如下公理的理论
@@ -535,7 +536,7 @@
         2. 泛函：当 $X \neq \varnothing$ 且 $Y$ 为数集时，称 $f$ 为泛函
         3. 变换：当 $X = Y \neq \varnothing$ 时，称 $f$ 为 $X$ 上的变换
     3. 映射的种类：设 $f: X \to Y$ 是一个映射
-        1. 单射：对于所有的 $x_1, x_2 \in X$，若 $x_1 \neq x_2$，则 $f(x_1) \neq f(x_2)$
+        1. 单射：对于所有的 $x_1, x_2 \in X$，若 $x_1 \neq x_2$，则 $f(x_1) \neq f(x_2)$，也称作一一映射
         2. 满射：$\mathrm{ran}(f) = Y$ 的映射
         3. 双射：既是单射又是满射的映射
     4. 映射例举
