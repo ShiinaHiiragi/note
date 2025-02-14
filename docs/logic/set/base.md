@@ -89,7 +89,7 @@
         2. 无穷公理保证了 $\left\{\varnothing, \left\{\varnothing\right\}, \left\{\varnothing, \left\{\varnothing\right\}\right\}, \cdots\right\} \subseteq X$ 是一个集合
         3. 归纳集：如果集合 $X$ 有 $\varnothing \in X \wedge \forall x \ (x \in X \to S(x) \in X)$，则称 $X$ 为归纳集
 
-    8. 正则公理（$\text{Fnd}$）：对任一集合 $x \neq \varnothing$，存在 $y \in x$ 使得 $y \cap x = \varnothing$，也称作基础公理
+    8. 基础公理（$\text{Fnd}$）：对任一集合 $x \neq \varnothing$，存在 $y \in x$ 使得 $y \cap x = \varnothing$
 
         $$
         \forall x \ (x \neq \varnothing \to \exists y \ (y \in x \wedge x \cap y = \varnothing))
@@ -97,7 +97,7 @@
 
         1. 对任意非空集合 $x$，总有一个元素 $y$ 是关系 $\in$ 限制在 $x$ 上的「最小元」
         2. 任一集合 $X$ 都不属于自身
-        3. 无穷下降链：集合 $\left\{x_0, x_1, \cdots, x_n, x_{n+1}, \cdots\right\}$，其中对任意 $n$ 有 $x_{n+1} \in x_n$，正则公理确保不存在无穷下降链
+        3. 无穷下降链：集合 $\left\{x_0, x_1, \cdots, x_n, x_{n+1}, \cdots\right\}$，其中对任意 $n$ 有 $x_{n+1} \in x_n$，基础公理确保不存在无穷下降链
 
     9. 替换公理模式（$\text{Rep}$）：给定公式 $\psi(x, y)$ 且对任意 $x$ 都有唯一的 $y$ 使得 $\psi(s, y)$ 成立，则对任一集合 $A$，集合 $\{y \mid \exists x \ (x \in A \wedge \psi(x, y))\}$ 存在
 
@@ -123,11 +123,11 @@
         8. $\text{Tychonoff}$ 定理：任何一族紧空间的积空间都是紧空间
 
     !!! note "$\mathbf{ZFC}$ 相关理论简写"
-        1. $\mathbf{ZF} = \mathbf{ZFC} - \mathbf{AC}$
-        2. $\mathbf{ZF^{-}} = \mathbf{ZF} - \mathrm{Fnd}$
-        3. $\mathbf{ZFC^{-}} = \mathbf{ZFC} - \mathrm{Fnd}$
-        4. $\mathbf{ZC} = \mathbf{ZFC} - \mathrm{Rep}$
-        5. $\mathbf{Z} = \mathbf{ZF} - \mathrm{Rep}$
+        9. $\mathbf{ZF} = \mathbf{ZFC} - \mathbf{AC}$
+        10. $\mathbf{ZF^{-}} = \mathbf{ZF} - \mathrm{Fnd}$
+        11. $\mathbf{ZFC^{-}} = \mathbf{ZFC} - \mathrm{Fnd}$
+        12. $\mathbf{ZC} = \mathbf{ZFC} - \mathrm{Rep}$
+        13. $\mathbf{Z} = \mathbf{ZF} - \mathrm{Rep}$
 
 2. 集合的运算性质：对于任意集合 $X, Y, Z$
     1. 子集的性质

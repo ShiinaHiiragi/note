@@ -6,7 +6,39 @@
     1. $V_{0}=\varnothing$
     2. $V_{\alpha+1}=\mathcal{P}\left(V_{\alpha}\right)$
     3. 对任意极限序数 $\lambda$，$V_{\lambda}={\displaystyle \bigcup_{\beta<\lambda} V_{\beta}}$
-2. 集宇宙与正则公理
+
+    则 $\mathbf{WF}$ 是一个真类
+
+    1. 对任意序数 $\alpha \in \mathbf{On}$
+        1. $V_{\alpha}$ 是传递的
+        2. 如果 $\xi \leqslant \alpha$，则 $V_{\xi} \subseteq V_{\alpha}$
+        3. 如果 $\kappa$ 是不可达基数，则 $\left|V_{\kappa}\right|=\kappa$
+        4. $V_{\alpha} \cap \mathbf{O n}=\alpha$
+    2. 对任意集合 $x \in \mathbf{WF}$，定义 $x$ 的秩 $\operatorname{rank}(x)$ 为使得 $x \in V_{\beta+1}$ 的最小 $\beta$，设 $\alpha \in \mathbf{On}$
+        1. $V_{\alpha}=\{x \in \mathbf{WF} \mid \operatorname{rank}(x)<\alpha\}$
+        2. 对任意 $x, y \in \mathbf{WF}$，如果 $x \in y$，则 $\operatorname{rank}(x)<\operatorname{rank}(y)$
+        3. 对任意 $y \in \mathbf{WF}, \operatorname{rank}(y)=\sup \{\operatorname{rank}(x)+1 \mid x \in y\}$
+        4. $\alpha \in \mathbf{WF}$ 且 $\operatorname{rank}(\alpha)=\alpha$
+    3. $\mathbf{WF}$ 是传递的，即对任意 $y \in \mathbf{WF}$，若 $x \in y$，则 $x \in \mathbf{WF}$
+        1. 对任意集合 $x$，$x \in \mathbf{WF}$ 当且仅当 $x \subseteq \mathbf{WF}$
+        2. 设 $x \in \mathbf{WF}$，则 ${\displaystyle \bigcup x, \mathcal{P}(x)}$ 以及 $\{x\}$ 属于 $\mathbf{WF}$，且其秩都小于 $\operatorname{rank}(x)+\omega$
+        3. 若 $x, y \in \mathbf{WF}$，则 $x \times y, x \cup y, x \cap y,\{x, y\},(x, y), x^{y}$ 都属于 $\mathbf{WF}$，且其秩都小于 $\operatorname{rank}(x)+\operatorname{rank}(y)+\omega$
+        4. 整数集 $\mathbf{Z}$，有理数集 $\mathbf{Q}$ 和实数集 $\mathbf{R}$ 都属于 $V_{\omega+\omega}$
+        5. 若 $A \in \mathbf{WF}$，则 $\in$ 是 $A$ 上的良基关系
+        6. 假设选择公理成立
+            1. 对任意群 $G$，存在 $\mathbf{WF}$ 中的群 $G^{\prime}$ 与 $G$ 同构
+            2. 对任意拓扑空间 $T$，存在 $\mathbf{WF}$ 中的拓扑空间 $T^{\prime}$ 与 $T$ 同胚
+    4. 任意集合 $x$，存在一个最小的传递集 ${\displaystyle \operatorname{trcl}(x)=\bigcup_{n<\omega} x_{n}}$ 使得 $x \subseteq \operatorname{trcl}(x)$，其中 ${\displaystyle x_{0} =x, x_{n+1} =\bigcup x_{n}}$
+        1. 若 $A$ 是传递集，且 $\in$ 是 $A$ 上的良基关系，则 $A \in \mathbf{WF}$
+        2. 若 $x$ 是传递的，则 $\operatorname{trcl}(x)=x$
+        3. 若 $y \in x$，则 $\operatorname{trcl}(y) \subseteq \operatorname{trcl}(x)$
+        4. ${\displaystyle \operatorname{trcl}(x)=x \cup \bigcup\{\operatorname{trcl}(y) \mid y \in x\}}$
+        5. $X \in \mathbf{WF}$ 当且仅当 $\operatorname{trcl}(X) \in \mathbf{WF}$ 当且仅当 $\in$ 是 $\operatorname{trcl}(X)$ 上的良基关系
+
+2. 在 $\mathbf{ZF}^{-}$ 中可证明以下命题等价
+    1. 基础公理
+    2. 对任意集合 $X$，$\in$ 是 $X$ 上的良基关系
+    3. $\mathbf{V}=\mathbf{WF}$
 
 ### 4.1.2 绝对性
 
