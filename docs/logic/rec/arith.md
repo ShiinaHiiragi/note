@@ -78,20 +78,30 @@
     定义二阶算术 $\mathbf{Z}_2$ 是以上公理的理论
 
     1. 对于层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$ 的公式 $\varphi$，定义公理
-        1. $\Phi-$归纳公理模式（$\Phi-\mathrm{Ind}$）：$(\varphi(0) \wedge \forall n \ (\varphi(n) \rightarrow \varphi(n+1))) \rightarrow \forall n \ \varphi(n)$
+        1. $\Phi-$归纳公理模式（$\Phi-\mathrm{Ind}$）：$\varphi(0) \wedge \forall n \ (\varphi(n) \rightarrow \varphi(n+1)) \rightarrow \forall n \ \varphi(n)$
         2. $\Phi-$理解公理模式（$\Phi-\mathrm{CA}$）：$\exists X \forall n \ (n \in X \leftrightarrow \varphi(n))$
-        3. $\Phi-\text{Bar}$ 归纳公理（$\Phi-\mathrm{BI}$）：若 $a \prec b$ 有定义，则 $(\forall i \prec j \ (i \in X) \to j \in X) \to \forall n \ \varphi(n)$，若取消 $\varphi$ 的限制，则记作 $\mathrm{BI}$
+        3. $\Phi-$分离原则模式（$\Phi-\mathrm{SP}$）：$\forall n \ (\varphi(n) \leftrightarrow \psi(n)) \rightarrow \exists X \forall n \ ((\varphi(n) \to n \in X) \wedge (n \in X \to \psi(n)))$
+        4. $\Phi-$算术超限递归公理模式（$\Phi-\mathrm{TR}$）：对公式 $\theta(n, X)$，令 $\Theta(X)=\{n \in \mathbf{N} \mid \theta(n, X)\}, Y \subseteq \mathbf{N} \times A$ 且对每个 $a \in A$ 有 $Y_{a}=\Theta\left(Y^{a}\right)$，其中 $Y_{a}=\{m \mid (m, a) \in Y\}, Y^{a}=\left\{(n, b) \mid n \in Y_{b} \wedge b<_{A} a\right\}$，则对任意 $\Theta$ 与 $A$，相应的集合 $Y$ 都存在
+        5. $\Phi-\text{Bar}$ 归纳公理模式（$\Phi-\mathrm{BI}$）：若 $a \prec b$ 有定义，则 $(\forall i \prec j \ (i \in X) \to j \in X) \to \forall n \ \varphi(n)$
+
+        若取消 $\varphi$ 的限制，则去除对应的 $\Phi$ 前缀
 
     2. $\mathbf{Z}_2 = \mathbf{\Pi}_\omega^1-\mathbf{CA}$，一般地有 $\mathbf{Z}_{n+3} = \mathbf{\Pi}_\omega^{n+2}-\mathbf{CA}, \mathbf{Z}_\omega = \mathbf{\Pi}_0^\omega-\mathbf{CA}$
     3. 对于任意 $\mathbf{Z}_2$ 的子系统 $\mathbf{T}_0$，令 $\mathbf{T} = \mathbf{T}_0 + \mathrm{1-Ind}$，其中 $\mathrm{1-Ind}$ 是对所有一阶公式都成立的归纳公理模式
 
-2. $\mathbf{RCA}_0 = \mathbf{Q} + \Sigma_1^0-\mathrm{Ind} + \Delta_1^0-\mathrm{CA}$，其中后者为 $\forall n \ (\varphi(n) \leftrightarrow \psi(n)) \rightarrow \exists X \forall n \ (n \in X \leftrightarrow \varphi(n))$，且 $\varphi$ 为 $\Sigma_1^0$ 公式，$\psi$ 为 $\Pi_1^0$ 公式
-3. $\mathbf{WKL}_0 = \mathbf{RCA}_0 + \text{K}\ddot{\mathrm o}\text{nig}$，后者即弱 $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：若 $T$ 为 $2^{<\omega}$ 的无限子树，则 $T$ 有一个无限分支
-4. $\mathbf{ACA}_0 = \mathbf{RCA}_0 + \Pi_0^1-\mathrm{CA}$，是 $\text{Peano}$ 算术的一个保守扩张
-5. $\mathbf{ATR}_0 = \mathbf{RCA}_0 + \mathrm{Atr}$，后者即算术超限递归公理模式：对于公式 $\theta(n, X)$，令 $\Theta(X)=\{n \in \mathbf{N} \mid \theta(n, X)\}, Y \subseteq \mathbf{N} \times A$ 且对每个 $a \in A$ 有 $Y_{a}=\Theta\left(Y^{a}\right)$，其中 $Y_{a}=\{m \mid (m, a) \in Y\}, Y^{a}=\left\{(n, b) \mid n \in Y_{b} \wedge b<_{A} a\right\}$．则对任意 $\Theta$ 与 $A$，相应的集合 $Y$ 都存在
-6. $\mathbf{\Phi}-\mathbf{AC}_0 = \mathbf{RCA}_0 + \Phi-\mathbf{AC}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
-7. $\mathbf{\Phi}-\mathbf{CA}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{CA}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
-8. $\mathbf{\Phi}-\mathbf{TR}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{Tr}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，$\Phi-\mathrm{Tr}$ 是限制在 $\Phi$ 的算术超限递归公理模式
+2. $\mathbf{RCA}_0 = \mathbf{Q} + \Sigma_1^0-\mathrm{Ind} + \Delta_1^0-\mathrm{CA}$
+    1. $\Delta_1^0-\mathrm{CA}: \forall n \ (\varphi(n) \leftrightarrow \psi(n)) \rightarrow \exists X \forall n \ (n \in X \leftrightarrow \varphi(n))$，其中 $\varphi$ 为 $\Sigma_1^0$ 公式，$\psi$ 为 $\Pi_1^0$ 公式
+    2. ...
+3. $\mathbf{WKL}_0 = \mathbf{RCA}_0 + \Sigma_1^0-\mathrm{SP}$
+    1. $\mathbf{WKL}_0$ 等价于 $\mathbf{RCA}_0 +$ 弱 $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：若 $T$ 为 $2^{<\omega}$ 的无限子树，则 $T$ 有一个无限分支
+    2. ...
+4. $\mathbf{ACA}_0 = \mathbf{RCA}_0 + \Pi_0^1-\mathrm{CA}$
+    1. $\mathbf{ACA}_0$ 是 $\text{Peano}$ 算术的一个保守扩张
+    2. ...
+5. $\mathbf{ATR}_0 = \mathbf{RCA}_0 + \mathrm{TR}$
+6. $\mathbf{\Phi}-\mathbf{CA}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{CA}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
+7. $\mathbf{\Phi}-\mathbf{TR}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{TR}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
+8. $\mathbf{\Phi}-\mathbf{AC}_0 = \mathbf{RCA}_0 + \Phi-\mathbf{AC}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
 
 ## 4.2 不完备定理
 ### 4.2.1 可表示性

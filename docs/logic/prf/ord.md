@@ -188,16 +188,16 @@
 2. $\mathbf{WKL}_0$ 子系统：$\operatorname{PTO}(\mathbf{WKL}_0) = \omega^{\omega}$
 3. $\mathbf{ACA}_0$ 子系统：$\operatorname{PTO}(\mathbf{ACA}_0) = \varepsilon_0$
 4. $\mathbf{ATR}_0$ 子系统：$\operatorname{PTO}(\mathbf{ATR}_0) = \Gamma_0$
-5. $\mathbf{\Phi}-\mathbf{AC}_0$ 子系统
-    1. $\operatorname{PTO}(\mathbf{\Sigma}_{1}^{1}-\mathbf{AC}_{0})=\varepsilon_{0}, \operatorname{PTO}(\mathbf{\Sigma}_{1}^{1}-\mathbf{AC})=\psi(\Omega^{\varepsilon_{0}})$
-    2. $\operatorname{PTO}(\mathbf{\Sigma}_{2}^{1}-\mathbf{AC})=\psi(\Omega_{\varepsilon_{0}})$
-6. $\mathbf{\Phi}-\mathbf{CA}_0$ 子系统
+5. $\mathbf{\Phi}-\mathbf{CA}_0$ 子系统
     1. $\operatorname{PTO}(\mathbf{\Delta}_{1}^{1}-\mathbf{CA}_{0})=\varepsilon_{0}, \operatorname{PTO}(\mathbf{\Delta}_{1}^{1}-\mathbf{CA})=\psi(\Omega^{\varepsilon_{0}})$
     2. $\operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}_{0})=\psi(\Omega_{\omega}), \operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{CA})=\psi(\Omega_{\omega} \cdot \varepsilon_{0})$
     3. $\operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{CA}_{0})=\psi(\Omega_{\omega}), \operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{CA})=\psi(\Omega_{\varepsilon_{0}})$
-7. $\mathbf{\Phi}-\mathbf{TR}_0$ 子系统
+6. $\mathbf{\Phi}-\mathbf{TR}_0$ 子系统
     1. $\operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}_{0})=\psi(\psi_{I}(0)), \operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}_{0})=\psi(\psi_{I}(0) \cdot \varepsilon_{0})$
     2. $\operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{TR}_{0})=\psi(\psi_{I}(I^{\omega})), \operatorname{PTO}(\mathbf{\Delta}_{2}^{1}-\mathbf{TR})=\psi(\psi_{I}(I^{\varepsilon_{0}}))$
+7. $\mathbf{\Phi}-\mathbf{AC}_0$ 子系统
+    1. $\operatorname{PTO}(\mathbf{\Sigma}_{1}^{1}-\mathbf{AC}_{0})=\varepsilon_{0}, \operatorname{PTO}(\mathbf{\Sigma}_{1}^{1}-\mathbf{AC})=\psi(\Omega^{\varepsilon_{0}})$
+    2. $\operatorname{PTO}(\mathbf{\Sigma}_{2}^{1}-\mathbf{AC})=\psi(\Omega_{\varepsilon_{0}})$
 8. $\Phi-\mathrm{BI}$ 公理相关子系统
     1. $\operatorname{PTO}(\mathbf{ACA}+\mathbf{BI})=\psi(\varepsilon_{\Omega+1})$
     2. $\operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}_{0}+\mathbf{\Pi}_{2}^{1}-\mathbf{BI})=\psi(\Omega_{\omega}{ }^{\omega}), \operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{CA}+\mathbf{BI})=\psi(\varepsilon_{\Omega_{\omega}+1}), \operatorname{PTO}(\mathbf{\Pi}_{1}^{1}-\mathbf{TR}+\mathbf{BI})=\psi\left(\varepsilon_{\psi_{I}(0)+1}\right)$
