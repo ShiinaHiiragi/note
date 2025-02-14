@@ -3,9 +3,11 @@
 ## 5.1 力迫法
 
 ## 5.2 大基数理论
-### 5.2.1 不可达基数
+### 5.2.1 世界基数
 
-### 5.2.2 Mahlo 基数
+### 5.2.2 不可达基数
+
+### 5.2.3 Mahlo 基数
 1. 无界闭集：令 $\alpha$ 为极限序数，$\alpha$ 的子集 $C \subseteq \alpha$ 如果满足
     1. $C$ 在 $\alpha$ 中无界．即 $\sup C=\alpha$，或等价地，对任意 $\beta<\alpha$，存在 $\xi \in C$ 使得 $\beta<\xi$
     2. $C$ 在 $\alpha$ 中是闭的．即对任意极限序数 $\gamma<\alpha$，如果 $\sup (C \cap \gamma)=\gamma$，则 $\gamma \in C$
@@ -17,7 +19,7 @@
         1. $\alpha$ 是 $\alpha$ 上的无界闭集
         2. 任取 $\beta<\alpha$，则集合 $\{\delta<\alpha \mid \delta>\beta\}$ 是 $\alpha$ 上的无界闭集
         3. 集合 $X=\{\beta<\alpha \mid \beta$ 是极限序数$\}$ 是 $\alpha$ 上的无界闭集
-        4. 如果 $X$ 在 $\alpha$ 中无界，则 $X^{\prime}=\{\gamma \in X \mid \gamma<\alpha \wedge \textsf{ 是 } X \textsf{ 的极限点}\}$ 是 $\alpha$ 上的无界闭集
+        4. 如果 $X$ 在 $\alpha$ 中无界，则 $X^{\prime}=\{\gamma \in X \mid \gamma<\alpha \wedge \alpha \textsf{ 是 } X \textsf{ 的极限点}\}$ 是 $\alpha$ 上的无界闭集
 
     3. 假设 $\alpha$ 是极限序数且 $\operatorname{cf}(\alpha)>\omega$，则对任意 $\gamma<\operatorname{cf}(\alpha)$，如果 $\left\langle C_{\xi}\right\rangle_{\xi<\gamma}$ 是无界闭集的序列，则 ${\displaystyle \bigcap_{\xi<\gamma} C_{\xi}}$ 也是 $\alpha$ 的无界闭集
         1. 如果 $\alpha$ 是极限序数且 $\operatorname{cf}(\alpha)>\omega$，$f: \alpha \rightarrow \alpha$ 是严格递增且连续的
@@ -64,3 +66,13 @@
         4. 令 $\kappa$ 是不可数正则基数，$K=\{\gamma<\kappa \mid \gamma$ 是极限序数$\}$，$S \subseteq K$ 是 $\kappa$ 上的稳定集．如果对任意 $\alpha \in S$，$f_{\alpha}$ 是 $\alpha$ 中递增的共尾序列且是连续的，则以下二者必有一真
             1. 存在 $\eta<\kappa$，对任意 $\xi<\kappa$，$S_{\xi}=\left\{\alpha \in S \mid \eta \in \operatorname{dom}\left(f_{\alpha}\right) \wedge f_{\alpha}(\eta) \geqslant \xi\right\}$ 是 $\kappa$ 上的稳定集
             2. 存在 $\kappa$ 上的无界闭集 $C$，对任意 $\gamma$ 都有 $\alpha \in C \cap S, \gamma<\alpha$ 蕴涵 $\gamma=f_{\alpha}(\gamma)$
+
+### 5.2.4 紧致基数
+
+### 5.2.5 不可描述基数
+
+### 5.2.6 可测基数
+
+### 5.2.7 初等嵌入
+
+## 5.3 内模型计划
