@@ -290,10 +290,12 @@
         一个一阶语言由非逻辑符号集合 $S$ 决定，并定义语言的基数 $|\mathscr L(S)| = \max\{|S|, \aleph_0\}$
 
     !!! note "形式主义进路"
-        1. 证明论下的命题逻辑与一阶逻辑是从朴素集合论中建立的理论，因此变元集 $\mathbf{Var}$ 与一阶语言 $\mathscr L(S)$ 的基数 $\lambda$ 在本节中均至多为 $\omega$
+        1. 证明论下的命题逻辑与一阶逻辑是从朴素集合论中建立的理论，因此变元集 $\mathbf{Var}$ 与一阶语言 $\mathscr L_{\omega, \omega}(S)$ 的基数 $\lambda$ 在本节中均至多为 $\omega$
         2. 在模型论中一阶语言是通过证明论中一阶语言理论建立的公理集合论重新构造的形式语言系统，是一个被拓展为可以包含不可数个非逻辑符号的集合
-            1. $\lambda$ 是一个无穷基数，变元序列写作 $\left<x_{i}\right>_{i \in \lambda}$，并用 $\left<x_{m_1}, x_{m_2}, \cdots, x_{m_n}\right>, m_k\in \lambda$（$m_i < m_j$ 当且仅当 $i < j$）表示有穷自由变元序列
-            2. 设 $\Sigma$ 是一个 $S-$公式集，$I$ 是一个指标集．若 $\Sigma$ 中的公式的自由变元来自变元符号集 $\left\{x_{i} \mid i \in I\right\}$，则有时将 $\Sigma$ 记作 $\Sigma(x_i)_{i \in I}$
+            1. $\mathscr L_{\kappa, \omega}$ 将 $|\mathbf{Var}|$ 扩充到 $\kappa$，并引入无穷联结词 $\bigvee_{\xi<\alpha} \varphi_{\xi}$ 与 $\bigwedge_{\xi<\alpha} \varphi_{\xi}$，其中 $\alpha<\kappa$
+                1. 此时变元序列写作 $\left<x_{i}\right>_{i \in \lambda}$，并用 $\left<x_{m_1}, x_{m_2}, \cdots, x_{m_n}\right>, m_k\in \lambda$（$m_i < m_j$ 当且仅当 $i < j$）表示有穷自由变元序列
+                2. 设 $\Sigma$ 是一个 $S-$公式集，$I$ 是一个指标集．若 $\Sigma$ 中的公式的自由变元来自变元符号集 $\left\{x_{i} \mid i \in I\right\}$，则有时将 $\Sigma$ 记作 $\Sigma(x_i)_{i \in I}$
+            2. $\mathscr L_{\kappa, \kappa}$ 进一步在 $\mathscr L_{\kappa, \omega}$ 的基础上引入无穷量词 $\exists_{\xi<\alpha} v_{\xi}$ 与 $\forall_{\xi<\alpha} v_{\xi}$，其中 $\alpha<\kappa$
 
 2. 一阶逻辑项与公式的句法
     1. 一阶语言 $\mathscr L(S)$ 的类型是从 $\mathbf R \cup \mathbf F$ 的正整数集合的函数 $\Omega: S \to \mathbf Z_+$
