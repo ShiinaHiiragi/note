@@ -226,6 +226,9 @@
 
     令 $T$ 表示任何一个普遍有效的闭语句（例如 $0 = 0$），则 $T$ 是 $\square_{T}(x)$ 的唯一不动点
 
+    !!! note "$\text{Ramsey}$ 定理"
+        设 $\kappa, \lambda, m$ 为基数，$n \in \mathbf{N}$，定义 $[\kappa]^{n}=\{X \subseteq \kappa \mid |X| =n\}$，记 $\kappa \rightarrow(\lambda)_{m}^{n}$ 为「$[\kappa]^{n}$ 的 $m-$划分中，每部分都有一个大小为 $\lambda$ 的齐次集，即使得 $[\lambda]^{n}$ 元素都属于同一划分的 $\lambda \subseteq \kappa$」，则有穷 $\text{Ramsey}$ 定理 $N \rightarrow \left(M \right)_{k}^{n}$ 在 $\mathbf{N}$ 中成立但无法在 $\mathbf{PA}$ 中证明
+
 ## 4.3 反推数学
 ### 4.3.1 二阶算术子系统
 1. $\mathbf{RCA}_0$ 中可依照 $\mathbf{ZFC}$ 建立实数集，定义 $\mathbf{R}$ 上的连续函数
@@ -236,28 +239,38 @@
         2. 有界 $\Sigma_{1}^{0}-$理解公理：$\forall n \exists X \forall i \ (i \in X \leftrightarrow(i<n \wedge \varphi(i)))$
         3. 强 $\Sigma_1^0-$有界公理：$\forall m \ \exists n \ \forall i<m \ (\exists j \ \varphi(i, j) \rightarrow \exists j<n \ \varphi(i, j))$
     4. 以下定理在 $\mathbf{RCA}_0$ 中可证
-        1. 代数学基本定理
-        2. 区间套定理
-        3. 零点存在定理
-        4. 压缩映射原理
-        5. $\text{Baire}$ 纲定理
-        6. 任何完备一致理论至少有一个模型
+        1. 任何完备一致理论至少有一个模型
+        2. 代数学基本定理
+        3. 区间套定理
+        4. 零点存在定理
+        5. 压缩映射原理
+        6. $\text{Baire}$ 纲定理
 
-2. $\mathbf{WKL}_0$ 上可定义集合的（开）覆盖
+2. $\mathbf{WKL}_0$ 是 $\mathbf{RCA}_0$ 的真扩张
     1. $\mathbf{WKL}_0$ 是一阶算术 $\mathbf{PRA}$ 的 $\Pi_2^0-$保守扩张
     2. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{WKL}_0$ 等价
-        1. 闭区间上的连续函数必有界
-        2. 闭区间上的连续函数的 $\text{Cantor}$ 定理
-        3. $\text{Heine}-\text{Borel}$ 定理
-        4. $\text{Brouwer}$ 不动点定理
-        5. $\text{Weierstrass}$ 逼近定理
-        6. $\text{Hahn}-\text{Banach}$ 泛函延拓定理
-        7. $\text{G}\ddot{\mathrm o}\text{del}$ 完全性定理
-        8. 可数交换环必有素理想
-3. $\mathbf{ACA}_0$：
-4. $\mathbf{ATR}_0$：
-5. $\mathbf{\Phi}-\mathbf{AC}_0$：
+        1. $\text{G}\ddot{\mathrm o}\text{del}$ 完全性定理
+        2. 可数交换环必有素理想
+        3. 闭区间上的连续函数必有界
+        4. 闭区间上的连续函数的 $\text{Cantor}$ 定理
+        5. $\text{Heine}-\text{Borel}$ 定理
+        6. $\text{Brouwer}$ 不动点定理
+        7. $\text{Weierstrass}$ 逼近定理
+        8. $\text{Hahn}-\text{Banach}$ 泛函延拓定理
+3. $\mathbf{ACA}_0$ 是 $\mathbf{WKL}_0$ 的真扩张
+    1. $\mathbf{ACA}_0$ 是一阶算术 $\mathbf{PA}$ 的保守扩张
+    2. 定义集合归纳公理（$\mathrm{SI}$）：$\forall X \ (0 \in X \wedge \forall n \ (n \in X \rightarrow n+1 \in X) \rightarrow \forall n \ n \in X)$，则 $\mathbf{ACA}_{0} - (\Sigma_1^0-\mathrm{Ind}) + \mathrm{SI} \vdash \Pi_0^1-\mathrm{Ind}$
+    3. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{ACA}_0$ 等价
+        1. 有穷 $\text{Ramsey}$ 定理
+        2. $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：若 $T$ 为有限分支的无限子树，则 $T$ 有一个无限分支
+        3. 可数交换环必有极大理想
+        4. 可数向量空间的基存在
+        5. $\text{‌Bolzano}-\text{Weierstrass}$ 定理
+        6. $\text{Cauchy}$ 收敛原理
+4. $\mathbf{ATR}_0$ 与 $\mathbf{\Phi}-\mathbf{AC}_0$
+    1. 无限博弈
+    2. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{ATR}_0$ 等价
+    3. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{\Phi}-\mathbf{AC}_0$ 等价
 
 ### 4.3.2 二阶算术体系
-1. $\mathbf{Z}_2 = \mathbf{\Pi}_\omega^1-\mathbf{CA}$，一般地有 $\mathbf{Z}_{n+3} = \mathbf{\Pi}_\omega^{n+2}-\mathbf{CA}, \mathbf{Z}_\omega = \mathbf{\Pi}_0^\omega-\mathbf{CA}$
-2. ...
+- $\mathbf{Z}_2 = \mathbf{\Pi}_\omega^1-\mathbf{CA}$，一般地有 $\mathbf{Z}_{n+3} = \mathbf{\Pi}_\omega^{n+2}-\mathbf{CA}, \mathbf{Z}_\omega = \mathbf{\Pi}_0^\omega-\mathbf{CA}$
