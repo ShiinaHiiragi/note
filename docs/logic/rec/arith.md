@@ -84,6 +84,8 @@
         2. 若限制仅在不含否定联结词的公式上归纳，则可在 $\widehat{\mathbf{ID}}_{\nu}$ 基础上进一步弱化得到 $\mathbf{ID}_{\nu}\#$
 
 ### 4.1.3 二阶算术
+二阶算术的结构 $\left\{A, S^\mathfrak A, \{Z^\mathfrak A\}_{Z\in S}\right\}$ 中，除了限制量词在自然数上的论域 $A$ 外，还增加了限制量词在自然数的论域 $S \subseteq \mathcal P(A)$
+
 1. 用小写字母 $i, j, k, m, n, \ldots$ 表示自然数，用 $X, Y, Z, \ldots$ 表示集合．设 $S-$语句集为
     1. $\forall x \ (\mathrm{S} x \not = 0)$
     2. $\forall x \forall y \ (\mathrm{S} x = \mathrm{S} y \rightarrow x = y)$
@@ -291,15 +293,23 @@
         2. $\Sigma_1^0-$划分具有 $\text{Ramsey}$ 性质
         3. $\text{Baire}$ 空间的不可数闭集包含完全集
         4. $\text{Lusin}$ 定理
-    4. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{\Phi}-\mathbf{AC}_0$ 等价
+    4. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{\Pi}_1^1-\mathbf{AC}_0$ 等价
         1. $\Sigma_{1 \rho}^0-$博弈可判定
         2. $\Sigma_2^0-$划分具有 $\text{Ramsey}$ 性质
         3. $\text{Cantor}-\text{Bendixson}$ 定理：闭集可表示为一个完全集与一个可数集的和
 
 ### 4.3.2 二阶算术体系
 1. $\mathbf{Z}_2 = \mathbf{\Pi}_\omega^1-\mathbf{CA}$，一般地有 $\mathbf{Z}_{n+3} = \mathbf{\Pi}_\omega^{n+2}-\mathbf{CA}, \mathbf{Z}_\omega = \mathbf{\Pi}_0^\omega-\mathbf{CA}$
-    1. $\Pi_{k}^{1}-\mathrm{AC}_{0} \dashv\vdash \Sigma_{k+1}^{1}-\mathrm{AC}_{0}$
-    2. $\Pi_{k}^{1}-\mathrm{DC}_{0} \dashv\vdash \Sigma_{k+1}^{1}-\mathrm{DC}_{0}$
-    3. $\Delta_{k}^{1}-\mathrm{CA}_{0} \dashv \Pi_{k}^{1}-\mathrm{SP}_{0} \dashv \Sigma_{k}^{1}-\mathrm{AC}_{0} \dashv \Sigma_{k}^{1}-\mathrm{DC}_{0}$
-    4. $\Sigma_{k}^{1}-\mathrm{DC}_{0} \vdash \Sigma_{k}^{1}-\mathrm{Ind}$
-2. 称不包含非标准自然数的二阶算数结构为 $\omega-$模型，若任意真 $\Sigma_1^1$ 语句都在模型中成立，则称其为 $\beta-$模型
+    1. $\mathbf{\Delta}_{k}^{1}-\mathbf{CA}_{0} \dashv \mathbf{\Pi}_{k}^{1}-\mathbf{SP}_{0} \dashv \mathbf{\Sigma}_{k}^{1}-\mathbf{AC}_{0} \dashv \mathbf{\Sigma}_{k}^{1}-\mathbf{DC}_{0}$
+    2. $\mathbf{\Sigma}_{k}^{1}-\mathbf{DC}_{0} \vdash \mathbf{\Sigma}_{k}^{1}-\mathrm{Ind}$
+    3. $\mathbf{\Pi}_{k}^{1}-\mathbf{AC}_{0} \dashv\vdash \mathbf{\Sigma}_{k+1}^{1}-\mathbf{AC}_{0}$
+    4. $\mathbf{\Pi}_{k}^{1}-\mathbf{DC}_{0} \dashv\vdash \mathbf{\Sigma}_{k+1}^{1}-\mathbf{DC}_{0}$
+2. 称不包含非标准自然数的二阶算数结构为 $\omega-$模型，若任意真 $\Sigma_1^1$ 语句都在 $\omega-$模型中成立，则称其为 $\beta-$模型
+    1. 对任意 $\omega-$模型 $\mathfrak{M}$，都有 $\mathfrak{M} \vDash \Sigma_{\omega}^{1}-\mathrm{Ind}$
+    2. 对任意 $\beta-$模型 $\mathfrak{M}$，都有 $\mathfrak{M} \vDash \Sigma_{\omega}^{1}-\mathrm{TI}$ 且 $\mathfrak{M} \vDash \mathbf{ATR}_0$
+    3. $\mathbf{\Pi}_1^1-\mathbf{AC}_0$ 中可证存在可数 $\beta-$模型
+3. $\text{Simpson}$ 定理：$\mathbf{\Sigma}_{1}^{1}-\mathbf{TI}_{0} \dashv\vdash \mathbf{ATR}_{0}+\mathbf{\Sigma}_{1}^{1}-\mathrm{Ind}$
+    1. $\mathbf{\Pi}_{1}^{1}-\mathbf{TI}_{0} \dashv\vdash \mathbf{\Sigma}_{1}^{1}-\mathbf{DC}_{0}$
+    2. $\mathbf{ATR}_{0}+\Sigma_{\omega}^{1}-\mathrm{TI} \nvdash \mathbf{\Pi}_{1}^{1}-\mathbf{CA}_{0}$
+    3. $\mathbf{ATR}_{0}+\mathbf{\Sigma}_{\infty}^{1}-\mathrm{Ind} \nvdash \Sigma_{1}^{1}-\mathbf{DC}_{0}$
+    4. $\mathbf{\Sigma}_{1}^{1}-\mathbf{DC}_{0}+\mathbf{\Sigma}_{\infty}^{1}-\mathrm{Ind} \nvdash \mathbf{ATR}_{0}$
