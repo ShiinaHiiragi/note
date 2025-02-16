@@ -252,8 +252,9 @@
         6. $\text{Baire}$ 纲定理
 
 2. $\mathbf{WKL}_0$ 是 $\mathbf{RCA}_0$ 的真扩张
-    1. $\mathbf{WKL}_0$ 是一阶算术 $\mathbf{PRA}$ 的 $\Pi_2^0-$保守扩张
-    2. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{WKL}_0$ 等价
+    1. $\mathbf{WKL}_0$ 是 $\mathbf{RCA}_0$ 的 $\Pi_1^1-$保守扩张
+    2. $\mathbf{WKL}_0$ 是 $\mathbf{PRA}$ 的 $\Pi_2^0-$保守扩张
+    3. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{WKL}_0$ 等价
         1. $\text{G}\ddot{\mathrm o}\text{del}$ 完全性定理
         2. 可数交换环必有素理想
         3. 闭区间上的连续函数必有界
@@ -264,8 +265,9 @@
         8. $\text{Hahn}-\text{Banach}$ 泛函延拓定理
 3. $\mathbf{ACA}_0$ 是 $\mathbf{WKL}_0$ 的真扩张
     1. $\mathbf{ACA}_0$ 是一阶算术 $\mathbf{PA}$ 的保守扩张
-    2. 定义集合归纳公理（$\mathrm{SI}$）：$\forall X \ (0 \in X \wedge \forall n \ (n \in X \rightarrow n+1 \in X) \rightarrow \forall n \ n \in X)$，则 $\mathbf{ACA}_{0} - (\Sigma_1^0-\mathrm{Ind}) + \mathrm{SI} \vdash \Pi_0^1-\mathrm{Ind}$
-    3. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{ACA}_0$ 等价
+    2. $\mathbf{\Sigma}_1^1-\mathbf{AC}_0$ 是 $\mathbf{ACA}_0$ 的 $\Pi_2^1-$保守扩张
+    3. 定义集合归纳公理（$\mathrm{SI}$）：$\forall X \ (0 \in X \wedge \forall n \ (n \in X \rightarrow n+1 \in X) \rightarrow \forall n \ n \in X)$，则 $\mathbf{ACA}_{0} - (\Sigma_1^0-\mathrm{Ind}) + \mathrm{SI} \vdash \Pi_0^1-\mathrm{Ind}$
+    4. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{ACA}_0$ 等价
         1. 有穷 $\text{Ramsey}$ 定理
         2. $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：若 $T$ 为有限分支的无限子树，则 $T$ 有一个无限分支
         3. 可数交换环必有极大理想
@@ -304,7 +306,7 @@
     2. $\mathbf{\Sigma}_{k}^{1}-\mathbf{DC}_{0} \vdash \mathbf{\Sigma}_{k}^{1}-\mathrm{Ind}$
     3. $\mathbf{\Pi}_{k}^{1}-\mathbf{AC}_{0} \dashv\vdash \mathbf{\Sigma}_{k+1}^{1}-\mathbf{AC}_{0}$
     4. $\mathbf{\Pi}_{k}^{1}-\mathbf{DC}_{0} \dashv\vdash \mathbf{\Sigma}_{k+1}^{1}-\mathbf{DC}_{0}$
-2. 称不包含非标准自然数的二阶算数结构为 $\omega-$模型，若任意真 $\Sigma_1^1$ 语句都在 $\omega-$模型中成立，则称其为 $\beta-$模型
+2. 称不包含非标准自然数的二阶算数结构为 $\omega-$模型，若任意在标准模型模型上成立的 $\Sigma_1^1$ 语句在 $\omega-$模型中成立，则称其为 $\beta-$模型
     1. 对任意 $\omega-$模型 $\mathfrak{M}$，都有 $\mathfrak{M} \vDash \Sigma_{\omega}^{1}-\mathrm{Ind}$
     2. 对任意 $\beta-$模型 $\mathfrak{M}$，都有 $\mathfrak{M} \vDash \Sigma_{\omega}^{1}-\mathrm{TI}$ 且 $\mathfrak{M} \vDash \mathbf{ATR}_0$
     3. $\mathbf{\Pi}_1^1-\mathbf{AC}_0$ 中可证存在可数 $\beta-$模型
