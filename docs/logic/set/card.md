@@ -29,8 +29,24 @@
         1. 对于任意的 $\kappa<\eta_{\alpha}$，都有 $\eta_{\alpha} \rightarrow(\alpha)_{\kappa}^{<\omega}$
         2. 所有的 $\text{Erd}\ddot{\mathrm{o}}\text{s}$ 基数 $\eta_{\alpha}$ 都是不可达基数，且若 $\alpha<\beta$，则 $\eta_{\alpha}<\eta_{\beta}$
     3. $\text{Ramsey}$ 基数：满足划分性质 $\kappa \rightarrow(\kappa)^{<\omega}$ 的基数，即对于任意 $n < \omega$ 都有 $\kappa \rightarrow(\kappa)^{n}$
-3. 不可描述基数
+3. 不可描述基数：设 $\kappa$ 是一个基数，若对任意的 $U \subseteq V_{\kappa}$ 与使得 $\left(V_{\kappa}, \in, U\right) \vDash \sigma$ 成立的 $\Pi_{n}^{m}$（或 $\Sigma_{n}^{m}$）语句 $\sigma$，都存在 $\alpha<\kappa$，使得 $\left(V_{\alpha}, \in, U \cap V_{\alpha}\right) \vDash \sigma$，则称 $\kappa$ 是 $\Pi_{n}^{m-}-$不可描述的（或 $\Sigma_{n}^{m}-$不可描述的）
+    1. 对于任意的 $n$，$\kappa$ 是 $\Sigma_{n+1}^{1}-$不可描述的当且仅当 $\kappa$ 是 $\Pi_{n}^{1}-$不可描述的
+    2. 定义 $\pi_{n}^{m}$ 为最小的 $\Pi_{n}^{m}-$不可描述基数，$\sigma_{n}^{m}$ 为最小的 $\Sigma_{n}^{m}-$不可描述基数
+        1. $\pi_{1}^{1}=\sigma_{2}^{1}<\pi_{2}^{1}=\sigma_{3}^{1}<\cdots$
+        2. 对于 $m>1$ 和 $n>0$ 有 $\pi_{n}^{m}<\sigma_{n+1}^{m}, \pi_{n}^{m}<\pi_{n+1}^{m}$ 且 $\sigma_{n}^{m} \neq \pi_{n}^{m}$
+    3. 若基数 $\kappa$ 对所有 $m, n$ 都是 $\Pi_{n}^{m}-$不可描述的，则称其为完全不可描述基数
+    4. 若基数 $\kappa$ 不是不可达基数，则对某个 $n$，$\kappa$ 总是 $\Pi_{n}^{0}-$可描述的
 
 ### 5.2.2 初等嵌入
-
-## 5.3 内模型计划
+1. 可测基数
+    1. 强紧致基数
+    2. ...
+2. 强基数
+3. $\text{Woodin}$ 基数
+4. 超强基数
+5. 超紧致基数
+6. 可扩展基数
+7. $\text{Vop}\check{\mathrm{e}}\text{nka}$ 原理
+8. 巨大基数
+9. $\text{Rank to Rank}$ 公理
+10. $\text{Reinhardt}$ 基数与 $\text{Berkeley}$ 基数与选择公理不相容
