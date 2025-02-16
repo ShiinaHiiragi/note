@@ -282,8 +282,7 @@ const refList = [
         year: 2018,
         page: [1, 105],
         press: "河合文化教育研究所",
-        locate: "名古屋",
-        plot: 31
+        locate: "名古屋"
     },
     {
         author: ["郝兆宽", "杨跃"],

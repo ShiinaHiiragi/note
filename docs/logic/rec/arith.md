@@ -252,8 +252,8 @@
         6. $\text{Baire}$ 纲定理
 
 2. $\mathbf{WKL}_0$ 是 $\mathbf{RCA}_0$ 的真扩张
-    1. $\mathbf{WKL}_0$ 是 $\mathbf{RCA}_0$ 的 $\Pi_1^1-$保守扩张
-    2. $\mathbf{WKL}_0$ 是 $\mathbf{PRA}$ 的 $\Pi_2^0-$保守扩张
+    1. $\text{Harrington}$ 定理：$\mathbf{WKL}_0$ 是 $\mathbf{RCA}_0$ 的 $\Pi_1^1-$保守扩张
+    2. $\text{Friedman}$ 定理：$\mathbf{WKL}_0$ 是 $\mathbf{PRA}$ 的 $\Pi_2^0-$保守扩张
     3. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{WKL}_0$ 等价
         1. $\text{G}\ddot{\mathrm o}\text{del}$ 完全性定理
         2. 可数交换环必有素理想
@@ -265,7 +265,9 @@
         8. $\text{Hahn}-\text{Banach}$ 泛函延拓定理
 3. $\mathbf{ACA}_0$ 是 $\mathbf{WKL}_0$ 的真扩张
     1. $\mathbf{ACA}_0$ 是一阶算术 $\mathbf{PA}$ 的保守扩张
-    2. $\mathbf{\Sigma}_1^1-\mathbf{AC}_0$ 是 $\mathbf{ACA}_0$ 的 $\Pi_2^1-$保守扩张
+    2. $\text{Barwise}-\text{Schlipf}$ 定理：$\mathbf{\Sigma}_1^1-\mathbf{AC}_0$ 是 $\mathbf{ACA}_0$ 的 $\Pi_2^1-$保守扩张
+        1. 对任意 $\Pi_3^1$ 语句 $\sigma$ 都有 $\mathbf{\Sigma}_{1}^{1}-\mathbf{AC}_{0}+\Sigma_{1}^{1}-\mathrm{Ind} \vdash$ 若 $\mathrm{AC}_{0} \vdash \sigma$，则 $\sigma$ 成立
+        2. $\mathbf{ATR}_{0} \nvdash \Sigma_{1}^{1}-\mathrm{Ind}$
     3. 定义集合归纳公理（$\mathrm{SI}$）：$\forall X \ (0 \in X \wedge \forall n \ (n \in X \rightarrow n+1 \in X) \rightarrow \forall n \ n \in X)$，则 $\mathbf{ACA}_{0} - (\Sigma_1^0-\mathrm{Ind}) + \mathrm{SI} \vdash \Pi_0^1-\mathrm{Ind}$
     4. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{ACA}_0$ 等价
         1. 有穷 $\text{Ramsey}$ 定理
