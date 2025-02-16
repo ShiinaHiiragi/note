@@ -113,6 +113,11 @@
         1. $B_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集
         2. $n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
 
+        !!! note "$\text{Borel}$ 集 $A$ 的性质"
+            1. 可测性：对于任意 $X$ 都有 $\mu^{*}(X)=\mu^{*}(X \cap A)+\mu^{*}(X-A)$，其中 $\mu^{*}$ 是外测度
+            2. $\text{Baire}$ 性质：存在一个开集 $G$ 使得 $A \triangle G = (A - G) \cup (G - A)$ 是第一纲集
+            3. 完全集性质：集合 $A$ 或者是可数的，或者包含一个完全集（没有孤立点的集合）
+
 ### 2.2.3 单调类
 1. 单调类：设 $M$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若对任一集合序列 $\{A_{n}, n \geqslant 1\} \subseteq M$，且
     1. 当 $\left\{A_{n}\right\}$ 递增时，即 $A_{n} \subseteq A_{n+1}$，必有 ${\displaystyle \bigcup_{n=1}^{\infty} A_{n} \in M}$
