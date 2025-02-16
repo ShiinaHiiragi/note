@@ -1,9 +1,26 @@
 # 4 形式算术
 
 ## 4.1 形式算术
+### 4.1.1 原始递归算术
+1. 原始递归算术的语言 $\mathscr L(R)$ 由逻辑符号和非逻辑符号组成
+    1. 逻辑符号：① 可数无穷的变元集 $\mathbf{Var}$；② 联结词 $\bot, \wedge, \vee, \to$；③ 括号 $)$ 与 $($
+    2. 非逻辑符号 $R$：① 等词 $=$；② 常数 $0$；③ 后继函数 $\mathrm{S}$；④ 余下所有原始递归函数
+2. 原始递归算术的公理系统
+    1. 逻辑公理：命题逻辑的所有重言式与等词公理
+    2. 非逻辑公理：定义所有原始递归函数的公式，以及 $\mathrm{S}(x) \neq 0$ 与 $\mathrm{S}(x) = \mathrm{S}(y) \to x = y$
+    3. 推理规则：肯定前件规则、代入规则与以下无量词归纳法模式
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\varphi(0)$}
+        \AxiomC{$\varphi(x) \to \varphi(\mathrm{S}(x))$}
+        \BinaryInfC{$\varphi(y)$}
+        \end{prooftree}
+        $$
+
+### 4.1.2 一阶算术
 初等数论的语言 $\mathscr L(S)$，其中 $S = \{=, \mathrm{S}, +, \times, 0\}$ 且 $\Omega(=) = 2, \Omega(\mathrm{S}) = 1, \Omega(+) = \Omega(\times) = 2, 0 \in \mathbf C$
 
-### 4.1.1 一阶算术
 1. 设 $S-$语句集为
     1. $\forall x  \ (\mathrm{S} x \not = 0)$
     2. $\forall x \forall y \ (\mathrm{S} x = \mathrm{S} y \rightarrow x = y)$
@@ -66,7 +83,7 @@
         1. 若去除归纳定义集 $I \subseteq \mathbf{N}$ 需要是某单调算子 $\Gamma: \mathcal P(\mathbf N) \rightarrow \mathcal P(\mathbf N)$ 的**最小**不动点限制，则得到弱化的 $\widehat{\mathbf{ID}}_{\nu}$ 系统
         2. 若限制仅在不含否定联结词的公式上归纳，则可在 $\widehat{\mathbf{ID}}_{\nu}$ 基础上进一步弱化得到 $\mathbf{ID}_{\nu}\#$
 
-### 4.1.2 二阶算术
+### 4.1.3 二阶算术
 1. 用小写字母 $i, j, k, m, n, \ldots$ 表示自然数，用 $X, Y, Z, \ldots$ 表示集合．设 $S-$语句集为
     1. $\forall x \ (\mathrm{S} x \not = 0)$
     2. $\forall x \forall y \ (\mathrm{S} x = \mathrm{S} y \rightarrow x = y)$
@@ -172,7 +189,7 @@
     2. 设 $\mathfrak{A}$ 为 $S'$ 的一个结构，$\mathfrak{A} \vDash \forall x \ \varphi(\overline{x}, f(\overline{x}))$ 且 $\mathfrak{A} \vDash \mathbf{PA}$
         1. 对所有的 $S^{\prime}$ 上的公式 $\theta(\overline{v})$ 和所有 $\overline{a} \in|\mathfrak{A}|^{k}$ 都有 $\mathfrak{A} \vDash \theta[\overline{a}]$ 当且仅当 $\mathfrak{A} \vDash \theta^{*}[\overline{a}]$
         2. 对所有 $S^{\prime}$ 上的公式 $\theta$，$\mathfrak{A}$ 都满足对 $\theta$ 的归纳公理 $I \theta$
-        3. 对每一个 $S^{\prime}$ 上的公式 $\theta$，都在 $\mathbf{PA}$ 中添入一条新的归纳公理 $I \theta$．令 $\mathbf{PA}\left(S^{\prime}\right)$ 为扩充后的公理系统，则 $\mathbf{PA}\left(S^{\prime}\right)$ 是 $\mathbf{PA}$ 的一个保守扩张，即对每一个 $S$ 上的闭语句 $\sigma$ 都有 $\mathbf{PA}\left(S^{\prime}\right) \vdash \sigma$ 当且仅当 $\mathbf{PA} \vdash \sigma$
+        3. 对每一个 $S^{\prime}$ 上层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$ 的公式 $\theta$，都在 $\mathbf{PA}$ 中添入一条新的归纳公理 $I \theta$．令 $\mathbf{PA}\left(S^{\prime}\right)$ 为扩充后的公理系统，则 $\mathbf{PA}\left(S^{\prime}\right)$ 是 $\mathbf{PA}$ 的一个 $\Phi-$保守扩张，即对每一个 $S$ 上的闭语句 $\sigma$ 都有 $\mathbf{PA}\left(S^{\prime}\right) \vdash \sigma$ 当且仅当 $\mathbf{PA} \vdash \sigma$
     3. 称函数 $f$ 在 $T$ 中是可证递归的当且仅当存在一个 $\Sigma_{1}-$公式 $\varphi(\overline{x}, y)$ 使得 $T \vdash \forall \overline{x} \forall y \ (\varphi(\overline{x}, y) \leftrightarrow y=f(\overline{x}))$；称关系 $R$ 在 $T$ 中是可证递归的当且仅当存在 $\Sigma_{1}-$公式 $\varphi(\overline{x})$ 和 $\psi(\overline{x})$ 使得 $T \vdash \forall \overline{x} \ (R(\overline{x}) \leftrightarrow \varphi(\overline{x}) \leftrightarrow \neg \psi(\overline{x}))$
         1. 令 $S^{\prime}=S \cup\{f, R\}$，$f$ 和 $R$ 是可证递归的函数和关系，则任何 $\mathbf{PA}\left(S^{\prime}\right)$ 中的可证递归函数和关系都在 $\mathbf{PA}$ 可证递归
         2. 令 $f$ 为在 $\mathbf{PA}$ 中可证递归函数，令 $\mathfrak{N}$ 和 $\mathfrak{M}$ 为 $\mathbf{PA}$ 的模型且 $\mathfrak{M}$ 是 $\mathfrak{N}$ 的尾节扩张，则对所有的 $\overline{a}$ 有 $b \in \mathfrak{N}, f^{\mathfrak{N}}(\overline{a})=b$ 当且仅当 $f^{\mathfrak{M}}(\overline{a})=b$
@@ -226,14 +243,17 @@
         5. $\text{Baire}$ 纲定理
         6. 任何完备一致理论至少有一个模型
 
-2. $\mathbf{WKL}_0$
-    1. 123
-    2. 以下定理 $\mathbf{RCA}_0$ 中与 $\mathbf{WKL}_0$ 等价
-        1. $\text{Heine}-\text{Borel}$ 定理
-        2. 闭区间连续函数必有最值
-        3. 闭区间连续函数的 $\text{Cantor}$ 定理
+2. $\mathbf{WKL}_0$ 上可定义集合的（开）覆盖
+    1. $\mathbf{WKL}_0$ 是一阶算术 $\mathbf{PRA}$ 的 $\Pi_2^0-$保守扩张
+    2. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{WKL}_0$ 等价
+        1. 闭区间上的连续函数必有界
+        2. 闭区间上的连续函数的 $\text{Cantor}$ 定理
+        3. $\text{Heine}-\text{Borel}$ 定理
         4. $\text{Brouwer}$ 不动点定理
         5. $\text{Weierstrass}$ 逼近定理
+        6. $\text{Hahn}-\text{Banach}$ 泛函延拓定理
+        7. $\text{G}\ddot{\mathrm o}\text{del}$ 完全性定理
+        8. 可数交换环必有素理想
 3. $\mathbf{ACA}_0$：
 4. $\mathbf{ATR}_0$：
 5. $\mathbf{\Phi}-\mathbf{AC}_0$：
