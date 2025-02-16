@@ -10,6 +10,7 @@
     2. 函数在区间内连续
         1. 函数 $f(x)$ 在 $(a, b)$ 连续：对 $(a, b)$ 内任何一点 $x_{0}$ 均有 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=f\left(x_{0}\right)}$
         2. 函数 $f(x)$ 在 $[a, b]$ 连续：函数在 $(a, b)$ 连续且 $f(a+0)=f(a), f(b-0)=f(b)$
+    3. 一致连续：设函数 $f(x)$ 在区间 $X$ 内满足对任意的 $\varepsilon>0$，可找到只与 $\varepsilon$ 有关而与 $X$ 内的点 $x$ 无关的 $\eta>0$，使得对 $X$ 内任意两点 $x_{1}$ 和 $x_{2}$，当 $\left|x_{1}-x_{2}\right|<\eta$ 时，总有 $\left|f\left(x_{1}\right)-f\left(x_{2}\right)\right|<\varepsilon$，则称 $f(x)$ 在 $X$ 内一致连续
 2. 连续函数的性质
     1. 若 $f(x), g(x)$ 在点 $x_{0}$ 连续，则 $f(x) \pm g(x), f(x) g(x)$ 也在点 $x_0$ 连续，若 $g\left(x_{0}\right) \neq 0$，则 $\dfrac{f(x)}{g(x)}$ 也在点 $x_0$ 连续
     2. 设 $f(x)$ 在 $a \leqslant x \leqslant b$ 严格单调递增（或递减）且在每点连续，又设 $f(a)=\alpha, f(b)=\beta$，则在区间 $\alpha \leqslant y \leqslant \beta$ 上存在 $y=f(x)$ 的反函数 $x=\varphi(y)$ 在区间上单调递增（或递减）且连续
@@ -25,27 +26,22 @@
     3. 零点存在定理：若 $f(a)f(b) < 0$，则在 $[a, b]$ 内至少有一点 $\xi$，使 $f(\xi)=0$
     4. 介值定理：设 $f(x)$ 在 $[a, b]$ 上最小值为 $m$，最大值为 $M$，则对任意 $c \ (m<c<M)$，$[a, b]$ 内至少存在一个 $\xi$ 使得 $f(\xi)=c$
     5. $\text{Cantor}$ 定理：$f(x)$ 在 $[a, b]$ 上一致连续
-
-        !!! note "一致连续"
-            设函数 $f(x)$ 在区间 $X$ 内满足对任意的 $\varepsilon>0$，可找到只与 $\varepsilon$ 有关而与 $X$ 内的点 $x$ 无关的 $\eta>0$，使得对 $X$ 内任意两点 $x_{1}$ 和 $x_{2}$，当 $\left|x_{1}-x_{2}\right|<\eta$ 时，总有 $\left|f\left(x_{1}\right)-f\left(x_{2}\right)\right|<\varepsilon$，则称 $f(x)$ 在 $X$ 内一致连续
+    6. $\text{Weierstrass}$ 逼近定理：存在多项式函数列 $\{f_{n}(x)\}$ 使得 $f_{n}(x)$ 一致收敛于 $f(x)$
 
 ### 2.1.2 多元连续函数
 1. 连续性的定义
     1. 多元函数的连续性：设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$z=f(\boldsymbol{x})$ 是定义在 $D$ 上的函数，$\boldsymbol{x}_{0} \in D$ 为定点．如果 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=f\left(x_{0}\right)}$，则称函数 $f$ 在点 $x_{0}$ 连续
-    2. 向量值函数的连续性：设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$x_{0} \in D$ 为一定点，$\boldsymbol f: D \rightarrow \mathbf{R}^{m}$ 是向量值函数．如果 $\boldsymbol f$ 满足 ${\displaystyle \lim _{x \rightarrow x_{0}} \boldsymbol f(x)=\boldsymbol f\left(x_{0}\right)}$，则称 $\boldsymbol f$ 在 $x_{0}$ 点连续
+    2. 向量值函数的连续性：设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$x_{0} \in D$ 为定点，$\boldsymbol f: D \rightarrow \mathbf{R}^{m}$ 是向量值函数．如果 $\boldsymbol f$ 满足 ${\displaystyle \lim _{x \rightarrow x_{0}} \boldsymbol f(x)=\boldsymbol f\left(x_{0}\right)}$，则称 $\boldsymbol f$ 在 $x_{0}$ 点连续
         1. 设点集 $K \subseteq \mathbf{R}^{n}, \boldsymbol{f}: K \rightarrow \mathbf{R}^{m}$ 为向量值函数，$\boldsymbol{x}_{0} \in K$．如果对于任意给定的 $\varepsilon>0$，存在 $\delta>0$ 使得当 $\boldsymbol{x} \in O\left(\boldsymbol{x}_{0}, \delta\right) \cap K$ 时有 $\left|\boldsymbol{f}(\boldsymbol{x})-\boldsymbol{f}\left(\boldsymbol{x}_{0}\right)\right|<\varepsilon$，则称 $\boldsymbol{f}$ 在点 $\boldsymbol{x}_{0}$ 连续．如果映射 $\boldsymbol{f}$ 在 $K$ 上每一点连续，则称 $\boldsymbol{f}$ 在 $K$ 上连续，或称映射 $\boldsymbol{f}$ 为 $K$ 上的连续映射
         2. 设 $D$ 是 $\mathbf{R}^{n}$ 上的开集，$\boldsymbol{x}_{0} \in D$ 为定点，则映射 $\boldsymbol f: D \rightarrow \mathbf{R}^{m}$ 在 $\boldsymbol{x}_{0}$ 点连续当且仅当函数 $f_{1}, f_{2}, \cdots, f_{m}$ 在 $x_{0}$ 点连续
         3. 如果 $\boldsymbol g$ 在 $D$ 上连续，$\boldsymbol f$ 在 $\Omega$ 上连续，那么复合映射 $\boldsymbol f \circ \boldsymbol g$ 在 $D$ 上连续
+    3. 一致连续：设 $K$ 是 $\mathbf{R}^{n}$ 中点集，$\boldsymbol f: K \rightarrow \mathbf{R}^{m}$ 为映射．如果对于任意给定的 $\varepsilon>0$，存在 $\delta>0$ 使得 $\left|f\left(x^{\prime}\right)-f\left(x^{\prime \prime}\right)\right|<\varepsilon$ 对于 $K$ 中所有满足 $\left|\boldsymbol{x}^{\prime}-\boldsymbol{x}^{\prime \prime}\right|<\delta$ 的 $\boldsymbol{x}^{\prime}, \boldsymbol{x}^{\prime \prime}$ 成立，则称 $\boldsymbol{f}$ 在 $K$ 上一致连续
 2. 连续函数的性质
     1. 紧集上的连续映射：设 $S$ 为 $\mathbf R^n$ 上的点集，如果 $S$ 的任意一个开覆盖 $\{U_n\}$ 中总存在一个有限子覆盖，则称 $S$ 为紧集
         1. 连续映射将紧集映射成紧集
         2. 有界性定理：设 $K$ 是 $\mathbf{R}^{n}$ 中紧集，$f$ 是 $K$ 上的连续函数，则 $f$ 在 $K$ 上有界
         3. 最值定理：设 $K$ 是 $\mathbf{R}^{n}$ 中紧集，$f$ 是 $K$ 上的连续函数，则 $f$ 在 $K$ 上必能取到最大值和最小值．即存在 $\xi_{1}, \boldsymbol{\xi}_{2} \in K$，使得对于一切 $x \in K$ 成立
         4. 一致连续性定理：设 $K$ 是 $\mathbf{R}^{n}$ 中紧集，$\boldsymbol f: K \rightarrow \mathbf{R}^{m}$ 为连续映射，则 $\boldsymbol f$ 在 $K$ 上一致连续
-
-            !!! note "一致连续"
-                设 $K$ 是 $\mathbf{R}^{n}$ 中点集，$\boldsymbol f: K \rightarrow \mathbf{R}^{m}$ 为映射．如果对于任意给定的 $\varepsilon>0$，存在 $\delta>0$ 使得 $\left|f\left(x^{\prime}\right)-f\left(x^{\prime \prime}\right)\right|<\varepsilon$ 对于 $K$ 中所有满足 $\left|\boldsymbol{x}^{\prime}-\boldsymbol{x}^{\prime \prime}\right|<\delta$ 的 $\boldsymbol{x}^{\prime}, \boldsymbol{x}^{\prime \prime}$ 成立，则称 $\boldsymbol{f}$ 在 $K$ 上一致连续
-
     2. 连通集上的连续映射：连通的开集称为（开）区域，（开）区域的闭包称为闭区域
         1. 连续映射将连通集映射成连通集，将连通的紧集映射成闭区间
         2. 介值定理：设 $K$ 为 $\mathbf{R}^{n}$ 中连通的紧集，$f$ 是 $K$ 上的连续函数，则 $f$ 的值域是闭区间 $[m, M]$

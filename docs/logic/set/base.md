@@ -730,7 +730,7 @@
     2. $A$ 是向下封闭的，即如果 $p \in A$ 且 $q < p$，则 $q \in A$
     3. $A$ 没有最大元，即如果 $p \in A$，则存在 $q \in A, p < q$
 
-    则称 $A$ 是 $\text{Dedekind}$ 分割，全体分割的集合记为 $\mathbf R$，其中的元素被称为实数．特别地，对于任意 $p \in \mathbf Q$，定义 $p^{\mathbf R} = \left\{q \in \mathbf Q \mid q <^{\mathbf Q} p\right\}$
+    则称 $A$ 是 $\text{Dedekind}$ 分割，全体分割集记为 $\mathbf R$，其元素称为实数．特别地，对于任意 $p \in \mathbf Q$，定义 $p^{\mathbf R} = \left\{q \in \mathbf Q \mid q <^{\mathbf Q} p\right\}$
 
 2. 实数集合的序与运算
     1. 实数集合上的序定义为 $x_1 \leqslant^{\mathbf R} x_2$ 当且仅当 $x_1 \subseteq x_2$

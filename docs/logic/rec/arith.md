@@ -80,9 +80,7 @@
     定义二阶算术 $\mathbf{Z}_2$ 是以上公理的理论．对于层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$ 的公式 $\varphi$，定义公理
 
     1. $\Phi-$归纳公理模式（$\Phi-\mathrm{Ind}$）：$\varphi(0) \wedge \forall n \ (\varphi(n) \rightarrow \varphi(n+1)) \rightarrow \forall n \ \varphi(n)$
-    2. $\Phi-$理解公理模式（$\Phi-\mathrm{CA}$）
-        1. $\Pi_n^m-\mathrm{CA}$ 或 $\Sigma_n^m-\mathrm{CA}: \exists X \forall n \ (n \in X \leftrightarrow \varphi(n))$
-        2. $\Delta_n^m-\mathrm{CA}: \forall n \ (\varphi(n) \leftrightarrow \psi(n)) \rightarrow \exists X \forall n \ (n \in X \leftrightarrow \varphi(n))$，其中 $\varphi$ 为 $\Sigma_n^m$ 公式，$\psi$ 为 $\Pi_n^m$ 公式
+    2. $\Phi-$理解公理模式（$\Phi-\mathrm{CA}$）：$\exists X \forall n \ (n \in X \leftrightarrow \varphi(n))$
     3. $\Phi-$算术超限递归公理模式（$\Phi-\mathrm{TR}$）：对公式 $\theta(n, X)$，令 $\Theta(X)=\{n \in \mathbf{N} \mid \theta(n, X)\}, Y \subseteq \mathbf{N} \times A$ 且对每个 $a \in A$ 有 $Y_{a}=\Theta\left(Y^{a}\right)$，其中 $Y_{a}=\{m \mid (m, a) \in Y\}, Y^{a}=\left\{(n, b) \mid n \in Y_{b} \wedge b<_{A} a\right\}$，则对任意 $\Theta$ 与 $A$，相应的集合 $Y$ 都存在
     4. $\Phi-$选择公理模式（$\Phi-\mathbf{AC}$）：...
     5. $\Phi-$依赖选择公理模式（$\Phi-\mathrm{DC}$）：...
@@ -213,6 +211,32 @@
 
 ## 4.3 反推数学
 ### 4.3.1 二阶算术子系统
+1. $\mathbf{RCA}_0$ 中可依照 $\mathbf{ZFC}$ 建立实数集，定义 $\mathbf{R}$ 上的连续函数
+    1. $\mathbf{RCA}_0$ 中存在所有递归全函数，但不一定能证明某个函数是全函数
+    2. 在 $\mathbf{RCA}_0$ 中，对任意 $\Sigma_{1}^0$ 公式 $\varphi(n)$，或者存在有限集合 $X$ 使得 $\forall n \ (n \in X \leftrightarrow \varphi(n))$ 成立，或者存在单射 $f: \mathbf N \to N$ 使得 $\forall n \ (\exists m \  f(m) =n \leftrightarrow \varphi(n))$ 成立
+    3. 以下公理在 $\mathbf{RCA}_0$ 中可证
+        1. $\Pi_1^0-$归纳法
+        2. 有界 $\Sigma_{1}^{0}-$理解公理：$\forall n \exists X \forall i \ (i \in X \leftrightarrow(i<n \wedge \varphi(i)))$
+        3. 强 $\Sigma_1^0-$有界公理：$\forall m \ \exists n \ \forall i<m \ (\exists j \ \varphi(i, j) \rightarrow \exists j<n \ \varphi(i, j))$
+    4. 以下定理在 $\mathbf{RCA}_0$ 中可证
+        1. 代数学基本定理
+        2. 区间套定理
+        3. 零点存在定理
+        4. 压缩映射原理
+        5. $\text{Baire}$ 纲定理
+        6. 任何完备一致理论至少有一个模型
+
+2. $\mathbf{WKL}_0$
+    1. 123
+    2. 以下定理 $\mathbf{RCA}_0$ 中与 $\mathbf{WKL}_0$ 等价
+        1. $\text{Heine}-\text{Borel}$ 定理
+        2. 闭区间连续函数必有最值
+        3. 闭区间连续函数的 $\text{Cantor}$ 定理
+        4. $\text{Brouwer}$ 不动点定理
+        5. $\text{Weierstrass}$ 逼近定理
+3. $\mathbf{ACA}_0$：
+4. $\mathbf{ATR}_0$：
+5. $\mathbf{\Phi}-\mathbf{AC}_0$：
 
 ### 4.3.2 二阶算术体系
 1. $\mathbf{Z}_2 = \mathbf{\Pi}_\omega^1-\mathbf{CA}$，一般地有 $\mathbf{Z}_{n+3} = \mathbf{\Pi}_\omega^{n+2}-\mathbf{CA}, \mathbf{Z}_\omega = \mathbf{\Pi}_0^\omega-\mathbf{CA}$

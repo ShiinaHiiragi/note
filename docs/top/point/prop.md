@@ -35,7 +35,7 @@
     1. $n>1$ 维 $\text{Euclid}$  空间 $R^n$ 的子集 $R^n-\{O\}$ 是一个连通子集，其中 $O=(0, 0, \cdots, 0)\in \mathbf R^n$
     2. $\text{Euclid}$ 平面 $R^2$ 与实数空间 $R$ 不同胚；进一步地，若 $n\neq l$，则 $R^n$ 与 $R^l$ 不同胚
     3. 高维形式的不动点定理与 $\text{Borsuk}-\text{Ulam}$ 定理
-        1. 不动点定理：设 $f: E^n\to E^n$ 是一个连续映射，其中 $E^n$ 是 $n$ 维闭球体，则 $\exists z\in E^n: f(z)=z$
+        1. $\text{Brouwer}$ 不动点定理：设 $f: E^n\to E^n$ 是一个连续映射，其中 $E^n$ 是 $n$ 维闭球体，则 $\exists z\in E^n: f(z)=z$
         2. $\text{Borsuk}-\text{Ulam}$ 定理：设 $f: S^n\to R^l$ 是一个连续映射，其中 $n\geqslant l$，则 $\exists x\in S^n: f(x)=f(-x)$
 7. 连通分支
     1. 设 $X$ 是一个拓扑空间，$x, y\in X$．若 $X$ 中有一个连通子集同时包含 $x$ 和 $y$，则称点 $x$ 和 $y$ 是连通的．易证明连通作为关系是一个等价关系
