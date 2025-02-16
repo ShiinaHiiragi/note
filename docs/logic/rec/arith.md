@@ -53,7 +53,7 @@
             1. $\mathbf{I \Sigma}_{n+1}  \vdash \mathbf{B \Sigma}_{n+1}$
             2. $\mathbf{B \Sigma}_{n+1} \vdash \mathbf{B \Pi}_{n}$
             3. $\mathbf{B \Sigma}_{n+1} \vdash \mathbf{I \Sigma}_{n}$
-            4. $\mathbf{I \Sigma}_{n} \mathrel{⟛} \mathbf{I \Pi}_{n} \mathrel{⟛} \mathbf{L \Sigma}_{n} \mathrel{⟛} \mathbf{L \Pi}_{n}$
+            4. $\mathbf{I \Sigma}_{n} \dashv\vdash \mathbf{I \Pi}_{n} \dashv\vdash \mathbf{L \Sigma}_{n} \dashv\vdash \mathbf{L \Pi}_{n}$
 
         2. 定义 $\log x=\min \left\{y \mid 2^{y} \leqslant x\right\}$ 以及 $\omega_{1}(x, y)=x^{\log y}, \omega_{n+1}(x, y)=2^{\omega_{n}(\log x, \log y)}$
             1. $\Omega_{n}: \forall x \forall y \exists z \ \left(z=\omega_{n}(x, y)\right)$
@@ -99,20 +99,23 @@
     1. $\Phi-$归纳公理模式（$\Phi-\mathrm{Ind}$）：$\varphi(0) \wedge \forall n \ (\varphi(n) \rightarrow \varphi(n+1)) \rightarrow \forall n \ \varphi(n)$
     2. $\Phi-$理解公理模式（$\Phi-\mathrm{CA}$）：$\exists X \forall n \ (n \in X \leftrightarrow \varphi(n))$
     3. $\Phi-$算术超限递归公理模式（$\Phi-\mathrm{TR}$）：对公式 $\theta(n, X)$，令 $\Theta(X)=\{n \in \mathbf{N} \mid \theta(n, X)\}, Y \subseteq \mathbf{N} \times A$ 且对每个 $a \in A$ 有 $Y_{a}=\Theta\left(Y^{a}\right)$，其中 $Y_{a}=\{m \mid (m, a) \in Y\}, Y^{a}=\left\{(n, b) \mid n \in Y_{b} \wedge b<_{A} a\right\}$，则对任意 $\Theta$ 与 $A$，相应的集合 $Y$ 都存在
-    4. $\Phi-$选择公理模式（$\Phi-\mathbf{AC}$）：...
-    5. $\Phi-$依赖选择公理模式（$\Phi-\mathrm{DC}$）：...
-    6. $\Phi-$分离原则模式（$\Phi-\mathrm{SP}$）：...
-    7. $\Phi-$超限归纳模式（$\Phi-\mathrm{TI}$）：...
+    4. $\Phi-$选择公理模式（$\Phi-\mathbf{AC}$）：$\forall x \exists Y \ \varphi(x, Y) \rightarrow \exists Z \forall x \ \varphi\left(x,(Z)_{x}\right)$，其中 $(Z)_{x} = \{z: (z, x) \in Z\}$
+    5. $\Phi-$依赖选择公理模式（$\Phi-\mathbf{DC}$）：$\forall x \forall X \exists Y \ \varphi(x, X, Y) \rightarrow \exists Z \forall x \ \varphi\left(x,(Z)_{x},(Z)_{x+1}\right)$，其中 $(Z)_{x} = \{z: (z, x) \in Z\}$
+    6. $\Phi-$分离原则模式（$\Phi-\mathrm{SP}$）：$\forall x \ (\varphi(x) \rightarrow \neg \psi(x)) \rightarrow \exists X \forall x \ ((\varphi(x) \rightarrow x \in X) \wedge(x \in X \rightarrow \neg \psi(x)))$
+    7. $\Phi-$超限归纳模式（$\Phi-\mathrm{TI}$）：设谓词 $W(X)$ 表示集合 $X$ 是自然数上的顺序，将 $(i, j) \in X$ 记作 $i <_{X} j$，则 $\forall X \ \left(W(X) \rightarrow\left(\forall j \ \left(\forall i<_{X} j \ \varphi(i) \rightarrow \varphi(j)\right) \rightarrow \forall j \ \varphi(j)\right)\right)$
     8. $\Phi-\mathrm{Bar}$ 归纳公理模式（$\Phi-\mathrm{BI}$）：若 $a \prec b$ 有定义，则 $(\forall i \prec j \ (i \in X) \to j \in X) \to \forall n \ \varphi(n)$
 
     若取消 $\varphi$ 的限制，则去除对应的 $\Phi$ 前缀
 
-2. 对于任意 $\mathbf{Z}_2$ 的子系统 $\mathbf{T}_0$，令 $\mathbf{T} = \mathbf{T}_0 + \mathrm{1-Ind}$，其中 $\mathrm{1-Ind}$ 是对所有一阶公式都成立的归纳公理模式
+2. 对于任意 $\mathbf{Z}_2$ 的子系统 $\mathbf{T}_0$，令 $\mathbf{T} = \mathbf{T}_0 + \mathrm{1-Ind}$，其中 $\mathrm{1-Ind}$ 是对所有一阶公式都成立的归纳公理模式．设 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
     1. $\mathbf{RCA}_0 = \mathbf{Q} + \Sigma_1^0-\mathrm{Ind} + \Delta_1^0-\mathrm{CA}$
     2. $\mathbf{WKL}_0 = \mathbf{RCA}_0 + \text{K}\ddot{\mathrm o}\text{nig}$，后者即弱 $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：若 $T$ 为 $2^{<\omega}$ 的无限子树，则 $T$ 有一个无限分支
-    3. $\mathbf{ACA}_0 = \mathbf{RCA}_0 + \Pi_0^1-\mathrm{CA}, \mathbf{\Phi}-\mathbf{CA}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{CA}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
-    4. $\mathbf{ATR}_0 = \mathbf{RCA}_0 + \mathrm{TR}, \mathbf{\Phi}-\mathbf{TR}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{TR}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
-    5. $\mathbf{\Phi}-\mathbf{AC}_0 = \mathbf{RCA}_0 + \Phi-\mathbf{AC}$，其中 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
+    3. $\mathbf{ACA}_0 = \mathbf{RCA}_0 + \Pi_0^1-\mathrm{CA}, \mathbf{\Phi}-\mathbf{CA}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{CA}$
+    4. $\mathbf{ATR}_0 = \mathbf{RCA}_0 + \mathrm{TR}, \mathbf{\Phi}-\mathbf{TR}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{TR}$
+    5. $\mathbf{\Phi}-\mathbf{AC}_0 = \mathbf{RCA}_0 + \Phi-\mathbf{AC}$
+    6. $\mathbf{\Phi}-\mathbf{DC}_0 = \mathbf{RCA}_0 + \Phi-\mathbf{DC}$
+    7. $\mathbf{\Phi}-\mathbf{SP}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{SP}$
+    8. $\mathbf{\Phi}-\mathbf{TI}_0 = \mathbf{ACA}_0 + \Phi-\mathrm{TI}$
 
 ## 4.2 不完备定理
 ### 4.2.1 可表示性
@@ -218,7 +221,7 @@
     第二不完备定理说明 $\text{Hilbert}$ 纲领不可能照原样实现
 
     1. 令 $\mathbf{PA}^*$ 为 $\mathbf{PA} + \neg \operatorname{Con}(\mathbf{PA})$，则 $\mathbf{PA}^*$ 一致
-    2. 定义超穷递归 $\forall \beta<\alpha \ (\forall \gamma<\beta \ \psi(\gamma) \rightarrow \psi(\beta)) \rightarrow \forall \beta<\alpha \ \psi(\beta)$，对任意序数 $\alpha < \varepsilon_{0}$，$\mathbf{PA}$ 可证明 $\operatorname{TI}(\alpha)$，但无法证明 $\operatorname{TI}(\varepsilon_{0})$，此时记 $\operatorname{PTO}(\mathbf{PA}) = \varepsilon$，称 $\mathbf{PA}$ 的证明论序数为 $\varepsilon_0$
+    2. 对任意序数 $\alpha < \varepsilon_{0}$，$\mathbf{PA}$ 可证明 $\operatorname{TI}(\alpha)$，但无法证明 $\operatorname{TI}(\varepsilon_{0})$，此时记 $\operatorname{PTO}(\mathbf{PA}) = \varepsilon$，称 $\mathbf{PA}$ 的证明论序数为 $\varepsilon_0$
 
 4. $\text{L}\ddot{\mathrm{o}}\text{b}$ 定理
     1. $\vdash_{T} \square_{T}\left(\square_{T} \alpha \rightarrow \alpha\right) \rightarrow \square_{T} \alpha$
@@ -230,7 +233,7 @@
         设 $\kappa, \lambda, m$ 为基数，$n \in \mathbf{N}$，定义 $[\kappa]^{n}=\{X \subseteq \kappa \mid |X| =n\}$，记 $\kappa \rightarrow(\lambda)_{m}^{n}$ 为「$[\kappa]^{n}$ 的 $m-$划分中，每部分都有一个大小为 $\lambda$ 的齐次集，即使得 $[\lambda]^{n}$ 元素都属于同一划分的 $\lambda \subseteq \kappa$」，则有穷 $\text{Ramsey}$ 定理 $N \rightarrow \left(M \right)_{k}^{n}$ 在 $\mathbf{N}$ 中成立但无法在 $\mathbf{PA}$ 中证明
 
 ## 4.3 反推数学
-### 4.3.1 二阶算术子系统
+### 4.3.1 子系统与反推数学
 1. $\mathbf{RCA}_0$ 中可依照 $\mathbf{ZFC}$ 建立实数集，定义 $\mathbf{R}$ 上的连续函数
     1. $\mathbf{RCA}_0$ 中存在所有递归全函数，但不一定能证明某个函数是全函数
     2. 在 $\mathbf{RCA}_0$ 中，对任意 $\Sigma_{1}^0$ 公式 $\varphi(n)$，或者存在有限集合 $X$ 使得 $\forall n \ (n \in X \leftrightarrow \varphi(n))$ 成立，或者存在单射 $f: \mathbf N \to N$ 使得 $\forall n \ (\exists m \  f(m) =n \leftrightarrow \varphi(n))$ 成立
@@ -268,9 +271,35 @@
         5. $\text{‌Bolzano}-\text{Weierstrass}$ 定理
         6. $\text{Cauchy}$ 收敛原理
 4. $\mathbf{ATR}_0$ 与 $\mathbf{\Phi}-\mathbf{AC}_0$
-    1. 无限博弈
-    2. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{ATR}_0$ 等价
-    3. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{\Phi}-\mathbf{AC}_0$ 等价
+    1. 无穷博弈：设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，函数 $S_1, S_2: \mathbf N^{<\mathbf{N}} \to \mathbf N$，记由
+
+        $$
+        \begin{aligned}
+        n_{2k} & = S_1(n_0, n_1, ..., n_{2k-1}) \\
+        n_{2k+1} & = S_2(n_0, n_1, ..., n_{2k})
+        \end{aligned}
+        $$
+
+        定义的无穷序列 $\left<n_0, n_1, n_2 \cdots,\right>$ 为 $S_1 \# S_2$
+
+        1. 对任意 $\Phi$ 公式 $\varphi(X)$，若有 $\exists S_1 \forall S_2 \ \varphi \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \varphi\left(S_1 \# S_2\right)$，则称 $\Phi-$博弈是可判定的
+        2. 对任意 $\Phi$ 公式 $\varphi(X), \psi(X)$，若有 $\theta(X) = \phi(X) \wedge \neg \psi(X)$ 且 $\exists S_1 \forall S_2 \ \theta \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \theta\left(S_1 \# S_2\right)$，则称 $\Phi_{\rho}-$博弈是可判定的（例如 $\Sigma_{1 \rho}^0-$博弈的可判定性）
+
+    2. $\text{Ramsey}$ 性质：对于任意层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$ 的公式 $\varphi(f)$，若 $\exists f \in[\mathbf{N}]^{\mathrm{N}} \ (\forall g \in[\mathbf{N}]^{\mathrm{N}} \ \varphi(f \circ g) \vee \forall g \in[\mathbf{N}]^{\mathbf{N}} \ \neg \varphi(f \circ g))$，则称 $\Phi-$划分具有 $\text{Ramsey}$ 性质
+    3. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{ATR}_0$ 等价
+        1. $\Sigma_1^0-$博弈可判定
+        2. $\Sigma_1^0-$划分具有 $\text{Ramsey}$ 性质
+        3. $\text{Baire}$ 空间的不可数闭集包含完全集
+        4. $\text{Lusin}$ 定理
+    4. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{\Phi}-\mathbf{AC}_0$ 等价
+        1. $\Sigma_{1 \rho}^0-$博弈可判定
+        2. $\Sigma_2^0-$划分具有 $\text{Ramsey}$ 性质
+        3. $\text{Cantor}-\text{Bendixson}$ 定理：闭集可表示为一个完全集与一个可数集的和
 
 ### 4.3.2 二阶算术体系
-- $\mathbf{Z}_2 = \mathbf{\Pi}_\omega^1-\mathbf{CA}$，一般地有 $\mathbf{Z}_{n+3} = \mathbf{\Pi}_\omega^{n+2}-\mathbf{CA}, \mathbf{Z}_\omega = \mathbf{\Pi}_0^\omega-\mathbf{CA}$
+1. $\mathbf{Z}_2 = \mathbf{\Pi}_\omega^1-\mathbf{CA}$，一般地有 $\mathbf{Z}_{n+3} = \mathbf{\Pi}_\omega^{n+2}-\mathbf{CA}, \mathbf{Z}_\omega = \mathbf{\Pi}_0^\omega-\mathbf{CA}$
+    1. $\Pi_{k}^{1}-\mathrm{AC}_{0} \dashv\vdash \Sigma_{k+1}^{1}-\mathrm{AC}_{0}$
+    2. $\Pi_{k}^{1}-\mathrm{DC}_{0} \dashv\vdash \Sigma_{k+1}^{1}-\mathrm{DC}_{0}$
+    3. $\Delta_{k}^{1}-\mathrm{CA}_{0} \dashv \Pi_{k}^{1}-\mathrm{SP}_{0} \dashv \Sigma_{k}^{1}-\mathrm{AC}_{0} \dashv \Sigma_{k}^{1}-\mathrm{DC}_{0}$
+    4. $\Sigma_{k}^{1}-\mathrm{DC}_{0} \vdash \Sigma_{k}^{1}-\mathrm{Ind}$
+2. 称不包含非标准自然数的二阶算数结构为 $\omega-$模型，若任意真 $\Sigma_1^1$ 语句都在模型中成立，则称其为 $\beta-$模型

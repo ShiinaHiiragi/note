@@ -34,13 +34,10 @@
     2. 设 $f$ 是赋范空间 $X$ 的子空间 $Z$ 上的连续线性泛函，则必存在 $X$ 上连续线性泛函 $\widetilde{f}$ 是 $f$ 的保范延拓，即当 $\boldsymbol{x} \in Z$ 时，有 $\widetilde{f}(\boldsymbol{x})=f(\boldsymbol{x})$ 且 $\|\widetilde{f}\|_{\boldsymbol{x}}=\|f\|_{\boldsymbol{z}}$
     3. 设 $X$ 是赋范线性空间，$\boldsymbol{x}_{0} \in X, \boldsymbol{x}_{0} \neq 0$，则必存在 $X$ 上的有界线性泛函 $f(\boldsymbol{x})$，使得 $\|f\|=1$，并且 $f\left(\boldsymbol{x}_{0}\right)=\left\|\boldsymbol{x}_{0}\right\|$
 3. $\text{Riesz}$ 表示定理：$C[a, b]$ 上每一个连续线性泛函 $F$ 都可以表示成为 ${\displaystyle F(f)=\int_{a}^{b} f(t) \mathrm{d} g(t), f \in C[a, b]}$，其中 $g(t)$ 是 $[a, b]$ 上有界变差函数，并且 $\|F\|=\underset{a}{\stackrel{b}{\large \textbf{V} \normalsize}}(g)$
-4. $\text{Baire}$ 纲定理：若 $X$ 是非空的完备度量空间，则 $X$ 是第二纲集
-    1. 疏朗集：设 $M$ 是度量空间 $X$ 中子集，若 $M$ 不在 $X$ 任何半径不为零的开球中稠密，则称 $M$ 是 $X$ 中的无处稠密集或疏朗集
-    2. 第一纲集与第二纲集：设 $X$ 是度量空间，$M$ 是 $X$ 中子集，若 $M$ 是 $X$ 中有限个或可数个疏朗集的并集，则称 $M$ 是第一纲集，不是第一纲集的集称为第二纲集
-5. 一致有界性定理：设 $X$ 是 $\text{Banach}$ 空间，$Y$ 是赋范空间，$\mathscr{B}(X, Y)$ 表示 $X$ 到 $Y$ 中的有界线性算子全体，$T_{n} \in \mathscr{B}(X, Y)$．若对每个 $\boldsymbol{x} \in X$，$\left\{\left\|T_{n} \boldsymbol{x}\right\|\right\}$ 有界，即 $\left\|T_{n} \boldsymbol{x}\right\| \leqslant C_{\boldsymbol{x}}$（其中 $C_{\boldsymbol{x}}$ 是一与 $\boldsymbol{x}$ 有关的实数），则 $\left\{T_{n}\right\}$ 一致有界，即存在与 $\boldsymbol{x}$ 无关的实数 $C$，使得对一切正整数 $n$，有 $\left\|T_{n}\right\| \leqslant C$．该定理也称作共鸣定理
+4. 一致有界性定理：设 $X$ 是 $\text{Banach}$ 空间，$Y$ 是赋范空间，$\mathscr{B}(X, Y)$ 表示 $X$ 到 $Y$ 中的有界线性算子全体，$T_{n} \in \mathscr{B}(X, Y)$．若对每个 $\boldsymbol{x} \in X$，$\left\{\left\|T_{n} \boldsymbol{x}\right\|\right\}$ 有界，即 $\left\|T_{n} \boldsymbol{x}\right\| \leqslant C_{\boldsymbol{x}}$（其中 $C_{\boldsymbol{x}}$ 是一与 $\boldsymbol{x}$ 有关的实数），则 $\left\{T_{n}\right\}$ 一致有界，即存在与 $\boldsymbol{x}$ 无关的实数 $C$，使得对一切正整数 $n$，有 $\left\|T_{n}\right\| \leqslant C$．该定理也称作共鸣定理
     1. 设 $\left\{f_{n}\right\}$ 是 $\text{Banach}$ 空间 $X$ 上的一列泛函，如果 $\left\{f_{n}\right\}$ 在 $X$ 的每点 $\boldsymbol{x}$ 处有界，那么 $\left\{f_{n}\right\}$ 一致有界
     2. 存在一个实值的连续函数，其 $\text{Fourier}$ 级数在给定的 $t_{0}$ 处是发散的
-6. 设 $T_{n}$ 是由 $\text{Banach}$ 空间 $X$ 到 $\text{Banach}$ 空间 $Y$ 中的有界线性算子序列，则 $\left\{T_{n}\right\}$ 强收敛的充要条件是 ① $\left\{\left\|T_{n}\right\|\right\}$ 有界；② 对 $X$ 中一稠密子集 $D$ 中的每个 $\boldsymbol{x}$，$\left\{T_{n} \boldsymbol{x}\right\}$ 都收敛
+5. 设 $T_{n}$ 是由 $\text{Banach}$ 空间 $X$ 到 $\text{Banach}$ 空间 $Y$ 中的有界线性算子序列，则 $\left\{T_{n}\right\}$ 强收敛的充要条件是 ① $\left\{\left\|T_{n}\right\|\right\}$ 有界；② 对 $X$ 中一稠密子集 $D$ 中的每个 $\boldsymbol{x}$，$\left\{T_{n} \boldsymbol{x}\right\}$ 都收敛
     1. 设 $X$ 是赋范线性空间，$\boldsymbol{x}_{n} \in X, n=1,2, \cdots$，如果存在 $\boldsymbol{x} \in X$，使得 ${\displaystyle \lim_{n \rightarrow \infty} \left\|\boldsymbol{x}_{n}-\boldsymbol{x}\right\| \rightarrow 0}$，则称点列 $\left\{\boldsymbol{x}_{n}\right\}$ 强收敛于 $\boldsymbol{x}$，如果对任意的 $f \in X^{\prime}$，都有 $f\left(\boldsymbol{x}_{n}\right) \rightarrow f(\boldsymbol{x})(n \rightarrow \infty)$，则称点列 $\left\{\boldsymbol{x}_{n}\right\}$ 弱收敛于 $\boldsymbol{x}$．强收敛必定弱收敛，反之则不一定成立
     2. 设 $X$ 是赋范线性空间，$X^{\prime}$ 是 $X$ 的共轭空间，泛函列 $f_{n} \in X^{\prime}(n=1,2, \cdots)$，如果存在 $f \in X^{\prime}$，使得
         1. $\left\|f_{n}-f\right\| \rightarrow 0 \ (n \rightarrow \infty)$，则称 $\left\{f_{n}\right\}$ 强收敛于 $f$
@@ -50,10 +47,10 @@
         1. $\left\|T_{n}-T\right\| \rightarrow 0 \ (n \rightarrow \infty)$，则称算子列 $\left\{T_{n}\right\}$ 一致收敛于 $T$
         2. 对任意的 $\boldsymbol{x} \in X,\left\|T_{n} \boldsymbol{x}-T \boldsymbol{x}\right\| \rightarrow 0 \ (n \rightarrow \infty)$，则称 $\left\{T_{n}\right\}$ 强收敛于 $T$
         3. 对任意 $\boldsymbol{x} \in X$ 和任意的 $f \in Y^{\prime}, f\left(T_{n} \boldsymbol{x}\right) \rightarrow f(T \boldsymbol{x}) \ (n \rightarrow \infty)$，则称 $\left\{T_{n}\right\}$ 弱收敛于 $T$
-7. 逆算子定理：设 $X$ 和 $Y$ 都是 $\text{Banach}$ 空间，若 $T$ 是从 $X$ 到 $Y$ 上的一对一有界线性算子，则其逆算子 $T^{-1}$ 也是有界线性算子
+6. 逆算子定理：设 $X$ 和 $Y$ 都是 $\text{Banach}$ 空间，若 $T$ 是从 $X$ 到 $Y$ 上的一对一有界线性算子，则其逆算子 $T^{-1}$ 也是有界线性算子
     1. 开映射定理：设 $X$ 和 $Y$ 是两个度量空间，$f$ 是 $X$ 到 $Y$ 的映射，若 $f$ 将 $X$ 中的开集映射成 $Y$ 中的开集，则称 $f$ 是开映射．若 $X$ 和 $Y$ 是两个 $\text{Banach}$ 空间，$T$ 是 $X$ 到 $Y$ 上的有界线性映射，则 $T$ 是开映射
     2. 设在线性空间 $X$ 上有两个范数 $\|\cdot\|_{1}$ 和 $\|\cdot\|_{2}$，如果 $X$ 关于这两个范数都成为 $\text{Banach}$ 空间，而且范数 $\|\cdot\|_{2}$ 关于范数 $\|\cdot\|_{1}$ 连续，那么范数 $\|\cdot\|_{1}$ 也必关于 $\|\cdot\|_{2}$ 连续
-8. 闭图像定理：设 $X$ 和 $Y$ 是 $\text{Banach}$ 空间，$T$ 是 $\mathscr{D}(T) \subseteq X$ 到 $Y$ 中闭线性算子．如果 $\mathscr{D}(T)$ 是闭的，则 $T$ 是有界算子
+7. 闭图像定理：设 $X$ 和 $Y$ 是 $\text{Banach}$ 空间，$T$ 是 $\mathscr{D}(T) \subseteq X$ 到 $Y$ 中闭线性算子．如果 $\mathscr{D}(T)$ 是闭的，则 $T$ 是有界算子
     1. 设 $X$ 和 $Y$ 是赋范空间，$T$ 是 $X$ 的子空间 $\mathscr{D}(T)$ 到 $Y$ 的线性算子，称 $X \times Y$ 的集合 $G(T)=\{(\boldsymbol{x}, \boldsymbol{y}): \boldsymbol{x} \in \mathscr{D}(T), \boldsymbol{y}=T \boldsymbol{x}\}$ 为算子 $T$ 的图像
     2. 在 $X \times Y$ 中，定义 $\|(\boldsymbol{x}, \boldsymbol{y})\|=\|\boldsymbol{x}\|+\|\boldsymbol{y}\|$，易知 $X \times Y$ 按 $\|(\boldsymbol{x}, \boldsymbol{y})\|$ 成为赋范线性空间．如果 $G(T)$ 是 $X \times Y$ 中的闭集，则称 $T$ 是闭算子
 
