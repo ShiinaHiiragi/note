@@ -321,3 +321,10 @@
     2. $\mathbf{ATR}_{0}+\Sigma_{\omega}^{1}-\mathrm{TI} \nvdash \mathbf{\Pi}_{1}^{1}-\mathbf{CA}_{0}$
     3. $\mathbf{ATR}_{0}+\mathbf{\Sigma}_{\infty}^{1}-\mathrm{Ind} \nvdash \Sigma_{1}^{1}-\mathbf{DC}_{0}$
     4. $\mathbf{\Sigma}_{1}^{1}-\mathbf{DC}_{0}+\mathbf{\Sigma}_{\infty}^{1}-\mathrm{Ind} \nvdash \mathbf{ATR}_{0}$
+
+    !!! note "二阶算术关系图"
+
+        <figure markdown>
+            ![](../assets/z2.svg)
+            <style> img[src$="z2.svg"] { width: 95%; } </style>
+        </figure>
