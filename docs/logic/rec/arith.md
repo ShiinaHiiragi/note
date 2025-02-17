@@ -104,7 +104,7 @@
     4. $\Phi-$选择公理模式（$\Phi-\mathbf{AC}$）：$\forall x \exists Y \ \varphi(x, Y) \rightarrow \exists Z \forall x \ \varphi\left(x,(Z)_{x}\right)$，其中 $(Z)_{x} = \{z: (z, x) \in Z\}$
     5. $\Phi-$依赖选择公理模式（$\Phi-\mathbf{DC}$）：$\forall x \forall X \exists Y \ \varphi(x, X, Y) \rightarrow \exists Z \forall x \ \varphi\left(x,(Z)_{x},(Z)_{x+1}\right)$，其中 $(Z)_{x} = \{z: (z, x) \in Z\}$
     6. $\Phi-$分离原则模式（$\Phi-\mathrm{SP}$）：$\forall x \ (\varphi(x) \rightarrow \neg \psi(x)) \rightarrow \exists X \forall x \ ((\varphi(x) \rightarrow x \in X) \wedge(x \in X \rightarrow \neg \psi(x)))$
-    7. $\Phi-$超限归纳模式（$\Phi-\mathrm{TI}$）：设谓词 $W(X)$ 表示集合 $X$ 是自然数上的顺序，将 $(i, j) \in X$ 记作 $i <_{X} j$，则 $\forall X \ \left(W(X) \rightarrow\left(\forall j \ \left(\forall i<_{X} j \ \varphi(i) \rightarrow \varphi(j)\right) \rightarrow \forall j \ \varphi(j)\right)\right)$
+    7. $\Phi-$超限归纳模式（$\Phi-\mathrm{TI}$）：设谓词 $W(X)$ 表示集合 $X$ 是自然数上的良序，将 $(i, j) \in X$ 记作 $i <_{X} j$，则 $\forall X \ \left(W(X) \rightarrow\left(\forall j \ \left(\forall i<_{X} j \ \varphi(i) \rightarrow \varphi(j)\right) \rightarrow \forall j \ \varphi(j)\right)\right)$
     8. $\Phi-\mathrm{Bar}$ 归纳公理模式（$\Phi-\mathrm{BI}$）：若 $a \prec b$ 有定义，则 $(\forall i \prec j \ (i \in X) \to j \in X) \to \forall n \ \varphi(n)$
 
     若取消 $\varphi$ 的限制，则去除对应的 $\Phi$ 前缀
@@ -273,12 +273,13 @@
         2. $\mathbf{ATR}_{0} \nvdash \Sigma_{1}^{1}-\mathrm{Ind}$
     3. 定义集合归纳公理（$\mathrm{SI}$）：$\forall X \ (0 \in X \wedge \forall n \ (n \in X \rightarrow n+1 \in X) \rightarrow \forall n \ n \in X)$，则 $\mathbf{ACA}_{0} - (\Sigma_1^0-\mathrm{Ind}) + \mathrm{SI} \vdash \Pi_0^1-\mathrm{Ind}$
     4. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{ACA}_0$ 等价
-        1. 有穷 $\text{Ramsey}$ 定理
-        2. $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：若 $T$ 为有限分支的无限子树，则 $T$ 有一个无限分支
-        3. 可数交换环必有极大理想
-        4. 可数向量空间的基存在
-        5. $\text{‌Bolzano}-\text{Weierstrass}$ 定理
-        6. $\text{Cauchy}$ 收敛原理
+        1. 良序集基本定理
+        2. 有穷 $\text{Ramsey}$ 定理
+        3. $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：若 $T$ 为有限分支的无限子树，则 $T$ 有一个无限分支
+        4. 可数交换环必有极大理想
+        5. 可数向量空间的基存在
+        6. $\text{‌Bolzano}-\text{Weierstrass}$ 定理
+        7. $\text{Cauchy}$ 收敛原理
 4. $\mathbf{ATR}_0$ 与 $\mathbf{\Phi}-\mathbf{AC}_0$
     1. 无穷博弈：设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，函数 $S_1, S_2: \mathbf N^{<\mathbf{N}} \to \mathbf N$，记由
 
