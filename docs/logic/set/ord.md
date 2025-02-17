@@ -211,8 +211,8 @@
 
                 无穷基数一定是极限序数，$\aleph_{\alpha}$ 恰好表示「第 $\alpha$ 个无穷基数」，由以下定理保证：
 
-                4. 对任意 $\alpha$，$\aleph_{\alpha}$ 是无穷基数
-                5. 对任意无穷基数 $\kappa$，存在 $\alpha$ 使得 $\kappa=\aleph_{\alpha}$
+                1. 对任意 $\alpha$，$\aleph_{\alpha}$ 是无穷基数
+                2. 对任意无穷基数 $\kappa$，存在 $\alpha$ 使得 $\kappa=\aleph_{\alpha}$
 
     4. 强极限基数：对任意 $\lambda<\kappa$，$\kappa$ 都是 $\lambda-$强（即对任意 $\mu < \kappa$ 都有 $\mu^{\lambda}<\kappa$）的
 
@@ -345,10 +345,17 @@
         4. 令 $\lambda<\kappa$，如果长度为 $\lambda$ 的序列 $\left\langle X_{\xi}\right\rangle_{\xi<\lambda}$ 满足对任意 $\xi<\lambda$，都有 $\left|X_{\xi}\right|<\kappa$，则 ${\displaystyle \left|\bigcup_{\xi<\lambda} X_{\xi}\right|<\kappa_{0}}$
 
 6. 连续统假设 $\mathbf{CH}: 2^{\aleph_{0}}=\aleph_{1}$ 与广义连续统假设 $\mathbf{GCH}: 2^{\aleph_{\alpha}}=\aleph_{\alpha+1}$
-    1. 奇异基数假设 $\mathbf{SCH}$：对任意无穷基数 $\kappa$，如果 $2^{\mathrm{cf}(\kappa)}<\kappa$，则 $\kappa^{\operatorname{cf}(\kappa)}=\kappa^{+}$
+    1. 对任意 $\alpha \in \mathbf{On}$，定义 $\mathrm{Beth}$ 数 $\beth_{\alpha}$
+        1. $\beth_0 = \aleph_0$
+        2. $\beth_{\alpha + 1} = 2^{\beth_\alpha}$
+        3. 若 $\alpha$ 为极限序数，则 $\beth_{\alpha} = \sup \{\beth_{\gamma} \mid \gamma < \alpha\}$
+
+        则 $\mathbf{CH}$ 等价于 $\beth_{1} = \aleph_{1}$，$\mathbf{GCH}$ 等价于 $\beth_{\alpha} = \aleph_{\alpha}$ 对任意序数 $\alpha$ 成立
+
+    2. 奇异基数假设 $\mathbf{SCH}$：对任意无穷基数 $\kappa$，如果 $2^{\mathrm{cf}(\kappa)}<\kappa$，则 $\kappa^{\operatorname{cf}(\kappa)}=\kappa^{+}$
         1. $\mathbf{GCH}$ 蕴含 $\mathbf{SCH}$
         2. 奇异基数假设的早期形式 $\mathbf{SCH}'$：如果 $\kappa$ 是强极限的奇异基数，则 $2^{\kappa}=\kappa^{+}$．显然 $\mathbf{SCH}$ 蕴含 $\mathbf{SCH}'$
-    2. 连续统函数：$2^{\aleph_{\alpha}}$，并称 $2^{\aleph_{0}}$ 为连续统的基数
+    3. 连续统函数：$2^{\aleph_{\alpha}}$，并称 $2^{\aleph_{0}}$ 为连续统的基数
         1. 定义无穷基数上 $\text{Gimel}$ 函数为 $\gimel(\kappa)=\kappa^{\mathrm{cf}(\kappa)}$，则对任意无穷基数 $\kappa, \lambda$ 有
 
             $$
@@ -364,7 +371,7 @@
             1. 如果 $\kappa$ 是极限基数，则 $2^{\kappa}=\left(2^{<\kappa}\right)^{\mathrm{cf}(\kappa)}$
             2. 如果 $\kappa$ 是强极限基数，则 $2^{\kappa}=\kappa^{\operatorname{cf}(\kappa)}$
 
-    3. 连续统假设下的基数幂
+    4. 连续统假设下的基数幂
         1. 令 $\kappa, \lambda$ 为无穷基数，同时假设 $\textbf{GCH}$ 成立，则
 
             $$
