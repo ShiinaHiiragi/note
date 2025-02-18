@@ -109,14 +109,6 @@
     2. 若 $C \subseteq \mathcal{P}(\Omega)$，则必存在包含 $C$ 的最小 $\sigma$ 域
         1. 包含集族 $C$ 的最小 $\sigma$ 域称为由 $C$ 生成的 $\sigma$ 域，记为 $\sigma(C)$
         2. 对 $\Omega$ 的子集族 $C$，若以 $C \cap A$ 表示集族 $\{B A: B \in C\}$，则 $\sigma_{\Omega}(C) \cap A=\sigma_{A}(C \cap A)$
-    3. $\text{Borel}$ 域：若 $E$ 为拓扑空间，$B_{E}$ 为 $E$ 中开集全体生成的 $\sigma$ 域，称为 $E$ 上的 $\text{Borel}$ 域
-        1. $B_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集
-        2. $n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
-
-        !!! note "$\text{Borel}$ 集 $A$ 的性质"
-            1. 可测性：对于任意 $X$ 都有 $\mu^{*}(X)=\mu^{*}(X \cap A)+\mu^{*}(X-A)$，其中 $\mu^{*}$ 是外测度
-            2. $\text{Baire}$ 性质：存在一个开集 $G$ 使得 $A \triangle G = (A - G) \cup (G - A)$ 是第一纲集
-            3. 完全集性质：集合 $A$ 或者是可数的，或者包含一个完全集（没有孤立点的集合）
 
 ### 2.2.3 单调类
 1. 单调类：设 $M$ 是 $\mathcal{P}(\Omega)$ 的非空子集族，若对任一集合序列 $\{A_{n}, n \geqslant 1\} \subseteq M$，且
@@ -151,7 +143,18 @@
 
     则称其为 $H$ 上的 $\mathscr{L}$ 类．若 $\pi$ 类 $C \subseteq \mathcal{P}(\Omega)$，又 $H$ 为 $\Omega$ 上的一个 $\mathscr{L}$ 类，且 $H \supseteq \left\{I_{A}, A \in C\right\}$，则 $H$ 包含 $\Omega$ 上一切属于 $L$ 的 $\sigma(C)$ 可测函数
 
-4. 无穷博弈：设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，函数 $S_1, S_2: \mathbf N^{<\mathbf{N}} \to \mathbf N$，记由
+## 2.3 描述集合论
+### 2.3.1 投影集
+1. $\text{Borel}$ 域：若 $E$ 为拓扑空间，称 $E$ 中开集全体生成的 $\sigma$ 域为 $E$ 上的 $\text{Borel}$ 域，记作 $B_{E}$
+    1. $B_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集
+    2. $n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
+2. $\text{Borel}$ 集的正则性：设 $A$ 是 $\text{Borel}$ 集
+    1. 可测性：对于任意 $X$ 都有 $\mu^{*}(X)=\mu^{*}(X \cap A)+\mu^{*}(X-A)$，其中 $\mu^{*}$ 是外测度
+    2. $\text{Baire}$ 性质：存在一个开集 $G$ 使得 $A \triangle G = (A - G) \cup (G - A)$ 是第一纲集
+    3. 完全集性质：集合 $A$ 或者是可数的，或者包含一个完全集（没有孤立点的集合）
+
+### 2.3.2 无穷博弈
+- 无穷博弈：设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，函数 $S_1, S_2: \mathbf N^{<\mathbf{N}} \to \mathbf N$，记由
 
     $$
     \begin{aligned}

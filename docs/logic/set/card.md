@@ -63,5 +63,7 @@
 6. 可扩展基数
 7. $\text{Vop}\check{\mathrm{e}}\text{nka}$ 原理
 8. 巨大基数
-9.  $\text{Rank to Rank}$ 公理
+9. $\text{Rank to Rank}$ 基数
 10. $\text{Reinhardt}$ 基数与 $\text{Berkeley}$ 基数与选择公理不相容
+
+## 5.3 内模型计划

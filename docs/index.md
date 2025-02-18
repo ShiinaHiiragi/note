@@ -295,6 +295,16 @@ const refList = [
         plot: 140
     },
     {
+        author: ["杨睿之"],
+        title: "作为哲学的数理逻辑",
+        type: "M",
+        year: 2016,
+        page: [1, 182],
+        press: "复旦大学出版社",
+        locate: "上海",
+        plot: 143
+    },
+    {
         author: ["李文威"],
         title: "代数学方法",
         type: "M",

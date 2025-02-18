@@ -141,7 +141,7 @@
             3. $A=A_{0} \sqcup A_{1}$，即 $A=A_{0} \cup A_{1}$ 并且 $A_{0} \cap A_{1}=\varnothing$
         2. 如果 $\left(A_{0}, A_{1}\right)$ 是 $A$ 的一个分裂，则 $\operatorname{deg}(A)=\operatorname{deg}\left(A_{0}\right) \vee \operatorname{deg}\left(A_{1}\right)$ 且 $\operatorname{deg}\left(A_{i}\right)<\operatorname{deg}(A)$，其中 $i=0,1$
 
-## 3.3 算术分层
+## 3.3 算术层谱
 1. $\Sigma_1-$集：如果集合 $A$ 是一个递归关系的投影，则称 $A$ 是 $\Sigma_1-$形式的，此时 $A$ 是递归可枚举集
 
     $\Delta_1-$集：如果集合 $A$ 及其补集 $\mathbf N - A$ 都是 $\Sigma_1$ 的，则称 $A$ 是 $\Delta_1$ 形式的，此时 $A$ 是递归集
