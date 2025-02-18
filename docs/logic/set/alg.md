@@ -150,3 +150,17 @@
     3. 设 $X_{n} \geqslant 0, X_{n} \in H, X_{n} \uparrow X$ 且 $X$ 有界或 $X \in L$，则 $X \in H$
 
     则称其为 $H$ 上的 $\mathscr{L}$ 类．若 $\pi$ 类 $C \subseteq \mathcal{P}(\Omega)$，又 $H$ 为 $\Omega$ 上的一个 $\mathscr{L}$ 类，且 $H \supseteq \left\{I_{A}, A \in C\right\}$，则 $H$ 包含 $\Omega$ 上一切属于 $L$ 的 $\sigma(C)$ 可测函数
+
+4. 无穷博弈：设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，函数 $S_1, S_2: \mathbf N^{<\mathbf{N}} \to \mathbf N$，记由
+
+    $$
+    \begin{aligned}
+    n_{2k} & = S_1(n_0, n_1, ..., n_{2k-1}) \\
+    n_{2k+1} & = S_2(n_0, n_1, ..., n_{2k})
+    \end{aligned}
+    $$
+
+    定义的无穷序列 $\left<n_0, n_1, n_2 \cdots,\right>$ 为 $S_1 \# S_2$
+
+    1. 对任意 $\Phi$ 公式 $\varphi(X)$，若有 $\exists S_1 \forall S_2 \ \varphi \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \varphi\left(S_1 \# S_2\right)$，则称 $\Phi-$博弈是被决定的
+    2. 对任意 $\Phi$ 公式 $\varphi(X), \psi(X)$，若有 $\theta(X) = \phi(X) \wedge \neg \psi(X)$ 且 $\exists S_1 \forall S_2 \ \theta \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \theta\left(S_1 \# S_2\right)$，则称 $\Phi_{\rho}-$博弈是被决定的（例如 $\Sigma_{1 \rho}^0-$博弈的决定性）

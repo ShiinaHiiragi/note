@@ -111,7 +111,7 @@
 
 2. 对于任意 $\mathbf{Z}_2$ 的子系统 $\mathbf{T}_0$，令 $\mathbf{T} = \mathbf{T}_0 + \mathrm{1-Ind}$，其中 $\mathrm{1-Ind}$ 是对所有一阶公式都成立的归纳公理模式．设 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$
     1. $\mathbf{RCA}_0 = \mathbf{Q} + \Sigma_1^0-\mathrm{Ind} + \Delta_1^0-\mathrm{CA}$
-    2. $\mathbf{WKL}_0 = \mathbf{RCA}_0 + \text{K}\ddot{\mathrm o}\text{nig}$，后者即弱 $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：若 $T$ 为 $2^{<\omega}$ 的无限子树，则 $T$ 有一个无限分支
+    2. $\mathbf{WKL}_0 = \mathbf{RCA}_0 + \text{K}\ddot{\mathrm o}\text{nig}$，后者即弱 $\text{K}\ddot{\mathrm o}\text{nig}$ 引理
     3. $\mathbf{ACA}_0 = \mathbf{RCA}_0 + \Pi_0^1-\mathrm{CA}, \mathbf{\Phi}-\mathbf{CA}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{CA}$
     4. $\mathbf{ATR}_0 = \mathbf{RCA}_0 + \mathrm{TR}, \mathbf{\Phi}-\mathbf{TR}_0 = \mathbf{RCA}_0 + \Phi-\mathrm{TR}$
     5. $\mathbf{\Phi}-\mathbf{AC}_0 = \mathbf{RCA}_0 + \Phi-\mathbf{AC}$
@@ -275,34 +275,20 @@
     4. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{ACA}_0$ 等价
         1. 良序集基本定理
         2. 有穷 $\text{Ramsey}$ 定理
-        3. $\text{K}\ddot{\mathrm o}\text{nig}$ 引理：若 $T$ 为有限分支的无限子树，则 $T$ 有一个无限分支
+        3. $\text{K}\ddot{\mathrm o}\text{nig}$ 引理
         4. 可数交换环必有极大理想
         5. 可数向量空间的基存在
         6. $\text{‌Bolzano}-\text{Weierstrass}$ 定理
         7. $\text{Cauchy}$ 收敛原理
 4. $\mathbf{ATR}_0$ 与 $\mathbf{\Phi}-\mathbf{AC}_0$
-    1. 无穷博弈：设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，函数 $S_1, S_2: \mathbf N^{<\mathbf{N}} \to \mathbf N$，记由
-
-        $$
-        \begin{aligned}
-        n_{2k} & = S_1(n_0, n_1, ..., n_{2k-1}) \\
-        n_{2k+1} & = S_2(n_0, n_1, ..., n_{2k})
-        \end{aligned}
-        $$
-
-        定义的无穷序列 $\left<n_0, n_1, n_2 \cdots,\right>$ 为 $S_1 \# S_2$
-
-        1. 对任意 $\Phi$ 公式 $\varphi(X)$，若有 $\exists S_1 \forall S_2 \ \varphi \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \varphi\left(S_1 \# S_2\right)$，则称 $\Phi-$博弈是可判定的
-        2. 对任意 $\Phi$ 公式 $\varphi(X), \psi(X)$，若有 $\theta(X) = \phi(X) \wedge \neg \psi(X)$ 且 $\exists S_1 \forall S_2 \ \theta \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \theta\left(S_1 \# S_2\right)$，则称 $\Phi_{\rho}-$博弈是可判定的（例如 $\Sigma_{1 \rho}^0-$博弈的可判定性）
-
-    2. $\text{Ramsey}$ 性质：对于任意层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$ 的公式 $\varphi(f)$，若 $\exists f \in[\mathbf{N}]^{\mathrm{N}} \ (\forall g \in[\mathbf{N}]^{\mathrm{N}} \ \varphi(f \circ g) \vee \forall g \in[\mathbf{N}]^{\mathbf{N}} \ \neg \varphi(f \circ g))$，则称 $\Phi-$划分具有 $\text{Ramsey}$ 性质
-    3. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{ATR}_0$ 等价
-        1. $\Sigma_1^0-$博弈可判定
+    1. $\text{Ramsey}$ 性质：对于任意层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$ 的公式 $\varphi(f)$，若 $\exists f \in[\mathbf{N}]^{\mathrm{N}} \ (\forall g \in[\mathbf{N}]^{\mathrm{N}} \ \varphi(f \circ g) \vee \forall g \in[\mathbf{N}]^{\mathbf{N}} \ \neg \varphi(f \circ g))$，则称 $\Phi-$划分具有 $\text{Ramsey}$ 性质
+    2. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{ATR}_0$ 等价
+        1. $\Sigma_1^0-$博弈是被决定的
         2. $\Sigma_1^0-$划分具有 $\text{Ramsey}$ 性质
         3. $\text{Baire}$ 空间的不可数闭集包含完全集
         4. $\text{Lusin}$ 定理
-    4. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{\Pi}_1^1-\mathbf{AC}_0$ 等价
-        1. $\Sigma_{1 \rho}^0-$博弈可判定
+    3. 以下定理在 $\mathbf{RCA}_0$ 中与 $\mathbf{\Pi}_1^1-\mathbf{AC}_0$ 等价
+        1. $\Sigma_{1 \rho}^0-$博弈是被决定的
         2. $\Sigma_2^0-$划分具有 $\text{Ramsey}$ 性质
         3. $\text{Cantor}-\text{Bendixson}$ 定理：闭集可表示为一个完全集与一个可数集的和
 

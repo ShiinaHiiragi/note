@@ -17,8 +17,8 @@
     2. 递归函数：定义 $Y = \lambda y .(\lambda x . y(x x))(\lambda x . y(x x))$，则对于任意函数 $R$ 有 $YR \rightarrow R(YR)$
 
 2. 定义 $\top = \lambda x . \lambda y . x, \bot = \lambda x . \lambda y . y$，则
-    1. $\neg = \lambda x . x \bot \top$
-    2. $\rightarrow = \lambda x . \lambda y . x y (\neg x)$
+    1. 否定：$\neg = \lambda x . x \bot \top$
+    2. 蕴含：$\rightarrow = \lambda x . \lambda y . x y (\neg x)$
 
     构成命题完全组
 
