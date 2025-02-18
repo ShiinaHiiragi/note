@@ -174,13 +174,13 @@
 2. 超积：设 $I$ 是一个集合，$\mathcal{U}$ 是 $I$ 上的一个滤，$\left\{\mathfrak{A}_{i} \mid i \in I\right\}$ 是一族结构，其中每个 $\mathfrak{A}_{i}$ 的论域是 $A_{i}$
     1. 令 ${\displaystyle \prod_{i \in I} A_{i}=\left\{\left.f: I \to \bigcup_{i \in I} A_{i} \ \right| \ f(i) \in A_{i}\right\}}$
         1. 若 $f \in {\displaystyle \prod_{i \in I} A_{i}}$ 且 $f(i)=a_{i}$，则用 $\left(a_{i}\right)_{i \in I}$ 来表示 $f$
-        2. 定义 ${\displaystyle \prod_{i \in I} A_{i}}$ 上的关系 $\sim_{\mathcal{U}}$ 为 $s \sim_{\mathcal{U}} t$ 当且仅当 $\{i \in I \mid s(i)=t(i)\} \in \mathcal{U}_{0}$，则 $\sim_{\mathcal{U}}$ 是等价关系
-    2. 用 $[t]$ 表示 $t \in {\displaystyle \prod_{i \in I} A_{i}}$ 的等价类，用 ${\displaystyle \prod_{i \in I} A_{i} / \sim_{\mathcal{U}}}$ 表示 ${\displaystyle \prod_{i \in I} A_{i}}$ 关于等价关系 $\sim \mathcal{U}$ 的等价类的集合 $\{[t] \mid t \in \left.\Pi_{i \in I} A_{i}\right\}$，则 $\mathfrak{A}={\displaystyle \left\{\prod_{i \in I} A_{i} / \sim_{\mathcal{U}},\left\{Z^{\mathfrak{A}}\right\}_{Z \in L}\right\}}$ 是一个 $S-$结构
+        2. 定义 ${\displaystyle \prod_{i \in I} A_{i}}$ 上的关系 $\sim_{\mathcal{U}}$ 为 $s \sim_{\mathcal{U}} t$ 当且仅当 $\{i \in I \mid s(i)=t(i)\} \in \mathcal{U}$，则 $\sim_{\mathcal{U}}$ 是等价关系
+    2. 用 $[t]$ 表示 $t \in {\displaystyle \prod_{i \in I} A_{i}}$ 的等价类，用 ${\displaystyle \prod_{i \in I} A_{i} / \sim_{\mathcal{U}}}$ 表示 ${\displaystyle \prod_{i \in I} A_{i}}$ 关于等价关系 $\sim \mathcal{U}$ 的等价类的集合 ${\displaystyle \left\{[t] \left| t \in \prod_{i \in I} A_{i}\right\}\right.}$，则 $\mathfrak{A}={\displaystyle \left\{\prod_{i \in I} A_{i} / \sim_{\mathcal{U}},\left\{Z^{\mathfrak{A}}\right\}_{Z \in L}\right\}}$ 是一个 $S-$结构
         1. 若 $c$ 是常元符号，令 $c_{i}=c^{\mathfrak{A}_{i}}$，则 $\left(c_{i}\right)_{i \in I} \in {\displaystyle \prod_{i \in I} A_{i}}$，将 $c$ 解释为 $\left(c_{i}\right)_{i \in I}$ 的等价类 $\left[\left(c_{i}\right)_{i \in I}\right]$
         2. 若 $f$ 是 $n$ 元函数，对任意 $t_{1}, \cdots, t_{n} \in {\displaystyle \prod_{i \in I} A_{i}}$，令 $f^{\mathfrak{A}}\left(\left[t_{1}\right], \cdots,\left[t_{n}\right]\right)=\left[\left(f^{\mathfrak{A}_{i}}\left(t_{1}(i), \cdots, t_{n}(i)\right)\right)_{i \in I}\right]$
         3. 若 $R$ 是 $n$ 元关系，对任意 $t_{1}, \cdots, t_{n} \in {\displaystyle \prod_{i \in I} A_{i}}$ 都有 $\left(\left[t_{1}\right], \cdots,\left[t_{n}\right]\right) \in R^{\mathfrak{A}}$ 当且仅当 $\left\{i \in I \mid\left(t_{1}(i), \cdots, t_{n}(i)\right) \in R^{\mathfrak{A}}\right\} \in \mathcal{U}$
 
-        若 $\mathcal{U}$ 是集合 $I$ 上的一个超滤，$\mathfrak{B}$ 是一个结构，对每个 $i \in I$，令 $\mathfrak{A}_{i}= \mathfrak{B}$，则将 ${\displaystyle \prod_{i \in I} \mathfrak{A}_{i} / \sim_{\mathcal{U}}}$ 记作 $\mathfrak{B}^{I} / \sim_{\mathcal{U}}$
+        设 $\mathcal{U}$ 是集合 $I$ 上的一个超滤，$\mathfrak{B}$ 是一个结构．若对每个 $i \in I$ 都有 $\mathfrak{A}_{i}= \mathfrak{B}$，则将 ${\displaystyle \prod_{i \in I} \mathfrak{A}_{i} / \sim_{\mathcal{U}}}$ 记作 $\mathfrak{B}^{I} / \sim_{\mathcal{U}}$，称作 $\mathfrak{B}$ 的超幂
 
     3. $\text{Lo}\acute{\mathrm s}$ 超积定理：设 $I$ 是一个集合，$\mathcal{U}$ 是 $I$ 上的一个滤，$\{\mathfrak{A}_i \mid i \in I\}$ 是一族结构，$\left[s_{1}\right], \cdots,\left[s_{n}\right] \in {\displaystyle \prod_{i \in I} A_{i} / \sim_{\mathcal{U}}}$，$\alpha\left(x_{1}, \cdots, x_{n}\right)$ 是一个正公式，则 ${\displaystyle \prod_{i \in I} \mathfrak{A}_{i} / \sim_{\mathcal{U}}} \vDash \alpha\left(\left[s_{1}\right], \cdots,\left[s_{n}\right]\right)$ 当且仅当 $\left\{i \in I \mid \mathfrak{A}_{i} \vDash \alpha\left(s_{1}(i), \cdots, s_{n}(i)\right)\right\} \in \mathcal{U}_{0}$．若 $\mathcal{U}$ 是 $I$ 上的一个超滤，则上式对任意公式 $\alpha\left(x_{1}, \cdots, x_{n}\right)$ 均成立
         1. 若 $\mathcal{U}$ 是集合 $I$ 上的一个超滤，$\mathfrak{B}$ 是一个结构，则 $\mathfrak{B}^{I} / \sim_{\mathcal{U}}$ 与 $\mathfrak{B}$ 初等等价
@@ -193,9 +193,9 @@
 
         则 ${\displaystyle \overline{\mathfrak{C}}=\bigcup_{n \in \mathbf{N}} \mathfrak{C}_{n}}$ 是包含 $\mathfrak{C}$ 的最小的初等类，称之为 $\mathfrak{C}$ 的初等类闭包
 
-        1. 设 $\mathfrak{A}$ 是一个结构，如果对任意的语句 $\sigma$ 都有 $\mathfrak{A} \vDash \sigma$ 蕴涵着存在有限结构 $\mathfrak{A}_{0} \vDash \sigma$，则称 $\mathfrak{A}$ 是伪有限的
-        2. 如果 $\mathfrak{A}$ 是伪有限的，并且不是有限的，则称 $\mathfrak{A}$ 是严格伪有限的
-        3. $\mathfrak{A}$ 是伪有限的当且仅当 $\mathfrak{A}$ 与一族有限结构的超积初等等价
+        4. 设 $\mathfrak{A}$ 是一个结构，如果对任意的语句 $\sigma$ 都有 $\mathfrak{A} \vDash \sigma$ 蕴涵着存在有限结构 $\mathfrak{A}_{0} \vDash \sigma$，则称 $\mathfrak{A}$ 是伪有限的
+        5. 如果 $\mathfrak{A}$ 是伪有限的，并且不是有限的，则称 $\mathfrak{A}$ 是严格伪有限的
+        6. $\mathfrak{A}$ 是伪有限的当且仅当 $\mathfrak{A}$ 与一族有限结构的超积初等等价
 
 3. 紧致性定理：设 $S$ 可数，则 $S-$语句集 $\Sigma$ 是有限一致的当且仅当 $\Sigma$ 是一致的
     1. 若 $\mathscr L(S^{*})$ 是一个语言，$\Sigma^{*}$ 是一个有限一致的 $S^{*}-$语句集，则 $\Sigma^{*}$ 有一个基数不超过 $\left|S^{*}\right|$ 的模型
