@@ -193,9 +193,9 @@
 
         则 ${\displaystyle \overline{\mathfrak{C}}=\bigcup_{n \in \mathbf{N}} \mathfrak{C}_{n}}$ 是包含 $\mathfrak{C}$ 的最小的初等类，称之为 $\mathfrak{C}$ 的初等类闭包
 
-        4. 设 $\mathfrak{A}$ 是一个结构，如果对任意的语句 $\sigma$ 都有 $\mathfrak{A} \vDash \sigma$ 蕴涵着存在有限结构 $\mathfrak{A}_{0} \vDash \sigma$，则称 $\mathfrak{A}$ 是伪有限的
-        5. 如果 $\mathfrak{A}$ 是伪有限的，并且不是有限的，则称 $\mathfrak{A}$ 是严格伪有限的
-        6. $\mathfrak{A}$ 是伪有限的当且仅当 $\mathfrak{A}$ 与一族有限结构的超积初等等价
+        1. 设 $\mathfrak{A}$ 是一个结构，如果对任意的语句 $\sigma$ 都有 $\mathfrak{A} \vDash \sigma$ 蕴涵着存在有限结构 $\mathfrak{A}_{0} \vDash \sigma$，则称 $\mathfrak{A}$ 是伪有限的
+        2. 如果 $\mathfrak{A}$ 是伪有限的，并且不是有限的，则称 $\mathfrak{A}$ 是严格伪有限的
+        3. $\mathfrak{A}$ 是伪有限的当且仅当 $\mathfrak{A}$ 与一族有限结构的超积初等等价
 
 3. 紧致性定理：设 $S$ 可数，则 $S-$语句集 $\Sigma$ 是有限一致的当且仅当 $\Sigma$ 是一致的
     1. 若 $\mathscr L(S^{*})$ 是一个语言，$\Sigma^{*}$ 是一个有限一致的 $S^{*}-$语句集，则 $\Sigma^{*}$ 有一个基数不超过 $\left|S^{*}\right|$ 的模型
