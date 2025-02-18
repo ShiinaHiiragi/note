@@ -97,6 +97,7 @@
     3. 设 $T$ 是一个 $S-$理论，如果 $\Sigma \subseteq T$ 且对每个 $\alpha \in T$ 都有 $\Sigma \vDash \alpha$，则称 $\Sigma$ 是 $T$ 的公理
         1. 若 $\Sigma$ 可判定，则称理论 $T$ 是可公理化的；若 $\Sigma$ 可判定且有穷，则称理论 $T$ 是可有穷公理化的
         2. 任何完备的可公理化理论都是可判定的
+        3. 设 $\Sigma$ 是理论 $T \supseteq \mathbf{Q}$ 的公理，则由不完备定理有 $T = \operatorname{Th}(\operatorname{Mod}(\Sigma)) \subseteq \operatorname{Th}(\mathfrak{N})$
     4. 若对每个 $S-$语句 $\alpha$ 都有 $\alpha \in \Sigma$ 或 $\neg \alpha \in \Sigma$，则称 $\Sigma$ 是完备的 $S-$理论
         1. 设 $\lambda$ 是基数，若 $S-$理论 $T$ 的基数为 $\lambda$ 的模型都相互同构，则称理论 $T$ 是 $\lambda-$范畴的
         2. $\text{Lo}\acute{\mathrm s}-\text{Vaught}$ 判别法：若 $S-$理论 $T$ 只有无穷模型，且 $T$ 是 $\lambda-$范畴的，其中 $\lambda \geqslant |\mathscr L(S)| = |S|+\aleph_{0}$，则 $T$ 是完备的
