@@ -2,7 +2,7 @@
 
 ## 1.1 可计算模型
 ### 1.1.1 λ 演算
-1. 递归论 $\lambda$ 演算：在无类型 $\lambda$ 演算中，定义自然数
+1. 递归论 $\lambda$ 演算：在无类型 $\lambda$ 演算中，定义 $\text{Church}$ 自然数
 
     $$
     \begin{aligned}
