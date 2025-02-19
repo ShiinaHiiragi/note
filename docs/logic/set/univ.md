@@ -40,6 +40,8 @@
     2. 对任意集合 $X$，$\in$ 是 $X$ 上的良基关系
     3. $\mathbf{V}=\mathbf{WF}$
 3. 对任意序数 $\alpha \in \mathbf{On}$，若 $\kappa$ 是不可达基数，则 $\left|V_{\kappa}\right|=\kappa$
+    1. 若 $\gamma>\omega$ 是无穷极限序数，则在 $\mathbf{ZF}$ 中可证明 $V_{\gamma} \vDash \mathbf{Z}$；在 $\mathbf{ZFC}$ 中可证明 $V_{\gamma} \vDash \mathbf{ZC}$
+    2. 若 $\kappa$ 是不可达基数，则在 $\mathbf{ZF}^{-}$ 中可证明 $V_{\kappa} \vDash \mathbf{Z F}$；在 $\mathbf{ZFC}^{-}$ 中可证明 $V_{\kappa} \vDash \mathbf{ZFC}$
 
 ### 4.1.2 绝对性
 1. 相对化：令 $\mathbf{M}$ 为类，$\varphi$ 为公式，则 $\varphi$ 对 $\mathbf{M}$ 的相对化 $\varphi^{\mathbf{M}}$ 递归定义为
@@ -74,53 +76,8 @@
     4. 绝对性的性质：设 $\mathbf{M} \subseteq \mathbf{N}$
         1. 设 $\mathbf{M}, \mathbf{N}$ 都是语句集 $\Sigma$ 的模型，$\Sigma \vdash \forall x_{1} \cdots \forall x_{n} \ \left(\varphi\left(x_{1} \cdots x_{n}\right) \leftrightarrow \psi\left(x_{1} \cdots x_{n}\right)\right)$，则 $\varphi$ 对 $\mathbf{M}, \mathbf{N}$ 是绝对的当且仅当 $\psi$ 也是
         2. 设 $\varphi\left(x_{1}, \cdots, x_{n}\right)$ 是一个公式，$f\left(x_{1}, \cdots, x_{n}\right)$，$g_{i}\left(y_{1}, \cdots, y_{m}\right), 1 \leqslant i \leqslant n$ 为一系列函数，且都相对于 $\mathbf{M}, \mathbf{N}$ 绝对，则公式 $\varphi\left(g_{1}\left(y_{1}, \cdots, y_{m}\right), \cdots, g_{n}\left(y_{1}, \cdots, y_{m}\right)\right)$ 与函数 $f\left(g_{1}\left(y_{1}, \cdots, y_{m}\right), \cdots, g_{n}\left(y_{1}, \cdots, y_{m}\right)\right)$ 也相对于 $\mathbf{M}, \mathbf{N}$ 绝对
-
-        ??? note inline end "具有绝对性的集合论关系与函数"
-            1. 以下定义对任意 $\mathbf{ZF}^{-}-\mathrm{Pow}-\mathrm{Inf}$ 的传递模型 $\mathbf{M}$ 都是绝对的
-                - $x = y$
-                - $x \in y$
-                - $x \subseteq y$
-                - $\varnothing$
-                - $\{x\}$
-                - $\{x, y\}$
-                - $(x, y)$
-                - $x \cup y$
-                - $x \cap y$
-                - ${\displaystyle \bigcup x}$
-                - ${\displaystyle \bigcap x}$
-                - $x - y$
-                - $x^{+}$，即 $x \cup\{x\}$
-                - $x$ 是传递集
-                - $z$ 是有序对
-                - $X \times Y$
-                - $R$ 是关系
-                - $\operatorname{dom}(R)$
-                - $\operatorname{ran}(R)$
-                - $f(x)$
-                - $f$ 是函数
-                - $f$ 是单射
-            2. 以下定义对任意 $\mathbf{ZF}^{-}-\mathrm{Pow}$ 的传递模型 $\mathbf{M}$ 都是绝对的
-                - $X^n$
-                - $X^{<\omega}$
-                - $R$ 是 $X$ 上的良序
-                - $0,1,2, \cdots$
-                - $\omega$
-                - $\operatorname{type}(X, R)$
-                - $x$ 是序数
-                - $x$ 是有穷序数
-                - $x$ 是后继序数
-                - $x$ 是极限序数
-                - $\alpha + 1$
-                - $\alpha - 1$
-                - $\alpha + \beta$
-                - $\alpha \cdot \beta$
-                - $\alpha^{\beta}$
-                - $\operatorname{rank}(x)$，即 $\operatorname{rank}(x, \mathbf{V}, \in)$
-                - $\operatorname{trcl}(x)$
-                - $x$ 是有穷的
-
     5. 以下关系与函数在 $\mathbf{ZFC}$ 相关理论的模型中不是绝对的
-        1. 幂集运算
+        1. 幂集
         2. $x$ 是可数集
         3. $x$ 是基数
         4. $x$ 是极限基数
@@ -136,6 +93,9 @@
 2. $\mathbf{ZFC}$ 相关的相对一致性
     1. 在 $\mathbf{ZF}^{-}$ 中可证 $\mathbf{WF} \vDash \mathbf{ZF}$，因此 $\operatorname{Con}(\mathbf{ZF}^{-}) \to \operatorname{Con}(\mathbf{ZF})$
     2. 在 $\mathbf{ZF}^{-}$ 中可证 $V_{\omega} \vDash \mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf}$，因此 $\operatorname{Con}(\mathbf{ZF}^{-}) \to \operatorname{Con}(\mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf})$
+    3. 记 $\mathrm{IC}$ 为「存在不可达基数」，则 $\mathbf{ZFC} \nvdash \mathrm{IC}$
+        1. $\operatorname{Con}(\mathbf{ZFC}) \not \to \operatorname{Con}(\mathbf{ZFC}+\mathrm{IC})$
+        2. $\operatorname{Con}(\mathbf{ZFC}) \to \operatorname{Con}(\mathbf{ZFC}+\neg \mathrm{IC})$
 3. 反映定理
 
 ### 4.1.4 良基归纳
@@ -184,10 +144,3 @@
     3. $\text{Grothendieck}$ 宇宙等价于强不可达基数：以下两条公理互相等价
         1. 对任意集合 $x$，存在 $\text{Grothendieck}$ 宇宙 $U$ 使得 $x \in U$
         2. 对任意基数 $\kappa$，存在强不可达基数 $\lambda$ 有 $\lambda > \kappa$
-
-<style>
-.md-typeset details.inline {
-    width: 20rem;
-    margin-top: 4.75px;
-}
-</style>
