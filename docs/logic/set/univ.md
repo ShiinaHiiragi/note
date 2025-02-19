@@ -1,7 +1,7 @@
 # 4 集宇宙
 
 ## 4.1 von Neumann 宇宙
-### 4.1.1 良基集
+### 4.1.1 良基集与遗传集
 1. 定义良基集合类 $\mathbf{WF} = {\displaystyle \bigcup_{\alpha \in \mathrm{On}} V_{\alpha}}$，其中 $V_{\alpha}$
     1. $V_{0}=\varnothing$
     2. $V_{\alpha+1}=\mathcal{P}\left(V_{\alpha}\right)$
@@ -34,14 +34,27 @@
         3. 若 $y \in x$，则 $\operatorname{trcl}(y) \subseteq \operatorname{trcl}(x)$
         4. ${\displaystyle \operatorname{trcl}(x)=x \cup \bigcup\{\operatorname{trcl}(y) \mid y \in x\}}$
         5. $X \in \mathbf{WF}$ 当且仅当 $\operatorname{trcl}(X) \in \mathbf{WF}$ 当且仅当 $\in$ 是 $\operatorname{trcl}(X)$ 上的良基关系
+    5. 对任意序数 $\alpha \in \mathbf{On}$，若 $\kappa$ 是不可达基数，则 $\left|V_{\kappa}\right|=\kappa$
+        1. 若 $\gamma>\omega$ 是无穷极限序数，则在 $\mathbf{ZF}$ 中可证明 $V_{\gamma} \vDash \mathbf{Z}$；在 $\mathbf{ZFC}$ 中可证明 $V_{\gamma} \vDash \mathbf{ZC}$
+        2. 若 $\kappa$ 是不可达基数，则在 $\mathbf{ZF}^{-}$ 中可证明 $V_{\kappa} \vDash \mathbf{Z F}$；在 $\mathbf{ZFC}^{-}$ 中可证明 $V_{\kappa} \vDash \mathbf{ZFC}$
+    6. 在 $\mathbf{ZF}^{-}$ 中可证明以下命题等价
+        1. 基础公理
+        2. 对任意集合 $X$，$\in$ 是 $X$ 上的良基关系
+        3. $\mathbf{V}=\mathbf{WF}$
 
-2. 在 $\mathbf{ZF}^{-}$ 中可证明以下命题等价
-    1. 基础公理
-    2. 对任意集合 $X$，$\in$ 是 $X$ 上的良基关系
-    3. $\mathbf{V}=\mathbf{WF}$
-3. 对任意序数 $\alpha \in \mathbf{On}$，若 $\kappa$ 是不可达基数，则 $\left|V_{\kappa}\right|=\kappa$
-    1. 若 $\gamma>\omega$ 是无穷极限序数，则在 $\mathbf{ZF}$ 中可证明 $V_{\gamma} \vDash \mathbf{Z}$；在 $\mathbf{ZFC}$ 中可证明 $V_{\gamma} \vDash \mathbf{ZC}$
-    2. 若 $\kappa$ 是不可达基数，则在 $\mathbf{ZF}^{-}$ 中可证明 $V_{\kappa} \vDash \mathbf{Z F}$；在 $\mathbf{ZFC}^{-}$ 中可证明 $V_{\kappa} \vDash \mathbf{ZFC}$
+2. 对无穷基数 $\kappa$，设 $H_{\kappa}=\{x \mid |\operatorname{trcl}(x)| <\kappa\}$，称 $H_{\kappa}$ 中元素的遗传基数小于 $\kappa$，$H_{\omega}$ 的元素为遗传有穷集，$H_{\omega_{1}}$ 的元素为遗传可数集
+    1. 对任意无穷基数 $\kappa$，$H_{\kappa}$ 都是传递集
+        1. $H_{\kappa} \subseteq V_{\kappa}$
+        2. $H_{\kappa} \cap \mathbf{On}=\kappa$
+        3. 若 $x \in H_{\kappa}$，则 ${\displaystyle \bigcup x \in H_{\kappa}}$
+        4. 若 $x, y \in H_{\kappa}$，则 $\{x, y\} \in H_{\kappa}$
+        5. 若 $x \in H_{\kappa}$ 而 $y \subseteq x$，则 $y \in H_{\kappa}$
+        6. 若 $\kappa$ 是正则的，则 $\forall x \ \left(x \in H_{\kappa} \leftrightarrow x \subseteq H_{\kappa} \wedge|x|<\kappa\right)$
+    2. 若 $\kappa$ 是不可数正则基数，则以下命题等价
+        1. $\kappa$ 是不可达的
+        2. $H_{\kappa}=V_{\kappa}$
+        3. $H_{\kappa} \vDash \mathbf{ZFC}$
+    3. 若 $\kappa$ 是不可数正则基数，则 $H_{\kappa}$ 是 $\mathbf{ZFC}-\mathrm{Pow}$ 的模型
 
 ### 4.1.2 绝对性
 1. 相对化：令 $\mathbf{M}$ 为类，$\varphi$ 为公式，则 $\varphi$ 对 $\mathbf{M}$ 的相对化 $\varphi^{\mathbf{M}}$ 递归定义为
@@ -96,6 +109,7 @@
     3. 记 $\mathrm{IC}$ 为「存在不可达基数」，则 $\mathbf{ZFC} \nvdash \mathrm{IC}$
         1. $\operatorname{Con}(\mathbf{ZFC}) \not \to \operatorname{Con}(\mathbf{ZFC}+\mathrm{IC})$
         2. $\operatorname{Con}(\mathbf{ZFC}) \to \operatorname{Con}(\mathbf{ZFC}+\neg \mathrm{IC})$
+    4. $\operatorname{Con}(\mathbf{ZFC}) \rightarrow \operatorname{Con}(\mathbf{ZFC}-\mathrm{Pow}+\forall x \ (x$ 是可数的$))$
 3. 反映定理
 
 ### 4.1.4 良基归纳
