@@ -70,61 +70,62 @@
         1. 设 $\mathbf{M}, \mathbf{N}$ 都是语句集 $\Sigma$ 的模型，$\Sigma \vdash \forall x_{1} \cdots \forall x_{n} \ \left(\varphi\left(x_{1} \cdots x_{n}\right) \leftrightarrow \psi\left(x_{1} \cdots x_{n}\right)\right)$，则 $\varphi$ 对 $\mathbf{M}, \mathbf{N}$ 是绝对的当且仅当 $\psi$ 也是
         2. 设 $\varphi\left(x_{1}, \cdots, x_{n}\right)$ 是一个公式，$f\left(x_{1}, \cdots, x_{n}\right)$，$g_{i}\left(y_{1}, \cdots, y_{m}\right), 1 \leqslant i \leqslant n$ 为一系列函数，且都相对于 $\mathbf{M}, \mathbf{N}$ 绝对，则公式 $\varphi\left(g_{1}\left(y_{1}, \cdots, y_{m}\right), \cdots, g_{n}\left(y_{1}, \cdots, y_{m}\right)\right)$ 与函数 $f\left(g_{1}\left(y_{1}, \cdots, y_{m}\right), \cdots, g_{n}\left(y_{1}, \cdots, y_{m}\right)\right)$ 也相对于 $\mathbf{M}, \mathbf{N}$ 绝对
 
-    !!! note "集合论关系与函数的绝对性"
-        3. 以下关系与函数对任意 $\mathbf{ZF}^{-}-\mathrm{Pow}-\mathrm{Inf}$ 的传递模型 $\mathbf{M}$ 都是绝对的
-            - $x = y$
-            - $x \in y$
-            - $x \subseteq y$
-            - $\varnothing$
-            - $\{x\}$
-            - $\{x, y\}$
-            - $(x, y)$
-            - $x \cup y$
-            - $x \cap y$
-            - ${\displaystyle \bigcup x}$
-            - ${\displaystyle \bigcap x}$
-            - $x - y$
-            - $x^{+}$，即 $x \cup\{x\}$
-            - $x$ 是传递集
-            - $z$ 是有序对
-            - $X \times Y$
-            - $R$ 是关系
-            - $\operatorname{dom}(R)$
-            - $\operatorname{ran}(R)$
-            - $f(x)$
-            - $f$ 是函数
-            - $f$ 是单射
-        4. 以下关系与函数对任意 $\mathbf{ZF}^{-}-\mathrm{Pow}$ 的传递模型 $\mathbf{M}$ 都是绝对的
-            - $X^n$
-            - $X^{<\omega}$
-            - $R$ 是 $X$ 上的良序
-            - $0,1,2, \cdots$
-            - $\omega$
-            - $\operatorname{type}(X, R)$
-            - $x$ 是序数
-            - $x$ 是有穷序数
-            - $x$ 是后继序数
-            - $x$ 是极限序数
-            - $\alpha + 1$
-            - $\alpha - 1$
-            - $\alpha + \beta$
-            - $\alpha \cdot \beta$
-            - $\alpha^{\beta}$
-            - $\operatorname{rank}(x)$，即 $\operatorname{rank}(x, \mathbf{V}, \in)$
-            - $\operatorname{trcl}(x)$
-            - $x$ 是有穷的
-        5. 以下关系与函数在 $\mathbf{ZFC}$ 相关理论的模型中**不是**绝对的
-            - $x$ 是可数集
-            - $x$ 是基数
-            - $x$ 是极限基数
-            - $x$ 是正则基数
-            - $x$ 是不可达基数
+        ??? note inline end "具有绝对性的集合论关系与函数"
+            1. 以下定义对任意 $\mathbf{ZF}^{-}-\mathrm{Pow}-\mathrm{Inf}$ 的传递模型 $\mathbf{M}$ 都是绝对的
+                - $x = y$
+                - $x \in y$
+                - $x \subseteq y$
+                - $\varnothing$
+                - $\{x\}$
+                - $\{x, y\}$
+                - $(x, y)$
+                - $x \cup y$
+                - $x \cap y$
+                - ${\displaystyle \bigcup x}$
+                - ${\displaystyle \bigcap x}$
+                - $x - y$
+                - $x^{+}$，即 $x \cup\{x\}$
+                - $x$ 是传递集
+                - $z$ 是有序对
+                - $X \times Y$
+                - $R$ 是关系
+                - $\operatorname{dom}(R)$
+                - $\operatorname{ran}(R)$
+                - $f(x)$
+                - $f$ 是函数
+                - $f$ 是单射
+            2. 以下定义对任意 $\mathbf{ZF}^{-}-\mathrm{Pow}$ 的传递模型 $\mathbf{M}$ 都是绝对的
+                - $X^n$
+                - $X^{<\omega}$
+                - $R$ 是 $X$ 上的良序
+                - $0,1,2, \cdots$
+                - $\omega$
+                - $\operatorname{type}(X, R)$
+                - $x$ 是序数
+                - $x$ 是有穷序数
+                - $x$ 是后继序数
+                - $x$ 是极限序数
+                - $\alpha + 1$
+                - $\alpha - 1$
+                - $\alpha + \beta$
+                - $\alpha \cdot \beta$
+                - $\alpha^{\beta}$
+                - $\operatorname{rank}(x)$，即 $\operatorname{rank}(x, \mathbf{V}, \in)$
+                - $\operatorname{trcl}(x)$
+                - $x$ 是有穷的
+
+    5. 以下关系与函数在 $\mathbf{ZFC}$ 相关理论的模型中不是绝对的
+        - $x$ 是可数集
+        - $x$ 是基数
+        - $x$ 是极限基数
+        - $x$ 是正则基数
+        - $x$ 是不可达基数
 
 ### 4.1.3 相对一致性
 1. 设 $T$ 是集合论理论，$\Sigma$ 是语句集，$\mathbf{M}$ 为类且在 $T$ 中可证 $\mathbf{M} \neq \varnothing$．则若在 $T$ 中可证 $\mathbf{M} \vDash \Sigma$，即对任意 $\sigma \in \Sigma$，都在 $T$ 中可证 $\sigma^{\mathrm{M}}$
     1. 对集合论语言的任何语句 $\varphi$，如果 $\Sigma \vdash \varphi$，则 $T \vdash \varphi^{\mathbf{M}}$
     2. 如果 $T$ 一致，则以 $\Sigma$ 为公理的理论也一致
-2. 相对一致性
+2. $\mathbf{ZFC}$ 相关的相对一致性
     1. 在 $\mathbf{ZF}^{-}$ 中可证 $\mathbf{WF} \vDash \mathbf{ZF}$，因此 $\operatorname{Con}(\mathbf{ZF}^{-}) \to \operatorname{Con}(\mathbf{ZF})$
     2. 在 $\mathbf{ZF}^{-}$ 中可证 $V_{\omega} \vDash \mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf}$ 的模型，因此 $\operatorname{Con}(\mathbf{ZF}^{-}) \to \operatorname{Con}(\mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf})$
 3. 若 $\mathbf{M}$ 是 $\mathbf{ZF}-\mathrm{Pow}$ 的传递模型，则 $\mathbf{M}$ 的所有有穷子集都属于 $\mathbf{M}$
@@ -144,6 +145,13 @@
 2. 设 $\kappa$ 是强不可达基数，$S$ 是集合，若对任意 $s_n \in \cdots \in s_0 \in S$ 有 $|s_n| < \kappa$，则称 $S$ 是强类型 $\kappa$ 的，令 $u(\kappa)$ 是所有强类型 $\kappa$ 的集合
     1. 对于任意 $\text{Grothendieck}$ 宇宙 $U$，$|U|$ 为 $0$，$\aleph_0$ 或某个强不可达基数
     2. 若基数 $\kappa$ 为 $0$，$\aleph_0$ 或某个强不可达基数，则存在 $\text{Grothendieck}$ 宇宙 $U = u(\kappa)$，此时 $u(|U|) = U, |u(\kappa)| = \kappa$
-    3. $\text{Grothendieck}$ 宇宙等价于强不可达基数：以下公理等价
+    3. $\text{Grothendieck}$ 宇宙等价于强不可达基数：以下两条公理互相等价
         1. 对任意集合 $x$，存在 $\text{Grothendieck}$ 宇宙 $U$ 使得 $x \in U$
         2. 对任意基数 $\kappa$，存在强不可达基数 $\lambda$ 有 $\lambda > \kappa$
+
+<style>
+.md-typeset details.inline {
+    width: 20rem;
+    margin-top: 4.75px;
+}
+</style>
