@@ -63,7 +63,7 @@
 
 ## 2.2 量词消去
 1. 强极小结构与强极小理论：设 $A$ 是一个 $S-$结构，若对于任意的 $A-$可定义子集 $X \subseteq A$，$X$ 或者是有限集合，或者是余有限集合（即 $A - X$ 是有限集），则称 $A$ 为强极小结构．若 $S-$理论 $T$ 的所有模型都是强极小的，则称 $T$ 是强极小理论
-2. 量词消去：设 $T$ 是一个理论，若对每个公式 $\alpha(\overline{x})$，都存在无量词的公式 $\beta(\overline{x})$ 使 $T \vDash \forall \overline{x}(\alpha(\overline{x}) \leftrightarrow \beta(\overline{x}))$，则称 $T$ 具有量词消去
+2. 量词消去：设 $T$ 是一个理论，若对每个公式 $\alpha(\overline{x})$，都存在无量词的公式 $\beta(\overline{x})$ 使 $T \vDash \forall \overline{x} \ (\alpha(\overline{x}) \leftrightarrow \beta(\overline{x}))$，则称 $T$ 具有量词消去
     1. 若 $S$ 有一个常元符号 $c$ 且 $T$ 具有量词消去，则对每个语句 $\tau$，都存在一个不含量词的语句 $\sigma$，使得 $T \vDash \tau \leftrightarrow \sigma$
     2. 若 $T$ 有量词消去，$A$ 是 $T$ 的模型，则 $A$ 的每个可定义子集都被一个无量词的 $S_{A}-$公式定义
 
@@ -95,14 +95,14 @@
     2. 若 $(\overline{a}, \overline{b})$ 是 $A$ 到 $B$ 的部分同构，则 $\left\{a_{0}, \cdots, a_{n-1}\right\}$ 生成的 $A$ 的子结构 $\langle\overline{a}\rangle^{A}$ 与 $\left\{b_{0}, \cdots, b_{n-1}\right\}$ 生成的 $B$ 的子结构 $\langle\overline{b}\rangle^{B}$ 同构
 3. 进退性质：设 $A$ 与 $B$ 均为 $S-$结构，$I$ 是 $A$ 到 $B$ 的部分同构所构成的集合．若对任意的 $(\overline{a}, \overline{b}) \in I$ 及任意的 $c \in A$，都存在 $d \in B$ 使得 $(\overline{a} c, \overline{b} d) \in I$；反之对任意的 $d^{\prime} \in B$，也存在 $c^{\prime} \in A$ 使得 $\left(\overline{a} c^{\prime}, \overline{b} d^{\prime}\right) \in I$，则称 $I$ 具有进退性质
     1. 设 $T$ 是一个 $S-$理论，则 $T$ 有量词消去当且仅当若 $A, B$ 均是 $T$ 的 $\omega-$饱和模型，且 $I$ 是 $A$ 到 $B$ 的所有部分同构所构成的集合，则 $I$ 有进退性质
-    2. 设 $T$ 是一个 $S-$理论，则 $T$ 有量词消去当且仅当若$A_{1}, A_{2}$ 均是 $T$ 的模型，$M$ 同时是 $A_{1}$ 和 $A_{2}$ 的子结构，则对任意的无量词 $S_{M}-$公式 $\alpha(x)$ 均有 $A_{1} \vDash \exists x \alpha(x) \leftrightarrow A_{2} \vDash \exists x \alpha(x)$
+    2. 设 $T$ 是一个 $S-$理论，则 $T$ 有量词消去当且仅当若$A_{1}, A_{2}$ 均是 $T$ 的模型，$M$ 同时是 $A_{1}$ 和 $A_{2}$ 的子结构，则对任意的无量词 $S_{M}-$公式 $\alpha(x)$ 均有 $A_{1} \vDash \exists x \ \alpha(x) \leftrightarrow A_{2} \vDash \exists x \ \alpha(x)$
 
 ### 2.2.3 模型完全
-1. 模 $T$ 等价：设 $T$ 是一个 $S-$理论，$\alpha(\overline{x}), \beta(\overline{x})$ 是两个 $S-$公式．若 $T \vDash \forall \overline{x}(\alpha(\overline{x}) \leftrightarrow \beta(\overline{x}))$，则称 $\alpha(\overline{x})$ 与 $\beta(\overline{x})$ 模 $T$ 等价
+1. 模 $T$ 等价：设 $T$ 是一个 $S-$理论，$\alpha(\overline{x}), \beta(\overline{x})$ 是两个 $S-$公式．若 $T \vDash \forall \overline{x} \ (\alpha(\overline{x}) \leftrightarrow \beta(\overline{x}))$，则称 $\alpha(\overline{x})$ 与 $\beta(\overline{x})$ 模 $T$ 等价
 2. 模型完全：设 $T$ 是一个 $S-$理论，若任意 $S-$公式都模 $T$ 等价于一个全称公式，则称 $T$ 是模型完全的
     1. 具有量词消去的理论都是模型完全的
     2. 理论 $T$ 是模型完全的当且仅当任意的 $S-$公式都模 $T$ 等价于一个存在公式
     3. 设 $T$ 是一个 $S-$理论，则 $T$ 模型完全与以下命题等价
         1. 设 $A_{1}, A_{2} \vDash T$，且 $A_{1}$ 是 $A_{2}$ 的子结构，则 $A_{1} \prec A_{2}$
-        2. 设 $A_{1}, A_{2} \vDash T$，且 $A_{1}$ 是 $A_{2}$ 的子结构，则对任意 $S_{A_1}-$公式 $\alpha(\overline x)$，若 $\alpha$ 是存在公式，则 $A_{2} \vDash \exists \overline{x} \alpha(\overline{x})$ 蕴含 $A_{1} \vDash \exists \overline{x} \alpha(\overline{x})$
+        2. 设 $A_{1}, A_{2} \vDash T$，且 $A_{1}$ 是 $A_{2}$ 的子结构，则对任意 $S_{A_1}-$公式 $\alpha(\overline x)$，若 $\alpha$ 是存在公式，则 $A_{2} \vDash \exists \overline{x} \ \alpha(\overline{x})$ 蕴含 $A_{1} \vDash \exists \overline{x} \ \alpha(\overline{x})$
         3. 任意存在公式都模 $T$ 等价于一个全称公式

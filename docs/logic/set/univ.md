@@ -55,10 +55,14 @@
         1. $(\varphi \vee \psi)^{\mathbf{M}}$ 即 $\varphi^{\mathbf{M}} \vee \psi^{\mathbf{M}}$
         2. $(\varphi \wedge \psi)^{\mathbf{M}}$ 即 $\varphi^{\mathbf{M}} \wedge \psi^{\mathbf{M}}$
         3. $(\exists x \varphi)^{\mathbf{M}}$ 即 $(\exists x \in \mathbf{M}) \varphi^{\mathbf{M}}$
-    2. 对于 $n$ 元函数符号 $f$，假设其定义由公式 $\varphi\left(x_{1}, \cdots, x_{n}, x_{n+1}\right)$ 给出，则用 $f^{\mathbf{M}}=\left\{\left(x_{1}, \cdots, x_{n}, x_{n+1}\right) \in \mathbf{M} \mid \varphi^{\mathbf{M}}\left(x_{1}, \cdots, x_{n}, x_{n+1}\right)\right\}$ 表示 $f$ 在 $\mathbf{M}$ 中的相对化，其中隐含了 $\mathbf{M} \vDash \forall x_{1} \cdots \forall x_{n} \exists^{1} \ x_{n+1} \varphi\left(x_{1}, \cdots, x_{n}, x_{n+1}\right)$ 的要求
+    2. 函数与类的相对化通过公式的相对化定义
+        1. 对于 $n$ 元函数符号 $f$，假设其定义由 $\varphi\left(x_{1}, \cdots, x_{n}, x_{n+1}\right)$ 给出，则 $f^{\mathbf{M}}=\left\{\left(x_{1}, \cdots, x_{n}, x_{n+1}\right) \in \mathbf{M} \mid \varphi^{\mathbf{M}}\left(x_{1}, \cdots, x_{n}, x_{n+1}\right)\right\}$ 表示 $f$ 在 $\mathbf{M}$ 中的相对化，其中隐含了 $\mathbf{M} \vDash \forall x_{1} \cdots \forall x_{n} \exists^{1} \ x_{n+1} \varphi\left(x_{1}, \cdots, x_{n}, x_{n+1}\right)$ 的要求
+        2. 类 $\mathbf{X}$ 是一个公式 $\mathbf{X}(x)$，其相对化 $\mathbf{X}^{\mathbf{M}}$ 表示为 $\left\{x \in \mathbf{M} \mid \mathbf{X}^{\mathbf{M}}(x)\right\}$
 
 2. 对任意集合论公式 $\psi\left(x_{1}, \ldots, x_{n}\right)$ 与任意满足 $\mathbf{M} \subseteq \mathbf{N}$ 的类，若 $\forall x_{1} \cdots \forall x_{n} \in \mathbf{M} \ \left(\psi^{\mathbf{M}}\left(x_{1}, \ldots, x_{n}\right) \leftrightarrow \psi^{\mathbf{N}}\left(x_{1}, \ldots, x_{n}\right)\right)$，则称 $\psi$ 对于 $\mathbf{M}, \mathbf{N}$ 是绝对的；若 $\mathbf{N}=\mathbf{V}$，则称 $\psi$ 对于 $\mathbf{M}$ 是绝对的
-    1. 设 $\mathbf{M} \subseteq \mathbf{N}, f\left(x_{1}, \cdots, x_{n}\right)$ 是函数，则 $f$ 相对于 $\mathbf{M}, \mathbf{N}$ 是绝对的当且仅当定义 $f$ 的公式 $\varphi\left(x_{1}, \cdots, x_{n}, x_{n+1}\right)$ 也是绝对的．因此 $f$ 相对于 $\mathbf{M}$ 是绝对的当且仅当 $f^{\mathbf{M}}=f \upharpoonright \mathbf{M}$
+    1. 函数与类的绝对性通过公式的绝对性定义
+        1. 设 $\mathbf{M} \subseteq \mathbf{N}, f\left(x_{1}, \cdots, x_{n}\right)$ 是函数，则 $f$ 相对于 $\mathbf{M}, \mathbf{N}$ 是绝对的当且仅当定义 $f$ 的公式 $\varphi\left(x_{1}, \cdots, x_{n}, x_{n+1}\right)$ 也是绝对的．因此 $f$ 相对于 $\mathbf{M}$ 是绝对的当且仅当 $f^{\mathbf{M}}=f \upharpoonright \mathbf{M}$
+        2. 类 $\mathbf{X}$ 是一个公式 $\mathbf{X}(x)$，它对 $\mathbf{M}$ 是绝对的当且仅当 $\forall x \in \mathbf{M} \ \left(\mathbf{X}^{\mathbf{M}}(x) \leftrightarrow \mathbf{X}(x)\right)$ 或 $\mathbf{X}^{\mathrm{M}}=\mathbf{X} \cap \mathbf{M}$
     2. 假设 $\mathbf{M} \subseteq \mathbf{N}$，且 $\varphi, \psi$ 是公式
         1. 若 $\varphi, \psi$ 相对于 $\mathbf{M}, \mathbf{N}$ 是绝对的，则 $\neg \varphi, \varphi \rightarrow \psi$ 也是如此
         2. 若 $\varphi$ 不含量词，则 $\varphi$ 对任意 $\mathbf{M}$ 都是绝对的
@@ -116,13 +120,14 @@
                 - $x$ 是有穷的
 
     5. 以下关系与函数在 $\mathbf{ZFC}$ 相关理论的模型中不是绝对的
-        1. $x$ 是可数集
-        2. $x$ 是基数
-        3. $x$ 是极限基数
-        4. $x$ 是正则基数
-        5. $x$ 是不可达基数
+        1. 幂集运算
+        2. $x$ 是可数集
+        3. $x$ 是基数
+        4. $x$ 是极限基数
+        5. $x$ 是正则基数
+        6. $x$ 是不可达基数
 
-        因此 $\text{Skolem}$ 悖论是佯谬：根据下行 $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理，$\mathbf{ZFC}$ 的模型有一个初等等价的可数子模型，但 $\mathbf{ZFC}$ 中存在不可数集合（例如实数集或 $\text{Cantor}$ 集）
+        因此 $\text{Skolem}$ 佯谬并非悖论：$\mathbf{ZFC}$ 的模型有一个初等等价的可数子模型，但 $\mathbf{ZFC}$ 中存在不可数集合
 
 ### 4.1.3 相对一致性
 1. 设 $T$ 是集合论理论，$\Sigma$ 是语句集，$\mathbf{M}$ 为类且在 $T$ 中可证 $\mathbf{M} \neq \varnothing$．则若在 $T$ 中可证 $\mathbf{M} \vDash \Sigma$，即对任意 $\sigma \in \Sigma$，都在 $T$ 中可证 $\sigma^{\mathrm{M}}$
@@ -134,6 +139,34 @@
 3. 反映定理
 
 ### 4.1.4 良基归纳
+1. 定义类 $\mathbf{R}$ 是类 $\mathbf{X}$ 上的良基关系当且仅当 $\forall U \subseteq \mathbf{X} \ (U \neq \varnothing \rightarrow \exists y \in U \ (\neg \exists z \in U \ (z \mathbf{R} y)))$
+    1. 定义 $\mathbf{X}$ 上的关系 $\mathbf{R}$ 是似集合的当且仅当对任意 $x \in \mathbf{X}$，$\{y \in \mathbf{X} \mid y \mathbf{R} x\}$ 是一个集合，并定义前驱 $\mathrm{pred}$ 及其闭包 $\mathrm{cl}$
+
+        $$
+        \begin{aligned}
+        \operatorname{pred}^{0}(\mathbf{X}, x, \mathbf{R}) & =\{y \in \mathbf{X} \mid y \mathbf{R} x\} \\
+        \operatorname{pred}^{n+1}(\mathbf{X}, x, \mathbf{R}) & =\bigcup\left\{\operatorname{pred}(\mathbf{X}, y, \mathbf{R}) \mid y \in \operatorname{pred}^{n}(\mathbf{X}, x, \mathbf{R})\right\} \\
+        \operatorname{cl}(\mathbf{X}, x, \mathbf{R}) & =\bigcup_{n \in \omega} \operatorname{pred}^{n}(\mathbf{X}, x, \mathbf{R})
+        \end{aligned}
+        $$
+
+        1. 通常将 $\operatorname{pred}^{0}(\mathbf{X}, x, \mathbf{R})$ 记作 $\operatorname{pred}(\mathbf{X}, x, \mathbf{R})$；如果 $\mathbf{X}$ 是传递的，则 $\operatorname{pred}(\mathbf{X}, x, \in)=x, \operatorname{cl}(\mathbf{X}, x, \in)=\operatorname{trcl}(x)$
+        2. 若 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合关系，则对任意 $y \in \operatorname{cl}(\mathbf{X}, x, \mathbf{R})$ 有 $\operatorname{pred}(\mathbf{X}, y, \mathbf{R}) \subseteq \operatorname{cl}(\mathbf{X}, x, \mathbf{R})$
+        3. 若 $\mathbf{R}$ 是 $\mathbf{X}$ 上的良基关系且是似集合的，则 $\mathbf{X}$ 的每一非空子类 $\mathbf{Y}$ 都有 $\mathbf{R}$ 极小元
+
+2. 若 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系，则定义 $\operatorname{rank}(x, \mathbf{X}, \mathbf{R})=\sup \{\operatorname{rank}(y, \mathbf{X}, \mathbf{R})+1 \mid y \mathbf{R} x \wedge y \in \mathbf{X}\}$
+    1. 假设 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合的良基关系。如果 $\mathbf{F}: \mathbf{X} \times \mathbf{V} \rightarrow \mathbf{V}$ 是类函数，则存在唯一的 $\mathbf{G}: \mathbf{X} \rightarrow \mathbf{V}$ 使得
+    2. 在 $\mathbf{ZF}^{-}$ 中可证若 $\mathbf{X}$ 是传递的而 $\in$ 是 $\mathbf{X}$ 上的良基关系，则 $\mathbf{X} \subseteq \mathbf{WF}$，并且对任意 $x \in \mathbf{X}$ 有 $\operatorname{rank}(x, \mathbf{X}, \in)=\operatorname{rank}(x)$
+3. $\text{Mostowski}$ 函数：令 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系，$(\mathbf{X}, \mathbf{R})$ 上的 $\text{Mostowski}$ 函数 $\mathbf{G}$ 定义为 $\mathbf{G}(x)=\{\mathbf{G}(y) \mid y \in \mathbf{X} \wedge y \mathbf{R} x\}$
+    1. $\mathbf{G}$ 的值域通常记为 $\mathbf{M}$，称为 $(\mathbf{X}, \mathbf{R})$ 的 $\text{Mostowski}$ 折叠
+        1. $\forall x, y \in \mathbf{X} \ (x \mathbf{R} y \rightarrow \mathbf{G}(x) \in \mathbf{G}(y))$
+        2. $\mathbf{M}$ 是传递的
+        3. 假设幂集公理成立，则 $\mathbf{M} \subseteq \mathbf{WF}$
+        4. 假设幂集公理成立，并且 $x \in \mathbf{X}$，则 $\operatorname{rank}(x, \mathbf{X}, \mathbf{R})= \operatorname{rank}(\mathbf{G}(x))$
+    2. $\mathbf{R}$ 在 $\mathbf{X}$ 上是外延的当且仅当 $\forall x, y \in \mathbf{X} \ (\forall z \in \mathbf{X} \ (z \mathbf{R} x \leftrightarrow z \mathbf{R} y) \rightarrow x=y)$
+        1. $\mathbf{R}$ 是外延的当且仅当对任意 $x, y \in \mathbf{X}$ 有 $x \neq y \rightarrow \operatorname{pred}(\mathbf{X}, x, \mathbf{R}) \neq \operatorname{pred}(\mathbf{X}, y, \mathbf{R})$
+        2. 若 $\mathbf{X}$ 是传递的，则 $\in$ 在 $\mathbf{X}$ 上是外延的。
+    3. $\text{Mostowski}$ 折叠定理：令 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系且在 $\mathbf{X}$ 上是外延的，则存在传递类 $\mathbf{M}$ 与双射 $\mathbf{G}: \mathbf{X} \rightarrow \mathbf{M}$ 满足 $\mathbf{G}$ 是 $(\mathbf{X}, \mathbf{R})$ 与 $(\mathbf{M}, \in)$ 之间的同构；此外，$\mathbf{M}$ 和 $\mathbf{G}$ 都是唯一的
 
 ## 4.2 Gödel 可构成宇宙
 

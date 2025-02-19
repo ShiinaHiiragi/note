@@ -8,7 +8,7 @@
     3. 对任意的 $n \in \mathbf{N}^{+}$ 与 $A \vDash T$，若 $M \subseteq A$ 是有限集合，则 $S_{n}(M, A)$ 可数
 2. 主型：设 $T$ 是一个 $S-$理论，$\Sigma\left(x_{0}, \cdots, x_{n-1}\right)$ 是 $T$ 的一个 $n-$型．如果存在一个 $S-$公式 $\alpha\left(x_{0}, \cdots, x_{n-1}\right)$，使得
     1. $T \cup \alpha\left(x_{0}, \cdots, x_{n-1}\right)$ 是一致的
-    2. 对任意 $\beta\left(x_{0}, \cdots, x_{n-1}\right) \in \Sigma\left(x_{0}, \cdots, x_{n-1}\right)$，均有 $T \vDash \forall x_{0}, \cdots, x_{n-1}\left(\alpha\left(x_{0}, \cdots, x_{n-1}\right) \rightarrow \beta\left(x_{0}, \cdots, x_{n-1}\right)\right)$
+    2. 对任意 $\beta\left(x_{0}, \cdots, x_{n-1}\right) \in \Sigma\left(x_{0}, \cdots, x_{n-1}\right)$，均有 $T \vDash \forall x_{0}, \cdots, x_{n-1} \ \left(\alpha\left(x_{0}, \cdots, x_{n-1}\right) \rightarrow \beta\left(x_{0}, \cdots, x_{n-1}\right)\right)$
 
     则称 $\Sigma$ 是 $T$ 的一个主 $n-$型，简称主型，并称 $\alpha$ 孤立了 $\Sigma$；否则称 $\Sigma$ 是 $T$ 的一个非主 $n-$型，简称非主型
 
@@ -54,7 +54,7 @@
 4. 设 $T$ 是有无穷模型的可数完备 $S-$理论，则 $T$ 是 $\omega-$范畴的当且仅当以下任一命题成立
     1. （定义）对任意 $n \in \mathbf{N}$，$S_{n}(T)$ 是离散拓扑空间
     2. 对任意的 $n \in \mathbf{N}^{+}$，$S_{n}(T)$ 都是有穷集
-    3. 对任意的 $n \in \mathbf{N}^{+}$，存在 $m \in \mathbf{N}$ 与 $\alpha_{0}\left(x_{0}, \cdots, x_{n-1}\right), \cdots, \alpha_{m-1}\left(x_{0}, \cdots, x_{n-1}\right)$，使得对任意的 $S-$公式 $\beta\left(x_{0}, \cdots, x_{n-1}\right)$，都存在 $i<m$ 使得 $T \vDash \forall x_{0} \cdots x_{n-1}\left(\beta\left(x_{0}, \cdots, x_{n-1}\right) \leftrightarrow \alpha_{i}\left(x_{0}, \cdots, x_{n-1}\right)\right)$
+    3. 对任意的 $n \in \mathbf{N}^{+}$，存在 $m \in \mathbf{N}$ 与 $\alpha_{0}\left(x_{0}, \cdots, x_{n-1}\right), \cdots, \alpha_{m-1}\left(x_{0}, \cdots, x_{n-1}\right)$，使得对任意的 $S-$公式 $\beta\left(x_{0}, \cdots, x_{n-1}\right)$，都存在 $i<m$ 使得 $T \vDash \forall x_{0} \cdots x_{n-1} \ \left(\beta\left(x_{0}, \cdots, x_{n-1}\right) \leftrightarrow \alpha_{i}\left(x_{0}, \cdots, x_{n-1}\right)\right)$
 
 ## 3.2 稳定理论
 ### 3.2.1 ω-稳定性
@@ -96,17 +96,17 @@
 
 ### 3.2.3 Morley 秩
 1. 设 $A$ 是一个 $S-$结构，$\overline{a} \in A^{|\overline{a}|}, \overline{x}=\left(x_{1}, \cdots, x_{n}\right), \alpha(\overline{x}, \overline{y})$ 是一个公式，$\alpha$ 是一个序数递归定义 $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a})) \geqslant \alpha$ 如下
-    1. $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a})) \geqslant 0$ 当且仅当 $A \vDash \exists \overline{x}(\alpha(\overline{x}, \overline{a}))$
+    1. $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a})) \geqslant 0$ 当且仅当 $A \vDash \exists \overline{x} \ (\alpha(\overline{x}, \overline{a}))$
     2. 若 $\alpha$ 是一个极限序数，则 $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a})) \geqslant \alpha$ 当且仅当对任意的 $\delta< \alpha$，都有 $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a})) \geqslant \delta$
     3. $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a})) \geqslant \alpha+1$ 当且仅当存在 $A$ 的一个初等膨胀 $B$ 及一族 $S_{B}-$公式 $\left\{\beta_{j}\left(\overline{x}, \overline{b}_{j}\right) \mid j \in \omega, \overline{b}_{j} \in B^{\left|\overline{b}_{j}\right|}\right\}$ 使得
-        1. 对任意的 $j \in \omega$ 均有 $B \vDash \forall \overline{x}(\beta_{j}(\overline{x}, \overline{b}_{j}) \rightarrow \alpha(\overline{x}, \overline{a}))$
+        1. 对任意的 $j \in \omega$ 均有 $B \vDash \forall \overline{x} \ (\beta_{j}(\overline{x}, \overline{b}_{j}) \rightarrow \alpha(\overline{x}, \overline{a}))$
         2. 对任意的 $j \in \omega$ 均有 $\operatorname{RA}_{n}^{A}(\beta_{j}(\overline{x}, \overline{b}_{j})) \geqslant \alpha$
-        3. 对任意的 $i<j \in \omega$ 均有 $B \vDash \neg \exists \overline{x}(\beta_{i}(\overline{x}, \overline{b}_{i}) \wedge \beta_{j}(\overline{x}, \overline{b}_{j}))$
+        3. 对任意的 $i<j \in \omega$ 均有 $B \vDash \neg \exists \overline{x} \ (\beta_{i}(\overline{x}, \overline{b}_{i}) \wedge \beta_{j}(\overline{x}, \overline{b}_{j}))$
 
     若存在序数 $\alpha$ 使得 $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a})) \geqslant \alpha$ 且 $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a})) \geqslant \alpha+1$，则称 $\alpha(\overline{x}, \overline{a})$ 的 $\text{Morley}$ 秩存在，并称 $\alpha$ 是 $\alpha(\overline{x}, \overline{a})$ 的 $\text{Morley}$ 秩，记作 $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a})) =\alpha$
 
     1. 若对任意的序数 $\alpha$ 有 $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a})) \geqslant \alpha$，则称 $\alpha(\overline{x}, \overline{a})$ 的 $\text{Morley}$ 秩不存在，记作 $\mathrm{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a}))=\infty$
-    2. 如果 $A \vDash \neg \exists \overline{x} \alpha(\overline{x}, \overline{a})$，则令 $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a}))=-1$，不引起歧义时可省去记号 $\mathrm{RA}_{n}^{A}$ 中的下标 $n$；对任意的 $B \succ A$ 及任意的 $S_{A}-$公式 $\alpha(\overline{x})$，在 $A$ 中定义的 $\mathrm{RA}^{A}(\alpha)$ 和 $B$ 中定义的 $\mathrm{RA}^{B}(\alpha)$ 相同．因此不引起歧义时可省略 $\mathrm{RA}^{A}$ 的上标 $A$
+    2. 如果 $A \vDash \neg \exists \overline{x} \ \alpha(\overline{x}, \overline{a})$，则令 $\operatorname{RA}_{n}^{A}(\alpha(\overline{x}, \overline{a}))=-1$，不引起歧义时可省去记号 $\mathrm{RA}_{n}^{A}$ 中的下标 $n$；对任意的 $B \succ A$ 及任意的 $S_{A}-$公式 $\alpha(\overline{x})$，在 $A$ 中定义的 $\mathrm{RA}^{A}(\alpha)$ 和 $B$ 中定义的 $\mathrm{RA}^{B}(\alpha)$ 相同．因此不引起歧义时可省略 $\mathrm{RA}^{A}$ 的上标 $A$
 
 2. 设 $A$ 是一个 $\omega-$饱和模型，$X \subseteq A^{n}$ 是一个可定义集合，$\alpha$ 是一个序数．递归定义 $\mathrm{RA}(X) \geqslant \alpha$ 如下
     1. $\operatorname{RA}(X) \geqslant 0$ 当且仅当 $X \neq \varnothing$
@@ -120,13 +120,13 @@
 
 3. 设 $A$ 是一个 $S-$结构，$\alpha(\overline{x}), \beta(\overline{x})$ 是两个 $S_{A}-$公式
     1. $\operatorname{RA}(\alpha(\overline{x}) \vee \beta(\overline{x}))=\max \{\operatorname{RA}(\alpha(\overline{x})), \operatorname{RA}(\beta(\overline{x}))\}$
-    2. 如果 $A \vDash \forall \overline{x}(\alpha(\overline{x}) \rightarrow \beta(\overline{x}))$，则 $\mathrm{RA}(\alpha(\overline{x})) \leqslant \mathrm{RA}(\beta(\overline{x}))$
-    3. $\operatorname{RA}(\alpha(\overline{x}))=0$ 当且仅当存在自然数 $k>0$ 使得 $A \vDash \exists^{k \small\text{ 个}\normalsize}$ $\overline{x}(\alpha(\overline{x}))$
+    2. 如果 $A \vDash \forall \overline{x} \ (\alpha(\overline{x}) \rightarrow \beta(\overline{x}))$，则 $\mathrm{RA}(\alpha(\overline{x})) \leqslant \mathrm{RA}(\beta(\overline{x}))$
+    3. $\operatorname{RA}(\alpha(\overline{x}))=0$ 当且仅当存在自然数 $k>0$ 使得 $A \vDash \exists^{k \small\text{ 个}\normalsize} \overline{x} \ \alpha(\overline{x})$
 
 4. 设 $A$ 是 $\omega-$饱和的 $S-$结构，$\varphi(\overline x)$ 是 $S_{A}-$公式，$\alpha$ 是一个序数且 $\mathrm{RA}(\varphi(\overline{x}))=\alpha$，若存在 $d$ 个 $S_{A}-$公式 $\psi_{1}(\overline{x}), \cdots, \psi_{d}(\overline{x})$ 使得
     1. 对每个 $1 \leqslant i \leqslant d$，$\mathrm{RA}\left(\psi_{i}\right)=\alpha$
-    2. 对每个 $1 \leqslant i \leqslant d$，$A \vDash \forall \overline{x}\left(\psi_{i}(\overline{x}) \rightarrow \varphi(\overline{x})\right)$
-    3. 对每个 $1 \leqslant i<j \leqslant d$，$A \vDash \neg \exists \overline{x}\left(\psi_{i}(\overline{x}) \wedge \psi_{j}(\overline{x})\right)$
+    2. 对每个 $1 \leqslant i \leqslant d$，$A \vDash \forall \overline{x} \ \left(\psi_{i}(\overline{x}) \rightarrow \varphi(\overline{x})\right)$
+    3. 对每个 $1 \leqslant i<j \leqslant d$，$A \vDash \neg \exists \overline{x} \ \left(\psi_{i}(\overline{x}) \wedge \psi_{j}(\overline{x})\right)$
 
     则存在一个最大满足以上条件的正整数 $d$
 
@@ -146,8 +146,8 @@
 
 7. 设 $A \vDash T$，如果一个 $S_{A}-$公式集 $\Gamma=\left\{\alpha_{\eta}(\overline{x}) \mid \eta \in 2^{<\omega}\right\}$ 满足
     1. 对任意的 $\eta \in 2^{<\omega}, T \cup \alpha_{\eta}$ 一致
-    2. 对任意的 $\eta \in 2^{<\omega}, A \vDash \forall \overline{x}\left(\alpha_{\eta \frown i} \rightarrow \alpha_{\eta}\right)$，其中 $i=0,1$
-    3. 对任意的 $\eta \in 2^{<\omega}, A \vDash \neg \exists \overline{x}\left(\alpha_{\eta \frown 0} \wedge \alpha_{\eta \frown 1}\right)$
+    2. 对任意的 $\eta \in 2^{<\omega}, A \vDash \forall \overline{x} \ \left(\alpha_{\eta \frown i} \rightarrow \alpha_{\eta}\right)$，其中 $i=0,1$
+    3. 对任意的 $\eta \in 2^{<\omega}, A \vDash \neg \exists \overline{x} \ \left(\alpha_{\eta \frown 0} \wedge \alpha_{\eta \frown 1}\right)$
 
     则称 $\Gamma$ 是一个 $S_{A}-$公式关于 $T$ 的二分树．如果对于 $T$ 的任意模型 $A$，都不存在 $S_{A}-$公式的二分树，则称 $T$ 是完全超越的
 
@@ -155,7 +155,7 @@
     2. 设 $T$ 是 $\omega-$稳定理论，则对任意无穷基数 $\kappa$ 以及任意正则基数 $\lambda \leqslant \kappa$，$T$ 都有一个基数为 $\kappa$ 的 $\lambda-$饱和模型
 
 ### 3.2.4 Morley 定理
-1. $\text{Skolem}$ 函数：设 $\overline{S}$ 是任意语言，$\overline{T}$ 是一个 $\overline{S}-$理论（可以是不完备的）．称 $\overline{T}$ 具有 $\text{Skolem}$ 函数当且仅当对任意的 $\overline{S}-$公式 $\alpha(x, \overline{y})$，存在一个 $\overline{S}$ 中的函数符号 $f$，使得 $\overline{T} \vDash \forall y(\exists x \alpha(x, \overline{y}) \leftrightarrow \alpha(f(\overline{y}), \overline{y}))$
+1. $\text{Skolem}$ 函数：设 $\overline{S}$ 是任意语言，$\overline{T}$ 是一个 $\overline{S}-$理论（可以是不完备的）．称 $\overline{T}$ 具有 $\text{Skolem}$ 函数当且仅当对任意的 $\overline{S}-$公式 $\alpha(x, \overline{y})$，存在一个 $\overline{S}$ 中的函数符号 $f$，使得 $\overline{T} \vDash \forall y \ (\exists x \ \alpha(x, \overline{y}) \leftrightarrow \alpha(f(\overline{y}), \overline{y}))$
     1. 设 $N$ 是 $S-$模型，$S \subseteq N$，若 $M=H(S)$ 是 $S$的司寇伦壳，即 $M$ 是包含 $S$ 且对 $H$ 封闭的最小集合，则 $M \prec N$
     2. 设 $S$ 是 $S-$语言，$T$ 是一个 $S-$理论，则存在基数 $\leqslant|S|+\omega$ 的语言 $S^{\prime} \supseteq S$ 及 $S^{\prime}-$理论 $T^{\prime} \supseteq T$，使得 $T^{\prime}$ 具有 $\text{Skolem}$ 函数
     3. 设 $T$ 是一个可数的理论，$\kappa$ 是一个不可数的基数，则存在 $T$ 的一个基数为 $\kappa$ 的模型 $A$，使得对任意可数的 $M \subseteq A$，$A$ 至多可以实现 $S_{1}(M, A)$ 中的可数多个型
