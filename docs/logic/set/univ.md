@@ -115,11 +115,13 @@
                 - $x$ 是有穷的
 
     5. 以下关系与函数在 $\mathbf{ZFC}$ 相关理论的模型中不是绝对的
-        - $x$ 是可数集
-        - $x$ 是基数
-        - $x$ 是极限基数
-        - $x$ 是正则基数
-        - $x$ 是不可达基数
+        1. $x$ 是可数集
+        2. $x$ 是基数
+        3. $x$ 是极限基数
+        4. $x$ 是正则基数
+        5. $x$ 是不可达基数
+
+        因此 $\text{Skolem}$ 悖论是佯谬：根据下行 $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理，$\mathbf{ZFC}$ 的模型有一个初等等价的可数子模型，但 $\mathbf{ZFC}$ 中存在不可数集合（例如实数集或 $\text{Cantor}$ 集）
 
 ### 4.1.3 相对一致性
 1. 设 $T$ 是集合论理论，$\Sigma$ 是语句集，$\mathbf{M}$ 为类且在 $T$ 中可证 $\mathbf{M} \neq \varnothing$．则若在 $T$ 中可证 $\mathbf{M} \vDash \Sigma$，即对任意 $\sigma \in \Sigma$，都在 $T$ 中可证 $\sigma^{\mathrm{M}}$
