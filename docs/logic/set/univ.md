@@ -39,6 +39,7 @@
     1. 基础公理
     2. 对任意集合 $X$，$\in$ 是 $X$ 上的良基关系
     3. $\mathbf{V}=\mathbf{WF}$
+3. 对任意序数 $\alpha \in \mathbf{On}$，若 $\kappa$ 是不可达基数，则 $\left|V_{\kappa}\right|=\kappa$
 
 ### 4.1.2 绝对性
 1. 相对化：令 $\mathbf{M}$ 为类，$\varphi$ 为公式，则 $\varphi$ 对 $\mathbf{M}$ 的相对化 $\varphi^{\mathbf{M}}$ 递归定义为
@@ -129,10 +130,10 @@
     2. 如果 $T$ 一致，则以 $\Sigma$ 为公理的理论也一致
 2. $\mathbf{ZFC}$ 相关的相对一致性
     1. 在 $\mathbf{ZF}^{-}$ 中可证 $\mathbf{WF} \vDash \mathbf{ZF}$，因此 $\operatorname{Con}(\mathbf{ZF}^{-}) \to \operatorname{Con}(\mathbf{ZF})$
-    2. 在 $\mathbf{ZF}^{-}$ 中可证 $V_{\omega} \vDash \mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf}$ 的模型，因此 $\operatorname{Con}(\mathbf{ZF}^{-}) \to \operatorname{Con}(\mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf})$
-3. 若 $\mathbf{M}$ 是 $\mathbf{ZF}-\mathrm{Pow}$ 的传递模型，则 $\mathbf{M}$ 的所有有穷子集都属于 $\mathbf{M}$
+    2. 在 $\mathbf{ZF}^{-}$ 中可证 $V_{\omega} \vDash \mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf}$，因此 $\operatorname{Con}(\mathbf{ZF}^{-}) \to \operatorname{Con}(\mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf})$
+3. 反映定理
 
-### 4.1.4 Mostowski 折叠
+### 4.1.4 良基归纳
 
 ## 4.2 Gödel 可构成宇宙
 
