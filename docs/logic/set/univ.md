@@ -7,7 +7,7 @@
     2. $V_{\alpha+1}=\mathcal{P}\left(V_{\alpha}\right)$
     3. 对任意极限序数 $\lambda$，$V_{\lambda}={\displaystyle \bigcup_{\beta<\lambda} V_{\beta}}$
 
-    则 $\mathbf{WF}$ 是一个真类
+    则 $\mathbf{WF}$ 是一个真类，称作 $\text{von Neumann}$ 宇宙
 
     1. 对任意序数 $\alpha \in \mathbf{On}$
         1. $V_{\alpha}$ 是传递的
@@ -42,7 +42,36 @@
         2. 对任意集合 $X$，$\in$ 是 $X$ 上的良基关系
         3. $\mathbf{V}=\mathbf{WF}$
 
-2. 对无穷基数 $\kappa$，设 $H_{\kappa}=\{x \mid |\operatorname{trcl}(x)| <\kappa\}$，称 $H_{\kappa}$ 中元素的遗传基数小于 $\kappa$，$H_{\omega}$ 的元素为遗传有穷集，$H_{\omega_{1}}$ 的元素为遗传可数集
+2. 定义类 $\mathbf{R}$ 是类 $\mathbf{X}$ 上的良基关系当且仅当 $\forall U \subseteq \mathbf{X} \ (U \neq \varnothing \rightarrow \exists y \in U \ (\neg \exists z \in U \ (z \mathbf{R} y)))$
+    1. 定义 $\mathbf{X}$ 上的关系 $\mathbf{R}$ 是似集合的当且仅当对任意 $x \in \mathbf{X}$，$\{y \in \mathbf{X} \mid y \mathbf{R} x\}$ 是一个集合，并定义前驱 $\mathrm{pred}$ 及其闭包 $\mathrm{cl}$
+
+        $$
+        \begin{aligned}
+        \operatorname{pred}^{0}(\mathbf{X}, x, \mathbf{R}) & =\{y \in \mathbf{X} \mid y \mathbf{R} x\} \\
+        \operatorname{pred}^{n+1}(\mathbf{X}, x, \mathbf{R}) & =\bigcup\left\{\operatorname{pred}(\mathbf{X}, y, \mathbf{R}) \mid y \in \operatorname{pred}^{n}(\mathbf{X}, x, \mathbf{R})\right\} \\
+        \operatorname{cl}(\mathbf{X}, x, \mathbf{R}) & =\bigcup_{n \in \omega} \operatorname{pred}^{n}(\mathbf{X}, x, \mathbf{R})
+        \end{aligned}
+        $$
+
+        1. 通常将 $\operatorname{pred}^{0}(\mathbf{X}, x, \mathbf{R})$ 记作 $\operatorname{pred}(\mathbf{X}, x, \mathbf{R})$；如果 $\mathbf{X}$ 是传递的，则 $\operatorname{pred}(\mathbf{X}, x, \in)=x, \operatorname{cl}(\mathbf{X}, x, \in)=\operatorname{trcl}(x)$
+        2. 若 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合关系，则对任意 $y \in \operatorname{cl}(\mathbf{X}, x, \mathbf{R})$ 有 $\operatorname{pred}(\mathbf{X}, y, \mathbf{R}) \subseteq \operatorname{cl}(\mathbf{X}, x, \mathbf{R})$
+        3. 若 $\mathbf{R}$ 是 $\mathbf{X}$ 上的良基关系且是似集合的，则 $\mathbf{X}$ 的每一非空子类 $\mathbf{Y}$ 都有 $\mathbf{R}$ 极小元
+
+    2. 若 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系，则定义 $\operatorname{rank}(x, \mathbf{X}, \mathbf{R})=\sup \{\operatorname{rank}(y, \mathbf{X}, \mathbf{R})+1 \mid y \mathbf{R} x \wedge y \in \mathbf{X}\}$
+        1. 假设 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合的良基关系。如果 $\mathbf{F}: \mathbf{X} \times \mathbf{V} \rightarrow \mathbf{V}$ 是类函数，则存在唯一的 $\mathbf{G}: \mathbf{X} \rightarrow \mathbf{V}$ 使得
+        2. 在 $\mathbf{ZF}^{-}$ 中可证若 $\mathbf{X}$ 是传递的而 $\in$ 是 $\mathbf{X}$ 上的良基关系，则 $\mathbf{X} \subseteq \mathbf{WF}$，并且对任意 $x \in \mathbf{X}$ 有 $\operatorname{rank}(x, \mathbf{X}, \in)=\operatorname{rank}(x)$
+
+3. $\text{Mostowski}$ 函数：令 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系，$(\mathbf{X}, \mathbf{R})$ 上的 $\text{Mostowski}$ 函数 $\mathbf{G}$ 定义为 $\mathbf{G}(x)=\{\mathbf{G}(y) \mid y \in \mathbf{X} \wedge y \mathbf{R} x\}$
+    1. $\mathbf{G}$ 的值域通常记为 $\mathbf{M}$，称为 $(\mathbf{X}, \mathbf{R})$ 的 $\text{Mostowski}$ 折叠
+        1. $\forall x, y \in \mathbf{X} \ (x \mathbf{R} y \rightarrow \mathbf{G}(x) \in \mathbf{G}(y))$
+        2. $\mathbf{M}$ 是传递的
+        3. 假设幂集公理成立，则 $\mathbf{M} \subseteq \mathbf{WF}$
+        4. 假设幂集公理成立，并且 $x \in \mathbf{X}$，则 $\operatorname{rank}(x, \mathbf{X}, \mathbf{R})= \operatorname{rank}(\mathbf{G}(x))$
+    2. $\mathbf{R}$ 在 $\mathbf{X}$ 上是外延的当且仅当 $\forall x, y \in \mathbf{X} \ (\forall z \in \mathbf{X} \ (z \mathbf{R} x \leftrightarrow z \mathbf{R} y) \rightarrow x=y)$
+        1. $\mathbf{R}$ 是外延的当且仅当对任意 $x, y \in \mathbf{X}$ 有 $x \neq y \rightarrow \operatorname{pred}(\mathbf{X}, x, \mathbf{R}) \neq \operatorname{pred}(\mathbf{X}, y, \mathbf{R})$
+        2. 若 $\mathbf{X}$ 是传递的，则 $\in$ 在 $\mathbf{X}$ 上是外延的。
+    3. $\text{Mostowski}$ 折叠定理：令 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系且在 $\mathbf{X}$ 上是外延的，则存在传递类 $\mathbf{M}$ 与双射 $\mathbf{G}: \mathbf{X} \rightarrow \mathbf{M}$ 满足 $\mathbf{G}$ 是 $(\mathbf{X}, \mathbf{R})$ 与 $(\mathbf{M}, \in)$ 之间的同构；此外，$\mathbf{M}$ 和 $\mathbf{G}$ 都是唯一的
+4. 设 $\kappa$ 为无穷基数，$H_{\kappa}=\{x \mid |\operatorname{trcl}(x)| <\kappa\}$，称 $H_{\kappa}$ 中元素的遗传基数小于 $\kappa$，$H_{\omega}$ 的元素为遗传有穷集，$H_{\omega_{1}}$ 的元素为遗传可数集
     1. 对任意无穷基数 $\kappa$，$H_{\kappa}$ 都是传递集
         1. $H_{\kappa} \subseteq V_{\kappa}$
         2. $H_{\kappa} \cap \mathbf{On}=\kappa$
@@ -55,6 +84,14 @@
         2. $H_{\kappa}=V_{\kappa}$
         3. $H_{\kappa} \vDash \mathbf{ZFC}$
     3. 若 $\kappa$ 是不可数正则基数，则 $H_{\kappa}$ 是 $\mathbf{ZFC}-\mathrm{Pow}$ 的模型
+5. 反映定理：在 $\mathbf{ZF}$ 中可证对任意有穷公式集 $F=\left\{\varphi_{1}, \cdots, \varphi_{n}\right\}$，对任意 $V_{\alpha}$，存在 $V_{\beta}$ 有 $V_{\alpha} \subseteq V_{\beta}$ 且 $\varphi_{1}, \cdots, \varphi_{n}$ 相对于 $V_{\beta}$ 是绝对的
+    1. 在 $\mathbf{ZF}$ 中可证若 $F=\left\{\sigma_{1}, \cdots, \sigma_{n}\right\}$ 为 $\mathbf{ZF}$ 公理的有穷子集，则 $\forall \alpha \exists \beta>\alpha \ (\sigma_{1}^{V_{\beta}} \wedge \cdots \wedge \sigma_{n}^{V_{\beta}})$
+    2. 令 $F=\left\{\sigma_{1}, \cdots, \sigma_{n}\right\}$ 为 $\mathbf{ZF}$ 公理的有穷子集，除非 $\mathbf{ZF}$ 是不一致的，否则 $F$ 不能证明 $\mathbf{ZF}$ 的所有公理
+    3. 在 $\mathbf{ZFC}$ 中可证对任意有穷公式集 $F=\left\{\varphi_{1}, \cdots, \varphi_{n}\right\}$ 与任意集合 $N$，存在集合 $M$ 使得
+        1. $N \subseteq M, |M| \leqslant|N| \cdot \omega$
+        2. $\varphi_{1}, \cdots, \varphi_{n}$ 相对于 $(M, \in)$ 是绝对的
+        3. 若 $N$ 是至多可数的，则 $M$ 是可数的
+        4. 若 $N$ 是传递的，则 $M$ 也是传递的
 
 ### 4.1.2 绝对性
 1. 相对化：令 $\mathbf{M}$ 为类，$\varphi$ 为公式，则 $\varphi$ 对 $\mathbf{M}$ 的相对化 $\varphi^{\mathbf{M}}$ 递归定义为
@@ -110,37 +147,6 @@
         1. $\operatorname{Con}(\mathbf{ZFC}) \not \to \operatorname{Con}(\mathbf{ZFC}+\mathrm{IC})$
         2. $\operatorname{Con}(\mathbf{ZFC}) \to \operatorname{Con}(\mathbf{ZFC}+\neg \mathrm{IC})$
     4. $\operatorname{Con}(\mathbf{ZFC}) \rightarrow \operatorname{Con}(\mathbf{ZFC}-\mathrm{Pow}+\forall x \ (x$ 是可数的$))$
-3. 反映定理
-
-### 4.1.4 良基归纳
-1. 定义类 $\mathbf{R}$ 是类 $\mathbf{X}$ 上的良基关系当且仅当 $\forall U \subseteq \mathbf{X} \ (U \neq \varnothing \rightarrow \exists y \in U \ (\neg \exists z \in U \ (z \mathbf{R} y)))$
-    1. 定义 $\mathbf{X}$ 上的关系 $\mathbf{R}$ 是似集合的当且仅当对任意 $x \in \mathbf{X}$，$\{y \in \mathbf{X} \mid y \mathbf{R} x\}$ 是一个集合，并定义前驱 $\mathrm{pred}$ 及其闭包 $\mathrm{cl}$
-
-        $$
-        \begin{aligned}
-        \operatorname{pred}^{0}(\mathbf{X}, x, \mathbf{R}) & =\{y \in \mathbf{X} \mid y \mathbf{R} x\} \\
-        \operatorname{pred}^{n+1}(\mathbf{X}, x, \mathbf{R}) & =\bigcup\left\{\operatorname{pred}(\mathbf{X}, y, \mathbf{R}) \mid y \in \operatorname{pred}^{n}(\mathbf{X}, x, \mathbf{R})\right\} \\
-        \operatorname{cl}(\mathbf{X}, x, \mathbf{R}) & =\bigcup_{n \in \omega} \operatorname{pred}^{n}(\mathbf{X}, x, \mathbf{R})
-        \end{aligned}
-        $$
-
-        1. 通常将 $\operatorname{pred}^{0}(\mathbf{X}, x, \mathbf{R})$ 记作 $\operatorname{pred}(\mathbf{X}, x, \mathbf{R})$；如果 $\mathbf{X}$ 是传递的，则 $\operatorname{pred}(\mathbf{X}, x, \in)=x, \operatorname{cl}(\mathbf{X}, x, \in)=\operatorname{trcl}(x)$
-        2. 若 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合关系，则对任意 $y \in \operatorname{cl}(\mathbf{X}, x, \mathbf{R})$ 有 $\operatorname{pred}(\mathbf{X}, y, \mathbf{R}) \subseteq \operatorname{cl}(\mathbf{X}, x, \mathbf{R})$
-        3. 若 $\mathbf{R}$ 是 $\mathbf{X}$ 上的良基关系且是似集合的，则 $\mathbf{X}$ 的每一非空子类 $\mathbf{Y}$ 都有 $\mathbf{R}$ 极小元
-
-2. 若 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系，则定义 $\operatorname{rank}(x, \mathbf{X}, \mathbf{R})=\sup \{\operatorname{rank}(y, \mathbf{X}, \mathbf{R})+1 \mid y \mathbf{R} x \wedge y \in \mathbf{X}\}$
-    1. 假设 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合的良基关系。如果 $\mathbf{F}: \mathbf{X} \times \mathbf{V} \rightarrow \mathbf{V}$ 是类函数，则存在唯一的 $\mathbf{G}: \mathbf{X} \rightarrow \mathbf{V}$ 使得
-    2. 在 $\mathbf{ZF}^{-}$ 中可证若 $\mathbf{X}$ 是传递的而 $\in$ 是 $\mathbf{X}$ 上的良基关系，则 $\mathbf{X} \subseteq \mathbf{WF}$，并且对任意 $x \in \mathbf{X}$ 有 $\operatorname{rank}(x, \mathbf{X}, \in)=\operatorname{rank}(x)$
-3. $\text{Mostowski}$ 函数：令 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系，$(\mathbf{X}, \mathbf{R})$ 上的 $\text{Mostowski}$ 函数 $\mathbf{G}$ 定义为 $\mathbf{G}(x)=\{\mathbf{G}(y) \mid y \in \mathbf{X} \wedge y \mathbf{R} x\}$
-    1. $\mathbf{G}$ 的值域通常记为 $\mathbf{M}$，称为 $(\mathbf{X}, \mathbf{R})$ 的 $\text{Mostowski}$ 折叠
-        1. $\forall x, y \in \mathbf{X} \ (x \mathbf{R} y \rightarrow \mathbf{G}(x) \in \mathbf{G}(y))$
-        2. $\mathbf{M}$ 是传递的
-        3. 假设幂集公理成立，则 $\mathbf{M} \subseteq \mathbf{WF}$
-        4. 假设幂集公理成立，并且 $x \in \mathbf{X}$，则 $\operatorname{rank}(x, \mathbf{X}, \mathbf{R})= \operatorname{rank}(\mathbf{G}(x))$
-    2. $\mathbf{R}$ 在 $\mathbf{X}$ 上是外延的当且仅当 $\forall x, y \in \mathbf{X} \ (\forall z \in \mathbf{X} \ (z \mathbf{R} x \leftrightarrow z \mathbf{R} y) \rightarrow x=y)$
-        1. $\mathbf{R}$ 是外延的当且仅当对任意 $x, y \in \mathbf{X}$ 有 $x \neq y \rightarrow \operatorname{pred}(\mathbf{X}, x, \mathbf{R}) \neq \operatorname{pred}(\mathbf{X}, y, \mathbf{R})$
-        2. 若 $\mathbf{X}$ 是传递的，则 $\in$ 在 $\mathbf{X}$ 上是外延的。
-    3. $\text{Mostowski}$ 折叠定理：令 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系且在 $\mathbf{X}$ 上是外延的，则存在传递类 $\mathbf{M}$ 与双射 $\mathbf{G}: \mathbf{X} \rightarrow \mathbf{M}$ 满足 $\mathbf{G}$ 是 $(\mathbf{X}, \mathbf{R})$ 与 $(\mathbf{M}, \in)$ 之间的同构；此外，$\mathbf{M}$ 和 $\mathbf{G}$ 都是唯一的
 
 ## 4.2 Gödel 可构成宇宙
 
