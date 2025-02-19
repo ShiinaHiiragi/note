@@ -1,7 +1,7 @@
 # 4 集宇宙
 
 ## 4.1 von Neumann 宇宙
-### 4.1.1 良基集与遗传集
+### 4.1.1 良基集
 1. 定义良基集合类 $\mathbf{WF} = {\displaystyle \bigcup_{\alpha \in \mathrm{On}} V_{\alpha}}$，其中 $V_{\alpha}$
     1. $V_{0}=\varnothing$
     2. $V_{\alpha+1}=\mathcal{P}\left(V_{\alpha}\right)$
