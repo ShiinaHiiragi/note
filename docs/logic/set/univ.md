@@ -21,7 +21,7 @@
         4. $\alpha \in \mathbf{WF}$ 且 $\operatorname{rank}(\alpha)=\alpha$
     3. $\mathbf{WF}$ 是传递的，即对任意 $y \in \mathbf{WF}$，若 $x \in y$，则 $x \in \mathbf{WF}$
         1. 对任意集合 $x$，$x \in \mathbf{WF}$ 当且仅当 $x \subseteq \mathbf{WF}$
-        2. 设 $x \in \mathbf{WF}$，则 ${\displaystyle \bigcup x, \mathcal{P}(x)}$ 以及 $\{x\}$ 属于 $\mathbf{WF}$，且其秩都小于 $\operatorname{rank}(x)+\omega$
+        2. 设 $x \in \mathbf{WF}$，则 $\bigcup x, \mathcal{P}(x)$ 以及 $\{x\}$ 属于 $\mathbf{WF}$，且其秩都小于 $\operatorname{rank}(x)+\omega$
         3. 若 $x, y \in \mathbf{WF}$，则 $x \times y, x \cup y, x \cap y,\{x, y\},(x, y), x^{y}$ 都属于 $\mathbf{WF}$，且其秩都小于 $\operatorname{rank}(x)+\operatorname{rank}(y)+\omega$
         4. 整数集 $\mathbf{Z}$，有理数集 $\mathbf{Q}$ 和实数集 $\mathbf{R}$ 都属于 $V_{\omega+\omega}$
         5. 若 $A \in \mathbf{WF}$，则 $\in$ 是 $A$ 上的良基关系
@@ -32,7 +32,7 @@
         1. 若 $A$ 是传递集，且 $\in$ 是 $A$ 上的良基关系，则 $A \in \mathbf{WF}$
         2. 若 $x$ 是传递的，则 $\operatorname{trcl}(x)=x$
         3. 若 $y \in x$，则 $\operatorname{trcl}(y) \subseteq \operatorname{trcl}(x)$
-        4. ${\displaystyle \operatorname{trcl}(x)=x \cup \bigcup\{\operatorname{trcl}(y) \mid y \in x\}}$
+        4. $\operatorname{trcl}(x)=x \cup \bigcup\{\operatorname{trcl}(y) \mid y \in x\}$
         5. $X \in \mathbf{WF}$ 当且仅当 $\operatorname{trcl}(X) \in \mathbf{WF}$ 当且仅当 $\in$ 是 $\operatorname{trcl}(X)$ 上的良基关系
     5. 对任意序数 $\alpha \in \mathbf{On}$，若 $\kappa$ 是不可达基数，则 $\left|V_{\kappa}\right|=\kappa$
         1. 若 $\gamma>\omega$ 是无穷极限序数，则在 $\mathbf{ZF}$ 中可证明 $V_{\gamma} \vDash \mathbf{Z}$；在 $\mathbf{ZFC}$ 中可证明 $V_{\gamma} \vDash \mathbf{ZC}$
@@ -75,7 +75,7 @@
     1. 对任意无穷基数 $\kappa$，$H_{\kappa}$ 都是传递集
         1. $H_{\kappa} \subseteq V_{\kappa}$
         2. $H_{\kappa} \cap \mathbf{On}=\kappa$
-        3. 若 $x \in H_{\kappa}$，则 ${\displaystyle \bigcup x \in H_{\kappa}}$
+        3. 若 $x \in H_{\kappa}$，则 $\bigcup x \in H_{\kappa}$
         4. 若 $x, y \in H_{\kappa}$，则 $\{x, y\} \in H_{\kappa}$
         5. 若 $x \in H_{\kappa}$ 而 $y \subseteq x$，则 $y \in H_{\kappa}$
         6. 若 $\kappa$ 是正则的，则 $\forall x \ \left(x \in H_{\kappa} \leftrightarrow x \subseteq H_{\kappa} \wedge|x|<\kappa\right)$
@@ -149,6 +149,20 @@
     4. $\operatorname{Con}(\mathbf{ZFC}) \rightarrow \operatorname{Con}(\mathbf{ZFC}-\mathrm{Pow}+\forall x \ (x$ 是可数的$))$
 
 ## 4.2 Gödel 可构成宇宙
+### 4.2.1 Gödel 运算
+1. $\text{G}\ddot{\mathrm o}\text{del}$ 运算
+    1. $G_{1}(X, Y) =\{X, Y\}$
+    2. $G_{2}(X, Y) =X \times Y$
+    3. $G_{3}(X, Y) =\in \upharpoonright X \times Y=\{(u, v) \mid u \in X \wedge v \in Y \wedge u \in v\}$
+    4. $G_{4}(X, Y) =X-Y$
+    5. $G_{5}(X, Y) =X \cap Y$
+    6. $G_{6}(X, Y) =\bigcap X$
+    7. $G_{7}(X, Y) =\operatorname{dom}(X)$
+    8. $G_{8}(X, Y) =\{(x, y) \mid(y, x) \in X\}$
+    9. $G_{9}(X, Y) =\{(x, y, z) \mid(x, z, y) \in X\}$
+    10. $G_{10}(X, Y) =\{(x, y, z) \mid(y, z, x) \in X\}$
+
+### 4.2.2 可构成宇宙
 
 ## 4.3 Grothendieck 宇宙
 1. $\text{Grothendieck}$ 宇宙是满足以下性质的集合 $U$

@@ -91,7 +91,7 @@
         3. $\beta, \gamma \in C_{\kappa}^{n}(\alpha) \to I_{\beta}(\gamma) \in C_{\kappa}^{n+1}(\alpha)$
         4. $\gamma<\pi<\kappa \wedge \pi \in C_{\kappa}^{n}(\alpha) \to \gamma \in C_{\kappa}^{n+1}(\alpha)$
         5. $\gamma<\alpha \wedge \gamma, \pi \in C_{\kappa}^{n}(\alpha) \wedge \gamma \in C_{\pi}(\gamma) \to \psi_{\pi}(\gamma) \in C_{\kappa}^{n+1}(\alpha)$
-        6. $C_{\kappa}(\alpha)={\displaystyle \bigcup\left\{C_{\kappa}^{n}(\alpha) \mid n<\omega\right\}}$
+        6. $C_{\kappa}(\alpha)=\bigcup\left\{C_{\kappa}^{n}(\alpha) \mid n<\omega\right\}$
         7. $\psi_{\kappa}(\alpha)=\min \left\{\xi \mid \xi \notin C_{\kappa}(\alpha)\right\}$
 
     5. $\text{J}\ddot{\mathrm{a}}\text{ger}-\text{Buchholz} \ \psi-$函数：假设存在弱不可达基数，设 $I$ 为最小的弱不可达基数，$\mathrm{Reg}_{I}$ 表示不大于 $I$ 的全体正则基数集合
