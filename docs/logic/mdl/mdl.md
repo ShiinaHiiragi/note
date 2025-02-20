@@ -26,7 +26,7 @@
 
 ### 1.1.2 同态与同构
 1. 同态：设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}, \mathfrak B = \left\{B, \{Z^\mathfrak B\}_{Z\in S}\right\}$ 是两个 $S-$结构，如果一个映射 $h: A\to B$ 满足
-    1. 对每个 $n$ 元关系符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 蕴涵 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$
+    1. 对每个 $n$ 元关系符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 蕴含 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$
     2. 对每个 $n$ 元函数符号 $f\in \mathbf F$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $h(f^\mathfrak A(a_1, a_2, \cdots, a_n)) = f^\mathfrak B(h(a_1), h(a_2), \cdots, h(a_n))$
     3. 对每个常元符号 $c\in \mathbf C$，$h(c^\mathfrak A) = c^\mathfrak B$
 
@@ -39,7 +39,7 @@
 2. 嵌入与同构：设 $\mathfrak A, \mathfrak B$ 是论域分别为 $A, B$ 的两个 $S-$结构，$h: A \to B$ 是一个映射．将 $\mathfrak B$ 扩张为论域为 $A$ 的 $\mathfrak B'$ 使得对于新常元 $a \in A$，有 $a^{\mathfrak B'} = h(a)$，记 $\mathfrak B' = (\mathfrak B, h(a))_{a\in A}$
     1. 嵌入：如果同态 $h: \mathfrak A \to \mathfrak B$ 是单射且对每个 $n$ 元关系符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 当且仅当 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$，则称 $h$ 是（$\mathfrak A$ 到 $\mathfrak B$）的嵌入
         1. $h: \mathfrak A \to \mathfrak B$ 是一个嵌入当且仅当对任意无量词公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 与 $\overline a \in A^n$ 有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(h(\overline b))$
-        2. $h: \mathfrak A \to B$ 是一个嵌入，如果 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 是一个存在公式，则对任意 $\overline a \in A^n$ 有 $\mathfrak A \vDash \alpha(\overline a)$ 蕴涵 $\mathfrak B \vDash \alpha(h(\overline a))$
+        2. $h: \mathfrak A \to B$ 是一个嵌入，如果 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 是一个存在公式，则对任意 $\overline a \in A^n$ 有 $\mathfrak A \vDash \alpha(\overline a)$ 蕴含 $\mathfrak B \vDash \alpha(h(\overline a))$
         3. $h$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入当且仅当 $(\mathfrak B, h(a))_{a\in A} \vDash \mathrm{Diag}(\mathfrak A)$，当且仅当 $(\mathfrak B, h(a))_{a\in A} \vDash \mathrm{Diag_{el}}(\mathfrak A)$
     2. 初等嵌入与部分嵌入：设 $M \subseteq A, N \subseteq B$
         1. 初等嵌入：若 $\eta: \mathfrak A \to \mathfrak B$ 对于任意的公式 $\alpha(\overline x)$ 与 $\overline a\in A^n$ 都有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(\eta(\overline a))$，则称 $\eta$ 是一个初等嵌入；若将条件放宽到 $\Phi \in \{\Pi_{n}^{m}, \Sigma_{n}^{m}, \Delta_{n}^{m}\}$ 层级的公式，则称之为 $\Phi-$初等嵌入
@@ -80,8 +80,8 @@
     4. $\text{Tarski}$ 准则：设 $M \subseteq A$ 非空，则 $M$ 是 $\mathfrak A$ 的初等子结构当且仅当若 $X \subseteq A$ 是非空的 $M-$可定义子集，则 $X \cap M = \varnothing$
 5. 定向集：设 $(I, <)$ 是一个偏序集，如果对任意的 $i, j \in I$ 都存在 $k \in I$ 使得 $i \leqslant k$ 且 $j \leqslant k$，则称 $(I, <)$ 是一个定向集
     1. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i \mid i \in I\}$ 是一族 $S-$结构
-        1. 如果对任意的 $i, j \in I$ 都有 $i < j$ 蕴涵 $\mathfrak A_i \subseteq \mathfrak A_j$，则称 $\{\mathfrak A_i \mid i \in I\}$ 是一条链
-        2. 如果对任意的 $i, j \in I$ 都有 $i < j$ 蕴涵 $\mathfrak A_i \prec \mathfrak A_j$，则称 $\{\mathfrak A_i \mid i \in I\}$ 是一条初等链
+        1. 如果对任意的 $i, j \in I$ 都有 $i < j$ 蕴含 $\mathfrak A_i \subseteq \mathfrak A_j$，则称 $\{\mathfrak A_i \mid i \in I\}$ 是一条链
+        2. 如果对任意的 $i, j \in I$ 都有 $i < j$ 蕴含 $\mathfrak A_i \prec \mathfrak A_j$，则称 $\{\mathfrak A_i \mid i \in I\}$ 是一条初等链
     2. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i \mid i \in I\}$ 是一族 $S-$结构，其中 $\mathfrak A_i$ 的论域是 $A_i$．令 $\mathfrak A = {\displaystyle \bigcup_{i \in I} \mathfrak A_i}$，则其论域为 $A = {\displaystyle \bigcup_{i \in I}A_i}$，常元符号 $c$ 解释为 $c^{\mathfrak A_{i_0}}$，其中 $i_0 \in I$；函数符号 $f$ 解释为 ${\displaystyle \bigcup_{i \in I}f^{\mathfrak A_i}}$；关系符号 $R$ 解释为 ${\displaystyle \bigcup_{i \in I}R^{\mathfrak A_i}}$
         1. 若 $\{\mathfrak A_i \mid i \in I\}$ 是一条链，则 $\mathfrak A$ 是一个 $S-$结构，且对每个 $i \in I$ 都有 $\mathfrak A_i \subseteq \mathfrak A$
         2. 若 $\{\mathfrak A_i \mid i \in I\}$ 是一条初等链，则对每个 $i \in I$ 都有 $\mathfrak A_i \prec \mathfrak A$
@@ -89,7 +89,7 @@
 ## 1.2 理论与模型
 ### 1.2.1 理论与公理
 1. 模型：设 $\mathfrak M$ 是一个 $S-$结构，$\Sigma$ 是一个 $S-$语句集，$\sigma$ 是一个 $S-$语句．若 $\mathfrak M \vDash \Sigma$，则称 $\mathfrak M$ 是语句集 $\Sigma$ 的模型
-    1. 蕴涵：如果 $\Sigma$ 的模型均是 $\{\sigma\}$ 的模型，则 $\Sigma$ 蕴含 $\sigma$，记作 $\Sigma \vDash \sigma$
+    1. 蕴含：如果 $\Sigma$ 的模型均是 $\{\sigma\}$ 的模型，则 $\Sigma$ 蕴含 $\sigma$，记作 $\Sigma \vDash \sigma$
     2. 模型原理：如果 $\Sigma$ 有一个模型，则 $\Sigma$ 是一致的（或称可满足的或相容的）；如果 $\{\sigma\}$ 一致，则称 $\sigma$ 一致
 2. 理论：设 $\mathfrak M$ 是一个 $S-$结构，$\Sigma$ 是一个 $S-$语句集．如果对任意被 $\Sigma$ 蕴含的语句 $\alpha$ 都有 $\alpha \in \Sigma$，则称 $\Sigma$ 是一个 $S-$理论
     1. 若 $S$ 可数，则称 $S-$理论 $T$ 可数
@@ -193,7 +193,7 @@
 
         则 ${\displaystyle \overline{\mathfrak{C}}=\bigcup_{n \in \mathbf{N}} \mathfrak{C}_{n}}$ 是包含 $\mathfrak{C}$ 的最小的初等类，称之为 $\mathfrak{C}$ 的初等类闭包
 
-        1. 设 $\mathfrak{A}$ 是一个结构，如果对任意的语句 $\sigma$ 都有 $\mathfrak{A} \vDash \sigma$ 蕴涵着存在有限结构 $\mathfrak{A}_{0} \vDash \sigma$，则称 $\mathfrak{A}$ 是伪有限的
+        1. 设 $\mathfrak{A}$ 是一个结构，如果对任意的语句 $\sigma$ 都有 $\mathfrak{A} \vDash \sigma$ 蕴含着存在有限结构 $\mathfrak{A}_{0} \vDash \sigma$，则称 $\mathfrak{A}$ 是伪有限的
         2. 如果 $\mathfrak{A}$ 是伪有限的，并且不是有限的，则称 $\mathfrak{A}$ 是严格伪有限的
         3. $\mathfrak{A}$ 是伪有限的当且仅当 $\mathfrak{A}$ 与一族有限结构的超积初等等价
 

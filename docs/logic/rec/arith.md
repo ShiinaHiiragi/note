@@ -203,7 +203,7 @@
     2. 记 $\square_{T} \alpha$ 为 $\mathrm{Bwb}_{T}(\sharp \alpha)$，$\operatorname{Con}(T)$ 为 $\neg \square_{T} \bot$
 3. $\text{Hilbert}-\text{Bernays}-\text{L}\ddot{\mathrm{o}}\text{b}$ 可证性条件：令 $\sigma$ 和 $\tau$ 为闭语句
     1. $\text{D1}:$ 若 $\vdash_{T} \sigma$，则 $\vdash_{T} \square_{T} \sigma$
-        1. $\text{D1}$ 不蕴涵 $\vdash_{T} \sigma \rightarrow \square_{T} \sigma$，后者不一定是元定理
+        1. $\text{D1}$ 不蕴含 $\vdash_{T} \sigma \rightarrow \square_{T} \sigma$，后者不一定是元定理
         2. $\text{D1}$ 对任何 $\mathbf{Q}$ 的扩张 $T$ 都成立，即若 $\vdash_{T} \sigma$，则 $\vdash_{T} \square_{T} \sigma$
     2. $\text{D2}: \ \vdash_{T} \square_{T}(\sigma \rightarrow \tau) \rightarrow \square_{T} \sigma \rightarrow \square_{T} \tau$
         1. 若 $\text{D1}$ 与 $\text{D2}$ 成立，则 $\text{D0}:$ 若 $\sigma \vdash_{T} \tau$，则 $\square_{T} \sigma \vdash_{T} \square_{T} \tau_{0}$ 成立

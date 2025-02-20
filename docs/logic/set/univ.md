@@ -187,6 +187,24 @@
 
     称 $\mathbf{L}$ 内的元素为可构成集
 
+    1. 对任意序数 $\alpha \in \mathbf{On}$
+        1. $L_{\alpha}$ 是传递的
+        2. 若 $\alpha<\beta$，则 $L_{\alpha} \subseteq L_{\beta}$
+        3. $L_{\alpha} \subseteq V_{\alpha}$；特别地，若 $\alpha \in \omega + 1$，则 $L_{\alpha}=V_{\alpha}$
+        4. $L_{\alpha} \in L_{\alpha+1}$ 且 $L_{\alpha}$ 的任意有穷子集属于 $L_{\alpha+1}$
+        5. $\alpha \in \mathbf{L}$ 且 $L_{\alpha} \cap \mathbf{On}=\alpha$
+        6. 若选择公理成立，则对任意 $\alpha \geqslant \omega$，$\left|L_{\alpha}\right|=|\alpha|$
+    2. 若 $x \in \mathbf{L}$，则 $x$ 在 $\mathbf{L}$ 中的秩 $\operatorname{rank}_{\mathbf{L}}(x)$ 定义为 $\operatorname{rank}_{\mathbf{L}}(x)=\min \left\{\beta \mid x \in \mathbf{L}_{\beta+1}\right\}$，设 $\alpha \in \mathbf{On}$
+        1. $L_{\alpha}=\left\{x \in \mathbf{L} \mid \operatorname{rank}_{\mathbf{L}}(x)<\alpha\right\}$
+        2. $\operatorname{rank}_{\mathbf{L}}(\alpha)=\alpha$
+    3. $\mathbf{L} \vDash \mathbf{ZF}$
+
+3. 可构成公理：$\mathbf{V}=\mathbf{L}$，即所有集合都是可构成集
+    1. 函数 $\alpha \mapsto L_{\alpha}$ 对 $\mathbf{ZF}$ 的任何传递模型都是绝对的
+        1. $\mathbf{L} \vDash \mathbf{ZF} + \mathbf{V}=\mathbf{L}$，因此 $\operatorname{Con}(\mathbf{ZF}) \rightarrow \operatorname{Con}(\mathbf{ZF}+\mathbf{V}=\mathbf{L})$
+        2. 设 $\mathbf{M}$ 是传递的真类且是 $\mathbf{ZF}-\mathrm{Pow}$ 的模型，则 $\mathbf{L}=\mathbf{L}^{\mathbf{M}} \subseteq \mathbf{M}$
+    2. $\mathbf{L}$ 上存在良序，因此 $\mathbf{V}=\mathbf{L}$ 蕴含 $\mathbf{AC}$
+
 ## 4.3 Grothendieck 宇宙
 1. $\text{Grothendieck}$ 宇宙是满足以下性质的集合 $U$
     1. $U$ 是传递集

@@ -51,13 +51,15 @@
             1. $\mathbf N$ 是首个极限序数，因此作为序数的 $\mathbf N$ 通常记作 $\omega$
             2. 所有的序数都是 $0$、后继序数与极限序数中的一种
         2. 自然数恰好就是有穷序数，大于等于 $\omega$ 的序数称为无穷序数
-    2. 序数的性质
+    2. 传递集与序数的关系
+        1. 如果 $\alpha$ 是序数且 $B \subseteq \alpha$ 是传递集，则 $B$ 是序数且 $B \in \alpha$．特别地，对任意序数 $\alpha, \beta$，如果 $\beta \subseteq \alpha$，则 $\beta \in \alpha$
+        2. 如果 $M$ 是传递集，则 $M \cap \mathbf{On}$ 是序数，且是不属于 $M$ 的最小序数，简记为 $\alpha^{M}$
+    3. 序数的性质
         1. 如果 $\alpha$ 是序数，则 $\alpha$ 的所有元素是序数，所以 $\alpha=\{\beta \mid \beta<$ $\alpha \wedge \beta$ 是序数$\}$
-        2. 如果 $\alpha$ 是序数且 $B \subseteq \alpha$ 是传递集，则 $B$ 是序数且 $B \in \alpha$．特别地，对任意序数 $\alpha, \beta$，如果 $\beta \subseteq \alpha$，则 $\beta \in \alpha$
-        3. 对任意序数的集合 $X$，$\bigcup X$ 是序数且 $\bigcup X=\sup (X)$；若 $X \neq \varnothing$，则 $\bigcap X$ 是序数且 $\bigcap X=\inf (X)$
-        4. 序数间的 $<$ 关系具有良序性质，因此任意非空的序数集合都在 $<$ 下是良序集
-    3. 序型：假设 $(X, R)$ 是良序集，定义其序型为与其同构的唯一序数，记作 $\operatorname{type}(X, R)$ 或 $\operatorname{type}(X)$
-    4. 序数类：全体序数构成一个真类，记作 $\mathbf{On}$，「$\alpha$ 是序数」可简写作 $\alpha \in \mathbf{On}$
+        2. 对任意序数的集合 $X$，$\bigcup X$ 是序数且 $\bigcup X=\sup (X)$；若 $X \neq \varnothing$，则 $\bigcap X$ 是序数且 $\bigcap X=\inf (X)$
+        3. 序数间的 $<$ 关系具有良序性质，因此任意非空的序数集合都在 $<$ 下是良序集
+    4. 序型：假设 $(X, R)$ 是良序集，定义其序型为与其同构的唯一序数，记作 $\operatorname{type}(X, R)$ 或 $\operatorname{type}(X)$
+    5. 序数类：全体序数构成一个真类，记作 $\mathbf{On}$，「$\alpha$ 是序数」可简写作 $\alpha \in \mathbf{On}$
 
 2. 序数的算术
     1. 序数的加法：对所有序数 $\beta$
@@ -459,4 +461,4 @@
         3. 令 $S$ 是不可数正则基数 $\kappa$ 上的稳定集．定义 $S$ 的子集 $T=\{\alpha \in S \mid \operatorname{cf}(\alpha)=\omega \vee(\operatorname{cf}(\alpha)>\omega \wedge S \cap \alpha \textsf{ 不是 } \alpha \textsf{ 上的稳定集})\}$，则 $T$ 是 $\kappa$ 上的稳定集
         4. 令 $\kappa$ 是不可数正则基数，$K=\{\gamma<\kappa \mid \gamma$ 是极限序数$\}$，$S \subseteq K$ 是 $\kappa$ 上的稳定集．如果对任意 $\alpha \in S$，$f_{\alpha}$ 是 $\alpha$ 中递增的共尾序列且是连续的，则以下二者必有一真
             1. 存在 $\eta<\kappa$，对任意 $\xi<\kappa$，$S_{\xi}=\left\{\alpha \in S \mid \eta \in \operatorname{dom}\left(f_{\alpha}\right) \wedge f_{\alpha}(\eta) \geqslant \xi\right\}$ 是 $\kappa$ 上的稳定集
-            2. 存在 $\kappa$ 上的无界闭集 $C$，对任意 $\gamma$ 都有 $\alpha \in C \cap S, \gamma<\alpha$ 蕴涵 $\gamma=f_{\alpha}(\gamma)$
+            2. 存在 $\kappa$ 上的无界闭集 $C$，对任意 $\gamma$ 都有 $\alpha \in C \cap S, \gamma<\alpha$ 蕴含 $\gamma=f_{\alpha}(\gamma)$

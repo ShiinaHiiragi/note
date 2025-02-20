@@ -67,3 +67,4 @@
 10. $\text{Reinhardt}$ 基数与 $\text{Berkeley}$ 基数与选择公理不相容
 
 ## 5.3 内模型计划
+1. 内模型：若 $\mathbf{ZF}$ 的传递模型 $\mathbf{M}$ 包含所有序数，则称 $\mathbf{M}$ 是内模型

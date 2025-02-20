@@ -59,7 +59,7 @@
 
         则对任意的基数 $\lambda<\kappa$ 及 $\overline{b} \in A^{\lambda}$，有 $\operatorname{tp}_{A}(\overline{b})$ 被 $B$ 实现
 
-    2. 设 $T$ 是完备的 $S-$理论，$\kappa$ 是一个无穷基数，$A$ 和 $B$ 均是 $T$ 的基数为 $\kappa$ 的齐次模型且对任意的 $p \in S_{n}(T)$，都有 $A \vDash p$ 蕴涵 $B \vDash p$，则 $A \cong B$
+    2. 设 $T$ 是完备的 $S-$理论，$\kappa$ 是一个无穷基数，$A$ 和 $B$ 均是 $T$ 的基数为 $\kappa$ 的齐次模型且对任意的 $p \in S_{n}(T)$，都有 $A \vDash p$ 蕴含 $B \vDash p$，则 $A \cong B$
 
 ## 2.2 量词消去
 1. 强极小结构与强极小理论：设 $A$ 是一个 $S-$结构，若对于任意的 $A-$可定义子集 $X \subseteq A$，$X$ 或者是有限集合，或者是余有限集合（即 $A - X$ 是有限集），则称 $A$ 为强极小结构．若 $S-$理论 $T$ 的所有模型都是强极小的，则称 $T$ 是强极小理论
