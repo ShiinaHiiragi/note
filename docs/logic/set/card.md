@@ -62,9 +62,16 @@
     2. 若存在一个可测基数，且是强紧致基数的极限，那么符合条件的最小基数是强紧致的但不是超紧致的
 6. 可扩展基数
 7. $\text{Vop}\check{\mathrm{e}}\text{nka}$ 原理
-8. 巨大基数
+8. 巨基数
 9. $\text{Rank to Rank}$ 基数
 10. $\text{Reinhardt}$ 基数与 $\text{Berkeley}$ 基数与选择公理不相容
 
 ## 5.3 内模型计划
-1. 内模型：若 $\mathbf{ZF}$ 的传递模型 $\mathbf{M}$ 包含所有序数，则称 $\mathbf{M}$ 是内模型
+若 $\mathbf{ZF}$ 的传递模型 $\mathbf{M}$ 包含所有序数，则称 $\mathbf{M}$ 是内模型
+
+1. $\mathbf L$
+2. $\mathbf L[A]$
+3. $\mathbf L[U]$
+4. $\mathbf L[\mathcal U]$
+5. 鼠模型
+6. 终极 $\mathbf L$

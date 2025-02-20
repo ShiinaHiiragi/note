@@ -204,6 +204,15 @@
         1. $\mathbf{L} \vDash \mathbf{ZF} + \mathbf{V}=\mathbf{L}$，因此 $\operatorname{Con}(\mathbf{ZF}) \rightarrow \operatorname{Con}(\mathbf{ZF}+\mathbf{V}=\mathbf{L})$
         2. 设 $\mathbf{M}$ 是传递的真类且是 $\mathbf{ZF}-\mathrm{Pow}$ 的模型，则 $\mathbf{L}=\mathbf{L}^{\mathbf{M}} \subseteq \mathbf{M}$
     2. $\mathbf{L}$ 上存在良序，因此 $\mathbf{V}=\mathbf{L}$ 蕴含 $\mathbf{AC}$
+        1. 存在 $\mathbf{ZF} - \mathrm{Pow}$ 公理的有穷子集 $\{\psi_{1}, \cdots, \psi_{n}\}$ 满足 $\forall M \ (M \textsf{ 传递 } \wedge \psi_{1}^{M} \wedge \cdots \wedge \psi_{n}^{M} \rightarrow (L_{\alpha^{M}}=\mathbf{L}^{M} \subseteq M))$
+        2. 存在 $\mathbf{Z F}-\mathrm{Pow}+\mathbf{V}=\mathbf{L}$ 公理的有穷子集 $\left\{\psi_{1}, \cdots, \psi_{n+1}\right\}$ 满足
+            1. 若 $\mathbf{M}$ 是传递真类且 $\psi_{1}^{\mathbf{M}} \wedge \cdots \wedge \psi_{n+1}^{\mathbf{M}}$，则 $\mathbf{M}=\mathbf{L}$
+            2. $\forall M \ \left(M\right.$ 传递 $\wedge \psi_{1}^{M} \wedge \cdots \wedge \psi_{n+1}^{M} \rightarrow\left(L_{\alpha^{M}}=M\right)$
+    3. 在 $\mathbf{ZF}$ 中可证 $(\mathbf{AC}+\mathbf{GCH})^{\mathbf{L}}$，因此 $\operatorname{Con}(\mathbf{ZF}) \rightarrow \operatorname{Con}(\mathbf{ZFC}+\mathbf{GCH})$
+        1. 若 $\mathbf{V}=\mathbf{L}$，则对任意无穷序数 $\alpha$，$\mathcal{P}\left(L_{\alpha}\right) \subseteq L_{|\alpha|+}$
+        2. 设 $\mathbf{V}=\mathbf{L}$，则对任意不可数正则基数 $\kappa$，$L_{\kappa}=H_{\kappa}$
+        3. 设 $S_{0}=\left\{\psi_{1}, \cdots, \psi_{n}\right\}$ 是 $\mathbf{ZF}+\mathbf{V}=\mathbf{L}$ 的有穷子集，则 $\mathbf{Z F} \vdash \exists M \ (|M|=\omega \wedge M$ 是传递的 $\wedge(\psi_{1}^{M} \wedge \cdots \wedge \psi_{n}^{M}))$
+        4. 若 $\kappa$ 是不可数正则基数，则 $L_{\kappa} \vDash \mathbf{Z F}-\mathrm{Pow}+\mathbf{V}=\mathbf{L}$；若 $\kappa$ 还是不可达基数，则幂集公理也在 $L_{\kappa}$ 中成立
 
 ## 4.3 Grothendieck 宇宙
 1. $\text{Grothendieck}$ 宇宙是满足以下性质的集合 $U$
