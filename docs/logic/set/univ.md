@@ -5,7 +5,7 @@
 1. 定义良基集合类 $\mathbf{WF} = {\displaystyle \bigcup_{\alpha \in \mathrm{On}} V_{\alpha}}$，其中 $V_{\alpha}$
     1. $V_{0}=\varnothing$
     2. $V_{\alpha+1}=\mathcal{P}\left(V_{\alpha}\right)$
-    3. 对任意极限序数 $\lambda$，$V_{\lambda}={\displaystyle \bigcup_{\beta<\lambda} V_{\beta}}$
+    3. 对任意极限序数 $\alpha$，$V_{\alpha}={\displaystyle \bigcup_{\beta<\alpha} V_{\beta}}$
 
     则 $\mathbf{WF}$ 是一个真类，称作 $\text{von Neumann}$ 宇宙
 
@@ -149,8 +149,7 @@
     4. $\operatorname{Con}(\mathbf{ZFC}) \rightarrow \operatorname{Con}(\mathbf{ZFC}-\mathrm{Pow}+\forall x \ (x$ 是可数的$))$
 
 ## 4.2 Gödel 可构成宇宙
-### 4.2.1 Gödel 运算
-1. $\text{G}\ddot{\mathrm o}\text{del}$ 运算
+1. $\text{G}\ddot{\mathrm o}\text{del}$ 运算：设 $X, Y$ 是集合
     1. $G_{1}(X, Y) =\{X, Y\}$
     2. $G_{2}(X, Y) =X \times Y$
     3. $G_{3}(X, Y) =\in \upharpoonright X \times Y=\{(u, v) \mid u \in X \wedge v \in Y \wedge u \in v\}$
@@ -162,7 +161,31 @@
     9. $G_{9}(X, Y) =\{(x, y, z) \mid(x, z, y) \in X\}$
     10. $G_{10}(X, Y) =\{(x, y, z) \mid(y, z, x) \in X\}$
 
-### 4.2.2 可构成宇宙
+    称类 $C$ 对 $\text{G}\ddot{\mathrm o}\text{del}$ 运算封闭的当且仅当对任意 $X, Y$，$X, Y \in C$ 蕴含 $G_{i}(X, Y) \in C$，其中 $1 \leqslant i \leqslant 10$
+
+    1. 对任意集合 $M$，$\mathrm{cl}_{G}(M)$ 表示 $M$ 的 $\text{G}\ddot{\mathrm o}\text{del}$ 闭包，即包含 $M$ 并且对 $\text{G}\ddot{\mathrm o}\text{del}$ 运算封闭的最小集合
+    2. 对任意 $\Delta_{0}$ 公式 $\psi\left(x_{1}, \cdots, x_{n}\right)$，存在函数 $G$ 是 $\text{G}\ddot{\mathrm o}\text{del}$ 运算的复合，并且对任意 $X_{1}, \cdots, X_{n}$ 都有
+
+        $$
+        G\left(X_{1}, \cdots, X_{n}\right)= \left\{\left(x_{1}, \cdots, x_{n}\right) \mid x_{1} \in X_{1} \wedge \cdots \wedge x_{n} \in X_{n} \wedge \psi\left(x_{1}, \cdots, x_{n}\right)\right\}
+        $$
+
+        1. 若 $M$ 是传递的且 $\mathrm{cl}_{G}(M)=M$，则对任意 $\Delta_{0}$ 公式 $\psi\left(x, y_{1}, \cdots, y_{m}\right)$，任意集合 $X \in M$，以及任意 $y_{1}, \cdots, y_{m} \in M$，若 $Y=\left\{x \in X \mid \psi\left(x, y_{1}, \cdots, y_{m}\right)\right\}$，则 $Y \in M$，即 $\Delta_{0}-$分离公理模式在 $M$ 中为真
+        2. 若 $G\left(X_{1}, \cdots, X_{n}\right)$ 是 $\text{G}\ddot{\mathrm o}\text{del}$ 运算的组合，则 $Z= G\left(X_{1}, \cdots, X_{n}\right)$ 等价于一个 $\Delta_{0}$ 公式
+
+    3. 对任意传递集 $M$，$\operatorname{Def}(M)=\operatorname{cl}_{G}(M \cup\{M\}) \cap \mathcal{P}(M)$
+        1. 若 $\mathbf{M}$ 是 $\mathbf{ZF}$ 的传递模型，则对任意传递集 $M \in \mathbf{M}$，$\operatorname{Def}(M)$ 相对于 $\mathbf{M}$ 是绝对的
+        2. 对任意传递集 $M$
+            1. $M \subseteq \operatorname{Def}(M) \subseteq \mathcal{P}(M)$
+            2. 对任意 $X \subseteq M$，如果 $X$ 有穷，则 $X \in \operatorname{Def}(M)$
+            3. 假设选择公理成立且 $|M| \geqslant \omega$，则 $|\operatorname{Def}(M)|=|M|$
+
+2. 定义可构成宇宙 $\mathbf{L}={\displaystyle \bigcup_{\alpha \in \mathbf{O} \mathbf{n}} L_{\alpha}}$，其中 $L_{\alpha}$
+    1. $L_{0}=\varnothing$
+    2. $L_{\alpha+1}=\operatorname{Def}\left(L_{\alpha}\right)$
+    3. 对任意极限序数 $\alpha$，$L_{\alpha}={\displaystyle \bigcup_{\beta<\alpha} L_{\beta}}$
+
+    称 $\mathbf{L}$ 内的元素为可构成集
 
 ## 4.3 Grothendieck 宇宙
 1. $\text{Grothendieck}$ 宇宙是满足以下性质的集合 $U$
