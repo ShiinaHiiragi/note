@@ -1,9 +1,46 @@
 # 5 高阶无穷
 
-## 5.1 力迫法
+## 5.1 力迫
 ### 5.1.1 脱殊扩张
+1. 令 $(\mathbf{P}, \leqslant, \mathbf{1})$ 为偏序集，其中 $\leqslant$ 为 $\mathbf{P}$ 上的偏序，且 $\mathbf{1}$ 为 $\mathbf{P}$ 的最大元，不引起歧义时可简记为 $\mathbf{P}$
+    1. 称 $\mathbf{P}$ 为力迫偏序或力迫，$\mathbf{P}$ 的元素称为力迫条件．若 $p \leqslant q$，则称力迫条件 $p$ 强于力迫条件 $q$
+        1. 设 $p \in \mathbf{P}$，则 $\mathbf{P}$ 的子集 $D$ 是稠密的当且仅当 $\forall p \in \mathbf{P} \ \exists q \in D \ (q \leqslant p)$；$D$ 是 $p$ 下稠密的当且仅当 $\forall q \leqslant p \ \exists r \leqslant q \ (r \in D)$
+        2. $\mathbf{P}$ 的子集 $G$ 称为 $\mathbf{P}$ 上的滤当且仅当 ① $\mathbf{1} \in G$；② $\forall p, q \in G \ \exists r \in G \ (r \leqslant p \wedge r \leqslant q)$，即任意 $p, q \in G$ 都是相容的；③ $\forall p, q \in G \ (q \leqslant p \wedge q \in G \rightarrow p \in G)$
+        3. 令 $M$ 为集合，若 $G \subseteq \mathbf{P}$ 是滤，且对任意稠密子集 $D \subseteq \mathbf{P}, D \in M$ 蕴涵 $G \cap D \neq \varnothing$，则称 $G$ 是 $M$ 上的 $\mathbf{P}-$脱殊滤
+    2. 如果 $M$ 是 $\mathbf{ZF} - \mathrm{Pow}$ 的可数传递模型且 $\mathbf{P} \in M$，则对任意 $p \in \mathbf{P}$，存在 $M$ 上的 $\mathbf{P}-$脱殊滤 $G$ 且 $p \in G$
+    3. 设 $M$ 是 $\mathbf{ZFC}$ 的传递模型，$\mathbf{P} \in M$．若 $\mathbf{P}$ 是无原子的（即对每一 $p \in \mathbf{P}$，存在不相容的 $r, q \in \mathbf{P}$ 满足 $r \leqslant p \wedge q \leqslant p$）且 $G$ 是 $M$ 上 $\mathbf{P}-$脱殊滤，则 $G \notin M$
+    4. 设 $M$ 是 $\mathbf{ZFC}$ 的传递模型，$\mathbf{P} \in M, D \subseteq \mathbf{P}$ 且 $D \in M$，$G$ 为 $M$ 上的 $\mathbf{P}-$脱殊滤
+        1. 或者 $G \cap D \neq \varnothing$，或者存在 $q \in G$，对任意 $r \in D$ 都有 $r \perp q$
+        2. 若 $p \in G$ 且 $D$ 是 $p$ 下稠密的，则 $G \cap D \neq \varnothing$
+2. 对任意力迫 $\mathbf{P}$，任意序数 $\alpha$，递归定义 $V_{\alpha}^{\mathbf{P}}$
+    1. $V_{0}^{\mathbf{P}}=\varnothing$
+    2. $V_{\alpha+1}^{\mathbf{P}}=\mathcal{P}\left(V_{\alpha}^{\mathbf{P}} \times \mathbf{P}\right)$
+    3. 对任意极限序数 $\lambda$，$V_{\lambda}^{\mathbf{P}}={\displaystyle \bigcup_{\xi<\lambda} V_{\xi}^{\mathbf{P}}}$
 
-### 5.1.2 连续统假设
+    令 $\mathbf{V}^{\mathbf{P}}={\displaystyle \bigcup_{\alpha \in \mathbf{O}} V_{\alpha}^{\mathbf{P}}}$，称 $\mathbf{V}^{\mathbf{P}}$ 的元素为 $\mathbf{P}$-名字
+
+    4. 对任意力迫 $\mathbf{P}$，对任意集合 $x$，递归定义 $\check{x}=\{(\check{y}, \mathbf{1}) \mid y \in x\}$
+    5. 对任意力迫 $\mathbf{P}$，任意 $\mathbf{P}$ 上的滤 $G$，以及任意 $\mathbf{P}-$名字 $\tau$，递归定义 $\tau$ 的值 $\tau_{G}$ 或 $\operatorname{val}(\tau, G)$ 为 $\tau_{G}=\left\{\sigma_{G} \mid \exists p(\sigma, p) \in \tau \wedge p \in G\right\}$ 对于任意 $\beta<\alpha$，$\sigma \in V_{\beta}^{\mathbf{P}}, \sigma_{G}$ 已有定义的 $\tau \in V_{\alpha}^{\mathbf{P}}$ 成立
+
+3. 脱殊扩张：令 $M$ 为 $\mathbf{ZFC}$ 的传递模型，$\mathbf{P} \in M$，定义 $M^{\mathbf{P}}=\mathbf{V}^{\mathbf{P}} \cap M$．若 $G \subseteq \mathbf{P}$ 是 $\mathbf{P}$ 上的滤，则 $M[G]=\left\{\tau_{G} \mid \tau \in M^{\mathbf{P}}\right\}$
+    1. 设 $M$ 为 $\mathbf{ZFC}$ 的传递模型，$\mathbf{P} \in M$ 为力迫，$G \subseteq \mathbf{P}$ 是非空的滤
+        1. $M[G]$ 是传递的
+        2. $o(M)=o(M[G])$
+        3. 对任意 $\mathbf{ZFC}$ 的传递模型 $N$，如果 $M \subseteq N$ 且 $G \in N$，则 $M[G] \subseteq N$
+        4. $\forall x \in M \ \left(\check{x} \in M^{\mathbf{P}} \wedge \check{x}_{G}=x\right)$，因此 $M \subseteq M[G]$
+        5. 若 $\Gamma=\{(\check{p}, p) \mid p \in \mathbf{P}\}$，则 $\Gamma_{G}=G$，因此 $G \in M[G]$
+        6. $\forall \tau \in M^{\mathbf{P}} \ \left(\operatorname{rank}\left(\tau_{G}\right) \leqslant \operatorname{rank}(\tau)\right)$
+    2. 令 $M$ 为 $\mathbf{ZFC}$ 的可数传递模型，$\mathbf{P}$ 为 $M$ 中的力迫，$G$ 为 $M$ 上的 $\mathbf{P}-$脱殊滤，则 $M[G]$ 是 $\mathbf{ZFC}$ 的模型
+        1. 令 $M$ 为 $\mathbf{ZFC}$ 的任意可数传递模型，$\mathbf{P} \in M$ 为偏序集，$G$ 为 $\mathbf{P}$ 中 $M-$脱殊滤，则存在 $\mathbf{ZFC}$ 的可数传递模型 $M[G]$，有 $M \subseteq M[G], G \in M[G]$ 且 $o(M)=o(M[G])$，同时，$M[G]$ 是满足以上条件的模型中最小的
+        2. $\operatorname{Con}(\mathbf{ZF}) \rightarrow \operatorname{Con}(\mathbf{ZF}+\mathbf{V}\neq\mathbf{L})$
+
+4. 力迫
+
+### 5.1.2 相对独立性
+1. 若对任意 $\mathbf{ZFC}$ 的有穷子集 $S$，总存在其另一有穷子集 $T$，使得 $T$ 的任何可数传递模型 $M$ 都可扩展为 $S+\sigma$ 的可数传递模型 $N$
+    1. $\mathbf{ZFC}+\sigma \vdash \tau_{\mathbf{N}} \to \mathbf{ZFC} \vdash \tau_{\mathbf{N}}$
+    2. $\mathbf{ZFC}$ 一致蕴涵 $\mathbf{ZFC}+\sigma$ 一致
+2. ...
 
 ## 5.2 大基数理论
 ### 5.2.1 不可描述性

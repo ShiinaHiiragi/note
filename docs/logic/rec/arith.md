@@ -94,12 +94,12 @@
     5. $\forall x \ (x \times 0 = 0)$
     6. $\forall x \forall y \ (x \times \mathrm{S} y = x \times y+x)$
     7. 归纳公理模式（$\mathrm{Ind}$）：对所有不含 $X$ 作为自由变元的公式 $X$ 有 $\forall X(0 \in X \wedge \forall n(n \in X \rightarrow n+1 \in X)) \rightarrow \forall n(n \in X)$
-    8. 理解公理模式（$\mathrm{CA}$）：对所有不含 $X$ 作为自由变元的公式 $X$ 有 $\exists X \forall n(n \in X \leftrightarrow \varphi(n))$
+    8. 概括公理模式（$\mathrm{CA}$）：对所有不含 $X$ 作为自由变元的公式 $X$ 有 $\exists X \forall n(n \in X \leftrightarrow \varphi(n))$
 
     定义二阶算术 $\mathbf{Z}_2$ 是以上公理的理论．对于层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$ 的公式 $\varphi$，定义公理
 
     1. $\Phi-$归纳公理模式（$\Phi-\mathrm{Ind}$）：$\varphi(0) \wedge \forall n \ (\varphi(n) \rightarrow \varphi(n+1)) \rightarrow \forall n \ \varphi(n)$
-    2. $\Phi-$理解公理模式（$\Phi-\mathrm{CA}$）：$\exists X \forall n \ (n \in X \leftrightarrow \varphi(n))$
+    2. $\Phi-$概括公理模式（$\Phi-\mathrm{CA}$）：$\exists X \forall n \ (n \in X \leftrightarrow \varphi(n))$
     3. $\Phi-$算术超限递归公理模式（$\Phi-\mathrm{TR}$）：对公式 $\theta(n, X)$，令 $\Theta(X)=\{n \in \mathbf{N} \mid \theta(n, X)\}, Y \subseteq \mathbf{N} \times A$ 且对每个 $a \in A$ 有 $Y_{a}=\Theta\left(Y^{a}\right)$，其中 $Y_{a}=\{m \mid (m, a) \in Y\}, Y^{a}=\left\{(n, b) \mid n \in Y_{b} \wedge b<_{A} a\right\}$，则对任意 $\Theta$ 与 $A$，相应的集合 $Y$ 都存在
     4. $\Phi-$选择公理模式（$\Phi-\mathbf{AC}$）：$\forall x \exists Y \ \varphi(x, Y) \rightarrow \exists Z \forall x \ \varphi\left(x,(Z)_{x}\right)$，其中 $(Z)_{x} = \{z: (z, x) \in Z\}$
     5. $\Phi-$依赖选择公理模式（$\Phi-\mathbf{DC}$）：$\forall x \forall X \exists Y \ \varphi(x, X, Y) \rightarrow \exists Z \forall x \ \varphi\left(x,(Z)_{x},(Z)_{x+1}\right)$，其中 $(Z)_{x} = \{z: (z, x) \in Z\}$
@@ -244,7 +244,7 @@
     2. 在 $\mathbf{RCA}_0$ 中，对任意 $\Sigma_{1}^0$ 公式 $\varphi(n)$，或者存在有限集合 $X$ 使得 $\forall n \ (n \in X \leftrightarrow \varphi(n))$ 成立，或者存在单射 $f: \mathbf N \to N$ 使得 $\forall n \ (\exists m \  f(m) =n \leftrightarrow \varphi(n))$ 成立
     3. 以下公理在 $\mathbf{RCA}_0$ 中可证
         1. $\Pi_1^0-$归纳法
-        2. 有界 $\Sigma_{1}^{0}-$理解公理：$\forall n \exists X \forall i \ (i \in X \leftrightarrow(i<n \wedge \varphi(i)))$
+        2. 有界 $\Sigma_{1}^{0}-$概括公理：$\forall n \exists X \forall i \ (i \in X \leftrightarrow(i<n \wedge \varphi(i)))$
         3. 强 $\Sigma_1^0-$有界公理：$\forall m \ \exists n \ \forall i<m \ (\exists j \ \varphi(i, j) \rightarrow \exists j<n \ \varphi(i, j))$
     4. 以下定理在 $\mathbf{RCA}_0$ 中可证
         1. 任何完备一致理论至少有一个模型

@@ -53,7 +53,7 @@
         2. 自然数恰好就是有穷序数，大于等于 $\omega$ 的序数称为无穷序数
     2. 传递集与序数的关系
         1. 如果 $\alpha$ 是序数且 $B \subseteq \alpha$ 是传递集，则 $B$ 是序数且 $B \in \alpha$．特别地，对任意序数 $\alpha, \beta$，如果 $\beta \subseteq \alpha$，则 $\beta \in \alpha$
-        2. 如果 $M$ 是传递集，则 $M \cap \mathbf{On}$ 是序数，且是不属于 $M$ 的最小序数，简记为 $\alpha^{M}$
+        2. 如果 $M$ 是传递集，则 $M \cap \mathbf{On}$ 是序数，且是不属于 $M$ 的最小序数，简记为 $\alpha^{M}$ 或 $o(M)$
     3. 序数的性质
         1. 如果 $\alpha$ 是序数，则 $\alpha$ 的所有元素是序数，所以 $\alpha=\{\beta \mid \beta<$ $\alpha \wedge \beta$ 是序数$\}$
         2. 对任意序数的集合 $X$，$\bigcup X$ 是序数且 $\bigcup X=\sup (X)$；若 $X \neq \varnothing$，则 $\bigcap X$ 是序数且 $\bigcap X=\inf (X)$
