@@ -84,6 +84,7 @@
         2. $H_{\kappa}=V_{\kappa}$
         3. $H_{\kappa} \vDash \mathbf{ZFC}$
     3. 若 $\kappa$ 是不可数正则基数，则 $H_{\kappa}$ 是 $\mathbf{ZFC}-\mathrm{Pow}$ 的模型
+    4. 若 $V_{\kappa} \vDash \mathbf{ZFC}$，则称 $\kappa$ 为世界基数
 5. 反映定理：在 $\mathbf{ZF}$ 中可证对任意有穷公式集 $F=\left\{\varphi_{1}, \cdots, \varphi_{n}\right\}$，对任意 $V_{\alpha}$，存在 $V_{\beta}$ 有 $V_{\alpha} \subseteq V_{\beta}$ 且 $\varphi_{1}, \cdots, \varphi_{n}$ 相对于 $V_{\beta}$ 是绝对的
     1. 在 $\mathbf{ZF}$ 中可证若 $F=\left\{\sigma_{1}, \cdots, \sigma_{n}\right\}$ 为 $\mathbf{ZF}$ 公理的有穷子集，则 $\forall \alpha \exists \beta>\alpha \ (\sigma_{1}^{V_{\beta}} \wedge \cdots \wedge \sigma_{n}^{V_{\beta}})$
     2. 令 $F=\left\{\sigma_{1}, \cdots, \sigma_{n}\right\}$ 为 $\mathbf{ZF}$ 公理的有穷子集，除非 $\mathbf{ZF}$ 是不一致的，否则 $F$ 不能证明 $\mathbf{ZF}$ 的所有公理
@@ -197,7 +198,7 @@
     2. 若 $x \in \mathbf{L}$，则 $x$ 在 $\mathbf{L}$ 中的秩 $\operatorname{rank}_{\mathbf{L}}(x)$ 定义为 $\operatorname{rank}_{\mathbf{L}}(x)=\min \left\{\beta \mid x \in \mathbf{L}_{\beta+1}\right\}$，设 $\alpha \in \mathbf{On}$
         1. $L_{\alpha}=\left\{x \in \mathbf{L} \mid \operatorname{rank}_{\mathbf{L}}(x)<\alpha\right\}$
         2. $\operatorname{rank}_{\mathbf{L}}(\alpha)=\alpha$
-    3. $\mathbf{L} \vDash \mathbf{ZF}$
+    3. $\mathbf{L}$ 是 $\mathbf{ZF}$ 的最小内模型
 
 3. 可构成公理：$\mathbf{V}=\mathbf{L}$，即所有集合都是可构成集
     1. 函数 $\alpha \mapsto L_{\alpha}$ 对 $\mathbf{ZF}$ 的任何传递模型都是绝对的
@@ -213,9 +214,9 @@
         2. 设 $\mathbf{V}=\mathbf{L}$，则对任意不可数正则基数 $\kappa$，$L_{\kappa}=H_{\kappa}$
         3. 设 $S_{0}=\left\{\psi_{1}, \cdots, \psi_{n}\right\}$ 是 $\mathbf{ZF}+\mathbf{V}=\mathbf{L}$ 的有穷子集，则 $\mathbf{ZF} \vdash \exists M \ (|M|=\omega \wedge M$ 是传递的 $\wedge(\psi_{1}^{M} \wedge \cdots \wedge \psi_{n}^{M}))$
         4. 若 $\kappa$ 是不可数正则基数，则 $L_{\kappa} \vDash \mathbf{ZF}-\mathrm{Pow}+\mathbf{V}=\mathbf{L}$；若 $\kappa$ 还是不可达基数，则幂集公理也在 $L_{\kappa}$ 中成立
-    4. $\mathbf{V}=\mathbf{L}$ 蕴含钻石原理与 $\text{Jensen}$ 方块定理
+    4. $\mathbf{V}=\mathbf{L}$ 蕴含钻石原理与 $\text{Jensen}$ 方块原理
         1. 钻石原理：存在集合序列 $\left\langle S_{\alpha}: \alpha<\omega_{1}\right\rangle$，其中 $S_{\alpha} \subseteq \alpha$，使得对每个 $X \subseteq \omega_{1}$，$\left\{\alpha<\omega_{1} \mid X \cap \alpha=S_{\alpha}\right\}$ 是 $\omega_{1}$ 的稳定子集
-        2. 所有不可数集均满足 $\square_{\kappa}$ 性质，即存在一个序列 $\left\langle C_{\alpha}: \alpha \in \operatorname{lim}\left(\kappa^{+}\right)\right\rangle$ 使得
+        2. $\text{Jensen}$ 方块原理：所有不可数集均满足 $\square_{\kappa}$ 性质，即存在一个序列 $\left\langle C_{\alpha}: \alpha \in \operatorname{lim}\left(\kappa^{+}\right)\right\rangle$ 使得
             1. $C_{\alpha}$ 是 $\alpha$ 的封闭无界子集
             2. 若 $\beta \in \operatorname{lim}\left(C_{\alpha}\right)$，则 $C_{\beta}=C_{\alpha} \cap \beta$
             3. 若 $\operatorname{cf}(\alpha)<\kappa$ 则 $\left|C_{\alpha}\right|<\kappa$
