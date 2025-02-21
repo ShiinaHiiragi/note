@@ -73,6 +73,12 @@
         2. $\operatorname{Con}(\mathbf{ZFC}) \rightarrow \operatorname{Con}\left(\mathbf{ZFC}+2^{\kappa_{0}}=\kappa\right)$ 对任意满足 $\mathrm{cf}(\kappa)>\aleph_{0}$ 的基数 $\kappa$ 成立
 
 ## 5.2 大基数理论
+对于任意两个 $\text{LCA}$（大基数公理）$A_{1}, A_{2}$，下列情况有且仅有一种成立
+
+1. 除非 $\mathbf{ZFC}$ 是不一致的，否则 $\operatorname{Con}\left(\mathrm{ZFC}+A_{1}\right) \leftrightarrow \operatorname{Con}\left(\mathrm{ZFC}+A_{2}\right)$，则称 $A_{1}, A_{2}$ 的一致性强度相同
+2. 若 $\operatorname{Con}\left(\mathbf{ZFC}+A_{1}\right) \rightarrow \operatorname{Con}\left(\mathbf{ZFC}+A_{2}\right)$，反之不成立，则称 $A_{1}$ 的一致性强度高于 $A_{2}$
+3. 若 $\operatorname{Con}\left(\mathbf{ZFC}+A_{2}\right) \rightarrow \operatorname{Con}\left(\mathbf{ZFC}+A_{1}\right)$，反之不成立，则称 $A_{2}$ 的一致性强度高于 $A_{1}$
+
 ### 5.2.1 不可描述性
 1. 不可达基数：$\Sigma_1^1-$不可描述基数
     1. 若 $\mathbf{GCH}$ 成立，则弱不可达基数等价于强不可达基数
@@ -139,7 +145,9 @@
 ## 5.3 内模型计划
 若 $\mathbf{ZF}$ 的传递模型 $\mathbf{M}$ 包含所有序数，则称 $\mathbf{M}$ 是内模型
 
-1. $\mathbf L$
+1. $\mathbf L$ 是 $\mathbf{ZF}$ 的最小内模型
+    1. $\mathbf{V} = \mathbf{L}$ 蕴含钻石原理与 $\text{Jensen}$ 方块定理
+    2. $0^{\flat}$
 2. $\mathbf L[A]$
 3. $\mathbf L[U]$
 4. $\mathbf L[\mathcal U]$
