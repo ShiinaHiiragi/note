@@ -34,7 +34,7 @@
         1. 令 $M$ 为 $\mathbf{ZFC}$ 的任意可数传递模型，$\mathbf{P} \in M$ 为偏序集，$G$ 为 $\mathbf{P}$ 中 $M-$脱殊滤，则存在 $\mathbf{ZFC}$ 的可数传递模型 $M[G]$，有 $M \subseteq M[G], G \in M[G]$ 且 $o(M)=o(M[G])$，同时，$M[G]$ 是满足以上条件的模型中最小的
         2. $\operatorname{Con}(\mathbf{ZF}) \rightarrow \operatorname{Con}(\mathbf{ZF}+\mathbf{V}\neq\mathbf{L})$
 
-4. 令 $\varphi\left(x_{1}, \cdots, x_{n}\right)$ 为公式，自由变元在 $x_{1}, \cdots, x_{n}$ 中．令 $M$ 为 $\mathbf{ZFC}$ 的可数传递模型，$\mathbf{P} \in M$ 为力迫，$\tau_{1}, \cdots, \tau_{n} \in M^{\mathbf{P}}$ 且 $p \in \mathbf{P}$，则 $p \Vdash_{\mathbf{P}, M} \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)$ 当且仅当 $\forall G \ ((G$ 是 $\mathbf{P}$ 中的 $M$ 脱殊滤 $\wedge p \in G) \rightarrow \varphi^{M[G]}\left(\tau_{1 G}, \cdots, \tau_{n G}\right))$；$p \Vdash \varphi$ 读做 $p$ 力迫 $\varphi$
+4. 令 $\varphi\left(x_{1}, \cdots, x_{n}\right)$ 为公式，自由变元在 $x_{1}, \cdots, x_{n}$ 中．令 $M$ 为 $\mathbf{ZFC}$ 的可数传递模型，$\mathbf{P} \in M$ 为力迫，$\tau_{1}, \cdots, \tau_{n} \in M^{\mathbf{P}}$ 且 $p \in \mathbf{P}$，则 $p \Vdash_{\mathbf{P}, M} \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)$ 当且仅当 $\forall G \ ((G$ 是 $\mathbf{P}$ 中的 $M$ 脱殊滤 $\wedge p \in G) \rightarrow \varphi^{M[G]}\left(\tau_{1 G}, \cdots, \tau_{n G}\right))$；$p \Vdash \varphi$ 读作 $p$ 力迫 $\varphi$
     1. $\left(p \Vdash \varphi\left(\tau_{1}, \cdots, \tau_{n}\right) \wedge q \leqslant p\right) \rightarrow q \Vdash \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)$
     2. 给定力迫 $\mathbf{P}$，令 $p \in \mathbf{P}$ 为力迫条件，$\varphi\left(x_{1}, \cdots, x_{n}\right)$ 为公式，$\tau_{1}, \cdots, \tau_{n}$ 为 $\mathbf{P}-$名字．定义 $p \Vdash^{*} \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)$ 如下
         1. 若 $\varphi$ 是 $x_{1}=x_{2}$，则 $p \Vdash^{*} \tau_{1}=\tau_{2}$ 当且仅当

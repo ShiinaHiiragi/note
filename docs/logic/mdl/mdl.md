@@ -180,7 +180,7 @@
         2. 若 $f$ 是 $n$ 元函数，对任意 $t_{1}, \cdots, t_{n} \in {\displaystyle \prod_{i \in I} A_{i}}$，令 $f^{\mathfrak{A}}\left(\left[t_{1}\right], \cdots,\left[t_{n}\right]\right)=\left[\left(f^{\mathfrak{A}_{i}}\left(t_{1}(i), \cdots, t_{n}(i)\right)\right)_{i \in I}\right]$
         3. 若 $R$ 是 $n$ 元关系，对任意 $t_{1}, \cdots, t_{n} \in {\displaystyle \prod_{i \in I} A_{i}}$ 都有 $\left(\left[t_{1}\right], \cdots,\left[t_{n}\right]\right) \in R^{\mathfrak{A}}$ 当且仅当 $\left\{i \in I \mid\left(t_{1}(i), \cdots, t_{n}(i)\right) \in R^{\mathfrak{A}}\right\} \in \mathcal{U}$
 
-        设 $\mathcal{U}$ 是集合 $I$ 上的一个超滤，$\mathfrak{B}$ 是一个结构．若对每个 $i \in I$ 都有 $\mathfrak{A}_{i}= \mathfrak{B}$，则将 ${\displaystyle \prod_{i \in I} \mathfrak{A}_{i} / \sim_{\mathcal{U}}}$ 记作 $\mathfrak{B}^{I} / \sim_{\mathcal{U}}$，称作 $\mathfrak{B}$ 的超幂
+        设 $\mathcal{U}$ 是 $I$ 上的超滤，若对结构 $\mathfrak{B}$ 与每个 $i \in I$ 都有 $\mathfrak{A}_{i}= \mathfrak{B}$，则将 ${\displaystyle \prod_{i \in I} \mathfrak{A}_{i} / \sim_{\mathcal{U}}}$ 记作 $\mathfrak{B}^{I} / \sim_{\mathcal{U}}$ 或 $\operatorname{Ult}_{I} \mathfrak{B}$，称作 $\mathfrak{B}$ 的超幂
 
     3. $\text{Lo}\acute{\mathrm s}$ 超积定理：设 $I$ 是一个集合，$\mathcal{U}$ 是 $I$ 上的一个滤，$\{\mathfrak{A}_i \mid i \in I\}$ 是一族结构，$\left[s_{1}\right], \cdots,\left[s_{n}\right] \in {\displaystyle \prod_{i \in I} A_{i} / \sim_{\mathcal{U}}}$，$\alpha\left(x_{1}, \cdots, x_{n}\right)$ 是一个正公式，则 ${\displaystyle \prod_{i \in I} \mathfrak{A}_{i} / \sim_{\mathcal{U}}} \vDash \alpha\left(\left[s_{1}\right], \cdots,\left[s_{n}\right]\right)$ 当且仅当 $\left\{i \in I \mid \mathfrak{A}_{i} \vDash \alpha\left(s_{1}(i), \cdots, s_{n}(i)\right)\right\} \in \mathcal{U}_{0}$．若 $\mathcal{U}$ 是 $I$ 上的一个超滤，则上式对任意公式 $\alpha\left(x_{1}, \cdots, x_{n}\right)$ 均成立
         1. 若 $\mathcal{U}$ 是集合 $I$ 上的一个超滤，$\mathfrak{B}$ 是一个结构，则 $\mathfrak{B}^{I} / \sim_{\mathcal{U}}$ 与 $\mathfrak{B}$ 初等等价
@@ -193,9 +193,9 @@
 
         则 ${\displaystyle \overline{\mathfrak{C}}=\bigcup_{n \in \mathbf{N}} \mathfrak{C}_{n}}$ 是包含 $\mathfrak{C}$ 的最小的初等类，称之为 $\mathfrak{C}$ 的初等类闭包
 
-        1. 设 $\mathfrak{A}$ 是一个结构，如果对任意的语句 $\sigma$ 都有 $\mathfrak{A} \vDash \sigma$ 蕴含着存在有限结构 $\mathfrak{A}_{0} \vDash \sigma$，则称 $\mathfrak{A}$ 是伪有限的
-        2. 如果 $\mathfrak{A}$ 是伪有限的，并且不是有限的，则称 $\mathfrak{A}$ 是严格伪有限的
-        3. $\mathfrak{A}$ 是伪有限的当且仅当 $\mathfrak{A}$ 与一族有限结构的超积初等等价
+        4. 设 $\mathfrak{A}$ 是一个结构，如果对任意的语句 $\sigma$ 都有 $\mathfrak{A} \vDash \sigma$ 蕴含着存在有限结构 $\mathfrak{A}_{0} \vDash \sigma$，则称 $\mathfrak{A}$ 是伪有限的
+        5. 如果 $\mathfrak{A}$ 是伪有限的，并且不是有限的，则称 $\mathfrak{A}$ 是严格伪有限的
+        6. $\mathfrak{A}$ 是伪有限的当且仅当 $\mathfrak{A}$ 与一族有限结构的超积初等等价
 
 3. 紧致性定理：设 $S$ 可数，则 $S-$语句集 $\Sigma$ 是有限一致的当且仅当 $\Sigma$ 是一致的
     1. 若 $\mathscr L(S^{*})$ 是一个语言，$\Sigma^{*}$ 是一个有限一致的 $S^{*}-$语句集，则 $\Sigma^{*}$ 有一个基数不超过 $\left|S^{*}\right|$ 的模型
