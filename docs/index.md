@@ -291,8 +291,7 @@ const refList = [
         year: 2014,
         page: [1, 237],
         press: "复旦大学出版社",
-        locate: "上海",
-        plot: 205
+        locate: "上海"
     },
     {
         author: ["杨睿之"],
