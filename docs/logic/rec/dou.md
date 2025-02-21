@@ -157,7 +157,7 @@
     3. 称公式 $\varphi$ 是 $\Pi_{n}^{0}$ 的当且仅当 $\varphi$ 等价于一个形如 $\forall y_1 \forall y_2 \cdots \forall y_k \psi$ 的公式，其中 $\psi$ 是 $\Sigma_{n-1}^{0}$ 的
     4. 称公式 $\varphi$ 是 $\Delta_{n}^{0}$ 的当且仅当 $\varphi$ 既等价于一个形如 $\Sigma_{n}^{0}$ 的公式，又等价于一个形如 $\Pi_{n}^{0}$ 的公式
 
-    其中上标 $0$ 表示 $\varphi$ 是一阶算术中的公式，不引起歧义时可省略上标
+    上标 $\alpha$ 表示 $\varphi$ 的论域为 $V_{\omega+\alpha}$，当 $\alpha = 0$ 时称作一阶算术，不引起歧义时可省略上标
 
     1. 称集合 $B \subseteq \mathbf{N}$ 分别是 $\Sigma_{n}$ 的、$\Pi_{n}$ 的或 $\Delta_{n}$ 的当且仅当 $B$ 具有一个 $\Sigma_{n}、\Pi_{n}$ 或 $\Delta_{n}$ 的定义，即 $B=\{n \in \mathbf{N}: \mathfrak{N} \vDash \varphi(n)\}$
     2. 称集合 $B$ 是算术的当且仅当存在某个自然数 $n$，使得 $B$ 是 $\Sigma_{n}$ 的

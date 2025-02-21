@@ -145,13 +145,37 @@
 
 ## 2.3 描述集合论
 ### 2.3.1 投影集
-1. $\text{Borel}$ 域：若 $E$ 为拓扑空间，称 $E$ 中开集全体生成的 $\sigma$ 域为 $E$ 上的 $\text{Borel}$ 域，记作 $B_{E}$
-    1. $B_{E}$ 中的集称为 $E$ 中的 $\text{Borel}$ 集
-    2. $n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集又称为 $n$ 维 $\text{Borel}$ 点集
-2. $\text{Borel}$ 集的正则性：设 $A$ 是 $\text{Borel}$ 集
-    1. 可测性：对于任意 $X$ 都有 $\mu^{*}(X)=\mu^{*}(X \cap A)+\mu^{*}(X-A)$，其中 $\mu^{*}$ 是外测度
-    2. $\text{Baire}$ 性质：存在一个开集 $G$ 使得 $A \triangle G = (A - G) \cup (G - A)$ 是第一纲集
-    3. 完全集性质：集合 $A$ 或者是可数的，或者包含一个完全集（没有孤立点的集合）
+1. $\text{Borel}$ 域：若 $E$ 为拓扑空间，则称 $E$ 中全体开集生成的 $\sigma$ 域为 $E$ 上的 $\text{Borel}$ 域，记作 $B_{E}$，称其中的集合为 $E$ 中的 $\text{Borel}$ 集
+    1. 通常记实数集 $\mathbf{R} = \omega^{\omega} = \{f \mid f: \omega \to \omega\}$，并称 $n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集为 $n$ 维 $\text{Borel}$ 点集
+    2. 正则性：设 $X \in B_{E}$ 是 $\text{Borel}$ 集
+        1. $\text{Lebesgue}$ 可测性：对于任意实数集 $A$ 都有 $\mu^{*}(A)=\mu^{*}(A \cap X)+\mu^{*}(A-X)$，其中 $\mu^{*}$ 是外测度
+        2. $\text{Baire}$ 性质：存在一个开集 $U$ 使得 $X \triangle U$ 是第一纲集
+        3. 完全集性质：集合 $X$ 或者是可数的，或者包含一个非空完全集；若 $X$ 是闭集也不含有孤立点，则称 $X$ 是完全集
+    3. 分析集：集合 $A$ 是分析集当且仅当 $A$ 是一个 $\text{Borel}$ 集的投影，即存在 $B \subseteq \mathbf R^{n+1}$ 使得 $A = \{\overline x \in \mathbf R^{n} \mid \exists y \ (\overline x, y) \in B\}$
+        1. 称集合为余分析集当且仅当其补集为分析集，集合为 $\text{Borel}$ 集当且仅当它既是分析集也是余分析集
+        2. 任意分析集都具有正则性质
+2. $\text{Borel}$ 集层谱：对 $\alpha < \omega_1$，递归定义 $\mathbf{\Pi}_{\alpha}^{0}, \mathbf{\Sigma}_{\alpha}^{0}, \mathbf{\Delta}_{\alpha}^{0}$
+    1. 所有开集为 $\mathbf{\Sigma}_{1}^{0}$ 的
+    2. 集合 $X$ 为 $\mathbf{\Pi}_{\alpha}^{0}$ 的当且仅当其补集为 $\mathbf{R} - X$ 为 $\mathbf{\Sigma}_{\alpha}^{0}$ 的
+    3. 集合 $X$ 为 $\mathbf{\Delta}_{\alpha}^{0}$ 的当且仅当 $X$ 既是 $\mathbf{\Pi}_{\alpha}^{0}$ 的也是 $\mathbf{\Sigma}_{\alpha}^{0}$ 的
+    4. 对 $\alpha > 1$，集合 $X$ 是 $\mathbf{\Sigma}_{\alpha}^{0}$ 的当且仅当存在集合序列 $\left<X_{i}\right>_{i < \omega}$ 使得 $X = {\displaystyle \bigcup_{i < \omega} X_{i}}$，其中每个 $X_i$ 都是某个 $\mathbf{\Pi}_{\beta_i}^{0}$ 集合且 $\beta_i < \alpha$
+
+    于是 $\alpha < \beta$ 蕴含 $\mathbf{\Sigma}_{\alpha}^{0} \subset \mathbf{\Delta}_{\beta}^{0}$ 与 $\mathbf{\Pi}_{\alpha}^{0} \subset \mathbf{\Delta}_{\beta}^{0}$
+
+3. 投影集层谱：对 $n < \omega$，递归定义 $\mathbf{\Pi}_{n}^{1}, \mathbf{\Sigma}_{n}^{1}, \mathbf{\Delta}_{n}^{1}$
+    1. 所有分析集为 $\mathbf{\Sigma}_{1}^{1}$ 的
+    2. 集合 $X \subseteq \mathbf{R}^{n}$ 为 $\mathbf{\Pi}_{n}^{1}$ 的当且仅当存在 $\mathbf{\Sigma}_{n}^{1}$ 集合 $Y$ 使得 $X = \mathbf{R}^{n} - Y$
+    3. 集合 $X$ 为 $\mathbf{\Delta}_{n}^{1}$ 的当且仅当 $X$ 既是 $\mathbf{\Pi}_{n}^{1}$ 的也是 $\mathbf{\Sigma}_{n}^{1}$ 的
+    4. 集合 $X \subseteq \mathbf{R}^{n}$ 是 $\mathbf{\Sigma}_{n + 1}^{1}$ 的当且仅当它是某个 $\mathbf{\Pi}_{n}^{1}$ 集的投影，即存在 $\mathbf{\Pi}_{n}^{1}$ 的集合 $Y \subseteq \mathbf R^{n+1}$ 使得 $X = \{\overline x \in \mathbf R^{n} \mid \exists y \ (\overline x, y) \in Y\}$
+
+    于是 $n < m$ 蕴含 $\mathbf{\Sigma}_{n}^{1} \subset \mathbf{\Delta}_{m}^{1}$ 与 $\mathbf{\Pi}_{n}^{1} \subset \mathbf{\Delta}_{m}^{1}$
+
+    1. 余分析集即 $\mathbf{\Pi}_{1}^{1}$ 的集合
+    2. $\text{Borel}$ 集即 $\mathbf{\Delta}_{1}^{1} = {\displaystyle \bigcup_{\alpha < \omega_1} \mathbf{\Sigma}_{\alpha}^{0}} = {\displaystyle \bigcup_{\alpha < \omega_1} \mathbf{\Pi}_{\alpha}^{0}}$
+
+4. 假设 $\operatorname{Con}(\mathbf{ZFC} +$存在不可达基数$)$，则存在 $\mathbf{V}$ 的脱殊扩张 $\mathbf{V}[G]$ 使得所有以可数序数序列为参数可定义的实数集具有正则性质
+    1. 在 $\mathbf{L}(R)^{\mathbf{V}[G]}$ 中，所有实数集都具有正则性质
+    2. $\mathbf{ZFC}$ 中无法证明投影集不具备正则性质；$\mathbf{ZF}$ 中无法证明任何集合不具备正则性质
 
 ### 2.3.2 无穷博弈
 - 无穷博弈：设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，函数 $S_1, S_2: \mathbf N^{<\mathbf{N}} \to \mathbf N$，记由
