@@ -145,9 +145,7 @@
 ## 5.3 内模型计划
 若 $\mathbf{ZF}$ 的传递模型 $\mathbf{M}$ 包含所有序数，则称 $\mathbf{M}$ 是内模型
 
-1. $\mathbf L$ 是 $\mathbf{ZF}$ 的最小内模型
-    1. $\mathbf{V} = \mathbf{L}$ 蕴含钻石原理与 $\text{Jensen}$ 方块定理
-    2. $0^{\flat}$
+1. $\mathbf L(A)$
 2. $\mathbf L[A]$
 3. $\mathbf L[U]$
 4. $\mathbf L[\mathcal U]$

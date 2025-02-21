@@ -48,8 +48,9 @@
 
     1. 如果 $\alpha$ 是序数，则 $\alpha$ 的后继 $\alpha^{+} = \alpha \cup \{\alpha\}$ 也是序数
         1. 如果不为 $0$ 的序数 $\alpha$ 有 $\exists \beta \ (\alpha = \beta^{+})$，则称 $\alpha$ 为后继序数，否则称 $\alpha$ 为极限序数
-            1. $\mathbf N$ 是首个极限序数，因此作为序数的 $\mathbf N$ 通常记作 $\omega$
+            1. 自然数集 $\mathbf N$ 是首个极限序数，因此作为序数的 $\mathbf N$ 通常记作 $\omega$
             2. 所有的序数都是 $0$、后继序数与极限序数中的一种
+            3. 定义所有属于序数 $\alpha$ 的极限序数为 $\operatorname{lim}(\alpha)$；特别地，记全体极限序数的类为 $\operatorname{lim}(\mathbf{V})$
         2. 自然数恰好就是有穷序数，大于等于 $\omega$ 的序数称为无穷序数
     2. 传递集与序数的关系
         1. 如果 $\alpha$ 是序数且 $B \subseteq \alpha$ 是传递集，则 $B$ 是序数且 $B \in \alpha$．特别地，对任意序数 $\alpha, \beta$，如果 $\beta \subseteq \alpha$，则 $\beta \in \alpha$

@@ -213,6 +213,12 @@
         2. 设 $\mathbf{V}=\mathbf{L}$，则对任意不可数正则基数 $\kappa$，$L_{\kappa}=H_{\kappa}$
         3. 设 $S_{0}=\left\{\psi_{1}, \cdots, \psi_{n}\right\}$ 是 $\mathbf{ZF}+\mathbf{V}=\mathbf{L}$ 的有穷子集，则 $\mathbf{ZF} \vdash \exists M \ (|M|=\omega \wedge M$ 是传递的 $\wedge(\psi_{1}^{M} \wedge \cdots \wedge \psi_{n}^{M}))$
         4. 若 $\kappa$ 是不可数正则基数，则 $L_{\kappa} \vDash \mathbf{ZF}-\mathrm{Pow}+\mathbf{V}=\mathbf{L}$；若 $\kappa$ 还是不可达基数，则幂集公理也在 $L_{\kappa}$ 中成立
+    4. $\mathbf{V}=\mathbf{L}$ 蕴含钻石原理与 $\text{Jensen}$ 方块定理
+        1. 钻石原理：存在集合序列 $\left\langle S_{\alpha}: \alpha<\omega_{1}\right\rangle$，其中 $S_{\alpha} \subseteq \alpha$，使得对每个 $X \subseteq \omega_{1}$，$\left\{\alpha<\omega_{1} \mid X \cap \alpha=S_{\alpha}\right\}$ 是 $\omega_{1}$ 的稳定子集
+        2. 所有不可数集均满足 $\square_{\kappa}$ 性质，即存在一个序列 $\left\langle C_{\alpha}: \alpha \in \operatorname{lim}\left(\kappa^{+}\right)\right\rangle$ 使得
+            1. $C_{\alpha}$ 是 $\alpha$ 的封闭无界子集
+            2. 若 $\beta \in \operatorname{lim}\left(C_{\alpha}\right)$，则 $C_{\beta}=C_{\alpha} \cap \beta$
+            3. 若 $\operatorname{cf}(\alpha)<\kappa$ 则 $\left|C_{\alpha}\right|<\kappa$
 
 ## 4.3 Grothendieck 宇宙
 1. $\text{Grothendieck}$ 宇宙是满足以下性质的集合 $U$
