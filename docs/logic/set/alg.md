@@ -146,7 +146,9 @@
 ## 2.3 描述集合论
 ### 2.3.1 投影集
 1. $\text{Borel}$ 域：若 $E$ 为拓扑空间，则称 $E$ 中全体开集生成的 $\sigma$ 域为 $E$ 上的 $\text{Borel}$ 域，记作 $B_{E}$，称其中的集合为 $E$ 中的 $\text{Borel}$ 集
-    1. 通常记实数集 $\mathbf{R} = \omega^{\omega} = \{f \mid f: \omega \to \omega\}$，并称 $n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集为 $n$ 维 $\text{Borel}$ 点集
+    1. 称 $n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集为 $n$ 维 $\text{Borel}$ 点集
+        1. 通常记实数集 $\mathbf{R} = \omega^{\omega} = \{f \mid f: \omega \to \omega\}$
+        2. $\omega^{\omega}$ 上存在一个自然的拓扑：对任意 $\sigma \in \omega^{< \omega}$，取其所有尾节扩张 $[\sigma]^{\prec} = \{f \in \omega^{< \omega} \mid \sigma \prec f\}$，则通常将以 $\{[\sigma]^{\prec} \mid \sigma \in \omega^{< \omega}\}$ 为拓扑基生成的拓扑空间作为 $\text{Baire}$ 空间
     2. 正则性：设 $X \in B_{E}$ 是 $\text{Borel}$ 集
         1. $\text{Lebesgue}$ 可测性：对于任意实数集 $A$ 都有 $\mu^{*}(A)=\mu^{*}(A \cap X)+\mu^{*}(A-X)$，其中 $\mu^{*}$ 是外测度
         2. $\text{Baire}$ 性质：存在一个开集 $U$ 使得 $X \triangle U$ 是第一纲集
@@ -170,8 +172,8 @@
 
     于是 $n < m$ 蕴含 $\mathbf{\Sigma}_{n}^{1} \subset \mathbf{\Delta}_{m}^{1}$ 与 $\mathbf{\Pi}_{n}^{1} \subset \mathbf{\Delta}_{m}^{1}$
 
-    1. 余分析集即 $\mathbf{\Pi}_{1}^{1}$ 的集合
-    2. $\text{Borel}$ 集即 $\mathbf{\Delta}_{1}^{1} = {\displaystyle \bigcup_{\alpha < \omega_1} \mathbf{\Sigma}_{\alpha}^{0}} = {\displaystyle \bigcup_{\alpha < \omega_1} \mathbf{\Pi}_{\alpha}^{0}}$
+    1. 闭集即 $\mathbf{\Pi}_{1}^{0}$ 的集合，余分析集即 $\mathbf{\Pi}_{1}^{1}$ 的集合
+    2. $\text{Borel}$ 集即 $\mathbf{\Delta}_{1}^{1} = {\displaystyle \bigcup_{\alpha < \omega_1} \mathbf{\Sigma}_{\alpha}^{0}} = {\displaystyle \bigcup_{\alpha < \omega_1} \mathbf{\Pi}_{\alpha}^{0}}$ 的集合
 
 4. 假设 $\operatorname{Con}(\mathbf{ZFC} +$存在不可达基数$)$，则存在 $\mathbf{V}$ 的脱殊扩张 $\mathbf{V}[G]$ 使得所有以可数序数序列为参数可定义的实数集具有正则性质
     1. 在 $\mathbf{L}(R)^{\mathbf{V}[G]}$ 中，所有实数集都具有正则性质
