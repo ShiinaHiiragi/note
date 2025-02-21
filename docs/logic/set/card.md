@@ -34,13 +34,43 @@
         1. 令 $M$ 为 $\mathbf{ZFC}$ 的任意可数传递模型，$\mathbf{P} \in M$ 为偏序集，$G$ 为 $\mathbf{P}$ 中 $M-$脱殊滤，则存在 $\mathbf{ZFC}$ 的可数传递模型 $M[G]$，有 $M \subseteq M[G], G \in M[G]$ 且 $o(M)=o(M[G])$，同时，$M[G]$ 是满足以上条件的模型中最小的
         2. $\operatorname{Con}(\mathbf{ZF}) \rightarrow \operatorname{Con}(\mathbf{ZF}+\mathbf{V}\neq\mathbf{L})$
 
-4. 力迫
+4. 令 $\varphi\left(x_{1}, \cdots, x_{n}\right)$ 为公式，自由变元在 $x_{1}, \cdots, x_{n}$ 中．令 $M$ 为 $\mathbf{ZFC}$ 的可数传递模型，$\mathbf{P} \in M$ 为力迫，$\tau_{1}, \cdots, \tau_{n} \in M^{\mathbf{P}}$ 且 $p \in \mathbf{P}$，则 $p \Vdash_{\mathbf{P}, M} \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)$ 当且仅当 $\forall G \ ((G$ 是 $\mathbf{P}$ 中的 $M$ 脱殊滤 $\wedge p \in G) \rightarrow \varphi^{M[G]}\left(\tau_{1 G}, \cdots, \tau_{n G}\right))$；$p \Vdash \varphi$ 读做 $p$ 力迫 $\varphi$
+    1. $\left(p \Vdash \varphi\left(\tau_{1}, \cdots, \tau_{n}\right) \wedge q \leqslant p\right) \rightarrow q \Vdash \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)$
+    2. 给定力迫 $\mathbf{P}$，令 $p \in \mathbf{P}$ 为力迫条件，$\varphi\left(x_{1}, \cdots, x_{n}\right)$ 为公式，$\tau_{1}, \cdots, \tau_{n}$ 为 $\mathbf{P}-$名字．定义 $p \Vdash^{*} \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)$ 如下
+        1. 若 $\varphi$ 是 $x_{1}=x_{2}$，则 $p \Vdash^{*} \tau_{1}=\tau_{2}$ 当且仅当
+            1. 对任意 $\left(\pi_{1}, s_{1}\right) \in \tau_{1}$，$\left\{q \leqslant p \mid q \leqslant s_{1} \rightarrow \exists\left(\pi_{2}, s_{2}\right) \in \tau_{2}\left(q \leqslant s_{2} \wedge q \Vdash^{*} \pi_{1}=\pi_{2}\right)\right\}$ 是 $p$ 下稠密的
+            2. 对任意 $\left(\pi_{2}, s_{2}\right) \in \tau_{2}$，$\left\{q \leqslant p \mid q \leqslant s_{2} \rightarrow \exists\left(\pi_{1}, s_{1}\right) \in \tau_{1}\left(q \leqslant s_{1} \wedge q \Vdash^{*} \pi_{1}=\pi_{2}\right)\right\}$ 是 $p$ 下稠密的
+        2. 若 $\varphi$ 是 $x_{1} \in x_{2}$，则 $p \Vdash^{*} \tau_{1} \in \tau_{2}$ 当且仅当 $\left\{q \mid \exists(\pi, s) \in \tau_{2}\left(q \leqslant s \wedge q \Vdash^{*} \tau_{1}=\pi\right)\right\}$ 是 $p$ 下稠密的
+        3. 若 $\varphi\left(x_{1}, \cdots, x_{n}\right)=\psi_{1}\left(x_{1}, \cdots, x_{n}\right) \wedge \psi_{2}\left(x_{1}, \cdots, x_{n}\right)$，则 $p \Vdash^{*} \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)$ 当且仅当 $p \Vdash^{*} \psi_{1}$ 且 $p \Vdash^{*} \psi_{2}$
+        4. 若 $\varphi\left(x_{1}, \cdots, x_{n}\right)=\neg \psi\left(x_{1}, \cdots, x_{n}\right)$，则 $p \Vdash^{*} \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)$ 当且仅当 $\neg \exists q \leqslant p \ (q \Vdash^{*} \psi)$
+        5. 若 $\varphi\left(x_{1}, \cdots, x_{n}\right)=\exists x \ \psi\left(x, x_{1}, \cdots, x_{n}\right)$，则 $p \Vdash^{*} \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)$ 当且仅当 $\left\{r \mid \exists \sigma \in V^{\mathbf{P}}\left(r \Vdash^{*} \psi\right)\right\}$ 是 $p$ 下稠密的
+    3. 设 $\varphi\left(x_{1}, \cdots, x_{n}\right)$ 为公式，$M$ 为 $\mathbf{ZFC}$ 的传递模型，$\mathbf{P}$ 为 $M$ 的力迫，$\tau_{1}, \cdots, \tau_{n} \in M^{\mathbf{P}}$ 为 $M$ 中的 $\mathbf{P}-$名字，令 $G$ 为 $M$ 脱殊滤
+        1. 若 $p \in G$ 且 $\left(p \Vdash^{*} \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)\right)^{M}$，则 $\left(\varphi\left(\tau_{1 G}, \cdots, \tau_{n G}\right)\right)^{M[G]}$
+        2. 若 $\left(\varphi\left(\tau_{1 G}, \cdots, \tau_{n G}\right)\right)^{M[G]}$，则 $\exists p \in G \ (\left(p \Vdash^{*} \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)\right)^{M})$
+    4. 力迫定理：设 $M$ 为 $\mathbf{ZFC}$ 的可数传递模型，$\mathbf{P}$ 为 $M$ 的力迫．令 $\varphi\left(x_{1}, \cdots, x_{n}\right)$ 为公式，$\tau_{1}, \cdots, \tau_{n} \in M^{\mathbf{P}}$ 为 $\mathbf{P}-$名字
+        1. 对任意 $p \in \mathbf{P}$，$p \Vdash \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)$ 当且仅当 $\left(p \Vdash^{*} \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)\right)^{M}$
+        2. 对任意 $M$ 上的 $\mathbf{P}$ 脱殊滤 $G$，$\varphi\left(\tau_{1 G}, \cdots, \tau_{n G}\right)^{M[G]}$ 当且仅当 $\exists p \in G\left(p \Vdash \varphi\left(\tau_{1}, \cdots, \tau_{n}\right)\right)$
 
 ### 5.1.2 相对独立性
 1. 若对任意 $\mathbf{ZFC}$ 的有穷子集 $S$，总存在其另一有穷子集 $T$，使得 $T$ 的任何可数传递模型 $M$ 都可扩展为 $S+\sigma$ 的可数传递模型 $N$
     1. $\mathbf{ZFC}+\sigma \vdash \tau_{\mathbf{N}} \to \mathbf{ZFC} \vdash \tau_{\mathbf{N}}$
     2. $\mathbf{ZFC}$ 一致蕴涵 $\mathbf{ZFC}+\sigma$ 一致
-2. ...
+2. 对任意基数 $\lambda$，令 $\operatorname{Func}_{\lambda}(I, J)=\{p \mid |p| <\lambda \wedge p$ 是函数 $\wedge \operatorname{dom}(p) \subseteq I \wedge \operatorname{ran}(p) \subseteq J\}$，则相应的力迫为 $\left(\operatorname{Func}_{\lambda}(I, J), \supseteq, \varnothing\right)$
+    1. 给定基数 $\kappa$，如果偏序集 $\mathbf{P}$ 的任意反链的基数都小于 $\kappa$，则称 $\mathbf{P}$ 具有 $\kappa-$反链性质，记作 $\kappa\text{-}c.c.$
+        1. 对任意基数 $\lambda$，$\operatorname{Func}_{\lambda}(I, J)$ 有 $\left(|J|^{<\lambda}\right)^{+}-$反链性质
+        2. 设 $\mathbf{P} \in M$，$(\kappa \textsf{ 是不可数基数 })^{M}$ 且 $(\mathbf{P}$ 有 $\kappa-$反链性质$)^{M}$，$G$ 为 $M$ 上的 $\mathbf{P}-$脱殊滤．令 $A, B \in M$，$f: A \rightarrow B \in M[G]$，则存在 $M$ 中的映射 $F: A \rightarrow \mathcal{P}(B)$，$\forall a \in A \ (f(a) \in F(a))$ 且 $\forall a \in A \ (|F(a)| \leqslant \kappa)^{M}$
+    2. （广义）$\Delta-$系统引理：令 $\lambda, \kappa$ 是（无穷）正则基数且 $\kappa>\lambda$．假设对任意 $\alpha<\kappa$，都有 $\left|\alpha^{<\lambda}\right|<\kappa$．对任意集合 $\mathcal{A}$，如果 $|\mathcal{A}|=\kappa$，但对任意 $A \in \mathcal{A},|A|<\lambda$，则存在 $\mathcal{A}_{0} \in[\mathcal{A}]^{\kappa}$，$\mathcal{A}_{0}$ 是 $\Delta-$系统，即存在集合 $R$ 使得对任意 $A, B \in \mathcal{A}_{0}$，如果 $A \neq B$，则 $A \cap B=R$．称 $R$ 为 $\mathcal{A}_{0}$ 的根
+    3. 设 $\mathbf{P} \in M$ 为力迫，$(\kappa$ 是基数$)^{M}$
+        1. $\mathbf{P}$ 是保持 $\geqslant \kappa-$基数的当且仅当若 $G$ 是 $M$ 上的 $\mathbf{P}-$脱殊滤且 $\kappa \leqslant \beta \leqslant o(M)$，则 $(\beta$ 是基数$)^{M} \leftrightarrow(\beta$ 是基数 $)^{M[G]}$
+        2. $\mathbf{P}$ 是保持 $\geqslant \kappa-$共尾的当且仅当若 $G$ 是 $M$ 上的 $\mathbf{P}-$脱殊滤而 $\gamma$是 $M$ 中的基数且 $\operatorname{cf}(\gamma)^{M} \geqslant \kappa$，则 $\operatorname{cf}(\gamma)^{M}=\operatorname{cf}(\gamma)^{M[G]}$
+
+3. 设 $\mathbf{P}$ 是力迫，$\lambda$ 是基数，称 $\mathbf{P}$ 是 $\lambda-$封闭的当且仅当对任意 $\alpha<\lambda$，$\mathbf{P}$ 中长度为 $\alpha$ 的下降链 $\left(p_{\xi} \mid \xi<\alpha\right)$ 都有下界，即存在 $q \in \mathbf{P}$ 使得对任意 $\xi<\alpha$ 都有 $q \leqslant p_{\xi}$
+    1. 设 $\mathbf{P}=\operatorname{Func}_{\lambda}(I, J) \in M$，$(\lambda \geqslant \aleph_{0}$ 是正则基数$)^{M}$，$(2^{<\lambda}=\lambda)^{M}$ 且 $(|J| \leqslant \lambda)^{M}$，则 $\mathbf{P}$ 保持共尾并且保持基数
+        1. 若 $\lambda$ 是正则的，则 $\mathrm{Func}_{\lambda}(I, J)$ 是 $\lambda-$封闭的
+        2. 设 $(\mathbf{P}$ 是 $\lambda-$封闭的$)^{M}$，$A, E \in M$ 且 $(|A|<\lambda)^{M}$，则若 $f: A \rightarrow E$ 是 $M[G]$ 中的函数，那么 $f$ 也属于 $M$
+    2. 设在 $M$ 中有 $\mathbf{P}=\mathrm{Func}_{\lambda}(\kappa \times \lambda, 2)$，其中 $\kappa, \lambda$ 是基数且 $\kappa>\lambda \geqslant \aleph_{0}, \lambda$ 是正则的．假设 $\kappa^{\lambda}=\kappa$，且 $2^{<\lambda}=\lambda$，则 $\mathbf{P}$ 保持共尾和基数，且在 $M[G]$ 中有 $2^{\lambda}=\kappa$
+        1. $\operatorname{Con}(\mathbf{ZFC}) \rightarrow \operatorname{Con}(\mathbf{ZFC}+\neg \mathbf{CH})$；特别地，$\operatorname{Con}(\mathbf{ZFC}) \rightarrow \operatorname{Con}(\mathbf{ZFC}+\neg \mathbf{GCH})$
+        2. $\operatorname{Con}(\mathbf{ZFC}) \rightarrow \operatorname{Con}\left(\mathbf{ZFC}+2^{\kappa_{0}}=\kappa\right)$ 对任意满足 $\mathrm{cf}(\kappa)>\aleph_{0}$ 的基数 $\kappa$ 成立
 
 ## 5.2 大基数理论
 ### 5.2.1 不可描述性
