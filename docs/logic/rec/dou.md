@@ -160,15 +160,15 @@
     上标 $\alpha$ 表示 $\varphi$ 的论域为 $V_{\omega+\alpha}$，当 $\alpha = 0$ 时称作一阶算术，不引起歧义时可省略上标
 
     1. 称集合 $B \subseteq \mathbf{N}$ 分别是 $\Sigma_{n}$ 的、$\Pi_{n}$ 的或 $\Delta_{n}$ 的当且仅当 $B$ 具有一个 $\Sigma_{n}、\Pi_{n}$ 或 $\Delta_{n}$ 的定义，即 $B=\{n \in \mathbf{N}: \mathfrak{N} \vDash \varphi(n)\}$
-    2. 称集合 $B$ 是算术的当且仅当存在某个自然数 $n$，使得 $B$ 是 $\Sigma_{n}$ 的
+    2. 称集合 $B$ 是算术的当且仅当存在某个自然数 $n$ 使得 $B$ 是 $\Sigma_{n}^{0}$ 的；$B$ 是分析的当且仅当存在某个自然数 $n$，使得 $B$ 是 $\Sigma_{n}^{1}$ 的
     3. 对固定的集合 $A \subseteq \mathbf{N}$，通过在语言中添加新的一元谓词符号 $\dot{A}$，可以类似定义 $\Sigma_{n}^{A}、\Pi_{n}^{A}$ 和 $\Delta_{n}^{A}$ 的公式和集合
 
-    !!! note "扩展公式分层"
+    !!! note "扩展算术层谱"
         1. $\Sigma_{0}^{n+}=\Pi_{0}^{n+}=\Delta_{0}$
         2. $\Sigma_{n+1}^{n+}$ 是将任意块存在量词和有界全称量词添加到 $\Pi_{n}^{n+}$ 的公式前得到的公式集
         3. $\Pi_{n+1}^{n+}$ 是将任意块全称量词和有界存在量词添加到 $\Sigma_{n}^{n+}$ 的公式前得到的公式集
 
-3. 分层定理：对任一 $n>0$，$\left\{\Delta_{n}\right.$ 集合$\} \subsetneq\left\{\Sigma_{n}\right.$ 集合$\}$ 且 $\left\{\Delta_{n}\right.$ 集合$\} \subsetneq\left\{\Pi_{n}\right.$ 集合$\}$
+3. 分层定理：对任一 $n>0$，$\Delta_{n} \subsetneq \Sigma_{n}$ 且 $\Delta_{n} \subsetneq \Pi_{n}$
     1. 令 $A$ 和 $B$ 为自然数的子集
         1. $A$ 是 $\Sigma_{n}$ 的，当且仅当它的补集 $\overline{A}$ 是 $\Pi_{n}$ 的
         2. 如果 $A$ 是 $\Sigma_{n}$ 的或是 $\Pi_{n}$ 的，则对所有的 $m>n$，$A$ 都既是 $\Sigma_{m}$ 的，也是 $\Pi_{m}$ 的

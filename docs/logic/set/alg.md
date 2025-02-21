@@ -162,7 +162,11 @@
     3. 集合 $X$ 为 $\mathbf{\Delta}_{\alpha}^{0}$ 的当且仅当 $X$ 既是 $\mathbf{\Pi}_{\alpha}^{0}$ 的也是 $\mathbf{\Sigma}_{\alpha}^{0}$ 的
     4. 对 $\alpha > 1$，集合 $X$ 是 $\mathbf{\Sigma}_{\alpha}^{0}$ 的当且仅当存在集合序列 $\left<X_{i}\right>_{i < \omega}$ 使得 $X = {\displaystyle \bigcup_{i < \omega} X_{i}}$，其中每个 $X_i$ 都是某个 $\mathbf{\Pi}_{\beta_i}^{0}$ 集合且 $\beta_i < \alpha$
 
-    于是 $\alpha < \beta$ 蕴含 $\mathbf{\Sigma}_{\alpha}^{0} \subset \mathbf{\Delta}_{\beta}^{0}$ 与 $\mathbf{\Pi}_{\alpha}^{0} \subset \mathbf{\Delta}_{\beta}^{0}$
+    $\text{Borel}$ 集层谱与算术层谱一一对应
+
+    1. $\alpha < \beta$ 蕴含 $\mathbf{\Sigma}_{\alpha}^{0} \subsetneq \mathbf{\Delta}_{\beta}^{0}$ 与 $\mathbf{\Pi}_{\alpha}^{0} \subsetneq \mathbf{\Delta}_{\beta}^{0}$
+    2. 闭集即 $\mathbf{\Pi}_{1}^{0}$ 的集合
+    3. $\text{Borel}$ 集即 ${\displaystyle \bigcup_{\alpha < \omega_1} \mathbf{\Sigma}_{\alpha}^{0} = \bigcup_{\alpha < \omega_1} \mathbf{\Pi}_{\alpha}^{0}}$ 的集合
 
 3. 投影集层谱：对 $n < \omega$，递归定义 $\mathbf{\Pi}_{n}^{1}, \mathbf{\Sigma}_{n}^{1}, \mathbf{\Delta}_{n}^{1}$
     1. 所有分析集为 $\mathbf{\Sigma}_{1}^{1}$ 的
@@ -170,10 +174,11 @@
     3. 集合 $X$ 为 $\mathbf{\Delta}_{n}^{1}$ 的当且仅当 $X$ 既是 $\mathbf{\Pi}_{n}^{1}$ 的也是 $\mathbf{\Sigma}_{n}^{1}$ 的
     4. 集合 $X \subseteq \mathbf{R}^{n}$ 是 $\mathbf{\Sigma}_{n + 1}^{1}$ 的当且仅当它是某个 $\mathbf{\Pi}_{n}^{1}$ 集的投影，即存在 $\mathbf{\Pi}_{n}^{1}$ 的集合 $Y \subseteq \mathbf R^{n+1}$ 使得 $X = \{\overline x \in \mathbf R^{n} \mid \exists y \ (\overline x, y) \in Y\}$
 
-    于是 $n < m$ 蕴含 $\mathbf{\Sigma}_{n}^{1} \subset \mathbf{\Delta}_{m}^{1}$ 与 $\mathbf{\Pi}_{n}^{1} \subset \mathbf{\Delta}_{m}^{1}$
+    投影集层谱与分析层谱一一对应
 
-    1. 闭集即 $\mathbf{\Pi}_{1}^{0}$ 的集合，余分析集即 $\mathbf{\Pi}_{1}^{1}$ 的集合
-    2. $\text{Borel}$ 集即 $\mathbf{\Delta}_{1}^{1} = {\displaystyle \bigcup_{\alpha < \omega_1} \mathbf{\Sigma}_{\alpha}^{0}} = {\displaystyle \bigcup_{\alpha < \omega_1} \mathbf{\Pi}_{\alpha}^{0}}$ 的集合
+    1. $n < m$ 蕴含 $\mathbf{\Sigma}_{n}^{1} \subsetneq \mathbf{\Delta}_{m}^{1}$ 与 $\mathbf{\Pi}_{n}^{1} \subsetneq \mathbf{\Delta}_{m}^{1}$
+    2. 余分析集即 $\mathbf{\Pi}_{1}^{1}$ 的集合
+    3. $\text{Borel}$ 集即 $\mathbf{\Delta}_{1}^{1}$ 的集合
 
 4. 假设 $\operatorname{Con}(\mathbf{ZFC} +$存在不可达基数$)$，则存在 $\mathbf{V}$ 的脱殊扩张 $\mathbf{V}[G]$ 使得所有以可数序数序列为参数可定义的实数集具有正则性质
     1. 在 $\mathbf{L}(R)^{\mathbf{V}[G]}$ 中，所有实数集都具有正则性质
