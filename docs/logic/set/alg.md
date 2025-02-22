@@ -185,16 +185,18 @@
     2. $\mathbf{ZFC}$ 中无法证明投影集不具备正则性质；$\mathbf{ZF}$ 中无法证明任何集合不具备正则性质
 
 ### 2.3.2 无穷博弈
-- 无穷博弈：设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，函数 $S_1, S_2: \mathbf N^{<\mathbf{N}} \to \mathbf N$，记由
+1. $\text{Gale}-\text{Stewart}$ 博弈：设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，对任意非空集合 $X$，记由函数 $S_1, S_2: X^{<\omega} \to X$ 通过
 
     $$
-    \begin{aligned}
-    n_{2k} & = S_1(n_0, n_1, ..., n_{2k-1}) \\
-    n_{2k+1} & = S_2(n_0, n_1, ..., n_{2k})
-    \end{aligned}
+    x_{i} = \left\{\begin{aligned}
+    & S_1(x_0, x_1, ..., x_{2k-1}), & i = 2k \\
+    & S_2(x_0, x_1, ..., x_{2k}), & i = 2k+1
+    \end{aligned}\right.
     $$
 
-    定义的无穷序列 $\left<n_0, n_1, n_2 \cdots,\right>$ 为 $S_1 \# S_2$
+    定义的无穷序列 $x = \left<x_i\right>_{i < \omega}$ 为 $S_1 \# S_2$
 
     1. 对任意 $\Phi$ 公式 $\varphi(X)$，若有 $\exists S_1 \forall S_2 \ \varphi \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \varphi\left(S_1 \# S_2\right)$，则称 $\Phi-$博弈是被决定的
-    2. 对任意 $\Phi$ 公式 $\varphi(X), \psi(X)$，若有 $\theta(X) = \phi(X) \wedge \neg \psi(X)$ 且 $\exists S_1 \forall S_2 \ \theta \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \theta\left(S_1 \# S_2\right)$，则称 $\Phi_{\rho}-$博弈是被决定的（例如 $\Sigma_{1 \rho}^0-$博弈的决定性）
+    2. 对任意 $\Phi$ 公式 $\varphi(X), \psi(X)$，若有 $\theta(X) = \phi(X) \wedge \neg \psi(X)$ 且 $\exists S_1 \forall S_2 \ \theta \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \theta\left(S_1 \# S_2\right)$，则称 $\Phi_{\rho}-$博弈是被决定的
+
+2. ...
