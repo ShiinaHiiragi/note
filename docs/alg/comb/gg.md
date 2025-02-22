@@ -69,9 +69,9 @@
     - $\text{Eddington}$ 数：约 $1.57 \times 10^{79}$，即可观测宇宙中的质子数
     - $\text{Poincar}\acute{\mathrm e}$ 回归时间：约 $10 \uparrow 10 \uparrow 10 \uparrow 10 \uparrow 2.08$，即可观测宇宙的始态复现时间
 
-## 2.2 序数层级
+## 2.2 基本列与增长层谱
 1. 基本列：设 $\alpha_0 < \alpha_1 < \alpha_2 < \cdots$ 为一系列严格递增的无穷序数，若存在极限序数 $\alpha$ 使得 $\alpha = \sup\{\alpha_0, \alpha_1, \alpha_2, \cdots\}$，则称 $\alpha_0, \alpha_1, \alpha_2, \cdots$ 为以 $\alpha$ 为极限的基本列，记作 $\alpha = \lim(\alpha_0, \alpha_1, \alpha_2, \cdots)$
-    1. $\text{Wainer}$ 层级：对于极限序数 $\alpha \leqslant \varepsilon_0$，定义 $\alpha$ 的基本列 $\alpha[0], \alpha[1], \cdots$ 如下
+    1. $\text{Wainer}$ 层谱：对于极限序数 $\alpha \leqslant \varepsilon_0$，定义 $\alpha$ 的基本列 $\alpha[0], \alpha[1], \cdots$ 如下
 
         $$
         \begin{aligned}
@@ -84,7 +84,7 @@
         \end{aligned}
         $$
 
-    2. $\text{Veblen}$ 层级：对于极限序数 $\alpha < \Gamma_0$，定义 $\alpha$ 的基本列 $\alpha[0], \alpha[1], \cdots$ 如下
+    2. $\text{Veblen}$ 层谱：对于极限序数 $\alpha < \Gamma_0$，定义 $\alpha$ 的基本列 $\alpha[0], \alpha[1], \cdots$ 如下
 
         $$
         \begin{aligned}
@@ -110,12 +110,12 @@
         \end{aligned}
         $$
 
-        未取定基本列的 $\text{Hardy}$ 函数不是良定义的概念，此处基本列取 $\text{Wainer}$ 层级
+        未取定基本列的 $\text{Hardy}$ 函数不是良定义的概念，此处基本列取 $\text{Wainer}$ 层谱
 
         1. $\text{Hardy}$ 函数的复合：若不存在 $\gamma$ 使得 $\alpha + \beta = \gamma + \beta$，则 $H[\alpha + \beta](n) = H[\alpha](H[\beta](n))$
         2. $\text{Hardy}$ 函数的增长率：对于 $m > 1$ 时有 $H[\omega^m](n) > 2 \uparrow^{m-1} n$
 
-    2. 急增长函数 $\text{FGH}$（也称作快速增长层级）：
+    2. 急增长函数 $\text{FGH}$（也称作快速增长层谱）：
 
         $$
         \begin{aligned}
@@ -128,7 +128,7 @@
         1. 当 $\alpha < \varepsilon_0$ 时有 $F[\alpha](n)=H\left[\omega^\alpha\right](n)$
         2. 当 $\alpha = \varepsilon_0$ 时有 $F\left[\varepsilon_0\right](n) \approx H\left[\varepsilon_0\right](n+1)=H\left[\varepsilon_0+1\right](n)$ 近似成立
 
-    3. 缓增长函数 $\text{SGH}$（也称作缓慢增长层级）：
+    3. 缓增长函数 $\text{SGH}$（也称作缓慢增长层谱）：
 
         $$
         \begin{aligned}
@@ -172,7 +172,7 @@
 
             令 $S[n] = \left<\right.g \oplus \small \underbrace{\normalsize b \oplus b \oplus \cdots \oplus b}_{\normalsize f(n)+1} \normalsize\left.\right>[f(n)]$
 
-        原始数列系统在 $\text{Wainer}$ 层级下近似为 $\left<0, 1, 2, \cdots, n\right>[n] \approx H\left[\varepsilon_0\right](n) \approx F\left[\varepsilon_0\right](n)$
+        原始数列系统在 $\text{Wainer}$ 层谱下近似为 $\left<0, 1, 2, \cdots, n\right>[n] \approx H\left[\varepsilon_0\right](n) \approx F\left[\varepsilon_0\right](n)$
 
     3. 原始数列的基本列：给定原始数列 $S$ 与非负整数，定义基本列 $S[0], S[1], S[n],\cdots$ 如下
         1. $\left(w\left(S_1\right)\oplus w\left(S_2\right)\oplus \cdots\oplus w\left(S_k\right)\right)[n]=w\left(S_1\right)\oplus w\left(S_2\right)\oplus \cdots\oplus w\left(S_{k-1}\right)\oplus w\left(S_k\right)[n]$
@@ -292,7 +292,7 @@
         \end{aligned}
         $$
 
-        其中 $a, b \in \mathbf N$，$X$ 为多于或等于 $0$ 个自然数的简记，$Y$ 为多于或等于 $0$ 个 $0$ 的简记，其 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为
+        其中 $a, b \in \mathbf N$，$X$ 为多于或等于 $0$ 个自然数的简记，$Y$ 为多于或等于 $0$ 个 $0$ 的简记，其 $\text{Wainer}$ 层谱 $\text{FGH}$ 近似为
 
         $$
         \begin{aligned}
@@ -319,7 +319,7 @@
         其中 $X$ 表示 $0$ 个以上的自然数，$Y, Y_1, Y_2$ 表示 $0$ 个以上的整数序列，$Z$ 表示 $0$ 个以上的 $0$，$a, b, c$ 表示 $0$ 以上的正整数
 
         1. 对于大整数 $N$，记 $\mathrm{index} [\cdots, b_3, b_2, b_1, b_0, a_0] = \cdots + N^3 \cdot b_3 + N^2 \cdot b_2 + N \cdot b_1 + b_0$，则 $A$ 中序列按 $\mathrm{index}$ 从大到小的顺序排列，且 $A$ 中不存在 $\mathrm{index}$ 相同的序列
-        2. 二重序列 $\text{Ackermann}$ 函数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似为 $A([\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize], [n]) \approx F[\omega^{\omega^{\omega}}](n)$
+        2. 二重序列 $\text{Ackermann}$ 函数的 $\text{Wainer}$ 层谱 $\text{FGH}$ 近似为 $A([\small \underbrace{\normalsize 1, 1, \cdots, 1}_{\normalsize n} \normalsize], [n]) \approx F[\omega^{\omega^{\omega}}](n)$
 
 5. $\text{Conway}$ 链式箭头：设 $a, b, c \in \mathbf Z_+$，$X$ 为 $\text{Conway}$ 链 $x_1 \to x_2 \to \cdots \to x_n \ (n \geqslant 1)$，则 $\text{Conway}$ 链递归定义如下
 
@@ -347,7 +347,7 @@
         \end{aligned}
         $$
 
-    3. （扩展）$\text{Conway}$ 链的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似
+    3. （扩展）$\text{Conway}$ 链的 $\text{Wainer}$ 层谱 $\text{FGH}$ 近似
 
         $$
         \begin{aligned}
@@ -373,16 +373,16 @@
     \end{aligned}\right.
     $$
 
-    令 $g(n) = \dfrac{1}{f(n)}$，则其 $\text{Wainer}$ 层级的 $\text{FGH}$ 近似有 $g(n) \leqslant F[\varepsilon_{0}](n-c)$
+    令 $g(n) = \dfrac{1}{f(n)}$，则其 $\text{Wainer}$ 层谱的 $\text{FGH}$ 近似有 $g(n) \leqslant F[\varepsilon_{0}](n-c)$
 
-7. $\text{Goodstein}$ 数列：令 $g_{n}(m)$ 为 $\text{Goodstein}$ 定理中定义的序列，定义 $G(m) = \mu n [g_{n}(m) = 0]$，则其 $\text{Wainer}$ 层级的 $\text{FGH}$ 近似为
+7. $\text{Goodstein}$ 数列：令 $g_{n}(m)$ 为 $\text{Goodstein}$ 定理中定义的序列，定义 $G(m) = \mu n [g_{n}(m) = 0]$，则其 $\text{Wainer}$ 层谱的 $\text{FGH}$ 近似为
 
     $$
     G(2 \uparrow \uparrow n)=F[\omega \uparrow \uparrow(n-1)](3)-3
     $$
 
 !!! note "$\text{Fish 1, Fish 2, Fish 3, Fish 5}$ 数"   
-    1. $\text{Fish 1}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_1 \approx F[\omega^2+1](63)$
+    1. $\text{Fish 1}$ 数的 $\text{Wainer}$ 层谱 $\text{FGH}$ 近似：$F_1 \approx F[\omega^2+1](63)$
 
         1. 定义从自然数和函数到自然数和函数的映射 $S: (m,f(x)) \to (g(m),g(x))$，其中 $g(x)$ 定义为
 
@@ -403,7 +403,7 @@
 
         3. 设 $m_0 = 3, f_0(x) = x + 1, S_0 = S$，则记 $(F_1, F_1(x), S_{63}) = [SS^{63}](m_0, f_0, S_0)$，称 $F_1$ 为 $\text{Fish 1}$ 数，$F_1(x)$ 为 $\text{Fish 1}$ 函数
 
-    2. $\text{Fish 2}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_2 \approx F[\omega^3](63)$
+    2. $\text{Fish 2}$ 数的 $\text{Wainer}$ 层谱 $\text{FGH}$ 近似：$F_2 \approx F[\omega^3](63)$
         1. 定义从自然数和函数到自然数和函数的映射 $S: (m,f(x)) \to (g(m),g(x))$，其中 $g(x)$ 定义为
 
             $$
@@ -423,7 +423,7 @@
 
         3. 设 $m_0 = 3, f_0(x) = x + 1, S_0 = S$，则记 $(F_2, F_2(x), S_{63}) = [SS^{63}](m_0, f_0, S_0)$，称 $F_2$ 为 $\text{Fish 2}$ 数，$F_2(x)$ 为 $\text{Fish 2}$ 函数
 
-    3. $\text{Fish 3}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_3 \approx F[\omega^{\omega+1} \times 63 + 1](63)$
+    3. $\text{Fish 3}$ 数的 $\text{Wainer}$ 层谱 $\text{FGH}$ 近似：$F_3 \approx F[\omega^{\omega+1} \times 63 + 1](63)$
         1. 设 $n \in \mathbf Z_+$，则定义从函数 $f(x)$ 到 $g(x)$ 的映射 $s(n)$ 为
 
             $$
@@ -444,7 +444,7 @@
 
         3. 设 $f(x) = 1$，定义 $\text{Fish 3}$ 函数 $F_3(x) = \left[ss(2)^{63}\right](f)$，$\text{Fish 3}$ 数为 $F_3 = F_3^{63}(3)$
 
-    4. $\text{Fish 5}$ 数的 $\text{Wainer}$ 层级 $\text{FGH}$ 近似：$F_5 \approx F[\varepsilon_0 + 1](63)$
+    4. $\text{Fish 5}$ 数的 $\text{Wainer}$ 层谱 $\text{FGH}$ 近似：$F_5 \approx F[\varepsilon_0 + 1](63)$
         1. 定义如下集合：
 
             $$
@@ -578,10 +578,10 @@
 
         3. 定义 $\text{Fish 4}$ 函数 $F_4(x) = [ss'(2)^{63}](f)$，其中 $f(x) = x + 1$，并定义 $\text{Fish 4}$ 数为 $F_4 = F_{4}^{63}(3)$
 
-    2. $\text{Fish 7}$ 数的 $\text{Rayo}$ 层级近似：$F_7 \approx R_{\zeta_0}^{63}(10^{100})$
+    2. $\text{Fish 7}$ 数的 $\text{Rayo}$ 层谱近似：$F_7 \approx R_{\zeta_0}^{63}(10^{100})$
         1. 设 $f$ 为函数，$f(a) = b$ 表示序列的第 $a$ 个和第 $b$ 个对象满足关系 $f(a) = b$．定义映射 $\text{RR}(f) = g$，其中函数 $g(n)$ 是将神谕 $f$ 加入一阶集合论的 $\text{Rayo}$ 函数
         2. 将 $\text{Fish 6}$ 数中的 $m(0, 2)$ 替换为 $\text{RR}$，定义 $\text{Fish 7}$ 函数 $F_7(x) = m(x,2)m(x,1)(x)$，并定义 $\text{Fish 7}$ 数为 $F_7 = F_{7}^{63}(10^{100})$
-        3. 利用映射 $\text{RR}$ 定义 $\text{Rayo}$ 层级：
+        3. 利用映射 $\text{RR}$ 定义 $\text{Rayo}$ 层谱：
 
             $$
             \begin{aligned}

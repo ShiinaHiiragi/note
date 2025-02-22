@@ -141,29 +141,29 @@
             3. $A=A_{0} \sqcup A_{1}$，即 $A=A_{0} \cup A_{1}$ 并且 $A_{0} \cap A_{1}=\varnothing$
         2. 如果 $\left(A_{0}, A_{1}\right)$ 是 $A$ 的一个分裂，则 $\operatorname{deg}(A)=\operatorname{deg}\left(A_{0}\right) \vee \operatorname{deg}\left(A_{1}\right)$ 且 $\operatorname{deg}\left(A_{i}\right)<\operatorname{deg}(A)$，其中 $i=0,1$
 
-## 3.3 算术层谱
-1. $\Sigma_1-$集：如果集合 $A$ 是一个递归关系的投影，则称 $A$ 是 $\Sigma_1-$形式的，此时 $A$ 是递归可枚举集
+## 3.3 Lévy 层谱
+1. $\Sigma_1$ 集：如果集合 $A$ 是一个递归关系的投影，则称 $A$ 是 $\Sigma_1$ 形式的，此时 $A$ 是递归可枚举集
 
-    $\Delta_1-$集：如果集合 $A$ 及其补集 $\mathbf N - A$ 都是 $\Sigma_1$ 的，则称 $A$ 是 $\Delta_1$ 形式的，此时 $A$ 是递归集
+    $\Delta_1$ 集：如果集合 $A$ 及其补集 $\mathbf N - A$ 都是 $\Sigma_1$ 的，则称 $A$ 是 $\Delta_1$ 形式的，此时 $A$ 是递归集
 
     1. 如果 $R \subseteq \mathbf N^{n+1}$ 是 $n + 1$ 元递归关系，且 $A = \{x \mid \exists y_1 \exists y_2 \cdots \exists y_n \ R(x, y_1, y_2, \cdots, y_n)\}$，则 $A$ 是 $\Sigma_1$ 的
     2. 单值化：如果 $R \subseteq \mathbf N^2$ 是递归可枚举的关系，则存在一个部分递归函数 $\Phi$ 满足 $\Phi(x) \downarrow \wedge R(x,\Phi(x))$，当且仅当 $\exists y \ R(x, y)$
     3. 部分函数 $\psi$ 是部分递归的当且仅当其图像 $G = \{(x, y) \mid y = \psi(x)\}$ 是递归可枚举的
     4. 递归可枚举集能行地、一致地对交和并封闭，即存在递归函数 $f, g$ 使得 $W_{f(x, y)} = W_x \cap W_y$，且 $W_{g(x, y)} = W_x \cup W_y$
 
-2. 一阶算术的公式分层：在 $\textbf{PA}$ 的标准模型 $\mathfrak N$ 中，设 $n \geqslant 1$
+2. $\text{L}\acute{\mathrm e}\text{vy}$ 层谱：在 $\textbf{PA}$ 的标准模型 $\mathfrak N$ 中，设 $n \geqslant 1$
     1. 称一个公式 $\varphi$ 是 $\Sigma_{0}^{0}$ 或 $\Pi_{0}^{0}$ 的当且仅当 $\varphi$ 中的所有量词都是有界量词
     2. 称公式 $\varphi$ 是 $\Sigma_{n}^{0}$ 的当且仅当 $\varphi$ 等价于一个形如 $\exists y_1 \exists y_2 \cdots \exists y_k \psi$ 的公式，其中 $\psi$ 是 $\Pi_{n-1}^{0}$ 的
     3. 称公式 $\varphi$ 是 $\Pi_{n}^{0}$ 的当且仅当 $\varphi$ 等价于一个形如 $\forall y_1 \forall y_2 \cdots \forall y_k \psi$ 的公式，其中 $\psi$ 是 $\Sigma_{n-1}^{0}$ 的
     4. 称公式 $\varphi$ 是 $\Delta_{n}^{0}$ 的当且仅当 $\varphi$ 既等价于一个形如 $\Sigma_{n}^{0}$ 的公式，又等价于一个形如 $\Pi_{n}^{0}$ 的公式
 
-    上标 $\alpha$ 表示 $\varphi$ 的论域为 $V_{\omega+\alpha}$，当 $\alpha = 0$ 时称作一阶算术，不引起歧义时可省略上标
+    其中上标 $0$ 表示 $\varphi$ 是一阶算术中的公式，不引起歧义时可省略上标
 
     1. 称集合 $B \subseteq \mathbf{N}$ 分别是 $\Sigma_{n}$ 的、$\Pi_{n}$ 的或 $\Delta_{n}$ 的当且仅当 $B$ 具有一个 $\Sigma_{n}、\Pi_{n}$ 或 $\Delta_{n}$ 的定义，即 $B=\{n \in \mathbf{N}: \mathfrak{N} \vDash \varphi(n)\}$
-    2. 称集合 $B$ 是算术的当且仅当存在某个自然数 $n$ 使得 $B$ 是 $\Sigma_{n}^{0}$ 的；$B$ 是分析的当且仅当存在某个自然数 $n$，使得 $B$ 是 $\Sigma_{n}^{1}$ 的
-    3. 对固定的集合 $A \subseteq \mathbf{N}$，通过在语言中添加新的一元谓词符号 $\dot{A}$，可以类似定义 $\Sigma_{n}^{A}、\Pi_{n}^{A}$ 和 $\Delta_{n}^{A}$ 的公式和集合
-
-    !!! note "扩展算术层谱"
+    2. 上标 $\alpha$ 表示 $\varphi$ 的论域为 $V_{\omega+\alpha}$，此时公式属于 $\alpha+1$ 阶算术
+        1. 当 $\alpha = 0$ 时，称公式或集合属于算术层谱
+        2. 当 $\alpha = 1$ 时，称公式或集合属于分析层谱
+    3. 对固定的集合 $A \subseteq \mathbf{N}$，通过添加新一元谓词 $\dot{A}$，可类似定义 $\Sigma_{n}^{A}、\Pi_{n}^{A}$ 和 $\Delta_{n}^{A}$ 的公式和集合；也可定义扩展 $\text{L}\acute{\mathrm e}\text{vy}$ 层谱如下
         1. $\Sigma_{0}^{n+}=\Pi_{0}^{n+}=\Delta_{0}$
         2. $\Sigma_{n+1}^{n+}$ 是将任意块存在量词和有界全称量词添加到 $\Pi_{n}^{n+}$ 的公式前得到的公式集
         3. $\Pi_{n+1}^{n+}$ 是将任意块全称量词和有界存在量词添加到 $\Sigma_{n}^{n+}$ 的公式前得到的公式集

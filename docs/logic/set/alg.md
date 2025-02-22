@@ -162,7 +162,7 @@
     3. 集合 $X$ 为 $\mathbf{\Delta}_{\alpha}^{0}$ 的当且仅当 $X$ 既是 $\mathbf{\Pi}_{\alpha}^{0}$ 的也是 $\mathbf{\Sigma}_{\alpha}^{0}$ 的
     4. 对 $\alpha > 1$，集合 $X$ 是 $\mathbf{\Sigma}_{\alpha}^{0}$ 的当且仅当存在集合序列 $\left<X_{i}\right>_{i < \omega}$ 使得 $X = {\displaystyle \bigcup_{i < \omega} X_{i}}$，其中每个 $X_i$ 都是某个 $\mathbf{\Pi}_{\beta_i}^{0}$ 集合且 $\beta_i < \alpha$
 
-    $\text{Borel}$ 集层谱与算术层谱一一对应
+    细体字版 $\text{Borel}$ 集层谱扩展了算术层谱，增加了额外 $\text{Borel}$ 集
 
     1. $\alpha < \beta$ 蕴含 $\mathbf{\Sigma}_{\alpha}^{0} \subsetneq \mathbf{\Delta}_{\beta}^{0}$ 与 $\mathbf{\Pi}_{\alpha}^{0} \subsetneq \mathbf{\Delta}_{\beta}^{0}$
     2. 闭集即 $\mathbf{\Pi}_{1}^{0}$ 的集合
@@ -174,7 +174,7 @@
     3. 集合 $X$ 为 $\mathbf{\Delta}_{n}^{1}$ 的当且仅当 $X$ 既是 $\mathbf{\Pi}_{n}^{1}$ 的也是 $\mathbf{\Sigma}_{n}^{1}$ 的
     4. 集合 $X \subseteq \mathbf{R}^{n}$ 是 $\mathbf{\Sigma}_{n + 1}^{1}$ 的当且仅当它是某个 $\mathbf{\Pi}_{n}^{1}$ 集的投影，即存在 $\mathbf{\Pi}_{n}^{1}$ 的集合 $Y \subseteq \mathbf R^{n+1}$ 使得 $X = \{\overline x \in \mathbf R^{n} \mid \exists y \ (\overline x, y) \in Y\}$
 
-    投影集层谱与分析层谱一一对应
+    细体字版投影集层谱等价于分析层谱；粗体字投影集层谱等价于以实数为参数的分析层谱
 
     1. $n < m$ 蕴含 $\mathbf{\Sigma}_{n}^{1} \subsetneq \mathbf{\Delta}_{m}^{1}$ 与 $\mathbf{\Pi}_{n}^{1} \subsetneq \mathbf{\Delta}_{m}^{1}$
     2. 余分析集即 $\mathbf{\Pi}_{1}^{1}$ 的集合
