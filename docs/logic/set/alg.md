@@ -185,7 +185,7 @@
     2. $\mathbf{ZFC}$ 中无法证明投影集不具备正则性质；$\mathbf{ZF}$ 中无法证明任何集合不具备正则性质
 
 ### 2.3.2 无穷博弈
-1. $\text{Gale}-\text{Stewart}$ 博弈：设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，对任意非空集合 $X$，记由函数 $S_1, S_2: X^{<\omega} \to X$ 通过
+1. $\text{Gale}-\text{Stewart}$ 博弈：对任意非空集合 $X$，记由函数 $S_1, S_2: X^{<\omega} \to X$ 通过
 
     $$
     x_{i} = \left\{\begin{aligned}
@@ -196,7 +196,16 @@
 
     定义的无穷序列 $x = \left<x_i\right>_{i < \omega}$ 为 $S_1 \# S_2$
 
-    1. 对任意 $\Phi$ 公式 $\varphi(X)$，若有 $\exists S_1 \forall S_2 \ \varphi \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \varphi\left(S_1 \# S_2\right)$，则称 $\Phi-$博弈是被决定的
-    2. 对任意 $\Phi$ 公式 $\varphi(X), \psi(X)$，若有 $\theta(X) = \phi(X) \wedge \neg \psi(X)$ 且 $\exists S_1 \forall S_2 \ \theta \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \theta\left(S_1 \# S_2\right)$，则称 $\Phi_{\rho}-$博弈是被决定的
+    1. 设集合 $A \subseteq X^{\omega}$，若 $\exists S_1 \forall S_2 \ (S_1 \# S_2 \in A) \vee \exists S_1 \forall S_2 \ (S_1 \# S_2 \notin A)$，则称博弈 $G_{X}(A)$ 是被决定的．易知开集都是被决定的
+    2. 设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，$\varphi(X), \psi(X)$ 是任意 $\Phi$ 公式
+        1. 若 $\exists S_1 \forall S_2 \ \varphi \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \varphi\left(S_1 \# S_2\right)$，则称 $\Phi-$博弈是被决定的
+        2. 若 $\theta(X) = \phi(X) \wedge \neg \psi(X)$ 且 $\exists S_1 \forall S_2 \ \theta \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \theta\left(S_1 \# S_2\right)$，则称 $\Phi_{\rho}-$博弈是被决定的
 
-2. ...
+2. 决定公理（$\mathrm{AD}$）：对任意 $A \subseteq \omega^{\omega}$，$G_{\omega}(A)$ 是被决定的
+    1. 假设 $\mathrm{AD}$ 成立，则所有实数集都具有正则性质
+    2. 若所有 $\mathbf{\Delta}_{n}^{1}$ 集合都是被决定的，则所有 $\mathbf{\Sigma}_{n}^{1}$ 集合都具有正则性质
+    3. 假设 $\mathrm{AD}$ 成立，则 $\omega_1$ 在 $\mathbf{L}$ 是不可达基数，因此 $\operatorname{Con} (\mathbf{ZF} + \mathrm{AD}) \to \operatorname{Con} (\mathbf{ZFC}+$存在不可达基数$)$
+
+3. 投影集决定公理（$\mathrm{PD}$）：所有投影集都是被决定的
+    1. 假设 $\mathrm{PD}$ 成立，则所有投影集都具有正则性质
+    2. 假设 $\mathrm{PD}^{\mathbf{L}(\mathbf{R})}$ 成立，则所有 $\mathbf{L}(\mathbf{R})$ 中的集合（即可构成集）都具有正则性质
