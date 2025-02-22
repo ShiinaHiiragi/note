@@ -205,7 +205,6 @@
     1. 假设 $\mathrm{AD}$ 成立，则所有实数集都具有正则性质
     2. 若所有 $\mathbf{\Delta}_{n}^{1}$ 集合都是被决定的，则所有 $\mathbf{\Sigma}_{n}^{1}$ 集合都具有正则性质
     3. 假设 $\mathrm{AD}$ 成立，则 $\omega_1$ 在 $\mathbf{L}$ 是不可达基数，因此 $\operatorname{Con} (\mathbf{ZF} + \mathrm{AD}) \to \operatorname{Con} (\mathbf{ZFC}+$存在不可达基数$)$
-
 3. 投影集决定公理（$\mathrm{PD}$）：所有投影集都是被决定的
     1. 假设 $\mathrm{PD}$ 成立，则所有投影集都具有正则性质
     2. 假设 $\mathrm{PD}^{\mathbf{L}(\mathbf{R})}$ 成立，则所有 $\mathbf{L}(\mathbf{R})$ 中的集合（即可构成集）都具有正则性质
