@@ -141,22 +141,31 @@
             1. 对于任何 $A$ 使得 $|A| \geqslant \kappa$，存在一个 $\mathcal P_{\kappa}(A)$ 上的精细测度
             2. 语言 $\mathscr{L}_{\kappa, \omega}$ 满足紧致性定理
         2. 若存在一个强紧致基数，则就存在具有两个可测基数的内模型
-    5. 如果存在可测基数（即存在非平凡的初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$），则
+    5. 强基数与超强基数：设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，$\kappa = \operatorname{crit}(j)$ 是可测基数
+        1. 若 $V_{\lambda} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $\lambda-$强基数；若对任意基数 $\lambda$，$\kappa$ 为 $\lambda-$强基数，则称 $\kappa$ 为强基数
+        2. 若 $V_{j(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为超强基数
+            1. 设 $\kappa$ 为超强基数，则存在 $V$ 的一个脱殊扩张 $V[G]$ 使得存在一个初等嵌入有 $j: L(\mathbf{R}) \to L(\mathbf{R})^{V[G]}$
+            2. 若存在超强基数，则 $\mathbf{L}(\mathbf{R})$ 中的每个实数集都具有正则性质．特别地，$\mathbf{R}$ 不存在投影良序
+    6. 如果存在可测基数（即存在非平凡的初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$），则
         1. $\mathbf{V} \neq \mathbf{L}$ 且 $\mathbf{L}$ 中只有有限多个实数
         2. 所有的 $\mathbf{\Pi}_{1}^{1}$ 集都是被决定的
         3. 所有的 $\mathbf{\Sigma}_{2}^{1}$ 集都具有正则性质
 
-2. 强基数
-3. $\text{Woodin}$ 基数
-4. 超强基数
-5. 超紧致基数：设 $\kappa$ 是基数，若存在 $\mathbf{V}$ 到传递内模型 $\mathbf{M}$ 的初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，使得 $\kappa = \operatorname{crit}(j)$ 且 $\kappa, j(\kappa)>\lambda, \mathbf{M}^{\lambda} \subseteq \mathbf{M}$，则称 $\kappa$ 为超紧致基数，此时它对所有序数 $\lambda$ 都是 $\lambda-$超紧致的
+2. $\text{Woodin}$ 基数：若对于所有 $A \subseteq V_{\delta}$，都有任意大的 $\kappa<\delta$，使得对于所有 $\lambda<\delta$，都存在一个初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$ 且 $\operatorname{crit}(j) = \kappa$，使得 $j(\kappa)>\lambda$，$V_{\lambda} \subseteq M$，且 $A \cap V_{\lambda}=j(A) \cap V_{\lambda}$，则称基数 $\delta$ 为 $\text{Woodin}$ 基数
+    1. 假设存在 $n$ 个 $\text{Woodin}$ 基数，且在其上有一个可测基数
+        1. 所有的 $\mathbf{\Pi}_{n+1}^{1}$ 都是被决定的
+        2. 所有的 $\mathbf{\Sigma}_{n+2}^{1}$ 集合都满足完备集性质，可测性和 $\text{Baire}$ 性质
+    2. $\text{Woodin}$ 基数的存在保证了投影集的正则性质
+        1. 假设存在无穷多个 $\text{Woodin}$ 基数，且在其上有一个可测基数，则决定公理在 $\mathbf{L}(\mathbf{R})$上成立
+        2. $\operatorname{Con}(\mathbf{ZF} + \mathrm{AD}) \leftrightarrow \operatorname{Con}(\mathbf{ZF}+$存在无穷多个 $\text{Woodin}$ 基数$)$
+3. 超紧致基数：设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，$\kappa = \operatorname{crit}(j)$ 是可测基数．若 $\kappa, j(\kappa)>\lambda$ 且 $\mathbf{M}^{\lambda} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $\lambda-$超紧致基数；若对任意基数 $\lambda$，$\kappa$ 为 $\lambda-$超紧致基数，则称 $\kappa$ 为超紧致基数
     1. 基数 $\kappa$ 是超紧致的当且仅当对于每个 $A$ 使得 $|A| \geqslant \kappa$，在 $\mathcal{P}_{\kappa}(A)$ 上存在正规测度
     2. 若存在一个可测基数，且是强紧致基数的极限，那么符合条件的最小基数是强紧致的但不是超紧致的
-6. 可扩展基数
-7. $\text{Vop}\check{\mathrm{e}}\text{nka}$ 原理
-8. 巨基数
-9.  $\text{Rank to Rank}$ 基数
-10. $\text{Reinhardt}$ 基数与 $\text{Berkeley}$ 基数与选择公理不相容
+4. 可扩展基数
+5. $\text{Vop}\check{\mathrm{e}}\text{nka}$ 原理
+6. 巨基数
+7. $\text{Rank to Rank}$ 基数
+8. $\text{Reinhardt}$ 基数与 $\text{Berkeley}$ 基数与选择公理不相容
 
 ## 5.3 内模型计划
 若 $\mathbf{ZF}$ 的传递模型 $\mathbf{M}$ 包含所有序数，则称 $\mathbf{M}$ 是内模型
@@ -189,7 +198,7 @@
         2. $\mathbf{L}[A]$ 满足公理 $\exists X \ (\mathbf{V}=\mathbf{L}[X])$
         3. 如果 $\mathbf{M}$ 是 $\mathbf{ZF}$ 的内模型，且 $A \cap \mathbf{M} \in \mathbf{M}$，则 $\mathbf{L}[A] \subseteq \mathbf{M}$
         4. 存在序数 $\alpha_{0}$，使得对于任意 $\alpha \geqslant \alpha_{0}$ 有 $\mathbf{L}[A] \vDash 2^{\aleph_{\alpha}}=\aleph_{\alpha+1}$
-        5. 所有 $\boldsymbol{\Pi}_{1}^{1}$（或 $\boldsymbol{\Sigma}_{2}^{1}$）集都有完备集性质当且仅当对任意实数 $x$，$\aleph_{1}^{\mathbf V}$ 在 $\mathbf{L}[x]$ 上是强不可达基数
+        5. 所有 $\mathbf{\Pi}_{1}^{1}$（或 $\mathbf{\Sigma}_{2}^{1}$）集都有完备集性质当且仅当对任意实数 $x$，$\aleph_{1}^{\mathbf V}$ 在 $\mathbf{L}[x]$ 上是强不可达基数
     3. 定义 $x^{\sharp}=\left\{\varphi\mid\left(\mathbf{L}_{\aleph_{\omega}}[x], \in, x\right) \vDash \varphi\left[\aleph_{1}, \ldots, \aleph_{n}\right]\right\}$
         1. $x^{\sharp}$ 存在等价于存在 $j: \mathbf{L}[x] \rightarrow \mathbf{L}[x]$ 的非平凡初等嵌入
         2. 若存在基数 $\kappa$ 满足划分性质 $\kappa \to \left(\omega_{1}\right)^{<\omega}$，则对于任意的 $x \subseteq \omega$，$x^{\sharp}$ 都存在
@@ -197,7 +206,7 @@
 
 3. 设 $U$ 是可测基数 $\kappa$ 上的正规测度，则可定义可构成宇宙 $\mathbf{L}[U]$
     1. 假设 $\mathbf{V} = \mathbf{L}[U]$ 成立
-        1. $\mathbf{L}[U] \vDash \mathbf{GCH}$
+        1. $\mathbf{L}[U] \vDash \mathbf{GCH}$ 且有一个 $\mathbf{\Sigma}_{3}^{1}-$可定义的良序
         2. $\kappa$ 是唯一可测基数，$U$ 是 $\kappa$ 上的唯一正规测度
         3. 存在一个不满足完全集性质的 $\mathbf{\Pi}_{2}^{1}$ 集与不可测且没有 $\text{Baire}$ 性质的 $\mathbf{\Sigma}_{3}^{1}$ 集
     2. 定义 $0^{\dagger} = \{\varphi \mid \mathbf{L}[D] \vDash \varphi\left[\alpha_{1}, \ldots, \alpha_{n}, \beta_{1}, \ldots, \beta_{m}\right], \alpha_{1}<\ldots<\alpha_{n} \in I, \beta_{1}<\ldots<\beta_{m} \in J\}$，其中 $I \subseteq \kappa$ 是封闭无界集，$J$ 是封闭无界类且 $I \cup J$ 包含除 $\kappa$ 之外的所有不可数基数
