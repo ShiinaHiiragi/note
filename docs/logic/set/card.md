@@ -107,11 +107,11 @@
         2. 对任意 $n < \omega$ 与 $\lambda < \kappa$，都有 $\kappa \rightarrow(\kappa)_{\lambda}^{n}$
         3. $\kappa$ 是不可达的，且具有树性质，即每个高度为 $\kappa$ 且层数基数小于 $\kappa$ 的树都有一个基数为 $\kappa$ 的分支
         4. $\kappa$ 是不可达的，且 $\mathscr{L}_{\kappa, \kappa}$（或 $\mathscr{L}_{\kappa, \omega}$）具有弱紧致性，即对于 $\mathscr{L}_{\kappa, \kappa}$（或 $\mathscr{L}_{\kappa, \omega}$）的任意一组语句 $\Sigma$，满足 $|\Sigma| \leqslant \kappa$，且对于每个 $S \subseteq \Sigma \wedge |S|<\kappa$ 的 $S$ 都有模型，则 $\Sigma$ 也有模型
-    2. $\text{Erd}\ddot{\mathrm{o}}\text{s}$ 基数 $\eta_{\alpha}$：使得 $\kappa \rightarrow(\alpha)^{<\omega}$ 的最小 $\kappa$，即对于任意 $n < \omega$ 都有 $\kappa \rightarrow(\alpha)^{n}$
+    2. $\text{Erd}\ddot{\mathrm{o}}\text{s}$ 基数 $\eta_{\alpha}$：满足划分性质 $\kappa \rightarrow(\alpha)^{<\omega}$ 的最小基数 $\kappa$
         1. 对于任意的 $\kappa<\eta_{\alpha}$，都有 $\eta_{\alpha} \rightarrow(\alpha)_{\kappa}^{<\omega}$
         2. 所有的 $\text{Erd}\ddot{\mathrm{o}}\text{s}$ 基数 $\eta_{\alpha}$ 都是不可达基数，且若 $\alpha<\beta$，则 $\eta_{\alpha}<\eta_{\beta}$
         3. $\eta_{\omega}$ 的存在与 $\mathbf{V} = \mathbf{L}$ 一致；但 $\eta_{\omega_1}$ 的存在与 $\mathbf{V} = \mathbf{L}$ 不一致，此时 $\mathbf{L}$ 中只有有限个实数
-    3. $\text{Ramsey}$ 基数：满足划分性质 $\kappa \rightarrow(\kappa)^{<\omega}$ 的基数，即对于任意 $n < \omega$ 都有 $\kappa \rightarrow(\kappa)^{n}$
+    3. $\text{Ramsey}$ 基数：满足划分性质 $\kappa \rightarrow(\kappa)^{<\omega}$ 的基数 $\kappa$
         1. 若存在 $\text{Ramsey}$ 基数，则 $\mathbf{L}$ 中只有有限个实数
         2. 若存在 $\text{Ramsey}$ 基数 $\kappa$，设 $\lambda$ 是小于 $\kappa$ 的无穷级数，则 $|\mathcal P^{\mathbf{L}}(\lambda)| = \lambda$
 3. 不可描述基数：设 $\kappa$ 是基数，若对任意新增到集合论语言的谓词 $U \subseteq V_{\kappa}$ 与使得 $\left(V_{\kappa}, \in, U\right) \vDash \sigma$ 成立的 $\Pi_{n}^{m}$（或 $\Sigma_{n}^{m}$）语句 $\sigma$，都存在 $\alpha<\kappa$，使得 $\left(V_{\alpha}, \in, U \cap V_{\alpha}\right) \vDash \sigma$，则称 $\kappa$ 是 $\Pi_{n}^{m}-$不可描述的（或 $\Sigma_{n}^{m}-$不可描述的）
@@ -138,7 +138,7 @@
         2. 设 $\kappa$ 是一个无穷基数，若每个大小为 $\kappa$ 的模型都有一个大小为 $\kappa$ 的初等子结构，则称 $\kappa$ 为 $\text{J}\acute{\mathrm{o}}\text{nsson}$ 基数
     4. 强紧致基数：若对任何集合 $S$，每个 $S$ 上的 $\kappa-$完全滤都可扩展为 $S$ 上的 $\kappa-$完全超滤，则称不可数基数 $\kappa$ 是强紧致基数
         1. 对于任何正则基数 $\kappa$，$\kappa$ 是强紧致基数当且仅当
-            1. 对于任何 $A$ 使得 $|A| \geqslant \kappa$，存在一个 $P_{\kappa}(A)$ 上的精细测度
+            1. 对于任何 $A$ 使得 $|A| \geqslant \kappa$，存在一个 $\mathcal P_{\kappa}(A)$ 上的精细测度
             2. 语言 $\mathscr{L}_{\kappa, \omega}$ 满足紧致性定理
         2. 若存在一个强紧致基数，则就存在具有两个可测基数的内模型
     5. 如果存在可测基数（即存在非平凡的初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$），则
@@ -161,17 +161,39 @@
 ## 5.3 内模型计划
 若 $\mathbf{ZF}$ 的传递模型 $\mathbf{M}$ 包含所有序数，则称 $\mathbf{M}$ 是内模型
 
-1. 对给定集合 $A$ 定义可构造闭包 $\mathbf{L}(A)$，即使得 $A \in \mathbf{M}$ 的最小内模型 $\mathbf{M}$
+1. 对给定集合 $A$ 定义可构成闭包 $\mathbf{L}(A)$，即使得 $A \in \mathbf{M}$ 的最小内模型 $\mathbf{M}$
     1. $\mathbf{L}_{0}(A)=\operatorname{trcl}(\{A\})$
     2. $\mathbf{L}_{\alpha+1}(A)=\operatorname{Def}\left(\mathbf{L}_{\alpha}(A)\right)$
-    3. $\mathbf{L}_{\alpha}(A)={\displaystyle \bigcup_{\gamma<\alpha} \mathbf{L}_{\gamma}(A)}$
+    3. 对任意极限序数 $\alpha$，$\mathbf{L}_{\alpha}(A)={\displaystyle \bigcup_{\gamma<\alpha} \mathbf{L}_{\gamma}(A)}$
 
     定义 $\mathbf{L}(A)={\displaystyle \bigcup_{\alpha} \mathbf{L}_{\alpha}(A)}$
 
     1. 称包含所有实数的最小内模型 $\mathbf{L}(\mathbf{R})$ 为可构成层谱
     2. 除非 $\operatorname{trcl}(\{A\})$ 在 $\mathbf{L}(A)$ 上是良序的，否则 $\mathbf{L}(A)$ 不满足 $\mathbf{AC}$
 
-2. $\mathbf L[A]$
+2. 对给定集合 $A$ 定义 $\mathbf{L}[A]$，即使得对于任意 $x \in \mathbf{M}$，都有 $A \cap x \in \mathbf{M}$ 的最小内模型 $\mathbf{M}$
+    1. $\mathbf{L}_{0}[A]=\varnothing$
+    2. $\mathbf{L}_{\alpha+1}[A]=\operatorname{Def}_{A}\left(\mathbf{L}_{\alpha}[A]\right)$
+    3. 对任意极限序数 $\alpha$，$\mathbf{L}_{\alpha}[A]={\displaystyle \bigcup_{\beta<\alpha} \mathbf{L}_{\beta}[A]}$
+
+    定义 $\mathbf{L}[A]={\displaystyle \bigcup_{\alpha \in \mathbf{On}} \mathbf{L}_{\alpha}[A]}$ 为关于 $A$ 的可构成宇宙
+
+    1. $\mathbf{L}(A)$ 与 $\mathbf{L}[A]$ 的关系
+        1. 若 $\mathbf{M}$ 是具有 $A \in \mathbf{M}$ 的内模型，则 $\mathbf{L}(A)^{\mathbf{M}}=\mathbf{L}(A)$
+        2. 若 $\mathbf{M}$ 是具有 $A \cap \mathbf{M} \in \mathbf{M}$ 的内模型，则 $\mathbf{L}[A \cap \mathbf{M}]^{\mathbf{M}}=\mathbf{L}[A]$
+        3. 若 $A \cap \mathbf{L}[A]=B \cap \mathbf{L}[A]$，则 $\mathbf{L}[A]=\mathbf{L}[B]$
+        4. $\mathbf{L}[A]=\mathbf{L}[A \cap \mathbf{L}[A]]=\mathbf{L}(A \cap \mathbf{L}[A])$
+        5. 若 $A \subseteq \mathbf{L}$，则 $\mathbf{L}[A]=\mathbf{L}(A)$
+    2. 可构成宇宙 $\mathbf{L}[A]$ 的性质：设 $A$ 是任意集合
+        1. $\mathbf{L}[A]$ 是 $\mathbf{ZFC}$ 的模型
+        2. $\mathbf{L}[A]$ 满足公理 $\exists X \ (\mathbf{V}=\mathbf{L}[X])$
+        3. 如果 $\mathbf{M}$ 是 $\mathbf{ZF}$ 的内模型，且 $A \cap \mathbf{M} \in \mathbf{M}$，则 $\mathbf{L}[A] \subseteq \mathbf{M}$
+        4. 存在序数 $\alpha_{0}$，使得对于任意 $\alpha \geqslant \alpha_{0}$ 有 $\mathbf{L}[A] \vDash 2^{\aleph_{\alpha}}=\aleph_{\alpha+1}$
+        5. 所有 $\boldsymbol{\Pi}_{1}^{1}$（或 $\boldsymbol{\Sigma}_{2}^{1}$）集都有完备集性质当且仅当对任意实数 $x$，$\aleph_{1}^{\mathbf V}$ 在 $\mathbf{L}[x]$ 上是强不可达基数
+    3. 定义 $x^{\sharp}=\left\{\varphi\mid\left(\mathbf{L}_{\aleph_{\omega}}[x], \in, x\right) \vDash \varphi\left[\aleph_{1}, \ldots, \aleph_{n}\right]\right\}$
+        1. $x^{\sharp}$ 存在等价于存在 $j: \mathbf{L}[x] \rightarrow \mathbf{L}[x]$ 的非平凡初等嵌入
+        2. 若存在基数 $\kappa$ 满足划分性质 $\kappa \to \left(\omega_{1}\right)^{<\omega}$，则对于任意的 $x \subseteq \omega$，$x^{\sharp}$ 都存在
+        3. 所有分析集都是被决定的当且仅当对于任意 $a \in \omega^{\omega}$ 都有 $a^{\sharp}$ 存在
 
 3. $\mathbf L[U]$
 

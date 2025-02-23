@@ -199,6 +199,7 @@
         1. $L_{\alpha}=\left\{x \in \mathbf{L} \mid \operatorname{rank}_{\mathbf{L}}(x)<\alpha\right\}$
         2. $\operatorname{rank}_{\mathbf{L}}(\alpha)=\alpha$
     3. $\mathbf{L}$ 是 $\mathbf{ZF}$ 的最小内模型
+    4. $\text{G}\ddot{\mathrm o}\text{del}$ 凝聚性定理：$\mathbf{L}$ 具有凝聚性，即若 $X$ 是一个传递集且存在序数 $\alpha$ 使得 $(X, \in)$ 是 $(\mathbf{L}_{\alpha}, \in)$ 的初等子结构
 
 3. 可构成公理：$\mathbf{V}=\mathbf{L}$，即所有集合都是可构成集
     1. 函数 $\alpha \mapsto L_{\alpha}$ 对 $\mathbf{ZF}$ 的任何传递模型都是绝对的

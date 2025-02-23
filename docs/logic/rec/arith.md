@@ -235,7 +235,8 @@
         设 $\kappa, \lambda, m$ 为基数，$n \in \mathbf{N}$，定义 $[\kappa]^{n}=\{X \subseteq \kappa \mid |X| =n\}$
 
         1. 划分性质 $\kappa \rightarrow(\lambda)_{m}^{n}$：$[\kappa]^{n}$ 的 $m-$划分中，每部分都有一个大小为 $\lambda$ 的齐次集，即使得 $[\lambda]^{n}$ 元素都属于同一划分的 $\lambda \subseteq \kappa$，$m = 2$ 时可省略下标
-        2. 有穷 $\text{Ramsey}$ 定理：$N \rightarrow \left(M \right)_{k}^{n}$，它在 $\mathbf{N}$ 中成立但无法在 $\mathbf{PA}$ 中证明
+        2. 将划分性质「对任意 $n < \eta$ 都有 $\kappa \rightarrow(\lambda)_{m}^{n}$ 成立」简记为 $\kappa \rightarrow(\lambda)_{m}^{<\eta}$
+        3. 有穷 $\text{Ramsey}$ 定理：$N \rightarrow \left(M \right)_{k}^{n}$，它在 $\mathbf{N}$ 中成立但无法在 $\mathbf{PA}$ 中证明
 
 ## 4.3 反推数学
 ### 4.3.1 子系统与反推数学
