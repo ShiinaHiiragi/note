@@ -134,8 +134,8 @@
         则基数 $\kappa$ 是可测的当且仅当在不可数基数 $\kappa$ 上存在一个正规测度
 
     3. 设一元谓词 $Q \in S$，考察可数语言 $\mathscr{L}(S)$ 的结构 $\mathfrak{A}$．若 $|A|=\kappa$ 且 $\left|Q^{\mathfrak{A}}\right|=\lambda$，则称 $\mathfrak{A}$ 具有类型 $(\kappa, \lambda)$．若每个类型为 $(\kappa, \lambda)$ 的结构都有一个类型为 $(\mu, \nu)$ 的初等子结构，则记为 $(\kappa, \lambda) \rightarrow(\mu, \nu)$
-        1. $\text{Rowbottom}$ 基数：设 $\kappa>\aleph_{1}$ 是一个基数，若对任意不可数基数 $\lambda<\kappa$ 都有 $(\kappa, \lambda) \rightarrow \left(\kappa, \aleph_{0}\right)$，则称 $\kappa$ 为 $\text{Rowbottom}$ 基数
-        2. $\text{J}\acute{\mathrm{o}}\text{nsson}$ 基数：设 $\kappa$ 是一个无穷基数，若每个大小为 $\kappa$ 的模型都有一个大小为 $\kappa$ 的初等子模型，则称 $\kappa$ 为 $\text{J}\acute{\mathrm{o}}\text{nsson}$ 基数
+        1. 设 $\kappa>\aleph_{1}$ 是一个基数，若对任意不可数基数 $\lambda<\kappa$ 都有 $(\kappa, \lambda) \rightarrow \left(\kappa, \aleph_{0}\right)$，则称 $\kappa$ 为 $\text{Rowbottom}$ 基数
+        2. 设 $\kappa$ 是一个无穷基数，若每个大小为 $\kappa$ 的模型都有一个大小为 $\kappa$ 的初等子结构，则称 $\kappa$ 为 $\text{J}\acute{\mathrm{o}}\text{nsson}$ 基数
     4. 强紧致基数：若对任何集合 $S$，每个 $S$ 上的 $\kappa-$完全滤都可扩展为 $S$ 上的 $\kappa-$完全超滤，则称不可数基数 $\kappa$ 是强紧致基数
         1. 对于任何正则基数 $\kappa$，$\kappa$ 是强紧致基数当且仅当
             1. 对于任何 $A$ 使得 $|A| \geqslant \kappa$，存在一个 $P_{\kappa}(A)$ 上的精细测度
