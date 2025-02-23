@@ -220,8 +220,9 @@
     2. $\text{Berkeley}$ 基数：使得对每个包含 $\kappa$ 与 $\alpha<\kappa$ 的传递集 $M$，存在非平凡初等嵌入 $j: M \rightarrow M$ 且 $\alpha<\operatorname{crit}(j)<\kappa$ 的基数 $\kappa$
 
 ## 5.3 内模型计划
-若 $\mathbf{ZF}$ 的传递模型 $\mathbf{M}$ 包含所有序数，则称 $\mathbf{M}$ 是内模型
+- 若 $\mathbf{ZF}$ 的传递模型 $\mathbf{M}$ 包含所有序数，则称 $\mathbf{M}$ 是内模型
 
+### 5.3.1 扩展内模型
 1. 对给定集合 $A$ 定义可构成闭包 $\mathbf{L}(A)$，即使得 $A \in \mathbf{M}$ 的最小内模型 $\mathbf{M}$
     1. $\mathbf{L}_{0}(A)=\operatorname{trcl}(\{A\})$
     2. $\mathbf{L}_{\alpha+1}(A)=\operatorname{Def}\left(\mathbf{L}_{\alpha}(A)\right)$
@@ -266,6 +267,6 @@
         2. $0^{\dagger}$ 存在当且仅当对于某个 $\kappa$，存在一个 $\kappa$ 模型 $\mathbf{M}$ 及初等嵌入 $j: \mathbf{M} \to \mathbf{M}$ 有 $\operatorname{crit}(j) > \kappa$
     3. 若存在强紧致基数，则不存在集合 $A$ 使得 $\mathbf{V}=\mathbf{L}[A]$ 或 $\mathbf{V}=\mathbf{L}(A)$
 
-4. 鼠模型
+4. $\mathbf{L}[\mathcal U]$
 
-5. 终极 $\mathbf L$
+### 5.3.2 终极 L
