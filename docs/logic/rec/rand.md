@@ -11,7 +11,7 @@
     2. 设 $\sigma \in 2^{<\omega}$，定义柱集 $[\sigma]= \left\{Z \in 2^{\omega} \mid \sigma \prec Z\right\}$
         1. 对任意 $\sigma, \tau$，$[\sigma] \cap[\tau]=\varnothing$ 或 $[\sigma] \cap[\tau]=[\sigma]$ 成立
         2. $\mathcal{B}=\left\{[\sigma] \mid \sigma \in 2^{<\omega}\right\}$ 构成了 $2^{\omega}$ 上的一个可数拓扑基，由此生成的拓扑空间称作 $\text{Cantor}$ 空间
-        3. $\text{Cantor}$ 空间中的每个柱集既是开集（$\mathbf{\Sigma}_{1}^{0}$ 集）也是闭集（$\mathbf{\Pi}_{1}^{0}$ 集）
+        3. $\text{Cantor}$ 空间中的每个柱集既是开集也是闭集
     3. 每个无穷 $0-1$ 序列 $Z \in 2^{\omega}$ 与一个二进制表示的小数 ${\displaystyle 0.Z=\sum_{i \in Z} 2^{-(i+1)}}$ 一一对应
 
 ## 5.2 随机性的刻画

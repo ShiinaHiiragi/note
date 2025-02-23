@@ -157,7 +157,7 @@
         1. 称集合为余分析集当且仅当其补集为分析集，集合为 $\text{Borel}$ 集当且仅当它既是分析集也是余分析集
         2. 任意分析集都具有正则性质
 2. $\text{Borel}$ 集层谱：对 $\alpha < \omega_1$，递归定义 $\mathbf{\Pi}_{\alpha}^{0}, \mathbf{\Sigma}_{\alpha}^{0}, \mathbf{\Delta}_{\alpha}^{0}$
-    1. 所有开集为 $\mathbf{\Sigma}_{1}^{0}$ 的
+    1. 所有开集都是 $\mathbf{\Sigma}_{1}^{0}$ 的，所有闭集都是 $\mathbf{\Pi}_{1}^{0}$ 的
     2. 集合 $X$ 为 $\mathbf{\Pi}_{\alpha}^{0}$ 的当且仅当其补集为 $\mathbf{R} - X$ 为 $\mathbf{\Sigma}_{\alpha}^{0}$ 的
     3. 集合 $X$ 为 $\mathbf{\Delta}_{\alpha}^{0}$ 的当且仅当 $X$ 既是 $\mathbf{\Pi}_{\alpha}^{0}$ 的也是 $\mathbf{\Sigma}_{\alpha}^{0}$ 的
     4. 对 $\alpha > 1$，集合 $X$ 是 $\mathbf{\Sigma}_{\alpha}^{0}$ 的当且仅当存在集合序列 $\left<X_{i}\right>_{i < \omega}$ 使得 $X = {\displaystyle \bigcup_{i < \omega} X_{i}}$，其中每个 $X_i$ 都是某个 $\mathbf{\Pi}_{\beta_i}^{0}$ 集合且 $\beta_i < \alpha$
@@ -181,8 +181,9 @@
     3. $\text{Borel}$ 集即 $\mathbf{\Delta}_{1}^{1}$ 的集合
 
 4. 假设 $\operatorname{Con}(\mathbf{ZFC} +$存在不可达基数$)$，则存在 $\mathbf{V}$ 的脱殊扩张 $\mathbf{V}[G]$ 使得所有以可数序数序列为参数可定义的实数集具有正则性质
-    1. 在 $\mathbf{L}(R)^{\mathbf{V}[G]}$ 中，所有实数集都具有正则性质
-    2. $\mathbf{ZFC}$ 中无法证明投影集不具备正则性质；$\mathbf{ZF}$ 中无法证明任何集合不具备正则性质
+    1. 若 $\mathbf{V} = \mathbf{L}$，则存在一个不满足完全集性质的 $\mathbf{\Pi}_{1}^{1}$ 集与不可测且没有 $\text{Baire}$ 性质的 $\mathbf{\Sigma}_{2}^{1}$ 集
+    2. 在 $\mathbf{L}(R)^{\mathbf{V}[G]}$ 中，所有实数集都具有正则性质
+    3. $\mathbf{ZFC}$ 中无法证明投影集不具有正则性质；$\mathbf{ZF}$ 中无法证明任何集合不具有正则性质
 
 ### 2.3.2 无穷博弈
 1. $\text{Gale}-\text{Stewart}$ 博弈：对任意非空集合 $X$，记由函数 $S_1, S_2: X^{<\omega} \to X$ 通过
@@ -196,15 +197,19 @@
 
     定义的无穷序列 $x = \left<x_i\right>_{i < \omega}$ 为 $S_1 \# S_2$
 
-    1. 设集合 $A \subseteq X^{\omega}$，若 $\exists S_1 \forall S_2 \ (S_1 \# S_2 \in A) \vee \exists S_1 \forall S_2 \ (S_1 \# S_2 \notin A)$，则称博弈 $G_{X}(A)$ 是被决定的．易知开集都是被决定的
+    1. 设集合 $A \subseteq X^{\omega}$，若 $\exists S_1 \forall S_2 \ (S_1 \# S_2 \in A) \vee \exists S_1 \forall S_2 \ (S_1 \# S_2 \notin A)$，则称博弈 $G_{X}(A)$ 是被决定的
+        1. 开集都是被决定的，一般地，所有 $\text{Borel}$ 集都是被决定的
+        2. 若所有 $\mathbf{\Delta}_{n}^{1}$ 集合都是被决定的，则所有 $\mathbf{\Sigma}_{n}^{1}$ 集合都具有正则性质
     2. 设公式层级 $\Phi \in \{\Sigma_{n}^{m}, \Pi_{n}^{m}, \Delta_{n}^{m}\}$，$\varphi(X), \psi(X)$ 是任意 $\Phi$ 公式
         1. 若 $\exists S_1 \forall S_2 \ \varphi \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \varphi\left(S_1 \# S_2\right)$，则称 $\Phi-$博弈是被决定的
         2. 若 $\theta(X) = \phi(X) \wedge \neg \psi(X)$ 且 $\exists S_1 \forall S_2 \ \theta \left(S_1 \# S_2\right) \vee \exists S_1 \forall S_2 \ \neg \theta\left(S_1 \# S_2\right)$，则称 $\Phi_{\rho}-$博弈是被决定的
 
-2. 决定公理（$\mathrm{AD}$）：对任意 $A \subseteq \omega^{\omega}$，$G_{\omega}(A)$ 是被决定的
-    1. 假设 $\mathrm{AD}$ 成立，则所有实数集都具有正则性质
-    2. 若所有 $\mathbf{\Delta}_{n}^{1}$ 集合都是被决定的，则所有 $\mathbf{\Sigma}_{n}^{1}$ 集合都具有正则性质
-    3. 假设 $\mathrm{AD}$ 成立，则 $\omega_1$ 在 $\mathbf{L}$ 是不可达基数，因此 $\operatorname{Con} (\mathbf{ZF} + \mathrm{AD}) \to \operatorname{Con} (\mathbf{ZFC}+$存在不可达基数$)$
+2. 决定公理（$\mathrm{AD}$）：对任意实数集 $A \subseteq \omega^{\omega}$，$G_{\omega}(A)$ 是被决定的
+    1. 假设 $\mathrm{AD}$ 成立，那么
+        1. 所有实数集都具有正则性质
+        2. $\omega_1$ 在 $\mathbf{L}$ 是不可达基数，因此 $\operatorname{Con} (\mathbf{ZF} + \mathrm{AD}) \to \operatorname{Con} (\mathbf{ZFC}+$存在不可达基数$)$
+        3. $\omega_1$ 在 $\mathbf{L}$ 是可测基数，因此 $\operatorname{Con} (\mathbf{ZF} + \mathrm{AD}) \to \operatorname{Con} (\mathbf{ZFC}+$存在可测基数$)$
+    2. 决定性公理与选择公理不一致：假设 $\mathbf{AC}$ 成立，则存在 $A \subseteq \omega^{\omega}$，$G_{\omega}(A)$ 不是被决定的
 3. 投影集决定公理（$\mathrm{PD}$）：所有投影集都是被决定的
     1. 假设 $\mathrm{PD}$ 成立，则所有投影集都具有正则性质
     2. 假设 $\mathrm{PD}^{\mathbf{L}(\mathbf{R})}$ 成立，则所有 $\mathbf{L}(\mathbf{R})$ 中的集合（即可构成集）都具有正则性质

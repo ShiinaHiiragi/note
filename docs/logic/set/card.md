@@ -80,6 +80,10 @@
 2. 反射原理：令 $\varphi$ 为公式，对任意 $\mathbf{M}_{0}$，都存在类 $\mathbf{M} \supseteq \mathbf{M}_{0}$ 使得 $\varphi^{\mathbf{M}} \leftrightarrow \varphi$，则称 $\mathbf{M}$ 反射 $\varphi$
     1. 存在传递模型 $\mathbf{M} \supseteq \mathbf{M}_{0}$ 反射 $\varphi$；更进一步地，存在一个极限序数 $\alpha$，使得 $\mathbf{M}_{0} \subseteq V_{\alpha}$ 且 $V_{\alpha}$ 反射 $\varphi$
     2. 假设 $\mathbf{AC}$ 成立，则存在一个 $\mathbf{M} \supseteq \mathbf{M}_{0}$，使得 $\mathbf{M}$ 反射 $\varphi$ 且 $|\mathbf{M}| \leqslant\left|\mathbf{M}_{0}\right| \cdot \aleph_{0}$．特别地，存在一个可数的 $\mathbf{M}$ 反射 $\varphi$
+3. 关键点：设 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是从 $\mathbf{V}$ 到传递内模型 $\mathbf{M}$ 的初等嵌入．$j$ 将 $\mathbf{V}$ 中的序数映射为 $\mathbf{M}$ 中的序数，且是严格递增的．非平凡（非等同函数）的初等嵌入总会改变至少一个序数，称第一个被改变的序数 $\kappa$ 为初等嵌入 $j$ 的关键点，记作 $\operatorname{crit}(j)$，
+    1. $j(\kappa) > \kappa$
+    2. 对任意 $a \in V_{\kappa}$ 有 $j(a) = a$，因此 $V_{\kappa}^{M} = v_{\kappa}$
+    3. 对任意 $X \subseteq V_{\kappa}$ 有 $j(X) \cap V_{\kappa}^{M} = X$，因而 $V_{\kappa+1}^{M} = v_{\kappa+1}$
 
 ### 5.2.1 不可描述性
 1. 不可达基数：$\Sigma_1^1-$不可描述基数
@@ -106,7 +110,10 @@
     2. $\text{Erd}\ddot{\mathrm{o}}\text{s}$ 基数 $\eta_{\alpha}$：使得 $\kappa \rightarrow(\alpha)^{<\omega}$ 的最小 $\kappa$，即对于任意 $n < \omega$ 都有 $\kappa \rightarrow(\alpha)^{n}$
         1. 对于任意的 $\kappa<\eta_{\alpha}$，都有 $\eta_{\alpha} \rightarrow(\alpha)_{\kappa}^{<\omega}$
         2. 所有的 $\text{Erd}\ddot{\mathrm{o}}\text{s}$ 基数 $\eta_{\alpha}$ 都是不可达基数，且若 $\alpha<\beta$，则 $\eta_{\alpha}<\eta_{\beta}$
+        3. $\eta_{\omega}$ 的存在与 $\mathbf{V} = \mathbf{L}$ 一致；但 $\eta_{\omega_1}$ 的存在与 $\mathbf{V} = \mathbf{L}$ 不一致，此时 $\mathbf{L}$ 中只有有限个实数
     3. $\text{Ramsey}$ 基数：满足划分性质 $\kappa \rightarrow(\kappa)^{<\omega}$ 的基数，即对于任意 $n < \omega$ 都有 $\kappa \rightarrow(\kappa)^{n}$
+        1. 若存在 $\text{Ramsey}$ 基数，则 $\mathbf{L}$ 中只有有限个实数
+        2. 若存在 $\text{Ramsey}$ 基数 $\kappa$，设 $\lambda$ 是小于 $\kappa$ 的无穷级数，则 $|\mathcal P^{\mathbf{L}}(\lambda)| = \lambda$
 3. 不可描述基数：设 $\kappa$ 是基数，若对任意新增到集合论语言的谓词 $U \subseteq V_{\kappa}$ 与使得 $\left(V_{\kappa}, \in, U\right) \vDash \sigma$ 成立的 $\Pi_{n}^{m}$（或 $\Sigma_{n}^{m}$）语句 $\sigma$，都存在 $\alpha<\kappa$，使得 $\left(V_{\alpha}, \in, U \cap V_{\alpha}\right) \vDash \sigma$，则称 $\kappa$ 是 $\Pi_{n}^{m}-$不可描述的（或 $\Sigma_{n}^{m}-$不可描述的）
     1. 对于任意的 $n$，$\kappa$ 是 $\Sigma_{n+1}^{1}-$不可描述的当且仅当 $\kappa$ 是 $\Pi_{n}^{1}-$不可描述的
     2. 定义 $\pi_{n}^{m}$ 为最小的 $\Pi_{n}^{m}-$不可描述基数，$\sigma_{n}^{m}$ 为最小的 $\Sigma_{n}^{m}-$不可描述基数
@@ -134,6 +141,10 @@
             1. 对于任何 $A$ 使得 $|A| \geqslant \kappa$，存在一个 $P_{\kappa}(A)$ 上的精细测度
             2. 语言 $\mathscr{L}_{\kappa, \omega}$ 满足紧致性定理
         2. 若存在一个强紧致基数，则就存在具有两个可测基数的内模型
+    5. 如果存在可测基数（即存在非平凡的初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$），则
+        1. $\mathbf{V} \neq \mathbf{L}$ 且 $\mathbf{L}$ 中只有有限多个实数
+        2. 所有的 $\mathbf{\Pi}_{1}^{1}$ 集都是被决定的
+        3. 所有的 $\mathbf{\Sigma}_{2}^{1}$ 集都具有正则性质
 
 2. 强基数
 3. $\text{Woodin}$ 基数
@@ -144,7 +155,7 @@
 6. 可扩展基数
 7. $\text{Vop}\check{\mathrm{e}}\text{nka}$ 原理
 8. 巨基数
-9. $\text{Rank to Rank}$ 基数
+9.  $\text{Rank to Rank}$ 基数
 10. $\text{Reinhardt}$ 基数与 $\text{Berkeley}$ 基数与选择公理不相容
 
 ## 5.3 内模型计划
