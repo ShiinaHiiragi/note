@@ -84,6 +84,9 @@
     1. $j(\kappa) > \kappa$
     2. 对任意 $a \in V_{\kappa}$ 有 $j(a) = a$，因此 $V_{\kappa}^{M} = v_{\kappa}$
     3. 对任意 $X \subseteq V_{\kappa}$ 有 $j(X) \cap V_{\kappa}^{M} = X$，因而 $V_{\kappa+1}^{M} = v_{\kappa+1}$
+4. 语言 $\mathscr{L}_{\lambda, \mu}^{n}$ 的弱紧致性与紧致性：定义语句集 $\Sigma$ 是 $\nu-$可满足的当且仅当其每个基数小于 $\nu$ 的子集都是可满足的
+    1. 弱紧致性：对 $\mathscr{L}_{\lambda, \mu}^{n}$ 的任意一组语句 $\Sigma$，若 $|\Sigma| \leqslant \lambda$ 且 $\Sigma$ 是 $\lambda-$可满足的，则 $\Sigma$ 也是可满足的
+    2. 紧致性：对 $\mathscr{L}_{\lambda, \mu}^{n}$ 的任意一组语句 $\Sigma$，若 $\Sigma$ 是 $\lambda-$可满足的，则 $\Sigma$ 也是可满足的
 
 ### 5.2.1 不可描述性
 1. 不可达基数：$\Sigma_1^1-$不可描述基数
@@ -106,7 +109,7 @@
         1. $\kappa \rightarrow(\kappa)^{2}$
         2. 对任意 $n < \omega$ 与 $\lambda < \kappa$，都有 $\kappa \rightarrow(\kappa)_{\lambda}^{n}$
         3. $\kappa$ 是不可达的，且具有树性质，即每个高度为 $\kappa$ 且层数基数小于 $\kappa$ 的树都有一个基数为 $\kappa$ 的分支
-        4. $\kappa$ 是不可达的，且 $\mathscr{L}_{\kappa, \kappa}$（或 $\mathscr{L}_{\kappa, \omega}$）具有弱紧致性，即对于 $\mathscr{L}_{\kappa, \kappa}$（或 $\mathscr{L}_{\kappa, \omega}$）的任意一组语句 $\Sigma$，满足 $|\Sigma| \leqslant \kappa$，且对于每个 $S \subseteq \Sigma \wedge |S|<\kappa$ 的 $S$ 都有模型，则 $\Sigma$ 也有模型
+        4. $\kappa$ 是不可达的，且语言 $\mathscr{L}_{\kappa, \kappa}$（或 $\mathscr{L}_{\kappa, \omega}$）具有弱紧致性
     2. $\text{Erd}\ddot{\mathrm{o}}\text{s}$ 基数 $\eta_{\alpha}$：满足划分性质 $\kappa \rightarrow(\alpha)^{<\omega}$ 的最小基数 $\kappa$
         1. 对于任意的 $\kappa<\eta_{\alpha}$，都有 $\eta_{\alpha} \rightarrow(\alpha)_{\kappa}^{<\omega}$
         2. 所有的 $\text{Erd}\ddot{\mathrm{o}}\text{s}$ 基数 $\eta_{\alpha}$ 都是不可达基数，且若 $\alpha<\beta$，则 $\eta_{\alpha}<\eta_{\beta}$
@@ -139,12 +142,12 @@
     4. 强紧致基数：若对任何集合 $S$，每个 $S$ 上的 $\kappa-$完全滤都可扩展为 $S$ 上的 $\kappa-$完全超滤，则称不可数基数 $\kappa$ 是强紧致基数
         1. 对于任何正则基数 $\kappa$，$\kappa$ 是强紧致基数当且仅当
             1. 对于任何 $A$ 使得 $|A| \geqslant \kappa$，存在一个 $\mathcal P_{\kappa}(A)$ 上的精细测度
-            2. 语言 $\mathscr{L}_{\kappa, \omega}$ 满足紧致性定理
+            2. 语言 $\mathscr{L}_{\kappa, \omega}$ 具有紧致性
         2. 若存在一个强紧致基数，则就存在具有两个可测基数的内模型
     5. 强基数与超强基数：设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，$\kappa = \operatorname{crit}(j)$ 是可测基数
         1. 若 $V_{\lambda} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $\lambda-$强基数；若对任意基数 $\lambda$，$\kappa$ 为 $\lambda-$强基数，则称 $\kappa$ 为强基数
         2. 若 $V_{j(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为超强基数
-            1. 设 $\kappa$ 为超强基数，则存在 $V$ 的一个脱殊扩张 $V[G]$ 使得存在一个初等嵌入有 $j: L(\mathbf{R}) \to L(\mathbf{R})^{V[G]}$
+            1. 设 $\kappa$ 为超强基数，则存在 $M$ 的一个脱殊扩张 $M[G]$ 使得存在一个初等嵌入 $j: \mathbf L(\mathbf{R}) \to \mathbf L(\mathbf{R})^{M[G]}$
             2. 若存在超强基数，则 $\mathbf{L}(\mathbf{R})$ 中的每个实数集都具有正则性质．特别地，$\mathbf{R}$ 不存在投影良序
     6. 如果存在可测基数（即存在非平凡的初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$），则
         1. $\mathbf{V} \neq \mathbf{L}$ 且 $\mathbf{L}$ 中只有有限多个实数
@@ -159,9 +162,24 @@
         1. 假设存在无穷多个 $\text{Woodin}$ 基数，且在其上有一个可测基数，则决定公理在 $\mathbf{L}(\mathbf{R})$上成立
         2. $\operatorname{Con}(\mathbf{ZF} + \mathrm{AD}) \leftrightarrow \operatorname{Con}(\mathbf{ZF}+$存在无穷多个 $\text{Woodin}$ 基数$)$
 3. 超紧致基数：设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，$\kappa = \operatorname{crit}(j)$ 是可测基数．若 $\kappa, j(\kappa)>\lambda$ 且 $\mathbf{M}^{\lambda} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $\lambda-$超紧致基数；若对任意基数 $\lambda$，$\kappa$ 为 $\lambda-$超紧致基数，则称 $\kappa$ 为超紧致基数
-    1. 基数 $\kappa$ 是超紧致的当且仅当对于每个 $A$ 使得 $|A| \geqslant \kappa$，在 $\mathcal{P}_{\kappa}(A)$ 上存在正规测度
-    2. 若存在一个可测基数，且是强紧致基数的极限，那么符合条件的最小基数是强紧致的但不是超紧致的
-4. 可扩展基数
+    1. $\kappa$ 是超紧致基数的当且仅当
+        1. 语言 $\mathscr L_{\kappa \kappa}^{1}$ 具有紧致性
+        2. 对于每个 $A$ 使得 $|A| \geqslant \kappa$，在 $\mathcal{P}_{\kappa}(A)$ 上存在正规测度
+        3. 对于每个 $\eta>\kappa$ 都存在一个 $\alpha<\kappa$ 和初等嵌入 $e: V_{\alpha} \to V_{\eta}$，并存在一个关键点 $\delta$，使得 $e(\delta)=\kappa$
+    2. 设 $\kappa$ 是超紧致基数，那么
+        1. 若对于每个 $\alpha<\kappa$ 有 $2^{\alpha}=\alpha^{+}$，则对每个 $\alpha \leqslant \lambda$ 都有 $2^{\alpha}=\alpha^{+}$
+        2. $V_{\kappa} \prec_{\Sigma_{2}} \mathbf{V}$
+        3. $\left(2^{\kappa}\right)^{+} \geqslant \kappa^{++}$
+        4. $\kappa$ 上有 $2^{2^{\kappa}}$ 个正规测度
+        5. 对每个 $\lambda \geqslant \kappa$，$\mathcal P_{\kappa}(\lambda)$ 上有 $2^{2^{\lambda^{<\kappa}}}$ 个正规测度
+    3. 若存在一个可测基数，且是强紧致基数的极限，那么符合条件的最小基数是强紧致的但不是超紧致的
+4. 可扩展基数：设 $\kappa$ 是基数，若对于某些序数 $\lambda$，存在非平凡初等嵌入 $j: V_{\kappa+\eta} \to V_{\lambda}$，使得 $\operatorname{crit}(j) = \kappa$，则称 $\kappa$ 为 $\eta-$可扩展基数；若 $\kappa$ 对任意 $\eta > 0$ 都是 $\eta-$可扩展基数，则称 $\kappa$ 为可扩展基数
+    1. 基数 $\kappa > \omega$ 是可拓展基数当且仅当
+        1. 语言 $\mathscr L_{\kappa \omega}^{2}$ 具有紧致性
+        2. 对任意 $1 \leqslant n < \omega$，语言 $\mathscr L_{\kappa \kappa}^{n}$ 具有紧致性
+    2. 设 $\kappa$ 是可拓展基数，那么
+        1. $V_{\kappa} \prec_{\Sigma_{3}} \mathbf{V}$
+        2. 在 $\kappa$ 上存在一个正规测度 $D$，使得 $\{\alpha<\kappa \mid \alpha$ 是超紧致基数$\} \in D$
 5. $\text{Vop}\check{\mathrm{e}}\text{nka}$ 原理
 6. 巨基数
 7. $\text{Rank to Rank}$ 基数

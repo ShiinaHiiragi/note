@@ -294,8 +294,9 @@
         2. 在模型论中一阶语言是通过证明论中一阶语言理论建立的公理集合论重新构造的形式语言系统，是一个被拓展为可以包含不可数个非逻辑符号的集合
             1. $\mathscr L_{\kappa, \omega}$ 将 $|\mathbf{Var}|$ 扩充到 $\kappa$，并引入无穷联结词 $\bigvee_{\xi<\alpha} \varphi_{\xi}$ 与 $\bigwedge_{\xi<\alpha} \varphi_{\xi}$，其中 $\alpha<\kappa$
                 1. 此时变元序列写作 $\left<x_{i}\right>_{i \in \lambda}$，并用 $\left<x_{m_1}, x_{m_2}, \cdots, x_{m_n}\right>, m_k\in \lambda$（$m_i < m_j$ 当且仅当 $i < j$）表示有穷自由变元序列
-                2. 设 $\Sigma$ 是一个 $S-$公式集，$I$ 是一个指标集．若 $\Sigma$ 中的公式的自由变元来自变元符号集 $\left\{x_{i} \mid i \in I\right\}$，则有时将 $\Sigma$ 记作 $\Sigma(x_i)_{i \in I}$
+                2. 设 $\Sigma$ 是一个 $S-$公式集，$I$ 是一个指标集．若 $\Sigma$ 中的公式的自由变元来自变元符号集 $\left\{x_{i} \mid i \in I\right\}$，则可将 $\Sigma$ 记作 $\Sigma(x_i)_{i \in I}$
             2. $\mathscr L_{\kappa, \kappa}$ 进一步在 $\mathscr L_{\kappa, \omega}$ 的基础上引入无穷量词 $\exists_{\xi<\alpha} v_{\xi}$ 与 $\forall_{\xi<\alpha} v_{\xi}$，其中 $\alpha<\kappa$
+            3. 对任意基数 $\lambda, \mu$，$\mathscr L_{\lambda \mu}^{n}$ 进一步扩展 $\mathscr L_{\lambda \mu}$，其中允许最多 $n$ 类型的高阶变量（$n = 0$ 时可省略上标）
 
 2. 一阶逻辑项与公式的句法
     1. 一阶语言 $\mathscr L(S)$ 的类型是从 $\mathbf R \cup \mathbf F$ 的正整数集合的函数 $\Omega: S \to \mathbf Z_+$
