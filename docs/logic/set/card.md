@@ -80,10 +80,15 @@
 2. 反射原理：令 $\varphi$ 为公式，对任意 $\mathbf{M}_{0}$，都存在类 $\mathbf{M} \supseteq \mathbf{M}_{0}$ 使得 $\varphi^{\mathbf{M}} \leftrightarrow \varphi$，则称 $\mathbf{M}$ 反射 $\varphi$
     1. 存在传递模型 $\mathbf{M} \supseteq \mathbf{M}_{0}$ 反射 $\varphi$；更进一步地，存在一个极限序数 $\alpha$，使得 $\mathbf{M}_{0} \subseteq V_{\alpha}$ 且 $V_{\alpha}$ 反射 $\varphi$
     2. 假设 $\mathbf{AC}$ 成立，则存在一个 $\mathbf{M} \supseteq \mathbf{M}_{0}$，使得 $\mathbf{M}$ 反射 $\varphi$ 且 $|\mathbf{M}| \leqslant\left|\mathbf{M}_{0}\right| \cdot \aleph_{0}$．特别地，存在一个可数的 $\mathbf{M}$ 反射 $\varphi$
-3. 关键点：设 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是从 $\mathbf{V}$ 到传递内模型 $\mathbf{M}$ 的初等嵌入．$j$ 将 $\mathbf{V}$ 中的序数映射为 $\mathbf{M}$ 中的序数，且是严格递增的．非平凡（非等同函数）的初等嵌入总会改变至少一个序数，称第一个被改变的序数 $\kappa$ 为初等嵌入 $j$ 的关键点，记作 $\operatorname{crit}(j)$，
-    1. $j(\kappa) > \kappa$
-    2. 对任意 $a \in V_{\kappa}$ 有 $j(a) = a$，因此 $V_{\kappa}^{M} = v_{\kappa}$
-    3. 对任意 $X \subseteq V_{\kappa}$ 有 $j(X) \cap V_{\kappa}^{M} = X$，因而 $V_{\kappa+1}^{M} = v_{\kappa+1}$
+3. 关键点：设 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是从 $\mathbf{V}$ 到传递内模型 $\mathbf{M}$ 的初等嵌入，$j$ 将 $\mathbf{V}$ 中的序数映射为 $\mathbf{M}$ 中的序数，且是严格递增的
+    1. 非平凡（非等同函数）的初等嵌入总会改变至少一个序数，称第一个被改变的序数 $\kappa$ 为初等嵌入 $j$ 的关键点，记作 $\operatorname{crit}(j)$，
+        1. $j(\kappa) > \kappa$
+        2. 对任意 $a \in V_{\kappa}$ 有 $j(a) = a$，因此 $V_{\kappa}^{M} = v_{\kappa}$
+        3. 对任意 $X \subseteq V_{\kappa}$ 有 $j(X) \cap V_{\kappa}^{M} = X$，因而 $V_{\kappa+1}^{M} = v_{\kappa+1}$
+    2. 初等嵌入无法无限制加强：以下定理在 $\mathbf{ZFC}$ 中成立
+        1. 若 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是非平凡初等嵌入，则 $\mathbf{M} \neq \mathbf{V}$
+        2. 不存在 $V_{\lambda+2}$ 到 $V_{\lambda+2}$ 的非平凡初等嵌入
+        3. 若 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是初等嵌入且 $\delta$ 是 $\operatorname{crit}(j)$ 之上使得 $j(\delta)=\delta$ 的最小序数，则 $\delta \notin M$
 4. 语言 $\mathscr{L}_{\lambda, \mu}^{n}$ 的弱紧致性与紧致性：定义语句集 $\Sigma$ 是 $\nu-$可满足的当且仅当其每个基数小于 $\nu$ 的子集都是可满足的
     1. 弱紧致性：对 $\mathscr{L}_{\lambda, \mu}^{n}$ 的任意一组语句 $\Sigma$，若 $|\Sigma| \leqslant \lambda$ 且 $\Sigma$ 是 $\lambda-$可满足的，则 $\Sigma$ 也是可满足的
     2. 紧致性：对 $\mathscr{L}_{\lambda, \mu}^{n}$ 的任意一组语句 $\Sigma$，若 $\Sigma$ 是 $\lambda-$可满足的，则 $\Sigma$ 也是可满足的
@@ -180,10 +185,39 @@
     2. 设 $\kappa$ 是可拓展基数，那么
         1. $V_{\kappa} \prec_{\Sigma_{3}} \mathbf{V}$
         2. 在 $\kappa$ 上存在一个正规测度 $D$，使得 $\{\alpha<\kappa \mid \alpha$ 是超紧致基数$\} \in D$
-5. $\text{Vop}\check{\mathrm{e}}\text{nka}$ 原理
-6. 巨基数
-7. $\text{Rank to Rank}$ 基数
-8. $\text{Reinhardt}$ 基数与 $\text{Berkeley}$ 基数与选择公理不相容
+5. $\text{Vop}\check{\mathrm{e}}\text{nka}$ 原理：设 $\mathbf{C}$ 是语言的真类模型，则存在两个 $\mathbf{C}$ 类成员 $A, B$，使得存在 $A$ 到 $B$ 的初等嵌入
+    1. 称 $X$ 在 $\kappa$ 中是 $\text{Vop}\check{\mathrm{e}}\text{nka}$ 的当且仅当对任意序列 $\left\langle\mathcal{M}_{\alpha} \mid \alpha<\kappa\right\rangle$，都存在一个初等嵌入 $j: \mathcal{M}_{\alpha} \to \mathcal{M}_{\beta}$，其中某个 $\alpha<\beta<\kappa$ 具有低于 $X$ 的临界点
+    2. 称 $\kappa$ 是 $\text{Vop}\check{\mathrm{e}}\text{nka}$ 的当且仅当 $\kappa$ 在 $\kappa$ 中是 $\text{Vop}\check{\mathrm{e}}\text{nka}$ 的，此时与以下命题等价
+        1. 对任意 $A \subseteq V_{\kappa}$ 与 $\eta<\kappa$，都存在一个 $\alpha<\kappa$ 在 $A$ 中是 $\eta$ 可扩展的
+        2. 对任意 $A \subseteq V_{\kappa}$ 与 $\eta<\kappa$，都存在一个 $\alpha<\kappa$ 在 $A$ 中是 $\eta$ 超紧的
+6. 巨基数：设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，$\kappa = \operatorname{crit}(j)$ 是可测基数．若 $\mathbf{M}^{j(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为巨基数
+    1. 巨基数的扩展：设 $n \in \mathbf{N}$
+        1. 若 $\mathbf{M}^{<j^{n}(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为殆 $n-$巨基数
+        2. 若对任意序数 $\gamma$ 都存在初等嵌入 $j$ 使得 $\gamma < \operatorname{crit}(j)$ 且 $\mathbf{M}^{<j^{n}(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为殆 $n-$超巨基数
+        3. 若 $\mathbf{M}^{j^{n}(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $n-$巨基数
+        4. 若对任意序数 $\gamma$ 都存在初等嵌入 $j$ 使得 $\gamma < \operatorname{crit}(j)$ 且 $\mathbf{M}^{j^{n}(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $n-$超巨基数
+    2. 设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$
+        1. 若 $j$ 见证了 $\kappa$ 的 $n-$巨基数，则 $j^{n}(\kappa)$ 在 $M$ 中是可测的
+        2. 若 $j$ 见证了 $\kappa$ 的殆巨基数，则 $j(\kappa)$ 在 $V$ 中不可达
+7. $\text{Rank to Rank}$ 公理
+    1. $\mathrm{I}3: V_{\lambda}$ 存在一个非平凡的初等嵌入到自身
+    2. $\mathrm{I}2:$ 存在一个初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，使得对于某个 $\delta>\operatorname{crit}(j), V_{\delta} \subseteq M$，有 $j(\delta)=\delta$
+    3. $\mathrm{I}1: V_{\lambda+1}$ 存在一个非平凡的初等嵌入到自身
+    4. $\mathrm{I}0: \mathbf L\left(V_{\lambda+1}\right)$ 存在一个非平凡的初等嵌入到自身，其关键点低于 $\lambda$
+
+    $\text{Rank to Rank}$ 与 $\mathbf{ZFC}$ 的不一致性尚未被证明
+
+    1. 对任意 $\kappa$ 和 $\delta$，以下命题相互等价
+        1. 存在初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，其中 $\operatorname{crit}(j)=\kappa<\delta=j(\delta)$ 且 $V_{\delta} \subseteq M$
+        2. 存在初等嵌入 $j: V_{\delta} \to V_{\delta}$，其中 $\operatorname{crit}(j)=\kappa$ 使得每当 $R$ 是 $V_{\delta}$ 上的良基关系时，$j^{+}(R)$ 也是良基关系
+    2. 设 $\mathrm{I} n(\kappa, \delta)$ 为存在一个满足公理 $\mathrm{I} n$ 的初等嵌入 $j$ 且 $\operatorname{crit}(j)=\kappa$，其中 $n \in \{1, 2, 3\}$
+        1. 若 $\mathrm{I} 1(\kappa, \delta)$，则 $\mathrm{I} 2(\kappa, \delta)$ 且存在 $\kappa$ 上的正规超滤 $U$ 使得 $\{\alpha<\kappa \mid \mathrm{I} 2(\alpha, \delta)\} \in U$
+        2. 若 $\mathrm{I} 2(\kappa, \delta)$，则 $\mathrm{I} 3(\kappa, \delta)$ 且存在 $\kappa$ 上的正规超滤 $U$ 使得 $\{\alpha<\kappa \mid \mathrm{I} 3(\alpha, \delta)\} \in U$
+    3. 设初等嵌入 $j: V_{\delta} \to V_{\delta}$ 与 $k: V_{\delta} \to V_{\delta}$，则初等嵌入 $j^{+}(k): V_{\delta} \to V_{\delta}$ 且 $\operatorname{crit}\left(j^{+}(k)\right)=j(\operatorname{crit}(k))$
+
+8. 与选择公理不相容的基数
+    1. $\text{Reinhardt}$ 基数：非平凡初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{V}$ 的关键点
+    2. $\text{Berkeley}$ 基数：使得对每个包含 $\kappa$ 与 $\alpha<\kappa$ 的传递集 $M$，存在非平凡初等嵌入 $j: M \rightarrow M$ 且 $\alpha<\operatorname{crit}(j)<\kappa$ 的基数 $\kappa$
 
 ## 5.3 内模型计划
 若 $\mathbf{ZF}$ 的传递模型 $\mathbf{M}$ 包含所有序数，则称 $\mathbf{M}$ 是内模型
@@ -232,8 +266,6 @@
         2. $0^{\dagger}$ 存在当且仅当对于某个 $\kappa$，存在一个 $\kappa$ 模型 $\mathbf{M}$ 及初等嵌入 $j: \mathbf{M} \to \mathbf{M}$ 有 $\operatorname{crit}(j) > \kappa$
     3. 若存在强紧致基数，则不存在集合 $A$ 使得 $\mathbf{V}=\mathbf{L}[A]$ 或 $\mathbf{V}=\mathbf{L}(A)$
 
-4. $\mathbf L[\mathcal U]$
+4. 鼠模型
 
-5. 鼠模型
-
-6. 终极 $\mathbf L$
+5. 终极 $\mathbf L$
