@@ -58,7 +58,7 @@
         3. 若 $\mathbf{R}$ 是 $\mathbf{X}$ 上的良基关系且是似集合的，则 $\mathbf{X}$ 的每一非空子类 $\mathbf{Y}$ 都有 $\mathbf{R}$ 极小元
 
     2. 若 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系，则定义 $\operatorname{rank}(x, \mathbf{X}, \mathbf{R})=\sup \{\operatorname{rank}(y, \mathbf{X}, \mathbf{R})+1 \mid y \mathbf{R} x \wedge y \in \mathbf{X}\}$
-        1. 假设 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合的良基关系。如果 $\mathbf{F}: \mathbf{X} \times \mathbf{V} \rightarrow \mathbf{V}$ 是类函数，则存在唯一的 $\mathbf{G}: \mathbf{X} \rightarrow \mathbf{V}$ 使得
+        1. 假设 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合的良基关系．如果 $\mathbf{F}: \mathbf{X} \times \mathbf{V} \rightarrow \mathbf{V}$ 是类函数，则存在唯一的 $\mathbf{G}: \mathbf{X} \rightarrow \mathbf{V}$ 使得
         2. 在 $\mathbf{ZF}^{-}$ 中可证若 $\mathbf{X}$ 是传递的而 $\in$ 是 $\mathbf{X}$ 上的良基关系，则 $\mathbf{X} \subseteq \mathbf{WF}$，并且对任意 $x \in \mathbf{X}$ 有 $\operatorname{rank}(x, \mathbf{X}, \in)=\operatorname{rank}(x)$
 
 3. 令 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系，$(\mathbf{X}, \mathbf{R})$ 上的 $\text{Mostowski}$ 函数 $\mathbf{G}$ 定义为 $\mathbf{G}(x)=\{\mathbf{G}(y) \mid y \in \mathbf{X} \wedge y \mathbf{R} x\}$
@@ -69,7 +69,7 @@
         4. 假设幂集公理成立，并且 $x \in \mathbf{X}$，则 $\operatorname{rank}(x, \mathbf{X}, \mathbf{R})= \operatorname{rank}(\mathbf{G}(x))$
     2. $\mathbf{R}$ 在 $\mathbf{X}$ 上是外延的当且仅当 $\forall x, y \in \mathbf{X} \ (\forall z \in \mathbf{X} \ (z \mathbf{R} x \leftrightarrow z \mathbf{R} y) \rightarrow x=y)$
         1. $\mathbf{R}$ 是外延的当且仅当对任意 $x, y \in \mathbf{X}$ 有 $x \neq y \rightarrow \operatorname{pred}(\mathbf{X}, x, \mathbf{R}) \neq \operatorname{pred}(\mathbf{X}, y, \mathbf{R})$
-        2. 若 $\mathbf{X}$ 是传递的，则 $\in$ 在 $\mathbf{X}$ 上是外延的。
+        2. 若 $\mathbf{X}$ 是传递的，则 $\in$ 在 $\mathbf{X}$ 上是外延的
     3. $\text{Mostowski}$ 折叠定理：令 $\mathbf{R}$ 是 $\mathbf{X}$ 上的似集合良基关系且在 $\mathbf{X}$ 上是外延的，则存在传递类 $\mathbf{M}$ 与双射 $\mathbf{G}: \mathbf{X} \rightarrow \mathbf{M}$ 满足 $\mathbf{G}$ 是 $(\mathbf{X}, \mathbf{R})$ 与 $(\mathbf{M}, \in)$ 之间的同构；此外，$\mathbf{M}$ 和 $\mathbf{G}$ 都是唯一的
 4. 设 $\kappa$ 为无穷基数，$H_{\kappa}=\{x \mid |\operatorname{trcl}(x)| <\kappa\}$，称 $H_{\kappa}$ 中元素的遗传基数小于 $\kappa$，$H_{\omega}$ 的元素为遗传有穷集，$H_{\omega_{1}}$ 的元素为遗传可数集
     1. 对任意无穷基数 $\kappa$，$H_{\kappa}$ 都是传递集
