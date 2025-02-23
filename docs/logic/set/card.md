@@ -195,7 +195,15 @@
         2. 若存在基数 $\kappa$ 满足划分性质 $\kappa \to \left(\omega_{1}\right)^{<\omega}$，则对于任意的 $x \subseteq \omega$，$x^{\sharp}$ 都存在
         3. 所有分析集都是被决定的当且仅当对于任意 $a \in \omega^{\omega}$ 都有 $a^{\sharp}$ 存在
 
-3. $\mathbf L[U]$
+3. 设 $U$ 是可测基数 $\kappa$ 上的正规测度，则可定义可构成宇宙 $\mathbf{L}[U]$
+    1. 假设 $\mathbf{V} = \mathbf{L}[U]$ 成立
+        1. $\mathbf{L}[U] \vDash \mathbf{GCH}$
+        2. $\kappa$ 是唯一可测基数，$U$ 是 $\kappa$ 上的唯一正规测度
+        3. 存在一个不满足完全集性质的 $\mathbf{\Pi}_{2}^{1}$ 集与不可测且没有 $\text{Baire}$ 性质的 $\mathbf{\Sigma}_{3}^{1}$ 集
+    2. 定义 $0^{\dagger} = \{\varphi \mid \mathbf{L}[D] \vDash \varphi\left[\alpha_{1}, \ldots, \alpha_{n}, \beta_{1}, \ldots, \beta_{m}\right], \alpha_{1}<\ldots<\alpha_{n} \in I, \beta_{1}<\ldots<\beta_{m} \in J\}$，其中 $I \subseteq \kappa$ 是封闭无界集，$J$ 是封闭无界类且 $I \cup J$ 包含除 $\kappa$ 之外的所有不可数基数
+        1. $0^{\dagger}$ 存在当且仅当存在一个非平凡的初等嵌入 $j: \mathbf{L}[U] \rightarrow \mathbf{L}[U]$，其中 $U$ 是一个见证某个基数 $\kappa$ 可测的超滤
+        2. $0^{\dagger}$ 存在当且仅当对于某个 $\kappa$，存在一个 $\kappa$ 模型 $\mathbf{M}$ 及初等嵌入 $j: \mathbf{M} \to \mathbf{M}$ 有 $\operatorname{crit}(j) > \kappa$
+    3. 若存在强紧致基数，则不存在集合 $A$ 使得 $\mathbf{V}=\mathbf{L}[A]$ 或 $\mathbf{V}=\mathbf{L}(A)$
 
 4. $\mathbf L[\mathcal U]$
 
