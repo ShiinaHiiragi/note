@@ -161,9 +161,22 @@
 ## 5.3 内模型计划
 若 $\mathbf{ZF}$ 的传递模型 $\mathbf{M}$ 包含所有序数，则称 $\mathbf{M}$ 是内模型
 
-1. $\mathbf L(A)$
+1. 对给定集合 $A$ 定义可构造闭包 $\mathbf{L}(A)$，即使得 $A \in \mathbf{M}$ 的最小内模型 $\mathbf{M}$
+    1. $\mathbf{L}_{0}(A)=\operatorname{trcl}(\{A\})$
+    2. $\mathbf{L}_{\alpha+1}(A)=\operatorname{Def}\left(\mathbf{L}_{\alpha}(A)\right)$
+    3. $\mathbf{L}_{\alpha}(A)={\displaystyle \bigcup_{\gamma<\alpha} \mathbf{L}_{\gamma}(A)}$
+
+    定义 $\mathbf{L}(A)={\displaystyle \bigcup_{\alpha} \mathbf{L}_{\alpha}(A)}$
+
+    1. 称包含所有实数的最小内模型 $\mathbf{L}(\mathbf{R})$ 为可构成层谱
+    2. 除非 $\operatorname{trcl}(\{A\})$ 在 $\mathbf{L}(A)$ 上是良序的，否则 $\mathbf{L}(A)$ 不满足 $\mathbf{AC}$
+
 2. $\mathbf L[A]$
+
 3. $\mathbf L[U]$
+
 4. $\mathbf L[\mathcal U]$
+
 5. 鼠模型
+
 6. 终极 $\mathbf L$

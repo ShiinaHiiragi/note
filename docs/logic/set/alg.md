@@ -208,8 +208,7 @@
     1. 假设 $\mathrm{AD}$ 成立，那么
         1. 所有实数集都具有正则性质
         2. $\omega_1$ 在 $\mathbf{L}$ 是不可达基数，因此 $\operatorname{Con} (\mathbf{ZF} + \mathrm{AD}) \to \operatorname{Con} (\mathbf{ZFC}+$存在不可达基数$)$
-        3. $\omega_1$ 在 $\mathbf{L}$ 是可测基数，因此 $\operatorname{Con} (\mathbf{ZF} + \mathrm{AD}) \to \operatorname{Con} (\mathbf{ZFC}+$存在可测基数$)$
     2. 决定性公理与选择公理不一致：假设 $\mathbf{AC}$ 成立，则存在 $A \subseteq \omega^{\omega}$，$G_{\omega}(A)$ 不是被决定的
 3. 投影集决定公理（$\mathrm{PD}$）：所有投影集都是被决定的
     1. 假设 $\mathrm{PD}$ 成立，则所有投影集都具有正则性质
-    2. 假设 $\mathrm{PD}^{\mathbf{L}(\mathbf{R})}$ 成立，则所有 $\mathbf{L}(\mathbf{R})$ 中的集合（即可构成集）都具有正则性质
+    2. 假设 $\mathrm{PD}^{\mathbf{L}(\mathbf{R})}$ 成立，则所有 $\mathbf{L}(\mathbf{R})$ 中的集合都具有正则性质

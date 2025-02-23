@@ -220,6 +220,18 @@
             1. $C_{\alpha}$ 是 $\alpha$ 的封闭无界子集
             2. 若 $\beta \in \operatorname{lim}\left(C_{\alpha}\right)$，则 $C_{\beta}=C_{\alpha} \cap \beta$
             3. 若 $\operatorname{cf}(\alpha)<\kappa$ 则 $\left|C_{\alpha}\right|<\kappa$
+4. 定义 $0^{\sharp} = \left\{\varphi \mid \mathbf L_{\aleph_{\omega}} \vDash \varphi\left[\aleph_{1}, \aleph_{2}, \ldots, \aleph_{n}\right]\right\}$
+    1. 若 $0^{\sharp}$ 存在，那么
+        1. $\mathbf{L}$ 中可定义的可构成集都是可数的
+        2. 对于任意无穷的 $x \in L$ 都有 $\left|\mathcal{P}(x)^{\mathbf L}\right|=|x|$
+    2. $0^{\sharp}$ 存在与以下各命题等价
+        1. 存在一个基本嵌入 $j: \mathbf{L} \to \mathbf{L}$
+        2. 对于某些 $\alpha$ 和 $\beta$，存在一个基本嵌入 $j: \mathbf{L}_{\alpha} \to \mathbf{L}_{\beta}$ 且 $\operatorname{crit}(j) < |\alpha|$
+        3. 存在一个 $\mathbf{L}$ 上的超滤 $U$，使得其 $\mathbf{L}$ 的超幂是良基的
+        4. 存在一个可迭代的 $\mathbf{L}$ 超滤
+        5. $\aleph_{\omega}$ 在 $\mathbf{L}$ 中是正则的
+    3. 设初等嵌入 $j: L_{\alpha} \to L_{\beta}$，$\gamma = \operatorname{crit}(j)$．若 $\gamma < |\alpha|$，则 $0^{\sharp}$ 存在
+    4. $\text{Jensen}$ 覆盖定理：若 $0^{\sharp}$ 不存在，则对于任意不可数序数集 $X$，都存在一个可构造集 $Y \supseteq X$，使得 $|Y|=|X|$
 
 ## 4.3 Grothendieck 宇宙
 1. $\text{Grothendieck}$ 宇宙是满足以下性质的集合 $U$
