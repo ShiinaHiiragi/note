@@ -180,6 +180,7 @@
             1. $M \subseteq \operatorname{Def}(M) \subseteq \mathcal{P}(M)$
             2. 对任意 $X \subseteq M$，如果 $X$ 有穷，则 $X \in \operatorname{Def}(M)$
             3. 假设选择公理成立且 $|M| \geqslant \omega$，则 $|\operatorname{Def}(M)|=|M|$
+    4. 序数可定义类：$\mathbf{OD}={\displaystyle \bigcap_{\alpha \in \mathbf{On}} \operatorname{cl}_{G} \left\{V_{\beta} \mid \beta<\alpha\right\}}$
 
 2. 定义可构成宇宙 $\mathbf{L}={\displaystyle \bigcup_{\alpha \in \mathbf{O} \mathbf{n}} L_{\alpha}}$，其中 $L_{\alpha}$
     1. $L_{0}=\varnothing$
@@ -221,6 +222,9 @@
             1. $C_{\alpha}$ 是 $\alpha$ 的封闭无界子集
             2. 若 $\beta \in \operatorname{lim}\left(C_{\alpha}\right)$，则 $C_{\beta}=C_{\alpha} \cap \beta$
             3. 若 $\operatorname{cf}(\alpha)<\kappa$ 则 $\left|C_{\alpha}\right|<\kappa$
+    5. $\text{Jensen}$ 二歧性定理：假设 $\mathbf{V}=\mathbf{L}$，则下列定理之一成立
+        1. $\mathbf{L}$ 接近 $\mathbf{V}$：任意奇异基数 $\gamma$ 都在 $\mathbf{L}$ 中奇异
+        2. $\mathbf{L}$ 远离 $\mathbf{V}$：任意不可数基数在 $\mathbf{L}$ 中都是正则极限基数
 4. 定义 $0^{\sharp} = \left\{\varphi \mid \mathbf L_{\aleph_{\omega}} \vDash \varphi\left[\aleph_{1}, \aleph_{2}, \ldots, \aleph_{n}\right]\right\}$
     1. 若 $0^{\sharp}$ 存在，那么
         1. $\mathbf{L}$ 中可定义的可构成集都是可数的

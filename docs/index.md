@@ -369,8 +369,7 @@ const refList = [
         author: ["曹知秋"],
         title: "大数理论",
         type: "DB/OL",
-        page: [1, 1524],
-        plot: 1524 - 32
+        page: [1, 1524]
     },
     {
         author: ["顾沛", "邓少强"],

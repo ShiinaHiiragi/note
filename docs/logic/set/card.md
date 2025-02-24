@@ -155,7 +155,7 @@
             1. 设 $\kappa$ 为超强基数，则存在 $M$ 的一个脱殊扩张 $M[G]$ 使得存在一个初等嵌入 $j: \mathbf L(\mathbf{R}) \to \mathbf L(\mathbf{R})^{M[G]}$
             2. 若存在超强基数，则 $\mathbf{L}(\mathbf{R})$ 中的每个实数集都具有正则性质．特别地，$\mathbf{R}$ 不存在投影良序
     6. 如果存在可测基数（即存在非平凡的初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$），则
-        1. $\mathbf{V} \neq \mathbf{L}$ 且 $\mathbf{L}$ 中只有有限多个实数
+        1. $\text{Silver}$ 定理：$\mathbf{V} \neq \mathbf{L}$ 且 $\mathbf{L}$ 中只有有限多个实数
         2. 所有的 $\mathbf{\Pi}_{1}^{1}$ 集都是被决定的
         3. 所有的 $\mathbf{\Sigma}_{2}^{1}$ 集都具有正则性质
 
@@ -165,7 +165,7 @@
         2. 所有的 $\mathbf{\Sigma}_{n+2}^{1}$ 集合都满足完备集性质，可测性和 $\text{Baire}$ 性质
     2. $\text{Woodin}$ 基数的存在保证了投影集的正则性质
         1. 假设存在无穷多个 $\text{Woodin}$ 基数，且在其上有一个可测基数，则 $\mathrm{AD}$ 在 $\mathbf{L}(\mathbf{R})$上成立
-        2. $\operatorname{Con}(\mathbf{ZF} + \mathrm{AD}) \leftrightarrow \operatorname{Con}(\mathbf{ZF}+$存在无穷多个 $\text{Woodin}$ 基数$)$
+        2. $\operatorname{Con}(\mathbf{ZF} + \mathrm{AD}) \leftrightarrow \operatorname{Con}(\mathbf{ZF}\;+$ 存在无穷多个 $\text{Woodin}$ 基数$)$
 3. 超紧致基数：设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，$\kappa = \operatorname{crit}(j)$ 是可测基数．若 $\kappa, j(\kappa)>\lambda$ 且 $\mathbf{M}^{\lambda} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $\lambda-$超紧致基数；若对任意基数 $\lambda$，$\kappa$ 为 $\lambda-$超紧致基数，则称 $\kappa$ 为超紧致基数
     1. $\kappa$ 是超紧致基数的当且仅当
         1. 语言 $\mathscr L_{\kappa \kappa}^{1}$ 具有紧致性
@@ -274,6 +274,42 @@
         2. $0^{\dagger}$ 存在当且仅当对于某个 $\kappa$，存在一个 $\kappa$ 模型 $\mathbf{M}$ 及初等嵌入 $j: \mathbf{M} \to \mathbf{M}$ 有 $\operatorname{crit}(j) > \kappa$
     4. 若存在强紧致基数，则不存在集合 $A$ 使得 $\mathbf{V}=\mathbf{L}[A]$ 或 $\mathbf{V}=\mathbf{L}(A)$
 
-4. $\mathbf{L}[\mathbf{U}]$
-
 ### 5.3.2 终极 L
+1. 设 $\mathbf{N} \vDash \mathbf{ZFC}$ 是一个传递类，$\delta$ 是超紧致基数．若对每个 $\gamma>\delta$，在 $\mathcal{P}_{\delta}(\gamma)$ 上都存在 $\delta-$完全正规精细测度 $U$ 使得 $\mathbf{N} \cap \mathcal{P}_{\delta}(\gamma) \in U$ 且 $U \cap \mathbf{N} \in \mathbf{N}$，则称 $\mathbf{N}$ 是 $\delta$ 的弱扩展模型
+    1. 设 $\mathbf{N}$ 是超紧致基数 $\delta$ 的弱扩展模型且 $\gamma>\delta$ 是一个奇异基数，则 $\gamma$ 是 $\mathbf{N}$ 中的一个奇异基数且 $\left(\gamma^{+}\right)^{\mathbf{N}}=\gamma^{+}$
+    2. 普遍性定理：设 $\mathbf{N}$ 是超紧致基数 $\delta$ 的弱扩展模型，$E$ 是一个长度为 $\eta$ 的 $\mathbf{N}$ 扩展子，其关键点为 $\kappa_{E} \geqslant \delta$．令超幂嵌入 $\pi_{E}: \mathbf{N} \rightarrow M_{E} \cong \operatorname{Ult}_{0}(\mathbf{N}, E)$，则 $E \in \mathbf{N}$ 当且仅当对每个 $A \subseteq \eta$ 有 $\pi_{E}(A) \cap \eta \in \mathbf{N}$
+        1. 设 $\gamma>\delta$ 是 $\mathbf{N}$ 中的基数，$j: H\left(\gamma^{+}\right)^{\mathbf{N}} \rightarrow H\left(j(\gamma)^{+}\right)^{\mathbf{N}}$ 是一个使得 $\delta \leqslant \operatorname{crit}(j)$ 的初等嵌入，则 $j \in \mathbf{N}$
+        2. 若对任意 $n<\omega$ 都存在任意大的 $n-$巨基数，则在 $\mathbf{N}$ 中对任意 $n<\omega$，也存在任意大的 $n-$巨基数
+2. 遗传序数可定义类 $\mathbf{HOD}=\{x \mid \mathrm{TRCL}(\{x\}) \subseteq \mathbf{OD}\}$，其中 $\operatorname{TRCL}(S) = {\displaystyle \bigcap\{T \mid T \supseteq S \wedge T \textsf{ 为传递集}\}}$
+    1. $\mathbf{HOD}$ 的基础性质
+        1. $\mathbf{L} \subseteq \mathbf{HOD}$
+        2. 在 $\mathbf{ZF}$ 中可证 $\mathbf{HOD} \vDash \mathbf{AC}$
+    2. $\omega-$强可测性：设 $\lambda$ 是不可数正则基数，$S = \{\alpha < \lambda \mid \operatorname{cf} (\alpha) = \omega\}$，若存在 $\kappa < \lambda$ 使得
+        1. $(2^{\kappa})^{\mathbf{HOD}} < \lambda$
+        2. 不存在 $S$ 的一个稳定集划分 $\{S_{\alpha} \mid \alpha < \kappa\}$ 使得 $S_{\alpha} \in \mathbf{HOD}$ 对任意 $\alpha < \lambda$ 成立
+
+        则称 $\lambda$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的
+
+    3. $\mathbf{HOD}$ 二歧性定理：假设 $\delta$ 是可扩展基数，则下列定理之一成立
+        1. 每个正则基数 $\kappa \geqslant \delta$ 在 $\mathbf{HOD}$ 中都是 $\omega-$强可测的，进一步地
+            1. $\mathbf{HOD}$ 不是任何超紧致基数 $\lambda$ 的弱扩展模型
+            2. 对于某些超紧致基数 $\lambda$，不存在弱扩展模型 $\mathbf{N}$，使得 $\mathbf{N} \subseteq \mathbf{HOD}$
+        2. 不存在正则基数 $\kappa \geqslant \delta$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的
+            1. 每个奇异基数 $\gamma>\delta$ 在 $\mathbf{HOD}$ 中都是奇异的，且 $\gamma^{+}=\left(\gamma^{+}\right)^{\mathrm{HOD}}$
+            2. 进一步地，$\mathbf{HOD}$ 是超紧致基数 $\delta$ 的弱扩展模型
+
+3. $\mathbf{HOD}$ 假设：存在正则基数 $\lambda$ 构成的真类，在 $\mathbf{HOD}$ 中不是 $\omega-$强可测的
+    1. 若 $\mathbf{HOD}$ 假设成立，那么
+        1. 设 $\delta$ 是可扩展基数，则 $\mathbf{HOD}$ 是超紧致基数 $\delta$ 的弱扩展模型
+        2. 假设存在一个可扩展基数，则存在序数 $\lambda$ 使得对于所有 $\gamma>\lambda$，若 $j: \mathbf{HOD} \cap V_{\gamma+1} \rightarrow \mathbf{HOD} \cap V_{j(\gamma)+1}$ 是初等嵌入且 $j(\lambda)=\lambda$，则 $j \in \mathbf{HOD}$
+    2. 在 $\mathrm{L}[U]$ 中可证若 $\delta$ 是可测基数，则存在 $\delta$ 的弱扩展模型 $\mathbf{N}$ 使得 $\mathbf{N} \subseteq \mathbf{HOD}$
+        1. 强 $\mathbf{HOD}$ 猜想：「$\mathbf{ZFC}\; +$ 超紧致基数存在」可证 $\mathbf{HOD}$ 假设
+        2. 弱 $\mathbf{HOD}$ 猜想：设 $\delta$ 是可扩展基数，则存在一个超紧致基数 $\delta$ 的弱扩展模型，使得 $\mathbf{N} \subseteq \mathbf{HOD}$
+
+4. 终极 $L$ 公理：$\mathbf{L} =$ 终极 $\mathbf{L}$，后者即包含超紧致基数的内模型
+    1. $\mathbf{L} =$ 终极 $\mathbf{L}$ 等价于如下公理
+        1. 存在 $\text{Woodin}$ 基数的真类
+        2. 对于每个 $\Sigma_{2}-$语句 $\varphi$，若 $\varphi$ 在 $\mathbf{V}$ 中成立，则存在一个普遍 $\text{Baire}$ 集 $A \subseteq \mathbf{R}$ 使得 $\mathbf{HOD}^{L(A, \mathbf{R})} \vDash \varphi$
+    2. 若 $\mathbf{L} =$ 终极 $\mathbf{L}$ 成立，那么
+        1. $\mathbf{CH}$ 成立
+        2. $\mathbf{V}=\mathbf{HOD}$
