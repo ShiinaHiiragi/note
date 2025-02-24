@@ -282,7 +282,13 @@
     1. 称 $\mathbf{N}$ 具有 $\delta-$近似性质当且仅当对于任意 $\sigma \subseteq \mathbf{N}$，若 $|\sigma| < \delta$，则存在 $\tau \subseteq \mathbf{N}$ 使得 ① $\sigma \subseteq \tau$；② $\tau \in \mathbf{N}$；③ $|\tau| \in \delta$
     2. 称 $\mathbf{N}$ 具有 $\delta-$覆盖性质当且仅当对任意 $X \subseteq \mathbf{N}$，$X \in \mathbf{N}$ 当且仅当对任意 $\sigma \in \mathbf{N}$，若 $|\sigma| < \delta$，则 $\sigma \cap X \in \mathbf{N}$
     3. 称 $\mathbf{N}$ 具有 $\delta-$脱殊性质当且仅当对任意 $\sigma \subseteq \delta$，若 $|\sigma| < \delta$，则 $\sigma$ 对某个使得 $|\mathbf{P}| < \delta$ 的偏序 $\mathbf{P} \in \mathbf{N}$ 是 $N-$脱殊的 <!--TODO-->
-    <!-- 2. $\text{Hamkins}$ 唯一性定理：假设 $\mathbf{N}_1, \mathbf{N}_2$ 都有 $\delta-$近似性质与 $\delta-$覆盖性质，且 $\mathbf{N}_1 \cap H(\delta^{+}) = \mathbf{N}_2 \cap H(\delta^{+})$，则 $\mathbf{N}_1 = \mathbf{N}_2$ -->
+
+    !!! note "$\text{Hamkins}$ 唯一性定理"
+        假设 $\mathbf{N}_1, \mathbf{N}_2$ 都有 $\delta-$近似性质与 $\delta-$覆盖性质
+
+        1. 若 $\mathbf{N}_1 \cap H(\delta^{+}) = \mathbf{N}_2 \cap H(\delta^{+})$，则 $\mathbf{N}_1 = \mathbf{N}_2$
+        2. 对任意强极限基数 $\gamma > \delta^{+}$，$\mathbf{N}_{1} \cap H(\gamma)$ 在 $H(\gamma)$ 中是 $\mathbf{N}_{1} \cap H(\delta^{+})-$可定义的
+
 2. 弱扩展模型：设 $\mathbf{N} \vDash \mathbf{ZFC}$ 是一个传递类，$\delta$ 是超紧致基数．若对每个 $\gamma>\delta$，在 $\mathcal{P}_{\delta}(\gamma)$ 上都存在 $\delta-$完全正规精细测度 $U$ 使得 $\mathbf{N} \cap \mathcal{P}_{\delta}(\gamma) \in U$ 且 $U \cap \mathbf{N} \in \mathbf{N}$，则称 $\mathbf{N}$ 是 $\delta$ 的弱扩展模型
     1. 普遍性定理：设 $\mathbf{N}$ 是超紧致基数 $\delta$ 的弱扩展模型，$U$ 是某个 $\lambda > \delta$ 上的 $\delta-$完全超滤，则 $U \cap \mathbf{N} \in \mathbf{N}$
     2. 设 $\mathbf{N}$ 是超紧致基数 $\delta$ 的弱扩展模型，那么
