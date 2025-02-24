@@ -283,11 +283,12 @@
     2. 称 $\mathbf{N}$ 具有 $\delta-$覆盖性质当且仅当对任意 $X \subseteq \mathbf{N}$，$X \in \mathbf{N}$ 当且仅当对任意 $\sigma \in \mathbf{N}$，若 $|\sigma| < \delta$，则 $\sigma \cap X \in \mathbf{N}$
     3. 称 $\mathbf{N}$ 具有 $\delta-$脱殊性质当且仅当对任意 $\sigma \subseteq \delta$，若 $|\sigma| < \delta$，则 $\sigma$ 对某个使得 $|\mathbf{P}| < \delta$ 的偏序 $\mathbf{P} \in \mathbf{N}$ 是 $N-$脱殊的 <!--TODO-->
 
-    !!! note "$\text{Hamkins}$ 唯一性定理"
-        假设 $\mathbf{N}_1, \mathbf{N}_2$ 都有 $\delta-$近似性质与 $\delta-$覆盖性质
+    !!! note "$\text{Hamkins}$ 定理"
+        假设 $\mathbf{N}, \mathbf{N}_1, \mathbf{N}_2$ 都有 $\delta-$近似性质与 $\delta-$覆盖性质
 
-        1. 若 $\mathbf{N}_1 \cap H(\delta^{+}) = \mathbf{N}_2 \cap H(\delta^{+})$，则 $\mathbf{N}_1 = \mathbf{N}_2$
-        2. 对任意强极限基数 $\gamma > \delta^{+}$，$\mathbf{N}_{1} \cap H(\gamma)$ 在 $H(\gamma)$ 中是 $\mathbf{N}_{1} \cap H(\delta^{+})-$可定义的
+        1. 唯一性定理：若 $\mathbf{N}_1 \cap H(\delta^{+}) = \mathbf{N}_2 \cap H(\delta^{+})$，则 $\mathbf{N}_1 = \mathbf{N}_2$
+        2. 对任意强极限基数 $\gamma > \delta^{+}$，$\mathbf{N} \cap H(\gamma)$ 在 $H(\gamma)$ 中是 $\mathbf{N} \cap H(\delta^{+})-$可定义的
+        3. 若 $\mathbf{N}$ 是内模型且 $\gamma > \delta$ 是一个奇异基数，则 $\gamma$ 在 $\mathbf{N}$ 也是奇异基数且 $\gamma^{+} = (\gamma^{+})^{\mathbf{N}}$
 
 2. 弱扩展模型：设 $\mathbf{N} \vDash \mathbf{ZFC}$ 是一个传递类，$\delta$ 是超紧致基数．若对每个 $\gamma>\delta$，在 $\mathcal{P}_{\delta}(\gamma)$ 上都存在 $\delta-$完全正规精细测度 $U$ 使得 $\mathbf{N} \cap \mathcal{P}_{\delta}(\gamma) \in U$ 且 $U \cap \mathbf{N} \in \mathbf{N}$，则称 $\mathbf{N}$ 是 $\delta$ 的弱扩展模型
     1. 普遍性定理：设 $\mathbf{N}$ 是超紧致基数 $\delta$ 的弱扩展模型，$U$ 是某个 $\lambda > \delta$ 上的 $\delta-$完全超滤，则 $U \cap \mathbf{N} \in \mathbf{N}$
@@ -295,6 +296,7 @@
         1. $\mathbf{N}$ 有 $\delta-$近似性质与 $\delta-$覆盖性质
         2. $\mathbf{N}$ 由 $\mathbf{N} \cap H(\delta^{+})$ 唯一确定
         3. $\mathbf{N}$ 是 $\mathbf{N} \cap H(\delta^{+})-$可定义的且是 $\Sigma_2-$可定义的
+    3. 假设存在可扩展基数，$\mathbf{N}$ 是一个内模型，则 $\mathbf{N}$ 有 $\delta-$近似性质与 $\delta-$覆盖性质当且仅当 $\mathbf{N}$ 是某个超紧致基数 $\delta$ 的弱扩展模型
 3. 遗传序数可定义类：设序数 $\alpha$ 与 $M \subseteq V_{\alpha}$ 有
     1. $X \in M$ 且 $M$ 是传递集
     2. 任意 $M$ 的元素在 $V_{\alpha}$ 中是 $\mathbf{On}-$可定义的
@@ -305,6 +307,7 @@
         1. $\mathbf{L} \subseteq \mathbf{HOD}$
         2. 在 $\mathbf{ZF}$ 中可证 $\mathbf{HOD} \vDash \mathbf{AC}$
         3. 任意 $M$ 的元素在 $\mathbf{V}$ 中是 $\mathbf{On}-$可定义的
+        4. 对任意强不可达基数 $\delta$，$\mathbf{HOD}$ 有 $\delta-$脱殊性质
     2. 设 $\lambda$ 是不可数正则基数，$S = \{\alpha < \lambda \mid \operatorname{cf} (\alpha) = \omega\}$，若存在 $\kappa < \lambda$ 使得
         1. $(2^{\kappa})^{\mathbf{HOD}} < \lambda$
         2. 不存在 $S$ 的一个划分 $\{S_{\alpha} \mid \alpha < \kappa\}$ 是稳定集且 $S_{\alpha} \in \mathbf{HOD}$ 对任意 $\alpha < \lambda$ 成立
@@ -329,18 +332,13 @@
     2. 在 $\mathrm{L}[U]$ 中可证若 $\delta$ 是可测基数，则存在 $\delta$ 的弱扩展模型 $\mathbf{N}$ 使得 $\mathbf{N} \subseteq \mathbf{HOD}$
         1. 强 $\mathbf{HOD}$ 猜想：「$\mathbf{ZFC}\; +$ 超紧致基数存在」可证 $\mathbf{HOD}$ 假设
         2. 弱 $\mathbf{HOD}$ 猜想：「$\mathbf{ZFC}\; +$ 可扩展基数存在」可证 $\mathbf{HOD}$ 假设
+    3. 假设存在可扩展基数的真类，则 $\mathbf{HOD}$ 假设成立当且仅当存在内模型 $\mathbf{N}$ 有 $\delta-$近似性质与 $\delta-$覆盖性质且 $\mathbf{N} \vDash \mathbf{HOD}$ 假设
 
 5. 终极 $L$ 公理：$\mathbf{V} =$ 终极 $\mathbf{L}$，后者即包含超紧致基数的内模型
-    1. 弱终极 $\mathbf{L}$ 猜想蕴含弱 $\mathbf{HOD}$ 猜想：设 $\delta$ 是可扩展基数，可证明存在内模型 $\mathbf{N}$ 使得
-        1. $\mathbf{N}$ 有 $\delta-$近似性质与 $\delta-$覆盖性质
-        2. $\mathbf{N} \vDash \mathbf{V} =$ 终极 $\mathbf{L}$
-    2. 终极 $\mathbf{L}$ 猜想：在 $\mathbf{ZFC}$ 中，设 $\delta$ 是一个可扩展基数，则可证明存在内模型 $\mathbf{N}$ 使得
+    1. 终极 $\mathbf{L}$ 猜想蕴含弱 $\mathbf{HOD}$ 猜想：在 $\mathbf{ZFC}$ 中，设 $\delta$ 是一个可扩展基数，则可证明存在内模型 $\mathbf{N}$ 使得
         1. $\mathbf{N}$ 是超紧致基数 $\delta$ 的弱扩展模型
-        2. $\mathbf{N}$ 由 $\delta-$脱殊性质
+        2. $\mathbf{N}$ 有 $\delta-$脱殊性质
         3. $\mathbf{N} \vDash \mathbf{V} =$ 终极 $\mathbf{L}$
-    3. $\mathbf{V} =$ 终极 $\mathbf{L}$ 等价于如下公理
-        1. 存在 $\text{Woodin}$ 基数的真类
-        2. 对于每个 $\Sigma_{2}-$语句 $\varphi$，若 $\varphi$ 在 $\mathbf{V}$ 中成立，则存在一个普遍 $\text{Baire}$ 集 $A \subseteq \mathbf{R}$ 使得 $\mathbf{HOD}^{L(A, \mathbf{R})} \vDash \varphi$
-    4. 若 $\mathbf{V} =$ 终极 $\mathbf{L}$ 成立，那么
+    2. 若 $\mathbf{V} =$ 终极 $\mathbf{L}$ 成立，那么
         1. $\mathbf{CH}$ 成立
         2. $\mathbf{V}=\mathbf{HOD}$
