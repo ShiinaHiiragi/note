@@ -178,6 +178,9 @@
         4. $\kappa$ 上有 $2^{2^{\kappa}}$ 个正规测度
         5. 对每个 $\lambda \geqslant \kappa$，$\mathcal P_{\kappa}(\lambda)$ 上有 $2^{2^{\lambda^{<\kappa}}}$ 个正规测度
     3. 若存在一个可测基数，且是强紧致基数的极限，那么符合条件的最小基数是强紧致的但不是超紧致的
+    4. 若存在超紧致基数，则 $\mathbf{SCH}$ 独立于 $\mathbf{ZFC}$
+        1. $\text{Solovay}$ 定理：假设 $\delta$ 是超紧致基数且 $\gamma > \delta$ 是一个奇异强极限基数，则 $2^{\gamma} = \gamma^{+}$
+        2. 假设 $\delta$ 是超紧致基数，则存在一个 $V$ 的脱殊扩张 $V[G]$ 使得对某个超紧致基数 $\delta$ 有 $2^{\delta} > \delta^{+}$
 4. 可扩展基数：设 $\kappa$ 是基数，若对于某些序数 $\lambda$，存在非平凡初等嵌入 $j: V_{\kappa+\eta} \to V_{\lambda}$，使得 $\operatorname{crit}(j) = \kappa$，则称 $\kappa$ 为 $\eta-$可扩展基数；若 $\kappa$ 对任意 $\eta > 0$ 都是 $\eta-$可扩展基数，则称 $\kappa$ 为可扩展基数
     1. 基数 $\kappa > \omega$ 是可扩展基数当且仅当
         1. 语言 $\mathscr L_{\kappa \omega}^{2}$ 具有紧致性
@@ -196,7 +199,7 @@
         2. 若对任意序数 $\gamma$ 都存在初等嵌入 $j$ 使得 $\gamma < \operatorname{crit}(j)$ 且对任意 $\lambda < j^{n}(\kappa)$ 都有 $\mathbf{M}^{\lambda} \subseteq \mathbf{M}$，则称 $\kappa$ 为殆 $n-$超巨基数
         3. 若 $\mathbf{M}^{j^{n}(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $n-$巨基数
         4. 若对任意序数 $\gamma$ 都存在初等嵌入 $j$ 使得 $\gamma < \operatorname{crit}(j)$ 且 $\mathbf{M}^{j^{n}(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $n-$超巨基数
-    
+
         则巨基数即 $1-$巨基数
 
     2. 设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$
@@ -296,11 +299,14 @@
         1. $\mathbf{L} \subseteq \mathbf{HOD}$
         2. 在 $\mathbf{ZF}$ 中可证 $\mathbf{HOD} \vDash \mathbf{AC}$
         3. 任意 $M$ 的元素在 $\mathbf{V}$ 中是 $\mathbf{On}-$可定义的
-    2. 设 $\lambda$ 是不可数正则基数，$S = \{\alpha < \lambda \mid \operatorname{cf} (\alpha) = \omega\}$．称 $\lambda$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的，当且仅当存在 $\kappa < \lambda$ 使得
+    2. 设 $\lambda$ 是不可数正则基数，$S = \{\alpha < \lambda \mid \operatorname{cf} (\alpha) = \omega\}$，若存在 $\kappa < \lambda$ 使得
         1. $(2^{\kappa})^{\mathbf{HOD}} < \lambda$
         2. 不存在 $S$ 的一个划分 $\{S_{\alpha} \mid \alpha < \kappa\}$ 是稳定集且 $S_{\alpha} \in \mathbf{HOD}$ 对任意 $\alpha < \lambda$ 成立
 
-        若 $\lambda$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的，则 $\mathbf{HOD} \vDash \lambda$ 是可测基数
+        则称 $\lambda$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的
+
+        1. 若 $\lambda$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的，则 $\mathbf{HOD} \vDash \lambda$ 是可测基数
+        2. 设 $\delta$ 是超紧致基数，正则基数 $\kappa > \delta$ 且在 $\mathbf{HOD}$ 中是 $\omega-$强可测的，则任意正则基数 $\lambda > 2^{\kappa}$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的
 
     3. $\mathbf{HOD}$ 二歧性定理：假设 $\delta$ 是可扩展基数，则下列定理之一成立
         1. 每个正则基数 $\kappa \geqslant \delta$ 在 $\mathbf{HOD}$ 中都是 $\omega-$强可测的，进一步地
