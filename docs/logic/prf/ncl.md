@@ -2,7 +2,7 @@
 
 ## 4.1 二阶逻辑
 ### 4.1.1 二阶语言与标准语义
-1. 二阶语言 $\mathscr L_2(S)$ 即二阶逻辑的形式语言，由逻辑符号和非逻辑符号组成
+1. 二阶语言 $\mathscr L^1(S)$ 即二阶逻辑的形式语言，由逻辑符号和非逻辑符号组成
     1. 逻辑符号
         1. 变元集 $\mathbf{Var} = \mathbf V_r \cup \mathbf V_f \cup \mathbf V_l$
             1. 变关系符：$\mathbf V_r = \{X_i \mid i\in \lambda\}$，用 $X, Y, Z$ 表示任意变关系符
@@ -19,13 +19,13 @@
         2. 函数符号集 $\mathbf F = \{\varphi_i\mid i\in \lambda\}$，用 $\varphi, \psi$ 表示任意函数符号
         3. 个体符号集 $\mathbf C = \{c_i\mid i\in \lambda\}$，用 $a, b, c$ 表示任意个体符号
 
-        一个二阶语言由非逻辑符号集合 $S$ 决定．当 $S = \varnothing$ 时，$\mathscr L_2(S)$ 可简记为 $\mathscr L_2$，这是语言中的纯逻辑部分
+        一个二阶语言由非逻辑符号集合 $S$ 决定．当 $S = \varnothing$ 时，$\mathscr L^1(S)$ 可简记为 $\mathscr L^1$，这是语言中的纯逻辑部分
 
 2. 二阶逻辑项与公式的句法
-    1. 二阶语言 $\mathscr L_2(S)$ 的类型是从 $\mathbf V_r \cup \mathbf V_f \cup \mathbf R \cup \mathbf F$ 的正整数集合的函数 $\Omega: S \to \mathbf Z_+$
+    1. 二阶语言 $\mathscr L^1(S)$ 的类型是从 $\mathbf V_r \cup \mathbf V_f \cup \mathbf R \cup \mathbf F$ 的正整数集合的函数 $\Omega: S \to \mathbf Z_+$
         1. 对每个 $R \in \mathbf V_r \cup \mathbf R$，$\Omega(R)$ 称为 $R$ 的元数，$R$ 为 $\Omega(R)$ 元关系符号
         2. 对每个 $f \in \mathbf V_f \cup \mathbf F$，$\Omega(f)$ 称为 $f$ 的元数，$f$ 为 $\Omega(f)$ 元关系符号
-    2. 二阶语言 $\mathscr L_2(S)$ 的项集 $\mathcal T(S)$ 归纳定义如下
+    2. 二阶语言 $\mathscr L^1(S)$ 的项集 $\mathcal T(S)$ 归纳定义如下
 
         $$
         \mathcal T(S) \ni t:= x \mid c \mid ft_1t_2\cdots t_{\Omega(f)} \mid \varphi t_1t_2\cdots t_{\Omega(\varphi)}
@@ -33,7 +33,7 @@
 
         其中 $x\in \mathbf V_l, c\in C$ 且 $f\in \mathbf V_f, \varphi \in \mathbf F$．不含变项的项称作闭项
 
-        二阶语言 $\mathscr L_2(S)$ 的（合式）公式集 $\mathcal F(S)$ 归纳定义如下
+        二阶语言 $\mathscr L^1(S)$ 的（合式）公式集 $\mathcal F(S)$ 归纳定义如下
 
         $$
         \mathcal F(S) \ni \alpha := Xt_1t_2\cdots t_{\Omega(X)} \mid Rt_1t_2\cdots t_{\Omega(R)} \mid \neg \alpha \mid \alpha_1 \to \alpha_2 \mid \forall u \alpha
@@ -120,7 +120,7 @@
 
     3. 标准语义的性质
         1. 在 $\mathbf H_2$ 中可靠性定理对二阶语言标准语义成立，但完全性、紧致性与 $\text{L}\ddot{\mathrm o}\text{wenheim} - \text{Skolem}$ 定理均对其不成立
-        2. 标准语义的不完全性定理：令 $\mathbf H$ 是 $\mathscr L_2(S)$ 的任一能行可靠的演绎系统，则存在重言式不是 $\mathbf H$ 中的定理
+        2. 标准语义的不完全性定理：令 $\mathbf H$ 是 $\mathscr L^1(S)$ 的任一能行可靠的演绎系统，则存在重言式不是 $\mathbf H$ 中的定理
 
 ### 4.1.2 非标准语义
 1. $\text{Henkin}$ 语义
@@ -141,38 +141,38 @@
             $$
 
 2. 一阶语义
-    1. 结构：一个一阶结构是 $\mathfrak A^{\mathrm 1} = (A, A_1, A_2, (I, P, D))$
+    1. 结构：一个一阶结构是 $\mathfrak A^{0} = (A, A_1, A_2, (I, P, D))$
         1. $A$ 是非空集，对任意 $n \in \mathbf N$，非空集 $A_1(n), A_2(n)$ 是 $n$ 元变关系符与 $n$ 元变函数符的取值范围
         2. 对任意 $n \in \mathbf N$ 有 $P(n) \subseteq A^n \times A_1(n), D(n): A^n \times A_2(n) \to A$
-    2. 模型：设一阶模型 $\mathfrak M^{\mathrm 1} = (\mathfrak A^{\mathrm 1}, \sigma)$
+    2. 模型：设一阶模型 $\mathfrak M^{0} = (\mathfrak A^{0}, \sigma)$
         1. 对于指派 $\sigma$ 与 $n$ 元变关系符 $X^n \in \mathbf V_r$ 及 $n$ 元变函数符 $f^n \in \mathbf V_f$，有 $\sigma(X^n) \in A_1(n), \sigma(f^n) \in A_2(n)$
-        2. 项解释：对任意结构 $\mathfrak A^{\mathrm 1}$ 和模型 $\mathfrak M^{\mathrm 1} = (\mathfrak A^{\mathrm 1}, \sigma)$，项 $t$ 在 $\mathfrak M^{\mathrm 1}$ 中的解释 $t^{\mathfrak M^{\mathrm 1}}$ 归纳定义为
+        2. 项解释：对任意结构 $\mathfrak A^{0}$ 和模型 $\mathfrak M^{0} = (\mathfrak A^{0}, \sigma)$，项 $t$ 在 $\mathfrak M^{0}$ 中的解释 $t^{\mathfrak M^{0}}$ 归纳定义为
 
             $$
             \begin{aligned}
-            x^{\mathfrak M^{\mathrm 1}} &= \sigma(x) \\
-            c^{\mathfrak M^{\mathrm 1}} &= c^{\mathfrak A^{\mathrm 1}} \\
-            (ft_1t_2\cdots t_{\Omega(f)})^{\mathfrak M^{\mathrm 1}} &= D(n)(t_1^{\mathfrak M^{\mathrm 1}}, t_2^{\mathfrak M^{\mathrm 1}}, \cdots, t_{\Omega(f)}^{\mathfrak M^{\mathrm 1}}, \sigma(f)) \\
-            (\varphi t_1t_2\cdots t_{\Omega(f)})^{\mathfrak M^{\mathrm 1}} &= \varphi^{\mathfrak A^{\mathrm 1}}(t_1^{\mathfrak M^{\mathrm 1}}, t_2^{\mathfrak M^{\mathrm 1}}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M^{\mathrm 1}})
+            x^{\mathfrak M^{0}} &= \sigma(x) \\
+            c^{\mathfrak M^{0}} &= c^{\mathfrak A^{0}} \\
+            (ft_1t_2\cdots t_{\Omega(f)})^{\mathfrak M^{0}} &= D(n)(t_1^{\mathfrak M^{0}}, t_2^{\mathfrak M^{0}}, \cdots, t_{\Omega(f)}^{\mathfrak M^{0}}, \sigma(f)) \\
+            (\varphi t_1t_2\cdots t_{\Omega(f)})^{\mathfrak M^{0}} &= \varphi^{\mathfrak A^{0}}(t_1^{\mathfrak M^{0}}, t_2^{\mathfrak M^{0}}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M^{0}})
             \end{aligned}
             $$
 
-        3. 模型 $\mathfrak M^{\mathrm 1}$ 与部分公式的满足关系定义为
+        3. 模型 $\mathfrak M^{0}$ 与部分公式的满足关系定义为
 
             $$
             \begin{aligned}
-            \mathfrak M^{\mathrm 1} \vDash Xt_1t_2\cdots t_{\Omega(X)} & \textsf{ 当且仅当 } (t_1^{\mathfrak M^{\mathrm 1}}, t_2^{\mathfrak M^{\mathrm 1}}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M^{\mathrm 1}}, \sigma(X)) \in P(n) \\
-            \mathfrak M^{\mathrm 1} \vDash Rt_1t_2\cdots t_{\Omega(R)} & \textsf{ 当且仅当 } (t_1^{\mathfrak M^{\mathrm 1}}, t_2^{\mathfrak M^{\mathrm 1}}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M^{\mathrm 1}}) \in R^{\mathfrak A^{\mathrm 1}} \\
-            \mathfrak M^{\mathrm 1} \vDash \forall X^n\alpha & \textsf{ 当且仅当任意 } R \in D_1(n) \textsf{ 都有 } (\mathfrak A^{\mathrm 1}, \sigma[R/X^n]) \vDash \alpha \\
-            \mathfrak M^{\mathrm 1} \vDash \forall f^n\alpha & \textsf{ 当且仅当任意 } \varphi \in D_2(n) \textsf{ 都有 } (\mathfrak A^{\mathrm 1}, \sigma[\varphi/f^n]) \vDash \alpha \\
+            \mathfrak M^{0} \vDash Xt_1t_2\cdots t_{\Omega(X)} & \textsf{ 当且仅当 } (t_1^{\mathfrak M^{0}}, t_2^{\mathfrak M^{0}}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M^{0}}, \sigma(X)) \in P(n) \\
+            \mathfrak M^{0} \vDash Rt_1t_2\cdots t_{\Omega(R)} & \textsf{ 当且仅当 } (t_1^{\mathfrak M^{0}}, t_2^{\mathfrak M^{0}}, \cdots, t_{\Omega(\varphi)}^{\mathfrak M^{0}}) \in R^{\mathfrak A^{0}} \\
+            \mathfrak M^{0} \vDash \forall X^n\alpha & \textsf{ 当且仅当任意 } R \in D_1(n) \textsf{ 都有 } (\mathfrak A^{0}, \sigma[R/X^n]) \vDash \alpha \\
+            \mathfrak M^{0} \vDash \forall f^n\alpha & \textsf{ 当且仅当任意 } \varphi \in D_2(n) \textsf{ 都有 } (\mathfrak A^{0}, \sigma[\varphi/f^n]) \vDash \alpha \\
             \end{aligned}
             $$
 
 3. 标准语义与非标准语义
     1. $\text{Henkin}$ 语义与标准语义的关系：设 $\mathfrak A$ 是一个标准结构，$\mathfrak A^{\mathrm H}$ 是相应的 $\text{Hekin}$ 结构，则对各指派 $\sigma$ 与公式 $\alpha$ 有 $(\mathfrak A, \sigma) \vDash \alpha$ 当且仅当 $(\mathfrak A^{\mathrm H}, \sigma) \vDash \alpha$
-    2. $\text{Henkin}$ 语义与一阶语义的关系：设 $\mathfrak A^{\mathrm 1}$ 是 $\mathscr L_2(S)$ 上的一个一阶结构，则存在一个 $\text{Henkin}$ 结构 $\mathfrak A^{\mathrm H}$ 且对 $\mathfrak A^{\mathrm 1}$ 上的每一个指派 $\sigma^{\mathrm 1}$ 都有 $\mathfrak A^{\mathrm H}$ 上的一个指派 $\sigma^{\mathrm H}$ 使得对 $\mathscr L_2(S)$ 中的任一个公式 $\alpha$ 有 $(\mathfrak A^{\mathrm 1}, \sigma^{\mathrm 1}) \vDash \alpha$ 当且仅当 $(\mathfrak A^{\mathrm H}, \sigma^{\mathrm H}) \vDash \alpha$
-        1. 对 $\mathscr L_2(S)$ 的任意公式 $\alpha$ 或公式集 $\Gamma$，$\alpha$ 或 $\Gamma$ 是 $\text{Henkin}$ 有效的当且仅当 $\alpha$ 或 $\Gamma$ 是一阶有效的
-        2. 对 $\mathscr L_2(S)$ 的任意公式 $\alpha$ 或公式集 $\Gamma$，$\alpha$ 或 $\Gamma$ 是 $\text{Henkin}$ 可满足的当且仅当 $\alpha$ 或 $\Gamma$ 是一阶可满足的
+    2. $\text{Henkin}$ 语义与一阶语义的关系：设 $\mathfrak A^{0}$ 是 $\mathscr L^1(S)$ 上的一个一阶结构，则存在一个 $\text{Henkin}$ 结构 $\mathfrak A^{\mathrm H}$ 且对 $\mathfrak A^{0}$ 上的每一个指派 $\sigma^{0}$ 都有 $\mathfrak A^{\mathrm H}$ 上的一个指派 $\sigma^{\mathrm H}$ 使得对 $\mathscr L^1(S)$ 中的任一个公式 $\alpha$ 有 $(\mathfrak A^{0}, \sigma^{0}) \vDash \alpha$ 当且仅当 $(\mathfrak A^{\mathrm H}, \sigma^{\mathrm H}) \vDash \alpha$
+        1. 对 $\mathscr L^1(S)$ 的任意公式 $\alpha$ 或公式集 $\Gamma$，$\alpha$ 或 $\Gamma$ 是 $\text{Henkin}$ 有效的当且仅当 $\alpha$ 或 $\Gamma$ 是一阶有效的
+        2. 对 $\mathscr L^1(S)$ 的任意公式 $\alpha$ 或公式集 $\Gamma$，$\alpha$ 或 $\Gamma$ 是 $\text{Henkin}$ 可满足的当且仅当 $\alpha$ 或 $\Gamma$ 是一阶可满足的
     3. 若 $\text{Henkin}$ 结构（或一阶结构）满足选择公理与概括公理模式，则称其为忠实于 $\mathbf H_2$ 的，此时 $\text{Henkin}$ 结构（或一阶结构）具有可靠性、完全性、紧致性并满足 $\text{L}\ddot{\mathrm o}\text{wenheim} - \text{Skolem}$ 定理
 
 ## 4.2 模态命题逻辑

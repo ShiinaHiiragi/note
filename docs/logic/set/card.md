@@ -88,7 +88,7 @@
     2. 初等嵌入无法无限制加强：以下定理在 $\mathbf{ZFC}$ 中成立
         1. 若 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是非平凡初等嵌入，则 $\mathbf{M} \neq \mathbf{V}$
         2. 不存在 $V_{\lambda+2}$ 到 $V_{\lambda+2}$ 的非平凡初等嵌入
-        3. 若 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是初等嵌入且 $\delta$ 是 $\operatorname{crit}(j)$ 之上使得 $j(\delta)=\delta$ 的最小序数，则 $\delta \notin M$
+        3. 若 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是初等嵌入且 $\delta$ 是 $\operatorname{crit}(j)$ 之上使得 $j(\delta)=\delta$ 的最小序数，则 $j[\delta] \notin M$
 4. 语言 $\mathscr{L}_{\lambda, \mu}^{n}$ 的弱紧致性与紧致性：定义语句集 $\Sigma$ 是 $\nu-$可满足的当且仅当其每个基数小于 $\nu$ 的子集都是可满足的
     1. 弱紧致性：对 $\mathscr{L}_{\lambda, \mu}^{n}$ 的任意一组语句 $\Sigma$，若 $|\Sigma| \leqslant \lambda$ 且 $\Sigma$ 是 $\lambda-$可满足的，则 $\Sigma$ 也是可满足的
     2. 紧致性：对 $\mathscr{L}_{\lambda, \mu}^{n}$ 的任意一组语句 $\Sigma$，若 $\Sigma$ 是 $\lambda-$可满足的，则 $\Sigma$ 也是可满足的
@@ -164,7 +164,7 @@
         1. 所有的 $\mathbf{\Pi}_{n+1}^{1}$ 都是被决定的
         2. 所有的 $\mathbf{\Sigma}_{n+2}^{1}$ 集合都满足完备集性质，可测性和 $\text{Baire}$ 性质
     2. $\text{Woodin}$ 基数的存在保证了投影集的正则性质
-        1. 假设存在无穷多个 $\text{Woodin}$ 基数，且在其上有一个可测基数，则决定公理在 $\mathbf{L}(\mathbf{R})$上成立
+        1. 假设存在无穷多个 $\text{Woodin}$ 基数，且在其上有一个可测基数，则 $\mathrm{AD}$ 在 $\mathbf{L}(\mathbf{R})$上成立
         2. $\operatorname{Con}(\mathbf{ZF} + \mathrm{AD}) \leftrightarrow \operatorname{Con}(\mathbf{ZF}+$存在无穷多个 $\text{Woodin}$ 基数$)$
 3. 超紧致基数：设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，$\kappa = \operatorname{crit}(j)$ 是可测基数．若 $\kappa, j(\kappa)>\lambda$ 且 $\mathbf{M}^{\lambda} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $\lambda-$超紧致基数；若对任意基数 $\lambda$，$\kappa$ 为 $\lambda-$超紧致基数，则称 $\kappa$ 为超紧致基数
     1. $\kappa$ 是超紧致基数的当且仅当
@@ -186,20 +186,23 @@
         1. $V_{\kappa} \prec_{\Sigma_{3}} \mathbf{V}$
         2. 在 $\kappa$ 上存在一个正规测度 $D$，使得 $\{\alpha<\kappa \mid \alpha$ 是超紧致基数$\} \in D$
 5. $\text{Vop}\check{\mathrm{e}}\text{nka}$ 原理：设 $\mathbf{C}$ 是语言的真类模型，则存在两个 $\mathbf{C}$ 类成员 $A, B$，使得存在 $A$ 到 $B$ 的初等嵌入
-    1. 称 $X$ 在 $\kappa$ 中是 $\text{Vop}\check{\mathrm{e}}\text{nka}$ 的当且仅当对任意序列 $\left\langle\mathcal{M}_{\alpha} \mid \alpha<\kappa\right\rangle$，都存在一个初等嵌入 $j: \mathcal{M}_{\alpha} \to \mathcal{M}_{\beta}$，其中某个 $\alpha<\beta<\kappa$ 具有低于 $X$ 的临界点
+    1. 称 $X$ 在 $\kappa$ 中是 $\text{Vop}\check{\mathrm{e}}\text{nka}$ 的当且仅当对任意序列 $\left\langle M_{\alpha} \mid \alpha<\kappa\right\rangle$，都存在一个初等嵌入 $j: M_{\alpha} \to M_{\beta}$，其中存在 $\kappa > \beta > \alpha$ 具有低于 $X$ 的临界点
     2. 称 $\kappa$ 是 $\text{Vop}\check{\mathrm{e}}\text{nka}$ 的当且仅当 $\kappa$ 在 $\kappa$ 中是 $\text{Vop}\check{\mathrm{e}}\text{nka}$ 的，此时与以下命题等价
         1. 对任意 $A \subseteq V_{\kappa}$ 与 $\eta<\kappa$，都存在一个 $\alpha<\kappa$ 在 $A$ 中是 $\eta$ 可扩展的
         2. 对任意 $A \subseteq V_{\kappa}$ 与 $\eta<\kappa$，都存在一个 $\alpha<\kappa$ 在 $A$ 中是 $\eta$ 超紧的
 6. 巨基数：设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，$\kappa = \operatorname{crit}(j)$ 是可测基数．若 $\mathbf{M}^{j(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为巨基数
     1. 巨基数的扩展：设 $n \in \mathbf{N}$
-        1. 若 $\mathbf{M}^{<j^{n}(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为殆 $n-$巨基数
-        2. 若对任意序数 $\gamma$ 都存在初等嵌入 $j$ 使得 $\gamma < \operatorname{crit}(j)$ 且 $\mathbf{M}^{<j^{n}(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为殆 $n-$超巨基数
+        1. 若对任意 $\lambda < j^{n}(\kappa)$ 都有 $\mathbf{M}^{\lambda} \subseteq \mathbf{M}$，则称 $\kappa$ 为殆 $n-$巨基数
+        2. 若对任意序数 $\gamma$ 都存在初等嵌入 $j$ 使得 $\gamma < \operatorname{crit}(j)$ 且对任意 $\lambda < j^{n}(\kappa)$ 都有 $\mathbf{M}^{\lambda} \subseteq \mathbf{M}$，则称 $\kappa$ 为殆 $n-$超巨基数
         3. 若 $\mathbf{M}^{j^{n}(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $n-$巨基数
         4. 若对任意序数 $\gamma$ 都存在初等嵌入 $j$ 使得 $\gamma < \operatorname{crit}(j)$ 且 $\mathbf{M}^{j^{n}(\kappa)} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $n-$超巨基数
+    
+        则巨基数即 $1-$巨基数
+
     2. 设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$
         1. 若 $j$ 见证了 $\kappa$ 的 $n-$巨基数，则 $j^{n}(\kappa)$ 在 $M$ 中是可测的
         2. 若 $j$ 见证了 $\kappa$ 的殆巨基数，则 $j(\kappa)$ 在 $V$ 中不可达
-7. $\text{Rank to Rank}$ 公理
+7. $\text{Rank into Rank}$ 公理
     1. $\mathrm{I}3: V_{\lambda}$ 存在一个非平凡的初等嵌入到自身
     2. $\mathrm{I}2:$ 存在一个初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，使得对于某个 $\delta>\operatorname{crit}(j), V_{\delta} \subseteq M$，有 $j(\delta)=\delta$
     3. $\mathrm{I}1: V_{\lambda+1}$ 存在一个非平凡的初等嵌入到自身
@@ -209,7 +212,7 @@
 
     1. 对任意 $\kappa$ 和 $\delta$，以下命题相互等价
         1. 存在初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，其中 $\operatorname{crit}(j)=\kappa<\delta=j(\delta)$ 且 $V_{\delta} \subseteq M$
-        2. 存在初等嵌入 $j: V_{\delta} \to V_{\delta}$，其中 $\operatorname{crit}(j)=\kappa$ 使得每当 $R$ 是 $V_{\delta}$ 上的良基关系时，$j^{+}(R)$ 也是良基关系
+        2. 存在初等嵌入 $j: V_{\delta} \to V_{\delta}$，其中 $\operatorname{crit}(j)=\kappa$ 使得当 $R$ 是 $V_{\delta}$ 上良基关系时，${\displaystyle j^{+}(R) = \bigcup_{\alpha < \delta} j(R \cap V_{\alpha})}$ 也是良基关系
     2. 设 $\mathrm{I} n(\kappa, \delta)$ 为存在一个满足公理 $\mathrm{I} n$ 的初等嵌入 $j$ 且 $\operatorname{crit}(j)=\kappa$，其中 $n \in \{1, 2, 3\}$
         1. 若 $\mathrm{I} 1(\kappa, \delta)$，则 $\mathrm{I} 2(\kappa, \delta)$ 且存在 $\kappa$ 上的正规超滤 $U$ 使得 $\{\alpha<\kappa \mid \mathrm{I} 2(\alpha, \delta)\} \in U$
         2. 若 $\mathrm{I} 2(\kappa, \delta)$，则 $\mathrm{I} 3(\kappa, \delta)$ 且存在 $\kappa$ 上的正规超滤 $U$ 使得 $\{\alpha<\kappa \mid \mathrm{I} 3(\alpha, \delta)\} \in U$
