@@ -279,14 +279,14 @@
     1. 称 $\mathbf{N}$ 具有 $\delta-$近似性质当且仅当对于任意 $\sigma \subseteq \mathbf{N}$，若 $|\sigma| < \delta$，则存在 $\tau \subseteq \mathbf{N}$ 使得 ① $\sigma \subseteq \tau$；② $\tau \in \mathbf{N}$；③ $|\tau| \in \delta$
     2. 称 $\mathbf{N}$ 具有 $\delta-$覆盖性质当且仅当对任意 $X \subseteq \mathbf{N}$，$X \in \mathbf{N}$ 当且仅当对任意 $\sigma \in \mathbf{N}$，若 $|\sigma| < \delta$，则 $\sigma \cap X \in \mathbf{N}$
     3. 称 $\mathbf{N}$ 具有 $\delta-$脱殊性质当且仅当对任意 $\sigma \subseteq \delta$，若 $|\sigma| < \delta$，则 $\sigma$ 对某个使得 $|\mathbf{P}| < \delta$ 的偏序 $\mathbf{P} \in \mathbf{N}$ 是 $N-$脱殊的 <!--TODO-->
-<!-- 2. $\text{Hamkins}$ 唯一性定理：假设 $\mathbf{N}_1, \mathbf{N}_2$ 都有 $\delta-$近似性质与 $\delta-$覆盖性质，且 $\mathbf{N}_1 \cap H(\delta^{+}) = \mathbf{N}_2 \cap H(\delta^{+})$，则 $\mathbf{N}_1 = \mathbf{N}_2$ -->
-3. 弱扩展模型：设 $\mathbf{N} \vDash \mathbf{ZFC}$ 是一个传递类，$\delta$ 是超紧致基数．若对每个 $\gamma>\delta$，在 $\mathcal{P}_{\delta}(\gamma)$ 上都存在 $\delta-$完全正规精细测度 $U$ 使得 $\mathbf{N} \cap \mathcal{P}_{\delta}(\gamma) \in U$ 且 $U \cap \mathbf{N} \in \mathbf{N}$，则称 $\mathbf{N}$ 是 $\delta$ 的弱扩展模型
+    <!-- 2. $\text{Hamkins}$ 唯一性定理：假设 $\mathbf{N}_1, \mathbf{N}_2$ 都有 $\delta-$近似性质与 $\delta-$覆盖性质，且 $\mathbf{N}_1 \cap H(\delta^{+}) = \mathbf{N}_2 \cap H(\delta^{+})$，则 $\mathbf{N}_1 = \mathbf{N}_2$ -->
+2. 弱扩展模型：设 $\mathbf{N} \vDash \mathbf{ZFC}$ 是一个传递类，$\delta$ 是超紧致基数．若对每个 $\gamma>\delta$，在 $\mathcal{P}_{\delta}(\gamma)$ 上都存在 $\delta-$完全正规精细测度 $U$ 使得 $\mathbf{N} \cap \mathcal{P}_{\delta}(\gamma) \in U$ 且 $U \cap \mathbf{N} \in \mathbf{N}$，则称 $\mathbf{N}$ 是 $\delta$ 的弱扩展模型
     1. 普遍性定理：设 $\mathbf{N}$ 是超紧致基数 $\delta$ 的弱扩展模型，$U$ 是某个 $\lambda > \delta$ 上的 $\delta-$完全超滤，则 $U \cap \mathbf{N} \in \mathbf{N}$
     2. 设 $\mathbf{N}$ 是超紧致基数 $\delta$ 的弱扩展模型，那么
         1. $\mathbf{N}$ 有 $\delta-$近似性质与 $\delta-$覆盖性质
         2. $\mathbf{N}$ 由 $\mathbf{N} \cap H(\delta^{+})$ 唯一确定
         3. $\mathbf{N}$ 是 $\mathbf{N} \cap H(\delta^{+})-$可定义的且是 $\Sigma_2-$可定义的
-4. 遗传序数可定义类：$\mathbf{HOD}=\{x \mid \mathrm{TRCL}(\{x\}) \subseteq \mathbf{OD}\}$，其中 $\operatorname{TRCL}(S) = {\displaystyle \bigcap\{T \mid T \supseteq S \wedge T \textsf{ 为传递集}\}}$
+3. 遗传序数可定义类：$\mathbf{HOD}=\{x \mid \mathrm{TRCL}(\{x\}) \subseteq \mathbf{OD}\}$，其中 $\operatorname{TRCL}(S) = {\displaystyle \bigcap\{T \mid T \supseteq S \wedge T \textsf{ 为传递集}\}}$
     1. $\mathbf{HOD}$ 的基础性质
         1. $\mathbf{L} \subseteq \mathbf{HOD}$
         2. 在 $\mathbf{ZF}$ 中可证 $\mathbf{HOD} \vDash \mathbf{AC}$
@@ -304,7 +304,7 @@
             1. 每个奇异基数 $\gamma>\delta$ 在 $\mathbf{HOD}$ 中都是奇异的，且 $\gamma^{+}=\left(\gamma^{+}\right)^{\mathrm{HOD}}$
             2. $\mathbf{HOD}$ 是超紧致基数 $\delta$ 的弱扩展模型
 
-5. $\mathbf{HOD}$ 假设：存在正则基数 $\lambda$ 构成的真类，在 $\mathbf{HOD}$ 中不是 $\omega-$强可测的
+4. $\mathbf{HOD}$ 假设：存在正则基数 $\lambda$ 构成的真类，在 $\mathbf{HOD}$ 中不是 $\omega-$强可测的
     1. 若 $\mathbf{HOD}$ 假设成立，那么
         1. 设 $\delta$ 是可扩展基数，则 $\mathbf{HOD}$ 是超紧致基数 $\delta$ 的弱扩展模型
         2. 假设存在一个可扩展基数，则存在序数 $\lambda$ 使得对于所有 $\gamma>\lambda$，若 $j: \mathbf{HOD} \cap V_{\gamma+1} \rightarrow \mathbf{HOD} \cap V_{j(\gamma)+1}$ 是初等嵌入且 $j(\lambda)=\lambda$，则 $j \in \mathbf{HOD}$
@@ -312,7 +312,7 @@
         1. 强 $\mathbf{HOD}$ 猜想：「$\mathbf{ZFC}\; +$ 超紧致基数存在」可证 $\mathbf{HOD}$ 假设
         2. 弱 $\mathbf{HOD}$ 猜想：「$\mathbf{ZFC}\; +$ 可扩展基数存在」可证 $\mathbf{HOD}$ 假设
 
-6. 终极 $L$ 公理：$\mathbf{V} =$ 终极 $\mathbf{L}$，后者即包含超紧致基数的内模型
+5. 终极 $L$ 公理：$\mathbf{V} =$ 终极 $\mathbf{L}$，后者即包含超紧致基数的内模型
     1. 弱终极 $\mathbf{L}$ 猜想蕴含弱 $\mathbf{HOD}$ 猜想：设 $\delta$ 是可扩展基数，可证明存在内模型 $\mathbf{N}$ 使得
         1. $\mathbf{N}$ 有 $\delta-$近似性质与 $\delta-$覆盖性质
         2. $\mathbf{N} \vDash \mathbf{V} =$ 终极 $\mathbf{L}$
