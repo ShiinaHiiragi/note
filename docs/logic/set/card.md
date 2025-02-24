@@ -202,6 +202,7 @@
     2. 设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$
         1. 若 $j$ 见证了 $\kappa$ 的 $n-$巨基数，则 $j^{n}(\kappa)$ 在 $M$ 中是可测的
         2. 若 $j$ 见证了 $\kappa$ 的殆巨基数，则 $j(\kappa)$ 在 $V$ 中不可达
+
 7. $\text{Rank into Rank}$ 公理
     1. $\mathrm{I}3: V_{\lambda}$ 存在一个非平凡的初等嵌入到自身
     2. $\mathrm{I}2:$ 存在一个初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，使得对于某个 $\delta>\operatorname{crit}(j), V_{\delta} \subseteq M$，有 $j(\delta)=\delta$
