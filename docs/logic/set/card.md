@@ -286,20 +286,26 @@
         1. $\mathbf{N}$ 有 $\delta-$近似性质与 $\delta-$覆盖性质
         2. $\mathbf{N}$ 由 $\mathbf{N} \cap H(\delta^{+})$ 唯一确定
         3. $\mathbf{N}$ 是 $\mathbf{N} \cap H(\delta^{+})-$可定义的且是 $\Sigma_2-$可定义的
-3. 遗传序数可定义类：$\mathbf{HOD}=\{x \mid \mathrm{TRCL}(\{x\}) \subseteq \mathbf{OD}\}$，其中 $\operatorname{TRCL}(S) = {\displaystyle \bigcap\{T \mid T \supseteq S \wedge T \textsf{ 为传递集}\}}$
+3. 遗传序数可定义类：设序数 $\alpha$ 与 $M \subseteq V_{\alpha}$ 有
+    1. $X \in M$ 且 $M$ 是传递集
+    2. 任意 $M$ 的元素在 $V_{\alpha}$ 中是 $\mathbf{On}-$可定义的
+
+    记所有满足上述条件的集合 $X$ 组成的类为 $\mathbf{HOD}$
+
     1. $\mathbf{HOD}$ 的基础性质
         1. $\mathbf{L} \subseteq \mathbf{HOD}$
         2. 在 $\mathbf{ZF}$ 中可证 $\mathbf{HOD} \vDash \mathbf{AC}$
-    2. $\omega-$强可测性：设 $\lambda$ 是不可数正则基数，$S = \{\alpha < \lambda \mid \operatorname{cf} (\alpha) = \omega\}$，若存在 $\kappa < \lambda$ 使得
+        3. 任意 $M$ 的元素在 $\mathbf{V}$ 中是 $\mathbf{On}-$可定义的
+    2. 设 $\lambda$ 是不可数正则基数，$S = \{\alpha < \lambda \mid \operatorname{cf} (\alpha) = \omega\}$．称 $\lambda$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的，当且仅当存在 $\kappa < \lambda$ 使得
         1. $(2^{\kappa})^{\mathbf{HOD}} < \lambda$
         2. 不存在 $S$ 的一个划分 $\{S_{\alpha} \mid \alpha < \kappa\}$ 是稳定集且 $S_{\alpha} \in \mathbf{HOD}$ 对任意 $\alpha < \lambda$ 成立
 
-        则称 $\lambda$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的
+        若 $\lambda$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的，则 $\mathbf{HOD} \vDash \lambda$ 是可测基数
 
     3. $\mathbf{HOD}$ 二歧性定理：假设 $\delta$ 是可扩展基数，则下列定理之一成立
         1. 每个正则基数 $\kappa \geqslant \delta$ 在 $\mathbf{HOD}$ 中都是 $\omega-$强可测的，进一步地
-            1. $\mathbf{HOD}$ 不是任何超紧致基数 $\lambda$ 的弱扩展模型
-            2. 对于某些超紧致基数 $\lambda$，不存在弱扩展模型 $\mathbf{N}$，使得 $\mathbf{N} \subseteq \mathbf{HOD}$
+            1. 对于某些超紧致基数 $\lambda$，不存在弱扩展模型 $\mathbf{N}$，使得 $\mathbf{N} \subseteq \mathbf{HOD}$
+            2. $\mathbf{HOD}$ 不是任何超紧致基数 $\lambda$ 的弱扩展模型
         2. 不存在正则基数 $\kappa \geqslant \delta$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的，进一步地
             1. 每个奇异基数 $\gamma>\delta$ 在 $\mathbf{HOD}$ 中都是奇异的，且 $\gamma^{+}=\left(\gamma^{+}\right)^{\mathrm{HOD}}$
             2. $\mathbf{HOD}$ 是超紧致基数 $\delta$ 的弱扩展模型
