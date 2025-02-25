@@ -160,7 +160,10 @@
         3. 模型的同态与同构定义对代数系统仍有效
 
 ## 1.3 紧致性定理
-1. $\text{Henkin}$ 性质：若语句集 $\Sigma$ 对形如 $\exists x \ \alpha(x)$ 的公式，$\exists x \ \alpha(x) \in \Sigma$ 蕴含存在常元 $c$ 使得 $\alpha(c) \in \Sigma$，则称 $\Sigma$ 具有 $\text{Henkin}$ 性质
+1. 语言 $\mathscr{L}_{\lambda, \mu}^{n}$ 的弱紧致性与紧致性：定义语句集 $\Sigma$ 是 $\nu-$可满足的当且仅当其每个基数小于 $\nu$ 的子集都是可满足的
+    1. 弱紧致性：对 $\mathscr{L}_{\lambda, \mu}^{n}$ 的任意一组语句 $\Sigma$，若 $|\Sigma| \leqslant \lambda$ 且 $\Sigma$ 是 $\lambda-$可满足的，则 $\Sigma$ 也是可满足的
+    2. 紧致性：对 $\mathscr{L}_{\lambda, \mu}^{n}$ 的任意一组语句 $\Sigma$，若 $\Sigma$ 是 $\lambda-$可满足的，则 $\Sigma$ 也是可满足的
+2. $\text{Henkin}$ 性质：若语句集 $\Sigma$ 对形如 $\exists x \ \alpha(x)$ 的公式，$\exists x \ \alpha(x) \in \Sigma$ 蕴含存在常元 $c$ 使得 $\alpha(c) \in \Sigma$，则称 $\Sigma$ 具有 $\text{Henkin}$ 性质
     1. 设 $\Sigma$ 是一个语句集，若 $\Sigma$ 的任意有限子集 $\Sigma_{0}$ 都有模型，则称 $\Sigma$ 是有限一致的（或称有限可满足的或有限相容的）
         1. 如果语句集 $\Sigma$ 是有限一致的，则对任意的语句 $\sigma$，语句集 $\Sigma \cup \{\sigma\}$ 和 $\Sigma \cup\{\neg \sigma\}$ 至少有一个是有限一致的
         2. 设语句集 $\Sigma$ 是有限一致的，若 $\exists x \ \alpha(x) \in \Sigma$ 且常元符号 $c$ 没有在 $\Sigma$ 的语句中出现过，则 $\Sigma \cup\{\alpha(c)\}$ 是有限一致的
@@ -171,7 +174,7 @@
             2. 如果任意结构都满足 $\sigma$，则 $\sigma \in \Sigma$
         3. 如果语句集 $\Sigma$ 是极大有限一致的，则对任意的语句 $\sigma_{1}, \sigma_{2}$，有 $\sigma_{1} \wedge \sigma_{2} \in \Sigma$ 当且仅当 $\left\{\sigma_{1}, \sigma_{2}\right\} \subseteq \Sigma$
     3. 设 $\beta$ 是公式，若 $x$ 不是 $\beta$ 的自由变元，则对任意的结构 $\mathfrak{A}$ 和 $\mathfrak{A}-$指派 $\overline{b}$ ，有 $\mathfrak{A} \vDash \beta[\overline{b}]$ 当且仅当 $\mathfrak{A} \vDash(\exists x \beta)[\overline{b}]$
-2. 超积：设 $I$ 是一个集合，$\mathcal{U}$ 是 $I$ 上的一个滤，$\left\{\mathfrak{A}_{i} \mid i \in I\right\}$ 是一族结构，其中每个 $\mathfrak{A}_{i}$ 的论域是 $A_{i}$
+3. 超积：设 $I$ 是一个集合，$\mathcal{U}$ 是 $I$ 上的一个滤，$\left\{\mathfrak{A}_{i} \mid i \in I\right\}$ 是一族结构，其中每个 $\mathfrak{A}_{i}$ 的论域是 $A_{i}$
     1. 令 ${\displaystyle \prod_{i \in I} A_{i}=\left\{\left.f: I \to \bigcup_{i \in I} A_{i} \ \right| \ f(i) \in A_{i}\right\}}$
         1. 若 $f \in {\displaystyle \prod_{i \in I} A_{i}}$ 且 $f(i)=a_{i}$，则用 $\left(a_{i}\right)_{i \in I}$ 来表示 $f$
         2. 定义 ${\displaystyle \prod_{i \in I} A_{i}}$ 上的关系 $\sim_{\mathcal{U}}$ 为 $s \sim_{\mathcal{U}} t$ 当且仅当 $\{i \in I \mid s(i)=t(i)\} \in \mathcal{U}$，则 $\sim_{\mathcal{U}}$ 是等价关系
@@ -197,14 +200,14 @@
         5. 如果 $\mathfrak{A}$ 是伪有限的，并且不是有限的，则称 $\mathfrak{A}$ 是严格伪有限的
         6. $\mathfrak{A}$ 是伪有限的当且仅当 $\mathfrak{A}$ 与一族有限结构的超积初等等价
 
-3. 紧致性定理：设 $S$ 可数，则 $S-$语句集 $\Sigma$ 是有限一致的当且仅当 $\Sigma$ 是一致的
+4. 紧致性定理：设 $S$ 可数，则 $S-$语句集 $\Sigma$ 是有限一致的当且仅当 $\Sigma$ 是一致的
     1. 若 $\mathscr L(S^{*})$ 是一个语言，$\Sigma^{*}$ 是一个有限一致的 $S^{*}-$语句集，则 $\Sigma^{*}$ 有一个基数不超过 $\left|S^{*}\right|$ 的模型
     2. 设 $\Sigma$ 与 $\Gamma$ 是两个语句集，若 $\Sigma \vDash \bigvee \Gamma$，即对每个结构 $\mathfrak{A} \vDash \Sigma$，都存在 $\gamma \in \Gamma$ 使得 $\mathfrak{A} \vDash \gamma$，则存在 $\Sigma$ 的有限子集 $\Sigma_{0}$ 及 $\Gamma$ 的有限子集 $\Gamma_{0}$，使得 $\Sigma_{0} \vDash \bigvee \Gamma_{0}$
     3. 设 $\mathcal{T}$ 是全体完备一致的 $S-$理论集合．设 $\Sigma$ 是语句集，则将 $\{T \in \mathcal{T} \mid \Sigma \subseteq T\}$ 记作 $[\Sigma]$；若 $\Sigma=\{\sigma\}$，则 $[\Sigma]$ 也记作 $[\sigma]$
         1. 令 $\tau=\{X \subseteq \mathcal{T} \mid$ 存在语句集 $\Sigma$ 使得 $X$ 的补集 $\mathcal{T} - X=[\Sigma]\} \subseteq \mathcal{P}(\mathcal{T})$，则 $(\mathcal{T}, \tau)$ 是一个紧致的、完全不连通的空间
         2. $\mathcal{T}$ 是紧空间等价于紧致性定理成立
 
-4. 设 $T$ 是一个理论，用 $S_{n}(T)$ 表示 $T$ 的全体完全 $n-$型构成的集合
+5. 设 $T$ 是一个理论，用 $S_{n}(T)$ 表示 $T$ 的全体完全 $n-$型构成的集合
     1. 设 $I$ 是一个指标集，$\Sigma\left(x_{i}\right)_{i \in I}$ 是一个公式集
         1. 若 $\Sigma\left(x_{i}\right)_{i \in I}$ 是一致的，则称 $\Sigma\left(x_{i}\right)_{i \in I}$ 是一个 $I-$型；若 $T$ 是一个理论（不必是完备的）且 $T \cup \Sigma\left(x_{i}\right)_{i \in I}$ 是一致的，则称 $\Sigma$ 是 $T$ 的 $I-$型．当 $I=\{0, \cdots, n-1\}$ 时，称 $T$ 的 $I-$型为 $T$ 的 $n-$型
         2. 设 $\Sigma\left(x_{i}\right)_{i \in I}$ 是理论 $T$ 的 $I-$型，若对任意的 $i_{1}, \cdots, i_{n} \in I$ 及任意的公式 $\alpha\left(x_{i_{1}}, \cdots, x_{i_{n}}\right)$，总有 $\alpha\left(x_{i_{1}}, \cdots, x_{i_{n}}\right) \in \Sigma$ 或 $\neg \alpha\left(x_{i_{1}}, \cdots, x_{i_{n}}\right) \in \Sigma$，则称 $\Sigma$ 是 $T$ 的完全 $I-$型．类似地，也可定义 $T$ 的完全 $n-$型
@@ -212,7 +215,7 @@
     2. 在 $S_{n}(T)$ 上引入一个拓扑 $\tau$，即 $X \subseteq S_{n}(T)$ 是闭集当且仅当存在 $T$ 的一个 $n-$型 $\Sigma\left(x_{0}, \cdots, x_{n-1}\right)$，使得 $X=\left\{p\left(x_{0}, \cdots, x_{n-1}\right) \in S_{n}(T) \mid \Sigma\right. \subseteq p\}$，并将 $X$ 记作 $[\Sigma]$，将 $[\{\alpha\}]$ 记作 $[\alpha]$
         1. $\left(S_{n}(T), \tau\right)$ 是一个紧致的、完全不连通的 $\text{Hausdorff}$ 空间
         2. $X \subseteq S_{n}(T)$ 是开闭集当且仅当存在公式 $\alpha\left(x_{0}, \cdots, x_{n-1}\right)$，使得 $X=[\{\alpha\}]$
-5. $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理
+6. $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理
     1. 下行 $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理：设 $\mathfrak{A}$ 是一个论域为 $A$ 的 $S-$结构，$M \subseteq A$，则存在 $B \subseteq A$ 使得 $B$ 是 $\mathfrak{A}$ 的初等子结构有 $M \subseteq B$ 且 $|B| \leqslant \max \left\{|M|,|S|, \aleph_{0}\right\}$，即 $|B| \leqslant |M|$ 且 $|B| \leqslant |\mathscr L(S)|$
     2. 上行 $\text{L}\ddot{\mathrm o}\text{wenheim}-\text{Skolem}$ 定理：设 $\mathfrak{A}$ 是一个论域为 $A$ 的 $S-$结构，其中 $A$ 是无穷集合，$\lambda \geqslant|A|\oplus |S|$，则存在基数为 $\lambda$ 的 $S-$结构 $\mathfrak{B}$ 使得 $\mathfrak{A} \prec \mathfrak{B}$
         1. 设 $T$ 是一个 $S-$理论，且 $T$ 有一个无穷模型．若无穷基数 $\lambda \geqslant |S|$，则存在 $T$ 的基数为 $\lambda$ 的模型

@@ -89,9 +89,6 @@
         1. 若 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是非平凡初等嵌入，则 $\mathbf{M} \neq \mathbf{V}$
         2. 不存在 $V_{\lambda+2}$ 到 $V_{\lambda+2}$ 的非平凡初等嵌入
         3. 若 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是初等嵌入且 $\delta$ 是 $\operatorname{crit}(j)$ 之上使得 $j(\delta)=\delta$ 的最小序数，则 $j[\delta] \notin M$
-4. 语言 $\mathscr{L}_{\lambda, \mu}^{n}$ 的弱紧致性与紧致性：定义语句集 $\Sigma$ 是 $\nu-$可满足的当且仅当其每个基数小于 $\nu$ 的子集都是可满足的
-    1. 弱紧致性：对 $\mathscr{L}_{\lambda, \mu}^{n}$ 的任意一组语句 $\Sigma$，若 $|\Sigma| \leqslant \lambda$ 且 $\Sigma$ 是 $\lambda-$可满足的，则 $\Sigma$ 也是可满足的
-    2. 紧致性：对 $\mathscr{L}_{\lambda, \mu}^{n}$ 的任意一组语句 $\Sigma$，若 $\Sigma$ 是 $\lambda-$可满足的，则 $\Sigma$ 也是可满足的
 
 ### 5.2.1 不可描述性
 1. 不可达基数：$\Sigma_1^1-$不可描述基数
@@ -155,7 +152,7 @@
             1. 设 $\kappa$ 为超强基数，则存在 $M$ 的一个脱殊扩张 $M[G]$ 使得存在一个初等嵌入 $j: \mathbf L(\mathbf{R}) \to \mathbf L(\mathbf{R})^{M[G]}$
             2. 若存在超强基数，则 $\mathbf{L}(\mathbf{R})$ 中的每个实数集都具有正则性质．特别地，$\mathbf{R}$ 不存在投影良序
     6. 如果存在可测基数（即存在非平凡的初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$），则
-        1. $\text{Silver}$ 定理：$\mathbf{V} \neq \mathbf{L}$ 且 $\mathbf{L}$ 中只有有限多个实数
+        1. $\text{Scott}$ 定理：$\mathbf{V} \neq \mathbf{L}$ 且 $\mathbf{L}$ 中只有有限多个实数
         2. $\text{Solovay}$ 定理：所有的 $\mathbf{\Pi}_{1}^{1}$ 集都是被决定的；所有的 $\mathbf{\Sigma}_{2}^{1}$ 集都具有正则性质
 
 2. $\text{Woodin}$ 基数：若对于所有 $A \subseteq V_{\delta}$，都有任意大的 $\kappa<\delta$，使得对于所有 $\lambda<\delta$，都存在一个初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$ 且 $\operatorname{crit}(j) = \kappa$，使得 $j(\kappa)>\lambda$，$V_{\lambda} \subseteq M$，且 $A \cap V_{\lambda}=j(A) \cap V_{\lambda}$，则称基数 $\delta$ 为 $\text{Woodin}$ 基数
