@@ -278,7 +278,7 @@
     4. 若存在强紧致基数，则不存在集合 $A$ 使得 $\mathbf{V}=\mathbf{L}[A]$ 或 $\mathbf{V}=\mathbf{L}(A)$
 
 ### 5.3.2 终极 L
-1. 设 $\mathbf{N}$ 是一个内模型，$\delta$ 是 $\mathbf{V}$ 的不可数正则基数，$H(\gamma)$ 表示所有使得 $|M| < \gamma$ 的传递集之并
+1. 设 $\mathbf{N}$ 是一个内模型，$\delta$ 是 $\mathbf{V}$ 的不可数正则基数
     1. 称 $\mathbf{N}$ 具有 $\delta-$近似性质当且仅当对于任意 $\sigma \subseteq \mathbf{N}$，若 $|\sigma| < \delta$，则存在 $\tau \subseteq \mathbf{N}$ 使得 ① $\sigma \subseteq \tau$；② $\tau \in \mathbf{N}$；③ $|\tau| \in \delta$
     2. 称 $\mathbf{N}$ 具有 $\delta-$覆盖性质当且仅当对任意 $X \subseteq \mathbf{N}$，$X \in \mathbf{N}$ 当且仅当对任意 $\sigma \in \mathbf{N}$，若 $|\sigma| < \delta$，则 $\sigma \cap X \in \mathbf{N}$
     3. 称 $\mathbf{N}$ 具有 $\delta-$脱殊性质当且仅当对任意 $\sigma \subseteq \delta$，若 $|\sigma| < \delta$，则 $\sigma$ 对某个使得 $|\mathbf{P}| < \delta$ 的偏序 $\mathbf{P} \in \mathbf{N}$ 是 $\mathbf{N}-$脱殊滤
@@ -286,16 +286,16 @@
     !!! note "$\text{Hamkins}$ 定理"
         假设 $\mathbf{N}, \mathbf{N}_1, \mathbf{N}_2$ 都有 $\delta-$近似性质与 $\delta-$覆盖性质
 
-        1. 唯一性定理：若 $\mathbf{N}_1 \cap H(\delta^{+}) = \mathbf{N}_2 \cap H(\delta^{+})$，则 $\mathbf{N}_1 = \mathbf{N}_2$
-        2. 对任意强极限基数 $\gamma > \delta^{+}$，$\mathbf{N} \cap H(\gamma)$ 在 $H(\gamma)$ 中是 $\mathbf{N} \cap H(\delta^{+})-$可定义的
+        1. 唯一性定理：若 $\mathbf{N}_1 \cap H_{\delta^{+}} = \mathbf{N}_2 \cap H_{\delta^{+}}$，则 $\mathbf{N}_1 = \mathbf{N}_2$
+        2. 对任意强极限基数 $\gamma > \delta^{+}$，$\mathbf{N} \cap H_{\gamma}$ 在 $H_{\gamma}$ 中是 $\mathbf{N} \cap H_{\delta^{+}}-$可定义的
         3. 若 $\mathbf{N}$ 是内模型且 $\gamma > \delta$ 是一个奇异基数，则 $\gamma$ 在 $\mathbf{N}$ 也是奇异基数且 $\gamma^{+} = (\gamma^{+})^{\mathbf{N}}$
 
 2. 弱扩展模型：设 $\mathbf{N} \vDash \mathbf{ZFC}$ 是一个传递类，$\delta$ 是超紧致基数．若对每个 $\gamma>\delta$，在 $\mathcal{P}_{\delta}(\gamma)$ 上都存在 $\delta-$完全正规精细测度 $U$ 使得 $\mathbf{N} \cap \mathcal{P}_{\delta}(\gamma) \in U$ 且 $U \cap \mathbf{N} \in \mathbf{N}$，则称 $\mathbf{N}$ 是 $\delta$ 的弱扩展模型
     1. 普遍性定理：设 $\mathbf{N}$ 是超紧致基数 $\delta$ 的弱扩展模型，$U$ 是某个 $\lambda > \delta$ 上的 $\delta-$完全超滤，则 $U \cap \mathbf{N} \in \mathbf{N}$
     2. 设 $\mathbf{N}$ 是超紧致基数 $\delta$ 的弱扩展模型，那么
         1. $\mathbf{N}$ 有 $\delta-$近似性质与 $\delta-$覆盖性质
-        2. $\mathbf{N}$ 由 $\mathbf{N} \cap H(\delta^{+})$ 唯一确定
-        3. $\mathbf{N}$ 是 $\mathbf{N} \cap H(\delta^{+})-$可定义的且是 $\Sigma_2-$可定义的
+        2. $\mathbf{N}$ 由 $\mathbf{N} \cap H_{\delta^{+}}$ 唯一确定
+        3. $\mathbf{N}$ 是 $\mathbf{N} \cap H_{\delta^{+}}-$可定义的且是 $\Sigma_2-$可定义的
     3. 假设存在可扩展基数，$\mathbf{N}$ 是一个内模型，则 $\mathbf{N}$ 有 $\delta-$近似性质与 $\delta-$覆盖性质当且仅当 $\mathbf{N}$ 是某个超紧致基数 $\delta$ 的弱扩展模型
 3. 遗传序数可定义类：设序数 $\alpha$ 与 $M \subseteq V_{\alpha}$ 有
     1. $X \in M$ 且 $M$ 是传递集
