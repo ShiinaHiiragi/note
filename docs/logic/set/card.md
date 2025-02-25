@@ -73,14 +73,10 @@
         2. $\operatorname{Con}(\mathbf{ZFC}) \rightarrow \operatorname{Con}\left(\mathbf{ZFC}+2^{\kappa_{0}}=\kappa\right)$ 对任意满足 $\mathrm{cf}(\kappa)>\aleph_{0}$ 的基数 $\kappa$ 成立
 
 ## 5.2 大基数理论
-1. 对于任意两个 $\text{LCA}$（大基数公理）$A_{1}, A_{2}$，下列情况有且仅有一种成立
-    1. 除非 $\mathbf{ZFC}$ 是不一致的，否则 $\operatorname{Con}\left(\mathrm{ZFC}+A_{1}\right) \leftrightarrow \operatorname{Con}\left(\mathrm{ZFC}+A_{2}\right)$，则称 $A_{1}, A_{2}$ 的一致性强度相同
-    2. 若 $\operatorname{Con}\left(\mathbf{ZFC}+A_{1}\right) \rightarrow \operatorname{Con}\left(\mathbf{ZFC}+A_{2}\right)$，反之不成立，则称 $A_{1}$ 的一致性强度高于 $A_{2}$
-    3. 若 $\operatorname{Con}\left(\mathbf{ZFC}+A_{2}\right) \rightarrow \operatorname{Con}\left(\mathbf{ZFC}+A_{1}\right)$，反之不成立，则称 $A_{2}$ 的一致性强度高于 $A_{1}$
-2. 反射原理：令 $\varphi$ 为公式，对任意 $\mathbf{M}_{0}$，都存在类 $\mathbf{M} \supseteq \mathbf{M}_{0}$ 使得 $\varphi^{\mathbf{M}} \leftrightarrow \varphi$，则称 $\mathbf{M}$ 反射 $\varphi$
+1. 反射原理：令 $\varphi$ 为公式，对任意 $\mathbf{M}_{0}$，都存在类 $\mathbf{M} \supseteq \mathbf{M}_{0}$ 使得 $\varphi^{\mathbf{M}} \leftrightarrow \varphi$，则称 $\mathbf{M}$ 反射 $\varphi$
     1. 存在传递模型 $\mathbf{M} \supseteq \mathbf{M}_{0}$ 反射 $\varphi$；更进一步地，存在一个极限序数 $\alpha$，使得 $\mathbf{M}_{0} \subseteq V_{\alpha}$ 且 $V_{\alpha}$ 反射 $\varphi$
     2. 假设 $\mathbf{AC}$ 成立，则存在一个 $\mathbf{M} \supseteq \mathbf{M}_{0}$，使得 $\mathbf{M}$ 反射 $\varphi$ 且 $|\mathbf{M}| \leqslant\left|\mathbf{M}_{0}\right| \cdot \aleph_{0}$．特别地，存在一个可数的 $\mathbf{M}$ 反射 $\varphi$
-3. 关键点：设 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是从 $\mathbf{V}$ 到传递内模型 $\mathbf{M}$ 的初等嵌入，$j$ 将 $\mathbf{V}$ 中的序数映射为 $\mathbf{M}$ 中的序数，且是严格递增的
+2. 关键点：设 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是从 $\mathbf{V}$ 到传递内模型 $\mathbf{M}$ 的初等嵌入，$j$ 将 $\mathbf{V}$ 中的序数映射为 $\mathbf{M}$ 中的序数，且是严格递增的
     1. 非平凡（非等同函数）的初等嵌入总会改变至少一个序数，称第一个被改变的序数 $\kappa$ 为初等嵌入 $j$ 的关键点，记作 $\operatorname{crit}(j)$，
         1. $j(\kappa) > \kappa$
         2. 对任意 $a \in V_{\kappa}$ 有 $j(a) = a$，因此 $V_{\kappa}^{M} = v_{\kappa}$
@@ -89,6 +85,16 @@
         1. 若 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是非平凡初等嵌入，则 $\mathbf{M} \neq \mathbf{V}$
         2. 不存在 $V_{\lambda+2}$ 到 $V_{\lambda+2}$ 的非平凡初等嵌入
         3. 若 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是初等嵌入且 $\delta$ 是 $\operatorname{crit}(j)$ 之上使得 $j(\delta)=\delta$ 的最小序数，则 $j[\delta] \notin M$
+3. 对于任意两个 $\text{LCA}$（大基数公理）$A_{1}, A_{2}$，下列情况有且仅有一种成立
+    1. 除非 $\mathbf{ZFC}$ 是不一致的，否则 $\operatorname{Con}\left(\mathrm{ZFC}+A_{1}\right) \leftrightarrow \operatorname{Con}\left(\mathrm{ZFC}+A_{2}\right)$，则称 $A_{1}, A_{2}$ 的一致性强度相同
+    2. 若 $\operatorname{Con}\left(\mathbf{ZFC}+A_{1}\right) \rightarrow \operatorname{Con}\left(\mathbf{ZFC}+A_{2}\right)$，反之不成立，则称 $A_{1}$ 的一致性强度高于 $A_{2}$
+    3. 若 $\operatorname{Con}\left(\mathbf{ZFC}+A_{2}\right) \rightarrow \operatorname{Con}\left(\mathbf{ZFC}+A_{1}\right)$，反之不成立，则称 $A_{2}$ 的一致性强度高于 $A_{1}$
+
+    ??? note "$\text{LCA}$ 一致性强度关系图"
+        <figure markdown>
+            ![](../assets/card.svg)
+            <style> img[src$="card.svg"] { width: 95%; } </style>
+        </figure>
 
 ### 5.2.1 不可描述性
 1. 不可达基数：$\Sigma_1^1-$不可描述基数
