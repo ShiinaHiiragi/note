@@ -227,11 +227,11 @@
         2. $\mathbf{L}$ 远离 $\mathbf{V}$：任意不可数基数在 $\mathbf{L}$ 中都是正则极限基数
 4. 定义 $0^{\sharp}$ 为良基的显著 $\text{E.M.}$ 集
     1. 为 $\mathscr{L}(S)$ 中的公式 $\varphi$ 定义 $\text{Skolem}$ 函数 $h_{\varphi}$；称通过 $\mathscr{L}$ 中函数与 $\text{Skolem}$ 函数从变量或常量符号构建的项为 $\text{Skolem}$ 项
-        1. $\text{E.M.}$ 集：设 $\Sigma$ 是一个公式集，若存在
-            1. 存在极限序数 $\lambda$ 使得模型 $\mathfrak{A}$ 与 $\mathbf{L}_{\lambda}$ 初等等价
+        1. $\text{E.M.}$ 集：设 $\Sigma$ 是一个公式集，则称 $\Sigma$ 是一个 $\text{E.M.}$ 集或 $\text{Ehrenfeucht}-\text{Mostowski}$ 集当且仅当存在
+            1. 极限序数 $\lambda$，使得模型 $\mathfrak{A}$ 与 $\mathbf{L}_{\lambda}$ 初等等价
             2. 无穷不可辨元序列组成的序数集 $I$
 
-            使得任意 $\varphi \in \Sigma$ 当且仅当 $\mathfrak{A} \vDash \varphi(x_1, \cdots, x_n)$ 对任意 $x_1, \cdots, x_n \in I$ 且 $x_1 < \cdots < x_n$ 成立，则称 $\Sigma$ 是一个 $\text{E.M.}$ 集
+            使得任意 $\varphi \in \Sigma$ 当且仅当 $\mathfrak{A} \vDash \varphi(x_1, \cdots, x_n)$ 对任意 $x_1, \cdots, x_n \in I$ 且 $x_1 < \cdots < x_n$ 成立，记作 $\Sigma = \Sigma(\mathfrak{A}, I)$
 
         2. 显著性：称 $\text{E.M.}$ 集 $\Sigma$ 是显著的当且仅当 $\Sigma$ 无界且包含全体满足如下性质的 $\text{Skolem}$ 项 $t$
 

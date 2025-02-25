@@ -257,8 +257,10 @@
         3. 如果 $\mathbf{M}$ 是 $\mathbf{ZF}$ 的内模型，且 $A \cap \mathbf{M} \in \mathbf{M}$，则 $\mathbf{L}[A] \subseteq \mathbf{M}$
         4. 存在序数 $\alpha_{0}$，使得对于任意 $\alpha \geqslant \alpha_{0}$ 有 $\mathbf{L}[A] \vDash 2^{\aleph_{\alpha}}=\aleph_{\alpha+1}$
         5. 所有 $\mathbf{\Pi}_{1}^{1}$（或 $\mathbf{\Sigma}_{2}^{1}$）集都有完备集性质当且仅当对任意实数 $x$，$\aleph_{1}^{\mathbf V}$ 在 $\mathbf{L}[x]$ 上是强不可达基数
-    3. 定义 $x^{\sharp}=\left\{\varphi \mid \mathbf{L}_{\aleph_{\omega}}[x] \vDash \varphi\left[\aleph_{1}, \ldots, \aleph_{n}\right]\right\}$
-        1. $x^{\sharp}$ 存在当且仅当存在 $j: \mathbf{L}[x] \rightarrow \mathbf{L}[x]$ 的非平凡初等嵌入
+    3. 定义 $x^{\sharp}$ 是使得 $\Sigma = \Sigma((\mathfrak{A}, x), I)$ 的良基显著集合，其中 $\mathfrak{A}$ 与 $\mathbf{L}_{\lambda}[x]$ 初等等价，$\lambda$ 是某个极限基数
+        1. 在 $\mathscr{L}(S)$ 中加入一元谓词 $P$，使得 $x$ 可通过 $P(v)$ 定义．通常将 $(\mathfrak{A}, x)$ 记作 $(\mathbf{L}_{\lambda}[x], \in, x)$
+            1. $x^{\sharp}=\left\{\varphi \mid \mathbf{L}_{\aleph_{\omega}}[x] \vDash \varphi\left[\aleph_{1}, \ldots, \aleph_{n}\right]\right\}$
+            2. $x^{\sharp}$ 存在当且仅当存在 $j: \mathbf{L}[x] \rightarrow \mathbf{L}[x]$ 的非平凡初等嵌入
         2. 若存在基数 $\kappa$ 满足划分性质 $\kappa \to \left(\omega_{1}\right)^{<\omega}$，则对于任意的 $x \subseteq \omega$，$x^{\sharp}$ 都存在
         3. 所有分析集都是被决定的当且仅当对于任意 $a \in \omega^{\omega}$ 都有 $a^{\sharp}$ 存在
 
@@ -270,9 +272,18 @@
         1. $\mathbf{L}[D] \vDash \mathbf{GCH}$ 且有一个 $\mathbf{\Sigma}_{3}^{1}-$可定义的良序
         2. $\kappa$ 是唯一可测基数，$D$ 是 $\kappa$ 上的唯一正规测度
         3. 存在一个不满足完全集性质的 $\mathbf{\Pi}_{2}^{1}$ 集与不可测且没有 $\text{Baire}$ 性质的 $\mathbf{\Sigma}_{3}^{1}$ 集
-    3. 定义 $0^{\dagger}=\left\{\varphi \mid \mathbf{L}_{\aleph_{\omega}}[D] \vDash \varphi\left[\aleph_{1}, \ldots, \aleph_{n}\right]\right\}$
-        1. $0^{\dagger}$ 存在当且仅当存在一个非平凡的初等嵌入 $j: \mathbf{L}[U] \rightarrow \mathbf{L}[U]$，其中 $U$ 是一个见证某个基数 $\kappa$ 可测的超滤
-        2. $0^{\dagger}$ 存在当且仅当对于某个 $\kappa$，存在一个 $\kappa$ 模型 $\mathbf{M}$ 及初等嵌入 $j: \mathbf{M} \to \mathbf{M}$ 有 $\operatorname{crit}(j) > \kappa$
+    3. 定义 $0^{\dagger}$ 是良基的显著 $\text{E.M.}^{2}$ 集
+        1. 使得 $\Sigma = \Sigma((\mathfrak{A}, U), I, J)$ 的良基显著集合，其中 $\mathfrak{A}$ 与 $\mathbf{L}_{\zeta}[U]$ 初等等价，$\zeta$ 是某个极限基数
+        2. $\Sigma$ 是 $\text{E.M.}^{2}$ 集当且仅当存在
+            1. 极限序数 $\zeta$，使得模型 $\mathfrak{A}$ 与 $\mathbf{L}_{\zeta}[U]$ 初等等价
+            2. 无穷不可辨元序列组成的序数集 $I, J$
+
+            使得任意 $\varphi \in \Sigma$ 当且仅当 $\mathfrak{A} \vDash \varphi(x_1, \cdots, x_n, y_1, \cdots, y_n)$ 对任意 $x_1, \cdots, x_n \in I$，$x_1 < \cdots < x_n < \kappa$ 且 $y_1, \cdots, y_n \in J$，$\kappa < y_1 < \cdots < y_n$ 成立，记作 $\Sigma = \Sigma((\mathfrak{A}, U), I, J)$，并通常将 $(\mathfrak{A}, U)$ 记作 $(\mathbf{L}_{\zeta}[U], \in, U)$
+
+        3. $0^{\dagger}$ 存在当且仅当
+            1. 存在一个非平凡的初等嵌入 $j: \mathbf{L}[U] \rightarrow \mathbf{L}[U]$，其中 $U$ 是一个见证某个基数 $\kappa$ 可测的超滤
+            2. 对某个 $\kappa$，存在一个 $\kappa$ 模型 $\mathbf{M}$ 及初等嵌入 $j: \mathbf{M} \to \mathbf{M}$ 有 $\operatorname{crit}(j) > \kappa$
+
     4. 若存在强紧致基数，则不存在集合 $A$ 使得 $\mathbf{V}=\mathbf{L}[A]$ 或 $\mathbf{V}=\mathbf{L}(A)$
 
 ### 5.3.2 终极 L
