@@ -225,18 +225,34 @@
     5. $\text{Jensen}$ 二歧性定理：假设 $\mathbf{V}=\mathbf{L}$，则下列定理之一成立
         1. $\mathbf{L}$ 接近 $\mathbf{V}$：任意奇异基数 $\gamma$ 都在 $\mathbf{L}$ 中奇异
         2. $\mathbf{L}$ 远离 $\mathbf{V}$：任意不可数基数在 $\mathbf{L}$ 中都是正则极限基数
-4. 定义 $0^{\sharp} = \left\{\varphi \mid \mathbf L_{\aleph_{\omega}} \vDash \varphi\left[\aleph_{1}, \aleph_{2}, \ldots, \aleph_{n}\right]\right\}$
-    1. 若 $0^{\sharp}$ 存在，那么
-        1. $\mathbf{L}$ 中可定义的可构成集都是可数的
-        2. 对于任意无穷的 $x \in L$ 都有 $\left|\mathcal{P}(x)^{\mathbf L}\right|=|x|$
-    2. $0^{\sharp}$ 存在与以下各命题等价
-        1. 存在一个基本嵌入 $j: \mathbf{L} \to \mathbf{L}$
-        2. 对于某些 $\alpha$ 和 $\beta$，存在一个基本嵌入 $j: \mathbf{L}_{\alpha} \to \mathbf{L}_{\beta}$ 且 $\operatorname{crit}(j) < |\alpha|$
+4. 定义 $0^{\sharp}$ 为良基的显著 $\text{E.M.}$ 集
+    1. 为 $\mathscr{L}(S)$ 中的公式 $\varphi$ 定义 $\text{Skolem}$ 函数 $h_{\varphi}$；称通过 $\mathscr{L}$ 中函数与 $\text{Skolem}$ 函数从变量或常量符号构建的项为 $\text{Skolem}$ 项
+        1. $\text{E.M.}$ 集：设 $\Sigma$ 是一个公式集，若存在
+            1. 存在极限序数 $\lambda$ 使得模型 $\mathfrak{A}$ 与 $\mathbf{L}_{\lambda}$ 初等等价
+            2. 无穷不可辨元序列组成的序数集 $I$
+
+            使得任意 $\varphi \in \Sigma$ 当且仅当 $\mathfrak{A} \vDash \varphi(x_1, \cdots, x_n)$ 对任意 $x_1, \cdots, x_n \in I$ 且 $x_1 < \cdots < x_n$ 成立，则称 $\Sigma$ 是一个 $\text{E.M.}$ 集
+
+        2. 显著性：称 $\text{E.M.}$ 集 $\Sigma$ 是显著的当且仅当 $\Sigma$ 无界且包含全体满足如下性质的 $\text{Skolem}$ 项 $t$
+
+            $$
+            t(\overline x, \overline y) \textsf{ 是序数 } \wedge t(\overline x, \overline y) < y_1 \to t(\overline x, \overline y) = t(\overline x, \overline z)
+            $$
+
+            其中 $\overline x = (x_1, \cdots, x_m) \in I^{m}, \overline y = (y_1, \cdots, y_n) \in I^{n}, \overline z = (z_1, \cdots, z_n) \in I^{n}$
+
+    2. 若 $0^{\sharp}$ 存在，那么
+        1. $0^{\sharp} = \left\{\varphi \mid \mathbf L_{\aleph_{\omega}} \vDash \varphi\left[\aleph_{1}, \aleph_{2}, \ldots, \aleph_{n}\right]\right\}$
+        2. $\mathbf{L}$ 中可定义的可构成集都是可数的
+        3. 对于任意无穷的 $x \in L$ 都有 $\left|\mathcal{P}(x)^{\mathbf L}\right|=|x|$
+    3. $0^{\sharp}$ 存在与以下各命题等价
+        1. 存在一个初等嵌入 $j: \mathbf{L} \to \mathbf{L}$
+        2. 对于某些 $\alpha$ 和 $\beta$，存在一个初等嵌入 $j: \mathbf{L}_{\alpha} \to \mathbf{L}_{\beta}$ 且 $\operatorname{crit}(j) < |\alpha|$
         3. 存在一个 $\mathbf{L}$ 上的超滤 $U$，使得其 $\mathbf{L}$ 的超幂是良基的
         4. 存在一个可迭代的 $\mathbf{L}$ 超滤
         5. $\aleph_{\omega}$ 在 $\mathbf{L}$ 中是正则的
-    3. 设初等嵌入 $j: L_{\alpha} \to L_{\beta}$，$\gamma = \operatorname{crit}(j)$．若 $\gamma < |\alpha|$，则 $0^{\sharp}$ 存在
-    4. $\text{Jensen}$ 覆盖定理：若 $0^{\sharp}$ 不存在，则对于任意不可数序数集 $X$，都存在一个可构造集 $Y \supseteq X$，使得 $|Y|=|X|$
+    4. 设初等嵌入 $j: L_{\alpha} \to L_{\beta}$，$\gamma = \operatorname{crit}(j)$．若 $\gamma < |\alpha|$，则 $0^{\sharp}$ 存在
+    5. $\text{Jensen}$ 覆盖定理：若 $0^{\sharp}$ 不存在，则对于任意不可数序数集 $X$，都存在一个可构造集 $Y \supseteq X$，使得 $|Y|=|X|$
 
 ## 4.3 Grothendieck 宇宙
 1. $\text{Grothendieck}$ 宇宙是满足以下性质的集合 $U$
