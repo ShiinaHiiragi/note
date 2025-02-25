@@ -85,7 +85,7 @@
         1. $j(\kappa) > \kappa$
         2. 对任意 $a \in V_{\kappa}$ 有 $j(a) = a$，因此 $V_{\kappa}^{M} = v_{\kappa}$
         3. 对任意 $X \subseteq V_{\kappa}$ 有 $j(X) \cap V_{\kappa}^{M} = X$，因而 $V_{\kappa+1}^{M} = v_{\kappa+1}$
-    2. 初等嵌入无法无限制加强：以下定理在 $\mathbf{ZFC}$ 中成立
+    2. $\text{Kunen}$ 定理：以下定理在 $\mathbf{ZFC}$ 中成立
         1. 若 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是非平凡初等嵌入，则 $\mathbf{M} \neq \mathbf{V}$
         2. 不存在 $V_{\lambda+2}$ 到 $V_{\lambda+2}$ 的非平凡初等嵌入
         3. 若 $j: \mathbf{V} \rightarrow \mathbf{M}$ 是初等嵌入且 $\delta$ 是 $\operatorname{crit}(j)$ 之上使得 $j(\delta)=\delta$ 的最小序数，则 $j[\delta] \notin M$
@@ -153,15 +153,16 @@
             2. 若存在超强基数，则 $\mathbf{L}(\mathbf{R})$ 中的每个实数集都具有正则性质．特别地，$\mathbf{R}$ 不存在投影良序
     6. 如果存在可测基数（即存在非平凡的初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$），则
         1. $\text{Scott}$ 定理：$\mathbf{V} \neq \mathbf{L}$ 且 $\mathbf{L}$ 中只有有限多个实数
-        2. $\text{Solovay}$ 定理：所有的 $\mathbf{\Pi}_{1}^{1}$ 集都是被决定的；所有的 $\mathbf{\Sigma}_{2}^{1}$ 集都具有正则性质
+        2. $\text{Martin}$ 定理：所有的 $\mathbf{\Pi}_{1}^{1}$ 集都是被决定的；所有的 $\mathbf{\Sigma}_{2}^{1}$ 集都具有正则性质
 
 2. $\text{Woodin}$ 基数：若对于所有 $A \subseteq V_{\delta}$，都有任意大的 $\kappa<\delta$，使得对于所有 $\lambda<\delta$，都存在一个初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$ 且 $\operatorname{crit}(j) = \kappa$，使得 $j(\kappa)>\lambda$，$V_{\lambda} \subseteq M$，且 $A \cap V_{\lambda}=j(A) \cap V_{\lambda}$，则称基数 $\delta$ 为 $\text{Woodin}$ 基数
     1. 假设存在 $n$ 个 $\text{Woodin}$ 基数，且在其上有一个可测基数
         1. 所有的 $\mathbf{\Pi}_{n+1}^{1}$ 都是被决定的
         2. 所有的 $\mathbf{\Sigma}_{n+2}^{1}$ 集合都满足完备集性质，可测性和 $\text{Baire}$ 性质
-    2. $\text{Woodin}$ 基数的存在保证了投影集的正则性质
-        1. 假设存在无穷多个 $\text{Woodin}$ 基数，且在其上有一个可测基数，则 $\mathrm{AD}$ 在 $\mathbf{L}(\mathbf{R})$上成立
-        2. $\operatorname{Con}(\mathbf{ZF} + \mathrm{AD}) \leftrightarrow \operatorname{Con}(\mathbf{ZF}\;+$ 存在无穷多个 $\text{Woodin}$ 基数$)$
+    2. 假设存在无穷多个 $\text{Woodin}$ 基数，那么
+        1. $\mathrm{PD}$ 成立
+        2. 若 $\text{Woodin}$ 基数之上有一个可测基数，则 $\mathrm{AD}$ 在 $\mathbf{L}(\mathbf{R})$上成立
+        3. 有穷个 $\text{Woodin}$ 基数不具有上述性质：$\operatorname{Con}(\mathbf{ZF} + \mathrm{AD}) \leftrightarrow \operatorname{Con}(\mathbf{ZF}\;+$ 存在无穷多个 $\text{Woodin}$ 基数$)$
 3. 超紧致基数：设初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，$\kappa = \operatorname{crit}(j)$ 是可测基数．若 $\kappa, j(\kappa)>\lambda$ 且 $\mathbf{M}^{\lambda} \subseteq \mathbf{M}$，则称 $\kappa$ 为 $\lambda-$超紧致基数；若对任意基数 $\lambda$，$\kappa$ 为 $\lambda-$超紧致基数，则称 $\kappa$ 为超紧致基数
     1. $\kappa$ 是超紧致基数的当且仅当
         1. 语言 $\mathscr L_{\kappa \kappa}^{1}$ 具有紧致性
@@ -208,7 +209,7 @@
     3. $\mathrm{I}1: V_{\lambda+1}$ 存在一个非平凡的初等嵌入到自身
     4. $\mathrm{I}0: \mathbf L\left(V_{\lambda+1}\right)$ 存在一个非平凡的初等嵌入到自身，其关键点低于 $\lambda$
 
-    $\text{Rank to Rank}$ 与 $\mathbf{ZFC}$ 的不一致性尚未被证明
+    $\text{Rank into Rank}$ 与 $\mathbf{ZFC}$ 的不一致性尚未被证明
 
     1. 对任意 $\kappa$ 和 $\delta$，以下命题相互等价
         1. 存在初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$，其中 $\operatorname{crit}(j)=\kappa<\delta=j(\delta)$ 且 $V_{\delta} \subseteq M$
@@ -217,8 +218,9 @@
         1. 若 $\mathrm{I} 1(\kappa, \delta)$，则 $\mathrm{I} 2(\kappa, \delta)$ 且存在 $\kappa$ 上的正规超滤 $U$ 使得 $\{\alpha<\kappa \mid \mathrm{I} 2(\alpha, \delta)\} \in U$
         2. 若 $\mathrm{I} 2(\kappa, \delta)$，则 $\mathrm{I} 3(\kappa, \delta)$ 且存在 $\kappa$ 上的正规超滤 $U$ 使得 $\{\alpha<\kappa \mid \mathrm{I} 3(\alpha, \delta)\} \in U$
     3. 设初等嵌入 $j: V_{\delta} \to V_{\delta}$ 与 $k: V_{\delta} \to V_{\delta}$，则初等嵌入 $j^{+}(k): V_{\delta} \to V_{\delta}$ 且 $\operatorname{crit}\left(j^{+}(k)\right)=j(\operatorname{crit}(k))$
+    4. 假设 $\mathrm{I}2$ 成立，则所有 $\mathbf{\Pi}_{2}^{1}$ 集合都是被决定的；假设 $\mathrm{I}0$ 成立，则 $\mathrm{AD}^{\mathbf{L}(\mathbf{R})}$
 
-8. 与选择公理不相容的基数
+8. $\text{Reinhardt}$ 基数和 $\text{Berkeley}$ 基数与 $\mathbf{AC}$ 不相容，它们与 $\mathbf{ZF}$ 的不一致性尚未被证明
     1. $\text{Reinhardt}$ 基数：非平凡初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{V}$ 的关键点
     2. $\text{Berkeley}$ 基数：使得对每个包含 $\kappa$ 与 $\alpha<\kappa$ 的传递集 $M$，存在非平凡初等嵌入 $j: M \rightarrow M$ 且 $\alpha<\operatorname{crit}(j)<\kappa$ 的基数 $\kappa$
 
