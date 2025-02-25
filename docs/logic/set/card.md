@@ -156,8 +156,7 @@
             2. 若存在超强基数，则 $\mathbf{L}(\mathbf{R})$ 中的每个实数集都具有正则性质．特别地，$\mathbf{R}$ 不存在投影良序
     6. 如果存在可测基数（即存在非平凡的初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$），则
         1. $\text{Silver}$ 定理：$\mathbf{V} \neq \mathbf{L}$ 且 $\mathbf{L}$ 中只有有限多个实数
-        2. 所有的 $\mathbf{\Pi}_{1}^{1}$ 集都是被决定的
-        3. 所有的 $\mathbf{\Sigma}_{2}^{1}$ 集都具有正则性质
+        2. $\text{Solovay}$ 定理：所有的 $\mathbf{\Pi}_{1}^{1}$ 集都是被决定的；所有的 $\mathbf{\Sigma}_{2}^{1}$ 集都具有正则性质
 
 2. $\text{Woodin}$ 基数：若对于所有 $A \subseteq V_{\delta}$，都有任意大的 $\kappa<\delta$，使得对于所有 $\lambda<\delta$，都存在一个初等嵌入 $j: \mathbf{V} \rightarrow \mathbf{M}$ 且 $\operatorname{crit}(j) = \kappa$，使得 $j(\kappa)>\lambda$，$V_{\lambda} \subseteq M$，且 $A \cap V_{\lambda}=j(A) \cap V_{\lambda}$，则称基数 $\delta$ 为 $\text{Woodin}$ 基数
     1. 假设存在 $n$ 个 $\text{Woodin}$ 基数，且在其上有一个可测基数

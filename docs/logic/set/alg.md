@@ -33,18 +33,12 @@
         1. 平凡理想：$I = \{\varnothing\}$ 是 $X$ 上的平凡理想
         2. 主理想：对任意 $A \subseteq X$，定义 $I=\{S \mid S \subseteq A\}$，称为由 $A$ 生成的 $X$ 上的主理想
         3. 极大理想：对任意理想 $I$，如果不存在理想 $I^{\prime}$ 使得 $I \subset I^{\prime}$，则称 $I$ 为极大理想
-        4. $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想：对任意无穷集合 $X$，$X$ 的所有有穷集组成的集合族 $I$ 是 $X$ 上的理想，称为 $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想
-            1. $I$ 不是主理想
-            2. $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想是 $\text{Fr}\acute{\mathrm e}\text{chet}$ 滤的对偶
+        4. $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想：对任意无穷集合 $X$，$X$ 的所有有穷集组成的集合族 $I$ 是 $X$ 上的理想且不是主理想，称为 $\text{Fr}\acute{\mathrm e}\text{chet}$ 理想
 
     3. 滤与理想的对偶性
         1. 如果 $F$ 是 $X$ 上的滤，则 $I=\{X-S \mid S \in F\}$ 是 $X$ 上的理想
-
-            如果 $I$ 是 $X$ 上的理想，则 $F=\{X-S \mid S \in I\}$ 是 $S$ 上的滤
-
-        2. 令 $\kappa$ 为无穷基数，则 $\{S \subseteq \kappa\mid |\kappa-S|<\kappa\}$ 是 $\kappa$ 上的滤
-
-            如果 $\kappa$ 是无穷基数，$I=\{X \subseteq \kappa\mid |X| <\kappa\}$ 是 $\kappa$ 上的理想
+        2. 如果 $I$ 是 $X$ 上的理想，则 $F=\{X-S \mid S \in I\}$ 是 $S$ 上的滤
+        3. 令 $\kappa$ 为无穷基数，则 $\{S \subseteq \kappa\mid |\kappa-S|<\kappa\}$ 是 $\kappa$ 上的滤，$I=\{X \subseteq \kappa\mid |X| <\kappa\}$ 是 $\kappa$ 上的理想
 
 3. 超滤与素理想为对偶概念
     1. 超滤：$X$ 上的滤 $U$ 如果满足对任意 $S \subseteq X$ 都有 $S \in U$ 或 $X-S \in U$，则称 $U$ 为超滤
@@ -66,7 +60,8 @@
 
         $\kappa-$完全理想：如果集合 $X$ 上的理想 $I$ 满足「若 $I^{\prime} \subseteq I$ 且 $\left|I^{\prime}\right|<\kappa$，则 $\bigcup I^{\prime} \in I$」，则称 $I$ 是 $\kappa-$完全的
 
-    2. 任何滤与理想都是 $\aleph_{0}-$完全的，$\aleph_{1}-$完全的滤和理想在历史上称为 $\sigma-$完全的．可数完全的滤是对有穷交封闭的，$\aleph_{1}-$完全的滤对可数交封闭
+    2. 任何滤与理想都是 $\aleph_{0}-$完全的，$\aleph_{1}-$完全的滤和理想在历史上称为 $\sigma-$完全的
+    3. 可数完全的滤是对有穷交封闭的，$\aleph_{1}-$完全的滤对可数交封闭
 
 ## 2.2 环与域
 ### 2.2.1 环
