@@ -347,7 +347,7 @@
         3. 如果 $|I|<\kappa$，$\left\{\kappa_{i} \mid i \in I\right\}$ 为一集基数，且对任意 $i \in I$ 有 $\kappa_{i}<\kappa$，则 ${\displaystyle \bigoplus_{i \in I} \kappa_{i}<\kappa}$
         4. 令 $\lambda<\kappa$，如果长度为 $\lambda$ 的序列 $\left\langle X_{\xi}\right\rangle_{\xi<\lambda}$ 满足对任意 $\xi<\lambda$，都有 $\left|X_{\xi}\right|<\kappa$，则 ${\displaystyle \left|\bigcup_{\xi<\lambda} X_{\xi}\right|<\kappa_{0}}$
 
-6. 连续统假设 $\mathbf{CH}: 2^{\aleph_{0}}=\aleph_{1}$ 与广义连续统假设 $\mathbf{GCH}: 2^{\aleph_{\alpha}}=\aleph_{\alpha+1}$
+6. 连续统假设 $\mathbf{CH}: 2^{\aleph_{0}}=\aleph_{1}$ 与广义连续统假设 $\mathbf{GCH}: 2^{\aleph_{\alpha}}=\aleph_{\alpha+1}$ 均独立于 $\mathbf{ZFC}$
     1. 对任意 $\alpha \in \mathbf{On}$，定义 $\mathrm{Beth}$ 数 $\beth_{\alpha}$
         1. $\beth_0 = \aleph_0$
         2. $\beth_{\alpha + 1} = 2^{\beth_\alpha}$
