@@ -155,11 +155,14 @@
     2. 设 $T$ 是 $\omega-$稳定理论，则对任意无穷基数 $\kappa$ 以及任意正则基数 $\lambda \leqslant \kappa$，$T$ 都有一个基数为 $\kappa$ 的 $\lambda-$饱和模型
 
 ### 3.2.4 Morley 定理
-1. $\text{Skolem}$ 函数：设 $\overline{S}$ 是任意语言，$\overline{T}$ 是一个 $\overline{S}-$理论（可以是不完备的）．称 $\overline{T}$ 具有 $\text{Skolem}$ 函数当且仅当对任意的 $\overline{S}-$公式 $\alpha(x, \overline{y})$，存在一个 $\overline{S}$ 中的函数符号 $f$，使得 $\overline{T} \vDash \forall y \ (\exists x \ \alpha(x, \overline{y}) \leftrightarrow \alpha(f(\overline{y}), \overline{y}))$
-    1. 设 $N$ 是 $S-$模型，$S \subseteq N$，若 $M=H(S)$ 是 $S$的司寇伦壳，即 $M$ 是包含 $S$ 且对 $H$ 封闭的最小集合，则 $M \prec N$
+1. $\text{Skolem}$ 函数：设 $S$ 是任意语言，$T$ 是一个 $S-$理论（可以是不完备的）．称 $T$ 具有 $\text{Skolem}$ 函数当且仅当对任意的 $S-$公式 $\alpha(x, \overline{y})$，存在一个 $S$ 中的函数符号 $f$，使得 $T \vDash \forall y \ (\exists x \ \alpha(x, \overline{y}) \leftrightarrow \alpha(f(\overline{y}), \overline{y}))$
+    1. 若理论 $T$ 具有 $\text{Skolem}$ 函数
+        1. $T$ 是模型完全的
+        2. 给定集合 $S$ 与 $T$ 的一个模型 $M$，则称包含 $S$ 的最小 $M$ 子结构为 $A$ 的 $\text{Skolem}$ 壳，记作 $H(S)$，易知 $H(S) \prec M$
     2. 设 $S$ 是 $S-$语言，$T$ 是一个 $S-$理论，则存在基数 $\leqslant|S|+\omega$ 的语言 $S^{\prime} \supseteq S$ 及 $S^{\prime}-$理论 $T^{\prime} \supseteq T$，使得 $T^{\prime}$ 具有 $\text{Skolem}$ 函数
-    3. 设 $T$ 是一个可数的理论，$\kappa$ 是一个不可数的基数，则存在 $T$ 的一个基数为 $\kappa$ 的模型 $A$，使得对任意可数的 $M \subseteq A$，$A$ 至多可以实现 $S_{1}(M, A)$ 中的可数多个型
-    4. 设 $\lambda$ 是一个不可数基数，理论 $T$ 是 $\lambda-$范畴的，则 $T$ 是 $\omega-$稳定的
+    3. 设 $\kappa$ 是一个不可数基数
+        1. 若理论 $T$ 是 $\kappa-$范畴的，则 $T$ 是 $\omega-$稳定的
+        2. 若理论 $T$ 可数，则存在基数为 $\kappa$ 的模型 $A \vDash T$ 使得对任意可数的 $M \subseteq A$，$A$ 至多可以实现 $S_{1}(M, A)$ 中的可数多个型
 2. 构造序列：设 $A$ 是一个 $S-$结构，$M \subseteq A$．如果存在一个序数 $\gamma$ 及 $A$ 中的一个序列 $\left(b_{\alpha} \mid \alpha<\gamma\right)$ 使得
     1. $A=M \cup\left\{b_{\alpha} \mid \alpha<\gamma\right\}$
     2. 对任意的 $\beta \in \gamma, \operatorname{tp}_{A}\left(b_{\beta} / M \cup\left\{b_{\alpha} \mid \alpha<\beta\right\}\right)$ 是孤立型
