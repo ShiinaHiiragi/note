@@ -264,7 +264,7 @@
         2. 若存在基数 $\kappa$ 满足划分性质 $\kappa \to \left(\omega_{1}\right)^{<\omega}$，则对于任意的 $x \subseteq \omega$，$x^{\sharp}$ 都存在
         3. 所有分析集都是被决定的当且仅当对于任意 $a \in \omega^{\omega}$ 都有 $a^{\sharp}$ 存在
 
-3. 设 $\kappa$ 是可测基数，$U$ 是 $\kappa$ 上的 $\kappa-$完全非主超滤，$D$ 是 $\kappa$ 上的正规测度
+3. 设 $\kappa$ 是可测基数，$U$ 是 $\kappa$ 上的 $\kappa-$完全非主超滤，$D$ 是 $\kappa$ 上的正规测度，则 $\mathbf{L}(U) = \mathbf{L}(D)$
     1. 设 $\overline U = U \cap \mathbf{L}(U)$，那么
         1. $\overline U$ 是 $\kappa$ 上的 $\kappa-$完全非主超滤
         2. $\mathbf{L}(U) = \mathbf{L}(\overline U)$
@@ -285,6 +285,22 @@
             2. 对某个 $\kappa$，存在一个 $\kappa$ 模型 $\mathbf{M}$ 及初等嵌入 $j: \mathbf{M} \to \mathbf{M}$ 有 $\operatorname{crit}(j) > \kappa$
 
     4. 若存在强紧致基数，则不存在集合 $A$ 使得 $\mathbf{V}=\mathbf{L}[A]$ 或 $\mathbf{V}=\mathbf{L}(A)$
+
+4. 设 $\kappa$ 为可测基数且 $O(\kappa) = 2$，定义 $\kappa$ 的典范内模型 $\mathbf{L}[\mathbf{U}] = \mathbf{L}\left<U_{\alpha}, U^{0}, U^{1}\right>_{\alpha \in A}$，其中
+    1. $U^0, U^1$ 分别是 $\kappa$ 上的 $0, 1$ 阶正规测度
+    2. $A \in U^1$，$U_{\alpha}$ 是 $\alpha$ 上的 $0$ 阶正规测度且 $\left<U_\alpha \mid \alpha \in A\right>$ 表示 $U^1$ 超幂上的 $U^0$
+
+    若 $O(\kappa) > 2$ 时，令 $A \subseteq \kappa$ 是所有小于 $\kappa$ 的可测基数集
+
+    1. 设 $\kappa$ 为可测基数，若 $U_1, U_2$ 是 $\kappa$ 上的正规测度，则定义 $\text{Mitchell}$ 序为 $U_1 < U_2$ 当且仅当 $U_1 \in \operatorname{Ult}_{U_2}(\mathbf{V})$
+        1. $\text{Mitchell}$ 序具有良基性
+        2. 称与由正规测度 $U$ 给定的真前段同构的序数为 $U$ 的 $\text{Mitchell}$ 秩，记作 $O(U)$
+        3. 称 $\kappa$ 上所有正规测度秩的上确界为 $\kappa$ 的 $\text{Mitchell}$ 秩，记作 $O(\kappa)$
+    2. 在 $\mathbf{L}[\mathbf{U}]$ 中，仅有 $\kappa$ 与 $\alpha \in A$ 是可测基数，仅有 $U_{\alpha}, U^0, U^1$ 是正规测度
+    3. 设 $\mathbf{L}[\mathbf{U}] = \mathbf{L}\left<U_{\alpha}, U^{0}, U^{1}\right>_{\alpha \in A}$ 且 $\mathbf{L}[\mathbf{W}] = \mathbf{L}\left<W_{\alpha}, W^{0}, W^{1}\right>_{\alpha \in A}$
+        1. $\mathbf{L}[\mathbf{U}] = \mathbf{L}[\mathbf{W}]$
+        2. 对任意 $\alpha \in A$ 有 $U_{\alpha} \cap \mathbf{L}[\mathbf{U}] = W_{\alpha} \cap \mathbf{L}[\mathbf{W}]$
+        3. 对任意 $\varepsilon \in \{0, 1\}$ 有 $U^{\varepsilon} \cap \mathbf{L}[\mathbf{U}] = W^{\varepsilon} \cap \mathbf{L}[\mathbf{W}]$
 
 ### 5.3.2 终极 L
 1. 设 $\mathbf{N}$ 是一个内模型，$\delta$ 是 $\mathbf{V}$ 的不可数正则基数
