@@ -322,7 +322,7 @@
             1. 对于某些超紧致基数 $\lambda$，不存在弱扩展模型 $\mathbf{N}$，使得 $\mathbf{N} \subseteq \mathbf{HOD}$
             2. $\mathbf{HOD}$ 不是任何超紧致基数 $\lambda$ 的弱扩展模型
         2. 不存在正则基数 $\kappa \geqslant \delta$ 在 $\mathbf{HOD}$ 中是 $\omega-$强可测的，进一步地
-            1. 每个奇异基数 $\gamma>\delta$ 在 $\mathbf{HOD}$ 中都是奇异的，且 $\gamma^{+}=\left(\gamma^{+}\right)^{\mathrm{HOD}}$
+            1. 每个奇异基数 $\gamma>\delta$ 在 $\mathbf{HOD}$ 中都是奇异的，且 $\gamma^{+}=\left(\gamma^{+}\right)^{\mathbf{HOD}}$
             2. $\mathbf{HOD}$ 是超紧致基数 $\delta$ 的弱扩展模型
 
 4. $\mathbf{HOD}$ 假设：存在正则基数 $\lambda$ 构成的真类，在 $\mathbf{HOD}$ 中不是 $\omega-$强可测的
