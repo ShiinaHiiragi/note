@@ -28,7 +28,7 @@
     1. 概率：事件 $A$ 的概率测度值 $\mu(A)$ 称为 $A$ 的概率
     2. 概率空间： 若 $(\Omega, \mathscr{F})$ 为可测空间，$P$ 为 $\mathscr{F}$ 上的概率测度，则称 $(\Omega, \mathscr{F}, P)$ 为概率空间
         1. $\mathscr{S}$ 为 $\Omega$ 上的半域，$\mu$ 为 $\mathscr{S}$ 上的概率测度，则存在 $\mu$ 在由 $\mathscr{S}$ 张成的域 $\mathscr{A}(\mathscr{S})$ 上唯一延拓 $\nu$，$\nu$ 在 $\mathscr{A}(\mathscr{S})$ 亦是概率测度
-        2. 若 $(\Omega, \mathscr{F}, P)$ 为概率空间，$\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 为域，$\mathscr{F}=\sigma(\mathscr{A})$．则对每个 $A \in \mathscr{F}$ 及任一 $\varepsilon>0$，必存在 $B_{\varepsilon} \in \mathscr{A}$，使得 $P\left(A \triangle B_{\varepsilon}\right)<\varepsilon$
+        2. 设 $\mathscr{A} \subseteq \mathcal{P}(\Omega)$ 为域，$\mathscr{F}=\sigma(\mathscr{A})$．则对每个 $A \in \mathscr{F}$ 及任一 $\varepsilon>0$，必存在 $B_{\varepsilon} \in \mathscr{A}$，使得 $P\left(A \triangle B_{\varepsilon}\right)<\varepsilon$
 2. 概率测度的延拓和生成
     1. 若 $P$ 为域 $\mathscr{A}$ 上的概率测度，则在 $\sigma(\mathscr{A})$ 上必有唯一的延拓 $\overline{P}$，$\overline{P}$ 亦为概率
     2. 若 $P$ 为半域 $\mathscr{S}$ 上的概率测度，则在 $\sigma(\mathscr{S})$ 上必有唯一的延拓 $\overline{P}$，$\overline{P}$ 亦为概率
@@ -120,8 +120,8 @@
 
 ## 1.2 随机变量
 ### 1.2.1 随机变量的概念
-1. 随机变量：设 $(\Omega, \mathscr{F})$ 为概率可测空间，则由 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 或 $\left(\widehat{\mathbf{R}}, \mathscr{B}_{\widehat{\mathbf{R}}}\right)$ 的可测函数称为（有限值）随机变量或或广义实值随机变量，也记为 $X \in \mathscr{F}$，通常用 $\text{r.v.}$作为随机变量的简写
-    1. 若 $E=\left\{r_{n}\right\}$ 为 $\mathbf{R}$ 中稠密集，则 $X$ 为随机变量的充要条件是对每个 $r_{n} \in E$ 都有 $\left\{\omega: X(\omega) \leqslant r_{n}\right\} \in \mathscr{F}$
+1. 随机变量：设 $(\Omega, \mathscr{F})$ 为概率可测空间，则由 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{\mathbf{R}}\right)$ 或 $\left(\widehat{\mathbf{R}}, \mathscr{B}_{\widehat{\mathbf{R}}}\right)$ 的可测函数称为（有限值）随机变量或或广义实值随机变量，也记为 $X \in \mathscr{F}$，通常用 $\text{r.v.}$作为随机变量的简写
+    1. 若 $E=\left\{r_{n}\right\}$ 为 $\mathbf{R}$ 中稠密集，则 $X$ 为随机变量的充要条件是对每个 $r_{n} \in E$ 都有 $[X \leqslant r_n] = \left\{\omega: X(\omega) \leqslant r_{n}\right\} \in \mathscr{F}$
     2. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，则 ${\displaystyle \sup _{n \geqslant 1} X_{n},  \inf _{n \geqslant 1} X_{n}, \varlimsup_{n \rightarrow \infty} X_{n}, \varliminf_{n \rightarrow \infty} X_{n}}$ 都是随机变量
 2. 离散随机变量：若存在 $(\Omega, \mathscr{F})$ 的一个有限分割 $\left\{A_{i}\right\}_{i \in I}$（即 $I$ 为有限的，$A_{i} \in \mathscr{F}$，且 $A_{i} A_{j}=\varnothing, i \neq j, {\displaystyle \sum_{i \in I} A_{i}=\Omega}$）及互不相同的实数 $\left\{x_{i}\right\}_{i \in I}$，使 $\Omega$ 上的函数 $X$ 可表示为 $X(\omega)=x_{i}$，当 $\omega \in A_{i}, i \in I$，则称 $X$ 为离散随机变量．显然离散随机变量是随机变量，且若 $x_{i}$ 互不相同，$x_{i}$ 与 $A_{i}$ 由 $X$ 唯一确定．对 $A \in \mathscr{F}$，$I_{A}(\omega)$ 是离散随机变量，$X$ 可表示为 ${\displaystyle X(\omega)=\sum_{i \in I} x_{i} I_{A_{i}}(\omega)}$
 

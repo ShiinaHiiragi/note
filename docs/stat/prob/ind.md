@@ -104,7 +104,8 @@
         1. $\text{Markov}$ 弱大数定律：若随机变量序列 $\left\{X_n\right\}_{n\geqslant 1}$ 满足 ${\displaystyle \lim _{n \rightarrow \infty} \frac{\mathrm{D}S_n}{n^2}=0}$（$\text{Markov}$ 条件），则 $\dfrac{S_n-\mathrm{E}S_n}{n} \stackrel{P}{\longrightarrow} 0$
             1. $\text{Bernoulli}$ 大数定律：设 $X_n \sim B(n, p)$，则 $\dfrac{X_n}{n} \stackrel{P}{\longrightarrow} p$
             2. $\text{Chebyshev}$ 弱大数定律：若随机变量序列 $\left\{X_n\right\}_{n\geqslant 1}$ 中的随机变量两两不相关且存在 $C>0$ 使得 $\mathrm{D}X_n \leqslant C$，则 $\dfrac{S_n-\mathrm{E}S_n}{n} \stackrel{P}{\longrightarrow} 0$
-        2. $\text{Khintchine}$ 弱大数定律：设 $\left\{X_n\right\}_{n\geqslant 1}$ 为独立同分布随机变量序列，如果 $\mathrm{E}X_1=\mu$，则 $\dfrac{S_n}{n} \stackrel{P}{\longrightarrow} \mu$
-        3. $\text{Kolmogorov}$ 强大数定律：设 $\left\{X_n\right\}_{n\geqslant 1}$ 为独立同分布随机变量序列，则存在常数 $a$ 使得 $\dfrac{S_n-n a}{n} \stackrel{\text{a.s.}}{\longrightarrow} 0$ 的充要条件是 $\mathrm{E}X_1=a, \mathrm{E}|X_1|<\infty$
+        2. 设 $\left\{X_n\right\}_{n\geqslant 1}$ 为独立同分布随机变量序列
+            1. $\text{Khintchine}$ 弱大数定律：若 $\mathrm{E}X_1=\mu$，则 $\dfrac{S_n}{n} \stackrel{P}{\longrightarrow} \mu$
+            2. $\text{Kolmogorov}$ 强大数定律：存在常数 $a$ 使得 $\dfrac{S_n-n a}{n} \stackrel{\text{a.s.}}{\longrightarrow} 0$ 的充要条件是 $\mathrm{E}X_1=a, \mathrm{E}|X_1|<\infty$
 
 2. 中心极限定理：设 $\left\{X_n\right\}_{n\geqslant 1}$ 为独立同分布随机变量序列，$\mathrm{E}X^2_n$ 存在，即 $X_n$ 存在数学期望 $\mathrm{E}X_n=\mu, \ DX_n=\sigma^2$．若 ${\displaystyle \mathrm{E}\left[\sum_{k=1}^n X_k\right]=\sum_{k=1}^n \mathrm{E}X_k=n\mu, \  \mathrm{D}\left[\sum_{k=1}^n X_k\right]=\sum_{k=1}^n \mathrm{D}X_k=n\sigma^2}$，则 ${\displaystyle \dfrac{{\displaystyle \sum_{k=1}^n X_n-n\mu}}{\sqrt{n\sigma^2}}=\dfrac{{\displaystyle \sum_{k=1}^n(X_n-\mu)}}{\sqrt{n} \sigma} \overset{w}{\longrightarrow} N(0, 1)}$

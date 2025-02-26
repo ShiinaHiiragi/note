@@ -15,20 +15,20 @@
         其中 $P(A_i)$ 称为先验概率，$P(A_i \mid B)$ 称为后验概率
 
 2. 条件分布：设条件概率 $P_{B}(A)=P(A \mid B)=\dfrac{P(A B)}{P(B)}$，固定 $B$ 并使 $A$ 在 $\mathscr{F}$ 中变化时，$P_{B}$ 也是 $(\Omega, \mathscr{F})$ 上的概率测度，可由随机变量 $X$ 诱导分布函数 $F(x) = P_{B}[X \leqslant x]$
-    1. 二维连续随机向量 $(X, Y)$ 的条件密度：设随机向量 $(X, Y)$ 的联合密度为 $p(x, y)$，边缘分布为 $p_1(x)$ 与 $p_2(y)$
-        1. 若 $P[a < Y \leqslant b] > 0$，则称 $p_1(x \mid [a, b]) = \dfrac{{\displaystyle \int_{a}^{b} p(x, v) \mathrm dv}}{{\displaystyle \int_{a}^{b} p_2(v) \mathrm dv}}$ 为 $X$ 在条件 $a \leqslant Y \leqslant b$ 下的条件密度函数，且有
+    1. 二维连续随机向量 $(X, Y)$ 的条件密度：设随机向量 $(X, Y)$ 的联合密度为 $p(x, y)$，边缘分布为 $p_X(x)$ 与 $p_Y(y)$
+        1. 若 $P[a < Y \leqslant b] > 0$，则称 $p_X(x \mid [a, b]) = \dfrac{{\displaystyle \int_{a}^{b} p(x, v) \mathrm dv}}{{\displaystyle \int_{a}^{b} p_Y(v) \mathrm dv}}$ 为 $X$ 在条件 $a \leqslant Y \leqslant b$ 下的条件密度函数，且有
 
             $$
-            P[X \leqslant x_{0} \mid a \leqslant Y \leqslant b] = \int_{-\infty}^{x_{0}} p_1(x \mid [a, b]) \mathrm dx
+            P[X \leqslant x_{0} \mid a \leqslant Y \leqslant b] = \int_{-\infty}^{x_{0}} p_X(x \mid [a, b]) \mathrm dx
             $$
 
-        2. 若 $p_{2}(y_0) > 0$，则称 $p_1(x \mid y_{0}) = \dfrac{p(x, y_{0})}{p_2(y_{0})}$ 为 $X$ 在条件 $Y = y_{0}$ 下的条件密度函数，且有
+        2. 若 $p_{2}(y_0) > 0$，则称 $p_X(x \mid y_{0}) = \dfrac{p(x, y_{0})}{p_Y(y_{0})}$ 为 $X$ 在条件 $Y = y_{0}$ 下的条件密度函数，且有
 
             $$
-            P[X \leqslant x_0 \mid Y = y_0] = \int_{-\infty}^{x_{0}} p_1(x \mid y_{0}) \mathrm dx
+            P[X \leqslant x_0 \mid Y = y_0] = \int_{-\infty}^{x_{0}} p_X(x \mid y_{0}) \mathrm dx
             $$
 
-    2. 二维连续随机向量 $(X, Y)$ 的条件期望：设随机向量 $(X, Y)$ 的联合密度为 $p(x, y)$，且有 ${\displaystyle \int_{-\infty}^{+\infty} |x| p_1(x \mid y) \mathrm dx} < \infty$，则 $X$ 在在条件 $Y = y_{0}$ 下的条件期望 $\mathrm{E}[X \mid Y] = \mathrm{E}[X \mid Y = y_{0}] = {\displaystyle \int_{-\infty}^{+\infty} x p_1(x \mid y_{0}) \mathrm dx}$
+    2. 二维连续随机向量 $(X, Y)$ 的条件期望：设随机向量 $(X, Y)$ 的联合密度为 $p(x, y)$，且有 ${\displaystyle \int_{-\infty}^{+\infty} |x| p_X(x \mid y) \mathrm dx} < \infty$，则 $X$ 在在条件 $Y = y_{0}$ 下的条件期望 $\mathrm{E}[X \mid Y] = \mathrm{E}[X \mid Y = y_{0}] = {\displaystyle \int_{-\infty}^{+\infty} x p_X(x \mid y_{0}) \mathrm dx}$
         1. 全期望公式：若二维随机向量 $(X, Y)$ 有 $\mathrm{E} X, \mathrm{E} Y < \infty$ 且在任何条件 $Y = y$ 下都有 $g(y) = E[X \mid Y]$ 存在，则 $g(Y)$ 是一个随机变量且 $\mathrm{E}[\mathrm{E}[X \mid Y]] = \mathrm{E} X$
         2. 条件方差：定义 $\mathrm{D}[X \mid Y] = \mathrm{E}[X^{2} \mid Y] - \left(\mathrm{E}[X \mid Y]\right)^{2}$，于是等式 $\mathrm{D} X = \mathrm{D}\left[\mathrm{E}[X \mid Y]\right] + \mathrm{E}\left[\mathrm{D}[X \mid Y]\right]$ 成立
         3. 回归：设 $X, Y$ 是两个随机变量，$Y$ 与 $X$ 存在某种关联且 $X$ 可观测，则当且仅当 $f(X)=E[Y\mid X]$ 时，$Y$ 的近似 $f(X)$ 的平均误差 $E[|Y-f(X)|^2]$ 最小，称 $E[Y\mid X]$ 为 $Y$ 的一个回归．现实应用中，常用 $L(X) = aX+b$ 近似 $Y$, 使 $\mathrm{E}[Y-L(X)]^2$ 取最小值，称之为最佳线性预测

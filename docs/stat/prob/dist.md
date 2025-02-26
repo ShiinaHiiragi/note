@@ -7,14 +7,24 @@
         1. 令 $F_X(+\infty, \cdots, x_i, \cdots, +\infty) = P[X_i < x_i] = F_{X_i}(x_i)$，称 $F_{X_i}(x_i)$ 为边际分布，$F_X(x_1, x_2, \cdots, x_n)$ 本身为联合分布
         2. 联合分布可以唯一确定边际分布，边际分布不能唯一确定联合分布
         3. 若随机变量 $X, Y$ 存在联合密度 $p_{(X, Y)}(x, y)$，则 $X, Y$ 的边际密度函数必存在
+
+            $$
+            \begin{aligned}
+            p_{X}(x) &= \int_{\mathbf{R}} p_{(X, Y)}(x, y) \mathrm dy \\
+            p_{Y}(y) &= \int_{\mathbf{R}} p_{(X, Y)}(x, y) \mathrm dx
+            \end{aligned}
+            $$
+
     2. 随机变量的变换：设 $f$ 与 $T$ 分别为一元与 $n$ 元 $\text{Borel}$ 可测函数
         1. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R, \mathscr{B}, P_X)\overset{f}{\longrightarrow}(R, \mathscr{B})$．若 $X$ 的密度函数 $P_X(x)$ 存在，分情况讨论 $Y=f\circ X$ 的密度函数如下
             1. $f$ 严格单调且存在导函数时，$P_Y(y)=P_X(f^{-1}(y))|(f^{-1}(y))'|$
             2. $f(x)$ 有存在 $\mathbf R$ 上一个区间划分 $I_n, f\upharpoonright_{I_n}$ 严格单调时，${\displaystyle P_Y(y)=\sum_{n=1}^\infty P_X(f_n^{-1}(y))|(f^{-1}_n(y))|I_{f(I_n)}(y)}$
-        2. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R^n, \mathscr{B}^n, P_X)\overset{T}{\longrightarrow}(R^n, \mathscr{B}^n)$，若 $T$ 是 $(R^n, \mathscr{B}^n)\to (R^n, \mathscr{B}^n)$ 的一个双射且 $T$ 是一个局部微分同胚，$T$ 存在连续的混合偏导数 $\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}$ 且混合偏导数的行列式不为零．已知 $P_X(x_1, x_2, \cdots, x_n)$，则有 $P_Y(y_1, y_2, \cdots, y_n)=P_X(T^{-1}(y))\left|\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}\right|$
-            1. 若 $X_1, X_2, \cdots, X_n$ 是独立的，$f_1, f_2, \cdots, f_n$ 是 $n$ 个可测函数，则 $f(X_1), f(X_2), \cdots, f(X_n)$ 是独立的
-            2. 若 $X, Y$ 是独立服从某种分布类型的随机变量，如果 $X+Y$ 也具有该类型的分布，则称随机变量具有再生性．易知二项分布、$\mathrm{Poisson}$ 分布与正态分布分布是具有再生性的
-2. 分布函数：设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$X$ 为有限实值随机变量，则称函数 $F(x)=P[X \leqslant x]$ 为随机变量 $X$ 诱导的分布函数．若 $X=\left(X_{1}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量，则称函数 $F\left(x_{1}, x_{2}, \cdots, x_{n}\right)=P\left[X_{1} \leqslant x_{1}, X_{2} \leqslant x_{2}, \cdots, X_{n} \leqslant x_{n}\right]$ 为 $X$ 诱导的 $n$ 维分布函数
+        2. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R^n, \mathscr{B}^n, P_X)\overset{T}{\longrightarrow}(R^n, \mathscr{B}^n)$，若 $T$ 是 $(R^n, \mathscr{B}^n)\to (R^n, \mathscr{B}^n)$ 的一个双射且 $T$ 是一个局部微分同胚，$T$ 存在连续的混合偏导数 $\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}$ 且混合偏导数的行列式不为零
+            1. 已知 $P_X(x_1, x_2, \cdots, x_n)$，则有 $P_Y(y_1, y_2, \cdots, y_n)=P_X(T^{-1}(y))\left|\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}\right|$
+            2. 若 $X_1, X_2, \cdots, X_n$ 是独立的，$f_1, f_2, \cdots, f_n$ 是 $n$ 个可测函数，则 $f(X_1), f(X_2), \cdots, f(X_n)$ 是独立的
+        3. 若 $X, Y$ 是独立服从某种分布类型的随机变量，如果 $X+Y$ 也具有该类型的分布，则称随机变量具有再生性．易知二项分布、$\mathrm{Poisson}$ 分布与正态分布分布是具有再生性的
+
+2. 分布函数：设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$X: (\Omega, \mathscr{F}) \to (\mathbf{R}, \mathscr{B}_{\mathbf{R}})$ 为有限实值随机变量，$X$ 在 $(\mathbf{R}, \mathscr{B}_{\mathbf{R}})$ 上诱导的概率测度为 $\overline P$．称函数 $F(x)=\overline P((-\infty, x])=P[X \leqslant x]=P(\{\omega : X(\omega) \leqslant x\})$ 为随机变量 $X$ 诱导的分布函数．若 $X=\left(X_{1}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量，则称函数 $F\left(x_{1}, x_{2}, \cdots, x_{n}\right)=P\left[X_{1} \leqslant x_{1}, X_{2} \leqslant x_{2}, \cdots, X_{n} \leqslant x_{n}\right]$ 为 $X$ 诱导的 $n$ 维分布函数
     1. 设 $F(x)$ 为离散随机变量 $X$ 的分布函数
         1. $F(x)$ 单调递增
         2. ${\displaystyle \lim _{x \rightarrow-\infty} F(x)=0, \lim _{x \rightarrow+\infty} F(x)=1}$
@@ -34,7 +44,7 @@
     5. 若随机向量 $\left(X_{1}, \cdots, X_{n}\right)$ 和 $\left(Y_{1}, \cdots, Y_{n}\right)$ 有相同 $n$ 维分布函数，则对 $\mathbf{R}^{n}$ 到 $\mathbf{R}^{m}$ 的任一 $\text{Borel}$ 函数 $g$，$g\left(X_{1}, \cdots, X_{n}\right)$ 和 $g\left(Y_{1}, \cdots, Y_{n}\right)$ 有相同的分布，即对一切 $\mathbf{R}^{m}$ 中的 $\text{Borel}$ 集 $B$ 都有 $P\left\{g\left(X_{1}, \cdots, X_{n}\right) \in B\right\}=P\left\{g\left(Y_{1}, \cdots, Y_{n}\right) \in B\right\}$
 
 3. 连续随机变量的密度函数
-    1. 若 $F$ 表示随机变量 $X$ 的分布函数，$\mu_{F}$ 表示由 $F$ 在 $(\mathbf{R}, \mathscr{B})$ 上生成的 $L-S$ 测度，又 $\lambda$ 表示 $(\mathbf{R}, \mathscr{B})$ 上的 $\text{Lebesgue}$ 测度，则 $\mu_{F} \ll \lambda$ 的充要条件是存在 $f \in L^{1}(\mathrm{d} \lambda)$，使
+    1. 若 $F$ 表示随机变量 $X$ 的分布函数，$\mu_{F}$ 表示由 $F$ 在 $(\mathbf{R}, \mathscr{B})$ 上生成的 $L-S$ 测度，又 $\lambda$ 表示 $(\mathbf{R}, \mathscr{B})$ 上的 $\text{Lebesgue}$ 测度，则 $\mu_{F} \ll \lambda$ 的充要条件是存在 $f \in L^{1}(\mathrm{d} \lambda)$，使得
 
         $$
         \begin{aligned}
@@ -46,9 +56,17 @@
         则此时称关于 $\text{Lebesgue}$ 测度几乎处处唯一确定的可积函数 $f$ 称为分布密度
 
         1. $F_X(x)$ 存在密度函数的必要条件是 $F_X$ 连续，从而单点概率为 $0$
-        2. 若 $F_X(x)$ 是某个函数的原函数，则 $F_X(x)$ 一定存在密度函数．特别地，如果 $F_X$ 可导并且存在连续的导函数 $F'$，则 $p(t)=F'(t)$ 为密度函数
+        2. 若 $F_X(x)$ 是某个函数的原函数，则 $F_X(x)$ 一定存在密度函数
+        3. 若 $F_X$ 可导并且存在连续的导函数 $F'$，则 $p(t)=F'(t)$ 为密度函数
 
-    2. 设随机向量 $X:(\Omega, \mathscr{F}, P)\to (\mathbf{R}^n, \mathscr{B}^n)$ 诱导的分布函数为 $F_X(x_1, x_2, \cdots, x_n)$，若存在 $p(t_1, t_2, \cdots, t_n) \geqslant 0$ 使得 ${\displaystyle F_X(x_1, x_2, \cdots, x_n)=\int_{-\infty}^{x_1} \int_{-\infty}^{x_2}\cdots \int_{-\infty}^{x_n}p(t_1, t_2, \cdots, t_n)\mathrm{d}t_1\mathrm{d}t_2\cdots \mathrm{d}t_n}$，则称 $X$ 具有密度函数 $p(t_1, t_2, \cdots, t_n)$
+    2. 设随机向量 $X:(\Omega, \mathscr{F}, P)\to (\mathbf{R}^n, \mathscr{B}^n)$ 诱导的分布函数为 $F_X(x_1, x_2, \cdots, x_n)$，若存在 $p(t_1, t_2, \cdots, t_n) \geqslant 0$ 使得
+
+        $$
+        F_X(x_1, x_2, \cdots, x_n)=\int_{-\infty}^{x_1} \int_{-\infty}^{x_2}\cdots \int_{-\infty}^{x_n}p(t_1, t_2, \cdots, t_n)\mathrm{d}t_1\mathrm{d}t_2\cdots \mathrm{d}t_n
+        $$
+
+        则称 $X$ 具有密度函数 $p(t_1, t_2, \cdots, t_n)$
+
         1. 若 $X$ 存在密度函数，则 $F_X(x_1, x_2, \cdots, x_n)$ 关于每个 $x_i$ 是连续的．事实上 $F_X$ 是 $n$ 元连续的
         2. 若 $X$ 的分布函数 $F_X$ 有 $\dfrac{\partial ^nF}{\partial x_1\cdots \partial x_n}$ 存在且连续，则 $X$ 必有密度函数 $p_X(x_1, x_2, \cdots, x_n)=\dfrac{\partial ^nF}{\partial x_1\cdots \partial x_n}$
 
@@ -153,7 +171,7 @@
         3. 若 $\mathrm{E}(\cdot)$ 为 $\mathscr{E}$ 上正线性泛函，$\mathrm{E}(1)=1$，且当 $\mathscr{E}$ 中序列 $X_{n} \downarrow 0$ 时，$\mathrm{E} X_{n} \downarrow 0$，那么由 $Q(A)=\mathrm{E}\left(I_{A}\right)$ 可据此规定 $(\Omega, \mathscr{F})$ 上的概率测度
     2. 若 $\mathscr{E}_{+}$ 表示非负离散随机变量全体，$\left\{X_{n}\right\}_{n \geqslant 1},\left\{Y_{n}\right\}_{n \geqslant 1}$ 是 $\mathscr{E}_{+}$ 中递增序列，且 ${\displaystyle \lim _{n \to \infty} X_{n} \leqslant \lim _{n \to \infty} Y_{n}}$，则 ${\displaystyle \lim _{n \to \infty} \mathrm{E} X_{n} \leqslant \lim _{n \to \infty} \mathrm{E} Y_{n}}$．特别地，若 ${\displaystyle \lim _{n \to \infty} X_{n}=\lim _{n \to \infty} Y_{n}}$，则 ${\displaystyle \lim _{n \to \infty} \mathrm{E} X_{n}=\lim _{n \to \infty} \mathrm{E} Y_{n}}$
 
-2. 连续随机变量的期望：定义 $X^+=\max(X, 0),\ X^-=\max(-X, 0),\ X=X^+-X^-,\ |X|=X^++X^-$．若 $\mathrm{E}\left[X^{+}\right]<\infty$ 及 $\mathrm{E}\left[X^{-}\right]<\infty$，则称 $X$ 为可积的，且以 $\mathrm{E} X=\mathrm{E} [X^{+}]-\mathrm{E} [X^{-}]$ 表示 $X$ 关于 $P$ 的积分，也称为期望或数学期望，记为 ${\displaystyle \int X \mathrm{dP}}$ 等．一般地，若 $\mathrm{E} X^{+}, \mathrm{E} X^{-}$ 中至少有一个取有限值，则称 $X$ 为准可积的
+2. 连续随机变量的期望：设 $X^+=\max(X, 0),\ X^-=\max(-X, 0),\ X=X^+-X^-,\ |X|=X^++X^-$．若 $\mathrm{E}\left[X^{+}\right]<\infty$ 及 $\mathrm{E}\left[X^{-}\right]<\infty$，则称 $X$ 为可积的，且以 $\mathrm{E} X=\mathrm{E} [X^{+}]-\mathrm{E} [X^{-}]$ 表示 $X$ 关于 $P$ 的积分，也称为期望或数学期望，记为 ${\displaystyle \int X \mathrm{dP}}$ 等．一般地，若 $\mathrm{E} X^{+}, \mathrm{E} X^{-}$ 中至少有一个取有限值，则称 $X$ 为准可积的
     1. 设 $\mathscr{E}_{+}$ 是全体非负离散随机变量，记 ${\displaystyle \mathscr{G}_{+}=\left\{X=\lim _{n \to \infty} \uparrow X_{n}: X_{n} \in \mathscr{E}_{+}\right\}}$，对 $X \in \mathscr{G}_{+}$，若 ${\displaystyle X=\lim _{n \to \infty} \uparrow X_{n}, X_{n} \in \mathscr{E}_{+}}$，令 ${\displaystyle \mathrm{E} X=\lim _{n \to \infty} \mathrm{E} X_{n}}$
         1. $\mathscr{G}_{+}$ 为 $(\Omega, \mathscr{F})$ 上非负随机变量全体
         2. 由 ${\displaystyle \mathrm{E} X=\lim _{n \to \infty} \mathrm{E} X_{n}}$ 规定的 $E[\cdot]$ 是完全确定的
@@ -171,7 +189,7 @@
     2. 若 $\mathrm{E}[\cdot]$ 表示概率空间 $(\Omega, \mathscr{F}, P)$ 上的准可积随机变量的期望
         1. $E X \in \mathbf\{\widehat{R}\}, E X \in \mathbf{R}$ 的充要条件是 $X^{+}, X^{-}$ 都可积，且这时必有 $P[X= \pm \infty]=0$
         2. 若 $X \geqslant 0$（或更一般地 $P[X<0]=0$），则 $\mathrm{E} X \geqslant 0$，且这时 $\mathrm{E} X=0$ 的充要条件是 $P[X=0]=1$
-        3. 对每个 $c \in \mathbf{R}$ 都有 $\mathrm{E}[c X]=c \mathrm{E} X$．又若 $X+Y$ 有确定的含义，且 $X^{-}, Y^{-}$（或 $X^{+}, Y^{+}$）可积，则 $\mathrm{E}[X+Y]=\mathrm{E} X+\mathrm{E} Y$．特别地，当 $X, Y$ 中至少有一个为可积时，前式必成立
+        3. 对每个 $c \in \mathbf{R}$ 有 $\mathrm{E}[c X]=c \mathrm{E} X$．又若 $X+Y$ 有确定的含义，且 $X^{-}, Y^{-}$（或 $X^{+}, Y^{+}$）可积，则 $\mathrm{E}[X+Y]=\mathrm{E} X+\mathrm{E} Y$．特别地，当 $X, Y$ 中至少有一个为可积时，前式必成立
         4. 若 $X \leqslant Y$，且 $\mathrm{E} X, \mathrm{E} Y$ 存在，则 $\mathrm{E} X \leqslant \mathrm{E} Y$
     3. $\text{Markov}$ 不等式：若 $X$ 为非负随机变量，则有
 
@@ -204,8 +222,9 @@
     2. 对 $(\Omega, \mathscr{F}, P)$ 上的 $n$ 维随机变量 $X$，其分布函数 $F\left(x_{1}, \cdots, x_{n}\right)$ 可在 $\left(\mathbf{R}^{n}, \mathscr{B}^{n}\right)$ 上产生一个 $\text{Lebesgue}-\text{Stieltjes}$ 测度，即 $X$ 在 $\left(\mathbf{R}^{n}, \mathscr{B}^{n}\right)$ 上的分布．记这一测度与分布函数用同一符号，$\mathbf{R}^{n}$ 上 $\text{Borel}$ 函数关于它的积分记为 ${\displaystyle \int f \mathrm{d} F}$，${\displaystyle \int f(x) \mathrm{d} F(x)}$ 或 ${\displaystyle \int f(x) F(\mathrm{d} x)}$，也称为 $f$ 关于 $F$ 的 $\text{Lebesgue}-\text{Stieltjes}$ 积分，简称 $L-S$ 积分
     3. 若 $X$ 为 $(\Omega, \mathscr{F}, P)$ 上 $n$ 维随机变量，$F$ 为 $X$ 的 $n$ 元分布函数．又 $g\left(x_{1}, \cdots, x_{n}\right)$ 为 $n$ 元 $\text{Borel}$ 函数，$F_{g(X)}$ 表示 $g(X)$ 的分布函数，则当 $\mathrm{E} g(X)$ 存在时，${\displaystyle \mathrm{E} g(X)=\int_{\Omega} g(X(\omega)) P(\mathrm{d} \omega)=\int_{\mathbf{R}} y \mathrm{d} F_{g(X)}(y)=\int_{\mathbf{R}^{n}} g\left(x_{1}, \cdots, x_{n}\right) \mathrm{d} F\left(x_{1}, \cdots, x_{n}\right)}$
         1. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R, \mathscr{B}, P_X)\overset{g}{\longrightarrow}(R, B, P_{g(X)})$，有 ${\displaystyle E[g(X)]=\int_\Omega g\circ X\mathrm{d}P=\int_{\mathbf{R}} g(x) \mathrm dP_X=\int_{\mathbf{R}} g(x) \mathrm{d} F_{X}(x)}$
-        2. 设 $X$ 存在密度函数 $p_X(x)$，则对任意非零可测函数 $g$ 或有界可测函数 $g$ 成立 ${\displaystyle E[g \circ X]=\int_{\mathbf{R}} g(x)p_X(x)\mathrm dx}$
-        3. 对任意常数 $c_i, i = 1, 2, \cdots , n$ 以及常数 $b$ 有 ${\displaystyle \mathrm{E}\left[\sum_{i=1}^{n} c_i X_i + b\right] = \sum_{i=1}^{n} c_i \mathrm{E}X_i + b}$ 成立．特别地，$\mathrm{E}[b] = b$
+            1. 设 $X$ 存在密度函数 $p_X(x)$，则对任意非零可测函数 $g$ 或有界可测函数 $g$ 成立 ${\displaystyle E[g(X)]=\int_{\mathbf{R}} g(x)p_X(x)\mathrm dx}$
+            2. 特别地，若 $g(x) = x$，则上述结果退化为 ${\displaystyle \mathrm{E}X = \int_{\mathbf{R}} x \mathrm{d} F_{X}(x) = \int_{\mathbf{R}} x p_X(x)\mathrm dx}$
+        2. 对任意常数 $c_i, i = 1, 2, \cdots , n$ 以及常数 $b$ 有 ${\displaystyle \mathrm{E}\left[\sum_{i=1}^{n} c_i X_i + b\right] = \sum_{i=1}^{n} c_i \mathrm{E}X_i + b}$ 成立．特别地，$\mathrm{E}[b] = b$
 
 ### 2.2.2 矩
 1. 矩：若随机变量 $X$ 有 $\mathrm{E}|X|^n<+\infty$，则称 $\mathrm{E}X^n$ 为 $X$ 的 $n$ 阶原点矩，$\mathrm{E}|X|^{p}$ 为 $X$ 的 $p$ 阶绝对矩．此时 $\mathrm{E}X^k \ (k\leqslant n)$ 均存在，称 $\mathrm{E}[X-\mathrm{E}X]^n$ 为 $X$ 的 $n$ 阶中心矩
