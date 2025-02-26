@@ -443,7 +443,9 @@
         2. $(R^{m})^{n} = R^{mn}$
     4. 二元关系的性质：令 $R \subseteq X^2$
         1. 自反性：$R$ 是自反的当且仅当对于任意 $x \in X$ 有 $(x, x) \in R$；$R$ 是反自反的当且仅当对于任意 $x \in X$ 有 $R(x, x) \notin R$
-        2. 对称性：$R$ 是对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \to (y, x) \in R$；$R$ 是反对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \wedge (y, x) \in R \to x = y$
+        2. 对称性：$R$ 是对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \to (y, x) \in R$
+            1. $R$ 是非对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \to (y, x) \notin R$
+            2. $R$ 是反对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \wedge (y, x) \in R \to x = y$
         3. 传递性：$R$ 是传递的当且仅当对于任意 $x, y, z \in X$ 有 $(x, y) \in R \wedge (y, z) \in R \to (x, z) \in R$
     5. $n$ 元关系：对于任一集合 $R$，如果存在 $X_1, X_2, \cdots, X_n$ 使得 $R \subseteq X_1 \times X_2 \times \cdots \times X_n$，则称 $R$ 为 $n$ 元关系，用 $R(X_1, X_2, \cdots, X_n)$ 表示 $(X_1, X_2, \cdots, X_n) \in R$．特别地，如果 $R \subseteq X^n$，则称 $R$ 是 $X$ 上的 $n$ 元关系
 
@@ -455,10 +457,10 @@
         1. 令 $S$ 为 $X$ 的划分，定义 $X$ 上的二元关系 $\sim_S = \left\{(x, y) \in X^2 \mid \exists c \in S \ (s \in c \wedge y \in c)\right\}$，易知 $\sim_S$ 是等价关系
 
             !!! note "等价关系与划分的对应"
-                - 设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，则 $\sim_1 = \sim_2$ 当且仅当 $X / \sim_1 = X / \sim_2$
-                - 设 $\sim$ 为 $X$ 上的等价关系，则 $\sim_{X / \sim} = \sim$ 且 $X / \sim_S = S$
+                1. 设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，则 $\sim_1 = \sim_2$ 当且仅当 $X / \sim_1 = X / \sim_2$
+                2. 设 $\sim$ 为 $X$ 上的等价关系，则 $\sim_{X / \sim} = \sim$ 且 $X / \sim_S = S$
 
-                总而言之，集合 $X$ 上的所有等价关系与划分形成一一对应
+                从而集合 $X$ 上的所有等价关系与划分形成一一对应
 
         2. 划分的积：设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，对应的划分为 $S_1, S_2$．定义 $S_1 \cdot S_2 = X / (\sim_1 \cap \sim_2)$ 为划分的积，其中 $\sim_1 \cap \sim_2$ 为等价关系
         3. 划分的和：设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，对应的划分为 $S_1, S_2$．定义 $S_1 + S_2 = X / \left(t(\sim_1 \cup \sim_2)\right)$ 为划分的和，其中 $\sim_1 \cup \sim_2$ 为自反对称关系
@@ -471,9 +473,10 @@
             2. 设 $S$ 为 $X$ 的划分，若 $S$ 细分 $S_1$ 与 $S_2$，则 $S$ 细分 $S_1 \cdot S_2$
             3. 设 $S$ 为 $X$ 的划分，若 $S_1$ 与 $S_2$ 细分 $S$，则 $S_1 + S_2$ 细分 $S$
 
-6. 序：令 $\prec, \leqslant$ 为 $X$ 上的二元关系
+6. 序：令 $\prec, \leqslant, <$ 为 $X$ 上的二元关系
     1. 拟序：如果 $\prec$ 具有自反性与传递性，则称 $\prec$ 是 $X$ 上的拟序
-    2. 偏序：如果拟序关系 $\leqslant$ 具有反对称性，则称 $\leqslant$ 是 $X$ 上的偏序或序，用 $(X, \leqslant)$ 表示
+    2. 严格偏序：如果 $<$ 具有反自反性、非对称性与传递性，则称 $<$ 是 $X$ 上的严格偏序
+    3. 偏序：如果拟序关系 $\leqslant$ 具有反对称性，则称 $\leqslant$ 是 $X$ 上的偏序或序，用 $(X, \leqslant)$ 表示
         1. 用 $x \geqslant y$ 表示 $x \leqslant^{-1} y$；用 $x < y$ 表示 $x \leqslant y \wedge x \neq y$，用 $x > y$ 表示 $x \geqslant y \wedge x \neq y$
         2. 极大元与极小元：如果 $a \in X$ 且 $\forall x \in X \ (\neg (a > x))$，则称 $a$ 为 $X$ 的极小元；反之如果 $a \in X$ 且 $\forall x \in X \ (\neg (a < x))$，则称 $a$ 为 $X$ 的极大元
         3. 最小元与最大元：如果 $a \in X$ 且 $\forall x \in X \ (a \leqslant x)$，则称 $a$ 为 $X$ 的最小元；反之如果 $a \in X$ 且 $\forall x \in X \ (a \geqslant x)$，则称 $a$ 为 $X$ 的最大元
@@ -485,11 +488,11 @@
         !!! note "逆关系的序"
             如果 $R$ 是 $X$ 上的序，则 $R^{-1}$ 也是 $X$ 上的序，令 $X_0 \subseteq X$
 
-            1. $x$ 是 $X_0$ 在序 $R$ 下的极小元当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的极大元
-            2. $x$ 是 $X_0$ 在序 $R$ 下的最小元当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的最大元
-            3. $x$ 是 $X_0$ 在序 $R$ 下的上确界当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的下确界
+            3. $x$ 是 $X_0$ 在序 $R$ 下的极小元当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的极大元
+            4. $x$ 是 $X_0$ 在序 $R$ 下的最小元当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的最大元
+            5. $x$ 是 $X_0$ 在序 $R$ 下的上确界当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的下确界
 
-    3. 全序：如果偏序关系 $\leqslant$ 还具有连接性，即对所有 $x, y \in X$ 有 $x \leqslant y$ 或 $y \leqslant x$，则称 $\leqslant$ 是 $X$ 上的全序或线序
+    4. 全序：如果偏序关系 $\leqslant$ 还具有连接性，即对所有 $x, y \in X$ 有 $x \leqslant y$ 或 $y \leqslant x$，则称 $\leqslant$ 是 $X$ 上的全序或线序
         1. 全序集的性质
             1. 全序集的任意两个元素是可比较的
             2. 全序集中极小元与最小元、极大元与最大元是同一的
