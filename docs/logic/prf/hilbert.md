@@ -178,40 +178,30 @@
             \AxiomC{$\Gamma \vdash \beta$}
             \RightLabel{ $(\vdash \wedge)$}
             \BinaryInfC{$\Gamma \vdash \alpha \wedge \beta$}
-            \end{prooftree},
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \vdash \alpha$}
+            \RightLabel{ $(\vdash \vee)$}
+            \UnaryInfC{$\Gamma \vdash \alpha \vee \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \vdash \beta$}
+            \RightLabel{ $(\vdash \vee)$}
+            \UnaryInfC{$\Gamma \vdash \alpha \vee \beta$}
+            \end{prooftree} \\
             \begin{prooftree}
             \AxiomC{$\alpha$}
             \AxiomC{$\beta$}
             \AxiomC{$\Gamma \vdash \gamma$}
             \RightLabel{ $(\wedge \vdash)$}
             \TrinaryInfC{$\alpha \wedge \beta, \Gamma \vdash \gamma$}
-            \end{prooftree} \\
-            \begin{prooftree}
-            \AxiomC{$\Gamma \vdash \alpha$}
-            \RightLabel{ $(\vdash \vee)$}
-            \UnaryInfC{$\Gamma \vdash \alpha \vee \beta$}
-            \end{prooftree},
-            \begin{prooftree}
-            \AxiomC{$\Gamma \vdash \beta$}
-            \RightLabel{ $(\vdash \vee)$}
-            \UnaryInfC{$\Gamma \vdash \alpha \vee \beta$}
-            \end{prooftree},
+            \end{prooftree} \quad
             \begin{prooftree}
             \AxiomC{$\alpha \Gamma \vdash \gamma$}
             \AxiomC{$\beta, \Gamma \vdash \gamma$}
             \RightLabel{ $(\vee \vdash)$}
             \BinaryInfC{$\alpha \vee \beta, \Gamma \vdash \gamma$}
-            \end{prooftree} \\
-            \begin{prooftree}
-            \AxiomC{$\alpha, \Gamma \vdash \beta$}
-            \RightLabel{ (DT)}
-            \UnaryInfC{$\Gamma \vdash \alpha \to \beta$}
-            \end{prooftree},
-            \begin{prooftree}
-            \AxiomC{$\Gamma \vdash \alpha \to \beta$}
-            \RightLabel{ (DT)}
-            \UnaryInfC{$\alpha, \Gamma \vdash \beta$}
-            \end{prooftree},
+            \end{prooftree} \quad
             \begin{prooftree}
             \AxiomC{$\Gamma \vdash \alpha$}
             \AxiomC{$\beta, \Delta \vdash \gamma$}
@@ -219,16 +209,26 @@
             \BinaryInfC{$\alpha \to \beta, \Gamma, \Delta \vdash \gamma$}
             \end{prooftree} \\
             \begin{prooftree}
+            \AxiomC{$\alpha, \Gamma \vdash \beta$}
+            \RightLabel{ (DT)}
+            \UnaryInfC{$\Gamma \vdash \alpha \to \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \vdash \alpha \to \beta$}
+            \RightLabel{ (DT)}
+            \UnaryInfC{$\alpha, \Gamma \vdash \beta$}
+            \end{prooftree} \\
+            \begin{prooftree}
             \AxiomC{$\alpha, \Gamma \vdash \gamma$}
             \AxiomC{$\neg \alpha, \Gamma \vdash \gamma$}
             \RightLabel{ (LEM)}
             \BinaryInfC{$\Gamma \vdash \gamma$}
-            \end{prooftree},
+            \end{prooftree} \quad
             \begin{prooftree}
             \AxiomC{$\Gamma \vdash \gamma$}
             \RightLabel{ (Wk)}
             \UnaryInfC{$\alpha, \Gamma \vdash \gamma$}
-            \end{prooftree},
+            \end{prooftree} \quad
             \begin{prooftree}
             \AxiomC{$\Gamma \vdash \alpha$}
             \AxiomC{$\alpha, \Delta \vdash \gamma$}
@@ -535,7 +535,7 @@
             \AxiomC{$\alpha \to \beta$}
             \RightLabel{ (mp)}
             \BinaryInfC{$\beta$}
-            \end{prooftree},
+            \end{prooftree} \quad
             \begin{prooftree}
             \AxiomC{$\alpha$}
             \RightLabel{ (gen)}
@@ -558,7 +558,7 @@
             \AxiomC{$\alpha \to \beta$}
             \RightLabel{ $(\forall M)$}
             \UnaryInfC{$\forall x\alpha \to \forall x\beta$}
-            \end{prooftree},
+            \end{prooftree} \quad
             \begin{prooftree}
             \AxiomC{$\alpha \to \beta$}
             \RightLabel{ $(\forall M)$}
@@ -602,7 +602,7 @@
         \AxiomC{$\alpha(t/x), \Sigma \vdash \beta$}
         \RightLabel{ $(\forall \vdash)$}
         \UnaryInfC{$(\forall x\alpha, \Sigma \vdash \beta)$}
-        \end{prooftree},
+        \end{prooftree} \quad
         \begin{prooftree}
         \AxiomC{$\Sigma \vdash \alpha(y/x)$}
         \RightLabel{ $(\vdash \forall)$}
@@ -613,7 +613,7 @@
         \AxiomC{$\alpha(y/x), \Sigma \vdash \beta$}
         \RightLabel{ $(\exists \vdash)$}
         \UnaryInfC{$\exists x\alpha$}
-        \end{prooftree},
+        \end{prooftree} \quad
         \begin{prooftree}
         \AxiomC{$\Sigma \vdash \alpha(t/x)$}
         \RightLabel{ $(\vdash \exists)$}

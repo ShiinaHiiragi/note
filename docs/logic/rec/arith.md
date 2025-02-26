@@ -2,7 +2,7 @@
 
 ## 4.1 形式算术
 ### 4.1.1 原始递归算术
-1. 原始递归算术的语言 $\mathscr L(R)$ 由逻辑符号和非逻辑符号组成
+1. 原始递归算术 $\mathbf{PRA}$ 的语言 $\mathscr L(R)$ 由逻辑符号和非逻辑符号组成
     1. 逻辑符号：① 可数无穷的变元集 $\mathbf{Var}$；② 联结词 $\bot, \wedge, \vee, \to$；③ 括号 $)$ 与 $($
     2. 非逻辑符号 $R$：① 等词 $=$；② 常数 $0$；③ 后继函数 $\mathrm{S}$；④ 余下所有原始递归函数
 2. 原始递归算术的公理系统
@@ -17,6 +17,46 @@
         \BinaryInfC{$\varphi(y)$}
         \end{prooftree}
         $$
+
+    !!! note "无逻辑演算"
+        $\text{Goodstein}$ 改进了 $\text{Skolem}$ 提出的 $\mathbf{PRA}$，将其可看作一系列能行可判定且形如 $t_1 = t_2$ 的语句集，根据如下推理规则生成
+
+        1. 替换规则：设 $x$ 是变元，$A, B, C$ 是项，$F, G$ 是原始递归函数
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$F(x) = G(x)$}
+                \RightLabel{ $(\mathrm{Sub}_1)$}
+                \UnaryInfC{$F(A) = G(A)$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$A = B$}
+                \RightLabel{ $(\mathrm{Sub}_2)$}
+                \UnaryInfC{$F(A) = F(B)$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$A = B$}
+                \AxiomC{$A = C$}
+                \RightLabel{ (T)}
+                \BinaryInfC{$B = C$}
+                \end{prooftree}
+            }
+            $$
+
+        2. 归纳规则：设 $x$ 是变元，$F, G, H$ 是原始递归函数
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$F(0) = G(0)$}
+                \AxiomC{$F(\mathrm{S}x) = H(x, F(x))$}
+                \AxiomC{$G(\mathrm{S}x) = H(x, G(x))$}
+                \RightLabel{ (U)}
+                \TrinaryInfC{$F(x) = G(x)$}
+                \end{prooftree}
+            }
+            $$
 
 ### 4.1.2 一阶算术
 初等数论的语言 $\mathscr L(S)$，其中 $S = \{=, \mathrm{S}, +, \times, 0\}$ 且 $\Omega(=) = 2, \Omega(\mathrm{S}) = 1, \Omega(+) = \Omega(\times) = 2, 0 \in \mathbf C$
@@ -44,7 +84,7 @@
         9. $\vdash \forall x(x \leqslant \mathrm{S}^{n} \ 0 \vee \mathrm{S}^{n} \ 0 \leqslant x)$
     2. 引入公理 $x \leqslant y \leftrightarrow \exists z \ (x+z=y)$ 得到 $\mathbf{Q}_{\leqslant}$
         1. 令 $\Phi \in \{\Sigma_{n}, \Sigma_{n}^{+}, \Pi_{n}, \Pi_{n}^{+}, \Delta_{n}, \Delta_{n}^{+}\}$ 为公式层级，则对所有 $A \in \Phi$ 引入公理
-            1. 归纳公理（$\Phi-\mathrm{IND}$）：$A(0) \wedge \forall x \ (A(x) \to A(S x)) \to \forall x \ A(x)$
+            1. 归纳公理（$\Phi-\mathrm{IND}$）：$A(0) \wedge \forall x \ (A(x) \to A(\mathrm{S} x)) \to \forall x \ A(x)$
             2. 最小公理（$\Phi-\mathrm{MIN}$）：$\exists x \ A(x) \to \exists x \ (A(x) \wedge \neg \exists y \ (y<x \wedge A(y)))$
             3. 替换公理（$\Phi-\mathrm{REPL}$）：$\forall x \leqslant t \ \exists y \ A(x, y) \to \exists z \ \forall x \leqslant t \ \exists y \leqslant z \ A(x, y)$
 
@@ -54,6 +94,8 @@
             2. $\mathbf{B \Sigma}_{n+1} \vdash \mathbf{B \Pi}_{n}$
             3. $\mathbf{B \Sigma}_{n+1} \vdash \mathbf{I \Sigma}_{n}$
             4. $\mathbf{I \Sigma}_{n} \dashv\vdash \mathbf{I \Pi}_{n} \dashv\vdash \mathbf{L \Sigma}_{n} \dashv\vdash \mathbf{L \Pi}_{n}$
+
+            $\mathbf{I \Sigma}_{1}$ 可以视作是带量词版本的 $\mathbf{PRA}$，并将其当作默认的有穷主义算术系统
 
         2. 定义 $\log x=\min \left\{y \mid 2^{y} \leqslant x\right\}$ 以及 $\omega_{1}(x, y)=x^{\log y}, \omega_{n+1}(x, y)=2^{\omega_{n}(\log x, \log y)}$
             1. $\Omega_{n}: \forall x \forall y \exists z \ \left(z=\omega_{n}(x, y)\right)$
