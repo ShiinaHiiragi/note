@@ -247,12 +247,6 @@ const refList = [
         year: 2018
     },
     {
-        author: ["R. L. Goodstein"],
-        title: "Logic-free formalisations of recursive arithmetic",
-        type: "DB/OL",
-        page: [1, 15]
-    },
-    {
         author: ["[美]Thomas H. Cormen", "[美]Charles E. Leiserson", "[美]Ronald L. Rivest", "[美]Clifford Stein"],
         title: "算法导论",
         type: "M",
@@ -280,6 +274,12 @@ const refList = [
         press: "复旦大学出版社",
         locate: "上海",
         year: 2014
+    },
+    {
+        author: ["R. L. Goodstein"],
+        title: "Logic-free formalisations of recursive arithmetic",
+        type: "DB/OL",
+        page: [1, 15]
     },
     {
         author: ["田中一之"],
