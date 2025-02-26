@@ -332,7 +332,13 @@
         \end{array}
         $$
 
-3. ...
+3. 给定至少包含有穷主义算术的理论 $T$，设 $T_1, T_2$ 是公理化理论
+    1. 定义 $T_1 \leqslant_{T} T_2$ 当且仅当 $T \vdash \operatorname{Con}(T_2) \to \operatorname{Con}(T_1)$
+        1. $\leqslant_{T}$ 是（非严格的）偏序关系
+        2. 定义 $T_1 \leqslant T_2$ 当且仅当 $T_1 \leqslant_{\mathbf{I \Sigma}_{1}^{0}} T_2$，称理论 $T_2$（在证明论意义上）相对 $T_1$ 一致
+    2. 定义 $T_1 \equiv_{T} T_2$ 当且仅当 $T_1 \leqslant_{T} T_2$ 且 $T_2 \leqslant_{T} T_1$
+        1. $\equiv_{T}$ 是等价关系
+        2. 定义 $T_1 \equiv T_2$ 当且仅当 $T_1 \equiv_{\mathbf{I \Sigma}_{1}^{0}} T_2$，称理论 $T_1$ 与 $T_2$（在证明论意义上）是等一致的
 
 ## 4.3 反推数学
 ### 4.3.1 子系统与反推数学

@@ -300,8 +300,7 @@ const refList = [
         year: 2016,
         page: [1, 182],
         press: "复旦大学出版社",
-        locate: "上海",
-        plot: 95
+        locate: "上海"
     },
     {
         author: ["Thomas Jech"],

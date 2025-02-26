@@ -102,7 +102,7 @@
         1. 若 $\Sigma$ 不完备，则存在语句 $\alpha$ 使得 $\alpha \notin \Sigma$ 且 $\neg \alpha \notin \Sigma$，此时 $\Sigma \cup \{\alpha\}$ 与 $\Sigma \cup \{\neg \alpha\}$ 都是一致的，并称 $\alpha$ 独立于 $\Sigma$
         2. 设 $\lambda$ 是基数，若 $S-$理论 $T$ 的基数为 $\lambda$ 的模型都相互同构，则称理论 $T$ 是 $\lambda-$范畴的
         3. $\text{Lo}\acute{\mathrm s}-\text{Vaught}$ 判别法：若 $S-$理论 $T$ 只有无穷模型，且 $T$ 是 $\lambda-$范畴的，其中 $\lambda \geqslant |\mathscr L(S)| = |S|+\aleph_{0}$，则 $T$ 是完备的
-    5. 若理论 $T$ 与 $T'$ 相互等价，即 $T \vdash T'$ 且 $T' \vdash T$，则记作 $T \dashv\vdash T'$ 或 $T \equiv T'$
+    5. 若理论 $T$ 与 $T'$ 相互等价，即 $T \vdash T'$ 且 $T' \vdash T$，则记作 $T \dashv\vdash T'$
 3. 初等等价：设 $\mathfrak M$ 与 $\mathfrak N$ 是两个 $S-$结构，如果 $\mathrm{Th}(\mathfrak M) = \mathrm{Th}(\mathfrak N)$，则称 $\mathfrak M$ 与 $\mathfrak N$ 初等等价，记作 $\mathfrak M \equiv \mathfrak N$
     1. 设 $\mathcal K$ 是一族 $S-$结构，则 $\mathrm{Th}(\mathcal K) = \{\alpha \mid \alpha$ 是 $S-$语句且对任意 $\mathfrak M \in \mathcal K$ 都有 $\mathfrak M \vDash \alpha\}$
         1. 若 $\mathcal K = \{\mathfrak M\}$，则将 $\mathrm{Th}(\mathcal K)$ 记作 $\mathrm{Th}(\mathfrak M)$，并称 $\mathrm{Th}(\mathfrak M)$ 为 $\mathfrak M$ 的理论
