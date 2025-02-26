@@ -362,8 +362,8 @@
         2. 假设存在一个可扩展基数，则存在序数 $\lambda$ 使得对于所有 $\gamma>\lambda$，若 $j: \mathbf{HOD} \cap V_{\gamma+1} \rightarrow \mathbf{HOD} \cap V_{j(\gamma)+1}$ 是初等嵌入且 $j(\lambda)=\lambda$，则 $j \in \mathbf{HOD}$
         3. 不存在 $\text{Berkeley}$ 基数
     2. 在 $\mathrm{L}[U]$ 中可证若 $\delta$ 是可测基数，则存在 $\delta$ 的弱扩展模型 $\mathbf{N}$ 使得 $\mathbf{N} \subseteq \mathbf{HOD}$
-        1. 强 $\mathbf{HOD}$ 猜想：「$\mathbf{ZFC}\; +$ 超紧致基数存在」可证 $\mathbf{HOD}$ 假设
-        2. 弱 $\mathbf{HOD}$ 猜想：「$\mathbf{ZFC}\; +$ 可扩展基数存在」可证 $\mathbf{HOD}$ 假设
+        1. 强 $\mathbf{HOD}$ 猜想：「$\mathbf{ZFC}\; +$ 存在超紧致基数」可证 $\mathbf{HOD}$ 假设
+        2. 弱 $\mathbf{HOD}$ 猜想：「$\mathbf{ZFC}\; +$ 存在可扩展基数」可证 $\mathbf{HOD}$ 假设
     3. 假设存在可扩展基数的真类，则 $\mathbf{HOD}$ 假设成立当且仅当存在内模型 $\mathbf{N}$ 有 $\delta-$近似性质与 $\delta-$覆盖性质且 $\mathbf{N} \vDash \mathbf{HOD}$ 假设
     4. 终极 $\mathbf{L}$ 猜想：在 $\mathbf{ZFC}$ 中，设 $\delta$ 是一个可扩展基数，则可证明存在内模型 $\mathbf{N}$ 使得
         1. $\mathbf{N}$ 是超紧致基数 $\delta$ 的弱扩展模型

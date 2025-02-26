@@ -137,17 +137,15 @@
 
         因此 $\text{Skolem}$ 佯谬并非悖论：$\mathbf{ZFC}$ 的模型有一个初等等价的可数子模型，但 $\mathbf{ZFC}$ 中存在不可数集合
 
-### 4.1.3 相对一致性
-1. 设 $T$ 是集合论理论，$\Sigma$ 是语句集，$\mathbf{M}$ 为类且在 $T$ 中可证 $\mathbf{M} \neq \varnothing$．则若在 $T$ 中可证 $\mathbf{M} \vDash \Sigma$，即对任意 $\sigma \in \Sigma$，都在 $T$ 中可证 $\sigma^{\mathrm{M}}$
+3. 设 $T$ 是集合论理论，$\Sigma$ 是语句集，$\mathbf{M}$ 为类且在 $T$ 中可证 $\mathbf{M} \neq \varnothing$．则若在 $T$ 中可证 $\mathbf{M} \vDash \Sigma$，即对任意 $\sigma \in \Sigma$，都在 $T$ 中可证 $\sigma^{\mathrm{M}}$
     1. 对集合论语言的任何语句 $\varphi$，如果 $\Sigma \vdash \varphi$，则 $T \vdash \varphi^{\mathbf{M}}$
     2. 如果 $T$ 一致，则以 $\Sigma$ 为公理的理论也一致
-2. $\mathbf{ZFC}$ 相关的相对一致性
-    1. 在 $\mathbf{ZF}^{-}$ 中可证 $\mathbf{WF} \vDash \mathbf{ZF}$，因此 $\operatorname{Con}(\mathbf{ZF}^{-}) \to \operatorname{Con}(\mathbf{ZF})$
-    2. 在 $\mathbf{ZF}^{-}$ 中可证 $V_{\omega} \vDash \mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf}$，因此 $\operatorname{Con}(\mathbf{ZF}^{-}) \to \operatorname{Con}(\mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf})$
-    3. 记 $\mathrm{IC}$ 为「存在不可达基数」，则 $\mathbf{ZFC} \nvdash \mathrm{IC}$
-        1. $\operatorname{Con}(\mathbf{ZFC}) \not \to \operatorname{Con}(\mathbf{ZFC}+\mathrm{IC})$
-        2. $\operatorname{Con}(\mathbf{ZFC}) \to \operatorname{Con}(\mathbf{ZFC}+\neg \mathrm{IC})$
-    4. $\operatorname{Con}(\mathbf{ZFC}) \rightarrow \operatorname{Con}(\mathbf{ZFC}-\mathrm{Pow}+\forall x \ (x$ 是可数的$))$
+        1. 在 $\mathbf{ZF}^{-}$ 中可证 $\mathbf{WF} \vDash \mathbf{ZF}$，因此 $\operatorname{Con}(\mathbf{ZF}^{-}) \to \operatorname{Con}(\mathbf{ZF})$
+        2. 在 $\mathbf{ZF}^{-}$ 中可证 $V_{\omega} \vDash \mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf}$，因此 $\operatorname{Con}(\mathbf{ZF}^{-}) \to \operatorname{Con}(\mathbf{ZFC}-\operatorname{Inf}+\neg \operatorname{Inf})$
+        3. $\mathbf{ZFC} \nvdash$ 存在不可达基数
+            1. $\operatorname{Con}(\mathbf{ZFC}) \not \to \operatorname{Con}(\mathbf{ZFC} \;+$ 存在不可达基数$)$
+            2. $\operatorname{Con}(\mathbf{ZFC}) \to \operatorname{Con}(\mathbf{ZFC}+\neg$ 存在不可达基数$)$
+        4. $\operatorname{Con}(\mathbf{ZFC}) \rightarrow \operatorname{Con}(\mathbf{ZFC}-\mathrm{Pow}+\forall x \ (x$ 是可数的$))$
 
 ## 4.2 Gödel 可构成宇宙
 1. $\text{G}\ddot{\mathrm o}\text{del}$ 运算：设 $X, Y$ 是集合
