@@ -364,7 +364,7 @@ window.cookie_callback = (param) => {
                 ![](../assets/favicon.png)
                 <style> img[src$="favicon.png"] { width: 48px; } </style>
             </figure>
-        === "LaTeX"
+        === "HTML"
             ```html
             <figure markdown>
                 ![](../assets/favicon.png)
@@ -387,7 +387,7 @@ window.cookie_callback = (param) => {
             |  $2$  |     $4$      |     $8$      |
 
             </div>
-        === "LaTeX"
+        === "HTML"
             ```html
             <div class="text-table">
 
