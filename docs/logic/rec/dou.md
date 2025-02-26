@@ -95,7 +95,7 @@
         1. 如果 $\Phi_{e}^{A}(x)=y$，则 $\exists s \ \exists \sigma \subseteq A \ \left(\Phi_{e, s}^{\sigma}(x)=y\right)$
         2. 如果 $\Phi_{e, s}^{\sigma}(x)=y$，则 $\forall t \geqslant s \ \forall \tau \supseteq \sigma \ \left(\Phi_{e, t}^{\top}(x)=y\right)$
         3. 如果 $\Phi_{e}^{\sigma}(x)=y$，则 $\forall A \supseteq \sigma \ \left(\Phi_{e}^{A}(x)=y\right)$
-    3. 对任何自然数子集 $A$ 和 $B$，令 $v=u(A ; e, x, s)$，则 $\left[\Phi_{e, s}^{A}(x)=y \wedge A \upharpoonright v=B \upharpoonright v\right] \Rightarrow \Phi_{e, s}^{B}(x)=y$
+    3. 对任何自然数子集 $A$ 和 $B$，令 $v=u(A ; e, x, s)$，若 $\left[\Phi_{e, s}^{A}(x)=y \wedge A \upharpoonright v=B \upharpoonright v\right]$，则 $\Phi_{e, s}^{B}(x)=y$
 3. 设 $A, B$ 为自然数的集合
     1. 称集合 $B$ 是 $A-$递归的当且仅当 $B$ 的特征函数是 $A-$递归的，即存在 $e, \chi_{B}=\Phi_{e}^{A}$．$B$ 是 $A-$递归的也称作 $B$ 递归于 $A$，或 $B$ 可以 $\text{Turing}$ 归约到 $A$，通常记作 $B \leqslant_{T} A$
     2. 称 $B$ 是 $A-$递归可枚举的（或 $B$ 递归可枚举于 $A$）当且仅当存在 $e, B=W_{e}^{A}$，其中 $W_{e}^{A}$ 表示 $\Phi_{e}^{A}$ 的定义域
@@ -103,8 +103,8 @@
 
     若 $B \leqslant_{m} A$，则 $B \leqslant_{T} A$
 
-    1. $B \leqslant_{T} A$ 当且仅当 $B$ 和 $\overline{B}$ 都是 $A-$递归可枚举的
-    2. 下列命题等价
+    4. $B \leqslant_{T} A$ 当且仅当 $B$ 和 $\overline{B}$ 都是 $A-$递归可枚举的
+    5. 下列命题等价
         1. $B$ 是 $A-$递归可枚举的
         2. $B=\varnothing$ 或 $B$ 是某个 $A-$递归（全）函数的值域
         3. $B$ 是 $\Sigma_{1}^{A}$ 的

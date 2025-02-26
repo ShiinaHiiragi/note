@@ -279,7 +279,7 @@
         5. 设 $(V, \sigma)$ 是内积空间，其中对称双线性形式 $\sigma$ 是非退化的．定义 $V$ 中子空间之间的正交补映射 $M \rightarrow M^{\perp}$，则这个映射诱导了射影几何 $\boldsymbol{P}(V)$ 到自身的一一映射，并且具有如下性质
             1. $\operatorname{dim} M^{\perp}=\operatorname{dim} V-\operatorname{dim} M$
             2. $\left(M^{\perp}\right)^{\perp}=M$
-            3. $M \subset N \Rightarrow M^{\perp} \supset N^{\perp}$
+            3. $M \subset N \to M^{\perp} \supset N^{\perp}$
             4. $(M+N)^{\perp}=M^{\perp} \cap N^{\perp}$
             5. $(M \cap N)^{\perp}=M^{\perp}+N^{\perp}$
 

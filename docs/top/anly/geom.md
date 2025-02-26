@@ -75,7 +75,7 @@
         2. 设 $M$ 是 $V$ 的子空间，$M^0$ 是 $V^*$ 的子空间，使得 $M^0=\left\{f \in V^*: f(M)=0\right\}$．称 $M^0$ 为 $M$ 的零化子空间，称 $0: \boldsymbol{P}(V) \rightarrow \boldsymbol{P}\left(V^*\right), M \rightarrow M^0$ 为零化映射．零化映射 $M \rightarrow M^0$ 是 $V$ 的子空间到 $V^*$ 的子空间上的一一映射，且有
             1. $\operatorname{dim} M+\operatorname{dim} M^0=\operatorname{dim} V=\operatorname{dim} V^*$
             2. $M^{00}=M$
-            3. $M \subseteq N \Rightarrow M^0 \supset N^0$
+            3. $M \subseteq N \rightarrow M^0 \supset N^0$
             4. $(M+N)^0=M^0 \cap N^0$
             5. $(M \cap N)^0=M^0+N^0$
 

@@ -280,6 +280,30 @@
         2. 将划分性质「对任意 $n < \eta$ 都有 $\kappa \rightarrow(\lambda)_{m}^{n}$ 成立」简记为 $\kappa \rightarrow(\lambda)_{m}^{<\eta}$
         3. 有穷 $\text{Ramsey}$ 定理：$N \rightarrow \left(M \right)_{k}^{n}$，它在 $\mathbf{N}$ 中成立但无法在 $\mathbf{PA}$ 中证明
 
+### 4.2.4 相对一致性
+1. 理论间翻译：给定语言 $S_1=\{P_{i}\}_{i<N} \cup\{f_{j}\}_{j<M}$（其中关系符号 $\Omega(P_{i}) = n_{i}$，函数符号 $\Omega(f_{j}) = m_{j}$），语言 $S_2$ 与 $S_2-$理论 $T_{2}$．则称定义在 $\{\forall\} \cup\{P_{i}\}_{i<N} \cup\{f_{j}\}_{j<M}$ 上的函数 $\pi_0$ 是一个从 $\mathscr{L}_{1}$ 到 $T_{2}$ 中的翻译当且仅当
+    1. $\pi_0(\forall)=\varphi_{\forall}(x)$
+    2. 对每个 $P_{i}$ 有 $\pi_0\left(P_{i}\right)=\varphi_{i}\left(x_{1}, \cdots, x_{n_{i}}\right)$
+    3. 对每个 $f_{j}$ 有 $\pi_0\left(f_{j}\right)=\psi_{j}\left(x_{1}, \cdots, x_{m_{j}}, y\right)$，且对任意 $j<M$ 有 $T_{2} \vdash \forall x_{1} \cdots \forall x_{m_{j}} \exists^{1} y \ \psi_{j}\left(x_{1}, \cdots, x_{m_{j}}, y\right)$
+
+    其中，$\varphi_{\forall}(x), \varphi_{i}\left(x_{1}, \cdots, x_{n_{i}}\right), \psi_{j}\left(x_{1}, \cdots, x_{m_{i}}, y\right)$ 是 $S_2-$公式，至多含有显式列出的自由变元
+
+    1. 可定义对所有 $S_1-$公式的翻译 $\pi$
+        1. 对不含函数符号的原子公式
+            1. $\pi(x=y)=(x=y)$
+            2. $\pi\left(P_{i} x_{1} \cdots x_{n_{i}}\right)= \varphi_{i}\left(x_{1}, \cdots, x_{n_{i}}\right)$
+        2. 对包含函数符号的原子公式，令 $f_{j} x_{1} \cdots x_{m_{j}}$ 是其中出现的首个仅含单个函数符号的词项
+            1. $\pi\left(t_{1}=t_{2}\right)=\forall y \ (\psi_{j}\left(x_{1}, \cdots, x_{m_{j}}, y\right) \to \pi(t_{1} = t_{2})_{y}^{f_{j} x_{1} \cdots x_{m_{j}}})$
+            2. $\pi\left(P_{i} t_{1} \cdots t_{n_{i}}\right) = \forall y \ (\psi_{j}\left(x_{1}, \cdots, x_{m_{j}}, y\right)  \rightarrow \pi\left(P_{i} t_{1} \cdots t_{n_{i}}\right)_{y}^{f_{j} x_{1} \cdots x_{m_{j}}})$，其中 $y$ 取未出现过的新变元符号
+        3. 对非原子公式
+            1. $\pi(\neg \alpha)=\neg \pi(\alpha)$
+            2. $\pi(\alpha \rightarrow \beta)=\pi(\alpha) \rightarrow \pi(\beta)$
+            3. $\pi(\forall z \alpha)=\forall z\left(\varphi_{\forall}(y) \rightarrow \pi(\alpha)\right)$
+            4. $\pi(\exists z \alpha)=\exists z\left(\varphi_{\forall}(z) \wedge \pi(\alpha)\right)$
+    2. 给定语言 $S_{1}, S_{2}$ 以及 $S_{1}-$理论 $T_{1}$ 和 $S_{2}-$理论 $T_{2}$，称 $T_{1}$ 可被翻译到 $T_{2}$ 中（或理论 $T_{2}$ 包含 $T_{1}$；$T_{2}$ 在解释力上不弱于 $T_{1}$）当且仅当存在从 $S_{1}$ 到 $T_{2}$ 的翻译 $\pi$ 使得对任意 $S_{1}-$语句 $\sigma$ 有 $T_{1} \vdash \sigma$ 蕴含 $T_{2} \vdash \pi(\sigma)$，记作 $T_1 \sqsubseteq T_2$ 或 $T_2 \sqsupseteq T_1$
+
+2. ...
+
 ## 4.3 反推数学
 ### 4.3.1 子系统与反推数学
 1. $\mathbf{RCA}_0$ 中可依照 $\mathbf{ZFC}$ 建立实数集，定义 $\mathbf{R}$ 上的连续函数
