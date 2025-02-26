@@ -302,7 +302,37 @@
             4. $\pi(\exists z \alpha)=\exists z\left(\varphi_{\forall}(z) \wedge \pi(\alpha)\right)$
     2. 给定语言 $S_{1}, S_{2}$ 以及 $S_{1}-$理论 $T_{1}$ 和 $S_{2}-$理论 $T_{2}$，称 $T_{1}$ 可被翻译到 $T_{2}$ 中（或理论 $T_{2}$ 包含 $T_{1}$；$T_{2}$ 在解释力上不弱于 $T_{1}$）当且仅当存在从 $S_{1}$ 到 $T_{2}$ 的翻译 $\pi$ 使得对任意 $S_{1}-$语句 $\sigma$ 有 $T_{1} \vdash \sigma$ 蕴含 $T_{2} \vdash \pi(\sigma)$，记作 $T_1 \sqsubseteq T_2$ 或 $T_2 \sqsupseteq T_1$
 
-2. ...
+2. 令 $T \sqsupseteq \mathbf{Q}$，称理论 $T_{2}$（在证明论意义上）严格强于理论 $T_{1}$，当且仅当 $T_{2} \vdash \operatorname{Con}\left(T_{1}\right)$，记作 $T_{1} \triangleleft T_{2}$
+    1. $\triangleleft$ 将公理系统排列成一个严格偏序
+    2. $\text{G}\ddot{\mathrm o}\text{del}$ 层谱：常见的公理系统可以排列为线序
+
+        $$
+        \begin{array}{c}
+        \mathbf{PRA}
+        \ \triangleleft \ 
+        \mathbf{RCA}_0
+        \ \triangleleft \ 
+        \mathbf{WKL}_0
+        \ \triangleleft \ 
+        \mathbf{ACA}_0
+        \ \triangleleft \ 
+        \mathbf{ATR}_0
+        \ \triangleleft \ 
+        \mathbf{\Pi}_1^1-\mathbf{CA}_0
+        \ \triangleleft \ 
+        \mathbf{Z}_2
+        \ \triangleleft \ 
+        \textsf{简单类型论}
+        \ \triangleleft \ 
+        \mathbf{ZC}
+        \ \triangleleft \ 
+        \mathbf{ZFC}
+        \ \triangleleft \ 
+        \mathbf{ZFC} + \textbf{LCA}
+        \end{array}
+        $$
+
+3. ...
 
 ## 4.3 反推数学
 ### 4.3.1 子系统与反推数学
