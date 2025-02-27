@@ -133,6 +133,22 @@
     3. 对任何状态 $i$ 都有 ${\displaystyle \lim _{\tau \to 0} P[X(t+\tau)=i \mid X(t)=i]=\lim _{\tau \to 0} P_{i i}(\tau)=1}$
 
 ## 5.3 Brown 过程
-1. 
+1. 设 $\{X(t), t \geqslant 0\}$ 是随机过程，如果 $X(t)$ 满足以下条件
+    1. $X(0)=0$
+    2. 随机过程 $X$ 有平稳独立增量
+    3. 对每个 $t>0$（或 $t \in \mathbf{R}$），$X(t) \sim N\left(0, c^{2} t\right)$
+
+    称为 $\text{Brown}$ 运动，若 $c=1$，则称为标准 $\text{Brown}$ 运动．如果 $c \neq 1$，则 $\{X(t) / c, t \geqslant 0\}$ 是标准 $\text{Brown}$ 运动
+
+    1. $f_{t_{1}, \cdots, t_{n}}\left(x_{1}, \cdots, x_{n}\right)=f_{t_{1}}\left(x_{1}\right) f_{t_{2}-t_{1}}\left(x_{2}-x_{1}\right) \cdots f_{t_{n}-t_{n-1}}\left(x_{n}-x_{n-1}\right)$
+    2. 若 $W(t)$ 为 $\text{Brown}$ 运动，$a$ 和 $c$ 为两个正常数，则 $\{W(t)-W(a): t \geqslant a\}$ 和 $\{W(c t) / \sqrt{c}, t \geqslant 0\}$ 也是 $\text{Brown}$ 运动
+    3. $\text{Brown}$ 运动是 $\text{Gauss}$ 过程，即对任意 $k \in \mathbf Z_+$ 以及 $t_{1} \leqslant t_{2} \leqslant \cdots \leqslant t_{k}$，联合分布 $\left(X\left(t_{1}\right), X\left(t_{2}\right), \cdots, X\left(t_{k}\right)\right)$ 为 $k$ 维正态分布
+
+2. 设 $\{W(t), t \geqslant 0\}$ 为 $\text{Brown}$ 运动，令 $B(t)=W(t)-t W(1), \  0 \leqslant t \leqslant 1$，则随机过程 $B=\{B(t): 0 \leqslant t \leqslant 1\}$ 称为 $\text{Brown}$ 桥过程
+    1. 对任意 $0 \leqslant s \leqslant t \leqslant 1$ 有 $\mathrm{E} B(t)=0, \mathrm{E}B(s) B(t) = s(1-t)$
+    2. $\text{Brown}$ 桥过程也是 $\text{Gauss}$ 过程
+3. $\text{Brown}$ 运动相关的随机变量
+    1. $\text{Brown}$ 运动首次到达 $a$ 的时刻 $T_{a}$：密度函数 $p_{T a}(t)=\dfrac{a}{\sqrt{2 \pi t^{3}}} \mathrm{e}^{-\frac{a^{2}}{2 t}}$
+    2. $\text{Brown}$ 运动在 $[0, t]$ 上的最大值 ${\displaystyle M(t) = \max _{0 \leqslant s \leqslant t} W(s)}$：密度函数 $p_{M(t)}(a)=\left\{\begin{aligned} & \dfrac{2}{\sqrt{2 \pi t}} \mathrm{e}^{-\frac{a^{2}}{2 t}}, & a \geqslant 0 \\ & 0, & a < 0 \end{aligned}\right.$
 
 ## 5.4 鞅过程
