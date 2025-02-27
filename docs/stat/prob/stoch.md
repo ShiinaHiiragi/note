@@ -13,9 +13,45 @@
             F_{t_{1}, t_{2}, \cdots, t_{n}}\left(x_{1}, \cdots, x_{n}\right)=P\left[X\left(t_{1}\right) \leqslant x_{1}, \cdots, X\left(t_{n}\right) \leqslant x_{n}\right]
             $$
 
-2. 平稳过程：若随机过程 $X(t)$ 对任意 $t_{1}, \cdots, t_{n} \in T$ 和任何 $h$ 有 $\left(X\left(t_{1}+h\right), \cdots, X\left(t_{n}+h\right)\right) \stackrel{d}{=}\left(X\left(t_{1}\right), \cdots, X\left(t_{n}\right)\right)$ 则称为严格平稳的
-    1. 若随机过程的所有二阶矩存在且 $\mathrm{E} X(t)=m$ 及 $R_{X}(t, s)$ 只与时间差 $t-s$ 有关，则称为宽平稳的或二阶矩平稳的
-    2. 对于宽平稳过程，由于对 $-\infty<s, t<\infty$ 有 $R_{X}(s, t)=R_{X}(0, t-s)$，所以可记为 $R_{X}(t-s)$
+2. 平稳过程：设 $T$ 对加法运算封闭
+    1. 若随机过程 $X(t)$ 对任意 $t_{1}, \cdots, t_{n} \in T$ 和任何 $h$ 有 $\left(X\left(t_{1}+h\right), \cdots, X\left(t_{n}+h\right)\right) \stackrel{d}{=}\left(X\left(t_{1}\right), \cdots, X\left(t_{n}\right)\right)$ 则称为严格平稳的
+        1. 若随机过程的所有二阶矩存在且 $\mathrm{E} X(t)=m$ 及 $R_{X}(t, s)$ 只与时间差 $t-s$ 有关，则称为宽平稳的或二阶矩平稳的
+        2. 设 $X=\{X(t), t \in T\}$ 为平稳过程，如果存在正常数 $\kappa$ 使得 $X(t+\kappa)=X(t)$，则称 $X$ 为周期平稳过程，$\kappa$ 为周期
+    2. 设 $X=\{X(t),-\infty<t<\infty\}$ 为平稳过程（或序列），则若
+
+        $$
+        \overline{X}=\lim _{T \rightarrow \infty} \dfrac{1}{2 T} \int_{-T}^{T} X(t) \mathrm d t \stackrel{L_{2}}{\longrightarrow} m \textsf{ 或 } \overline{X}=\lim _{N \rightarrow \infty} \dfrac{1}{2 N+1} \sum_{k=-N}^{N} X(k) \stackrel{L_{2}}{\longrightarrow} m
+        $$
+
+        则称 $X$ 的均值有遍历性；若
+
+        $$
+        \widehat{R}(\tau)=\lim _{T \rightarrow \infty} \dfrac{1}{2 T} \int_{-T}^{T}(X(t)-m)(X(t+\tau)-m) \mathrm d t \stackrel{L_{2}}{\longrightarrow} R(\tau) \textsf{ 或 } \widehat{R}(\tau)=\lim _{N \rightarrow \infty} \dfrac{1}{2 N+1} \sum_{k=1}^{n}\left(X(k+\tau)-\widehat{m}_{n}\right)\left(X(k)-\widehat{m}_{n}\right) \stackrel{L_{2}}{\longrightarrow} R(\tau)
+        $$
+
+        则称 $X$ 的协方差函数有遍历性；若随机过程（或序列）的均值和协方差函数都有遍历性，则称此随机过程有遍历性
+
+        1. 均值遍历性定理
+            1. 设 $X=\left\{X_{n}, n=0, \pm 1, \cdots\right\}$ 为平稳序列，其协方差函数为 $R(\tau)$，则 $X$ 有遍历性当且仅当
+
+                $$
+                \lim _{N \rightarrow \infty} \dfrac{1}{N} \sum_{\tau=0}^{N-1} R(\tau)=0
+                $$
+
+            2. 若 $X=\{X(t),-\infty<t<\infty\}$ 为平稳过程，则 $X$ 有遍历性当且仅当
+
+                $$
+                \lim _{T \rightarrow \infty} \dfrac{1}{T} \int_{0}^{2 T}\left(1-\dfrac{\tau}{2 T}\right) R(\tau) d \tau=0
+                $$
+
+        2. 协方差函数遍历性定理：设 $X=\{X(t),-\infty<t<\infty\}$ 为平稳过程，$Y_{\tau}=\left\{Y_{\tau}(t),-\infty<t<\infty\right\}$，其中 $Y_{\tau}(t)=(X(t+\tau)-m)(X(t)-m)$，则对给定的 $\tau$，$X$ 的协方差函数 $R(\tau)$ 有遍历性当且仅当
+
+            $$
+            \lim _{T \rightarrow \infty} \dfrac{1}{T} \int_{0}^{2 T}\left(1-\dfrac{\tau_{1}}{2 T}\right)\left(B\left(\tau_{1}\right)-R^{2}(\tau)\right) \mathrm d \tau_{1}=0
+            $$
+
+            其中 $B\left(\tau_{1}\right)=E X\left(t+\tau+\tau_{1}\right) X\left(t+\tau_{1}\right) X(t+\tau) X(t)$
+
 3. 独立增量过程：若对任意 $t_{1}<t_{2} \cdots<t_{n}$，$t_{1}, \cdots, t_{n} \in T$，$X\left(t_{2}\right)- X\left(t_{1}\right), X\left(t_{3}\right)-X\left(t_{2}\right), \cdots, X\left(t_{n}\right)-X\left(t_{n-1}\right)$ 相互独立，则称 $X(t)$ 为独立增量过程．若进一步有对任意 $t_{1}, t_{2}$，$X\left(t_{1}+h\right)-X\left(t_{1}\right) \stackrel{d}{=} X\left(t_{2}+h\right)-X\left(t_{2}\right)$，则过程称为有平稳独立增量的过程
 
 ## 5.1 Poisson 过程
