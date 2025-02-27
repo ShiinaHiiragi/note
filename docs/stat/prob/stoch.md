@@ -1,6 +1,6 @@
 # 5 随机过程
 
-1. 随机过程：即一族随机变量 $\{X(t) \mid t \in T\}$，其中属于某个指标集 $T$ 的 $t$ 是参数，$T$ 是参数集
+1. 随机过程：即一族随机变量 $\{X(t), t \in T\}$，其中属于某个指标集 $T$ 的 $t$ 是参数，$T$ 是参数集
     1. 随机变量 $X(t): \Omega \to \mathbf{R}$ 随 $t \in T$ 与 $\omega \in \Omega$ 变化，因此也可记作 $X(t, \omega)$
     2. 当 $T = \mathbf{N}$ 时，称为随机序列；若 $T$ 至多可数时，称为离散参数过程；若 $T$ 是高维向量，称为随机场
     3. 数字特征与有限维分布
@@ -173,3 +173,13 @@
     3. 若 $\{Z_{n}, n \geqslant 0\}$ 为零均值独立随机变量序列，则 $\left\{Z_{n}, n \geqslant 0\right\}$ 关于 $\left\{Z_{n}\right\}$ 为鞅差序列
 
 ### 5.4.2 下鞅与上鞅
+1. 设 $\left\{M_{n}, n \geqslant 0\right\}$ 为随机过程，$\mathcal{F}_{n}, n \geqslant 0$ 为单调上升的信息集
+    1. 若 $\mathrm{E}\left(M_{n+1} \mid \mathcal{F}_{n}\right) \geqslant M_{n}$，则称 $\left\{M_{n}, n \geqslant 0\right\}$ 关于 $\mathcal{F}_{n}, n \geqslant 0$ 为下鞅序列，简称 $\left\{M_{n}\right\}$ 为下鞅
+    2. 若 $\mathrm{E}\left(M_{n+1} \mid \mathcal{F}_{n}\right) \leqslant M_{n}$，则称 $\left\{M_{n}, n \geqslant 0\right\}$ 关于 $\mathcal{F}_{n}, n \geqslant 0$ 为上鞅序列，简称 $\left\{M_{n}\right\}$ 为上鞅
+
+    等号成立时就是鞅序列
+
+    1. 设 $\left\{X_{n}, \mathcal{F}_{n}, n \geqslant 0\right\}$ 为鞅，$g$ 是一个凸函数，且 $\mathrm{E}\left|g\left(X_{n}\right)\right|<\infty$．则 $\left\{g\left(X_{n}\right), \mathcal{F}_{n}\right.$, $n \geqslant 0\}$ 为下鞅
+    2. 设 $\left\{X_{n}, \mathcal{F}_{n}, n \geqslant 0\right\}$ 为下鞅，$g$ 是一个非降的凸函数，且 $\mathrm{E}\left|g\left(X_{n}\right)\right|<\infty$，则 $\left\{g\left(X_{n}\right), \mathcal{F}_{n}, n \geqslant 0\right\}$ 仍为下鞅
+
+2. 鞅收敛定理：设 $\left\{X_{n}, n \geqslant 0\right\}$ 为下鞅且 $\sup \mathrm{E}\left|X_{n}\right| \leqslant K<\infty$，则 $X_{n}$ 以概率 $1$ 收敛于某个随机变量 $X$ 且 $\mathrm{E}|X| \leqslant K<\infty$
