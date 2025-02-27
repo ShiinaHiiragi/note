@@ -229,7 +229,11 @@
         2. 对任意常数 $c_i, i = 1, 2, \cdots , n$ 以及常数 $b$ 有 ${\displaystyle \mathrm{E}\left[\sum_{i=1}^{n} c_i X_i + b\right] = \sum_{i=1}^{n} c_i \mathrm{E}X_i + b}$ 成立．特别地，$\mathrm{E}[b] = b$
 
 ### 2.2.2 矩
-1. 矩：若随机变量 $X$ 有 $\mathrm{E}|X|^n<+\infty$，则称 $\mathrm{E}X^n$ 为 $X$ 的 $n$ 阶原点矩，$\mathrm{E}|X|^{p}$ 为 $X$ 的 $p$ 阶绝对矩．此时 $\mathrm{E}X^k \ (k\leqslant n)$ 均存在，称 $\mathrm{E}[X-\mathrm{E}X]^n$ 为 $X$ 的 $n$ 阶中心矩
+1. 矩：若随机变量 $X$ 有 $\mathrm{E}|X|^n<+\infty$
+    1. 称 $\mathrm{E}X^n$ 为 $X$ 的 $n$ 阶原点矩，$\mathrm{E}|X|^{p}$ 为 $X$ 的 $p$ 阶绝对矩．此时 $\mathrm{E}X^k \ (k\leqslant n)$ 均存在，称 $\mathrm{E}[X-\mathrm{E}X]^n$ 为 $X$ 的 $n$ 阶中心矩
+    2. 矩母函数：$X$ 的矩母函数定义为随机变量 $\mathrm{e}^{tX}$ 的期望，记作 $g(t) = \mathrm{E}[\mathrm{e}^{tX}]$
+        1. 通过 $g(t)$ 可以求出 $X$ 的各阶矩：$\mathrm{E}\left[X^{n}\right]=g^{(n)}(0)$
+        2. 对相互独立的随机变量 $X$ 和 $Y$，其和的矩母函数就等于其矩母函数的积：$g_{X+Y}(t)=g_{X}(t) g_{Y}(t)$
 2. 方差：称 $X$ 的二阶中心矩 $\mathrm{D}X = \mathrm{E}[X-\mathrm{E} X]^{2}$ 为 $X$ 的方差，也可记作 $\operatorname{Var}(X)$，方差的算术平方根称为标准差或均方差
     1. 方差的性质
         1. $\mathrm{D}(c)=0$

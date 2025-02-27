@@ -114,9 +114,8 @@
 3. 无限维乘积测度：若 $P_{T_{2}}$ 为 $\left(\Omega_{T_{2}}, \mathscr{F}_{T_{2}}\right)$ 上的概率，则 $P_{T_{2}}\left(\pi_{T_{1}}^{T_{2}}\right)^{-1}$ 为 $\left(\Omega_{T_{1}}, \mathscr{F}_{T_{1}}\right)$ 上的概率．反之对 $B \in \overline{\mathscr{F}}_{T_{1}}^{T_{2}}$，必存在完全确定的 $A=\pi_{T_{1}}^{T_{2}}(B) \in \mathscr{F}_{T_{1}}$，使 $B=\left(\pi_{T_{1}}^{T_{2}}\right)^{-1} A$．所以对 $\left(\Omega_{T_{1}}, \mathscr{F}_{T_{1}}\right)$ 上的概率 $P_{T_{1}}$，由 $Q(B)=Q\left(\left(\pi_{T_{1}}^{T_{2}}\right)^{-1}(A)\right)=P(A)$ 亦可完全确定地在 $\left(\Omega_{T_{2}}, \overline{\mathscr{F}}_{T_{1}}^{T_{2}}\right)$ 上规定一个概率 $Q$．特别地，由 $P_{T_{1}}$ 可在 $\left(\Omega, \overline{\mathscr{F}}_{T_{1}}\right)$ 上规定一个概率
     1. 设对 $T$ 的有限子集 $T_{1}=\left\{t_{1}, \cdots, t_{n}\right\} \subseteq T$，以 $P_{T_{1}}$ 表示 $\left(\Omega_{T_{1}}, \mathscr{F}_{T_{2}}\right)$ 上的概率测度，则对测度族 $\{P_{T_{1}}, \textsf{ 有限 } T_{1} \subseteq T\}$，在 $(\Omega, \mathscr{F})$ 上存在非负有限可加集函数 $P$，满足对每个有限 $T_{1} \subseteq T$ 都有 $P\left(\pi_{T_{1}}^{T}\right)^{-1}=P_{T_{1}}$，其充要条件是 $\left\{P_{T_{1}}, T_{1} \subseteq T\right\}$ 满足下列相容性条件：对 $T$ 任意有限子集 $T_{1}, T_{2}$, $T_{1} \subseteq T_{2}$，有 $P_{T_{2}}\left(\pi_{T_{1}}^{T_{2}}\right)^{-1}=P_{T_{1}}$
     2. 设 $\left\{P_{t_{1} \cdots t_{n}}, t_{1}, \cdots, t_{n} \in T\right\}$ 为 $\left\{\left(\Omega_{t}, \mathscr{F}_{t}\right), t \in T\right\}$ 的有限维乘积空间上的满足相容性条件的概率测度族，又对每个 $t \in T$，存在 $\mathscr{F}_{t}$ 的子类 $\mathscr{C}_{t}$ 具有有限交性质，且 $P_{t}(A)=\sup \left\{P_{t}(C): C \in \mathscr{C}_{t}, C \subseteq A\right\}, \  A \in \mathscr{F}_{t}$．则在 $\left(\Omega_{T}, \mathscr{F}_{T}\right)$ 上存在唯一概率测度 $P$，满足 $P\left(\pi_{T_{1}}^{T}\right)^{-1}=P_{T_{1}}\  (\textsf{对每个有限 } T_{1} \subseteq T)$
-        1. $\text{Kolmogorov}$ 定理：设对每个 $t \in T,\left(\mathbf{R}_{t}, \mathscr{B}_{t}\right)=\left(\mathbf{R}, \mathscr{B}^{1}\right), \mathscr{G}= \left\{F_{t_{1} \cdots t_{n}}: t_{1}, \cdots, t_{n} \in T\right\}$ 为 $\left\{\left(\mathbf{R}_{t}, \mathscr{B}_{t}\right): t \in T\right\}$ 的乘积空间上的相容有限维分布函数族，则在 $\left(\mathbf{R}^{T}, \mathscr{B}^{T}\right)$ 上存在概率测度 $P$，使 $P$ 以 $\mathscr{G}$ 为有限维分布函数族
-        2. 称 $\left(\mathbf{R}^{T}, \mathscr{B}^{T}, P\right)$ 为标准概率空间
-    3. 设 $\left\{\left(\Omega_{t}, \mathscr{F}_{t}, P_{t}\right), t \in T\right\}$ 为一族概率空间，则在乘积可测空间 $\left(\Omega_{T}, \mathscr{F}_{T}\right)$ 上存在唯一概率测度 $P$，满足对每个有限 $T_{1} \subseteq T$，有 ${\displaystyle P\left(\pi_{T_{1}}^{T}\right)^{-1}=\underset{t \in T_{1}}{\prod} P_{t}}$
+    3. $\text{Kolmogorov}$ 定理：设对每个 $t \in T,\left(\mathbf{R}_{t}, \mathscr{B}_{t}\right)=\left(\mathbf{R}, \mathscr{B}^{1}\right), \mathscr{G}= \left\{F_{t_{1} \cdots t_{n}}: t_{1}, \cdots, t_{n} \in T\right\}$ 为 $\left\{\left(\mathbf{R}_{t}, \mathscr{B}_{t}\right): t \in T\right\}$ 的乘积空间上的相容有限维分布函数族，则在 $\left(\mathbf{R}^{T}, \mathscr{B}^{T}\right)$ 上存在概率测度 $P$，使 $P$ 以 $\mathscr{G}$ 为有限维分布函数族．称 $\left(\mathbf{R}^{T}, \mathscr{B}^{T}, P\right)$ 为标准概率空间
+    4. 设 $\left\{\left(\Omega_{t}, \mathscr{F}_{t}, P_{t}\right), t \in T\right\}$ 为一族概率空间，则在 $\left(\Omega_{T}, \mathscr{F}_{T}\right)$ 上存在唯一概率测度 $P$ 满足对每个有限 $T_{1} \subseteq T$ 有 ${\displaystyle P\left(\pi_{T_{1}}^{T}\right)^{-1}=\underset{t \in T_{1}}{\prod} P_{t}}$
 
 ## 1.2 随机变量
 ### 1.2.1 随机变量的概念
@@ -206,8 +205,9 @@
 
             积分范围为所有概率密度不为零的值，等号成立当且仅当 $X$ 与 $Y$ 的分布相同
 
-4. $p$ 阶平均收敛：对 $p \geqslant 1$ 及随机变量等价类规定 $L^{p}(\Omega, \mathscr{F}, P)=\left\{X: X \textsf{ 为随机变量，}\|X\|_{p}<\infty\right\}$，称它为 $(\Omega, \mathscr{F}, P)$ 上的 $L^{p}$ 空间，简称 $L^{p}$ 空间．对 $L^{p}$ 中元素列 $\left\{X_{n}\right\}$ 及 $Y$，若 ${\displaystyle \lim _{n \rightarrow \infty}\left\|X_{n}-Y\right\|_{p}=0}$，则称 $\left\{X_{n}\right\}$ $p$ 次平均收敛或 $p$ 阶平均收敛于 $Y$，记为 $X_{n} \stackrel{L^{p}}{\longrightarrow} Y$．由于当 $p<\infty$ 时，$P\left(\left|X_{n}-Y\right|>\varepsilon\right) \leqslant \varepsilon^{-p} \ \mathrm{E}\left|X_{n}-Y\right|^{p}$，因此 $X_{n} \stackrel{L^{p}}{\longrightarrow} Y$，必有 $X_{n} \stackrel{P}{\longrightarrow} Y$
-    1. 对实随机变量 $X$，记
+4. $p$ 阶平均收敛：对 $p \geqslant 1$ 及随机变量等价类规定 $L^{p}(\Omega, \mathscr{F}, P)=\left\{X: X \textsf{ 为随机变量，}\|X\|_{p}<\infty\right\}$，称它为 $(\Omega, \mathscr{F}, P)$ 上的 $L^{p}$ 空间，简称 $L^{p}$ 空间．对 $L^{p}$ 中元素列 $\left\{X_{n}\right\}$ 及 $Y$，若 ${\displaystyle \lim _{n \rightarrow \infty}\left\|X_{n}-Y\right\|_{p}=0}$，则称序列 $\left\{X_{n}\right\}$ $p$ 次平均收敛或 $p$ 阶平均收敛于 $Y$，记为 $X_{n} \stackrel{L^{p}}{\longrightarrow} Y$．当 $p = 2$ 时，也称作均方收敛
+    1. 当 $p<\infty$ 时，$P\left(\left|X_{n}-Y\right|>\varepsilon\right) \leqslant \varepsilon^{-p} \ \mathrm{E}\left|X_{n}-Y\right|^{p}$，因此 $X_{n} \stackrel{L^{p}}{\longrightarrow} Y$，必有 $X_{n} \stackrel{P}{\longrightarrow} Y$
+    2. 对实随机变量 $X$，记
 
         $$
         \begin{aligned}
@@ -219,17 +219,17 @@
         1. $\text{H}\ddot{\mathrm o}\text{lder}$ 不等式：设 $p \geqslant 1, q \geqslant 1$ 满足 $\dfrac{1}{p}+ \dfrac{1}{q}=1$（约定 $1+ \dfrac{1}{\infty}=1$），$X, Y$ 为实值随机变量，则有 $E|X Y| \leqslant\|X\|_{p}\|Y\|_{q}$，且对 $1 \leqslant r \leqslant r^{\prime} \leqslant \infty$ 有 $\|X\|_{r} \leqslant\|X\|_{r^{\prime}}$
         2. $\text{Minkowski}$ 不等式：对随机变量 $X, Y$ 及实数 $c, p \geqslant 1$，有 ① $\|c X\|_{p}=|c|\|X\|_{p}$；② $\|X+Y\|_{p} \leqslant\|X\|_{p}+\|Y\|_{p}$
 
-    2. $L^{p}$ 的性质
+    3. $L^{p}$ 的性质
         1. $\|\cdot\|_{p}$ 是 $L^{p}$ 中范数，$L^{p}$ 是线性赋范空间
         2. 对 $p \in[1, \infty], L^{p}$ 为 $\text{Banach}$ 空间，且是一个完备格
         3. 若在 $L^{2}(\Omega, \mathscr{F}, P)$ 中取 $(X, Y)=\mathrm{E}[X Y]$，则 $(X, Y)$ 是内积，$L^{2}(\Omega, \mathscr{F}, P)$ 是 $\text{Hilbert}$ 空间，且也是一个完备格
-    3. 对 $1 \leqslant p \leqslant \infty$ 及 $L^{p}$ 中元素列 $\left\{X_{n}\right\}$，下列两个事实等价
+    4. 对 $1 \leqslant p \leqslant \infty$ 及 $L^{p}$ 中元素列 $\left\{X_{n}\right\}$，下列两个事实等价
         1. $X_{n} \stackrel{L^{p}}{\longrightarrow} X$
         2. $\left\{X_{n}\right\}$ 是基本列，即 ${\displaystyle \lim _{n, m \rightarrow \infty}\left\|X_{n}-X_{m}\right\|_{p}=0}$
 
         当 $1 \leqslant p<\infty$ 时，上述事实又与下述事实等价：$\left\{\left|X_{n}\right|^{p}\right\}_{n \geqslant 1}$ 一致可积，且 $X_{n} \stackrel{P}{\longrightarrow} X$
 
-    4. 对 $p \in [1, \infty)$ 及随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，若存在 $Y \in L^{p} \ (\Omega, \mathscr{F}, P)$ 使对每个 $n$ 都有 $\left|X_{n}\right| \leqslant Y$，则当 $n \rightarrow \infty$ 时，$X_{n} \stackrel{p}{\longrightarrow} X$ 当且仅当 $X_{n} \stackrel{L^{p}}{\longrightarrow} X$
+    5. 对 $p \in [1, \infty)$ 及随机变量序列 $\left\{X_{n}\right\}_{n \geqslant 1}$，若存在 $Y \in L^{p} \ (\Omega, \mathscr{F}, P)$ 使对每个 $n$ 都有 $\left|X_{n}\right| \leqslant Y$，则当 $n \rightarrow \infty$ 时，$X_{n} \stackrel{p}{\longrightarrow} X$ 当且仅当 $X_{n} \stackrel{L^{p}}{\longrightarrow} X$
 
 5. 依分布收敛：若 $(X_n), X$ 是随机变量，若 $F_{X_n} \overset{w}{\longrightarrow} F_X$，则称 $X_n$ 依分布收敛于 $X$，记为 $X_n \overset{w}{\longrightarrow} X$．依分布收敛只关心 $X_n$ 的分布函数，所以 $X_n$ 和 $X$ 可以定义在不同的概率空间上
     1. 分布函数的弱收敛：若 $|F_n(x)|$ 是一列非负递增函数列，如果对 $\forall x\in C(F)$（$F$ 的连续点全集）恒有 ${\displaystyle \lim_{n\to \infty} F_n(x)=F(x)}$，则称 $F_n(x)$ 弱收敛到 $F(x)$（$F(x)$ 单调递增），记作 $F_{n} \overset{w}{\longrightarrow} F$

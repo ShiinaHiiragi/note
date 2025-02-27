@@ -15,7 +15,17 @@
         3. 对于任意 $n \in \mathbf{N}$ 都有 ${\displaystyle F_{X_1, X_2, \cdots, X_n}(x_1, x_2, \cdots, x_n)=\prod_{k=1}^n F_{X_k}(x_k)}$
         4. 对于任意 $n \in \mathbf{N}$ 都有 ${\displaystyle p_{X_1, X_2, \cdots, X_n}(x_1, x_2, \cdots, x_n)=\prod_{k=1}^n p_{X_k}(x_k)}$
     2. 设 $\left\{X_{t}\right\}_{t \in T}$ 为独立随机变量族，$\left\{T_{\alpha}, \alpha \in J\right\}$ 为 $T$ 的互不相交子集，$\left\{f_{\alpha}\left(X_{t}, t \in T_{\alpha}\right), \alpha \in J\right\}$ 为 $\text{Borel}$ 函数族，则 $\left\{Y_{\alpha}=f_{\alpha}\left(X_{t}, t \in T_{\alpha}\right), \alpha \in J\right\}$ 为独立随机变量族
-    3. 设 $\left\{X_{t}\right\}_{t \in T}$ 为独立随机变量族，且对每个 $t \in T$ 都有 $f_{t}\left(X_{t}\right)$ 可积（非负），则对 $T$ 的任一有限子集 $I$，都有 ${\displaystyle \mathrm{E}\left[\prod_{t \in I} f_{t}\left(X_{t}\right)\right]=\prod_{t \in I} \mathrm{E}\left[f_{t}\left(X_{t}\right)\right]}$．特别地，若 $\left\{X_{t}\right\}_{t \in T}$ 为独立可积（非负）随机变量族，则对 $T$ 的任一有限子集 $I$，都有 ${\displaystyle \mathrm{E}\left[\prod_{t \in I} X_{t}\right]=\prod_{t \in I} \mathrm{E}\left[X_{t}\right]}$
+    3. 设 $\left\{X_{t}\right\}_{t \in T}$ 为独立随机变量族，且对每个 $t \in T$ 都有 $f_{t}\left(X_{t}\right)$ 可积（非负），则对 $T$ 的任一有限子集 $I$，都有
+
+        $$
+        \mathrm{E}\left[\prod_{t \in I} f_{t}\left(X_{t}\right)\right]=\prod_{t \in I} \mathrm{E}\left[f_{t}\left(X_{t}\right)\right]
+        $$
+
+        特别地，若 $\left\{X_{t}\right\}_{t \in T}$ 为独立可积（非负）随机变量族，则对 $T$ 的任一有限子集 $I$，都有
+
+        $$
+        \mathrm{E}\left[\prod_{t \in I} X_{t}\right]=\prod_{t \in I} \mathrm{E}\left[X_{t}\right]
+        $$
 
     !!! note "独立随机变量的性质"
         设 $X, Y$ 是两个随机变量，则 $X$ 与 $Y$ 独立分别与下列条件等价
