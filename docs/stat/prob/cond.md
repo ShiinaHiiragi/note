@@ -29,11 +29,15 @@
             $$
 
     2. 二维连续随机向量 $(X, Y)$ 的条件期望：设随机向量 $(X, Y)$ 的联合密度为 $p(x, y)$，且有 ${\displaystyle \int_{-\infty}^{+\infty} |x| p_X(x \mid y) \mathrm dx} < \infty$，则 $X$ 在在条件 $Y = y_{0}$ 下的条件期望 $\mathrm{E}[X \mid Y] = \mathrm{E}[X \mid Y = y_{0}] = {\displaystyle \int_{-\infty}^{+\infty} x p_X(x \mid y_{0}) \mathrm dx}$
-        1. 全期望公式：若二维随机向量 $(X, Y)$ 有 $\mathrm{E} X, \mathrm{E} Y < \infty$ 且在任何条件 $Y = y$ 下都有 $g(y) = E[X \mid Y]$ 存在，则 $g(Y)$ 是一个随机变量且 $\mathrm{E}[\mathrm{E}[X \mid Y]] = \mathrm{E} X$
-        2. 条件方差：定义 $\mathrm{D}[X \mid Y] = \mathrm{E}[X^{2} \mid Y] - \left(\mathrm{E}[X \mid Y]\right)^{2}$，于是等式 $\mathrm{D} X = \mathrm{D}\left[\mathrm{E}[X \mid Y]\right] + \mathrm{E}\left[\mathrm{D}[X \mid Y]\right]$ 成立
-        3. 回归：设 $X, Y$ 是两个随机变量，$Y$ 与 $X$ 存在某种关联且 $X$ 可观测，则当且仅当 $f(X)=E[Y\mid X]$ 时，$Y$ 的近似 $f(X)$ 的平均误差 $E[|Y-f(X)|^2]$ 最小，称 $E[Y\mid X]$ 为 $Y$ 的一个回归．现实应用中，常用 $L(X) = aX+b$ 近似 $Y$, 使 $\mathrm{E}[Y-L(X)]^2$ 取最小值，称之为最佳线性预测
-            1. 易知 $L(X) = \mathrm{E}Y + r(X, Y) \dfrac{\mathrm{D}Y}{\mathrm{D}X}(X - \mathrm{E}X)$，称 $L(X)$ 为 $Y$ 的线性回归
-            2. 二阶矩理论：$\operatorname{Cov}(L(X), Y - L(X))=0$，说明残差 $Y - L(X)$ 中不再包含对预测 $Y$ 有用的信息
+        1. 平滑性：$\mathrm{E}[\mathrm{E}[X \mid Y]] = \mathrm{E} X$
+        2. 对随机变量 $X, Y$ 的函数 $\varphi(X, Y)$ 恒有 $\mathrm{E}[\varphi(X, Y) \mid Y=y]=\mathrm{E}[\varphi(X, y) \mid Y=y]$
+        3. 若随机向量 $(X, Y)$ 有 $\mathrm{E} X, \mathrm{E} Y < \infty$ 且在任何条件 $Y = y$ 下都有 $g(y) = E[X \mid Y]$ 存在，则 $g(Y)$ 是一个随机变量
+    3. 二维连续随机向量 $(X, Y)$ 的条件方差：定义 $\mathrm{D}[X \mid Y] = \mathrm{E}[X^{2} \mid Y] - \left(\mathrm{E}[X \mid Y]\right)^{2}$，于是有 $\mathrm{D} X = \mathrm{D}\left[\mathrm{E}[X \mid Y]\right] + \mathrm{E}\left[\mathrm{D}[X \mid Y]\right]$
+
+3. 回归：设 $X, Y$ 是两个随机变量，$Y$ 与 $X$ 存在某种关联且 $X$ 可观测．当且仅当 $f(X)=E[Y\mid X]$ 时，$Y$ 的近似 $f(X)$ 的平均误差 $E[|Y-f(X)|^2]$ 最小，称 $E[Y\mid X]$ 为 $Y$ 的一个回归
+    1. 现实应用中，常用 $L(X) = aX+b$ 近似 $Y$, 使 $\mathrm{E}[Y-L(X)]^2$ 取最小值，称之为最佳线性预测
+    2. 易知 $L(X) = \mathrm{E}Y + r(X, Y) \dfrac{\mathrm{D}Y}{\mathrm{D}X}(X - \mathrm{E}X)$，称 $L(X)$ 为 $Y$ 的线性回归
+    3. 二阶矩理论：$\operatorname{Cov}(L(X), Y - L(X))=0$，说明残差 $Y - L(X)$ 中不再包含对预测 $Y$ 有用的信息
 
 ## 4.2 现代定义
 ### 4.2.1 条件期望与概率

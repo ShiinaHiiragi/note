@@ -120,7 +120,7 @@
 
 ## 1.2 随机变量
 ### 1.2.1 随机变量的概念
-1. 随机变量：设 $(\Omega, \mathscr{F})$ 为概率可测空间，则由 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{\mathbf{R}}\right)$ 或 $\left(\widehat{\mathbf{R}}, \mathscr{B}_{\widehat{\mathbf{R}}}\right)$ 的可测函数称为（有限值）随机变量或或广义实值随机变量，也记为 $X \in \mathscr{F}$，通常用 $\text{r.v.}$作为随机变量的简写
+1. 随机变量：设 $(\Omega, \mathscr{F})$ 为概率可测空间，则由 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{\mathbf{R}}\right)$ 或 $(\widehat{\mathbf{R}}, \mathscr{B}_{\widehat{\mathbf{R}}})$ 的可测函数称为（有限值）随机变量或或广义实值随机变量，也记为 $X \in \mathscr{F}$，通常用 $\text{r.v.}$作为随机变量的简写
     1. 若 $E=\left\{r_{n}\right\}$ 为 $\mathbf{R}$ 中稠密集，则 $X$ 为随机变量的充要条件是对每个 $r_{n} \in E$ 都有 $[X \leqslant r_n] = \left\{\omega: X(\omega) \leqslant r_{n}\right\} \in \mathscr{F}$
     2. 若 $\left\{X_{n}\right\}_{n \geqslant 1}$ 为随机变量序列，则 ${\displaystyle \sup _{n \geqslant 1} X_{n},  \inf _{n \geqslant 1} X_{n}, \varlimsup_{n \rightarrow \infty} X_{n}, \varliminf_{n \rightarrow \infty} X_{n}}$ 都是随机变量
 2. 离散随机变量：若存在 $(\Omega, \mathscr{F})$ 的一个有限分割 $\left\{A_{i}\right\}_{i \in I}$（即 $I$ 为有限的，$A_{i} \in \mathscr{F}$，且 $A_{i} A_{j}=\varnothing, i \neq j, {\displaystyle \sum_{i \in I} A_{i}=\Omega}$）及互不相同的实数 $\left\{x_{i}\right\}_{i \in I}$，使 $\Omega$ 上的函数 $X$ 可表示为 $X(\omega)=x_{i}$，当 $\omega \in A_{i}, i \in I$，则称 $X$ 为离散随机变量．显然离散随机变量是随机变量，且若 $x_{i}$ 互不相同，$x_{i}$ 与 $A_{i}$ 由 $X$ 唯一确定．对 $A \in \mathscr{F}$，$I_{A}(\omega)$ 是离散随机变量，$X$ 可表示为 ${\displaystyle X(\omega)=\sum_{i \in I} x_{i} I_{A_{i}}(\omega)}$

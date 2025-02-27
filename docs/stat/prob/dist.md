@@ -9,10 +9,7 @@
         3. 若随机变量 $X, Y$ 存在联合密度 $p_{(X, Y)}(x, y)$，则 $X, Y$ 的边际密度函数必存在
 
             $$
-            \begin{aligned}
-            p_{X}(x) &= \int_{\mathbf{R}} p_{(X, Y)}(x, y) \mathrm dy \\
-            p_{Y}(y) &= \int_{\mathbf{R}} p_{(X, Y)}(x, y) \mathrm dx
-            \end{aligned}
+            p_{X}(x) = \int_{\mathbf{R}} p_{(X, Y)}(x, y) \mathrm dy, \ p_{Y}(y) = \int_{\mathbf{R}} p_{(X, Y)}(x, y) \mathrm dx
             $$
 
     2. 随机变量的变换：设 $f$ 与 $T$ 分别为一元与 $n$ 元 $\text{Borel}$ 可测函数
@@ -22,26 +19,31 @@
         2. 对于 $(\Omega, \mathscr{F}, P)\overset{X}{\longrightarrow} (R^n, \mathscr{B}^n, P_X)\overset{T}{\longrightarrow}(R^n, \mathscr{B}^n)$，若 $T$ 是 $(R^n, \mathscr{B}^n)\to (R^n, \mathscr{B}^n)$ 的一个双射且 $T$ 是一个局部微分同胚，$T$ 存在连续的混合偏导数 $\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}$ 且混合偏导数的行列式不为零
             1. 已知 $P_X(x_1, x_2, \cdots, x_n)$，则有 $P_Y(y_1, y_2, \cdots, y_n)=P_X(T^{-1}(y))\left|\dfrac{\partial(y_1, y_2, \cdots, y_n)}{\partial(x_1, x_2, \cdots, x_n)}\right|$
             2. 若 $X_1, X_2, \cdots, X_n$ 是独立的，$f_1, f_2, \cdots, f_n$ 是 $n$ 个可测函数，则 $f(X_1), f(X_2), \cdots, f(X_n)$ 是独立的
-        3. 若 $X, Y$ 是独立服从某种分布类型的随机变量，如果 $X+Y$ 也具有该类型的分布，则称随机变量具有再生性．易知二项分布、$\mathrm{Poisson}$ 分布与正态分布分布是具有再生性的
+            3. 若 $X, Y$ 是独立服从某种分布类型的随机变量，如果 $Z = X+Y$ 也具有该类型的分布，则称随机变量具有再生性．易知二项分布、$\mathrm{Poisson}$ 分布与正态分布分布是具有再生性的
 
 2. 分布函数：设 $(\Omega, \mathscr{F}, P)$ 为概率空间，$X: (\Omega, \mathscr{F}) \to (\mathbf{R}, \mathscr{B}_{\mathbf{R}})$ 为有限实值随机变量，$X$ 在 $(\mathbf{R}, \mathscr{B}_{\mathbf{R}})$ 上诱导的概率测度为 $\overline P$．称函数 $F(x)=\overline P((-\infty, x])=P[X \leqslant x]=P(\{\omega : X(\omega) \leqslant x\})$ 为随机变量 $X$ 诱导的分布函数．若 $X=\left(X_{1}, \cdots, X_{n}\right)$ 为 $n$ 维随机变量，则称函数 $F\left(x_{1}, x_{2}, \cdots, x_{n}\right)=P\left[X_{1} \leqslant x_{1}, X_{2} \leqslant x_{2}, \cdots, X_{n} \leqslant x_{n}\right]$ 为 $X$ 诱导的 $n$ 维分布函数
-    1. 设 $F(x)$ 为离散随机变量 $X$ 的分布函数
-        1. $F(x)$ 单调递增
-        2. ${\displaystyle \lim _{x \rightarrow-\infty} F(x)=0, \lim _{x \rightarrow+\infty} F(x)=1}$
-        3. $F(x)$ 是一个分段函数且 $F(x)$ 在 $x_0$ 不连续 $\leftrightarrow F[X=x_0] = F(x_0) - F(x_0 - 0) \neq 0$
-    2. 设 $F(x)$ 为连续随机变量 $X$ 的分布函数
-        1. $F(x)$ 单调递增
-        2. ${\displaystyle \lim _{x \rightarrow-\infty} F(x)=0, \lim _{x \rightarrow+\infty} F(x)=1}$
-        3. $F(x)$ 右连续．若定义 $\overline{F}(x)=P[X < x]$，则 $\overline{F}$ 左连续
+    1. 取 $\Omega=\mathbf{R}, \mathscr{F}=\mathscr{B}$，$P$ 为由 $F$ 在 $(\mathbf{R}, \mathscr{B})$ 上生成的 $L-S$ 测度，则它是一个概率测度；令 $X(x)=x, x \in \mathbf{R}$，则它是一个随机变量且 $P[X \leqslant y]=P\{x: x \leqslant y\}=F(y)$．分别称 $(\mathbf{R}, \mathscr{B}, P)$ 和 $X$ 为标准概率空间和标准随机变量
+    2. 随机变量与随机向量分布函数的性质
+        1. 设 $F(x)$ 为离散随机变量 $X$ 的分布函数
+            1. $F(x)$ 单调递增
+            2. ${\displaystyle \lim _{x \rightarrow-\infty} F(x)=0, \lim _{x \rightarrow+\infty} F(x)=1}$
+            3. $F(x)$ 是一个分段函数且 $F(x)$ 在 $x_0$ 不连续 $\leftrightarrow F[X=x_0] = F(x_0) - F(x_0 - 0) \neq 0$
+        2. 设 $F(x)$ 为连续随机变量 $X$ 的分布函数
+            1. $F(x)$ 单调递增
+            2. ${\displaystyle \lim _{x \rightarrow-\infty} F(x)=0, \lim _{x \rightarrow+\infty} F(x)=1}$
+            3. $F(x)$ 右连续．若定义 $\overline{F}(x)=P[X < x]$，则 $\overline{F}$ 左连续
 
-        反之，若 $F(x)$ 为 $\mathbf{R}$ 上满足上述命题的函数，则必存在概率空间 $(\Omega, \mathscr{F}, P)$ 及其上的随机变量 $X$ 使 $P[X \leqslant x]=F(x)$
+            反之，若 $F(x)$ 为 $\mathbf{R}$ 上满足上述命题的函数，则必存在概率空间 $(\Omega, \mathscr{F}, P)$ 及其上的随机变量 $X$ 使 $P[X \leqslant x]=F(x)$
 
-    3. 设 $F(x_1, x_2, \cdots, x_n)$ 为随机向量 $X$ 的分布函数
-        1. $F_X(x_1, x_2, \cdots, x_n)$ 关于每个变量 $X_i$ 单调递增
-        2. ${\displaystyle \lim_{x \to -\infty} F_X(x_1, x_2, \cdots, x, \cdots, x_n)=0, \lim_{x \to +\infty} F_X(x_1, x_2, \cdots, x, \cdots, x_n)=1}$
-        3. $F_X(x_1, x_2, \cdots, x_n)$ 关于每个变量 $X_i$ 右连续
-    4. 取 $\Omega=\mathbf{R}, \mathscr{F}=\mathscr{B}$，$P$ 为由 $F$ 在 $(\mathbf{R}, \mathscr{B})$ 上生成的 $L-S$ 测度，则它是一个概率测度；令 $X(x)=x, x \in \mathbf{R}$，则它是一个随机变量且 $P[X \leqslant y]=P\{x: x \leqslant y\}=F(y)$．分别称 $(\mathbf{R}, \mathscr{B}, P)$ 和 $X$ 为标准概率空间和标准随机变量
-    5. 若随机向量 $\left(X_{1}, \cdots, X_{n}\right)$ 和 $\left(Y_{1}, \cdots, Y_{n}\right)$ 有相同 $n$ 维分布函数，则对 $\mathbf{R}^{n}$ 到 $\mathbf{R}^{m}$ 的任一 $\text{Borel}$ 函数 $g$，$g\left(X_{1}, \cdots, X_{n}\right)$ 和 $g\left(Y_{1}, \cdots, Y_{n}\right)$ 有相同的分布，即对一切 $\mathbf{R}^{m}$ 中的 $\text{Borel}$ 集 $B$ 都有 $P\left\{g\left(X_{1}, \cdots, X_{n}\right) \in B\right\}=P\left\{g\left(Y_{1}, \cdots, Y_{n}\right) \in B\right\}$
+        3. 设 $F(x_1, x_2, \cdots, x_n)$ 为随机向量 $X$ 的分布函数
+            1. $F_X(x_1, x_2, \cdots, x_n)$ 关于每个变量 $X_i$ 单调递增
+            2. ${\displaystyle \lim_{x \to -\infty} F_X(x_1, x_2, \cdots, x, \cdots, x_n)=0, \lim_{x \to +\infty} F_X(x_1, x_2, \cdots, x, \cdots, x_n)=1}$
+            3. $F_X(x_1, x_2, \cdots, x_n)$ 关于每个变量 $X_i$ 右连续
+
+    3. 若随机向量 $X = \left(X_{1}, \cdots, X_{n}\right)$ 和 $Y= \left(Y_{1}, \cdots, Y_{n}\right)$ 有相同 $n$ 维分布函数
+        1. 称随机向量 $X$ 与 $Y$ 是同分布的，记作 $X \stackrel{d}{=} Y$，随机变量同理
+        2. 对 $\mathbf{R}^{n}$ 到 $\mathbf{R}^{m}$ 的任一 $\text{Borel}$ 函数 $g$，$g\left(X_{1}, \cdots, X_{n}\right)$ 和 $g\left(Y_{1}, \cdots, Y_{n}\right)$ 有相同的分布
+        3. 对一切 $\mathbf{R}^{m}$ 中的 $\text{Borel}$ 集 $B$ 都有 $P\left\{g\left(X_{1}, \cdots, X_{n}\right) \in B\right\}=P\left\{g\left(Y_{1}, \cdots, Y_{n}\right) \in B\right\}$
 
 3. 连续随机变量的密度函数
     1. 若 $F$ 表示随机变量 $X$ 的分布函数，$\mu_{F}$ 表示由 $F$ 在 $(\mathbf{R}, \mathscr{B})$ 上生成的 $L-S$ 测度，又 $\lambda$ 表示 $(\mathbf{R}, \mathscr{B})$ 上的 $\text{Lebesgue}$ 测度，则 $\mu_{F} \ll \lambda$ 的充要条件是存在 $f \in L^{1}(\mathrm{d} \lambda)$，使得
