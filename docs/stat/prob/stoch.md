@@ -26,24 +26,17 @@
         则称 $X$ 的均值有遍历性；若
 
         $$
-        \widehat{R}(\tau)=\lim _{T \rightarrow \infty} \dfrac{1}{2 T} \int_{-T}^{T}(X(t)-m)(X(t+\tau)-m) \mathrm d t \stackrel{L_{2}}{\longrightarrow} R(\tau) \textsf{ 或 } \widehat{R}(\tau)=\lim _{N \rightarrow \infty} \dfrac{1}{2 N+1} \sum_{k=1}^{n}\left(X(k+\tau)-\widehat{m}_{n}\right)\left(X(k)-\widehat{m}_{n}\right) \stackrel{L_{2}}{\longrightarrow} R(\tau)
+        \begin{aligned}
+        & \widehat{R}(\tau)=\lim _{T \rightarrow \infty} \dfrac{1}{2 T} \int_{-T}^{T}(X(t)-m)(X(t+\tau)-m) \mathrm d t \stackrel{L_{2}}{\longrightarrow} R(\tau) \\
+        \textsf{或 } & \widehat{R}(\tau)=\lim _{N \rightarrow \infty} \dfrac{1}{2 N+1} \sum_{k=1}^{n}\left(X(k+\tau)-\widehat{m}_{n}\right)\left(X(k)-\widehat{m}_{n}\right) \stackrel{L_{2}}{\longrightarrow} R(\tau)
+        \end{aligned}
         $$
 
         则称 $X$ 的协方差函数有遍历性；若随机过程（或序列）的均值和协方差函数都有遍历性，则称此随机过程有遍历性
 
         1. 均值遍历性定理
-            1. 设 $X=\left\{X_{n}, n=0, \pm 1, \cdots\right\}$ 为平稳序列，其协方差函数为 $R(\tau)$，则 $X$ 有遍历性当且仅当
-
-                $$
-                \lim _{N \rightarrow \infty} \dfrac{1}{N} \sum_{\tau=0}^{N-1} R(\tau)=0
-                $$
-
-            2. 若 $X=\{X(t),-\infty<t<\infty\}$ 为平稳过程，则 $X$ 有遍历性当且仅当
-
-                $$
-                \lim _{T \rightarrow \infty} \dfrac{1}{T} \int_{0}^{2 T}\left(1-\dfrac{\tau}{2 T}\right) R(\tau) d \tau=0
-                $$
-
+            1. 设 $X=\left\{X_{n}, n=0, \pm 1, \cdots\right\}$ 为平稳序列，其协方差函数为 $R(\tau)$，则 $X$ 有遍历性当且仅当 ${\displaystyle \lim _{N \rightarrow \infty} \dfrac{1}{N} \sum_{\tau=0}^{N-1} R(\tau)=0}$
+            2. 若 $X=\{X(t),-\infty<t<\infty\}$ 为平稳过程，则 $X$ 有遍历性当且仅当 ${\displaystyle \lim _{T \rightarrow \infty} \dfrac{1}{T} \int_{0}^{2 T}\left(1-\dfrac{\tau}{2 T}\right) R(\tau) d \tau=0}$
         2. 协方差函数遍历性定理：设 $X=\{X(t),-\infty<t<\infty\}$ 为平稳过程，$Y_{\tau}=\left\{Y_{\tau}(t),-\infty<t<\infty\right\}$，其中 $Y_{\tau}(t)=(X(t+\tau)-m)(X(t)-m)$，则对给定的 $\tau$，$X$ 的协方差函数 $R(\tau)$ 有遍历性当且仅当
 
             $$
@@ -140,5 +133,6 @@
     3. 对任何状态 $i$ 都有 ${\displaystyle \lim _{\tau \to 0} P[X(t+\tau)=i \mid X(t)=i]=\lim _{\tau \to 0} P_{i i}(\tau)=1}$
 
 ## 5.3 Brown 过程
+1. 
 
 ## 5.4 鞅过程
