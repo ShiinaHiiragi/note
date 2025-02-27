@@ -573,7 +573,6 @@ const refList = [
         year: 2011,
         press: "人民邮电出版社",
         locate: "北京",
-        plot: 60
     },
     {
         author: ["Rob Nederpelt", "Herman Geuvers"],
