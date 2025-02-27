@@ -40,7 +40,7 @@
     3. $W_{1}, \cdots, W_{n}$ 的联合密度为 ${\displaystyle f_{W_{1}, \cdots, W_{n} \mid N(t)=n}\left(w_{1}, \cdots, w_{n} \mid n\right)=\dfrac{n!}{t^{n}}, \  0<w_{1}<\cdots<w_{n} \leqslant t}$
 
 ## 5.2 Markov 过程
-### 5.2.1 离散时间 Markov 链
+### 5.2.1 离散 Markov 链
 1. 若对任何一列状态 $i_{0}, i_{1}, \cdots, i_{n-1}, i, j$ 及对任何 $n \geqslant 0$，随机过程 $\left\{X_{n}, n \geqslant 0\right\}$ 满足 $\text{Markov}$ 性质
 
     $$
@@ -89,7 +89,7 @@
     1. 如果过程的初始状态 $X_{0}$ 有平稳概率分布 $\pi=\left\{\pi_{j}, j \geqslant 0\right\}$，则 $P[X_{n}=j]=\pi_{j}$
     2. 若不可约 $\text{Markov}$ 链中的所有状态都是遍历的，则对所有 $i, j$，极限 ${\displaystyle \lim _{n \rightarrow \infty} P_{i j}^{(n)}=\pi_{j}}$ 存在且 $\pi=\left\{\pi_{j}, j \geqslant 0\right\}$ 为平稳分布，即 ${\displaystyle \sum_{j=0}^{\infty} \pi_{j}=1, \pi_{j}>0}$ 且 ${\displaystyle \sum_{i=0}^{\infty} \pi_{i} P_{i j}=\pi_{j}}$．反之，若不可约 $\text{Markov}$ 链只存在一个平稳分布，且该 $\text{Markov}$ 链的所有状态都是遍历的，则该平稳分布就是此 $\text{Markov}$ 链的极限分布，即对任何 $i$ 有 ${\displaystyle \lim _{n \rightarrow \infty} P_{i j}^{(n)}=\pi_{j}}$
 
-### 5.2.2 连续时间 Markov 链
+### 5.2.2 连续 Markov 链
 1. 若对所有 $s, t \geqslant 0$ 和任何非负整数 $i, j, x(u), 0 \leqslant u \leqslant s$，随机过程 $X(t), t \geqslant 0$ 满足
 
     $$
