@@ -44,7 +44,7 @@
     4. 令 $\left\{\left\langle d_{i}, \tau_{i}\right\rangle: i \in \mathbf{N}\right\}$ 是递归的序列，其中每个 $d_{i} \in \mathbf{N}$， $\tau_{i} \in 2^{<\omega}$，若 ${\displaystyle \sum_{i \in \mathbf{N}} 2^{-d_{i}} \leqslant 1}$，则称 $\left\{\left\langle d_{i}, \tau_{i}\right\rangle: i \in \mathbf{N}\right\}$ 是一个请求序列
         1. $\text{Levin}-\text{Schnorr}-\text{Chaitin}$ 定理：任给请求序列 $\left\{\left\langle d_{i}, \tau_{i}\right\rangle: i \in \mathbf{N}\right\}$，存在满足该请求序列的无前束程序 $M$
         2. 假设存在请求序列 $\left\{\left\langle d_{i}, \tau_{i}\right\rangle: i \in \mathbf{N}\right\}$，则存在常量 $c \in \mathbf{N}$，对 $i \in \mathbf{N}$ 有 $K\left(\tau_{i}\right) \leqslant d_{i}+c_{\circ}$
-4. $1-$随机：称无穷 $0-1$ 序列 $Z \in 2^{\omega}$ 是 $1-$随机的，当且仅当存在 $d \in \mathbf{N}$，使得 $Z$ 的每个有穷前段都是 $d$ 随机的，即对任意 $n \in \mathbf{N}$，有 $K(Z \upharpoonright n) \geqslant n-d$
+4. $1-$随机：称无穷 $0-1$ 序列 $Z \in 2^{\omega}$ 是 $1-$随机的，当且仅当存在 $d \in \mathbf{N}$ 使得 $Z$ 的每个有穷前段都是 $d$ 随机的，即对任意 $n \in \mathbf{N}$，有 $K(Z \upharpoonright n) \geqslant n-d$
     1. 给定 $d \in \mathbf{N}$，称字符序列 $\sigma$ 是 $d-K-$随机的当且仅当 $K(\sigma) \geqslant|\sigma|-d$
     2. $L(\Omega)$ 是递归可枚举的
     3. 称序列 $Z \in 2^{\omega}$ 或实数 $r=z.Z(z \in \mathbf{Z})$ 是左递归可枚举的当且仅当 $L(Z)$ 是递归可枚举的，（当考虑实数时）即小于 $r$ 的二进有理数是递归可枚举的

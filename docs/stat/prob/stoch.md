@@ -29,7 +29,7 @@
 2. 记 $[0, \infty)$ 为观察过程的时间轴，$0$ 为起始时刻，$N(b)-N(a)$ 代表时间区间 $(a, b]$ 上发生的事件数，若有如下假定
     1. 在不相交区间中事件发生的数目相互独立
     2. 对任何时刻 $t$ 和正数 $h$，增量 $N(t+h)-N(t)$ 的分布只依赖于区间长度 $h$ 而不依赖时刻 $t$
-    3. 存在正常数 $\lambda$，当 $h \to 0$ 时，使在长度为 $h$ 的小区间中事件至少发生一次的概率 $P\{N(t+h)-N(t) \geqslant 1\}=\lambda h+o(h)$
+    3. 存在正常数 $\lambda$，当 $h \to 0$ 时，使在长度为 $h$ 的小区间中事件至少发生一次的概率 $P[N(t+h)-N(t) \geqslant 1]=\lambda h+o(h)$
     4. 在小区间 $(t, t+h]$ 发生两个及以上事件的概率为 $o(h)$，即可以忽略不计
 
     则过程 $N(t)$ 为 $\text{Poisson}$ 过程
@@ -40,11 +40,8 @@
     3. $W_{1}, \cdots, W_{n}$ 的联合密度为 ${\displaystyle f_{W_{1}, \cdots, W_{n} \mid N(t)=n}\left(w_{1}, \cdots, w_{n} \mid n\right)=\dfrac{n!}{t^{n}}, \  0<w_{1}<\cdots<w_{n} \leqslant t}$
 
 ## 5.2 Markov 过程
-1. 概率生成函数：若 $X$ 为离散随机变量，则期望 $\mathrm{E}\left[s^{X}\right]$ 为其概率生成函数，记作 $\phi_{X}(s)$
-    1. 若 $P[X=k]=p_{k}, k \in \mathbf{N}$，则 $\phi_{X}(s)={\displaystyle \sum_{k=0}^{\infty} p_{k} s^{k}}$
-    2. 若 $X, Y$ 为独立随机变量，则其和式的概率生成函数为 $\phi_{X+Y}(s)=\phi_{X}(s) \phi_{Y}(s)$
-
-2. 若对任何一列状态 $i_{0}, i_{1}, \cdots, i_{n-1}, i, j$ 及对任何 $n \geqslant 0$，随机过程 $\left\{X_{n}, n \geqslant 0\right\}$ 满足 $\text{Markov}$ 性质
+### 5.2.1 离散时间 Markov 链
+1. 若对任何一列状态 $i_{0}, i_{1}, \cdots, i_{n-1}, i, j$ 及对任何 $n \geqslant 0$，随机过程 $\left\{X_{n}, n \geqslant 0\right\}$ 满足 $\text{Markov}$ 性质
 
     $$
     P\left[X_{n+1}=j \mid X_{0}=i_{0}, \cdots, X_{n-1}=i_{n-1}, X_{n}=i\right]=P\left[X_{n+1}=j \mid X_{n}=i\right]
@@ -54,7 +51,57 @@
 
     1. 当 $P_{i j}^{n, n+1}$ 与 $n$ 无关时称该 $\text{Markov}$ 链有平稳转移概率，记为 $P_{i j}$，称作时间齐性 $\text{Markov}$ 链或时齐 $\text{Markov}$ 链
         1. 对任意 $i, j \geqslant 0$ 有 $P_{i j} \geqslant 0$ 且 ${\displaystyle \sum_{j=0}^{\infty} P_{i j}=1}$
-        2. ...
+        2. 称 $\boldsymbol{P}^{(n)}=[P_{i j}^{(n)}]$ 为 $\text{Markov}$ 链的 $n$ 步转移概率矩阵
+            1. 设 $\boldsymbol{P}^{(1)} = \boldsymbol{P}$，则 $\boldsymbol{P}^{(n)} = \boldsymbol{P}^{n}$
+            2. 约定 $P_{i i}^{(0)}=1$，当 $j \neq i$ 时 $P_{i j}^{(0)}=0$，则 ${\displaystyle P_{i j}^{(n)}=\sum_{k=0}^{\infty} P_{i k} P_{k j}^{(n-1)}}$
+
+    2. 若 $n \geqslant 0$ 蕴含 $P_{i j}^{(n)}>0$，则称状态 $j$ 是从状态 $i$ 可达的，记作 $i \rightarrow j$；互相可达的状态 $i$ 和 $j$ 称为互达的，记作 $i \leftrightarrow j$
+        1. 互达性是等价关系
+        2. 若在互达性下 $\text{Markov}$ 链的所有状态都居于同一等价类，则就称这个 $\text{Markov}$ 链是不可约的
+    3. 设 $i$ 为 $\text{Markov}$ 链的一个状态，使 $P_{i i}^{(n)}>0$ 的所有正整数 $n \ (n \geqslant 1)$ 的最大公约数称作是状态 $i$ 的周期，记作 $d(i)$
+        1. 若对所有 $n \geqslant 1$，都有 $P_{i i}^{(n)}=0$，则约定周期为 $\infty$；$d(i)=1$ 的状态 $i$ 则称为是非周期的
+        2. 若 $i \leftrightarrow j$，则 $d(i)=d(j)$
+        3. 若状态 $i$ 有周期 $d(i)$，则存在整数 $N$，使得对所有的 $n>N$ 恒有 $P_{i i}^{(n d(i))}>0$
+    4. 设 $\boldsymbol{P}$ 为不可约、非周期的有限状态 $\text{Markov}$ 链的转移概率阵，则存在 $N$，使得当 $n \geqslant N$ 时，$\boldsymbol{P}^{(n)}$ 的所有元素都非零
+
+2. 定义 $f_{i j}^{(n)}$，记从 $i$ 出发在 $n$ 步转移时首次到达 $j$ 的概率
+
+    $$
+    \begin{aligned}
+    f_{i j}^{(0)}&=0 \\
+    f_{i j}^{(n)}&=P[X_{n}=j, X_{k} \neq j, k=1, \cdots, n-1 \mid X_{0}=i]
+    \end{aligned}
+    $$
+
+    若 $f_{i i}=1$，称状态 $i$ 是常返的，称非常返状态为瞬过的
+
+    1. 状态 $i$ 常返当且仅当 ${\displaystyle \sum_{n=1}^{\infty} P_{i i}^{(n)}=\infty}$，状态 $i$ 瞬过当且仅当 ${\displaystyle \sum_{n=1}^{\infty} P_{i i}^{(n)}<\infty}$
+        1. 如果 $i$ 是常返的，且 $i \leftrightarrow j$，则 $j$ 也是常返的
+        2. 常返状态 $i$ 当且仅当 $\mu_{i}=\infty$ 时称为零常返的，而当且仅当 $\mu_{i}<\infty$ 时称为正常返的
+    2. 设常返状态 $i$ 的常返时间 $T_{i} = \min \left\{n \geqslant 1: X_{n}=i\right\}$，设 ${\displaystyle \mu_{i}=\sum_{n=1}^{\infty} n f_{i i}^{(n)}}$，其中 $f_{i i}$ 是 $T_{i}$ 的条件概率分布
+        1. $\text{Markov}$ 链的基本极限定理
+            1. 若状态 $i$ 是瞬过的或者是零常返的，则 ${\displaystyle \lim _{n \rightarrow \infty} P_{i i}^{(n)}=0}$
+            2. 若状态 $i$ 是周期为 $d$ 的常返状态，则 ${\displaystyle \lim _{n \rightarrow \infty} P_{i i}^{(n d)}=\dfrac{d}{\mu_{i}}}$
+            3. 当状态 $i$ 是非周期的正常返状态，则 ${\displaystyle \lim _{n \rightarrow \infty} P_{i i}^{(n)}=\dfrac{1}{\mu_{i}}}$
+        2. 如果状态 $i$ 是遍历的，则对所有 $i \rightarrow j$ 有 ${\displaystyle \lim _{n \rightarrow \infty} P_{j i}^{(n)}=\lim _{n \rightarrow \infty} P_{i i}^{(n)}=\dfrac{1}{\mu_{i}}}$
+
+3. $\text{Markov}$ 链有转移概率阵 $\boldsymbol{P}=\left[P_{i j}\right]$，概率分布 $\left\{\pi_{i}, i \geqslant 0\right\}$ 如果满足 ${\displaystyle \pi_{j}=\sum_{i=0}^{\infty} \pi_{i} P_{i j}}$，则称为这一 $\text{Markov}$ 链的平稳分布
+    1. 如果过程的初始状态 $X_{0}$ 有平稳概率分布 $\pi=\left\{\pi_{j}, j \geqslant 0\right\}$，则 $P[X_{n}=j]=\pi_{j}$
+    2. 若不可约 $\text{Markov}$ 链中的所有状态都是遍历的，则对所有 $i, j$，极限 ${\displaystyle \lim _{n \rightarrow \infty} P_{i j}^{(n)}=\pi_{j}}$ 存在且 $\pi=\left\{\pi_{j}, j \geqslant 0\right\}$ 为平稳分布，即 ${\displaystyle \sum_{j=0}^{\infty} \pi_{j}=1, \pi_{j}>0}$ 且 ${\displaystyle \sum_{i=0}^{\infty} \pi_{i} P_{i j}=\pi_{j}}$．反之，若不可约 $\text{Markov}$ 链只存在一个平稳分布，且该 $\text{Markov}$ 链的所有状态都是遍历的，则该平稳分布就是此 $\text{Markov}$ 链的极限分布，即对任何 $i$ 有 ${\displaystyle \lim _{n \rightarrow \infty} P_{i j}^{(n)}=\pi_{j}}$
+
+### 5.2.2 连续时间 Markov 链
+1. 若对所有 $s, t \geqslant 0$ 和任何非负整数 $i, j, x(u), 0 \leqslant u \leqslant s$，随机过程 $X(t), t \geqslant 0$ 满足
+
+    $$
+    P[X(t+s) =j \mid X(s)=i, X(x)=x(u), 0 \leqslant u<s]=P[X(t+s)=j \mid X(s)=i]
+    $$
+
+    则称为连续时间 $\text{Markov}$ 链．其转移概率 $P_{i j}(i)$ 和 $p_{i}$ 完全确定了过程的所有联合分布
+
+2. 函数 $P_{i j}(t)$ 能够作为无瞬即转移的 $\text{Markov}$ 过程的转移概率函数当且仅当
+    1. $P_{i j}(t) \geqslant 0$ 且 ${\displaystyle \sum_{j=0}^{\infty} P_{i j}(t)=1}$
+    2. $\text{Chapman}-\text{Kolmogrov}$ 方程：${\displaystyle P_{i j}(t+\tau) = \sum_{k=0}^{\infty} P_{i k}(\tau) P_{k j}(t)}$
+    3. 对任何状态 $i$ 都有 ${\displaystyle \lim _{\tau \to 0} P[X(t+\tau)=i \mid X(t)=i]=\lim _{\tau \to 0} P_{i i}(\tau)=1}$
 
 ## 5.3 Brown 过程
 

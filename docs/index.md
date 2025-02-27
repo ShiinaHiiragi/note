@@ -559,11 +559,21 @@ const refList = [
         author: ["平冈和幸", "堀玄"],
         title: "程序员的数学 ② 概率统计",
         type: "M",
-        year: 2015,
         page: [1, 403],
+        year: 2015,
         trans: ["陈篠烟"],
         press: "人民邮电出版社",
         locate: "北京"
+    },
+    {
+        author: ["方兆本", "缪柏其"],
+        title: "随机过程",
+        type: "M",
+        page: [1, 160],
+        year: 2011,
+        press: "人民邮电出版社",
+        locate: "北京",
+        plot: 60
     },
     {
         author: ["Rob Nederpelt", "Herman Geuvers"],
