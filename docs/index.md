@@ -401,6 +401,16 @@ const refList = [
         locate: "北京"
     },
     {
+        author: ["王兵山", "毛晓光", "刘万伟"],
+        title: "高级范畴论",
+        type: "M",
+        year: 2012,
+        page: [1, 153],
+        press: "清华大学出版社",
+        locate: "北京",
+        plot: 3
+    },
+    {
         author: ["[苏]М. М. По́стников"],
         title: "几何讲义：解析几何",
         type: "M",
