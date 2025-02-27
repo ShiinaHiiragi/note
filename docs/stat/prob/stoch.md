@@ -145,10 +145,31 @@
     3. $\text{Brown}$ 运动是 $\text{Gauss}$ 过程，即对任意 $k \in \mathbf Z_+$ 以及 $t_{1} \leqslant t_{2} \leqslant \cdots \leqslant t_{k}$，联合分布 $\left(X\left(t_{1}\right), X\left(t_{2}\right), \cdots, X\left(t_{k}\right)\right)$ 为 $k$ 维正态分布
 
 2. 设 $\{W(t), t \geqslant 0\}$ 为 $\text{Brown}$ 运动，令 $B(t)=W(t)-t W(1), \  0 \leqslant t \leqslant 1$，则随机过程 $B=\{B(t): 0 \leqslant t \leqslant 1\}$ 称为 $\text{Brown}$ 桥过程
-    1. 对任意 $0 \leqslant s \leqslant t \leqslant 1$ 有 $\mathrm{E} B(t)=0, \mathrm{E}B(s) B(t) = s(1-t)$
+    1. 对任意 $0 \leqslant s \leqslant t \leqslant 1$ 有 $\mathrm{E} B(t)=0$ 且 $\mathrm{E}B(s) B(t) = s(1-t)$
     2. $\text{Brown}$ 桥过程也是 $\text{Gauss}$ 过程
 3. $\text{Brown}$ 运动相关的随机变量
     1. $\text{Brown}$ 运动首次到达 $a$ 的时刻 $T_{a}$：密度函数 $p_{T a}(t)=\dfrac{a}{\sqrt{2 \pi t^{3}}} \mathrm{e}^{-\frac{a^{2}}{2 t}}$
     2. $\text{Brown}$ 运动在 $[0, t]$ 上的最大值 ${\displaystyle M(t) = \max _{0 \leqslant s \leqslant t} W(s)}$：密度函数 $p_{M(t)}(a)=\left\{\begin{aligned} & \dfrac{2}{\sqrt{2 \pi t}} \mathrm{e}^{-\frac{a^{2}}{2 t}}, & a \geqslant 0 \\ & 0, & a < 0 \end{aligned}\right.$
 
 ## 5.4 鞅过程
+### 5.4.1 鞅与鞅差
+1. 若随机过程 $\left\{M_{n}, n=0,1, \cdots\right\}$ 满足以下条件
+    1. $E\left|M_{n}\right|<\infty$
+    2. $E\left(M_{n+1} \mid M_{0}, M_{1}, \cdots, M_{n}\right)=M_{n}$
+
+    则称 $M_{n}$ 为鞅序列，简称为鞅（列）
+
+    1. 设 $\left\{M_{n}, n=0,1, \cdots\right\}$ 和 $X_{n}, n=0,1, \cdots$ 为两个随机过程，若对 $n=0,1, \cdots$ 有
+        1. $E\left|M_{n}\right|<\infty$
+        2. $E\left(M_{n+1} \mid X_{0}, X_{1}, \cdots, X_{n}\right)=M_{n}$
+
+        则称 $M_{n}$ 关于 $X_{n}$ 为鞅
+
+    2. $\mathrm{E}\left(M_{n+1} \mid \mathcal{F}_{n}\right)=M_{n}, \mathrm{D}\left(M_{n}\right) \geqslant \mathrm{D}\left(M_{n-1}\right)$
+
+2. 设 $M_{n}$ 为鞅，则称 $\left\{Z_{n}=M_{n}-M_{n-1}, n=1, \cdots\right\}$ 为鞅差（序列）
+    1. $\mathrm{E}\left(Z_{n} \mid \mathcal{F}_{n-1}\right)=\mathrm{E}\left(\left(M_{n}-M_{n-1}\right) \mid \mathcal{F}_{n-1}\right)=0$
+    2. $\operatorname{Cov}\left(Z_{i}, Z_{j}\right)=0$，其中 $i \neq j$
+    3. 若 $\{Z_{n}, n \geqslant 0\}$ 为零均值独立随机变量序列，则 $\left\{Z_{n}, n \geqslant 0\right\}$ 关于 $\left\{Z_{n}\right\}$ 为鞅差序列
+
+### 5.4.2 下鞅与上鞅

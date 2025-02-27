@@ -68,7 +68,7 @@
     2. 令 $\mathrm{MLR}$ 是所有 $\text{Martin-L}\ddot{\mathrm{o}}\text{f}$ 随机序列组成的集合，则 $\mathrm{MLR}$ 是一个 $\Sigma_{2}^{0}$ 集合且 $\lambda(\mathrm{MLR})=1$
 
 ### 5.2.3 基于不可预测性
-1. 鞅：令 $d: 2^{<\omega} \rightarrow \mathbf{R}^{\geqslant 0}$ 是以大于等于 $0$ 的实数为值域的函数
+1. 递归论鞅：令 $d: 2^{<\omega} \rightarrow \mathbf{R}^{\geqslant 0}$ 是以大于等于 $0$ 的实数为值域的函数
     1. 称 $d$ 是一个鞅当且仅当对任意 $\sigma$ 都有 $d(\sigma)=\dfrac{d(\sigma 0)+d(\sigma 1)}{2}$
     2. 称 $d$ 是一个上鞅当且仅当 $d(\sigma) \geqslant \dfrac{d(\sigma 0)+d(\sigma 1)}{2}$
     3. 称（上）鞅在序列 $Z \in 2^{\omega}$ 上获胜当且仅当 ${\displaystyle \sup _{n \in \mathbf{N}} d(Z \upharpoonright n)=\infty}$，定义（上）鞅 $d$ 的获胜集 $S[d]=\left\{A \in 2^{\omega}: d \textsf{ 在 } A \textsf{ 上获胜}\right\}$
