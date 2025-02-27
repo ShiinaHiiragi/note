@@ -19,13 +19,42 @@
 3. 独立增量过程：若对任意 $t_{1}<t_{2} \cdots<t_{n}$，$t_{1}, \cdots, t_{n} \in T$，$X\left(t_{2}\right)- X\left(t_{1}\right), X\left(t_{3}\right)-X\left(t_{2}\right), \cdots, X\left(t_{n}\right)-X\left(t_{n-1}\right)$ 相互独立，则称 $X(t)$ 为独立增量过程．若进一步有对任意 $t_{1}, t_{2}$，$X\left(t_{1}+h\right)-X\left(t_{1}\right) \stackrel{d}{=} X\left(t_{2}+h\right)-X\left(t_{2}\right)$，则过程称为有平稳独立增量的过程
 
 ## 5.1 Poisson 过程
+1. $\text{Poisson}$ 过程：若整数值随机过程 $\{N(t), t \geqslant 0\}$ 有
+    1. $N(0)=0$
+    2. $N(t)$ 是独立增量过程
+    3. 对任何 $t>0$，$s \geqslant 0$，$N(s+t)-N(t)$ 服从参数为 $\lambda t$ 的 $\text{Poisson}$ 分布，即 $P[N(s+t)-N(t)=k]=\dfrac{(\lambda t)^{k} \mathrm{e}^{-\lambda t}}{k!}$
+
+    则称 $N(t)$ 是强度为 $\lambda>0$ 的 $\text{Poisson}$ 过程
+
+2. 记 $[0, \infty)$ 为观察过程的时间轴，$0$ 为起始时刻，$N(b)-N(a)$ 代表时间区间 $(a, b]$ 上发生的事件数，若有如下假定
+    1. 在不相交区间中事件发生的数目相互独立
+    2. 对任何时刻 $t$ 和正数 $h$，增量 $N(t+h)-N(t)$ 的分布只依赖于区间长度 $h$ 而不依赖时刻 $t$
+    3. 存在正常数 $\lambda$，当 $h \to 0$ 时，使在长度为 $h$ 的小区间中事件至少发生一次的概率 $P\{N(t+h)-N(t) \geqslant 1\}=\lambda h+o(h)$
+    4. 在小区间 $(t, t+h]$ 发生两个及以上事件的概率为 $o(h)$，即可以忽略不计
+
+    则过程 $N(t)$ 为 $\text{Poisson}$ 过程
+
+3. 在 $\text{Poisson}$ 过程中，记第 $n-1$ 次与第 $n$ 次事件间的间隔时间记作 $X_{n}$，$W_{n}={\displaystyle \sum_{i=1}^{n} X_{i}}$ 为第 $n$ 次事件的到达或等待时间
+    1. $X_{n}$ 是均值为 $\dfrac{1}{\lambda}$ 的独立同分布的指数随机变量
+    2. $W_{n}$ 服从参数为 $n$ 和 $\lambda$ 的 $\Gamma$ 分布
+    3. $W_{1}, \cdots, W_{n}$ 的联合密度为 ${\displaystyle f_{W_{1}, \cdots, W_{n} \mid N(t)=n}\left(w_{1}, \cdots, w_{n} \mid n\right)=\dfrac{n!}{t^{n}}, \  0<w_{1}<\cdots<w_{n} \leqslant t}$
 
 ## 5.2 Markov 过程
 1. 概率生成函数：若 $X$ 为离散随机变量，则期望 $\mathrm{E}\left[s^{X}\right]$ 为其概率生成函数，记作 $\phi_{X}(s)$
     1. 若 $P[X=k]=p_{k}, k \in \mathbf{N}$，则 $\phi_{X}(s)={\displaystyle \sum_{k=0}^{\infty} p_{k} s^{k}}$
     2. 若 $X, Y$ 为独立随机变量，则其和式的概率生成函数为 $\phi_{X+Y}(s)=\phi_{X}(s) \phi_{Y}(s)$
 
-2. ...
+2. 若对任何一列状态 $i_{0}, i_{1}, \cdots, i_{n-1}, i, j$ 及对任何 $n \geqslant 0$，随机过程 $\left\{X_{n}, n \geqslant 0\right\}$ 满足 $\text{Markov}$ 性质
+
+    $$
+    P\left[X_{n+1}=j \mid X_{0}=i_{0}, \cdots, X_{n-1}=i_{n-1}, X_{n}=i\right]=P\left[X_{n+1}=j \mid X_{n}=i\right]
+    $$
+
+    则称 $X_{n}$ 为离散时间 $\text{Markov}$ 链．称 $P[X_{n+1}=j \mid X_{n}=i]$ 为 $\text{Markov}$ 链的一步转移概率，记作 $P_{i j}^{n, n+1}$
+
+    1. 当 $P_{i j}^{n, n+1}$ 与 $n$ 无关时称该 $\text{Markov}$ 链有平稳转移概率，记为 $P_{i j}$，称作时间齐性 $\text{Markov}$ 链或时齐 $\text{Markov}$ 链
+        1. 对任意 $i, j \geqslant 0$ 有 $P_{i j} \geqslant 0$ 且 ${\displaystyle \sum_{j=0}^{\infty} P_{i j}=1}$
+        2. ...
 
 ## 5.3 Brown 过程
 

@@ -6,7 +6,7 @@
     2. $\text{BasCat}$ 是初始范畴的集合
     3. $\text{Cat}$ 是所有句法范畴的集合
     4. $R_{d}$ 是两类规则的集合
-        1. 范畴递归生成规则：从初始范畴的集合 $\text{BasCat}$ 生成所有范畴的集合 $\text{Cat}$．① $\text{BasCat} \subseteq \text{Cat}$；② 若 $A_{1}, \cdots, A_{n}$ 且 $B \in \text{Cat}$，则 $B / A_{1} \cdots A_{n}, A_{1} \cdots A_{n} \backslash B \in \text{Cat}$ 在有穷集合 $\text{BasCat}$ 的基础上生成包含若干函子范畴的无穷集合 $\text{Cat}$
+        1. 范畴递归生成规则：从初始范畴集合 $\text{BasCat}$ 生成所有范畴的集合 $\text{Cat}$．① $\text{BasCat} \subseteq \text{Cat}$；② 若 $A_{1}, \cdots, A_{n}$ 且 $B \in \text{Cat}$，则 $B / A_{1} \cdots A_{n}, A_{1} \cdots A_{n} \backslash B \in \text{Cat}$ 在有穷集合 $\text{BasCat}$ 的基础上生成包含若干函子范畴的无穷集合 $\text{Cat}$
         2. 自然语言表达式的毗连对应范畴运算的规则：若 $\alpha_{1}, \cdots, \alpha_{n}$ 是分别属于范畴 $A_{1}, \cdots, A_{n}$ 的表达式，并且 $\beta$ 是属于范畴 $B / A_{1} \cdots A_{n}$（或 $A_{1} \cdots A_{n} \backslash B$）的表达式，那么 $\beta \alpha_{1} \cdots \alpha_{n}$（或 $\alpha_{1} \cdots \alpha_{n} \beta$）是属于范畴 $B$ 的表达式
     5. $R_{a}$ 是给 $V$ 中词条指派适当范畴规则的集合
 2. 通用语法分为句法层面和语义层面，句法层面又分为作为内在结构的无歧义语言和作为外在结构的歧义语言
