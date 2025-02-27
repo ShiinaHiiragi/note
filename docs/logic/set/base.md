@@ -42,8 +42,9 @@
         \forall x \exists Y \forall u \ (u\in Y \leftrightarrow u \in X \wedge \varphi(u))
         $$
 
-        1. 对于每一公式 $\varphi(u)$，都存在相应的一个分离公理，也被称为概括公理或子集公理．分离公理是对「概括原则」的限制，即集合必须通过已经存在的集合中被分离出来，从而避免 $\text{Russell}$ 悖论的出现
-        2. 任意两个集合的交与差仍然是集合，定义如下
+        1. 对于每一公式 $\varphi(u)$，都存在相应的一个分离公理，也被称为概括公理或子集公理
+        2. 分离公理是对「概括原则」的限制，即集合必须通过已经存在的集合中被分离出来，从而避免 $\text{Russell}$ 悖论的出现
+        3. 任意两个集合的交与差仍然是集合，定义如下
 
             $$
             \begin{aligned}
@@ -54,7 +55,7 @@
 
             特别地，对于任意集合 $X \neq \varnothing$，其任意交 $\bigcap X = \left\{u \mid \forall Y \ (Y \in X \to u \in Y)\right\}$ 也是集合
 
-        3. 补集：设 $X$ 是一个基础集，对于任意 $A \subseteq X$，令 $X - A$ 为 $A$（相对于基础集 $X$）而言的补集，记作 $\overline A$ 或 $A'$
+        4. 补集：设 $X$ 是一个基础集，对于任意 $A \subseteq X$，令 $X - A$ 为 $A$（相对于基础集 $X$）而言的补集，记作 $\overline A$ 或 $A'$
 
     4. 对集公理（$\text{Pai}$）：对任意 $a, b$，存在一个集合只以 $a, b$ 为元素，表示为 $\{a, b\}$．因此单点集 $\{a\} = \{a, a\}$ 是集合
 
@@ -68,9 +69,10 @@
         \forall X \exists Y \forall u \ (u \in Y \leftrightarrow \exists z \ (z \in X \wedge u \in z))
         $$
 
-        1. 子集：如果 $X$ 的元素都是 $Y$ 的元素，则称 $X$ 是 $Y$ 的子集，表示为 $X \subseteq Y$；如果 $X \subseteq Y$ 且 $X \neq Y$，则称 $X$ 是 $Y$ 的真子集，记作 $X \subset Y$
-        2. 并集：这样的 $Y$ 是唯一的，称作 $X$ 的并，记作 $\bigcup X$．特别地，定义 $X \cup Y = \bigcup \{X, Y\}$
-        3. 对称差：定义 $X \triangle Y = (X - Y) \cap (Y - X)$
+        1. 子集：如果 $X$ 的元素都是 $Y$ 的元素，则称 $X$ 是 $Y$ 的子集，表示为 $X \subseteq Y$
+        2. 真子集：如果 $X \subseteq Y$ 且 $X \neq Y$，则称 $X$ 是 $Y$ 的真子集，记作 $X \subset Y$
+        3. 并集：这样的 $Y$ 是唯一的，称作 $X$ 的并，记作 $\bigcup X$．特别地，定义 $X \cup Y = \bigcup \{X, Y\}$
+        4. 对称差：定义 $X \triangle Y = (X - Y) \cap (Y - X)$
 
     6. 幂集公理（$\text{Pow}$）：对任意集合 $X$，存在集合 $Y$ 满足 $u \in Y$ 当且仅当 $u \subseteq X$
 
@@ -100,13 +102,13 @@
         2. 任一集合 $X$ 都不属于自身
         3. 无穷下降链：集合 $\left\{x_0, x_1, \cdots, x_n, x_{n+1}, \cdots\right\}$，其中对任意 $n$ 有 $x_{n+1} \in x_n$，基础公理确保不存在无穷下降链
 
-    9. 替换公理模式（$\text{Rep}$）：给定公式 $\psi(x, y)$ 且对任意 $x$ 都有唯一的 $y$ 使得 $\psi(s, y)$ 成立，则对任一集合 $A$，集合 $\{y \mid \exists x \ (x \in A \wedge \psi(x, y))\}$ 存在
+    9. 替换公理模式（$\text{Rep}$）：给定公式 $\psi(x, y)$，且对任意 $x$ 都有唯一的 $y$ 使得 $\psi(s, y)$ 成立，则对任意给定集合 $A$，存在集合 $\{y \mid \exists x \ (x \in A \wedge \psi(x, y))\}$
 
         $$
         \forall A \forall x \in A \ \exists^{1} y \ \psi(x, y) \to \exists B \forall x \in A \ \exists y \in B \ \psi(x, y)
         $$
 
-    10. 选择公理（$\mathbf{AC}$）对任一集合 $X \neq \varnothing$，若有 $\varnothing \neq X$ 且若 $x, y \in X, x \neq y$，则 $x \cap y = \varnothing$，则存在集合 $S$，对任意 $x \in X$，$S \cap x$ 是单点集
+    10. 选择公理（$\mathbf{AC}$）：对任意 $X \neq \varnothing$，若 $\varnothing \neq X$ 且 $x, y \in X, x \neq y$ 蕴含 $x \cap y = \varnothing$，则存在 $S$，对任意 $x \in X$，$S \cap x$ 是单点集
 
         $$
         \forall x \ (\varnothing \notin X \wedge \forall x \in X \ \forall y \in X \ (x \cap y = \varnothing) \to \exists S \forall x \in X \ \exists^{1} y \ (S \cap x = \{y\}))
@@ -407,10 +409,10 @@
     2. 设集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 的 $\text{Descartes}$ 积为 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma} = \left\{ \left. x: \Gamma\to {\displaystyle \bigcup_{\gamma \in \Gamma}X_\gamma} \ \right| \ \forall \gamma \in \Gamma \ (x(i)\in X_\gamma)\right\}$
         1. 对于每一个 $\gamma \in \Gamma$，集合 $X_\gamma$ 为 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 的第 $\gamma$ 个坐标集
         2. 对于 $\gamma \in \Gamma$，定义 $p_\alpha: {\displaystyle \prod_{\gamma \in \Gamma}X_\gamma} \to X_\gamma$，使得对于任意 $x\in {\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 有 $p_\alpha(x)=x(\alpha)$，称为 $\text{Descartes}$ 积的第 $\alpha$ 个投射
-    3. 设给定了集族 $\{X_\gamma\}_{\gamma \in \Gamma}$，则 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma} \neq \varnothing \leftrightarrow \forall \gamma \in \Gamma \ (X_\gamma\neq \varnothing)$
-    4. 给定两个集族 $\{X_\gamma\}_{\gamma \in \Gamma}, \{Y_\gamma\}_{\gamma \in \Gamma}$，且 $\forall \gamma \in \Gamma \ (Y_\gamma \subseteq X_\gamma)$．若对于任意 $\gamma \in \Gamma$，都有 $Y_\gamma \neq \varnothing$，则对于任意 $\alpha \in \Gamma$ 有 $p_\alpha\left({\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}\right) = Y_\alpha$
+    3. 设给定集族 $\{X_\gamma\}_{\gamma \in \Gamma}$，则 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma} \neq \varnothing \leftrightarrow \forall \gamma \in \Gamma \ (X_\gamma\neq \varnothing)$
+    4. 给定集族 $\{X_\gamma\}_{\gamma \in \Gamma}, \{Y_\gamma\}_{\gamma \in \Gamma}$，且 $\forall \gamma \in \Gamma \ (Y_\gamma \subseteq X_\gamma)$．若对于任意 $\gamma \in \Gamma$，都有 $Y_\gamma \neq \varnothing$，则对于任意 $\alpha \in \Gamma$ 有 $p_\alpha\left({\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}\right) = Y_\alpha$
         1. 设集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 对每一个 $\gamma \in \Gamma$ 有 $X_\gamma\neq \varnothing$，则对于任意 $\alpha \in \Gamma$，$\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 的第 $\alpha$ 个投影 $p_\alpha$ 都是满射
-        2. 设集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 对每一个 $\gamma \in \Gamma$ 有 $X_\gamma\neq \varnothing$，又设 $\varnothing \neq \Gamma_1 \subseteq \Gamma$，集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 满足条件：对于每一个 $\gamma \in \Gamma_1$ 有 $\varnothing \neq a_i\subseteq X_\gamma$，则对于每一个 $\alpha \in \Gamma$ 有
+        2. 设集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 对每一个 $\gamma \in \Gamma$ 有 $X_\gamma\neq \varnothing$，又设 $\varnothing \neq \Gamma_1 \subseteq \Gamma$，集族 $\{X_\gamma\}_{\gamma \in \Gamma}$ 满足对于每一个 $\gamma \in \Gamma_1$ 有 $\varnothing \neq a_i\subseteq X_\gamma$，则对于每一个 $\alpha \in \Gamma$ 有
 
             $$
             p_\alpha\left({\displaystyle \bigcap_{\gamma \in \Gamma_1}p^{-1}_i(a_i)}\right) =
@@ -422,7 +424,12 @@
 
             其中 $p_\alpha$ 是 $\text{Descartes}$ 积 ${\displaystyle \prod_{\gamma \in \Gamma}X_\gamma}$ 的第 $\alpha$ 个投射
 
-4. 关系：对于集合 $R$，如果存在 $X, Y$ 使得 $R \subseteq X \times Y$，则称 $R$ 为二元关系，用 $R(x, y)$ 或 $xRy$ 表示 $(x, y) \in R$．其中定义域（或称作投影）定义为 $\mathrm{dom}(R) = \left\{x \mid \exists y \ R(x, y)\right\}$，值域定义为 $\mathrm{ran}(R) = \left\{y \mid \exists x \in X \ R(x, y)\right\}$
+4. 关系：对于集合 $R$，如果存在 $X, Y$ 使得 $R \subseteq X \times Y$，则称 $R$ 为二元关系，用 $R(x, y)$ 或 $xRy$ 表示 $(x, y) \in R$．定义
+    1. 定义域（或称作投影）：$\mathrm{dom}(R) = \left\{x \mid \exists y \ R(x, y)\right\}$
+    2. 值域： $\mathrm{ran}(R) = \left\{y \mid \exists x \in X \ R(x, y)\right\}$
+
+    并设 $\mathrm{fld}(R) = \mathrm{dom}(R) \cup \mathrm{ran}(R)$
+
     1. 像与逆像：集合 $A \subseteq X$ 在关系 $R$ 下的像定义为 $R[A] = \left\{y \in \mathrm{ran}(R) \mid \exists x \in A \ (R(x, y))\right\}$；集合 $B \subseteq Y$ 在关系 $R$ 下的逆像（也称作原像）定义为 $R^{-1}[B] = \left\{x \in \mathrm{dom}(R) \mid \exists y \in B \ (R(x, y))\right\}$
         1. $R[A \cup B] = R[A] \cup R[B]$
         2. $R[A \cap B] \subseteq R[A] \cap R[B]$
@@ -447,7 +454,7 @@
             1. $R$ 是非对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \to (y, x) \notin R$
             2. $R$ 是反对称的当且仅当对于任意 $x, y \in X$ 有 $(x, y) \in R \wedge (y, x) \in R \to x = y$
         3. 传递性：$R$ 是传递的当且仅当对于任意 $x, y, z \in X$ 有 $(x, y) \in R \wedge (y, z) \in R \to (x, z) \in R$
-    5. $n$ 元关系：对于任一集合 $R$，如果存在 $X_1, X_2, \cdots, X_n$ 使得 $R \subseteq X_1 \times X_2 \times \cdots \times X_n$，则称 $R$ 为 $n$ 元关系，用 $R(X_1, X_2, \cdots, X_n)$ 表示 $(X_1, X_2, \cdots, X_n) \in R$．特别地，如果 $R \subseteq X^n$，则称 $R$ 是 $X$ 上的 $n$ 元关系
+    5. $n$ 元关系：对集合 $R$，若存在 $X_1, X_2, \cdots, X_n$ 使得 $R \subseteq X_1 \times X_2 \times \cdots \times X_n$，则称 $R$ 为 $n$ 元关系，用 $R(X_1, X_2, \cdots, X_n)$ 表示 $(X_1, X_2, \cdots, X_n) \in R$．特别地，如果 $R \subseteq X^n$，则称 $R$ 是 $X$ 上的 $n$ 元关系
 
 5. 等价关系：二元关系 $R$ 是等价的当且仅当 $R$ 是自反、对称且是传递的，用 $\sim$ 表示
     1. 等价类：设 $\sim$ 是集合 $X$ 上的等价关系，对任意 $x \in X$，定义 $x$ 关于 $\sim$ 的等价类为 $[x]_{\sim} = \left\{t \in X \mid t \sim x\right\}$
@@ -455,12 +462,10 @@
         2. 对任意 $x, y \in X$，有 $[x]_{\sim} = [y]_{\sim}$ 或 $[x]_{\sim} \cap [y]_{\sim} = \varnothing$ 成立
     2. 划分：令 $X$ 为集合，$S \subseteq \mathcal P(X)$，如果 $S$ 有 ① 对所有 $a, b \in S$，有 $a \neq b \to a \cap b = \varnothing$；② $\bigcup S = X$，则称 $S$ 是 $X$ 的划分
         1. 令 $S$ 为 $X$ 的划分，定义 $X$ 上的二元关系 $\sim_S = \left\{(x, y) \in X^2 \mid \exists c \in S \ (s \in c \wedge y \in c)\right\}$，易知 $\sim_S$ 是等价关系
+            1. 设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，则 $\sim_1 = \sim_2$ 当且仅当 $X / \sim_1 = X / \sim_2$
+            2. 设 $\sim$ 为 $X$ 上的等价关系，则 $\sim_{X / \sim} = \sim$ 且 $X / \sim_S = S$
 
-            !!! note "等价关系与划分的对应"
-                1. 设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，则 $\sim_1 = \sim_2$ 当且仅当 $X / \sim_1 = X / \sim_2$
-                2. 设 $\sim$ 为 $X$ 上的等价关系，则 $\sim_{X / \sim} = \sim$ 且 $X / \sim_S = S$
-
-                从而集合 $X$ 上的所有等价关系与划分形成一一对应
+            从而集合 $X$ 上的所有等价关系与划分形成一一对应
 
         2. 设 $\sim_1, \sim_2$ 是 $X$ 上的等价关系，对应的划分为 $S_1, S_2$
             1. 划分的积：定义 $S_1 \cdot S_2 = X / (\sim_1 \cap \sim_2)$ 为划分的积，其中 $\sim_1 \cap \sim_2$ 为等价关系
@@ -479,28 +484,35 @@
     2. 严格偏序：如果 $<$ 具有反自反性、非对称性与传递性，则称 $<$ 是 $X$ 上的严格偏序
     3. 偏序：如果拟序关系 $\leqslant$ 具有反对称性，则称 $\leqslant$ 是 $X$ 上的偏序或序，用 $(X, \leqslant)$ 表示
         1. 用 $x \geqslant y$ 表示 $x \leqslant^{-1} y$；用 $x < y$ 表示 $x \leqslant y \wedge x \neq y$，用 $x > y$ 表示 $x \geqslant y \wedge x \neq y$
-        2. 极大元与极小元：如果 $a \in X$ 且 $\forall x \in X \ (\neg (a > x))$，则称 $a$ 为 $X$ 的极小元；反之如果 $a \in X$ 且 $\forall x \in X \ (\neg (a < x))$，则称 $a$ 为 $X$ 的极大元
-        3. 最小元与最大元：如果 $a \in X$ 且 $\forall x \in X \ (a \leqslant x)$，则称 $a$ 为 $X$ 的最小元；反之如果 $a \in X$ 且 $\forall x \in X \ (a \geqslant x)$，则称 $a$ 为 $X$ 的最大元
-        4. 上界与下界：设 $X_0 \subseteq X$，若存在 $a \in X$ 使得对于任意 $x \in X_0$ 都有 $a \geqslant x$，则称 $a$ 为 $X_0$ 在 $X$ 中的上界；若存在 $a \in X$ 使得对于任意 $x \in X_0$ 都有 $a \leqslant x$，则称 $a$ 为 $X_0$ 在 $X$ 中的下界
-        5. 上确界与下确界：设 $X_0 \subseteq X$，若 $X_0$ 在 $X$ 中所有上界的集合有最小元 $a_0$，则称 $a_0$ 是 $X_0$ 的上确界（或最小上界），记作 $\sup(X_0)$ 或 ${\displaystyle \sup_{x \in X_0}\left\{x\right\}}$；若 $X_0$ 在 $X$ 中所有下界的集合有最大元 $a_0$，则称 $a_0$ 是 $X_0$ 的下确界（或最大下界），记作 $\inf(X_0)$ 或 ${\displaystyle \inf_{x \in X_0}\left\{x\right\}}$
-            1. 函数（包括序列）的上下界或上下确界一般指其值域的上下界或上下确界
-            2. 设数集有上（下）确界，则此上（下）确界唯一
+        2. 极大元与极小元
+            1. 如果 $a \in X$ 且 $\forall x \in X \ (\neg (a > x))$，则称 $a$ 为 $X$ 的极小元
+            2. 如果 $a \in X$ 且 $\forall x \in X \ (\neg (a < x))$，则称 $a$ 为 $X$ 的极大元
+        3. 最小元与最大元
+            1. 如果 $a \in X$ 且 $\forall x \in X \ (a \leqslant x)$，则称 $a$ 为 $X$ 的最小元
+            2. 如果 $a \in X$ 且 $\forall x \in X \ (a \geqslant x)$，则称 $a$ 为 $X$ 的最大元
+        4. 上界与下界：设 $X_0 \subseteq X$
+            1. 若存在 $a \in X$ 使得对于任意 $x \in X_0$ 都有 $a \geqslant x$，则称 $a$ 为 $X_0$ 在 $X$ 中的上界
+            2. 若存在 $a \in X$ 使得对于任意 $x \in X_0$ 都有 $a \leqslant x$，则称 $a$ 为 $X_0$ 在 $X$ 中的下界
+        5. 上确界与下确界：设 $X_0 \subseteq X$
+            1. 若 $X_0$ 在 $X$ 中所有上界的集合有最小元 $a_0$，则称 $a_0$ 是 $X_0$ 的上确界（或最小上界），记作 $\sup(X_0)$ 或 ${\displaystyle \sup_{x \in X_0}\left\{x\right\}}$
+            2. 若 $X_0$ 在 $X$ 中所有下界的集合有最大元 $a_0$，则称 $a_0$ 是 $X_0$ 的下确界（或最大下界），记作 $\inf(X_0)$ 或 ${\displaystyle \inf_{x \in X_0}\left\{x\right\}}$
+
+            函数（或序列）的上下界或上下确界一般指其值域的上下界或上下确界；设数集有上（下）确界，则此上（下）确界唯一
 
         !!! note "逆关系的序"
             如果 $R$ 是 $X$ 上的序，则 $R^{-1}$ 也是 $X$ 上的序，令 $X_0 \subseteq X$
 
-            3. $x$ 是 $X_0$ 在序 $R$ 下的极小元当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的极大元
-            4. $x$ 是 $X_0$ 在序 $R$ 下的最小元当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的最大元
-            5. $x$ 是 $X_0$ 在序 $R$ 下的上确界当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的下确界
+            1. $x$ 是 $X_0$ 在序 $R$ 下的极小元当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的极大元
+            2. $x$ 是 $X_0$ 在序 $R$ 下的最小元当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的最大元
+            3. $x$ 是 $X_0$ 在序 $R$ 下的上确界当且仅当 $x$ 是 $X_0$ 在序 $R^{-1}$ 下的下确界
 
     4. 全序：如果偏序关系 $\leqslant$ 还具有连接性，即对所有 $x, y \in X$ 有 $x \leqslant y$ 或 $y \leqslant x$，则称 $\leqslant$ 是 $X$ 上的全序或线序
-        1. 全序集的性质
-            1. 全序集的任意两个元素是可比较的
-            2. 全序集中极小元与最小元、极大元与最大元是同一的
-        2. 完备全序集：具有最小上界性质的稠密线序集合
+        1. 全序集的任意两个元素是可比较的
+        2. 全序集中极小元与最小元、极大元与最大元是同一的
+        3. 称具有最小上界性质的稠密线序集合为完备全序集
             1. 实数集合 $(\mathbf R, <^{\mathbf R})$ 是完备全序集
             2. 任何包含可数稠密子集的无端点完备全序集都与 $(\mathbf R, <^{\mathbf R})$ 同构
-        3. 最小上界性质：全序集 $(X, \leqslant)$ 如果有「对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界」，则称 $X$ 有最小上界性质
+        4. 全序集 $(X, \leqslant)$ 如果有「对任意 $X$ 的非空子集 $Y$，如果 $Y$ 有上界，则 $Y$ 在 $X$ 中有上确界」，则称 $X$ 有最小上界性质
             1. 有理数集合 $(\mathbf Q, \leqslant^{\mathbf Q})$ 没有最小上界性质
             2. 实数集合 $(\mathbf R, \leqslant^{\mathbf R})$ 有最小上界性质
 
@@ -563,7 +575,9 @@
     5. 限制与扩张：对任意映射 $f$ 与集合 $A$，称映射 $g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 为 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张或延拓
 
 2. 逆映射与复合映射
-    1. 逆映射：一个映射是可逆的当且仅当它是单射，如果 $f$ 是可逆的，则 $f^{-1}$ 也是可逆的且 $(f^{-1})^{-1} = f$．当 $f$ 为函数时，称 $f^{-1}$ 为 $f$ 的反函数
+    1. 逆映射：一个映射是可逆的当且仅当它是单射
+        1. 如果 $f$ 是可逆的，则 $f^{-1}$ 也是可逆的且 $(f^{-1})^{-1} = f$
+        2. 当 $f$ 为函数时，称 $f^{-1}$ 为 $f$ 的反函数
     2. 复合映射：令 $f, g$ 为映射，则复合 $h = g \circ f$ 也是映射，且 $h$ 的定义域为 $\mathrm{dom}(h) = \mathrm{dom}(f) \cap f^{-1}[\mathrm{dom}(g)]$
         1. 对于所有 $x \in \mathrm{dom}(h)$ 均有 $h(x) = g(f(x))$
         2. 简记 $[f^n](x) = \small \underbrace{\normalsize f \circ f \circ \cdots \circ f}_{\normalsize n} \normalsize (x)$，并将其与 $f^n(x)$ 区分
