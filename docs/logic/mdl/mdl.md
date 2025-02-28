@@ -26,7 +26,7 @@
 
 ### 1.1.2 同态与同构
 1. 同态：设 $\mathfrak A = \left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}, \mathfrak B = \left\{B, \{Z^\mathfrak B\}_{Z\in S}\right\}$ 是两个 $S-$结构，如果一个映射 $h: A\to B$ 满足
-    1. 对每个 $n$ 元关系符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 蕴含 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$
+    1. 对每个 $n$ 元谓词符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 蕴含 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$
     2. 对每个 $n$ 元函数符号 $f\in \mathbf F$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $h(f^\mathfrak A(a_1, a_2, \cdots, a_n)) = f^\mathfrak B(h(a_1), h(a_2), \cdots, h(a_n))$
     3. 对每个常元符号 $c\in \mathbf C$，$h(c^\mathfrak A) = c^\mathfrak B$
 
@@ -37,7 +37,7 @@
     3. 对任意无量词（且无等词）的公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 与 $\overline a \in A^n$ 有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(h(\overline b))$
 
 2. 嵌入与同构：设 $\mathfrak A, \mathfrak B$ 是论域分别为 $A, B$ 的两个 $S-$结构，$h: A \to B$ 是一个映射．将 $\mathfrak B$ 扩张为论域为 $A$ 的 $\mathfrak B'$ 使得对于新常元 $a \in A$，有 $a^{\mathfrak B'} = h(a)$，记 $\mathfrak B' = (\mathfrak B, h(a))_{a\in A}$
-    1. 嵌入：如果同态 $h: \mathfrak A \to \mathfrak B$ 是单射且对每个 $n$ 元关系符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 当且仅当 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$，则称 $h$ 是（$\mathfrak A$ 到 $\mathfrak B$）的嵌入
+    1. 嵌入：如果同态 $h: \mathfrak A \to \mathfrak B$ 是单射且对每个 $n$ 元谓词符号 $R\in \mathbf R$ 与 $(a_1, a_2, \cdots, a_n) \in A^n$，都有 $(a_1, a_2, \cdots, a_n) \in R^\mathfrak A$ 当且仅当 $(h(a_1), h(a_2), \cdots, h(a_n)) \in R^\mathfrak B$，则称 $h$ 是（$\mathfrak A$ 到 $\mathfrak B$）的嵌入
         1. $h: \mathfrak A \to \mathfrak B$ 是一个嵌入当且仅当对任意无量词公式 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 与 $\overline a \in A^n$ 有 $\mathfrak A \vDash \alpha(\overline a)$ 当且仅当 $\mathfrak B \vDash \alpha(h(\overline b))$
         2. $h: \mathfrak A \to B$ 是一个嵌入，如果 $\alpha(x_{m_1}, x_{m_2}, \cdots, x_{m_n})$ 是一个存在公式，则对任意 $\overline a \in A^n$ 有 $\mathfrak A \vDash \alpha(\overline a)$ 蕴含 $\mathfrak B \vDash \alpha(h(\overline a))$
         3. $h$ 是 $\mathfrak A$ 到 $\mathfrak B$ 的嵌入当且仅当 $(\mathfrak B, h(a))_{a\in A} \vDash \mathrm{Diag}(\mathfrak A)$，当且仅当 $(\mathfrak B, h(a))_{a\in A} \vDash \mathrm{Diag_{el}}(\mathfrak A)$
@@ -82,7 +82,7 @@
     1. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i \mid i \in I\}$ 是一族 $S-$结构
         1. 如果对任意的 $i, j \in I$ 都有 $i < j$ 蕴含 $\mathfrak A_i \subseteq \mathfrak A_j$，则称 $\{\mathfrak A_i \mid i \in I\}$ 是一条链
         2. 如果对任意的 $i, j \in I$ 都有 $i < j$ 蕴含 $\mathfrak A_i \prec \mathfrak A_j$，则称 $\{\mathfrak A_i \mid i \in I\}$ 是一条初等链
-    2. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i \mid i \in I\}$ 是一族 $S-$结构，其中 $\mathfrak A_i$ 的论域是 $A_i$．令 $\mathfrak A = {\displaystyle \bigcup_{i \in I} \mathfrak A_i}$，则其论域为 $A = {\displaystyle \bigcup_{i \in I}A_i}$，常元符号 $c$ 解释为 $c^{\mathfrak A_{i_0}}$，其中 $i_0 \in I$；函数符号 $f$ 解释为 ${\displaystyle \bigcup_{i \in I}f^{\mathfrak A_i}}$；关系符号 $R$ 解释为 ${\displaystyle \bigcup_{i \in I}R^{\mathfrak A_i}}$
+    2. 设 $(I, <)$ 是一个定向集，$\{\mathfrak A_i \mid i \in I\}$ 是一族 $S-$结构，其中 $\mathfrak A_i$ 的论域是 $A_i$．令 $\mathfrak A = {\displaystyle \bigcup_{i \in I} \mathfrak A_i}$，则其论域为 $A = {\displaystyle \bigcup_{i \in I}A_i}$，常元符号 $c$ 解释为 $c^{\mathfrak A_{i_0}}$，其中 $i_0 \in I$；函数符号 $f$ 解释为 ${\displaystyle \bigcup_{i \in I}f^{\mathfrak A_i}}$；谓词符号 $R$ 解释为 ${\displaystyle \bigcup_{i \in I}R^{\mathfrak A_i}}$
         1. 若 $\{\mathfrak A_i \mid i \in I\}$ 是一条链，则 $\mathfrak A$ 是一个 $S-$结构，且对每个 $i \in I$ 都有 $\mathfrak A_i \subseteq \mathfrak A$
         2. 若 $\{\mathfrak A_i \mid i \in I\}$ 是一条初等链，则对每个 $i \in I$ 都有 $\mathfrak A_i \prec \mathfrak A$
 
@@ -182,7 +182,7 @@
     2. 用 $[t]$ 表示 $t \in {\displaystyle \prod_{i \in I} A_{i}}$ 的等价类，用 ${\displaystyle \prod_{i \in I} A_{i} / \sim_{\mathcal{U}}}$ 或 $\operatorname{Ult}_{\mathcal{U}} \; \{A_i\}_{i \in S}$ 表示 ${\displaystyle \prod_{i \in I} A_{i}}$ 关于关系 $\sim \mathcal{U}$ 的等价类的集合 ${\displaystyle \left\{[t] \left| t \in \prod_{i \in I} A_{i}\right\}\right.}$，则 $\mathfrak{A}={\displaystyle \left\{\prod_{i \in I} A_{i} / \sim_{\mathcal{U}},\left\{Z^{\mathfrak{A}}\right\}_{Z \in L}\right\}}$ 是一个 $S-$结构
         1. 若 $c$ 是常元符号，令 $c_{i}=c^{\mathfrak{A}_{i}}$，则 $\left(c_{i}\right)_{i \in I} \in {\displaystyle \prod_{i \in I} A_{i}}$，将 $c$ 解释为 $\left(c_{i}\right)_{i \in I}$ 的等价类 $\left[\left(c_{i}\right)_{i \in I}\right]$
         2. 若 $f$ 是 $n$ 元函数，对任意 $t_{1}, \cdots, t_{n} \in {\displaystyle \prod_{i \in I} A_{i}}$，令 $f^{\mathfrak{A}}\left(\left[t_{1}\right], \cdots,\left[t_{n}\right]\right)=\left[\left(f^{\mathfrak{A}_{i}}\left(t_{1}(i), \cdots, t_{n}(i)\right)\right)_{i \in I}\right]$
-        3. 若 $R$ 是 $n$ 元关系，对任意 $t_{1}, \cdots, t_{n} \in {\displaystyle \prod_{i \in I} A_{i}}$ 都有 $\left(\left[t_{1}\right], \cdots,\left[t_{n}\right]\right) \in R^{\mathfrak{A}}$ 当且仅当 $\left\{i \in I \mid\left(t_{1}(i), \cdots, t_{n}(i)\right) \in R^{\mathfrak{A}}\right\} \in \mathcal{U}$
+        3. 若 $R$ 是 $n$ 元谓词，对任意 $t_{1}, \cdots, t_{n} \in {\displaystyle \prod_{i \in I} A_{i}}$ 都有 $\left(\left[t_{1}\right], \cdots,\left[t_{n}\right]\right) \in R^{\mathfrak{A}}$ 当且仅当 $\left\{i \in I \mid\left(t_{1}(i), \cdots, t_{n}(i)\right) \in R^{\mathfrak{A}}\right\} \in \mathcal{U}$
 
         设 $\mathcal{U}$ 是 $I$ 上的超滤，若对结构 $\mathfrak{B}$ 与每个 $i \in I$ 都有 $\mathfrak{A}_{i}= \mathfrak{B}$，则将 ${\displaystyle \prod_{i \in I} \mathfrak{A}_{i} / \sim_{\mathcal{U}}}$ 记作 $\mathfrak{B}^{I} / \sim_{\mathcal{U}}$ 或 $\operatorname{Ult}_{\mathcal{U}} \; \mathfrak{B}$，称作 $\mathfrak{B}$ 的超幂
 

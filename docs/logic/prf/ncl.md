@@ -5,17 +5,17 @@
 1. 二阶语言 $\mathscr L^1(S)$ 即二阶逻辑的形式语言，由逻辑符号和非逻辑符号组成
     1. 逻辑符号
         1. 变元集 $\mathbf{Var} = \mathbf V_r \cup \mathbf V_f \cup \mathbf V_l$
-            1. 变关系符：$\mathbf V_r = \{X_i \mid i\in \lambda\}$，用 $X, Y, Z$ 表示任意变关系符
+            1. 变谓词符：$\mathbf V_r = \{X_i \mid i\in \lambda\}$，用 $X, Y, Z$ 表示任意变谓词符
             2. 变函数符：$\mathbf V_f = \{f_i \mid i\in \lambda\}$，用 $f, g, h$ 表示任意变函数符
             3. 变个体符：$\mathbf V_l = \{x_i \mid i\in \lambda\}$，用 $x, y, z$ 表示任意变个体符
 
-            通常用上标表示其类型，例如用 $X^2$ 表示二元变关系符
+            通常用上标表示其类型，例如用 $X^2$ 表示二元变谓词符
 
         2. 联结词 $\neg, \to$ 与量词 $\forall$
         3. 括号 $)$ 与 $($
 
     2. 非逻辑符号：令 $S = \mathbf R \cup \mathbf F \cup \mathbf C$
-        1. 关系符号集 $\mathbf R = \{R_i\mid i\in \lambda\}$，用 $R, Q, H$ 表示任意关系符号
+        1. 谓词符号集 $\mathbf R = \{R_i\mid i\in \lambda\}$，用 $R, Q, H$ 表示任意谓词符号
         2. 函数符号集 $\mathbf F = \{\varphi_i\mid i\in \lambda\}$，用 $\varphi, \psi$ 表示任意函数符号
         3. 个体符号集 $\mathbf C = \{c_i\mid i\in \lambda\}$，用 $a, b, c$ 表示任意个体符号
 
@@ -23,8 +23,8 @@
 
 2. 二阶逻辑项与公式的句法
     1. 二阶语言 $\mathscr L^1(S)$ 的类型是从 $\mathbf V_r \cup \mathbf V_f \cup \mathbf R \cup \mathbf F$ 的正整数集合的函数 $\Omega: S \to \mathbf Z_+$
-        1. 对每个 $R \in \mathbf V_r \cup \mathbf R$，$\Omega(R)$ 称为 $R$ 的元数，$R$ 为 $\Omega(R)$ 元关系符号
-        2. 对每个 $f \in \mathbf V_f \cup \mathbf F$，$\Omega(f)$ 称为 $f$ 的元数，$f$ 为 $\Omega(f)$ 元关系符号
+        1. 对每个 $R \in \mathbf V_r \cup \mathbf R$，$\Omega(R)$ 称为 $R$ 的元数，$R$ 为 $\Omega(R)$ 元谓词符号
+        2. 对每个 $f \in \mathbf V_f \cup \mathbf F$，$\Omega(f)$ 称为 $f$ 的元数，$f$ 为 $\Omega(f)$ 元谓词符号
     2. 二阶语言 $\mathscr L^1(S)$ 的项集 $\mathcal T(S)$ 归纳定义如下
 
         $$
@@ -59,10 +59,10 @@
 
 3. 标准语义
     1. 结构：一个标准结构是 $\mathfrak A = (A, I)$，其中 $A$ 是非空集合，称为 $\mathfrak A$ 的论域，$I$ 是定义在 $S$ 上的映射；在不引发歧义的情况下，也可称 $A$ 为一个标准结构．记 $A$ 的基数 $|A|$ 为 $\mathfrak A$ 的基数，用 $|\mathfrak A|$ 来表示
-        1. 对每个关系符号 $R\in \mathbf R, I(R) \subseteq A^{\Omega(R)}$，常用 $R^\mathfrak A$ 或 $R^A$ 代替 $I(R)$
+        1. 对每个谓词符号 $R\in \mathbf R, I(R) \subseteq A^{\Omega(R)}$，常用 $R^\mathfrak A$ 或 $R^A$ 代替 $I(R)$
         2. 对每个函数符号 $\varphi\in \mathbf F, I(\varphi): A^{\Omega(\varphi)} \to A$ 是 $A$ 上的 $\Omega(\varphi)$ 元函数，常用 $\varphi^\mathfrak A$ 或 $\varphi^A$ 代替 $I(\varphi)$
         3. 对每个常元符号 $c\in \mathbf C, I(c) \in A$，常用 $c^\mathfrak A$ 或 $c^A$ 代替 $I(c)$
-    2. 模型：一个标准模型是有序对 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是标准结构，$\sigma$ 是 $\mathfrak A$ 中的指派，使得对于每个 $n$ 元变关系符 $X^n \in \mathbf V_r$ 有 $\sigma(X) \subseteq A^n$；对于每个 $n$ 元变函数符 $f^n \in \mathbf V_f$ 有 $\sigma(f^n): A^n \to A$；对于每个变个体符 $x \in \mathbf V_l$ 有 $\sigma(x) \in A$
+    2. 模型：一个标准模型是有序对 $\mathfrak M = (\mathfrak A, \sigma)$，其中 $\mathfrak A$ 是标准结构，$\sigma$ 是 $\mathfrak A$ 中的指派，使得对于每个 $n$ 元变谓词符 $X^n \in \mathbf V_r$ 有 $\sigma(X) \subseteq A^n$；对于每个 $n$ 元变函数符 $f^n \in \mathbf V_f$ 有 $\sigma(f^n): A^n \to A$；对于每个变个体符 $x \in \mathbf V_l$ 有 $\sigma(x) \in A$
         1. 项解释：对任意结构 $\mathfrak A$ 和模型 $\mathfrak M = (\mathfrak A, \sigma)$，项 $t$ 在 $\mathfrak M$ 中的解释 $t^\mathfrak M$ 归纳定义为
 
             $$
@@ -92,10 +92,10 @@
 
 4. 公理系统 $\mathbf H_2$：二阶语言没有任何能行的演绎系统对标准语义完全，但一阶演绎系统关于二阶语言有自然扩充
     1. 公理与公理模式：在 $\mathbf H_1$ 附加如下公理
-        1. $\text{A}_6: \forall X\alpha \to \alpha(T/X)$，即将 $n$ 元变关系符 $X$ 替换为 $T$，后者是对 $\alpha$ 中 $X$ 可带入的 $n$ 元变关系符或 $n$ 元关系符
+        1. $\text{A}_6: \forall X\alpha \to \alpha(T/X)$，即将 $n$ 元变谓词符 $X$ 替换为 $T$，后者是对 $\alpha$ 中 $X$ 可带入的 $n$ 元变谓词符号或 $n$ 元谓词符号
         2. $\text{A}_7: \forall f\alpha \to \alpha(p/f)$，即将 $n$ 元变函数符 $f$ 替换为 $p$，后者是对 $\alpha$ 中 $f$ 可带入的 $n$ 元变函数符或 $n$ 元函数符
         3. 概括公理模式 $\text{A}_8: \exists X \forall x_{1}, x_{2}, \forall x_{2} \cdots \forall x_{n}\left(X\left(x_{1}, x_{2}, \cdots, x_{n}\right) = \alpha\left(x_{1}, \cdots, x_{n}\right)\right), X \notin \mathrm{FV}(\alpha)$
-        4. 选择公理 $\text{A}_9:$ 设 $X$ 为 $n+1$ 元的变关系符，$f$ 是 $n$ 元的变函数符，则有
+        4. 选择公理 $\text{A}_9:$ 设 $X$ 为 $n+1$ 元的变谓词符，$f$ 是 $n$ 元的变函数符，则有
 
             $$
             \forall X \ (\forall x_1 \forall x_2 \cdots \forall x_n \exists y \ X(x_1, x_2, \cdots, x_n, y) \to \exists f \forall x_1 \forall x_2 \cdots \forall x_n \ X(x_1, x_2, \cdots, x_n, f(x_1, x_2, \cdots, x_n)))
@@ -126,11 +126,11 @@
 1. $\text{Henkin}$ 语义
     1. 结构：一个 $\text{Henkin}$ 结构是 $\mathfrak A^{\mathrm H} = (A, R, F, I)$
         1. $A$ 是个体域
-        2. $R$ 是由关系集 $\mathbf R$ 形成的映射，对任意 $n \in \mathbf N$ 都有 $\varnothing \neq R(n) \subseteq \mathcal P(A^n)$
-        3. $F$ 是由函数集 $\mathbf F$ 形成的映射，对任意 $n \in \mathbf N$ 都有 $\varnothing \neq F(n) \subseteq \left\{f \mid f: A^n \to A\right\}$
+        2. $R$ 是由谓词符号集 $\mathbf R$ 形成的映射，对任意 $n \in \mathbf N$ 都有 $\varnothing \neq R(n) \subseteq \mathcal P(A^n)$
+        3. $F$ 是由函数符号集 $\mathbf F$ 形成的映射，对任意 $n \in \mathbf N$ 都有 $\varnothing \neq F(n) \subseteq \left\{f \mid f: A^n \to A\right\}$
         4. $I$ 是定义在 $S$ 上的映射
     2. 模型：$\text{Henkin}$ 语义的描述基本与标准语义相同，而仅在二阶变项与二阶量词方面有区别．设 $\text{Hekin}$ 模型 $\mathfrak M^{\mathrm H} = (\mathfrak A^{\mathrm H}, \sigma)$
-        1. 对于指派 $\sigma$ 与 $n$ 元变关系符 $X^n \in \mathbf V_r$ 及 $n$ 元变函数符 $f^n \in \mathbf V_f$，有 $\sigma(X^n) \in R(n), \sigma(f^n) \in F(n)$
+        1. 对于指派 $\sigma$ 与 $n$ 元变谓词符 $X^n \in \mathbf V_r$ 及 $n$ 元变函数符 $f^n \in \mathbf V_f$，有 $\sigma(X^n) \in R(n), \sigma(f^n) \in F(n)$
         2. 模型 $\mathfrak M^{\mathrm H}$ 与公式 $\forall X^n\alpha, \forall f^n\alpha$ 的满足关系定义为
 
             $$
@@ -142,10 +142,10 @@
 
 2. 一阶语义
     1. 结构：一个一阶结构是 $\mathfrak A^{0} = (A, A_1, A_2, (I, P, D))$
-        1. $A$ 是非空集，对任意 $n \in \mathbf N$，非空集 $A_1(n), A_2(n)$ 是 $n$ 元变关系符与 $n$ 元变函数符的取值范围
+        1. $A$ 是非空集，对任意 $n \in \mathbf N$，非空集 $A_1(n), A_2(n)$ 是 $n$ 元变谓词符与 $n$ 元变函数符的取值范围
         2. 对任意 $n \in \mathbf N$ 有 $P(n) \subseteq A^n \times A_1(n), D(n): A^n \times A_2(n) \to A$
     2. 模型：设一阶模型 $\mathfrak M^{0} = (\mathfrak A^{0}, \sigma)$
-        1. 对于指派 $\sigma$ 与 $n$ 元变关系符 $X^n \in \mathbf V_r$ 及 $n$ 元变函数符 $f^n \in \mathbf V_f$，有 $\sigma(X^n) \in A_1(n), \sigma(f^n) \in A_2(n)$
+        1. 对于指派 $\sigma$ 与 $n$ 元变谓词符 $X^n \in \mathbf V_r$ 及 $n$ 元变函数符 $f^n \in \mathbf V_f$，有 $\sigma(X^n) \in A_1(n), \sigma(f^n) \in A_2(n)$
         2. 项解释：对任意结构 $\mathfrak A^{0}$ 和模型 $\mathfrak M^{0} = (\mathfrak A^{0}, \sigma)$，项 $t$ 在 $\mathfrak M^{0}$ 中的解释 $t^{\mathfrak M^{0}}$ 归纳定义为
 
             $$

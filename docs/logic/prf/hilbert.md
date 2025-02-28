@@ -283,7 +283,7 @@
         2. 联结词 $\bot, \wedge, \vee, \to$ 与量词 $\forall, \exists$
         3. 括号 $)$ 与 $($
     2. 非逻辑符号：令 $S = \mathbf R \cup \mathbf F\cup \mathbf C$
-        1. 关系符号集 $\mathbf R = \{R_i\mid i\in \lambda\}$，用 $P, Q, R$ 表示任意关系符号
+        1. 谓词符号集 $\mathbf R = \{R_i\mid i\in \lambda\}$，用 $P, Q, R$ 表示任意谓词符号
         2. 函数符号集 $\mathbf F = \{f_i\mid i\in \lambda\}$，用 $f, g, h$ 表示任意函数符号
         3. 常元符号集 $\mathbf C = \{c_i\mid i\in \lambda\}$，用 $a, b, c$ 表示任意常元符号
 
@@ -300,7 +300,7 @@
 
 2. 一阶逻辑项与公式的句法
     1. 一阶语言 $\mathscr L(S)$ 的类型是从 $\mathbf R \cup \mathbf F$ 的正整数集合的函数 $\Omega: S \to \mathbf Z_+$
-        1. 对每个 $R \in \mathbf R$，$\Omega(R)$ 称为 $R$ 的元数，$R$ 为 $\Omega(R)$ 元关系符号
+        1. 对每个 $R \in \mathbf R$，$\Omega(R)$ 称为 $R$ 的元数，$R$ 为 $\Omega(R)$ 元谓词符号
         2. 对每个 $f \in \mathbf F$，$\Omega(f)$ 称为 $f$ 的元数，$f$ 为 $\Omega(f)$ 元函数符号
     2. 一阶语言 $\mathscr L(S)$ 的项集 $\mathcal T(S)$ 归纳定义如下
 
@@ -431,7 +431,7 @@
 
 4. 模型论语义学
     1. 结构：一个 $S-$结构是 $\mathfrak A = (A, I)$，也记作 $(A, R^\mathfrak A, f^\mathfrak A, c^\mathfrak A)$ 或 $\left\{A, \{Z^\mathfrak A\}_{Z\in S}\right\}$，其中 $A$ 是非空集合，称为 $\mathfrak A$ 的论域，$I$ 是定义在 $S$ 上的映射；在不引发歧义的情况下，也可称 $A$ 为一个 $S-$结构．记 $A$ 的基数 $|A|$ 为 $\mathfrak A$ 的基数，用 $|\mathfrak A|$ 来表示
-        1. 对每个关系符号 $R\in \mathbf R, I(R) \subseteq A^{\Omega(R)}$，常用 $R^\mathfrak A$ 或 $R^A$ 代替 $I(R)$
+        1. 对每个谓词符号 $R\in \mathbf R, I(R) \subseteq A^{\Omega(R)}$，常用 $R^\mathfrak A$ 或 $R^A$ 代替 $I(R)$
         2. 对每个函数符号 $f\in \mathbf F, I(f): A^{\Omega(f)} \to A$ 是 $A$ 上的 $\Omega(f)$ 元函数，常用 $f^\mathfrak A$ 或 $f^A$ 代替 $I(f)$
         3. 对每个常元符号 $c\in \mathbf C, I(c) \in A$，常用 $c^\mathfrak A$ 或 $c^A$ 代替 $I(c)$
 
@@ -446,7 +446,7 @@
 
                 则定义 $\{\mathfrak A_i\mid i\in I\}$ 的交为一个以 ${\displaystyle \bigcap_{i\in I}A_i}$ 为论域的 $S-$结构，记作 ${\displaystyle \bigcap_{i\in I}\mathfrak A_i}$
 
-                4. 对每个 $n$ 元关系符号 $R\in \mathbf R$，$R^{\bigcap_{i\in I}\mathfrak A_i} = {\displaystyle \bigcap_{i\in I}R^{\mathfrak A_i}}$
+                4. 对每个 $n$ 元谓词符号 $R\in \mathbf R$，$R^{\bigcap_{i\in I}\mathfrak A_i} = {\displaystyle \bigcap_{i\in I}R^{\mathfrak A_i}}$
                 5. 对每个 $n$ 元函数符号 $f\in \mathbf F$，$f^{\bigcap_{i\in I}\mathfrak A_i}(a_1, a_2, \cdots, a_n) = f^{\mathfrak A_i}(a_1, a_2, \cdots, a_n)$
                 6. 对每个常元符号，$c\in \mathbf C$，$c^{\bigcap_{i\in I}\mathfrak A_i} = C^{\mathfrak A_i}$
 
@@ -636,7 +636,7 @@
 9. 完全性：如果 $\Sigma \vDash \alpha$，那么 $\Sigma \vdash_{\mathbf H_1} \alpha$
     1. $S$ 是可数的，因此 $\mathcal T(S)$ 与 $\mathcal F(S)$ 均可数，设 $\Sigma$ 是 $\mathbf H_1-$一致的公式集，构造句法模型 $\mathfrak M^\Sigma = (\mathfrak A^\Sigma, \sigma^\Sigma)$
         1. 模型 $\mathfrak M^\Sigma = (\mathfrak A^\Sigma, \sigma^\Sigma)$ 的论域是项集 $\mathcal T(S)$，对任意变元 $x\in \mathbf{Var}, \sigma^\Sigma(x) = x$
-            1. 对任意关系符号 $R\in \mathbf R, (t_1, t_2, \cdots, t_{\Omega(R)}) \in R^{\mathfrak A^\Sigma}$ 当且仅当 $\Sigma \vdash_{\mathbf H_1} Rt_1 t_2 \cdots t_{\Omega(R)}$
+            1. 对任意谓词符号 $R\in \mathbf R, (t_1, t_2, \cdots, t_{\Omega(R)}) \in R^{\mathfrak A^\Sigma}$ 当且仅当 $\Sigma \vdash_{\mathbf H_1} Rt_1 t_2 \cdots t_{\Omega(R)}$
             2. 对任意函数符号 $f\in \mathbf F, f^{\mathfrak A^\Sigma}(t_1, t_2, \cdots, t_{\Omega(f)}) = ft_1 t_2 \cdots t_{\Omega(f)}$
             3. 对任意常元符号 $c\in \mathbf C, c^{\mathfrak A^\Sigma} = c$
         2. 在 $\mathfrak M^\Sigma$ 中以下成立
