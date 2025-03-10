@@ -2,14 +2,14 @@
 
 ## 1.1 度量空间
 ### 1.1.1 一般度量空间
-1. 度量：设 $X$ 是一个集合，$\rho: X\times X\to R$．若对于 $\forall x, y, z\in X$ 有以下性质成立，则称 $\rho$ 是集合 $X$ 的一个度量
+1. 度量：设 $X$ 是一个集合，$\rho: X\times X\to \mathbf{R}$．若对于 $\forall x, y, z\in X$ 有以下性质成立，则称 $\rho$ 是集合 $X$ 的一个度量
     1. 正定性：$\rho(x, y)\geqslant 0 \wedge \rho(x, y)=0 \leftrightarrow x=y$
     2. 对称性：$\rho(x, y) = \rho(y, x)$
     3. 三角不等式：$\rho(x, z) \leqslant \rho(x, y) + \rho(y, z)$
 2. 度量空间：若 $\rho$ 是集合 $X$ 的一个度量，则偶对 $(X, \rho)$ 是一个度量空间，即 $X$ 是一个对于度量 $\rho$ 而言的度量空间．对于任意两点 $x, y\in X$，称 $\rho(x, y)$ 为点 $x$ 到点 $y$ 的一个距离
     1. 离散空间：设 $(X, \rho)$ 是一个度量空间，若 $\forall x\in X\ \exists \delta_x>0: \rho(x, y)>\delta_x$ 对于任何 $y\in X, y\neq x$ 成立，则称 $(X, \rho)$ 是离散的，或称 $\rho$ 是 $X$ 的一个离散度量
-    2. $\text{Euclid}$ 空间：对于 $\mathbf R^n$．定义 $\rho: \mathbf R^n\times \mathbf R^n \to \mathbf R$ 有 $\forall x, y\in \mathbf R: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^n(x_i-y_i)^2}}$，这个度量称为 $\mathbf R^n$ 的通常度量．特别地，当 $n=1$ 时，称 $\mathbf R$ 为实数空间
-    3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)\mid {\displaystyle \sum_{i=1}^\infty x_i^2}<\infty, x_i\in \mathbf R, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to R$ 有
+    2. $\text{Euclid}$ 空间：对于 $\mathbf{R}^n$．定义 $\rho: \mathbf{R}^n\times \mathbf{R}^n \to \mathbf{R}$ 有 $\forall x, y\in \mathbf{R}: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^n(x_i-y_i)^2}}$，这个度量称为 $\mathbf{R}^n$ 的通常度量．特别地，当 $n=1$ 时，称 $\mathbf{R}$ 为实数空间
+    3. $\text{Hilbert}$ 空间：对于 $H=\left\{x=(x_1, x_2, \cdots)\mid {\displaystyle \sum_{i=1}^\infty x_i^2}<\infty, x_i\in \mathbf{R}, i\in \mathbf Z_+\right\}$，定义 $\rho: H\times H\to \mathbf{R}$ 有
 
         $$
         \forall x=(x_1, x_2, \cdots), y=(y_1, y_2, \cdots)\in H: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^\infty (x_i-y_i)^2}}
@@ -47,7 +47,7 @@
 2. 完备度量空间：$X$ 中的每一个 $\text{Cauchy}$ 序列都收敛的度量空间 $(X, \rho)$
     1. 度量空间的每一个收敛序列都是 $\text{Cauchy}$ 序列，反之不一定成立
     2. 完备度量空间中的每一个闭的度量子空间都是完备度量空间
-    3. $n$ 维 $\text{Euclid}$ 空间（包括实数空间）$R$ 和 $\text{Hilbert}$ 空间 $H$ 都是完备度量空间．设 $(X, \rho)$ 是一个度量空间
+    3. $n$ 维 $\text{Euclid}$ 空间（包括实数空间）$\mathbf{R}$ 和 $\text{Hilbert}$ 空间 $H$ 都是完备度量空间．设 $(X, \rho)$ 是一个度量空间
         1. 设 $Y\subseteq X$，若 $Y$ 中的每一个 $\text{Cauchy}$ 序列都在 $X$ 中收敛，则 $Y$ 的闭包 $\overline Y$ 中的每一个 $\text{Cauchy}$ 序列也都在 $X$ 中收敛
         2. 设 $Y$ 是 $X$ 的一个稠密子集，若 $Y$ 中的每一个 $\text{Cauchy}$ 序列都在 $X$ 中收敛，则 $X$ 是一个完备度量空间
 3. 保距映射：设 $(X, \rho)$ 和 $(Y, d)$ 都是度量空间，$f: X\to Y$．若对于任意 $x, y\in X$ 有 $d(f(x), f(y)) =\rho(x, y)$，则称映射 $f$ 是一个保距映射，若存在一个从 $X$ 到 $Y$ 的满的保距映射，则称度量空间 $(X, \rho)$ 与 $(Y, d)$ 同距

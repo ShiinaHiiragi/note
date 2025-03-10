@@ -1,14 +1,14 @@
 # 2 构造空间
 
 ## 2.1 子空间
-1. 度量子空间：设 $(X, \rho)$ 是一个度量空间，$Y\subseteq X$，因此 $Y\times Y\subseteq X\times X$．显然 $\rho|_{Y\times Y}: Y\times Y\to R$ 是 $Y$ 的一个度量，称之为由 $X$ 的度量诱导的，$(Y, \rho)$ 为 $(X, \rho)$ 的一个度量子空间
+1. 度量子空间：设 $(X, \rho)$ 是一个度量空间，$Y\subseteq X$，因此 $Y\times Y\subseteq X\times X$．显然 $\rho|_{Y\times Y}: Y\times Y\to \mathbf{R}$ 是 $Y$ 的一个度量，称之为由 $X$ 的度量诱导的，$(Y, \rho)$ 为 $(X, \rho)$ 的一个度量子空间
     1. 子空间的例子
-        1. 实数空间 $R$ 的区间 $(a, b), [a, b]$ 等
-        2. $n+1$ 维 $\text{Euclid}$ 空间 $R^{n+1}$ 中
-            1. $n$ 维单位球面 $S^n=\left\{x=(x_1, x_2, \cdots, x_{n+1})\in \mathbf R^{n+1}\mid {\displaystyle \sum_{i=1}^{n+1}x_i^2}=1\right\}$
-            2. $n$ 维单位开球体 $D^n=\left\{x=(x_1, x_2, \cdots, x_n)\in \mathbf R^n\mid {\displaystyle \sum_{i=1}^n x_i^2}<1\right\}$
-            3. $n$ 维单位闭球体 $E^n=\left\{x=(x_1, x_2, \cdots, x_n)\in \mathbf R^n\mid {\displaystyle \sum_{i=1}^n x_i^2}\leqslant 1\right\}$
-        3. $n+1$ 维 $\text{Euclid}$ 空间 $R^{n+1}$ 中的 $n$ 维开、闭方体 $(0, 1)^n, [0, 1]^n$
+        1. 实数空间 $\mathbf{R}$ 的区间 $(a, b), [a, b]$ 等
+        2. $n+1$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n+1}$ 中
+            1. $n$ 维单位球面 $S^n=\left\{x=(x_1, x_2, \cdots, x_{n+1})\in \mathbf{R}^{n+1}\mid {\displaystyle \sum_{i=1}^{n+1}x_i^2}=1\right\}$
+            2. $n$ 维单位开球体 $D^n=\left\{x=(x_1, x_2, \cdots, x_n)\in \mathbf{R}^n\mid {\displaystyle \sum_{i=1}^n x_i^2}<1\right\}$
+            3. $n$ 维单位闭球体 $E^n=\left\{x=(x_1, x_2, \cdots, x_n)\in \mathbf{R}^n\mid {\displaystyle \sum_{i=1}^n x_i^2}\leqslant 1\right\}$
+        3. $n+1$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n+1}$ 中的 $n$ 维开、闭方体 $(0, 1)^n, [0, 1]^n$
     2. 设 $Y$ 是度量空间 $X$ 的一个度量子空间，则 $Y$ 的子集 $U$ 是 $Y$ 中的开集当且仅当存在 $X$ 中的开集 $V$ 使得 $U=V\cap Y$
 2. 拓扑子空间：设 $Y$ 是拓扑空间 $(X, \mathscr T)$ 的一个子集，则 $\mathscr T|_Y$ 在 $Y$ 上的限制 $\mathscr T|_Y=\{T\cap Y\mid T\in \mathscr T\}$ 称为（相对于 $X$ 的拓扑而言的）相对拓扑；拓扑空间 $(Y, \mathscr T|_Y)$ 称为拓扑空间的拓扑子空间
     1. 若 $Y$ 是拓扑空间 $(X, \mathscr T)$ 的子集，则集族 $\mathscr T|_Y$ 是 $Y$ 的一个拓扑
@@ -32,7 +32,7 @@
 
 ## 2.2 积空间
 ### 2.2.1 有限积空间
-1. 度量积空间：设 $(X_1, \rho), (X_2, \rho_2), \cdots, (X_n, \rho_n)$ 是 $n\geqslant 1$ 个度量空间，令 $X=X_1 \times X_2 \times \cdots X_n$．定义 $\rho: X \times X\to R$ 使得 $\forall x=(x_1, x_2, \cdots, x_n), y=(y_1, y_2, \cdots, y_n)\in X: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^n \rho_i(x_i, y_i)^2}}$
+1. 度量积空间：设 $(X_1, \rho), (X_2, \rho_2), \cdots, (X_n, \rho_n)$ 是 $n\geqslant 1$ 个度量空间，令 $X=X_1 \times X_2 \times \cdots X_n$．定义 $\rho: X \times X\to \mathbf{R}$ 使得 $\forall x=(x_1, x_2, \cdots, x_n), y=(y_1, y_2, \cdots, y_n)\in X: \rho(x, y)={\displaystyle \sqrt{\sum_{i=1}^n \rho_i(x_i, y_i)^2}}$
     1. 设 $(X_1, \rho_1), (X_2, \rho_2), \cdots, (X_n, \rho_n)$ 是 $n\geqslant 1$ 个度量空间，$(X, \rho)$ 是它们的积空间，$\mathscr T_i$ 和 $\mathscr T$ 分别是由度量 $\rho_i$ 和 $\rho$ 诱导出来的 $X_i\ (i=1, 2, \cdots, n)$ 和 $X$ 的拓扑，则 $X$ 的子集族 $\mathscr B=\{U_1 \times U_2\times \cdots \times U_n\mid U_i\in \mathscr  T_i, i=1, 2, \cdots, n\}$ 是 $X$ 的拓扑 $\mathscr T$ 的基
     2. 设 $(X_1, \mathscr T_1), (X_2, \mathscr T_2), \cdots, (X_n, \mathscr T_n)$ 是 $n\geqslant 1$ 个拓扑空间，则 $X= X_1\times X_2\times \cdots \times X_n$ 的以 $X$ 子集族 $\mathscr B=\{U_1\times U_2\times \cdots \times U_n\mid U_i\in \mathscr  T_i\}$ 为它的基
 2. 设 $(X_1, \mathscr T_1), (X_2, \mathscr T_2), \cdots, (X_n, \mathscr T_n)$ 是 $n\geqslant 1$ 个拓扑空间，则 $X=X_1\times X_2\times \cdots \times X_n$ 的以子集族 $\mathscr B=\{U_1\times U_2\times \cdots \times U_n\mid U_i\in \mathscr  T_i\}$ 为它的一个基的唯一拓扑 $\mathscr T$ 称为拓扑 $\mathscr T_1, \mathscr T_2, \cdots, \mathscr T_n$ 的积拓扑，拓扑空间 $(X, \mathscr T)$ 称为拓扑空间 $(X_1, \mathscr T_1), (X_2, \mathscr T_2), \cdots, (X_n, \mathscr T_n)$ 的拓扑空间
@@ -72,9 +72,9 @@
 2. 映射空间与连续映射空间
     1. 将 $Y^X={\displaystyle \prod_{x\in X}Y}$ 的积拓扑 $\mathscr T$ 称为 $Y^X$ 的点式收敛拓扑，将拓扑空间 $(Y^X, \mathscr T)$ 称为从集合 $X$ 到集合 $Y$ 的映射空间（点式收敛拓扑）．映射空间是一类特别的积空间，因此关于积空间的一般结论全部适用
     2. 连续映射空间：设 $X$ 和 $Y$ 是两个拓扑空间，记 $\mathscr C(X, Y)$ 为从 $X$ 到 $Y$ 的所有连续映射构成的集合，因此 $\mathscr C(X, Y)\subseteq Y^X$．$\mathscr C(X, Y)$ 作为映射空间 $Y^X$ 的子空间称为从拓扑空间 $X$ 到 $Y$ 的连续映射空间（点式收敛拓扑），并且此时 $\mathscr C(X, Y)$ 的拓扑也称作点式收敛拓扑
-    3. 设 $X$ 是一个 $\text{Tychonoff}$ 空间，则从 $X$ 到实数空间 $R$ 的所有连续映射构成的集合 $\mathscr C(X, R)$ 是映射空间 $R^X$ （点式收敛拓扑）中的一个稠密子集
+    3. 设 $X$ 是一个 $\text{Tychonoff}$ 空间，则从 $X$ 到实数空间 $\mathbf{R}$ 的所有连续映射构成的集合 $\mathscr C(X, \mathbf{R})$ 是映射空间 $\mathbf{R}^X$ （点式收敛拓扑）中的一个稠密子集
 3. 一致收敛度量与一致收敛拓扑
-    1. 一致收敛度量：设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间．记 $Y^X$ 为从 $X$ 到 $Y$ 的所有映射的集合，定义 $\widetilde{\rho}: Y^X\times Y^X \to R$ 使得对于任何 $f, g\in Y^X$ 有
+    1. 一致收敛度量：设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间．记 $Y^X$ 为从 $X$ 到 $Y$ 的所有映射的集合，定义 $\widetilde{\rho}: Y^X\times Y^X \to \mathbf{R}$ 使得对于任何 $f, g\in Y^X$ 有
 
         $$
         \widetilde{\rho}(f, g) =
@@ -91,7 +91,7 @@
 4. 一致收敛：设 $X$ 是一个集合，$(Y, \rho)$ 是一个度量空间，对映射集合 $Y^X$ 中的一个序列 $\{f_i\}_{i\in \mathbf Z_+}$，若对于任意给定的实数 $\varepsilon>0$，存在整数 $N>0$ 使得当 $i>N$ 时，$\rho(f_i(x), f(x))<\varepsilon$ 对于任何 $x\in X$ 成立，则称此序列一致收敛于映射 $f\in Y^X$
     1. 在度量空间 $Y^X$（一致收敛度量）中的一个序列 $\{f_i\}_{i\in \mathbf Z_+}$ 收敛于 $f\in Y^X$ 当且仅当序列 $\{f_i\}_{i\in \mathbf Z_+}$ 一致收敛于 $f\in Y^X$
     2. 若度量空间 $(Y, \rho)$ 是一个完备的度量空间，则映射空间 $Y^X$（一致收敛度量）也是一个完备度量空间
-    3. 则从 $X$ 到实数空间 $R$ 的所有连续映射构成的集合 $\mathscr C(X, R)$ 是樱花色空间 $Y^X$（一致收敛拓扑）中的一个闭集．因此当 $(Y, \rho)$ 是一个完备度量空间时，度量空间 $\mathscr C(X, Y)$（一致收敛度量）也是一个完备的度量空间
+    3. 则从 $X$ 到实数空间 $\mathbf{R}$ 的所有连续映射构成的集合 $\mathscr C(X, \mathbf{R})$ 是映射空间 $Y^X$（一致收敛拓扑）中的一个闭集．因此当 $(Y, \rho)$ 是一个完备度量空间时，度量空间 $\mathscr C(X, Y)$（一致收敛度量）也是一个完备的度量空间
 5. 紧$-$开拓扑：设 $X, Y$ 是两个集合，对于任意 $E\subseteq X$ 和 $B\subseteq Y$，记 $W(E, B)=\{f\in Y^X\mid f[E]\subseteq B\}$
     1. $\mathscr E-$开拓扑： 设 $X$ 是一个集合，$Y$ 是一个拓扑空间，$\mathscr E$ 是 $X$ 的一个子集族，则全体从 $X$ 到 $Y$ 的映射构成的族 $Y^X$ 的子集族 $\mathscr{S_E}=\{W(E, U)\subseteq Y^X\mid E\in \mathscr E, U$ 是 $Y$ 的一个开集 $\}$ 的并是 $Y^X$．因此 $Y^X$ 有唯一的拓扑 $\mathscr{T_E}$ 以 $\mathscr{S_E}$ 为它的一个子基．$Y^X$ 的拓扑 $\mathscr{T_E}$ 称为 $Y^X$ 的 $\mathscr E-$开拓扑；拓扑空间 $(Y^X, \mathscr{T_E})$ 称为映射空间（$\mathscr E-$开拓扑）
 
@@ -121,5 +121,5 @@
     1. 圆周：在单位闭区间 $I=[0, 1]$ 中黏合两个端点得到的商空间．给定等价条件 $\sim=\{(x, y)\in I\times I\mid x=y\vee \{x, y\}=\{0, 1\}\}$ 得到的商空间 $[0, 1]/\sim$，它与单位圆周 $S^1$ 同胚
     2. 圆柱面：在单位正方形 $I^2=[0, 1]^2$ 中给定一个等价关系 $\sim=\{(x, y)\in(I\times I)^2\mid x=y\vee \{x_1, y_1\}=\{0, 1\}, x_2=y_2, x=(x_1, x_2), y=(y_1, y_2)\}$ 得到的商空间 $I^2/\sim$
     3. $\text{Mobius}$ 带：将单位正方形 $I^2=[0, 1]^2$ 的一对竖直的对边上的每一对点 $(0, y)$ 和 $(1, 1-y)$ 粘合得到的商空间，它与 $\text{Mobius}$ 带同胚，且不同胚与圆柱面
-    4. $\text{Klein}$ 瓶：在单位正方形 $I^2=[0, 1]^2$ 中将它的一堆水平的对边上具有相同的第一个坐标的点 $(x, 0)$ 和 $(x, 1)$ 粘合，同时将其一对竖边上的每一对点 $(0, y)$ 和 $(1, 1-y)$ 粘合，得到的商空间与 $\text{Klein}$ 瓶同胚，这个商空间不可能画在 $R^3$ 中
+    4. $\text{Klein}$ 瓶：在单位正方形 $I^2=[0, 1]^2$ 中将它的一堆水平的对边上具有相同的第一个坐标的点 $(x, 0)$ 和 $(x, 1)$ 粘合，同时将其一对竖边上的每一对点 $(0, y)$ 和 $(1, 1-y)$ 粘合，得到的商空间与 $\text{Klein}$ 瓶同胚，这个商空间不可能画在 $\mathbf{R}^3$ 中
 5. 可商性质：拓扑空间的某种性质，若为一个拓扑空间所具有也必然为它的任何一个商空间所具有，则称这个性质是一个可商性质．拓扑不变性质必然是可商性质
