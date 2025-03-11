@@ -191,23 +191,3 @@
     3. 设 $X$ 是一个拓扑空间，$x\in X$
         1. 若 $\mathscr B$ 是 $X$ 的一个基，则 $\mathscr B_x=\{B\in \mathscr B\mid x\in B\}$ 是点 $x$ 的一个邻域基
         2. 若 $\mathscr S$ 是 $X$ 的一个子基，则 $\mathscr S_x=\{S\in \mathscr S\mid x\in S\}$ 是点 $x$ 的一个邻域子基
-
-### 1.2.4 拓扑空间中的序列
-1. 序列：设 $X$ 是一个拓扑空间，每一个映射 $S: Z_+\to X$ 称作 $X$ 中的一个序列，将序列 $S$ 记作 $\{x_i\}_{i\in \mathbf Z_+}$ 或 $\{x_1, x_2, \cdots\}$，其中 $x_i=S(i), i\in \mathbf Z_+$
-    1. $\{x_i\}_{i\in \mathbf Z_+}$ 可简记为 $\{x_i\}$
-    2. 集合 $\{x_i\mid i\in \mathbf Z_+\}$ 可为有限集，当其为单点集时，称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 为一个常值序列
-2. 极限点：设 $\{x_i\}_{i\in \mathbf Z_+}$ 是拓扑空间中的一个序列，$x\in X$．若对于 $x$ 的任意邻域 $U$，存在 $M\in \mathbf Z$ 使得当 $i>M$ 时有 $x_i\in U$，则称点 $x$ 是序列 $\{x_i\}_{i\in \mathbf Z_+}$ 的一个极限点，也称序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x$，记作 ${\displaystyle \lim_{i\to \infty}x_i} = x$ 或 $x_i\to x(i\to \infty)$
-    1. 若序列至少有一个极限，则称这个序列是一个收敛序列
-    2. 设 $X$ 是一个拓扑空间，$S, S_1:Z_+ \to X$ 是 $X$ 中的两个序列，若存在一个映射 $N: Z_+\to Z_+$ 有 $\forall n_1, n_2\in \mathbf Z_+: n_1<n_2 \to N(n_1)<N(n_2)$，使得 $S_1=S\circ N$，则称序列 $S_1$ 是序列 $S$ 的一个子序列
-3. 序列的性质
-    1. 设 $\{x_i\}_{i\in \mathbf Z_+}$ 是拓扑空间 $X$ 中的一个序列
-        1. 若 $\{x_i\}_{i\in \mathbf Z_+}$ 是一个常值序列，则 ${\displaystyle \lim_{i\to \infty} x_i} = x$
-        2. 若序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x\in X$，则序列 $\{x_i\}_{i\in \mathbf Z_+}$ 的每一个子序列也收敛于 $x$
-    2. 设 $X$ 是一个拓扑空间，$A\subseteq X, x\in X$．若 $\forall i\in \mathbf Z_+: x_i\in A_\{x\}$，且 ${\displaystyle \lim_{i\to \infty}x_i} = x$，则 $x$ 是集合 $A$ 的一个聚点．反之不成立
-    3. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则以下命题成立，反之不成立
-        1. 若 $f$ 在点 $x_0\in X$ 处连续，则 $X$ 中的一个序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x_0 \to Y$ 中序列 $\{f(x_i)\}_{i\in \mathbf Z_+}$ 收敛于 $f(x_0)$
-        2. 若 $f$ 连续，则 $X$ 中的一个序列 $\{x_i\}_{i\in \mathbf Z_+}$ 收敛于 $x\in X \to Y$ 中的序列 $\{f(x_i)\}_{i\in \mathbf Z_+}$ 收敛于 $f(x)$
-4. 度量描述序列收敛：设 $(X, \rho)$ 是一个度量空间，$\{x_i\}_{i\in \mathbf Z_+}$ 是 $X$ 中的一个序列，$x\in X$，则以下条件等价
-    1. ${\displaystyle \lim_{i\to \infty} x_i} = x$
-    2. ${\displaystyle \lim_{i\to \infty} \rho(x_i, x)} = 0$
-    3. $\forall \varepsilon>0\ \exists N\in \mathbf Z_+\ \forall i>N: \rho(x_i, x)<\varepsilon$
