@@ -39,7 +39,7 @@
     2. 若 $\left(\Omega_{1}, \mathscr{F}_{1}\right),\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 为可测空间，$\mathscr{C} \subseteq \mathcal{P}\left(\Omega_{2}\right)$，又 $\mathscr{F}_{2}=\sigma(\mathscr{C})$，则 $f \in \mathscr{F}_{1} / \mathscr{F}_{2}$ 的充要条件是 $f^{-1}[\mathscr{C}] \subseteq \mathscr{F}_{1}$
     3. 设 $\left(\Omega_{i}, \mathscr{F}_{i}\right) \ (i=1,2,3)$ 为可测空间，若 $g$ 为 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 到 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 的可测映射，又 $f$ 为 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 到 $\left(\Omega_{3}, \mathscr{F}_{3}\right)$ 的可测映射，则 $f \circ g$ 是 $\left(\Omega_{1}, \mathscr{F}_{1}\right)$ 到 $\left(\Omega_{3}, \mathscr{F}_{3}\right)$ 的可测映射
 2. 可测函数：由 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 或 $\left(\widehat{\mathbf{R}}, \mathscr{B}_{\widehat{\mathbf{R}}}\right)$ 的可测映射称为可测函数
-    1. 若 $\pi$ 类 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，又 $\mathscr{H}$ 为 $\Omega$ 上的一个 $\mathscr{L}$ 类，且 $\mathscr{H} \supseteq \left\{I_{A}, A \in \mathscr{C}\right\}$，则 $\mathscr{H}$ 包含 $\Omega$ 上一切属于 $L$ 的 $\sigma(\mathscr{C})$ 可测函数
+    1. 若 $\pi$ 类 $\mathscr{C} \subseteq \mathcal{P}(\Omega)$，又 $\mathscr{H}$ 为 $\Omega$ 上的一个 $\mathscr{L}$ 类，且 $\mathscr{H} \supseteq \left\{I_{A}, A \in \mathscr{C}\right\}$，则 $\mathscr{H}$ 包含 $\Omega$ 上一切属于 $\mathscr{L}$ 的 $\sigma(\mathscr{C})$ 可测函数
     2. 若 $\mathscr{F}_{1}$ 为 $\mathscr{F}$ 的子 $\sigma$ 域，且 $f \in \mathscr{F}_{1} / \mathscr{B}_{\widehat{\mathbf{R}}}$，则称 $f$ 为 $\mathscr{F}_{1}$ 可测，记为 $f \in \mathscr{F}_{1}$
     3. 若 $f$ 为 $\left(\mathbf{R}^{n}, \mathscr{B}^{n}\right)$ 到 $(\mathbf{R}, \mathscr{B})$ 的可测函数，则称 $f$ 为 $n$ 元 $\text{Borel}$ 可测函数或简称 $\text{Borel}$ 函数．可数维乘积空间 $\left(\mathbf{R}^{\infty}, \mathscr{B}^{\infty}\right)$ 到 $(\mathbf{R}, \mathscr{B})$ 的可测函数也称为 $\text{Borel}$ 函数
     4. 若 $(\Omega, \mathscr{F})=\left(\Omega_{1}, \mathscr{F}_{1}\right) \times\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 为乘积空间，$f$ 为 $(\Omega, \mathscr{F})$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 的可测函数，则对 $\forall \omega_{1}^{0} \in \Omega_{1}, g\left(\omega_{2}\right)=f\left(\omega_{1}^{0}, \omega_{2}\right)$ 是 $\left(\Omega_{2}, \mathscr{F}_{2}\right)$ 到 $\left(\mathbf{R}, \mathscr{B}_{R}\right)$ 的可测函数
@@ -78,7 +78,9 @@
             2. $\mu$ 是半可加的：若 ${\displaystyle A \subseteq \bigcup_{m=1}^{n} A_{m}}$，则 ${\displaystyle \mu(A) \leqslant \sum_{m=1}^{n} \mu\left(A_{m}\right)}$
             3. 为使 $\mu$ 是 $\sigma$ 可加的，当且仅当对每个递增序列 $\left\{A_{n}\right\}$，只要 ${\displaystyle \bigcup_{n \geqslant 1} A_{n} \in \mathscr{A}}$，则有 ${\displaystyle \lim _{n \rightarrow \infty} \uparrow \mu\left(A_{n}\right)=\mu\left(\bigcup_{n} A_{n}\right)}$
             4. 若 $\mu$ 为 $\sigma$ 可加的，则对每个递减序列 $\left\{A_{n}\right\}$，只要 ${\displaystyle \bigcap_{n \geqslant 1} A_{n} \in \mathscr{A}}$，且存在 $n_{0}$ 使 $\mu\left(A_{n_{0}}\right)<\infty$，则有 ${\displaystyle \lim _{n \rightarrow \infty} \downarrow \mu\left(A_{n}\right)=\mu\left(\bigcap_{n} A_{n}\right)}$
-        3. 若 $\mu$ 为 $\sigma$ 域上的测度，$\left\{A_{n}\right\}$ 为 $\mathscr{F}$ 中序列，则 ${\displaystyle \mu\left(\varliminf_{n \rightarrow \infty} A_{n}\right) \leqslant \varliminf_{n \rightarrow \infty} \mu\left(A_{n}\right)}$．若对某个 $n_{0}$${\displaystyle \mu\left(\bigcup_{n \geqslant n_{\mathrm{c}}} A_{n}\right)<\infty}$，则 ${\displaystyle \mu\left(\varlimsup_{n \rightarrow \infty} A_{n}\right) \geqslant \varlimsup_{n \rightarrow \infty} \mu\left(A_{n}\right)}$．特别地，当 ${\displaystyle \lim _{n \rightarrow \infty} A_{n}}$ 存在，且若对某个 $n_{0}$ 有 ${\displaystyle \mu\left(\bigcup_{n \geqslant n_{0}} A_{n}\right)<\infty}$ 时，有 ${\displaystyle \mu\left(\lim _{n \rightarrow \infty} A_{n}\right)=\lim _{n \rightarrow \infty} \mu\left(A_{n}\right)}$ 成立
+        3. 若 $\mu$ 为 $\sigma$ 域上的测度，$\left\{A_{n}\right\}$ 为 $\mathscr{F}$ 中序列，则 ${\displaystyle \mu\left(\varliminf_{n \rightarrow \infty} A_{n}\right) \leqslant \varliminf_{n \rightarrow \infty} \mu\left(A_{n}\right)}$
+            1. 若对某个 $n_{0}$${\displaystyle \mu\left(\bigcup_{n \geqslant n_{\mathrm{c}}} A_{n}\right)<\infty}$，则 ${\displaystyle \mu\left(\varlimsup_{n \rightarrow \infty} A_{n}\right) \geqslant \varlimsup_{n \rightarrow \infty} \mu\left(A_{n}\right)}$
+            2. 当 ${\displaystyle \lim _{n \rightarrow \infty} A_{n}}$ 存在，且若对某个 $n_{0}$ 有 ${\displaystyle \mu\left(\bigcup_{n \geqslant n_{0}} A_{n}\right)<\infty}$ 时，有 ${\displaystyle \mu\left(\lim _{n \rightarrow \infty} A_{n}\right)=\lim _{n \rightarrow \infty} \mu\left(A_{n}\right)}$ 成立
 
 3. 完备测度：设 $\mu$ 为 $\sigma$ 域 $\mathscr{F}$ 上的测度，$\mathscr{L}=\{A: A \in \mathscr{F}, \mu(A)=0\}$．又令 $\mathscr{N}=\{N \in \mathcal{P}(\Omega): \textsf{ 存在 } A \in \mathscr{L} \textsf{，使 } N \subseteq A\}$，则 $\mathscr{N}$ 中元素称为 $\mu$ 可略集．若 $\mathscr{N} \subseteq \mathscr{F}$，则称 $\mu$ 在 $\mathscr{F}$ 上为完备的
     1. 可略集：若 $(\Omega, \mathscr{F}, P)$ 为完备概率空间，则 $\mathscr{N}$ 中的元素简称为可略集
@@ -201,7 +203,7 @@
         2. 设 $E$ 是任一可测集，则一定存在 $F_{\sigma}$ 型集 $F$ 使 $F \subseteq E$ 且 $m(E - F)=0$
 
 ### 1.2.3 简单函数
-1. 可测函数：设 $f(x)$ 是定义在可测集 $E \subseteq \widehat{\mathbf{R}}^{n}$ 的实函数．如果对于任何有限实数 $a$，$E[f>a]$ 都是可测集，则称 $f(x)$ 为定义在 $E$ 上的可测函数
+1. 设 $f(x)$ 是定义在可测集 $E \subseteq \widehat{\mathbf{R}}^{n}$ 上的可测函数
     1. 设 $f(x)$ 是定义在可测集 $E$ 上的实函数，下列任一条件都是 $f(x)$ 在 $E$ 上可测的充要条件
         1. 对任何有限实数 $a, E[f \geqslant a]$ 都可测
         2. 对任何有限实数 $a, E[f<a]$ 都可测
