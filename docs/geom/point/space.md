@@ -70,13 +70,12 @@
 ## 1.2 拓扑空间
 ### 1.2.1 拓扑空间
 1. 拓扑空间：若 $\mathscr T$ 是集合 $X$ 的一个拓扑，则称偶对 $(X, \mathscr T)$ 是一个拓扑空间，集合 $X$ 是一个相对于拓扑 $\mathscr T$ 而言的拓扑空间
-    1. 当 $\mathscr T$ 已约定时，称集合 $X$ 是一个拓扑空间，$\mathscr T$ 的每一个元素都称作拓扑空间 $(X, \mathscr T)$ 的一个开集
-    2. 设 $X, \rho$ 是度量空间，令 $\mathscr T_\rho$ 为由 $X$ 中所有开集构成的集族，则 $(X, \mathscr T_\rho)$ 是 $X$ 的一个拓扑，称 $\mathscr T_\rho$ 为 $X$ 由度量 $\rho$ 诱导的拓扑
-    3. 设 $X$ 为一个集合，容易验证 $\varnothing$ 与 $\mathcal P(X)$ 都是 $X$ 的拓扑，分别称之为平庸拓扑和离散拓扑．称 $(X, \varnothing)$ 为一个平庸空间，$(X, \mathcal P(X))$ 为一个离散空间
+    1. 设 $(X, \rho)$ 是度量空间，令 $\mathscr T_\rho$ 为 $X$ 中所有开集构成的集族，则 $(X, \mathscr T_\rho)$ 是 $X$ 的一个拓扑，称为 $X$ 由度量 $\rho$ 诱导的拓扑
+    2. 设 $X$ 为一个集合，容易验证 $\varnothing$ 与 $\mathcal P(X)$ 都是 $X$ 的拓扑，分别称之为平庸拓扑和离散拓扑．称 $(X, \varnothing)$ 为一个平庸空间，$(X, \mathcal P(X))$ 为一个离散空间
 2. 补空间：对于基础集 $X$，记子集 $A\subseteq X$ 的补集 $A'=X-A$．设 $X$ 为一个集合
     1. 令 $\mathscr T=\{U\subseteq X\mid U'$ 是 $X$ 中的一个有限子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的有限补拓扑，称 $(X, \mathscr T)$ 为有限补空间
     2. 令 $\mathscr T=\{U\subseteq X\mid U'$ 是 $X$ 中的一个可数子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的可数补拓扑，称 $(X, \mathscr T)$ 为可数补空间
-3. 邻域：设 $(X, \mathscr T)$ 是一个拓扑空间，$x\in X$．若 $U$ 是 $X$ 的一个子集，且存在一个开集 $V\in \mathscr T$ 使得 $x\in V\subseteq U$，则称 $U$ 是点 $x$ 的一个邻域，并称 $U - x$ 为点 $x$ 的一个去心邻域
+3. 邻域：设 $(X, \mathscr T)$ 是一个拓扑空间，$x\in X$，$U$ 是点 $x$ 的一个邻域，则称 $U - x$ 为点 $x$ 的一个去心邻域
     1. 邻域定义的性质
         1. 领域与球形邻域：设 $x$ 是度量空间 $X$ 的一个点，则 $X$ 的子集 $U$ 是 $x$ 的一个邻域当且仅当 $x$ 有某个球形邻域包含于 $U$
         2. 领域与开集：拓扑空间 $X$ 的一个子集 $U$ 是开集当且仅当 $\forall x\in U: U$ 是 $x$ 的一个邻域

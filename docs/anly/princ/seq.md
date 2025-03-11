@@ -183,17 +183,17 @@
         2. 当 ${\displaystyle \varliminf_{n \to \infty} A_{n}=\varlimsup_{n \to \infty} A_{n}}$ 时，称 $\left\{A_{n}\right\}$ 有极限，并记 ${\displaystyle \lim _{n \rightarrow \infty} A_{n}=\varlimsup_{n \rightarrow \infty} A_{n}}$，称它为 $\left\{A_{n}\right\}$ 的极限
 
 ### 1.3.2 一元函数极限
-1. 函数极限的定义
-    1. 函数在 $x_{0}$ 点的极限：设函数 $f(x)$ 在 $x_{0}$ 点的某个去心球形邻域有定义
+1. 函数极限的定义：设 $f: X \to \mathbf R$，$F$ 是 $X$ 上的滤，$y \in \mathbf R$，定义 ${\displaystyle \lim_{F} f(x) = y}$，$P$ 为生成主滤的算子
+    1. 函数在 $x_{0}$ 点的极限：设函数 $f(x)$ 在 $x_{0}$ 点的某个去心邻域有定义，取 $F = N(x_{0})$
         1. 函数值趋于有穷的极限：设 $A$ 是一个定数，若对于任意给定的 $\varepsilon>0$，一定存在 $\delta>0$ 使得当 $0<$ $\left|x-x_{0}\right|<\delta$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的极限，记作 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A}$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}\right)$．此时也称函数 $f(x)$ 在 $x_{0}$ 点极限存在，其极限值是 $A$
         2. 函数值趋于正无穷大的极限：若对于任何 $G>0$，存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)>G$，则称函数 $f(x)$ 在 $x_{0}$ 点趋于正无穷大（或发散到正无穷大），记为 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=+\infty}$ 或 $f(x) \rightarrow+\infty\left(x \rightarrow x_{0}\right)$
         3. 函数值趋于负无穷大的极限：若对于任何 $G>0$，存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x)<-G$，则称函数 $f(x)$ 在 $x_{0}$ 点趋于负无穷大（或发散到负无穷大），记为 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=-\infty}$ 或 $f(x) \rightarrow-\infty\left(x \rightarrow x_{0}\right)$
         4. 函数值趋于无穷大的极限：若对于任何 $G>0$，存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时，有 $|f(x)|>G$，则称函数 $f(x)$ 在 $x_{0}$ 点趋于无穷大（或发散到无穷大），记为 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=\infty}$ 或 $f(x) \rightarrow \infty\left(x \rightarrow x_{0}\right)$
-    2. 函数在无穷远处的极限（以函数值趋于有穷的极限为例）
+    2. 函数在无穷远处的极限（以函数值趋于有穷的极限为例），取 $F = {\displaystyle \mathop{\LARGE ⨅ \normalsize}_{x \in \mathbf R} P[x, +\infty)}$ 或 $F = {\displaystyle \mathop{\LARGE ⨅ \normalsize}_{x \in \mathbf R} P(-\infty, x]}$
         1. 函数在正无穷远处的极限：若对任意给定的 $\varepsilon>0$，存在 $X>0$，当 $x>X$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 为 $f(x)$ 在正无穷远处的极限，或称 $A$ 是当 $x \rightarrow+\infty$ 时 $f(x)$ 的极限，记为 ${\displaystyle \lim _{x \rightarrow+\infty} f(x)=A}$ 或 $f(+\infty)=A$ 或 $f(x) \rightarrow A \ (x \rightarrow+\infty)$
         2. 函数在负无穷远处的极限：若对任意给定的 $\varepsilon>0$，存在 $X>0$，当 $x<-X$ 时，总有 $|f(x)-A|<\varepsilon$，则称 $A$ 为 $f(x)$ 在负无穷远处的极限，或称 $A$ 是当 $x \rightarrow-\infty$ 时 $f(x)$ 的极限，记为 ${\displaystyle \lim _{x \rightarrow-\infty} f(x)=A}$ 或 $f(-\infty)=A$ 或 $f(x) \rightarrow A \ (x \rightarrow-\infty)$
         3. 函数在无穷远处的极限：若对任意给定的 $\varepsilon>0$，存在 $X>0$，当 $|x|>X$ 时，有 $|f(x)-A|<\varepsilon$，则称 $A$ 是 $f(x)$ 在无穷远处的极限，或称 $A$ 为当 $x \rightarrow \infty$ 时 $f(x)$ 的极限，记为 ${\displaystyle \lim _{x \rightarrow \infty} f(x)=A}$ 或 $f(\infty)=A$ 或 $f(x) \rightarrow A \ (x \rightarrow \infty)$
-    3. 单侧极限（以函数值趋于有穷的极限为例）
+    3. 单侧极限（以函数值趋于有穷的极限为例），取 $F = N(x_0) \sqcap P(x_0, +\infty)$ 或 $F = N(x_0) \sqcap P(-\infty, x_0)$
         1. 右极限：设存在 $\eta > 0$ 使得函数 $f(x)$ 在 $\left(x_{0}, x_{0}+\eta\right)$ 有定义，$A$ 是一个定数．若对任意给定的 $\varepsilon>0$，总存在 $\delta>0$，当 $0<x-x_{0}<\delta$ 时有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的右极限，记为 ${\displaystyle \lim _{x \rightarrow x_{0}+0} f(x)=A}$ 或 $f\left(x_{0}+0\right)=A$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}+0\right)$
         2. 左极限：设存在 $\eta > 0$ 使得函数 $f(x)$ 在 $\left(x_{0}-\eta, x_{0}\right)$ 有定义，$A$ 是一个定数．若对任意给定的 $\varepsilon>0$，总存在 $\delta>0$，当 $0<x_{0}-x<\delta$ 时有 $|f(x)-A|<\varepsilon$，则称 $A$ 是函数 $f(x)$ 在 $x_{0}$ 点的左极限，记为 ${\displaystyle \lim _{x \rightarrow x_{0}-0} f(x)=A}$ 或 $f\left(x_{0}-0\right)=A$ 或 $f(x) \rightarrow A \ \left(x \rightarrow x_{0}-0\right)$
 
@@ -207,12 +207,12 @@
 
             以及
 
-            1. $x \rightarrow x_0: \cdots, \exists \delta>0, \forall x\left(0<\left|x-x_0\right|<\delta\right): \cdots$
-            2. $x \rightarrow x_0+: \cdots, \exists \delta>0, \forall x\left(0<x-x_0<\delta\right): \cdots$
-            3. $x \rightarrow x_0-: \cdots, \exists \delta>0, \forall x\left(-\delta<x-x_0<0\right): \cdots$
-            4. $x \rightarrow \infty: \cdots, \exists X>0, \forall x(|x|>X): \cdots$
-            5. $x \rightarrow+\infty: \cdots, \exists X>0, \forall x(x>X): \cdots$
-            6. $x \rightarrow-\infty: \cdots, \exists X>0, \forall x(x<-X): \cdots$
+            5. $x \rightarrow x_0: \cdots, \exists \delta>0, \forall x\left(0<\left|x-x_0\right|<\delta\right): \cdots$
+            6. $x \rightarrow x_0+: \cdots, \exists \delta>0, \forall x\left(0<x-x_0<\delta\right): \cdots$
+            7. $x \rightarrow x_0-: \cdots, \exists \delta>0, \forall x\left(-\delta<x-x_0<0\right): \cdots$
+            8. $x \rightarrow \infty: \cdots, \exists X>0, \forall x(|x|>X): \cdots$
+            9. $x \rightarrow+\infty: \cdots, \exists X>0, \forall x(x>X): \cdots$
+            10. $x \rightarrow-\infty: \cdots, \exists X>0, \forall x(x<-X): \cdots$
 
 2. 函数极限的性质
     1. 若 ${\displaystyle \lim _{x \rightarrow x_{0}} f(x)=A, \lim _{x \rightarrow x_{0}} g(x)=B}$ 且存在 $\delta>0$，当 $0<\left|x-x_{0}\right|<\delta$ 时有 $f(x) \leqslant$ $g(x)$，则 $A \leqslant B$
