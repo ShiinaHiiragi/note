@@ -1,23 +1,30 @@
 # 2 集合代数
 
 ## 2.1 滤与理想
-### 2.1.1 滤与拓扑
-1. 有穷交性质：对任意集合族 $G$，如果 $G$ 的任意有穷个子集 $H_1, H_2, \cdots, H_n$ 都满足 ${\displaystyle \bigcap_{i=1}^{n} H_i \neq \varnothing}$，则称 $G$ 具有有穷交性质
-    1. 任何滤都有有穷交性质
-    2. 任取集合 $X$，令 $G \subseteq \mathcal{P}(X)$ 为具有有穷交性质的非空集合族，则存在 $X$ 上的滤 $F$ 使得 $G \subseteq F$，称滤 $F$ 为 $G$ 生成的滤
-        1. $G_0 = G$
-        2. 若 $n = 2i+ 1$，则 $G_n = {\displaystyle \left\{\left.\bigcap_{1 \leqslant k \leqslant m} A_k \ \right| \ A_1, A_2, \cdots, A_m \in G_{2i}, m \in \mathbf N\right\}}$
-        3. 若 $n = 2i + 2$，则 $G_n = \{B \subseteq I \mid$ 存在 $A \in G_{2i+1}$ 使得 $A \subseteq B \}$
+### 2.1.1 拓扑与滤
+1. 拓扑：设 $X$ 为非空集合，$X$ 的子集族 $T \subseteq \mathcal{P}(X)$ 如果满足
+    1. $X, \varnothing\in T$
+    2. 若 $A, B \in T$，则 $A \cap B \in T$
+    3. 若 $S \subseteq T$，则 ${\displaystyle \bigcup_{A \in S} A} \in T$
 
-        令 $\overline G = {\displaystyle \bigcup_{i \in \mathbf N} G_i}$，则 $\overline G$ 是包含 $G$ 的一个滤
+    则称 $T$ 是 $X$ 的一个拓扑
 
-2. 滤：设 $X$ 为非空集合，$X$ 的子集族 $F \subseteq \mathcal{P}(X)$ 如果满足
-    1. $X \in F$ 且 $\varnothing \notin F$
+2. 设 $X$ 为非空集合，$X$ 的子集族 $F \subseteq \mathcal{P}(X)$ 如果满足
+    1. $X \in F$
     2. 若 $A, B \in F$，则 $A \cap B \in F$
     3. 若 $A \in F$ 且 $A \subseteq B$，则 $B \in F$
 
-    则称 $F$ 为 $X$ 上的滤
+    则称 $F$ 为 $X$ 上的预滤或滤基，记 $\mathbf{F}$ 为 $X$ 上的全体预滤
 
+    1. 设 $f: X \to Y$，且 $F \subseteq \mathcal P (X)$ 是 $X$ 上的预滤，定义 $f_{F} = \{f[A] \mid A \in F\} = \{A \mid f^{-1}[A] \in F\}$
+        1. $G$ 是 $g[Y]$ 上的预滤
+        2. 若 $g$ 是满射，则 $G$ 是 $Y$ 上的预滤
+    2. $(\mathbf{F}, \subseteq)$ 构成偏序集，对 $F, G \in \mathbf{F}$，定义 $F \leqslant G$ 当且仅当 $G \subseteq F$，称 $F$ 是 $G$ 的细分
+    3. 设 $f: X \to Y$，$F \subseteq \mathcal P (X), G \subseteq \mathcal P (Y)$ 分别是 $X, Y$ 上的预滤
+        1. 若 $f_{F} \leqslant G$，则称 $f$ 沿 $F$ 趋近于（或收敛于）$G$，记作 $f(F) \to G$
+        2. 对于 $y \in Y$，取 $G = N(y)$，若 $f(F) \to N(y)$，则称 $f$ 沿 $F$ 趋近于（或收敛于）$y$，记作 $f(F) \to y$ 或 ${\displaystyle \lim_{F} f = y}$
+
+3. 滤：设 $X$ 为非空集合，$F$ 为 $X$ 上的预滤且 $\varnothing \notin F$（即 $F \subset \mathcal P(X)$），则称 $F$ 为 $X$ 上的滤
     1. 平凡滤：$F=\{X\}$ 是 $X$ 上的滤，也是 $X$ 上最小的滤且是 $X$ 上任何滤的子集，称之为平凡滤
     2. 主滤：令 $A \subseteq X$ 非空，定义 $F=\{S \subseteq X \mid A \subseteq S\}$，则 $F$ 是 $X$ 上的滤，称之为由 $A$ 生成的 $X$ 上的主滤
     3. 极大滤：对任意滤 $F$，如果不存在滤 $F^{\prime}$ 使得 $F \subset F^{\prime}$，则称 $F$ 为极大滤
@@ -28,12 +35,16 @@
         3. 主超滤：设 $A \subseteq X$ 为非空子集，$F=\{S \subseteq X \mid A \subseteq S\}$ 是主滤，则 $A$ 是单点集当且仅当 $F$ 是（主）超滤
     6. $\kappa-$完全滤：如果集合 $X$ 上的滤 $F$ 满足「若 $F^{\prime} \subseteq F$ 且 $\left|F^{\prime}\right|<\kappa$，则 $\bigcap F^{\prime} \in F$」，则称 $F$ 是 $\kappa-$完全的
 
-3. 拓扑与极限：设 $X$ 为非空集合，$X$ 的子集族 $T \subseteq \mathcal{P}(X)$ 如果满足
-    1. $X, \varnothing\in T$
-    2. 若 $A, B \in T$，则 $A \cap B \in T$
-    3. 若 $S \subseteq T$，则 ${\displaystyle \bigcup_{A \in S} A} \in T$
+    !!! note "有穷交性质"
+        对任意集合族 $G$，如果 $G$ 的任意有穷个子集 $H_1, H_2, \cdots, H_n$ 都满足 ${\displaystyle \bigcap_{i=1}^{n} H_i \neq \varnothing}$，则称 $G$ 具有有穷交性质
 
-    则称 $T$ 是 $X$ 的一个拓扑
+        1. 任何滤都有有穷交性质
+        2. 任取集合 $X$，令 $G \subseteq \mathcal{P}(X)$ 为具有有穷交性质的非空集合族，则存在 $X$ 上的滤 $F$ 使得 $G \subseteq F$，称滤 $F$ 为 $G$ 生成的滤
+            1. $G_0 = G$
+            2. 若 $n = 2i+ 1$，则 $G_n = {\displaystyle \left\{\left.\bigcap_{1 \leqslant k \leqslant m} A_k \ \right| \ A_1, A_2, \cdots, A_m \in G_{2i}, m \in \mathbf N\right\}}$
+            3. 若 $n = 2i + 2$，则 $G_n = \{B \subseteq I \mid$ 存在 $A \in G_{2i+1}$ 使得 $A \subseteq B \}$
+
+            令 $\overline G = {\displaystyle \bigcup_{i \in \mathbf N} G_i}$，则 $\overline G$ 是包含 $G$ 的一个滤
 
 ### 2.1.2 理想与对偶性
 1. 理想：设 $X$ 为非空集合，$X$ 的子集族 $I \subseteq \mathcal{P}(X)$ 如果满足
