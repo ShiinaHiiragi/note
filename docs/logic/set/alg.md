@@ -7,22 +7,27 @@
     2. 若 $A, B \in T$，则 $A \cap B \in T$
     3. 若 $S \subseteq T$，则 ${\displaystyle \bigcup_{A \in S} A} \in T$
 
-    则称 $T$ 是 $X$ 的一个拓扑
+    则称 $T$ 是 $X$ 的一个拓扑，$T$ 中的元素为开集
+
+    1. 称开集的补集为闭集，既是开集也是闭集的集合为开闭集
+    2. 设 $A \subseteq B \subseteq X$，若存在开集 $C$ 使得 $A \subseteq C \subseteq B$，则称 $B$ 是 $A$ 的邻域
 
 2. 设 $X$ 为非空集合，$X$ 的子集族 $F \subseteq \mathcal{P}(X)$ 如果满足
     1. $X \in F$
     2. 若 $A, B \in F$，则 $A \cap B \in F$
     3. 若 $A \in F$ 且 $A \subseteq B$，则 $B \in F$
 
-    则称 $F$ 为 $X$ 上的预滤或滤基，记 $\mathbf{F}$ 为 $X$ 上的全体预滤
+    则称 $F$ 为 $X$ 上的预滤或滤基
 
-    1. 设 $f: X \to Y$，且 $F \subseteq \mathcal P (X)$ 是 $X$ 上的预滤，定义 $f_{F} = \{f[A] \mid A \in F\} = \{A \mid f^{-1}[A] \in F\}$
+    1. 记 $\mathbf{F}$ 为 $X$ 上的全体预滤，则 $(\mathbf{F}, \subseteq)$ 构成偏序集，对 $F, G \in \mathbf{F}$，定义 $F \leqslant G$ 当且仅当 $G \subseteq F$，称 $F$ 是 $G$ 的细分
+    2. 设 $f: X \to Y$，且 $F \subseteq \mathcal P (X)$ 是 $X$ 上的预滤，定义 $f_{F} = \{f[A] \mid A \in F\} = \{A \mid f^{-1}[A] \in F\}$
         1. $G$ 是 $g[Y]$ 上的预滤
         2. 若 $g$ 是满射，则 $G$ 是 $Y$ 上的预滤
-    2. $(\mathbf{F}, \subseteq)$ 构成偏序集，对 $F, G \in \mathbf{F}$，定义 $F \leqslant G$ 当且仅当 $G \subseteq F$，称 $F$ 是 $G$ 的细分
     3. 设 $f: X \to Y$，$F \subseteq \mathcal P (X), G \subseteq \mathcal P (Y)$ 分别是 $X, Y$ 上的预滤
-        1. 若 $f_{F} \leqslant G$，则称 $f$ 沿 $F$ 趋近于（或收敛于）$G$，记作 $f(F) \to G$
-        2. 对于 $y \in Y$，取 $G = N(y)$，若 $f(F) \to N(y)$，则称 $f$ 沿 $F$ 趋近于（或收敛于）$y$，记作 $f(F) \to y$ 或 ${\displaystyle \lim_{F} f = y}$
+        1. 若 $f_{F} \leqslant G$，则称 $f$ 沿 $F$ 趋近于（或收敛于）$G$，记作 $f(F) \to G$ 或 ${\displaystyle \lim_{F} f = G}$
+        2. 若 $Y$ 是一个拓扑空间，对于 $y \in Y$，定义邻域滤 $N(y) = \{S \subseteq X \mid$ 存在开集 $U \subseteq S, x \in U \}$
+            1. 若 $f(F) \to N(y)$，则称 $f$ 沿 $F$ 趋近于（或收敛于）$y$，记作 $f(F) \to y$ 或 ${\displaystyle \lim_{F} f = y}$
+            2. 若 $X$ 也是一个拓扑空间，则根据 $F$ 的选择可以定义不同种类的函数（或序列）极限
 
 3. 滤：设 $X$ 为非空集合，$F$ 为 $X$ 上的预滤且 $\varnothing \notin F$（即 $F \subset \mathcal P(X)$），则称 $F$ 为 $X$ 上的滤
     1. 平凡滤：$F=\{X\}$ 是 $X$ 上的滤，也是 $X$ 上最小的滤且是 $X$ 上任何滤的子集，称之为平凡滤
