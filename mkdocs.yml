@@ -184,15 +184,15 @@ nav:
       - 4 格论: alg/mod/ltt.md
   - 几何学:
     - 一、解析几何:
-      - 1 线性空间与向量: top/anly/lin.md
-      - 2 变换与坐标: top/anly/geom.md
-      - 3 方程与图形: top/anly/eq.md
-      - 4 曲线理论: top/anly/curv.md
-      - 5 曲面理论: top/anly/surf.md
+      - 1 线性空间与向量: geom/anly/lin.md
+      - 2 变换与坐标: geom/anly/geom.md
+      - 3 方程与图形: geom/anly/eq.md
+      - 4 曲线理论: geom/anly/curv.md
+      - 5 曲面理论: geom/anly/surf.md
     - 二、点集拓扑:
-      - 1 拓扑空间: top/point/space.md
-      - 2 构造空间: top/point/constr.md
-      - 3 拓扑不变性质: top/point/prop.md
+      - 1 拓扑空间: geom/point/space.md
+      - 2 构造空间: geom/point/constr.md
+      - 3 拓扑不变性质: geom/point/prop.md
   - 分析学:
     - 一、分析学原理:
       - 1 序列与级数: anly/princ/seq.md
