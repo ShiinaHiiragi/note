@@ -69,21 +69,14 @@
 
 ## 1.2 拓扑空间
 ### 1.2.1 拓扑空间
-1. 拓扑：设 $X$ 是一个集合，$\mathscr T\subseteq \mathcal P(X)$，若 $\mathscr T$ 满足
-    1. $X, \varnothing\in \mathscr T$
-    2. 若 $A, B\in \mathscr T$，则 $A\cap B\in \mathscr T$
-    3. 若 $\mathscr T_1\subseteq \mathscr T$，则 ${\displaystyle \bigcup_{A\in \mathscr T_1}A} \in \mathscr T$
-
-    则称 $\mathscr T$ 是 $X$ 的一个拓扑
-
-2. 拓扑空间：若 $\mathscr T$ 是集合 $X$ 的一个拓扑，则称偶对 $(X, \mathscr T)$ 是一个拓扑空间，集合 $X$ 是一个相对于拓扑 $\mathscr T$ 而言的拓扑空间
+1. 拓扑空间：若 $\mathscr T$ 是集合 $X$ 的一个拓扑，则称偶对 $(X, \mathscr T)$ 是一个拓扑空间，集合 $X$ 是一个相对于拓扑 $\mathscr T$ 而言的拓扑空间
     1. 当 $\mathscr T$ 已约定时，称集合 $X$ 是一个拓扑空间，$\mathscr T$ 的每一个元素都称作拓扑空间 $(X, \mathscr T)$ 的一个开集
     2. 设 $X, \rho$ 是度量空间，令 $\mathscr T_\rho$ 为由 $X$ 中所有开集构成的集族，则 $(X, \mathscr T_\rho)$ 是 $X$ 的一个拓扑，称 $\mathscr T_\rho$ 为 $X$ 由度量 $\rho$ 诱导的拓扑
     3. 设 $X$ 为一个集合，容易验证 $\varnothing$ 与 $\mathcal P(X)$ 都是 $X$ 的拓扑，分别称之为平庸拓扑和离散拓扑．称 $(X, \varnothing)$ 为一个平庸空间，$(X, \mathcal P(X))$ 为一个离散空间
-3. 补空间：对于基础集 $X$，记子集 $A\subseteq X$ 的补集 $A'=X-A$．设 $X$ 为一个集合
+2. 补空间：对于基础集 $X$，记子集 $A\subseteq X$ 的补集 $A'=X-A$．设 $X$ 为一个集合
     1. 令 $\mathscr T=\{U\subseteq X\mid U'$ 是 $X$ 中的一个有限子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的有限补拓扑，称 $(X, \mathscr T)$ 为有限补空间
     2. 令 $\mathscr T=\{U\subseteq X\mid U'$ 是 $X$ 中的一个可数子集 $\}\cup \{\varnothing\}$，则称 $\mathscr T$ 是 $X$ 的可数补拓扑，称 $(X, \mathscr T)$ 为可数补空间
-4. 邻域：设 $(X, \mathscr T)$ 是一个拓扑空间，$x\in X$．若 $U$ 是 $X$ 的一个子集，且存在一个开集 $V\in \mathscr T$ 使得 $x\in V\subseteq U$，则称 $U$ 是点 $x$ 的一个邻域，并称 $U - x$ 为点 $x$ 的一个去心邻域
+3. 邻域：设 $(X, \mathscr T)$ 是一个拓扑空间，$x\in X$．若 $U$ 是 $X$ 的一个子集，且存在一个开集 $V\in \mathscr T$ 使得 $x\in V\subseteq U$，则称 $U$ 是点 $x$ 的一个邻域，并称 $U - x$ 为点 $x$ 的一个去心邻域
     1. 邻域定义的性质
         1. 领域与球形邻域：设 $x$ 是度量空间 $X$ 的一个点，则 $X$ 的子集 $U$ 是 $x$ 的一个邻域当且仅当 $x$ 有某个球形邻域包含于 $U$
         2. 领域与开集：拓扑空间 $X$ 的一个子集 $U$ 是开集当且仅当 $\forall x\in U: U$ 是 $x$ 的一个邻域
@@ -93,7 +86,7 @@
         2. 若 $U, V\in \mathscr U_x$，则 $U\cap V\in \mathscr U_x$
         3. 若 $U\in \mathscr U_x \wedge U\subseteq V$，则 $V\in \mathscr U_x$
         4. 若 $U\in \mathscr U_x$，则 $\exists V\in \mathscr U_x \ (V\subseteq U \wedge \forall y\in V: V\in \mathscr U_y)$
-5. 拓扑空间与连续映射
+4. 拓扑空间与连续映射
     1. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$．若 $Y$ 中的每一个开集 $U$ 的原像 $f^{-1}[U]$ 是 $X$ 中的一个开集，则称 $f$ 是从 $X$ 到 $Y$ 的一个连续映射，或称映射 $f$ 连续
     2. 设 $X, Y, Z$ 都是拓扑空间
         1. 恒同映射 $i_X: X\to X$ 是一个连续映射
@@ -107,7 +100,7 @@
             2. 若 $f: X\to Y$ 和 $g: Y\to Z$ 都是连续映射，则 $g\circ f: X\to Z$ 也是连续映射
         4. 设 $X, Y$ 是两个拓扑空间，$f: X\to Y$，则映射 $f$ 连续当且仅当对任意 $x\in X$ 均有映射 $f$ 在点 $x$ 处连续
 
-6. 同胚：设 $X, Y$ 是两个拓扑空间，若 $f: X\to Y$ 是一个双射，并且 $f$ 和 $f^{-1}: Y\to X$ 都是连续的，则称 $f$ 是一个同胚映射，同时也称 $f^{-1}$ 为同胚 $f$ 的同胚逆
+5. 同胚：设 $X, Y$ 是两个拓扑空间，若 $f: X\to Y$ 是一个双射，并且 $f$ 和 $f^{-1}: Y\to X$ 都是连续的，则称 $f$ 是一个同胚映射，同时也称 $f^{-1}$ 为同胚 $f$ 的同胚逆
     1. 设 $X, Y, Z$ 都是拓扑空间
         1. 恒同映射 $i_X: X\to X$ 是一个同胚
         2. 若 $f: X\to Y$ 是一个同胚，则 $f^{-1}: Y\to X$ 也是一个同胚

@@ -1,7 +1,7 @@
 # 2 集合代数
 
 ## 2.1 滤与理想
-### 2.1.1 滤与极限
+### 2.1.1 滤与拓扑
 1. 有穷交性质：对任意集合族 $G$，如果 $G$ 的任意有穷个子集 $H_1, H_2, \cdots, H_n$ 都满足 ${\displaystyle \bigcap_{i=1}^{n} H_i \neq \varnothing}$，则称 $G$ 具有有穷交性质
     1. 任何滤都有有穷交性质
     2. 任取集合 $X$，令 $G \subseteq \mathcal{P}(X)$ 为具有有穷交性质的非空集合族，则存在 $X$ 上的滤 $F$ 使得 $G \subseteq F$，称滤 $F$ 为 $G$ 生成的滤
@@ -28,7 +28,12 @@
         3. 主超滤：设 $A \subseteq X$ 为非空子集，$F=\{S \subseteq X \mid A \subseteq S\}$ 是主滤，则 $A$ 是单点集当且仅当 $F$ 是（主）超滤
     6. $\kappa-$完全滤：如果集合 $X$ 上的滤 $F$ 满足「若 $F^{\prime} \subseteq F$ 且 $\left|F^{\prime}\right|<\kappa$，则 $\bigcap F^{\prime} \in F$」，则称 $F$ 是 $\kappa-$完全的
 
-3. 拓扑与极限
+3. 拓扑与极限：设 $X$ 为非空集合，$X$ 的子集族 $T \subseteq \mathcal{P}(X)$ 如果满足
+    1. $X, \varnothing\in T$
+    2. 若 $A, B \in T$，则 $A \cap B \in T$
+    3. 若 $S \subseteq T$，则 ${\displaystyle \bigcup_{A \in S} A} \in T$
+
+    则称 $T$ 是 $X$ 的一个拓扑
 
 ### 2.1.2 理想与对偶性
 1. 理想：设 $X$ 为非空集合，$X$ 的子集族 $I \subseteq \mathcal{P}(X)$ 如果满足
@@ -52,11 +57,16 @@
         1. 任何滤与理想都是 $\aleph_{0}-$完全的，$\aleph_{1}-$完全的滤和理想在历史上称为 $\sigma-$完全的
         2. 可数完全的滤是对有穷交封闭的，$\aleph_{1}-$完全的滤对可数交封闭
 
-## 2.2 代数结构
-### 2.2.1 环
-1. 环：设 $R \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in R$ 蕴含 $A - B \in R$ 与 $A \cup B \in R$，则称 $R$ 为 $\Omega$ 上的环
+## 2.2 代数与类
+### 2.2.1 环与格
+1. 环：设 $R \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
+    1. 若 $A, B \in R$，则 $A \cup B \in R$ 且 $A - B \in R$
+    2. 若 $A, B \in R$，则 $A \cap B \in R$ 且 $A \triangle B \in R$
+
+    其中之一成立，则称 $R$ 为 $\Omega$ 上的环
+
 2. $\sigma$ 环：设 $C \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
-    1. 若 $A \in C, B \in C$，则 $A - B \in C$
+    1. 若 $A, B \in C$，则 $A - B \in C$
     2. 若对 $n \geqslant 1, A_{n} \in C$，则 ${\displaystyle \bigcup_{n=1}^{\infty} A_{n} \in C}$
 
     则称 $C$ 为 $\Omega$ 上的 $\sigma$ 环
@@ -64,16 +74,14 @@
     1. $F$ 为 $\sigma$ 域的充要条件是 $F$ 为一个包含 $\Omega$ 的 $\sigma$ 环
     2. 在 $\sigma$ 环中，对可数集合序列的交集、上限、下限运算也是封闭的
 
-### 2.2.2 域
-1. 域：设 $A \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in A$ 蕴含 $A' \in A$ 与 $A \cup B \in A$，则称 $A$ 为 $\Omega$ 上的域或代数
-    1. 设 $A$ 是域，则有
-        1. $\Omega \in A, \varnothing \in A$
-        2. 若 $A, B \in A$，则 $A \cap B \in A, A - B \in A, A \triangle B \in A$
-        3. 若 $A_{j} \in A, 1 \leqslant j \leqslant n$，则 ${\displaystyle \bigcup_{j=1}^{n} A_{j} \in A, \bigcap_{j=1}^{n} A_{j} \in A}$
-    2. 若 $C \subseteq \mathcal{P}(\Omega)$，则必存在包含 $C$ 的最小域 $A$．即 $A$ 为域，$A \supseteq C$ 且对任一域 $A^{\prime} \supseteq C$，必有 $A \subseteq A^{\prime}$
-        1. 对任一集族 $C$，包含 $C$ 的最小域称为由 $C$ 张成的域，记为 $A(C)$
-        2. $\Omega$ 中由单点集全体张成的域就是由 $\Omega$ 中有穷集及其余集全体构成的集族
-2. 半域：设 $S \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
+3. 格：设 $L \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
+    1. $\varnothing \in L$
+    2. 若 $A, B \in R$，则 $A \cup B \in R$ 且 $A \cap B \in R$
+
+    则称 $L$ 为 $\Omega$ 上的格
+
+### 2.2.2 域与 σ 域
+1. 半域：设 $S \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
     1. $\varnothing, \Omega \in S$
     2. 当 $A, B \in S$，必有 $A \cap B \in S$
     3. 若 $A \in S$，则 $A'$ 可表为 $S$ 中两两互不相交集合的有穷并
@@ -83,14 +91,23 @@
     1. 域必为半域
     2. 若 $S$ 为半域，则 ${\displaystyle A=\left\{A=\sum_{i \in I} S_{i}:\left\{S_{i}, i \in I\right\} \textsf{ 为 } S \textsf{ 中两两互不相交的有穷族}\right\}}$ 是包含 $S$ 的最小域
 
+2. 域：设 $A \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若 $A, B \in A$ 蕴含 $A' \in A$ 与 $A \cup B \in A$，则称 $A$ 为 $\Omega$ 上的域或代数
+    1. 设 $A$ 是域，则有
+        1. $\Omega \in A, \varnothing \in A$
+        2. 若 $A, B \in A$，则 $A \cap B \in A, A - B \in A, A \triangle B \in A$
+        3. 若 $A_{j} \in A, 1 \leqslant j \leqslant n$，则 ${\displaystyle \bigcup_{j=1}^{n} A_{j} \in A, \bigcap_{j=1}^{n} A_{j} \in A}$
+    2. 若 $C \subseteq \mathcal{P}(\Omega)$，则必存在包含 $C$ 的最小域 $A$．即 $A$ 为域，$A \supseteq C$ 且对任一域 $A^{\prime} \supseteq C$，必有 $A \subseteq A^{\prime}$
+        1. 对任一集族 $C$，包含 $C$ 的最小域称为由 $C$ 张成的域，记为 $A(C)$
+        2. $\Omega$ 中由单点集全体张成的域就是由 $\Omega$ 中有穷集及其余集全体构成的集族
+
 3. $\sigma$ 域：设 $F \subseteq \mathcal{P}(\Omega)$ 是一个非空集族，若有
     1. 若 $A \in F$，则 $A' \in F$
     2. 若对每个 $n \geqslant 1$ 都有 $A_{n} \in F$，则 ${\displaystyle \bigcup_{i=1}^{\infty} A_{n} \in F}$
 
     则称 $F$ 为 $\Omega$ 上的 $\sigma$ 域或 $\sigma$ 代数
 
-    1. $F$ 为 $\sigma$ 域，则 $F$ 为一个域，且当 $n \geqslant 1, A_{n} \in F$ 时，必有 ${\displaystyle \bigcap_{n \geqslant 1} A_{n} \in F, \varliminf_{n \rightarrow \infty} A_{n} \in F, \varlimsup_{{n \rightarrow \infty}} A_{n} \in F}$
-    2. 若 $C \subseteq \mathcal{P}(\Omega)$，则必存在包含 $C$ 的最小 $\sigma$ 域
+    3. $F$ 为 $\sigma$ 域，则 $F$ 为一个域，且当 $n \geqslant 1, A_{n} \in F$ 时，必有 ${\displaystyle \bigcap_{n \geqslant 1} A_{n} \in F, \varliminf_{n \rightarrow \infty} A_{n} \in F, \varlimsup_{{n \rightarrow \infty}} A_{n} \in F}$
+    4. 若 $C \subseteq \mathcal{P}(\Omega)$，则必存在包含 $C$ 的最小 $\sigma$ 域
         1. 包含集族 $C$ 的最小 $\sigma$ 域称为由 $C$ 生成的 $\sigma$ 域，记为 $\sigma(C)$
         2. 对 $\Omega$ 的子集族 $C$，若以 $C \cap A$ 表示集族 $\{B A: B \in C\}$，则 $\sigma_{\Omega}(C) \cap A=\sigma_{A}(C \cap A)$
 
@@ -125,10 +142,10 @@
     2. $H$ 是线性空间
     3. 设 $X_{n} \geqslant 0, X_{n} \in H, X_{n} \uparrow X$ 且 $X$ 有界或 $X \in L$，则 $X \in H$
 
-    则称其为 $H$ 上的 $\mathscr{L}$ 类．若 $\pi$ 类 $C \subseteq \mathcal{P}(\Omega)$，又 $H$ 为 $\Omega$ 上的一个 $\mathscr{L}$ 类，且 $H \supseteq \left\{I_{A}, A \in C\right\}$，则 $H$ 包含 $\Omega$ 上一切属于 $L$ 的 $\sigma(C)$ 可测函数
+    则称其为 $H$ 上的 $\mathscr{L}$ 类
 
 ## 2.3 描述集合论
-### 2.3.1 投影集
+### 2.3.1 投影集层谱
 1. $\text{Borel}$ 域：若 $E$ 为拓扑空间，则称 $E$ 中全体开集生成的 $\sigma$ 域为 $E$ 上的 $\text{Borel}$ 域，记作 $B_{E}$，称其中的集合为 $E$ 中的 $\text{Borel}$ 集
     1. 称 $n$ 维 $\text{Euclid}$ 空间 $\mathbf{R}^{n}$ 中的 $\text{Borel}$ 点集为 $n$ 维 $\text{Borel}$ 点集
         1. 通常记实数集 $\mathbf{R} = \omega^{\omega} = \{f \mid f: \omega \to \omega\}$
