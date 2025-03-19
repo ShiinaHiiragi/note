@@ -147,7 +147,7 @@ nav:
   - 逻辑学:
     - 一、证明论:
       - 1 经典逻辑: logic/prf/cls.md
-      # - 2 自然演绎: logic/prf/nat.md
+      - 2 自然演绎: logic/prf/nat.md
       # - 3 相继式演算: logic/prf/seq.md
       - 4 非经典逻辑: logic/prf/ncl.md
       - 5 序数分析: logic/prf/ord.md
