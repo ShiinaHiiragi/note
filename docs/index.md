@@ -53,7 +53,7 @@
 </div>
 
 !!! abstract "此项目尚未完成"
-    <label> 现在进度：自然演绎 </label>
+    <label> 现在进度：范畴论 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>

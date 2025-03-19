@@ -253,7 +253,7 @@
     2. 可靠性的等价形式：若 $\Gamma$ 是可满足的，则 $\Gamma$ 是 $\mathbf{HK}-$一致的
 7. 一致性：$\mathbf{HK}$ 是一致的
     1. 若公式集 $\Gamma$ 有 $\Gamma \nvdash_\mathbf{HK} \bot$，则称 $\Gamma$ 是 $\mathbf{HK}-$一致的，否则 $\Gamma$ 是 $\mathbf{HK}-$不一致的
-    2. 若公式集 $\Gamma$ 是 $\mathbf{HK}-$一致的，且对任何 $\mathbf{HK}-$一致的公式集 $\Delta$，若 $\Gamma \subseteq \Delta$ 有 $\Gamma = \Delta$，则称 $\Gamma$ 是极大 $\mathbf{HK}-$一致的，此时有
+    2. 若公式集 $\Gamma$ 是 $\mathbf{HK}-$一致的，且对任何 $\mathbf{HK}-$一致的公式集 $\Delta$，若 $\Gamma \subseteq \Delta$ 蕴含 $\Gamma = \Delta$，则称 $\Gamma$ 是极大 $\mathbf{HK}-$一致的
         1. 若 $\Gamma \vdash_\mathbf{HK} \alpha$，则 $\alpha \in \Gamma$
         2. $\mathrm{Thm}(\mathbf{HK}) \subseteq \Gamma$ 且 $\bot \notin \Gamma$
         3. $\neg \alpha \in \Gamma$ 当且仅当 $\alpha \notin \Gamma$
@@ -265,7 +265,7 @@
     1. $\mathbf{CL} \subseteq \mathrm{Thm}(\mathbf{HK})$
     2. 完全性的等价形式：若 $\Gamma$ 是 $\mathbf{HK}-$一致的，则 $\Gamma$ 是可满足的
     3. 紧致性：一个公式集 $\Gamma$ 可满足当且仅当 $\Gamma$ 的每个有穷子集可满足
-9. 其他性质
+9. 经典命题逻辑的其他性质
     1. $\text{Post}$ 完全性：$\mathbf{HK}$ 是 $\text{Post}$ 完全的，即若 $\nvdash_\mathbf{HK} \alpha$，那么在系统 $\mathbf{HK}$ 上增加 $\alpha$ 作为公理所得到的系统是不一致的
     2. 析取性质：$\mathbf{HK}$ 不具有析取性质，即存在公式 $\alpha \vee \beta$，有 $\vdash_\mathbf{HK} \alpha \vee \beta$ 且 $\nvdash_\mathbf{HK} \alpha$ 且 $\nvdash_\mathbf{HK} \beta$
     3. 插值性质：$\mathbf{HK}$ 具有插值性质，即对任何公式 $\alpha \to \beta$，若 $\vdash_\mathbf{HK} \alpha \to \beta$，那么存在公式 $\chi$ 使得
@@ -337,6 +337,7 @@
     2. $\mathrm{Thm}(\mathbf{HJ}) \subset \mathrm{Thm}(\mathbf{HK})$
 6. 一致性：$\mathbf{HJ}$ 是一致的
     1. 若公式集 $\Gamma$ 有 $\Gamma \nvdash_\mathbf{HJ} \bot$，则称 $\Gamma$ 是 $\mathbf{HJ}-$一致的，否则 $\Gamma$ 是 $\mathbf{HJ}-$不一致的
+    2. 若公式集 $\Gamma$ 是 $\mathbf{HJ}-$一致的，且对任何 $\mathbf{HJ}-$一致的公式集 $\Delta$，若 $\Gamma \subseteq \Delta$ 蕴含 $\Gamma = \Delta$，则称 $\Gamma$ 是极大 $\mathbf{HJ}-$一致的
 7. 完全性：若 $\Gamma \vDash_{I} \alpha$，则 $\Gamma \vdash_\mathbf{HJ} \alpha$
     1. $\mathrm{Thm}(\mathbf{HJ}) \subseteq \mathbf{Int}$
     2. 紧致性：一个公式集 $\Gamma$ 可满足当且仅当 $\Gamma$ 的每个有穷子集可满足
@@ -359,6 +360,20 @@
         4. 若 $\Gamma \nvdash_{\mathbf{HJ}} \alpha$，则存在素理论 $\Delta$ 使得 $\Gamma \subseteq \Delta$ 且 $\Delta \nvdash_{\mathbf{HJ}} \alpha$
 
     2. 对任何公式 $\alpha$ 和 $\Delta \in W^{I}$，$\mathfrak{M}^{I}, \Delta \vDash \alpha$ 当且仅当 $\alpha \in \Delta$
+
+9. 直觉主义命题逻辑的其他性质
+    1. 有穷模型性：$\mathbf{HJ}$ 具有有穷模型性，即对任何公式 $\alpha$，若 $\nvdash_{\mathbf{HJ}} \alpha$，则存在有穷模型 $\mathfrak{M}$ 使得 $\mathfrak{M} \not \vDash \alpha$
+    2. 可判定性：$\operatorname{Thm}(\mathbf{HJ})$ 是可判定的
+    3. 可实现性：对每个公式 $\alpha$，归纳定义 $\mid \alpha$
+        1. $\mid p$ 当且仅当 $\vdash_{\mathbf{HJ}} p$
+        2. $\mid \perp$ 当且仅当 $\vdash_{\mathbf{HJ}} \perp$
+        3. $\mid(\alpha \wedge \beta)$ 当且仅当 $\mid \alpha$ 且 $\mid \beta$
+        4. $\mid(\alpha \vee \beta)$ 当且仅当 $\mid \alpha$ 或 $\mid \beta$
+        5. $\mid(\alpha \rightarrow \beta)$ 当且仅当 $\vdash_{\mathbf{HJ}} \alpha \rightarrow \beta$ 且 $\mid \alpha$ 蕴含 $\mid \beta$
+
+        则对任意公式 $\alpha$，$\mid \alpha$ 当且仅当 $\vdash_{\mathbf{HJ}} \alpha$
+
+    4. 析取性质：$\mathbf{HJ}$ 具有析取性质，即对任意公式 $\alpha$ 和 $\beta$，若 $\vdash_{\mathbf{HJ}} \alpha \vee \beta$，则 $\vdash_{\mathbf{HJ}} \alpha$ 或 $\vdash_{\mathbf{HJ}} \beta$
 
 ## 1.2 一阶逻辑
 1. 一阶语言 $\mathscr L(S)$ 即一阶逻辑的形式语言，由逻辑符号和非逻辑符号组成
