@@ -148,8 +148,9 @@
 
         三个条件之一，并用 $\mathcal {D, E}$ 等表示推导，用 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\alpha\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\alpha$ 为根节点的推导
 
-        4. 在 $\mathbf{HK}$ 中，若存在公式集 $\Gamma$ 到公式 $\alpha$ 的推导，则称 $\alpha$ 是 $\Gamma$ 的句法后承，记作 $\Gamma \vdash_\mathbf{HK} \alpha$，无歧义时下标 $\mathbf{HK}$ 可删除
-        5. 若 $\varnothing \vdash_\mathbf{HK} \alpha$，称公式在 $\mathbf{HK}$ 中可证，或 $\alpha$ 是 $\mathbf{HK}$ 的定理，记作 $\vdash_\mathbf{HK} \alpha$．用 $\mathrm{Thm}(\mathbf{HK})$ 表示 $\mathbf{HK}$ 中所有定理的集合
+        1. 在 $\mathbf{HK}$ 中，若存在公式集 $\Gamma$ 到公式 $\alpha$ 的推导，则称 $\alpha$ 是 $\Gamma$ 的句法后承，记作 $\Gamma \vdash_\mathbf{HK} \alpha$，无歧义时下标 $\mathbf{HK}$ 可删除
+        2. 若 $\varnothing \vdash_\mathbf{HK} \alpha$，称公式在 $\mathbf{HK}$ 中可证，或 $\alpha$ 是 $\mathbf{HK}$ 的（内）定理，记作 $\vdash_\mathbf{HK} \alpha$
+        3. 用 $\mathrm{Thm}(\mathbf{HK})$ 表示 $\mathbf{HK}$ 中所有定理的集合
 
     4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统元定理
         1. $\alpha, \Gamma \vdash_\mathbf{HK} \alpha$，$\bot, \Gamma \vdash_\mathbf{HK} \alpha$
@@ -260,11 +261,11 @@
         5. $\alpha \vee \beta \in \Gamma$ 当且仅当 $\alpha \in \Gamma$ 或 $\beta \in \Gamma$
         6. $\alpha \to \beta \in \Gamma$ 当且仅当 $\alpha \notin \Gamma$ 或 $\beta \in \Gamma$
     3. $\text{Lindenbaum}$ 定理：若 $\Gamma$ 是$\mathbf{HK}-$一致的公式集，那么存在极大 $\mathbf{HK}-$一致的公式集 $\Delta$ 使得 $\Gamma \subseteq \Delta$
-8. 完全性：若 $\Gamma \vDash \alpha$，那么 $\Gamma \vdash_\mathbf{HK} \alpha$
+8. 完全性：若 $\Gamma \vDash \alpha$，则 $\Gamma \vdash_\mathbf{HK} \alpha$
     1. $\mathbf{CL} \subseteq \mathrm{Thm}(\mathbf{HK})$
     2. 完全性的等价形式：若 $\Gamma$ 是 $\mathbf{HK}-$一致的，则 $\Gamma$ 是可满足的
     3. 紧致性：一个公式集 $\Gamma$ 可满足当且仅当 $\Gamma$ 的每个有穷子集可满足
-9.  其他性质
+9. 其他性质
     1. $\text{Post}$ 完全性：$\mathbf{HK}$ 是 $\text{Post}$ 完全的，即若 $\nvdash_\mathbf{HK} \alpha$，那么在系统 $\mathbf{HK}$ 上增加 $\alpha$ 作为公理所得到的系统是不一致的
     2. 析取性质：$\mathbf{HK}$ 不具有析取性质，即存在公式 $\alpha \vee \beta$，有 $\vdash_\mathbf{HK} \alpha \vee \beta$ 且 $\nvdash_\mathbf{HK} \alpha$ 且 $\nvdash_\mathbf{HK} \beta$
     3. 插值性质：$\mathbf{HK}$ 具有插值性质，即对任何公式 $\alpha \to \beta$，若 $\vdash_\mathbf{HK} \alpha \to \beta$，那么存在公式 $\chi$ 使得
@@ -313,7 +314,51 @@
         3. 设 $\Gamma$ 是公式集，若对任意 $\alpha \in \Gamma$ 都有 $\vDash_{I} \alpha$，则记作 $\vDash_{I} \Gamma$
     5. 对任意模型 $\mathfrak{M}=(W, R, V)$ 和 $x \in W$，若 $\mathfrak{M}, x \vDash \alpha$ 且 $x R y$，则 $\mathfrak{M}, y \vDash \alpha$
 
-3. 直觉主义命题逻辑公理系统 $\mathbf{HJ}$
+3. 直觉主义命题逻辑公理系统 $\mathbf{HJ}$ 从 $\mathbf{HK}$ 删除公理 $\text{A}_{10}$ 得到
+    1. 在 $\mathbf{HJ}$ 中，若存在公式集 $\Gamma$ 到公式 $\alpha$ 的推导，则称 $\alpha$ 是 $\Gamma$ 的句法后承，记作 $\Gamma \vdash_\mathbf{HJ} \alpha$
+    2. 若 $\varnothing \vdash_\mathbf{HJ} \alpha$，称公式在 $\mathbf{HJ}$ 中可证，或 $\alpha$ 是 $\mathbf{HJ}$ 的（内）定理，记作 $\vdash_\mathbf{HJ} \alpha$
+
+    用 $\mathrm{Thm}(\mathbf{HJ})$ 表示 $\mathbf{HJ}$ 中所有定理的集合
+
+    1. 演绎定理：对任意公式集 $\Gamma \cup\{\alpha, \beta\}$，$\alpha, \Gamma \vdash_{\mathbf{HJ}} \beta$ 当且仅当 $\Gamma \vdash_{\mathbf{HJ}} \alpha \rightarrow \beta$
+    2. 以下命题在 $\mathbf{HJ}$ 中成立
+        1. 若 $\Gamma \vdash_{\mathbf{HJ}} \alpha$ 且 $\Gamma \subseteq \Delta$，则 $\Delta \vdash_{\mathbf{HJ}} \alpha$
+        2. 若 $\Gamma \vdash_{\mathbf{HJ}} \alpha$ 且 $\alpha, \Delta \vdash_{\mathbf{HJ}} \beta$，则 $\Gamma, \Delta \vdash_{\mathbf{HJ}} \beta$
+        3. 若 $\Gamma \vdash_{\mathbf{H J}} \alpha$ 且 $\Gamma \vdash_{\mathbf{H J}} \beta$，则 $\Gamma \vdash_{\mathbf{H J}} \alpha \wedge \beta$
+        4. 若 $\alpha, \beta, \Gamma \vdash_{\mathbf{H J}} \gamma$，则 $\alpha \wedge \beta, \Gamma \vdash_{\mathbf{H J}} \gamma$
+        5. 若 $\Gamma \vdash_{\mathbf{H J}} \alpha$ 或 $\Gamma \vdash_{\mathbf{H J}} \beta$，则 $\Gamma \vdash_{\mathbf{H J}} \alpha \vee \beta$
+        6. 若 $\alpha, \Gamma \vdash_{\mathbf{H J}} \gamma$ 且 $\beta, \Gamma \vdash_{\mathbf{H J}} \gamma$，则 $\alpha \vee \beta, \Gamma \vdash_{\mathbf{H J}} \gamma$
+        7. 若 $\Gamma \vdash_{\mathbf{HJ}} \alpha$ 且 $\beta, \Delta \vdash_{\mathbf{HJ}} \gamma$，则 $\alpha \rightarrow \beta, \Gamma, \Delta \vdash_{\mathbf{HJ}} \gamma$
+        8. $\alpha, \Gamma \vdash_{\mathbf{HJ}} \alpha$ 且 $\perp, \Gamma \vdash_{\mathbf{HJ}} \alpha$
+
+4. 直觉主义命题逻辑的后承演算 $\mathfrak{C}_\mathbf{HJ}$ 从 $\mathfrak{C}_\mathbf{HK}$ 删除 $\text{LEM}$ 规则得来
+5. 可靠性：若 $\Gamma \vdash_\mathbf{HJ} \alpha$，则 $\Gamma \vDash_{I} \alpha$
+    1. $\mathrm{Thm}(\mathbf{HJ}) \subseteq \mathbf{Int}$
+    2. $\mathrm{Thm}(\mathbf{HJ}) \subset \mathrm{Thm}(\mathbf{HK})$
+6. 一致性：$\mathbf{HJ}$ 是一致的
+    1. 若公式集 $\Gamma$ 有 $\Gamma \nvdash_\mathbf{HJ} \bot$，则称 $\Gamma$ 是 $\mathbf{HJ}-$一致的，否则 $\Gamma$ 是 $\mathbf{HJ}-$不一致的
+7. 完全性：若 $\Gamma \vDash_{I} \alpha$，则 $\Gamma \vdash_\mathbf{HJ} \alpha$
+    1. $\mathrm{Thm}(\mathbf{HJ}) \subseteq \mathbf{Int}$
+    2. 紧致性：一个公式集 $\Gamma$ 可满足当且仅当 $\Gamma$ 的每个有穷子集可满足
+8. 直觉主义命题逻辑的典范模型 $\mathfrak{M}^{I}=\left(W^{I}, R^{I}, V^{I}\right)$ 定义为
+    1. $W^{I}=\{\Delta \mid \Delta$ 是素理论$\}$
+    2. $\Delta R^{I} \Theta$ 当且仅当 $\Delta \subseteq \Theta$
+    3. 对每个变元 $p \in \mathbf{Prop}, V^{I}(p)=\left\{\Delta \in W^{I} \mid p \in \Delta\right\}$
+
+    称 $\mathfrak{F}^{I}=(W^{I}, R^{I})$ 为直觉主义命题逻辑的典范框架
+
+    1. 设 $\Delta$ 是 $\mathbf{HJ}-$一致的公式集，若
+        1. $\Delta$ 对 $\vdash_{\mathbf{HJ}}$ 封闭
+        2. 对任意公式 $\alpha$ 和 $\beta$ 都有 $\alpha \vee \beta \in \Delta$ 蕴涵 $\alpha \in \Delta$ 或 $\beta \in \Delta$
+
+        则称 $\Delta$ 为素理论
+
+        1. $\operatorname{Thm}(\mathbf{HJ}) \subseteq \Delta$
+        2. $\alpha \wedge \beta \in \Delta$ 当且仅当 $\alpha \in \Delta$ 且 $\beta \in \Delta$
+        3. $\alpha \vee \beta \in \Delta$ 当且仅当 $\alpha \in \Delta$ 或 $\beta \in \Delta$
+        4. 若 $\Gamma \nvdash_{\mathbf{HJ}} \alpha$，则存在素理论 $\Delta$ 使得 $\Gamma \subseteq \Delta$ 且 $\Delta \nvdash_{\mathbf{HJ}} \alpha$
+
+    2. 对任何公式 $\alpha$ 和 $\Delta \in W^{I}$，$\mathfrak{M}^{I}, \Delta \vDash \alpha$ 当且仅当 $\alpha \in \Delta$
 
 ## 1.2 一阶逻辑
 1. 一阶语言 $\mathscr L(S)$ 即一阶逻辑的形式语言，由逻辑符号和非逻辑符号组成
