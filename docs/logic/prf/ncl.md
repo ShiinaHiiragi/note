@@ -129,7 +129,7 @@
         2. $R$ 是由谓词符号集 $\mathbf R$ 形成的映射，对任意 $n \in \mathbf N$ 都有 $\varnothing \neq R(n) \subseteq \mathcal P(A^n)$
         3. $F$ 是由函数符号集 $\mathbf F$ 形成的映射，对任意 $n \in \mathbf N$ 都有 $\varnothing \neq F(n) \subseteq \left\{f \mid f: A^n \to A\right\}$
         4. $I$ 是定义在 $S$ 上的映射
-    2. 模型：$\text{Henkin}$ 语义的描述基本与标准语义相同，而仅在二阶变项与二阶量词方面有区别．设 $\text{Hekin}$ 模型 $\mathfrak M^{\mathrm H} = (\mathfrak A^{\mathrm H}, \sigma)$
+    2. 模型：$\text{Henkin}$ 语义的描述基本与标准语义相同，而仅在二阶变项与二阶量词方面有区别．设 $\text{Henkin}$ 模型 $\mathfrak M^{\mathrm H} = (\mathfrak A^{\mathrm H}, \sigma)$
         1. 对于指派 $\sigma$ 与 $n$ 元变谓词符 $X^n \in \mathbf V_r$ 及 $n$ 元变函数符 $f^n \in \mathbf V_f$，有 $\sigma(X^n) \in R(n), \sigma(f^n) \in F(n)$
         2. 模型 $\mathfrak M^{\mathrm H}$ 与公式 $\forall X^n\alpha, \forall f^n\alpha$ 的满足关系定义为
 
@@ -169,7 +169,7 @@
             $$
 
 3. 标准语义与非标准语义
-    1. $\text{Henkin}$ 语义与标准语义的关系：设 $\mathfrak A$ 是一个标准结构，$\mathfrak A^{\mathrm H}$ 是相应的 $\text{Hekin}$ 结构，则对各指派 $\sigma$ 与公式 $\alpha$ 有 $(\mathfrak A, \sigma) \vDash \alpha$ 当且仅当 $(\mathfrak A^{\mathrm H}, \sigma) \vDash \alpha$
+    1. $\text{Henkin}$ 语义与标准语义的关系：设 $\mathfrak A$ 是一个标准结构，$\mathfrak A^{\mathrm H}$ 是相应的 $\text{Henkin}$ 结构，则对各指派 $\sigma$ 与公式 $\alpha$ 有 $(\mathfrak A, \sigma) \vDash \alpha$ 当且仅当 $(\mathfrak A^{\mathrm H}, \sigma) \vDash \alpha$
     2. $\text{Henkin}$ 语义与一阶语义的关系：设 $\mathfrak A^{0}$ 是 $\mathscr L^1(S)$ 上的一个一阶结构，则存在一个 $\text{Henkin}$ 结构 $\mathfrak A^{\mathrm H}$ 且对 $\mathfrak A^{0}$ 上的每一个指派 $\sigma^{0}$ 都有 $\mathfrak A^{\mathrm H}$ 上的一个指派 $\sigma^{\mathrm H}$ 使得对 $\mathscr L^1(S)$ 中的任一个公式 $\alpha$ 有 $(\mathfrak A^{0}, \sigma^{0}) \vDash \alpha$ 当且仅当 $(\mathfrak A^{\mathrm H}, \sigma^{\mathrm H}) \vDash \alpha$
         1. 对 $\mathscr L^1(S)$ 的任意公式 $\alpha$ 或公式集 $\Gamma$，$\alpha$ 或 $\Gamma$ 是 $\text{Henkin}$ 有效的当且仅当 $\alpha$ 或 $\Gamma$ 是一阶有效的
         2. 对 $\mathscr L^1(S)$ 的任意公式 $\alpha$ 或公式集 $\Gamma$，$\alpha$ 或 $\Gamma$ 是 $\text{Henkin}$ 可满足的当且仅当 $\alpha$ 或 $\Gamma$ 是一阶可满足的
