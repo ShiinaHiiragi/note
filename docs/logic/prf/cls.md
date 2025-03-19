@@ -275,6 +275,45 @@
         公式 $\chi$ 称为 $\alpha$ 与 $\beta$ 的插值
 
 ### 1.1.2 直觉主义逻辑
+1. 直觉主义框架 $\mathfrak{F}=(W, R)$：$W$ 中元素称为点，$R$ 为偏序关系
+    1. 设 $x, y \in W$，如果 $x R y$，则称 $y$ 是 $x$ 的 $R-$后继点
+        1. 对 $x \subseteq W$，定义 $R(x)=\{y \in W \mid x R y\}$
+        2. 对 $X \subseteq W$，定义 $R[X]=\bigcup\{R(x) \mid x \in X\}$
+    2. 若 $X=R[X]$，则称 $X$ 为 $R-$封闭集，记 $\mathfrak{F}$ 中所有 $R-$封闭集的集合为 $\operatorname{Up}(W)$
+        1. $\varnothing, W \in \operatorname{Up}(W)$
+        2. 对任意 $X \subseteq W$，$R[X] \in \operatorname{Up}(W)$
+2. $\text{Kripke}$ 直觉主义语义学：定义 $\mathfrak{M}=(W, R, V)$ 为模型，其中 $(W, R)$ 是直觉主义框架，$V: \mathbf{Prop} \to \operatorname{Up}(W)$ 是 $\mathfrak{M}$ 中的赋值
+    1. 对任意 $x \in W$ 与公式 $\alpha$，归纳定义 $\mathfrak{M}, x \vDash \alpha$（公式 $\alpha$ 在模型 $\mathfrak{M}$ 中 $x$ 上真）
+        1. $\mathfrak{M}, x \vDash p$ 当且仅当 $x \in V(p)$
+        2. $\mathfrak{M}, x \not \vDash \perp$
+        3. $\mathfrak{M}, x \vDash \alpha \wedge \beta$ 当且仅当 $\mathfrak{M}, x \vDash \alpha$ 且 $\mathfrak{M}, x \vDash \beta$
+        4. $\mathfrak{M}, x \vDash \alpha \vee \beta$ 当且仅当 $\mathfrak{M}, x \vDash \alpha$ 或 $\mathfrak{M}, x \vDash \beta$
+        5. $\mathfrak{M}, x \vDash \alpha \rightarrow \beta$ 当且仅当对所有 $y \in R(x)$，如果 $\mathfrak{M}, y \vDash \alpha$，则 $\mathfrak{M}, y \vDash \beta$
+
+        用 $\mathfrak{M}, x \not \vDash \alpha$ 表示 $\alpha$ 在 $\mathfrak{M}$ 中点 $x$ 上假．设 $\Gamma$ 为公式集，定义 $V(\alpha)=\{x \in W \mid \mathfrak{M}, x \vDash \alpha\}$
+
+        1. 若对任意 $\alpha \in \Gamma$ 都有 $\mathfrak{M}, x \vDash \alpha$，则记作 $\mathfrak{M}, x \vDash \Gamma$
+        2. 若存在模型 $\mathfrak{M}=(W, R, V)$ 和 $x \in W$ 使得 $\mathfrak{M}, x \vDash \Gamma$，则称公式集 $\Gamma$ 是可满足的
+        3. 若对任意模型 $\mathfrak{M}$ 与 $x \in W$ 都有 $\mathfrak{M}, x \vDash \Gamma$ 蕴涵 $\mathfrak{M}, x \vDash \alpha$，则称 $\alpha$ 是 $\Gamma$ 的直觉主义逻辑后承，记作 $\Gamma \vDash_{I} \alpha$
+
+    2. 若对任意 $x$ 都有 $\mathfrak{M}, x \vDash \alpha$，则称 $\mathfrak{M}$ 是 $\alpha$ 的模型，记作 $\mathfrak{M} \vDash \alpha$
+        1. $\mathfrak{M} \vDash \alpha$ 当且仅当 $V(\alpha)=W$
+        2. 若存在 $x \in W$ 使得 $\mathfrak{M}, x \not \vDash \alpha$，则称模型 $\mathfrak{M}$ 是公式 $\alpha$ 的反模型
+        3. 设 $\Gamma$ 是公式集，若对任意 $\alpha \in \Gamma$ 都有 $\mathfrak{M} \vDash \alpha$，则记作 $\mathfrak{M} \vDash \Gamma$
+    3. 若对任意赋值 $V$ 都有 $(W, R, V) \vDash \alpha$，则称公式 $\alpha$ 在直觉主义框架 $\mathfrak{F}=(W, R)$ 上有效，记作 $\mathfrak{F} \vDash \alpha$
+        1. 对任意模型 $\mathfrak{M}=(W, R, V)$ 和公式 $\alpha$，$V(\alpha) \in \operatorname{Up}(W)$
+        2. 设 $\Gamma$ 是公式集，若对任意 $\alpha \in \Gamma$ 都有 $\mathfrak{F} \vDash \alpha$，则记作 $\mathfrak{F} \vDash \Gamma$
+    4. 若对任意直觉主义框架 $\mathfrak{F}$ 都有 $\mathfrak{F} \vDash \alpha$，则称公式 $\alpha$ 是直觉主义有效的，记作 $\vDash_{I} \alpha$
+        1. 定义直觉主义命题逻辑为所有直觉主义有效公式的集合 $\mathbf{Int} = \left\{\alpha \in \mathscr{L} \mid \vDash_{I} \alpha\right\}$
+            1. 对于命题变元 $p$，$p \vee \neg p \notin \mathbf{Int}, \neg \neg p \rightarrow p \notin \mathbf{Int}$
+            2. 对于公式 $\alpha$，$\neg(\alpha \wedge \neg \alpha) \in \mathbf{Int}, \alpha \rightarrow \neg \neg \alpha \in \mathbf{Int}$
+        2. 对任意公式 $\alpha, \beta$ 和代入 $\sigma$
+            1. 如果 $\alpha \in \mathbf{Int}$，那么 $\widehat{\sigma}(\alpha) \in \mathbf{Int}$
+            2. 如果 $\alpha, \alpha \rightarrow \beta \in \mathbf{Int}$，那么 $\beta \in \mathbf{Int}$
+        3. 设 $\Gamma$ 是公式集，若对任意 $\alpha \in \Gamma$ 都有 $\vDash_{I} \alpha$，则记作 $\vDash_{I} \Gamma$
+    5. 对任意模型 $\mathfrak{M}=(W, R, V)$ 和 $x \in W$，若 $\mathfrak{M}, x \vDash \alpha$ 且 $x R y$，则 $\mathfrak{M}, y \vDash \alpha$
+
+3. 直觉主义命题逻辑公理系统 $\mathbf{HJ}$
 
 ## 1.2 一阶逻辑
 1. 一阶语言 $\mathscr L(S)$ 即一阶逻辑的形式语言，由逻辑符号和非逻辑符号组成
