@@ -13,10 +13,11 @@
     \newcommand{\startsub}{\\[-0.29em]}
     \newcommand{\endsub}{\startsub}
     \newcommand{\fendl}{\\[0.044em]}
+    \newcommand{\offset}{\rule{0pt}{1em}}
     \fitch{
         \fcol{
             \startsub
-            1 \\
+            \offset 1 \\
             2 \\
             3 \\
             4 \\
@@ -219,7 +220,7 @@
                     m + 1 \\
                     \vdots \\
                     n \\
-                    n + 1 \\
+                    \offset n + 1 \\
                     \vdots \\
                     k \\
                     k + 1 \\
@@ -262,8 +263,8 @@
             $$
             \fitch{
                 \fcol{
-                    m \\
-                    \vdots \\
+                    \offset m \\
+                    \offset \vdots \\
                     n \\
                     n + 1 \\
                 }
@@ -351,7 +352,7 @@
     $$
     \fitch{
         \fcol{
-            m \\
+            \offset m \\
             \vdots \\
             n \\
             n + 1 \\
