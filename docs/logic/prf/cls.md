@@ -295,7 +295,7 @@
 
         1. 若对任意 $\alpha \in \Gamma$ 都有 $\mathfrak{M}, x \vDash \alpha$，则记作 $\mathfrak{M}, x \vDash \Gamma$
         2. 若存在模型 $\mathfrak{M}=(W, R, V)$ 和 $x \in W$ 使得 $\mathfrak{M}, x \vDash \Gamma$，则称公式集 $\Gamma$ 是可满足的
-        3. 若对任意模型 $\mathfrak{M}$ 与 $x \in W$ 都有 $\mathfrak{M}, x \vDash \Gamma$ 蕴涵 $\mathfrak{M}, x \vDash \alpha$，则称 $\alpha$ 是 $\Gamma$ 的直觉主义逻辑后承，记作 $\Gamma \vDash_{I} \alpha$
+        3. 若对任意模型 $\mathfrak{M}$ 与 $x \in W$ 都有 $\mathfrak{M}, x \vDash \Gamma$ 蕴含 $\mathfrak{M}, x \vDash \alpha$，则称 $\alpha$ 是 $\Gamma$ 的直觉主义逻辑后承，记作 $\Gamma \vDash_{I} \alpha$
 
     2. 若对任意 $x$ 都有 $\mathfrak{M}, x \vDash \alpha$，则称 $\mathfrak{M}$ 是 $\alpha$ 的模型，记作 $\mathfrak{M} \vDash \alpha$
         1. $\mathfrak{M} \vDash \alpha$ 当且仅当 $V(\alpha)=W$
@@ -350,7 +350,7 @@
 
     1. 设 $\Delta$ 是 $\mathbf{HJ}-$一致的公式集，若
         1. $\Delta$ 对 $\vdash_{\mathbf{HJ}}$ 封闭
-        2. 对任意公式 $\alpha$ 和 $\beta$ 都有 $\alpha \vee \beta \in \Delta$ 蕴涵 $\alpha \in \Delta$ 或 $\beta \in \Delta$
+        2. 对任意公式 $\alpha$ 和 $\beta$ 都有 $\alpha \vee \beta \in \Delta$ 蕴含 $\alpha \in \Delta$ 或 $\beta \in \Delta$
 
         则称 $\Delta$ 为素理论
 

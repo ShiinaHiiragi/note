@@ -6,7 +6,7 @@
     1. 称 $\mathbf{P}$ 为力迫偏序或力迫，$\mathbf{P}$ 的元素称为力迫条件．若 $p \leqslant q$，则称力迫条件 $p$ 强于力迫条件 $q$
         1. 设 $p \in \mathbf{P}$，则 $\mathbf{P}$ 的子集 $D$ 是稠密的当且仅当 $\forall p \in \mathbf{P} \ \exists q \in D \ (q \leqslant p)$；$D$ 是 $p$ 下稠密的当且仅当 $\forall q \leqslant p \ \exists r \leqslant q \ (r \in D)$
         2. $\mathbf{P}$ 的子集 $G$ 称为 $\mathbf{P}$ 上的滤当且仅当 ① $\mathbf{1} \in G$；② $\forall p, q \in G \ \exists r \in G \ (r \leqslant p \wedge r \leqslant q)$，即任意 $p, q \in G$ 都是相容的；③ $\forall p, q \in G \ (q \leqslant p \wedge q \in G \rightarrow p \in G)$
-        3. 令 $M$ 为集合，若 $G \subseteq \mathbf{P}$ 是滤，且对任意稠密子集 $D \subseteq \mathbf{P}, D \in M$ 蕴涵 $G \cap D \neq \varnothing$，则称 $G$ 是 $M$ 上的 $\mathbf{P}-$脱殊滤
+        3. 令 $M$ 为集合，若 $G \subseteq \mathbf{P}$ 是滤，且对任意稠密子集 $D \subseteq \mathbf{P}, D \in M$ 蕴含 $G \cap D \neq \varnothing$，则称 $G$ 是 $M$ 上的 $\mathbf{P}-$脱殊滤
     2. 如果 $M$ 是 $\mathbf{ZF} - \mathrm{Pow}$ 的可数传递模型且 $\mathbf{P} \in M$，则对任意 $p \in \mathbf{P}$，存在 $M$ 上的 $\mathbf{P}-$脱殊滤 $G$ 且 $p \in G$
     3. 设 $M$ 是 $\mathbf{ZFC}$ 的传递模型，$\mathbf{P} \in M$．若 $\mathbf{P}$ 是无原子的（即对每一 $p \in \mathbf{P}$，存在不相容的 $r, q \in \mathbf{P}$ 满足 $r \leqslant p \wedge q \leqslant p$）且 $G$ 是 $M$ 上 $\mathbf{P}-$脱殊滤，则 $G \notin M$
     4. 设 $M$ 是 $\mathbf{ZFC}$ 的传递模型，$\mathbf{P} \in M, D \subseteq \mathbf{P}$ 且 $D \in M$，$G$ 为 $M$ 上的 $\mathbf{P}-$脱殊滤
@@ -54,7 +54,7 @@
 ### 5.1.2 相对独立性
 1. 若对任意 $\mathbf{ZFC}$ 的有穷子集 $S$，总存在其另一有穷子集 $T$，使得 $T$ 的任何可数传递模型 $M$ 都可扩展为 $S+\sigma$ 的可数传递模型 $N$
     1. $\mathbf{ZFC}+\sigma \vdash \tau_{\mathbf{N}} \to \mathbf{ZFC} \vdash \tau_{\mathbf{N}}$
-    2. $\mathbf{ZFC}$ 一致蕴涵 $\mathbf{ZFC}+\sigma$ 一致
+    2. $\mathbf{ZFC}$ 一致蕴含 $\mathbf{ZFC}+\sigma$ 一致
 2. 对任意基数 $\lambda$，令 $\operatorname{Func}_{\lambda}(I, J)=\{p \mid |p| <\lambda \wedge p$ 是函数 $\wedge \operatorname{dom}(p) \subseteq I \wedge \operatorname{ran}(p) \subseteq J\}$，则相应的力迫为 $\left(\operatorname{Func}_{\lambda}(I, J), \supseteq, \varnothing\right)$
     1. 给定基数 $\kappa$，如果偏序集 $\mathbf{P}$ 的任意反链的基数都小于 $\kappa$，则称 $\mathbf{P}$ 具有 $\kappa-$反链性质，记作 $\kappa\text{-}c.c.$
         1. 对任意基数 $\lambda$，$\operatorname{Func}_{\lambda}(I, J)$ 有 $\left(|J|^{<\lambda}\right)^{+}-$反链性质
