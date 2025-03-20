@@ -290,17 +290,103 @@
         6. 蕴含消去规则
 
             $$
+            \fitch{
+                \fcol{
+                    m \\
+                    \vdots \\
+                    n \\
+                    \vdots \\
+                    k \\
+                }
+                \quad
+                \scol{
+                    \rootcol{
+                        \alpha \to \beta \\
+                        \vdots \\
+                        \alpha \\
+                        \vdots \\
+                         \beta \\
+                    }
+                }
+                \qquad
+                \tcol{
+                    \\
+                    \phantom{\vdots} \\
+                    \\
+                    \phantom{\vdots} \\
+                    \to \text{E}: m, n \\
+                }
+            }
             $$
 
         7. 恒假消去规则
 
             $$
+            \fitch{
+                \fcol{
+                    m \\
+                    \vdots \\
+                    n \\
+                }
+                \quad
+                \scol{
+                    \rootcol{
+                        \bot \\
+                        \vdots \\
+                        \alpha \\
+                    }
+                }
+                \qquad
+                \tcol{
+                    \\
+                    \phantom{\vdots} \\
+                    \bot \text{E}: m \\
+                }
+            }
             $$
 
 
 3. 经典命题逻辑的 $\text{Fitch}$ 式自然演绎系统 $\mathbf{FK}$ 从 $\mathbf{FJ}$ 增加否定消去规则得来
 
     $$
+    \fitch{
+        \fcol{
+            m \\
+            \vdots \\
+            n \\
+            n + 1 \\
+        }
+        \quad
+        \scol{
+            \subcol{
+                \neg \alpha \\
+                \vdots \\
+                \bot
+            } \endsub
+            \alpha
+        }
+        \qquad
+        \tcol{
+            \text{Hyp} \\
+            \phantom{\vdots} \\
+            \\
+            \neg \text{E}: m\text{-}n \\
+        }
+    }
     $$
 
 ## 2.2 Gentzen 式自然演绎
+
+<script>
+(function align() {
+  let display = [...document.querySelectorAll("h2[id='21-fitch']+ol mjx-container[display='true']")].slice(1);
+  if (display.length === 0) {
+    setTimeout(align, 100);
+  } else {
+    display.forEach((item) => {
+        item.style.setProperty("margin-left", "0", "important");
+        item.style.setProperty("text-align", "left", "important");
+    })
+  }
+})()
+</script>
