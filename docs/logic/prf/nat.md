@@ -435,8 +435,16 @@
 
     其中 $[\alpha]^{n}$ 表示最终将被撤销的临时假设
 
-    1. 在 $\mathbf{NJ}$ 中的推导是由公式组成的有穷树结构 $\mathcal D$，所有推导的集合 $\mathbf{X}_{J}$
+    1. 在 $\mathbf{NJ}$ 中的推导是由公式组成的有穷树结构 $\mathcal D$，记所有推导的集合为 $\mathbf{X}_{J}$
+        1. 由单个公式形成的单节点数结构属于 $\mathbf{X}_{J}$
+        2. 从子节点运用 $\mathbf{NJ}$ 的 $9$ 条推理规则得到的推导
     2. 用 $\mathcal D, \mathcal E$ 表示推导，记号 $\begin{array}{c} \beta \\ \mathcal D \\ \alpha \end{array}$ 表示 $\mathcal D$ 是从 $\beta$ 到 $\alpha$ 的推导，$\begin{array}{c} \mathcal D \\ \alpha \end{array}$ 表示 $\mathcal D$ 是以 $\alpha$ 为根节点的推导
+        1. 一个推导 $\mathcal{D}$ 的高度是其中极大分枝的最大长度，记为 $|\mathcal{D}|$，单节点推导的高度为 $0$
+        2. 对任意公式集 $\Gamma \cup \{\alpha\}$，若存在从 $\Gamma$ 中有穷多个公式到 $\alpha$ 的推导，则称在 $\mathbf{NJ}$ 中 $\alpha$ 从 $\Gamma$ 可推导，记作 $\Gamma \vdash_{\mathbf{NJ}} \alpha$
+        3. 若 $\varnothing \vdash_{\mathbf{NJ}} \alpha$，则称公式 $\alpha$ 在 $\mathbf{NJ}$ 中可证，记作 $\vdash_{\mathbf{NJ}} \alpha$
+    3. 对任意公式集 $\Gamma \cup\{\alpha, \beta\}$
+        1. 如果 $\Gamma \vdash_{\mathbf{HJ}} \alpha$，那么 $\Gamma \vdash_{\mathbf{NJ}} \alpha$；如果 $\vdash_{\mathbf{HJ}} \alpha$，那么 $\vdash_{\mathbf{NJ}} \alpha$
+        2. $\alpha, \Gamma \vdash_{\mathbf{NJ}} \beta$ 当且仅当 $\Gamma \vdash_{\mathbf{NJ}} \alpha \rightarrow \beta$
 
 2. 经典命题逻辑的 $\text{Gentzen}$ 式自然演绎系统 $\mathbf{NK}$ 从 $\mathbf{NJ}$ 增加反证规则得来
 
@@ -447,6 +455,16 @@
     \UnaryInfC{$\alpha$}
     \end{prooftree}
     $$
+
+    1. 在 $\mathbf{NJ}$ 中所有推导的集合 $\mathbf{X}_{K}$ 是在 $\mathbf{X}_{J}$ 基础上对反证规则封闭的集合
+        1. 对任意公式集 $\Gamma \cup \{\alpha\}$，若存在从 $\Gamma$ 中有穷多个公式到 $\alpha$ 的推导，则称在 $\mathbf{NK}$ 中 $\alpha$ 从 $\Gamma$ 可推导，记作 $\Gamma \vdash_{\mathbf{NK}} \alpha$
+        2. 若 $\varnothing \vdash_{\mathbf{NK}} \alpha$，则称公式 $\alpha$ 在 $\mathbf{NK}$ 中可证，记作 $\vdash_{\mathbf{NK}} \alpha$
+    2. 对任意公式集 $\Gamma \cup\{\alpha, \beta\}$
+        1. 如果 $\Gamma \vdash_{\mathbf{NJ}} \alpha$，那么 $\Gamma \vdash_{\mathbf{NK}} \alpha$；如果 $\vdash_{\mathbf{NJ}} \alpha$，那么 $\vdash_{\mathbf{NK}} \alpha$
+        2. 如果 $\Gamma \vdash_{\mathbf{HK}} \alpha$，那么 $\Gamma \vdash_{\mathbf{NK}} \alpha$；如果 $\vdash_{\mathbf{HK}} \alpha$，那么 $\vdash_{\mathbf{NK}} \alpha$
+        3. $\alpha, \Gamma \vdash_{\mathbf{NK}} \beta$ 当且仅当 $\Gamma \vdash_{\mathbf{NK}} \alpha \rightarrow \beta$
+
+3. 正规化
 
 <script>
 (function align() {
