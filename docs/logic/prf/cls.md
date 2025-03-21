@@ -31,10 +31,16 @@
         2. 引入省略括号的规则：① 公式最外层括号可省略；② 联结词 $\wedge$ 与 $\vee$ 优先于 $\to$
 
     1. 原子公式：命题变元或 $\bot$，所有原子公式的集合记为 $\mathbf{At} = \mathbf{Prop} \cup \{\bot\}$
-    2. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串的性质，设 ① 对 $\alpha \in \mathbf{At}$ 都有 $\mathcal R(\alpha)$；② 对任意 $\alpha, \beta \in \mathscr L$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$；那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathscr L$ 都成立
+    2. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串的性质，设
+        1. 对 $\alpha \in \mathbf{At}$ 都有 $\mathcal R(\alpha)$
+        2. 对任意 $\alpha, \beta \in \mathscr L$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$
+
+        那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathscr L$ 都成立
+
     3. 公式的性质
-        1. $\mathrm{var}(\alpha)$ 表示公式 $\alpha$ 中出现的所有命题变元的集合；$\alpha(p_1, p_2, \cdots, p_n)$ 表示 $\alpha$ 使得 $\mathrm{var}(\alpha) \subseteq \{p_1, \cdots, p_n\}$．若 $\mathrm{var}(\alpha) = \varnothing$，则称 $\alpha$ 为无变元公式
-        2. $d(\alpha)$ 表示公式 $\alpha$ 的复杂度，定义为
+        1. $\mathrm{var}(\alpha)$ 表示公式 $\alpha$ 中出现的所有命题变元的集合，若 $\mathrm{var}(\alpha) = \varnothing$，则称 $\alpha$ 为无变元公式
+        2. $\alpha(p_1, p_2, \cdots, p_n)$ 表示 $\alpha$ 使得 $\mathrm{var}(\alpha) \subseteq \{p_1, \cdots, p_n\}$
+        3. $d(\alpha)$ 表示公式 $\alpha$ 的复杂度，定义为
 
             $$
             \begin{aligned}
@@ -43,7 +49,7 @@
             \end{aligned}
             $$
 
-        3. $\mathrm{SF}(\alpha)$ 表示公式 $\alpha$ 的子公式集合，定义为
+        4. $\mathrm{SF}(\alpha)$ 表示公式 $\alpha$ 的子公式集合，定义为
 
             $$
             \begin{aligned}
@@ -52,7 +58,7 @@
             \end{aligned}
             $$
 
-        4. 一个代入是一个函数 $\sigma: \mathbf{Prop} \to \mathscr L$，对任意代入 $\sigma$，函数 $\widehat \sigma: \mathscr L \to \mathscr L$ 定义为
+        5. 一个代入是一个函数 $\sigma: \mathbf{Prop} \to \mathscr L$，对任意代入 $\sigma$，函数 $\widehat \sigma: \mathscr L \to \mathscr L$ 定义为
 
             $$
             \begin{aligned}
@@ -78,15 +84,7 @@
         $$
 
         1. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$，设赋值 $\theta, \theta'$ 有任意 $1\leqslant i \leqslant n: \theta(p_i) = \theta'(p_i)$，则 $\widehat \theta(\alpha) = \widehat {\theta'}(\alpha)$
-        2. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$ 和公式 $\beta_1, \beta_2, \cdots, \beta_n$，令 $\alpha' = \alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$．对任意赋值 $\theta$，定义赋值 $\theta': \mathbf{Prop} \to 2$ 为
-
-            $$
-            \theta'(q) = \left\{\begin{aligned}
-            & \widehat \theta(\beta_i), &\textsf{存在 }\ 1\leqslant i\leqslant n: q = p_i \\
-            & \theta(q), &\textsf{否则} \end{aligned}\right.
-            $$
-
-            则 $\theta' \vDash \alpha \leftrightarrow \theta \vDash \alpha'$
+        2. 对任意公式 $\alpha(p_1, p_2, \cdots, p_n)$ 和公式 $\beta_1, \beta_2, \cdots, \beta_n$，令 $\alpha' = \alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$
 
     2. 对任意公式 $\alpha$ 与赋值 $\theta$，若 $\theta(\alpha) = 1$，则称 $\theta$ 满足公式 $\alpha$，记作 $\theta \vDash \alpha$
         1. 对于公式 $\alpha$，若存在赋值 $\theta$ 使得 $\theta \vDash \alpha$，则称公式 $\alpha$ 可满足，否则称 $\alpha$ 为矛盾式
@@ -138,9 +136,10 @@
             2. 对任意 $x, y, z\in X$，若 $xSz$ 且 $ySz$，那么 $x=y$
             3. 不存在 $x_0, x_1, \cdots, x_k \in X$ 和自然数 $m, n$ 使得 $x_0S^mx_k$ 且 $x_kS^nx_0$
         2. 在有穷树结构 $(X, S)$ 中，一条链 $c$ 是一个序列 $\left<x_0, x_1, \cdots, x_k\right>$ 使得对所有 $i\neq j < k$ 都有 $x_i\neq x_j$ 且 $x_iSx_{i+1}$
-            1. 若一条链 $c = \left<x_0, x_1, \cdots, x_k\right>$ 不存在 $y=X-c$ 使得 $x_kSy$，则称 $c$ 为极大链．极大链的第一个元素称为根节点；最后一个元素称为叶节点
-            2. 链的长度定义为 $|c|=k$，单个节点链的长度为 $0$
-            3. 有穷树结构 $(X, S)$ 的高度定义为 $\max\{\left|c\right|: c$ 是 $(X, R)$ 的极大链$\}$
+            1. 若一条链 $c = \left<x_0, x_1, \cdots, x_k\right>$ 不存在 $y=X-c$ 使得 $x_kSy$，则称 $c$ 为极大链
+            2. 极大链的第一个元素称为根节点，最后一个元素称为叶节点
+            3. 链的长度定义为 $|c|=k$，单个节点链的长度为 $0$
+            4. 有穷树结构 $(X, S)$ 的高度定义为 $\max\{\left|c\right|: c$ 是 $(X, R)$ 的极大链$\}$
     3. 在 $\mathbf{HK}$ 中，从公式集 $\Gamma$ 到公式 $\alpha$ 的一个推导是由公式组成的以 $\alpha$ 为根节点的有穷树结构 $\mathcal D$，其中每个节点满足
         1. $\gamma$ 是公理或 $\gamma \in \Gamma$
         2. $\gamma$ 是从子节点 $\beta$ 和 $\beta \to \gamma$ 运用规则 $\text{mp}$ 得到的
@@ -189,7 +188,7 @@
             \AxiomC{$\Gamma \vdash \beta$}
             \RightLabel{ $(\vdash \vee)$}
             \UnaryInfC{$\Gamma \vdash \alpha \vee \beta$}
-            \end{prooftree} \\
+            \end{prooftree} \\[0.5em]
             \begin{prooftree}
             \AxiomC{$\alpha$}
             \AxiomC{$\beta$}
@@ -208,7 +207,7 @@
             \AxiomC{$\beta, \Delta \vdash \gamma$}
             \RightLabel{ $(\to \vdash)$}
             \BinaryInfC{$\alpha \to \beta, \Gamma, \Delta \vdash \gamma$}
-            \end{prooftree} \\
+            \end{prooftree} \\[0.5em]
             \begin{prooftree}
             \AxiomC{$\alpha, \Gamma \vdash \beta$}
             \RightLabel{ (DT)}
@@ -218,7 +217,7 @@
             \AxiomC{$\Gamma \vdash \alpha \to \beta$}
             \RightLabel{ (DT)}
             \UnaryInfC{$\alpha, \Gamma \vdash \beta$}
-            \end{prooftree} \\
+            \end{prooftree} \\[0.5em]
             \begin{prooftree}
             \AxiomC{$\alpha, \Gamma \vdash \gamma$}
             \AxiomC{$\neg \alpha, \Gamma \vdash \gamma$}
@@ -429,7 +428,13 @@
         2. 对于 $\mathbf Q\in \{\forall, \exists\}$ 和有穷长的变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，公式 $\mathbf Qx_1 \mathbf Qx_2 \cdots \mathbf Qx_n \alpha$ 记作 $\mathbf Q \overline x \alpha$
         3. 设 $t$ 为项，$\overline x$ 为有穷长的变元序列 $\left<x_1, x_2, \cdots, x_n\right>$．记 $t = t(\overline x)$ 为含有变元 $x_1, x_2, \cdots, x_n$ 的项
 
-3. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串性质，设 ① 对任意原子公式 $\alpha$ 都有 $\mathcal R(\alpha)$；② 对任意 $\alpha, \beta \in \mathcal F(S)$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$；③ 对任意 $\alpha \in \mathcal F(S)$ 和变元符号 $x$，若 $\mathcal R(\alpha)$，则 $\mathcal R(\exists x\alpha)$；那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathcal F(S)$ 都成立
+3. 基于公式定义的归纳证明：令 $\mathcal R$ 是符号串性质，设
+    1. 对任意原子公式 $\alpha$ 都有 $\mathcal R(\alpha)$
+    2. 对任意 $\alpha, \beta \in \mathcal F(S)$ 和 $\circ \in \{\wedge, \vee, \to\}$，若 $\mathcal R(\alpha)$ 且 $\mathcal R(\beta)$，则 $\mathcal R(\alpha \circ \beta)$
+    3. 对任意 $\alpha \in \mathcal F(S)$ 和变元符号 $x$，若 $\mathcal R(\alpha)$，则 $\mathcal R(\exists x\alpha)$
+
+    那么 $\mathcal R(\alpha)$ 对所有 $\alpha \in \mathcal F(S)$ 都成立
+
     1. 项与公式的性质
         1. 项 $t$ 的复杂度定义为
 
@@ -471,7 +476,7 @@
             \end{aligned}
             $$
 
-        4. 自由变元和约束变元
+        4. 自由变元和约束变元： 对形如 $\mathbf Q x\beta$ 的公式，称 $\beta$ 为量词 $\mathbf Qx$ 的辖域
             1. 公式 $\alpha$ 中自由变元的集合 $\mathrm{FV}(\alpha)$ 定义为 
 
                 $$
@@ -496,7 +501,7 @@
 
                 对任意公式集 $\Sigma$，令 $\mathrm{BV}(\Sigma) = {\displaystyle \bigcup_{\alpha \in \Sigma} \mathrm{BV}(\alpha)}$
 
-            3. 对形如 $\mathbf Q x\beta$ 的公式，称 $\beta$ 为量词 $\mathbf Qx$ 的辖域．如果变元 $x$ 在公式 $\alpha$ 中的一次出现不在任何量词 $\mathbf Qx$ 的辖域内，则称此次出现为自由出现；否则称之为约束出现，此时变元 $x$ 在 $\alpha$ 中被左侧最近的量词 $\mathbf Qx$ 约束
+            3. 如果变元 $x$ 在公式 $\alpha$ 中的一次出现不在任何量词 $\mathbf Qx$ 的辖域内，则称此次出现为自由出现；否则称之为约束出现，此时变元 $x$ 在 $\alpha$ 中被左侧最近的量词 $\mathbf Qx$ 约束
 
     2. 替换与变换：对于任意项序列 $\overline t = \left<t_1, t_2, \cdots, t_n\right>$ 和任意变元序列 $\overline x = \left<x_1, x_2, \cdots, x_n\right>$，用 $\overline t / \overline x$ 表示分别用 $t_i$ 替换 $x_i$
         1. 对于公式 $\alpha$，如果公式 $\alpha^\flat$ 是使用不在 $\alpha$ 中出现的新变元 $y_1, y_2, \cdots, y_n$ 分别同时替换 $\alpha$ 中约束变元 $x_1, x_2, \cdots, x_n$ 的所有约束出现得到的公式，则称 $\alpha^\flat$ 是 $\alpha$ 的字母变换
@@ -642,11 +647,12 @@
             \end{prooftree}
             $$
 
-    2. 在 $\mathbf{H}_1$ 中的推导是由公式组成的有穷树结构 $\mathcal D$，每个节点 $\gamma$ 要么是公理，要么是从子节点运用规则 $\text{mp}$ 或 $\text{gen}$ 得到的．对于 $\mathrm{gen}$ 规则，需要保证以公式 $\alpha$ 为根节点的推导使用到的假设 $\Sigma_0$ 中不自由出现 $x$
-        1. 用 $\mathcal D, \mathcal E$ 表示推导，记号 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\varphi\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\varphi$ 为根节点的推导
-        2. 如果存在以公式 $\alpha$ 为根节点的推导，则称 $\alpha$ 在 $\mathbf H_1$ 可证，或称 $\alpha$ 是 $\mathbf H_1$ 的定理，记作 $\vdash_{\mathbf H_1} \alpha$，用 $\mathrm{Thm}(\mathbf H_1)$ 表示 $\mathbf H_1$ 所有定理的集合，在不引发歧义的情况下可以删除下标 $\mathbf H_1$
-        3. 如果对于公式 $\alpha_0, \alpha_1, \cdots, \alpha_n$ 有 $\vdash_{\mathbf H_1} \alpha_i\ (1 \leqslant i \leqslant n)$ 蕴含 $\vdash_{\mathbf H_1} \alpha_0$，则称以 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为前提且以 $\alpha_0$ 为结论的推理规则 $\begin{prooftree} \AxiomC{\(\alpha_1\)} \AxiomC{\(\alpha_2\)} \AxiomC{\(\cdots\)} \AxiomC{\(\alpha_n\)} \QuaternaryInfC{\(\alpha_0\)} \end{prooftree}$ 在 $\mathbf H_1$ 中可允许
-        4. 如果存在公式集 $\Sigma$ 的有穷子集 $\Sigma_0$ 使得对公式 $\alpha$ 有 $\vdash_{\mathbf H_1} \bigwedge \Sigma_0 \to \alpha$，则称 $\alpha$ 是 $\Sigma$ 的句法后承，记作 $\Sigma \vdash_{\mathbf H_1} \alpha$
+    2. 在 $\mathbf{H}_1$ 中的推导是由公式组成的有穷树结构 $\mathcal D$．用 $\mathcal D, \mathcal E$ 表示推导，记号 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\varphi\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\varphi$ 为根节点的推导
+        1. 每个节点 $\gamma$ 要么是公理，要么是从子节点运用规则 $\text{mp}$ 或 $\text{gen}$ 得到的．对于 $\mathrm{gen}$ 规则，需要保证以公式 $\alpha$ 为根节点的推导使用到的假设 $\Sigma_0$ 中不自由出现 $x$
+        2. 如果对于公式 $\alpha_0, \alpha_1, \cdots, \alpha_n$ 有 $\vdash_{\mathbf H_1} \alpha_i\ (1 \leqslant i \leqslant n)$ 蕴含 $\vdash_{\mathbf H_1} \alpha_0$，则称以 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为前提且以 $\alpha_0$ 为结论的推理规则 $\begin{prooftree} \AxiomC{\(\alpha_1\)} \AxiomC{\(\alpha_2\)} \AxiomC{\(\cdots\)} \AxiomC{\(\alpha_n\)} \QuaternaryInfC{\(\alpha_0\)} \end{prooftree}$ 在 $\mathbf H_1$ 中可允许
+            1. 如果存在公式集 $\Sigma$ 的有穷子集 $\Sigma_0$ 使得对公式 $\alpha$ 有 $\vdash_{\mathbf H_1} \bigwedge \Sigma_0 \to \alpha$，则称 $\alpha$ 是 $\Sigma$ 的句法后承，记作 $\Sigma \vdash_{\mathbf H_1} \alpha$
+            2. 如果存在以公式 $\alpha$ 为根节点的推导，则称 $\alpha$ 在 $\mathbf H_1$ 可证，或称 $\alpha$ 是 $\mathbf H_1$ 的定理，记作 $\vdash_{\mathbf H_1} \alpha$
+            3. 用 $\mathrm{Thm}(\mathbf H_1)$ 表示 $\mathbf H_1$ 所有定理的集合，在不引发歧义的情况下可以删除下标 $\mathbf H_1$
     3. 元定理
         1. 演绎定理：$\alpha, \Sigma \vdash_{\mathbf H_1} \beta$ 当且仅当 $\Sigma \vdash_{\mathbf H_1} \alpha \to \beta$
         2. 对任意公式 $\mathbf Qx\alpha$，如果 $y\notin \mathrm{FV}(\mathbf Qx\alpha)$，那么 $\vdash_{\mathbf H_1} \mathbf Qx\alpha \leftrightarrow \mathbf Qy\alpha(y/x)$
