@@ -433,7 +433,7 @@
     }
     $$
 
-    其中 $[\alpha]^{n}$ 表示最终将被撤销的临时假设
+    其中 $[\alpha]^{n}$ 表示最终将被撤销的临时假设．称 $\text{E}$ 规则含联结词的前提为大前提，其他前提为小前提
 
     1. 在 $\mathbf{NJ}$ 中的推导是由公式组成的有穷树结构 $\mathcal D$，记所有推导的集合为 $\mathbf{X}_{J}$
         1. 由单个公式形成的单节点数结构属于 $\mathbf{X}_{J}$
@@ -443,7 +443,7 @@
         2. 对任意公式集 $\Gamma \cup \{\alpha\}$，若存在从 $\Gamma$ 中有穷多个公式到 $\alpha$ 的推导，则称在 $\mathbf{NJ}$ 中 $\alpha$ 从 $\Gamma$ 可推导，记作 $\Gamma \vdash_{\mathbf{NJ}} \alpha$
         3. 若 $\varnothing \vdash_{\mathbf{NJ}} \alpha$，则称公式 $\alpha$ 在 $\mathbf{NJ}$ 中可证，记作 $\vdash_{\mathbf{NJ}} \alpha$
     3. 对任意公式集 $\Gamma \cup\{\alpha, \beta\}$
-        1. 如果 $\Gamma \vdash_{\mathbf{HJ}} \alpha$，那么 $\Gamma \vdash_{\mathbf{NJ}} \alpha$；如果 $\vdash_{\mathbf{HJ}} \alpha$，那么 $\vdash_{\mathbf{NJ}} \alpha$
+        1. $\Gamma \vdash_{\mathbf{HJ}} \alpha$ 当且仅当 $\Gamma \vdash_{\mathbf{NJ}} \alpha$，特别地，$\vdash_{\mathbf{HJ}} \alpha$ 当且仅当 $\vdash_{\mathbf{NJ}} \alpha$
         2. $\alpha, \Gamma \vdash_{\mathbf{NJ}} \beta$ 当且仅当 $\Gamma \vdash_{\mathbf{NJ}} \alpha \rightarrow \beta$
 
 2. 经典命题逻辑的 $\text{Gentzen}$ 式自然演绎系统 $\mathbf{NK}$ 从 $\mathbf{NJ}$ 增加反证规则得来
@@ -460,11 +460,23 @@
         1. 对任意公式集 $\Gamma \cup \{\alpha\}$，若存在从 $\Gamma$ 中有穷多个公式到 $\alpha$ 的推导，则称在 $\mathbf{NK}$ 中 $\alpha$ 从 $\Gamma$ 可推导，记作 $\Gamma \vdash_{\mathbf{NK}} \alpha$
         2. 若 $\varnothing \vdash_{\mathbf{NK}} \alpha$，则称公式 $\alpha$ 在 $\mathbf{NK}$ 中可证，记作 $\vdash_{\mathbf{NK}} \alpha$
     2. 对任意公式集 $\Gamma \cup\{\alpha, \beta\}$
-        1. 如果 $\Gamma \vdash_{\mathbf{NJ}} \alpha$，那么 $\Gamma \vdash_{\mathbf{NK}} \alpha$；如果 $\vdash_{\mathbf{NJ}} \alpha$，那么 $\vdash_{\mathbf{NK}} \alpha$
-        2. 如果 $\Gamma \vdash_{\mathbf{HK}} \alpha$，那么 $\Gamma \vdash_{\mathbf{NK}} \alpha$；如果 $\vdash_{\mathbf{HK}} \alpha$，那么 $\vdash_{\mathbf{NK}} \alpha$
-        3. $\alpha, \Gamma \vdash_{\mathbf{NK}} \beta$ 当且仅当 $\Gamma \vdash_{\mathbf{NK}} \alpha \rightarrow \beta$
+        1. $\Gamma \vdash_{\mathbf{HK}} \alpha$ 当且仅当 $\Gamma \vdash_{\mathbf{NK}} \alpha$，特别地，$\vdash_{\mathbf{HK}} \alpha$ 当且仅当 $\vdash_{\mathbf{NK}} \alpha$
+        2. $\alpha, \Gamma \vdash_{\mathbf{NK}} \beta$ 当且仅当 $\Gamma \vdash_{\mathbf{NK}} \alpha \rightarrow \beta$
+        3. 若 $\Gamma \vdash_{\mathbf{NJ}} \alpha$，则 $\Gamma \vdash_{\mathbf{NK}} \alpha$，特别地，若 $\vdash_{\mathbf{NJ}} \alpha$，则 $\vdash_{\mathbf{NK}} \alpha$
 
-3. 正规化
+3. 在推导 $\mathcal{D}$ 中，若公式 $\alpha$ 的某一次出现既是引入规则的结论，又是消去规则的大前提，则称其为切割公式
+    1. 令 $\mathbf{NK}^{*}$ 是从 $\mathbf{NK}$ 去掉规则 $(\vee\text{I})$ 和 $(\vee\text{E})$ 而得到的自然演绎，则对任意公式集 $\Gamma \cup \{\alpha\}$，$\Gamma \vdash_{\mathbf{NK}} \alpha$ 当且仅当 $\Gamma \vdash_{\mathbf{NK}^{*}} \alpha$
+    2. 令 $\mathbf{NK}^{\circ}$ 是将 $\mathbf{NK}^{*}$ 中 $(\bot)$ 与 $(\text{RAA})$ 规则的结论限制为原子公式而得到的自然演绎
+        1. 对任意公式集 $\Gamma \cup \{\alpha\}$，$\Gamma \vdash_{\mathbf{NK}^{*}} \alpha$ 当且仅当 $\Gamma \vdash_{\mathbf{NK}^{\circ}} \alpha$
+        2. 记号 $\mathcal{D} \rightsquigarrow_1 \mathcal{D}^{\prime}$ 表示推导 $\mathcal{D}$ 经过单步变换转化为 $\mathcal{D}^{\prime}$，称 $\mathbf{NK}^{\circ}$ 中的一个变换串为一个归约序列
+            1. 称推导 $\mathcal{D}$ 为既约推导（或正规推导）当且仅当不存在推导 $\mathcal{D}^{\prime}$ 使得 $\mathcal{D} \rightsquigarrow_1 \mathcal{D}^{\prime}$
+            2. 记 $\mathcal{D} \rightsquigarrow \mathcal{D}^{\prime}$ 为 $\mathcal{D}$ 经过有穷多步变换转化为 $\mathcal{D}^{\prime}$；记 $\mathcal{D} \rightarrow \mathcal{D}^{\prime}$ 为 $\mathcal{D} \rightsquigarrow \mathcal{D}^{\prime}$ 或 $\mathcal{D}=\mathcal{D}^{\prime}$
+        3. 正规化定理：在 $\mathbf{NK}$ 中每个推导都可转化为正规推导
+        4. 子公式性质：令 $\mathcal{D}$ 是在 $\mathbf{NK}^{\circ}$ 中从 $\Gamma$ 到 $\alpha$ 的正规推导，对 $\mathcal{D}$ 中出现的每个公式 $\beta$，若 $\beta$ 不是被 $(\text{RAA})$ 撤销的公式或被 $(\text{RAA})$ 撤销假设的直接结论 $\bot$，则 $\beta$ 是 $\Gamma, \alpha$ 中某个公式的子公式
+    3. 令 $\mathbf{NJ}^{\circ}$ 是将 $\mathbf{NJ}$ 中的 $(\bot)$ 规则的结论限制为原子公式而得到的自然演绎
+        1. 对任意公式集 $\Gamma \cup \{\alpha\}$，$\Gamma \vdash_{\mathbf{NJ}} \alpha$ 当且仅当 $\Gamma \vdash_{\mathbf{NJ}^{\circ}} \alpha$
+        2. 正规化定理：在 $\mathbf{NJ}$ 中每个推导都可转化为正规推导
+        3. 子公式性质：令 $\mathcal{D}$ 是在 $\mathbf{NJ}$ 中从 $\Gamma$ 到 $\alpha$ 的正规推导，对 $\mathcal{D}$ 中出现的每个公式 $\beta$ 都是 $\Gamma, \alpha$ 中某个公式的子公式
 
 <script>
 (function align() {
