@@ -377,6 +377,76 @@
     $$
 
 ## 2.2 Gentzen 式自然演绎
+1. 直觉主义命题逻辑的 $\text{Gentzen}$ 式自然演绎系统 $\mathbf{NJ}$
+
+    $$
+    \displaylines{
+        \begin{prooftree}
+        \AxiomC{$\alpha_1$}
+        \AxiomC{$\alpha_2$}
+        \RightLabel{ ($\wedge$I)}
+        \BinaryInfC{$\alpha_1 \wedge \alpha_2$}
+        \end{prooftree} \quad
+        \begin{prooftree}
+        \AxiomC{$\alpha_1 \wedge \alpha_2$}
+        \RightLabel{ ($\wedge$E)}
+        \UnaryInfC{$\alpha_1$}
+        \end{prooftree} \quad
+        \begin{prooftree}
+        \AxiomC{$\alpha_1 \wedge \alpha_2$}
+        \RightLabel{ ($\wedge$E)}
+        \UnaryInfC{$\alpha_2$}
+        \end{prooftree} \\[0.5em]
+        \begin{prooftree}
+        \AxiomC{$\alpha_1$}
+        \RightLabel{ ($\vee$I)}
+        \UnaryInfC{$\alpha_1 \vee \alpha_2$}
+        \end{prooftree} \quad
+        \begin{prooftree}
+        \AxiomC{$\alpha_2$}
+        \RightLabel{ ($\vee$I)}
+        \UnaryInfC{$\alpha_1 \vee \alpha_2$}
+        \end{prooftree} \quad
+        \begin{prooftree}
+        \AxiomC{$\alpha_1 \vee \alpha_2$}
+        \AxiomC{$\begin{array}{c} [\alpha_1]^{m} \\ \vdots \\ \beta \end{array}$}
+        \AxiomC{$\begin{array}{c} [\alpha_2]^{n} \\ \vdots \\ \beta \end{array}$}
+        \RightLabel{ ($\vee\text{E}^{mn}$)}
+        \TrinaryInfC{$\beta$}
+        \end{prooftree} \\[1em]
+        \begin{prooftree}
+        \AxiomC{$\begin{array}{c} [\alpha_1]^{n} \\ \vdots \\ \alpha_2 \end{array}$}
+        \RightLabel{ ($\to\text{I}^{n}$)}
+        \UnaryInfC{$\alpha_1 \to \alpha_2$}
+        \end{prooftree} \quad
+        \begin{prooftree}
+        \AxiomC{$\alpha_1 \to \alpha_2$}
+        \AxiomC{$\alpha_1$}
+        \RightLabel{ ($\to$E)}
+        \BinaryInfC{$\alpha_2$}
+        \end{prooftree} \quad
+        \begin{prooftree}
+        \AxiomC{$\bot$}
+        \RightLabel{ ($\bot$E)}
+        \UnaryInfC{$\alpha$}
+        \end{prooftree}
+    }
+    $$
+
+    其中 $[\alpha]^{n}$ 表示最终将被撤销的临时假设
+
+    1. 在 $\mathbf{NJ}$ 中的推导是由公式组成的有穷树结构 $\mathcal D$，所有推导的集合 $\mathbf{X}_{J}$
+    2. 用 $\mathcal D, \mathcal E$ 表示推导，记号 $\begin{array}{c} \beta \\ \mathcal D \\ \alpha \end{array}$ 表示 $\mathcal D$ 是从 $\beta$ 到 $\alpha$ 的推导，$\begin{array}{c} \mathcal D \\ \alpha \end{array}$ 表示 $\mathcal D$ 是以 $\alpha$ 为根节点的推导
+
+2. 经典命题逻辑的 $\text{Gentzen}$ 式自然演绎系统 $\mathbf{NK}$ 从 $\mathbf{NJ}$ 增加反证规则得来
+
+    $$
+    \begin{prooftree}
+    \AxiomC{$\begin{array}{c} [\neg \alpha_1]^{n} \\ \vdots \\ \bot \end{array}$}
+    \RightLabel{ ($\text{RAA}^{n}$)}
+    \UnaryInfC{$\alpha$}
+    \end{prooftree}
+    $$
 
 <script>
 (function align() {
