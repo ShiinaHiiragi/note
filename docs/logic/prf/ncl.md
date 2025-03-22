@@ -176,5 +176,64 @@
     3. 若 $\text{Henkin}$ 结构（或一阶结构）满足选择公理与概括公理模式，则称其为忠实于 $\mathbf H_2$ 的，此时 $\text{Henkin}$ 结构（或一阶结构）具有可靠性、完全性、紧致性并满足 $\text{L}\ddot{\mathrm o}\text{wenheim} - \text{Skolem}$ 定理
 
 ## 4.2 正规模态逻辑
+1. 模态命题逻辑形式语言的公式集 $\mathscr{L}_{\square}$ 归纳定义如下
+
+    $$
+    \mathscr{L}_{\square} \ni \alpha := p \mid \perp \mid \left(\alpha_{1} \wedge \alpha_{2}\right) \mid \left(\alpha_{1} \vee \alpha_{2}\right) \mid \left(\alpha_{1} \rightarrow \alpha_{2}\right) \mid \square \alpha
+    $$
+
+    其中 $p \in \mathbf{Prop}$，命题变元或 $\bot$ 统称为原子公式
+
+    1. 归纳定义必然算子 $\square^{n} \alpha$ 为 $\square^{0} \alpha=\alpha$ 且 $\square^{n+1} \alpha=\square \square^{n} \alpha$，可能算子 $\lozenge \alpha = \neg \square \neg \alpha, \lozenge^{n} \alpha=\neg \square^{n} \neg \alpha$
+    2. 模态公式的性质
+        1. $d(\alpha)$ 表示模态公式 $\alpha$ 的复杂度，定义为
+
+            $$
+            \begin{aligned}
+            d(p) & = 0 = d(\bot), &p\in \mathbf{Prop} \\
+            d(\alpha \circ \beta) & = \max\{d(\alpha), d(\beta)\} + 1, & \circ \in \{\wedge, \vee, \to\} \\
+            d(\square \alpha) & = d(\alpha) + 1
+            \end{aligned}
+            $$
+
+        2. $\mathrm{md}(\alpha)$ 表示模态公式 $\alpha$ 的模态度，定义为
+
+            $$
+            \begin{aligned}
+            \mathrm{md}(p) & = 0 = \mathrm{md}(\bot), &p\in \mathbf{Prop} \\
+            \mathrm{md}(\alpha \circ \beta) & = \max\{\mathrm{md}(\alpha), \mathrm{md}(\beta)\}, & \circ \in \{\wedge, \vee, \to\} \\
+            \mathrm{md}(\square \alpha) & = \mathrm{md}(\alpha) + 1
+            \end{aligned}
+            $$
+
+        3. $\mathrm{SF}(\alpha)$ 表示模态公式 $\alpha$ 的子公式集合，定义为
+
+            $$
+            \begin{aligned}
+            \mathrm{SF}(\alpha) & = \{\alpha\}, &\alpha \in \mathbf{At} \\
+            \mathrm{SF}(\alpha \circ \beta) & = \mathrm{SF}(\alpha) \cup \mathrm{SF}(\beta) \cup \{\alpha \circ \beta\}, &\circ \in \{\wedge, \vee, \to\} \\
+            \mathrm{SF}(\square \alpha) & = \mathrm{SF}(\alpha) \cup \{\square \alpha\}
+            \end{aligned}
+            $$
+
+        4. 一个代入是一个函数 $\sigma: \mathbf{Prop} \to \mathscr L_{\square}$，对任意代入 $\sigma$，函数 $\widehat \sigma: \mathscr L_{\square} \to \mathscr L_{\square}$ 定义为
+
+            $$
+            \begin{aligned}
+            \widehat \sigma(\bot) &= \bot \\
+            \widehat \sigma(p) &= \sigma(p), & p\in \mathbf{Prop} \\
+            \widehat \sigma(\alpha \circ \beta) &= \widehat \sigma(\alpha) \circ \widehat \sigma(\beta), & \circ \in \{\wedge, \vee, \to\} \\
+            \widehat \sigma(\square \alpha) &= \square \widehat \sigma(\alpha)
+            \end{aligned}
+            $$
+
+            对公式 $\alpha(p_1, p_2, \cdots, p_n)$，用 $\alpha(p_1/\beta_1, p_2/\beta_2, \cdots, p_n/\beta_n)$ 表示用 $\beta_1, \beta_2, \cdots, \beta_n$ 代入变元 $p_1, p_2, \cdots, p_n$ 的结果
+
+2. 框架：$\mathfrak{F}=(W, R)$，其中 $W$ 是非空集，$R \subseteq W \times W$ 是 $W$ 上的二元关系，称 $W$ 中元素为可能世界、状态或点，$R$ 为可及关系
+    1. 对 $w, v \in W$，若 $w R v$，则称 $v$ 是 $w$ 的 $R-$后继
+        1. 定义 $R(w)=\{v \in W \mid R w v\}$，即 $w$ 的 $R-$后继集
+        2. 称点 $w$ 是死点当且仅当 $R(w) = \varnothing$，$w$ 是活点当且仅当 $R(w) \neq \varnothing$
+        3. 称点 $w$ 是自返的当且仅当 $w \in R(w)$，$w$ 是非自返的当且仅当果 $w \notin R(w)$
+    2. 对任意 $X \subseteq W$，定义 $R[X]=\bigcup\{R(w) \mid w \in X\}$，且有 $R^{0}[X]=X, R^{n+1}[X]=R\left[R^{n}[X]\right]$
 
 ## 4.3 代数逻辑
