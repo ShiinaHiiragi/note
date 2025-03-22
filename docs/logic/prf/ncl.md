@@ -175,6 +175,6 @@
         2. 对 $\mathscr L^1(S)$ 的任意公式 $\alpha$ 或公式集 $\Gamma$，$\alpha$ 或 $\Gamma$ 是 $\text{Henkin}$ 可满足的当且仅当 $\alpha$ 或 $\Gamma$ 是一阶可满足的
     3. 若 $\text{Henkin}$ 结构（或一阶结构）满足选择公理与概括公理模式，则称其为忠实于 $\mathbf H_2$ 的，此时 $\text{Henkin}$ 结构（或一阶结构）具有可靠性、完全性、紧致性并满足 $\text{L}\ddot{\mathrm o}\text{wenheim} - \text{Skolem}$ 定理
 
-## 4.2 模态命题逻辑
+## 4.2 正规模态逻辑
 
 ## 4.3 代数逻辑

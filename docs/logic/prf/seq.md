@@ -15,7 +15,7 @@
         2. 若 $\bigwedge \Gamma \rightarrow \bigvee \Delta$ 是重言式，则称 $\Gamma \Rightarrow \Delta$ 是有效的，记作 $\vDash \Gamma \Rightarrow \Delta$
 
 ## 3.1 命题逻辑矢列演算
-### 3.2.1 G<sub>0</sub> 型演算
+### 3.2.1 **G<sub>0</sub>** 型演算
 1. 经典命题逻辑的矢列演算 $\mathbf{G0cp}$ 由公理模式与矢列规则组成
     1. 公理模式
         1. $\alpha \Rightarrow \alpha \ \text{(Id)}$
@@ -300,8 +300,9 @@
             \end{prooftree}
             $$
 
-    2. 一个推导 $\mathcal{D}$ 是由矢列组成的有穷树结构，其中每个节点要么是公理，要么是从子节点矢列使用某个规则得到的
-    3. 称以 $\Gamma_{i} \Rightarrow \Delta_{i}$ 为前提且以 $\Gamma \Rightarrow \Delta$ 为结论的规则 $\text{R}$ 在 $\mathbf{G0ip}$ 中可允许当且仅当 $\mathbf{G 0 c p} \vdash \Gamma_{i} \Rightarrow \Delta_{i}$ 蕴涵 $\mathbf{G0ip}$ $\vdash \Gamma \Rightarrow \Delta$
+        $\mathbf{G0ip} \vdash \Gamma \Rightarrow \Delta$ 表示矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G0ip}$ 中可推导
+
+    2. 称以 $\Gamma_{i} \Rightarrow \Delta_{i}$ 为前提且以 $\Gamma \Rightarrow \Delta$ 为结论的规则 $\text{R}$ 在 $\mathbf{G0ip}$ 中可允许当且仅当 $\mathbf{G 0 c p} \vdash \Gamma_{i} \Rightarrow \Delta_{i}$ 蕴涵 $\mathbf{G0ip}$ $\vdash \Gamma \Rightarrow \Delta$
         1. 以下广义联结词规则在 $\mathbf{G0ip}$ 中可允许
 
             $$
@@ -346,7 +347,7 @@
             \end{prooftree} \quad
             $$
 
-    4. $\mathbf{G0ip} \vdash \Gamma \Rightarrow \alpha$ 当且仅当 $\bigwedge \Gamma \vdash_{\mathbf{HJ}} \alpha$
+    3. $\mathbf{G0ip} \vdash \Gamma \Rightarrow \alpha$ 当且仅当 $\bigwedge \Gamma \vdash_{\mathbf{HJ}} \alpha$
         1. 如果 $\vdash_{\textbf{HJ}} \alpha$，那么 $\mathbf{G0ip} \vdash \Rightarrow \alpha$
         2. $\mathbf{G0ip} \vdash \Gamma \Rightarrow \alpha$ 当且仅当 $\vDash \Gamma \Rightarrow \alpha$
 
@@ -426,12 +427,187 @@
             2. $\vdash_{\mathbf{HJ}} \gamma \rightarrow \beta$
             3. $\operatorname{var}(\gamma) \subseteq \operatorname{var}(\alpha) \cap \operatorname{var}(\beta)$
 
-### 3.2.2 G<sub>1</sub> 型演算
+### 3.2.2 **G<sub>1</sub>** 型演算
+$\mathbf{G1}$ 允许使用多重公式集作为公式结构
 
-### 3.2.3 G<sub>2</sub> 型演算
+1. 矢列演算 $\mathbf{G1cp}$ 由公理模式与矢列规则组成
+    1. 公理模式
+        1. $\alpha \Rightarrow \alpha \ \text{(Id)}$
+        2. $\perp \Rightarrow \ (\bot)$
 
-### 3.2.4 G<sub>3</sub> 型演算
+        矢列规则
 
-### 3.2.5 G<sub>4</sub> 型演算
+        1. 联结词规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\alpha_i, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\wedge\!\Rightarrow)$}
+                \UnaryInfC{$\alpha_1 \wedge \alpha_2, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \beta$}
+                \RightLabel{ $(\Rightarrow\!\wedge)$}
+                \BinaryInfC{$\Gamma \Rightarrow \Delta, \alpha \wedge \beta$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \Delta$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\vee\!\Rightarrow)$}
+                \BinaryInfC{$\alpha \vee \beta, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha_i$}
+                \RightLabel{ $(\Rightarrow\!\vee)$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha_1 \vee \alpha_2$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\rightarrow \Rightarrow)$}
+                \BinaryInfC{$\alpha \to \beta, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \Delta, \beta$}
+                \RightLabel{ $(\Rightarrow \rightarrow)$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha \to \beta$}
+                \end{prooftree}
+            }
+            $$
+
+            其中 $i = 1, 2$
+
+        2. 结构规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\text{w}\!\Rightarrow)$}
+                \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\Rightarrow\!\text{w})$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\alpha, \alpha, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\text{c}\!\Rightarrow)$}
+                \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha, \alpha$}
+                \RightLabel{ $(\Rightarrow\!\text{c})$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \end{prooftree}
+            }
+            $$
+
+        $\mathbf{G1cp} \vdash \Gamma \Rightarrow \Delta$ 表示矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G1cp}$ 中可推导
+
+    2. 对任意公式结构 $\Gamma$ 和 $\Delta, \mathbf{G0cp} \vdash \Gamma \Rightarrow \Delta$ 当且仅当 $\mathbf{G1cp} \vdash \Gamma \Rightarrow \Delta$
+        1. 对任意矢列 $\Gamma \Rightarrow \Delta$ 和 $n \geqslant 0$，如果 $\mathbf{G1cp} \vdash \Gamma \Rightarrow \Delta, \perp^{n}$，那么 $\mathbf{G1cp} \vdash \Gamma \Rightarrow \Delta$
+        2. 在 $\mathbf{G1cp}$ 中，对 $k_{1}, k_{2} \geqslant 0$，以下扩展式切割规则可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta, \alpha^{k_{1}}$}
+            \AxiomC{$\alpha^{k_{2}}, \Sigma \Rightarrow \Theta$}
+            \RightLabel{ $(\text{ECut})$}
+            \BinaryInfC{$\Gamma, \Sigma \Rightarrow \Delta, \Theta$}
+            \end{prooftree}
+            $$
+
+2. 矢列演算 $\mathbf{G1ip}$ 由公理模式与矢列规则组成
+    1. 公理模式
+        1. $\alpha \Rightarrow \alpha \ \text{(Id)}$
+        2. $\perp \Rightarrow \ (\bot)$
+
+        矢列规则
+
+        3. 联结词规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\alpha_i, \Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\wedge\!\Rightarrow)$}
+                \UnaryInfC{$\alpha_1 \wedge \alpha_2, \Gamma \Rightarrow \beta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \alpha$}
+                \AxiomC{$\Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\Rightarrow\!\wedge)$}
+                \BinaryInfC{$\Gamma \Rightarrow \alpha \wedge \beta$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \chi$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \chi$}
+                \RightLabel{ $(\vee\!\Rightarrow)$}
+                \BinaryInfC{$\alpha \vee \beta, \Gamma \Rightarrow \chi$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \alpha_i$}
+                \RightLabel{ $(\Rightarrow\!\vee)$}
+                \UnaryInfC{$\Gamma \Rightarrow \alpha_1 \vee \alpha_2$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \alpha$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \chi$}
+                \RightLabel{ $(\rightarrow \Rightarrow)$}
+                \BinaryInfC{$\alpha \to \beta, \Gamma \Rightarrow \chi$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\Rightarrow \rightarrow)$}
+                \UnaryInfC{$\Gamma \Rightarrow \alpha \to \beta$}
+                \end{prooftree}
+            }
+            $$
+
+            其中 $i = 1, 2$
+
+        4. 结构规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\text{w}\!\Rightarrow)$}
+                \UnaryInfC{$\alpha, \Gamma \Rightarrow \beta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\alpha, \alpha, \Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\text{c}\!\Rightarrow)$}
+                \UnaryInfC{$\alpha, \Gamma \Rightarrow \beta$}
+                \end{prooftree}
+            }
+            $$
+
+        $\mathbf{G0ip} \vdash \Gamma \Rightarrow \Delta$ 表示矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G0ip}$ 中可推导
+
+    2. 对任意公式结构 $\Gamma$，$\mathbf{G0ip} \vdash \Gamma \Rightarrow \beta$ 当且仅当 $\mathbf{G1ip} \vdash \Gamma^{s} \Rightarrow \beta$
+        1. 如果 $\mathbf{G1ip} \vdash \Gamma \Rightarrow \perp$，那么 $\mathbf{G1ip} \vdash \Gamma \Rightarrow \beta$
+        2. 在 $\mathbf{G1ip}$ 中，对 $k \geqslant 0$，以下扩展式切割规则可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \alpha$}
+            \AxiomC{$\alpha^{k}, \Sigma \Rightarrow \beta$}
+            \RightLabel{ $(\text{ECut})$}
+            \BinaryInfC{$\Gamma, \Sigma \Rightarrow \beta$}
+            \end{prooftree}
+            $$
+
+3. $\mathbf{G1cp}$ 与 $\mathbf{G1ip}$ 是可判定的且具有插值性质
+
+### 3.2.3 **G<sub>2</sub>** 型演算
+
+### 3.2.4 **G<sub>3</sub>** 型演算
+
+### 3.2.5 **G<sub>4</sub>** 型演算
 
 ## 3.2 一阶逻辑矢列演算
