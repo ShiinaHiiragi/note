@@ -587,7 +587,7 @@ $\mathbf{G1}$ 允许使用多重公式集作为公式结构
             }
             $$
 
-        $\mathbf{G0ip} \vdash \Gamma \Rightarrow \Delta$ 表示矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G0ip}$ 中可推导
+        $\mathbf{G1ip} \vdash \Gamma \Rightarrow \Delta$ 表示矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G1ip}$ 中可推导
 
     2. 对任意公式结构 $\Gamma$，$\mathbf{G0ip} \vdash \Gamma \Rightarrow \beta$ 当且仅当 $\mathbf{G1ip} \vdash \Gamma^{s} \Rightarrow \beta$
         1. 如果 $\mathbf{G1ip} \vdash \Gamma \Rightarrow \perp$，那么 $\mathbf{G1ip} \vdash \Gamma \Rightarrow \beta$
@@ -605,6 +605,185 @@ $\mathbf{G1}$ 允许使用多重公式集作为公式结构
 3. $\mathbf{G1cp}$ 与 $\mathbf{G1ip}$ 是可判定的且具有插值性质
 
 ### 3.2.3 **G<sub>2</sub>** 型演算
+1. 矢列演算 $\mathbf{G2cp}$ 由公理模式与矢列规则组成
+    1. 公理模式
+        1. $\alpha \Rightarrow \alpha \ \text{(Id)}$
+        2. $\perp \Rightarrow \ (\bot)$
+
+        矢列规则
+
+        1. 联结词规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\alpha_i, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\wedge\!\Rightarrow)$}
+                \UnaryInfC{$\alpha_1 \wedge \alpha_2, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \beta$}
+                \RightLabel{ $(\Rightarrow\!\wedge)$}
+                \BinaryInfC{$\Gamma \Rightarrow \Delta, \alpha \wedge \beta$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \Delta$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\vee\!\Rightarrow)$}
+                \BinaryInfC{$\alpha \vee \beta, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha_i$}
+                \RightLabel{ $(\Rightarrow\!\vee)$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha_1 \vee \alpha_2$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\rightarrow \Rightarrow)$}
+                \BinaryInfC{$\alpha \to \beta, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \Delta, \beta$}
+                \RightLabel{ $(\Rightarrow \rightarrow)$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha \to \beta$}
+                \end{prooftree}
+            }
+            $$
+
+            其中 $i = 1, 2$
+
+        2. 结构规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\alpha, \alpha, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\text{c}\!\Rightarrow)$}
+                \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha, \alpha$}
+                \RightLabel{ $(\Rightarrow\!\text{c})$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \end{prooftree}
+            }
+            $$
+
+        $\mathbf{G2cp} \vdash \Gamma \Rightarrow \Delta$ 表示矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G2cp}$ 中可推导
+
+    2. 对任意矢列 $\Gamma \Rightarrow \Delta$，$\mathbf{G1cp} \vdash \Gamma \Rightarrow \Delta$ 当且仅当 $\mathbf{G2cp} \vdash \Gamma \Rightarrow \Delta$
+        1. 以下弱化规则在 $\mathbf{G2cp}$ 中可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\text{w}\!\Rightarrow)$}
+            \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\Rightarrow\!\text{w})$}
+            \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha$}
+            \end{prooftree}
+            $$
+
+        2. 以下切割规则在 $\mathbf{G2cp}$ 中可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+            \AxiomC{$\alpha,  \Sigma \Rightarrow \Theta$}
+            \RightLabel{ (Cut)}
+            \BinaryInfC{$\Gamma, \Sigma \Rightarrow \Delta, \Theta$}
+            \end{prooftree}
+            $$
+
+2. 矢列演算 $\mathbf{G1ip}$ 由公理模式与矢列规则组成
+    1. 公理模式
+        1. $\alpha \Rightarrow \alpha \ \text{(Id)}$
+        2. $\perp \Rightarrow \ (\bot)$
+
+        矢列规则
+
+        3. 联结词规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\alpha_i, \Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\wedge\!\Rightarrow)$}
+                \UnaryInfC{$\alpha_1 \wedge \alpha_2, \Gamma \Rightarrow \beta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \alpha$}
+                \AxiomC{$\Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\Rightarrow\!\wedge)$}
+                \BinaryInfC{$\Gamma \Rightarrow \alpha \wedge \beta$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \chi$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \chi$}
+                \RightLabel{ $(\vee\!\Rightarrow)$}
+                \BinaryInfC{$\alpha \vee \beta, \Gamma \Rightarrow \chi$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \alpha_i$}
+                \RightLabel{ $(\Rightarrow\!\vee)$}
+                \UnaryInfC{$\Gamma \Rightarrow \alpha_1 \vee \alpha_2$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \alpha$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \chi$}
+                \RightLabel{ $(\rightarrow \Rightarrow)$}
+                \BinaryInfC{$\alpha \to \beta, \Gamma \Rightarrow \chi$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\Rightarrow \rightarrow)$}
+                \UnaryInfC{$\Gamma \Rightarrow \alpha \to \beta$}
+                \end{prooftree}
+            }
+            $$
+
+            其中 $i = 1, 2$
+
+        4. 结构规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\alpha, \alpha, \Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\text{c}\!\Rightarrow)$}
+                \UnaryInfC{$\alpha, \Gamma \Rightarrow \beta$}
+                \end{prooftree}
+            }
+            $$
+
+        $\mathbf{G2ip} \vdash \Gamma \Rightarrow \Delta$ 表示矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G2ip}$ 中可推导
+
+    2. 对任意矢列 $\Gamma \Rightarrow \beta$，$\mathbf{G1ip} \vdash \Gamma \Rightarrow \beta$ 当且仅当 $\mathbf{G2ip} \vdash \Gamma \Rightarrow \beta$
+        1. 以下弱化规则在 $\mathbf{G2ip}$ 中可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \beta$}
+            \RightLabel{ $(\text{w}\!\Rightarrow)$}
+            \UnaryInfC{$\alpha, \Gamma \Rightarrow \beta$}
+            \end{prooftree}
+            $$
+
+        2. 以下切割规则在 $\mathbf{G2ip}$ 中可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \alpha$}
+            \AxiomC{$\alpha, \Delta \Rightarrow \beta$}
+            \RightLabel{ (Cut)}
+            \BinaryInfC{$\Gamma, \Delta \Rightarrow \beta$}
+            \end{prooftree}
+            $$
 
 ### 3.2.4 **G<sub>3</sub>** 型演算
 
