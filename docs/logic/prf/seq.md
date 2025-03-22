@@ -219,6 +219,136 @@
         2. $\mathbf{G0cp} \vdash \Gamma \Rightarrow \Delta$ 当且仅当 $\vDash \Gamma \Rightarrow \Delta$
 
 2. 直觉主义命题逻辑的矢列演算 $\mathbf{G0ip}$ 由公理模式与矢列规则组成
+    1. 公理模式
+        1. $\alpha \Rightarrow \alpha \ \text{(Id)}$
+        2. $\perp \Rightarrow \ (\bot)$
+
+        矢列规则
+
+        1. 联结词规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\alpha_i, \Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\wedge\!\Rightarrow)$}
+                \UnaryInfC{$\alpha_1 \wedge \alpha_2, \Gamma \Rightarrow \beta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \alpha$}
+                \AxiomC{$\Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\Rightarrow\!\wedge)$}
+                \BinaryInfC{$\Gamma \Rightarrow \alpha \wedge \beta$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \chi$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \chi$}
+                \RightLabel{ $(\vee\!\Rightarrow)$}
+                \BinaryInfC{$\alpha \vee \beta, \Gamma \Rightarrow \chi$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \alpha_i$}
+                \RightLabel{ $(\Rightarrow\!\vee)$}
+                \UnaryInfC{$\Gamma \Rightarrow \alpha_1 \vee \alpha_2$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \alpha$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \chi$}
+                \RightLabel{ $(\rightarrow \Rightarrow)$}
+                \BinaryInfC{$\alpha \to \beta, \Gamma \Rightarrow \chi$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\Rightarrow \rightarrow)$}
+                \UnaryInfC{$\Gamma \Rightarrow \alpha \to \beta$}
+                \end{prooftree}
+            }
+            $$
+
+            其中 $i = 1, 2$
+
+        2. 结构规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\text{w}\!\Rightarrow)$}
+                \UnaryInfC{$\alpha, \Gamma \Rightarrow \beta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\alpha, \alpha, \Gamma \Rightarrow \beta$}
+                \RightLabel{ $(\text{c}\!\Rightarrow)$}
+                \UnaryInfC{$\alpha, \Gamma \Rightarrow \beta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma, \alpha, \beta, \Sigma \Rightarrow \chi$}
+                \RightLabel{ $(\text{e}\!\Rightarrow)$}
+                \UnaryInfC{$\Gamma, \beta, \alpha, \Sigma \Rightarrow \chi$}
+                \end{prooftree}
+            }
+            $$
+
+        3. 切割规则
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \alpha$}
+            \AxiomC{$\alpha, \Delta \Rightarrow \beta$}
+            \RightLabel{ (Cut)}
+            \BinaryInfC{$\Gamma, \Delta \Rightarrow \beta$}
+            \end{prooftree}
+            $$
+
+    2. 一个推导 $\mathcal{D}$ 是由矢列组成的有穷树结构，其中每个节点要么是公理，要么是从子节点矢列使用某个规则得到的
+    3. 称以 $\Gamma_{i} \Rightarrow \Delta_{i}$ 为前提且以 $\Gamma \Rightarrow \Delta$ 为结论的规则 $\text{R}$ 在 $\mathbf{G0ip}$ 中可允许当且仅当 $\mathbf{G 0 c p} \vdash \Gamma_{i} \Rightarrow \Delta_{i}$ 蕴涵 $\mathbf{G0ip}$ $\vdash \Gamma \Rightarrow \Delta$
+        1. 以下广义联结词规则在 $\mathbf{G0ip}$ 中可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma_{1}, \alpha_{i}, \Gamma_{2} \Rightarrow \beta$}
+            \RightLabel{ $(\wedge_{g} \Rightarrow)$}
+            \UnaryInfC{$\Gamma_{1}, \alpha_{1} \wedge \alpha_{2}, \Gamma_{2} \Rightarrow \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma_{1}, \alpha, \Gamma_{2} \Rightarrow \chi$}
+            \AxiomC{$\Gamma_{1}, \beta, \Gamma_{2} \Rightarrow \chi$}
+            \RightLabel{ $(\vee_{g} \Rightarrow)$}
+            \BinaryInfC{$\Gamma_{1}, \alpha \vee \beta, \Gamma_{2} \Rightarrow \chi$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \alpha$}
+            \AxiomC{$\Sigma, \beta, \Delta \Rightarrow \chi$}
+            \RightLabel{ $(\rightarrow_{g} \Rightarrow)$}
+            \BinaryInfC{$\Sigma, \Gamma, \alpha \rightarrow \beta, \Delta \Rightarrow \chi$}
+            \end{prooftree} \quad
+            $$
+
+            其中 $i = 1, 2$
+
+        2. 以下广义结构规则在 $\mathbf{G0ip}$ 中可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma_{1}, \Gamma_{2} \Rightarrow \beta$}
+            \RightLabel{ $(\text{w}_{g} \Rightarrow)$}
+            \UnaryInfC{$\Gamma_{1}, \Sigma, \Gamma_{2} \Rightarrow \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma_{1}, \Sigma, \Sigma, \Gamma_{2} \Rightarrow \beta$}
+            \RightLabel{ $(\text{c}_{g} \Rightarrow)$}
+            \UnaryInfC{$\Gamma_{1}, \Sigma, \Gamma_{2} \Rightarrow \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma_{1}, \Sigma_{1}, \Sigma_{2}, \Gamma_{2} \Rightarrow \beta$}
+            \RightLabel{ $(\text{e}_{g} \Rightarrow)$}
+            \UnaryInfC{$\Gamma_{1}, \Sigma_{2}, \Sigma_{1}, \Gamma_{2} \Rightarrow \beta$}
+            \end{prooftree} \quad
+            $$
+
+    4. $\mathbf{G0ip} \vdash \Gamma \Rightarrow \alpha$ 当且仅当 $\bigwedge \Gamma \vdash_{\mathbf{HJ}} \alpha$
+        1. 如果 $\vdash_{\textbf{HJ}} \alpha$，那么 $\mathbf{G0ip} \vdash \Rightarrow \alpha$
+        2. $\mathbf{G0ip} \vdash \Gamma \Rightarrow \alpha$ 当且仅当 $\vDash \Gamma \Rightarrow \alpha$
 
 ### 3.2.2 G<sub>1</sub> 型演算
 
