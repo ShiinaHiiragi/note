@@ -276,12 +276,6 @@
 9. 经典命题逻辑的其他性质
     1. $\text{Post}$ 完全性：$\mathbf{HK}$ 是 $\text{Post}$ 完全的，即若 $\nvdash_\mathbf{HK} \alpha$，那么在系统 $\mathbf{HK}$ 上增加 $\alpha$ 作为公理所得到的系统是不一致的
     2. 析取性质：$\mathbf{HK}$ 不具有析取性质，即存在公式 $\alpha \vee \beta$，有 $\vdash_\mathbf{HK} \alpha \vee \beta$ 且 $\nvdash_\mathbf{HK} \alpha$ 且 $\nvdash_\mathbf{HK} \beta$
-    3. 插值性质：$\mathbf{HK}$ 具有插值性质，即对任何公式 $\alpha \to \beta$，若 $\vdash_\mathbf{HK} \alpha \to \beta$，那么存在公式 $\chi$ 使得
-        1. $\vdash_\mathbf{HK} \alpha \to \chi$
-        2. $\vdash_\mathbf{HK} \chi \to \beta$
-        3. 变元条件：$\mathrm{var}(\chi) \subseteq \mathrm{var}(\alpha) \subseteq \mathrm{var}(\beta)$
-
-        公式 $\chi$ 称为 $\alpha$ 与 $\beta$ 的插值
 
 ### 1.1.2 直觉主义逻辑
 1. 直觉主义框架 $\mathfrak{F}=(W, R)$：$W$ 中元素称为点，$R$ 为偏序关系

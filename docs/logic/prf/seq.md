@@ -387,6 +387,45 @@
         1. 若 $\mathbf{G0ip} \vdash \Rightarrow \alpha \vee \beta$，则 $\mathbf{G0ip} \vdash \Rightarrow \alpha$ 或 $\mathbf{G0ip} \vdash \Rightarrow \beta$
         2. 若 $\vdash_{\mathbf{HJ}} \alpha \vee \beta$，则 $\vdash_{\mathbf{HJ}} \alpha$ 或者 $\vdash_{\mathbf{HJ}} \beta$
 
+4. $\mathbf{G0cp}$ 与 $\mathbf{G0ip}$ 是可判定的
+    1. 称矢列 $\Gamma \Rightarrow \Delta$ 是 $n-$度矢列当且仅当 $\Gamma$ 中每个公式至多出现 $n$ 次并且 $\Delta$ 中每个公式至多出现 $n$ 次
+        1. 称 $\Gamma^{*} \Rightarrow \Delta^{*}$ 是 $\Gamma \Rightarrow \Delta$ 的收缩矢列当且仅当 $\Gamma^{*} \Rightarrow \Delta^{*}$ 是从 $\Gamma \Rightarrow \Delta$ 有穷多次运用收缩和交换规则得到的
+        2. 对 $\mathbf{G0cp}$ 中任意推导 $\mathcal{D}$，存在最小自然数 $n>0$ 使得 $\mathcal{D}$ 中每个矢列都是 $n-$度矢列，记该自然数为 $d(\mathcal{D})$
+            1. 对任意矢列 $\Gamma \Rightarrow \Delta$，存在 $\Gamma \Rightarrow \Delta$ 的 $1-$度收缩矢列 $\Gamma^{*} \Rightarrow \Delta^{*}$ 使得 $\mathbf{G0cp}^{\sharp} \vdash \Gamma \Rightarrow \Delta$ 当且仅当 $\mathbf{G0cp}^{\sharp} \vdash \Gamma^{*} \Rightarrow \Delta^{*}$
+            2. 设 $\mathbf{G0cp}^{\sharp} \vdash \Gamma \Rightarrow \Delta$，若 $\Gamma^{*} \Rightarrow \Delta^{*}$ 是 $\Gamma \Rightarrow \Delta$ 的 $1-$度收缩矢列，则存在 $\Gamma^{*} \Rightarrow \Delta^{*}$ 的无重复推导 $\mathcal{D}$ 使得 $d(\mathcal{D}) \leqslant 3$
+    2. 称矢列 $\Gamma \Rightarrow \alpha$ 是 $n-$度矢列当且仅当 $\Gamma$ 中每个公式至多出现 $n$ 次
+        1. 称 $\Gamma^{*} \Rightarrow \beta^{*}$ 是 $\Gamma \Rightarrow \beta$ 的收缩矢列当且仅当 $\Gamma^{*} \Rightarrow \beta^{*}$ 是从 $\Gamma \Rightarrow \beta$ 有穷多次运用收缩和交换规则得到的
+        2. 对 $\mathbf{G0ip}$ 中任意推导 $\mathcal{D}$，存在最小自然数 $n>0$ 使得 $\mathcal{D}$ 中每个矢列都是 $n-$度矢列，记该自然数为 $d(\mathcal{D})$
+            1. 对任意矢列 $\Gamma \Rightarrow \beta$，存在 $\Gamma \Rightarrow \beta$ 的 $1-$度收缩矢列 $\Gamma^{*} \Rightarrow \beta^{*}$ 使得 $\mathbf{G0ip}^{\sharp} \vdash \Gamma \Rightarrow \beta$ 当且仅当 $\mathbf{G0ip}^{\sharp} \vdash \Gamma^{*} \Rightarrow \beta^{*}$
+            2. 设 $\mathbf{G0ip}^{\sharp} \vdash \Gamma \Rightarrow \beta$，若 $\Gamma^{*} \Rightarrow \beta^{*}$ 是 $\Gamma \Rightarrow \beta$ 的 $1-$度收缩矢列，则存在 $\Gamma^{*} \Rightarrow \beta^{*}$ 的无重复推导 $\mathcal{D}$ 使得 $d(\mathcal{D}) \leqslant 3$
+    3. $\mathbf{G0cp}$ 与 $\mathbf{G0ip}$ 是一致的，即存在一个矢列在其中不可推导
+5. 对任意结构 $\Gamma=\alpha_{1}, \cdots, \alpha_{n}$，令 $\operatorname{var}(\Gamma)= {\displaystyle \bigcup_{1 \leqslant i \leqslant n} \operatorname{var}\left(\alpha_{i}\right)}$ 为 $\Gamma$ 中所有命题变元的多重集，称作多重公式集．设 $\uplus$ 是多重集的并集
+    1. 设 $\mathbf{G0cp}^{\sharp} \vdash \Gamma \Rightarrow \Delta$，对 $\Gamma \Rightarrow \Delta$ 的任意划分 $\left(\Gamma_{1}: \Delta_{1}\right) ;\left(\Gamma_{2}: \Delta_{2}\right)$，即 $\Gamma_{1} \uplus \Gamma_{2}=\Gamma$ 且 $\Delta_{1} \uplus \Delta_{2}=\Delta$，若有
+        1. $\mathbf{G0cp}^{\sharp} \vdash \Gamma_{1} \Rightarrow \Delta_{1}, \gamma$
+        2. $\mathbf{G0cp}^{\sharp} \vdash \gamma, \Gamma_{2} \Rightarrow \Delta_{2}$
+        3. 变元条件：$\operatorname{var}(\gamma) \subseteq \operatorname{var}\left(\Gamma_{1}, \Delta_{1}\right) \cap \operatorname{var}\left(\Gamma_{2}, \Delta_{2}\right)$
+
+        则称公式 $\gamma$ 是 $\left(\Gamma_{1}: \Delta_{1}\right) ; \left(\Gamma_{2}: \Delta_{2}\right)$ 的插值
+
+        4. 如果 $\mathbf{G0cp}^{\sharp} \vdash \Gamma \Rightarrow \Delta$ 且 $\left(\Gamma_{1}: \Delta_{1}\right) ;\left(\Gamma_{2}: \Delta_{2}\right)$ 是 $\Gamma \Rightarrow \Delta$ 的划分，则存在公式 $\gamma$ 使得 $\gamma$ 是 $\left(\Gamma_{1}: \Delta_{1}\right) ;\left(\Gamma_{2}: \Delta_{2}\right)$ 的插值
+        5. 如果 $\vdash_{\mathbf{HK}} \alpha \rightarrow \beta$，那么存在公式 $\gamma$ 使得
+            1. $\vdash_{\mathbf{HK}} \alpha \rightarrow \gamma$
+            2. $\vdash_{\mathbf{H K}} \gamma \rightarrow \beta$
+            3. $\operatorname{var}(\gamma) \subseteq \operatorname{var}(\alpha) \cap \operatorname{var}(\beta)$
+
+    2. 设 $\mathbf{G0ip}^{\sharp} \vdash \Gamma \Rightarrow \beta$，对 $\Gamma$ 的任意划分 $\left(\Gamma_{1}: \Gamma_{2}\right)$，即 $\Gamma_{1} \uplus \Gamma_{2}=\Gamma$，若有
+        1. $\mathbf{G0ip}^{\sharp} \vdash \Gamma_{1} \Rightarrow \gamma$
+        2. $\mathbf{G0ip}^{\sharp} \vdash \gamma, \Gamma_{2} \Rightarrow \beta$
+        3. 变元条件：$\operatorname{var}(\gamma) \subseteq \operatorname{var}\left(\Gamma_{1}\right) \cap \operatorname{var}\left(\Gamma_{2}, \beta\right)$
+
+        称公式 $\gamma$ 是 $\left(\Gamma_{1}: \Gamma_{2}\right)$ 的插值
+
+        4. 如果 $\mathbf{G0ip} \vdash \Gamma \Rightarrow \beta$ 并且 $\left(\Gamma_{1}: \Gamma_{2}\right)$ 是 $\Gamma \Rightarrow \beta$ 的划分，那么存在公式 $\gamma$ 使得 $\gamma$ 是 $\left(\Gamma_{1}: \Gamma_{2}\right)$ 的插值
+        5. 如果 $\vdash_{\mathbf{HJ}} \alpha \rightarrow \beta$，那么存在公式 $\gamma$ 使得
+            1. $\vdash_{\mathbf{HJ}} \alpha \rightarrow \gamma$
+            2. $\vdash_{\mathbf{HJ}} \gamma \rightarrow \beta$
+            3. $\operatorname{var}(\gamma) \subseteq \operatorname{var}(\alpha) \cap \operatorname{var}(\beta)$
+
 ### 3.2.2 G<sub>1</sub> 型演算
 
 ### 3.2.3 G<sub>2</sub> 型演算
