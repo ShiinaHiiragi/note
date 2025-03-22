@@ -23,41 +23,41 @@
 
         矢列规则
 
-        3. 联结词规则
+        1. 联结词规则
 
             $$
             \displaylines{
                 \begin{prooftree}
                 \AxiomC{$\alpha_i, \Gamma \Rightarrow \Delta$}
-                \RightLabel{ $(\wedge \Rightarrow)$}
+                \RightLabel{ $(\wedge\!\Rightarrow)$}
                 \UnaryInfC{$\alpha_1 \wedge \alpha_2, \Gamma \Rightarrow \Delta$}
                 \end{prooftree} \quad
                 \begin{prooftree}
                 \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
                 \AxiomC{$\Gamma \Rightarrow \Delta, \beta$}
-                \RightLabel{ $(\Rightarrow \wedge)$}
+                \RightLabel{ $(\Rightarrow\!\wedge)$}
                 \BinaryInfC{$\Gamma \Rightarrow \Delta, \alpha \wedge \beta$}
                 \end{prooftree} \\[0.5em]
                 \begin{prooftree}
                 \AxiomC{$\alpha, \Gamma \Rightarrow \Delta$}
                 \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
-                \RightLabel{ $(\vee \Rightarrow)$}
+                \RightLabel{ $(\vee\!\Rightarrow)$}
                 \BinaryInfC{$\alpha \vee \beta, \Gamma \Rightarrow \Delta$}
                 \end{prooftree} \quad
                 \begin{prooftree}
                 \AxiomC{$\Gamma \Rightarrow \Delta, \alpha_i$}
-                \RightLabel{ $(\Rightarrow \vee)$}
+                \RightLabel{ $(\Rightarrow\!\vee)$}
                 \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha_1 \vee \alpha_2$}
                 \end{prooftree} \\[0.5em]
                 \begin{prooftree}
                 \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
                 \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
-                \RightLabel{ $(\to \Rightarrow)$}
+                \RightLabel{ $(\rightarrow \Rightarrow)$}
                 \BinaryInfC{$\alpha \to \beta, \Gamma \Rightarrow \Delta$}
                 \end{prooftree} \quad
                 \begin{prooftree}
                 \AxiomC{$\alpha, \Gamma \Rightarrow \Delta, \beta$}
-                \RightLabel{ $(\Rightarrow \to)$}
+                \RightLabel{ $(\Rightarrow \rightarrow)$}
                 \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha \to \beta$}
                 \end{prooftree}
             }
@@ -65,21 +65,55 @@
 
             其中 $i = 1, 2$．对联结词 $\circ \in\{\wedge, \vee, \rightarrow\}$，称 $(\circ l)$ 为左规则，$(\circ r)$ 为右规则；结论中含联结词的公式称为主公式
 
-        4. 结构规则
+        2. 结构规则
 
             $$
             \displaylines{
                 \begin{prooftree}
                 \AxiomC{$\Gamma \Rightarrow \Delta$}
-                \RightLabel{ $(\text{w}\Rightarrow)$}
+                \RightLabel{ $(\text{w}\!\Rightarrow)$}
                 \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\Rightarrow\!\text{w})$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\alpha, \alpha, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\text{c}\!\Rightarrow)$}
+                \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha, \alpha$}
+                \RightLabel{ $(\Rightarrow\!\text{c})$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma, \alpha, \beta, \Sigma \Rightarrow \Delta$}
+                \RightLabel{ $(\text{e}\!\Rightarrow)$}
+                \UnaryInfC{$\Gamma, \beta, \alpha, \Sigma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Sigma, \alpha, \beta, \Delta$}
+                \RightLabel{ $(\Rightarrow\!\text{e})$}
+                \UnaryInfC{$\Gamma \Rightarrow \Sigma, \beta, \alpha, \Delta$}
                 \end{prooftree}
             }
             $$
 
             分别称上述三行为弱化规则、收缩规则、交换规则
 
-        5. 切割规则
+        3. 切割规则
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+            \AxiomC{$\alpha,  \Sigma \Rightarrow \Theta$}
+            \RightLabel{ (Cut)}
+            \BinaryInfC{$\Gamma, \Sigma \Rightarrow \Delta, \Theta$}
+            \end{prooftree}
+            $$
 
     2. 推导
 

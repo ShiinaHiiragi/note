@@ -214,7 +214,7 @@
             \begin{prooftree}
             \AxiomC{$\Gamma \vdash \alpha$}
             \AxiomC{$\beta, \Delta \vdash \gamma$}
-            \RightLabel{ $(\!\to \vdash)$}
+            \RightLabel{ $(\rightarrow \vdash)$}
             \BinaryInfC{$\alpha \to \beta, \Gamma, \Delta \vdash \gamma$}
             \end{prooftree} \\[0.5em]
             \begin{prooftree}
