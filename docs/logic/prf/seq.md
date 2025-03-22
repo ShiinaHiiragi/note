@@ -700,7 +700,7 @@ $\mathbf{G1}$ 允许使用多重公式集作为公式结构
             \end{prooftree}
             $$
 
-2. 矢列演算 $\mathbf{G1ip}$ 由公理模式与矢列规则组成
+2. 矢列演算 $\mathbf{G2ip}$ 由公理模式与矢列规则组成
     1. 公理模式
         1. $\alpha \Rightarrow \alpha \ \text{(Id)}$
         2. $\perp \Rightarrow \ (\bot)$
@@ -786,6 +786,183 @@ $\mathbf{G1}$ 允许使用多重公式集作为公式结构
             $$
 
 ### 3.2.4 **G<sub>3</sub>** 型演算
+1. 矢列演算 $\mathbf{G3cp}$ 由公理模式与矢列规则组成
+    1. 公理模式
+        1. $\alpha \Rightarrow \alpha \ \text{(Id)}$
+        2. $\perp \Rightarrow \ (\bot)$
+
+        联结词规则
+
+        $$
+        \displaylines{
+            \begin{prooftree}
+            \AxiomC{$\alpha_i, \Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\wedge\!\Rightarrow)$}
+            \UnaryInfC{$\alpha_1 \wedge \alpha_2, \Gamma \Rightarrow \Delta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+            \AxiomC{$\Gamma \Rightarrow \Delta, \beta$}
+            \RightLabel{ $(\Rightarrow\!\wedge)$}
+            \BinaryInfC{$\Gamma \Rightarrow \Delta, \alpha \wedge \beta$}
+            \end{prooftree} \\[0.5em]
+            \begin{prooftree}
+            \AxiomC{$\alpha, \Gamma \Rightarrow \Delta$}
+            \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\vee\!\Rightarrow)$}
+            \BinaryInfC{$\alpha \vee \beta, \Gamma \Rightarrow \Delta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta, \alpha_i$}
+            \RightLabel{ $(\Rightarrow\!\vee)$}
+            \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha_1 \vee \alpha_2$}
+            \end{prooftree} \\[0.5em]
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+            \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\rightarrow \Rightarrow)$}
+            \BinaryInfC{$\alpha \to \beta, \Gamma \Rightarrow \Delta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\alpha, \Gamma \Rightarrow \Delta, \beta$}
+            \RightLabel{ $(\Rightarrow \rightarrow)$}
+            \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha \to \beta$}
+            \end{prooftree}
+        }
+        $$
+
+        其中 $i = 1, 2$．$\mathbf{G3cp} \vdash \Gamma \Rightarrow \Delta$ 表示矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G3cp}$ 中可推导
+
+    2. 若对任意自然数 $k \geqslant 0$，$\mathbf{G3cp} \vdash_{k} \Gamma_{i} \Rightarrow \alpha_{i} \ (1 \leqslant i \leqslant n)$ 蕴含 $\mathbf{G3cp} \vdash_{k} \Gamma_{0} \Rightarrow \alpha_{0}$，则称 $\text{R}$ 在 $\mathbf{G3cp}$ 中保持高度可允许
+        1. 以下弱化规则在 $\mathbf{G3cp}$ 中保持高度可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\text{w}\!\Rightarrow)$}
+            \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\Rightarrow\!\text{w})$}
+            \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha$}
+            \end{prooftree}
+            $$
+
+        2. 以下收缩规则在 $\mathbf{G3cp}$ 中保持高度可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\alpha, \alpha, \Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\text{c}\!\Rightarrow)$}
+            \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta, \alpha, \alpha$}
+            \RightLabel{ $(\Rightarrow\!\text{c})$}
+            \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha$}
+            \end{prooftree}
+            $$
+
+        3. 以下切割规则在 $\mathbf{G3cp}$ 中保持高度可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+            \AxiomC{$\alpha,  \Sigma \Rightarrow \Theta$}
+            \RightLabel{ (Cut)}
+            \BinaryInfC{$\Gamma, \Sigma \Rightarrow \Delta, \Theta$}
+            \end{prooftree}
+            $$
+
+    3. 对任意矢列 $\Gamma \Rightarrow \Delta$，$\mathbf{G2cp} \vdash \Gamma \Rightarrow \Delta$ 当且仅当 $\mathbf{G3cp} \vdash \Gamma \Rightarrow \Delta$
+        1. 对任意可重集 $\Gamma$ 和 $\Delta$ 及公式 $\alpha$，$\mathbf{G3cp} \vdash \alpha, \Gamma \Rightarrow \Delta, \alpha$
+        2. 如果 $\mathbf{G3cp} \vdash \Gamma \Rightarrow \Sigma, \perp$，那么 $\mathbf{G3cp} \vdash \Gamma \Rightarrow \Sigma, \Theta$
+
+2. 矢列演算 $\mathbf{G3ip}$ 由公理模式与矢列规则组成
+    1. 公理模式
+        1. $\alpha \Rightarrow \alpha \ \text{(Id)}$
+        2. $\perp \Rightarrow \ (\bot)$
+
+        联结词规则
+
+        $$
+        \displaylines{
+            \begin{prooftree}
+            \AxiomC{$\alpha_i, \Gamma \Rightarrow \beta$}
+            \RightLabel{ $(\wedge\!\Rightarrow)$}
+            \UnaryInfC{$\alpha_1 \wedge \alpha_2, \Gamma \Rightarrow \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \alpha$}
+            \AxiomC{$\Gamma \Rightarrow \beta$}
+            \RightLabel{ $(\Rightarrow\!\wedge)$}
+            \BinaryInfC{$\Gamma \Rightarrow \alpha \wedge \beta$}
+            \end{prooftree} \\[0.5em]
+            \begin{prooftree}
+            \AxiomC{$\alpha, \Gamma \Rightarrow \chi$}
+            \AxiomC{$\beta, \Gamma \Rightarrow \chi$}
+            \RightLabel{ $(\vee\!\Rightarrow)$}
+            \BinaryInfC{$\alpha \vee \beta, \Gamma \Rightarrow \chi$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \alpha_i$}
+            \RightLabel{ $(\Rightarrow\!\vee)$}
+            \UnaryInfC{$\Gamma \Rightarrow \alpha_1 \vee \alpha_2$}
+            \end{prooftree} \\[0.5em]
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \alpha$}
+            \AxiomC{$\beta, \Gamma \Rightarrow \chi$}
+            \RightLabel{ $(\rightarrow \Rightarrow)$}
+            \BinaryInfC{$\alpha \to \beta, \Gamma \Rightarrow \chi$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\alpha, \Gamma \Rightarrow \beta$}
+            \RightLabel{ $(\Rightarrow \rightarrow)$}
+            \UnaryInfC{$\Gamma \Rightarrow \alpha \to \beta$}
+            \end{prooftree}
+        }
+        $$
+
+        其中 $i = 1, 2$．$\mathbf{G3ip} \vdash \Gamma \Rightarrow \Delta$ 表示矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G3ip}$ 中可推导
+
+    2. 若对任意自然数 $k \geqslant 0$，$\mathbf{G3ip} \vdash_{k} \Gamma_{i} \Rightarrow \alpha_{i} \ (1 \leqslant i \leqslant n)$ 蕴含 $\mathbf{G3ip} \vdash_{k} \Gamma_{0} \Rightarrow \alpha_{0}$，则称 $\text{R}$ 在 $\mathbf{G3ip}$ 中保持高度可允许
+        1. 以下弱化规则在 $\mathbf{G3ip}$ 中保持高度可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \beta$}
+            \RightLabel{ $(\text{w}\!\Rightarrow)$}
+            \UnaryInfC{$\alpha, \Gamma \Rightarrow \beta$}
+            \end{prooftree}
+            $$
+
+        2. 以下收缩规则在 $\mathbf{G3ip}$ 中保持高度可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\alpha, \alpha, \Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\text{c}\!\Rightarrow)$}
+            \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+            \end{prooftree}
+            $$
+
+        3. 以下切割规则在 $\mathbf{G3ip}$ 中保持高度可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \alpha$}
+            \AxiomC{$\alpha, \Delta \Rightarrow \beta$}
+            \RightLabel{ (Cut)}
+            \BinaryInfC{$\Gamma, \Delta \Rightarrow \beta$}
+            \end{prooftree}
+            $$
+
+    3. 对任意矢列 $\Gamma \Rightarrow \beta$，$\mathbf{G2ip} \vdash \Gamma \Rightarrow \beta$ 当且仅当 $\mathbf{G3ip} \vdash \Gamma \Rightarrow \beta$
+        1. 对任意多重公式集 $\Gamma$ 和公式 $\alpha$，$\mathbf{G3ip} \vdash \alpha, \Gamma \Rightarrow \alpha$
+        2. 如果 $\mathbf{G3ip} \vdash \Gamma \Rightarrow \perp$，那么 $\mathbf{G3ip} \vdash \Gamma \Rightarrow \beta$
+
+3. $\mathbf{G3cp}$ 与 $\mathbf{G3ip}$ 是可判定的
 
 ### 3.2.5 **G<sub>4</sub>** 型演算
 
