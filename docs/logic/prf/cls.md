@@ -1,6 +1,6 @@
 # 1 经典逻辑
 
-1. 一个推理规则 $(\text{R})$ 的形式是
+1. 一个推理规则 $\text{R}$ 的形式是
 
     $$
     \begin{prooftree}
@@ -185,36 +185,36 @@
             \begin{prooftree}
             \AxiomC{$\Gamma \vdash \alpha$}
             \AxiomC{$\Gamma \vdash \beta$}
-            \RightLabel{ $(\vdash \wedge)$}
+            \RightLabel{ $(\vdash\!\wedge)$}
             \BinaryInfC{$\Gamma \vdash \alpha \wedge \beta$}
             \end{prooftree} \quad
             \begin{prooftree}
             \AxiomC{$\Gamma \vdash \alpha$}
-            \RightLabel{ $(\vdash \vee)$}
+            \RightLabel{ $(\vdash\!\vee)$}
             \UnaryInfC{$\Gamma \vdash \alpha \vee \beta$}
             \end{prooftree} \quad
             \begin{prooftree}
             \AxiomC{$\Gamma \vdash \beta$}
-            \RightLabel{ $(\vdash \vee)$}
+            \RightLabel{ $(\vdash\!\vee)$}
             \UnaryInfC{$\Gamma \vdash \alpha \vee \beta$}
             \end{prooftree} \\[0.5em]
             \begin{prooftree}
             \AxiomC{$\alpha$}
             \AxiomC{$\beta$}
             \AxiomC{$\Gamma \vdash \gamma$}
-            \RightLabel{ $(\wedge \vdash)$}
+            \RightLabel{ $(\wedge\!\vdash)$}
             \TrinaryInfC{$\alpha \wedge \beta, \Gamma \vdash \gamma$}
             \end{prooftree} \quad
             \begin{prooftree}
             \AxiomC{$\alpha \Gamma \vdash \gamma$}
             \AxiomC{$\beta, \Gamma \vdash \gamma$}
-            \RightLabel{ $(\vee \vdash)$}
+            \RightLabel{ $(\vee\!\vdash)$}
             \BinaryInfC{$\alpha \vee \beta, \Gamma \vdash \gamma$}
             \end{prooftree} \quad
             \begin{prooftree}
             \AxiomC{$\Gamma \vdash \alpha$}
             \AxiomC{$\beta, \Delta \vdash \gamma$}
-            \RightLabel{ $(\to \vdash)$}
+            \RightLabel{ $(\!\to \vdash)$}
             \BinaryInfC{$\alpha \to \beta, \Gamma, \Delta \vdash \gamma$}
             \end{prooftree} \\[0.5em]
             \begin{prooftree}
@@ -715,23 +715,23 @@
     \displaylines{
         \begin{prooftree}
         \AxiomC{$\alpha(t/x), \Sigma \vdash \beta$}
-        \RightLabel{ $(\forall \vdash)$}
+        \RightLabel{ $(\forall\!\vdash)$}
         \UnaryInfC{$(\forall x\alpha, \Sigma \vdash \beta)$}
         \end{prooftree} \quad
         \begin{prooftree}
         \AxiomC{$\Sigma \vdash \alpha(y/x)$}
-        \RightLabel{ $(\vdash \forall)$}
+        \RightLabel{ $(\vdash\!\forall)$}
         \UnaryInfC{$\Sigma \vdash \forall x\alpha$}
         \end{prooftree}
         (y \notin \mathrm{FV}(\Sigma, \forall x\alpha)) \\
         \begin{prooftree}
         \AxiomC{$\alpha(y/x), \Sigma \vdash \beta$}
-        \RightLabel{ $(\exists \vdash)$}
+        \RightLabel{ $(\exists\!\vdash)$}
         \UnaryInfC{$\exists x\alpha$}
         \end{prooftree} \quad
         \begin{prooftree}
         \AxiomC{$\Sigma \vdash \alpha(t/x)$}
-        \RightLabel{ $(\vdash \exists)$}
+        \RightLabel{ $(\vdash\!\exists)$}
         \UnaryInfC{$\Sigma \vdash \exists x\alpha$}
         \end{prooftree}
         (y \notin \mathrm{FV}(\Sigma, \exists x\alpha, \beta))

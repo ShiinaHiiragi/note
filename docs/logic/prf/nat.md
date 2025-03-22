@@ -384,50 +384,50 @@
         \begin{prooftree}
         \AxiomC{$\alpha_1$}
         \AxiomC{$\alpha_2$}
-        \RightLabel{ ($\wedge$I)}
+        \RightLabel{ $(\wedge\text{I})$}
         \BinaryInfC{$\alpha_1 \wedge \alpha_2$}
         \end{prooftree} \quad
         \begin{prooftree}
         \AxiomC{$\alpha_1 \wedge \alpha_2$}
-        \RightLabel{ ($\wedge$E)}
+        \RightLabel{ $(\wedge\text{E})$}
         \UnaryInfC{$\alpha_1$}
         \end{prooftree} \quad
         \begin{prooftree}
         \AxiomC{$\alpha_1 \wedge \alpha_2$}
-        \RightLabel{ ($\wedge$E)}
+        \RightLabel{ $(\wedge\text{E})$}
         \UnaryInfC{$\alpha_2$}
         \end{prooftree} \\[0.5em]
         \begin{prooftree}
         \AxiomC{$\alpha_1$}
-        \RightLabel{ ($\vee$I)}
+        \RightLabel{ $(\vee\text{I})$}
         \UnaryInfC{$\alpha_1 \vee \alpha_2$}
         \end{prooftree} \quad
         \begin{prooftree}
         \AxiomC{$\alpha_2$}
-        \RightLabel{ ($\vee$I)}
+        \RightLabel{ $(\vee\text{I})$}
         \UnaryInfC{$\alpha_1 \vee \alpha_2$}
         \end{prooftree} \quad
         \begin{prooftree}
         \AxiomC{$\alpha_1 \vee \alpha_2$}
         \AxiomC{$\begin{array}{c} [\alpha_1]^{m} \\ \vdots \\ \beta \end{array}$}
         \AxiomC{$\begin{array}{c} [\alpha_2]^{n} \\ \vdots \\ \beta \end{array}$}
-        \RightLabel{ ($\vee\text{E}^{mn}$)}
+        \RightLabel{ $(\vee\text{E}^{mn})$}
         \TrinaryInfC{$\beta$}
         \end{prooftree} \\[1em]
         \begin{prooftree}
         \AxiomC{$\begin{array}{c} [\alpha_1]^{n} \\ \vdots \\ \alpha_2 \end{array}$}
-        \RightLabel{ ($\to\text{I}^{n}$)}
+        \RightLabel{ $(\to\text{I}^{n})$}
         \UnaryInfC{$\alpha_1 \to \alpha_2$}
         \end{prooftree} \quad
         \begin{prooftree}
         \AxiomC{$\alpha_1 \to \alpha_2$}
         \AxiomC{$\alpha_1$}
-        \RightLabel{ ($\to$E)}
+        \RightLabel{ $(\to\text{E})$}
         \BinaryInfC{$\alpha_2$}
         \end{prooftree} \quad
         \begin{prooftree}
         \AxiomC{$\bot$}
-        \RightLabel{ ($\bot$E)}
+        \RightLabel{ $(\bot\text{E})$}
         \UnaryInfC{$\alpha$}
         \end{prooftree}
     }
@@ -465,15 +465,15 @@
         3. 若 $\Gamma \vdash_{\mathbf{NJ}} \alpha$，则 $\Gamma \vdash_{\mathbf{NK}} \alpha$，特别地，若 $\vdash_{\mathbf{NJ}} \alpha$，则 $\vdash_{\mathbf{NK}} \alpha$
 
 3. 在推导 $\mathcal{D}$ 中，若公式 $\alpha$ 的某一次出现既是引入规则的结论，又是消去规则的大前提，则称其为切割公式
-    1. 令 $\mathbf{NK}^{*}$ 是从 $\mathbf{NK}$ 去掉规则 $(\vee\text{I})$ 和 $(\vee\text{E})$ 而得到的自然演绎，则对任意公式集 $\Gamma \cup \{\alpha\}$，$\Gamma \vdash_{\mathbf{NK}} \alpha$ 当且仅当 $\Gamma \vdash_{\mathbf{NK}^{*}} \alpha$
-    2. 令 $\mathbf{NK}^{\circ}$ 是将 $\mathbf{NK}^{*}$ 中 $(\bot)$ 与 $(\text{RAA})$ 规则的结论限制为原子公式而得到的自然演绎
+    1. 令 $\mathbf{NK}^{*}$ 是从 $\mathbf{NK}$ 去掉规则 $\vee\text{I}$ 和 $\vee\text{E}$ 而得到的自然演绎，则对任意公式集 $\Gamma \cup \{\alpha\}$，$\Gamma \vdash_{\mathbf{NK}} \alpha$ 当且仅当 $\Gamma \vdash_{\mathbf{NK}^{*}} \alpha$
+    2. 令 $\mathbf{NK}^{\circ}$ 是将 $\mathbf{NK}^{*}$ 中 $\bot$ 与 $\text{RAA}$ 规则的结论限制为原子公式而得到的自然演绎
         1. 对任意公式集 $\Gamma \cup \{\alpha\}$，$\Gamma \vdash_{\mathbf{NK}^{*}} \alpha$ 当且仅当 $\Gamma \vdash_{\mathbf{NK}^{\circ}} \alpha$
         2. 记号 $\mathcal{D} \rightsquigarrow_1 \mathcal{D}^{\prime}$ 表示推导 $\mathcal{D}$ 经过单步变换转化为 $\mathcal{D}^{\prime}$，称 $\mathbf{NK}^{\circ}$ 中的一个变换串为一个归约序列
             1. 称推导 $\mathcal{D}$ 为既约推导（或正规推导）当且仅当不存在推导 $\mathcal{D}^{\prime}$ 使得 $\mathcal{D} \rightsquigarrow_1 \mathcal{D}^{\prime}$
             2. 记 $\mathcal{D} \rightsquigarrow \mathcal{D}^{\prime}$ 为 $\mathcal{D}$ 经过有穷多步变换转化为 $\mathcal{D}^{\prime}$；记 $\mathcal{D} \rightarrow \mathcal{D}^{\prime}$ 为 $\mathcal{D} \rightsquigarrow \mathcal{D}^{\prime}$ 或 $\mathcal{D}=\mathcal{D}^{\prime}$
         3. 正规化定理：在 $\mathbf{NK}$ 中每个推导都可转化为正规推导
-        4. 子公式性质：令 $\mathcal{D}$ 是在 $\mathbf{NK}^{\circ}$ 中从 $\Gamma$ 到 $\alpha$ 的正规推导，对 $\mathcal{D}$ 中出现的每个公式 $\beta$，若 $\beta$ 不是被 $(\text{RAA})$ 撤销的公式或被 $(\text{RAA})$ 撤销假设的直接结论 $\bot$，则 $\beta$ 是 $\Gamma, \alpha$ 中某个公式的子公式
-    3. 令 $\mathbf{NJ}^{\circ}$ 是将 $\mathbf{NJ}$ 中的 $(\bot)$ 规则的结论限制为原子公式而得到的自然演绎
+        4. 子公式性质：令 $\mathcal{D}$ 是在 $\mathbf{NK}^{\circ}$ 中从 $\Gamma$ 到 $\alpha$ 的正规推导，对 $\mathcal{D}$ 中出现的每个公式 $\beta$，若 $\beta$ 不是被 $\text{RAA}$ 撤销的公式或被 $\text{RAA}$ 撤销假设的直接结论 $\bot$，则 $\beta$ 是 $\Gamma, \alpha$ 中某个公式的子公式
+    3. 令 $\mathbf{NJ}^{\circ}$ 是将 $\mathbf{NJ}$ 中的 $\bot$ 规则的结论限制为原子公式而得到的自然演绎
         1. 对任意公式集 $\Gamma \cup \{\alpha\}$，$\Gamma \vdash_{\mathbf{NJ}} \alpha$ 当且仅当 $\Gamma \vdash_{\mathbf{NJ}^{\circ}} \alpha$
         2. 正规化定理：在 $\mathbf{NJ}$ 中每个推导都可转化为正规推导
         3. 子公式性质：令 $\mathcal{D}$ 是在 $\mathbf{NJ}$ 中从 $\Gamma$ 到 $\alpha$ 的正规推导，对 $\mathcal{D}$ 中出现的每个公式 $\beta$ 都是 $\Gamma, \alpha$ 中某个公式的子公式

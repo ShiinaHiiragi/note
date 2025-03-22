@@ -16,6 +16,72 @@
 
 ## 3.1 命题逻辑矢列演算
 ### 3.2.1 G<sub>0</sub> 型演算
+1. 经典命题逻辑的矢列演算 $\mathbf{G0cp}$ 由公理模式与矢列规则组成
+    1. 公理模式
+        1. $\alpha \Rightarrow \alpha \ \text{(Id)}$
+        2. $\perp \Rightarrow \ (\bot)$
+
+        矢列规则
+
+        3. 联结词规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\alpha_i, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\wedge \Rightarrow)$}
+                \UnaryInfC{$\alpha_1 \wedge \alpha_2, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \beta$}
+                \RightLabel{ $(\Rightarrow \wedge)$}
+                \BinaryInfC{$\Gamma \Rightarrow \Delta, \alpha \wedge \beta$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \Delta$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\vee \Rightarrow)$}
+                \BinaryInfC{$\alpha \vee \beta, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha_i$}
+                \RightLabel{ $(\Rightarrow \vee)$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha_1 \vee \alpha_2$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\to \Rightarrow)$}
+                \BinaryInfC{$\alpha \to \beta, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \Delta, \beta$}
+                \RightLabel{ $(\Rightarrow \to)$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha \to \beta$}
+                \end{prooftree}
+            }
+            $$
+
+            其中 $i = 1, 2$．对联结词 $\circ \in\{\wedge, \vee, \rightarrow\}$，称 $(\circ l)$ 为左规则，$(\circ r)$ 为右规则；结论中含联结词的公式称为主公式
+
+        4. 结构规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\text{w}\Rightarrow)$}
+                \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+                \end{prooftree}
+            }
+            $$
+
+            分别称上述三行为弱化规则、收缩规则、交换规则
+
+        5. 切割规则
+
+    2. 推导
 
 ### 3.2.2 G<sub>1</sub> 型演算
 
