@@ -350,6 +350,43 @@
         1. 如果 $\vdash_{\textbf{HJ}} \alpha$，那么 $\mathbf{G0ip} \vdash \Rightarrow \alpha$
         2. $\mathbf{G0ip} \vdash \Gamma \Rightarrow \alpha$ 当且仅当 $\vDash \Gamma \Rightarrow \alpha$
 
+3. 切割消除：称矢列演算 $\mathbf{G}$ 具有切割消除性质当且仅当在 $\mathbf{G}$ 中可推导的任意矢列都存在无切割推导（即不出现切割规则的应用）
+    1. 矢列演算 $\mathbf{G0cp}^{\sharp}$ 是从 $\mathbf{G0cp}$ 删除 $\text{Cut}$ 规则得到的系统，$\mathbf{G0ip}^{\sharp}$ 是从 $\mathbf{G0ip}$ 删除 $\text{Cut}$ 规则得到的系统
+        1. 设 $\perp$ 在 $\Delta$ 中至少出现 $1$ 次，若 $\mathbf{G0cp}^{\sharp} \vdash \Gamma \Rightarrow \Delta$，那么 $\mathbf{G0cp}^{\sharp} \vdash \Gamma \Rightarrow \Delta_{\perp}$
+        2. 若 $\mathbf{G0ip}^{\sharp} \vdash \Gamma \Rightarrow \perp$，则 $\mathbf{G0ip}^{\sharp} \vdash \Gamma \Rightarrow \beta$
+    2. 矢列演算 $\mathbf{G0cp}^{*}$ 是在 $\mathbf{G0cp}^{\sharp}$ 基础上增加广义切割规则的系统
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\Gamma \Rightarrow \Delta$}
+        \AxiomC{$\Sigma \Rightarrow \Theta$}
+        \RightLabel{ $(\text{Cut}_{g})$}
+        \BinaryInfC{$\Gamma, \Sigma_{\alpha} \Rightarrow \Delta_{\alpha}, \Theta$}
+        \end{prooftree}
+        $$
+
+        1. 对任意矢列 $\Gamma \Rightarrow \Delta$，$\mathbf{G0cp} \vdash \Gamma \Rightarrow \Delta$ 当且仅当 $\mathbf{G0cp}^{*} \vdash \Gamma \Rightarrow \Delta$
+        2. 如果 $\mathbf{G0cp}^{*} \vdash \Pi_{1} \Rightarrow \Pi_{2}$，则 $\Pi_{1} \Rightarrow \Pi_{2}$ 在 $\mathbf{G0cp}^{*}$ 中不使用 $\text{Cut}_{g}$ 可推导
+
+    3. 矢列演算 $\mathbf{G0ip}^{*}$ 是在 $\mathbf{G0ip}^{\sharp}$ 基础上增加广义切割规则的系统
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\Gamma \Rightarrow \alpha$}
+        \AxiomC{$\Sigma \Rightarrow \beta$}
+        \RightLabel{ $(\text{Cut}_{g})$}
+        \BinaryInfC{$\Gamma, \Sigma_{\alpha} \Rightarrow \beta$}
+        \end{prooftree}
+        $$
+
+        1. 对任意矢列 $\Gamma \Rightarrow \beta$，$\mathbf{G0ip}^{*} \vdash \Gamma \Rightarrow \beta$ 当且仅当 $\mathbf{G0ip}^{*} \vdash \Gamma \Rightarrow \beta$
+        2. 如果 $\mathbf{G0ip}^{*} \vdash \Pi \Rightarrow \delta$，那么 $\Pi \Rightarrow \delta$ 在 $\mathbf{G0ip}^{*}$ 中不使用 $\text{Cut}_{g}$ 可推导
+
+    4. $\mathbf{G0cp}$ 与 $\mathbf{G0ip}$ 具有切割消除性质
+    5. $\mathbf{G0cp}$ 与 $\mathbf{G0ip}$ 具有子公式性质，即可推导的矢列都有推导 $\mathcal{D}$ 使得其中出现的每个公式都是其根节点矢列某个公式的子公式
+        1. 若 $\mathbf{G0ip} \vdash \Rightarrow \alpha \vee \beta$，则 $\mathbf{G0ip} \vdash \Rightarrow \alpha$ 或 $\mathbf{G0ip} \vdash \Rightarrow \beta$
+        2. 若 $\vdash_{\mathbf{HJ}} \alpha \vee \beta$，则 $\vdash_{\mathbf{HJ}} \alpha$ 或者 $\vdash_{\mathbf{HJ}} \beta$
+
 ### 3.2.2 G<sub>1</sub> 型演算
 
 ### 3.2.3 G<sub>2</sub> 型演算
