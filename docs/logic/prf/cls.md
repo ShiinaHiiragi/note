@@ -1,6 +1,6 @@
 # 1 经典逻辑
 
-- 一个推理规则 $R$ 的形式是
+1. 一个推理规则 $(\text{R})$ 的形式是
 
     $$
     \begin{prooftree}
@@ -8,11 +8,29 @@
     \AxiomC{$\alpha_2$}
     \AxiomC{$\cdots$}
     \AxiomC{$\alpha_n$}
+    \RightLabel{ (R)}
     \QuaternaryInfC{$\alpha$}
     \end{prooftree}
     $$
 
     其中称 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为 $R$ 的前提，$\alpha$ 为 $R$ 的结论
+
+2. 设集合 $X \neq \varnothing$ 且 $S\subseteq X\times X$
+    1. 对任意 $x\in X$，令 $S(x) = \{y\in X\mid xSy\}$
+        1. 对任意 $Y\subseteq X$，令 $S[Y] = \bigcup \{S(y) \mid y\in Y\}$
+        2. 对任意自然数 $n\leqslant 0$，定义 $S^0[x]=\{x\}, S^{n+1}[x] = S[S^n[x]]$
+    2. 若 $X$ 是有穷集且满足
+        1. 存在 $r\in X$ 满足条件：对任意 $x\in X$ 都存在自然数 $n\geqslant 0$ 使得 $rS^nx$，称 $r$ 为 $(X, S)$ 的根节点
+        2. 对任意 $x, y, z\in X$，若 $xSz$ 且 $ySz$，那么 $x=y$
+        3. 不存在 $x_0, x_1, \cdots, x_k \in X$ 和自然数 $m, n$ 使得 $x_0S^mx_k$ 且 $x_kS^nx_0$
+
+        则称 $(X, S)$ 为有穷树结构，$X$ 中的元组称为节点．若 $xSy$，则称 $y$ 是 $x$ 的子节点
+
+    3. 在有穷树结构 $(X, S)$ 中，一条链 $c$ 是一个序列 $\left<x_0, x_1, \cdots, x_k\right>$ 使得对所有 $i\neq j < k$ 都有 $x_i\neq x_j$ 且 $x_iSx_{i+1}$
+        1. 链的长度定义为 $|c|=k$，单个节点链的长度为 $0$
+        2. 若一条链 $c = \left<x_0, x_1, \cdots, x_k\right>$ 不存在 $y=X-c$ 使得 $x_kSy$，则称 $c$ 为极大链
+            1. 极大链的第一个元素称为根节点，最后一个元素称为叶节点
+            2. 有穷树结构 $(X, S)$ 的高度定义为 $\max\{\left|c\right|: c$ 是 $(X, R)$ 的极大链$\}$
 
 ## 1.1 命题逻辑
 ### 1.1.1 经典命题逻辑
@@ -112,7 +130,7 @@
         - 合取范式：形如 $\alpha=\gamma_1 \wedge \gamma_2 \wedge \cdots \wedge \gamma_k$ 的公式，其中每个 $\gamma_i$ 都形如 $\gamma_i=\beta_{i 1} \vee \beta_{i 2} \vee \cdots \vee \beta_{i n}$，且 $\beta_{i j}$ 是一个命题符号或命题符号的否定
         - 析取范式：$\alpha$ 形如 $\alpha=\gamma_1 \vee \gamma_2 \vee \cdots \vee \gamma_k$ 的公式，其中每个 $\gamma_i$ 都形如 $\gamma_i=\beta_{i 1} \wedge \beta_{i 2} \wedge \cdots \wedge \beta_{i n}$，且 $\beta_{i j}$ 是一个命题符号或命题符号的否定
 
-4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统 $\mathbf{HK}$
+4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统 $\mathbf{HK}$ 由公理与推理规则组成
     1. 公理：若将 $p_0, p_1, p_2$ 替换为模式字母 $\alpha, \beta, \gamma$，可去掉代入规则 $\text{sub}$，得到的系统与 $\mathbf{HK}$ 等价
         1. $\text{A}_1: p_0 \to (p_1 \to p_0)$
         2. $\text{A}_2: (p_0 \to (p_1 \to p_2)) \to ((p_0 \to p_1) \to (p_0 \to p_2))$
@@ -130,17 +148,7 @@
         1. 肯定前件规则：$\begin{prooftree} \AxiomC{\(\alpha \to \beta\)} \AxiomC{\(\alpha\)} \RightLabel{ (mp)} \BinaryInfC{\(\beta\)} \end{prooftree}$
         2. 代入规则：$\begin{prooftree} \AxiomC{\(\alpha\)} \RightLabel{ (sub)} \UnaryInfC{\(\sigma(\alpha)\)} \end{prooftree}$，其中 $\sigma$ 是任意代入
 
-    2. 令 $X \neq \varnothing$ 且 $S\subseteq X\times X$，对任意 $x\in X$，令 $S(x) = \{y\in X\mid xSy\}$．对任意 $Y\subseteq X$，令 $S[Y] = \bigcup \{S(y) \mid y\in Y\}$，对任意自然数 $n\leqslant 0$ 与 $x\in X$，定义 $S^0[x]=\{x\}, S^{n+1}[x] = S[S^n[x]]$
-        1. 若 $X$ 是有穷集且满足以下条件，则称 $(X, S)$ 为有穷树结构，$X$ 中的元组称为节点．若 $xSy$，则称 $y$ 是 $x$ 的子节点
-            1. 存在 $r\in X$ 满足条件：对任意 $x\in X$ 都存在自然数 $n\geqslant 0$ 使得 $rS^nx$，称 $r$ 为 $(X, S)$ 的根节点
-            2. 对任意 $x, y, z\in X$，若 $xSz$ 且 $ySz$，那么 $x=y$
-            3. 不存在 $x_0, x_1, \cdots, x_k \in X$ 和自然数 $m, n$ 使得 $x_0S^mx_k$ 且 $x_kS^nx_0$
-        2. 在有穷树结构 $(X, S)$ 中，一条链 $c$ 是一个序列 $\left<x_0, x_1, \cdots, x_k\right>$ 使得对所有 $i\neq j < k$ 都有 $x_i\neq x_j$ 且 $x_iSx_{i+1}$
-            1. 若一条链 $c = \left<x_0, x_1, \cdots, x_k\right>$ 不存在 $y=X-c$ 使得 $x_kSy$，则称 $c$ 为极大链
-            2. 极大链的第一个元素称为根节点，最后一个元素称为叶节点
-            3. 链的长度定义为 $|c|=k$，单个节点链的长度为 $0$
-            4. 有穷树结构 $(X, S)$ 的高度定义为 $\max\{\left|c\right|: c$ 是 $(X, R)$ 的极大链$\}$
-    3. 在 $\mathbf{HK}$ 中，从公式集 $\Gamma$ 到公式 $\alpha$ 的一个推导是由公式组成的以 $\alpha$ 为根节点的有穷树结构 $\mathcal D$，其中每个节点满足
+    2. 在 $\mathbf{HK}$ 中，从公式集 $\Gamma$ 到公式 $\alpha$ 的一个推导是由公式组成的以 $\alpha$ 为根节点的有穷树结构 $\mathcal D$，其中每个节点满足
         1. $\gamma$ 是公理或 $\gamma \in \Gamma$
         2. $\gamma$ 是从子节点 $\beta$ 和 $\beta \to \gamma$ 运用规则 $\text{mp}$ 得到的
         3. $\gamma$ 是从子节点 $\beta$ 利用规则 $\text{sub}$ 得到的，其中 $\beta$ 是公理
@@ -151,7 +159,7 @@
         2. 若 $\varnothing \vdash_\mathbf{HK} \alpha$，称公式在 $\mathbf{HK}$ 中可证，或 $\alpha$ 是 $\mathbf{HK}$ 的（内）定理，记作 $\vdash_\mathbf{HK} \alpha$
         3. 用 $\mathrm{Thm}(\mathbf{HK})$ 表示 $\mathbf{HK}$ 中所有定理的集合
 
-    4. 经典命题逻辑的 $\text{Hilbert}$ 公理系统元定理
+    3. 经典命题逻辑的 $\text{Hilbert}$ 公理系统元定理
         1. $\alpha, \Gamma \vdash_\mathbf{HK} \alpha$，$\bot, \Gamma \vdash_\mathbf{HK} \alpha$
         2. 对任意公式集 $\Gamma$ 和公式 $\alpha$，$\Gamma \vdash_\mathbf{HK} \alpha$ 当且仅当存在有穷子集 $\Delta \subseteq \Gamma$ 使得 $\Delta \vdash_\mathbf{HK} \alpha$
         3. 若 $\Gamma \vdash_\mathbf{HK} \alpha$ 且 $\Gamma \vdash_\mathbf{HK} \beta$，那么 $\Gamma \vdash_\mathbf{HK} \alpha \wedge \beta$
@@ -169,7 +177,8 @@
     1. 后承公理模式：
         1. $\alpha, \Gamma \vdash \alpha \ (\mathrm{Id})$
         2. $\bot, \Gamma \vdash \alpha \ (\bot)$
-    2. 后承规则：
+
+        后承规则：
 
         $$
         \displaylines{
@@ -240,10 +249,10 @@
 
         其中 $\text{LEM}$ 称为排中律规则；$\text{Wk}$ 称为弱化规则；$\text{Cut}$ 称为切割规则
 
-    3. 在 $\mathfrak C_\mathbf{HK}$ 中，一个推导是由后承组成的有穷树结构
+    2. 在 $\mathfrak C_\mathbf{HK}$ 中，一个推导是由后承组成的有穷树结构
         1. 每个节点要么是后承公理，要么是使用后承规则从子节点得到的
         2. 若存在以后承 $\Gamma \vdash \beta$ 为根节点的推导，则称该后承在 $\mathfrak C_\mathbf{HK}$ 中可证，记作 $\Gamma \vdash_\mathbf{HK} \beta$
-    4. 以下命题在 $\mathfrak C_\mathbf{HK}$ 中成立
+    3. 以下命题在 $\mathfrak C_\mathbf{HK}$ 中成立
         1. $\neg \alpha, \Gamma \vdash_\mathbf{HK} \beta$ 当且仅当 $\Gamma \vdash_\mathbf{HK} \alpha \vee \beta$
         2. $\alpha, \Gamma \vdash_\mathbf{HK} \beta$ 当且仅当 $\Gamma \vdash_\mathbf{HK} \neg \alpha \vee \beta$
 
@@ -597,10 +606,11 @@
 
         设指派 $\overline a = \left<a_i\right>_{i\in \lambda}$，此时也可将满足关系记作 $\mathfrak A \vDash \alpha[\overline a]$ 或 $\mathfrak A \vDash \alpha(\overline b)$，称 $\mathfrak A$ 满足 $\alpha[\overline a]$、$\alpha[\overline a]$ 在 $\mathfrak A$ 中为真或 $\overline a$ 在 $\mathfrak A$ 中实现了 $\alpha$
 
-        1. 对任意公式集 $\Sigma$，若对所有 $\alpha \in \Sigma$ 都有 $\mathfrak M \vDash \alpha$，则记作 $\mathfrak M \vDash \Sigma$
-        2. 如果公式（包括语句）$\alpha$ 有对于结构 $\mathfrak A$ 中的任意指派 $\sigma$ 都有 $(\mathfrak A, \sigma) \vDash \alpha$，则称 $\alpha$ 在 $\mathfrak A$ 上有效，记作 $\mathfrak A \vDash \alpha$
-        3. 若 $\Sigma$ 是一个语句集，且对任意 $\alpha \in \Sigma$ 都有 $\mathfrak A \vDash \alpha$，则记作 $\mathfrak A \vDash \Sigma$
-        4. 如果语句 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称语句 $\alpha$ 有效，记作 $\vDash_1 \alpha$，设一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) \mid \vDash_1 \alpha\}$
+        1. 如果公式（包括语句）$\alpha$ 有对于结构 $\mathfrak A$ 中的任意指派 $\sigma$ 都有 $(\mathfrak A, \sigma) \vDash \alpha$，则称 $\alpha$ 在 $\mathfrak A$ 上有效，记作 $\mathfrak A \vDash \alpha$
+        2. 设 $\Sigma$ 是一个公式集
+            1. 若对所有 $\alpha \in \Sigma$ 都有 $\mathfrak M \vDash \alpha$，则记作 $\mathfrak M \vDash \Sigma$
+            2. 若 $\Sigma$ 是语句集，且对任意 $\alpha \in \Sigma$ 都有 $\mathfrak A \vDash \alpha$，则记作 $\mathfrak A \vDash \Sigma$
+        3. 如果语句 $\alpha$ 有对于任意结构 $\mathfrak A$ 都有 $\mathfrak A \vDash \alpha$，则称语句 $\alpha$ 有效，记作 $\vDash_1 \alpha$，设一阶逻辑 $\mathbf{FOL} = \{\alpha \in \mathcal F(S) \mid \vDash_1 \alpha\}$
 
             !!! note "有效式"
                 以下语句都是有效的
@@ -612,9 +622,9 @@
                 5. $\forall x \ (\alpha \to \beta) \to (\alpha \to \forall x\beta), x\notin \mathrm{FV}(\alpha)$
                 6. $\forall x\alpha \to \alpha(t/x)$
 
-    4. 设 $\alpha$ 是一个公式，$\Sigma$ 是一个公式集，如果对任意模型 $\mathfrak M$ 都有 $\mathfrak M \vDash \Sigma$ 蕴含 $\mathfrak M \vDash \alpha$，则称 $\alpha$ 是 $\Sigma$ 的语义后承，或称 $\Sigma$ 语义蕴含 $\alpha$，记作 $\Sigma \vDash \alpha$
-        1. 对于公式集 $\Sigma$，如果存在模型 $\mathfrak M$ 使得 $\mathfrak M \vDash \Sigma$，则称 $\Sigma$ 可满足
-            1. 对于公式 $\alpha$，如果 $\{\alpha\}$ 可满足，则称 $\alpha$ 可满足
+    4. 设 $\alpha$ 是一个公式，$\Sigma$ 是一个公式集
+        1. 若对任意模型 $\mathfrak M$ 都有 $\mathfrak M \vDash \Sigma$ 蕴含 $\mathfrak M \vDash \alpha$，则称 $\alpha$ 是 $\Sigma$ 的语义后承，或称 $\Sigma$ 语义蕴含 $\alpha$，记作 $\Sigma \vDash \alpha$
+            1. 对于公式集 $\Sigma$，如果存在模型 $\mathfrak M$ 使得 $\mathfrak M \vDash \Sigma$，则称 $\Sigma$ 可满足．易知对于公式 $\alpha$，如果 $\{\alpha\}$ 可满足，则称 $\alpha$ 可满足
             2. 对任意公式集 $\Sigma \cup \{\alpha\}$，$\Sigma \vDash \alpha$ 当且仅当 $\Sigma \cup \{\neg \alpha\}$ 不可满足
         2. 令 $\mathfrak M_1 = (\mathfrak A_1, \sigma), \mathfrak M_2 = (\mathfrak A_2, \sigma)$ 分别是 $S_1-$结构和 $S_2-$结构上的模型，其中 $\mathfrak A_1$ 与 $\mathfrak A_2$ 有相同论域 $A$，令 $S = S_1 \cap S_2$
             1. 对任意项 $s\in \mathcal T(S)$，$s^{\mathfrak M_1} = s^{\mathfrak M_2}$
@@ -623,29 +633,29 @@
             1. 对任意项 $s$ 都有 $s(\overline t/\overline x)^{\mathfrak M} = s^{\mathfrak M'}$
             2. 对任意公式 $\alpha$，$\mathfrak M \vDash \alpha(\overline t/\overline x)$ 当且仅当 $\mathfrak M' \vDash \alpha$
 
-5. 公理系统 $\mathbf H_1$
-    1. 公理模式与推理规则
-        1. 公理模式
-            1. $\text{A}_1:$ 任意经典命题逻辑重言式一阶代入特例
-            2. $\text{A}_2: \forall x\alpha \leftrightarrow \neg \exists x \neg \alpha$
-            3. $\text{A}_3: \forall x \ (\alpha \to \beta) \to (\forall x\alpha \to \forall x \beta)$
-            4. $\text{A}_4: \alpha \to \forall x\alpha, x\notin \mathrm{FV}(\alpha)$
-            5. $\text{A}_5: \forall x\alpha \to \alpha(t/x)$
-        2. 推理规则
+5. 公理系统 $\mathbf H_1$ 由公理模式与推理规则组成
+    1. 公理模式
+        1. $\text{A}_1:$ 任意经典命题逻辑重言式一阶代入特例
+        2. $\text{A}_2: \forall x\alpha \leftrightarrow \neg \exists x \neg \alpha$
+        3. $\text{A}_3: \forall x \ (\alpha \to \beta) \to (\forall x\alpha \to \forall x \beta)$
+        4. $\text{A}_4: \alpha \to \forall x\alpha, x\notin \mathrm{FV}(\alpha)$
+        5. $\text{A}_5: \forall x\alpha \to \alpha(t/x)$
 
-            $$
-            \begin{prooftree}
-            \AxiomC{$\alpha$}
-            \AxiomC{$\alpha \to \beta$}
-            \RightLabel{ (mp)}
-            \BinaryInfC{$\beta$}
-            \end{prooftree} \quad
-            \begin{prooftree}
-            \AxiomC{$\alpha$}
-            \RightLabel{ (gen)}
-            \UnaryInfC{$\forall x\alpha$}
-            \end{prooftree}
-            $$
+        推理规则
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\alpha$}
+        \AxiomC{$\alpha \to \beta$}
+        \RightLabel{ (mp)}
+        \BinaryInfC{$\beta$}
+        \end{prooftree} \quad
+        \begin{prooftree}
+        \AxiomC{$\alpha$}
+        \RightLabel{ (gen)}
+        \UnaryInfC{$\forall x\alpha$}
+        \end{prooftree}
+        $$
 
     2. 在 $\mathbf{H}_1$ 中的推导是由公式组成的有穷树结构 $\mathcal D$．用 $\mathcal D, \mathcal E$ 表示推导，记号 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\varphi\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\varphi$ 为根节点的推导
         1. 每个节点 $\gamma$ 要么是公理，要么是从子节点运用规则 $\text{mp}$ 或 $\text{gen}$ 得到的．对于 $\mathrm{gen}$ 规则，需要保证以公式 $\alpha$ 为根节点的推导使用到的假设 $\Sigma_0$ 中不自由出现 $x$
