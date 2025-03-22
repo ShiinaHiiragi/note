@@ -8,11 +8,11 @@
     \AxiomC{$\alpha_2$}
     \AxiomC{$\cdots$}
     \AxiomC{$\alpha_n$}
-    \QuaternaryInfC{$\alpha_0$}
+    \QuaternaryInfC{$\alpha$}
     \end{prooftree}
     $$
 
-    其中称 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为 $R$ 的前提，$\alpha_0$ 为 $R$ 的结论
+    其中称 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为 $R$ 的前提，$\alpha$ 为 $R$ 的结论
 
 ## 1.1 命题逻辑
 ### 1.1.1 经典命题逻辑
