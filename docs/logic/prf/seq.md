@@ -528,7 +528,7 @@ $\mathbf{G1}$ 允许使用多重公式集作为公式结构
 
         矢列规则
 
-        3. 联结词规则
+        1. 联结词规则
 
             $$
             \displaylines{
@@ -570,7 +570,7 @@ $\mathbf{G1}$ 允许使用多重公式集作为公式结构
 
             其中 $i = 1, 2$
 
-        4. 结构规则
+        2. 结构规则
 
             $$
             \displaylines{
@@ -707,7 +707,7 @@ $\mathbf{G1}$ 允许使用多重公式集作为公式结构
 
         矢列规则
 
-        3. 联结词规则
+        1. 联结词规则
 
             $$
             \displaylines{
@@ -749,7 +749,7 @@ $\mathbf{G1}$ 允许使用多重公式集作为公式结构
 
             其中 $i = 1, 2$
 
-        4. 结构规则
+        2. 结构规则
 
             $$
             \displaylines{
@@ -876,7 +876,7 @@ $\mathbf{G1}$ 允许使用多重公式集作为公式结构
             $$
 
     3. 对任意矢列 $\Gamma \Rightarrow \Delta$，$\mathbf{G2cp} \vdash \Gamma \Rightarrow \Delta$ 当且仅当 $\mathbf{G3cp} \vdash \Gamma \Rightarrow \Delta$
-        1. 对任意可重集 $\Gamma$ 和 $\Delta$ 及公式 $\alpha$，$\mathbf{G3cp} \vdash \alpha, \Gamma \Rightarrow \Delta, \alpha$
+        1. 对任意多重集 $\Gamma$ 和 $\Delta$ 及公式 $\alpha$，$\mathbf{G3cp} \vdash \alpha, \Gamma \Rightarrow \Delta, \alpha$
         2. 如果 $\mathbf{G3cp} \vdash \Gamma \Rightarrow \Sigma, \perp$，那么 $\mathbf{G3cp} \vdash \Gamma \Rightarrow \Sigma, \Theta$
 
 2. 矢列演算 $\mathbf{G3ip}$ 由公理模式与矢列规则组成
@@ -1074,3 +1074,124 @@ $\mathbf{G1}$ 允许使用多重公式集作为公式结构
 2. 对任意矢列 $\Gamma \Rightarrow \beta$，$\mathbf{G3ip} \vdash \Gamma \Rightarrow \beta$ 当且仅当 $\mathbf{G4ip} \vdash \Gamma \Rightarrow \beta$
 
 ## 3.2 一阶逻辑矢列演算
+1. 一阶逻辑矢列演算 $\mathbf{G3c}$ 由公理模式与矢列规则组成
+    1. 公理模式
+        1. $R t_{1} \cdots R t_{n}, \Gamma \Rightarrow \Delta, R t_{1} \cdots R t_{n} \ \text{(Id)}$
+        2. $\perp, \Gamma \Rightarrow \Delta \ (\bot)$
+
+        矢列规则
+
+        1. 联结词规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\alpha_1, \alpha_2, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\wedge\!\Rightarrow)$}
+                \UnaryInfC{$\alpha_1 \wedge \alpha_2, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \beta$}
+                \RightLabel{ $(\Rightarrow\!\wedge)$}
+                \BinaryInfC{$\Gamma \Rightarrow \Delta, \alpha \wedge \beta$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \Delta$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\vee\!\Rightarrow)$}
+                \BinaryInfC{$\alpha \vee \beta, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha_1, \alpha_2$}
+                \RightLabel{ $(\Rightarrow\!\vee)$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha_1 \vee \alpha_2$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+                \AxiomC{$\beta, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\rightarrow \Rightarrow)$}
+                \BinaryInfC{$\alpha \to \beta, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\alpha, \Gamma \Rightarrow \Delta, \beta$}
+                \RightLabel{ $(\Rightarrow \rightarrow)$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha \to \beta$}
+                \end{prooftree}
+            }
+            $$
+
+        2. 量词规则
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\alpha(t / x), \forall x \alpha, \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\forall\!\Rightarrow)$}
+                \UnaryInfC{$\forall x \alpha, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha(y / x)$}
+                \RightLabel{ $(\Rightarrow\!\forall)$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \forall x \alpha$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\alpha(y / x), \Gamma \Rightarrow \Delta$}
+                \RightLabel{ $(\exists\!\Rightarrow)$}
+                \UnaryInfC{$\exists x \alpha, \Gamma \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \exists x \alpha, \alpha(t / x)$}
+                \RightLabel{ $(\Rightarrow\!\exists)$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \exists x \alpha$}
+                \end{prooftree}
+            }
+            $$
+
+            在 $\Rightarrow\!\forall$ 中，$y \notin \operatorname{FV}(\Gamma, \Delta, \forall x \alpha)$；在 $\exists\!\Rightarrow$ 中，$y \notin \operatorname{FV}(\exists x \alpha, \Gamma, \Delta)$
+
+        $\mathbf{G3c} \vdash \Gamma \Rightarrow \Delta$ 表示 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G3c}$ 中可推导
+
+    2. 对任意自然数 $n \geqslant 0$，若 $\mathbf{G3c} \vdash_{n} \Gamma \Rightarrow \Delta$，则 $\mathbf{G3c} \vdash_{n} \Gamma(t / x) \Rightarrow \Delta(t / x)$
+    3. 以下弱化规则与收缩规则在 $\mathbf{G3c}$ 中保持高度可允许
+
+        $$
+        \displaylines{
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\text{w}\!\Rightarrow)$}
+            \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\Rightarrow\!\text{w})$}
+            \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha$}
+            \end{prooftree} \\[0.5em]
+            \begin{prooftree}
+            \AxiomC{$\alpha, \alpha, \Gamma \Rightarrow \Delta$}
+            \RightLabel{ $(\text{c}\!\Rightarrow)$}
+            \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta, \alpha, \alpha$}
+            \RightLabel{ $(\Rightarrow\!\text{c})$}
+            \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha$}
+            \end{prooftree}
+        }
+        $$
+
+    4. 以下切割规则在 $\mathbf{G3c}$ 中可允许
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\Gamma \Rightarrow \Delta, \alpha$}
+        \AxiomC{$\alpha,  \Sigma \Rightarrow \Theta$}
+        \RightLabel{ (Cut)}
+        \BinaryInfC{$\Gamma, \Sigma \Rightarrow \Delta, \Theta$}
+        \end{prooftree}
+        $$
+
+2. 对多重公式集 $\Gamma=\alpha_{1}, \cdots, \alpha_{n}$，若对所有 $1 \leqslant i \leqslant n$ 都有 $\alpha_{i}^{\flat}$ 是从 $\alpha_{i}$ 使用不在 $\Gamma$ 中出现的变元进行字母变换得到的公式，则称 $\Gamma^{\flat}=\alpha_{1}^{\flat}, \cdots, \alpha_{n}^{\flat}$ 为 $\Gamma$ 的字母变换
+    1. 在 $\mathbf{G3c}$ 中，一个推导 $\mathcal{D}^{\flat}$ 称为 $\mathcal{D}$ 的字母变换当且仅当 $\mathcal{D}^{\flat}$ 中每个多重集都是 $\mathcal{D}$ 中相应多重集的字母变换
+    2. 矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G3c}$ 中的推导 $\mathcal{D}$ 可变换为 $\Gamma^{\flat} \Rightarrow \Delta^{\flat}$ 的推导 $\mathcal{D}^{\flat}$，其中 $\Gamma^{\flat}, \Delta^{\flat}, \mathcal{D}^{\flat}$ 分别是 $\Gamma, \Delta, \mathcal{D}$ 的字母变换且 $|\mathcal{D}|= |\mathcal{D}^{\flat}|$
+3. 对任意多重公式集 $\Gamma$ 和 $\Delta$，$\mathbf{G3c} \vdash \Gamma \Rightarrow \Delta$ 当且仅当 $\vdash_{\mathbf{H}_{1}} \bigwedge \Gamma \to \bigvee \Delta$
