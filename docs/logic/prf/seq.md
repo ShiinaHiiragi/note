@@ -115,7 +115,110 @@
             \end{prooftree}
             $$
 
-    2. 推导
+    2. 一个推导 $\mathcal{D}$ 是由矢列组成的有穷树结构，其中每个节点要么是公理，要么是从子节点矢列使用某个规则得到的
+        1. 一个推导 $\mathcal{D}$ 的高度是其中极大分枝的最大长度，记作 $|\mathcal{D}|$，由单个节点组成的推导的高度为 $0$
+        2. 如果存在 $\mathbf{G0cp}$ 中推导 $\mathcal{D}$ 使得 $\mathcal{D}$ 的根节点为 $\Gamma \Rightarrow \Delta$，则称矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{GOcp}$ 中可推导，记作 $\mathbf{G0cp} \vdash \Gamma \Rightarrow \Delta$
+            1. 在不引起歧义的情况下可删除前缀 $\mathbf{G0cp}$
+            2. 对任意自然数 $n \geqslant 0$，$\mathbf{G0cp} \vdash_{n} \Gamma \Rightarrow \Delta$ 表示 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G0cp}$ 中有推导 $\mathcal{D}$ 使得 $|\mathcal{D}| \leqslant n$
+        3. 在推导中，连续 $n$ 次应用矢列规则 $\text{R}$ 记为 $\text{R}^{n}$
+    3. 称以 $\Gamma_{i} \Rightarrow \Delta_{i}$ 为前提且以 $\Gamma \Rightarrow \Delta$ 为结论的规则 $\text{R}$ 在 $\mathbf{G0cp}$ 中可允许当且仅当 $\mathbf{G 0 c p} \vdash \Gamma_{i} \Rightarrow \Delta_{i}$ 蕴涵 $\mathbf{G0cp}$ $\vdash \Gamma \Rightarrow \Delta$
+        1. 以下广义联结词规则在 $\mathbf{G0cp}$ 中可允许
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\Gamma_{1}, \alpha_{i}, \Gamma_{2} \Rightarrow \Delta$}
+                \RightLabel{ $(\wedge_{g}\Rightarrow)$}
+                \UnaryInfC{$\Gamma_{1}, \alpha_{1} \wedge \alpha_{2}, \Gamma_{2} \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha, \Sigma$}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \beta, \Sigma$}
+                \RightLabel{ $(\Rightarrow\!\wedge_{g})$}
+                \BinaryInfC{$\Gamma \Rightarrow \Delta, \alpha \wedge \beta, \Sigma$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma_{1}, \alpha, \Gamma_{2} \Rightarrow \Delta$}
+                \AxiomC{$\Gamma_{1}, \beta, \Gamma_{2} \Rightarrow \Delta$}
+                \RightLabel{ $(\vee_{g} \Rightarrow)$}
+                \BinaryInfC{$\Gamma_{1}, \alpha \vee \beta, \Gamma_{2} \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta, \alpha_{i}, \Sigma$}
+                \RightLabel{ $(\Rightarrow\!\vee_{g})$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta, \alpha_{1} \vee \alpha_{2}, \Sigma$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Theta_{1}, \alpha, \Theta_{2}$}
+                \AxiomC{$\Sigma, \beta, \Delta \Rightarrow \Pi$}
+                \RightLabel{ $(\rightarrow_{g} \Rightarrow)$}
+                \BinaryInfC{$\Sigma, \Gamma, \alpha \rightarrow \beta, \Delta \Rightarrow \Theta_{1}, \Pi, \Theta_{2}$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma_{1}, \alpha, \Gamma_{2} \Rightarrow \Delta, \beta, \Sigma$}
+                \RightLabel{ $(\Rightarrow \rightarrow_{g})$}
+                \UnaryInfC{$\Gamma_{1}, \Gamma_{2} \Rightarrow \Delta, \alpha \rightarrow \beta, \Sigma$}
+                \end{prooftree}
+            }
+            $$
+
+            其中 $i = 1, 2$
+
+        2. 以下广义结构规则在 $\mathbf{G0cp}$ 中可允许
+
+            $$
+            \displaylines{
+                \begin{prooftree}
+                \AxiomC{$\Gamma_{1}, \Gamma_{2} \Rightarrow \Delta$}
+                \RightLabel{ $(\text{w}_{g} \Rightarrow)$}
+                \UnaryInfC{$\Gamma_{1}, \Sigma, \Gamma_{2} \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta_{1}, \Delta_{2}$}
+                \RightLabel{ $(\Rightarrow \text{w}_{g})$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta_{1}, \Sigma, \Delta_{2}$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma_{1}, \Sigma, \Sigma, \Gamma_{2} \Rightarrow \Delta$}
+                \RightLabel{ $(\text{c}_{g} \Rightarrow)$}
+                \UnaryInfC{$\Gamma_{1}, \Sigma, \Gamma_{2} \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta_{1}, \Sigma, \Sigma, \Delta_{2}$}
+                \RightLabel{ $(\Rightarrow \text{c}_{g})$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta_{1}, \Sigma, \Delta_{2}$}
+                \end{prooftree} \\[0.5em]
+                \begin{prooftree}
+                \AxiomC{$\Gamma_{1}, \Sigma_{1}, \Sigma_{2}, \Gamma_{2} \Rightarrow \Delta$}
+                \RightLabel{ $(\text{e}_{g} \Rightarrow)$}
+                \UnaryInfC{$\Gamma_{1}, \Sigma_{2}, \Sigma_{1}, \Gamma_{2} \Rightarrow \Delta$}
+                \end{prooftree} \quad
+                \begin{prooftree}
+                \AxiomC{$\Gamma \Rightarrow \Delta_{1}, \Sigma_{1}, \Sigma_{2}, \Delta_{2}$}
+                \RightLabel{ $(\Rightarrow \text{e}_{g})$}
+                \UnaryInfC{$\Gamma \Rightarrow \Delta_{1}, \Sigma_{2}, \Sigma_{1}, \Delta_{2}$}
+                \end{prooftree}
+            }
+            $$
+
+        3. 以下广义切割规则在 $\mathbf{G0cp}$ 中可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\Gamma \Rightarrow \Delta$}
+            \AxiomC{$\Sigma \Rightarrow \Theta$}
+            \RightLabel{ $(\text{Cut}_{g})$}
+            \BinaryInfC{$\Gamma, \Sigma_{\alpha} \Rightarrow \Delta_{\alpha}, \Theta$}
+            \end{prooftree}
+            $$
+
+        其中 $\alpha$ 在 $\Delta$ 和 $\Sigma$ 的分量中各自至少出现 $1$ 次，且 $\Delta_{\alpha}$ 和 $\Sigma_{\alpha}$ 分别是从 $\Delta$ 和 $\Sigma$ 删除分量 $\alpha$ 所有出现得到的结构．特别地，若 $\alpha$ 不在结构 $\Pi$ 中出现，则 $\Pi_{\alpha}=\Pi$
+
+    4. $\mathbf{G0cp} \vdash \Gamma \Rightarrow \Delta$ 当且仅当 $\bigwedge \Gamma \vdash_{\mathbf{HK}} \bigvee \Delta$
+        1. 如果 $\vdash_{\textbf{HK}} \alpha$，那么 $\mathbf{G0cp} \vdash \Rightarrow \alpha$
+        2. $\mathbf{G0cp} \vdash \Gamma \Rightarrow \Delta$ 当且仅当 $\vDash \Gamma \Rightarrow \Delta$
+
+2. 直觉主义命题逻辑的矢列演算 $\mathbf{G0ip}$ 由公理模式与矢列规则组成
 
 ### 3.2.2 G<sub>1</sub> 型演算
 
