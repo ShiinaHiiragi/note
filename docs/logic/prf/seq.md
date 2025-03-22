@@ -963,7 +963,114 @@ $\mathbf{G1}$ 允许使用多重公式集作为公式结构
         2. 如果 $\mathbf{G3ip} \vdash \Gamma \Rightarrow \perp$，那么 $\mathbf{G3ip} \vdash \Gamma \Rightarrow \beta$
 
 3. $\mathbf{G3cp}$ 与 $\mathbf{G3ip}$ 是可判定的
+4. 矢列演算 $\mathbf{G3ipEa}$ 从 $\mathbf{G3ip}$ 上增加以下规则得来
+
+    $$
+    \begin{prooftree}
+    \AxiomC{$p, \Gamma \Rightarrow \beta$}
+    \AxiomC{$\neg p, \Gamma \Rightarrow \beta$}
+    \RightLabel{ (Ea)}
+    \BinaryInfC{$\Gamma \Rightarrow \beta$}
+    \end{prooftree}
+    $$
+
+    $\mathbf{G3ipEa} \vdash \Gamma \Rightarrow \Delta$ 表示矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G3ipEa}$ 中可推导
+
+    1. 以下弱化规则与收缩规则在 $\mathbf{G3ipEa}$ 中保持高度可允许
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\Gamma \Rightarrow \beta$}
+        \RightLabel{ $(\text{w}\!\Rightarrow)$}
+        \UnaryInfC{$\alpha, \Gamma \Rightarrow \beta$}
+        \end{prooftree} \quad
+        \begin{prooftree}
+        \AxiomC{$\alpha, \alpha, \Gamma \Rightarrow \Delta$}
+        \RightLabel{ $(\text{c}\!\Rightarrow)$}
+        \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+        \end{prooftree}
+        $$
+
+    2. 以下切割规则与排中律规则在 $\mathbf{G3ip}$ 中可允许
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\Gamma \Rightarrow \alpha$}
+        \AxiomC{$\alpha, \Delta \Rightarrow \beta$}
+        \RightLabel{ (Cut)}
+        \BinaryInfC{$\Gamma, \Delta \Rightarrow \beta$}
+        \end{prooftree} \quad
+        \begin{prooftree}
+        \AxiomC{$\alpha, \Gamma \Rightarrow \beta$}
+        \AxiomC{$\neg \alpha, \Gamma \Rightarrow \beta$}
+        \RightLabel{ (Em)}
+        \BinaryInfC{$\Gamma \Rightarrow \beta$}
+        \end{prooftree}
+        $$
+
+    3. $\text{Glivenko}$ 嵌入定理：对任意公式 $\alpha$，$\mathbf{G3ipEa} \vdash \Rightarrow \alpha$ 当且仅当 $\mathbf{G3ip} \vdash \Rightarrow \neg \neg \alpha$，即 $\vdash_{\mathbf{HK}} \alpha$ 当且仅当 $\vdash_{\mathbf{HJ}} \neg \neg \alpha$
+        1. $\mathbf{G3ipEa} \vdash \Gamma \Rightarrow \beta$ 当且仅当 $\Gamma \vDash \beta$
+        2. 若 $\mathbf{G3ipEa} \vdash \Gamma \Rightarrow \beta$，那么在 $\mathbf{G3ipEa}$ 中存在 $\Gamma \Rightarrow \beta$ 的标准推导 $\mathcal{D}$ 使得 $\mathcal{D}$ 中应用 $\text{Ea}$ 得到的矢列后件都是 $\beta$
+        3. 若 $\mathbf{G3ipEa} \vdash \Gamma \Rightarrow \neg \beta$，那么 $\mathbf{G3ip} \vdash \Gamma \Rightarrow \neg \beta$
 
 ### 3.2.5 **G<sub>4</sub>** 型演算
+1. 矢列演算 $\mathbf{G4ip}$ 用以下规则替换 $\mathbf{G3ip}$ 的规则 $\rightarrow \Rightarrow$ 得来
+
+    $$
+    \displaylines{
+        \begin{prooftree}
+        \AxiomC{$p, \alpha, \Gamma \Rightarrow \beta$}
+        \RightLabel{ $(0\!\rightarrow \Rightarrow)$}
+        \UnaryInfC{$p, p \rightarrow \alpha, \Gamma \Rightarrow \beta$}
+        \end{prooftree} \\[0.5em]
+        \begin{prooftree}
+        \AxiomC{$\gamma_{1} \rightarrow\left(\gamma_{2} \rightarrow \alpha\right), \Gamma \Rightarrow \beta$}
+        \RightLabel{ $(\wedge\!\rightarrow \Rightarrow)$}
+        \UnaryInfC{$\left(\gamma_{1} \wedge \gamma_{2}\right) \rightarrow \alpha, \Gamma \Rightarrow \beta$}
+        \end{prooftree} \\[0.5em]
+        \begin{prooftree}
+        \AxiomC{$\gamma_{1} \rightarrow \alpha, \gamma_{2} \rightarrow \alpha, \Gamma \Rightarrow \beta$}
+        \RightLabel{ $(\vee\!\rightarrow \Rightarrow)$}
+        \UnaryInfC{$\left(\gamma_{1} \vee \gamma_{2}\right) \rightarrow \alpha, \Gamma \Rightarrow \beta$}
+        \end{prooftree} \\[0.5em]
+        \begin{prooftree}
+        \AxiomC{$\gamma_{1}, \gamma_{2} \rightarrow \alpha, \Gamma \Rightarrow \gamma_{2}$}
+        \AxiomC{$\alpha, \Gamma \Rightarrow \beta$}
+        \RightLabel{ $(\rightarrow \rightarrow \Rightarrow)$}
+        \BinaryInfC{$\left(\gamma_{1} \rightarrow \gamma_{2}\right) \rightarrow \alpha, \Gamma \Rightarrow \beta$}
+        \end{prooftree}
+    }
+    $$
+
+    $\mathbf{G4ip} \vdash \Gamma \Rightarrow \Delta$ 表示矢列 $\Gamma \Rightarrow \Delta$ 在 $\mathbf{G4ip}$ 中可推导
+
+    1. 规则 $0\!\rightarrow \Rightarrow, \wedge\!\rightarrow \Rightarrow, \vee\!\rightarrow \Rightarrow, \rightarrow \rightarrow \Rightarrow$ 在 $\mathbf{G3ip}$ 中可允许
+    2. 以下弱化规则在 $\mathbf{G4ip}$ 中保持高度可允许
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\Gamma \Rightarrow \beta$}
+        \RightLabel{ $(\text{w}\!\Rightarrow)$}
+        \UnaryInfC{$\alpha, \Gamma \Rightarrow \beta$}
+        \end{prooftree}
+        $$
+
+    3. 以下收缩规则与切割规则在 $\mathbf{G4ip}$ 中可允许
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\alpha, \alpha, \Gamma \Rightarrow \Delta$}
+        \RightLabel{ $(\text{c}\!\Rightarrow)$}
+        \UnaryInfC{$\alpha, \Gamma \Rightarrow \Delta$}
+        \end{prooftree} \quad
+        \begin{prooftree}
+        \AxiomC{$\Gamma \Rightarrow \alpha$}
+        \AxiomC{$\alpha, \Delta \Rightarrow \beta$}
+        \RightLabel{ (Cut)}
+        \BinaryInfC{$\Gamma, \Delta \Rightarrow \beta$}
+        \end{prooftree}
+        $$
+
+2. 对任意矢列 $\Gamma \Rightarrow \beta$，$\mathbf{G3ip} \vdash \Gamma \Rightarrow \beta$ 当且仅当 $\mathbf{G4ip} \vdash \Gamma \Rightarrow \beta$
 
 ## 3.2 一阶逻辑矢列演算
