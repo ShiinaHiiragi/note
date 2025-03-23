@@ -299,7 +299,7 @@
         2. 若存在模型 $\mathfrak{M}=(W, R, V)$ 和 $x \in W$ 使得 $\mathfrak{M}, x \vDash \Gamma$，则称公式集 $\Gamma$ 是可满足的
         3. 若对任意模型 $\mathfrak{M}$ 与 $x \in W$ 都有 $\mathfrak{M}, x \vDash \Gamma$ 蕴含 $\mathfrak{M}, x \vDash \alpha$，则称 $\alpha$ 是 $\Gamma$ 的直觉主义逻辑后承，记作 $\Gamma \vDash_{I} \alpha$
 
-    2. 若对任意 $x in W$ 都有 $\mathfrak{M}, x \vDash \alpha$，则称 $\mathfrak{M}$ 是 $\alpha$ 的模型，记作 $\mathfrak{M} \vDash \alpha$
+    2. 若对任意 $x \in W$ 都有 $\mathfrak{M}, x \vDash \alpha$，则称 $\mathfrak{M}$ 是 $\alpha$ 的模型，记作 $\mathfrak{M} \vDash \alpha$
         1. $\mathfrak{M} \vDash \alpha$ 当且仅当 $V(\alpha)=W$
         2. 若存在 $x \in W$ 使得 $\mathfrak{M}, x \not \vDash \alpha$，则称模型 $\mathfrak{M}$ 是公式 $\alpha$ 的反模型
         3. 设 $\Gamma$ 是公式集，若对任意 $\alpha \in \Gamma$ 都有 $\mathfrak{M} \vDash \alpha$，则记作 $\mathfrak{M} \vDash \Gamma$
@@ -651,8 +651,8 @@
         \end{prooftree}
         $$
 
-    2. 在 $\mathbf{H}_1$ 中的推导是由公式组成的有穷树结构 $\mathcal D$．用 $\mathcal D, \mathcal E$ 表示推导，记号 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\varphi\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\varphi$ 为根节点的推导
-        1. 每个节点 $\gamma$ 要么是公理，要么是从子节点运用规则 $\text{mp}$ 或 $\text{gen}$ 得到的．对于 $\mathrm{gen}$ 规则，需要保证以公式 $\alpha$ 为根节点的推导使用到的假设 $\Sigma_0$ 中不自由出现 $x$
+    2. 在 $\mathbf{H}_1$ 中的推导是由公式组成的有穷树结构 $\mathcal D$，每个节点 $\gamma$ 要么是公理，要么是从子节点运用规则 $\text{mp}$ 或 $\text{gen}$ 得到的．对于 $\mathrm{gen}$ 规则，需要保证以公式 $\alpha$ 为根节点的推导使用到的假设 $\Sigma_0$ 中不自由出现 $x$
+        1. 用 $\mathcal D, \mathcal E$ 等表示推导，记号 $\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\varphi\)} \end{prooftree}$ 表示 $\mathcal D$ 是以 $\varphi$ 为根节点的推导
         2. 如果对于公式 $\alpha_0, \alpha_1, \cdots, \alpha_n$ 有 $\vdash_{\mathbf H_1} \alpha_i\ (1 \leqslant i \leqslant n)$ 蕴含 $\vdash_{\mathbf H_1} \alpha_0$，则称以 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为前提且以 $\alpha_0$ 为结论的推理规则 $\begin{prooftree} \AxiomC{\(\alpha_1\)} \AxiomC{\(\alpha_2\)} \AxiomC{\(\cdots\)} \AxiomC{\(\alpha_n\)} \QuaternaryInfC{\(\alpha_0\)} \end{prooftree}$ 在 $\mathbf H_1$ 中可允许
             1. 如果存在公式集 $\Sigma$ 的有穷子集 $\Sigma_0$ 使得对公式 $\alpha$ 有 $\vdash_{\mathbf H_1} \bigwedge \Sigma_0 \to \alpha$，则称 $\alpha$ 是 $\Sigma$ 的句法后承，记作 $\Sigma \vdash_{\mathbf H_1} \alpha$
             2. 如果存在以公式 $\alpha$ 为根节点的推导，则称 $\alpha$ 在 $\mathbf H_1$ 可证，或称 $\alpha$ 是 $\mathbf H_1$ 的定理，记作 $\vdash_{\mathbf H_1} \alpha$

@@ -233,7 +233,7 @@
     1. 对 $w, v \in W$，若 $w R v$，则称 $v$ 是 $w$ 的 $R-$后继
         1. 定义 $R(w)=\{v \in W \mid R w v\}$，即 $w$ 的 $R-$后继集
         2. 称点 $w$ 是死点当且仅当 $R(w) = \varnothing$，$w$ 是活点当且仅当 $R(w) \neq \varnothing$
-        3. 称点 $w$ 是自返的当且仅当 $w \in R(w)$，$w$ 是非自返的当且仅当果 $w \notin R(w)$
+        3. 称点 $w$ 是自反的当且仅当 $w \in R(w)$，$w$ 是非自反的当且仅当果 $w \notin R(w)$
     2. 对任意 $X \subseteq W$，定义 $R[X]=\bigcup\{R(w) \mid w \in X\}$，且有 $R^{0}[X]=X, R^{n+1}[X]=R\left[R^{n}[X]\right]$
 3. $\text{Kripke}$ 模态逻辑语义学：定义 $\mathfrak{M}=(W, R, V)$ 为模型，其中 $(W, R)$ 是直觉主义框架，$V: \mathbf{Prop} \to \mathcal P(W)$ 是 $\mathfrak{M}$ 中的赋值
     1. 对任意 $w \in W$ 与公式 $\alpha$，归纳定义 $\mathfrak{M}, w \vDash \alpha$（公式 $\alpha$ 在模型 $\mathfrak{M}$ 中状态 $w$ 上为真）
@@ -297,6 +297,129 @@
 
         于是对任意框架类 $\mathcal{K}$，$\mathbf{Log} (\mathcal{K})$ 是正规模态逻辑
 
-    2. 若存在公式 $\alpha$ 使得 $\alpha \notin \mathbf{L}$，则称正规模态逻辑 $\mathbf{L}$ 是一致的
+    2. 若存在 $\Phi$ 的有穷子集 $\Phi_{0}$ 使得 $\bigwedge \Phi_{0} \rightarrow \alpha \in \mathbf{L}$，则称 $\alpha$ 是 $\Phi$ 的 $\mathbf{L}-$演绎后承，记作 $\Phi \vdash_{\mathbf{L}} \alpha$
+        1. 若存在公式 $\alpha$ 使得 $\alpha \notin \mathbf{L}$，则称正规模态逻辑 $\mathbf{L}$ 是一致的，易知任意非空框架类 $\mathcal{K}$ 的逻辑 $\mathbf{Log} (\mathcal{K})$ 是一致的
+        2. 若 $\Phi \nvdash_{\mathbf{L}} \perp$，则称公式集 $\Phi$ 是 $\mathbf{L}-$一致的
+            1. 若 $\Phi$ 是 $\mathbf{L}-$一致的并且不存在 $\mathbf{L}-$一致公式集 $\Psi$ 使得 $\Phi \subset \Psi$，则称公式集 $\Pi$ 是极大 $\mathbf{L}-$一致的
+            2. 对任意 $\mathbf{L}-$一致公式集 $\Phi$，存在极大 $\mathbf{L}-$一致公式集 $\Psi$ 使得 $\Phi \subseteq \Psi$
+    3. 定义极小正规模态逻辑 $\mathbf{K}$ 为模态公式集 $\mathbf{K}=\bigcap \{\mathbf{L} \mid \mathbf{L}$ 是正规模态逻辑$\}$，于是所有正规模态逻辑都是 $\mathbf{K}$ 的扩张
+        1. 对任意正规模态逻辑 $\mathbf{L}_{1}$ 与 $\mathbf{L}_{2}$，若 $\mathbf{L}_{1} \subseteq \mathbf{L}_{2}$，则称 $\mathbf{L}_{1}$ 是 $\mathbf{L}_{2}$ 的子逻辑或 $\mathbf{L}_{2}$ 是 $\mathbf{L}_{1}$ 的扩张
+        2. 对任意正规模态逻辑 $\mathbf{L}_{1}$ 与 $\mathbf{L}_{2}$，若 $\mathbf{L}_{1} \subset \mathbf{L}_{2}$，则称 $\mathbf{L}_{1}$ 是 $\mathbf{L}_{2}$ 的真子逻辑或 $\mathbf{L}_{2}$ 是 $\mathbf{L}_{1}$ 的真扩张
+    4. 任给正规模态逻辑 $\mathbf{L}$ 和公式集 $\Phi$，定义从 $\mathbf{L}$ 由 $\Phi$ 生成的正规模态逻辑 $\mathbf{L} \oplus \Phi=\bigcap \left\{\mathbf{L}^{\prime} \mid \mathbf{L} \cup \Phi \subseteq \mathbf{L}^{\prime}\right\}$
+        1. 若 $\Phi=\left\{\alpha_{1}, \cdots, \alpha_{n}\right\}$，则记 $\mathbf{L} \oplus \Phi$ 为 $\mathbf{L} \oplus \alpha_{1} \cdots \oplus \alpha_{n}$
+        2. 定义 $\mathbf{NExt}(\mathbf{L})$ 是由所有包含 $\mathbf{L}$ 的正规模态逻辑组成的逻辑类
+    5. 若 $\mathbf{L}=\mathbf{Log} (\mathbf{Fr}(\mathbf{L}))$，则称正规模态逻辑 $\mathbf{L}$ 是完全的
+
+5. 正规模态逻辑 $\mathbf{K}$ 的公理系统由公理模式和推理规则组成
+    1. 公理模式
+        1. （$\text{tau}$）：所有经典命题逻辑重言式的代入特例
+        2. （$\text{K}$）：$\square\left(p_{0} \rightarrow p_{1}\right) \rightarrow\left(\square p_{0} \rightarrow \square p_{1}\right)$
+
+        推理规则
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\alpha \to \beta$}
+        \AxiomC{$\alpha$}
+        \RightLabel{ $(\text{mp})$}
+        \BinaryInfC{$\beta$}
+        \end{prooftree} \quad
+        \begin{prooftree}
+        \AxiomC{$\alpha$}
+        \RightLabel{ $(\text{nec})$}
+        \UnaryInfC{$\square \alpha$}
+        \end{prooftree}
+        $$
+
+    2. 系统 $\mathbf{K}$ 中一个推导是由公式组成的有穷树结构 $\mathcal{D}$，其中每个节点或者是公理，或者是从子节点运用推理规则得到的
+        1. 用 $\mathcal{D}, \mathcal{E}$ 等表示推导，$|\mathcal{D}|$ 表示推导 $\mathcal{D}$ 的高度，$\begin{prooftree} \AxiomC{\(\mathcal D\)} \noLine \UnaryInfC{\(\alpha\)} \end{prooftree}$ 表示 $\mathcal{D}$ 是以 $\alpha$ 为根节点的推导
+        2. 若在 $\mathbf{K}$ 中存在以 $\alpha$ 为根节点的推导，则称 $\alpha$ 在 $\mathbf{K}$ 中可证（或称为 $\mathbf{K}$ 的定理），记作 $\vdash_{\mathbf{K}} \alpha$
+            1. 系统 $\mathbf{K}$ 的所有定理的集合记为 $\operatorname{Thm}(\mathbf{K})$
+            2. 若 $\vdash_{\mathbf{K}} \alpha_{i}(1 \leqslant i \leqslant n)$ 蕴涵 $\vdash_{\mathbf{K}} \alpha$，则称以 $\alpha_{1}, \cdots, \alpha_{n}$ 为前提并且以 $\alpha$ 为结论的规则 $\text{R}$ 在 $\mathbf{K}$ 中可允许
+            3. 若存在有穷子集 $\Phi_{0} \subseteq \Phi$ 使得 $\vdash_{\mathbf{K}} \bigwedge \Phi_{0} \rightarrow \alpha$，则称公式 $\alpha$ 是公式集 $\Phi$ 在 $\mathbf{K}$ 中的演绎后承，记作 $\Phi \vdash_{\mathbf{K}} \alpha$
+        3. 以下规则在 $\mathbf{K}$ 可允许
+
+            $$
+            \begin{prooftree}
+            \AxiomC{$\alpha \rightarrow \beta$}
+            \RightLabel{ $(\square m)$}
+            \UnaryInfC{$\square \alpha \rightarrow \square \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\alpha \rightarrow \beta$}
+            \RightLabel{ $(\lozenge m)$}
+            \UnaryInfC{$\lozenge \alpha \rightarrow \lozenge \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\alpha \leftrightarrow \beta$}
+            \RightLabel{ (re)}
+            \UnaryInfC{$\gamma \leftrightarrow \gamma(\alpha / \beta)$}
+            \end{prooftree}
+            $$
+
+            其中 $\gamma(\alpha / \beta)$ 是使用 $\alpha$ 替换 $\gamma$ 中 $\beta$ 的一次或多次出现得到的
+
+        4. 以下公式在 $\mathbf{K}$ 中可证
+            1. $\square(\alpha \wedge \beta) \leftrightarrow(\square \alpha \wedge \square \beta)$
+            2. $\square \top \leftrightarrow \top$
+            3. $\lozenge(\alpha \vee \beta) \leftrightarrow(\lozenge \alpha \vee \lozenge \beta)$
+            4. $\lozenge \perp \leftrightarrow \perp$
+            5. $\square \alpha \wedge \lozenge \beta \rightarrow \lozenge(\alpha \wedge \beta)$
+            6. $\square(\alpha \vee \beta) \rightarrow(\square \alpha \vee \lozenge \beta)$
+            7. $(\square \alpha \vee \square \beta) \rightarrow \square(\alpha \vee \beta)$
+
+6. 在系统 $\mathbf{K}$ 上增加公理模式可得 $\mathbf{K}$ 的扩张
+    1. $(\text{D}): \lozenge T$，称 $\mathbf{Fr}(\text{D})$ 为持续框架类
+    2. $(\text{T}): \square p \rightarrow p$，称 $\mathbf{Fr}(\text{T})$ 为自反框架类
+    3. $(4): \square p \rightarrow \square \square p$，称 $\mathbf{Fr}(4)$ 为对称框架类
+    4. $(\text{B}): p \rightarrow \square \lozenge p$，称 $\mathbf{Fr}(\text{B})$ 为传递框架类
+    5. $(5): \lozenge p \rightarrow \square \lozenge p$，称 $\mathbf{Fr}(5)$ 为欧性框架类
+
+    以上公式的框架类都是一阶可定义的
+
+    1. 常见的模态系统
+        1. $\mathbf{K D} = \mathbf{K} \oplus \lozenge \top$
+        2. $\mathbf{K T} = \mathbf{K} \oplus \square p \rightarrow p$
+        3. $\mathbf{K 4} = \mathbf{K} \oplus \square p \rightarrow \square \square p$
+        4. $\mathbf{K B} = \mathbf{K} \oplus p \rightarrow \square \lozenge p$
+        5. $\mathbf{K 5} = \mathbf{K} \oplus \lozenge p \rightarrow \square \lozenge p$
+        6. $\mathbf{K D 4} = \mathbf{K D} \oplus \square p \rightarrow \square \square p$
+        7. $\mathbf{K D 5} = \mathbf{K D} \oplus \lozenge p \rightarrow \square \lozenge p$
+        8. $\mathbf{K D 4 5} = \mathbf{K D 4} \oplus \lozenge p \rightarrow \square \lozenge p$
+        9.  $\mathbf{K D B} = \mathbf{K D} \oplus p \rightarrow \square \lozenge p$
+        10. $\mathbf{K T B} = \mathbf{K T} \oplus p \rightarrow \square \lozenge p$
+        11. $\mathbf{K 4 B} = \mathbf{K 4} \oplus p \rightarrow \square \lozenge p$
+        12. $\mathbf{K 4 5} = \mathbf{K 4} \oplus \lozenge p \rightarrow \square \lozenge p$
+        13. $\mathbf{S 4} = \mathbf{K 4} \square p \rightarrow p$
+        14. $\mathbf{S 5} = \mathbf{K T} \oplus \lozenge p \rightarrow \square \lozenge p$
+
+    2. 对任意模态系统 $\mathbf{S}$，记号 $\vdash_{\mathbf{S}} \alpha$ 表示 $\alpha$ 在 $\mathbf{S}$ 中可证（或 $\alpha$ 是 $\mathbf{S}$ 的定理），$\operatorname{Thm}(\mathbf{S})$ 表示系统 $\mathbf{S}$ 的所有定理的集合
+    3. 对任意模态系统 $\mathbf{S}_{1}, \mathbf{S}_{2}$，若 $\operatorname{Thm}\left(\mathbf{S}_{1}\right) \subseteq \operatorname{Thm}\left(\mathbf{S}_{2}\right)$，则称 $\mathbf{S}_{2}$ 是 $\mathbf{S}_{1}$ 的扩张，或称 $\mathbf{S}_{1}$ 是 $\mathbf{S}_{2}$ 的子系统，记作 $\mathbf{S}_{1} \subseteq \mathbf{S}_{2}$
+
+        对任意模态系统 $\mathbf{S}_{1}, \mathbf{S}_{2}$，若 $\operatorname{Thm}\left(\mathbf{S}_{1}\right) \subset \operatorname{Thm}\left(\mathbf{S}_{2}\right)$，则称 $\mathbf{S}_{2}$ 是 $\mathbf{S}_{1}$ 的真扩张，或称 $\mathbf{S}_{1}$ 是 $\mathbf{S}_{2}$ 的真系统，记作 $\mathbf{S}_{1} \subset \mathbf{S}_{2}$
+
+    4. 对任意模态系统 $\mathbf{S}$，若 $\operatorname{Thm}(\mathbf{S})$ 是完全的，则称模态系统 $\mathbf{S}$ 是完全的
+        1. 对任意正规模态逻辑 $\mathbf{L}$，若典范框架 $\mathfrak{F}^{\mathbf{L}} \vDash \mathbf{L}$，则 $\mathbf{L}$ 是完全的
+        2. $\mathbf{K}, \mathbf{K D}, \mathbf{K T}, \mathbf{K 4}, \mathbf{K B}, \mathbf{K 5}, \mathbf{K D 4}, \mathbf{K D 5}, \mathbf{K D 4 5}, \mathbf{K D B}, \mathbf{K T B}, \mathbf{K 4 B}, \mathbf{K 4 5}, \mathbf{S 4}, \mathbf{S 5}$ 都是完全的
+
+7. 一个模态词是由 $\square, \lozenge, \neg$ 组成的有突长度的符号序列，所有模态词的集合是 ${\displaystyle \bigcup_{n<\omega}\{\square, \lozenge, \neg\}^{n}}$
+    1. $\{\square, \lozenge, \neg\}^{n}$ 是长度为 $n$ 的模态词，长度为 $0$ 的模态词记为 $\varepsilon$，称为空模态词
+    2. 用 $M, N$ 等表示模态词（可带下标），$\mathbf{S}$ 为任意模态系统
+        1. 称模态词 $M$ 和 $N$ 在 $\mathbf{S}$ 中等价当且仅当 $\vdash_{\mathbf{S}} M p \leftrightarrow N p$，可知系统 $\mathbf{K}$ 中有无穷多个不等价的模态词
+        2. 称模态词 $M$ 从属于 $N$ 当且仅当 $\vdash_{\mathbf{S}} M p \rightarrow N p$
+8. 正规模态逻辑 $\mathbf{L}$ 的典范模型 $\mathfrak{M}^{\mathbf{L}}=(W^{\mathbf{L}}, R^{\mathbf{L}}, V^{\mathbf{L}})$ 定义为
+    1. $W^{\mathbf{L}}=\{u \mid u$ 是极大 $\mathbf{L}-$一致公式集$\}$
+    2. $u R^{\mathbf{L}} v$ 当且仅当 $\{\alpha \mid \square \alpha \in u\} \subseteq v$
+    3. 对每个命题变元 $p \in \mathbf{Prop}$，$V^{\mathbf{L}}(p)=\left\{u \in W^{\mathbf{L}} \mid p \in u\right\}$
+
+    称典范模型中的框架 $\mathfrak{F}^{\mathbf{L}}=(W^{\mathbf{L}}, R^{\mathbf{L}})$ 为 $\mathbf{L}$ 的典范框架
+
+    1. 对正规模态逻辑 $\mathbf{L}$ 的典范模型 $\mathfrak{M}^{\mathbf{L}}=\left(W^{\mathbf{L}}, R^{\mathbf{L}}, V^{\mathbf{L}}\right)$
+        1. $u R^{\mathbf{L}} v$ 当且仅当 $\{\lozenge \alpha \mid \alpha \in v\} \subseteq u$
+        2. $u R^{\mathbf{L}} v$ 当且仅当 $\{\neg \square \alpha \mid \neg \alpha \in v\} \subseteq u$
+        3. $u R^{\mathbf{L}} v$ 当且仅当 $\{\neg \alpha \mid \neg \lozenge \alpha \in u\} \subseteq v$
+    2. 对典范模型 $\mathfrak{M}^{\mathbf{L}}=\left(W^{\mathbf{L}}, R^{\mathbf{L}}, V^{\mathbf{L}}\right)$ 和 $u \in W^{\mathbf{L}}$，若 $\square \alpha \notin u$，则存在 $v \in W^{\mathbf{L}}$ 使得 $u R^{\mathbf{L}} v$ 并且 $\alpha \notin v$
+    3. 对任意正规模态逻辑 $\mathbf{L}$ 的典范模型 $\mathfrak{M}^{\mathbf{L}}$ 和公式 $\alpha$ 有 $\mathfrak{M}^{\mathbf{L}}, u \vDash \alpha$ 当且仅当 $\alpha \in u$
+    4. 若对任意正规模态逻辑 $\mathbf{L}$ 使得 $\alpha \in \mathbf{L}$ 都有 $\mathfrak{F}^{\mathbf{L}} \vDash \alpha$，则称 $\alpha$ 是典范的．可知 $(\text{D}), (\text{T}), (4), (\text{B}), (5)$ 都是典范的
 
 ## 4.3 代数逻辑
