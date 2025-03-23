@@ -527,3 +527,118 @@
             2. 对任意偏序 $\tau$ 型代数类 $\mathcal{K}$ 和项 $\alpha, \beta, \chi \in T$，若 $\mathcal{K} \vDash \alpha \approx \beta$，则 $\mathcal{K} \vDash \chi \approx \chi(\alpha / \beta)$
 
 ### 4.3.2 格代数逻辑
+1. 定义 $\mathbb{L}$ 为所有格代数 $\mathbf{A} = (A, \{\wedge, \vee\})$ 的类，其后承系统 $\mathbf{L}$ 由如下公理和规则组成
+    1. 公理：$p \vdash p \ (\text{Id})$
+
+        逻辑规则（$i = 1, 2$，结论中带二元联结词的项称为主项）
+
+        $$
+        \displaylines{
+            \begin{prooftree}
+            \AxiomC{$\alpha_{i} \vdash \beta$}
+            \RightLabel{ $(\wedge\!\vdash)$}
+            \UnaryInfC{$\alpha_{1} \wedge \alpha_{2} \vdash \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\alpha \vdash \beta_{1}$}
+            \AxiomC{$\alpha \vdash \beta_{2}$}
+            \RightLabel{ $(\vdash\!\wedge)$}
+            \BinaryInfC{$\alpha \vdash \beta_{1} \wedge \beta_{2}$}
+            \end{prooftree} \\[0.5em]
+            \begin{prooftree}
+            \AxiomC{$\alpha_{1} \vdash \beta$}
+            \AxiomC{$\alpha_{2} \vdash \beta$}
+            \RightLabel{ $(\vee\!\vdash)$}
+            \BinaryInfC{$\alpha_{1} \vee \alpha_{2} \vdash \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\alpha \vdash \beta_{i}$}
+            \RightLabel{ $(\vdash\!\vee)$}
+            \UnaryInfC{$\alpha \vdash \beta_{1} \vee \beta_{2}$}
+            \end{prooftree}
+        }
+        $$
+
+        切割规则
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\alpha \vdash \beta$}
+        \AxiomC{$\beta \vdash \gamma$}
+        \RightLabel{ (Cut)}
+        \BinaryInfC{$\alpha \vdash \gamma$}
+        \end{prooftree}
+        $$
+
+    2. 若在 $\mathbf{L}$ 中存在以 $\alpha \vdash \beta$ 为根节点的推导，则称后承 $\alpha \vdash \beta$ 在 $\mathbf{L}$ 中可推导，记作 $\alpha \vdash_{\mathbf{L}} \beta$
+        1. $\alpha \vdash_{\mathbf{L}} \alpha$
+        2. $\alpha \wedge(\beta \wedge \gamma) \vdash_{\mathbf{L}}(\alpha \wedge \beta) \wedge \gamma$
+        3. $(\alpha \wedge \beta) \wedge \gamma \vdash_{\mathbf{L}} \alpha \wedge(\beta \wedge \gamma)$
+        4. $\alpha \vee(\beta \vee \gamma) \vdash_{\mathbf{L}}(\alpha \vee \beta) \vee \gamma$
+        5. $(\alpha \vee \beta) \vee \gamma \vdash_{\mathbf{L}} \alpha \vee(\beta \vee \gamma)$
+        6. $\alpha \wedge \beta \vdash_{\mathbf{L}} \beta \wedge \alpha$
+        7. $\alpha \vee \beta \vdash_{\mathbf{L}} \beta \vee \alpha$
+        8. $\alpha \wedge \alpha \vdash_{\mathbf{L}} \alpha$
+        9. $\alpha \vdash_{\mathbf{L}} \alpha \wedge \alpha$
+        10. $\alpha \vee \alpha \vdash_{\mathbf{L}} \alpha$
+        11. $\alpha \vdash_{\mathbf{L}} \alpha \vee \alpha$
+        12. $\alpha \wedge(\alpha \vee \beta) \vdash_{\mathbf{L}} \alpha$
+        13. $\alpha \vdash_{\mathbf{L}} \alpha \wedge(\alpha \vee \beta)$
+        14. $\alpha \vee(\alpha \wedge \beta) \vdash_{\mathbf{L}} \alpha$
+        15. $\alpha \vdash_{\mathbf{L}} \alpha \vee(\alpha \wedge \beta)$
+        16. $(\alpha \wedge \beta) \vee(\alpha \wedge \gamma) \vdash_{\mathbf{L}} \alpha \wedge(\beta \vee \gamma)$
+        17. $\alpha \vee(\beta \wedge \gamma) \vdash_{\mathbf{L}}(\alpha \vee \beta) \wedge(\alpha \vee \gamma)$
+
+    3. 以下规则在 $\mathbf{L}$ 中可允许
+
+        $$
+        \displaylines{
+            \begin{prooftree}
+            \AxiomC{$\alpha \vdash \beta$}
+            \RightLabel{ $(\wedge \mathrm{M})$}
+            \UnaryInfC{$\alpha \wedge \gamma \vdash \beta \wedge \gamma$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\alpha \vdash \beta$}
+            \RightLabel{ $(\vee \mathrm{M})$}
+            \UnaryInfC{$\alpha \vee \gamma \vdash \beta \vee \gamma$}
+            \end{prooftree} \\[0.5em]
+            \begin{prooftree}
+            \AxiomC{$\alpha \vdash \beta$}
+            \AxiomC{$\gamma \vdash \delta$}
+            \RightLabel{ $(\wedge)$}
+            \BinaryInfC{$\alpha \wedge \gamma \vdash \beta \wedge \delta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\alpha \vdash \beta$}
+            \AxiomC{$\gamma \vdash \delta$}
+            \RightLabel{ $(\vee)$}
+            \BinaryInfC{$\alpha \vee \gamma \vdash \beta \vee \delta$}
+            \end{prooftree}
+        }
+        $$
+
+    4. 可靠性：若 $\alpha \vdash_{\mathbf{L}} \beta$，则 $\alpha \vDash_{\mathbb{L}} \beta$
+    5. 完全性：若 $\alpha \vDash_{\mathbb{L}} \beta$，则 $\alpha \vdash_{\mathbf{L}} \beta$
+    6. 切割消除：若 $\alpha \vdash_{\mathbf{L}} \beta$，则 $\alpha \vdash \beta$ 在 $\mathbf{L}$ 中有不使用 $\text{Cut}$ 的推导
+        1. 设 $\mathbf{L}^{*}$ 是从 $\mathbf{L}$ 删除切割规则 $\text{Cut}$ 得到的后承演算，则对任意项 $\alpha, \beta$，$\alpha \vdash_{\mathbf{L}} \beta$ 当且仅当 $\alpha \vdash_{\mathbf{L}^{*}} \beta$
+        2. 子项性质：设 $\alpha \vdash_{\mathbf{L}} \beta$，则 $\alpha \vdash \beta$ 在 $\mathbf{L}$ 中有推导 $\mathcal{D}$ 使得其中出现的每个项都属于 $\operatorname{ST}(\alpha) \cup \operatorname{ST}(\beta)$
+        3. $\mathbf{L}$ 是可判定的
+
+2. 定义 $\mathbb{BL}$ 为所有有界格代数 $\mathbf{A} = (A, \{\wedge, \vee, \bot, \top\})$ 的类，其后承系统 $\mathbf{BL}$ 在 $\mathbf{L}$ 上增加如下公理
+    1. $\alpha \vdash \top \ (\top)$
+    2. $\perp \vdash \alpha \ (\perp)$
+
+    $\alpha \vdash_{\mathbf{BL}} \beta$ 表示 $\alpha \vdash \beta$ 在 $\mathbf{BL}$ 中可推导
+
+    1. 对任意 $\alpha, \beta$，$\alpha \vdash_{\mathbf{BL}} \beta$ 当且仅当 $\alpha \vDash_{\mathbb{BL}} \beta$
+    2. 若 $\alpha \vdash_{\mathbf{BL}} \beta$，则 $\alpha \vdash \beta$ 在 $\mathbf{BL}$ 中有不使用 $\text{Cut}$ 的推导
+        1. 设 $\alpha \vdash_{\mathbf{BL}} \beta$，则 $\alpha \vdash \beta$ 在 $\mathbf{BL}$ 中有推导 $\mathcal{D}$ 使得其中出现的每个项都属于 $\operatorname{ST}(\alpha) \cup \operatorname{ST}(\beta)$
+        2. 后承演算 $\mathbf{BL}$ 是可判定的
+
+3. 定义 $\mathbb{DL}$ 为所有分配格代数 $\mathbf{A} = (A, \{\wedge, \vee\})$ 的类，其后承系统 $\mathbf{DL}$ 在 $\mathbf{L}$ 上增加公理 $\alpha \wedge(\beta \vee \gamma) \vdash(\alpha \wedge \beta) \vee(\alpha \wedge \gamma) \ (\text{D})$
+
+    $\alpha \vdash_{\mathbf{BL}} \beta$ 表示 $\alpha \vdash \beta$ 在 $\mathbf{BL}$ 中可推导
+
+    1. 对任意 $\alpha, \beta$，$\alpha \vdash_{\mathbf{DL}} \beta$ 当且仅当 $\alpha \vDash_{\mathbb{DL}} \beta$
+    2. $\mathbf{DL}$ 没有切割消除性质
