@@ -92,8 +92,8 @@
 
 4. 公理系统 $\mathbf H_2$：二阶语言没有任何能行的演绎系统对标准语义完全，但一阶演绎系统关于二阶语言有自然扩充
     1. 公理与公理模式：在 $\mathbf H_1$ 附加如下公理
-        1. $\text{A}_6: \forall X\alpha \to \alpha(T/X)$，即将 $n$ 元变谓词符 $X$ 替换为 $T$，后者是对 $\alpha$ 中 $X$ 可带入的 $n$ 元变谓词符号或 $n$ 元谓词符号
-        2. $\text{A}_7: \forall f\alpha \to \alpha(p/f)$，即将 $n$ 元变函数符 $f$ 替换为 $p$，后者是对 $\alpha$ 中 $f$ 可带入的 $n$ 元变函数符或 $n$ 元函数符
+        1. $\text{A}_6: \forall X\alpha \to \alpha(T/X)$，即将 $n$ 元变谓词符 $X$ 替换为 $T$，后者是对 $\alpha$ 中 $X$ 可代入的 $n$ 元变谓词符号或 $n$ 元谓词符号
+        2. $\text{A}_7: \forall f\alpha \to \alpha(p/f)$，即将 $n$ 元变函数符 $f$ 替换为 $p$，后者是对 $\alpha$ 中 $f$ 可代入的 $n$ 元变函数符或 $n$ 元函数符
         3. 概括公理模式 $\text{A}_8: \exists X \forall x_{1}, x_{2}, \forall x_{2} \cdots \forall x_{n}\left(X\left(x_{1}, x_{2}, \cdots, x_{n}\right) = \alpha\left(x_{1}, \cdots, x_{n}\right)\right), X \notin \mathrm{FV}(\alpha)$
         4. 选择公理 $\text{A}_9:$ 设 $X$ 为 $n+1$ 元的变谓词符，$f$ 是 $n$ 元的变函数符，则有
 
@@ -235,5 +235,68 @@
         2. 称点 $w$ 是死点当且仅当 $R(w) = \varnothing$，$w$ 是活点当且仅当 $R(w) \neq \varnothing$
         3. 称点 $w$ 是自返的当且仅当 $w \in R(w)$，$w$ 是非自返的当且仅当果 $w \notin R(w)$
     2. 对任意 $X \subseteq W$，定义 $R[X]=\bigcup\{R(w) \mid w \in X\}$，且有 $R^{0}[X]=X, R^{n+1}[X]=R\left[R^{n}[X]\right]$
+3. $\text{Kripke}$ 模态逻辑语义学：定义 $\mathfrak{M}=(W, R, V)$ 为模型，其中 $(W, R)$ 是直觉主义框架，$V: \mathbf{Prop} \to \mathcal P(W)$ 是 $\mathfrak{M}$ 中的赋值
+    1. 对任意 $w \in W$ 与公式 $\alpha$，归纳定义 $\mathfrak{M}, w \vDash \alpha$（公式 $\alpha$ 在模型 $\mathfrak{M}$ 中状态 $w$ 上为真）
+        1. $\mathfrak{M}, w \vDash p$ 当且仅当 $w \in V(p)$
+        2. $\mathfrak{M}, w \not \vDash \perp$
+        3. $\mathfrak{M}, w \vDash \alpha \wedge \beta$ 当且仅当 $\mathfrak{M}, w \vDash \alpha$ 且 $\mathfrak{M}, w \vDash \beta$
+        4. $\mathfrak{M}, w \vDash \alpha \vee \beta$ 当且仅当 $\mathfrak{M}, w \vDash \alpha$ 或 $\mathfrak{M}, w \vDash \beta$
+        5. $\mathfrak{M}, w \vDash \alpha \rightarrow \beta$ 当且仅当 $\mathfrak{M}, w \not \vDash \alpha$ 或者 $\mathfrak{M}, w \vDash \beta$
+        6. $\mathfrak{M}, w \vDash \square \alpha$ 当且仅当任意 $u \in R(w)$ 都有 $\mathfrak{M}, u \vDash \alpha$
+
+        用 $\mathfrak{M}, w \not \vDash \alpha$ 表示 $\alpha$ 在 $\mathfrak{M}$ 中点 $w$ 上为假．设 $\Phi$ 为公式集，定义 $V(\alpha)=\{w \in W \mid \mathfrak{M}, w \vDash \alpha\}$
+
+        1. 若对任意 $\alpha \in \Phi$ 都有 $\mathfrak{M}, w \vDash \alpha$，则记作 $\mathfrak{M}, w \vDash \Phi$
+        2. $\mathfrak{M}, w \vDash \lozenge \alpha$ 当且仅当存在 $u \in R(w)$ 使得 $\mathfrak{M}, u \vDash \alpha$
+            1. $\mathfrak{M}, w \vDash \square^{n} \alpha$ 当且仅当 $R^{n}(w) \subseteq V(\alpha)$
+            2. $\mathfrak{M}, w \vDash \lozenge^{n} \alpha$ 当且仅当 $R^{n}(w) \cap V(\alpha) \neq \varnothing$
+
+    2. 若对任意 $w \in W$ 都有 $\mathfrak{M}, w \vDash \alpha$（即 $V(\alpha)=W$），则称 $\mathfrak{M}$ 是 $\alpha$ 的模型，记作 $\mathfrak{M} \vDash \alpha$
+        1. 设 $\Phi$ 是公式集，若对任意 $\alpha \in \Phi$ 都有 $\mathfrak{M} \vDash \alpha$，则记作 $\mathfrak{M} \vDash \Phi$
+        2. 若对任意赋值 $V$ 都有 $\mathfrak{M}, w \vDash \alpha$，则称公式 $\alpha$ 在框架 $\mathfrak{F}=(W, R)$ 中 $w$ 有效，记作 $\mathfrak{F}, w \vDash \alpha$
+        3. 设 $\Phi$ 是公式集，若对任意 $\alpha \in \Phi$ 都有 $\mathfrak{F}, w \vDash \alpha$，则记作 $\mathfrak{F}, w \vDash \Phi$
+    3. 若对任意赋值 $V$ 都有 $\mathfrak{M} \vDash \alpha$，则称公式 $\alpha$ 在框架 $\mathfrak{F}=(W, R)$ 有效，记作 $\mathfrak{F} \vDash \alpha$
+        1. 设 $\Phi$ 是公式集，若对任意 $\alpha \in \Phi$ 都有 $\mathfrak{F} \vDash \alpha$，则记作 $\mathfrak{F} \vDash \Phi$
+        2. 设 $\mathcal{K}$ 是框架类，若对任意 $\mathfrak{F} \in \mathcal{K}$ 都有 $\mathfrak{F} \vDash \alpha$，则记作 $\mathcal{K} \vDash \alpha$
+        3. 设 $\Phi$ 是公式集，$\mathcal{K}$ 是框架类，若对任意 $\mathfrak{F} \in \mathcal{K}$ 都有 $\mathfrak{F} \vDash \Phi$，则记作 $\mathcal{K} \vDash \Phi$
+    4. 任给模型 $\mathfrak{M}=(W, R, V)$，设 $\varnothing \neq X \subseteq W$，定义 $\mathfrak{M}$ 的 $X-$子模型 $\mathfrak{M} \upharpoonright X= \left(X, R^{X}, V^{X}\right)$
+        1. $R^{X}=R \cap(X \times X)$
+        2. 对每个命题变元 $p \in \operatorname{Prop}, V^{X}(p)=V(p) \cap X$
+
+        对任意 $n \geqslant 0$，设 $X^{n}={\displaystyle \bigcup_{k \leqslant n} R^{k}(w)}$ 且 $\mathfrak{N}^{n}$ 是 $\mathfrak{M}$ 的 $X^{n}-$子模型．对任意 $\alpha$，若 $\operatorname{md}(\alpha) \leqslant n$，则 $\mathfrak{M}, w \vDash \alpha$ 当且仅当 $\mathfrak{N}^{n}, w \vDash \alpha$
+
+    5. 令 $\mathcal{K}_{0}$ 是由所有框架组成的框架类
+        1. 定义公式 $\alpha$ 的框架类义为 $\mathbf{Fr}(\alpha)=\{\mathfrak{F} \mid \mathfrak{F} \vDash \alpha\}$，公式集 $\Gamma$ 的框架类为 $\mathbf{Fr}(\Gamma)= \bigcap\{\mathbf{Fr}(\alpha) \mid \alpha \in \Gamma\}$
+        2. 框架类 $\mathcal{K}$ 的逻辑定义为 $\mathbf{Log} (\mathcal{K})=\{\alpha \mid \mathcal{K} \vDash \alpha\}$
+
+        !!! note "框架类的性质"
+            对任意公式集 $\Phi, \Phi_{1}, \Phi_{2}$ 与框架类 $\mathcal{K}, \mathcal{K}_{1}, \mathcal{K}_{2}$
+
+            1. 若 $\Phi_{1} \subseteq \Phi_{2}$，则 $\mathbf{Fr}\left(\Phi_{2}\right) \subseteq \mathbf{Fr}\left(\Phi_{1}\right)$
+            2. 若 $\mathcal{K}_{1} \subseteq \mathcal{K}_{2}$，则 $\mathbf{Log} \left(\mathcal{K}_{2}\right) \subseteq \mathbf{Log} \left(\mathcal{K}_{1}\right)$
+            3. $\Phi \subseteq \mathbf{Log} (\mathbf{Fr}(\Phi))$ 并且 $\mathcal{K} \subseteq \mathbf{Fr}(\mathbf{Log} (\mathcal{K}))$
+            4. $\mathbf{Log} (\mathbf{Fr}(\Phi))=\Phi$ 当且仅当存在框架类 $\mathcal{K}$ 使得 $\Phi=\mathbf{Log} (\mathcal{K})$
+            5. $\mathbf{Fr}(\mathbf{Log} (\mathcal{K}))=\mathcal{K}$ 当且仅当存在公式集 $\Phi$ 使得 $\mathcal{K}=\mathbf{Fr}(\Phi)$
+
+4. 一个正规模态逻辑是模态公式集 $\mathbf{L}$ 使得
+    1. （$\text{tau}$）：所有经典命题逻辑重言式的代入特例都属于 $\mathbf{L}$
+    2. （$\text{K}$）：$\square\left(p_{0} \rightarrow p_{1}\right) \rightarrow\left(\square p_{0} \rightarrow \square p_{1}\right) \in \mathbf{L}$
+
+    且 $\mathbf{L}$ 对如下规则封闭
+
+    1. 分离规则（$\text{mp}$）：如果 $\alpha \in \mathbf{L}$ 并且 $\alpha \rightarrow \beta \in \mathbf{L}$，那么 $\beta \in \mathbf{L}$
+    2. 代入规则（$\text{sub}$）：如果 $\alpha \in \mathbf{L}$，那么对任意代入 $\sigma$ 都有 $\sigma(\alpha) \in \mathbf{L}$
+    3. 必然化规则（$\text{nec}$）：如果 $\alpha \in \mathbf{L}$，那么 $\square \alpha \in \mathbf{L}$
+
+    若 $\alpha \in \mathbf{L}$，则称公式 $\alpha$ 是 $\mathbf{L}$ 的定理，记作 $\vdash_{\mathbf{L}} \alpha$
+
+    1. 对任意框架 $\mathfrak{F}=(W, R)$ 都有
+        1. 如果 $\mathfrak{F} \vDash \alpha$ 并且 $\mathfrak{F} \vDash \alpha \rightarrow \beta$，那么 $\mathfrak{F} \vDash \beta$
+        2. 如果 $\mathfrak{F} \vDash \alpha$，那么 $\mathfrak{F} \vDash \sigma(\alpha)$，其中 $\sigma$ 为代入
+        3. 如果 $\mathfrak{F} \vDash \alpha$，那么 $\mathfrak{F} \vDash \square \alpha$
+
+        于是对任意框架类 $\mathcal{K}$，$\mathbf{Log} (\mathcal{K})$ 是正规模态逻辑
+
+    2. 若存在公式 $\alpha$ 使得 $\alpha \notin \mathbf{L}$，则称正规模态逻辑 $\mathbf{L}$ 是一致的
 
 ## 4.3 代数逻辑

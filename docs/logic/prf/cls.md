@@ -299,7 +299,7 @@
         2. 若存在模型 $\mathfrak{M}=(W, R, V)$ 和 $x \in W$ 使得 $\mathfrak{M}, x \vDash \Gamma$，则称公式集 $\Gamma$ 是可满足的
         3. 若对任意模型 $\mathfrak{M}$ 与 $x \in W$ 都有 $\mathfrak{M}, x \vDash \Gamma$ 蕴含 $\mathfrak{M}, x \vDash \alpha$，则称 $\alpha$ 是 $\Gamma$ 的直觉主义逻辑后承，记作 $\Gamma \vDash_{I} \alpha$
 
-    2. 若对任意 $x$ 都有 $\mathfrak{M}, x \vDash \alpha$，则称 $\mathfrak{M}$ 是 $\alpha$ 的模型，记作 $\mathfrak{M} \vDash \alpha$
+    2. 若对任意 $x in W$ 都有 $\mathfrak{M}, x \vDash \alpha$，则称 $\mathfrak{M}$ 是 $\alpha$ 的模型，记作 $\mathfrak{M} \vDash \alpha$
         1. $\mathfrak{M} \vDash \alpha$ 当且仅当 $V(\alpha)=W$
         2. 若存在 $x \in W$ 使得 $\mathfrak{M}, x \not \vDash \alpha$，则称模型 $\mathfrak{M}$ 是公式 $\alpha$ 的反模型
         3. 设 $\Gamma$ 是公式集，若对任意 $\alpha \in \Gamma$ 都有 $\mathfrak{M} \vDash \alpha$，则记作 $\mathfrak{M} \vDash \Gamma$
