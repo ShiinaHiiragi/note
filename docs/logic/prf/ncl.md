@@ -636,9 +636,12 @@
         1. 设 $\alpha \vdash_{\mathbf{BL}} \beta$，则 $\alpha \vdash \beta$ 在 $\mathbf{BL}$ 中有推导 $\mathcal{D}$ 使得其中出现的每个项都属于 $\operatorname{ST}(\alpha) \cup \operatorname{ST}(\beta)$
         2. 后承演算 $\mathbf{BL}$ 是可判定的
 
-3. 定义 $\mathbb{DL}$ 为所有分配格代数 $\mathbf{A} = (A, \{\wedge, \vee\})$ 的类，其后承系统 $\mathbf{DL}$ 在 $\mathbf{L}$ 上增加公理 $\alpha \wedge(\beta \vee \gamma) \vdash(\alpha \wedge \beta) \vee(\alpha \wedge \gamma) \ (\text{D})$
+3. 定义 $\mathbb{DL}$ 为所有分配格代数 $\mathbf{A} = (A, \{\wedge, \vee\})$ 的类，其后承系统 $\mathbf{DL}$ 在 $\mathbf{L}$ 上增加公理 $\alpha \wedge(\beta \vee \gamma) \vdash(\alpha \wedge \beta) \vee(\alpha \wedge \gamma) \ (\text{D})$ 得来
 
     $\alpha \vdash_{\mathbf{BL}} \beta$ 表示 $\alpha \vdash \beta$ 在 $\mathbf{BL}$ 中可推导
 
     1. 对任意 $\alpha, \beta$，$\alpha \vdash_{\mathbf{DL}} \beta$ 当且仅当 $\alpha \vDash_{\mathbb{DL}} \beta$
     2. $\mathbf{DL}$ 没有切割消除性质
+
+4. 定义 $\mathbb{BDL}$ 为所有有界分配格代数 $\mathbf{A} = (A, \{\wedge, \vee, \bot, \top\})$ 的类，其后承系统 $\mathbf{BDL}$ 在 $\mathbf{BL}$ 上增加公理 $(\text{D})$ 得来
+5. 定义 $\mathbb{B}$ 为所有 $\text{Boole}$ 代数 $\mathbf{A} = (A, \{\wedge, \vee, \bot, \top, '\})$ 的类，其后承系统 $\mathbf{B}$ 由如下公理和规则组成
