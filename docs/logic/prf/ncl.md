@@ -645,3 +645,60 @@
 
 4. 定义 $\mathbb{BDL}$ 为所有有界分配格代数 $\mathbf{A} = (A, \{\wedge, \vee, \bot, \top\})$ 的类，其后承系统 $\mathbf{BDL}$ 在 $\mathbf{BL}$ 上增加公理 $(\text{D})$ 得来
 5. 定义 $\mathbb{B}$ 为所有 $\text{Boole}$ 代数 $\mathbf{A} = (A, \{\wedge, \vee, \bot, \top, '\})$ 的类，其后承系统 $\mathbf{B}$ 由如下公理和规则组成
+    1. 公理模式
+        1. $\alpha \vdash \alpha \ (\text{Id})$
+        2. $\alpha \wedge(\beta \vee \gamma) \vdash(\alpha \wedge \beta) \vee(\alpha \wedge \gamma) \ (\text{D})$
+        3. $(\alpha \wedge \beta)' \vdash \alpha' \vee \beta' \ (\text{DM1})$
+        4. $\alpha' \wedge \beta' \vdash (\alpha \vee \beta)' \ (\text{DM2})$
+        5. $\alpha'' \vdash \alpha \ (\text{DN1})$
+        6. $\alpha \vdash \alpha'' \ (\text{DN2})$
+
+        逻辑规则（$i = 1, 2$，结论中带二元联结词的项称为主项）
+
+        $$
+        \displaylines{
+            \begin{prooftree}
+            \AxiomC{$\alpha_{i} \vdash \beta$}
+            \RightLabel{ $(\wedge\!\vdash)$}
+            \UnaryInfC{$\alpha_{1} \wedge \alpha_{2} \vdash \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\alpha \vdash \beta_{1}$}
+            \AxiomC{$\alpha \vdash \beta_{2}$}
+            \RightLabel{ $(\vdash\!\wedge)$}
+            \BinaryInfC{$\alpha \vdash \beta_{1} \wedge \beta_{2}$}
+            \end{prooftree} \\[0.5em]
+            \begin{prooftree}
+            \AxiomC{$\alpha_{1} \vdash \beta$}
+            \AxiomC{$\alpha_{2} \vdash \beta$}
+            \RightLabel{ $(\vee\!\vdash)$}
+            \BinaryInfC{$\alpha_{1} \vee \alpha_{2} \vdash \beta$}
+            \end{prooftree} \quad
+            \begin{prooftree}
+            \AxiomC{$\alpha \vdash \beta_{i}$}
+            \RightLabel{ $(\vdash\!\vee)$}
+            \UnaryInfC{$\alpha \vdash \beta_{1} \vee \beta_{2}$}
+            \end{prooftree} \\[0.5em]
+            \begin{prooftree}
+            \AxiomC{$\alpha \vdash \beta$}
+            \RightLabel{ (CP)}
+            \UnaryInfC{$\beta' \vdash \alpha'$}
+            \end{prooftree}
+        }
+        $$
+
+        切割规则
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\alpha \vdash \beta$}
+        \AxiomC{$\beta \vdash \gamma$}
+        \RightLabel{ (Cut)}
+        \BinaryInfC{$\alpha \vdash \gamma$}
+        \end{prooftree}
+        $$
+
+        $\alpha \vdash_{\mathbf{B}} \beta$ 表示 $\alpha \vdash \beta$ 在 $\mathbf{B}$ 中可推导，$\alpha \vdash_{n} \beta$ 表示 $\alpha \vdash \beta$ 有高度不超过 $n$ 的推导
+
+    2. 对任意 $\alpha, \beta$，$\alpha \vdash_{\mathbf{B}} \beta$ 当且仅当 $\alpha \vDash_{\mathbb{B}} \beta$
+    3. 在 $\mathbf{B}$ 中切割规则 $\text{Cut}$ 是不可消除的
