@@ -423,3 +423,107 @@
     4. 若对任意正规模态逻辑 $\mathbf{L}$ 使得 $\alpha \in \mathbf{L}$ 都有 $\mathfrak{F}^{\mathbf{L}} \vDash \alpha$，则称 $\alpha$ 是典范的．可知 $(\text{D}), (\text{T}), (4), (\text{B}), (5)$ 都是典范的
 
 ## 4.3 代数逻辑
+### 4.3.1 偏序代数逻辑
+1. 类型即 $\tau=(F, \Omega)$，其中 $F$ 是函数符号集合，$\Omega: F \rightarrow \omega$ 是函数使得任意 $f \in F$ 都有元数 $\Omega(f)$，称 $0$ 元函数为常元
+2. 对任意类型 $\tau=(F, \Omega)$，一个 $\tau$ 型代数 $\mathbf{A}=\left(A, F^{A}\right)$，其中论域 $A$ 是非空集，$F^{A}$ 是集合 $\mathbf{A}$ 上 $\tau$ 型函数集
+    1. 对任意类型 $\tau=(F, \Omega)$，集合 $A$ 上一个 $\tau$ 型函数集是 $F^{A}=\left\{f^{A} \mid f^{A}: A^{\Omega(f)} \rightarrow A\right.$ 是 $A$ 上的 $\Omega(f)$ 元函数且 $f \in F\}$
+    2. 偏序 $\tau$ 型代数即 $\mathbf{A}=\left(A, F^{A}, \leqslant\right)$，其中 $\left(A, F^{A}\right)$ 是 $\tau$ 型代数，$\leqslant$ 是 $A$ 上的偏序
+3. 对类型 $\tau=(F, \Omega)$，一个 $\tau$ 型形式语言 $\mathscr{L}$ 的初始符号由可数的变元集 $\mathcal{V}=\left\{p_{i} \mid i \in \omega\right\}$ 与函数符号集 $F$ 组成
+    1. 归纳定义 $\mathscr{L}$ 的项集 $T$ 如下
+
+        $$
+        T \ni \alpha := p \mid f \alpha_{1} \cdots \alpha_{\Omega(f)}
+        $$
+
+        其中 $p \in \mathcal{V}$ 且 $f \in F$
+
+        1. 当 $\Omega(f)=0$ 时，$f \alpha_{1} \cdots \alpha_{\Omega(f)}$ 是常元，用 $a, b, c$ 等表示
+        2. $\operatorname{var}(\alpha)$ 表示 $\alpha$ 中所有变元的集合，$\alpha\left(p_{1}, \cdots, p_{n}\right)$ 表示 $\operatorname{var}(\alpha) \subseteq\left\{p_{1}, \cdots, p_{n}\right\}$
+        3. 形式语言 $\mathscr{L}$ 的项代数定义为 $\tau$ 型代数 $\mathfrak{T}=\left(T, F^{T}\right)$，其中对每个 $f \in F$ 都有 $f^{T}\left(\alpha_{1}, \cdots, \alpha_{\Omega(f)}\right)= f \alpha_{1} \cdots \alpha_{\Omega(f)}$
+
+    2. 项 $\alpha$ 的复杂度 $d(\alpha)$ 归纳定义如下
+
+        $$
+        \begin{aligned}
+        d(p)&=0=d(f), & p \in \mathcal{V}, \Omega(f)=0 \\
+        d\left(f \alpha_{1} \cdots \alpha_{\Omega(f)}\right)&=\max \left\{d\left(\alpha_{1}\right), \cdots, d\left(\alpha_{\Omega(f)}\right)\right\}+1, & \Omega(f)>0
+        \end{aligned}
+        $$
+
+    3. 项 $\alpha$ 的所有子项的集合 $\operatorname{ST}(\alpha)$ 归纳定义如下
+
+        $$
+        \begin{aligned}
+        \operatorname{ST}(p)&=\{p\} \\
+        \operatorname{ST}\left(f \alpha_{1} \cdots \alpha_{\Omega(f)}\right)&=\operatorname{ST}\left(\alpha_{1}\right) \cup \cdots \cup \operatorname{ST}\left(\alpha_{\Omega(f)}\right) \cup\left\{f \alpha_{1} \cdots \alpha_{\Omega(f)}\right\}
+        \end{aligned}
+        $$
+
+    4. 一个代入是函数 $\sigma: \mathcal{V} \rightarrow T$．对任意代入 $\sigma$，函数 $\widehat{\sigma}: \mathcal{T} \rightarrow \mathcal{T}$ 归纳定义如下
+
+        $$
+        \begin{aligned}
+        \widehat{\sigma}(p)&=\sigma(p) \\
+        \widehat{\sigma}\left(f \alpha_{1} \cdots \alpha_{\Omega(f)}\right)&=f \widehat{\sigma}\left(\alpha_{1}\right) \cdots \widehat{\sigma}\left(\alpha_{\Omega(f)}\right) 
+        \end{aligned}
+        $$
+
+        对任意项 $\alpha\left(p_{1}, \cdots, p_{n}\right)$ 与 $\beta_{1}, \cdots, \beta_{2}$，$\alpha\left(p_{1} / \beta_{1}, \cdots, p_{n} / \beta_{n}\right)$ 表示分别用 $\beta_{1}, \cdots, \beta_{n}$ 统一代入 $p_{1}, \cdots, p_{n}$ 得到的项
+
+    5. 一个后承是形如 $\alpha \vdash \beta$ 的表达式，其中 $\alpha, \beta \in T$
+        1. 用 $\alpha \approx \beta$ 表示后承集 $\{\alpha \vdash \beta, \beta \vdash \alpha\}$
+        2. 一个后承规则 $(\text{R})$ 是以后承为前提与结论的推理规则
+
+4. 若 $L$ 是满足以下条件的后承集
+    1. 自反性：对所有 $\alpha \in T$ 都有 $\alpha \vdash \alpha \in L$
+    2. 传递性：$L$ 对于以下切割规则封闭
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\alpha \vdash \beta$}
+        \AxiomC{$\beta \vdash \gamma$}
+        \RightLabel{ (Cut)}
+        \BinaryInfC{$\alpha \vdash \gamma$}
+        \end{prooftree}
+        $$
+
+    3. 代入封闭性: $L$ 对于以下代入规则封闭
+
+        $$
+        \begin{prooftree}
+        \AxiomC{$\alpha \vdash \beta$}
+        \RightLabel{ (Sub)}
+        \UnaryInfC{$\widehat{\sigma}(\alpha) \vdash \widehat{\sigma}(\beta)$}
+        \end{prooftree}
+        $$
+
+        其中 $\sigma$ 是任意代入
+
+    则称 $L$ 为 $\tau$ 型代数逻辑
+
+    1. 对任意 $\tau$ 型代数逻辑 $L_{1}$ 和 $L_{2}$，$L_{1} \cap L_{2}$ 是 $\tau$ 型代数逻辑，定义 $L_{1} \oplus L_{2}$ 为包含 $L_{1} \cup L_{2}$ 的最小 $\tau$ 型代数逻辑
+    2. 偏序 $\tau$ 型代数 $\mathbf{A}=\left(A, F^{A}, \leqslant\right)$ 中的赋值是一个函数 $\theta: \mathcal{V} \rightarrow A$
+        1. 一个代数模型是 $\mathbf{M}=(\mathbf{A}, \theta, \leqslant)$
+        2. 对任意代数模型 $\mathbf{M}=(\mathbf{A}, \theta, \leqslant)$，函数 $\widehat{\theta}: T \rightarrow T$ 归纳定义如下
+
+            $$
+            \begin{aligned}
+            \widehat{\theta}(p) & =\theta(p), & p \in \mathcal{V} \\
+            \widehat{\theta}\left(f\left(\alpha_{1}, \cdots, \alpha_{\Omega f}\right)\right) & =f^{A}\left(\widehat{\theta}\left(\alpha_{1}\right), \cdots, \widehat{\theta}\left(\alpha_{\Omega(f)}\right)\right), & f \in F
+            \end{aligned}
+            $$
+
+    3. 若 $\widehat{\theta}(\alpha) \leqslant \widehat{\theta}(\beta)$，则称 $\mathbf{M}$ 满足后承 $\alpha \vdash \beta$，记作 $\alpha \vDash_{\mathbf{M}} \beta$
+        1. 若 $\alpha \vDash_{\mathbf{M}} \beta$ 并且 $\beta \vDash_{\mathbf{M}} \alpha$，则称 $\mathbf{M}$ 满足 $\alpha \approx \beta$，记作 $\mathbf{M} \vDash \alpha \approx \beta$
+        2. 若存在代数模型 $\mathbf{M}$ 使得 $\alpha \vDash_{\mathbf{M}} \beta$，则称 $\alpha \vdash \beta$ 可满足；若存在代数模型 $\mathbf{M}$ 使得 $\mathbf{M} \vDash \alpha \approx \beta$，则称 $\alpha \approx \beta$ 可满足
+    4. 若对 $\mathbf{A}$ 中任意赋值 $\theta$ 都有 $\alpha \vDash_{(\mathbf{A}, \theta)} \beta$，则称 $\alpha \vdash \beta$ 在偏序 $\tau$ 型代数 $\mathbf{A}$ 上有效，记作 $\alpha \vDash_{\mathbf{A}} \beta$
+
+        若对 $\mathbf{A}$ 中任意赋值 $\theta$ 都有 $(\mathbf{A}, \theta) \vDash \alpha \approx \beta$，则称 $\alpha \approx \beta$ 在偏序 $\tau$ 型代数 $\mathbf{A}$ 上有效，记作 $\mathbf{A} \vDash \alpha \approx \beta$
+
+    5. 若对所有 $\mathbf{A} \in \mathcal{K}$ 都有 $\alpha \vDash_{\mathbf{A}} \beta$，则称 $\alpha \vdash \beta$ 在偏序 $\tau$ 型代数类 $\mathcal{K}$ 上有效，记作 $\alpha \vDash_{\mathcal{K}} \beta$
+        1. 若对所有 $\mathbf{A} \in \mathcal{K}$ 都有 $\mathbf{A} \vDash \alpha \approx \beta$，则称 $\alpha \approx \beta$ 在偏序 $\tau$ 型代数类 $\mathcal{K}$ 上有效，记作 $\mathcal{K} \vDash \alpha \approx \beta$
+        2. 定义 $\mathbf{Log} (\mathcal{K})=\{\alpha \vdash \beta \mid \alpha \vDash_{\mathcal{K}} \beta\}$，称为 $\mathcal{K}$ 的代数逻辑
+            1. 对任意偏序 $\tau$ 型代数类 $\mathcal{K}，\mathbf{Log} (\mathcal{K})$ 是 $\tau$ 型代数逻辑
+            2. 对任意偏序 $\tau$ 型代数类 $\mathcal{K}$ 和项 $\alpha, \beta, \chi \in T$，若 $\mathcal{K} \vDash \alpha \approx \beta$，则 $\mathcal{K} \vDash \chi \approx \chi(\alpha / \beta)$
+
+### 4.3.2 格代数逻辑
