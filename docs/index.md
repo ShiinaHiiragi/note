@@ -52,11 +52,13 @@
     </div>
 </div>
 
+<!--
 !!! abstract "此项目尚未完成"
     <label> 现在进度：范畴论 </label>
     <div class="progress-container">
         <div class="progress-percentage"> </div>
     </div>
+-->
 
 ## 参考文献
 
@@ -638,9 +640,9 @@ const [plot, total] = refList.reduce(([plot, total], item) => {
     return [plot, total];
 }, [0, 0]);
 const progress = (100 * plot / total);
-const progressBar = document.querySelector(".progress-percentage");
-progressBar.innerText = progress.toFixed(2) + "%";
-progressBar.style.width = progress.toFixed(0) + "%";
+// const progressBar = document.querySelector(".progress-percentage");
+// progressBar.innerText = progress.toFixed(2) + "%";
+// progressBar.style.width = progress.toFixed(0) + "%";
 
 console.log(
     "%cInput `todo` to view unfinished references.",
