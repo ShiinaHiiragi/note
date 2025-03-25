@@ -184,8 +184,8 @@ nav:
       - 4 格论: alg/mod/ltt.md
     - 三、近世代数:
       - 1 范畴与态射: alg/cat/cat.md
-      - 2 函子与自然变换: alg/cat/func.md
-      - 3 极限与伴随: alg/cat/lim.md
+      # - 2 函子与自然变换: alg/cat/func.md
+      # - 3 极限与伴随: alg/cat/lim.md
   - 几何学:
     - 一、解析几何:
       - 1 线性空间与向量: geom/anly/lin.md
