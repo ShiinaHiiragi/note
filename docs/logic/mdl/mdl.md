@@ -142,13 +142,13 @@
     1. 对每个非零的 $a\in M$ 都存在唯一的 $b\in M$ 使得 $a \cdot^\mathfrak M b = e^\mathfrak M$，称 $b$ 为 $a$ 的（乘法逆），记作 $a^{-1}$
     2. 如果域 $\mathfrak M$ 的论域 $M$ 是有限集合，则称 $\mathfrak M$ 是有限域或 $\text{Galois}$ 域．含 $q$ 个元素的有限域通常记作 $F_{q}$ 或 $\mathrm{GF}(q)$
     3. 设 $\mathcal K_{FF} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构，且是一个有限域$\}$ 不是一个初等类；令 $\overline{\mathcal K_{FF}} = \{\mathfrak M \mid \mathfrak M$ 是一个 $R-$结构且 $\mathfrak M \vDash \mathrm{Th}(\mathcal K_{FF})\}$ 是一个初等类，称之为伪有限域
-4. 线性空间：设结构 $\mathfrak M = (F, +^\mathfrak M, \times^\mathfrak M, 0^\mathfrak M, 1^\mathfrak M)$ 是一个域，$\mathrm{VF} = \{+, 0\} \cup F$，其中 $\{+\} \cup F \subseteq \mathbf F, 0 \in \mathbf C$ 且 $\Omega(+) = 2$，$\Omega[F] = \{1\}$．如果结构 $\mathfrak V = (V, +^\mathfrak V, 0^\mathfrak V, \{\sigma^\mathfrak V \mid \sigma \in F\})$ 有
+4. 模：设结构 $\mathfrak M = (R, +^\mathfrak M, \times^\mathfrak M, 0^\mathfrak M, 1^\mathfrak M)$ 是一个 $\text{Abel}$ 环，$\mathrm{VR} = \{+, 0\} \cup R$，其中 $\{+\} \cup R \subseteq \mathbf R, 0 \in \mathbf C$ 且 $\Omega(+) = 2$，$\Omega[R] = \{1\}$．若结构 $\mathfrak V = (V, +^\mathfrak V, 0^\mathfrak V, \{\sigma^\mathfrak V \mid \sigma \in R\})$ 有
     1. $(V, +, 0)$ 是一个 $\text{Abel}$ 群
     2. 对任意的 $x \in V$ 有 $0^\mathfrak{MV}(x) = 0^\mathfrak V, 1^\mathfrak{MV}(x) = x$
-    3. 每个 $\sigma \in F$ 都解释为群结构 $(V, +, 0)$ 到 $(V, +, 0)$ 的同态 $\sigma^\mathfrak V: V\to V$
-    4. 对任意的 $\sigma, \gamma \in F$ 及任意的 $x \in V$，有 $\sigma^\mathfrak V(x) +^\mathfrak V \gamma^\mathfrak V(x) = (\sigma +^\mathfrak M \gamma)^\mathfrak V(x)$ 且 $\sigma^\mathfrak V(\gamma^\mathfrak V(x)) = (\sigma \times^\mathfrak M \gamma)^\mathfrak V(x)$
+    3. 每个 $\sigma \in R$ 都解释为群结构 $(V, +, 0)$ 到 $(V, +, 0)$ 的同态 $\sigma^\mathfrak V: V\to V$
+    4. 对任意的 $\sigma, \gamma \in R$ 及任意的 $x \in V$，有 $\sigma^\mathfrak V(x) +^\mathfrak V \gamma^\mathfrak V(x) = (\sigma +^\mathfrak M \gamma)^\mathfrak V(x)$ 且 $\sigma^\mathfrak V(\gamma^\mathfrak V(x)) = (\sigma \times^\mathfrak M \gamma)^\mathfrak V(x)$
 
-    则称 $V$ 是 $F$ 上的线性空间
+    则称 $V$ 是 $R$ 上的模．特别地，若 $\mathfrak M$ 是一个域，则称 $V$ 是 $R$ 上的线性空间
 
     !!! note "代数系统"
         代数学上通常将模型的论域 $A$ 与定义在 $A$ 上的函数符号 $f_1, f_2, \cdots, f_k$ 构成集合 $\{A; f_1, f_2, \cdots, f_k\}$ 称作代数系统
