@@ -480,9 +480,9 @@
             3. 设 $S$ 为 $X$ 的划分，若 $S_1$ 与 $S_2$ 细分 $S$，则 $S_1 + S_2$ 细分 $S$
 
 6. 序：令 $\prec, \leqslant, <$ 为 $X$ 上的二元关系
-    1. 拟序：如果 $\prec$ 具有自反性与传递性，则称 $\prec$ 是 $X$ 上的拟序
+    1. 拟序：如果 $\prec$ 具有自反性与传递性，则称 $\prec$ 是 $X$ 上的拟序或预序
     2. 严格偏序：如果 $<$ 具有反自反性、非对称性与传递性，则称 $<$ 是 $X$ 上的严格偏序
-    3. 偏序：如果拟序关系 $\leqslant$ 具有反对称性，则称 $\leqslant$ 是 $X$ 上的偏序或序，用 $(X, \leqslant)$ 表示
+    3. 偏序：如果拟序关系 $\leqslant$ 具有反对称性，则称 $\leqslant$ 是 $X$ 上的偏序或半序，用 $(X, \leqslant)$ 表示
         1. 用 $x \geqslant y$ 表示 $x \leqslant^{-1} y$；用 $x < y$ 表示 $x \leqslant y \wedge x \neq y$，用 $x > y$ 表示 $x \geqslant y \wedge x \neq y$
         2. 极大元与极小元
             1. 如果 $a \in X$ 且 $\forall x \in X \ (\neg (a > x))$，则称 $a$ 为 $X$ 的极小元

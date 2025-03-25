@@ -32,7 +32,7 @@
         \end{aligned}
         $$
 
-        则 $\Psi \circ \Phi: \mathcal{G} \rightarrow \mathcal{G}^{\prime \prime}$，并称 $\Psi \circ \Phi$ 为 $\Psi$ 与 $\Phi$ 的合成
+        则 $\Psi \circ \Phi: \mathcal{G} \rightarrow \mathcal{G}^{\prime \prime}$，并称 $\Psi \circ \Phi$ 为 $\Psi$ 与 $\Phi$ 的复合
 
     3. 设 $\Phi: \mathcal{G} \rightarrow \mathcal{G}^{\prime}$，若 $\Psi: \mathcal{G}^{\prime} \rightarrow \mathcal{G}$ 使 $\Phi \circ \Psi=\Pi_{\mathcal{G}}$ 且 $\Psi \circ \Phi=\mathbf{I}_{\mathcal{G}}$，则称 $\Psi$ 为 $\Phi$ 的逆．若 $\Psi: \mathcal{G}^{\prime} \rightarrow \mathcal{G}$ 为 $\Phi$ 的逆，则称 $\Phi$ 有逆
 
@@ -94,7 +94,120 @@
     4. 若每个 $f \in \operatorname{Mor} \mathscr{C}$ 均为幺态射，则称 $\mathscr{C}$ 为离散范畴
     5. 若当 $A, B \in \operatorname{Ob} \mathscr{C}$ 时皆有 $|[A, B]| \leqslant 1$，则称 $\mathscr{C}$ 为简单范畴
 4. 典型范畴
+    1. 集合相关典型范畴
+
+        <div class="text-table">
+
+        |           范畴            | 对象  |           态射           |     复合      |
+        | :-----------------------: | :---: | :----------------------: | :-----------: |
+        | $\operatorname{ANMFn}(X)$ |  $X$  |   $f: X \Rightarrow X$   | $\circledast$ |
+        |  $\operatorname{MFn}(X)$  |  $X$  |   $f: X \Rightarrow X$   |    $\circ$    |
+        |  $\operatorname{PFn}(X)$  |  $X$  | $f: X \rightharpoonup X$ |    $\circ$    |
+        |  $\operatorname{Set}(X)$  |  $X$  |   $f: X \rightarrow X$   |    $\circ$    |
+
+        </div>
+
+    2. 经典结构的典型范畴
+
+        <div class="text-table">
+
+        |       范畴       |  对象  |    态射    |        范畴        |         对象          |     态射     |
+        | :--------------: | :----: | :--------: | :----------------: | :-------------------: | :----------: |
+        | $\mathrm{Graph}$ |  小图  |   图同态   | $\mathrm{Preoset}$ |        拟序集         |   保序映射   |
+        |  $\mathrm{Mon}$  | 幺半群 | 幺半群同态 |  $\mathrm{Poset}$  |        偏序集         |   保序映射   |
+        |  $\mathrm{Grp}$  |   群   |   群同态   |  $\mathrm{Metre}$  |       度量空间        |   连续函数   |
+        |  $\mathrm{Rng}$  |   环   |   环同态   |   $\mathrm{Top}$   |       拓扑空间        |   连续函数   |
+        | $\mathrm{Field}$ |   域   |   域同态   |  $\mathrm{BanSP}$  | $\text{Banach}$ 空间  | 有界线性变换 |
+        |  $\mathrm{Lat}$  |   格   |   格同态   | $\mathrm{HilbSP}$  | $\text{Hilbert}$ 空间 | 有界线性变换 |
+        |  $\mathrm{Mod}$  |   模   |   模同态   |  $\mathrm{LinSP}$  |     连续线性空间      |   线性变换   |
+
+        </div>
 
 ### 1.2.2 范畴运算
+1. 子范畴：设范畴 $\mathscr{A}$ 和 $\mathscr{B}$ 满足
+    1. $\operatorname{Ob} \mathscr{B} \subseteq \operatorname{Ob} \mathscr{A}$ 且 $\operatorname{Mor} \mathscr{B} \subseteq \operatorname{Mor} \mathscr{A}$
+    2. 若 $A \in \operatorname{Ob} \mathscr{B}$，则 $\mathscr{B}$ 和 $\mathscr{A}$ 关于 $A$ 的幺态射相同
+    3. $\operatorname{dom}_{\mathscr{B}} \subseteq \operatorname{dom}_{\mathscr{A}}, \operatorname{cod}_{\mathscr{B}} \subseteq \operatorname{cod}_{\mathscr{A}}$ 且 $\operatorname{comp}_{\mathscr{B}} \subseteq \operatorname{comp}_{\mathscr{A}}$
 
-### 1.2.3 特殊对象与态射
+    则称 $\mathscr{B}$ 为 $\mathscr{A}$ 的子范畴，记为 $\mathscr{B} \subseteq \mathscr{A}$．易知子范畴关系 $\subseteq$ 是自反的、传递的和反对称的
+
+    1. 若 $\mathscr{B} \subseteq \mathscr{A}$ 且 $\mathscr{B} \neq \mathscr{A}$，则称 $\mathscr{B}$ 为 $\mathscr{A}$ 的真子范畴，记为 $\mathscr{B} \subseteq \mathscr{A}$．易知真子范畴关系 $\subseteq$ 是反自反的和传递的
+    2. 若 $\mathscr{B} \subseteq \mathscr{A}$ 且 $\operatorname{Ob} \mathscr{B}=\operatorname{Ob} \mathscr{A}$，则称 $\mathscr{B}$ 为 $\mathscr{A}$ 的宽子范畴
+    3. 若 $\mathscr{B} \subseteq \mathscr{A}$，且当 $A, B \in \operatorname{Ob} \mathscr{B}$ 时皆有 $\mathscr{B}[A, B]=\mathscr{A}[A, B]$，则称 $\mathscr{B}$ 为 $\mathscr{A}$ 的完全子范畴
+
+2. 商范畴：设 $\mathscr{A}$ 为范畴，若 $\operatorname{Mor} \mathscr{A}$ 上的等价关系 $\approx$ 满足
+    1. 若 $A, B \in \operatorname{Ob} \mathscr{A}$ 且 $f \in \mathscr{A}[A, B]$ 则 $[f]_{\approx} \subseteq \mathscr{A}[A, B]$
+    2. 若 $f, f^{\prime}, g, g^{\prime} \in \operatorname{Mor} \mathscr{A}$ 使 $f \approx f^{\prime}$ 且 $g \approx g^{\prime}$，则 $g \circ f \approx g^{\prime} \circ f^{\prime}$
+
+    则称 $\approx$ 为 $\mathscr{A}$ 上的同余关系．若 $f, g \in \operatorname{Mor} \mathscr{A}$，则令
+
+    $$
+    \begin{aligned}
+    \operatorname{dom}^{\prime}\left([f]_{\approx}\right)&=\operatorname{dom}(f) \\
+    \operatorname{cod}^{\prime}\left([f]_{\approx}\right)&=\operatorname{cod}(f) \\
+    \operatorname{comp}^{\prime}\left([g]_{\approx},[f]_{\approx}\right)&=
+    \left\{\begin{aligned}
+    & [\operatorname{comp}(g, f)]_{\approx}, & \operatorname{comp}(g, f) \downarrow \\
+    & \uparrow, & \textsf{否则}
+    \end{aligned}\right.
+    \end{aligned}
+    $$
+
+    则称 $\mathscr{A} / \approx=\left\langle\mathrm{Ob} \mathrm{\mathscr{A}}, \mathrm{Mor} \mathscr{A} / \approx, \mathrm{dom}^{\prime}, \mathrm{cod}^{\prime}, \mathrm{comp}^{\prime}\right\rangle$ 为 $\mathscr{A}$ 关于 $\approx$ 的商，则 $\mathscr{A} / \approx$ 是一个范畴，称为 $\mathscr{A}$ 关于 $\approx$ 的商范畴
+
+3. 积范畴：设 $\mathscr{A}_{i}=\left\langle O_{i}, M_{i} ; \operatorname{dom}_{i}, \operatorname{cod}_{i}, \operatorname{comp}_{i}\right\rangle \ (i=1,2)$ 均为范畴，令 $O=O_{1} \times O_{2}, M=M_{1} \times M_{2}$，若对任意 $\langle f, g\rangle,\left\langle f^{\prime}, g^{\prime}\right\rangle \in M$ 有
+
+    $$
+    \begin{aligned}
+    \operatorname{dom}(\langle f, g\rangle)&=\left\langle\operatorname{dom}_{1}(f), \operatorname{dom}_{2}(g)\right\rangle \\
+    \operatorname{cod}(\langle f, g\rangle)&=\left\langle\operatorname{cod}_{1}(f), \operatorname{cod}_{2}(g)\right\rangle \\
+    \operatorname{comp}\left(\left\langle f^{\prime}, g^{\prime}\right\rangle,\langle f, g\rangle\right)&=\left\{\begin{aligned}
+    & \left\langle\operatorname{comp}_{1}\left(f^{\prime}, f\right), \operatorname{comp}_{2}\left(g^{\prime}, g\right)\right\rangle, & \operatorname{comp}_{1}\left(f^{\prime}, f\right) \downarrow \wedge \operatorname{comp}_{2}\left(g^{\prime}, g\right) \downarrow \\
+    & \uparrow, & \textsf{否则}
+    \end{aligned}\right.
+    \end{aligned}
+    $$
+
+    则 $\mathscr{A}_{1} \times \mathscr{A}_{2}=\langle O, M, \mathrm{dom}, \mathrm{cod}, \mathrm{comp}\rangle$ 是一个范畴，称为 $\mathscr{A}_{1}$ 与 $\mathscr{A}_{2}$ 的积范畴
+
+    1. 一般地，$n$ 个范畴 $\mathscr A_1, \mathscr A_2, \cdots, \mathscr A_n$ 的积范畴 $\left(\cdots\left(\mathscr{A}_{1} \times \mathscr{A}_{2}\right) \times \cdots\right) \times \mathscr{A}_{n}$ 记作 $\mathscr{A}_{1} \times \mathscr{A}_{2} \times \cdots \times \mathscr{A}_{n}$
+    2. 令 $\mathscr{A}^{0}=\mathbf{0}$，同时定义 $\mathscr{A}^{1}=\mathscr{A}$ 且 $\mathscr{A}^{n+1}=\mathscr{A}^{n} \times \mathscr{A}$
+
+4. 和范畴：设 $\mathscr{A}_{i}=\left\langle O_{i}, M_{i} ; \operatorname{dom}_{i}, \operatorname{cod}_{i}, \operatorname{comp}_{i}\right\rangle \ (i=1,2)$ 均为范畴，令 $O=O_{1} \sqcup O_{2}, M=M_{1} \sqcup M_{2}$，若对任意 $f_{1}, g_{1} \in M_{1}, g_{2}, g_{2} \in M_{2}$ 有
+
+    $$
+    \begin{aligned}
+    \operatorname{dom}\left(\left\langle f_{i}, i\right\rangle\right)&=\left\langle\operatorname{dom}_{i}\left(f_{i}\right), i\right\rangle \\
+    \operatorname{cod}\left(\left\langle f_{i}, i\right\rangle\right)&=\left\langle\operatorname{cod}_{i}\left(f_{i}\right), i\right\rangle \\
+    \operatorname{comp}\left(\left\langle f_i, i\right\rangle,\langle g_j, j\rangle\right)&=\left\{\begin{aligned}
+    & \left\langle\operatorname{comp}_{i}\left(f_{i}, g_{i}\right), i\right\rangle, & i = j \wedge \operatorname{comp}_{i}\left(f_{i}, g_{i}\right) \downarrow \\
+    & \uparrow, & \textsf{否则}
+    \end{aligned}\right.
+    \end{aligned}
+    $$
+
+    则 $\mathscr{A}_{1} \sqcup \mathscr{A}_{2}=\langle O, M, \mathrm{dom}, \mathrm{cod}, \mathrm{comp}\rangle$ 是一个范畴，称为 $\mathscr{A}_{1}$ 与 $\mathscr{A}_{2}$ 的和范畴，并可推广到 $n$ 个范畴的情形
+
+5. 对偶范畴：设 $\mathscr{C}=\langle O, M$, dom, cod, comp $\rangle$ 为范畴，若令 $O^{\prime}=O$ 且 $M^{\prime}=\left\{f^{\mathrm{op}} \mid f \in M\right\}$，并对任意的 $f, g \in M$ 令
+
+    $$
+    \begin{aligned}
+    \operatorname{dom}^{\prime}\left(f^{\mathrm{op}}\right) & =\operatorname{cod}(f) \\
+    \operatorname{cod}^{\prime}\left(f^{\mathrm{op}}\right) & =\operatorname{dom}(f) \\
+    \operatorname{comp}^{\prime}\left(g^{\mathrm{op}}, f^{\mathrm{op}}\right) & = 
+    \left\{\begin{aligned}
+    & (\operatorname{comp}(f, g))^{\mathrm{op}}, & \operatorname{comp}(f, g) \downarrow \\
+    & \uparrow, & \textsf{否则}
+    \end{aligned}\right.
+    \end{aligned}
+    $$
+
+    则 $\left\langle O^{\prime}, M^{\prime}, \operatorname{dom}^{\prime}, \mathrm{cod}^{\prime}, \mathrm{comp}^{\prime}\right\rangle$ 为范畴，称为 $\mathscr{A}$ 的对偶范畴，记为 $\mathscr{A}^{\mathrm{op}}$
+
+    1. $\left(\mathscr{A}^{\mathrm{op}}\right)^{\mathrm{op}}=\mathscr{A}$
+    2. 对每个 $A \in O$，令 $A^{\mathrm{op}}=A$，称 $A^{\mathrm{op}}$ 为 $A$ 的对偶对象；对每个 $f \in M$，称 $f^{\mathrm{op}}$ 为 $f$ 的对偶态射
+    3. 对偶原理：若 $S$ 是一个对所有范畴皆真的命题，则 $S$ 的对偶命题 $S^{\mathrm{op}}$ 亦然
+
+### 1.2.3 特殊对象
+
+### 1.2.4 特殊态射
