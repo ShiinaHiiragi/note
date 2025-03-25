@@ -59,7 +59,7 @@
     1. 设 $R$ 为整环，则 $R$ 的分式域存在
     2. 整环 $R$ 的分式域是包含 $R$ 的最小域，因而惟一
 2. 素域：不包含任何非平凡子域的域
-    1. 设 $\Pi$ 为一个素域，则 $\Pi \simeq \mathbf Q$ 或 $\Pi \simeq \mathbf Z_p$（$p$ 为质数）
+    1. 设 $\Pi$ 为一个素域，则 $\Pi \cong \mathbf Q$ 或 $\Pi \cong \mathbf Z_p$（$p$ 为质数）
     2. 设 $K$ 为域，$p$ 为质数，则域 $K$ 的特征不是零就是质数．特别地，有限域的特征一定为质数
         1. $K$ 的特征为 $p$ 当且仅当 $p a=0, \ \forall a \in K$
         2. $K$ 的特征为零当且仅当 $n a \neq 0, \ \forall n \in \mathrm{N}, a \in K^{*}$
@@ -73,10 +73,10 @@
 
 ### 3.2.1 单扩张
 1. 单扩张：设 $K$ 为 $F$ 的扩域且存在 $\alpha \in K$ 使得 $K=F(\alpha)$，则称 $K$ 为 $F$ 的单扩张．若 $\alpha$ 为 $F$ 上的代数元，则称 $K$ 为 $F$ 的单代数扩张；若 $\alpha$ 为 $F$ 上的超越元，则 $K$ 称为 $F$ 的单超越扩张
-    1. 若 $\alpha$ 是域 $F$ 上的超越元，则 $F(\alpha) \simeq F(x)$，其中 $F(x)$ 是 $F$ 上的多项式环 $F[x]$ 的分式域
-    2. 若 $\alpha$ 是 $F$ 上的代数元，则 $F(\alpha) \simeq F[x] /\langle p(x)\rangle$，其中 $p(x)$ 是 $F[x]$ 的一个由 $\alpha$ 惟一确定的首一（即首项系数为一）不可约多项式且 $p(\alpha)=0$
+    1. 若 $\alpha$ 是域 $F$ 上的超越元，则 $F(\alpha) \cong F(x)$，其中 $F(x)$ 是 $F$ 上的多项式环 $F[x]$ 的分式域
+    2. 若 $\alpha$ 是 $F$ 上的代数元，则 $F(\alpha) \cong F[x] /\langle p(x)\rangle$，其中 $p(x)$ 是 $F[x]$ 的一个由 $\alpha$ 惟一确定的首一（即首项系数为一）不可约多项式且 $p(\alpha)=0$
 2. 极小多项式：设 $K$ 为 $F$ 的扩域，$\alpha \in K$ 是 $F$ 上的代数元．$F [x]$ 中以 $\alpha$ 为根的不可约首一多项式称为 $\alpha$ 在 $F$ 上的极小多项式，记为 $\operatorname{Irr}(\alpha, F)$，它的次数称为 $\alpha$ 在 $F$ 上的次数，记为 $\operatorname{deg}(\alpha, F)$
-    1. 对于 $F$ 上的代数元 $\alpha, F(\alpha) \simeq F[x] /\langle\operatorname{Irr}(\alpha, F)\rangle$ 且 $\langle\operatorname{Irr}(\alpha, F)\rangle =\{f(x) \in F[x] \mid \operatorname{Irr}(\alpha, F) \mid f(x)\}$
+    1. 对于 $F$ 上的代数元 $\alpha, F(\alpha) \cong F[x] /\langle\operatorname{Irr}(\alpha, F)\rangle$ 且 $\langle\operatorname{Irr}(\alpha, F)\rangle =\{f(x) \in F[x] \mid \operatorname{Irr}(\alpha, F) \mid f(x)\}$
     2. 设 $F(\alpha)$ 是 $F$ 的单代数扩张，$\operatorname{deg}(\alpha, F)=n$，则 $F(\alpha)$ 是 $F$ 上的 $n$ 维线性空间，且 $1, \alpha, \alpha^{2}, \cdots, \alpha^{n-1}$ 是 $F(\alpha)$ 的一组基
 3. 单扩张的等价性
     1. 若 $F\left(\alpha_{1}\right), F\left(\alpha_{2}\right)$ 都是 $F$ 的单超越扩张，则 $F\left(\alpha_{1}\right), F\left(\alpha_{2}\right)$ 是 $F$ 的等价扩张
@@ -85,8 +85,8 @@
     !!! note "实数域的扩张"
         设 $p(x) = x^2 + 1 \in \mathbf R[x]$，则 $p(x)$ 为极小多项式
 
-        1. 构造 $\mathbf R$ 的二次扩域 $\mathbf R[x]/(x^2 + 1)$，定义映射 $f: \mathbf R[x]/(x^2 + 1) \to \mathbf C$ 为 $f(ax + b + (x^2 + 1)) = a \mathrm i + b$，其中 $a, b \in \mathbf R$，则 $f$ 为 $R[x]/(x^2 + 1)$ 到 $\mathbf C$ 的一个同构映射，即有 $\mathbf R[x]/(x^2 + 1) \simeq \mathbf C$
-        2. 设 $\mathbf R(\mathrm i)$ 是使得 $\operatorname{Irr}(\mathrm i, \mathbf R)=p(x)$ 的单扩域，则线性空间 $\mathbf R(\mathrm i) = \{a_0 + a_1 \mathrm i \mid a_0, a_1 \in \mathbf R\} \simeq \mathbf C \simeq \mathbf R(-\mathrm i)$
+        1. 构造 $\mathbf R$ 的二次扩域 $\mathbf R[x]/(x^2 + 1)$，定义映射 $f: \mathbf R[x]/(x^2 + 1) \to \mathbf C$ 为 $f(ax + b + (x^2 + 1)) = a \mathrm i + b$，其中 $a, b \in \mathbf R$，则 $f$ 为 $R[x]/(x^2 + 1)$ 到 $\mathbf C$ 的一个同构映射，即有 $\mathbf R[x]/(x^2 + 1) \cong \mathbf C$
+        2. 设 $\mathbf R(\mathrm i)$ 是使得 $\operatorname{Irr}(\mathrm i, \mathbf R)=p(x)$ 的单扩域，则线性空间 $\mathbf R(\mathrm i) = \{a_0 + a_1 \mathrm i \mid a_0, a_1 \in \mathbf R\} \cong \mathbf C \cong \mathbf R(-\mathrm i)$
 
 ### 3.2.2 代数扩张
 1. 代数扩张：设 $K$ 为域 $F$ 的扩域，若 $K$ 中的每个元素都是 $F$ 上的代数元，则称 $K$ 为 $F$ 的代数扩张．当 $\alpha_1, \alpha_2, \cdots, \alpha_n$ 为域 $F$ 上的代数元时，记 $F(\alpha_1, \alpha_2, \cdots, \alpha_n)$ 为包含 $F$ 的最小代数扩域．特别地，当 $n=1$ 时，即为 $F$ 的单代数扩张
@@ -160,7 +160,7 @@
     1. 定义 $\Sigma$ 到 $\Gamma$ 的映射 $\textrm{Gal}: E \mapsto \textrm{Gal}(K / E), \forall E \in \Sigma$，称之为 $\text{Galois}$ 映射，则 $\text{Galois}$ 映射是可逆映射，其逆映射为 $\Gamma$ 到 $\Sigma$ 的映射 $\textrm{Inv}: H \mapsto \operatorname{Inv} H, \forall H \in \Gamma$
     2. $\forall H_{1}, H_{2} \in \Gamma$ 有 $H_{2} \subseteq H_{1} \leftrightarrow \operatorname{Inv} H_{1} \subseteq \operatorname{Inv} H_{2}$
     3. $\forall H_{1}, H_{2} \in \Gamma, H_{2} \subseteq H_{1}$，则有 $\left[H_{1}: H_{2}\right]=\left[\operatorname{Inv} H_{2}: \operatorname{Inv} H_{1}\right]$
-    4. $\forall H_{1}, H_{2} \in \Gamma, H_{2} \subseteq H_{1}$，则有 $H_{2} \triangleleft H_{1} \leftrightarrow \operatorname{Inv} H_{2}$ 是 $\operatorname{Inv} H_{1}$ 的正规扩张，且此时 $\mathrm{Gal}\left(\operatorname{Inv} H_{2} / \operatorname{Inv} H_{1}\right) \simeq H_{1} / H_{2}$
+    4. $\forall H_{1}, H_{2} \in \Gamma, H_{2} \subseteq H_{1}$，则有 $H_{2} \triangleleft H_{1} \leftrightarrow \operatorname{Inv} H_{2}$ 是 $\operatorname{Inv} H_{1}$ 的正规扩张，且此时 $\mathrm{Gal}\left(\operatorname{Inv} H_{2} / \operatorname{Inv} H_{1}\right) \cong H_{1} / H_{2}$
 4. 设 $F$ 是特征为 $0$ 的域，$f(x) \in F[x]$ 是无重根的多项式，则方程 $f(x)=0$ 对 $F$ 可用根式解的充要条件是 $f(x)=0$ 对基域 $F$ 的 $\text{Galois}$ 群 $G(f(x), F)$ 为可解群
     1. 方程的 $\text{Galois}$ 群：设 $f(x)$ 是域 $F$ 上的多项式，即 $f(x) \in F[x]$．设 $F$ 是特征为 $0$ 的域，$f(x)$ 是无重根的多项式，记 $K$ 是 $f(x)$ 的分裂域，则称 $\mathrm{Gal}(K / F)$ 为方程 $f(x)=0$ 对基域 $F$ 的 $\text{Galois}$ 群，记为 $G(f(x), F)$
     2. 方程可用根式解：设 $K$ 是域 $F$ 的扩张，若有中间域序列 $F=F_{0} \subseteq F_{1} \subseteq \cdots \subseteq F_{i} \subseteq F_{i+1} \subseteq \cdots \subseteq F_{m}=K$ 使得每一 $F_{i+1}$ 都是 $x^{n_{1+1}}-a_{i+1} \in F_{i}[x]$ 的分裂域，则称 $K$ 是 $F$ 的根式扩张．设多项式 $f(x) \in F[x]$，若有 $F$ 的根式扩张 $K$ 包含 $f(x)$ 的分裂域，则称方程 $f(x)=0$ 对 $F$ 可用根式解

@@ -92,7 +92,7 @@
     1. 特殊的同态
         1. 单同态：若 $f$ 是 $G_{1}$ 到 $G_{2}$ 的嵌入，则称 $f$ 是 $G_{1}$ 到 $G_{2}$ 的一个单同态映射
         2. 满同态：若同态 $f$ 是满射，则称 $f$ 是满同态，并称 $G_{1}$ 与 $G_{2}$ 是同态的，记为 $G_{1} \sim G_{2}$
-        3. 同构：若 $f$ 是 $G_{1}$ 到 $G_{2}$ 的同构，则称 $f$ 是 $G_{1}$ 到 $G_{2}$ 的一个同构映射，并称群 $G_{1}$ 与 $G_{2}$ 是同构的，记为 $G_{1} \simeq G_{2}$
+        3. 同构：若 $f$ 是 $G_{1}$ 到 $G_{2}$ 的同构，则称 $f$ 是 $G_{1}$ 到 $G_{2}$ 的一个同构映射，并称群 $G_{1}$ 与 $G_{2}$ 是同构的，记为 $G_{1} \cong G_{2}$
         4. 自然同态：设 $G$ 是一个群，$H \triangleleft G$，记 $\pi$ 是 $G$ 到 $G/H$ 的映射，$\pi(g)=g H, \  \forall g \in G$．则 $\pi$ 是满同态，称 $\pi$ 为群 $G$ 到商群 $G / H$ 的自然同态
     2. 同态与同构的性质
         1. 若 $f$ 是群 $G_{1}$ 到群 $G_{2}$ 的同态，$g$ 是群 $G_{2}$ 到群 $G_{3}$ 的同态，则 $g f$ 是 $G_{1}$ 到 $G_{3}$ 的同态．若 $f, g$ 都是满（单）同态，则 $g f$ 也是满 (单) 同态．若 $f, g$ 都是同构，则 $g f$ 也是同构．若 $f$ 是同构，则 $f^{-1}$ 也是同构
@@ -101,23 +101,23 @@
 2. 核：设 $f$ 是群 $G_{1}$ 到群 $G_{2}$ 的同态，则 $G_{2}$ 的幺元 $e_{2}$ 的原象 $f^{-1}[e] = \left\{a \in G_{1} \mid f(a)=e_{2}\right\}$ 称为同态映射 $f$ 的核，记为 $\operatorname{ker} f$
     1. 设 $f$ 是群 $G_{1}$ 到群 $G_{2}$ 的同态，则 $\operatorname{ker} f \triangleleft G_{1}$
     2. 设 $f$ 是群 $G_{1}$ 到群 $G_{2}$ 的同态，则 $f$ 是单同态 $\leftrightarrow \operatorname{ker} f=\left\{e_{1}\right\}$，这里 $e_{1}$ 是 $G_{1}$ 的幺元
-3. 群同态基本定理：设 $f$ 是群 $G_{1}$ 到群 $G_{2}$ 的满同态映射，则 $G_{1} / \operatorname{ker} f \simeq G_{2}$
+3. 群同态基本定理：设 $f$ 是群 $G_{1}$ 到群 $G_{2}$ 的满同态映射，则 $G_{1} / \operatorname{ker} f \cong G_{2}$
     1. 设 $G$ 为一群，$f$ 是 $G$ 到另一群的同态映射
         1. $G$ 的同态象 $f[G]$ 必同构于 $G$ 的商群 $G / \operatorname{ker} f$
         2. $G$ 的任一商群都可看作 $G$ 的同态象
     2. 设 $f$ 是群 $G_{1}$ 到群 $G_{2}$ 的满同态，$N=\operatorname{ker} f$
         1. $f$ 建立了 $G_{1}$ 中包含 $N$ 的子群与 $G_{2}$ 中子群间的双射
         2. 上述双射把正规子群对应到正规子群
-        3. 若 $H \triangleleft G_{1}, N \subseteq H$，则 $G_{1} / H \simeq G_{2} / f[H]$
-    3. 设 $G$ 是群，$N \triangleleft G$，$\pi$ 是 $G$ 到 $G / N$ 的自然同态．则 $\pi$ 建立了 $G$ 中包含 $N$ 的子群与 $G / N$ 的子群间的双射，而且把正规子群对应到正规子群．又若 $H \triangleleft G$，$N \subseteq H$，则 $G / H \simeq (G / N) /(H / N)$
+        3. 若 $H \triangleleft G_{1}, N \subseteq H$，则 $G_{1} / H \cong G_{2} / f[H]$
+    3. 设 $G$ 是群，$N \triangleleft G$，$\pi$ 是 $G$ 到 $G / N$ 的自然同态．则 $\pi$ 建立了 $G$ 中包含 $N$ 的子群与 $G / N$ 的子群间的双射，而且把正规子群对应到正规子群．又若 $H \triangleleft G$，$N \subseteq H$，则 $G / H \cong (G / N) /(H / N)$
     4. 设 $G$ 是群，$N \triangleleft G$，$\pi$ 是 $G$ 到 $G / N$ 的自然同态，$H \leqslant G$
         1. $H N$ 是 $G$ 中包含 $N$ 的子群，且 $H N=\pi^{-1}[\pi[H]]$，即 $H N$ 是 $H$ 在 $\pi$ 映射下的象集合 $\pi[H]$ 的原象 $\pi^{-1}[\pi[H]]$
         2. $(H \cap N) \triangleleft H$，且 $\operatorname{ker}\left(\pi \upharpoonright H\right)=H \cap N$
-        3. $H N / N \simeq H /(H \cap N)$
+        3. $H N / N \cong H /(H \cap N)$
 4. 自同态与自同构：群 $G$ 到自身的同态（同构）映射称为 $G$ 的一个自同态（自同构），用 $\operatorname{Aut}(G)$ 表示群 $G$ 的自同构群
     1. 设 $G$ 是群，则 $\operatorname{Aut}(G) \leqslant S_{G}$
     2. 设 $G$ 为群，$a \in G$，定义映射 $\sigma_{a}: G \rightarrow G$ 为 $\sigma_{a}(g)=a g a^{-1}, \forall g \in G$，则 $\sigma_{u} \in \operatorname{Aut}(G)$ 称为由 $a$ 决定的内自同构．记 $\operatorname{Inn}(G)=\left\{\sigma_{a} \mid a \in G\right\}$，则 $\operatorname{Inn}(G) \triangleleft \operatorname{Aut}(G)$，称 $\operatorname{Inn}(G)$ 为 $G$ 的内自同构群
-    3. $C(G)=\operatorname{ker} f$，$G / C(G) \simeq \operatorname{Inn}(G)$
+    3. $C(G)=\operatorname{ker} f$，$G / C(G) \cong \operatorname{Inn}(G)$
 
 ## 1.3 群实例
 ### 1.3.1 循环群
