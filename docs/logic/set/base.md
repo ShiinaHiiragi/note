@@ -559,32 +559,31 @@
         1. 恒等映射：对任意集合 $X$，定义 $\mathrm{id}_X: X \to X$ 为 $\mathrm{id}_X(x) = x$，作为关系被称为 $X$ 上的恒等关系
         2. 嵌入映射：对任意集合 $X$，定义 $X_{0} \subseteq X$ 到 $X$ 的嵌入映射 $i(x)=x, \forall x \in X_0$
         3. 特征映射：对任意集合 $X$，定义特征映射（或示性映射）$I_X(x) = \left\{\begin{aligned} & 1, & x \in X \\ & 0, & x \notin X \end{aligned}\right.$
-
-            !!! note "特征映射的性质"
-                1. ${\displaystyle I_{\alpha} \bigcup=\bigvee I_{A_{\alpha}}\left(\bigvee I_{A_{\alpha}} \triangleq \sup I_{A_{\alpha}}\right), \  I_{\sum A_{\alpha}}=\sum I_{A_{\alpha}}}$
-                2. ${\displaystyle I_{\alpha} A_{\alpha}=\bigwedge I_{A_{\alpha}}\left(\bigwedge I_{A_{\alpha}} \triangleq \inf I_{A_{\alpha}}\right)}$
-                3. $I_{A'}=1-I_{A}$
-                4. $I_{A-B}=I_{A}-I_{B}$
-                5. $I_{A \triangle B}=\left|I_{A}-I_{B}\right|=I_{A}+I_{B} \pmod{2}$
-
-        4. 部分映射：在定义域的某些点上没有定义的映射，通常记作 $f: X \rightharpoonup Y$
-            1. 与部分映射相对的是（全）映射
-            2. 设 $g_1, g_2$ 是部分映射，则复合映射 $g_2 \circ g_1$ 也是部分映射
-            3. 设 $g_1, g_2: X \rightharpoonup Y$，则将 $g_1 \subseteq g_2$ 记作 $g_1 \sqsubseteq g_2$，将 $g_1 \supseteq g_2$ 记作 $g_1 \sqsupseteq g_2$
-
-    5. 限制与扩张：对任意映射 $f$ 与集合 $A$，称映射 $g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 为 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张或延拓
-
-2. 逆映射与复合映射
+            1. ${\displaystyle I_{\alpha} \bigcup=\bigvee I_{A_{\alpha}}\left(\bigvee I_{A_{\alpha}} \triangleq \sup I_{A_{\alpha}}\right), \  I_{\sum A_{\alpha}}=\sum I_{A_{\alpha}}}$
+            2. ${\displaystyle I_{\alpha} A_{\alpha}=\bigwedge I_{A_{\alpha}}\left(\bigwedge I_{A_{\alpha}} \triangleq \inf I_{A_{\alpha}}\right)}$
+            3. $I_{A'}=1-I_{A}$
+            4. $I_{A-B}=I_{A}-I_{B}$
+            5. $I_{A \triangle B}=\left|I_{A}-I_{B}\right|=I_{A}+I_{B} \pmod{2}$
+2. 特殊映射
+    1. 部分映射：在定义域的某些点上没有定义的映射，通常记作 $f: X \rightharpoonup Y$
+        1. 与部分映射相对的是（全）映射
+        2. 设 $g_1, g_2$ 是部分映射，则复合映射 $g_2 \circ g_1$ 也是部分映射
+        3. 设 $g_1, g_2: X \rightharpoonup Y$，则将 $g_1 \subseteq g_2$ 记作 $g_1 \sqsubseteq g_2$，将 $g_1 \supseteq g_2$ 记作 $g_1 \sqsupseteq g_2$
+    2. 多值映射：设 $X, Y$ 为集合，若 $f: X \to 2^{Y}$，则称 $f$ 为 $X$ 到 $Y$ 的多值函数，记作 $f: X \Rightarrow Y$
+        1. 设 $g: Y \Rightarrow Z$，则对任意 $x \in X$，令 $(g \circ f)(x) = {\displaystyle \bigcup_{y \in f(x)} f(y)}$
+        2. 设 $g: Y \Rightarrow Z$，令 $(g \circledast f)(x)\left\{\begin{aligned} & \varnothing, & \exists y \in f(x): g(y) = \varnothing \\ & (g \circ f)(x), & \textsf{否则} \end{aligned}\right.$
+3. 映射的运算
     1. 逆映射：一个映射是可逆的当且仅当它是单射
         1. 如果 $f$ 是可逆的，则 $f^{-1}$ 也是可逆的且 $(f^{-1})^{-1} = f$
         2. 当 $f$ 为函数时，称 $f^{-1}$ 为 $f$ 的反函数
     2. 复合映射：令 $f, g$ 为映射，则复合 $h = g \circ f$ 也是映射，且 $h$ 的定义域为 $\mathrm{dom}(h) = \mathrm{dom}(f) \cap f^{-1}[\mathrm{dom}(g)]$
         1. 对于所有 $x \in \mathrm{dom}(h)$ 均有 $h(x) = g(f(x))$
         2. 简记 $[f^n](x) = \small \underbrace{\normalsize f \circ f \circ \cdots \circ f}_{\normalsize n} \normalsize (x)$，并将其与 $f^n(x)$ 区分
-3. 相容性：对于映射 $f, g$，如果对所有的 $x \in \mathrm{dom}(f) \cap \mathrm{dom}(g)$ 都有 $f(x) = g(x)$，则称映射 $f, g$ 是相容的
+    3. 限制与扩张：对任意映射 $f$ 与集合 $A$，称映射 $g = f \upharpoonright A = \left\{(x, y) \in f \mid x \in A\right\}$ 为 $f$ 到 $A$ 上的限制，$f$ 是 $g$ 的扩张或延拓
+4. 相容性：对于映射 $f, g$，如果对所有的 $x \in \mathrm{dom}(f) \cap \mathrm{dom}(g)$ 都有 $f(x) = g(x)$，则称映射 $f, g$ 是相容的
     1. 如果映射的集合 $\mathscr F$ 中任意两个映射都是相容的，则称 $\mathscr F$ 为相容的系统
     2. 映射 $f, g$ 相容当且仅当 $f \cap g$ 是映射，当且仅当 $f \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right) = g \upharpoonright \left(\mathrm{dom}(f) \cap \mathrm{dom}(g)\right)$
-4. 令 $X, Y$ 是集合，$X$ 到 $Y$ 的所有映射组成的集合定义为 $Y^X = \left\{f \mid f: X \to Y\right\}$
+5. 令 $X, Y$ 是集合，$X$ 到 $Y$ 的所有映射组成的集合定义为 $Y^X = \left\{f \mid f: X \to Y\right\}$
     1. 对任意集合 $X, Y$，$X^Y$ 都是集合
     2. 对任意集合 $X$，有 $\varnothing^{X} = \varnothing$
     3. 注意到 $\varnothing$ 到任意集合 $Y$ 都有一个空函数 $\varnothing_Y$，因此对任意集合 $Y$，有 $Y^{\varnothing} = \left\{\varnothing_{Y}\right\}$
