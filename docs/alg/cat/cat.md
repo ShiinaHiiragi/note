@@ -34,7 +34,7 @@
 
         则 $\Psi \circ \Phi: \mathcal{G} \rightarrow \mathcal{G}^{\prime \prime}$，并称 $\Psi \circ \Phi$ 为 $\Psi$ 与 $\Phi$ 的复合
 
-    3. 设 $\Phi: \mathcal{G} \rightarrow \mathcal{G}^{\prime}$，若 $\Psi: \mathcal{G}^{\prime} \rightarrow \mathcal{G}$ 使 $\Phi \circ \Psi=\Pi_{\mathcal{G}}$ 且 $\Psi \circ \Phi=\mathbf{I}_{\mathcal{G}}$，则称 $\Psi$ 为 $\Phi$ 的逆．若 $\Psi: \mathcal{G}^{\prime} \rightarrow \mathcal{G}$ 为 $\Phi$ 的逆，则称 $\Phi$ 有逆
+    3. 设 $\Phi: \mathcal{G} \rightarrow \mathcal{G}^{\prime}$，若 $\Psi: \mathcal{G}^{\prime} \rightarrow \mathcal{G}$ 使 $\Phi \circ \Psi=\Pi_{\mathcal{G}}$ 且 $\Psi \circ \Phi=I_{\mathcal{G}}$，则称 $\Psi$ 为 $\Phi$ 的逆．若 $\Psi: \mathcal{G}^{\prime} \rightarrow \mathcal{G}$ 为 $\Phi$ 的逆，则称 $\Phi$ 有逆
 
 4. 设 $\mathcal{G}=\langle O, M, \operatorname{source}, \operatorname{target}\rangle$ 和 $\mathcal{G}^{\prime}=\langle O^{\prime}, M^{\prime}, \operatorname{source}', \operatorname{target}'\rangle$ 均为图，$\Phi: \mathcal{G} \rightarrow \mathcal{G}^{\prime}$ 且 $\Psi: \mathcal{G} \rightarrow \mathcal{G}^{\prime}$
     1. 定义 $M^{\prime}$ 上的局部二元运算满足当 $f, g \in M^{\prime}$ 且 $\operatorname{target}^{\prime}(f)=\operatorname{source}^{\prime}(g)$ 时，恒有
