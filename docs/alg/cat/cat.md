@@ -81,8 +81,14 @@
 
     则称 $\mathcal{D}$ 为 $\mathscr{C}$ 中的一个图，并令 $\mathcal{D}_{V}=\left(A_{i}\right)_{i \in \mathbf{I}}$ 且 $\mathcal{D}_{E}=\left(f_{j}\right)_{j \in \mathbf{J}}$
 
-    3. 若 $\mathcal{D}=\langle V, E, \Psi\rangle$ 为图且 $\Gamma: \mathcal{D} \rightarrow \mathbf{G}(\mathscr{C})$ 为图同态，定义函数 $\Psi^{\prime}$ 为 $\Psi^{\prime}(\Gamma(e))=\langle\Gamma(u), \Gamma(v)\rangle$ 当且仅当 $\Psi(e)=\langle u, v\rangle$，其中 $e \in E, u, v \in V$，则 $\left\langle(\Gamma(v))_{v \in V},(\Gamma(e))_{e \in E}, \Psi^{\prime}\right\rangle$ 为 $\mathscr{C}$ 的图，记为 $\langle\mathcal{D}, \Gamma\rangle$，并令 $A_{v}=\Gamma(v), f_{e}=\Gamma(e)$，其中 $v \in V, e \in E$
-    4. 设 $\mathscr{C}$ 为范畴，$\mathcal{D}$ 为 $\mathscr{C}$ 中的图
+    1. 设 $\mathscr{C}$ 为范畴，$\mathcal{D}=\langle V, E, \Psi\rangle$ 为图且 $\Gamma: \mathcal{D} \rightarrow G(\mathscr{C})$ 为图同态，若有
+        1. 对任意 $v \in V, e \in E$，定义 $A_{v}=\Gamma(v), f_{e}=\Gamma(e), A_{e}=\operatorname{dom}\left(f_{e}\right), B_{e}=\operatorname{cod}\left(f_{e}\right)$
+        2. 定义 $\mathcal{D}_{V}=\left(A_{v}\right)_{v \in V}, \mathcal{D}_{S}=\left(A_{e}\right)_{e \in E}, \mathcal{D}_{E}=\left(B_{e}\right)_{e \in E}$
+        3. 函数 $\Psi^{\prime}\left(f_{e}\right)_{e \in E} \rightarrow\left(A_{v}\right)_{v \in V} \times\left(A_{v}\right)_{v \in V}$ 为 $\Psi^{\prime}\left(f_{e}\right)=\left\langle\operatorname{dom}\left(f_{e}\right), \operatorname{cod}\left(f_{e}\right)\right\rangle$ 对任意 $e \in E$ 成立
+
+        则称 $\left\langle\left(A_{v}\right)_{v \in V},\left(f_{e}\right)_{e \in E}, \Psi^{\prime}\right\rangle$ 为 $\mathscr{C}$ 中一个图，记为 $\langle\mathcal{D}, \Gamma\rangle$ 或 $\Gamma(\mathcal{D})$
+
+    2. 设 $\mathscr{C}$ 为范畴，$\mathcal{D}$ 为 $\mathscr{C}$ 中的图
 
         <!-- TODO: 1.6, 1.7 -->
 

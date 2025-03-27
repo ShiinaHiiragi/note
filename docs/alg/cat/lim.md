@@ -69,8 +69,21 @@
 
 ### 2.1.3 回拉与外推
 1. 设 $\mathscr{C}$ 为范畴且 $f_{1}, f_{2}, g_{1}, g_{2} \in \operatorname{Mor} \mathscr{C}$
-    1. 设 $f_{1} \circ g_{2}=f_{2} \circ g_{1}$，若 $g_{1}^{\prime}, g_{2}^{\prime} \in \operatorname{Mor} \mathscr{C}$ 使 $f_{1} \circ g_{2}^{\prime}=f_{2} \circ g_{1}^{\prime}$，则有唯一的 $\varphi \in \operatorname{Mor} \mathscr{C}$ 使 $g_{1}^{\prime}=g_{1} \circ \varphi$ 且 $g_{2}^{\prime}=g_{2} \circ \varphi$，则称 $\left\langle g_{1}, g_{2}\right\rangle$ 为 $f_{1}$ 与 $f_{2}$ 的回拉，记为 $\operatorname{pullback}\left(f_{1}, f_{2}\right)$
-    2. 设 $g_{2} \circ f_{1}=g_{1} \circ f_{2}$，若 $g_{1}^{\prime}, g_{2}^{\prime} \in \operatorname{Mor} \mathscr{C}$ 使 $g_{2}^{\prime} \circ f_{1}=g_{1}^{\prime} \circ f_{2}$，则有唯一的 $\psi \in \operatorname{Mor} \mathscr{C}$ 使 $g_{1}^{\prime}=\psi \circ g_{1}$ 且 $g_{2}^{\prime}=\psi \circ g_{2}$，则称 $\left\langle g_{1}, g_{2}\right\rangle$ 为 $f_{1}$ 与 $f_{2}$ 的外推，记为 $\operatorname{pushout}\left(f_{1}, f_{2}\right)$
+    1. 设 $f_{1} \circ g_{2}=f_{2} \circ g_{1}$，若 $g_{1}^{\prime}, g_{2}^{\prime} \in \operatorname{Mor} \mathscr{C}$ 使 $f_{1} \circ g_{2}^{\prime}=f_{2} \circ g_{1}^{\prime}$，则有唯一的 $\varphi \in \operatorname{Mor} \mathscr{C}$ 使
+
+        $$
+        g_{1}^{\prime}=g_{1} \circ \varphi \wedge g_{2}^{\prime}=g_{2} \circ \varphi
+        $$
+
+        则称 $\left\langle g_{1}, g_{2}\right\rangle$ 为 $f_{1}$ 与 $f_{2}$ 的回拉，记为 $\operatorname{pullback}\left(f_{1}, f_{2}\right)$
+
+    2. 设 $g_{2} \circ f_{1}=g_{1} \circ f_{2}$，若 $g_{1}^{\prime}, g_{2}^{\prime} \in \operatorname{Mor} \mathscr{C}$ 使 $g_{2}^{\prime} \circ f_{1}=g_{1}^{\prime} \circ f_{2}$，则有唯一的 $\psi \in \operatorname{Mor} \mathscr{C}$ 使
+
+        $$g_{1}^{\prime}=\psi \circ g_{1} \wedge g_{2}^{\prime}=\psi \circ g_{2}
+        $$
+
+        则称 $\left\langle g_{1}, g_{2}\right\rangle$ 为 $f_{1}$ 与 $f_{2}$ 的外推，记为 $\operatorname{pushout}\left(f_{1}, f_{2}\right)$
+
 2. 设 $\operatorname{pullback}\left(f_{1}, f_{2}\right)=\left\langle g_{1}, g_{2}\right\rangle$，若 $f_{i}(i=1,2)$ 为单态射，则 $g_{i}$ 也是单态射
 3. 设 $\mathscr{C}$ 为范畴，$A, B, C \in \operatorname{Ob} \mathscr{C}, f \in[A, C]$ 且 $g \in[B, C]$．若 $\langle A \times \left.B,\left\{\pi, \pi^{\prime}\right\}\right\rangle$ 为 $\{A, B\}$ 的积且 $\langle E, e\rangle=\mathrm{equ}\left(f \circ \pi, g \circ \pi^{\prime}\right)$，则
 
@@ -79,8 +92,21 @@
     $$
 
 4. 回拉与外推的合成性质：设 $\mathscr{C}$ 是一个范畴
-    1. 设 $f \in[B, A], g \in[C, A], h \in[E, C], g^{\prime} \in[D, B], f^{\prime} \in[D, C], h^{\prime} \in[F, D], f^{\prime \prime} \in[F, E]$，若 $\operatorname{pullback}(f, g)=\left\langle f^{\prime}, g^{\prime}\right\rangle$ 且 $\operatorname{pullback}\left(h, f^{\prime}\right)= \left\langle h^{\prime}, f^{\prime \prime}\right\rangle$，则 $\operatorname{pullback} (f, g \circ h)=\left\langle f^{\prime \prime}, g^{\prime} \circ h^{\prime}\right\rangle$
-    2. 设 $f \in[A, B], g \in[A, C], h \in[C, E], g^{\prime} \in[B, D], f^{\prime} \in[C, D], h^{\prime} \in[D, F], f^{\prime \prime} \in[E, F]$，若 $\operatorname{pushout}(f, g)=\left\langle f^{\prime}, g^{\prime}\right\rangle$ 且 $\operatorname{pushout} \left(h, f^{\prime}\right)= \left\langle h^{\prime}, f^{\prime \prime}\right\rangle$，则 $\operatorname{pushout} (f, h \circ g)=\left\langle f^{\prime \prime}, h^{\prime} \circ g^{\prime}\right\rangle$
+    1. 设 $f \in[B, A], g \in[C, A], h \in[E, C], g^{\prime} \in[D, B], f^{\prime} \in[D, C], h^{\prime} \in[F, D], f^{\prime \prime} \in[F, E]$，若
+
+        $$
+        \operatorname{pullback}(f, g)=\left\langle f^{\prime}, g^{\prime}\right\rangle \wedge \operatorname{pullback}\left(h, f^{\prime}\right)= \left\langle h^{\prime}, f^{\prime \prime}\right\rangle
+        $$
+
+        则 $\operatorname{pullback} (f, g \circ h)=\left\langle f^{\prime \prime}, g^{\prime} \circ h^{\prime}\right\rangle$
+
+    2. 设 $f \in[A, B], g \in[A, C], h \in[C, E], g^{\prime} \in[B, D], f^{\prime} \in[C, D], h^{\prime} \in[D, F], f^{\prime \prime} \in[E, F]$，若
+
+        $$
+        \operatorname{pushout}(f, g)=\left\langle f^{\prime}, g^{\prime}\right\rangle \wedge \operatorname{pushout} \left(h, f^{\prime}\right)= \left\langle h^{\prime}, f^{\prime \prime}\right\rangle
+        $$
+
+        则 $\operatorname{pushout} (f, h \circ g)=\left\langle f^{\prime \prime}, h^{\prime} \circ g^{\prime}\right\rangle$
 
 ### 2.1.4 核与余核
 1. 设范畴 $\mathscr{C}$ 有零对象，$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B]$
@@ -108,3 +134,43 @@
         3. 若 $\mathscr{C}$ 有等子且每个单态射 $u \in \operatorname{Mor} \mathscr{C}$ 均为核态射，则 $q$ 为外态射
 
 ## 2.2 锥与极限
+### 2.2.1 锥与余锥
+1. 设图 $\mathcal{D} = \left<V, E, \Psi\right>$ 且 $\langle\mathcal{D}, \Gamma\rangle$ 为范畴 $\mathscr{C}$ 中的一个图
+    1. 若 $L \in \operatorname{Ob} \mathscr{C}$ 和 $\tau: V \rightarrow \operatorname{Mor} \mathscr{C}$ 满足
+        1. 若 $v \in V$，则 $\tau(v) \in\left[L, A_{v}\right]$
+        2. 若 $e \in E$ 使 $\Psi(e)=\langle u, v\rangle$，则 $f_{e} \circ \tau(u)=\tau(v)$
+
+        则称 $\langle L, \tau\rangle$ 为 $\langle\mathcal{D}, \Gamma\rangle$ 的一个锥，记为 $\operatorname{con}_{\mathcal{D}, \Gamma}(L, \tau)$ 或简记为 $\operatorname{con}(L, \tau)$
+
+    2. 若 $L \in \operatorname{Ob} \mathscr{C}$ 和 $\tau: V \rightarrow \operatorname{Mor} \mathscr{C}$ 满足
+        1. 若 $v \in V$，则 $\tau(v) \in\left[A_{v}, L\right]$
+        2. 若 $e \in E$ 使 $\Psi(e)=\langle u, v\rangle$，则 $\tau(v) \circ f_{e}=\tau(u)$
+
+        则称 $\langle\tau, L\rangle$ 为 $\left<\mathcal{D}, \Gamma\right>$ 的一个余锥，记为 $\operatorname{cocon}_{\mathcal{D}, \Gamma}(\tau, L)$ 或简记为 $\operatorname{cocon}(\tau, L)$
+
+2. 设 $\langle\mathcal{D}, \Gamma\rangle$ 为范畴中的一个图
+    1. 设 $\langle L, \tau\rangle$ 和 $\langle X, \alpha\rangle$ 均为 $\langle\mathcal{D}, \Gamma\rangle$ 的锥，若 $h \in[L, X]$ 满足任意 $v \in V$ 均有
+
+        $$
+        \alpha(v) \circ h=\tau(v)
+        $$
+
+        则称 $h$ 为从 $\operatorname{con}(L, \tau)$ 到 $\operatorname{con}(X, \alpha)$ 的锥态射，记为 $h: \operatorname{con}(L, \tau) \rightarrow \operatorname{con}(X, \alpha)$
+
+    2. 设 $\langle\tau, L\rangle$ 和 $\langle\alpha, X\rangle$ 均为 $\langle\mathcal{D}, \Gamma\rangle$ 的余锥．若 $h \in[L, X]$ 满足任意 $v \in V$ 均有
+
+        $$
+        h \circ \tau(v)=\alpha(v)
+        $$
+
+        则称 $h$ 为从 $\operatorname{cocon}(\tau, L)$ 到 $\operatorname{cocon}(\alpha, X)$ 的余锥态射，记为 $h: \operatorname{cocon}(\tau, L) \rightarrow \operatorname{cocon}(\alpha, X)$
+
+3. 设 $\langle\mathcal{D}, \Gamma\rangle$ 为范畴 $\mathscr{C}$ 中的一个图。
+    1. 若 $\langle L, \tau\rangle,\langle X, \alpha\rangle$ 和 $\langle Y, \beta\rangle$ 都是 $\langle\mathcal{D}, \Gamma\rangle$ 的锥
+        1. $\mathbf{I}_{L}: \operatorname{con}(L, \tau) \rightarrow \operatorname{con}(L, \tau)$
+        2. 若 $h: \operatorname{con}(L, \tau) \rightarrow \operatorname{con}(X, \alpha)$ 且 $k: \operatorname{con}(X, \alpha) \rightarrow \operatorname{con}(Y, \beta)$，则 $k \circ h: \operatorname{con}(L, \tau) \rightarrow \operatorname{con}(Y, \beta)$
+    2. 若 $\langle\tau, L\rangle,\langle\alpha, X\rangle$ 和 $\langle\beta, Y\rangle$ 都是 $\langle\mathcal{D}, \Gamma\rangle$ 的余锥
+        1. $\mathbf{I}_{L}: \operatorname{cocon}(\tau, L) \rightarrow \operatorname{cocon}(\tau, L)$
+        2. 若 $h: \operatorname{cocon}(\tau, L) \rightarrow \operatorname{cocon}(\alpha, X)$ 且 $k: \operatorname{cocon}(\alpha, X) \rightarrow \operatorname{cocon}(\beta, Y)$，则 $k \circ h: \operatorname{cocon}(\tau, L) \rightarrow \operatorname{cocon}(\beta, Y)$
+
+### 2.2.2 极限与余极限
