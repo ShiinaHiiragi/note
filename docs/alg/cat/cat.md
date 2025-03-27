@@ -208,6 +208,95 @@
     2. 对每个 $A \in O$，令 $A^{\mathrm{op}}=A$，称 $A^{\mathrm{op}}$ 为 $A$ 的对偶对象；对每个 $f \in M$，称 $f^{\mathrm{op}}$ 为 $f$ 的对偶态射
     3. 对偶原理：若 $S$ 是一个对所有范畴皆真的命题，则 $S$ 的对偶命题 $S^{\mathrm{op}}$ 亦然
 
-### 1.2.3 特殊对象
+### 1.2.3 特殊态射与对象
+1. 设 $\mathscr{C}$ 为范畴，$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B]$
+    1. 若有 $g \in[B, A]$ 使 $f \circ g=\mathbf{I}_{B}$，则称 $f$ 有右逆或右可逆，$g$ 为 $f$ 的一个右逆，此时称 $f$ 为 $\text{retraction}$
+    2. 若有 $g \in[B, A]$ 使 $g \circ f=\mathbf{I}_{A}$，则称 $f$ 有左逆或左可逆，$g$ 为 $f$ 的一个左逆，此时称 $f$ 为 $\text{section}$
 
-### 1.2.4 特殊态射
+    若有 $g \in[B, A]$ 使 $f \circ g=\mathbf{I}_{B}$ 且 $g \circ f=\mathbf{I}_{A}$，则称 $f$ 有逆或可逆，也称 $f$ 为同构态射，$g$ 为 $f$ 的一个逆，记为 $f^{-1}$
+
+    1. 若 $\mathscr{C}$ 为范畴，$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B]$，则 $f$ 有逆当且仅当 $f$ 有唯一的逆
+    2. 设 $\mathscr{C}$ 为范畴，$A, B, C \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B], g \in[B, C]$
+        1. 若 $f$ 有逆，则 $f^{-1}$ 也有逆且 $\left(f^{-1}\right)^{-1}=f$
+        2. 若 $f$ 和 $g$ 均有逆，则 $g \circ f$ 有逆且 $(g \circ f)^{-1}=f^{-1} \circ g^{-1}$
+    3. 设 $\mathscr{C}$ 为范畴，$A, B, C \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B], g \in[B, C]$
+        1. 若 $f$ 和 $g$ 均为 $\text{section}$，则 $g \circ f$ 亦然
+        2. 若 $f$ 和 $g$ 均为 $\text{retraction}$，则 $g \circ f$ 亦然
+        3. 若 $f$ 和 $g$ 均为同构态射，则 $g \circ f$ 亦然
+        4. 若 $g \circ f$ 为 $\text{section}$，则 $f$ 为 $\text{section}$
+        5. 若 $g \circ f$ 为 $\text{retraction}$，则 $g$ 为 $\text{retraction}$
+        6. 若 $g \circ f$ 为同构态射，则 $f$ 为 $\text{section}$ 且 $g$ 为 $\text{retraction}$
+    4. 设 $\mathscr{C}$ 为范畴且 $A, B \in \operatorname{Ob} \mathscr{C}$．若有同构态射 $f \in[A, B]$ 则称 $A$ 与 $B$ 等价，记为 $A \cong B$
+        1. $\cong$ 是 $\operatorname{Ob} \mathscr{C}$ 上的一个等价关系
+        2. 设 $\mathscr{C}$ 为范畴且 $A, B \in \operatorname{Ob} \mathscr{C}$．若 $A \cong B$，则对任意的 $C \in \operatorname{Ob} \mathscr{C}$，皆有双射 $\sigma_{C}:[A, C] \rightarrow[B, C]$ 及双射 $\widetilde{\sigma}_{C}:[C, A] \rightarrow[C, B]$
+
+2. 设 $\mathscr{C}$ 为范畴，$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B]$
+    1. 若 $f$ 可左消去，即如果 $C \in \operatorname{Ob} \mathscr{C}$ 与 $h, k \in[C, A]$ 使 $f \circ h=f \circ k$，则 $h=k$，则称 $f$ 为单态射
+    2. 若 $f$ 可右消去，即如果 $C \in \operatorname{Ob} \mathscr{C}$ 与 $h, k \in[B, C]$ 使 $h \circ f=k \circ f$，则 $h=k$，则称 $f$ 为外态射
+
+    若 $f$ 可消去，即 $f$ 既可左消去又可右消去，则称 $f$ 为双态射
+
+    1. 设 $\mathscr{C}$ 为范畴， $A, B, C \in \operatorname{Ob} \mathscr{C}, f \in[A, B]$ 且 $g \in[B, C]$
+        1. 若 $f$ 和 $g$ 均为单态射，则 $g \circ f$ 亦然
+        2. 若 $f$ 和 $g$ 均为外态射，则 $g \circ f$ 亦然
+        3. 若 $f$ 和 $g$ 均为双态射，则 $g \circ f$ 亦然
+        4. 若 $g \circ f$ 为单态射，则 $f$ 为单态射
+        5. 若 $g \circ f$ 为外态射，则 $g$ 为外态射
+        6. 若 $g \circ f$ 为双态射，则 $f$ 为单态射且 $g$ 为外态射
+    2. 设 $\mathscr{C}$ 为范畴，$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B]$
+        1. 若 $f$ 为 $\text{section}$，则 $f$ 为单态射
+        2. 若 $f$ 为 $\text{retraction}$，则 $f$ 为外态射
+        3. 若 $f$ 为同构态射，则 $f$ 为双态射
+    3. 设 $\mathscr{C}$ 为范畴且 $A, B \in \operatorname{Ob} \mathscr{E}$，若 $f \in[A, B]$，则 $f$ 为同构态射当且仅当以下任一成立
+        1. $f$ 既是 $\text{section}$，又是外态射
+        2. $f$ 既是 $\text{retraction}$，又是单态射
+    4. 设 $f \in \operatorname{Set}[A, B]$  
+        1. 若 $A \neq \varnothing$，则下列条件等价：① $f$ 为单射；② $f$ 为 $\text{section}$；③ $f$ 为单态射
+        2. 下列条件等价：① $f$ 为满射；② $f$ 为 $\text{retraction}$；③ $f$ 为外态射
+        3. 下列条件等价：① $f$ 为双射；② $f$ 为同构态射；③ $f$ 为双态射
+
+3. 设 $\mathscr{C}$ 为范畴且 $A \in \operatorname{Ob} \mathscr{C}$
+    1. 若对每个 $B \in \operatorname{Ob} \mathscr{C}$ 皆有 $|[A, B]|=1$，则称 $A$ 为初始对象，用 $\mathbf{I}_{A B}$ 表示 $[A, B]$ 中的唯一态射
+    2. 若对每个 $B \in \operatorname{Ob} \mathscr{C}$ 皆有 $|[B, A]|=1$，则称 $A$ 为终止对象，用 $\mathbf{T}_{B A}$ 表示 $[B, A]$ 中的唯一态射
+
+    若 $A$ 同时是初始对象与终止对象，则称 $A$ 为零对象．设 $B \in \operatorname{Ob} \mathscr{C}$，用 $\mathbf{O}_{A B}$ 与 $\mathbf{O}_{B A}$ 分别表示 $[A, B]$ 与 $[B, A]$ 中的唯一态射
+
+    1. $\mathbf{I}_{AA}=\mathbf{T}_{AA}=\mathbf{O}_{AA}=\mathbf{I}_{A}$ 且 $\mathbf{O}_{AB}=\mathbf{I}_{A B}, \mathbf{O}_{B A}=\mathbf{T}_{BA}$
+    2. 设 $\mathscr{C}$ 为范畴且 $A, B \in \operatorname{Ob} \mathscr{C}$
+        1. 若 $A$ 为初始对象，则 $B$ 为初始对象当且仅当 $B \cong A$
+        2. 若 $A$ 为终止对象，则 $B$ 为终止对象当且仅当 $B \cong A$
+        3. 若 $A$ 为零对象，则 $B$ 为零对象当且仅当 $B \cong A$
+
+4. 设 $\mathscr{C}$ 为范畴，$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B]$
+    1. 若对每个 $C \in \operatorname{Ob} \mathscr{C}$ 及任意 $h, k \in[C, A]$ 皆有 $f \circ h=f \circ k$，则称 $f$ 为常态射
+    2. 若对每个 $C \in \operatorname{Ob} \mathscr{C}$ 及任意 $h, k \in[B, C]$ 皆有 $h \circ f=k \circ f$，则称 $f$ 为余常态射
+
+    若 $f$ 既是常态射，又是余常态射，则称 $f$ 为零态射
+
+    1. 设 $\mathscr{C}$ 为范畴，若任意 $A, B \in \operatorname{Ob} \mathscr{C}$ 都有 $[A, B]$ 中存在零态射，那么称 $\mathscr{C}$ 为点化范畴
+    2. 设 $\mathscr{C}$ 为范畴，$A, B, C, D \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B], g \in[B, C], h \in[C, D]$
+        1. 若 $g$ 为常态射，则 $h \circ g$ 和 $g \circ f$ 均为常态射
+        2. 若 $g$ 为余常态射，则 $h \circ g$ 和 $g \circ f$ 均为余常态射
+        3. 若 $g$ 为零态射，则 $h \circ g$ 和 $g \circ f$ 均为零态射
+    3. 设 $\mathscr{C}$ 为范畴，$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f, g \in[A, B]$．若 $f$ 为常态射，$g$ 为余常态射且 $[B, A] \neq \varnothing$，则 $f=g$
+    4. 设 $\mathscr{C}$ 为范畴且 $A, B \in \operatorname{Ob} \mathscr{C}$
+        1. 若 $A$ 为初始对象，则 $\mathbf{I}_{A B}$ 为余常态射
+        2. 若 $A$ 为终止对象，则 $\mathbf{T}_{A B}$ 与常态射
+        3. 若 $A$ 为零对象，则 $\mathbf{O}_{A B}$ 为余常态射，$\mathbf{O}_{B A}$ 为常态射
+        4. 若 $A$ 和 $B$ 均为零对象，则 $\mathbf{O}_{A B}$ 和 $\mathbf{O}_{B A}$ 皆为零态射
+    5. 如果 $\mathscr{C}$ 为范畴，则下列条件等价：
+        1. 若 $A, B \in \operatorname{Ob} \mathscr{C}$，则 $[A, B]$ 中有零态射
+        2. 若 $A, B \in \operatorname{Ob} \mathscr{C}$，则 $[A, B]$ 中有唯一的零态射
+        3. 若 $A, B \in \operatorname{Ob} \mathscr{C}$，则 $[A, B]$ 中有唯一的常态射
+        4. 若 $A, B \in \operatorname{Ob} \mathscr{C}$，则 $[A, B]$ 中有唯一的余常态射
+        5. 若 $A, B \in \operatorname{Ob} \mathscr{C}$，则 $[A, B]$ 中既有常态射，又有余常态射
+        6. 存在函数 $\sigma: \operatorname{Ob} \mathscr{C} \times \operatorname{Ob} \mathscr{C} \rightarrow \operatorname{Mor} \mathscr{C}$ 满足如下条件：
+            1. 若 $A, B \in \operatorname{Ob} \mathscr{C}$，则 $\sigma(A, B) \in[A, B]$
+            2. 若 $A, B, C \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[B, C]$，则 $f \circ \sigma(A, B)=\sigma(A, C)$
+            3. 若 $A, B, C \in \operatorname{Ob} \mathscr{C}$ 且 $g \in[A, B]$，则 $\sigma(B, C) \circ g=\sigma(A, C)$
+
+            称函数 $\sigma$ 为 $\mathscr{A}$ 的零态射选择函数
+
+    6. 设 $\mathscr{C}$ 为范畴，$Z \in \operatorname{Ob} \mathscr{C}$ 为零对象且 $A, B \in \operatorname{Ob} \mathscr{C}$
+        1. $\mathbf{I}_{Z B} \circ \mathbf{T}_{A Z}$ 为零态射
+        2. 若 $Z^{\prime} \in \operatorname{Ob} \mathscr{C}$ 也是零对象，则 $\mathbf{I}_{Z^{\prime} B} \circ \mathbf{T}_{A Z^{\prime}}=\mathbf{I}_{Z B} \circ \mathbf{T}_{A Z}$
