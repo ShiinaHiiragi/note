@@ -184,7 +184,7 @@ nav:
       - 4 格论: alg/mod/ltt.md
     - 四、范畴论:
       - 1 图与范畴: alg/cat/cat.md
-      # - 2 函子与自然变换: alg/cat/func.md
+      - 2 函子与自然变换: alg/cat/func.md
       # - 3 极限与伴随: alg/cat/lim.md
   - 几何学:
     - 一、解析几何:
