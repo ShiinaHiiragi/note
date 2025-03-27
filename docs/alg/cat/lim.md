@@ -174,3 +174,45 @@
         2. 若 $h: \operatorname{cocon}(\tau, L) \rightarrow \operatorname{cocon}(\alpha, X)$ 且 $k: \operatorname{cocon}(\alpha, X) \rightarrow \operatorname{cocon}(\beta, Y)$，则 $k \circ h: \operatorname{cocon}(\tau, L) \rightarrow \operatorname{cocon}(\beta, Y)$
 
 ### 2.2.2 极限与余极限
+1. 设 $\langle\mathcal{D}, \Gamma\rangle$ 为范畴 $\mathscr{C}$ 中的一个图
+    1. 设 $\langle L, \tau\rangle$ 为 $\langle\mathcal{D}, \Gamma\rangle$ 的一个锥，若对 $\langle\mathcal{D}, \Gamma\rangle$ 的任意一个锥 $\langle X, \alpha\rangle$，皆有唯一的锥态射
+
+        $$
+        h: \operatorname{con}(X, \alpha) \rightarrow \operatorname{con}(L, \tau)
+        $$
+
+        则称 $\langle L, \tau\rangle$ 为 $\langle\mathcal{D}, \Gamma\rangle$ 的一个极限，记为 $\varprojlim \langle\mathcal{D}, \Gamma\rangle$
+
+        1. 若 $\mathscr{C}$ 中每一个图的极限存在，则称 $\mathscr{C}$ 有极限或为完备的
+        2. 若 $\mathscr{C}$ 中每一个有穷图的极限存在，则称 $\mathscr{C}$ 有有穷极限或有穷完备的
+        3. 若 $\varprojlim \langle\mathcal{D}, \Gamma\rangle=\langle L, \tau\rangle$，则 $(\tau(v))_{v \in V}$ 为整体单态射，即对任意的 $X \in \operatorname{Ob} \mathscr{C}$ 及 $h, k \in[X, L]$，当对每个 $v \in V$ 皆有 $\tau(v) \circ h=\tau(v) \circ k$ 时，必有 $h=k$
+
+    2. 设 $\langle\tau, L\rangle$ 为 $\langle\mathcal{D}, \Gamma\rangle$ 的一个余锥，若对 $\langle\mathcal{D}, \Gamma\rangle$ 的任意一个余锥 $\langle\alpha, X\rangle$，皆有唯一的余锥态射
+
+        $$
+        h: \operatorname{cocon}(\tau, L) \rightarrow \operatorname{cocon}(\alpha, X)
+        $$
+
+        则称 $\langle\tau, L\rangle$ 为 $\langle\mathcal{D}, \Gamma\rangle$ 的一个余极限，记为 $\varinjlim \langle\mathcal{D}, \Gamma\rangle$
+
+        1. 若 $\mathscr{C}$ 中每一个图的余极限存在，则称 $\mathscr{C}$ 有余极限或为余完备的
+        2. 若 $\mathscr{C}$ 中每一个有穷图的余极限存在，则称 $\mathscr{C}$ 有有穷余极限或有穷余完备的
+        3. 若 $\varinjlim \langle\mathcal{D}, \Gamma\rangle=\langle\tau, L\rangle$，则 $(\tau(v))_{v \in V}$ 为整体外态射，即对任意的 $X \in \operatorname{Ob} \mathscr{C}$ 及 $h, k \in[L, X]$，当对每个 $v \in V$ 皆有 $h \circ \tau(v)=k \circ \tau(v)$ 时，必有 $h=k$
+
+2. 设 $\mathscr{C}$ 是一个范畴且 $\mathcal{D} = \left<V, E, \Psi\right>$ 是一个图
+    1. 设 $\mathscr{C}$ 有等子且 $\langle\mathcal{D}, \Gamma\rangle$ 为 $\mathscr{C}$ 中一个图．若 $\mathcal{D}_{V}$ 的积和 $\mathcal{D}_{E}$ 的积都存在，则 $\langle\mathcal{D}, \Gamma\rangle$ 的极限必存在
+    2. 设 $\mathscr{C}$ 有余等子且 $\langle\mathcal{D}, \Gamma\rangle$ 为 $\mathscr{C}$ 的一个图．若 $\mathcal{D}_{V}$ 的余积和 $\mathcal{D}_{E}$ 的余积都存在，则 $\langle\mathcal{D}, \Gamma\rangle$ 的余极限必存在
+3. 设 $\mathscr{C}$ 为范畴
+    1. 若 $\mathscr{C}$ 有（余）积和（余）等子，则 $\mathscr{C}$ 为（余）完备的
+    2. 若 $\mathscr{C}$ 有有穷（余）积和（余）等子，则 $\mathscr{C}$ 为有穷（余）完备的
+    3. 若 $\mathscr{C}$ 有终止对象、二元积和等子，则 $\mathscr{C}$ 为有穷完备的
+    4. 若 $\mathscr{C}$ 有初始对象、二元余积和余等子，则 $\mathscr{C}$ 为有穷余完备的
+4. 若 $\mathcal{D}$ 为范畴 $\mathscr{A}$ 中的图
+    1. 若 $\varprojlim \mathcal{D}=\left\langle L,\left\{\gamma_{A} \mid A \in V\right\}\right\rangle$，则如下结论成立
+        1. 设 $X \in \operatorname{Ob} \mathscr{A}$，若 $\sigma, \tau \in \mathscr{A}[X, L]$ 使得 $\forall A \in V: \gamma_{A} \circ \sigma=\gamma_{A} \circ \tau$，则 $\sigma=\tau$，即 $\left(\gamma_{A}\right)_{A \in V}$ 为整体单态射
+        2. 若 $\varprojlim \mathcal{D}=\left\langle L^{\prime},\left\{\gamma_{A}^{\prime} \mid A \in V\right\}\right\rangle$，则有唯一的同构态射 $\sigma: L^{\prime} \rightarrow L$ 使得 $\forall A \in V: \gamma_{A} \circ \sigma=\gamma_{A}^{\prime}$
+        3. 若有同构态射 $\sigma: L^{\prime} \rightarrow L$ 使得 $\forall A \in V: \gamma_{A} \circ \sigma=\gamma_{A}^{\prime}$，则 $\lim \mathcal{D}=\left\langle L^{\prime},\left\{\gamma_{A}^{\prime} \mid A \in V\right\}\right\rangle$
+    2. 若 $\varinjlim \mathcal{D}=\left\langle\left\{\gamma_{A} \mid A \in V\right\}, L\right\rangle$，则如下结论成立
+        1. 设 $X \in \operatorname{Ob} \mathscr{A}$，若 $\sigma, \tau \in \mathscr{A}[X, L]$ 使得 $\forall A \in V: \sigma \circ \gamma_{A}=\tau \circ \gamma_{A}$，则 $\sigma=\tau$，即 $\left(\gamma_{A}\right)_{A \in V}$ 为整体外态射
+        2. 若 $\varinjlim \mathcal{D}=\left\langle\left\{\gamma_{A}^{\prime} \mid A \in V\right\}, L^{\prime}\right\rangle$，则有唯一的同构态射 $\sigma: L \rightarrow L^{\prime}$ 使得 $\forall A \in V: \sigma \circ \gamma_{A}=\gamma_{A}^{\prime}$
+        3. 若有同构态射 $\sigma: L \rightarrow L^{\prime}$ 使得 $\forall A \in V: \sigma \circ \gamma_{A}=\gamma_{A}^{\prime}$，则 $\varinjlim \mathcal{D}=\left\langle\left\{\gamma_{A}^{\prime} \mid A \in V\right\}, L^{\prime}\right\rangle$
