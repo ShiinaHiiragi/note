@@ -68,7 +68,43 @@
     2. 若 $\left\langle\left(\mu_{i}\right)_{i \in \mathbf{I}}, \bigsqcup A_{i}\right\rangle$ 为 $\left(A_{i}\right)_{i \in \mathbf{I}}$ 的余积，则每个 $\mu_{i}(i \in \mathbf{I})$ 均为 $\text{section}$
 
 ### 2.1.3 回拉与外推
+1. 设 $\mathscr{C}$ 为范畴且 $f_{1}, f_{2}, g_{1}, g_{2} \in \operatorname{Mor} \mathscr{C}$
+    1. 设 $f_{1} \circ g_{2}=f_{2} \circ g_{1}$，若 $g_{1}^{\prime}, g_{2}^{\prime} \in \operatorname{Mor} \mathscr{C}$ 使 $f_{1} \circ g_{2}^{\prime}=f_{2} \circ g_{1}^{\prime}$，则有唯一的 $\varphi \in \operatorname{Mor} \mathscr{C}$ 使 $g_{1}^{\prime}=g_{1} \circ \varphi$ 且 $g_{2}^{\prime}=g_{2} \circ \varphi$，则称 $\left\langle g_{1}, g_{2}\right\rangle$ 为 $f_{1}$ 与 $f_{2}$ 的回拉，记为 $\operatorname{pullback}\left(f_{1}, f_{2}\right)$
+    2. 设 $g_{2} \circ f_{1}=g_{1} \circ f_{2}$，若 $g_{1}^{\prime}, g_{2}^{\prime} \in \operatorname{Mor} \mathscr{C}$ 使 $g_{2}^{\prime} \circ f_{1}=g_{1}^{\prime} \circ f_{2}$，则有唯一的 $\psi \in \operatorname{Mor} \mathscr{C}$ 使 $g_{1}^{\prime}=\psi \circ g_{1}$ 且 $g_{2}^{\prime}=\psi \circ g_{2}$，则称 $\left\langle g_{1}, g_{2}\right\rangle$ 为 $f_{1}$ 与 $f_{2}$ 的外推，记为 $\operatorname{pushout}\left(f_{1}, f_{2}\right)$
+2. 设 $\operatorname{pullback}\left(f_{1}, f_{2}\right)=\left\langle g_{1}, g_{2}\right\rangle$，若 $f_{i}(i=1,2)$ 为单态射，则 $g_{i}$ 也是单态射
+3. 设 $\mathscr{C}$ 为范畴，$A, B, C \in \operatorname{Ob} \mathscr{C}, f \in[A, C]$ 且 $g \in[B, C]$．若 $\langle A \times \left.B,\left\{\pi, \pi^{\prime}\right\}\right\rangle$ 为 $\{A, B\}$ 的积且 $\langle E, e\rangle=\mathrm{equ}\left(f \circ \pi, g \circ \pi^{\prime}\right)$，则
+
+    $$
+    \operatorname{pullback}(f, g)=\left\langle\pi^{\prime} \circ e, \pi \circ e\right\rangle
+    $$
+
+4. 回拉与外推的合成性质：设 $\mathscr{C}$ 是一个范畴
+    1. 设 $f \in[B, A], g \in[C, A], h \in[E, C], g^{\prime} \in[D, B], f^{\prime} \in[D, C], h^{\prime} \in[F, D], f^{\prime \prime} \in[F, E]$，若 $\operatorname{pullback}(f, g)=\left\langle f^{\prime}, g^{\prime}\right\rangle$ 且 $\operatorname{pullback}\left(h, f^{\prime}\right)= \left\langle h^{\prime}, f^{\prime \prime}\right\rangle$，则 $\operatorname{pullback} (f, g \circ h)=\left\langle f^{\prime \prime}, g^{\prime} \circ h^{\prime}\right\rangle$
+    2. 设 $f \in[A, B], g \in[A, C], h \in[C, E], g^{\prime} \in[B, D], f^{\prime} \in[C, D], h^{\prime} \in[D, F], f^{\prime \prime} \in[E, F]$，若 $\operatorname{pushout}(f, g)=\left\langle f^{\prime}, g^{\prime}\right\rangle$ 且 $\operatorname{pushout} \left(h, f^{\prime}\right)= \left\langle h^{\prime}, f^{\prime \prime}\right\rangle$，则 $\operatorname{pushout} (f, h \circ g)=\left\langle f^{\prime \prime}, h^{\prime} \circ g^{\prime}\right\rangle$
 
 ### 2.1.4 核与余核
+1. 设范畴 $\mathscr{C}$ 有零对象，$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B]$
+    1. 称 $\operatorname{equ}\left(f, \mathbf{O}_{A B}\right)$ 为 $f$ 的核，记为 $\operatorname{Ker}(f)$，并用 $\operatorname{ker}(f)$ 表示 $\alpha\left(f, \mathbf{O}_{A B}\right)$
+    2. 称 $\operatorname{coequ}\left(f, \mathbf{O}_{A B}\right)$ 为 $f$ 的余核，记为 $\operatorname{Cok}(f)$，并用 $\operatorname{coker}(f)$ 表示 $\widetilde{\alpha}\left(f, \mathbf{O}_{A B}\right)$
+
+    设范畴 $\mathscr{C}$ 有零对象，若每个 $f \in \operatorname{Mor} \mathscr{C}$ 的（余）核均存在，则称 $\mathscr{C}$ 有（余）核
+
+2. 假定范畴 $\mathscr{C}$ 有零对象、核与余核，$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B]$
+    1. $\operatorname{ker}(f)$ 是单态射，$\operatorname{coker}(f)$ 为外态射
+    2. $f \circ \operatorname{ker}(f)=\mathbf{O}_{E B}$ 且 $\operatorname{coker}(f) \circ f=\mathbf{O}_{\mathbf{A E}}$
+    3. 若 $h \in \mathscr{C}[D, A]$，则 $f \circ h=\mathbf{O}_{D B}$ 当且仅当有唯一的 $k \in \mathscr{C}[D, E]$ 使 $\operatorname{ker}(f) \circ k=h$
+
+        若 $h \in \mathscr{C}[B, D]$，则 $h \circ f=\mathbf{O}_{A D}$ 当且仅当有唯一的 $k \in \mathscr{C}[\widetilde{E}, D]$ 使 $k \circ \operatorname{coker}(f)=h$
+
+    4. 有唯一的 $m \in \operatorname{Mor} \mathscr{C}$ 使 $f=\operatorname{ker}(\operatorname{coker}(f)) \circ m$；有唯一的 $\widetilde{m} \in \operatorname{Mor} \mathscr{C}$ 使 $f=\widetilde{m} \circ \operatorname{coker}(\operatorname{ker}(f))$
+    5. $\operatorname{ker}(f)=\operatorname{ker}(\operatorname{coker}(\operatorname{ker}(f)))$ 与 $\operatorname{coker}(f)=\operatorname{coker}(\operatorname{ker}(\operatorname{coker}(f)))$ 在同构意义下成立
+
+3. 设范畴 $\mathscr{C}$ 有零对象且 $f \in \operatorname{Mor} \mathscr{C}$，若 $h \in \operatorname{Mor} \mathscr{C}$ 使 $f=\operatorname{ker}(h)$（或 $f=\operatorname{coker}(h)$），则称 $f$ 为核态射（或余核态射）
+    1. $f$ 为核态射当且仅当在同构意义下有 $f=\operatorname{ker}(\operatorname{coker}(f))$
+    2. $f$ 为余核态射当且仅当 $f=\operatorname{coker}(\operatorname{ker}(f))$
+    3. 设范畴 $\mathscr{C}$ 有零对象，核和余核．$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B]$
+        1. 存在 $q \in \operatorname{Mor} \mathscr{C}$ 使 $f=m \circ q$ 且 $m=\operatorname{ker}(\operatorname{coker}(f))$
+        2. 若 $f=m^{\prime} \circ q^{\prime}$ 且 $m^{\prime}$ 为核态射，则有唯一的 $t \in \operatorname{Mor} \mathscr{C}$ 使 $m=m^{\prime} \circ t$ 且 $q^{\prime}=t \circ q$
+        3. 若 $\mathscr{C}$ 有等子且每个单态射 $u \in \operatorname{Mor} \mathscr{C}$ 均为核态射，则 $q$ 为外态射
 
 ## 2.2 锥与极限
