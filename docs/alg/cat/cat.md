@@ -67,10 +67,13 @@
         1. 若 $f \in M$，则称 $\operatorname{dom}(f)$ 为 $f$ 的论域，$\operatorname{cod}(f)$ 为 $f$ 的余论域
         2. 设 $f \in M$，若 $A=\operatorname{dom}(f)$ 且 $B=\operatorname{cod}(f)$，则称 $f$ 为一个从 $A$ 到 $B$ 的态射，记为 $f: A \rightarrow B$ 或 $A \xrightarrow{f} B$
         3. 若 $f, g \in M$，使 $\operatorname{comp}(g, f) \downarrow$，则称 $\operatorname{comp}(g, f)$ 为 $g$ 与 $f$ 的合成
-    3. 设 $\mathscr{C}$ 为范畴且 $A, B, C, D \in \operatorname{Ob} \mathscr{C}$
+    3. 设 $\mathbf{I}$ 和 $\mathbf{J}$ 为指标类
+        1. 若 $\eta: \mathbf{I} \rightarrow \operatorname{Ob} \mathscr{C}$，当记 $A_{i}=\eta(i)(i \in \mathbf{I})$ 时，则称 $\left(A_{i}\right)_{i \in I}$ 为由 $\mathbf{I}$ 标记的对象族
+        2. 若 $\xi: \mathbf{J} \rightarrow \operatorname{Mor} \mathscr{C}$，当记 $f_{j}=\xi(j)(j \in \mathbf{J})$ 时，则称 $\left(f_{j}\right)_{j \in J}$ 为由 $\mathbf{J}$ 标记的态射族
+    4. 设 $\mathscr{C}$ 为范畴且 $A, B, C, D \in \operatorname{Ob} \mathscr{C}$
         1. 若 $A \neq C$ 或 $B \neq D$，则 $[A, B] \cap [C, D]=\varnothing$
         2. 若 $f \in[A, B]$ 且 $g \in[B, C]$，则 $g \circ f \in[A, C]$
-    4. 设 $\mathscr{C}$ 为范畴，若 $A \in \operatorname{Ob} \mathscr{C}$，则关于 $A$ 的幺态射存在且唯一
+    5. 设 $\mathscr{C}$ 为范畴，若 $A \in \operatorname{Ob} \mathscr{C}$，则关于 $A$ 的幺态射存在且唯一
 
 2. 设 $\mathscr{C}$ 为范畴且 $\mathbf{I}$ 和 $\mathbf{J}$ 均为类，若 $\mathcal{D}=\langle\left(A_{i}\right)_{i \in \mathbf{I}}, \left(f_{j}\right)_{j \in \mathbf{J}}, \Psi\rangle$ 满足
     1. $\left\{A_{i} \mid i \in \mathbf{I}\right\} \subseteq \operatorname{Ob} \mathscr{C}$ 且 $\left\{f_{j} \mid j \in \mathbf{J}\right\} \subseteq \operatorname{Mor} \mathscr{C}$
@@ -78,8 +81,8 @@
 
     则称 $\mathcal{D}$ 为 $\mathscr{C}$ 中的一个图，并令 $\mathcal{D}_{V}=\left(A_{i}\right)_{i \in \mathbf{I}}$ 且 $\mathcal{D}_{E}=\left(f_{j}\right)_{j \in \mathbf{J}}$
 
-    1. 若 $\mathcal{D}=\langle V, E, \Psi\rangle$ 为图且 $\Gamma: \mathcal{D} \rightarrow \mathbf{G}(\mathscr{C})$ 为图同态，定义函数 $\Psi^{\prime}$ 为 $\Psi^{\prime}(\Gamma(e))=\langle\Gamma(u), \Gamma(v)\rangle$ 当且仅当 $\Psi(e)=\langle u, v\rangle$，其中 $e \in E, u, v \in V$，则 $\left\langle(\Gamma(v))_{v \in V},(\Gamma(e))_{e \in E}, \Psi^{\prime}\right\rangle$ 为 $\mathscr{C}$ 的图，记为 $\langle\mathcal{D}, \Gamma\rangle$，并令 $A_{v}=\Gamma(v), f_{e}=\Gamma(e)$，其中 $v \in V, e \in E$
-    2. 设 $\mathscr{C}$ 为范畴，$\mathcal{D}$ 为 $\mathscr{C}$ 中的图
+    3. 若 $\mathcal{D}=\langle V, E, \Psi\rangle$ 为图且 $\Gamma: \mathcal{D} \rightarrow \mathbf{G}(\mathscr{C})$ 为图同态，定义函数 $\Psi^{\prime}$ 为 $\Psi^{\prime}(\Gamma(e))=\langle\Gamma(u), \Gamma(v)\rangle$ 当且仅当 $\Psi(e)=\langle u, v\rangle$，其中 $e \in E, u, v \in V$，则 $\left\langle(\Gamma(v))_{v \in V},(\Gamma(e))_{e \in E}, \Psi^{\prime}\right\rangle$ 为 $\mathscr{C}$ 的图，记为 $\langle\mathcal{D}, \Gamma\rangle$，并令 $A_{v}=\Gamma(v), f_{e}=\Gamma(e)$，其中 $v \in V, e \in E$
+    4. 设 $\mathscr{C}$ 为范畴，$\mathcal{D}$ 为 $\mathscr{C}$ 中的图
 
         <!-- TODO: 1.6, 1.7 -->
 
