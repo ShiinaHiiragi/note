@@ -408,8 +408,7 @@ const refList = [
         year: 2012,
         page: [1, 153],
         press: "清华大学出版社",
-        locate: "北京",
-        plot: 87
+        locate: "北京"
     },
     {
         author: ["[苏]М. М. По́стников"],
