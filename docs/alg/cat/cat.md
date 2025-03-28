@@ -333,4 +333,27 @@
         2. 函数 $F: \operatorname{Mor} \mathscr{A} \rightarrow \mathrm{Mor} \mathscr{B}$ 为双射
         3. $F$ 为忠信的和完全的，且函数 $F: \operatorname{Ob} \mathscr{A} \rightarrow \operatorname{Ob} \mathscr{B}$ 为双射
 
-2. 
+2. 设 $\mathscr{A}$ 为范畴，称 $\mathscr{A}$ 为骨架范畴当且仅当 $\mathscr{A}$ 满足 $A, B \in \operatorname{Ob} \mathscr{A}$ 使得 $A \simeq B$ 蕴含 $A=B$
+    1. 称范畴 $\mathscr{B}$ 为 $\mathscr{A}$ 的骨架当且仅当 $\mathscr{B}$ 满足
+        1. $\mathscr{B}$ 为 $\mathscr{A}$ 的完全子范畴
+        2. $\mathscr{B}$ 为骨架范畴
+        3. $\mathscr{B}$ 为极大的，即当 $\mathscr{A}$ 的完全子范畴 $\mathscr{C}$ 为骨架范畴且有 $\mathscr{B} \subseteq \mathscr{C}$ 时，皆有 $\mathscr{C}=\mathscr{B}$
+    2. 设 $\mathscr{A}$ 为范畴，则有
+        1. $\mathscr{A}_{\varphi}$ 为 $\mathscr{A}$ 的骨架
+        2. 若 $\widetilde{\mathscr{A}}$ 为 $\mathscr{A}$ 的骨架，则 $\widetilde{\mathscr{A}} \cong \mathscr{A}_{\varphi}$
+        3. 若 $\mathscr{A}_{1}$ 和 $\mathscr{A}_{2}$ 均为 $\mathscr{A}$ 的骨架，则 $\mathscr{A}_{1} \cong \mathscr{A}_{2}$
+    3. 若范畴 $\mathscr{A}$ 有骨架 $\widetilde{\mathscr{A}}$ 且范畴 $\mathscr{B}$ 有骨架 $\widetilde{\mathscr{B}}$ 使得 $\widetilde{\mathscr{A}} \cong \widetilde{\mathscr{B}}$，则称 $\mathscr{A}$ 等价于 $\mathscr{B}$ 或 $\mathscr{A}$ 和 $\mathscr{B}$ 等价，记作 $\mathscr{A} \simeq \mathscr{B}$
+        1. $\mathscr{A} \simeq \mathscr{A}$
+        2. 若 $\mathscr{A} \simeq \mathscr{B}$，则 $\mathscr{B} \simeq \mathscr{A}$
+        3. 若 $\mathscr{A} \simeq \mathscr{B}$ 且 $\mathscr{B} \simeq \mathscr{C}$，则 $\mathscr{A} \simeq \mathscr{C}$
+        4. 若 $\mathscr{A}$ 和 $\mathscr{B}$ 均为骨架范畴，则 $\mathscr{A} \simeq \mathscr{B}$ 当且仅当 $\mathscr{A} \cong \mathscr{B}$
+3. 若协变函子 $F: \mathscr{A} \rightarrow \mathscr{C}$ 为忠信的、完全的和稠密的，则称 $F$ 为等价函子
+    1. 设 $\widetilde{\mathscr{A}}$ 为范畴 $\mathscr{A}$ 的骨架且 $E: \widetilde{\mathscr{A}} \rightarrow \mathscr{A}$ 为包含函子
+        1. 若 $A \in \operatorname{Ob} \mathscr{A}$，则存在唯一的 $\widetilde{A} \in \operatorname{Ob} \widetilde{\mathscr{A}}$ 使得 $\widetilde{A} \simeq A$
+        2. $E$ 为等价函子
+        3. 存在等价函子 $P: \mathscr{A} \rightarrow \widetilde{\mathscr{A}}$ 使得 $P \circ E=I_{\widetilde{\mathscr{A}}}$
+
+        通常称函子 $P$ 为投影函子
+
+    2. 若 $\mathscr{A} \simeq \mathscr{B}$ 当且仅当存在等价函子 $F: \mathscr{A} \rightarrow \mathscr{B}$
+    3. 若 $\mathscr{A} \cong \mathscr{B}$，则 $\mathscr{A} \simeq \mathscr{B}$

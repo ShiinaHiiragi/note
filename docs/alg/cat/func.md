@@ -258,6 +258,11 @@
         1. 若 $\lambda:$ Const $_{L} \rightarrow F$ 为自然变换，则 $\varprojlim F=\langle L, \lambda\rangle$ 当且仅当 $B \in \operatorname{Ob} \mathscr{B}$ 蕴含 $\varprojlim \left(h_{B} \circ F\right)=\left\langle h_{B}(L), h_{B} \lambda\right\rangle$
         2. 若 $\tau: F \rightarrow$ Const $_{L}$ 为自然变换，则 $\varinjlim F=\langle\tau, L\rangle$ 当且仅当 $B \in \operatorname{Ob} \mathscr{B}$ 蕴含 $\varinjlim \left(h^{B} \circ F\right)=\left\langle h^{B} \tau, h^{B}(L)\right\rangle$
 
+5. 若 $F: \mathscr{A} \rightarrow \mathscr{B}$ 为协变函子，则下列条件等价
+    1. $F$ 为忠信的、完全的和稠密的
+    2. 存在协变函子 $G: \mathscr{B} \rightarrow \mathscr{A}$ 使得 $F \circ G \cong I_{\mathscr{B}}$ 且 $G \circ F=\mathbf{I}_{\mathscr{A}}$
+    3. 存在协变函子 $G: \mathscr{B} \rightarrow \mathscr{A}$ 及自然同构 $\eta: \mathbf{I}_{\mathscr{A}} \rightarrow G \circ F$ 和 $\varepsilon: F \circ G \rightarrow \mathbf{I}_{\mathscr{B}}$ 使得 $F \eta=(\varepsilon F)^{-1}$ 且 $G \varepsilon=(\eta G)^{-1}$
+
 ### 3.2.2 自然变换的积
 1. 设 $\mathscr{A}, \mathscr{B}, \mathscr{C}$ 均为范畴，协变函子 $F, G, H, K$ 及自然变换 $\alpha$ 和 $\beta$ 如图所示
 
