@@ -615,67 +615,61 @@ const refList = [
     }
 ];
 
-const [plot, total] = refList.reduce(([plot, total], item) => {
+refList.forEach((item) => {
     item.total = item.page[1] - item.page[0] + 1;
     item.plot = item.plot ?? item.total;
     item.percent = (100 * item.plot / item.total).toFixed(2) + "%";
-    plot += item.plot;
-    total += item.total;
-    return [plot, total];
-}, [0, 0]);
+})
 
-window.stat = []
-window.total = total
+const renderRef = (query) => {
+    refList
+        .filter((item) => item.plot)
+        .map((item => {
+            const catRef = (item) => {
+                const { author, title, type, page } = item;
+                const { year } = item;
 
-const renderRef = (query, filterCond) => {
-refList
-    .filter(filterCond)
-    .map((item => {
-        const catRef = (item) => {
-            const { author, title, type, page } = item;
-            const { year } = item;
+                const { trans, press, locate } = item;
+                const { journal, section, arXiv } = item;
+                result = `${author.join(", ")}. ` + `${title} [${type}]. `
 
-            const { trans, press, locate } = item;
-            const { journal, section, arXiv } = item;
-            result = `${author.join(", ")}. ` + `${title} [${type}]. `
-
-            switch (type) {
-                case "M":
-                    return result +
-                        (trans ? `${trans.join(",")},译. ` : ``) +
-                        `${press}:${locate}, ${year}.`
-                    break;
-                case "J":
-                    return result + (
-                        arXiv === undefined
-                        ? `${journal}, ${year}, ${section}.`
-                        : `arXiv:${arXiv}, ${year}.`
-                    )
-                    break;
-                default:
-                    // [DB/OL]
-                    return result;
-                    break;
-            }
-        };
-        return catRef(item);
-    }))
-    .forEach((item, index) => {
-        const newEntry = document.createElement("div");
-        const newValue = document.createElement("div");
-        const newIndex = document.createElement("div");
-        newEntry.className = "entry";
-        newValue.className = "value";
-        newIndex.className = "index";
-        newValue.innerText = item;
-        newIndex.innerText = index + 1;
-        newEntry.append(newIndex);
-        newEntry.append(newValue);
-        document.querySelector(query)?.append(newEntry);
-    });
+                switch (type) {
+                    case "M":
+                        return result +
+                            (trans ? `${trans.join(",")},译. ` : ``) +
+                            `${press}:${locate}, ${year}.`
+                        break;
+                    case "J":
+                        return result + (
+                            arXiv === undefined
+                            ? `${journal}, ${year}, ${section}.`
+                            : `arXiv:${arXiv}, ${year}.`
+                        )
+                        break;
+                    default:
+                        // [DB/OL]
+                        return result;
+                        break;
+                }
+            };
+            return catRef(item);
+        }))
+        .forEach((item, index) => {
+            const newEntry = document.createElement("div");
+            const newValue = document.createElement("div");
+            const newIndex = document.createElement("div");
+            newEntry.className = "entry";
+            newValue.className = "value";
+            newIndex.className = "index";
+            newValue.innerText = item;
+            newIndex.innerText = index + 1;
+            newEntry.append(newIndex);
+            newEntry.append(newValue);
+            document.querySelector(query)?.append(newEntry);
+        });
 };
 
-renderRef(".ref", (item) => item.plot);
+renderRef(".ref");
 </script>
 
 <style>
