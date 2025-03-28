@@ -285,7 +285,7 @@
 
     <figure markdown>
         ![](../assets/prod_2.svg)
-        <style> img[src$="prod_2.svg"] { width: 400px; } </style>
+        <style> img[src$="prod_2.svg"] { width: 380px; } </style>
     </figure>
 
     1. 结合律：$(\delta * \eta) * \varepsilon=\delta *(\eta * \varepsilon)$
@@ -293,13 +293,19 @@
 
 3. 设范畴、协变函子和自然变换的关系如图所示
 
-    <!-- TODO: 4.37 -->
+    <figure markdown>
+        ![](../assets/prod_3.svg)
+        <style> img[src$="prod_3.svg"] { width: 270px; } </style>
+    </figure>
 
     则 $(\nu \circ \mu) *(\eta \circ \varepsilon)=(\nu * \eta) \circ(\mu * \varepsilon)$
 
 4. 设范畴、协变函子和自然变换的关系如图所示
 
-    <!-- TODO: 4.39 -->
+    <figure markdown>
+        ![](../assets/prod_4.svg)
+        <style> img[src$="prod_4.svg"] { width: 610px; } </style>
+    </figure>
 
     1. $(G \circ F) \alpha=G(F \alpha)$
     2. $\alpha(K \circ L)=(\alpha K) L$
