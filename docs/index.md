@@ -619,9 +619,20 @@ refList.forEach((item) => {
     item.total = item.page[1] - item.page[0] + 1;
     item.plot = item.plot ?? item.total;
     item.percent = (100 * item.plot / item.total).toFixed(2) + "%";
-})
+});
 
-const renderRef = (query) => {
+window.stat = {
+    split: refList.map((item) => ({
+        title: item.title,
+        pages: item.total
+    })),
+    total: refList.reduce(
+        (prev, item) => prev + item.total,
+        0
+    )
+};
+
+((query) => {
     refList
         .filter((item) => item.plot)
         .map((item => {
@@ -667,9 +678,7 @@ const renderRef = (query) => {
             newEntry.append(newValue);
             document.querySelector(query)?.append(newEntry);
         });
-};
-
-renderRef(".ref");
+})(".ref")
 </script>
 
 <style>
