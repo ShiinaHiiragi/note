@@ -160,5 +160,28 @@
         则 $h_{F}: \mathscr{A} \times \mathscr{C} \rightarrow \mathbf{Set}$ 与 $h^{G}: \mathscr{C} \times \mathscr{B} \rightarrow \mathbf{Set}$ 均为二元函子
 
 ### 3.1.3 函子的性质
+1. 设 $\mathscr{A}$ 和 $\mathscr{B}$ 均为范畴，$F: \mathscr{A} \rightarrow \mathscr{B}$ 为协变函子
+    1. 设 $F: \mathscr{A} \rightarrow \mathscr{B}$ 为协变函子，$P$ 为关于态射的某种性质
+        1. $F$ 保持 $P$：若 $f \in \operatorname{Mor} \mathscr{A}$ 具有 $P$，则 $F(f)$ 也具有 $P$
+        2. $F$ 反射 $P$：若 $f \in \operatorname{Mor} \mathscr{A}$ 使 $F(f)$ 具有 $P$，则 $f$ 也具有 $P$
+
+        易知协变函子 $F$ 保持幺态射，$\text{section}$，$\text{retraction}$，同构态射以及范畴中图的交换性
+
+    2. 设 $A, B \in \operatorname{Ob} \mathscr{A}$，定义函数 $F(A, B): \mathscr{A}[A, B] \rightarrow \mathscr{B}[F(A), F(B)]$ 为 $\forall f \in \mathscr{A}[A, B]: F(A, B)(f)=F(f)$
+        1. 若每个 $F(A, B)$ 均为单射，则称 $F$ 为忠信的
+        2. 若每个 $F(A, B)$ 均为满射，则称 $F$ 为完全的
+        3. 若函数 $F: \operatorname{Mor} \mathscr{A} \rightarrow M$ or $\mathscr{B}$ 为单射，则称 $F$ 为嵌入函子
+        4. 若对每个 $B \in \operatorname{Ob} \mathscr{B}$ 皆有 $A \in \operatorname{Ob} \mathscr{A}$ 使 $F(A) \cong B$，则称 $F$ 为稠密的
+
+2. 设协变函子 $F: \mathscr{A} \rightarrow \mathscr{B}$ 为忠信的
+    1. 如果 $f, g \in \mathscr{A}[A, B]$ 使 $F(f)= F(g)$，则 $f=g$
+    2. $F$ 反射单态射、外态射、双态射、常态射、余常态射及范畴 $\mathscr{B}$ 中图的交换性
+    3. 若 $F$ 还是完全的，则 $F$ 反射 $\text{section}$，$\text{retraction}$ 和同构态射
+3. 设 $\mathscr{C}$ 为范畴且 $P, Q \in \operatorname{Ob} \mathscr{C}$，若 $h_{P}$ 保持外态射，则称 $P$ 为可投影的；若 $h^{Q}$ 保持外态射，则称 $Q$ 为可注入的
+    1. $P$ 为可投影的当且仅当对每个外态射 $f \in[B, C]$ 及任意的 $g \in[P, C]$，皆有 $h \in[P, B]$ 使 $f \circ h=g$
+    2. $Q$ 为可注入的当且仅当对每个外态射 $f \in[C, B]$ 及任意的 $g \in[C, Q]$，皆有 $h \in[B, Q]$ 使 $h \circ f=g$
+4. 设 $\mathscr{C}$ 为范畴且 $S, C \in \operatorname{Ob} \mathscr{C}$，若 $h_{S}$ 为忠信函子，则称 $S$ 为 $\mathscr{C}$ 的分离子；若 $h^{C}$ 为忠信函子，则称 $C$ 为 $\mathscr{C}$ 的余分离子
+    1. $S$ 为分离子当且仅当若 $f, g \in[A, B]$ 使 $f \neq g$，则有 $h \in[S, A]$ 使 $f \circ h \neq g \circ h$
+    2. $C$ 为余分离子当且仅当若 $f, g \in[A, B]$ 使 $f \neq g$，则有 $h \in[B, C]$ 使 $h \circ f \neq h \circ g$
 
 ## 3.2 自然变换
