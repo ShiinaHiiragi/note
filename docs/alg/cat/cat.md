@@ -90,7 +90,10 @@
 
     2. 设 $\mathscr{C}$ 为范畴，$\mathcal{D}$ 为 $\mathscr{C}$ 中的图
 
-        <!-- TODO: 1.6, 1.7 -->
+        <figure markdown>
+            ![](../assets/trans.svg)
+            <style> img[src$="trans.svg"] { width: 360px; } </style>
+        </figure>
 
         1. 称 $\mathcal{D}$ 的如上图形式的三角形子图为交换的当且仅当 $h=g \circ f$
         2. 称 $\mathcal{D}$ 的如上图形式的四边形子图为交换的当且仅当 $g \circ f=k \circ h$
