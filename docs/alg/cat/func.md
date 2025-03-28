@@ -266,7 +266,10 @@
 ### 3.2.2 自然变换的积
 1. 设 $\mathscr{A}, \mathscr{B}, \mathscr{C}$ 均为范畴，协变函子 $F, G, H, K$ 及自然变换 $\alpha$ 和 $\beta$ 如图所示
 
-    <!-- TODO: 4.31 -->
+    <figure markdown>
+        ![](../assets/prod_1.svg)
+        <style> img[src$="prod_1.svg"] { width: 270px; } </style>
+    </figure>
 
     1. 若定义函数 $\beta * \alpha: \operatorname{Ob} \mathscr{A} \rightarrow \operatorname{Mor} \mathscr{C}$ 为
 
@@ -280,7 +283,10 @@
 
 2. 设范畴、协变函子和自然变换的关系如图所示
 
-    <!-- TODO: 4.36 -->
+    <figure markdown>
+        ![](../assets/prod_2.svg)
+        <style> img[src$="prod_2.svg"] { width: 400px; } </style>
+    </figure>
 
     1. 结合律：$(\delta * \eta) * \varepsilon=\delta *(\eta * \varepsilon)$
     2. 若对任意 $B \in \operatorname{Ob} \mathscr{B}, A \in \operatorname{Ob} \mathscr{A}$，令 $H \eta(B)=H(\eta(B)), \eta S(A)=\eta(S(A))$，则 $H \eta=\mathbf{I}_{H} * \eta$ 且 $\eta S=\eta * \mathbf{I}_{S}$
