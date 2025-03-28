@@ -171,7 +171,7 @@
         1. 若每个 $F(A, B)$ 均为单射，则称 $F$ 为忠信的
         2. 若每个 $F(A, B)$ 均为满射，则称 $F$ 为完全的
         3. 若函数 $F: \operatorname{Mor} \mathscr{A} \rightarrow M$ or $\mathscr{B}$ 为单射，则称 $F$ 为嵌入函子
-        4. 若对每个 $B \in \operatorname{Ob} \mathscr{B}$ 皆有 $A \in \operatorname{Ob} \mathscr{A}$ 使 $F(A) \cong B$，则称 $F$ 为稠密的
+        4. 若对每个 $B \in \operatorname{Ob} \mathscr{B}$ 皆有 $A \in \operatorname{Ob} \mathscr{A}$ 使 $F(A) \simeq B$，则称 $F$ 为稠密的
 
 2. 设协变函子 $F: \mathscr{A} \rightarrow \mathscr{B}$ 为忠信的
     1. 如果 $f, g \in \mathscr{A}[A, B]$ 使 $F(f)= F(g)$，则 $f=g$
@@ -183,8 +183,6 @@
 4. 设 $\mathscr{C}$ 为范畴且 $S, C \in \operatorname{Ob} \mathscr{C}$，若 $h_{S}$ 为忠信函子，则称 $S$ 为 $\mathscr{C}$ 的分离子；若 $h^{C}$ 为忠信函子，则称 $C$ 为 $\mathscr{C}$ 的余分离子
     1. $S$ 为分离子当且仅当若 $f, g \in[A, B]$ 使 $f \neq g$，则有 $h \in[S, A]$ 使 $f \circ h \neq g \circ h$
     2. $C$ 为余分离子当且仅当若 $f, g \in[A, B]$ 使 $f \neq g$，则有 $h \in[B, C]$ 使 $h \circ f \neq h \circ g$
-
-### 3.1.4 同构函子
 
 ## 3.2 自然变换
 ### 3.2.1 自然变换的性质

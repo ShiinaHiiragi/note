@@ -92,7 +92,7 @@
 
         <figure markdown>
             ![](../assets/trans.svg)
-            <style> img[src$="trans.svg"] { width: 360px; } </style>
+            <style> img[src$="trans.svg"] { width: 360px; } </style> $
         </figure>
 
         1. 称 $\mathcal{D}$ 的如上图形式的三角形子图为交换的当且仅当 $h=g \circ f$
@@ -238,9 +238,9 @@
         4. 若 $g \circ f$ 为 $\text{section}$，则 $f$ 为 $\text{section}$
         5. 若 $g \circ f$ 为 $\text{retraction}$，则 $g$ 为 $\text{retraction}$
         6. 若 $g \circ f$ 为同构态射，则 $f$ 为 $\text{section}$ 且 $g$ 为 $\text{retraction}$
-    4. 设 $\mathscr{C}$ 为范畴且 $A, B \in \operatorname{Ob} \mathscr{C}$．若有同构态射 $f \in[A, B]$ 则称 $A$ 与 $B$ 等价，记为 $A \cong B$
-        1. $\cong$ 是 $\operatorname{Ob} \mathscr{C}$ 上的一个等价关系
-        2. 设 $\mathscr{C}$ 为范畴且 $A, B \in \operatorname{Ob} \mathscr{C}$．若 $A \cong B$，则对任意的 $C \in \operatorname{Ob} \mathscr{C}$，皆有双射 $\sigma_{C}:[A, C] \rightarrow[B, C]$ 及双射 $\widetilde{\sigma}_{C}:[C, A] \rightarrow[C, B]$
+    4. 设 $\mathscr{C}$ 为范畴且 $A, B \in \operatorname{Ob} \mathscr{C}$．若有同构态射 $f \in[A, B]$ 则称 $A$ 与 $B$ 等价，记为 $A \simeq B$
+        1. $\simeq$ 是 $\operatorname{Ob} \mathscr{C}$ 上的一个等价关系
+        2. 设 $\mathscr{C}$ 为范畴且 $A, B \in \operatorname{Ob} \mathscr{C}$．若 $A \simeq B$，则对任意的 $C \in \operatorname{Ob} \mathscr{C}$，皆有双射 $\sigma_{C}:[A, C] \rightarrow[B, C]$ 及双射 $\widetilde{\sigma}_{C}:[C, A] \rightarrow[C, B]$
 
 2. 设 $\mathscr{C}$ 为范畴，$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B]$
     1. 若 $f$ 可左消去，即如果 $C \in \operatorname{Ob} \mathscr{C}$ 与 $h, k \in[C, A]$ 使 $f \circ h=f \circ k$，则 $h=k$，则称 $f$ 为单态射
@@ -275,9 +275,9 @@
 
     1. $\mathbf{I}_{AA}=\mathbf{T}_{AA}=\mathbf{O}_{AA}=\mathbf{I}_{A}$ 且 $\mathbf{O}_{AB}=\mathbf{I}_{A B}, \mathbf{O}_{B A}=\mathbf{T}_{BA}$
     2. 设 $\mathscr{C}$ 为范畴且 $A, B \in \operatorname{Ob} \mathscr{C}$
-        1. 若 $A$ 为初始对象，则 $B$ 为初始对象当且仅当 $B \cong A$
-        2. 若 $A$ 为终止对象，则 $B$ 为终止对象当且仅当 $B \cong A$
-        3. 若 $A$ 为零对象，则 $B$ 为零对象当且仅当 $B \cong A$
+        1. 若 $A$ 为初始对象，则 $B$ 为初始对象当且仅当 $B \simeq A$
+        2. 若 $A$ 为终止对象，则 $B$ 为终止对象当且仅当 $B \simeq A$
+        3. 若 $A$ 为零对象，则 $B$ 为零对象当且仅当 $B \simeq A$
 
 4. 设 $\mathscr{C}$ 为范畴，$A, B \in \operatorname{Ob} \mathscr{C}$ 且 $f \in[A, B]$
     1. 若对每个 $C \in \operatorname{Ob} \mathscr{C}$ 及任意 $h, k \in[C, A]$ 皆有 $f \circ h=f \circ k$，则称 $f$ 为常态射
@@ -312,3 +312,25 @@
     6. 设 $\mathscr{C}$ 为范畴，$Z \in \operatorname{Ob} \mathscr{C}$ 为零对象且 $A, B \in \operatorname{Ob} \mathscr{C}$
         1. $\mathbf{I}_{Z B} \circ \mathbf{T}_{A Z}$ 为零态射
         2. 若 $Z^{\prime} \in \operatorname{Ob} \mathscr{C}$ 也是零对象，则 $\mathbf{I}_{Z^{\prime} B} \circ \mathbf{T}_{A Z^{\prime}}=\mathbf{I}_{Z B} \circ \mathbf{T}_{A Z}$
+
+### 1.2.4 范畴的同构
+1. 设 $F: \mathscr{A} \rightarrow \mathscr{B}$ 为协变函子，若有协变函子 $G: \mathscr{B} \rightarrow \mathscr{A}$ 使得
+
+    $$
+    G \circ F=\mathbf{I}_{\mathscr{A}} \wedge F \circ G=\mathbf{I}_{\mathscr{B}}
+    $$
+
+    则称 $F$ 为同构函子，并称 $G$ 为 $F$ 的一个逆．若存在同构函子 $F: \mathscr{A} \rightarrow \mathscr{B}$，则称 $\mathscr{A}$ 同构于 $\mathscr{B}$，记为 $\mathscr{A} \cong \mathscr{B}$
+
+    1. 范畴的同构 $\cong$ 是等价关系
+    2. 恒等函子 $I_{\mathscr{A}}: \mathscr{A} \rightarrow \mathscr{A}$ 是同构函子
+    3. 若 $F: \mathscr{A} \rightarrow \mathscr{B}$ 为同构函子
+        1. $F$ 的逆存在且唯一，常用 $F^{-1}$ 表示
+        2. $F^{-1}: \mathscr{B} \rightarrow \mathscr{A}$ 也是同构函子，且有 $\left(F^{-1}\right)^{-1}=F$
+        3. 若 $G: \mathscr{B} \rightarrow \mathscr{A}$ 为同构函子，则 $G \circ F: \mathscr{A} \rightarrow \mathscr{C}$ 也是同构函子，且有 $(G \circ F)^{-1}=F^{-1} \circ G^{-1}$
+    4. 若 $F: \mathscr{A} \rightarrow \mathscr{B}$ 为协变函子，则以下条件等价
+        1. $F$ 为同构函子
+        2. 函数 $F: \operatorname{Mor} \mathscr{A} \rightarrow \mathrm{Mor} \mathscr{B}$ 为双射
+        3. $F$ 为忠信的和完全的，且函数 $F: \operatorname{Ob} \mathscr{A} \rightarrow \operatorname{Ob} \mathscr{B}$ 为双射
+
+2. 
