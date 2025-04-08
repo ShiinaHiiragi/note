@@ -25,7 +25,7 @@
 ### 5.1.2 非递归序数
 1. 非递归序数：记 $\{\Omega_{\alpha} \mid \alpha \in \mathbf{On}\}$ 是所有非递归序数的类
     1. $\Omega_0 = 0$
-    2. $\Omega_{\alpha + 1} = {\displaystyle \sup_{X} \{X \mid X = \{x \mid x = \varphi(x)^{L_{\Omega_{\alpha}}}, , \varphi \textsf{ 为 } \Sigma_1\textsf{ 公式}\}\}}$
+    2. $\Omega_{\alpha + 1} = {\displaystyle \sup_{X} \{X \mid X = \{x \mid x = \varphi(x)^{L_{\Omega_{\alpha}}}，\varphi \textsf{ 为 } \Sigma_1\textsf{ 公式}\}\}}$
     3. 若 $\alpha$ 为极限序数，则 $\omega_{\alpha} = \sup \{\omega_{\beta} \mid \beta < \alpha\}$
 
     通常将 $\Omega_1$ 记作 $\Omega$
@@ -48,6 +48,15 @@
         2. 若 $s \in P$，则序数 $\alpha$ 是 $\sigma(s)$ 反射的当且仅当 $\alpha$ 在 $s$ 反射序数上是 $\Sigma_1$ 反射的
         3. 若 $s \in P$，则序数 $\alpha$ 是 $\pi(s)$ 反射的当且仅当 $\alpha$ 在 $s$ 反射序数上是 $\Pi_1$ 反射的
         4. 若 $s, t \in P$，则序数 $\alpha$ 是 $s \wedge t$ 反射的当且仅当 $\alpha$ 既是 $s$ 反射的，也是 $t$ 反射的
+
+    !!! note "$\text{Gandy}$ 序数"
+        1. 定义 $\delta_{\alpha} = \sup \{\delta \mid \delta$ 是 $\alpha$ 子集上 $\alpha-$递归良序的序型$\}$，即大于 $\alpha$ 的最小非递归序数
+        2. 定义 $\alpha^{+}$ 为大于 $\alpha$ 的最小容许序数
+
+        则必有 $\delta_{\alpha} \leqslant \alpha^{+}$
+
+        1. 若 $\delta_{\alpha} = \alpha^{+}$，则称 $\alpha$ 是 $\text{Gandy}$ 的
+        2. $\sigma_1$ 是最小的非 $\text{Gandy}$ 序数
 
 3. 稳定序数：若序数 $\alpha$ 是关于 $f(\alpha)$ 是 $\Sigma_{1}$ 稳定的，则称 $\alpha$ 是 $f-$稳定的．通常用括号函数或 $\lambda$ 表达式表示 $f$
     1. 若序数 $\alpha \leqslant \beta$ 且 $L_{\alpha} \prec_{\Sigma_{n}} L_{\beta}$，则称 $\alpha$ 关于 $\beta$ 是 $\Sigma_{n}$ 稳定的
