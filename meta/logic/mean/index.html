@@ -1,0 +1,5537 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="一之江">
+      
+      
+        <link rel="canonical" href="https://shiinahiiragi.github.io/note/meta/logic/mean/">
+      
+      
+        <link rel="prev" href="../truth/">
+      
+      
+        <link rel="next" href="../onto/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>3 意义与指称 - 逻辑与形而上学</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/config.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#3" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="逻辑与形而上学" class="md-header__button md-logo" aria-label="逻辑与形而上学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15 6.04 7.5 12 10.85l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            逻辑与形而上学
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              3 意义与指称
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="切换到白色主题"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到白色主题" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="defualt" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="切换到原主题"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到原主题" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ShiinaHiiragi/note/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ShiinaHiiragi/note
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+  通用
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cogn/form/cep/" class="md-tabs__link">
+          
+  
+  
+  认识基础
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../cogn/nerve/" class="md-tabs__link">
+          
+  
+  
+  形而上学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../logic/prf/cls/" class="md-tabs__link">
+          
+  
+  
+  逻辑学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../alg/elem/form/" class="md-tabs__link">
+          
+  
+  
+  代数学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../geom/anly/lin/" class="md-tabs__link">
+          
+  
+  
+  几何学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../anly/princ/seq/" class="md-tabs__link">
+          
+  
+  
+  分析学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../lang/type/gen/" class="md-tabs__link">
+          
+  
+  
+  语言学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="逻辑与形而上学" class="md-nav__button md-logo" aria-label="逻辑与形而上学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15 6.04 7.5 12 10.85l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg>
+
+    </a>
+    逻辑与形而上学
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ShiinaHiiragi/note/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ShiinaHiiragi/note
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    通用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            通用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intro/format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    版式规范
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    认识基础
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            认识基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、形式逻辑
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、形式逻辑
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/form/cep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 概念
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/form/ded/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 命题与演绎
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/form/ind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 归纳和类比
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/form/prf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 非形式逻辑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、逻辑语
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、逻辑语
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/jbo/phone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 体系与正字法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/jbo/lex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 词法与构词法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/jbo/syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 句法与篇章法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/jbo/bnf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 EBNF 句法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、Lean
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、Lean
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/lean/sys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 系统原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/lean/cat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 句法范畴
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/lean/init/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 初始模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/lean/meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 元编程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    形而上学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            形而上学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、认知科学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、认知科学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cogn/nerve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 神经认知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cogn/psyc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 心理认知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cogn/lang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 语言认知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cogn/think/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 思维认知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cogn/civ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 文化认知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、符号学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、符号学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sign/prin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 符号原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sign/prop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 符号的性质
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sign/syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 符号句法学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sign/ded/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 符号推演
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../sign/struct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 结构主义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_3_3" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、分析哲学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、分析哲学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 演绎与证成
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../truth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 真理与悖论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    3 意义与指称
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 意义与指称
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#31" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1 意义理论
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.1 意义理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#311" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.1 观念论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#312" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.1.2 指称论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#32" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2 摹状词
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.2 摹状词">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#321-russell" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.1 Russell 理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#322-strawson" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.2 Strawson 理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#323-donnellan" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.3 Donnellan 理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#324-kripke" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.2.4 Kripke 理论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#33" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3 专名与通名
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.3 专名与通名">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#331" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.1 描述理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#332" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.3.2 因果历史理论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#34" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4 命题
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.4 命题">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#341" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.1 命题的概念与性质
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#342" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.2 命题的意义
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#343" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.4.3 命题的真值
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#35" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5 主词与谓词
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="3.5 主词与谓词">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#351" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.1 实体—属性理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#352" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.2 个别—一般理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#353" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.3 外延理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#354" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.4 内涵理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#355" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.5 同一理论
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#356" class="md-nav__link">
+    <span class="md-ellipsis">
+      3.5.6 扩大理论
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../onto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 本体与模态
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    四、数学哲学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            四、数学哲学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/cep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 基本问题与历史观点
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/doctr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 三大主义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../math/cont/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 当代观点
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    逻辑学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            逻辑学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、证明论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、证明论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/prf/cls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 经典逻辑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/prf/nat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 自然演绎
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/prf/seq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 矢列演算
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/prf/ncl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 非经典逻辑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/prf/ord/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 序数分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、模型论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、模型论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/mdl/mdl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 结构与模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/mdl/eoq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 量词消去
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/mdl/stb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 稳定理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、递归论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、递归论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/rec/comp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 可计算理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/rec/cplx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 计算复杂性理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/rec/dou/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 不可解度论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/rec/arith/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 形式算术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/rec/rand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 随机性理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    四、公理集合论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            四、公理集合论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 数学基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/alg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 集合代数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/ord/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 序数与基数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/univ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 集宇宙
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 高阶无穷
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5" >
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    代数学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            代数学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、初等代数
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、初等代数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/elem/form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 解析式与初等函数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/elem/eq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 方程与不等式
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/elem/mat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 矩阵论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、组合数学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、组合数学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/comb/num/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 初等数论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/comb/gg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 大数理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/comb/comb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 计数理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/comb/graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 图论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、近世代数
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、近世代数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/mod/grp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 群论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/mod/ring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 环论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/mod/fld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 域论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/mod/ltt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 格论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    四、范畴论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            四、范畴论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/cat/cat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 图与范畴
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/cat/lim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 极限理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../alg/cat/func/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 函子与自然变换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    几何学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            几何学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、解析几何
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、解析几何
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/anly/lin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 线性空间与向量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/anly/geom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 变换与坐标
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/anly/eq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 方程与图形
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/anly/curv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 曲线理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/anly/surf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 曲面理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、点集拓扑
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、点集拓扑
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/point/space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 拓扑空间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/point/constr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 构造空间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/point/prop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 拓扑不变性质
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    分析学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            分析学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、分析学原理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、分析学原理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/princ/seq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 序列与级数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/princ/diff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 微分法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/princ/int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 积分法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、复分析
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、复分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/cmplx/func/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 复函数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/cmplx/anly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 微分与积分
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/cmplx/res/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 留数理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、实分析
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、实分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/real/ms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 测度论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/real/lbg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 微分与积分
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/real/norm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 赋范线性空间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/real/op/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 算子与泛函
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    四、概率论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            四、概率论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/prob/prob/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 概率与随机变量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/prob/dist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 概率分布与特征
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/prob/ind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 统计独立性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/prob/cond/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 条件期望
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/prob/stoch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 随机过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    语言学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            语言学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、类型论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、类型论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/type/gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 一般类型论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/type/dep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 依值类型论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/type/math/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 数学基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、形式语言
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、形式语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/formal/gr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 形式文法与自动机
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/formal/sem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 形式语义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、自然语言
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、自然语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/nat/syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 句法学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/nat/semant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 语义学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/nat/pragma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 语用学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="3">3 意义与指称</h1>
+<ul>
+<li>语义学在解释一个语言或符号系统时，至少需要三个关键性概念：意义、指称和真值<ol>
+<li>「指称」「真值」涉及语言或符号系统中的符号（词）与符号串（语句）与某个对象世界的关联；「意义」确定关联</li>
+<li>逻辑系统也是一种特殊形式的符号系统：逻辑是研究推理形式有效性的科学，有效性靠前提、结论的真假及真假关系定义</li>
+</ol>
+</li>
+</ul>
+<h2 id="31">3.1 意义理论</h2>
+<h3 id="311">3.1.1 观念论</h3>
+<ol>
+<li>观念论：语词和语句的意义就是其所代表的观念，或者是其在人心中所唤起的精神意象<ol>
+<li>语言是表达思想的工具，思想是由人们意识中一系列观念组成的</li>
+<li>观念是私有的，为了使他人理解自己的观念，人们必须使用彼此都能理解的、代表观念的语词</li>
+<li>语词和语句的意义就是与它们有固定联系的观念，任何一个有意义的词指称示的不是事物，而是作为精神实体的观念</li>
+</ol>
+</li>
+<li>观念论面临的困难<ol>
+<li>观念论必须证明每个词语都有一个与之相应的观念或一些意象，并且人们对词语的使用满足以下条件<ol>
+<li>说者头脑里呈现出相应的观念或意象</li>
+<li>说者使用某次与的目的就是为了使听话者了解此刻在他头脑中正呈现的观念或意象</li>
+<li>该表达式在听话者头脑中引起同样的观念或意象</li>
+</ol>
+</li>
+<li>「观念」与「意象」作为词语的意义过于空泛，难以在其与相应的词语之间建立稳固的、必然的联系<ol>
+<li>同样的词语有可能唤起不同的心理表象</li>
+<li>不同的词语有可能会唤起相同的心理表象</li>
+<li>在很多情况下，有些词语并不唤起任何心理表象</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>心理主义：将逻辑研究的对象等同于某种主观的心智过程，凭借心理图像和心理过程去研究逻辑推演和逻辑运算，从心理要素和心理学规律中推导出逻辑规律<ol>
+<li>哲学心理主义：哲学科学与作为科学的哲学就是心理学</li>
+<li>逻辑心理主义：逻辑对象和逻辑运算等同于表象知觉<ol>
+<li>强心理主义：自然主义或还原论的心理主义，认为逻辑规律即心理学规律，是人们实际上如何思维中归纳总结出来的<ol>
+<li>逻辑不是一门说人们应该如何思维的规范科学，而是一门关于人们实际上如何思维的自然科学</li>
+<li>如果逻辑是对「思维规律」的描述，那么逻辑错误可能是由外在于心理学规律的事实因素造成的</li>
+</ol>
+</li>
+<li>弱心理主义：尽管逻辑规律起源于心智操作，但它们却获得了相对于其起源的自主性和独立性，使得其求种与其起源分离开来，成为人们推理行为的指导原则<ol>
+<li>信念是信念的倾向或心智的习惯，为人的进化习惯所强化</li>
+<li>逻辑学陈述了行为和行动的目标和理性，因而也陈述了思维的目标和理想，是一门规范性学科</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>反心理主义：否认逻辑与心理学有任何关系，否认可以通过逻辑规律的心理学起源来说明逻辑本身的规范性质<ol>
+<li><span class="arithmatex">\(\text{Kant}\)</span>：从对知性的观察中抽出逻辑学原理将导致关于纯粹偶然规律的认识，但是逻辑中的问题在于必然的法则</li>
+<li><span class="arithmatex">\(\text{Frege}\)</span>：需要严格区分心理的与逻辑的东西<ol>
+<li>心理主义不能说明逻辑规律的客观性，因为被心理主义者视为逻辑规律基础的的主观表象是私人性的，而逻辑规律是公共性的，可以被所有人所把握</li>
+<li>心理主义不能说明逻辑规律的必然性，因为关于可变规律的想法是无意义的</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="312">3.1.2 指称论</h3>
+<ol>
+<li>指称论<ol>
+<li><span class="arithmatex">\(\text{Plato}\)</span> 指称论：语句由词组成，词是事物的名称，人们通过词句反映外部事物</li>
+<li>现代指称论：对观念论的直接反叛<ol>
+<li>语词的意义是其指称称的客观对象，语句的指称是其所具有的真值</li>
+<li>精致的指称论：<span class="arithmatex">\(\text{Frege}\)</span> 主张语言表达式不仅指称外部对象，而且表达一定的意思，因而都具有涵义和指称，且其涵义是识别、确定其指称的根据、标准与手段</li>
+</ol>
+</li>
+<li>指称论面临的问题<ol>
+<li>词语的指称基本保持稳定，意义在不断发生变化</li>
+<li>有些语词并不指称这个世界中的对象，但仍然有意义</li>
+<li>有些词语的指称是不确定的，例如指示代词或包含指示性成分的短语或语句</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>真值条件论<ol>
+<li><span class="arithmatex">\(\text{Wittgenstein}\)</span>：了解一个命题即知道当其为真时是什么情形</li>
+<li><span class="arithmatex">\(\text{Davidson}\)</span>：通过陈述语句的成真条件可以给出语句的意义，意义理论与真理论时紧密相连的，在形式上相似<ol>
+<li><span class="arithmatex">\(\text{Davidson}\)</span> 纲领：通过将 <span class="arithmatex">\(\text{Tarski}\)</span> 的约定 <span class="arithmatex">\(T:\)</span>「<span class="arithmatex">\(X\)</span> 是真语句当且仅当 <span class="arithmatex">\(p\)</span>」改写为「<span class="arithmatex">\(X\)</span> 的意思是 <span class="arithmatex">\(p\)</span>」</li>
+<li>意义的组合性：一个语言表达式的意义是作为其构成成分的表达式的意义以及这些表达式之间的结构关系的函项</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>外延逻辑：以意义的指称论或真值条件论为基础<ol>
+<li>表达式的意义就是其外延</li>
+<li>坚持 <span class="arithmatex">\(\text{Frege}\)</span> 组合性原则，即一个复合表达式的意义是其部分表达式意义的函项</li>
+<li>等值置换规则和同一性替换规则在其中成立<ol>
+<li>等值置换规则：语句的外延就是其真值，当某个语句的一部分用具有同样的外延但又不同涵义的等价表达式来替换时，这个语句的真值保持不变</li>
+<li>同一性替换规则：若两个表达式的外延相同，则从其中之一具有某种性质可以推出其中另一个也具有某种性质</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>内涵逻辑<ol>
+<li>内涵：语言表达式与其指称对象的指称关系，实际上是一种从可能世界到外延的函项</li>
+<li>语境<ol>
+<li>外延语境：也即透明语境，是函项性原则、等值替换原则、同义性替换规则在其中使用的语境</li>
+<li>内涵语境：也即晦暗语境，是函项性原则、等值替换原则、同义性替换规则在其中不适用的语境</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>指称论、外延逻辑与内涵逻辑的缺陷<ol>
+<li>范畴性：其所处的逻辑对象都属于确定的类型或范畴，所设计的逻辑运算都有非常清晰的意义</li>
+<li>无内容性：只考虑语言表达式的结构关系，很少考虑其间的意义及其差别</li>
+</ol>
+</li>
+</ol>
+<h2 id="32">3.2 摹状词</h2>
+<h3 id="321-russell">3.2.1 Russell 理论</h3>
+<ol>
+<li>否定性的理论：摹状词的出现是可以消去的<ol>
+<li>一个包含摹状词的命题被改写为一个不含摹状词的命题</li>
+<li>摹状词是不完全的符号，没有独立的意义，其意义只有在命题的前后关系中才能加以确定</li>
+<li>限定摹状词不是指称表达式，而是逻辑上不同种类的一些成分的复合，它不指称任何实在的或想象中的事物或对象</li>
+</ol>
+</li>
+<li>摹状词的分类<ol>
+<li>非限定摹状词：具有「一个某某」形式的短语</li>
+<li>限定摹状词：具有「那个如此这般的某某」形式的短语，通过对某一事物的某个特征描述唯一地指称这个事物</li>
+</ol>
+</li>
+<li>摹状词与专名<ol>
+<li>不定摹状词：用 <span class="arithmatex">\(\varphi x\)</span> 代表不定摹状词「一个有性质 <span class="arithmatex">\(\varphi\)</span> 的对象」<ol>
+<li>用 <span class="arithmatex">\(\psi(\varphi x)\)</span> 表示 <span class="arithmatex">\(\varphi x\)</span> 具有性质 <span class="arithmatex">\(\psi\)</span>，并规定 <span class="arithmatex">\(\varphi x\)</span> 与 <span class="arithmatex">\(\psi x\)</span> 的联合断定不常假：<span class="arithmatex">\(\psi (\varphi x) = \exists x \ (\varphi(x) \wedge \psi(x))\)</span></li>
+<li>一个不定摹状词的对象存在定义为命题函项「<span class="arithmatex">\(x\)</span> 是一个有性质 <span class="arithmatex">\(\varphi\)</span> 的对象」有时真，即 <span class="arithmatex">\(\exists x \ \varphi(x)\)</span></li>
+</ol>
+</li>
+<li>限定摹状词：用 <span class="arithmatex">\(\iota\)</span> 代表定冠词，用 <span class="arithmatex">\(\iota x \varphi x\)</span> 表示「那个唯一具有性质 <span class="arithmatex">\(\varphi\)</span> 的个体」<ol>
+<li>包含限定摹状词的命题 <span class="arithmatex">\(\psi(\iota x \varphi x)\)</span> 定义为 <span class="arithmatex">\(\exists c \ (\forall x \ ((\varphi(x) \leftrightarrow x = c) \wedge \psi(c)))\)</span></li>
+<li>用 <span class="arithmatex">\(\exists^1\)</span> 表示「恰好存在一个」，则有定义 <span class="arithmatex">\(\exists^1 (\iota x \varphi x) = \exists c \ (\forall x \ (\varphi(x) \leftrightarrow x = c))\)</span></li>
+<li>初现：如果摹状词以整个命题为辖域，则称其在命题中是初现，用 <span class="arithmatex">\([\iota x \varphi x](\neg \psi(\iota x \varphi x))\)</span> 表示摹状词在其中有初现，定义为 <span class="arithmatex">\(\exists c \ (\forall x \ ((\varphi(x) \leftrightarrow x = c) \wedge \neg \psi(c)))\)</span></li>
+<li>次现：如果摹状词以命题中的一个支命题为辖域，则称其在命题中是次现，用 <span class="arithmatex">\(\neg [\iota x \varphi x](\neg \psi(\iota x \varphi x))\)</span> 表示摹状词在其中有次现，定义为 <span class="arithmatex">\(\neg \exists c \ (\forall x \ ((\varphi(x) \leftrightarrow x = c) \wedge \neg \psi(c)))\)</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>存在是命题函项的基本属性<ol>
+<li>某个命题函项的可满足行或有时真，如果将只能应用于命题函项的谓词转移到满足一个命题函项的个体上，则结果是错误的</li>
+<li>将「存在」用于摹状词是有意义的，但将「存在」用于专名是无意义的</li>
+</ol>
+</li>
+</ol>
+<h3 id="322-strawson">3.2.2 Strawson 理论</h3>
+<ol>
+<li><span class="arithmatex">\(\text{Russell}\)</span> 摹状词理论具有一些隐性假定<ol>
+<li>在真正的主谓式语句中，主词必有指称</li>
+<li>只有逻辑专名能作为真正的主谓式语句的主次，其他形式的主谓式语句都是伪装的主谓式</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\text{Russell}\)</span> 摹状词理论的三个基本错误<ol>
+<li>语词的意义不一定等同于其指称<ol>
+<li>一个孤立的语词不存在指称，只有当其出现在一个语句中，并且该语句被用来谈论某个特定的人或物时才有指称</li>
+<li>一个语句或语词是否有意义的问题，与在某一个特定场合下所说出的该语句是否在那个场合下正被用来做出一个或真或假的论断的问题，或与该语词是否在那个特定场合下正被用来做出一个或真或假的论断的问题，或与该语词是否在那个特定场合下正被用来指称或提到某物的问题毫无关系</li>
+</ol>
+</li>
+<li>指称某个实体和断定该实体的存在不可混为一谈</li>
+<li>一个含摹状词的语句不一定要么是真的，要么是假的：以无指称称的摹状词做主词的据此可能没有真值</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\text{Strawson}\)</span> 理论<ol>
+<li>说出一个语词、语句是有意义的，其意义是关于如何使用该语词，语句的一个规则、约定、习惯与一般性指导，不依赖于语境，而来源于社会历史文化传统</li>
+<li>对语词和语句的使用时人带有一定意图、目的进行的，在确定其意义或指称时，应将人的各种意向形因素考虑在内</li>
+<li>对语词和语句的使用是在一定的语境中进行的，在确定它们的意义或指称时，应将各种语境因素或条件考虑在内</li>
+<li>根据使用语词的语境和使用者的意向，可以区分出语词的两种基本用法<ol>
+<li>指称性使用：正在谈论什么，这是指称和识别的任务</li>
+<li>归属性使用：关于它在述说什么，这是归属、描述、分裂或归因的任务</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="323-donnellan">3.2.3 Donnellan 理论</h3>
+<ol>
+<li>摹状词的两种不同用法<ol>
+<li>归属性使用：当说者在一个论断中以归属性方式使用一个限定摹状词时，其在述说适合该摹状词的人或物的某件事情，此时摹状词的指称并不重要<ol>
+<li>令 「该 <span class="arithmatex">\(\varphi\)</span>」表示某个限定摹状词，当归属性使用该摹状词时，「该 <span class="arithmatex">\(\varphi\)</span> 是 <span class="arithmatex">\(\psi\)</span>」预设存在一个该 <span class="arithmatex">\(\varphi\)</span> 所描述的对象，如果此预设为假，则「该 <span class="arithmatex">\(\varphi\)</span> 是 <span class="arithmatex">\(\psi\)</span>」是无意义的</li>
+<li>摹状词的归属性使用对语境的依赖较小</li>
+</ol>
+</li>
+<li>指称性使用：当说者在一个论断中以指称性方式使用一个限定摹状词时，其使用该摹状词旨在使听者辨认出其正在谈论的对象，且说者还述说了有关该对象的某件事情<ol>
+<li>说者说出「该 <span class="arithmatex">\(\varphi\)</span> 是 <span class="arithmatex">\(\psi\)</span>」时，不仅预设了存在一个该 <span class="arithmatex">\(\varphi\)</span> 所描述的对象，而且预设了在该场合有某个特定的人是该 <span class="arithmatex">\(\varphi\)</span></li>
+<li>当预设为假时，指称性使用的语句仍然有意义且仍然可能有真假</li>
+<li>指称性使用较少依赖语词或摹状词的一般意义，更多地依赖其在特定语境中的特殊意义</li>
+</ol>
+</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\text{Donnellan}\)</span> 的批评<ol>
+<li><span class="arithmatex">\(\text{Russell}\)</span> 摹状词理论忽视了指称性用法</li>
+<li><span class="arithmatex">\(\text{Strawson}\)</span> 理论没有在指称性用法和归属性用法之间作出区别，将关于各自方面的真理混为一谈<ol>
+<li>如果某人断定该 <span class="arithmatex">\(\varphi\)</span> 是 <span class="arithmatex">\(\psi\)</span>，则在没有 <span class="arithmatex">\(\varphi\)</span> 的情况下，其既没有作出一个真陈述，也没有作出一个假陈述</li>
+<li>如果没有 <span class="arithmatex">\(\varphi\)</span>，说者便没有指称任何东西</li>
+<li>某人没有说出真值的话的理由在于此人没有进行指称</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="324-kripke">3.2.4 Kripke 理论</h3>
+<ol>
+<li><span class="arithmatex">\(\text{Kripke}\)</span> 认为 <span class="arithmatex">\(\text{Donnellan}\)</span> 没有驳倒 <span class="arithmatex">\(\text{Strawson}\)</span> 尤其是 <span class="arithmatex">\(\text{Russell}\)</span> 的理论<ol>
+<li>摹状词的归属性使用与指称性使用之间的区分居于语义的含混性</li>
+<li><span class="arithmatex">\(\text{Donnellan}\)</span> 的理论不等同于在模态语境或内涵语境中的「从言」用法与「从物」用法，也不能取代 <span class="arithmatex">\(\text{Russell}\)</span> 关于摹状词的「宽辖域」与「窄辖域」的区分</li>
+</ol>
+</li>
+<li>基于言语行为理论的语义指称与说者指称<ol>
+<li>语义指称：说者在某个特定场合使用的语词所意谓的东西<ol>
+<li>语词在某个特定场合的含义是在某个特定场合由这些约定连同说者意向以及各种不同的语境特征所确定的</li>
+<li>一个不带有索引词的指示词的语义指称是由说者所具有的一种在使用该指示词时用以指称某个对象的一般意向所给出的</li>
+</ol>
+</li>
+<li>说者指称：说者在那个场合说这些语词时所意谓的东西<ol>
+<li>说者在某个特定场合的说这些语词所意谓的东西是从说者的各种不同特殊意向连同各种不同的一般原理中推导出来的</li>
+<li>说者指称是由说者在某个给定场合用以指称某个对象的特殊意向所给出的</li>
+<li>若说者相信其在某个场合下想要谈论的对象满足成为语义指称的条件，则说者也相信在其一般意向和特殊意向之间没有矛盾。它们基于下述两个理由之一是一致的<ol>
+<li>简单情况：说者的特殊意向就是要指称语义指称，即其特殊意向就是其一般意向</li>
+<li>复杂情况：说者具有一种不同于其一般意向的特殊意向，但说者相信这种特殊意向实际上所确定的对象同于其一般意向所确定的对象</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="33">3.3 专名与通名</h2>
+<ol>
+<li>名称：专名与通名的统称，分别表示自然语言中的专有名词与普通名词</li>
+<li><span class="arithmatex">\(\text{Mill}\)</span> 对名称及其意义的讨论<ol>
+<li>通名既有外延又有内涵：它们既能指称被它们所称谓的人或物，又能包摄或表示某些简单或符合的特征</li>
+<li>专名无内涵：当个体对象被命名之后，专名仅作为一种标记使其成为被谈论的对象，不表示或蕴含属于该个体的任何属性</li>
+</ol>
+</li>
+</ol>
+<h3 id="331">3.3.1 描述理论</h3>
+<ol>
+<li>描述理论：也称摹状词理论，认为摹状词本质上就是关于对象的描述<ol>
+<li>一切名称，无论是专名还是通名，都具有各自的内涵与外延，且其内涵实质上就是一些略缩的或伪装的描述或摹状词</li>
+<li>命名行为就是在大脑将一组描述或特征与一个名称联系在一起，它依据被命名对象是否具有这一组特征，或者说依据人们对这个名称意义的了解而识别对象</li>
+</ol>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{Frege}\)</span> 专名理论</p>
+<ol>
+<li>专名：广义的专名表示任何指称单一对象的表达式<ol>
+<li>指称相同的专名可能有不同的涵义，例如「晨星」与「暮星」</li>
+<li>存在有涵义而无指称的专名，例如「离地球最远的天体」，这是因为自然语言的不完善</li>
+</ol>
+</li>
+<li>概念词：即通名，表达一种概念或思想<ol>
+<li>概念词是一个真值函项，相当于逻辑学中的谓语，例如「<span class="arithmatex">\(Rx: x\)</span> 是哲学家」</li>
+<li>将 <span class="arithmatex">\(x\)</span> 替换为不同的对象名称，该形式就会得到不同的真值。各种可能的真值的集合成为该概念的外延，</li>
+</ol>
+</li>
+<li>
+<p>涵义决定指称</p>
+<ol>
+<li>
+<p>专名与概念词均有涵义与指称</p>
+<ol>
+<li>专名的涵义：指称对象的呈现方式，即关于指称对象的描述方式</li>
+<li>专名的指称：命名的对象本身</li>
+<li>概念词的指称：概念，即其值为真值的函项</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">两种指称的分析</p>
+<p>概念词指称的概念与专名指称的对象有具有一系列重要的区别</p>
+<ol>
+<li>对象是一种感性的存在，而概念则是一种主体间可公共交流和理解的客观抽象的思想</li>
+<li>表达概念的语词是不完全的，因为它们只表达对象的某种性质，而不指称对象的全体；表达对象的专名是完全的，指称该对象本身</li>
+<li>概念是一种函项，可以区分为不同的阶；对象没有阶的划分</li>
+</ol>
+</div>
+</li>
+<li>
+<p>专名必须对一个对象有所描述才能指示该对象，即专名通过其涵义与其指称发生关系</p>
+<ol>
+<li>一个表达式只有表达了某种涵义，才能指称某个或某些对象</li>
+<li>一个表达式究竟指称哪个或哪些对象取决于相应的对象是否具有该表达式的涵义所描述的那些特征或性质</li>
+</ol>
+</li>
+<li>涵义与指称的关系<ol>
+<li>专名 <span class="arithmatex">\(\to\)</span> 专名的涵义 <span class="arithmatex">\(\to\)</span> 专名的指称</li>
+<li>概念词 <span class="arithmatex">\(\to\)</span> 概念词的涵义 <span class="arithmatex">\(\to\)</span> 概念词的指称（概念）<span class="arithmatex">\(\to\)</span> 隶属于该概念的对象</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{Frege}\)</span> 理论的缺陷</p>
+<ol>
+<li>名称的涵义没有被说清楚：涵义是某种主体间的、客观的东西，但名称的涵义在不同的论者处可以发生变化</li>
+<li>涵义理论可能是内在的或封闭的：涵义的来源没有明晰，其后果是思想的客观性仅存在于语言系统内部</li>
+<li><span class="arithmatex">\(\text{Frege}\)</span> 将专名看作是语言的终极构成要素，将专名指称称的对象视作构成世界的终极实体。由于专名的涵义可用相应的涵义刻画，而任何描述肯定地包含概念词，因此专名成为远比概念词复杂的语词</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{Russell}\)</span> 专名理论：专名是代表殊相的语词</p>
+<ol>
+<li>专名与摹状词的严格区分<ol>
+<li>两者的知识基础不同：专名基于亲知的知识（个人直接感知和经验到的知识），摹状词基于描述的知识（通过描述对象的属性来理解对象的间接知识）；专名是具有命名功能的语词，通名是具有描述功能的语词</li>
+<li>两者的语义结构不同：专名是直接指称一个个体的简单符号，与组成专名的部分的意义无关</li>
+<li>含有摹状词的命题与用专名替代摹状词所产生的命题不同：即使专名称呼的对象与摹状词描述的对象相同，两命题也不同</li>
+</ol>
+</li>
+<li>逻辑专名与普通专名的区分<ol>
+<li>逻辑专名的指称决定了其涵义，它必须满足三个条件：① 没有涵义；② 必有指称；③ 亲知其指称</li>
+<li>普通专名只是不完全符号，它们由于不直接指称个体而不具有独立意义，其指称对象无法被亲知</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>簇描述说：对描述理论的修正<ol>
+<li><span class="arithmatex">\(\text{Wittgenstein}\)</span> 认为名称仍然是伪装的或略缩的摹状词<ol>
+<li>名称不是一个限定摹状词，而是一组或一簇限定摹状词</li>
+<li>名称的指称就是由这一组或一簇摹状词决定的</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\text{Searle}\)</span> 也认为名称的涵义是一组或一簇限定摹状词。但是一个对象成为该名称的指称并不需要其满足该家族中的所有摹状词，而只需要满足其中足够数量的或大多数的摹状词即可</li>
+</ol>
+</li>
+</ol>
+<h3 id="332">3.3.2 因果历史理论</h3>
+<ol>
+<li>
+<p><span class="arithmatex">\(\text{Kripke}\)</span> 认为名称只是没有涵义的纯粹指示词，其指称是从命名行为开始以名字的使用者为中介和终结的一个传播链条来确定的</p>
+<ol>
+<li>
+<p>对传统描述理论的批评</p>
+<ol>
+<li>专名并不是与一个或一组摹状词描述同义的</li>
+<li>摹状词描述并不能决定专名的指称，即摹状词并不是识别专名指称的充分必要条件<ol>
+<li>一个不满足摹状词的对象不一定不是专名的指称</li>
+<li>一个满足相应摹状词的对象不一定是专名的指称</li>
+</ol>
+</li>
+<li>从模态逻辑的角度来看，专名与摹状词的逻辑作用是各不相同的</li>
+</ol>
+<p>以上分析可以推广到簇描述说，一簇描述摹状词完全可能只是摹写了某个对象的偶然特性，而并不构成相应专名的涵义，因而也不能决定相应专名的指称</p>
+</li>
+<li>
+<p>区分严格指示词与非严格指示词：专名、通名与摹状词统称为指示词</p>
+<ol>
+<li>专名是严格指示词：在每一个可能世界中都指示同一个对象的指示词</li>
+<li>摹状词一般来说是非严格指示词：也称作偶然的指示词，即不是严格指示词的语词<ol>
+<li>大多数摹状词之所以是非严格指示词，原因在于它有涵义，且其涵义决定指称</li>
+<li>在某个可能世界中被摹状词指称的对象必须具有特定的属性，后者正是由摹状词的涵义给出的</li>
+<li>在不同的可能世界中，摹状词的涵义保持不变，原来被指称的那个对象除必然属性之外，其他属性都可以改变</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>命名仪式与传播链条<ol>
+<li>专名的指称是通过社会团体中的因果历史链条来确定的<ol>
+<li>指称不只依赖于人们自己所想的东西，还依赖社会中的其他成员</li>
+<li>重要的问题并非名称的提出者如何考虑其怎么样知道这个名称的对象，而是这条实际的「传递链条」的建立</li>
+</ol>
+</li>
+<li>三个关键性要素<ol>
+<li>最初的命名仪式</li>
+<li>随之而来的传播链条</li>
+<li>处在该传播链条上的后来的说话者在使用名字时与先前的说话者保持一致</li>
+</ol>
+</li>
+<li>自然种类词的通名也是严格指示词，并在一切可能世界都指称同样的对象<ol>
+<li>通常将属性的组合看作通名的内涵的观点是错误的，因为通名一般来说不表达属性</li>
+<li>确定通名指称的是该种类跨一切可能世界而恒定不变的本质属性，即该种类所具有的内部结构</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>本质主义学说<ol>
+<li>关于本质或本质属性的定义<ol>
+<li>本质属性：一个或一类事物必然具有的属性，它历经一切可能世界的变化而不变，从而使该事物保持着自身同一性</li>
+<li>偶然特性：对于一个或一类事物来说可有可无的属性，它在某些可能世界中具有这些性质，但在另外一些可能世界中却完全可能不具有这些性质</li>
+</ol>
+</li>
+<li>关于本质属性的作用：一个或一类对象只要具有其本质，即使它们失去了许多其他性质，也仍然是改个或该类事物；反之如果失去其本质，即使它们在其他性质方面仍然与原事物相同，它们也不再是改个或该类事物</li>
+</ol>
+</li>
+<li>因果历时理论的推论<ol>
+<li>必然性与先验性：先验与后验是一个认识论概念，必然与偶然是一个形而上概念，其涉及到这个世界的存在状况</li>
+<li>同一命题的必然性：应该将同一性看作是某个东西与其自身之间的关系</li>
+<li>后验必然命题：由于严格指示词组成的同一命题是必然的，而专名是严格指示词，因此只含专名的同一陈述是必然的</li>
+<li>先验偶然命题：例如「巴黎的标准米尺的长度是 <span class="arithmatex">\(1\ \mathrm m\)</span>」</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{Putnam}\)</span> 自然种类词理论</p>
+<ol>
+<li>
+<p>关于某一种类正常个体的特征描述不构成该种类的本质，它只是该种类的范型，而范型不适合作为自然种类词的涵义</p>
+<ol>
+<li>有关的自然种类的正常成员实际上可能并非人们认为正常的成员</li>
+<li>自然种类的特征可能随着时间而变化，而其本质没有如此大的改变，因此人们将不再使用同一个语词</li>
+</ol>
+<p>自然种类的本质就是其内部构造</p>
+<div class="admonition note">
+<p class="admonition-title">孪生地球论证</p>
+<p><span class="arithmatex">\(\text{Putnam}\)</span> 构造的思想实验：在宇宙中存在一个孪生地球，唯一与地球的差异是「水」指一种分子结构为 <span class="arithmatex">\(\text{XYZ}\)</span> 的物质。虽然两者在各自星球担任角色相同，但是人们依然会认定两种水不是同一种物质</p>
+</div>
+</li>
+<li>
+<p>科学实在论立场</p>
+<ol>
+<li>操作主义只承认理论内的实体，根本否认理论之外还存在着独立实体。操作主义形式与反实在论自相矛盾</li>
+<li>科学家在使用词项时，不认为相关标准就是这些词项的充要条件，而是将这些标准看作是对一些独立于理论的实体的某些属性的近似正确的描述，而且更晚的理论对较早理论所描述的同样实体作出了更好的描述</li>
+</ol>
+</li>
+<li>语言分工假说：语言共同体的一般成员都可以有意义地使用自然种类词，其他成员也能理解其他人在说什么<ol>
+<li>许多常用语词其外延只能为少数特定领域的专家所确定，但语言共同体的特定领域外的其他成员也能使用领域内的语词</li>
+<li>作为社会性交流工具，语言是整个语言共同体通力合作的产物，每个语言使用者对其使用必然依赖于共同体的其他成员</li>
+<li>语言的社会分工进一步巩固和维持着自然种类词的指称严格性</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="34">3.4 命题</h2>
+<h3 id="341">3.4.1 命题的概念与性质</h3>
+<ol>
+<li><span class="arithmatex">\(\text{Engel}\)</span> 认为传统命题由四种不同的用法<ol>
+<li>语义学用法：命题就是能够为真为假的东西，也就是能够具有一个真值的东西<ol>
+<li>通常的演绎概念是一个语义概念，其依赖于关于真假和有效性等语义的概念：如果一个论证或推理的前提为真则结论必真，则它是有效的</li>
+<li>句法表述：命题就是能够在推理中用作前提或结论的东西</li>
+</ol>
+</li>
+<li>命题就是一个语句的语言学意义，也就是该语句在该语言中的字面的或规约的意义</li>
+<li>语用学用法：命题就是能够被某个语言行为如断定、命令或威胁所论及或传达的内容</li>
+<li>心理学用法：命题是某种心理状态或命题态度的内容或对象</li>
+</ol>
+</li>
+<li>命题的性质的三种主要本体论学说<ol>
+<li>命题多于或类似于语言中的语句，它们像语句一样，也是一串具有某种句法结构的符号</li>
+<li>命题是抽象实体，与语言学中的语句不同，其本身不能还原为一组符号</li>
+<li>命题是在这个世界中存在的对象或属性的集合，如「事实」「事态」 或「情景」等，它因此成为在客观世界中存在的东西</li>
+</ol>
+</li>
+<li>
+<p>真值承担者：能够为真或者为假的东西</p>
+<ol>
+<li>语句：广义的语句即语言学中的语句，是一种语言单位，由某种语言内的语词或词组按一定的语法规则组成；狭义的语句除具有上述特点外，还必须能够作为真值承担者</li>
+<li>命题：命题的最常见用法是将之理解为语句的涵义，即由一语句表达的具有主体间性的思想内容，能够为真或为假。因此语句和命题就是一种表达与被表达的关系<ol>
+<li>若广义地理解语句，则<ol>
+<li>所有命题都由语句表达，但并非所有语句都表达命题</li>
+<li>不同语言的不同语句，甚至同一语言中的不同语句，可以表达同一命题</li>
+<li>由于词汇歧义、结构歧义、指示性短语以及语境等因素，同一语句可以表达不同的命题</li>
+</ol>
+</li>
+<li>若狭义地理解语句，则所有命题都由语句表达，且所有语句都表达命题</li>
+</ol>
+</li>
+<li>陈述：说出或写出语句的动作或行为，或者表示说出或写出陈述或似陈述句（反诘句和某些感叹句）时所述说的东西</li>
+<li>判断：被实际断定为真或为假的命题<ol>
+<li>判断与一定的断定者相关，因断定主体而异</li>
+<li>判断被认为具有心理主义色彩，在现代逻辑中几乎已弃而不用</li>
+</ol>
+</li>
+</ol>
+<p>综上所述，语句是一种可见可闻的物质性客体；命题、陈述、判断则是精神性的东西，它们由语句表达，但不能归结为语句，而是人们在听到或见到一个语句时所理解的东西</p>
+</li>
+</ol>
+<h3 id="342">3.4.2 命题的意义</h3>
+<ol>
+<li><span class="arithmatex">\(\text{Plato}\)</span> 主义者承认命题存在<ol>
+<li>命题是由两种语言的不同语句所共同表达的、在语言翻译过程中力求保留的东西：命题是语言翻译的真正对象，两个不同语言中的语句之所以能够相互翻译，是因为其表达同一个命题即同样的思想</li>
+<li>在文本诠释或哲学分析过程中，一个语句的意义或晦涩难懂，或不太明确，人们需要将之诠释或精释为另一个语句</li>
+<li>语句没有真假，只有语句所表达的思想：唯有命题才是真值承担者，因为同一语句在不同语境中可以表达不同的命题</li>
+<li>在关于命题态度词如相信、知道、怀疑、断定等的逻辑分析中，需要设定作为其对象的命题</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\text{Quine}\)</span> 等人拒绝介绍命题作为意义实体而存在<ol>
+<li>翻译不确定性：可以用不同的方式编撰一些把一种语言译为另一种语言的翻译手册，所有这些手册都与言语倾向的总体相容，但它们彼此之间却不相容<ol>
+<li>语言是社会的、主体间公共可观察的活动，语言的意义则是这种语言活动的特性，因此必须根据行为来解释</li>
+<li>意义相对于观察证据和言语行为倾向总体是不确定的，具有经验意义的不是单个的观察句，而是一个语句系统或理论体系。在同样的行为证据基础上，关于单一语句可以提供不同的彼此不相容却又同等正确的翻译</li>
+</ol>
+</li>
+<li>行为主义意义论：同义性是一个捉摸不定的概念<ol>
+<li>无论是用定义、保全真值地可互相替换性，还是用人工语言的语义规则等来说明刻画同义性都是不成功的</li>
+<li>由于在行为证据上不足以精确地刻画同义性，因而就缺乏将两个语句所表达的命题视为同义的标准，命题因此不能个体化</li>
+</ol>
+</li>
+<li>场合句与恒久句<ol>
+<li>场合句：与特定的言语情景相关的语句。同一语句在不同时间、地点、由不同的人说出来会得到不同的真假结果</li>
+<li>恒久句：将场合句的一切指示词都代之以确定的名称、时间、地点等等，则其可作为真值承担者，没有必要假定命题</li>
+</ol>
+</li>
+<li>态度词后面跟一语句从而形成谓词，从而相信构造以及其他的态度构造并不指称、命名任何类型的对象，其只是对某些对象为真，对另一些对象为假的谓词</li>
+<li>为了避免作出像命题、属性、关系这样的本体论承诺，<span class="arithmatex">\(\text{Quine}\)</span> 将 <span class="arithmatex">\(p,q,F(x)\)</span> 中的 <span class="arithmatex">\(F\)</span>，<span class="arithmatex">\(G(x,y)\)</span> 中的 <span class="arithmatex">\(G\)</span> 看作不可被量词约束的模式或模式字母，即代表相应语句中的空位<ol>
+<li>保持 <span class="arithmatex">\(p\)</span>、<span class="arithmatex">\(q\)</span> 等与 <span class="arithmatex">\(F\)</span>、<span class="arithmatex">\(G\)</span> 等的模式身份，而不是把这些字母当成可约束的变元</li>
+<li>意义：禁止人们使那些字母受到量化，免于将陈述和谓词看成某物的名称</li>
+<li>理论后果：① 由于量词逻辑中只有个体变元可被量词约束，因此排除了高阶逻辑存在的可能；② 没有对命题、性质、关系、函项等作出本体论承诺，这些东西都不是本体论上可接受的实体</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="343">3.4.3 命题的真值</h3>
+<ol>
+<li>
+<p>符合论：语句真不在于其与其他语句的关系，而在于它与对象或世界的关系及与对象在世界的存在方式或存在状况的符合及对应</p>
+<ol>
+<li>符合论有本体论和认识论的预设<ol>
+<li>本体论方面：符合论要承认或假设存在着一个不依赖于人的心灵或精神的外部世界，人的认识是关于这个世界的认识，是对这个世界的反映、描述、概括。因此符合论必定持某种实在论立场</li>
+<li>认识论方面：符合论要假设语句的真假与人是否认识到这种真假无关，甚至与人是否能够认识到这种真假也无关，而是纯粹由外部世界决定的</li>
+</ol>
+</li>
+<li>符合论必须承诺二值原则：任一语句或命题都是真的或者假的，二者必居且只居其一</li>
+<li>符合论面临的困难<ol>
+<li>事实的概念、性质与特点；事实的客观性与主观性；事实的个体化问题等</li>
+<li>
+<p>语句与事实之间的符合关系及其确证方法</p>
+<div class="admonition note">
+<p class="admonition-title">逻辑原子主义</p>
+<p><span class="arithmatex">\(\text{Russell}\)</span> 和 <span class="arithmatex">\(\text{Wittgenstein}\)</span> 的逻辑原子论都基于一些不成立的假定上：事实或事态是独立自主的，没有一个事实依赖于任何其他的事实，在不同的存在物之间不存在内在关系，即像逻辑推出那样的关系</p>
+<ol>
+<li><span class="arithmatex">\(\text{Russell}\)</span> 认为在语言中有原子命题和分子命题<ol>
+<li>分子命题由原子命题复合而成</li>
+<li>语言和世界之间具有结构的同型性，整个世界建立在原子事实之上的逻辑构造并同构于一个理想化的逻辑语言体系</li>
+</ol>
+</li>
+<li>早期 <span class="arithmatex">\(\text{Wittgenstein}\)</span> 认为命题是实在的一种图像，命题是实在的一种模型<ol>
+<li>复合命题是原初命题的真值函项，原初命题由名称的排列构成</li>
+<li>事实由事态构成，事态由处于某种排列中的对象构成</li>
+<li>命题对应于事实，原初命题对应于事态，名称对应于对象</li>
+</ol>
+</li>
+</ol>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>融贯论：一个命题的真不在于其与事实或实在的符合、一致或对应，而在于它与它所从属的命题系统中其他成员是否融贯。真理在于一组信念的各个元素之间的一种融贯关系，即谈论作为一个命题系统的元素的单个命题的真假是有意义的，谈论其所属的整个命题系统的真假是无意义的</p>
+<ol>
+<li>融贯论也有本体论和认识论的根据<ol>
+<li>本体论方面：实在本身就是一个统一且融贯的整体，只有作为整体的绝对本身才是真实的。关于现象的感觉经验不能为人们关于绝对的认识提供可靠的基础，惟有把关于部分、侧面、表现的认识置于关于绝对的整体性认识之中，才能判别和保证其的真理性</li>
+<li>认识论方面：人们不可能脱离人类的语言和思想而直接达到实在。命题与「事实」和「实在」的对照在本质上是系统内的一些命题与另一些命题的对照，命题的真假就在于与其所属的命题系统中的其他命题之间的相互融贯</li>
+</ol>
+</li>
+<li>融贯论的理论基础是矛盾律与「系统」概念：融贯性在于系统内各命题之间的相容性、关联性和系统本身的丰富性<ol>
+<li>相容性：一组命题互不冲突和排斥，可以同时成立</li>
+<li>关联性：强关联指系统内的任一命题都必须衍推出其他命题，并且被其他每个命题所衍推；弱关联指系统内的任一命题都可以被该系统内的所有其他命题逻辑地推出，或系统内的任一组命题在逻辑上都不独立于系统内的所有其他命题</li>
+<li>丰富性涉及系统的容纳能力：是否把一定范围内的真命题都包括进来，使得一个系统足够大和足够丰富</li>
+</ol>
+</li>
+<li>融贯论受到很多非议<ol>
+<li>自身融贯只是一个理论为真的必要条件，而不是充分条件</li>
+<li>有可能存在两个甚至多个互不相容的命题系统，其中每一个系统都自身融贯</li>
+<li>无穷倒退：若一个命题的真在于它同一个系统内的其他命题的融洽或无矛盾，那么系统本身的真理性就只能取决于在更大的系统内与其他命题系统之间的融贯，更大系统本身的真理性无法确定</li>
+</ol>
+</li>
+<li>融贯论包含一些合理因素<ol>
+<li>自身融贯尽管不是真理的充分条件，但却是必要条件。因此如果能证明某个命题与其他已知为真的命题系统相容，那么它为真至少是可能的</li>
+<li>融贯论在以隐含的形式强调真理的总体性和全面性</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>紧缩论：「<span class="arithmatex">\(p\)</span> 是真的」仅仅等同于 <span class="arithmatex">\(p\)</span>，也称作真理的冗余论。「真」「假」两个谓词是多余的，并没有对 <span class="arithmatex">\(p\)</span> 作出什么新的描述和断定，因而可以将之从任何语境中删除而不会引起任何语义上的损失。根本没有孤立的真理问题，有的只是语言混乱<ol>
+<li><span class="arithmatex">\(\text{Ramsey}\)</span> 认为说一个命题是真的，只不过是断定该命题本身<ol>
+<li>把真或假明确归诸于某个命题，例如「<span class="arithmatex">\(p\)</span> 是真的」或「<span class="arithmatex">\(p\)</span> 是假的」，这里「<span class="arithmatex">\(p\)</span> 是真的」意指 <span class="arithmatex">\(p\)</span>，「<span class="arithmatex">\(p\)</span> 是假的」意指非 <span class="arithmatex">\(p\)</span></li>
+<li>用真或假描述没有被明确说出的命题</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\text{Strawson}\)</span> 认为「真」只是一个施为表达式，使用它并不是作出关于某个陈述的陈述，而是完成一个同意、接受、承认、确信、赞成该陈述的行为</li>
+<li>
+<p>紧缩论用 <span class="arithmatex">\(T\)</span> 模式表示为「<span class="arithmatex">\(p\)</span> 是真的」<span class="arithmatex">\(\equiv p\)</span> 或「命题 <span class="arithmatex">\(p\)</span> 是真的」<span class="arithmatex">\(\equiv p\)</span>，其变种主要有包括以下四种</p>
+<ol>
+<li>不存在像真这样的属性，「<span class="arithmatex">\(p\)</span> 是真的」或「命题 <span class="arithmatex">\(p\)</span> 是真的」形式的语句所表达的命题等同于 <span class="arithmatex">\(p\)</span> 本身所表达的那个命题</li>
+<li>要适当地定义真概念，所需要的东西只是它能推出 <span class="arithmatex">\(T\)</span> 模式或近似模式的所有合适的特例</li>
+<li>无论是否能够给出关于真概念的适当定义，真谓词的内容都是由所有这些真模式的合适例证的总体给出的</li>
+<li>人们对真概念的掌握在于其关于由这些例证所表达的那些命题的知识，或者人们接受由这些例证所表达的命题的那种倾向</li>
+</ol>
+<div class="admonition note">
+<p class="admonition-title">代语句理论与极小理论</p>
+<ul>
+<li>代语句理论：引人代语句词「<span class="arithmatex">\(\text{tthat}\)</span>」，从而把「对于所有的 <span class="arithmatex">\(p\)</span> 来说，如果断定 <span class="arithmatex">\(p\)</span>，则 <span class="arithmatex">\(p\)</span>」改述为「对于所有的 <span class="arithmatex">\(p\)</span> 来说，如果断定 <span class="arithmatex">\(\text{tthat}\)</span>，则 <span class="arithmatex">\(\text{tthat}\)</span>」</li>
+<li>极小理论：<span class="arithmatex">\(T-\)</span>语句集已经穷尽了关于真的论述</li>
+</ul>
+</div>
+</li>
+</ol>
+</li>
+</ol>
+<h2 id="35">3.5 主词与谓词</h2>
+<ol>
+<li>在形如「<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(P\)</span>」的命题中，可供讨论的论题：<ol>
+<li>「是」的逻辑意义与哲学意义</li>
+<li>表示 <span class="arithmatex">\(S\)</span> 与 <span class="arithmatex">\(P\)</span> 的何种关系</li>
+<li>对其意义或作用的不同解释在逻辑和哲学上会造成何种后果</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\text{Frege}\)</span> 的真值函项理论：在 <span class="arithmatex">\(n\)</span> 元概念词中，填上适当的个体变项并用量词约束所有的个体变项，或填上个体常项或对象名称都会得到或真或假的语句。在这个意义上，概念词是从个体到真值集合 <span class="arithmatex">\(\{0, 1\}\)</span> 的函项，也可以说「概念就是其值为真值的函数」<ol>
+<li>概念词：表达一种概念或思想，相当于一个函数，例如「（&emsp;）是哲学家」，称含有 <span class="arithmatex">\(n\)</span> 个空位的概念词为 <span class="arithmatex">\(n\)</span> 元概念词</li>
+<li><span class="arithmatex">\(\text{Frege}\)</span> 处理谓词的基本假定<ol>
+<li>逻辑主词总是单称词项，谓述的惟一载体是单称语句</li>
+<li>单称语句的最原始类型由一个或一些主词和一个谓词构成。这些主词表达式和谓词表达式属于不同的句法类型，而句法上的不同仅仅归因于它们所起的语义作用不同：主词起指称作用，谓词起描述作用</li>
+<li>在句法上和语义上，单称语句比普遍语句更初始</li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="351">3.5.1 实体—属性理论</h3>
+<ol>
+<li>主词 <span class="arithmatex">\(S\)</span> 指称或代表实体，谓词 <span class="arithmatex">\(P\)</span> 代表实体所具有的性质或状态，系词「是」则表示谓词所表示的性质或状态「内在于」主词所代表的实体之中<ol>
+<li>命题「<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(P\)</span>」的意义是以下各命题的合取：<ol>
+<li>存在个体 <span class="arithmatex">\(x\)</span>，词项 <span class="arithmatex">\(S\)</span> 指称或代表 <span class="arithmatex">\(x\)</span></li>
+<li>存在着性质或状态 <span class="arithmatex">\(f\)</span>，词项 <span class="arithmatex">\(P\)</span> 意谓 <span class="arithmatex">\(f\)</span></li>
+<li><span class="arithmatex">\(f\)</span> 属于 <span class="arithmatex">\(x\)</span></li>
+</ol>
+</li>
+<li>这种解释追溯到 <span class="arithmatex">\(\text{Aristotle}\)</span><ol>
+<li>十种范畴：实体、数量、性质、关系、地点、时间、姿势、所有、主动、被动。范畴实际上囊括了事物的所有实质性的存在方式，范畴的种类有多少，存在的意义就有多少</li>
+<li>实体至少具有某些特点：① 实体既不述说一个主体，也不存在于一个主体之中；② 实体是其他一切事物的本质、原因和存在的根据；③ 实体是历经变化而保持不变者，在时间历程中它能够允许相反的属性</li>
+<li>实体的分类：个别的事物、包括所有个别事物的「种」、是包含「种」的「属」</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>上述理论在逻辑上的后果：对命题作主谓式分析，把一简单命题看作是「主—系—表」结构<ol>
+<li><span class="arithmatex">\(\text{Aristotle}\)</span> 认为十范畴是对命题主谓词的分类且其分类是完全的<ol>
+<li>第一性实体只能被其他事物所述说，而不能述说其他事物，在语句中只能做主词，不能做谓词</li>
+<li>第二性实体既可以述说个别事物，又可以被更高的属所述说，因而在语句中既可以做主词，也可以做谓词</li>
+<li>其他九个属性范畴从不同方面述说实体，在其正常用法中不能被任何东西所述说，在语句中只能做谓词，不能做主词</li>
+</ol>
+</li>
+<li>实体范畴与属性范畴的区分在逻辑学上就演变为命题中主词和谓词的区分以及对命题的主谓式分析以及基于这种分析之上的直接推理和三段论理论</li>
+</ol>
+</li>
+</ol>
+<h3 id="352">3.5.2 个别—一般理论</h3>
+<ol>
+<li>从实体—属性理论派生出来的关于「<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(P\)</span>」的一种哲学解释<ol>
+<li><span class="arithmatex">\(\text{Aristotle}\)</span> 之后，实体、属性及其相互关系成为哲学史上的重要话题</li>
+<li><span class="arithmatex">\(\text{Strawson}\)</span> 认为殊相和共相之间、实体和性质之间的区别就是由传统语句的语法所造成的这种伪物质的消极影响。在那种传统语句中，可区分的语词发挥着可区别出来的不同作用</li>
+<li><span class="arithmatex">\(\text{Plato}\)</span> 认为在具体事物组成的可感世界之外，还存在一个理念世界</li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\text{Hegel}\)</span> 认为判断是在概念本身中建立起来的概念的规定性，即判断是从概念那里发展出来的<ol>
+<li>概念本身包含着个性与共性、特殊与普遍、个别与一般诸矛盾环节，自身包含着的环节进行自我区分和联结的过程就是判断</li>
+<li>判断是概念中潜藏的个别和一般诸矛盾环节的明确揭示与展开，其表现形式是「个别就是一般」</li>
+<li>一般是本原性、基础性的存在，个别是派生性、第二位的存在</li>
+</ol>
+</li>
+</ol>
+<h3 id="353">3.5.3 外延理论</h3>
+<ol>
+<li>关于「是」在「<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(P\)</span>」这种形式的命题中的作用，传统逻辑和现代逻辑都给予一种外延的解释<ol>
+<li>表示个体与个体或类与类之间的同一关系<ol>
+<li>一般来说，形如「<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(P\)</span>」的命题，若 <span class="arithmatex">\(S\)</span> 是专名，<span class="arithmatex">\(P\)</span> 是一个摹状词，则其中的系词「是」表示同一关系</li>
+<li>形如「<span class="arithmatex">\(xS\)</span> 是 <span class="arithmatex">\(yS\)</span>」（<span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 是加在 <span class="arithmatex">\(S\)</span> 前面的限制语）的命题，若 <span class="arithmatex">\(x\)</span> 和 <span class="arithmatex">\(y\)</span> 表示同一类事物 <span class="arithmatex">\(S\)</span> 的两种不同的特有属性，则其中的「是」表示同一关系</li>
+</ol>
+</li>
+<li>表示个体与类之间的属于关系</li>
+<li>子类与类之间的包含于关系，即对任一 <span class="arithmatex">\(x\)</span> 而言，若 <span class="arithmatex">\(x\)</span> 属于 <span class="arithmatex">\(S\)</span>，则 <span class="arithmatex">\(x\)</span> 属于 <span class="arithmatex">\(P\)</span></li>
+</ol>
+</li>
+<li>传统逻辑建立在对「<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(P\)</span>」作外延性解释之上，其将 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(P\)</span> 都理解为代表某种实体化的东西<ol>
+<li>直言命题中的主词和谓词可以换质、换位、换质位，还可以在大词、小词和中词的外延关系的基础上作三段论推理</li>
+<li>数理逻辑中的谓词演算在对词项及其关系作外延性理解上与传统逻辑一致</li>
+</ol>
+</li>
+<li>现有理论力图将外延解释推广到一切语言现象，即认为在一切形如「<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(P\)</span>」的命题中，「是」都表示 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(P\)</span> 之间的外延关系<ol>
+<li>若遇到「<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(P\)</span>」中的 <span class="arithmatex">\(S\)</span> 或 <span class="arithmatex">\(P\)</span> 表示某种性质时，它们就将其实体化为具有该种性质的事物类</li>
+<li>若遇到其中的 <span class="arithmatex">\(S\)</span> 或 <span class="arithmatex">\(P\)</span> 表示某种关系时，它们就将其实体化为具有该种关系的序偶类</li>
+<li>
+<p>外延理论有一个基本假定，即任一性质都可决定一个类或集合（概括公理）：<span class="arithmatex">\(\forall x\exists Y \ (x \in Y \to \varphi(x))\)</span>。<span class="arithmatex">\(\text{Russell}\)</span> 证明该公理可以导致悖论，因此概括原则被弱化</p>
+<div class="arithmatex">\[
+\forall x \exists Y \forall u \ (u\in Y \leftrightarrow u \in X \wedge \varphi(u))
+\]</div>
+<p>即在一个已形成的类或集合中，由任意性质可以决定另一个子类或子集合</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="354">3.5.4 内涵理论</h3>
+<ol>
+<li>
+<p><span class="arithmatex">\(\text{Katz}\)</span> 与 <span class="arithmatex">\(\text{Fodor}\)</span> 的义素分析法：义项和义素</p>
+<ol>
+<li>义项是与语词大致相应的语义单位。一个单义词就是一个义项，多义词包括若干个义项</li>
+<li>
+<p>义项不是一个不可分析的整体，而是可以分析为由一些最基本的语义单位——义素组合而成的</p>
+<div class="admonition note">
+<p class="admonition-title">义项与义素的举例</p>
+<p>在现代语义学中，一般用 <span class="arithmatex">\(+\)</span> 或 <span class="arithmatex">\(-\)</span> 表示某个义素的有无</p>
+<ol>
+<li>父亲：<span class="arithmatex">\([+\)</span> 人 <span class="arithmatex">\(+\)</span> 男性 <span class="arithmatex">\(+\)</span> 长辈 <span class="arithmatex">\(+\)</span> 直系亲属<span class="arithmatex">\(]\)</span></li>
+<li>母亲：<span class="arithmatex">\([+\)</span> 人 <span class="arithmatex">\(-\)</span> 男性 <span class="arithmatex">\(+\)</span> 长辈 <span class="arithmatex">\(+\)</span> 直系亲属<span class="arithmatex">\(]\)</span></li>
+<li>儿子：<span class="arithmatex">\([+\)</span> 人 <span class="arithmatex">\(+\)</span> 男性 <span class="arithmatex">\(-\)</span> 长辈 <span class="arithmatex">\(+\)</span> 直系亲属<span class="arithmatex">\(]\)</span></li>
+<li>女儿：<span class="arithmatex">\([+\)</span> 人 <span class="arithmatex">\(-\)</span> 男性 <span class="arithmatex">\(-\)</span> 长辈 <span class="arithmatex">\(+\)</span> 直系亲属<span class="arithmatex">\(]\)</span></li>
+</ol>
+</div>
+</li>
+</ol>
+</li>
+<li>
+<p>词项间关系</p>
+<ol>
+<li>如果两个词项具有完全相同或基本相同的义素，则它们就具有同义关系，后者包括等义关系和近义关系</li>
+<li>如果两个词项的其中一个的义素多于另一个，或一个的全部义素都包括在另一个的义素之中，则其间具有上下义关系。义素多的称作下义词，义素少的称作上义词</li>
+<li>如果两个词项包含有相反的义素，则其间具有反义关系且互为反义词</li>
+<li>从外延的角度而言，有上下义关系的词项之间具有属种关系。其中义素少的上义词具有较大的外延，是「属词项」；义素多的下义词具有较小的外延，是「种词项」</li>
+</ol>
+</li>
+<li>
+<p>语义场：属义素相同的各个词项的集合</p>
+<ol>
+<li>任意两个语义场，如果其中一个的各个词项都是另一个语义场中某个词项的下义词，则前者就是后者的子语义场</li>
+<li>
+<p>汉语中有五个最基本的语义场</p>
+<ol>
+<li>实体义场：包括所有指称人或事物的义项</li>
+<li>表述义场：包括行为、状态、特征、关系四个子义场</li>
+<li>时间义场：包括绝对时间与相对时间两个对立的子义场</li>
+<li>空间义场：有方向、方位、地区等子义场</li>
+<li>数量义场：有基数、序数、分数、名量、动量等子义场</li>
+</ol>
+<p>处于同一个义场中的词项属义素相同，其差异主要在于种义素方面</p>
+</li>
+<li>
+<p>根据种义素所表现出的不同特点，同一个义场中的词项可以有三种不同的关系：反义关系、同义关系和并列关系</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="355">3.5.5 同一理论</h3>
+<ol>
+<li>中世纪逻辑学家在对助范畴词「是」的研究中提出的一种理论<ol>
+<li>两大类命题成分:范畴词与助范畴词。其中范畴词代表命题的内容或素材，助范畴词表示命题的形式<ol>
+<li>范畴词：具有确定的意谓和指代，具有独立的意义，以确定的方式指称、表示事物，用作直言命题的主词或谓词的语词</li>
+<li>助范畴词：没有确定的意谓和指代，不能作直言命题的主词和谓词的语词</li>
+</ol>
+</li>
+<li>中世纪先后讨论了五十多个助范畴词，大致分为三类<ol>
+<li>修饰主词的助范畴词，如「所有的」「全部」「不定的」「两者……都」「没有一个」「两者都不」「除……外」「仅有」</li>
+<li>修饰谓词的助范畴词，例如「必然」「可能」「偶然」以及动词时态的各种变形等</li>
+<li>修饰主谓词联系方式的助范畴词，例如「是」「不是」「如果……那么」「并且」「或者」「并非」等</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>根据同一理论，在「<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(P\)</span>」中，「是」的作用就在于断定主词和谓词代表同样的东西<ol>
+<li><span class="arithmatex">\(\text{Albert}\)</span> 认为当动词「是」作为命题的第三构成要素出现时意谓着谓词对于主词的某种性质，即主词和谓词代表相同的事物</li>
+<li><span class="arithmatex">\(\text{Buridan}\)</span> 认为对肯定的直言命题的真来说，其必要条件是词项即主词和谓词代表同一东西或同一些东西</li>
+<li>
+<p>系词「是」的同一理论以一种形式的和外延的方式解读直言肯定命题的意义：「<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(P\)</span>」形式的命题表现为下列命题的合取</p>
+<ol>
+<li>存在个体对象 <span class="arithmatex">\(x\)</span>，词项 <span class="arithmatex">\(S\)</span> 和 <span class="arithmatex">\(P\)</span> 都指代 <span class="arithmatex">\(x\)</span></li>
+<li>存在着属性 <span class="arithmatex">\(f\)</span>，使得词项 <span class="arithmatex">\(S\)</span> 意谓 <span class="arithmatex">\(f\)</span></li>
+<li>存在着属性 <span class="arithmatex">\(g\)</span>，使得词项 <span class="arithmatex">\(P\)</span> 意谓 <span class="arithmatex">\(g\)</span></li>
+<li><span class="arithmatex">\(f\)</span> 和 <span class="arithmatex">\(g\)</span> 都属于 <span class="arithmatex">\(x\)</span></li>
+</ol>
+<p><span class="arithmatex">\(\text{Aquinas}\)</span> 认为在每一个真的肯定命题中，主词和谓词必定以某种方式意谓实在中的同一个东西，只是在不同的意义上。且这一点在具有偶性谓词的命题中和具有实体谓词的命题中都是清楚的</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="356">3.5.6 扩大理论</h3>
+<ol>
+<li>扩大：在形如「<span class="arithmatex">\(S\)</span> 是 <span class="arithmatex">\(P\)</span>」的命题中，若考虑「是」的时态因素，则会引起主词 <span class="arithmatex">\(S\)</span> 和谓词 <span class="arithmatex">\(P\)</span> 的指代域通常是由小到大的变化</li>
+<li>扩大理论：制约和支配词项指代域扩大的规律或规则<ol>
+<li>一个现在时态的动词使得它前面和后面的词项指代目前存在的东西，即使命题中主词和谓词的指代域不发生变化</li>
+<li>一个过去时态的动词或一个过去分词，使得其前面词项的指代扩大到现在存在或过去存在的东西</li>
+<li>一个将来时态的动词或将来分词，使得其前面词项的指代扩大到现在存在或将要存在的东西</li>
+<li>动词「能够是」和副词「可能地」「不可能地」「必然地」「偶然地」使其之前或之后的词项扩大到指称现在存在、过去存在、将要存在和能够存在的东西</li>
+</ol>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; <span class="year"></span> Ichinoe – <a href="#__consent"> Cookie Setting </a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ShiinaHiiragi" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ShiinaHiiragi" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+  
+
+<h4>Cookie 许可</h4>
+<p>本站使用 Cookie 记录访客偏好，其内容仅保留在本地。若点击「同意」按钮，则视为同意 Cookie 使用；点击底部「Cookie Setting」可随时修改</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="local" checked>
+      <span class="task-list-indicator"></span>
+      本地设置
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">拒绝</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.expand", "navigation.top", "toc.follow", "toc.integrate", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../assets/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

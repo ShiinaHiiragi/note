@@ -1,0 +1,5315 @@
+
+<!doctype html>
+<html lang="zh" class="no-js">
+  <head>
+    
+      <meta charset="utf-8">
+      <meta name="viewport" content="width=device-width,initial-scale=1">
+      
+      
+        <meta name="author" content="一之江">
+      
+      
+        <link rel="canonical" href="https://shiinahiiragi.github.io/note/alg/comb/num/">
+      
+      
+        <link rel="prev" href="../../elem/mat/">
+      
+      
+        <link rel="next" href="../gg/">
+      
+      
+      <link rel="icon" href="../../../assets/favicon.png">
+      <meta name="generator" content="mkdocs-1.6.1, mkdocs-material-9.6.11">
+    
+    
+      
+        <title>1 初等数论 - 逻辑与形而上学</title>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/stylesheets/main.4af4bdda.min.css">
+      
+        
+        <link rel="stylesheet" href="../../../assets/stylesheets/palette.06af60db.min.css">
+      
+      
+
+
+    
+    
+      
+    
+    
+      
+        
+        
+        <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+        <link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Roboto:300,300i,400,400i,700,700i%7CRoboto+Mono:400,400i,700,700i&display=fallback">
+        <style>:root{--md-text-font:"Roboto";--md-code-font:"Roboto Mono"}</style>
+      
+    
+    
+      <link rel="stylesheet" href="../../../assets/config.css">
+    
+    <script>__md_scope=new URL("../../..",location),__md_hash=e=>[...e].reduce(((e,_)=>(e<<5)-e+_.charCodeAt(0)),0),__md_get=(e,_=localStorage,t=__md_scope)=>JSON.parse(_.getItem(t.pathname+"."+e)),__md_set=(e,_,t=localStorage,a=__md_scope)=>{try{t.setItem(a.pathname+"."+e,JSON.stringify(_))}catch(e){}}</script>
+    
+      
+
+    
+    
+    
+  </head>
+  
+  
+    
+    
+      
+    
+    
+    
+    
+    <body dir="ltr" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue">
+  
+    
+    <input class="md-toggle" data-md-toggle="drawer" type="checkbox" id="__drawer" autocomplete="off">
+    <input class="md-toggle" data-md-toggle="search" type="checkbox" id="__search" autocomplete="off">
+    <label class="md-overlay" for="__drawer"></label>
+    <div data-md-component="skip">
+      
+        
+        <a href="#1" class="md-skip">
+          跳转至
+        </a>
+      
+    </div>
+    <div data-md-component="announce">
+      
+    </div>
+    
+    
+      
+
+<header class="md-header" data-md-component="header">
+  <nav class="md-header__inner md-grid" aria-label="页眉">
+    <a href="../../.." title="逻辑与形而上学" class="md-header__button md-logo" aria-label="逻辑与形而上学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15 6.04 7.5 12 10.85l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg>
+
+    </a>
+    <label class="md-header__button md-icon" for="__drawer">
+      
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M3 6h18v2H3zm0 5h18v2H3zm0 5h18v2H3z"/></svg>
+    </label>
+    <div class="md-header__title" data-md-component="header-title">
+      <div class="md-header__ellipsis">
+        <div class="md-header__topic">
+          <span class="md-ellipsis">
+            逻辑与形而上学
+          </span>
+        </div>
+        <div class="md-header__topic" data-md-component="header-topic">
+          <span class="md-ellipsis">
+            
+              1 初等数论
+            
+          </span>
+        </div>
+      </div>
+    </div>
+    
+      
+        <form class="md-header__option" data-md-component="palette">
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="default" data-md-color-primary="indigo" data-md-color-accent="blue"  aria-label="切换到白色主题"  type="radio" name="__palette" id="__palette_0">
+    
+      <label class="md-header__button md-icon" title="切换到白色主题" for="__palette_1" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 7H7a5 5 0 0 0-5 5 5 5 0 0 0 5 5h10a5 5 0 0 0 5-5 5 5 0 0 0-5-5m0 8a3 3 0 0 1-3-3 3 3 0 0 1 3-3 3 3 0 0 1 3 3 3 3 0 0 1-3 3"/></svg>
+      </label>
+    
+  
+    
+    
+    
+    <input class="md-option" data-md-color-media="" data-md-color-scheme="defualt" data-md-color-primary="white" data-md-color-accent="indigo"  aria-label="切换到原主题"  type="radio" name="__palette" id="__palette_1">
+    
+      <label class="md-header__button md-icon" title="切换到原主题" for="__palette_0" hidden>
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M17 6H7c-3.31 0-6 2.69-6 6s2.69 6 6 6h10c3.31 0 6-2.69 6-6s-2.69-6-6-6m0 10H7c-2.21 0-4-1.79-4-4s1.79-4 4-4h10c2.21 0 4 1.79 4 4s-1.79 4-4 4M7 9c-1.66 0-3 1.34-3 3s1.34 3 3 3 3-1.34 3-3-1.34-3-3-3"/></svg>
+      </label>
+    
+  
+</form>
+      
+    
+    
+      <script>var palette=__md_get("__palette");if(palette&&palette.color){if("(prefers-color-scheme)"===palette.color.media){var media=matchMedia("(prefers-color-scheme: light)"),input=document.querySelector(media.matches?"[data-md-color-media='(prefers-color-scheme: light)']":"[data-md-color-media='(prefers-color-scheme: dark)']");palette.color.media=input.getAttribute("data-md-color-media"),palette.color.scheme=input.getAttribute("data-md-color-scheme"),palette.color.primary=input.getAttribute("data-md-color-primary"),palette.color.accent=input.getAttribute("data-md-color-accent")}for(var[key,value]of Object.entries(palette.color))document.body.setAttribute("data-md-color-"+key,value)}</script>
+    
+    
+    
+      
+      
+        <label class="md-header__button md-icon" for="__search">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        </label>
+        <div class="md-search" data-md-component="search" role="dialog">
+  <label class="md-search__overlay" for="__search"></label>
+  <div class="md-search__inner" role="search">
+    <form class="md-search__form" name="search">
+      <input type="text" class="md-search__input" name="query" aria-label="搜索" placeholder="搜索" autocapitalize="off" autocorrect="off" autocomplete="off" spellcheck="false" data-md-component="search-query" required>
+      <label class="md-search__icon md-icon" for="__search">
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M9.5 3A6.5 6.5 0 0 1 16 9.5c0 1.61-.59 3.09-1.56 4.23l.27.27h.79l5 5-1.5 1.5-5-5v-.79l-.27-.27A6.52 6.52 0 0 1 9.5 16 6.5 6.5 0 0 1 3 9.5 6.5 6.5 0 0 1 9.5 3m0 2C7 5 5 7 5 9.5S7 14 9.5 14 14 12 14 9.5 12 5 9.5 5"/></svg>
+        
+        <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M20 11v2H8l5.5 5.5-1.42 1.42L4.16 12l7.92-7.92L13.5 5.5 8 11z"/></svg>
+      </label>
+      <nav class="md-search__options" aria-label="查找">
+        
+          <a href="javascript:void(0)" class="md-search__icon md-icon" title="分享" aria-label="分享" data-clipboard data-clipboard-text="" data-md-component="search-share" tabindex="-1">
+            
+            <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M18 16.08c-.76 0-1.44.3-1.96.77L8.91 12.7c.05-.23.09-.46.09-.7s-.04-.47-.09-.7l7.05-4.11c.54.5 1.25.81 2.04.81a3 3 0 0 0 3-3 3 3 0 0 0-3-3 3 3 0 0 0-3 3c0 .24.04.47.09.7L8.04 9.81C7.5 9.31 6.79 9 6 9a3 3 0 0 0-3 3 3 3 0 0 0 3 3c.79 0 1.5-.31 2.04-.81l7.12 4.15c-.05.21-.08.43-.08.66 0 1.61 1.31 2.91 2.92 2.91s2.92-1.3 2.92-2.91A2.92 2.92 0 0 0 18 16.08"/></svg>
+          </a>
+        
+        <button type="reset" class="md-search__icon md-icon" title="清空当前内容" aria-label="清空当前内容" tabindex="-1">
+          
+          <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M19 6.41 17.59 5 12 10.59 6.41 5 5 6.41 10.59 12 5 17.59 6.41 19 12 13.41 17.59 19 19 17.59 13.41 12z"/></svg>
+        </button>
+      </nav>
+      
+    </form>
+    <div class="md-search__output">
+      <div class="md-search__scrollwrap" tabindex="0" data-md-scrollfix>
+        <div class="md-search-result" data-md-component="search-result">
+          <div class="md-search-result__meta">
+            正在初始化搜索引擎
+          </div>
+          <ol class="md-search-result__list" role="presentation"></ol>
+        </div>
+      </div>
+    </div>
+  </div>
+</div>
+      
+    
+    
+      <div class="md-header__source">
+        <a href="https://github.com/ShiinaHiiragi/note/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ShiinaHiiragi/note
+  </div>
+</a>
+      </div>
+    
+  </nav>
+  
+</header>
+    
+    <div class="md-container" data-md-component="container">
+      
+      
+        
+          
+            
+<nav class="md-tabs" aria-label="标签" data-md-component="tabs">
+  <div class="md-grid">
+    <ul class="md-tabs__list">
+      
+        
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../.." class="md-tabs__link">
+          
+  
+  
+  通用
+
+        </a>
+      </li>
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../cogn/form/cep/" class="md-tabs__link">
+          
+  
+  
+  认识基础
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../meta/cogn/nerve/" class="md-tabs__link">
+          
+  
+  
+  形而上学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../logic/prf/cls/" class="md-tabs__link">
+          
+  
+  
+  逻辑学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+    
+  
+  
+    
+    
+      
+  
+  
+  
+    
+  
+  
+    
+    
+      <li class="md-tabs__item md-tabs__item--active">
+        <a href="../../elem/form/" class="md-tabs__link">
+          
+  
+  
+  代数学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../geom/anly/lin/" class="md-tabs__link">
+          
+  
+  
+  几何学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../anly/princ/seq/" class="md-tabs__link">
+          
+  
+  
+  分析学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+        
+  
+  
+  
+  
+    
+    
+      
+  
+  
+  
+  
+    
+    
+      <li class="md-tabs__item">
+        <a href="../../../lang/type/gen/" class="md-tabs__link">
+          
+  
+  
+  语言学
+
+        </a>
+      </li>
+    
+  
+
+    
+  
+
+      
+    </ul>
+  </div>
+</nav>
+          
+        
+      
+      <main class="md-main" data-md-component="main">
+        <div class="md-main__inner md-grid">
+          
+            
+              
+              <div class="md-sidebar md-sidebar--primary" data-md-component="sidebar" data-md-type="navigation" >
+                <div class="md-sidebar__scrollwrap">
+                  <div class="md-sidebar__inner">
+                    
+
+
+  
+
+
+  
+
+<nav class="md-nav md-nav--primary md-nav--lifted md-nav--integrated" aria-label="导航栏" data-md-level="0">
+  <label class="md-nav__title" for="__drawer">
+    <a href="../../.." title="逻辑与形而上学" class="md-nav__button md-logo" aria-label="逻辑与形而上学" data-md-component="logo">
+      
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M21 16.5c0 .38-.21.71-.53.88l-7.9 4.44c-.16.12-.36.18-.57.18s-.41-.06-.57-.18l-7.9-4.44A.99.99 0 0 1 3 16.5v-9c0-.38.21-.71.53-.88l7.9-4.44c.16-.12.36-.18.57-.18s.41.06.57.18l7.9 4.44c.32.17.53.5.53.88zM12 4.15 6.04 7.5 12 10.85l5.96-3.35zM5 15.91l6 3.38v-6.71L5 9.21zm14 0v-6.7l-6 3.37v6.71z"/></svg>
+
+    </a>
+    逻辑与形而上学
+  </label>
+  
+    <div class="md-nav__source">
+      <a href="https://github.com/ShiinaHiiragi/note/" title="前往仓库" class="md-source" data-md-component="source">
+  <div class="md-source__icon md-icon">
+    
+    <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 448 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M439.55 236.05 244 40.45a28.87 28.87 0 0 0-40.81 0l-40.66 40.63 51.52 51.52c27.06-9.14 52.68 16.77 43.39 43.68l49.66 49.66c34.23-11.8 61.18 31 35.47 56.69-26.49 26.49-70.21-2.87-56-37.34L240.22 199v121.85c25.3 12.54 22.26 41.85 9.08 55a34.34 34.34 0 0 1-48.55 0c-17.57-17.6-11.07-46.91 11.25-56v-123c-20.8-8.51-24.6-30.74-18.64-45L142.57 101 8.45 235.14a28.86 28.86 0 0 0 0 40.81l195.61 195.6a28.86 28.86 0 0 0 40.8 0l194.69-194.69a28.86 28.86 0 0 0 0-40.81"/></svg>
+  </div>
+  <div class="md-source__repository">
+    ShiinaHiiragi/note
+  </div>
+</a>
+    </div>
+  
+  <ul class="md-nav__list" data-md-scrollfix>
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_1" id="__nav_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    通用
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_1">
+            <span class="md-nav__icon md-icon"></span>
+            通用
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../.." class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    介绍
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../intro/format/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    版式规范
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2" id="__nav_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    认识基础
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2">
+            <span class="md-nav__icon md-icon"></span>
+            认识基础
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_1" id="__nav_2_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、形式逻辑
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、形式逻辑
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/form/cep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 概念
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/form/ded/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 命题与演绎
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/form/ind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 归纳和类比
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/form/prf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 非形式逻辑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_2" id="__nav_2_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、逻辑语
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、逻辑语
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/jbo/phone/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 体系与正字法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/jbo/lex/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 词法与构词法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/jbo/syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 句法与篇章法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/jbo/bnf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 EBNF 句法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_2_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_2_3" id="__nav_2_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、Lean
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_2_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_2_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、Lean
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/lean/sys/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 系统原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/lean/cat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 句法范畴
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/lean/init/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 初始模块
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../cogn/lean/meta/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 元编程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3" id="__nav_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    形而上学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3">
+            <span class="md-nav__icon md-icon"></span>
+            形而上学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_1" id="__nav_3_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、认知科学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、认知科学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/cogn/nerve/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 神经认知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/cogn/psyc/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 心理认知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/cogn/lang/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 语言认知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/cogn/think/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 思维认知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/cogn/civ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 文化认知
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_2" id="__nav_3_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、符号学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、符号学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/sign/prin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 符号原理
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/sign/prop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 符号的性质
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/sign/syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 符号句法学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/sign/ded/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 符号推演
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/sign/struct/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 结构主义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_3" id="__nav_3_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、分析哲学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、分析哲学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/logic/syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 演绎与证成
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/logic/truth/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 真理与悖论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/logic/mean/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 意义与指称
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/logic/onto/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 本体与模态
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_3_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_3_4" id="__nav_3_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    四、数学哲学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_3_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_3_4">
+            <span class="md-nav__icon md-icon"></span>
+            四、数学哲学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/math/cep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 基本问题与历史观点
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/math/doctr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 三大主义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../meta/math/cont/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 当代观点
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4" id="__nav_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    逻辑学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4">
+            <span class="md-nav__icon md-icon"></span>
+            逻辑学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_1" id="__nav_4_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、证明论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、证明论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/prf/cls/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 经典逻辑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/prf/nat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 自然演绎
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/prf/seq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 矢列演算
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/prf/ncl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 非经典逻辑
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/prf/ord/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 序数分析
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_2" id="__nav_4_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、模型论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、模型论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/mdl/mdl/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 结构与模型
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/mdl/eoq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 量词消去
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/mdl/stb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 稳定理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_3" id="__nav_4_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、递归论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、递归论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/rec/comp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 可计算理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/rec/cplx/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 计算复杂性理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/rec/dou/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 不可解度论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/rec/arith/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 形式算术
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/rec/rand/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 随机性理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_4_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_4_4" id="__nav_4_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    四、公理集合论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_4_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_4_4">
+            <span class="md-nav__icon md-icon"></span>
+            四、公理集合论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/base/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 数学基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/alg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 集合代数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/ord/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 序数与基数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/univ/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 集宇宙
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../logic/set/card/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 高阶无穷
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+        
+        
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--section md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5" id="__nav_5_label" tabindex="">
+            
+  
+  
+  <span class="md-ellipsis">
+    代数学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_5_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5">
+            <span class="md-nav__icon md-icon"></span>
+            代数学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_1" id="__nav_5_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、初等代数
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、初等代数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elem/form/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 解析式与初等函数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elem/eq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 方程与不等式
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../elem/mat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 矩阵论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--active md-nav__item--nested">
+      
+        
+        
+        <input class="md-nav__toggle md-toggle " type="checkbox" id="__nav_5_2" checked>
+        
+          
+          <label class="md-nav__link" for="__nav_5_2" id="__nav_5_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、组合数学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_2_label" aria-expanded="true">
+          <label class="md-nav__title" for="__nav_5_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、组合数学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+    
+  
+  
+  
+    <li class="md-nav__item md-nav__item--active">
+      
+      <input class="md-nav__toggle md-toggle" type="checkbox" id="__toc">
+      
+      
+        
+      
+      
+        <label class="md-nav__link md-nav__link--active" for="__toc">
+          
+  
+  
+  <span class="md-ellipsis">
+    1 初等数论
+    
+  </span>
+  
+
+          <span class="md-nav__icon md-icon"></span>
+        </label>
+      
+      <a href="./" class="md-nav__link md-nav__link--active">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 初等数论
+    
+  </span>
+  
+
+      </a>
+      
+        
+
+<nav class="md-nav md-nav--secondary" aria-label="目录">
+  
+  
+  
+    
+  
+  
+    <label class="md-nav__title" for="__toc">
+      <span class="md-nav__icon md-icon"></span>
+      目录
+    </label>
+    <ul class="md-nav__list" data-md-component="toc" data-md-scrollfix>
+      
+        <li class="md-nav__item">
+  <a href="#11" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.1 进位计数制
+    </span>
+  </a>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#12" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2 整除理论
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.2 整除理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#121" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.1 算术基本定理
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#122" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.2.2 因数与倍数
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#13" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3 同余理论
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.3 同余理论">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#131" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.1 同余的概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#132" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.2 同余类
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#133-fermat" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.3.3 Fermat 定理
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#14" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4 同余方程
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.4 同余方程">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#141" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.1 一次同余式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#142" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.2 二次同余式
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#143" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.4.3 高次同余式
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#15" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5 原根与指标
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.5 原根与指标">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#151" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.1 指数与原根
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#152" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.5.2 指标
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+        <li class="md-nav__item">
+  <a href="#16" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6 连分数
+    </span>
+  </a>
+  
+    <nav class="md-nav" aria-label="1.6 连分数">
+      <ul class="md-nav__list">
+        
+          <li class="md-nav__item">
+  <a href="#161" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.1 连分数的概念
+    </span>
+  </a>
+  
+</li>
+        
+          <li class="md-nav__item">
+  <a href="#162-pell" class="md-nav__link">
+    <span class="md-ellipsis">
+      1.6.2 Pell 方程
+    </span>
+  </a>
+  
+</li>
+        
+      </ul>
+    </nav>
+  
+</li>
+      
+    </ul>
+  
+</nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../gg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 大数理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../comb/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 计数理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../graph/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 图论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_3" id="__nav_5_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、近世代数
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、近世代数
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mod/grp/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 群论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mod/ring/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 环论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mod/fld/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 域论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../mod/ltt/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 格论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_5_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_5_4" id="__nav_5_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    四、范畴论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_5_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_5_4">
+            <span class="md-nav__icon md-icon"></span>
+            四、范畴论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cat/cat/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 图与范畴
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cat/lim/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 极限理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../cat/func/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 函子与自然变换
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6" >
+        
+          
+          <label class="md-nav__link" for="__nav_6" id="__nav_6_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    几何学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_6_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6">
+            <span class="md-nav__icon md-icon"></span>
+            几何学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_1" id="__nav_6_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、解析几何
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、解析几何
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/anly/lin/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 线性空间与向量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/anly/geom/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 变换与坐标
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/anly/eq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 方程与图形
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/anly/curv/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 曲线理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/anly/surf/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 曲面理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_6_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_6_2" id="__nav_6_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、点集拓扑
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_6_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_6_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、点集拓扑
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/point/space/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 拓扑空间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/point/constr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 构造空间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../geom/point/prop/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 拓扑不变性质
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7" >
+        
+          
+          <label class="md-nav__link" for="__nav_7" id="__nav_7_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    分析学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_7_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7">
+            <span class="md-nav__icon md-icon"></span>
+            分析学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_1" id="__nav_7_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、分析学原理
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、分析学原理
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/princ/seq/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 序列与级数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/princ/diff/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 微分法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/princ/int/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 积分法
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_2" id="__nav_7_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、复分析
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、复分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/cmplx/func/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 复函数
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/cmplx/anly/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 微分与积分
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/cmplx/res/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 留数理论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_3" id="__nav_7_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、实分析
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、实分析
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/real/ms/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 测度论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/real/lbg/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 微分与积分
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/real/norm/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 赋范线性空间
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/real/op/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 算子与泛函
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_7_4" >
+        
+          
+          <label class="md-nav__link" for="__nav_7_4" id="__nav_7_4_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    四、概率论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_7_4_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_7_4">
+            <span class="md-nav__icon md-icon"></span>
+            四、概率论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/prob/prob/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 概率与随机变量
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/prob/dist/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 概率分布与特征
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/prob/ind/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 统计独立性
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/prob/cond/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    4 条件期望
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../anly/prob/stoch/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    5 随机过程
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+      
+      
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8" >
+        
+          
+          <label class="md-nav__link" for="__nav_8" id="__nav_8_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    语言学
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="1" aria-labelledby="__nav_8_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8">
+            <span class="md-nav__icon md-icon"></span>
+            语言学
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_1" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_1" id="__nav_8_1_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    一、类型论
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_1_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_1">
+            <span class="md-nav__icon md-icon"></span>
+            一、类型论
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/type/gen/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 一般类型论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/type/dep/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 依值类型论
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/type/math/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 数学基础
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_2" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_2" id="__nav_8_2_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    二、形式语言
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_2_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_2">
+            <span class="md-nav__icon md-icon"></span>
+            二、形式语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/formal/gr/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 形式文法与自动机
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/formal/sem/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 形式语义
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    
+    
+    
+    
+      
+      
+    
+    
+    <li class="md-nav__item md-nav__item--nested">
+      
+        
+        
+          
+        
+        <input class="md-nav__toggle md-toggle md-toggle--indeterminate" type="checkbox" id="__nav_8_3" >
+        
+          
+          <label class="md-nav__link" for="__nav_8_3" id="__nav_8_3_label" tabindex="0">
+            
+  
+  
+  <span class="md-ellipsis">
+    三、自然语言
+    
+  </span>
+  
+
+            <span class="md-nav__icon md-icon"></span>
+          </label>
+        
+        <nav class="md-nav" data-md-level="2" aria-labelledby="__nav_8_3_label" aria-expanded="false">
+          <label class="md-nav__title" for="__nav_8_3">
+            <span class="md-nav__icon md-icon"></span>
+            三、自然语言
+          </label>
+          <ul class="md-nav__list" data-md-scrollfix>
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/nat/syntax/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    1 句法学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/nat/semant/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    2 语义学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+              
+                
+  
+  
+  
+  
+    <li class="md-nav__item">
+      <a href="../../../lang/nat/pragma/" class="md-nav__link">
+        
+  
+  
+  <span class="md-ellipsis">
+    3 语用学
+    
+  </span>
+  
+
+      </a>
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+              
+            
+          </ul>
+        </nav>
+      
+    </li>
+  
+
+    
+  </ul>
+</nav>
+                  </div>
+                </div>
+              </div>
+            
+            
+          
+          
+            <div class="md-content" data-md-component="content">
+              <article class="md-content__inner md-typeset">
+                
+                  
+
+
+  
+  
+
+
+<h1 id="1">1 初等数论</h1>
+<h2 id="11">1.1 进位计数制</h2>
+<ol>
+<li>
+<p><span class="arithmatex">\(r\)</span> 进制：采用进位计数的数字系统中，如果只使用 <span class="arithmatex">\(r\)</span> 个符号表示数值，则称其为 <span class="arithmatex">\(r\)</span> 进制，<span class="arithmatex">\(r\)</span> 称为该数制的基数</p>
+<ol>
+<li>
+<p>每一种数制都有固定的符号集，常用的进位数值如下所示</p>
+<div class="text-table">
+<table>
+<thead>
+<tr>
+<th style="text-align: center;">进位制</th>
+<th style="text-align: center;">二进制</th>
+<th style="text-align: center;">八进制</th>
+<th style="text-align: center;">十进制</th>
+<th style="text-align: center;">十六进制</th>
+</tr>
+</thead>
+<tbody>
+<tr>
+<td style="text-align: center;">基数</td>
+<td style="text-align: center;"><span class="arithmatex">\(2\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(8\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(10\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(16\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">权</td>
+<td style="text-align: center;"><span class="arithmatex">\(2^i\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(8^i\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(10^i\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(16^i\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">符号集</td>
+<td style="text-align: center;"><span class="arithmatex">\(\{0, 1\}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\{0, 1, 2, \cdots, 7\}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\{0, 1, 2, \cdots, 9\}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\{0, 1, 2, \cdots, 9, \mathrm{A, B, \cdots, F}\}\)</span></td>
+</tr>
+<tr>
+<td style="text-align: center;">字母标识</td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{B}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{O}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{D}\)</span></td>
+<td style="text-align: center;"><span class="arithmatex">\(\text{H}\)</span></td>
+</tr>
+</tbody>
+</table>
+</div>
+</li>
+<li>
+<p>每一种数制都使用位置表示法，即处于不同位置的数符所代表的值不同，与其所在位置的权值有关</p>
+</li>
+</ol>
+</li>
+<li>
+<p>十进制数的转换</p>
+<ol>
+<li>
+<p><span class="arithmatex">\(r\)</span> 进制转换为十进制：将 <span class="arithmatex">\(r\)</span> 进制每一位乘以其权后相加</p>
+<div class="arithmatex">\[
+(n)_r = \pm \ n_k \times r^k + n_{k-1} \times r^{k-1} + \cdots + n_1 \times r_1 + n_0 \times r_0 + n_{-1} \times r^{-1} + \cdots + n_{-l} \times r^{-l}
+\]</div>
+</li>
+<li>
+<p>十进制转换为 <span class="arithmatex">\(r\)</span> 进制：整数部分除 <span class="arithmatex">\(r\)</span> 取余，小数部分乘 <span class="arithmatex">\(r\)</span> 取整，然后合并两个部分</p>
+</li>
+</ol>
+</li>
+<li>
+<p>实数的十进制小数表示：对于任意 <span class="arithmatex">\(x \in \mathbf R\)</span>，根据实数集的 <span class="arithmatex">\(\text{Archimedes}\)</span> 性质，取符合 <span class="arithmatex">\(p \leqslant x\)</span> 的最大整数 <span class="arithmatex">\(p\)</span>，当 <span class="arithmatex">\(p_0, p_1, \cdots, p_{k-1}\)</span> 选定时，取符合 <span class="arithmatex">\(p_0 + \dfrac{p_1}{10} + \cdots + \dfrac{n_k}{10^k} \leqslant x\)</span> 的最大整数 <span class="arithmatex">\(p_k\)</span>．令 <span class="arithmatex">\(E = \left\{\left. p_0 + \dfrac{p_1}{10} + \cdots + \dfrac{n_k}{10^k} \right| k = 0, 1, 2, \cdots \right\}\)</span>，于是有 <span class="arithmatex">\(x = \sup E\)</span></p>
+<ol>
+<li>用十进制小数表示实数是一种潜无穷表示法</li>
+<li>一个可以表示为一个有限小数的实数有两个十进制表示，例如 <span class="arithmatex">\(\{\varnothing\} = 1.\dot 0 = 0.\dot 9\)</span>．而一个自然数有唯一的十进制表示</li>
+</ol>
+</li>
+</ol>
+<h2 id="12">1.2 整除理论</h2>
+<h3 id="121">1.2.1 算术基本定理</h3>
+<ol>
+<li>整除：设 <span class="arithmatex">\(a, b \in \mathbf Z\)</span> 且 <span class="arithmatex">\(b \neq 0\)</span>．如果存在整数 <span class="arithmatex">\(c\)</span> 使得 <span class="arithmatex">\(a = bc\)</span> 成立，则称 <span class="arithmatex">\(b\)</span> 整除 <span class="arithmatex">\(a\)</span>，记作 <span class="arithmatex">\(b \mid a\)</span>；如果不存在这样的整数 <span class="arithmatex">\(c\)</span>，则称 <span class="arithmatex">\(b\)</span> 不整除 <span class="arithmatex">\(a\)</span>，记作 <span class="arithmatex">\(b \nmid a\)</span><ol>
+<li>奇数与偶数：设 <span class="arithmatex">\(a \in \mathbf Z\)</span>，若 <span class="arithmatex">\(2 \nmid a\)</span>，则称 <span class="arithmatex">\(a\)</span> 为奇数，否则称为偶数</li>
+<li>整除的性质<ol>
+<li><span class="arithmatex">\(a \mid b \to \pm a \mid \pm b\)</span></li>
+<li><span class="arithmatex">\(a \mid b \wedge b \mid c \to a \mid c\)</span></li>
+<li><span class="arithmatex">\(b \mid a_i \ (i = 1, 2, \cdots, k) \to b \mid a_1x_1 + a_2x_2 + \cdots + a_kx_k\)</span>，其中 <span class="arithmatex">\(x_i \in \mathbf Z\)</span></li>
+<li><span class="arithmatex">\(b \mid a \to bc \mid ac\)</span></li>
+<li><span class="arithmatex">\(b \mid a, a \neq 0 \to |b| \leqslant |a|\)</span></li>
+<li><span class="arithmatex">\(b \mid a \wedge |a| &lt; |b| \to a = 0\)</span></li>
+</ol>
+</li>
+<li>整除的特征：对于任何整数 <span class="arithmatex">\(a\)</span>，设其各位之和为 <span class="arithmatex">\(s\)</span><ol>
+<li><span class="arithmatex">\(2 \mid a\)</span> 当且仅当 <span class="arithmatex">\(a\)</span> 的个位上是 <span class="arithmatex">\(0, 2, 4, 6, 8\)</span></li>
+<li><span class="arithmatex">\(3 \mid a\)</span> 当且仅当 <span class="arithmatex">\(3 \mid s\)</span></li>
+<li><span class="arithmatex">\(4 \mid a\)</span> 当且仅当 <span class="arithmatex">\(a\)</span> 的末两位能被 <span class="arithmatex">\(4\)</span> 整除</li>
+<li><span class="arithmatex">\(5 \mid a\)</span> 当且仅当 <span class="arithmatex">\(a\)</span> 的个位上是 <span class="arithmatex">\(0, 5\)</span></li>
+<li><span class="arithmatex">\(8 \mid a\)</span> 当且仅当 <span class="arithmatex">\(a\)</span> 的末三位能被 <span class="arithmatex">\(8\)</span> 整除</li>
+<li><span class="arithmatex">\(9 \mid a\)</span> 当且仅当 <span class="arithmatex">\(9 \mid s\)</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>质数与合数：若整数 <span class="arithmatex">\(a \neq 0, \pm 1\)</span> 且只有因数 <span class="arithmatex">\(\pm 1, \pm a\)</span>，则称 <span class="arithmatex">\(a\)</span> 是质数，否则称 <span class="arithmatex">\(a\)</span> 是合数<ol>
+<li>全体正整数可以分为三类：<span class="arithmatex">\(1\)</span>、质数、合数</li>
+<li>任何大于 <span class="arithmatex">\(1\)</span> 的整数 <span class="arithmatex">\(a\)</span> 都至少有一个质因数<ol>
+<li>如果 <span class="arithmatex">\(a\)</span> 是大于 <span class="arithmatex">\(1\)</span> 的整数，则 <span class="arithmatex">\(a\)</span> 的大于 <span class="arithmatex">\(1\)</span> 的最小因数必为质数</li>
+<li>任何大于 <span class="arithmatex">\(1\)</span> 的合数 <span class="arithmatex">\(a\)</span> 必有一个不超过 <span class="arithmatex">\(\sqrt a\)</span> 的质因数</li>
+</ol>
+</li>
+<li>质数的个数是无穷的</li>
+<li>设 <span class="arithmatex">\(a_1, a_2, \cdots, a_n\)</span> 是 <span class="arithmatex">\(n\)</span> 个整数，<span class="arithmatex">\(p\)</span> 是质数．若 <span class="arithmatex">\(p \mid a_1 a_2 \cdots a_n\)</span>，则 <span class="arithmatex">\(\exists a_i: p \mid a_i \ (1 \leqslant i \leqslant n)\)</span></li>
+</ol>
+</li>
+<li>算术基本定理：任何大于 <span class="arithmatex">\(1\)</span> 的整数 <span class="arithmatex">\(a\)</span> 可以唯一地表示成 <span class="arithmatex">\(a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}\)</span>，其中因数 <span class="arithmatex">\(p_1, p_2, \cdots, p_n\)</span> 是质数且 <span class="arithmatex">\(p_1 &lt; p_2 &lt; \cdots &lt; p_n\)</span>，<span class="arithmatex">\(\alpha_1, \alpha_2, \cdots, \alpha_n\)</span> 是正整数<ol>
+<li>已知 <span class="arithmatex">\(a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}\)</span> 是 <span class="arithmatex">\(a\)</span> 的标准分解式，则 <span class="arithmatex">\(a\)</span> 的不同的正因数个数为 <span class="arithmatex">\((1 + \alpha_1) (1 + \alpha_2) \cdots (1 + \alpha_n)\)</span></li>
+<li>设 <span class="arithmatex">\(a\)</span> 是一个大于 <span class="arithmatex">\(1\)</span> 的整数且 <span class="arithmatex">\(a = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}\)</span>，<span class="arithmatex">\(\alpha_i \ (i = 1, 2, \cdots, n)\)</span> 是正整数，则 <span class="arithmatex">\(\alpha\)</span> 的正因数可以表示成 <span class="arithmatex">\(d = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant \beta_i \geqslant 0, i = 1, 2, \cdots, n)\)</span> 的形式</li>
+<li>设 <span class="arithmatex">\(a, b \in \mathbf Z_+\)</span> 且 <span class="arithmatex">\(\alpha = p_1^{\alpha_1} p_2^{\alpha_2} \cdots p_n^{\alpha_n}, b = p_1^{\beta_1} p_2^{\beta_2} \cdots p_n^{\beta_n} \ (\alpha_i \geqslant 0, \beta \geqslant 0; i = 1, 2, \cdots, n)\)</span>，则 <span class="arithmatex">\((a, b) = p_1^{\gamma_1} p_2^{\gamma_2} \cdots p_n^{\gamma_n}\)</span> 且 <span class="arithmatex">\([a, b] = p_1^{\delta_1} p_2^{\delta_2} \cdots p_n^{\delta_n}\)</span>，其中 <span class="arithmatex">\(\gamma_i = \min\{\alpha_i, \beta_i\}, \delta_i = \max\{\alpha_i, \beta_i\} \ (i = 1, 2, \cdots, n)\)</span></li>
+</ol>
+</li>
+</ol>
+<h3 id="122">1.2.2 因数与倍数</h3>
+<ol>
+<li>
+<p>因数与倍数：设 <span class="arithmatex">\(a, b\in \mathbf Z\)</span> 且 <span class="arithmatex">\(b \mid a\)</span>，则称 <span class="arithmatex">\(b\)</span> 是 <span class="arithmatex">\(a\)</span> 的因数，此时称 <span class="arithmatex">\(a\)</span> 是 <span class="arithmatex">\(b\)</span> 的倍数</p>
+<div class="admonition note">
+<p class="admonition-title">平凡因数</p>
+<p>对每个 <span class="arithmatex">\(a \in \mathbf Z - \{0\}\)</span> 都有因数 <span class="arithmatex">\(1, -1, a, -a\)</span>，称其为平凡因数，否则称之为非平凡因数</p>
+</div>
+</li>
+<li>
+<p>最大公因数：整数 <span class="arithmatex">\(a_1, a_2, \cdots, a_k \ (k \geqslant 2)\)</span>，若整数 <span class="arithmatex">\(d\)</span> 是它们之中每一个数的因数，那么 <span class="arithmatex">\(d\)</span> 就称为 <span class="arithmatex">\(a_1, a_2, \cdots, a_k\)</span> 的一个公因数，整数 <span class="arithmatex">\(a_1, a_2, \cdots, a_k\)</span> 的公因数中最大的一个称为最大公因数，记作 <span class="arithmatex">\((a_1, a_2, \cdots, a_k)\)</span></p>
+<ol>
+<li>若 <span class="arithmatex">\((a_1, a_2, \cdots, a_k) = 1\)</span>，则称 <span class="arithmatex">\(a_1, a_2, \cdots, a_k\)</span> 互质，若 <span class="arithmatex">\(a_1, a_2, \cdots, a_k\)</span> 中每两个整数互质，则称它们两两互质<ol>
+<li><span class="arithmatex">\((a_1, a_2, \cdots, a_k) = (|a_1|, |a_2|, \cdots, |a_k|)\)</span></li>
+<li><span class="arithmatex">\((a, 1) = 1, (a, 0) = |a|, (a, a) = |a|\)</span></li>
+<li><span class="arithmatex">\((a, b) = (b, a)\)</span></li>
+<li>若 <span class="arithmatex">\(p\)</span> 是质数，<span class="arithmatex">\(a\)</span> 是整数，则 <span class="arithmatex">\((p, a) = 1\)</span> 或 <span class="arithmatex">\(p \mid a\)</span></li>
+<li>若 <span class="arithmatex">\(a = pb + r\)</span>，则 <span class="arithmatex">\((a, b) = (b, r)\)</span></li>
+</ol>
+</li>
+<li>
+<p>带余除法：若 <span class="arithmatex">\(a, b \in \mathbf Z\)</span> 且 <span class="arithmatex">\(b &gt; 0\)</span>，则存在整数 <span class="arithmatex">\(q, r\)</span> 使得 <span class="arithmatex">\(a = qb + r \ (0 \leqslant r &lt; b)\)</span> 且 <span class="arithmatex">\(q, r\)</span> 唯一．称 <span class="arithmatex">\(r\)</span> 为 <span class="arithmatex">\(a\)</span> 除以 <span class="arithmatex">\(b\)</span> 的余数</p>
+<div class="admonition note">
+<p class="admonition-title">辗转相除法</p>
+<ol>
+<li>
+<p>若 <span class="arithmatex">\(a, b \ (b &gt; 0)\)</span> 是任意两个整数，且有</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp; a = bq_1 + r &amp; (0 &lt; r_1 &lt; b) \\
+&amp; b = r_1q_2 + r_2 &amp; (0 &lt; r_2 &lt; r_1) \\
+&amp; \cdots \\
+&amp; r_{n-2} = r_{n-1}q_n + r_n &amp; (0 &lt; r_n &lt; r_{n-1}) \\
+&amp; r_{n-1} = r_nq_{n+1} + r_{n+1} &amp; (r_{n+1} = 0)
+\end{aligned}
+\]</div>
+<p>则 <span class="arithmatex">\((a, b) = r_n\)</span>，这一组带余除法称为辗转相除法</p>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{B}\acute{\mathrm e}\text{zout}\)</span> 定理：记</p>
+<div class="arithmatex">\[
+\begin{aligned}
+&amp; P_0 = 1, P_1 = q_1, P_k = q_kP_{k-1} + P_{k-2} \ (k \geqslant 2) \\
+&amp; Q_0 = 0, Q_1 = 1, Q_k = q_kQ_{k-1} + Q_{k-2} \ (k \geqslant 2)
+\end{aligned}
+\]</div>
+<p>则有 <span class="arithmatex">\(aQ_k - bP_k = (-1)^{k-1}r_k \ (k = 1, 2, \cdots, n)\)</span></p>
+<ol>
+<li>若 <span class="arithmatex">\(a, b\)</span> 是任意两个非零整数，则存在整数 <span class="arithmatex">\(x, y\)</span> 可使 <span class="arithmatex">\(ax + by = (a, b)\)</span> 成立</li>
+<li>若 <span class="arithmatex">\(a, b\)</span> 是非零整数，则 <span class="arithmatex">\((a, b) = 1 \leftrightarrow \exists x, y\in \mathbf Z: ax + by = 1\)</span></li>
+</ol>
+</li>
+</ol>
+</div>
+</li>
+<li>
+<p>设 <span class="arithmatex">\(a, b\)</span> 是任意两个不全为零的整数</p>
+<ol>
+<li>若 <span class="arithmatex">\(m\)</span> 是任意一个正整数，则 <span class="arithmatex">\((ma, mb) = m(a, b)\)</span></li>
+<li>若 <span class="arithmatex">\(\delta\)</span> 是 <span class="arithmatex">\(a, b\)</span> 的任意一个公因数，则 <span class="arithmatex">\(\left(\dfrac{a}{\delta}, \dfrac{b}{\delta}\right) = \dfrac{(a, b)}{|\delta|}\)</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p>最小公倍数：整数 <span class="arithmatex">\(a_1, a_2, \cdots, a_n\)</span> 的公共倍数成为 <span class="arithmatex">\(a_1, a_2, \cdots, a_n\)</span> 的公倍数，<span class="arithmatex">\(a_1, a_2, \cdots, a_n\)</span> 的正公倍数的最小一个称为 <span class="arithmatex">\(a_1, a_2, \cdots, a_n\)</span> 的最小公倍数，记作 <span class="arithmatex">\([a_1, a_2, \cdots, a_n]\)</span></p>
+<ol>
+<li>以下命题成立<ol>
+<li><span class="arithmatex">\([a, 1] = |a|, [a, a] = |a|\)</span></li>
+<li><span class="arithmatex">\([a, b] = [b, a]\)</span></li>
+<li><span class="arithmatex">\([a_1, a_2, \cdots, a_n] = [|a_1|, |a_2|, \cdots, |a_n|]\)</span></li>
+<li>若 <span class="arithmatex">\(a \mid b\)</span>，则 <span class="arithmatex">\([a, b] = |b|\)</span></li>
+</ol>
+</li>
+<li>对任意正整数 <span class="arithmatex">\(a, b\)</span> 有 <span class="arithmatex">\([a, b] \cdot (a, b) = ab\)</span><ol>
+<li>两个整数的任何公倍数可以被它们的最小公倍数整除</li>
+<li>设 <span class="arithmatex">\(m, a, b\)</span> 是正整数，则 <span class="arithmatex">\([ma, mb] = m[a, b]\)</span></li>
+</ol>
+</li>
+<li>若 <span class="arithmatex">\(a_1, a_2, \cdots, a_n\)</span> 是 <span class="arithmatex">\(n \ (n \geqslant 2)\)</span> 个正整数，记 <span class="arithmatex">\([a_1, a_2] = m_2, [m_2, a_2] = m_3, \cdots, [m_{n-2}, a_{n-1}] = m_{n-1}, [m_{n-1}, a_n] = m_n\)</span>，则 <span class="arithmatex">\([a_1, a_2, \cdots, a_n] = m_n\)</span></li>
+</ol>
+</li>
+</ol>
+<h2 id="13">1.3 同余理论</h2>
+<h3 id="131">1.3.1 同余的概念</h3>
+<ol>
+<li>同余：给定正整数 <span class="arithmatex">\(m\)</span>，如果整数 <span class="arithmatex">\(a, b\)</span> 有 <span class="arithmatex">\(m \mid (a - b)\)</span>，则称 <span class="arithmatex">\(a\)</span> 与 <span class="arithmatex">\(b\)</span> 对于模 <span class="arithmatex">\(m\)</span> 同余，记作 <span class="arithmatex">\(a \equiv b \pmod{m}\)</span>；否则称 <span class="arithmatex">\(a\)</span> 与 <span class="arithmatex">\(b\)</span> 对于模 <span class="arithmatex">\(m\)</span> 不同余，记作 <span class="arithmatex">\(a \not\equiv b \pmod{n}\)</span><ol>
+<li>以下三种叙述等价<ol>
+<li><span class="arithmatex">\(a \equiv b \pmod{m}\)</span></li>
+<li>存在整数 <span class="arithmatex">\(q\)</span> 使得 <span class="arithmatex">\(a = b + qm\)</span></li>
+<li>存在整数 <span class="arithmatex">\(q_1, q_2\)</span> 使得 <span class="arithmatex">\(a = q_1m + r, b = q_2m + r \ (0 \leqslant r &lt; m)\)</span></li>
+</ol>
+</li>
+<li>同余是等价关系<ol>
+<li><span class="arithmatex">\(a \equiv a \pmod{m}\)</span></li>
+<li><span class="arithmatex">\(a \equiv b \pmod{m} \to b \equiv a \pmod{m}\)</span></li>
+<li><span class="arithmatex">\(a \equiv b \pmod{m} \wedge b \equiv c \pmod{m} \to a \equiv c \pmod{m}\)</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>同余的运算<ol>
+<li>同余的加减运算<ol>
+<li>若 <span class="arithmatex">\(a \equiv b \pmod{m}\)</span>，<span class="arithmatex">\(c\)</span> 为整数，则 <span class="arithmatex">\(a + c \equiv b + c \pmod{m}\)</span></li>
+<li>若 <span class="arithmatex">\(a \equiv b \pmod{m}, c \equiv d \pmod{m}\)</span>，则 <span class="arithmatex">\(a + c \equiv b + d \pmod{m}\)</span></li>
+<li>若 <span class="arithmatex">\(a \equiv b \pmod{m}, c \equiv d \pmod{m}\)</span>，则 <span class="arithmatex">\(a - c \equiv b - d \pmod{m}\)</span></li>
+<li>若 <span class="arithmatex">\(a + b \equiv c \pmod{m}\)</span>，则 <span class="arithmatex">\(a \equiv c - b \pmod{m}\)</span></li>
+</ol>
+</li>
+<li>同余的乘除运算<ol>
+<li>若 <span class="arithmatex">\(a \equiv b \pmod{m}\)</span> 且 <span class="arithmatex">\(c\)</span> 为整数，则 <span class="arithmatex">\(ac \equiv bc \pmod{m}\)</span></li>
+<li>若 <span class="arithmatex">\(a \equiv b \pmod{m}\)</span> 且 <span class="arithmatex">\(c\)</span> 为正整数，则 <span class="arithmatex">\(ac \equiv bc \pmod{mc}\)</span> </li>
+<li>若 <span class="arithmatex">\(a \equiv b \pmod{m}, c \equiv d \pmod{m}\)</span>，则 <span class="arithmatex">\(ac \equiv bd \pmod{m}\)</span>，特别地，若 <span class="arithmatex">\(a \equiv b \pmod{m}\)</span> 且 <span class="arithmatex">\(n\)</span> 为正整数，则 <span class="arithmatex">\(a^n \equiv b^n \pmod{m}\)</span></li>
+<li>若 <span class="arithmatex">\(a_i, b_i \ (0 \leqslant i \leqslant n)\)</span> 与 <span class="arithmatex">\(x, y\)</span> 均为整数，且 <span class="arithmatex">\(x \equiv y \pmod{m}, a_i \equiv b_i \pmod{m} \ (0 \leqslant i \leqslant n)\)</span>，则 <span class="arithmatex">\({\displaystyle \sum_{i = 0}^n a_ix^i \equiv \sum_{i = 0}^n b_iy^i \pmod{m}}\)</span></li>
+<li>若 <span class="arithmatex">\((c, m) = 1\)</span>，则 <span class="arithmatex">\(a \equiv b \pmod{m} \leftrightarrow ac \equiv bc \pmod{m}\)</span></li>
+<li>若 <span class="arithmatex">\(a \equiv b \pmod{m}\)</span>，且 <span class="arithmatex">\(d\)</span> 为 <span class="arithmatex">\(m\)</span> 的正因子，则 <span class="arithmatex">\(a \equiv b \pmod{d}\)</span></li>
+</ol>
+</li>
+<li>同余与公约数、公倍数的关系<ol>
+<li>若 <span class="arithmatex">\(a \equiv b \pmod{m}\)</span>，则 <span class="arithmatex">\((a, m) = (b, m)\)</span></li>
+<li>若 <span class="arithmatex">\(a \equiv b \pmod{m_i} \ (1 \leqslant i \leqslant k)\)</span>，则 <span class="arithmatex">\(a \equiv b \pmod{[m_1, m_2, \cdots, m_k]}\)</span></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="132">1.3.2 同余类</h3>
+<ol>
+<li>
+<p>同余类：给定正整数 <span class="arithmatex">\(m\)</span>，对于每个整数 <span class="arithmatex">\(i \ (0 \leqslant i \leqslant m - 1)\)</span>，称 <span class="arithmatex">\(R_i(m) = \{n \mid n \equiv i \pmod{m}, n \in \mathbf Z\}\)</span> 是模 <span class="arithmatex">\(m\)</span> 的一个同余类</p>
+<div class="admonition note">
+<p class="admonition-title">同余类与近世代数</p>
+<p>定义商群 <span class="arithmatex">\(\mathbf Z_m = \mathbf Z/m \mathbf Z = \left\{\overline{1}, \overline{2}, \cdots, \overline{m - 1}\right\}\)</span></p>
+<ol>
+<li>同余类群：在 <span class="arithmatex">\(\mathbf Z_m\)</span> 中定义加法运算 <span class="arithmatex">\(+\)</span>，即对任意 <span class="arithmatex">\(r_1, r_2 \in \mathbf Z\)</span>，定义 <span class="arithmatex">\(\overline{r_1} + \overline{r_2} = \overline{(r_1 + r_2)}\)</span>，则 <span class="arithmatex">\(\{\mathbf Z_{m}; +\}\)</span> 构成交换群，称为模 <span class="arithmatex">\(m\)</span> 的同余类群</li>
+<li>同余类环：在 <span class="arithmatex">\(\mathbf Z_m\)</span> 中定义乘法运算 <span class="arithmatex">\(\cdot\)</span>，即对任意 <span class="arithmatex">\(r_1, r_2 \in \mathbf Z\)</span>，定义 <span class="arithmatex">\(\overline{r_1} \cdot \overline{r_2} = \overline{(r_1 \cdot r_2)}\)</span>，则 <span class="arithmatex">\(\{\mathbf Z_{m}; +, \cdot\}\)</span> 构成环，称为模 <span class="arithmatex">\(m\)</span> 的同余类环</li>
+<li>同余类域：当 <span class="arithmatex">\(p\)</span> 为质数时，<span class="arithmatex">\(\mathbf Z_p\)</span> 对乘法运算构成交换群，此时 <span class="arithmatex">\(\mathbf Z_p\)</span> 构成域，称为模 <span class="arithmatex">\(m\)</span> 的同余类域，也可记作素域 <span class="arithmatex">\(\Pi_{p}\)</span></li>
+</ol>
+</div>
+</li>
+<li>
+<p>简化同余类：设 <span class="arithmatex">\(R\)</span> 是模 <span class="arithmatex">\(m\)</span> 的一个同余类，若任意 <span class="arithmatex">\(a \in R\)</span> 都有 <span class="arithmatex">\((a, m) = 1\)</span> 成立，则称 <span class="arithmatex">\(R\)</span> 是模 <span class="arithmatex">\(m\)</span> 的一个简化同余类．对于正整数 <span class="arithmatex">\(k\)</span>，令函数 <span class="arithmatex">\(\varphi(k)\)</span> 的值等于模 <span class="arithmatex">\(k\)</span> 的所有简化同余类的个数，称 <span class="arithmatex">\(\varphi(k)\)</span> 为 <span class="arithmatex">\(\text{Euler}\)</span> 函数</p>
+<ol>
+<li><span class="arithmatex">\(\varphi(1)=\varphi(2)=1, \varphi(3)=\varphi(4)=2\)</span></li>
+<li>当 <span class="arithmatex">\(p\)</span> 为质数时，<span class="arithmatex">\(\varphi(p) = p - 1, \varphi(p^k) = p^k - p^{k - 1}\)</span></li>
+<li>对任意正整数 <span class="arithmatex">\(n\)</span>，<span class="arithmatex">\(n={\displaystyle \sum_{d \mid n} \varphi(d)}\)</span></li>
+<li>若正整数 <span class="arithmatex">\(n\)</span> 和 <span class="arithmatex">\(m\)</span> 互质，则有乘积性质 <span class="arithmatex">\(\varphi(n m)=\varphi(n) \varphi(m)\)</span></li>
+<li>
+<p>设正整数 <span class="arithmatex">\(n&gt;1\)</span> 的因数分解为 <span class="arithmatex">\(n=p_{1}^{e_{1}} p_{2}^{e_{2}} \cdots p_{s}^{e_{s}}\)</span>，其中 <span class="arithmatex">\(p_{1}, p_{2}, \cdots, p_{s}\)</span> 为互不相同的质数，<span class="arithmatex">\(e_{1}, e_{2}, \cdots, e_{s}\)</span> 为正整数，则</p>
+<div class="arithmatex">\[
+\varphi(n)=n\left(1-\dfrac{1}{p_{1}}\right)\left(1-\dfrac{1}{p_{2}}\right) \cdots\left(1-\dfrac{1}{p_{s}}\right)
+\]</div>
+</li>
+</ol>
+</li>
+<li>
+<p>完全同余系：设 <span class="arithmatex">\(m\)</span> 是正整数，从模 <span class="arithmatex">\(m\)</span> 的每一个同余类中任取一个数 <span class="arithmatex">\(x_i \ (0 \leqslant i \leqslant m - 1)\)</span>，称集合 <span class="arithmatex">\(\{x_0, x_1, \cdots, x_{m - 1}\}\)</span> 是模 <span class="arithmatex">\(m\)</span> 的一个完全同余系</p>
+<ol>
+<li>整数集合 <span class="arithmatex">\(A\)</span> 是模 <span class="arithmatex">\(m\)</span> 的完全同余系当且仅当 ① <span class="arithmatex">\(|A| = m\)</span>；② <span class="arithmatex">\(A\)</span> 中任何两个整数对模 <span class="arithmatex">\(m\)</span> 不同余</li>
+<li>设 <span class="arithmatex">\(a, b \in \mathbf Z\)</span>，若 <span class="arithmatex">\(m \geqslant 1, (a, m) = 1\)</span> 且 <span class="arithmatex">\(\{x_1, x_2, \cdots, x_m\}\)</span> 是模 <span class="arithmatex">\(m\)</span> 的一个完全同余系，则 <span class="arithmatex">\(\{ax_1 + b, ax_2 + b, \cdots, ax_m + b\}\)</span> 也是模 <span class="arithmatex">\(m\)</span> 的完全同余系</li>
+<li>设 <span class="arithmatex">\(m_1, m_2 \in \mathbf N, A \in \mathbf Z, (A, m_1) = 1\)</span>，又 <span class="arithmatex">\(X = \{x_1, x_2, \cdots, x_{m_1}\}, Y = \{y_1, y_2, \cdots, y_{m_2}\}\)</span> 分别是模 <span class="arithmatex">\(m_1\)</span> 与模 <span class="arithmatex">\(m_2\)</span> 的完全同余系，则 <span class="arithmatex">\(R = \{Ax + m_1y \mid x \in X, y \in Y\}\)</span> 是模 <span class="arithmatex">\(m_1, m_2\)</span> 的一个完全同余系</li>
+</ol>
+</li>
+<li>简化同余系：对于正整数 <span class="arithmatex">\(m\)</span>，从 <span class="arithmatex">\(m\)</span> 的简化同余类中各取一个数 <span class="arithmatex">\(x_i\)</span>，构成集合 <span class="arithmatex">\(\{x_1, x_2, \cdots, x_{\varphi(m)}\}\)</span>，称为模 <span class="arithmatex">\(m\)</span> 的一个简化同余系<ol>
+<li>整数集合 <span class="arithmatex">\(A\)</span> 是模 <span class="arithmatex">\(m\)</span> 的简化同余系当且仅当<ol>
+<li><span class="arithmatex">\(|A| = \varphi(m)\)</span></li>
+<li><span class="arithmatex">\(A\)</span> 中任何两个整数对模 <span class="arithmatex">\(m\)</span> 不同余</li>
+<li><span class="arithmatex">\(A\)</span> 中的每个整数都与 <span class="arithmatex">\(m\)</span> 互质</li>
+</ol>
+</li>
+<li>设 <span class="arithmatex">\(a \in \mathbf Z\)</span> 且 <span class="arithmatex">\((a, m) = 1\)</span>，<span class="arithmatex">\(B = \{x_1, x_2, \cdots, x_{\varphi(m)}\}\)</span> 是模 <span class="arithmatex">\(m\)</span> 简化同余系，则 <span class="arithmatex">\(A = \{ax_1, ax_2, \cdots, ax_{\varphi(m)}\}\)</span> 也是模 <span class="arithmatex">\(m\)</span> 简化同余系</li>
+<li>设 <span class="arithmatex">\(m_1, m_2 \in \mathbf N, (m_1, m_2) = 1\)</span>，又设 <span class="arithmatex">\(X = \{x_1, x_2, \cdots, x_{\varphi(m_1)}\}, Y = \{y_1, y_2, \cdots, y_{\varphi(m_2)}\}\)</span> 分别是模 <span class="arithmatex">\(m_1\)</span> 与模 <span class="arithmatex">\(m_2\)</span> 的简化同余系，则 <span class="arithmatex">\(A = \{m_1y + m_2x \mid x \in X, y \in Y\}\)</span> 是模 <span class="arithmatex">\(m_1m_2\)</span> 的简化同余系</li>
+<li>若 <span class="arithmatex">\(r\)</span> 通过模 <span class="arithmatex">\(c\)</span> 的最小非负完全同余系，则 <span class="arithmatex">\(g'\)</span> 通过模 <span class="arithmatex">\(m\)</span> 的一个简化同余系</li>
+</ol>
+</li>
+</ol>
+<h3 id="133-fermat">1.3.3 Fermat 定理</h3>
+<ol>
+<li><span class="arithmatex">\(\text{Euler}\)</span> 定理：设 <span class="arithmatex">\(m \in \mathbf Z_+\)</span> 且 <span class="arithmatex">\((a, m) = 1\)</span>，则 <span class="arithmatex">\(a^{\varphi(m)} \equiv 1 \pmod{m}\)</span></li>
+<li><span class="arithmatex">\(\text{Fermat}\)</span> 定理：设 <span class="arithmatex">\(p\)</span> 是质数，则对于任意整数 <span class="arithmatex">\(a\)</span> 有 <span class="arithmatex">\(a^p \equiv a \pmod{p}\)</span></li>
+</ol>
+<h2 id="14">1.4 同余方程</h2>
+<ul>
+<li>同余方程：设 <span class="arithmatex">\(f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0\)</span> 是整系数多项式，称 <span class="arithmatex">\(f(x) \equiv 0 \pmod{m}\)</span> 是关于 <span class="arithmatex">\(x\)</span> 的模 <span class="arithmatex">\(m\)</span> 同余方程<ol>
+<li>若 <span class="arithmatex">\(a_n \not \equiv 0 \pmod{m}\)</span>，则称 <span class="arithmatex">\(f(x) \equiv 0 \pmod{m}\)</span> 为 <span class="arithmatex">\(n\)</span> 次同余方程</li>
+<li>若 <span class="arithmatex">\(a\)</span> 是使 <span class="arithmatex">\(f(a) \equiv 0 \pmod{m}\)</span> 成立的一个整数，则 <span class="arithmatex">\(x \equiv a \pmod{m}\)</span> 称为 <span class="arithmatex">\(f(x) \equiv 0 \pmod{m}\)</span> 的一个解</li>
+</ol>
+</li>
+</ul>
+<h3 id="141">1.4.1 一次同余式</h3>
+<ol>
+<li>一次同余方程的一般形式：<span class="arithmatex">\(ax \equiv b \pmod{m}\)</span><ol>
+<li>同余方程 <span class="arithmatex">\(ax \equiv b \pmod{m}\)</span> 等价于不定方程 <span class="arithmatex">\(ax + my = b\)</span></li>
+<li>设 <span class="arithmatex">\(a, b\)</span> 是整数，<span class="arithmatex">\(a \not \equiv 0 \pmod{m}\)</span>，则同余方程 <span class="arithmatex">\(ax \equiv b \pmod{m}\)</span> 有解当且仅当 <span class="arithmatex">\((a, m) \mid b\)</span>．若有解，则恰有 <span class="arithmatex">\(d = (a, m)\)</span> 个解</li>
+</ol>
+</li>
+<li>
+<p>中国剩余定理（孙子定理）：设正整数 <span class="arithmatex">\(m_1, m_2, \cdots, m_k\)</span> 两两互质，<span class="arithmatex">\(m = m_1 m_2 \cdots m_k\)</span>．设 <span class="arithmatex">\(M_i = \dfrac{m}{m_i} \ (i = 1, 2, \cdots, k)\)</span>，则同余式组</p>
+<div class="arithmatex">\[
+\left\{\begin{aligned}
+&amp; x \equiv a_1 \pmod{m_1} \\
+&amp; x \equiv a_2 \pmod{m_2} \\
+&amp; \cdots \\
+&amp; x \equiv a_k \pmod{m_k}
+\end{aligned}\right.
+\]</div>
+<p>的解是 <span class="arithmatex">\(x \equiv M_1'M_1a_1 + M_2'M_2a_2 + \cdots + M_k'M_ka_k \pmod{m}\)</span>，其中 <span class="arithmatex">\(M_i'M_i \equiv 1 \pmod{m_i}, i = 1, 2, \cdots, k\)</span></p>
+<ol>
+<li>
+<p>设 <span class="arithmatex">\(d = (m_1, m_2), m = [m_1, m_2]\)</span>，同余式组 <span class="arithmatex">\(\left\{\begin{aligned}&amp; x \equiv a_1 \pmod{m_1} \\&amp; x \equiv a_2 \pmod{m_2}\end{aligned}\right.\)</span> 有解当且仅当 <span class="arithmatex">\(d \mid (a_1 - a_2)\)</span>，当此条件成立时，同余式组恰好有一个解 <span class="arithmatex">\(x \equiv b \pmod{m}\)</span></p>
+</li>
+<li>
+<p>设 <span class="arithmatex">\(p\)</span> 是质数，当 <span class="arithmatex">\(m_1 = p^\alpha m_1', m_2 = p^\beta m_2'\)</span> 且 <span class="arithmatex">\(\alpha \geqslant \beta, p \nmid m_1'm_2'\)</span> 时，若同余式 <span class="arithmatex">\(\left\{\begin{aligned}&amp; x \equiv a_1 \pmod{m_1} \\&amp; x \equiv a_2 \pmod{m_2}\end{aligned}\right.\)</span> 有解，则它与 <span class="arithmatex">\(\left\{\begin{aligned}&amp; x \equiv a_1 \pmod{m_1} \\&amp; x \equiv a_2 \pmod{m_2'}\end{aligned}\right.\)</span> 同解</p>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="142">1.4.2 二次同余式</h3>
+<ol>
+<li>二次同余：给定整数 <span class="arithmatex">\(p\)</span>，对于任意的整数 <span class="arithmatex">\(n\)</span> 有 <span class="arithmatex">\((n, p) = 1\)</span>．若当成 <span class="arithmatex">\(x^2 \equiv n \pmod{p}\)</span> 有解，则称 <span class="arithmatex">\(n\)</span> 是模 <span class="arithmatex">\(p\)</span> 的二次同余，记作 <span class="arithmatex">\(n \in \mathrm{QR}(p)\)</span>，否则称 <span class="arithmatex">\(n\)</span> 是模 <span class="arithmatex">\(p\)</span> 的二次非同余，记作 <span class="arithmatex">\(n \in \mathrm{QNR}(p)\)</span>． 当 <span class="arithmatex">\(p = 2\)</span> 时，方程 <span class="arithmatex">\(x^2 \equiv n \pmod{p}\)</span> 总有解且解数为 <span class="arithmatex">\(1\)</span></li>
+<li><span class="arithmatex">\(\text{Euler}\)</span> 判别法：设 <span class="arithmatex">\(p\)</span> 为奇质数且 <span class="arithmatex">\((n, p) = 1\)</span>．<span class="arithmatex">\(n\)</span> 是模 <span class="arithmatex">\(p\)</span> 的二次同余当且仅当 <span class="arithmatex">\(n^{\frac{p-1}{2}} \equiv 1 \pmod{p}\)</span><ol>
+<li>若 <span class="arithmatex">\(n\)</span> 是模 <span class="arithmatex">\(p\)</span> 的二次同余，则方程 <span class="arithmatex">\(x^2 \equiv n \pmod{p}\)</span> 有两个解</li>
+<li><span class="arithmatex">\(n\)</span> 是模 <span class="arithmatex">\(p\)</span> 的二次非同余当且仅当 <span class="arithmatex">\(n^{\frac{p-1}{2}} \equiv 1 \pmod{p}\)</span></li>
+<li>模 <span class="arithmatex">\(p\)</span> 的简化同余系中，二次同余与非二次同余的个数都为 <span class="arithmatex">\(\dfrac{p-1}{2}\)</span> 且模 <span class="arithmatex">\(p\)</span> 的每个二次同余与且仅与数列 <span class="arithmatex">\(1^2, 2^2, \cdots, \left(\dfrac{p-1}{2}\right)^2\)</span> 中的一个数同余</li>
+</ol>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{Legendre}\)</span> 符号：设 <span class="arithmatex">\(p\)</span> 为奇质数且 <span class="arithmatex">\((n, p) = 1\)</span>，对于整数 <span class="arithmatex">\(n\)</span> 定义 <span class="arithmatex">\(\text{Legendre}\)</span> 符号</p>
+<div class="arithmatex">\[
+\left(\dfrac np\right) =
+\left\{\begin{aligned}
+&amp; 0, &amp; p \mid n \\
+&amp; 1, &amp; n \in \mathrm{QR}(p) \\
+&amp; -1, &amp; n \in \mathrm{QNR}(p)
+\end{aligned}\right.
+\]</div>
+<ol>
+<li>设 <span class="arithmatex">\(p\)</span> 是奇质数，<span class="arithmatex">\(n\)</span> 是整数，则<ol>
+<li><span class="arithmatex">\(\left(\dfrac np\right) \equiv n^{\frac{p-1}{2}} \pmod{p}\)</span></li>
+<li>若 <span class="arithmatex">\(n \equiv n_1 \pmod{p}\)</span>，则 <span class="arithmatex">\(\left(\dfrac np\right) \equiv \left(\dfrac{n_1}{p}\right) \pmod{p}\)</span></li>
+<li><span class="arithmatex">\(\left(\dfrac 1p\right) = 1, \left(\dfrac{-1}{p}\right) = (-1)^{\frac{p-1}{2}}\)</span></li>
+</ol>
+</li>
+<li>设 <span class="arithmatex">\(p\)</span> 是奇质数，则有 <span class="arithmatex">\(-1 \in \mathrm{QR}(p) \leftrightarrow p \equiv 1 \pmod{4}\)</span> 且 <span class="arithmatex">\(-1 \in \mathrm{QNR}(p) \leftrightarrow p \equiv 3 \pmod{4}\)</span></li>
+<li>二次互反律：设 <span class="arithmatex">\(p, q\)</span> 是两个不相同的两个奇质数，则 <span class="arithmatex">\(\left(\dfrac qp\right) = (-1)^{\frac{p-1}{2} \cdot \frac{q-1}{2}} \left(\dfrac pq\right)\)</span><ol>
+<li>设 <span class="arithmatex">\(p\)</span> 为奇质数，当 <span class="arithmatex">\(p \equiv 1 \pmod{8}\)</span> 或 <span class="arithmatex">\(p \equiv 7 \pmod{8}\)</span> 时，<span class="arithmatex">\(\left(\dfrac 2p\right) = 1\)</span>；当 <span class="arithmatex">\(p \equiv 3 \pmod{8}\)</span> 或 <span class="arithmatex">\(p \equiv 5 \pmod{8}\)</span> 时，<span class="arithmatex">\(\left(\dfrac 2p\right) = -1\)</span></li>
+<li>对于整数 <span class="arithmatex">\(k \ \left(1 \leqslant k \leqslant \dfrac{p-1}{2}\right)\)</span>，以 <span class="arithmatex">\(r_k\)</span> 表示 <span class="arithmatex">\(nk\)</span> 对模 <span class="arithmatex">\(p\)</span> 的最小非负同余．设 <span class="arithmatex">\(r_1, r_2, \cdots, r_k\)</span> 中大于 <span class="arithmatex">\(\dfrac p2\)</span> 的有 <span class="arithmatex">\(m\)</span> 个，则 <span class="arithmatex">\(\left(\dfrac np\right) = (-1)^m\)</span></li>
+<li>设 <span class="arithmatex">\(p\)</span> 为奇质数，则 ① <span class="arithmatex">\(\left(\dfrac 2p\right) = (-1)^{\frac{p^2-1}{8}}\)</span>；② 若 <span class="arithmatex">\(n\)</span> 时奇数，<span class="arithmatex">\((n, p) = 1\)</span>，则 <span class="arithmatex">\(\left(\dfrac np\right) = (-1)^{\sum_{i=1}^{\frac{p-1}{2}} \left[\frac{ni}{p}\right]}\)</span></li>
+</ol>
+</li>
+<li>对于质数模的二次同余方程的可能性，设 <span class="arithmatex">\(p\)</span> 为质数，计算 <span class="arithmatex">\(\text{Legendre}\)</span> 符号如下<ol>
+<li>求出 <span class="arithmatex">\(n_0 \equiv n \pmod{p} \ (1 \leqslant n_0 \leqslant p)\)</span></li>
+<li>将 <span class="arithmatex">\(n_0\)</span> 写成 <span class="arithmatex">\(q^2q_1 q_2 \cdots q_k\)</span> 的形式，其中 <span class="arithmatex">\(q \in \mathbf Z\)</span>，<span class="arithmatex">\(q_1, q_2, \cdots, q_k\)</span> 是互不相同的质数</li>
+<li>若某个 <span class="arithmatex">\(q_i = 2, i = 1, 2, \cdots, k\)</span>，用 <span class="arithmatex">\(\left(\dfrac 2p\right) = (-1)^{\frac{p^2-1}{8}}\)</span> 计算</li>
+<li>若 <span class="arithmatex">\(q_i \neq 2, i = 1, 2, \cdots, k\)</span>，则用二次互反律将 <span class="arithmatex">\(\left(\dfrac{q_i}{p}\right)\)</span> 转化为计算 <span class="arithmatex">\(\left(\dfrac{p}{q_i}\right)\)</span></li>
+<li>重复以上步骤，直至求出每个 <span class="arithmatex">\(\left(\dfrac{q_i}{p}\right)\)</span>，计算 <span class="arithmatex">\(\left(\dfrac np\right) = {\displaystyle \prod_{i=1}^k \left(\dfrac{q_i}{p}\right)}\)</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>
+<p><span class="arithmatex">\(\text{Jacobi}\)</span> 符号：给定正奇数 <span class="arithmatex">\(m &gt; 1, m = p_1 p_2 \cdots p_k\)</span>，其中 <span class="arithmatex">\(p_i \ (1 \leqslant i \leqslant k)\)</span> 是奇质数．对于任意的正整数 <span class="arithmatex">\(a\)</span>，定义 <span class="arithmatex">\(\left(\dfrac am\right) = \left(\dfrac{a}{p_1}\right) \left(\dfrac{a}{p_2}\right) \cdots \left(\dfrac{a}{p_k}\right)\)</span>，其中右端的 <span class="arithmatex">\(\left(\dfrac{a}{p_i}\right) \ (1 \leqslant i \leqslant k)\)</span> 是 <span class="arithmatex">\(\text{Legendre}\)</span> 符号，称 <span class="arithmatex">\(\left(\dfrac am\right)\)</span> 为 <span class="arithmatex">\(\text{Jacobi}\)</span> 符号</p>
+<ol>
+<li>当 <span class="arithmatex">\(m\)</span> 是奇质数时，<span class="arithmatex">\(\text{Jacobi}\)</span> 符号就是 <span class="arithmatex">\(\text{Legendre}\)</span> 符号</li>
+<li><span class="arithmatex">\(\text{Jacobi}\)</span> 符号的性质<ol>
+<li>若 <span class="arithmatex">\(a \equiv a_i \pmod{m}\)</span>，则 <span class="arithmatex">\(\left(\dfrac am\right) = \left(\dfrac{a_1}{m}\right)\)</span></li>
+<li><span class="arithmatex">\(\left(\dfrac 1m\right) = 1\)</span></li>
+<li>对于任意整数 <span class="arithmatex">\(a_1, a_2, \cdots, a_t\)</span>，有 <span class="arithmatex">\(\left(\dfrac{a_1 a_2 \cdots a_t}{m}\right) = \left(\dfrac{a_1}{m}\right) \left(\dfrac{a_2}{m}\right) \cdots \left(\dfrac{a_t}{m}\right)\)</span></li>
+<li>对于任意整数 <span class="arithmatex">\(a, b, (a, m) = 1\)</span>，有 <span class="arithmatex">\(\left(\dfrac{a^2b}{m}\right) = \left(\dfrac bm\right)\)</span></li>
+</ol>
+</li>
+<li>设 <span class="arithmatex">\(a_i \equiv 1 \pmod{m} \ (1 \leqslant i \leqslant k, a = a_1 a_2 \cdots a_k)\)</span>，则 <span class="arithmatex">\(\dfrac{a-1}{m} \equiv \dfrac{a_1-1}{m} + \dfrac{a_2-1}{m} + \cdots + \dfrac{a_k-1}{m} \pmod{m}\)</span><ol>
+<li>设 <span class="arithmatex">\(m = p_1 p_2 \cdots p_k\)</span> 是奇数，其中 <span class="arithmatex">\(p_1, p_2, \cdots, p_k\)</span> 是质数，则 <span class="arithmatex">\(\left(\dfrac{-1}{m}\right) = (-1)^{\frac{m-1}{2}}, \left(\dfrac 2m\right) = (-1)^{\frac{m^2-1}{8}}\)</span></li>
+<li>设 <span class="arithmatex">\(m, n\)</span> 是大于 <span class="arithmatex">\(1\)</span> 的奇数，则 <span class="arithmatex">\(\left(\dfrac nm\right) = (-1)^{\frac{m-1}{2} \cdot \frac{n-1}{2}} \left(\dfrac mn\right)\)</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>质数模的二次同余方程：<span class="arithmatex">\(x^2 \equiv a \pmod{p}, p \nmid a\)</span> 且 <span class="arithmatex">\(p\)</span> 是奇质数<ol>
+<li>当 <span class="arithmatex">\(p \equiv 3 \pmod{8}\)</span> 或 <span class="arithmatex">\(p \equiv 7 \pmod{8}\)</span> 时，方程的解形式为 <span class="arithmatex">\(x \equiv \pm a^{\frac{p+1}{4}} \pmod{p}\)</span></li>
+<li>当 <span class="arithmatex">\(p \equiv 5 \pmod{8}\)</span> 时，若 <span class="arithmatex">\(a^{\frac{p-1}{4}} \equiv 1 \pmod{p}\)</span>，则方程的解形式为 <span class="arithmatex">\(x \equiv \pm a^{\frac{p+3}{8}} \pmod{p}\)</span>；若 <span class="arithmatex">\(a^{\frac{p-1}{4}} \equiv -1 \pmod{p}\)</span>，则方程的解形式为 <span class="arithmatex">\(x \equiv \pm 2^{\frac{p-1}{4}} \cdot a^{\frac{p+3}{8}} \pmod{p}\)</span></li>
+</ol>
+</li>
+<li>合数模的二次同余方程：<span class="arithmatex">\(x^2 \equiv a \pmod{m}, (a, m) = 1\)</span>，其中 <span class="arithmatex">\(m = 2^{\alpha}p_1^{\alpha_1}p_2^{\alpha_2} \cdots p_k^{\alpha_k}\)</span><ol>
+<li>二次同余方程 <span class="arithmatex">\(x^2 \equiv a \pmod{p^\alpha}, \alpha &gt; 0, (a, p) = 1\)</span> 有解当且仅当 <span class="arithmatex">\(\left(\dfrac ap\right) = 1\)</span>，且在有解的情况下该方程的解个数为 <span class="arithmatex">\(2\)</span></li>
+<li>同余方程 <span class="arithmatex">\(x^2 \equiv a \pmod{2^2}, (2, a) = 1\)</span> 有解当且仅当 <span class="arithmatex">\(a \equiv 1 \pmod{4}\)</span>，且有解时，其解数为 <span class="arithmatex">\(2\)</span>，分别为 <span class="arithmatex">\(x \equiv \pm 1 \pmod{4}\)</span></li>
+<li>设 <span class="arithmatex">\(\alpha \geqslant 3\)</span>，同余方程 <span class="arithmatex">\(x^2 \equiv a \pmod{2^\alpha}, (2, \alpha) = 1\)</span> 有解当且仅当 <span class="arithmatex">\(a \equiv 1 \pmod{8}\)</span>，且方程有解时，其解数为 <span class="arithmatex">\(4\)</span>，分别为 <span class="arithmatex">\(x \equiv \pm \beta, \pm(\beta + 2^{\alpha-1}) \pmod{2^\alpha}\)</span></li>
+<li>同余式 <span class="arithmatex">\(x^2 \equiv a \pmod{m},m = 2^{\alpha}p_1^{\alpha_1}p_2^{\alpha_2} \cdots p_k^{\alpha_k}, (a, m) = 1\)</span> 有解当且仅当当 <span class="arithmatex">\(\alpha = 2\)</span> 时，<span class="arithmatex">\(a \equiv 1 \pmod{4}\)</span>；当 <span class="arithmatex">\(\alpha \geqslant 3\)</span> 时，<span class="arithmatex">\(a \equiv 1 \pmod{8}\)</span> 且 <span class="arithmatex">\(\left(\dfrac{a}{p_i}\right) = 1, i = 1, 2, \cdots, k\)</span>．若上述条件成立，则有解且有<ol>
+<li>当 <span class="arithmatex">\(\alpha \in \{0, 1\}\)</span> 时，解的个数为 <span class="arithmatex">\(2^k\)</span></li>
+<li>当 <span class="arithmatex">\(\alpha = 2\)</span> 时，解的个数时 <span class="arithmatex">\(2^{k+1}\)</span></li>
+<li>当 <span class="arithmatex">\(\alpha \geqslant 3\)</span> 时，解的个数时 <span class="arithmatex">\(2^{k+2}\)</span></li>
+</ol>
+</li>
+</ol>
+</li>
+</ol>
+<h3 id="143">1.4.3 高次同余式</h3>
+<ol>
+<li>解数与解法<ol>
+<li>若 <span class="arithmatex">\(m_1, m_2, \cdots, m_k\)</span> 是 <span class="arithmatex">\(k\)</span> 个两两互质的正整数，<span class="arithmatex">\(m = m_1 m_2 \cdots m_k\)</span>，则同余式 <span class="arithmatex">\(f(x) \equiv 0 \pmod{m}\)</span> 与同余式组 <span class="arithmatex">\(f(x) \equiv 0 \pmod{m_i} \ (i = 1, 2, \cdots, k)\)</span> 等价，并且若用 <span class="arithmatex">\(T_i\)</span> 表示 <span class="arithmatex">\(f(x) \equiv 0 \pmod{m_i} \ (i = 1, 2, \cdots, k)\)</span> 对模 <span class="arithmatex">\(m_i\)</span> 的解数，<span class="arithmatex">\(T\)</span> 表示 <span class="arithmatex">\(f(x) \equiv 0 \pmod{m}\)</span> 对模 <span class="arithmatex">\(m\)</span> 的解数，则 <span class="arithmatex">\(T = T_1 T_2 \cdots T_k\)</span></li>
+<li>设 <span class="arithmatex">\(p\)</span> 是质数，<span class="arithmatex">\(\alpha \geqslant 2\)</span> 是整数，<span class="arithmatex">\(f(x) = a_nx^n + a_{n-1}x^{n-1} + \cdots + a_1x + a_0\)</span> 是整系数多项式，设 <span class="arithmatex">\(x_1\)</span> 是同余方程 <span class="arithmatex">\(f(x) \equiv 0 \pmod{p^{\alpha-1}}\)</span> 的一个解，以 <span class="arithmatex">\(f'(x)\)</span> 表示 <span class="arithmatex">\(f(x)\)</span> 的导函数<ol>
+<li>若 <span class="arithmatex">\(f'(x_1) \not \equiv 0 \pmod{p}\)</span>，则存在整数 <span class="arithmatex">\(t\)</span> 使得 <span class="arithmatex">\(x = x_1 + p^{\alpha-1}t\)</span> 是同余方程 <span class="arithmatex">\(f(x) \equiv 0 \pmod{p^\alpha}\)</span> 的解</li>
+<li>若 <span class="arithmatex">\(f'(x_1) \equiv 0 \pmod{p}\)</span> 且 <span class="arithmatex">\(f(x_1) \equiv 0 \pmod{p^\alpha}\)</span>，则对于 <span class="arithmatex">\(t = 0, 1, 2, \cdots, p - 1\)</span> 有 <span class="arithmatex">\(x = x_1 + p^{n-1}t\)</span> 中的 <span class="arithmatex">\(x\)</span> 都是方程 <span class="arithmatex">\(f(x) \equiv 0 \pmod{p^n}\)</span> 的解</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>质数模的高次同余方程：<span class="arithmatex">\(f(x) \equiv 0 \pmod{p}\)</span>，其中 <span class="arithmatex">\(p \nmid a_n\)</span> 且 <span class="arithmatex">\(p\)</span> 为质数<ol>
+<li><span class="arithmatex">\(f(x) \equiv 0 \pmod{p}\)</span> 与一个次数不超过 <span class="arithmatex">\(p - 1\)</span> 的质数模同余式等价</li>
+<li>设 <span class="arithmatex">\(k \leqslant n\)</span>，若同余方程 <span class="arithmatex">\(f(x) \equiv 0 \pmod{p}\)</span> 有 <span class="arithmatex">\(k\)</span> 个不同的解 <span class="arithmatex">\(x_1, x_2, \cdots, x_k\)</span>，则对于任何整数 <span class="arithmatex">\(x\)</span> 有 <span class="arithmatex">\(f(x) \equiv (x - x_1) (x - x_2) \cdots (x - x_k) f_k(x) \pmod{p}\)</span>，其中 <span class="arithmatex">\(f_k(x)\)</span> 是一个次数为 <span class="arithmatex">\(n - k\)</span> 的整系数多项式<ol>
+<li>若 <span class="arithmatex">\(p\)</span> 是质数，则对于任何整数 <span class="arithmatex">\(x\)</span> 有 <span class="arithmatex">\(x^{p-1} - 1 \equiv (x - 1)(x - 2) \cdots [x - (p - 1)] \pmod{p}\)</span></li>
+<li><span class="arithmatex">\(\text{Wilson}\)</span> 定理：设 <span class="arithmatex">\(p\)</span> 是质数，则 <span class="arithmatex">\((p - 1)! \equiv -1 \pmod{p}\)</span></li>
+</ol>
+</li>
+<li><span class="arithmatex">\(\text{Lagrange}\)</span> 定理：同余方程 <span class="arithmatex">\(f(x) \equiv 0 \pmod{p}\)</span>，其中 <span class="arithmatex">\(p\)</span> 是质数，<span class="arithmatex">\(a_n \not \equiv 0 \pmod{p}\)</span> 的解数不超过它的次数<ol>
+<li><span class="arithmatex">\(n\)</span> 次同余方程的解数 <span class="arithmatex">\(k \leqslant \min(n, p)\)</span></li>
+<li>若 <span class="arithmatex">\(f(x)\)</span> 是 <span class="arithmatex">\(n\)</span> 次多项式，<span class="arithmatex">\(f(x) \equiv 0 \pmod{p}\)</span> 的解数大于 <span class="arithmatex">\(n\)</span>，则必有 <span class="arithmatex">\(p \mid a_i, i = 1, 2, \cdots, n\)</span></li>
+</ol>
+</li>
+<li>同余方程 <span class="arithmatex">\(f(x) \equiv 0 \pmod{p}\)</span> 或者有 <span class="arithmatex">\(p\)</span> 个解，或者存在次数不超过 <span class="arithmatex">\(p - 1\)</span> 的整系数多项式 <span class="arithmatex">\(r(x)\)</span> 使得同余方程 <span class="arithmatex">\(f(x) \equiv 0 \pmod{p}\)</span> 与 <span class="arithmatex">\(r(x) \equiv 0 \pmod{p}\)</span> 等价</li>
+<li>设 <span class="arithmatex">\(n \leqslant p\)</span>，则同余方程 <span class="arithmatex">\(f(x) \equiv 0 \pmod{p}\)</span> 有 <span class="arithmatex">\(n\)</span> 个解当且仅当存在整系数多项式 <span class="arithmatex">\(q(x)\)</span> 与 <span class="arithmatex">\(r(x)\)</span>，且 <span class="arithmatex">\(r(x)\)</span> 的次数小于 <span class="arithmatex">\(n\)</span> 使得 <span class="arithmatex">\(x^p - x = f(x)q(x) + p\cdot r(x)\)</span></li>
+<li>设 <span class="arithmatex">\(p\)</span> 是质数且 <span class="arithmatex">\(n \mid (p - 1), p \nmid a\)</span>，则 <span class="arithmatex">\(x^n \equiv a \pmod{p}\)</span> 有解当且仅当 <span class="arithmatex">\(a^{\frac{p-1}{n}} \equiv 1 \pmod{p}\)</span>．若有解，则解数为 <span class="arithmatex">\(n\)</span></li>
+</ol>
+</li>
+</ol>
+<h2 id="15">1.5 原根与指标</h2>
+<h3 id="151">1.5.1 指数与原根</h3>
+<ol>
+<li>设 <span class="arithmatex">\(m &gt; 1, (a, m) = 1\)</span>，则使 <span class="arithmatex">\(a^r \equiv 1 \pmod{m}\)</span> 成立的最小正整数 <span class="arithmatex">\(r\)</span> 称为 <span class="arithmatex">\(a\)</span> 对模 <span class="arithmatex">\(m\)</span> 的指数（或阶），记为 <span class="arithmatex">\(\delta_m(a)\)</span>，简记作 <span class="arithmatex">\(\delta(a)\)</span><ol>
+<li><span class="arithmatex">\(\delta_m(a) \leqslant \varphi(m)\)</span></li>
+<li>若 <span class="arithmatex">\(a \equiv b \pmod{m}, (a, m) = 1\)</span>，则 <span class="arithmatex">\(\delta_m(a) = \delta_m(b)\)</span></li>
+<li>若 <span class="arithmatex">\(m &gt; 1, (a, m) = 1, a^n \equiv 1 \pmod{m}\)</span>，则 <span class="arithmatex">\(\delta(a) \mid n\)</span>．特别地，若 <span class="arithmatex">\(p\)</span> 是指数，<span class="arithmatex">\((a, p) = 1\)</span>，则 <span class="arithmatex">\(\delta(a) \mid p - 1\)</span></li>
+</ol>
+</li>
+<li>若 <span class="arithmatex">\(\delta_m(a) = \varphi(m)\)</span>，则称 <span class="arithmatex">\(a\)</span> 是模 <span class="arithmatex">\(m\)</span> 的原根<ol>
+<li>记 <span class="arithmatex">\(\delta = \delta_m(a)\)</span>，则 <span class="arithmatex">\(a^{0}, a^{1}, \cdots, a^{\delta-1}\)</span> 对模 <span class="arithmatex">\(m\)</span> 两两不同余</li>
+<li>设 <span class="arithmatex">\(\delta = \delta_m(a)\)</span>，<span class="arithmatex">\(r, r' \in \mathbf Z_+\)</span>，则 <span class="arithmatex">\(a^r \equiv a^{r'} \pmod{m}\)</span> 当且仅当 <span class="arithmatex">\(r \equiv r' \pmod{\delta}\)</span><ol>
+<li><span class="arithmatex">\(\delta_m(a) \mid \varphi(n)\)</span></li>
+<li><span class="arithmatex">\(a^r \equiv 1 \pmod{m} \leftrightarrow \delta \mid r\)</span></li>
+</ol>
+</li>
+<li>设 <span class="arithmatex">\(k\)</span> 是正整数，则 <span class="arithmatex">\(\delta_m(a^k) = \dfrac{\delta_m(a)}{(\delta_m(a), k)}\)</span><ol>
+<li>若 <span class="arithmatex">\(\delta_m(a) = ks, k &gt; 0, s &gt; 0\)</span>，则 <span class="arithmatex">\(\delta_m(a^k) = s\)</span></li>
+<li>若 <span class="arithmatex">\(r\)</span> 是模 <span class="arithmatex">\(m\)</span> 的原根，其中 <span class="arithmatex">\(m\)</span> 是大于 <span class="arithmatex">\(1\)</span> 的整数，则 <span class="arithmatex">\(r^n\)</span> 是模 <span class="arithmatex">\(m\)</span> 的一个原根当且仅当 <span class="arithmatex">\((u, \varphi(m)) = 1\)</span></li>
+</ol>
+</li>
+<li>如果大于 <span class="arithmatex">\(1\)</span> 的正整数 <span class="arithmatex">\(m\)</span> 有一个原根，那么它一共有 <span class="arithmatex">\(\varphi(\varphi(m))\)</span> 个不同的原根</li>
+<li><span class="arithmatex">\(\delta_m(ab) = \delta_m(a) \delta_m(b) \leftrightarrow (\delta_m(a), \delta_m(b)) = 1\)</span></li>
+</ol>
+</li>
+<li>原根存在的条件<ol>
+<li>模 <span class="arithmatex">\(m\)</span> 有原根的必要条件是 <span class="arithmatex">\(m = 2, 4, p^\alpha\)</span> 或 <span class="arithmatex">\(2p^\alpha\)</span>，其中 <span class="arithmatex">\(p\)</span> 是奇质数，<span class="arithmatex">\(p &gt; 1\)</span></li>
+<li>若 <span class="arithmatex">\(p\)</span> 是质数，则 <span class="arithmatex">\(p\)</span> 有原根<ol>
+<li>设 <span class="arithmatex">\(m\)</span> 是正整数，对于任意的 <span class="arithmatex">\(a, b \in \mathbf Z\)</span>，一定存在 <span class="arithmatex">\(c \in \mathbf Z\)</span> 使得 <span class="arithmatex">\(\delta_m(c) = [\delta_m(a), \delta_m(b)]\)</span></li>
+<li>设 <span class="arithmatex">\(p\)</span> 是奇质数，<span class="arithmatex">\(\alpha\)</span> 是正整数，则模 <span class="arithmatex">\(p^\alpha\)</span> 有原根</li>
+<li>设 <span class="arithmatex">\(p\)</span> 是奇质数且 <span class="arithmatex">\(\alpha \geqslant 1\)</span>，则模 <span class="arithmatex">\(2p^\alpha\)</span> 有原根</li>
+<li>设 <span class="arithmatex">\(p\)</span> 是奇质数且 <span class="arithmatex">\(m = 2, 4, p^\alpha, 2p^\alpha\)</span>，则模 <span class="arithmatex">\(m\)</span> 有原根</li>
+</ol>
+</li>
+<li>设 <span class="arithmatex">\(m &gt; 1, (g, m) = 1\)</span> 且 <span class="arithmatex">\(\varphi(m)\)</span> 的所有不同质因数是 <span class="arithmatex">\(p_1, p_2, \cdots, p_k\)</span>．则 <span class="arithmatex">\(g\)</span> 是模 <span class="arithmatex">\(m\)</span> 的原根当且仅当 <span class="arithmatex">\(g^{\frac{\varphi(m)}{p_i}} \not \equiv 1 \pmod{m} \ (1 \leqslant i \leqslant k)\)</span></li>
+</ol>
+</li>
+</ol>
+<h3 id="152">1.5.2 指标</h3>
+<ol>
+<li>指标：设 <span class="arithmatex">\(a \in \mathbf Z\)</span>，若对模 <span class="arithmatex">\(m\)</span> 的一个原根 <span class="arithmatex">\(g\)</span> 有一整数 <span class="arithmatex">\(r\)</span> 存在使得 <span class="arithmatex">\(a \equiv g^r \pmod{m} \ (r \geqslant 0)\)</span> 成立，则 <span class="arithmatex">\(r\)</span> 称作以 <span class="arithmatex">\(g\)</span> 为底的 <span class="arithmatex">\(a\)</span> 对模 <span class="arithmatex">\(m\)</span> 的一个指标，记作 <span class="arithmatex">\(r = \operatorname{ind}_g a\)</span>，简记作 <span class="arithmatex">\(\operatorname{ind} a\)</span><ol>
+<li>指标的性质<ol>
+<li><span class="arithmatex">\(\operatorname{ind}_g g = 1\)</span></li>
+<li><span class="arithmatex">\(\operatorname{ind}_g 1 = 0\)</span></li>
+<li><span class="arithmatex">\(\operatorname{ind}_g (-1) = \dfrac{\varphi(m)}{2}\)</span></li>
+</ol>
+</li>
+<li>若 <span class="arithmatex">\(a\)</span> 是一个与 <span class="arithmatex">\(m\)</span> 互质的整数，<span class="arithmatex">\(g\)</span> 是模 <span class="arithmatex">\(m\)</span> 的一个原根，则对模 <span class="arithmatex">\(m\)</span> 而言，<span class="arithmatex">\(a\)</span> 有一个以 <span class="arithmatex">\(g\)</span> 为底的指标 <span class="arithmatex">\(r' \ (0 \leqslant r' &lt; c)\)</span> 且以 <span class="arithmatex">\(g\)</span> 为底的 <span class="arithmatex">\(a\)</span> 对模 <span class="arithmatex">\(m\)</span> 的一切指标是满足 <span class="arithmatex">\(r \equiv r' \pmod{c} \ (r \geqslant 0)\)</span> 的一切整数</li>
+<li>设 <span class="arithmatex">\(g\)</span> 是模 <span class="arithmatex">\(m\)</span> 的一个原根，<span class="arithmatex">\(r \in \mathbf N\)</span>，则以 <span class="arithmatex">\(g\)</span> 为底，对模 <span class="arithmatex">\(m\)</span> 有同一指标 <span class="arithmatex">\(r\)</span> 的一切整数是模 <span class="arithmatex">\(m\)</span> 的一个与模 <span class="arithmatex">\(m\)</span> 互质的同余类</li>
+</ol>
+</li>
+<li>指标法则：若 <span class="arithmatex">\(a_1, a_2, \cdots, a_n\)</span> 是与 <span class="arithmatex">\(m\)</span> 与之的 <span class="arithmatex">\(n\)</span> 个整数<ol>
+<li>乘积法则：<span class="arithmatex">\(\operatorname{ind} (a_1, a_2, \cdots, a_n) \equiv \operatorname{ind} a_1, \operatorname{ind} a_2, \cdots, \operatorname{ind} a_n \pmod{c}\)</span></li>
+<li>幂法则：<span class="arithmatex">\(\operatorname{ind}a^n \equiv n \operatorname{ind}a \pmod{c}\)</span></li>
+</ol>
+</li>
+<li><span class="arithmatex">\(n\)</span> 次同余：设 <span class="arithmatex">\(m \in \mathbf Z\)</span>，若同余式 <span class="arithmatex">\(x^n \equiv a \pmod{m}, (a, m) = 1\)</span> 有解，则称 <span class="arithmatex">\(a\)</span> 是模 <span class="arithmatex">\(m\)</span> 的一个 <span class="arithmatex">\(n\)</span> 次同余．若无解，则称 <span class="arithmatex">\(a\)</span> 是模 <span class="arithmatex">\(m\)</span> 的一个 <span class="arithmatex">\(n\)</span> 次非同余<ol>
+<li>若 <span class="arithmatex">\((n, c) = d, (a, m) = 1\)</span><ol>
+<li>同余式 <span class="arithmatex">\(x^n \equiv a \pmod{m}\)</span> 有解当且仅当 <span class="arithmatex">\(d \mid \operatorname{ind} a\)</span>，且在有解的情况下解数为 <span class="arithmatex">\(d\)</span></li>
+<li>在模 <span class="arithmatex">\(m\)</span> 的一个简化同余系中，<span class="arithmatex">\(n\)</span> 次同余的个数为 <span class="arithmatex">\(\dfrac cd\)</span></li>
+</ol>
+</li>
+<li><span class="arithmatex">\(a\)</span> 是模 <span class="arithmatex">\(m\)</span> 的 <span class="arithmatex">\(n\)</span> 次同余当且仅当 <span class="arithmatex">\(a^{\frac cd} \equiv 1 \pmod{m}, d = (n, c)\)</span></li>
+</ol>
+</li>
+</ol>
+<h2 id="16">1.6 连分数</h2>
+<h3 id="161">1.6.1 连分数的概念</h3>
+<ol>
+<li>
+<p>有限连分数：设 <span class="arithmatex">\(a_1, a_2, \cdots, a_n\)</span> 是一个实数列，<span class="arithmatex">\(a_i &gt; 0, i \geqslant 2\)</span>．对给定的 <span class="arithmatex">\(n \geqslant 1\)</span>，将形如</p>
+<div class="arithmatex">\[
+a_1 + \cfrac{1}{
+    a_2 + \cfrac{1}{
+        a_3 + \genfrac{}{}{0pt}{0}{}{
+            \ddots + \dfrac{1}{
+                a_{n-1} + \dfrac{1}{a_n}
+            }
+        }
+    }
+}
+\]</div>
+<p>的表达式称为 <span class="arithmatex">\(n\)</span> 阶有限连分数．如果 <span class="arithmatex">\(a_1, a_2, \cdots, a_n\)</span> 都是整数，则称连分数是 <span class="arithmatex">\(n\)</span> 阶有限简单连分数，简记为 <span class="arithmatex">\(\left&lt;a_1, a_2, \cdots, a_n\right&gt; = a_1 + \dfrac{1}{a_2+} \dfrac{1}{a_3+} \cdots \dfrac{1}{a_n}\)</span></p>
+</li>
+<li>
+<p>连分数：设 <span class="arithmatex">\(a_1, a_2, \cdots, a_n, \cdots\)</span> 是一个无限实数列，<span class="arithmatex">\(a_i &gt; 0, i \geqslant 2\)</span>．记 <span class="arithmatex">\(\dfrac{p_k}{q_k} = \left&lt;a_1, a_2, \cdots, a_n\right&gt;\)</span>，若 <span class="arithmatex">\(\dfrac{p_k}{q_k}\)</span> 有意义，且 <span class="arithmatex">\({\displaystyle \lim_{n \to \infty} \dfrac{p_k}{q_k}} = A \neq \infty\)</span>，则称 <span class="arithmatex">\(\left&lt;a_1, a_2, \cdots, a_n, \cdots\right&gt;\)</span> 是无限连分数，并称 <span class="arithmatex">\(\left&lt;a_1, a_2, \cdots, a_n, \cdots\right&gt;\)</span> 等于 <span class="arithmatex">\(A\)</span>．也称它是 <span class="arithmatex">\(A\)</span> 的连分数，或称它表示 <span class="arithmatex">\(A\)</span>，记作 <span class="arithmatex">\(A = \left&lt;a_1, a_2, \cdots, a_n, \cdots\right&gt; = a_1 + \dfrac{1}{a_2+} \dfrac{1}{a_3+} \cdots \dfrac{1}{a_n+} \cdots\)</span></p>
+<ol>
+<li>称 <span class="arithmatex">\(\dfrac{p_k}{q_k}\)</span> 为连分数 <span class="arithmatex">\(\left&lt;a_1, a_2, \cdots, a_n, \cdots\right&gt;\)</span> 的第 <span class="arithmatex">\(k\)</span> 个渐近分数</li>
+<li>以下关系成立<ol>
+<li><span class="arithmatex">\(p_1 = a_1, p_2 = a_1a_2 + 1, p_k = a_kp_{k-1} + p_{k-2} \ (k \geqslant 3)\)</span></li>
+<li><span class="arithmatex">\(q_1 = 1, q_2 = a_2, q_k = a_kq_{k-1} + q_{k-2} \ (k \geqslant 3)\)</span></li>
+<li><span class="arithmatex">\(p_kq_{k-1} - p_{k-2}q_k = (-1)^k \ (k \geqslant 2)\)</span></li>
+<li><span class="arithmatex">\(p_kq_{k-2} - p_{k-2}q_k = (-1)^{k-1} a_k \ (k \geqslant 3)\)</span></li>
+</ol>
+</li>
+<li>当 <span class="arithmatex">\(k \geqslant 3\)</span> 时，<span class="arithmatex">\(q_k \geqslant q_{k-1} + 1\)</span>，因为对任何 <span class="arithmatex">\(k\)</span> 都有 <span class="arithmatex">\(q_k \geqslant k-1\)</span></li>
+<li>设 <span class="arithmatex">\(\left&lt;a_1, a_2, \cdots, a_n, \cdots\right&gt;\)</span> 时简单连分数，<span class="arithmatex">\(\dfrac{p_k}{q_k} \ (k \geqslant 1)\)</span> 是它的渐近分数<ol>
+<li><span class="arithmatex">\(\dfrac{p_{2(k-2)}}{q_{2(k-1)}} &gt; \dfrac{p_{2k}}{q_{2k}}, \dfrac{p_{2k-1}}{q_{2k-1}} &gt; \dfrac{p_{2k-3}}{q_{2k-3}}, \dfrac{p_{2k}}{q_{2k}} &gt; \dfrac{p_{2k-1}}{q_{2k-1}}\)</span></li>
+<li><span class="arithmatex">\(\forall k \in \mathbf Z_+: (p_k, q_k) = 1\)</span></li>
+</ol>
+</li>
+</ol>
+</li>
+<li>实数与连分数<ol>
+<li>任何简单连分数都表示一个实数<ol>
+<li>任何有限简单连分数都表示一个有理数；任何有理数都可以表示为有限简单连分数</li>
+<li>任何无理数都可以表示为无限简单连分数，并且这种连分数表示是唯一的</li>
+<li>设 <span class="arithmatex">\(\beta\)</span> 是实无理数，则对于任意的正整数 <span class="arithmatex">\(k\)</span>，存在 <span class="arithmatex">\(\eta_k, \delta_k\)</span> 有 <span class="arithmatex">\(0 &lt; \eta_k, \delta_k &lt; 1\)</span> 使得 <span class="arithmatex">\(\beta = \dfrac{p_k}{q_k} + \dfrac{(-1)^{k-1}\eta_k}{q_kq_{k+1}} = \dfrac{p_k}{q_k} + \dfrac{(-1)^{k-1} \delta_k}{q_k^2}\)</span></li>
+</ol>
+</li>
+<li>设 <span class="arithmatex">\(a, b\)</span> 是整数，<span class="arithmatex">\(\left&lt;a_1, a_2, \cdots, a_n\right&gt;\)</span> 与 <span class="arithmatex">\(\left&lt;b_1, b_2, \cdots, b_m\right&gt;\)</span> 是 <span class="arithmatex">\(\dfrac ab\)</span> 的两个简单连分数表示<ol>
+<li>若 <span class="arithmatex">\(a_n &gt; 1, b_m &gt; 1\)</span>，则 <span class="arithmatex">\(n = m, a_i = b_i \ (1 \leqslant i \leqslant n)\)</span></li>
+<li>若 <span class="arithmatex">\(a_n\)</span> 是大于 <span class="arithmatex">\(i\)</span> 的整数，则有理数 <span class="arithmatex">\(\dfrac ab\)</span> 仅有两种表示成简单连分数的方法，即 <span class="arithmatex">\(\left&lt;a_1, a_2, \cdots, a_n\right&gt; = \left&lt;a_1, a_2, \cdots, a_n - 1, 1\right&gt;\)</span></li>
+</ol>
+</li>
+<li>设 <span class="arithmatex">\(\dfrac{p_k}{q_k}\)</span> 是实数 <span class="arithmatex">\(\alpha\)</span> 的第 <span class="arithmatex">\(k\)</span> 个渐近分数，则若 <span class="arithmatex">\(0 &lt; q \leqslant q_k\)</span>，则 <span class="arithmatex">\(\left|a - \dfrac{p_k}{q_k}\right| \leqslant \left|a - \dfrac pq\right|\)</span></li>
+<li>若 <span class="arithmatex">\(\dfrac{p_j}{q_j}\)</span> 是无理数 <span class="arithmatex">\(\alpha\)</span> 的第 <span class="arithmatex">\(j\)</span> 个渐近分数，<span class="arithmatex">\(j = 1, 2, \cdots, r\)</span> 与 <span class="arithmatex">\(s\)</span> 是整数且 <span class="arithmatex">\(s &gt; 0, k \in \mathbf Z_+\)</span> 使得 <span class="arithmatex">\(|sa - r| &lt; |q_k\alpha - p_k|\)</span>，则 <span class="arithmatex">\(s \geqslant q_{k+1}\)</span><ol>
+<li>设 <span class="arithmatex">\(\dfrac{p_j}{q_j}\)</span> 是无理数 <span class="arithmatex">\(\alpha\)</span> 的第 <span class="arithmatex">\(j\)</span> 个渐近分数，<span class="arithmatex">\(j = 1, 2, \cdots\)</span>，如果 <span class="arithmatex">\(\dfrac rs\)</span> 为一有理数，其中 <span class="arithmatex">\(r, s\)</span> 都是整数，且 <span class="arithmatex">\(s &gt; 0, k \in \mathbf Z_+\)</span> 使得 <span class="arithmatex">\(\left|\alpha -\dfrac rs\right| &lt; \left|\alpha -  \dfrac{p_k}{q_k}\right|\)</span>，那么 <span class="arithmatex">\(s &gt; q\)</span></li>
+<li>若 <span class="arithmatex">\(\alpha\)</span> 是无理数，<span class="arithmatex">\(\dfrac rs\)</span> 是既约分数且 <span class="arithmatex">\(r, s \in \mathbf Z, s &gt; 0\)</span> 使得 <span class="arithmatex">\(\left|\alpha - \dfrac rs\right| &lt; \dfrac{1}{2s^2}\)</span>，则 <span class="arithmatex">\(\dfrac rs\)</span> 是 <span class="arithmatex">\(\alpha\)</span> 的简单连分数的一个渐近分数</li>
+</ol>
+</li>
+</ol>
+</li>
+<li>循环连分数：设 <span class="arithmatex">\(\left&lt;a_1, a_2, \cdots, a_n, \cdots\right&gt;\)</span> 是无限简单连分数，如果存在两个整数 <span class="arithmatex">\(s \geqslant 0, t &gt; 0\)</span> 使得 <span class="arithmatex">\(a_{s+i} = a_{s + kt + i}, i = 1, 2, \cdots, t, k \in \mathbf N\)</span>，则称 <span class="arithmatex">\(\left&lt;a_1, a_2, \cdots, a_n, \cdots\right&gt;\)</span> 是循环连分数，并记作 <span class="arithmatex">\(\left&lt;a_1, a_2, \cdots, a_s, \dot a_{s+1}, \dot a_{s+2}, \cdots, \dot a_{s+t}\right&gt;\)</span>；如果 <span class="arithmatex">\(s = 0\)</span>，则称它是纯循环连分数<ol>
+<li>任何循环连分数表示一个不可约整系数二次方程的实根</li>
+<li>设 <span class="arithmatex">\(\beta\)</span> 是二次不可约整系数方程 <span class="arithmatex">\(Ax^2 + Bx + C = 0\)</span> 的实根，则 <span class="arithmatex">\(\beta\)</span> 的简单连分数是循环连分数</li>
+</ol>
+</li>
+</ol>
+<h3 id="162-pell">1.6.2 Pell 方程</h3>
+<ol>
+<li><span class="arithmatex">\(\text{Pell}\)</span> 方程：形如 <span class="arithmatex">\(x^2 - dy^2 = 1\)</span> 的方程，其中 <span class="arithmatex">\(d\)</span> 是一个固定的正整数且不是完全平方数<ol>
+<li>有两个整数 <span class="arithmatex">\(P_n, Q_n\)</span> 存在使得 <span class="arithmatex">\(\beta_n = \dfrac{\sqrt d + P_n}{Q_n} \ (P_n^2 \equiv d \pmod{Q_n})\)</span>；若 <span class="arithmatex">\(d\)</span> 是一个非平方的正整数，则二次方程 <span class="arithmatex">\(x^2 - dy^2 = (-1)^n Q_n\)</span> 有正整数解 <span class="arithmatex">\(x, y\)</span> 且 <span class="arithmatex">\((x, y) = 1\)</span><ol>
+<li>令 <span class="arithmatex">\(r + s\sqrt n = t + u\sqrt n\)</span>，其中 <span class="arithmatex">\(r, s, t, u \in \mathbf Q, n \in \mathbf Z_+\)</span> 且 <span class="arithmatex">\(n\)</span> 不为完全平方数，那么 <span class="arithmatex">\(r = t\)</span> 且 <span class="arithmatex">\(s = u\)</span></li>
+<li>若 <span class="arithmatex">\(\alpha_1 = \dfrac{a_1 + b_1\sqrt d}{c_1}, \alpha_2 = \dfrac{a_2 + b_2\sqrt d}{c_2}\)</span> 是有理数或二次无理数，则 <span class="arithmatex">\((\alpha_1\alpha_2)' = \alpha_1'\alpha_2'\)</span></li>
+</ol>
+</li>
+<li>设 <span class="arithmatex">\(d\)</span> 为正整数且非完全平方数，则方程 <span class="arithmatex">\(x^2 - dy^2 = 1\)</span> 总有正整数解，如果 <span class="arithmatex">\((x_1, y_1)\)</span> 是使 <span class="arithmatex">\(x_1\)</span> 最小的解，则每个解 <span class="arithmatex">\((x_k, y_k)\)</span> 可以通过取幂得到 <span class="arithmatex">\(x_k + y_k\sqrt d = (x_1 + y_1 \sqrt d)^k \ (k = 1, 2, 3, \cdots)\)</span></li>
+</ol>
+</li>
+<li>若 <span class="arithmatex">\(d\)</span> 是一个非平方的正整数，令 <span class="arithmatex">\(\dfrac{p_k}{q_k}\)</span> 表示 <span class="arithmatex">\(\sqrt d\)</span> 的简单连分数的第 <span class="arithmatex">\(k\)</span> 个渐近分数，<span class="arithmatex">\(k = 1, 2, \cdots, t\)</span> 表示连分数的循环节长度<ol>
+<li>当 <span class="arithmatex">\(t\)</span> 是偶数时，方程 <span class="arithmatex">\(x^2 - dy^2 = 1\)</span> 的全体正整数解为 <span class="arithmatex">\(x = p_{jt-1}, y = q_{jt-1} \ (j = 1, 2, 3, \cdots)\)</span> 且方程 <span class="arithmatex">\(x^2 - dy^2 = -1\)</span> 无解</li>
+<li>当 <span class="arithmatex">\(t\)</span> 是奇数时，当成 <span class="arithmatex">\(x^2 - dy^2 = 1\)</span> 的全体正整数解为 <span class="arithmatex">\(x = p_{2jt-1}, y = q_{2jt-1} \ (j = 1, 2, 3, \cdots)\)</span>，方程 <span class="arithmatex">\(x^2 - dy^2 = -1\)</span> 的全体正整数解为 <span class="arithmatex">\(x = p_{(2j-1)t-1}, y = q_{(2j-1)t-1} \ (j = 1, 2, 3, \cdots)\)</span></li>
+</ol>
+</li>
+</ol>
+
+
+
+
+
+
+
+
+
+
+
+
+                
+              </article>
+            </div>
+          
+          
+<script>var target=document.getElementById(location.hash.slice(1));target&&target.name&&(target.checked=target.name.startsWith("__tabbed_"))</script>
+        </div>
+        
+          <button type="button" class="md-top md-icon" data-md-component="top" hidden>
+  
+  <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 24 24"><path d="M13 20h-2V8l-5.5 5.5-1.42-1.42L12 4.16l7.92 7.92-1.42 1.42L13 8z"/></svg>
+  回到页面顶部
+</button>
+        
+      </main>
+      
+        <footer class="md-footer">
+  
+  <div class="md-footer-meta md-typeset">
+    <div class="md-footer-meta__inner md-grid">
+      <div class="md-copyright">
+  
+    <div class="md-copyright__highlight">
+      Copyright &copy; <span class="year"></span> Ichinoe – <a href="#__consent"> Cookie Setting </a>
+    </div>
+  
+  
+    Made with
+    <a href="https://squidfunk.github.io/mkdocs-material/" target="_blank" rel="noopener">
+      Material for MkDocs
+    </a>
+  
+</div>
+      
+        <div class="md-social">
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://github.com/ShiinaHiiragi" target="_blank" rel="noopener" title="github.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 496 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M165.9 397.4c0 2-2.3 3.6-5.2 3.6-3.3.3-5.6-1.3-5.6-3.6 0-2 2.3-3.6 5.2-3.6 3-.3 5.6 1.3 5.6 3.6m-31.1-4.5c-.7 2 1.3 4.3 4.3 4.9 2.6 1 5.6 0 6.2-2s-1.3-4.3-4.3-5.2c-2.6-.7-5.5.3-6.2 2.3m44.2-1.7c-2.9.7-4.9 2.6-4.6 4.9.3 2 2.9 3.3 5.9 2.6 2.9-.7 4.9-2.6 4.6-4.6-.3-1.9-3-3.2-5.9-2.9M244.8 8C106.1 8 0 113.3 0 252c0 110.9 69.8 205.8 169.5 239.2 12.8 2.3 17.3-5.6 17.3-12.1 0-6.2-.3-40.4-.3-61.4 0 0-70 15-84.7-29.8 0 0-11.4-29.1-27.8-36.6 0 0-22.9-15.7 1.6-15.4 0 0 24.9 2 38.6 25.8 21.9 38.6 58.6 27.5 72.9 20.9 2.3-16 8.8-27.1 16-33.7-55.9-6.2-112.3-14.3-112.3-110.5 0-27.5 7.6-41.3 23.6-58.9-2.6-6.5-11.1-33.3 2.6-67.9 20.9-6.5 69 27 69 27 20-5.6 41.5-8.5 62.8-8.5s42.8 2.9 62.8 8.5c0 0 48.1-33.6 69-27 13.7 34.7 5.2 61.4 2.6 67.9 16 17.7 25.8 31.5 25.8 58.9 0 96.5-58.9 104.2-114.8 110.5 9.2 7.9 17 22.9 17 46.4 0 33.7-.3 75.4-.3 83.6 0 6.5 4.6 14.4 17.3 12.1C428.2 457.8 496 362.9 496 252 496 113.3 383.5 8 244.8 8M97.2 352.9c-1.3 1-1 3.3.7 5.2 1.6 1.6 3.9 2.3 5.2 1 1.3-1 1-3.3-.7-5.2-1.6-1.6-3.9-2.3-5.2-1m-10.8-8.1c-.7 1.3.3 2.9 2.3 3.9 1.6 1 3.6.7 4.3-.7.7-1.3-.3-2.9-2.3-3.9-2-.6-3.6-.3-4.3.7m32.4 35.6c-1.6 1.3-1 4.3 1.3 6.2 2.3 2.3 5.2 2.6 6.5 1 1.3-1.3.7-4.3-1.3-6.2-2.2-2.3-5.2-2.6-6.5-1m-11.4-14.7c-1.6 1-1.6 3.6 0 5.9s4.3 3.3 5.6 2.3c1.6-1.3 1.6-3.9 0-6.2-1.4-2.3-4-3.3-5.6-2"/></svg>
+    </a>
+  
+    
+    
+    
+    
+      
+      
+    
+    <a href="https://twitter.com/ShiinaHiiragi" target="_blank" rel="noopener" title="twitter.com" class="md-social__link">
+      <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 512 512"><!--! Font Awesome Free 6.7.2 by @fontawesome - https://fontawesome.com License - https://fontawesome.com/license/free (Icons: CC BY 4.0, Fonts: SIL OFL 1.1, Code: MIT License) Copyright 2024 Fonticons, Inc.--><path d="M459.37 151.716c.325 4.548.325 9.097.325 13.645 0 138.72-105.583 298.558-298.558 298.558-59.452 0-114.68-17.219-161.137-47.106 8.447.974 16.568 1.299 25.34 1.299 49.055 0 94.213-16.568 130.274-44.832-46.132-.975-84.792-31.188-98.112-72.772 6.498.974 12.995 1.624 19.818 1.624 9.421 0 18.843-1.3 27.614-3.573-48.081-9.747-84.143-51.98-84.143-102.985v-1.299c13.969 7.797 30.214 12.67 47.431 13.319-28.264-18.843-46.781-51.005-46.781-87.391 0-19.492 5.197-37.36 14.294-52.954 51.655 63.675 129.3 105.258 216.365 109.807-1.624-7.797-2.599-15.918-2.599-24.04 0-57.828 46.782-104.934 104.934-104.934 30.213 0 57.502 12.67 76.67 33.137 23.715-4.548 46.456-13.32 66.599-25.34-7.798 24.366-24.366 44.833-46.132 57.827 21.117-2.273 41.584-8.122 60.426-16.243-14.292 20.791-32.161 39.308-52.628 54.253"/></svg>
+    </a>
+  
+</div>
+      
+    </div>
+  </div>
+</footer>
+      
+    </div>
+    <div class="md-dialog" data-md-component="dialog">
+      <div class="md-dialog__inner md-typeset"></div>
+    </div>
+    
+    
+      <div class="md-consent" data-md-component="consent" id="__consent" hidden>
+        <div class="md-consent__overlay"></div>
+        <aside class="md-consent__inner">
+          <form class="md-consent__form md-grid md-typeset" name="consent">
+            
+
+
+
+  
+
+<h4>Cookie 许可</h4>
+<p>本站使用 Cookie 记录访客偏好，其内容仅保留在本地。若点击「同意」按钮，则视为同意 Cookie 使用；点击底部「Cookie Setting」可随时修改</p>
+<input class="md-toggle" type="checkbox" id="__settings" checked>
+<div class="md-consent__settings">
+  <ul class="task-list">
+    
+    
+      
+    
+    
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="github" checked>
+      <span class="task-list-indicator"></span>
+      GitHub
+    </label>
+  </li>
+
+      
+    
+      
+        
+  
+  
+    
+    
+  
+  <li class="task-list-item">
+    <label class="task-list-control">
+      <input type="checkbox" name="local" checked>
+      <span class="task-list-indicator"></span>
+      本地设置
+    </label>
+  </li>
+
+      
+    
+  </ul>
+</div>
+<div class="md-consent__controls">
+  
+    
+      <button class="md-button md-button--primary">同意</button>
+    
+    
+    
+  
+    
+    
+      <button type="reset" class="md-button md-button--primary">拒绝</button>
+    
+    
+  
+</div>
+          </form>
+        </aside>
+      </div>
+      <script>var consent=__md_get("__consent");if(consent)for(var input of document.forms.consent.elements)input.name&&(input.checked=consent[input.name]||!1);else"file:"!==location.protocol&&setTimeout((function(){document.querySelector("[data-md-component=consent]").hidden=!1}),250);var form=document.forms.consent;for(var action of["submit","reset"])form.addEventListener(action,(function(e){if(e.preventDefault(),"reset"===e.type)for(var n of document.forms.consent.elements)n.name&&(n.checked=!1);__md_set("__consent",Object.fromEntries(Array.from(new FormData(form).keys()).map((function(e){return[e,!0]})))),location.hash="",location.reload()}))</script>
+    
+    
+      
+      <script id="__config" type="application/json">{"base": "../../..", "features": ["content.code.copy", "navigation.tracking", "navigation.tabs", "navigation.expand", "navigation.top", "toc.follow", "toc.integrate", "search.highlight", "search.share"], "search": "../../../assets/javascripts/workers/search.f8cc74c7.min.js", "tags": null, "translations": {"clipboard.copied": "\u5df2\u590d\u5236", "clipboard.copy": "\u590d\u5236", "search.result.more.one": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.more.other": "\u5728\u8be5\u9875\u4e0a\u8fd8\u6709 # \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.none": "\u6ca1\u6709\u627e\u5230\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.one": "\u627e\u5230 1 \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.other": "# \u4e2a\u7b26\u5408\u6761\u4ef6\u7684\u7ed3\u679c", "search.result.placeholder": "\u952e\u5165\u4ee5\u5f00\u59cb\u641c\u7d22", "search.result.term.missing": "\u7f3a\u5c11", "select.version": "\u9009\u62e9\u5f53\u524d\u7248\u672c"}, "version": null}</script>
+    
+    
+      <script src="../../../assets/javascripts/bundle.c8b220af.min.js"></script>
+      
+        <script src="../../../assets/config.js"></script>
+      
+        <script src="https://polyfill.io/v3/polyfill.min.js?features=es6"></script>
+      
+        <script src="https://cdn.jsdelivr.net/npm/mathjax@3/es5/tex-mml-chtml.js"></script>
+      
+    
+  </body>
+</html>

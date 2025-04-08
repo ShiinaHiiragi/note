@@ -1,0 +1,141 @@
+@import url("https://fonts.googleapis.com/css2?family=Noto+Serif+SC:wght@500;600;700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Noto+Sans+SC:wght@400;500;600&display=swap");
+
+:root {
+  --md-text-font: "ML Modern Roman", "Noto Serif SC", serif;
+  --normal-font-weight: 500;
+  --bold-font-weight: 700;
+  --title-font-weight: 500;
+
+  font-weight: var(--normal-font-weight);
+  user-select: none;
+  box-sizing: border-box;
+}
+
+::selection {
+  background-color: rgb(200, 225, 255);
+}
+
+strong {
+  font-weight: var(--bold-font-weight);
+}
+
+/* Define Fonts */
+@font-face {
+  font-family: "ML Modern Roman";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/ML Modern Roman Regular.ttf");
+}
+
+@font-face {
+  font-family: "ML Modern Roman";
+  font-style: italic;
+  font-weight: normal;
+  src: url("fonts/ML Modern Roman Italic.ttf");
+}
+
+@font-face {
+  font-family: "ML Modern Roman";
+  font-style: normal;
+  font-weight: bold;
+  src: url("fonts/ML Modern Roman Bold.ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-style: normal;
+  font-weight: normal;
+  src: url("fonts/Segoe UI Regular.ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-style: italic;
+  font-weight: normal;
+  src: url("fonts/Segoe UI Italic.ttf");
+}
+
+@font-face {
+  font-family: "Segoe UI";
+  font-style: normal;
+  font-weight: bold;
+  src: url("fonts/Segoe UI Bold.ttf");
+}
+
+/* General Title */
+.md-ellipsis {
+  font-weight: var(--normal-font-weight);
+}
+
+/* Titles in each Passages */
+h1, h2, h3, h4, h5, h6 {
+  color: black !important;
+  font-weight: var(--title-font-weight) !important;
+}
+
+/* Admonitions */
+.md-typeset .admonition,
+.md-typeset details {
+  border-radius: 0.1rem;
+}
+
+/* Table */
+div.text-table {
+  text-align: center;
+}
+
+div.text-table table {
+  display: table;
+  overflow: inherit !important;
+}
+
+div.text-table th {
+  vertical-align: middle !important;
+}
+
+div.text-table td {
+  vertical-align: middle !important;
+}
+
+/* {++ Added Markup in Critic ++} */
+ins.critic {
+  text-decoration: none;
+}
+
+/* {-- Deleted Markup in Critic --} */
+del.critic {
+  text-decoration: none;
+}
+
+/* Text in MathJax */
+div.arithmatex {
+  overflow: inherit !important;
+}
+
+/* New command must be placed after h1 */
+h1+div.arithmatex {
+  display: none;
+}
+
+mjx-container {
+  font-size: 96% !important;
+}
+
+mjx-utext[variant="sans-serif"] {
+  font-family: var(--md-text-font) !important;
+  font-weight: var(--normal-font-weight) !important;
+  font-size: 100% !important;
+}
+
+div.admonition.note mjx-utext[variant="sans-serif"] {
+  font-family: var(--md-text-font) !important;
+  font-weight: var(--normal-font-weight) !important;
+  font-size: 100% !important;
+}
+
+/* Checker */
+.hanging {
+  outline: 2px dashed rgb(230, 75, 60);
+  background-color: rgba(230, 75, 60, 16%);
+}
