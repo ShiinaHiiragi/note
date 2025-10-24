@@ -58,6 +58,16 @@
             }
             $$
 
+3. $\text{Hilbert}$ 纲领：作为无穷主义数学的一阶逻辑可直接从作为有穷主义数学的 $\mathbf{PRA}$ 中构建（而非引入实无穷的朴素集合论）
+    1. 设 $T$ 是任意的可公理化理论，可证明 $\mathbf{PRA}$ 满足可证性条件
+        1. $\text{D1}:$ 若 $\vdash_{T} \sigma$，则 $\vdash_{\mathbf{PRA}} \square_{T} \sigma$
+        2. $\text{D2}: \ \vdash_{\mathbf{PRA}} \square_{T}(\sigma \rightarrow \tau) \rightarrow \square_{T} \sigma \rightarrow \square_{T} \tau$
+        3. $\text{D3}: \ \vdash_{\mathbf{PRA}} \square_{T} \sigma \rightarrow \square_{T} \square_{T} \sigma$
+    2. 设 $S, T$ 分别是两个（有穷主义和无穷主义）理论且 $\mathbf{PRA} \subseteq S \subseteq T$
+        1. 设 $\varphi$ 是一个形如 $\forall x \psi$ 的 $\Pi_1^0$ 语句，其中 $\psi$ 是 $\mathbf{PRA}$ 中的一个无量词公式，则 $\vdash_{T} \varphi$ 蕴含 $\operatorname{Con}(T) \vdash_{S} \varphi$
+        2. 若能证明 $\vdash_{S} \operatorname{Con}(T)$，则可证明 $T$ 相对于 $\mathbf{PRA}$ 是 $\Pi_1^0-$保守的：$\vdash_{T} \varphi$ 蕴含 $\vdash_{S} \varphi$
+        3. 一致性等价于 $\Pi_1^0-$反射原理：对于闭公式 $\varphi$ 有 $\square_{T} \varphi \to \varphi$
+
 ### 4.1.2 一阶算术
 初等数论的语言 $\mathscr L(S)$，其中 $S = \{=, \mathrm{S}, +, \times, 0\}$ 且 $\Omega(=) = 2, \Omega(\mathrm{S}) = 1, \Omega(+) = \Omega(\times) = 2, 0 \in \mathbf C$
 
@@ -262,7 +272,7 @@
     1. 若 $T$ 一致，则 $\nvdash_{T} \mathrm{Con}(T)$
     2. $\vdash_{T} \operatorname{Con}(T) \rightarrow \neg \square_{T} \operatorname{Con}(T)$
 
-    第二不完备定理说明 $\text{Hilbert}$ 纲领不可能照原样实现
+    第二不完备定理说明 $\text{Hilbert}$ 纲领不可能照原样实现，即无法证明理论 $T$ 相对于 $\mathbf{PRA}$ 的保守性
 
     1. 令 $\mathbf{PA}^*$ 为 $\mathbf{PA} + \neg \operatorname{Con}(\mathbf{PA})$，则 $\mathbf{PA}^*$ 一致
     2. 对任意序数 $\alpha < \varepsilon_{0}$，$\mathbf{PA}$ 可证明 $\operatorname{TI}(\alpha)$，但无法证明 $\operatorname{TI}(\varepsilon_{0})$，此时记 $\operatorname{PTO}(\mathbf{PA}) = \varepsilon$，称 $\mathbf{PA}$ 的证明论序数为 $\varepsilon_0$
